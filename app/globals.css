@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 4%;
+    --foreground: 213 31% 91%;
+  }
+
+  /* O SEGREDO: Aplicamos o fundo no HTML e no BODY */
+  html, body {
+    @apply min-h-screen antialiased;
+    background-color: #010409 !important;
+    /* Padrão de listras diagonais técnicas */
+    background-image: repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.05) 0px,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 12px
+    ) !important;
+    background-attachment: fixed !important;
+    color: white;
+  }
+
+  /* Garante que nenhum container principal cubra as listras */
+  main, section, #__next {
+    background-color: transparent !important;
+  }
+
+  * {
+    @apply border-border;
+  }
+}
+
+@layer components {
+  /* Painel de Vidro (Glassmorphism) - Transparência ajustada para ver as listras ao fundo */
+  .glass-panel {
+    @apply bg-slate-900/80 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] shadow-2xl;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Botão de Opção */
+  .btn-option {
+    @apply relative w-full p-6 text-left rounded-2xl border border-white/5 
+           bg-white/5 transition-all duration-300 overflow-hidden
+           hover:border-cyan-400/50 hover:bg-cyan-500/10
+           hover:shadow-[0_0_20px_rgba(0,242,255,0.15)] hover:-translate-y-1;
+  }
+
+  /* Título com brilho neon */
+  .text-neon-gradient {
+    @apply bg-gradient-to-r from-white via-cyan-400 to-blue-500 bg-clip-text text-transparent font-black;
+    filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.3));
+  }
+
+  /* Card de Sucesso (Estático e Elegante) */
+  .card-success-static {
+    @apply bg-emerald-950/40 backdrop-blur-md border-2 border-[#00ff88]/50 
+           shadow-[0_0_40px_rgba(0,255,136,0.15)] rounded-[2.5rem] p-8;
+  }
+
+  /* Card de Erro */
+  .card-error-static {
+    @apply bg-rose-950/40 backdrop-blur-md border-2 border-[#ff0055]/50 
+           shadow-[0_0_40px_rgba(255,0,85,0.15)] rounded-[2.5rem] p-8;
+  }
+
+  /* Brilho de fundo (Glow) */
+  .bg-glow-main {
+    @apply absolute -z-10 pointer-events-none opacity-20 blur-[150px] rounded-full;
+    background: radial-gradient(circle, #00f2ff 0%, #7000ff 50%, transparent 100%);
+  }
+}
+
+/* Scrollbar Estilizada */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #010409;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f2ff;
+}
+
+/* Animação de entrada suave */
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.97) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-pop {
+  animation: popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
