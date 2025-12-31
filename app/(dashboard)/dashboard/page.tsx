@@ -1,217 +1,315 @@
-import Link from 'next/link'
+import { createServerClient } from '@supabase/ssr';
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
+import DashboardClient from './dashboard-client';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { createServerSupabase } from '@/lib/supabase/server'
-import { Button } from '@/components/ui/button'
-import { CheckCircle2, Lock, BookOpen, ArrowRight } from 'lucide-react'
-import { Exam, ExamModule, Module } from '@/types/database'
+export const dynamic = 'force-dynamic';
 
-type ExamWithTopics = {
-  exam: Exam
-  topics: (ExamModule & { module: Module | null })[]
-}
+type EnrollmentRow = {
+  id: string;
+  exam_id: string | null;
+  status?: string | null;
+  is_active?: boolean | null;
+};
+
+type TopicRow = {
+  id: string;
+  exam_id: string;
+  module_id: string | null;
+  topic_name: string | null;
+  topic_order: number | null;
+};
+
+type VerticalModuleSummary = {
+  id: string | null;
+  title: string;
+  completed: boolean;
+};
+
+type VerticalTopic = {
+  id: string;
+  topicName: string;
+  modules: VerticalModuleSummary[];
+};
+
+type VerticalExamData = {
+  id: string;
+  name: string;
+  organ: string | null;
+  board: string | null;
+  raw_content: string | null;
+  completionRate: number;
+  topics: VerticalTopic[];
+};
+
+type ExamRecord = {
+  id: string;
+  name: string;
+  organ: string | null;
+  board: string | null;
+  raw_content: string | null;
+};
+
+const isActiveEnrollment = (record?: EnrollmentRow) => {
+  if (!record) return false;
+  if (typeof record.is_active === 'boolean') {
+    return record.is_active;
+  }
+  if (record.status) {
+    const normalized = record.status.toLowerCase();
+    return normalized.includes('active') || normalized.includes('matric');
+  }
+  return true;
+};
 
 export default async function DashboardPage() {
-  const supabase = await createServerSupabase()
-  const [
-    modulesResponse,
-    examsResponse,
-    examModulesResponse,
-  ] = await Promise.all([
-    supabase
-      .from('modules')
-      .select('id, title, description, is_premium, icon_slug')
-      .order('title', { ascending: true }),
-    supabase
-      .from('exams')
-      .select('id, name, organ, board, raw_content, created_at')
-      .order('created_at', { ascending: false }),
-    supabase
-      .from('exam_modules')
-      .select('id, exam_id, module_id, topic_order, topic_name')
-      .order('topic_order', { ascending: true }),
-  ])
+  const cookieStore = await cookies();
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return cookieStore.getAll();
+        },
+        setAll(cookiesToSet) {
+          try {
+            cookiesToSet.forEach(({ name, value, options }) =>
+              cookieStore.set(name, value, options)
+            );
+          } catch {
+            // Middleware já lida com cookies em Server Components.
+          }
+        },
+      },
+    }
+  );
 
-  if (modulesResponse.error || examsResponse.error || examModulesResponse.error) {
-    throw new Error(
-      modulesResponse.error?.message ||
-        examsResponse.error?.message ||
-        examModulesResponse.error?.message ||
-        'Erro ao carregar dados do dashboard'
-    )
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
+  if (!session) {
+    redirect('/login');
   }
 
-  const modules = modulesResponse.data ?? []
-  const moduleMap = new Map(modules.map((item) => [item.id, item]))
-  const examModules = examModulesResponse.data ?? []
+  const userId = session.user.id;
+  const displayName = session.user.email ?? userId;
 
-  const groupedExamModules = examModules.reduce((acc, topic) => {
-    const current = acc.get(topic.exam_id) ?? []
-    current.push({
-      ...topic,
-      module: topic.module_id ? moduleMap.get(topic.module_id) ?? null : null,
-    })
-    acc.set(topic.exam_id, current)
-    return acc
-  }, new Map<string, (ExamModule & { module: Module | null })[]>())
+  const enrollmentResponse = await supabase
+    .from('enrollments')
+    .select('id, exam_id, status, is_active')
+    .eq('user_id', userId);
 
-  const exams = examsResponse.data ?? []
-  const examsWithTopics: ExamWithTopics[] = exams.map((exam) => ({
-    exam,
-    topics: groupedExamModules.get(exam.id) ?? [],
-  }))
+  if (enrollmentResponse.error) {
+    console.error('Erro enrollments:', enrollmentResponse.error.message);
+  }
 
-  const singleExam = examsWithTopics.length === 1 ? examsWithTopics[0] : null
+  let activeExamIds = (enrollmentResponse.data ?? [])
+    .filter((item) => item.exam_id && isActiveEnrollment(item))
+    .map((item) => item.exam_id!) as string[];
+
+  if (!activeExamIds.length) {
+    const purchaseResponse = await supabase
+      .from('exam_purchases')
+      .select('exam_id')
+      .eq('user_id', userId);
+
+    if (!purchaseResponse.error && purchaseResponse.data) {
+      activeExamIds = purchaseResponse.data
+        .map((item) => item.exam_id)
+        .filter(Boolean) as string[];
+    } else if (purchaseResponse.error) {
+      console.error('Erro exam_purchases:', purchaseResponse.error.message);
+    }
+  }
+
+  activeExamIds = Array.from(new Set(activeExamIds));
+
+  const examsResponse = activeExamIds.length
+    ? await supabase
+        .from('exams')
+        .select('id, name, organ, board, raw_content')
+        .in('id', activeExamIds)
+        .order('created_at', { ascending: false })
+    : { data: [], error: null };
+
+  if (examsResponse.error) {
+    console.error('Erro exams:', examsResponse.error.message);
+  }
+
+  const topicsResponse = activeExamIds.length
+    ? await supabase
+        .from('exam_modules')
+        .select('id, exam_id, module_id, topic_name, topic_order')
+        .in('exam_id', activeExamIds)
+        .order('topic_order', { ascending: true })
+    : { data: [], error: null };
+
+  if (topicsResponse.error) {
+    console.error('Erro exam_modules:', topicsResponse.error.message);
+  }
+
+  const moduleIds = Array.from(
+    new Set(
+      (topicsResponse.data ?? [])
+        .map((topic) => topic.module_id)
+        .filter(Boolean) as string[]
+    )
+  );
+
+  const moduleResponse = moduleIds.length
+    ? await supabase
+        .from('modules')
+        .select('id, title')
+        .in('id', moduleIds)
+    : { data: [], error: null };
+
+  if (moduleResponse.error) {
+    console.error('Erro modules:', moduleResponse.error.message);
+  }
+
+  const flowchartResponse = moduleIds.length
+    ? await supabase
+        .from('flowcharts')
+        .select('id, module_id')
+        .in('module_id', moduleIds)
+    : { data: [], error: null };
+
+  if (flowchartResponse.error) {
+    console.error('Erro flowcharts:', flowchartResponse.error.message);
+  }
+
+  const flowchartIds = flowchartResponse.data?.map((chart) => chart.id) ?? [];
+  const progressResponse = flowchartIds.length
+    ? await supabase
+        .from('user_progress')
+        .select('flowchart_id, status')
+        .in('flowchart_id', flowchartIds)
+        .eq('user_id', userId)
+    : { data: [], error: null };
+
+  if (progressResponse.error) {
+    console.error('Erro user_progress:', progressResponse.error.message);
+  }
+
+  const moduleMap = new Map<string, string>(
+    (moduleResponse.data ?? []).map((mod) => [mod.id, mod.title])
+  );
+
+  const flowchartsByModule = new Map<string, string[]>();
+  (flowchartResponse.data ?? []).forEach((chart) => {
+    if (!chart.module_id) {
+      return;
+    }
+    const existing = flowchartsByModule.get(chart.module_id) ?? [];
+    existing.push(chart.id);
+    flowchartsByModule.set(chart.module_id, existing);
+  });
+
+  const completedFlowchartIds = new Set(
+    (progressResponse.data ?? [])
+      .filter((row) => row.status === 'completed')
+      .map((row) => row.flowchart_id)
+  );
+
+  const moduleCompletion = new Map<string, boolean>();
+  flowchartsByModule.forEach((flowchartIds, moduleId) => {
+    const hasCompleted = flowchartIds.some((flowchartId) =>
+      completedFlowchartIds.has(flowchartId)
+    );
+    moduleCompletion.set(moduleId, hasCompleted);
+  });
+
+  const topicsByExam = new Map<string, TopicRow[]>();
+  (topicsResponse.data ?? []).forEach((topic) => {
+    const container = topicsByExam.get(topic.exam_id) ?? [];
+    container.push(topic);
+    topicsByExam.set(topic.exam_id, container);
+  });
+
+  const examOrderMap = new Map<string, ExamRecord>(
+    (examsResponse.data ?? []).map((exam) => [
+      exam.id,
+      {
+        id: exam.id,
+        name: exam.name,
+        organ: exam.organ ?? null,
+        board: exam.board ?? null,
+        raw_content: exam.raw_content ?? null,
+      },
+    ])
+  );
+
+  const verticalExams: VerticalExamData[] = activeExamIds
+    .map((examId) => examOrderMap.get(examId))
+    .filter((exam): exam is ExamRecord => Boolean(exam))
+    .map((exam) => {
+      const topics = (topicsByExam.get(exam.id) ?? []).map((topic) => {
+        const moduleId = topic.module_id;
+        const moduleTitle = moduleId ? moduleMap.get(moduleId) ?? 'Módulo sem título' : 'Conteúdo livre';
+        const completed = moduleId ? moduleCompletion.get(moduleId) ?? false : false;
+
+        return {
+          id: topic.id,
+          topicName: topic.topic_name ?? moduleTitle,
+          modules: moduleId
+            ? [
+                {
+                  id: moduleId,
+                  title: moduleTitle,
+                  completed,
+                },
+              ]
+            : [],
+        };
+      });
+
+      const uniqueModuleIds = Array.from(
+        new Set(
+          topics.flatMap((topic) =>
+            topic.modules.map((module) => module.id).filter(Boolean)
+          )
+        )
+      ) as string[];
+
+      const completedModules = uniqueModuleIds.filter(
+        (moduleId) => moduleCompletion.get(moduleId) ?? false
+      ).length;
+
+      const completionRate =
+        uniqueModuleIds.length > 0
+          ? Math.round((completedModules / uniqueModuleIds.length) * 100)
+          : 0;
+
+      return {
+        id: exam.id,
+        name: exam.name,
+        organ: exam.organ,
+        board: exam.board,
+        raw_content: exam.raw_content,
+        completionRate,
+        topics,
+      };
+    });
 
   return (
-    <div className="relative min-h-screen bg-[#010409] px-4 py-10">
-      <div className="bg-glow-main w-[580px] h-[580px] absolute top-[-220px] left-[-120px] opacity-30" />
-      <div className="relative z-10 mx-auto max-w-6xl space-y-10">
-        <header className="space-y-3 text-white">
-          <p className="text-xs uppercase tracking-[0.6em] text-clinical-muted">Área do Aprendiz</p>
-          <h1 className="text-4xl font-black text-neon-gradient">
-            Escolha seu fluxo (ou siga um concurso verticalizado)
-          </h1>
-          <p className="text-sm text-slate-400">
-            Os módulos destacados abaixo foram construídos para a rotina clínica com estética Cyber Clinical.
-            Se você estiver seguindo um concurso, os temas aparecem na ordem do edital.
-          </p>
+    <div className="min-h-screen p-4 md:p-8 relative">
+      <div className="bg-glow-main top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px]" />
+      <div className="max-w-7xl mx-auto space-y-10">
+        <header className="space-y-4">
+          <div className="glass-panel p-6 bg-slate-900/70 border border-slate-800">
+            <p className="text-sm uppercase tracking-[0.5em] text-slate-400">Central Verticalizada</p>
+            <h1 className="text-4xl md:text-5xl font-black text-neon-gradient mt-2">
+              Bem-vindo(a), {displayName}
+            </h1>
+            <p className="text-slate-400 text-lg max-w-2xl mt-1">
+              Acompanhe os editais que você já garante acesso e avance pelas matérias com visual técnico.
+            </p>
+          </div>
         </header>
-
-        <section className="space-y-6">
-          <div className="flex items-center justify-between gap-6">
-            <div>
-              <h2 className="text-2xl font-semibold text-white">Módulos em alta</h2>
-              <p className="text-sm text-clinical-muted">Selecione um módulo para destravar simulações e tarefas rápidas</p>
-            </div>
-            <span className="text-xs uppercase tracking-[0.5em] text-clinical-muted">
-              {modules.length} módulos
-            </span>
-          </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {modules.map((module) => (
-              <Card key={module.id} className="border-slate-800 bg-slate-900/70 glass-panel">
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <BookOpen className="h-6 w-6 text-clinical-accent" />
-                      {module.is_premium && (
-                        <span className="rounded-full border border-amber-400/40 px-2 py-0.5 text-[10px] uppercase tracking-[0.3em] text-amber-300">
-                          Premium
-                        </span>
-                      )}
-                    </div>
-                    <div className="h-2 w-2 rounded-full bg-clinical-accent" />
-                  </div>
-                  <CardTitle className="text-white text-lg mt-4">{module.title}</CardTitle>
-                  <CardDescription className="text-sm text-clinical-muted">
-                    {module.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Link href={`/study/${module.id}`}>
-                    <Button
-                      variant="ghost"
-                      className="flex w-full items-center justify-center gap-2 rounded-2xl border border-white/10 bg-transparent text-white shadow-neon-cyan transition hover:border-clinical-accent"
-                    >
-                      {module.is_premium ? 'Ver detalhes' : 'Iniciar estudo'}
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        <section className="space-y-6">
-          <div className="flex items-center justify-between gap-3">
-            <div>
-              <p className="text-xs uppercase tracking-[0.4em] text-clinical-muted">Concursos Disponíveis</p>
-              <h2 className="text-3xl font-black text-white">Cronogramas alinhados ao edital</h2>
-            </div>
-            <span className="text-sm text-clinical-muted">{examsWithTopics.length} concurso(s)</span>
-          </div>
-
-          {examsWithTopics.length === 0 ? (
-            <div className="rounded-3xl border border-slate-800 bg-slate-950/70 p-6 text-sm text-slate-400">
-              Nenhum concurso registrado ainda. Aguarde o administrador montar o cronograma verticalizado.
-            </div>
-          ) : (
-            <div className="grid gap-6 md:grid-cols-2">
-              {examsWithTopics.map(({ exam, topics }) => (
-                <div key={exam.id} className="glass-panel rounded-3xl border border-slate-800 bg-[#05070b]/80 p-6 shadow-neon-cyan/10">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.4em] text-clinical-muted">Orgão · {exam.organ ?? '—'}</p>
-                      <h3 className="text-xl font-semibold text-white">{exam.name}</h3>
-                      <p className="text-xs text-clinical-muted">Banca {exam.board ?? 'indefinida'}</p>
-                    </div>
-                    <span className="rounded-full bg-clinical-accent/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-clinical-accent">
-                      {topics.length} tópicos
-                    </span>
-                  </div>
-                  <div className="mt-5 space-y-3">
-                    {topics.length === 0 && (
-                      <p className="text-sm text-clinical-muted">Ainda não há módulos vinculados a este concurso.</p>
-                    )}
-                    {topics.map((topic) => (
-                      <div
-                        key={topic.id}
-                        className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-slate-950/50 px-4 py-3"
-                      >
-                        <div>
-                          <p className="text-sm font-semibold text-white">
-                            {topic.topic_name ?? topic.module?.title ?? 'Tópico sem vínculo'}
-                          </p>
-                          <p className="text-[11px] uppercase tracking-[0.4em] text-clinical-muted">
-                            Etapa {topic.topic_order} · {topic.module?.title ?? 'sem módulo'}
-                          </p>
-                        </div>
-                        {topic.module ? (
-                          <CheckCircle2 className="h-5 w-5 text-clinical-success" />
-                        ) : (
-                          <Lock className="h-5 w-5 text-slate-500" />
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </section>
-
-        {singleExam && (
-          <section className="glass-panel rounded-3xl border border-clinical-accent/40 bg-slate-950/60 p-6 shadow-neon-green/30">
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <p className="text-xs uppercase tracking-[0.4em] text-clinical-muted">Cronograma personalizado</p>
-                <h2 className="text-3xl font-black text-white">{singleExam.exam.name}</h2>
-                <p className="text-sm text-clinical-muted">
-                  Você está estudando o concurso selecionado. Siga a ordem vertical e vá desbloqueando módulos.
-                </p>
-              </div>
-              <CheckCircle2 className="h-12 w-12 text-clinical-success" />
-            </div>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              {singleExam.topics.map((topic) => (
-                <div
-                  key={topic.id}
-                  className="rounded-2xl border border-white/10 bg-[#05070b]/60 p-4 text-sm text-clinical-muted"
-                >
-                  <p className="text-[11px] uppercase tracking-[0.4em] text-clinical-accent">TOPICO {topic.topic_order}</p>
-                  <p className="mt-1 text-lg font-semibold text-white">{topic.topic_name ?? topic.module?.title ?? 'Tópico'}</p>
-                  <p className="text-xs uppercase tracking-[0.4em] text-clinical-muted">
-                    {topic.module?.title ?? 'Nenhum módulo associado'}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
+        <DashboardClient verticalExams={verticalExams} userEmail={displayName} />
       </div>
     </div>
-  )
+  );
 }
-
