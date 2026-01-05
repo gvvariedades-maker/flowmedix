@@ -3,25 +3,54 @@
 import { useEffect } from 'react'
 import {
   ReactFlow,
-  Background,
   Controls,
   MiniMap,
   useEdgesState,
   useNodesState,
+  useReactFlow,
 } from '@xyflow/react'
 import '@xyflow/react/dist/style.css'
 import { CustomNode } from './CustomNode'
 import { FlowchartContent } from '@/types/flow'
 
-const nodeTypes = {
+// Mapear todos os tipos de nodes possíveis para o CustomNode
+// Isso garante compatibilidade com qualquer tipo definido no Laboratório
+const nodeTypes: Record<string, typeof CustomNode> = {
   'start-node': CustomNode,
   'action-node': CustomNode,
   'decision-node': CustomNode,
   'risk-node': CustomNode,
+  'custom': CustomNode,
+  'acao': CustomNode,
+  'decisao': CustomNode,
+  'inicio': CustomNode,
+  'risco': CustomNode,
+  // Fallback padrão para qualquer tipo não mapeado
+  'default': CustomNode,
 }
 
 export interface FlowViewerProps {
   data: FlowchartContent
+}
+
+function FlowViewerInner() {
+  const { fitView } = useReactFlow()
+
+  // Aplicar fitView quando o componente montar
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      fitView({ padding: 0.2, duration: 400, maxZoom: 1.2 })
+    }, 200)
+    return () => clearTimeout(timer)
+  }, [fitView])
+
+  return (
+    <>
+      {/* Removido Background dots para visual mais limpo */}
+      <Controls className="bg-slate-900 border-slate-800" />
+      <MiniMap nodeColor={() => '#22d3ee'} />
+    </>
+  )
 }
 
 export function FlowViewer({ data }: FlowViewerProps) {
@@ -29,7 +58,12 @@ export function FlowViewer({ data }: FlowViewerProps) {
   const [edges, setEdges, onEdgesChange] = useEdgesState(data.edges)
 
   useEffect(() => {
-    setNodes(data.nodes)
+    // Garantir que todos os nodes tenham um tipo válido
+    const normalizedNodes = data.nodes.map((node) => ({
+      ...node,
+      type: node.type && nodeTypes[node.type] ? node.type : 'action-node',
+    }))
+    setNodes(normalizedNodes)
   }, [data.nodes, setNodes])
 
   useEffect(() => {
@@ -44,22 +78,30 @@ export function FlowViewer({ data }: FlowViewerProps) {
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         nodeTypes={nodeTypes}
+        defaultNodeOptions={{
+          type: 'action-node',
+        }}
         fitView
+        fitViewOptions={{ padding: 0.2, duration: 400, maxZoom: 1.2 }}
         nodesConnectable={false}
         nodesDraggable={false}
-        panOnScroll
         zoomOnScroll
+        panOnScroll
         minZoom={0.5}
         maxZoom={2.5}
         className="h-full bg-slate-950"
+        defaultViewport={{ x: 0, y: 0, zoom: 1 }}
       >
-        <Background color="#0f172a" gap={16} />
-        <Controls className="bg-slate-900 border-slate-800" />
-        <MiniMap nodeColor={() => '#22d3ee'} />
+        <FlowViewerInner />
       </ReactFlow>
     </div>
   )
 }
+
+
+
+
+
 
 
 
