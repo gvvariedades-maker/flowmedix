@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "FlowMedix - Fluxogramas Interativos para Enfermagem",
-  description: "Transforme textos complexos em fluxogramas interativos para facilitar o estudo",
+  title: "FlowMedix - Estudo Reverso de Português",
+  description: "Plataforma de estudo reverso para concursos públicos com foco em Língua Portuguesa",
 };
 
 export default function RootLayout({

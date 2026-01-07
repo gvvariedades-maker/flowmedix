@@ -26,8 +26,8 @@ const mockFlowchartData: FlowchartContent = {
       type: 'start-node',
       position: { x: 250, y: 50 },
       data: {
-        label: 'Paciente chega ao PS',
-        description: 'Triagem inicial',
+        label: 'Leitura do Texto',
+        description: 'Primeira abordagem ao conteúdo',
       },
     },
     {
@@ -35,8 +35,8 @@ const mockFlowchartData: FlowchartContent = {
       type: 'decision-node',
       position: { x: 250, y: 200 },
       data: {
-        label: 'Estado crítico?',
-        description: 'Avaliar sinais vitais',
+        label: 'Compreensão clara?',
+        description: 'Avaliar entendimento do texto',
       },
     },
     {
@@ -44,8 +44,8 @@ const mockFlowchartData: FlowchartContent = {
       type: 'action-node',
       position: { x: 100, y: 350 },
       data: {
-        label: 'Protocolo de emergência',
-        description: 'Ativar equipe de reanimação',
+        label: 'Análise Profunda',
+        description: 'Estudar recursos linguísticos',
       },
     },
     {
@@ -53,8 +53,8 @@ const mockFlowchartData: FlowchartContent = {
       type: 'action-node',
       position: { x: 400, y: 350 },
       data: {
-        label: 'Triagem padrão',
-        description: 'Encaminhar para avaliação',
+        label: 'Releitura Orientada',
+        description: 'Focar em pontos específicos',
       },
     },
     {
@@ -62,8 +62,8 @@ const mockFlowchartData: FlowchartContent = {
       type: 'risk-node',
       position: { x: 250, y: 500 },
       data: {
-        label: 'Monitorar sinais vitais',
-        description: 'Atenção contínua',
+        label: 'Revisão de Conteúdo',
+        description: 'Consolidar aprendizados',
       },
     },
   ],

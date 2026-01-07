@@ -5,7 +5,7 @@ const GEMINI_MODEL = 'gemini-1.5-flash'
 const PROMPT_TEMPLATE = (content: string) =>
   `Retorne um objeto JSON exatamente neste formato: { "topics": [{ "title": "string", "description": "string" }] }. Use o conteúdo: ${content}`
 const DECISION_FLOW_PROMPT = (content: string) =>
-  `Transforme o conteúdo técnico de enfermagem fornecido em um simulador de decisão interativo. Crie cenários de acerto e erro, inclua dicas de prova e feedbacks pedagógicos no formato JSON compatível com o DecisionSimulator. Conteúdo de referência: ${content}`
+  `Transforme o conteúdo de estudo reverso de português fornecido em um simulador de decisão interativo. Crie cenários de acerto e erro, inclua dicas de prova e feedbacks pedagógicos no formato JSON compatível com o DecisionSimulator. Conteúdo de referência: ${content}`
 
 let genAI: GoogleGenerativeAI | null = null
 

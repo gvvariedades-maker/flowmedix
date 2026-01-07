@@ -5,194 +5,178 @@ import { useSearchParams } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import { 
   Save, ChevronLeft, Loader2, ClipboardPaste, 
-  X, Info, Zap, ChevronRight, CheckCircle2, 
-  UserCheck, ShieldCheck, AlertTriangle, Gavel, Microscope, Users, Scale, Flag 
+  X, Zap, ChevronRight, CheckCircle2, 
+  Target, BookOpen, MapPin, ListOrdered
 } from 'lucide-react';
 import Link from 'next/link';
 
-// Mapeamento de Ícones para os Cards
-const iconMap: any = {
-  UserCheck: <UserCheck />, ShieldCheck: <ShieldCheck />, AlertTriangle: <AlertTriangle />,
-  Gavel: <Gavel />, Microscope: <Microscope />, Users: <Users />, Scale: <Scale />, Flag: <Flag />
-};
-
-function EditorLaboratorio() {
+export default function LaboratorioEdital() {
   const searchParams = useSearchParams();
-  const assuntoId = searchParams.get('id');
-  
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [jsonInput, setJsonInput] = useState('');
-  const [data, setData] = useState<any>(null);
   
-  // Estado do Modal de Slides
+  // Estados de Dados
+  const [cidades, setCidades] = useState<any[]>([]);
+  const [topicos, setTopicos] = useState<any[]>([]);
+  const [cidadeSel, setCidadeSel] = useState('');
+  const [topicoSel, setTopicoSel] = useState('');
+  
+  // Estado da Questão e JSON
+  const [enunciado, setEnunciado] = useState('');
+  const [jsonInput, setJsonInput] = useState('');
+  const [previewData, setPreviewData] = useState<any>(null);
   const [selectedNode, setSelectedNode] = useState<any>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    async function loadData() {
-      if (!assuntoId) { setLoading(false); return; }
-      const { data: res } = await supabase.from('assuntos').select('conteudo_json').eq('id', assuntoId).single();
-      if (res?.conteudo_json) {
-        setJsonInput(JSON.stringify(res.conteudo_json, null, 2));
-        setData(res.conteudo_json);
-      }
+    async function init() {
+      const { data } = await supabase.from('concursos_cidades').select('*').order('nome_cidade');
+      setCidades(data || []);
       setLoading(false);
     }
-    loadData();
-  }, [assuntoId]);
+    init();
+  }, []);
+
+  useEffect(() => {
+    if (cidadeSel) {
+      supabase.from('topicos_edital')
+        .select('*')
+        .eq('concurso_id', cidadeSel)
+        .order('ordem')
+        .then(({ data }) => setTopicos(data || []));
+    }
+  }, [cidadeSel]);
 
   const handlePasteJSON = async () => {
-    try {
-      const text = await navigator.clipboard.readText();
-      setJsonInput(text);
-      const parsed = JSON.parse(text);
-      setData(parsed);
-    } catch (err) { alert("Falha ao ler área de transferência ou JSON inválido"); }
+    const text = await navigator.clipboard.readText();
+    setJsonInput(text);
+    try { setPreviewData(JSON.parse(text)); } catch (e) {}
   };
 
-  const onSave = async () => {
-    if (!assuntoId) return;
+  const salvarQuestao = async () => {
+    if (!topicoSel || !jsonInput) return alert("Selecione o tópico e cole o JSON!");
     setSaving(true);
-    const { error } = await supabase.from('assuntos').update({ conteudo_json: JSON.parse(jsonInput) }).eq('id', assuntoId);
+    
+    const parsedJSON = JSON.parse(jsonInput);
+    
+    const { error } = await supabase.from('questoes').insert([{
+      topico_edital_id: topicoSel,
+      enunciado: enunciado,
+      alternativas: parsedJSON.alternativas, // O JSON deve conter as alternativas agora
+      resposta_correta: parsedJSON.resposta_correta,
+      estudo_reverso_json: parsedJSON,
+      banca_id: parsedJSON.banca_id // Opcional se vier no JSON
+    }]);
+
     setSaving(false);
-    if (!error) alert('🚀 Publicado com sucesso!');
+    if (!error) alert("🚀 Questão de Estudo Reverso mapeada ao edital!");
   };
 
-  if (loading) return <div className="h-screen flex items-center justify-center bg-white font-black italic animate-pulse text-blue-600">CARREGANDO LABORATÓRIO...</div>;
+  if (loading) return <div className="h-screen flex items-center justify-center bg-slate-950 text-emerald-500 font-black italic animate-pulse">CARREGANDO SISTEMA...</div>;
 
   return (
-    <div className="h-screen flex flex-col bg-white text-slate-900 overflow-hidden font-sans">
-      {/* HEADER */}
-      <header className="p-4 bg-white border-b-2 border-slate-100 flex justify-between items-center z-50">
+    <div className="h-screen flex flex-col bg-slate-950 text-slate-300 font-sans">
+      {/* HEADER ESTRATÉGICO */}
+      <header className="p-4 bg-slate-900 border-b border-slate-800 flex justify-between items-center z-50">
         <div className="flex items-center gap-4">
-          <Link href="/admin" className="p-2 hover:bg-slate-50 rounded-xl transition-all"><ChevronLeft className="text-slate-400" /></Link>
-          <h1 className="font-black uppercase italic tracking-tighter text-xl">LAB<span className="text-blue-600">FLOW</span></h1>
+          <Link href="/admin" className="p-2 hover:bg-slate-800 rounded-xl transition-all"><ChevronLeft /></Link>
+          <div className="flex flex-col">
+            <h1 className="font-black italic uppercase tracking-tighter text-white">Edital<span className="text-emerald-500 text-xs ml-2">Optimizer v3</span></h1>
+            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">Estudo Reverso de Língua Portuguesa</span>
+          </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          <button onClick={handlePasteJSON} className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 text-slate-600 font-bold text-xs hover:bg-slate-200 transition-all uppercase italic">
-            <ClipboardPaste className="w-4 h-4" /> Colar JSON
-          </button>
-          <button onClick={onSave} disabled={saving} className="bg-blue-600 text-white px-8 py-2 rounded-xl font-black text-xs uppercase italic flex items-center gap-2 hover:shadow-lg hover:shadow-blue-200 transition-all disabled:opacity-50">
-            {saving ? <Loader2 className="animate-spin w-4 h-4" /> : <Save className="w-4 h-4" />} Publicar
-          </button>
-        </div>
+        <button onClick={salvarQuestao} disabled={saving} className="bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3 rounded-2xl font-black uppercase italic text-xs transition-all flex items-center gap-2 shadow-lg shadow-emerald-900/20">
+          {saving ? <Loader2 className="animate-spin w-4 h-4" /> : <Target className="w-4 h-4" />}
+          Publicar no Edital
+        </button>
       </header>
 
       <main className="flex-1 flex overflow-hidden">
-        {/* LADO ESQUERDO: EDITOR */}
-        <div className="w-1/3 border-r border-slate-100 bg-slate-50 flex flex-col font-mono text-xs">
-          <div className="p-3 bg-slate-200/50 text-[10px] font-black uppercase text-slate-500 tracking-widest">Estrutura de Dados</div>
-          <textarea 
-            className="flex-1 p-6 bg-transparent outline-none resize-none text-blue-600 leading-relaxed"
-            value={jsonInput}
-            onChange={(e) => { setJsonInput(e.target.value); try { setData(JSON.parse(e.target.value)) } catch(e){} }}
-            spellCheck={false}
-          />
+        {/* COLUNA 1: CONFIGURAÇÃO DO EDITAL */}
+        <div className="w-1/4 border-r border-slate-800 p-6 space-y-6 overflow-y-auto bg-slate-950/50">
+          <div className="space-y-4">
+            <label className="text-[10px] font-black uppercase text-emerald-500 flex items-center gap-2"><MapPin className="w-3 h-3" /> Selecionar Concurso</label>
+            <select className="w-full p-4 bg-slate-900 border border-slate-700 rounded-2xl text-sm font-bold text-white outline-none focus:border-emerald-500" value={cidadeSel} onChange={(e) => setCidadeSel(e.target.value)}>
+              <option value="">Escolher Cidade...</option>
+              {cidades.map(c => <option key={c.id} value={c.id}>{c.nome_cidade}</option>)}
+            </select>
+          </div>
+
+          <div className="space-y-4">
+            <label className="text-[10px] font-black uppercase text-emerald-500 flex items-center gap-2"><ListOrdered className="w-3 h-3" /> Tópico do Edital</label>
+            <select className="w-full p-4 bg-slate-900 border border-slate-700 rounded-2xl text-sm font-bold text-white outline-none focus:border-emerald-500" value={topicoSel} onChange={(e) => setTopicoSel(e.target.value)}>
+              <option value="">Vincular ao Item do Edital...</option>
+              {topicos.map(t => <option key={t.id} value={t.id}>{t.nome_topico}</option>)}
+            </select>
+          </div>
+
+          <div className="space-y-4">
+            <label className="text-[10px] font-black uppercase text-emerald-500 flex items-center gap-2"><BookOpen className="w-3 h-3" /> Enunciado da Questão</label>
+            <textarea className="w-full h-40 p-4 bg-slate-900 border border-slate-700 rounded-2xl text-xs font-medium text-slate-300 outline-none focus:border-emerald-500 resize-none" value={enunciado} onChange={(e) => setEnunciado(e.target.value)} placeholder="Ex: Assinale a alternativa em que a crase foi empregada corretamente..." />
+          </div>
         </div>
 
-        {/* LADO DIREITO: PREVIEW DOS CARDS (BRANCO COM CARDS COLORIDOS) */}
-        <div className="flex-1 bg-white p-12 overflow-y-auto">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-black italic uppercase mb-12 text-slate-900 border-l-8 border-blue-600 pl-6">
-              {data?.flow_title || "Novo Fluxograma"}
-            </h2>
-
-            <div className="grid grid-cols-2 gap-8">
-              {data?.nodes?.map((node: any) => (
-                <button 
-                  key={node.id}
-                  onClick={() => { setSelectedNode(node); setCurrentSlide(0); }}
-                  className="group relative h-48 rounded-[32px] p-8 flex flex-col justify-between items-start transition-all hover:-translate-y-2"
-                  style={{ 
-                    background: `linear-gradient(135deg, ${node.data.colorStart}, ${node.data.colorEnd})`,
-                    boxShadow: `0 20px 40px -15px ${node.data.colorStart}80` // Efeito Neon/Glow
-                  }}
-                >
-                  <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center text-white backdrop-blur-md border border-white/30">
-                    {iconMap[node.data.icon] || <Zap />}
-                  </div>
-                  <div className="text-left">
-                    <p className="text-[10px] font-black uppercase text-white/60 tracking-widest">{node.data.label}</p>
-                    <h3 className="text-xl font-black text-white uppercase italic leading-tight">{node.data.title}</h3>
-                  </div>
-                </button>
-              ))}
-            </div>
+        {/* COLUNA 2: EDITOR JSON (ESTUDO REVERSO) */}
+        <div className="w-1/4 border-r border-slate-800 flex flex-col bg-slate-950">
+          <div className="p-4 bg-slate-900/50 flex justify-between items-center border-b border-slate-800">
+            <span className="text-[10px] font-black uppercase text-slate-500 tracking-widest">Estudo Reverso JSON</span>
+            <button onClick={handlePasteJSON} className="p-2 hover:bg-slate-800 rounded-lg text-emerald-500 transition-all"><ClipboardPaste className="w-4 h-4" /></button>
           </div>
+          <textarea className="flex-1 p-6 bg-transparent font-mono text-[11px] text-emerald-400 outline-none resize-none" value={jsonInput} onChange={(e) => { setJsonInput(e.target.value); try { setPreviewData(JSON.parse(e.target.value)) } catch(e){} }} placeholder='{ "flow_title": "...", "nodes": [...] }' spellCheck={false} />
+        </div>
+
+        {/* COLUNA 3: PREVIEW INTERATIVO (NEON STYLE) */}
+        <div className="flex-1 bg-white p-12 overflow-y-auto relative">
+          <div className="max-w-xl mx-auto">
+            {previewData ? (
+              <div className="space-y-8">
+                <div className="text-center">
+                   <h2 className="text-2xl font-black text-slate-950 uppercase italic tracking-tighter leading-tight underline decoration-emerald-500 decoration-4">{previewData.flow_title}</h2>
+                </div>
+                <div className="grid grid-cols-1 gap-4">
+                  {previewData.nodes?.map((node: any) => (
+                    <button key={node.id} onClick={() => { setSelectedNode(node); setCurrentSlide(0); }} className="p-6 rounded-[24px] border-2 border-slate-950 flex items-center gap-4 transition-all hover:scale-[1.02]" style={{ background: `linear-gradient(135deg, ${node.data.colorStart}, ${node.data.colorEnd})`, boxShadow: `0 10px 20px -5px ${node.data.colorStart}60` }}>
+                      <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center text-white"><Zap className="w-5 h-5" /></div>
+                      <div className="text-left"><p className="text-[8px] font-black text-white/50 uppercase">{node.data.label}</p><h4 className="text-sm font-black text-white uppercase italic">{node.data.title}</h4></div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="h-full flex flex-col items-center justify-center text-slate-200">
+                <Target className="w-16 h-16 opacity-10 mb-4" />
+                <p className="font-black italic uppercase tracking-tighter opacity-20">Aguardando Mapeamento</p>
+              </div>
+            )}
+          </div>
+
+          {/* MODAL DE SLIDES (MESMA LÓGICA DO ALUNO) */}
+          {selectedNode && (
+            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
+              <div className="bg-white w-full max-w-lg rounded-[40px] shadow-2xl overflow-hidden border-4 border-slate-950 flex flex-col min-h-[450px]">
+                <div className="p-6 border-b border-slate-100 flex justify-between items-center">
+                  <span className="text-[10px] font-black uppercase text-emerald-600 tracking-widest italic">Estudo Reverso: Slide {currentSlide + 1}</span>
+                  <button onClick={() => setSelectedNode(null)} className="p-2 hover:bg-slate-100 rounded-full text-slate-300 hover:text-slate-950 transition-all"><X /></button>
+                </div>
+                <div className="flex-1 p-10 flex flex-col justify-center">
+                  <h3 className="text-xl font-black text-slate-950 uppercase italic mb-4">{selectedNode.data.menu_content[currentSlide]?.title}</h3>
+                  <p className="text-slate-600 font-bold leading-relaxed">{selectedNode.data.menu_content[currentSlide]?.content}</p>
+                </div>
+                <div className="p-6 bg-slate-50 flex justify-between items-center">
+                  <button disabled={currentSlide === 0} onClick={() => setCurrentSlide(s => s - 1)} className="text-[10px] font-black uppercase italic text-slate-400 hover:text-slate-950 disabled:opacity-0">Anterior</button>
+                  <div className="flex gap-2">{selectedNode.data.menu_content.map((_: any, i: number) => (<div key={i} className={`h-1 rounded-full transition-all ${i === currentSlide ? 'w-6 bg-emerald-500' : 'w-2 bg-slate-300'}`} />))}</div>
+                  {currentSlide < selectedNode.data.menu_content.length - 1 ? (
+                    <button onClick={() => setCurrentSlide(s => s + 1)} className="bg-slate-950 text-white px-6 py-2 rounded-xl font-black uppercase italic text-[10px] flex items-center gap-2">Próximo <ChevronRight className="w-3 h-3" /></button>
+                  ) : (
+                    <button onClick={() => setSelectedNode(null)} className="bg-emerald-600 text-white px-6 py-2 rounded-xl font-black uppercase italic text-[10px] flex items-center gap-2">Concluir <CheckCircle2 className="w-3 h-3" /></button>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </main>
-
-      {/* MODAL DE SLIDES (CAROUSEL) */}
-      {selectedNode && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-md animate-in fade-in">
-          <div className="bg-white w-full max-w-xl rounded-[40px] shadow-2xl overflow-hidden flex flex-col min-h-[500px]">
-            {/* Header do Slide */}
-            <div className="p-6 flex justify-between items-center border-b border-slate-50">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-8 bg-blue-600 rounded-full" />
-                <span className="font-black uppercase italic text-slate-400 text-xs">Slide {currentSlide + 1} de {selectedNode.data.menu_content.length}</span>
-              </div>
-              <button onClick={() => setSelectedNode(null)} className="p-2 hover:bg-slate-100 rounded-full transition-all text-slate-300 hover:text-slate-900"><X /></button>
-            </div>
-
-            {/* Conteúdo do Slide */}
-            <div className="flex-1 p-10 flex flex-col justify-center">
-              <div className="animate-in slide-in-from-right-4 duration-300">
-                <h3 className="text-2xl font-black text-slate-900 uppercase italic mb-4">
-                  {selectedNode.data.menu_content[currentSlide]?.title}
-                </h3>
-                <p className="text-slate-600 font-bold leading-relaxed text-lg mb-6">
-                  {selectedNode.data.menu_content[currentSlide]?.content}
-                </p>
-                {selectedNode.data.menu_content[currentSlide]?.tip && (
-                  <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-xl flex gap-3 italic text-xs font-black text-amber-700">
-                    <Info className="w-5 h-5 shrink-0" /> {selectedNode.data.menu_content[currentSlide]?.tip}
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Footer de Navegação */}
-            <div className="p-8 bg-slate-50 flex justify-between items-center">
-              <button 
-                disabled={currentSlide === 0}
-                onClick={() => setCurrentSlide(prev => prev - 1)}
-                className="px-6 py-2 font-black uppercase italic text-xs text-slate-400 hover:text-slate-900 disabled:opacity-0 transition-all"
-              >
-                Anterior
-              </button>
-              
-              <div className="flex gap-2">
-                {selectedNode.data.menu_content.map((_: any, i: number) => (
-                  <div key={i} className={`h-1.5 rounded-full transition-all ${i === currentSlide ? 'w-8 bg-blue-600' : 'w-2 bg-slate-300'}`} />
-                ))}
-              </div>
-
-              {currentSlide < selectedNode.data.menu_content.length - 1 ? (
-                <button 
-                  onClick={() => setCurrentSlide(prev => prev + 1)}
-                  className="bg-blue-600 text-white px-8 py-3 rounded-2xl font-black uppercase italic text-xs flex items-center gap-2 hover:bg-slate-900 transition-all"
-                >
-                  Próximo <ChevronRight className="w-4 h-4" />
-                </button>
-              ) : (
-                <button 
-                  onClick={() => setSelectedNode(null)}
-                  className="bg-emerald-500 text-white px-8 py-3 rounded-2xl font-black uppercase italic text-xs flex items-center gap-2 hover:bg-slate-900 transition-all"
-                >
-                  Concluir <CheckCircle2 className="w-4 h-4" />
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
-}
-
-export default function LaboratorioPage() {
-  return <Suspense fallback={null}><EditorLaboratorio /></Suspense>;
 }

@@ -1,6 +1,6 @@
 # FlowMedix
 
-Plataforma de estudo para Técnicos de Enfermagem que transforma textos complexos em Fluxogramas Interativos.
+Plataforma de estudo reverso para concursos públicos que transforma editais e conteúdos de Língua Portuguesa em fluxogramas interativos e simuladores de decisão.
 
 ## Tech Stack
 
