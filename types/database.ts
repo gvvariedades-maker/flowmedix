@@ -71,19 +71,14 @@ export interface ExamTopic {
   exam_id: string;
   topic_name: string | null;
   created_at: string;
-}
-
-export interface ExamContent {
+}export interface ExamContent {
   id: string;
   exam_topic_id: string;
   flowchart_id: string;
   created_at: string;
-}
-
-export interface ExamPurchase {
+}export interface ExamPurchase {
   id: string;
   user_id: string;
   exam_id: string;
   purchased_at: string;
 }
-

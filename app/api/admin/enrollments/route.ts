@@ -2,8 +2,9 @@ import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
 import { createServerSupabase } from '@/lib/supabase/server';
+import { ADMIN_EMAIL } from '@/lib/constants';
 
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL?.toLowerCase();
+const ADMIN_EMAIL_LOWER = ADMIN_EMAIL.toLowerCase();
 
 const buildServerClient = () => {
   const cookieStore = cookies();
@@ -36,7 +37,7 @@ const ensureAdmin = async (client: ReturnType<typeof buildServerClient>) => {
   if (!session || !session.user?.email) {
     return NextResponse.json({ error: 'Acesso não autenticado' }, { status: 401 });
   }
-  if (ADMIN_EMAIL && session.user.email.toLowerCase() !== ADMIN_EMAIL) {
+  if (session.user.email.toLowerCase() !== ADMIN_EMAIL_LOWER) {
     return NextResponse.json({ error: 'Acesso negado' }, { status: 403 });
   }
   return null;
@@ -110,6 +111,7 @@ export async function DELETE(request: NextRequest) {
 
   return NextResponse.json({ success: true });
 }
+
 
 
 

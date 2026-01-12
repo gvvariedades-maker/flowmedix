@@ -71,7 +71,7 @@ flowmedix/
 ├── components/
 │   ├── flow/
 │   │   ├── CustomNode.tsx        # Componente de nó customizado
-│   │   └── StudyFlow.tsx         # Componente principal do React Flow
+│   │   └── FlowViewer.tsx        # Componente principal do React Flow
 │   └── ui/
 │       ├── button.tsx            # Componente Button (shadcn)
 │       ├── card.tsx              # Componente Card (shadcn)

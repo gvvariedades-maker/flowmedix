@@ -2,8 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import { createServerSupabase } from '@/lib/supabase/server';
+import { ADMIN_EMAIL } from '@/lib/constants';
 
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL?.toLowerCase();
+const ADMIN_EMAIL_LOWER = ADMIN_EMAIL.toLowerCase();
 
 export async function POST(request: NextRequest) {
   const cookieStore = cookies();
@@ -37,7 +38,7 @@ export async function POST(request: NextRequest) {
   }
 
   const email = session.user.email.toLowerCase();
-  if (ADMIN_EMAIL && email !== ADMIN_EMAIL) {
+  if (email !== ADMIN_EMAIL_LOWER) {
     return NextResponse.json({ error: 'Acesso negado' }, { status: 403 });
   }
 
@@ -66,6 +67,7 @@ export async function POST(request: NextRequest) {
 
   return NextResponse.json({ userId: user.id });
 }
+
 
 
 

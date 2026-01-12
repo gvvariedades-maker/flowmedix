@@ -4,7 +4,7 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LayoutDashboard, BookOpen, LogOut, User, Activity, Shield } from "lucide-react"
+import { BookOpen, LogOut, User, Shield } from "lucide-react"
 import { Button } from "./button"
 
 interface SidebarProps {
@@ -16,19 +16,9 @@ export function Sidebar({ className }: SidebarProps) {
 
   const navItems = [
     {
-      title: "Dashboard",
-      href: "/dashboard",
-      icon: LayoutDashboard,
-    },
-    {
-      title: "Módulos",
-      href: "/modulos",
+      title: "Plano de Estudo",
+      href: "/estudar",
       icon: BookOpen,
-    },
-    {
-      title: "Simuladores Práticos",
-      href: "/treinamento/pcr",
-      icon: Activity,
     },
     {
       title: "Admin",
