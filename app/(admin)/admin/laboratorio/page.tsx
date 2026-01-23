@@ -22,7 +22,6 @@ export default function AvantLaboratory() {
     try {
       const parsed = JSON.parse(jsonInput);
       
-      // Validação de Estrutura Mínima
       if (!parsed.meta || !parsed.question_data) {
         throw new Error("O JSON precisa ter as chaves 'meta' e 'question_data'.");
       }
@@ -44,7 +43,6 @@ export default function AvantLaboratory() {
 
     try {
       // 1. Geração Automática de Slug Único
-      // Ex: cpcon-sintaxe-concordancia-17099999
       const timestamp = Date.now();
       const slugBase = `${parsedData.meta.banca}-${parsedData.meta.topico}-${parsedData.meta.subtopico}`
         .toLowerCase()
@@ -53,25 +51,27 @@ export default function AvantLaboratory() {
       
       const slugFinal = `${slugBase}-${timestamp}`;
 
-      // 2. Inserção no Banco (Universal)
+      // 2. INJEÇÃO DO SLUG NO JSON (O Pulo do Gato para o Histórico)
+      // Isso garante que o Player saiba qual questão está sendo respondida
+      const jsonComSlug = {
+        ...parsedData,
+        modulo_slug: slugFinal // <--- AQUI ESTÁ A MÁGICA
+      };
+
+      // 3. Inserção no Banco (Universal)
       const { error: insertError } = await supabase.from('modulos_estudo').insert([{
-        cidade_id: null, // <--- IMPORTANTE: Não vincula a cidade
-        
-        // Usa o Tópico do JSON como Nome do Módulo (ex: "Língua Portuguesa - Sintaxe")
+        cidade_id: null,
         modulo_nome: parsedData.meta.topico, 
-        
-        // Usa o Subtópico como Título da Aula (ex: "Termos da Oração")
         titulo_aula: parsedData.meta.subtopico, 
-        
         modulo_slug: slugFinal,
-        conteudo_json: parsedData,
-        banca: parsedData.meta.banca.toUpperCase() // Garante padronização (CPCON)
+        conteudo_json: jsonComSlug, // Salva o JSON já com o slug dentro
+        banca: parsedData.meta.banca.toUpperCase()
       }]);
 
       if (insertError) throw insertError;
 
       alert(`✅ Missão Publicada com Sucesso!\nSlug: ${slugFinal}`);
-      setJsonInput(''); // Limpa para a próxima
+      setJsonInput(''); 
 
     } catch (err: any) {
       alert("❌ Erro ao publicar: " + err.message);

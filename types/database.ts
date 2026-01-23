@@ -55,18 +55,14 @@ export interface Exam {
   board: string | null;
   raw_content: string | null;
   created_at: string;
-}
-
-export interface ExamModule {
+}export interface ExamModule {
   id: string;
   exam_id: string;
   module_id: string | null;
   topic_order: number;
   topic_name: string | null;
   created_at: string;
-}
-
-export interface ExamTopic {
+}export interface ExamTopic {
   id: string;
   exam_id: string;
   topic_name: string | null;
