@@ -1,16 +1,47 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Code, Eye, Save, ArrowLeft, Zap, CheckCircle2, AlertCircle, Trash2 } from 'lucide-react';
+import { 
+  Code, Eye, Save, ArrowLeft, Zap, 
+  CheckCircle2, AlertCircle, Trash2, ClipboardPaste 
+} from 'lucide-react';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
+
+// ============================================================================
+// FUNÇÃO: GERA HASH DO CONTEÚDO PARA DETECÇÃO DE DUPLICATAS
+// ============================================================================
+async function generateContentHash(text: string) {
+  // Normaliza o texto: remove espaços extras e passa para minusculo
+  const normalized = text.trim().toLowerCase().replace(/\s+/g, '');
+  const msgUint8 = new TextEncoder().encode(normalized);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
 
 export default function AvantLaboratory() {
   const [jsonInput, setJsonInput] = useState('');
   const [parsedData, setParsedData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
+
+  // ============================================================================
+  // FUNÇÃO: SMART PASTE (A MÁGICA)
+  // ============================================================================
+  const handlePaste = async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      if (!text) return;
+      setJsonInput(text);
+      // O useEffect de validação cuidará do resto
+    } catch (err) {
+      console.error("Falha ao ler área de transferência: ", err);
+      alert("Permissão de colar negada pelo navegador.");
+    }
+  };
 
   // Validação em Tempo Real
   useEffect(() => {
@@ -25,8 +56,18 @@ export default function AvantLaboratory() {
       if (!parsed.meta || !parsed.question_data) {
         throw new Error("O JSON precisa ter as chaves 'meta' e 'question_data'.");
       }
-      if (!parsed.meta.banca || !parsed.meta.topico || !parsed.meta.subtopico) {
-        throw new Error("Faltam dados no 'meta': banca, topico ou subtopico.");
+      if (!parsed.meta.banca || !parsed.meta.topico) {
+        throw new Error("Faltam dados obrigatórios no 'meta': banca e topico são obrigatórios.");
+      }
+      
+      // Subtopico é opcional, usa topico como fallback se não existir
+      if (!parsed.meta.subtopico) {
+        parsed.meta.subtopico = parsed.meta.topico || 'Geral';
+      }
+      
+      // Validação das options
+      if (!parsed.question_data.options || !Array.isArray(parsed.question_data.options) || parsed.question_data.options.length === 0) {
+        throw new Error("O 'question_data' precisa ter um array 'options' com pelo menos uma alternativa.");
       }
       
       setParsedData(parsed);
@@ -37,44 +78,60 @@ export default function AvantLaboratory() {
     }
   }, [jsonInput]);
 
+  // ============================================================================
+  // FUNÇÃO: GERA SLUG ÚNICO
+  // ============================================================================
+  const generateSlug = (data: any) => {
+    const timestamp = Date.now();
+    const subtopico = data.meta.subtopico || data.meta.topico || 'geral';
+    const slugBase = `${data.meta.banca}-${data.meta.topico}-${subtopico}`
+      .toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, '-');
+    return `${slugBase}-${timestamp}`;
+  };
+
   const handlePublicar = async () => {
     if (!parsedData) return;
     setSaving(true);
 
     try {
-      // 1. Geração Automática de Slug Único
-      const timestamp = Date.now();
-      const slugBase = `${parsedData.meta.banca}-${parsedData.meta.topico}-${parsedData.meta.subtopico}`
-        .toLowerCase()
-        .normalize('NFD').replace(/[\u0300-\u036f]/g, "") // Remove acentos
-        .replace(/[^a-z0-9]+/g, '-'); // Remove caracteres especiais
+      // 1. Gera o DNA único da questão baseada no enunciado
+      const hash = await generateContentHash(parsedData.question_data.instruction);
       
-      const slugFinal = `${slugBase}-${timestamp}`;
-
-      // 2. INJEÇÃO DO SLUG NO JSON (O Pulo do Gato para o Histórico)
-      // Isso garante que o Player saiba qual questão está sendo respondida
+      const slugFinal = generateSlug(parsedData);
       const jsonComSlug = {
         ...parsedData,
-        modulo_slug: slugFinal // <--- AQUI ESTÁ A MÁGICA
+        modulo_slug: slugFinal 
       };
-
-      // 3. Inserção no Banco (Universal)
+      
+      // 2. Tenta inserir no Supabase
       const { error: insertError } = await supabase.from('modulos_estudo').insert([{
         cidade_id: null,
         modulo_nome: parsedData.meta.topico, 
-        titulo_aula: parsedData.meta.subtopico, 
+        titulo_aula: parsedData.meta.subtopico || parsedData.meta.topico, // Fallback para subtopico
         modulo_slug: slugFinal,
-        conteudo_json: jsonComSlug, // Salva o JSON já com o slug dentro
-        banca: parsedData.meta.banca.toUpperCase()
+        conteudo_json: jsonComSlug,
+        banca: parsedData.meta.banca.toUpperCase(),
+        content_hash: hash // Enviamos o Hash para validação
       }]);
 
-      if (insertError) throw insertError;
+      if (insertError) {
+        // 3. Verifica se o erro é de duplicidade (Código 23505 no Postgres)
+        if (insertError.code === '23505') {
+          setToast({ message: "🚨 QUESTÃO DUPLICADA: Esta questão já existe no banco de dados!", type: 'error' });
+          setTimeout(() => setToast(null), 5000);
+          return;
+        }
+        throw insertError;
+      }
 
-      alert(`✅ Missão Publicada com Sucesso!\nSlug: ${slugFinal}`);
-      setJsonInput(''); 
-
+      setToast({ message: "✅ Missão publicada com sucesso!", type: 'success' });
+      setTimeout(() => setToast(null), 3000);
+      setJsonInput('');
     } catch (err: any) {
-      alert("❌ Erro ao publicar: " + err.message);
+      setToast({ message: `❌ Erro técnico: ${err.message}`, type: 'error' });
+      setTimeout(() => setToast(null), 5000);
     } finally {
       setSaving(false);
     }
@@ -82,6 +139,24 @@ export default function AvantLaboratory() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans">
+      
+      {/* TOAST NOTIFICATION */}
+      {toast && (
+        <div className={`fixed top-4 right-4 z-[100] px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 animate-in slide-in-from-right-5 ${
+          toast.type === 'success' 
+            ? 'bg-green-50 border-2 border-green-200 text-green-800' 
+            : 'bg-red-50 border-2 border-red-200 text-red-800'
+        }`}>
+          <div className={`w-2 h-2 rounded-full ${toast.type === 'success' ? 'bg-green-500' : 'bg-red-500'}`} />
+          <span className="font-bold text-sm">{toast.message}</span>
+          <button 
+            onClick={() => setToast(null)}
+            className="ml-2 text-slate-400 hover:text-slate-600"
+          >
+            ×
+          </button>
+        </div>
+      )}
       
       {/* NAVBAR */}
       <nav className="border-b border-slate-100 px-6 py-4 bg-white/80 backdrop-blur-md sticky top-0 z-50">
@@ -94,11 +169,19 @@ export default function AvantLaboratory() {
               <span className="text-xl font-[1000] italic tracking-tighter text-[#4F46E5]">
                 AVANT <span className="text-slate-300 font-light ml-2 text-sm uppercase tracking-[0.3em] not-italic">Universal Engine</span>
               </span>
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Publicação Automática por Banca</span>
             </div>
           </div>
 
           <div className="flex gap-3">
+            {/* BOTÃO COLAR JSON (NOVO) */}
+            <button 
+               onClick={handlePaste}
+               className="flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest bg-indigo-50 text-[#4F46E5] hover:bg-indigo-100 border border-indigo-200 transition-all active:scale-95"
+             >
+               <ClipboardPaste className="w-4 h-4" />
+               Colar JSON
+             </button>
+
              <button 
                onClick={() => setJsonInput('')}
                className="px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-widest text-slate-400 hover:text-red-500 hover:bg-red-50 transition-colors"
@@ -112,15 +195,15 @@ export default function AvantLaboratory() {
               disabled={!!error || !parsedData || saving}
               className={`flex items-center gap-3 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest transition-all shadow-lg
                 ${parsedData && !error 
-                  ? 'bg-[#4F46E5] text-white hover:bg-indigo-700 hover:shadow-indigo-500/30 hover:scale-105' 
+                  ? 'bg-[#4F46E5] text-white hover:bg-indigo-700' 
                   : 'bg-slate-100 text-slate-400 cursor-not-allowed shadow-none'}`}
             >
               {saving ? (
-                <span className="animate-pulse flex items-center gap-2"><Zap size={14} /> Processando...</span>
+                <span className="animate-pulse flex items-center gap-2"><Zap size={14} /> Salvando...</span>
               ) : (
                 <>
                   <Save className="w-4 h-4" /> 
-                  {parsedData ? 'Publicar Missão' : 'Aguardando JSON'}
+                  {parsedData ? 'Publicar' : 'Aguardando'}
                 </>
               )}
             </button>
@@ -131,60 +214,38 @@ export default function AvantLaboratory() {
       {/* ÁREA DE TRABALHO */}
       <main className="max-w-[1800px] mx-auto p-6 grid grid-cols-12 gap-8 h-[calc(100vh-100px)]">
         
-        {/* EDITOR (ESQUERDA) */}
+        {/* EDITOR */}
         <div className="col-span-12 lg:col-span-4 flex flex-col gap-4">
           <div className="flex items-center justify-between px-2">
             <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 flex items-center gap-2">
               <Code className="w-3 h-3 text-[#4F46E5]" /> Payload Input
             </label>
-            {error ? (
-               <span className="text-[10px] font-bold text-red-500 flex items-center gap-1 bg-red-50 px-2 py-1 rounded-md"><AlertCircle size={12}/> JSON Inválido</span>
-            ) : parsedData ? (
-               <span className="text-[10px] font-bold text-green-600 flex items-center gap-1 bg-green-50 px-2 py-1 rounded-md"><CheckCircle2 size={12}/> JSON Válido</span>
-            ) : null}
+            {error && (
+               <span className="text-[10px] font-bold text-red-500 bg-red-50 px-2 py-1 rounded-md">JSON Inválido</span>
+            )}
           </div>
           
           <textarea
             value={jsonInput}
             onChange={(e) => setJsonInput(e.target.value)}
-            placeholder="Cole o JSON da questão aqui..."
-            className={`flex-1 w-full p-6 font-mono text-xs bg-slate-50 border-2 rounded-[32px] focus:outline-none transition-all resize-none leading-relaxed shadow-inner ${
-              error ? 'border-red-200 bg-red-50/50 text-red-600' : 
-              parsedData ? 'border-indigo-200 bg-indigo-50/20 text-slate-700' : 'border-slate-100 focus:border-[#4F46E5]/20'
+            placeholder="Clique no botão 'Colar JSON' acima..."
+            className={`flex-1 w-full p-6 font-mono text-xs bg-slate-50 border-2 rounded-[32px] focus:outline-none transition-all resize-none shadow-inner ${
+              error ? 'border-red-200' : 'border-slate-100 focus:border-[#4F46E5]/20'
             }`}
           />
         </div>
 
-        {/* PREVIEW (DIREITA) */}
+        {/* PREVIEW */}
         <div className="col-span-12 lg:col-span-8 flex flex-col gap-4 overflow-hidden">
-           <div className="px-2 flex justify-between items-center">
-            <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 flex items-center gap-2">
-              <Eye className="w-3 h-3 text-indigo-500" /> Preview em Tempo Real
-            </label>
-            {parsedData && (
-              <div className="flex gap-2">
-                 <span className="text-[10px] font-bold text-white bg-indigo-600 px-3 py-1 rounded-full shadow-md shadow-indigo-200">
-                    {parsedData.meta.banca}
-                 </span>
-                 <span className="text-[10px] font-bold text-slate-600 bg-slate-200 px-3 py-1 rounded-full">
-                    {parsedData.meta.topico}
-                 </span>
-              </div>
-            )}
-          </div>
-
           <div className="flex-1 bg-slate-100 border-2 border-slate-200 rounded-[40px] overflow-hidden relative p-4 md:p-8 flex items-center justify-center shadow-inner">
             {parsedData ? (
               <div className="w-full h-full max-w-5xl max-h-[850px] bg-white rounded-[40px] shadow-2xl overflow-hidden">
                  <AvantLessonPlayer key={JSON.stringify(parsedData)} dados={parsedData} mode="preview" />
               </div>
             ) : (
-              <div className="h-full flex flex-col items-center justify-center text-center opacity-40 select-none">
-                <div className="w-24 h-24 bg-slate-200 rounded-full flex items-center justify-center mb-6">
-                   <Zap className="w-10 h-10 text-slate-400" />
-                </div>
+              <div className="h-full flex flex-col items-center justify-center text-center opacity-40">
+                <Zap className="w-10 h-10 text-slate-400 mb-6" />
                 <h3 className="text-slate-400 font-black italic uppercase tracking-tighter text-2xl">Aguardando Injeção</h3>
-                <p className="text-sm font-medium text-slate-400 mt-2 max-w-xs mx-auto">Cole o código JSON no painel à esquerda para visualizar a questão antes de publicar.</p>
               </div>
             )}
           </div>

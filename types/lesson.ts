@@ -22,12 +22,17 @@ export interface SlideItem {
 export interface SlideStructure {
   header: {
     title: string; // Título principal (ex: "A Armadilha")
-    subtitle: string; // Subtítulo (ex: "Análise Sintática")
+    subtitle?: string; // Subtítulo (ex: "Análise Sintática")
   };
-  items: SlideItem[]; // Array de itens 3D
+  items?: SlideItem[]; // Array de itens 3D (opcional para alguns layouts)
   connector_symbol?: string; // Símbolo conector (ex: ",", "→", "→")
   connector_text?: string; // Texto de análise (ex: "Sujeito + Verbo")
   footer_rule: string; // Regra de ouro (ex: "Sempre identifique o sujeito antes do predicado")
+  q_header?: string; // Badge discreto e profissional
+  texto_base?: string; // Texto de apoio com separação clara
+  statement?: string; // Destaque máximo para o que precisa ser lido
+  steps?: string[]; // Array de passos (para layout logic_flow)
+  main_text?: string; // Texto principal (para layout golden_rule)
 }
 
 // ============================================================================
@@ -40,9 +45,15 @@ export interface DesignSystem {
 }
 
 // ============================================================================
+// LAYOUT TYPES (Tipos de layout disponíveis)
+// ============================================================================
+export type LayoutType = 'concept_map' | 'danger_zone' | 'logic_flow' | 'golden_rule';
+
+// ============================================================================
 // REVERSE STUDY SLIDE (Slide completo com design system)
 // ============================================================================
 export interface ReverseStudySlide {
+  layout_type?: LayoutType; // Tipo de layout visual (default: 'concept_map')
   structure: SlideStructure;
   design_system?: DesignSystem;
   fluxo?: string; // Fluxo do estudo (ex: "A Armadilha", "A Engenharia")
@@ -84,7 +95,8 @@ export interface LessonMeta {
 export interface LessonData {
   meta: LessonMeta;
   question_data: QuestionData;
-  reverse_study_slides: ReverseStudySlide[];
+  reverse_study_slides?: ReverseStudySlide[]; // Array principal de slides de estudo reverso
+  study_slides?: ReverseStudySlide[]; // Fallback alternativo (caso mude a chave no futuro JSON)
   modulo_slug?: string; // Slug do módulo (injetado pelo laboratório)
 }
 

@@ -65,7 +65,7 @@ export default function AvantLessonPlayer({
             acertou: acertou,
             banca: dados.meta?.banca || 'DESCONHECIDA',
             topico: dados.meta?.topico || 'Geral',
-            subtopico: dados.meta?.subtopico || 'Geral'
+            subtopico: dados.meta?.subtopico || dados.meta?.topico || 'Geral'
         });
     }
   };
@@ -79,9 +79,14 @@ export default function AvantLessonPlayer({
   // ============================================================================
   // RENDER HELPERS
   // ============================================================================
-  const currentSlide = dados.reverse_study_slides?.[slideAtual];
-  const totalSlides = dados.reverse_study_slides?.length || 0;
+  // Fallback para 'study_slides' caso mude a chave no futuro JSON
+  const slidesArray = (dados.reverse_study_slides || (dados as any).study_slides || []) as LessonData['reverse_study_slides'];
+  const currentSlide = slidesArray?.[slideAtual];
+  const totalSlides = slidesArray?.length || 0;
   const fadeInUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };
+  
+  // Gera hash único da questão para tema visual único
+  const questionHash = dados.question_data?.instruction || dados.modulo_slug || JSON.stringify(dados).substring(0, 50);
 
   return (
     <div className="w-full h-full flex flex-col relative bg-white md:rounded-[40px] shadow-2xl overflow-hidden border border-slate-200/60 ring-1 ring-slate-100 font-sans">
@@ -97,72 +102,92 @@ export default function AvantLessonPlayer({
 
       {/* ÁREA DE QUESTÃO (SCROLLÁVEL) */}
       <div className="flex-1 overflow-y-auto custom-scrollbar bg-gradient-to-b from-white to-slate-50/50 flex flex-col">
-        <div className="p-6 md:p-10 space-y-8 flex-1">
+        <div className="flex-1">
           
-          {/* HEADER */}
+          {/* Botão Voltar (se mode === 'live') */}
+          {mode === 'live' && (
+            <div className="px-6 pt-6 pb-2">
+              <button 
+                onClick={() => window.location.href = '/estudar'} 
+                className="group flex items-center gap-2 text-slate-500 hover:text-indigo-600 transition-colors"
+              >
+                <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-indigo-50 transition-all">
+                  <ArrowLeft size={16} />
+                </div>
+                <span className="text-sm font-medium">Voltar</span>
+              </button>
+            </div>
+          )}
+
+          {/* ========================================================================
+              NOVO HEADER: ESTILO "QCONCURSOS / EXAM SITE"
+              ======================================================================== */}
           <motion.div 
             initial="hidden" 
             animate="visible" 
             variants={fadeInUp} 
-            className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex flex-col md:flex-row gap-4 justify-between items-start md:items-center"
+            className="bg-purple-50/50 border-b border-purple-100 px-6 py-3 flex flex-col md:flex-row gap-y-2 gap-x-6 text-sm text-slate-600 font-sans leading-snug"
           >
-             <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
-                {mode === 'live' && (
-                  <button 
-                    onClick={() => window.location.href = '/estudar'} 
-                    className="group flex items-center gap-2 pr-4 md:border-r border-slate-200 hover:text-indigo-600 transition-colors"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-indigo-50 transition-all">
-                      <ArrowLeft size={16} />
-                    </div>
-                  </button>
-                )}
-                <div className="space-y-2">
-                    <div className="flex flex-wrap gap-2 items-center">
-                      {dados.meta.ano && (
-                        <span className="px-2 py-0.5 rounded-md bg-slate-100 text-[10px] font-black uppercase text-slate-500 tracking-wider border border-slate-200">
-                          {dados.meta.ano}
-                        </span>
-                      )}
-                      <span className="px-2 py-0.5 rounded-md bg-indigo-50 text-[10px] font-black uppercase text-indigo-600 tracking-wider border border-indigo-100">
-                        Banca: {dados.meta.banca}
-                      </span>
-                      {dados.meta.orgao && (
-                        <span className="flex items-center gap-1 px-2 py-0.5 rounded-md bg-sky-50 text-[10px] font-black uppercase text-sky-600 tracking-wider border border-sky-100">
-                          <Building2 size={10} /> {dados.meta.orgao}
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-xs text-slate-400 font-medium max-w-[250px] md:max-w-lg truncate">
-                      {dados.meta.prova}
-                    </p>
-                </div>
-             </div>
-             <div className="flex items-center gap-2 text-indigo-600 bg-indigo-50/50 px-3 py-1.5 rounded-lg border border-indigo-100/50 self-start md:self-center">
-                <Layers size={14} />
-                <span className="text-[10px] font-black uppercase tracking-widest">
-                  {dados.meta.topico}
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+              
+              {/* ANO */}
+              {dados.meta.ano && (
+                <>
+                  <span className="flex items-center gap-1">
+                    <strong className="text-purple-700 font-bold">Ano:</strong> 
+                    <span>{dados.meta.ano}</span>
+                  </span>
+                  <span className="hidden md:inline text-purple-200">|</span>
+                </>
+              )}
+
+              {/* BANCA */}
+              <span className="flex items-center gap-1">
+                <strong className="text-purple-700 font-bold">Banca:</strong> 
+                <span className="text-purple-900 font-semibold">{dados.meta.banca}</span>
+              </span>
+
+              <span className="hidden md:inline text-purple-200">|</span>
+
+              {/* ÓRGÃO */}
+              {dados.meta.orgao && (
+                <>
+                  <span className="flex items-center gap-1">
+                    <strong className="text-purple-700 font-bold">Órgão:</strong> 
+                    <span>{dados.meta.orgao}</span>
+                  </span>
+                  <span className="hidden md:inline text-purple-200">|</span>
+                </>
+              )}
+
+              {/* PROVA */}
+              {dados.meta.prova && (
+                <span className="flex items-center gap-1">
+                  <strong className="text-purple-700 font-bold">Prova:</strong> 
+                  <span className="truncate max-w-[300px] hover:whitespace-normal transition-all" title={dados.meta.prova}>
+                    {dados.meta.prova}
+                  </span>
                 </span>
-             </div>
+              )}
+              
+            </div>
           </motion.div>
 
-          {/* ENUNCIADO */}
-          <motion.div 
-            initial="hidden" 
-            animate="visible" 
-            variants={fadeInUp} 
-            transition={{ delay: 0.1 }}
-          >
-            <h2 className="text-lg md:text-xl font-bold text-slate-800 leading-relaxed mb-6 pl-2 border-l-4 border-indigo-500">
+          {/* ÁREA DE TEXTO DE APOIO (SE HOUVER CITACÃO DE TEXTO) */}
+          {dados.question_data.text_fragment && (
+              <div className="px-6 pt-6 pb-2">
+                  <div className="bg-slate-50 border border-slate-200 p-4 rounded-lg text-slate-700 text-sm font-serif leading-relaxed italic">
+                      <div dangerouslySetInnerHTML={{ __html: dados.question_data.text_fragment }} />
+                  </div>
+              </div>
+          )}
+
+          {/* ENUNCIADO DA QUESTÃO (ESTILO LIMPO) */}
+          <div className="px-6 py-6 md:px-8 md:py-8">
+            <p className="text-base md:text-lg text-slate-800 leading-relaxed font-normal">
               {dados.question_data.instruction}
-            </h2>
-            {dados.question_data.text_fragment && (
-                <div 
-                  className="bg-white p-6 md:p-8 rounded-3xl border border-slate-200 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] text-lg font-serif text-slate-700 leading-loose"
-                  dangerouslySetInnerHTML={{ __html: dados.question_data.text_fragment }} 
-                />
-            )}
-          </motion.div>
+            </p>
+          </div>
           
           {/* ALTERNATIVAS */}
           <motion.div 
@@ -170,63 +195,65 @@ export default function AvantLessonPlayer({
             animate="visible" 
             variants={fadeInUp} 
             transition={{ delay: 0.2 }} 
-            className="grid gap-3 pb-8"
+            className="px-6 pb-8 md:px-8"
           >
-            {dados.question_data.options.map((opt) => {
-              const isSelected = selecionada === opt.id;
-              const isCorrect = opt.is_correct;
-              const showResult = etapa === 'gabarito' || etapa === 'estudo';
-              
-              let styles = "border-slate-100 bg-white hover:border-slate-300";
-              let badge = "bg-slate-100 text-slate-400 group-hover:bg-slate-200";
-              let text = "text-slate-600";
+            <div className="grid gap-3">
+              {dados.question_data.options.map((opt) => {
+                const isSelected = selecionada === opt.id;
+                const isCorrect = opt.is_correct;
+                const showResult = etapa === 'gabarito' || etapa === 'estudo';
+                
+                let styles = "border-slate-100 bg-white hover:border-slate-300";
+                let badge = "bg-slate-100 text-slate-400 group-hover:bg-slate-200";
+                let text = "text-slate-600";
 
-              if (showResult) {
-                  if (isCorrect) {
-                      styles = "border-green-500 bg-green-50 ring-1 ring-green-200";
-                      badge = "bg-green-500 text-white shadow-md";
-                      text = "text-green-800 font-bold";
-                  } else if (isSelected && !isCorrect) {
-                      styles = "border-red-400 bg-red-50";
-                      badge = "bg-red-500 text-white shadow-md";
-                      text = "text-red-800 font-bold";
-                  } else {
-                      styles = "border-slate-100 bg-slate-50 opacity-50";
-                  }
-              } else if (isSelected) {
-                  styles = "border-indigo-600 bg-indigo-50/50 shadow-lg shadow-indigo-500/10";
-                  badge = "bg-indigo-600 text-white shadow-md";
-                  text = "text-indigo-900 font-bold";
-              }
+                if (showResult) {
+                    if (isCorrect) {
+                        styles = "border-green-500 bg-green-50 ring-1 ring-green-200";
+                        badge = "bg-green-500 text-white shadow-md";
+                        text = "text-green-800 font-bold";
+                    } else if (isSelected && !isCorrect) {
+                        styles = "border-red-400 bg-red-50";
+                        badge = "bg-red-500 text-white shadow-md";
+                        text = "text-red-800 font-bold";
+                    } else {
+                        styles = "border-slate-100 bg-slate-50 opacity-50";
+                    }
+                } else if (isSelected) {
+                    styles = "border-indigo-600 bg-indigo-50/50 shadow-lg shadow-indigo-500/10";
+                    badge = "bg-indigo-600 text-white shadow-md";
+                    text = "text-indigo-900 font-bold";
+                }
 
-              return (
-                <motion.button 
-                  key={opt.id}
-                  disabled={showResult}
-                  whileHover={!showResult ? { scale: 1.01, backgroundColor: '#F8FAFC' } : {}}
-                  whileTap={!showResult ? { scale: 0.98 } : {}}
-                  onClick={() => setSelecionada(opt.id)} 
-                  className={`group relative p-4 md:p-5 rounded-2xl border-2 text-left flex items-start gap-4 transition-all duration-300 ${styles}`}
-                >
-                  <span className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm transition-colors duration-300 ${badge}`}>
-                    {opt.id}
-                  </span>
-                  <span className={`font-medium pt-1 ${text}`}>
-                    {opt.text}
-                  </span>
-                  {showResult && isCorrect && (
-                    <div className="absolute right-4 top-5 text-green-600 animate-in zoom-in">
-                      <CheckCircle2 size={24} />
-                    </div>
-                  )}
-                  {showResult && isSelected && !isCorrect && (
-                    <div className="absolute right-4 top-5 text-red-500 animate-in zoom-in">
-                      <XCircle size={24} />
-                    </div>
-                  )}
-                </motion.button>
-              )
-            })}
+                return (
+                  <motion.button 
+                    key={opt.id}
+                    disabled={showResult}
+                    whileHover={!showResult ? { scale: 1.01, backgroundColor: '#F8FAFC' } : {}}
+                    whileTap={!showResult ? { scale: 0.98 } : {}}
+                    onClick={() => setSelecionada(opt.id)} 
+                    className={`group relative p-4 md:p-5 rounded-2xl border-2 text-left flex items-start gap-4 transition-all duration-300 ${styles}`}
+                  >
+                    <span className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm transition-colors duration-300 ${badge}`}>
+                      {opt.id}
+                    </span>
+                    <span className={`font-medium pt-1 ${text}`}>
+                      {opt.text}
+                    </span>
+                    {showResult && isCorrect && (
+                      <div className="absolute right-4 top-5 text-green-600 animate-in zoom-in">
+                        <CheckCircle2 size={24} />
+                      </div>
+                    )}
+                    {showResult && isSelected && !isCorrect && (
+                      <div className="absolute right-4 top-5 text-red-500 animate-in zoom-in">
+                        <XCircle size={24} />
+                      </div>
+                    )}
+                  </motion.button>
+                )
+              })}
+            </div>
           </motion.div>
 
           {/* BOTÃO CONFIRMAR */}
@@ -266,10 +293,10 @@ export default function AvantLessonPlayer({
              </button>
              {proximaSlug ? (
                <button 
-                 onClick={() => handleNavegar(proximaSlug)} 
+                 onClick={() => proximaSlug && handleNavegar(proximaSlug)} 
                  className="flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-50 text-indigo-700 font-black uppercase text-xs tracking-widest hover:bg-indigo-100 transition-all"
                >
-                  Próxima Questão <ArrowRight size={16} />
+                 Próxima Questão <ArrowRight size={16} />
                </button>
              ) : (
                 <button 
@@ -389,7 +416,7 @@ export default function AvantLessonPlayer({
                     transition={{ duration: 0.4, ease: 'easeInOut' }}
                     className="w-full h-full"
                   >
-                    <NeuroSlide data={currentSlide} />
+                    <NeuroSlide data={currentSlide} questionHash={questionHash} />
                   </motion.div>
                 </AnimatePresence>
               </div>
@@ -409,7 +436,7 @@ export default function AvantLessonPlayer({
                   
                   {/* Indicadores de Progresso */}
                   <div className="flex gap-2">
-                    {dados.reverse_study_slides?.map((_, i: number) => (
+                    {slidesArray?.map((_, i: number) => (
                       <div 
                         key={i} 
                         className={`h-1.5 rounded-full transition-all duration-500 ${
