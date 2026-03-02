@@ -1,4 +1,4 @@
-# Relatório de Arquivos e Pastas Órfãos - FlowMedix
+# Relatório de Arquivos e Pastas Órfãos - AVANT
 
 **Data da Análise:** $(date)
 **Analista:** Engenheiro de Software Sênior - Next.js App Router
@@ -7,7 +7,7 @@
 
 ## 📋 RESUMO EXECUTIVO
 
-Este relatório identifica arquivos e pastas que não estão sendo utilizados no projeto FlowMedix, incluindo componentes órfãos, rotas vazias e estruturas antigas que podem ter sido substituídas pelas novas versões do AVANT Lab e Área do Aluno.
+Este relatório identifica arquivos e pastas que não estão sendo utilizados no projeto AVANT, incluindo componentes órfãos, rotas vazias e estruturas antigas que podem ter sido substituídas pelas novas versões do AVANT Lab e Área do Aluno.
 
 ---
 

@@ -1,6 +1,10 @@
+import VitrineClient from '@/components/vitrine/VitrineClient';
+import { 
+  getModulosEstudoCached, 
+  getHistoricoQuestoesCached 
+} from '@/lib/cache';
 import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
-import VitrineClient from '@/components/vitrine/VitrineClient';
 
 interface ModuloEstudoRow {
   id: string;
@@ -18,7 +22,8 @@ interface HistoricoQuestaoRow {
 }
 
 export default async function VitrinePage() {
-  const cookieStore = cookies();
+  // Obter userId fora do cache (cookies são dinâmicos - não permitidos dentro de unstable_cache)
+  const cookieStore = await cookies();
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -30,17 +35,28 @@ export default async function VitrinePage() {
       },
     }
   );
+  const { data: { user } } = await supabase.auth.getUser();
+  const userId = user?.id;
 
-  const [modulosRes, historicoRes] = await Promise.all([
-    supabase.from('modulos_estudo').select('*'),
-    supabase.from('historico_questoes').select('*')
+  // Usa cache estratégico - revalida a cada 5 minutos (módulos) e 2 minutos (histórico)
+  const [modulosData, historicoData] = await Promise.all([
+    getModulosEstudoCached(),
+    getHistoricoQuestoesCached(userId),
   ]);
 
-  const modulosData = (modulosRes.data || []) as ModuloEstudoRow[];
-  const historicoData = (historicoRes.data || []) as HistoricoQuestaoRow[];
+  // Type assertions para compatibilidade
+  const modulosTyped = (modulosData || []) as ModuloEstudoRow[];
+  const historicoTyped = (historicoData || []) as HistoricoQuestaoRow[];
 
-  const modulosProcessados = modulosData.map((modulo: ModuloEstudoRow) => {
-    const tentativas = historicoData.filter((h: HistoricoQuestaoRow) => h.modulo_slug === modulo.modulo_slug);
+  // Otimização: Criar Map para O(1) lookup em vez de O(n*m)
+  const historicoMap = new Map<string, HistoricoQuestaoRow[]>();
+  historicoTyped.forEach((h: HistoricoQuestaoRow) => {
+    const existing = historicoMap.get(h.modulo_slug) || [];
+    historicoMap.set(h.modulo_slug, [...existing, h]);
+  });
+
+  const modulosProcessados = modulosTyped.map((modulo: ModuloEstudoRow) => {
+    const tentativas = historicoMap.get(modulo.modulo_slug) || [];
     const acertos = tentativas.filter((t: HistoricoQuestaoRow) => t.acertou).length;
     const total = tentativas.length;
     const percentual = total > 0 ? Math.round((acertos / total) * 100) : 0;
@@ -61,11 +77,11 @@ export default async function VitrinePage() {
     };
   }).sort((a: any, b: any) => b.stats.priorityScore - a.stats.priorityScore);
 
-  const totalAcertos = historicoData.filter((h: HistoricoQuestaoRow) => h.acertou).length;
+  const totalAcertos = historicoTyped.filter((h: HistoricoQuestaoRow) => h.acertou).length;
   const globalStats = {
     ofensiva: 1,
     xp: totalAcertos * 50,
-    taxaGeral: Math.round((totalAcertos / (historicoData.length || 1)) * 100)
+    taxaGeral: Math.round((totalAcertos / (historicoTyped.length || 1)) * 100)
   };
 
   return (

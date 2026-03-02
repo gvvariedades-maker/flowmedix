@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "ano": "2023",
+    "banca": "EBSERH",
+    "orgao": "Prefeitura de Dona Inês",
+    "prova": "Agente Administrativo",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Sintaxe - Classificação de Orações"
+  },
+  "question_data": {
+    "instruction": "No período: \"É preciso conhecer essas limitações-características <strong>para nos darmos melhor com essa tecnologia</strong>\". A oração em destaque é classificada como:",
+    "text_fragment": "<p>No período: \"É preciso conhecer essas limitações-características <strong>para nos darmos melhor com essa tecnologia</strong>\". A oração em destaque é classificada como:</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "Oração subordinada adverbial temporal.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Oração subordinada adjetiva restritiva.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Oração subordinada adverbial final.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Oração subordinada concessiva.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Oração coordenada conclusiva.",
+        "is_correct": false
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "A oração \"para nos darmos melhor com essa tecnologia\" expressa finalidade, indicando o objetivo ou propósito da ação principal. É introduzida pela conjunção \"para\", característica das orações subordinadas adverbiais finais."
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "layout_variant": "morphological",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Sintaxe - Classificação de Orações"
+      },
+      "items": [
+        {
+          "label": "Oração Subordinada Adverbial Final",
+          "detail": "Expressa finalidade, objetivo ou propósito da ação principal. É introduzida por: para que, a fim de que, porque (no sentido de para que).",
+          "icon": "Target"
+        },
+        {
+          "label": "Conjunções Típicas",
+          "detail": "Principais conectores: \"para\", \"para que\", \"a fim de que\", \"porque\" (quando indica finalidade).",
+          "icon": "Link"
+        },
+        {
+          "label": "Função Sintática",
+          "detail": "Exerce função de adjunto adverbial de finalidade, modificando o verbo da oração principal.",
+          "icon": "FunctionSquare"
+        },
+        {
+          "label": "Exemplo da Questão",
+          "detail": "\"É preciso conhecer essas limitações-características para nos darmos melhor com essa tecnologia\". A oração \"para nos darmos melhor...\" indica o OBJETIVO de conhecer as limitações.",
+          "icon": "FileText"
+        },
+        {
+          "label": "Diferenciação",
+          "detail": "NÃO confundir com: Temporal (quando/assim que), Concessiva (embora/mesmo que), Conclusiva (portanto/logo).",
+          "icon": "AlertCircle"
+        }
+      ],
+      "footer_rule": "Oração Final = Expressa OBJETIVO/FINALIDADE. Palavra-chave: \"para\" indicando propósito!"
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Língua Portuguesa",
+      "content": "ORAÇÃO SUBORDINADA ADVERBIAL FINAL = EXPRESSA OBJETIVO OU FINALIDADE DA AÇÃO PRINCIPAL"
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Língua Portuguesa",
+      "steps": [
+        {
+          "id": "1",
+          "text": "Identifique a oração destacada no período: \"para nos darmos melhor com essa tecnologia\""
+        },
+        {
+          "id": "2",
+          "text": "Observe a conjunção que a introduz: \"para\" - indica finalidade/objetivo"
+        },
+        {
+          "id": "3",
+          "text": "Analise a relação semântica: A oração responde à pergunta \"Para quê?\" ou \"Com que objetivo?\""
+        },
+        {
+          "id": "4",
+          "text": "Verifique o sentido: \"É preciso conhecer... PARA nos darmos melhor\" = objetivo de conhecer"
+        },
+        {
+          "id": "5",
+          "text": "Classifique: Oração Subordinada Adverbial Final (expressa finalidade)"
+        }
+      ],
+      "footer_rule": "Pipeline: Identificar → Analisar conjunção → Verificar sentido → Classificar"
+    },
+    {
+      "type": "danger_zone",
+      "subject": "Língua Portuguesa",
+      "content": "CUIDADO: \"Para\" pode indicar FINALIDADE (adverbial final) ou DESTINO/DIREÇÃO (adjunto adverbial). Na questão, \"para nos darmos melhor\" expressa OBJETIVO, não destino físico.",
+      "items": [
+        {
+          "id": "1",
+          "label": "Não é Temporal",
+          "detail": "Temporal indica tempo (quando, assim que, enquanto). A questão não trata de tempo, mas de OBJETIVO."
+        },
+        {
+          "id": "2",
+          "label": "Não é Adjetiva Restritiva",
+          "detail": "Adjetiva restritiva modifica substantivo (que, o qual). A oração modifica o VERBO \"conhecer\", não um substantivo."
+        },
+        {
+          "id": "3",
+          "label": "Não é Concessiva",
+          "detail": "Concessiva expressa oposição (embora, mesmo que). Não há oposição na questão, apenas finalidade."
+        },
+        {
+          "id": "4",
+          "label": "Não é Coordenada Conclusiva",
+          "detail": "Coordenada conclusiva usa \"portanto\", \"logo\", \"então\". A oração é SUBORDINADA (depende da principal) e usa \"para\"."
+        }
+      ],
+      "footer_rule": "REGRA DE OURO: \"Para\" + sentido de OBJETIVO = Oração Subordinada Adverbial Final!"
+    }
+  ]
+}

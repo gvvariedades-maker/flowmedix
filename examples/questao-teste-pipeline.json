@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "ano": "2024",
+    "banca": "EBSERH",
+    "orgao": "Prefeitura de Dona Inês",
+    "prova": "Agente Administrativo",
+    "topico": "Fundamentos de Enfermagem",
+    "subtopico": "Orações Subordinadas"
+  },
+  "question_data": {
+    "instruction": "No período: \"É preciso conhecer essas limitações-características <strong>para nos darmos melhor com essa tecnologia</strong>\". A oração em destaque é classificada como:",
+    "text_fragment": "<p>\"É preciso conhecer essas limitações-características <strong>para nos darmos melhor com essa tecnologia</strong>\".</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "Oração subordinada adverbial temporal.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Oração subordinada adjetiva restritiva.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Oração subordinada adverbial final.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Oração subordinada concessiva.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Oração coordenada conclusiva.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Fundamentos de Enfermagem",
+      "meta": {
+        "topico": "Fundamentos de Enfermagem",
+        "subtopico": "Orações Subordinadas"
+      },
+      "items": [
+        {
+          "label": "Oração Destacada",
+          "detail": "Para nos darmos melhor com essa tecnologia",
+          "icon": "Sparkles"
+        },
+        {
+          "label": "Função Sintática",
+          "detail": "Indica finalidade ou propósito",
+          "icon": "Target"
+        },
+        {
+          "label": "Verbo Principal",
+          "detail": "É preciso conhecer",
+          "icon": "Shield"
+        },
+        {
+          "label": "Conectivo",
+          "detail": "Para + infinitivo",
+          "icon": "ArrowRight"
+        }
+      ],
+      "footer_rule": "Trace cada termo em volta da oração para entender sua relação sintática."
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Fundamentos de Enfermagem",
+      "meta": {
+        "topico": "Fundamentos de Enfermagem",
+        "subtopico": "Orações Subordinadas"
+      },
+      "steps": [
+        "Leia cuidadosamente o trecho destacado: \"para nos darmos melhor com essa tecnologia\"",
+        "Identifique o conectivo \"para\" seguido de verbo no infinitivo (\"darmos\")",
+        "Pergunte-se mentalmente: \"Para quê?\" - A resposta indica finalidade",
+        "Confirme que a oração responde à pergunta sobre propósito ou objetivo",
+        "Classifique como oração subordinada adverbial final",
+        "Selecione a alternativa C que corresponde à classificação correta"
+      ],
+      "footer_rule": "Sempre aplique o método \"para quê?\" antes de confirmar a resposta."
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Fundamentos de Enfermagem",
+      "meta": {
+        "topico": "Fundamentos de Enfermagem",
+        "subtopico": "Orações Subordinadas"
+      },
+      "content": "Orações iniciadas por \"para\" + verbo no infinitivo SEMPRE indicam finalidade. A pergunta-chave é: \"Para quê?\" Se a resposta indica propósito, objetivo ou intenção, é adverbial final.",
+      "footer_rule": "Repita o mantra: finalidade = \"para quê?\" + infinitivo = adverbial final."
+    },
+    {
+      "type": "danger_zone",
+      "subject": "Fundamentos de Enfermagem",
+      "meta": {
+        "topico": "Fundamentos de Enfermagem",
+        "subtopico": "Orações Subordinadas"
+      },
+      "content": "⚠️ PEGADINHA CRÍTICA: Esta questão é uma armadilha porque muitos alunos confundem \"para\" + infinitivo com outras classificações de orações subordinadas.",
+      "items": [
+        {
+          "label": "Confundir com Temporal",
+          "detail": "Nem todo \"para\" indica tempo. Quando há verbo no infinitivo logo após, SEMPRE indica finalidade, não tempo."
+        },
+        {
+          "label": "Ignorar o Infinitivo",
+          "detail": "A presença do infinitivo \"darmos\" é a chave. Sem infinitivo, \"para\" pode ter outras funções."
+        },
+        {
+          "label": "Confundir com Concessiva",
+          "detail": "Orações concessivas expressam oposição ou concessão, não finalidade. O infinitivo elimina essa possibilidade."
+        },
+        {
+          "label": "Marcar sem Analisar",
+          "detail": "Evite marcar por \"achismo\". Sempre aplique o método \"para quê?\" antes de confirmar."
+        }
+      ],
+      "footer_rule": "Só marque como adverbial final quando a oração respondeu \"para quê?\" e tiver verbo no infinitivo após \"para\"."
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "ano": "2024",
+    "banca": "CESPE",
+    "orgao": "INSS",
+    "prova": "Analista do Seguro Social",
+    "topico": "Direito Previdenciário",
+    "subtopico": "Princípios da Seguridade Social"
+  },
+  "question_data": {
+    "instruction": "Com base nos princípios constitucionais da Seguridade Social, assinale a opção correta:",
+    "text_fragment": "<p>Os princípios da Seguridade Social estão previstos na <strong>Constituição Federal de 1988</strong> e orientam toda a legislação previdenciária.</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "O princípio da Universalidade garante que todos os brasileiros receberão benefícios, independentemente de contribuição.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "O princípio da Seletividade permite ao legislador definir quem recebe o quê, baseado na aptidão da prestação para resolver o problema social.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "O princípio da Uniformidade estabelece que benefícios urbanos e rurais devem ter valores diferentes.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "O princípio da Irredutibilidade permite redução administrativa do valor nominal do benefício.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "O princípio da Universalidade significa que todos os riscos sociais devem ser cobertos, mas não todas as pessoas.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Direito Previdenciário",
+      "meta": {
+        "topico": "Direito Previdenciário",
+        "subtopico": "Princípios da Seguridade Social"
+      },
+      "items": [
+        {
+          "label": "Universalidade",
+          "detail": "A cobertura deve alcançar todos os riscos sociais e todas as pessoas residentes no país.",
+          "icon": "Globe2"
+        },
+        {
+          "label": "Uniformidade",
+          "detail": "Benefícios e serviços equivalentes para populações urbanas e rurais.",
+          "icon": "Scale"
+        },
+        {
+          "label": "Seletividade",
+          "detail": "O legislador define quem recebe o quê, baseado na aptidão da prestação para resolver o problema.",
+          "icon": "Filter"
+        },
+        {
+          "label": "Irredutibilidade",
+          "detail": "O valor nominal do benefício não pode ser diminuído administrativamente.",
+          "icon": "TrendingUp"
+        }
+      ],
+      "footer_rule": "Não confundir Universalidade de Cobertura com Universalidade de Atendimento!"
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Direito Previdenciário",
+      "content": "A Universalidade de Cobertura significa que TODOS os riscos sociais devem ser protegidos, enquanto a Universalidade de Atendimento seria garantir benefícios a TODAS as pessoas sem necessidade de contribuição. A CF/88 adotou apenas a Universalidade de Cobertura."
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Direito Previdenciário",
+      "steps": [
+        "Identifique qual princípio está sendo questionado",
+        "Verifique se o princípio garante cobertura de riscos OU atendimento universal",
+        "Lembre-se: Universalidade = Cobertura de Riscos, não atendimento universal",
+        "Confirme se há necessidade de contribuição para receber benefícios",
+        "Aplique o princípio da Seletividade: legislador define quem recebe o quê"
+      ]
+    },
+    {
+      "type": "danger_zone",
+      "subject": "Direito Previdenciário",
+      "content": "Pegadinha Clássica: Universalidade de Cobertura vs Universalidade de Atendimento",
+      "items": [
+        {
+          "label": "Erro Comum",
+          "detail": "Achar que Universalidade significa que TODOS recebem benefícios sem contribuir"
+        },
+        {
+          "label": "Realidade",
+          "detail": "Universalidade significa cobertura de TODOS os riscos sociais, não atendimento universal"
+        },
+        {
+          "label": "Dica",
+          "detail": "Sempre verifique se a questão mistura 'cobertura de riscos' com 'atendimento universal'"
+        }
+      ],
+      "footer_rule": "Universalidade = Cobertura de Riscos | Seletividade = Quem recebe o quê"
+    }
+  ]
+}

@@ -2,12 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import { createServerSupabase } from '@/lib/supabase/server';
-import { ADMIN_EMAIL } from '@/lib/constants';
-
-const ADMIN_EMAIL_LOWER = ADMIN_EMAIL.toLowerCase();
+import { getAdminEmail } from '@/lib/constants';
+import { ResolveUserSchema } from '@/lib/validations';
+import { logger } from '@/lib/logger';
 
 export async function POST(request: NextRequest) {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -38,33 +38,47 @@ export async function POST(request: NextRequest) {
   }
 
   const email = session.user.email.toLowerCase();
-  if (email !== ADMIN_EMAIL_LOWER) {
+  if (email !== getAdminEmail()) {
     return NextResponse.json({ error: 'Acesso negado' }, { status: 403 });
   }
 
-  let payload: { email?: string };
+  let body: unknown;
   try {
-    payload = await request.json();
+    body = await request.json();
   } catch {
+    logger.warn('Invalid JSON payload in resolve-user');
     return NextResponse.json({ error: 'Payload inválido' }, { status: 400 });
   }
 
-  const targetEmail = payload.email?.toLowerCase().trim();
-  if (!targetEmail) {
-    return NextResponse.json({ error: 'Informe um e-mail válido' }, { status: 400 });
+  // Validação com Zod
+  const validationResult = ResolveUserSchema.safeParse(body);
+  if (!validationResult.success) {
+    logger.warn('Validation failed for resolve-user', { errors: validationResult.error.issues });
+    return NextResponse.json(
+      { error: 'Dados inválidos', details: validationResult.error.issues },
+      { status: 400 }
+    );
   }
+
+  const { email: targetEmail } = validationResult.data;
 
   const adminSupabase = await createServerSupabase();
   const { data: user, error } = await adminSupabase.auth.admin.getUserByEmail(targetEmail);
 
   if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    logger.error('Database error resolving user', error, { email: targetEmail });
+    return NextResponse.json(
+      { error: 'Erro ao buscar usuário' },
+      { status: 500 }
+    );
   }
 
   if (!user) {
+    logger.warn('User not found', { email: targetEmail });
     return NextResponse.json({ error: 'Usuário não encontrado' }, { status: 404 });
   }
 
+  logger.info('User resolved successfully', { userId: user.id });
   return NextResponse.json({ userId: user.id });
 }
 

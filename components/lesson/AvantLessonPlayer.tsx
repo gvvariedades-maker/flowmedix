@@ -15,11 +15,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import NeuroSlide from '@/components/slides/NeuroSlide';
-import type { AvantLessonPlayerProps, LessonData } from '@/types/lesson';
+import { logger } from '@/lib/logger';
+import { sanitizeHTML } from '@/lib/validations';
+import type { AvantLessonPlayerProps, LessonData, ReverseStudySlide } from '@/types/lesson';
 import { 
   CheckCircle2, XCircle, ChevronRight, ChevronLeft, 
-  Layers, Lightbulb, ArrowRight, ArrowLeft, 
-  Flag, Building2, BrainCircuit, X
+  Lightbulb, ArrowRight, ArrowLeft, 
+  Flag, BrainCircuit, X
 } from 'lucide-react';
 
 export default function AvantLessonPlayer({ 
@@ -54,19 +56,33 @@ export default function AvantLessonPlayer({
   const registrarTentativa = async (opcaoId: string) => {
     if (mode === 'preview') return;
 
-    const opcaoEscolhida = dados.question_data.options.find((o: any) => o.id === opcaoId);
-    const acertou = opcaoEscolhida?.is_correct || false;
-    const { data: { user } } = await supabase.auth.getUser();
+    try {
+      const opcaoEscolhida = dados.question_data.options.find((o: any) => o.id === opcaoId);
+      const acertou = opcaoEscolhida?.is_correct || false;
+      const { data: { user }, error: authError } = await supabase.auth.getUser();
 
-    if (user) {
-        await supabase.from('historico_questoes').insert({
-            user_id: user.id,
-            modulo_slug: moduloSlug || dados.modulo_slug || 'slug-legacy',
-            acertou: acertou,
-            banca: dados.meta?.banca || 'DESCONHECIDA',
-            topico: dados.meta?.topico || 'Geral',
-            subtopico: dados.meta?.subtopico || dados.meta?.topico || 'Geral'
+      if (authError) {
+        logger.error('Failed to get user', authError);
+        return;
+      }
+
+      if (user) {
+        const { error: insertError } = await supabase.from('historico_questoes').insert({
+          user_id: user.id,
+          modulo_slug: moduloSlug || dados.modulo_slug || 'slug-legacy',
+          acertou: acertou,
+          banca: dados.meta?.banca || 'DESCONHECIDA',
+          topico: dados.meta?.topico || 'Geral',
+          subtopico: dados.meta?.subtopico || dados.meta?.topico || 'Geral'
         });
+
+        if (insertError) {
+          logger.error('Failed to register attempt', insertError, { userId: user.id, moduloSlug });
+        }
+      }
+    } catch (error) {
+      logger.error('Unexpected error registering attempt', error);
+      // Não interromper o fluxo do usuário em caso de erro
     }
   };
 
@@ -79,14 +95,76 @@ export default function AvantLessonPlayer({
   // ============================================================================
   // RENDER HELPERS
   // ============================================================================
-  // Fallback para 'study_slides' caso mude a chave no futuro JSON
-  const slidesArray = (dados.reverse_study_slides || (dados as any).study_slides || []) as LessonData['reverse_study_slides'];
-  const currentSlide = slidesArray?.[slideAtual];
-  const totalSlides = slidesArray?.length || 0;
+  const questionSubject = dados.meta.topico || dados.meta.subtopico || 'Geral';
+  const subtopicLabel = dados.meta.subtopico
+    ? `Subtópico: ${dados.meta.subtopico}`
+    : dados.meta.topico
+      ? `Tópico: ${dados.meta.topico}`
+      : 'Revisão guiada por estudo reverso';
+
+  const slidesSource = ((dados.reverse_study_slides || (dados as any).study_slides) ?? []) as LessonData['reverse_study_slides'];
+  const fallbackSlide: ReverseStudySlide = {
+    layout_type: 'golden_rule',
+    structure: {
+      header: {
+        title: `Estudo reverso: ${questionSubject}`,
+        subtitle: subtopicLabel,
+      },
+      main_text: dados.question_data.instruction,
+      footer_rule: dados.question_data.instruction,
+    },
+    design_system: {
+      accent_color: 'cyan',
+    },
+    subject: questionSubject,
+    meta: {
+      topico: dados.meta.topico,
+      subtopico: dados.meta.subtopico,
+    },
+  };
+
+  const normalizeStructure = (structure?: ReverseStudySlide['structure']) => {
+    if (!structure) return undefined;
+    const headerBase = structure.header || { title: '' };
+    const fallbackTitle = dados.question_data.instruction || questionSubject;
+    const fallbackSubtitle = headerBase.subtitle || subtopicLabel;
+    return {
+      ...structure,
+      header: {
+        ...headerBase,
+        title: headerBase.title || fallbackTitle,
+        subtitle: headerBase.subtitle || fallbackSubtitle,
+      },
+      footer_rule: structure.footer_rule || dados.question_data.instruction || `Revisão de ${questionSubject}`,
+    };
+  };
+
+  const normalizeSlide = (slide: ReverseStudySlide): ReverseStudySlide => ({
+    ...slide,
+    subject: slide.subject || questionSubject,
+    meta: {
+      topico: slide.meta?.topico || dados.meta.topico,
+      subtopico: slide.meta?.subtopico || dados.meta.subtopico,
+      ...slide.meta,
+    },
+    structure: normalizeStructure(slide.structure) ?? slide.structure,
+  });
+
+  const slidesArray = (slidesSource.length ? slidesSource : [fallbackSlide]).map(normalizeSlide);
+  const currentSlide = slidesArray[slideAtual];
+  const totalSlides = slidesArray.length;
   const fadeInUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };
   
-  // Gera hash único da questão para tema visual único
-  const questionHash = dados.question_data?.instruction || dados.modulo_slug || JSON.stringify(dados).substring(0, 50);
+  // Gera hash único e robusto da questão para tema visual único
+  // Combina múltiplos fatores para garantir unicidade: instruction + meta + modulo_slug
+  const questionHash = [
+    dados.question_data?.instruction || '',
+    dados.meta?.banca || '',
+    dados.meta?.ano || '',
+    dados.meta?.topico || '',
+    dados.meta?.subtopico || '',
+    dados.modulo_slug || '',
+  ].filter(Boolean).join('-') || JSON.stringify(dados).substring(0, 100);
 
   return (
     <div className="w-full h-full flex flex-col relative bg-white md:rounded-[40px] shadow-2xl overflow-hidden border border-slate-200/60 ring-1 ring-slate-100 font-sans">
@@ -177,7 +255,7 @@ export default function AvantLessonPlayer({
           {dados.question_data.text_fragment && (
               <div className="px-6 pt-6 pb-2">
                   <div className="bg-slate-50 border border-slate-200 p-4 rounded-lg text-slate-700 text-sm font-serif leading-relaxed italic">
-                      <div dangerouslySetInnerHTML={{ __html: dados.question_data.text_fragment }} />
+                      <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(dados.question_data.text_fragment) }} />
                   </div>
               </div>
           )}
@@ -185,7 +263,7 @@ export default function AvantLessonPlayer({
           {/* ENUNCIADO DA QUESTÃO (ESTILO LIMPO) */}
           <div className="px-6 py-6 md:px-8 md:py-8">
             <p className="text-base md:text-lg text-slate-800 leading-relaxed font-normal">
-              {dados.question_data.instruction}
+              <span dangerouslySetInnerHTML={{ __html: sanitizeHTML(dados.question_data.instruction) }} />
             </p>
           </div>
           
@@ -406,17 +484,21 @@ export default function AvantLessonPlayer({
               </div>
 
               {/* Conteúdo Full Immersion */}
-              <div className="flex-1 overflow-hidden relative">
+              <div className="flex-1 overflow-hidden relative min-h-0">
                 <AnimatePresence mode='wait'>
                   <motion.div 
-                    key={slideAtual}
+                    key={`slide-${slideAtual}-${currentSlide?.type || 'default'}-${JSON.stringify(currentSlide).substring(0, 20)}`}
                     initial={{ opacity: 0, x: 50 }} 
                     animate={{ opacity: 1, x: 0 }} 
                     exit={{ opacity: 0, x: -50 }} 
                     transition={{ duration: 0.4, ease: 'easeInOut' }}
-                    className="w-full h-full"
+                    className="w-full h-full overflow-hidden"
                   >
-                    <NeuroSlide data={currentSlide} questionHash={questionHash} />
+                    <NeuroSlide 
+                      data={currentSlide} 
+                      questionHash={questionHash}
+                      slideIndex={slideAtual}
+                    />
                   </motion.div>
                 </AnimatePresence>
               </div>

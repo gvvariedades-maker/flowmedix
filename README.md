@@ -1,6 +1,6 @@
-# FlowMedix
+# AVANT
 
-Plataforma de estudo reverso para concursos públicos que transforma editais e conteúdos de Língua Portuguesa em fluxogramas interativos e simuladores de decisão.
+Plataforma de estudo reverso exclusiva para Técnicos de Enfermagem. Prepare-se para concursos EBSERH, prefeituras e mais com fluxogramas interativos e simuladores de decisão.
 
 ## Tech Stack
 

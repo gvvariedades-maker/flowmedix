@@ -1,4 +1,4 @@
--- FlowMedix Database Schema
+-- AVANT Database Schema
 -- Execute este arquivo no SQL Editor do Supabase
 
 -- Enable UUID extension

@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "ano": "2024",
+    "banca": "EBSERH",
+    "orgao": "Prefeitura de Boa Vista de Santana",
+    "prova": "Agente Administrativo",
+    "topico": "Língua Portuguesa",
+    "subtopico": "Formação e Estrutura das Palavras"
+  },
+  "question_data": {
+    "instruction": "Com relação aos processos de formação de palavras, é CORRETO afirmar que:",
+    "text_fragment": "<p>Leia a reportagem sobre TDAH e TikTok para responder à questão. Com relação aos processos de formação de palavras, é CORRETO afirmar que:</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "rebatizado é uma palavra formada por derivação regressiva.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "obesidade e mentais são palavras formadas por processos diferentes.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "as palavras EUA, TDAH, DDA e DSM são formadas pelo mesmo processo.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "hiperativa é uma palavra formada por derivação imprópria.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "hashtag é um exemplo de neologismo.",
+        "is_correct": false
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "EUA, TDAH, DDA e DSM são siglas (acrônimos) formadas pelo mesmo processo de abreviação: uso das iniciais das palavras. EUA = Estados Unidos da América; TDAH = Transtorno do Déficit de Atenção com Hiperatividade; DDA = Déficit de Atenção; DSM = Manual de Diagnóstico Estatístico de Transtornos Mentais."
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "layout_variant": "morphological",
+      "subject": "Língua Portuguesa",
+      "meta": {
+        "topico": "Língua Portuguesa",
+        "subtopico": "Formação e Estrutura das Palavras"
+      },
+      "items": [
+        {
+          "label": "Sigla (Abreviação)",
+          "detail": "Palavra formada pelas iniciais de outras palavras. Ex.: EUA, TDAH, ONU, OMS, INSS.",
+          "icon": "Type"
+        },
+        {
+          "label": "Processo de Formação",
+          "detail": "As letras representam as iniciais de cada palavra da expressão original. Todas as siglas da questão seguem esse mesmo processo.",
+          "icon": "Link"
+        },
+        {
+          "label": "Exemplos da Questão",
+          "detail": "EUA (Estados Unidos da América), TDAH (Transtorno do Déficit de Atenção com Hiperatividade), DDA (Déficit de Atenção), DSM (Diagnostic and Statistical Manual).",
+          "icon": "FileText"
+        },
+        {
+          "label": "Outros Processos",
+          "detail": "Derivação regressiva: verbo → substantivo (ajudar → ajuda). Derivação prefixal: re- + batizar = rebatizar. Derivação sufixal: obeso + -idade = obesidade.",
+          "icon": "List"
+        },
+        {
+          "label": "Diferenciação",
+          "detail": "NÃO confundir sigla com: derivação regressiva, derivação imprópria, neologismo ou empréstimo.",
+          "icon": "AlertCircle"
+        }
+      ],
+      "footer_rule": "Sigla = Iniciais de palavras. Todas as quatro (EUA, TDAH, DDA, DSM) = MESMO processo!"
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Língua Portuguesa",
+      "content": "SIGLA = PALAVRA FORMADA PELAS INICIAIS DE OUTRAS PALAVRAS. EUA, TDAH, DDA e DSM são todas siglas!"
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Língua Portuguesa",
+      "steps": [
+        {
+          "id": "1",
+          "text": "Identifique as palavras em análise: EUA, TDAH, DDA e DSM"
+        },
+        {
+          "id": "2",
+          "text": "Verifique a origem de cada uma: todas são formadas por iniciais de expressões"
+        },
+        {
+          "id": "3",
+          "text": "EUA = Estados Unidos da América; TDAH = Transtorno do Déficit de Atenção com Hiperatividade"
+        },
+        {
+          "id": "4",
+          "text": "DDA = Déficit de Atenção; DSM = Manual de Diagnóstico Estatístico de Transtornos Mentais"
+        },
+        {
+          "id": "5",
+          "text": "Conclusão: Todas são SIGLAS (abreviação por iniciais) = mesmo processo de formação"
+        }
+      ],
+      "footer_rule": "Pipeline: Identificar → Verificar origem → Confirmar iniciais → Classificar como sigla"
+    },
+    {
+      "type": "danger_zone",
+      "subject": "Língua Portuguesa",
+      "content": "CUIDADO: rebatizado (prefixo re-), hiperativa (prefixo hiper-), obesidade (sufixo -idade) e hashtag (empréstimo/estrangeirismo) NÃO são siglas.",
+      "items": [
+        {
+          "id": "1",
+          "label": "Não é Derivação Regressiva (A)",
+          "detail": "Derivação regressiva: verbo → substantivo (ex.: ajudar → ajuda). Rebatizado = re- + batizado = derivação PREFIXAL."
+        },
+        {
+          "id": "2",
+          "label": "Não é Processos Diferentes (B)",
+          "detail": "Obesidade e mentais: ambas usam derivação sufixal. A questão pede o que é CORRETO; C é a única correta."
+        },
+        {
+          "id": "3",
+          "label": "Não é Derivação Imprópria (D)",
+          "detail": "Derivação imprópria: mudança de classe sem afixo (ex.: o jantar). Hiperativa = hiper- + ativa = derivação PREFIXAL."
+        },
+        {
+          "id": "4",
+          "label": "Não é Neologismo (E)",
+          "detail": "Hashtag é empréstimo/estrangeirismo do inglês, não neologismo no sentido de formação de palavras em português."
+        }
+      ],
+      "footer_rule": "REGRA DE OURO: Siglas = iniciais. EUA, TDAH, DDA, DSM = todas siglas = mesmo processo!"
+    }
+  ]
+}

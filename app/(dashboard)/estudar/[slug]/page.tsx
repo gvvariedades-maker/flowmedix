@@ -1,7 +1,9 @@
-import { createServerClient } from '@supabase/ssr';
-import { cookies } from 'next/headers';
 import { notFound } from 'next/navigation';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
+import { 
+  getQuestaoBySlugCached, 
+  getQuestoesByBancaCached 
+} from '@/lib/cache';
 
 interface ModuloEstudoRow {
   id: string;
@@ -12,36 +14,33 @@ interface ModuloEstudoRow {
   [key: string]: any;
 }
 
-export default async function PaginaQuestaoDinamica({ params }: { params: { slug: string } }) {
-  const cookieStore = cookies();
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        get(name: string) {
-          return cookieStore.get(name)?.value;
-        },
-      },
-    }
-  );
+interface ModuloListItem {
+  id: string;
+  modulo_slug: string;
+}
 
-  const { data: atual } = await supabase
-    .from('modulos_estudo')
-    .select('*')
-    .eq('modulo_slug', params.slug)
-    .single();
+export default async function PaginaQuestaoDinamica({ 
+  params 
+}: { 
+  params: Promise<{ slug: string }> 
+}) {
+  const resolvedParams = await params;
+  // OTIMIZAÇÃO: Busca questão primeiro (crítica para renderização)
+  const atual = await getQuestaoBySlugCached(resolvedParams.slug);
 
   if (!atual) return notFound();
 
-  const { data: lista } = await supabase
-    .from('modulos_estudo')
-    .select('modulo_slug, id')
-    .eq('banca', atual.banca)
-    .eq('modulo_nome', atual.modulo_nome)
-    .order('created_at', { ascending: true });
+  // OTIMIZAÇÃO: Busca lista em paralelo após ter a questão (não bloqueia renderização)
+  // A lista é usada apenas para navegação, pode carregar depois
+  const listaPromise = getQuestoesByBancaCached(
+    atual.banca,
+    atual.modulo_nome
+  );
 
-  const indexAtual = lista?.findIndex((item: ModuloEstudoRow) => item.id === atual.id) ?? -1;
+  // Aguarda lista apenas para calcular navegação (não bloqueia renderização inicial)
+  const lista = await listaPromise;
+
+  const indexAtual = lista?.findIndex((item: ModuloListItem) => item.id === atual.id) ?? -1;
   const anteriorSlug = indexAtual > 0 ? lista![indexAtual - 1].modulo_slug : null;
   const proximaSlug = (lista && indexAtual < lista.length - 1) ? lista[indexAtual + 1].modulo_slug : null;
 
@@ -53,7 +52,7 @@ export default async function PaginaQuestaoDinamica({ params }: { params: { slug
           mode="live" 
           proximaSlug={proximaSlug}
           anteriorSlug={anteriorSlug}
-          moduloSlug={params.slug}
+          moduloSlug={resolvedParams.slug}
         />
       </div>
     </div>

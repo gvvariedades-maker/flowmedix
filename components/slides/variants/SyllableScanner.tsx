@@ -36,14 +36,14 @@ export const SyllableScanner: React.FC<SyllableScannerProps> = ({ word, tonicInd
   };
 
   return (
-    <div className="w-full h-full flex items-center justify-center p-8 overflow-y-auto custom-scrollbar relative">
+    <div className="w-full h-full flex items-center justify-center p-4 md:p-8 overflow-y-auto custom-scrollbar relative">
       {/* Background com tema */}
       <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
       
       <motion.div 
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className={`relative z-10 w-full max-w-3xl mx-auto p-10 md:p-12 bg-slate-900/80 rounded-[2.5rem] border ${theme.borderColor} backdrop-blur-xl shadow-2xl`}
+        className={`relative z-10 w-full max-w-3xl mx-auto p-6 md:p-10 lg:p-12 bg-slate-900/80 rounded-[1.5rem] md:rounded-[2.5rem] border ${theme.borderColor} backdrop-blur-xl shadow-2xl my-auto`}
       >
         <div className={`flex items-center gap-3 mb-10 ${theme.textPrimary}`}>
           <Zap size={24} className="animate-pulse" />

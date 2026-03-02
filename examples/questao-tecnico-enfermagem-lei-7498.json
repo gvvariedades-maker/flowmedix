@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "CPCON",
+    "orgao": "Prefeitura de Rio Santo Antônio",
+    "prova": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "História da Enfermagem - Lei 7.498/86 e Decreto 94.406/87"
+  },
+  "question_data": {
+    "instruction": "De acordo com a Lei n° 7.498/86 e o Decreto n° 94.406/87, o Técnico de Enfermagem é: I - A categoria profissional que exerce atividade de nível médio, envolvendo orientação e acompanhamento do trabalho de enfermagem em grau auxiliar, e participação no planejamento da assistência de enfermagem. II - O titular de certificado de Enfermeiro Prático ou Prático de Enfermagem, expedido até 1964 pelo Serviço Nacional de Fiscalização da Medicina e Farmácia, do Ministério da Saúde, ou por órgão congênere da Secretaria de Saúde nas Unidades da Federação. III - Responsável por assistir o enfermeiro na execução dos seguintes programas: assistência integral à saúde individual e de grupos específicos, particularmente daqueles prioritários e de alto risco; higiene e segurança do trabalho e de prevenção de acidentes e de doenças profissionais e do trabalho. É CORRETO o que se afirma em:",
+    "text_fragment": "<p>De acordo com a Lei n° 7.498/86 e o Decreto n° 94.406/87, o Técnico de Enfermagem é:</p><p><strong>I</strong> - A categoria profissional que exerce atividade de nível médio, envolvendo orientação e acompanhamento do trabalho de enfermagem em grau auxiliar, e participação no planejamento da assistência de enfermagem.</p><p><strong>II</strong> - O titular de certificado de Enfermeiro Prático ou Prático de Enfermagem, expedido até 1964 pelo Serviço Nacional de Fiscalização da Medicina e Farmácia, do Ministério da Saúde, ou por órgão congênere da Secretaria de Saúde nas Unidades da Federação.</p><p><strong>III</strong> - Responsável por assistir o enfermeiro na execução dos seguintes programas: assistência integral à saúde individual e de grupos específicos, particularmente daqueles prioritários e de alto risco; higiene e segurança do trabalho e de prevenção de acidentes e de doenças profissionais e do trabalho.</p><p>É CORRETO o que se afirma em:</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "II, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "I e III, apenas.",
+        "is_correct": true
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "A Lei 7.498/86 e o Decreto 94.406/87 definem que o Técnico de Enfermagem (I) exerce atividade de nível médio com orientação, acompanhamento do trabalho auxiliar e participação no planejamento; e (III) assiste o enfermeiro nos programas de assistência integral, higiene e segurança do trabalho. O item II está INCORRETO: o certificado de Enfermeiro Prático/Prático de Enfermagem expedido até 1964 refere-se ao AUXILIAR de Enfermagem, não ao Técnico."
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "layout_variant": "morphological",
+      "subject": "Enfermagem",
+      "template": "t05",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "História da Enfermagem - Lei 7.498/86"
+      },
+      "items": [
+        {
+          "label": "Técnico de Enfermagem",
+          "detail": "Categoria de nível médio. Orienta e acompanha trabalho em grau auxiliar. Participa do planejamento da assistência. Assiste o enfermeiro nos programas de saúde.",
+          "icon": "User"
+        },
+        {
+          "label": "Auxiliar de Enfermagem",
+          "detail": "É o titular do certificado de Enfermeiro Prático ou Prático de Enfermagem expedido até 1964 (SNFMF/MS ou órgãos congêneres). NÃO é o Técnico!",
+          "icon": "UserCheck"
+        },
+        {
+          "label": "Lei 7.498/86",
+          "detail": "Regulamenta o exercício da enfermagem. Define Enfermeiro, Técnico, Auxiliar e Parteira. Decreto 94.406/87 regulamenta a lei.",
+          "icon": "FileText"
+        },
+        {
+          "label": "Atribuições do Técnico",
+          "detail": "Assistir o enfermeiro em: assistência integral à saúde; grupos prioritários e de alto risco; higiene e segurança do trabalho; prevenção de acidentes e doenças profissionais.",
+          "icon": "Stethoscope"
+        },
+        {
+          "label": "Armadilha da Questão",
+          "detail": "O item II descreve o AUXILIAR (certificado até 1964), não o Técnico. Muitos erram ao marcar II por confusão entre as categorias.",
+          "icon": "AlertCircle"
+        }
+      ],
+      "footer_rule": "Técnico = nível médio + planejamento + assistir enfermeiro. Auxiliar = certificado Prático até 1964!"
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "content": "CERTIFICADO DE ENFERMEIRO PRÁTICO/PRÁTICO DE ENFERMAGEM (até 1964) = AUXILIAR DE ENFERMAGEM. O Técnico é categoria de nível médio, formado em curso técnico."
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Enfermagem",
+      "steps": [
+        {
+          "id": "1",
+          "text": "Analise o item I: Técnico = nível médio, orientação, acompanhamento auxiliar, planejamento → CORRETO"
+        },
+        {
+          "id": "2",
+          "text": "Analise o item II: Certificado Enfermeiro Prático até 1964 → Isso é definição do AUXILIAR, não do Técnico → INCORRETO"
+        },
+        {
+          "id": "3",
+          "text": "Analise o item III: Assistir enfermeiro em programas de saúde, higiene e segurança → CORRETO"
+        },
+        {
+          "id": "4",
+          "text": "Conclusão: I e III corretos, II incorreto → Alternativa E"
+        }
+      ],
+      "footer_rule": "Pipeline: Verificar cada item → Identificar qual categoria cada definição descreve → Marcar I e III"
+    },
+    {
+      "type": "danger_zone",
+      "subject": "Enfermagem",
+      "content": "CUIDADO: O item II é a principal armadilha. O certificado de 'Enfermeiro Prático' ou 'Prático de Enfermagem' expedido até 1964 refere-se ao AUXILIAR de Enfermagem, conforme a própria Lei 7.498/86.",
+      "items": [
+        {
+          "id": "1",
+          "label": "Não é II (A, B ou C)",
+          "detail": "O item II está incorreto. Qualquer alternativa que inclua II está errada: A, B e C."
+        },
+        {
+          "id": "2",
+          "label": "Não é I, II e III (D)",
+          "detail": "O item II é falso. A alternativa D afirma que os três estão corretos."
+        },
+        {
+          "id": "3",
+          "label": "Diferença Técnico x Auxiliar",
+          "detail": "Técnico: curso técnico de nível médio. Auxiliar: pode ser o titular do certificado Prático até 1964 ou curso de auxiliar."
+        },
+        {
+          "id": "4",
+          "label": "Resposta correta: E",
+          "detail": "Apenas I e III estão corretos conforme a Lei 7.498/86 e Decreto 94.406/87."
+        }
+      ],
+      "footer_rule": "REGRA DE OURO: Certificado Prático até 1964 = AUXILIAR. Nunca = Técnico!"
+    }
+  ]
+}

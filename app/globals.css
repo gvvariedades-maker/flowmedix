@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@config "../tailwind.config.ts";
+@import "tailwindcss";
 
 @layer base {
   :root {
@@ -91,6 +90,187 @@
   .custom-scrollbar::-webkit-scrollbar-thumb {
     background-color: #cbd5e1;
     border-radius: 20px;
+  }
+
+  /* Layout Morfológico - Grid CSS Fluido */
+  .morph-grid-container {
+    content-visibility: auto; /* Otimização de performance */
+  }
+
+  /* Zero Layout Shift - Dimensões fixas */
+  .morph-central-card:hover {
+    transform: translateY(-4px);
+    will-change: transform;
+  }
+
+  .morph-detail-card:hover {
+    transform: translateY(-2px);
+    will-change: transform;
+  }
+
+  /* Animação CSS-only para alta performance */
+  @keyframes morphReveal {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Responsividade automática via Grid CSS */
+  @media (max-width: 768px) {
+    .morph-central-card {
+      grid-column: span 1 !important;
+    }
+  }
+
+  /* Golden Rule - Animações CSS-only */
+  .golden-rule-card {
+    animation: goldenRuleReveal 0.6s ease-out;
+  }
+
+  .golden-rule-shine {
+    animation: goldenRuleShine 3s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .golden-rule-icon {
+    animation: goldenRuleIconPop 0.5s ease-out 0.3s both;
+  }
+
+  .golden-rule-text {
+    animation: goldenRuleTextFade 0.6s ease-out 0.4s both;
+  }
+
+  @keyframes goldenRuleReveal {
+    from {
+      opacity: 0;
+      transform: scale(0.85);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes goldenRuleShine {
+    0%, 100% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(200%);
+    }
+  }
+
+  @keyframes goldenRuleIconPop {
+    from {
+      opacity: 0;
+      transform: scale(0);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes goldenRuleTextFade {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Danger Zone - Animações CSS-only */
+  .danger-zone-container {
+    animation: dangerZoneReveal 0.5s ease-out;
+  }
+
+  .danger-zone-alert-icon {
+    animation: dangerZoneAlertRotate 2s ease-in-out infinite;
+  }
+
+  .danger-zone-title {
+    animation: dangerZoneTitleScale 0.4s ease-out;
+  }
+
+  .danger-zone-content {
+    animation: dangerZoneContentFade 0.5s ease-out 0.2s both;
+  }
+
+  .danger-zone-item {
+    animation: dangerZoneItemSlide 0.4s ease-out both;
+  }
+
+  .danger-zone-footer {
+    animation: dangerZoneFooterFade 0.5s ease-out 0.5s both;
+  }
+
+  @keyframes dangerZoneReveal {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes dangerZoneAlertRotate {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+  }
+
+  @keyframes dangerZoneTitleScale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes dangerZoneContentFade {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes dangerZoneItemSlide {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes dangerZoneFooterFade {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 

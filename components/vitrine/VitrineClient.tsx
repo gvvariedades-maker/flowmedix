@@ -1,12 +1,13 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Zap, Flame, ChevronRight, AlertTriangle, 
-  ShieldCheck, LayoutDashboard, Search, X
+  ShieldCheck, LayoutDashboard, Search, X, Filter
 } from 'lucide-react';
 
 // --- INTERFACES ---
@@ -35,25 +36,60 @@ interface VitrineClientProps {
 
 export default function VitrineClient({ initialModulos, globalStats: initialGlobalStats }: VitrineClientProps) {
   const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
   const cidadeUrl = searchParams.get('cidade') ? decodeURIComponent(searchParams.get('cidade')!) : "Treinamento";
 
   const [modulos] = useState<ModuloEstudo[]>(initialModulos);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState(searchParams.get('q') ?? '');
   const [globalStats] = useState(initialGlobalStats);
 
-  // Lógica de Filtragem (Busca Instantânea)
-  const filteredModulos = useMemo(() => {
-    if (!searchTerm) return modulos;
-    const lowerTerm = searchTerm.toLowerCase();
-    return modulos.filter(m => 
-      (m.titulo_aula?.toLowerCase().includes(lowerTerm) ?? false) || 
-      (m.modulo_nome?.toLowerCase().includes(lowerTerm) ?? false)
-    );
-  }, [modulos, searchTerm]);
+  // Filtros Banca e Assunto (inicializados pela URL)
+  const [bancaFilter, setBancaFilter] = useState<string>(searchParams.get('banca') ?? '');
+  const [assuntoFilter, setAssuntoFilter] = useState<string>(searchParams.get('assunto') ?? '');
 
-  // Top Priority (Só aparece se não estiver buscando)
-  const topPriority = useMemo(() => modulos[0], [modulos]);
-  const showHero = !searchTerm && topPriority && topPriority.stats.priorityScore > 50;
+  // Listas únicas para os dropdowns (derivadas dos módulos)
+  const bancas = useMemo(() => 
+    [...new Set(modulos.map(m => m.banca).filter(Boolean))].sort((a, b) => a.localeCompare(b)),
+    [modulos]
+  );
+  // Assunto = titulo_aula (subtopico específico, ex: "Noções de Anatomia"), não modulo_nome (disciplina genérica como "Enfermagem")
+  const assuntos = useMemo(() => 
+    [...new Set(modulos.map(m => m.titulo_aula).filter((n): n is string => !!n))].sort((a, b) => a.localeCompare(b)),
+    [modulos]
+  );
+
+  // Sincroniza filtros com a URL (links compartilháveis)
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (bancaFilter) params.set('banca', bancaFilter); else params.delete('banca');
+    if (assuntoFilter) params.set('assunto', assuntoFilter); else params.delete('assunto');
+    if (searchTerm) params.set('q', searchTerm); else params.delete('q');
+    const queryString = params.toString();
+    const newSearch = queryString ? `?${queryString}` : '';
+    if (typeof window !== 'undefined' && window.location.search !== newSearch) {
+      router.replace(`${pathname}${newSearch}`, { scroll: false });
+    }
+  }, [bancaFilter, assuntoFilter, searchTerm, pathname, router, searchParams]);
+
+  // Lógica de Filtragem (Busca + Banca + Assunto)
+  const filteredModulos = useMemo(() => {
+    let result = modulos;
+    if (bancaFilter) result = result.filter(m => m.banca === bancaFilter);
+    if (assuntoFilter) result = result.filter(m => m.titulo_aula === assuntoFilter);
+    if (searchTerm) {
+      const lowerTerm = searchTerm.toLowerCase();
+      result = result.filter(m => 
+        (m.titulo_aula?.toLowerCase().includes(lowerTerm) ?? false) || 
+        (m.modulo_nome?.toLowerCase().includes(lowerTerm) ?? false)
+      );
+    }
+    return result;
+  }, [modulos, bancaFilter, assuntoFilter, searchTerm]);
+
+  // Top Priority (Só aparece se não estiver buscando nem filtrando)
+  const topPriority = useMemo(() => filteredModulos[0], [filteredModulos]);
+  const showHero = !searchTerm && !bancaFilter && !assuntoFilter && topPriority && topPriority.stats.priorityScore > 50;
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-24 selection:bg-indigo-100 selection:text-indigo-900">
@@ -103,6 +139,42 @@ export default function VitrineClient({ initialModulos, globalStats: initialGlob
 
       <main className="max-w-7xl mx-auto px-6 mt-10 space-y-12">
         
+        {/* FILTROS: BANCA E ASSUNTO */}
+        <section className="flex flex-wrap items-center gap-4">
+          <div className="flex items-center gap-2 text-slate-500">
+            <Filter size={16} />
+            <span className="text-xs font-bold uppercase tracking-widest">Filtros</span>
+          </div>
+          <select
+            value={bancaFilter}
+            onChange={(e) => setBancaFilter(e.target.value)}
+            className="px-4 py-2 rounded-xl border border-slate-200 bg-white text-sm font-medium text-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 outline-none"
+          >
+            <option value="">Todas as bancas</option>
+            {bancas.map(b => (
+              <option key={b} value={b}>{b}</option>
+            ))}
+          </select>
+          <select
+            value={assuntoFilter}
+            onChange={(e) => setAssuntoFilter(e.target.value)}
+            className="px-4 py-2 rounded-xl border border-slate-200 bg-white text-sm font-medium text-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 outline-none min-w-[200px]"
+          >
+            <option value="">Todos os assuntos</option>
+            {assuntos.map(a => (
+              <option key={a} value={a}>{a}</option>
+            ))}
+          </select>
+          {(bancaFilter || assuntoFilter) && (
+            <button
+              onClick={() => { setBancaFilter(''); setAssuntoFilter(''); }}
+              className="text-xs font-bold text-slate-500 hover:text-indigo-600 uppercase tracking-wider"
+            >
+              Limpar filtros
+            </button>
+          )}
+        </section>
+
         {/* HERO CARD (Somente se não estiver buscando) */}
         <AnimatePresence>
           {showHero && (
@@ -140,7 +212,11 @@ export default function VitrineClient({ initialModulos, globalStats: initialGlob
         <section className="space-y-8">
            <div className="flex items-center gap-4">
               <h3 className="text-xs font-black uppercase tracking-[0.5em] text-indigo-500">
-                {searchTerm ? `Resultados para "${searchTerm}"` : 'Setores de Operação'}
+                {searchTerm 
+                  ? `Resultados para "${searchTerm}"` 
+                  : (bancaFilter || assuntoFilter) 
+                    ? `Filtrado${bancaFilter ? ` • ${bancaFilter}` : ''}${assuntoFilter ? ` • ${assuntoFilter}` : ''}`
+                    : 'Setores de Operação'}
               </h3>
               <div className="h-px flex-1 bg-slate-200" />
            </div>
@@ -180,9 +256,19 @@ function QuickStat({ icon: Icon, value, label, color }: { icon: any; value: stri
 function EliteModuleCard({ aula }: { aula: ModuloEstudo }) {
   const isCritical = aula.stats.percentual > 0 && aula.stats.percentual < 70;
   const isMastered = aula.stats.percentual >= 90;
+  const router = useRouter();
+
+  // Prefetch quando o mouse entra no card (otimização de performance)
+  const handleMouseEnter = () => {
+    router.prefetch(`/estudar/${aula.modulo_slug}`);
+  };
 
   return (
-    <Link href={`/estudar/${aula.modulo_slug}`}>
+    <Link 
+      href={`/estudar/${aula.modulo_slug}`}
+      prefetch={true} // Prefetch automático do Next.js
+      onMouseEnter={handleMouseEnter} // Prefetch adicional no hover
+    >
       <motion.div 
         layout
         initial={{ opacity: 0, scale: 0.9 }}
@@ -195,7 +281,10 @@ function EliteModuleCard({ aula }: { aula: ModuloEstudo }) {
       >
         <div className="flex justify-between items-start mb-6">
           <div className="space-y-1">
-            <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">{aula.modulo_nome || 'Módulo'}</span>
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">{aula.modulo_nome || 'Módulo'}</span>
+              <span className="text-[9px] font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-md">{aula.banca}</span>
+            </div>
             <h4 className="text-xl font-bold text-slate-800 tracking-tighter uppercase italic leading-tight group-hover:text-indigo-600 transition-colors">
               {aula.titulo_aula || 'Aula sem título'}
             </h4>

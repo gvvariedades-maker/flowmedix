@@ -36,8 +36,8 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
       : HelpCircle;
   };
 
-  // VARIANTE 1: GRADE CLÁSSICA (Padrão)
-  if (variant === 'grid') {
+  // VARIANTE 1: GRADE CLÁSSICA (Padrão) - também fallback para variantes desconhecidas
+  if (variant === 'grid' || !['molecular', 'bridge', 'stack'].includes(variant)) {
     const container = {
       hidden: { opacity: 0 },
       show: {
@@ -55,7 +55,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
     };
 
     return (
-      <div className="w-full h-full flex items-center justify-center p-6 overflow-y-auto custom-scrollbar relative">
+      <div className="w-full h-full flex items-center justify-center p-4 md:p-6 overflow-y-auto custom-scrollbar relative">
         {/* Background animado com tema */}
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
         
@@ -63,7 +63,8 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 w-full max-w-5xl relative z-10"
+          className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 md:gap-6 p-2 md:p-4 w-full max-w-5xl relative z-10 my-auto"
+          style={{ contentVisibility: 'auto' }}
         >
           {concepts.map((concept, index) => {
             const Icon = getIcon(concept.icon);
@@ -164,7 +165,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
   // VARIANTE 3: BRIDGE (Para Regência)
   if (variant === 'bridge') {
     return (
-      <div className="w-full h-full flex items-center justify-center p-6 overflow-y-auto custom-scrollbar relative">
+      <div className="w-full h-full flex items-center justify-center p-4 md:p-6 overflow-y-auto custom-scrollbar relative">
         {/* Background animado com tema */}
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
         
@@ -195,6 +196,41 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
     );
   }
 
-  // Fallback para grid se variante desconhecida
+  // VARIANTE: STACK - Layout em coluna (poucos itens)
+  if (variant === 'stack') {
+    return (
+      <div className="w-full h-full flex items-center justify-center p-4 md:p-6 overflow-y-auto custom-scrollbar relative">
+        <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.15 } } }}
+          className="flex flex-col gap-4 w-full max-w-2xl relative z-10 my-auto"
+        >
+          {concepts.map((concept, index) => {
+            const Icon = getIcon(concept.icon);
+            return (
+              <motion.div
+                key={index}
+                variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
+                className={`p-6 rounded-2xl bg-slate-900/70 backdrop-blur-xl border ${theme.borderColor}`}
+              >
+                <div className="flex gap-4">
+                  <div className={`w-12 h-12 rounded-xl ${theme.iconBg} flex items-center justify-center ${theme.iconText}`}>
+                    <Icon size={24} />
+                  </div>
+                  <div>
+                    <h4 className={`font-black ${theme.textPrimary} text-lg mb-2`}>{concept.title}</h4>
+                    <p className={`${theme.textSecondary} text-sm`}>{concept.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+      </div>
+    );
+  }
+
   return null;
 };

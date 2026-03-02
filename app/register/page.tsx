@@ -46,9 +46,9 @@ export default function RegisterPage() {
       <div className="bg-glow-main w-[520px] h-[520px] opacity-20" />
       <div className="glass-panel w-full max-w-md p-8 relative z-10 border-t-4 border-t-clinical-accent">
         <div className="text-center mb-8 space-y-2">
-          <h1 className="text-3xl font-black text-neon-gradient">CRIAR CONTA MÉDICA</h1>
+          <h1 className="text-3xl font-black text-neon-gradient">CRIAR CONTA</h1>
           <p className="text-slate-400 text-sm uppercase tracking-widest">
-            Experimente o centro de comando do FlowMedix
+            Plataforma de estudo reverso para Técnicos de Enfermagem
           </p>
         </div>
 

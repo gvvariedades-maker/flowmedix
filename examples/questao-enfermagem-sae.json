@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "ano": "2024",
+    "banca": "EBSERH",
+    "orgao": "Hospital Universitário",
+    "prova": "Técnico de Enfermagem",
+    "topico": "Fundamentos de Enfermagem",
+    "subtopico": "Sistematização da Assistência de Enfermagem (SAE)"
+  },
+  "question_data": {
+    "instruction": "O enfermeiro está realizando a coleta de dados do paciente. Qual etapa da SAE está sendo executada?",
+    "text_fragment": "<p>Paciente de 45 anos, internado para investigação de dor abdominal. O enfermeiro realiza anamnese e exame físico, registrando no prontuário.</p>",
+    "options": [
+      { "id": "A", "text": "Diagnóstico de Enfermagem", "is_correct": false },
+      { "id": "B", "text": "Coleta de dados (Histórico de Enfermagem)", "is_correct": true },
+      { "id": "C", "text": "Planejamento", "is_correct": false },
+      { "id": "D", "text": "Implementação", "is_correct": false },
+      { "id": "E", "text": "Avaliação", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Fundamentos de Enfermagem",
+      "meta": { "topico": "SAE", "subtopico": "Etapas do Processo" },
+      "items": [
+        { "icon": "FileSearch", "label": "Coleta de Dados", "detail": "Histórico e exame físico" },
+        { "icon": "Stethoscope", "label": "Diagnóstico", "detail": "Necessidades humanas (NANDA)" },
+        { "icon": "Target", "label": "Planejamento", "detail": "Objetivos e intervenções" }
+      ]
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Fundamentos de Enfermagem",
+      "steps": [
+        "1ª etapa: Coleta de dados (Histórico de Enfermagem)",
+        "2ª etapa: Diagnóstico de Enfermagem",
+        "3ª etapa: Planejamento da assistência",
+        "4ª etapa: Implementação",
+        "5ª etapa: Avaliação dos resultados"
+      ]
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Fundamentos de Enfermagem",
+      "content": "A coleta de dados é a primeira etapa da SAE. Inclui anamnese, exame físico e consulta a documentos. Use linguagem padronizada (NANDA) no diagnóstico."
+    }
+  ]
+}

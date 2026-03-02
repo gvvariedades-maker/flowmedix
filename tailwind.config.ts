@@ -42,6 +42,7 @@ const config = {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'shake': 'shake 0.2s ease-in-out 0s 2',
         'pop': 'pop 0.3s cubic-bezier(0.26, 0.53, 0.74, 1.48) forwards',
+        'spin-slow': 'spin 8s linear infinite',
       },
       keyframes: {
         shake: {

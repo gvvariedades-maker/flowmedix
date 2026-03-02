@@ -2,9 +2,15 @@
 
 import { Suspense, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
+import { createBrowserClient } from '@supabase/ssr';
 import Link from 'next/link';
-import { Zap, ArrowRight, Lock, MapPin, CheckCircle2 } from 'lucide-react';
+import { Zap, ArrowRight, Lock, MapPin, CheckCircle2, AlertCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+
+const supabase = createBrowserClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
 // Componente Interno para lidar com parâmetros de URL
 function LoginContent() {
@@ -12,24 +18,49 @@ function LoginContent() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState<string | null>(null);
 
   // Captura a cidade da URL (ex: ?cidade=Caicó - RN)
   const cidade = searchParams.get('cidade') 
     ? decodeURIComponent(searchParams.get('cidade')!) 
     : null;
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
     
-    // Simulação de Login (Aqui entraria o Supabase Auth)
-    setTimeout(() => {
+    try {
+      // Autenticação real com Supabase
+      const { data, error: authError } = await supabase.auth.signInWithPassword({
+        email: email.trim(),
+        password: password,
+      });
+
+      if (authError) {
+        setError(authError.message || 'Erro ao fazer login. Verifique suas credenciais.');
+        setLoading(false);
+        return;
+      }
+
+      if (!data.session) {
+        setError('Não foi possível criar a sessão. Tente novamente.');
+        setLoading(false);
+        return;
+      }
+
       // Redireciona mantendo a cidade na URL para o Dashboard pegar
       const destino = cidade 
         ? `/estudar?cidade=${encodeURIComponent(cidade)}`
         : '/estudar';
+      
       router.push(destino);
-    }, 1500);
+      router.refresh();
+    } catch (err: any) {
+      setError(err.message || 'Erro inesperado ao fazer login.');
+      setLoading(false);
+    }
   };
 
   return (
@@ -65,7 +96,7 @@ function LoginContent() {
         )}
 
         <p className="text-slate-500 font-medium text-sm">
-          Prepare-se com a metodologia de Estudo Reverso.
+          Prepare-se para concursos de Técnico de Enfermagem com Estudo Reverso.
         </p>
       </div>
 
@@ -91,6 +122,8 @@ function LoginContent() {
           <input 
             type="password" 
             required
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="••••••••"
             className="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl font-bold text-slate-700 outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all placeholder:text-slate-300"
           />
@@ -100,6 +133,18 @@ function LoginContent() {
             </Link>
           </div>
         </div>
+
+        {/* Mensagem de Erro */}
+        {error && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-2 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700"
+          >
+            <AlertCircle size={16} className="shrink-0" />
+            <p className="text-xs font-bold">{error}</p>
+          </motion.div>
+        )}
 
         {/* Botão de Ação */}
         <button 

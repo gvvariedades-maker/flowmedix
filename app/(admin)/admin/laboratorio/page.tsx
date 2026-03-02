@@ -8,6 +8,18 @@ import {
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
+import { logger } from '@/lib/logger';
+import { QuestaoCompletaSchema } from '@/lib/validations';
+import { ValidationErrorsPanel, formatZodErrors } from '@/components/admin/ValidationErrorsPanel';
+import { JsonEditorWithHighlight } from '@/components/admin/JsonEditorWithHighlight';
+import { findErrorLocation, findAllErrorLocations, type ErrorLocation } from '@/lib/jsonErrorLocator';
+import { applySuggestion } from '@/lib/autoFix';
+import type { Suggestion } from '@/lib/errorSuggestions';
+import type { ZodError } from 'zod';
+import { TemplateSelector } from '@/components/admin/TemplateSelector';
+import { QuestionExporter } from '@/components/admin/QuestionExporter';
+import { EnhancedPreview } from '@/components/admin/EnhancedPreview';
+import type { QuestaoCompleta } from '@/types/lesson';
 
 // ============================================================================
 // FUNÇÃO: GERA HASH DO CONTEÚDO PARA DETECÇÃO DE DUPLICATAS
@@ -21,12 +33,23 @@ async function generateContentHash(text: string) {
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
+interface ValidationError {
+  path: string[];
+  message: string;
+  code: string;
+}
+
 export default function AvantLaboratory() {
   const [jsonInput, setJsonInput] = useState('');
   const [parsedData, setParsedData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
+  const [validationErrors, setValidationErrors] = useState<ValidationError[]>([]);
+  const [errorLocations, setErrorLocations] = useState<Map<number, ErrorLocation>>(new Map());
+  const [errorLines, setErrorLines] = useState<Set<number>>(new Set());
+  const [selectedLine, setSelectedLine] = useState<number | null>(null);
   const [saving, setSaving] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
+  const [showTemplateSelector, setShowTemplateSelector] = useState(false);
 
   // ============================================================================
   // FUNÇÃO: SMART PASTE (A MÁGICA)
@@ -38,43 +61,116 @@ export default function AvantLaboratory() {
       setJsonInput(text);
       // O useEffect de validação cuidará do resto
     } catch (err) {
-      console.error("Falha ao ler área de transferência: ", err);
+      logger.error("Falha ao ler área de transferência", err);
       alert("Permissão de colar negada pelo navegador.");
     }
   };
 
-  // Validação em Tempo Real
+  // Validação em Tempo Real com Zod
   useEffect(() => {
     if (!jsonInput.trim()) {
       setParsedData(null);
       setError(null);
+      setValidationErrors([]);
+      setErrorLocations(new Map());
+      setErrorLines(new Set());
       return;
     }
+    
+    let parsed: any = null;
     try {
-      const parsed = JSON.parse(jsonInput);
+      parsed = JSON.parse(jsonInput);
+    } catch (parseError) {
+      // Erro de parsing JSON
+      setError('JSON inválido: erro de sintaxe');
+      setParsedData(null);
+      setValidationErrors([]);
+      setErrorLocations(new Map());
+      setErrorLines(new Set());
+      return;
+    }
+    
+    try {
+      // Validação rigorosa com Zod
+      const validationResult = QuestaoCompletaSchema.safeParse(parsed);
       
-      if (!parsed.meta || !parsed.question_data) {
-        throw new Error("O JSON precisa ter as chaves 'meta' e 'question_data'.");
+      if (!validationResult.success) {
+        // Formata erros Zod em formato estruturado para o painel visual
+        const formattedErrors = formatZodErrors(validationResult.error);
+        setValidationErrors(formattedErrors);
+        
+        // Encontra localizações dos erros no JSON
+        const locations = findAllErrorLocations(jsonInput, formattedErrors);
+        setErrorLocations(locations);
+        
+        // Extrai linhas com erro para highlight
+        const linesWithErrors = new Set<number>();
+        locations.forEach((location) => {
+          linesWithErrors.add(location.line);
+        });
+        setErrorLines(linesWithErrors);
+        
+        // Mantém mensagem de erro simples para compatibilidade
+        const errorMessages = formattedErrors.map((err) => {
+          const path = err.path.join('.');
+          return `${path}: ${err.message}`;
+        });
+        setError(`Erros de validação:\n${errorMessages.join('\n')}`);
+        setParsedData(null);
+        return;
       }
-      if (!parsed.meta.banca || !parsed.meta.topico) {
-        throw new Error("Faltam dados obrigatórios no 'meta': banca e topico são obrigatórios.");
-      }
+      
+      // Limpa erros se validação passou
+      setValidationErrors([]);
+      setErrorLocations(new Map());
+      setErrorLines(new Set());
+      setSelectedLine(null);
+      setError(null);
       
       // Subtopico é opcional, usa topico como fallback se não existir
-      if (!parsed.meta.subtopico) {
-        parsed.meta.subtopico = parsed.meta.topico || 'Geral';
+      if (!validationResult.data.meta.subtopico) {
+        validationResult.data.meta.subtopico = validationResult.data.meta.topico || 'Geral';
       }
       
-      // Validação das options
-      if (!parsed.question_data.options || !Array.isArray(parsed.question_data.options) || parsed.question_data.options.length === 0) {
-        throw new Error("O 'question_data' precisa ter um array 'options' com pelo menos uma alternativa.");
+      // Validação adicional dos slides (se existirem)
+      if (validationResult.data.reverse_study_slides && validationResult.data.reverse_study_slides.length > 0) {
+        validationResult.data.reverse_study_slides.forEach((slide: any, index: number) => {
+          // Valida que cada slide tem type ou layout_type
+          if (!slide.type && !slide.layout_type) {
+            throw new Error(`Slide ${index + 1}: deve ter 'type' ou 'layout_type'`);
+          }
+          
+          // Validação específica por tipo
+          if (slide.type === 'logic_flow' && (!slide.steps || slide.steps.length === 0)) {
+            throw new Error(`Slide ${index + 1} (logic_flow): deve ter 'steps' com pelo menos 1 passo`);
+          }
+          
+          if (slide.type === 'golden_rule' && !slide.content) {
+            throw new Error(`Slide ${index + 1} (golden_rule): deve ter 'content'`);
+          }
+          
+          if (slide.type === 'concept_map' && (!slide.items || slide.items.length === 0) && (!slide.concepts || slide.concepts.length === 0)) {
+            throw new Error(`Slide ${index + 1} (concept_map): deve ter 'items' ou 'concepts'`);
+          }
+          
+          if (slide.type === 'danger_zone' && !slide.content) {
+            throw new Error(`Slide ${index + 1} (danger_zone): deve ter 'content'`);
+          }
+        });
       }
       
-      setParsedData(parsed);
-      setError(null);
+      setParsedData(validationResult.data);
     } catch (e: any) {
+      // Erro de parsing JSON ou validação manual adicional
       setError(e.message);
       setParsedData(null);
+      // Se for erro de parsing, limpa erros de validação
+      if (e.message.includes('JSON')) {
+        setValidationErrors([]);
+        setErrorLocations(new Map());
+        setErrorLines(new Set());
+        setSelectedLine(null);
+      }
     }
   }, [jsonInput]);
 
@@ -124,6 +220,16 @@ export default function AvantLaboratory() {
           return;
         }
         throw insertError;
+      }
+
+      // 4. Invalidar cache para a questão aparecer na área do aluno imediatamente
+      try {
+        await fetch('/api/admin/revalidate-cache', {
+          method: 'POST',
+          credentials: 'same-origin',
+        });
+      } catch (e) {
+        logger.warn('Cache revalidation failed (questão foi salva)', e);
       }
 
       setToast({ message: "✅ Missão publicada com sucesso!", type: 'success' });
@@ -221,36 +327,130 @@ export default function AvantLaboratory() {
               <Code className="w-3 h-3 text-[#4F46E5]" /> Payload Input
             </label>
             {error && (
-               <span className="text-[10px] font-bold text-red-500 bg-red-50 px-2 py-1 rounded-md">JSON Inválido</span>
+               <span className="text-[10px] font-bold text-red-500 bg-red-50 px-2 py-1 rounded-md">
+                 {validationErrors.length > 0 ? `${validationErrors.length} Erros` : 'JSON Inválido'}
+               </span>
+            )}
+            {parsedData && !error && (
+              <span className="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-1 rounded-md flex items-center gap-1">
+                <CheckCircle2 className="w-3 h-3" /> Válido
+              </span>
             )}
           </div>
           
-          <textarea
-            value={jsonInput}
-            onChange={(e) => setJsonInput(e.target.value)}
-            placeholder="Clique no botão 'Colar JSON' acima..."
-            className={`flex-1 w-full p-6 font-mono text-xs bg-slate-50 border-2 rounded-[32px] focus:outline-none transition-all resize-none shadow-inner ${
-              error ? 'border-red-200' : 'border-slate-100 focus:border-[#4F46E5]/20'
-            }`}
-          />
+          <div className={`flex-1 rounded-[32px] border-2 overflow-hidden shadow-inner bg-slate-50 ${
+            error ? 'border-red-200' : parsedData && !error 
+              ? 'border-green-200' 
+              : 'border-slate-100 focus-within:border-[#4F46E5]/20'
+          }`}>
+            <JsonEditorWithHighlight
+              value={jsonInput}
+              onChange={setJsonInput}
+              errorLines={errorLines}
+              selectedLine={selectedLine}
+              onLineClick={(line) => {
+                setSelectedLine(line);
+                // Scroll para a linha já é feito pelo componente
+              }}
+              placeholder="Clique no botão 'Colar JSON' acima..."
+              className="h-full"
+            />
+          </div>
+          
+          {/* Painel de Erros de Validação */}
+          {validationErrors.length > 0 && (
+            <div className="mt-2">
+              <ValidationErrorsPanel 
+                errors={validationErrors}
+                jsonData={parsedData || (() => {
+                  try {
+                    return JSON.parse(jsonInput);
+                  } catch {
+                    return null;
+                  }
+                })()}
+                onErrorClick={(error, location) => {
+                  // Navega para o erro no JSON
+                  if (location) {
+                    setSelectedLine(location.line);
+                    // Scroll é feito automaticamente pelo JsonEditorWithHighlight
+                  } else {
+                    // Fallback: tenta encontrar a localização
+                    const foundLocation = findErrorLocation(jsonInput, error.path);
+                    if (foundLocation) {
+                      setSelectedLine(foundLocation.line);
+                    }
+                  }
+                }}
+                onApplySuggestion={(errorIndex, suggestion) => {
+                  // Aplica correção automática
+                  const error = validationErrors[errorIndex];
+                  if (error && suggestion.fix) {
+                    try {
+                      const fixedJson = applySuggestion(jsonInput, error, suggestion);
+                      setJsonInput(fixedJson);
+                      // Limpa seleção após aplicar correção
+                      setTimeout(() => setSelectedLine(null), 1000);
+                    } catch (err) {
+                      logger.error('Failed to apply suggestion', err);
+                    }
+                  }
+                }}
+              />
+            </div>
+          )}
+          
+          {/* Mensagem de erro simples (para erros não-Zod) */}
+          {error && validationErrors.length === 0 && (
+            <div className="mt-2 bg-red-50 border-2 border-red-200 rounded-xl p-4">
+              <div className="flex items-start gap-3">
+                <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <h4 className="font-bold text-red-900 text-sm mb-1">Erro</h4>
+                  <pre className="text-xs text-red-700 whitespace-pre-wrap font-mono">
+                    {error}
+                  </pre>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* PREVIEW */}
+        {/* PREVIEW MELHORADO */}
         <div className="col-span-12 lg:col-span-8 flex flex-col gap-4 overflow-hidden">
-          <div className="flex-1 bg-slate-100 border-2 border-slate-200 rounded-[40px] overflow-hidden relative p-4 md:p-8 flex items-center justify-center shadow-inner">
+          <div className="flex-1 bg-slate-100 border-2 border-slate-200 rounded-[40px] overflow-hidden relative shadow-inner">
             {parsedData ? (
-              <div className="w-full h-full max-w-5xl max-h-[850px] bg-white rounded-[40px] shadow-2xl overflow-hidden">
-                 <AvantLessonPlayer key={JSON.stringify(parsedData)} dados={parsedData} mode="preview" />
-              </div>
+              <EnhancedPreview question={parsedData} />
             ) : (
-              <div className="h-full flex flex-col items-center justify-center text-center opacity-40">
+              <div className="h-full flex flex-col items-center justify-center text-center opacity-40 p-8">
                 <Zap className="w-10 h-10 text-slate-400 mb-6" />
                 <h3 className="text-slate-400 font-black italic uppercase tracking-tighter text-2xl">Aguardando Injeção</h3>
+                <p className="text-slate-400 text-sm mt-2">Cole um JSON ou selecione um template para visualizar</p>
               </div>
             )}
           </div>
         </div>
       </main>
+
+      {/* Template Selector Modal */}
+      {showTemplateSelector && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+          <div className="max-w-4xl w-full max-h-[90vh] overflow-auto">
+            <TemplateSelector
+              onSelectTemplate={(question: QuestaoCompleta) => {
+                setJsonInput(JSON.stringify(question, null, 2));
+                setShowTemplateSelector(false);
+                setToast({ 
+                  message: '✅ Template carregado com sucesso!', 
+                  type: 'success' 
+                });
+                setTimeout(() => setToast(null), 3000);
+              }}
+              onClose={() => setShowTemplateSelector(false)}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

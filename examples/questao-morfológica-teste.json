@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "ano": "2024",
+    "banca": "CESPE",
+    "orgao": "INSS",
+    "prova": "Analista do Seguro Social",
+    "topico": "Direito Previdenciário",
+    "subtopico": "Princípios da Seguridade Social"
+  },
+  "question_data": {
+    "instruction": "Teste do Layout Morfológico - Alta Performance",
+    "text_fragment": "<p>Este é um teste do novo sistema de Layout Morfológico.</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "Opção A",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Opção B",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "layout_variant": "morphological",
+      "subject": "Direito Previdenciário",
+      "items": [
+        {
+          "label": "Universalidade",
+          "detail": "A cobertura deve alcançar todos os riscos sociais e todas as pessoas residentes no país.",
+          "icon": "Globe2"
+        },
+        {
+          "label": "Uniformidade",
+          "detail": "Benefícios e serviços equivalentes para populações urbanas e rurais.",
+          "icon": "Scale"
+        },
+        {
+          "label": "Seletividade",
+          "detail": "O legislador define quem recebe o quê, baseado na aptidão da prestação para resolver o problema.",
+          "icon": "Filter"
+        },
+        {
+          "label": "Irredutibilidade",
+          "detail": "O valor nominal do benefício não pode ser diminuído administrativamente.",
+          "icon": "TrendingUp"
+        },
+        {
+          "label": "Equidade",
+          "detail": "Tratamento igual para situações iguais e tratamento desigual para situações desiguais.",
+          "icon": "Gavel"
+        }
+      ],
+      "footer_rule": "Layout Morfológico: Grid CSS Fluido + Conexão Implícita + Zero Layout Shift!"
+    }
+  ]
+}

@@ -4,8 +4,8 @@ import React, { Suspense } from 'react';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { 
-  LayoutDashboard, BookOpen, Target, 
-  Settings, Zap, MapPin, ShieldCheck, Crown 
+  LayoutDashboard, BookOpen, 
+  Zap, MapPin, ShieldCheck, BarChart3
 } from 'lucide-react';
 
 // Componente Wrapper para lidar com SearchParams (Evita erros de hidratação no Next.js)
@@ -15,16 +15,22 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
 
   // Lógica de Captura da Cidade (Padrão: "Nível Médio" se não vier na URL)
   const cidadeParam = searchParams.get('cidade');
-  const cidadeExibicao = cidadeParam ? decodeURIComponent(cidadeParam) : "Concursos Nível Médio";
+  const cidadeExibicao = cidadeParam ? decodeURIComponent(cidadeParam) : "Técnico de Enfermagem";
   
   // Persistir o parâmetro da cidade nos links de navegação
   const createQueryString = (path: string) => {
     return cidadeParam ? `${path}?cidade=${encodeURIComponent(cidadeParam)}` : path;
   };
 
+  const isPathActive = (path: string, exact = false) => {
+    if (!pathname) return false;
+    if (exact) return pathname === path;
+    return pathname === path || pathname.startsWith(`${path}/`);
+  };
+
   const menuItems = [
-    { label: 'Vitrine de Aulas', icon: LayoutDashboard, href: '/estudar', active: pathname === '/estudar' },
-    { label: 'Meus Desempenho', icon: Target, href: '#', active: false },
+    { label: 'Vitrine de Aulas', icon: LayoutDashboard, href: '/estudar', active: isPathActive('/estudar') },
+    { label: 'Desempenho Inteligente', icon: BarChart3, href: '/analytics', active: pathname === '/analytics' },
     { label: 'Material de Apoio', icon: BookOpen, href: '#', active: false },
   ];
 

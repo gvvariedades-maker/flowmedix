@@ -1,11 +1,11 @@
-# Guia de Instalação - FlowMedix
+# Guia de Instalação - AVANT
 
 ## Passo a Passo para Inicializar o Projeto
 
 ### 1. Instalar Dependências
 
 ```bash
-cd flowmedix
+cd avant
 npm install
 ```
 
@@ -53,7 +53,7 @@ O projeto estará disponível em [http://localhost:3000](http://localhost:3000)
 ## Estrutura de Arquivos Criada
 
 ```
-flowmedix/
+avant/
 ├── app/
 │   ├── (auth)/
 │   │   └── login/

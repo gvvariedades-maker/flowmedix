@@ -1,0 +1,35 @@
+{
+  "$schema": "Referência de mapeamento template e layout_variant para estudo reverso",
+  "description": "Use 'template' para cores e 'layout_variant' para a didática (layout) de cada slide.",
+  "template_ids": {
+    "t01": "indigo",
+    "t02": "emerald",
+    "t03": "rose",
+    "t04": "amber",
+    "t05": "violet",
+    "t06": "cyan",
+    "t07": "fuchsia",
+    "t08": "sky",
+    "t09": "lime",
+    "t10": "teal",
+    "t11": "orange",
+    "t12": "blue",
+    "t13": "purple",
+    "t14": "pink",
+    "t15": "indigo"
+  },
+  "theme_names": ["indigo", "emerald", "rose", "amber", "violet", "cyan", "fuchsia", "sky", "lime", "teal", "orange", "blue", "purple", "pink"],
+  "layout_variants": {
+    "concept_map": ["morphological", "grid", "molecular", "bridge"],
+    "golden_rule": ["center", "compact", "minimal", "banner"],
+    "logic_flow": ["vertical", "horizontal", "cards"],
+    "danger_zone": ["list", "cards", "compact"]
+  },
+  "example_slide": {
+    "type": "concept_map",
+    "subject": "Enfermagem",
+    "template": "t05",
+    "layout_variant": "morphological",
+    "items": []
+  }
+}
