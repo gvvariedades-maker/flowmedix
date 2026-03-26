@@ -119,7 +119,7 @@ export async function getQuestaoBySlugCached(slug: string) {
       // OTIMIZAÇÃO: Seleciona apenas campos necessários (não *)
       const { data, error } = await supabase
         .from('modulos_estudo')
-        .select('id, modulo_slug, conteudo_json, banca, modulo_nome, created_at')
+        .select('id, modulo_slug, conteudo_json, banca, modulo_nome, titulo_aula, created_at')
         .eq('modulo_slug', slug)
         .single();
       
@@ -137,6 +137,42 @@ export async function getQuestaoBySlugCached(slug: string) {
       revalidate: 600, // 10 minutos (otimizado de 5 para melhor cache)
       tags: ['questao', 'semi-static', `questao-${slug}`],
     }
+  )();
+}
+
+/**
+ * Cache para lista de questões por assunto (titulo_aula)
+ * Usado para navegação entre questões do mesmo assunto
+ * Revalida a cada 5 minutos
+ */
+export async function getQuestoesByAssuntoCached(tituloAula: string) {
+  const cacheKey = `questoes-assunto-${tituloAula}`;
+
+  return unstable_cache(
+    async () => {
+      const supabase = supabaseAnon;
+
+      const { data, error } = await supabase
+        .from('modulos_estudo')
+        .select('modulo_slug, id')
+        .eq('titulo_aula', tituloAula)
+        .order('created_at', { ascending: true })
+        .limit(200);
+
+      if (error) {
+        logger.error('Failed to fetch questions by assunto from cache', error, { tituloAula });
+        trackCacheMiss(cacheKey);
+        return [];
+      }
+
+      trackCacheHit(cacheKey);
+      return data || [];
+    },
+    [cacheKey],
+    {
+      ...CACHE_CONFIG.SEMI_STATIC,
+      tags: ['questoes', 'semi-static', `assunto-${tituloAula}`],
+    },
   )();
 }
 

@@ -13,7 +13,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { supabase } from '@/lib/supabase';
 import NeuroSlide from '@/components/slides/NeuroSlide';
 import { logger } from '@/lib/logger';
 import { sanitizeHTML } from '@/lib/validations';
@@ -59,26 +58,22 @@ export default function AvantLessonPlayer({
     try {
       const opcaoEscolhida = dados.question_data.options.find((o: any) => o.id === opcaoId);
       const acertou = opcaoEscolhida?.is_correct || false;
-      const { data: { user }, error: authError } = await supabase.auth.getUser();
 
-      if (authError) {
-        logger.error('Failed to get user', authError);
-        return;
-      }
-
-      if (user) {
-        const { error: insertError } = await supabase.from('historico_questoes').insert({
-          user_id: user.id,
+      // Usa API route para registrar E invalidar o cache do histórico imediatamente
+      const response = await fetch('/api/registrar-tentativa', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
           modulo_slug: moduloSlug || dados.modulo_slug || 'slug-legacy',
-          acertou: acertou,
+          acertou,
           banca: dados.meta?.banca || 'DESCONHECIDA',
           topico: dados.meta?.topico || 'Geral',
-          subtopico: dados.meta?.subtopico || dados.meta?.topico || 'Geral'
-        });
+          subtopico: dados.meta?.subtopico || dados.meta?.topico || 'Geral',
+        }),
+      });
 
-        if (insertError) {
-          logger.error('Failed to register attempt', insertError, { userId: user.id, moduloSlug });
-        }
+      if (!response.ok) {
+        logger.error('Failed to register attempt via API', { status: response.status, moduloSlug });
       }
     } catch (error) {
       logger.error('Unexpected error registering attempt', error);
@@ -453,11 +448,11 @@ export default function AvantLessonPlayer({
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center"
           >
-            {/* Container Full Screen */}
-            <div className="w-full h-full flex flex-col relative">
+            {/* Container Full Screen - flex flow para header/footer não sobreporem conteúdo */}
+            <div className="w-full h-full flex flex-col">
               
               {/* Header Minimalista (Top Bar) */}
-              <div className="absolute top-0 left-0 right-0 z-50 px-6 md:px-12 pt-6 flex justify-between items-center">
+              <div className="shrink-0 px-6 md:px-12 pt-6 pb-2 flex justify-between items-center">
                 <div className="flex items-center gap-3">
                   <div className="bg-[#BEF264] text-slate-900 p-2 rounded-lg">
                     <Lightbulb size={20} fill="black" />
@@ -504,7 +499,7 @@ export default function AvantLessonPlayer({
               </div>
 
               {/* Footer de Navegação (Bottom Bar) */}
-              <div className="absolute bottom-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-xl border-t border-white/5 px-6 md:px-12 py-6">
+              <div className="shrink-0 bg-black/40 backdrop-blur-xl border-t border-white/5 px-6 md:px-12 py-6">
                 <div className="flex justify-between items-center max-w-6xl mx-auto">
                   
                   {/* Botão Anterior */}

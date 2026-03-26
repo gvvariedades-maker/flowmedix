@@ -1,7 +1,9 @@
 'use client';
 
 import { createBrowserClient } from '@supabase/ssr';
-import { Eye, EyeOff } from 'lucide-react';
+import Link from 'next/link';
+import { AlertCircle, ArrowRight, CheckCircle2, Eye, EyeOff, Lock, UserPlus, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -14,104 +16,201 @@ export default function RegisterPage() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleRegister = async (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleRegister = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+
     if (password.length < 6) {
-      alert('A senha precisa ter no mínimo 6 caracteres.');
+      setError('A senha precisa ter no mínimo 6 caracteres.');
       return;
     }
+
+    if (password !== confirmPassword) {
+      setError('As senhas não coincidem.');
+      return;
+    }
+
     setLoading(true);
 
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-    });
+    try {
+      const { error: authError } = await supabase.auth.signUp({
+        email: email.trim(),
+        password,
+      });
 
-    setLoading(false);
+      if (authError) {
+        setError(authError.message || 'Erro ao criar conta. Tente novamente.');
+        setLoading(false);
+        return;
+      }
 
-    if (error) {
-      alert('Erro ao criar conta: ' + error.message);
-      return;
+      router.push('/estudar');
+      router.refresh();
+    } catch (err: any) {
+      setError(err.message || 'Erro inesperado. Tente novamente.');
+      setLoading(false);
     }
-
-    router.push('/dashboard');
-    router.refresh();
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-transparent relative">
-      <div className="bg-glow-main w-[520px] h-[520px] opacity-20" />
-      <div className="glass-panel w-full max-w-md p-8 relative z-10 border-t-4 border-t-clinical-accent">
-        <div className="text-center mb-8 space-y-2">
-          <h1 className="text-3xl font-black text-neon-gradient">CRIAR CONTA</h1>
-          <p className="text-slate-400 text-sm uppercase tracking-widest">
-            Plataforma de estudo reverso para Técnicos de Enfermagem
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6 relative overflow-hidden">
+
+      {/* Background Decorativo */}
+      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-indigo-300/20 rounded-full blur-[100px]" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#BEF264]/10 rounded-full blur-[100px]" />
+
+      <div className="w-full max-w-md relative z-10">
+
+        {/* Header */}
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/30">
+              <Zap size={24} className="text-[#BEF264]" fill="currentColor" />
+            </div>
+            <span className="text-3xl font-[1000] italic tracking-tighter text-slate-900">AVANT</span>
+          </div>
+          <div className="inline-flex items-center gap-2 mb-2 bg-indigo-50 border border-indigo-100 px-4 py-1.5 rounded-full">
+            <UserPlus size={14} className="text-indigo-500" />
+            <span className="text-[10px] font-black uppercase tracking-widest text-indigo-500">Nova Conta</span>
+          </div>
+          <h1 className="text-2xl font-black text-slate-900 tracking-tight mt-2">
+            Crie seu Acesso
+          </h1>
+          <p className="text-slate-500 font-medium text-sm mt-1">
+            Prepare-se para concursos de Técnico de Enfermagem com Estudo Reverso.
           </p>
         </div>
 
-        <form onSubmit={handleRegister} className="space-y-6">
-          <div>
-            <label className="block text-xs font-bold text-clinical-accent mb-2 uppercase">
-              Identificação institucional (Email)
+        {/* Formulário */}
+        <form
+          onSubmit={handleRegister}
+          className="space-y-5 bg-white p-8 rounded-[32px] shadow-2xl shadow-slate-200/50 border border-slate-100 relative overflow-hidden"
+        >
+
+          {/* E-mail */}
+          <div className="space-y-2">
+            <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 pl-1">
+              E-mail de Acesso
             </label>
             <input
               type="email"
-              className="w-full bg-white/5 border border-white/10 rounded-xl p-4 focus:border-clinical-accent outline-none transition-all"
-              placeholder="nome@instituicao.com"
+              required
               value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              required
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="seu@email.com"
+              className="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl font-bold text-slate-700 outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all placeholder:text-slate-300 placeholder:font-normal"
             />
           </div>
-          <div className="relative">
-            <label className="block text-xs font-bold text-clinical-accent mb-2 uppercase">
-              Código de acesso (Senha)
+
+          {/* Senha */}
+          <div className="space-y-2">
+            <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 pl-1">
+              Senha
             </label>
-            <input
-              type={showPassword ? 'text' : 'password'}
-              className="w-full bg-white/5 border border-white/10 rounded-xl p-4 pr-12 focus:border-clinical-accent outline-none transition-all"
-              placeholder="mínimo 6 caracteres"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              minLength={6}
-              required
-            />
-            <button
-              type="button"
-              onClick={() => setShowPassword((prev) => !prev)}
-              className="absolute inset-y-0 right-3 flex items-center text-white/70 transition-colors hover:text-clinical-accent"
-            >
-              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-            </button>
+            <div className="relative">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                required
+                minLength={6}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="mínimo 6 caracteres"
+                className="w-full bg-slate-50 border border-slate-200 p-4 pr-12 rounded-xl font-bold text-slate-700 outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all placeholder:text-slate-300 placeholder:font-normal"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                className="absolute inset-y-0 right-4 flex items-center text-slate-300 hover:text-indigo-500 transition-colors"
+              >
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
+            </div>
           </div>
+
+          {/* Confirmar Senha */}
+          <div className="space-y-2">
+            <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 pl-1">
+              Confirmar Senha
+            </label>
+            <div className="relative">
+              <input
+                type={showConfirm ? 'text' : 'password'}
+                required
+                minLength={6}
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                placeholder="repita a senha"
+                className="w-full bg-slate-50 border border-slate-200 p-4 pr-12 rounded-xl font-bold text-slate-700 outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all placeholder:text-slate-300 placeholder:font-normal"
+              />
+              <button
+                type="button"
+                onClick={() => setShowConfirm((prev) => !prev)}
+                className="absolute inset-y-0 right-4 flex items-center text-slate-300 hover:text-indigo-500 transition-colors"
+              >
+                {showConfirm ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
+            </div>
+          </div>
+
+          {/* Mensagem de Erro */}
+          {error && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex items-center gap-2 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700"
+            >
+              <AlertCircle size={16} className="shrink-0" />
+              <p className="text-xs font-bold">{error}</p>
+            </motion.div>
+          )}
+
+          {/* Botão */}
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-clinical-accent text-black font-black p-4 rounded-xl hover:shadow-neon-cyan transition-all disabled:opacity-50"
+            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-xl font-black uppercase tracking-widest shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-3 transition-all hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed group"
           >
-            {loading ? 'ENVIANDO...' : 'CRIAR MINHA CONTA'}
+            {loading ? (
+              <span className="animate-pulse">Criando conta...</span>
+            ) : (
+              <>
+                Criar Minha Conta <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </>
+            )}
           </button>
-          <p className="text-center text-sm text-slate-400">
-            Já possui acesso?{' '}
-            <a href="/login" className="text-clinical-accent underline-offset-4 hover:underline">
+
+          {/* Link login */}
+          <p className="text-center text-sm text-slate-400 font-medium pt-1">
+            Já tem acesso?{' '}
+            <Link href="/login" className="text-indigo-600 font-black hover:text-indigo-700 transition-colors">
               Entrar agora
-            </a>
+            </Link>
           </p>
+
+          {/* Rodapé Seguro */}
+          <div className="pt-4 mt-2 border-t border-slate-50 flex justify-center items-center gap-2 text-slate-300">
+            <Lock size={12} />
+            <span className="text-[10px] font-bold uppercase tracking-widest">Ambiente Seguro</span>
+          </div>
         </form>
+
+        {/* Prova Social */}
+        <div className="mt-8 flex justify-center gap-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+          <div className="flex items-center gap-2 text-slate-400">
+            <CheckCircle2 size={16} /> <span className="text-xs font-bold">Metodologia Validada</span>
+          </div>
+          <div className="flex items-center gap-2 text-slate-400">
+            <CheckCircle2 size={16} /> <span className="text-xs font-bold">Foco no Edital</span>
+          </div>
+        </div>
+
       </div>
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-

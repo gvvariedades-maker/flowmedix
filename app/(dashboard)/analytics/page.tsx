@@ -10,7 +10,7 @@ import PerformanceHeatmap from '@/components/analytics/PerformanceHeatmap';
 import ErrorPatterns from '@/components/analytics/ErrorPatterns';
 import Recommendations from '@/components/analytics/Recommendations';
 import { logger } from '@/lib/logger';
-import { BookOpen, TrendingUp, AlertTriangle, Target } from 'lucide-react';
+import { BarChart3, BookOpen, Brain, ChevronRight, Crosshair, Flame, TrendingUp, AlertTriangle, Target, Zap } from 'lucide-react';
 
 export default async function AnalyticsPage() {
   const cookieStore = await cookies();
@@ -60,6 +60,103 @@ export default async function AnalyticsPage() {
     }
 
     const historico = (historicoData || []) as any[];
+
+    // ── EMPTY STATE ───────────────────────────────────────────────────────────
+    if (historico.length === 0) {
+      return (
+        <div className="min-h-screen bg-[#010409] flex items-center justify-center p-6 relative overflow-hidden">
+          {/* Blurs decorativos */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-violet-500/10 rounded-full blur-[80px] pointer-events-none" />
+
+          <div className="relative z-10 max-w-2xl w-full text-center space-y-10">
+
+            {/* Ícone central */}
+            <div className="flex justify-center">
+              <div className="relative">
+                <div className="w-24 h-24 rounded-3xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center">
+                  <BarChart3 size={44} className="text-indigo-400" />
+                </div>
+                <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-amber-500/20 border border-amber-500/30 flex items-center justify-center">
+                  <Zap size={12} className="text-amber-400" fill="currentColor" />
+                </div>
+              </div>
+            </div>
+
+            {/* Texto principal */}
+            <div className="space-y-3">
+              <p className="text-[10px] font-black uppercase tracking-widest text-indigo-400">
+                Desempenho Inteligente
+              </p>
+              <h1 className="text-3xl md:text-4xl font-[1000] italic tracking-tighter text-white leading-tight">
+                Seus Insights Aparecem<br />
+                <span className="text-indigo-400">Aqui em Breve</span>
+              </h1>
+              <p className="text-slate-400 font-medium text-sm max-w-md mx-auto leading-relaxed">
+                Complete sua primeira sessão de estudos e o sistema começa a mapear
+                seu desempenho com análises precisas e recomendações personalizadas.
+              </p>
+            </div>
+
+            {/* Preview do que vai aparecer */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {[
+                { icone: <TrendingUp size={18} />, label: 'Taxa de Acerto', cor: 'emerald' },
+                { icone: <Brain size={18} />, label: 'Padrões de Erro', cor: 'violet' },
+                { icone: <Crosshair size={18} />, label: 'Áreas Críticas', cor: 'rose' },
+                { icone: <Flame size={18} />, label: 'Streak de Estudos', cor: 'amber' },
+              ].map(({ icone, label, cor }) => (
+                <div
+                  key={label}
+                  className="p-4 rounded-2xl border border-white/5 bg-white/[0.03] flex flex-col items-center gap-2 opacity-50"
+                >
+                  <div className={`w-9 h-9 rounded-xl bg-${cor}-500/10 border border-${cor}-500/20 flex items-center justify-center text-${cor}-400`}>
+                    {icone}
+                  </div>
+                  <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wide text-center leading-tight">
+                    {label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Passos rápidos */}
+            <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-5 text-left space-y-3">
+              <p className="text-[10px] font-black uppercase tracking-widest text-slate-500 text-center mb-4">
+                Como desbloquear seus insights
+              </p>
+              {[
+                { n: '1', texto: 'Acesse a Vitrine de Aulas', detalhe: 'Escolha um módulo do seu edital' },
+                { n: '2', texto: 'Responda as questões', detalhe: 'Pode ser apenas 5 questões para começar' },
+                { n: '3', texto: 'Volte aqui', detalhe: 'Seus dados já estarão sendo analisados' },
+              ].map(({ n, texto, detalhe }) => (
+                <div key={n} className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-[10px] font-black text-indigo-400 shrink-0 mt-0.5">
+                    {n}
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-white leading-tight">{texto}</p>
+                    <p className="text-xs text-slate-500">{detalhe}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <a
+              href="/estudar"
+              className="inline-flex items-center gap-3 bg-indigo-600 hover:bg-indigo-700 text-white font-black px-8 py-4 rounded-2xl text-sm uppercase tracking-widest shadow-xl shadow-indigo-500/20 transition-all hover:scale-105 group"
+            >
+              <BookOpen size={18} />
+              Começar a Estudar Agora
+              <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+
+          </div>
+        </div>
+      );
+    }
+    // ─────────────────────────────────────────────────────────────────────────
 
     // Importar funções de análise
     const analyticsModule = await import('@/lib/analytics');

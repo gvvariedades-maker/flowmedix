@@ -2,14 +2,14 @@ import { createServerClient } from '@supabase/ssr';
 import { NextRequest, NextResponse } from 'next/server';
 import { validateEnv } from '@/lib/env';
 
-// Validar variáveis de ambiente no proxy (apenas uma vez)
+// Validar variáveis de ambiente no middleware (apenas uma vez)
 let envValidated = false;
 if (!envValidated) {
   try {
     validateEnv();
     envValidated = true;
   } catch (error) {
-    // Em produção, não quebrar o proxy (variáveis podem estar no Vercel)
+    // Em produção, não quebrar o middleware (variáveis podem estar no Vercel)
     // O health check vai detectar o problema
     if (process.env.NODE_ENV === 'development') {
       console.error('⚠️ Environment validation failed:', error);
@@ -17,7 +17,7 @@ if (!envValidated) {
   }
 }
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   let response = NextResponse.next({
     request: {
       headers: request.headers,
@@ -76,6 +76,7 @@ export async function proxy(request: NextRequest) {
     }
   );
 
+  // Renova a sessão do Supabase (refresh token) a cada request
   await supabase.auth.getUser();
 
   return response;

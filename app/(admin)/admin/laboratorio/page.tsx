@@ -6,7 +6,7 @@ import {
   CheckCircle2, AlertCircle, Trash2, ClipboardPaste 
 } from 'lucide-react';
 import Link from 'next/link';
-import { supabase } from '@/lib/supabase';
+import { supabase } from '@/lib/supabase/client';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import { logger } from '@/lib/logger';
 import { QuestaoCompletaSchema } from '@/lib/validations';
@@ -20,18 +20,8 @@ import { TemplateSelector } from '@/components/admin/TemplateSelector';
 import { QuestionExporter } from '@/components/admin/QuestionExporter';
 import { EnhancedPreview } from '@/components/admin/EnhancedPreview';
 import type { QuestaoCompleta } from '@/types/lesson';
-
-// ============================================================================
-// FUNÇÃO: GERA HASH DO CONTEÚDO PARA DETECÇÃO DE DUPLICATAS
-// ============================================================================
-async function generateContentHash(text: string) {
-  // Normaliza o texto: remove espaços extras e passa para minusculo
-  const normalized = text.trim().toLowerCase().replace(/\s+/g, '');
-  const msgUint8 = new TextEncoder().encode(normalized);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
+import { tryRecoverUtf8FromLatin1Misread } from '@/lib/fixUtf8Mojibake';
+import { generateContentHash } from '@/lib/contentHash';
 
 interface ValidationError {
   path: string[];
@@ -58,7 +48,7 @@ export default function AvantLaboratory() {
     try {
       const text = await navigator.clipboard.readText();
       if (!text) return;
-      setJsonInput(text);
+      setJsonInput(tryRecoverUtf8FromLatin1Misread(text));
       // O useEffect de validação cuidará do resto
     } catch (err) {
       logger.error("Falha ao ler área de transferência", err);
@@ -288,6 +278,16 @@ export default function AvantLaboratory() {
                Colar JSON
              </button>
 
+             <button
+              type="button"
+              title="Corrige texto tipo NÃ£o → Não (UTF-8 lido como Latin-1)"
+              onClick={() => setJsonInput((prev) => tryRecoverUtf8FromLatin1Misread(prev))}
+              className="px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-widest text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 transition-colors border border-transparent hover:border-indigo-100"
+              disabled={!jsonInput}
+            >
+              UTF-8
+            </button>
+
              <button 
                onClick={() => setJsonInput('')}
                className="px-4 py-3 rounded-xl font-bold text-xs uppercase tracking-widest text-slate-400 hover:text-red-500 hover:bg-red-50 transition-colors"
@@ -352,6 +352,7 @@ export default function AvantLaboratory() {
                 setSelectedLine(line);
                 // Scroll para a linha já é feito pelo componente
               }}
+              normalizePastedText={tryRecoverUtf8FromLatin1Misread}
               placeholder="Clique no botão 'Colar JSON' acima..."
               className="h-full"
             />

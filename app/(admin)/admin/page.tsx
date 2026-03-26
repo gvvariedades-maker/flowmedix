@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabase } from '@/lib/supabase';
+import { supabase } from '@/lib/supabase/client';
 import { ADMIN_EMAIL } from '@/lib/constants';
 import { 
   MapPin, ArrowRight, Database, LayoutDashboard, LogOut, Loader2,

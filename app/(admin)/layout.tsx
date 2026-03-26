@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabase } from '@/lib/supabase';
+import { supabase } from '@/lib/supabase/client';
 import { ADMIN_EMAIL } from '@/lib/constants';
 import { Loader2 } from 'lucide-react';
 

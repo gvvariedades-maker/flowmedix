@@ -148,6 +148,101 @@ export const getThemeStyles = (subject: string): string => {
 };
 
 // ============================================================================
+// MAPEAMENTO SUBTÓPICO → TEMPLATE + PACOTE DE LAYOUT VARIANTS
+// Usado como fallback automático quando o JSON não especifica template
+// ============================================================================
+interface SubtopicDesign {
+  template: string;              // tema (nome ou tID)
+  conceptMap: string;            // layout_variant para concept_map
+  goldenRule: string;            // layout_variant para golden_rule
+  logicFlow: string;             // layout_variant para logic_flow
+  dangerZone: string;            // layout_variant para danger_zone
+}
+
+export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
+  // ---- Histopatologia ----
+  'histopatologia': { template: 'sky', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+  // ---- Anatomia ----
+  'anatomia': { template: 'rose', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
+  'noções de anatomia': { template: 'rose', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
+  // ---- Fisiologia ----
+  'fisiologia': { template: 'cyan', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+  'noções de fisiologia': { template: 'cyan', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+  // ---- Legislação ----
+  'legislação': { template: 'amber', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'lei 7.498/86': { template: 'amber', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'história da enfermagem': { template: 'amber', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'cofen/coren': { template: 'orange', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'cards', dangerZone: 'compact' },
+  // ---- SAE / Fundamentos ----
+  'sae': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
+  'sistematização da assistência de enfermagem': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
+  'fundamentos de enfermagem': { template: 'indigo', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
+  // ---- Procedimentos / Técnicas ----
+  'procedimentos': { template: 'emerald', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'cards' },
+  'técnicas de enfermagem': { template: 'emerald', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'cards' },
+  'imobilização ortopédica': { template: 'rose', conceptMap: 'grid', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'compact' },
+  // ---- Biossegurança ----
+  'biossegurança': { template: 'teal', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+  // ---- Saúde pública ----
+  'saúde pública': { template: 'teal', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+  'epidemiologia': { template: 'lime', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+  // ---- Farmacologia / Medicamentos ----
+  'farmacologia': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'dosagens e cálculos': { template: 'blue', conceptMap: 'stack', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'compact' },
+  // ---- Matemática ----
+  'matemática': { template: 'blue', conceptMap: 'grid', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'compact' },
+  'raciocínio lógico': { template: 'teal', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'horizontal', dangerZone: 'compact' },
+  // ---- Ética ----
+  'ética': { template: 'sky', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'compact' },
+  // ---- Informática ----
+  'informática': { template: 'fuchsia', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'cards' },
+};
+
+/** Normaliza string de subtópico para busca no mapa */
+const normalizeKey = (str: string): string =>
+  str.toLowerCase().trim()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')  // remove acentos
+    .replace(/\s+/g, ' ');
+
+/**
+ * Busca design por subtópico, com tentativas parciais.
+ * Retorna o SubtopicDesign ou undefined se não encontrar.
+ */
+export const getDesignBySubtopic = (subtopico: string): SubtopicDesign | undefined => {
+  const key = normalizeKey(subtopico);
+  // Busca exata
+  const exactMatch = Object.entries(SUBTOPIC_DESIGN_MAP).find(
+    ([k]) => normalizeKey(k) === key
+  );
+  if (exactMatch) return exactMatch[1];
+  // Busca parcial (subtópico contém a chave ou vice-versa)
+  const partialMatch = Object.entries(SUBTOPIC_DESIGN_MAP).find(
+    ([k]) => key.includes(normalizeKey(k)) || normalizeKey(k).includes(key)
+  );
+  return partialMatch ? partialMatch[1] : undefined;
+};
+
+/**
+ * Retorna o layout_variant correto dado o subtópico e tipo de slide.
+ * Fallback: calcula pela lógica semântica padrão.
+ */
+export const getLayoutVariantBySubtopic = (
+  subtopico: string,
+  slideType: string,
+  slide?: any
+): string => {
+  const design = getDesignBySubtopic(subtopico);
+  if (!design) return calculateLayoutVariantFromType(slideType, slide);
+  switch (slideType) {
+    case 'concept_map': return design.conceptMap;
+    case 'golden_rule': return design.goldenRule;
+    case 'logic_flow': return design.logicFlow;
+    case 'danger_zone': return design.dangerZone;
+    default: return 'grid';
+  }
+};
+
+// ============================================================================
 // MAPEAMENTO TEMPLATE ID → TEMA (10–15 modelos visuais por assunto)
 // Usado quando o JSON especifica "template": "t03" ou "theme_id": "t07"
 // ============================================================================
@@ -509,19 +604,24 @@ export const getThemeForSlide = (
     }
   }
   
-  // 3. FALLBACK: Tenta usar topico/subtopico do meta se disponível
-  if (slide.meta?.topico || slide.meta?.subtopico) {
-    const topicoKey = (slide.meta.topico || slide.meta.subtopico).toLowerCase().trim();
+  // 3. FALLBACK: Tenta usar subtopico do meta via SUBTOPIC_DESIGN_MAP (prioridade)
+  // Depois tenta topico/subtopico no SUBJECT_THEME_MAP
+  if (slide.meta?.subtopico || slide.meta?.topico) {
+    const subtopico = slide.meta.subtopico || slide.meta.topico;
+    const design = getDesignBySubtopic(subtopico);
+    if (design) {
+      const baseTheme = getThemeByName(design.template) || getThemeFromHash(generateSimpleHash(design.template));
+      const uniqueHash = generateRobustQuestionHash(`${questionHash}-${subtopico}`, slideIndex, slide.type);
+      const variations = generateThemeVariations(uniqueHash);
+      return applyThemeVariations(baseTheme, variations, slideIndex ?? 0);
+    }
+    // Fallback para SUBJECT_THEME_MAP
+    const topicoKey = subtopico.toLowerCase().trim();
     const mappedTheme = SUBJECT_THEME_MAP[topicoKey];
     if (mappedTheme) {
       const themeHash = generateSimpleHash(mappedTheme);
       const baseTheme = getThemeFromHash(themeHash);
-      // Variações únicas
-      const uniqueHash = generateRobustQuestionHash(
-        `${questionHash}-${topicoKey}`,
-        slideIndex,
-        slide.type
-      );
+      const uniqueHash = generateRobustQuestionHash(`${questionHash}-${topicoKey}`, slideIndex, slide.type);
       const variations = generateThemeVariations(uniqueHash);
       return applyThemeVariations(baseTheme, variations, slideIndex);
     }
@@ -535,33 +635,40 @@ export const getThemeForSlide = (
 };
 
 // ============================================================================
-// CALCULA LAYOUT VARIANT AUTOMATICAMENTE (Baseado em contexto semântico)
+// CALCULA LAYOUT VARIANT SOMENTE PELO TIPO (sem subtópico)
+// ============================================================================
+export const calculateLayoutVariantFromType = (slideType: string, slide?: any): string => {
+  const itemsCount = slide?.items?.length || slide?.concepts?.length || 0;
+  switch (slideType) {
+    case 'concept_map':
+      if (itemsCount >= 3) return 'morphological';
+      if (itemsCount <= 2) return 'stack';
+      return 'morphological';
+    case 'golden_rule': return 'center';
+    case 'logic_flow': return 'vertical';
+    case 'danger_zone': return 'list';
+    case 'versus_arena': return 'split';
+    default: return 'grid';
+  }
+};
+
+// ============================================================================
+// CALCULA LAYOUT VARIANT AUTOMATICAMENTE (Baseado em subtópico + contexto)
+// Prioridade: subtópico do meta > subtópico do subject > tipo semântico
 // ============================================================================
 export const calculateLayoutVariant = (slide: any): string => {
   const slideType = slide.type || slide.layout_type;
-  const itemsCount = slide.items?.length || slide.concepts?.length || 0;
-  
-  switch (slideType) {
-    case 'concept_map':
-      // Layout Morfológico como padrão (alta performance, zero layout shift)
-      // Grid CSS fluido se adapta automaticamente
-      if (itemsCount >= 3) return 'morphological'; // 3+ items = morfológico (recomendado)
-      if (itemsCount <= 2) return 'stack';
-      return 'morphological'; // Padrão morfológico para melhor performance
-      
-    case 'golden_rule':
-      return 'center'; // Sempre centralizado
-      
-    case 'logic_flow':
-      return 'vertical'; // Sempre vertical
-      
-    case 'danger_zone':
-      return 'list'; // Lista de alertas
-      
-    case 'versus_arena':
-      return 'split'; // Divisão lado a lado
-      
-    default:
-      return 'grid'; // Padrão
+  // Prioridade 1: subtópico do meta
+  const subtopico = slide.meta?.subtopico || slide.meta?.topico;
+  if (subtopico) {
+    const variant = getLayoutVariantBySubtopic(subtopico, slideType, slide);
+    if (variant) return variant;
   }
+  // Prioridade 2: subject
+  if (slide.subject) {
+    const variant = getLayoutVariantBySubtopic(slide.subject, slideType, slide);
+    if (variant) return variant;
+  }
+  // Fallback: lógica semântica padrão
+  return calculateLayoutVariantFromType(slideType, slide);
 };

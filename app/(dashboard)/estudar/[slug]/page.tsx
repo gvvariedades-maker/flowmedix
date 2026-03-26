@@ -2,17 +2,8 @@ import { notFound } from 'next/navigation';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import { 
   getQuestaoBySlugCached, 
-  getQuestoesByBancaCached 
+  getQuestoesByAssuntoCached 
 } from '@/lib/cache';
-
-interface ModuloEstudoRow {
-  id: string;
-  modulo_slug: string;
-  conteudo_json: any;
-  banca: string;
-  modulo_nome: string | null;
-  [key: string]: any;
-}
 
 interface ModuloListItem {
   id: string;
@@ -25,20 +16,21 @@ export default async function PaginaQuestaoDinamica({
   params: Promise<{ slug: string }> 
 }) {
   const resolvedParams = await params;
-  // OTIMIZAÇÃO: Busca questão primeiro (crítica para renderização)
+  // Busca a questão atual
   const atual = await getQuestaoBySlugCached(resolvedParams.slug);
 
   if (!atual) return notFound();
 
-  // OTIMIZAÇÃO: Busca lista em paralelo após ter a questão (não bloqueia renderização)
-  // A lista é usada apenas para navegação, pode carregar depois
-  const listaPromise = getQuestoesByBancaCached(
-    atual.banca,
-    atual.modulo_nome
-  );
+  // Navegação por assunto (titulo_aula) — agrupa todas as questões do mesmo assunto
+  const tituloAula: string =
+    atual.titulo_aula ||
+    atual.conteudo_json?.meta?.subtopico ||
+    atual.modulo_nome ||
+    '';
 
-  // Aguarda lista apenas para calcular navegação (não bloqueia renderização inicial)
-  const lista = await listaPromise;
+  const lista = tituloAula
+    ? await getQuestoesByAssuntoCached(tituloAula)
+    : [];
 
   const indexAtual = lista?.findIndex((item: ModuloListItem) => item.id === atual.id) ?? -1;
   const anteriorSlug = indexAtual > 0 ? lista![indexAtual - 1].modulo_slug : null;

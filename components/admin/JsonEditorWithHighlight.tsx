@@ -11,6 +11,8 @@ interface JsonEditorWithHighlightProps {
   onLineClick?: (line: number) => void;
   placeholder?: string;
   className?: string;
+  /** Se definido, aplica ao colar (Ctrl+V) quando o texto recuperado for diferente. */
+  normalizePastedText?: (text: string) => string;
 }
 
 export function JsonEditorWithHighlight({
@@ -21,6 +23,7 @@ export function JsonEditorWithHighlight({
   onLineClick,
   placeholder,
   className = '',
+  normalizePastedText,
 }: JsonEditorWithHighlightProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const lineNumbersRef = useRef<HTMLDivElement>(null);
@@ -121,6 +124,21 @@ export function JsonEditorWithHighlight({
         ref={textareaRef}
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        onPaste={(e) => {
+          if (!normalizePastedText) return;
+          const raw = e.clipboardData.getData('text/plain');
+          const next = normalizePastedText(raw);
+          if (next === raw) return;
+          e.preventDefault();
+          const el = e.currentTarget;
+          const { selectionStart, selectionEnd } = el;
+          const merged = value.slice(0, selectionStart) + next + value.slice(selectionEnd);
+          onChange(merged);
+          queueMicrotask(() => {
+            const pos = selectionStart + next.length;
+            el.selectionStart = el.selectionEnd = pos;
+          });
+        }}
         placeholder={placeholder}
         className="flex-1 font-mono text-xs resize-none outline-none bg-transparent"
         spellCheck={false}

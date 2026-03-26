@@ -96,7 +96,7 @@ export const FluxogramaSchema = z.object({
 
 // Schema para Questão JSON (Laboratório) - COM LIMITES DE TAMANHO
 export const QuestaoMetaSchema = z.object({
-  ano: z.string().max(10, 'Ano deve ter no máximo 10 caracteres').optional(),
+  ano: z.string().max(40, 'Ano deve ter no máximo 40 caracteres').optional(),
   banca: z.string().min(1, 'Banca é obrigatória').max(LIMITS.BANCA_MAX, `Banca deve ter no máximo ${LIMITS.BANCA_MAX} caracteres`),
   orgao: z.string().max(LIMITS.ORGAO_MAX, `Órgão deve ter no máximo ${LIMITS.ORGAO_MAX} caracteres`).optional(),
   prova: z.string().max(LIMITS.PROVA_MAX, `Prova deve ter no máximo ${LIMITS.PROVA_MAX} caracteres`).optional(),

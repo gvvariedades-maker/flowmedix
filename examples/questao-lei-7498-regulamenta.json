@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "AVANÇASP",
+    "orgao": "Prefeitura de Cerquilho",
+    "prova": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "História da Enfermagem - Lei 7.498/86"
+  },
+  "question_data": {
+    "instruction": "A Lei nº 7.498/1986 regulamenta:",
+    "text_fragment": "<p>A Lei nº 7.498/1986 regulamenta:</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "A compra de medicamentos hospitalares.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A fabricação de insumos hospitalares.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "O uso de EPIs pelos profissionais.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "O tempo máximo de internação.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "O exercício profissional da enfermagem.",
+        "is_correct": true
+      }
+    ],
+    "correct_answer": "E",
+    "explanation": "A Lei nº 7.498/1986 dispõe sobre a regulamentação do exercício da enfermagem e dá outras providências. Ela define as categorias profissionais (Enfermeiro, Técnico, Auxiliar e Parteira), suas atribuições e a fiscalização do exercício profissional. As demais alternativas tratam de temas regulados por outras normas."
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "layout_variant": "morphological",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "História da Enfermagem - Lei 7.498/86"
+      },
+      "items": [
+        {
+          "label": "Lei 7.498/1986",
+          "detail": "Regulamenta o EXERCÍCIO PROFISSIONAL da enfermagem. Define quem pode exercer, as categorias e suas atribuições.",
+          "icon": "FileText"
+        },
+        {
+          "label": "O que NÃO regula",
+          "detail": "Medicamentos, insumos, EPIs e tempo de internação são regulados por outras leis e normas (ANVISA, NRs, etc.).",
+          "icon": "XCircle"
+        },
+        {
+          "label": "Categorias da Lei",
+          "detail": "Enfermeiro, Técnico de Enfermagem, Auxiliar de Enfermagem e Parteira. Cada uma com formação e atribuições específicas.",
+          "icon": "Users"
+        },
+        {
+          "label": "Decreto 94.406/87",
+          "detail": "Regulamenta a Lei 7.498/86, detalhando requisitos, atribuições e fiscalização do exercício da enfermagem.",
+          "icon": "ScrollText"
+        },
+        {
+          "label": "Regra de Ouro",
+          "detail": "Lei 7.498/86 = EXERCÍCIO da enfermagem. Memorize: 'regulamenta quem pode e como exercer a profissão'.",
+          "icon": "Target"
+        }
+      ],
+      "footer_rule": "Lei 7.498/86 = EXERCÍCIO PROFISSIONAL da enfermagem. Não confundir com compras, insumos ou EPIs!"
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "content": "LEI 7.498/1986 = REGULAMENTA O EXERCÍCIO PROFISSIONAL DA ENFERMAGEM. Define categorias, atribuições e fiscalização."
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Enfermagem",
+      "steps": [
+        {
+          "id": "1",
+          "text": "Identifique o objeto da questão: o que a Lei 7.498/86 regulamenta?"
+        },
+        {
+          "id": "2",
+          "text": "Elimine alternativas irrelevantes: compra de medicamentos, fabricação de insumos, EPIs e tempo de internação não são objeto dessa lei"
+        },
+        {
+          "id": "3",
+          "text": "A Lei 7.498/86 tem como título: 'Dispõe sobre a regulamentação do exercício da enfermagem'"
+        },
+        {
+          "id": "4",
+          "text": "Conclusão: Alternativa E - O exercício profissional da enfermagem"
+        }
+      ],
+      "footer_rule": "Pipeline: Objeto da lei → Eliminar alternativas → Identificar exercício profissional"
+    },
+    {
+      "type": "danger_zone",
+      "subject": "Enfermagem",
+      "content": "CUIDADO: Não confundir a Lei 7.498/86 com outras normas. Medicamentos (RDC ANVISA), EPIs (NRs), tempo de internação (regulamentos hospitalares) são temas de outras legislações.",
+      "items": [
+        {
+          "id": "1",
+          "label": "Não é compra de medicamentos (A)",
+          "detail": "Aquisição de medicamentos é regulada por leis de licitação e normas da ANVISA, não pela Lei do Exercício da Enfermagem."
+        },
+        {
+          "id": "2",
+          "label": "Não é fabricação de insumos (B)",
+          "detail": "Fabricação de insumos hospitalares é competência da ANVISA e órgãos de vigilância sanitária."
+        },
+        {
+          "id": "3",
+          "label": "Não é uso de EPIs (C)",
+          "detail": "EPIs são regulados pelas NRs (Normas Regulamentadoras) do Ministério do Trabalho, especialmente NR-6."
+        },
+        {
+          "id": "4",
+          "label": "Não é tempo de internação (D)",
+          "detail": "Tempo de internação é definido por protocolos clínicos, critérios de alta e regulamentos dos planos de saúde."
+        }
+      ],
+      "footer_rule": "REGRA DE OURO: Lei 7.498/86 = EXERCÍCIO da profissão de enfermagem. Só isso!"
+    }
+  ]
+}

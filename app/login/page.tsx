@@ -128,7 +128,7 @@ function LoginContent() {
             className="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl font-bold text-slate-700 outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all placeholder:text-slate-300"
           />
           <div className="flex justify-end">
-            <Link href="#" className="text-[10px] font-bold text-indigo-500 hover:text-indigo-600 uppercase tracking-wide">
+            <Link href="/esqueci-senha" className="text-[10px] font-bold text-indigo-500 hover:text-indigo-600 uppercase tracking-wide">
               Esqueci a senha
             </Link>
           </div>

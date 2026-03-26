@@ -20,7 +20,11 @@ export {
   getThemeForSlide, 
   generateSimpleHash, 
   getThemeStyles,
-  SUBJECT_THEME_MAP 
+  SUBJECT_THEME_MAP,
+  SUBTOPIC_DESIGN_MAP,
+  getDesignBySubtopic,
+  getLayoutVariantBySubtopic,
+  calculateLayoutVariantFromType,
 } from './core/themeGenerator';
 export type { ThemeColors } from './core/themeGenerator';
 
