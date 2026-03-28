@@ -160,42 +160,249 @@ interface SubtopicDesign {
 }
 
 export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
-  // ---- Histopatologia ----
-  'histopatologia': { template: 'sky', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
-  // ---- Anatomia ----
-  'anatomia': { template: 'rose', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
-  'noções de anatomia': { template: 'rose', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
-  // ---- Fisiologia ----
-  'fisiologia': { template: 'cyan', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
-  'noções de fisiologia': { template: 'cyan', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
-  // ---- Legislação ----
-  'legislação': { template: 'amber', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
-  'lei 7.498/86': { template: 'amber', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+
+  // ============================================================
+  // FUNDAMENTOS E BASES DA ENFERMAGEM
+  // ============================================================
+
+  // ---- História da Enfermagem ----
   'história da enfermagem': { template: 'amber', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
-  'cofen/coren': { template: 'orange', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'cards', dangerZone: 'compact' },
-  // ---- SAE / Fundamentos ----
+  'história': { template: 'amber', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+
+  // ---- Noções de Anatomia ----
+  'noções de anatomia': { template: 'rose', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
+  'anatomia': { template: 'rose', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
+
+  // ---- Noções de Fisiologia ----
+  'noções de fisiologia': { template: 'cyan', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+  'fisiologia': { template: 'cyan', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+
+  // ---- Processo de Enfermagem / SAE ----
+  'processo de enfermagem': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
   'sae': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
   'sistematização da assistência de enfermagem': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
   'fundamentos de enfermagem': { template: 'indigo', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
-  // ---- Procedimentos / Técnicas ----
+
+  // ============================================================
+  // FARMACOLOGIA E MEDICAMENTOS
+  // ============================================================
+
+  // ---- Farmacodinâmica e Farmacocinética ----
+  'farmacodinâmica e farmacocinética': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
+  'farmacodinâmica': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
+  'farmacocinética': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
+  'farmacologia': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+
+  // ---- Cálculo de Medicamentos ----
+  'cálculo de administração de medicamentos e infusões': { template: 'blue', conceptMap: 'stack', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'compact' },
+  'cálculo de administração de medicamentos': { template: 'blue', conceptMap: 'stack', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'compact' },
+  'cálculos de enfermagem': { template: 'blue', conceptMap: 'stack', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'compact' },
+  'dosagens e cálculos': { template: 'blue', conceptMap: 'stack', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'compact' },
+
+  // ---- Vias de Administração ----
+  'vias de administração': { template: 'emerald', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'cards' },
+
+  // ---- Cuidados na Administração de Medicamentos ----
+  'cuidados na administração de medicamentos': { template: 'teal', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'cards' },
+
+  // ============================================================
+  // PROCEDIMENTOS DE ENFERMAGEM
+  // ============================================================
+
+  // ---- Sinais Vitais ----
+  'verificação de sinais vitais': { template: 'rose', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+  'sinais vitais': { template: 'rose', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+
+  // ---- Sondas ----
+  'instalação e manejo de sondas': { template: 'indigo', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'vertical', dangerZone: 'cards' },
+  'sondas': { template: 'indigo', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'vertical', dangerZone: 'cards' },
+
+  // ---- Oxigenoterapia ----
+  'oxigenoterapia e cuidados respiratórios': { template: 'cyan', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'compact' },
+  'oxigenoterapia': { template: 'cyan', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'compact' },
+  'cuidados respiratórios': { template: 'cyan', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'compact' },
+
+  // ---- Curativos e Feridas ----
+  'curativos e manejo de feridas': { template: 'orange', conceptMap: 'grid', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'compact' },
+  'curativos': { template: 'orange', conceptMap: 'grid', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'compact' },
+  'manejo de feridas': { template: 'orange', conceptMap: 'grid', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'compact' },
+  'feridas e queimaduras': { template: 'orange', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+  'feridas': { template: 'orange', conceptMap: 'grid', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'compact' },
+  'queimaduras': { template: 'orange', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+
+  // ---- Punção Venosa / Cateteres ----
+  'punção venosa e cuidados com cateteres': { template: 'indigo', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'vertical', dangerZone: 'cards' },
+  'punção venosa': { template: 'indigo', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'vertical', dangerZone: 'cards' },
+  'cateteres': { template: 'indigo', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'vertical', dangerZone: 'cards' },
+
+  // ---- Coleta de Exames ----
+  'coleta de exames laboratoriais': { template: 'sky', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+  'exames laboratoriais': { template: 'sky', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+
+  // ---- Mobilização e Posicionamento ----
+  'mobilização e posicionamento do paciente': { template: 'teal', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+  'mobilização': { template: 'teal', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+  'posicionamento': { template: 'teal', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+
+  // ---- Procedimentos Diversos ----
+  'procedimentos diversos': { template: 'emerald', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'cards' },
   'procedimentos': { template: 'emerald', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'cards' },
   'técnicas de enfermagem': { template: 'emerald', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'cards' },
-  'imobilização ortopédica': { template: 'rose', conceptMap: 'grid', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'compact' },
-  // ---- Biossegurança ----
-  'biossegurança': { template: 'teal', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
-  // ---- Saúde pública ----
-  'saúde pública': { template: 'teal', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+
+  // ============================================================
+  // BIOSSEGURANÇA E CONTROLE DE INFECÇÃO
+  // ============================================================
+
+  // ---- CME / Processamento de Artigos ----
+  'processamento de artigos e produtos de saúde': { template: 'teal', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'enfermagem em central de material e esterilização (cme)': { template: 'teal', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'central de material e esterilização': { template: 'teal', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'cme': { template: 'teal', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'esterilização': { template: 'teal', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+
+  // ---- Precaução e Prevenção de Contato ----
+  'medidas de prevenção e precaução de contato': { template: 'cyan', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+  'precaução de contato': { template: 'cyan', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+  'biossegurança': { template: 'cyan', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+
+  // ---- Infecções e Biossegurança ----
+  'infecções no contexto da biossegurança': { template: 'lime', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+
+  // ---- Segurança do Paciente ----
+  'segurança do paciente': { template: 'amber', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+
+  // ============================================================
+  // SAÚDE PÚBLICA E EPIDEMIOLOGIA
+  // ============================================================
+
+  // ---- Epidemiologia ----
+  'epidemiologia e vigilância epidemiológica': { template: 'lime', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
   'epidemiologia': { template: 'lime', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
-  // ---- Farmacologia / Medicamentos ----
-  'farmacologia': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
-  'dosagens e cálculos': { template: 'blue', conceptMap: 'stack', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'compact' },
-  // ---- Matemática ----
+  'vigilância epidemiológica': { template: 'lime', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+  'saúde pública': { template: 'teal', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+
+  // ---- Promoção à Saúde ----
+  'promoção à saúde e prevenção de agravos': { template: 'emerald', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+  'promoção à saúde': { template: 'emerald', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+  'prevenção de agravos': { template: 'emerald', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+
+  // ---- Imunização ----
+  'imunização': { template: 'lime', conceptMap: 'morphological', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+  'vacinação': { template: 'lime', conceptMap: 'morphological', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+
+  // ---- Atenção Básica / Saúde da Família ----
+  'atenção básica / saúde da família': { template: 'emerald', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
+  'atenção básica': { template: 'emerald', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
+  'saúde da família': { template: 'emerald', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
+
+  // ============================================================
+  // DOENÇAS TRANSMISSÍVEIS
+  // ============================================================
+
+  // ---- ISTs ----
+  'infecções sexualmente transmissíveis (ists)': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'compact' },
+  'infecções sexualmente transmissíveis': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'compact' },
+  'ists': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'compact' },
+
+  // ---- Doenças Virais ----
+  'doenças virais de interesse epidemiológico (covid, influenza, sarampo, polio etc.)': { template: 'rose', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+  'doenças virais de interesse epidemiológico': { template: 'rose', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+  'doenças virais': { template: 'rose', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+
+  // ---- Doenças Bacterianas e Fúngicas ----
+  'doenças bacterianas e fúngicas (tuberculose, tétano, candidíase etc.)': { template: 'orange', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'doenças bacterianas e fúngicas': { template: 'orange', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'tuberculose': { template: 'orange', conceptMap: 'grid', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+
+  // ---- Doenças Parasitárias e Zoonoses ----
+  'doenças parasitárias e zoonoses': { template: 'lime', conceptMap: 'molecular', goldenRule: 'compact', logicFlow: 'cards', dangerZone: 'cards' },
+  'zoonoses': { template: 'lime', conceptMap: 'molecular', goldenRule: 'compact', logicFlow: 'cards', dangerZone: 'cards' },
+
+  // ---- Doenças Transmissíveis (mescladas) ----
+  'outras doenças e questões mescladas sobre doenças transmissíveis': { template: 'teal', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+  'questões mescladas e outras doenças agudas': { template: 'sky', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+
+  // ---- Doenças Respiratórias Crônicas ----
+  'doenças respiratórias crônicas (asma, dpoc)': { template: 'cyan', conceptMap: 'bridge', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+  'doenças respiratórias crônicas': { template: 'cyan', conceptMap: 'bridge', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+  'asma': { template: 'cyan', conceptMap: 'bridge', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+  'dpoc': { template: 'cyan', conceptMap: 'bridge', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+
+  // ============================================================
+  // ESPECIALIDADES CIRÚRGICAS E CRÍTICAS
+  // ============================================================
+
+  // ---- Assistência Perioperatória ----
+  'assistência perioperatória (inclui srpa)': { template: 'violet', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'assistência perioperatória': { template: 'violet', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'perioperatório': { template: 'violet', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'srpa': { template: 'violet', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+
+  // ---- Centro Cirúrgico ----
+  'enfermagem em centro cirúrgico': { template: 'fuchsia', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'centro cirúrgico': { template: 'fuchsia', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'cirúrgico': { template: 'fuchsia', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+
+  // ---- Urgências e Emergências ----
+  'urgências e emergências': { template: 'rose', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+  'urgência e emergência': { template: 'rose', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+  'emergência': { template: 'rose', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+  'urgência': { template: 'rose', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+
+  // ============================================================
+  // SAÚDE DO TRABALHADOR
+  // ============================================================
+
+  // ---- Enfermagem do Trabalho ----
+  'enfermagem do trabalho': { template: 'amber', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'cards' },
+
+  // ============================================================
+  // SAÚDE MENTAL
+  // ============================================================
+
+  'saúde mental': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
+  'psiquiatria': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
+
+  // ============================================================
+  // SAÚDE DA FAMÍLIA E CICLOS DE VIDA
+  // ============================================================
+
+  // ---- Saúde da Criança ----
+  'saúde da criança': { template: 'cyan', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'compact' },
+  'pediatria': { template: 'cyan', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'compact' },
+
+  // ---- Saúde do Adolescente ----
+  'saúde do adolescente': { template: 'sky', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+  'adolescente': { template: 'sky', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'compact' },
+
+  // ---- Saúde da Mulher ----
+  'saúde da mulher': { template: 'pink', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
+  'obstetrícia': { template: 'pink', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
+  'ginecologia': { template: 'pink', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'list' },
+
+  // ============================================================
+  // LEGISLAÇÃO
+  // ============================================================
+
+  'legislação': { template: 'amber', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'lei 7.498/86': { template: 'amber', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'list' },
+  'cofen/coren': { template: 'orange', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'cards', dangerZone: 'compact' },
+  'ética': { template: 'sky', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'compact' },
+
+  // ============================================================
+  // HISTOPATOLOGIA (área técnica/laboratório)
+  // ============================================================
+
+  'histopatologia': { template: 'sky', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+
+  // ============================================================
+  // DEMAIS MATÉRIAS DE CONCURSO
+  // ============================================================
+
   'matemática': { template: 'blue', conceptMap: 'grid', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'compact' },
   'raciocínio lógico': { template: 'teal', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'horizontal', dangerZone: 'compact' },
-  // ---- Ética ----
-  'ética': { template: 'sky', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'vertical', dangerZone: 'compact' },
-  // ---- Informática ----
   'informática': { template: 'fuchsia', conceptMap: 'grid', goldenRule: 'compact', logicFlow: 'horizontal', dangerZone: 'cards' },
+  'imobilização ortopédica': { template: 'rose', conceptMap: 'grid', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'compact' },
 };
 
 /** Normaliza string de subtópico para busca no mapa */
@@ -585,27 +792,8 @@ export const getThemeForSlide = (
     return applyThemeVariations(baseTheme, variations, slideIndex);
   }
   
-  // 2. FORMATO NOVO: Tenta usar subject se disponível (RECOMENDADO)
-  // MAS aplica variações únicas baseadas no questionHash
-  if (slide.subject) {
-    const subjectKey = slide.subject.toLowerCase().trim();
-    const mappedTheme = SUBJECT_THEME_MAP[subjectKey];
-    if (mappedTheme) {
-      const themeHash = generateSimpleHash(mappedTheme);
-      const baseTheme = getThemeFromHash(themeHash);
-      // Variações únicas garantem que questões diferentes tenham visual diferente
-      const uniqueHash = generateRobustQuestionHash(
-        `${questionHash}-${subjectKey}`,
-        slideIndex,
-        slide.type
-      );
-      const variations = generateThemeVariations(uniqueHash);
-      return applyThemeVariations(baseTheme, variations, slideIndex);
-    }
-  }
-  
-  // 3. FALLBACK: Tenta usar subtopico do meta via SUBTOPIC_DESIGN_MAP (prioridade)
-  // Depois tenta topico/subtopico no SUBJECT_THEME_MAP
+  // 2. SUBTÓPICO: prioridade máxima sobre subject genérico
+  // meta.subtopico é mais específico do que subject (ex: "Urgências" > "Enfermagem")
   if (slide.meta?.subtopico || slide.meta?.topico) {
     const subtopico = slide.meta.subtopico || slide.meta.topico;
     const design = getDesignBySubtopic(subtopico);
@@ -615,13 +803,30 @@ export const getThemeForSlide = (
       const variations = generateThemeVariations(uniqueHash);
       return applyThemeVariations(baseTheme, variations, slideIndex ?? 0);
     }
-    // Fallback para SUBJECT_THEME_MAP
+    // Subtópico não está no mapa: tenta SUBJECT_THEME_MAP com o mesmo valor
     const topicoKey = subtopico.toLowerCase().trim();
     const mappedTheme = SUBJECT_THEME_MAP[topicoKey];
     if (mappedTheme) {
       const themeHash = generateSimpleHash(mappedTheme);
       const baseTheme = getThemeFromHash(themeHash);
       const uniqueHash = generateRobustQuestionHash(`${questionHash}-${topicoKey}`, slideIndex, slide.type);
+      const variations = generateThemeVariations(uniqueHash);
+      return applyThemeVariations(baseTheme, variations, slideIndex);
+    }
+  }
+
+  // 3. SUBJECT GENÉRICO: usado quando não há subtópico ou subtópico não está mapeado
+  if (slide.subject) {
+    const subjectKey = slide.subject.toLowerCase().trim();
+    const mappedTheme = SUBJECT_THEME_MAP[subjectKey];
+    if (mappedTheme) {
+      const themeHash = generateSimpleHash(mappedTheme);
+      const baseTheme = getThemeFromHash(themeHash);
+      const uniqueHash = generateRobustQuestionHash(
+        `${questionHash}-${subjectKey}`,
+        slideIndex,
+        slide.type
+      );
       const variations = generateThemeVariations(uniqueHash);
       return applyThemeVariations(baseTheme, variations, slideIndex);
     }

@@ -1,130 +1,258 @@
-# Documentação: Sistema de Templates e Layout Variants para Agent-Avant
+# Documentação: Sistema de Design de Slides para o Agent-Avant
 
-Documento de referência para implementar no **agent-avant** (gerador de JSON de questões) o sistema de templates (cores) e layout_variant (didática dos slides) do Avant.
-
----
-
-## 1. Visão Geral
-
-O JSON de questões do Avant suporta dois níveis de personalização visual por slide:
-
-| Campo | Propósito | Escopo |
-|-------|-----------|--------|
-| `template` ou `theme_id` | **Cores/tema** (indigo, violet, cyan, etc.) | Prioridade máxima na escolha do tema |
-| `layout_variant` | **Didática/layout** (como o conteúdo é exibido) | Define a estrutura visual de cada slide |
+Referência completa para o **agent-avant** gerar JSONs de questões com design automático por assunto, template (cores) e layout_variant (didática dos slides).
 
 ---
 
-## 2. Campos no JSON
+## 1. Como funciona em resumo
 
-### 2.1 Por slide (dentro de `reverse_study_slides`)
+O Avant tem um sistema de design inteligente que funciona em **dois modos**:
+
+### Modo Automático (recomendado)
+O agent só precisa preencher o `meta.subtopico` corretamente. O app resolve cores e layout sozinho.
+
+```json
+"meta": {
+  "topico": "Enfermagem",
+  "subtopico": "Urgências e Emergências"
+}
+```
+
+### Modo Manual (override)
+O agent declara explicitamente `template` e `layout_variant` em cada slide. Sobrescreve o automático.
+
+```json
+{
+  "type": "golden_rule",
+  "template": "t03",
+  "layout_variant": "banner",
+  "content": "REGRA DE OURO..."
+}
+```
+
+---
+
+## 2. Prioridade de resolução do design
+
+O app resolve o design de cada slide nesta ordem:
+
+```
+1. JSON declara "template" ou "theme_id" explícito   → usa esse (prioridade máxima)
+2. JSON declara "layout_variant" explícito            → usa esse
+3. meta.subtopico encontrado no SUBTOPIC_DESIGN_MAP  → usa o pacote do mapa (automático)
+4. slide.subject encontrado no SUBJECT_THEME_MAP     → usa tema por matéria
+5. Hash da questão                                   → fallback aleatório consistente
+```
+
+---
+
+## 3. Os 4 modelos de slides (tipos)
+
+Cada questão no estudo reverso tem 4 slides, um de cada tipo:
+
+| Tipo (`type`) | Nome | Função didática |
+|---|---|---|
+| `concept_map` | Mapa de Conceitos | Apresenta múltiplos conceitos simultaneamente com ícone, título e descrição |
+| `golden_rule` | Regra de Ouro | Destaca UMA regra essencial em tipografia gigante — o conceito que o aluno não pode esquecer |
+| `logic_flow` | Pipeline Cognitivo | Mostra uma sequência de passos em ordem, com animação progressiva |
+| `danger_zone` | Zona de Perigo | Alerta sobre erros comuns e pegadinhas de prova com visual de alerta vermelho |
+
+---
+
+## 4. Variantes didáticas por tipo (layout_variant)
+
+| Tipo | layout_variant | Descrição |
+|---|---|---|
+| **concept_map** | `morphological` | Card central + grid de detalhes. Padrão para 3+ itens |
+| | `grid` | Grade de cards simples |
+| | `molecular` | Círculos conectados, estilo orgânico |
+| | `bridge` | Linhas horizontais com conector central |
+| | `stack` | Coluna vertical (poucos itens, ≤2) |
+| **golden_rule** | `center` | Texto gigante centralizado. Padrão |
+| | `compact` | Card menor com texto denso |
+| | `minimal` | Texto com borda lateral, sem fundo |
+| | `banner` | Faixa com ícone e destaque máximo |
+| **logic_flow** | `vertical` | Pipeline vertical com setas. Padrão |
+| | `horizontal` | Passos em linha com setas laterais |
+| | `cards` | Grid de cards com numeração |
+| **danger_zone** | `list` | Lista com borda vermelha. Padrão |
+| | `cards` | Itens em cards separados |
+| | `compact` | Layout condensado, sem muito espaço |
+
+---
+
+## 5. Templates de cores (t01–t15)
+
+| ID | Cor | Assuntos sugeridos |
+|---|---|---|
+| t01 | indigo | Fundamentos de Enfermagem |
+| t02 | emerald | Procedimentos, Atenção Básica |
+| t03 | rose | Anatomia, Urgências, Cardiologia |
+| t04 | amber | Legislação, História, Segurança |
+| t05 | violet | SAE, Processo de Enfermagem, Saúde Mental |
+| t06 | cyan | Fisiologia, Oxigenoterapia, Respiratório |
+| t07 | fuchsia | Centro Cirúrgico, Informática |
+| t08 | sky | Histopatologia, Saúde do Adolescente, Ética |
+| t09 | lime | Epidemiologia, Imunização, Parasitologia |
+| t10 | teal | CME, Biossegurança, Saúde Pública |
+| t11 | orange | Curativos, Feridas, Bacterianas/Fúngicas |
+| t12 | blue | Cálculos, Matemática |
+| t13 | purple | Farmacologia, ISTs |
+| t14 | pink | Saúde da Mulher, Obstetrícia |
+| t15 | indigo | (variação de t01) |
+
+Também aceita nome direto: `"template": "violet"`, `"template": "rose"`, etc.
+
+---
+
+## 6. Mapa completo de subtópicos → design automático
+
+O `meta.subtopico` do JSON é usado para resolver automaticamente o design completo.
+**O agent não precisa declarar `template` nem `layout_variant`** se preencher o subtópico corretamente.
+
+### 6.1 Fundamentos e Bases
+
+| Subtópico (exato) | Cor | concept_map | golden_rule | logic_flow | danger_zone |
+|---|---|---|---|---|---|
+| História da Enfermagem | amber | bridge | minimal | vertical | list |
+| Noções de Anatomia | rose | morphological | center | vertical | list |
+| Noções de Fisiologia | cyan | molecular | banner | cards | cards |
+| Processo de Enfermagem | violet | morphological | center | vertical | list |
+
+### 6.2 Farmacologia e Medicamentos
+
+| Subtópico (exato) | Cor | concept_map | golden_rule | logic_flow | danger_zone |
+|---|---|---|---|---|---|
+| Farmacodinâmica e Farmacocinética | purple | molecular | minimal | cards | list |
+| Cálculo de Administração de Medicamentos e Infusões | blue | stack | minimal | vertical | compact |
+| Vias de Administração | emerald | grid | compact | horizontal | cards |
+| Cuidados na Administração de Medicamentos | teal | grid | compact | horizontal | cards |
+
+### 6.3 Procedimentos de Enfermagem
+
+| Subtópico (exato) | Cor | concept_map | golden_rule | logic_flow | danger_zone |
+|---|---|---|---|---|---|
+| Verificação de Sinais Vitais | rose | grid | compact | horizontal | compact |
+| Instalação e Manejo de Sondas | indigo | grid | compact | vertical | cards |
+| Oxigenoterapia e Cuidados Respiratórios | cyan | molecular | banner | cards | compact |
+| Curativos e Manejo de Feridas | orange | grid | banner | cards | compact |
+| Punção Venosa e Cuidados com Cateteres | indigo | grid | compact | vertical | cards |
+| Coleta de Exames Laboratoriais | sky | grid | compact | horizontal | compact |
+| Mobilização e Posicionamento do Paciente | teal | grid | compact | horizontal | compact |
+| Procedimentos Diversos | emerald | grid | compact | horizontal | cards |
+| Feridas e Queimaduras | orange | morphological | banner | cards | cards |
+
+### 6.4 Biossegurança e Controle de Infecção
+
+| Subtópico (exato) | Cor | concept_map | golden_rule | logic_flow | danger_zone |
+|---|---|---|---|---|---|
+| Processamento de Artigos e Produtos de Saúde | teal | bridge | minimal | vertical | list |
+| Enfermagem em Central de Material e Esterilização (CME) | teal | bridge | minimal | vertical | list |
+| Medidas de Prevenção e Precaução de Contato | cyan | molecular | banner | cards | cards |
+| Infecções no Contexto da Biossegurança | lime | molecular | banner | cards | cards |
+| Segurança do Paciente | amber | bridge | minimal | vertical | list |
+
+### 6.5 Saúde Pública e Epidemiologia
+
+| Subtópico (exato) | Cor | concept_map | golden_rule | logic_flow | danger_zone |
+|---|---|---|---|---|---|
+| Epidemiologia e Vigilância Epidemiológica | lime | grid | compact | horizontal | compact |
+| Promoção à Saúde e Prevenção de Agravos | emerald | grid | compact | horizontal | compact |
+| Imunização | lime | morphological | compact | horizontal | compact |
+| Atenção Básica / Saúde da Família | emerald | morphological | center | vertical | list |
+
+### 6.6 Doenças Transmissíveis
+
+| Subtópico (exato) | Cor | concept_map | golden_rule | logic_flow | danger_zone |
+|---|---|---|---|---|---|
+| Infecções Sexualmente Transmissíveis (ISTs) | purple | molecular | minimal | cards | compact |
+| Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.) | rose | molecular | banner | cards | cards |
+| Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.) | orange | molecular | minimal | vertical | list |
+| Doenças Parasitárias e Zoonoses | lime | molecular | compact | cards | cards |
+| Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis | teal | grid | compact | horizontal | compact |
+| Questões Mescladas e Outras Doenças Agudas | sky | grid | compact | horizontal | compact |
+| Doenças Respiratórias Crônicas (Asma, DPOC) | cyan | bridge | compact | horizontal | compact |
+
+### 6.7 Especialidades Cirúrgicas e Críticas
+
+| Subtópico (exato) | Cor | concept_map | golden_rule | logic_flow | danger_zone |
+|---|---|---|---|---|---|
+| Assistência Perioperatória (Inclui SRPA) | violet | bridge | minimal | vertical | list |
+| Enfermagem em Centro Cirúrgico | fuchsia | bridge | minimal | vertical | list |
+| Urgências e Emergências | **rose** | molecular | banner | cards | cards |
+
+### 6.8 Saúde Mental, do Trabalho e Ciclos de Vida
+
+| Subtópico (exato) | Cor | concept_map | golden_rule | logic_flow | danger_zone |
+|---|---|---|---|---|---|
+| Enfermagem do Trabalho | amber | grid | compact | horizontal | cards |
+| Saúde Mental | violet | morphological | center | vertical | list |
+| Saúde da Criança | cyan | morphological | banner | cards | compact |
+| Saúde do Adolescente | sky | grid | compact | horizontal | compact |
+| Saúde da Mulher | pink | morphological | center | vertical | list |
+
+---
+
+## 7. Como o agent deve preencher o JSON
+
+### Regra principal
+
+> **Preencha sempre o `meta.subtopico` com o nome exato da tabela acima. O design é resolvido automaticamente.**
+
+### Estrutura obrigatória de cada slide
 
 ```json
 {
   "type": "concept_map",
   "subject": "Enfermagem",
-  "template": "t05",
-  "theme_id": "t05",
-  "layout_variant": "morphological",
-  "items": [...],
-  "footer_rule": "..."
+  "meta": {
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências"
+  },
+  "items": [
+    { "label": "Título do conceito", "detail": "Descrição detalhada", "icon": "AlertTriangle" }
+  ],
+  "footer_rule": "REGRA: texto da regra de ouro"
 }
 ```
 
-| Campo | Tipo | Obrigatório | Descrição |
-|-------|------|-------------|-----------|
-| `template` | string | Não | ID do template (t01-t15) ou nome do tema (ex: "violet"). Prioridade máxima para cores. |
-| `theme_id` | string | Não | Alias de `template`. Mesmo comportamento. |
-| `layout_variant` | string | Não | Variante didática do slide. Depende do `type`. |
+### Estrutura do `logic_flow` (atenção especial)
 
----
+O campo `steps` deve ser sempre **array de strings**:
 
-## 3. Template (Cores/Tema)
+```json
+{
+  "type": "logic_flow",
+  "subject": "Enfermagem",
+  "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
+  "steps": [
+    "Avaliação primária do paciente",
+    "Verificação dos sinais vitais",
+    "Acionamento da equipe multiprofissional",
+    "Registro e monitoramento contínuo"
+  ]
+}
+```
 
-### 3.1 Mapeamento t01–t15
+### Estrutura do `danger_zone`
 
-| ID | Tema |
-|----|------|
-| t01 | indigo |
-| t02 | emerald |
-| t03 | rose |
-| t04 | amber |
-| t05 | violet |
-| t06 | cyan |
-| t07 | fuchsia |
-| t08 | sky |
-| t09 | lime |
-| t10 | teal |
-| t11 | orange |
-| t12 | blue |
-| t13 | purple |
-| t14 | pink |
-| t15 | indigo |
-
-### 3.2 Uso alternativo
-
-O `template` pode receber o **nome do tema** diretamente: `"template": "violet"` ou `"template": "cyan"`.
-
-### 3.3 Prioridade de seleção do tema (no Avant)
-
-1. `slide.template` ou `slide.theme_id` (quando presente)
-2. `slide.design_system.accent_color` (formato legado)
-3. `slide.subject` → mapeamento SUBJECT_THEME_MAP
-4. `slide.meta.topico` ou `slide.meta.subtopico`
-5. Hash da questão (fallback)
-
----
-
-## 4. Layout Variant (Didática)
-
-### 4.1 Variantes por tipo de slide
-
-| type | layout_variant | Descrição |
-|-----|----------------|-----------|
-| **concept_map** | `morphological` | Card central + detalhes em grid. Padrão quando há 3+ itens. |
-| | `grid` | Grade de cards. |
-| | `molecular` | Círculos conectados (estilo morfologia). |
-| | `bridge` | Linhas horizontais com conector. |
-| | `stack` | Coluna vertical (poucos itens). |
-| **golden_rule** | `center` | Texto grande centralizado. Padrão. |
-| | `compact` | Card menor, texto denso. |
-| | `minimal` | Texto com borda lateral. |
-| | `banner` | Faixa horizontal com ícone. |
-| **logic_flow** | `vertical` | Pipeline vertical conectado. Padrão. |
-| | `horizontal` | Passos em linha com setas. |
-| | `cards` | Grid de cards. |
-| **danger_zone** | `list` | Lista com borda vermelha. Padrão. |
-| | `cards` | Itens em cards separados. |
-| | `compact` | Layout condensado. |
-
-### 4.2 Valores padrão quando ausente
-
-| type | layout_variant padrão |
-|------|------------------------|
-| concept_map | `morphological` (3+ itens) ou `stack` (≤2 itens) |
-| golden_rule | `center` |
-| logic_flow | `vertical` |
-| danger_zone | `list` |
-
----
-
-## 5. Validação (Zod)
-
-Os schemas de validação **devem** incluir `template` e `theme_id` em cada slide. Caso contrário, o Zod remove esses campos na validação e eles nunca chegam ao player.
-
-### 5.1 Campos obrigatórios nos schemas de slide
-
-Em cada schema de slide (ConceptMapSlideSchema, LogicFlowSlideSchema, etc.):
-
-```typescript
-template: z.string().max(20).optional(),
-theme_id: z.string().max(20).optional(),
-layout_variant: z.string().max(50).optional(),
+```json
+{
+  "type": "danger_zone",
+  "subject": "Enfermagem",
+  "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
+  "content": "CUIDADO: título do alerta principal",
+  "items": [
+    { "id": "1", "label": "Nome da pegadinha", "detail": "Explicação do erro comum" },
+    { "id": "2", "label": "Outra pegadinha", "detail": "Explicação detalhada" }
+  ],
+  "footer_rule": "REGRA FINAL: resumo mnemônico"
+}
 ```
 
 ---
 
-## 6. Exemplo completo de JSON
+## 8. Exemplo completo de JSON — Urgências e Emergências
 
 ```json
 {
@@ -132,53 +260,60 @@ layout_variant: z.string().max(50).optional(),
     "ano": "2024",
     "banca": "IBADE",
     "orgao": "Prefeitura de Recife",
-    "prova": "Técnico (Pref Recife)",
-    "topico": "Enfermagem - Noções de Fisiologia",
-    "subtopico": "Histopatologia"
+    "prova": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências"
   },
   "question_data": {
-    "instruction": "...",
-    "options": [...],
-    "correct_answer": "E",
-    "explanation": "..."
+    "instruction": "Texto da questão...",
+    "options": [
+      { "id": "A", "text": "Alternativa A", "is_correct": false },
+      { "id": "B", "text": "Alternativa B", "is_correct": true }
+    ],
+    "correct_answer": "B",
+    "explanation": "Explicação do gabarito..."
   },
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "layout_variant": "molecular",
-      "subject": "Enfermagem - Noções de Fisiologia",
-      "template": "t08",
-      "meta": { "topico": "...", "subtopico": "..." },
+      "subject": "Enfermagem",
+      "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
       "items": [
-        { "label": "...", "detail": "...", "icon": "Flame" }
+        { "label": "Parada Cardiorrespiratória", "detail": "Ausência de pulso e respiração. Iniciar RCP imediatamente.", "icon": "Heart" },
+        { "label": "Choque", "detail": "Perfusão tecidual inadequada. Identificar tipo e tratar causa.", "icon": "Zap" },
+        { "label": "Obstrução de Vias Aéreas", "detail": "Manobra de Heimlich em adultos conscientes.", "icon": "Wind" }
       ],
-      "footer_rule": "REGRA: ..."
+      "footer_rule": "REGRA: Em toda emergência — avaliar, chamar, agir"
     },
     {
       "type": "golden_rule",
-      "layout_variant": "banner",
-      "subject": "Enfermagem - Noções de Fisiologia",
-      "template": "t08",
-      "content": "REGRA DE OURO..."
+      "subject": "Enfermagem",
+      "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
+      "content": "TODA PARADA CARDIORRESPIRATÓRIA EXIGE RCP IMEDIATA — CADA MINUTO REDUZ 10% A CHANCE DE SOBREVIDA"
     },
     {
       "type": "logic_flow",
-      "layout_variant": "cards",
-      "subject": "Enfermagem - Noções de Fisiologia",
-      "template": "t08",
-      "steps": ["Passo 1", "Passo 2", "Passo 3", "Passo 4"],
-      "footer_rule": "Pipeline: ..."
+      "subject": "Enfermagem",
+      "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
+      "steps": [
+        "Avaliar segurança do ambiente",
+        "Verificar responsividade do paciente",
+        "Acionar emergência (SAMU 192)",
+        "Iniciar RCP: 30 compressões + 2 ventilações",
+        "Utilizar DEA assim que disponível"
+      ]
     },
     {
       "type": "danger_zone",
-      "layout_variant": "cards",
-      "subject": "Enfermagem - Noções de Fisiologia",
-      "template": "t08",
-      "content": "CUIDADO: ...",
+      "subject": "Enfermagem",
+      "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
+      "content": "CUIDADO: Erros Críticos em Emergências",
       "items": [
-        { "id": "1", "label": "...", "detail": "..." }
+        { "id": "1", "label": "Interromper RCP para verificar pulso", "detail": "Errado. Só verificar pulso após 2 minutos de RCP contínua." },
+        { "id": "2", "label": "Hiperventilação durante RCP", "detail": "Errado. Ventilações em excesso aumentam pressão intratorácica e reduzem retorno venoso." },
+        { "id": "3", "label": "Iniciar RCP sem acionar o serviço de emergência", "detail": "Errado. Acionar primeiro, depois iniciar RCP (exceto afogamento e crianças)." }
       ],
-      "footer_rule": "REGRA DE OURO: ..."
+      "footer_rule": "REGRA: Comprima forte, comprima rápido (100-120/min), minimize interrupções"
     }
   ]
 }
@@ -186,135 +321,51 @@ layout_variant: z.string().max(50).optional(),
 
 ---
 
-## 7. Regras para o Agent-Avant
+## 9. Exemplo com design manual (override)
 
-### 7.1 Ao gerar JSON de questões
-
-1. Incluir `template` em cada slide de `reverse_study_slides`.
-2. Variar o template por assunto: ex.: Enfermagem → t05, Legislação → t04, Anatomia → t03, Fisiologia → t06.
-3. Incluir `layout_variant` em cada slide para variar a didática.
-4. Recomendação: usar um template por questão e variar `layout_variant` entre os 4 slides.
-
-### 7.2 Boas práticas
-
-- **Variedade**: alternar entre t01–t15 para assuntos diferentes.
-- **Didática**: usar `layout_variant` diferentes por slide (ex.: concept_map=molecular, golden_rule=banner, logic_flow=cards, danger_zone=cards).
-- **Consistência opcional**: usar o mesmo template em todos os slides de uma questão para unidade visual.
-- **Ícones**: usar ícones Lucide válidos em `items` (ex.: Flame, FlaskConical, AlertTriangle, Scissors, Bone).
-
-### 7.3 logic_flow: formato de steps
-
-O campo `steps` deve ser um **array de strings**:
-
-```json
-"steps": ["Passo 1", "Passo 2", "Passo 3"]
-```
-
-Não usar objetos `{ "id": "1", "text": "..." }` se o schema validar apenas strings.
-
----
-
-## 8. Referência rápida (data/themes-map.json)
-
-```json
-{
-  "template_ids": {
-    "t01": "indigo", "t02": "emerald", "t03": "rose", "t04": "amber",
-    "t05": "violet", "t06": "cyan", "t07": "fuchsia", "t08": "sky",
-    "t09": "lime", "t10": "teal", "t11": "orange", "t12": "blue",
-    "t13": "purple", "t14": "pink", "t15": "indigo"
-  },
-  "layout_variants": {
-    "concept_map": ["morphological", "grid", "molecular", "bridge", "stack"],
-    "golden_rule": ["center", "compact", "minimal", "banner"],
-    "logic_flow": ["vertical", "horizontal", "cards"],
-    "danger_zone": ["list", "cards", "compact"]
-  }
-}
-```
-
----
-
-## 9. Checklist de implementação no agent-avant
-
-- [ ] Garantir que cada slide gerado inclua `template` (t01–t15)
-- [ ] Garantir que cada slide inclua `layout_variant` compatível com o `type`
-- [ ] Variar template por assunto (mapeamento subject → template)
-- [ ] Variar layout_variant entre os 4 slides de uma questão
-- [ ] Usar `steps` como array de strings em `logic_flow`
-- [ ] Incluir `template` e `theme_id` nos schemas de validação (se o agent valida com Zod)
-- [ ] Documentar as opções de template e layout_variant na documentação do agent
-
----
-
-## Seção 8 — Design Automático por Subtópico
-
-### Como funciona
-
-O Avant possui um sistema automático que escolhe **template (cores) + layout_variant (didática)** com base no `meta.subtopico` do slide, sem precisar declarar no JSON.
-
-**Arquivo:** `components/slides/core/themeGenerator.ts`
-
-**Mapa:** `SUBTOPIC_DESIGN_MAP` — cada subtópico tem um pacote completo:
-
-```ts
-'histopatologia': {
-  template: 'sky',
-  conceptMap: 'molecular',
-  goldenRule: 'banner',
-  logicFlow: 'cards',
-  dangerZone: 'cards'
-}
-```
-
-### Prioridade de resolução
-
-```
-1. JSON declara "template"/"theme_id" explícito      → usa esse
-2. JSON declara "layout_variant" explícito            → usa esse
-3. meta.subtopico encontrado em SUBTOPIC_DESIGN_MAP  → usa o pacote do mapa
-4. slide.subject encontrado em SUBJECT_THEME_MAP     → usa tema por matéria
-5. Hash da questão                                   → fallback aleatório consistente
-```
-
-### Subtópicos mapeados automaticamente
-
-| Subtópico               | Template | concept_map  | golden_rule | logic_flow | danger_zone |
-|-------------------------|----------|--------------|-------------|------------|-------------|
-| histopatologia          | sky      | molecular    | banner      | cards      | cards       |
-| anatomia                | rose     | morphological| center      | vertical   | list        |
-| noções de fisiologia    | cyan     | molecular    | banner      | cards      | cards       |
-| legislação              | amber    | bridge       | minimal     | vertical   | list        |
-| lei 7.498/86            | amber    | bridge       | minimal     | vertical   | list        |
-| sae                     | violet   | morphological| center      | vertical   | list        |
-| biossegurança           | teal     | molecular    | banner      | cards      | cards       |
-| farmacologia            | purple   | molecular    | minimal     | vertical   | list        |
-| imobilização ortopédica | rose     | grid         | banner      | cards      | compact     |
-| *(outros)*              | *hash*   | *semântico*  | center      | vertical   | list        |
-
-### Para adicionar novos subtópicos
-
-Edite o `SUBTOPIC_DESIGN_MAP` em `themeGenerator.ts` adicionando:
-
-```ts
-'nome do subtópico': {
-  template: 'violet',       // qualquer nome de tema (indigo/sky/rose/teal/etc)
-  conceptMap: 'grid',
-  goldenRule: 'compact',
-  logicFlow: 'horizontal',
-  dangerZone: 'compact',
-},
-```
-
-### Para forçar um design diferente no JSON (sobrescreve o automático)
+Quando quiser forçar um design diferente do automático:
 
 ```json
 {
   "type": "golden_rule",
-  "template": "t08",
-  "layout_variant": "banner",
-  "meta": { "subtopico": "Histopatologia" }
+  "template": "t07",
+  "layout_variant": "minimal",
+  "subject": "Enfermagem",
+  "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
+  "content": "REGRA DE OURO..."
 }
 ```
 
-> Os campos `template` e `layout_variant` no JSON têm **prioridade máxima** sobre o automático.
+> `template` e `layout_variant` declarados no JSON têm **prioridade máxima** sobre o design automático.
+
+---
+
+## 10. Checklist do agent ao gerar cada questão
+
+- [ ] `meta.subtopico` preenchido com nome exato da tabela da Seção 6
+- [ ] Cada questão tem exatamente **4 slides** em `reverse_study_slides`
+- [ ] Um slide de cada tipo: `concept_map`, `golden_rule`, `logic_flow`, `danger_zone`
+- [ ] `steps` do `logic_flow` é array de strings (não objetos)
+- [ ] `danger_zone` tem `content`, `items` (array) e `footer_rule`
+- [ ] `concept_map` tem `items` com `label`, `detail` e `icon` (ícone Lucide válido)
+- [ ] `golden_rule` tem `content` com a regra principal em caixa alta
+- [ ] `subject` preenchido em todos os slides
+- [ ] JSON válido e completo (sem truncamentos)
+
+---
+
+## 11. Ícones Lucide recomendados por assunto
+
+| Assunto | Ícones sugeridos |
+|---|---|
+| Anatomia / Fisiologia | `Bone`, `Brain`, `Heart`, `Eye`, `Stethoscope` |
+| Farmacologia | `Pill`, `FlaskConical`, `Syringe`, `TestTube` |
+| Urgências | `AlertTriangle`, `Heart`, `Zap`, `Wind`, `ShieldAlert` |
+| Biossegurança / CME | `Shield`, `ShieldCheck`, `Trash2`, `Droplets` |
+| Procedimentos | `Scissors`, `Bandage`, `Thermometer`, `Activity` |
+| Epidemiologia | `BarChart2`, `TrendingUp`, `Globe`, `Users` |
+| Legislação | `Scale`, `BookOpen`, `FileText`, `Gavel` |
+| Saúde Mental | `Brain`, `Heart`, `Smile`, `MessageCircle` |
+| Saúde da Mulher | `Baby`, `Heart`, `User` |
+| Saúde da Criança | `Baby`, `Heart`, `Smile`, `Shield` |
+| Cirúrgico / Periop | `Scissors`, `Activity`, `AlertTriangle`, `Clock` |
