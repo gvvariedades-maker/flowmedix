@@ -62,6 +62,12 @@ CREATE POLICY "Users can insert their own question history"
   ON historico_questoes FOR INSERT
   WITH CHECK (auth.uid() = user_id);
 
+-- Política: Usuários podem atualizar apenas seus próprios registros
+CREATE POLICY "Users can update their own question history"
+  ON historico_questoes FOR UPDATE
+  USING (auth.uid() = user_id)
+  WITH CHECK (auth.uid() = user_id);
+
 -- Política: Usuários podem deletar apenas seus próprios registros (opcional, para limpeza)
 CREATE POLICY "Users can delete their own question history"
   ON historico_questoes FOR DELETE

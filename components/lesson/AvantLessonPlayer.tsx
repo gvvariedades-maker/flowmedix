@@ -20,7 +20,7 @@ import type { AvantLessonPlayerProps, LessonData, ReverseStudySlide } from '@/ty
 import { 
   CheckCircle2, XCircle, ChevronRight, ChevronLeft, 
   Lightbulb, ArrowRight, ArrowLeft, 
-  Flag, BrainCircuit, X
+  Flag, BrainCircuit, X, BadgeCheck
 } from 'lucide-react';
 
 export default function AvantLessonPlayer({ 
@@ -28,7 +28,8 @@ export default function AvantLessonPlayer({
   mode = 'live', 
   proximaSlug, 
   anteriorSlug,
-  moduloSlug 
+  moduloSlug,
+  questoesDoAssunto,
 }: AvantLessonPlayerProps) {
   
   const router = useRouter();
@@ -39,12 +40,16 @@ export default function AvantLessonPlayer({
   const [etapa, setEtapa] = useState<'pergunta' | 'gabarito' | 'estudo'>('pergunta');
   const [selecionada, setSelecionada] = useState<string | null>(null);
   const [slideAtual, setSlideAtual] = useState(0);
+  const [estudoConcluido, setEstudoConcluido] = useState(false);
+  const [marcandoConclusao, setMarcandoConclusao] = useState(false);
 
   // Reset ao mudar de questão
   useEffect(() => {
     setEtapa('pergunta');
     setSelecionada(null);
     setSlideAtual(0);
+    setEstudoConcluido(false);
+    setMarcandoConclusao(false);
   }, [dados]);
 
   if (!dados || !dados.question_data) return null;
@@ -78,6 +83,31 @@ export default function AvantLessonPlayer({
     } catch (error) {
       logger.error('Unexpected error registering attempt', error);
       // Não interromper o fluxo do usuário em caso de erro
+    }
+  };
+
+  // ============================================================================
+  // MARCAR ESTUDO REVERSO COMO CONCLUÍDO
+  // ============================================================================
+  const marcarEstudoConcluido = async () => {
+    if (mode === 'preview' || marcandoConclusao || estudoConcluido) return;
+    setMarcandoConclusao(true);
+    try {
+      const slug = moduloSlug || dados.modulo_slug || '';
+      const response = await fetch('/api/concluir-estudo-reverso', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ modulo_slug: slug }),
+      });
+      if (response.ok) {
+        setEstudoConcluido(true);
+      } else {
+        logger.error('Failed to mark estudo reverso as concluido', { status: response.status });
+      }
+    } catch (error) {
+      logger.error('Unexpected error marking estudo reverso', error);
+    } finally {
+      setMarcandoConclusao(false);
     }
   };
 
@@ -354,31 +384,64 @@ export default function AvantLessonPlayer({
 
         {/* NAVEGAÇÃO INFERIOR */}
         {mode === 'live' && (
-          <div className="p-4 bg-white border-t border-slate-100 flex justify-between items-center shrink-0">
-             <button 
-               onClick={() => anteriorSlug && handleNavegar(anteriorSlug)} 
-               disabled={!anteriorSlug} 
-               className={`flex items-center gap-2 px-4 py-3 rounded-xl font-bold uppercase text-xs tracking-widest transition-all ${
-                 anteriorSlug ? 'text-slate-500 hover:bg-slate-50 hover:text-indigo-600' : 'text-slate-200 cursor-not-allowed'
-               }`}
-             >
+          <div className="bg-white border-t border-slate-100 shrink-0">
+            {/* Dots de status das questões do assunto */}
+            {questoesDoAssunto && questoesDoAssunto.length > 1 && (
+              <div className="flex items-center justify-center gap-2 px-4 pt-3 pb-1 overflow-x-auto">
+                {questoesDoAssunto.map((q, i) => {
+                  const isCurrent = q.slug === moduloSlug;
+                  return (
+                    <button
+                      key={q.slug}
+                      onClick={() => router.push(`/estudar/${q.slug}`)}
+                      title={`Questão ${i + 1}${q.estudada ? ' — estudada' : ''}`}
+                      className={`shrink-0 rounded-full transition-all duration-200 flex items-center justify-center ${
+                        isCurrent
+                          ? 'w-7 h-7 bg-indigo-600 ring-2 ring-indigo-300 ring-offset-1 shadow-md'
+                          : q.estudada
+                            ? 'w-5 h-5 bg-emerald-400 hover:bg-emerald-500'
+                            : 'w-5 h-5 bg-slate-200 hover:bg-slate-300'
+                      }`}
+                    >
+                      {isCurrent && (
+                        <span className="text-white text-[10px] font-black leading-none">{i + 1}</span>
+                      )}
+                      {!isCurrent && q.estudada && (
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                          <path d="M2 5l2.5 2.5L8 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+            <div className="p-4 flex justify-between items-center">
+              <button 
+                onClick={() => anteriorSlug && handleNavegar(anteriorSlug)} 
+                disabled={!anteriorSlug} 
+                className={`flex items-center gap-2 px-4 py-3 rounded-xl font-bold uppercase text-xs tracking-widest transition-all ${
+                  anteriorSlug ? 'text-slate-500 hover:bg-slate-50 hover:text-indigo-600' : 'text-slate-200 cursor-not-allowed'
+                }`}
+              >
                 <ArrowLeft size={16} /> Anterior
-             </button>
-             {proximaSlug ? (
-               <button 
-                 onClick={() => proximaSlug && handleNavegar(proximaSlug)} 
-                 className="flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-50 text-indigo-700 font-black uppercase text-xs tracking-widest hover:bg-indigo-100 transition-all"
-               >
-                 Próxima Questão <ArrowRight size={16} />
-               </button>
-             ) : (
+              </button>
+              {proximaSlug ? (
+                <button 
+                  onClick={() => proximaSlug && handleNavegar(proximaSlug)} 
+                  className="flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-50 text-indigo-700 font-black uppercase text-xs tracking-widest hover:bg-indigo-100 transition-all"
+                >
+                  Próxima Questão <ArrowRight size={16} />
+                </button>
+              ) : (
                 <button 
                   onClick={handleConcluir} 
                   className="flex items-center gap-2 px-6 py-3 rounded-xl bg-[#BEF264] text-slate-900 font-black uppercase text-xs tracking-widest hover:bg-[#a3d648] hover:shadow-lg transition-all"
                 >
                   Concluir Missão <Flag size={16} />
                 </button>
-             )}
+              )}
+            </div>
           </div>
         )}
       </div>
@@ -525,7 +588,7 @@ export default function AvantLessonPlayer({
                     ))}
                   </div>
                   
-                  {/* Botão Próximo/Fechar */}
+                  {/* Botão Próximo / Confirmação no último slide */}
                   {slideAtual < totalSlides - 1 ? (
                     <button 
                       onClick={() => setSlideAtual(slideAtual + 1)} 
@@ -533,12 +596,21 @@ export default function AvantLessonPlayer({
                     >
                       Próximo <ArrowRight size={16} />
                     </button>
+                  ) : estudoConcluido ? (
+                    /* Estado: concluído com sucesso */
+                    <div className="flex items-center gap-2 px-6 py-3 rounded-xl bg-green-500/20 border border-green-500/40 text-green-400 font-black uppercase text-xs tracking-widest">
+                      <BadgeCheck size={16} />
+                      Estudo Concluído!
+                    </div>
                   ) : (
-                    <button 
-                      onClick={() => setEtapa('pergunta')} 
-                      className="bg-[#BEF264] hover:bg-[#a3d648] text-slate-900 px-8 py-3 rounded-xl font-black uppercase text-xs tracking-widest shadow-[0_0_20px_rgba(190,242,100,0.3)] hover:shadow-[0_0_30px_rgba(190,242,100,0.5)] transition-all"
+                    /* Botão de confirmação explícita */
+                    <button
+                      onClick={marcarEstudoConcluido}
+                      disabled={marcandoConclusao}
+                      className="group flex items-center gap-2 bg-[#BEF264] hover:bg-[#a3d648] disabled:opacity-60 disabled:cursor-not-allowed text-slate-900 px-6 py-3 rounded-xl font-black uppercase text-xs tracking-widest shadow-[0_0_20px_rgba(190,242,100,0.3)] hover:shadow-[0_0_30px_rgba(190,242,100,0.5)] transition-all"
                     >
-                      Concluir Estudo
+                      <BadgeCheck size={16} />
+                      {marcandoConclusao ? 'Salvando...' : 'Marcar como Estudado'}
                     </button>
                   )}
                 </div>

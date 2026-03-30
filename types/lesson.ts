@@ -143,6 +143,14 @@ export interface LessonData {
 }
 
 // ============================================================================
+// QUESTÃO DO ASSUNTO (Status para navegação no player)
+// ============================================================================
+export interface QuestaoDoAssunto {
+  slug: string;
+  estudada: boolean; // true = aluno concluiu o estudo reverso
+}
+
+// ============================================================================
 // AVANT LESSON PLAYER PROPS
 // ============================================================================
 export interface AvantLessonPlayerProps {
@@ -151,4 +159,5 @@ export interface AvantLessonPlayerProps {
   proximaSlug?: string | null;
   anteriorSlug?: string | null;
   moduloSlug?: string | null;
+  questoesDoAssunto?: QuestaoDoAssunto[]; // Lista de questões do mesmo assunto com status
 }

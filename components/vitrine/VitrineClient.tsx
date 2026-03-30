@@ -6,15 +6,15 @@ import { useRouter, usePathname } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Zap, Flame, AlertTriangle,
+  Zap, Flame, BookOpen,
   LayoutDashboard, Search, X, Filter,
   ChevronDown, ChevronUp, ChevronRight,
-  CheckCircle2, XCircle, Circle,
+  CheckCircle2, Circle,
 } from 'lucide-react';
 
 // ─── Interfaces ───────────────────────────────────────────────────────────────
 
-type QuestaoStatus = 'nao_respondida' | 'acertou' | 'errou';
+type QuestaoStatus = 'nao_estudada' | 'estudada';
 
 interface QuestaoItem {
   slug: string;
@@ -28,6 +28,7 @@ interface ModuloEstudo {
   titulo_aula: string | null;
   modulo_slug: string;
   banca: string;
+  estudoReversoConcluido: boolean;
   stats: {
     acertos: number;
     total: number;
@@ -43,8 +44,9 @@ interface GrupoSubtopico {
   questoes: QuestaoItem[];
   acertos: number;
   erros: number;
-  totalResolvidas: number;
-  totalQuestoes: number;
+  totalResolvidas: number;  // tentativas registradas
+  totalQuestoes: number;    // total de questões disponíveis
+  trabalhadas: number;      // questões que o aluno abriu/respondeu ao menos uma vez
   percentual: number;
   firstSlug: string;
 }
@@ -133,6 +135,7 @@ export default function VitrineClient({ initialModulos, globalStats: initialGlob
           erros: 0,
           totalResolvidas: 0,
           totalQuestoes: 0,
+          trabalhadas: 0,
           percentual: 0,
           firstSlug: m.modulo_slug,
         });
@@ -140,37 +143,49 @@ export default function VitrineClient({ initialModulos, globalStats: initialGlob
 
       const grupo = map.get(key)!;
 
-      // Determina status individual da questão
-      const status: QuestaoStatus =
-        m.stats.total === 0 ? 'nao_respondida' :
-        m.stats.acertos > 0 ? 'acertou' : 'errou';
+      // "estudada" = aluno confirmou conclusão do ciclo de estudo reverso
+      const status: QuestaoStatus = m.estudoReversoConcluido ? 'estudada' : 'nao_estudada';
 
       grupo.questoes.push({ slug: m.modulo_slug, numero: 0, status });
       grupo.acertos += m.stats.acertos;
       grupo.erros += m.stats.total - m.stats.acertos;
       grupo.totalResolvidas += m.stats.total;
       grupo.totalQuestoes += 1;
+      // "trabalhada" = aluno concluiu o ciclo de estudo reverso explicitamente
+      if (m.estudoReversoConcluido) grupo.trabalhadas += 1;
       const tentativas = grupo.acertos + grupo.erros;
       grupo.percentual = tentativas > 0 ? Math.round((grupo.acertos / tentativas) * 100) : 0;
     });
 
-    // Para cada grupo: ordena questões (não_respondidas → errou → acertou) e numera
-    const ORDEM: Record<QuestaoStatus, number> = { nao_respondida: 0, errou: 1, acertou: 2 };
+    // Ordena dentro de cada grupo: não estudadas primeiro, estudadas depois
     map.forEach(grupo => {
-      grupo.questoes.sort((a, b) => ORDEM[a.status] - ORDEM[b.status]);
+      grupo.questoes.sort((a, b) => {
+        const estudadaA = a.status === 'estudada' ? 1 : 0;
+        const estudadaB = b.status === 'estudada' ? 1 : 0;
+        return estudadaA - estudadaB;
+      });
       grupo.questoes.forEach((q, i) => { q.numero = i + 1; });
-
-      // firstSlug = primeira não respondida → primeira errada → primeira acertada
-      const primeiro = grupo.questoes[0];
-      grupo.firstSlug = primeiro?.slug ?? grupo.firstSlug;
+      // firstSlug = primeira não trabalhada ou primeira errada
+      grupo.firstSlug = grupo.questoes[0]?.slug ?? grupo.firstSlug;
     });
 
-    return Array.from(map.values()).sort((a, b) => a.titulo_aula.localeCompare(b.titulo_aula));
+    return Array.from(map.values()).sort((a, b) => {
+      // Prioriza assuntos com mais questões não trabalhadas
+      const pendentesA = a.totalQuestoes - a.trabalhadas;
+      const pendentesB = b.totalQuestoes - b.trabalhadas;
+      if (pendentesB !== pendentesA) return pendentesB - pendentesA;
+      return a.titulo_aula.localeCompare(b.titulo_aula);
+    });
   }, [filteredModulos]);
 
-  const topPriority = useMemo(() => filteredModulos[0], [filteredModulos]);
-  const showHero =
-    !searchTerm && !bancaFilter && !assuntoFilter && topPriority && topPriority.stats.priorityScore > 50;
+  // Totais globais para o hero
+  const totalTrabalhadas = useMemo(() => grupos.reduce((s, g) => s + g.trabalhadas, 0), [grupos]);
+  const totalDisponiveis = useMemo(() => grupos.reduce((s, g) => s + g.totalQuestoes, 0), [grupos]);
+  const grupoComMaisPendentes = useMemo(() =>
+    grupos.find(g => g.trabalhadas < g.totalQuestoes) ?? null,
+    [grupos],
+  );
+  const showHero = !searchTerm && !bancaFilter && !assuntoFilter && grupoComMaisPendentes !== null;
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 pb-24 selection:bg-indigo-100 selection:text-indigo-900">
@@ -214,8 +229,9 @@ export default function VitrineClient({ initialModulos, globalStats: initialGlob
           </div>
 
           <div className="hidden lg:flex gap-3">
+            <QuickStat icon={BookOpen} value={`${totalTrabalhadas}/${totalDisponiveis}`} label="Trabalhadas" color="text-indigo-600" />
+            <QuickStat icon={Zap} value={globalStats.xp} label="XP Total" color="text-amber-500" />
             <QuickStat icon={Flame} value={`${globalStats.ofensiva}D`} label="Streak" color="text-orange-500" />
-            <QuickStat icon={Zap} value={globalStats.xp} label="XP Total" color="text-indigo-600" />
           </div>
         </div>
       </header>
@@ -254,34 +270,40 @@ export default function VitrineClient({ initialModulos, globalStats: initialGlob
           )}
         </section>
 
-        {/* ── HERO CARD ── */}
+        {/* ── HERO: PRÓXIMO ASSUNTO A TRABALHAR ── */}
         <AnimatePresence>
-          {showHero && (
+          {showHero && grupoComMaisPendentes && (
             <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, height: 0 }}>
               <div className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-4 ml-2">
-                Alvo Prioritário Identificado
+                Continue de onde parou
               </div>
-              <Link href={`/estudar/${topPriority.modulo_slug}`}>
-                <div className="relative group overflow-hidden rounded-[40px] border border-red-200 bg-white p-8 md:p-12 transition-all hover:border-red-400 hover:shadow-xl hover:shadow-red-500/10 cursor-pointer">
+              <Link href={`/estudar/${grupoComMaisPendentes.firstSlug}`}>
+                <div className="relative group overflow-hidden rounded-[40px] border border-indigo-200 bg-white p-8 md:p-10 transition-all hover:border-indigo-400 hover:shadow-xl hover:shadow-indigo-500/10 cursor-pointer">
                   <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                    <AlertTriangle size={120} className="text-red-500" />
+                    <BookOpen size={120} className="text-indigo-500" />
                   </div>
                   <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div className="space-y-4 text-center md:text-left">
-                      <span className="px-4 py-1 rounded-full bg-red-50 text-red-600 border border-red-100 text-[10px] font-black uppercase tracking-[0.2em]">
-                        Intervenção Urgente
+                    <div className="space-y-3 text-center md:text-left">
+                      <span className="px-4 py-1 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-black uppercase tracking-[0.2em]">
+                        Próximo ciclo de estudo
                       </span>
-                      <h3 className="text-4xl md:text-5xl font-[1000] italic uppercase tracking-tighter leading-none text-slate-900">
-                        {topPriority.titulo_aula || 'Aula sem título'}
+                      <h3 className="text-3xl md:text-4xl font-[1000] italic uppercase tracking-tighter leading-none text-slate-900">
+                        {grupoComMaisPendentes.titulo_aula}
                       </h3>
-                      <p className="text-slate-500 font-medium max-w-xl">
-                        Sua performance aqui é de{' '}
-                        <strong className="text-red-600">{topPriority.stats.percentual}%</strong>.{' '}
-                        Neutralize essa lacuna para blindar sua aprovação.
+                      <p className="text-slate-500 font-medium max-w-xl text-sm">
+                        <strong className="text-indigo-600">
+                          {grupoComMaisPendentes.totalQuestoes - grupoComMaisPendentes.trabalhadas} questão{(grupoComMaisPendentes.totalQuestoes - grupoComMaisPendentes.trabalhadas) !== 1 ? 'ões' : ''}
+                        </strong>{' '}
+                        ainda não trabalhada{(grupoComMaisPendentes.totalQuestoes - grupoComMaisPendentes.trabalhadas) !== 1 ? 's' : ''} neste assunto.
                       </p>
                     </div>
-                    <div className="shrink-0 w-24 h-24 rounded-full border-4 border-red-100 bg-red-50 flex items-center justify-center text-2xl font-black text-red-600">
-                      {topPriority.stats.percentual}%
+                    <div className="shrink-0 flex flex-col items-center gap-1">
+                      <ProgressRing
+                        trabalhadas={grupoComMaisPendentes.trabalhadas}
+                        total={grupoComMaisPendentes.totalQuestoes}
+                        size={96}
+                        strokeWidth={10}
+                      />
                     </div>
                   </div>
                 </div>
@@ -348,55 +370,73 @@ function QuickStat({
   );
 }
 
-// ─── DonutChart ───────────────────────────────────────────────────────────────
+// ─── ProgressRing — anel de progresso do método ───────────────────────────────
 
-function DonutChart({ acertos, erros, percentual }: { acertos: number; erros: number; percentual: number }) {
-  const r = 54;
-  const strokeWidth = 20;
-  const size = 168;
+function ProgressRing({
+  trabalhadas,
+  total,
+  size = 140,
+  strokeWidth = 16,
+}: {
+  trabalhadas: number;
+  total: number;
+  size?: number;
+  strokeWidth?: number;
+}) {
+  const r = (size - strokeWidth) / 2;
   const cx = size / 2;
   const cy = size / 2;
   const circumference = 2 * Math.PI * r;
+  const pct = total > 0 ? trabalhadas / total : 0;
+  const filled = pct * circumference;
+  const todas = trabalhadas === total && total > 0;
 
-  const total = acertos + erros;
-  const acertosLen = total > 0 ? (acertos / total) * circumference : 0;
-  const errosLen = total > 0 ? (erros / total) * circumference : 0;
-  const hasData = total > 0;
+  // Cor: cinza → indigo parcial → verde completo
+  const corArco = todas ? '#22c55e' : '#6366f1';
 
   return (
-    <div className="relative" style={{ width: size, height: size }}>
+    <div className="relative flex items-center justify-center" style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+        {/* Trilha */}
         <circle cx={cx} cy={cy} r={r} fill="none" stroke="#e2e8f0" strokeWidth={strokeWidth} />
-        {hasData && erros > 0 && (
-          <circle cx={cx} cy={cy} r={r} fill="none" stroke="#ef4444" strokeWidth={strokeWidth}
-            strokeDasharray={`${errosLen} ${circumference}`}
-            strokeDashoffset={-acertosLen}
-            transform={`rotate(-90 ${cx} ${cy})`} strokeLinecap="butt" />
-        )}
-        {hasData && acertos > 0 && (
-          <circle cx={cx} cy={cy} r={r} fill="none" stroke="#22c55e" strokeWidth={strokeWidth}
-            strokeDasharray={`${acertosLen} ${circumference}`}
+        {/* Progresso */}
+        {trabalhadas > 0 && (
+          <circle
+            cx={cx} cy={cy} r={r}
+            fill="none"
+            stroke={corArco}
+            strokeWidth={strokeWidth}
+            strokeDasharray={`${filled} ${circumference}`}
             strokeDashoffset={0}
-            transform={`rotate(-90 ${cx} ${cy})`} strokeLinecap="butt" />
+            transform={`rotate(-90 ${cx} ${cy})`}
+            strokeLinecap="round"
+          />
         )}
       </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center select-none gap-0.5">
-        <span style={{ fontSize: '1.35rem', fontWeight: 900, color: '#1e3a5f', lineHeight: 1, fontStyle: 'italic' }}>
-          {percentual}%
+      {/* Centro */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center select-none">
+        <span style={{
+          fontSize: size >= 120 ? '1.6rem' : '1.1rem',
+          fontWeight: 900,
+          color: todas ? '#16a34a' : '#3730a3',
+          lineHeight: 1,
+          fontStyle: 'italic',
+        }}>
+          {trabalhadas}
         </span>
-        {hasData ? (
-          <>
-            <span style={{ fontSize: '0.48rem', fontWeight: 700, color: '#94a3b8', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-              de acerto
-            </span>
-            <div style={{ display: 'flex', gap: '6px', marginTop: '4px' }}>
-              <span style={{ fontSize: '0.55rem', fontWeight: 800, color: '#22c55e' }}>{acertos}✓</span>
-              <span style={{ fontSize: '0.55rem', fontWeight: 800, color: '#ef4444' }}>{erros}✗</span>
-            </div>
-          </>
-        ) : (
-          <span style={{ fontSize: '0.45rem', fontWeight: 700, color: '#cbd5e1', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-            sem respostas
+        <span style={{
+          fontSize: size >= 120 ? '0.55rem' : '0.42rem',
+          fontWeight: 700,
+          color: '#94a3b8',
+          letterSpacing: '0.08em',
+          textTransform: 'uppercase',
+          marginTop: '3px',
+        }}>
+          de {total}
+        </span>
+        {todas && (
+          <span style={{ fontSize: '0.42rem', fontWeight: 800, color: '#16a34a', letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '2px' }}>
+            completo ✓
           </span>
         )}
       </div>
@@ -407,23 +447,26 @@ function DonutChart({ acertos, erros, percentual }: { acertos: number; erros: nu
 // ─── Badge de status individual da questão ────────────────────────────────────
 
 function StatusBadge({ status }: { status: QuestaoStatus }) {
-  if (status === 'acertou') {
-    return <CheckCircle2 size={16} className="text-green-500 shrink-0" />;
-  }
-  if (status === 'errou') {
-    return <XCircle size={16} className="text-red-500 shrink-0" />;
-  }
-  return <Circle size={16} className="text-slate-300 shrink-0" />;
+  if (status === 'estudada') return <CheckCircle2 size={15} className="text-indigo-400 shrink-0" />;
+  return <Circle size={15} className="text-slate-300 shrink-0" />;
 }
 
 // ─── SubtopicoCard ────────────────────────────────────────────────────────────
 
 function SubtopicoCard({ grupo }: { grupo: GrupoSubtopico }) {
   const [expandido, setExpandido] = useState(false);
-  const { titulo_aula, acertos, erros, totalResolvidas, totalQuestoes, percentual, questoes, firstSlug } = grupo;
+  const router = useRouter();
+  const {
+    titulo_aula, acertos, erros,
+    totalResolvidas, totalQuestoes, trabalhadas,
+    questoes, firstSlug,
+  } = grupo;
 
-  const respondidas = questoes.filter(q => q.status !== 'nao_respondida').length;
-  const progressoPct = totalQuestoes > 0 ? Math.round((respondidas / totalQuestoes) * 100) : 0;
+  const todas = trabalhadas === totalQuestoes && totalQuestoes > 0;
+  const pendentes = totalQuestoes - trabalhadas;
+
+  // Navega para a primeira questão não estudada ao clicar no card
+  const handleCardClick = () => router.push(`/estudar/${firstSlug}`);
 
   return (
     <motion.div
@@ -431,42 +474,46 @@ function SubtopicoCard({ grupo }: { grupo: GrupoSubtopico }) {
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-      className="bg-white border border-slate-200 rounded-3xl p-5 flex flex-col gap-4 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-500/10 transition-all"
+      onClick={handleCardClick}
+      className={`bg-white rounded-3xl p-5 flex flex-col gap-4 transition-all border cursor-pointer
+        ${todas
+          ? 'border-green-200 hover:border-green-300 hover:shadow-lg hover:shadow-green-500/10'
+          : 'border-slate-200 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-500/10'
+        }`}
     >
-      {/* Breadcrumb */}
-      <p className="text-[9px] font-black uppercase tracking-widest text-indigo-500 leading-snug">
-        Questões — Assunto{' '}
-        <span className="text-slate-700">({titulo_aula})</span>
-      </p>
-
-      {/* Donut centralizado — clica para ir direto à primeira questão */}
-      <Link href={`/estudar/${firstSlug}`} className="flex justify-center">
-        <DonutChart acertos={acertos} erros={erros} percentual={percentual} />
-      </Link>
-
-      {/* Barra de progresso */}
-      <div className="space-y-1.5">
-        <div className="flex justify-between items-center">
-          <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">
-            Progresso
+      {/* Breadcrumb + badge de status */}
+      <div className="flex items-start justify-between gap-2">
+        <p className="text-[9px] font-black uppercase tracking-widest text-indigo-500 leading-snug flex-1">
+          Questões — Assunto{' '}
+          <span className="text-slate-700">({titulo_aula})</span>
+        </p>
+        {todas && (
+          <span className="shrink-0 text-[8px] font-black uppercase tracking-widest bg-green-50 text-green-600 px-2 py-0.5 rounded-md border border-green-100">
+            Completo
           </span>
-          <span className="text-[9px] font-black text-slate-500">
-            {respondidas}/{totalQuestoes} respondida{totalQuestoes !== 1 ? 's' : ''}
+        )}
+        {!todas && pendentes > 0 && (
+          <span className="shrink-0 text-[8px] font-black uppercase tracking-widest bg-indigo-50 text-indigo-500 px-2 py-0.5 rounded-md border border-indigo-100">
+            {pendentes} pendente{pendentes !== 1 ? 's' : ''}
           </span>
-        </div>
-        <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
-          <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: `${progressoPct}%` }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="h-full bg-indigo-500 rounded-full"
-          />
-        </div>
+        )}
       </div>
 
-      {/* Botão expandir/recolher */}
+      {/* Anel de progresso */}
+      <div className="flex justify-center">
+        <ProgressRing trabalhadas={trabalhadas} total={totalQuestoes} />
+      </div>
+
+      {/* Label principal: foco no método */}
+      <div className="text-center -mt-1">
+        <p className="text-[10px] font-black uppercase tracking-widest text-slate-500">
+          questões trabalhadas
+        </p>
+      </div>
+
+      {/* Botão expandir — bloqueia propagação para não navegar ao clicar */}
       <button
-        onClick={() => setExpandido(v => !v)}
+        onClick={e => { e.stopPropagation(); setExpandido(v => !v); }}
         className="flex items-center justify-between w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-100 hover:bg-indigo-50 hover:border-indigo-200 transition-all text-slate-600 hover:text-indigo-600"
       >
         <span className="text-[9px] font-black uppercase tracking-widest">
@@ -475,65 +522,73 @@ function SubtopicoCard({ grupo }: { grupo: GrupoSubtopico }) {
         {expandido ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
       </button>
 
-      {/* Lista de questões (expansível) */}
+      {/* Lista expansível de questões */}
       <AnimatePresence>
         {expandido && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            transition={{ duration: 0.22, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
             <div className="space-y-1.5 pt-1">
-              {questoes.map(q => (
-                <Link
-                  key={q.slug}
-                  href={`/estudar/${q.slug}`}
-                  className={`flex items-center gap-3 px-3 py-2 rounded-xl border transition-all group
-                    ${q.status === 'acertou'
-                      ? 'border-green-100 bg-green-50 hover:border-green-300 hover:bg-green-100'
-                      : q.status === 'errou'
-                        ? 'border-red-100 bg-red-50 hover:border-red-300 hover:bg-red-100'
+              {questoes.map(q => {
+                const estudada = q.status === 'estudada';
+                return (
+                  <Link
+                    key={q.slug}
+                    href={`/estudar/${q.slug}`}
+                    onClick={e => e.stopPropagation()}
+                    className={`flex items-center gap-3 px-3 py-2 rounded-xl border transition-all group
+                      ${estudada
+                        ? 'border-indigo-100 bg-indigo-50 hover:border-indigo-300'
                         : 'border-slate-100 bg-slate-50 hover:border-indigo-200 hover:bg-indigo-50'
-                    }`}
-                >
-                  <StatusBadge status={q.status} />
-                  <span className={`flex-1 text-[10px] font-black uppercase tracking-wider
-                    ${q.status === 'acertou' ? 'text-green-700' :
-                      q.status === 'errou' ? 'text-red-700' : 'text-slate-600'}`}>
-                    Questão {String(q.numero).padStart(2, '0')}
-                  </span>
-                  <ChevronRight size={12} className={`shrink-0 opacity-40 group-hover:opacity-100 transition-opacity
-                    ${q.status === 'acertou' ? 'text-green-600' :
-                      q.status === 'errou' ? 'text-red-600' : 'text-slate-400'}`} />
-                </Link>
-              ))}
+                      }`}
+                  >
+                    <StatusBadge status={q.status} />
+                    <span className={`flex-1 text-[10px] font-black uppercase tracking-wider
+                      ${estudada ? 'text-indigo-600' : 'text-slate-600'}`}>
+                      Questão {String(q.numero).padStart(2, '0')}
+                    </span>
+                    {!estudada && (
+                      <span className="text-[8px] font-bold text-slate-400 uppercase tracking-wider">
+                        iniciar
+                      </span>
+                    )}
+                    {estudada && (
+                      <span className="text-[8px] font-bold text-indigo-400 uppercase tracking-wider">
+                        revisitar
+                      </span>
+                    )}
+                    <ChevronRight size={12} className="shrink-0 opacity-30 group-hover:opacity-80 transition-opacity text-slate-400" />
+                  </Link>
+                );
+              })}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Rodapé com stats */}
-      <div className="flex items-center justify-between pt-2 border-t border-slate-100 gap-2 flex-wrap">
-        {totalResolvidas > 0 ? (
-          <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">
-            {totalResolvidas} resolv{totalResolvidas !== 1 ? 'idas' : 'ida'}
-          </span>
-        ) : (
+      {/* Rodapé */}
+      <div className="flex items-center justify-between pt-2 border-t border-slate-100 gap-2">
+        <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">
+          {totalQuestoes} questão{totalQuestoes !== 1 ? 'ões' : ''} no assunto
+        </span>
+        {totalResolvidas === 0 && (
           <span className="text-[9px] font-bold uppercase tracking-widest text-slate-300">
-            não resolvida
+            não iniciado
           </span>
         )}
-        {totalResolvidas > 0 && (
-          <div className="flex items-center gap-3">
-            <span className="text-[9px] font-black uppercase tracking-wider text-green-500">
-              {acertos} acerto{acertos !== 1 ? 's' : ''}
-            </span>
-            <span className="text-[9px] font-black uppercase tracking-wider text-red-500">
-              {erros} erro{erros !== 1 ? 's' : ''}
-            </span>
-          </div>
+        {totalResolvidas > 0 && !todas && (
+          <span className="text-[9px] font-bold uppercase tracking-widest text-indigo-400">
+            em progresso
+          </span>
+        )}
+        {todas && (
+          <span className="text-[9px] font-bold uppercase tracking-widest text-green-500">
+            concluído ✓
+          </span>
         )}
       </div>
     </motion.div>

@@ -7,7 +7,7 @@ import { createBrowserClient } from '@supabase/ssr';
 import { 
   LayoutDashboard, BookOpen, 
   Zap, MapPin, ShieldCheck, BarChart3, LogOut,
-  Menu, X
+  Menu, X, CalendarDays
 } from 'lucide-react';
 
 const supabase = createBrowserClient(
@@ -68,7 +68,8 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
 
   const menuItems = [
     { label: 'Vitrine de Aulas', icon: LayoutDashboard, href: '/estudar', active: isPathActive('/estudar') },
-    { label: 'Desempenho Inteligente', icon: BarChart3, href: '/analytics', active: pathname === '/analytics' },
+    { label: 'Meu Desempenho', icon: BarChart3, href: '/analytics', active: pathname === '/analytics' },
+    { label: 'Plano de Estudo Diário', icon: CalendarDays, href: '/plano-diario', active: pathname === '/plano-diario' },
     { label: 'Material de Apoio', icon: BookOpen, href: '/material', active: isPathActive('/material') },
   ];
 

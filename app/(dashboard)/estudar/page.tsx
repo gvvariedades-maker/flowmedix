@@ -18,6 +18,7 @@ interface ModuloEstudoRow {
 interface HistoricoQuestaoRow {
   modulo_slug: string;
   acertou: boolean;
+  estudo_reverso_concluido: boolean;
   [key: string]: any;
 }
 
@@ -60,9 +61,13 @@ export default async function VitrinePage() {
     const acertos = tentativas.filter((t: HistoricoQuestaoRow) => t.acertou).length;
     const total = tentativas.length;
     const percentual = total > 0 ? Math.round((acertos / total) * 100) : 0;
-    
+    // "Estudada" = aluno confirmou explicitamente que concluiu o ciclo de estudo reverso
+    const estudoReversoConcluido = tentativas.some(
+      (t: HistoricoQuestaoRow) => t.estudo_reverso_concluido === true
+    );
+
     let priorityScore = 0;
-    if (total === 0) priorityScore = 50; 
+    if (!estudoReversoConcluido) priorityScore = 50;
     else if (percentual < 70) priorityScore = 100 + (70 - percentual);
     else if (percentual >= 90) priorityScore = 10;
     else priorityScore = 30;
@@ -73,6 +78,7 @@ export default async function VitrinePage() {
       modulo_nome: modulo.modulo_nome || 'Módulo',
       titulo_aula: modulo.titulo_aula || 'Aula sem título',
       banca: modulo.banca,
+      estudoReversoConcluido,
       stats: { acertos, total, percentual, priorityScore }
     };
   }).sort((a: any, b: any) => b.stats.priorityScore - a.stats.priorityScore);
