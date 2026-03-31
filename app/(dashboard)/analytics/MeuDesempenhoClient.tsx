@@ -92,7 +92,7 @@ export default function MeuDesempenhoClient({ dados }: { dados: DesempenhoData }
   const semDados = totalGeral === 0;
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 pb-safe">
       {/* Header */}
       <div className="bg-white border-b border-slate-100 px-6 py-6 md:px-10">
         <div className="max-w-3xl mx-auto">
@@ -105,7 +105,7 @@ export default function MeuDesempenhoClient({ dados }: { dados: DesempenhoData }
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto px-6 py-8 md:px-10 space-y-6">
+      <div className="max-w-3xl mx-auto px-6 py-8 md:px-10 pb-2 sm:pb-4 space-y-6">
 
         {/* ── HERO: Meta do dia + Streak ─────────────────────────────────────── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

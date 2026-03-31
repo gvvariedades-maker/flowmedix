@@ -1,7 +1,7 @@
-import type { Config } from "tailwindcss"
-
+// Tailwind v4: Config type no longer includes all legacy options at top level
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const config = {
-  darkMode: ["class"],
+  darkMode: "class",
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -103,6 +103,6 @@ const config = {
     'shadow-[0_0_30px_rgba(239,68,68,0.3)]',
     'shadow-[0_0_50px_rgba(239,68,68,0.6)]',
   ],
-} satisfies Config
+}
 
 export default config

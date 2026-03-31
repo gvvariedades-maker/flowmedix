@@ -107,8 +107,8 @@ test.describe('Laboratório Admin', () => {
 
   test('deve mostrar erros de validação', async ({ page }) => {
     // Colar JSON inválido (sem banca)
-    const invalidJSON = { ...validQuestionJSON };
-    delete invalidJSON.meta.banca;
+    const invalidJSON = { ...validQuestionJSON, meta: { ...validQuestionJSON.meta } };
+    delete (invalidJSON.meta as Partial<typeof invalidJSON.meta>).banca;
     
     const jsonInput = page.locator('textarea').first();
     await jsonInput.fill(JSON.stringify(invalidJSON, null, 2));

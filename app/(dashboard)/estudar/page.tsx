@@ -83,17 +83,7 @@ export default async function VitrinePage() {
     };
   }).sort((a: any, b: any) => b.stats.priorityScore - a.stats.priorityScore);
 
-  const totalAcertos = historicoTyped.filter((h: HistoricoQuestaoRow) => h.acertou).length;
-  const globalStats = {
-    ofensiva: 1,
-    xp: totalAcertos * 50,
-    taxaGeral: Math.round((totalAcertos / (historicoTyped.length || 1)) * 100)
-  };
-
   return (
-    <VitrineClient 
-      initialModulos={modulosProcessados} 
-      globalStats={globalStats} 
-    />
+    <VitrineClient initialModulos={modulosProcessados} />
   );
 }

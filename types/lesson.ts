@@ -153,6 +153,14 @@ export interface QuestaoDoAssunto {
 // ============================================================================
 // AVANT LESSON PLAYER PROPS
 // ============================================================================
+// ============================================================================
+// QUESTÃO COMPLETA (Estrutura de questão com id, usada no laboratório e admin)
+// ============================================================================
+export type QuestaoCompleta = LessonData & { id?: string };
+
+// ============================================================================
+// AVANT LESSON PLAYER PROPS
+// ============================================================================
 export interface AvantLessonPlayerProps {
   dados: LessonData;
   mode?: 'preview' | 'live';
@@ -160,4 +168,6 @@ export interface AvantLessonPlayerProps {
   anteriorSlug?: string | null;
   moduloSlug?: string | null;
   questoesDoAssunto?: QuestaoDoAssunto[]; // Lista de questões do mesmo assunto com status
+  fromPlano?: boolean;       // true quando o aluno veio do Plano de Estudo Diário
+  fromCaderno?: string;      // cadernoId quando o aluno veio de um Caderno de Estudo
 }

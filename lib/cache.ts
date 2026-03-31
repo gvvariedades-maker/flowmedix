@@ -343,7 +343,7 @@ export async function revalidateCache(tags: string[]) {
   const { revalidateTag } = await import('next/cache');
   
   tags.forEach((tag) => {
-    revalidateTag(tag);
+    revalidateTag(tag, {});
     logger.info('Cache invalidated', { tag });
   });
 }

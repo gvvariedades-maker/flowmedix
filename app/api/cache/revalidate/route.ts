@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
     else if (tags && Array.isArray(tags)) {
       const { revalidateTag } = await import('next/cache');
       tags.forEach((tag: string) => {
-        revalidateTag(tag);
+        revalidateTag(tag, {});
         logger.info('Cache tag invalidated', { tag });
       });
     }

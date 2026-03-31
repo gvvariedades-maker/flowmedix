@@ -30,6 +30,8 @@ export default function AvantLessonPlayer({
   anteriorSlug,
   moduloSlug,
   questoesDoAssunto,
+  fromPlano = false,
+  fromCaderno,
 }: AvantLessonPlayerProps) {
   
   const router = useRouter();
@@ -114,8 +116,21 @@ export default function AvantLessonPlayer({
   // ============================================================================
   // NAVEGAÇÃO
   // ============================================================================
-  const handleNavegar = (slug: string) => router.push(`/estudar/${slug}`);
-  const handleConcluir = () => router.push('/estudar');
+  const handleNavegar = (slugComQuery: string) => {
+    router.push(`/estudar/${slugComQuery}`);
+  };
+
+  const handleVoltarLista = () => {
+    if (fromPlano) return router.push('/plano-diario');
+    if (fromCaderno) return router.push(`/cadernos/${fromCaderno}`);
+    router.push('/estudar');
+  };
+
+  const handleConcluir = () => {
+    if (fromPlano) return router.push('/plano-diario');
+    if (fromCaderno) return router.push(`/cadernos/${fromCaderno}`);
+    router.push('/estudar');
+  };
 
   // ============================================================================
   // RENDER HELPERS
@@ -129,6 +144,7 @@ export default function AvantLessonPlayer({
 
   const slidesSource = ((dados.reverse_study_slides || (dados as any).study_slides) ?? []) as LessonData['reverse_study_slides'];
   const fallbackSlide: ReverseStudySlide = {
+    type: 'golden_rule',
     layout_type: 'golden_rule',
     structure: {
       header: {
@@ -175,7 +191,7 @@ export default function AvantLessonPlayer({
     structure: normalizeStructure(slide.structure) ?? slide.structure,
   });
 
-  const slidesArray = (slidesSource.length ? slidesSource : [fallbackSlide]).map(normalizeSlide);
+  const slidesArray = (slidesSource?.length ? slidesSource : [fallbackSlide]).map(normalizeSlide);
   const currentSlide = slidesArray[slideAtual];
   const totalSlides = slidesArray.length;
   const fadeInUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };
@@ -192,7 +208,7 @@ export default function AvantLessonPlayer({
   ].filter(Boolean).join('-') || JSON.stringify(dados).substring(0, 100);
 
   return (
-    <div className="w-full h-full flex flex-col relative bg-white md:rounded-[40px] shadow-2xl overflow-hidden border border-slate-200/60 ring-1 ring-slate-100 font-sans">
+    <div className="w-full h-full min-h-0 flex flex-col relative bg-white md:rounded-[40px] shadow-2xl overflow-hidden border border-slate-200/60 ring-1 ring-slate-100 font-sans">
       
       {/* BARRA DE PROGRESSO */}
       <div className="h-2 w-full bg-slate-100 flex shrink-0">
@@ -209,15 +225,18 @@ export default function AvantLessonPlayer({
           
           {/* Botão Voltar (se mode === 'live') */}
           {mode === 'live' && (
-            <div className="px-6 pt-6 pb-2">
+            <div className="px-4 sm:px-6 pt-4 sm:pt-6 pb-2">
               <button 
-                onClick={() => window.location.href = '/estudar'} 
-                className="group flex items-center gap-2 text-slate-500 hover:text-indigo-600 transition-colors"
+                type="button"
+                onClick={handleVoltarLista}
+                className="group flex items-center gap-2 text-slate-500 hover:text-indigo-600 transition-colors min-h-[44px] min-w-[44px] -ml-1 px-1 rounded-xl"
               >
-                <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-indigo-50 transition-all">
+                <div className="w-9 h-9 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-indigo-50 transition-all">
                   <ArrowLeft size={16} />
                 </div>
-                <span className="text-sm font-medium">Voltar</span>
+                <span className="text-sm font-medium">
+                  {fromPlano ? 'Plano diário' : fromCaderno ? 'Caderno' : 'Vitrine'}
+                </span>
               </button>
             </div>
           )}
@@ -267,7 +286,7 @@ export default function AvantLessonPlayer({
               {dados.meta.prova && (
                 <span className="flex items-center gap-1">
                   <strong className="text-purple-700 font-bold">Prova:</strong> 
-                  <span className="truncate max-w-[300px] hover:whitespace-normal transition-all" title={dados.meta.prova}>
+                  <span className="truncate max-w-[85vw] sm:max-w-[300px] md:max-w-[320px] hover:whitespace-normal transition-all" title={dados.meta.prova}>
                     {dados.meta.prova}
                   </span>
                 </span>
@@ -384,16 +403,23 @@ export default function AvantLessonPlayer({
 
         {/* NAVEGAÇÃO INFERIOR */}
         {mode === 'live' && (
-          <div className="bg-white border-t border-slate-100 shrink-0">
+          <div className="bg-white border-t border-slate-100 shrink-0 pb-safe">
             {/* Dots de status das questões do assunto */}
             {questoesDoAssunto && questoesDoAssunto.length > 1 && (
-              <div className="flex items-center justify-center gap-2 px-4 pt-3 pb-1 overflow-x-auto">
+              <div className="flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 pt-3 pb-1 overflow-x-auto">
                 {questoesDoAssunto.map((q, i) => {
                   const isCurrent = q.slug === moduloSlug;
                   return (
                     <button
                       key={q.slug}
-                      onClick={() => router.push(`/estudar/${q.slug}`)}
+                      onClick={() => {
+                        const s = fromPlano
+                          ? '?from=plano'
+                          : fromCaderno
+                            ? `?from=caderno&caderno_id=${fromCaderno}`
+                            : '';
+                        router.push(`/estudar/${q.slug}${s}`);
+                      }}
                       title={`Questão ${i + 1}${q.estudada ? ' — estudada' : ''}`}
                       className={`shrink-0 rounded-full transition-all duration-200 flex items-center justify-center ${
                         isCurrent
@@ -416,29 +442,40 @@ export default function AvantLessonPlayer({
                 })}
               </div>
             )}
-            <div className="p-4 flex justify-between items-center">
+            <div className="px-2 sm:px-4 py-3 flex flex-wrap justify-between items-center gap-2">
               <button 
+                type="button"
                 onClick={() => anteriorSlug && handleNavegar(anteriorSlug)} 
                 disabled={!anteriorSlug} 
-                className={`flex items-center gap-2 px-4 py-3 rounded-xl font-bold uppercase text-xs tracking-widest transition-all ${
+                className={`flex items-center gap-1.5 sm:gap-2 px-2 sm:px-4 py-2.5 sm:py-3 rounded-xl font-bold uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest transition-all min-h-[44px] ${
                   anteriorSlug ? 'text-slate-500 hover:bg-slate-50 hover:text-indigo-600' : 'text-slate-200 cursor-not-allowed'
                 }`}
               >
-                <ArrowLeft size={16} /> Anterior
+                <ArrowLeft size={16} /> <span>Anterior</span>
               </button>
               {proximaSlug ? (
                 <button 
+                  type="button"
                   onClick={() => proximaSlug && handleNavegar(proximaSlug)} 
-                  className="flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-50 text-indigo-700 font-black uppercase text-xs tracking-widest hover:bg-indigo-100 transition-all"
+                  className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-indigo-50 text-indigo-700 font-black uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:bg-indigo-100 transition-all min-h-[44px]"
                 >
-                  Próxima Questão <ArrowRight size={16} />
+                  <span className="sm:hidden">Próxima</span>
+                  <span className="hidden sm:inline">Próxima Questão</span>
+                  <ArrowRight size={16} className="shrink-0" />
                 </button>
               ) : (
                 <button 
+                  type="button"
                   onClick={handleConcluir} 
-                  className="flex items-center gap-2 px-6 py-3 rounded-xl bg-[#BEF264] text-slate-900 font-black uppercase text-xs tracking-widest hover:bg-[#a3d648] hover:shadow-lg transition-all"
+                  className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-[#BEF264] text-slate-900 font-black uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:bg-[#a3d648] hover:shadow-lg transition-all min-h-[44px]"
                 >
-                  Concluir Missão <Flag size={16} />
+                  <span className="max-[380px]:hidden">
+                    {fromPlano ? 'Concluir Plano' : fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'}
+                  </span>
+                  <span className="hidden max-[380px]:inline">
+                    {fromPlano ? 'Plano' : fromCaderno ? 'Caderno' : 'Fim'}
+                  </span>
+                  <Flag size={16} className="shrink-0" />
                 </button>
               )}
             </div>
@@ -455,8 +492,8 @@ export default function AvantLessonPlayer({
             exit={{ y: "100%" }}
             className="absolute bottom-0 left-0 right-0 z-20"
           >
-            <div className="bg-white/90 backdrop-blur-xl border-t border-slate-200 p-6 md:p-8 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-6 max-w-4xl mx-auto">
+            <div className="bg-white/90 backdrop-blur-xl border-t border-slate-200 p-4 pb-safe sm:p-6 md:p-8 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 max-w-4xl mx-auto">
                 <div className="flex items-center gap-4">
                   <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-inner ${
                     dados.question_data.options.find((o:any) => o.id === selecionada)?.is_correct 
@@ -485,14 +522,15 @@ export default function AvantLessonPlayer({
                   </div>
                 </div>
                 <button 
+                  type="button"
                   onClick={() => { 
                     setEtapa('estudo'); 
                     setSlideAtual(0); 
                   }}
-                  className="w-full md:w-auto bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl font-bold uppercase text-[11px] tracking-widest shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-3 transition-all hover:-translate-y-1"
+                  className="w-full md:w-auto min-h-[48px] bg-indigo-600 hover:bg-indigo-700 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold uppercase text-[10px] sm:text-[11px] tracking-wide sm:tracking-widest shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2 sm:gap-3 transition-all sm:hover:-translate-y-1"
                 >
-                  <BrainCircuit size={18} /> 
-                  <span>Ativar Estudo Reverso</span>
+                  <BrainCircuit size={18} className="shrink-0" /> 
+                  <span className="text-center leading-tight">Ativar Estudo Reverso</span>
                 </button>
               </div>
             </div>
@@ -509,18 +547,18 @@ export default function AvantLessonPlayer({
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center"
+            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center pt-safe"
           >
             {/* Container Full Screen - flex flow para header/footer não sobreporem conteúdo */}
-            <div className="w-full h-full flex flex-col">
+            <div className="w-full h-full min-h-0 flex flex-col">
               
               {/* Header Minimalista (Top Bar) */}
-              <div className="shrink-0 px-6 md:px-12 pt-6 pb-2 flex justify-between items-center">
+              <div className="shrink-0 px-4 sm:px-6 md:px-12 pt-3 sm:pt-6 pb-2 flex justify-between items-center gap-2 min-w-0">
                 <div className="flex items-center gap-3">
                   <div className="bg-[#BEF264] text-slate-900 p-2 rounded-lg">
                     <Lightbulb size={20} fill="black" />
                   </div>
-                  <span className="text-white/60 font-bold uppercase text-xs tracking-widest">
+                  <span className="hidden sm:inline text-white/60 font-bold uppercase text-xs tracking-widest truncate max-w-[120px] md:max-w-none">
                     Avant Neuro-Learning
                   </span>
                 </div>
@@ -562,26 +600,27 @@ export default function AvantLessonPlayer({
               </div>
 
               {/* Footer de Navegação (Bottom Bar) */}
-              <div className="shrink-0 bg-black/40 backdrop-blur-xl border-t border-white/5 px-6 md:px-12 py-6">
-                <div className="flex justify-between items-center max-w-6xl mx-auto">
+              <div className="shrink-0 bg-black/40 backdrop-blur-xl border-t border-white/5 px-4 sm:px-6 md:px-12 py-4 sm:py-6 pb-safe">
+                <div className="flex flex-wrap justify-center sm:justify-between items-center gap-3 sm:gap-4 max-w-6xl mx-auto">
                   
                   {/* Botão Anterior */}
                   <button 
+                    type="button"
                     onClick={() => setSlideAtual(Math.max(0, slideAtual - 1))} 
                     disabled={slideAtual === 0} 
-                    className="flex items-center gap-2 text-white/60 font-bold uppercase text-xs tracking-widest hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="flex items-center gap-2 text-white/60 font-bold uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed min-h-[44px] px-1 order-1 sm:order-none"
                   >
                     <ChevronLeft size={16} /> Voltar
                   </button>
                   
                   {/* Indicadores de Progresso */}
-                  <div className="flex gap-2">
+                  <div className="flex gap-1.5 sm:gap-2 order-3 sm:order-none w-full sm:w-auto justify-center basis-full sm:basis-auto">
                     {slidesArray?.map((_, i: number) => (
                       <div 
                         key={i} 
                         className={`h-1.5 rounded-full transition-all duration-500 ${
                           i === slideAtual 
-                            ? 'w-10 bg-[#BEF264]' 
+                            ? 'w-8 sm:w-10 bg-[#BEF264]' 
                             : 'w-2 bg-white/20'
                         }`} 
                       />
@@ -591,26 +630,33 @@ export default function AvantLessonPlayer({
                   {/* Botão Próximo / Confirmação no último slide */}
                   {slideAtual < totalSlides - 1 ? (
                     <button 
+                      type="button"
                       onClick={() => setSlideAtual(slideAtual + 1)} 
-                      className="group bg-white text-slate-900 px-6 py-3 rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-[#BEF264] transition-all flex items-center gap-2"
+                      className="group bg-white text-slate-900 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-bold uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:bg-[#BEF264] transition-all flex items-center gap-2 min-h-[44px] order-2 sm:order-none"
                     >
                       Próximo <ArrowRight size={16} />
                     </button>
                   ) : estudoConcluido ? (
-                    /* Estado: concluído com sucesso */
-                    <div className="flex items-center gap-2 px-6 py-3 rounded-xl bg-green-500/20 border border-green-500/40 text-green-400 font-black uppercase text-xs tracking-widest">
-                      <BadgeCheck size={16} />
+                    <div className="flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-green-500/20 border border-green-500/40 text-green-400 font-black uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest order-2 sm:order-none text-center">
+                      <BadgeCheck size={16} className="shrink-0" />
                       Estudo Concluído!
                     </div>
                   ) : (
-                    /* Botão de confirmação explícita */
                     <button
+                      type="button"
                       onClick={marcarEstudoConcluido}
                       disabled={marcandoConclusao}
-                      className="group flex items-center gap-2 bg-[#BEF264] hover:bg-[#a3d648] disabled:opacity-60 disabled:cursor-not-allowed text-slate-900 px-6 py-3 rounded-xl font-black uppercase text-xs tracking-widest shadow-[0_0_20px_rgba(190,242,100,0.3)] hover:shadow-[0_0_30px_rgba(190,242,100,0.5)] transition-all"
+                      className="group flex items-center gap-2 bg-[#BEF264] hover:bg-[#a3d648] disabled:opacity-60 disabled:cursor-not-allowed text-slate-900 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl font-black uppercase text-[9px] sm:text-xs tracking-wide sm:tracking-widest shadow-[0_0_20px_rgba(190,242,100,0.3)] transition-all min-h-[44px] order-2 sm:order-none max-w-[min(100%,280px)] sm:max-w-none"
                     >
-                      <BadgeCheck size={16} />
-                      {marcandoConclusao ? 'Salvando...' : 'Marcar como Estudado'}
+                      <BadgeCheck size={16} className="shrink-0" />
+                      <span className="text-left leading-tight">
+                        {marcandoConclusao ? 'Salvando...' : (
+                          <>
+                            <span className="sm:hidden">Marcar estudado</span>
+                            <span className="hidden sm:inline">Marcar como Estudado</span>
+                          </>
+                        )}
+                      </span>
                     </button>
                   )}
                 </div>

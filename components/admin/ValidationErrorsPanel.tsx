@@ -400,7 +400,7 @@ export function ValidationErrorsPanel({
  * Helper para formatar erros Zod em formato estruturado
  */
 export function formatZodErrors(error: ZodError): ValidationError[] {
-  return error.errors.map((err) => ({
+  return error.issues.map((err) => ({
     path: err.path.map(String),
     message: err.message,
     code: err.code,

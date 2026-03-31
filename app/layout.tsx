@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { validateAllEnv } from "@/lib/env";
@@ -58,6 +58,14 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+};
+
+/** Celular: notch, barra de endereço, safe-area iOS */
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#f8fafc",
 };
 
 export default function RootLayout({

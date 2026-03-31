@@ -89,8 +89,8 @@ const htmlValidator = z.string().transform((val) => {
 export const FluxogramaSchema = z.object({
   title: z.string().min(1).max(200),
   modulo_id: z.string().uuid('ID do módulo deve ser um UUID válido'),
-  content: z.record(z.any()).optional(),
-  conteudo_json: z.record(z.any()).optional(),
+  content: z.record(z.string(), z.any()).optional(),
+  conteudo_json: z.record(z.string(), z.any()).optional(),
   flow_title: z.string().optional(),
 });
 

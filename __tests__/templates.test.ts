@@ -11,6 +11,7 @@ import {
   cleanTemplate,
 } from '@/lib/templates';
 import { QuestaoCompletaSchema } from '@/lib/validations';
+import type { QuestaoCompleta } from '@/types/lesson';
 
 describe('Sistema de Templates', () => {
   describe('getTemplateById', () => {
@@ -78,7 +79,7 @@ describe('Sistema de Templates', () => {
         meta: {
           banca: 'EBSERH',
         },
-      };
+      } as Partial<QuestaoCompleta>;
 
       const cleaned = cleanTemplate(partial);
       expect(cleaned.meta.banca).toBe('EBSERH');

@@ -146,7 +146,7 @@ export default async function MeuDesempenhoPage() {
   } catch (error) {
     logger.error('Failed to load meu-desempenho', error, { userId });
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6 pb-safe">
         <div className="text-center max-w-md space-y-4">
           <p className="text-slate-500 text-sm">Erro ao carregar dados. Tente novamente.</p>
           <a href="/estudar" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 text-white font-bold text-sm">

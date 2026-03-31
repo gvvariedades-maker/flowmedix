@@ -169,7 +169,7 @@ export function TemplateSelector({ onSelectTemplate, onClose }: TemplateSelector
                         <div className="flex items-center gap-4 text-xs text-slate-500">
                           <span>Categoria: {template.category}</span>
                           <span>
-                            {template.template.reverse_study_slides.length} slides
+                            {template.template.reverse_study_slides?.length ?? 0} slides
                           </span>
                         </div>
                       </div>
@@ -214,7 +214,7 @@ export function TemplateSelector({ onSelectTemplate, onClose }: TemplateSelector
                               <div>
                                 <strong>Slides:</strong>
                                 <ul className="list-disc list-inside ml-2 mt-1">
-                                  {template.template.reverse_study_slides.map((slide, idx) => (
+                                  {(template.template.reverse_study_slides ?? []).map((slide, idx) => (
                                     <li key={idx}>{slide.type}</li>
                                   ))}
                                 </ul>

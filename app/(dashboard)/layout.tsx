@@ -7,7 +7,7 @@ import { createBrowserClient } from '@supabase/ssr';
 import { 
   LayoutDashboard, BookOpen, 
   Zap, MapPin, ShieldCheck, BarChart3, LogOut,
-  Menu, X, CalendarDays
+  Menu, X, CalendarDays, BookMarked
 } from 'lucide-react';
 
 const supabase = createBrowserClient(
@@ -70,11 +70,12 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
     { label: 'Vitrine de Aulas', icon: LayoutDashboard, href: '/estudar', active: isPathActive('/estudar') },
     { label: 'Meu Desempenho', icon: BarChart3, href: '/analytics', active: pathname === '/analytics' },
     { label: 'Plano de Estudo Diário', icon: CalendarDays, href: '/plano-diario', active: pathname === '/plano-diario' },
+    { label: 'Cadernos de Estudo', icon: BookMarked, href: '/cadernos', active: isPathActive('/cadernos') },
     { label: 'Material de Apoio', icon: BookOpen, href: '/material', active: isPathActive('/material') },
   ];
 
   return (
-    <div className="flex h-screen bg-slate-50 font-sans">
+    <div className="flex min-h-0 h-[100dvh] max-h-[100dvh] bg-slate-50 font-sans">
       
       {/* --- SIDEBAR FIXA --- */}
       <aside className="hidden md:flex w-72 bg-white border-r border-slate-200 flex-col relative z-20">
@@ -267,9 +268,9 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
       </div>
 
       {/* --- ÁREA PRINCIPAL --- */}
-      <div className="flex-1 flex flex-col h-full overflow-hidden">
+      <div className="flex-1 flex flex-col min-h-0 h-full overflow-hidden">
         {/* Header Mobile */}
-        <header className="md:hidden bg-white border-b border-slate-200 px-4 py-3 flex items-center justify-between sticky top-0 z-30">
+        <header className="md:hidden bg-white border-b border-slate-200 px-4 py-3 pt-safe flex items-center justify-between sticky top-0 z-30 shrink-0">
           <button
             onClick={() => setMobileMenuOpen(true)}
             className="w-9 h-9 flex items-center justify-center rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-all"
@@ -290,7 +291,7 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
           </div>
         </header>
 
-        <main className="flex-1 overflow-y-auto no-scrollbar relative">
+        <main className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden no-scrollbar relative flex flex-col">
           {children}
         </main>
       </div>
@@ -301,7 +302,7 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
 // Exportação Principal com Suspense (Obrigatório para useSearchParams)
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
-    <Suspense fallback={<div className="h-screen bg-slate-50" />}>
+    <Suspense fallback={<div className="min-h-[100dvh] bg-slate-50" />}>
       <DashboardContent>{children}</DashboardContent>
     </Suspense>
   );

@@ -1,16 +1,18 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Zap, Flame, BookOpen,
+  BookOpen,
   LayoutDashboard, Search, X, Filter,
-  ChevronDown, ChevronUp, ChevronRight,
+  ChevronDown, ChevronUp, ChevronRight, ChevronLeft,
   CheckCircle2, Circle,
 } from 'lucide-react';
+
+const ASSUNTOS_POR_PAGINA = 12;
 
 // ─── Interfaces ───────────────────────────────────────────────────────────────
 
@@ -53,16 +55,11 @@ interface GrupoSubtopico {
 
 interface VitrineClientProps {
   initialModulos: ModuloEstudo[];
-  globalStats: {
-    ofensiva: number;
-    xp: number;
-    taxaGeral: number;
-  };
 }
 
 // ─── Componente Principal ─────────────────────────────────────────────────────
 
-export default function VitrineClient({ initialModulos, globalStats: initialGlobalStats }: VitrineClientProps) {
+export default function VitrineClient({ initialModulos }: VitrineClientProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -72,9 +69,12 @@ export default function VitrineClient({ initialModulos, globalStats: initialGlob
 
   const [modulos] = useState<ModuloEstudo[]>(initialModulos);
   const [searchTerm, setSearchTerm] = useState(searchParams.get('q') ?? '');
-  const [globalStats] = useState(initialGlobalStats);
   const [bancaFilter, setBancaFilter] = useState<string>(searchParams.get('banca') ?? '');
   const [assuntoFilter, setAssuntoFilter] = useState<string>(searchParams.get('assunto') ?? '');
+  const [pagina, setPagina] = useState(() => {
+    const raw = parseInt(searchParams.get('page') || '1', 10);
+    return Number.isFinite(raw) && raw >= 1 ? raw : 1;
+  });
 
   const bancas = useMemo(
     () => [...new Set(modulos.map(m => m.banca).filter(Boolean))].sort((a, b) => a.localeCompare(b)),
@@ -88,17 +88,31 @@ export default function VitrineClient({ initialModulos, globalStats: initialGlob
     [modulos],
   );
 
+  const filtrosPrevRef = useRef<{ b: string; a: string; q: string } | null>(null);
+  useEffect(() => {
+    if (filtrosPrevRef.current === null) {
+      filtrosPrevRef.current = { b: bancaFilter, a: assuntoFilter, q: searchTerm };
+      return;
+    }
+    const prev = filtrosPrevRef.current;
+    const mudou =
+      prev.b !== bancaFilter || prev.a !== assuntoFilter || prev.q !== searchTerm;
+    filtrosPrevRef.current = { b: bancaFilter, a: assuntoFilter, q: searchTerm };
+    if (mudou) setPagina(1);
+  }, [bancaFilter, assuntoFilter, searchTerm]);
+
   useEffect(() => {
     const params = new URLSearchParams(searchParams.toString());
     if (bancaFilter) params.set('banca', bancaFilter); else params.delete('banca');
     if (assuntoFilter) params.set('assunto', assuntoFilter); else params.delete('assunto');
     if (searchTerm) params.set('q', searchTerm); else params.delete('q');
+    if (pagina > 1) params.set('page', String(pagina)); else params.delete('page');
     const queryString = params.toString();
     const newSearch = queryString ? `?${queryString}` : '';
     if (typeof window !== 'undefined' && window.location.search !== newSearch) {
       router.replace(`${pathname}${newSearch}`, { scroll: false });
     }
-  }, [bancaFilter, assuntoFilter, searchTerm, pathname, router, searchParams]);
+  }, [bancaFilter, assuntoFilter, searchTerm, pagina, pathname, router, searchParams]);
 
   const filteredModulos = useMemo(() => {
     let result = modulos;
@@ -178,9 +192,29 @@ export default function VitrineClient({ initialModulos, globalStats: initialGlob
     });
   }, [filteredModulos]);
 
-  // Totais globais para o hero
-  const totalTrabalhadas = useMemo(() => grupos.reduce((s, g) => s + g.trabalhadas, 0), [grupos]);
-  const totalDisponiveis = useMemo(() => grupos.reduce((s, g) => s + g.totalQuestoes, 0), [grupos]);
+  const totalAssuntos = grupos.length;
+  const totalPaginas = Math.max(1, Math.ceil(totalAssuntos / ASSUNTOS_POR_PAGINA));
+  const paginaEfetiva = Math.min(Math.max(1, pagina), totalPaginas);
+
+  useEffect(() => {
+    if (pagina > totalPaginas) setPagina(totalPaginas);
+  }, [pagina, totalPaginas]);
+
+  const gruposPagina = useMemo(() => {
+    const start = (paginaEfetiva - 1) * ASSUNTOS_POR_PAGINA;
+    return grupos.slice(start, start + ASSUNTOS_POR_PAGINA);
+  }, [grupos, paginaEfetiva]);
+
+  const vitrineListaRef = useRef<HTMLDivElement>(null);
+  const paginaScrollSkipRef = useRef(true);
+  useEffect(() => {
+    if (paginaScrollSkipRef.current) {
+      paginaScrollSkipRef.current = false;
+      return;
+    }
+    vitrineListaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [pagina]);
+
   const grupoComMaisPendentes = useMemo(() =>
     grupos.find(g => g.trabalhadas < g.totalQuestoes) ?? null,
     [grupos],
@@ -188,19 +222,21 @@ export default function VitrineClient({ initialModulos, globalStats: initialGlob
   const showHero = !searchTerm && !bancaFilter && !assuntoFilter && grupoComMaisPendentes !== null;
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 pb-24 selection:bg-indigo-100 selection:text-indigo-900">
+    <div className="min-h-screen bg-slate-50 text-slate-900 pb-24 pb-safe selection:bg-indigo-100 selection:text-indigo-900">
 
       {/* ── HEADER ── */}
       <header className="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-6">
 
-          <div className="flex items-center gap-4 w-full md:w-auto">
-            <div className="p-3 rounded-2xl bg-slate-100 text-indigo-600 border border-slate-200 shrink-0">
+          <div className="flex items-center gap-3 sm:gap-4 w-full md:w-auto min-w-0">
+            <div className="p-2.5 sm:p-3 rounded-2xl bg-slate-100 text-indigo-600 border border-slate-200 shrink-0">
               <LayoutDashboard size={24} />
             </div>
-            <div className="hidden md:block">
-              <h1 className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400">Painel Tático</h1>
-              <h2 className="text-xl font-[1000] italic uppercase tracking-tighter text-slate-800 line-clamp-1">
+            <div className="min-w-0 flex-1 md:flex-none">
+              <h1 className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.25em] sm:tracking-[0.4em] text-slate-400">
+                Painel Tático
+              </h1>
+              <h2 className="text-sm sm:text-lg md:text-xl font-[1000] italic uppercase tracking-tighter text-slate-800 line-clamp-2 md:line-clamp-1 leading-tight">
                 Missão: {cidadeUrl}
               </h2>
             </div>
@@ -226,12 +262,6 @@ export default function VitrineClient({ initialModulos, globalStats: initialGlob
                 <X size={16} />
               </button>
             )}
-          </div>
-
-          <div className="hidden lg:flex gap-3">
-            <QuickStat icon={BookOpen} value={`${totalTrabalhadas}/${totalDisponiveis}`} label="Trabalhadas" color="text-indigo-600" />
-            <QuickStat icon={Zap} value={globalStats.xp} label="XP Total" color="text-amber-500" />
-            <QuickStat icon={Flame} value={`${globalStats.ofensiva}D`} label="Streak" color="text-orange-500" />
           </div>
         </div>
       </header>
@@ -314,7 +344,7 @@ export default function VitrineClient({ initialModulos, globalStats: initialGlob
 
         {/* ── VITRINE DE QUESTÕES ── */}
         <section className="space-y-8">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <h3 className="text-xs font-black uppercase tracking-[0.5em] text-indigo-500">
               {searchTerm
                 ? `Resultados para "${searchTerm}"`
@@ -322,18 +352,55 @@ export default function VitrineClient({ initialModulos, globalStats: initialGlob
                   ? `Filtrado${bancaFilter ? ` • ${bancaFilter}` : ''}${assuntoFilter ? ` • ${assuntoFilter}` : ''}`
                   : 'Vitrine de Questões'}
             </h3>
-            <div className="h-px flex-1 bg-slate-200" />
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-              {grupos.length} assunto{grupos.length !== 1 ? 's' : ''}
+            <div className="h-px flex-1 min-w-[4rem] bg-slate-200 hidden sm:block" />
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest w-full sm:w-auto sm:text-right">
+              {totalAssuntos > 0 && totalPaginas > 1
+                ? `Mostrando ${(paginaEfetiva - 1) * ASSUNTOS_POR_PAGINA + 1}–${Math.min(paginaEfetiva * ASSUNTOS_POR_PAGINA, totalAssuntos)} de ${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`
+                : `${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`}
             </span>
           </div>
 
           {grupos.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-              {grupos.map(grupo => (
-                <SubtopicoCard key={grupo.titulo_aula} grupo={grupo} />
-              ))}
-            </div>
+            <>
+              <div
+                ref={vitrineListaRef}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+              >
+                {gruposPagina.map(grupo => (
+                  <SubtopicoCard key={grupo.titulo_aula} grupo={grupo} />
+                ))}
+              </div>
+              {totalPaginas > 1 && (
+                <nav
+                  className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2 border-t border-slate-200"
+                  aria-label="Paginação da vitrine"
+                >
+                  <p className="text-xs text-slate-500 font-medium order-2 sm:order-1">
+                    Página {paginaEfetiva} de {totalPaginas}
+                  </p>
+                  <div className="flex items-center gap-2 order-1 sm:order-2 sm:ml-auto">
+                    <button
+                      type="button"
+                      disabled={paginaEfetiva <= 1}
+                      onClick={() => setPagina(p => Math.max(1, p - 1))}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-200 bg-white text-sm font-bold text-slate-700 hover:border-indigo-300 hover:text-indigo-700 disabled:opacity-40 disabled:pointer-events-none transition-colors"
+                    >
+                      <ChevronLeft size={18} />
+                      Anterior
+                    </button>
+                    <button
+                      type="button"
+                      disabled={paginaEfetiva >= totalPaginas}
+                      onClick={() => setPagina(p => Math.min(totalPaginas, p + 1))}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-200 bg-white text-sm font-bold text-slate-700 hover:border-indigo-300 hover:text-indigo-700 disabled:opacity-40 disabled:pointer-events-none transition-colors"
+                    >
+                      Próxima
+                      <ChevronRight size={18} />
+                    </button>
+                  </div>
+                </nav>
+              )}
+            </>
           ) : (
             <div className="flex flex-col items-center justify-center py-20 text-slate-400">
               <Search size={48} className="mb-4 opacity-20" />
@@ -342,30 +409,6 @@ export default function VitrineClient({ initialModulos, globalStats: initialGlob
           )}
         </section>
       </main>
-    </div>
-  );
-}
-
-// ─── QuickStat ────────────────────────────────────────────────────────────────
-
-function QuickStat({
-  icon: Icon,
-  value,
-  label,
-  color,
-}: {
-  icon: React.ComponentType<{ size: number; className: string }>;
-  value: string | number;
-  label: string;
-  color: string;
-}) {
-  return (
-    <div className="bg-white border border-slate-200 px-4 py-2 rounded-2xl flex items-center gap-3 shadow-sm">
-      <Icon size={16} className={color} />
-      <div>
-        <p className="text-[10px] font-black leading-none text-slate-900">{value}</p>
-        <p className="text-[8px] uppercase tracking-widest text-slate-400 mt-1">{label}</p>
-      </div>
     </div>
   );
 }

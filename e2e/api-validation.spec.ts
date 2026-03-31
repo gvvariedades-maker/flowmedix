@@ -34,8 +34,8 @@ test.describe('API de Validação', () => {
   });
 
   test('deve rejeitar questão sem banca', async ({ request }) => {
-    const invalidQuestion = { ...validQuestion };
-    delete invalidQuestion.meta.banca;
+    const invalidQuestion = { ...validQuestion, meta: { ...validQuestion.meta } };
+    delete (invalidQuestion.meta as Partial<typeof invalidQuestion.meta>).banca;
 
     const response = await request.post('/api/validate-question', {
       data: invalidQuestion,

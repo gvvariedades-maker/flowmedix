@@ -54,8 +54,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Invalida o cache do histórico do usuário imediatamente
-    revalidateTag('historico');
-    revalidateTag(`user-${user.id}`);
+    revalidateTag('historico', {});
+    revalidateTag(`user-${user.id}`, {});
 
     return NextResponse.json({ success: true });
   } catch (error) {

@@ -5,8 +5,8 @@ import { z } from 'zod'
 
 const UUIDSchema = z.string().uuid('ID deve ser um UUID válido');
 
-export async function GET(_: Request, { params }: { params: { assuntoId: string } }) {
-  const assuntoIdRaw = params?.assuntoId
+export async function GET(_: Request, { params }: { params: Promise<{ assuntoId: string }> }) {
+  const { assuntoId: assuntoIdRaw } = await params;
   const assuntoId = typeof assuntoIdRaw === 'string' ? assuntoIdRaw : Array.isArray(assuntoIdRaw) ? assuntoIdRaw[0] : null
 
   logger.info('Fetching flowchart for subject', { assuntoId });

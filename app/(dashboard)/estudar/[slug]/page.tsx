@@ -7,6 +7,7 @@ import {
   getQuestoesByAssuntoCached,
   getHistoricoQuestoesCached,
 } from '@/lib/cache';
+import { getTodayReviews } from '@/lib/spaced-repetition';
 
 interface ModuloListItem {
   id: string;
@@ -14,13 +15,18 @@ interface ModuloListItem {
 }
 
 export default async function PaginaQuestaoDinamica({ 
-  params 
+  params,
+  searchParams,
 }: { 
-  params: Promise<{ slug: string }> 
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const resolvedParams = await params;
+  const [resolvedParams, resolvedSearch] = await Promise.all([params, searchParams]);
+  const from = resolvedSearch?.from as string | undefined;
+  const fromPlano = from === 'plano';
+  const fromCaderno = from === 'caderno';
+  const cadernoId = fromCaderno ? (resolvedSearch?.caderno_id as string | undefined) : undefined;
 
-  // Busca a questão atual e o userId em paralelo
   const cookieStore = await cookies();
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -41,46 +47,106 @@ export default async function PaginaQuestaoDinamica({
 
   const userId = user?.id;
 
-  // Navegação por assunto (titulo_aula)
-  const tituloAula: string =
-    atual.titulo_aula ||
-    atual.conteudo_json?.meta?.subtopico ||
-    atual.modulo_nome ||
-    '';
+  let lista: ModuloListItem[] = [];
+  let questoesDoAssunto: { slug: string; estudada: boolean }[] = [];
 
-  // Busca lista de questões do assunto e histórico em paralelo
-  const [lista, historico] = await Promise.all([
-    tituloAula ? getQuestoesByAssuntoCached(tituloAula) : Promise.resolve([]),
-    userId ? getHistoricoQuestoesCached(userId) : Promise.resolve([]),
-  ]);
+  if (fromPlano && userId) {
+    // ── Modo Plano Diário ──────────────────────────────────────────────────
+    const [revisoes, historico] = await Promise.all([
+      getTodayReviews(userId),
+      getHistoricoQuestoesCached(userId),
+    ]);
 
-  // Set de slugs onde o estudo reverso foi concluído
-  const estudadosSet = new Set<string>(
-    (historico as any[])
-      .filter(h => h.estudo_reverso_concluido === true)
-      .map(h => h.modulo_slug as string)
-  );
+    lista = revisoes.map(r => ({ id: r.modulo_slug, modulo_slug: r.modulo_slug }));
 
-  const indexAtual = lista?.findIndex((item: ModuloListItem) => item.id === atual.id) ?? -1;
-  const anteriorSlug = indexAtual > 0 ? lista![indexAtual - 1].modulo_slug : null;
-  const proximaSlug = (lista && indexAtual < lista.length - 1) ? lista[indexAtual + 1].modulo_slug : null;
+    const estudadosSet = new Set<string>(
+      (historico as any[])
+        .filter(h => h.estudo_reverso_concluido === true)
+        .map(h => h.modulo_slug as string)
+    );
 
-  // Monta a lista com status de cada questão do assunto
-  const questoesDoAssunto = (lista as ModuloListItem[]).map(item => ({
-    slug: item.modulo_slug,
-    estudada: estudadosSet.has(item.modulo_slug),
-  }));
+    questoesDoAssunto = lista.map(item => ({
+      slug: item.modulo_slug,
+      estudada: estudadosSet.has(item.modulo_slug),
+    }));
+
+  } else if (fromCaderno && cadernoId && userId) {
+    // ── Modo Caderno ───────────────────────────────────────────────────────
+    const [{ data: cadernoItems }, historico] = await Promise.all([
+      supabase
+        .from('study_notebook_items')
+        .select('modulo_slug, titulo_aula')
+        .eq('notebook_id', cadernoId)
+        .order('position', { ascending: true }),
+      getHistoricoQuestoesCached(userId),
+    ]);
+
+    lista = (cadernoItems || []).map(i => ({ id: i.modulo_slug, modulo_slug: i.modulo_slug }));
+
+    const estudadosSet = new Set<string>(
+      (historico as any[])
+        .filter(h => h.estudo_reverso_concluido === true)
+        .map(h => h.modulo_slug as string)
+    );
+
+    questoesDoAssunto = lista.map(item => ({
+      slug: item.modulo_slug,
+      estudada: estudadosSet.has(item.modulo_slug),
+    }));
+
+  } else {
+    // ── Modo Normal: navega pelo assunto (titulo_aula) ─────────────────────
+    const tituloAula: string =
+      atual.titulo_aula ||
+      atual.conteudo_json?.meta?.subtopico ||
+      atual.modulo_nome ||
+      '';
+
+    const [listaAssunto, historico] = await Promise.all([
+      tituloAula ? getQuestoesByAssuntoCached(tituloAula) : Promise.resolve([]),
+      userId ? getHistoricoQuestoesCached(userId) : Promise.resolve([]),
+    ]);
+
+    lista = listaAssunto as ModuloListItem[];
+
+    const estudadosSet = new Set<string>(
+      (historico as any[])
+        .filter(h => h.estudo_reverso_concluido === true)
+        .map(h => h.modulo_slug as string)
+    );
+
+    questoesDoAssunto = lista.map(item => ({
+      slug: item.modulo_slug,
+      estudada: estudadosSet.has(item.modulo_slug),
+    }));
+  }
+
+  const indexAtual = lista.findIndex(item => item.modulo_slug === resolvedParams.slug);
+  const anteriorSlug = indexAtual > 0 ? lista[indexAtual - 1].modulo_slug : null;
+  const proximaSlug = indexAtual < lista.length - 1 ? lista[indexAtual + 1].modulo_slug : null;
+
+  // Propaga o contexto de origem nos slugs de navegação
+  const suffix = fromPlano
+    ? '?from=plano'
+    : fromCaderno && cadernoId
+      ? `?from=caderno&caderno_id=${cadernoId}`
+      : '';
+
+  const anteriorSlugFinal = anteriorSlug ? `${anteriorSlug}${suffix}` : null;
+  const proximaSlugFinal = proximaSlug ? `${proximaSlug}${suffix}` : null;
 
   return (
-    <div className="h-screen bg-slate-50 p-4 md:p-6 flex items-center justify-center font-sans">
-      <div className="w-full h-full max-w-6xl max-h-[90vh]">
+    <div className="flex flex-1 flex-col min-h-0 w-full bg-slate-50 px-3 py-3 sm:px-4 md:px-6 md:py-6 pb-safe font-sans">
+      <div className="flex flex-1 min-h-0 w-full max-w-6xl mx-auto flex-col">
         <AvantLessonPlayer 
           dados={atual.conteudo_json} 
           mode="live" 
-          proximaSlug={proximaSlug}
-          anteriorSlug={anteriorSlug}
+          proximaSlug={proximaSlugFinal}
+          anteriorSlug={anteriorSlugFinal}
           moduloSlug={resolvedParams.slug}
           questoesDoAssunto={questoesDoAssunto}
+          fromPlano={fromPlano}
+          fromCaderno={fromCaderno ? cadernoId : undefined}
         />
       </div>
     </div>

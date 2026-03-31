@@ -17,6 +17,7 @@ export interface CustomNodeData {
   description?: string;
   icon?: string;
   color?: string;
+  [key: string]: unknown;
 }
 
 /**

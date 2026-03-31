@@ -63,7 +63,8 @@ export async function POST(request: NextRequest) {
   const { email: targetEmail } = validationResult.data;
 
   const adminSupabase = await createServerSupabase();
-  const { data: user, error } = await adminSupabase.auth.admin.getUserByEmail(targetEmail);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { data: user, error } = await (adminSupabase.auth.admin as any).getUserByEmail(targetEmail);
 
   if (error) {
     logger.error('Database error resolving user', error, { email: targetEmail });

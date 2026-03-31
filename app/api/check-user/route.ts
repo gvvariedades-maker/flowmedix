@@ -65,8 +65,9 @@ export async function GET(request: NextRequest) {
     else if (isAdmin) {
       try {
         const adminSupabase = await createServerSupabase();
-        if (adminSupabase.auth.admin?.getUserByEmail) {
-          const { data: userData, error: userError } = await adminSupabase.auth.admin.getUserByEmail(
+        const adminAny = adminSupabase.auth.admin as any;
+        if (adminAny?.getUserByEmail) {
+          const { data: userData, error: userError } = await adminAny.getUserByEmail(
             email.toLowerCase()
           );
           if (!userError && userData?.user) {

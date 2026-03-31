@@ -219,7 +219,7 @@ export default function AvantLaboratory() {
           credentials: 'same-origin',
         });
       } catch (e) {
-        logger.warn('Cache revalidation failed (questão foi salva)', e);
+        logger.warn('Cache revalidation failed (questão foi salva)', { error: e instanceof Error ? e.message : String(e) });
       }
 
       setToast({ message: "✅ Missão publicada com sucesso!", type: 'success' });

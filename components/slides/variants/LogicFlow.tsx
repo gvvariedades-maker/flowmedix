@@ -131,7 +131,6 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
                 style={{
                   borderColor: isRevealed ? theme.glow : 'rgba(255,255,255,0.1)',
                   boxShadow: isRevealed ? `0 0 20px ${theme.glow}40` : 'none',
-                  ringColor: theme.glow,
                 }}
               >
                 <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-black text-sm mb-3 bg-gradient-to-br ${theme.primary} text-slate-900`}>
@@ -229,7 +228,6 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
                     `}
                     style={{
                       borderColor: isRevealed ? theme.glow : 'rgba(255,255,255,0.1)',
-                      ringColor: theme.glow,
                     }}
                   >
                     {/* Número do Step com Glow */}

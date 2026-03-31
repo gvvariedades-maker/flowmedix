@@ -36,7 +36,7 @@ export default function PlanoDiarioClient({ revisoes, totalPendentes, limite }: 
   // Empty state: sem nenhuma revisão pendente
   if (revisoes.length === 0) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6 pb-safe">
         <div className="max-w-md w-full text-center space-y-8">
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
@@ -70,7 +70,7 @@ export default function PlanoDiarioClient({ revisoes, totalPendentes, limite }: 
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 pb-safe">
       {/* Header */}
       <div className="bg-white border-b border-slate-100 px-6 py-6 md:px-10">
         <div className="max-w-3xl mx-auto">
@@ -138,7 +138,7 @@ export default function PlanoDiarioClient({ revisoes, totalPendentes, limite }: 
                 transition={{ delay: index * 0.04, type: 'spring', stiffness: 300, damping: 25 }}
               >
                 <Link
-                  href={`/estudar/${item.modulo_slug}`}
+                  href={`/estudar/${item.modulo_slug}?from=plano`}
                   className="flex items-center gap-4 p-5 bg-white rounded-2xl border border-slate-200 hover:border-indigo-200 hover:shadow-md hover:shadow-indigo-500/10 transition-all group"
                 >
                   {/* Número */}
@@ -211,8 +211,8 @@ export default function PlanoDiarioClient({ revisoes, totalPendentes, limite }: 
         </div>
 
         {/* Indicador de progresso da sessão */}
-        <div className="sticky bottom-6 flex justify-center pointer-events-none">
-          <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white border border-slate-200 shadow-lg shadow-black/5 pointer-events-auto">
+        <div className="sticky bottom-4 sm:bottom-6 mb-safe flex justify-center pointer-events-none px-2">
+          <div className="flex items-center gap-2 px-3 sm:px-4 py-2.5 rounded-full bg-white border border-slate-200 shadow-lg shadow-black/5 pointer-events-auto max-w-[min(100%,22rem)]">
             <CheckCircle2 size={14} className="text-emerald-500" />
             <span className="text-xs font-bold text-slate-600">
               Conclua o estudo reverso de cada questão para marcá-la como revisada
