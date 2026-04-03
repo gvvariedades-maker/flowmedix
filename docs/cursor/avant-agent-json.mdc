@@ -1,0 +1,35 @@
+---
+description: JSON de questões Avant — meta, cabeçalho da prova, enunciado e reverse_study_slides
+alwaysApply: true
+---
+
+# Avant Agent (Cursor) — JSON de questões
+
+Ao gerar ou editar JSON de questão para o Laboratório ou `QuestaoCompletaSchema`:
+
+## `meta` (obrigatório alinhar com o player)
+
+- Preencher **`banca`**, **`prova`**, **`orgao`**, **`ano`**, **`topico`**, **`subtopico`** quando disponíveis na fonte.
+- O app monta a **linha de cabeçalho** como `Banca - Prova/Órgão/Ano` (partes vazias são omitidas).
+- A **linha de matéria** é `Tópico - Subtópico` (ou só tópico).
+- **`header_line`** (opcional, máx. 500 caracteres): use só quando a linha da prova precisar ser **literal** (igual ao caderno); se presente, **substitui** a montagem automática.
+- **Não** repetir no `question_data.instruction` o texto já coberto por `meta` (banca, ano, cargo, órgão em bloco duplicado).
+
+## `question_data.instruction`
+
+- Incluir **quebras de linha** entre itens **I -**, **II -**, **III -**, etc., ou usar `<br>` / parágrafos permitidos pelo sanitizador.
+- Manter o comando final da questão na mesma string (ex.: "É CORRETO o que se afirma em:").
+
+## Estudo reverso (`reverse_study_slides`)
+
+- Exatamente **4 slides**: `concept_map`, `golden_rule`, `logic_flow`, `danger_zone`.
+- Em **cada slide**, `meta.subtopico` com o **nome exato** do mapa de assuntos (ver skill `avant-json-template` ou `docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md`).
+- **Não** enviar `template` nem `layout_variant` salvo override intencional — o app aplica design por subtópico.
+- `logic_flow.steps`: **array de strings**.
+
+## Referência
+
+- `docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md` (inclui seção 12 — cabeçalho da questão)
+- `docs/AVANT_AGENT_SOURCES.md`
+- `lib/validations.ts` — `QuestaoMetaSchema`, `QuestaoCompletaSchema`
+- `lib/questionHeader.ts` — lógica da linha derivada

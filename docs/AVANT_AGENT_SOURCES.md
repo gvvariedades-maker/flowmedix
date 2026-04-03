@@ -1,0 +1,28 @@
+# Fontes para o Avant Agent
+
+Lista de referências oficiais para gerar ou validar JSON de questões compatíveis com o Laboratório e a API admin.
+
+**Antes de usar os exemplos como referência definitiva:** validar uma vez no Laboratório (modo objeto único) com a versão atual do app.
+
+---
+
+## Código e schema (fonte da verdade)
+
+- **`lib/validations.ts`** — principalmente `QuestaoCompletaSchema` e exports ligados: `QuestaoMetaSchema`, `QuestaoDataSchema`, `QuestaoOptionSchema`, slides flexíveis/rígidos (`FlexibleReverseStudySlideSchema`, `ReverseStudySlideSchema`, etc.) e schemas por tipo (`ConceptMapSlideSchema`, `LogicFlowSlideSchema`, `GoldenRuleSlideSchema`, `DangerZoneSlideSchema`, …). Em `meta`, campo opcional `header_line` (linha única de cabeçalho da prova).
+- **`lib/questionHeader.ts`** — monta a linha de cabeçalho derivada (`Banca - Prova/Órgão/Ano`) e a linha de matéria (`Tópico - Subtópico`) usadas no `AvantLessonPlayer`.
+- **Constantes/helpers** no mesmo arquivo (ou importados dele): `LIMITS`, lista/validação de ícones (`LUCIDE_ICONS` / `lucideIconValidator`), regras de HTML (`ALLOWED_HTML_TAGS`, `sanitizeHTML` ou equivalente).
+
+## Regras pós-Zod no Laboratório
+
+- **`app/(admin)/admin/laboratorio/page.tsx`** — o trecho que roda **depois** do `safeParse` (validação manual de slides: `type`/`layout_type`, `steps`, `content`, `items`/`concepts`, etc.).
+
+## Convenções para o agente (prompt / subtópico / layout)
+
+- **`.cursor/skills/avant-json-template/SKILL.md`** (geração de JSON; pasta `.cursor` pode estar no `.gitignore` — manter cópia ou sincronizar com o time).
+- **`.cursor/rules/avant-agent-json.mdc`** — regra **alwaysApply** com `meta`, cabeçalho, `instruction` e slides. **Cópia versionada no Git:** `docs/cursor/avant-agent-json.mdc` (se a rule local sumir após clone, copiar esse arquivo para `.cursor/rules/`).
+- **`docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md`**
+
+## Exemplos “golden”
+
+- **`examples/questao-enfermagem-sae.json`**
+- **`examples/questao-teste-simples.json`**
