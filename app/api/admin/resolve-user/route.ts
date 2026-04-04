@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import { createServerSupabase } from '@/lib/supabase/server';
+import { findAuthUserByEmail } from '@/lib/supabase/adminUsers';
 import { getAdminEmail } from '@/lib/constants';
 import { ResolveUserSchema } from '@/lib/validations';
 import { logger } from '@/lib/logger';
@@ -63,8 +64,7 @@ export async function POST(request: NextRequest) {
   const { email: targetEmail } = validationResult.data;
 
   const adminSupabase = await createServerSupabase();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { data: user, error } = await (adminSupabase.auth.admin as any).getUserByEmail(targetEmail);
+  const { user, error } = await findAuthUserByEmail(adminSupabase, targetEmail);
 
   if (error) {
     logger.error('Database error resolving user', error, { email: targetEmail });

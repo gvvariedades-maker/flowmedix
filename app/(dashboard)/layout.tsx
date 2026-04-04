@@ -9,6 +9,7 @@ import {
   Zap, MapPin, ShieldCheck, BarChart3, LogOut,
   Menu, X, CalendarDays, BookMarked
 } from 'lucide-react';
+import { getAdminEmail } from '@/lib/constants';
 
 const supabase = createBrowserClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -65,6 +66,9 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
     if (exact) return pathname === path;
     return pathname === path || pathname.startsWith(`${path}/`);
   };
+
+  const isAdminUser =
+    userEmail != null && userEmail.toLowerCase() === getAdminEmail();
 
   const menuItems = [
     { label: 'Vitrine de Aulas', icon: LayoutDashboard, href: '/estudar', active: isPathActive('/estudar') },
@@ -128,13 +132,16 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
               {item.label}
             </Link>
           ))}
-           
-           {/* Link Admin (Discreto) */}
-           <div className="pt-4 mt-2 border-t border-slate-100">
-             <Link href="/admin" className="flex items-center gap-4 px-4 py-3 text-xs font-bold text-slate-300 hover:text-slate-500 transition-colors">
-               <ShieldCheck size={16} /> Painel do Gestor
-             </Link>
-           </div>
+          {isAdminUser && (
+            <div className="pt-4 mt-2 border-t border-slate-100">
+              <Link
+                href="/admin"
+                className="flex items-center gap-4 px-4 py-3 text-xs font-bold text-slate-300 hover:text-slate-500 transition-colors"
+              >
+                <ShieldCheck size={16} /> Painel do Gestor
+              </Link>
+            </div>
+          )}
         </nav>
 
         {/* Rodapé User */}
@@ -235,11 +242,16 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
             </Link>
           ))}
 
-          <div className="pt-4 mt-2 border-t border-slate-100">
-            <Link href="/admin" className="flex items-center gap-4 px-4 py-3 text-xs font-bold text-slate-300 hover:text-slate-500 transition-colors">
-              <ShieldCheck size={16} /> Painel do Gestor
-            </Link>
-          </div>
+          {isAdminUser && (
+            <div className="pt-4 mt-2 border-t border-slate-100">
+              <Link
+                href="/admin"
+                className="flex items-center gap-4 px-4 py-3 text-xs font-bold text-slate-300 hover:text-slate-500 transition-colors"
+              >
+                <ShieldCheck size={16} /> Painel do Gestor
+              </Link>
+            </div>
+          )}
         </nav>
 
         {/* Rodapé User */}

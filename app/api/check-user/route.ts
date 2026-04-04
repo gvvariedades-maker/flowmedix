@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import { createServerSupabase } from '@/lib/supabase/server';
+import { findAuthUserByEmail } from '@/lib/supabase/adminUsers';
 import { logger } from '@/lib/logger';
 import { getAdminEmail } from '@/lib/constants';
 
@@ -65,15 +66,13 @@ export async function GET(request: NextRequest) {
     else if (isAdmin) {
       try {
         const adminSupabase = await createServerSupabase();
-        const adminAny = adminSupabase.auth.admin as any;
-        if (adminAny?.getUserByEmail) {
-          const { data: userData, error: userError } = await adminAny.getUserByEmail(
-            email.toLowerCase()
-          );
-          if (!userError && userData?.user) {
-            user = userData.user;
-            userExists = true;
-          }
+        const { user: authUser, error: userError } = await findAuthUserByEmail(
+          adminSupabase,
+          email.toLowerCase()
+        );
+        if (!userError && authUser) {
+          user = authUser;
+          userExists = true;
         }
       } catch (adminError: unknown) {
         logger.warn('Erro ao acessar Admin API', { email, error: adminError instanceof Error ? adminError.message : adminError });

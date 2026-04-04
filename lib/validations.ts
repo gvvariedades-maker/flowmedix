@@ -34,6 +34,8 @@ const LIMITS = {
   BANCA_MAX: 50,
   ORGAO_MAX: 200,
   PROVA_MAX: 200,
+  HEADER_LINE_MAX: 500,
+  CARGO_HEADER_MAX: 40,
 } as const;
 
 // Tags HTML permitidas em text_fragment
@@ -100,6 +102,14 @@ export const QuestaoMetaSchema = z.object({
   banca: z.string().min(1, 'Banca é obrigatória').max(LIMITS.BANCA_MAX, `Banca deve ter no máximo ${LIMITS.BANCA_MAX} caracteres`),
   orgao: z.string().max(LIMITS.ORGAO_MAX, `Órgão deve ter no máximo ${LIMITS.ORGAO_MAX} caracteres`).optional(),
   prova: z.string().max(LIMITS.PROVA_MAX, `Prova deve ter no máximo ${LIMITS.PROVA_MAX} caracteres`).optional(),
+  header_line: z
+    .string()
+    .max(LIMITS.HEADER_LINE_MAX, `header_line deve ter no máximo ${LIMITS.HEADER_LINE_MAX} caracteres`)
+    .optional(),
+  cargo_header: z
+    .string()
+    .max(LIMITS.CARGO_HEADER_MAX, `cargo_header deve ter no máximo ${LIMITS.CARGO_HEADER_MAX} caracteres`)
+    .optional(),
   topico: z.string().min(1, 'Tópico é obrigatório').max(LIMITS.TOPICO_MAX, `Tópico deve ter no máximo ${LIMITS.TOPICO_MAX} caracteres`),
   subtopico: z.string().max(LIMITS.TOPICO_MAX, `Subtópico deve ter no máximo ${LIMITS.TOPICO_MAX} caracteres`).optional(),
 });

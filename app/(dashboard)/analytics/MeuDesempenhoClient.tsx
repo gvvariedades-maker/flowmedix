@@ -2,10 +2,11 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   BarChart3, BookOpen, Flame, Target,
-  Trophy, TrendingUp, CalendarDays, BookMarked,
+  Trophy, TrendingUp, CalendarDays, BookMarked, RotateCcw,
 } from 'lucide-react';
 import type { DesempenhoData, DiaEstudo } from './page';
 
@@ -72,7 +73,11 @@ function BarraGrafico({ serie, periodo }: { serie: DiaEstudo[]; periodo: Periodo
 }
 
 export default function MeuDesempenhoClient({ dados }: { dados: DesempenhoData }) {
+  const router = useRouter();
   const [periodo, setPeriodo] = useState<Periodo>(30);
+  const [dialogZerar, setDialogZerar] = useState(false);
+  const [zerando, setZerando] = useState(false);
+  const [erroZerar, setErroZerar] = useState<string | null>(null);
 
   const {
     hoje, metaDiaria, streak, totalGeral, totalTodosTempos,
@@ -88,11 +93,91 @@ export default function MeuDesempenhoClient({ dados }: { dados: DesempenhoData }
     [serie30dias, periodo]
   );
 
-  // Empty state
+  // Empty state (gráfico dos últimos 30 dias)
   const semDados = totalGeral === 0;
+  const podeZerarHistorico = totalTodosTempos > 0;
+
+  async function confirmarZerarDesempenho() {
+    setErroZerar(null);
+    setZerando(true);
+    try {
+      const res = await fetch('/api/zerar-desempenho', { method: 'POST' });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setErroZerar(typeof body.error === 'string' ? body.error : 'Erro ao zerar. Tente de novo.');
+        return;
+      }
+      setDialogZerar(false);
+      router.refresh();
+    } finally {
+      setZerando(false);
+    }
+  }
 
   return (
-    <div className="min-h-screen bg-slate-50 pb-safe">
+    <div className="min-h-screen bg-slate-50 pb-safe relative">
+      <AnimatePresence>
+        {dialogZerar && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="zerar-desempenho-title"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96, y: 8 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.96, y: 8 }}
+              className="w-full max-w-md rounded-3xl bg-white border border-slate-200 shadow-xl p-6 space-y-4"
+            >
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-xl bg-rose-100 flex items-center justify-center shrink-0">
+                  <RotateCcw size={20} className="text-rose-600" />
+                </div>
+                <div>
+                  <h2 id="zerar-desempenho-title" className="text-lg font-[1000] text-slate-900 tracking-tight">
+                    Zerar todo o desempenho?
+                  </h2>
+                  <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                    Todas as questões registradas no seu histórico serão apagadas: metas, sequência de dias,
+                    gráficos e totais voltam ao zero. Esta ação não pode ser desfeita.
+                  </p>
+                </div>
+              </div>
+              {erroZerar && (
+                <p className="text-sm font-bold text-rose-600 bg-rose-50 border border-rose-100 rounded-xl px-3 py-2">
+                  {erroZerar}
+                </p>
+              )}
+              <div className="flex flex-col-reverse sm:flex-row gap-2 sm:justify-end pt-2">
+                <button
+                  type="button"
+                  disabled={zerando}
+                  onClick={() => {
+                    setDialogZerar(false);
+                    setErroZerar(null);
+                  }}
+                  className="px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 font-bold text-sm hover:bg-slate-50 disabled:opacity-50"
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="button"
+                  disabled={zerando}
+                  onClick={() => void confirmarZerarDesempenho()}
+                  className="px-4 py-2.5 rounded-xl bg-rose-600 text-white font-bold text-sm hover:bg-rose-700 disabled:opacity-50"
+                >
+                  {zerando ? 'Zerando…' : 'Sim, zerar'}
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Header */}
       <div className="bg-white border-b border-slate-100 px-6 py-6 md:px-10">
         <div className="max-w-3xl mx-auto">
@@ -233,6 +318,37 @@ export default function MeuDesempenhoClient({ dados }: { dados: DesempenhoData }
             </div>
           )}
         </motion.div>
+
+        {/* ── Zerar desempenho ───────────────────────────────────────────────── */}
+        {podeZerarHistorico && (
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.13 }}
+            className="rounded-3xl border border-slate-200 bg-white p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+          >
+            <div className="flex items-start gap-3 min-w-0">
+              <div className="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center shrink-0">
+                <RotateCcw size={18} className="text-slate-600" />
+              </div>
+              <div>
+                <p className="text-xs font-black uppercase tracking-widest text-slate-500">
+                  Privacidade e dados
+                </p>
+                <p className="text-sm text-slate-600 mt-0.5">
+                  Quer começar do zero? Remove todo o histórico de questões vinculado à sua conta.
+                </p>
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() => setDialogZerar(true)}
+              className="shrink-0 px-4 py-2.5 rounded-xl border border-rose-200 text-rose-700 font-bold text-xs uppercase tracking-widest hover:bg-rose-50 transition-colors"
+            >
+              Zerar desempenho
+            </button>
+          </motion.div>
+        )}
 
         {/* ── GRÁFICO ─────────────────────────────────────────────────────────── */}
         <motion.div

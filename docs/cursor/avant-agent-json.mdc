@@ -10,15 +10,16 @@ Ao gerar ou editar JSON de questão para o Laboratório ou `QuestaoCompletaSchem
 ## `meta` (obrigatório alinhar com o player)
 
 - Preencher **`banca`**, **`prova`**, **`orgao`**, **`ano`**, **`topico`**, **`subtopico`** quando disponíveis na fonte.
-- O app monta a **linha de cabeçalho** como `Banca - Prova/Órgão/Ano` (partes vazias são omitidas).
+- Linha 1 no formato CPCON quando possível: **`BANCA – TÉCNICO (Órgão) ANO`**. Usar **`cargo_header`** (ex. `TÉCNICO`) ou `prova` com “Tec Enf” para inferência. **Tópico/subtópico só na linha 2.**
 - A **linha de matéria** é `Tópico - Subtópico` (ou só tópico).
 - **`header_line`** (opcional, máx. 500 caracteres): use só quando a linha da prova precisar ser **literal** (igual ao caderno); se presente, **substitui** a montagem automática.
 - **Não** repetir no `question_data.instruction` o texto já coberto por `meta` (banca, ano, cargo, órgão em bloco duplicado).
 
 ## `question_data.instruction`
 
-- Incluir **quebras de linha** entre itens **I -**, **II -**, **III -**, etc., ou usar `<br>` / parágrafos permitidos pelo sanitizador.
-- Manter o comando final da questão na mesma string (ex.: "É CORRETO o que se afirma em:").
+- **Sem** prefixo de caderno **`1)`**, **`2)`**, etc. — o app remove se vier; o ideal é o JSON já começar no texto da questão.
+- Quebras de linha entre **I -**, **II -**, **III -**; comando final (ex.: "É CORRETO o que se afirma em:").
+- Alternativas **a–e** em **`options`**, não copiar no `instruction`.
 
 ## Estudo reverso (`reverse_study_slides`)
 

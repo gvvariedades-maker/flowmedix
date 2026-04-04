@@ -105,8 +105,8 @@ export interface ReverseStudySlide {
 // QUESTION OPTION (Alternativa da questão)
 // ============================================================================
 export interface QuestionOption {
-  id: string; // ID da alternativa (ex: "A", "B", "C")
-  text: string; // Texto da alternativa
+  id: string; // ID da alternativa (ex: "A", "B", "C" ou "C"/"E" em Certo/Errado)
+  text: string; // Texto da alternativa (em C/E: "Certo" e "Errado")
   is_correct: boolean; // Se é a resposta correta
 }
 
@@ -127,8 +127,15 @@ export interface LessonMeta {
   banca: string; // Banca examinadora (ex: "EBSERH", "FGV")
   orgao?: string; // Órgão (ex: "Prefeitura de Oliveira")
   prova?: string; // Nome da prova
+  /** Linha única de cabeçalho (opcional). Se ausente, o player monta a partir de banca/prova/orgao/ano. */
+  header_line?: string;
+  /**
+   * Rótulo do cargo na linha 1 (ex.: "TÉCNICO"). Se vazio, tenta inferir de `prova` (ex.: "Tec Enf").
+   * Formato: `BANCA – cargo_header (orgao) ano`
+   */
+  cargo_header?: string;
   topico: string; // Tópico principal (ex: "Fundamentos de Enfermagem - SAE")
-  subtopico: string; // Subtópico (ex: "Termos da Oração")
+  subtopico?: string; // Subtópico (ex: "História da Enfermagem")
 }
 
 // ============================================================================
@@ -161,6 +168,13 @@ export type QuestaoCompleta = LessonData & { id?: string };
 // ============================================================================
 // AVANT LESSON PLAYER PROPS
 // ============================================================================
+/** Posição da questão na lista de navegação atual (assunto, caderno ou plano). */
+export interface ListaContextoQuestao {
+  /** Índice 1-based na lista */
+  atual: number;
+  total: number;
+}
+
 export interface AvantLessonPlayerProps {
   dados: LessonData;
   mode?: 'preview' | 'live';
@@ -170,4 +184,6 @@ export interface AvantLessonPlayerProps {
   questoesDoAssunto?: QuestaoDoAssunto[]; // Lista de questões do mesmo assunto com status
   fromPlano?: boolean;       // true quando o aluno veio do Plano de Estudo Diário
   fromCaderno?: string;      // cadernoId quando o aluno veio de um Caderno de Estudo
+  /** Quando definido, exibe "Questão X de Y" conforme a lista do contexto (vitrine/assunto, caderno ou plano). */
+  listaContexto?: ListaContextoQuestao;
 }

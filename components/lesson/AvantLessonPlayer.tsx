@@ -10,12 +10,18 @@
  * - Registro de tentativas no Supabase (historico_questoes)
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import NeuroSlide from '@/components/slides/NeuroSlide';
 import { logger } from '@/lib/logger';
 import { sanitizeHTML } from '@/lib/validations';
+import {
+  buildDerivedQuestionHeaderLine,
+  buildQuestionSubjectLine,
+  stripLeadingQuestionEnumeration,
+} from '@/lib/questionHeader';
+import { isCertoErradoQuestion } from '@/lib/questionKind';
 import type { AvantLessonPlayerProps, LessonData, ReverseStudySlide } from '@/types/lesson';
 import { 
   CheckCircle2, XCircle, ChevronRight, ChevronLeft, 
@@ -32,6 +38,7 @@ export default function AvantLessonPlayer({
   questoesDoAssunto,
   fromPlano = false,
   fromCaderno,
+  listaContexto,
 }: AvantLessonPlayerProps) {
   
   const router = useRouter();
@@ -54,7 +61,27 @@ export default function AvantLessonPlayer({
     setMarcandoConclusao(false);
   }, [dados]);
 
+  const examHeaderLine = useMemo(() => {
+    if (!dados?.meta) return '';
+    const raw = dados.meta.header_line?.trim();
+    if (raw) return raw;
+    return buildDerivedQuestionHeaderLine(dados.meta);
+  }, [dados?.meta]);
+
+  const subjectLine = useMemo(() => {
+    if (!dados?.meta) return null;
+    return buildQuestionSubjectLine(dados.meta);
+  }, [dados?.meta]);
+
+  const instructionParaExibicao = useMemo(() => {
+    const raw = dados?.question_data?.instruction;
+    if (!raw) return '';
+    return stripLeadingQuestionEnumeration(raw);
+  }, [dados?.question_data?.instruction]);
+
   if (!dados || !dados.question_data) return null;
+
+  const certoErradoLayout = isCertoErradoQuestion(dados.question_data.options);
 
   // ============================================================================
   // LÓGICA DE BANCO (Supabase)
@@ -225,7 +252,7 @@ export default function AvantLessonPlayer({
           
           {/* Botão Voltar (se mode === 'live') */}
           {mode === 'live' && (
-            <div className="px-4 sm:px-6 pt-4 sm:pt-6 pb-2">
+            <div className="px-4 sm:px-6 pt-4 sm:pt-6 pb-2 flex flex-wrap items-center justify-between gap-3">
               <button 
                 type="button"
                 onClick={handleVoltarLista}
@@ -238,61 +265,32 @@ export default function AvantLessonPlayer({
                   {fromPlano ? 'Plano diário' : fromCaderno ? 'Caderno' : 'Vitrine'}
                 </span>
               </button>
+              {listaContexto && listaContexto.total > 0 && (
+                <span
+                  className="text-xs sm:text-sm font-semibold tabular-nums text-slate-600 bg-slate-100/90 border border-slate-200/80 px-3 py-1.5 rounded-full shrink-0"
+                  aria-label={`Questão ${listaContexto.atual} de ${listaContexto.total}`}
+                >
+                  Questão {listaContexto.atual} de {listaContexto.total}
+                </span>
+              )}
             </div>
           )}
 
-          {/* ========================================================================
-              NOVO HEADER: ESTILO "QCONCURSOS / EXAM SITE"
-              ======================================================================== */}
-          <motion.div 
-            initial="hidden" 
-            animate="visible" 
-            variants={fadeInUp} 
-            className="bg-purple-50/50 border-b border-purple-100 px-6 py-3 flex flex-col md:flex-row gap-y-2 gap-x-6 text-sm text-slate-600 font-sans leading-snug"
+          {/* Cabeçalho estilo caderno: linha da prova + matéria (tópico - subtópico) */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            className="border-b border-slate-200 bg-gradient-to-b from-slate-50/90 to-white px-6 py-4 md:px-8 md:py-5"
           >
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-              
-              {/* ANO */}
-              {dados.meta.ano && (
-                <>
-                  <span className="flex items-center gap-1">
-                    <strong className="text-purple-700 font-bold">Ano:</strong> 
-                    <span>{dados.meta.ano}</span>
-                  </span>
-                  <span className="hidden md:inline text-purple-200">|</span>
-                </>
-              )}
-
-              {/* BANCA */}
-              <span className="flex items-center gap-1">
-                <strong className="text-purple-700 font-bold">Banca:</strong> 
-                <span className="text-purple-900 font-semibold">{dados.meta.banca}</span>
-              </span>
-
-              <span className="hidden md:inline text-purple-200">|</span>
-
-              {/* ÓRGÃO */}
-              {dados.meta.orgao && (
-                <>
-                  <span className="flex items-center gap-1">
-                    <strong className="text-purple-700 font-bold">Órgão:</strong> 
-                    <span>{dados.meta.orgao}</span>
-                  </span>
-                  <span className="hidden md:inline text-purple-200">|</span>
-                </>
-              )}
-
-              {/* PROVA */}
-              {dados.meta.prova && (
-                <span className="flex items-center gap-1">
-                  <strong className="text-purple-700 font-bold">Prova:</strong> 
-                  <span className="truncate max-w-[85vw] sm:max-w-[300px] md:max-w-[320px] hover:whitespace-normal transition-all" title={dados.meta.prova}>
-                    {dados.meta.prova}
-                  </span>
-                </span>
-              )}
-              
-            </div>
+            <p className="text-sm md:text-[15px] text-slate-700 leading-snug font-medium tracking-tight">
+              {examHeaderLine}
+            </p>
+            {subjectLine && (
+              <p className="mt-3 text-base md:text-lg font-semibold text-slate-900 border-l-4 border-indigo-500 pl-3 leading-snug">
+                {subjectLine}
+              </p>
+            )}
           </motion.div>
 
           {/* ÁREA DE TEXTO DE APOIO (SE HOUVER CITACÃO DE TEXTO) */}
@@ -304,14 +302,14 @@ export default function AvantLessonPlayer({
               </div>
           )}
 
-          {/* ENUNCIADO DA QUESTÃO (ESTILO LIMPO) */}
+          {/* ENUNCIADO: quebras de linha preservadas (I, II, III em blocos) */}
           <div className="px-6 py-6 md:px-8 md:py-8">
-            <p className="text-base md:text-lg text-slate-800 leading-relaxed font-normal">
-              <span dangerouslySetInnerHTML={{ __html: sanitizeHTML(dados.question_data.instruction) }} />
-            </p>
+            <div className="text-base md:text-lg text-slate-800 leading-relaxed font-normal whitespace-pre-wrap [&_strong]:font-semibold [&_p]:mb-3 [&_p:last-child]:mb-0">
+              <span dangerouslySetInnerHTML={{ __html: sanitizeHTML(instructionParaExibicao) }} />
+            </div>
           </div>
           
-          {/* ALTERNATIVAS */}
+          {/* ALTERNATIVAS (layout dedicado para Certo / Errado) */}
           <motion.div 
             initial="hidden" 
             animate="visible" 
@@ -319,7 +317,13 @@ export default function AvantLessonPlayer({
             transition={{ delay: 0.2 }} 
             className="px-6 pb-8 md:px-8"
           >
-            <div className="grid gap-3">
+            <div
+              className={
+                certoErradoLayout
+                  ? 'grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto'
+                  : 'grid gap-3'
+              }
+            >
               {dados.question_data.options.map((opt) => {
                 const isSelected = selecionada === opt.id;
                 const isCorrect = opt.is_correct;
@@ -347,29 +351,35 @@ export default function AvantLessonPlayer({
                     text = "text-indigo-900 font-bold";
                 }
 
+                const rowLayout = certoErradoLayout
+                  ? 'flex flex-col items-center justify-center text-center min-h-[100px] sm:min-h-[120px] gap-2 p-6 md:p-8'
+                  : 'text-left flex items-start gap-4 p-4 md:p-5';
+
                 return (
                   <motion.button 
                     key={opt.id}
                     disabled={showResult}
-                    whileHover={!showResult ? { scale: 1.01, backgroundColor: '#F8FAFC' } : {}}
+                    whileHover={!showResult ? { scale: 1.02 } : {}}
                     whileTap={!showResult ? { scale: 0.98 } : {}}
                     onClick={() => setSelecionada(opt.id)} 
-                    className={`group relative p-4 md:p-5 rounded-2xl border-2 text-left flex items-start gap-4 transition-all duration-300 ${styles}`}
+                    className={`group relative rounded-2xl border-2 transition-all duration-300 ${styles} ${rowLayout}`}
                   >
-                    <span className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm transition-colors duration-300 ${badge}`}>
-                      {opt.id}
-                    </span>
-                    <span className={`font-medium pt-1 ${text}`}>
+                    {!certoErradoLayout && (
+                      <span className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm transition-colors duration-300 ${badge}`}>
+                        {opt.id}
+                      </span>
+                    )}
+                    <span className={`font-semibold ${certoErradoLayout ? 'text-lg md:text-xl' : 'font-medium pt-1'} ${text}`}>
                       {opt.text}
                     </span>
                     {showResult && isCorrect && (
-                      <div className="absolute right-4 top-5 text-green-600 animate-in zoom-in">
-                        <CheckCircle2 size={24} />
+                      <div className={`text-green-600 animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-4 top-5'}`}>
+                        <CheckCircle2 size={certoErradoLayout ? 32 : 24} />
                       </div>
                     )}
                     {showResult && isSelected && !isCorrect && (
-                      <div className="absolute right-4 top-5 text-red-500 animate-in zoom-in">
-                        <XCircle size={24} />
+                      <div className={`text-red-500 animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-4 top-5'}`}>
+                        <XCircle size={certoErradoLayout ? 32 : 24} />
                       </div>
                     )}
                   </motion.button>

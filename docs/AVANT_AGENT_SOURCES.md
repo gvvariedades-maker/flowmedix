@@ -2,6 +2,8 @@
 
 Lista de referências oficiais para gerar ou validar JSON de questões compatíveis com o Laboratório e a API admin.
 
+**Agente externo (fora do repo / outro Cursor / GPT customizado):** use o arquivo **`docs/AVANT_AGENT_PROMPT_EXPORT.md`** — copie o conteúdo inteiro para o system prompt ou instruções do projeto. Atualize esse arquivo sempre que puxar mudanças do AVANT.
+
 **Antes de usar os exemplos como referência definitiva:** validar uma vez no Laboratório (modo objeto único) com a versão atual do app.
 
 ---
@@ -9,7 +11,8 @@ Lista de referências oficiais para gerar ou validar JSON de questões compatív
 ## Código e schema (fonte da verdade)
 
 - **`lib/validations.ts`** — principalmente `QuestaoCompletaSchema` e exports ligados: `QuestaoMetaSchema`, `QuestaoDataSchema`, `QuestaoOptionSchema`, slides flexíveis/rígidos (`FlexibleReverseStudySlideSchema`, `ReverseStudySlideSchema`, etc.) e schemas por tipo (`ConceptMapSlideSchema`, `LogicFlowSlideSchema`, `GoldenRuleSlideSchema`, `DangerZoneSlideSchema`, …). Em `meta`, campo opcional `header_line` (linha única de cabeçalho da prova).
-- **`lib/questionHeader.ts`** — monta a linha de cabeçalho derivada (`Banca - Prova/Órgão/Ano`) e a linha de matéria (`Tópico - Subtópico`) usadas no `AvantLessonPlayer`.
+- **`lib/questionHeader.ts`** — monta a linha de cabeçalho derivada e a linha de matéria no `AvantLessonPlayer`.
+- **`lib/questionKind.ts`** — `isCertoErradoQuestion`: detecta duas opções “Certo”/“Errado” para layout em duas colunas no player.
 - **Constantes/helpers** no mesmo arquivo (ou importados dele): `LIMITS`, lista/validação de ícones (`LUCIDE_ICONS` / `lucideIconValidator`), regras de HTML (`ALLOWED_HTML_TAGS`, `sanitizeHTML` ou equivalente).
 
 ## Regras pós-Zod no Laboratório

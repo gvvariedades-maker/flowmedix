@@ -369,3 +369,43 @@ Quando quiser forçar um design diferente do automático:
 | Saúde da Mulher | `Baby`, `Heart`, `User` |
 | Saúde da Criança | `Baby`, `Heart`, `Smile`, `Shield` |
 | Cirúrgico / Periop | `Scissors`, `Activity`, `AlertTriangle`, `Clock` |
+
+---
+
+## 12. Cabeçalho da questão (tela do enunciado)
+
+O player monta duas linhas acima do `question_data.instruction`:
+
+1. **Linha da prova:** se existir `meta.header_line`, usa esse texto literal; senão, quando houver `banca`, órgão e cargo (explícito ou inferido), monta no formato **CPCON / concurso técnico:**  
+   `BANCA – TÉCNICO (Órgão) ANO` (travessão en `–`, sem barras `/` e sem repetir o órgão).  
+   O cargo vem de `meta.cargo_header` ou é inferido de `prova` (ex.: texto com “Tec Enf” → `TÉCNICO`).  
+   Se não der para montar esse formato, usa o legado `Banca - Prova/Órgão/Ano`.
+2. **Linha de matéria:** `Tópico - Subtópico` — **não** entra na linha da prova (só aqui).
+
+Exemplo alinhado ao PDF (linha 1 do caderno compactada no AVANT):
+
+```json
+"meta": {
+  "banca": "CPCON UEPB",
+  "prova": "Tec Enf (Pref R Sto Antônio)",
+  "orgao": "Pref R Sto Antônio",
+  "ano": "2025",
+  "topico": "Enfermagem",
+  "subtopico": "História da Enfermagem",
+  "cargo_header": "TÉCNICO"
+}
+```
+
+- Com `cargo_header` ou `prova` reconhecível: linha 1 ≈ `CPCON UEPB – TÉCNICO (Pref R Sto Antônio) 2025`.  
+- `cargo_header` é opcional se `prova` permitir inferir “Tec Enf” → `TÉCNICO`.  
+- `header_line` (opcional) substitui toda a linha 1, se precisar de texto 100% manual.
+
+```json
+"header_line": "Texto literal opcional que substitui a linha derivada"
+```
+
+No **`question_data.instruction`**:
+
+- **Não** incluir a numeração global do caderno no PDF (`1)`, `2)`, …). O texto deve começar em “De acordo com…” (ou equivalente). O player também **remove** automaticamente `N)` no início, se vier por engano.
+- Use quebras de linha (ou `<br>` / `<p>` permitidos) entre **I -**, **II -**, **III -** e antes de “É CORRETO o que se afirma em:”.
+- As alternativas **a) b) c)** ficam em **`question_data.options`** (não repetir no `instruction`, salvo exceção de layout).

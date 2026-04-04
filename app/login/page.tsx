@@ -4,7 +4,7 @@ import { Suspense, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { createBrowserClient } from '@supabase/ssr';
 import Link from 'next/link';
-import { Zap, ArrowRight, Lock, MapPin, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Zap, ArrowRight, Lock, MapPin, CheckCircle2, AlertCircle, Eye, EyeOff } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const supabase = createBrowserClient(
@@ -19,6 +19,7 @@ function LoginContent() {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   // Captura a cidade da URL (ex: ?cidade=Caicó - RN)
@@ -119,14 +120,25 @@ function LoginContent() {
         {/* Input Senha */}
         <div className="space-y-2">
           <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 pl-1">Senha</label>
-          <input 
-            type="password" 
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="••••••••"
-            className="w-full bg-slate-50 border border-slate-200 p-4 rounded-xl font-bold text-slate-700 outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all placeholder:text-slate-300"
-          />
+          <div className="relative">
+            <input
+              type={showPassword ? 'text' : 'password'}
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="••••••••"
+              autoComplete="current-password"
+              className="w-full bg-slate-50 border border-slate-200 p-4 pr-12 rounded-xl font-bold text-slate-700 outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all placeholder:text-slate-300"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword((prev) => !prev)}
+              className="absolute inset-y-0 right-4 flex items-center text-slate-300 hover:text-indigo-500 transition-colors"
+              aria-label={showPassword ? 'Ocultar senha' : 'Mostrar senha'}
+            >
+              {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+            </button>
+          </div>
           <div className="flex justify-end">
             <Link href="/esqueci-senha" className="text-[10px] font-bold text-indigo-500 hover:text-indigo-600 uppercase tracking-wide">
               Esqueci a senha

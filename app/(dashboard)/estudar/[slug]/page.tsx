@@ -125,6 +125,11 @@ export default async function PaginaQuestaoDinamica({
   const anteriorSlug = indexAtual > 0 ? lista[indexAtual - 1].modulo_slug : null;
   const proximaSlug = indexAtual < lista.length - 1 ? lista[indexAtual + 1].modulo_slug : null;
 
+  const listaContexto =
+    lista.length > 0 && indexAtual >= 0
+      ? { atual: indexAtual + 1, total: lista.length }
+      : undefined;
+
   // Propaga o contexto de origem nos slugs de navegação
   const suffix = fromPlano
     ? '?from=plano'
@@ -147,6 +152,7 @@ export default async function PaginaQuestaoDinamica({
           questoesDoAssunto={questoesDoAssunto}
           fromPlano={fromPlano}
           fromCaderno={fromCaderno ? cadernoId : undefined}
+          listaContexto={listaContexto}
         />
       </div>
     </div>
