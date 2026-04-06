@@ -1,195 +1,136 @@
-# 🚀 GUIA DE DEPLOY - AVANT
+# Guia de deploy — AVANT
 
-**Última Atualização:** 2026-01-27
+**Última atualização:** 2026-03-31
+
+Este guia é o ponto de entrada operacional: checklist, Vercel, variáveis e verificação pós-deploy. Para o inventário técnico (o que já existe no código vs. melhorias opcionais), use [`AUDITORIA_DEPLOY.md`](./AUDITORIA_DEPLOY.md).
 
 ---
 
-## 📋 CHECKLIST PRÉ-DEPLOY
+## O que significa “deploy de qualidade” neste projeto
 
-### 1. Variáveis de Ambiente
+1. **Build de produção verde** — `npm run build` passa com as mesmas variáveis que o ambiente de produção usará (ou equivalentes).
+2. **Dados e auth** — Supabase com migrações aplicadas, RLS revisado para o que for exposto ao cliente.
+3. **Smoke test** — login, rota principal do aluno e uma API crítica respondendo após o deploy.
+4. **Observabilidade mínima** — health check, logs no painel do host; Sentry/analytics são opcionais.
 
-Certifique-se de configurar todas as variáveis no Vercel (ou seu provedor):
+Performance (LCP, INP, CLS) depende de medir em produção (Vercel Analytics, Web Vitals, ou ferramentas similares), não só de Lighthouse local.
+
+---
+
+## Checklist pré-deploy
+
+### 1. Variáveis de ambiente (Vercel → Settings → Environment Variables)
+
+| Variável | Ambiente | Obrigatória |
+|----------|----------|-------------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Production, Preview | Sim |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Production, Preview | Sim |
+| `SUPABASE_SERVICE_ROLE_KEY` | Production (rotas/API server que usam admin) | Recomendada |
+| `NEXT_PUBLIC_BASE_URL` | Production | Recomendada (metadata / Open Graph) |
+| `ADMIN_EMAIL` | Production | Opcional (fallback no código) |
+| `GOOGLE_API_KEY` | Production | Opcional (recursos de IA) |
+| `WEBHOOK_SECRET` | Production | Se usar webhooks de cache/invalidação |
+| `METRICS_SECRET` | Production | Se usar endpoint de métricas protegido |
+
+**Não** commite segredos. `NEXT_PUBLIC_*` são expostas ao browser — apenas chaves públicas.
+
+O projeto valida env no startup (`lib/env.ts`) e roda `validate:env` antes do build (`package.json` → script `build`).
+
+### 2. Validação local (recomendado antes de merge na branch de produção)
 
 ```bash
-# Obrigatórias
-NEXT_PUBLIC_SUPABASE_URL=https://seu-projeto.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=sua-chave-anon
-
-# Opcionais (mas recomendadas)
-SUPABASE_SERVICE_ROLE_KEY=sua-service-role-key
-GOOGLE_API_KEY=sua-google-api-key
-NODE_ENV=production
-```
-
-### 2. Validação Local
-
-Antes de fazer deploy, valide localmente:
-
-```bash
-# Validar variáveis de ambiente
 npm run validate:env
-
-# Build de produção
 npm run build
-
-# Testes
 npm run test
-npm run test:e2e
-
-# Lint
 npm run lint
 ```
 
-### 3. Banco de Dados
-
-Execute as migrações no Supabase:
-
-```sql
--- Execute no SQL Editor do Supabase:
--- 1. supabase/schema.sql
--- 2. supabase/migrations/add_indexes_critical.sql
--- 3. supabase/migrations/create_historico_questoes.sql
--- 4. supabase/migrations/create_cache_webhooks.sql
-```
-
-### 4. RLS Policies
-
-Verifique se as políticas RLS estão configuradas corretamente no Supabase.
-
----
-
-## 🚀 DEPLOY NO VERCEL
-
-### Passo 1: Conectar Repositório
-
-1. Acesse [Vercel Dashboard](https://vercel.com)
-2. Importe seu repositório GitHub
-3. Configure o projeto
-
-### Passo 2: Variáveis de Ambiente
-
-Adicione todas as variáveis em **Settings > Environment Variables**:
-
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- `SUPABASE_SERVICE_ROLE_KEY` (opcional)
-- `GOOGLE_API_KEY` (opcional)
-
-### Passo 3: Build Settings
-
-**Framework Preset:** Next.js  
-**Build Command:** `npm run build`  
-**Output Directory:** `.next` (padrão)
-
-### Passo 4: Deploy
-
-1. Clique em **Deploy**
-2. Aguarde o build completar
-3. Verifique se não há erros
-
-### Passo 5: Verificação Pós-Deploy
+Testes E2E (opcional antes de cada deploy, útil em releases maiores):
 
 ```bash
-# Health Check
-curl https://seu-dominio.vercel.app/api/health
+npm run test:e2e
+```
 
-# Deve retornar:
-{
-  "status": "ok",
-  "database": "ok",
-  "timestamp": "...",
-  "uptime": ...
-}
+### 3. Banco de dados (Supabase)
+
+1. Schema base: `supabase/schema.sql` (se aplicável ao seu fluxo).
+2. Migrações incrementais em `supabase/migrations/` — aplicar na ordem correta no SQL Editor ou via CLI do Supabase, conforme o seu processo.
+
+Consulte `supabase/migrations/README.md` se existir.
+
+### 4. Painel Supabase (produção)
+
+- **Authentication → URL configuration:** Site URL e redirect URLs alinhados ao domínio real (Vercel preview vs. produção).
+- **RLS:** políticas revisadas para tabelas usadas pelo app.
+
+---
+
+## Deploy na Vercel
+
+1. Importar o repositório e escolher o framework **Next.js**.
+2. **Build Command:** `npm run build` (já inclui validação de env).
+3. **Install:** `npm ci` ou `npm install` (CI costuma usar `npm ci`).
+4. Configurar variáveis de ambiente para **Production** e, se desejado, **Preview**.
+5. Após o deploy, executar as [verificações pós-deploy](#verificações-pós-deploy).
+
+### Domínio e HTTPS
+
+A Vercel fornece HTTPS. Após apontar domínio customizado, atualize `NEXT_PUBLIC_BASE_URL` e as URLs no Supabase.
+
+---
+
+## CI/CD (GitHub Actions)
+
+O workflow em `.github/workflows/test.yml` inclui:
+
+1. **Job `build`** — `npm ci` + `npm run build` (mesmo fluxo da Vercel: `validate:env` + `next build`). Usa variáveis **placeholder** para Supabase, suficientes para passar `lib/env.ts` sem apontar para um projeto real.
+2. **Jobs de teste** — unitários (Jest) e E2E (Playwright).
+
+**Opcional:** se quiser que o CI use o mesmo projeto Supabase da Vercel (por exemplo para detectar falhas só em dados reais), altere o job `build` no workflow e injete `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY` via [secrets do repositório](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
+
+---
+
+## Verificações pós-deploy
+
+- [ ] `GET /api/health` retorna `200` com `database: ok` (ou diagnóstico esperado).
+- [ ] Página inicial e login funcionam.
+- [ ] Fluxo principal do aluno (ex.: vitrine / estudar) carrega.
+- [ ] Logs do deployment na Vercel sem erros de runtime óbvios.
+
+Exemplo (substitua pela URL do projeto):
+
+```bash
+curl -sS "https://SEU-DOMINIO.vercel.app/api/health"
 ```
 
 ---
 
-## 🔍 MONITORAMENTO PÓS-DEPLOY
+## Monitoramento e rollback
 
-### 1. Health Check
+- **Logs:** Vercel → Deployments → deployment → Logs.
+- **Health:** monitorar `/api/health` (UptimeRobot, cron, etc.) se fizer sentido.
+- **Sentry / analytics:** opcionais; ver `AUDITORIA_DEPLOY.md`.
 
-Configure monitoramento para `/api/health`:
-- UptimeRobot
-- Pingdom
-- Vercel Analytics
-
-### 2. Logs
-
-Monitore logs no Vercel Dashboard:
-- **Deployments** > Selecione deployment > **Logs**
-
-### 3. Erros
-
-Configure Sentry (opcional) para tracking de erros:
-- Adicione `NEXT_PUBLIC_SENTRY_DSN` nas variáveis de ambiente
-- Configure `lib/sentry.ts`
+**Rollback:** Vercel → Deployments → deployment anterior estável → **Promote to Production**.
 
 ---
 
-## 🔄 ROLLBACK
+## Troubleshooting
 
-Se algo der errado:
-
-1. Acesse **Deployments** no Vercel
-2. Encontre o deployment anterior que funcionava
-3. Clique em **"..."** > **Promote to Production**
-
----
-
-## 📊 VERIFICAÇÕES PÓS-DEPLOY
-
-- [ ] Health check retorna `200 OK`
-- [ ] Página inicial carrega corretamente
-- [ ] Login funciona
-- [ ] Questões carregam
-- [ ] APIs respondem corretamente
-- [ ] Sem erros no console do navegador
-- [ ] Sem erros nos logs do Vercel
+| Sintoma | O que verificar |
+|--------|------------------|
+| Build falha na Vercel | Rodar `npm run build` localmente; logs de build na Vercel; variáveis ausentes. |
+| “Missing required environment variables” | Todas as obrigatórias no painel da Vercel para o ambiente correto. |
+| Erro de banco / RLS | URL e anon key; políticas RLS; tabelas existentes. |
+| Cookies / login em produção | Domínio e URLs no Supabase; HTTPS. |
 
 ---
 
-## 🐛 TROUBLESHOOTING
+## Documentação relacionada
 
-### Erro: "Missing required environment variables"
-
-**Solução:** Verifique se todas as variáveis estão configuradas no Vercel.
-
-### Erro: "Database connection failed"
-
-**Solução:** 
-1. Verifique `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-2. Verifique se o Supabase está acessível
-3. Verifique RLS policies
-
-### Erro: "Rate limit exceeded"
-
-**Solução:** Normal em caso de muitos acessos. Aguarde alguns segundos.
-
-### Build falha
-
-**Solução:**
-1. Verifique logs do build no Vercel
-2. Execute `npm run build` localmente para ver erros
-3. Verifique se todas as dependências estão no `package.json`
+- [`AUDITORIA_DEPLOY.md`](./AUDITORIA_DEPLOY.md) — inventário técnico e melhorias opcionais.
+- [`.env.example`](../.env.example) — lista de variáveis com comentários.
 
 ---
 
-## 📝 NOTAS IMPORTANTES
-
-- **Cache:** O sistema de cache usa `unstable_cache` do Next.js
-- **Webhooks:** Configure webhooks no Supabase para invalidação de cache
-- **Rate Limiting:** Implementado em memória (resetado a cada restart)
-- **Error Boundaries:** Erros são capturados e logados automaticamente
-
----
-
-## 🔗 LINKS ÚTEIS
-
-- [Vercel Dashboard](https://vercel.com/dashboard)
-- [Supabase Dashboard](https://supabase.com/dashboard)
-- [Health Check Endpoint](/api/health)
-- [Documentação Completa](./AUDITORIA_DEPLOY.md)
-
----
-
-**Pronto para produção! 🎉**
+*Deploy contínuo: você pode publicar uma versão estável e seguir desenvolvendo; cada merge pode gerar um novo deploy quando o pipeline e a Vercel estiverem configurados.*

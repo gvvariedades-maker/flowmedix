@@ -22,6 +22,7 @@ import {
   stripLeadingQuestionEnumeration,
 } from '@/lib/questionHeader';
 import { isCertoErradoQuestion } from '@/lib/questionKind';
+import { formatAvantCodigo } from '@/lib/avantCodigo';
 import type { AvantLessonPlayerProps, LessonData, ReverseStudySlide } from '@/types/lesson';
 import { 
   CheckCircle2, XCircle, ChevronRight, ChevronLeft, 
@@ -39,6 +40,7 @@ export default function AvantLessonPlayer({
   fromPlano = false,
   fromCaderno,
   listaContexto,
+  avantCodigo,
 }: AvantLessonPlayerProps) {
   
   const router = useRouter();
@@ -235,7 +237,7 @@ export default function AvantLessonPlayer({
   ].filter(Boolean).join('-') || JSON.stringify(dados).substring(0, 100);
 
   return (
-    <div className="w-full h-full min-h-0 flex flex-col relative bg-white md:rounded-[40px] shadow-2xl overflow-hidden border border-slate-200/60 ring-1 ring-slate-100 font-sans">
+    <div className="w-full flex-1 min-h-0 flex flex-col relative bg-white md:rounded-[40px] shadow-2xl overflow-x-hidden border border-slate-200/60 ring-1 ring-slate-100 font-sans">
       
       {/* BARRA DE PROGRESSO */}
       <div className="h-2 w-full bg-slate-100 flex shrink-0">
@@ -247,8 +249,8 @@ export default function AvantLessonPlayer({
       </div>
 
       {/* ÁREA DE QUESTÃO (SCROLLÁVEL) */}
-      <div className="flex-1 overflow-y-auto custom-scrollbar bg-gradient-to-b from-white to-slate-50/50 flex flex-col">
-        <div className="flex-1">
+      <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden custom-scrollbar bg-gradient-to-b from-white to-slate-50/50 flex flex-col touch-pan-y">
+        <div className="flex-1 min-h-0 flex flex-col">
           
           {/* Botão Voltar (se mode === 'live') */}
           {mode === 'live' && (
@@ -283,6 +285,14 @@ export default function AvantLessonPlayer({
             variants={fadeInUp}
             className="border-b border-slate-200 bg-gradient-to-b from-slate-50/90 to-white px-6 py-4 md:px-8 md:py-5"
           >
+            {formatAvantCodigo(avantCodigo) && (
+              <p
+                className="text-[11px] font-mono font-black text-indigo-600 mb-2 tracking-wide"
+                title="Código da questão (igual ao painel admin)"
+              >
+                {formatAvantCodigo(avantCodigo)}
+              </p>
+            )}
             <p className="text-sm md:text-[15px] text-slate-700 leading-snug font-medium tracking-tight">
               {examHeaderLine}
             </p>
@@ -303,8 +313,8 @@ export default function AvantLessonPlayer({
           )}
 
           {/* ENUNCIADO: quebras de linha preservadas (I, II, III em blocos) */}
-          <div className="px-6 py-6 md:px-8 md:py-8">
-            <div className="text-base md:text-lg text-slate-800 leading-relaxed font-normal whitespace-pre-wrap [&_strong]:font-semibold [&_p]:mb-3 [&_p:last-child]:mb-0">
+          <div className="px-6 py-6 md:px-8 md:py-8 min-w-0">
+            <div className="text-base md:text-lg text-slate-800 leading-relaxed font-normal whitespace-pre-wrap break-words overflow-x-hidden [&_strong]:font-semibold [&_p]:mb-3 [&_p:last-child]:mb-0">
               <span dangerouslySetInnerHTML={{ __html: sanitizeHTML(instructionParaExibicao) }} />
             </div>
           </div>
@@ -557,10 +567,10 @@ export default function AvantLessonPlayer({
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center pt-safe"
+            className="fixed inset-0 z-50 flex flex-col bg-black/95 backdrop-blur-md pt-safe h-[100dvh] max-h-[100dvh] overscroll-y-contain"
           >
-            {/* Container Full Screen - flex flow para header/footer não sobreporem conteúdo */}
-            <div className="w-full h-full min-h-0 flex flex-col">
+            {/* Container Full Screen — altura dinâmica (iOS) + área central com rolagem */}
+            <div className="w-full flex-1 min-h-0 max-h-[100dvh] flex flex-col">
               
               {/* Header Minimalista (Top Bar) */}
               <div className="shrink-0 px-4 sm:px-6 md:px-12 pt-3 sm:pt-6 pb-2 flex justify-between items-center gap-2 min-w-0">
@@ -590,7 +600,7 @@ export default function AvantLessonPlayer({
               </div>
 
               {/* Conteúdo Full Immersion */}
-              <div className="flex-1 overflow-hidden relative min-h-0">
+              <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden relative touch-pan-y custom-scrollbar">
                 <AnimatePresence mode='wait'>
                   <motion.div 
                     key={`slide-${slideAtual}-${currentSlide?.type || 'default'}-${JSON.stringify(currentSlide).substring(0, 20)}`}
@@ -598,7 +608,7 @@ export default function AvantLessonPlayer({
                     animate={{ opacity: 1, x: 0 }} 
                     exit={{ opacity: 0, x: -50 }} 
                     transition={{ duration: 0.4, ease: 'easeInOut' }}
-                    className="w-full h-full overflow-hidden"
+                    className="w-full min-h-full"
                   >
                     <NeuroSlide 
                       data={currentSlide} 

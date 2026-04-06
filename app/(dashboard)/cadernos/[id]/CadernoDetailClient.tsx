@@ -10,6 +10,7 @@ import {
   ChevronRight, Loader2, X, BookMarked,
 } from 'lucide-react';
 import type { CadernoDetail, ModuloDisponivel, NotebookItem } from './page';
+import { formatAvantCodigo } from '@/lib/avantCodigo';
 
 // ── Componente: item do caderno ────────────────────────────────────────────
 function ItemCaderno({
@@ -63,9 +64,16 @@ function ItemCaderno({
 
       {/* Info */}
       <div className="flex-1 min-w-0">
-        <p className="text-[9px] font-black uppercase tracking-widest text-slate-400">
-          {item.topico || 'Questão'}
-        </p>
+        <div className="flex flex-wrap items-center gap-2">
+          <p className="text-[9px] font-black uppercase tracking-widest text-slate-400">
+            {item.topico || 'Questão'}
+          </p>
+          {formatAvantCodigo(item.avant_codigo) && (
+            <span className="text-[9px] font-mono font-black text-indigo-600 bg-indigo-50 border border-indigo-100 px-1.5 py-0.5 rounded-md shrink-0">
+              {formatAvantCodigo(item.avant_codigo)}
+            </span>
+          )}
+        </div>
         <p className="text-sm font-bold text-slate-800 truncate">
           {item.titulo_aula || item.modulo_slug}
         </p>
@@ -124,9 +132,14 @@ function BuilderPanel({
   }, [modulos]);
 
   const filtrados = useMemo(() => {
-    const q = busca.toLowerCase();
+    const q = busca.trim().toLowerCase();
+    const soNumero = q.replace(/^q-?/, '');
     return modulos.filter(m => {
+      const matchCodigo =
+        m.avant_codigo != null &&
+        (String(m.avant_codigo) === soNumero || `q-${m.avant_codigo}`.includes(q));
       const matchBusca = !q
+        || matchCodigo
         || m.titulo_aula?.toLowerCase().includes(q)
         || m.modulo_nome?.toLowerCase().includes(q)
         || m.banca?.toLowerCase().includes(q)
@@ -151,7 +164,7 @@ function BuilderPanel({
       });
       const json = await res.json();
       if (res.ok) {
-        onAdded({ ...json.item, estudada: false });
+        onAdded({ ...json.item, estudada: false, avant_codigo: m.avant_codigo ?? null });
       }
     } finally {
       setAdding(null);
@@ -171,7 +184,7 @@ function BuilderPanel({
           <input
             value={busca}
             onChange={e => setBusca(e.target.value)}
-            placeholder="Buscar por assunto ou banca…"
+            placeholder="Assunto, banca, slug ou Q-…"
             className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 outline-none text-sm text-slate-700 placeholder:text-slate-300"
           />
           {busca && (
@@ -221,9 +234,16 @@ function BuilderPanel({
               className="w-full flex items-center gap-3 p-3 rounded-xl hover:bg-indigo-50 transition-colors text-left group disabled:opacity-60"
             >
               <div className="flex-1 min-w-0">
-                <p className="text-[9px] font-black uppercase tracking-widest text-slate-400 truncate">
-                  {m.banca || ''} {m.modulo_nome ? `— ${m.modulo_nome}` : ''}
-                </p>
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <p className="text-[9px] font-black uppercase tracking-widest text-slate-400 truncate">
+                    {m.banca || ''} {m.modulo_nome ? `— ${m.modulo_nome}` : ''}
+                  </p>
+                  {formatAvantCodigo(m.avant_codigo) && (
+                    <span className="text-[8px] font-mono font-black text-indigo-600 bg-indigo-50 px-1 py-0.5 rounded shrink-0">
+                      {formatAvantCodigo(m.avant_codigo)}
+                    </span>
+                  )}
+                </div>
                 <p className="text-xs font-bold text-slate-700 truncate">
                   {m.titulo_aula || m.modulo_slug}
                 </p>
@@ -271,6 +291,7 @@ export default function CadernoDetailClient({
           modulo_nome: removed.topico,
           titulo_aula: removed.titulo_aula,
           banca: null,
+          avant_codigo: removed.avant_codigo ?? null,
         },
         ...prev,
       ]);

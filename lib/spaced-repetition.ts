@@ -24,6 +24,8 @@ export interface ReviewItem {
   repetitions: number; // número de revisões bem-sucedidas
   lastReview?: Date;
   priority: number;
+  /** Alinhado ao admin (modulos_estudo.avant_codigo); opcional se a coluna não existir. */
+  avant_codigo?: number | null;
 }
 
 export interface SpacedRepetitionConfig {
@@ -96,51 +98,45 @@ function acertouToQuality(acertou: boolean, attempts: number): number {
 /**
  * Gera lista de questões para revisar hoje
  */
+const SLUG_CHUNK = 120;
+
 export async function getTodayReviews(userId: string): Promise<ReviewItem[]> {
   try {
-    // Buscar histórico diretamente (sem cache para evitar problemas com cookies)
-    let historico: HistoricoQuestao[] = [];
-    try {
-      const cookieStore = await cookies();
-      const supabase = createServerClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-        {
-          cookies: {
-            getAll() {
-              return cookieStore.getAll();
-            },
-            setAll(cookiesToSet) {
-              try {
-                cookiesToSet.forEach(({ name, value, options }) =>
-                  cookieStore.set(name, value, options)
-                );
-              } catch {
-                // Next.js já cuida dos cookies
-              }
-            },
+    const cookieStore = await cookies();
+    const supabase = createServerClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        cookies: {
+          getAll() {
+            return cookieStore.getAll();
           },
-        }
-      );
-
-      const { data, error } = await supabase
-        .from('historico_questoes')
-        .select('*')
-        .eq('user_id', userId)
-        .order('created_at', { ascending: false })
-        .limit(5000);
-
-      if (error) {
-        logger.error('Failed to fetch history for reviews', error, { userId });
-        return [];
+          setAll(cookiesToSet) {
+            try {
+              cookiesToSet.forEach(({ name, value, options }) =>
+                cookieStore.set(name, value, options)
+              );
+            } catch {
+              // Next.js já cuida dos cookies
+            }
+          },
+        },
       }
+    );
 
-      historico = (data || []) as HistoricoQuestao[];
-    } catch (err) {
-      logger.error('Failed to get complete history for reviews', err, { userId });
-      // Se falhar, retorna lista vazia
+    const { data, error } = await supabase
+      .from('historico_questoes')
+      .select('*')
+      .eq('user_id', userId)
+      .order('created_at', { ascending: false })
+      .limit(5000);
+
+    if (error) {
+      logger.error('Failed to fetch history for reviews', error, { userId });
       return [];
     }
+
+    const historico = (data || []) as HistoricoQuestao[];
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
@@ -211,8 +207,31 @@ export async function getTodayReviews(userId: string): Promise<ReviewItem[]> {
       }
     });
 
-    // Ordenar por prioridade (maior primeiro)
-    return reviews.sort((a, b) => b.priority - a.priority);
+    const codeBySlug = new Map<string, number | null>();
+    if (reviews.length > 0) {
+      const slugs = [...new Set(reviews.map((r) => r.modulo_slug))];
+      for (let i = 0; i < slugs.length; i += SLUG_CHUNK) {
+        const part = slugs.slice(i, i + SLUG_CHUNK);
+        const { data: rows, error: modErr } = await supabase
+          .from('modulos_estudo')
+          .select('modulo_slug, avant_codigo')
+          .in('modulo_slug', part);
+        if (modErr) {
+          logger.warn('Failed to fetch avant_codigo for reviews', { message: modErr.message });
+          break;
+        }
+        (rows as { modulo_slug: string; avant_codigo: number | null }[] | null)?.forEach((row) => {
+          codeBySlug.set(row.modulo_slug, row.avant_codigo);
+        });
+      }
+    }
+
+    return reviews
+      .map((r) => ({
+        ...r,
+        avant_codigo: codeBySlug.get(r.modulo_slug) ?? null,
+      }))
+      .sort((a, b) => b.priority - a.priority);
   } catch (error) {
     logger.error('Failed to get today reviews', error, { userId });
     return [];

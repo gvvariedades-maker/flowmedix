@@ -3,6 +3,7 @@
  */
 
 import type { QuestaoCompleta } from '@/types/lesson';
+import { payloadContainsTecconcursosReference, TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE } from '@/lib/validations';
 
 /**
  * Exporta questão para JSON
@@ -47,6 +48,10 @@ export async function importQuestion(file: File): Promise<QuestaoCompleta> {
       try {
         const content = e.target?.result as string;
         const question = JSON.parse(content) as QuestaoCompleta;
+        if (payloadContainsTecconcursosReference(question)) {
+          reject(new Error(TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE));
+          return;
+        }
         resolve(question);
       } catch (error) {
         reject(new Error('Erro ao parsear JSON: ' + (error as Error).message));

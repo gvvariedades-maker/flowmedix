@@ -11,6 +11,7 @@ import {
   ChevronDown, ChevronUp, ChevronRight, ChevronLeft,
   CheckCircle2, Circle,
 } from 'lucide-react';
+import { formatAvantCodigo } from '@/lib/avantCodigo';
 
 const ASSUNTOS_POR_PAGINA = 12;
 
@@ -22,6 +23,7 @@ interface QuestaoItem {
   slug: string;
   numero: number;
   status: QuestaoStatus;
+  avant_codigo: number | null;
 }
 
 interface ModuloEstudo {
@@ -30,6 +32,7 @@ interface ModuloEstudo {
   titulo_aula: string | null;
   modulo_slug: string;
   banca: string;
+  avant_codigo: number | null;
   estudoReversoConcluido: boolean;
   stats: {
     acertos: number;
@@ -119,12 +122,19 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
     if (bancaFilter) result = result.filter(m => m.banca === bancaFilter);
     if (assuntoFilter) result = result.filter(m => m.titulo_aula === assuntoFilter);
     if (searchTerm) {
-      const lower = searchTerm.toLowerCase();
-      result = result.filter(
-        m =>
-          (m.titulo_aula?.toLowerCase().includes(lower) ?? false) ||
-          (m.modulo_nome?.toLowerCase().includes(lower) ?? false),
-      );
+      const q = searchTerm.trim().toLowerCase();
+      const soNumero = q.replace(/^q-?/, '');
+      result = result.filter((m) => {
+        if (m.titulo_aula?.toLowerCase().includes(q) ?? false) return true;
+        if (m.modulo_nome?.toLowerCase().includes(q) ?? false) return true;
+        if (m.banca?.toLowerCase().includes(q) ?? false) return true;
+        if (m.modulo_slug?.toLowerCase().includes(q) ?? false) return true;
+        if (m.avant_codigo != null) {
+          if (String(m.avant_codigo) === soNumero) return true;
+          if (`q-${m.avant_codigo}`.includes(q)) return true;
+        }
+        return false;
+      });
     }
     return result;
   }, [modulos, bancaFilter, assuntoFilter, searchTerm]);
@@ -160,7 +170,12 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
       // "estudada" = aluno confirmou conclusão do ciclo de estudo reverso
       const status: QuestaoStatus = m.estudoReversoConcluido ? 'estudada' : 'nao_estudada';
 
-      grupo.questoes.push({ slug: m.modulo_slug, numero: 0, status });
+      grupo.questoes.push({
+        slug: m.modulo_slug,
+        numero: 0,
+        status,
+        avant_codigo: m.avant_codigo,
+      });
       grupo.acertos += m.stats.acertos;
       grupo.erros += m.stats.total - m.stats.acertos;
       grupo.totalResolvidas += m.stats.total;
@@ -249,7 +264,7 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
             />
             <input
               type="text"
-              placeholder="Buscar assunto, tópico ou banca..."
+              placeholder="Assunto, tópico, banca, slug ou Q-…"
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
               className="w-full pl-12 pr-12 py-3 rounded-2xl bg-slate-100 border border-slate-200 focus:bg-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-400"
@@ -590,9 +605,14 @@ function SubtopicoCard({ grupo }: { grupo: GrupoSubtopico }) {
                       }`}
                   >
                     <StatusBadge status={q.status} />
-                    <span className={`flex-1 text-[10px] font-black uppercase tracking-wider
+                    <span className={`flex-1 text-[10px] font-black uppercase tracking-wider flex flex-wrap items-center gap-x-2 gap-y-0.5 min-w-0
                       ${estudada ? 'text-indigo-600' : 'text-slate-600'}`}>
-                      Questão {String(q.numero).padStart(2, '0')}
+                      <span>Questão {String(q.numero).padStart(2, '0')}</span>
+                      {formatAvantCodigo(q.avant_codigo) && (
+                        <span className="font-mono text-[9px] text-indigo-500 bg-indigo-50 px-1.5 py-0.5 rounded-md border border-indigo-100">
+                          {formatAvantCodigo(q.avant_codigo)}
+                        </span>
+                      )}
                     </span>
                     {!estudada && (
                       <span className="text-[8px] font-bold text-slate-400 uppercase tracking-wider">

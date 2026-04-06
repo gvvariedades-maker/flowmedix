@@ -32,7 +32,7 @@ export const DangerZone = ({ content, theme, items, footerRule, layoutVariant = 
   // VARIANTE 1: LIST (padrão) - Lista com borda vermelha
   if (variant === 'list') {
     return (
-      <div className="w-full h-full flex items-start justify-center p-4 md:p-6 lg:p-8 relative overflow-y-auto custom-scrollbar">
+      <div className="w-full min-h-full min-w-0 flex items-start justify-center p-4 md:p-6 lg:p-8 relative overflow-y-auto custom-scrollbar">
         <div className="absolute inset-0 bg-gradient-to-br from-red-950/90 via-slate-900/90 to-red-950/90" />
         <div className="danger-zone-container relative z-10 w-full max-w-4xl p-6 md:p-8 lg:p-12 rounded-2xl md:rounded-3xl border-l-4 md:border-l-8 border-red-500 backdrop-blur-xl my-4 md:my-8" style={{ boxShadow: '0 0 60px -15px rgba(239,68,68,0.5)', minHeight: '200px' }}>
           <div className="danger-zone-alert-icon absolute top-6 right-6 opacity-20">
@@ -70,7 +70,7 @@ export const DangerZone = ({ content, theme, items, footerRule, layoutVariant = 
   // VARIANTE 2: CARDS - Itens em cards separados
   if (variant === 'cards') {
     return (
-      <div className="w-full h-full flex items-center justify-center p-4 overflow-y-auto custom-scrollbar relative">
+      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 overflow-y-auto custom-scrollbar relative">
         <div className="absolute inset-0 bg-gradient-to-br from-red-950/80 via-slate-900/90 to-red-950/80" />
         <div className="relative z-10 w-full max-w-5xl flex flex-col gap-6 py-8">
           {content && (
@@ -106,7 +106,7 @@ export const DangerZone = ({ content, theme, items, footerRule, layoutVariant = 
   // VARIANTE 3: COMPACT - Layout condensado
   if (variant === 'compact') {
     return (
-      <div className="w-full h-full flex items-center justify-center p-6 overflow-y-auto custom-scrollbar relative">
+      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-6 overflow-y-auto custom-scrollbar relative">
         <div className="absolute inset-0 bg-slate-900/95" />
         <div className="relative z-10 w-full max-w-3xl space-y-4">
           <div className="flex items-center gap-2 text-red-400 font-black">
@@ -134,7 +134,7 @@ export const DangerZone = ({ content, theme, items, footerRule, layoutVariant = 
 
   // Fallback: list
   return (
-    <div className="w-full h-full flex items-start justify-center p-4 overflow-y-auto custom-scrollbar relative">
+    <div className="w-full min-h-full min-w-0 flex items-start justify-center p-4 overflow-y-auto custom-scrollbar relative">
       <div className="absolute inset-0 bg-gradient-to-br from-red-950/90 via-slate-900/90 to-red-950/90" />
       <div className="relative z-10 w-full max-w-4xl p-6 rounded-2xl border-l-4 border-red-500 backdrop-blur-xl my-4">
         <h3 className="text-red-400 font-black flex items-center gap-2 mb-4">

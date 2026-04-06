@@ -12,6 +12,7 @@ export interface NotebookItem {
   topico: string | null;
   position: number;
   estudada: boolean;
+  avant_codigo: number | null;
 }
 
 export interface ModuloDisponivel {
@@ -20,6 +21,7 @@ export interface ModuloDisponivel {
   modulo_nome: string | null;
   titulo_aula: string | null;
   banca: string | null;
+  avant_codigo: number | null;
 }
 
 export interface CadernoDetail {
@@ -83,9 +85,18 @@ export default async function CadernoDetailPage({
         .map(h => h.modulo_slug as string)
     );
 
+    const codigoPorSlug = new Map<string, number | null>();
+    (modulos as { modulo_slug: string; avant_codigo?: number | null }[]).forEach((m) => {
+      codigoPorSlug.set(
+        m.modulo_slug,
+        m.avant_codigo != null && !Number.isNaN(Number(m.avant_codigo)) ? Number(m.avant_codigo) : null,
+      );
+    });
+
     const notebookItems: NotebookItem[] = (items || []).map(item => ({
       ...item,
       estudada: estudadosSet.has(item.modulo_slug),
+      avant_codigo: codigoPorSlug.get(item.modulo_slug) ?? null,
     }));
 
     const slugsNoCaderno = new Set(notebookItems.map(i => i.modulo_slug));
@@ -98,6 +109,8 @@ export default async function CadernoDetailPage({
         modulo_nome: m.modulo_nome || null,
         titulo_aula: m.titulo_aula || null,
         banca: m.banca || null,
+        avant_codigo:
+          m.avant_codigo != null && !Number.isNaN(Number(m.avant_codigo)) ? Number(m.avant_codigo) : null,
       }));
 
     const caderno: CadernoDetail = {

@@ -1,10 +1,11 @@
 import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
+import { LandingHome } from '@/components/landing/LandingHome';
 
 export default async function IndexPage() {
   const cookieStore = await cookies();
-  
+
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -17,15 +18,13 @@ export default async function IndexPage() {
     }
   );
 
-  const { data: { session } } = await supabase.auth.getSession();
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
 
-  // 1. Se não está logado, manda para a tela de Login
-  if (!session) {
-    redirect('/login');
+  if (session) {
+    redirect('/estudar');
   }
 
-  // 2. Se está logado, precisamos levar ele para um concurso padrão 
-  // ou para uma página de seleção de concursos.
-  // Por enquanto, vamos mandar para a dashboard geral de estudos.
-  redirect('/estudar'); 
+  return <LandingHome />;
 }

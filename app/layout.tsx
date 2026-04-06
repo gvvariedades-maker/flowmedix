@@ -30,13 +30,14 @@ const getMetadataBase = () => {
     return new URL('http://localhost:3000');
   }
   // Fallback: tentar detectar da URL atual (se disponível)
-  return new URL('https://avant.app'); // Substitua pelo seu domínio de produção
+  return new URL('https://www.avant.enf.br');
 };
 
 export const metadata: Metadata = {
   metadataBase: getMetadataBase(),
   title: "AVANT - Plataforma de Estudo Reverso para Técnicos de Enfermagem",
-  description: "A plataforma de estudo reverso exclusiva para Técnicos de Enfermagem. Prepare-se para concursos EBSERH, prefeituras e mais.",
+  description:
+    "Plataforma gratuita de estudo reverso para Técnicos de Enfermagem. Prepare-se para EBSERH, prefeituras e concursos com método, vitrine de assuntos e acompanhamento de desempenho.",
   keywords: [
     "técnico de enfermagem",
     "estudo reverso",
@@ -51,7 +52,8 @@ export const metadata: Metadata = {
   authors: [{ name: "AVANT" }],
   openGraph: {
     title: "AVANT - Plataforma de Estudo Reverso para Técnicos de Enfermagem",
-    description: "A plataforma de estudo reverso exclusiva para Técnicos de Enfermagem",
+    description:
+      "Plataforma gratuita de estudo reverso para Técnicos de Enfermagem. EBSERH, prefeituras e concursos.",
     type: "website",
   },
   robots: {

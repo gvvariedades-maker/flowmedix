@@ -55,7 +55,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
     };
 
     return (
-      <div className="w-full h-full flex items-center justify-center p-4 md:p-6 overflow-y-auto custom-scrollbar relative">
+      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 md:p-6 overflow-y-auto custom-scrollbar relative">
         {/* Background animado com tema */}
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
         
@@ -63,7 +63,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 md:gap-6 p-2 md:p-4 w-full max-w-5xl relative z-10 my-auto"
+          className="grid grid-cols-1 min-[420px]:[grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))] gap-4 md:gap-6 p-2 md:p-4 w-full max-w-5xl relative z-10 my-auto"
           style={{ contentVisibility: 'auto' }}
         >
           {concepts.map((concept, index) => {
@@ -103,11 +103,11 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
   // VARIANTE 2: MOLECULAR (Para Morfologia)
   if (variant === 'molecular') {
     return (
-      <div className="w-full h-full flex items-center justify-center p-6 overflow-y-auto custom-scrollbar relative">
+      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-6 overflow-y-auto custom-scrollbar relative">
         {/* Background animado com tema */}
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
         
-        <div className="flex flex-col items-center justify-center h-full gap-2 relative z-10">
+        <div className="flex flex-col items-center justify-center min-h-[min(100%,32rem)] w-full gap-2 relative z-10 py-4">
           <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 relative">
             {concepts.map((concept, i) => {
               const Icon = getIcon(concept.icon);
@@ -165,7 +165,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
   // VARIANTE 3: BRIDGE (Para Regência)
   if (variant === 'bridge') {
     return (
-      <div className="w-full h-full flex items-center justify-center p-4 md:p-6 overflow-y-auto custom-scrollbar relative">
+      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 md:p-6 overflow-y-auto custom-scrollbar relative">
         {/* Background animado com tema */}
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
         
@@ -199,7 +199,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
   // VARIANTE: STACK - Layout em coluna (poucos itens)
   if (variant === 'stack') {
     return (
-      <div className="w-full h-full flex items-center justify-center p-4 md:p-6 overflow-y-auto custom-scrollbar relative">
+      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 md:p-6 overflow-y-auto custom-scrollbar relative">
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
         <motion.div
           initial="hidden"

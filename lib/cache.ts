@@ -81,7 +81,7 @@ const modulosCacheFn = unstable_cache(
     
     const { data, error } = await supabase
       .from('modulos_estudo')
-      .select('id, modulo_slug, modulo_nome, titulo_aula, banca, created_at')
+      .select('id, modulo_slug, modulo_nome, titulo_aula, banca, created_at, avant_codigo')
       .order('created_at', { ascending: false })
       .limit(100);
     
@@ -119,7 +119,7 @@ export async function getQuestaoBySlugCached(slug: string) {
       // OTIMIZAÇÃO: Seleciona apenas campos necessários (não *)
       const { data, error } = await supabase
         .from('modulos_estudo')
-        .select('id, modulo_slug, conteudo_json, banca, modulo_nome, titulo_aula, created_at')
+        .select('id, modulo_slug, conteudo_json, banca, modulo_nome, titulo_aula, created_at, avant_codigo')
         .eq('modulo_slug', slug)
         .single();
       

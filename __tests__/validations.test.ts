@@ -12,6 +12,8 @@ import {
   VersusArenaSlideSchema,
   validateSlide,
   validateSlides,
+  payloadContainsTecconcursosReference,
+  TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE,
 } from '../lib/validations';
 
 describe('Validação de Questões', () => {
@@ -34,6 +36,48 @@ describe('Validação de Questões', () => {
 
       const result = QuestaoCompletaSchema.safeParse(validQuestion);
       expect(result.success).toBe(true);
+    });
+
+    it('deve rejeitar menção a TecConcursos no conteúdo conhecido pelo schema', () => {
+      const bad = {
+        meta: {
+          banca: 'EBSERH',
+          topico: 'Fundamentos de Enfermagem',
+          subtopico: 'Sintaxe',
+        },
+        question_data: {
+          instruction: 'Fonte: www.tecconcursos.com.br/questoes/1',
+          options: [
+            { id: 'A', text: 'Opção A', is_correct: true },
+            { id: 'B', text: 'Opção B', is_correct: false },
+          ],
+        },
+      };
+      expect(payloadContainsTecconcursosReference(bad)).toBe(true);
+      const result = QuestaoCompletaSchema.safeParse(bad);
+      expect(result.success).toBe(false);
+      if (!result.success) {
+        expect(result.error.issues.some((i) => i.message === TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE)).toBe(
+          true
+        );
+      }
+    });
+
+    it('payloadContainsTecconcursosReference detecta campo extra que o Zod descarta', () => {
+      const withHidden = {
+        meta: {
+          banca: 'EBSERH',
+          topico: 'Fundamentos de Enfermagem',
+        },
+        question_data: {
+          instruction: 'Qual é a resposta?',
+          options: [{ id: 'A', text: 'Opção A', is_correct: true }],
+        },
+        _fonte: 'https://tecconcursos.com.br/x',
+      };
+      expect(payloadContainsTecconcursosReference(withHidden)).toBe(true);
+      const zodOnly = QuestaoCompletaSchema.safeParse(withHidden);
+      expect(zodOnly.success).toBe(true);
     });
 
     it('deve rejeitar questão sem meta.banca', () => {

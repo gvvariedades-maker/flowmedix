@@ -2,7 +2,7 @@
  * Schemas de Validação Zod para APIs e Inputs
  */
 
-import { z } from 'zod';
+import { z, ZodError } from 'zod';
 import * as LucideIcons from 'lucide-react';
 
 // ============================================================================
@@ -319,13 +319,53 @@ export const FlexibleReverseStudySlideSchema = z.union([
   LegacyReverseStudySlideSchema,
 ]);
 
-export const QuestaoCompletaSchema = z.object({
-  id: z.string().optional(),
-  meta: QuestaoMetaSchema,
-  question_data: QuestaoDataSchema,
-  reverse_study_slides: z.array(FlexibleReverseStudySlideSchema).optional(),
-  study_slides: z.array(FlexibleReverseStudySlideSchema).optional(),
-});
+/** Bloqueia domínio e menção ao nome comercial TecConcursos em qualquer string do payload (valores e chaves). */
+const TECONCURSOS_SUBSTRING_RE = /tecconcursos/i;
+
+export const TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE =
+  'Conteúdo não permitido: remova referências ao domínio ou nome TecConcursos antes de publicar no AVANT.';
+
+/**
+ * Percorre recursivamente JSON (objeto/array) e detecta "tecconcursos" em qualquer string ou nome de chave.
+ * Deve ser aplicado ao objeto bruto após JSON.parse — campos extras que o Zod descartaria não seriam checados só no schema.
+ */
+export function payloadContainsTecconcursosReference(value: unknown): boolean {
+  if (typeof value === 'string') {
+    return TECONCURSOS_SUBSTRING_RE.test(value);
+  }
+  if (value && typeof value === 'object') {
+    if (Array.isArray(value)) {
+      return value.some(payloadContainsTecconcursosReference);
+    }
+    const obj = value as Record<string, unknown>;
+    for (const key of Object.keys(obj)) {
+      if (TECONCURSOS_SUBSTRING_RE.test(key)) return true;
+      if (payloadContainsTecconcursosReference(obj[key])) return true;
+    }
+  }
+  return false;
+}
+
+/** Erro Zod único para respostas de API / painel alinhadas ao bloqueio TecConcursos. */
+export function questaoPayloadTecconcursosZodError(): ZodError {
+  return new ZodError([
+    { code: 'custom', message: TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE, path: [] },
+  ]);
+}
+
+export const QuestaoCompletaSchema = z
+  .object({
+    id: z.string().optional(),
+    meta: QuestaoMetaSchema,
+    question_data: QuestaoDataSchema,
+    reverse_study_slides: z.array(FlexibleReverseStudySlideSchema).optional(),
+    study_slides: z.array(FlexibleReverseStudySlideSchema).optional(),
+  })
+  .superRefine((data, ctx) => {
+    if (payloadContainsTecconcursosReference(data)) {
+      ctx.addIssue(TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE);
+    }
+  });
 
 // Schema para Enrollments API
 export const EnrollmentDeleteSchema = z.object({

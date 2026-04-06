@@ -156,13 +156,19 @@ export default function EsqueciSenhaPage() {
                 )}
               </button>
 
-              <div className="text-center pt-1">
+              <div className="text-center pt-1 space-y-2">
                 <Link
                   href="/login"
                   className="inline-flex items-center gap-1.5 text-sm text-slate-400 font-bold hover:text-indigo-600 transition-colors"
                 >
                   <ArrowLeft size={14} /> Voltar para o Login
                 </Link>
+                <p className="text-sm text-slate-500 font-medium">
+                  Ainda não tem conta?{' '}
+                  <Link href="/register" className="text-indigo-600 font-black hover:text-indigo-700">
+                    Cadastre-se na AVANT
+                  </Link>
+                </p>
               </div>
             </motion.form>
           )}

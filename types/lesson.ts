@@ -186,4 +186,6 @@ export interface AvantLessonPlayerProps {
   fromCaderno?: string;      // cadernoId quando o aluno veio de um Caderno de Estudo
   /** Quando definido, exibe "Questão X de Y" conforme a lista do contexto (vitrine/assunto, caderno ou plano). */
   listaContexto?: ListaContextoQuestao;
+  /** Código Q-… (modulos_estudo.avant_codigo), igual ao admin. */
+  avantCodigo?: number | null;
 }

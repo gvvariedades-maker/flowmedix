@@ -78,6 +78,10 @@ export default async function VitrinePage() {
       modulo_nome: modulo.modulo_nome || 'Módulo',
       titulo_aula: modulo.titulo_aula || 'Aula sem título',
       banca: modulo.banca,
+      avant_codigo:
+        modulo.avant_codigo != null && !Number.isNaN(Number(modulo.avant_codigo))
+          ? Number(modulo.avant_codigo)
+          : null,
       estudoReversoConcluido,
       stats: { acertos, total, percentual, priorityScore }
     };

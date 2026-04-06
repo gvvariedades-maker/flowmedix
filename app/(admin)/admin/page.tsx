@@ -1,22 +1,76 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase/client';
 import { ADMIN_EMAIL } from '@/lib/constants';
 import {
   ArrowRight, Database, LayoutDashboard, LogOut, Loader2,
-  Zap, Code, Sparkles, Layers, Trash2,
+  Zap, Code, Sparkles, Layers, Trash2, Search, Copy, Check,
 } from 'lucide-react';
 import Link from 'next/link';
+import { formatAvantCodigo } from '@/lib/avantCodigo';
+
+function enunciadoResumo(conteudo: unknown): string {
+  if (!conteudo || typeof conteudo !== 'object') return '';
+  const inst = (conteudo as { question_data?: { instruction?: unknown } }).question_data?.instruction;
+  if (typeof inst !== 'string') return '';
+  return inst.replace(/\s+/g, ' ').trim().slice(0, 160);
+}
+
+function moduloMatchesBusca(modulo: Record<string, unknown>, qRaw: string): boolean {
+  const q = qRaw.trim().toLowerCase().replace(/\s+/g, ' ');
+  if (!q) return true;
+  const codigo = modulo.avant_codigo as number | null | undefined;
+  const codigoStr = codigo != null ? String(codigo) : '';
+  const semPrefixoQ = q.replace(/^q-?/, '');
+  const hay = [
+    codigo != null ? `q-${codigo}` : '',
+    codigoStr,
+    modulo.modulo_slug,
+    modulo.titulo_aula,
+    modulo.modulo_nome,
+    modulo.banca,
+    modulo.id,
+    enunciadoResumo(modulo.conteudo_json),
+  ]
+    .filter((x) => x != null && String(x).length > 0)
+    .join(' ')
+    .toLowerCase();
+  if (hay.includes(q)) return true;
+  if (hay.replace(/\s+/g, ' ').includes(q)) return true;
+  if (codigoStr && (q === codigoStr || semPrefixoQ === codigoStr)) return true;
+  return false;
+}
 
 export default function AdminMaster() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [modulosEstudo, setModulosEstudo] = useState<any[]>([]);
-  const [excluirAlvo, setExcluirAlvo] = useState<{ id: string; titulo: string } | null>(null);
+  const [excluirAlvo, setExcluirAlvo] = useState<{
+    id: string;
+    titulo: string;
+    avantCodigo: number | null;
+  } | null>(null);
   const [excluindoId, setExcluindoId] = useState<string | null>(null);
   const [erroExcluir, setErroExcluir] = useState<string | null>(null);
+  const [buscaModulos, setBuscaModulos] = useState('');
+  const [copiedModuloId, setCopiedModuloId] = useState<string | null>(null);
+
+  const modulosFiltrados = useMemo(
+    () => modulosEstudo.filter((m) => moduloMatchesBusca(m, buscaModulos)),
+    [modulosEstudo, buscaModulos]
+  );
+
+  async function copiarCodigoAvant(moduloId: string, codigo: number) {
+    try {
+      await navigator.clipboard.writeText(`Q-${codigo}`);
+      setCopiedModuloId(moduloId);
+      setTimeout(() => setCopiedModuloId(null), 2000);
+    } catch {
+      /* ignore */
+    }
+  }
 
   useEffect(() => {
     async function checkAdmin() {
@@ -88,6 +142,11 @@ export default function AdminMaster() {
               Excluir questão publicada?
             </h2>
             <p className="text-sm text-slate-600 leading-relaxed">
+              {excluirAlvo.avantCodigo != null && (
+                <span className="block text-xs font-mono font-bold text-[#4F46E5] mb-2">
+                  {formatAvantCodigo(excluirAlvo.avantCodigo)}
+                </span>
+              )}
               <span className="font-bold text-slate-900">{excluirAlvo.titulo}</span> será removida do AVANT.
               Histórico de tentativas e entradas em cadernos ligadas a esta questão também serão apagados. Não dá para
               desfazer.
@@ -218,9 +277,31 @@ export default function AdminMaster() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-black italic uppercase text-slate-400 text-xs tracking-[0.3em] mb-6 flex items-center gap-2">
+            <h3 className="font-black italic uppercase text-slate-400 text-xs tracking-[0.3em] mb-4 flex items-center gap-2">
               <Sparkles className="w-3 h-3 text-[#BEF264]" /> Conteúdo Disponível para Edição
             </h3>
+
+            {modulosEstudo.length > 0 && (
+              <div className="mb-6 space-y-2">
+                <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400">
+                  Buscar por código (Q-…), slug, banca, título ou trecho do enunciado
+                </label>
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                  <input
+                    type="search"
+                    value={buscaModulos}
+                    onChange={(e) => setBuscaModulos(e.target.value)}
+                    placeholder="Ex.: Q-42, anatomia, igeduc…"
+                    className="w-full pl-11 pr-4 py-3 rounded-2xl border-2 border-slate-200 bg-slate-50 text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#4F46E5] focus:bg-white transition-colors"
+                  />
+                </div>
+                <p className="text-[11px] font-bold text-slate-500">
+                  Mostrando {modulosFiltrados.length} de {modulosEstudo.length}{' '}
+                  {modulosEstudo.length === 1 ? 'questão' : 'questões'}
+                </p>
+              </div>
+            )}
 
             {modulosEstudo.length === 0 ? (
               <div className="text-center py-12 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-200">
@@ -229,15 +310,50 @@ export default function AdminMaster() {
                   Use o Laboratório de Injeção para criar seu primeiro módulo.
                 </p>
               </div>
+            ) : modulosFiltrados.length === 0 ? (
+              <div className="text-center py-12 bg-amber-50 rounded-2xl border-2 border-amber-200">
+                <p className="text-amber-900 font-bold text-sm">Nenhuma questão corresponde à busca.</p>
+                <p className="text-amber-700 text-xs mt-2">Limpe o filtro ou tente outro código, slug ou palavra do enunciado.</p>
+                <button
+                  type="button"
+                  onClick={() => setBuscaModulos('')}
+                  className="mt-4 text-xs font-black uppercase italic text-[#4F46E5] underline"
+                >
+                  Limpar busca
+                </button>
+              </div>
             ) : (
               <div className="grid grid-cols-1 gap-3">
-                {modulosEstudo.map((modulo) => (
+                {modulosFiltrados.map((modulo) => {
+                  const codigoLabel = formatAvantCodigo(modulo.avant_codigo);
+                  return (
                   <div
                     key={modulo.id}
-                    className="flex items-center justify-between p-6 bg-slate-50 border-2 border-transparent hover:border-[#4F46E5] rounded-[30px] transition-all group"
+                    className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-6 bg-slate-50 border-2 border-transparent hover:border-[#4F46E5] rounded-[30px] transition-all group"
                   >
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                        {codigoLabel ? (
+                          <span className="inline-flex items-center gap-1.5 bg-slate-900 text-[#BEF264] text-[10px] font-mono font-black px-3 py-1 rounded-full tracking-wide">
+                            {codigoLabel}
+                            <button
+                              type="button"
+                              title="Copiar código"
+                              onClick={() => void copiarCodigoAvant(modulo.id, modulo.avant_codigo as number)}
+                              className="p-0.5 rounded hover:bg-white/20 transition-colors"
+                            >
+                              {copiedModuloId === modulo.id ? (
+                                <Check className="w-3.5 h-3.5" />
+                              ) : (
+                                <Copy className="w-3.5 h-3.5" />
+                              )}
+                            </button>
+                          </span>
+                        ) : (
+                          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                            Sem código (rode a migração SQL)
+                          </span>
+                        )}
                         <span className="bg-[#4F46E5] text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">
                           {modulo.modulo_nome || 'MÓDULO GERAL'}
                         </span>
@@ -250,6 +366,11 @@ export default function AdminMaster() {
                       <h4 className="font-black italic uppercase text-slate-900 text-lg leading-none mb-1">
                         {modulo.titulo_aula || 'Sem título'}
                       </h4>
+                      {modulo.modulo_slug && (
+                        <p className="text-[10px] font-mono text-slate-400 truncate mt-1" title={modulo.modulo_slug}>
+                          {modulo.modulo_slug}
+                        </p>
+                      )}
                       {modulo.subtopico && (
                         <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">
                           {modulo.subtopico}
@@ -257,7 +378,7 @@ export default function AdminMaster() {
                       )}
                     </div>
 
-                    <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-end">
+                    <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-end shrink-0">
                       <button
                         type="button"
                         onClick={() => {
@@ -265,6 +386,10 @@ export default function AdminMaster() {
                           setExcluirAlvo({
                             id: modulo.id,
                             titulo: modulo.titulo_aula || modulo.modulo_slug || 'Sem título',
+                            avantCodigo:
+                              modulo.avant_codigo != null && !Number.isNaN(Number(modulo.avant_codigo))
+                                ? Number(modulo.avant_codigo)
+                                : null,
                           });
                         }}
                         className="flex items-center gap-2 border-2 border-rose-200 text-rose-700 bg-white px-4 py-3 rounded-2xl font-black uppercase italic text-xs hover:bg-rose-50 transition-all"
@@ -281,7 +406,8 @@ export default function AdminMaster() {
                       </Link>
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             )}
           </div>

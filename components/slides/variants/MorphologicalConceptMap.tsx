@@ -39,25 +39,19 @@ export const MorphologicalConceptMap = ({ concepts, theme }: MorphologicalConcep
   const borderColorClass = theme.borderColor;
 
   return (
-    <div className="w-full h-full flex items-center justify-center p-4 md:p-6 overflow-y-auto custom-scrollbar relative">
+    <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 md:p-6 overflow-y-auto custom-scrollbar relative">
       {/* Background com tema */}
       <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
       
       {/* Grid CSS Fluido - Navegador calcula automaticamente */}
       <div 
-        className="morph-grid-container w-full max-w-6xl relative z-10 my-auto"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '1.5rem',
-        }}
+        className="morph-grid-container w-full max-w-6xl relative z-10 my-auto grid grid-cols-1 gap-6 sm:[grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))]"
       >
         {/* Conceito Central (Pai) - Ocupa mais espaço, glow mais intenso */}
         {centralConcept && (
           <div
-            className="morph-central-card relative overflow-hidden rounded-[1.5rem] bg-slate-900/80 backdrop-blur-xl border-2 min-h-[280px] transition-all duration-200 hover:-translate-y-1"
+            className={`morph-central-card relative overflow-hidden rounded-[1.5rem] bg-slate-900/80 backdrop-blur-xl border-2 min-h-[200px] sm:min-h-[260px] transition-all duration-200 hover:-translate-y-1 ${detailConcepts.length > 0 ? 'col-span-1 sm:col-span-2' : 'col-span-1'}`}
             style={{
-              gridColumn: detailConcepts.length > 0 ? 'span 2' : 'span 1',
               boxShadow: `0 0 40px ${glowColor}`,
               borderColor: borderColorClass.replace('border-', '').replace('/30', '').replace('/40', '').replace('/50', '') + '30',
               animation: 'morphReveal 0.4s ease-out',

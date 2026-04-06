@@ -7,7 +7,12 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { logger } from '@/lib/logger';
-import { QuestaoCompletaSchema } from '@/lib/validations';
+import {
+  QuestaoCompletaSchema,
+  payloadContainsTecconcursosReference,
+  TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE,
+  questaoPayloadTecconcursosZodError,
+} from '@/lib/validations';
 import { ValidationErrorsPanel, formatZodErrors } from '@/components/admin/ValidationErrorsPanel';
 import { JsonEditorWithHighlight } from '@/components/admin/JsonEditorWithHighlight';
 import { findErrorLocation, findAllErrorLocations, type ErrorLocation } from '@/lib/jsonErrorLocator';
@@ -143,6 +148,14 @@ export default function AvantLaboratory() {
       setBatchResult(null);
 
       const items: BatchItem[] = parsed.map((item: any, index: number) => {
+        if (payloadContainsTecconcursosReference(item)) {
+          return {
+            index,
+            valid: false,
+            data: item,
+            errors: formatZodErrors(questaoPayloadTecconcursosZodError()),
+          };
+        }
         const result = QuestaoCompletaSchema.safeParse(item);
         if (!result.success) {
           const errs = formatZodErrors(result.error);
@@ -163,6 +176,23 @@ export default function AvantLaboratory() {
     setBatchResult(null);
 
     try {
+      if (payloadContainsTecconcursosReference(parsed)) {
+        const gateErrors: ValidationError[] = [
+          { path: [], message: TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE, code: 'custom' },
+        ];
+        setValidationErrors(gateErrors);
+        const locations = findAllErrorLocations(jsonInput, gateErrors);
+        setErrorLocations(locations);
+        const linesWithErrors = new Set<number>();
+        locations.forEach((location) => {
+          linesWithErrors.add(location.line);
+        });
+        setErrorLines(linesWithErrors);
+        setError(`Erros de validação:\n${gateErrors.map((err) => err.message).join('\n')}`);
+        setParsedData(null);
+        return;
+      }
+
       const validationResult = QuestaoCompletaSchema.safeParse(parsed);
 
       if (!validationResult.success) {

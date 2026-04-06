@@ -2,18 +2,23 @@
 
 import { createBrowserClient } from '@supabase/ssr';
 import Link from 'next/link';
-import { AlertCircle, ArrowRight, CheckCircle2, Eye, EyeOff, Lock, UserPlus, Zap } from 'lucide-react';
+import { AlertCircle, ArrowRight, CheckCircle2, Eye, EyeOff, Lock, Mail, UserPlus, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { Suspense, useState } from 'react';
 
 const supabase = createBrowserClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-export default function RegisterPage() {
+function RegisterForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const cidade = searchParams.get('cidade')
+    ? decodeURIComponent(searchParams.get('cidade')!)
+    : null;
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -21,6 +26,8 @@ export default function RegisterPage() {
   const [showConfirm, setShowConfirm] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  /** Quando o Supabase exige confirmação por e-mail antes de criar sessão */
+  const [pendingEmailVerification, setPendingEmailVerification] = useState(false);
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,10 +45,18 @@ export default function RegisterPage() {
 
     setLoading(true);
 
+    const origin = typeof window !== 'undefined' ? window.location.origin : '';
+    const destinoEstudar = cidade
+      ? `/estudar?cidade=${encodeURIComponent(cidade)}`
+      : '/estudar';
+
     try {
-      const { error: authError } = await supabase.auth.signUp({
+      const { data, error: authError } = await supabase.auth.signUp({
         email: email.trim(),
         password,
+        options: {
+          emailRedirectTo: origin ? `${origin}/login` : undefined,
+        },
       });
 
       if (authError) {
@@ -50,10 +65,17 @@ export default function RegisterPage() {
         return;
       }
 
-      router.push('/estudar');
-      router.refresh();
-    } catch (err: any) {
-      setError(err.message || 'Erro inesperado. Tente novamente.');
+      if (data.session) {
+        router.push(destinoEstudar);
+        router.refresh();
+        return;
+      }
+
+      // Confirmação por e-mail ativa no Supabase: sem sessão até o usuário clicar no link
+      setPendingEmailVerification(true);
+      setLoading(false);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Erro inesperado. Tente novamente.');
       setLoading(false);
     }
   };
@@ -93,6 +115,29 @@ export default function RegisterPage() {
           className="space-y-5 bg-white p-8 rounded-[32px] shadow-2xl shadow-slate-200/50 border border-slate-100 relative overflow-hidden"
         >
 
+          {pendingEmailVerification ? (
+            <div className="flex flex-col gap-4 py-2">
+              <div className="flex flex-col gap-2 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900">
+                <div className="flex items-start gap-2">
+                  <Mail size={20} className="shrink-0 text-emerald-600 mt-0.5" />
+                  <div className="space-y-2">
+                    <p className="text-sm font-black">Confirme seu e-mail</p>
+                    <p className="text-xs font-medium leading-relaxed">
+                      Enviamos um link para <strong>{email.trim()}</strong>. Abra a mensagem e clique no link para
+                      ativar sua conta; depois use o login para entrar na plataforma.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <Link
+                href={cidade ? `/login?cidade=${encodeURIComponent(cidade)}` : '/login'}
+                className="w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-xl font-black uppercase tracking-widest shadow-lg shadow-indigo-500/20 transition-all"
+              >
+                Ir para o login
+              </Link>
+            </div>
+          ) : (
+            <>
           {/* E-mail */}
           <div className="space-y-2">
             <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 pl-1">
@@ -173,7 +218,7 @@ export default function RegisterPage() {
           {/* Botão */}
           <button
             type="submit"
-            disabled={loading}
+            disabled={loading || pendingEmailVerification}
             className="w-full bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-xl font-black uppercase tracking-widest shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-3 transition-all hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed group"
           >
             {loading ? (
@@ -188,7 +233,10 @@ export default function RegisterPage() {
           {/* Link login */}
           <p className="text-center text-sm text-slate-400 font-medium pt-1">
             Já tem acesso?{' '}
-            <Link href="/login" className="text-indigo-600 font-black hover:text-indigo-700 transition-colors">
+            <Link
+              href={cidade ? `/login?cidade=${encodeURIComponent(cidade)}` : '/login'}
+              className="text-indigo-600 font-black hover:text-indigo-700 transition-colors"
+            >
               Entrar agora
             </Link>
           </p>
@@ -198,6 +246,8 @@ export default function RegisterPage() {
             <Lock size={12} />
             <span className="text-[10px] font-bold uppercase tracking-widest">Ambiente Seguro</span>
           </div>
+            </>
+          )}
         </form>
 
         {/* Prova Social */}
@@ -212,5 +262,19 @@ export default function RegisterPage() {
 
       </div>
     </div>
+  );
+}
+
+export default function RegisterPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6">
+          <p className="text-indigo-600 font-bold animate-pulse">Carregando cadastro...</p>
+        </div>
+      }
+    >
+      <RegisterForm />
+    </Suspense>
   );
 }

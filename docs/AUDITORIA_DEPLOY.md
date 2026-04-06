@@ -1,549 +1,138 @@
-# 🔍 AUDITORIA COMPLETA PARA DEPLOY EM PRODUÇÃO
+# Auditoria técnica — deploy e produção (AVANT)
 
-**Data:** 2026-01-27  
-**Status:** ⚠️ **REQUER CORREÇÕES ANTES DE PRODUÇÃO**
+**Última atualização:** 2026-03-31
 
----
-
-## 📊 RESUMO EXECUTIVO
-
-### Status Atual: 🟡 **75% PRONTO**
-
-**Pontos Fortes:**
-- ✅ Cache estratégico implementado
-- ✅ Validação Zod em APIs críticas
-- ✅ Logging estruturado (`lib/logger.ts`)
-- ✅ Índices de banco criados
-- ✅ Testes E2E configurados
-- ✅ CI/CD básico configurado
-
-**Pontos Críticos Faltantes:**
-- 🔴 **5 BLOQUEADORES** (Impedem deploy seguro)
-- 🟡 **8 IMPORTANTES** (Recomendados antes de produção)
-- 🟢 **5 MELHORIAS** (Otimizações futuras)
+Este documento complementa [`DEPLOY.md`](./DEPLOY.md): inventário do que **já existe no código**, lacunas **recomendadas** antes de escalar, e melhorias **opcionais**. Não substitui revisão de RLS no Supabase nem testes manuais de negócio.
 
 ---
 
-## 🔴 BLOQUEADORES CRÍTICOS (RESOLVER ANTES DE DEPLOY)
+## Resumo executivo
 
-### 1. ❌ **FALTA DE ERROR BOUNDARIES**
-**Severidade:** 🔴 CRÍTICO  
-**Status:** Não implementado
+| Área | Situação |
+|------|----------|
+| Build e TypeScript | Projeto configurado para `npm run build` com validação de env prévia. |
+| Variáveis de ambiente | `lib/env.ts` + `scripts/validate-env.ts`; layout trata falhas de validação (ver código). |
+| Segurança HTTP | Headers em `next.config.js` (HSTS, frame, CSP, etc.). |
+| Saúde da aplicação | `GET /api/health` com checagem de conectividade ao Supabase. |
+| Erros de UI | `app/error.tsx`; `app/(dashboard)/error.tsx`. |
+| 404 | `app/not-found.tsx`. |
+| SEO / metadata | `app/layout.tsx` com `metadata`, `metadataBase`, keywords. |
+| Cache | `lib/cache.ts` e invalidação por tags onde implementado. |
+| Testes | Jest + Playwright; CI em `.github/workflows/test.yml`. |
 
-**Problema:**
-- Erros não tratados em componentes React podem quebrar toda a aplicação
-- Sem fallback UI para erros
-
-**Solução:**
-```typescript
-// app/error.tsx (criar)
-'use client';
-
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-900">
-      <div className="text-center">
-        <h2 className="text-2xl font-bold text-red-400 mb-4">Algo deu errado!</h2>
-        <button
-          onClick={reset}
-          className="px-4 py-2 bg-indigo-600 text-white rounded-lg"
-        >
-          Tentar novamente
-        </button>
-      </div>
-    </div>
-  );
-}
-```
-
-**Arquivos a Criar:**
-- `app/error.tsx` (global error boundary)
-- `app/(dashboard)/error.tsx` (dashboard error boundary)
-- `app/(admin)/error.tsx` (admin error boundary)
+**Conclusão:** a base está **adequada para deploy** desde que variáveis de produção, Supabase e smoke test estejam corretos. Itens abaixo são **reforços**, não bloqueadores universais.
 
 ---
 
-### 2. ❌ **FALTA DE HEALTH CHECK ENDPOINT**
-**Severidade:** 🔴 CRÍTICO  
-**Status:** Não implementado
+## O que já está implementado (referência rápida)
 
-**Problema:**
-- Sem endpoint para monitoramento de saúde da aplicação
-- Impossível verificar se app está funcionando
-
-**Solução:**
-```typescript
-// app/api/health/route.ts (criar)
-import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
-
-export async function GET() {
-  const checks = {
-    status: 'ok',
-    timestamp: new Date().toISOString(),
-    database: 'unknown',
-    uptime: process.uptime(),
-  };
-
-  try {
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    );
-    
-    const { error } = await supabase.from('modulos_estudo').select('id').limit(1);
-    checks.database = error ? 'error' : 'ok';
-  } catch {
-    checks.database = 'error';
-  }
-
-  const healthy = checks.database === 'ok';
-  return NextResponse.json(checks, { 
-    status: healthy ? 200 : 503 
-  });
-}
-```
+| Item | Onde |
+|------|------|
+| Validação de env | `lib/env.ts`, `scripts/validate-env.ts`, script `build` |
+| Security headers | `next.config.js` → `headers()` |
+| Health check | `app/api/health/route.ts` |
+| Error boundaries | `app/error.tsx`, `app/(dashboard)/error.tsx` |
+| Not found | `app/not-found.tsx` |
+| Logging | `lib/logger.ts` |
+| Validação em APIs | Zod em várias rotas (`lib/validations.ts`) |
 
 ---
 
-### 3. ❌ **FALTA DE VALIDAÇÃO DE VARIÁVEIS DE AMBIENTE**
-**Severidade:** 🔴 CRÍTICO  
-**Status:** Parcialmente implementado
+## Recomendações antes de escalar tráfego ou dados sensíveis
 
-**Problema:**
-- Variáveis de ambiente não são validadas no startup
-- App pode falhar silenciosamente em produção
+### 1. CI: build de produção
 
-**Solução:**
-```typescript
-// lib/env.ts (criar)
-export function validateEnv() {
-  const required = [
-    'NEXT_PUBLIC_SUPABASE_URL',
-    'NEXT_PUBLIC_SUPABASE_ANON_KEY',
-  ];
+O workflow `.github/workflows/test.yml` inclui o job **`build`** (`npm run build` com env mínima). Para ainda mais fidelidade ao ambiente real, é possível trocar os placeholders do Supabase por **secrets** no repositório.
 
-  const missing: string[] = [];
-  
-  required.forEach(key => {
-    if (!process.env[key]) {
-      missing.push(key);
-    }
-  });
+### 2. Rate limiting distribuído
 
-  if (missing.length > 0) {
-    throw new Error(
-      `Missing required environment variables: ${missing.join(', ')}`
-    );
-  }
-}
+Limitação **em memória** não funciona bem entre instâncias serverless. Para APIs públicas sensíveis, avaliar **Upstash Redis**, **Vercel KV** ou equivalente, ou proteção no WAF / API gateway — **só se** houver abuso ou requisito de compliance.
 
-// Chamar no início de app/layout.tsx ou middleware.ts
-```
+### 3. Monitoramento de erros (Sentry ou similar)
+
+Opcional porém valioso em produção: captura de exceções não tratadas e performance. Exige DSN e configuração no Next.
+
+### 4. Backup e restore (Supabase)
+
+Documentar no processo interno:
+
+- Backups automáticos do plano Supabase.
+- Quem pode restaurar e em qual RTO/RPO.
+
+### 5. RLS e service role
+
+Revisar políticas no painel Supabase para todas as tabelas expostas ao cliente. A **service role** deve permanecer **apenas** em código servidor (API routes, server actions), nunca em `NEXT_PUBLIC_*`.
 
 ---
 
-### 4. ❌ **FALTA DE SECURITY HEADERS**
-**Severidade:** 🔴 CRÍTICO  
-**Status:** Não configurado
+## Melhorias opcionais (produto / performance)
 
-**Problema:**
-- Sem headers de segurança configurados
-- Vulnerável a XSS, clickjacking, etc.
+| Tema | Notas |
+|------|--------|
+| Vercel Analytics / Web Vitals | Mede LCP, INP, CLS em usuários reais. |
+| Bundle | `next/dynamic` para componentes pesados fora do caminho crítico. |
+| Imagens | `next/image`; domínios em `next.config.js` → `images.remotePatterns`. |
+| PWA | Service worker, manifest — só se houver requisito explícito. |
+| MCP Vercel (Cursor) | Opcional para DX; não substitui checklist de deploy. |
 
-**Solução:**
-```javascript
-// next.config.js (atualizar)
-const securityHeaders = [
-  {
-    key: 'X-DNS-Prefetch-Control',
-    value: 'on'
-  },
-  {
-    key: 'Strict-Transport-Security',
-    value: 'max-age=63072000; includeSubDomains; preload'
-  },
-  {
-    key: 'X-Frame-Options',
-    value: 'SAMEORIGIN'
-  },
-  {
-    key: 'X-Content-Type-Options',
-    value: 'nosniff'
-  },
-  {
-    key: 'X-XSS-Protection',
-    value: '1; mode=block'
-  },
-  {
-    key: 'Referrer-Policy',
-    value: 'origin-when-cross-origin'
-  },
-  {
-    key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=()'
-  },
-];
-
-module.exports = {
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: securityHeaders,
-      },
-    ];
-  },
-};
-```
+**FinOps:** o estado principal do AVANT é **Supabase (Postgres)**. Introduzir Vercel KV / Edge Config só faz sentido para casos específicos (feature flags globais, rate limit, etc.), não como padrão obrigatório.
 
 ---
 
-### 5. ❌ **FALTA DE TRATAMENTO DE ERROS EM SERVER COMPONENTS**
-**Severidade:** 🔴 CRÍTICO  
-**Status:** Parcialmente implementado
+## Métricas de referência (metas, não SLA)
 
-**Problema:**
-- Alguns Server Components não tratam erros de queries
-- Pode causar crashes silenciosos
+Valores comuns de boas práticas (Core Web Vitals):
 
-**Arquivos Afetados:**
-- `app/(dashboard)/estudar/page.tsx` - ✅ Já usa cache (ok)
-- `app/(dashboard)/estudar/[slug]/page.tsx` - ✅ Já usa cache (ok)
-- `app/(dashboard)/analytics/page.tsx` - ⚠️ Precisa verificar
+- **LCP** &lt; 2,5 s  
+- **INP** &lt; 200 ms  
+- **CLS** &lt; 0,1  
 
-**Solução:**
-Adicionar try/catch em todos os Server Components:
-
-```typescript
-export default async function Page() {
-  try {
-    const data = await fetchData();
-    return <Component data={data} />;
-  } catch (error) {
-    logger.error('Error in page', error);
-    return <ErrorFallback />;
-  }
-}
-```
+Devem ser validados com **dados reais** (RUM), não apenas Lighthouse local.
 
 ---
 
-## 🟡 IMPORTANTES (RECOMENDADOS ANTES DE PRODUÇÃO)
-
-### 6. ⚠️ **FALTA DE RATE LIMITING**
-**Severidade:** 🟡 IMPORTANTE  
-**Status:** Não implementado
-
-**Impacto:**
-- APIs vulneráveis a abuso
-- Possível DoS
-
-**Solução:**
-```typescript
-// lib/rate-limit.ts (criar)
-import { Ratelimit } from '@upstash/ratelimit';
-import { Redis } from '@upstash/redis';
-
-export const ratelimit = new Ratelimit({
-  redis: Redis.fromEnv(),
-  limiter: Ratelimit.slidingWindow(10, '10 s'),
-  analytics: true,
-});
-
-// Usar em APIs críticas
-export async function POST(req: Request) {
-  const ip = req.headers.get('x-forwarded-for') ?? '127.0.0.1';
-  const { success } = await ratelimit.limit(ip);
-  
-  if (!success) {
-    return NextResponse.json(
-      { error: 'Rate limit exceeded' },
-      { status: 429 }
-    );
-  }
-  // ...
-}
-```
-
-**Dependência:** `@upstash/ratelimit` e `@upstash/redis`
-
----
-
-### 7. ⚠️ **FALTA DE NOT-FOUND PAGES**
-**Severidade:** 🟡 IMPORTANTE  
-**Status:** Não implementado
-
-**Solução:**
-```typescript
-// app/not-found.tsx (criar)
-export default function NotFound() {
-  return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl mb-8">Página não encontrada</p>
-        <a href="/" className="px-4 py-2 bg-indigo-600 text-white rounded-lg">
-          Voltar ao início
-        </a>
-      </div>
-    </div>
-  );
-}
-```
-
----
-
-### 8. ⚠️ **FALTA DE LOADING STATES**
-**Severidade:** 🟡 IMPORTANTE  
-**Status:** Parcialmente implementado
-
-**Solução:**
-```typescript
-// app/(dashboard)/estudar/loading.tsx (criar)
-export default function Loading() {
-  return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600"></div>
-    </div>
-  );
-}
-```
-
----
-
-### 9. ⚠️ **FALTA DE MONITORAMENTO (SENTRY)**
-**Severidade:** 🟡 IMPORTANTE  
-**Status:** Não configurado
-
-**Solução:**
-```typescript
-// lib/sentry.ts (criar)
-import * as Sentry from '@sentry/nextjs';
-
-Sentry.init({
-  dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
-  tracesSampleRate: 1.0,
-  environment: process.env.NODE_ENV,
-});
-
-// Usar em error boundaries
-componentDidCatch(error: Error, errorInfo: any) {
-  Sentry.captureException(error, { contexts: { react: errorInfo } });
-}
-```
-
----
-
-### 10. ⚠️ **FALTA DE METADADOS SEO**
-**Severidade:** 🟡 IMPORTANTE  
-**Status:** Não implementado
-
-**Solução:**
-```typescript
-// app/layout.tsx (atualizar)
-export const metadata = {
-  title: 'AVANT - Estudo Reverso para Concursos',
-  description: 'Plataforma de estudo reverso...',
-  openGraph: {
-    title: 'AVANT',
-    description: '...',
-    images: ['/og-image.png'],
-  },
-};
-```
-
----
-
-### 11. ⚠️ **FALTA DE VALIDAÇÃO DE BUILD**
-**Severidade:** 🟡 IMPORTANTE  
-**Status:** Parcialmente implementado
-
-**Solução:**
-Adicionar script de validação pré-build:
-
-```json
-// package.json
-{
-  "scripts": {
-    "prebuild": "npm run validate:env && npm run lint",
-    "validate:env": "tsx scripts/validate-env.ts"
-  }
-}
-```
-
----
-
-### 12. ⚠️ **FALTA DE DOCUMENTAÇÃO DE DEPLOY**
-**Severidade:** 🟡 IMPORTANTE  
-**Status:** Não documentado
-
-**Solução:**
-Criar `docs/DEPLOY.md` com:
-- Checklist de pré-deploy
-- Variáveis de ambiente necessárias
-- Passos de deploy
-- Rollback procedure
-
----
-
-### 13. ⚠️ **FALTA DE BACKUP STRATEGY**
-**Severidade:** 🟡 IMPORTANTE  
-**Status:** Não documentado
-
-**Solução:**
-- Configurar backups automáticos no Supabase
-- Documentar processo de restore
-- Testar restore periodicamente
-
----
-
-## 🟢 MELHORIAS (OPCIONAIS MAS RECOMENDADAS)
-
-### 14. 💡 **ANALYTICS (Vercel Analytics)**
-- Configurar Vercel Analytics
-- Tracking de eventos customizados
-
-### 15. 💡 **BUNDLE SIZE OPTIMIZATION**
-- Analisar bundle size
-- Code splitting otimizado
-- Lazy loading de componentes
-
-### 16. 💡 **IMAGE OPTIMIZATION**
-- Configurar `next/image` com domínios
-- Lazy loading de imagens
-
-### 17. 💡 **PWA SUPPORT**
-- Service Worker
-- Manifest.json
-- Offline support
-
-### 18. 💡 **PERFORMANCE MONITORING**
-- Web Vitals tracking
-- Real User Monitoring (RUM)
-
----
-
-## ✅ CHECKLIST DE PRONTIDÃO
+## Checklist consolidado
 
 ### Segurança
-- [ ] Security headers configurados
-- [ ] Rate limiting implementado
-- [ ] Variáveis de ambiente validadas
-- [ ] RLS verificado no Supabase
-- [ ] XSS prevention (Zod sanitization)
+
+- [x] Headers de segurança (`next.config.js`)
+- [ ] RLS revisado no Supabase para o cenário atual
+- [ ] Segredos apenas em variáveis de ambiente do host
+- [ ] Rate limiting distribuído (se necessário)
 
 ### Confiabilidade
-- [ ] Error boundaries implementados
-- [ ] Not-found pages criadas
-- [ ] Loading states implementados
-- [ ] Health check endpoint criado
-- [ ] Tratamento de erros em Server Components
-- [ ] Logging estruturado (✅ já implementado)
 
-### Performance
-- [ ] Cache estratégico (✅ já implementado)
-- [ ] Índices de banco (✅ já implementados)
-- [ ] Bundle size otimizado
-- [ ] Images otimizadas
-
-### Monitoramento
-- [ ] Sentry configurado
-- [ ] Health check endpoint
-- [ ] Analytics configurado
-- [ ] Error tracking
+- [x] Error boundaries globais / dashboard
+- [x] `not-found`
+- [x] Health check
+- [x] Logging estruturado
 
 ### DevOps
-- [ ] CI/CD configurado (✅ básico implementado)
-- [ ] .env.example atualizado (✅ já existe)
-- [ ] Deploy documentation
-- [ ] Backup strategy
+
+- [x] Testes automatizados no CI
+- [x] **Build** (`npm run build`) no CI
+- [x] Documentação de deploy (`DEPLOY.md`)
+
+### Observabilidade
+
+- [x] Health endpoint
+- [ ] Sentry (ou similar) *(opcional)*
+- [ ] Analytics / Web Vitals *(opcional)*
 
 ---
 
-## 🎯 PLANO DE AÇÃO
-
-### Fase 1: CRÍTICOS (1-2 dias) 🔴
-1. ✅ Criar Error Boundaries (`app/error.tsx`)
-2. ✅ Criar Health Check (`app/api/health/route.ts`)
-3. ✅ Validar variáveis de ambiente (`lib/env.ts`)
-4. ✅ Configurar Security Headers (`next.config.js`)
-5. ✅ Adicionar tratamento de erros em Server Components
-
-### Fase 2: IMPORTANTES (2-3 dias) 🟡
-6. ✅ Implementar Rate Limiting
-7. ✅ Criar Not-Found Pages
-8. ✅ Adicionar Loading States
-9. ✅ Configurar Sentry
-10. ✅ Adicionar Metadados SEO
-11. ✅ Validar Build
-12. ✅ Documentar Deploy
-13. ✅ Documentar Backup Strategy
-
-### Fase 3: MELHORIAS (1 semana) 🟢
-14. ⏳ Analytics
-15. ⏳ Bundle Optimization
-16. ⏳ Image Optimization
-17. ⏳ PWA Support
-18. ⏳ Performance Monitoring
-
----
-
-## 📈 MÉTRICAS DE SUCESSO
-
-### Antes do Deploy
-- ✅ Todos os críticos resolvidos
-- ✅ Health check funcionando
-- ✅ Error boundaries testados
-- ✅ Security headers configurados
-
-### Após Deploy
-- **Uptime:** > 99.9%
-- **Error Rate:** < 0.1%
-- **TTFB:** < 200ms
-- **LCP:** < 2.5s
-
----
-
-## 🔧 COMANDOS ÚTEIS
+## Comandos úteis
 
 ```bash
-# Validar ambiente
 npm run validate:env
-
-# Build de produção
 npm run build
-
-# Testes
 npm run test
 npm run test:e2e
-
-# Lint
 npm run lint
-
-# Análise de performance
-npm run analyze:performance
 ```
 
 ---
 
-## 📝 CONCLUSÃO
+## Histórico de alinhamento
 
-**Status Atual:** 🟡 **75% PRONTO**
-
-**Bloqueadores Restantes:** 5 críticos  
-**Importantes Restantes:** 8 itens  
-**Melhorias:** 5 itens opcionais
-
-**Estimativa para Produção:**
-- **Mínimo Viável:** 1-2 dias (apenas críticos)
-- **Recomendado:** 3-5 dias (críticos + importantes)
-- **Ideal:** 1-2 semanas (tudo)
-
-**Recomendação:** Resolver **Fase 1 (Críticos)** antes de qualquer deploy em produção.
+Versões anteriores deste arquivo listavam “bloqueadores” (error boundaries, health, env, headers) como **não implementados**. O código foi atualizado desde então; este documento foi **realinhado** em 2026-03-31 para refletir o repositório e evitar duplicação com `DEPLOY.md`.

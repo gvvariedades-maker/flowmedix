@@ -1,5 +1,10 @@
 import { NextResponse } from 'next/server';
-import { QuestaoCompletaSchema, validateSlides } from '@/lib/validations';
+import {
+  QuestaoCompletaSchema,
+  validateSlides,
+  payloadContainsTecconcursosReference,
+  TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE,
+} from '@/lib/validations';
 import { logger } from '@/lib/logger';
 import { apiRateLimit } from '@/lib/rate-limit';
 
@@ -27,7 +32,23 @@ export async function POST(req: Request) {
         { status: 400 }
       );
     }
-    
+
+    if (payloadContainsTecconcursosReference(body)) {
+      return NextResponse.json(
+        {
+          valid: false,
+          errors: [
+            {
+              path: '',
+              message: TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE,
+              code: 'custom',
+            },
+          ],
+        },
+        { status: 400 }
+      );
+    }
+
     // Validação completa da questão
     const validationResult = QuestaoCompletaSchema.safeParse(body);
     

@@ -1,0 +1,44 @@
+'use client';
+
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import { NeuroSlidesShowcaseGrid } from '@/components/shared/NeuroSlidePreviewCard';
+
+/**
+ * Mesmos modelos de NeuroSlide do Material de Apoio — componente compartilhado
+ * (`NeuroSlidesShowcaseGrid`) para consistência visual e de conteúdo.
+ */
+export function SlideStylePreviews() {
+  return (
+    <section className="relative py-20 sm:py-28 px-4 sm:px-6 border-y border-white/5 bg-[#020617]/80">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
+          <p className="text-[10px] font-black uppercase tracking-[0.35em] text-cyan-400/90 mb-3">
+            NeuroSlides — igual ao Material de Apoio
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-[1000] text-white tracking-tight mb-4">
+            Os mesmos tipos de slide que você vê na plataforma
+          </h2>
+          <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
+            Exemplos reais de layout usados no estudo reverso: mapas, regras, alertas, fluxos, comparações e
+            memorização. <strong className="text-slate-200">Mesma qualidade visual do Material de Apoio</strong>
+            — aqui você vê o que te espera depois do cadastro.
+          </p>
+        </div>
+
+        <NeuroSlidesShowcaseGrid />
+
+        <p className="text-center mt-10 text-sm text-slate-500 font-medium">
+          Quer ver a metodologia completa?{' '}
+          <Link
+            href="/material"
+            className="text-indigo-400 font-black hover:text-indigo-300 inline-flex items-center gap-1"
+          >
+            Abrir Material de Apoio
+            <ArrowRight size={14} />
+          </Link>
+        </p>
+      </div>
+    </section>
+  );
+}

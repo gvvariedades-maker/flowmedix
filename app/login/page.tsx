@@ -173,6 +173,16 @@ function LoginContent() {
           )}
         </button>
 
+        <p className="text-center text-sm text-slate-500 font-medium pt-1">
+          Não tem conta?{' '}
+          <Link
+            href={cidade ? `/register?cidade=${encodeURIComponent(cidade)}` : '/register'}
+            className="text-indigo-600 font-black hover:text-indigo-700 transition-colors"
+          >
+            Cadastre-se na AVANT
+          </Link>
+        </p>
+
         {/* Rodapé Seguro */}
         <div className="pt-4 mt-2 border-t border-slate-50 flex justify-center items-center gap-2 text-slate-300">
           <Lock size={12} />

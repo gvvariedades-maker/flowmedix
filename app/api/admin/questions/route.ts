@@ -16,7 +16,11 @@ import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import { createServerSupabase } from '@/lib/supabase/server';
 import { getAdminEmail } from '@/lib/constants';
-import { QuestaoCompletaSchema } from '@/lib/validations';
+import {
+  QuestaoCompletaSchema,
+  payloadContainsTecconcursosReference,
+  questaoPayloadTecconcursosZodError,
+} from '@/lib/validations';
 import { logger } from '@/lib/logger';
 import { generateContentHash } from '@/lib/contentHash';
 import { invalidateModulosCache, invalidateQuestoesCache } from '@/lib/cache';
@@ -104,6 +108,9 @@ export async function POST(request: NextRequest) {
     | { index: number; valid: false; errors: z.core.$ZodIssue[] };
 
   const validated: ValidatedItem[] = items.map((item, index) => {
+    if (payloadContainsTecconcursosReference(item)) {
+      return { index, valid: false as const, errors: questaoPayloadTecconcursosZodError().issues };
+    }
     const result = QuestaoCompletaSchema.safeParse(item);
     if (!result.success) {
       return { index, valid: false as const, errors: result.error.issues };

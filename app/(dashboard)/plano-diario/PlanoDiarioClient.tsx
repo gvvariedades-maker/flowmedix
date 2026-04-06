@@ -7,6 +7,7 @@ import {
   ChevronRight, Flame, RefreshCcw, Trophy, Info,
 } from 'lucide-react';
 import type { ReviewItem } from '@/lib/spaced-repetition';
+import { formatAvantCodigo } from '@/lib/avantCodigo';
 
 interface Props {
   revisoes: ReviewItem[];
@@ -150,9 +151,16 @@ export default function PlanoDiarioClient({ revisoes, totalPendentes, limite }: 
 
                   {/* Info */}
                   <div className="flex-1 min-w-0">
-                    <p className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-0.5">
-                      {item.topico || 'Questão'}
-                    </p>
+                    <div className="flex flex-wrap items-center gap-2 mb-0.5">
+                      <p className="text-[9px] font-black uppercase tracking-widest text-slate-400">
+                        {item.topico || 'Questão'}
+                      </p>
+                      {formatAvantCodigo(item.avant_codigo) && (
+                        <span className="text-[9px] font-mono font-black text-indigo-600 bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded-md">
+                          {formatAvantCodigo(item.avant_codigo)}
+                        </span>
+                      )}
+                    </div>
                     <p className="text-sm font-bold text-slate-800 truncate">{assunto}</p>
                     <div className="flex items-center gap-2 mt-1.5 flex-wrap">
                       {/* Badge urgência */}

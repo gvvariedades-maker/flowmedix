@@ -75,7 +75,7 @@ export const NeuroSlideHub = ({
       return <VersusArena concept_a={slide.concept_a} concept_b={slide.concept_b} theme={theme} />;
     default:
       return (
-        <div className="w-full h-full flex items-center justify-center p-6 bg-slate-800 rounded-xl">
+        <div className="w-full min-h-full min-w-0 flex items-center justify-center p-6 bg-slate-800 rounded-xl">
           <p className="text-slate-400 italic">Layout padrão: {slide.content || slide.main_text || 'Sem conteúdo'}</p>
         </div>
       );
@@ -168,7 +168,7 @@ export default function NeuroSlide({
   // Se o slide tem o formato novo (com type), usa o Hub com sistema híbrido
   if (normalizedData.type) {
     return (
-      <div className="w-full h-full overflow-hidden">
+      <div className="w-full min-h-full min-w-0">
         <NeuroSlideHub slide={normalizedData} questionHash={hashSource} slideIndex={slideIndex} />
       </div>
     );
@@ -207,7 +207,7 @@ export default function NeuroSlide({
       return <VersusArena concept_a={normalizedData.concept_a} concept_b={normalizedData.concept_b} theme={theme} />;
     default:
       return (
-        <div className="w-full h-full flex items-center justify-center p-6 bg-slate-800 rounded-xl">
+        <div className="w-full min-h-full min-w-0 flex items-center justify-center p-6 bg-slate-800 rounded-xl">
           <p className="text-slate-400 italic">Slide não reconhecido</p>
         </div>
       );
