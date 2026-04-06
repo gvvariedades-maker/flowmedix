@@ -45,7 +45,7 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
   const IconB = getIcon(concept_b.icon, AlertCircle);
 
   return (
-    <div className="w-full min-h-full min-w-0 flex flex-col md:flex-row relative overflow-y-auto overflow-x-hidden custom-scrollbar bg-slate-950">
+    <div className="w-full min-h-0 min-w-0 flex flex-col md:flex-row relative overflow-x-hidden bg-slate-950">
       
       {/* BACKGROUND SPLIT */}
       <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-30`} />
