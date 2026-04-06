@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [main, develop]
 
+# Variáveis usadas por validate:env, Next e Playwright (webServer build+start)
+env:
+  NEXT_PUBLIC_SUPABASE_URL: https://ci-build-placeholder.supabase.co
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ci-build-placeholder-key
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,66 +26,61 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Mesmo fluxo da Vercel: validate:env + next build.
-      # Placeholders satisfazem lib/env.ts (URL válida + chave não vazia).
-      # Para build contra projeto real, sobrescreva com env no repositório (Settings → Secrets and variables → Actions).
       - name: Production build
         run: npm run build
         env:
           NODE_ENV: production
-          NEXT_PUBLIC_SUPABASE_URL: https://ci-build-placeholder.supabase.co
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ci-build-placeholder-key
 
   test-unit:
     runs-on: ubuntu-latest
-    
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-      
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Run unit tests
         run: npm run test
-      
+
       - name: Upload coverage
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           files: ./coverage/lcov.info
           fail_ci_if_error: false
 
   test-e2e:
     runs-on: ubuntu-latest
-    
+    env:
+      CI: true
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-      
+
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps
-      
+        run: npx playwright install --with-deps chromium
+
       - name: Run E2E tests
         run: npm run test:e2e
         env:
           PLAYWRIGHT_TEST_BASE_URL: http://localhost:3000
-      
+
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: playwright-report
           path: playwright-report/

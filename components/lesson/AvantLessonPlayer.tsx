@@ -623,7 +623,7 @@ export default function AvantLessonPlayer({
               </div>
 
               {/* Conteúdo Full Immersion — sem transform no motion (quebra scroll em iOS/WebKit); uma única rolagem aqui */}
-              <div className="flex-1 min-h-0 min-w-0 overflow-y-auto overflow-x-hidden overscroll-y-contain relative touch-pan-y custom-scrollbar">
+              <div className="flex-1 min-h-0 min-w-0 flex flex-col overflow-y-auto overflow-x-hidden overscroll-y-contain relative touch-pan-y custom-scrollbar">
                 <AnimatePresence mode='wait'>
                   <motion.div 
                     key={`slide-${slideAtual}-${currentSlide?.type || 'default'}-${JSON.stringify(currentSlide).substring(0, 20)}`}
@@ -631,7 +631,7 @@ export default function AvantLessonPlayer({
                     animate={{ opacity: 1 }} 
                     exit={{ opacity: 0 }} 
                     transition={{ duration: 0.35, ease: 'easeInOut' }}
-                    className="w-full min-h-0"
+                    className="w-full flex-1 min-h-0 flex flex-col"
                   >
                     <NeuroSlide 
                       data={currentSlide} 

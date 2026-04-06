@@ -56,9 +56,10 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
     return cidadeParam ? `${path}?cidade=${encodeURIComponent(cidadeParam)}` : path;
   };
 
-  // Fechar menu ao navegar
+  // Fechar menu ao navegar (requestAnimationFrame evita setState síncrono no effect — react-hooks/set-state-in-effect)
   useEffect(() => {
-    setMobileMenuOpen(false);
+    const id = requestAnimationFrame(() => setMobileMenuOpen(false));
+    return () => cancelAnimationFrame(id);
   }, [pathname]);
 
   const isPathActive = (path: string, exact = false) => {

@@ -75,7 +75,7 @@ export const NeuroSlideHub = ({
       return <VersusArena concept_a={slide.concept_a} concept_b={slide.concept_b} theme={theme} />;
     default:
       return (
-        <div className="w-full min-h-0 min-w-0 flex items-center justify-center p-6 bg-slate-800 rounded-xl">
+        <div className="w-full flex-1 min-h-0 min-w-0 flex items-center justify-center p-6 bg-slate-800 rounded-xl">
           <p className="text-slate-400 italic">Layout padrão: {slide.content || slide.main_text || 'Sem conteúdo'}</p>
         </div>
       );
@@ -165,51 +165,62 @@ export default function NeuroSlide({
 
   if (!data) return null;
 
+  /** Ocupa a área útil do modal (flex) para gradientes com absolute inset-0 preencherem a tela */
+  const shellClass = 'w-full flex-1 min-h-0 min-w-0 flex flex-col';
+
+  let inner: React.ReactNode;
+
   // Se o slide tem o formato novo (com type), usa o Hub com sistema híbrido
   if (normalizedData.type) {
-    return (
-      <div className="w-full min-h-0 min-w-0">
-        <NeuroSlideHub slide={normalizedData} questionHash={hashSource} slideIndex={slideIndex} />
-      </div>
-    );
-  }
-  
-  switch (normalizedData.layout_type) {
-    case 'concept_map':
-      if (normalizedData.items && Array.isArray(normalizedData.items)) {
-        const concepts = normalizedData.items.map((item: any) => ({
-          icon: item.icon || 'HelpCircle',
-          title: item.label || item.title || '',
-          description: item.detail || item.description || ''
-        }));
-        return <ConceptMap concepts={concepts} theme={theme} layoutVariant={normalizedData.layout_variant} />;
+    inner = <NeuroSlideHub slide={normalizedData} questionHash={hashSource} slideIndex={slideIndex} />;
+  } else {
+    switch (normalizedData.layout_type) {
+      case 'concept_map':
+        if (normalizedData.items && Array.isArray(normalizedData.items)) {
+          const concepts = normalizedData.items.map((item: any) => ({
+            icon: item.icon || 'HelpCircle',
+            title: item.label || item.title || '',
+            description: item.detail || item.description || ''
+          }));
+          inner = <ConceptMap concepts={concepts} theme={theme} layoutVariant={normalizedData.layout_variant} />;
+        } else {
+          inner = <ConceptMap concepts={normalizedData.concepts || []} theme={theme} layoutVariant={normalizedData.layout_variant} />;
+        }
+        break;
+      case 'golden_rule':
+        inner = <GoldenRule content={normalizedData.main_text || normalizedData.items?.[0]?.label || normalizedData.footer_rule} theme={theme} layoutVariant={normalizedData.layout_variant} />;
+        break;
+      case 'danger_zone':
+        inner = <DangerZone content={normalizedData.header?.title || normalizedData.footer_rule} theme={theme} layoutVariant={normalizedData.layout_variant} items={normalizedData.items} footerRule={normalizedData.footer_rule} />;
+        break;
+      case 'logic_flow': {
+        const normalizedLogicSteps = Array.isArray(normalizedData.steps) && normalizedData.steps.length > 0
+          ? normalizedData.steps
+          : [];
+        inner = <LogicFlow steps={normalizedLogicSteps} theme={theme} layoutVariant={normalizedData.layout_variant} />;
+        break;
       }
-      return <ConceptMap concepts={normalizedData.concepts || []} theme={theme} layoutVariant={normalizedData.layout_variant} />;
-    case 'golden_rule':
-      return <GoldenRule content={normalizedData.main_text || normalizedData.items?.[0]?.label || normalizedData.footer_rule} theme={theme} layoutVariant={normalizedData.layout_variant} />;
-    case 'danger_zone':
-      return <DangerZone content={normalizedData.header?.title || normalizedData.footer_rule} theme={theme} layoutVariant={normalizedData.layout_variant} items={normalizedData.items} footerRule={normalizedData.footer_rule} />;
-    case 'logic_flow':
-      // Garante que steps é sempre um array válido e não vazio
-      const normalizedLogicSteps = Array.isArray(normalizedData.steps) && normalizedData.steps.length > 0 
-        ? normalizedData.steps 
-        : [];
-      // Tema já foi calculado com slideIndex acima
-      return <LogicFlow steps={normalizedLogicSteps} theme={theme} layoutVariant={normalizedData.layout_variant} />;
-    case 'syllable_scanner':
-      return <SyllableScanner 
-        word={normalizedData.word || ''} 
-        tonicIndex={normalizedData.tonicIndex ?? 0} 
-        rule={normalizedData.rule || normalizedData.footer_rule || ''} 
-        theme={theme}
-      />;
-    case 'versus_arena':
-      return <VersusArena concept_a={normalizedData.concept_a} concept_b={normalizedData.concept_b} theme={theme} />;
-    default:
-      return (
-        <div className="w-full min-h-0 min-w-0 flex items-center justify-center p-6 bg-slate-800 rounded-xl">
-          <p className="text-slate-400 italic">Slide não reconhecido</p>
-        </div>
-      );
+      case 'syllable_scanner':
+        inner = (
+          <SyllableScanner
+            word={normalizedData.word || ''}
+            tonicIndex={normalizedData.tonicIndex ?? 0}
+            rule={normalizedData.rule || normalizedData.footer_rule || ''}
+            theme={theme}
+          />
+        );
+        break;
+      case 'versus_arena':
+        inner = <VersusArena concept_a={normalizedData.concept_a} concept_b={normalizedData.concept_b} theme={theme} />;
+        break;
+      default:
+        inner = (
+          <div className="flex flex-1 items-center justify-center p-6 bg-slate-800 rounded-xl">
+            <p className="text-slate-400 italic">Slide não reconhecido</p>
+          </div>
+        );
+    }
   }
+
+  return <div className={shellClass}>{inner}</div>;
 }

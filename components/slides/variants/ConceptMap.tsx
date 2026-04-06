@@ -120,15 +120,18 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
                   transition={{ delay: i * 0.2, type: 'spring', stiffness: 200 }}
                   className="relative group"
                 >
-                  {/* Átomo */}
-                  <div 
-                    className={`w-28 h-28 md:w-36 md:h-36 rounded-full flex flex-col items-center justify-center text-center p-2 border-4 ${theme.borderColor} bg-slate-900/90 backdrop-blur-xl shadow-2xl z-10 relative`}
+                  {/* Átomo — mobile: mais espaço + quebra de linha para termos longos (ex.: VASOCONSTRIÇÃO) */}
+                  <div
+                    className={`w-[8.75rem] h-[8.75rem] sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full flex flex-col items-center justify-center text-center px-2 py-2 sm:p-2.5 border-4 ${theme.borderColor} bg-slate-900/90 backdrop-blur-xl shadow-2xl z-10 relative overflow-hidden`}
                     style={{ boxShadow: `0 0 30px ${theme.glow}` }}
                   >
-                    <div className={`${theme.iconText} mb-1`}>
-                      <Icon size={20} />
+                    <div className={`${theme.iconText} mb-0.5 shrink-0`}>
+                      <Icon size={18} />
                     </div>
-                    <span className={`font-black text-xs uppercase tracking-widest ${theme.textPrimary}`}>
+                    <span
+                      lang="pt-BR"
+                      className={`font-black uppercase ${theme.textPrimary} w-full max-w-[min(100%,6.75rem)] sm:max-w-[7rem] md:max-w-[7.5rem] text-[9px] leading-tight sm:text-[10px] sm:leading-snug md:text-xs tracking-tight sm:tracking-wide md:tracking-widest break-words [overflow-wrap:anywhere] hyphens-auto`}
+                    >
                       {concept.title}
                     </span>
                   </div>

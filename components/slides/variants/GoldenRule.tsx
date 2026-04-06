@@ -20,7 +20,7 @@ export const GoldenRule = ({ content, theme, layoutVariant = 'center' }: GoldenR
   // VARIANTE 1: CENTER (padrão) - Tipografia gigante centralizada
   if (variant === 'center') {
     return (
-      <div className="w-full min-h-0 min-w-0 flex items-center justify-center p-4 md:p-8 relative">
+      <div className="w-full min-h-full min-w-0 flex flex-1 items-center justify-center p-4 md:p-8 relative">
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-90`} />
         <div
           className={`golden-rule-card relative z-10 w-full max-w-4xl p-6 md:p-12 lg:p-16 rounded-[2rem] md:rounded-[3rem] text-center border-4 ${theme.borderColor} backdrop-blur-sm my-auto`}
@@ -41,7 +41,7 @@ export const GoldenRule = ({ content, theme, layoutVariant = 'center' }: GoldenR
   // VARIANTE 2: COMPACT - Card menor, texto mais denso
   if (variant === 'compact') {
     return (
-      <div className="w-full min-h-0 min-w-0 flex items-center justify-center p-6 md:p-10 relative">
+      <div className="w-full min-h-full min-w-0 flex flex-1 items-center justify-center p-6 md:p-10 relative">
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-70`} />
         <div
           className={`relative z-10 w-full max-w-3xl p-8 md:p-10 rounded-2xl border-2 ${theme.borderColor} backdrop-blur-xl`}
@@ -63,7 +63,7 @@ export const GoldenRule = ({ content, theme, layoutVariant = 'center' }: GoldenR
   // VARIANTE 3: MINIMAL - Apenas texto com borda sutil
   if (variant === 'minimal') {
     return (
-      <div className="w-full min-h-0 min-w-0 flex items-center justify-center p-8 relative">
+      <div className="w-full min-h-full min-w-0 flex flex-1 items-center justify-center p-8 relative">
         <div className={`absolute inset-0 bg-slate-900/95`} />
         <div className={`relative z-10 w-full max-w-2xl py-8 px-6 border-l-4 ${theme.borderColor} pl-8`}>
           <p className={`text-xl md:text-2xl font-semibold ${theme.textPrimary} leading-relaxed italic`}>
@@ -77,7 +77,7 @@ export const GoldenRule = ({ content, theme, layoutVariant = 'center' }: GoldenR
   // VARIANTE 4: BANNER - Estilo faixa/destaque horizontal
   if (variant === 'banner') {
     return (
-      <div className="w-full min-h-0 min-w-0 flex items-center justify-center p-4 relative">
+      <div className="w-full min-h-full min-w-0 flex flex-1 items-center justify-center p-4 relative">
         <div className={`absolute inset-0 bg-gradient-to-r ${theme.primary} opacity-90`} />
         <div className="relative z-10 w-full max-w-5xl flex items-center gap-6 p-6 md:p-8 rounded-2xl border-2 border-white/20">
           <div className={`shrink-0 w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center`}>
@@ -93,7 +93,7 @@ export const GoldenRule = ({ content, theme, layoutVariant = 'center' }: GoldenR
 
   // Fallback: center
   return (
-    <div className="w-full min-h-0 min-w-0 flex items-center justify-center p-4 md:p-8 relative">
+    <div className="w-full min-h-full min-w-0 flex flex-1 items-center justify-center p-4 md:p-8 relative">
       <div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-90`} />
       <div
         className={`relative z-10 w-full max-w-4xl p-6 md:p-12 rounded-[2rem] text-center border-4 ${theme.borderColor} backdrop-blur-sm my-auto`}
