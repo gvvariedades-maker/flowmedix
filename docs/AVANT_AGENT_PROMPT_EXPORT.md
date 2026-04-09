@@ -84,6 +84,8 @@ Sempre **4** slides, nesta ordem lógica de tipos:
 3. `logic_flow` — **`steps` como array de strings** (não objetos `{ id, text }`).
 4. `danger_zone` — `content`, `items` (pegadinhas), `footer_rule`.
 
+**Formato plano:** `items`, `content` e `steps` ficam **no mesmo objeto** que `type`. Não usar um segundo nível `concept_map: { items }`, `golden_rule: { content }`, etc. (contrato `QuestaoCompletaSchema`; importações antigas podem ser normalizadas no servidor).
+
 Em **cada** slide: `"subject": "Enfermagem"` (ou coerente) e `"meta": { "topico": "...", "subtopico": "NOME_EXATO_DA_TABELA" }`.
 
 ---

@@ -55,7 +55,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
     };
 
     return (
-      <div className="w-full min-h-0 min-w-0 flex items-center justify-center p-4 md:p-6 relative">
+      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 md:p-6 relative">
         {/* Background animado com tema */}
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
         
@@ -103,7 +103,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
   // VARIANTE 2: MOLECULAR (Para Morfologia)
   if (variant === 'molecular') {
     return (
-      <div className="w-full min-h-0 min-w-0 flex items-center justify-center p-6 relative">
+      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-6 relative">
         {/* Background animado com tema */}
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
         
@@ -168,7 +168,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
   // VARIANTE 3: BRIDGE (Para Regência)
   if (variant === 'bridge') {
     return (
-      <div className="w-full min-h-0 min-w-0 flex items-center justify-center p-4 md:p-6 relative">
+      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 md:p-6 relative">
         {/* Background animado com tema */}
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
         
@@ -202,7 +202,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
   // VARIANTE: STACK - Layout em coluna (poucos itens)
   if (variant === 'stack') {
     return (
-      <div className="w-full min-h-0 min-w-0 flex items-center justify-center p-4 md:p-6 relative">
+      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 md:p-6 relative">
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
         <motion.div
           initial="hidden"

@@ -4,6 +4,7 @@
 
 import { z, ZodError } from 'zod';
 import * as LucideIcons from 'lucide-react';
+import { normalizeQuestaoSlideArrays } from './reverseStudySlidesNormalize';
 
 // ============================================================================
 // CONSTANTES E HELPERS
@@ -353,19 +354,29 @@ export function questaoPayloadTecconcursosZodError(): ZodError {
   ]);
 }
 
-export const QuestaoCompletaSchema = z
+/** Objeto após parse (sem preprocess). Slides só no formato semântico estrito. */
+export const QuestaoCompletaObjectSchema = z
   .object({
     id: z.string().optional(),
     meta: QuestaoMetaSchema,
     question_data: QuestaoDataSchema,
-    reverse_study_slides: z.array(FlexibleReverseStudySlideSchema).optional(),
-    study_slides: z.array(FlexibleReverseStudySlideSchema).optional(),
+    reverse_study_slides: z.array(ReverseStudySlideSchema).optional(),
+    study_slides: z.array(ReverseStudySlideSchema).optional(),
   })
   .superRefine((data, ctx) => {
     if (payloadContainsTecconcursosReference(data)) {
       ctx.addIssue(TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE);
     }
   });
+
+/**
+ * Aceita payload bruto, achata slides aninhados (`concept_map.items`, etc.) e valida contra o schema estrito.
+ * Laboratório, POST /api/admin/questions e /api/validate-question usam este schema.
+ */
+export const QuestaoCompletaSchema = z
+  .unknown()
+  .transform((val) => normalizeQuestaoSlideArrays(val))
+  .pipe(QuestaoCompletaObjectSchema);
 
 // Schema para Enrollments API
 export const EnrollmentDeleteSchema = z.object({

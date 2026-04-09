@@ -10,6 +10,7 @@ import { SyllableScanner } from '../variants/SyllableScanner';
 import { VersusArena } from '../variants/VersusArena';
 import { getThemeForSlide, calculateLayoutVariant } from './themeGenerator';
 import type { ThemeColors } from './themeGenerator';
+import { normalizeReverseStudySlide } from '@/lib/reverseStudySlidesNormalize';
 
 // ============================================================================
 // COMPONENTE ORQUESTRADOR (O HUB) COM TEMAS HÍBRIDOS
@@ -75,7 +76,7 @@ export const NeuroSlideHub = ({
       return <VersusArena concept_a={slide.concept_a} concept_b={slide.concept_b} theme={theme} />;
     default:
       return (
-        <div className="w-full flex-1 min-h-0 min-w-0 flex items-center justify-center p-6 bg-slate-800 rounded-xl">
+        <div className="flex w-full min-w-0 items-center justify-center rounded-xl bg-slate-800 p-6">
           <p className="text-slate-400 italic">Layout padrão: {slide.content || slide.main_text || 'Sem conteúdo'}</p>
         </div>
       );
@@ -94,29 +95,58 @@ export default function NeuroSlide({
   questionHash?: string;
   slideIndex?: number;
 }) {
-  const safeData = useMemo(() => data ?? {}, [data]);
+  const safeData = useMemo(() => normalizeReverseStudySlide(data ?? {}) as any, [data]);
   const hashSource = questionHash || safeData.id || JSON.stringify(safeData).substring(0, 50) || 'default';
 
   const normalizedData = useMemo(() => {
-    // FORMATO NOVO (Semântico): Se tem 'type' no nível superior, usa diretamente
+    const pickNonEmptySteps = (top: unknown, nested: unknown) => {
+      const a = Array.isArray(top) ? top : [];
+      const b = Array.isArray(nested) ? nested : [];
+      return a.length > 0 ? a : b;
+    };
+
+    const pickItems = (top: unknown, nested: unknown) => {
+      const a = Array.isArray(top) ? top : [];
+      const b = Array.isArray(nested) ? nested : [];
+      return a.length > 0 ? top : b.length > 0 ? nested : top ?? nested;
+    };
+
+    const mapItemsToConcepts = (items: any[] | undefined) =>
+      items?.map((item: any) => ({
+        icon: item.icon || 'HelpCircle',
+        title: item.label || item.title || '',
+        description: item.detail || item.description || '',
+      }));
+
+    // FORMATO NOVO (Semântico), sem bloco structure: pass-through enxuto
     if (safeData.type && !safeData.structure) {
       return {
         ...safeData,
         meta: safeData.meta || {},
-        // Garante que steps é sempre um array válido
         steps: Array.isArray(safeData.steps) ? safeData.steps : [],
-        // Calcula layout_variant automaticamente se não fornecido
         layout_variant: safeData.layout_variant || calculateLayoutVariant(safeData),
       };
     }
 
-    // FORMATO ANTIGO (Com structure): Normaliza para compatibilidade
-    if (safeData.structure) {
-      const structure = safeData.structure;
+    /**
+     * Híbrido / legado: muitos JSONs trazem `type` + `structure` ao mesmo tempo.
+     * Antes só fazíamos `{ ...structure, ...criticalFields }` e perdíamos campos do topo
+     * (`main_text`, `items`, `content`, etc.) — slides ficavam vazios no player.
+     */
+    if (safeData.structure && typeof safeData.structure === 'object') {
+      const structure = safeData.structure as Record<string, any>;
+      const itemsMerged = pickItems(safeData.items, structure.items);
+      const stepsMerged = pickNonEmptySteps(safeData.steps, structure.steps);
+
       const criticalFields = {
         type: safeData.type || safeData.layout_type,
-        steps: safeData.steps || structure.steps || [],
-        content: safeData.content || structure.main_text || structure.content,
+        steps: stepsMerged,
+        content:
+          safeData.content ||
+          safeData.main_text ||
+          structure.main_text ||
+          structure.content,
+        main_text: safeData.main_text || structure.main_text,
         concepts: safeData.concepts,
         layout_variant: safeData.layout_variant,
         word: safeData.word,
@@ -124,38 +154,36 @@ export default function NeuroSlide({
         rule: safeData.rule,
         concept_a: safeData.concept_a,
         concept_b: safeData.concept_b,
-        items: safeData.items || structure.items,
+        items: itemsMerged,
         footer_rule: safeData.footer_rule || structure.footer_rule,
       };
 
-      // Extrai concepts de items se necessário
-      const mappedConcepts = criticalFields.concepts || 
-        (structure.items && structure.items.length > 0 ? structure.items.map((item: any) => ({
-          icon: item.icon || 'HelpCircle',
-          title: item.label || item.title || '',
-          description: item.detail || item.description || ''
-        })) : undefined);
+      const mappedConcepts =
+        criticalFields.concepts ||
+        mapItemsToConcepts(Array.isArray(itemsMerged) ? itemsMerged : undefined);
 
       return {
         ...structure,
+        ...safeData,
         ...criticalFields,
         concepts: mappedConcepts,
         layout_type: safeData.layout_type || safeData.type || 'concept_map',
-        design_system: safeData.design_system, // Mantém para compatibilidade
+        design_system: safeData.design_system,
         meta: safeData.meta || {},
         subject: safeData.subject,
-        // Calcula layout_variant se não fornecido
-        layout_variant: criticalFields.layout_variant || calculateLayoutVariant({
-          type: criticalFields.type,
-          items: criticalFields.items,
-          concepts: mappedConcepts,
-        }),
+        layout_variant:
+          criticalFields.layout_variant ||
+          calculateLayoutVariant({
+            type: criticalFields.type,
+            items: criticalFields.items,
+            concepts: mappedConcepts,
+            steps: criticalFields.steps,
+          }),
       };
     }
 
-    // Fallback: retorna dados como estão
-    return { 
-      ...safeData, 
+    return {
+      ...safeData,
       meta: safeData.meta || {},
       layout_variant: safeData.layout_variant || calculateLayoutVariant(safeData),
     };
@@ -165,8 +193,9 @@ export default function NeuroSlide({
 
   if (!data) return null;
 
-  /** Ocupa a área útil do modal (flex) para gradientes com absolute inset-0 preencherem a tela */
-  const shellClass = 'w-full flex-1 min-h-0 min-w-0 flex flex-col';
+  /** Altura intrínseca do conteúdo; centralização vertical fica no `EstudoReversoSlideZoom` (só quando cabe na viewport). */
+  const shellClass =
+    'box-border flex w-full min-w-0 flex-col items-center px-3 py-6 sm:px-5 sm:py-8 md:px-8 md:py-10';
 
   let inner: React.ReactNode;
 
@@ -215,7 +244,7 @@ export default function NeuroSlide({
         break;
       default:
         inner = (
-          <div className="flex flex-1 items-center justify-center p-6 bg-slate-800 rounded-xl">
+          <div className="flex w-full items-center justify-center rounded-xl bg-slate-800 p-6">
             <p className="text-slate-400 italic">Slide não reconhecido</p>
           </div>
         );

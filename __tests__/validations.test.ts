@@ -130,6 +130,46 @@ describe('Validação de Questões', () => {
       const result = QuestaoCompletaSchema.safeParse(validQuestion);
       expect(result.success).toBe(true);
     });
+
+    it('deve aceitar slides com payload aninhado (normaliza antes do parse estrito)', () => {
+      const question = {
+        meta: {
+          banca: 'FUMARC',
+          topico: 'Enfermagem',
+          subtopico: 'Noções de Fisiologia',
+        },
+        question_data: {
+          instruction: 'Enunciado?',
+          options: [{ id: 'A', text: 'Alternativa A', is_correct: true }],
+        },
+        reverse_study_slides: [
+          {
+            type: 'concept_map',
+            meta: { topico: 'Enfermagem', subtopico: 'Fisiologia' },
+            concept_map: {
+              items: [{ id: '1', icon: 'Globe2', label: 'Item', detail: 'Detalhe' }],
+            },
+          },
+          {
+            type: 'golden_rule',
+            golden_rule: { content: 'REGRA DE OURO' },
+          },
+        ],
+      };
+
+      const result = QuestaoCompletaSchema.safeParse(question);
+      expect(result.success).toBe(true);
+      if (result.success) {
+        const slides = result.data.reverse_study_slides!;
+        expect(slides[0].type).toBe('concept_map');
+        expect('items' in slides[0] && (slides[0] as { items: { label: string }[] }).items[0]?.label).toBe(
+          'Item'
+        );
+        expect(slides[1].type).toBe('golden_rule');
+        expect((slides[1] as { content: string }).content).toBe('REGRA DE OURO');
+        expect('concept_map' in (slides[0] as object)).toBe(false);
+      }
+    });
   });
 
   describe('ConceptMapSlideSchema', () => {

@@ -57,7 +57,7 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
 
   if (!normalizedSteps || normalizedSteps.length === 0) {
     return (
-      <div className="w-full min-h-0 min-w-0 flex items-center justify-center p-6">
+      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-6">
         <p className="text-slate-400">Nenhum passo definido</p>
       </div>
     );
@@ -73,7 +73,7 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
   // VARIANTE: HORIZONTAL - Passos em linha com setas
   if (variant === 'horizontal') {
     return (
-      <div className="w-full min-h-0 min-w-0 flex items-center justify-center p-4 relative">
+      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 relative">
         {baseBg}
         <div className="relative z-10 w-full max-w-6xl flex flex-wrap items-center justify-center gap-2 md:gap-4 py-8">
           {normalizedSteps.map((step, index) => {
@@ -113,7 +113,7 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
   // VARIANTE: CARDS - Grid de cards
   if (variant === 'cards') {
     return (
-      <div className="w-full min-h-0 min-w-0 flex items-center justify-center p-4 relative">
+      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 relative">
         {baseBg}
         <div className="relative z-10 w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-8">
           {normalizedSteps.map((step, index) => {
@@ -147,7 +147,7 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
 
   // VARIANTE PADRÃO: VERTICAL - Pipeline conectado
   return (
-    <div className="w-full min-h-0 min-w-0 flex flex-col items-center justify-start p-4 md:p-6 lg:p-12 relative">
+    <div className="relative flex min-h-full w-full min-w-0 flex-col items-center justify-center p-4 md:p-6 lg:p-12">
       {/* Background com tema e padrão diagonal */}
       <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-60`} />
       <div 

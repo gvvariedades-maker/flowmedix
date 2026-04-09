@@ -39,7 +39,7 @@ export const MorphologicalConceptMap = ({ concepts, theme }: MorphologicalConcep
   const borderColorClass = theme.borderColor;
 
   return (
-    <div className="w-full min-h-0 min-w-0 flex items-center justify-center p-4 md:p-6 relative">
+    <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 md:p-6 relative">
       {/* Background com tema */}
       <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
       

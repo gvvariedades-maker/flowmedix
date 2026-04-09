@@ -14,6 +14,7 @@ import { useState, useEffect, useMemo, useRef, useLayoutEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import NeuroSlide from '@/components/slides/NeuroSlide';
+import { EstudoReversoSlideZoom } from '@/components/lesson/EstudoReversoSlideZoom';
 import { logger } from '@/lib/logger';
 import { sanitizeHTML } from '@/lib/validations';
 import {
@@ -45,6 +46,7 @@ export default function AvantLessonPlayer({
   
   const router = useRouter();
   const bottomNavRef = useRef<HTMLDivElement>(null);
+  const questaoAtualDotRef = useRef<HTMLButtonElement | null>(null);
   const [bottomNavHeightPx, setBottomNavHeightPx] = useState(0);
 
   useLayoutEffect(() => {
@@ -63,6 +65,14 @@ export default function AvantLessonPlayer({
     ro.observe(el);
     return () => ro.disconnect();
   }, [mode, questoesDoAssunto?.length]);
+
+  /** Garante que a bolinha da questão atual fique visível na faixa rolável (listas longas). */
+  useLayoutEffect(() => {
+    if (mode !== 'live' || !questoesDoAssunto?.length) return;
+    const btn = questaoAtualDotRef.current;
+    if (!btn) return;
+    btn.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+  }, [mode, moduloSlug, questoesDoAssunto?.length]);
 
   // ============================================================================
   // ESTADOS (Pure React V15)
@@ -447,14 +457,16 @@ export default function AvantLessonPlayer({
           ref={bottomNavRef}
           className="bg-white border-t border-slate-100 shrink-0 z-10 shadow-[0_-4px_24px_-8px_rgba(15,23,42,0.08)] pb-safe md:rounded-b-[40px]"
         >
-          {/* Dots de status das questões do assunto */}
-          {questoesDoAssunto && questoesDoAssunto.length > 1 && (
-            <div className="flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 pt-3 pb-1 overflow-x-auto">
+          {/* Dots de status das questões do assunto (rolagem horizontal quando não couber; 1 questão também mostra o indicador) */}
+          {questoesDoAssunto && questoesDoAssunto.length > 0 && (
+            <div className="w-full min-w-0 overflow-x-auto overflow-y-visible overscroll-x-contain scroll-smooth pt-3 pb-1">
+              <div className="mx-auto flex w-max min-w-full flex-nowrap items-center justify-center gap-1.5 px-3 sm:gap-2 sm:px-4">
               {questoesDoAssunto.map((q, i) => {
                 const isCurrent = q.slug === moduloSlug;
                 return (
                   <button
                     key={q.slug}
+                    ref={isCurrent ? questaoAtualDotRef : undefined}
                     onClick={() => {
                       const s = fromPlano
                         ? '?from=plano'
@@ -483,6 +495,7 @@ export default function AvantLessonPlayer({
                   </button>
                 );
               })}
+              </div>
             </div>
           )}
           <div className="px-2 sm:px-4 py-3 flex flex-wrap justify-between items-center gap-2">
@@ -622,24 +635,26 @@ export default function AvantLessonPlayer({
                 </div>
               </div>
 
-              {/* Conteúdo Full Immersion — sem transform no motion (quebra scroll em iOS/WebKit); uma única rolagem aqui */}
-              <div className="flex-1 min-h-0 min-w-0 flex flex-col overflow-y-auto overflow-x-hidden overscroll-y-contain relative touch-pan-y custom-scrollbar">
-                <AnimatePresence mode='wait'>
-                  <motion.div 
-                    key={`slide-${slideAtual}-${currentSlide?.type || 'default'}-${JSON.stringify(currentSlide).substring(0, 20)}`}
-                    initial={{ opacity: 0 }} 
-                    animate={{ opacity: 1 }} 
-                    exit={{ opacity: 0 }} 
-                    transition={{ duration: 0.35, ease: 'easeInOut' }}
-                    className="w-full flex-1 min-h-0 flex flex-col"
-                  >
-                    <NeuroSlide 
-                      data={currentSlide} 
-                      questionHash={questionHash}
-                      slideIndex={slideAtual}
-                    />
-                  </motion.div>
-                </AnimatePresence>
+              {/* Conteúdo Full Immersion — rolagem vertical aqui ou no filho; sem overflow-y hidden para não cortar slides altos */}
+              <div className="relative flex min-h-0 min-w-0 flex-1 flex-col overflow-x-hidden">
+                <EstudoReversoSlideZoom slideKey={slideAtual}>
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={`slide-${slideAtual}-${currentSlide?.type || 'default'}-${JSON.stringify(currentSlide).substring(0, 20)}`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.35, ease: 'easeInOut' }}
+                      className="flex w-full min-w-0 flex-col items-center"
+                    >
+                      <NeuroSlide
+                        data={currentSlide}
+                        questionHash={questionHash}
+                        slideIndex={slideAtual}
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                </EstudoReversoSlideZoom>
               </div>
 
               {/* Footer de Navegação (Bottom Bar) */}
