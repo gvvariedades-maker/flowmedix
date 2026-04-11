@@ -8,16 +8,24 @@
  */
 
 import { unstable_cache } from 'next/cache';
-import { createClient } from '@supabase/supabase-js';
+import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { logger } from './logger';
 
 // Cliente Supabase SEM cookies - para uso dentro de unstable_cache.
-// Dados públicos (módulos, questões, fluxogramas) usam anon key.
-// IMPORTANTE: Nunca use cookies() dentro de funções em unstable_cache.
-const supabaseAnon = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+// Lazy: evita createClient com URL/key indefinidos no import (ex.: `next build` / CI sem .env).
+let supabaseAnonSingleton: SupabaseClient | null | undefined;
+
+function getSupabaseAnon(): SupabaseClient | null {
+  if (supabaseAnonSingleton !== undefined) return supabaseAnonSingleton;
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url?.trim() || !key?.trim()) {
+    supabaseAnonSingleton = null;
+    return null;
+  }
+  supabaseAnonSingleton = createClient(url, key);
+  return supabaseAnonSingleton;
+}
 
 // Helper para tracking de métricas (opcional, não bloqueia se não disponível)
 function trackCacheHit(key: string) {
@@ -77,8 +85,12 @@ export const CACHE_CONFIG = {
 // Cache wrapper com tracking
 const modulosCacheFn = unstable_cache(
   async () => {
-    const supabase = supabaseAnon;
-    
+    const supabase = getSupabaseAnon();
+    if (!supabase) {
+      trackCacheMiss('modulos-estudo-list');
+      return [];
+    }
+
     const { data, error } = await supabase
       .from('modulos_estudo')
       .select('id, modulo_slug, modulo_nome, titulo_aula, banca, created_at, avant_codigo')
@@ -114,8 +126,12 @@ export async function getQuestaoBySlugCached(slug: string) {
   
   return unstable_cache(
     async () => {
-      const supabase = supabaseAnon;
-      
+      const supabase = getSupabaseAnon();
+      if (!supabase) {
+        trackCacheMiss(cacheKey);
+        return null;
+      }
+
       // OTIMIZAÇÃO: Seleciona apenas campos necessários (não *)
       const { data, error } = await supabase
         .from('modulos_estudo')
@@ -150,7 +166,11 @@ export async function getQuestoesByAssuntoCached(tituloAula: string) {
 
   return unstable_cache(
     async () => {
-      const supabase = supabaseAnon;
+      const supabase = getSupabaseAnon();
+      if (!supabase) {
+        trackCacheMiss(cacheKey);
+        return [];
+      }
 
       const { data, error } = await supabase
         .from('modulos_estudo')
@@ -186,8 +206,12 @@ export async function getQuestoesByBancaCached(banca: string, moduloNome: string
   
   return unstable_cache(
     async () => {
-      const supabase = supabaseAnon;
-      
+      const supabase = getSupabaseAnon();
+      if (!supabase) {
+        trackCacheMiss(cacheKey);
+        return [];
+      }
+
       let query = supabase
         .from('modulos_estudo')
         .select('modulo_slug, id')
@@ -271,8 +295,11 @@ export async function getFluxogramaByAssuntoCached(assuntoId: string) {
   
   return unstable_cache(
     async () => {
-      const supabase = supabaseAnon;
-      
+      const supabase = getSupabaseAnon();
+      if (!supabase) {
+        return null;
+      }
+
       const { data, error } = await supabase
         .from('exam_contents')
         .select(`
@@ -311,8 +338,12 @@ export async function getFluxogramaByAssuntoCached(assuntoId: string) {
  */
 export const getFluxogramasCached = unstable_cache(
   async () => {
-    const supabase = supabaseAnon;
-    
+    const supabase = getSupabaseAnon();
+    if (!supabase) {
+      trackCacheMiss('fluxogramas-list');
+      return [];
+    }
+
     const { data, error } = await supabase
       .from('flowcharts')
       .select('id, title, slug, modulo_id')

@@ -320,19 +320,31 @@ export const FlexibleReverseStudySlideSchema = z.union([
   LegacyReverseStudySlideSchema,
 ]);
 
-/** Bloqueia domínio e menção ao nome comercial TecConcursos em qualquer string do payload (valores e chaves). */
+/** Domínio / URL sem espaço (ex.: tecconcursos.com.br). */
 const TECONCURSOS_SUBSTRING_RE = /tecconcursos/i;
+/** Marca com espaço — comum em cópia de rodapé do site ("Tec Concursos - Questões para..."). */
+const TECONCURSOS_BRAND_SPACE_RE = /\btec\s+concursos\b/i;
+/** Rodapé típico copiado junto com alternativas no navegador. */
+const TECONCURSOS_FOOTER_TAGLINE_RE =
+  /questões\s+para\s+concursos\s*,\s*provas\s*,\s*editais\s*,\s*simulados/i;
 
 export const TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE =
-  'Conteúdo não permitido: remova referências ao domínio ou nome TecConcursos antes de publicar no AVANT.';
+  'Conteúdo não permitido: remova referências ao TecConcursos (domínio tecconcursos, nome "Tec Concursos" ou rodapé de página copiado) antes de publicar no AVANT.';
+
+function stringContainsBlockedTecconcursosContent(s: string): boolean {
+  if (TECONCURSOS_SUBSTRING_RE.test(s)) return true;
+  if (TECONCURSOS_BRAND_SPACE_RE.test(s)) return true;
+  if (TECONCURSOS_FOOTER_TAGLINE_RE.test(s)) return true;
+  return false;
+}
 
 /**
- * Percorre recursivamente JSON (objeto/array) e detecta "tecconcursos" em qualquer string ou nome de chave.
+ * Percorre recursivamente JSON (objeto/array) e detecta menções ao TecConcursos / rodapé típico em qualquer string ou nome de chave.
  * Deve ser aplicado ao objeto bruto após JSON.parse — campos extras que o Zod descartaria não seriam checados só no schema.
  */
 export function payloadContainsTecconcursosReference(value: unknown): boolean {
   if (typeof value === 'string') {
-    return TECONCURSOS_SUBSTRING_RE.test(value);
+    return stringContainsBlockedTecconcursosContent(value);
   }
   if (value && typeof value === 'object') {
     if (Array.isArray(value)) {

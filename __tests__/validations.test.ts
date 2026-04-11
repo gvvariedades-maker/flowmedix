@@ -63,6 +63,28 @@ describe('Validação de Questões', () => {
       }
     });
 
+    it('deve rejeitar alternativa com marca "Tec Concursos" ou rodapé copiado (espaço no nome)', () => {
+      const badOption = {
+        meta: {
+          banca: 'EBSERH',
+          topico: 'Fundamentos de Enfermagem',
+        },
+        question_data: {
+          instruction: 'Questão de teste',
+          options: [
+            { id: 'A', text: 'Alternativa limpa', is_correct: true },
+            {
+              id: 'B',
+              text: 'C3 a C5. 25/03/2026, 18:37 Tec Concursos - Questões para concursos, provas, editais, simulados.',
+              is_correct: false,
+            },
+          ],
+        },
+      };
+      expect(payloadContainsTecconcursosReference(badOption)).toBe(true);
+      expect(QuestaoCompletaSchema.safeParse(badOption).success).toBe(false);
+    });
+
     it('payloadContainsTecconcursosReference detecta campo extra que o Zod descarta', () => {
       const withHidden = {
         meta: {

@@ -6,7 +6,9 @@ on:
   pull_request:
     branches: [main, develop]
 
-# Variáveis usadas por validate:env, Next e Playwright (webServer build+start)
+# Variáveis alinhadas a lib/env.ts (validateEnv + validateSupabaseUrl) e scripts/validate-env.ts.
+# Obrigatórias no build: NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY (URL válida para new URL()).
+# Usadas em: npm run build, Playwright webServer (npm run build && npm run start no CI).
 env:
   NEXT_PUBLIC_SUPABASE_URL: https://ci-build-placeholder.supabase.co
   NEXT_PUBLIC_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ci-build-placeholder-key
@@ -30,6 +32,8 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
+          NEXT_PUBLIC_SUPABASE_URL: ${{ env.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ env.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
   test-unit:
     runs-on: ubuntu-latest
@@ -77,6 +81,8 @@ jobs:
         run: npm run test:e2e
         env:
           PLAYWRIGHT_TEST_BASE_URL: http://localhost:3000
+          NEXT_PUBLIC_SUPABASE_URL: ${{ env.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ env.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
       - name: Upload test results
         if: always()
