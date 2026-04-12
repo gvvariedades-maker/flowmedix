@@ -59,9 +59,10 @@ export function EstudoReversoSlideZoom({ slideKey, children }: EstudoReversoSlid
   // Alinhar ao topo quando há escala para a rolagem mostrar o slide inteiro a partir do início.
   const justifySlot = centerVertically && !isTextScaled ? 'justify-center' : 'justify-start';
 
+  // Sempre overflow-x-hidden: com a correção de largura (calc(100%/scale)) o conteúdo
+  // se adapta à largura virtual e o zoom o expande de volta ao tamanho da viewport sem overflow.
   const scrollAreaClassName = cn(
-    'relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto overscroll-y-contain touch-pan-y',
-    isTextScaled ? 'overflow-x-auto overscroll-x-contain' : 'overflow-x-hidden'
+    'relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto overscroll-y-contain touch-pan-y overflow-x-hidden'
   );
 
   const slotClassName = cn(
@@ -70,8 +71,17 @@ export function EstudoReversoSlideZoom({ slideKey, children }: EstudoReversoSlid
     'py-3 pb-12 md:py-4 md:pb-16'
   );
 
-  /** `zoom` não está em todos os typings do React; o runtime aceita nos browsers-alvo mobile. */
-  const zoomStyle = scale !== 1 ? ({ zoom: scale } as React.CSSProperties) : undefined;
+  /**
+   * Correção de largura para zoom:
+   * Com zoom = S, os filhos veem a largura do pai (ex.: 375px).
+   * Após zoom visual: 375 × S = overflow.
+   * Solução: wrapper com width = 100% / S → filhos veem 375/S px e
+   * após zoom aparece exatamente 375px — sem corte horizontal.
+   */
+  const zoomStyle: React.CSSProperties | undefined =
+    scale !== 1
+      ? ({ zoom: scale, width: `calc(100% / ${scale})` } as React.CSSProperties)
+      : undefined;
 
   return (
     <div ref={scrollRef} className={scrollAreaClassName}>
@@ -118,12 +128,7 @@ export function EstudoReversoSlideZoom({ slideKey, children }: EstudoReversoSlid
         )}
 
         <div
-          className={cn(
-            'box-border flex min-w-0 flex-col items-center',
-            isTextScaled
-              ? 'w-max min-w-full max-w-none self-center px-2 sm:px-3'
-              : 'w-full max-w-full self-stretch'
-          )}
+          className="box-border flex w-full min-w-0 max-w-full flex-col items-center self-stretch"
           style={zoomStyle}
         >
           {children}

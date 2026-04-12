@@ -70,36 +70,37 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
     </>
   );
 
-  // VARIANTE: HORIZONTAL - Passos em linha com setas
+  // VARIANTE: HORIZONTAL - Passos em coluna (mobile-first: horizontal cortaria o texto com zoom)
   if (variant === 'horizontal') {
     return (
-      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 relative">
+      <div className="w-full min-h-full min-w-0 flex items-start justify-center p-4 relative">
         {baseBg}
-        <div className="relative z-10 w-full max-w-6xl flex flex-wrap items-center justify-center gap-2 md:gap-4 py-8">
+        <div className="relative z-10 w-full max-w-3xl flex flex-col gap-3 py-6">
           {normalizedSteps.map((step, index) => {
             const isRevealed = revealedSteps.includes(index);
             const isLast = index === normalizedSteps.length - 1;
             return (
               <React.Fragment key={index}>
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: isRevealed ? 1 : 0.4, scale: isRevealed ? 1 : 0.9 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: isRevealed ? 1 : 0.4, scale: isRevealed ? 1 : 0.97 }}
                   transition={{ delay: index * 0.15 }}
-                  className={`flex items-center gap-2 px-4 py-3 rounded-xl border-2 ${theme.borderColor} bg-slate-900/80 backdrop-blur-xl max-w-[280px]`}
+                  className={`flex items-start gap-3 px-4 py-3 rounded-xl border-2 ${theme.borderColor} bg-slate-900/80 backdrop-blur-xl min-w-0`}
                   style={{ borderColor: isRevealed ? theme.glow : 'rgba(255,255,255,0.1)' }}
                 >
                   <span className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm bg-gradient-to-br ${theme.primary} text-slate-900`}>
                     {isRevealed ? <CheckCircle2 size={18} /> : index + 1}
                   </span>
-                  <p className={`text-sm font-medium truncate ${isRevealed ? theme.textPrimary : 'text-slate-500'}`}>{step}</p>
+                  <p className={`min-w-0 text-sm font-medium leading-snug break-words [overflow-wrap:anywhere] ${isRevealed ? theme.textPrimary : 'text-slate-500'}`}>{step}</p>
                 </motion.div>
                 {!isLast && (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: isRevealed ? 1 : 0.3 }}
                     transition={{ delay: index * 0.15 + 0.3 }}
+                    className="flex justify-center"
                   >
-                    <ArrowRight className="w-5 h-5" style={{ color: theme.glow }} />
+                    <ArrowDown className="w-4 h-4" style={{ color: theme.glow }} />
                   </motion.div>
                 )}
               </React.Fragment>
@@ -208,7 +209,7 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
                   {/* Step Card */}
                   <motion.div
                     animate={{
-                      scale: isActive ? [1, 1.02, 1] : 1,
+                      scale: isActive ? [1, 1.01, 1] : 1,
                       boxShadow: isActive
                         ? [`0 0 20px ${theme.glow}`, `0 0 40px ${theme.glow}`, `0 0 20px ${theme.glow}`]
                         : `0 0 15px ${theme.glow}40`,
@@ -219,7 +220,7 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
                       repeatDelay: 1,
                     }}
                     className={`
-                      relative rounded-2xl p-6 md:p-8
+                      relative rounded-2xl p-4 md:p-6 min-w-0
                       bg-slate-900/80 backdrop-blur-xl
                       border-2 ${theme.borderColor}
                       transition-all duration-300
@@ -231,7 +232,7 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
                     }}
                   >
                     {/* Número do Step com Glow */}
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-start gap-3 min-w-0">
                       {/* Badge Numérico */}
                       <motion.div
                         animate={{
@@ -240,9 +241,9 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
                         }}
                         transition={{ delay: index * 0.1 + 0.2 }}
                         className={`
-                          flex-shrink-0 w-12 h-12 md:w-14 md:h-14
+                          flex-shrink-0 w-10 h-10 md:w-12 md:h-12
                           rounded-xl flex items-center justify-center
-                          font-black text-lg md:text-xl
+                          font-black text-base md:text-lg
                           bg-gradient-to-br ${theme.primary}
                           text-slate-900
                           relative
@@ -251,20 +252,17 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
                           boxShadow: `0 0 20px ${theme.glow}`,
                         }}
                       >
-                        {/* Ícone de Status */}
                         {isRevealed ? (
                           <motion.div
                             initial={{ scale: 0, rotate: -180 }}
                             animate={{ scale: 1, rotate: 0 }}
                             transition={{ delay: index * 0.1 + 0.4 }}
                           >
-                            <CheckCircle2 className="w-6 h-6 md:w-7 md:h-7" />
+                            <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6" />
                           </motion.div>
                         ) : (
-                          <Circle className="w-6 h-6 md:w-7 md:h-7 opacity-50" />
+                          <Circle className="w-5 h-5 md:w-6 md:h-6 opacity-50" />
                         )}
-                        
-                        {/* Número sobreposto (se não revelado) */}
                         {!isRevealed && (
                           <span className="absolute inset-0 flex items-center justify-center">
                             {index + 1}
@@ -273,14 +271,15 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
                       </motion.div>
 
                       {/* Conteúdo do Step */}
-                      <div className="flex-1 pt-1">
+                      <div className="min-w-0 flex-1 pt-1">
                         <motion.p
                           animate={{
                             color: isRevealed ? theme.textPrimary : 'rgba(148, 163, 184, 0.4)',
                           }}
                           className={`
-                            text-sm md:text-base lg:text-lg
+                            text-sm md:text-base
                             font-medium leading-relaxed
+                            break-words [overflow-wrap:anywhere]
                             ${isRevealed ? theme.textPrimary : 'text-slate-500'}
                             transition-colors duration-300
                           `}
