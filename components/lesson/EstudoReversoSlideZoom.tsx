@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Minus, Plus, RotateCcw } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useCenterIfFitsScroll } from '@/lib/hooks/useCenterIfFitsScroll';
@@ -27,6 +27,10 @@ type EstudoReversoSlideZoomProps = {
 export function EstudoReversoSlideZoom({ slideKey, children }: EstudoReversoSlideZoomProps) {
   const [narrowViewport, setNarrowViewport] = useState(false);
   const [textStep, setTextStep] = useState(0);
+  /** Largura real do container em px — medida com ResizeObserver para evitar
+   *  ambiguidade do calc(100%/scale) quando zoom altera o contexto percentual. */
+  const [containerPx, setContainerPx] = useState(0);
+  const outerWrapperRef = useRef<HTMLDivElement>(null);
 
   const { scrollRef, slotRef, centerVertically } = useCenterIfFitsScroll(
     `${slideKey}-${narrowViewport ? 1 : 0}-${textStep}`
@@ -47,6 +51,17 @@ export function EstudoReversoSlideZoom({ slideKey, children }: EstudoReversoSlid
   useEffect(() => {
     if (!narrowViewport) setTextStep(0);
   }, [narrowViewport]);
+
+  /** Mede largura real do container externo (px absolutos, sem percentuais). */
+  useLayoutEffect(() => {
+    const el = outerWrapperRef.current;
+    if (!el) return;
+    const update = () => setContainerPx(el.offsetWidth);
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   const scale = narrowViewport ? TEXT_SCALE_STEPS[Math.min(textStep, TEXT_SCALE_STEPS.length - 1)] : 1;
   const isTextScaled = scale > 1;
@@ -72,23 +87,19 @@ export function EstudoReversoSlideZoom({ slideKey, children }: EstudoReversoSlid
   );
 
   /**
-   * Dois wrappers para aplicar zoom sem deslocamento horizontal:
+   * Largura em pixels absolutos para o wrapper interno com zoom.
    *
-   * PROBLEMA: slotRef usa `items-center` (align-items: center). Se aplicarmos
-   * `width: calc(100%/scale)` diretamente no filho do slotRef, o CSS flex o
-   * centraliza → item começa a ~49 px da borda esquerda → após zoom o conteúdo
-   * ultrapassa a viewport à direita e o lado esquerdo fica vazio.
-   *
-   * SOLUÇÃO:
-   *  - Externo: `w-full self-stretch` — ocupa 100 % da largura do slotRef,
-   *    elimina o offset de centralização; não é flex com centering.
-   *  - Interno: recebe `zoom + width:calc(100%/scale)` — parte sempre de x=0
-   *    dentro do externo, filhos veem largura virtual (≈276 px) e após zoom
-   *    preenchem exatamente a largura da tela (≈375 px) sem overflow.
+   * Usar calc(100%/scale) é ambíguo: quando `zoom` está ativo o browser pode
+   * resolver `100%` no contexto pós-zoom do pai, produzindo valor errado.
+   * Medir com JS (offsetWidth) e usar px absolutos elimina essa ambiguidade:
+   *   innerWidthPx = containerPx / scale
+   *   após zoom visual: innerWidthPx × scale = containerPx → preenche exato.
    */
+  const innerWidthPx = containerPx > 0 && scale !== 1 ? Math.floor(containerPx / scale) : null;
+
   const zoomStyle: React.CSSProperties | undefined =
-    scale !== 1
-      ? ({ zoom: scale, width: `calc(100% / ${scale})` } as React.CSSProperties)
+    scale !== 1 && innerWidthPx !== null
+      ? ({ zoom: scale, width: `${innerWidthPx}px` } as React.CSSProperties)
       : undefined;
 
   return (
@@ -135,9 +146,9 @@ export function EstudoReversoSlideZoom({ slideKey, children }: EstudoReversoSlid
           </div>
         )}
 
-        {/* Externo: ocupa largura completa, âncora o zoom em x=0 */}
-        <div className="w-full min-w-0 self-stretch">
-          {/* Interno: zoom + largura virtual; sempre parte da borda esquerda */}
+        {/* Externo: largura 100%, mede containerPx, âncora o conteúdo em x=0 */}
+        <div ref={outerWrapperRef} className="w-full min-w-0 self-stretch">
+          {/* Interno: px absolutos (innerWidthPx) + zoom → preenche exato sem overflow */}
           <div className="min-w-0" style={zoomStyle}>
             {children}
           </div>
