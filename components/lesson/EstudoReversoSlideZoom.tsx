@@ -49,17 +49,24 @@ export function EstudoReversoSlideZoom({ slideKey, children }: EstudoReversoSlid
   }, [narrowViewport]);
 
   const scale = narrowViewport ? TEXT_SCALE_STEPS[Math.min(textStep, TEXT_SCALE_STEPS.length - 1)] : 1;
+  const isTextScaled = scale > 1;
 
   const dec = () => setTextStep((s) => Math.max(0, s - 1));
   const inc = () => setTextStep((s) => Math.min(TEXT_SCALE_STEPS.length - 1, s + 1));
   const resetScale = () => setTextStep(0);
 
-  const scrollAreaClassName =
-    'relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto overflow-x-hidden overscroll-y-contain touch-pan-y';
+  // Com zoom > 1 o layout pode ficar maior que a viewport: centralizar verticalmente corta topo/base.
+  // Alinhar ao topo quando há escala para a rolagem mostrar o slide inteiro a partir do início.
+  const justifySlot = centerVertically && !isTextScaled ? 'justify-center' : 'justify-start';
+
+  const scrollAreaClassName = cn(
+    'relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto overscroll-y-contain touch-pan-y',
+    isTextScaled ? 'overflow-x-auto overscroll-x-contain' : 'overflow-x-hidden'
+  );
 
   const slotClassName = cn(
     'relative box-border flex min-h-full w-full max-w-full flex-col items-center',
-    centerVertically ? 'justify-center' : 'justify-start',
+    justifySlot,
     'py-3 pb-12 md:py-4 md:pb-16'
   );
 
@@ -111,7 +118,10 @@ export function EstudoReversoSlideZoom({ slideKey, children }: EstudoReversoSlid
         )}
 
         <div
-          className="flex w-full min-w-0 flex-col items-center"
+          className={cn(
+            'box-border flex w-full min-w-0 max-w-full flex-col items-center self-stretch',
+            isTextScaled && 'px-2 sm:px-3'
+          )}
           style={zoomStyle}
         >
           {children}

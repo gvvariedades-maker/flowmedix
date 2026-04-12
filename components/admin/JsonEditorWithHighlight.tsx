@@ -92,6 +92,7 @@ export function JsonEditorWithHighlight({
       {/* Números de linha */}
       <div
         ref={lineNumbersRef}
+        data-testid="json-editor-gutter"
         className="shrink-0 w-12 bg-slate-100 border-r border-slate-200 overflow-hidden text-right pr-3 py-6 font-mono text-xs text-slate-400 select-none"
         style={{ lineHeight: `${lineHeight}px` }}
       >
@@ -103,6 +104,9 @@ export function JsonEditorWithHighlight({
           return (
             <div
               key={index}
+              data-testid="json-editor-line-number"
+              data-line={lineNum}
+              data-error={hasError ? 'true' : 'false'}
               className={`${
                 isSelected
                   ? 'bg-indigo-100 text-indigo-700 font-bold'

@@ -47,7 +47,46 @@ export default function AvantLessonPlayer({
   const router = useRouter();
   const bottomNavRef = useRef<HTMLDivElement>(null);
   const questaoAtualDotRef = useRef<HTMLButtonElement | null>(null);
+  /** Área com overflow-y-auto (enunciado + alternativas). Ref usada para wheel sobre <button>. */
+  const questionBodyScrollRef = useRef<HTMLDivElement>(null);
+  /** Bloco do botão Confirmar — scroll após escolher alternativa para não exigir rolar manualmente. */
+  const confirmarRespostaRef = useRef<HTMLDivElement>(null);
   const [bottomNavHeightPx, setBottomNavHeightPx] = useState(0);
+
+  /**
+   * Garante que a roda do mouse sempre role o container correto (question body).
+   * Necessário porque:
+   *  - motion.button pode consumir o evento antes do browser calcular o scroll target
+   *  - Sem isso, o Chrome pode tentar rolar ancestrais (ou a página) quando o conteúdo
+   *    não excede a altura do container interno naquele frame.
+   */
+  useEffect(() => {
+    const el = questionBodyScrollRef.current;
+    if (!el) return;
+
+    const LINE_HEIGHT_PX = 16; // fallback para deltaMode LINE
+    const PAGE_HEIGHT_PX = () => el.clientHeight;
+
+    const onWheel = (e: WheelEvent) => {
+      // Converte delta para pixels independente do deltaMode do SO/mouse
+      let delta = e.deltaY;
+      if (e.deltaMode === 1 /* DOM_DELTA_LINE */) delta *= LINE_HEIGHT_PX;
+      if (e.deltaMode === 2 /* DOM_DELTA_PAGE */) delta *= PAGE_HEIGHT_PX();
+
+      // Se ainda há espaço para rolar neste container, toma controle
+      const canScrollDown = delta > 0 && el.scrollTop < el.scrollHeight - el.clientHeight;
+      const canScrollUp   = delta < 0 && el.scrollTop > 0;
+
+      if (canScrollDown || canScrollUp) {
+        el.scrollTop += delta;
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+
+    el.addEventListener('wheel', onWheel, { passive: false });
+    return () => el.removeEventListener('wheel', onWheel);
+  }, []);
 
   useLayoutEffect(() => {
     if (mode !== 'live') {
@@ -91,6 +130,14 @@ export default function AvantLessonPlayer({
     setEstudoConcluido(false);
     setMarcandoConclusao(false);
   }, [dados]);
+
+  /** Após escolher uma alternativa, leva o botão Confirmar para a área visível do scroll. */
+  useLayoutEffect(() => {
+    if (etapa !== 'pergunta' || !selecionada) return;
+    const el = confirmarRespostaRef.current;
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+  }, [selecionada, etapa]);
 
   const examHeaderLine = useMemo(() => {
     if (!dados?.meta) return '';
@@ -266,7 +313,7 @@ export default function AvantLessonPlayer({
   ].filter(Boolean).join('-') || JSON.stringify(dados).substring(0, 100);
 
   return (
-    <div className="w-full flex-1 min-h-0 flex flex-col relative bg-white md:rounded-[40px] shadow-2xl overflow-x-hidden border border-slate-200/60 ring-1 ring-slate-100 font-sans">
+    <div className="w-full h-full flex-1 min-h-0 flex flex-col relative bg-white md:rounded-[40px] shadow-2xl overflow-hidden border border-slate-200/60 ring-1 ring-slate-100 font-sans">
       
       {/* BARRA DE PROGRESSO */}
       <div className="h-2 w-full bg-slate-100 flex shrink-0">
@@ -278,7 +325,11 @@ export default function AvantLessonPlayer({
       </div>
 
       {/* ÁREA DE QUESTÃO (SCROLLÁVEL) */}
-      <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden custom-scrollbar bg-gradient-to-b from-white to-slate-50/50 flex flex-col touch-pan-y">
+      <div
+        ref={questionBodyScrollRef}
+        data-testid="lesson-scroll-body"
+        className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden custom-scrollbar bg-gradient-to-b from-white to-slate-50/50 flex flex-col touch-pan-y"
+      >
         <div className="flex flex-col min-w-0 shrink-0">
           
           {/* Botão Voltar (se mode === 'live') */}
@@ -430,9 +481,10 @@ export default function AvantLessonPlayer({
           {/* BOTÃO CONFIRMAR */}
           {etapa === 'pergunta' && selecionada && (
             <motion.div 
+              ref={confirmarRespostaRef}
               initial={{ y: 20, opacity: 0 }} 
               animate={{ y: 0, opacity: 1 }} 
-              className="flex justify-center pt-2"
+              className="flex justify-center scroll-mt-4 pt-2 pb-6"
             >
               <button 
                 onClick={() => { 

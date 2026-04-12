@@ -1,20 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Monitor, 
-  Smartphone, 
-  RotateCcw, 
-  Play, 
-  Pause,
-  ChevronLeft,
-  ChevronRight,
-  Maximize2,
-  Minimize2,
-  Eye,
-  EyeOff
-} from 'lucide-react';
+import { Eye } from 'lucide-react';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import { PreviewControls } from '@/components/admin/PreviewControls';
 import type { QuestaoCompleta } from '@/types/lesson';
@@ -81,10 +68,40 @@ export function EnhancedPreview({ question, onClose }: EnhancedPreviewProps) {
     setCurrentSlide(0);
   };
 
+  useEffect(() => {
+    const root = previewRef.current;
+    if (!root) return;
+
+    const onWheel = (e: WheelEvent) => {
+      const scrollEl = root.querySelector('[data-testid="lesson-scroll-body"]') as HTMLDivElement | null;
+      const fallbackEl = root.querySelector('[data-testid="preview-scroll-fallback"]') as HTMLDivElement | null;
+      const target = scrollEl ?? fallbackEl;
+
+      if (!target) return;
+
+      const LINE_PX = 16;
+      let delta = e.deltaY;
+      if (e.deltaMode === 1) delta *= LINE_PX;
+      if (e.deltaMode === 2) delta *= target.clientHeight;
+
+      const canScrollDown = delta > 0 && target.scrollTop < target.scrollHeight - target.clientHeight;
+      const canScrollUp = delta < 0 && target.scrollTop > 0;
+
+      if (canScrollDown || canScrollUp) {
+        target.scrollTop += delta;
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+
+    root.addEventListener('wheel', onWheel, { capture: true, passive: false });
+    return () => root.removeEventListener('wheel', onWheel, { capture: true });
+  }, []);
+
   return (
     <div 
       ref={previewRef}
-      className="relative bg-white rounded-xl border-2 border-slate-200 overflow-hidden flex flex-col h-full"
+      className="relative bg-white rounded-xl border-2 border-slate-200 overflow-hidden flex flex-col h-full min-h-0"
     >
       <PreviewControls
         viewMode={viewMode}
@@ -110,25 +127,30 @@ export function EnhancedPreview({ question, onClose }: EnhancedPreviewProps) {
       />
 
       {/* Preview Container */}
-      <div className="flex-1 overflow-hidden bg-slate-100 flex items-center justify-center p-4">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
-          className={`bg-white rounded-xl shadow-2xl overflow-hidden transition-all duration-300 ${
+      <div
+        data-testid="preview-scroll-fallback"
+        className={`flex-1 min-h-0 bg-slate-100 p-4 ${
+          viewMode === 'mobile'
+            ? 'flex items-center justify-center overflow-auto'
+            : 'flex flex-col overflow-y-auto overflow-x-hidden'
+        }`}
+      >
+        {/* div simples — motion.div com scale cria stacking context via transform inline
+            e pode impedir que o wheel event chegue ao overflow-y-auto interno do player */}
+        <div
+          className={`rounded-xl shadow-2xl flex flex-col transition-all duration-300 ${
             viewMode === 'mobile'
-              ? 'w-[375px] h-[667px] max-h-full'
-              : 'w-full h-full max-w-6xl'
+              ? 'w-[375px] h-[667px] max-h-full shrink-0 overflow-hidden'
+              : 'mx-auto w-full h-full max-w-6xl flex-1 min-h-0 overflow-hidden'
           }`}
         >
-          {/* Player - Atualiza quando dados mudam */}
-          <div className="h-full" key={JSON.stringify(question)}>
+          <div className="h-full flex-1 min-h-0 flex flex-col" key={JSON.stringify(question)}>
             <AvantLessonPlayer
               dados={question}
               mode="preview"
             />
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Simulação de Interação */}

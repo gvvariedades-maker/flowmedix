@@ -358,7 +358,7 @@ export default function AvantLaboratory() {
   const invalidBatchCount = batchItems.filter((i) => !i.valid).length;
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans">
+    <div className="h-screen overflow-hidden bg-white text-slate-900 font-sans">
 
       {/* TOAST NOTIFICATION */}
       {toast && (
@@ -491,10 +491,10 @@ export default function AvantLaboratory() {
       </nav>
 
       {/* ÁREA DE TRABALHO */}
-      <main className="max-w-[1800px] mx-auto p-6 grid grid-cols-12 gap-8 h-[calc(100vh-100px)]">
+      <main className="max-w-[1800px] mx-auto p-6 grid grid-cols-12 gap-8 h-[calc(100vh-100px)] [grid-template-rows:1fr]">
 
         {/* EDITOR */}
-        <div className="col-span-12 lg:col-span-4 flex flex-col gap-4">
+        <div className="col-span-12 lg:col-span-4 flex flex-col gap-4 min-h-0 overflow-y-auto">
           <div className="flex items-center justify-between px-2">
             <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 flex items-center gap-2">
               <Code className="w-3 h-3 text-[#4F46E5]" /> Payload Input
@@ -593,8 +593,8 @@ export default function AvantLaboratory() {
         </div>
 
         {/* PREVIEW (individual) / SUMÁRIO DE LOTE */}
-        <div className="col-span-12 lg:col-span-8 flex flex-col gap-4 overflow-hidden">
-          <div className="flex-1 bg-slate-100 border-2 border-slate-200 rounded-[40px] overflow-hidden relative shadow-inner">
+        <div className="col-span-12 lg:col-span-8 flex min-h-0 flex-col gap-4 overflow-hidden">
+          <div className="relative flex min-h-0 flex-1 overflow-hidden rounded-[40px] border-2 border-slate-200 bg-slate-100 shadow-inner">
             {isBatchMode ? (
               /* ------------------------------------------------------------------ */
               /* MODO LOTE: sumário de validação + resultado após publicar           */

@@ -49,11 +49,8 @@ const validQuestionJSON = {
 
 test.describe('Laboratório Admin', () => {
   test.beforeEach(async ({ page }) => {
-    // Navegar para o laboratório
-    await page.goto('/admin/laboratorio');
-    
-    // Aguardar carregamento
-    await page.waitForLoadState('networkidle');
+    await page.goto('/admin/laboratorio', { waitUntil: 'domcontentloaded' });
+    await expect(page.getByText('Payload Input')).toBeVisible({ timeout: 15000 });
   });
 
   test('deve carregar a página do laboratório', async ({ page }) => {
@@ -184,7 +181,7 @@ test.describe('Laboratório Admin', () => {
   });
 
   test('deve destacar linhas com erro no editor', async ({ page }) => {
-    // Colar JSON com erro
+    // JSON sintaticamente válido, porém inválido pelo schema Zod (campos obrigatórios faltando)
     const invalidJSON = `{
       "meta": {
         "banca": "EBSERH"
@@ -193,20 +190,19 @@ test.describe('Laboratório Admin', () => {
         "instruction": ""
       }
     }`;
-    
+
     const jsonInput = page.locator('textarea').first();
     await jsonInput.fill(invalidJSON);
-    
-    // Aguardar validação
-    await page.waitForTimeout(1000);
-    
-    // Verificar se números de linha aparecem (indicando editor com highlight)
-    const lineNumbers = page.locator('[class*="line"]').or(page.locator('text=/^\\d+$/'));
-    
-    // Se o editor com highlight estiver presente, verificar
-    if (await lineNumbers.count() > 0) {
-      // Editor com highlight está funcionando
-      expect(true).toBe(true);
-    }
+
+    await expect(page.getByText(/Erros Encontrados|Erro Encontrado/)).toBeVisible({
+      timeout: 10000,
+    });
+
+    // Gutter marca linhas com data-error (JsonEditorWithHighlight + errorLines do Zod)
+    await expect(
+      page
+        .locator('[data-testid="json-editor-gutter"] [data-testid="json-editor-line-number"][data-error="true"]')
+        .first()
+    ).toBeVisible({ timeout: 5000 });
   });
 });
