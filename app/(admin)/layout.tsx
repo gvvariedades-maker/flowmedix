@@ -6,16 +6,26 @@ import { supabase } from '@/lib/supabase/client';
 import { ADMIN_EMAIL } from '@/lib/constants';
 import { Loader2 } from 'lucide-react';
 
+/**
+ * Em builds de CI com NEXT_PUBLIC_E2E_ADMIN_BYPASS=true a verificação de auth
+ * é ignorada para que os testes Playwright consigam acessar as páginas de admin
+ * sem credenciais reais (o Supabase usa URL placeholder no CI).
+ * Em produção essa variável NUNCA é definida.
+ */
+const E2E_BYPASS = process.env.NEXT_PUBLIC_E2E_ADMIN_BYPASS === 'true';
+
 export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   const router = useRouter();
-  const [loading, setLoading] = useState(true);
-  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [loading, setLoading] = useState(!E2E_BYPASS);
+  const [isAuthorized, setIsAuthorized] = useState(E2E_BYPASS);
 
   useEffect(() => {
+    if (E2E_BYPASS) return;
+
     async function checkAdmin() {
       const { data: { user } } = await supabase.auth.getUser();
       
@@ -25,9 +35,8 @@ export default function AdminLayout({
       }
 
       const userEmail = user.email?.toLowerCase();
-      // O ADMIN_EMAIL deve estar definido em seu arquivo de constantes
       if (userEmail !== ADMIN_EMAIL.toLowerCase()) {
-        router.push('/'); // Redireciona aluno para a Vitrine principal
+        router.push('/');
         return;
       }
 
@@ -50,7 +59,6 @@ export default function AdminLayout({
   if (!isAuthorized) return null;
 
   return (
-    // Removi o bg-black para deixar o fundo branco/cinza do Laboratório brilhar
     <div className="min-h-screen bg-slate-50">
       {children}
     </div>

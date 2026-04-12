@@ -34,6 +34,7 @@ jobs:
           NODE_ENV: production
           NEXT_PUBLIC_SUPABASE_URL: ${{ env.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ env.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_E2E_ADMIN_BYPASS: 'true'
 
   test-unit:
     runs-on: ubuntu-latest
@@ -83,6 +84,8 @@ jobs:
           PLAYWRIGHT_TEST_BASE_URL: http://localhost:3000
           NEXT_PUBLIC_SUPABASE_URL: ${{ env.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ env.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          # Embutido no next build (NEXT_PUBLIC_*) para que o AdminLayout pule auth no CI
+          NEXT_PUBLIC_E2E_ADMIN_BYPASS: 'true'
 
       - name: Upload test results
         if: always()

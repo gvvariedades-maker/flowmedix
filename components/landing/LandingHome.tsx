@@ -18,6 +18,7 @@ import {
   Zap,
 } from 'lucide-react';
 import { SlideStylePreviews } from '@/components/landing/SlideStylePreviews';
+import { TextSizeControl } from '@/components/accessibility/TextSizeControl';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -116,7 +117,8 @@ export function LandingHome() {
             </div>
             <span className="text-xl font-[1000] italic tracking-tighter text-white">AVANT</span>
           </Link>
-          <nav className="flex items-center gap-2 sm:gap-3">
+          <nav className="flex flex-wrap items-center justify-end gap-2 sm:gap-3">
+            <TextSizeControl variant="dark" compact />
             <Link
               href="/login"
               className="text-sm font-bold text-slate-300 hover:text-white px-3 py-2 rounded-lg transition-colors"

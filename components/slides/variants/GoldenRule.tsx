@@ -23,13 +23,13 @@ export const GoldenRule = ({ content, theme, layoutVariant = 'center' }: GoldenR
       <div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-4 md:p-8">
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-90`} />
         <div
-          className={`golden-rule-card relative z-10 w-full max-w-4xl p-6 md:p-12 lg:p-16 rounded-[2rem] md:rounded-[3rem] text-center border-4 ${theme.borderColor} backdrop-blur-sm my-auto`}
+          className={`golden-rule-card relative z-10 w-full min-w-0 max-w-4xl p-6 md:p-12 lg:p-16 rounded-[2rem] md:rounded-[3rem] text-center border-4 ${theme.borderColor} backdrop-blur-sm my-auto overflow-x-auto overscroll-x-contain`}
           style={{ boxShadow: `0 0 80px -20px ${theme.glow}`, minHeight: '300px' }}
         >
-          <div className="golden-rule-shine absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-          <div className="relative z-10">
+          <div className="golden-rule-shine pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+          <div className="relative z-10 min-w-0 px-0.5">
             <Sparkles className={`${theme.iconText} w-16 h-16 mx-auto mb-6 drop-shadow-2xl`} />
-            <h2 className="golden-rule-text text-2xl md:text-4xl lg:text-5xl xl:text-7xl font-black text-white leading-tight uppercase tracking-tighter drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] break-words">
+            <h2 className="golden-rule-text text-2xl md:text-4xl lg:text-5xl xl:text-7xl font-black text-white leading-tight uppercase tracking-tighter break-words [overflow-wrap:anywhere] hyphens-auto drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
               {content}
             </h2>
           </div>
@@ -44,14 +44,14 @@ export const GoldenRule = ({ content, theme, layoutVariant = 'center' }: GoldenR
       <div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-6 md:p-10">
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-70`} />
         <div
-          className={`relative z-10 w-full max-w-3xl p-8 md:p-10 rounded-2xl border-2 ${theme.borderColor} backdrop-blur-xl`}
+          className={`relative z-10 w-full min-w-0 max-w-3xl overflow-x-auto overscroll-x-contain p-8 md:p-10 rounded-2xl border-2 ${theme.borderColor} backdrop-blur-xl`}
           style={{ boxShadow: `0 0 40px ${theme.glow}` }}
         >
-          <div className="flex items-start gap-4">
+          <div className="flex min-w-0 items-start gap-4">
             <div className={`shrink-0 w-12 h-12 rounded-xl ${theme.iconBg} flex items-center justify-center ${theme.iconText}`}>
               <Lightbulb size={24} />
             </div>
-            <p className={`text-lg md:text-xl lg:text-2xl font-bold ${theme.textPrimary} leading-relaxed`}>
+            <p className={`min-w-0 flex-1 text-lg md:text-xl lg:text-2xl font-bold ${theme.textPrimary} leading-relaxed break-words [overflow-wrap:anywhere] hyphens-auto`}>
               {content}
             </p>
           </div>
@@ -65,8 +65,8 @@ export const GoldenRule = ({ content, theme, layoutVariant = 'center' }: GoldenR
     return (
       <div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-8">
         <div className={`absolute inset-0 bg-slate-900/95`} />
-        <div className={`relative z-10 w-full max-w-2xl py-8 px-6 border-l-4 ${theme.borderColor} pl-8`}>
-          <p className={`text-xl md:text-2xl font-semibold ${theme.textPrimary} leading-relaxed italic`}>
+        <div className={`relative z-10 w-full min-w-0 max-w-2xl overflow-x-auto overscroll-x-contain py-8 px-6 border-l-4 ${theme.borderColor} pl-8`}>
+          <p className={`text-xl md:text-2xl font-semibold ${theme.textPrimary} leading-relaxed italic break-words [overflow-wrap:anywhere] hyphens-auto`}>
             {content}
           </p>
         </div>
@@ -79,11 +79,11 @@ export const GoldenRule = ({ content, theme, layoutVariant = 'center' }: GoldenR
     return (
       <div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-4">
         <div className={`absolute inset-0 bg-gradient-to-r ${theme.primary} opacity-90`} />
-        <div className="relative z-10 w-full max-w-5xl flex items-center gap-6 p-6 md:p-8 rounded-2xl border-2 border-white/20">
+        <div className="relative z-10 flex w-full min-w-0 max-w-5xl flex-wrap items-center gap-6 overflow-x-auto overscroll-x-contain p-6 md:p-8 rounded-2xl border-2 border-white/20 sm:flex-nowrap">
           <div className={`shrink-0 w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center`}>
             <Zap className="w-8 h-8 text-white" />
           </div>
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-black text-white uppercase tracking-tight leading-tight">
+          <h2 className="min-w-0 flex-1 text-xl md:text-2xl lg:text-3xl font-black text-white uppercase tracking-tight leading-tight break-words [overflow-wrap:anywhere] hyphens-auto">
             {content}
           </h2>
         </div>
@@ -96,11 +96,11 @@ export const GoldenRule = ({ content, theme, layoutVariant = 'center' }: GoldenR
     <div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-4 md:p-8">
       <div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-90`} />
       <div
-        className={`relative z-10 w-full max-w-4xl p-6 md:p-12 rounded-[2rem] text-center border-4 ${theme.borderColor} backdrop-blur-sm my-auto`}
+        className={`relative z-10 w-full min-w-0 max-w-4xl overflow-x-auto overscroll-x-contain p-6 md:p-12 rounded-[2rem] text-center border-4 ${theme.borderColor} backdrop-blur-sm my-auto`}
         style={{ boxShadow: `0 0 80px -20px ${theme.glow}` }}
       >
         <Sparkles className={`${theme.iconText} w-12 h-12 mx-auto mb-4`} />
-        <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tighter break-words">
+        <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tighter break-words [overflow-wrap:anywhere] hyphens-auto">
           {content}
         </h2>
       </div>

@@ -657,8 +657,8 @@ export default function AvantLessonPlayer({
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex flex-col bg-black/95 backdrop-blur-md pt-safe h-[100dvh] max-h-[100dvh] overscroll-y-contain"
           >
-            {/* Container Full Screen — overflow-hidden no flex pai para o filho scroll ter altura definida */}
-            <div className="w-full flex-1 min-h-0 max-h-[100dvh] flex flex-col overflow-hidden">
+            {/* overflow-y: contido no filho (scroll vertical). overflow-x: auto para texto ampliado (zoom) não ser cortado. */}
+            <div className="w-full flex-1 min-h-0 max-h-[100dvh] flex flex-col overflow-y-hidden overflow-x-auto min-w-0">
               
               {/* Header Minimalista (Top Bar) */}
               <div className="shrink-0 px-4 sm:px-6 md:px-12 pt-3 sm:pt-6 pb-2 flex justify-between items-center gap-2 min-w-0">
@@ -687,8 +687,8 @@ export default function AvantLessonPlayer({
                 </div>
               </div>
 
-              {/* Conteúdo Full Immersion — rolagem vertical aqui ou no filho; sem overflow-y hidden para não cortar slides altos */}
-              <div className="relative flex min-h-0 min-w-0 flex-1 flex-col overflow-x-hidden">
+              {/* Sem overflow-x-hidden: com zoom mobile o conteúdo pode ultrapassar a largura — rolagem horizontal fica no EstudoReversoSlideZoom / pai. */}
+              <div className="relative flex min-h-0 min-w-0 flex-1 flex-col">
                 <EstudoReversoSlideZoom slideKey={slideAtual}>
                   <AnimatePresence mode="wait">
                     <motion.div

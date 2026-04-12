@@ -1,7 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { validateAllEnv } from "@/lib/env";
+import { TextSizeProvider } from "@/components/providers/TextSizeProvider";
+import { buildTextSizeInitScript } from "@/lib/textSizePreference";
 
 // Validar variáveis de ambiente no startup (apenas no servidor)
 if (typeof window === 'undefined') {
@@ -77,7 +80,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Script
+          id="avant-text-size-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: buildTextSizeInitScript() }}
+        />
+        <TextSizeProvider>{children}</TextSizeProvider>
+      </body>
     </html>
   );
 }

@@ -10,6 +10,7 @@ import {
   Menu, X, CalendarDays, BookMarked
 } from 'lucide-react';
 import { getAdminEmail } from '@/lib/constants';
+import { TextSizeControl } from '@/components/accessibility/TextSizeControl';
 
 const supabase = createBrowserClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -145,6 +146,10 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
           )}
         </nav>
 
+        <div className="px-4 pt-3 pb-1 shrink-0">
+          <TextSizeControl />
+        </div>
+
         {/* Rodapé User */}
         <div className="p-4 bg-white border-t border-slate-100">
           <div className="flex items-center gap-2">
@@ -255,6 +260,10 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
           )}
         </nav>
 
+        <div className="px-4 pt-3 pb-1 shrink-0">
+          <TextSizeControl />
+        </div>
+
         {/* Rodapé User */}
         <div className="p-4 bg-white border-t border-slate-100">
           <div className="flex items-center gap-2">
@@ -292,15 +301,18 @@ function DashboardContent({ children }: { children: React.ReactNode }) {
             <Menu size={20} />
           </button>
 
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 bg-indigo-600 rounded-lg flex items-center justify-center">
+          <div className="flex items-center gap-2 min-w-0">
+            <div className="w-7 h-7 bg-indigo-600 rounded-lg flex items-center justify-center shrink-0">
               <Zap size={14} className="text-[#BEF264]" fill="currentColor" />
             </div>
-            <span className="text-base font-[1000] italic tracking-tighter text-slate-900">AVANT</span>
+            <span className="text-base font-[1000] italic tracking-tighter text-slate-900 truncate">AVANT</span>
           </div>
 
-          <div className="w-9 h-9 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-black text-xs">
-            {userInitials}
+          <div className="flex shrink-0 items-center gap-1.5">
+            <TextSizeControl compact className="scale-[0.92] origin-right" />
+            <div className="w-9 h-9 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-black text-xs">
+              {userInitials}
+            </div>
           </div>
         </header>
 

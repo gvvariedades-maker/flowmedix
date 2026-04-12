@@ -119,8 +119,10 @@ export function EstudoReversoSlideZoom({ slideKey, children }: EstudoReversoSlid
 
         <div
           className={cn(
-            'box-border flex w-full min-w-0 max-w-full flex-col items-center self-stretch',
-            isTextScaled && 'px-2 sm:px-3'
+            'box-border flex min-w-0 flex-col items-center',
+            isTextScaled
+              ? 'w-max min-w-full max-w-none self-center px-2 sm:px-3'
+              : 'w-full max-w-full self-stretch'
           )}
           style={zoomStyle}
         >
