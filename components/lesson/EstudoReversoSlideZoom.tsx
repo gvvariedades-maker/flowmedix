@@ -72,11 +72,19 @@ export function EstudoReversoSlideZoom({ slideKey, children }: EstudoReversoSlid
   );
 
   /**
-   * Correção de largura para zoom:
-   * Com zoom = S, os filhos veem a largura do pai (ex.: 375px).
-   * Após zoom visual: 375 × S = overflow.
-   * Solução: wrapper com width = 100% / S → filhos veem 375/S px e
-   * após zoom aparece exatamente 375px — sem corte horizontal.
+   * Dois wrappers para aplicar zoom sem deslocamento horizontal:
+   *
+   * PROBLEMA: slotRef usa `items-center` (align-items: center). Se aplicarmos
+   * `width: calc(100%/scale)` diretamente no filho do slotRef, o CSS flex o
+   * centraliza → item começa a ~49 px da borda esquerda → após zoom o conteúdo
+   * ultrapassa a viewport à direita e o lado esquerdo fica vazio.
+   *
+   * SOLUÇÃO:
+   *  - Externo: `w-full self-stretch` — ocupa 100 % da largura do slotRef,
+   *    elimina o offset de centralização; não é flex com centering.
+   *  - Interno: recebe `zoom + width:calc(100%/scale)` — parte sempre de x=0
+   *    dentro do externo, filhos veem largura virtual (≈276 px) e após zoom
+   *    preenchem exatamente a largura da tela (≈375 px) sem overflow.
    */
   const zoomStyle: React.CSSProperties | undefined =
     scale !== 1
@@ -127,11 +135,12 @@ export function EstudoReversoSlideZoom({ slideKey, children }: EstudoReversoSlid
           </div>
         )}
 
-        <div
-          className="box-border flex w-full min-w-0 max-w-full flex-col items-center self-stretch"
-          style={zoomStyle}
-        >
-          {children}
+        {/* Externo: ocupa largura completa, âncora o zoom em x=0 */}
+        <div className="w-full min-w-0 self-stretch">
+          {/* Interno: zoom + largura virtual; sempre parte da borda esquerda */}
+          <div className="min-w-0" style={zoomStyle}>
+            {children}
+          </div>
         </div>
       </div>
     </div>
