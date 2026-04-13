@@ -78,6 +78,9 @@ export const CACHE_CONFIG = {
   },
 } as const;
 
+/** Limite da lista usada na vitrine (/estudar). Não usar 100: os N mais recentes podem ser só 1–2 assuntos e escondem o restante do catálogo. */
+const MODULOS_ESTUDO_VITRINE_LIMIT = 5000;
+
 /**
  * Cache para lista de módulos de estudo
  * Revalida a cada 5 minutos (dados semi-estáticos)
@@ -95,7 +98,7 @@ const modulosCacheFn = unstable_cache(
       .from('modulos_estudo')
       .select('id, modulo_slug, modulo_nome, titulo_aula, banca, created_at, avant_codigo')
       .order('created_at', { ascending: false })
-      .limit(100);
+      .limit(MODULOS_ESTUDO_VITRINE_LIMIT);
     
     if (error) {
       logger.error('Failed to fetch modules from cache', error);
