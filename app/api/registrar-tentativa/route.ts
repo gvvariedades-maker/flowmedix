@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 import { revalidateTag } from 'next/cache';
+import { CACHE_REVALIDATE_IMMEDIATE } from '@/lib/cache';
 import { logger } from '@/lib/logger';
 
 export async function POST(request: NextRequest) {
@@ -54,8 +55,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Invalida o cache do histórico do usuário imediatamente
-    revalidateTag('historico', {});
-    revalidateTag(`user-${user.id}`, {});
+    revalidateTag('historico', CACHE_REVALIDATE_IMMEDIATE);
+    revalidateTag(`user-${user.id}`, CACHE_REVALIDATE_IMMEDIATE);
 
     return NextResponse.json({ success: true });
   } catch (error) {

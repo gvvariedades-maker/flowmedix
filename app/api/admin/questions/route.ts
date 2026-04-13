@@ -256,6 +256,8 @@ export async function POST(request: NextRequest) {
   if (inserted.length > 0) {
     try {
       await Promise.all([invalidateModulosCache(), invalidateQuestoesCache()]);
+      const { revalidatePath } = await import('next/cache');
+      revalidatePath('/estudar', 'layout');
     } catch (e) {
       logger.warn('Cache revalidation failed (questões foram salvas)', {
         error: e instanceof Error ? e.message : String(e),

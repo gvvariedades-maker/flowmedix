@@ -367,16 +367,23 @@ export const getFluxogramasCached = unstable_cache(
 );
 
 /**
+ * Perfil de revalidação imediata (Next.js 16+).
+ * Um objeto vazio `{}` não é perfil documentado e pode não expirar o cache corretamente.
+ * @see https://nextjs.org/docs/app/api-reference/functions/revalidateTag
+ */
+export const CACHE_REVALIDATE_IMMEDIATE = { expire: 0 } as const;
+
+/**
  * Função helper para invalidar cache por tag
  * Útil para invalidação via webhook do Supabase
  */
 export async function revalidateCache(tags: string[]) {
   const { revalidateTag } = await import('next/cache');
-  
-  tags.forEach((tag) => {
-    revalidateTag(tag, {});
+
+  for (const tag of tags) {
+    revalidateTag(tag, CACHE_REVALIDATE_IMMEDIATE);
     logger.info('Cache invalidated', { tag });
-  });
+  }
 }
 
 /**

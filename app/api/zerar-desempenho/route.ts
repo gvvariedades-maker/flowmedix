@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 import { revalidateTag } from 'next/cache';
+import { CACHE_REVALIDATE_IMMEDIATE } from '@/lib/cache';
 import { logger } from '@/lib/logger';
 
 /**
@@ -51,8 +52,8 @@ export async function POST() {
       return NextResponse.json({ error: 'Não foi possível zerar o desempenho' }, { status: 500 });
     }
 
-    revalidateTag('historico', {});
-    revalidateTag(`user-${user.id}`, {});
+    revalidateTag('historico', CACHE_REVALIDATE_IMMEDIATE);
+    revalidateTag(`user-${user.id}`, CACHE_REVALIDATE_IMMEDIATE);
 
     return NextResponse.json({ success: true });
   } catch (error) {

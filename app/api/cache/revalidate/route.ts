@@ -7,12 +7,13 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { 
-  invalidateModulosCache, 
+import {
+  CACHE_REVALIDATE_IMMEDIATE,
+  invalidateModulosCache,
   invalidateQuestoesCache,
   invalidateFluxogramasCache,
   invalidateHistoricoCache,
-  invalidateAllCache 
+  invalidateAllCache,
 } from '@/lib/cache';
 import { logger } from '@/lib/logger';
 
@@ -83,7 +84,7 @@ export async function POST(request: NextRequest) {
     else if (tags && Array.isArray(tags)) {
       const { revalidateTag } = await import('next/cache');
       tags.forEach((tag: string) => {
-        revalidateTag(tag, {});
+        revalidateTag(tag, CACHE_REVALIDATE_IMMEDIATE);
         logger.info('Cache tag invalidated', { tag });
       });
     }
