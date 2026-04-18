@@ -6,14 +6,31 @@ import { useRouter, usePathname } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  BookOpen,
-  LayoutDashboard, Search, X, Filter,
-  ChevronDown, ChevronUp, ChevronRight, ChevronLeft,
-  CheckCircle2, Circle,
+  LayoutDashboard,
+  Search,
+  X,
+  Filter,
+  ChevronDown,
+  ChevronUp,
+  ChevronRight,
+  ChevronLeft,
+  CheckCircle2,
+  Circle,
 } from 'lucide-react';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
+import { cn } from '@/lib/utils';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 const ASSUNTOS_POR_PAGINA = 12;
+const FILTER_ALL = '__all__';
 
 // ─── Interfaces ───────────────────────────────────────────────────────────────
 
@@ -49,9 +66,9 @@ interface GrupoSubtopico {
   questoes: QuestaoItem[];
   acertos: number;
   erros: number;
-  totalResolvidas: number;  // tentativas registradas
-  totalQuestoes: number;    // total de questões disponíveis
-  trabalhadas: number;      // questões que o aluno abriu/respondeu ao menos uma vez
+  totalResolvidas: number;
+  totalQuestoes: number;
+  trabalhadas: number;
   percentual: number;
   firstSlug: string;
 }
@@ -66,50 +83,51 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const cidadeUrl = searchParams.get('cidade')
-    ? decodeURIComponent(searchParams.get('cidade')!)
-    : 'Treinamento';
 
+  /**
+   * Não ler `searchParams` no primeiro render: no SSR / primeiro paint o cliente pode
+   * divergir da URL real → erro de hidratação. Defaults iguais ao servidor; URL aplica depois.
+   */
+  const [cidadeUrl, setCidadeUrl] = useState('Treinamento');
   const [modulos] = useState<ModuloEstudo[]>(initialModulos);
-  const [searchTerm, setSearchTerm] = useState(searchParams.get('q') ?? '');
-  const [bancaFilter, setBancaFilter] = useState<string>(searchParams.get('banca') ?? '');
-  const [assuntoFilter, setAssuntoFilter] = useState<string>(searchParams.get('assunto') ?? '');
-  const [pagina, setPagina] = useState(() => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [bancaFilter, setBancaFilter] = useState('');
+  const [assuntoFilter, setAssuntoFilter] = useState('');
+  const [pagina, setPagina] = useState(1);
+
+  /** Sincroniza estado com a barra de endereços (abertura, voltar/avançar, links externos). */
+  useEffect(() => {
+    const c = searchParams.get('cidade');
+    setCidadeUrl(c ? decodeURIComponent(c) : 'Treinamento');
+    setSearchTerm(searchParams.get('q') ?? '');
+    setBancaFilter(searchParams.get('banca') ?? '');
+    setAssuntoFilter(searchParams.get('assunto') ?? '');
     const raw = parseInt(searchParams.get('page') || '1', 10);
-    return Number.isFinite(raw) && raw >= 1 ? raw : 1;
-  });
+    setPagina(Number.isFinite(raw) && raw >= 1 ? raw : 1);
+  }, [searchParams]);
 
   const bancas = useMemo(
-    () => [...new Set(modulos.map(m => m.banca).filter(Boolean))].sort((a, b) => a.localeCompare(b)),
+    () => [...new Set(modulos.map((m) => m.banca).filter(Boolean))].sort((a, b) => a.localeCompare(b)),
     [modulos],
   );
   const assuntos = useMemo(
     () =>
-      [...new Set(modulos.map(m => m.titulo_aula).filter((n): n is string => !!n))].sort((a, b) =>
+      [...new Set(modulos.map((m) => m.titulo_aula).filter((n): n is string => !!n))].sort((a, b) =>
         a.localeCompare(b),
       ),
     [modulos],
   );
 
-  const filtrosPrevRef = useRef<{ b: string; a: string; q: string } | null>(null);
-  useEffect(() => {
-    if (filtrosPrevRef.current === null) {
-      filtrosPrevRef.current = { b: bancaFilter, a: assuntoFilter, q: searchTerm };
-      return;
-    }
-    const prev = filtrosPrevRef.current;
-    const mudou =
-      prev.b !== bancaFilter || prev.a !== assuntoFilter || prev.q !== searchTerm;
-    filtrosPrevRef.current = { b: bancaFilter, a: assuntoFilter, q: searchTerm };
-    if (mudou) setPagina(1);
-  }, [bancaFilter, assuntoFilter, searchTerm]);
-
   useEffect(() => {
     const params = new URLSearchParams(searchParams.toString());
-    if (bancaFilter) params.set('banca', bancaFilter); else params.delete('banca');
-    if (assuntoFilter) params.set('assunto', assuntoFilter); else params.delete('assunto');
-    if (searchTerm) params.set('q', searchTerm); else params.delete('q');
-    if (pagina > 1) params.set('page', String(pagina)); else params.delete('page');
+    if (bancaFilter) params.set('banca', bancaFilter);
+    else params.delete('banca');
+    if (assuntoFilter) params.set('assunto', assuntoFilter);
+    else params.delete('assunto');
+    if (searchTerm) params.set('q', searchTerm);
+    else params.delete('q');
+    if (pagina > 1) params.set('page', String(pagina));
+    else params.delete('page');
     const queryString = params.toString();
     const newSearch = queryString ? `?${queryString}` : '';
     if (typeof window !== 'undefined' && window.location.search !== newSearch) {
@@ -119,8 +137,8 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
 
   const filteredModulos = useMemo(() => {
     let result = modulos;
-    if (bancaFilter) result = result.filter(m => m.banca === bancaFilter);
-    if (assuntoFilter) result = result.filter(m => m.titulo_aula === assuntoFilter);
+    if (bancaFilter) result = result.filter((m) => m.banca === bancaFilter);
+    if (assuntoFilter) result = result.filter((m) => m.titulo_aula === assuntoFilter);
     if (searchTerm) {
       const q = searchTerm.trim().toLowerCase();
       const soNumero = q.replace(/^q-?/, '');
@@ -139,11 +157,10 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
     return result;
   }, [modulos, bancaFilter, assuntoFilter, searchTerm]);
 
-  // Agrupa apenas por titulo_aula — 1 card por assunto
   const grupos = useMemo(() => {
     const map = new Map<string, GrupoSubtopico>();
 
-    filteredModulos.forEach(m => {
+    filteredModulos.forEach((m) => {
       const topico = m.modulo_nome || 'Geral';
       const subtopico = m.titulo_aula || 'Sem subtópico';
       const banca = m.banca || '';
@@ -167,7 +184,6 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
 
       const grupo = map.get(key)!;
 
-      // "estudada" = aluno confirmou conclusão do ciclo de estudo reverso
       const status: QuestaoStatus = m.estudoReversoConcluido ? 'estudada' : 'nao_estudada';
 
       grupo.questoes.push({
@@ -180,26 +196,24 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
       grupo.erros += m.stats.total - m.stats.acertos;
       grupo.totalResolvidas += m.stats.total;
       grupo.totalQuestoes += 1;
-      // "trabalhada" = aluno concluiu o ciclo de estudo reverso explicitamente
       if (m.estudoReversoConcluido) grupo.trabalhadas += 1;
       const tentativas = grupo.acertos + grupo.erros;
       grupo.percentual = tentativas > 0 ? Math.round((grupo.acertos / tentativas) * 100) : 0;
     });
 
-    // Ordena dentro de cada grupo: não estudadas primeiro, estudadas depois
-    map.forEach(grupo => {
+    map.forEach((grupo) => {
       grupo.questoes.sort((a, b) => {
         const estudadaA = a.status === 'estudada' ? 1 : 0;
         const estudadaB = b.status === 'estudada' ? 1 : 0;
         return estudadaA - estudadaB;
       });
-      grupo.questoes.forEach((q, i) => { q.numero = i + 1; });
-      // firstSlug = primeira não trabalhada ou primeira errada
+      grupo.questoes.forEach((q, i) => {
+        q.numero = i + 1;
+      });
       grupo.firstSlug = grupo.questoes[0]?.slug ?? grupo.firstSlug;
     });
 
     return Array.from(map.values()).sort((a, b) => {
-      // Prioriza assuntos com mais questões não trabalhadas
       const pendentesA = a.totalQuestoes - a.trabalhadas;
       const pendentesB = b.totalQuestoes - b.trabalhadas;
       if (pendentesB !== pendentesA) return pendentesB - pendentesA;
@@ -230,49 +244,47 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
     vitrineListaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [pagina]);
 
-  const grupoComMaisPendentes = useMemo(() =>
-    grupos.find(g => g.trabalhadas < g.totalQuestoes) ?? null,
-    [grupos],
-  );
-  const showHero = !searchTerm && !bancaFilter && !assuntoFilter && grupoComMaisPendentes !== null;
-
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 pb-24 pb-safe selection:bg-indigo-100 selection:text-indigo-900">
-
-      {/* ── HEADER ── */}
-      <header className="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-6">
-
-          <div className="flex items-center gap-3 sm:gap-4 w-full md:w-auto min-w-0">
-            <div className="p-2.5 sm:p-3 rounded-2xl bg-slate-100 text-indigo-600 border border-slate-200 shrink-0">
-              <LayoutDashboard size={24} />
+    <div className="dashboard-surface min-h-screen bg-background pb-24 pb-safe text-foreground selection:bg-indigo-100 selection:text-indigo-900">
+      {/* Header da página: não sticky — o layout já fixa a barra global (menu / logo / zoom) */}
+      <header className="border-b border-border bg-background/90 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-5 md:flex-row">
+          <div className="flex w-full min-w-0 items-center gap-3 sm:gap-4 md:w-auto">
+            <div className="shrink-0 rounded-xl border border-border bg-muted/60 p-2.5 text-foreground sm:p-3">
+              <LayoutDashboard size={24} className="text-foreground" />
             </div>
             <div className="min-w-0 flex-1 md:flex-none">
-              <h1 className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.25em] sm:tracking-[0.4em] text-slate-400">
-                Painel Tático
-              </h1>
-              <h2 className="text-sm sm:text-lg md:text-xl font-[1000] italic uppercase tracking-tighter text-slate-800 line-clamp-2 md:line-clamp-1 leading-tight">
+              <h1 className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Painel Tático</h1>
+              <h2 className="line-clamp-2 text-lg font-semibold leading-snug tracking-tight text-foreground md:line-clamp-1">
                 Missão: {cidadeUrl}
               </h2>
             </div>
           </div>
 
-          <div className="flex-1 max-w-xl w-full relative group">
+          <div className="group relative w-full max-w-xl flex-1">
             <Search
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-indigo-500 transition-colors"
-              size={20}
+              className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground transition-colors group-focus-within:text-foreground"
+              aria-hidden
             />
-            <input
+            <Input
               type="text"
               placeholder="Assunto, tópico, banca, slug ou Q-…"
               value={searchTerm}
-              onChange={e => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-12 py-3 rounded-2xl bg-slate-100 border border-slate-200 focus:bg-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all font-medium text-slate-700 placeholder:text-slate-400"
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                setPagina(1);
+              }}
+              className="h-11 rounded-2xl border-border/80 pl-11 pr-11"
             />
             {searchTerm && (
               <button
-                onClick={() => setSearchTerm('')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-red-500 transition-colors"
+                type="button"
+                onClick={() => {
+                  setSearchTerm('');
+                  setPagina(1);
+                }}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-colors hover:text-destructive"
+                aria-label="Limpar busca"
               >
                 <X size={16} />
               </button>
@@ -281,94 +293,79 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-6 mt-10 space-y-12">
-
-        {/* ── FILTROS ── */}
-        <section className="flex flex-wrap items-center gap-4">
-          <div className="flex items-center gap-2 text-slate-500">
-            <Filter size={16} />
-            <span className="text-xs font-bold uppercase tracking-widest">Filtros</span>
+      <main className="mx-auto max-w-7xl space-y-8 px-6 pt-8">
+        <section className="space-y-4">
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <Filter size={16} aria-hidden />
+            <span className="text-xs font-medium uppercase tracking-wider">Filtros</span>
           </div>
-          <select
-            value={bancaFilter}
-            onChange={e => setBancaFilter(e.target.value)}
-            className="px-4 py-2 rounded-xl border border-slate-200 bg-white text-sm font-medium text-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 outline-none"
-          >
-            <option value="">Todas as bancas</option>
-            {bancas.map(b => <option key={b} value={b}>{b}</option>)}
-          </select>
-          <select
-            value={assuntoFilter}
-            onChange={e => setAssuntoFilter(e.target.value)}
-            className="px-4 py-2 rounded-xl border border-slate-200 bg-white text-sm font-medium text-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 outline-none min-w-[200px]"
-          >
-            <option value="">Todos os assuntos</option>
-            {assuntos.map(a => <option key={a} value={a}>{a}</option>)}
-          </select>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <Select
+              value={bancaFilter || FILTER_ALL}
+              onValueChange={(v) => {
+                setBancaFilter(v === FILTER_ALL ? '' : v);
+                setPagina(1);
+              }}
+            >
+              <SelectTrigger className="h-11 w-full rounded-xl">
+                <SelectValue placeholder="Todas as bancas" />
+              </SelectTrigger>
+              <SelectContent position="item-aligned">
+                <SelectItem value={FILTER_ALL}>Todas as bancas</SelectItem>
+                {bancas.map((b) => (
+                  <SelectItem key={b} value={b}>
+                    {b}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+
+            <Select
+              value={assuntoFilter || FILTER_ALL}
+              onValueChange={(v) => {
+                setAssuntoFilter(v === FILTER_ALL ? '' : v);
+                setPagina(1);
+              }}
+            >
+              <SelectTrigger className="h-11 w-full rounded-xl">
+                <SelectValue placeholder="Todos os assuntos" />
+              </SelectTrigger>
+              <SelectContent position="item-aligned">
+                <SelectItem value={FILTER_ALL}>Todos os assuntos</SelectItem>
+                {assuntos.map((a) => (
+                  <SelectItem key={a} value={a}>
+                    {a}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
           {(bancaFilter || assuntoFilter) && (
             <button
-              onClick={() => { setBancaFilter(''); setAssuntoFilter(''); }}
-              className="text-xs font-bold text-slate-500 hover:text-indigo-600 uppercase tracking-wider"
+              type="button"
+              onClick={() => {
+                setBancaFilter('');
+                setAssuntoFilter('');
+                setPagina(1);
+              }}
+              className="text-xs font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
             >
               Limpar filtros
             </button>
           )}
         </section>
 
-        {/* ── HERO: PRÓXIMO ASSUNTO A TRABALHAR ── */}
-        <AnimatePresence>
-          {showHero && grupoComMaisPendentes && (
-            <motion.section initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, height: 0 }}>
-              <div className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-4 ml-2">
-                Continue de onde parou
-              </div>
-              <Link href={`/estudar/${grupoComMaisPendentes.firstSlug}`}>
-                <div className="relative group overflow-hidden rounded-[40px] border border-indigo-200 bg-white p-8 md:p-10 transition-all hover:border-indigo-400 hover:shadow-xl hover:shadow-indigo-500/10 cursor-pointer">
-                  <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                    <BookOpen size={120} className="text-indigo-500" />
-                  </div>
-                  <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div className="space-y-3 text-center md:text-left">
-                      <span className="px-4 py-1 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100 text-[10px] font-black uppercase tracking-[0.2em]">
-                        Próximo ciclo de estudo
-                      </span>
-                      <h3 className="text-3xl md:text-4xl font-[1000] italic uppercase tracking-tighter leading-none text-slate-900">
-                        {grupoComMaisPendentes.titulo_aula}
-                      </h3>
-                      <p className="text-slate-500 font-medium max-w-xl text-sm">
-                        <strong className="text-indigo-600">
-                          {grupoComMaisPendentes.totalQuestoes - grupoComMaisPendentes.trabalhadas} questão{(grupoComMaisPendentes.totalQuestoes - grupoComMaisPendentes.trabalhadas) !== 1 ? 'ões' : ''}
-                        </strong>{' '}
-                        ainda não trabalhada{(grupoComMaisPendentes.totalQuestoes - grupoComMaisPendentes.trabalhadas) !== 1 ? 's' : ''} neste assunto.
-                      </p>
-                    </div>
-                    <div className="shrink-0 flex flex-col items-center gap-1">
-                      <ProgressRing
-                        trabalhadas={grupoComMaisPendentes.trabalhadas}
-                        total={grupoComMaisPendentes.totalQuestoes}
-                        size={96}
-                        strokeWidth={10}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </motion.section>
-          )}
-        </AnimatePresence>
-
-        {/* ── VITRINE DE QUESTÕES ── */}
         <section className="space-y-8">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <h3 className="text-xs font-black uppercase tracking-[0.5em] text-indigo-500">
+            <h3 className="text-sm font-semibold tracking-tight text-foreground">
               {searchTerm
                 ? `Resultados para "${searchTerm}"`
                 : bancaFilter || assuntoFilter
                   ? `Filtrado${bancaFilter ? ` • ${bancaFilter}` : ''}${assuntoFilter ? ` • ${assuntoFilter}` : ''}`
-                  : 'Vitrine de Questões'}
+                  : 'Vitrine de questões'}
             </h3>
-            <div className="h-px flex-1 min-w-[4rem] bg-slate-200 hidden sm:block" />
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest w-full sm:w-auto sm:text-right">
+            <div className="hidden min-h-px min-w-[4rem] flex-1 bg-border sm:block" />
+            <span className="w-full text-xs font-medium text-muted-foreground sm:w-auto sm:text-right">
               {totalAssuntos > 0 && totalPaginas > 1
                 ? `Mostrando ${(paginaEfetiva - 1) * ASSUNTOS_POR_PAGINA + 1}–${Math.min(paginaEfetiva * ASSUNTOS_POR_PAGINA, totalAssuntos)} de ${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`
                 : `${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`}
@@ -379,47 +376,49 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
             <>
               <div
                 ref={vitrineListaRef}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+                className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
               >
-                {gruposPagina.map(grupo => (
+                {gruposPagina.map((grupo) => (
                   <SubtopicoCard key={grupo.titulo_aula} grupo={grupo} />
                 ))}
               </div>
               {totalPaginas > 1 && (
                 <nav
-                  className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2 border-t border-slate-200"
+                  className="flex flex-col gap-4 border-t border-border pt-2 sm:flex-row sm:items-center sm:justify-between"
                   aria-label="Paginação da vitrine"
                 >
-                  <p className="text-xs text-slate-500 font-medium order-2 sm:order-1">
+                  <p className="order-2 text-xs font-medium text-muted-foreground sm:order-1">
                     Página {paginaEfetiva} de {totalPaginas}
                   </p>
-                  <div className="flex items-center gap-2 order-1 sm:order-2 sm:ml-auto">
-                    <button
+                  <div className="order-1 flex items-center gap-2 sm:order-2 sm:ml-auto">
+                    <Button
                       type="button"
+                      variant="outline"
                       disabled={paginaEfetiva <= 1}
-                      onClick={() => setPagina(p => Math.max(1, p - 1))}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-200 bg-white text-sm font-bold text-slate-700 hover:border-indigo-300 hover:text-indigo-700 disabled:opacity-40 disabled:pointer-events-none transition-colors"
+                      onClick={() => setPagina((p) => Math.max(1, p - 1))}
+                      className="rounded-xl"
                     >
-                      <ChevronLeft size={18} />
+                      <ChevronLeft size={18} className="mr-1" />
                       Anterior
-                    </button>
-                    <button
+                    </Button>
+                    <Button
                       type="button"
+                      variant="outline"
                       disabled={paginaEfetiva >= totalPaginas}
-                      onClick={() => setPagina(p => Math.min(totalPaginas, p + 1))}
-                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-200 bg-white text-sm font-bold text-slate-700 hover:border-indigo-300 hover:text-indigo-700 disabled:opacity-40 disabled:pointer-events-none transition-colors"
+                      onClick={() => setPagina((p) => Math.min(totalPaginas, p + 1))}
+                      className="rounded-xl"
                     >
                       Próxima
-                      <ChevronRight size={18} />
-                    </button>
+                      <ChevronRight size={18} className="ml-1" />
+                    </Button>
                   </div>
                 </nav>
               )}
             </>
           ) : (
-            <div className="flex flex-col items-center justify-center py-20 text-slate-400">
-              <Search size={48} className="mb-4 opacity-20" />
-              <p className="font-bold">Nenhum assunto encontrado.</p>
+            <div className="flex flex-col items-center justify-center py-20 text-muted-foreground">
+              <Search size={48} className="mb-4 opacity-30" aria-hidden />
+              <p className="font-medium">Nenhum assunto encontrado.</p>
             </div>
           )}
         </section>
@@ -449,18 +448,17 @@ function ProgressRing({
   const filled = pct * circumference;
   const todas = trabalhadas === total && total > 0;
 
-  // Cor: cinza → indigo parcial → verde completo
   const corArco = todas ? '#22c55e' : '#6366f1';
 
   return (
     <div className="relative flex items-center justify-center" style={{ width: size, height: size }}>
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-        {/* Trilha */}
-        <circle cx={cx} cy={cy} r={r} fill="none" stroke="#e2e8f0" strokeWidth={strokeWidth} />
-        {/* Progresso */}
+        <circle cx={cx} cy={cy} r={r} fill="none" stroke="hsl(var(--border))" strokeWidth={strokeWidth} />
         {trabalhadas > 0 && (
           <circle
-            cx={cx} cy={cy} r={r}
+            cx={cx}
+            cy={cy}
+            r={r}
             fill="none"
             stroke={corArco}
             strokeWidth={strokeWidth}
@@ -471,30 +469,22 @@ function ProgressRing({
           />
         )}
       </svg>
-      {/* Centro */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center select-none">
-        <span style={{
-          fontSize: size >= 120 ? '1.6rem' : '1.1rem',
-          fontWeight: 900,
-          color: todas ? '#16a34a' : '#3730a3',
-          lineHeight: 1,
-          fontStyle: 'italic',
-        }}>
+      <div className="absolute inset-0 flex select-none flex-col items-center justify-center">
+        <span
+          className={cn(
+            'leading-none font-bold tabular-nums',
+            todas ? 'text-lg text-green-600 sm:text-xl' : 'text-lg text-indigo-700 sm:text-xl',
+          )}
+          style={{ fontSize: size >= 120 ? '1.5rem' : '1.1rem' }}
+        >
           {trabalhadas}
         </span>
-        <span style={{
-          fontSize: size >= 120 ? '0.55rem' : '0.42rem',
-          fontWeight: 700,
-          color: '#94a3b8',
-          letterSpacing: '0.08em',
-          textTransform: 'uppercase',
-          marginTop: '3px',
-        }}>
+        <span className="mt-1 text-[0.55rem] font-medium uppercase tracking-wide text-muted-foreground sm:text-[0.6rem]">
           de {total}
         </span>
         {todas && (
-          <span style={{ fontSize: '0.42rem', fontWeight: 800, color: '#16a34a', letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '2px' }}>
-            completo ✓
+          <span className="mt-0.5 text-[0.5rem] font-semibold uppercase tracking-wide text-green-600">
+            Completo
           </span>
         )}
       </div>
@@ -502,158 +492,180 @@ function ProgressRing({
   );
 }
 
-// ─── Badge de status individual da questão ────────────────────────────────────
-
 function StatusBadge({ status }: { status: QuestaoStatus }) {
-  if (status === 'estudada') return <CheckCircle2 size={15} className="text-indigo-400 shrink-0" />;
-  return <Circle size={15} className="text-slate-300 shrink-0" />;
+  if (status === 'estudada') return <CheckCircle2 size={15} className="shrink-0 text-indigo-500" />;
+  return <Circle size={15} className="shrink-0 text-muted-foreground/40" />;
 }
 
-// ─── SubtopicoCard ────────────────────────────────────────────────────────────
-
 function SubtopicoCard({ grupo }: { grupo: GrupoSubtopico }) {
-  const [expandido, setExpandido] = useState(false);
-  const router = useRouter();
-  const {
-    titulo_aula, acertos, erros,
-    totalResolvidas, totalQuestoes, trabalhadas,
-    questoes, firstSlug,
-  } = grupo;
+  const [assuntoExpandido, setAssuntoExpandido] = useState(false);
+  const [questoesExpandido, setQuestoesExpandido] = useState(false);
+  const { titulo_aula, totalResolvidas, totalQuestoes, trabalhadas, questoes, firstSlug } = grupo;
 
   const todas = trabalhadas === totalQuestoes && totalQuestoes > 0;
   const pendentes = totalQuestoes - trabalhadas;
-
-  // Navega para a primeira questão não estudada ao clicar no card
-  const handleCardClick = () => router.push(`/estudar/${firstSlug}`);
+  const panelId = `assunto-panel-${firstSlug}`;
+  const toggleAssunto = () => {
+    setAssuntoExpandido((prev) => {
+      const next = !prev;
+      if (!next) setQuestoesExpandido(false);
+      return next;
+    });
+  };
 
   return (
     <motion.div
       layout
-      initial={{ opacity: 0, y: 16 }}
+      initial={false}
       animate={{ opacity: 1, y: 0 }}
       transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-      onClick={handleCardClick}
-      className={`bg-white rounded-3xl p-5 flex flex-col gap-4 transition-all border cursor-pointer
-        ${todas
+      className={cn(
+        'flex flex-col gap-3 rounded-3xl border bg-card p-4 transition-all sm:gap-4 sm:p-5',
+        todas
           ? 'border-green-200 hover:border-green-300 hover:shadow-lg hover:shadow-green-500/10'
-          : 'border-slate-200 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-500/10'
-        }`}
+          : 'border-border hover:border-indigo-300/50 hover:shadow-lg hover:shadow-indigo-500/10',
+      )}
     >
-      {/* Breadcrumb + badge de status */}
-      <div className="flex items-start justify-between gap-2">
-        <p className="text-[9px] font-black uppercase tracking-widest text-indigo-500 leading-snug flex-1">
-          Questões — Assunto{' '}
-          <span className="text-slate-700">({titulo_aula})</span>
-        </p>
-        {todas && (
-          <span className="shrink-0 text-[8px] font-black uppercase tracking-widest bg-green-50 text-green-600 px-2 py-0.5 rounded-md border border-green-100">
-            Completo
-          </span>
-        )}
-        {!todas && pendentes > 0 && (
-          <span className="shrink-0 text-[8px] font-black uppercase tracking-widest bg-indigo-50 text-indigo-500 px-2 py-0.5 rounded-md border border-indigo-100">
-            {pendentes} pendente{pendentes !== 1 ? 's' : ''}
-          </span>
-        )}
-      </div>
-
-      {/* Anel de progresso */}
-      <div className="flex justify-center">
-        <ProgressRing trabalhadas={trabalhadas} total={totalQuestoes} />
-      </div>
-
-      {/* Label principal: foco no método */}
-      <div className="text-center -mt-1">
-        <p className="text-[10px] font-black uppercase tracking-widest text-slate-500">
-          questões trabalhadas
-        </p>
-      </div>
-
-      {/* Botão expandir — bloqueia propagação para não navegar ao clicar */}
       <button
-        onClick={e => { e.stopPropagation(); setExpandido(v => !v); }}
-        className="flex items-center justify-between w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-100 hover:bg-indigo-50 hover:border-indigo-200 transition-all text-slate-600 hover:text-indigo-600"
+        type="button"
+        aria-expanded={assuntoExpandido}
+        aria-controls={panelId}
+        onClick={toggleAssunto}
+        className="flex w-full items-start justify-between gap-4 rounded-xl border border-border/70 bg-muted/30 px-4 py-3 text-left transition-colors hover:bg-muted/60"
       >
-        <span className="text-[9px] font-black uppercase tracking-widest">
-          {expandido ? 'Ocultar questões' : `Ver ${totalQuestoes} questão${totalQuestoes !== 1 ? 'ões' : ''}`}
+        <span
+          className={cn(
+            'text-xl font-semibold leading-tight tracking-tight text-foreground sm:text-lg',
+            assuntoExpandido ? 'line-clamp-none' : 'line-clamp-3 sm:line-clamp-2',
+          )}
+        >
+          {titulo_aula}
         </span>
-        {expandido ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+        {assuntoExpandido ? (
+          <ChevronUp size={20} className="mt-0.5 shrink-0 text-muted-foreground" />
+        ) : (
+          <ChevronDown size={20} className="mt-0.5 shrink-0 text-muted-foreground" />
+        )}
       </button>
 
-      {/* Lista expansível de questões */}
       <AnimatePresence>
-        {expandido && (
+        {assuntoExpandido && (
           <motion.div
+            id={panelId}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22, ease: 'easeInOut' }}
-            className="overflow-hidden"
+            className="space-y-3 overflow-hidden sm:space-y-4"
           >
-            <div className="space-y-1.5 pt-1">
-              {questoes.map(q => {
-                const estudada = q.status === 'estudada';
-                return (
-                  <Link
-                    key={q.slug}
-                    href={`/estudar/${q.slug}`}
-                    onClick={e => e.stopPropagation()}
-                    className={`flex items-center gap-3 px-3 py-2 rounded-xl border transition-all group
-                      ${estudada
-                        ? 'border-indigo-100 bg-indigo-50 hover:border-indigo-300'
-                        : 'border-slate-100 bg-slate-50 hover:border-indigo-200 hover:bg-indigo-50'
-                      }`}
-                  >
-                    <StatusBadge status={q.status} />
-                    <span className={`flex-1 text-[10px] font-black uppercase tracking-wider flex flex-wrap items-center gap-x-2 gap-y-0.5 min-w-0
-                      ${estudada ? 'text-indigo-600' : 'text-slate-600'}`}>
-                      <span>Questão {String(q.numero).padStart(2, '0')}</span>
-                      {formatAvantCodigo(q.avant_codigo) && (
-                        <span className="font-mono text-[9px] text-indigo-500 bg-indigo-50 px-1.5 py-0.5 rounded-md border border-indigo-100">
-                          {formatAvantCodigo(q.avant_codigo)}
-                        </span>
-                      )}
-                    </span>
-                    {!estudada && (
-                      <span className="text-[8px] font-bold text-slate-400 uppercase tracking-wider">
-                        iniciar
-                      </span>
-                    )}
-                    {estudada && (
-                      <span className="text-[8px] font-bold text-indigo-400 uppercase tracking-wider">
-                        revisitar
-                      </span>
-                    )}
-                    <ChevronRight size={12} className="shrink-0 opacity-30 group-hover:opacity-80 transition-opacity text-slate-400" />
-                  </Link>
-                );
-              })}
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              {todas && (
+                <span className="shrink-0 rounded-md border border-green-200 bg-green-50 px-2 py-0.5 text-[10px] font-medium text-green-700">
+                  Completo
+                </span>
+              )}
+              {!todas && pendentes > 0 && (
+                <span className="shrink-0 rounded-md border border-indigo-100 bg-indigo-50 px-2 py-0.5 text-[10px] font-medium text-indigo-700">
+                  {pendentes} pendente{pendentes !== 1 ? 's' : ''}
+                </span>
+              )}
+              <Button asChild variant="outline" size="sm" className="ml-auto rounded-xl">
+                <Link href={`/estudar/${firstSlug}`}>Entrar no assunto</Link>
+              </Button>
+            </div>
+
+            <div className="flex justify-center">
+              <ProgressRing trabalhadas={trabalhadas} total={totalQuestoes} size={120} strokeWidth={14} />
+            </div>
+
+            <div className="-mt-1 text-center">
+              <p className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+                Questões trabalhadas
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setQuestoesExpandido((v) => !v)}
+              className="flex w-full items-center justify-between rounded-xl border border-border bg-muted/40 px-3 py-2 text-sm text-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              <span className="text-xs font-medium">
+                {questoesExpandido
+                  ? 'Ocultar questões'
+                  : `Ver ${totalQuestoes} questão${totalQuestoes !== 1 ? 'ões' : ''}`}
+              </span>
+              {questoesExpandido ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+            </button>
+
+            <AnimatePresence>
+              {questoesExpandido && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.22, ease: 'easeInOut' }}
+                  className="overflow-hidden"
+                >
+                  <div className="max-h-[min(50vh,20rem)] space-y-1.5 overflow-y-auto overscroll-contain pt-1 pr-1">
+                    {questoes.map((q) => {
+                      const estudada = q.status === 'estudada';
+                      return (
+                        <Link
+                          key={q.slug}
+                          href={`/estudar/${q.slug}`}
+                          className={cn(
+                            'group flex items-center gap-3 rounded-xl border px-3 py-2 transition-all',
+                            estudada
+                              ? 'border-indigo-100 bg-indigo-50 hover:border-indigo-300'
+                              : 'border-border bg-muted/30 hover:border-indigo-200 hover:bg-indigo-50/80',
+                          )}
+                        >
+                          <StatusBadge status={q.status} />
+                          <span
+                            className={cn(
+                              'flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-0.5 text-xs font-medium',
+                              estudada ? 'text-indigo-800' : 'text-foreground',
+                            )}
+                          >
+                            <span>Questão {String(q.numero).padStart(2, '0')}</span>
+                            {formatAvantCodigo(q.avant_codigo) && (
+                              <span className="rounded-md border border-indigo-100 bg-indigo-50 px-1.5 py-0.5 font-mono text-[10px] text-indigo-700">
+                                {formatAvantCodigo(q.avant_codigo)}
+                              </span>
+                            )}
+                          </span>
+                          {!estudada && (
+                            <span className="text-[10px] font-medium text-muted-foreground">Iniciar</span>
+                          )}
+                          {estudada && <span className="text-[10px] font-medium text-indigo-600">Revisitar</span>}
+                          <ChevronRight
+                            size={12}
+                            className="shrink-0 text-muted-foreground opacity-40 transition-opacity group-hover:opacity-80"
+                          />
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            <div className="flex items-center justify-between gap-2 border-t border-border pt-2">
+              <span className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+                {totalQuestoes} questão{totalQuestoes !== 1 ? 'ões' : ''} no assunto
+              </span>
+              {totalResolvidas === 0 && (
+                <span className="text-[10px] font-medium text-muted-foreground/70">Não iniciado</span>
+              )}
+              {totalResolvidas > 0 && !todas && (
+                <span className="text-[10px] font-medium text-indigo-600">Em progresso</span>
+              )}
+              {todas && <span className="text-[10px] font-medium text-green-600">Concluído</span>}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Rodapé */}
-      <div className="flex items-center justify-between pt-2 border-t border-slate-100 gap-2">
-        <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">
-          {totalQuestoes} questão{totalQuestoes !== 1 ? 'ões' : ''} no assunto
-        </span>
-        {totalResolvidas === 0 && (
-          <span className="text-[9px] font-bold uppercase tracking-widest text-slate-300">
-            não iniciado
-          </span>
-        )}
-        {totalResolvidas > 0 && !todas && (
-          <span className="text-[9px] font-bold uppercase tracking-widest text-indigo-400">
-            em progresso
-          </span>
-        )}
-        {todas && (
-          <span className="text-[9px] font-bold uppercase tracking-widest text-green-500">
-            concluído ✓
-          </span>
-        )}
-      </div>
     </motion.div>
   );
 }

@@ -143,6 +143,13 @@ export function generateSuggestions(error: ValidationError, jsonData?: any): Sug
           message: 'Adicione o campo "type" ao slide. Valores válidos: concept_map, logic_flow, golden_rule, danger_zone, syllable_scanner, versus_arena',
           confidence: 'high',
         });
+      } else if (error.message.includes('duplicados') && path.includes('options')) {
+        suggestions.push({
+          type: 'fix',
+          message:
+            'Remova entradas repetidas em "question_data.options" ou ajuste os "id" para que cada alternativa tenha uma letra/código único (A, B, C...). Evite colar gabaritos V/F de outra questão no mesmo array.',
+          confidence: 'high',
+        });
       }
       break;
   }

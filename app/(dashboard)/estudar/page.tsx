@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import VitrineClient from '@/components/vitrine/VitrineClient';
 import { 
   getModulosEstudoCached, 
@@ -88,6 +89,29 @@ export default async function VitrinePage() {
   }).sort((a: any, b: any) => b.stats.priorityScore - a.stats.priorityScore);
 
   return (
-    <VitrineClient initialModulos={modulosProcessados} />
+    <Suspense fallback={<VitrineLoadingFallback />}>
+      <VitrineClient initialModulos={modulosProcessados} />
+    </Suspense>
+  );
+}
+
+/** Evita mismatch de hidratação com `useSearchParams` (Next exige Suspense no segmento). */
+function VitrineLoadingFallback() {
+  return (
+    <div className="dashboard-surface min-h-screen bg-background px-6 py-8 text-foreground">
+      <div className="mx-auto max-w-7xl space-y-8 animate-pulse">
+        <div className="h-24 rounded-xl bg-muted/70" />
+        <div className="h-11 max-w-xl rounded-2xl bg-muted/70" />
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="h-11 rounded-xl bg-muted/70" />
+          <div className="h-11 rounded-xl bg-muted/70" />
+        </div>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div key={i} className="h-72 rounded-3xl bg-muted/50" />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

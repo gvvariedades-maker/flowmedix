@@ -121,20 +121,39 @@ export const QuestaoOptionSchema = z.object({
   is_correct: z.boolean(),
 });
 
-export const QuestaoDataSchema = z.object({
-  instruction: z.string()
-    .min(1, 'Instrução é obrigatória')
-    .max(LIMITS.INSTRUCTION_MAX, `Instrução deve ter no máximo ${LIMITS.INSTRUCTION_MAX} caracteres`),
-  text_fragment: z.string()
-    .max(LIMITS.TEXT_FRAGMENT_MAX, `Fragmento de texto deve ter no máximo ${LIMITS.TEXT_FRAGMENT_MAX} caracteres`)
-    .transform((val) => {
-      if (!val) return val;
-      return sanitizeHTML(val);
-    })
-    .nullable()
-    .optional(),
-  options: z.array(QuestaoOptionSchema).min(1, 'Deve ter pelo menos uma alternativa').max(10, 'Máximo de 10 alternativas'),
-});
+export const QuestaoDataSchema = z
+  .object({
+    instruction: z.string()
+      .min(1, 'Instrução é obrigatória')
+      .max(LIMITS.INSTRUCTION_MAX, `Instrução deve ter no máximo ${LIMITS.INSTRUCTION_MAX} caracteres`),
+    text_fragment: z.string()
+      .max(LIMITS.TEXT_FRAGMENT_MAX, `Fragmento de texto deve ter no máximo ${LIMITS.TEXT_FRAGMENT_MAX} caracteres`)
+      .transform((val) => {
+        if (!val) return val;
+        return sanitizeHTML(val);
+      })
+      .nullable()
+      .optional(),
+    options: z.array(QuestaoOptionSchema).min(1, 'Deve ter pelo menos uma alternativa').max(10, 'Máximo de 10 alternativas'),
+  })
+  .superRefine((data, ctx) => {
+    const idToIndices = new Map<string, number[]>();
+    data.options.forEach((opt, index) => {
+      const list = idToIndices.get(opt.id) ?? [];
+      list.push(index);
+      idToIndices.set(opt.id, list);
+    });
+    const duplicateIds = [...idToIndices.entries()]
+      .filter(([, indices]) => indices.length > 1)
+      .map(([id]) => id);
+    if (duplicateIds.length > 0) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: `IDs de alternativa duplicados: ${duplicateIds.join(', ')}. Cada item em "options" deve ter um "id" único (ex.: A, B, C...).`,
+        path: ['options'],
+      });
+    }
+  });
 
 // ============================================================================
 // SCHEMAS PARA REVERSE STUDY SLIDES (Formato Semântico)

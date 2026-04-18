@@ -38,6 +38,35 @@ describe('Validação de Questões', () => {
       expect(result.success).toBe(true);
     });
 
+    it('deve rejeitar options com id de alternativa duplicado', () => {
+      const bad = {
+        meta: {
+          banca: 'EBSERH',
+          topico: 'Fundamentos de Enfermagem',
+          subtopico: 'Sintaxe',
+        },
+        question_data: {
+          instruction: 'Qual é a resposta?',
+          options: [
+            { id: 'A', text: 'Primeira A', is_correct: false },
+            { id: 'A', text: 'Segunda A', is_correct: true },
+            { id: 'B', text: 'B', is_correct: false },
+          ],
+        },
+      };
+      const result = QuestaoCompletaSchema.safeParse(bad);
+      expect(result.success).toBe(false);
+      if (!result.success) {
+        expect(
+          result.error.issues.some(
+            (i) =>
+              i.path.join('.') === 'question_data.options' &&
+              i.message.includes('duplicados')
+          )
+        ).toBe(true);
+      }
+    });
+
     it('deve rejeitar menção a TecConcursos no conteúdo conhecido pelo schema', () => {
       const bad = {
         meta: {

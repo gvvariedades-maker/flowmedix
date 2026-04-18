@@ -106,43 +106,39 @@ export function EstudoReversoSlideZoom({ slideKey, children }: EstudoReversoSlid
     <div ref={scrollRef} className={scrollAreaClassName}>
       <div ref={slotRef} className={slotClassName}>
         {narrowViewport && (
-          <div className="pointer-events-none absolute right-[max(0.5rem,env(safe-area-inset-right))] bottom-[calc(5.5rem+env(safe-area-inset-bottom,0px))] z-[60] flex flex-col items-end gap-1">
-            <div
-              className="pointer-events-auto flex flex-col gap-0.5 rounded-xl border border-white/15 bg-black/55 p-1 shadow-lg backdrop-blur-md"
-              role="toolbar"
-              aria-label="Tamanho do texto do slide"
-            >
-              <button
-                type="button"
-                className="flex h-11 w-11 items-center justify-center rounded-lg text-white/95 transition hover:bg-white/12 active:bg-white/20 sm:h-10 sm:w-10 disabled:opacity-35"
-                onClick={inc}
-                disabled={textStep >= TEXT_SCALE_STEPS.length - 1}
-                aria-label="Aumentar texto do slide"
-              >
-                <Plus size={20} strokeWidth={2.25} />
-              </button>
-              <button
-                type="button"
-                className="flex h-11 w-11 items-center justify-center rounded-lg text-white/95 transition hover:bg-white/12 active:bg-white/20 sm:h-10 sm:w-10 disabled:opacity-35"
-                onClick={dec}
-                disabled={textStep <= 0}
-                aria-label="Diminuir texto do slide"
-              >
-                <Minus size={20} strokeWidth={2.25} />
-              </button>
-              <button
-                type="button"
-                className="flex h-11 w-11 items-center justify-center rounded-lg text-white/80 transition hover:bg-white/12 active:bg-white/20 sm:h-10 sm:w-10 disabled:opacity-35"
-                onClick={resetScale}
-                disabled={textStep === 0}
-                aria-label="Tamanho de texto padrão"
-              >
-                <RotateCcw size={18} strokeWidth={2.25} />
-              </button>
+          <div className="sticky top-0 z-20 w-full px-3 pb-2 pt-[max(0.25rem,env(safe-area-inset-top))]">
+            <div className="mx-auto flex w-fit items-center gap-1 rounded-xl border border-white/15 bg-black/55 p-1 shadow-lg backdrop-blur-md">
+              <div className="pr-1 pl-2 text-[10px] font-medium tracking-wide text-white/70">Texto</div>
+              <div className="flex items-center gap-0.5" role="toolbar" aria-label="Tamanho do texto do slide">
+                <button
+                  type="button"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg text-white/95 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
+                  onClick={dec}
+                  disabled={textStep <= 0}
+                  aria-label="Diminuir texto do slide"
+                >
+                  <Minus size={18} strokeWidth={2.25} />
+                </button>
+                <button
+                  type="button"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg text-white/95 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
+                  onClick={inc}
+                  disabled={textStep >= TEXT_SCALE_STEPS.length - 1}
+                  aria-label="Aumentar texto do slide"
+                >
+                  <Plus size={18} strokeWidth={2.25} />
+                </button>
+                <button
+                  type="button"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg text-white/80 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
+                  onClick={resetScale}
+                  disabled={textStep === 0}
+                  aria-label="Tamanho de texto padrão"
+                >
+                  <RotateCcw size={16} strokeWidth={2.25} />
+                </button>
+              </div>
             </div>
-            <p className="pointer-events-none max-w-[7.5rem] text-right text-[10px] leading-tight text-white/45">
-              Ajuste o texto sem perder a rolagem
-            </p>
           </div>
         )}
 

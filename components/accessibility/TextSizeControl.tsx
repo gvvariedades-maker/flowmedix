@@ -22,10 +22,10 @@ export function TextSizeControl({
   const btnBase =
     variant === 'dark'
       ? 'rounded-lg text-white/90 transition hover:bg-white/10 active:bg-white/15 disabled:opacity-35 disabled:pointer-events-none'
-      : 'rounded-lg text-slate-700 transition hover:bg-slate-200/80 active:bg-slate-200 disabled:opacity-35 disabled:pointer-events-none';
+      : 'rounded-lg text-foreground transition hover:bg-muted active:bg-muted/80 disabled:opacity-35 disabled:pointer-events-none';
 
   const border =
-    variant === 'dark' ? 'border-white/15 bg-white/5' : 'border-slate-200 bg-slate-50';
+    variant === 'dark' ? 'border-white/15 bg-white/5' : 'border-border bg-muted/30';
 
   if (compact) {
     return (
@@ -46,7 +46,7 @@ export function TextSizeControl({
         <span
           className={cn(
             'hidden min-w-[4.5rem] text-center text-[10px] font-bold uppercase tracking-wide sm:inline',
-            variant === 'dark' ? 'text-white/55' : 'text-slate-500'
+            variant === 'dark' ? 'text-white/55' : 'text-muted-foreground'
           )}
           aria-live="polite"
         >
@@ -74,13 +74,13 @@ export function TextSizeControl({
       <div className="mb-2 flex items-center gap-2">
         <Type
           size={14}
-          className={variant === 'dark' ? 'text-white/55' : 'text-slate-400'}
+          className={variant === 'dark' ? 'text-white/55' : 'text-muted-foreground'}
           aria-hidden
         />
         <span
           className={cn(
             'text-[10px] font-black uppercase tracking-widest',
-            variant === 'dark' ? 'text-white/60' : 'text-slate-500'
+            variant === 'dark' ? 'text-white/60' : 'text-muted-foreground'
           )}
         >
           Tamanho do texto
@@ -94,7 +94,7 @@ export function TextSizeControl({
           className={cn(
             'flex h-10 w-10 shrink-0 items-center justify-center',
             btnBase,
-            variant === 'light' && 'bg-white shadow-sm border border-slate-200/80'
+            variant === 'light' && 'border border-border bg-card shadow-sm'
           )}
           aria-label="Diminuir tamanho do texto"
         >
@@ -103,7 +103,7 @@ export function TextSizeControl({
         <span
           className={cn(
             'min-w-0 flex-1 text-center text-xs font-bold tabular-nums',
-            variant === 'dark' ? 'text-white/90' : 'text-slate-700'
+            variant === 'dark' ? 'text-white/90' : 'text-foreground'
           )}
           aria-live="polite"
         >
@@ -116,7 +116,7 @@ export function TextSizeControl({
           className={cn(
             'flex h-10 w-10 shrink-0 items-center justify-center',
             btnBase,
-            variant === 'light' && 'bg-white shadow-sm border border-slate-200/80'
+            variant === 'light' && 'border border-border bg-card shadow-sm'
           )}
           aria-label="Aumentar tamanho do texto"
         >
