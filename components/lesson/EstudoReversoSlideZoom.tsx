@@ -1,6 +1,14 @@
 'use client';
 
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from 'react';
 import { Minus, Plus, RotateCcw } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useCenterIfFitsScroll } from '@/lib/hooks/useCenterIfFitsScroll';
@@ -11,30 +19,38 @@ const MAX_WIDTH_MOBILE_CONTROLS_PX = 767;
 /** Escala de leitura (CSS `zoom` — reflow no WebKit/Blink, comum em mobile). */
 const TEXT_SCALE_STEPS = [1, 1.12, 1.24, 1.36, 1.48] as const;
 
-type EstudoReversoSlideZoomProps = {
-  /** Reinicia escala e medição de centralização quando o slide muda */
+type EstudoReversoSlideZoomContextValue = {
   slideKey: number;
-  children: React.ReactNode;
+  narrowViewport: boolean;
+  textStep: number;
+  inc: () => void;
+  dec: () => void;
+  resetScale: () => void;
+  maxStep: number;
+};
+
+const EstudoReversoSlideZoomContext = createContext<EstudoReversoSlideZoomContextValue | null>(null);
+
+function useEstudoReversoSlideZoomContext() {
+  const ctx = useContext(EstudoReversoSlideZoomContext);
+  if (!ctx) {
+    throw new Error('EstudoReversoSlideZoom deve estar dentro de EstudoReversoSlideZoomProvider');
+  }
+  return ctx;
+}
+
+type EstudoReversoSlideZoomProviderProps = {
+  /** Reinicia escala quando o slide muda */
+  slideKey: number;
+  children: ReactNode;
 };
 
 /**
- * Área do slide no estudo reverso:
- * - **Desktop:** rolagem nativa; sem toolbar de escala.
- * - **Mobile:** rolagem nativa (sem `TransformWrapper` — evita roubar toques do scroll).
- * - **Mobile:** botões A− / A+ / reset alteram `zoom` só no bloco do slide (legibilidade sem pinch).
- * - **Centralização:** via `useCenterIfFitsScroll` (centraliza quando cabe; senão alinha ao topo).
+ * Estado de zoom de texto compartilhado entre a barra superior (toolbar) e a área rolável do slide.
  */
-export function EstudoReversoSlideZoom({ slideKey, children }: EstudoReversoSlideZoomProps) {
+export function EstudoReversoSlideZoomProvider({ slideKey, children }: EstudoReversoSlideZoomProviderProps) {
   const [narrowViewport, setNarrowViewport] = useState(false);
   const [textStep, setTextStep] = useState(0);
-  /** Largura real do container em px — medida com ResizeObserver para evitar
-   *  ambiguidade do calc(100%/scale) quando zoom altera o contexto percentual. */
-  const [containerPx, setContainerPx] = useState(0);
-  const outerWrapperRef = useRef<HTMLDivElement>(null);
-
-  const { scrollRef, slotRef, centerVertically } = useCenterIfFitsScroll(
-    `${slideKey}-${narrowViewport ? 1 : 0}-${textStep}`
-  );
 
   useLayoutEffect(() => {
     const mq = window.matchMedia(`(max-width: ${MAX_WIDTH_MOBILE_CONTROLS_PX}px)`);
@@ -52,7 +68,96 @@ export function EstudoReversoSlideZoom({ slideKey, children }: EstudoReversoSlid
     if (!narrowViewport) setTextStep(0);
   }, [narrowViewport]);
 
-  /** Mede largura real do container externo (px absolutos, sem percentuais). */
+  const dec = () => setTextStep((s) => Math.max(0, s - 1));
+  const inc = () => setTextStep((s) => Math.min(TEXT_SCALE_STEPS.length - 1, s + 1));
+  const resetScale = () => setTextStep(0);
+
+  const value: EstudoReversoSlideZoomContextValue = {
+    slideKey,
+    narrowViewport,
+    textStep,
+    inc,
+    dec,
+    resetScale,
+    maxStep: TEXT_SCALE_STEPS.length - 1,
+  };
+
+  return (
+    <EstudoReversoSlideZoomContext.Provider value={value}>{children}</EstudoReversoSlideZoomContext.Provider>
+  );
+}
+
+/**
+ * Botões A− / A+ / reset ao lado da numeração (só mobile / viewport estreita).
+ * Deve ficar dentro do header fixo do modal, fora da área rolável do slide.
+ */
+export function EstudoReversoSlideZoomToolbar() {
+  const { narrowViewport, textStep, inc, dec, resetScale, maxStep } = useEstudoReversoSlideZoomContext();
+
+  if (!narrowViewport) return null;
+
+  return (
+    <div
+      className="flex shrink-0 items-center gap-0.5 rounded-lg border border-white/15 bg-black/55 p-0.5 shadow-md backdrop-blur-md"
+      role="toolbar"
+      aria-label="Tamanho do texto do slide"
+    >
+      <button
+        type="button"
+        className="flex h-9 w-9 items-center justify-center rounded-md text-white/95 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
+        onClick={dec}
+        disabled={textStep <= 0}
+        aria-label="Diminuir texto do slide"
+      >
+        <Minus size={16} strokeWidth={2.25} />
+      </button>
+      <button
+        type="button"
+        className="flex h-9 w-9 items-center justify-center rounded-md text-white/95 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
+        onClick={inc}
+        disabled={textStep >= maxStep}
+        aria-label="Aumentar texto do slide"
+      >
+        <Plus size={16} strokeWidth={2.25} />
+      </button>
+      <button
+        type="button"
+        className="flex h-9 w-9 items-center justify-center rounded-md text-white/80 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
+        onClick={resetScale}
+        disabled={textStep === 0}
+        aria-label="Tamanho de texto padrão"
+      >
+        <RotateCcw size={15} strokeWidth={2.25} />
+      </button>
+    </div>
+  );
+}
+
+type EstudoReversoSlideZoomProps = {
+  children: React.ReactNode;
+};
+
+/**
+ * Área do slide no estudo reverso:
+ * - **Desktop:** rolagem nativa; sem toolbar de escala.
+ * - **Mobile:** rolagem nativa (sem `TransformWrapper` — evita roubar toques do scroll).
+ * - **Mobile:** escala via contexto (toolbar no header do modal).
+ * - **Centralização:** via `useCenterIfFitsScroll` (centraliza quando cabe; senão alinha ao topo).
+ */
+export function EstudoReversoSlideZoom({ children }: EstudoReversoSlideZoomProps) {
+  const { slideKey, narrowViewport, textStep } = useEstudoReversoSlideZoomContext();
+  /** Largura real do container em px — medida com ResizeObserver para evitar
+   *  ambiguidade do calc(100%/scale) quando zoom altera o contexto percentual. */
+  const [containerPx, setContainerPx] = useState(0);
+  const outerWrapperRef = useRef<HTMLDivElement>(null);
+
+  const scale = narrowViewport ? TEXT_SCALE_STEPS[Math.min(textStep, TEXT_SCALE_STEPS.length - 1)] : 1;
+  const isTextScaled = scale > 1;
+
+  const { scrollRef, slotRef, centerVertically } = useCenterIfFitsScroll(
+    `${slideKey}-${narrowViewport ? 1 : 0}-${textStep}`
+  );
+
   useLayoutEffect(() => {
     const el = outerWrapperRef.current;
     if (!el) return;
@@ -63,89 +168,50 @@ export function EstudoReversoSlideZoom({ slideKey, children }: EstudoReversoSlid
     return () => ro.disconnect();
   }, []);
 
-  const scale = narrowViewport ? TEXT_SCALE_STEPS[Math.min(textStep, TEXT_SCALE_STEPS.length - 1)] : 1;
-  const isTextScaled = scale > 1;
-
-  const dec = () => setTextStep((s) => Math.max(0, s - 1));
-  const inc = () => setTextStep((s) => Math.min(TEXT_SCALE_STEPS.length - 1, s + 1));
-  const resetScale = () => setTextStep(0);
-
-  // Com zoom > 1 o layout pode ficar maior que a viewport: centralizar verticalmente corta topo/base.
-  // Alinhar ao topo quando há escala para a rolagem mostrar o slide inteiro a partir do início.
   const justifySlot = centerVertically && !isTextScaled ? 'justify-center' : 'justify-start';
 
-  // Sempre overflow-x-hidden: com a correção de largura (calc(100%/scale)) o conteúdo
-  // se adapta à largura virtual e o zoom o expande de volta ao tamanho da viewport sem overflow.
+  /**
+   * Sem rolagem horizontal: o bloco pré-zoom usa largura lógica menor (`floor`) para que,
+   * após `zoom`, o desenho não ultrapasse a largura do container. Texto e flex/grid precisam
+   * poder encolher (`min-w-0`, quebras) para não haver corte lateral.
+   */
   const scrollAreaClassName = cn(
-    'relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto overscroll-y-contain touch-pan-y overflow-x-hidden'
+    'relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto overflow-x-hidden overscroll-y-contain touch-pan-y'
   );
 
   const slotClassName = cn(
     'relative box-border flex min-h-full w-full max-w-full flex-col items-center',
     justifySlot,
-    'py-3 pb-12 md:py-4 md:pb-16'
+    isTextScaled ? 'py-3 pb-16 sm:pb-20' : 'py-3 pb-12 md:py-4 md:pb-16'
   );
 
-  /**
-   * Largura em pixels absolutos para o wrapper interno com zoom.
-   *
-   * Usar calc(100%/scale) é ambíguo: quando `zoom` está ativo o browser pode
-   * resolver `100%` no contexto pós-zoom do pai, produzindo valor errado.
-   * Medir com JS (offsetWidth) e usar px absolutos elimina essa ambiguidade:
-   *   innerWidthPx = containerPx / scale
-   *   após zoom visual: innerWidthPx × scale = containerPx → preenche exato.
-   */
-  const innerWidthPx = containerPx > 0 && scale !== 1 ? Math.floor(containerPx / scale) : null;
+  const innerWidthPx =
+    containerPx > 0 && scale !== 1 ? Math.max(1, Math.floor(containerPx / scale)) : null;
 
   const zoomStyle: React.CSSProperties | undefined =
     scale !== 1 && innerWidthPx !== null
-      ? ({ zoom: scale, width: `${innerWidthPx}px` } as React.CSSProperties)
+      ? ({ zoom: scale, width: `${innerWidthPx}px`, boxSizing: 'border-box' } as React.CSSProperties)
       : undefined;
+
+  const zoomContentClassName = cn(
+    'min-w-0 max-w-full box-border',
+    isTextScaled &&
+      cn(
+        'break-words [overflow-wrap:anywhere]',
+        /** Flex/grid filhos costumam ter `min-width: auto` e impedir o encolhimento. */
+        '[&_*]:min-w-0',
+        '[&_img]:max-w-full [&_img]:h-auto [&_img]:object-contain',
+        '[&_svg]:max-w-full [&_svg]:h-auto',
+        '[&_table]:max-w-full [&_table]:table-fixed',
+        '[&_pre]:max-w-full [&_pre]:whitespace-pre-wrap [&_pre]:break-all',
+      ),
+  );
 
   return (
     <div ref={scrollRef} className={scrollAreaClassName}>
       <div ref={slotRef} className={slotClassName}>
-        {narrowViewport && (
-          <div className="sticky top-0 z-20 w-full px-3 pb-2 pt-[max(0.25rem,env(safe-area-inset-top))]">
-            <div className="mx-auto flex w-fit items-center gap-1 rounded-xl border border-white/15 bg-black/55 p-1 shadow-lg backdrop-blur-md">
-              <div className="pr-1 pl-2 text-[10px] font-medium tracking-wide text-white/70">Texto</div>
-              <div className="flex items-center gap-0.5" role="toolbar" aria-label="Tamanho do texto do slide">
-                <button
-                  type="button"
-                  className="flex h-10 w-10 items-center justify-center rounded-lg text-white/95 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
-                  onClick={dec}
-                  disabled={textStep <= 0}
-                  aria-label="Diminuir texto do slide"
-                >
-                  <Minus size={18} strokeWidth={2.25} />
-                </button>
-                <button
-                  type="button"
-                  className="flex h-10 w-10 items-center justify-center rounded-lg text-white/95 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
-                  onClick={inc}
-                  disabled={textStep >= TEXT_SCALE_STEPS.length - 1}
-                  aria-label="Aumentar texto do slide"
-                >
-                  <Plus size={18} strokeWidth={2.25} />
-                </button>
-                <button
-                  type="button"
-                  className="flex h-10 w-10 items-center justify-center rounded-lg text-white/80 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
-                  onClick={resetScale}
-                  disabled={textStep === 0}
-                  aria-label="Tamanho de texto padrão"
-                >
-                  <RotateCcw size={16} strokeWidth={2.25} />
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Externo: largura 100%, mede containerPx, âncora o conteúdo em x=0 */}
         <div ref={outerWrapperRef} className="w-full min-w-0 self-stretch">
-          {/* Interno: px absolutos (innerWidthPx) + zoom → preenche exato sem overflow */}
-          <div className="min-w-0" style={zoomStyle}>
+          <div className={zoomContentClassName} style={zoomStyle}>
             {children}
           </div>
         </div>

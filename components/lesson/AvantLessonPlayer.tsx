@@ -14,7 +14,11 @@ import { useState, useEffect, useMemo, useRef, useLayoutEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import NeuroSlide from '@/components/slides/NeuroSlide';
-import { EstudoReversoSlideZoom } from '@/components/lesson/EstudoReversoSlideZoom';
+import {
+  EstudoReversoSlideZoom,
+  EstudoReversoSlideZoomProvider,
+  EstudoReversoSlideZoomToolbar,
+} from '@/components/lesson/EstudoReversoSlideZoom';
 import { logger } from '@/lib/logger';
 import { sanitizeHTML } from '@/lib/validations';
 import {
@@ -658,12 +662,13 @@ export default function AvantLessonPlayer({
             className="fixed inset-0 z-50 flex flex-col bg-black/95 backdrop-blur-md pt-safe h-[100dvh] max-h-[100dvh] overscroll-y-contain"
           >
             {/* overflow-y: contido no filho (scroll vertical). overflow-x: auto para texto ampliado (zoom) não ser cortado. */}
+            <EstudoReversoSlideZoomProvider slideKey={slideAtual}>
             <div className="w-full flex-1 min-h-0 max-h-[100dvh] flex flex-col overflow-y-hidden overflow-x-auto min-w-0">
               
-              {/* Header Minimalista (Top Bar) */}
+              {/* Header Minimalista (Top Bar) — zoom mobile ao lado da numeração, fixo fora da rolagem do slide */}
               <div className="shrink-0 px-4 sm:px-6 md:px-12 pt-3 sm:pt-6 pb-2 flex justify-between items-center gap-2 min-w-0">
-                <div className="flex items-center gap-3">
-                  <div className="bg-[#BEF264] text-slate-900 p-2 rounded-lg">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="bg-[#BEF264] text-slate-900 p-2 rounded-lg shrink-0">
                     <Lightbulb size={20} fill="black" />
                   </div>
                   <span className="hidden sm:inline text-white/60 font-bold uppercase text-xs tracking-widest truncate max-w-[120px] md:max-w-none">
@@ -671,16 +676,19 @@ export default function AvantLessonPlayer({
                   </span>
                 </div>
                 
-                <div className="flex items-center gap-4">
-                  {/* Indicador de Slide */}
-                  <div className="text-[#BEF264] font-black text-2xl opacity-60 italic">
-                    {slideAtual + 1}/{totalSlides}
+                <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="text-[#BEF264] font-black text-xl sm:text-2xl opacity-60 italic tabular-nums whitespace-nowrap">
+                      {slideAtual + 1}/{totalSlides}
+                    </div>
+                    <EstudoReversoSlideZoomToolbar />
                   </div>
                   
-                  {/* Botão Fechar */}
                   <button
+                    type="button"
                     onClick={() => setEtapa('pergunta')}
-                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center transition-colors"
+                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center transition-colors shrink-0"
+                    aria-label="Fechar estudo reverso"
                   >
                     <X size={18} className="text-white" />
                   </button>
@@ -689,7 +697,7 @@ export default function AvantLessonPlayer({
 
               {/* Sem overflow-x-hidden: com zoom mobile o conteúdo pode ultrapassar a largura — rolagem horizontal fica no EstudoReversoSlideZoom / pai. */}
               <div className="relative flex min-h-0 min-w-0 flex-1 flex-col">
-                <EstudoReversoSlideZoom slideKey={slideAtual}>
+                <EstudoReversoSlideZoom>
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={`slide-${slideAtual}-${currentSlide?.type || 'default'}-${JSON.stringify(currentSlide).substring(0, 20)}`}
@@ -773,6 +781,7 @@ export default function AvantLessonPlayer({
               </div>
 
             </div>
+            </EstudoReversoSlideZoomProvider>
           </motion.div>
         )}
       </AnimatePresence>

@@ -78,15 +78,17 @@ function LogoMark({ compact }: { compact?: boolean }) {
 function CityCard({ cidadeExibicao }: { cidadeExibicao: string }) {
   return (
     <div className="mb-2 px-4">
-      <div className="rounded-xl border border-border/60 bg-muted/40 p-4 text-card-foreground shadow-sm">
-        <div className="mb-1.5 flex items-center gap-2">
-          <MapPin size={14} className="shrink-0 text-muted-foreground" />
-          <span className="text-xs font-medium text-muted-foreground">Turma exclusiva</span>
+      <div className="overflow-hidden rounded-xl border border-border/60 bg-muted/40 text-card-foreground shadow-sm">
+        <div className="flex items-center gap-2 bg-black px-4 py-2.5">
+          <MapPin size={14} className="shrink-0 text-emerald-400" aria-hidden />
+          <span className="text-xs font-semibold uppercase tracking-wide text-white">Turma exclusiva</span>
         </div>
-        <h3 className="text-base font-semibold leading-snug text-foreground">{cidadeExibicao}</h3>
-        <div className="mt-3 flex items-center gap-2">
-          <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600" aria-hidden />
-          <span className="text-xs font-medium text-muted-foreground">Edital ativo</span>
+        <div className="p-4 pt-3">
+          <h3 className="text-base font-semibold leading-snug text-foreground">{cidadeExibicao}</h3>
+          <div className="mt-3 flex items-center gap-2">
+            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-600" aria-hidden />
+            <span className="text-xs font-medium text-muted-foreground">Edital ativo</span>
+          </div>
         </div>
       </div>
     </div>
