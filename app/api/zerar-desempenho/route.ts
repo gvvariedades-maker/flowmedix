@@ -1,46 +1,20 @@
-import { NextResponse } from 'next/server';
-import { createServerClient } from '@supabase/ssr';
-import { cookies } from 'next/headers';
+import { NextRequest, NextResponse } from 'next/server';
 import { revalidateTag } from 'next/cache';
 import { CACHE_REVALIDATE_IMMEDIATE } from '@/lib/cache';
 import { logger } from '@/lib/logger';
+import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 
 /**
  * Remove todo o histórico de questões do usuário autenticado (historico_questoes).
  * RLS: política DELETE com auth.uid() = user_id.
  */
-export async function POST() {
+export async function POST(request: NextRequest) {
   try {
-    const cookieStore = await cookies();
-    const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        cookies: {
-          getAll() {
-            return cookieStore.getAll();
-          },
-          setAll(cookiesToSet) {
-            try {
-              cookiesToSet.forEach(({ name, value, options }) =>
-                cookieStore.set(name, value, options)
-              );
-            } catch {
-              // Server Component — ignora
-            }
-          },
-        },
-      }
-    );
-
-    const {
-      data: { user },
-      error: authError,
-    } = await supabase.auth.getUser();
-
-    if (authError || !user) {
+    const auth = await getUserAndClientFromBearer(request);
+    if (!auth) {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
     }
+    const { user, supabase } = auth;
 
     const { error: deleteError } = await supabase
       .from('historico_questoes')

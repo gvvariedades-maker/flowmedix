@@ -1,12 +1,17 @@
 import { notFound } from 'next/navigation';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
+import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
-import { 
-  getQuestaoBySlugCached, 
+import {
+  getQuestaoBySlugCached,
   getQuestoesByAssuntoCached,
   getHistoricoQuestoesCached,
+  getModulosEstudoCached,
 } from '@/lib/cache';
+import {
+  buildVitrineFilteredSlugList,
+  type HistoricoQuestaoRow,
+  type ModuloEstudoRow,
+} from '@/lib/vitrineFilters';
 import { getTodayReviews } from '@/lib/spaced-repetition';
 
 interface ModuloListItem {
@@ -27,25 +32,21 @@ export default async function PaginaQuestaoDinamica({
   const fromCaderno = from === 'caderno';
   const cadernoId = fromCaderno ? (resolvedSearch?.caderno_id as string | undefined) : undefined;
 
-  const cookieStore = await cookies();
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        get(name: string) { return cookieStore.get(name)?.value; },
-      },
-    }
-  );
+  const vitrineBanca = typeof resolvedSearch.banca === 'string' ? resolvedSearch.banca.trim() : '';
+  const vitrineAssunto = typeof resolvedSearch.assunto === 'string' ? resolvedSearch.assunto.trim() : '';
+  const vitrineQ = typeof resolvedSearch.q === 'string' ? resolvedSearch.q.trim() : '';
 
-  const [atual, { data: { user } }] = await Promise.all([
+  // `getServerSession()` é deduplicado por request — layout + page + quaisquer
+  // outros RSC partilham o mesmo resultado, com apenas um `getSession()` real.
+  const [atual, session] = await Promise.all([
     getQuestaoBySlugCached(resolvedParams.slug),
-    supabase.auth.getUser(),
+    getServerSession(),
   ]);
 
   if (!atual) return notFound();
 
-  const userId = user?.id;
+  const userId = session?.user?.id;
+  const supabase = await createSupabaseServerClient();
 
   let lista: ModuloListItem[] = [];
   let questoesDoAssunto: { slug: string; estudada: boolean }[] = [];
@@ -95,27 +96,47 @@ export default async function PaginaQuestaoDinamica({
     }));
 
   } else {
-    // ── Modo Normal: navega pelo assunto (titulo_aula) ─────────────────────
+    // ── Modo Normal: vitrine com filtro (banca/assunto/q) ou só pelo assunto (titulo_aula) ─
     const tituloAula: string =
       atual.titulo_aula ||
       atual.conteudo_json?.meta?.subtopico ||
       atual.modulo_nome ||
       '';
 
-    const [listaAssunto, historico] = await Promise.all([
-      tituloAula ? getQuestoesByAssuntoCached(tituloAula) : Promise.resolve([]),
-      userId ? getHistoricoQuestoesCached(userId) : Promise.resolve([]),
-    ]);
+    const hasVitrineFilters = Boolean(vitrineBanca || vitrineAssunto || vitrineQ);
 
-    lista = listaAssunto as ModuloListItem[];
+    const historico = userId ? await getHistoricoQuestoesCached(userId) : [];
 
     const estudadosSet = new Set<string>(
-      (historico as any[])
-        .filter(h => h.estudo_reverso_concluido === true)
-        .map(h => h.modulo_slug as string)
+      (historico as { modulo_slug: string; estudo_reverso_concluido?: boolean }[])
+        .filter((h) => h.estudo_reverso_concluido === true)
+        .map((h) => h.modulo_slug as string),
     );
 
-    questoesDoAssunto = lista.map(item => ({
+    if (hasVitrineFilters) {
+      const modulosAll = await getModulosEstudoCached();
+      const slugList = buildVitrineFilteredSlugList(
+        modulosAll as ModuloEstudoRow[],
+        historico as HistoricoQuestaoRow[],
+        {
+          banca: vitrineBanca || undefined,
+          assunto: vitrineAssunto || undefined,
+          q: vitrineQ || undefined,
+        },
+      );
+
+      if (slugList.length > 0 && slugList.includes(resolvedParams.slug)) {
+        lista = slugList.map((slug) => ({ id: slug, modulo_slug: slug }));
+      } else {
+        const listaAssunto = tituloAula ? await getQuestoesByAssuntoCached(tituloAula) : [];
+        lista = listaAssunto as ModuloListItem[];
+      }
+    } else {
+      const listaAssunto = tituloAula ? await getQuestoesByAssuntoCached(tituloAula) : [];
+      lista = listaAssunto as ModuloListItem[];
+    }
+
+    questoesDoAssunto = lista.map((item) => ({
       slug: item.modulo_slug,
       estudada: estudadosSet.has(item.modulo_slug),
     }));
@@ -130,12 +151,19 @@ export default async function PaginaQuestaoDinamica({
       ? { atual: indexAtual + 1, total: lista.length }
       : undefined;
 
+  const vitrineParams = new URLSearchParams();
+  if (vitrineBanca) vitrineParams.set('banca', vitrineBanca);
+  if (vitrineAssunto) vitrineParams.set('assunto', vitrineAssunto);
+  if (vitrineQ) vitrineParams.set('q', vitrineQ);
+  const vitrineQueryString = vitrineParams.toString();
+  const vitrineQuerySuffix = vitrineQueryString ? `?` + vitrineQueryString : '';
+
   // Propaga o contexto de origem nos slugs de navegação
   const suffix = fromPlano
     ? '?from=plano'
     : fromCaderno && cadernoId
-      ? `?from=caderno&caderno_id=${cadernoId}`
-      : '';
+      ? `?from=caderno&caderno_id=${encodeURIComponent(cadernoId)}`
+      : vitrineQuerySuffix;
 
   const anteriorSlugFinal = anteriorSlug ? `${anteriorSlug}${suffix}` : null;
   const proximaSlugFinal = proximaSlug ? `${proximaSlug}${suffix}` : null;
@@ -149,9 +177,9 @@ export default async function PaginaQuestaoDinamica({
   return (
     <div className="flex flex-1 flex-col min-h-0 w-full bg-slate-50 px-3 py-3 sm:px-4 md:px-6 md:py-6 pb-safe font-sans">
       <div className="flex flex-1 flex-col min-h-0 w-full max-w-6xl mx-auto">
-        <AvantLessonPlayer 
-          dados={atual.conteudo_json} 
-          mode="live" 
+        <AvantLessonPlayer
+          dados={atual.conteudo_json}
+          mode="live"
           proximaSlug={proximaSlugFinal}
           anteriorSlug={anteriorSlugFinal}
           moduloSlug={resolvedParams.slug}
@@ -160,6 +188,7 @@ export default async function PaginaQuestaoDinamica({
           fromCaderno={fromCaderno ? cadernoId : undefined}
           listaContexto={listaContexto}
           avantCodigo={avantCodigoAluno}
+          vitrineQuerySuffix={fromPlano || fromCaderno ? '' : vitrineQuerySuffix}
         />
       </div>
     </div>

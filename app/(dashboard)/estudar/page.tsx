@@ -1,11 +1,10 @@
 import { Suspense } from 'react';
+import { getServerSession } from '@/lib/supabase/server-auth';
 import VitrineClient from '@/components/vitrine/VitrineClient';
 import { 
   getModulosEstudoCached, 
   getHistoricoQuestoesCached 
 } from '@/lib/cache';
-import { createServerClient } from '@supabase/ssr';
-import { cookies } from 'next/headers';
 
 interface ModuloEstudoRow {
   id: string;
@@ -24,21 +23,11 @@ interface HistoricoQuestaoRow {
 }
 
 export default async function VitrinePage() {
-  // Obter userId fora do cache (cookies são dinâmicos - não permitidos dentro de unstable_cache)
-  const cookieStore = await cookies();
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        get(name: string) {
-          return cookieStore.get(name)?.value;
-        },
-      },
-    }
-  );
-  const { data: { user } } = await supabase.auth.getUser();
-  const userId = user?.id;
+  // `getServerSession()` é deduplicado por React `cache` — o mesmo resultado é
+  // compartilhado entre layout e page, evitando duas chamadas paralelas a
+  // `getSession()` que dispararam `refresh_token_already_used` antes.
+  const session = await getServerSession();
+  const userId = session?.user?.id;
 
   // Usa cache estratégico - revalida a cada 5 minutos (módulos) e 2 minutos (histórico)
   const [modulosData, historicoData] = await Promise.all([

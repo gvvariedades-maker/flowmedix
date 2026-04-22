@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createServerClient } from '@supabase/ssr';
-import { cookies } from 'next/headers';
 import { revalidateTag } from 'next/cache';
 import { CACHE_REVALIDATE_IMMEDIATE } from '@/lib/cache';
 import { logger } from '@/lib/logger';
+import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,31 +13,11 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Campos obrigatórios ausentes' }, { status: 400 });
     }
 
-    const cookieStore = await cookies();
-    const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        cookies: {
-          getAll() { return cookieStore.getAll(); },
-          setAll(cookiesToSet) {
-            try {
-              cookiesToSet.forEach(({ name, value, options }) =>
-                cookieStore.set(name, value, options)
-              );
-            } catch {
-              // Server Component — ignora erros de set
-            }
-          },
-        },
-      }
-    );
-
-    const { data: { user }, error: authError } = await supabase.auth.getUser();
-
-    if (authError || !user) {
+    const auth = await getUserAndClientFromBearer(request);
+    if (!auth) {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
     }
+    const { user, supabase } = auth;
 
     const { error: insertError } = await supabase.from('historico_questoes').insert({
       user_id: user.id,
@@ -54,7 +33,6 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Erro ao registrar tentativa' }, { status: 500 });
     }
 
-    // Invalida o cache do histórico do usuário imediatamente
     revalidateTag('historico', CACHE_REVALIDATE_IMMEDIATE);
     revalidateTag(`user-${user.id}`, CACHE_REVALIDATE_IMMEDIATE);
 

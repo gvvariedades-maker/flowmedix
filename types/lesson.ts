@@ -184,6 +184,8 @@ export interface AvantLessonPlayerProps {
   questoesDoAssunto?: QuestaoDoAssunto[]; // Lista de questões do mesmo assunto com status
   fromPlano?: boolean;       // true quando o aluno veio do Plano de Estudo Diário
   fromCaderno?: string;      // cadernoId quando o aluno veio de um Caderno de Estudo
+  /** Query da vitrine (banca/assunto/q) para manter o mesmo conjunto ao trocar de questão pelos dots. */
+  vitrineQuerySuffix?: string;
   /** Quando definido, exibe "Questão X de Y" conforme a lista do contexto (vitrine/assunto, caderno ou plano). */
   listaContexto?: ListaContextoQuestao;
   /** Código Q-… (modulos_estudo.avant_codigo), igual ao admin. */

@@ -28,6 +28,8 @@ import {
 } from '@/lib/questionHeader';
 import { isCertoErradoQuestion } from '@/lib/questionKind';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
+import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
+import { supabase } from '@/lib/supabase/client';
 import type { AvantLessonPlayerProps, LessonData, ReverseStudySlide } from '@/types/lesson';
 import { 
   CheckCircle2, XCircle, ChevronRight, ChevronLeft, 
@@ -46,6 +48,7 @@ export default function AvantLessonPlayer({
   fromCaderno,
   listaContexto,
   avantCodigo,
+  vitrineQuerySuffix = '',
 }: AvantLessonPlayerProps) {
   
   const router = useRouter();
@@ -168,6 +171,22 @@ export default function AvantLessonPlayer({
   // ============================================================================
   // LÓGICA DE BANCO (Supabase)
   // ============================================================================
+  const postWithSessionRetry = async (url: string, payload: Record<string, unknown>) => {
+    const doPost = () =>
+      fetchWithAuth(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+    let response = await doPost();
+    if (response.status !== 401) return response;
+
+    // Token pode ter vencido: renova no browser (único ponto de refresh) e reenvia com Bearer.
+    await supabase.auth.getSession();
+    return doPost();
+  };
+
   const registrarTentativa = async (opcaoId: string) => {
     if (mode === 'preview') return;
 
@@ -176,19 +195,19 @@ export default function AvantLessonPlayer({
       const acertou = opcaoEscolhida?.is_correct || false;
 
       // Usa API route para registrar E invalidar o cache do histórico imediatamente
-      const response = await fetch('/api/registrar-tentativa', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          modulo_slug: moduloSlug || dados.modulo_slug || 'slug-legacy',
-          acertou,
-          banca: dados.meta?.banca || 'DESCONHECIDA',
-          topico: dados.meta?.topico || 'Geral',
-          subtopico: dados.meta?.subtopico || dados.meta?.topico || 'Geral',
-        }),
+      const response = await postWithSessionRetry('/api/registrar-tentativa', {
+        modulo_slug: moduloSlug || dados.modulo_slug || 'slug-legacy',
+        acertou,
+        banca: dados.meta?.banca || 'DESCONHECIDA',
+        topico: dados.meta?.topico || 'Geral',
+        subtopico: dados.meta?.subtopico || dados.meta?.topico || 'Geral',
       });
 
       if (!response.ok) {
+        if (response.status === 401) {
+          logger.warn('Attempt not registered: unauthorized after session retry', { moduloSlug });
+          return;
+        }
         logger.error('Failed to register attempt via API', { status: response.status, moduloSlug });
       }
     } catch (error) {
@@ -205,14 +224,14 @@ export default function AvantLessonPlayer({
     setMarcandoConclusao(true);
     try {
       const slug = moduloSlug || dados.modulo_slug || '';
-      const response = await fetch('/api/concluir-estudo-reverso', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ modulo_slug: slug }),
-      });
+      const response = await postWithSessionRetry('/api/concluir-estudo-reverso', { modulo_slug: slug });
       if (response.ok) {
         setEstudoConcluido(true);
       } else {
+        if (response.status === 401) {
+          logger.warn('Could not mark estudo concluido: unauthorized after session retry', { moduloSlug: slug });
+          return;
+        }
         logger.error('Failed to mark estudo reverso as concluido', { status: response.status });
       }
     } catch (error) {
@@ -528,7 +547,7 @@ export default function AvantLessonPlayer({
                         ? '?from=plano'
                         : fromCaderno
                           ? `?from=caderno&caderno_id=${fromCaderno}`
-                          : '';
+                          : vitrineQuerySuffix || '';
                       router.push(`/estudar/${q.slug}${s}`);
                     }}
                     title={`Questão ${i + 1}${q.estudada ? ' — estudada' : ''}`}

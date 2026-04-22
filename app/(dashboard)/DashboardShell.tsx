@@ -203,21 +203,29 @@ function DashboardContent({
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event, session) => {
-      if (event === 'SIGNED_OUT') {
-        setUserEmail(null);
-        setUserInitials('...');
-        router.push('/');
-        router.refresh();
-        return;
-      }
+      // NUNCA redirecionar automaticamente aqui.
+      //
+      // O Supabase dispara `SIGNED_OUT` em várias situações transitórias
+      // (refresh falhou num request, re-hidratação do storage, troca de aba),
+      // e o redirect em cima disso produzia o clássico "saiu de novo".
+      //
+      // A expulsão correta ocorre no servidor: cada página protegida chama
+      // `getSession()` em RSC e, se for `null`, usa `redirect('/login')`.
+      // Se a sessão cair de verdade, o próximo request SSR manda pra login.
+      // O logout explícito (botão "Sair") já faz o push manualmente.
       if (session?.user) {
         const email = session.user.email ?? null;
         setUserEmail(email);
         setUserInitials(initialsFromEmail(email));
+        return;
+      }
+      if (event === 'SIGNED_OUT') {
+        setUserEmail(null);
+        setUserInitials('...');
       }
     });
     return () => subscription.unsubscribe();
-  }, [router]);
+  }, []);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();

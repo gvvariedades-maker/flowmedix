@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import type { CadernoDetail, ModuloDisponivel, NotebookItem } from './page';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
+import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 
 // ── Componente: item do caderno ────────────────────────────────────────────
 function ItemCaderno({
@@ -29,7 +30,7 @@ function ItemCaderno({
   const handleRemove = async () => {
     setRemoving(true);
     try {
-      const res = await fetch(`/api/notebooks/${notebookId}/items/${item.id}`, { method: 'DELETE' });
+      const res = await fetchWithAuth(`/api/notebooks/${notebookId}/items/${item.id}`, { method: 'DELETE' });
       if (res.ok) onRemoved(item.id);
     } finally {
       setRemoving(false);
@@ -153,7 +154,7 @@ function BuilderPanel({
   const handleAdd = async (m: ModuloDisponivel) => {
     setAdding(m.modulo_slug);
     try {
-      const res = await fetch(`/api/notebooks/${notebookId}/items`, {
+      const res = await fetchWithAuth(`/api/notebooks/${notebookId}/items`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

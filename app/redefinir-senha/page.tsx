@@ -1,16 +1,11 @@
 'use client';
 
-import { createBrowserClient } from '@supabase/ssr';
 import Link from 'next/link';
 import { AlertCircle, ArrowRight, CheckCircle2, Eye, EyeOff, Lock, Zap } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-
-const supabase = createBrowserClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+import { supabase } from '@/lib/supabase/client';
 
 export default function RedefinirSenhaPage() {
   const router = useRouter();
@@ -25,7 +20,9 @@ export default function RedefinirSenhaPage() {
 
   // Supabase envia o token no hash da URL; o cliente SSR troca automaticamente por sessão
   useEffect(() => {
-    supabase.auth.onAuthStateChange((event) => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event) => {
       if (event === 'PASSWORD_RECOVERY') {
         setSessaoValida(true);
       }
@@ -34,7 +31,10 @@ export default function RedefinirSenhaPage() {
     // Verifica se já há sessão ativa (token já processado)
     supabase.auth.getSession().then(({ data }) => {
       if (data.session) setSessaoValida(true);
+      else setSessaoValida(false);
     });
+
+    return () => subscription.unsubscribe();
   }, []);
 
   const handleRedefinir = async (e: React.FormEvent) => {

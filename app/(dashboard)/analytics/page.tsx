@@ -1,57 +1,23 @@
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import { createServerClient } from '@supabase/ssr';
-import { cookies } from 'next/headers';
 import { logger } from '@/lib/logger';
-import MeuDesempenhoClient from './MeuDesempenhoClient';
+import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
+import MeuDesempenhoDashboard from '@/components/dashboard/performance/MeuDesempenhoDashboard';
+import type { AssuntoTop, DesempenhoData, DiaEstudo } from '@/components/dashboard/performance/types';
 
-export interface DiaEstudo {
-  data: string;   // 'YYYY-MM-DD'
-  count: number;  // questões com estudo_reverso_concluido naquele dia
-}
-
-export interface AssuntoTop {
-  nome: string;
-  count: number;
-}
-
-export interface DesempenhoData {
-  hoje: number;
-  metaDiaria: number;
-  streak: number;
-  totalGeral: number;       // últimos 30 dias
-  totalTodosTempos: number; // desde o início
-  serie30dias: DiaEstudo[];
-  topAssuntos: AssuntoTop[];
-}
+export type { AssuntoTop, DesempenhoData, DiaEstudo } from '@/components/dashboard/performance/types';
 
 const META_DIARIA = 10;
 
 export default async function MeuDesempenhoPage() {
-  const cookieStore = await cookies();
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() { return cookieStore.getAll(); },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            );
-          } catch {}
-        },
-      },
-    }
-  );
-
-  const { data: { session } } = await supabase.auth.getSession();
+  const session = await getServerSession();
   if (!session?.user) redirect('/login');
 
   const userId = session.user.id;
 
+  const supabase = await createSupabaseServerClient();
+
   try {
-    // Busca total histórico (todos os tempos) e últimos 30 dias em paralelo
     const desde = new Date();
     desde.setDate(desde.getDate() - 30);
 
@@ -81,19 +47,14 @@ export default async function MeuDesempenhoPage() {
     const registros = (data || []) as any[];
     const totalTodosTempos = totalHistorico ?? 0;
 
-    // ── helpers de data ────────────────────────────────────────────────────────
-    const toDateStr = (iso: string) => iso.slice(0, 10); // 'YYYY-MM-DD'
+    const toDateStr = (iso: string) => iso.slice(0, 10);
     const todayStr = new Date().toISOString().slice(0, 10);
 
-    // ── Conta de hoje ──────────────────────────────────────────────────────────
-    const hoje = registros.filter(r => toDateStr(r.created_at) === todayStr).length;
-
-    // ── Total geral ────────────────────────────────────────────────────────────
+    const hoje = registros.filter((r) => toDateStr(r.created_at) === todayStr).length;
     const totalGeral = registros.length;
 
-    // ── Série temporal 30 dias ─────────────────────────────────────────────────
     const countByDay = new Map<string, number>();
-    registros.forEach(r => {
+    registros.forEach((r) => {
       const d = toDateStr(r.created_at);
       countByDay.set(d, (countByDay.get(d) || 0) + 1);
     });
@@ -106,7 +67,6 @@ export default async function MeuDesempenhoPage() {
       serie30dias.push({ data: str, count: countByDay.get(str) || 0 });
     }
 
-    // ── Streak (dias consecutivos com pelo menos 1 questão) ───────────────────
     let streak = 0;
     for (let i = 0; i < 30; i++) {
       const d = new Date();
@@ -115,15 +75,13 @@ export default async function MeuDesempenhoPage() {
       if ((countByDay.get(str) || 0) > 0) {
         streak++;
       } else {
-        // Tolera ausência somente no dia de hoje (pode ainda estudar)
         if (i === 0) continue;
         break;
       }
     }
 
-    // ── Top assuntos ───────────────────────────────────────────────────────────
     const countByAssunto = new Map<string, number>();
-    registros.forEach(r => {
+    registros.forEach((r) => {
       const nome = r.subtopico || r.topico || r.modulo_slug || 'Geral';
       countByAssunto.set(nome, (countByAssunto.get(nome) || 0) + 1);
     });
@@ -142,16 +100,19 @@ export default async function MeuDesempenhoPage() {
       topAssuntos,
     };
 
-    return <MeuDesempenhoClient dados={desempenho} />;
+    return <MeuDesempenhoDashboard dados={desempenho} />;
   } catch (error) {
     logger.error('Failed to load meu-desempenho', error, { userId });
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6 pb-safe">
-        <div className="text-center max-w-md space-y-4">
-          <p className="text-slate-500 text-sm">Erro ao carregar dados. Tente novamente.</p>
-          <a href="/estudar" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 text-white font-bold text-sm">
-            Voltar para Estudos
-          </a>
+      <div className="dashboard-surface flex min-h-screen items-center justify-center bg-background p-6 pb-safe text-foreground">
+        <div className="max-w-md space-y-4 text-center">
+          <p className="text-sm text-muted-foreground">Erro ao carregar dados. Tente novamente.</p>
+          <Link
+            href="/estudar"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors duration-150 hover:bg-primary/90"
+          >
+            Voltar para estudos
+          </Link>
         </div>
       </div>
     );

@@ -135,6 +135,16 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
     }
   }, [bancaFilter, assuntoFilter, searchTerm, pagina, pathname, router, searchParams]);
 
+  /** Só banca/assunto/q — repassado ao abrir questão para o player usar a mesma lista filtrada. */
+  const estudarQuery = useMemo(() => {
+    const p = new URLSearchParams();
+    if (bancaFilter) p.set('banca', bancaFilter);
+    if (assuntoFilter) p.set('assunto', assuntoFilter);
+    if (searchTerm.trim()) p.set('q', searchTerm.trim());
+    const s = p.toString();
+    return s ? `?${s}` : '';
+  }, [bancaFilter, assuntoFilter, searchTerm]);
+
   const filteredModulos = useMemo(() => {
     let result = modulos;
     if (bancaFilter) result = result.filter((m) => m.banca === bancaFilter);
@@ -379,7 +389,7 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
                 className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
               >
                 {gruposPagina.map((grupo) => (
-                  <SubtopicoCard key={grupo.titulo_aula} grupo={grupo} />
+                  <SubtopicoCard key={grupo.titulo_aula} grupo={grupo} estudarQuery={estudarQuery} />
                 ))}
               </div>
               {totalPaginas > 1 && (
@@ -497,7 +507,7 @@ function StatusBadge({ status }: { status: QuestaoStatus }) {
   return <Circle size={15} className="shrink-0 text-muted-foreground/40" />;
 }
 
-function SubtopicoCard({ grupo }: { grupo: GrupoSubtopico }) {
+function SubtopicoCard({ grupo, estudarQuery }: { grupo: GrupoSubtopico; estudarQuery: string }) {
   const [assuntoExpandido, setAssuntoExpandido] = useState(false);
   const [questoesExpandido, setQuestoesExpandido] = useState(false);
   const { titulo_aula, totalResolvidas, totalQuestoes, trabalhadas, questoes, firstSlug } = grupo;
@@ -570,7 +580,7 @@ function SubtopicoCard({ grupo }: { grupo: GrupoSubtopico }) {
                 </span>
               )}
               <Button asChild variant="outline" size="sm" className="ml-auto rounded-xl">
-                <Link href={`/estudar/${firstSlug}`}>Entrar no assunto</Link>
+                <Link href={`/estudar/${firstSlug}${estudarQuery}`}>Entrar no assunto</Link>
               </Button>
             </div>
 
@@ -612,7 +622,7 @@ function SubtopicoCard({ grupo }: { grupo: GrupoSubtopico }) {
                       return (
                         <Link
                           key={q.slug}
-                          href={`/estudar/${q.slug}`}
+                          href={`/estudar/${q.slug}${estudarQuery}`}
                           className={cn(
                             'group flex items-center gap-3 rounded-xl border px-3 py-2 transition-all',
                             estudada

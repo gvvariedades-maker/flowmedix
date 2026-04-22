@@ -1,15 +1,10 @@
 'use client';
 
-import { createBrowserClient } from '@supabase/ssr';
 import Link from 'next/link';
 import { AlertCircle, ArrowLeft, CheckCircle2, Mail, Send, Zap } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-
-const supabase = createBrowserClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+import { supabase } from '@/lib/supabase/client';
 
 export default function EsqueciSenhaPage() {
   const [email, setEmail] = useState('');

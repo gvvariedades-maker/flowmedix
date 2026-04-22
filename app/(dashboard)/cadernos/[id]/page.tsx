@@ -1,9 +1,8 @@
 import { redirect, notFound } from 'next/navigation';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
 import { logger } from '@/lib/logger';
 import { getModulosEstudoCached, getHistoricoQuestoesCached } from '@/lib/cache';
 import CadernoDetailClient from './CadernoDetailClient';
+import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
 
 export interface NotebookItem {
   id: string;
@@ -37,47 +36,36 @@ export default async function CadernoDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const cookieStore = await cookies();
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() { return cookieStore.getAll(); },
-        setAll(cookiesToSet) {
-          try { cookiesToSet.forEach(({ name, value, options }) => cookieStore.set(name, value, options)); } catch {}
-        },
-      },
-    }
-  );
 
-  const { data: { session } } = await supabase.auth.getSession();
+  const session = await getServerSession();
   if (!session?.user) redirect('/login');
 
+  const supabase = await createSupabaseServerClient();
+
   try {
-    const [
-      { data: notebook, error: nbError },
-      { data: items, error: itemsError },
-      modulos,
-      historico,
-    ] = await Promise.all([
-      supabase
-        .from('study_notebooks')
-        .select('id, title, description')
-        .eq('id', id)
-        .eq('user_id', session.user.id)
-        .single(),
-      supabase
-        .from('study_notebook_items')
-        .select('id, modulo_slug, titulo_aula, topico, position')
-        .eq('notebook_id', id)
-        .order('position', { ascending: true }),
+    // Evita corrida de refresh token no server: consultas Supabase autenticadas
+    // nao podem rodar em paralelo quando o access token expira.
+    const { data: notebook, error: nbError } = await supabase
+      .from('study_notebooks')
+      .select('id, title, description')
+      .eq('id', id)
+      .eq('user_id', session.user.id)
+      .single();
+
+    if (nbError || !notebook) return notFound();
+
+    const { data: items, error: itemsError } = await supabase
+      .from('study_notebook_items')
+      .select('id, modulo_slug, titulo_aula, topico, position')
+      .eq('notebook_id', id)
+      .order('position', { ascending: true });
+
+    if (itemsError) throw itemsError;
+
+    const [modulos, historico] = await Promise.all([
       getModulosEstudoCached(),
       getHistoricoQuestoesCached(session.user.id),
     ]);
-
-    if (nbError || !notebook) return notFound();
-    if (itemsError) throw itemsError;
 
     const estudadosSet = new Set<string>(
       (historico as any[])

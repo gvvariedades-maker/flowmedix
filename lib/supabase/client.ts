@@ -7,6 +7,17 @@ if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error('Missing Supabase environment variables')
 }
 
-/** Cliente browser alinhado ao login/middleware (sessão em cookies, não só localStorage). */
+/**
+ * Cliente Supabase do browser — **único ponto** que executa refresh de token
+ * em toda a aplicação. O SDK usa a Web Locks API internamente, garantindo que
+ * apenas um refresh rode por vez entre todas as abas do mesmo origin.
+ *
+ * IMPORTANTE: não criar outros `createBrowserClient` pela app. `@supabase/ssr`
+ * tem singleton global, mas duplicar aqui com opções diferentes gera corridas
+ * de refresh_token (AuthApiError: Invalid Refresh Token: Already Used).
+ *
+ * O `proxy.ts` chama `getUser()` (pode renovar tokens antes do RSC). Os Server
+ * Components leem a sessão só dos cookies (`getServerSession`), sem refresh no
+ * Node. O refresh contínuo no client fica neste singleton (Web Locks entre abas).
+ */
 export const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey)
-
