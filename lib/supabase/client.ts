@@ -1,10 +1,11 @@
-import { createBrowserClient } from '@supabase/ssr'
+import { createBrowserClient } from '@supabase/ssr';
+import { isInvalidRefreshAuthError } from '@/lib/supabase/authRefreshErrors';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables')
+  throw new Error('Missing Supabase environment variables');
 }
 
 /**
@@ -20,4 +21,31 @@ if (!supabaseUrl || !supabaseAnonKey) {
  * Components leem a sessão só dos cookies (`getServerSession`), sem refresh no
  * Node. O refresh contínuo no client fica neste singleton (Web Locks entre abas).
  */
-export const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey)
+export const supabase = createBrowserClient(supabaseUrl, supabaseAnonKey);
+
+let authRecoveryRegistered = false;
+
+function registerAuthInvalidRefreshRecovery() {
+  if (authRecoveryRegistered || typeof window === 'undefined') return;
+  authRecoveryRegistered = true;
+
+  const localSignOutIfRefreshInvalid = async (err: unknown) => {
+    if (!isInvalidRefreshAuthError(err)) return;
+    try {
+      await supabase.auth.signOut({ scope: 'local' });
+    } catch {
+      /* evita loop */
+    }
+  };
+
+  void supabase.auth.getUser().then(({ error }) => void localSignOutIfRefreshInvalid(error));
+
+  const onUnhandled = (e: PromiseRejectionEvent) => {
+    if (!isInvalidRefreshAuthError(e.reason)) return;
+    e.preventDefault();
+    void localSignOutIfRefreshInvalid(e.reason);
+  };
+  window.addEventListener('unhandledrejection', onUnhandled);
+}
+
+registerAuthInvalidRefreshRecovery();

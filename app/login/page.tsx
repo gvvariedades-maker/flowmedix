@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Zap, ArrowRight, Lock, MapPin, CheckCircle2, AlertCircle, Eye, EyeOff } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { supabase } from '@/lib/supabase/client';
+import { getPostLoginDestination } from '@/lib/getPostLoginDestination';
 
 // Componente Interno para lidar com parâmetros de URL
 function LoginContent() {
@@ -17,10 +18,11 @@ function LoginContent() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Captura a cidade da URL (ex: ?cidade=Caicó - RN)
-  const cidade = searchParams.get('cidade') 
-    ? decodeURIComponent(searchParams.get('cidade')!) 
+  // Captura a cidade da URL (ex: ?cidade=Caicó - RN) e destino interno (ex: ?next=/material)
+  const cidade = searchParams.get('cidade')
+    ? decodeURIComponent(searchParams.get('cidade')!)
     : null;
+  const nextPath = searchParams.get('next');
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,11 +48,8 @@ function LoginContent() {
         return;
       }
 
-      // Redireciona mantendo a cidade na URL para o Dashboard pegar
-      const destino = cidade 
-        ? `/estudar?cidade=${encodeURIComponent(cidade)}`
-        : '/estudar';
-      
+      const destino = getPostLoginDestination(nextPath, cidade);
+
       router.push(destino);
       router.refresh();
     } catch (err: any) {

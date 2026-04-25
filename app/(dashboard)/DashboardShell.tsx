@@ -16,6 +16,7 @@ import {
   X,
   CalendarDays,
   BookMarked,
+  HelpCircle,
   type LucideIcon,
 } from 'lucide-react';
 import { getAdminEmail } from '@/lib/constants';
@@ -428,6 +429,7 @@ function DashboardContent({
 
   const menuItems: MenuItem[] = [
     { label: 'Vitrine de Aulas', icon: LayoutDashboard, href: '/estudar', active: isPathActive('/estudar') },
+    { label: 'Como usar (tutorial)', icon: HelpCircle, href: '/ajuda', active: pathname === '/ajuda' },
     { label: 'Meu Desempenho', icon: BarChart3, href: '/analytics', active: pathname === '/analytics' },
     { label: 'Plano de Estudo Diário', icon: CalendarDays, href: '/plano-diario', active: pathname === '/plano-diario' },
     { label: 'Cadernos de Estudo', icon: BookMarked, href: '/cadernos', active: isPathActive('/cadernos') },

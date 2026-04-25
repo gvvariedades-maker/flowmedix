@@ -12,7 +12,9 @@
     "test:e2e:chromium": "playwright test --project=chromium",
     "validate:env": "tsx scripts/validate-env.ts",
     "analyze:performance": "tsx scripts/analyze-performance.ts",
-    "setup:webhook": "bash scripts/setup-webhook.sh"
+    "setup:webhook": "bash scripts/setup-webhook.sh",
+    "capture:tutorial": "tsx scripts/capture-tutorial-screens.ts",
+    "copy:tutorial-assets": "powershell -ExecutionPolicy Bypass -File scripts/copy-user-tutorial-assets.ps1"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
