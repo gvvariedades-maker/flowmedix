@@ -250,13 +250,14 @@ export default function AvantLessonPlayer({
 
   const handleVoltarLista = () => {
     if (fromPlano) return router.push('/plano-diario');
-    if (fromCaderno) return router.push(`/cadernos/${fromCaderno}`);
+    // Lista "Meus cadernos" — não a página de edição `/cadernos/[id]`
+    if (fromCaderno) return router.push('/cadernos');
     router.push('/estudar');
   };
 
   const handleConcluir = () => {
     if (fromPlano) return router.push('/plano-diario');
-    if (fromCaderno) return router.push(`/cadernos/${fromCaderno}`);
+    if (fromCaderno) return router.push('/cadernos');
     router.push('/estudar');
   };
 
@@ -367,7 +368,7 @@ export default function AvantLessonPlayer({
                   <ArrowLeft size={16} />
                 </div>
                 <span className="text-sm font-medium">
-                  {fromPlano ? 'Plano diário' : fromCaderno ? 'Caderno' : 'Vitrine'}
+                  {fromPlano ? 'Plano diário' : fromCaderno ? 'Meus cadernos' : 'Vitrine'}
                 </span>
               </button>
               {listaContexto && listaContexto.total > 0 && (

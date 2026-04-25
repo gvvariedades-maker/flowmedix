@@ -216,7 +216,6 @@ export async function POST(request: NextRequest) {
 
       const { error: insertError } = await supabaseAdmin.from('modulos_estudo').insert([
         {
-          cidade_id: null,
           modulo_nome: row.data.meta.topico,
           titulo_aula: row.data.meta.subtopico || row.data.meta.topico,
           modulo_slug: slug,

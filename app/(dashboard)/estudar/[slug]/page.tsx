@@ -13,6 +13,7 @@ import {
   type ModuloEstudoRow,
 } from '@/lib/vitrineFilters';
 import { getTodayReviews } from '@/lib/spaced-repetition';
+import { isDataServiceUnavailableError } from '@/lib/dataServiceError';
 
 interface ModuloListItem {
   id: string;
@@ -113,6 +114,18 @@ export default async function PaginaQuestaoDinamica({
         .map((h) => h.modulo_slug as string),
     );
 
+    async function listaPorAssunto(): Promise<ModuloListItem[]> {
+      if (!tituloAula) return [];
+      try {
+        return (await getQuestoesByAssuntoCached(tituloAula)) as ModuloListItem[];
+      } catch (e) {
+        if (isDataServiceUnavailableError(e)) {
+          return [];
+        }
+        throw e;
+      }
+    }
+
     if (hasVitrineFilters) {
       const modulosAll = await getModulosEstudoCached();
       const slugList = buildVitrineFilteredSlugList(
@@ -128,12 +141,10 @@ export default async function PaginaQuestaoDinamica({
       if (slugList.length > 0 && slugList.includes(resolvedParams.slug)) {
         lista = slugList.map((slug) => ({ id: slug, modulo_slug: slug }));
       } else {
-        const listaAssunto = tituloAula ? await getQuestoesByAssuntoCached(tituloAula) : [];
-        lista = listaAssunto as ModuloListItem[];
+        lista = await listaPorAssunto();
       }
     } else {
-      const listaAssunto = tituloAula ? await getQuestoesByAssuntoCached(tituloAula) : [];
-      lista = listaAssunto as ModuloListItem[];
+      lista = await listaPorAssunto();
     }
 
     questoesDoAssunto = lista.map((item) => ({

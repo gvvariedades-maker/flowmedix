@@ -6,6 +6,7 @@ import { FluxogramaSchema } from '@/lib/validations';
 import { logger } from '@/lib/logger';
 import { apiRateLimit } from '@/lib/rate-limit';
 import { getAdminEmail } from '@/lib/constants';
+import { isPostgrestRelationMissingError } from '@/lib/supabase/postgrestErrors';
 
 export async function POST(req: Request) {
   // Rate limiting
@@ -106,6 +107,15 @@ export async function POST(req: Request) {
       .select();
 
     if (dbError) {
+      if (isPostgrestRelationMissingError(dbError)) {
+        return NextResponse.json(
+          {
+            error:
+              'Tabela de fluxogramas não existe neste projeto. Crie as tabelas (ex.: flowcharts) ou desative esta rota no deploy mínimo.',
+          },
+          { status: 503 }
+        );
+      }
       logger.error('Database error', dbError, { modulo_id, title: finalTitle });
       return NextResponse.json(
         {

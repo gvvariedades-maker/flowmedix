@@ -92,10 +92,12 @@ export default function CadernosListClient({ cadernos: inicial }: { cadernos: No
   const [pendingDelete, setPendingDelete] = useState<NotebookSummary | null>(null);
 
   return (
-    <div className="min-h-screen bg-slate-50/90 pb-safe">
-      <CadernosHeader />
+    <div className="min-h-screen bg-slate-50/90 pb-24 pb-safe">
+      <div className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-white/90">
+        <CadernosHeader />
+      </div>
 
-      <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 md:px-10">
+      <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 md:px-10 md:pt-8">
         {cadernos.length === 0 ? (
           <CadernosEmptyState />
         ) : (

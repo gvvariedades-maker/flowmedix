@@ -7,7 +7,9 @@ import { motion } from 'framer-motion';
 import {
   BookOpen,
   CalendarDays,
+  ChevronRight,
   Flame,
+  LayoutGrid,
   Shield,
   Target,
   Trophy,
@@ -66,7 +68,7 @@ export default function MeuDesempenhoDashboard({ dados }: { dados: DesempenhoDat
   }
 
   return (
-    <div className="dashboard-surface relative min-h-screen bg-background pb-safe text-foreground">
+    <div className="dashboard-surface relative min-h-screen bg-background pb-24 pb-safe text-foreground">
       <ZerarDesempenhoDialog
         open={dialogZerar}
         zerando={zerando}
@@ -78,17 +80,37 @@ export default function MeuDesempenhoDashboard({ dados }: { dados: DesempenhoDat
         onConfirm={confirmarZerarDesempenho}
       />
 
-      <header className="border-b border-border bg-card/40 backdrop-blur-sm">
-        <div className="mx-auto max-w-3xl px-4 py-6 md:px-8">
-          <p className="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow-sm ring-1 ring-slate-900/10 dark:bg-white dark:text-slate-900 dark:ring-white/20">
-            Meu desempenho
-          </p>
-          <h1 className="mt-3 text-2xl font-semibold tracking-tight text-foreground">Acompanhe seu progresso</h1>
-          <p className="mt-1 text-sm text-muted-foreground">Metas, sequência e assuntos nos últimos 30 dias.</p>
-        </div>
-      </header>
+      <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
+        <header className="bg-transparent">
+          <div className="mx-auto max-w-3xl px-4 py-6 md:px-8">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+              <div className="min-w-0">
+                <p className="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow-sm ring-1 ring-slate-900/10 dark:bg-white dark:text-slate-900 dark:ring-white/20">
+                  Meu desempenho
+                </p>
+                <h1 className="mt-3 text-2xl font-semibold tracking-tight text-foreground">
+                  Acompanhe seu progresso
+                </h1>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Metas, sequência e assuntos nos últimos 30 dias.
+                </p>
+              </div>
+              <Button
+                asChild
+                className="h-11 shrink-0 gap-2 rounded-xl px-4 font-semibold sm:self-center"
+              >
+                <Link href="/estudar" className="inline-flex items-center">
+                  <LayoutGrid className="h-4 w-4" aria-hidden />
+                  Ir à vitrine
+                  <ChevronRight className="h-4 w-4 opacity-80" aria-hidden />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </header>
+      </div>
 
-      <div className="mx-auto max-w-3xl space-y-6 px-4 py-8 md:px-8">
+      <div className="mx-auto max-w-3xl space-y-6 px-4 py-6 md:px-8 md:pt-8">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, y: 8 }}
@@ -253,15 +275,10 @@ export default function MeuDesempenhoDashboard({ dados }: { dados: DesempenhoDat
                 <div>
                   <p className="text-sm font-semibold text-foreground">Comece a estudar para ver seu progresso</p>
                   <p className="mt-1 text-xs text-muted-foreground">
-                    Conclua o estudo reverso de uma questão e o painel atualiza automaticamente.
+                    Conclua o estudo reverso de uma questão e o painel atualiza automaticamente. Use o botão{' '}
+                    <span className="font-medium text-foreground">Ir à vitrine</span> no topo da página.
                   </p>
                 </div>
-                <Button asChild className="rounded-xl">
-                  <Link href="/estudar" className="inline-flex items-center gap-2">
-                    <BookOpen className="h-4 w-4" aria-hidden />
-                    Ir para a vitrine
-                  </Link>
-                </Button>
               </CardContent>
             </Card>
           </motion.div>

@@ -9,7 +9,10 @@
 
 import { unstable_cache } from 'next/cache';
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
+import { cache as cacheByRequest } from 'react';
 import { logger } from './logger';
+import { DataServiceUnavailableError } from './dataServiceError';
+import { withPostgrestReadRetry } from './supabaseReadRetry';
 
 // Cliente Supabase SEM cookies - para uso dentro de unstable_cache.
 // Lazy: evita createClient com URL/key indefinidos no import (ex.: `next build` / CI sem .env).
@@ -85,31 +88,32 @@ const MODULOS_ESTUDO_VITRINE_LIMIT = 5000;
  * Cache para lista de módulos de estudo
  * Revalida a cada 5 minutos (dados semi-estáticos)
  */
+// Chave versionada: evita `unstable_cache` antigo com `[]` (rede/env) por vários minutos.
+const MODULOS_ESTUDO_CACHE_ID = 'modulos-estudo-catalog-v2';
+
 // Cache wrapper com tracking
 const modulosCacheFn = unstable_cache(
   async () => {
     const supabase = getSupabaseAnon();
     if (!supabase) {
       trackCacheMiss('modulos-estudo-list');
-      return [];
+      // Não retornar [] aqui: seria cacheado e a vitrine fica "vazia" até o revalidate.
+      throw new DataServiceUnavailableError(
+        'Configuração incompleta: variáveis NEXT_PUBLIC_SUPABASE_* ausentes no servidor.',
+      );
     }
 
-    const { data, error } = await supabase
-      .from('modulos_estudo')
-      .select('id, modulo_slug, modulo_nome, titulo_aula, banca, created_at, avant_codigo')
-      .order('created_at', { ascending: false })
-      .limit(MODULOS_ESTUDO_VITRINE_LIMIT);
-    
-    if (error) {
-      logger.error('Failed to fetch modules from cache', error);
-      trackCacheMiss('modulos-estudo-list');
-      return [];
-    }
-    
+    const data = await withPostgrestReadRetry('modulos-estudo-list', async () =>
+      supabase
+        .from('modulos_estudo')
+        .select('id, modulo_slug, modulo_nome, titulo_aula, banca, created_at, avant_codigo')
+        .order('created_at', { ascending: false })
+        .limit(MODULOS_ESTUDO_VITRINE_LIMIT),
+    );
     trackCacheHit('modulos-estudo-list');
-    return data || [];
+    return data ?? [];
   },
-  ['modulos-estudo-list'],
+  [MODULOS_ESTUDO_CACHE_ID],
   {
     ...CACHE_CONFIG.SEMI_STATIC,
     tags: ['modulos-estudo', 'semi-static'],
@@ -163,8 +167,10 @@ export async function getQuestaoBySlugCached(slug: string) {
  * Cache para lista de questões por assunto (titulo_aula)
  * Usado para navegação entre questões do mesmo assunto
  * Revalida a cada 5 minutos
+ * `cacheByRequest`: deduplica no mesmo request (varias chamadas RSC/paralelo).
+ * Falha de rede: lança (não cacheia `[]` falso em `unstable_cache`). A página do player pode tratar com try/catch.
  */
-export async function getQuestoesByAssuntoCached(tituloAula: string) {
+export const getQuestoesByAssuntoCached = cacheByRequest(async (tituloAula: string) => {
   const cacheKey = `questoes-assunto-${tituloAula}`;
 
   return unstable_cache(
@@ -172,24 +178,21 @@ export async function getQuestoesByAssuntoCached(tituloAula: string) {
       const supabase = getSupabaseAnon();
       if (!supabase) {
         trackCacheMiss(cacheKey);
-        return [];
+        throw new DataServiceUnavailableError();
       }
 
-      const { data, error } = await supabase
-        .from('modulos_estudo')
-        .select('modulo_slug, id')
-        .eq('titulo_aula', tituloAula)
-        .order('created_at', { ascending: true })
-        .limit(200);
-
-      if (error) {
-        logger.error('Failed to fetch questions by assunto from cache', error, { tituloAula });
-        trackCacheMiss(cacheKey);
-        return [];
-      }
-
+      const data = await withPostgrestReadRetry(
+        `questoes-assunto:${tituloAula.slice(0, 40)}`,
+        async () =>
+          supabase
+            .from('modulos_estudo')
+            .select('modulo_slug, id')
+            .eq('titulo_aula', tituloAula)
+            .order('created_at', { ascending: true })
+            .limit(200),
+      );
       trackCacheHit(cacheKey);
-      return data || [];
+      return data ?? [];
     },
     [cacheKey],
     {
@@ -197,55 +200,49 @@ export async function getQuestoesByAssuntoCached(tituloAula: string) {
       tags: ['questoes', 'semi-static', `assunto-${tituloAula}`],
     },
   )();
-}
+});
 
 /**
  * Cache para lista de questões por banca e módulo
  * Usado para navegação entre questões
  * Revalida a cada 5 minutos
  */
-export async function getQuestoesByBancaCached(banca: string, moduloNome: string | null) {
-  const cacheKey = `questoes-banca-${banca}-modulo-${moduloNome || 'null'}`;
-  
-  return unstable_cache(
-    async () => {
-      const supabase = getSupabaseAnon();
-      if (!supabase) {
-        trackCacheMiss(cacheKey);
-        return [];
-      }
+export const getQuestoesByBancaCached = cacheByRequest(
+  async (banca: string, moduloNome: string | null) => {
+    const cacheKey = `questoes-banca-${banca}-modulo-${moduloNome || 'null'}`;
 
-      let query = supabase
-        .from('modulos_estudo')
-        .select('modulo_slug, id')
-        .eq('banca', banca);
-      
-      if (moduloNome === null) {
-        query = query.is('modulo_nome', null);
-      } else {
-        query = query.eq('modulo_nome', moduloNome);
-      }
-      
-      const { data, error } = await query
-        .order('created_at', { ascending: true })
-        .limit(100);
-      
-      if (error) {
-        logger.error('Failed to fetch questions list from cache', error, { banca, moduloNome });
-        trackCacheMiss(cacheKey);
-        return [];
-      }
-      
-      trackCacheHit(cacheKey);
-      return data || [];
-    },
-    [cacheKey],
-    {
-      ...CACHE_CONFIG.SEMI_STATIC,
-      tags: ['questoes', 'semi-static', `banca-${banca}`],
-    }
-  )();
-}
+    return unstable_cache(
+      async () => {
+        const supabase = getSupabaseAnon();
+        if (!supabase) {
+          trackCacheMiss(cacheKey);
+          throw new DataServiceUnavailableError();
+        }
+
+        const data = await withPostgrestReadRetry(`questoes-banca:${banca}`, async () => {
+          let q = supabase
+            .from('modulos_estudo')
+            .select('modulo_slug, id')
+            .eq('banca', banca);
+
+          if (moduloNome === null) {
+            q = q.is('modulo_nome', null);
+          } else {
+            q = q.eq('modulo_nome', moduloNome);
+          }
+          return q.order('created_at', { ascending: true }).limit(100);
+        });
+        trackCacheHit(cacheKey);
+        return data ?? [];
+      },
+      [cacheKey],
+      {
+        ...CACHE_CONFIG.SEMI_STATIC,
+        tags: ['questoes', 'semi-static', `banca-${banca}`],
+      },
+    )();
+  },
+);
 
 /**
  * Cache para histórico de questões por usuário
@@ -265,21 +262,18 @@ export async function getHistoricoQuestoesCached(userId?: string) {
       // Histórico é por usuário - usa service role para bypass RLS ao filtrar por userId
       const { createServerSupabase } = await import('./supabase/server');
       const supabase = await createServerSupabase();
-      
-      const { data, error } = await supabase
-        .from('historico_questoes')
-        .select('modulo_slug, acertou, estudo_reverso_concluido')
-        .eq('user_id', userId)
-        .limit(1000);
-      
-      if (error) {
-        logger.error('Failed to fetch history from cache', error, { userId });
-        trackCacheMiss(cacheKey);
-        return [];
-      }
-      
+
+      const data = await withPostgrestReadRetry(
+        `historico_questoes:${userId.slice(0, 8)}…`,
+        async () =>
+          supabase
+            .from('historico_questoes')
+            .select('modulo_slug, acertou, estudo_reverso_concluido')
+            .eq('user_id', userId)
+            .limit(1000),
+      );
       trackCacheHit(cacheKey);
-      return data || [];
+      return data ?? [];
     },
     [cacheKey],
     {
@@ -347,20 +341,15 @@ export const getFluxogramasCached = unstable_cache(
       return [];
     }
 
-    const { data, error } = await supabase
-      .from('flowcharts')
-      .select('id, title, slug, modulo_id')
-      .order('created_at', { ascending: false })
-      .limit(100);
-    
-      if (error) {
-        logger.error('Failed to fetch flowcharts from cache', error);
-        trackCacheMiss('fluxogramas-list');
-        return [];
-      }
-      
-      trackCacheHit('fluxogramas-list');
-      return data || [];
+    const data = await withPostgrestReadRetry('flowcharts-list', async () =>
+      supabase
+        .from('flowcharts')
+        .select('id, title, slug, modulo_id')
+        .order('created_at', { ascending: false })
+        .limit(100),
+    );
+    trackCacheHit('fluxogramas-list');
+    return data ?? [];
   },
   ['fluxogramas-list'],
   {

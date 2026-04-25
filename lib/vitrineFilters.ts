@@ -3,6 +3,8 @@
  * questões no player — mesmo conjunto que o aluno vê ao aplicar banca/assunto/busca.
  */
 
+import { compareModuloCurriculum } from '@/lib/vitrineOrder';
+
 export type ModuloEstudoRow = {
   id: string;
   modulo_slug: string;
@@ -10,6 +12,7 @@ export type ModuloEstudoRow = {
   titulo_aula: string | null;
   banca: string;
   avant_codigo: number | null;
+  created_at?: string | null;
 };
 
 export type HistoricoQuestaoRow = {
@@ -85,7 +88,12 @@ export function filterModulosLikeVitrine(
   return result;
 }
 
-type QuestaoItem = { slug: string; status: 'nao_estudada' | 'estudada' };
+type QuestaoItem = {
+  slug: string;
+  status: 'nao_estudada' | 'estudada';
+  created_at?: string | null;
+  avant_codigo: number | null;
+};
 
 type GrupoSubtopico = {
   titulo_aula: string;
@@ -117,17 +125,21 @@ export function orderedSlugsFromVitrineGrouping(filteredModulos: ModuloComStats[
     grupo.questoes.push({
       slug: m.modulo_slug,
       status,
+      created_at: m.created_at,
+      avant_codigo: m.avant_codigo,
     });
     grupo.totalQuestoes += 1;
     if (m.estudoReversoConcluido) grupo.trabalhadas += 1;
   });
 
   map.forEach((grupo) => {
-    grupo.questoes.sort((a, b) => {
-      const estudadaA = a.status === 'estudada' ? 1 : 0;
-      const estudadaB = b.status === 'estudada' ? 1 : 0;
-      return estudadaA - estudadaB;
-    });
+    /* Ordem de navegação = mesma de `getQuestoesByAssuntoCached` (created_at asc) */
+    grupo.questoes.sort((a, b) =>
+      compareModuloCurriculum(
+        { created_at: a.created_at, avant_codigo: a.avant_codigo, modulo_slug: a.slug },
+        { created_at: b.created_at, avant_codigo: b.avant_codigo, modulo_slug: b.slug },
+      ),
+    );
   });
 
   const grupos = Array.from(map.values()).sort((a, b) => {

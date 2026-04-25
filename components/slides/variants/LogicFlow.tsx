@@ -11,6 +11,26 @@ interface LogicFlowProps {
   layoutVariant?: string;
 }
 
+/** Destaca a expressão "estudo reverso" (qualquer caixa) no texto do passo. */
+const ESTUDO_REVERSO_RE = /(estudo\s+reverso)/gi;
+
+function renderStepContent(text: string, isRevealed: boolean) {
+  const highlightClass = isRevealed
+    ? 'font-bold text-cyan-300 [text-shadow:0_0_14px_rgba(34,211,238,0.5)]'
+    : 'font-semibold text-cyan-400/35';
+  const parts = text.split(ESTUDO_REVERSO_RE);
+  return parts.map((part, i) => {
+    if (/^estudo\s+reverso$/i.test(part)) {
+      return (
+        <span key={i} className={highlightClass} title="Estudo reverso">
+          {part}
+        </span>
+      );
+    }
+    return <span key={i}>{part}</span>;
+  });
+}
+
 // ============================================================================
 // PIPELINE COGNITIVO: Estrutura Vertical/Horizontal/Cards com Desbloqueio Sequencial
 // layout_variant: vertical | horizontal | cards
@@ -91,7 +111,13 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
                   <span className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm bg-gradient-to-br ${theme.primary} text-slate-900`}>
                     {isRevealed ? <CheckCircle2 size={18} /> : index + 1}
                   </span>
-                  <p className={`min-w-0 text-sm font-medium leading-snug break-words [overflow-wrap:anywhere] ${isRevealed ? theme.textPrimary : 'text-slate-500'}`}>{step}</p>
+                  <p
+                    className={`min-w-0 text-sm font-semibold leading-snug break-words [overflow-wrap:anywhere] ${
+                      isRevealed ? 'text-slate-50' : 'text-slate-500/70'
+                    }`}
+                  >
+                    {renderStepContent(step, isRevealed)}
+                  </p>
                 </motion.div>
                 {!isLast && (
                   <motion.div
@@ -137,7 +163,13 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
                 <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-black text-sm mb-3 bg-gradient-to-br ${theme.primary} text-slate-900`}>
                   {isRevealed ? <CheckCircle2 size={20} /> : index + 1}
                 </div>
-                <p className={`text-sm font-medium leading-relaxed ${isRevealed ? theme.textPrimary : 'text-slate-500'}`}>{step}</p>
+                <p
+                  className={`text-sm font-semibold leading-relaxed ${
+                    isRevealed ? 'text-slate-50' : 'text-slate-500/70'
+                  }`}
+                >
+                  {renderStepContent(step, isRevealed)}
+                </p>
               </motion.div>
             );
           })}
@@ -272,20 +304,17 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
 
                       {/* Conteúdo do Step */}
                       <div className="min-w-0 flex-1 pt-1">
-                        <motion.p
-                          animate={{
-                            color: isRevealed ? theme.textPrimary : 'rgba(148, 163, 184, 0.4)',
-                          }}
+                        <p
                           className={`
                             text-sm md:text-base
-                            font-medium leading-relaxed
+                            font-semibold leading-relaxed
                             break-words [overflow-wrap:anywhere]
-                            ${isRevealed ? theme.textPrimary : 'text-slate-500'}
                             transition-colors duration-300
+                            ${isRevealed ? `text-slate-50 [text-shadow:0_1px_2px_rgba(0,0,0,0.4)]` : 'text-slate-500/60'}
                           `}
                         >
-                          {step}
-                        </motion.p>
+                          {renderStepContent(step, isRevealed)}
+                        </p>
                       </div>
                     </div>
 

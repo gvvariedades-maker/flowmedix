@@ -46,26 +46,28 @@ export default function NovoCadernoClient() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50/90 pb-safe">
-      <header className="border-b border-slate-200/80 bg-white/80 shadow-sm shadow-slate-200/30 backdrop-blur-sm">
-        <div className="mx-auto max-w-4xl px-4 py-5 sm:px-6 md:px-10">
-          <Button
-            type="button"
-            variant="ghost"
-            asChild
-            className="mb-2 -ml-2 h-auto gap-1.5 rounded-lg px-2 py-1.5 text-sm font-medium text-slate-600 hover:text-blue-800"
-          >
-            <Link href="/cadernos">
-              <ArrowLeft className="h-4 w-4" strokeWidth={2} />
-              Cadernos de Estudo
-            </Link>
-          </Button>
-          <h1 className="text-3xl font-bold tracking-tight text-slate-800">Novo caderno</h1>
-          <p className="mt-1.5 text-sm font-medium text-slate-500">Dê um nome e, se quiser, uma descrição</p>
-        </div>
-      </header>
+    <div className="min-h-screen bg-slate-50/90 pb-24 pb-safe">
+      <div className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-white/90">
+        <header className="bg-transparent">
+          <div className="mx-auto max-w-4xl px-4 py-5 sm:px-6 md:px-10">
+            <Button
+              type="button"
+              variant="ghost"
+              asChild
+              className="mb-2 -ml-2 h-auto gap-1.5 rounded-lg px-2 py-1.5 text-sm font-medium text-slate-600 hover:text-blue-800"
+            >
+              <Link href="/cadernos">
+                <ArrowLeft className="h-4 w-4" strokeWidth={2} />
+                Cadernos de Estudo
+              </Link>
+            </Button>
+            <h1 className="text-3xl font-bold tracking-tight text-slate-800">Novo caderno</h1>
+            <p className="mt-1.5 text-sm font-medium text-slate-500">Dê um nome e, se quiser, uma descrição</p>
+          </div>
+        </header>
+      </div>
 
-      <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 md:px-10">
+      <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 md:px-10 md:pt-8">
         <div
           className="relative overflow-hidden rounded-3xl border-2 border-dashed border-slate-200/90 bg-slate-100/40 p-6 sm:p-10 md:p-12"
         >

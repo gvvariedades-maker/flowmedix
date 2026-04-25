@@ -5,6 +5,7 @@ import { createServerSupabase } from '@/lib/supabase/server';
 import { getAdminEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import { EnrollmentDeleteSchema } from '@/lib/validations';
+import { isPostgrestRelationMissingError } from '@/lib/supabase/postgrestErrors';
 
 const buildServerClient = async () => {
   const cookieStore = await cookies();
@@ -58,6 +59,9 @@ export async function GET() {
     .limit(1000); // Limite para performance
 
   if (enrollmentsError) {
+    if (isPostgrestRelationMissingError(enrollmentsError)) {
+      return NextResponse.json({ enrollments: [] });
+    }
     logger.error('Database error fetching enrollments', enrollmentsError);
     return NextResponse.json(
       { error: 'Erro ao buscar matrículas' },
@@ -124,6 +128,12 @@ export async function DELETE(request: NextRequest) {
     .eq('id', enrollmentId);
 
   if (error) {
+    if (isPostgrestRelationMissingError(error)) {
+      return NextResponse.json(
+        { error: 'Matrículas não estão habilitadas neste banco (tabela ausente).' },
+        { status: 404 }
+      );
+    }
     logger.error('Database error deleting enrollment', error, { enrollmentId });
     return NextResponse.json(
       { error: 'Erro ao deletar matrícula' },

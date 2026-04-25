@@ -419,6 +419,30 @@ export const ResolveUserSchema = z.object({
   email: z.string().email('E-mail inválido').min(1, 'E-mail é obrigatório'),
 });
 
+/** Resposta de GET /api/admin/user-metrics */
+export const UserMetricsResponseSchema = z.object({
+  totalUsers: z.number().int().min(0),
+  newLast7Days: z.number().int().min(0),
+  newLast30Days: z.number().int().min(0),
+  newWeekToDateUtc: z.number().int().min(0),
+  confirmedTotal: z.number().int().min(0),
+  last7DaysByDay: z.array(
+    z.object({
+      date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+      count: z.number().int().min(0),
+    })
+  ),
+  /** Quatro semanas ISO completas anteriores à semana atual (seg.–dom., UTC). */
+  last4IsoWeeks: z.array(
+    z.object({
+      weekStart: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+      weekEndExclusive: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+      count: z.number().int().min(0),
+    })
+  ),
+  generatedAt: z.string(),
+});
+
 // ============================================================================
 // EXPORTS DE CONSTANTES E HELPERS
 // ============================================================================
@@ -467,6 +491,7 @@ export type FluxogramaInput = z.infer<typeof FluxogramaSchema>;
 export type QuestaoCompletaInput = z.infer<typeof QuestaoCompletaSchema>;
 export type EnrollmentDeleteInput = z.infer<typeof EnrollmentDeleteSchema>;
 export type ResolveUserInput = z.infer<typeof ResolveUserSchema>;
+export type UserMetricsResponse = z.infer<typeof UserMetricsResponseSchema>;
 export type ReverseStudySlideInput = z.infer<typeof ReverseStudySlideSchema>;
 export type SlideItemInput = z.infer<typeof SlideItemSchema>;
 export type SlideMetaInput = z.infer<typeof SlideMetaSchema>;

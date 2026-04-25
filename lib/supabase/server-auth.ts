@@ -1,19 +1,15 @@
 import { cache } from 'react';
 import { createServerClient, type CookieOptions } from '@supabase/ssr';
 import { cookies } from 'next/headers';
-import { readSessionFromCookies } from '@/lib/supabase/read-session-from-cookies';
 
 /**
  * Cliente Supabase (anon) para Server Components com dedupe por request.
  *
- * `getServerSession()` **não** usa `supabase.auth.getSession()` no RSC: essa
- * chamada pode disparar refresh no Node e competir com `getUser()` do
- * `proxy.ts` (mesmo refresh_token) → `Invalid Refresh Token: Already Used`.
- * A sessão para UI/redirect vem só da leitura dos cookies em
- * `readSessionFromCookies` (sem rede).
- *
- * `createSupabaseServerClient` continua disponível para queries com
- * `autoRefreshToken: false` no SDK SSR.
+ * `getServerSession()` usa `createServerClient` + `getSession()`. O
+ * `createServerClient` do `@supabase/ssr` força `autoRefreshToken: false` — a
+ * leitura vem do storage (cookies) **sem** refresh no Node, evitando competir
+ * com `getUser()` do `proxy.ts` (mesmo refresh_token) →
+ * `Invalid Refresh Token: Already Used`.
  */
 
 const cookiesConfig = (cookieStore: Awaited<ReturnType<typeof cookies>>) => ({
@@ -44,9 +40,12 @@ export const createSupabaseServerClient = cache(async () => {
 });
 
 /**
- * Retorna a `session` atual (só leitura de cookie) — deduplicada por request.
+ * Retorna a `session` atual (só leitura de cookie via SDK) — deduplicada por request.
  */
 export const getServerSession = cache(async () => {
-  const cookieStore = await cookies();
-  return readSessionFromCookies(cookieStore, process.env.NEXT_PUBLIC_SUPABASE_URL!);
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+  return session;
 });

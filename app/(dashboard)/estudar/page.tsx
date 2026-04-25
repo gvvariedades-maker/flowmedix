@@ -1,10 +1,14 @@
 import { Suspense } from 'react';
 import { getServerSession } from '@/lib/supabase/server-auth';
 import VitrineClient from '@/components/vitrine/VitrineClient';
-import { 
-  getModulosEstudoCached, 
-  getHistoricoQuestoesCached 
+import { logger } from '@/lib/logger';
+import {
+  getModulosEstudoCached,
+  getHistoricoQuestoesCached,
 } from '@/lib/cache';
+
+/** Evita HTML/CDN com payload RSC desatualizado; catálogo vem de `unstable_cache` com revalidação própria. */
+export const dynamic = 'force-dynamic';
 
 interface ModuloEstudoRow {
   id: string;
@@ -34,6 +38,12 @@ export default async function VitrinePage() {
     getModulosEstudoCached(),
     getHistoricoQuestoesCached(userId),
   ]);
+
+  if (!modulosData?.length) {
+    logger.warn('Vitrine: catálogo de módulos vazio — verifique PostgREST, RLS e variáveis Supabase no deploy.', {
+      hasEnvUrl: Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL),
+    });
+  }
 
   // Type assertions para compatibilidade
   const modulosTyped = (modulosData || []) as ModuloEstudoRow[];
@@ -68,6 +78,8 @@ export default async function VitrinePage() {
       modulo_nome: modulo.modulo_nome || 'Módulo',
       titulo_aula: modulo.titulo_aula || 'Aula sem título',
       banca: modulo.banca,
+      /** Ordem canônica do assunto (vitrine / player), igual a `getQuestoesByAssuntoCached`. */
+      created_at: (modulo as { created_at?: string | null }).created_at ?? null,
       avant_codigo:
         modulo.avant_codigo != null && !Number.isNaN(Number(modulo.avant_codigo))
           ? Number(modulo.avant_codigo)

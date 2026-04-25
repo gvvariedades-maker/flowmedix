@@ -1,8 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { z } from 'zod';
 import { logger } from '@/lib/logger';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 
-// POST /api/notebooks/[id]/items — adiciona item ao caderno
+const MAX_BATCH = 1_000;
+
+const itemInSchema = z.object({
+  modulo_slug: z.string().min(1),
+  titulo_aula: z.string().nullable().optional(),
+  topico: z.string().nullable().optional(),
+});
+
+const batchBodySchema = z.object({
+  items: z.array(itemInSchema).min(1).max(MAX_BATCH),
+});
+
+// POST /api/notebooks/[id]/items — um item, ou vários em `items` (lote)
 export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
@@ -14,11 +27,6 @@ export async function POST(
     const { user, supabase } = auth;
 
     const body = await request.json();
-    const { modulo_slug, titulo_aula, topico } = body;
-
-    if (!modulo_slug) {
-      return NextResponse.json({ error: 'modulo_slug obrigatório' }, { status: 400 });
-    }
 
     const { data: notebook } = await supabase
       .from('study_notebooks')
@@ -37,7 +45,66 @@ export async function POST(
       .limit(1)
       .maybeSingle();
 
-    const nextPosition = lastItem ? lastItem.position + 1 : 0;
+    let nextPosition = lastItem ? lastItem.position + 1 : 0;
+
+    if (Array.isArray(body?.items) && body.items.length > 0) {
+      const parsed = batchBodySchema.safeParse(body);
+      if (!parsed.success) {
+        return NextResponse.json(
+          { error: 'Lista inválida: máximo 1000 itens, todos com modulo_slug' },
+          { status: 400 }
+        );
+      }
+
+      const seen = new Set<string>();
+      const rows: {
+        notebook_id: string;
+        modulo_slug: string;
+        titulo_aula: string | null;
+        topico: string | null;
+        position: number;
+      }[] = [];
+
+      for (const it of parsed.data.items) {
+        if (seen.has(it.modulo_slug)) continue;
+        seen.add(it.modulo_slug);
+        rows.push({
+          notebook_id: notebookId,
+          modulo_slug: it.modulo_slug,
+          titulo_aula: it.titulo_aula ?? null,
+          topico: it.topico ?? null,
+          position: nextPosition,
+        });
+        nextPosition += 1;
+      }
+
+      if (rows.length === 0) {
+        return NextResponse.json({ error: 'Nenhum item após deduplicação' }, { status: 400 });
+      }
+
+      const { data, error } = await supabase
+        .from('study_notebook_items')
+        .insert(rows)
+        .select('id, modulo_slug, titulo_aula, topico, position, added_at');
+
+      if (error) {
+        if (error.code === '23505') {
+          return NextResponse.json(
+            { error: 'Uma ou mais questões já estavam no caderno' },
+            { status: 409 }
+          );
+        }
+        throw error;
+      }
+
+      return NextResponse.json({ items: data ?? [] }, { status: 201 });
+    }
+
+    const { modulo_slug, titulo_aula, topico } = body;
+
+    if (!modulo_slug) {
+      return NextResponse.json({ error: 'modulo_slug obrigatório' }, { status: 400 });
+    }
 
     const { data, error } = await supabase
       .from('study_notebook_items')

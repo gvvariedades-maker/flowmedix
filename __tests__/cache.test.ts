@@ -30,15 +30,17 @@ import {
 } from '@/lib/cache';
 
 describe('Sistema de Cache', () => {
-  // Mock do Supabase para testes
+  beforeAll(() => {
+    process.env.NEXT_PUBLIC_SUPABASE_URL = 'https://test.supabase.co';
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'test-anon-key';
+  });
+
   beforeEach(() => {
-    // Limpar cache entre testes
     jest.clearAllMocks();
   });
 
   describe('getModulosEstudoCached', () => {
     it('deve retornar array vazio se não houver dados', async () => {
-      // Em ambiente de teste, pode retornar vazio
       const result = await getModulosEstudoCached();
       expect(Array.isArray(result)).toBe(true);
     });

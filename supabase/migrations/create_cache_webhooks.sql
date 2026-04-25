@@ -18,6 +18,7 @@ CREATE OR REPLACE FUNCTION invalidate_cache_via_webhook(
 RETURNS void
 LANGUAGE plpgsql
 SECURITY DEFINER
+SET search_path TO pg_catalog, public
 AS $$
 DECLARE
   webhook_url TEXT;
@@ -65,6 +66,7 @@ $$;
 CREATE OR REPLACE FUNCTION trigger_invalidate_cache_modulos_insert()
 RETURNS TRIGGER
 LANGUAGE plpgsql
+SET search_path TO pg_catalog, public
 AS $$
 BEGIN
   PERFORM invalidate_cache_via_webhook('modulos_estudo', 'INSERT');
@@ -75,6 +77,7 @@ $$;
 CREATE OR REPLACE FUNCTION trigger_invalidate_cache_modulos_update()
 RETURNS TRIGGER
 LANGUAGE plpgsql
+SET search_path TO pg_catalog, public
 AS $$
 BEGIN
   PERFORM invalidate_cache_via_webhook('modulos_estudo', 'UPDATE');
@@ -85,6 +88,7 @@ $$;
 CREATE OR REPLACE FUNCTION trigger_invalidate_cache_modulos_delete()
 RETURNS TRIGGER
 LANGUAGE plpgsql
+SET search_path TO pg_catalog, public
 AS $$
 BEGIN
   PERFORM invalidate_cache_via_webhook('modulos_estudo', 'DELETE');
@@ -96,6 +100,7 @@ $$;
 CREATE OR REPLACE FUNCTION trigger_invalidate_cache_historico_insert()
 RETURNS TRIGGER
 LANGUAGE plpgsql
+SET search_path TO pg_catalog, public
 AS $$
 BEGIN
   PERFORM invalidate_cache_via_webhook('historico_questoes', 'INSERT');
@@ -106,6 +111,7 @@ $$;
 CREATE OR REPLACE FUNCTION trigger_invalidate_cache_historico_update()
 RETURNS TRIGGER
 LANGUAGE plpgsql
+SET search_path TO pg_catalog, public
 AS $$
 BEGIN
   PERFORM invalidate_cache_via_webhook('historico_questoes', 'UPDATE');
@@ -116,6 +122,7 @@ $$;
 CREATE OR REPLACE FUNCTION trigger_invalidate_cache_historico_delete()
 RETURNS TRIGGER
 LANGUAGE plpgsql
+SET search_path TO pg_catalog, public
 AS $$
 BEGIN
   PERFORM invalidate_cache_via_webhook('historico_questoes', 'DELETE');
@@ -127,6 +134,7 @@ $$;
 CREATE OR REPLACE FUNCTION trigger_invalidate_cache_flowcharts_insert()
 RETURNS TRIGGER
 LANGUAGE plpgsql
+SET search_path TO pg_catalog, public
 AS $$
 BEGIN
   PERFORM invalidate_cache_via_webhook('flowcharts', 'INSERT');
@@ -137,6 +145,7 @@ $$;
 CREATE OR REPLACE FUNCTION trigger_invalidate_cache_flowcharts_update()
 RETURNS TRIGGER
 LANGUAGE plpgsql
+SET search_path TO pg_catalog, public
 AS $$
 BEGIN
   PERFORM invalidate_cache_via_webhook('flowcharts', 'UPDATE');
@@ -147,6 +156,7 @@ $$;
 CREATE OR REPLACE FUNCTION trigger_invalidate_cache_flowcharts_delete()
 RETURNS TRIGGER
 LANGUAGE plpgsql
+SET search_path TO pg_catalog, public
 AS $$
 BEGIN
   PERFORM invalidate_cache_via_webhook('flowcharts', 'DELETE');
@@ -158,6 +168,7 @@ $$;
 CREATE OR REPLACE FUNCTION trigger_invalidate_cache_exam_contents_insert()
 RETURNS TRIGGER
 LANGUAGE plpgsql
+SET search_path TO pg_catalog, public
 AS $$
 BEGIN
   PERFORM invalidate_cache_via_webhook('exam_contents', 'INSERT');
@@ -168,6 +179,7 @@ $$;
 CREATE OR REPLACE FUNCTION trigger_invalidate_cache_exam_contents_update()
 RETURNS TRIGGER
 LANGUAGE plpgsql
+SET search_path TO pg_catalog, public
 AS $$
 BEGIN
   PERFORM invalidate_cache_via_webhook('exam_contents', 'UPDATE');
@@ -178,6 +190,7 @@ $$;
 CREATE OR REPLACE FUNCTION trigger_invalidate_cache_exam_contents_delete()
 RETURNS TRIGGER
 LANGUAGE plpgsql
+SET search_path TO pg_catalog, public
 AS $$
 BEGIN
   PERFORM invalidate_cache_via_webhook('exam_contents', 'DELETE');

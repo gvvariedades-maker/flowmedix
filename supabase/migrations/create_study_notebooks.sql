@@ -26,12 +26,15 @@ CREATE UNIQUE INDEX IF NOT EXISTS idx_items_notebook_slug ON study_notebook_item
 
 -- Trigger: atualiza updated_at do caderno automaticamente
 CREATE OR REPLACE FUNCTION update_notebook_updated_at()
-RETURNS TRIGGER AS $$
+RETURNS TRIGGER
+LANGUAGE plpgsql
+SET search_path TO pg_catalog, public
+AS $$
 BEGIN
   UPDATE study_notebooks SET updated_at = now() WHERE id = NEW.notebook_id;
   RETURN NEW;
 END;
-$$ LANGUAGE plpgsql;
+$$;
 
 CREATE OR REPLACE TRIGGER trg_notebook_items_updated
   AFTER INSERT OR DELETE ON study_notebook_items

@@ -110,15 +110,18 @@ function BuilderPanel({
   modulos,
   notebookId,
   onAdded,
+  onAddedMany,
 }: {
   modulos: ModuloDisponivel[];
   notebookId: string;
   onAdded: (item: NotebookItem) => void;
+  onAddedMany: (items: NotebookItem[]) => void;
 }) {
   const [busca, setBusca] = useState('');
   const [filtroTopico, setFiltroTopico] = useState('');
   const [filtroBanca, setFiltroBanca] = useState('');
   const [adding, setAdding] = useState<string | null>(null);
+  const [addingLote, setAddingLote] = useState(false);
 
   const topicos = useMemo(() => {
     const set = new Set<string>();
@@ -132,7 +135,8 @@ function BuilderPanel({
     return Array.from(set).sort();
   }, [modulos]);
 
-  const filtrados = useMemo(() => {
+  /** Todos os módulos que batem com busca + assunto + banca (sem teto de 50). */
+  const filtradosCompletos = useMemo(() => {
     const q = busca.trim().toLowerCase();
     const soNumero = q.replace(/^q-?/, '');
     return modulos.filter(m => {
@@ -148,8 +152,17 @@ function BuilderPanel({
       const matchTopico = !filtroTopico || m.titulo_aula === filtroTopico;
       const matchBanca = !filtroBanca || m.banca === filtroBanca;
       return matchBusca && matchTopico && matchBanca;
-    }).slice(0, 50);
+    });
   }, [modulos, busca, filtroTopico, filtroBanca]);
+
+  const filtrados = useMemo(
+    () => filtradosCompletos.slice(0, 50),
+    [filtradosCompletos],
+  );
+
+  /** Evita “adicionar tudo do catálogo” sem nenhum critério. */
+  const criterioLoteAtivo =
+    Boolean(filtroTopico) || Boolean(filtroBanca) || busca.trim().length > 0;
 
   const handleAdd = async (m: ModuloDisponivel) => {
     setAdding(m.modulo_slug);
@@ -169,6 +182,45 @@ function BuilderPanel({
       }
     } finally {
       setAdding(null);
+    }
+  };
+
+  const handleAddLote = async () => {
+    if (filtradosCompletos.length === 0 || !criterioLoteAtivo) return;
+    if (filtradosCompletos.length > 25) {
+      const ok = window.confirm(
+        `Adicionar ${filtradosCompletos.length} questões de uma vez ao caderno?`
+      );
+      if (!ok) return;
+    }
+    setAddingLote(true);
+    try {
+      const res = await fetchWithAuth(`/api/notebooks/${notebookId}/items`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: filtradosCompletos.map(m => ({
+            modulo_slug: m.modulo_slug,
+            titulo_aula: m.titulo_aula,
+            topico: m.modulo_nome,
+          })),
+        }),
+      });
+      const json = (await res.json()) as { items?: NotebookItem[]; error?: string };
+      if (res.ok && Array.isArray(json.items)) {
+        const meta = new Map(filtradosCompletos.map(m => [m.modulo_slug, m]));
+        onAddedMany(
+          json.items.map(item => ({
+            ...item,
+            estudada: false,
+            avant_codigo: meta.get(item.modulo_slug)?.avant_codigo ?? null,
+          })),
+        );
+      } else if (!res.ok) {
+        window.alert(json.error || 'Não foi possível adicionar o lote.');
+      }
+    } finally {
+      setAddingLote(false);
     }
   };
 
@@ -218,6 +270,42 @@ function BuilderPanel({
             {bancas.map(b => <option key={b} value={b}>{b}</option>)}
           </select>
         </div>
+
+        {criterioLoteAtivo && filtradosCompletos.length > 0 && (
+          <div className="pt-1 border-t border-slate-100">
+            <button
+              type="button"
+              onClick={handleAddLote}
+              disabled={addingLote}
+              className="w-full flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl border border-indigo-200 bg-indigo-50/80 text-indigo-800 text-xs font-black uppercase tracking-widest hover:bg-indigo-100 transition-colors disabled:opacity-50"
+            >
+              {addingLote ? (
+                <>
+                  <Loader2 size={14} className="animate-spin" />
+                  Adicionando lote…
+                </>
+              ) : (
+                <>
+                  <Layers size={14} />
+                  Adicionar todas ({filtradosCompletos.length}
+                  {filtradosCompletos.length > 1 ? ' questões' : ' questão'})
+                </>
+              )}
+            </button>
+            {filtradosCompletos.length > 50 && (
+              <p className="text-center text-[10px] text-slate-500 font-bold mt-1.5">
+                Lista abaixo mostra 50; o lote inclui as {filtradosCompletos.length} do filtro.
+              </p>
+            )}
+          </div>
+        )}
+
+        {!criterioLoteAtivo && modulos.length > 0 && (
+          <p className="text-[10px] text-slate-500 leading-relaxed">
+            Escolha um <strong>assunto</strong> e/ou <strong>banca</strong> ou use a
+            <strong> busca</strong> para ativar a opção de adicionar o lote inteiro de uma vez.
+          </p>
+        )}
       </div>
 
       {/* Resultados */}
@@ -260,9 +348,9 @@ function BuilderPanel({
         )}
       </div>
 
-      {modulos.length > 0 && filtrados.length === 50 && (
+      {modulos.length > 0 && filtradosCompletos.length > 50 && filtrados.length === 50 && (
         <p className="text-center text-[10px] text-slate-400 font-bold p-3">
-          Mostrando 50 de {modulos.length} — refine a busca
+          Mostrando 50 de {filtradosCompletos.length} com este filtro — refine a busca
         </p>
       )}
     </div>
@@ -304,13 +392,21 @@ export default function CadernoDetailClient({
     setModulos(prev => prev.filter(m => m.modulo_slug !== item.modulo_slug));
   };
 
+  const handleAddedMany = (novos: NotebookItem[]) => {
+    if (novos.length === 0) return;
+    const slugs = new Set(novos.map(i => i.modulo_slug));
+    setItems(prev => [...prev, ...novos]);
+    setModulos(prev => prev.filter(m => !slugs.has(m.modulo_slug)));
+  };
+
   const estudadas = items.filter(i => i.estudada).length;
   const firstSlug = items.find(i => !i.estudada)?.modulo_slug || items[0]?.modulo_slug;
 
   return (
-    <div className="min-h-screen bg-slate-50 pb-safe">
-      {/* Header */}
-      <div className="bg-white border-b border-slate-100 px-6 py-5 md:px-10">
+    <div className="min-h-screen bg-slate-50 pb-24 pb-safe">
+      {/* Header — sticky no scroll (área principal do dashboard) */}
+      <div className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-white/90">
+        <div className="bg-transparent px-6 py-5 md:px-10">
         <div className="max-w-6xl mx-auto">
           <button
             onClick={() => router.push('/cadernos')}
@@ -353,10 +449,11 @@ export default function CadernoDetailClient({
             )}
           </div>
         </div>
+        </div>
       </div>
 
       {/* Conteúdo: 2 colunas */}
-      <div className="max-w-6xl mx-auto px-6 py-6 md:px-10">
+      <div className="max-w-6xl mx-auto px-6 py-6 md:px-10 md:pt-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 min-h-[70vh]">
 
           {/* Coluna esquerda: itens do caderno */}
@@ -400,6 +497,7 @@ export default function CadernoDetailClient({
                 modulos={modulos}
                 notebookId={caderno.id}
                 onAdded={handleAdded}
+                onAddedMany={handleAddedMany}
               />
             </div>
           </div>

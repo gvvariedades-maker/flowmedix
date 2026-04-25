@@ -14,13 +14,8 @@ type Props = {
  */
 export function CadernosHeader({ className }: Props) {
   return (
-    <header
-      className={cn(
-        'border-b border-slate-200/80 bg-white/90 shadow-sm shadow-slate-200/30 backdrop-blur-sm',
-        className,
-      )}
-    >
-      <div className="mx-auto flex max-w-4xl flex-col gap-6 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6 md:px-10">
+    <header className={cn('bg-transparent', className)}>
+      <div className="mx-auto flex max-w-4xl flex-col gap-6 px-4 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-6 md:px-10">
         <div className="flex flex-col items-center text-center sm:block sm:text-left">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-700">Meus cadernos</p>
           <h1 className="mt-3 text-balance text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">

@@ -18,6 +18,7 @@ import {
   Circle,
 } from 'lucide-react';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
+import { compareModuloCurriculum } from '@/lib/vitrineOrder';
 import { cn } from '@/lib/utils';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -41,6 +42,8 @@ interface QuestaoItem {
   numero: number;
   status: QuestaoStatus;
   avant_codigo: number | null;
+  /** Mesma chave de ordenação de `getQuestoesByAssuntoCached` (created_at asc). */
+  created_at: string | null;
 }
 
 interface ModuloEstudo {
@@ -50,6 +53,7 @@ interface ModuloEstudo {
   modulo_slug: string;
   banca: string;
   avant_codigo: number | null;
+  created_at: string | null;
   estudoReversoConcluido: boolean;
   stats: {
     acertos: number;
@@ -88,22 +92,37 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
    * Não ler `searchParams` no primeiro render: no SSR / primeiro paint o cliente pode
    * divergir da URL real → erro de hidratação. Defaults iguais ao servidor; URL aplica depois.
    */
-  const [cidadeUrl, setCidadeUrl] = useState('Treinamento');
+  const [cidadeUrl, setCidadeUrl] = useState('Estudo Reverso');
   const [modulos] = useState<ModuloEstudo[]>(initialModulos);
   const [searchTerm, setSearchTerm] = useState('');
   const [bancaFilter, setBancaFilter] = useState('');
   const [assuntoFilter, setAssuntoFilter] = useState('');
   const [pagina, setPagina] = useState(1);
+  /**
+   * Radix Select gera `aria-controls` (ids) que podem divergir entre SSR e hidratação (React/Next 16 + Turbopack).
+   * O primeiro frame usa placeholders estáticos; após o mount, os `Select` montam só no cliente.
+   */
+  const [filtrosSelectMontados, setFiltrosSelectMontados] = useState(false);
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() => {
+      setFiltrosSelectMontados(true);
+    });
+    return () => cancelAnimationFrame(id);
+  }, []);
 
   /** Sincroniza estado com a barra de endereços (abertura, voltar/avançar, links externos). */
   useEffect(() => {
-    const c = searchParams.get('cidade');
-    setCidadeUrl(c ? decodeURIComponent(c) : 'Treinamento');
-    setSearchTerm(searchParams.get('q') ?? '');
-    setBancaFilter(searchParams.get('banca') ?? '');
-    setAssuntoFilter(searchParams.get('assunto') ?? '');
-    const raw = parseInt(searchParams.get('page') || '1', 10);
-    setPagina(Number.isFinite(raw) && raw >= 1 ? raw : 1);
+    const id = requestAnimationFrame(() => {
+      const c = searchParams.get('cidade');
+      setCidadeUrl(c ? decodeURIComponent(c) : 'Estudo Reverso');
+      setSearchTerm(searchParams.get('q') ?? '');
+      setBancaFilter(searchParams.get('banca') ?? '');
+      setAssuntoFilter(searchParams.get('assunto') ?? '');
+      const raw = parseInt(searchParams.get('page') || '1', 10);
+      setPagina(Number.isFinite(raw) && raw >= 1 ? raw : 1);
+    });
+    return () => cancelAnimationFrame(id);
   }, [searchParams]);
 
   const bancas = useMemo(
@@ -201,6 +220,7 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
         numero: 0,
         status,
         avant_codigo: m.avant_codigo,
+        created_at: m.created_at,
       });
       grupo.acertos += m.stats.acertos;
       grupo.erros += m.stats.total - m.stats.acertos;
@@ -212,15 +232,17 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
     });
 
     map.forEach((grupo) => {
-      grupo.questoes.sort((a, b) => {
-        const estudadaA = a.status === 'estudada' ? 1 : 0;
-        const estudadaB = b.status === 'estudada' ? 1 : 0;
-        return estudadaA - estudadaB;
-      });
+      grupo.questoes.sort((a, b) =>
+        compareModuloCurriculum(
+          { created_at: a.created_at, avant_codigo: a.avant_codigo, modulo_slug: a.slug },
+          { created_at: b.created_at, avant_codigo: b.avant_codigo, modulo_slug: b.slug },
+        ),
+      );
       grupo.questoes.forEach((q, i) => {
         q.numero = i + 1;
       });
-      grupo.firstSlug = grupo.questoes[0]?.slug ?? grupo.firstSlug;
+      const primeiroNao = grupo.questoes.find((q) => q.status === 'nao_estudada');
+      grupo.firstSlug = primeiroNao?.slug ?? grupo.questoes[0]?.slug ?? grupo.firstSlug;
     });
 
     return Array.from(map.values()).sort((a, b) => {
@@ -236,7 +258,10 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
   const paginaEfetiva = Math.min(Math.max(1, pagina), totalPaginas);
 
   useEffect(() => {
-    if (pagina > totalPaginas) setPagina(totalPaginas);
+    const id = requestAnimationFrame(() => {
+      if (pagina > totalPaginas) setPagina(totalPaginas);
+    });
+    return () => cancelAnimationFrame(id);
   }, [pagina, totalPaginas]);
 
   const gruposPagina = useMemo(() => {
@@ -254,17 +279,27 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
     vitrineListaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [pagina]);
 
+  const isVitrineTituloPadrao =
+    !searchTerm.trim() && !bancaFilter && !assuntoFilter;
+
   return (
     <div className="dashboard-surface min-h-screen bg-background pb-24 pb-safe text-foreground selection:bg-indigo-100 selection:text-indigo-900">
-      {/* Header da página: não sticky — o layout já fixa a barra global (menu / logo / zoom) */}
-      <header className="border-b border-border bg-background/90 backdrop-blur-md">
+      <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
+        <header className="bg-transparent">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-5 md:flex-row">
           <div className="flex w-full min-w-0 items-center gap-3 sm:gap-4 md:w-auto">
-            <div className="shrink-0 rounded-xl border border-border bg-muted/60 p-2.5 text-foreground sm:p-3">
-              <LayoutDashboard size={24} className="text-foreground" />
+            <div
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-50 to-violet-50/90 ring-1 ring-indigo-200/50 shadow-sm shadow-indigo-900/[0.06] sm:h-12 sm:w-12"
+              aria-hidden
+            >
+              <LayoutDashboard size={24} className="text-indigo-600" strokeWidth={2} />
             </div>
             <div className="min-w-0 flex-1 md:flex-none">
-              <h1 className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Painel Tático</h1>
+              <h1 className="mb-1.5">
+                <span className="inline-block rounded-md bg-gradient-to-r from-indigo-600/10 via-indigo-500/12 to-violet-600/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-indigo-800 ring-1 ring-indigo-400/30 shadow-sm shadow-indigo-900/5 sm:text-[11px] sm:px-3">
+                  Painel Tático
+                </span>
+              </h1>
               <h2 className="line-clamp-2 text-lg font-semibold leading-snug tracking-tight text-foreground md:line-clamp-1">
                 Missão: {cidadeUrl}
               </h2>
@@ -303,52 +338,73 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
         </div>
       </header>
 
-      <main className="mx-auto max-w-7xl space-y-8 px-6 pt-8">
-        <section className="space-y-4">
+        <div className="mx-auto max-w-7xl px-6 pb-6 pt-0">
+        <section className="space-y-4" aria-label="Filtros da vitrine">
           <div className="flex items-center gap-2 text-muted-foreground">
             <Filter size={16} aria-hidden />
             <span className="text-xs font-medium uppercase tracking-wider">Filtros</span>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <Select
-              value={bancaFilter || FILTER_ALL}
-              onValueChange={(v) => {
-                setBancaFilter(v === FILTER_ALL ? '' : v);
-                setPagina(1);
-              }}
-            >
-              <SelectTrigger className="h-11 w-full rounded-xl">
-                <SelectValue placeholder="Todas as bancas" />
-              </SelectTrigger>
-              <SelectContent position="item-aligned">
-                <SelectItem value={FILTER_ALL}>Todas as bancas</SelectItem>
-                {bancas.map((b) => (
-                  <SelectItem key={b} value={b}>
-                    {b}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            {filtrosSelectMontados ? (
+              <>
+                <Select
+                  value={bancaFilter || FILTER_ALL}
+                  onValueChange={(v) => {
+                    setBancaFilter(v === FILTER_ALL ? '' : v);
+                    setPagina(1);
+                  }}
+                >
+                  <SelectTrigger className="h-11 w-full rounded-xl">
+                    <SelectValue placeholder="Todas as bancas" />
+                  </SelectTrigger>
+                  <SelectContent position="item-aligned">
+                    <SelectItem value={FILTER_ALL}>Todas as bancas</SelectItem>
+                    {bancas.map((b) => (
+                      <SelectItem key={b} value={b}>
+                        {b}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
 
-            <Select
-              value={assuntoFilter || FILTER_ALL}
-              onValueChange={(v) => {
-                setAssuntoFilter(v === FILTER_ALL ? '' : v);
-                setPagina(1);
-              }}
-            >
-              <SelectTrigger className="h-11 w-full rounded-xl">
-                <SelectValue placeholder="Todos os assuntos" />
-              </SelectTrigger>
-              <SelectContent position="item-aligned">
-                <SelectItem value={FILTER_ALL}>Todos os assuntos</SelectItem>
-                {assuntos.map((a) => (
-                  <SelectItem key={a} value={a}>
-                    {a}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+                <Select
+                  value={assuntoFilter || FILTER_ALL}
+                  onValueChange={(v) => {
+                    setAssuntoFilter(v === FILTER_ALL ? '' : v);
+                    setPagina(1);
+                  }}
+                >
+                  <SelectTrigger className="h-11 w-full rounded-xl">
+                    <SelectValue placeholder="Todos os assuntos" />
+                  </SelectTrigger>
+                  <SelectContent position="item-aligned">
+                    <SelectItem value={FILTER_ALL}>Todos os assuntos</SelectItem>
+                    {assuntos.map((a) => (
+                      <SelectItem key={a} value={a}>
+                        {a}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </>
+            ) : (
+              <>
+                <div
+                  className="flex h-11 w-full items-center justify-between rounded-xl border border-input bg-muted/50 px-3 py-2 text-sm text-foreground/80 shadow-sm"
+                  aria-hidden
+                >
+                  <span className="line-clamp-1">Todas as bancas</span>
+                  <ChevronDown className="h-4 w-4 opacity-50" aria-hidden />
+                </div>
+                <div
+                  className="flex h-11 w-full items-center justify-between rounded-xl border border-input bg-muted/50 px-3 py-2 text-sm text-foreground/80 shadow-sm"
+                  aria-hidden
+                >
+                  <span className="line-clamp-1">Todos os assuntos</span>
+                  <ChevronDown className="h-4 w-4 opacity-50" aria-hidden />
+                </div>
+              </>
+            )}
           </div>
           {(bancaFilter || assuntoFilter) && (
             <button
@@ -364,22 +420,35 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
             </button>
           )}
         </section>
+        </div>
+      </div>
 
+      <main className="mx-auto max-w-7xl space-y-8 px-6 pt-6 md:pt-8">
         <section className="space-y-8">
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-            <h3 className="text-sm font-semibold tracking-tight text-foreground">
-              {searchTerm
-                ? `Resultados para "${searchTerm}"`
-                : bancaFilter || assuntoFilter
-                  ? `Filtrado${bancaFilter ? ` • ${bancaFilter}` : ''}${assuntoFilter ? ` • ${assuntoFilter}` : ''}`
-                  : 'Vitrine de questões'}
-            </h3>
-            <div className="hidden min-h-px min-w-[4rem] flex-1 bg-border sm:block" />
-            <span className="w-full text-xs font-medium text-muted-foreground sm:w-auto sm:text-right">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
+            <h2
+              className={cn(
+                'max-w-[85%] text-balance leading-[1.15] tracking-tight',
+                isVitrineTituloPadrao
+                  ? 'border-l-[4px] border-indigo-500 pl-4 text-2xl font-extrabold sm:pl-5 sm:text-3xl'
+                  : 'text-xl font-bold text-slate-900 sm:text-2xl',
+              )}
+            >
+              {searchTerm ? (
+                `Resultados para “${searchTerm}”`
+              ) : bancaFilter || assuntoFilter ? (
+                `Filtrado${bancaFilter ? ` • ${bancaFilter}` : ''}${assuntoFilter ? ` • ${assuntoFilter}` : ''}`
+              ) : (
+                <span className="bg-gradient-to-r from-indigo-600 via-indigo-700 to-violet-700 bg-clip-text text-transparent">
+                  Vitrine de questões
+                </span>
+              )}
+            </h2>
+            <p className="shrink-0 text-sm leading-relaxed text-slate-500 sm:max-w-[46%] sm:pb-1 sm:text-right">
               {totalAssuntos > 0 && totalPaginas > 1
                 ? `Mostrando ${(paginaEfetiva - 1) * ASSUNTOS_POR_PAGINA + 1}–${Math.min(paginaEfetiva * ASSUNTOS_POR_PAGINA, totalAssuntos)} de ${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`
                 : `${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`}
-            </span>
+            </p>
           </div>
 
           {grupos.length > 0 ? (

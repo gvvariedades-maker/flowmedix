@@ -493,6 +493,37 @@ export default function AvantLaboratory() {
       {/* ÁREA DE TRABALHO */}
       <main className="max-w-[1800px] mx-auto p-6 grid grid-cols-12 gap-8 h-[calc(100vh-100px)] [grid-template-rows:1fr]">
 
+        <aside className="col-span-12 -mb-2">
+          <details className="group rounded-2xl border border-slate-200 bg-amber-50/60 px-4 py-3 text-slate-700 shadow-sm open:pb-4">
+            <summary className="cursor-pointer list-none text-left text-xs font-bold uppercase tracking-wider text-amber-900/90">
+              <span className="inline-flex items-center gap-2">
+                <AlertCircle className="h-3.5 w-3.5 shrink-0 text-amber-600" aria-hidden />
+                Cidade, import em massa e coluna <code className="rounded bg-amber-100/80 px-1 font-mono text-[11px]">cidade_id</code>
+                <span className="text-[10px] font-semibold text-amber-700/80 group-open:hidden">(clique para expandir)</span>
+              </span>
+            </summary>
+            <ul className="mt-3 space-y-2 border-t border-amber-200/80 pt-3 text-[12px] leading-relaxed text-slate-600">
+              <li>
+                O painel e a API de publicação usam o JSON da questão (<strong>sem</strong>{' '}
+                <code className="text-[11px]">cidade_id</code> no corpo do JSON). Cidade aluno
+                fica no link do painel, ex.: <code className="text-[11px]">/estudar?cidade=…</code>.
+              </li>
+              <li>
+                A tabela <code className="text-[11px]">modulos_estudo</code> pode ter{' '}
+                <code className="text-[11px]">cidade_id</code> optional (legado) para import SQL/CSV
+                antigo; fora isso, pode deixar de fora.
+              </li>
+              <li>
+                Se um import mostrar “Could not find the column <code className="text-[11px]">cidade_id</code>”,
+                rode a migration que recria a coluna nullable no Supabase, ou remova a coluna do CSV.
+              </li>
+            </ul>
+            <p className="mt-2 text-[11px] text-slate-500">
+              Documentação: <code className="rounded bg-slate-100 px-1">docs/IMPORTACAO_LABORATORIO.md</code>
+            </p>
+          </details>
+        </aside>
+
         {/* EDITOR */}
         <div className="col-span-12 lg:col-span-4 flex flex-col gap-4 min-h-0 overflow-y-auto">
           <div className="flex items-center justify-between px-2">
