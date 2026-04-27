@@ -19,6 +19,11 @@ import {
   EstudoReversoSlideZoomProvider,
   EstudoReversoSlideZoomToolbar,
 } from '@/components/lesson/EstudoReversoSlideZoom';
+import { MicroTip } from '@/components/onboarding/MicroTip';
+import {
+  getReverseStudySlideMicrotipKey,
+  REVERSE_STUDY_MICROTIPS,
+} from '@/components/onboarding/reverseStudyMicrotips';
 import { logger } from '@/lib/logger';
 import { sanitizeHTML } from '@/lib/validations';
 import {
@@ -322,6 +327,7 @@ export default function AvantLessonPlayer({
 
   const slidesArray = (slidesSource?.length ? slidesSource : [fallbackSlide]).map(normalizeSlide);
   const currentSlide = slidesArray[slideAtual];
+  const currentSlideMicrotipKey = getReverseStudySlideMicrotipKey(currentSlide?.type ?? currentSlide?.layout_type);
   const totalSlides = slidesArray.length;
   const fadeInUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };
   
@@ -508,8 +514,14 @@ export default function AvantLessonPlayer({
               ref={confirmarRespostaRef}
               initial={{ y: 20, opacity: 0 }} 
               animate={{ y: 0, opacity: 1 }} 
-              className="flex justify-center scroll-mt-4 pt-2 pb-6"
+              className="flex flex-col items-center gap-3 scroll-mt-4 px-6 pt-2 pb-6"
             >
+              <MicroTip
+                storageKey="reverse-study.answer-before-feedback"
+                tip={REVERSE_STUDY_MICROTIPS['answer-before-feedback']}
+                enabled={etapa === 'pergunta'}
+                className="w-full max-w-xl"
+              />
               <button 
                 onClick={() => { 
                   setEtapa('gabarito'); 
@@ -653,17 +665,25 @@ export default function AvantLessonPlayer({
                     </p>
                   </div>
                 </div>
-                <button 
-                  type="button"
-                  onClick={() => { 
-                    setEtapa('estudo'); 
-                    setSlideAtual(0); 
-                  }}
-                  className="w-full md:w-auto min-h-[48px] bg-indigo-600 hover:bg-indigo-700 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold uppercase text-[10px] sm:text-[11px] tracking-wide sm:tracking-widest shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2 sm:gap-3 transition-all sm:hover:-translate-y-1"
-                >
-                  <BrainCircuit size={18} className="shrink-0" /> 
-                  <span className="text-center leading-tight">Ativar Estudo Reverso</span>
-                </button>
+                <div className="w-full md:w-auto md:max-w-sm">
+                  <MicroTip
+                    storageKey="reverse-study.feedback-learning"
+                    tip={REVERSE_STUDY_MICROTIPS['feedback-learning']}
+                    enabled={etapa === 'gabarito'}
+                    className="mb-3"
+                  />
+                  <button 
+                    type="button"
+                    onClick={() => { 
+                      setEtapa('estudo'); 
+                      setSlideAtual(0); 
+                    }}
+                    className="w-full min-h-[48px] bg-indigo-600 hover:bg-indigo-700 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold uppercase text-[10px] sm:text-[11px] tracking-wide sm:tracking-widest shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2 sm:gap-3 transition-all sm:hover:-translate-y-1"
+                  >
+                    <BrainCircuit size={18} className="shrink-0" /> 
+                    <span className="text-center leading-tight">Ativar Estudo Reverso</span>
+                  </button>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -717,6 +737,22 @@ export default function AvantLessonPlayer({
 
               {/* Sem overflow-x-hidden: com zoom mobile o conteúdo pode ultrapassar a largura — rolagem horizontal fica no EstudoReversoSlideZoom / pai. */}
               <div className="relative flex min-h-0 min-w-0 flex-1 flex-col">
+                <div className="mx-auto w-full max-w-5xl shrink-0 px-4 pb-2 sm:px-6 md:px-12">
+                  <MicroTip
+                    storageKey="reverse-study.intro"
+                    tip={REVERSE_STUDY_MICROTIPS['reverse-study-intro']}
+                    enabled={etapa === 'estudo' && slideAtual === 0}
+                    className="bg-white/95"
+                  />
+                  {currentSlideMicrotipKey ? (
+                    <MicroTip
+                      storageKey={`reverse-study.${currentSlideMicrotipKey}`}
+                      tip={REVERSE_STUDY_MICROTIPS[currentSlideMicrotipKey]}
+                      enabled={etapa === 'estudo'}
+                      className="mt-2 bg-white/95"
+                    />
+                  ) : null}
+                </div>
                 <EstudoReversoSlideZoom>
                   <AnimatePresence mode="wait">
                     <motion.div
@@ -775,9 +811,17 @@ export default function AvantLessonPlayer({
                       Próximo <ArrowRight size={16} />
                     </button>
                   ) : estudoConcluido ? (
-                    <div className="flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-green-500/20 border border-green-500/40 text-green-400 font-black uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest order-2 sm:order-none text-center">
-                      <BadgeCheck size={16} className="shrink-0" />
-                      Estudo Concluído!
+                    <div className="flex flex-col items-stretch gap-2 order-2 sm:order-none">
+                      <div className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-green-500/20 border border-green-500/40 text-green-400 font-black uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest text-center">
+                        <BadgeCheck size={16} className="shrink-0" />
+                        Estudo Concluído!
+                      </div>
+                      <MicroTip
+                        storageKey="reverse-study.study-completed"
+                        tip={REVERSE_STUDY_MICROTIPS['study-completed']}
+                        enabled={estudoConcluido}
+                        className="max-w-sm bg-white/95 text-slate-900"
+                      />
                     </div>
                   ) : (
                     <button

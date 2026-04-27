@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   metadataBase: getMetadataBase(),
   title: "AVANT - Plataforma de Estudo Reverso para Técnicos de Enfermagem",
   description:
-    "Plataforma gratuita de estudo reverso para Técnicos de Enfermagem. Prepare-se para EBSERH, prefeituras e concursos com método, vitrine de assuntos e acompanhamento de desempenho.",
+    "Estudo reverso para Técnicos de Enfermagem. Prepare-se para EBSERH, prefeituras e concursos com método, vitrine de assuntos e acompanhamento de desempenho.",
   keywords: [
     "técnico de enfermagem",
     "estudo reverso",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AVANT - Plataforma de Estudo Reverso para Técnicos de Enfermagem",
     description:
-      "Plataforma gratuita de estudo reverso para Técnicos de Enfermagem. EBSERH, prefeituras e concursos.",
+      "Estudo reverso para Técnicos de Enfermagem. EBSERH, prefeituras e concursos.",
     type: "website",
   },
   robots: {

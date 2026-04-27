@@ -17,10 +17,13 @@ import {
   CalendarDays,
   BookMarked,
   HelpCircle,
+  BrainCircuit,
   type LucideIcon,
 } from 'lucide-react';
 import { getAdminEmail } from '@/lib/constants';
 import { TextSizeControl } from '@/components/accessibility/TextSizeControl';
+import { EstudoReversoWelcomeModal } from '@/components/onboarding/EstudoReversoWelcomeModal';
+import { useEstudoReversoWelcome } from '@/components/onboarding/useEstudoReversoWelcome';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/lib/supabase/client';
 
@@ -281,6 +284,7 @@ function DashboardContent({
   const [userEmail, setUserEmail] = useState<string | null>(initialUserEmail);
   const [userDisplayName, setUserDisplayName] = useState<string | null>(initialDisplayName);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const estudoReversoWelcome = useEstudoReversoWelcome({ enabled: userEmail != null });
 
   const userInitials = useMemo(() => {
     const fromMeta = userDisplayName?.trim() ?? null;
@@ -430,6 +434,7 @@ function DashboardContent({
   const menuItems: MenuItem[] = [
     { label: 'Vitrine de Aulas', icon: LayoutDashboard, href: '/estudar', active: isPathActive('/estudar') },
     { label: 'Como usar (tutorial)', icon: HelpCircle, href: '/ajuda', active: pathname === '/ajuda' },
+    { label: 'Estudo Reverso (método)', icon: BrainCircuit, href: '/ajuda/estudo-reverso', active: pathname === '/ajuda/estudo-reverso' },
     { label: 'Meu Desempenho', icon: BarChart3, href: '/analytics', active: pathname === '/analytics' },
     { label: 'Plano de Estudo Diário', icon: CalendarDays, href: '/plano-diario', active: pathname === '/plano-diario' },
     { label: 'Cadernos de Estudo', icon: BookMarked, href: '/cadernos', active: isPathActive('/cadernos') },
@@ -556,6 +561,12 @@ function DashboardContent({
           {children}
         </main>
       </div>
+
+      <EstudoReversoWelcomeModal
+        isOpen={estudoReversoWelcome.isOpen}
+        onClose={estudoReversoWelcome.markSeenAndClose}
+        onSkip={estudoReversoWelcome.markSeenAndClose}
+      />
     </div>
   );
 }

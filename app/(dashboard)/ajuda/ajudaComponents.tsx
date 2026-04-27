@@ -3,8 +3,6 @@ import Link from 'next/link';
 import { existsSync } from 'fs';
 import { join } from 'path';
 import { ChevronRight } from 'lucide-react';
-import type { TutorialCallout } from './tutorial-annotations';
-import { TUTORIAL_ANNOTATIONS } from './tutorial-annotations';
 
 const TUTORIAL_DIR = join(process.cwd(), 'public', 'tutorial');
 
@@ -64,60 +62,6 @@ export function TutorialFigure({
   );
 }
 
-/**
- * Imagem com selos numerados e texto (legenda) — posições vêm de `TUTORIAL_ANNOTATIONS[file]`.
- * Use `callouts` para override; por padrão lê do mapa.
- */
-export function AnnotatedShot({
-  file,
-  alt,
-  caption,
-  priority,
-  callouts: calloutsOverride,
-}: {
-  file: string;
-  alt: string;
-  caption: string;
-  priority?: boolean;
-  callouts?: TutorialCallout[];
-}) {
-  if (!hasTutorialImage(file)) return null;
-  const callouts = calloutsOverride ?? TUTORIAL_ANNOTATIONS[file] ?? [];
-
-  return (
-    <figure className="not-prose my-5 space-y-3" aria-label={alt}>
-      <p className="text-[11px] font-bold uppercase tracking-widest text-indigo-700">Legenda na figura (números na captura)</p>
-      <div className="relative w-full overflow-hidden rounded-2xl border-2 border-indigo-200/60 bg-slate-900/5 shadow-lg shadow-slate-300/30">
-        <Image
-          src={`/tutorial/${file}`}
-          alt={alt}
-          width={1280}
-          height={800}
-          className="h-auto w-full"
-          priority={priority}
-        />
-        {callouts.map((c) => (
-          <div
-            key={`${c.n}-${c.left}-${c.top}`}
-            className="pointer-events-none absolute z-10"
-            style={{ top: c.top, left: c.left, transform: 'translate(-50%, -50%)' }}
-          >
-            <div className="flex max-w-[min(16rem,55vw)] flex-col items-center gap-1 sm:max-w-xs">
-              <div className="flex h-7 w-7 min-h-7 min-w-7 items-center justify-center rounded-full border-2 border-white bg-indigo-600 text-[11px] font-black text-white shadow-lg ring-1 ring-indigo-900/20">
-                {c.n}
-              </div>
-              <div className="rounded-lg border border-slate-200/90 bg-white/95 px-2 py-1.5 text-center text-[9px] font-semibold leading-tight text-slate-800 shadow-md backdrop-blur-sm sm:text-[10px]">
-                {c.text}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <figcaption className="text-balance text-center text-xs font-medium text-slate-500">{caption}</figcaption>
-    </figure>
-  );
-}
-
 export function Toc({ items }: { items: { id: string; label: string }[] }) {
   return (
     <nav
@@ -155,6 +99,17 @@ export function Note({ children }: { children: React.ReactNode }) {
 export function InternalLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <Link href={href} className="font-bold text-indigo-600 hover:underline">
+      {children}
+    </Link>
+  );
+}
+
+export function ActionLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="mt-3 inline-flex items-center justify-center rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-black text-white shadow-sm shadow-indigo-500/20 transition-colors hover:bg-indigo-700"
+    >
       {children}
     </Link>
   );

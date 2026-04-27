@@ -6,7 +6,7 @@ $Dest = Join-Path (Split-Path -Parent $PSScriptRoot) "public\tutorial"
 New-Item -ItemType Directory -Path $Dest -Force | Out-Null
 
 $Map = [ordered]@{
-  "seq-01.png" = "c__Users_TecnoInfo_AppData_Roaming_Cursor_User_workspaceStorage_42fdde70b83a77a7e20ceb5c54b48b35_images_Captura_de_Tela_13-328196e2-42f7-46c2-9ca1-ca532fe19429.png"
+  "seq-01.png" = "c__Users_TecnoInfo_AppData_Roaming_Cursor_User_workspaceStorage_42fdde70b83a77a7e20ceb5c54b48b35_images_Captura_de_Tela_01-3fce9d37-2cae-4845-a50d-80fd0c1ee999.png"
   "seq-02.png" = "c__Users_TecnoInfo_AppData_Roaming_Cursor_User_workspaceStorage_42fdde70b83a77a7e20ceb5c54b48b35_images_Captura_de_Tela_02-94043b19-22c0-40a8-aeee-83cf41c7f5ab.png"
   "seq-03.png" = "c__Users_TecnoInfo_AppData_Roaming_Cursor_User_workspaceStorage_42fdde70b83a77a7e20ceb5c54b48b35_images_Captura_de_Tela_03-b400a082-dc32-447a-a24d-85fde58456e5.png"
   "seq-04.png" = "c__Users_TecnoInfo_AppData_Roaming_Cursor_User_workspaceStorage_42fdde70b83a77a7e20ceb5c54b48b35_images_Captura_de_Tela_04-a0cefbce-5bfe-4a8c-8a63-71837594307f.png"

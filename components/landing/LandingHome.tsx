@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import type { LucideIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
@@ -10,9 +11,15 @@ import {
   Brain,
   CalendarDays,
   CheckCircle2,
-  Gift,
+  CircleAlert,
+  ClipboardCheck,
+  Eye,
+  FileQuestion,
   Layers,
   LayoutDashboard,
+  Lightbulb,
+  LockKeyhole,
+  MessageCircleQuestion,
   Sparkles,
   Target,
   Zap,
@@ -29,77 +36,161 @@ const fadeUp = {
   }),
 };
 
-const benefits = [
-  'Cadastro e uso da plataforma gratuitos',
-  'Foco em Técnico de Enfermagem e concursos reais',
-  'Estudo reverso: você aprende o “porquê” antes de decorar',
-  'Acompanhe desempenho, plano diário e cadernos no mesmo lugar',
+type IconCard = {
+  title: string;
+  text: string;
+  icon: LucideIcon;
+};
+
+const trustSignals = [
+  'Questões reais de concursos',
+  'Foco em Técnico em Enfermagem',
+  'Estudo reverso em 4 etapas',
+  'Plano diário e desempenho',
+  'Cadastro gratuito para começar',
 ];
 
-const steps = [
+const painPoints = [
+  'Você acerta por chute e não sabe repetir o raciocínio.',
+  'Você erra uma questão e só lê o gabarito.',
+  'Você revisa tudo de novo, inclusive o que já domina.',
+  'Você chega perto da prova sem clareza do que ainda trava sua pontuação.',
+];
+
+const methodSteps: Array<IconCard & { n: string }> = [
   {
     n: '01',
-    title: 'Escolha o assunto na vitrine',
-    text: 'Navegue por banca e tema. Cada card é um ciclo de estudo organizado para você.',
-    icon: LayoutDashboard,
+    title: 'Resolva uma questão real',
+    text: 'Comece pelo tipo de cobrança que aparece em prova, não por uma teoria solta.',
+    icon: FileQuestion,
   },
   {
     n: '02',
-    title: 'Viva o estudo reverso',
-    text: 'Slides e fluxos que constroem o raciocínio — não só a resposta da questão.',
-    icon: Brain,
+    title: 'Receba o diagnóstico',
+    text: 'Entenda se o erro veio de conceito, interpretação, detalhe de banca ou falta de revisão.',
+    icon: ClipboardCheck,
   },
   {
     n: '03',
-    title: 'Consolide e evolua',
-    text: 'Registre tentativas, veja analytics, use o plano diário e seus cadernos.',
-    icon: Target,
+    title: 'Ative o Estudo Reverso',
+    text: 'Transforme a questão em mapa, regra de ouro, fluxo lógico e zona de perigo.',
+    icon: Brain,
+  },
+  {
+    n: '04',
+    title: 'Volte pelo Plano Diário',
+    text: 'Revise no momento certo para não esquecer o que acabou de aprender.',
+    icon: CalendarDays,
   },
 ];
 
-const features = [
+const slideCards: IconCard[] = [
   {
-    title: 'Vitrine inteligente',
-    desc: 'Todos os assuntos em um painel tático, com progresso visível.',
+    title: 'Mapa mental',
+    text: 'Conecta os conceitos que a banca tentou misturar.',
     icon: Layers,
   },
   {
+    title: 'Regra de ouro',
+    text: 'Resume o ponto que você precisa lembrar na hora da prova.',
+    icon: Lightbulb,
+  },
+  {
+    title: 'Fluxo lógico',
+    text: 'Mostra a sequência de decisão para resolver casos parecidos.',
+    icon: Target,
+  },
+  {
+    title: 'Zona de perigo',
+    text: 'Aponta as pegadinhas que fazem candidato preparado errar.',
+    icon: CircleAlert,
+  },
+];
+
+const profileBenefits: IconCard[] = [
+  {
+    title: 'Para quem está começando',
+    text: 'Comece por questões reais e descubra quais assuntos merecem prioridade.',
+    icon: Sparkles,
+  },
+  {
+    title: 'Para quem já estuda há meses',
+    text: 'Pare de repetir o que já sabe e foque no que ainda derruba sua nota.',
+    icon: Eye,
+  },
+  {
+    title: 'Para quem erra por detalhe',
+    text: 'Use diagnóstico, zona de perigo e revisão para transformar erro em alerta de prova.',
+    icon: CircleAlert,
+  },
+];
+
+const features: IconCard[] = [
+  {
+    title: 'Vitrine de questões',
+    text: 'Escolha assuntos e comece por questões no formato que a banca cobra.',
+    icon: LayoutDashboard,
+  },
+  {
+    title: 'Estudo Reverso',
+    text: 'Transforme cada questão em explicação guiada, fixação e revisão.',
+    icon: Brain,
+  },
+  {
     title: 'Meu desempenho',
-    desc: 'Métricas que mostram onde investir tempo antes da prova.',
+    text: 'Acompanhe evolução e identifique padrões de erro.',
     icon: BarChart3,
   },
   {
     title: 'Plano diário',
-    desc: 'Rotina de estudo com lembretes do que revisar no dia.',
+    text: 'Revise no ritmo certo, sem depender de memória ou planilha manual.',
     icon: CalendarDays,
   },
   {
-    title: 'Cadernos de estudo',
-    desc: 'Monte listas personalizadas e estude no seu ritmo.',
+    title: 'Cadernos',
+    text: 'Organize questões e retome pontos críticos.',
     icon: BookMarked,
   },
   {
     title: 'Material de apoio',
-    desc: 'Conteúdo complementar alinhado à sua preparação.',
+    text: 'Use resumos e referências quando precisar reforçar base.',
     icon: BookOpen,
   },
+];
+
+const faqs = [
   {
-    title: 'Metodologia ativa',
-    desc: 'Estudo reverso + questões: entender para acertar de verdade.',
-    icon: Sparkles,
+    question: 'O Avant é gratuito?',
+    answer:
+      'Você pode criar sua conta grátis e começar pelo acesso inicial disponível hoje. Se houver planos pagos no futuro, isso será comunicado antes de qualquer cobrança.',
+  },
+  {
+    question: 'Preciso já estar avançado?',
+    answer:
+      'Não. Você pode começar por uma questão e deixar o diagnóstico mostrar onde focar.',
+  },
+  {
+    question: 'Serve para qual área?',
+    answer:
+      'A comunicação principal do Avant é focada em Técnico em Enfermagem e concursos com questões de banca.',
+  },
+  {
+    question: 'O que acontece depois do cadastro?',
+    answer:
+      'Você entra no app, escolhe uma questão na vitrine e começa o primeiro ciclo de estudo reverso.',
   },
 ];
 
 export function LandingHome() {
   return (
-    <div className="min-h-screen bg-[#020617] text-slate-100 overflow-x-hidden selection:bg-indigo-500/30 selection:text-white">
+    <div className="min-h-screen bg-[#010409] text-slate-100 overflow-x-hidden selection:bg-cyan-400/25 selection:text-white">
       {/* Fundo atmosférico */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[min(140%,900px)] h-[500px] bg-indigo-600/25 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#BEF264]/10 rounded-full blur-[100px]" />
-        <div className="absolute top-1/2 left-[-15%] w-[400px] h-[400px] bg-violet-600/15 rounded-full blur-[100px]" />
+        <div className="absolute top-[-22%] left-1/2 h-[520px] w-[min(140%,980px)] -translate-x-1/2 rounded-full bg-cyan-500/20 blur-[130px]" />
+        <div className="absolute bottom-[-12%] right-[-10%] h-[500px] w-[500px] rounded-full bg-[#BEF264]/10 blur-[110px]" />
+        <div className="absolute top-1/2 left-[-15%] h-[420px] w-[420px] rounded-full bg-indigo-600/20 blur-[110px]" />
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.055]"
           style={{
             backgroundImage: `linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px),
               linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px)`,
@@ -109,7 +200,7 @@ export function LandingHome() {
       </div>
 
       {/* Nav */}
-      <header className="relative z-20 border-b border-white/5 bg-slate-950/40 backdrop-blur-xl sticky top-0">
+      <header className="sticky top-0 z-20 border-b border-white/5 bg-slate-950/55 backdrop-blur-xl">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-2.5 group">
             <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/40 group-hover:scale-105 transition-transform">
@@ -138,110 +229,193 @@ export function LandingHome() {
 
       <main className="relative z-10">
         {/* Hero */}
-        <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-14 sm:pt-20 pb-20 sm:pb-28">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex flex-wrap items-center justify-center gap-2 mb-8"
-            >
-              <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-[#BEF264] bg-[#BEF264]/10 border border-[#BEF264]/25 px-4 py-2 rounded-full">
-                <Gift size={14} className="shrink-0" />
-                Plataforma gratuita
-              </span>
-              <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-indigo-300 bg-indigo-500/15 border border-indigo-400/30 px-4 py-2 rounded-full">
-                <Brain size={14} className="shrink-0" />
-                Estudo reverso
-              </span>
-            </motion.div>
-
-            <motion.h1
-              custom={0}
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              className="text-4xl sm:text-5xl md:text-6xl font-[1000] leading-[1.05] tracking-tight text-white mb-6"
-            >
-              O concurso não espera.{' '}
-              <span className="bg-gradient-to-r from-white via-indigo-200 to-[#BEF264] bg-clip-text text-transparent">
-                Sua preparação também não pode esperar.
-              </span>
-            </motion.h1>
-
-            <motion.p
-              custom={1}
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              className="text-lg sm:text-xl text-slate-400 font-medium leading-relaxed mb-10 max-w-2xl mx-auto"
-            >
-              A <strong className="text-slate-200">AVANT</strong> é a plataforma de{' '}
-              <strong className="text-indigo-300">estudo reverso</strong> para{' '}
-              <strong className="text-slate-200">Técnico em Enfermagem</strong>: você constrói o raciocínio
-              clínico e teórico com método, questões e acompanhamento —{' '}
-              <span className="text-[#BEF264] font-bold">sem pagar assinatura</span>.
-            </motion.p>
-
-            <motion.div
-              custom={2}
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4"
-            >
-              <Link
-                href="/register"
-                className="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-black uppercase tracking-widest text-sm px-8 py-4 rounded-2xl shadow-xl shadow-indigo-600/30 transition-all hover:scale-[1.02] hover:shadow-indigo-500/40"
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 pb-16 sm:pb-24">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr]">
+            <div>
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="mb-7 inline-flex flex-wrap items-center gap-2"
               >
-                Começar agora — é grátis
-                <ArrowRight size={18} />
-              </Link>
-              <Link
-                href="/login"
-                className="inline-flex items-center justify-center gap-2 border border-white/15 bg-white/5 hover:bg-white/10 text-white font-bold text-sm px-8 py-4 rounded-2xl transition-all"
-              >
-                Já tenho conta
-              </Link>
-            </motion.div>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-4 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-cyan-200 sm:text-xs">
+                  <Brain size={14} className="shrink-0" />
+                  Estudo reverso para Técnico em Enfermagem
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#BEF264]/25 bg-[#BEF264]/10 px-4 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-[#BEF264] sm:text-xs">
+                  <LockKeyhole size={14} className="shrink-0" />
+                  Comece grátis
+                </span>
+              </motion.div>
 
-            <motion.ul
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.45, duration: 0.6 }}
-              className="mt-14 grid sm:grid-cols-2 gap-3 text-left max-w-xl mx-auto"
-            >
-              {benefits.map((line) => (
-                <li
-                  key={line}
-                  className="flex items-start gap-2.5 text-sm text-slate-400 font-medium"
+              <motion.h1
+                custom={0}
+                variants={fadeUp}
+                initial="hidden"
+                animate="visible"
+                className="mb-6 text-4xl font-[1000] leading-[1.02] tracking-tight text-white sm:text-5xl md:text-6xl"
+              >
+                Pare de estudar no escuro.{' '}
+                <span className="bg-gradient-to-r from-white via-cyan-200 to-[#BEF264] bg-clip-text text-transparent">
+                  Transforme questões reais em aprovação.
+                </span>
+              </motion.h1>
+
+              <motion.p
+                custom={1}
+                variants={fadeUp}
+                initial="hidden"
+                animate="visible"
+                className="mb-9 max-w-2xl text-lg font-medium leading-relaxed text-slate-400 sm:text-xl"
+              >
+                O <strong className="text-slate-100">Avant</strong> mostra onde você erra, explica o porquê
+                e transforma cada questão em um estudo guiado para concursos de{' '}
+                <strong className="text-cyan-200">Técnico em Enfermagem</strong>.
+              </motion.p>
+
+              <motion.div
+                custom={2}
+                variants={fadeUp}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col gap-4 sm:flex-row sm:items-center"
+              >
+                <Link
+                  href="/register"
+                  className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#BEF264] px-8 py-4 text-sm font-black uppercase tracking-widest text-slate-950 shadow-xl shadow-lime-400/20 transition-all hover:scale-[1.02] hover:bg-[#d4f879]"
                 >
-                  <CheckCircle2 className="text-[#BEF264] shrink-0 mt-0.5" size={18} />
-                  {line}
-                </li>
-              ))}
-            </motion.ul>
+                  Criar conta grátis
+                  <ArrowRight size={18} />
+                </Link>
+                <Link
+                  href="#metodo"
+                  className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/5 px-8 py-4 text-sm font-bold text-white transition-all hover:bg-white/10"
+                >
+                  Ver como funciona
+                </Link>
+              </motion.div>
+
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.45, duration: 0.6 }}
+                className="mt-4 text-sm font-medium text-slate-500"
+              >
+                Comece grátis, por uma questão real. Sem compromisso inicial.
+              </motion.p>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: 0.12, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              className="relative"
+            >
+              <div className="absolute -inset-8 rounded-full bg-cyan-400/10 blur-3xl" />
+              <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-[0_0_50px_rgba(0,242,255,0.12)] backdrop-blur-xl sm:p-6">
+                <div className="mb-5 flex items-center justify-between border-b border-white/10 pb-4">
+                  <div>
+                    <p className="text-[10px] font-black uppercase tracking-[0.32em] text-cyan-300">
+                      Ciclo Avant
+                    </p>
+                    <h2 className="mt-1 text-lg font-black text-white">Da questão ao estudo guiado</h2>
+                  </div>
+                  <div className="rounded-2xl border border-[#BEF264]/30 bg-[#BEF264]/10 px-3 py-2 text-[10px] font-black uppercase tracking-wider text-[#BEF264]">
+                    Online
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  {methodSteps.map((step, idx) => (
+                    <div
+                      key={step.n}
+                      className="group grid grid-cols-[auto_1fr] gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition-colors hover:border-cyan-400/30 hover:bg-cyan-400/5"
+                    >
+                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-400/25 bg-cyan-400/10 text-cyan-200">
+                        <step.icon size={20} />
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-500">
+                          Etapa {idx + 1}
+                        </p>
+                        <h3 className="mt-1 text-sm font-black text-white">{step.title}</h3>
+                        <p className="mt-1 text-xs font-medium leading-relaxed text-slate-400">{step.text}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* O que é estudo reverso */}
-        <section className="relative border-y border-white/5 bg-slate-950/50 py-20 sm:py-24">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="max-w-2xl mx-auto text-center mb-14 sm:mb-16">
-              <p className="text-[10px] font-black uppercase tracking-[0.35em] text-indigo-400 mb-3">
-                Por que funciona
+        {/* Barra de confiança */}
+        <section className="border-y border-white/5 bg-slate-950/45 px-4 py-5 sm:px-6">
+          <div className="mx-auto grid max-w-6xl gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {trustSignals.map((signal) => (
+              <div
+                key={signal}
+                className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3 text-sm font-bold text-slate-300"
+              >
+                <CheckCircle2 size={17} className="shrink-0 text-[#BEF264]" />
+                {signal}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Dor */}
+        <section className="px-4 py-20 sm:px-6 sm:py-24">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="mb-3 text-[10px] font-black uppercase tracking-[0.35em] text-[#BEF264]">
+                O problema real
               </p>
-              <h2 className="text-3xl sm:text-4xl font-[1000] text-white tracking-tight mb-4">
-                Estudo reverso: aprender de trás para frente, com propósito
+              <h2 className="mb-5 text-3xl font-[1000] tracking-tight text-white sm:text-4xl">
+                Você não precisa de mais uma pilha de conteúdo. Precisa saber exatamente o que revisar.
               </h2>
-              <p className="text-slate-400 text-lg leading-relaxed">
-                Em vez de só memorizar gabarito, você <strong className="text-slate-200">reconstrói o caminho</strong>
-                : conceitos em slides, conexões e revisão guiada — para na hora da prova a resposta fazer sentido.
+              <p className="text-base font-medium leading-relaxed text-slate-400 sm:text-lg">
+                A maioria dos candidatos alterna entre PDF, vídeo e questões sem saber se está evoluindo.
+                O problema não é estudar pouco: é estudar sem diagnóstico.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-              {steps.map((s, idx) => (
+            <div className="grid gap-3 sm:grid-cols-2">
+              {painPoints.map((point, idx) => (
+                <motion.div
+                  key={point}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.05, duration: 0.4 }}
+                  className="rounded-3xl border border-rose-400/15 bg-rose-950/15 p-5"
+                >
+                  <CircleAlert className="mb-4 text-rose-300" size={22} />
+                  <p className="text-sm font-semibold leading-relaxed text-slate-300">{point}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Método */}
+        <section id="metodo" className="relative border-y border-white/5 bg-slate-950/50 py-20 sm:py-24">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="max-w-2xl mx-auto text-center mb-14 sm:mb-16">
+              <p className="text-[10px] font-black uppercase tracking-[0.35em] text-indigo-400 mb-3">
+                Método Avant
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-[1000] text-white tracking-tight mb-4">
+                O método é simples: a questão vem primeiro.
+              </h2>
+              <p className="text-slate-400 text-lg leading-relaxed">
+                Em vez de começar por teoria infinita, você parte da cobrança real da prova e transforma erro,
+                dúvida e acerto por chute em direção de estudo.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+              {methodSteps.map((s, idx) => (
                 <motion.div
                   key={s.n}
                   initial={{ opacity: 0, y: 20 }}
@@ -264,17 +438,87 @@ export function LandingHome() {
           </div>
         </section>
 
+        {/* Showcase do produto */}
+        <section className="px-4 py-20 sm:px-6 sm:py-24">
+          <div className="mx-auto max-w-6xl">
+            <div className="mx-auto mb-12 max-w-3xl text-center">
+              <p className="mb-3 text-[10px] font-black uppercase tracking-[0.35em] text-cyan-300">
+                Produto real
+              </p>
+              <h2 className="mb-4 text-3xl font-[1000] tracking-tight text-white sm:text-4xl">
+                Uma questão vira uma aula visual.
+              </h2>
+              <p className="text-base font-medium leading-relaxed text-slate-400 sm:text-lg">
+                Depois da tentativa, você não recebe apenas “certo” ou “errado”. O Avant organiza
+                o raciocínio em slides de estudo para fixar o conceito e evitar o mesmo erro na próxima prova.
+              </p>
+            </div>
+
+            <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {slideCards.map((card, idx) => (
+                <motion.div
+                  key={card.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.05, duration: 0.4 }}
+                  className="rounded-3xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm"
+                >
+                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-400/25 bg-cyan-400/10 text-cyan-200">
+                    <card.icon size={21} />
+                  </div>
+                  <h3 className="mb-2 font-black tracking-tight text-white">{card.title}</h3>
+                  <p className="text-sm font-medium leading-relaxed text-slate-400">{card.text}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <SlideStylePreviews />
 
+        {/* Benefícios por perfil */}
+        <section className="px-4 py-20 sm:px-6 sm:py-24">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-12 max-w-2xl">
+              <p className="mb-3 text-[10px] font-black uppercase tracking-[0.35em] text-[#BEF264]">
+                Estudo com direção
+              </p>
+              <h2 className="text-3xl font-[1000] tracking-tight text-white sm:text-4xl">
+                Feito para quem quer parar de estudar no aleatório.
+              </h2>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-3">
+              {profileBenefits.map((item, idx) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.07, duration: 0.4 }}
+                  className="rounded-[2rem] border border-white/10 bg-gradient-to-b from-white/[0.07] to-transparent p-7"
+                >
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-[#BEF264]/25 bg-[#BEF264]/10 text-[#BEF264]">
+                    <item.icon size={23} />
+                  </div>
+                  <h3 className="mb-3 text-lg font-black tracking-tight text-white">{item.title}</h3>
+                  <p className="text-sm font-medium leading-relaxed text-slate-400">{item.text}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Features bento */}
-        <section className="py-20 sm:py-28 px-4 sm:px-6">
+        <section className="border-y border-white/5 bg-slate-950/50 py-20 sm:py-28 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-14">
               <p className="text-[10px] font-black uppercase tracking-[0.35em] text-[#BEF264] mb-3">
-                Tudo em um só lugar
+                Recursos que viram resultado
               </p>
               <h2 className="text-3xl sm:text-4xl font-[1000] text-white tracking-tight">
-                Ferramentas que acompanham sua jornada até a posse
+                Tudo que você precisa para sair do estudo aleatório.
               </h2>
             </div>
 
@@ -292,8 +536,40 @@ export function LandingHome() {
                     <f.icon className="text-[#BEF264]" size={22} />
                   </div>
                   <h3 className="font-black text-white mb-2 tracking-tight">{f.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{f.desc}</p>
+                  <p className="text-sm text-slate-400 leading-relaxed">{f.text}</p>
                 </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="px-4 py-20 sm:px-6 sm:py-24">
+          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+            <div>
+              <p className="mb-3 text-[10px] font-black uppercase tracking-[0.35em] text-cyan-300">
+                Antes de começar
+              </p>
+              <h2 className="mb-4 text-3xl font-[1000] tracking-tight text-white sm:text-4xl">
+                Dúvidas comuns antes do cadastro.
+              </h2>
+              <p className="text-base font-medium leading-relaxed text-slate-400">
+                A ideia é reduzir atrito: você entende o método, cria a conta e já começa por uma questão real.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {faqs.map((faq) => (
+                <div
+                  key={faq.question}
+                  className="rounded-3xl border border-white/10 bg-white/[0.04] p-6"
+                >
+                  <div className="mb-3 flex items-center gap-3">
+                    <MessageCircleQuestion className="shrink-0 text-cyan-300" size={21} />
+                    <h3 className="font-black text-white">{faq.question}</h3>
+                  </div>
+                  <p className="text-sm font-medium leading-relaxed text-slate-400">{faq.answer}</p>
+                </div>
               ))}
             </div>
           </div>
@@ -305,15 +581,15 @@ export function LandingHome() {
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto rounded-[2.5rem] border border-indigo-500/30 bg-gradient-to-br from-indigo-950/80 via-slate-900/90 to-slate-950 p-10 sm:p-14 text-center relative overflow-hidden"
+            className="max-w-4xl mx-auto rounded-[2.5rem] border border-cyan-400/25 bg-gradient-to-br from-cyan-950/40 via-slate-900/90 to-slate-950 p-10 sm:p-14 text-center relative overflow-hidden"
           >
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-600/20 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-400/20 via-transparent to-transparent pointer-events-none" />
             <div className="relative z-10">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-[1000] text-white tracking-tight mb-4">
-                Sua vaga começa com um clique — e não custa nada.
+                Sua próxima questão pode virar seu próximo avanço.
               </h2>
               <p className="text-slate-400 text-base sm:text-lg mb-8 max-w-xl mx-auto">
-                Crie sua conta em menos de um minuto e entre na vitrine de estudos reverso da AVANT.
+                Crie sua conta grátis e comece agora pelo método de estudo reverso do Avant.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
@@ -343,7 +619,7 @@ export function LandingHome() {
             <span className="text-slate-500 text-sm">· Estudo reverso para Técnico em Enfermagem</span>
           </div>
           <p className="text-xs text-slate-500 font-medium">
-            © {new Date().getFullYear()} AVANT. Plataforma gratuita para apoiar sua preparação.
+            © {new Date().getFullYear()} AVANT. Estudo reverso para apoiar sua preparação.
           </p>
         </div>
       </footer>
