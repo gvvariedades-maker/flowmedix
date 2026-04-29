@@ -86,6 +86,9 @@ jobs:
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ env.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           # Embutido no next build (NEXT_PUBLIC_*) para que o AdminLayout pule auth no CI
           NEXT_PUBLIC_E2E_ADMIN_BYPASS: 'true'
+          # Necessário para o teste E2E de cache: next start roda em produção,
+          # onde WEBHOOK_SECRET é obrigatório (isValidWebhook retorna false sem ele → 401)
+          WEBHOOK_SECRET: 'dev-secret'
 
       - name: Upload test results
         if: always()
