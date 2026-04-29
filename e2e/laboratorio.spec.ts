@@ -136,29 +136,25 @@ test.describe('Laboratório Admin', () => {
     await expect(previewContainer).toBeVisible({ timeout: 5000 });
   });
 
-  test('deve permitir exportar questão válida', async ({ page }) => {
-    // Colar JSON válido
+  test('deve habilitar publicar quando JSON é válido', async ({ page }) => {
     const jsonInput = page.locator('textarea').first();
     await jsonInput.fill(JSON.stringify(validQuestionJSON, null, 2));
-    
-    // Aguardar validação
+
     await page.waitForTimeout(2000);
-    
-    // Verificar se botão Exportar está habilitado
-    const exportButton = page.locator('button:has-text("Exportar")');
-    await expect(exportButton).toBeEnabled({ timeout: 5000 });
+
+    // Laboratório: fluxo de saída é "Publicar" (não há botão "Exportar")
+    const publishButton = page.getByRole('button', { name: /^Publicar$/ });
+    await expect(publishButton).toBeEnabled({ timeout: 5000 });
   });
 
-  test('deve permitir importar questão de arquivo', async ({ page }) => {
-    // Criar arquivo JSON temporário
-    const jsonContent = JSON.stringify(validQuestionJSON, null, 2);
-    
-    // Simular upload de arquivo
-    const importButton = page.locator('button:has-text("Importar")');
-    await expect(importButton).toBeVisible();
-    
-    // Nota: Upload real de arquivo requer configuração adicional
-    // Por enquanto, apenas verificamos que o botão existe
+  test('deve exibir ação para abrir JSON do arquivo', async ({ page }) => {
+    // UI atual: "Abrir JSON" + input file oculto (antes: label "Importar")
+    const openJson = page.getByRole('button', { name: 'Abrir JSON' });
+    await expect(openJson).toBeVisible();
+
+    const fileInput = page.locator('input[type="file"][accept*="json"]');
+    await expect(fileInput).toHaveCount(1);
+    await expect(fileInput).toBeHidden();
   });
 
   test('deve mostrar controles de preview', async ({ page }) => {
