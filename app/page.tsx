@@ -3,15 +3,27 @@ import { redirect } from 'next/navigation';
 import { LandingHome } from '@/components/landing/LandingHome';
 import { getServerSession } from '@/lib/supabase/server-auth';
 
+const homeTitle = 'Avant | Concursos Enfermagem com estudo reverso';
+const homeDescription =
+  'Prepare-se para concursos de Técnico em Enfermagem com questões reais comentadas, diagnóstico de erro, estudo reverso e revisão inteligente no Avant.';
+
 export const metadata: Metadata = {
-  title: 'Avant | Estudo reverso para Técnico em Enfermagem',
-  description:
-    'Estude para concursos de Técnico em Enfermagem com questões reais, diagnóstico de erro, estudo reverso e revisão inteligente. Crie sua conta grátis no Avant.',
+  title: homeTitle,
+  description: homeDescription,
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'Avant | Estudo reverso para Técnico em Enfermagem',
+    title: homeTitle,
     description:
-      'Questões reais, diagnóstico de erro, estudo reverso e revisão inteligente para concursos de Técnico em Enfermagem.',
+      'Questões comentadas, diagnóstico de erro, estudo reverso e revisão inteligente para concursos de Técnico em Enfermagem.',
+    url: '/',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: homeTitle,
+    description: homeDescription,
   },
 };
 

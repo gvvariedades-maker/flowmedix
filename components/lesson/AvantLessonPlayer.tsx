@@ -811,17 +811,35 @@ export default function AvantLessonPlayer({
                       Próximo <ArrowRight size={16} />
                     </button>
                   ) : estudoConcluido ? (
-                    <div className="flex flex-col items-stretch gap-2 order-2 sm:order-none">
-                      <div className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-green-500/20 border border-green-500/40 text-green-400 font-black uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest text-center">
-                        <BadgeCheck size={16} className="shrink-0" />
-                        Estudo Concluído!
+                    <div className="flex w-full max-w-md flex-col items-stretch gap-3 order-2 sm:order-none sm:max-w-lg">
+                      <div className="flex items-center justify-center gap-2 rounded-xl border border-green-500/40 bg-green-500/20 px-4 py-2.5 text-center text-[10px] font-black uppercase tracking-wide text-green-400 sm:text-xs sm:tracking-widest">
+                        <BadgeCheck size={16} className="shrink-0" aria-hidden />
+                        Estudo concluído
                       </div>
                       <MicroTip
                         storageKey="reverse-study.study-completed"
                         tip={REVERSE_STUDY_MICROTIPS['study-completed']}
                         enabled={estudoConcluido}
-                        className="max-w-sm bg-white/95 text-slate-900"
+                        className="max-w-none bg-white/95 text-slate-900"
                       />
+                      {proximaSlug ? (
+                        <button
+                          type="button"
+                          onClick={() => proximaSlug && handleNavegar(proximaSlug)}
+                          className="group flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-[#BEF264] px-4 py-3 text-[10px] font-black uppercase tracking-wide text-slate-900 shadow-[0_0_20px_rgba(190,242,100,0.35)] transition-all hover:bg-[#a3d648] active:scale-[0.98] sm:text-xs sm:tracking-widest"
+                        >
+                          Próxima questão
+                          <ArrowRight size={18} className="shrink-0" aria-hidden />
+                        </button>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => setEtapa('pergunta')}
+                          className="flex min-h-[48px] w-full items-center justify-center rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-[10px] font-black uppercase tracking-wide text-white transition-colors hover:bg-white/15 active:bg-white/20 sm:text-xs sm:tracking-widest"
+                        >
+                          Voltar à questão
+                        </button>
+                      )}
                     </div>
                   ) : (
                     <button

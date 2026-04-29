@@ -25,7 +25,6 @@ import {
   Zap,
 } from 'lucide-react';
 import { SlideStylePreviews } from '@/components/landing/SlideStylePreviews';
-import { TextSizeControl } from '@/components/accessibility/TextSizeControl';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -43,11 +42,11 @@ type IconCard = {
 };
 
 const trustSignals = [
-  'Questões reais de concursos',
+  'Questões reais e comentadas',
   'Foco em Técnico em Enfermagem',
+  'Concursos de enfermagem',
   'Estudo reverso em 4 etapas',
   'Plano diário e desempenho',
-  'Cadastro gratuito para começar',
 ];
 
 const painPoints = [
@@ -209,7 +208,6 @@ export function LandingHome() {
             <span className="text-xl font-[1000] italic tracking-tighter text-white">AVANT</span>
           </Link>
           <nav className="flex flex-wrap items-center justify-end gap-2 sm:gap-3">
-            <TextSizeControl variant="dark" compact />
             <Link
               href="/login"
               className="text-sm font-bold text-slate-300 hover:text-white px-3 py-2 rounded-lg transition-colors"
@@ -257,7 +255,7 @@ export function LandingHome() {
               >
                 Pare de estudar no escuro.{' '}
                 <span className="bg-gradient-to-r from-white via-cyan-200 to-[#BEF264] bg-clip-text text-transparent">
-                  Transforme questões reais em aprovação.
+                  Transforme questões comentadas em avanço para concursos.
                 </span>
               </motion.h1>
 
@@ -269,7 +267,7 @@ export function LandingHome() {
                 className="mb-9 max-w-2xl text-lg font-medium leading-relaxed text-slate-400 sm:text-xl"
               >
                 O <strong className="text-slate-100">Avant</strong> mostra onde você erra, explica o porquê
-                e transforma cada questão em um estudo guiado para concursos de{' '}
+                e transforma questões reais comentadas em um estudo guiado para concursos de{' '}
                 <strong className="text-cyan-200">Técnico em Enfermagem</strong>.
               </motion.p>
 
@@ -409,7 +407,7 @@ export function LandingHome() {
                 O método é simples: a questão vem primeiro.
               </h2>
               <p className="text-slate-400 text-lg leading-relaxed">
-                Em vez de começar por teoria infinita, você parte da cobrança real da prova e transforma erro,
+                Em vez de começar por teoria infinita, você parte da cobrança real dos concursos de enfermagem e transforma erro,
                 dúvida e acerto por chute em direção de estudo.
               </p>
             </div>
@@ -449,8 +447,8 @@ export function LandingHome() {
                 Uma questão vira uma aula visual.
               </h2>
               <p className="text-base font-medium leading-relaxed text-slate-400 sm:text-lg">
-                Depois da tentativa, você não recebe apenas “certo” ou “errado”. O Avant organiza
-                o raciocínio em slides de estudo para fixar o conceito e evitar o mesmo erro na próxima prova.
+                Depois da tentativa, você não recebe apenas “certo” ou “errado”. O Avant organiza a questão comentada
+                e o raciocínio em slides de estudo para fixar o conceito e evitar o mesmo erro na próxima prova.
               </p>
             </div>
 

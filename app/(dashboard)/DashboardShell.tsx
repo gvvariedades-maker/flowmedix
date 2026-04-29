@@ -182,7 +182,7 @@ function DashboardNav({
   isAdminUser: boolean;
 }) {
   return (
-    <nav className="custom-scrollbar mt-2 flex-1 space-y-2 overflow-y-auto px-2 pb-2">
+    <nav className="no-scrollbar mt-2 flex-1 space-y-2 overflow-y-auto px-2 pb-2">
       {menuItems.map((item) => (
         <Link
           key={item.label}
@@ -444,7 +444,7 @@ function DashboardContent({
   return (
     <div className="dashboard-surface flex h-[100dvh] max-h-[100dvh] min-h-0 bg-background font-sans text-foreground">
       {/* --- SIDEBAR FIXA --- */}
-      <aside className="relative z-20 hidden w-[18rem] flex-col bg-[#f8fafc] shadow-[4px_0_32px_-6px_rgba(15,23,42,0.09)] md:flex">
+      <aside className="relative z-20 hidden w-[18rem] shrink-0 flex-col border-r border-solid border-white bg-[#f8fafc] shadow-none md:flex">
         <div className="px-5 pb-3 pt-10">
           <LogoMark />
         </div>
@@ -486,7 +486,7 @@ function DashboardContent({
               role="dialog"
               aria-modal="true"
               aria-label="Menu de navegação"
-              className="fixed left-0 top-0 z-50 flex h-full w-[18rem] flex-col overflow-hidden bg-[#f8fafc] shadow-[4px_0_32px_-6px_rgba(15,23,42,0.12)] outline-none md:hidden"
+              className="fixed left-0 top-0 z-50 flex h-full w-[18rem] shrink-0 flex-col overflow-hidden border-r border-solid border-white bg-[#f8fafc] shadow-none outline-none md:hidden"
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
@@ -524,8 +524,9 @@ function DashboardContent({
         )}
       </AnimatePresence>
 
-      {/* --- ÁREA PRINCIPAL --- */}
-      <div className="flex h-full min-h-0 flex-1 flex-col overflow-hidden">
+      {/* --- ÁREA PRINCIPAL ---
+          Sombra interna só em md+: cobre artefatos escuros no encaixe com a sidebar; evita linha na barra quando não há sidebar. */}
+      <div className="flex h-full min-h-0 flex-1 flex-col overflow-hidden md:shadow-[inset_1px_0_0_0_#ffffff]">
         <header className="sticky top-0 z-30 flex shrink-0 items-center justify-between border-b border-border bg-background/85 px-4 py-3 pt-safe backdrop-blur-md md:hidden">
           <button
             ref={openMenuButtonRef}

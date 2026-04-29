@@ -5,6 +5,15 @@ export const metadata = {
   title: 'Como usar o AVANT | Tutorial rápido',
   description:
     'Tutorial claro para primeiro acesso: checklist inicial, foco único por passo, texto principal e figuras de apoio.',
+  alternates: {
+    canonical: '/ajuda',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Como usar o AVANT | Tutorial rápido',
+    description:
+      'Tutorial claro para começar no AVANT: escolha uma questão, veja o diagnóstico e avance no estudo reverso.',
+  },
 };
 
 const TOC = [
