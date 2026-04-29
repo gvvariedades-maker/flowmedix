@@ -103,7 +103,7 @@ export function MaterialSlidesPlayer({ selectedLot, immersive = false }: Materia
   return (
     <div className={shellClass}>
       {!immersive ? (
-        <div className="pointer-events-none absolute left-3 top-3 z-20 max-w-[calc(100%-6rem)] rounded-2xl border border-white/10 bg-slate-950/70 px-3 py-2 backdrop-blur-xl sm:left-5 sm:top-5 sm:px-4 sm:py-3">
+        <div className="pointer-events-none absolute left-3 right-3 top-3 z-20 mx-auto max-w-[min(100%-1.5rem,36rem)] rounded-2xl border border-white/10 bg-slate-950/70 px-3 py-2 backdrop-blur-xl sm:left-5 sm:right-auto sm:top-5 sm:px-4 sm:py-3">
           <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#BEF264]">
             NeuroSlide de {activeLot.shortTitle} · Slide {currentIndex + 1} de {activeLot.count}
           </p>
@@ -111,36 +111,12 @@ export function MaterialSlidesPlayer({ selectedLot, immersive = false }: Materia
         </div>
       ) : null}
 
-      <button
-        type="button"
-        onClick={goToPrevious}
-        className={[
-          'absolute left-2 top-1/2 z-20 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-2xl text-slate-200 shadow-lg backdrop-blur-md transition-all sm:left-4 sm:h-12 sm:w-12',
-          navBtnBase,
-        ].join(' ')}
-        aria-label="Slide anterior"
-      >
-        <ChevronLeft size={22} aria-hidden />
-      </button>
-
-      <button
-        type="button"
-        onClick={goToNext}
-        className={[
-          'absolute right-2 top-1/2 z-20 inline-flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-2xl border border-[#BEF264]/35 bg-[#BEF264] text-slate-950 shadow-lg shadow-lime-400/15 transition-all hover:bg-[#d4f879] sm:right-4 sm:h-12 sm:w-12',
-          immersive ? 'opacity-90 hover:opacity-100' : '',
-        ].join(' ')}
-        aria-label="Próximo slide"
-      >
-        <ChevronRight size={22} aria-hidden />
-      </button>
-
       <div
         ref={measureRef}
         className={
           immersive
-            ? 'material-player-measure flex h-full min-h-0 items-center justify-center overflow-hidden px-2 pb-12 pt-14 sm:px-3 sm:pb-14 sm:pt-16'
-            : 'material-player-measure flex h-full min-h-0 items-center justify-center overflow-hidden p-2 pb-14 pt-12 sm:p-4 sm:pb-16 sm:pt-14'
+            ? 'material-player-measure flex h-full min-h-0 items-center justify-center overflow-hidden px-2 pb-[4.75rem] pt-12 sm:px-3 sm:pb-[5.25rem] sm:pt-14'
+            : 'material-player-measure flex h-full min-h-0 items-center justify-center overflow-hidden p-2 pb-[4.75rem] pt-11 sm:p-4 sm:pb-[5.25rem] sm:pt-12'
         }
       >
         <div
@@ -159,28 +135,56 @@ export function MaterialSlidesPlayer({ selectedLot, immersive = false }: Materia
       </div>
 
       <div
+        role="toolbar"
+        aria-label="Navegação dos slides"
         className={
           immersive
-            ? 'absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 flex-wrap justify-center gap-1.5 rounded-full border border-white/10 bg-slate-950/75 px-3 py-1.5 shadow-lg backdrop-blur-md sm:bottom-4 sm:gap-2 sm:px-4 sm:py-2'
-            : 'absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 flex-wrap justify-center gap-2 rounded-full border border-white/10 bg-slate-950/70 px-4 py-2 backdrop-blur-xl'
+            ? 'absolute bottom-3 left-2 right-2 z-20 mx-auto flex max-w-2xl items-center gap-2 rounded-2xl border border-white/10 bg-slate-950/80 px-2 py-2 shadow-xl backdrop-blur-md sm:bottom-4 sm:left-4 sm:right-4 sm:gap-3 sm:rounded-full sm:px-3'
+            : 'absolute bottom-4 left-2 right-2 z-20 mx-auto flex max-w-2xl items-center gap-2 rounded-2xl border border-white/10 bg-slate-950/85 px-2 py-2 shadow-xl backdrop-blur-xl sm:left-4 sm:right-4 sm:gap-3 sm:rounded-full sm:px-3'
         }
       >
-        {slideNumbers.map((index) => {
-          const active = index === currentIndex;
-          return (
-            <button
-              key={index}
-              type="button"
-              onClick={() => setCurrentIndex(index)}
-              className={[
-                'h-2.5 rounded-full transition-all',
-                active ? 'w-8 bg-[#BEF264]' : 'w-2.5 bg-white/20 hover:bg-white/35',
-              ].join(' ')}
-              aria-label={`Ir para slide ${index + 1}`}
-              aria-current={active ? 'step' : undefined}
-            />
-          );
-        })}
+        <button
+          type="button"
+          onClick={goToPrevious}
+          className={[
+            'inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-slate-200 shadow-inner ring-1 transition-all sm:h-11 sm:w-11 sm:rounded-full',
+            navBtnBase,
+          ].join(' ')}
+          aria-label="Slide anterior"
+        >
+          <ChevronLeft size={22} aria-hidden />
+        </button>
+
+        <div className="flex min-w-0 flex-1 flex-wrap items-center justify-center gap-1 sm:gap-1.5">
+          {slideNumbers.map((index) => {
+            const active = index === currentIndex;
+            return (
+              <button
+                key={index}
+                type="button"
+                onClick={() => setCurrentIndex(index)}
+                className={[
+                  'h-2.5 shrink-0 rounded-full transition-all',
+                  active ? 'w-8 bg-[#BEF264]' : 'w-2.5 bg-white/20 hover:bg-white/35',
+                ].join(' ')}
+                aria-label={`Ir para slide ${index + 1}`}
+                aria-current={active ? 'step' : undefined}
+              />
+            );
+          })}
+        </div>
+
+        <button
+          type="button"
+          onClick={goToNext}
+          className={[
+            'inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#BEF264]/35 bg-[#BEF264] text-slate-950 shadow-lg shadow-lime-400/15 transition-all hover:bg-[#d4f879] sm:rounded-full',
+            immersive ? 'opacity-95 hover:opacity-100' : '',
+          ].join(' ')}
+          aria-label="Próximo slide"
+        >
+          <ChevronRight size={22} aria-hidden />
+        </button>
       </div>
 
       <style>{`

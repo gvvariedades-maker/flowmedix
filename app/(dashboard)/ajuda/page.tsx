@@ -272,7 +272,7 @@ export default function AjudaPage() {
               <li>No menu lateral, clique em <strong>Material de Apoio</strong>.</li>
               <li>Na tela inicial, clique em <strong>Abrir NeuroSlide</strong>.</li>
               <li>Escolha uma coleção (Fundamentos, Medicações, SUS, etc.) e clique em <strong>Abrir</strong>.</li>
-              <li>No modal, navegue pelos slides com as setas laterais, bolinhas inferiores ou teclado (← / →).</li>
+              <li>No modal, navegue pelos slides com os botões na parte inferior (voltar/avançar), pelas bolinhas ou pelo teclado (← / →).</li>
               <li>Para trocar de coleção sem sair, use o seletor no canto superior esquerdo.</li>
             </ol>
             <div className="mt-3 flex flex-wrap gap-2">

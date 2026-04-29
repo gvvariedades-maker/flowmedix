@@ -21,8 +21,8 @@ export default function MaterialNeuroslidesClient() {
   };
 
   return (
-    <div className="flex min-h-[100dvh] flex-col bg-[#010409] text-white">
-      <div className="border-b border-white/10 bg-slate-950/40 px-4 py-4 backdrop-blur-xl sm:px-6">
+    <div className="flex flex-col bg-[#010409] text-white">
+      <div className="shrink-0 border-b border-white/10 bg-slate-950/40 px-4 py-4 backdrop-blur-xl sm:px-6">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <Link
             href="/material"
@@ -37,7 +37,7 @@ export default function MaterialNeuroslidesClient() {
         </div>
       </div>
 
-      <section className="relative flex-1 overflow-hidden px-4 py-12 sm:px-6 md:py-16">
+      <section className="relative px-4 py-12 sm:px-6 md:py-16">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.05]"
           style={{
