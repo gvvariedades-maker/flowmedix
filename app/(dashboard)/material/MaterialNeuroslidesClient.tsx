@@ -24,13 +24,22 @@ export default function MaterialNeuroslidesClient() {
     <div className="flex flex-col bg-[#010409] text-white">
       <div className="shrink-0 border-b border-white/10 bg-slate-950/40 px-4 py-4 backdrop-blur-xl sm:px-6">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <Link
-            href="/material"
-            className="inline-flex w-fit items-center gap-2 text-sm font-bold text-slate-400 transition-colors hover:text-white"
-          >
-            <ArrowLeft size={18} aria-hidden />
-            Voltar ao Material de Apoio
-          </Link>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+            <Link
+              href="/material"
+              className="inline-flex w-fit items-center gap-2 text-sm font-bold text-slate-400 transition-colors hover:text-white"
+            >
+              <ArrowLeft size={18} aria-hidden />
+              Voltar ao Material de Apoio
+            </Link>
+            <Link
+              href="/estudar"
+              className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-black uppercase tracking-wider text-slate-300 transition-colors hover:border-[#BEF264]/40 hover:bg-[#BEF264]/10 hover:text-white"
+            >
+              Vitrine de Aulas
+              <ArrowRight size={14} aria-hidden />
+            </Link>
+          </div>
           <p className="text-xs font-medium text-slate-500 sm:text-right">
             {TOTAL_MATERIAL_SLIDES} slides · 7 coleções
           </p>

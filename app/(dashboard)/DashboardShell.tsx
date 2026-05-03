@@ -18,6 +18,7 @@ import {
   BookMarked,
   HelpCircle,
   BrainCircuit,
+  Newspaper,
   type LucideIcon,
 } from 'lucide-react';
 import { getAdminEmail } from '@/lib/constants';
@@ -435,6 +436,12 @@ function DashboardContent({
     { label: 'Vitrine de Aulas', icon: LayoutDashboard, href: '/estudar', active: isPathActive('/estudar') },
     { label: 'Como usar (tutorial)', icon: HelpCircle, href: '/ajuda', active: pathname === '/ajuda' },
     { label: 'Estudo Reverso (método)', icon: BrainCircuit, href: '/ajuda/estudo-reverso', active: pathname === '/ajuda/estudo-reverso' },
+    {
+      label: 'Blog',
+      icon: Newspaper,
+      href: '/blog',
+      active: pathname === '/blog' || pathname.startsWith('/blog/'),
+    },
     { label: 'Meu Desempenho', icon: BarChart3, href: '/analytics', active: pathname === '/analytics' },
     { label: 'Plano de Estudo Diário', icon: CalendarDays, href: '/plano-diario', active: pathname === '/plano-diario' },
     { label: 'Cadernos de Estudo', icon: BookMarked, href: '/cadernos', active: isPathActive('/cadernos') },

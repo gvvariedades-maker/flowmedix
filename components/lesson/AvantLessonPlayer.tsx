@@ -42,6 +42,8 @@ import {
   Flag, BrainCircuit, X, BadgeCheck
 } from 'lucide-react';
 
+const QUESTION_TEXT_TYPOGRAPHY = 'text-base md:text-lg leading-relaxed';
+
 export default function AvantLessonPlayer({ 
   dados, 
   mode = 'live', 
@@ -424,7 +426,7 @@ export default function AvantLessonPlayer({
 
           {/* ENUNCIADO: quebras de linha preservadas (I, II, III em blocos) */}
           <div className="px-6 py-6 md:px-8 md:py-8 min-w-0">
-            <div className="text-base md:text-lg text-slate-800 leading-relaxed font-normal whitespace-pre-wrap break-words overflow-x-hidden [&_strong]:font-semibold [&_p]:mb-3 [&_p:last-child]:mb-0">
+            <div className={`${QUESTION_TEXT_TYPOGRAPHY} text-slate-800 font-normal whitespace-pre-wrap break-words overflow-x-hidden [&_strong]:font-semibold [&_p]:mb-3 [&_p:last-child]:mb-0`}>
               <span dangerouslySetInnerHTML={{ __html: sanitizeHTML(instructionParaExibicao) }} />
             </div>
           </div>
@@ -441,7 +443,7 @@ export default function AvantLessonPlayer({
               className={
                 certoErradoLayout
                   ? 'grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto'
-                  : 'grid gap-3'
+                  : 'grid gap-2 md:gap-2.5'
               }
             >
               {dados.question_data.options.map((opt) => {
@@ -449,8 +451,8 @@ export default function AvantLessonPlayer({
                 const isCorrect = opt.is_correct;
                 const showResult = etapa === 'gabarito' || etapa === 'estudo';
                 
-                let styles = "border-slate-100 bg-white hover:border-slate-300";
-                let badge = "bg-slate-100 text-slate-400 group-hover:bg-slate-200";
+                let styles = "border-slate-200 bg-white hover:border-indigo-200 hover:bg-indigo-50/30";
+                let badge = "border border-slate-200 bg-white text-slate-500 group-hover:border-indigo-200 group-hover:text-indigo-700";
                 let text = "text-slate-600";
 
                 if (showResult) {
@@ -473,7 +475,7 @@ export default function AvantLessonPlayer({
 
                 const rowLayout = certoErradoLayout
                   ? 'flex flex-col items-center justify-center text-center min-h-[100px] sm:min-h-[120px] gap-2 p-6 md:p-8'
-                  : 'text-left flex items-start gap-4 p-4 md:p-5';
+                  : 'text-left flex items-start gap-3 px-3 py-2.5 md:px-4 md:py-3';
 
                 return (
                   <motion.button 
@@ -482,23 +484,23 @@ export default function AvantLessonPlayer({
                     whileHover={!showResult ? { scale: 1.02 } : {}}
                     whileTap={!showResult ? { scale: 0.98 } : {}}
                     onClick={() => setSelecionada(opt.id)} 
-                    className={`group relative rounded-2xl border-2 transition-all duration-300 ${styles} ${rowLayout}`}
+                    className={`group relative rounded-xl border transition-all duration-300 ${styles} ${rowLayout}`}
                   >
                     {!certoErradoLayout && (
-                      <span className={`shrink-0 w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm transition-colors duration-300 ${badge}`}>
+                      <span className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-bold transition-colors duration-300 ${badge}`}>
                         {opt.id}
                       </span>
                     )}
-                    <span className={`font-semibold ${certoErradoLayout ? 'text-lg md:text-xl' : 'font-medium pt-1'} ${text}`}>
+                    <span className={`${QUESTION_TEXT_TYPOGRAPHY} ${certoErradoLayout ? 'font-semibold' : 'font-normal'} ${text}`}>
                       {opt.text}
                     </span>
                     {showResult && isCorrect && (
-                      <div className={`text-green-600 animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-4 top-5'}`}>
+                      <div className={`text-green-600 animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`}>
                         <CheckCircle2 size={certoErradoLayout ? 32 : 24} />
                       </div>
                     )}
                     {showResult && isSelected && !isCorrect && (
-                      <div className={`text-red-500 animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-4 top-5'}`}>
+                      <div className={`text-red-500 animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`}>
                         <XCircle size={certoErradoLayout ? 32 : 24} />
                       </div>
                     )}

@@ -20,6 +20,7 @@ import {
   Lightbulb,
   LockKeyhole,
   MessageCircleQuestion,
+  Shield,
   Sparkles,
   Target,
   Zap,
@@ -42,11 +43,11 @@ type IconCard = {
 };
 
 const trustSignals = [
-  'Questões reais e comentadas',
-  'Foco em Técnico em Enfermagem',
-  'Concursos de enfermagem',
-  'Estudo reverso em 4 etapas',
-  'Plano diário e desempenho',
+  '+1.500 questões de concurso',
+  'EBSERH e prefeituras',
+  'Só para Técnico em Enfermagem',
+  'NeuroSlides após cada questão',
+  'Beta gratuito · sem cartão',
 ];
 
 const painPoints = [
@@ -159,28 +160,38 @@ const features: IconCard[] = [
 
 const faqs = [
   {
-    question: 'O Avant é gratuito?',
+    question: 'O AVANT é gratuito agora?',
     answer:
-      'Você pode criar sua conta grátis e começar pelo acesso inicial disponível hoje. Se houver planos pagos no futuro, isso será comunicado antes de qualquer cobrança.',
+      'Sim. O AVANT está em fase Beta e o acesso é 100% gratuito durante esse período. Não pedimos cartão de crédito. Quando o Beta encerrar, você será avisado com antecedência — e quem entrou no Beta terá condição especial.',
   },
   {
-    question: 'Preciso já estar avançado?',
+    question: 'Quantas questões tem disponíveis?',
     answer:
-      'Não. Você pode começar por uma questão e deixar o diagnóstico mostrar onde focar.',
+      'Hoje o banco conta com mais de 1.500 questões de concursos reais de EBSERH e prefeituras, focadas no cargo de Técnico em Enfermagem. O banco cresce continuamente — a meta é chegar a 10.000 questões.',
   },
   {
-    question: 'Serve para qual área?',
+    question: 'Preciso já estar avançado nos estudos?',
     answer:
-      'A comunicação principal do Avant é focada em Técnico em Enfermagem e concursos com questões de banca.',
+      'Não. O método do AVANT funciona para quem está começando do zero e para quem já estuda há meses. Você começa por uma questão real e o sistema mostra exatamente onde focar.',
+  },
+  {
+    question: 'O que é o Estudo Reverso?',
+    answer:
+      'É o método central do AVANT: em vez de estudar teoria e depois resolver questões, você começa pela questão. Depois do gabarito, a plataforma ativa os NeuroSlides — materiais visuais que explicam o conceito daquela questão com mapa mental, regra de ouro, fluxo lógico e zona de perigo (pegadinhas).',
+  },
+  {
+    question: 'Serve para qual concurso?',
+    answer:
+      'O foco são concursos para o cargo de Técnico em Enfermagem: EBSERH, prefeituras e demais órgãos que cobram o cargo com questões de banca. O conteúdo é filtrado por banca, ano e órgão.',
   },
   {
     question: 'O que acontece depois do cadastro?',
     answer:
-      'Você entra no app, escolhe uma questão na vitrine e começa o primeiro ciclo de estudo reverso.',
+      'Você entra direto no app, escolhe uma questão na vitrine e inicia o primeiro ciclo de Estudo Reverso. Sem tutorial longo. Sem configuração. Uma questão já é suficiente para entender o método.',
   },
 ];
 
-export function LandingHome() {
+export default function LandingHome() {
   return (
     <div className="min-h-screen bg-[#010409] text-slate-100 overflow-x-hidden selection:bg-cyan-400/25 selection:text-white">
       {/* Fundo atmosférico */}
@@ -209,6 +220,12 @@ export function LandingHome() {
           </Link>
           <nav className="flex flex-wrap items-center justify-end gap-2 sm:gap-3">
             <Link
+              href="/blog"
+              className="text-sm font-bold text-slate-300 hover:text-white px-3 py-2 rounded-lg transition-colors"
+            >
+              Blog
+            </Link>
+            <Link
               href="/login"
               className="text-sm font-bold text-slate-300 hover:text-white px-3 py-2 rounded-lg transition-colors"
             >
@@ -218,7 +235,7 @@ export function LandingHome() {
               href="/register"
               className="text-sm font-black uppercase tracking-wider text-slate-950 bg-[#BEF264] hover:bg-[#d4f879] px-4 py-2.5 rounded-xl shadow-lg shadow-lime-400/20 transition-all hover:scale-[1.02] inline-flex items-center gap-2"
             >
-              Criar conta grátis
+              Entrar no Beta Gratuito
               <ArrowRight size={16} />
             </Link>
           </nav>
@@ -238,11 +255,11 @@ export function LandingHome() {
               >
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-4 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-cyan-200 sm:text-xs">
                   <Brain size={14} className="shrink-0" />
-                  Estudo reverso para Técnico em Enfermagem
+                  Estudo Reverso para Técnico em Enfermagem
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-[#BEF264]/25 bg-[#BEF264]/10 px-4 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-[#BEF264] sm:text-xs">
                   <LockKeyhole size={14} className="shrink-0" />
-                  Comece grátis
+                  Beta Gratuito · Vagas Limitadas
                 </span>
               </motion.div>
 
@@ -251,11 +268,13 @@ export function LandingHome() {
                 variants={fadeUp}
                 initial="hidden"
                 animate="visible"
-                className="mb-6 text-4xl font-[1000] leading-[1.02] tracking-tight text-white sm:text-5xl md:text-6xl"
+                className="mb-6 text-4xl font-[1000] leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl"
               >
-                Pare de estudar no escuro.{' '}
+                A única plataforma de concursos criada só para{' '}
+                <span className="text-white">Técnico em Enfermagem</span>
+                <span className="text-slate-400"> — </span>
                 <span className="bg-gradient-to-r from-white via-cyan-200 to-[#BEF264] bg-clip-text text-transparent">
-                  Transforme questões comentadas em avanço para concursos.
+                  onde cada erro vira uma aula visual.
                 </span>
               </motion.h1>
 
@@ -266,9 +285,10 @@ export function LandingHome() {
                 animate="visible"
                 className="mb-9 max-w-2xl text-lg font-medium leading-relaxed text-slate-400 sm:text-xl"
               >
-                O <strong className="text-slate-100">Avant</strong> mostra onde você erra, explica o porquê
-                e transforma questões reais comentadas em um estudo guiado para concursos de{' '}
-                <strong className="text-cyan-200">Técnico em Enfermagem</strong>.
+                O <strong className="text-slate-100">AVANT</strong> transforma cada questão errada em um ciclo
+                completo de aprendizado: diagnóstico do erro, material visual (NeuroSlides) e revisão no momento
+                certo. Foco total em concursos de <strong className="text-cyan-200">Técnico em Enfermagem</strong> —
+                EBSERH e prefeituras.
               </motion.p>
 
               <motion.div
@@ -282,7 +302,7 @@ export function LandingHome() {
                   href="/register"
                   className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#BEF264] px-8 py-4 text-sm font-black uppercase tracking-widest text-slate-950 shadow-xl shadow-lime-400/20 transition-all hover:scale-[1.02] hover:bg-[#d4f879]"
                 >
-                  Criar conta grátis
+                  Entrar no Beta Gratuito
                   <ArrowRight size={18} />
                 </Link>
                 <Link
@@ -299,7 +319,7 @@ export function LandingHome() {
                 transition={{ delay: 0.45, duration: 0.6 }}
                 className="mt-4 text-sm font-medium text-slate-500"
               >
-                Comece grátis, por uma questão real. Sem compromisso inicial.
+                Beta 100% gratuito. Sem cartão de crédito. Sem pegadinha.
               </motion.p>
             </div>
 
@@ -362,8 +382,33 @@ export function LandingHome() {
           </div>
         </section>
 
+        {/* Origem e autoridade */}
+        <section className="px-4 py-14 sm:px-6">
+          <div className="mx-auto max-w-4xl">
+            <div className="flex flex-col items-start gap-6 rounded-[2rem] border border-indigo-400/20 bg-gradient-to-br from-indigo-950/40 via-slate-900/80 to-slate-950 p-8 sm:flex-row sm:items-center sm:p-10">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-indigo-400/30 bg-indigo-600/30">
+                <Shield size={28} className="text-indigo-200" aria-hidden />
+              </div>
+              <div>
+                <p className="mb-2 text-[10px] font-black uppercase tracking-[0.35em] text-indigo-300">
+                  Por que o AVANT existe
+                </p>
+                <p className="text-base font-semibold leading-relaxed text-slate-200 sm:text-lg">
+                  O AVANT foi desenvolvido por um Técnico em Enfermagem aprovado em{' '}
+                  <strong className="text-white">mais de 10 concursos públicos dentro das vagas</strong> — que sentiu na pele
+                  o que faltava nas outras plataformas: um método que transforma erro em aprendizado real, não apenas em
+                  gabarito.
+                </p>
+                <p className="mt-3 text-sm font-medium text-slate-400">
+                  Cada funcionalidade foi pensada para a rotina de quem trabalha em plantão e estuda nos intervalos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Dor */}
-        <section className="px-4 py-20 sm:px-6 sm:py-24">
+        <section id="problema-real" className="px-4 py-20 sm:px-6 sm:py-24">
           <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <p className="mb-3 text-[10px] font-black uppercase tracking-[0.35em] text-[#BEF264]">
@@ -584,17 +629,18 @@ export function LandingHome() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-400/20 via-transparent to-transparent pointer-events-none" />
             <div className="relative z-10">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-[1000] text-white tracking-tight mb-4">
-                Sua próxima questão pode virar seu próximo avanço.
+                Aprovação começa com o método certo. Não com mais conteúdo.
               </h2>
               <p className="text-slate-400 text-base sm:text-lg mb-8 max-w-xl mx-auto">
-                Crie sua conta grátis e comece agora pelo método de estudo reverso do Avant.
+                Entre no Beta gratuito do AVANT e comece pelo Estudo Reverso agora. Sem cartão. Sem prazo de cobrança
+                surpresa. Vagas do Beta são limitadas.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   href="/register"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#BEF264] text-slate-950 font-black uppercase tracking-widest text-sm px-10 py-4 rounded-2xl hover:bg-[#d4f879] transition-all shadow-lg shadow-lime-400/25"
                 >
-                  Quero me cadastrar grátis
+                  Quero entrar no Beta gratuito
                   <ArrowRight size={18} />
                 </Link>
                 <Link
@@ -610,13 +656,21 @@ export function LandingHome() {
       </main>
 
       <footer className="relative z-10 border-t border-white/5 py-10 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <div className="flex items-center gap-2">
-            <Zap size={18} className="text-[#BEF264]" fill="currentColor" />
-            <span className="font-[1000] italic text-white tracking-tight">AVANT</span>
-            <span className="text-slate-500 text-sm">· Estudo reverso para Técnico em Enfermagem</span>
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
+          <div className="flex flex-col items-center gap-3 sm:items-start">
+            <div className="flex items-center gap-2">
+              <Zap size={18} className="text-[#BEF264]" fill="currentColor" />
+              <span className="font-[1000] italic tracking-tight text-white">AVANT</span>
+              <span className="text-sm text-slate-500">· Estudo reverso para Técnico em Enfermagem</span>
+            </div>
+            <Link
+              href="/blog"
+              className="text-sm font-bold text-slate-400 transition-colors hover:text-white"
+            >
+              Blog
+            </Link>
           </div>
-          <p className="text-xs text-slate-500 font-medium">
+          <p className="text-xs font-medium text-slate-500">
             © {new Date().getFullYear()} AVANT. Estudo reverso para apoiar sua preparação.
           </p>
         </div>

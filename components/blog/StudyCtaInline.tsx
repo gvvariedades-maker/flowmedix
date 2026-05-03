@@ -1,0 +1,19 @@
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+
+export function StudyCtaInline() {
+  return (
+    <div className="my-8 rounded-[2rem] border border-cyan-400/20 bg-cyan-950/20 p-6">
+      <p className="mb-4 text-base font-medium leading-relaxed text-slate-200">
+        Praticando esse conteúdo no AVANT? Resolva questões reais sobre esse tema agora.
+      </p>
+      <Link
+        href="/register"
+        className="inline-flex items-center gap-2 rounded-2xl bg-[#BEF264] px-6 py-3 text-sm font-black tracking-wide text-slate-950 uppercase shadow-lg shadow-lime-400/20 transition-all hover:bg-[#d4f879] hover:scale-[1.02]"
+      >
+        Estudar no AVANT
+        <ArrowRight size={16} />
+      </Link>
+    </div>
+  );
+}
