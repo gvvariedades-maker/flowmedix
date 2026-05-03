@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -16,6 +16,20 @@ import {
   ChevronLeft,
   CheckCircle2,
   Circle,
+  Baby,
+  Scissors,
+  HeartPulse,
+  Brain,
+  ShieldAlert,
+  Syringe,
+  Pill,
+  FlaskConical,
+  Users,
+  HardHat,
+  Scale,
+  BookOpen,
+  Stethoscope,
+  type LucideIcon,
 } from 'lucide-react';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { compareModuloCurriculum } from '@/lib/vitrineOrder';
@@ -29,9 +43,58 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { PageHeader } from '@/components/ui/page-header';
+import { NeonBadge } from '@/components/ui/neon-badge';
+import { EmptyState } from '@/components/ui/empty-state';
+import { ProgressRing } from '@/components/ui/progress-ring';
+
+import {
+  FILTER_ALL_VALUE,
+  SELECT_CONTENT_DARK,
+  SELECT_ITEM_DARK,
+} from '@/components/dashboard/dashboard-select-dark';
 
 const ASSUNTOS_POR_PAGINA = 12;
-const FILTER_ALL = '__all__';
+const FILTER_ALL = FILTER_ALL_VALUE;
+
+const containerVariants = {
+  animate: { transition: { staggerChildren: 0.04 } },
+};
+const itemVariants = {
+  initial: { opacity: 0, y: 12 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.2, ease: [0.16, 1, 0.3, 1] as const } },
+};
+const itemGroupVariants = {
+  initial: { opacity: 0, y: 12 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.2, ease: [0.16, 1, 0.3, 1] as const, delay: 0.32 },
+  },
+};
+
+// ─── Ícone por categoria de assunto (forma única — cor no badge do card) ───────
+
+function getTopicIcon(titulo_aula?: string | null, modulo_nome?: string | null): LucideIcon {
+  const src = `${titulo_aula ?? ''} ${modulo_nome ?? ''}`.toLowerCase();
+
+  if (/obstet|gesta|ginec|mulher/.test(src)) return Baby;
+  if (/crian[çc]a|pedia|neonat/.test(src)) return Baby;
+  if (/surg|cirug|peri[\s-]?op/.test(src)) return Scissors;
+  if (/card|cora[çc]|infarto/.test(src)) return HeartPulse;
+  if (/neuro|cerebr/.test(src)) return Brain;
+  if (/psiq|mental|sa[úu]de\s*ment/.test(src)) return Brain;
+  if (/infect|epidem|dst|hiv/.test(src)) return ShieldAlert;
+  if (/vacin|imuniz/.test(src)) return Syringe;
+  if (/farm|medic|dose|prescr/.test(src)) return Pill;
+  if (/exame|laborat|sorol|glicem/.test(src)) return FlaskConical;
+  if (/famil|comun|aps|b[aá]sic/.test(src)) return Users;
+  if (/trabalh|ocupac/.test(src)) return HardHat;
+  if (/[eé]tica|legisl|lei\b|c[oó]d/.test(src)) return Scale;
+  if (/histor|fundament|semiolog/.test(src)) return BookOpen;
+
+  return Stethoscope;
+}
 
 // ─── Interfaces ───────────────────────────────────────────────────────────────
 
@@ -295,14 +358,9 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
               <LayoutDashboard size={24} className="text-indigo-600" strokeWidth={2} />
             </div>
             <div className="min-w-0 flex-1 md:flex-none">
-              <h1 className="mb-1.5">
-                <span className="inline-block rounded-md bg-gradient-to-r from-indigo-600/10 via-indigo-500/12 to-violet-600/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-indigo-800 ring-1 ring-indigo-400/30 shadow-sm shadow-indigo-900/5 sm:text-[11px] sm:px-3">
-                  Painel Tático
-                </span>
+              <h1 className="line-clamp-2 text-lg font-semibold leading-snug tracking-tight text-foreground md:line-clamp-1">
+                {cidadeUrl}
               </h1>
-              <h2 className="line-clamp-2 text-lg font-semibold leading-snug tracking-tight text-foreground md:line-clamp-1">
-                Missão: {cidadeUrl}
-              </h2>
             </div>
           </div>
 
@@ -357,10 +415,10 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
                   <SelectTrigger className="h-11 w-full rounded-xl">
                     <SelectValue placeholder="Todas as bancas" />
                   </SelectTrigger>
-                  <SelectContent position="item-aligned">
-                    <SelectItem value={FILTER_ALL}>Todas as bancas</SelectItem>
+                  <SelectContent position="item-aligned" className={SELECT_CONTENT_DARK}>
+                    <SelectItem value={FILTER_ALL} className={SELECT_ITEM_DARK}>Todas as bancas</SelectItem>
                     {bancas.map((b) => (
-                      <SelectItem key={b} value={b}>
+                      <SelectItem key={b} value={b} className={SELECT_ITEM_DARK}>
                         {b}
                       </SelectItem>
                     ))}
@@ -377,10 +435,10 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
                   <SelectTrigger className="h-11 w-full rounded-xl">
                     <SelectValue placeholder="Todos os assuntos" />
                   </SelectTrigger>
-                  <SelectContent position="item-aligned">
-                    <SelectItem value={FILTER_ALL}>Todos os assuntos</SelectItem>
+                  <SelectContent position="item-aligned" className={SELECT_CONTENT_DARK}>
+                    <SelectItem value={FILTER_ALL} className={SELECT_ITEM_DARK}>Todos os assuntos</SelectItem>
                     {assuntos.map((a) => (
-                      <SelectItem key={a} value={a}>
+                      <SelectItem key={a} value={a} className={SELECT_ITEM_DARK}>
                         {a}
                       </SelectItem>
                     ))}
@@ -425,42 +483,34 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
 
       <main className="mx-auto max-w-7xl space-y-8 px-6 pt-6 md:pt-8">
         <section className="space-y-8">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
-            <h2
-              className={cn(
-                'max-w-[85%] text-balance leading-[1.15] tracking-tight',
-                isVitrineTituloPadrao
-                  ? 'border-l-[4px] border-indigo-500 pl-4 text-2xl font-extrabold sm:pl-5 sm:text-3xl'
-                  : 'text-xl font-bold text-slate-900 sm:text-2xl',
-              )}
-            >
-              {searchTerm ? (
-                `Resultados para “${searchTerm}”`
-              ) : bancaFilter || assuntoFilter ? (
-                `Filtrado${bancaFilter ? ` • ${bancaFilter}` : ''}${assuntoFilter ? ` • ${assuntoFilter}` : ''}`
-              ) : (
-                <span className="bg-gradient-to-r from-indigo-600 via-indigo-700 to-violet-700 bg-clip-text text-transparent">
-                  Vitrine de questões
-                </span>
-              )}
-            </h2>
-            <p className="shrink-0 text-sm leading-relaxed text-slate-500 sm:max-w-[46%] sm:pb-1 sm:text-right">
-              {totalAssuntos > 0 && totalPaginas > 1
-                ? `Mostrando ${(paginaEfetiva - 1) * ASSUNTOS_POR_PAGINA + 1}–${Math.min(paginaEfetiva * ASSUNTOS_POR_PAGINA, totalAssuntos)} de ${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`
-                : `${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`}
-            </p>
-          </div>
-
+          <PageHeader
+            title={
+              searchTerm
+                ? `Resultados para "${searchTerm}"`
+                : bancaFilter || assuntoFilter
+                  ? `Filtrado${bancaFilter ? ` \u2022 ${bancaFilter}` : ''}${assuntoFilter ? ` \u2022 ${assuntoFilter}` : ''}`
+                  : 'Vitrine de questões'
+            }
+            description={
+              totalAssuntos > 0 && totalPaginas > 1
+                ? `Mostrando ${(paginaEfetiva - 1) * ASSUNTOS_POR_PAGINA + 1}\u2013${Math.min(paginaEfetiva * ASSUNTOS_POR_PAGINA, totalAssuntos)} de ${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`
+                : `${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`
+            }
+            titleClassName="border-l-4 border-cyan-400 pl-4 text-2xl font-black text-white truncate"
+          />
           {grupos.length > 0 ? (
             <>
-              <div
+              <motion.div
                 ref={vitrineListaRef}
+                variants={containerVariants}
+                initial="initial"
+                animate="animate"
                 className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
               >
-                {gruposPagina.map((grupo) => (
-                  <SubtopicoCard key={grupo.titulo_aula} grupo={grupo} estudarQuery={estudarQuery} />
+                {gruposPagina.map((grupo, idx) => (
+                  <SubtopicoCard key={grupo.titulo_aula} grupo={grupo} estudarQuery={estudarQuery} index={idx} />
                 ))}
-              </div>
+              </motion.div>
               {totalPaginas > 1 && (
                 <nav
                   className="flex flex-col gap-4 border-t border-border pt-2 sm:flex-row sm:items-center sm:justify-between"
@@ -495,10 +545,11 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
               )}
             </>
           ) : (
-            <div className="flex flex-col items-center justify-center py-20 text-muted-foreground">
-              <Search size={48} className="mb-4 opacity-30" aria-hidden />
-              <p className="font-medium">Nenhum assunto encontrado.</p>
-            </div>
+            <EmptyState
+              icon={Search}
+              title="Nenhum assunto encontrado"
+              description="Tente ajustar os filtros ou limpar a busca para ver todos os assuntos disponíveis."
+            />
           )}
         </section>
       </main>
@@ -506,63 +557,42 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
   );
 }
 
-// ─── ProgressRing — anel de progresso do método ───────────────────────────────
+// ─── ProgressRingVitrine — anel de progresso com label interno ─────────────────
 
-function ProgressRing({
+function ProgressRingVitrine({
   trabalhadas,
   total,
-  size = 140,
-  strokeWidth = 16,
+  size = 120,
+  strokeWidth = 14,
 }: {
   trabalhadas: number;
   total: number;
   size?: number;
   strokeWidth?: number;
 }) {
-  const r = (size - strokeWidth) / 2;
-  const cx = size / 2;
-  const cy = size / 2;
-  const circumference = 2 * Math.PI * r;
-  const pct = total > 0 ? trabalhadas / total : 0;
-  const filled = pct * circumference;
   const todas = trabalhadas === total && total > 0;
-
-  const corArco = todas ? '#22c55e' : '#6366f1';
+  const value = total > 0 ? (trabalhadas / total) * 100 : 0;
 
   return (
     <div className="relative flex items-center justify-center" style={{ width: size, height: size }}>
-      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-        <circle cx={cx} cy={cy} r={r} fill="none" stroke="hsl(var(--border))" strokeWidth={strokeWidth} />
-        {trabalhadas > 0 && (
-          <circle
-            cx={cx}
-            cy={cy}
-            r={r}
-            fill="none"
-            stroke={corArco}
-            strokeWidth={strokeWidth}
-            strokeDasharray={`${filled} ${circumference}`}
-            strokeDashoffset={0}
-            transform={`rotate(-90 ${cx} ${cy})`}
-            strokeLinecap="round"
-          />
-        )}
-      </svg>
+      <ProgressRing
+        value={value}
+        size={size}
+        strokeWidth={strokeWidth}
+        variant={todas ? 'success' : 'brand'}
+      />
       <div className="absolute inset-0 flex select-none flex-col items-center justify-center">
         <span
-          className={cn(
-            'leading-none font-bold tabular-nums',
-            todas ? 'text-lg text-green-600 sm:text-xl' : 'text-lg text-indigo-700 sm:text-xl',
-          )}
+          className="leading-none font-bold tabular-nums text-[#e6edf3]"
           style={{ fontSize: size >= 120 ? '1.5rem' : '1.1rem' }}
         >
           {trabalhadas}
         </span>
-        <span className="mt-1 text-[0.55rem] font-medium uppercase tracking-wide text-muted-foreground sm:text-[0.6rem]">
+        <span className="mt-1 text-[0.55rem] font-medium uppercase tracking-wide text-[#8b949e] sm:text-[0.6rem]">
           de {total}
         </span>
         {todas && (
-          <span className="mt-0.5 text-[0.5rem] font-semibold uppercase tracking-wide text-green-600">
+          <span className="mt-0.5 text-[0.5rem] font-semibold uppercase tracking-wide text-[#6ee7b7]">
             Completo
           </span>
         )}
@@ -572,17 +602,23 @@ function ProgressRing({
 }
 
 function StatusBadge({ status }: { status: QuestaoStatus }) {
-  if (status === 'estudada') return <CheckCircle2 size={15} className="shrink-0 text-indigo-500" />;
-  return <Circle size={15} className="shrink-0 text-muted-foreground/40" />;
+  if (status === 'estudada') return <CheckCircle2 size={15} className="shrink-0 text-[#6ee7b7]" />;
+  return <Circle size={15} className="shrink-0 text-slate-600" />;
 }
 
-function SubtopicoCard({ grupo, estudarQuery }: { grupo: GrupoSubtopico; estudarQuery: string }) {
+function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; estudarQuery: string; index: number }) {
   const [assuntoExpandido, setAssuntoExpandido] = useState(false);
   const [questoesExpandido, setQuestoesExpandido] = useState(false);
-  const { titulo_aula, totalResolvidas, totalQuestoes, trabalhadas, questoes, firstSlug } = grupo;
+  const { titulo_aula, modulo_nome, totalResolvidas, totalQuestoes, trabalhadas, questoes, firstSlug } = grupo;
 
   const todas = trabalhadas === totalQuestoes && totalQuestoes > 0;
   const pendentes = totalQuestoes - trabalhadas;
+  const hasQuestions = totalQuestoes > 0;
+  const iconAlert = pendentes > 0 && trabalhadas > 0;
+  const mostrarNovo = totalResolvidas === 0 && !todas && hasQuestions;
+  const mostrarBarraProgresso = totalResolvidas > 0 && !todas && hasQuestions;
+  const mostrarCheckConclusao = todas && hasQuestions;
+  const progressoPct = hasQuestions ? Math.round((trabalhadas / totalQuestoes) * 100) : 0;
   const panelId = `assunto-panel-${firstSlug}`;
   const toggleAssunto = () => {
     setAssuntoExpandido((prev) => {
@@ -592,38 +628,66 @@ function SubtopicoCard({ grupo, estudarQuery }: { grupo: GrupoSubtopico; estudar
     });
   };
 
+  const Icon = getTopicIcon(titulo_aula, modulo_nome);
+
   return (
     <motion.div
       layout
-      initial={false}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+      variants={index < 8 ? itemVariants : itemGroupVariants}
       className={cn(
-        'flex flex-col gap-3 rounded-3xl border bg-card p-4 transition-all sm:gap-4 sm:p-5',
+        'relative flex flex-col overflow-hidden rounded-3xl border bg-slate-900/40 backdrop-blur-sm transition-all hover:bg-slate-900/60',
         todas
-          ? 'border-green-200 hover:border-green-300 hover:shadow-lg hover:shadow-green-500/10'
-          : 'border-border hover:border-indigo-300/50 hover:shadow-lg hover:shadow-indigo-500/10',
+          ? 'border-[rgba(0,255,136,0.25)] hover:border-[rgba(0,255,136,0.35)]'
+          : 'border-white/10 hover:border-cyan-400/30',
       )}
     >
+      {mostrarNovo && (
+        <span
+          className="pointer-events-none absolute right-3 top-3 z-10 rounded-md border border-[rgba(0,255,136,0.35)] bg-[rgba(0,255,136,0.12)] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#6ee7b7] sm:text-[11px]"
+          aria-label="Assunto novo"
+        >
+          Novo
+        </span>
+      )}
+
+      <div
+        className={cn(
+          'flex flex-col gap-3 p-4 sm:gap-4 sm:p-5',
+          mostrarNovo && 'pt-9 sm:pt-10',
+        )}
+      >
       <button
         type="button"
         aria-expanded={assuntoExpandido}
         aria-controls={panelId}
         onClick={toggleAssunto}
-        className="flex w-full items-start justify-between gap-4 rounded-xl border border-border/70 bg-muted/30 px-4 py-3 text-left transition-colors hover:bg-muted/60"
+        className="group flex w-full items-start gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.04] px-4 py-3.5 text-left transition-all hover:border-cyan-400/20 hover:bg-white/[0.07]"
       >
         <span
           className={cn(
-            'text-xl font-semibold leading-tight tracking-tight text-foreground sm:text-lg',
-            assuntoExpandido ? 'line-clamp-none' : 'line-clamp-3 sm:line-clamp-2',
+            'mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-xl border transition-colors',
+            iconAlert
+              ? 'border-red-400/20 bg-red-500/10 group-hover:border-red-400/35 group-hover:bg-red-500/15'
+              : 'border-[rgba(0,242,255,0.2)] bg-[rgba(0,242,255,0.10)] group-hover:border-[rgba(0,242,255,0.35)] group-hover:bg-[rgba(0,242,255,0.14)]',
+          )}
+        >
+          <Icon size={18} strokeWidth={2} className={cn(iconAlert ? 'text-red-400' : 'text-[#00f2ff]')} />
+        </span>
+        <span
+          className={cn(
+            'min-w-0 flex-1 break-words text-sm font-semibold leading-snug text-white',
+            assuntoExpandido ? 'line-clamp-none' : 'line-clamp-2',
           )}
         >
           {titulo_aula}
         </span>
+        {mostrarCheckConclusao && (
+          <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-[#6ee7b7]" aria-hidden />
+        )}
         {assuntoExpandido ? (
-          <ChevronUp size={20} className="mt-0.5 shrink-0 text-muted-foreground" />
+          <ChevronUp size={18} className="mt-0.5 shrink-0 text-slate-500" />
         ) : (
-          <ChevronDown size={20} className="mt-0.5 shrink-0 text-muted-foreground" />
+          <ChevronDown size={18} className="mt-0.5 shrink-0 text-slate-500" />
         )}
       </button>
 
@@ -639,26 +703,24 @@ function SubtopicoCard({ grupo, estudarQuery }: { grupo: GrupoSubtopico; estudar
           >
             <div className="flex flex-wrap items-center justify-between gap-2">
               {todas && (
-                <span className="shrink-0 rounded-md border border-green-200 bg-green-50 px-2 py-0.5 text-[10px] font-medium text-green-700">
-                  Completo
-                </span>
+                <NeonBadge variant="success">Completo</NeonBadge>
               )}
               {!todas && pendentes > 0 && (
-                <span className="shrink-0 rounded-md border border-indigo-100 bg-indigo-50 px-2 py-0.5 text-[10px] font-medium text-indigo-700">
+                <NeonBadge variant="warning">
                   {pendentes} pendente{pendentes !== 1 ? 's' : ''}
-                </span>
+                </NeonBadge>
               )}
-              <Button asChild variant="outline" size="sm" className="ml-auto rounded-xl">
+              <Button asChild variant="outline" size="sm" className="ml-auto rounded-xl border-white/15 bg-white/[0.06] text-slate-200 hover:bg-white/[0.12] hover:border-white/25 hover:text-white">
                 <Link href={`/estudar/${firstSlug}${estudarQuery}`}>Entrar no assunto</Link>
               </Button>
             </div>
 
             <div className="flex justify-center">
-              <ProgressRing trabalhadas={trabalhadas} total={totalQuestoes} size={120} strokeWidth={14} />
+              <ProgressRingVitrine trabalhadas={trabalhadas} total={totalQuestoes} size={120} strokeWidth={14} />
             </div>
 
             <div className="-mt-1 text-center">
-              <p className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+              <p className="text-[10px] font-medium uppercase tracking-wide text-slate-400">
                 Questões trabalhadas
               </p>
             </div>
@@ -666,14 +728,14 @@ function SubtopicoCard({ grupo, estudarQuery }: { grupo: GrupoSubtopico; estudar
             <button
               type="button"
               onClick={() => setQuestoesExpandido((v) => !v)}
-              className="flex w-full items-center justify-between rounded-xl border border-border bg-muted/40 px-3 py-2 text-sm text-foreground transition-colors hover:bg-muted hover:text-foreground"
+              className="flex w-full items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-200 transition-colors hover:bg-white/[0.08] hover:text-white"
             >
               <span className="text-xs font-medium">
                 {questoesExpandido
                   ? 'Ocultar questões'
                   : `Ver ${totalQuestoes} questão${totalQuestoes !== 1 ? 'ões' : ''}`}
               </span>
-              {questoesExpandido ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+              {questoesExpandido ? <ChevronUp size={14} className="text-slate-500" /> : <ChevronDown size={14} className="text-slate-500" />}
             </button>
 
             <AnimatePresence>
@@ -693,33 +755,33 @@ function SubtopicoCard({ grupo, estudarQuery }: { grupo: GrupoSubtopico; estudar
                           key={q.slug}
                           href={`/estudar/${q.slug}${estudarQuery}`}
                           className={cn(
-                            'group flex items-center gap-3 rounded-xl border px-3 py-2 transition-all',
+                            'group flex min-h-[44px] items-center gap-3 rounded-xl border px-3 py-2.5 transition-all',
                             estudada
-                              ? 'border-indigo-100 bg-indigo-50 hover:border-indigo-300'
-                              : 'border-border bg-muted/30 hover:border-indigo-200 hover:bg-indigo-50/80',
+                              ? 'border-[rgba(0,255,136,0.20)] bg-[rgba(0,255,136,0.05)] hover:border-[rgba(0,255,136,0.35)]'
+                              : 'border-white/[0.08] bg-white/[0.03] hover:border-cyan-400/20 hover:bg-cyan-400/[0.05]',
                           )}
                         >
                           <StatusBadge status={q.status} />
                           <span
                             className={cn(
                               'flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-0.5 text-xs font-medium',
-                              estudada ? 'text-indigo-800' : 'text-foreground',
+                              estudada ? 'text-[#6ee7b7]' : 'text-slate-200',
                             )}
                           >
                             <span>Questão {String(q.numero).padStart(2, '0')}</span>
                             {formatAvantCodigo(q.avant_codigo) && (
-                              <span className="rounded-md border border-indigo-100 bg-indigo-50 px-1.5 py-0.5 font-mono text-[10px] text-indigo-700">
+                              <span className="rounded-md border border-white/10 bg-white/[0.06] px-1.5 py-0.5 font-mono text-[10px] text-slate-300">
                                 {formatAvantCodigo(q.avant_codigo)}
                               </span>
                             )}
                           </span>
                           {!estudada && (
-                            <span className="text-[10px] font-medium text-muted-foreground">Iniciar</span>
+                            <span className="text-[10px] font-medium text-slate-500">Iniciar</span>
                           )}
-                          {estudada && <span className="text-[10px] font-medium text-indigo-600">Revisitar</span>}
+                          {estudada && <span className="text-[10px] font-medium text-[#67e8f9]">Revisitar</span>}
                           <ChevronRight
                             size={12}
-                            className="shrink-0 text-muted-foreground opacity-40 transition-opacity group-hover:opacity-80"
+                            className="shrink-0 text-slate-600 opacity-40 transition-opacity group-hover:opacity-80"
                           />
                         </Link>
                       );
@@ -729,22 +791,39 @@ function SubtopicoCard({ grupo, estudarQuery }: { grupo: GrupoSubtopico; estudar
               )}
             </AnimatePresence>
 
-            <div className="flex items-center justify-between gap-2 border-t border-border pt-2">
-              <span className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+            <div className="flex items-center justify-between gap-2 border-t border-white/10 pt-2">
+              <span className="text-[10px] font-medium uppercase tracking-wide text-slate-400">
                 {totalQuestoes} questão{totalQuestoes !== 1 ? 'ões' : ''} no assunto
               </span>
               {totalResolvidas === 0 && (
-                <span className="text-[10px] font-medium text-muted-foreground/70">Não iniciado</span>
+                <NeonBadge variant="neutral">Não iniciado</NeonBadge>
               )}
               {totalResolvidas > 0 && !todas && (
-                <span className="text-[10px] font-medium text-indigo-600">Em progresso</span>
+                <NeonBadge variant="warning">Em progresso</NeonBadge>
               )}
-              {todas && <span className="text-[10px] font-medium text-green-600">Concluído</span>}
+              {todas && <NeonBadge variant="success">Concluído</NeonBadge>}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
+      </div>
+
+      {mostrarBarraProgresso && (
+        <div
+          className="h-1 w-full shrink-0 bg-white/10"
+          role="progressbar"
+          aria-valuenow={progressoPct}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-label="Progresso do estudo reverso neste assunto"
+        >
+          <div
+            className="h-full bg-[#00f2ff] transition-[width] duration-300 ease-out"
+            style={{ width: `${progressoPct}%` }}
+          />
+        </div>
+      )}
     </motion.div>
   );
 }

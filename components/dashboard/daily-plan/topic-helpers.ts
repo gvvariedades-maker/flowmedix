@@ -53,7 +53,10 @@ export function categoriaTópico(item: ReviewItem): TópicoCategoria {
     return { circleClass: 'bg-cyan-100 text-cyan-800 border border-cyan-200/80', Icon: Stethoscope };
   }
 
-  return { circleClass: 'bg-indigo-100 text-indigo-800 border border-indigo-200/80', Icon: BookOpen };
+  return {
+    circleClass: 'bg-[rgba(0,242,255,0.10)] text-[#00f2ff] border border-[rgba(0,242,255,0.22)]',
+    Icon: BookOpen,
+  };
 }
 
 export function urgenciaInfo(item: ReviewItem): TópicoUrgência {
@@ -66,7 +69,7 @@ export function urgenciaInfo(item: ReviewItem): TópicoUrgência {
   if (dias === 1) {
     return { label: '1 dia atraso', chipClass: 'bg-amber-100 text-amber-900 border-amber-200' };
   }
-  return { label: `${dias} dias atraso`, chipClass: 'bg-rose-100 text-rose-900 border-rose-200' };
+  return { label: `${dias} dias atraso`, chipClass: 'bg-amber-100 text-amber-900 border-amber-200' };
 }
 
 export function prioridadeBarPct(item: ReviewItem): number {

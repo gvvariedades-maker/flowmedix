@@ -24,6 +24,52 @@
     --ring: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
+
+    /* ─── Tokens semânticos AVANT Design System ────────────────────────── */
+
+    /* Superfícies */
+    --color-surface-0: #010409;
+    --color-surface-1: #06090f;
+    --color-surface-2: #0d1117;
+    --color-surface-3: #111827;
+
+    /* Bordas */
+    --color-border-subtle:  rgba(255, 255, 255, 0.05);
+    --color-border-default: rgba(255, 255, 255, 0.10);
+    --color-border-strong:  rgba(255, 255, 255, 0.18);
+
+    /* Brand (Cyan) */
+    --color-brand:          #00f2ff;
+    --color-brand-dim:      rgba(0, 242, 255, 0.12);
+    --color-brand-glow:     rgba(0, 242, 255, 0.25);
+    --color-brand-text:     #67e8f9;
+
+    /* Nav ativo (Violet) */
+    --color-nav-active-bg:  rgba(139, 92, 246, 0.12);
+    --color-nav-active-bar: #8b5cf6;
+    --color-nav-active-txt: #c4b5fd;
+
+    /* Sucesso (Green Neon) */
+    --color-success:        #00ff88;
+    --color-success-dim:    rgba(0, 255, 136, 0.10);
+    --color-success-glow:   rgba(0, 255, 136, 0.25);
+    --color-success-text:   #6ee7b7;
+
+    /* Perigo (Red Neon) */
+    --color-danger:         #ff0055;
+    --color-danger-dim:     rgba(255, 0, 85, 0.10);
+    --color-danger-glow:    rgba(255, 0, 85, 0.25);
+    --color-danger-text:    #fda4af;
+
+    /* Warning */
+    --color-warning:        #ffb800;
+    --color-warning-dim:    rgba(255, 184, 0, 0.10);
+    --color-warning-text:   #fbbf24;
+
+    /* Texto */
+    --color-text-primary:   #e6edf3;
+    --color-text-secondary: #8b949e;
+    --color-text-tertiary:  #484f58;
   }
 
   /* O SEGREDO: Aplicamos o fundo no HTML e no BODY */
@@ -58,21 +104,22 @@
    * Evita depender do :root escuro usado na landing.
    */
   .dashboard-surface {
-    --background: 240 5% 96%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    /* Dark theme — alinhado com a landing (#010409) */
+    --background: 222 47% 4%;       /* #010409 */
+    --foreground: 215 25% 88%;      /* ~slate-200 */
+    --card: 220 39% 7%;             /* ~slate-950, levemente mais claro que o bg */
+    --card-foreground: 215 25% 88%;
+    --popover: 220 39% 7%;
+    --popover-foreground: 215 25% 88%;
+    --muted: 217 33% 11%;           /* ~slate-900 */
+    --muted-foreground: 215 16% 57%; /* ~slate-400 */
+    --accent: 217 33% 11%;
+    --accent-foreground: 215 25% 88%;
+    --secondary: 217 33% 11%;
+    --secondary-foreground: 215 25% 88%;
+    --border: 215 20% 16%;          /* borda sutil no escuro */
+    --input: 217 33% 11%;
+    --ring: 199 100% 50%;           /* cyan-400 — foco */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     color: hsl(var(--foreground));

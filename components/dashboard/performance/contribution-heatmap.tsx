@@ -7,13 +7,28 @@ import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import type { DiaEstudo, Periodo } from './types';
 
-/** Intensidade com cores distintas na legenda (cinza → azul → âmbar → violeta). */
-function nivelCor(count: number, max: number): string {
-  if (count === 0) return 'bg-neutral-200 dark:bg-neutral-700';
-  const t = count / max;
-  if (t < 0.34) return 'bg-sky-400 dark:bg-sky-600';
-  if (t < 0.67) return 'bg-amber-400 dark:bg-amber-600';
-  return 'bg-violet-600 dark:bg-violet-500';
+/**
+ * Escala de intensidade cyan conforme design system AVANT.
+ * 0 questões → surface-3 (#111827)
+ * 1–3        → rgba(0, 242, 255, 0.15)
+ * 4–7        → rgba(0, 242, 255, 0.35)
+ * 8–12       → rgba(0, 242, 255, 0.60)
+ * 13+        → rgba(0, 242, 255, 0.90)
+ */
+const INTENSITY_COLORS = [
+  '#111827',                      // 0 — surface-3
+  'rgba(0, 242, 255, 0.15)',      // 1–3
+  'rgba(0, 242, 255, 0.35)',      // 4–7
+  'rgba(0, 242, 255, 0.60)',      // 8–12
+  'rgba(0, 242, 255, 0.90)',      // 13+
+] as const;
+
+function intensityLevel(count: number): number {
+  if (count === 0) return 0;
+  if (count <= 3) return 1;
+  if (count <= 7) return 2;
+  if (count <= 12) return 3;
+  return 4;
 }
 
 function formatDiaMes(isoDate: string): { dia: string; mes: string } {
@@ -28,7 +43,6 @@ function formatDiaMes(isoDate: string): { dia: string; mes: string } {
 
 function HeatmapGrid({ serie, periodo }: { serie: DiaEstudo[]; periodo: Periodo }) {
   const dados = useMemo(() => serie.slice(-periodo), [serie, periodo]);
-  const max = Math.max(...dados.map((d) => d.count), 1);
   const hojeStr = new Date().toISOString().slice(0, 10);
 
   return (
@@ -36,8 +50,11 @@ function HeatmapGrid({ serie, periodo }: { serie: DiaEstudo[]; periodo: Periodo 
       <div className="grid w-full min-w-[280px] grid-cols-7 gap-x-1.5 gap-y-2 sm:min-w-0 sm:gap-x-2 sm:gap-y-4">
         {dados.map((dia, i) => {
           const isToday = dia.data === hojeStr;
+          const level = intensityLevel(dia.count);
+          const bgColor = INTENSITY_COLORS[level];
           const { dia: diaStr, mes: mesStr } = formatDiaMes(dia.data);
           const tooltip = `${diaStr} ${mesStr}: ${dia.count} ${dia.count === 1 ? 'questão estudada' : 'questões estudadas'}`;
+
           return (
             <motion.div
               key={dia.data}
@@ -48,22 +65,23 @@ function HeatmapGrid({ serie, periodo }: { serie: DiaEstudo[]; periodo: Periodo 
             >
               <div
                 title={tooltip}
+                style={{ backgroundColor: bgColor }}
                 className={cn(
-                  'aspect-square w-full min-h-[1.25rem] max-h-10 rounded-md transition-colors duration-150 sm:min-h-[1.5rem] sm:max-h-14',
-                  nivelCor(dia.count, max),
-                  isToday && 'ring-2 ring-slate-900 ring-offset-2 ring-offset-background dark:ring-white',
+                  'aspect-square w-full min-h-[1.25rem] max-h-10 rounded-[2px] transition-opacity duration-150 sm:min-h-[1.5rem] sm:max-h-14',
+                  'hover:opacity-75 cursor-default',
+                  isToday && 'ring-2 ring-[#00f2ff] ring-offset-1 ring-offset-[#0d1117]',
                 )}
               />
               <div className="w-full text-center">
-                <p className="text-[9px] font-semibold leading-tight text-foreground sm:text-[11px]">
+                <p className="text-[9px] font-semibold leading-tight text-[#8b949e] sm:text-[11px]">
                   <span className="tabular-nums">{diaStr}</span>{' '}
-                  <span className="text-muted-foreground">{mesStr}</span>
+                  <span className="text-[#484f58]">{mesStr}</span>
                 </p>
-                <p className="mt-0.5 text-[9px] font-bold tabular-nums text-foreground sm:text-[11px]">
+                <p className="mt-0.5 text-[9px] font-bold tabular-nums text-[#8b949e] sm:text-[11px]">
                   <span className="sm:hidden">{dia.count} q.</span>
                   <span className="hidden sm:inline">
                     {dia.count}{' '}
-                    <span className="font-medium text-muted-foreground">
+                    <span className="font-medium text-[#484f58]">
                       {dia.count === 1 ? 'questão' : 'questões'}
                     </span>
                   </span>
@@ -90,9 +108,9 @@ export function ContributionHeatmap({ serie, periodo, onPeriodoChange, totalPeri
     <div className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2">
-          <BarChart3 className="h-4 w-4 shrink-0 text-violet-600 dark:text-violet-400" aria-hidden />
-          <span className="text-sm font-semibold text-foreground">Atividade</span>
-          <span className="text-xs text-muted-foreground">
+          <BarChart3 className="h-4 w-4 shrink-0 text-[#67e8f9]" aria-hidden />
+          <span className="text-sm font-semibold text-[#e6edf3]">Atividade</span>
+          <span className="text-xs text-[#8b949e]">
             {totalPeriodo} questões nos últimos {periodo} dias
           </span>
         </div>
@@ -110,21 +128,21 @@ export function ContributionHeatmap({ serie, periodo, onPeriodoChange, totalPeri
         </TabsList>
         <TabsContent value="7" className="mt-4">
           {semDados ? (
-            <p className="py-8 text-center text-sm text-muted-foreground">Nenhuma questão estudada ainda.</p>
+            <p className="py-8 text-center text-sm text-[#8b949e]">Nenhuma questão estudada ainda.</p>
           ) : (
             <HeatmapGrid serie={serie} periodo={7} />
           )}
         </TabsContent>
         <TabsContent value="15" className="mt-4">
           {semDados ? (
-            <p className="py-8 text-center text-sm text-muted-foreground">Nenhuma questão estudada ainda.</p>
+            <p className="py-8 text-center text-sm text-[#8b949e]">Nenhuma questão estudada ainda.</p>
           ) : (
             <HeatmapGrid serie={serie} periodo={15} />
           )}
         </TabsContent>
         <TabsContent value="30" className="mt-4">
           {semDados ? (
-            <p className="py-8 text-center text-sm text-muted-foreground">Nenhuma questão estudada ainda.</p>
+            <p className="py-8 text-center text-sm text-[#8b949e]">Nenhuma questão estudada ainda.</p>
           ) : (
             <HeatmapGrid serie={serie} periodo={30} />
           )}
@@ -132,27 +150,34 @@ export function ContributionHeatmap({ serie, periodo, onPeriodoChange, totalPeri
       </Tabs>
 
       {!semDados && (
-        <div className="space-y-2 border-t border-border pt-4">
-          <p className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">Legenda</p>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] font-medium text-foreground">
+        <div className="space-y-2 border-t border-white/[0.08] pt-4">
+          <p className="text-[10px] font-medium uppercase tracking-wide text-[#484f58]">Legenda</p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] font-medium text-[#8b949e]">
             <span className="flex items-center gap-2">
-              <span className="h-3.5 w-3.5 shrink-0 rounded bg-neutral-200 dark:bg-neutral-700" />
+              <span className="h-3.5 w-3.5 shrink-0 rounded-[2px]" style={{ backgroundColor: INTENSITY_COLORS[0] }} />
               <span>Sem atividade</span>
             </span>
             <span className="flex items-center gap-2">
-              <span className="h-3.5 w-3.5 shrink-0 rounded bg-sky-400 dark:bg-sky-600" />
-              <span>Baixa</span>
+              <span className="h-3.5 w-3.5 shrink-0 rounded-[2px]" style={{ backgroundColor: INTENSITY_COLORS[1] }} />
+              <span>1–3</span>
             </span>
             <span className="flex items-center gap-2">
-              <span className="h-3.5 w-3.5 shrink-0 rounded bg-amber-400 dark:bg-amber-600" />
-              <span>Média</span>
+              <span className="h-3.5 w-3.5 shrink-0 rounded-[2px]" style={{ backgroundColor: INTENSITY_COLORS[2] }} />
+              <span>4–7</span>
             </span>
             <span className="flex items-center gap-2">
-              <span className="h-3.5 w-3.5 shrink-0 rounded bg-violet-600 dark:bg-violet-500" />
-              <span>Alta</span>
+              <span className="h-3.5 w-3.5 shrink-0 rounded-[2px]" style={{ backgroundColor: INTENSITY_COLORS[3] }} />
+              <span>8–12</span>
             </span>
             <span className="flex items-center gap-2">
-              <span className="inline-flex h-3.5 w-3.5 shrink-0 rounded border-2 border-slate-900 dark:border-white" />
+              <span className="h-3.5 w-3.5 shrink-0 rounded-[2px]" style={{ backgroundColor: INTENSITY_COLORS[4] }} />
+              <span>13+</span>
+            </span>
+            <span className="flex items-center gap-2">
+              <span
+                className="inline-flex h-3.5 w-3.5 shrink-0 rounded-[2px]"
+                style={{ outline: '2px solid #00f2ff', outlineOffset: '1px', backgroundColor: INTENSITY_COLORS[0] }}
+              />
               <span>Hoje</span>
             </span>
           </div>

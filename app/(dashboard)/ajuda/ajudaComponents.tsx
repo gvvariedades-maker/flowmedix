@@ -6,15 +6,27 @@ import { ChevronRight } from 'lucide-react';
 
 const TUTORIAL_DIR = join(process.cwd(), 'public', 'tutorial');
 
+/** Tokens reutilizáveis nas rotas `/ajuda` — tema escuro consistente */
+export const AJUDA_SURFACE =
+  'rounded-3xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117]';
+export const AJUDA_SURFACE_SM =
+  'rounded-2xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117]';
+export const ONDE_CLICAR =
+  'rounded-2xl border border-[rgba(0,242,255,0.15)] bg-[rgba(0,242,255,0.05)]';
+export const TEXT_MAIN = 'text-slate-100';
+export const TEXT_MUTED = 'text-slate-400';
+
 export function hasTutorialImage(name: string): boolean {
   return existsSync(join(TUTORIAL_DIR, name));
 }
 
 export function ClickLegend({ items }: { items: { alvo: string; acao: string }[] }) {
   return (
-    <div className="not-prose my-4 rounded-2xl border-2 border-indigo-200/80 bg-gradient-to-br from-indigo-50/90 to-slate-50/80 p-4 shadow-sm">
-      <p className="text-[11px] font-black uppercase tracking-[0.14em] text-indigo-800">Legenda — onde clicar</p>
-      <ol className="mt-3 list-none space-y-2.5 text-sm text-slate-800">
+    <div className={`not-prose my-4 p-4 shadow-sm ${ONDE_CLICAR}`}>
+      <p className="text-[11px] font-black uppercase tracking-[0.14em] text-cyan-300">
+        Legenda — onde clicar
+      </p>
+      <ol className={`mt-3 list-none space-y-2.5 text-sm ${TEXT_MAIN}`}>
         {items.map((it, i) => (
           <li key={i} className="flex gap-3">
             <span
@@ -23,8 +35,8 @@ export function ClickLegend({ items }: { items: { alvo: string; acao: string }[]
             >
               {i + 1}
             </span>
-            <span>
-              <strong className="text-slate-900">{it.alvo}:</strong> {it.acao}
+            <span className={TEXT_MUTED}>
+              <strong className={`font-semibold ${TEXT_MAIN}`}>{it.alvo}:</strong> {it.acao}
             </span>
           </li>
         ))}
@@ -47,7 +59,9 @@ export function TutorialFigure({
   if (!hasTutorialImage(file)) return null;
   return (
     <figure className="not-prose my-4 space-y-2">
-      <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-50/50 shadow-md shadow-slate-200/40">
+      <div
+        className={`overflow-hidden shadow-md shadow-black/20 ${AJUDA_SURFACE_SM}`}
+      >
         <Image
           src={`/tutorial/${file}`}
           alt={alt}
@@ -57,7 +71,7 @@ export function TutorialFigure({
           priority={priority}
         />
       </div>
-      <figcaption className="text-center text-xs font-medium text-slate-500">{caption}</figcaption>
+      <figcaption className={`text-center text-xs font-medium ${TEXT_MUTED}`}>{caption}</figcaption>
     </figure>
   );
 }
@@ -65,20 +79,28 @@ export function TutorialFigure({
 export function Toc({ items }: { items: { id: string; label: string }[] }) {
   return (
     <nav
-      className="not-prose my-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+      className={`not-prose my-6 p-4 shadow-sm ${AJUDA_SURFACE}`}
       aria-label="Índice do tutorial"
     >
-      <p className="text-[11px] font-black uppercase tracking-widest text-slate-500">Índice (passo a passo)</p>
+      <p className={`text-[11px] font-black uppercase tracking-widest ${TEXT_MUTED}`}>
+        Índice (passo a passo)
+      </p>
       <ol className="mt-3 space-y-1.5 text-sm">
         {items.map((it, i) => (
           <li key={it.id}>
             <a
               href={`#${it.id}`}
-              className="group flex items-start gap-2 rounded-lg py-1 text-slate-700 transition-colors hover:bg-indigo-50 hover:text-indigo-900"
+              className={`group flex items-start gap-2 rounded-lg py-1 ${TEXT_MAIN} transition-colors hover:bg-white/[0.05]`}
             >
-              <span className="font-mono text-xs text-indigo-500 tabular-nums">{String(i + 1).padStart(2, '0')}</span>
-              <span className="font-medium group-hover:underline">
-                {it.label} <ChevronRight className="ml-0.5 inline h-3.5 w-3.5 opacity-0 group-hover:opacity-100" aria-hidden />
+              <span className="font-mono text-xs tabular-nums text-[#00f2ff]">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <span className={`font-medium group-hover:underline ${TEXT_MAIN}`}>
+                {it.label}{' '}
+                <ChevronRight
+                  className="ml-0.5 inline h-3.5 w-3.5 text-slate-400 opacity-0 transition-opacity group-hover:opacity-100 group-hover:text-cyan-400"
+                  aria-hidden
+                />
               </span>
             </a>
           </li>
@@ -90,7 +112,9 @@ export function Toc({ items }: { items: { id: string; label: string }[] }) {
 
 export function Note({ children }: { children: React.ReactNode }) {
   return (
-    <div className="not-prose my-4 rounded-xl border border-amber-200/90 bg-amber-50/80 px-4 py-3 text-sm text-amber-950">
+    <div
+      className={`not-prose my-4 rounded-xl border border-amber-500/35 bg-amber-500/10 px-4 py-3 text-sm text-amber-100 [&_code]:rounded [&_code]:bg-white/10 [&_code]:px-1 [&_code]:font-mono [&_code]:text-slate-200 [&_strong]:text-amber-50`}
+    >
       {children}
     </div>
   );
@@ -98,7 +122,10 @@ export function Note({ children }: { children: React.ReactNode }) {
 
 export function InternalLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className="font-bold text-indigo-600 hover:underline">
+    <Link
+      href={href}
+      className="font-bold text-[#00f2ff] underline-offset-2 transition-colors hover:bg-white/[0.06] hover:text-cyan-300 hover:underline"
+    >
       {children}
     </Link>
   );

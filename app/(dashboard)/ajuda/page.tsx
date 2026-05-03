@@ -1,5 +1,14 @@
 import { CheckCircle2, MousePointerClick, Sparkles } from 'lucide-react';
-import { Toc, Note, InternalLink, TutorialFigure, hasTutorialImage, ActionLink } from './ajudaComponents';
+import {
+  AJUDA_SURFACE,
+  ONDE_CLICAR,
+  ActionLink,
+  InternalLink,
+  Note,
+  Toc,
+  TutorialFigure,
+  hasTutorialImage,
+} from './ajudaComponents';
 
 export const metadata = {
   title: 'Como usar o AVANT | Tutorial rápido',
@@ -188,32 +197,35 @@ export default function AjudaPage() {
   const firstSeq = hasTutorialImage('seq-01.png');
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-8 pb-20 md:px-6">
-      <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-indigo-700">
-        <Sparkles className="h-3.5 w-3.5" aria-hidden />
+      <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-slate-400">
+        <Sparkles className="h-3.5 w-3.5 text-[#00f2ff]" aria-hidden />
         Guia do aluno — início rápido
       </div>
-      <h1 className="text-balance text-2xl font-black tracking-tight text-slate-900 md:text-4xl">Como usar o AVANT</h1>
-      <p className="mt-3 text-pretty text-base font-medium leading-relaxed text-slate-600">
-        Este tutorial foi pensado para quem acabou de chegar. Cada etapa tem <strong>um único foco</strong>: primeiro o que fazer,
+      <h1 className="text-balance text-2xl font-black tracking-tight text-slate-100 md:text-4xl">Como usar o AVANT</h1>
+      <p className="mt-3 text-pretty text-base font-medium leading-relaxed text-slate-400">
+        Este tutorial foi pensado para quem acabou de chegar. Cada etapa tem <strong className="text-slate-100">um único foco</strong>:
+        primeiro o que fazer,
         depois onde clicar, e por fim uma imagem limpa para confirmar visualmente.
       </p>
 
       {!firstSeq && (
         <Note>
-          <strong>Sem imagem:</strong> se <code className="rounded bg-white/80 px-1">public/tutorial/seq-01.png</code> a{' '}
-          <code className="rounded bg-white/80 px-1">seq-10.png</code> faltarem, execute o script de cópia do repositório ou peça
-          suporte. Enquanto isso, o texto e o índice permanecem úteis.
+          <strong>Sem imagem:</strong> se <code>public/tutorial/seq-01.png</code> a <code>seq-10.png</code> faltarem,
+          execute o script de cópia do repositório ou peça suporte. Enquanto isso, o texto e o índice permanecem úteis.
         </Note>
       )}
 
-      <section className="mt-6 rounded-3xl border border-indigo-100 bg-gradient-to-br from-indigo-50/80 via-white to-emerald-50/70 p-5 shadow-sm">
-        <h2 className="flex items-center gap-2 text-base font-black text-slate-900">
-          <CheckCircle2 className="h-5 w-5 text-emerald-600" aria-hidden />
+      <section className={`mt-6 p-5 shadow-sm ${AJUDA_SURFACE}`}>
+        <h2 className="flex items-center gap-2 text-base font-black text-slate-100">
+          <CheckCircle2 className="h-5 w-5 text-emerald-400" aria-hidden />
           Primeiro acesso: faça nesta ordem
         </h2>
-        <ol className="mt-4 grid gap-3 text-sm text-slate-700 md:grid-cols-5">
+        <ol className="mt-4 grid gap-3 text-sm text-slate-200 md:grid-cols-5">
           {QUICK_START.map((item, index) => (
-            <li key={item} className="rounded-2xl bg-white/85 p-3 shadow-sm ring-1 ring-slate-200/70">
+            <li
+              key={item}
+              className="rounded-2xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117] p-3 shadow-sm"
+            >
               <span className="mb-2 flex h-7 w-7 items-center justify-center rounded-full bg-indigo-600 text-xs font-black text-white">
                 {index + 1}
               </span>
@@ -230,28 +242,28 @@ export default function AjudaPage() {
           <section
             key={s.id}
             id={s.id}
-            className="scroll-mt-10 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6"
+            className={`scroll-mt-10 p-5 shadow-sm md:p-6 ${AJUDA_SURFACE}`}
           >
             <div className="grid gap-5 lg:grid-cols-[0.95fr_1.35fr] lg:items-start">
               <div>
-                <p className="text-[11px] font-black uppercase tracking-widest text-indigo-600">Passo {s.n}</p>
-                <h2 className="mt-1 text-xl font-black tracking-tight text-slate-900 md:text-2xl">{s.title}</h2>
-                <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-600 md:text-base">
+                <p className="text-[11px] font-black uppercase tracking-widest text-indigo-400">Passo {s.n}</p>
+                <h2 className="mt-1 text-xl font-black tracking-tight text-slate-100 md:text-2xl">{s.title}</h2>
+                <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-400 md:text-base">
                   <p>
-                    <strong className="text-slate-900">Objetivo:</strong> {s.objetivo}
+                    <strong className="text-slate-100">Objetivo:</strong> {s.objetivo}
                   </p>
-                  <div className="rounded-2xl border-2 border-indigo-100 bg-indigo-50/70 p-4">
-                    <p className="flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-indigo-700">
+                  <div className={`border-2 p-4 ${ONDE_CLICAR}`}>
+                    <p className="flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-cyan-300">
                       <MousePointerClick className="h-4 w-4" aria-hidden />
                       Onde clicar
                     </p>
-                    <p className="mt-2 font-semibold text-slate-900">{s.clique}</p>
+                    <p className="mt-2 font-semibold text-slate-100">{s.clique}</p>
                     {s.actionHref && s.actionLabel ? (
                       <ActionLink href={s.actionHref}>{s.actionLabel}</ActionLink>
                     ) : null}
                   </div>
                   <p>
-                    <strong className="text-slate-900">Depois disso:</strong> {s.depois}
+                    <strong className="text-slate-100">Depois disso:</strong> {s.depois}
                   </p>
                 </div>
               </div>
@@ -261,23 +273,26 @@ export default function AjudaPage() {
         ))}
       </div>
 
-      <section id="material-apoio" className="mt-12 scroll-mt-10 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
-        <p className="text-[11px] font-black uppercase tracking-widest text-indigo-600">Passo 11</p>
-        <h2 className="mt-1 text-xl font-black tracking-tight text-slate-900 md:text-2xl">
+      <section
+        id="material-apoio"
+        className={`mt-12 scroll-mt-10 p-5 shadow-sm md:p-6 ${AJUDA_SURFACE}`}
+      >
+        <p className="text-[11px] font-black uppercase tracking-widest text-indigo-400">Passo 11</p>
+        <h2 className="mt-1 text-xl font-black tracking-tight text-slate-100 md:text-2xl">
           Como usar o Material de Apoio (NeuroSlides)
         </h2>
-        <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-600 md:text-base">
+        <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-400 md:text-base">
           <p>
-            <strong className="text-slate-900">Objetivo:</strong> revisar conteúdos por tema, com foco visual, fora do fluxo de uma questão
+            <strong className="text-slate-100">Objetivo:</strong> revisar conteúdos por tema, com foco visual, fora do fluxo de uma questão
             específica.
           </p>
 
-          <div className="rounded-2xl border-2 border-indigo-100 bg-indigo-50/70 p-4">
-            <p className="flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-indigo-700">
+          <div className={`border-2 p-4 ${ONDE_CLICAR}`}>
+            <p className="flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-cyan-300">
               <MousePointerClick className="h-4 w-4" aria-hidden />
               Onde clicar
             </p>
-            <ol className="mt-2 list-decimal space-y-2 pl-5 font-semibold text-slate-900">
+            <ol className="mt-2 list-decimal space-y-2 pl-5 font-semibold text-slate-200">
               <li>No menu lateral, clique em <strong>Material de Apoio</strong>.</li>
               <li>Na tela inicial, clique em <strong>Abrir NeuroSlide</strong>.</li>
               <li>Escolha uma coleção (Fundamentos, Medicações, SUS, etc.) e clique em <strong>Abrir</strong>.</li>
@@ -291,7 +306,7 @@ export default function AjudaPage() {
           </div>
 
           <p>
-            <strong className="text-slate-900">Depois disso:</strong> use os NeuroSlides como revisão rápida antes de simulados e, em seguida,
+            <strong className="text-slate-100">Depois disso:</strong> use os NeuroSlides como revisão rápida antes de simulados e, em seguida,
             volte para a <InternalLink href="/estudar">Vitrine de Aulas</InternalLink> para consolidar com questões.
           </p>
         </div>

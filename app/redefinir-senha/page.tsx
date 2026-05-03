@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase/client';
+import { PublicLightAuthHeader } from '@/components/layout/PublicLightAuthHeader';
 
 export default function RedefinirSenhaPage() {
   const router = useRouter();
@@ -74,13 +75,15 @@ export default function RedefinirSenhaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6 relative overflow-hidden">
+    <div className="relative flex min-h-screen flex-col overflow-hidden bg-slate-50">
+      <PublicLightAuthHeader variant="auth-other" />
 
       {/* Background Decorativo */}
-      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-indigo-300/20 rounded-full blur-[100px]" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#BEF264]/10 rounded-full blur-[100px]" />
+      <div className="pointer-events-none absolute top-[-10%] left-[-10%] h-[500px] w-[500px] rounded-full bg-indigo-300/20 blur-[100px]" />
+      <div className="pointer-events-none absolute bottom-[-10%] right-[-10%] h-[500px] w-[500px] rounded-full bg-[#BEF264]/10 blur-[100px]" />
 
-      <div className="w-full max-w-md relative z-10">
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-center p-6">
+        <div className="relative z-10 w-full max-w-md">
 
         {/* Header */}
         <div className="text-center mb-10">
@@ -290,6 +293,7 @@ export default function RedefinirSenhaPage() {
           )}
         </AnimatePresence>
 
+      </div>
       </div>
     </div>
   );

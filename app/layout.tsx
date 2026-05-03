@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { validateAllEnv } from "@/lib/env";
@@ -23,6 +23,13 @@ if (typeof window === 'undefined') {
 }
 
 const inter = Inter({ subsets: ["latin"] });
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-plus-jakarta-sans",
+  display: "swap",
+});
 
 const siteUrl = getSiteUrl();
 const siteName = "AVANT";
@@ -106,7 +113,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={inter.className} suppressHydrationWarning>
+      <body className={`${inter.className} ${plusJakartaSans.variable}`} suppressHydrationWarning>
         <Script
           id="avant-text-size-init"
           strategy="beforeInteractive"

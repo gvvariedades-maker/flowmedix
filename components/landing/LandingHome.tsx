@@ -26,6 +26,7 @@ import {
   Zap,
 } from 'lucide-react';
 import { SlideStylePreviews } from '@/components/landing/SlideStylePreviews';
+import { PublicDarkSiteHeader } from '@/components/layout/PublicDarkSiteHeader';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -209,38 +210,7 @@ export default function LandingHome() {
         />
       </div>
 
-      {/* Nav */}
-      <header className="sticky top-0 z-20 border-b border-white/5 bg-slate-950/55 backdrop-blur-xl">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/40 group-hover:scale-105 transition-transform">
-              <Zap size={22} className="text-[#BEF264]" fill="currentColor" />
-            </div>
-            <span className="text-xl font-[1000] italic tracking-tighter text-white">AVANT</span>
-          </Link>
-          <nav className="flex flex-wrap items-center justify-end gap-2 sm:gap-3">
-            <Link
-              href="/blog"
-              className="text-sm font-bold text-slate-300 hover:text-white px-3 py-2 rounded-lg transition-colors"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/login"
-              className="text-sm font-bold text-slate-300 hover:text-white px-3 py-2 rounded-lg transition-colors"
-            >
-              Entrar
-            </Link>
-            <Link
-              href="/register"
-              className="text-sm font-black uppercase tracking-wider text-slate-950 bg-[#BEF264] hover:bg-[#d4f879] px-4 py-2.5 rounded-xl shadow-lg shadow-lime-400/20 transition-all hover:scale-[1.02] inline-flex items-center gap-2"
-            >
-              Entrar no Beta Gratuito
-              <ArrowRight size={16} />
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <PublicDarkSiteHeader ctaLabel="Entrar no Beta Gratuito" />
 
       <main className="relative z-10">
         {/* Hero */}

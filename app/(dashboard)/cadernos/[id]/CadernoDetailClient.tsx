@@ -1,17 +1,43 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  ArrowLeft, Play, Search, Plus, Trash2,
-  CheckCircle2, Circle, BookOpen, Layers,
-  ChevronRight, Loader2, X, BookMarked,
+  ArrowLeft,
+  Play,
+  Search,
+  Plus,
+  Trash2,
+  CheckCircle2,
+  Circle,
+  BookOpen,
+  Layers,
+  Loader2,
+  X,
+  BookMarked,
+  ChevronDown,
 } from 'lucide-react';
 import type { CadernoDetail, ModuloDisponivel, NotebookItem } from './page';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
+import { cn } from '@/lib/utils';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import {
+  FILTER_ALL_VALUE,
+  SELECT_CONTENT_DARK,
+  SELECT_ITEM_DARK,
+  SELECT_TRIGGER_DARK_PANEL,
+} from '@/components/dashboard/dashboard-select-dark';
+
+const FILTER_ALL = FILTER_ALL_VALUE;
 
 // ── Componente: item do caderno ────────────────────────────────────────────
 function ItemCaderno({
@@ -44,14 +70,15 @@ function ItemCaderno({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, x: -20 }}
       transition={{ duration: 0.2 }}
-      className={`flex items-center gap-3 p-4 rounded-2xl border transition-all group ${
+      className={cn(
+        'group flex items-center gap-3 rounded-2xl border p-4 transition-all',
         item.estudada
-          ? 'bg-emerald-50 border-emerald-100'
-          : 'bg-white border-slate-200 hover:border-indigo-200'
-      }`}
+          ? 'border-emerald-500/25 bg-emerald-950/30'
+          : 'border-[rgba(255,255,255,0.10)] bg-[#0d1117] hover:border-cyan-500/20',
+      )}
     >
       {/* Número */}
-      <div className="w-7 h-7 rounded-lg bg-slate-100 group-hover:bg-indigo-50 flex items-center justify-center shrink-0 transition-colors">
+      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white/[0.06] transition-colors group-hover:bg-white/[0.08]">
         <span className="text-[11px] font-black text-slate-500">{String(index + 1).padStart(2, '0')}</span>
       </div>
 
@@ -59,7 +86,7 @@ function ItemCaderno({
       <div className="shrink-0">
         {item.estudada
           ? <CheckCircle2 size={16} className="text-emerald-500" />
-          : <Circle size={16} className="text-slate-300" />
+          : <Circle size={16} className="text-slate-500" />
         }
       </div>
 
@@ -70,29 +97,27 @@ function ItemCaderno({
             {item.topico || 'Questão'}
           </p>
           {formatAvantCodigo(item.avant_codigo) && (
-            <span className="text-[9px] font-mono font-black text-indigo-600 bg-indigo-50 border border-indigo-100 px-1.5 py-0.5 rounded-md shrink-0">
+            <span className="shrink-0 rounded-md border border-[rgba(0,242,255,0.35)] bg-[rgba(0,242,255,0.08)] px-1.5 py-0.5 font-mono text-[9px] font-black text-[#67e8f9]">
               {formatAvantCodigo(item.avant_codigo)}
             </span>
           )}
         </div>
-        <p className="text-sm font-bold text-slate-800 truncate">
-          {item.titulo_aula || item.modulo_slug}
-        </p>
+        <p className="truncate text-sm font-bold text-slate-200">{item.titulo_aula || item.modulo_slug}</p>
       </div>
 
       {/* Ações */}
       <div className="flex items-center gap-1 shrink-0">
         <Link
           href={`/estudar/${item.modulo_slug}?from=caderno&caderno_id=${notebookId}`}
-          className="w-8 h-8 rounded-xl bg-indigo-50 hover:bg-indigo-100 flex items-center justify-center transition-colors"
+          className="flex h-8 w-8 items-center justify-center rounded-xl border border-cyan-500/25 bg-[rgba(0,242,255,0.08)] transition-colors hover:bg-[rgba(0,242,255,0.14)]"
           title="Estudar questão"
         >
-          <Play size={13} className="text-indigo-600" />
+          <Play size={13} className="text-cyan-300" />
         </Link>
         <button
           onClick={handleRemove}
           disabled={removing}
-          className="w-8 h-8 rounded-xl bg-slate-50 hover:bg-rose-50 flex items-center justify-center transition-colors disabled:opacity-50"
+          className="flex h-8 w-8 items-center justify-center rounded-xl border border-[rgba(255,255,255,0.10)] bg-white/[0.04] transition-colors hover:border-rose-500/35 hover:bg-rose-500/10 disabled:opacity-50"
           title="Remover do caderno"
         >
           {removing
@@ -122,6 +147,11 @@ function BuilderPanel({
   const [filtroBanca, setFiltroBanca] = useState('');
   const [adding, setAdding] = useState<string | null>(null);
   const [addingLote, setAddingLote] = useState(false);
+  const [filtrosMontados, setFiltrosMontados] = useState(false);
+
+  useEffect(() => {
+    setFiltrosMontados(true);
+  }, []);
 
   const topicos = useMemo(() => {
     const set = new Set<string>();
@@ -225,75 +255,109 @@ function BuilderPanel({
   };
 
   return (
-    <div className="bg-white rounded-3xl border border-slate-200 flex flex-col h-full">
-      <div className="p-4 border-b border-slate-100 space-y-3">
-        <p className="text-[10px] font-black uppercase tracking-widest text-slate-500">
-          Adicionar questões
-        </p>
+    <div className="flex h-full flex-col rounded-3xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117]">
+      <div className="space-y-3 border-b border-[rgba(255,255,255,0.08)] p-4">
+        <p className="text-xs uppercase tracking-widest text-slate-400">Adicionar questões</p>
 
         {/* Busca */}
         <div className="relative">
-          <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+          <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
           <input
             value={busca}
-            onChange={e => setBusca(e.target.value)}
+            onChange={(e) => setBusca(e.target.value)}
             placeholder="Assunto, banca, slug ou Q-…"
-            className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 outline-none text-sm text-slate-700 placeholder:text-slate-300"
+            className="w-full rounded-xl border border-[rgba(255,255,255,0.10)] bg-[#010409] py-2.5 pl-9 pr-10 text-sm text-slate-200 outline-none placeholder:text-slate-500 focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20"
           />
           {busca && (
-            <button onClick={() => setBusca('')} className="absolute right-3 top-1/2 -translate-y-1/2">
-              <X size={13} className="text-slate-400" />
+            <button type="button" onClick={() => setBusca('')} className="absolute right-3 top-1/2 -translate-y-1/2">
+              <X size={13} className="text-slate-500 hover:text-slate-300" aria-hidden />
             </button>
           )}
         </div>
 
-        {/* Filtros — coluna no mobile (evita texto cortado nos selects nativos) */}
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-          <select
-            value={filtroTopico}
-            onChange={e => setFiltroTopico(e.target.value)}
-            title="Filtrar por assunto"
-            aria-label="Filtrar por assunto"
-            className="w-full sm:flex-1 min-w-0 px-3 py-2.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 outline-none focus:border-indigo-400 bg-white"
-          >
-            <option value="">Todos os assuntos</option>
-            {topicos.map(t => <option key={t} value={t}>{t}</option>)}
-          </select>
-          <select
-            value={filtroBanca}
-            onChange={e => setFiltroBanca(e.target.value)}
-            title="Filtrar por banca"
-            aria-label="Filtrar por banca"
-            className="w-full sm:flex-1 min-w-0 px-3 py-2.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 outline-none focus:border-indigo-400 bg-white"
-          >
-            <option value="">Todas as bancas</option>
-            {bancas.map(b => <option key={b} value={b}>{b}</option>)}
-          </select>
+        <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
+          {filtrosMontados ? (
+            <>
+              <Select
+                value={filtroTopico || FILTER_ALL}
+                onValueChange={(v) => setFiltroTopico(v === FILTER_ALL ? '' : v)}
+              >
+                <SelectTrigger className={SELECT_TRIGGER_DARK_PANEL}>
+                  <SelectValue placeholder="Todos os assuntos" />
+                </SelectTrigger>
+                <SelectContent position="item-aligned" className={SELECT_CONTENT_DARK}>
+                  <SelectItem value={FILTER_ALL} className={SELECT_ITEM_DARK}>
+                    Todos os assuntos
+                  </SelectItem>
+                  {topicos.map((t) => (
+                    <SelectItem key={t} value={t} className={SELECT_ITEM_DARK}>
+                      {t}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              <Select
+                value={filtroBanca || FILTER_ALL}
+                onValueChange={(v) => setFiltroBanca(v === FILTER_ALL ? '' : v)}
+              >
+                <SelectTrigger className={SELECT_TRIGGER_DARK_PANEL}>
+                  <SelectValue placeholder="Todas as bancas" />
+                </SelectTrigger>
+                <SelectContent position="item-aligned" className={SELECT_CONTENT_DARK}>
+                  <SelectItem value={FILTER_ALL} className={SELECT_ITEM_DARK}>
+                    Todas as bancas
+                  </SelectItem>
+                  {bancas.map((b) => (
+                    <SelectItem key={b} value={b} className={SELECT_ITEM_DARK}>
+                      {b}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </>
+          ) : (
+            <>
+              <div
+                className="flex h-11 min-w-0 w-full items-center justify-between rounded-xl border border-[rgba(255,255,255,0.15)] bg-[#0d1117] px-3 py-2 text-sm text-slate-400"
+                aria-hidden
+              >
+                <span className="line-clamp-1">Todos os assuntos</span>
+                <ChevronDown className="h-4 w-4 shrink-0 opacity-50" aria-hidden />
+              </div>
+              <div
+                className="flex h-11 min-w-0 w-full items-center justify-between rounded-xl border border-[rgba(255,255,255,0.15)] bg-[#0d1117] px-3 py-2 text-sm text-slate-400"
+                aria-hidden
+              >
+                <span className="line-clamp-1">Todas as bancas</span>
+                <ChevronDown className="h-4 w-4 shrink-0 opacity-50" aria-hidden />
+              </div>
+            </>
+          )}
         </div>
 
         {criterioLoteAtivo && filtradosCompletos.length > 0 && (
-          <div className="pt-1 border-t border-slate-100">
+          <div className="border-t border-[rgba(255,255,255,0.08)] pt-3">
             <button
               type="button"
               onClick={handleAddLote}
               disabled={addingLote}
-              className="w-full flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl border border-indigo-200 bg-indigo-50/80 text-indigo-800 text-xs font-black uppercase tracking-widest hover:bg-indigo-100 transition-colors disabled:opacity-50"
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-400/30 bg-[rgba(0,242,255,0.08)] px-3 py-2.5 text-xs font-black uppercase tracking-widest text-cyan-200 transition-colors hover:bg-[rgba(0,242,255,0.12)] disabled:opacity-50"
             >
               {addingLote ? (
                 <>
-                  <Loader2 size={14} className="animate-spin" />
+                  <Loader2 size={14} className="animate-spin" aria-hidden />
                   Adicionando lote…
                 </>
               ) : (
                 <>
-                  <Layers size={14} />
+                  <Layers size={14} aria-hidden />
                   Adicionar todas ({filtradosCompletos.length}
                   {filtradosCompletos.length > 1 ? ' questões' : ' questão'})
                 </>
               )}
             </button>
             {filtradosCompletos.length > 50 && (
-              <p className="text-center text-[10px] text-slate-500 font-bold mt-1.5">
+              <p className="mt-1.5 text-center text-[10px] font-bold text-slate-400">
                 Lista abaixo mostra 50; o lote inclui as {filtradosCompletos.length} do filtro.
               </p>
             )}
@@ -301,15 +365,17 @@ function BuilderPanel({
         )}
 
         {!criterioLoteAtivo && modulos.length > 0 && (
-          <p className="text-[10px] text-slate-500 leading-relaxed">
-            Escolha um <strong>assunto</strong> e/ou <strong>banca</strong> ou use a
-            <strong> busca</strong> para ativar a opção de adicionar o lote inteiro de uma vez.
+          <p className="text-[10px] leading-relaxed text-slate-400">
+            Escolha um <strong className="text-slate-300">assunto</strong> e/ou{' '}
+            <strong className="text-slate-300">banca</strong> ou use a
+            <strong className="text-slate-300"> busca</strong> para ativar a opção de adicionar o lote inteiro de
+            uma vez.
           </p>
         )}
       </div>
 
       {/* Resultados */}
-      <div className="flex-1 overflow-y-auto p-2 space-y-1">
+      <div className="flex-1 space-y-1 overflow-y-auto p-2">
         {filtrados.length === 0 ? (
           <div className="text-center py-8 text-slate-400 text-sm">
             {busca || filtroTopico || filtroBanca ? 'Nenhum resultado' : 'Todas as questões já estão no caderno'}
@@ -318,30 +384,30 @@ function BuilderPanel({
           filtrados.map(m => (
             <button
               key={m.modulo_slug}
+              type="button"
               onClick={() => handleAdd(m)}
               disabled={adding === m.modulo_slug}
-              className="w-full flex items-center gap-3 p-3 rounded-xl hover:bg-indigo-50 transition-colors text-left group disabled:opacity-60"
+              className="group flex w-full items-center gap-3 rounded-xl p-3 text-left transition-colors hover:bg-white/[0.04] disabled:opacity-60"
             >
-              <div className="flex-1 min-w-0">
+              <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-1.5">
-                  <p className="text-[9px] font-black uppercase tracking-widest text-slate-400 truncate">
+                  <p className="truncate text-[9px] font-black uppercase tracking-widest text-slate-400">
                     {m.banca || ''} {m.modulo_nome ? `— ${m.modulo_nome}` : ''}
                   </p>
                   {formatAvantCodigo(m.avant_codigo) && (
-                    <span className="text-[8px] font-mono font-black text-indigo-600 bg-indigo-50 px-1 py-0.5 rounded shrink-0">
+                    <span className="shrink-0 rounded bg-[rgba(0,242,255,0.08)] px-1 py-0.5 font-mono text-[8px] font-black text-[#67e8f9]">
                       {formatAvantCodigo(m.avant_codigo)}
                     </span>
                   )}
                 </div>
-                <p className="text-xs font-bold text-slate-700 truncate">
-                  {m.titulo_aula || m.modulo_slug}
-                </p>
+                <p className="truncate text-xs font-bold text-slate-300">{m.titulo_aula || m.modulo_slug}</p>
               </div>
-              <div className="shrink-0 w-7 h-7 rounded-lg bg-slate-100 group-hover:bg-indigo-100 flex items-center justify-center transition-colors">
-                {adding === m.modulo_slug
-                  ? <Loader2 size={12} className="text-indigo-500 animate-spin" />
-                  : <Plus size={12} className="text-slate-500 group-hover:text-indigo-600" />
-                }
+              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white/[0.06] transition-colors group-hover:bg-[rgba(0,242,255,0.12)]">
+                {adding === m.modulo_slug ? (
+                  <Loader2 size={12} className="animate-spin text-cyan-400" aria-hidden />
+                ) : (
+                  <Plus size={12} className="text-slate-400 transition-colors group-hover:text-cyan-300" aria-hidden />
+                )}
               </div>
             </button>
           ))
@@ -349,7 +415,7 @@ function BuilderPanel({
       </div>
 
       {modulos.length > 0 && filtradosCompletos.length > 50 && filtrados.length === 50 && (
-        <p className="text-center text-[10px] text-slate-400 font-bold p-3">
+        <p className="p-3 text-center text-[10px] font-bold text-slate-400">
           Mostrando 50 de {filtradosCompletos.length} com este filtro — refine a busca
         </p>
       )}
@@ -403,70 +469,67 @@ export default function CadernoDetailClient({
   const firstSlug = items.find(i => !i.estudada)?.modulo_slug || items[0]?.modulo_slug;
 
   return (
-    <div className="min-h-screen bg-slate-50 pb-24 pb-safe">
-      {/* Header — sticky no scroll (área principal do dashboard) */}
-      <div className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-white/90">
+    <div className="min-h-screen bg-[#010409] pb-24 pb-safe">
+      <div className="sticky top-0 z-20 border-b border-[rgba(255,255,255,0.08)] bg-[#010409]/95 shadow-[0_8px_32px_-16px_rgba(0,0,0,0.5)] backdrop-blur-md supports-[backdrop-filter]:bg-[#010409]/90">
         <div className="bg-transparent px-6 py-5 md:px-10">
-        <div className="max-w-6xl mx-auto">
-          <button
-            onClick={() => router.push('/cadernos')}
-            className="flex items-center gap-2 text-slate-400 hover:text-slate-700 text-xs font-bold uppercase tracking-widest mb-3 transition-colors"
-          >
-            <ArrowLeft size={14} /> Meus Cadernos
-          </button>
+          <div className="mx-auto max-w-6xl">
+            <button
+              type="button"
+              onClick={() => router.push('/cadernos')}
+              className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 transition-colors hover:text-slate-300"
+            >
+              <ArrowLeft size={14} aria-hidden /> Meus cadernos
+            </button>
 
-          <div className="flex items-start justify-between gap-4 flex-wrap">
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <BookMarked size={18} className="text-indigo-500" />
-                <p className="text-[10px] font-black uppercase tracking-widest text-indigo-500">Caderno</p>
-              </div>
-              <h1 className="text-2xl font-[1000] italic tracking-tighter text-slate-900">{caderno.title}</h1>
-              {caderno.description && (
-                <p className="text-sm text-slate-500 mt-0.5">{caderno.description}</p>
-              )}
-              <div className="flex items-center gap-3 mt-2">
-                <span className="text-xs font-bold text-slate-400">
-                  <Layers size={11} className="inline mr-1" />
-                  {items.length} {items.length === 1 ? 'questão' : 'questões'}
-                </span>
-                {items.length > 0 && (
-                  <span className="text-xs font-bold text-emerald-600">
-                    <CheckCircle2 size={11} className="inline mr-1" />
-                    {estudadas}/{items.length} estudadas
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <div>
+                <div className="mb-1 flex items-center gap-2">
+                  <BookMarked size={18} className="text-cyan-400" aria-hidden />
+                  <p className="text-[10px] font-black uppercase tracking-widest text-cyan-400">Caderno</p>
+                </div>
+                <h1 className="text-3xl font-black italic tracking-tight text-white">{caderno.title}</h1>
+                {caderno.description && <p className="mt-0.5 text-sm text-slate-400">{caderno.description}</p>}
+                <div className="mt-2 flex flex-wrap items-center gap-3">
+                  <span className="text-xs font-bold text-slate-400">
+                    <Layers size={11} className="mr-1 inline" aria-hidden />
+                    {items.length} {items.length === 1 ? 'questão' : 'questões'}
                   </span>
-                )}
+                  {items.length > 0 && (
+                    <span className="text-xs font-bold text-emerald-400">
+                      <CheckCircle2 size={11} className="mr-1 inline" aria-hidden />
+                      {estudadas}/{items.length} estudadas
+                    </span>
+                  )}
+                </div>
               </div>
-            </div>
 
-            {firstSlug && (
-              <Link
-                href={`/estudar/${firstSlug}?from=caderno&caderno_id=${caderno.id}`}
-                className="flex items-center gap-2 px-5 py-3 rounded-2xl bg-indigo-600 text-white font-black text-xs uppercase tracking-widest hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200"
-              >
-                <Play size={15} /> Estudar caderno
-              </Link>
-            )}
+              {firstSlug && (
+                <Link
+                  href={`/estudar/${firstSlug}?from=caderno&caderno_id=${caderno.id}`}
+                  className="flex items-center gap-2 rounded-2xl bg-cyan-500 px-5 py-3 text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-cyan-950/40 transition-all hover:bg-cyan-600"
+                >
+                  <Play size={15} aria-hidden /> Estudar caderno
+                </Link>
+              )}
+            </div>
           </div>
-        </div>
         </div>
       </div>
 
       {/* Conteúdo: 2 colunas */}
-      <div className="max-w-6xl mx-auto px-6 py-6 md:px-10 md:pt-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 min-h-[70vh]">
-
+      <div className="mx-auto max-w-6xl px-6 py-6 md:px-10 md:pt-8">
+        <div className="grid min-h-[70vh] grid-cols-1 gap-6 lg:grid-cols-2">
           {/* Coluna esquerda: itens do caderno */}
           <div className="flex flex-col gap-3">
-            <p className="text-[10px] font-black uppercase tracking-widest text-slate-500 px-1">
+            <p className="px-1 text-[10px] font-black uppercase tracking-widest text-slate-500">
               Questões no caderno ({items.length})
             </p>
 
             {items.length === 0 ? (
-              <div className="flex-1 flex flex-col items-center justify-center py-16 text-center space-y-3 bg-white rounded-3xl border border-dashed border-slate-200">
-                <BookOpen size={32} className="text-slate-300" />
+              <div className="flex flex-1 flex-col items-center justify-center space-y-3 rounded-3xl border border-dashed border-[rgba(255,255,255,0.15)] bg-[#0d1117] py-16 text-center">
+                <BookOpen size={32} className="text-slate-500" aria-hidden />
                 <p className="text-sm font-bold text-slate-400">Nenhuma questão ainda</p>
-                <p className="text-xs text-slate-400 max-w-xs">
+                <p className="max-w-xs text-xs text-slate-400">
                   Use o painel ao lado para buscar e adicionar questões ao caderno.
                 </p>
               </div>
@@ -489,7 +552,7 @@ export default function CadernoDetailClient({
 
           {/* Coluna direita: builder */}
           <div className="lg:sticky lg:top-6 lg:h-[calc(100vh-160px)]">
-            <p className="text-[10px] font-black uppercase tracking-widest text-slate-500 px-1 mb-3">
+            <p className="mb-3 px-1 text-xs font-black uppercase tracking-widest text-slate-500">
               Buscar questões ({modulos.length} disponíveis)
             </p>
             <div className="h-[calc(100%-28px)]">
@@ -501,7 +564,6 @@ export default function CadernoDetailClient({
               />
             </div>
           </div>
-
         </div>
       </div>
     </div>

@@ -7,6 +7,7 @@ import { BookMarked, BookOpen, Clock, Layers, X, Loader2, Trash2, Play, Pencil }
 import { CadernosEmptyState } from '@/components/dashboard/cadernos/CadernosEmptyState';
 import { CadernosHeader } from '@/components/dashboard/cadernos/CadernosHeader';
 import { Button } from '@/components/ui/button';
+import { NeonBadge } from '@/components/ui/neon-badge';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
 import type { NotebookSummary } from './page';
@@ -48,37 +49,46 @@ function ConfirmExcluirModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="bg-white rounded-3xl p-6 w-full max-w-md shadow-2xl"
+        className="w-full max-w-md rounded-3xl border border-[rgba(255,255,255,0.12)] bg-[#0d1117] p-6 shadow-2xl shadow-black/40"
       >
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-[1000] italic tracking-tighter text-slate-900">Excluir caderno</h2>
-          <button type="button" onClick={onClose} className="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors">
-            <X size={16} className="text-slate-500" />
+        <div className="mb-4 flex items-center justify-between">
+          <h2 className="text-lg font-[1000] italic tracking-tighter text-white">Excluir caderno</h2>
+          <button
+            type="button"
+            onClick={onClose}
+            className="flex h-8 w-8 items-center justify-center rounded-xl bg-white/[0.06] text-slate-400 transition-colors hover:bg-white/[0.1] hover:text-slate-200"
+          >
+            <X size={16} aria-hidden />
           </button>
         </div>
-        <p className="text-sm text-slate-600 leading-relaxed mb-1">
-          Tem certeza que deseja excluir <span className="font-bold text-slate-900">&quot;{caderno.title}&quot;</span>?
+        <p className="mb-1 text-sm leading-relaxed text-slate-300">
+          Tem certeza que deseja excluir{' '}
+          <span className="font-bold text-white">&quot;{caderno.title}&quot;</span>?
         </p>
-        <p className="text-xs text-slate-400 mb-5">
+        <p className="mb-5 text-xs text-slate-400">
           Todas as questões deste caderno serão removidas. Esta ação não pode ser desfeita.
         </p>
-        {error && <p className="text-xs text-rose-500 font-bold mb-3">{error}</p>}
+        {error && <p className="mb-3 text-xs font-bold text-rose-400">{error}</p>}
         <div className="flex gap-3">
-          <button type="button" onClick={onClose} className="flex-1 py-3 rounded-xl border border-slate-200 text-slate-500 font-bold text-sm hover:bg-slate-50 transition-colors">
+          <button
+            type="button"
+            onClick={onClose}
+            className="flex-1 rounded-xl border border-[rgba(255,255,255,0.15)] py-3 text-sm font-bold text-slate-300 transition-colors hover:bg-white/[0.04]"
+          >
             Cancelar
           </button>
           <button
             type="button"
             onClick={handleDelete}
             disabled={loading}
-            className="flex-1 py-3 rounded-xl bg-rose-600 text-white font-black text-sm hover:bg-rose-700 disabled:opacity-60 transition-colors flex items-center justify-center gap-2"
+            className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-rose-600 py-3 text-sm font-black text-white transition-colors hover:bg-rose-700 disabled:opacity-60"
           >
-            {loading ? <Loader2 size={16} className="animate-spin" /> : <Trash2 size={16} />}
+            {loading ? <Loader2 size={16} className="animate-spin" /> : <Trash2 size={16} aria-hidden />}
             Excluir
           </button>
         </div>
@@ -92,8 +102,8 @@ export default function CadernosListClient({ cadernos: inicial }: { cadernos: No
   const [pendingDelete, setPendingDelete] = useState<NotebookSummary | null>(null);
 
   return (
-    <div className="min-h-screen bg-slate-50/90 pb-24 pb-safe">
-      <div className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-white/90">
+    <div className="min-h-screen bg-[#010409] pb-24 pb-safe">
+      <div className="sticky top-0 z-20 border-b border-[rgba(255,255,255,0.08)] bg-[#010409]/95 shadow-[0_8px_32px_-16px_rgba(0,0,0,0.5)] backdrop-blur-md supports-[backdrop-filter]:bg-[#010409]/90">
         <CadernosHeader />
       </div>
 
@@ -113,33 +123,33 @@ export default function CadernosListClient({ cadernos: inicial }: { cadernos: No
                 >
                   <div
                     className={cn(
-                      'flex flex-col gap-4 rounded-2xl border border-slate-200/90 bg-white p-5 shadow-sm',
-                      'shadow-[inset_0_1px_0_0_rgba(255,255,255,0.75)] transition-all duration-300 ease-out',
-                      'hover:scale-[1.01] hover:shadow-md hover:shadow-slate-300/30 sm:flex-row sm:items-center sm:justify-between',
+                      'flex flex-col gap-4 rounded-2xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117] p-5 shadow-sm shadow-black/20',
+                      'shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] transition-all duration-300 ease-out',
+                      'hover:scale-[1.01] hover:shadow-md hover:shadow-black/30 sm:flex-row sm:items-center sm:justify-between',
                     )}
                   >
                     <div className="flex min-w-0 flex-1 items-start gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-sky-50 ring-1 ring-sky-100/80">
-                        <BookMarked size={22} className="text-sky-600" aria-hidden />
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[rgba(0,242,255,0.20)] bg-[rgba(0,242,255,0.08)]">
+                        <BookMarked size={22} className="text-cyan-300" aria-hidden />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <p className="truncate text-base font-semibold text-slate-900">{c.title}</p>
+                        <p className="truncate text-base font-black text-white">{c.title}</p>
                         {c.description && (
-                          <p className="mt-0.5 truncate text-xs font-medium text-slate-500">{c.description}</p>
+                          <p className="mt-0.5 truncate text-sm font-medium text-slate-400">{c.description}</p>
                         )}
                         <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
                           {c.itemCount > 0 && (
-                            <span className="inline-flex items-center gap-1 rounded-full border border-sky-200 bg-sky-50/90 px-2 py-0.5 text-[10px] font-semibold text-sky-900">
-                              <Layers className="h-2.5 w-2.5" aria-hidden />
+                            <NeonBadge variant={c.studiedCount === c.itemCount && c.itemCount > 0 ? 'success' : 'brand'}>
+                              <Layers className="mr-1 h-2.5 w-2.5" aria-hidden />
                               {c.studiedCount}/{c.itemCount}
-                            </span>
+                            </NeonBadge>
                           )}
-                          <span className="flex items-center gap-1 text-[10px] font-semibold text-slate-500">
-                            <Layers size={10} aria-hidden />
+                          <span className="flex items-center gap-1 text-sm font-semibold text-slate-400">
+                            <Layers className="h-3.5 w-3.5 shrink-0" aria-hidden />
                             {c.itemCount} {c.itemCount === 1 ? 'questão' : 'questões'}
                           </span>
-                          <span className="flex items-center gap-1 text-[10px] font-semibold text-slate-500">
-                            <Clock size={10} aria-hidden />
+                          <span className="flex items-center gap-1 text-sm font-semibold text-slate-400">
+                            <Clock className="h-3.5 w-3.5 shrink-0" aria-hidden />
                             {tempoRelativo(c.updated_at)}
                           </span>
                         </div>
@@ -151,7 +161,7 @@ export default function CadernosListClient({ cadernos: inicial }: { cadernos: No
                         <Button
                           asChild
                           size="sm"
-                          className="rounded-xl bg-sky-600 text-xs font-semibold text-white shadow-sm hover:bg-sky-700"
+                          className="rounded-xl bg-cyan-500 text-xs font-semibold text-white shadow-sm hover:bg-cyan-600"
                         >
                           <Link
                             href={`/estudar/${c.studyEntrySlug}?from=caderno&caderno_id=${c.id}`}
@@ -167,13 +177,18 @@ export default function CadernosListClient({ cadernos: inicial }: { cadernos: No
                           size="sm"
                           disabled
                           title="Adicione questões ao caderno para começar a estudar"
-                          className="rounded-xl text-xs font-semibold"
+                          className="rounded-xl border border-[rgba(255,255,255,0.12)] bg-white/[0.04] text-xs font-semibold text-slate-500"
                         >
                           <Play className="mr-1.5 h-3.5 w-3.5" aria-hidden />
                           Estudar caderno
                         </Button>
                       )}
-                      <Button variant="outline" asChild size="sm" className="rounded-xl border-slate-200 text-xs font-semibold">
+                      <Button
+                        variant="outline"
+                        asChild
+                        size="sm"
+                        className="rounded-xl border-[rgba(255,255,255,0.15)] bg-transparent text-xs font-semibold text-white shadow-none hover:bg-white/[0.04]"
+                      >
                         <Link href={`/cadernos/${c.id}`} className="inline-flex items-center gap-1.5">
                           <Pencil className="h-3.5 w-3.5" aria-hidden />
                           Editar caderno
@@ -183,7 +198,7 @@ export default function CadernosListClient({ cadernos: inicial }: { cadernos: No
                         type="button"
                         onClick={() => setPendingDelete(c)}
                         title="Excluir caderno"
-                        className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 transition-colors hover:border-rose-200 hover:bg-rose-50 hover:text-rose-600"
+                        className="flex h-9 w-9 items-center justify-center rounded-xl border border-[rgba(255,255,255,0.15)] bg-transparent text-slate-400 transition-colors hover:border-rose-500/40 hover:bg-rose-500/10 hover:text-rose-400"
                       >
                         <Trash2 size={16} aria-hidden />
                       </button>
@@ -197,7 +212,7 @@ export default function CadernosListClient({ cadernos: inicial }: { cadernos: No
               <Button
                 variant="outline"
                 asChild
-                className="rounded-2xl border-slate-200 bg-white px-6 font-semibold text-slate-600 transition-all duration-200 hover:scale-[1.02] hover:border-sky-200 hover:text-sky-800"
+                className="rounded-2xl border-[rgba(255,255,255,0.15)] bg-transparent px-6 font-semibold text-slate-300 shadow-none transition-all duration-200 hover:scale-[1.02] hover:border-cyan-500/35 hover:bg-white/[0.04] hover:text-cyan-200"
               >
                 <Link href="/estudar" className="inline-flex items-center gap-2">
                   <BookOpen className="h-4 w-4" aria-hidden />

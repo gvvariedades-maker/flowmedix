@@ -81,8 +81,8 @@ export default async function CadernosPage() {
   } catch (error) {
     logger.error('Failed to load cadernos', error);
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6 pb-safe">
-        <p className="text-slate-500 text-sm">Erro ao carregar cadernos. Tente novamente.</p>
+      <div className="flex min-h-screen items-center justify-center bg-[#010409] p-6 pb-safe">
+        <p className="text-sm text-slate-400">Erro ao carregar cadernos. Tente novamente.</p>
       </div>
     );
   }

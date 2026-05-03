@@ -27,8 +27,19 @@ import { EstudoReversoWelcomeModal } from '@/components/onboarding/EstudoReverso
 import { useEstudoReversoWelcome } from '@/components/onboarding/useEstudoReversoWelcome';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/lib/supabase/client';
+import { ToastProvider } from '@/lib/toast-context';
+import { ToastContainer } from '@/components/ui/toast-container';
 
 const drawerSpring = { type: 'spring' as const, stiffness: 300, damping: 30 };
+
+const pageVariants = {
+  initial: { opacity: 0, y: 8 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] as const },
+  },
+};
 
 function initialsFromEmail(email: string | null): string {
   if (!email) return '...';
@@ -127,7 +138,7 @@ function LogoMark({ compact }: { compact?: boolean }) {
       </div>
       <span
         className={cn(
-          'truncate font-extrabold tracking-tight text-slate-900',
+          'truncate font-extrabold tracking-tight text-white',
           compact ? 'text-base' : 'text-[1.3rem] leading-tight'
         )}
       >
@@ -188,11 +199,11 @@ function DashboardNav({
         <Link
           key={item.label}
           href={createQueryString(item.href)}
-          className={cn(
+            className={cn(
             'group relative flex w-full items-center gap-3 rounded-xl py-3 pl-4 pr-3 text-sm font-semibold transition-colors',
             item.active
-              ? 'bg-indigo-500/[0.09] text-slate-900 before:absolute before:left-0 before:top-1/2 before:h-8 before:w-[3px] before:-translate-y-1/2 before:rounded-r-full before:bg-indigo-600'
-              : 'text-slate-500 hover:bg-slate-100/90 hover:text-slate-900'
+              ? 'bg-[rgba(139,92,246,0.12)] text-[#c4b5fd] before:absolute before:left-0 before:top-1/2 before:h-8 before:w-[3px] before:-translate-y-1/2 before:rounded-r-full before:bg-[#8b5cf6]'
+              : 'text-slate-400 hover:bg-white/5 hover:text-slate-100'
           )}
         >
           <item.icon
@@ -201,8 +212,8 @@ function DashboardNav({
             className={cn(
               'shrink-0 transition-colors',
               item.active
-                ? 'text-indigo-800'
-                : 'text-slate-400 group-hover:text-slate-700'
+                ? 'text-[#a78bfa]'
+                : 'text-slate-500 group-hover:text-slate-300'
             )}
             aria-hidden
           />
@@ -213,9 +224,9 @@ function DashboardNav({
         <div className="mt-4 pl-1 pt-1">
           <Link
             href="/admin"
-            className="flex items-center gap-3 rounded-xl py-2.5 pl-3 pr-2 text-xs font-semibold text-slate-500 transition-colors hover:bg-slate-100/90 hover:text-slate-800"
+            className="flex items-center gap-3 rounded-xl py-2.5 pl-3 pr-2 text-xs font-semibold text-slate-500 transition-colors hover:bg-white/5 hover:text-slate-300"
           >
-            <ShieldCheck size={18} strokeWidth={MENU_ICON_STROKE} className="shrink-0 text-slate-400" aria-hidden />
+            <ShieldCheck size={18} strokeWidth={MENU_ICON_STROKE} className="shrink-0 text-slate-600" aria-hidden />
             Painel do Gestor
           </Link>
         </div>
@@ -249,9 +260,9 @@ function UserAccountFooter({
           {userInitials}
         </div>
         <div className="min-w-0 flex-1 pt-0.5">
-          <p className="truncate text-sm font-bold leading-tight text-slate-900">{name}</p>
-          <p className="mt-0.5 truncate text-xs font-normal text-slate-500">
-            {userEmail ?? <span className="animate-pulse text-slate-400">carregando…</span>}
+          <p className="truncate text-sm font-bold leading-tight text-slate-100">{name}</p>
+          <p className="mt-0.5 truncate text-xs font-normal text-slate-400">
+            {userEmail ?? <span className="animate-pulse text-slate-500">carregando…</span>}
           </p>
         </div>
         <button
@@ -259,7 +270,7 @@ function UserAccountFooter({
           onClick={onLogout}
           title="Sair da conta"
           aria-label="Sair da conta"
-          className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-200/60 hover:text-slate-700"
+          className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-white/10 hover:text-slate-300"
         >
           <LogOut size={17} strokeWidth={MENU_ICON_STROKE} aria-hidden />
         </button>
@@ -451,7 +462,7 @@ function DashboardContent({
   return (
     <div className="dashboard-surface flex h-[100dvh] max-h-[100dvh] min-h-0 bg-background font-sans text-foreground">
       {/* --- SIDEBAR FIXA --- */}
-      <aside className="relative z-20 hidden w-[18rem] shrink-0 flex-col border-r border-solid border-white bg-[#f8fafc] shadow-none md:flex">
+      <aside className="relative z-20 hidden w-[18rem] shrink-0 flex-col border-r border-white/10 bg-[#06090f] md:flex">
         <div className="px-5 pb-3 pt-10">
           <LogoMark />
         </div>
@@ -493,7 +504,7 @@ function DashboardContent({
               role="dialog"
               aria-modal="true"
               aria-label="Menu de navegação"
-              className="fixed left-0 top-0 z-50 flex h-full w-[18rem] shrink-0 flex-col overflow-hidden border-r border-solid border-white bg-[#f8fafc] shadow-none outline-none md:hidden"
+              className="fixed left-0 top-0 z-50 flex h-full w-[18rem] shrink-0 flex-col overflow-hidden border-r border-white/10 bg-[#06090f] outline-none md:hidden"
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
@@ -533,7 +544,7 @@ function DashboardContent({
 
       {/* --- ÁREA PRINCIPAL ---
           Sombra interna só em md+: cobre artefatos escuros no encaixe com a sidebar; evita linha na barra quando não há sidebar. */}
-      <div className="flex h-full min-h-0 flex-1 flex-col overflow-hidden md:shadow-[inset_1px_0_0_0_#ffffff]">
+      <div className="flex h-full min-h-0 flex-1 flex-col overflow-hidden">
         <header className="sticky top-0 z-30 flex shrink-0 items-center justify-between border-b border-border bg-background/85 px-4 py-3 pt-safe backdrop-blur-md md:hidden">
           <button
             ref={openMenuButtonRef}
@@ -566,7 +577,15 @@ function DashboardContent({
         </header>
 
         <main className="relative flex min-h-0 flex-1 flex-col overflow-x-hidden overflow-y-auto no-scrollbar">
-          {children}
+          <motion.div
+            key={pathname}
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            className="flex min-h-0 flex-1 flex-col"
+          >
+            {children}
+          </motion.div>
         </main>
       </div>
 
@@ -589,10 +608,13 @@ export default function DashboardShell({
   initialDisplayName?: string | null;
 }) {
   return (
-    <Suspense fallback={<div className="dashboard-surface min-h-[100dvh] bg-background" />}>
-      <DashboardContent initialUserEmail={initialUserEmail} initialDisplayName={initialDisplayName}>
-        {children}
-      </DashboardContent>
-    </Suspense>
+    <ToastProvider>
+      <Suspense fallback={<div className="dashboard-surface min-h-[100dvh] bg-background" />}>
+        <DashboardContent initialUserEmail={initialUserEmail} initialDisplayName={initialDisplayName}>
+          {children}
+        </DashboardContent>
+      </Suspense>
+      <ToastContainer />
+    </ToastProvider>
   );
 }

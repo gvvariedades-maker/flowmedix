@@ -2,11 +2,12 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, BookOpen, Sparkles, Zap } from 'lucide-react';
+import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
 import {
   getBlogCategoryLabel,
   type BlogCategoryLabel,
 } from '@/lib/blog/postCategory';
+import { PublicDarkSiteHeader } from '@/components/layout/PublicDarkSiteHeader';
 
 type BlogIndexClientProps = {
   posts: BlogIndexPost[];
@@ -64,23 +65,7 @@ export function BlogIndexClient({ posts }: BlogIndexClientProps) {
         />
       </div>
 
-      <header className="sticky top-0 z-20 border-b border-white/5 bg-slate-950/55 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-          <Link href="/" className="group flex items-center gap-2.5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-500/40 transition-transform group-hover:scale-105">
-              <Zap size={22} className="text-[#BEF264]" fill="currentColor" />
-            </div>
-            <span className="text-xl font-[1000] tracking-tighter text-white italic">AVANT</span>
-          </Link>
-          <Link
-            href="/register"
-            className="inline-flex items-center gap-2 rounded-xl bg-[#BEF264] px-4 py-2.5 text-sm font-black tracking-wider text-slate-950 uppercase shadow-lg shadow-lime-400/20 transition-all hover:scale-[1.02] hover:bg-[#d4f879]"
-          >
-            Criar conta grátis
-            <ArrowRight size={16} />
-          </Link>
-        </div>
-      </header>
+      <PublicDarkSiteHeader ctaLabel="Criar conta grátis" />
 
       <main className="relative z-10">
         <section className="mx-auto max-w-6xl px-4 pt-12 pb-14 sm:px-6 sm:pt-20 sm:pb-16">

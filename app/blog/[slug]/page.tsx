@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import remarkGfm from 'remark-gfm';
 import { BlogPostCtaFinal } from '@/components/blog/BlogPostCtaFinal';
+import { PublicDarkSiteHeader } from '@/components/layout/PublicDarkSiteHeader';
 import { blogMdxComponents } from '@/components/blog/mdx-components';
 import { getAllBlogPosts, getAllBlogSlugs, getBlogPostBySlug } from '@/lib/blog';
 import { getBlogCategoryLabel } from '@/lib/blog/postCategory';
@@ -90,31 +91,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         />
       </div>
 
-      <header className="sticky top-0 z-20 border-b border-white/5 bg-slate-950/55 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-          <Link href="/" className="group flex items-center gap-2.5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-500/40 transition-transform group-hover:scale-105">
-              <Zap size={22} className="text-[#BEF264]" fill="currentColor" />
-            </div>
-            <span className="text-xl font-[1000] tracking-tighter text-white italic">AVANT</span>
-          </Link>
-          <div className="flex flex-wrap items-center justify-end gap-2 sm:gap-3">
-            <Link
-              href="/blog"
-              className="rounded-lg px-3 py-2 text-sm font-bold text-slate-300 transition-colors hover:text-white"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/register"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#BEF264] px-4 py-2.5 text-sm font-black tracking-wider text-slate-950 uppercase shadow-lg shadow-lime-400/20 transition-all hover:scale-[1.02] hover:bg-[#d4f879]"
-            >
-              Beta gratuito
-              <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
-      </header>
+      <PublicDarkSiteHeader ctaLabel="Criar conta grátis" />
 
       <main className="relative z-10">
         <header className="mx-auto max-w-3xl px-4 pt-12 pb-8 sm:px-6 sm:pt-16">

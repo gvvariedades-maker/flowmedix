@@ -50,11 +50,12 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
     >
       <div
         className={cn(
-          'group relative flex flex-col gap-4 rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm',
-          'shadow-[inset_0_1px_0_0_rgba(255,255,255,0.75)]',
+          'group relative flex flex-col gap-4 rounded-2xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117] p-6 shadow-sm',
+          'shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]',
           'transition-all duration-300 ease-out',
-          'hover:scale-[1.01] hover:shadow-md hover:shadow-slate-300/30',
-          marcado && 'border-emerald-200/90 bg-emerald-50/40 ring-1 ring-emerald-200/60',
+          'hover:scale-[1.01] hover:shadow-md hover:shadow-black/40',
+          marcado &&
+            'border-emerald-500/35 bg-emerald-950/[0.35] ring-1 ring-emerald-500/30',
         )}
       >
         <div className="flex flex-1 items-start gap-4">
@@ -81,21 +82,24 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
             <div className="flex flex-wrap items-center gap-2">
               <Link
                 href={href}
-                className="text-lg font-semibold text-slate-900 underline-offset-2 transition-colors hover:text-sky-800 hover:underline"
+                className="text-lg font-black text-white underline-offset-2 transition-colors hover:text-[#00f2ff] hover:underline"
               >
                 {assunto}
               </Link>
-              <Badge variant="secondary" className="text-[10px] font-medium">
+              <Badge
+                variant="secondary"
+                className="border border-[rgba(255,255,255,0.10)] bg-white/5 text-[10px] font-medium text-slate-300"
+              >
                 1 questão
               </Badge>
               {codeLabel != null && (
-                <span className="rounded-md border border-sky-200 bg-sky-50 px-2 py-0.5 font-mono text-[10px] font-semibold text-sky-800">
+                <span className="rounded-md border border-[rgba(0,242,255,0.35)] bg-[rgba(0,242,255,0.08)] px-2 py-0.5 font-mono text-[10px] font-semibold text-[#67e8f9]">
                   {codeLabel}
                 </span>
               )}
             </div>
 
-            <p className="mt-0.5 text-sm font-medium text-slate-500">
+            <p className="mt-0.5 text-sm font-medium text-slate-400">
               {item.topico || 'Questão do plano diário'}
               {item.subtopico && item.subtopico !== assunto && item.subtopico !== item.topico
                 ? ` · ${item.subtopico}`
@@ -144,19 +148,22 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
                   type="button"
                   variant="ghost"
                   size="icon"
-                  className="h-9 w-9 text-slate-400 transition-colors duration-200 hover:text-slate-800"
+                  className="h-9 w-9 text-slate-500 transition-colors duration-200 hover:bg-white/5 hover:text-slate-200"
                   aria-label="Mais opções do tópico"
                 >
                   <MoreVertical className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48">
-                <DropdownMenuItem asChild>
+              <DropdownMenuContent
+                align="end"
+                className="w-48 border-[rgba(255,255,255,0.10)] bg-[#0d1117] text-white"
+              >
+                <DropdownMenuItem asChild className="text-slate-200 focus:bg-white/10 focus:text-white">
                   <Link href={href} className="cursor-pointer">
                     Abrir questão
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                <DropdownMenuItem asChild className="text-slate-200 focus:bg-white/10 focus:text-white">
                   <Link href="/estudar" className="cursor-pointer">
                     Ir à vitrine
                   </Link>
@@ -165,7 +172,7 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
             </DropdownMenu>
             <Link
               href={href}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-300 transition-colors duration-200 hover:bg-slate-100 hover:text-sky-600"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 transition-colors duration-200 hover:bg-white/5 hover:text-[#00f2ff]"
               aria-label="Ir para a questão"
             >
               <ChevronRight className="h-5 w-5" />

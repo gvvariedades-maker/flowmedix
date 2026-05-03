@@ -345,10 +345,10 @@ export default function AvantLessonPlayer({
   ].filter(Boolean).join('-') || JSON.stringify(dados).substring(0, 100);
 
   return (
-    <div className="w-full h-full flex-1 min-h-0 flex flex-col relative bg-white md:rounded-[40px] shadow-2xl overflow-hidden border border-slate-200/60 ring-1 ring-slate-100 font-sans">
+    <div className="w-full h-full flex-1 min-h-0 flex flex-col relative bg-[#0d1117] md:rounded-[40px] shadow-2xl overflow-hidden border border-[rgba(255,255,255,0.10)] font-sans">
       
       {/* BARRA DE PROGRESSO */}
-      <div className="h-2 w-full bg-slate-100 flex shrink-0">
+      <div className="h-2 w-full bg-white/10 flex shrink-0">
         <div className={`h-full transition-all duration-1000 ease-out ${
           etapa === 'pergunta' ? 'w-1/3 bg-indigo-500' : 
           etapa === 'gabarito' ? 'w-2/3 bg-indigo-600' : 
@@ -360,19 +360,19 @@ export default function AvantLessonPlayer({
       <div
         ref={questionBodyScrollRef}
         data-testid="lesson-scroll-body"
-        className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden custom-scrollbar bg-gradient-to-b from-white to-slate-50/50 flex flex-col touch-pan-y"
+        className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden custom-scrollbar bg-[#0d1117] flex flex-col touch-pan-y"
       >
         <div className="flex flex-col min-w-0 shrink-0">
           
           {/* Botão Voltar (se mode === 'live') */}
           {mode === 'live' && (
-            <div className="px-4 sm:px-6 pt-4 sm:pt-6 pb-2 flex flex-wrap items-center justify-between gap-3">
+            <div className="px-4 sm:px-6 pt-3 sm:pt-4 pb-1.5 flex flex-wrap items-center justify-between gap-3">
               <button 
                 type="button"
                 onClick={handleVoltarLista}
-                className="group flex items-center gap-2 text-slate-500 hover:text-indigo-600 transition-colors min-h-[44px] min-w-[44px] -ml-1 px-1 rounded-xl"
+                className="group flex items-center gap-2 text-slate-400 hover:text-[#00f2ff] transition-colors min-h-[44px] min-w-[44px] -ml-1 px-1 rounded-xl"
               >
-                <div className="w-9 h-9 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-indigo-50 transition-all">
+                <div className="w-9 h-9 rounded-full bg-white/[0.05] flex items-center justify-center group-hover:bg-[rgba(0,242,255,0.10)] transition-all">
                   <ArrowLeft size={16} />
                 </div>
                 <span className="text-sm font-medium">
@@ -381,7 +381,7 @@ export default function AvantLessonPlayer({
               </button>
               {listaContexto && listaContexto.total > 0 && (
                 <span
-                  className="text-xs sm:text-sm font-semibold tabular-nums text-slate-600 bg-slate-100/90 border border-slate-200/80 px-3 py-1.5 rounded-full shrink-0"
+                  className="text-xs sm:text-sm font-semibold tabular-nums text-slate-300 bg-white/[0.05] border border-white/10 px-3 py-1.5 rounded-full shrink-0"
                   aria-label={`Questão ${listaContexto.atual} de ${listaContexto.total}`}
                 >
                   Questão {listaContexto.atual} de {listaContexto.total}
@@ -395,21 +395,21 @@ export default function AvantLessonPlayer({
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="border-b border-slate-200 bg-gradient-to-b from-slate-50/90 to-white px-6 py-4 md:px-8 md:py-5"
+            className="border-b border-[rgba(255,255,255,0.10)] bg-[#0d1117] px-6 py-3 md:px-8 md:py-4"
           >
             {formatAvantCodigo(avantCodigo) && (
               <p
-                className="text-[11px] font-mono font-black text-indigo-600 mb-2 tracking-wide"
+                className="text-[11px] font-mono font-black text-[#00f2ff] mb-1 tracking-wide"
                 title="Código da questão (igual ao painel admin)"
               >
                 {formatAvantCodigo(avantCodigo)}
               </p>
             )}
-            <p className="text-sm md:text-[15px] text-slate-700 leading-snug font-medium tracking-tight">
+            <p className="text-sm md:text-[15px] text-slate-400 leading-snug font-medium tracking-tight">
               {examHeaderLine}
             </p>
             {subjectLine && (
-              <p className="mt-3 text-base md:text-lg font-semibold text-slate-900 border-l-4 border-indigo-500 pl-3 leading-snug">
+              <p className="mt-2 text-base md:text-lg font-semibold text-slate-100 border-l-4 border-[#00f2ff] pl-3 leading-snug">
                 {subjectLine}
               </p>
             )}
@@ -417,16 +417,16 @@ export default function AvantLessonPlayer({
 
           {/* ÁREA DE TEXTO DE APOIO (SE HOUVER CITACÃO DE TEXTO) */}
           {dados.question_data.text_fragment && (
-              <div className="px-6 pt-6 pb-2">
-                  <div className="bg-slate-50 border border-slate-200 p-4 rounded-lg text-slate-700 text-sm font-serif leading-relaxed italic">
+              <div className="px-6 pt-4 pb-2 md:px-8">
+                  <div className="bg-white/[0.04] border border-[rgba(255,255,255,0.10)] p-4 rounded-lg text-slate-300 text-sm font-serif leading-relaxed italic">
                       <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(dados.question_data.text_fragment) }} />
                   </div>
               </div>
           )}
 
           {/* ENUNCIADO: quebras de linha preservadas (I, II, III em blocos) */}
-          <div className="px-6 py-6 md:px-8 md:py-8 min-w-0">
-            <div className={`${QUESTION_TEXT_TYPOGRAPHY} text-slate-800 font-normal whitespace-pre-wrap break-words overflow-x-hidden [&_strong]:font-semibold [&_p]:mb-3 [&_p:last-child]:mb-0`}>
+          <div className="min-w-0 px-6 pt-3 pb-2 md:px-8 md:pt-4 md:pb-3">
+            <div className={`${QUESTION_TEXT_TYPOGRAPHY} text-slate-100 font-normal whitespace-pre-wrap break-words overflow-x-hidden [&_strong]:font-semibold [&_p]:mb-2 [&_p:last-child]:mb-0`}>
               <span dangerouslySetInnerHTML={{ __html: sanitizeHTML(instructionParaExibicao) }} />
             </div>
           </div>
@@ -437,13 +437,13 @@ export default function AvantLessonPlayer({
             animate="visible" 
             variants={fadeInUp} 
             transition={{ delay: 0.2 }} 
-            className="px-6 pb-8 md:px-8"
+            className="px-6 pb-6 md:px-8 md:pb-7"
           >
             <div
               className={
                 certoErradoLayout
-                  ? 'grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto'
-                  : 'grid gap-2 md:gap-2.5'
+                  ? 'grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto'
+                  : 'grid gap-1.5 md:gap-2'
               }
             >
               {dados.question_data.options.map((opt) => {
@@ -451,31 +451,31 @@ export default function AvantLessonPlayer({
                 const isCorrect = opt.is_correct;
                 const showResult = etapa === 'gabarito' || etapa === 'estudo';
                 
-                let styles = "border-slate-200 bg-white hover:border-indigo-200 hover:bg-indigo-50/30";
-                let badge = "border border-slate-200 bg-white text-slate-500 group-hover:border-indigo-200 group-hover:text-indigo-700";
-                let text = "text-slate-600";
+                let styles = "border-[rgba(255,255,255,0.10)] bg-[#0d1117] hover:border-[rgba(0,242,255,0.30)] hover:bg-[rgba(0,242,255,0.05)]";
+                let badge = "border border-[rgba(255,255,255,0.15)] bg-white/[0.05] text-slate-400 group-hover:border-[rgba(0,242,255,0.35)] group-hover:text-[#00f2ff]";
+                let text = "text-slate-200";
 
                 if (showResult) {
                     if (isCorrect) {
-                        styles = "border-green-500 bg-green-50 ring-1 ring-green-200";
-                        badge = "bg-green-500 text-white shadow-md";
-                        text = "text-green-800 font-bold";
+                        styles = "border-[#00ff88] bg-[rgba(0,255,136,0.08)]";
+                        badge = "bg-[#00ff88] text-slate-900 shadow-md";
+                        text = "text-[#00ff88] font-bold";
                     } else if (isSelected && !isCorrect) {
-                        styles = "border-red-400 bg-red-50";
-                        badge = "bg-red-500 text-white shadow-md";
-                        text = "text-red-800 font-bold";
+                        styles = "border-[#ff0055] bg-[rgba(255,0,85,0.08)]";
+                        badge = "bg-[#ff0055] text-white shadow-md";
+                        text = "text-[#ff4d72] font-bold";
                     } else {
-                        styles = "border-slate-100 bg-slate-50 opacity-50";
+                        styles = "border-white/5 bg-white/[0.02] opacity-40";
                     }
                 } else if (isSelected) {
-                    styles = "border-indigo-600 bg-indigo-50/50 shadow-lg shadow-indigo-500/10";
-                    badge = "bg-indigo-600 text-white shadow-md";
-                    text = "text-indigo-900 font-bold";
+                    styles = "border-[#00f2ff] bg-[rgba(0,242,255,0.08)] shadow-[0_0_16px_rgba(0,242,255,0.12)]";
+                    badge = "bg-[#00f2ff] text-slate-900 shadow-md";
+                    text = "text-[#00f2ff] font-bold";
                 }
 
                 const rowLayout = certoErradoLayout
-                  ? 'flex flex-col items-center justify-center text-center min-h-[100px] sm:min-h-[120px] gap-2 p-6 md:p-8'
-                  : 'text-left flex items-start gap-3 px-3 py-2.5 md:px-4 md:py-3';
+                  ? 'flex flex-col items-center justify-center text-center min-h-[92px] sm:min-h-[108px] gap-2 p-5 md:p-6'
+                  : 'text-left flex items-start gap-3 px-3 py-3 md:px-4';
 
                 return (
                   <motion.button 
@@ -495,12 +495,12 @@ export default function AvantLessonPlayer({
                       {opt.text}
                     </span>
                     {showResult && isCorrect && (
-                      <div className={`text-green-600 animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`}>
+                      <div className={`text-[#00ff88] animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`}>
                         <CheckCircle2 size={certoErradoLayout ? 32 : 24} />
                       </div>
                     )}
                     {showResult && isSelected && !isCorrect && (
-                      <div className={`text-red-500 animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`}>
+                      <div className={`text-[#ff0055] animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`}>
                         <XCircle size={certoErradoLayout ? 32 : 24} />
                       </div>
                     )}
@@ -516,7 +516,7 @@ export default function AvantLessonPlayer({
               ref={confirmarRespostaRef}
               initial={{ y: 20, opacity: 0 }} 
               animate={{ y: 0, opacity: 1 }} 
-              className="flex flex-col items-center gap-3 scroll-mt-4 px-6 pt-2 pb-6"
+              className="flex flex-col items-center gap-2 scroll-mt-4 px-6 pt-1 pb-5"
             >
               <MicroTip
                 storageKey="reverse-study.answer-before-feedback"
@@ -545,7 +545,7 @@ export default function AvantLessonPlayer({
       {mode === 'live' && (
         <div
           ref={bottomNavRef}
-          className="bg-white border-t border-slate-100 shrink-0 z-10 shadow-[0_-4px_24px_-8px_rgba(15,23,42,0.08)] pb-safe md:rounded-b-[40px]"
+          className="bg-[#0d1117] border-t border-[rgba(255,255,255,0.10)] shrink-0 z-10 shadow-[0_-4px_24px_-8px_rgba(15,23,42,0.08)] pb-safe md:rounded-b-[40px]"
         >
           {/* Dots de status das questões do assunto (rolagem horizontal quando não couber; 1 questão também mostra o indicador) */}
           {questoesDoAssunto && questoesDoAssunto.length > 0 && (
@@ -568,14 +568,14 @@ export default function AvantLessonPlayer({
                     title={`Questão ${i + 1}${q.estudada ? ' — estudada' : ''}`}
                     className={`shrink-0 rounded-full transition-all duration-200 flex items-center justify-center ${
                       isCurrent
-                        ? 'w-7 h-7 bg-indigo-600 ring-2 ring-indigo-300 ring-offset-1 shadow-md'
+                        ? 'w-7 h-7 bg-[#00f2ff] ring-2 ring-[rgba(0,242,255,0.40)] ring-offset-1 ring-offset-[#0d1117] shadow-md'
                         : q.estudada
                           ? 'w-5 h-5 bg-emerald-400 hover:bg-emerald-500'
-                          : 'w-5 h-5 bg-slate-200 hover:bg-slate-300'
+                          : 'w-5 h-5 bg-white/20 hover:bg-white/35'
                     }`}
                   >
                     {isCurrent && (
-                      <span className="text-white text-[10px] font-black leading-none">{i + 1}</span>
+                      <span className="text-slate-900 text-[10px] font-black leading-none">{i + 1}</span>
                     )}
                     {!isCurrent && q.estudada && (
                       <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -594,7 +594,7 @@ export default function AvantLessonPlayer({
               onClick={() => anteriorSlug && handleNavegar(anteriorSlug)} 
               disabled={!anteriorSlug} 
               className={`flex items-center gap-1.5 sm:gap-2 px-2 sm:px-4 py-2.5 sm:py-3 rounded-xl font-bold uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest transition-all min-h-[44px] ${
-                anteriorSlug ? 'text-slate-500 hover:bg-slate-50 hover:text-indigo-600' : 'text-slate-200 cursor-not-allowed'
+                anteriorSlug ? 'text-slate-400 hover:bg-white/[0.05] hover:text-[#00f2ff]' : 'text-white/15 cursor-not-allowed'
               }`}
             >
               <ArrowLeft size={16} /> <span>Anterior</span>
@@ -603,7 +603,7 @@ export default function AvantLessonPlayer({
               <button 
                 type="button"
                 onClick={() => proximaSlug && handleNavegar(proximaSlug)} 
-                className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-indigo-50 text-indigo-700 font-black uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:bg-indigo-100 transition-all min-h-[44px]"
+                className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-white/[0.07] text-slate-200 font-black uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:bg-white/[0.12] transition-all min-h-[44px]"
               >
                 <span className="sm:hidden">Próxima</span>
                 <span className="hidden sm:inline">Próxima Questão</span>
@@ -638,13 +638,13 @@ export default function AvantLessonPlayer({
             className="absolute left-0 right-0 z-20"
             style={{ bottom: bottomNavHeightPx }}
           >
-            <div className="bg-white/90 backdrop-blur-xl border-t border-slate-200 p-4 pb-safe sm:p-6 md:p-8 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+            <div className="bg-[#0d1117] border-t border-white/10 p-4 pb-safe sm:p-6 md:p-8 shadow-[0_-10px_40px_rgba(0,0,0,0.4)]">
               <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 max-w-4xl mx-auto">
                 <div className="flex items-center gap-4">
                   <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-inner ${
                     dados.question_data.options.find((o:any) => o.id === selecionada)?.is_correct 
-                      ? 'bg-green-100 text-green-600' 
-                      : 'bg-red-100 text-red-500'
+                      ? 'bg-[rgba(0,255,136,0.12)] text-[#00ff88]' 
+                      : 'bg-[rgba(255,0,85,0.12)] text-[#ff0055]'
                   }`}>
                     {dados.question_data.options.find((o:any) => o.id === selecionada)?.is_correct ? (
                       <CheckCircle2 size={32} />
@@ -658,8 +658,8 @@ export default function AvantLessonPlayer({
                     </p>
                     <p className={`text-xl font-black italic tracking-tighter uppercase ${
                       dados.question_data.options.find((o:any) => o.id === selecionada)?.is_correct 
-                        ? 'text-green-600' 
-                        : 'text-red-500'
+                        ? 'text-[#00ff88]' 
+                        : 'text-[#ff0055]'
                     }`}>
                       {dados.question_data.options.find((o:any) => o.id === selecionada)?.is_correct 
                         ? 'Resposta Correta' 
