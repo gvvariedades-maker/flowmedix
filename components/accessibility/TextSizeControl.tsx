@@ -3,6 +3,7 @@
 import { Minus, Plus, Type } from 'lucide-react';
 import { useTextSize } from '@/components/providers/TextSizeProvider';
 import { cn } from '@/lib/utils';
+import { TEXT_SIZE_STEP_DEFAULT } from '@/lib/textSizePreference';
 
 type TextSizeControlProps = {
   /** `light`: sidebar clara. `dark`: landing / fundo escuro. */
@@ -20,7 +21,7 @@ export function TextSizeControl({
   embedded = false,
   className,
 }: TextSizeControlProps) {
-  const { decrease, increase, canDecrease, canIncrease, label } = useTextSize();
+  const { decrease, increase, canDecrease, canIncrease, label, step } = useTextSize();
 
   const btnBase =
     variant === 'dark'
@@ -107,24 +108,31 @@ export function TextSizeControl({
   }
 
   if (embedded && variant === 'light') {
+    const isDefaultSize = step === TEXT_SIZE_STEP_DEFAULT;
+    const embeddedBtnClass =
+      'flex shrink-0 items-center justify-center rounded-lg border border-white/20 px-3 py-2 text-slate-300 transition-all hover:border-cyan-400/50 hover:text-white disabled:pointer-events-none disabled:opacity-35';
+
     return (
       <div className={cn('space-y-3', className)} role="region" aria-label="Tamanho do texto da plataforma">
-        <div className="flex items-center gap-2 text-slate-500">
+        <div className="flex items-center gap-2 text-slate-400">
           <Type size={15} className="shrink-0" strokeWidth={2.25} aria-hidden />
-          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">Tamanho do texto</span>
+          <span className="text-sm">Tamanho do texto</span>
         </div>
         <div className="flex items-center justify-center gap-3">
           <button
             type="button"
             onClick={decrease}
             disabled={!canDecrease}
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-200/55 text-slate-800 transition hover:bg-slate-300/60 active:scale-[0.98] disabled:opacity-35 disabled:pointer-events-none"
+            className={embeddedBtnClass}
             aria-label="Diminuir tamanho do texto"
           >
-            <Minus className="h-4 w-4" strokeWidth={2.25} />
+            <Minus className="h-4 w-4 shrink-0" strokeWidth={2.25} />
           </button>
           <span
-            className="min-w-[4rem] text-center text-xs font-bold tabular-nums text-slate-800"
+            className={cn(
+              'min-w-[4.5rem] text-center text-sm font-medium tabular-nums',
+              isDefaultSize ? 'text-slate-400' : 'text-cyan-400',
+            )}
             aria-live="polite"
           >
             {label}
@@ -133,10 +141,10 @@ export function TextSizeControl({
             type="button"
             onClick={increase}
             disabled={!canIncrease}
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-200/55 text-slate-800 transition hover:bg-slate-300/60 active:scale-[0.98] disabled:opacity-35 disabled:pointer-events-none"
+            className={embeddedBtnClass}
             aria-label="Aumentar tamanho do texto"
           >
-            <Plus className="h-4 w-4" strokeWidth={2.25} />
+            <Plus className="h-4 w-4 shrink-0" strokeWidth={2.25} />
           </button>
         </div>
       </div>

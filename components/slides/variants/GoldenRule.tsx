@@ -29,7 +29,7 @@ export const GoldenRule = ({ content, theme, layoutVariant = 'center' }: GoldenR
           <div className="golden-rule-shine pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
           <div className="relative z-10 min-w-0">
             <Sparkles className={`${theme.iconText} w-10 h-10 md:w-14 md:h-14 mx-auto mb-4 drop-shadow-2xl`} />
-            <h2 className="golden-rule-text text-xl md:text-3xl lg:text-4xl xl:text-6xl font-black text-white leading-tight uppercase tracking-tighter break-words [overflow-wrap:anywhere] hyphens-auto drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+            <h2 className="golden-rule-text text-lg font-black uppercase leading-tight tracking-tighter break-words [overflow-wrap:anywhere] hyphens-auto text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] md:text-3xl lg:text-4xl xl:text-6xl">
               {content}
             </h2>
           </div>
@@ -50,7 +50,7 @@ export const GoldenRule = ({ content, theme, layoutVariant = 'center' }: GoldenR
           <div className={`w-10 h-10 rounded-xl ${theme.iconBg} flex items-center justify-center ${theme.iconText} mb-3`}>
             <Lightbulb size={20} />
           </div>
-          <p className={`min-w-0 text-base md:text-lg lg:text-xl font-bold ${theme.textPrimary} leading-relaxed break-words [overflow-wrap:anywhere] hyphens-auto`}>
+          <p className={`min-w-0 text-base font-bold leading-relaxed break-words [overflow-wrap:anywhere] hyphens-auto md:text-lg lg:text-xl ${theme.textPrimary}`}>
             {content}
           </p>
         </div>
@@ -64,7 +64,7 @@ export const GoldenRule = ({ content, theme, layoutVariant = 'center' }: GoldenR
       <div className="relative flex min-h-full w-full min-w-0 items-start justify-center p-6">
         <div className={`absolute inset-0 bg-slate-900/95`} />
         <div className={`relative z-10 w-full min-w-0 max-w-2xl py-6 px-5 border-l-4 ${theme.borderColor}`}>
-          <p className={`text-base md:text-xl font-semibold ${theme.textPrimary} leading-relaxed italic break-words [overflow-wrap:anywhere] hyphens-auto`}>
+          <p className={`text-base font-semibold italic leading-relaxed break-words [overflow-wrap:anywhere] hyphens-auto md:text-xl ${theme.textPrimary}`}>
             {content}
           </p>
         </div>
@@ -81,7 +81,7 @@ export const GoldenRule = ({ content, theme, layoutVariant = 'center' }: GoldenR
           <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
             <Zap className="w-6 h-6 text-white" />
           </div>
-          <h2 className="w-full min-w-0 text-center text-lg md:text-2xl lg:text-3xl font-black text-white uppercase tracking-tight leading-tight break-words [overflow-wrap:anywhere] hyphens-auto">
+          <h2 className="w-full min-w-0 text-center text-lg font-black uppercase tracking-tight leading-tight break-words [overflow-wrap:anywhere] hyphens-auto text-white md:text-2xl lg:text-3xl">
             {content}
           </h2>
         </div>
@@ -98,7 +98,7 @@ export const GoldenRule = ({ content, theme, layoutVariant = 'center' }: GoldenR
         style={{ boxShadow: `0 0 80px -20px ${theme.glow}` }}
       >
         <Sparkles className={`${theme.iconText} w-10 h-10 md:w-14 md:h-14 mx-auto mb-4`} />
-        <h2 className="text-xl md:text-3xl font-black text-white uppercase tracking-tighter break-words [overflow-wrap:anywhere] hyphens-auto">
+        <h2 className="text-lg font-black uppercase tracking-tighter break-words [overflow-wrap:anywhere] hyphens-auto text-white md:text-3xl">
           {content}
         </h2>
       </div>

@@ -5,14 +5,18 @@
 /**
  * E-mail do administrador oficial do sistema
  * Usado para verificar permissões de acesso administrativo
- * Configurável via variável de ambiente ADMIN_EMAIL
+ * Obrigatório: variável de ambiente ADMIN_EMAIL.
  */
-export const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'gvvariedades@gmail.com';
+const adminEmailFromEnv = process.env.ADMIN_EMAIL;
+if (!adminEmailFromEnv) {
+  throw new Error('ADMIN_EMAIL não configurado nas variáveis de ambiente');
+}
+
+export const ADMIN_EMAIL = adminEmailFromEnv;
 
 /**
  * Retorna o e-mail do admin em lowercase para comparação
  */
 export function getAdminEmail(): string {
-  return (process.env.ADMIN_EMAIL || ADMIN_EMAIL).toLowerCase();
+  return ADMIN_EMAIL.toLowerCase();
 }
-

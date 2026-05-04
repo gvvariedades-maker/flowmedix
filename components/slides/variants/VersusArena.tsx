@@ -41,8 +41,8 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
     show: { x: 0, opacity: 1 }
   };
 
-  const IconA = getIcon(concept_a.icon, Shield);
-  const IconB = getIcon(concept_b.icon, AlertCircle);
+  const IconAComponent = getIcon(concept_a.icon, Shield);
+  const IconBComponent = getIcon(concept_b.icon, AlertCircle);
 
   return (
     <div className="w-full min-h-full min-w-0 flex flex-col md:flex-row relative overflow-x-hidden bg-slate-950">
@@ -59,14 +59,14 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
       >
         <div className="relative z-10 max-w-md mx-auto md:ml-auto md:mr-10">
           <div className={`inline-flex items-center justify-center p-3 rounded-xl ${theme.iconBg} ${theme.iconText} mb-4 shadow-lg`}>
-            <IconA size={24} />
+            {React.createElement(IconAComponent, { size: 24 })}
           </div>
-          <h3 className={`text-2xl md:text-3xl font-[1000] uppercase italic tracking-tighter ${theme.textPrimary} mb-6`}>
+          <h3 className={`mb-6 text-xl font-[1000] uppercase italic tracking-tighter md:text-3xl ${theme.textPrimary}`}>
             {concept_a.title}
           </h3>
           <motion.ul variants={container} initial="hidden" animate="show" className="space-y-3">
             {concept_a.points.map((point, i) => (
-              <motion.li key={i} variants={item} className="flex items-start gap-3 text-sm md:text-base text-slate-300">
+              <motion.li key={i} variants={item} className="flex items-start gap-3 text-base text-slate-300">
                 <span className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${theme.iconBg}`} />
                 <span>{point}</span>
               </motion.li>
@@ -87,7 +87,7 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
            <div className={`absolute inset-0 bg-gradient-to-t ${theme.primary} opacity-20 animate-spin-slow`} />
            <Swords className={theme.textPrimary} size={32} />
         </motion.div>
-        <div className={`absolute -bottom-8 left-1/2 -translate-x-1/2 font-black text-xs ${theme.textSecondary} tracking-[0.3em] uppercase whitespace-nowrap`}>
+        <div className={`absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-sm font-black uppercase tracking-[0.3em] md:text-xs ${theme.textSecondary}`}>
           Versus
         </div>
       </div>
@@ -103,12 +103,12 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
           {/* Ícone alinhado à direita no mobile, à esquerda no desktop */}
           <div className="flex justify-end md:justify-start mb-4">
             <div className={`inline-flex items-center justify-center p-3 rounded-xl ${theme.iconBg} ${theme.iconText} shadow-lg`}>
-              <IconB size={24} />
+              {React.createElement(IconBComponent, { size: 24 })}
             </div>
           </div>
           
           {/* Título alinhado à direita no mobile, à esquerda no desktop */}
-          <h3 className={`text-2xl md:text-3xl font-[1000] uppercase italic tracking-tighter ${theme.textPrimary} mb-6 text-right md:text-left`}>
+          <h3 className={`mb-6 text-right text-xl font-[1000] uppercase italic tracking-tighter md:text-left md:text-3xl ${theme.textPrimary}`}>
             {concept_b.title}
           </h3>
           
@@ -118,7 +118,7 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
               <motion.li 
                 key={i} 
                 variants={item} 
-                className={`flex items-start gap-3 text-sm md:text-base ${theme.textSecondary} justify-end md:justify-start`}
+                className={`flex items-start gap-3 justify-end text-base md:justify-start ${theme.textSecondary}`}
               >
                 {/* No mobile: texto primeiro, depois bullet */}
                 {/* No desktop: bullet primeiro, depois texto */}

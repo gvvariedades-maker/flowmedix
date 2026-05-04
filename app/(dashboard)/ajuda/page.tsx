@@ -161,10 +161,10 @@ const STEPS: {
     n: '9',
     title: 'Crie um caderno de estudo',
     file: 'seq-05.png',
-    alt: 'Formulário Novo caderno com nome, descrição e Criar caderno',
-    caption: 'Figura 9 — dê um nome ao caderno e confirme com “+ Criar caderno”.',
+    alt: 'Página Cadernos de Estudo com lista de cadernos, estatísticas e botão Novo caderno',
+    caption: 'Figura 9 — na área de cadernos você vê seus blocos de estudo; use “+ Novo caderno” para criar outro.',
     objetivo: 'Organizar questões por prova, tema ou estratégia.',
-    clique: 'No menu, entre em “Cadernos de Estudo”. Na criação, preencha “Nome” e clique em “+ Criar caderno”. A descrição é opcional.',
+    clique: 'No menu, entre em “Cadernos de Estudo”. Para criar, clique em “+ Novo caderno”, preencha o nome (descrição é opcional) e confirme a criação.',
     actionHref: '/cadernos/novo',
     actionLabel: 'Criar novo caderno',
     depois: 'Depois de criado, você pode adicionar questões e estudar tudo em sequência.',
@@ -210,7 +210,7 @@ export default function AjudaPage() {
 
       {!firstSeq && (
         <Note>
-          <strong>Sem imagem:</strong> se <code>public/tutorial/seq-01.png</code> a <code>seq-10.png</code> faltarem,
+          <strong>Sem imagem:</strong> se os PNGs em <code>public/tutorial/</code> (seq-01 a seq-10 e material-apoio-01 a 03) faltarem,
           execute o script de cópia do repositório ou peça suporte. Enquanto isso, o texto e o índice permanecem úteis.
         </Note>
       )}

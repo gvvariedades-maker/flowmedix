@@ -34,20 +34,24 @@ function applyStepToDocument(step: number): void {
   document.documentElement.style.fontSize = getFontSizePercentForStep(step);
 }
 
+function readTextSizeStepFromStorage(): number {
+  if (typeof window === 'undefined') {
+    return TEXT_SIZE_STEP_DEFAULT;
+  }
+  try {
+    const raw = localStorage.getItem(TEXT_SIZE_STORAGE_KEY);
+    return raw === null ? TEXT_SIZE_STEP_DEFAULT : clampTextSizeStep(parseInt(raw, 10));
+  } catch {
+    return TEXT_SIZE_STEP_DEFAULT;
+  }
+}
+
 export function TextSizeProvider({ children }: { children: ReactNode }) {
-  const [step, setStepState] = useState(TEXT_SIZE_STEP_DEFAULT);
+  const [step, setStepState] = useState(readTextSizeStepFromStorage);
 
   useLayoutEffect(() => {
-    try {
-      const raw = localStorage.getItem(TEXT_SIZE_STORAGE_KEY);
-      const parsed =
-        raw === null ? TEXT_SIZE_STEP_DEFAULT : clampTextSizeStep(parseInt(raw, 10));
-      setStepState(parsed);
-      applyStepToDocument(parsed);
-    } catch {
-      applyStepToDocument(TEXT_SIZE_STEP_DEFAULT);
-    }
-  }, []);
+    applyStepToDocument(step);
+  }, [step]);
 
   const setStep = useCallback((n: number) => {
     const s = clampTextSizeStep(n);

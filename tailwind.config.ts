@@ -1,5 +1,4 @@
 // Tailwind v4: Config type no longer includes all legacy options at top level
-// eslint-disable-next-line @typescript-eslint/no-require-imports
 const config = {
   darkMode: "class",
   content: [

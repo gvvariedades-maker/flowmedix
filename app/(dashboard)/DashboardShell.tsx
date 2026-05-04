@@ -18,7 +18,6 @@ import {
   BookMarked,
   HelpCircle,
   BrainCircuit,
-  Newspaper,
   type LucideIcon,
 } from 'lucide-react';
 import { getAdminEmail } from '@/lib/constants';
@@ -447,12 +446,6 @@ function DashboardContent({
     { label: 'Vitrine de Aulas', icon: LayoutDashboard, href: '/estudar', active: isPathActive('/estudar') },
     { label: 'Como usar (tutorial)', icon: HelpCircle, href: '/ajuda', active: pathname === '/ajuda' },
     { label: 'Estudo Reverso (método)', icon: BrainCircuit, href: '/ajuda/estudo-reverso', active: pathname === '/ajuda/estudo-reverso' },
-    {
-      label: 'Blog',
-      icon: Newspaper,
-      href: '/blog',
-      active: pathname === '/blog' || pathname.startsWith('/blog/'),
-    },
     { label: 'Meu Desempenho', icon: BarChart3, href: '/analytics', active: pathname === '/analytics' },
     { label: 'Plano de Estudo Diário', icon: CalendarDays, href: '/plano-diario', active: pathname === '/plano-diario' },
     { label: 'Cadernos de Estudo', icon: BookMarked, href: '/cadernos', active: isPathActive('/cadernos') },
@@ -545,34 +538,31 @@ function DashboardContent({
       {/* --- ÁREA PRINCIPAL ---
           Sombra interna só em md+: cobre artefatos escuros no encaixe com a sidebar; evita linha na barra quando não há sidebar. */}
       <div className="flex h-full min-h-0 flex-1 flex-col overflow-hidden">
-        <header className="sticky top-0 z-30 flex shrink-0 items-center justify-between border-b border-border bg-background/85 px-4 py-3 pt-safe backdrop-blur-md md:hidden">
+        <header className="sticky top-0 z-30 grid shrink-0 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 border-b border-border bg-background/85 px-4 py-3 pt-safe backdrop-blur-md md:hidden">
           <button
             ref={openMenuButtonRef}
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            className="flex shrink-0 items-center justify-center p-1"
             aria-label="Abrir menu"
             aria-expanded={mobileMenuOpen}
             aria-controls={mobileMenuOpen ? 'dashboard-mobile-drawer' : undefined}
           >
-            <Menu size={20} />
+            <Menu size={20} className="text-slate-400 hover:text-white transition-colors" />
           </button>
 
-          <div className="min-w-0">
+          <div className="flex min-w-0 justify-center">
             <LogoMark compact />
           </div>
 
-          <div className="flex shrink-0 items-center gap-1.5">
-            <TextSizeControl compact embedded className="origin-right scale-[0.92]" />
-            <div
-              className={cn(
-                'flex h-9 w-9 items-center justify-center rounded-full text-xs font-bold',
-                USER_AVATAR_CLASSES,
-              )}
-              aria-hidden
-            >
-              {userInitials}
-            </div>
+          <div
+            className={cn(
+              'flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-bold',
+              USER_AVATAR_CLASSES,
+            )}
+            aria-hidden
+          >
+            {userInitials}
           </div>
         </header>
 

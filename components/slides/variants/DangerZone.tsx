@@ -21,10 +21,10 @@ export const DangerZone = ({ content, theme, items, footerRule, layoutVariant = 
 
   const ItemContent = ({ item, index }: { item: any; index: number }) => (
     <div className="flex items-start gap-3">
-      <span className="text-red-400 font-black text-lg shrink-0">{item.id || `${index + 1}.`}</span>
+      <span className="shrink-0 font-black text-red-400 text-sm md:text-lg">{item.id || `${index + 1}.`}</span>
       <div className="flex-1">
-        <h4 className="text-red-300 font-bold text-base md:text-lg mb-2">{item.label || item.title || 'Pegadinha'}</h4>
-        <p className="text-slate-200 text-sm md:text-base leading-relaxed">{item.detail || item.description || ''}</p>
+        <h4 className="mb-2 text-base font-bold text-red-300 md:text-lg">{item.label || item.title || 'Pegadinha'}</h4>
+        <p className="text-base leading-relaxed text-slate-200">{item.detail || item.description || ''}</p>
       </div>
     </div>
   );
@@ -42,12 +42,12 @@ export const DangerZone = ({ content, theme, items, footerRule, layoutVariant = 
             <AlertTriangle size={140} className="text-red-500" />
           </div>
           <div className="relative z-10 space-y-6">
-            <h3 className="danger-zone-title text-red-400 font-black flex items-center gap-3 text-xl md:text-2xl">
-              <AlertTriangle size={28} className="animate-pulse" /> CUIDADO COM A PEGADINHA
+            <h3 className="danger-zone-title flex items-center gap-3 text-sm font-black text-red-400 md:text-2xl">
+              <AlertTriangle className="h-6 w-6 shrink-0 animate-pulse md:h-7 md:w-7" strokeWidth={2} /> CUIDADO COM A PEGADINHA
             </h3>
             {content && (
               <div className="danger-zone-content bg-red-950/40 rounded-xl p-6 border border-red-500/30">
-                <p className="text-lg md:text-2xl text-slate-100 font-bold leading-relaxed">{content}</p>
+                <p className="text-base font-bold leading-relaxed text-slate-100 md:text-2xl">{content}</p>
               </div>
             )}
             {items && items.length > 0 && (
@@ -61,7 +61,7 @@ export const DangerZone = ({ content, theme, items, footerRule, layoutVariant = 
             )}
             {footerRule && (
               <div className="danger-zone-footer bg-red-900/30 rounded-xl p-5 border border-red-500/20">
-                <p className="text-red-200 font-semibold text-sm md:text-base italic">💡 {footerRule}</p>
+                <p className="text-sm font-semibold italic text-red-200 md:text-base">💡 {footerRule}</p>
               </div>
             )}
           </div>
@@ -98,7 +98,7 @@ export const DangerZone = ({ content, theme, items, footerRule, layoutVariant = 
           )}
           {footerRule && (
             <div className="bg-red-900/30 rounded-xl p-4 border border-red-500/30">
-              <p className="text-red-200 font-semibold text-sm italic">💡 {footerRule}</p>
+              <p className="text-sm font-semibold italic text-red-200 md:text-sm">💡 {footerRule}</p>
             </div>
           )}
         </div>
@@ -112,24 +112,24 @@ export const DangerZone = ({ content, theme, items, footerRule, layoutVariant = 
       <div className="w-full min-h-full min-w-0 flex items-center justify-center p-6 relative">
         <div className="absolute inset-0 bg-slate-900/95" />
         <div className="relative z-10 w-full max-w-3xl space-y-4">
-          <div className="flex items-center gap-2 text-red-400 font-black">
-            <ShieldAlert size={24} /> CUIDADO
+          <div className="flex items-center gap-2 text-sm font-black text-red-400 md:text-lg">
+            <ShieldAlert size={24} className="shrink-0" /> CUIDADO
           </div>
-          {content && <p className="text-base md:text-lg text-slate-200 font-semibold">{content}</p>}
+          {content && <p className="text-base font-semibold text-slate-200 md:text-lg">{content}</p>}
           {items && items.length > 0 && (
             <div className="space-y-2">
               {items.map((item, index) => (
-                <div key={index} className="flex gap-3 py-2 border-b border-slate-700/50 last:border-0">
-                  <span className="text-red-400 font-bold shrink-0">{item.id || `${index + 1}.`}</span>
-                  <div>
-                    <span className="text-red-300 font-bold">{item.label || item.title || 'Pegadinha'}: </span>
-                    <span className="text-slate-300 text-sm">{item.detail || item.description || ''}</span>
+                <div key={index} className="flex gap-3 border-b border-slate-700/50 py-2 last:border-0">
+                  <span className="shrink-0 font-bold text-sm text-red-400 md:text-base">{item.id || `${index + 1}.`}</span>
+                  <div className="min-w-0 text-slate-300">
+                    <span className="text-base font-bold text-red-300">{item.label || item.title || 'Pegadinha'}: </span>
+                    <span className="text-base md:text-sm">{item.detail || item.description || ''}</span>
                   </div>
                 </div>
               ))}
             </div>
           )}
-          {footerRule && <p className="text-red-200 text-sm italic pt-2">💡 {footerRule}</p>}
+          {footerRule && <p className="pt-2 text-sm italic text-red-200">💡 {footerRule}</p>}
         </div>
       </div>
     );
@@ -139,17 +139,17 @@ export const DangerZone = ({ content, theme, items, footerRule, layoutVariant = 
   return (
     <div className="relative flex min-h-full w-full min-w-0 flex-col items-center justify-start p-4 pb-8">
       <div className="absolute inset-0 bg-gradient-to-br from-red-950/90 via-slate-900/90 to-red-950/90" />
-      <div className="relative z-10 w-full max-w-4xl p-6 rounded-2xl border-l-4 border-red-500 backdrop-blur-xl my-4">
-        <h3 className="text-red-400 font-black flex items-center gap-2 mb-4">
-          <AlertTriangle size={24} /> CUIDADO
+      <div className="relative z-10 my-4 w-full max-w-4xl rounded-2xl border-l-4 border-red-500 p-6 backdrop-blur-xl">
+        <h3 className="mb-4 flex items-center gap-2 text-sm font-black text-red-400 md:text-2xl">
+          <AlertTriangle size={24} className="shrink-0" /> CUIDADO
         </h3>
-        {content && <p className="text-lg text-slate-100 font-bold mb-4">{content}</p>}
+        {content && <p className="mb-4 text-base font-bold text-slate-100 md:text-lg">{content}</p>}
         {items && items.length > 0 && items.map((item, index) => (
-          <div key={index} className="bg-slate-900/60 rounded-lg p-4 mb-2 border-l-4 border-red-500">
+          <div key={index} className="mb-2 rounded-lg border-l-4 border-red-500 bg-slate-900/60 p-4">
             <ItemContent item={item} index={index} />
           </div>
         ))}
-        {footerRule && <p className="text-red-200 text-sm italic mt-4">💡 {footerRule}</p>}
+        {footerRule && <p className="mt-4 text-sm italic text-red-200">💡 {footerRule}</p>}
       </div>
     </div>
   );

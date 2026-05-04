@@ -78,7 +78,7 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
   if (!normalizedSteps || normalizedSteps.length === 0) {
     return (
       <div className="w-full min-h-full min-w-0 flex items-center justify-center p-6">
-        <p className="text-slate-400">Nenhum passo definido</p>
+        <p className="text-base text-slate-400">Nenhum passo definido</p>
       </div>
     );
   }
@@ -112,7 +112,7 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
                     {isRevealed ? <CheckCircle2 size={18} /> : index + 1}
                   </span>
                   <p
-                    className={`min-w-0 text-sm font-semibold leading-snug break-words [overflow-wrap:anywhere] ${
+                    className={`min-w-0 text-base font-semibold leading-snug break-words [overflow-wrap:anywhere] ${
                       isRevealed ? 'text-slate-50' : 'text-slate-500/70'
                     }`}
                   >
@@ -164,7 +164,7 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
                   {isRevealed ? <CheckCircle2 size={20} /> : index + 1}
                 </div>
                 <p
-                  className={`text-sm font-semibold leading-relaxed ${
+                  className={`text-base font-semibold leading-relaxed ${
                     isRevealed ? 'text-slate-50' : 'text-slate-500/70'
                   }`}
                 >
@@ -206,7 +206,7 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/60 backdrop-blur-xl border border-white/10">
             <Sparkles className="w-4 h-4 text-cyan-400" />
-            <span className="text-xs font-bold uppercase tracking-wider text-cyan-400">
+            <span className="text-sm font-bold uppercase tracking-wider text-cyan-400 md:text-xs">
               Pipeline Cognitivo
             </span>
           </div>
@@ -306,8 +306,7 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
                       <div className="min-w-0 flex-1 pt-1">
                         <p
                           className={`
-                            text-sm md:text-base
-                            font-semibold leading-relaxed
+                            text-base font-semibold leading-relaxed
                             break-words [overflow-wrap:anywhere]
                             transition-colors duration-300
                             ${isRevealed ? `text-slate-50 [text-shadow:0_1px_2px_rgba(0,0,0,0.4)]` : 'text-slate-500/60'}
@@ -385,7 +384,7 @@ export const LogicFlow = ({ steps, theme, layoutVariant = 'vertical' }: LogicFlo
           className="mt-8 text-center"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/60 backdrop-blur-xl border border-white/10">
-            <span className="text-xs text-slate-400">
+            <span className="text-sm text-slate-400 md:text-xs">
               {revealedSteps.length} de {normalizedSteps.length} passos concluídos
             </span>
           </div>

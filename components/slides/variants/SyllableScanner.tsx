@@ -45,9 +45,9 @@ export const SyllableScanner: React.FC<SyllableScannerProps> = ({ word, tonicInd
         animate={{ scale: 1, opacity: 1 }}
         className={`relative z-10 w-full max-w-3xl mx-auto p-6 md:p-10 lg:p-12 bg-slate-900/80 rounded-[1.5rem] md:rounded-[2.5rem] border ${theme.borderColor} backdrop-blur-xl shadow-2xl my-auto`}
       >
-        <div className={`flex items-center gap-3 mb-10 ${theme.textPrimary}`}>
-          <Zap size={24} className="animate-pulse" />
-          <span className="text-xs font-black uppercase tracking-[0.3em]">Scanner de Acentuação</span>
+        <div className={`mb-10 flex items-center gap-3 ${theme.textPrimary}`}>
+          <Zap size={24} className="shrink-0 animate-pulse" />
+          <span className="text-sm font-black uppercase tracking-[0.3em] md:text-xs">Scanner de Acentuação</span>
         </div>
 
         {/* Sílabas */}
@@ -66,7 +66,8 @@ export const SyllableScanner: React.FC<SyllableScannerProps> = ({ word, tonicInd
                 variants={item}
                 whileHover={{ scale: 1.1 }}
                 className={`
-                  relative px-8 py-5 rounded-2xl text-3xl font-black transition-all duration-500
+                  relative rounded-2xl px-6 py-4 text-2xl font-black transition-all duration-500
+                  md:px-8 md:py-5 md:text-3xl
                   ${isTonic 
                     ? `bg-gradient-to-br ${theme.primary} text-white shadow-[0_0_40px_-10px_${theme.glow}] border-2 border-white/30` 
                     : 'bg-slate-800/50 text-slate-500 border border-slate-700/50'}
@@ -77,7 +78,7 @@ export const SyllableScanner: React.FC<SyllableScannerProps> = ({ word, tonicInd
                   <motion.span 
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className={`absolute -bottom-7 left-1/2 -translate-x-1/2 text-[11px] ${theme.textSecondary} whitespace-nowrap font-black`}
+                    className={`absolute -bottom-7 left-1/2 -translate-x-1/2 text-sm font-black whitespace-nowrap md:text-[11px] ${theme.textSecondary}`}
                   >
                     TÔNICA
                   </motion.span>
@@ -98,8 +99,8 @@ export const SyllableScanner: React.FC<SyllableScannerProps> = ({ word, tonicInd
             <CheckCircle2 size={28} />
           </div>
           <div>
-            <h4 className={`${theme.textPrimary} font-black mb-2 text-lg`}>Diagnóstico Final</h4>
-            <p className={`${theme.textSecondary} text-sm leading-relaxed`}>
+            <h4 className={`mb-2 text-xl font-black md:text-lg ${theme.textPrimary}`}>Diagnóstico Final</h4>
+            <p className={`text-base leading-relaxed md:text-sm ${theme.textSecondary}`}>
               A sílaba forte é a <span className={`${theme.textPrimary} font-black`}>antepenúltima</span>. 
               Regra: <span className="text-white italic">{rule}</span>
             </p>

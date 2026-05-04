@@ -77,7 +77,7 @@ export const NeuroSlideHub = ({
     default:
       return (
         <div className="flex w-full min-w-0 items-center justify-center rounded-xl bg-slate-800 p-6">
-          <p className="text-slate-400 italic">Layout padrão: {slide.content || slide.main_text || 'Sem conteúdo'}</p>
+          <p className="text-base italic text-slate-400">Layout padrão: {slide.content || slide.main_text || 'Sem conteúdo'}</p>
         </div>
       );
   }
@@ -245,7 +245,7 @@ export default function NeuroSlide({
       default:
         inner = (
           <div className="flex w-full items-center justify-center rounded-xl bg-slate-800 p-6">
-            <p className="text-slate-400 italic">Slide não reconhecido</p>
+            <p className="text-base italic text-slate-400">Slide não reconhecido</p>
           </div>
         );
     }

@@ -3,7 +3,6 @@
 import {
   createContext,
   useContext,
-  useEffect,
   useLayoutEffect,
   useRef,
   useState,
@@ -54,19 +53,17 @@ export function EstudoReversoSlideZoomProvider({ slideKey, children }: EstudoRev
 
   useLayoutEffect(() => {
     const mq = window.matchMedia(`(max-width: ${MAX_WIDTH_MOBILE_CONTROLS_PX}px)`);
-    const sync = () => setNarrowViewport(mq.matches);
+    const sync = () => {
+      const nextNarrow = mq.matches;
+      setNarrowViewport(nextNarrow);
+      if (!nextNarrow) {
+        setTextStep(0);
+      }
+    };
     sync();
     mq.addEventListener('change', sync);
     return () => mq.removeEventListener('change', sync);
   }, []);
-
-  useLayoutEffect(() => {
-    setTextStep(0);
-  }, [slideKey]);
-
-  useEffect(() => {
-    if (!narrowViewport) setTextStep(0);
-  }, [narrowViewport]);
 
   const dec = () => setTextStep((s) => Math.max(0, s - 1));
   const inc = () => setTextStep((s) => Math.min(TEXT_SCALE_STEPS.length - 1, s + 1));

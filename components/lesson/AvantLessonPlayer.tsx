@@ -704,7 +704,7 @@ export default function AvantLessonPlayer({
             className="fixed inset-0 z-50 flex flex-col bg-black/95 backdrop-blur-md pt-safe h-[100dvh] max-h-[100dvh] overscroll-y-contain"
           >
             {/* overflow-y: contido no filho (scroll vertical). overflow-x: auto para texto ampliado (zoom) não ser cortado. */}
-            <EstudoReversoSlideZoomProvider slideKey={slideAtual}>
+            <EstudoReversoSlideZoomProvider key={slideAtual} slideKey={slideAtual}>
             <div className="w-full flex-1 min-h-0 max-h-[100dvh] flex flex-col overflow-y-hidden overflow-x-auto min-w-0">
               
               {/* Header Minimalista (Top Bar) — zoom mobile ao lado da numeração, fixo fora da rolagem do slide */}

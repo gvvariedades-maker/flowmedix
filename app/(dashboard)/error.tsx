@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Link from 'next/link';
 import { CloudOff, RefreshCw } from 'lucide-react';
 import { logger } from '@/lib/logger';
 import {
@@ -48,12 +49,12 @@ export default function DashboardError({
               <RefreshCw className="h-4 w-4" aria-hidden />
               Tentar de novo
             </button>
-            <a
+            <Link
               href="/estudar"
               className="inline-flex h-11 items-center justify-center rounded-xl border border-border bg-background px-6 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
             >
               Ir à vitrine
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -80,12 +81,12 @@ export default function DashboardError({
           >
             Tentar de novo
           </button>
-          <a
+          <Link
             href="/estudar"
             className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg transition-colors border border-white/10"
           >
             Voltar ao Estudo
-          </a>
+          </Link>
         </div>
       </div>
     </div>

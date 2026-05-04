@@ -65,7 +65,7 @@ export function BlogIndexClient({ posts }: BlogIndexClientProps) {
         />
       </div>
 
-      <PublicDarkSiteHeader ctaLabel="Criar conta grátis" />
+      <PublicDarkSiteHeader ctaLabel="Criar conta grátis" ctaLabelShort="Criar conta" />
 
       <main className="relative z-10">
         <section className="mx-auto max-w-6xl px-4 pt-12 pb-14 sm:px-6 sm:pt-20 sm:pb-16">
@@ -99,7 +99,7 @@ export function BlogIndexClient({ posts }: BlogIndexClientProps) {
               animate="visible"
               className="mx-auto max-w-2xl text-lg leading-relaxed font-medium text-slate-400 sm:text-xl"
             >
-              Conteúdo escrito por quem já foi aprovado em concursos de Técnico em Enfermagem. Sem enrolação.
+              Conteúdo escrito para quem quer ser aprovado em concursos de Técnico em Enfermagem. Sem enrolação.
             </motion.p>
           </div>
         </section>

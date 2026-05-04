@@ -1,6 +1,6 @@
 ﻿'use client';
 
-import { useState, useMemo, useEffect, useRef } from 'react';
+import { useState, useMemo, useEffect, useRef, createElement } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
@@ -505,7 +505,7 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
                 variants={containerVariants}
                 initial="initial"
                 animate="animate"
-                className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-5 xl:grid-cols-4"
               >
                 {gruposPagina.map((grupo, idx) => (
                   <SubtopicoCard key={grupo.titulo_aula} grupo={grupo} estudarQuery={estudarQuery} index={idx} />
@@ -614,7 +614,6 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
   const todas = trabalhadas === totalQuestoes && totalQuestoes > 0;
   const pendentes = totalQuestoes - trabalhadas;
   const hasQuestions = totalQuestoes > 0;
-  const iconAlert = pendentes > 0 && trabalhadas > 0;
   const mostrarNovo = totalResolvidas === 0 && !todas && hasQuestions;
   const mostrarBarraProgresso = totalResolvidas > 0 && !todas && hasQuestions;
   const mostrarCheckConclusao = todas && hasQuestions;
@@ -628,7 +627,7 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
     });
   };
 
-  const Icon = getTopicIcon(titulo_aula, modulo_nome);
+  const topicIcon = getTopicIcon(titulo_aula, modulo_nome);
 
   return (
     <motion.div
@@ -663,15 +662,12 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
         onClick={toggleAssunto}
         className="group flex w-full items-start gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.04] px-4 py-3.5 text-left transition-all hover:border-cyan-400/20 hover:bg-white/[0.07]"
       >
-        <span
-          className={cn(
-            'mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-xl border transition-colors',
-            iconAlert
-              ? 'border-red-400/20 bg-red-500/10 group-hover:border-red-400/35 group-hover:bg-red-500/15'
-              : 'border-[rgba(0,242,255,0.2)] bg-[rgba(0,242,255,0.10)] group-hover:border-[rgba(0,242,255,0.35)] group-hover:bg-[rgba(0,242,255,0.14)]',
-          )}
-        >
-          <Icon size={18} strokeWidth={2} className={cn(iconAlert ? 'text-red-400' : 'text-[#00f2ff]')} />
+        <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-xl border border-[rgba(0,242,255,0.2)] bg-[rgba(0,242,255,0.10)] transition-colors group-hover:border-[rgba(0,242,255,0.35)] group-hover:bg-[rgba(0,242,255,0.14)]">
+          {createElement(topicIcon, {
+            size: 18,
+            strokeWidth: 2,
+            className: 'text-cyan-400',
+          })}
         </span>
         <span
           className={cn(

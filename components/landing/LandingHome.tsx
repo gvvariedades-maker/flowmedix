@@ -210,7 +210,11 @@ export default function LandingHome() {
         />
       </div>
 
-      <PublicDarkSiteHeader ctaLabel="Entrar no Beta Gratuito" />
+      <PublicDarkSiteHeader
+        ctaLabel="Entrar no Beta Gratuito"
+        ctaLabelShort="Beta grátis"
+        ctaLabelTight="Beta Grátis →"
+      />
 
       <main className="relative z-10">
         {/* Hero */}
