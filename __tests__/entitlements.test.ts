@@ -44,22 +44,43 @@ function createSupabaseMock(handlers: {
   concursoModulos?: ConcursoModuloRow[];
   concursoModulosPages?: ConcursoModuloRow[][];
   entitlementLinks?: EntitlementLinkRow[];
+  geralConcurso?: { id: string; slug: string };
 }) {
-  const matriculas = handlers.matriculas ?? [];
+  const matriculas = [...(handlers.matriculas ?? [])];
   const modulosBySlug = handlers.modulosBySlug ?? {};
   const modulosById = handlers.modulosById ?? {};
   const modulosByIds = handlers.modulosByIds ?? {};
   const concursoModulos = handlers.concursoModulos ?? [];
   const concursoModulosPages = handlers.concursoModulosPages;
   const entitlementLinks = handlers.entitlementLinks ?? [];
+  const geralConcurso = handlers.geralConcurso ?? { id: 'geral-id', slug: 'geral' };
 
   return {
     from: (table: string) => {
+      if (table === 'concursos') {
+        return {
+          select: () => ({
+            eq: (_column: string, value: string) => ({
+              maybeSingle: async () => ({
+                data: value === geralConcurso.slug ? geralConcurso : null,
+                error: null,
+              }),
+            }),
+          }),
+        };
+      }
+
       if (table === 'concurso_matriculas') {
         return {
           select: () => ({
             eq: async () => ({ data: matriculas, error: null }),
           }),
+          upsert: async (row: { concurso_id: string }) => {
+            if (!matriculas.some((item) => item.concurso_id === row.concurso_id)) {
+              matriculas.push({ concurso_id: row.concurso_id });
+            }
+            return { error: null };
+          },
         };
       }
 
@@ -141,9 +162,9 @@ describe('entitlements — união de pacotes matriculados', () => {
     jest.clearAllMocks();
   });
 
-  it('retorna catálogo vazio sem matrícula', async () => {
+  it('retorna catálogo vazio sem módulos no pacote matriculado', async () => {
     mockCreateServerSupabase.mockResolvedValue(
-      createSupabaseMock({ matriculas: [] }) as never,
+      createSupabaseMock({ matriculas: [], concursoModulos: [] }) as never,
     );
 
     await expect(getAccessibleModulosForUser('user-1')).resolves.toEqual([]);

@@ -94,12 +94,14 @@ const MODULOS_ESTUDO_CACHE_ID = 'modulos-estudo-catalog-v2';
 // Cache wrapper com tracking
 const modulosCacheFn = unstable_cache(
   async () => {
-    const supabase = getSupabaseAnon();
-    if (!supabase) {
+    const { createServerSupabase } = await import('./supabase/server');
+    let supabase: Awaited<ReturnType<typeof createServerSupabase>>;
+    try {
+      supabase = await createServerSupabase();
+    } catch {
       trackCacheMiss('modulos-estudo-list');
-      // Não retornar [] aqui: seria cacheado e a vitrine fica "vazia" até o revalidate.
       throw new DataServiceUnavailableError(
-        'Configuração incompleta: variáveis NEXT_PUBLIC_SUPABASE_* ausentes no servidor.',
+        'Configuração incompleta: variáveis NEXT_PUBLIC_SUPABASE_* ou SUPABASE_SERVICE_ROLE_KEY ausentes no servidor.',
       );
     }
 
@@ -122,7 +124,7 @@ const modulosCacheFn = unstable_cache(
 
 export const getModulosEstudoCached = modulosCacheFn;
 
-const MODULOS_ESTUDO_USER_CACHE_PREFIX = 'modulos-estudo-user-v1';
+const MODULOS_ESTUDO_USER_CACHE_PREFIX = 'modulos-estudo-user-v2';
 
 /**
  * Catálogo de módulos visíveis ao usuário (matrículas + concurso_modulos).

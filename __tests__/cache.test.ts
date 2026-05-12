@@ -8,14 +8,20 @@ jest.mock('next/cache', () => ({
   revalidateTag: () => {},
 }));
 
-// Mock do Supabase para testes (evita conexão real)
 const mockSupabaseChain = {
   select: () => mockSupabaseChain,
   order: () => mockSupabaseChain,
-  limit: () => mockSupabaseChain,
+  limit: () => Promise.resolve({ data: [], error: null }),
   single: () => Promise.resolve({ data: null, error: { code: 'PGRST116' } }),
   eq: () => mockSupabaseChain,
 };
+
+jest.mock('@/lib/supabase/server', () => ({
+  createServerSupabase: jest.fn(async () => ({
+    from: () => mockSupabaseChain,
+  })),
+}));
+
 jest.mock('@supabase/supabase-js', () => ({
   createClient: () => ({
     from: () => mockSupabaseChain,
@@ -33,6 +39,7 @@ describe('Sistema de Cache', () => {
   beforeAll(() => {
     process.env.NEXT_PUBLIC_SUPABASE_URL = 'https://test.supabase.co';
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'test-anon-key';
+    process.env.SUPABASE_SERVICE_ROLE_KEY = 'test-service-role-key';
   });
 
   beforeEach(() => {

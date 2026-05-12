@@ -49,3 +49,12 @@ export const getServerSession = cache(async () => {
   } = await supabase.auth.getSession();
   return session;
 });
+
+/** Usuário validado no Auth (preferir a `session.user` de `getSession()` em rotas protegidas). */
+export const getServerUser = cache(async () => {
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  return user;
+});

@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
-import { getServerSession } from '@/lib/supabase/server-auth';
+import { redirect } from 'next/navigation';
+import { getServerUser } from '@/lib/supabase/server-auth';
 import VitrineClient from '@/components/vitrine/VitrineClient';
 import { logger } from '@/lib/logger';
 import {
@@ -29,26 +30,29 @@ interface HistoricoQuestaoRow {
 }
 
 export default async function VitrinePage() {
-  // `getServerSession()` é deduplicado por React `cache` — o mesmo resultado é
-  // compartilhado entre layout e page, evitando duas chamadas paralelas a
-  // `getSession()` que dispararam `refresh_token_already_used` antes.
-  const session = await getServerSession();
-  const userId = session?.user?.id;
+  const user = await getServerUser();
+  const userId = user?.id;
+  if (!userId) redirect('/login?next=/estudar');
 
-  // Usa cache estratégico - revalida a cada 5 minutos (módulos) e 2 minutos (histórico)
   let modulosData: unknown[] = [];
   let historicoData: unknown[] = [];
+
   try {
-    [modulosData, historicoData] = await Promise.all([
-      userId ? getModulosEstudoForUserCached(userId) : Promise.resolve([]),
-      getHistoricoQuestoesCached(userId),
-    ]);
+    modulosData = await getModulosEstudoForUserCached(userId);
   } catch (e) {
     if (!isDataServiceUnavailableError(e)) throw e;
-    logger.warn(
-      'Vitrine: fallback para lista vazia por indisponibilidade temporária de dados',
-      { userIdPresent: Boolean(userId) },
-    );
+    logger.warn('Vitrine: catálogo indisponível — fallback para lista vazia', {
+      userIdPresent: true,
+    });
+  }
+
+  try {
+    historicoData = await getHistoricoQuestoesCached(userId);
+  } catch (e) {
+    if (!isDataServiceUnavailableError(e)) throw e;
+    logger.warn('Vitrine: histórico indisponível — segue sem progresso', {
+      userIdPresent: true,
+    });
   }
 
   if (!modulosData?.length) {
@@ -68,9 +72,7 @@ export default async function VitrinePage() {
     historicoMap.set(h.modulo_slug, [...existing, h]);
   });
 
-  const matriculatedConcursos = userId
-    ? await getMatriculatedConcursos(userId).catch(() => [])
-    : [];
+  const matriculatedConcursos = await getMatriculatedConcursos(userId).catch(() => []);
   const vitrineFallbackTitulo =
     matriculatedConcursos.find((concurso) => concurso.tipo === 'edital')?.nome ?? 'Estudo Reverso';
 

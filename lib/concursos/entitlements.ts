@@ -302,7 +302,11 @@ async function collectModulosFromMatriculatedConcursos(
 }
 
 export async function getAccessibleModulosForUser(userId: string): Promise<ModuloEstudoListRow[]> {
-  const concursoIds = await getMatriculatedConcursoIds(userId);
+  let concursoIds = await getMatriculatedConcursoIds(userId);
+  if (!concursoIds.length) {
+    await ensureDefaultMatricula(userId);
+    concursoIds = await getMatriculatedConcursoIds(userId);
+  }
   if (!concursoIds.length) return [];
 
   const collected = await collectModulosFromMatriculatedConcursos(userId, concursoIds);
