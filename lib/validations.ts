@@ -419,6 +419,45 @@ export const ResolveUserSchema = z.object({
   email: z.string().email('E-mail inválido').min(1, 'E-mail é obrigatório'),
 });
 
+const ConcursoSlugSchema = z
+  .string()
+  .trim()
+  .min(2, 'Slug do concurso é obrigatório')
+  .max(120, 'Slug do concurso muito longo')
+  .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Slug do concurso inválido');
+
+export const ConcursoMatriculaSchema = z.object({
+  concursoSlug: ConcursoSlugSchema.optional(),
+});
+
+export const ConcursoCreateSchema = z.object({
+  slug: ConcursoSlugSchema,
+  nome: z.string().trim().min(2).max(200),
+  cidade: z.string().trim().max(120).optional(),
+  orgao: z.string().trim().max(120).optional(),
+  banca: z.string().trim().max(80).optional(),
+  ano: z.number().int().min(1990).max(2100).optional(),
+  cargo: z.string().trim().max(120).optional(),
+  tipo: z.enum(['geral', 'edital']).default('edital'),
+  status: z.enum(['rascunho', 'ativo', 'arquivado']).default('rascunho'),
+});
+
+export const ConcursoAdminMatriculaSchema = z.object({
+  userId: z.string().uuid('ID do usuário inválido'),
+  concursoId: z.string().uuid('ID do concurso inválido'),
+});
+
+export const ConcursoModuloLinkSchema = z.object({
+  moduloId: z.string().uuid('ID do módulo inválido'),
+  origem: z.enum(['publicacao', 'manual', 'regra']).default('manual'),
+});
+
+export const ConcursoRegraModulosSchema = z.object({
+  banca: z.string().trim().min(1).max(80),
+  orgao: z.string().trim().max(120).optional(),
+  ano: z.number().int().min(1990).max(2100).optional(),
+});
+
 /** Resposta de GET /api/admin/user-metrics */
 export const UserMetricsResponseSchema = z.object({
   totalUsers: z.number().int().min(0),
@@ -491,6 +530,11 @@ export type FluxogramaInput = z.infer<typeof FluxogramaSchema>;
 export type QuestaoCompletaInput = z.infer<typeof QuestaoCompletaSchema>;
 export type EnrollmentDeleteInput = z.infer<typeof EnrollmentDeleteSchema>;
 export type ResolveUserInput = z.infer<typeof ResolveUserSchema>;
+export type ConcursoMatriculaInput = z.infer<typeof ConcursoMatriculaSchema>;
+export type ConcursoCreateInput = z.infer<typeof ConcursoCreateSchema>;
+export type ConcursoAdminMatriculaInput = z.infer<typeof ConcursoAdminMatriculaSchema>;
+export type ConcursoModuloLinkInput = z.infer<typeof ConcursoModuloLinkSchema>;
+export type ConcursoRegraModulosInput = z.infer<typeof ConcursoRegraModulosSchema>;
 export type UserMetricsResponse = z.infer<typeof UserMetricsResponseSchema>;
 export type ReverseStudySlideInput = z.infer<typeof ReverseStudySlideSchema>;
 export type SlideItemInput = z.infer<typeof SlideItemSchema>;

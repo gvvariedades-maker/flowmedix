@@ -1,6 +1,6 @@
 import { redirect, notFound } from 'next/navigation';
 import { logger } from '@/lib/logger';
-import { getModulosEstudoCached, getHistoricoQuestoesCached } from '@/lib/cache';
+import { getModulosEstudoForUserCached, getHistoricoQuestoesCached } from '@/lib/cache';
 import CadernoDetailClient from './CadernoDetailClient';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
 
@@ -12,6 +12,7 @@ export interface NotebookItem {
   position: number;
   estudada: boolean;
   avant_codigo: number | null;
+  acessivel: boolean;
 }
 
 export interface ModuloDisponivel {
@@ -63,7 +64,7 @@ export default async function CadernoDetailPage({
     if (itemsError) throw itemsError;
 
     const [modulos, historico] = await Promise.all([
-      getModulosEstudoCached(),
+      getModulosEstudoForUserCached(session.user.id),
       getHistoricoQuestoesCached(session.user.id),
     ]);
 
@@ -74,7 +75,9 @@ export default async function CadernoDetailPage({
     );
 
     const codigoPorSlug = new Map<string, number | null>();
+    const accessibleSlugs = new Set<string>();
     (modulos as { modulo_slug: string; avant_codigo?: number | null }[]).forEach((m) => {
+      accessibleSlugs.add(m.modulo_slug);
       codigoPorSlug.set(
         m.modulo_slug,
         m.avant_codigo != null && !Number.isNaN(Number(m.avant_codigo)) ? Number(m.avant_codigo) : null,
@@ -85,6 +88,7 @@ export default async function CadernoDetailPage({
       ...item,
       estudada: estudadosSet.has(item.modulo_slug),
       avant_codigo: codigoPorSlug.get(item.modulo_slug) ?? null,
+      acessivel: accessibleSlugs.has(item.modulo_slug),
     }));
 
     const slugsNoCaderno = new Set(notebookItems.map(i => i.modulo_slug));

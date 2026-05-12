@@ -1,4 +1,6 @@
 import { getServerSession } from '@/lib/supabase/server-auth';
+import { ADMIN_EMAIL } from '@/lib/constants';
+import { getMatriculatedConcursos } from '@/lib/concursos/entitlements';
 import DashboardShell from './DashboardShell';
 
 function displayNameFromSessionUser(
@@ -15,11 +17,22 @@ function displayNameFromSessionUser(
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const session = await getServerSession();
+  const email = session?.user?.email ?? null;
+  const isAdmin = Boolean(email && ADMIN_EMAIL && email.toLowerCase() === ADMIN_EMAIL.toLowerCase());
+  const matriculatedConcursos = session?.user?.id
+    ? await getMatriculatedConcursos(session.user.id).catch(() => [])
+    : [];
 
   return (
     <DashboardShell
-      initialUserEmail={session?.user?.email ?? null}
+      initialUserEmail={email}
       initialDisplayName={displayNameFromSessionUser(session?.user ?? null)}
+      initialIsAdmin={isAdmin}
+      initialMatriculatedConcursos={matriculatedConcursos.map((concurso) => ({
+        slug: concurso.slug,
+        nome: concurso.nome,
+        tipo: concurso.tipo,
+      }))}
     >
       {children}
     </DashboardShell>

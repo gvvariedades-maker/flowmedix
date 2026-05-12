@@ -78,3 +78,38 @@ export interface Exam {
   exam_id: string;
   purchased_at: string;
 }
+
+export type ConcursoTipo = 'geral' | 'edital';
+export type ConcursoStatus = 'rascunho' | 'ativo' | 'arquivado';
+export type ConcursoModuloOrigem = 'publicacao' | 'manual' | 'regra';
+export type ConcursoMatriculaOrigem = 'cadastro' | 'admin' | 'upgrade';
+
+export interface Concurso {
+  id: string;
+  slug: string;
+  nome: string;
+  cidade: string | null;
+  orgao: string | null;
+  banca: string | null;
+  ano: number | null;
+  cargo: string | null;
+  tipo: ConcursoTipo;
+  status: ConcursoStatus;
+  created_at: string;
+}
+
+export interface ConcursoModulo {
+  id: string;
+  concurso_id: string;
+  modulo_id: string;
+  origem: ConcursoModuloOrigem;
+  created_at: string;
+}
+
+export interface ConcursoMatricula {
+  id: string;
+  user_id: string;
+  concurso_id: string;
+  origem: ConcursoMatriculaOrigem;
+  created_at: string;
+}

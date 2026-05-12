@@ -3,9 +3,11 @@ import { getServerSession } from '@/lib/supabase/server-auth';
 import VitrineClient from '@/components/vitrine/VitrineClient';
 import { logger } from '@/lib/logger';
 import {
-  getModulosEstudoCached,
+  getModulosEstudoForUserCached,
   getHistoricoQuestoesCached,
 } from '@/lib/cache';
+import { isDataServiceUnavailableError } from '@/lib/dataServiceError';
+import { getMatriculatedConcursos } from '@/lib/concursos/entitlements';
 
 /** Evita HTML/CDN com payload RSC desatualizado; catálogo vem de `unstable_cache` com revalidação própria. */
 export const dynamic = 'force-dynamic';
@@ -34,10 +36,20 @@ export default async function VitrinePage() {
   const userId = session?.user?.id;
 
   // Usa cache estratégico - revalida a cada 5 minutos (módulos) e 2 minutos (histórico)
-  const [modulosData, historicoData] = await Promise.all([
-    getModulosEstudoCached(),
-    getHistoricoQuestoesCached(userId),
-  ]);
+  let modulosData: unknown[] = [];
+  let historicoData: unknown[] = [];
+  try {
+    [modulosData, historicoData] = await Promise.all([
+      userId ? getModulosEstudoForUserCached(userId) : Promise.resolve([]),
+      getHistoricoQuestoesCached(userId),
+    ]);
+  } catch (e) {
+    if (!isDataServiceUnavailableError(e)) throw e;
+    logger.warn(
+      'Vitrine: fallback para lista vazia por indisponibilidade temporária de dados',
+      { userIdPresent: Boolean(userId) },
+    );
+  }
 
   if (!modulosData?.length) {
     logger.warn('Vitrine: catálogo de módulos vazio — verifique PostgREST, RLS e variáveis Supabase no deploy.', {
@@ -55,6 +67,12 @@ export default async function VitrinePage() {
     const existing = historicoMap.get(h.modulo_slug) || [];
     historicoMap.set(h.modulo_slug, [...existing, h]);
   });
+
+  const matriculatedConcursos = userId
+    ? await getMatriculatedConcursos(userId).catch(() => [])
+    : [];
+  const vitrineFallbackTitulo =
+    matriculatedConcursos.find((concurso) => concurso.tipo === 'edital')?.nome ?? 'Estudo Reverso';
 
   const modulosProcessados = modulosTyped.map((modulo: ModuloEstudoRow) => {
     const tentativas = historicoMap.get(modulo.modulo_slug) || [];
@@ -91,7 +109,10 @@ export default async function VitrinePage() {
 
   return (
     <Suspense fallback={<VitrineLoadingFallback />}>
-      <VitrineClient initialModulos={modulosProcessados} />
+      <VitrineClient
+        initialModulos={modulosProcessados}
+        fallbackTitulo={vitrineFallbackTitulo}
+      />
     </Suspense>
   );
 }

@@ -72,9 +72,11 @@ function ItemCaderno({
       transition={{ duration: 0.2 }}
       className={cn(
         'group flex items-center gap-3 rounded-2xl border p-4 transition-all',
-        item.estudada
-          ? 'border-emerald-500/25 bg-emerald-950/30'
-          : 'border-[rgba(255,255,255,0.10)] bg-[#0d1117] hover:border-cyan-500/20',
+        !item.acessivel
+          ? 'border-amber-500/20 bg-amber-950/20 opacity-80'
+          : item.estudada
+            ? 'border-emerald-500/25 bg-emerald-950/30'
+            : 'border-[rgba(255,255,255,0.10)] bg-[#0d1117] hover:border-cyan-500/20',
       )}
     >
       {/* Número */}
@@ -103,17 +105,31 @@ function ItemCaderno({
           )}
         </div>
         <p className="truncate text-sm font-bold text-slate-200">{item.titulo_aula || item.modulo_slug}</p>
+        {!item.acessivel ? (
+          <p className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-amber-300/90">
+            Fora do seu pacote
+          </p>
+        ) : null}
       </div>
 
       {/* Ações */}
       <div className="flex items-center gap-1 shrink-0">
-        <Link
-          href={`/estudar/${item.modulo_slug}?from=caderno&caderno_id=${notebookId}`}
-          className="flex h-8 w-8 items-center justify-center rounded-xl border border-cyan-500/25 bg-[rgba(0,242,255,0.08)] transition-colors hover:bg-[rgba(0,242,255,0.14)]"
-          title="Estudar questão"
-        >
-          <Play size={13} className="text-cyan-300" />
-        </Link>
+        {item.acessivel ? (
+          <Link
+            href={`/estudar/${item.modulo_slug}?from=caderno&caderno_id=${notebookId}`}
+            className="flex h-8 w-8 items-center justify-center rounded-xl border border-cyan-500/25 bg-[rgba(0,242,255,0.08)] transition-colors hover:bg-[rgba(0,242,255,0.14)]"
+            title="Estudar questão"
+          >
+            <Play size={13} className="text-cyan-300" />
+          </Link>
+        ) : (
+          <span
+            className="flex h-8 w-8 items-center justify-center rounded-xl border border-amber-500/20 bg-amber-500/10"
+            title="Questão fora do pacote matriculado"
+          >
+            <Play size={13} className="text-amber-300/70" />
+          </span>
+        )}
         <button
           onClick={handleRemove}
           disabled={removing}

@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense, useState } from 'react';
 import { supabase } from '@/lib/supabase/client';
+import { getPostLoginDestination } from '@/lib/getPostLoginDestination';
+import { buildAuthQueryPath } from '@/lib/authQueryPath';
 import { AuthAtmosphericBackdrop } from '@/components/layout/AuthAtmosphericBackdrop';
 import { PublicDarkAuthHeader } from '@/components/layout/PublicDarkAuthHeader';
 
@@ -14,11 +16,12 @@ function RegisterTopBar() {
   const cidade = searchParams.get('cidade')
     ? decodeURIComponent(searchParams.get('cidade')!)
     : null;
+  const concurso = searchParams.get('concurso')?.trim() || null;
 
   return (
     <PublicDarkAuthHeader
       variant="register"
-      loginHref={cidade ? `/login?cidade=${encodeURIComponent(cidade)}` : '/login'}
+      loginHref={buildAuthQueryPath('/login', cidade, concurso)}
     />
   );
 }
@@ -29,6 +32,7 @@ function RegisterForm() {
   const cidade = searchParams.get('cidade')
     ? decodeURIComponent(searchParams.get('cidade')!)
     : null;
+  const concurso = searchParams.get('concurso')?.trim() || null;
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -57,9 +61,7 @@ function RegisterForm() {
     setLoading(true);
 
     const origin = typeof window !== 'undefined' ? window.location.origin : '';
-    const destinoEstudar = cidade
-      ? `/estudar?cidade=${encodeURIComponent(cidade)}`
-      : '/estudar';
+    const destinoEstudar = getPostLoginDestination(null, cidade, concurso);
 
     try {
       const { data, error: authError } = await supabase.auth.signUp({
@@ -77,6 +79,13 @@ function RegisterForm() {
       }
 
       if (data.session) {
+        await fetch('/api/concursos/matricular', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(concurso ? { concursoSlug: concurso } : {}),
+        }).catch(() => undefined);
+
         router.push(destinoEstudar);
         router.refresh();
         return;
@@ -91,7 +100,7 @@ function RegisterForm() {
     }
   };
 
-  const loginHref = cidade ? `/login?cidade=${encodeURIComponent(cidade)}` : '/login';
+  const loginHref = buildAuthQueryPath('/login', cidade, concurso);
 
   const inputClassName =
     'w-full rounded-xl border border-[rgba(255,255,255,0.10)] bg-white/[0.05] p-4 font-bold text-white outline-none transition-all placeholder:font-normal placeholder:text-slate-500 focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20';

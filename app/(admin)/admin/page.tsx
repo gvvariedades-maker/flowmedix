@@ -3,7 +3,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase/client';
-import { ADMIN_EMAIL } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import {
   ArrowRight, Database, LayoutDashboard, LogOut, Loader2,
@@ -316,12 +315,6 @@ export default function AdminMaster() {
         return;
       }
 
-      const userEmail = user.email?.toLowerCase();
-      if (userEmail !== ADMIN_EMAIL.toLowerCase()) {
-        router.push('/estudar');
-        return;
-      }
-
       setLoading(false);
       fetchModulosEstudo();
     }
@@ -491,6 +484,22 @@ export default function AdminMaster() {
             className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 text-[#BEF264] font-black uppercase italic text-xs hover:bg-[#4338ca] hover:text-white transition-all"
           >
             Abrir métricas
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </section>
+
+        <section className="bg-white p-6 sm:p-8 rounded-[32px] border-[1.5px] border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h2 className="font-black italic uppercase text-lg text-slate-900">Concursos e matrículas</h2>
+            <p className="text-slate-500 text-sm mt-1">
+              Pacotes por edital, vínculo de publicação no laboratório e matrícula manual de alunos.
+            </p>
+          </div>
+          <Link
+            href="/admin/concursos"
+            className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 text-[#BEF264] font-black uppercase italic text-xs hover:bg-[#4338ca] hover:text-white transition-all"
+          >
+            Gerenciar concursos
             <ArrowRight className="w-4 h-4" />
           </Link>
         </section>

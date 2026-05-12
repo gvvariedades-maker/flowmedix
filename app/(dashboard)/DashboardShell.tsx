@@ -20,7 +20,6 @@ import {
   BrainCircuit,
   type LucideIcon,
 } from 'lucide-react';
-import { getAdminEmail } from '@/lib/constants';
 import { TextSizeControl } from '@/components/accessibility/TextSizeControl';
 import { EstudoReversoWelcomeModal } from '@/components/onboarding/EstudoReversoWelcomeModal';
 import { useEstudoReversoWelcome } from '@/components/onboarding/useEstudoReversoWelcome';
@@ -146,6 +145,12 @@ function LogoMark({ compact }: { compact?: boolean }) {
     </div>
   );
 }
+
+type MatriculatedConcursoSummary = {
+  slug: string;
+  nome: string;
+  tipo: 'geral' | 'edital';
+};
 
 function CityCard({ cidadeExibicao }: { cidadeExibicao: string }) {
   return (
@@ -283,10 +288,14 @@ function DashboardContent({
   children,
   initialUserEmail,
   initialDisplayName,
+  initialIsAdmin,
+  initialMatriculatedConcursos,
 }: {
   children: React.ReactNode;
   initialUserEmail: string | null;
   initialDisplayName: string | null;
+  initialIsAdmin: boolean;
+  initialMatriculatedConcursos: MatriculatedConcursoSummary[];
 }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -294,6 +303,7 @@ function DashboardContent({
 
   const [userEmail, setUserEmail] = useState<string | null>(initialUserEmail);
   const [userDisplayName, setUserDisplayName] = useState<string | null>(initialDisplayName);
+  const [isAdminUser, setIsAdminUser] = useState<boolean>(initialIsAdmin);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const estudoReversoWelcome = useEstudoReversoWelcome({ enabled: userEmail != null });
 
@@ -340,11 +350,14 @@ function DashboardContent({
               ? meta.name.trim()
               : null;
         setUserDisplayName(fromMeta);
+        // isAdmin vem do servidor via initialIsAdmin; não temos ADMIN_EMAIL no client.
+        // Mantemos o valor inicial — ele é correto enquanto o email não mudar de sessão.
         return;
       }
       if (event === 'SIGNED_OUT') {
         setUserEmail(null);
         setUserDisplayName(null);
+        setIsAdminUser(false);
       }
     });
     return () => subscription.unsubscribe();
@@ -359,10 +372,20 @@ function DashboardContent({
   /** Derivado da URL no render (evita effect + setState em cima de searchParams). */
   const rawCidade = searchParams.get('cidade');
   const cidadeParamForLink = rawCidade;
-  const cidadeExibicao = rawCidade ? decodeURIComponent(rawCidade) : 'Técnico de Enfermagem';
+  const concursoParamForLink = searchParams.get('concurso')?.trim() || null;
+  const editalAtivo = initialMatriculatedConcursos.find((concurso) => concurso.tipo === 'edital');
+  const cidadeExibicao =
+    editalAtivo?.nome ??
+    initialMatriculatedConcursos.find((concurso) => concurso.slug === 'geral')?.nome ??
+    (rawCidade ? decodeURIComponent(rawCidade) : 'Técnico de Enfermagem');
 
-  const createQueryString = (path: string) =>
-    cidadeParamForLink != null ? `${path}?cidade=${encodeURIComponent(cidadeParamForLink)}` : path;
+  const createQueryString = (path: string) => {
+    const params = new URLSearchParams();
+    if (cidadeParamForLink != null) params.set('cidade', cidadeParamForLink);
+    if (concursoParamForLink) params.set('concurso', concursoParamForLink);
+    const query = params.toString();
+    return query ? `${path}?${query}` : path;
+  };
 
   // Fechar menu ao navegar (requestAnimationFrame evita setState síncrono no effect — react-hooks/set-state-in-effect)
   useEffect(() => {
@@ -440,7 +463,6 @@ function DashboardContent({
     return pathname === path || pathname.startsWith(`${path}/`);
   };
 
-  const isAdminUser = userEmail != null && userEmail.toLowerCase() === getAdminEmail();
 
   const menuItems: MenuItem[] = [
     { label: 'Vitrine de Aulas', icon: LayoutDashboard, href: '/estudar', active: isPathActive('/estudar') },
@@ -592,15 +614,24 @@ export default function DashboardShell({
   children,
   initialUserEmail,
   initialDisplayName = null,
+  initialIsAdmin = false,
+  initialMatriculatedConcursos = [],
 }: {
   children: React.ReactNode;
   initialUserEmail: string | null;
   initialDisplayName?: string | null;
+  initialIsAdmin?: boolean;
+  initialMatriculatedConcursos?: MatriculatedConcursoSummary[];
 }) {
   return (
     <ToastProvider>
       <Suspense fallback={<div className="dashboard-surface min-h-[100dvh] bg-background" />}>
-        <DashboardContent initialUserEmail={initialUserEmail} initialDisplayName={initialDisplayName}>
+        <DashboardContent
+          initialUserEmail={initialUserEmail}
+          initialDisplayName={initialDisplayName}
+          initialIsAdmin={initialIsAdmin}
+          initialMatriculatedConcursos={initialMatriculatedConcursos}
+        >
           {children}
         </DashboardContent>
       </Suspense>

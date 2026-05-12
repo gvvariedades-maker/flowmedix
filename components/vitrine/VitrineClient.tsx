@@ -142,11 +142,16 @@ interface GrupoSubtopico {
 
 interface VitrineClientProps {
   initialModulos: ModuloEstudo[];
+  /** Título quando a URL não traz `?cidade=` (ex.: nome do edital matriculado). */
+  fallbackTitulo?: string;
 }
 
 // ─── Componente Principal ─────────────────────────────────────────────────────
 
-export default function VitrineClient({ initialModulos }: VitrineClientProps) {
+export default function VitrineClient({
+  initialModulos,
+  fallbackTitulo = 'Estudo Reverso',
+}: VitrineClientProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -155,7 +160,7 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
    * Não ler `searchParams` no primeiro render: no SSR / primeiro paint o cliente pode
    * divergir da URL real → erro de hidratação. Defaults iguais ao servidor; URL aplica depois.
    */
-  const [cidadeUrl, setCidadeUrl] = useState('Estudo Reverso');
+  const [cidadeUrl, setCidadeUrl] = useState(fallbackTitulo);
   const [modulos] = useState<ModuloEstudo[]>(initialModulos);
   const [searchTerm, setSearchTerm] = useState('');
   const [bancaFilter, setBancaFilter] = useState('');
@@ -178,7 +183,7 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
   useEffect(() => {
     const id = requestAnimationFrame(() => {
       const c = searchParams.get('cidade');
-      setCidadeUrl(c ? decodeURIComponent(c) : 'Estudo Reverso');
+      setCidadeUrl(c ? decodeURIComponent(c) : fallbackTitulo);
       setSearchTerm(searchParams.get('q') ?? '');
       setBancaFilter(searchParams.get('banca') ?? '');
       setAssuntoFilter(searchParams.get('assunto') ?? '');
@@ -186,7 +191,7 @@ export default function VitrineClient({ initialModulos }: VitrineClientProps) {
       setPagina(Number.isFinite(raw) && raw >= 1 ? raw : 1);
     });
     return () => cancelAnimationFrame(id);
-  }, [searchParams]);
+  }, [searchParams, fallbackTitulo]);
 
   const bancas = useMemo(
     () => [...new Set(modulos.map((m) => m.banca).filter(Boolean))].sort((a, b) => a.localeCompare(b)),

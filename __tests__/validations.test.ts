@@ -14,6 +14,9 @@ import {
   validateSlides,
   payloadContainsTecconcursosReference,
   TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE,
+  ConcursoMatriculaSchema,
+  ConcursoCreateSchema,
+  ConcursoRegraModulosSchema,
 } from '../lib/validations';
 
 describe('Validação de Questões', () => {
@@ -463,5 +466,36 @@ describe('Validação de Questões', () => {
       expect(result.valid).toBe(false);
       expect(result.errors.length).toBeGreaterThan(0);
     });
+  });
+});
+
+describe('Concursos e matrículas', () => {
+  it('aceita matrícula sem slug (fallback Geral)', () => {
+    expect(ConcursoMatriculaSchema.safeParse({}).success).toBe(true);
+  });
+
+  it('valida slug de concurso na matrícula', () => {
+    expect(
+      ConcursoMatriculaSchema.safeParse({ concursoSlug: 'campina-grande-2026' }).success,
+    ).toBe(true);
+    expect(ConcursoMatriculaSchema.safeParse({ concursoSlug: 'Slug Inválido' }).success).toBe(
+      false,
+    );
+  });
+
+  it('valida criação de concurso', () => {
+    expect(
+      ConcursoCreateSchema.safeParse({
+        slug: 'campina-grande-2026',
+        nome: 'Campina Grande 2026',
+        tipo: 'edital',
+        status: 'ativo',
+      }).success,
+    ).toBe(true);
+  });
+
+  it('valida regra de inclusão por banca', () => {
+    expect(ConcursoRegraModulosSchema.safeParse({ banca: 'IDECAN' }).success).toBe(true);
+    expect(ConcursoRegraModulosSchema.safeParse({ banca: '' }).success).toBe(false);
   });
 });

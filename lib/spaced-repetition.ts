@@ -6,6 +6,7 @@
  */
 
 import type { HistoricoQuestao } from './analytics';
+import { getAccessibleModuloSlugs } from './concursos/entitlements';
 import { logger } from './logger';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
@@ -137,12 +138,14 @@ export async function getTodayReviews(userId: string): Promise<ReviewItem[]> {
     }
 
     const historico = (data || []) as HistoricoQuestao[];
+    const accessibleSlugs = await getAccessibleModuloSlugs(userId);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
     // Agrupar tentativas por módulo
     const moduleMap = new Map<string, HistoricoQuestao[]>();
     historico.forEach((h) => {
+      if (!accessibleSlugs.has(h.modulo_slug)) return;
       const existing = moduleMap.get(h.modulo_slug) || [];
       existing.push(h);
       moduleMap.set(h.modulo_slug, existing);

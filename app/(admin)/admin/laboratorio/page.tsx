@@ -46,7 +46,15 @@ interface BatchResult {
   };
 }
 
+interface ConcursoOption {
+  id: string;
+  slug: string;
+  nome: string;
+  status: string;
+}
+
 const MAX_JSON_FILE_BYTES = 8 * 1024 * 1024; // 8 MB
+const LAB_CONCURSO_STORAGE_KEY = 'avant:lab-concurso-ativo';
 
 export default function AvantLaboratory() {
   const jsonFileInputRef = useRef<HTMLInputElement>(null);
@@ -66,6 +74,44 @@ export default function AvantLaboratory() {
   const [batchItems, setBatchItems] = useState<BatchItem[]>([]);
   const [batchPublishing, setBatchPublishing] = useState(false);
   const [batchResult, setBatchResult] = useState<BatchResult | null>(null);
+  const [concursos, setConcursos] = useState<ConcursoOption[]>([]);
+  const [concursoAtivoId, setConcursoAtivoId] = useState('');
+
+  useEffect(() => {
+    let cancelled = false;
+
+    (async () => {
+      try {
+        const res = await fetch('/api/admin/concursos', { credentials: 'same-origin' });
+        if (!res.ok || cancelled) return;
+        const payload = await res.json();
+        const list = (payload.concursos ?? []) as ConcursoOption[];
+        setConcursos(list);
+        const saved = sessionStorage.getItem(LAB_CONCURSO_STORAGE_KEY);
+        const fallback = list.find((item) => item.slug === 'geral')?.id || list[0]?.id || '';
+        const next = saved && list.some((item) => item.id === saved) ? saved : fallback;
+        if (!cancelled) setConcursoAtivoId(next);
+      } catch (err) {
+        logger.error('Falha ao carregar concursos do laboratório', err);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (concursoAtivoId) {
+      sessionStorage.setItem(LAB_CONCURSO_STORAGE_KEY, concursoAtivoId);
+    }
+  }, [concursoAtivoId]);
+
+  const publishHeaders = (): Record<string, string> => {
+    const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+    if (concursoAtivoId) headers['X-Avant-Concurso-Id'] = concursoAtivoId;
+    return headers;
+  };
 
   // ============================================================================
   // FUNÇÃO: SMART PASTE
@@ -317,7 +363,7 @@ export default function AvantLaboratory() {
     try {
       const res = await fetch('/api/admin/questions', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: publishHeaders(),
         credentials: 'same-origin',
         body: JSON.stringify(validItems),
       });
@@ -399,7 +445,27 @@ export default function AvantLaboratory() {
             )}
           </div>
 
-          <div className="flex flex-wrap gap-3 justify-end">
+          <div className="flex flex-wrap items-end gap-3 justify-end">
+            <div className="flex min-w-[220px] flex-col gap-1">
+              <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">
+                Concurso ativo
+              </label>
+              <select
+                value={concursoAtivoId}
+                onChange={(event) => setConcursoAtivoId(event.target.value)}
+                className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700"
+              >
+                {concursos.length === 0 ? (
+                  <option value="">Carregando…</option>
+                ) : (
+                  concursos.map((concurso) => (
+                    <option key={concurso.id} value={concurso.id}>
+                      {concurso.nome} ({concurso.slug})
+                    </option>
+                  ))
+                )}
+              </select>
+            </div>
             <input
               ref={jsonFileInputRef}
               type="file"

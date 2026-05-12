@@ -24,6 +24,7 @@ import {
 import { logger } from '@/lib/logger';
 import { generateContentHash } from '@/lib/contentHash';
 import { invalidateModulosCache, invalidateQuestoesCache } from '@/lib/cache';
+import { getDefaultConcursoId, linkModuloToConcurso } from '@/lib/concursos/entitlements';
 
 const MAX_BATCH_SIZE = 100;
 /** PostgREST: consultas .in() muito grandes podem falhar; fatiamos os hashes. */
@@ -174,6 +175,17 @@ export async function POST(request: NextRequest) {
 
   const supabaseAdmin = await createServerSupabase();
   const timestamp = Date.now();
+  const concursoAtivoHeader = request.headers.get('x-avant-concurso-id')?.trim();
+  let concursoAtivoId: string;
+  try {
+    concursoAtivoId = concursoAtivoHeader || (await getDefaultConcursoId());
+  } catch (e) {
+    logger.error('Concurso ativo indisponível para publicação', e);
+    return NextResponse.json(
+      { error: 'Concurso ativo indisponível. Execute a migração de concursos.' },
+      { status: 503 },
+    );
+  }
 
   // 4b. Já existe no banco (pré-checagem — evita insert desnecessário; UNIQUE ainda protege corrida)
   const candidateHashes = [
@@ -214,16 +226,20 @@ export async function POST(request: NextRequest) {
       const slug = generateSlug(row.data, `${timestamp}-${row.index}`);
       const jsonComSlug = { ...row.data, modulo_slug: slug };
 
-      const { error: insertError } = await supabaseAdmin.from('modulos_estudo').insert([
-        {
-          modulo_nome: row.data.meta.topico,
-          titulo_aula: row.data.meta.subtopico || row.data.meta.topico,
-          modulo_slug: slug,
-          conteudo_json: jsonComSlug,
-          banca: row.data.meta.banca.toUpperCase(),
-          content_hash: row.hash,
-        },
-      ]);
+      const { data: insertedRow, error: insertError } = await supabaseAdmin
+        .from('modulos_estudo')
+        .insert([
+          {
+            modulo_nome: row.data.meta.topico,
+            titulo_aula: row.data.meta.subtopico || row.data.meta.topico,
+            modulo_slug: slug,
+            conteudo_json: jsonComSlug,
+            banca: row.data.meta.banca.toUpperCase(),
+            content_hash: row.hash,
+          },
+        ])
+        .select('id')
+        .single();
 
       if (insertError) {
         if (insertError.code === '23505') {
@@ -232,6 +248,17 @@ export async function POST(request: NextRequest) {
           errors.push({ index: row.index, reason: insertError.message });
         }
       } else {
+        try {
+          await linkModuloToConcurso(concursoAtivoId, insertedRow.id, 'publicacao');
+        } catch (linkError) {
+          errors.push({
+            index: row.index,
+            reason:
+              linkError instanceof Error
+                ? `Questão salva, mas falhou vínculo ao concurso: ${linkError.message}`
+                : 'Questão salva, mas falhou vínculo ao concurso.',
+          });
+        }
         inserted.push(row.index);
         existingHashes.add(row.hash);
       }

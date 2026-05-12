@@ -7,6 +7,7 @@ import { Zap, ArrowRight, Lock, MapPin, CheckCircle2, AlertCircle, Eye, EyeOff }
 import { motion } from 'framer-motion';
 import { supabase } from '@/lib/supabase/client';
 import { getPostLoginDestination } from '@/lib/getPostLoginDestination';
+import { buildAuthQueryPath } from '@/lib/authQueryPath';
 import { PublicDarkAuthHeader } from '@/components/layout/PublicDarkAuthHeader';
 import { AuthAtmosphericBackdrop } from '@/components/layout/AuthAtmosphericBackdrop';
 
@@ -15,7 +16,8 @@ function LoginTopBar() {
   const cidade = searchParams.get('cidade')
     ? decodeURIComponent(searchParams.get('cidade')!)
     : null;
-  const registerHref = cidade ? `/register?cidade=${encodeURIComponent(cidade)}` : '/register';
+  const concurso = searchParams.get('concurso')?.trim() || null;
+  const registerHref = buildAuthQueryPath('/register', cidade, concurso);
 
   return <PublicDarkAuthHeader variant="login" registerHref={registerHref} />;
 }
@@ -34,7 +36,9 @@ function LoginContent() {
   const cidade = searchParams.get('cidade')
     ? decodeURIComponent(searchParams.get('cidade')!)
     : null;
+  const concurso = searchParams.get('concurso')?.trim() || null;
   const nextPath = searchParams.get('next');
+  const registerHref = buildAuthQueryPath('/register', cidade, concurso);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,7 +64,14 @@ function LoginContent() {
         return;
       }
 
-      const destino = getPostLoginDestination(nextPath, cidade);
+      await fetch('/api/concursos/matricular', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(concurso ? { concursoSlug: concurso } : {}),
+      }).catch(() => undefined);
+
+      const destino = getPostLoginDestination(nextPath, cidade, concurso);
 
       router.push(destino);
       router.refresh();
@@ -191,7 +202,7 @@ function LoginContent() {
         <p className="pt-1 text-center text-sm font-medium text-slate-400">
           Não tem conta?{' '}
           <Link
-            href={cidade ? `/register?cidade=${encodeURIComponent(cidade)}` : '/register'}
+            href={registerHref}
             className="font-black text-cyan-400 transition-colors hover:text-cyan-300"
           >
             Cadastre-se na AVANT

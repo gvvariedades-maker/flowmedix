@@ -4,7 +4,6 @@ import { useEffect, useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase/client";
-import { ADMIN_EMAIL } from "@/lib/constants";
 import type { UserMetricsResponse } from "@/lib/validations";
 import {
   ArrowLeft,
@@ -59,11 +58,6 @@ export default function AdminMetricasPage() {
 
       if (!user) {
         router.push("/login");
-        return;
-      }
-
-      if (user.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
-        router.push("/estudar");
         return;
       }
 

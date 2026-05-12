@@ -122,6 +122,29 @@ const modulosCacheFn = unstable_cache(
 
 export const getModulosEstudoCached = modulosCacheFn;
 
+const MODULOS_ESTUDO_USER_CACHE_PREFIX = 'modulos-estudo-user-v1';
+
+/**
+ * Catálogo de módulos visíveis ao usuário (matrículas + concurso_modulos).
+ * Usa service role no servidor; não depende de RLS anon.
+ */
+export async function getModulosEstudoForUserCached(userId: string) {
+  const cacheKey = `${MODULOS_ESTUDO_USER_CACHE_PREFIX}-${userId}`;
+
+  return unstable_cache(
+    async () => {
+      const { getAccessibleModulosForUser } = await import('./concursos/entitlements');
+      trackCacheHit(cacheKey);
+      return getAccessibleModulosForUser(userId);
+    },
+    [cacheKey],
+    {
+      ...CACHE_CONFIG.USER,
+      tags: ['modulos-estudo', 'user', `user-${userId}`],
+    },
+  )();
+}
+
 /**
  * Cache para questão individual por slug
  * OTIMIZAÇÃO: Revalida a cada 10 minutos (aumentado de 5 para melhor cache hit rate)
@@ -382,6 +405,8 @@ export async function revalidateCache(tags: string[]) {
  * Funções de invalidação específicas
  */
 export const invalidateModulosCache = () => revalidateCache(['modulos-estudo']);
+export const invalidateUserModulosCache = (userId: string) =>
+  revalidateCache(['modulos-estudo', 'user', `user-${userId}`]);
 export const invalidateQuestoesCache = () => revalidateCache(['questoes']);
 export const invalidateFluxogramasCache = () => revalidateCache(['fluxogramas']);
 export const invalidateHistoricoCache = () => revalidateCache(['historico']);

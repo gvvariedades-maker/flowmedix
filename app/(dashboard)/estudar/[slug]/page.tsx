@@ -5,8 +5,9 @@ import {
   getQuestaoBySlugCached,
   getQuestoesByAssuntoCached,
   getHistoricoQuestoesCached,
-  getModulosEstudoCached,
+  getModulosEstudoForUserCached,
 } from '@/lib/cache';
+import { userHasModuloAccess } from '@/lib/concursos/entitlements';
 import {
   buildVitrineFilteredSlugList,
   type HistoricoQuestaoRow,
@@ -37,16 +38,31 @@ export default async function PaginaQuestaoDinamica({
   const vitrineAssunto = typeof resolvedSearch.assunto === 'string' ? resolvedSearch.assunto.trim() : '';
   const vitrineQ = typeof resolvedSearch.q === 'string' ? resolvedSearch.q.trim() : '';
 
-  // `getServerSession()` é deduplicado por request — layout + page + quaisquer
-  // outros RSC partilham o mesmo resultado, com apenas um `getSession()` real.
-  const [atual, session] = await Promise.all([
-    getQuestaoBySlugCached(resolvedParams.slug),
-    getServerSession(),
-  ]);
+  const session = await getServerSession();
+  const userId = session?.user?.id;
+  const slug = resolvedParams.slug;
+
+  let atual: Awaited<ReturnType<typeof getQuestaoBySlugCached>> = null;
+
+  if (userId) {
+    const hasAccess = await userHasModuloAccess(userId, slug);
+    if (!hasAccess) return notFound();
+
+    const supabaseAuth = await createSupabaseServerClient();
+    const { data, error } = await supabaseAuth
+      .from('modulos_estudo')
+      .select('id, modulo_slug, conteudo_json, banca, modulo_nome, titulo_aula, created_at, avant_codigo')
+      .eq('modulo_slug', slug)
+      .maybeSingle();
+
+    if (error) throw error;
+    atual = data;
+  } else {
+    atual = await getQuestaoBySlugCached(slug);
+  }
 
   if (!atual) return notFound();
 
-  const userId = session?.user?.id;
   const supabase = await createSupabaseServerClient();
 
   let lista: ModuloListItem[] = [];
@@ -127,7 +143,7 @@ export default async function PaginaQuestaoDinamica({
     }
 
     if (hasVitrineFilters) {
-      const modulosAll = await getModulosEstudoCached();
+      const modulosAll = userId ? await getModulosEstudoForUserCached(userId) : [];
       const slugList = buildVitrineFilteredSlugList(
         modulosAll as ModuloEstudoRow[],
         historico as HistoricoQuestaoRow[],
