@@ -8,6 +8,7 @@ jest.mock('@/lib/supabase/server', () => ({
 
 import { createServerSupabase } from '@/lib/supabase/server';
 import {
+  CAMPINA_GRANDE_2026_PRICE_CENTS,
   getAccessibleModuloSlugs,
   getAccessibleModulosForUser,
   getAccessibleModulosForMatriculatedEditalPacote,
@@ -563,7 +564,7 @@ describe('entitlements — matricularPorSlug (cadastro)', () => {
     cargo: 'Técnico de Enfermagem',
     tipo: 'edital',
     status: 'ativo',
-    price_cents: 9900,
+    price_cents: CAMPINA_GRANDE_2026_PRICE_CENTS,
     data_prova: '2026-06-01',
     created_at: '2026-01-01T00:00:00.000Z',
   };

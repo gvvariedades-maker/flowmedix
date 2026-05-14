@@ -14,6 +14,9 @@ export const GERAL_CONCURSO_SLUG = 'geral';
 /** Pacote pago alinhado à banca IDECAN; vínculos errados não entram no catálogo do aluno. */
 export const CAMPINA_GRANDE_2026_SLUG = 'campina-grande-2026';
 
+/** Preço de venda em centavos (BRL). Deve coincidir com `concursos.price_cents` e com o Price no Stripe. */
+export const CAMPINA_GRANDE_2026_PRICE_CENTS = 3700;
+
 function moduloPermitidoNoVinculoConcurso(
   concursoSlug: string,
   banca: string | null | undefined,
