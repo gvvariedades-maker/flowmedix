@@ -79,12 +79,14 @@ function RegisterForm() {
       }
 
       if (data.session) {
-        await fetch('/api/concursos/matricular', {
-          method: 'POST',
-          credentials: 'same-origin',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(concurso ? { concursoSlug: concurso } : {}),
-        }).catch(() => undefined);
+        if (concurso) {
+          await fetch('/api/concursos/matricular', {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ concursoSlug: concurso }),
+          }).catch(() => undefined);
+        }
 
         router.push(destinoEstudar);
         router.refresh();

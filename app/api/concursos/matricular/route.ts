@@ -2,12 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import { ConcursoMatriculaSchema } from '@/lib/validations';
-import {
-  ensureDefaultMatricula,
-  getConcursoBySlug,
-  GERAL_CONCURSO_SLUG,
-  matricularPorSlug,
-} from '@/lib/concursos/entitlements';
+import { matricularPorSlug } from '@/lib/concursos/entitlements';
 import { invalidateUserModulosCache } from '@/lib/cache';
 import { logger } from '@/lib/logger';
 
@@ -57,17 +52,16 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  if (!parsed.data.concursoSlug) {
+    return NextResponse.json({ error: 'Slug do concurso é obrigatório.' }, { status: 400 });
+  }
+
   try {
-    const concurso = parsed.data.concursoSlug
-      ? await matricularPorSlug(session.user.id, parsed.data.concursoSlug, 'cadastro')
-      : await (async () => {
-          await ensureDefaultMatricula(session.user.id);
-          const geral = await getConcursoBySlug(GERAL_CONCURSO_SLUG);
-          if (!geral) {
-            throw new Error('Concurso Geral não encontrado.');
-          }
-          return geral;
-        })();
+    const concurso = await matricularPorSlug(
+      session.user.id,
+      parsed.data.concursoSlug,
+      'cadastro',
+    );
 
     try {
       await invalidateUserModulosCache(session.user.id);

@@ -55,24 +55,32 @@ export interface Exam {
   board: string | null;
   raw_content: string | null;
   created_at: string;
-}export interface ExamModule {
+}
+
+export interface ExamModule {
   id: string;
   exam_id: string;
   module_id: string | null;
   topic_order: number;
   topic_name: string | null;
   created_at: string;
-}export interface ExamTopic {
+}
+
+export interface ExamTopic {
   id: string;
   exam_id: string;
   topic_name: string | null;
   created_at: string;
-}export interface ExamContent {
+}
+
+export interface ExamContent {
   id: string;
   exam_topic_id: string;
   flowchart_id: string;
   created_at: string;
-}export interface ExamPurchase {
+}
+
+export interface ExamPurchase {
   id: string;
   user_id: string;
   exam_id: string;
@@ -82,7 +90,9 @@ export interface Exam {
 export type ConcursoTipo = 'geral' | 'edital';
 export type ConcursoStatus = 'rascunho' | 'ativo' | 'arquivado';
 export type ConcursoModuloOrigem = 'publicacao' | 'manual' | 'regra';
-export type ConcursoMatriculaOrigem = 'cadastro' | 'admin' | 'upgrade';
+export type ConcursoMatriculaOrigem = 'cadastro' | 'admin' | 'upgrade' | 'purchase';
+export type ConcursoMatriculaStatus = 'ativo' | 'expirado';
+export type ConcursoPurchaseStatus = 'pending' | 'paid' | 'refunded';
 
 export interface Concurso {
   id: string;
@@ -95,6 +105,8 @@ export interface Concurso {
   cargo: string | null;
   tipo: ConcursoTipo;
   status: ConcursoStatus;
+  price_cents: number | null;
+  data_prova: string | null;
   created_at: string;
 }
 
@@ -111,5 +123,29 @@ export interface ConcursoMatricula {
   user_id: string;
   concurso_id: string;
   origem: ConcursoMatriculaOrigem;
+  expires_at: string | null;
+  status: ConcursoMatriculaStatus;
   created_at: string;
+}
+
+export interface ConcursoPurchase {
+  id: string;
+  user_id: string;
+  concurso_id: string;
+  status: ConcursoPurchaseStatus;
+  gateway: string;
+  gateway_payment_id: string | null;
+  amount: number;
+  currency: string;
+  created_at: string;
+  paid_at: string | null;
+}
+
+/** Acessos a produtos avulsos (ex.: pacote Campina Grande) após checkout Stripe. */
+export interface Acesso {
+  id: string;
+  user_id: string;
+  produto: string;
+  criado_em: string;
+  stripe_checkout_session_id: string | null;
 }

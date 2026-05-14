@@ -4,7 +4,7 @@ import { getServerUser } from '@/lib/supabase/server-auth';
 import VitrineClient from '@/components/vitrine/VitrineClient';
 import { logger } from '@/lib/logger';
 import {
-  getModulosEstudoForUserCached,
+  getModulosEstudoVitrineForUserCached,
   getHistoricoQuestoesCached,
 } from '@/lib/cache';
 import { isDataServiceUnavailableError } from '@/lib/dataServiceError';
@@ -38,7 +38,7 @@ export default async function VitrinePage() {
   let historicoData: unknown[] = [];
 
   try {
-    modulosData = await getModulosEstudoForUserCached(userId);
+    modulosData = await getModulosEstudoVitrineForUserCached(userId);
   } catch (e) {
     if (!isDataServiceUnavailableError(e)) throw e;
     logger.warn('Vitrine: catálogo indisponível — fallback para lista vazia', {

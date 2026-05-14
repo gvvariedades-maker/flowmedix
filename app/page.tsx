@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { redirect } from 'next/navigation';
 import { getServerSession } from '@/lib/supabase/server-auth';
+import { userHasActiveMatricula } from '@/lib/concursos/entitlements';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
 
 /** Chunk separado evita erro do Turbopack ao misturar grafo de módulos com `not-found`. */
@@ -57,8 +58,9 @@ export const metadata: Metadata = {
 export default async function IndexPage() {
   const session = await getServerSession();
 
-  if (session) {
-    redirect('/estudar');
+  if (session?.user?.id) {
+    const hasActiveMatricula = await userHasActiveMatricula(session.user.id).catch(() => false);
+    redirect(hasActiveMatricula ? '/estudar' : '/planos');
   }
 
   return <LandingHome />;

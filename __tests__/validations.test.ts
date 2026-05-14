@@ -15,9 +15,11 @@ import {
   payloadContainsTecconcursosReference,
   TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE,
   ConcursoMatriculaSchema,
+  CriarSessaoPagamentoSchema,
   ConcursoCreateSchema,
   ConcursoRegraModulosSchema,
 } from '../lib/validations';
+import type { CriarSessaoPagamentoInput } from '../lib/validations';
 
 describe('Validação de Questões', () => {
   describe('QuestaoCompletaSchema', () => {
@@ -470,7 +472,7 @@ describe('Validação de Questões', () => {
 });
 
 describe('Concursos e matrículas', () => {
-  it('aceita matrícula sem slug (fallback Geral)', () => {
+  it('aceita payload sem slug no schema (rota exige slug na matrícula)', () => {
     expect(ConcursoMatriculaSchema.safeParse({}).success).toBe(true);
   });
 
@@ -481,6 +483,16 @@ describe('Concursos e matrículas', () => {
     expect(ConcursoMatriculaSchema.safeParse({ concursoSlug: 'Slug Inválido' }).success).toBe(
       false,
     );
+  });
+
+  it('valida payload de criação de sessão de pagamento', () => {
+    const payload: CriarSessaoPagamentoInput = { concurso_slug: 'campina-grande-2026' };
+    expect(CriarSessaoPagamentoSchema.safeParse(payload).success).toBe(true);
+    expect(CriarSessaoPagamentoSchema.safeParse({ concurso_slug: 'Slug Inválido' }).success).toBe(
+      false,
+    );
+    expect(CriarSessaoPagamentoSchema.safeParse({}).success).toBe(false);
+    expect(CriarSessaoPagamentoSchema.safeParse({ concurso_slug: 'geral' }).success).toBe(true);
   });
 
   it('valida criação de concurso', () => {

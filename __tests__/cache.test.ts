@@ -5,7 +5,7 @@
  */
 jest.mock('next/cache', () => ({
   unstable_cache: (fn: () => Promise<unknown>) => fn,
-  revalidateTag: () => {},
+  revalidateTag: jest.fn(),
 }));
 
 const mockSupabaseChain = {
@@ -33,7 +33,9 @@ import {
   getQuestaoBySlugCached,
   getHistoricoQuestoesCached,
   invalidateModulosCache,
+  invalidateUserModulosCache,
 } from '@/lib/cache';
+import { revalidateTag } from 'next/cache';
 
 describe('Sistema de Cache', () => {
   beforeAll(() => {
@@ -69,8 +71,18 @@ describe('Sistema de Cache', () => {
 
   describe('invalidateModulosCache', () => {
     it('deve invalidar cache sem erros', async () => {
-      // Deve executar sem erros
       await expect(invalidateModulosCache()).resolves.not.toThrow();
+      expect(revalidateTag).toHaveBeenCalledWith('modulos-estudo', { expire: 0 });
+    });
+  });
+
+  describe('invalidateUserModulosCache', () => {
+    it('invalida tags globais e do usuário', async () => {
+      await invalidateUserModulosCache('user-42');
+
+      expect(revalidateTag).toHaveBeenCalledWith('modulos-estudo', { expire: 0 });
+      expect(revalidateTag).toHaveBeenCalledWith('user', { expire: 0 });
+      expect(revalidateTag).toHaveBeenCalledWith('user-user-42', { expire: 0 });
     });
   });
 });

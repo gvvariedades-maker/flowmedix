@@ -147,6 +147,31 @@ export async function getModulosEstudoForUserCached(userId: string) {
   )();
 }
 
+const MODULOS_ESTUDO_VITRINE_USER_CACHE_PREFIX = 'modulos-estudo-vitrine-user-v1';
+
+/**
+ * Catálogo da vitrine `/estudar` e lista por assunto no player: pacote do edital matriculado
+ * quando existir; caso contrário, união completa (`getModulosEstudoForUserCached`).
+ */
+export async function getModulosEstudoVitrineForUserCached(userId: string) {
+  const cacheKey = `${MODULOS_ESTUDO_VITRINE_USER_CACHE_PREFIX}-${userId}`;
+
+  return unstable_cache(
+    async () => {
+      const { getAccessibleModulosForMatriculatedEditalPacote } = await import(
+        './concursos/entitlements'
+      );
+      trackCacheHit(cacheKey);
+      return getAccessibleModulosForMatriculatedEditalPacote(userId);
+    },
+    [cacheKey],
+    {
+      ...CACHE_CONFIG.USER,
+      tags: ['modulos-estudo', 'user', `user-${userId}`],
+    },
+  )();
+}
+
 /**
  * Cache para questão individual por slug
  * OTIMIZAÇÃO: Revalida a cada 10 minutos (aumentado de 5 para melhor cache hit rate)

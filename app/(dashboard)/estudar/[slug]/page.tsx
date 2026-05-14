@@ -5,11 +5,12 @@ import {
   getQuestaoBySlugCached,
   getQuestoesByAssuntoCached,
   getHistoricoQuestoesCached,
-  getModulosEstudoForUserCached,
+  getModulosEstudoVitrineForUserCached,
 } from '@/lib/cache';
 import { userHasModuloAccess } from '@/lib/concursos/entitlements';
 import {
   buildVitrineFilteredSlugList,
+  listaModulosQuestaoPorTituloAulaNoCatalogo,
   type HistoricoQuestaoRow,
   type ModuloEstudoRow,
 } from '@/lib/vitrineFilters';
@@ -130,8 +131,20 @@ export default async function PaginaQuestaoDinamica({
         .map((h) => h.modulo_slug as string),
     );
 
+    let modulosCatalogoUsuario: ModuloEstudoRow[] = [];
+    if (userId) {
+      try {
+        modulosCatalogoUsuario = (await getModulosEstudoVitrineForUserCached(userId)) as ModuloEstudoRow[];
+      } catch (e) {
+        if (!isDataServiceUnavailableError(e)) throw e;
+      }
+    }
+
     async function listaPorAssunto(): Promise<ModuloListItem[]> {
       if (!tituloAula) return [];
+      if (userId && modulosCatalogoUsuario.length > 0) {
+        return listaModulosQuestaoPorTituloAulaNoCatalogo(modulosCatalogoUsuario, tituloAula);
+      }
       try {
         return (await getQuestoesByAssuntoCached(tituloAula)) as ModuloListItem[];
       } catch (e) {
@@ -143,9 +156,8 @@ export default async function PaginaQuestaoDinamica({
     }
 
     if (hasVitrineFilters) {
-      const modulosAll = userId ? await getModulosEstudoForUserCached(userId) : [];
       const slugList = buildVitrineFilteredSlugList(
-        modulosAll as ModuloEstudoRow[],
+        modulosCatalogoUsuario,
         historico as HistoricoQuestaoRow[],
         {
           banca: vitrineBanca || undefined,

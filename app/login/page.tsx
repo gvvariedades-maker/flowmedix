@@ -64,12 +64,14 @@ function LoginContent() {
         return;
       }
 
-      await fetch('/api/concursos/matricular', {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(concurso ? { concursoSlug: concurso } : {}),
-      }).catch(() => undefined);
+      if (concurso) {
+        await fetch('/api/concursos/matricular', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ concursoSlug: concurso }),
+        }).catch(() => undefined);
+      }
 
       const destino = getPostLoginDestination(nextPath, cidade, concurso);
 

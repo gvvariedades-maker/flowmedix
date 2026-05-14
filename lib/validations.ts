@@ -430,6 +430,10 @@ export const ConcursoMatriculaSchema = z.object({
   concursoSlug: ConcursoSlugSchema.optional(),
 });
 
+export const CriarSessaoPagamentoSchema = z.object({
+  concurso_slug: ConcursoSlugSchema,
+});
+
 export const ConcursoCreateSchema = z.object({
   slug: ConcursoSlugSchema,
   nome: z.string().trim().min(2).max(200),
@@ -445,6 +449,11 @@ export const ConcursoCreateSchema = z.object({
 export const ConcursoAdminMatriculaSchema = z.object({
   userId: z.string().uuid('ID do usuário inválido'),
   concursoId: z.string().uuid('ID do concurso inválido'),
+});
+
+/** Revogação de acesso (matrícula administrativa ou outra). */
+export const ConcursoAdminMatriculaRevogarSchema = z.object({
+  userId: z.string().uuid('ID do usuário inválido'),
 });
 
 export const ConcursoModuloLinkSchema = z.object({
@@ -531,6 +540,7 @@ export type QuestaoCompletaInput = z.infer<typeof QuestaoCompletaSchema>;
 export type EnrollmentDeleteInput = z.infer<typeof EnrollmentDeleteSchema>;
 export type ResolveUserInput = z.infer<typeof ResolveUserSchema>;
 export type ConcursoMatriculaInput = z.infer<typeof ConcursoMatriculaSchema>;
+export type CriarSessaoPagamentoInput = z.infer<typeof CriarSessaoPagamentoSchema>;
 export type ConcursoCreateInput = z.infer<typeof ConcursoCreateSchema>;
 export type ConcursoAdminMatriculaInput = z.infer<typeof ConcursoAdminMatriculaSchema>;
 export type ConcursoModuloLinkInput = z.infer<typeof ConcursoModuloLinkSchema>;

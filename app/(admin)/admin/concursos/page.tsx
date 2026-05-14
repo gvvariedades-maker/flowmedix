@@ -304,6 +304,11 @@ export default function AdminConcursosPage() {
 
       <section className="mb-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 className="mb-4 text-lg font-black text-slate-900">Matrícula manual</h2>
+        <p className="mb-4 text-sm text-slate-500">
+          Para <strong>listar matriculados</strong> e <strong>revogar acesso</strong>, abra a página do concurso em{' '}
+          <span className="font-mono text-slate-700">/admin/concursos/[id]/matriculas</span> (link em cada concurso na
+          lista abaixo). Aqui você pode matricular em um passo sem abrir essa página.
+        </p>
         <div className="grid gap-4 md:grid-cols-[1fr_auto]">
           <input
             value={matricula.email}
@@ -441,9 +446,17 @@ export default function AdminConcursosPage() {
                     {concurso.slug} · {concurso.tipo} · {concurso.status}
                   </p>
                 </div>
-                <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
-                  {concurso.banca || 'Sem banca'}
-                </span>
+                <div className="flex flex-wrap items-center gap-2">
+                  <Link
+                    href={`/admin/concursos/${concurso.id}/matriculas`}
+                    className="rounded-xl bg-indigo-600 px-3 py-2 text-xs font-black uppercase tracking-widest text-white hover:bg-indigo-700"
+                  >
+                    Matrículas
+                  </Link>
+                  <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
+                    {concurso.banca || 'Sem banca'}
+                  </span>
+                </div>
               </div>
             ))}
           </div>

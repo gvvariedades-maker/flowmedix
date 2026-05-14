@@ -1,0 +1,22 @@
+import type Stripe from 'stripe';
+import type { SupabaseClient } from '@supabase/supabase-js';
+import { processStripeWebhookEvent, type WebhookProcessResult } from '@/lib/pagamentos/webhook';
+import { processCampinaGrandeCheckoutCompleted } from '@/lib/campina/webhook';
+import { CAMPINA_GRANDE_PRODUTO_ID } from '@/lib/campina/constants';
+
+/**
+ * Encaminha eventos Stripe: checkout Campina Grande ou fluxo de concursos existente.
+ */
+export async function dispatchStripeWebhookEvent(
+  supabase: SupabaseClient,
+  event: Stripe.Event,
+): Promise<WebhookProcessResult> {
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data.object as Stripe.Checkout.Session;
+    if (session.metadata?.produto === CAMPINA_GRANDE_PRODUTO_ID) {
+      return processCampinaGrandeCheckoutCompleted(supabase, session);
+    }
+  }
+
+  return processStripeWebhookEvent(supabase, event);
+}

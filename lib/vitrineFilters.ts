@@ -158,6 +158,34 @@ export function orderedSlugsFromVitrineGrouping(filteredModulos: ModuloComStats[
   return slugs;
 }
 
+/**
+ * Navegação entre questões do mesmo assunto, restrita ao catálogo que o aluno pode ver
+ * (matrículas / `concurso_modulos`). Evita misturar outras bancas com o mesmo `titulo_aula`
+ * na query global `getQuestoesByAssuntoCached`.
+ */
+export function listaModulosQuestaoPorTituloAulaNoCatalogo(
+  catalogoAcessivel: ModuloEstudoRow[],
+  tituloAula: string,
+): { id: string; modulo_slug: string }[] {
+  if (!tituloAula) return [];
+  const rows = catalogoAcessivel.filter((m) => (m.titulo_aula ?? '') === tituloAula);
+  rows.sort((a, b) =>
+    compareModuloCurriculum(
+      {
+        created_at: a.created_at,
+        avant_codigo: a.avant_codigo,
+        modulo_slug: a.modulo_slug,
+      },
+      {
+        created_at: b.created_at,
+        avant_codigo: b.avant_codigo,
+        modulo_slug: b.modulo_slug,
+      },
+    ),
+  );
+  return rows.map((m) => ({ id: m.id, modulo_slug: m.modulo_slug }));
+}
+
 /** Lista ordenada de slugs para o player quando há filtro de vitrine na URL. */
 export function buildVitrineFilteredSlugList(
   modulos: ModuloEstudoRow[],

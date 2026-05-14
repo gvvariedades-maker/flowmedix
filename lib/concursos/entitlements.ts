@@ -1,25 +1,42 @@
 import { createServerSupabase } from '@/lib/supabase/server';
 import { logger } from '@/lib/logger';
+import type {
+  Concurso,
+  ConcursoMatriculaOrigem,
+  ConcursoMatriculaStatus,
+  ConcursoModuloOrigem,
+  ConcursoStatus,
+  ConcursoTipo,
+} from '@/types/database';
 
 export const GERAL_CONCURSO_SLUG = 'geral';
 
-export type ConcursoTipo = 'geral' | 'edital';
-export type ConcursoStatus = 'rascunho' | 'ativo' | 'arquivado';
-export type ConcursoModuloOrigem = 'publicacao' | 'manual' | 'regra';
-export type ConcursoMatriculaOrigem = 'cadastro' | 'admin' | 'upgrade';
+/** Pacote pago alinhado à banca IDECAN; vínculos errados não entram no catálogo do aluno. */
+export const CAMPINA_GRANDE_2026_SLUG = 'campina-grande-2026';
 
-export interface ConcursoRow {
-  id: string;
-  slug: string;
-  nome: string;
-  cidade: string | null;
-  orgao: string | null;
-  banca: string | null;
-  ano: number | null;
-  cargo: string | null;
-  tipo: ConcursoTipo;
-  status: ConcursoStatus;
-  created_at: string;
+function moduloPermitidoNoVinculoConcurso(
+  concursoSlug: string,
+  banca: string | null | undefined,
+): boolean {
+  if (concursoSlug !== CAMPINA_GRANDE_2026_SLUG) return true;
+  return (banca ?? '').toLowerCase().includes('idecan');
+}
+
+export type {
+  Concurso,
+  ConcursoMatriculaOrigem,
+  ConcursoMatriculaStatus,
+  ConcursoModuloOrigem,
+  ConcursoStatus,
+  ConcursoTipo,
+};
+
+export type ConcursoRow = Concurso;
+
+export interface ConcursoMatriculaListRow {
+  concurso_id: string;
+  status: ConcursoMatriculaStatus | string;
+  expires_at: string | null;
 }
 
 export interface ModuloEstudoListRow {
@@ -42,9 +59,12 @@ const MODULO_ID_LOOKUP_CHUNK = 80;
 const CONCURSO_ID_LOOKUP_CHUNK = 80;
 
 type ConcursoModuloWithModuloRow = {
+  concurso_id: string;
   modulo_id: string;
   modulos_estudo: ModuloEstudoListRow | ModuloEstudoListRow[] | null;
 };
+
+type PendingModuloPorConcurso = { concursoId: string; moduloId: string };
 
 function chunkArray<T>(arr: T[], size: number): T[][] {
   const out: T[][] = [];
@@ -92,11 +112,20 @@ function modulosToSlugSet(modulos: ModuloEstudoListRow[]): Set<string> {
   return slugs;
 }
 
-export async function getMatriculatedConcursoIds(userId: string): Promise<string[]> {
+export function isActiveMatriculaRow(matricula: {
+  status?: string | null;
+  expires_at?: string | null;
+}): boolean {
+  if (matricula.status && matricula.status !== 'ativo') return false;
+  if (!matricula.expires_at) return true;
+  return new Date(matricula.expires_at).getTime() > Date.now();
+}
+
+async function listMatriculaRowsForUser(userId: string): Promise<ConcursoMatriculaListRow[]> {
   const supabase = await createServerSupabase();
   const { data, error } = await supabase
     .from('concurso_matriculas')
-    .select('concurso_id')
+    .select('concurso_id, status, expires_at')
     .eq('user_id', userId);
 
   if (error) {
@@ -104,7 +133,26 @@ export async function getMatriculatedConcursoIds(userId: string): Promise<string
     throw error;
   }
 
-  return (data ?? []).map((row) => row.concurso_id);
+  return (data ?? []) as ConcursoMatriculaListRow[];
+}
+
+export async function getMatriculatedConcursoIds(userId: string): Promise<string[]> {
+  const rows = await listMatriculaRowsForUser(userId);
+  return rows.map((row) => row.concurso_id);
+}
+
+export async function getActiveMatriculatedConcursoIds(userId: string): Promise<string[]> {
+  const rows = await listMatriculaRowsForUser(userId);
+  return rows.filter(isActiveMatriculaRow).map((row) => row.concurso_id);
+}
+
+export async function userHasActiveMatricula(
+  userId: string,
+  concursoId?: string,
+): Promise<boolean> {
+  const activeIds = await getActiveMatriculatedConcursoIds(userId);
+  if (concursoId) return activeIds.includes(concursoId);
+  return activeIds.length > 0;
 }
 
 export async function getMatriculatedConcursos(userId: string): Promise<ConcursoRow[]> {
@@ -112,7 +160,7 @@ export async function getMatriculatedConcursos(userId: string): Promise<Concurso
   const { data, error } = await supabase
     .from('concurso_matriculas')
     .select(
-      'concurso:concursos(id, slug, nome, cidade, orgao, banca, ano, cargo, tipo, status, created_at)',
+      'status, expires_at, concurso:concursos(id, slug, nome, cidade, orgao, banca, ano, cargo, tipo, status, created_at)',
     )
     .eq('user_id', userId);
 
@@ -123,6 +171,8 @@ export async function getMatriculatedConcursos(userId: string): Promise<Concurso
 
   const rows: ConcursoRow[] = [];
   for (const item of data ?? []) {
+    if (!isActiveMatriculaRow(item)) continue;
+
     const concurso = item.concurso as ConcursoRow | ConcursoRow[] | null;
     if (Array.isArray(concurso)) {
       rows.push(...concurso);
@@ -137,7 +187,9 @@ export async function getConcursoBySlug(slug: string): Promise<ConcursoRow | nul
   const supabase = await createServerSupabase();
   const { data, error } = await supabase
     .from('concursos')
-    .select('id, slug, nome, cidade, orgao, banca, ano, cargo, tipo, status, created_at')
+    .select(
+      'id, slug, nome, cidade, orgao, banca, ano, cargo, tipo, status, price_cents, data_prova, created_at',
+    )
     .eq('slug', slug)
     .maybeSingle();
 
@@ -178,10 +230,43 @@ export async function matricularUsuarioEmConcurso(
   }
 }
 
-export async function ensureDefaultMatricula(userId: string): Promise<void> {
-  const matriculas = await getMatriculatedConcursoIds(userId);
-  if (matriculas.length > 0) return;
-  await matricularUsuarioEmConcurso(userId, await getDefaultConcursoId(), 'cadastro');
+function isPaidConcurso(concurso: ConcursoRow): boolean {
+  return (concurso.price_cents ?? 0) > 0;
+}
+
+async function userHasConfirmedPurchase(userId: string, concursoId: string): Promise<boolean> {
+  const supabase = await createServerSupabase();
+  const { data, error } = await supabase
+    .from('concurso_purchases')
+    .select('id')
+    .eq('user_id', userId)
+    .eq('concurso_id', concursoId)
+    .eq('status', 'paid')
+    .limit(1)
+    .maybeSingle();
+
+  if (error) {
+    logger.error('Falha ao verificar compra confirmada do concurso', error, { userId, concursoId });
+    throw error;
+  }
+
+  return Boolean(data);
+}
+
+async function assertCadastroMatriculaAllowed(
+  userId: string,
+  concurso: ConcursoRow,
+): Promise<void> {
+  if (!isPaidConcurso(concurso)) return;
+
+  const [hasPurchase, alreadyEnrolled] = await Promise.all([
+    userHasConfirmedPurchase(userId, concurso.id),
+    userHasActiveMatricula(userId, concurso.id),
+  ]);
+
+  if (!hasPurchase && !alreadyEnrolled) {
+    throw new Error('Este concurso exige compra. Conclua o pagamento antes de se matricular.');
+  }
 }
 
 export async function matricularPorSlug(
@@ -189,13 +274,19 @@ export async function matricularPorSlug(
   concursoSlug: string | null | undefined,
   origem: ConcursoMatriculaOrigem = 'cadastro',
 ): Promise<ConcursoRow> {
-  const slug = concursoSlug?.trim() || GERAL_CONCURSO_SLUG;
+  const slug = concursoSlug?.trim();
+  if (!slug) {
+    throw new Error('Slug do concurso é obrigatório.');
+  }
   const concurso = await getConcursoBySlug(slug);
   if (!concurso) {
     throw new Error(`Concurso não encontrado: ${slug}`);
   }
   if (concurso.status !== 'ativo') {
     throw new Error('Concurso indisponível para matrícula.');
+  }
+  if (origem === 'cadastro') {
+    await assertCadastroMatriculaAllowed(userId, concurso);
   }
   await matricularUsuarioEmConcurso(userId, concurso.id, origem);
   return concurso;
@@ -256,11 +347,29 @@ async function collectModulosFromMatriculatedConcursos(
   const collected: ModuloEstudoListRow[] = [];
   let offset = 0;
 
+  const slugByConcursoId = new Map<string, string>();
+  if (concursoIds.length) {
+    const { data: concursosRows, error: concursosError } = await supabase
+      .from('concursos')
+      .select('id, slug')
+      .in('id', concursoIds);
+
+    if (concursosError) {
+      logger.error('Falha ao resolver slugs dos concursos matriculados', concursosError, { userId });
+      throw concursosError;
+    }
+
+    for (const row of concursosRows ?? []) {
+      const r = row as { id: string; slug: string };
+      if (r?.id && r?.slug) slugByConcursoId.set(r.id, r.slug);
+    }
+  }
+
   while (true) {
     const { data, error } = await supabase
       .from('concurso_modulos')
       .select(
-        'modulo_id, modulos_estudo(id, modulo_slug, modulo_nome, titulo_aula, banca, created_at, avant_codigo)',
+        'concurso_id, modulo_id, modulos_estudo(id, modulo_slug, modulo_nome, titulo_aula, banca, created_at, avant_codigo)',
       )
       .in('concurso_id', concursoIds)
       .order('modulo_id', { ascending: true })
@@ -274,24 +383,33 @@ async function collectModulosFromMatriculatedConcursos(
     const links = (data ?? []) as ConcursoModuloWithModuloRow[];
     if (!links.length) break;
 
-    const missingModuloIds: string[] = [];
+    const pending: PendingModuloPorConcurso[] = [];
 
     for (const link of links) {
+      const concursoSlug = slugByConcursoId.get(link.concurso_id) ?? '';
       const modulo = pickEmbeddedModulo(link);
       if (modulo) {
-        collected.push(modulo);
+        if (moduloPermitidoNoVinculoConcurso(concursoSlug, modulo.banca)) {
+          collected.push(modulo);
+        }
       } else if (link.modulo_id) {
-        missingModuloIds.push(link.modulo_id);
+        pending.push({ concursoId: link.concurso_id, moduloId: link.modulo_id });
       }
     }
 
-    if (missingModuloIds.length) {
-      const fallback = await fetchModulosEstudoByIdsChunked(
-        supabase,
-        [...new Set(missingModuloIds)],
-        userId,
-      );
-      collected.push(...fallback);
+    if (pending.length) {
+      const uniqueIds = [...new Set(pending.map((p) => p.moduloId))];
+      const fallback = await fetchModulosEstudoByIdsChunked(supabase, uniqueIds, userId);
+      const byId = new Map(fallback.map((m) => [m.id, m]));
+
+      for (const { concursoId, moduloId } of pending) {
+        const modulo = byId.get(moduloId);
+        if (!modulo) continue;
+        const concursoSlug = slugByConcursoId.get(concursoId) ?? '';
+        if (moduloPermitidoNoVinculoConcurso(concursoSlug, modulo.banca)) {
+          collected.push(modulo);
+        }
+      }
     }
 
     if (links.length < CONCURSO_MODULOS_PAGE_SIZE) break;
@@ -302,14 +420,44 @@ async function collectModulosFromMatriculatedConcursos(
 }
 
 export async function getAccessibleModulosForUser(userId: string): Promise<ModuloEstudoListRow[]> {
-  let concursoIds = await getMatriculatedConcursoIds(userId);
-  if (!concursoIds.length) {
-    await ensureDefaultMatricula(userId);
-    concursoIds = await getMatriculatedConcursoIds(userId);
-  }
+  const concursoIds = await getActiveMatriculatedConcursoIds(userId);
   if (!concursoIds.length) return [];
 
   const collected = await collectModulosFromMatriculatedConcursos(userId, concursoIds);
+  return finalizeAccessibleModulos(collected);
+}
+
+/**
+ * Catálogo para vitrine e navegação no player alinhado à "turma exclusiva":
+ * se o aluno tem matrícula em concurso tipo `edital`, mostra só módulos desse pacote
+ * (não mistura com o catálogo `geral`). Sem edital ativo → mesmo conjunto que `getAccessibleModulosForUser`.
+ */
+export async function getAccessibleModulosForMatriculatedEditalPacote(
+  userId: string,
+): Promise<ModuloEstudoListRow[]> {
+  const concursoIds = await getActiveMatriculatedConcursoIds(userId);
+  if (!concursoIds.length) return [];
+
+  const supabase = await createServerSupabase();
+  const { data: concursosRows, error: concursosError } = await supabase
+    .from('concursos')
+    .select('id, tipo, slug')
+    .in('id', concursoIds);
+
+  if (concursosError) {
+    logger.error('Falha ao resolver tipos dos concursos matriculados', concursosError, { userId });
+    throw concursosError;
+  }
+
+  const edital = (concursosRows ?? []).find((c) => String((c as { tipo?: string }).tipo) === 'edital') as
+    | { id: string }
+    | undefined;
+
+  if (!edital?.id) {
+    return getAccessibleModulosForUser(userId);
+  }
+
+  const collected = await collectModulosFromMatriculatedConcursos(userId, [edital.id]);
   return finalizeAccessibleModulos(collected);
 }
 
@@ -364,7 +512,7 @@ export async function userHasModuloAccess(
   }
   if (!modulo) return false;
 
-  const concursoIds = await getMatriculatedConcursoIds(userId);
+  const concursoIds = await getActiveMatriculatedConcursoIds(userId);
   if (!concursoIds.length) return false;
 
   return isModuloLinkedToMatriculatedConcursos(
@@ -377,7 +525,7 @@ export async function userHasModuloAccess(
 }
 
 export async function getAccessibleModuloSlugs(userId: string): Promise<Set<string>> {
-  const concursoIds = await getMatriculatedConcursoIds(userId);
+  const concursoIds = await getActiveMatriculatedConcursoIds(userId);
   if (!concursoIds.length) return new Set();
 
   const collected = await collectModulosFromMatriculatedConcursos(userId, concursoIds);

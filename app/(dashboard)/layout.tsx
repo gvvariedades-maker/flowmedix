@@ -1,6 +1,7 @@
+import { redirect } from 'next/navigation';
 import { getServerSession } from '@/lib/supabase/server-auth';
 import { ADMIN_EMAIL } from '@/lib/constants';
-import { getMatriculatedConcursos } from '@/lib/concursos/entitlements';
+import { getMatriculatedConcursos, userHasActiveMatricula } from '@/lib/concursos/entitlements';
 import DashboardShell from './DashboardShell';
 
 function displayNameFromSessionUser(
@@ -19,6 +20,14 @@ export default async function DashboardLayout({ children }: { children: React.Re
   const session = await getServerSession();
   const email = session?.user?.email ?? null;
   const isAdmin = Boolean(email && ADMIN_EMAIL && email.toLowerCase() === ADMIN_EMAIL.toLowerCase());
+
+  if (session?.user?.id) {
+    const hasActiveMatricula = await userHasActiveMatricula(session.user.id).catch(() => false);
+    if (!hasActiveMatricula) {
+      redirect('/planos');
+    }
+  }
+
   const matriculatedConcursos = session?.user?.id
     ? await getMatriculatedConcursos(session.user.id).catch(() => [])
     : [];
