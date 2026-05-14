@@ -55,6 +55,11 @@ export function ComprarConcursoCta({
         return;
       }
 
+      if (response.status === 400 && payload.redirectUrl) {
+        router.push(payload.redirectUrl);
+        return;
+      }
+
       if (!response.ok) {
         setError(payload.error || 'Não foi possível iniciar o pagamento.');
         return;

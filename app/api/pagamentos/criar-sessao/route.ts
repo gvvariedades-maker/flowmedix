@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
 import { CriarSessaoPagamentoSchema } from '@/lib/validations';
 import {
+  CAMPINA_GRANDE_2026_SLUG,
+  CAMPINA_GRANDE_LANDING_HREF,
   GERAL_CONCURSO_SLUG,
   getConcursoBySlug,
   isActiveMatriculaRow,
@@ -39,6 +41,16 @@ export async function POST(request: NextRequest) {
   const concursoSlug = parsed.data.concurso_slug;
   if (concursoSlug === GERAL_CONCURSO_SLUG) {
     return NextResponse.json({ error: 'Concurso indisponível para compra.' }, { status: 400 });
+  }
+
+  if (concursoSlug === CAMPINA_GRANDE_2026_SLUG) {
+    return NextResponse.json(
+      {
+        error: 'Este edital é adquirido na página do pacote Campina Grande.',
+        redirectUrl: CAMPINA_GRANDE_LANDING_HREF,
+      },
+      { status: 400 },
+    );
   }
 
   let concurso;

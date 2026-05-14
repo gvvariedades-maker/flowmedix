@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import Link from 'next/link';
-import { notFound, redirect } from 'next/navigation';
+import { notFound, permanentRedirect, redirect } from 'next/navigation';
 import {
   ArrowRight,
   BookOpen,
@@ -13,6 +13,8 @@ import {
 import { ComprarConcursoCta } from '@/components/concursos/ComprarConcursoCta';
 import { PublicDarkSiteHeader } from '@/components/layout/PublicDarkSiteHeader';
 import {
+  CAMPINA_GRANDE_2026_SLUG,
+  CAMPINA_GRANDE_LANDING_HREF,
   GERAL_CONCURSO_SLUG,
   getConcursoBySlug,
   userHasActiveMatricula,
@@ -100,6 +102,9 @@ function readSearchFlag(
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
+  if (slug === CAMPINA_GRANDE_2026_SLUG) {
+    permanentRedirect(CAMPINA_GRANDE_LANDING_HREF);
+  }
   if (slug === GERAL_CONCURSO_SLUG) {
     return { title: 'Concurso indisponível | AVANT' };
   }
@@ -152,6 +157,10 @@ function MetaCard({
 
 export default async function ComprarConcursoPage({ params, searchParams }: PageProps) {
   const [{ slug }, resolvedSearch] = await Promise.all([params, searchParams]);
+
+  if (slug === CAMPINA_GRANDE_2026_SLUG) {
+    permanentRedirect(CAMPINA_GRANDE_LANDING_HREF);
+  }
 
   if (slug === GERAL_CONCURSO_SLUG) {
     notFound();
