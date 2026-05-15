@@ -446,6 +446,27 @@ export const ConcursoCreateSchema = z.object({
   status: z.enum(['rascunho', 'ativo', 'arquivado']).default('rascunho'),
 });
 
+/** Payload admin (criação/edição no builder); `status` no create deve ser sobrescrito para `rascunho` no servidor. */
+export const ConcursoAdminUpsertSchema = ConcursoCreateSchema.extend({
+  descricao: z.preprocess(
+    (v) => (v === '' ? null : v),
+    z.string().trim().max(20_000).nullable().optional(),
+  ),
+  destaque: z.preprocess(
+    (v) => (v === '' ? null : v),
+    z.string().trim().max(500).nullable().optional(),
+  ),
+  price_cents: z.number().int().min(0).nullable().optional(),
+  data_prova: z.preprocess(
+    (v) => (v === '' ? null : v),
+    z
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2}$/, 'Data da prova inválida (use YYYY-MM-DD)')
+      .nullable()
+      .optional(),
+  ),
+});
+
 export const ConcursoAdminMatriculaSchema = z.object({
   userId: z.string().uuid('ID do usuário inválido'),
   concursoId: z.string().uuid('ID do concurso inválido'),
@@ -542,6 +563,7 @@ export type ResolveUserInput = z.infer<typeof ResolveUserSchema>;
 export type ConcursoMatriculaInput = z.infer<typeof ConcursoMatriculaSchema>;
 export type CriarSessaoPagamentoInput = z.infer<typeof CriarSessaoPagamentoSchema>;
 export type ConcursoCreateInput = z.infer<typeof ConcursoCreateSchema>;
+export type ConcursoAdminUpsertInput = z.infer<typeof ConcursoAdminUpsertSchema>;
 export type ConcursoAdminMatriculaInput = z.infer<typeof ConcursoAdminMatriculaSchema>;
 export type ConcursoModuloLinkInput = z.infer<typeof ConcursoModuloLinkSchema>;
 export type ConcursoRegraModulosInput = z.infer<typeof ConcursoRegraModulosSchema>;

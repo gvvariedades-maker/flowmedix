@@ -3,7 +3,7 @@ import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import { createServerSupabase } from '@/lib/supabase/server';
 import { getAdminEmail } from '@/lib/constants';
-import { ConcursoCreateSchema } from '@/lib/validations';
+import { ConcursoAdminUpsertSchema } from '@/lib/validations';
 import { logger } from '@/lib/logger';
 
 async function requireAdmin() {
@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Body JSON inválido' }, { status: 400 });
   }
 
-  const parsed = ConcursoCreateSchema.safeParse(body);
+  const parsed = ConcursoAdminUpsertSchema.safeParse(body);
   if (!parsed.success) {
     return NextResponse.json(
       { error: 'Dados inválidos', details: parsed.error.issues },
@@ -72,10 +72,14 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  const insertRow = { ...parsed.data, status: 'rascunho' as const };
+
   const { data, error } = await auth.admin
     .from('concursos')
-    .insert(parsed.data)
-    .select('id, slug, nome, cidade, orgao, banca, ano, cargo, tipo, status, created_at')
+    .insert(insertRow)
+    .select(
+      'id, slug, nome, cidade, orgao, banca, ano, cargo, tipo, status, price_cents, data_prova, descricao, destaque, created_at',
+    )
     .single();
 
   if (error) {

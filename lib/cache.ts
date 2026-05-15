@@ -13,6 +13,7 @@ import { cache as cacheByRequest } from 'react';
 import { logger } from './logger';
 import { DataServiceUnavailableError } from './dataServiceError';
 import { withPostgrestReadRetry } from './supabaseReadRetry';
+import type { Concurso } from '@/types/database';
 
 // Cliente Supabase SEM cookies - para uso dentro de unstable_cache.
 // Lazy: evita createClient com URL/key indefinidos no import (ex.: `next build` / CI sem .env).
@@ -443,3 +444,72 @@ export const invalidateHistoricoCache = () => revalidateCache(['historico']);
  */
 export const invalidateAllCache = () => 
   revalidateCache(['static', 'semi-static', 'dynamic', 'user']);
+
+const ADMIN_CONCURSOS_LIST_CACHE_ID = 'admin-concursos-list-v1';
+
+/**
+ * Agregado PostgREST embutido: `concurso_modulos(count)` → `[{ count: number }]`.
+ */
+export function extractCount(payload: unknown): number {
+  if (!Array.isArray(payload) || payload.length === 0) return 0;
+  const first = payload[0];
+  if (first && typeof first === 'object' && 'count' in first) {
+    const c = (first as { count: unknown }).count;
+    if (typeof c === 'number' && Number.isFinite(c)) return c;
+  }
+  return 0;
+}
+
+/** Linha da lista admin do builder: concurso + total de vínculos em `concurso_modulos`. */
+export type AdminConcursoListItem = Concurso & {
+  linked_modulos_count: number;
+};
+
+const adminConcursosListCached = unstable_cache(
+  async (): Promise<AdminConcursoListItem[]> => {
+    const { createServerSupabase } = await import('./supabase/server');
+    let supabase: Awaited<ReturnType<typeof createServerSupabase>>;
+    try {
+      supabase = await createServerSupabase();
+    } catch {
+      trackCacheMiss('admin-concursos-list');
+      throw new DataServiceUnavailableError(
+        'Configuração incompleta: variáveis NEXT_PUBLIC_SUPABASE_* ou SUPABASE_SERVICE_ROLE_KEY ausentes no servidor.',
+      );
+    }
+
+    const raw = await withPostgrestReadRetry('admin-concursos-list', async () =>
+      supabase
+        .from('concursos')
+        .select(
+          `
+          id, slug, nome, cidade, orgao, banca, ano, cargo, tipo, status, price_cents, data_prova, descricao, destaque, created_at,
+          concurso_modulos(count)
+        `.replace(/\s+/g, ' '),
+        )
+        .order('created_at', { ascending: false }),
+    );
+
+    trackCacheHit('admin-concursos-list');
+    const rows = (raw ?? []) as unknown as Array<Record<string, unknown>>;
+    return rows.map((row) => {
+      const { concurso_modulos: nested, ...rest } = row;
+      return {
+        ...(rest as unknown as Concurso),
+        linked_modulos_count: extractCount(nested),
+      };
+    });
+  },
+  [ADMIN_CONCURSOS_LIST_CACHE_ID],
+  {
+    revalidate: CACHE_CONFIG.SEMI_STATIC.revalidate,
+    tags: ['admin-concursos', 'semi-static'],
+  },
+);
+
+/** Lista de concursos para o builder admin (cache com tag `admin-concursos`). */
+export const getAdminConcursosList = adminConcursosListCached;
+
+export async function invalidateAdminConcursosCache() {
+  await revalidateCache(['admin-concursos']);
+}

@@ -18,6 +18,23 @@ import { getAbsoluteUrl } from '@/lib/siteUrl';
 import { iniciarCheckoutCampinaGrande } from './actions';
 import { CountdownDays } from './CountdownDays';
 
+type CampinaGrandePageProps = {
+  searchParams: Promise<{ erro?: string | string[] }>;
+};
+
+const checkoutErrorMessages: Record<string, string> = {
+  invalido: 'Não foi possível iniciar o pagamento. Atualize a página e tente novamente.',
+  pagamentos: 'Pagamentos temporariamente indisponíveis. Tente novamente em alguns minutos.',
+  config:
+    'O checkout deste pacote ainda não está configurado no servidor. Entre em contato com o suporte se o problema persistir.',
+  checkout: 'Não foi possível abrir o pagamento agora. Tente novamente em alguns minutos.',
+};
+
+function resolveCheckoutErrorMessage(erro: string | undefined): string | null {
+  if (!erro) return null;
+  return checkoutErrorMessages[erro] ?? null;
+}
+
 export const metadata: Metadata = {
   title: 'Técnico de Enfermagem Campina Grande | AVANT',
   description:
@@ -154,7 +171,21 @@ const packageItems = [
   'Estude no celular, entre plantões, no seu ritmo',
 ];
 
-export default function CampinaGrandePage() {
+function CheckoutErrorBanner({ message }: { message: string }) {
+  return (
+    <div role="alert" className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:px-8">
+      <p className="rounded-2xl border border-amber-300/25 bg-amber-300/10 px-5 py-4 text-sm font-semibold leading-relaxed text-amber-50">
+        {message}
+      </p>
+    </div>
+  );
+}
+
+export default async function CampinaGrandePage({ searchParams }: CampinaGrandePageProps) {
+  const params = await searchParams;
+  const erroParam = Array.isArray(params.erro) ? params.erro[0] : params.erro;
+  const checkoutErrorMessage = resolveCheckoutErrorMessage(erroParam);
+
   return (
     <div
       id="topo"
@@ -167,6 +198,7 @@ export default function CampinaGrandePage() {
       <PageHeader />
 
       <main className="relative z-10">
+        {checkoutErrorMessage ? <CheckoutErrorBanner message={checkoutErrorMessage} /> : null}
         <section className="mx-auto grid max-w-6xl gap-10 px-4 pt-14 pb-16 sm:px-6 sm:pt-20 sm:pb-24 lg:grid-cols-[1.06fr_0.94fr] lg:px-8">
           <div>
             <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-4 py-2 text-[10px] font-black tracking-[0.2em] text-cyan-100 uppercase sm:text-xs">

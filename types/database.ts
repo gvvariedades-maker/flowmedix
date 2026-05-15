@@ -107,6 +107,8 @@ export interface Concurso {
   status: ConcursoStatus;
   price_cents: number | null;
   data_prova: string | null;
+  descricao: string | null;
+  destaque: string | null;
   created_at: string;
 }
 

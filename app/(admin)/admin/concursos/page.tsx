@@ -213,14 +213,22 @@ export default function AdminConcursosPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-6 py-10">
-      <div className="mb-8 flex items-center gap-4">
-        <Link href="/admin" className="rounded-xl p-2 text-slate-400 transition-colors hover:bg-slate-100">
-          <ArrowLeft className="h-5 w-5" />
-        </Link>
-        <div>
-          <h1 className="text-2xl font-black text-slate-900">Concursos e matrículas</h1>
-          <p className="text-sm text-slate-500">Pacotes por edital, vínculo de publicação e matrícula manual.</p>
+      <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <Link href="/admin" className="rounded-xl p-2 text-slate-400 transition-colors hover:bg-slate-100">
+            <ArrowLeft className="h-5 w-5" />
+          </Link>
+          <div>
+            <h1 className="text-2xl font-black text-slate-900">Concursos e matrículas</h1>
+            <p className="text-sm text-slate-500">Pacotes por edital, vínculo de publicação e matrícula manual.</p>
+          </div>
         </div>
+        <Link
+          href="/admin/concursos/builder"
+          className="rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-black uppercase tracking-wide text-slate-800 shadow-sm transition-colors hover:border-slate-300 hover:bg-slate-50"
+        >
+          Builder visual →
+        </Link>
       </div>
 
       {message ? (
