@@ -7,16 +7,37 @@ const PER_PAGE = 1000;
 /** Limite de páginas para evitar loop infinito (1M usuários no pior caso teórico). */
 const MAX_PAGES = 500;
 
+const RPC_FIND_USER_BY_EMAIL = 'admin_get_auth_user_id_by_email';
+
 /**
- * Localiza um usuário do Auth pelo e-mail usando apenas a API admin tipada (`listUsers`).
- * O GoTrue Admin não expõe `getUserByEmail` no cliente JS atual; a listagem é paginada.
- * Para bases muito grandes, avalie índice/consulta direta em `auth.users` ou Edge Function.
+ * Busca id em auth.users via RPC (service role). Evita listUsers quando há NULLs em colunas do Auth.
  */
-export async function findAuthUserByEmail(
+async function findAuthUserIdByEmailRpc(
   adminSupabase: SupabaseClient,
-  email: string
+  normalizedEmail: string,
+): Promise<string | null> {
+  const { data, error } = await adminSupabase.rpc(RPC_FIND_USER_BY_EMAIL, {
+    user_email: normalizedEmail,
+  });
+
+  if (error) {
+    logger.warn('RPC admin_get_auth_user_id_by_email falhou', {
+      message: error.message,
+      code: error.code,
+    });
+    return null;
+  }
+
+  return typeof data === 'string' ? data : null;
+}
+
+/**
+ * Fallback: listUsers paginado (pode falhar se auth.users tiver dados incompatíveis com GoTrue).
+ */
+async function findAuthUserByEmailListUsers(
+  adminSupabase: SupabaseClient,
+  normalized: string,
 ): Promise<{ user: User | null; error: AuthError | null }> {
-  const normalized = email.toLowerCase().trim();
   let page = 1;
 
   while (page <= MAX_PAGES) {
@@ -45,6 +66,23 @@ export async function findAuthUserByEmail(
 }
 
 /**
+ * Localiza um usuário do Auth pelo e-mail (RPC em auth.users; fallback listUsers).
+ */
+export async function findAuthUserByEmail(
+  adminSupabase: SupabaseClient,
+  email: string,
+): Promise<{ user: User | null; error: AuthError | null }> {
+  const normalized = email.toLowerCase().trim();
+  const userId = await findAuthUserIdByEmailRpc(adminSupabase, normalized);
+
+  if (userId) {
+    return { user: { id: userId, email: normalized } as User, error: null };
+  }
+
+  return findAuthUserByEmailListUsers(adminSupabase, normalized);
+}
+
+/**
  * Garante usuário no Auth pelo e-mail. Se não existir, cria com e-mail confirmado e senha aleatória
  * (o aluno define a senha em /esqueci-senha).
  */
@@ -54,14 +92,10 @@ export async function findOrCreateAuthUserByEmail(
   displayName: string | null = null,
 ): Promise<{ userId: string; created: boolean }> {
   const normalized = email.toLowerCase().trim();
-  const { user: existing, error: findError } = await findAuthUserByEmail(adminSupabase, normalized);
+  const existingId = await findAuthUserIdByEmailRpc(adminSupabase, normalized);
 
-  if (findError) {
-    throw findError;
-  }
-
-  if (existing?.id) {
-    return { userId: existing.id, created: false };
+  if (existingId) {
+    return { userId: existingId, created: false };
   }
 
   const password = randomBytes(32).toString('base64url');
@@ -72,9 +106,25 @@ export async function findOrCreateAuthUserByEmail(
     user_metadata: displayName ? { full_name: displayName } : undefined,
   });
 
-  if (error || !data.user?.id) {
+  if (error) {
+    const alreadyExists =
+      error.message?.toLowerCase().includes('already') ||
+      error.message?.toLowerCase().includes('registered') ||
+      error.status === 422;
+
+    if (alreadyExists) {
+      const retryId = await findAuthUserIdByEmailRpc(adminSupabase, normalized);
+      if (retryId) {
+        return { userId: retryId, created: false };
+      }
+    }
+
     logger.error('Falha ao criar usuário Auth (admin)', error, { email: normalized });
-    throw error ?? new Error('createUser sem retorno de usuário');
+    throw error;
+  }
+
+  if (!data.user?.id) {
+    throw new Error('createUser sem retorno de usuário');
   }
 
   return { userId: data.user.id, created: true };
