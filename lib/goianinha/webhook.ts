@@ -3,7 +3,7 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 import { findOrCreateAuthUserByEmail } from '@/lib/supabase/adminUsers';
 import { logger } from '@/lib/logger';
 import type { WebhookProcessResult } from '@/lib/pagamentos/webhook';
-import { CAMPINA_GRANDE_PRODUTO_ID } from '@/lib/campina/constants';
+import { GOIANINHA_PRODUTO_ID } from '@/lib/goianinha/constants';
 
 function readCustomerEmail(session: Stripe.Checkout.Session): string | null {
   const details = session.customer_details;
@@ -15,14 +15,14 @@ function readCustomerEmail(session: Stripe.Checkout.Session): string | null {
 }
 
 /**
- * Fulfillment do pacote Campina Grande após checkout.session.completed (Stripe).
+ * Fulfillment do pacote Goianinha após checkout.session.completed (Stripe).
  */
-export async function processCampinaGrandeCheckoutCompleted(
+export async function processGoianinhaCheckoutCompleted(
   admin: SupabaseClient,
   session: Stripe.Checkout.Session,
 ): Promise<WebhookProcessResult> {
-  if (session.metadata?.produto !== CAMPINA_GRANDE_PRODUTO_ID) {
-    return { handled: false, reason: 'not_campina_checkout' };
+  if (session.metadata?.produto !== GOIANINHA_PRODUTO_ID) {
+    return { handled: false, reason: 'not_goianinha_checkout' };
   }
 
   if (session.payment_status !== 'paid') {
@@ -36,17 +36,17 @@ export async function processCampinaGrandeCheckoutCompleted(
 
   const email = readCustomerEmail(session);
   if (!email) {
-    logger.warn('Checkout Campina sem e-mail de cliente', { sessionId: gatewayPaymentId });
+    logger.warn('Checkout Goianinha sem e-mail de cliente', { sessionId: gatewayPaymentId });
     return { handled: false, reason: 'missing_customer_email' };
   }
 
   const displayName = session.customer_details?.name?.trim() || null;
 
-  const { userId } = (await findOrCreateAuthUserByEmail(admin, email, displayName)).userId;
+  const { userId } = await findOrCreateAuthUserByEmail(admin, email, displayName);
 
   const { error: insertError } = await admin.from('acessos').insert({
     user_id: userId,
-    produto: CAMPINA_GRANDE_PRODUTO_ID,
+    produto: GOIANINHA_PRODUTO_ID,
     stripe_checkout_session_id: gatewayPaymentId,
   });
 
@@ -59,7 +59,7 @@ export async function processCampinaGrandeCheckoutCompleted(
       return { handled: true, userId };
     }
 
-    logger.error('Falha ao inserir acesso Campina Grande', insertError, {
+    logger.error('Falha ao inserir acesso Goianinha', insertError, {
       userId,
       sessionId: gatewayPaymentId,
     });

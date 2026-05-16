@@ -472,6 +472,12 @@ export const ConcursoAdminMatriculaSchema = z.object({
   concursoId: z.string().uuid('ID do concurso inválido'),
 });
 
+/** Admin: criar conta no Auth (se não existir) e matricular no concurso. */
+export const AdminCriarUsuarioMatriculaSchema = z.object({
+  email: z.string().email('E-mail inválido').min(1, 'E-mail é obrigatório'),
+  nome: z.string().trim().max(200).optional(),
+});
+
 /** Revogação de acesso (matrícula administrativa ou outra). */
 export const ConcursoAdminMatriculaRevogarSchema = z.object({
   userId: z.string().uuid('ID do usuário inválido'),
@@ -486,30 +492,6 @@ export const ConcursoRegraModulosSchema = z.object({
   banca: z.string().trim().min(1).max(80),
   orgao: z.string().trim().max(120).optional(),
   ano: z.number().int().min(1990).max(2100).optional(),
-});
-
-/** Resposta de GET /api/admin/user-metrics */
-export const UserMetricsResponseSchema = z.object({
-  totalUsers: z.number().int().min(0),
-  newLast7Days: z.number().int().min(0),
-  newLast30Days: z.number().int().min(0),
-  newWeekToDateUtc: z.number().int().min(0),
-  confirmedTotal: z.number().int().min(0),
-  last7DaysByDay: z.array(
-    z.object({
-      date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-      count: z.number().int().min(0),
-    })
-  ),
-  /** Quatro semanas ISO completas anteriores à semana atual (seg.–dom., UTC). */
-  last4IsoWeeks: z.array(
-    z.object({
-      weekStart: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-      weekEndExclusive: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-      count: z.number().int().min(0),
-    })
-  ),
-  generatedAt: z.string(),
 });
 
 // ============================================================================
@@ -565,9 +547,9 @@ export type CriarSessaoPagamentoInput = z.infer<typeof CriarSessaoPagamentoSchem
 export type ConcursoCreateInput = z.infer<typeof ConcursoCreateSchema>;
 export type ConcursoAdminUpsertInput = z.infer<typeof ConcursoAdminUpsertSchema>;
 export type ConcursoAdminMatriculaInput = z.infer<typeof ConcursoAdminMatriculaSchema>;
+export type AdminCriarUsuarioMatriculaInput = z.infer<typeof AdminCriarUsuarioMatriculaSchema>;
 export type ConcursoModuloLinkInput = z.infer<typeof ConcursoModuloLinkSchema>;
 export type ConcursoRegraModulosInput = z.infer<typeof ConcursoRegraModulosSchema>;
-export type UserMetricsResponse = z.infer<typeof UserMetricsResponseSchema>;
 export type ReverseStudySlideInput = z.infer<typeof ReverseStudySlideSchema>;
 export type SlideItemInput = z.infer<typeof SlideItemSchema>;
 export type SlideMetaInput = z.infer<typeof SlideMetaSchema>;

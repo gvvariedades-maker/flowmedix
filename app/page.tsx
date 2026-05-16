@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import { redirect } from 'next/navigation';
 import { getServerSession } from '@/lib/supabase/server-auth';
 import { userHasActiveMatricula } from '@/lib/concursos/entitlements';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
 
 /** Chunk separado evita erro do Turbopack ao misturar grafo de módulos com `not-found`. */
@@ -59,7 +60,11 @@ export default async function IndexPage() {
   const session = await getServerSession();
 
   if (session?.user?.id) {
+    const isAdmin = isAdminSessionEmail(session.user.email);
     const hasActiveMatricula = await userHasActiveMatricula(session.user.id).catch(() => false);
+    if (isAdmin) {
+      redirect(hasActiveMatricula ? '/estudar' : '/admin');
+    }
     redirect(hasActiveMatricula ? '/estudar' : '/planos');
   }
 

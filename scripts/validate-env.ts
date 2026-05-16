@@ -21,6 +21,14 @@ if (stripeConfig) {
   } else if (!campinaPrice.startsWith('price_')) {
     console.warn('⚠️  STRIPE_PRICE_ID_CAMPINA deve começar com price_ (Price ID do Stripe).');
   }
+  const goianinhaPrice = process.env.STRIPE_PRICE_ID_GOIANINHA?.trim();
+  if (!goianinhaPrice) {
+    console.warn(
+      '⚠️  STRIPE_PRICE_ID_GOIANINHA ausente: a landing /goianinha não conseguirá abrir o Checkout até configurar o Price ID.',
+    );
+  } else if (!goianinhaPrice.startsWith('price_')) {
+    console.warn('⚠️  STRIPE_PRICE_ID_GOIANINHA deve começar com price_ (Price ID do Stripe).');
+  }
   if (process.env.CRON_SECRET?.trim()) {
     console.log('✅ CRON_SECRET configurado para expiração de matrículas');
   } else if (process.env.NODE_ENV !== 'production') {

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import {
-  BarChart3,
   BookOpenCheck,
   Brain,
   CalendarDays,
@@ -16,10 +15,10 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
-import { iniciarCheckoutCampinaGrande } from './actions';
+import { iniciarCheckoutGoianinha } from './actions';
 import { CountdownDays } from './CountdownDays';
 
-type CampinaGrandePageProps = {
+type GoianinhaPageProps = {
   searchParams: Promise<{ erro?: string | string[] }>;
 };
 
@@ -37,21 +36,21 @@ function resolveCheckoutErrorMessage(erro: string | undefined): string | null {
 }
 
 export const metadata: Metadata = {
-  title: 'Técnico de Enfermagem Campina Grande | AVANT',
+  title: 'Técnico de Enfermagem Goianinha | AVANT',
   description:
-    'Questões reais da IDECAN para Técnico de Enfermagem em Campina Grande. Treine os Conhecimentos Específicos por R$ 37.',
-  alternates: { canonical: '/campina-grande' },
+    'Questões reais da IDIB para Técnico de Enfermagem em Goianinha. Treine os Conhecimentos Específicos por R$ 37.',
+  alternates: { canonical: '/goianinha' },
   openGraph: {
-    title: 'Questões reais da IDECAN para Técnico de Enfermagem | AVANT',
+    title: 'Questões reais da IDIB para Técnico de Enfermagem | AVANT',
     description:
-      'Domine a parte que mais pesa na prova de Campina Grande: Conhecimentos Específicos de Técnico de Enfermagem.',
-    url: getAbsoluteUrl('/campina-grande'),
+      'Treine com questões reais aplicadas pela IDIB e saiba exatamente o que revisar antes da prova em Goianinha.',
+    url: getAbsoluteUrl('/goianinha'),
     type: 'website',
     locale: 'pt_BR',
   },
 };
 
-function CampinaBackdrop() {
+function GoianinhaBackdrop() {
   return (
     <>
       <div className="absolute top-[-18%] left-1/2 h-[560px] w-[min(140%,1040px)] -translate-x-1/2 rounded-full bg-cyan-500/20 blur-[130px]" />
@@ -71,8 +70,8 @@ function CampinaBackdrop() {
 
 function CheckoutCtaForm({ label }: { label: string }) {
   return (
-    <form action={iniciarCheckoutCampinaGrande} className="inline-flex w-full max-w-md flex-col sm:w-auto">
-      <input type="hidden" name="intent" value="campina-checkout" />
+    <form action={iniciarCheckoutGoianinha} className="inline-flex w-full max-w-md flex-col sm:w-auto">
+      <input type="hidden" name="intent" value="goianinha-checkout" />
       <Button
         type="submit"
         size="lg"
@@ -88,7 +87,7 @@ function PageHeader() {
   return (
     <header className="relative z-20 border-b border-white/10 bg-slate-950/55 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="#topo" className="flex items-center gap-3" aria-label="AVANT Campina Grande">
+        <a href="#topo" className="flex items-center gap-3" aria-label="AVANT Goianinha">
           <span className="flex h-10 w-10 items-center justify-center rounded-2xl border border-cyan-300/25 bg-cyan-300/10 text-sm font-black text-cyan-100 shadow-lg shadow-cyan-500/10">
             A
           </span>
@@ -110,13 +109,13 @@ function PageHeader() {
 const contestNumbers = [
   {
     icon: Stethoscope,
-    value: '50',
+    value: '20',
     label: 'vagas imediatas na Saúde',
   },
   {
     icon: Target,
-    value: '40 pontos',
-    label: 'peso dos Conhecimentos Específicos',
+    value: '50',
+    label: 'oportunidades (+ cadastro reserva)',
   },
   {
     icon: CalendarDays,
@@ -131,41 +130,43 @@ const contestNumbers = [
 ];
 
 const painPoints = [
-  'Resolve questões genéricas que não têm nada a ver com o estilo real da banca',
+  'Resolve questões genéricas que não têm nada a ver com o estilo real da IDIB',
   'Erra uma questão, olha o gabarito e continua sem entender o porquê',
   'Estuda entre plantões sem saber se está evoluindo ou andando em círculos',
+  'Chega perto da prova sem clareza do que ainda trava sua pontuação',
 ];
 
 const differentials = [
   {
     icon: BookOpenCheck,
-    title: 'Questões reais',
+    title: 'Questões reais da IDIB',
     description:
-      'Questões de concursos anteriores aplicados pela IDECAN para Técnico de Enfermagem — você treina com o que a banca realmente cobra.',
+      'Questões de concursos anteriores aplicados pela IDIB para Técnico de Enfermagem — você treina com o que a banca realmente cobra.',
   },
   {
     icon: Brain,
     title: 'Aprende acertando e errando',
     description:
-      'Acertou? Reforça o que já sabe. Errou? O AVANT identifica o gap e organiza o que estudar a seguir. Cada questão é uma aula.',
+      'Acertou? Reforça o que já sabe. Errou? O AVANT identifica o gap e abre o NeuroSlide certo: fluxo, regra, mapa ou zona de perigo.',
   },
   {
-    icon: BarChart3,
-    title: 'Acompanhamento de desempenho',
+    icon: Target,
+    title: 'Zona de Perigo da IDIB',
     description:
-      'Veja sua evolução em tempo real — quais temas você domina, quais precisam de mais atenção. Sem achismo, com dados.',
+      'A IDIB cobra o que separa candidato preparado de candidato aprovado: diferença de atribuição entre Técnico e Enfermeiro, protocolos com número exato, calendário vacinal atualizado pela IN 2024.',
   },
   {
     icon: Clock3,
     title: 'Revisão espaçada',
     description:
-      'Técnica científica que programa a revisão no momento certo — antes que o conteúdo saia da memória. Você absorve mais estudando menos tempo por sessão.',
+      'Técnica científica que programa a revisão no momento certo — antes que o conteúdo saia da memória.',
   },
 ];
 
 const packageItems = [
-  'Questões reais da IDECAN para Técnico de Enfermagem',
-  'Conteúdo alinhado ao edital de Campina Grande 2026',
+  'Questões reais da IDIB para Técnico de Enfermagem',
+  'Conteúdo alinhado ao edital de Goianinha 2026',
+  'NeuroSlides após cada questão — mapa, regra, fluxo e zona de perigo',
   'Feedback em cada questão — certa ou errada',
   'Painel de desempenho — acompanhe sua evolução',
   'Revisão espaçada — absorção de longo prazo',
@@ -175,49 +176,49 @@ const packageItems = [
 const walkthroughSteps = [
   {
     step: '01',
-    src: '/images/campina-grande/walk-01.jpg',
-    alt: 'Questão real da IDECAN sobre flebite',
-    caption: 'Questão real da IDECAN — banca de Campina Grande',
+    src: '/images/goianinha/walk-01.jpg',
+    alt: 'Questão real da IDIB — Ceará-Mirim 2024',
+    caption: 'Questão real da IDIB — Ceará-Mirim 2024',
   },
   {
     step: '02',
-    src: '/images/campina-grande/walk-02.jpg',
+    src: '/images/goianinha/walk-02.jpg',
     alt: 'Seleção de resposta no AVANT',
     caption: 'Você escolhe sua resposta',
   },
   {
     step: '03',
-    src: '/images/campina-grande/walk-03.jpg',
+    src: '/images/goianinha/walk-03.jpg',
     alt: 'Diagnóstico imediato após responder',
-    caption: 'Diagnóstico imediato — o erro vira estudo',
+    caption: 'Diagnóstico imediato — certa ou errada',
   },
   {
     step: '04',
-    src: '/images/campina-grande/walk-04.jpg',
-    alt: 'Mapa de conceitos sobre flebite e fatores de risco',
-    caption: 'Mapa de conceitos — o que a banca relaciona',
+    src: '/images/goianinha/walk-04.jpg',
+    alt: 'Mapa de conceitos com 4 esferas ciano sobre a vacina BCG',
+    caption: 'Mapa de conceitos — pontos críticos da BCG',
   },
   {
     step: '05',
-    src: '/images/campina-grande/walk-05.jpg',
-    alt: 'Regra de Ouro sobre medicamentos irritantes',
-    caption: 'Regra de Ouro — o que fixar para a prova',
+    src: '/images/goianinha/walk-05.jpg',
+    alt: 'Regra de Ouro — BCG é intradérmica',
+    caption: 'Regra de Ouro — o que não pode esquecer',
   },
   {
     step: '06',
-    src: '/images/campina-grande/walk-06.jpg',
-    alt: 'Fluxo de decisão clínico — pipeline cognitivo',
-    caption: 'Fluxo de decisão — passo a passo clínico',
+    src: '/images/goianinha/walk-06.jpg',
+    alt: 'Fluxo de administração passo a passo',
+    caption: 'Fluxo de administração — passo a passo',
   },
   {
     step: '07',
-    src: '/images/campina-grande/walk-07.jpg',
-    alt: 'Zona de Perigo — cuidado com a pegadinha',
-    caption: 'Zona de Perigo — pegadinhas que derrubam',
+    src: '/images/goianinha/walk-07.jpg',
+    alt: 'Zona de Perigo — erros comuns na administração da BCG',
+    caption: 'Zona de Perigo — erros que derrubam na prova',
   },
   {
     step: '08',
-    src: '/images/campina-grande/walk-08.jpg',
+    src: '/images/goianinha/walk-08.jpg',
     alt: 'Ciclo concluído — próxima questão',
     caption: 'Ciclo concluído — próxima questão',
   },
@@ -231,37 +232,38 @@ function ProductWalkthroughSection() {
           Veja o ciclo completo — do erro ao aprendizado
         </h2>
         <p className="mt-2 text-center text-slate-400">
-          É isso que acontece depois de cada questão da IDECAN no AVANT.
+          É isso que acontece depois de cada questão da IDIB no AVANT.
         </p>
 
-        <div className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [-ms-overflow-style:none] [scrollbar-width:none] md:grid md:grid-cols-4 md:overflow-visible md:px-0 [&::-webkit-scrollbar]:hidden">
+        <div className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 [-ms-overflow-style:none] [scrollbar-width:none] md:grid md:grid-cols-4 md:overflow-visible md:px-0 [&::-webkit-scrollbar]:hidden">
           {walkthroughSteps.map((item) => (
             <article
               key={item.step}
-              className="min-w-[260px] shrink-0 cursor-default snap-start overflow-hidden rounded-2xl border border-white/10 bg-slate-900/80 backdrop-blur-xl md:min-w-0"
+              className="min-w-[280px] shrink-0 snap-start overflow-hidden rounded-2xl border border-white/10 bg-slate-900/80 backdrop-blur-xl md:min-w-0"
             >
               <Image
                 src={item.src}
                 alt={item.alt}
-                width={260}
-                height={460}
-                className="w-full object-cover"
+                width={280}
+                height={500}
+                className="h-auto w-full"
               />
-              <div className="space-y-0.5 px-3 py-2">
-                <span className="font-mono text-[10px] text-cyan-400">{item.step}</span>
-                <p className="text-[11px] leading-snug text-slate-400">{item.caption}</p>
+              <div className="px-3 py-2">
+                <span className="font-mono text-xs text-cyan-400">{item.step}</span>
+                <p className="mt-1 text-xs text-slate-400">{item.caption}</p>
               </div>
             </article>
           ))}
         </div>
 
         <p className="mx-auto mt-8 max-w-md text-center text-sm text-slate-300">
-          4 slides gerados automaticamente após cada questão. Certa ou errada — você sempre sai aprendendo.
+          4 slides. Cada um com uma função diferente. Isso acontece depois de cada questão — certa ou errada.
         </p>
       </div>
     </section>
   );
 }
+
 
 function CheckoutErrorBanner({ message }: { message: string }) {
   return (
@@ -273,7 +275,7 @@ function CheckoutErrorBanner({ message }: { message: string }) {
   );
 }
 
-export default async function CampinaGrandePage({ searchParams }: CampinaGrandePageProps) {
+export default async function GoianinhaPage({ searchParams }: GoianinhaPageProps) {
   const params = await searchParams;
   const erroParam = Array.isArray(params.erro) ? params.erro[0] : params.erro;
   const checkoutErrorMessage = resolveCheckoutErrorMessage(erroParam);
@@ -284,7 +286,7 @@ export default async function CampinaGrandePage({ searchParams }: CampinaGrandeP
       className="min-h-screen overflow-x-hidden bg-[#010409] text-slate-100 selection:bg-cyan-400/25 selection:text-white"
     >
       <div className="pointer-events-none fixed inset-0">
-        <CampinaBackdrop />
+        <GoianinhaBackdrop />
       </div>
 
       <PageHeader />
@@ -295,20 +297,19 @@ export default async function CampinaGrandePage({ searchParams }: CampinaGrandeP
           <div>
             <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-4 py-2 text-[10px] font-black tracking-[0.2em] text-cyan-100 uppercase sm:text-xs">
               <span aria-hidden>⚡</span>
-              Prova em 30/08/2026 · Inscrições abertas até 15/06
+              Prova em 30/08/2026 · Inscrições até 18/05
             </p>
 
             <h1 className="max-w-4xl text-4xl leading-[1.05] font-[1000] tracking-tight text-white sm:text-6xl">
-              Questões reais da IDECAN para Técnico de Enfermagem.{' '}
+              20 vagas para Técnico de Enfermagem em Goianinha.{' '}
               <span className="bg-gradient-to-r from-cyan-200 to-emerald-300 bg-clip-text text-transparent">
-                A parte que mais pesa na prova — dominada.
+                A IDIB cobra detalhe — não conceito geral.
               </span>
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-relaxed font-medium text-slate-300 sm:text-xl">
-              Os Conhecimentos Específicos valem 40 dos 60 pontos da prova. O AVANT treina você com
-              questões reais aplicadas pela IDECAN — e cada questão, certa ou errada, vira aprendizado
-              direcionado.
+              Treine com questões reais aplicadas pela IDIB e saiba exatamente o que revisar antes da
+              prova.
             </p>
 
             <div className="mt-9">
@@ -318,38 +319,34 @@ export default async function CampinaGrandePage({ searchParams }: CampinaGrandeP
 
           <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/30 backdrop-blur-md sm:p-8">
             <p className="text-sm font-black tracking-[0.22em] text-emerald-200 uppercase">
-              Edital Campina Grande 2026
+              Edital Goianinha 2026
             </p>
             <div className="mt-6 space-y-5">
               <div>
                 <p className="text-sm text-slate-400">Cargo</p>
-                <p className="mt-1 text-xl font-black text-white">
-                  Técnico de Enfermagem — Secretaria Municipal de Saúde
-                </p>
+                <p className="mt-1 text-xl font-black text-white">Técnico de Enfermagem — 40h</p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-white/10 bg-slate-950/60 p-4">
                   <p className="text-sm text-slate-400">Banca</p>
-                  <p className="mt-1 font-black text-cyan-100">IDECAN</p>
+                  <p className="mt-1 font-black text-cyan-100">IDIB</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-slate-950/60 p-4">
                   <p className="text-sm text-slate-400">Vagas</p>
-                  <p className="mt-1 font-black text-cyan-100">50 + 5 PCD</p>
+                  <p className="mt-1 font-black text-cyan-100">20 + 30 cadastro reserva</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-slate-950/60 p-4">
                   <p className="text-sm text-slate-400">Prova</p>
-                  <p className="mt-1 font-black text-cyan-100">20 gerais + 20 específicas</p>
+                  <p className="mt-1 font-black text-cyan-100">30/08/2026 · Goianinha/RN</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-slate-950/60 p-4">
                   <p className="text-sm text-slate-400">Inscrições</p>
-                  <p className="mt-1 font-black text-cyan-100">14/05 a 15/06</p>
+                  <p className="mt-1 font-black text-cyan-100">14/05 a 18/05/2026</p>
                 </div>
               </div>
               <div className="rounded-2xl border border-emerald-300/15 bg-emerald-300/10 p-4">
-                <p className="text-sm text-emerald-100">Conhecimentos Específicos</p>
-                <p className="mt-1 font-black text-white">
-                  20 questões de 2 pontos cada: 40 dos 60 pontos da prova. Aprovação mínima: 50% do total.
-                </p>
+                <p className="text-sm text-emerald-100">Remuneração</p>
+                <p className="mt-1 font-black text-white">R$ 1.621,00 · taxa de inscrição R$ 120,00</p>
               </div>
             </div>
           </div>
@@ -381,11 +378,11 @@ export default async function CampinaGrandePage({ searchParams }: CampinaGrandeP
             <div className="max-w-3xl">
               <p className="text-sm font-black tracking-[0.22em] text-slate-500 uppercase">O problema</p>
               <h2 className="mt-4 text-3xl leading-tight font-black tracking-tight text-white sm:text-4xl">
-                Você estuda, mas não sabe se está estudando o que a IDECAN cobra?
+                Você estuda, mas não sabe se está estudando o que a IDIB cobra?
               </h2>
             </div>
 
-            <div className="mt-9 grid gap-4 lg:grid-cols-3">
+            <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {painPoints.map((pain) => (
                 <div key={pain} className="rounded-3xl border border-red-300/10 bg-red-950/15 p-6">
                   <XCircle className="text-red-200" size={24} aria-hidden />
@@ -435,7 +432,7 @@ export default async function CampinaGrandePage({ searchParams }: CampinaGrandeP
               </h2>
               <p className="mt-4 text-base leading-relaxed text-slate-400">
                 Um treino direto para Conhecimentos Específicos de Técnico de Enfermagem, com foco no estilo da
-                IDECAN e na sua evolução real.
+                IDIB e na sua evolução real.
               </p>
             </div>
 
@@ -451,8 +448,7 @@ export default async function CampinaGrandePage({ searchParams }: CampinaGrandeP
                 <HelpCircle className="mt-0.5 shrink-0 text-cyan-100" size={22} aria-hidden />
                 <p className="text-sm leading-relaxed text-cyan-50">
                   Este pacote cobre os Conhecimentos Específicos. Para Conhecimentos Gerais, como Português,
-                  Raciocínio Lógico, História de Campina Grande e Legislação, recomendamos complementar com
-                  outras fontes.
+                  Raciocínio Lógico e Legislação, recomendamos complementar com outras fontes.
                 </p>
               </div>
             </div>
@@ -468,11 +464,10 @@ export default async function CampinaGrandePage({ searchParams }: CampinaGrandeP
                   Pagamento único
                 </p>
                 <h2 className="mt-6 max-w-2xl text-3xl leading-tight font-black tracking-tight text-white sm:text-5xl">
-                  Domine a parte que mais pesa na prova por R$ 37
+                  Prepare-se para a prova da IDIB por R$ 37
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-300">
-                  A taxa de inscrição do concurso é R$ 110. Sua preparação específica custa menos de um terço
-                  disso.
+                  A taxa de inscrição custou R$ 120. Sua preparação específica custa R$ 37.
                 </p>
               </div>
 
@@ -500,8 +495,8 @@ export default async function CampinaGrandePage({ searchParams }: CampinaGrandeP
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <p className="max-w-3xl text-sm leading-relaxed text-slate-400">
                 O AVANT é uma plataforma de estudo independente. Não somos órgão público, banca examinadora nem
-                afiliados ao IDECAN ou à Prefeitura de Campina Grande. As questões utilizadas são de concursos
-                públicos anteriores, de domínio público, aplicadas pela banca IDECAN.
+                afiliados à IDIB ou à Prefeitura de Goianinha. As questões utilizadas são de concursos públicos
+                anteriores, de domínio público, aplicadas pela banca IDIB.
               </p>
               <div className="flex gap-4 text-sm font-semibold text-slate-300">
                 <a className="hover:text-cyan-200" href="/politica-de-privacidade">

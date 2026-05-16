@@ -7,6 +7,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense, useState } from 'react';
 import { supabase } from '@/lib/supabase/client';
 import { getPostLoginDestination } from '@/lib/getPostLoginDestination';
+import { applyAdminPostLoginOverride } from '@/lib/postLoginRedirect';
 import { buildAuthQueryPath } from '@/lib/authQueryPath';
 import { AuthAtmosphericBackdrop } from '@/components/layout/AuthAtmosphericBackdrop';
 import { PublicDarkAuthHeader } from '@/components/layout/PublicDarkAuthHeader';
@@ -61,7 +62,7 @@ function RegisterForm() {
     setLoading(true);
 
     const origin = typeof window !== 'undefined' ? window.location.origin : '';
-    const destinoEstudar = getPostLoginDestination(null, cidade, concurso);
+    let destinoEstudar = getPostLoginDestination(null, cidade, concurso);
 
     try {
       const { data, error: authError } = await supabase.auth.signUp({
@@ -79,6 +80,8 @@ function RegisterForm() {
       }
 
       if (data.session) {
+        await supabase.auth.getSession();
+
         if (concurso) {
           await fetch('/api/concursos/matricular', {
             method: 'POST',
@@ -88,6 +91,7 @@ function RegisterForm() {
           }).catch(() => undefined);
         }
 
+        destinoEstudar = await applyAdminPostLoginOverride(destinoEstudar);
         router.push(destinoEstudar);
         router.refresh();
         return;

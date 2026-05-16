@@ -5,8 +5,10 @@ import { useRouter } from 'next/navigation';
 import { ConcursoCreateSchema } from '@/lib/validations';
 import type { AdminConcursoListItem } from '@/lib/cache';
 import type { Concurso, ConcursoModuloOrigem } from '@/types/database';
+import { CAMPINA_GRANDE_2026_SLUG } from '@/lib/concursos/entitlements';
 import type { ModuloEstudoListRow } from '@/lib/concursos/entitlements';
 import {
+  applyModulosRegra,
   createConcurso,
   linkModulo,
   loadConcursoComModulos,
@@ -29,6 +31,10 @@ function slugifyFromNome(raw: string): string {
 }
 
 const DEBOUNCE_MS = 350;
+
+/** Herda `color: white` do body global; fundo claro exige texto escuro explícito. */
+const fieldClass =
+  'w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400';
 
 type FormState = {
   slug: string;
@@ -110,6 +116,10 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
   const [searching, setSearching] = useState(false);
   const [results, setResults] = useState<ModuloEstudoListRow[]>([]);
 
+  const [regraBanca, setRegraBanca] = useState('');
+  const [regraOrgao, setRegraOrgao] = useState('');
+  const [regraAno, setRegraAno] = useState('');
+
   const selectOptions = useMemo(
     () => [...concursos].sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR')),
     [concursos],
@@ -163,6 +173,13 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
       setForm(concursoToForm(res.concurso));
       slugTouchedRef.current = true;
       setVinculos(res.vinculos);
+      setRegraBanca(
+        res.concurso.slug === CAMPINA_GRANDE_2026_SLUG
+          ? 'IDECAN'
+          : (res.concurso.banca?.trim() ?? ''),
+      );
+      setRegraOrgao('');
+      setRegraAno('');
       setStep(1);
     });
   }, []);
@@ -178,6 +195,9 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
     setMessage(null);
     setSearchInput('');
     setResults([]);
+    setRegraBanca('');
+    setRegraOrgao('');
+    setRegraAno('');
   }
 
   function onPickConcurso(id: string) {
@@ -322,6 +342,35 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
     });
   }
 
+  function handleApplyRegra() {
+    if (!concursoId) {
+      setError('Salve ou selecione um concurso antes de aplicar a regra.');
+      return;
+    }
+    if (!regraBanca.trim()) {
+      setError('Informe a banca (ex.: IDECAN).');
+      return;
+    }
+
+    setError(null);
+    setMessage(null);
+    startTransition(async () => {
+      const res = await applyModulosRegra({
+        concursoId,
+        banca: regraBanca.trim(),
+        orgao: regraOrgao.trim() || undefined,
+        ano: regraAno.trim() ? Number(regraAno) : undefined,
+      });
+      if (!res.ok) {
+        setError(res.error);
+        return;
+      }
+      setMessage(`Regra aplicada: ${res.linkedCount} módulo(s) vinculado(s).`);
+      loadExisting(concursoId);
+      refreshList();
+    });
+  }
+
   function handleUnlink(moduloId: string) {
     if (!concursoId) return;
     setError(null);
@@ -370,7 +419,7 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
               id="builder-concurso"
               value={mode === 'edit' && concursoId ? concursoId : ''}
               onChange={(e) => onPickConcurso(e.target.value)}
-              className="min-w-[200px] rounded-xl border border-slate-200 px-3 py-2 text-sm"
+              className="min-w-[200px] rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900"
             >
               <option value="">— selecionar —</option>
               {selectOptions.map((c) => (
@@ -424,9 +473,11 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
               readOnly={slugReadOnly}
               required={!slugReadOnly}
               placeholder="slug-do-edital"
-              className={`w-full rounded-xl border border-slate-200 px-4 py-3 font-mono text-sm ${
-                slugReadOnly ? 'bg-slate-50 text-slate-600' : ''
-              }`}
+              className={
+                slugReadOnly
+                  ? 'w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 font-mono text-sm text-slate-600'
+                  : `${fieldClass} font-mono text-sm`
+              }
             />
             {slugReadOnly ? (
               <p className="mt-1 text-xs text-slate-400">Slug não pode ser alterado após criação.</p>
@@ -439,7 +490,7 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
               value={form.nome}
               onChange={(e) => onNomeChange(e.target.value)}
               placeholder="Nome do concurso"
-              className="w-full rounded-xl border border-slate-200 px-4 py-3"
+              className={fieldClass}
             />
           </div>
           <div>
@@ -447,7 +498,7 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
             <input
               value={form.cidade}
               onChange={(e) => setForm((p) => ({ ...p, cidade: e.target.value }))}
-              className="w-full rounded-xl border border-slate-200 px-4 py-3"
+              className={fieldClass}
             />
           </div>
           <div>
@@ -455,7 +506,7 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
             <input
               value={form.orgao}
               onChange={(e) => setForm((p) => ({ ...p, orgao: e.target.value }))}
-              className="w-full rounded-xl border border-slate-200 px-4 py-3"
+              className={fieldClass}
             />
           </div>
           <div>
@@ -463,7 +514,7 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
             <input
               value={form.banca}
               onChange={(e) => setForm((p) => ({ ...p, banca: e.target.value }))}
-              className="w-full rounded-xl border border-slate-200 px-4 py-3"
+              className={fieldClass}
             />
           </div>
           <div>
@@ -471,7 +522,7 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
             <input
               value={form.ano}
               onChange={(e) => setForm((p) => ({ ...p, ano: e.target.value }))}
-              className="w-full rounded-xl border border-slate-200 px-4 py-3"
+              className={fieldClass}
             />
           </div>
           <div>
@@ -479,7 +530,7 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
             <input
               value={form.cargo}
               onChange={(e) => setForm((p) => ({ ...p, cargo: e.target.value }))}
-              className="w-full rounded-xl border border-slate-200 px-4 py-3"
+              className={fieldClass}
             />
           </div>
           <div>
@@ -487,7 +538,7 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
             <select
               value={form.tipo}
               onChange={(e) => setForm((p) => ({ ...p, tipo: e.target.value as 'geral' | 'edital' }))}
-              className="w-full rounded-xl border border-slate-200 px-4 py-3"
+              className={fieldClass}
             >
               <option value="edital">Edital</option>
               <option value="geral">Geral</option>
@@ -499,7 +550,7 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
               value={form.priceReais}
               onChange={(e) => setForm((p) => ({ ...p, priceReais: e.target.value }))}
               placeholder="37,00 ou vazio"
-              className="w-full rounded-xl border border-slate-200 px-4 py-3"
+              className={fieldClass}
             />
           </div>
           <div>
@@ -508,7 +559,7 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
               type="date"
               value={form.dataProva}
               onChange={(e) => setForm((p) => ({ ...p, dataProva: e.target.value }))}
-              className="w-full rounded-xl border border-slate-200 px-4 py-3"
+              className={fieldClass}
             />
           </div>
           <div className="md:col-span-2">
@@ -517,7 +568,7 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
               value={form.descricao}
               onChange={(e) => setForm((p) => ({ ...p, descricao: e.target.value }))}
               rows={4}
-              className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm"
+              className={`${fieldClass} text-sm`}
             />
           </div>
           <div className="md:col-span-2">
@@ -525,7 +576,7 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
             <input
               value={form.destaque}
               onChange={(e) => setForm((p) => ({ ...p, destaque: e.target.value }))}
-              className="w-full rounded-xl border border-slate-200 px-4 py-3"
+              className={fieldClass}
             />
           </div>
           <div className="md:col-span-2 flex flex-wrap items-center gap-3">
@@ -550,6 +601,53 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
         </form>
       ) : (
         <div className="space-y-8">
+          <section className="rounded-2xl border border-indigo-200 bg-indigo-50/60 p-5">
+            <h3 className="text-sm font-black text-slate-900">Incluir por regra</h3>
+            <p className="mt-1 text-sm text-slate-600">
+              Vincula em lote pela coluna <span className="font-mono text-xs">banca</span> do módulo.
+              Deixe órgão e ano vazios para incluir <strong>todas</strong> as questões da banca. Com órgão/ano,
+              só entram questões cujo <span className="font-mono text-xs">meta</span> coincidir.
+            </p>
+            <div className="mt-4 grid gap-3 md:grid-cols-3">
+              <div>
+                <label className="mb-1 block text-xs font-semibold text-slate-500">Banca</label>
+                <input
+                  value={regraBanca}
+                  onChange={(e) => setRegraBanca(e.target.value)}
+                  placeholder="IDECAN"
+                  className={fieldClass}
+                />
+              </div>
+              <div>
+                <label className="mb-1 block text-xs font-semibold text-slate-500">Órgão (opcional)</label>
+                <input
+                  value={regraOrgao}
+                  onChange={(e) => setRegraOrgao(e.target.value)}
+                  placeholder="Vazio = todos"
+                  className={fieldClass}
+                />
+              </div>
+              <div>
+                <label className="mb-1 block text-xs font-semibold text-slate-500">Ano (opcional)</label>
+                <input
+                  value={regraAno}
+                  onChange={(e) => setRegraAno(e.target.value)}
+                  placeholder="Vazio = todos"
+                  className={fieldClass}
+                />
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={handleApplyRegra}
+              disabled={pending || !concursoId}
+              className="mt-4 inline-flex items-center gap-2 rounded-2xl bg-indigo-600 px-5 py-3 text-xs font-black uppercase tracking-widest text-white disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              {pending ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+              Aplicar regra
+            </button>
+          </section>
+
           <div>
             <label className="mb-2 block text-xs font-semibold text-slate-500">
               Buscar módulos (debounce {DEBOUNCE_MS} ms)
@@ -558,7 +656,7 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
               placeholder="Título, slug, banca…"
-              className="w-full max-w-xl rounded-xl border border-slate-200 px-4 py-3"
+              className={`${fieldClass} max-w-xl`}
             />
             <p className="mt-1 text-xs text-slate-400">A busca dispara após pausar a digitação.</p>
           </div>

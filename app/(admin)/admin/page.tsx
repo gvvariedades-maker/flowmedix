@@ -6,7 +6,7 @@ import { supabase } from '@/lib/supabase/client';
 import { logger } from '@/lib/logger';
 import {
   ArrowRight, Database, LayoutDashboard, LogOut, Loader2,
-  Zap, Code, Sparkles, Layers, Trash2, Search, Copy, Check, Users,
+  Zap, Code, Sparkles, Layers, Trash2, Search, Copy, Check,
   ChevronDown, ChevronUp, ChevronLeft, ChevronRight,
 } from 'lucide-react';
 import Link from 'next/link';
@@ -465,28 +465,6 @@ export default function AdminMaster() {
             </p>
           </div>
         </header>
-
-        <section className="bg-white p-6 sm:p-8 rounded-[32px] border-[1.5px] border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div className="flex items-start gap-3">
-            <div className="w-12 h-12 bg-[#4F46E5] rounded-2xl flex items-center justify-center shrink-0">
-              <Users className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <h2 className="font-black italic uppercase text-lg text-slate-900">Cadastros na plataforma</h2>
-              <p className="text-slate-500 text-sm mt-1">
-                Total de contas, semana em curso, últimas semanas fechadas, gráfico de 7 dias e export
-                CSV (UTC).
-              </p>
-            </div>
-          </div>
-          <Link
-            href="/admin/metricas"
-            className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 text-[#BEF264] font-black uppercase italic text-xs hover:bg-[#4338ca] hover:text-white transition-all"
-          >
-            Abrir métricas
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </section>
 
         <section className="bg-white p-6 sm:p-8 rounded-[32px] border-[1.5px] border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>

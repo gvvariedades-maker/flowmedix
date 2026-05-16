@@ -7,6 +7,7 @@ import { Zap, ArrowRight, Lock, MapPin, CheckCircle2, AlertCircle, Eye, EyeOff }
 import { motion } from 'framer-motion';
 import { supabase } from '@/lib/supabase/client';
 import { getPostLoginDestination } from '@/lib/getPostLoginDestination';
+import { applyAdminPostLoginOverride } from '@/lib/postLoginRedirect';
 import { buildAuthQueryPath } from '@/lib/authQueryPath';
 import { PublicDarkAuthHeader } from '@/components/layout/PublicDarkAuthHeader';
 import { AuthAtmosphericBackdrop } from '@/components/layout/AuthAtmosphericBackdrop';
@@ -64,6 +65,8 @@ function LoginContent() {
         return;
       }
 
+      await supabase.auth.getSession();
+
       if (concurso) {
         await fetch('/api/concursos/matricular', {
           method: 'POST',
@@ -73,7 +76,8 @@ function LoginContent() {
         }).catch(() => undefined);
       }
 
-      const destino = getPostLoginDestination(nextPath, cidade, concurso);
+      let destino = getPostLoginDestination(nextPath, cidade, concurso);
+      destino = await applyAdminPostLoginOverride(destino);
 
       router.push(destino);
       router.refresh();

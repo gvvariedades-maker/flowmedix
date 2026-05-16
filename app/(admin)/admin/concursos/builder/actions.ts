@@ -11,8 +11,10 @@ import type { Concurso, ConcursoModuloOrigem } from '@/types/database';
 import {
   ConcursoAdminUpsertSchema,
   ConcursoModuloLinkSchema,
+  ConcursoRegraModulosSchema,
   type ConcursoAdminUpsertInput,
 } from '@/lib/validations';
+import { linkModulosPorRegra } from '@/lib/concursos/entitlements';
 import { invalidateAdminConcursosCache, invalidateModulosCache } from '@/lib/cache';
 
 const CONCURSO_ADMIN_SELECT =
@@ -53,6 +55,12 @@ const LinkModuloSchema = z
   })
   .merge(ConcursoModuloLinkSchema);
 
+const ApplyModulosRegraSchema = z
+  .object({
+    concursoId: z.string().uuid('ID do concurso inválido'),
+  })
+  .merge(ConcursoRegraModulosSchema);
+
 export type CreateConcursoResult =
   | { ok: true; concurso: Concurso }
   | { ok: false; error: string; details?: unknown };
@@ -70,6 +78,10 @@ export type LinkModuloResult = { ok: true } | { ok: false; error: string; detail
 export type UnlinkModuloResult = { ok: true } | { ok: false; error: string; details?: unknown };
 
 export type PublishConcursoResult = { ok: true } | { ok: false; error: string; details?: unknown };
+
+export type ApplyModulosRegraResult =
+  | { ok: true; linkedCount: number }
+  | { ok: false; error: string; details?: unknown };
 
 export type LoadConcursoComModulosResult =
   | {
@@ -239,6 +251,29 @@ export async function linkModulo(input: unknown): Promise<LinkModuloResult> {
   } catch (error) {
     logger.error('linkModulo', error, { concursoId, moduloId });
     return { ok: false, error: error instanceof Error ? error.message : 'Erro ao vincular módulo' };
+  }
+}
+
+/** Vincula em lote por banca (e opcionalmente órgão/ano no meta da questão). */
+export async function applyModulosRegra(input: unknown): Promise<ApplyModulosRegraResult> {
+  const auth = await requireAdmin();
+  if (!auth.ok) return { ok: false, error: auth.error };
+
+  const parsed = ApplyModulosRegraSchema.safeParse(input);
+  if (!parsed.success) {
+    return { ok: false, error: 'Dados inválidos', details: parsed.error.issues };
+  }
+
+  const { concursoId, ...filters } = parsed.data;
+
+  try {
+    const linkedCount = await linkModulosPorRegra(concursoId, filters);
+    await invalidateModulosCache();
+    await invalidateAdminConcursosCache();
+    return { ok: true, linkedCount };
+  } catch (error) {
+    logger.error('applyModulosRegra', error, { concursoId, filters });
+    return { ok: false, error: error instanceof Error ? error.message : 'Erro ao aplicar regra' };
   }
 }
 

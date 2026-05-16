@@ -27,6 +27,8 @@ export default function AdminConcursoMatriculasPage() {
   const [message, setMessage] = useState<string | null>(null);
 
   const [emailBusca, setEmailBusca] = useState('');
+  const [nomeNovo, setNomeNovo] = useState('');
+  const [emailNovo, setEmailNovo] = useState('');
   const [filtroLista, setFiltroLista] = useState('');
   const [resolvedUserId, setResolvedUserId] = useState('');
 
@@ -87,6 +89,41 @@ export default function AdminConcursoMatriculasPage() {
     } catch (e) {
       setResolvedUserId('');
       setMessage(e instanceof Error ? e.message : 'Erro ao resolver usuário');
+    }
+  }
+
+  async function criarUsuarioEMatricular() {
+    const email = emailNovo.trim();
+    if (!email || !concursoId) {
+      setMessage('Informe o e-mail do novo aluno.');
+      return;
+    }
+    setSaving(true);
+    setMessage(null);
+    try {
+      const res = await fetch(`/api/admin/concursos/${concursoId}/matriculas/criar-usuario`, {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          nome: nomeNovo.trim() || undefined,
+        }),
+      });
+      const payload = await res.json();
+      if (!res.ok) throw new Error(payload.error || 'Falha ao criar usuário');
+      setMessage(
+        typeof payload.message === 'string'
+          ? payload.message
+          : 'Conta criada e matrícula registrada.',
+      );
+      setEmailNovo('');
+      setNomeNovo('');
+      await carregar();
+    } catch (e) {
+      setMessage(e instanceof Error ? e.message : 'Erro ao criar usuário');
+    } finally {
+      setSaving(false);
     }
   }
 
@@ -172,10 +209,50 @@ export default function AdminConcursoMatriculasPage() {
         </div>
       ) : null}
 
+      <section className="mb-10 rounded-3xl border border-indigo-200 bg-indigo-50/40 p-6 shadow-sm">
+        <h2 className="mb-1 text-lg font-black text-slate-900">Criar conta e matricular</h2>
+        <p className="mb-4 text-sm text-slate-600">
+          Cria o usuário no Auth (se o e-mail ainda não existir) e já matricula neste concurso. O aluno define a
+          senha em <span className="font-semibold">Esqueci a senha</span> no login.
+        </p>
+        <div className="grid gap-4">
+          <div>
+            <label className="text-xs font-bold uppercase tracking-widest text-slate-400">E-mail</label>
+            <input
+              type="email"
+              value={emailNovo}
+              onChange={(e) => setEmailNovo(e.target.value)}
+              placeholder="novo@email.com"
+              className="mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-3"
+            />
+          </div>
+          <div>
+            <label className="text-xs font-bold uppercase tracking-widest text-slate-400">
+              Nome (opcional)
+            </label>
+            <input
+              value={nomeNovo}
+              onChange={(e) => setNomeNovo(e.target.value)}
+              placeholder="Nome completo"
+              className="mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-3"
+            />
+          </div>
+          <button
+            type="button"
+            disabled={saving || !emailNovo.trim()}
+            onClick={() => void criarUsuarioEMatricular()}
+            className="flex items-center justify-center gap-2 rounded-2xl bg-indigo-600 px-4 py-3 font-black uppercase tracking-widest text-white disabled:opacity-50"
+          >
+            <UserPlus className="h-4 w-4" />
+            Criar conta e matricular
+          </button>
+        </div>
+      </section>
+
       <section className="mb-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="mb-1 text-lg font-black text-slate-900">Matricular gratuitamente</h2>
+        <h2 className="mb-1 text-lg font-black text-slate-900">Matricular usuário existente</h2>
         <p className="mb-4 text-sm text-slate-500">
-          Origem <span className="font-mono">admin</span>, sem data de expiração. Não exige compra no Stripe.
+          Para quem já tem conta. Origem <span className="font-mono">admin</span>, sem expiração. Não exige Stripe.
         </p>
         <div className="grid gap-4">
           <label className="text-xs font-bold uppercase tracking-widest text-slate-400">

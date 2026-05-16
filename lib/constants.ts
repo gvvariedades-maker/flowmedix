@@ -21,6 +21,12 @@ export function getAdminEmail(): string {
   return ADMIN_EMAIL.toLowerCase();
 }
 
+/** Compara e-mail da sessão com `ADMIN_EMAIL` (case-insensitive). Só no servidor. */
+export function isAdminSessionEmail(email: string | null | undefined): boolean {
+  if (!email || !ADMIN_EMAIL) return false;
+  return email.toLowerCase() === ADMIN_EMAIL.toLowerCase();
+}
+
 /**
  * Valida no servidor que ADMIN_EMAIL está configurado.
  * Use exclusivamente em Route Handlers / Server Actions — nunca em Client Components.

@@ -9,6 +9,7 @@ import {
   isActiveMatriculaRow,
 } from '@/lib/concursos/entitlements';
 import { getStripeClient } from '@/lib/stripe/client';
+import { STRIPE_CHECKOUT_PAYMENT_METHOD_TYPES } from '@/lib/stripe/checkoutOptions';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
 import { logger } from '@/lib/logger';
 
@@ -126,6 +127,7 @@ export async function POST(request: NextRequest) {
   try {
     const checkoutSession = await stripe.checkout.sessions.create({
       mode: 'payment',
+      payment_method_types: [...STRIPE_CHECKOUT_PAYMENT_METHOD_TYPES],
       client_reference_id: purchase.id,
       metadata: {
         purchase_id: purchase.id,

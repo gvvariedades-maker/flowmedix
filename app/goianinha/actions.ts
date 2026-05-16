@@ -4,21 +4,21 @@ import { redirect, unstable_rethrow } from 'next/navigation';
 import { z } from 'zod';
 import { getStripeClient } from '@/lib/stripe/client';
 import { STRIPE_CHECKOUT_PAYMENT_METHOD_TYPES } from '@/lib/stripe/checkoutOptions';
-import { requireStripePriceIdCampina } from '@/lib/campina/env';
+import { requireStripePriceIdGoianinha } from '@/lib/goianinha/env';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
-import { CAMPINA_GRANDE_PRODUTO_ID } from '@/lib/campina/constants';
+import { GOIANINHA_PRODUTO_ID } from '@/lib/goianinha/constants';
 import { logger } from '@/lib/logger';
 
-const CampinaCheckoutFormSchema = z.object({
-  intent: z.literal('campina-checkout'),
+const GoianinhaCheckoutFormSchema = z.object({
+  intent: z.literal('goianinha-checkout'),
 });
 
 function redirectCheckoutError(code: 'invalido' | 'pagamentos' | 'config' | 'checkout'): never {
-  redirect(`/campina-grande?erro=${code}`);
+  redirect(`/goianinha?erro=${code}`);
 }
 
-export async function iniciarCheckoutCampinaGrande(formData: FormData) {
-  const parsed = CampinaCheckoutFormSchema.safeParse(Object.fromEntries(formData.entries()));
+export async function iniciarCheckoutGoianinha(formData: FormData) {
+  const parsed = GoianinhaCheckoutFormSchema.safeParse(Object.fromEntries(formData.entries()));
   if (!parsed.success) {
     redirectCheckoutError('invalido');
   }
@@ -30,9 +30,9 @@ export async function iniciarCheckoutCampinaGrande(formData: FormData) {
 
   let priceId: string;
   try {
-    priceId = requireStripePriceIdCampina();
+    priceId = requireStripePriceIdGoianinha();
   } catch (error) {
-    logger.error('Checkout Campina Grande sem STRIPE_PRICE_ID_CAMPINA', error);
+    logger.error('Checkout Goianinha sem STRIPE_PRICE_ID_GOIANINHA', error);
     redirectCheckoutError('config');
   }
 
@@ -42,10 +42,10 @@ export async function iniciarCheckoutCampinaGrande(formData: FormData) {
       payment_method_types: [...STRIPE_CHECKOUT_PAYMENT_METHOD_TYPES],
       line_items: [{ price: priceId, quantity: 1 }],
       metadata: {
-        produto: CAMPINA_GRANDE_PRODUTO_ID,
+        produto: GOIANINHA_PRODUTO_ID,
       },
       success_url: getAbsoluteUrl('/sucesso?session_id={CHECKOUT_SESSION_ID}'),
-      cancel_url: getAbsoluteUrl('/campina-grande'),
+      cancel_url: getAbsoluteUrl('/goianinha'),
     });
 
     if (!checkoutSession.url) {
@@ -55,7 +55,7 @@ export async function iniciarCheckoutCampinaGrande(formData: FormData) {
     redirect(checkoutSession.url);
   } catch (error) {
     unstable_rethrow(error);
-    logger.error('Falha ao criar sessão Stripe Campina Grande', error);
+    logger.error('Falha ao criar sessão Stripe Goianinha', error);
     redirectCheckoutError('checkout');
   }
 }

@@ -1,5 +1,7 @@
+import { randomBytes } from 'node:crypto';
 import type { AuthError, User } from '@supabase/supabase-js';
 import type { SupabaseClient } from '@supabase/supabase-js';
+import { logger } from '@/lib/logger';
 
 const PER_PAGE = 1000;
 /** Limite de páginas para evitar loop infinito (1M usuários no pior caso teórico). */
@@ -40,4 +42,40 @@ export async function findAuthUserByEmail(
   }
 
   return { user: null, error: null };
+}
+
+/**
+ * Garante usuário no Auth pelo e-mail. Se não existir, cria com e-mail confirmado e senha aleatória
+ * (o aluno define a senha em /esqueci-senha).
+ */
+export async function findOrCreateAuthUserByEmail(
+  adminSupabase: SupabaseClient,
+  email: string,
+  displayName: string | null = null,
+): Promise<{ userId: string; created: boolean }> {
+  const normalized = email.toLowerCase().trim();
+  const { user: existing, error: findError } = await findAuthUserByEmail(adminSupabase, normalized);
+
+  if (findError) {
+    throw findError;
+  }
+
+  if (existing?.id) {
+    return { userId: existing.id, created: false };
+  }
+
+  const password = randomBytes(32).toString('base64url');
+  const { data, error } = await adminSupabase.auth.admin.createUser({
+    email: normalized,
+    password,
+    email_confirm: true,
+    user_metadata: displayName ? { full_name: displayName } : undefined,
+  });
+
+  if (error || !data.user?.id) {
+    logger.error('Falha ao criar usuário Auth (admin)', error, { email: normalized });
+    throw error ?? new Error('createUser sem retorno de usuário');
+  }
+
+  return { userId: data.user.id, created: true };
 }
