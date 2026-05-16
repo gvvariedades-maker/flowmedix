@@ -170,6 +170,39 @@ export function validateStripeEnv(): void {
   }
 }
 
+const StripeProPriceIdSchema = z
+  .string()
+  .min(1)
+  .regex(/^price_/, 'STRIPE_PRICE_ID_PRO deve começar com price_');
+
+/**
+ * Exige Price ID da assinatura Pro quando Stripe checkout está ativo (produção).
+ */
+export function validateProPriceEnv(): void {
+  const stripeConfig = getStripeServerConfig();
+  if (!stripeConfig) {
+    return;
+  }
+
+  const raw = readTrimmedEnv('STRIPE_PRICE_ID_PRO' as keyof EnvConfig);
+  if (!raw) {
+    const message =
+      'STRIPE_PRICE_ID_PRO não configurado. Defina o Price ID recorrente do AVANT Pro (Stripe → Produtos).';
+
+    if (process.env.NODE_ENV === 'production') {
+      throw new Error(`❌ ${message}`);
+    }
+
+    console.warn(`⚠️  ${message}`);
+    return;
+  }
+
+  const parsed = StripeProPriceIdSchema.safeParse(raw);
+  if (!parsed.success) {
+    throw new Error(`❌ STRIPE_PRICE_ID_PRO inválido: ${formatZodIssues(parsed.error)}`);
+  }
+}
+
 /**
  * Valida CRON_SECRET quando checkout Stripe está habilitado.
  */
@@ -221,5 +254,6 @@ export function validateAllEnv(): void {
   validateEnv();
   validateSupabaseUrl();
   validateStripeEnv();
+  validateProPriceEnv();
   validateCronEnv();
 }
