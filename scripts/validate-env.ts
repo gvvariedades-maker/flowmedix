@@ -29,6 +29,14 @@ if (stripeConfig) {
   } else if (!goianinhaPrice.startsWith('price_')) {
     console.warn('⚠️  STRIPE_PRICE_ID_GOIANINHA deve começar com price_ (Price ID do Stripe).');
   }
+  const proPrice = process.env.STRIPE_PRICE_ID_PRO?.trim();
+  if (!proPrice) {
+    console.warn(
+      '⚠️  STRIPE_PRICE_ID_PRO ausente: o checkout AVANT Pro (/planos, paywall) não conseguirá abrir até configurar o Price ID.',
+    );
+  } else if (!proPrice.startsWith('price_')) {
+    console.warn('⚠️  STRIPE_PRICE_ID_PRO deve começar com price_ (Price ID do Stripe).');
+  }
   if (process.env.CRON_SECRET?.trim()) {
     console.log('✅ CRON_SECRET configurado para expiração de matrículas');
   } else if (process.env.NODE_ENV !== 'production') {

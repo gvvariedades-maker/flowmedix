@@ -156,7 +156,20 @@ export async function userHasActiveMatricula(
   userId: string,
   concursoId?: string,
 ): Promise<boolean> {
-  const activeIds = await getActiveMatriculatedConcursoIds(userId);
+  let activeIds = await getActiveMatriculatedConcursoIds(userId);
+
+  if (concursoId) {
+    if (activeIds.includes(concursoId)) return true;
+  } else if (activeIds.length > 0) {
+    return true;
+  }
+
+  const supabase = await createServerSupabase();
+  const { syncLegacyCampinaAcessoToMatricula } = await import('@/lib/campina/fulfillment');
+  const synced = await syncLegacyCampinaAcessoToMatricula(supabase, userId);
+  if (!synced) return false;
+
+  activeIds = await getActiveMatriculatedConcursoIds(userId);
   if (concursoId) return activeIds.includes(concursoId);
   return activeIds.length > 0;
 }
@@ -237,6 +250,8 @@ export async function matricularUsuarioEmConcurso(
 }
 
 function isPaidConcurso(concurso: ConcursoRow): boolean {
+  // `geral`: price_cents é vitrine do AVANT Pro (Stripe); acesso free usa matrícula `cadastro`.
+  if (concurso.slug === GERAL_CONCURSO_SLUG) return false;
   return (concurso.price_cents ?? 0) > 0;
 }
 
@@ -265,14 +280,32 @@ async function assertCadastroMatriculaAllowed(
 ): Promise<void> {
   if (!isPaidConcurso(concurso)) return;
 
-  const [hasPurchase, alreadyEnrolled] = await Promise.all([
-    userHasConfirmedPurchase(userId, concurso.id),
-    userHasActiveMatricula(userId, concurso.id),
-  ]);
+  const matriculaRows = await listMatriculaRowsForUser(userId);
+  const alreadyEnrolled = matriculaRows.some(
+    (row) => row.concurso_id === concurso.id && isActiveMatriculaRow(row),
+  );
+
+  const hasPurchase = alreadyEnrolled
+    ? true
+    : await userHasConfirmedPurchase(userId, concurso.id);
 
   if (!hasPurchase && !alreadyEnrolled) {
     throw new Error('Este concurso exige compra. Conclua o pagamento antes de se matricular.');
   }
+}
+
+/**
+ * Garante matrícula ativa no catálogo `geral` (tier free: 1 questão/dia).
+ * Idempotente — não sobrescreve matrícula Pro (`stripe_pro`) existente.
+ */
+export async function ensureGeralCadastroMatricula(userId: string): Promise<ConcursoRow | null> {
+  const geral = await getConcursoBySlug(GERAL_CONCURSO_SLUG);
+  if (!geral || geral.status !== 'ativo') return null;
+
+  const alreadyActive = await userHasActiveMatricula(userId, geral.id);
+  if (alreadyActive) return geral;
+
+  return matricularPorSlug(userId, GERAL_CONCURSO_SLUG, 'cadastro');
 }
 
 export async function matricularPorSlug(

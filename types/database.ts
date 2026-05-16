@@ -90,7 +90,7 @@ export interface ExamPurchase {
 export type ConcursoTipo = 'geral' | 'edital';
 export type ConcursoStatus = 'rascunho' | 'ativo' | 'arquivado';
 export type ConcursoModuloOrigem = 'publicacao' | 'manual' | 'regra';
-export type ConcursoMatriculaOrigem = 'cadastro' | 'admin' | 'upgrade' | 'purchase';
+export type ConcursoMatriculaOrigem = 'cadastro' | 'admin' | 'upgrade' | 'purchase' | 'stripe_pro';
 export type ConcursoMatriculaStatus = 'ativo' | 'expirado';
 export type ConcursoPurchaseStatus = 'pending' | 'paid' | 'refunded';
 

@@ -606,15 +606,14 @@ export default function LandingHome() {
                 Aprovação começa com o método certo. Não com mais conteúdo.
               </h2>
               <p className="text-slate-400 text-base sm:text-lg mb-8 max-w-xl mx-auto">
-                Entre no Beta gratuito do AVANT e comece pelo Estudo Reverso agora. Sem cartão. Sem prazo de cobrança
-                surpresa. Vagas do Beta são limitadas.
+                Estude com questões reais, NeuroSlides e revisão espaçada. Prepare-se para o que a banca realmente cobra.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
-                  href="/register"
+                  href="/planos"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#BEF264] text-slate-950 font-black uppercase tracking-widest text-sm px-10 py-4 rounded-2xl hover:bg-[#d4f879] transition-all shadow-lg shadow-lime-400/25"
                 >
-                  Quero entrar no Beta gratuito
+                  Ver pacotes disponíveis
                   <ArrowRight size={18} />
                 </Link>
                 <Link

@@ -639,6 +639,26 @@ describe('entitlements — matricularPorSlug (cadastro)', () => {
     });
   });
 
+  it('permite cadastro em geral mesmo com price_cents de vitrine Pro', async () => {
+    const geralVitrine: ConcursoFixture = {
+      ...freeConcurso,
+      price_cents: 990,
+    };
+    const onMatriculaUpsert = jest.fn();
+    mockCreateServerSupabase.mockResolvedValue(
+      createSupabaseMock({
+        matriculas: [],
+        concursosBySlug: { [geralVitrine.slug]: geralVitrine },
+        onMatriculaUpsert,
+      }) as never,
+    );
+
+    await expect(matricularPorSlug('user-1', geralVitrine.slug, 'cadastro')).resolves.toEqual(
+      geralVitrine,
+    );
+    expect(onMatriculaUpsert).toHaveBeenCalled();
+  });
+
   it('permite cadastro em concurso pago quando já há matrícula ativa', async () => {
     const onMatriculaUpsert = jest.fn();
     mockCreateServerSupabase.mockResolvedValue(

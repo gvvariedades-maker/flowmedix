@@ -67,7 +67,14 @@ function LoginContent() {
 
       await supabase.auth.getSession();
 
-      if (concurso) {
+      await fetch('/api/concursos/matricular', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ concursoSlug: 'geral' }),
+      }).catch(() => undefined);
+
+      if (concurso && concurso !== 'geral') {
         await fetch('/api/concursos/matricular', {
           method: 'POST',
           credentials: 'same-origin',

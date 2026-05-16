@@ -51,9 +51,12 @@ export default async function SucessoPage({ searchParams }: PageProps) {
 
   let customerName: string | null = null;
   let customerEmail: string | null = null;
+  let isProCheckout = false;
 
   try {
     const session = await stripe.checkout.sessions.retrieve(sessionId.trim());
+    isProCheckout =
+      session.metadata?.produto === 'avant-pro' || session.mode === 'subscription';
     customerName = session.customer_details?.name?.trim() ?? null;
     const emailFromDetails = session.customer_details?.email?.trim();
     const emailDirect = session.customer_email?.trim();
@@ -74,6 +77,8 @@ export default async function SucessoPage({ searchParams }: PageProps) {
   }
 
   const greeting = customerName ? `${customerName},` : '';
+  const primaryHref = isProCheckout ? '/estudar' : '/dashboard';
+  const primaryLabel = isProCheckout ? 'Começar a estudar' : 'Acessar a plataforma';
 
   return (
     <div className="min-h-screen bg-[#010409] px-4 py-16 text-slate-100 sm:px-6 sm:py-24">
@@ -82,15 +87,32 @@ export default async function SucessoPage({ searchParams }: PageProps) {
           <CheckCircle2 className="h-14 w-14 text-emerald-400" aria-hidden />
         </div>
         <h1 className="mt-6 text-center text-2xl font-[1000] tracking-tight text-white sm:text-3xl">
-          Pagamento confirmado
+          {isProCheckout ? 'Pagamento confirmado!' : 'Pagamento confirmado'}
         </h1>
         <p className="mt-4 text-center text-slate-400">
-          {greeting ? (
+          {isProCheckout ? (
             <>
-              <span className="font-semibold text-slate-200">{greeting}</span>{' '}
+              {greeting ? (
+                <>
+                  <span className="font-semibold text-slate-200">{greeting}</span>{' '}
+                </>
+              ) : null}
+              seu acesso <span className="font-semibold text-emerald-300">AVANT Pro</span> está ativo. O limite diário
+              de questões foi removido — pode estudar sem interrupções.
+              <span className="mt-2 block text-sm text-slate-500">
+                Se o Pro ainda não aparecer na conta, aguarde alguns instantes (ativação automática após o pagamento).
+              </span>
             </>
-          ) : null}
-          seu pagamento foi recebido. Seu acesso está liberado. Pode entrar agora.
+          ) : (
+            <>
+              {greeting ? (
+                <>
+                  <span className="font-semibold text-slate-200">{greeting}</span>{' '}
+                </>
+              ) : null}
+              seu pagamento foi recebido. Seu acesso está liberado. Pode entrar agora.
+            </>
+          )}
         </p>
         {customerEmail ? (
           <p className="mt-4 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-center text-sm text-slate-300">
@@ -99,7 +121,7 @@ export default async function SucessoPage({ searchParams }: PageProps) {
         ) : null}
         <div className="mt-8 flex flex-col gap-3">
           <Button asChild size="lg" className="w-full font-bold">
-            <Link href="/dashboard">Acessar a plataforma</Link>
+            <Link href={primaryHref}>{primaryLabel}</Link>
           </Button>
           <p className="text-center text-xs text-slate-500">
             Use o mesmo e-mail do checkout para entrar. Se ainda não definiu senha, utilize &apos;Esqueci minha

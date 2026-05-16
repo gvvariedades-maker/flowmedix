@@ -35,6 +35,7 @@ import { isCertoErradoQuestion } from '@/lib/questionKind';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { supabase } from '@/lib/supabase/client';
+import { PaywallModal } from '@/components/freemium/PaywallModal';
 import type { AvantLessonPlayerProps, LessonData, ReverseStudySlide } from '@/types/lesson';
 import { 
   CheckCircle2, XCircle, ChevronRight, ChevronLeft, 
@@ -135,6 +136,10 @@ export default function AvantLessonPlayer({
   const [slideAtual, setSlideAtual] = useState(0);
   const [estudoConcluido, setEstudoConcluido] = useState(false);
   const [marcandoConclusao, setMarcandoConclusao] = useState(false);
+  const [paywallOpen, setPaywallOpen] = useState(false);
+  const [resetEm, setResetEm] = useState<string | null>(null);
+  const [freemiumLimiteAtingido, setFreemiumLimiteAtingido] = useState(false);
+  const [confirmandoResposta, setConfirmandoResposta] = useState(false);
 
   // Reset ao mudar de questão
   useEffect(() => {
@@ -143,7 +148,33 @@ export default function AvantLessonPlayer({
     setSlideAtual(0);
     setEstudoConcluido(false);
     setMarcandoConclusao(false);
+    setPaywallOpen(false);
+    setFreemiumLimiteAtingido(false);
   }, [dados]);
+
+  useEffect(() => {
+    if (mode !== 'live') return;
+    let cancelled = false;
+
+    fetchWithAuth('/api/freemium/status')
+      .then(async (response) => {
+        if (!response.ok || cancelled) return;
+        const data = (await response.json()) as {
+          limiteAtingido?: boolean;
+          resetEm?: string;
+        };
+        if (cancelled) return;
+        if (data.limiteAtingido) {
+          setFreemiumLimiteAtingido(true);
+          if (data.resetEm) setResetEm(data.resetEm);
+        }
+      })
+      .catch(() => {});
+
+    return () => {
+      cancelled = true;
+    };
+  }, [mode, moduloSlug]);
 
   /** Após escolher uma alternativa, leva o botão Confirmar para a área visível do scroll. */
   useLayoutEffect(() => {
@@ -194,14 +225,15 @@ export default function AvantLessonPlayer({
     return doPost();
   };
 
-  const registrarTentativa = async (opcaoId: string) => {
-    if (mode === 'preview') return;
+  type RegistrarTentativaResult = 'ok' | 'blocked' | 'unauthorized' | 'error';
+
+  const registrarTentativa = async (opcaoId: string): Promise<RegistrarTentativaResult> => {
+    if (mode === 'preview') return 'ok';
 
     try {
       const opcaoEscolhida = dados.question_data.options.find((o: any) => o.id === opcaoId);
       const acertou = opcaoEscolhida?.is_correct || false;
 
-      // Usa API route para registrar E invalidar o cache do histórico imediatamente
       const response = await postWithSessionRetry('/api/registrar-tentativa', {
         modulo_slug: moduloSlug || dados.modulo_slug || 'slug-legacy',
         acertou,
@@ -210,16 +242,49 @@ export default function AvantLessonPlayer({
         subtopico: dados.meta?.subtopico || dados.meta?.topico || 'Geral',
       });
 
+      if (response.status === 403) {
+        const payload = (await response.json().catch(() => ({}))) as {
+          limiteAtingido?: boolean;
+          resetEm?: string;
+        };
+        if (payload.resetEm) setResetEm(payload.resetEm);
+        setFreemiumLimiteAtingido(true);
+        setPaywallOpen(true);
+        return 'blocked';
+      }
+
       if (!response.ok) {
         if (response.status === 401) {
           logger.warn('Attempt not registered: unauthorized after session retry', { moduloSlug });
-          return;
+          return 'unauthorized';
         }
         logger.error('Failed to register attempt via API', { status: response.status, moduloSlug });
+        return 'error';
       }
+
+      setFreemiumLimiteAtingido(true);
+      return 'ok';
     } catch (error) {
       logger.error('Unexpected error registering attempt', error);
-      // Não interromper o fluxo do usuário em caso de erro
+      return 'error';
+    }
+  };
+
+  const handleConfirmarResposta = async () => {
+    if (!selecionada || confirmandoResposta) return;
+
+    if (freemiumLimiteAtingido) {
+      setPaywallOpen(true);
+      return;
+    }
+
+    setConfirmandoResposta(true);
+    try {
+      const result = await registrarTentativa(selecionada);
+      if (result === 'blocked') return;
+      setEtapa('gabarito');
+    } finally {
+      setConfirmandoResposta(false);
     }
   };
 
@@ -345,6 +410,7 @@ export default function AvantLessonPlayer({
   ].filter(Boolean).join('-') || JSON.stringify(dados).substring(0, 100);
 
   return (
+    <>
     <div className="w-full h-full flex-1 min-h-0 flex flex-col relative bg-[#0d1117] md:rounded-[40px] shadow-2xl overflow-hidden border border-[rgba(255,255,255,0.10)] font-sans">
       
       {/* BARRA DE PROGRESSO */}
@@ -525,13 +591,12 @@ export default function AvantLessonPlayer({
                 className="w-full max-w-xl"
               />
               <button 
-                onClick={() => { 
-                  setEtapa('gabarito'); 
-                  registrarTentativa(selecionada); 
-                }} 
-                className="group bg-slate-900 text-white pl-8 pr-2 py-3 rounded-full font-bold uppercase tracking-widest text-xs shadow-xl shadow-slate-900/20 hover:scale-105 transition-all flex items-center gap-4"
+                type="button"
+                onClick={handleConfirmarResposta}
+                disabled={confirmandoResposta}
+                className="group bg-slate-900 text-white pl-8 pr-2 py-3 rounded-full font-bold uppercase tracking-widest text-xs shadow-xl shadow-slate-900/20 hover:scale-105 transition-all flex items-center gap-4 disabled:cursor-not-allowed disabled:opacity-70"
               >
-                Confirmar Resposta
+                {confirmandoResposta ? 'Registrando…' : 'Confirmar Resposta'}
                 <span className="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center group-hover:bg-[#BEF264] group-hover:text-slate-900 transition-colors">
                   <ChevronRight size={16} />
                 </span>
@@ -870,5 +935,14 @@ export default function AvantLessonPlayer({
         )}
       </AnimatePresence>
     </div>
+
+    {mode === 'live' ? (
+      <PaywallModal
+        open={paywallOpen}
+        onClose={() => setPaywallOpen(false)}
+        resetEm={resetEm}
+      />
+    ) : null}
+    </>
   );
 }

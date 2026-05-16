@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   BarChart3,
   BookOpenCheck,
@@ -16,6 +17,12 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
+import {
+  CAMPINA_GRANDE_2026_SLUG,
+  getConcursoBySlug,
+  userHasActiveMatricula,
+} from '@/lib/concursos/entitlements';
+import { getServerSession } from '@/lib/supabase/server-auth';
 import { iniciarCheckoutCampinaGrande } from './actions';
 import { CountdownDays } from './CountdownDays';
 
@@ -81,6 +88,57 @@ function CheckoutCtaForm({ label }: { label: string }) {
         {label}
       </Button>
     </form>
+  );
+}
+
+function CampinaPrimaryCta({ hasAccess }: { hasAccess: boolean }) {
+  if (hasAccess) {
+    return (
+      <Button
+        asChild
+        size="lg"
+        className="h-[52px] w-full rounded-2xl bg-gradient-to-r from-cyan-400 to-emerald-300 px-7 text-base font-black tracking-tight text-slate-950 shadow-2xl shadow-cyan-500/20 hover:from-cyan-300 hover:to-emerald-200 sm:w-auto sm:min-w-[290px]"
+      >
+        <Link href="/estudar">Acessar meu estudo</Link>
+      </Button>
+    );
+  }
+  return <CheckoutCtaForm label="Quero começar agora — R$ 37" />;
+}
+
+function CampinaPurchaseCta({ hasAccess }: { hasAccess: boolean }) {
+  if (hasAccess) {
+    return (
+      <Button
+        asChild
+        size="lg"
+        className="h-[52px] w-full rounded-2xl bg-gradient-to-r from-cyan-400 to-emerald-300 px-7 text-base font-black tracking-tight text-slate-950 sm:w-auto sm:min-w-[290px]"
+      >
+        <Link href="/estudar">Ir para a plataforma</Link>
+      </Button>
+    );
+  }
+  return <CheckoutCtaForm label="Garantir meu acesso — R$ 37" />;
+}
+
+function VideoSection() {
+  return (
+    <section className="px-4 py-12">
+      <p className="mb-4 text-center text-sm text-slate-400">Veja como funciona em 60 segundos</p>
+
+      <div className="relative mx-auto aspect-[9/16] w-full max-w-[320px] overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+        <iframe
+          src="https://www.youtube.com/embed/NkfGctkK6A4?autoplay=0&controls=1&modestbranding=1&rel=0&showinfo=0&playsinline=1"
+          className="absolute inset-0 h-full w-full"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+
+      <p className="mx-auto mt-4 max-w-xs text-center text-xs text-slate-500">
+        Questões reais da IDECAN · NeuroSlides · Feito só para Técnico de Enfermagem
+      </p>
+    </section>
   );
 }
 
@@ -278,6 +336,13 @@ export default async function CampinaGrandePage({ searchParams }: CampinaGrandeP
   const erroParam = Array.isArray(params.erro) ? params.erro[0] : params.erro;
   const checkoutErrorMessage = resolveCheckoutErrorMessage(erroParam);
 
+  const session = await getServerSession();
+  const campinaConcurso = await getConcursoBySlug(CAMPINA_GRANDE_2026_SLUG).catch(() => null);
+  let hasAccess = false;
+  if (session?.user?.id && campinaConcurso?.id) {
+    hasAccess = await userHasActiveMatricula(session.user.id, campinaConcurso.id).catch(() => false);
+  }
+
   return (
     <div
       id="topo"
@@ -312,7 +377,7 @@ export default async function CampinaGrandePage({ searchParams }: CampinaGrandeP
             </p>
 
             <div className="mt-9">
-              <CheckoutCtaForm label="Quero começar agora — R$ 37" />
+              <CampinaPrimaryCta hasAccess={hasAccess} />
             </div>
           </div>
 
@@ -354,6 +419,8 @@ export default async function CampinaGrandePage({ searchParams }: CampinaGrandeP
             </div>
           </div>
         </section>
+
+        <VideoSection />
 
         <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -481,7 +548,7 @@ export default async function CampinaGrandePage({ searchParams }: CampinaGrandeP
                 <p className="mt-2 text-5xl font-black tracking-tight text-white">R$ 37</p>
                 <p className="mt-2 text-sm font-semibold text-emerald-200">Pagamento único, sem mensalidade</p>
                 <div className="mt-7">
-                  <CheckoutCtaForm label="Garantir meu acesso — R$ 37" />
+                  <CampinaPurchaseCta hasAccess={hasAccess} />
                 </div>
                 <p className="mt-4 text-sm text-slate-400">Acesso imediato após o pagamento</p>
               </div>

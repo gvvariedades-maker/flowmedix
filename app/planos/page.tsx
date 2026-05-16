@@ -146,6 +146,8 @@ export default async function PlanosPage({ searchParams }: PageProps) {
             </div>
           ) : null}
 
+          {isAuthenticated ? <GeralFreeAccessBanner /> : null}
+
           {concursos.length > 0 ? (
             <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {concursos.map((concurso) => (
@@ -191,8 +193,9 @@ function PlanoCard({
   concurso: SellableConcursoCard;
   hasAccess: boolean;
 }) {
-  const href =
-    concurso.slug === CAMPINA_GRANDE_2026_SLUG
+  const href = hasAccess
+    ? '/estudar'
+    : concurso.slug === CAMPINA_GRANDE_2026_SLUG
       ? CAMPINA_GRANDE_LANDING_HREF
       : `/concursos/${concurso.slug}/comprar`;
   const priceLabel = formatPriceBRL(concurso.price_cents);
@@ -238,7 +241,7 @@ function PlanoCard({
           <p className="mt-1 text-2xl font-[1000] tracking-tight text-white">{priceLabel}</p>
         </div>
         <span className="inline-flex items-center gap-1.5 text-sm font-black uppercase tracking-wider text-[#BEF264]">
-          Ver pacote
+          {hasAccess ? 'Entrar' : 'Ver pacote'}
           <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" aria-hidden />
         </span>
       </div>
@@ -262,6 +265,25 @@ function MetaRow({
         <dt className="text-[10px] font-black tracking-[0.18em] text-slate-500 uppercase">{label}</dt>
         <dd className="mt-1 font-semibold text-slate-200">{value}</dd>
       </div>
+    </div>
+  );
+}
+
+function GeralFreeAccessBanner() {
+  return (
+    <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-cyan-400/25 bg-gradient-to-br from-cyan-950/40 via-slate-900/90 to-slate-950 p-6 text-center sm:p-8">
+      <p className="text-[10px] font-black tracking-[0.22em] text-cyan-200 uppercase">AVANT Geral</p>
+      <h2 className="mt-2 text-xl font-black text-white sm:text-2xl">Estudar no catálogo geral (grátis)</h2>
+      <p className="mx-auto mt-3 max-w-lg text-sm text-slate-400">
+        1 questão por dia em qualquer módulo. Assine o AVANT Pro para remover o limite.
+      </p>
+      <Link
+        href="/estudar"
+        className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#BEF264] px-6 py-3.5 text-sm font-black uppercase tracking-wider text-slate-950 shadow-lg shadow-lime-400/20 transition-all hover:bg-[#d4f879]"
+      >
+        Entrar na vitrine
+        <ArrowRight size={18} aria-hidden />
+      </Link>
     </div>
   );
 }

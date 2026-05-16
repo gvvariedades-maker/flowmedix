@@ -8,6 +8,9 @@ import {
   getConcursoBySlug,
   isActiveMatriculaRow,
 } from '@/lib/concursos/entitlements';
+import { isUserPro } from '@/lib/freemium';
+import { AVANT_PRO_PRODUTO_ID } from '@/lib/pro/constants';
+import { requireStripePriceIdPro } from '@/lib/pro/env';
 import { getStripeClient } from '@/lib/stripe/client';
 import { STRIPE_CHECKOUT_PAYMENT_METHOD_TYPES } from '@/lib/stripe/checkoutOptions';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
@@ -40,8 +43,58 @@ export async function POST(request: NextRequest) {
   }
 
   const concursoSlug = parsed.data.concurso_slug;
+
   if (concursoSlug === GERAL_CONCURSO_SLUG) {
-    return NextResponse.json({ error: 'Concurso indisponível para compra.' }, { status: 400 });
+    try {
+      if (await isUserPro(session.user.id)) {
+        return NextResponse.json(
+          {
+            error: 'Você já tem acesso AVANT Pro.',
+            redirectUrl: '/estudar',
+          },
+          { status: 409 },
+        );
+      }
+    } catch (error) {
+      logger.error('Falha ao verificar assinatura Pro no checkout', error, {
+        userId: session.user.id,
+      });
+      return NextResponse.json({ error: 'Erro ao verificar assinatura.' }, { status: 500 });
+    }
+
+    let priceId: string;
+    try {
+      priceId = requireStripePriceIdPro();
+    } catch (error) {
+      logger.error('Checkout AVANT Pro sem STRIPE_PRICE_ID_PRO', error, { userId: session.user.id });
+      return NextResponse.json(
+        { error: 'Assinatura Pro indisponível no momento. Tente novamente mais tarde.' },
+        { status: 503 },
+      );
+    }
+
+    try {
+      const checkoutSession = await stripe.checkout.sessions.create({
+        mode: 'subscription',
+        payment_method_types: [...STRIPE_CHECKOUT_PAYMENT_METHOD_TYPES],
+        metadata: {
+          produto: AVANT_PRO_PRODUTO_ID,
+          user_id: session.user.id,
+        },
+        line_items: [{ price: priceId, quantity: 1 }],
+        success_url: getAbsoluteUrl('/sucesso?session_id={CHECKOUT_SESSION_ID}'),
+        cancel_url: getAbsoluteUrl('/planos'),
+      });
+
+      if (!checkoutSession.url) {
+        return NextResponse.json({ error: 'Checkout indisponível no momento.' }, { status: 502 });
+      }
+
+      return NextResponse.json({ url: checkoutSession.url });
+    } catch (error) {
+      logger.error('Falha ao criar sessão Stripe AVANT Pro', error, { userId: session.user.id });
+      return NextResponse.json({ error: 'Não foi possível iniciar o pagamento.' }, { status: 502 });
+    }
   }
 
   if (concursoSlug === CAMPINA_GRANDE_2026_SLUG) {

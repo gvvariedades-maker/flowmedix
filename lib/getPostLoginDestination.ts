@@ -19,5 +19,5 @@ export function getPostLoginDestination(
   if (query) {
     return `/estudar?${query}`;
   }
-  return '/planos';
+  return '/estudar';
 }

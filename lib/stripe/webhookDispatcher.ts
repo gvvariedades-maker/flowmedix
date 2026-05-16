@@ -5,6 +5,8 @@ import { processCampinaGrandeCheckoutCompleted } from '@/lib/campina/webhook';
 import { CAMPINA_GRANDE_PRODUTO_ID } from '@/lib/campina/constants';
 import { processGoianinhaCheckoutCompleted } from '@/lib/goianinha/webhook';
 import { GOIANINHA_PRODUTO_ID } from '@/lib/goianinha/constants';
+import { processProCheckoutCompleted, processProSubscriptionCancelled } from '@/lib/pro/webhook';
+import { AVANT_PRO_PRODUTO_ID } from '@/lib/pro/constants';
 
 /**
  * Encaminha eventos Stripe: checkout Campina Grande, Goianinha ou fluxo de concursos existente.
@@ -13,8 +15,15 @@ export async function dispatchStripeWebhookEvent(
   supabase: SupabaseClient,
   event: Stripe.Event,
 ): Promise<WebhookProcessResult> {
+  if (event.type === 'customer.subscription.deleted') {
+    return processProSubscriptionCancelled(supabase, event.data.object as Stripe.Subscription);
+  }
+
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as Stripe.Checkout.Session;
+    if (session.metadata?.produto === AVANT_PRO_PRODUTO_ID) {
+      return processProCheckoutCompleted(supabase, session);
+    }
     if (session.metadata?.produto === CAMPINA_GRANDE_PRODUTO_ID) {
       return processCampinaGrandeCheckoutCompleted(supabase, session);
     }

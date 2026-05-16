@@ -9,6 +9,7 @@ import { supabase } from '@/lib/supabase/client';
 import { getPostLoginDestination } from '@/lib/getPostLoginDestination';
 import { applyAdminPostLoginOverride } from '@/lib/postLoginRedirect';
 import { buildAuthQueryPath } from '@/lib/authQueryPath';
+import { mapRegisterAuthError } from '@/lib/authErrorMessages';
 import { AuthAtmosphericBackdrop } from '@/components/layout/AuthAtmosphericBackdrop';
 import { PublicDarkAuthHeader } from '@/components/layout/PublicDarkAuthHeader';
 
@@ -44,10 +45,12 @@ function RegisterForm() {
   const [error, setError] = useState<string | null>(null);
   /** Quando o Supabase exige confirmação por e-mail antes de criar sessão */
   const [pendingEmailVerification, setPendingEmailVerification] = useState(false);
+  const [emailJaCadastrado, setEmailJaCadastrado] = useState(false);
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+    setEmailJaCadastrado(false);
 
     if (password.length < 6) {
       setError('A senha precisa ter no mínimo 6 caracteres.');
@@ -74,7 +77,17 @@ function RegisterForm() {
       });
 
       if (authError) {
-        setError(authError.message || 'Erro ao criar conta. Tente novamente.');
+        const msg = mapRegisterAuthError(authError.message);
+        setError(msg);
+        setEmailJaCadastrado(msg.includes('já está cadastrado'));
+        setLoading(false);
+        return;
+      }
+
+      const identities = data.user?.identities;
+      if (data.user && Array.isArray(identities) && identities.length === 0) {
+        setError(mapRegisterAuthError('User already registered'));
+        setEmailJaCadastrado(true);
         setLoading(false);
         return;
       }
@@ -82,7 +95,14 @@ function RegisterForm() {
       if (data.session) {
         await supabase.auth.getSession();
 
-        if (concurso) {
+        await fetch('/api/concursos/matricular', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ concursoSlug: 'geral' }),
+        }).catch(() => undefined);
+
+        if (concurso && concurso !== 'geral') {
           await fetch('/api/concursos/matricular', {
             method: 'POST',
             credentials: 'same-origin',
@@ -243,10 +263,29 @@ function RegisterForm() {
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex items-center gap-2 rounded-xl border border-rose-500/30 bg-rose-950/40 p-3 text-rose-200"
+                className="flex flex-col gap-2 rounded-xl border border-rose-500/30 bg-rose-950/40 p-3 text-rose-200"
               >
-                <AlertCircle size={16} className="shrink-0" />
-                <p className="text-xs font-bold">{error}</p>
+                <div className="flex items-center gap-2">
+                  <AlertCircle size={16} className="shrink-0" />
+                  <p className="text-xs font-bold">{error}</p>
+                </div>
+                {emailJaCadastrado ? (
+                  <div className="flex flex-wrap gap-2 pl-6">
+                    <Link
+                      href={loginHref}
+                      className="text-xs font-black text-cyan-300 underline-offset-2 hover:underline"
+                    >
+                      Entrar agora
+                    </Link>
+                    <span className="text-xs text-rose-300/60">·</span>
+                    <Link
+                      href="/esqueci-senha"
+                      className="text-xs font-black text-cyan-300 underline-offset-2 hover:underline"
+                    >
+                      Esqueci minha senha
+                    </Link>
+                  </div>
+                ) : null}
               </motion.div>
             )}
 

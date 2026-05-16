@@ -1,7 +1,12 @@
 import { redirect } from 'next/navigation';
 import { getServerSession } from '@/lib/supabase/server-auth';
 import { isAdminSessionEmail } from '@/lib/constants';
-import { getMatriculatedConcursos, userHasActiveMatricula } from '@/lib/concursos/entitlements';
+import {
+  ensureGeralCadastroMatricula,
+  getMatriculatedConcursos,
+  userHasActiveMatricula,
+} from '@/lib/concursos/entitlements';
+import { logger } from '@/lib/logger';
 import DashboardShell from './DashboardShell';
 
 function displayNameFromSessionUser(
@@ -22,7 +27,16 @@ export default async function DashboardLayout({ children }: { children: React.Re
   const isAdmin = isAdminSessionEmail(email);
 
   if (session?.user?.id && !isAdmin) {
-    const hasActiveMatricula = await userHasActiveMatricula(session.user.id).catch(() => false);
+    let hasActiveMatricula = await userHasActiveMatricula(session.user.id).catch(() => false);
+    if (!hasActiveMatricula) {
+      await ensureGeralCadastroMatricula(session.user.id).catch((error) => {
+        logger.warn('Falha ao garantir matrícula geral (free)', {
+          userId: session.user.id,
+          error: error instanceof Error ? error.message : String(error),
+        });
+      });
+      hasActiveMatricula = await userHasActiveMatricula(session.user.id).catch(() => false);
+    }
     if (!hasActiveMatricula) {
       redirect('/planos');
     }
