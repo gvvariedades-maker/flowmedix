@@ -4,6 +4,7 @@ import { findOrCreateAuthUserByEmail } from '@/lib/supabase/adminUsers';
 import { logger } from '@/lib/logger';
 import type { WebhookProcessResult } from '@/lib/pagamentos/webhook';
 import { CAMPINA_GRANDE_PRODUTO_ID } from '@/lib/campina/constants';
+import { fulfillCampinaGrandeAccess } from '@/lib/campina/fulfillment';
 
 function readCustomerEmail(session: Stripe.Checkout.Session): string | null {
   const details = session.customer_details;
@@ -42,29 +43,9 @@ export async function processCampinaGrandeCheckoutCompleted(
 
   const displayName = session.customer_details?.name?.trim() || null;
 
-  const { userId } = (await findOrCreateAuthUserByEmail(admin, email, displayName)).userId;
+  const { userId } = await findOrCreateAuthUserByEmail(admin, email, displayName);
 
-  const { error: insertError } = await admin.from('acessos').insert({
-    user_id: userId,
-    produto: CAMPINA_GRANDE_PRODUTO_ID,
-    stripe_checkout_session_id: gatewayPaymentId,
-  });
-
-  if (insertError) {
-    const isDuplicate =
-      insertError.code === '23505' ||
-      insertError.message?.toLowerCase().includes('duplicate');
-
-    if (isDuplicate) {
-      return { handled: true, userId };
-    }
-
-    logger.error('Falha ao inserir acesso Campina Grande', insertError, {
-      userId,
-      sessionId: gatewayPaymentId,
-    });
-    throw insertError;
-  }
+  await fulfillCampinaGrandeAccess(admin, userId, gatewayPaymentId);
 
   return { handled: true, userId };
 }
