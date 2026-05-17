@@ -6,6 +6,7 @@ import {
   getMatriculatedConcursos,
   userHasActiveMatricula,
 } from '@/lib/concursos/entitlements';
+import { isUserPro } from '@/lib/freemium';
 import { logger } from '@/lib/logger';
 import DashboardShell from './DashboardShell';
 
@@ -42,15 +43,21 @@ export default async function DashboardLayout({ children }: { children: React.Re
     }
   }
 
-  const matriculatedConcursos = session?.user?.id
-    ? await getMatriculatedConcursos(session.user.id).catch(() => [])
-    : [];
+  const [matriculatedConcursos, userIsPro] = session?.user?.id
+    ? await Promise.all([
+        getMatriculatedConcursos(session.user.id).catch(() => []),
+        isUserPro(session.user.id).catch(() => false),
+      ])
+    : [[], false];
+
+  const isPro = isAdmin || userIsPro;
 
   return (
     <DashboardShell
       initialUserEmail={email}
       initialDisplayName={displayNameFromSessionUser(session?.user ?? null)}
       initialIsAdmin={isAdmin}
+      isPro={isPro}
       initialMatriculatedConcursos={matriculatedConcursos.map((concurso) => ({
         slug: concurso.slug,
         nome: concurso.nome,

@@ -8,7 +8,6 @@ import {
   LayoutDashboard,
   BookOpen,
   Zap,
-  MapPin,
   ShieldCheck,
   BarChart3,
   LogOut,
@@ -152,35 +151,56 @@ type MatriculatedConcursoSummary = {
   tipo: 'geral' | 'edital';
 };
 
-function CityCard({ cidadeExibicao }: { cidadeExibicao: string }) {
+function CityCard({ cidadeExibicao, isPro }: { cidadeExibicao: string; isPro: boolean }) {
   return (
     <div className="mb-1 px-3">
       <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 p-[1px] shadow-lg shadow-slate-900/25">
-        <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900/95 via-slate-800/98 to-indigo-950/95 p-4 text-center">
+        <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900/95 via-slate-800/98 to-indigo-950/95 p-4">
           <div className="mb-3 flex justify-center">
-            <div className="inline-flex max-w-full items-center justify-center gap-2 rounded-md bg-white/10 px-2.5 py-1.5 ring-1 ring-white/10 backdrop-blur-sm">
-              <MapPin
-                size={14}
-                className="shrink-0 text-emerald-300"
-                strokeWidth={MENU_ICON_STROKE}
-                aria-hidden
-              />
-              <span className="text-[10px] font-bold uppercase tracking-[0.12em] text-white/95">
-                Turma exclusiva
+            <div
+              className={`inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 ring-1 backdrop-blur-sm ${
+                isPro ? 'bg-[#BEF264]/15 ring-[#BEF264]/30' : 'bg-white/8 ring-white/10'
+              }`}
+            >
+              {isPro ? (
+                <Zap size={11} className="shrink-0 text-[#BEF264]" fill="currentColor" aria-hidden />
+              ) : null}
+              <span
+                className={`text-[10px] font-black uppercase tracking-[0.15em] ${
+                  isPro ? 'text-[#BEF264]' : 'text-slate-400'
+                }`}
+              >
+                {isPro ? 'AVANT PRO' : 'PLANO GRATUITO'}
               </span>
             </div>
           </div>
-          <h3 className="text-balance text-base font-bold leading-snug tracking-tight text-white sm:text-[1.05rem]">
+          <h3 className="text-balance text-center text-base font-bold leading-snug tracking-tight text-white sm:text-[1.05rem]">
             {cidadeExibicao}
           </h3>
-          <div className="mt-3.5 flex justify-center">
-            <span className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-sm font-semibold text-emerald-100/95 backdrop-blur-sm sm:text-[0.9375rem]">
-              <span
-                className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.85)]"
-                aria-hidden
-              />
-              Estudo Reverso
-            </span>
+
+          <div className="mt-3.5">
+            {isPro ? (
+              <div className="flex justify-center">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-sm font-semibold text-emerald-100/95 backdrop-blur-sm">
+                  <span
+                    className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.85)] animate-pulse"
+                    aria-hidden
+                  />
+                  Acesso completo
+                </span>
+              </div>
+            ) : (
+              <div className="space-y-2.5">
+                <p className="text-center text-xs font-medium text-slate-500">1 questão por dia</p>
+                <Link
+                  href="/planos"
+                  className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#BEF264] px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 shadow-md shadow-lime-400/20 transition-all hover:scale-[1.02] hover:bg-[#d4f879]"
+                >
+                  <Zap size={11} fill="currentColor" aria-hidden />
+                  Assinar Pro — R$9,90
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -290,12 +310,14 @@ function DashboardContent({
   initialDisplayName,
   initialIsAdmin,
   initialMatriculatedConcursos,
+  isPro,
 }: {
   children: React.ReactNode;
   initialUserEmail: string | null;
   initialDisplayName: string | null;
   initialIsAdmin: boolean;
   initialMatriculatedConcursos: MatriculatedConcursoSummary[];
+  isPro: boolean;
 }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -482,7 +504,7 @@ function DashboardContent({
           <LogoMark />
         </div>
 
-        <CityCard cidadeExibicao={cidadeExibicao} />
+        <CityCard cidadeExibicao={cidadeExibicao} isPro={isPro} />
 
         <DashboardNav menuItems={menuItems} createQueryString={createQueryString} isAdminUser={isAdminUser} />
 
@@ -538,7 +560,7 @@ function DashboardContent({
                 </button>
               </div>
 
-              <CityCard cidadeExibicao={cidadeExibicao} />
+              <CityCard cidadeExibicao={cidadeExibicao} isPro={isPro} />
 
               <DashboardNav menuItems={menuItems} createQueryString={createQueryString} isAdminUser={isAdminUser} />
 
@@ -616,12 +638,14 @@ export default function DashboardShell({
   initialDisplayName = null,
   initialIsAdmin = false,
   initialMatriculatedConcursos = [],
+  isPro = false,
 }: {
   children: React.ReactNode;
   initialUserEmail: string | null;
   initialDisplayName?: string | null;
   initialIsAdmin?: boolean;
   initialMatriculatedConcursos?: MatriculatedConcursoSummary[];
+  isPro?: boolean;
 }) {
   return (
     <ToastProvider>
@@ -631,6 +655,7 @@ export default function DashboardShell({
           initialDisplayName={initialDisplayName}
           initialIsAdmin={initialIsAdmin}
           initialMatriculatedConcursos={initialMatriculatedConcursos}
+          isPro={isPro}
         >
           {children}
         </DashboardContent>
