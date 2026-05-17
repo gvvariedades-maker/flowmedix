@@ -65,7 +65,11 @@ export function BlogIndexClient({ posts }: BlogIndexClientProps) {
         />
       </div>
 
-      <PublicDarkSiteHeader ctaLabel="Criar conta grátis" ctaLabelShort="Criar conta" />
+      <PublicDarkSiteHeader
+        ctaLabel="Comece grátis"
+        ctaLabelShort="Grátis"
+        ctaLabelTight="Grátis →"
+      />
 
       <main className="relative z-10">
         <section className="mx-auto max-w-6xl px-4 pt-12 pb-14 sm:px-6 sm:pt-20 sm:pb-16">

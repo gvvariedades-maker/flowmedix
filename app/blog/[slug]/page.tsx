@@ -91,7 +91,11 @@ export default async function BlogPostPage({ params }: PageProps) {
         />
       </div>
 
-      <PublicDarkSiteHeader ctaLabel="Criar conta grátis" ctaLabelShort="Criar conta" />
+      <PublicDarkSiteHeader
+        ctaLabel="Comece grátis"
+        ctaLabelShort="Grátis"
+        ctaLabelTight="Grátis →"
+      />
 
       <main className="relative z-10">
         <header className="mx-auto max-w-3xl px-4 pt-12 pb-8 sm:px-6 sm:pt-16">

@@ -44,10 +44,10 @@ export function PublicLightAuthHeader({
             ) : null}
             {variant !== 'register' ? (
               <Link href={registerHref} className={ctaButtonClass}>
-                <span className="sr-only min-[380px]:hidden">Criar conta grátis</span>
-                <span className="hidden sm:inline">Criar conta grátis</span>
+                <span className="sr-only min-[380px]:hidden">Comece grátis</span>
+                <span className="hidden sm:inline">Comece grátis</span>
                 <span className="hidden min-[380px]:inline sm:hidden font-bold normal-case tracking-normal text-[11px] text-slate-950">
-                  Criar conta
+                  Comece grátis
                 </span>
                 <ArrowRight size={16} className="shrink-0" aria-hidden />
               </Link>
