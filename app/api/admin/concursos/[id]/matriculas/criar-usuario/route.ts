@@ -3,7 +3,7 @@ import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import { createServerSupabase } from '@/lib/supabase/server';
 import { findOrCreateAuthUserByEmail } from '@/lib/supabase/adminUsers';
-import { getAdminEmail } from '@/lib/constants';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { AdminCriarUsuarioMatriculaSchema } from '@/lib/validations';
 import { invalidateUserModulosCache } from '@/lib/cache';
 import { logger } from '@/lib/logger';
@@ -31,7 +31,7 @@ async function requireAdmin() {
   if (!email) {
     return { error: NextResponse.json({ error: 'Não autenticado' }, { status: 401 }) };
   }
-  if (email !== getAdminEmail()) {
+  if (!isAdminSessionEmail(email)) {
     return { error: NextResponse.json({ error: 'Acesso negado' }, { status: 403 }) };
   }
 

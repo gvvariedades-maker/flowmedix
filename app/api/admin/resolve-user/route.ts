@@ -3,7 +3,7 @@ import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import { createServerSupabase } from '@/lib/supabase/server';
 import { findAuthUserByEmail } from '@/lib/supabase/adminUsers';
-import { getAdminEmail } from '@/lib/constants';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { ResolveUserSchema } from '@/lib/validations';
 import { logger } from '@/lib/logger';
 
@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
   }
 
   const email = session.user.email.toLowerCase();
-  if (email !== getAdminEmail()) {
+  if (!isAdminSessionEmail(email)) {
     return NextResponse.json({ error: 'Acesso negado' }, { status: 403 });
   }
 

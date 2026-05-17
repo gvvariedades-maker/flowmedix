@@ -1,9 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import {
-  countQuestoesHojeForUser,
-  getFreemiumDayBounds,
-  isUserPro,
-} from '@/lib/freemium';
+import { getFreemiumStatusForUser } from '@/lib/freemium';
 import { logger } from '@/lib/logger';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 
@@ -15,21 +11,10 @@ export async function GET(request: NextRequest) {
     }
 
     const { user } = auth;
-    const [isPro, questoesHoje] = await Promise.all([
-      isUserPro(user.id),
-      countQuestoesHojeForUser(user.id),
-    ]);
-
-    const { resetEm } = getFreemiumDayBounds();
-    const limiteAtingido = !isPro && questoesHoje >= 1;
+    const status = await getFreemiumStatusForUser(user.id, user.email);
 
     return NextResponse.json(
-      {
-        isPro,
-        questoesHoje,
-        limiteAtingido,
-        resetEm: resetEm.toISOString(),
-      },
+      status,
       {
         headers: {
           'Cache-Control': 'no-store',

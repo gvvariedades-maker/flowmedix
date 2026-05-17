@@ -5,6 +5,7 @@ import {
   assertCanAnswerQuestion,
   countQuestoesHojeForUser,
   getFreemiumDayBounds,
+  isFreemiumUnlimitedEmail,
   isUserPro,
 } from '@/lib/freemium';
 import { logger } from '@/lib/logger';
@@ -25,7 +26,7 @@ export async function POST(request: NextRequest) {
     }
     const { user, supabase } = auth;
 
-    const gate = await assertCanAnswerQuestion(user.id);
+    const gate = await assertCanAnswerQuestion(user.id, user.email);
     if (!gate.allowed) {
       return NextResponse.json(
         { limiteAtingido: true, resetEm: gate.resetEm, allowed: false },
@@ -33,16 +34,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const [recheck, isPro] = await Promise.all([
-      countQuestoesHojeForUser(user.id),
-      isUserPro(user.id),
-    ]);
-    if (!isPro && recheck >= 1) {
-      const { resetEm } = getFreemiumDayBounds();
-      return NextResponse.json(
-        { limiteAtingido: true, resetEm: resetEm.toISOString(), allowed: false },
-        { status: 403 },
-      );
+    if (!isFreemiumUnlimitedEmail(user.email)) {
+      const [recheck, isPro] = await Promise.all([
+        countQuestoesHojeForUser(user.id),
+        isUserPro(user.id),
+      ]);
+      if (!isPro && recheck >= 1) {
+        const { resetEm } = getFreemiumDayBounds();
+        return NextResponse.json(
+          { limiteAtingido: true, resetEm: resetEm.toISOString(), allowed: false },
+          { status: 403 },
+        );
+      }
     }
 
     const { error: insertError } = await supabase.from('historico_questoes').insert({

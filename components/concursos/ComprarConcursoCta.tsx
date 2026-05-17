@@ -1,36 +1,20 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, Loader2 } from 'lucide-react';
 
 type ComprarConcursoCtaProps = {
   concursoSlug: string;
-  isAuthenticated: boolean;
-  loginHref: string;
 };
 
-export function ComprarConcursoCta({
-  concursoSlug,
-  isAuthenticated,
-  loginHref,
-}: ComprarConcursoCtaProps) {
+export function ComprarConcursoCta({ concursoSlug }: ComprarConcursoCtaProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const buttonClassName =
     'inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#BEF264] px-5 py-3.5 text-sm font-black uppercase tracking-wider text-slate-950 shadow-lg shadow-lime-400/20 transition-all hover:scale-[1.01] hover:bg-[#d4f879] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto';
-
-  if (!isAuthenticated) {
-    return (
-      <Link href={loginHref} className={buttonClassName}>
-        Entrar para comprar
-        <ArrowRight size={18} aria-hidden />
-      </Link>
-    );
-  }
 
   const handleCheckout = async () => {
     setLoading(true);
@@ -57,6 +41,11 @@ export function ComprarConcursoCta({
 
       if (response.status === 400 && payload.redirectUrl) {
         router.push(payload.redirectUrl);
+        return;
+      }
+
+      if (response.status === 401) {
+        setError(payload.error || 'Faça login para concluir esta compra ou tente novamente.');
         return;
       }
 

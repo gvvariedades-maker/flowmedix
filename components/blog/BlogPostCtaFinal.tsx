@@ -23,7 +23,7 @@ export function BlogPostCtaFinal() {
               href="/register"
               className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#BEF264] px-10 py-4 text-sm font-black tracking-widest text-slate-950 uppercase shadow-lg shadow-lime-400/25 transition-all hover:bg-[#d4f879] sm:w-auto"
             >
-              Entrar no Beta Gratuito
+              Começar grátis
               <ArrowRight size={18} />
             </Link>
             <Link

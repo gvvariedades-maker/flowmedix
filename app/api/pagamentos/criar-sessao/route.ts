@@ -17,11 +17,6 @@ import { getAbsoluteUrl } from '@/lib/siteUrl';
 import { logger } from '@/lib/logger';
 
 export async function POST(request: NextRequest) {
-  const session = await getServerSession();
-  if (!session?.user?.id) {
-    return NextResponse.json({ error: 'Não autenticado' }, { status: 401 });
-  }
-
   const stripe = getStripeClient();
   if (!stripe) {
     return NextResponse.json({ error: 'Pagamentos indisponíveis no momento.' }, { status: 503 });
@@ -43,10 +38,16 @@ export async function POST(request: NextRequest) {
   }
 
   const concursoSlug = parsed.data.concurso_slug;
+  const session = await getServerSession();
+  const userId = session?.user?.id;
 
   if (concursoSlug === GERAL_CONCURSO_SLUG) {
+    if (!userId) {
+      return NextResponse.json({ error: 'Não autenticado' }, { status: 401 });
+    }
+
     try {
-      if (await isUserPro(session.user.id)) {
+      if (await isUserPro(userId)) {
         return NextResponse.json(
           {
             error: 'Você já tem acesso AVANT Pro.',
@@ -56,9 +57,7 @@ export async function POST(request: NextRequest) {
         );
       }
     } catch (error) {
-      logger.error('Falha ao verificar assinatura Pro no checkout', error, {
-        userId: session.user.id,
-      });
+      logger.error('Falha ao verificar assinatura Pro no checkout', error, { userId });
       return NextResponse.json({ error: 'Erro ao verificar assinatura.' }, { status: 500 });
     }
 
@@ -66,7 +65,7 @@ export async function POST(request: NextRequest) {
     try {
       priceId = requireStripePriceIdPro();
     } catch (error) {
-      logger.error('Checkout AVANT Pro sem STRIPE_PRICE_ID_PRO', error, { userId: session.user.id });
+      logger.error('Checkout AVANT Pro sem STRIPE_PRICE_ID_PRO', error, { userId });
       return NextResponse.json(
         { error: 'Assinatura Pro indisponível no momento. Tente novamente mais tarde.' },
         { status: 503 },
@@ -79,7 +78,7 @@ export async function POST(request: NextRequest) {
         payment_method_types: [...STRIPE_CHECKOUT_PAYMENT_METHOD_TYPES],
         metadata: {
           produto: AVANT_PRO_PRODUTO_ID,
-          user_id: session.user.id,
+          user_id: userId,
         },
         line_items: [{ price: priceId, quantity: 1 }],
         success_url: getAbsoluteUrl('/sucesso?session_id={CHECKOUT_SESSION_ID}'),
@@ -92,7 +91,7 @@ export async function POST(request: NextRequest) {
 
       return NextResponse.json({ url: checkoutSession.url });
     } catch (error) {
-      logger.error('Falha ao criar sessão Stripe AVANT Pro', error, { userId: session.user.id });
+      logger.error('Falha ao criar sessão Stripe AVANT Pro', error, { userId });
       return NextResponse.json({ error: 'Não foi possível iniciar o pagamento.' }, { status: 502 });
     }
   }
@@ -111,10 +110,7 @@ export async function POST(request: NextRequest) {
   try {
     concurso = await getConcursoBySlug(concursoSlug);
   } catch (error) {
-    logger.error('Falha ao buscar concurso vendável', error, {
-      concursoSlug,
-      userId: session.user.id,
-    });
+    logger.error('Falha ao buscar concurso vendável', error, { concursoSlug, userId });
     return NextResponse.json({ error: 'Erro ao carregar concurso.' }, { status: 500 });
   }
 
@@ -129,63 +125,94 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const supabase = await createSupabaseServerClient();
+  if (userId) {
+    const supabase = await createSupabaseServerClient();
 
-  const { data: matricula, error: matriculaError } = await supabase
-    .from('concurso_matriculas')
-    .select('status, expires_at')
-    .eq('user_id', session.user.id)
-    .eq('concurso_id', concurso.id)
-    .maybeSingle();
+    const { data: matricula, error: matriculaError } = await supabase
+      .from('concurso_matriculas')
+      .select('status, expires_at')
+      .eq('user_id', userId)
+      .eq('concurso_id', concurso.id)
+      .maybeSingle();
 
-  if (matriculaError) {
-    logger.error('Falha ao verificar matrícula ativa', matriculaError, {
-      concursoSlug,
-      userId: session.user.id,
-    });
-    return NextResponse.json({ error: 'Erro ao verificar acesso existente.' }, { status: 500 });
-  }
+    if (matriculaError) {
+      logger.error('Falha ao verificar matrícula ativa', matriculaError, { concursoSlug, userId });
+      return NextResponse.json({ error: 'Erro ao verificar acesso existente.' }, { status: 500 });
+    }
 
-  if (matricula && isActiveMatriculaRow(matricula)) {
-    return NextResponse.json(
-      {
-        error: 'Você já tem acesso a este concurso.',
-        redirectUrl: '/estudar',
-      },
-      { status: 409 },
-    );
-  }
+    if (matricula && isActiveMatriculaRow(matricula)) {
+      return NextResponse.json(
+        {
+          error: 'Você já tem acesso a este concurso.',
+          redirectUrl: '/estudar',
+        },
+        { status: 409 },
+      );
+    }
 
-  const { data: purchase, error: purchaseError } = await supabase
-    .from('concurso_purchases')
-    .insert({
-      user_id: session.user.id,
-      concurso_id: concurso.id,
-      amount: concurso.price_cents,
-      status: 'pending',
-      gateway: 'stripe',
-      currency: 'brl',
-    })
-    .select('id')
-    .single();
+    const { data: purchase, error: purchaseError } = await supabase
+      .from('concurso_purchases')
+      .insert({
+        user_id: userId,
+        concurso_id: concurso.id,
+        amount: concurso.price_cents,
+        status: 'pending',
+        gateway: 'stripe',
+        currency: 'brl',
+      })
+      .select('id')
+      .single();
 
-  if (purchaseError || !purchase?.id) {
-    logger.error('Falha ao registrar compra pendente', purchaseError, {
-      concursoSlug,
-      userId: session.user.id,
-    });
-    return NextResponse.json({ error: 'Não foi possível iniciar o pagamento.' }, { status: 500 });
+    if (purchaseError || !purchase?.id) {
+      logger.error('Falha ao registrar compra pendente', purchaseError, { concursoSlug, userId });
+      return NextResponse.json({ error: 'Não foi possível iniciar o pagamento.' }, { status: 500 });
+    }
+
+    try {
+      const checkoutSession = await stripe.checkout.sessions.create({
+        mode: 'payment',
+        payment_method_types: [...STRIPE_CHECKOUT_PAYMENT_METHOD_TYPES],
+        client_reference_id: purchase.id,
+        metadata: {
+          purchase_id: purchase.id,
+          user_id: userId,
+          concurso_id: concurso.id,
+          concurso_slug: concurso.slug,
+        },
+        line_items: [
+          {
+            quantity: 1,
+            price_data: {
+              currency: 'brl',
+              unit_amount: concurso.price_cents,
+              product_data: {
+                name: concurso.nome,
+                description: `Acesso ao edital ${concurso.slug}`,
+              },
+            },
+          },
+        ],
+        success_url: getAbsoluteUrl('/estudar?compra=sucesso'),
+        cancel_url: getAbsoluteUrl(`/concursos/${concurso.slug}/comprar?cancelado=1`),
+      });
+
+      if (!checkoutSession.url) {
+        return NextResponse.json({ error: 'Checkout indisponível no momento.' }, { status: 502 });
+      }
+
+      return NextResponse.json({ url: checkoutSession.url });
+    } catch (error) {
+      logger.error('Falha ao criar sessão Stripe', error, { purchaseId: purchase.id, userId });
+      return NextResponse.json({ error: 'Não foi possível iniciar o pagamento.' }, { status: 502 });
+    }
   }
 
   try {
     const checkoutSession = await stripe.checkout.sessions.create({
       mode: 'payment',
       payment_method_types: [...STRIPE_CHECKOUT_PAYMENT_METHOD_TYPES],
-      client_reference_id: purchase.id,
       metadata: {
-        purchase_id: purchase.id,
-        user_id: session.user.id,
-        concurso_id: concurso.id,
+        guest_checkout: '1',
         concurso_slug: concurso.slug,
       },
       line_items: [
@@ -201,7 +228,7 @@ export async function POST(request: NextRequest) {
           },
         },
       ],
-      success_url: getAbsoluteUrl('/estudar?compra=sucesso'),
+      success_url: getAbsoluteUrl(`/concursos/${concurso.slug}/comprar?compra=1`),
       cancel_url: getAbsoluteUrl(`/concursos/${concurso.slug}/comprar?cancelado=1`),
     });
 
@@ -211,10 +238,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ url: checkoutSession.url });
   } catch (error) {
-    logger.error('Falha ao criar sessão Stripe', error, {
-      purchaseId: purchase.id,
-      userId: session.user.id,
-    });
+    logger.error('Falha ao criar sessão Stripe (guest)', error, { concursoSlug });
     return NextResponse.json({ error: 'Não foi possível iniciar o pagamento.' }, { status: 502 });
   }
 }

@@ -262,7 +262,6 @@ export default function AvantLessonPlayer({
         return 'error';
       }
 
-      setFreemiumLimiteAtingido(true);
       return 'ok';
     } catch (error) {
       logger.error('Unexpected error registering attempt', error);

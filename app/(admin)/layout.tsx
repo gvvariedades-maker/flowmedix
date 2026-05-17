@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 import { getServerSession } from '@/lib/supabase/server-auth';
-import { ADMIN_EMAIL } from '@/lib/constants';
+import { isAdminSessionEmail } from '@/lib/constants';
 
 /**
  * Em builds de CI com NEXT_PUBLIC_E2E_ADMIN_BYPASS=true a verificação de auth
@@ -22,8 +22,7 @@ export default async function AdminLayout({
       redirect('/login');
     }
 
-    const userEmail = session.user.email?.toLowerCase() ?? '';
-    if (!ADMIN_EMAIL || userEmail !== ADMIN_EMAIL.toLowerCase()) {
+    if (!isAdminSessionEmail(session.user.email)) {
       redirect('/');
     }
   }

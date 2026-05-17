@@ -8,7 +8,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import { createServerSupabase } from '@/lib/supabase/server';
-import { getAdminEmail } from '@/lib/constants';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import { invalidateModulosCache, invalidateQuestoesCache, invalidateHistoricoCache } from '@/lib/cache';
 
@@ -47,7 +47,7 @@ export async function DELETE(
     return NextResponse.json({ error: 'Não autenticado' }, { status: 401 });
   }
 
-  if (session.user.email.toLowerCase() !== getAdminEmail()) {
+  if (!isAdminSessionEmail(session.user.email)) {
     return NextResponse.json({ error: 'Acesso negado' }, { status: 403 });
   }
 

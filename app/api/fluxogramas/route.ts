@@ -5,7 +5,7 @@ import { cookies } from 'next/headers';
 import { FluxogramaSchema } from '@/lib/validations';
 import { logger } from '@/lib/logger';
 import { apiRateLimit } from '@/lib/rate-limit';
-import { getAdminEmail } from '@/lib/constants';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { isPostgrestRelationMissingError } from '@/lib/supabase/postgrestErrors';
 
 export async function POST(req: Request) {
@@ -45,7 +45,7 @@ export async function POST(req: Request) {
   if (!session?.user?.email) {
     return NextResponse.json({ error: 'Não autenticado' }, { status: 401 });
   }
-  if (session.user.email.toLowerCase() !== getAdminEmail()) {
+  if (!isAdminSessionEmail(session.user.email)) {
     return NextResponse.json({ error: 'Acesso negado. Apenas administradores podem criar fluxogramas.' }, { status: 403 });
   }
 

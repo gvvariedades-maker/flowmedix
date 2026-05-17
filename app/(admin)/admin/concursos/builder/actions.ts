@@ -1,7 +1,7 @@
 'use server';
 
 import { z } from 'zod';
-import { getAdminEmail } from '@/lib/constants';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { linkModuloToConcurso } from '@/lib/concursos/entitlements';
 import type { ModuloEstudoListRow } from '@/lib/concursos/entitlements';
 import { logger } from '@/lib/logger';
@@ -99,7 +99,7 @@ async function requireAdmin(): Promise<
 > {
   const session = await getServerSession();
   const email = session?.user?.email?.toLowerCase();
-  if (!email || email !== getAdminEmail()) {
+  if (!isAdminSessionEmail(email)) {
     return { ok: false, error: 'Acesso negado' };
   }
   try {

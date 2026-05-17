@@ -125,7 +125,7 @@ export default async function PlanosPage({ searchParams }: PageProps) {
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed font-medium text-slate-400">
               {isAuthenticated
                 ? 'Selecione o concurso que você quer preparar. O acesso libera questões, Estudo Reverso e o plano de estudo do edital.'
-                : 'Veja os editais disponíveis e entre na sua conta para concluir a compra com pagamento seguro.'}
+                : 'Veja os editais disponíveis e conclua a compra com pagamento seguro via Stripe — com ou sem conta.'}
             </p>
 
             {!isAuthenticated ? (
@@ -241,7 +241,7 @@ function PlanoCard({
 
       <div className="mt-6 flex items-end justify-between gap-4 border-t border-white/10 pt-5">
         <div>
-          <p className="text-[10px] font-black tracking-[0.22em] text-slate-500 uppercase">A partir de</p>
+          <p className="text-[10px] font-black tracking-[0.22em] text-slate-500 uppercase">Investimento</p>
           <p className="mt-1 text-2xl font-[1000] tracking-tight text-white">{priceLabel}</p>
         </div>
         <span className="inline-flex items-center gap-1.5 text-sm font-black uppercase tracking-wider text-[#BEF264]">

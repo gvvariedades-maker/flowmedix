@@ -15,7 +15,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import { createServerSupabase } from '@/lib/supabase/server';
-import { getAdminEmail } from '@/lib/constants';
+import { isAdminSessionEmail } from '@/lib/constants';
 import {
   QuestaoCompletaSchema,
   payloadContainsTecconcursosReference,
@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
   }
 
   const email = session.user.email.toLowerCase();
-  if (email !== getAdminEmail()) {
+  if (!isAdminSessionEmail(email)) {
     return NextResponse.json({ error: 'Acesso negado' }, { status: 403 });
   }
 

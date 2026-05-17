@@ -1,5 +1,6 @@
 import { createServerSupabase } from '@/lib/supabase/server';
 import { isActiveMatriculaRow, GERAL_CONCURSO_SLUG } from '@/lib/concursos/entitlements';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 
 /** Offset fixo UTC−3 (horário de Brasília, sem DST). */
@@ -33,6 +34,11 @@ export function getFreemiumDayBounds(now: Date = new Date()): FreemiumDayBounds 
   const resetEm = new Date(Date.UTC(y, m, d + 1) + FREEMIUM_TZ_OFFSET_MS);
 
   return { start, end: resetEm, resetEm };
+}
+
+/** Admin e contas com acesso ilimitado não entram no limite de 1 questão/dia. */
+export function isFreemiumUnlimitedEmail(email: string | null | undefined): boolean {
+  return isAdminSessionEmail(email);
 }
 
 /**
@@ -85,11 +91,54 @@ export async function countQuestoesHojeForUser(userId: string): Promise<number> 
   return count ?? 0;
 }
 
+export type FreemiumStatusPayload = {
+  isPro: boolean;
+  questoesHoje: number;
+  limiteAtingido: boolean;
+  resetEm: string;
+};
+
+/** Status freemium para UI/API (`/api/freemium/status`). */
+export async function getFreemiumStatusForUser(
+  userId: string,
+  userEmail?: string | null,
+): Promise<FreemiumStatusPayload> {
+  const { resetEm } = getFreemiumDayBounds();
+
+  if (isFreemiumUnlimitedEmail(userEmail)) {
+    return {
+      isPro: true,
+      questoesHoje: 0,
+      limiteAtingido: false,
+      resetEm: resetEm.toISOString(),
+    };
+  }
+
+  const [isPro, questoesHoje] = await Promise.all([
+    isUserPro(userId),
+    countQuestoesHojeForUser(userId),
+  ]);
+
+  return {
+    isPro,
+    questoesHoje,
+    limiteAtingido: !isPro && questoesHoje >= 1,
+    resetEm: resetEm.toISOString(),
+  };
+}
+
 /**
  * Gate freemium antes de registrar tentativa.
  * Não lança exceção — retorna `{ allowed: false, resetEm }` quando o limite diário foi atingido.
  */
-export async function assertCanAnswerQuestion(userId: string): Promise<AssertCanAnswerResult> {
+export async function assertCanAnswerQuestion(
+  userId: string,
+  userEmail?: string | null,
+): Promise<AssertCanAnswerResult> {
+  if (isFreemiumUnlimitedEmail(userEmail)) {
+    return { allowed: true };
+  }
+
   if (await isUserPro(userId)) {
     return { allowed: true };
   }

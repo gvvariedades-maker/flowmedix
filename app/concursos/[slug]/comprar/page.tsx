@@ -190,8 +190,6 @@ export default async function ComprarConcursoPage({ params, searchParams }: Page
 
   const provaLabel = formatProvaDate(concurso.data_prova);
   const priceLabel = formatPriceBRL(concurso.price_cents);
-  const loginHref = `/login?next=${encodeURIComponent(`/concursos/${concurso.slug}/comprar`)}`;
-
   const metaItems = [
     concurso.orgao
       ? { icon: Building2, label: 'Órgão', value: concurso.orgao }
@@ -329,11 +327,7 @@ export default async function ComprarConcursoPage({ params, searchParams }: Page
                     <ActiveAccessPanel />
                   </div>
                 ) : (
-                  <ComprarConcursoCta
-                    concursoSlug={concurso.slug}
-                    isAuthenticated={Boolean(userId)}
-                    loginHref={loginHref}
-                  />
+                  <ComprarConcursoCta concursoSlug={concurso.slug} />
                 )}
               </div>
             </aside>

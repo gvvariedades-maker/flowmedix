@@ -4,7 +4,7 @@ import { createServerClient } from '@supabase/ssr';
 import { createServerSupabase } from '@/lib/supabase/server';
 import { findAuthUserByEmail } from '@/lib/supabase/adminUsers';
 import { logger } from '@/lib/logger';
-import { getAdminEmail } from '@/lib/constants';
+import { isAdminSessionEmail } from '@/lib/constants';
 
 export async function GET(request: NextRequest) {
   try {
@@ -46,7 +46,7 @@ export async function GET(request: NextRequest) {
 
     const currentUserEmail = session?.user?.email || null;
     const isCurrentUserLoggedIn = currentUserEmail?.toLowerCase() === email.toLowerCase();
-    const isAdmin = currentUserEmail?.toLowerCase() === getAdminEmail();
+    const isAdmin = isAdminSessionEmail(currentUserEmail);
 
     let user: { id: string; email?: string; created_at?: string; last_sign_in_at?: string; email_confirmed_at?: string | null } | null = null;
     let userExists = false;

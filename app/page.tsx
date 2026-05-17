@@ -21,7 +21,7 @@ const LandingHome = dynamic(() => import('@/components/landing/LandingHome'), {
 
 const homeTitle = 'AVANT — Plataforma de Concursos para Técnico em Enfermagem';
 const homeDescription =
-  'Prepare-se para concursos de Técnico em Enfermagem com Estudo Reverso, NeuroSlides, revisão espaçada e plano diário automático. Questões reais de EBSERH e prefeituras. Beta gratuito.';
+  'Prepare-se para concursos de Técnico em Enfermagem com Estudo Reverso, NeuroSlides, revisão espaçada e plano diário automático. Questões reais de EBSERH e prefeituras. Comece grátis com 1 questão por dia.';
 
 export const metadata: Metadata = {
   title: homeTitle,
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: homeTitle,
-    description: 'Estudo Reverso, NeuroSlides e revisão espaçada. Beta gratuito.',
+    description: 'Estudo Reverso, NeuroSlides e revisão espaçada. 1 questão grátis por dia.',
   },
   robots: {
     index: true,

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
-import { getAdminEmail } from '@/lib/constants';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import { createServerSupabase } from '@/lib/supabase/server';
 
@@ -40,7 +40,7 @@ async function isAuthorizedAdmin(): Promise<boolean> {
     return false;
   }
 
-  return session.user.email.toLowerCase() === getAdminEmail();
+  return isAdminSessionEmail(session.user.email);
 }
 
 async function expireMatriculas(request: NextRequest) {

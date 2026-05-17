@@ -5,6 +5,7 @@ import { processCampinaGrandeCheckoutCompleted } from '@/lib/campina/webhook';
 import { CAMPINA_GRANDE_PRODUTO_ID } from '@/lib/campina/constants';
 import { processGoianinhaCheckoutCompleted } from '@/lib/goianinha/webhook';
 import { GOIANINHA_PRODUTO_ID } from '@/lib/goianinha/constants';
+import { processGuestConcursoCheckoutCompleted } from '@/lib/concursos/guestCheckoutWebhook';
 import { processProCheckoutCompleted, processProSubscriptionCancelled } from '@/lib/pro/webhook';
 import { AVANT_PRO_PRODUTO_ID } from '@/lib/pro/constants';
 
@@ -29,6 +30,9 @@ export async function dispatchStripeWebhookEvent(
     }
     if (session.metadata?.produto === GOIANINHA_PRODUTO_ID) {
       return processGoianinhaCheckoutCompleted(supabase, session);
+    }
+    if (session.metadata?.guest_checkout === '1') {
+      return processGuestConcursoCheckoutCompleted(supabase, session);
     }
   }
 

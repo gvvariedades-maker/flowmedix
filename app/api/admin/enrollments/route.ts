@@ -2,7 +2,7 @@ import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
 import { createServerSupabase } from '@/lib/supabase/server';
-import { getAdminEmail } from '@/lib/constants';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import { EnrollmentDeleteSchema } from '@/lib/validations';
 import { isPostgrestRelationMissingError } from '@/lib/supabase/postgrestErrors';
@@ -38,7 +38,7 @@ const ensureAdmin = async (client: Awaited<ReturnType<typeof buildServerClient>>
   if (!session || !session.user?.email) {
     return NextResponse.json({ error: 'Acesso não autenticado' }, { status: 401 });
   }
-  if (session.user.email.toLowerCase() !== getAdminEmail()) {
+  if (!isAdminSessionEmail(session.user.email)) {
     return NextResponse.json({ error: 'Acesso negado' }, { status: 403 });
   }
   return null;
