@@ -5,6 +5,8 @@ import {
   CAMPINA_GRANDE_2026_SLUG,
   CAMPINA_GRANDE_LANDING_HREF,
   GERAL_CONCURSO_SLUG,
+  GOIANINHA_LANDING_HREF,
+  GOIANINHA_RN_SLUG,
   getConcursoBySlug,
   isActiveMatriculaRow,
 } from '@/lib/concursos/entitlements';
@@ -101,6 +103,16 @@ export async function POST(request: NextRequest) {
       {
         error: 'Este edital é adquirido na página do pacote Campina Grande.',
         redirectUrl: CAMPINA_GRANDE_LANDING_HREF,
+      },
+      { status: 400 },
+    );
+  }
+
+  if (concursoSlug === GOIANINHA_RN_SLUG) {
+    return NextResponse.json(
+      {
+        error: 'Este edital é adquirido na página do pacote Goianinha.',
+        redirectUrl: GOIANINHA_LANDING_HREF,
       },
       { status: 400 },
     );

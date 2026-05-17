@@ -16,6 +16,8 @@ import {
   CAMPINA_GRANDE_2026_SLUG,
   CAMPINA_GRANDE_LANDING_HREF,
   GERAL_CONCURSO_SLUG,
+  GOIANINHA_LANDING_HREF,
+  GOIANINHA_RN_SLUG,
   getConcursoBySlug,
   userHasActiveMatricula,
 } from '@/lib/concursos/entitlements';
@@ -105,6 +107,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (slug === CAMPINA_GRANDE_2026_SLUG) {
     permanentRedirect(CAMPINA_GRANDE_LANDING_HREF);
   }
+  if (slug === GOIANINHA_RN_SLUG) {
+    permanentRedirect(GOIANINHA_LANDING_HREF);
+  }
   if (slug === GERAL_CONCURSO_SLUG) {
     return { title: 'Concurso indisponível | AVANT' };
   }
@@ -160,6 +165,10 @@ export default async function ComprarConcursoPage({ params, searchParams }: Page
 
   if (slug === CAMPINA_GRANDE_2026_SLUG) {
     permanentRedirect(CAMPINA_GRANDE_LANDING_HREF);
+  }
+
+  if (slug === GOIANINHA_RN_SLUG) {
+    permanentRedirect(GOIANINHA_LANDING_HREF);
   }
 
   if (slug === GERAL_CONCURSO_SLUG) {

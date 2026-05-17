@@ -3,10 +3,9 @@ import Link from 'next/link';
 import { ArrowRight, Building2, CalendarDays, Landmark, MapPin, Sparkles } from 'lucide-react';
 import { PublicDarkSiteHeader } from '@/components/layout/PublicDarkSiteHeader';
 import {
-  CAMPINA_GRANDE_2026_SLUG,
-  CAMPINA_GRANDE_LANDING_HREF,
   GERAL_CONCURSO_SLUG,
   getActiveMatriculatedConcursoIds,
+  getSellableConcursoLandingHref,
 } from '@/lib/concursos/entitlements';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
@@ -197,11 +196,7 @@ function PlanoCard({
   concurso: SellableConcursoCard;
   hasAccess: boolean;
 }) {
-  const href = hasAccess
-    ? '/estudar'
-    : concurso.slug === CAMPINA_GRANDE_2026_SLUG
-      ? CAMPINA_GRANDE_LANDING_HREF
-      : `/concursos/${concurso.slug}/comprar`;
+  const href = hasAccess ? '/estudar' : getSellableConcursoLandingHref(concurso.slug);
   const priceLabel = formatPriceBRL(concurso.price_cents);
   const provaLabel = formatProvaDate(concurso.data_prova);
 

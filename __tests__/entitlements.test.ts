@@ -9,9 +9,14 @@ jest.mock('@/lib/supabase/server', () => ({
 import { createServerSupabase } from '@/lib/supabase/server';
 import {
   CAMPINA_GRANDE_2026_PRICE_CENTS,
+  CAMPINA_GRANDE_2026_SLUG,
+  CAMPINA_GRANDE_LANDING_HREF,
+  GOIANINHA_LANDING_HREF,
+  GOIANINHA_RN_SLUG,
   getAccessibleModuloSlugs,
   getAccessibleModulosForUser,
   getAccessibleModulosForMatriculatedEditalPacote,
+  getSellableConcursoLandingHref,
   isActiveMatriculaRow,
   matricularPorSlug,
   userHasModuloAccess,
@@ -678,5 +683,16 @@ describe('entitlements — matricularPorSlug (cadastro)', () => {
       concurso_id: paidConcurso.id,
       origem: 'cadastro',
     });
+  });
+});
+
+describe('getSellableConcursoLandingHref', () => {
+  it('aponta Campina e Goianinha para as LPs dedicadas', () => {
+    expect(getSellableConcursoLandingHref(CAMPINA_GRANDE_2026_SLUG)).toBe(CAMPINA_GRANDE_LANDING_HREF);
+    expect(getSellableConcursoLandingHref(GOIANINHA_RN_SLUG)).toBe(GOIANINHA_LANDING_HREF);
+  });
+
+  it('mantém /concursos/[slug]/comprar para demais editais', () => {
+    expect(getSellableConcursoLandingHref('outro-edital')).toBe('/concursos/outro-edital/comprar');
   });
 });

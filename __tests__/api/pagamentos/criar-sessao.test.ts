@@ -15,6 +15,8 @@ jest.mock('@/lib/supabase/server-auth', () => ({
 jest.mock('@/lib/concursos/entitlements', () => ({
   CAMPINA_GRANDE_2026_SLUG: 'campina-grande-2026',
   CAMPINA_GRANDE_LANDING_HREF: '/campina-grande',
+  GOIANINHA_RN_SLUG: 'goianinha-rn',
+  GOIANINHA_LANDING_HREF: '/goianinha',
   GERAL_CONCURSO_SLUG: 'geral',
   getConcursoBySlug: jest.fn(),
   isActiveMatriculaRow: jest.fn(),
@@ -59,10 +61,36 @@ describe('POST /api/pagamentos/criar-sessao', () => {
     } as unknown as NonNullable<ReturnType<typeof getStripeClient>>);
   });
 
-  it('cria sessão Stripe guest sem usuário logado e sem insert de compra', async () => {
+  it('redireciona checkout de Goianinha para a landing /goianinha', async () => {
     const request = new NextRequest('https://avant.test/api/pagamentos/criar-sessao', {
       method: 'POST',
       body: JSON.stringify({ concurso_slug: 'goianinha-rn' }),
+      headers: { 'content-type': 'application/json' },
+    });
+
+    const response = await POST(request);
+    const body = await response.json();
+
+    expect(response.status).toBe(400);
+    expect(body).toEqual({
+      error: 'Este edital é adquirido na página do pacote Goianinha.',
+      redirectUrl: '/goianinha',
+    });
+    expect(checkoutCreate).not.toHaveBeenCalled();
+  });
+
+  it('cria sessão Stripe guest sem usuário logado e sem insert de compra', async () => {
+    mockGetConcursoBySlug.mockResolvedValue({
+      id: 'concurso-2',
+      slug: 'outro-edital',
+      nome: 'Outro edital',
+      status: 'ativo',
+      price_cents: 3700,
+    } as Awaited<ReturnType<typeof getConcursoBySlug>>);
+
+    const request = new NextRequest('https://avant.test/api/pagamentos/criar-sessao', {
+      method: 'POST',
+      body: JSON.stringify({ concurso_slug: 'outro-edital' }),
       headers: { 'content-type': 'application/json' },
     });
 
@@ -76,10 +104,10 @@ describe('POST /api/pagamentos/criar-sessao', () => {
         mode: 'payment',
         metadata: {
           guest_checkout: '1',
-          concurso_slug: 'goianinha-rn',
+          concurso_slug: 'outro-edital',
         },
-        success_url: 'https://avant.test/concursos/goianinha-rn/comprar?compra=1',
-        cancel_url: 'https://avant.test/concursos/goianinha-rn/comprar?cancelado=1',
+        success_url: 'https://avant.test/concursos/outro-edital/comprar?compra=1',
+        cancel_url: 'https://avant.test/concursos/outro-edital/comprar?cancelado=1',
       }),
     );
     expect(checkoutCreate.mock.calls[0][0].metadata).not.toHaveProperty('purchase_id');
