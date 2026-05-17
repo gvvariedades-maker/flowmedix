@@ -36,6 +36,9 @@ export function PublicDarkAuthHeader({
           <Link href="/blog" className={`${navLinkClass} hidden min-[380px]:inline-flex shrink-0`}>
             Blog
           </Link>
+          <Link href="/planos" className={`${navLinkClass} hidden min-[500px]:inline-flex shrink-0`}>
+            Pacotes
+          </Link>
           <nav className="flex shrink-0 flex-nowrap items-center justify-end gap-1.5 sm:gap-2">
             {variant !== 'login' ? (
               <Link href={loginHref} className={`${navLinkClass} shrink-0 px-2 min-[380px]:px-3`}>

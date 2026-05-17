@@ -15,6 +15,7 @@ import {
   TrendingUp,
   XCircle,
 } from 'lucide-react';
+import { ConcursoMarketingHeader } from '@/components/concursos/ConcursoMarketingHeader';
 import { Button } from '@/components/ui/button';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
 import {
@@ -139,29 +140,6 @@ function VideoSection() {
         Questões reais da IDECAN · NeuroSlides · Feito só para Técnico de Enfermagem
       </p>
     </section>
-  );
-}
-
-function PageHeader() {
-  return (
-    <header className="relative z-20 border-b border-white/10 bg-slate-950/55 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="#topo" className="flex items-center gap-3" aria-label="AVANT Campina Grande">
-          <span className="flex h-10 w-10 items-center justify-center rounded-2xl border border-cyan-300/25 bg-cyan-300/10 text-sm font-black text-cyan-100 shadow-lg shadow-cyan-500/10">
-            A
-          </span>
-          <span className="text-xl font-black tracking-[0.22em] text-white uppercase">AVANT</span>
-        </a>
-
-        <Button
-          asChild
-          size="sm"
-          className="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-5 font-bold text-cyan-50 hover:bg-cyan-300/20"
-        >
-          <a href="#cta">Quero me preparar</a>
-        </Button>
-      </div>
-    </header>
   );
 }
 
@@ -352,7 +330,18 @@ export default async function CampinaGrandePage({ searchParams }: CampinaGrandeP
         <CampinaBackdrop />
       </div>
 
-      <PageHeader />
+      <ConcursoMarketingHeader
+        ariaLabel="AVANT Campina Grande"
+        trailingCta={
+          <Button
+            asChild
+            size="sm"
+            className="rounded-full border border-cyan-300/30 bg-cyan-300/10 px-5 font-bold text-cyan-50 hover:bg-cyan-300/20"
+          >
+            <a href="#cta">Quero me preparar</a>
+          </Button>
+        }
+      />
 
       <main className="relative z-10">
         {checkoutErrorMessage ? <CheckoutErrorBanner message={checkoutErrorMessage} /> : null}

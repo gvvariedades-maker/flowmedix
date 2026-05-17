@@ -11,7 +11,7 @@ import {
   Landmark,
 } from 'lucide-react';
 import { ComprarConcursoCta } from '@/components/concursos/ComprarConcursoCta';
-import { PublicDarkSiteHeader } from '@/components/layout/PublicDarkSiteHeader';
+import { ConcursoMarketingHeader } from '@/components/concursos/ConcursoMarketingHeader';
 import {
   CAMPINA_GRANDE_2026_SLUG,
   CAMPINA_GRANDE_LANDING_HREF,
@@ -217,22 +217,10 @@ export default async function ComprarConcursoPage({ params, searchParams }: Page
         <ComprarBackdrop />
       </div>
 
-      <PublicDarkSiteHeader
-        ctaLabel="Ver planos"
-        ctaLabelShort="Planos"
-        ctaHref="/planos"
-      />
+      <ConcursoMarketingHeader ariaLabel={`AVANT — ${concurso.nome}`} />
 
       <main className="relative z-10">
         <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 sm:py-14">
-          <nav aria-label="Breadcrumb" className="text-sm text-slate-500">
-            <Link href="/planos" className="font-medium transition-colors hover:text-slate-300">
-              Planos
-            </Link>
-            <span className="mx-2 text-slate-600">→</span>
-            <span className="line-clamp-2 text-slate-500">{concurso.nome}</span>
-          </nav>
-
           {paymentSuccess ? (
             <div
               className="mt-6 rounded-2xl border border-emerald-400/25 bg-emerald-500/10 px-4 py-3 text-sm font-medium text-emerald-100"

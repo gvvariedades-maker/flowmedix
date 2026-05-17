@@ -46,6 +46,9 @@ export function PublicDarkSiteHeader({
             <Link href="/blog" className={`${navLinkClass} hidden min-[400px]:inline-flex shrink-0`}>
               Blog
             </Link>
+            <Link href="/planos" className={`${navLinkClass} hidden min-[500px]:inline-flex shrink-0`}>
+              Pacotes
+            </Link>
             <nav className="flex min-w-0 shrink-0 flex-nowrap items-center justify-end gap-1.5 sm:gap-2">
               <Link href="/login" className={`${navLinkClass} shrink-0 px-2 min-[400px]:px-3`}>
                 Entrar

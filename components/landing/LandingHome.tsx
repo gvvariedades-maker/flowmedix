@@ -48,7 +48,7 @@ const trustSignals = [
   'EBSERH e prefeituras',
   'Só para Técnico em Enfermagem',
   'NeuroSlides após cada questão',
-  'Beta gratuito · sem cartão',
+  '1 questão grátis/dia · sem cartão',
 ];
 
 const painPoints = [
@@ -161,9 +161,9 @@ const features: IconCard[] = [
 
 const faqs = [
   {
-    question: 'O AVANT é gratuito agora?',
+    question: 'O AVANT tem plano gratuito?',
     answer:
-      'Sim. O AVANT está em fase Beta e o acesso é 100% gratuito durante esse período. Não pedimos cartão de crédito. Quando o Beta encerrar, você será avisado com antecedência — e quem entrou no Beta terá condição especial.',
+      'Sim. No plano gratuito você resolve 1 questão por dia, sem cartão de crédito. Para estudar sem limite, o AVANT Pro custa R$ 9,90/mês e pode ser cancelado a qualquer momento.',
   },
   {
     question: 'Quantas questões tem disponíveis?',
@@ -211,9 +211,9 @@ export default function LandingHome() {
       </div>
 
       <PublicDarkSiteHeader
-        ctaLabel="Entrar no Beta Gratuito"
-        ctaLabelShort="Beta grátis"
-        ctaLabelTight="Beta Grátis →"
+        ctaLabel="Começar grátis"
+        ctaLabelShort="Grátis"
+        ctaLabelTight="Começar grátis →"
       />
 
       <main className="relative z-10">
@@ -233,7 +233,7 @@ export default function LandingHome() {
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-[#BEF264]/25 bg-[#BEF264]/10 px-4 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-[#BEF264] sm:text-xs">
                   <LockKeyhole size={14} className="shrink-0" />
-                  Beta Gratuito · Vagas Limitadas
+                  Plano gratuito · sem cartão
                 </span>
               </motion.div>
 
@@ -276,7 +276,7 @@ export default function LandingHome() {
                   href="/register"
                   className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#BEF264] px-8 py-4 text-sm font-black uppercase tracking-widest text-slate-950 shadow-xl shadow-lime-400/20 transition-all hover:scale-[1.02] hover:bg-[#d4f879]"
                 >
-                  Entrar no Beta Gratuito
+                  Começar grátis
                   <ArrowRight size={18} />
                 </Link>
                 <Link
@@ -293,7 +293,7 @@ export default function LandingHome() {
                 transition={{ delay: 0.45, duration: 0.6 }}
                 className="mt-4 text-sm font-medium text-slate-500"
               >
-                Beta 100% gratuito. Sem cartão de crédito. Sem pegadinha.
+                1 questão por dia grátis. Sem cartão. AVANT Pro para estudar sem limite.
               </motion.p>
             </div>
 
@@ -606,14 +606,14 @@ export default function LandingHome() {
                 Aprovação começa com o método certo. Não com mais conteúdo.
               </h2>
               <p className="text-slate-400 text-base sm:text-lg mb-8 max-w-xl mx-auto">
-                Estude com questões reais, NeuroSlides e revisão espaçada. Prepare-se para o que a banca realmente cobra.
+                Comece grátis com 1 questão por dia e descubra como o Estudo Reverso funciona na prática. Sem cartão. Para estudar sem limite, assine o Pro.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   href="/planos"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#BEF264] text-slate-950 font-black uppercase tracking-widest text-sm px-10 py-4 rounded-2xl hover:bg-[#d4f879] transition-all shadow-lg shadow-lime-400/25"
                 >
-                  Ver pacotes disponíveis
+                  Ver Pacotes
                   <ArrowRight size={18} />
                 </Link>
                 <Link

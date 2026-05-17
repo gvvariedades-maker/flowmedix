@@ -60,12 +60,12 @@ async function loadSellableConcursos(): Promise<SellableConcursoCard[]> {
 }
 
 export const metadata: Metadata = {
-  title: 'Planos e editais | AVANT',
+  title: 'Pacotes e editais | AVANT',
   description:
     'Escolha o edital de Técnico em Enfermagem com acesso a questões, Estudo Reverso e plano de estudo no AVANT.',
   alternates: { canonical: '/planos' },
   openGraph: {
-    title: 'Planos e editais | AVANT',
+    title: 'Pacotes e editais | AVANT',
     description:
       'Catálogo de editais com acesso completo ao estudo: questões reais, NeuroSlides e revisão guiada.',
     url: getAbsoluteUrl('/planos'),
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Planos e editais | AVANT',
+    title: 'Pacotes e editais | AVANT',
     description: 'Escolha o edital e libere o catálogo de estudo no AVANT.',
   },
 };
