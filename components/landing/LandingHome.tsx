@@ -1,6 +1,8 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import type { LucideIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import {
@@ -192,6 +194,103 @@ const faqs = [
   },
 ];
 
+const NEURO_SLIDES = [
+  {
+    src: '/images/neuroslide-concept-map.jpg',
+    label: 'Mapa Mental',
+    color: '#00f2ff',
+    description: 'Conecta os conceitos que a banca tentou misturar',
+    alt: 'NeuroSlide Mapa Mental com quatro conceitos em círculos luminosos ciano',
+  },
+  {
+    src: '/images/neuroslide-golden-rule.jpg',
+    label: 'Regra de Ouro',
+    color: '#00ff88',
+    description: 'Resume o ponto que você precisa lembrar na prova',
+    alt: 'NeuroSlide Regra de Ouro com definição da APS como centro ordenador do cuidado',
+  },
+  {
+    src: '/images/neuroslide-logic-flow.jpg',
+    label: 'Fluxo Lógico',
+    color: '#f59e0b',
+    description: 'Sequência de decisão para casos parecidos',
+    alt: 'NeuroSlide Fluxo Lógico com pipeline de passos em laranja',
+  },
+  {
+    src: '/images/neuroslide-danger-zone.jpg',
+    label: 'Zona de Perigo',
+    color: '#ff0055',
+    description: 'Pegadinhas que derrubam candidatos preparados',
+    alt: 'NeuroSlide Zona de Perigo listando erros comuns na administração da vacina BCG',
+  },
+] as const;
+
+function NeuroSlideCarousel() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const slide = NEURO_SLIDES[active];
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => setActive((i) => (i + 1) % NEURO_SLIDES.length), 3000);
+    return () => clearInterval(id);
+  }, [paused]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ delay: 0.12, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      className="relative"
+    >
+      <div className="absolute -inset-8 rounded-full bg-cyan-400/10 blur-3xl" />
+      <div
+        className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/80 backdrop-blur-xl shadow-[0_0_50px_rgba(0,242,255,0.12)]"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
+        <div className="relative h-[380px] w-full sm:h-[420px]">
+          {NEURO_SLIDES.map((s, i) => (
+            <Image
+              key={s.src}
+              src={s.src}
+              alt={s.alt}
+              fill
+              priority={i === 0}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className={`object-cover w-full transition-opacity duration-500 ${
+                i === active ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          ))}
+          <span
+            className="absolute top-3 left-3 z-10 rounded-full border bg-black/60 px-3 py-1 text-xs font-black uppercase tracking-wider backdrop-blur-sm"
+            style={{ borderColor: slide.color, color: slide.color }}
+          >
+            {slide.label}
+          </span>
+        </div>
+        <p className="px-4 py-3 text-sm text-slate-400">{slide.description}</p>
+        <div className="flex justify-center gap-2 pb-4" role="tablist" aria-label="Slides do NeuroSlide">
+          {NEURO_SLIDES.map((s, i) => (
+            <button
+              key={s.src}
+              type="button"
+              role="tab"
+              aria-selected={i === active}
+              aria-label={`Slide ${i + 1}: ${s.label}`}
+              onClick={() => setActive(i)}
+              className={`rounded-full transition-all duration-300 ${
+                i === active ? 'h-2 w-6 bg-[#BEF264]' : 'h-2 w-2 bg-white/20'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function LandingHome() {
   return (
     <div className="min-h-screen bg-[#010409] text-slate-100 overflow-x-hidden selection:bg-cyan-400/25 selection:text-white">
@@ -229,11 +328,11 @@ export default function LandingHome() {
               >
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-4 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-cyan-200 sm:text-xs">
                   <Brain size={14} className="shrink-0" />
-                  Estudo Reverso para Técnico em Enfermagem
+                  100% focado em Técnico em Enfermagem
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-[#BEF264]/25 bg-[#BEF264]/10 px-4 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-[#BEF264] sm:text-xs">
                   <LockKeyhole size={14} className="shrink-0" />
-                  Plano gratuito · sem cartão
+                  Teste grátis · sem cartão · sem compromisso
                 </span>
               </motion.div>
 
@@ -244,11 +343,11 @@ export default function LandingHome() {
                 animate="visible"
                 className="mb-6 text-4xl font-[1000] leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl"
               >
-                A única plataforma de concursos criada só para{' '}
-                <span className="text-white">Técnico em Enfermagem</span>
-                <span className="text-slate-400"> — </span>
+                Todo material que você encontra foi feito{' '}
+                <span className="text-slate-400">para enfermeiro.</span>
+                <br />
                 <span className="bg-gradient-to-r from-white via-cyan-200 to-[#BEF264] bg-clip-text text-transparent">
-                  onde cada erro vira uma aula visual.
+                  O AVANT foi feito para você.
                 </span>
               </motion.h1>
 
@@ -259,10 +358,10 @@ export default function LandingHome() {
                 animate="visible"
                 className="mb-9 max-w-2xl text-lg font-medium leading-relaxed text-slate-400 sm:text-xl"
               >
-                O <strong className="text-slate-100">AVANT</strong> transforma cada questão errada em um ciclo
-                completo de aprendizado: diagnóstico do erro, material visual (NeuroSlides) e revisão no momento
-                certo. Foco total em concursos de <strong className="text-cyan-200">Técnico em Enfermagem</strong> —
-                EBSERH e prefeituras.
+                A maioria dos materiais de enfermagem no mercado foi desenvolvida para nível superior —
+                linguagem técnica demais, profundidade além do que a banca cobra para Técnico. O AVANT é
+                diferente: cada questão, cada slide e cada revisão foi pensado exclusivamente para o cargo de
+                Técnico em Enfermagem. Nada além do que você precisa para ser aprovado.
               </motion.p>
 
               <motion.div
@@ -276,7 +375,7 @@ export default function LandingHome() {
                   href="/register"
                   className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#BEF264] px-8 py-4 text-sm font-black uppercase tracking-widest text-slate-950 shadow-xl shadow-lime-400/20 transition-all hover:scale-[1.02] hover:bg-[#d4f879]"
                 >
-                  Começar grátis
+                  Testar grátis agora
                   <ArrowRight size={18} />
                 </Link>
                 <Link
@@ -293,51 +392,11 @@ export default function LandingHome() {
                 transition={{ delay: 0.45, duration: 0.6 }}
                 className="mt-4 text-sm font-medium text-slate-500"
               >
-                1 questão por dia grátis. Sem cartão. AVANT Pro para estudar sem limite.
+                Só deixamos testar porque funciona. Sem cartão. Sem compromisso.
               </motion.p>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 24, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ delay: 0.12, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-              className="relative"
-            >
-              <div className="absolute -inset-8 rounded-full bg-cyan-400/10 blur-3xl" />
-              <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-[0_0_50px_rgba(0,242,255,0.12)] backdrop-blur-xl sm:p-6">
-                <div className="mb-5 flex items-center justify-between border-b border-white/10 pb-4">
-                  <div>
-                    <p className="text-[10px] font-black uppercase tracking-[0.32em] text-cyan-300">
-                      Ciclo Avant
-                    </p>
-                    <h2 className="mt-1 text-lg font-black text-white">Da questão ao estudo guiado</h2>
-                  </div>
-                  <div className="rounded-2xl border border-[#BEF264]/30 bg-[#BEF264]/10 px-3 py-2 text-[10px] font-black uppercase tracking-wider text-[#BEF264]">
-                    Online
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  {methodSteps.map((step, idx) => (
-                    <div
-                      key={step.n}
-                      className="group grid grid-cols-[auto_1fr] gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition-colors hover:border-cyan-400/30 hover:bg-cyan-400/5"
-                    >
-                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-400/25 bg-cyan-400/10 text-cyan-200">
-                        <step.icon size={20} />
-                      </div>
-                      <div>
-                        <p className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-500">
-                          Etapa {idx + 1}
-                        </p>
-                        <h3 className="mt-1 text-sm font-black text-white">{step.title}</h3>
-                        <p className="mt-1 text-xs font-medium leading-relaxed text-slate-400">{step.text}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+            <NeuroSlideCarousel />
           </div>
         </section>
 
