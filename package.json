@@ -16,6 +16,7 @@
     "analyze:performance": "tsx scripts/analyze-performance.ts",
     "setup:webhook": "bash scripts/setup-webhook.sh",
     "capture:tutorial": "tsx scripts/capture-tutorial-screens.ts",
+    "capture:landing-neuroslides": "tsx scripts/capture-landing-neuroslides.ts",
     "copy:tutorial-assets": "powershell -ExecutionPolicy Bypass -File scripts/copy-user-tutorial-assets.ps1"
   },
   "dependencies": {

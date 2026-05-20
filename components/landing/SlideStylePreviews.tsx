@@ -5,8 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import { NeuroSlidesShowcaseGrid } from '@/components/shared/NeuroSlidePreviewCard';
 
 /**
- * Mesmos modelos de NeuroSlide do Material de Apoio — componente compartilhado
- * (`NeuroSlidesShowcaseGrid`) para consistência visual e de conteúdo.
+ * Vitrine com screenshots reais do player (`NeuroSlidesShowcaseGrid`).
  */
 export function SlideStylePreviews() {
   return (

@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "banca": "ITAME",
+    "orgao": "Pref. Goianésia/GO",
+    "ano": "2022",
+    "cargo_header": "TÉCNICO",
+    "prova": "Tec Enf",
+    "topico": "Enfermagem",
+    "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+  },
+  "question_data": {
+    "instruction": "Uma ampola de Gluconato de Cálcio 8%/10mL foi diluída em 50mL de soro glicosado 5%. Se dessa solução o paciente receber apenas 42mL, a quantidade de Gluconato de Cálcio infundida será de:",
+    "options": [
+      { "id": "A", "text": "480 mg.", "is_correct": false },
+      { "id": "B", "text": "520 mg.", "is_correct": false },
+      { "id": "C", "text": "560 mg.", "is_correct": true },
+      { "id": "D", "text": "580 mg.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Diluição e dose infundida",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+      },
+      "items": [
+        {
+          "label": "Volume total da solução",
+          "detail": "Soma ampola + diluente: 10 mL + 50 mL = 60 mL.",
+          "icon": "Beaker"
+        },
+        {
+          "label": "Massa do fármaco na ampola",
+          "detail": "8% = 80 mg/mL → 80 × 10 mL = 800 mg de gluconato na mistura.",
+          "icon": "Pill"
+        },
+        {
+          "label": "Regra de três",
+          "detail": "800 mg estão em 60 mL; quantos mg em 42 mL infundidos?",
+          "icon": "Calculator"
+        }
+      ],
+      "footer_rule": "Primeiro o total da solução; depois a proporção do volume administrado"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Conta da banca",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+      },
+      "content": "GLUCONATO DILUÍDO — MEMÓRIA DE PROVA",
+      "rows": [
+        { "label": "Volume total", "value": "10 mL + 50 mL = 60 mL" },
+        { "label": "Massa na ampola", "value": "80 mg/mL × 10 mL = 800 mg" },
+        { "label": "Proporção", "value": "800 mg → 60 mL / x → 42 mL" },
+        { "label": "Resultado", "value": "x = 560 mg" }
+      ],
+      "footer_rule": "A dose infundida é proporcional ao volume que o paciente recebeu, não ao volume da ampola isolada"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+      },
+      "steps": [
+        "Identificar volumes: ampola 10 mL + diluente 50 mL = 60 mL de solução final",
+        "Converter 8% em mg/mL: 80 mg/mL e calcular massa total: 800 mg em 60 mL",
+        "Montar regra de três com o volume administrado (42 mL)",
+        "Isolar x: (800 × 42) ÷ 60 = 560 mg",
+        "Conferir alternativa C (560 mg) e descartar contas sem diluente"
+      ]
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+      },
+      "content": "PEGADINHAS EM CÁLCULO DE MEDICAMENTOS",
+      "items": [
+        {
+          "id": "1",
+          "label": "Usar só os 10 mL da ampola",
+          "detail": "Calcular a dose como se o paciente recebesse o frasco inteiro, ignorando os 50 mL de SG.",
+          "correct": "Somar ampola + diluente (60 mL) antes de proporção com os 42 mL infundidos."
+        },
+        {
+          "id": "2",
+          "label": "Confundir 8% com 8 mg/mL",
+          "detail": "Tratar 8% como 8 mg por mL na ampola.",
+          "correct": "8% = 80 mg/mL; na ampola de 10 mL há 800 mg de princípio ativo."
+        },
+        {
+          "id": "3",
+          "label": "Aplicar 42 mL sobre 10 mL",
+          "detail": "Fazer regra de três 800 mg → 10 mL / x → 42 mL.",
+          "correct": "Denominador da proporção é o volume total da solução (60 mL), não só a ampola."
+        }
+      ],
+      "footer_rule": "Erro clássico: esquecer o diluente no volume total da mistura"
+    }
+  ]
+}
