@@ -28,8 +28,8 @@ export function DemoInterativa() {
           </p>
         </div>
 
-        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#010409] shadow-2xl shadow-black/40">
-          <div className="flex min-h-[70vh] flex-col px-3 py-3 sm:px-4 md:px-6 md:py-6">
+        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#010409] shadow-2xl shadow-black/40">
+          <div className="relative flex min-h-[70vh] flex-col px-3 py-3 sm:px-4 md:px-6 md:py-6">
             <AvantLessonPlayer
               dados={landingDemoQuestao}
               mode="preview"

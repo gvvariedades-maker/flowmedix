@@ -408,6 +408,14 @@ export default function AvantLessonPlayer({
     dados.modulo_slug || '',
   ].filter(Boolean).join('-') || JSON.stringify(dados).substring(0, 100);
 
+  const isPreviewMode = mode === 'preview';
+
+  /** Na LP a demo fica no card — não usar overlay fixed em tela cheia. */
+  const sairEstudoReverso = () => {
+    setEtapa('pergunta');
+    setSlideAtual(0);
+  };
+
   return (
     <>
     <div className="w-full h-full flex-1 min-h-0 flex flex-col relative bg-[#0d1117] md:rounded-[40px] shadow-2xl overflow-hidden border border-[rgba(255,255,255,0.10)] font-sans">
@@ -757,7 +765,7 @@ export default function AvantLessonPlayer({
       </AnimatePresence>
 
       {/* ========================================================================
-          MODAL FULL IMMERSION (Estudo Reverso)
+          Estudo Reverso — fullscreen no app; embutido no card na demo da LP (preview)
           ======================================================================== */}
       <AnimatePresence>
         {etapa === 'estudo' && (
@@ -765,11 +773,21 @@ export default function AvantLessonPlayer({
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex flex-col bg-black/95 backdrop-blur-md pt-safe h-[100dvh] max-h-[100dvh] overscroll-y-contain"
+            className={
+              isPreviewMode
+                ? 'absolute inset-0 z-30 flex h-full max-h-full flex-col overflow-hidden rounded-b-[2rem] bg-[#010409] overscroll-y-contain'
+                : 'fixed inset-0 z-50 flex flex-col bg-black/95 backdrop-blur-md pt-safe h-[100dvh] max-h-[100dvh] overscroll-y-contain'
+            }
           >
             {/* overflow-y: contido no filho (scroll vertical). overflow-x: auto para texto ampliado (zoom) não ser cortado. */}
             <EstudoReversoSlideZoomProvider key={slideAtual} slideKey={slideAtual}>
-            <div className="w-full flex-1 min-h-0 max-h-[100dvh] flex flex-col overflow-y-hidden overflow-x-auto min-w-0">
+            <div
+              className={
+                isPreviewMode
+                  ? 'flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-x-auto overflow-y-hidden'
+                  : 'flex min-h-0 w-full min-w-0 max-h-[100dvh] flex-1 flex-col overflow-x-auto overflow-y-hidden'
+              }
+            >
               
               {/* Header Minimalista (Top Bar) — zoom mobile ao lado da numeração, fixo fora da rolagem do slide */}
               <div className="shrink-0 px-4 sm:px-6 md:px-12 pt-3 sm:pt-6 pb-2 flex justify-between items-center gap-2 min-w-0">
@@ -792,11 +810,16 @@ export default function AvantLessonPlayer({
                   
                   <button
                     type="button"
-                    onClick={() => setEtapa('pergunta')}
-                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center transition-colors shrink-0"
+                    onClick={sairEstudoReverso}
+                    className={
+                      isPreviewMode
+                        ? 'flex min-h-[40px] shrink-0 items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3 py-2 text-[10px] font-black uppercase tracking-widest text-white transition-colors hover:bg-white/20'
+                        : 'flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-md transition-colors hover:bg-white/20'
+                    }
                     aria-label="Fechar estudo reverso"
                   >
-                    <X size={18} className="text-white" />
+                    <X size={18} className="text-white shrink-0" />
+                    {isPreviewMode ? <span>Sair</span> : null}
                   </button>
                 </div>
               </div>
@@ -881,6 +904,14 @@ export default function AvantLessonPlayer({
                     >
                       Próximo <ArrowRight size={16} />
                     </button>
+                  ) : isPreviewMode ? (
+                    <button
+                      type="button"
+                      onClick={sairEstudoReverso}
+                      className="group order-2 flex min-h-[44px] items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-[10px] font-black uppercase tracking-wide text-white transition-colors hover:bg-white/15 sm:order-none sm:px-6 sm:text-xs sm:tracking-widest"
+                    >
+                      Voltar à questão
+                    </button>
                   ) : estudoConcluido ? (
                     <div className="flex w-full max-w-md flex-col items-stretch gap-3 order-2 sm:order-none sm:max-w-lg">
                       <div className="flex items-center justify-center gap-2 rounded-xl border border-green-500/40 bg-green-500/20 px-4 py-2.5 text-center text-[10px] font-black uppercase tracking-wide text-green-400 sm:text-xs sm:tracking-widest">
@@ -905,7 +936,7 @@ export default function AvantLessonPlayer({
                       ) : (
                         <button
                           type="button"
-                          onClick={() => setEtapa('pergunta')}
+                          onClick={sairEstudoReverso}
                           className="flex min-h-[48px] w-full items-center justify-center rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-[10px] font-black uppercase tracking-wide text-white transition-colors hover:bg-white/15 active:bg-white/20 sm:text-xs sm:tracking-widest"
                         >
                           Voltar à questão
