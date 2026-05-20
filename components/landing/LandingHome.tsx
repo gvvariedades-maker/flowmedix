@@ -29,6 +29,7 @@ import {
   X,
   Zap,
 } from 'lucide-react';
+import { DemoInterativa } from '@/components/landing/DemoInterativa';
 import { SlideStylePreviews } from '@/components/landing/SlideStylePreviews';
 import { PublicDarkSiteHeader } from '@/components/layout/PublicDarkSiteHeader';
 
@@ -56,6 +57,7 @@ const trustSignals = [
 ];
 
 const painPoints = [
+  'Você estuda material de nível superior — linguagem de enfermeiro, profundidade além do que a banca cobra para o seu cargo.',
   'Você acerta por chute e não sabe repetir o raciocínio.',
   'Você erra uma questão e só lê o gabarito.',
   'Você revisa tudo de novo, inclusive o que já domina.',
@@ -65,26 +67,26 @@ const painPoints = [
 const methodSteps: Array<IconCard & { n: string }> = [
   {
     n: '01',
-    title: 'Resolva uma questão real',
-    text: 'Comece pelo tipo de cobrança que aparece em prova, não por uma teoria solta.',
+    title: 'Resolva uma questão real de concurso',
+    text: 'Começa pelo formato exato que a banca cobra para Técnico em Enfermagem — não por teoria de enfermeiro.',
     icon: FileQuestion,
   },
   {
     n: '02',
-    title: 'Receba o diagnóstico',
-    text: 'Entenda se o erro veio de conceito, interpretação, detalhe de banca ou falta de revisão.',
+    title: 'Receba o diagnóstico do erro',
+    text: 'Entenda se errou por conceito, interpretação, pegadinha de banca ou falta de revisão. Sem chute.',
     icon: ClipboardCheck,
   },
   {
     n: '03',
-    title: 'Ative o Estudo Reverso',
-    text: 'Transforme a questão em mapa, regra de ouro, fluxo lógico e zona de perigo.',
+    title: 'Ative os NeuroSlides',
+    text: 'A questão vira mapa mental, regra de ouro, fluxo lógico e zona de perigo — visual, direto, fixado.',
     icon: Brain,
   },
   {
     n: '04',
-    title: 'Volte pelo Plano Diário',
-    text: 'Revise no momento certo para não esquecer o que acabou de aprender.',
+    title: 'Revise no momento certo',
+    text: 'O plano diário te lembra o que estudar e quando — sem planilha, sem depender de memória.',
     icon: CalendarDays,
   },
 ];
@@ -662,18 +664,20 @@ export default function LandingHome() {
           <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
               <p className="mb-3 text-[10px] font-black uppercase tracking-[0.35em] text-[#BEF264]">
-                O problema real
+                Por que você ainda não passou
               </p>
               <h2 className="mb-5 text-3xl font-[1000] tracking-tight text-white sm:text-4xl">
-                Você não precisa de mais uma pilha de conteúdo. Precisa saber exatamente o que revisar.
+                Você estuda com material de enfermeiro{' '}
+                <span className="text-rose-400">e é cobrado como técnico.</span>
               </h2>
               <p className="text-base font-medium leading-relaxed text-slate-400 sm:text-lg">
-                A maioria dos candidatos alterna entre PDF, vídeo e questões sem saber se está evoluindo.
-                O problema não é estudar pouco: é estudar sem diagnóstico.
+                A maioria dos materiais do mercado foi desenvolvida para enfermeiros — linguagem mais densa, profundidade além
+                do que a banca de Técnico cobra. Você leva o dobro do tempo para aprender a metade do que precisa. E ainda
+                estuda sem saber o que está evoluindo.
               </p>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
               {painPoints.map((point, idx) => (
                 <motion.div
                   key={point}
@@ -688,6 +692,10 @@ export default function LandingHome() {
                 </motion.div>
               ))}
             </div>
+            <p className="mt-8 text-sm font-semibold text-slate-500 text-center max-w-xl mx-auto">
+              O AVANT foi construído para resolver exatamente isso — começando pela questão que a banca cobra, não pela teoria
+              que o enfermeiro precisa.
+            </p>
           </div>
         </section>
 
@@ -696,14 +704,18 @@ export default function LandingHome() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="max-w-2xl mx-auto text-center mb-14 sm:mb-16">
               <p className="text-[10px] font-black uppercase tracking-[0.35em] text-indigo-400 mb-3">
-                Método Avant
+                Como o AVANT funciona
               </p>
               <h2 className="text-3xl sm:text-4xl font-[1000] text-white tracking-tight mb-4">
-                O método é simples: a questão vem primeiro.
+                Pare de estudar no escuro.{' '}
+                <span className="bg-gradient-to-r from-cyan-200 to-[#BEF264] bg-clip-text text-transparent">
+                  Comece pela questão.
+                </span>
               </h2>
               <p className="text-slate-400 text-lg leading-relaxed">
-                Em vez de começar por teoria infinita, você parte da cobrança real dos concursos de enfermagem e transforma erro,
-                dúvida e acerto por chute em direção de estudo.
+                Enquanto outros materiais começam por teoria de nível superior, o AVANT inverte: você parte da questão real que
+                a banca cobra para Técnico em Enfermagem e transforma cada tentativa — erro, dúvida ou acerto por chute — em
+                direção de estudo.
               </p>
             </div>
 
@@ -730,6 +742,8 @@ export default function LandingHome() {
             </div>
           </div>
         </section>
+
+        <DemoInterativa />
 
         {/* Showcase do produto */}
         <section className="px-4 py-20 sm:px-6 sm:py-24">

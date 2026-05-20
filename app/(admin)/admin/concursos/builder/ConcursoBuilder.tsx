@@ -113,8 +113,8 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
 
   const [searchInput, setSearchInput] = useState('');
   const [debouncedQ, setDebouncedQ] = useState('');
-  const [searching, setSearching] = useState(false);
   const [results, setResults] = useState<ModuloEstudoListRow[]>([]);
+  const [resolvedQ, setResolvedQ] = useState('');
 
   const [regraBanca, setRegraBanca] = useState('');
   const [regraOrgao, setRegraOrgao] = useState('');
@@ -132,17 +132,14 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
 
   useEffect(() => {
     if (debouncedQ.length < 1) {
-      setResults([]);
-      setSearching(false);
       return;
     }
 
     let cancelled = false;
-    setSearching(true);
     void (async () => {
       const res = await searchModulos({ q: debouncedQ });
       if (cancelled) return;
-      setSearching(false);
+      setResolvedQ(debouncedQ);
       if (res.ok) {
         setResults(res.modulos);
       } else {
@@ -155,6 +152,10 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
       cancelled = true;
     };
   }, [debouncedQ]);
+
+  const hasSearchQuery = debouncedQ.length > 0;
+  const visibleResults = hasSearchQuery ? results : [];
+  const isSearching = hasSearchQuery && debouncedQ !== resolvedQ;
 
   const refreshList = useCallback(() => {
     router.refresh();
@@ -195,6 +196,7 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
     setMessage(null);
     setSearchInput('');
     setResults([]);
+    setResolvedQ('');
     setRegraBanca('');
     setRegraOrgao('');
     setRegraAno('');
@@ -663,16 +665,16 @@ export default function ConcursoBuilder({ concursos }: { concursos: AdminConcurs
 
           <div>
             <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">Resultados</p>
-            {searching ? (
+            {isSearching ? (
               <div className="flex items-center gap-2 text-slate-500">
                 <Loader2 className="h-4 w-4 animate-spin" />
                 Buscando…
               </div>
-            ) : results.length === 0 ? (
+            ) : visibleResults.length === 0 ? (
               <p className="text-sm text-slate-500">{debouncedQ ? 'Nenhum módulo encontrado.' : 'Digite para buscar.'}</p>
             ) : (
               <ul className="space-y-2">
-                {results.map((m) => (
+                {visibleResults.map((m) => (
                   <li
                     key={m.id}
                     className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-100 px-4 py-3"
