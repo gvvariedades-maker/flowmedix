@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   BookOpenCheck,
   Brain,
@@ -475,8 +476,16 @@ export default async function GoianinhaPage({ searchParams }: GoianinhaPageProps
                 <p className="text-sm font-semibold text-slate-400">Acesso completo</p>
                 <p className="mt-2 text-5xl font-black tracking-tight text-white">R$ 37</p>
                 <p className="mt-2 text-sm font-semibold text-emerald-200">Pagamento único, sem mensalidade</p>
-                <div className="mt-7">
+                <div className="mt-7 flex flex-col gap-3">
                   <CheckoutCtaForm label="Garantir meu acesso — R$ 37" />
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="h-[52px] w-full rounded-2xl border border-white/15 bg-white/5 px-7 text-base font-bold text-slate-100 hover:bg-white/10 sm:w-auto sm:min-w-[290px]"
+                  >
+                    <Link href="/planos">Pacotes</Link>
+                  </Button>
                 </div>
                 <p className="mt-4 text-sm text-slate-400">Acesso imediato após o pagamento</p>
               </div>

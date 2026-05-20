@@ -15,13 +15,9 @@ export function SlideStylePreviews() {
           <p className="text-[10px] font-black uppercase tracking-[0.35em] text-cyan-400/90 mb-3">
             NeuroSlides do Estudo Reverso
           </p>
-          <h2 className="text-3xl sm:text-4xl font-[1000] text-white tracking-tight mb-4">
-            Os mesmos tipos de slide que você encontra na plataforma
+          <h2 className="text-3xl sm:text-4xl font-[1000] text-white tracking-tight">
+            Mapa de Conceitos, Zona de Perigo, Fluxo Lógico
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
-            Exemplos reais de layout usados no estudo reverso: mapas, regras, alertas, fluxos, comparações e
-            memorização. <strong className="text-slate-200">É assim que o Avant transforma uma questão em estudo guiado</strong>.
-          </p>
         </div>
 
         <NeuroSlidesShowcaseGrid />

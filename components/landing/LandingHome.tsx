@@ -450,7 +450,7 @@ export default function LandingHome() {
                 animate="visible"
                 className="mb-6 text-4xl font-[1000] leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl"
               >
-                Todo material que você encontra foi feito{' '}
+                A maioria do material que você encontra no mercado foi feito{' '}
                 <span className="text-slate-400">para enfermeiro.</span>
                 <br />
                 <span className="bg-gradient-to-r from-white via-cyan-200 to-[#BEF264] bg-clip-text text-transparent">
@@ -893,25 +893,43 @@ export default function LandingHome() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-400/20 via-transparent to-transparent pointer-events-none" />
             <div className="relative z-10">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-[1000] text-white tracking-tight mb-4">
-                Aprovação começa com o método certo. Não com mais conteúdo.
+                Só deixamos testar porque{' '}
+                <span className="bg-gradient-to-r from-cyan-200 to-[#BEF264] bg-clip-text text-transparent">
+                  funciona de verdade.
+                </span>
               </h2>
               <p className="text-slate-400 text-base sm:text-lg mb-8 max-w-xl mx-auto">
-                Comece grátis com 1 questão por dia e descubra como o Estudo Reverso funciona na prática. Sem cartão. Para estudar sem limite, assine o Pro.
+                Uma questão já é suficiente para entender a diferença. Sem cartão, sem compromisso, sem limite de tempo no teste. Quando fizer sentido para você, o Pro está disponível por R$ 9,90/mês — cancelável a qualquer momento.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
-                  href="/planos"
+                  href="/register"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#BEF264] text-slate-950 font-black uppercase tracking-widest text-sm px-10 py-4 rounded-2xl hover:bg-[#d4f879] transition-all shadow-lg shadow-lime-400/25"
                 >
-                  Ver Pacotes
+                  Testar grátis agora
                   <ArrowRight size={18} />
                 </Link>
                 <Link
                   href="/login"
                   className="text-sm font-bold text-indigo-300 hover:text-indigo-200 underline underline-offset-4"
                 >
-                  Acessar minha conta
+                  Já tenho conta → Entrar
                 </Link>
+              </div>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+                {[
+                  'Sem cartão de crédito',
+                  'Cancela quando quiser',
+                  'Uma questão já mostra o método',
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-2 text-sm font-semibold text-slate-400"
+                  >
+                    <CheckCircle2 size={15} className="text-[#BEF264]" />
+                    {item}
+                  </div>
+                ))}
               </div>
             </div>
           </motion.div>

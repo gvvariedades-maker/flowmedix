@@ -122,27 +122,6 @@ function CampinaPurchaseCta({ hasAccess }: { hasAccess: boolean }) {
   return <CheckoutCtaForm label="Garantir meu acesso — R$ 37" />;
 }
 
-function VideoSection() {
-  return (
-    <section className="px-4 py-12">
-      <p className="mb-4 text-center text-sm text-slate-400">Veja como funciona em 60 segundos</p>
-
-      <div className="relative mx-auto aspect-[9/16] w-full max-w-[320px] overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
-        <iframe
-          src="https://www.youtube.com/embed/NkfGctkK6A4?autoplay=0&controls=1&modestbranding=1&rel=0&showinfo=0&playsinline=1"
-          className="absolute inset-0 h-full w-full"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      </div>
-
-      <p className="mx-auto mt-4 max-w-xs text-center text-xs text-slate-500">
-        Questões reais da IDECAN · NeuroSlides · Feito só para Técnico de Enfermagem
-      </p>
-    </section>
-  );
-}
-
 const contestNumbers = [
   {
     icon: Stethoscope,
@@ -408,8 +387,6 @@ export default async function CampinaGrandePage({ searchParams }: CampinaGrandeP
             </div>
           </div>
         </section>
-
-        <VideoSection />
 
         <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
