@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Hand } from 'lucide-react';
 
 interface LogicFlowFooterProps {
   isTapMode: boolean;
@@ -11,6 +11,8 @@ interface LogicFlowFooterProps {
   total: number;
   revealedCount: number;
   onAdvance: () => void;
+  /** Exibe instrução de toque até o primeiro avanço no slide. */
+  showTapHint?: boolean;
 }
 
 export function LogicFlowFooter({
@@ -20,6 +22,7 @@ export function LogicFlowFooter({
   total,
   revealedCount,
   onAdvance,
+  showTapHint = false,
 }: LogicFlowFooterProps) {
   if (isTapMode) {
     return (
@@ -28,6 +31,19 @@ export function LogicFlowFooter({
         animate={{ opacity: 1 }}
         className="mt-6 flex flex-col items-center gap-3"
       >
+        {showTapHint && !isComplete ? (
+          <motion.p
+            role="status"
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex max-w-md items-center justify-center gap-2 rounded-xl border border-violet-400/35 bg-violet-500/15 px-4 py-3 text-center text-sm font-semibold leading-snug text-violet-100"
+          >
+            <Hand className="h-4 w-4 shrink-0 text-violet-300" aria-hidden />
+            <span>
+              Toque no passo em destaque acima para revelar o próximo
+            </span>
+          </motion.p>
+        ) : null}
         <motion.div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/60 px-4 py-2 backdrop-blur-xl">
           <span className="text-sm text-slate-300 md:text-xs">
             Passo {Math.min(currentPasso, total)} de {total}

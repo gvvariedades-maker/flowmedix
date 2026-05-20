@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, CheckCircle2, Circle } from 'lucide-react';
+import { ArrowDown, CheckCircle2, Circle, Hand } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import {
   useLogicFlowReveal,
@@ -57,6 +57,20 @@ function renderStepText(
   return renderStepContent(step, isRevealed);
 }
 
+function LogicFlowTapBadge({ visible }: { visible: boolean }) {
+  if (!visible) return null;
+  return (
+    <motion.span
+      initial={{ opacity: 0, y: 4 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="pointer-events-none absolute -top-2 right-3 z-10 inline-flex items-center gap-1 rounded-full bg-violet-500 px-2.5 py-1 text-[10px] font-black uppercase tracking-wide text-white shadow-lg shadow-violet-500/40"
+    >
+      <Hand className="h-3 w-3 shrink-0" aria-hidden />
+      Toque aqui
+    </motion.span>
+  );
+}
+
 // ============================================================================
 // FLUXO LÓGICO: sequência vertical/horizontal/cards com revelação auto ou tap
 // layout_variant: vertical | horizontal | cards
@@ -89,6 +103,14 @@ export const LogicFlow = ({
     currentPasso,
   } = useLogicFlowReveal(normalizedSteps.length, revealMode);
 
+  const [tapHintDismissed, setTapHintDismissed] = useState(false);
+  const showTapHint = isTapMode && !isComplete && !tapHintDismissed;
+
+  const handleAdvance = useCallback(() => {
+    setTapHintDismissed(true);
+    advanceStep();
+  }, [advanceStep]);
+
   if (!normalizedSteps || normalizedSteps.length === 0) {
     return (
       <motion.div className="flex min-h-full w-full min-w-0 items-center justify-center p-6">
@@ -104,7 +126,8 @@ export const LogicFlow = ({
       currentPasso={currentPasso}
       total={normalizedSteps.length}
       revealedCount={revealedSteps.length}
-      onAdvance={advanceStep}
+      onAdvance={handleAdvance}
+      showTapHint={showTapHint}
     />
   );
 
@@ -131,7 +154,7 @@ export const LogicFlow = ({
   const handleStepActivate = (index: number) => {
     if (!isTapMode || isComplete) return;
     const { active } = getStepState(index);
-    if (active) advanceStep();
+    if (active) handleAdvance();
   };
 
   // VARIANTE: HORIZONTAL
@@ -159,14 +182,16 @@ export const LogicFlow = ({
                   onKeyDown={(e) => {
                     if (canTap && (e.key === 'Enter' || e.key === ' ')) {
                       e.preventDefault();
-                      advanceStep();
+                      handleAdvance();
                     }
                   }}
-                  className={`flex min-h-11 min-w-0 items-start gap-3 rounded-xl border-2 ${theme.borderColor} bg-slate-900/80 px-4 py-3 backdrop-blur-xl ${
+                  aria-label={canTap ? 'Toque para revelar o próximo passo' : undefined}
+                  className={`relative flex min-h-11 min-w-0 items-start gap-3 rounded-xl border-2 ${theme.borderColor} bg-slate-900/80 px-4 py-3 backdrop-blur-xl ${
                     canTap ? 'cursor-pointer hover:border-violet-400/50' : ''
-                  } ${active ? 'ring-2 ring-violet-400/40' : ''}`}
+                  } ${active ? 'ring-2 ring-violet-400/60 shadow-[0_0_24px_rgba(139,92,246,0.25)]' : ''}`}
                   style={{ borderColor: revealed ? theme.glow : 'rgba(255,255,255,0.1)' }}
                 >
+                  <LogicFlowTapBadge visible={canTap && showTapHint} />
                   <span
                     className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${theme.primary} text-sm font-black text-slate-900`}
                   >
@@ -225,17 +250,19 @@ export const LogicFlow = ({
                 onKeyDown={(e) => {
                   if (canTap && (e.key === 'Enter' || e.key === ' ')) {
                     e.preventDefault();
-                    advanceStep();
+                    handleAdvance();
                   }
                 }}
-                className={`min-h-11 rounded-2xl border-2 ${theme.borderColor} bg-slate-900/80 p-5 backdrop-blur-xl transition-all ${
+                aria-label={canTap ? 'Toque para revelar o próximo passo' : undefined}
+                className={`relative min-h-11 rounded-2xl border-2 ${theme.borderColor} bg-slate-900/80 p-5 backdrop-blur-xl transition-all ${
                   canTap ? 'cursor-pointer hover:border-violet-400/50' : ''
-                } ${isActiveHighlight || active ? 'ring-2 ring-offset-2 ring-offset-slate-900' : ''}`}
+                } ${isActiveHighlight || active ? 'ring-2 ring-offset-2 ring-offset-slate-900 ring-violet-400/60' : ''}`}
                 style={{
                   borderColor: revealed ? theme.glow : 'rgba(255,255,255,0.1)',
-                  boxShadow: revealed ? `0 0 20px ${theme.glow}40` : 'none',
+                  boxShadow: revealed ? `0 0 20px ${theme.glow}40` : canTap ? '0 0 24px rgba(139,92,246,0.25)' : 'none',
                 }}
               >
+                <LogicFlowTapBadge visible={canTap && showTapHint} />
                 <motion.div
                   className={`mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${theme.primary} text-sm font-black text-slate-900`}
                 >
@@ -319,11 +346,12 @@ export const LogicFlow = ({
                     }}
                     role={canTap ? 'button' : undefined}
                     tabIndex={canTap ? 0 : undefined}
+                    aria-label={canTap ? 'Toque para revelar o próximo passo' : undefined}
                     onClick={() => handleStepActivate(index)}
                     onKeyDown={(e) => {
                       if (canTap && (e.key === 'Enter' || e.key === ' ')) {
                         e.preventDefault();
-                        advanceStep();
+                        handleAdvance();
                       }
                     }}
                     className={`
@@ -332,13 +360,14 @@ export const LogicFlow = ({
                       border-2 ${theme.borderColor}
                       transition-all duration-300
                       ${revealed ? 'opacity-100' : 'opacity-30'}
-                      ${isActiveHighlight || active ? 'ring-2 ring-offset-2 ring-offset-slate-900 ring-violet-400/50' : ''}
+                      ${isActiveHighlight || active ? 'ring-2 ring-offset-2 ring-offset-slate-900 ring-violet-400/60 shadow-[0_0_24px_rgba(139,92,246,0.25)]' : ''}
                       ${canTap ? 'cursor-pointer hover:border-violet-400/50' : ''}
                     `}
                     style={{
                       borderColor: revealed ? theme.glow : 'rgba(255,255,255,0.1)',
                     }}
                   >
+                    <LogicFlowTapBadge visible={canTap && showTapHint} />
                     <motion.div className="flex min-w-0 items-start gap-3">
                       <motion.div
                         animate={{

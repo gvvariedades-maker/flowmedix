@@ -45,7 +45,7 @@ export const REVERSE_STUDY_MICROTIPS: Record<ReverseStudyMicrotipKey, ReverseStu
   },
   'logic-flow': {
     title: 'Fluxo lógico',
-    body: 'Este passo mostra a sequência de decisão por trás da alternativa correta.',
+    body: 'Toque no passo em destaque (anel violeta) para revelar o próximo — ou use o botão abaixo. Siga na ordem até ver todo o raciocínio.',
     tone: 'emerald',
   },
   'danger-zone': {
