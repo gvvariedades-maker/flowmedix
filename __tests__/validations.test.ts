@@ -228,6 +228,35 @@ describe('Validação de Questões', () => {
     });
   });
 
+  describe('ReverseStudySlideShellFieldsSchema', () => {
+    it('deve validar chip_label e slide_title em qualquer tipo', () => {
+      const slide = {
+        type: 'logic_flow',
+        chip_label: 'FLUXO LÓGICO',
+        slide_title: 'Decisão clínica',
+        steps: ['Passo 1'],
+      };
+
+      const result = LogicFlowSlideSchema.safeParse(slide);
+      expect(result.success).toBe(true);
+      if (result.success) {
+        expect(result.data.chip_label).toBe('FLUXO LÓGICO');
+        expect(result.data.slide_title).toBe('Decisão clínica');
+      }
+    });
+
+    it('deve rejeitar chip_label vazio', () => {
+      const slide = {
+        type: 'logic_flow',
+        chip_label: '',
+        steps: ['Passo 1'],
+      };
+
+      const result = LogicFlowSlideSchema.safeParse(slide);
+      expect(result.success).toBe(false);
+    });
+  });
+
   describe('ConceptMapSlideSchema', () => {
     it('deve validar slide concept_map válido', () => {
       const validSlide = {
@@ -331,10 +360,48 @@ describe('Validação de Questões', () => {
       const result = LogicFlowSlideSchema.safeParse(invalidSlide);
       expect(result.success).toBe(false);
     });
+
+    it('deve aceitar slide sem reveal_mode (legado = auto no player)', () => {
+      const legacySlide = {
+        type: 'logic_flow',
+        steps: ['Passo 1', 'Passo 2'],
+      };
+
+      const result = LogicFlowSlideSchema.safeParse(legacySlide);
+      expect(result.success).toBe(true);
+      if (result.success) {
+        expect(result.data.reveal_mode).toBeUndefined();
+      }
+    });
+
+    it('deve validar reveal_mode tap', () => {
+      const tapSlide = {
+        type: 'logic_flow',
+        reveal_mode: 'tap',
+        steps: ['Decisão 1', 'Decisão 2'],
+      };
+
+      const result = LogicFlowSlideSchema.safeParse(tapSlide);
+      expect(result.success).toBe(true);
+      if (result.success) {
+        expect(result.data.reveal_mode).toBe('tap');
+      }
+    });
+
+    it('deve rejeitar reveal_mode inválido', () => {
+      const invalidSlide = {
+        type: 'logic_flow',
+        reveal_mode: 'instant',
+        steps: ['Passo 1'],
+      };
+
+      const result = LogicFlowSlideSchema.safeParse(invalidSlide);
+      expect(result.success).toBe(false);
+    });
   });
 
   describe('GoldenRuleSlideSchema', () => {
-    it('deve validar slide golden_rule válido', () => {
+    it('deve validar slide golden_rule válido com content', () => {
       const validSlide = {
         type: 'golden_rule',
         content: 'Regra de ouro importante',
@@ -344,9 +411,43 @@ describe('Validação de Questões', () => {
       expect(result.success).toBe(true);
     });
 
-    it('deve rejeitar slide sem content', () => {
+    it('deve validar slide golden_rule com rows (sem content)', () => {
+      const validSlide = {
+        type: 'golden_rule',
+        rows: [
+          { label: 'PA sistólica', value: '< 90 mmHg' },
+          { label: 'FC', value: '> 100 bpm' },
+        ],
+      };
+
+      const result = GoldenRuleSlideSchema.safeParse(validSlide);
+      expect(result.success).toBe(true);
+    });
+
+    it('deve validar slide golden_rule com content e rows', () => {
+      const validSlide = {
+        type: 'golden_rule',
+        content: 'CRITÉRIOS DE CHOQUE',
+        rows: [{ label: 'PAS', value: '< 90 mmHg' }],
+      };
+
+      const result = GoldenRuleSlideSchema.safeParse(validSlide);
+      expect(result.success).toBe(true);
+    });
+
+    it('deve rejeitar slide sem content nem rows', () => {
       const invalidSlide = {
         type: 'golden_rule',
+      };
+
+      const result = GoldenRuleSlideSchema.safeParse(invalidSlide);
+      expect(result.success).toBe(false);
+    });
+
+    it('deve rejeitar rows vazias sem content', () => {
+      const invalidSlide = {
+        type: 'golden_rule',
+        rows: [],
       };
 
       const result = GoldenRuleSlideSchema.safeParse(invalidSlide);
@@ -386,6 +487,35 @@ describe('Validação de Questões', () => {
 
       const result = DangerZoneSlideSchema.safeParse(invalidSlide);
       expect(result.success).toBe(false);
+    });
+
+    it('deve validar danger_zone com items.correct (layout compare)', () => {
+      const compareSlide = {
+        type: 'danger_zone',
+        content: 'Cuidado com erros em RCP',
+        bullet_style: 'x_icon',
+        items: [
+          {
+            label: 'Interromper RCP para pulso',
+            detail: 'Parar a cada ciclo para checar pulso.',
+            correct: 'Verificar pulso só após 2 minutos de RCP contínua.',
+          },
+        ],
+      };
+
+      const result = DangerZoneSlideSchema.safeParse(compareSlide);
+      expect(result.success).toBe(true);
+    });
+
+    it('deve validar danger_zone legado sem correct', () => {
+      const legacySlide = {
+        type: 'danger_zone',
+        content: 'Alerta',
+        items: [{ label: 'Erro', detail: 'Descrição' }],
+      };
+
+      const result = DangerZoneSlideSchema.safeParse(legacySlide);
+      expect(result.success).toBe(true);
     });
   });
 

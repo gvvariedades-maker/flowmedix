@@ -1,0 +1,64 @@
+'use client';
+
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ChevronRight } from 'lucide-react';
+
+interface LogicFlowFooterProps {
+  isTapMode: boolean;
+  isComplete: boolean;
+  currentPasso: number;
+  total: number;
+  revealedCount: number;
+  onAdvance: () => void;
+}
+
+export function LogicFlowFooter({
+  isTapMode,
+  isComplete,
+  currentPasso,
+  total,
+  revealedCount,
+  onAdvance,
+}: LogicFlowFooterProps) {
+  if (isTapMode) {
+    return (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="mt-6 flex flex-col items-center gap-3"
+      >
+        <motion.div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/60 px-4 py-2 backdrop-blur-xl">
+          <span className="text-sm text-slate-300 md:text-xs">
+            Passo {Math.min(currentPasso, total)} de {total}
+          </span>
+        </motion.div>
+        {!isComplete && (
+          <button
+            type="button"
+            onClick={onAdvance}
+            className="inline-flex min-h-11 min-w-[11rem] items-center justify-center gap-2 rounded-xl border border-violet-400/30 bg-violet-500/20 px-5 py-3 text-sm font-semibold text-violet-100 transition-colors hover:bg-violet-500/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400"
+          >
+            Próximo passo
+            <ChevronRight className="h-4 w-4" aria-hidden />
+          </button>
+        )}
+      </motion.div>
+    );
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: total * 0.1 + 0.5 }}
+      className="mt-8 text-center"
+    >
+      <motion.div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/60 px-4 py-2 backdrop-blur-xl">
+        <span className="text-sm text-slate-400 md:text-xs">
+          {revealedCount} de {total} passos concluídos
+        </span>
+      </motion.div>
+    </motion.div>
+  );
+}

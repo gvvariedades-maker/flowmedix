@@ -833,6 +833,11 @@ export default function AvantLessonPlayer({
                         data={currentSlide}
                         questionHash={questionHash}
                         slideIndex={slideAtual}
+                        shellContext={{
+                          slideIndex: slideAtual,
+                          totalSlides,
+                          banca: dados.meta?.banca,
+                        }}
                       />
                     </motion.div>
                   </AnimatePresence>

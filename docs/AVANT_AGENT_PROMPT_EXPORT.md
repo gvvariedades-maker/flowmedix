@@ -80,13 +80,68 @@ Opcional; HTML limitado (tags permitidas no sanitizador do app).
 Sempre **4** slides, nesta ordem lógica de tipos:
 
 1. `concept_map` — itens com `label`, `detail`, `icon` (ícone **Lucide**, nome PascalCase, ex.: `BookOpen`, `AlertTriangle`).
-2. `golden_rule` — `content` em caixa alta, uma regra central.
-3. `logic_flow` — **`steps` como array de strings** (não objetos `{ id, text }`).
-4. `danger_zone` — `content`, `items` (pegadinhas), `footer_rule`.
+2. `golden_rule` — `content` (mnemônico/título) e/ou **`rows`** (`label` + `value`) para SV, doses, escores.
+3. `logic_flow` — **`steps` como array de strings** (não objetos `{ id, text }`); conteúdo **novo** com **`"reveal_mode": "tap"`**.
+4. `danger_zone` — `content`, `items` com **`label`**, **`detail`** e **`correct`** (coluna certa), `footer_rule`.
 
 **Formato plano:** `items`, `content` e `steps` ficam **no mesmo objeto** que `type`. Não usar um segundo nível `concept_map: { items }`, `golden_rule: { content }`, etc. (contrato `QuestaoCompletaSchema`; importações antigas podem ser normalizadas no servidor).
 
 Em **cada** slide: `"subject": "Enfermagem"` (ou coerente) e `"meta": { "topico": "...", "subtopico": "NOME_EXATO_DA_TABELA" }`.
+
+### Contrato premium (conteúdo novo — recomendado)
+
+| Slide | Campo | Comportamento no player |
+|-------|--------|-------------------------|
+| `logic_flow` | `"reveal_mode": "tap"` | Aluno revela cada passo com toque; passo 0 já visível. Omitir = `auto` (legado). |
+| `danger_zone` | `items[].correct` | Layout **compare** (pegadinha × correto). Opcional: `"bullet_style": "x_icon"`. |
+| `golden_rule` | `rows: [{ label, value }]` | Tabela **reference_table**; `content` como título acima da tabela. |
+| Qualquer | `slide_title` (opcional) | Título de capa do slide. |
+| Qualquer | `chip_label` (opcional) | Override do chip; padrão vem do `type`. |
+
+**Shell:** chip, badge de banca e fio condutor (“Slide N de M — …”) são montados pelo player a partir de `meta.banca` e do `type`. **Não** repetir banca em cada slide.
+
+**Exemplo golden completo no repositório:** `examples/questao-premium-urgencias-rcp.json`
+
+### Trechos por tipo (premium)
+
+**logic_flow:**
+```json
+{
+  "type": "logic_flow",
+  "reveal_mode": "tap",
+  "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
+  "steps": ["Passo 1", "Passo 2", "Passo 3"]
+}
+```
+
+**danger_zone:**
+```json
+{
+  "type": "danger_zone",
+  "bullet_style": "x_icon",
+  "content": "CUIDADO: título do alerta",
+  "items": [
+    {
+      "label": "Pegadinha",
+      "detail": "Por que a banca tenta confundir.",
+      "correct": "Conduta ou conceito correto."
+    }
+  ],
+  "footer_rule": "Resumo final"
+}
+```
+
+**golden_rule:**
+```json
+{
+  "type": "golden_rule",
+  "content": "TÍTULO DA TABELA",
+  "rows": [
+    { "label": "PA sistólica", "value": "90–140 mmHg" },
+    { "label": "FC", "value": "60–100 bpm" }
+  ]
+}
+```
 
 ---
 
@@ -166,8 +221,11 @@ Só se pedido explícito: `template` `t01`–`t15` ou nome de cor; `layout_varia
 - [ ] JSON completo e válido (sem truncar).
 - [ ] `meta` com banca, orgao, ano, topico, subtopico quando houver na fonte; `cargo_header` ou `prova` para formato CPCON.
 - [ ] `instruction` sem `1)`; I/II/III com quebras; alternativas só em `options`.
-- [ ] 4 slides; `steps` em `logic_flow` como **strings**; `meta.subtopico` idêntico em todos os slides.
-- [ ] Sem `template`/`layout_variant` salvo override pedido.
+- [ ] 4 slides; formato **plano**; `meta.subtopico` idêntico em todos os slides.
+- [ ] `logic_flow`: `steps` como **strings** + **`reveal_mode": "tap"`** (conteúdo novo).
+- [ ] `danger_zone`: cada item com **`correct`**; opcional `bullet_style: "x_icon"`.
+- [ ] `golden_rule`: preferir **`rows`** para referências tabulares; `content` como título se houver `rows`.
+- [ ] Sem `template`/`layout_variant` salvo override pedido; banca só em `meta` (não por slide).
 
 ---
 

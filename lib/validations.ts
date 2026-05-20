@@ -37,6 +37,10 @@ const LIMITS = {
   PROVA_MAX: 200,
   HEADER_LINE_MAX: 500,
   CARGO_HEADER_MAX: 40,
+  /** Override do chip no shell premium (Sprint 1). */
+  CHIP_LABEL_MAX: 80,
+  /** Título de capa abaixo do chip (Sprint 1). */
+  SLIDE_TITLE_MAX: 120,
 } as const;
 
 // Tags HTML permitidas em text_fragment
@@ -170,6 +174,8 @@ export const SlideItemSchema = z.object({
   description: z.string().max(LIMITS.DETAIL_MAX, `Description deve ter no máximo ${LIMITS.DETAIL_MAX} caracteres`).optional(),
   icon: lucideIconValidator.optional(),
   color: z.string().max(50, 'Color deve ter no máximo 50 caracteres').optional(),
+  /** Texto da coluna “correto” no layout `compare` (danger_zone). */
+  correct: z.string().max(LIMITS.DETAIL_MAX, `Correct deve ter no máximo ${LIMITS.DETAIL_MAX} caracteres`).optional(),
 });
 
 // Schema para Meta de Slide - COM LIMITES
@@ -178,8 +184,22 @@ export const SlideMetaSchema = z.object({
   subtopico: z.string().max(LIMITS.TOPICO_MAX, `Subtópico deve ter no máximo ${LIMITS.TOPICO_MAX} caracteres`).optional(),
 }).passthrough(); // Permite campos extras
 
+/** Campos opcionais do shell premium (chip/título) — comuns a todos os tipos de slide. */
+export const ReverseStudySlideShellFieldsSchema = z.object({
+  chip_label: z
+    .string()
+    .min(1, 'chip_label não pode ser vazio')
+    .max(LIMITS.CHIP_LABEL_MAX, `chip_label deve ter no máximo ${LIMITS.CHIP_LABEL_MAX} caracteres`)
+    .optional(),
+  slide_title: z
+    .string()
+    .min(1, 'slide_title não pode ser vazio')
+    .max(LIMITS.SLIDE_TITLE_MAX, `slide_title deve ter no máximo ${LIMITS.SLIDE_TITLE_MAX} caracteres`)
+    .optional(),
+});
+
 // Schema para Concept Map Slide - COM VALIDAÇÕES AVANÇADAS
-export const ConceptMapSlideSchema = z.object({
+export const ConceptMapSlideSchema = ReverseStudySlideShellFieldsSchema.merge(z.object({
   type: z.literal('concept_map'),
   subject: z.string().max(LIMITS.SUBJECT_MAX, `Subject deve ter no máximo ${LIMITS.SUBJECT_MAX} caracteres`).optional(),
   template: z.string().max(20, 'Template ID (ex: t01-t15)').optional(),
@@ -199,10 +219,10 @@ export const ConceptMapSlideSchema = z.object({
   layout_variant: z.string().optional(),
   structure: z.any().optional(),
   design_system: z.any().optional(),
-});
+}));
 
 // Schema para Logic Flow Slide - COM VALIDAÇÕES AVANÇADAS
-export const LogicFlowSlideSchema = z.object({
+export const LogicFlowSlideSchema = ReverseStudySlideShellFieldsSchema.merge(z.object({
   type: z.literal('logic_flow'),
   subject: z.string().max(LIMITS.SUBJECT_MAX, `Subject deve ter no máximo ${LIMITS.SUBJECT_MAX} caracteres`).optional(),
   template: z.string().max(20, 'Template ID (ex: t01-t15)').optional(),
@@ -216,33 +236,65 @@ export const LogicFlowSlideSchema = z.object({
     .min(1, 'Logic flow deve ter pelo menos 1 passo')
     .max(15, 'Logic flow deve ter no máximo 15 passos'),
   footer_rule: z.string().max(LIMITS.FOOTER_RULE_MAX, `Footer rule deve ter no máximo ${LIMITS.FOOTER_RULE_MAX} caracteres`).optional(),
+  /** Default `auto` no player preserva slides legados; conteúdo novo premium deve usar `"tap"`. */
+  reveal_mode: z.enum(['auto', 'tap']).optional(),
   // Campos de compatibilidade (DEPRECATED)
   layout_type: z.literal('logic_flow').optional(),
   layout_variant: z.string().optional(),
   structure: z.any().optional(),
   design_system: z.any().optional(),
+}));
+
+export const GoldenRuleRowSchema = z.object({
+  label: z
+    .string()
+    .min(1, 'Cada row deve ter label')
+    .max(LIMITS.LABEL_MAX, `Label deve ter no máximo ${LIMITS.LABEL_MAX} caracteres`),
+  value: z
+    .string()
+    .min(1, 'Cada row deve ter value')
+    .max(LIMITS.DETAIL_MAX, `Value deve ter no máximo ${LIMITS.DETAIL_MAX} caracteres`),
 });
 
 // Schema para Golden Rule Slide - COM VALIDAÇÕES AVANÇADAS
-export const GoldenRuleSlideSchema = z.object({
-  type: z.literal('golden_rule'),
-  subject: z.string().max(LIMITS.SUBJECT_MAX, `Subject deve ter no máximo ${LIMITS.SUBJECT_MAX} caracteres`).optional(),
-  template: z.string().max(20, 'Template ID (ex: t01-t15)').optional(),
-  theme_id: z.string().max(20, 'Alias de template').optional(),
-  meta: SlideMetaSchema.optional(),
-  content: z.string()
-    .min(1, 'Content é obrigatório para golden_rule')
-    .max(LIMITS.CONTENT_MAX, `Content deve ter no máximo ${LIMITS.CONTENT_MAX} caracteres`),
-  footer_rule: z.string().max(LIMITS.FOOTER_RULE_MAX, `Footer rule deve ter no máximo ${LIMITS.FOOTER_RULE_MAX} caracteres`).optional(),
-  // Campos de compatibilidade (DEPRECATED)
-  layout_type: z.literal('golden_rule').optional(),
-  layout_variant: z.string().optional(),
-  structure: z.any().optional(),
-  design_system: z.any().optional(),
-});
+// `content` OU `rows` (superRefine); slides legados só com content permanecem válidos.
+export const GoldenRuleSlideSchema = ReverseStudySlideShellFieldsSchema.merge(z
+  .object({
+    type: z.literal('golden_rule'),
+    subject: z.string().max(LIMITS.SUBJECT_MAX, `Subject deve ter no máximo ${LIMITS.SUBJECT_MAX} caracteres`).optional(),
+    template: z.string().max(20, 'Template ID (ex: t01-t15)').optional(),
+    theme_id: z.string().max(20, 'Alias de template').optional(),
+    meta: SlideMetaSchema.optional(),
+    content: z
+      .string()
+      .max(LIMITS.CONTENT_MAX, `Content deve ter no máximo ${LIMITS.CONTENT_MAX} caracteres`)
+      .optional(),
+    rows: z
+      .array(GoldenRuleRowSchema)
+      .min(1, 'rows deve ter pelo menos 1 par label/value')
+      .max(12, 'golden_rule deve ter no máximo 12 rows')
+      .optional(),
+    footer_rule: z.string().max(LIMITS.FOOTER_RULE_MAX, `Footer rule deve ter no máximo ${LIMITS.FOOTER_RULE_MAX} caracteres`).optional(),
+    // Campos de compatibilidade (DEPRECATED)
+    layout_type: z.literal('golden_rule').optional(),
+    layout_variant: z.string().optional(),
+    structure: z.any().optional(),
+    design_system: z.any().optional(),
+  }))
+  .superRefine((data, ctx) => {
+    const hasContent = typeof data.content === 'string' && data.content.trim().length > 0;
+    const hasRows = Array.isArray(data.rows) && data.rows.length > 0;
+    if (!hasContent && !hasRows) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'golden_rule deve ter content ou rows (pelo menos um com conteúdo)',
+        path: ['content'],
+      });
+    }
+  });
 
 // Schema para Danger Zone Slide - COM VALIDAÇÕES AVANÇADAS
-export const DangerZoneSlideSchema = z.object({
+export const DangerZoneSlideSchema = ReverseStudySlideShellFieldsSchema.merge(z.object({
   type: z.literal('danger_zone'),
   subject: z.string().max(LIMITS.SUBJECT_MAX, `Subject deve ter no máximo ${LIMITS.SUBJECT_MAX} caracteres`).optional(),
   template: z.string().max(20, 'Template ID (ex: t01-t15)').optional(),
@@ -253,15 +305,17 @@ export const DangerZoneSlideSchema = z.object({
     .max(LIMITS.CONTENT_MAX, `Content deve ter no máximo ${LIMITS.CONTENT_MAX} caracteres`),
   items: z.array(SlideItemSchema).max(10, 'Danger zone deve ter no máximo 10 items').optional(),
   footer_rule: z.string().max(LIMITS.FOOTER_RULE_MAX, `Footer rule deve ter no máximo ${LIMITS.FOOTER_RULE_MAX} caracteres`).optional(),
+  /** Bullets na lista: `numbered` (padrão) ou `x_icon` (ícone X vermelho). */
+  bullet_style: z.enum(['numbered', 'x_icon']).optional(),
   // Campos de compatibilidade (DEPRECATED)
   layout_type: z.literal('danger_zone').optional(),
   layout_variant: z.string().optional(),
   structure: z.any().optional(),
   design_system: z.any().optional(),
-});
+}));
 
 // Schema para Syllable Scanner Slide - COM VALIDAÇÕES AVANÇADAS
-export const SyllableScannerSlideSchema = z.object({
+export const SyllableScannerSlideSchema = ReverseStudySlideShellFieldsSchema.merge(z.object({
   type: z.literal('syllable_scanner'),
   subject: z.string().max(LIMITS.SUBJECT_MAX, `Subject deve ter no máximo ${LIMITS.SUBJECT_MAX} caracteres`).optional(),
   template: z.string().max(20, 'Template ID (ex: t01-t15)').optional(),
@@ -278,10 +332,10 @@ export const SyllableScannerSlideSchema = z.object({
   layout_variant: z.string().optional(),
   structure: z.any().optional(),
   design_system: z.any().optional(),
-});
+}));
 
 // Schema para Versus Arena Slide - COM VALIDAÇÕES AVANÇADAS
-export const VersusArenaSlideSchema = z.object({
+export const VersusArenaSlideSchema = ReverseStudySlideShellFieldsSchema.merge(z.object({
   type: z.literal('versus_arena'),
   subject: z.string().max(LIMITS.SUBJECT_MAX, `Subject deve ter no máximo ${LIMITS.SUBJECT_MAX} caracteres`).optional(),
   template: z.string().max(20, 'Template ID (ex: t01-t15)').optional(),
@@ -299,7 +353,7 @@ export const VersusArenaSlideSchema = z.object({
   layout_variant: z.string().optional(),
   structure: z.any().optional(),
   design_system: z.any().optional(),
-});
+}));
 
 // Discriminated Union para ReverseStudySlide (Formato Semântico)
 export const ReverseStudySlideSchema = z.discriminatedUnion('type', [
@@ -551,5 +605,6 @@ export type AdminCriarUsuarioMatriculaInput = z.infer<typeof AdminCriarUsuarioMa
 export type ConcursoModuloLinkInput = z.infer<typeof ConcursoModuloLinkSchema>;
 export type ConcursoRegraModulosInput = z.infer<typeof ConcursoRegraModulosSchema>;
 export type ReverseStudySlideInput = z.infer<typeof ReverseStudySlideSchema>;
+export type ReverseStudySlideShellFieldsInput = z.infer<typeof ReverseStudySlideShellFieldsSchema>;
 export type SlideItemInput = z.infer<typeof SlideItemSchema>;
 export type SlideMetaInput = z.infer<typeof SlideMetaSchema>;

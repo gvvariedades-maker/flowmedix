@@ -17,6 +17,7 @@ import {
   ClipboardCheck,
   Eye,
   FileQuestion,
+  FileText,
   Layers,
   LayoutDashboard,
   Lightbulb,
@@ -25,6 +26,7 @@ import {
   Shield,
   Sparkles,
   Target,
+  X,
   Zap,
 } from 'lucide-react';
 import { SlideStylePreviews } from '@/components/landing/SlideStylePreviews';
@@ -225,6 +227,99 @@ const NEURO_SLIDES = [
   },
 ] as const;
 
+const AVANT_SLIDE_ASPECT = { width: 750, height: 1334 } as const;
+
+const COMPARE_APOSTILA_PROBLEMS = [
+  'Linguagem de nível superior — técnico demais para o cargo',
+  'Você lê tudo sem saber o que a banca vai cobrar',
+  'Sem feedback: não sabe se aprendeu ou só decorou',
+  'Revisão manual — depende de planilha ou memória',
+  'Conteúdo igual para todo mundo, sem diagnóstico',
+] as const;
+
+const COMPARE_AVANT_BENEFITS = [
+  'Cada questão já vem no formato que a banca cobra',
+  'Diagnóstico imediato: erro de conceito, detalhe ou banca',
+  'NeuroSlide visual após cada questão — fixa em minutos',
+  'Revisão automática no momento certo — sem planilha',
+  'Foco no que você especificamente ainda erra',
+] as const;
+
+const COMPARE_AVANT_SLIDES = [
+  {
+    src: '/images/compare-avant-1.jpg',
+    alt: 'NeuroSlide AVANT — pipeline cognitivo laranja: avaliar compatibilidade da solução, escolher veia, punção asséptica e infusão controlada',
+  },
+  {
+    src: '/images/compare-avant-2.jpg',
+    alt: 'NeuroSlide AVANT — pipeline cognitivo roxo: verificação de sinais vitais, checklist cirúrgico, monitoramento transoperatório e avaliação na SRPA',
+  },
+  {
+    src: '/images/compare-avant-3.jpg',
+    alt: 'NeuroSlide AVANT — zona de perigo vermelha: contraindicações e riscos da via de administração',
+  },
+] as const;
+
+function CompareAvantCarousel() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => setActive((i) => (i + 1) % COMPARE_AVANT_SLIDES.length), 2500);
+    return () => clearInterval(id);
+  }, [paused]);
+
+  return (
+    <div
+      className="relative w-full px-6"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <div className="relative w-full">
+        {COMPARE_AVANT_SLIDES.map((s, i) => (
+          <div
+            key={s.src}
+            className={
+              i === active
+                ? 'relative'
+                : 'pointer-events-none absolute inset-x-0 top-0 opacity-0'
+            }
+            aria-hidden={i !== active}
+          >
+            <Image
+              src={s.src}
+              alt={s.alt}
+              width={AVANT_SLIDE_ASPECT.width}
+              height={AVANT_SLIDE_ASPECT.height}
+              priority={i === 0}
+              className={`w-full h-auto rounded-2xl border border-[#BEF264]/20 shadow-xl shadow-lime-950/40 transition-opacity duration-500 ${
+                i === active ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{ objectFit: 'contain' }}
+            />
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center gap-2 py-4" role="tablist" aria-label="Slides AVANT">
+        {COMPARE_AVANT_SLIDES.map((s, i) => (
+          <button
+            key={s.src}
+            type="button"
+            role="tab"
+            aria-selected={i === active}
+            aria-label={`Slide ${i + 1}`}
+            onClick={() => setActive(i)}
+            className={`rounded-full transition-all duration-300 ${
+              i === active ? 'h-2 w-6 bg-[#BEF264]' : 'h-2 w-2 bg-white/20'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function NeuroSlideCarousel() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -241,30 +336,40 @@ function NeuroSlideCarousel() {
       initial={{ opacity: 0, y: 24, scale: 0.98 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ delay: 0.12, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-      className="relative"
+      className="relative mx-auto max-w-[340px] overflow-visible"
     >
       <div className="absolute -inset-8 rounded-full bg-cyan-400/10 blur-3xl" />
       <div
-        className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/80 backdrop-blur-xl shadow-[0_0_50px_rgba(0,242,255,0.12)]"
+        className="relative overflow-visible rounded-[2rem] border border-white/10 bg-slate-950/80 backdrop-blur-xl shadow-[0_0_50px_rgba(0,242,255,0.12)]"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        <div className="relative h-[380px] w-full sm:h-[420px]">
+        <div className="relative w-full p-4">
           {NEURO_SLIDES.map((s, i) => (
-            <Image
+            <div
               key={s.src}
-              src={s.src}
-              alt={s.alt}
-              fill
-              priority={i === 0}
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className={`object-cover w-full transition-opacity duration-500 ${
-                i === active ? 'opacity-100' : 'opacity-0'
-              }`}
-            />
+              className={
+                i === active
+                  ? 'relative'
+                  : 'pointer-events-none absolute inset-x-4 top-4 opacity-0'
+              }
+              aria-hidden={i !== active}
+            >
+              <Image
+                src={s.src}
+                alt={s.alt}
+                width={AVANT_SLIDE_ASPECT.width}
+                height={AVANT_SLIDE_ASPECT.height}
+                priority={i === 0}
+                className={`w-full h-auto rounded-2xl transition-opacity duration-500 ${
+                  i === active ? 'opacity-100' : 'opacity-0'
+                }`}
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
           ))}
           <span
-            className="absolute top-3 left-3 z-10 rounded-full border bg-black/60 px-3 py-1 text-xs font-black uppercase tracking-wider backdrop-blur-sm"
+            className="absolute top-7 left-7 z-10 rounded-full border bg-black/60 px-3 py-1 text-xs font-black uppercase tracking-wider backdrop-blur-sm"
             style={{ borderColor: slide.color, color: slide.color }}
           >
             {slide.label}
@@ -438,6 +543,118 @@ export default function LandingHome() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Comparação Avant vs Apostila */}
+        <section id="comparacao" className="px-4 py-20 sm:px-6 sm:py-28">
+          <motion.div
+            className="mx-auto max-w-6xl"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="mb-3 text-[10px] font-black uppercase tracking-[0.35em] text-rose-400">
+              Método antigo vs AVANT
+            </p>
+            <h2 className="mb-4 text-3xl font-[1000] tracking-tight text-white sm:text-4xl">
+              Você estuda por material de enfermeiro sem perceber.
+            </h2>
+            <p className="mb-14 max-w-3xl text-base font-medium leading-relaxed text-slate-400 sm:text-lg">
+              A maioria dos conteúdos de concurso para enfermagem foi feita para nível superior. Linguagem mais densa,
+              profundidade desnecessária para o cargo de Técnico. O resultado: você leva o dobro do tempo para aprender a
+              metade do que precisa.
+            </p>
+
+            <div className="grid items-start gap-6 lg:grid-cols-2">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0 }}
+                className="overflow-hidden rounded-[2rem] border border-rose-400/20 bg-rose-950/10"
+              >
+                <div className="border-b border-rose-400/15 px-6 pb-4 pt-6">
+                  <div className="flex items-center gap-3">
+                    <FileText size={20} className="shrink-0 text-rose-400" aria-hidden />
+                    <div>
+                      <span className="inline-flex rounded-full border border-rose-400/20 bg-rose-400/10 px-3 py-1 text-xs font-black uppercase tracking-wider text-rose-300">
+                        Apostila / PDF
+                      </span>
+                      <p className="mt-1 text-xs font-medium text-slate-500">Feito para enfermeiro</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative h-[320px] w-full">
+                  <Image
+                    src="/images/compare-apostila.jpg"
+                    alt="Página de apostila densa com tabelas de medicamentos"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="w-full object-cover opacity-70 grayscale-[30%]"
+                  />
+                </div>
+                <ul className="space-y-3 px-6 py-5">
+                  {COMPARE_APOSTILA_PROBLEMS.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <X size={15} className="mt-0.5 shrink-0 text-rose-400" aria-hidden />
+                      <span className="text-sm font-medium text-slate-400">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="px-6 pb-6">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-800 px-4 py-2 text-xs font-bold text-slate-400">
+                    Resultado: estudo longo, progresso incerto
+                  </span>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="overflow-visible rounded-[2rem] border border-[#BEF264]/25 bg-gradient-to-b from-[#BEF264]/5 to-transparent shadow-[0_0_40px_rgba(190,242,100,0.08)]"
+              >
+                <div className="border-b border-[#BEF264]/15 px-6 pb-4 pt-6">
+                  <div className="flex items-center gap-3">
+                    <Zap size={20} className="shrink-0 text-[#BEF264]" fill="currentColor" aria-hidden />
+                    <div>
+                      <span className="inline-flex rounded-full border border-[#BEF264]/20 bg-[#BEF264]/10 px-3 py-1 text-xs font-black uppercase tracking-wider text-[#BEF264]">
+                        AVANT
+                      </span>
+                      <p className="mt-1 text-xs font-medium text-slate-400">Feito para Técnico em Enfermagem</p>
+                    </div>
+                  </div>
+                </div>
+                <CompareAvantCarousel />
+                <ul className="space-y-3 px-6 py-5">
+                  {COMPARE_AVANT_BENEFITS.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <CheckCircle2 size={15} className="mt-0.5 shrink-0 text-[#BEF264]" aria-hidden />
+                      <span className="text-sm font-medium text-slate-300">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="px-6 pb-6">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-[#BEF264]/25 bg-[#BEF264]/10 px-4 py-2 text-xs font-bold text-[#BEF264]">
+                    Resultado: estudo com direção, aprovação mais próxima
+                  </span>
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="mt-10 text-center">
+              <p className="mb-3 text-sm font-medium text-slate-400">Quer ver como funciona na prática?</p>
+              <a
+                href="#metodo"
+                className="inline-flex items-center gap-2 text-sm font-bold text-cyan-300 underline underline-offset-4 hover:text-cyan-200"
+              >
+                Ver o método completo
+                <ArrowRight size={16} aria-hidden />
+              </a>
+            </div>
+          </motion.div>
         </section>
 
         {/* Dor */}

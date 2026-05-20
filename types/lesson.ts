@@ -53,9 +53,21 @@ export type SlideType = 'concept_map' | 'danger_zone' | 'logic_flow' | 'golden_r
 // ============================================================================
 // REVERSE STUDY SLIDE (Formato Semântico Simplificado - RECOMENDADO)
 // ============================================================================
+/** Contexto do shell premium (chip, banca, fio condutor) — passado pelo player, não no JSON da questão. */
+export interface ReverseStudyShellContext {
+  slideIndex: number;
+  totalSlides: number;
+  banca?: string;
+}
+
 export interface ReverseStudySlide {
   // Identificação do tipo de slide (obrigatório)
   type: SlideType;
+
+  /** Override do chip de tipo (ex.: "MAPA DE CONCEITOS"). O padrão vem do `type`. */
+  chip_label?: string;
+  /** Título de capa do slide, abaixo do chip (opcional). */
+  slide_title?: string;
   
   // Metadados semânticos (para geração automática de tema)
   subject?: string; // Mapeia automaticamente para tema visual
@@ -71,7 +83,14 @@ export interface ReverseStudySlide {
   
   // Dados semânticos específicos por tipo (semânticos apenas)
   steps?: string[]; // Para logic_flow
-  content?: string; // Para golden_rule, danger_zone
+  /** Revelação dos passos: `auto` (padrão, animação sequencial) ou `tap` (aluno avança). */
+  reveal_mode?: 'auto' | 'tap';
+  content?: string; // Para golden_rule (título/mnemônico), danger_zone
+  /** Tabela de referência no golden_rule (`layout_variant` `reference_table` automático). */
+  rows?: Array<{
+    label: string;
+    value: string;
+  }>;
   items?: Array<{ // Para concept_map, danger_zone
     id?: string;
     label: string;
@@ -80,7 +99,11 @@ export interface ReverseStudySlide {
     description?: string;
     icon?: string;
     color?: string;
+    /** Coluna “correto” no layout comparativo (`compare`) do danger_zone. */
+    correct?: string;
   }>;
+  /** Bullets do danger_zone: `numbered` (padrão) ou `x_icon`. */
+  bullet_style?: 'numbered' | 'x_icon';
   concepts?: Array<{ // Para concept_map (alternativa a items)
     icon: string;
     title: string;

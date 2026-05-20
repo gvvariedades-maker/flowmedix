@@ -27,5 +27,7 @@ Lista de referências oficiais para gerar ou validar JSON de questões compatív
 
 ## Exemplos “golden”
 
+- **`examples/questao-premium-urgencias-rcp.json`** — estudo reverso premium (`reveal_mode: "tap"`, `danger_zone` com `correct`, `golden_rule` com `rows`, `slide_title`; validar no Laboratório)
+- **`examples/questao-preview-logic-flow-tap.json`** — preview mínimo só do `logic_flow` tap
 - **`examples/questao-enfermagem-sae.json`**
 - **`examples/questao-teste-simples.json`**

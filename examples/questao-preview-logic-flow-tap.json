@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "Tec Enf (Preview)",
+    "orgao": "Preview Local",
+    "ano": "2026",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências"
+  },
+  "question_data": {
+    "instruction": "Questão de preview — use só para ver o slide logic_flow com reveal_mode tap.",
+    "options": [
+      { "id": "A", "text": "Alternativa A", "is_correct": true },
+      { "id": "B", "text": "Alternativa B", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
+      "items": [{ "label": "Conceito A", "detail": "Descrição", "icon": "Heart" }]
+    },
+    {
+      "type": "golden_rule",
+      "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
+      "content": "REGRA DE OURO — PREVIEW"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
+      "steps": [
+        "Passo 1: avaliar o paciente (já visível ao abrir)",
+        "Passo 2: checar sinais vitais",
+        "Passo 3: acionar equipe conforme protocolo",
+        "Passo 4: registrar e monitorar"
+      ]
+    },
+    {
+      "type": "danger_zone",
+      "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
+      "content": "CUIDADO: pegadinha de exemplo",
+      "items": [{ "label": "Erro comum", "detail": "Explicação" }]
+    }
+  ]
+}

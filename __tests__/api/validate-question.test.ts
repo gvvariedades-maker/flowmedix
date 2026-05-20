@@ -54,6 +54,65 @@ describe('API /api/validate-question', () => {
       expect(result.success).toBe(false);
     });
 
+    it('deve validar payload legado de estudo reverso (4 slides sem campos premium)', () => {
+      const legacy = {
+        ...validQuestion,
+        reverse_study_slides: [
+          {
+            type: 'concept_map',
+            items: [{ label: 'Item', detail: 'Detalhe', icon: 'Sparkles' }],
+          },
+          { type: 'golden_rule', content: 'Regra' },
+          { type: 'logic_flow', steps: ['P1', 'P2'] },
+          {
+            type: 'danger_zone',
+            content: 'Alerta',
+            items: [{ label: 'Erro', detail: 'Desc' }],
+          },
+        ],
+      };
+
+      const result = QuestaoCompletaSchema.safeParse(legacy);
+      expect(result.success).toBe(true);
+      if (result.success) {
+        const lf = result.data.reverse_study_slides!.find((s) => s.type === 'logic_flow') as
+          | { reveal_mode?: string }
+          | undefined;
+        expect(lf?.reveal_mode).toBeUndefined();
+      }
+    });
+
+    it('deve validar payload premium de estudo reverso', () => {
+      const premium = {
+        ...validQuestion,
+        reverse_study_slides: [
+          {
+            type: 'logic_flow',
+            reveal_mode: 'tap',
+            steps: ['Decisão 1', 'Decisão 2'],
+          },
+          {
+            type: 'danger_zone',
+            content: 'Pegadinhas',
+            items: [
+              {
+                label: 'Erro',
+                detail: 'Trap',
+                correct: 'Conduta correta',
+              },
+            ],
+          },
+          {
+            type: 'golden_rule',
+            rows: [{ label: 'PAS', value: '< 90' }],
+          },
+        ],
+      };
+
+      const result = QuestaoCompletaSchema.safeParse(premium);
+      expect(result.success).toBe(true);
+    });
+
     it('deve sanitizar HTML em text_fragment', () => {
       // Testa sanitizeHTML diretamente (remove script, mantém tags seguras)
       const rawHtml = '<script>alert("xss")</script><p>Texto válido</p>';

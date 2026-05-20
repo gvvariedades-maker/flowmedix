@@ -120,10 +120,15 @@ export function generateSuggestions(error: ValidationError, jsonData?: any): Sug
           message: 'Adicione o campo "instruction" em "question_data".',
           confidence: 'high',
         });
-      } else if (path.includes('content')) {
+      } else if (path.includes('content') || path.includes('rows')) {
+        const slideType = jsonData?.type || 'golden_rule';
+        const goldenHint =
+          slideType === 'golden_rule'
+            ? ' Use "content" (título/mnemônico) e/ou "rows": [{ "label": "...", "value": "..." }].'
+            : '';
         suggestions.push({
           type: 'fix',
-          message: `Adicione o campo "content" no slide. Este campo é obrigatório para slides do tipo "${jsonData?.type || 'golden_rule'}".`,
+          message: `Adicione "content" no slide (obrigatório para ${slideType}).${goldenHint}`,
           confidence: 'high',
         });
       } else if (path.includes('steps')) {
@@ -135,9 +140,32 @@ export function generateSuggestions(error: ValidationError, jsonData?: any): Sug
       }
       break;
 
+    case 'invalid_enum_value':
+      if (path.includes('reveal_mode')) {
+        suggestions.push({
+          type: 'fix',
+          message: 'Use "reveal_mode": "tap" (premium) ou omita o campo (legado = animação automática). Valores: "auto" | "tap".',
+          confidence: 'high',
+        });
+      } else if (path.includes('bullet_style')) {
+        suggestions.push({
+          type: 'fix',
+          message: 'Use "bullet_style": "numbered" (padrão) ou "x_icon" no slide danger_zone.',
+          confidence: 'high',
+        });
+      }
+      break;
+
     case 'custom':
       // Erros customizados específicos
-      if (error.message.includes('type') || error.message.includes('layout_type')) {
+      if (error.message.includes('content ou rows')) {
+        suggestions.push({
+          type: 'fix',
+          message:
+            'No golden_rule, informe "content" (título/mnemônico) e/ou "rows": [{ "label": "...", "value": "..." }].',
+          confidence: 'high',
+        });
+      } else if (error.message.includes('type') || error.message.includes('layout_type')) {
         suggestions.push({
           type: 'fix',
           message: 'Adicione o campo "type" ao slide. Valores válidos: concept_map, logic_flow, golden_rule, danger_zone, syllable_scanner, versus_arena',

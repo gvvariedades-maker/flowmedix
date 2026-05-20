@@ -849,9 +849,36 @@ export const calculateLayoutVariantFromType = (slideType: string, slide?: any): 
       if (itemsCount >= 3) return 'morphological';
       if (itemsCount <= 2) return 'stack';
       return 'morphological';
-    case 'golden_rule': return 'center';
+    case 'golden_rule': {
+      const rows = slide?.rows;
+      if (
+        Array.isArray(rows) &&
+        rows.some(
+          (r: { label?: string; value?: string }) =>
+            typeof r.label === 'string' &&
+            r.label.trim().length > 0 &&
+            typeof r.value === 'string' &&
+            r.value.trim().length > 0,
+        )
+      ) {
+        return 'reference_table';
+      }
+      return 'center';
+    }
     case 'logic_flow': return 'vertical';
-    case 'danger_zone': return 'list';
+    case 'danger_zone': {
+      const items = slide?.items;
+      if (
+        Array.isArray(items) &&
+        items.some(
+          (i: { correct?: string }) =>
+            typeof i.correct === 'string' && i.correct.trim().length > 0,
+        )
+      ) {
+        return 'compare';
+      }
+      return 'list';
+    }
     case 'versus_arena': return 'split';
     default: return 'grid';
   }

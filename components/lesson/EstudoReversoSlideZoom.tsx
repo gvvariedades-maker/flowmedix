@@ -16,7 +16,12 @@ import { useCenterIfFitsScroll } from '@/lib/hooks/useCenterIfFitsScroll';
 const MAX_WIDTH_MOBILE_CONTROLS_PX = 767;
 
 /** Escala de leitura (CSS `zoom` — reflow no WebKit/Blink, comum em mobile). */
-const TEXT_SCALE_STEPS = [1, 1.12, 1.24, 1.36, 1.48] as const;
+export const TEXT_SCALE_STEPS = [1, 1.12, 1.24, 1.36, 1.48] as const;
+
+/** Largura lógica pré-zoom para evitar overflow horizontal após `zoom`. */
+export function computeZoomInnerWidthPx(containerPx: number, scale: number): number | null {
+  return containerPx > 0 && scale !== 1 ? Math.max(1, Math.floor(containerPx / scale)) : null;
+}
 
 type EstudoReversoSlideZoomContextValue = {
   slideKey: number;
@@ -182,8 +187,7 @@ export function EstudoReversoSlideZoom({ children }: EstudoReversoSlideZoomProps
     isTextScaled ? 'py-3 pb-16 sm:pb-20' : 'py-3 pb-12 md:py-4 md:pb-16'
   );
 
-  const innerWidthPx =
-    containerPx > 0 && scale !== 1 ? Math.max(1, Math.floor(containerPx / scale)) : null;
+  const innerWidthPx = computeZoomInnerWidthPx(containerPx, scale);
 
   const zoomStyle: React.CSSProperties | undefined =
     scale !== 1 && innerWidthPx !== null

@@ -277,8 +277,12 @@ export default function AvantLaboratory() {
           if (slide.type === 'logic_flow' && (!slide.steps || slide.steps.length === 0)) {
             throw new Error(`Slide ${index + 1} (logic_flow): deve ter 'steps' com pelo menos 1 passo`);
           }
-          if (slide.type === 'golden_rule' && !slide.content) {
-            throw new Error(`Slide ${index + 1} (golden_rule): deve ter 'content'`);
+          if (
+            slide.type === 'golden_rule' &&
+            !(typeof slide.content === 'string' && slide.content.trim()) &&
+            !(Array.isArray(slide.rows) && slide.rows.length > 0)
+          ) {
+            throw new Error(`Slide ${index + 1} (golden_rule): deve ter 'content' ou 'rows'`);
           }
           if (
             slide.type === 'concept_map' &&

@@ -54,7 +54,7 @@ Cada questão no estudo reverso tem 4 slides, um de cada tipo:
 |---|---|---|
 | `concept_map` | Mapa de Conceitos | Apresenta múltiplos conceitos simultaneamente com ícone, título e descrição |
 | `golden_rule` | Regra de Ouro | Destaca UMA regra essencial em tipografia gigante — o conceito que o aluno não pode esquecer |
-| `logic_flow` | Pipeline Cognitivo | Mostra uma sequência de passos em ordem, com animação progressiva |
+| `logic_flow` | Fluxo lógico | Sequência de passos; `reveal_mode: "tap"` (premium) ou `auto` (padrão legado) |
 | `danger_zone` | Zona de Perigo | Alerta sobre erros comuns e pegadinhas de prova com visual de alerta vermelho |
 
 ---
@@ -68,14 +68,16 @@ Cada questão no estudo reverso tem 4 slides, um de cada tipo:
 | | `molecular` | Círculos conectados, estilo orgânico |
 | | `bridge` | Linhas horizontais com conector central |
 | | `stack` | Coluna vertical (poucos itens, ≤2) |
-| **golden_rule** | `center` | Texto gigante centralizado. Padrão |
+| **golden_rule** | `center` | Texto gigante centralizado. Padrão (sem `rows`) |
 | | `compact` | Card menor com texto denso |
 | | `minimal` | Texto com borda lateral, sem fundo |
 | | `banner` | Faixa com ícone e destaque máximo |
+| | `reference_table` | Tabela rótulo × valor. **Automático** quando há `rows` |
 | **logic_flow** | `vertical` | Pipeline vertical com setas. Padrão |
 | | `horizontal` | Passos em linha com setas laterais |
 | | `cards` | Grid de cards com numeração |
-| **danger_zone** | `list` | Lista com borda vermelha. Padrão |
+| **danger_zone** | `list` | Lista com borda vermelha. Padrão (sem `correct` nos itens) |
+| | `compare` | Duas colunas: pegadinha × correto. **Automático** quando ≥1 item tem `correct` |
 | | `cards` | Itens em cards separados |
 | | `compact` | Layout condensado, sem muito espaço |
 
@@ -218,11 +220,19 @@ O `meta.subtopico` do JSON é usado para resolver automaticamente o design compl
 
 ### Estrutura do `logic_flow` (atenção especial)
 
-O campo `steps` deve ser sempre **array de strings**:
+O campo `steps` deve ser sempre **array de strings** (cada string = uma decisão do raciocínio).
+
+| `reveal_mode` | Comportamento no player |
+|---|---|
+| omitido ou `"auto"` | Revelação automática sequencial (~600 ms entre passos). Slides já publicados. |
+| `"tap"` | Passo 0 visível; demais ilegíveis até o aluno tocar no card ativo ou em **Próximo passo**; contador *Passo X de Y*. Conteúdo **novo** do agente deve usar este valor. |
+
+`prefers-reduced-motion` no dispositivo revela todos os passos de uma vez (equivalente a `auto` completo).
 
 ```json
 {
   "type": "logic_flow",
+  "reveal_mode": "tap",
   "subject": "Enfermagem",
   "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
   "steps": [
@@ -234,17 +244,52 @@ O campo `steps` deve ser sempre **array de strings**:
 }
 ```
 
+### Estrutura do `golden_rule`
+
+Conteúdo **novo** com valores de referência: **`rows`** com `label` e `value` (SV, doses, escores). O player usa layout **`reference_table`** automaticamente. **`content`** opcional como título/mnemônico acima da tabela; só `content` mantém tipografia gigante (slides legados).
+
+```json
+{
+  "type": "golden_rule",
+  "subject": "Enfermagem",
+  "meta": { "topico": "Enfermagem", "subtopico": "Verificação de Sinais Vitais" },
+  "content": "VALORES DE REFERÊNCIA — ADULTO",
+  "rows": [
+    { "label": "PA sistólica", "value": "90–140 mmHg" },
+    { "label": "FC", "value": "60–100 bpm" },
+    { "label": "FR", "value": "12–20 irpm" },
+    { "label": "SpO₂", "value": "≥ 94%" }
+  ],
+  "footer_rule": "Registrar horário e posição do paciente"
+}
+```
+
 ### Estrutura do `danger_zone`
+
+Conteúdo **novo:** cada item com `label`, `detail` (pegadinha) e **`correct`** (texto da coluna certa). O player usa layout **`compare`** automaticamente. Opcional: `"bullet_style": "x_icon"` (padrão `numbered`).
+
+Slides **legados** sem `correct` continuam no layout `list`.
 
 ```json
 {
   "type": "danger_zone",
+  "bullet_style": "x_icon",
   "subject": "Enfermagem",
   "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
   "content": "CUIDADO: título do alerta principal",
   "items": [
-    { "id": "1", "label": "Nome da pegadinha", "detail": "Explicação do erro comum" },
-    { "id": "2", "label": "Outra pegadinha", "detail": "Explicação detalhada" }
+    {
+      "id": "1",
+      "label": "Interromper RCP para verificar pulso",
+      "detail": "Errado: parar a cada ciclo para checar pulso.",
+      "correct": "Só verificar pulso após 2 minutos de RCP contínua."
+    },
+    {
+      "id": "2",
+      "label": "Hiperventilação durante RCP",
+      "detail": "Errado: ventilações em excesso.",
+      "correct": "30 compressões : 2 ventilações, sem hiperventilar."
+    }
   ],
   "footer_rule": "REGRA FINAL: resumo mnemônico"
 }
@@ -309,9 +354,24 @@ O campo `steps` deve ser sempre **array de strings**:
       "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
       "content": "CUIDADO: Erros Críticos em Emergências",
       "items": [
-        { "id": "1", "label": "Interromper RCP para verificar pulso", "detail": "Errado. Só verificar pulso após 2 minutos de RCP contínua." },
-        { "id": "2", "label": "Hiperventilação durante RCP", "detail": "Errado. Ventilações em excesso aumentam pressão intratorácica e reduzem retorno venoso." },
-        { "id": "3", "label": "Iniciar RCP sem acionar o serviço de emergência", "detail": "Errado. Acionar primeiro, depois iniciar RCP (exceto afogamento e crianças)." }
+        {
+          "id": "1",
+          "label": "Interromper RCP para verificar pulso",
+          "detail": "Errado: parar a cada ciclo para checar pulso.",
+          "correct": "Só verificar pulso após 2 minutos de RCP contínua."
+        },
+        {
+          "id": "2",
+          "label": "Hiperventilação durante RCP",
+          "detail": "Errado: ventilações em excesso reduzem retorno venoso.",
+          "correct": "30 compressões : 2 ventilações, sem hiperventilar."
+        },
+        {
+          "id": "3",
+          "label": "RCP sem acionar emergência",
+          "detail": "Errado: iniciar compressões sem pedir ajuda.",
+          "correct": "Acionar SAMU 192 primeiro (exceto afogamento/crianças)."
+        }
       ],
       "footer_rule": "REGRA: Comprima forte, comprima rápido (100-120/min), minimize interrupções"
     }
@@ -346,9 +406,9 @@ Quando quiser forçar um design diferente do automático:
 - [ ] Cada questão tem exatamente **4 slides** em `reverse_study_slides`
 - [ ] Um slide de cada tipo: `concept_map`, `golden_rule`, `logic_flow`, `danger_zone`
 - [ ] `steps` do `logic_flow` é array de strings (não objetos)
-- [ ] `danger_zone` tem `content`, `items` (array) e `footer_rule`
+- [ ] `danger_zone` tem `content`, `items` (com `label`, `detail`, **`correct`**) e `footer_rule`
 - [ ] `concept_map` tem `items` com `label`, `detail` e `icon` (ícone Lucide válido)
-- [ ] `golden_rule` tem `content` com a regra principal em caixa alta
+- [ ] `golden_rule` tem `content` (mnemônico) e/ou `rows` (referência); preferir `rows` para SV/doses/escores
 - [ ] `subject` preenchido em todos os slides
 - [ ] JSON válido e completo (sem truncamentos)
 
@@ -409,3 +469,31 @@ No **`question_data.instruction`**:
 - **Não** incluir a numeração global do caderno no PDF (`1)`, `2)`, …). O texto deve começar em “De acordo com…” (ou equivalente). O player também **remove** automaticamente `N)` no início, se vier por engano.
 - Use quebras de linha (ou `<br>` / `<p>` permitidos) entre **I -**, **II -**, **III -** e antes de “É CORRETO o que se afirma em:”.
 - As alternativas **a) b) c)** ficam em **`question_data.options`** (não repetir no `instruction`, salvo exceção de layout).
+
+---
+
+## 13. Shell dos slides (chip, banca, fio condutor)
+
+No **estudo reverso**, `NeuroSlide` envolve cada slide com `ReverseStudyShell` (uma única fonte de verdade — não duplicar chips nos variantes).
+
+| UI | Origem no JSON / app |
+|---|---|
+| Chip do tipo (MAPA DE CONCEITOS, REGRA DE OURO, …) | `type` → rótulo em `components/slides/core/slideLabels.ts`; override: `chip_label` |
+| Badge da banca (canto superior) | `meta.banca` da questão — **não** repetir em cada slide |
+| `Slide N de M — {arco}` | Índice no player + arco por `type` (`SLIDE_ARC_BY_TYPE`) |
+| Título de capa | Opcional: `slide_title` no slide |
+
+**Mapeamento chip padrão (PT-BR, uppercase):**
+
+| `type` | Chip |
+|---|---|
+| `concept_map` | MAPA DE CONCEITOS |
+| `golden_rule` | REGRA DE OURO |
+| `logic_flow` | FLUXO LÓGICO |
+| `danger_zone` | ZONA DE PERIGO |
+| `syllable_scanner` | SCANNER SILÁBICO |
+| `versus_arena` | ARENA VERSUS |
+
+**Arcos narrativos padrão:** concept_map → Panorama do tema · golden_rule → Regra que a banca cobra · logic_flow → Raciocínio passo a passo · danger_zone → Evite as pegadinhas.
+
+Previews isolados (`standalone` em `NeuroSlide`) usam shell sem badge de banca (slide 1 de 1).

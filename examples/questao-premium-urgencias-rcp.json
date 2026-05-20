@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "banca": "CPCON",
+    "prova": "Tec Enf (EBSERH)",
+    "orgao": "EBSERH",
+    "ano": "2024",
+    "cargo_header": "TÉCNICO",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências"
+  },
+  "question_data": {
+    "instruction": "Durante o plantão, um paciente adulto é encontrado inconsciente e sem respiração espontânea. A equipe inicia atendimento conforme protocolo de Suporte Básico de Vida.\n\nI - A primeira conduta é garantir segurança da cena e checar responsividade e respiração.\nII - Na presença de dois socorristas treinados, as compressões torácicas e as ventilações devem ser realizadas de forma sincronizada, na proporção de 30:2.\nIII - A verificação de pulso deve ser feita a cada ciclo de compressões, antes de retomar as ventilações.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "RCP em adulto — panorama",
+      "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
+      "items": [
+        {
+          "label": "Cadeia de sobrevivência",
+          "detail": "Reconhecimento precoce, acionamento do serviço de emergência, RCP imediata e DEA quando disponível.",
+          "icon": "HeartPulse"
+        },
+        {
+          "label": "Compressões de qualidade",
+          "detail": "Frequência 100–120/min, profundidade 5–6 cm, retorno completo do tórax, mínima interrupção.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Ventilação",
+          "detail": "30 compressões : 2 ventilações com dois socorristas; evitar hiperventilação.",
+          "icon": "Wind"
+        }
+      ],
+      "footer_rule": "RCP = compressões eficazes + ventilação adequada + DEA o quanto antes"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Parâmetros na RCP",
+      "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
+      "content": "RCP ADULTO — LEMBRETE DE PROVA",
+      "rows": [
+        { "label": "Proporção (2 socorristas)", "value": "30 compressões : 2 ventilações" },
+        { "label": "Frequência", "value": "100–120 compressões/min" },
+        { "label": "Profundidade", "value": "5–6 cm" },
+        { "label": "Verificar pulso", "value": "Só após ~2 min de RCP (não a cada ciclo)" }
+      ],
+      "footer_rule": "Qualidade da compressão salva mais que pausas frequentes para pulso"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
+      "steps": [
+        "Garantir segurança da cena e usar EPI",
+        "Checar responsividade e respiração (máx. 10 s)",
+        "Acionar equipe/192 e pedir DEA",
+        "Iniciar compressões torácicas de alta qualidade",
+        "Ventilar 30:2 se houver dois socorristas treinados",
+        "Aplicar DEA assim que disponível e seguir orientações"
+      ]
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Urgências e Emergências" },
+      "content": "PEGADINHAS EM RCP — O QUE A BANCA TROCA",
+      "items": [
+        {
+          "id": "1",
+          "label": "Verificar pulso a cada ciclo",
+          "detail": "Parar compressões com frequência para checar pulso entre ciclos.",
+          "correct": "Não interromper por pulso: verificar só após ~2 minutos de RCP contínua."
+        },
+        {
+          "id": "2",
+          "label": "Hiperventilar durante as pausas",
+          "detail": "Dar muitas ventilações rápidas entre as compressões.",
+          "correct": "Manter 30:2 e ventilações suficientes, sem excesso de volume/frequência."
+        },
+        {
+          "id": "3",
+          "label": "Atrasar o DEA para “terminar” compressões",
+          "detail": "Adiar o desfibrilador até concluir vários ciclos manuais.",
+          "correct": "Ligar e usar o DEA assim que chegar, minimizando pausas nas compressões."
+        }
+      ],
+      "footer_rule": "III está errada: pulso não é checado a cada ciclo na RCP de adulto"
+    }
+  ]
+}
