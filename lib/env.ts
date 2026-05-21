@@ -32,17 +32,17 @@ const resendFromEmailSchema = z
 const EnvSchema = z.object({
   NODE_ENV: nodeEnvSchema,
   NEXT_PUBLIC_SUPABASE_URL: z
-    .string({ required_error: 'NEXT_PUBLIC_SUPABASE_URL é obrigatória' })
+    .string({ error: 'NEXT_PUBLIC_SUPABASE_URL é obrigatória' })
     .url('NEXT_PUBLIC_SUPABASE_URL deve ser uma URL válida'),
   NEXT_PUBLIC_SUPABASE_ANON_KEY: z
-    .string({ required_error: 'NEXT_PUBLIC_SUPABASE_ANON_KEY é obrigatória' })
+    .string({ error: 'NEXT_PUBLIC_SUPABASE_ANON_KEY é obrigatória' })
     .min(1, 'NEXT_PUBLIC_SUPABASE_ANON_KEY é obrigatória'),
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(1).optional(),
   SUPABASE_WEBHOOK_SECRET: z
-    .string({ required_error: 'SUPABASE_WEBHOOK_SECRET é obrigatória' })
+    .string({ error: 'SUPABASE_WEBHOOK_SECRET é obrigatória' })
     .min(16, 'SUPABASE_WEBHOOK_SECRET deve ter pelo menos 16 caracteres'),
   NEXT_PUBLIC_APP_URL: z
-    .string({ required_error: 'NEXT_PUBLIC_APP_URL é obrigatória' })
+    .string({ error: 'NEXT_PUBLIC_APP_URL é obrigatória' })
     .url('NEXT_PUBLIC_APP_URL deve ser uma URL válida (ex.: https://avant.enf.br)'),
   RESEND_API_KEY: z.string().min(1).optional(),
   RESEND_FROM_EMAIL: z.string().min(1).optional(),
