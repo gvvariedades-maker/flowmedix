@@ -2,7 +2,7 @@ import type { ReactElement } from 'react';
 import { Resend } from 'resend';
 import { z } from 'zod';
 
-import { env } from '@/lib/env';
+import { getResendServerConfig } from '@/lib/env';
 import { logger } from '@/lib/logger';
 
 const emailToSchema = z
@@ -14,8 +14,14 @@ const emailToSchema = z
 let resendClient: Resend | null = null;
 
 function getResendClient(): Resend {
+  const config = getResendServerConfig();
+  if (!config) {
+    throw new Error(
+      'Resend não configurado. Defina RESEND_API_KEY (re_…) e RESEND_FROM_EMAIL na Vercel.',
+    );
+  }
   if (!resendClient) {
-    resendClient = new Resend(env.RESEND_API_KEY);
+    resendClient = new Resend(config.apiKey);
   }
   return resendClient;
 }
@@ -35,9 +41,15 @@ export async function sendEmail(
   }
 
   try {
+    const config = getResendServerConfig();
+    if (!config) {
+      throw new Error(
+        'Resend não configurado. Defina RESEND_API_KEY (re_…) e RESEND_FROM_EMAIL na Vercel.',
+      );
+    }
     const resend = getResendClient();
     const { data, error } = await resend.emails.send({
-      from: env.RESEND_FROM_EMAIL,
+      from: config.fromEmail,
       to: parsedTo.data,
       subject,
       react,

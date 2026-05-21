@@ -44,10 +44,8 @@ const EnvSchema = z.object({
   NEXT_PUBLIC_APP_URL: z
     .string({ required_error: 'NEXT_PUBLIC_APP_URL é obrigatória' })
     .url('NEXT_PUBLIC_APP_URL deve ser uma URL válida (ex.: https://avant.enf.br)'),
-  RESEND_API_KEY: z
-    .string({ required_error: 'RESEND_API_KEY é obrigatória' })
-    .regex(/^re_/, 'RESEND_API_KEY deve começar com re_'),
-  RESEND_FROM_EMAIL: resendFromEmailSchema,
+  RESEND_API_KEY: z.string().min(1).optional(),
+  RESEND_FROM_EMAIL: z.string().min(1).optional(),
   GOOGLE_API_KEY: z.string().min(1).optional(),
   STRIPE_SECRET_KEY: stripeSecretKeySchema.optional(),
   STRIPE_WEBHOOK_SECRET: stripeWebhookSecretSchema.optional(),
@@ -73,6 +71,16 @@ export type StripeServerConfig = {
   webhookSecret: string;
   publishableKey?: string;
 };
+
+export type ResendServerConfig = {
+  apiKey: string;
+  fromEmail: string;
+};
+
+const resendApiKeySchema = z
+  .string()
+  .min(1)
+  .regex(/^re_/, 'RESEND_API_KEY deve começar com re_');
 
 const ENV_KEYS = [
   'NEXT_PUBLIC_SUPABASE_URL',
@@ -242,6 +250,72 @@ export function validateProPriceEnv(): void {
   }
 }
 
+export function getResendServerConfig(): ResendServerConfig | null {
+  const current = getEnv();
+  const apiKey = current.RESEND_API_KEY;
+  const fromEmail = current.RESEND_FROM_EMAIL;
+
+  if (!apiKey || !fromEmail) {
+    return null;
+  }
+
+  const parsedKey = resendApiKeySchema.safeParse(apiKey);
+  const parsedFrom = resendFromEmailSchema.safeParse(fromEmail);
+  if (!parsedKey.success || !parsedFrom.success) {
+    return null;
+  }
+
+  return {
+    apiKey: parsedKey.data,
+    fromEmail: parsedFrom.data,
+  };
+}
+
+export function validateResendEnv(): void {
+  const current = getEnv();
+  const apiKey = current.RESEND_API_KEY;
+  const fromEmail = current.RESEND_FROM_EMAIL;
+
+  if (!apiKey && !fromEmail) {
+    if (current.NODE_ENV === 'production') {
+      console.warn(
+        '⚠️  Resend desativado: defina RESEND_API_KEY (re_…) e RESEND_FROM_EMAIL para e-mails de boas-vindas.',
+      );
+    }
+    return;
+  }
+
+  if (apiKey) {
+    const parsedKey = resendApiKeySchema.safeParse(apiKey);
+    if (!parsedKey.success) {
+      const message = `RESEND_API_KEY inválido: ${formatZodIssues(parsedKey.error)}`;
+      if (current.NODE_ENV === 'production') {
+        console.warn(`⚠️  ${message} E-mails transacionais ficam desativados até corrigir na Vercel.`);
+        return;
+      }
+      throw new Error(`❌ ${message}`);
+    }
+  }
+
+  if (fromEmail) {
+    const parsedFrom = resendFromEmailSchema.safeParse(fromEmail);
+    if (!parsedFrom.success) {
+      const message = `RESEND_FROM_EMAIL inválido: ${formatZodIssues(parsedFrom.error)}`;
+      if (current.NODE_ENV === 'production') {
+        console.warn(`⚠️  ${message} E-mails transacionais ficam desativados até corrigir na Vercel.`);
+        return;
+      }
+      throw new Error(`❌ ${message}`);
+    }
+  }
+
+  if ((apiKey && !fromEmail) || (!apiKey && fromEmail)) {
+    console.warn(
+      '⚠️  Resend incompleto: configure RESEND_API_KEY e RESEND_FROM_EMAIL juntos. E-mails transacionais desativados.',
+    );
+  }
+}
+
 export function validateCronEnv(): void {
   const current = getEnv();
   const stripeConfig = getStripeServerConfig();
@@ -280,6 +354,7 @@ export function validateAllEnv(): void {
   getEnv();
   validateSupabaseUrl();
   validateStripeEnv();
+  validateResendEnv();
   validateProPriceEnv();
   validateCronEnv();
 }
