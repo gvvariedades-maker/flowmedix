@@ -2,11 +2,11 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { useCallback, useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { Loader2, Zap } from 'lucide-react';
-import { GERAL_CONCURSO_SLUG } from '@/lib/concursos/entitlements';
+import { useProCheckout } from '@/components/pro/useProCheckout';
+import { proCheckoutLoginHref } from '@/lib/pro/checkoutPaths';
 
 const ONE_DAY_IN_MS = 1000 * 60 * 60 * 24;
 
@@ -228,73 +228,14 @@ export function LPCheckoutButton({
   className?: string;
   compact?: boolean;
 }) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [needsLogin, setNeedsLogin] = useState(false);
+  const { handleCheckout, loading, error } = useProCheckout();
 
   const baseClassName = compact
     ? 'inline-flex shrink-0 items-center justify-center gap-1.5 rounded-2xl bg-[#BEF264] px-3 py-2 text-[10px] font-black text-slate-950 transition-all hover:bg-[#d4f879] disabled:cursor-not-allowed disabled:opacity-60 sm:px-4 sm:py-2.5 sm:text-xs'
     : 'inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#BEF264] px-6 py-4 text-base font-black text-slate-950 transition-all hover:bg-[#d4f879] disabled:cursor-not-allowed disabled:opacity-60';
 
-  const handleCheckout = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    setNeedsLogin(false);
-
-    try {
-      const response = await fetch('/api/pagamentos/criar-sessao', {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ concurso_slug: GERAL_CONCURSO_SLUG }),
-      });
-
-      const payload = (await response.json().catch(() => ({}))) as {
-        error?: string;
-        url?: string;
-        redirectUrl?: string;
-      };
-
-      if (response.status === 409 && payload.redirectUrl) {
-        router.push(payload.redirectUrl);
-        return;
-      }
-
-      if (response.status === 400 && payload.redirectUrl) {
-        router.push(payload.redirectUrl);
-        return;
-      }
-
-      if (response.status === 401) {
-        setNeedsLogin(true);
-        setError(payload.error || 'Faça login para assinar o AVANT Pro.');
-        return;
-      }
-
-      if (!response.ok) {
-        setError(payload.error || 'Não foi possível iniciar o pagamento.');
-        return;
-      }
-
-      if (!payload.url) {
-        setError('Checkout indisponível no momento.');
-        return;
-      }
-
-      window.location.href = payload.url;
-    } catch {
-      setError('Erro de rede ao iniciar o pagamento.');
-    } finally {
-      setLoading(false);
-    }
-  }, [router]);
-
-  const loginHref = `/login?next=${encodeURIComponent(pathname || '/')}`;
-
   return (
-    <div className={compact ? '' : 'space-y-3'}>
+    <div className={compact ? 'relative' : 'space-y-3'}>
       <button
         type="button"
         onClick={handleCheckout}
@@ -312,18 +253,22 @@ export function LPCheckoutButton({
         )}
       </button>
       {error ? (
-        <div className={compact ? 'absolute top-full right-0 z-50 mt-2 w-64 rounded-xl border border-rose-500/20 bg-slate-950 p-3 shadow-xl' : ''}>
+        <div
+          className={
+            compact
+              ? 'absolute top-full right-0 z-50 mt-2 w-64 rounded-xl border border-rose-500/20 bg-slate-950 p-3 shadow-xl'
+              : ''
+          }
+        >
           <p className="text-sm font-medium text-rose-300" role="alert">
             {error}
           </p>
-          {needsLogin ? (
-            <Link
-              href={loginHref}
-              className="mt-2 inline-block text-sm font-bold text-cyan-300 hover:text-cyan-200"
-            >
-              Entrar para assinar →
-            </Link>
-          ) : null}
+          <Link
+            href={proCheckoutLoginHref()}
+            className="mt-2 inline-block text-sm font-bold text-cyan-300 hover:text-cyan-200"
+          >
+            Entrar para assinar →
+          </Link>
         </div>
       ) : null}
     </div>

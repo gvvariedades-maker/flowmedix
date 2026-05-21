@@ -2,8 +2,7 @@
 
 import { useCallback, useState } from 'react';
 import { GERAL_CONCURSO_SLUG } from '@/lib/concursos/entitlements';
-
-const PRO_LOGIN_NEXT = '/planos';
+import { proCheckoutLoginHref } from '@/lib/pro/checkoutPaths';
 
 export function useProCheckout() {
   const [loading, setLoading] = useState(false);
@@ -28,7 +27,7 @@ export function useProCheckout() {
       };
 
       if (response.status === 401) {
-        window.location.href = `/login?next=${encodeURIComponent(PRO_LOGIN_NEXT)}`;
+        window.location.href = proCheckoutLoginHref();
         return;
       }
 
