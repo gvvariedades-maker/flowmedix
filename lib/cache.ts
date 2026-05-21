@@ -513,3 +513,94 @@ export const getAdminConcursosList = adminConcursosListCached;
 export async function invalidateAdminConcursosCache() {
   await revalidateCache(['admin-concursos']);
 }
+
+/** Contato mínimo para e-mail transacional de boas-vindas (Auth + profiles). */
+export type AuthUserWelcomeContact = {
+  email: string;
+  firstName: string;
+};
+
+function firstNameFromDisplayName(displayName: string | null | undefined): string {
+  if (!displayName?.trim()) return 'estudante';
+  const part = displayName.trim().split(/\s+/)[0];
+  return part || 'estudante';
+}
+
+function firstNameFromAuthMetadata(
+  metadata: Record<string, unknown> | undefined,
+): string | null {
+  if (!metadata) return null;
+  const full = metadata.full_name;
+  if (typeof full === 'string' && full.trim()) {
+    return firstNameFromDisplayName(full);
+  }
+  const name = metadata.name;
+  if (typeof name === 'string' && name.trim()) {
+    return firstNameFromDisplayName(name);
+  }
+  return null;
+}
+
+/**
+ * E-mail e primeiro nome para boas-vindas (service role + cache por usuário).
+ * Usado por webhooks/actions server-side — não expor ao client.
+ */
+export async function getAuthUserWelcomeContactCached(
+  userId: string,
+): Promise<AuthUserWelcomeContact | null> {
+  const cacheKey = `auth-user-welcome-${userId}`;
+
+  return unstable_cache(
+    async () => {
+      const { createServerSupabase } = await import('./supabase/server');
+      let supabase: Awaited<ReturnType<typeof createServerSupabase>>;
+      try {
+        supabase = await createServerSupabase();
+      } catch {
+        trackCacheMiss(cacheKey);
+        throw new DataServiceUnavailableError(
+          'Configuração incompleta: variáveis NEXT_PUBLIC_SUPABASE_* ou SUPABASE_SERVICE_ROLE_KEY ausentes no servidor.',
+        );
+      }
+
+      const { data: authData, error: authError } =
+        await supabase.auth.admin.getUserById(userId);
+
+      if (authError || !authData.user?.email) {
+        logger.error('Falha ao buscar usuário Auth para e-mail de boas-vindas', authError, {
+          userId,
+        });
+        trackCacheMiss(cacheKey);
+        return null;
+      }
+
+      let firstName = firstNameFromAuthMetadata(
+        authData.user.user_metadata as Record<string, unknown> | undefined,
+      );
+
+      if (!firstName) {
+        const profileRow = await withPostgrestReadRetry(
+          `profiles-welcome:${userId.slice(0, 8)}…`,
+          async () =>
+            supabase.from('profiles').select('full_name').eq('id', userId).maybeSingle(),
+        );
+        const fullName =
+          profileRow && typeof profileRow === 'object' && 'full_name' in profileRow
+            ? (profileRow as { full_name: string | null }).full_name
+            : null;
+        firstName = firstNameFromDisplayName(fullName);
+      }
+
+      trackCacheHit(cacheKey);
+      return {
+        email: authData.user.email,
+        firstName,
+      };
+    },
+    [cacheKey],
+    {
+      ...CACHE_CONFIG.USER,
+      tags: ['auth-user', 'user', `user-${userId}`],
+    },
+  )();
+}

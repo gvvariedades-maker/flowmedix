@@ -225,3 +225,57 @@ export async function PATCH(
 
   return NextResponse.json({ ok: true });
 }
+
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  const auth = await requireAdmin();
+  if ('error' in auth) return auth.error;
+
+  const { id: routeConcursoId } = await params;
+
+  let body: unknown;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: 'Body JSON inválido' }, { status: 400 });
+  }
+
+  const parsed = ConcursoAdminMatriculaRevogarSchema.safeParse(body);
+  if (!parsed.success) {
+    return NextResponse.json(
+      { error: 'Dados inválidos', details: parsed.error.issues },
+      { status: 422 },
+    );
+  }
+
+  const { error, count } = await auth.admin
+    .from('concurso_matriculas')
+    .delete({ count: 'exact' })
+    .eq('concurso_id', routeConcursoId)
+    .eq('user_id', parsed.data.userId);
+
+  if (error) {
+    logger.error('Falha ao excluir matrícula admin', error, {
+      concursoId: routeConcursoId,
+      userId: parsed.data.userId,
+    });
+    return NextResponse.json({ error: error.message }, { status: 400 });
+  }
+
+  if (!count) {
+    return NextResponse.json({ error: 'Matrícula não encontrada' }, { status: 404 });
+  }
+
+  try {
+    await invalidateUserModulosCache(parsed.data.userId);
+  } catch (cacheError) {
+    logger.warn('Falha ao invalidar cache após excluir matrícula', {
+      userId: parsed.data.userId,
+      error: cacheError instanceof Error ? cacheError.message : String(cacheError),
+    });
+  }
+
+  return NextResponse.json({ ok: true });
+}

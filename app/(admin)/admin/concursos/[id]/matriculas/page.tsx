@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { ArrowLeft, Loader2, UserMinus, UserPlus } from 'lucide-react';
+import { ArrowLeft, Loader2, Trash2, UserMinus, UserPlus } from 'lucide-react';
 
 type ConcursoHeader = { id: string; slug: string; nome: string };
 
@@ -152,6 +152,35 @@ export default function AdminConcursoMatriculasPage() {
       await carregar();
     } catch (e) {
       setMessage(e instanceof Error ? e.message : 'Erro na matrícula');
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  async function excluirMatricula(userId: string, email: string) {
+    if (!concursoId) return;
+    if (
+      !window.confirm(
+        `Excluir permanentemente a matrícula de ${email} neste concurso?\n\nO registro será removido do Supabase. Esta ação não pode ser desfeita.`,
+      )
+    ) {
+      return;
+    }
+    setSaving(true);
+    setMessage(null);
+    try {
+      const res = await fetch(`/api/admin/concursos/${concursoId}/matriculas`, {
+        method: 'DELETE',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId }),
+      });
+      const payload = await res.json();
+      if (!res.ok) throw new Error(payload.error || 'Falha ao excluir');
+      setMessage('Matrícula excluída do Supabase.');
+      await carregar();
+    } catch (e) {
+      setMessage(e instanceof Error ? e.message : 'Erro ao excluir matrícula');
     } finally {
       setSaving(false);
     }
@@ -338,21 +367,32 @@ export default function AdminConcursoMatriculasPage() {
                     )}
                   </p>
                 </div>
-                {m.status === 'ativo' ? (
+                <div className="flex shrink-0 flex-wrap items-center gap-2">
+                  {m.status === 'ativo' ? (
+                    <button
+                      type="button"
+                      disabled={saving}
+                      onClick={() => void revogar(m.userId)}
+                      className="inline-flex items-center justify-center gap-2 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-2 text-sm font-bold text-amber-900 hover:bg-amber-100 disabled:opacity-50"
+                    >
+                      <UserMinus className="h-4 w-4" />
+                      Revogar acesso
+                    </button>
+                  ) : (
+                    <span className="rounded-2xl border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-bold uppercase tracking-widest text-slate-500">
+                      Expirado
+                    </span>
+                  )}
                   <button
                     type="button"
                     disabled={saving}
-                    onClick={() => void revogar(m.userId)}
-                    className="inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-2 text-sm font-bold text-rose-800 hover:bg-rose-100 disabled:opacity-50"
+                    onClick={() => void excluirMatricula(m.userId, m.email)}
+                    className="inline-flex items-center justify-center gap-2 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-2 text-sm font-bold text-rose-800 hover:bg-rose-100 disabled:opacity-50"
                   >
-                    <UserMinus className="h-4 w-4" />
-                    Revogar acesso
+                    <Trash2 className="h-4 w-4" />
+                    Excluir matrícula
                   </button>
-                ) : (
-                  <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
-                    Expirado
-                  </span>
-                )}
+                </div>
               </li>
             ))}
           </ul>

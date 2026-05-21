@@ -5,12 +5,12 @@ import { getAbsoluteUrl } from '@/lib/siteUrl';
 export const metadata: Metadata = {
   title: 'Técnico de Enfermagem Goianinha/RN | AVANT',
   description:
-    'Questões reais da IDIB para Técnico de Enfermagem em Goianinha/RN. Estudo Reverso com NeuroSlides.',
+    'Questões reais da IDIB para Técnico de Enfermagem em Goianinha/RN. Estudo Reverso com NeuroSlides no AVANT Pro.',
   alternates: { canonical: '/goianinha' },
   openGraph: {
     title: 'Questões reais da IDIB para Técnico de Enfermagem | AVANT',
     description:
-      'Questões reais da IDIB para Técnico de Enfermagem em Goianinha/RN. Estudo Reverso com NeuroSlides.',
+      'Questões reais da IDIB para Técnico de Enfermagem em Goianinha/RN. Estudo Reverso com NeuroSlides no AVANT Pro.',
     url: getAbsoluteUrl('/goianinha'),
     type: 'website',
     locale: 'pt_BR',
@@ -27,16 +27,17 @@ const config: LPConcursoConfig = {
     vagasPCD: 'A divulgar',
     dataProva: '2026-12-31',
     dataProvaFormatada: 'A divulgar',
-    statusInscricoes: 'Em breve',
+    statusInscricoes: 'Inscrições encerradas',
     remuneracao: 'A divulgar',
     taxaInscricao: 'A divulgar',
     orgao: 'Prefeitura de Goianinha/RN',
   },
+  oferta: { preco: '14,90' },
   copy: {
     headlinePrincipal:
       'Questões reais da IDIB para Técnico de Enfermagem em Goianinha/RN',
     subtitulo:
-      'Prepare-se com o padrão exato que a banca cobra. Estudo Reverso com NeuroSlides após cada questão.',
+      'Prepare-se com o padrão exato que a banca cobra. Assinatura AVANT Pro com Estudo Reverso e NeuroSlides após cada questão.',
     dores: [
       'Você estuda material genérico sem saber o padrão específico da IDIB',
       'Erra questões por detalhe técnico que só aparece em questões reais da banca',
@@ -53,19 +54,23 @@ const config: LPConcursoConfig = {
       'Diagnóstico imediato do erro',
       'Revisão espaçada automática',
       'Plano diário adaptado ao seu desempenho',
-      'Acesso a todos os módulos do AVANT Pro',
+      'Acesso completo à plataforma com assinatura AVANT Pro',
     ],
     disclaimer:
-      'Este conteúdo cobre Conhecimentos Específicos de Enfermagem para o padrão IDIB.',
+      'Conteúdo focado em Conhecimentos Específicos de Enfermagem para o padrão IDIB, dentro da assinatura AVANT Pro.',
     disclaimerLegal:
       'O AVANT é uma plataforma de estudo independente. Não somos órgão público, banca examinadora nem afiliados à IDIB ou à Prefeitura de Goianinha.',
   },
   walkthrough: {
     imagens: [
-      '/images/neuroslide-concept-map.jpg',
-      '/images/neuroslide-golden-rule.jpg',
-      '/images/neuroslide-logic-flow.jpg',
-      '/images/neuroslide-danger-zone.jpg',
+      '/images/goianinha/walk-01.jpg',
+      '/images/goianinha/walk-02.jpg',
+      '/images/goianinha/walk-03.jpg',
+      '/images/goianinha/walk-04.jpg',
+      '/images/goianinha/walk-05.jpg',
+      '/images/goianinha/walk-06.jpg',
+      '/images/goianinha/walk-07.jpg',
+      '/images/goianinha/walk-08.jpg',
     ],
   },
 };

@@ -12,6 +12,10 @@ on:
 env:
   NEXT_PUBLIC_SUPABASE_URL: https://ci-build-placeholder.supabase.co
   NEXT_PUBLIC_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ci-build-placeholder-key
+  NEXT_PUBLIC_APP_URL: https://ci-build-placeholder.test
+  RESEND_API_KEY: re_ci_build_placeholder_key
+  RESEND_FROM_EMAIL: Avant <noreply@ci.placeholder.test>
+  SUPABASE_WEBHOOK_SECRET: ci_supabase_webhook_secret_placeholder_32
 
 jobs:
   build:
@@ -34,6 +38,10 @@ jobs:
           NODE_ENV: production
           NEXT_PUBLIC_SUPABASE_URL: ${{ env.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ env.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_APP_URL: ${{ env.NEXT_PUBLIC_APP_URL }}
+          RESEND_API_KEY: ${{ env.RESEND_API_KEY }}
+          RESEND_FROM_EMAIL: ${{ env.RESEND_FROM_EMAIL }}
+          SUPABASE_WEBHOOK_SECRET: ${{ env.SUPABASE_WEBHOOK_SECRET }}
           NEXT_PUBLIC_E2E_ADMIN_BYPASS: 'true'
 
   test-unit:
@@ -84,6 +92,10 @@ jobs:
           PLAYWRIGHT_TEST_BASE_URL: http://localhost:3000
           NEXT_PUBLIC_SUPABASE_URL: ${{ env.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ env.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_APP_URL: ${{ env.NEXT_PUBLIC_APP_URL }}
+          RESEND_API_KEY: ${{ env.RESEND_API_KEY }}
+          RESEND_FROM_EMAIL: ${{ env.RESEND_FROM_EMAIL }}
+          SUPABASE_WEBHOOK_SECRET: ${{ env.SUPABASE_WEBHOOK_SECRET }}
           # Embutido no next build (NEXT_PUBLIC_*) para que o AdminLayout pule auth no CI
           NEXT_PUBLIC_E2E_ADMIN_BYPASS: 'true'
           # Necessário para o teste E2E de cache: next start roda em produção,

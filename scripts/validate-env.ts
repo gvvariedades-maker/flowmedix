@@ -13,22 +13,6 @@ validateAllEnv();
 const stripeConfig = getStripeServerConfig();
 if (stripeConfig) {
   console.log('✅ Stripe configurado para checkout/webhook');
-  const campinaPrice = process.env.STRIPE_PRICE_ID_CAMPINA?.trim();
-  if (!campinaPrice) {
-    console.warn(
-      '⚠️  STRIPE_PRICE_ID_CAMPINA ausente: a landing /campina-grande não conseguirá abrir o Checkout até configurar o Price ID.',
-    );
-  } else if (!campinaPrice.startsWith('price_')) {
-    console.warn('⚠️  STRIPE_PRICE_ID_CAMPINA deve começar com price_ (Price ID do Stripe).');
-  }
-  const goianinhaPrice = process.env.STRIPE_PRICE_ID_GOIANINHA?.trim();
-  if (!goianinhaPrice) {
-    console.warn(
-      '⚠️  STRIPE_PRICE_ID_GOIANINHA ausente: a landing /goianinha não conseguirá abrir o Checkout até configurar o Price ID.',
-    );
-  } else if (!goianinhaPrice.startsWith('price_')) {
-    console.warn('⚠️  STRIPE_PRICE_ID_GOIANINHA deve começar com price_ (Price ID do Stripe).');
-  }
   const proPrice = process.env.STRIPE_PRICE_ID_PRO?.trim();
   if (!proPrice) {
     console.warn(

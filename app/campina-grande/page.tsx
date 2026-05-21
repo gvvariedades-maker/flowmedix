@@ -5,12 +5,12 @@ import { getAbsoluteUrl } from '@/lib/siteUrl';
 export const metadata: Metadata = {
   title: 'Técnico de Enfermagem Campina Grande | AVANT',
   description:
-    'Questões reais da IDECAN para Técnico de Enfermagem em Campina Grande. Treine os Conhecimentos Específicos por R$ 37.',
+    'Questões reais da IDECAN para Técnico de Enfermagem em Campina Grande. Estudo Reverso com NeuroSlides no AVANT Pro.',
   alternates: { canonical: '/campina-grande' },
   openGraph: {
     title: 'Questões reais da IDECAN para Técnico de Enfermagem | AVANT',
     description:
-      'Domine a parte que mais pesa na prova de Campina Grande: Conhecimentos Específicos de Técnico de Enfermagem.',
+      'Domine a parte que mais pesa na prova de Campina Grande: Conhecimentos Específicos de Técnico de Enfermagem com AVANT Pro.',
     url: getAbsoluteUrl('/campina-grande'),
     type: 'website',
     locale: 'pt_BR',
@@ -32,11 +32,12 @@ const config: LPConcursoConfig = {
     taxaInscricao: 'R$ 110,00',
     orgao: 'Prefeitura de Campina Grande',
   },
+  oferta: { preco: '14,90' },
   copy: {
     headlinePrincipal:
       'Questões reais da IDECAN para Técnico de Enfermagem em Campina Grande',
     subtitulo:
-      'Treine o padrão exato que a banca cobra. Estudo Reverso com NeuroSlides após cada questão.',
+      'Treine o padrão exato que a banca cobra. Assinatura AVANT Pro com Estudo Reverso e NeuroSlides após cada questão.',
     dores: [
       'Você estuda teoria de enfermeiro mas a banca cobra raciocínio de técnico',
       'Erra questões por detalhe e não sabe como evitar o mesmo erro',
@@ -53,19 +54,23 @@ const config: LPConcursoConfig = {
       'Diagnóstico imediato: erro de conceito, detalhe ou pegadinha de banca',
       'Revisão espaçada automática — sem planilha',
       'Plano diário adaptado ao seu desempenho',
-      'Acesso a todos os módulos do AVANT Pro',
+      'Acesso completo à plataforma com assinatura AVANT Pro',
     ],
     disclaimer:
-      'Este pacote cobre Conhecimentos Específicos de Enfermagem. Para Português, Raciocínio Lógico e História de Campina Grande, recomendamos complementar com outras fontes.',
+      'Conteúdo focado em Conhecimentos Específicos de Enfermagem no padrão IDECAN, com acesso completo via assinatura AVANT Pro.',
     disclaimerLegal:
       'O AVANT é uma plataforma de estudo independente. Não somos órgão público, banca examinadora nem afiliados ao IDECAN ou à Prefeitura de Campina Grande.',
   },
   walkthrough: {
     imagens: [
-      '/images/neuroslide-concept-map.jpg',
-      '/images/neuroslide-golden-rule.jpg',
-      '/images/neuroslide-logic-flow.jpg',
-      '/images/neuroslide-danger-zone.jpg',
+      '/images/campina-grande/walk-01.jpg',
+      '/images/campina-grande/walk-02.jpg',
+      '/images/campina-grande/walk-03.jpg',
+      '/images/campina-grande/walk-04.jpg',
+      '/images/campina-grande/walk-05.jpg',
+      '/images/campina-grande/walk-06.jpg',
+      '/images/campina-grande/walk-07.jpg',
+      '/images/campina-grande/walk-08.jpg',
     ],
   },
 };

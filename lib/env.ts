@@ -1,46 +1,72 @@
 /**
- * Validação de Variáveis de Ambiente
- *
- * Valida que todas as variáveis de ambiente necessárias estão presentes.
- * Deve ser chamado no início da aplicação (app/layout.tsx ou middleware.ts).
+ * Validação de variáveis de ambiente (Zod) e objeto `env` tipado.
+ * Usado em build (`validate:env`), startup (`validateAllEnv`) e módulos server-side.
  */
 
 import { z } from 'zod';
 
-interface EnvConfig {
-  NEXT_PUBLIC_SUPABASE_URL: string;
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: string;
-  SUPABASE_SERVICE_ROLE_KEY?: string;
-  GOOGLE_API_KEY?: string;
-  STRIPE_SECRET_KEY?: string;
-  STRIPE_WEBHOOK_SECRET?: string;
-  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY?: string;
-  CRON_SECRET?: string;
-  NODE_ENV: string;
-}
+const nodeEnvSchema = z.enum(['development', 'production', 'test']);
 
-const StripeSecretKeySchema = z
+const stripeSecretKeySchema = z
   .string()
   .min(1)
   .regex(/^sk_(test|live)_/, 'STRIPE_SECRET_KEY deve começar com sk_test_ ou sk_live_');
 
-const StripeWebhookSecretSchema = z
+const stripeWebhookSecretSchema = z
   .string()
   .min(1)
   .regex(/^whsec_/, 'STRIPE_WEBHOOK_SECRET deve começar com whsec_');
 
-const StripePublishableKeySchema = z
+const stripePublishableKeySchema = z
   .string()
   .min(1)
   .regex(/^pk_(test|live)_/, 'NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY deve começar com pk_test_ ou pk_live_');
 
-const StripeEnvSchema = z.object({
-  STRIPE_SECRET_KEY: StripeSecretKeySchema.optional(),
-  STRIPE_WEBHOOK_SECRET: StripeWebhookSecretSchema.optional(),
-  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: StripePublishableKeySchema.optional(),
+const resendFromEmailSchema = z
+  .string()
+  .min(3, 'RESEND_FROM_EMAIL é obrigatório')
+  .refine((value) => /@/.test(value), {
+    message: 'RESEND_FROM_EMAIL deve conter um endereço de e-mail (ex.: Avant <noreply@dominio.com>)',
+  });
+
+const EnvSchema = z.object({
+  NODE_ENV: nodeEnvSchema,
+  NEXT_PUBLIC_SUPABASE_URL: z
+    .string({ required_error: 'NEXT_PUBLIC_SUPABASE_URL é obrigatória' })
+    .url('NEXT_PUBLIC_SUPABASE_URL deve ser uma URL válida'),
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: z
+    .string({ required_error: 'NEXT_PUBLIC_SUPABASE_ANON_KEY é obrigatória' })
+    .min(1, 'NEXT_PUBLIC_SUPABASE_ANON_KEY é obrigatória'),
+  SUPABASE_SERVICE_ROLE_KEY: z.string().min(1).optional(),
+  SUPABASE_WEBHOOK_SECRET: z
+    .string({ required_error: 'SUPABASE_WEBHOOK_SECRET é obrigatória' })
+    .min(16, 'SUPABASE_WEBHOOK_SECRET deve ter pelo menos 16 caracteres'),
+  NEXT_PUBLIC_APP_URL: z
+    .string({ required_error: 'NEXT_PUBLIC_APP_URL é obrigatória' })
+    .url('NEXT_PUBLIC_APP_URL deve ser uma URL válida (ex.: https://avant.enf.br)'),
+  RESEND_API_KEY: z
+    .string({ required_error: 'RESEND_API_KEY é obrigatória' })
+    .regex(/^re_/, 'RESEND_API_KEY deve começar com re_'),
+  RESEND_FROM_EMAIL: resendFromEmailSchema,
+  GOOGLE_API_KEY: z.string().min(1).optional(),
+  STRIPE_SECRET_KEY: stripeSecretKeySchema.optional(),
+  STRIPE_WEBHOOK_SECRET: stripeWebhookSecretSchema.optional(),
+  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: stripePublishableKeySchema.optional(),
+  STRIPE_PRICE_ID_PRO: z.string().min(1).optional(),
+  CRON_SECRET: z.string().min(1).optional(),
+  WEBHOOK_SECRET: z.string().min(1).optional(),
+  METRICS_SECRET: z.string().min(1).optional(),
+  ADMIN_EMAIL: z.string().email().optional(),
+  ADMIN_EMAILS: z.string().min(1).optional(),
 });
 
-export type StripeEnv = z.infer<typeof StripeEnvSchema>;
+export type Env = z.infer<typeof EnvSchema>;
+
+export type StripeEnv = {
+  STRIPE_SECRET_KEY?: string;
+  STRIPE_WEBHOOK_SECRET?: string;
+  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY?: string;
+};
 
 export type StripeServerConfig = {
   secretKey: string;
@@ -48,109 +74,129 @@ export type StripeServerConfig = {
   publishableKey?: string;
 };
 
-function readTrimmedEnv(key: keyof EnvConfig): string | undefined {
+const ENV_KEYS = [
+  'NEXT_PUBLIC_SUPABASE_URL',
+  'NEXT_PUBLIC_SUPABASE_ANON_KEY',
+  'SUPABASE_SERVICE_ROLE_KEY',
+  'SUPABASE_WEBHOOK_SECRET',
+  'NEXT_PUBLIC_APP_URL',
+  'RESEND_API_KEY',
+  'RESEND_FROM_EMAIL',
+  'GOOGLE_API_KEY',
+  'STRIPE_SECRET_KEY',
+  'STRIPE_WEBHOOK_SECRET',
+  'NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY',
+  'STRIPE_PRICE_ID_PRO',
+  'CRON_SECRET',
+  'WEBHOOK_SECRET',
+  'METRICS_SECRET',
+  'ADMIN_EMAIL',
+  'ADMIN_EMAILS',
+] as const;
+
+function readTrimmedEnv(key: string): string | undefined {
   const value = process.env[key];
   if (!value || value.trim() === '') {
     return undefined;
   }
-
   return value.trim();
 }
 
-function formatZodIssues(error: z.ZodError): string {
-  return error.issues.map((issue) => `${issue.path.join('.')}: ${issue.message}`).join('; ');
-}
-
-/**
- * Valida variáveis de ambiente obrigatórias
- * @throws Error se alguma variável obrigatória estiver faltando
- */
-export function validateEnv(): void {
-  const required: (keyof EnvConfig)[] = [
-    'NEXT_PUBLIC_SUPABASE_URL',
-    'NEXT_PUBLIC_SUPABASE_ANON_KEY',
-  ];
-
-  const optional: (keyof EnvConfig)[] = [
-    'SUPABASE_SERVICE_ROLE_KEY',
-    'GOOGLE_API_KEY',
-    'STRIPE_SECRET_KEY',
-    'STRIPE_WEBHOOK_SECRET',
-    'NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY',
-    'CRON_SECRET',
-  ];
-
-  const missing: string[] = [];
-  const warnings: string[] = [];
-
-  required.forEach((key) => {
-    if (!readTrimmedEnv(key)) {
-      missing.push(key);
-    }
-  });
-
-  optional.forEach((key) => {
-    if (!readTrimmedEnv(key)) {
-      warnings.push(key);
-    }
-  });
-
-  if (missing.length > 0) {
-    throw new Error(
-      `❌ Missing required environment variables: ${missing.join(', ')}\n` +
-      'Please check your .env.local file and ensure all required variables are set.'
-    );
-  }
-
-  if (warnings.length > 0 && process.env.NODE_ENV === 'development') {
-    console.warn(
-      `⚠️  Optional environment variables not set: ${warnings.join(', ')}\n` +
-      'Some features may not work correctly.'
-    );
-  }
-}
-
-/**
- * Valida formato de URL do Supabase
- */
-export function validateSupabaseUrl(): void {
-  const url = readTrimmedEnv('NEXT_PUBLIC_SUPABASE_URL');
-  if (!url) return;
-
-  try {
-    new URL(url);
-  } catch {
-    throw new Error(
-      `❌ Invalid NEXT_PUBLIC_SUPABASE_URL format: ${url}\n` +
-      'Expected a valid URL (e.g., https://your-project.supabase.co)'
-    );
-  }
-}
-
-/**
- * Valida variáveis Stripe quando informadas.
- * NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY permanece opcional (Checkout redirect no servidor).
- */
-export function validateStripeEnv(): void {
-  const stripeEnv = {
-    STRIPE_SECRET_KEY: readTrimmedEnv('STRIPE_SECRET_KEY'),
-    STRIPE_WEBHOOK_SECRET: readTrimmedEnv('STRIPE_WEBHOOK_SECRET'),
-    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: readTrimmedEnv('NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY'),
+function collectRawEnv(): Record<string, string | undefined> {
+  const raw: Record<string, string | undefined> = {
+    NODE_ENV: process.env.NODE_ENV ?? 'development',
   };
 
-  const parsed = StripeEnvSchema.safeParse(stripeEnv);
+  for (const key of ENV_KEYS) {
+    raw[key] = readTrimmedEnv(key);
+  }
+
+  return raw;
+}
+
+function formatZodIssues(error: z.ZodError): string {
+  return error.issues
+    .map((issue) => {
+      const path = issue.path.length > 0 ? issue.path.join('.') : 'env';
+      return `${path}: ${issue.message}`;
+    })
+    .join('\n');
+}
+
+let cachedEnv: Env | undefined;
+
+function parseEnv(): Env {
+  const parsed = EnvSchema.safeParse(collectRawEnv());
+  if (!parsed.success) {
+    throw new Error(
+      `❌ Variáveis de ambiente inválidas ou ausentes:\n${formatZodIssues(parsed.error)}\n` +
+        'Verifique .env.local (ou variáveis na Vercel) e compare com .env.example.',
+    );
+  }
+  return parsed.data;
+}
+
+/** Objeto de ambiente validado (lazy, parse único por processo). */
+export function getEnv(): Env {
+  if (!cachedEnv) {
+    cachedEnv = parseEnv();
+  }
+  return cachedEnv;
+}
+
+export const env: Env = new Proxy({} as Env, {
+  get(_target, prop: string | symbol) {
+    if (typeof prop !== 'string') {
+      return undefined;
+    }
+    return getEnv()[prop as keyof Env];
+  },
+}) as Env;
+
+/**
+ * @deprecated Preferir `getEnv()` / `env`. Mantido para compatibilidade com scripts legados.
+ */
+export function validateEnv(): void {
+  getEnv();
+}
+
+export function validateSupabaseUrl(): void {
+  getEnv();
+}
+
+const stripeProPriceIdSchema = z
+  .string()
+  .min(1)
+  .regex(/^price_/, 'STRIPE_PRICE_ID_PRO deve começar com price_');
+
+export function validateStripeEnv(): void {
+  const current = getEnv();
+  const stripeEnv = {
+    STRIPE_SECRET_KEY: current.STRIPE_SECRET_KEY,
+    STRIPE_WEBHOOK_SECRET: current.STRIPE_WEBHOOK_SECRET,
+    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: current.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
+  };
+
+  const parsed = z
+    .object({
+      STRIPE_SECRET_KEY: stripeSecretKeySchema.optional(),
+      STRIPE_WEBHOOK_SECRET: stripeWebhookSecretSchema.optional(),
+      NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: stripePublishableKeySchema.optional(),
+    })
+    .safeParse(stripeEnv);
+
   if (!parsed.success) {
     throw new Error(`❌ Invalid Stripe environment variables: ${formatZodIssues(parsed.error)}`);
   }
 
-  const hasSecretKey = Boolean(stripeEnv.STRIPE_SECRET_KEY);
-  const hasWebhookSecret = Boolean(stripeEnv.STRIPE_WEBHOOK_SECRET);
-  const hasPublishableKey = Boolean(stripeEnv.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
+  const hasSecretKey = Boolean(current.STRIPE_SECRET_KEY);
+  const hasWebhookSecret = Boolean(current.STRIPE_WEBHOOK_SECRET);
+  const hasPublishableKey = Boolean(current.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
   const stripeCompleto = hasSecretKey && hasWebhookSecret;
 
   if (!stripeCompleto) {
     if (!hasSecretKey && !hasWebhookSecret) {
-      if (process.env.NODE_ENV === 'development') {
+      if (current.NODE_ENV === 'development') {
         console.warn(
           '⚠️  Stripe checkout/webhook desativados: defina STRIPE_SECRET_KEY e STRIPE_WEBHOOK_SECRET para habilitar.',
         );
@@ -163,33 +209,26 @@ export function validateStripeEnv(): void {
     }
   }
 
-  if (!hasPublishableKey && stripeCompleto && process.env.NODE_ENV === 'development') {
+  if (!hasPublishableKey && stripeCompleto && current.NODE_ENV === 'development') {
     console.warn(
       '⚠️  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY not set. Checkout redirect can work without it; Stripe Elements needs this key.',
     );
   }
 }
 
-const StripeProPriceIdSchema = z
-  .string()
-  .min(1)
-  .regex(/^price_/, 'STRIPE_PRICE_ID_PRO deve começar com price_');
-
-/**
- * Exige Price ID da assinatura Pro quando Stripe checkout está ativo (produção).
- */
 export function validateProPriceEnv(): void {
+  const current = getEnv();
   const stripeConfig = getStripeServerConfig();
   if (!stripeConfig) {
     return;
   }
 
-  const raw = readTrimmedEnv('STRIPE_PRICE_ID_PRO' as keyof EnvConfig);
+  const raw = current.STRIPE_PRICE_ID_PRO;
   if (!raw) {
     const message =
       'STRIPE_PRICE_ID_PRO não configurado. Defina o Price ID recorrente do AVANT Pro (Stripe → Produtos).';
 
-    if (process.env.NODE_ENV === 'production') {
+    if (current.NODE_ENV === 'production') {
       throw new Error(`❌ ${message}`);
     }
 
@@ -197,44 +236,34 @@ export function validateProPriceEnv(): void {
     return;
   }
 
-  const parsed = StripeProPriceIdSchema.safeParse(raw);
+  const parsed = stripeProPriceIdSchema.safeParse(raw);
   if (!parsed.success) {
     throw new Error(`❌ STRIPE_PRICE_ID_PRO inválido: ${formatZodIssues(parsed.error)}`);
   }
 }
 
-/**
- * Valida CRON_SECRET quando checkout Stripe está habilitado.
- */
 export function validateCronEnv(): void {
-  const cronSecret = readTrimmedEnv('CRON_SECRET');
+  const current = getEnv();
   const stripeConfig = getStripeServerConfig();
 
-  if (!stripeConfig) {
-    return;
-  }
-
-  if (cronSecret) {
+  if (!stripeConfig || current.CRON_SECRET) {
     return;
   }
 
   const message =
     'CRON_SECRET not set. Configure it on Vercel for the enrollment expiration cron when Stripe checkout is enabled.';
 
-  if (process.env.NODE_ENV === 'production') {
+  if (current.NODE_ENV === 'production') {
     throw new Error(`❌ ${message}`);
   }
 
   console.warn(`⚠️  ${message}`);
 }
 
-/**
- * Configuração Stripe para rotas server-side (checkout e webhook).
- */
 export function getStripeServerConfig(): StripeServerConfig | null {
-  const secretKey = readTrimmedEnv('STRIPE_SECRET_KEY');
-  const webhookSecret = readTrimmedEnv('STRIPE_WEBHOOK_SECRET');
-  const publishableKey = readTrimmedEnv('NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY');
+  const current = getEnv();
+  const secretKey = current.STRIPE_SECRET_KEY;
+  const webhookSecret = current.STRIPE_WEBHOOK_SECRET;
 
   if (!secretKey || !webhookSecret) {
     return null;
@@ -243,15 +272,12 @@ export function getStripeServerConfig(): StripeServerConfig | null {
   return {
     secretKey,
     webhookSecret,
-    publishableKey,
+    publishableKey: current.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
   };
 }
 
-/**
- * Valida todas as variáveis de ambiente
- */
 export function validateAllEnv(): void {
-  validateEnv();
+  getEnv();
   validateSupabaseUrl();
   validateStripeEnv();
   validateProPriceEnv();
