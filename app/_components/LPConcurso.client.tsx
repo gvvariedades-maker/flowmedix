@@ -117,7 +117,7 @@ export function LPNeuroSlideCarousel() {
       initial={{ opacity: 0, y: 24, scale: 0.98 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ delay: 0.12, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-      className="relative mx-auto max-w-[340px] overflow-visible lg:max-w-none"
+      className="relative mx-auto w-full overflow-visible"
     >
       <div className="absolute -inset-8 rounded-full bg-cyan-400/10 blur-3xl" />
       <div
@@ -142,7 +142,7 @@ export function LPNeuroSlideCarousel() {
                 width={AVANT_SLIDE_ASPECT.width}
                 height={AVANT_SLIDE_ASPECT.height}
                 priority={i === 0}
-                className={`h-auto w-full rounded-2xl transition-opacity duration-500 ${
+                className={`w-full h-auto rounded-2xl transition-opacity duration-500 ${
                   i === active ? 'opacity-100' : 'opacity-0'
                 }`}
                 style={{ objectFit: 'contain' }}

@@ -32,6 +32,7 @@ import {
 import { DemoInterativa } from '@/components/landing/DemoInterativa';
 import { SlideStylePreviews } from '@/components/landing/SlideStylePreviews';
 import { PublicDarkSiteHeader } from '@/components/layout/PublicDarkSiteHeader';
+import { ProSubscribeCtaLink } from '@/components/pro/ProSubscribeCtaLink';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -169,7 +170,7 @@ const faqs = [
   {
     question: 'O AVANT tem plano gratuito?',
     answer:
-      'Sim. No plano gratuito você resolve 1 questão por dia, sem cartão de crédito. Para estudar sem limite, o AVANT Pro custa R$ 9,90/mês e pode ser cancelado a qualquer momento.',
+      'Sim. No plano gratuito você resolve 1 questão por dia, sem cartão de crédito. Para estudar sem limite, o AVANT Pro custa R$ 14,90/mês e pode ser cancelado a qualquer momento.',
   },
   {
     question: 'Quantas questões tem disponíveis?',
@@ -420,6 +421,7 @@ export default function LandingHome() {
         ctaLabel="Começar grátis"
         ctaLabelShort="Grátis"
         ctaLabelTight="Começar grátis →"
+        showProSubscribe
       />
 
       <main className="relative z-10">
@@ -899,9 +901,9 @@ export default function LandingHome() {
                 </span>
               </h2>
               <p className="text-slate-400 text-base sm:text-lg mb-8 max-w-xl mx-auto">
-                Uma questão já é suficiente para entender a diferença. Sem cartão, sem compromisso, sem limite de tempo no teste. Quando fizer sentido para você, o Pro está disponível por R$ 9,90/mês — cancelável a qualquer momento.
+                Uma questão já é suficiente para entender a diferença. Sem cartão, sem compromisso, sem limite de tempo no teste. Quando fizer sentido para você, o Pro está disponível por R$ 14,90/mês — cancelável a qualquer momento.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="flex flex-col items-center justify-center gap-4">
                 <Link
                   href="/register"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#BEF264] text-slate-950 font-black uppercase tracking-widest text-sm px-10 py-4 rounded-2xl hover:bg-[#d4f879] transition-all shadow-lg shadow-lime-400/25"
@@ -909,6 +911,7 @@ export default function LandingHome() {
                   Testar grátis agora
                   <ArrowRight size={18} />
                 </Link>
+                <ProSubscribeCtaLink />
                 <Link
                   href="/login"
                   className="text-sm font-bold text-indigo-300 hover:text-indigo-200 underline underline-offset-4"

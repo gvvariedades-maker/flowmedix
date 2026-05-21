@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ArrowRight, Zap } from 'lucide-react';
+import { ProSubscribeNavButton } from '@/components/pro/ProSubscribeNavButton';
 import { cn } from '@/lib/utils';
 
 /** Mesmo estilo do link "Entrar" no header da landing. */
@@ -15,6 +16,8 @@ export type PublicDarkSiteHeaderProps = {
   /** Texto do CTA em viewports abaixo de 400px (ex.: "Beta Grátis →") para não comprimir o logo. */
   ctaLabelTight?: string;
   ctaHref?: string;
+  /** Botão secundário «Assinar Pro» (checkout Stripe), visível a partir de `sm`. */
+  showProSubscribe?: boolean;
 };
 
 /** Reserva espaço para o header fixo (py-4 + linha ~40px). `overflow-x-hidden` no pai quebra `sticky`. */
@@ -28,6 +31,7 @@ export function PublicDarkSiteHeader({
   ctaLabelShort,
   ctaLabelTight,
   ctaHref = '/register',
+  showProSubscribe = false,
 }: PublicDarkSiteHeaderProps) {
   return (
     <>
@@ -53,6 +57,7 @@ export function PublicDarkSiteHeader({
               <Link href="/login" className={`${navLinkClass} shrink-0 px-2 min-[400px]:px-3`}>
                 Entrar
               </Link>
+              {showProSubscribe ? <ProSubscribeNavButton /> : null}
               <Link href={ctaHref} className={ctaButtonClass} aria-label={ctaLabel}>
                 {ctaLabelTight ? (
                   <span className="hidden max-[399px]:inline sm:hidden text-[10px] font-bold normal-case leading-tight tracking-tight">
