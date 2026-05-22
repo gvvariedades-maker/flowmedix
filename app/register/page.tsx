@@ -92,8 +92,15 @@ function RegisterForm() {
         return;
       }
 
+      const welcomeUserId = data.user?.id;
+
       if (data.session) {
         await supabase.auth.getSession();
+
+        void fetch('/api/auth/welcome-email', {
+          method: 'POST',
+          credentials: 'same-origin',
+        }).catch(() => undefined);
 
         await fetch('/api/concursos/matricular', {
           method: 'POST',
@@ -118,6 +125,15 @@ function RegisterForm() {
       }
 
       // Confirmação por e-mail ativa no Supabase: sem sessão até o usuário clicar no link
+      if (welcomeUserId) {
+        void fetch('/api/auth/welcome-email', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId: welcomeUserId }),
+        }).catch(() => undefined);
+      }
+
       setPendingEmailVerification(true);
       setLoading(false);
     } catch (err: unknown) {
@@ -178,8 +194,9 @@ function RegisterForm() {
                 <div className="space-y-2">
                   <p className="text-sm font-black">Confirme seu e-mail</p>
                   <p className="text-xs font-medium leading-relaxed">
-                    Enviamos um link para <strong className="text-emerald-50">{email.trim()}</strong>. Abra a mensagem e
-                    clique no link para ativar sua conta; depois use o login para entrar na plataforma.
+                    Se a confirmação por e-mail estiver ativa, abra o link enviado para{' '}
+                    <strong className="text-emerald-50">{email.trim()}</strong> e depois entre no login. Você também
+                    deve receber um e-mail de boas-vindas do AVANT (verifique spam e promoções).
                   </p>
                 </div>
               </div>

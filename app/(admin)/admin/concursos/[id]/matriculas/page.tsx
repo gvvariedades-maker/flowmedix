@@ -249,6 +249,30 @@ export default function AdminConcursoMatriculasPage() {
     }
   }
 
+  async function reenviarBoasVindas(userId: string, email: string) {
+    setSaving(true);
+    setMessage(null);
+    try {
+      const res = await fetch('/api/admin/resend-welcome', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId }),
+      });
+      const payload = await res.json();
+      if (!res.ok) throw new Error(payload.error || 'Falha ao enviar e-mail');
+      setMessage(
+        typeof payload.message === 'string'
+          ? `${payload.message} (${email})`
+          : `Boas-vindas reenviadas para ${email}.`,
+      );
+    } catch (e) {
+      setMessage(e instanceof Error ? e.message : 'Erro ao reenviar e-mail');
+    } finally {
+      setSaving(false);
+    }
+  }
+
   async function revogar(userId: string) {
     if (!concursoId) return;
     if (!window.confirm('Revogar acesso deste usuário a este concurso? (status: expirado)')) return;
@@ -456,6 +480,14 @@ export default function AdminConcursoMatriculasPage() {
                   </p>
                 </div>
                 <div className="flex shrink-0 flex-wrap items-center gap-2">
+                  <button
+                    type="button"
+                    disabled={saving}
+                    onClick={() => void reenviarBoasVindas(m.userId, m.email)}
+                    className="inline-flex items-center justify-center gap-2 rounded-2xl border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-bold text-cyan-900 hover:bg-cyan-100 disabled:opacity-50"
+                  >
+                    Reenviar boas-vindas
+                  </button>
                   {m.status === 'ativo' ? (
                     <button
                       type="button"
