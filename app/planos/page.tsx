@@ -96,8 +96,10 @@ export default async function PlanosPage() {
       <PublicDarkSiteHeader
         ctaLabel="Comece grátis"
         ctaLabelShort="Grátis"
+        ctaLabelTight="Grátis →"
         ctaHref="/register"
         showProSubscribe
+        showPlanosLink={false}
       />
 
       <main className="relative overflow-hidden px-4 pb-24 pt-8 sm:px-6 lg:px-8">

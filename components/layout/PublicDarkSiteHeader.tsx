@@ -24,6 +24,8 @@ export type PublicDarkSiteHeaderProps = {
   showProSubscribe?: boolean;
   /** Link «AVANT Pro» no nav (ocultar na homepage, onde o destino é `/`). */
   showAvantProLink?: boolean;
+  /** Link «Concursos abertos» (ocultar em `/planos`). */
+  showPlanosLink?: boolean;
 };
 
 /** Reserva espaço para o header fixo. Mobile usa duas linhas. */
@@ -45,26 +47,20 @@ function CtaButton({
   ctaLabelTight?: string;
   className?: string;
 }) {
+  const mobileLabel = ctaLabelTight ?? ctaLabelShort ?? ctaLabel;
+  const mobileHidesArrow = Boolean(ctaLabelTight?.includes('→'));
+
   return (
     <Link href={ctaHref} className={cn(ctaButtonClass, className)} aria-label={ctaLabel}>
-      {ctaLabelTight ? (
-        <span className="hidden max-[399px]:inline sm:hidden text-[10px] font-bold normal-case leading-tight tracking-tight">
-          {ctaLabelTight}
-        </span>
-      ) : (
-        <span className="sr-only min-[400px]:hidden">{ctaLabel}</span>
-      )}
       <span className="hidden sm:inline">{ctaLabel}</span>
-      {ctaLabelShort ? (
-        <span className="hidden min-[400px]:inline sm:hidden font-bold normal-case tracking-normal text-[11px]">
-          {ctaLabelShort}
-        </span>
-      ) : (
-        <span className="hidden min-[400px]:inline sm:hidden truncate text-left max-w-[9rem]">
-          {ctaLabel}
-        </span>
-      )}
-      <ArrowRight size={16} className={cn('shrink-0', ctaLabelTight && 'max-[399px]:hidden')} aria-hidden />
+      <span className="inline max-w-[10.5rem] truncate text-left font-bold normal-case leading-tight tracking-normal sm:hidden">
+        {mobileLabel}
+      </span>
+      <ArrowRight
+        size={16}
+        className={cn('shrink-0', mobileHidesArrow && 'hidden sm:inline-flex')}
+        aria-hidden
+      />
     </Link>
   );
 }
@@ -76,8 +72,9 @@ export function PublicDarkSiteHeader({
   ctaHref = '/register',
   showProSubscribe = false,
   showAvantProLink = true,
+  showPlanosLink = true,
 }: PublicDarkSiteHeaderProps) {
-  const planosLink = (
+  const planosLink = showPlanosLink ? (
     <Link
       href="/planos"
       className={`${navLinkClass} inline-flex shrink-0 px-1.5 py-1.5 text-[10px] min-[400px]:px-3 min-[400px]:py-2 min-[400px]:text-sm`}
@@ -85,7 +82,7 @@ export function PublicDarkSiteHeader({
       <span className="sm:hidden">Concursos</span>
       <span className="hidden sm:inline">Concursos abertos</span>
     </Link>
-  );
+  ) : null;
 
   const avantProLink = showAvantProLink ? (
     <Link
@@ -134,9 +131,11 @@ export function PublicDarkSiteHeader({
               <Link href="/blog" className={navLinkClassMobile}>
                 Blog
               </Link>
-              <Link href="/planos" className={navLinkClassMobile}>
-                Concursos abertos
-              </Link>
+              {showPlanosLink ? (
+                <Link href="/planos" className={navLinkClassMobile}>
+                  Concursos abertos
+                </Link>
+              ) : null}
               {avantProLink ? (
                 <Link href={AVANT_PRO_LP_HREF} className={navLinkClassMobile}>
                   AVANT Pro

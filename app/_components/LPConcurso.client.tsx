@@ -10,6 +10,9 @@ import { AVANT_PRO_LP_HREF } from '@/lib/pro/constants';
 const lpNavLinkClass =
   'rounded-lg px-2 py-2 text-xs font-bold text-slate-300 transition-colors hover:text-white sm:px-3 sm:text-sm';
 
+const lpFreeCtaClass =
+  'inline-flex shrink-0 items-center justify-center rounded-2xl bg-[#BEF264] px-3 py-2 text-[10px] font-black uppercase tracking-wider text-slate-950 shadow-lg shadow-lime-400/20 transition-all hover:bg-[#d4f879] sm:px-4 sm:py-2.5 sm:text-xs';
+
 const ONE_DAY_IN_MS = 1000 * 60 * 60 * 24;
 
 function parseLocalDate(isoDate: string): Date {
@@ -70,34 +73,26 @@ export function LPMotionSection({
   );
 }
 
-export function LPNavbar({
-  statusInscricoes,
-  dataProva,
-  ctaLabel,
-}: {
-  statusInscricoes: string;
-  dataProva: string;
-  ctaLabel: string;
-}) {
-  const diasRestantes = useDiasRestantes(dataProva);
-  const diasLabel =
-    diasRestantes <= 0
-      ? 'Prova realizada'
-      : `Faltam ${diasRestantes} dias`;
-
+export function LPNavbar({ ctaLabel }: { ctaLabel: string }) {
   return (
     <header className="fixed top-0 right-0 left-0 z-50 border-b border-white/8 bg-[#010409]/90 backdrop-blur-xl">
       <div className="mx-auto max-w-6xl px-4 py-3 sm:px-6 lg:px-8">
-        {/* Mobile: logo + Assinar Pro; depois faixa de navegação */}
+        {/* Mobile: logo + CTAs; depois faixa de navegação */}
         <div className="flex flex-col gap-2 sm:hidden">
           <div className="flex items-center justify-between gap-2">
-            <Link href="/" className="group flex shrink-0 items-center gap-2" aria-label="AVANT — início">
+            <Link href="/" className="group flex min-w-0 shrink items-center gap-2" aria-label="AVANT — início">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-500/40">
                 <Zap size={22} className="text-[#BEF264]" fill="currentColor" aria-hidden />
               </div>
-              <span className="text-xl font-[1000] tracking-tighter text-white italic">AVANT</span>
+              <span className="truncate text-xl font-[1000] tracking-tighter text-white italic">AVANT</span>
             </Link>
-            <LPCheckoutButton label={ctaLabel} compactLabel="Assinar Pro" compact />
+            <div className="flex shrink-0 items-center gap-1.5">
+              <Link href="/register" className={lpFreeCtaClass}>
+                <span className="sm:hidden">Grátis</span>
+                <span className="hidden sm:inline">Comece grátis</span>
+              </Link>
+              <LPCheckoutButton label={ctaLabel} compactLabel="Assinar Pro" compact />
+            </div>
           </div>
           <nav
             className="flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 border-t border-white/8 pt-2"
@@ -134,10 +129,9 @@ export function LPNavbar({
               </Link>
             </nav>
 
-            <p className="hidden min-w-0 truncate text-xs font-bold text-cyan-100 md:block md:max-w-[14rem] lg:max-w-none lg:text-sm">
-              <Zap size={12} className="mr-1 inline text-[#BEF264]" aria-hidden />
-              {diasLabel} · {statusInscricoes}
-            </p>
+            <Link href="/register" className={lpFreeCtaClass}>
+              Comece grátis
+            </Link>
 
             <div className="relative shrink-0">
               <LPCheckoutButton label={ctaLabel} compact />
@@ -216,24 +210,53 @@ export function LPImpactMetrics({
   preco: string;
 }) {
   const diasRestantes = useDiasRestantes(dataProva);
-  const diasLabel =
-    diasRestantes <= 0 ? 'Prova realizada' : `${diasRestantes} dias para a prova`;
+  const isPast = diasRestantes <= 0;
 
-  const metrics = [
-    `${vagas} vagas imediatas`,
-    diasLabel,
-    '40 pontos em jogo',
-    `R$ ${preco}/mês · cancela quando quiser`,
+  const metrics: Array<{ key: string; highlight?: boolean; dias?: number; label: string; sub?: string }> = [
+    { key: 'vagas', label: `${vagas} vagas imediatas` },
+    {
+      key: 'dias',
+      highlight: true,
+      dias: diasRestantes,
+      label: isPast ? 'Prova realizada' : 'dias para a prova',
+      sub: isPast ? undefined : 'até o dia da prova',
+    },
+    { key: 'pontos', label: '40 pontos em jogo' },
+    { key: 'preco', label: `R$ ${preco}/mês`, sub: 'cancela quando quiser' },
   ];
 
   return (
     <div className="mx-auto grid max-w-6xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
       {metrics.map((metric) => (
         <div
-          key={metric}
-          className="rounded-2xl border border-white/10 bg-slate-900/80 p-4 text-center backdrop-blur-xl"
+          key={metric.key}
+          className={
+            metric.highlight
+              ? 'rounded-2xl border border-cyan-400/35 bg-gradient-to-br from-cyan-500/20 via-slate-900/90 to-emerald-500/10 p-5 text-center shadow-lg shadow-cyan-500/10 backdrop-blur-xl sm:col-span-2 lg:col-span-1'
+              : 'rounded-2xl border border-white/10 bg-slate-900/80 p-4 text-center backdrop-blur-xl'
+          }
         >
-          <p className="text-xs font-black leading-snug break-words text-white sm:text-base">{metric}</p>
+          {metric.highlight && !isPast && metric.dias !== undefined ? (
+            <>
+              <p className="text-4xl font-[1000] tracking-tight text-[#BEF264] sm:text-5xl">{metric.dias}</p>
+              <p className="mt-1 text-sm font-black uppercase tracking-wider text-white sm:text-base">
+                {metric.label}
+              </p>
+              {metric.sub ? (
+                <p className="mt-1 text-xs font-semibold text-cyan-200/90">{metric.sub}</p>
+              ) : null}
+            </>
+          ) : (
+            <p className="text-xs font-black leading-snug break-words text-white sm:text-base">
+              {metric.label}
+              {metric.sub ? (
+                <>
+                  <br />
+                  <span className="text-[10px] font-semibold text-slate-400 sm:text-xs">{metric.sub}</span>
+                </>
+              ) : null}
+            </p>
+          )}
         </div>
       ))}
     </div>
@@ -253,18 +276,56 @@ export function LPCountdownDays({
   const isPast = diasRestantes <= 0;
 
   if (variant === 'hero') {
+    if (isPast) {
+      return (
+        <div className="inline-flex max-w-full rounded-2xl border border-white/15 bg-slate-900/80 px-5 py-4">
+          <p className="text-lg font-black text-slate-300 sm:text-xl">Prova realizada</p>
+        </div>
+      );
+    }
+
     return (
-      <p className="text-lg font-black tracking-tight text-cyan-100 sm:text-xl">
-        {isPast ? 'Prova realizada' : `Faltam ${diasRestantes} dias para a prova`}
+      <div
+        className="inline-flex max-w-full flex-wrap items-center gap-4 rounded-2xl border border-cyan-400/40 bg-gradient-to-r from-cyan-500/15 via-slate-900/80 to-emerald-500/10 px-5 py-4 shadow-lg shadow-cyan-500/10"
+        role="status"
+        aria-live="polite"
+      >
+        <p className="text-5xl font-[1000] leading-none tracking-tight text-[#BEF264] sm:text-6xl">
+          {diasRestantes}
+        </p>
+        <div className="min-w-0 text-left">
+          <p className="text-base font-black uppercase tracking-wide text-white sm:text-lg">
+            dias para a prova
+          </p>
+          <p className="mt-1 text-sm font-semibold text-cyan-200">
+            Prova em {dataProvaFormatada}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  if (isPast) {
+    return (
+      <p className="text-center text-base font-semibold text-slate-400 sm:text-lg">
+        A prova era em {dataProvaFormatada}.
       </p>
     );
   }
 
   return (
-    <p className="text-center text-base font-semibold text-slate-300 sm:text-lg">
-      {isPast
-        ? `A prova era em ${dataProvaFormatada}.`
-        : `A prova é em ${dataProvaFormatada}. Faltam ${diasRestantes} dias.`}
-    </p>
+    <div
+      className="rounded-2xl border border-cyan-400/30 bg-gradient-to-br from-cyan-500/10 to-emerald-500/5 px-6 py-5 text-center"
+      role="status"
+      aria-live="polite"
+    >
+      <p className="text-5xl font-[1000] leading-none tracking-tight text-[#BEF264] sm:text-6xl">
+        {diasRestantes}
+      </p>
+      <p className="mt-2 text-lg font-black text-white">dias restantes</p>
+      <p className="mt-2 text-sm font-semibold text-cyan-200 sm:text-base">
+        Prova em {dataProvaFormatada}
+      </p>
+    </div>
   );
 }

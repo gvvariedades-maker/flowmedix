@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-const TARGET_DATE = new Date(2026, 7, 30);
+const TARGET_DATE = new Date(2026, 5, 7);
 const ONE_DAY_IN_MS = 1000 * 60 * 60 * 24;
 
 function getDaysUntilTarget() {
@@ -18,7 +18,7 @@ export function CountdownDays() {
 
   return (
     <p className="text-2xl font-black tracking-tight text-white sm:text-3xl">
-      A prova é em 30 de agosto de 2026. Faltam {daysUntilTest} dias.
+      A prova é em 07/06/2026. Faltam {daysUntilTest} dias.
     </p>
   );
 }

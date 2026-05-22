@@ -119,11 +119,7 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
 
   return (
     <div className="min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-[#010409] text-slate-100 selection:bg-cyan-400/25 selection:text-white">
-      <LPNavbar
-        statusInscricoes={concurso.statusInscricoes}
-        dataProva={concurso.dataProva}
-        ctaLabel={labelCta}
-      />
+      <LPNavbar ctaLabel={labelCta} />
 
       <main className="relative z-10 w-full min-w-0 pt-[8.5rem] sm:pt-[4.5rem]">
         {/* 2 — Hero */}
