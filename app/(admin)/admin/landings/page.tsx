@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ExternalLink, Loader2, Plus, Pencil } from 'lucide-react';
-import { lpPublicHref } from '@/lib/lp/pages';
+import { lpPublicHref } from '@/lib/lp/shared';
 
 type LpListRow = {
   id: string;

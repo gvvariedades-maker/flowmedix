@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { ArrowLeft, ExternalLink, Loader2, Save, Send } from 'lucide-react';
 import type { LpPageConfigInput, LpPageSeoInput } from '@/lib/validations';
 import { EMPTY_LP_CONFIG, emptyLpSeo } from '@/lib/lp/formDefaults';
-import { lpPublicHref } from '@/lib/lp/pages';
+import { lpPublicHref } from '@/lib/lp/shared';
 
 type TemplateOption = { id: string; slug: string; nome: string };
 

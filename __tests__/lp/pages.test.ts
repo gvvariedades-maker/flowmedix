@@ -1,4 +1,4 @@
-import { mergeTemplateDefaults } from '@/lib/lp/pages';
+import { mergeTemplateDefaults } from '@/lib/lp/shared';
 import type { LPConcursoConfig } from '@/app/_components/LPConcurso';
 
 describe('mergeTemplateDefaults', () => {

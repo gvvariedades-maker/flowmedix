@@ -1,63 +1,20 @@
-import type { LPConcursoConfig } from '@/app/_components/LPConcurso';
-import { LpPageConfigSchema, LpPageSeoSchema } from '@/lib/validations';
 import { createSupabaseServerClient } from '@/lib/supabase/server-auth';
 import { createServerSupabase } from '@/lib/supabase/server';
 import { logger } from '@/lib/logger';
-import type { LpPage, LpPageStatus, LpTemplate } from '@/types/database';
+import type { LpTemplate } from '@/types/database';
+import {
+  type LpCatalogItem,
+  type LpPageWithTemplate,
+  parseLpPageConfig,
+} from '@/lib/lp/shared';
 
-export type LpPageSeo = {
-  title: string;
-  description: string;
-  canonical?: string;
-  ogTitle?: string;
-  ogDescription?: string;
-};
-
-export type LpPageWithTemplate = LpPage & {
-  lp_templates?: Pick<LpTemplate, 'id' | 'slug' | 'nome' | 'default_config'> | null;
-};
-
-function parseConfig(raw: unknown): LPConcursoConfig | null {
-  const parsed = LpPageConfigSchema.safeParse(raw);
-  return parsed.success ? parsed.data : null;
-}
-
-function parseSeo(raw: unknown): LpPageSeo | null {
-  const parsed = LpPageSeoSchema.safeParse(raw);
-  return parsed.success ? parsed.data : null;
-}
-
-/** Merge superficial: defaults do template sobrescritos pelo config da página. */
-export function mergeTemplateDefaults(
-  templateDefaults: Record<string, unknown> | null | undefined,
-  pageConfig: LPConcursoConfig,
-): LPConcursoConfig {
-  const defaults = (templateDefaults ?? {}) as Partial<LPConcursoConfig>;
-  return {
-    ...defaults,
-    ...pageConfig,
-    concurso: { ...defaults.concurso, ...pageConfig.concurso },
-    copy: { ...defaults.copy, ...pageConfig.copy },
-    walkthrough: pageConfig.walkthrough,
-    oferta: pageConfig.oferta ?? defaults.oferta,
-  };
-}
-
-export function resolveLpConcursoConfig(page: LpPageWithTemplate): LPConcursoConfig | null {
-  const config = parseConfig(page.config);
-  if (!config) return null;
-  const templateDefaults = page.lp_templates?.default_config;
-  return mergeTemplateDefaults(templateDefaults, config);
-}
-
-export function resolveLpSeo(page: LpPage, publicPath: string): LpPageSeo | null {
-  const seo = parseSeo(page.seo);
-  if (!seo) return null;
-  return {
-    ...seo,
-    canonical: seo.canonical ?? `/lp/${publicPath}`,
-  };
-}
+export type { LpCatalogItem, LpPageSeo, LpPageWithTemplate } from '@/lib/lp/shared';
+export {
+  mergeTemplateDefaults,
+  resolveLpConcursoConfig,
+  resolveLpSeo,
+  lpPublicHref,
+} from '@/lib/lp/shared';
 
 const LP_PAGE_PUBLIC_SELECT =
   'id, path, template_id, status, internal_name, config, seo, utm_campaign, published_at, created_at, updated_at, lp_templates(id, slug, nome, default_config)';
@@ -76,21 +33,8 @@ export async function getPublishedLpPageByPath(path: string): Promise<LpPageWith
     logger.error('Falha ao buscar LP publicada', error, { path: normalized });
     throw error;
   }
-  return (data as LpPageWithTemplate | null) ?? null;
+  return (data as unknown as LpPageWithTemplate | null) ?? null;
 }
-
-export type LpCatalogItem = {
-  path: string;
-  internalName: string;
-  cidade: string;
-  banca: string;
-  orgao: string;
-  cargo: string;
-  dataProvaFormatada: string;
-  statusInscricoes: string;
-  headline: string;
-  publishedAt: string | null;
-};
 
 /** Vitrine pública em `/planos` — só LPs ativas. */
 export async function listPublishedLpPagesForCatalog(): Promise<LpCatalogItem[]> {
@@ -108,7 +52,7 @@ export async function listPublishedLpPagesForCatalog(): Promise<LpCatalogItem[]>
 
   const items: LpCatalogItem[] = [];
   for (const row of data ?? []) {
-    const config = parseConfig(row.config);
+    const config = parseLpPageConfig(row.config);
     if (!config) continue;
     items.push({
       path: row.path as string,
@@ -151,7 +95,7 @@ export async function listLpPagesForAdmin(): Promise<LpPageWithTemplate[]> {
     logger.error('Falha ao listar LPs (admin)', error);
     throw error;
   }
-  return (data as LpPageWithTemplate[]) ?? [];
+  return (data as unknown as LpPageWithTemplate[]) ?? [];
 }
 
 export async function getLpPageByIdForAdmin(id: string): Promise<LpPageWithTemplate | null> {
@@ -166,7 +110,7 @@ export async function getLpPageByIdForAdmin(id: string): Promise<LpPageWithTempl
     logger.error('Falha ao buscar LP (admin)', error, { id });
     throw error;
   }
-  return (data as LpPageWithTemplate | null) ?? null;
+  return (data as unknown as LpPageWithTemplate | null) ?? null;
 }
 
 export async function listLpTemplatesForAdmin(): Promise<LpTemplate[]> {
@@ -181,10 +125,6 @@ export async function listLpTemplatesForAdmin(): Promise<LpTemplate[]> {
     throw error;
   }
   return (data as LpTemplate[]) ?? [];
-}
-
-export function lpPublicHref(path: string): string {
-  return `/lp/${path.trim().toLowerCase()}`;
 }
 
 export async function revalidateLpPage(path: string): Promise<void> {

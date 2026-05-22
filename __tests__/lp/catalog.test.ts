@@ -1,4 +1,4 @@
-import { mergeTemplateDefaults } from '@/lib/lp/pages';
+import { mergeTemplateDefaults } from '@/lib/lp/shared';
 
 describe('listPublishedLpPagesForCatalog', () => {
   it('mapeia item de catálogo a partir de config válido', () => {

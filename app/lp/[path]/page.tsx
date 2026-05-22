@@ -3,18 +3,12 @@ import { notFound } from 'next/navigation';
 import { LPConcurso } from '@/app/_components/LPConcurso';
 import {
   getPublishedLpPageByPath,
-  listPublishedLpPaths,
   resolveLpConcursoConfig,
   resolveLpSeo,
 } from '@/lib/lp/pages';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
 
 type PageProps = { params: Promise<{ path: string }> };
-
-export async function generateStaticParams() {
-  const paths = await listPublishedLpPaths();
-  return paths.map((path) => ({ path }));
-}
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { path } = await params;
