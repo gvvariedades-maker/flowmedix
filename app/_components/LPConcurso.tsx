@@ -72,9 +72,9 @@ function resolveWalkthroughImage(imagens: string[], index: number): string | nul
 function HeroBackdrop() {
   return (
     <>
-      <div className="absolute top-[-18%] left-1/2 h-[560px] w-[min(140%,1040px)] -translate-x-1/2 rounded-full bg-cyan-500/20 blur-[130px]" />
-      <div className="absolute right-[-14%] bottom-[10%] h-[520px] w-[520px] rounded-full bg-emerald-400/12 blur-[120px]" />
-      <div className="absolute top-1/3 left-[-18%] h-[460px] w-[460px] rounded-full bg-indigo-600/18 blur-[120px]" />
+      <div className="absolute top-[-18%] left-1/2 h-[320px] w-[min(100%,480px)] -translate-x-1/2 rounded-full bg-cyan-500/20 blur-[80px] sm:h-[560px] sm:w-[min(140%,1040px)] sm:blur-[130px]" />
+      <div className="absolute right-[-8%] bottom-[10%] h-[280px] w-[280px] rounded-full bg-emerald-400/12 blur-[80px] sm:right-[-14%] sm:h-[520px] sm:w-[520px] sm:blur-[120px]" />
+      <div className="absolute top-1/3 left-[-10%] h-[240px] w-[240px] rounded-full bg-indigo-600/18 blur-[80px] sm:left-[-18%] sm:h-[460px] sm:w-[460px] sm:blur-[120px]" />
       <div
         className="absolute inset-0 opacity-[0.055]"
         style={{
@@ -118,36 +118,40 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
     : 'border-cyan-400/30 bg-cyan-400/10 text-cyan-200';
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#010409] text-slate-100 selection:bg-cyan-400/25 selection:text-white">
+    <div className="min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-[#010409] text-slate-100 selection:bg-cyan-400/25 selection:text-white">
       <LPNavbar
         statusInscricoes={concurso.statusInscricoes}
         dataProva={concurso.dataProva}
         ctaLabel={labelCta}
       />
 
-      <main className="relative z-10 pt-[72px]">
+      <main className="relative z-10 w-full min-w-0 pt-[8.5rem] sm:pt-[4.5rem]">
         {/* 2 — Hero */}
         <LPMotionSection
           ariaLabel="Apresentação do concurso"
-          className="relative px-4 sm:px-6 pt-12 sm:pt-20 pb-16 sm:pb-24"
+          className="relative overflow-hidden px-4 sm:px-6 pt-8 sm:pt-20 pb-12 sm:pb-24"
         >
-          <div className="pointer-events-none absolute inset-0">
+          <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <HeroBackdrop />
           </div>
-          <div className="relative mx-auto max-w-6xl">
-            <div className="grid items-center gap-10 lg:grid-cols-[1fr_340px]">
-              <div>
+          <div className="relative mx-auto w-full min-w-0 max-w-6xl">
+            <div className="grid min-w-0 grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-10">
+              <div className="min-w-0 max-w-full">
                 <p
-                  className={`mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-black sm:text-sm ${badgeClassName}`}
+                  className={`mb-6 inline-flex max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-full border px-3 py-2 text-[11px] font-black sm:px-4 sm:text-sm ${badgeClassName}`}
                 >
-                  {concurso.statusInscricoes} · Prova em {concurso.dataProvaFormatada}
+                  <span>{concurso.statusInscricoes}</span>
+                  <span className="text-slate-500" aria-hidden>
+                    ·
+                  </span>
+                  <span>Prova em {concurso.dataProvaFormatada}</span>
                 </p>
 
-                <h1 className="max-w-4xl bg-gradient-to-r from-white via-cyan-200 to-[#BEF264] bg-clip-text text-4xl leading-[1.05] font-[1000] tracking-tight text-transparent sm:text-5xl lg:text-6xl">
+                <h1 className="max-w-full break-words bg-gradient-to-r from-white via-cyan-200 to-[#BEF264] bg-clip-text text-3xl leading-[1.08] font-[1000] tracking-tight text-transparent sm:text-5xl lg:text-6xl">
                   {copy.headlinePrincipal}
                 </h1>
 
-                <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl">
+                <p className="mt-6 max-w-full text-base leading-relaxed text-slate-300 sm:max-w-2xl sm:text-xl">
                   {copy.subtitulo}
                 </p>
 
@@ -165,9 +169,9 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
                   ))}
                 </div>
 
-                <div className="mt-8 max-w-md">
+                <div className="mt-8 w-full min-w-0 max-w-md">
                   <LPCheckoutButton label={labelCta} />
-                  <p className="mt-3 text-sm text-slate-500">
+                  <p className="mt-3 text-sm leading-relaxed text-slate-500">
                     Cancela quando quiser · Acesso completo · Preparação para {concurso.cidade} e
                     todos os próximos concursos
                   </p>
@@ -182,8 +186,8 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
                 </div>
               </div>
 
-              <div className="flex w-full min-w-0 justify-center">
-                <NeuroSlideCarousel />
+              <div className="flex w-full min-w-0 max-w-full justify-center px-0 sm:px-2">
+                <NeuroSlideCarousel className="w-full" />
               </div>
             </div>
           </div>
@@ -206,8 +210,8 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
           ariaLabel="Dores de estudo"
           className="px-4 py-16 sm:px-6 lg:px-8"
         >
-          <div className="mx-auto max-w-6xl">
-            <h2 className="max-w-3xl text-3xl leading-tight font-black tracking-tight text-white sm:text-4xl">
+          <div className="mx-auto w-full min-w-0 max-w-6xl">
+            <h2 className="max-w-full break-words text-2xl leading-tight font-black tracking-tight text-white sm:max-w-3xl sm:text-4xl">
               Você estuda, mas não sabe se está estudando o que a {concurso.nomeBanca} cobra?
             </h2>
             <ul className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -229,8 +233,8 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
           ariaLabel="Demonstração do ciclo de estudo"
           className="bg-slate-950/30 px-4 py-16 sm:px-6 lg:px-8"
         >
-          <div className="mx-auto max-w-6xl">
-            <h2 className="text-center text-3xl leading-tight font-black tracking-tight text-white sm:text-4xl">
+          <div className="mx-auto w-full min-w-0 max-w-6xl">
+            <h2 className="max-w-full break-words text-center text-2xl leading-tight font-black tracking-tight text-white sm:text-4xl">
               Veja o ciclo completo — do erro ao aprendizado
             </h2>
             <div className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] md:grid md:grid-cols-4 md:overflow-visible [&::-webkit-scrollbar]:hidden">
@@ -277,8 +281,8 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
           ariaLabel="Pontos críticos da banca"
           className="border-y border-rose-500/15 bg-rose-950/20 px-4 py-16 sm:px-6 lg:px-8"
         >
-          <div className="mx-auto max-w-6xl">
-            <h2 className="max-w-3xl text-3xl leading-tight font-black tracking-tight text-white sm:text-4xl">
+          <div className="mx-auto w-full min-w-0 max-w-6xl">
+            <h2 className="max-w-full break-words text-2xl leading-tight font-black tracking-tight text-white sm:max-w-3xl sm:text-4xl">
               O que a {concurso.nomeBanca} cobra e a maioria ignora
             </h2>
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -300,8 +304,8 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
           ariaLabel="O que você acessa"
           className="px-4 py-16 sm:px-6 lg:px-8"
         >
-          <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl leading-tight font-black tracking-tight text-white sm:text-4xl">
+          <div className="mx-auto w-full min-w-0 max-w-6xl">
+            <h2 className="max-w-full break-words text-2xl leading-tight font-black tracking-tight text-white sm:text-4xl">
               Acesso completo por R$ {preco}/mês
             </h2>
             <ul className="mt-8 space-y-4">
@@ -327,7 +331,7 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
           className="px-4 py-16 sm:px-6 lg:px-8"
         >
           <div className="mx-auto max-w-3xl overflow-hidden rounded-[2rem] border border-emerald-300/20 bg-gradient-to-br from-slate-950 via-slate-950 to-emerald-950/35 p-6 sm:p-10">
-            <h2 className="text-center text-2xl leading-tight font-black tracking-tight text-white sm:text-3xl">
+            <h2 className="max-w-full break-words text-center text-xl leading-tight font-black tracking-tight text-white sm:text-3xl">
               Prepare-se para a prova da {concurso.nomeBanca} com o AVANT Pro
             </h2>
             <div className="mx-auto mt-8 max-w-md rounded-2xl border border-white/10 bg-slate-900/80 p-6 backdrop-blur-xl">
@@ -337,7 +341,7 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
               <p className="mt-2 text-sm font-semibold text-emerald-200/90">
                 Acesso completo à plataforma
               </p>
-              <p className="mt-4 text-5xl font-black text-white">
+              <p className="mt-4 text-4xl font-black text-white sm:text-5xl">
                 R$ {preco}
                 <span className="text-2xl font-bold text-slate-400">/mês</span>
               </p>
@@ -372,7 +376,7 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
             <p className="max-w-3xl text-sm leading-relaxed text-slate-500">
               {copy.disclaimerLegal}
             </p>
-            <div className="flex gap-4 text-sm font-semibold text-slate-300">
+            <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold text-slate-300">
               <Link className="hover:text-cyan-200" href="/politica-de-privacidade">
                 Política de Privacidade
               </Link>

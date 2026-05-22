@@ -87,39 +87,61 @@ export function LPNavbar({
 
   return (
     <header className="fixed top-0 right-0 left-0 z-50 border-b border-white/8 bg-[#010409]/90 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-2">
+      <div className="mx-auto max-w-6xl px-4 py-3 sm:px-6 lg:px-8">
+        {/* Mobile: logo + Assinar Pro; depois faixa de navegação */}
+        <div className="flex flex-col gap-2 sm:hidden">
+          <div className="flex items-center justify-between gap-2">
+            <Link href="/" className="group flex shrink-0 items-center gap-2" aria-label="AVANT — início">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-500/40">
+                <Zap size={22} className="text-[#BEF264]" fill="currentColor" aria-hidden />
+              </div>
+              <span className="text-xl font-[1000] tracking-tighter text-white italic">AVANT</span>
+            </Link>
+            <LPCheckoutButton label={ctaLabel} compactLabel="Assinar Pro" compact />
+          </div>
+          <nav
+            className="flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 border-t border-white/8 pt-2"
+            aria-label="Navegação principal"
+          >
+            <Link href="/planos" className={`${lpNavLinkClass} shrink-0 text-[11px]`}>
+              Concursos abertos
+            </Link>
+            <Link href={AVANT_PRO_LP_HREF} className={`${lpNavLinkClass} shrink-0 text-[11px]`}>
+              AVANT Pro
+            </Link>
+          </nav>
+        </div>
+
+        {/* Desktop / tablet */}
+        <div className="hidden items-center justify-between gap-3 sm:flex">
           <Link href="/" className="group flex shrink-0 items-center gap-2" aria-label="AVANT — início">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-500/40 transition-transform group-hover:scale-105">
               <Zap size={22} className="text-[#BEF264]" fill="currentColor" aria-hidden />
             </div>
             <span className="text-xl font-[1000] tracking-tighter text-white italic">AVANT</span>
           </Link>
-          <div className="relative shrink-0 sm:hidden">
-            <LPCheckoutButton label={ctaLabel} compact />
-          </div>
-        </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-2 sm:justify-end sm:gap-3">
-          <nav
-            className="flex flex-wrap items-center gap-0.5 sm:gap-1"
-            aria-label="Navegação principal"
-          >
-            <Link href="/planos" className={`${lpNavLinkClass} shrink-0`}>
-              Concursos abertos
-            </Link>
-            <Link href={AVANT_PRO_LP_HREF} className={`${lpNavLinkClass} shrink-0`}>
-              AVANT Pro
-            </Link>
-          </nav>
+          <div className="flex min-w-0 flex-1 flex-wrap items-center justify-end gap-2 md:gap-3">
+            <nav
+              className="flex flex-wrap items-center gap-0.5 md:gap-1"
+              aria-label="Navegação principal"
+            >
+              <Link href="/planos" className={`${lpNavLinkClass} shrink-0`}>
+                Concursos abertos
+              </Link>
+              <Link href={AVANT_PRO_LP_HREF} className={`${lpNavLinkClass} shrink-0`}>
+                AVANT Pro
+              </Link>
+            </nav>
 
-          <p className="hidden min-w-0 truncate text-xs font-bold text-cyan-100 md:block md:max-w-[14rem] lg:max-w-none lg:text-sm">
-            <Zap size={12} className="mr-1 inline text-[#BEF264]" aria-hidden />
-            {diasLabel} · {statusInscricoes}
-          </p>
+            <p className="hidden min-w-0 truncate text-xs font-bold text-cyan-100 md:block md:max-w-[14rem] lg:max-w-none lg:text-sm">
+              <Zap size={12} className="mr-1 inline text-[#BEF264]" aria-hidden />
+              {diasLabel} · {statusInscricoes}
+            </p>
 
-          <div className="relative hidden shrink-0 sm:block">
-            <LPCheckoutButton label={ctaLabel} compact />
+            <div className="relative shrink-0">
+              <LPCheckoutButton label={ctaLabel} compact />
+            </div>
           </div>
         </div>
       </div>
@@ -131,16 +153,19 @@ export function LPCheckoutButton({
   label,
   className = '',
   compact = false,
+  compactLabel,
 }: {
   label: string;
   className?: string;
   compact?: boolean;
+  /** Texto curto no header mobile (ex.: «Assinar Pro»). */
+  compactLabel?: string;
 }) {
   const { handleCheckout, loading, error } = useProCheckout();
 
   const baseClassName = compact
     ? 'inline-flex shrink-0 items-center justify-center gap-1.5 rounded-2xl bg-[#BEF264] px-3 py-2 text-[10px] font-black text-slate-950 transition-all hover:bg-[#d4f879] disabled:cursor-not-allowed disabled:opacity-60 sm:px-4 sm:py-2.5 sm:text-xs'
-    : 'inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#BEF264] px-6 py-4 text-base font-black text-slate-950 transition-all hover:bg-[#d4f879] disabled:cursor-not-allowed disabled:opacity-60';
+    : 'inline-flex w-full max-w-full items-center justify-center gap-2 rounded-2xl bg-[#BEF264] px-4 py-3.5 text-center text-sm font-black leading-snug text-slate-950 transition-all hover:bg-[#d4f879] disabled:cursor-not-allowed disabled:opacity-60 sm:px-6 sm:py-4 sm:text-base';
 
   return (
     <div className={compact ? 'relative' : 'space-y-3'}>
@@ -155,6 +180,11 @@ export function LPCheckoutButton({
           <>
             <Loader2 size={compact ? 14 : 18} className="animate-spin" aria-hidden />
             {compact ? 'Abrindo…' : 'Abrindo pagamento...'}
+          </>
+        ) : compact && compactLabel ? (
+          <>
+            <span className="sm:hidden">{compactLabel}</span>
+            <span className="hidden sm:inline">{label}</span>
           </>
         ) : (
           label
@@ -203,7 +233,7 @@ export function LPImpactMetrics({
           key={metric}
           className="rounded-2xl border border-white/10 bg-slate-900/80 p-4 text-center backdrop-blur-xl"
         >
-          <p className="text-sm font-black text-white sm:text-base">{metric}</p>
+          <p className="text-xs font-black leading-snug break-words text-white sm:text-base">{metric}</p>
         </div>
       ))}
     </div>

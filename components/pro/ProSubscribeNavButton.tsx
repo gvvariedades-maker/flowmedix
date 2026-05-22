@@ -7,13 +7,13 @@ export function ProSubscribeNavButton() {
   const { handleCheckout, loading, error } = useProCheckout();
 
   return (
-    <div className="relative hidden sm:block">
+    <div className="relative shrink-0">
       <button
         type="button"
         onClick={handleCheckout}
         disabled={loading}
         title={error ?? undefined}
-        className="inline-flex shrink-0 items-center justify-center rounded-2xl border border-[#BEF264]/40 bg-transparent px-5 py-2 text-sm font-black uppercase tracking-widest text-[#BEF264] transition-all hover:bg-[#BEF264]/10 disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex shrink-0 items-center justify-center rounded-2xl border border-[#BEF264]/40 bg-transparent px-2.5 py-1.5 text-[10px] font-black uppercase tracking-wider text-[#BEF264] transition-all hover:bg-[#BEF264]/10 disabled:cursor-not-allowed disabled:opacity-60 min-[400px]:px-4 min-[400px]:py-2 min-[400px]:text-xs sm:px-5 sm:text-sm sm:tracking-widest"
       >
         {loading ? (
           <Loader2 size={16} className="animate-spin" aria-hidden />

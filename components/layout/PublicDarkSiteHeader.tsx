@@ -51,10 +51,17 @@ export function PublicDarkSiteHeader({
             <Link href="/blog" className={`${navLinkClass} hidden min-[400px]:inline-flex shrink-0`}>
               Blog
             </Link>
-            <Link href="/planos" className={`${navLinkClass} hidden min-[500px]:inline-flex shrink-0`}>
-              Concursos abertos
+            <Link
+              href="/planos"
+              className={`${navLinkClass} inline-flex shrink-0 px-1.5 py-1.5 text-[10px] min-[400px]:px-3 min-[400px]:py-2 min-[400px]:text-sm`}
+            >
+              <span className="sm:hidden">Concursos</span>
+              <span className="hidden sm:inline">Concursos abertos</span>
             </Link>
-            <Link href={AVANT_PRO_LP_HREF} className={`${navLinkClass} hidden min-[560px]:inline-flex shrink-0`}>
+            <Link
+              href={AVANT_PRO_LP_HREF}
+              className={`${navLinkClass} inline-flex shrink-0 px-1.5 py-1.5 text-[10px] min-[400px]:px-3 min-[400px]:py-2 min-[400px]:text-sm`}
+            >
               AVANT Pro
             </Link>
             <nav className="flex min-w-0 shrink-0 flex-nowrap items-center justify-end gap-1.5 sm:gap-2">

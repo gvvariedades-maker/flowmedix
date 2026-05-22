@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   NEUROSLIDE_ASPECT_CLASS,
-  NEUROSLIDE_DISPLAY_MAX_WIDTH,
   NEUROSLIDE_IMAGE_SIZES,
+  NEUROSLIDE_MAX_WIDTH_CLASS,
 } from '@/lib/marketing/neuroslideAssets';
 import { cn } from '@/lib/utils';
 
@@ -63,14 +63,14 @@ export function NeuroSlideCarousel({ className }: NeuroSlideCarouselProps) {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ delay: 0.12, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        'relative mx-auto w-full shrink-0 justify-self-center overflow-visible',
+        'relative mx-auto w-full min-w-0 max-w-full justify-self-center',
+        NEUROSLIDE_MAX_WIDTH_CLASS,
         className,
       )}
-      style={{ maxWidth: NEUROSLIDE_DISPLAY_MAX_WIDTH }}
     >
-      <div className="absolute -inset-8 rounded-full bg-cyan-400/10 blur-3xl" />
+      <div className="pointer-events-none absolute -inset-4 rounded-full bg-cyan-400/10 blur-3xl sm:-inset-8" />
       <div
-        className="relative overflow-visible rounded-[2rem] border border-white/10 bg-slate-950/80 shadow-[0_0_50px_rgba(0,242,255,0.12)] backdrop-blur-xl"
+        className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/80 shadow-[0_0_50px_rgba(0,242,255,0.12)] backdrop-blur-xl"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
