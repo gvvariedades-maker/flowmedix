@@ -16,7 +16,9 @@ type PageProps = { params: Promise<{ slug: string }> };
 const DEFAULT_AUTHOR = 'Equipe AVANT';
 
 export async function generateStaticParams() {
-  return getAllBlogSlugs().map((slug) => ({ slug }));
+  return getAllBlogSlugs()
+    .filter((slug): slug is string => typeof slug === 'string' && slug.length > 0)
+    .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
