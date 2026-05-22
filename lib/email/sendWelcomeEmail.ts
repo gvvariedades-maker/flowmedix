@@ -1,10 +1,15 @@
-import { createElement } from 'react';
 import { z } from 'zod';
 
-import { WelcomeEmail } from '@/emails/welcome';
 import { logger } from '@/lib/logger';
 import { createServerSupabase } from '@/lib/supabase/server';
-import { sendEmail } from '@/lib/email';
+import {
+  DEFAULT_WELCOME_CONTENT,
+  mergeEmailContent,
+} from '@/lib/email/templateContent';
+import {
+  getEmailTemplateBySlug,
+  sendTemplatedEmail,
+} from '@/lib/email/templates';
 
 const userIdSchema = z.string().uuid('userId inválido');
 
@@ -33,7 +38,7 @@ function firstNameFromAuthMetadata(metadata: Record<string, unknown> | undefined
   return null;
 }
 
-/** Envio transacional (sem cache) — usado por API routes e server actions. */
+/** Envio transacional (template `welcome` no banco). */
 export async function sendWelcomeEmail(userId: string): Promise<SendWelcomeEmailResult> {
   const parsed = userIdSchema.safeParse(userId);
   if (!parsed.success) {
@@ -67,11 +72,22 @@ export async function sendWelcomeEmail(userId: string): Promise<SendWelcomeEmail
       firstName = firstNameFromDisplayName(profile?.full_name ?? null);
     }
 
-    const sent = await sendEmail(
-      authData.user.email,
-      'Bem-vindo ao Avant',
-      createElement(WelcomeEmail, { firstName: firstName ?? 'estudante' }),
-    );
+    const dbTemplate = await getEmailTemplateBySlug('welcome', supabase);
+    const template = dbTemplate ?? {
+      slug: 'welcome',
+      kind: 'transactional' as const,
+      name: 'Boas-vindas',
+      subject: 'Bem-vindo ao Avant',
+      preview_text: 'Bem-vindo ao Avant — comece com NeuroSlides',
+      content: DEFAULT_WELCOME_CONTENT,
+      updated_at: new Date().toISOString(),
+    };
+
+    const sent = await sendTemplatedEmail({
+      to: authData.user.email,
+      template,
+      firstName: firstName ?? 'estudante',
+    });
 
     return { success: true, email: sent.to, resendId: sent.id };
   } catch (err) {

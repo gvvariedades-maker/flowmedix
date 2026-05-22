@@ -485,6 +485,22 @@ export default function AdminMaster() {
 
         <section className="bg-white p-6 sm:p-8 rounded-[32px] border-[1.5px] border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
+            <h2 className="font-black italic uppercase text-lg text-slate-900">E-mails e marketing</h2>
+            <p className="text-slate-500 text-sm mt-1">
+              Edite boas-vindas, envie campanhas e teste antes de publicar.
+            </p>
+          </div>
+          <Link
+            href="/admin/emails"
+            className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-cyan-600 text-white font-black uppercase italic text-xs hover:bg-cyan-700 transition-all"
+          >
+            Gerenciar e-mails
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </section>
+
+        <section className="bg-white p-6 sm:p-8 rounded-[32px] border-[1.5px] border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
             <h2 className="font-black italic uppercase text-lg text-slate-900">Liberar acesso por e-mail</h2>
             <p className="text-slate-500 text-sm mt-1">
               Cadastre e-mails para criar conta (se necessário) e matricular no AVANT com acesso ativo.

@@ -4,6 +4,7 @@
 
 import { z, ZodError } from 'zod';
 import * as LucideIcons from 'lucide-react';
+import { EmailTemplateContentSchema } from '@/lib/email/templateContent';
 import { normalizeQuestaoSlideArrays } from './reverseStudySlidesNormalize';
 
 // ============================================================================
@@ -618,6 +619,48 @@ export const LpPageAdminUpdateSchema = LpPageAdminCreateSchema.partial().extend(
 });
 
 // ============================================================================
+// E-mail templates (admin CMS)
+// ============================================================================
+
+export { EmailTemplateContentSchema };
+
+export const EmailTemplateUpdateSchema = z.object({
+  subject: z.string().trim().min(1).max(200).optional(),
+  preview_text: z.string().trim().max(200).optional(),
+  content: EmailTemplateContentSchema.optional(),
+});
+
+export const MarketingEmailSendSchema = z
+  .object({
+    template_slug: z.string().trim().min(1).max(64).default('marketing'),
+    subject: z.string().trim().min(1).max(200).optional(),
+    preview_text: z.string().trim().max(200).optional(),
+    content: EmailTemplateContentSchema.partial().optional(),
+    audience: z.enum(['test_me', 'emails', 'concurso_matriculas']),
+    emails: z.array(z.string().trim().email()).max(50).optional(),
+    concurso_id: z.string().uuid().optional(),
+    confirm: z.literal(true, {
+      errorMap: () => ({ message: 'Confirme o envio com confirm: true' }),
+    }),
+  })
+  .superRefine((data, ctx) => {
+    if (data.audience === 'emails' && (!data.emails || data.emails.length === 0)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'Informe ao menos um e-mail',
+        path: ['emails'],
+      });
+    }
+    if (data.audience === 'concurso_matriculas' && !data.concurso_id) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'Informe o concurso_id',
+        path: ['concurso_id'],
+      });
+    }
+  });
+
+// ============================================================================
 // EXPORTS DE CONSTANTES E HELPERS
 // ============================================================================
 
@@ -677,6 +720,9 @@ export type LpPageConfigInput = z.infer<typeof LpPageConfigSchema>;
 export type LpPageSeoInput = z.infer<typeof LpPageSeoSchema>;
 export type LpPageAdminCreateInput = z.infer<typeof LpPageAdminCreateSchema>;
 export type LpPageAdminUpdateInput = z.infer<typeof LpPageAdminUpdateSchema>;
+export type EmailTemplateContentInput = z.infer<typeof EmailTemplateContentSchema>;
+export type EmailTemplateUpdateInput = z.infer<typeof EmailTemplateUpdateSchema>;
+export type MarketingEmailSendInput = z.infer<typeof MarketingEmailSendSchema>;
 export type ReverseStudySlideInput = z.infer<typeof ReverseStudySlideSchema>;
 export type ReverseStudySlideShellFieldsInput = z.infer<typeof ReverseStudySlideShellFieldsSchema>;
 export type SlideItemInput = z.infer<typeof SlideItemSchema>;
