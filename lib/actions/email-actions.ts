@@ -13,6 +13,10 @@ const userIdSchema = z.string().uuid('userId inválido');
 export type SendWelcomeEmailResult = {
   success: boolean;
   error?: string;
+  /** Destinatário quando enviado com sucesso. */
+  email?: string;
+  /** ID da mensagem no Resend (rastreio no painel Resend). */
+  resendId?: string;
 };
 
 export async function sendWelcomeEmail(userId: string): Promise<SendWelcomeEmailResult> {
@@ -33,13 +37,13 @@ export async function sendWelcomeEmail(userId: string): Promise<SendWelcomeEmail
       return { success: false, error: 'Usuário não encontrado' };
     }
 
-    await sendEmail(
+    const sent = await sendEmail(
       contact.email,
       'Bem-vindo ao Avant',
       createElement(WelcomeEmail, { firstName: contact.firstName }),
     );
 
-    return { success: true };
+    return { success: true, email: sent.to, resendId: sent.id };
   } catch (err) {
     logger.error('sendWelcomeEmail falhou', err, { userId: parsed.data });
     return {

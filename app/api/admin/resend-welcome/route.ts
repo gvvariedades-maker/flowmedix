@@ -79,8 +79,19 @@ export async function POST(request: NextRequest) {
 
   const result = await sendWelcomeEmail(userId!);
   if (!result.success) {
-    return NextResponse.json({ error: result.error ?? 'Falha ao enviar' }, { status: 500 });
+    return NextResponse.json(
+      { ok: false, sent: false, error: result.error ?? 'Falha ao enviar' },
+      { status: 500 },
+    );
   }
 
-  return NextResponse.json({ ok: true, userId, message: 'E-mail de boas-vindas enviado.' });
+  return NextResponse.json({
+    ok: true,
+    sent: true,
+    userId,
+    email: result.email,
+    resendId: result.resendId ?? null,
+    sentAt: new Date().toISOString(),
+    message: `E-mail de boas-vindas enviado para ${result.email}.`,
+  });
 }

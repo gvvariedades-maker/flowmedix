@@ -31,10 +31,20 @@ async function sendWelcomeForUser(userId: string) {
   const result = await sendWelcomeEmail(userId);
   if (!result.success) {
     logger.error('welcome-email: falha ao enviar', undefined, { userId, error: result.error });
-    return NextResponse.json({ sent: false, error: result.error ?? 'Falha ao enviar e-mail' }, { status: 500 });
+    return NextResponse.json(
+      { ok: false, sent: false, error: result.error ?? 'Falha ao enviar e-mail' },
+      { status: 500 },
+    );
   }
 
-  return NextResponse.json({ sent: true });
+  return NextResponse.json({
+    ok: true,
+    sent: true,
+    email: result.email,
+    resendId: result.resendId ?? null,
+    sentAt: new Date().toISOString(),
+    message: `E-mail de boas-vindas enviado para ${result.email}.`,
+  });
 }
 
 /**

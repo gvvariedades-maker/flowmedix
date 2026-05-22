@@ -3,7 +3,17 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { ArrowLeft, Loader2, Trash2, UserMinus, UserPlus, Users } from 'lucide-react';
+import {
+  AlertCircle,
+  ArrowLeft,
+  CheckCircle2,
+  Loader2,
+  Mail,
+  Trash2,
+  UserMinus,
+  UserPlus,
+  Users,
+} from 'lucide-react';
 
 type ConcursoHeader = { id: string; slug: string; nome: string };
 
@@ -16,6 +26,18 @@ type MatriculaRow = {
   createdAt: string;
 };
 
+type AdminBanner = {
+  variant: 'success' | 'error' | 'info';
+  title: string;
+  detail?: string;
+};
+
+type WelcomeRowFeedback =
+  | { status: 'idle' }
+  | { status: 'sending' }
+  | { status: 'success'; email: string; resendId: string | null; sentAt: string }
+  | { status: 'error'; detail: string };
+
 export default function AdminConcursoMatriculasPage() {
   const params = useParams();
   const concursoId = typeof params.id === 'string' ? params.id : '';
@@ -24,7 +46,8 @@ export default function AdminConcursoMatriculasPage() {
   const [matriculas, setMatriculas] = useState<MatriculaRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [message, setMessage] = useState<string | null>(null);
+  const [banner, setBanner] = useState<AdminBanner | null>(null);
+  const [welcomeFeedback, setWelcomeFeedback] = useState<Record<string, WelcomeRowFeedback>>({});
 
   const [emailBusca, setEmailBusca] = useState('');
   const [nomeNovo, setNomeNovo] = useState('');
@@ -33,10 +56,14 @@ export default function AdminConcursoMatriculasPage() {
   const [filtroLista, setFiltroLista] = useState('');
   const [resolvedUserId, setResolvedUserId] = useState('');
 
+  function showStatus(variant: AdminBanner['variant'], title: string, detail?: string) {
+    setBanner({ variant, title, detail });
+  }
+
   const carregar = useCallback(async () => {
     if (!concursoId) return;
     setLoading(true);
-    setMessage(null);
+    setBanner(null);
     try {
       const res = await fetch(`/api/admin/concursos/${concursoId}/matriculas`, {
         credentials: 'same-origin',
@@ -46,7 +73,7 @@ export default function AdminConcursoMatriculasPage() {
       setConcurso(payload.concurso ?? null);
       setMatriculas(payload.matriculas ?? []);
     } catch (e) {
-      setMessage(e instanceof Error ? e.message : 'Erro ao carregar');
+      showStatus('error', 'Erro ao carregar lista', e instanceof Error ? e.message : undefined);
       setConcurso(null);
       setMatriculas([]);
     } finally {
@@ -70,10 +97,10 @@ export default function AdminConcursoMatriculasPage() {
   }, [matriculas, filtroLista]);
 
   async function resolverUsuario() {
-    setMessage(null);
+    setBanner(null);
     const email = emailBusca.trim();
     if (!email) {
-      setMessage('Informe o e-mail do aluno.');
+      showStatus('info', 'Informe o e-mail do aluno.');
       return;
     }
     try {
@@ -86,10 +113,10 @@ export default function AdminConcursoMatriculasPage() {
       const payload = await res.json();
       if (!res.ok) throw new Error(payload.error || 'Usuário não encontrado');
       setResolvedUserId(payload.userId);
-      setMessage(`Usuário encontrado: ${email}`);
+      showStatus('success', 'Usuário encontrado', email);
     } catch (e) {
       setResolvedUserId('');
-      setMessage(e instanceof Error ? e.message : 'Erro ao resolver usuário');
+      showStatus('error', 'Erro ao resolver usuário', e instanceof Error ? e.message : undefined);
     }
   }
 
@@ -104,11 +131,11 @@ export default function AdminConcursoMatriculasPage() {
   async function criarUsuarioEMatricular() {
     const email = emailNovo.trim();
     if (!email || !concursoId) {
-      setMessage('Informe o e-mail do novo aluno.');
+      showStatus('info', 'Informe o e-mail do novo aluno.');
       return;
     }
     setSaving(true);
-    setMessage(null);
+    setBanner(null);
     try {
       const res = await fetch(`/api/admin/concursos/${concursoId}/matriculas/criar-usuario`, {
         method: 'POST',
@@ -121,16 +148,18 @@ export default function AdminConcursoMatriculasPage() {
       });
       const payload = await res.json();
       if (!res.ok) throw new Error(payload.error || 'Falha ao criar usuário');
-      setMessage(
+      showStatus(
+        'success',
+        'Conta criada',
         typeof payload.message === 'string'
           ? payload.message
-          : 'Conta criada e matrícula registrada.',
+          : 'Matrícula registrada no concurso.',
       );
       setEmailNovo('');
       setNomeNovo('');
       await carregar();
     } catch (e) {
-      setMessage(e instanceof Error ? e.message : 'Erro ao criar usuário');
+      showStatus('error', 'Erro ao criar usuário', e instanceof Error ? e.message : undefined);
     } finally {
       setSaving(false);
     }
@@ -139,11 +168,11 @@ export default function AdminConcursoMatriculasPage() {
   async function liberarAcessoEmLote() {
     const emails = parseEmailsLote(emailsLote);
     if (!emails.length || !concursoId) {
-      setMessage('Cole ao menos um e-mail (um por linha ou separados por vírgula).');
+      showStatus('info', 'Cole ao menos um e-mail (um por linha ou separados por vírgula).');
       return;
     }
     setSaving(true);
-    setMessage(null);
+    setBanner(null);
     const ok: string[] = [];
     const falhas: string[] = [];
     try {
@@ -168,7 +197,8 @@ export default function AdminConcursoMatriculasPage() {
         await carregar();
       }
       const resumo = `${ok.length} e-mail(s) com acesso liberado.`;
-      setMessage(
+      showStatus(
+        falhas.length ? 'Lote com falhas' : 'Lote concluído',
         falhas.length ? `${resumo} Falhas: ${falhas.slice(0, 5).join(' · ')}${falhas.length > 5 ? '…' : ''}` : resumo,
       );
     } finally {
@@ -178,11 +208,11 @@ export default function AdminConcursoMatriculasPage() {
 
   async function matricularGratis() {
     if (!resolvedUserId || !concursoId) {
-      setMessage('Resolva o usuário pelo e-mail antes de matricular.');
+      showStatus('info', 'Resolva o usuário pelo e-mail antes de matricular.');
       return;
     }
     setSaving(true);
-    setMessage(null);
+    setBanner(null);
     try {
       const res = await fetch(`/api/admin/concursos/${concursoId}/matriculas`, {
         method: 'POST',
@@ -195,12 +225,12 @@ export default function AdminConcursoMatriculasPage() {
       });
       const payload = await res.json();
       if (!res.ok) throw new Error(payload.error || 'Falha na matrícula');
-      setMessage('Matrícula gratuita registrada (origem: admin, sem expiração).');
+      showStatus('success', 'Matrícula registrada', 'Origem admin, sem expiração.');
       setResolvedUserId('');
       setEmailBusca('');
       await carregar();
     } catch (e) {
-      setMessage(e instanceof Error ? e.message : 'Erro na matrícula');
+      showStatus('error', 'Erro na matrícula', e instanceof Error ? e.message : undefined);
     } finally {
       setSaving(false);
     }
@@ -224,7 +254,7 @@ export default function AdminConcursoMatriculasPage() {
       return;
     }
     setSaving(true);
-    setMessage(null);
+    setBanner(null);
     try {
       const res = await fetch(`/api/admin/concursos/${concursoId}/matriculas`, {
         method: 'DELETE',
@@ -234,24 +264,23 @@ export default function AdminConcursoMatriculasPage() {
       });
       const payload = await res.json();
       if (!res.ok) throw new Error(payload.error || 'Falha ao excluir');
-      setMessage(
-        typeof payload.message === 'string'
-          ? payload.message
-          : deleteAccount
-            ? 'Conta excluída.'
-            : 'Matrícula excluída.',
+      showStatus(
+        'success',
+        deleteAccount ? 'Conta excluída' : 'Matrícula excluída',
+        typeof payload.message === 'string' ? payload.message : undefined,
       );
       await carregar();
     } catch (e) {
-      setMessage(e instanceof Error ? e.message : 'Erro ao excluir');
+      showStatus('error', 'Erro ao excluir', e instanceof Error ? e.message : undefined);
     } finally {
       setSaving(false);
     }
   }
 
   async function reenviarBoasVindas(userId: string, email: string) {
+    setWelcomeFeedback((prev) => ({ ...prev, [userId]: { status: 'sending' } }));
     setSaving(true);
-    setMessage(null);
+    setBanner(null);
     try {
       const res = await fetch('/api/admin/resend-welcome', {
         method: 'POST',
@@ -259,15 +288,53 @@ export default function AdminConcursoMatriculasPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId }),
       });
-      const payload = await res.json();
-      if (!res.ok) throw new Error(payload.error || 'Falha ao enviar e-mail');
-      setMessage(
-        typeof payload.message === 'string'
-          ? `${payload.message} (${email})`
-          : `Boas-vindas reenviadas para ${email}.`,
+      const payload = (await res.json()) as {
+        sent?: boolean;
+        ok?: boolean;
+        error?: string;
+        message?: string;
+        email?: string;
+        resendId?: string | null;
+        sentAt?: string;
+      };
+
+      if (!res.ok || payload.sent !== true) {
+        const detail = payload.error ?? payload.message ?? 'Falha ao enviar e-mail';
+        setWelcomeFeedback((prev) => ({
+          ...prev,
+          [userId]: { status: 'error', detail },
+        }));
+        showStatus('error', 'Boas-vindas não enviado', `${email}: ${detail}`);
+        return;
+      }
+
+      const destino = payload.email ?? email;
+      const horario = payload.sentAt
+        ? new Date(payload.sentAt).toLocaleString('pt-BR')
+        : new Date().toLocaleString('pt-BR');
+      const idResend = payload.resendId ? `ID Resend: ${payload.resendId}` : 'Sem ID Resend (verifique painel Resend)';
+
+      setWelcomeFeedback((prev) => ({
+        ...prev,
+        [userId]: {
+          status: 'success',
+          email: destino,
+          resendId: payload.resendId ?? null,
+          sentAt: payload.sentAt ?? new Date().toISOString(),
+        },
+      }));
+      showStatus(
+        'success',
+        'E-mail de boas-vindas enviado',
+        `Para ${destino} em ${horario}. ${idResend}.`,
       );
     } catch (e) {
-      setMessage(e instanceof Error ? e.message : 'Erro ao reenviar e-mail');
+      const detail = e instanceof Error ? e.message : 'Erro ao reenviar e-mail';
+      setWelcomeFeedback((prev) => ({
+        ...prev,
+        [userId]: { status: 'error', detail },
+      }));
+      showStatus('error', 'Boas-vindas não enviado', `${email}: ${detail}`);
     } finally {
       setSaving(false);
     }
@@ -277,7 +344,7 @@ export default function AdminConcursoMatriculasPage() {
     if (!concursoId) return;
     if (!window.confirm('Revogar acesso deste usuário a este concurso? (status: expirado)')) return;
     setSaving(true);
-    setMessage(null);
+    setBanner(null);
     try {
       const res = await fetch(`/api/admin/concursos/${concursoId}/matriculas`, {
         method: 'PATCH',
@@ -287,10 +354,10 @@ export default function AdminConcursoMatriculasPage() {
       });
       const payload = await res.json();
       if (!res.ok) throw new Error(payload.error || 'Falha ao revogar');
-      setMessage('Acesso revogado.');
+      showStatus('success', 'Acesso revogado');
       await carregar();
     } catch (e) {
-      setMessage(e instanceof Error ? e.message : 'Erro ao revogar');
+      showStatus('error', 'Erro ao revogar', e instanceof Error ? e.message : undefined);
     } finally {
       setSaving(false);
     }
@@ -320,9 +387,31 @@ export default function AdminConcursoMatriculasPage() {
         </div>
       </div>
 
-      {message ? (
-        <div className="mb-6 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
-          {message}
+      {banner ? (
+        <div
+          className={`mb-6 flex gap-3 rounded-2xl border px-4 py-3 text-sm ${
+            banner.variant === 'success'
+              ? 'border-emerald-200 bg-emerald-50 text-emerald-950'
+              : banner.variant === 'error'
+                ? 'border-rose-200 bg-rose-50 text-rose-950'
+                : 'border-slate-200 bg-slate-50 text-slate-700'
+          }`}
+          role="status"
+          aria-live="polite"
+        >
+          {banner.variant === 'success' ? (
+            <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" aria-hidden />
+          ) : banner.variant === 'error' ? (
+            <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-rose-600" aria-hidden />
+          ) : (
+            <Mail className="mt-0.5 h-5 w-5 shrink-0 text-slate-500" aria-hidden />
+          )}
+          <div className="min-w-0">
+            <p className="font-black">{banner.title}</p>
+            {banner.detail ? (
+              <p className="mt-1 font-medium leading-relaxed">{banner.detail}</p>
+            ) : null}
+          </div>
         </div>
       ) : null}
 
@@ -458,12 +547,16 @@ export default function AdminConcursoMatriculasPage() {
           <p className="text-sm text-slate-500">Nenhuma matrícula neste filtro.</p>
         ) : (
           <ul className="divide-y divide-slate-100">
-            {matriculasFiltradas.map((m) => (
+            {matriculasFiltradas.map((m) => {
+              const welcome = welcomeFeedback[m.userId] ?? { status: 'idle' as const };
+              const welcomeSending = welcome.status === 'sending';
+
+              return (
               <li
                 key={m.userId}
-                className="flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between"
+                className="flex flex-col gap-3 py-4 sm:flex-row sm:items-start sm:justify-between"
               >
-                <div className="min-w-0">
+                <div className="min-w-0 flex-1">
                   <p className="truncate font-bold text-slate-900">{m.email}</p>
                   <p className="font-mono text-xs text-slate-400">{m.userId}</p>
                   <p className="mt-1 text-xs text-slate-500">
@@ -478,15 +571,46 @@ export default function AdminConcursoMatriculasPage() {
                       ' · Sem expiração'
                     )}
                   </p>
+                  {welcome.status === 'sending' ? (
+                    <p className="mt-2 flex items-center gap-2 text-xs font-semibold text-cyan-800">
+                      <Loader2 className="h-3.5 w-3.5 animate-spin" aria-hidden />
+                      Enviando boas-vindas…
+                    </p>
+                  ) : null}
+                  {welcome.status === 'success' ? (
+                    <p className="mt-2 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs font-medium text-emerald-900">
+                      <span className="flex items-center gap-1.5 font-black">
+                        <CheckCircle2 className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                        Enviado para {welcome.email}
+                      </span>
+                      <span className="mt-1 block text-emerald-800/90">
+                        {new Date(welcome.sentAt).toLocaleString('pt-BR')}
+                        {welcome.resendId ? ` · ${welcome.resendId}` : ''}
+                      </span>
+                    </p>
+                  ) : null}
+                  {welcome.status === 'error' ? (
+                    <p className="mt-2 flex items-start gap-1.5 rounded-xl border border-rose-200 bg-rose-50 px-3 py-2 text-xs font-medium text-rose-900">
+                      <AlertCircle className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden />
+                      <span>
+                        <span className="font-black">Não enviado:</span> {welcome.detail}
+                      </span>
+                    </p>
+                  ) : null}
                 </div>
                 <div className="flex shrink-0 flex-wrap items-center gap-2">
                   <button
                     type="button"
-                    disabled={saving}
+                    disabled={saving || welcomeSending}
                     onClick={() => void reenviarBoasVindas(m.userId, m.email)}
-                    className="inline-flex items-center justify-center gap-2 rounded-2xl border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-bold text-cyan-900 hover:bg-cyan-100 disabled:opacity-50"
+                    className="inline-flex items-center justify-center gap-2 rounded-2xl border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-bold text-cyan-900 hover:bg-cyan-100 disabled:cursor-not-allowed disabled:opacity-50"
                   >
-                    Reenviar boas-vindas
+                    {welcomeSending ? (
+                      <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+                    ) : (
+                      <Mail className="h-4 w-4" aria-hidden />
+                    )}
+                    {welcomeSending ? 'Enviando…' : 'Reenviar boas-vindas'}
                   </button>
                   {m.status === 'ativo' ? (
                     <button
@@ -523,7 +647,8 @@ export default function AdminConcursoMatriculasPage() {
                   </button>
                 </div>
               </li>
-            ))}
+            );
+            })}
           </ul>
         )}
       </section>

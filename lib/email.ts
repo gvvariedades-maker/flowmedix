@@ -29,11 +29,16 @@ function getResendClient(): Resend {
 /**
  * Envia e-mail transacional via Resend com template React Email.
  */
+export type SendEmailResult = {
+  id: string | undefined;
+  to: string;
+};
+
 export async function sendEmail(
   to: string,
   subject: string,
   react: ReactElement,
-): Promise<void> {
+): Promise<SendEmailResult> {
   const parsedTo = emailToSchema.safeParse(to);
   if (!parsedTo.success) {
     logger.error('Destinatário de e-mail inválido', parsedTo.error, { to });
@@ -68,6 +73,8 @@ export async function sendEmail(
       to: parsedTo.data,
       subject,
     });
+
+    return { id: data?.id, to: parsedTo.data };
   } catch (err) {
     logger.error('Erro inesperado ao enviar e-mail', err, {
       to: parsedTo.data,
