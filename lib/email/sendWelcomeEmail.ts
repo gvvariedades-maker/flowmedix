@@ -70,7 +70,7 @@ export async function sendWelcomeEmail(userId: string): Promise<SendWelcomeEmail
     const sent = await sendEmail(
       authData.user.email,
       'Bem-vindo ao Avant',
-      createElement(WelcomeEmail, { firstName }),
+      createElement(WelcomeEmail, { firstName: firstName ?? 'estudante' }),
     );
 
     return { success: true, email: sent.to, resendId: sent.id };
