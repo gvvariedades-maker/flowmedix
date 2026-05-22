@@ -206,11 +206,19 @@ export default function AdminConcursoMatriculasPage() {
     }
   }
 
-  async function excluirMatricula(userId: string, email: string) {
+  async function excluirMatricula(userId: string, email: string, deleteAccount: boolean) {
     if (!concursoId) return;
-    if (
+    if (deleteAccount) {
+      if (
+        !window.confirm(
+          `Excluir a CONTA de ${email}?\n\nRemove o usuário do Auth (matrículas, histórico e cadernos em cascade). O e-mail poderá ser usado de novo no cadastro grátis.\n\nEsta ação não pode ser desfeita.`,
+        )
+      ) {
+        return;
+      }
+    } else if (
       !window.confirm(
-        `Excluir permanentemente a matrícula de ${email} neste concurso?\n\nO registro será removido do Supabase. Esta ação não pode ser desfeita.`,
+        `Remover só a matrícula de ${email} neste concurso?\n\nA conta no Auth continua existindo — o e-mail NÃO poderá se cadastrar de novo. Para permitir recadastro, use «Excluir conta».`,
       )
     ) {
       return;
@@ -222,14 +230,20 @@ export default function AdminConcursoMatriculasPage() {
         method: 'DELETE',
         credentials: 'same-origin',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId }),
+        body: JSON.stringify({ userId, deleteAccount }),
       });
       const payload = await res.json();
       if (!res.ok) throw new Error(payload.error || 'Falha ao excluir');
-      setMessage('Matrícula excluída do Supabase.');
+      setMessage(
+        typeof payload.message === 'string'
+          ? payload.message
+          : deleteAccount
+            ? 'Conta excluída.'
+            : 'Matrícula excluída.',
+      );
       await carregar();
     } catch (e) {
-      setMessage(e instanceof Error ? e.message : 'Erro ao excluir matrícula');
+      setMessage(e instanceof Error ? e.message : 'Erro ao excluir');
     } finally {
       setSaving(false);
     }
@@ -460,11 +474,20 @@ export default function AdminConcursoMatriculasPage() {
                   <button
                     type="button"
                     disabled={saving}
-                    onClick={() => void excluirMatricula(m.userId, m.email)}
+                    onClick={() => void excluirMatricula(m.userId, m.email, false)}
+                    className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-bold text-slate-700 hover:bg-slate-100 disabled:opacity-50"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                    Só matrícula
+                  </button>
+                  <button
+                    type="button"
+                    disabled={saving}
+                    onClick={() => void excluirMatricula(m.userId, m.email, true)}
                     className="inline-flex items-center justify-center gap-2 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-2 text-sm font-bold text-rose-800 hover:bg-rose-100 disabled:opacity-50"
                   >
                     <Trash2 className="h-4 w-4" />
-                    Excluir matrícula
+                    Excluir conta
                   </button>
                 </div>
               </li>

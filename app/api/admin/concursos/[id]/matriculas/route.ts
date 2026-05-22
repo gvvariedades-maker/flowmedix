@@ -9,6 +9,7 @@ import {
   ConcursoAdminMatriculaSchema,
 } from '@/lib/validations';
 import { invalidateUserModulosCache } from '@/lib/cache';
+import { deleteAuthUserCompletely } from '@/lib/supabase/deleteAuthUser';
 import { logger } from '@/lib/logger';
 
 const MATRICULAS_LIST_LIMIT = 500;
@@ -250,6 +251,22 @@ export async function DELETE(
     );
   }
 
+  if (parsed.data.deleteAccount) {
+    try {
+      await deleteAuthUserCompletely(auth.admin, parsed.data.userId);
+    } catch (deleteError) {
+      const msg =
+        deleteError instanceof Error ? deleteError.message : 'Erro ao excluir conta';
+      return NextResponse.json({ error: msg }, { status: 400 });
+    }
+
+    return NextResponse.json({
+      ok: true,
+      deletedAccount: true,
+      message: 'Conta excluída do Auth. O e-mail pode ser usado em um novo cadastro.',
+    });
+  }
+
   const { error, count } = await auth.admin
     .from('concurso_matriculas')
     .delete({ count: 'exact' })
@@ -277,5 +294,10 @@ export async function DELETE(
     });
   }
 
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({
+    ok: true,
+    deletedAccount: false,
+    message:
+      'Matrícula removida. A conta no Auth permanece — use «Excluir conta» para permitir recadastro com o mesmo e-mail.',
+  });
 }

@@ -532,9 +532,11 @@ export const AdminCriarUsuarioMatriculaSchema = z.object({
   nome: z.string().trim().max(200).optional(),
 });
 
-/** Revogação de acesso (matrícula administrativa ou outra). */
+/** Revogação ou exclusão de matrícula no admin. */
 export const ConcursoAdminMatriculaRevogarSchema = z.object({
   userId: z.string().uuid('ID do usuário inválido'),
+  /** Se true, remove também a conta no Auth (permite recadastro com o mesmo e-mail). */
+  deleteAccount: z.boolean().optional().default(false),
 });
 
 export const ConcursoModuloLinkSchema = z.object({
