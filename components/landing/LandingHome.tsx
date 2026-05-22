@@ -316,6 +316,7 @@ export default function LandingHome() {
         ctaLabelShort="Grátis"
         ctaLabelTight="Começar grátis →"
         showProSubscribe
+        showAvantProLink={false}
       />
 
       <main className="relative z-10">
