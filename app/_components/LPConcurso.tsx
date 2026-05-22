@@ -135,7 +135,7 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
             <HeroBackdrop />
           </div>
           <div className="relative mx-auto max-w-6xl">
-            <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr]">
+            <div className="grid items-center gap-10 lg:grid-cols-[1fr_340px]">
               <div>
                 <p
                   className={`mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-black sm:text-sm ${badgeClassName}`}
@@ -182,7 +182,9 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
                 </div>
               </div>
 
-              <NeuroSlideCarousel />
+              <div className="flex w-full min-w-0 justify-center">
+                <NeuroSlideCarousel />
+              </div>
             </div>
           </div>
         </LPMotionSection>

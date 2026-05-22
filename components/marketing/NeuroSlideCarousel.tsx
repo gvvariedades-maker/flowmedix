@@ -3,6 +3,12 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import {
+  NEUROSLIDE_ASPECT_CLASS,
+  NEUROSLIDE_DISPLAY_MAX_WIDTH,
+  NEUROSLIDE_IMAGE_SIZES,
+} from '@/lib/marketing/neuroslideAssets';
+import { cn } from '@/lib/utils';
 
 const NEURO_SLIDES = [
   {
@@ -35,10 +41,12 @@ const NEURO_SLIDES = [
   },
 ] as const;
 
-const AVANT_SLIDE_ASPECT = { width: 750, height: 1334 } as const;
+export type NeuroSlideCarouselProps = {
+  className?: string;
+};
 
-/** Carrossel de screenshots do player — mesmo visual/tamanho da homepage. */
-export function NeuroSlideCarousel() {
+/** Carrossel de screenshots do player — proporção fixa 487×1024, max 340px de largura. */
+export function NeuroSlideCarousel({ className }: NeuroSlideCarouselProps) {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const slide = NEURO_SLIDES[active];
@@ -54,7 +62,11 @@ export function NeuroSlideCarousel() {
       initial={{ opacity: 0, y: 24, scale: 0.98 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ delay: 0.12, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-      className="relative mx-auto max-w-[340px] overflow-visible"
+      className={cn(
+        'relative mx-auto w-full shrink-0 justify-self-center overflow-visible',
+        className,
+      )}
+      style={{ maxWidth: NEUROSLIDE_DISPLAY_MAX_WIDTH }}
     >
       <div className="absolute -inset-8 rounded-full bg-cyan-400/10 blur-3xl" />
       <div
@@ -68,21 +80,24 @@ export function NeuroSlideCarousel() {
               key={s.src}
               className={
                 i === active
-                  ? 'relative'
-                  : 'pointer-events-none absolute inset-x-4 top-4 opacity-0'
+                  ? cn('relative w-full', NEUROSLIDE_ASPECT_CLASS)
+                  : cn(
+                      'pointer-events-none absolute inset-x-4 top-4 w-[calc(100%-2rem)] opacity-0',
+                      NEUROSLIDE_ASPECT_CLASS,
+                    )
               }
               aria-hidden={i !== active}
             >
               <Image
                 src={s.src}
                 alt={s.alt}
-                width={AVANT_SLIDE_ASPECT.width}
-                height={AVANT_SLIDE_ASPECT.height}
+                fill
                 priority={i === 0}
-                className={`h-auto w-full rounded-2xl transition-opacity duration-500 ${
-                  i === active ? 'opacity-100' : 'opacity-0'
-                }`}
-                style={{ objectFit: 'contain' }}
+                sizes={NEUROSLIDE_IMAGE_SIZES}
+                className={cn(
+                  'rounded-2xl object-contain transition-opacity duration-500',
+                  i === active ? 'opacity-100' : 'opacity-0',
+                )}
               />
             </div>
           ))}

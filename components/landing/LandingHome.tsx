@@ -321,7 +321,7 @@ export default function LandingHome() {
       <main className="relative z-10">
         {/* Hero */}
         <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 pb-16 sm:pb-24">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr]">
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_340px]">
             <div>
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
@@ -399,7 +399,9 @@ export default function LandingHome() {
               </motion.p>
             </div>
 
-            <NeuroSlideCarousel />
+            <div className="flex w-full min-w-0 justify-center">
+              <NeuroSlideCarousel />
+            </div>
           </div>
         </section>
 
