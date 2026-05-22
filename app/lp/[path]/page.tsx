@@ -1,11 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { LPConcurso } from '@/app/_components/LPConcurso';
-import {
-  getPublishedLpPageByPath,
-  resolveLpConcursoConfig,
-  resolveLpSeo,
-} from '@/lib/lp/pages';
+import { getPublishedLpPageByPath } from '@/lib/lp/pages';
+import { resolveLpConcursoConfig, resolveLpSeo } from '@/lib/lp/shared';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
 
 type PageProps = { params: Promise<{ path: string }> };

@@ -9,7 +9,8 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { PublicDarkSiteHeader } from '@/components/layout/PublicDarkSiteHeader';
-import { listPublishedLpPagesForCatalog, lpPublicHref, type LpCatalogItem } from '@/lib/lp/pages';
+import { listPublishedLpPagesForCatalog } from '@/lib/lp/pages';
+import { lpPublicHref, type LpCatalogItem } from '@/lib/lp/shared';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
 
 export const metadata: Metadata = {

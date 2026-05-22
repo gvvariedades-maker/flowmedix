@@ -1,3 +1,5 @@
+import 'server-only';
+
 import { createSupabaseServerClient } from '@/lib/supabase/server-auth';
 import { createServerSupabase } from '@/lib/supabase/server';
 import { logger } from '@/lib/logger';
@@ -9,13 +11,7 @@ import {
   parseLpPageConfig,
 } from '@/lib/lp/shared';
 
-export type { LpCatalogItem, LpPageSeo, LpPageWithTemplate } from '@/lib/lp/shared';
-export {
-  mergeTemplateDefaults,
-  resolveLpConcursoConfig,
-  resolveLpSeo,
-  lpPublicHref,
-} from '@/lib/lp/shared';
+export type { LpCatalogItem, LpPageWithTemplate } from '@/lib/lp/shared';
 
 const LP_PAGE_PUBLIC_SELECT =
   'id, path, template_id, status, internal_name, config, seo, utm_campaign, published_at, created_at, updated_at, lp_templates(id, slug, nome, default_config)';

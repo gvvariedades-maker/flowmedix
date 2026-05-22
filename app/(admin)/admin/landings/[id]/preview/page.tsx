@@ -4,7 +4,8 @@ import { ArrowLeft } from 'lucide-react';
 import { LPConcurso } from '@/app/_components/LPConcurso';
 import { getServerSession } from '@/lib/supabase/server-auth';
 import { isAdminSessionEmail } from '@/lib/constants';
-import { getLpPageByIdForAdmin, lpPublicHref, resolveLpConcursoConfig } from '@/lib/lp/pages';
+import { getLpPageByIdForAdmin } from '@/lib/lp/pages';
+import { lpPublicHref, resolveLpConcursoConfig } from '@/lib/lp/shared';
 
 type PageProps = { params: Promise<{ id: string }> };
 
