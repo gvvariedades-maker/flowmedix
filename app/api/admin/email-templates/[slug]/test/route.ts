@@ -10,6 +10,8 @@ import { EmailTemplateUpdateSchema } from '@/lib/validations';
 import { mergeEmailContent } from '@/lib/email/templateContent';
 import { logger } from '@/lib/logger';
 
+export const runtime = 'nodejs';
+
 type RouteContext = { params: Promise<{ slug: string }> };
 
 async function adminSessionEmail(): Promise<string | null> {

@@ -9,6 +9,8 @@ import { isAdminSessionEmail } from '@/lib/constants';
 import { MarketingEmailSendSchema } from '@/lib/validations';
 import { logger } from '@/lib/logger';
 
+export const runtime = 'nodejs';
+
 async function adminSessionEmail(): Promise<string | null> {
   const cookieStore = await cookies();
   const supabase = createServerClient(

@@ -5,6 +5,8 @@ import { getEmailTemplateBySlug, updateEmailTemplate } from '@/lib/email/templat
 import { EmailTemplateUpdateSchema } from '@/lib/validations';
 import { logger } from '@/lib/logger';
 
+export const runtime = 'nodejs';
+
 type RouteContext = { params: Promise<{ slug: string }> };
 
 export async function GET(_request: NextRequest, { params }: RouteContext) {

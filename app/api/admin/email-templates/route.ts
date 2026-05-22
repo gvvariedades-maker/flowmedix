@@ -4,6 +4,8 @@ import { requireAdminApi } from '@/lib/admin/requireAdmin';
 import { listEmailTemplates } from '@/lib/email/templates';
 import { logger } from '@/lib/logger';
 
+export const runtime = 'nodejs';
+
 export async function GET() {
   const auth = await requireAdminApi();
   if ('error' in auth) return auth.error;

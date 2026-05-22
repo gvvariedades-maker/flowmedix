@@ -1,11 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  serverExternalPackages: [
-    '@react-email/components',
-    '@react-email/render',
-    'resend',
-    'server-only',
-  ],
+  serverExternalPackages: ['@react-email/components', '@react-email/render', 'resend'],
   async redirects() {
     return [
       { source: '/campina-grande', destination: '/lp/campina-grande', permanent: true },
