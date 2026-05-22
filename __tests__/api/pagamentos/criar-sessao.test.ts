@@ -1,29 +1,18 @@
 /**
  * @jest-environment node
  */
-import { NextRequest } from 'next/server';
-import { POST } from '@/app/api/pagamentos/criar-sessao/route';
-import { getServerSession } from '@/lib/supabase/server-auth';
-import { getConcursoBySlug } from '@/lib/concursos/entitlements';
-import { getStripeClient } from '@/lib/stripe/client';
 
 jest.mock('@/lib/supabase/server-auth', () => ({
   getServerSession: jest.fn(),
-  createSupabaseServerClient: jest.fn(),
-}));
-
-jest.mock('@/lib/concursos/entitlements', () => ({
-  CAMPINA_GRANDE_2026_SLUG: 'campina-grande-2026',
-  CAMPINA_GRANDE_LANDING_HREF: '/campina-grande',
-  GOIANINHA_RN_SLUG: 'goianinha-rn',
-  GOIANINHA_LANDING_HREF: '/goianinha',
-  GERAL_CONCURSO_SLUG: 'geral',
-  getConcursoBySlug: jest.fn(),
-  isActiveMatriculaRow: jest.fn(),
 }));
 
 jest.mock('@/lib/freemium', () => ({
-  isUserPro: jest.fn(),
+  userHasUnlimitedStudyAccess: jest.fn(),
+}));
+
+jest.mock('@/lib/constants', () => ({
+  ...jest.requireActual('@/lib/constants'),
+  isAdminSessionEmail: jest.fn(),
 }));
 
 jest.mock('@/lib/pro/env', () => ({
@@ -38,8 +27,22 @@ jest.mock('@/lib/siteUrl', () => ({
   getAbsoluteUrl: (path: string) => `https://avant.test${path}`,
 }));
 
+import { NextRequest } from 'next/server';
+import { POST } from '@/app/api/pagamentos/criar-sessao/route';
+import { getServerSession } from '@/lib/supabase/server-auth';
+import { isAdminSessionEmail } from '@/lib/constants';
+import { userHasUnlimitedStudyAccess } from '@/lib/freemium';
+import { requireStripePriceIdPro } from '@/lib/pro/env';
+import { getStripeClient } from '@/lib/stripe/client';
+
 const mockGetServerSession = getServerSession as jest.MockedFunction<typeof getServerSession>;
-const mockGetConcursoBySlug = getConcursoBySlug as jest.MockedFunction<typeof getConcursoBySlug>;
+const mockUserHasUnlimitedStudyAccess = userHasUnlimitedStudyAccess as jest.MockedFunction<
+  typeof userHasUnlimitedStudyAccess
+>;
+const mockIsAdminSessionEmail = isAdminSessionEmail as jest.MockedFunction<typeof isAdminSessionEmail>;
+const mockRequireStripePriceIdPro = requireStripePriceIdPro as jest.MockedFunction<
+  typeof requireStripePriceIdPro
+>;
 const mockGetStripeClient = getStripeClient as jest.MockedFunction<typeof getStripeClient>;
 
 describe('POST /api/pagamentos/criar-sessao', () => {
@@ -48,23 +51,19 @@ describe('POST /api/pagamentos/criar-sessao', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     mockGetServerSession.mockResolvedValue(null);
-    mockGetConcursoBySlug.mockResolvedValue({
-      id: 'concurso-1',
-      slug: 'goianinha-rn',
-      nome: 'Goianinha',
-      status: 'ativo',
-      price_cents: 3700,
-    } as Awaited<ReturnType<typeof getConcursoBySlug>>);
-    checkoutCreate.mockResolvedValue({ url: 'https://checkout.stripe.test/cs_guest' });
+    checkoutCreate.mockResolvedValue({ url: 'https://checkout.stripe.test/cs_pro' });
     mockGetStripeClient.mockReturnValue({
       checkout: { sessions: { create: checkoutCreate } },
     } as unknown as NonNullable<ReturnType<typeof getStripeClient>>);
+    mockRequireStripePriceIdPro.mockReturnValue('price_pro_test');
+    mockUserHasUnlimitedStudyAccess.mockResolvedValue(false);
+    mockIsAdminSessionEmail.mockReturnValue(false);
   });
 
-  it('redireciona checkout de Goianinha para a landing /goianinha', async () => {
+  it('rejeita slug de edital e aponta para /assinar-pro', async () => {
     const request = new NextRequest('https://avant.test/api/pagamentos/criar-sessao', {
       method: 'POST',
-      body: JSON.stringify({ concurso_slug: 'goianinha-rn' }),
+      body: JSON.stringify({ concurso_slug: 'campina-grande-2026' }),
       headers: { 'content-type': 'application/json' },
     });
 
@@ -72,25 +71,14 @@ describe('POST /api/pagamentos/criar-sessao', () => {
     const body = await response.json();
 
     expect(response.status).toBe(400);
-    expect(body).toEqual({
-      error: 'Este edital é adquirido na página do pacote Goianinha.',
-      redirectUrl: '/goianinha',
-    });
+    expect(body.redirectUrl).toBe('/assinar-pro');
     expect(checkoutCreate).not.toHaveBeenCalled();
   });
 
-  it('cria sessão Stripe guest sem usuário logado e sem insert de compra', async () => {
-    mockGetConcursoBySlug.mockResolvedValue({
-      id: 'concurso-2',
-      slug: 'outro-edital',
-      nome: 'Outro edital',
-      status: 'ativo',
-      price_cents: 3700,
-    } as Awaited<ReturnType<typeof getConcursoBySlug>>);
-
+  it('cria sessão Stripe Pro (geral) para visitante sem login', async () => {
     const request = new NextRequest('https://avant.test/api/pagamentos/criar-sessao', {
       method: 'POST',
-      body: JSON.stringify({ concurso_slug: 'outro-edital' }),
+      body: JSON.stringify({ concurso_slug: 'geral' }),
       headers: { 'content-type': 'application/json' },
     });
 
@@ -98,24 +86,27 @@ describe('POST /api/pagamentos/criar-sessao', () => {
     const body = await response.json();
 
     expect(response.status).toBe(200);
-    expect(body).toEqual({ url: 'https://checkout.stripe.test/cs_guest' });
+    expect(body).toEqual({ url: 'https://checkout.stripe.test/cs_pro' });
     expect(checkoutCreate).toHaveBeenCalledWith(
       expect.objectContaining({
-        mode: 'payment',
+        mode: 'subscription',
         metadata: {
-          guest_checkout: '1',
-          concurso_slug: 'outro-edital',
+          produto: 'avant-pro',
+          user_id: '',
         },
-        success_url: 'https://avant.test/concursos/outro-edital/comprar?compra=1',
-        cancel_url: 'https://avant.test/concursos/outro-edital/comprar?cancelado=1',
+        line_items: [{ price: 'price_pro_test', quantity: 1 }],
+        success_url: 'https://avant.test/checkout/sucesso?session_id={CHECKOUT_SESSION_ID}',
+        cancel_url: 'https://avant.test/',
       }),
     );
-    expect(checkoutCreate.mock.calls[0][0].metadata).not.toHaveProperty('purchase_id');
-    expect(checkoutCreate.mock.calls[0][0].client_reference_id).toBeUndefined();
   });
 
-  it('exige autenticação para checkout Pro (geral)', async () => {
-    mockGetServerSession.mockResolvedValue(null);
+  it('redireciona admin logado sem abrir Stripe', async () => {
+    mockGetServerSession.mockResolvedValue({
+      user: { id: 'admin-1', email: 'admin@avant.test' },
+    } as Awaited<ReturnType<typeof getServerSession>>);
+    mockUserHasUnlimitedStudyAccess.mockResolvedValue(true);
+    mockIsAdminSessionEmail.mockReturnValue(true);
 
     const request = new NextRequest('https://avant.test/api/pagamentos/criar-sessao', {
       method: 'POST',
@@ -126,8 +117,29 @@ describe('POST /api/pagamentos/criar-sessao', () => {
     const response = await POST(request);
     const body = await response.json();
 
-    expect(response.status).toBe(401);
-    expect(body).toEqual({ error: 'Não autenticado' });
+    expect(response.status).toBe(409);
+    expect(body.redirectUrl).toBe('/admin');
     expect(checkoutCreate).not.toHaveBeenCalled();
+  });
+
+  it('cria sessão Pro com customer_email quando usuário está logado', async () => {
+    mockGetServerSession.mockResolvedValue({
+      user: { id: 'user-1', email: 'aluno@test.com' },
+    } as Awaited<ReturnType<typeof getServerSession>>);
+
+    const request = new NextRequest('https://avant.test/api/pagamentos/criar-sessao', {
+      method: 'POST',
+      body: JSON.stringify({ concurso_slug: 'geral' }),
+      headers: { 'content-type': 'application/json' },
+    });
+
+    const response = await POST(request);
+    expect(response.status).toBe(200);
+    expect(checkoutCreate).toHaveBeenCalledWith(
+      expect.objectContaining({
+        customer_email: 'aluno@test.com',
+        metadata: expect.objectContaining({ user_id: 'user-1' }),
+      }),
+    );
   });
 });

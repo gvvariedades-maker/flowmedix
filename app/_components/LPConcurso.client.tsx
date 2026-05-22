@@ -6,7 +6,6 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { Loader2, Zap } from 'lucide-react';
 import { useProCheckout } from '@/components/pro/useProCheckout';
-import { proCheckoutLoginHref } from '@/lib/pro/checkoutPaths';
 
 const ONE_DAY_IN_MS = 1000 * 60 * 60 * 24;
 
@@ -253,23 +252,16 @@ export function LPCheckoutButton({
         )}
       </button>
       {error ? (
-        <div
+        <p
           className={
             compact
-              ? 'absolute top-full right-0 z-50 mt-2 w-64 rounded-xl border border-rose-500/20 bg-slate-950 p-3 shadow-xl'
-              : ''
+              ? 'absolute top-full right-0 z-50 mt-2 w-64 rounded-xl border border-rose-500/20 bg-slate-950 p-3 text-sm font-medium text-rose-300 shadow-xl'
+              : 'text-sm font-medium text-rose-300'
           }
+          role="alert"
         >
-          <p className="text-sm font-medium text-rose-300" role="alert">
-            {error}
-          </p>
-          <Link
-            href={proCheckoutLoginHref()}
-            className="mt-2 inline-block text-sm font-bold text-cyan-300 hover:text-cyan-200"
-          >
-            Entrar para assinar →
-          </Link>
-        </div>
+          {error}
+        </p>
       ) : null}
     </div>
   );

@@ -1,23 +1,11 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import type Stripe from 'stripe';
 import { dispatchStripeWebhookEvent } from '@/lib/stripe/webhookDispatcher';
-import { processGuestConcursoCheckoutCompleted } from '@/lib/concursos/guestCheckoutWebhook';
 import { processStripeWebhookEvent } from '@/lib/pagamentos/webhook';
-
-jest.mock('@/lib/concursos/guestCheckoutWebhook', () => ({
-  processGuestConcursoCheckoutCompleted: jest.fn(),
-}));
+import { processProCheckoutCompleted } from '@/lib/pro/webhook';
 
 jest.mock('@/lib/pagamentos/webhook', () => ({
   processStripeWebhookEvent: jest.fn(),
-}));
-
-jest.mock('@/lib/campina/webhook', () => ({
-  processCampinaGrandeCheckoutCompleted: jest.fn(),
-}));
-
-jest.mock('@/lib/goianinha/webhook', () => ({
-  processGoianinhaCheckoutCompleted: jest.fn(),
 }));
 
 jest.mock('@/lib/pro/webhook', () => ({
@@ -25,11 +13,11 @@ jest.mock('@/lib/pro/webhook', () => ({
   processProSubscriptionCancelled: jest.fn(),
 }));
 
-const mockGuestHandler = processGuestConcursoCheckoutCompleted as jest.MockedFunction<
-  typeof processGuestConcursoCheckoutCompleted
->;
 const mockPurchaseHandler = processStripeWebhookEvent as jest.MockedFunction<
   typeof processStripeWebhookEvent
+>;
+const mockProHandler = processProCheckoutCompleted as jest.MockedFunction<
+  typeof processProCheckoutCompleted
 >;
 
 describe('dispatchStripeWebhookEvent', () => {
@@ -37,11 +25,7 @@ describe('dispatchStripeWebhookEvent', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    mockGuestHandler.mockResolvedValue({
-      handled: true,
-      purchaseId: 'purchase-guest-1',
-      userId: 'user-guest-1',
-    });
+    mockProHandler.mockResolvedValue({ handled: true, userId: 'user-pro-1' });
     mockPurchaseHandler.mockResolvedValue({
       handled: true,
       purchaseId: 'purchase-auth-1',
@@ -49,11 +33,11 @@ describe('dispatchStripeWebhookEvent', () => {
     });
   });
 
-  it('encaminha checkout guest para processGuestConcursoCheckoutCompleted', async () => {
+  it('encaminha checkout AVANT Pro para processProCheckoutCompleted', async () => {
     const session = {
-      id: 'cs_guest_123',
+      id: 'cs_pro_123',
       payment_status: 'paid',
-      metadata: { guest_checkout: '1', concurso_slug: 'goianinha-rn' },
+      metadata: { produto: 'avant-pro', user_id: 'user-pro-1' },
     } as Stripe.Checkout.Session;
 
     const event = {
@@ -63,13 +47,9 @@ describe('dispatchStripeWebhookEvent', () => {
 
     const result = await dispatchStripeWebhookEvent(supabase, event);
 
-    expect(mockGuestHandler).toHaveBeenCalledWith(supabase, session);
+    expect(mockProHandler).toHaveBeenCalledWith(supabase, session);
     expect(mockPurchaseHandler).not.toHaveBeenCalled();
-    expect(result).toEqual({
-      handled: true,
-      purchaseId: 'purchase-guest-1',
-      userId: 'user-guest-1',
-    });
+    expect(result).toEqual({ handled: true, userId: 'user-pro-1' });
   });
 
   it('mantém fluxo com purchase_id no handler padrão', async () => {
@@ -86,7 +66,7 @@ describe('dispatchStripeWebhookEvent', () => {
 
     const result = await dispatchStripeWebhookEvent(supabase, event);
 
-    expect(mockGuestHandler).not.toHaveBeenCalled();
+    expect(mockProHandler).not.toHaveBeenCalled();
     expect(mockPurchaseHandler).toHaveBeenCalledWith(supabase, event);
     expect(result).toEqual({
       handled: true,

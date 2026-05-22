@@ -143,6 +143,30 @@ export interface ConcursoPurchase {
   paid_at: string | null;
 }
 
+export type LpPageStatus = 'rascunho' | 'ativo' | 'arquivado';
+
+export interface LpTemplate {
+  id: string;
+  slug: string;
+  nome: string;
+  default_config: Record<string, unknown>;
+  created_at: string;
+}
+
+export interface LpPage {
+  id: string;
+  path: string;
+  template_id: string;
+  status: LpPageStatus;
+  internal_name: string;
+  config: Record<string, unknown>;
+  seo: Record<string, unknown>;
+  utm_campaign: string | null;
+  published_at: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
 /** Acessos a produtos avulsos (ex.: pacote Campina Grande) após checkout Stripe. */
 export interface Acesso {
   id: string;

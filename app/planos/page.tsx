@@ -1,252 +1,31 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Building2, CalendarDays, Landmark, MapPin, Sparkles } from 'lucide-react';
-import { PublicDarkSiteHeader } from '@/components/layout/PublicDarkSiteHeader';
 import {
-  GERAL_CONCURSO_SLUG,
-  getActiveMatriculatedConcursoIds,
-  getSellableConcursoLandingHref,
-} from '@/lib/concursos/entitlements';
-import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
+  ArrowRight,
+  Building2,
+  CalendarDays,
+  Landmark,
+  MapPin,
+  Sparkles,
+} from 'lucide-react';
+import { PublicDarkSiteHeader } from '@/components/layout/PublicDarkSiteHeader';
+import { listPublishedLpPagesForCatalog, lpPublicHref, type LpCatalogItem } from '@/lib/lp/pages';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
 
-type PageProps = {
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-};
-
-type SellableConcursoCard = {
-  id: string;
-  slug: string;
-  nome: string;
-  orgao: string | null;
-  banca: string | null;
-  cidade: string | null;
-  data_prova: string | null;
-  price_cents: number;
-};
-
-function formatPriceBRL(cents: number): string {
-  return (cents / 100).toLocaleString('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-  });
-}
-
-function formatProvaDate(value: string | null): string | null {
-  if (!value) return null;
-  const date = new Date(`${value}T12:00:00`);
-  if (Number.isNaN(date.getTime())) return null;
-  return date.toLocaleDateString('pt-BR', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  });
-}
-
-async function loadSellableConcursos(): Promise<SellableConcursoCard[]> {
-  const supabase = await createSupabaseServerClient();
-  const { data, error } = await supabase
-    .from('concursos')
-    .select('id, slug, nome, orgao, banca, cidade, data_prova, price_cents, status, created_at')
-    .eq('status', 'ativo')
-    .gt('price_cents', 0)
-    .neq('slug', GERAL_CONCURSO_SLUG)
-    .order('created_at', { ascending: false });
-
-  if (error) throw error;
-
-  return (data ?? []) as SellableConcursoCard[];
-}
-
 export const metadata: Metadata = {
-  title: 'Pacotes e editais | AVANT',
+  title: 'Concursos abertos | AVANT',
   description:
-    'Escolha o edital de Técnico em Enfermagem com acesso a questões, Estudo Reverso e plano de estudo no AVANT.',
+    'Editais de Técnico em Enfermagem em destaque no AVANT. Estudo Reverso com questões reais e NeuroSlides — assinatura AVANT Pro.',
   alternates: { canonical: '/planos' },
   openGraph: {
-    title: 'Pacotes e editais | AVANT',
+    title: 'Concursos abertos | AVANT',
     description:
-      'Catálogo de editais com acesso completo ao estudo: questões reais, NeuroSlides e revisão guiada.',
+      'Veja os concursos em destaque e prepare-se com o padrão de cada banca no AVANT Pro.',
     url: getAbsoluteUrl('/planos'),
     type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Pacotes e editais | AVANT',
-    description: 'Escolha o edital e libere o catálogo de estudo no AVANT.',
+    locale: 'pt_BR',
   },
 };
-
-export default async function PlanosPage({ searchParams }: PageProps) {
-  const [session, resolvedSearch, concursos] = await Promise.all([
-    getServerSession(),
-    searchParams,
-    loadSellableConcursos().catch(() => [] as SellableConcursoCard[]),
-  ]);
-
-  const userId = session?.user?.id;
-  const activeConcursoIds = userId
-    ? new Set(await getActiveMatriculatedConcursoIds(userId).catch(() => [] as string[]))
-    : new Set<string>();
-
-  const statusParam = resolvedSearch.status;
-  const checkoutStatus = Array.isArray(statusParam) ? statusParam[0] : statusParam;
-  const checkoutCancelled = checkoutStatus === 'cancelled';
-  const loginHref = `/login?next=${encodeURIComponent('/planos')}`;
-  const isAuthenticated = Boolean(userId);
-
-  return (
-    <div className="min-h-screen overflow-x-hidden bg-[#010409] text-slate-100 selection:bg-cyan-400/25 selection:text-white">
-      <div className="pointer-events-none fixed inset-0">
-        <PlanosBackdrop />
-      </div>
-
-      <PublicDarkSiteHeader
-        ctaLabel="Comece grátis"
-        ctaLabelShort="Grátis"
-        ctaLabelTight="Grátis →"
-      />
-
-      <main className="relative z-10">
-        <section className="mx-auto max-w-6xl px-4 pt-12 pb-16 sm:px-6 sm:pt-20 sm:pb-20">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-7 inline-flex items-center gap-1.5 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-4 py-2 text-[10px] font-black tracking-[0.22em] text-cyan-200 uppercase sm:text-xs">
-              <Sparkles size={14} className="shrink-0" aria-hidden />
-              Acesso por edital
-            </p>
-
-            <h1 className="text-4xl leading-[1.08] font-[1000] tracking-tight text-white sm:text-5xl">
-              <span className="bg-gradient-to-r from-white via-cyan-200 to-[#BEF264] bg-clip-text text-transparent">
-                Escolha o edital para estudar
-              </span>
-            </h1>
-
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed font-medium text-slate-400">
-              {isAuthenticated
-                ? 'Selecione o concurso que você quer preparar. O acesso libera questões, Estudo Reverso e o plano de estudo do edital.'
-                : 'Veja os editais disponíveis e conclua a compra com pagamento seguro via Stripe — com ou sem conta.'}
-            </p>
-
-            {!isAuthenticated ? (
-              <p className="mt-6 text-sm text-slate-500">
-                Já tem conta?{' '}
-                <Link
-                  href={loginHref}
-                  className="font-semibold text-cyan-200 transition-colors hover:text-white"
-                >
-                  Entrar
-                </Link>
-              </p>
-            ) : null}
-          </div>
-
-          {checkoutCancelled ? (
-            <div
-              className="mx-auto mt-8 max-w-3xl rounded-2xl border border-amber-400/25 bg-amber-500/10 px-4 py-3 text-sm font-medium text-amber-100"
-              role="status"
-            >
-              Pagamento cancelado. Você pode escolher outro edital ou tentar novamente quando quiser.
-            </div>
-          ) : null}
-
-          {isAuthenticated ? <GeralFreeAccessBanner /> : null}
-
-          {concursos.length > 0 ? (
-            <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {concursos.map((concurso) => (
-                <li key={concurso.id}>
-                  <PlanoCard
-                    concurso={concurso}
-                    hasAccess={activeConcursoIds.has(concurso.id)}
-                  />
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <EmptyCatalog />
-          )}
-        </section>
-      </main>
-    </div>
-  );
-}
-
-function PlanosBackdrop() {
-  return (
-    <>
-      <div className="absolute top-[-22%] left-1/2 h-[520px] w-[min(140%,980px)] -translate-x-1/2 rounded-full bg-cyan-500/20 blur-[130px]" />
-      <div className="absolute right-[-10%] bottom-[-12%] h-[500px] w-[500px] rounded-full bg-[#BEF264]/10 blur-[110px]" />
-      <div className="absolute top-1/2 left-[-15%] h-[420px] w-[420px] rounded-full bg-indigo-600/20 blur-[110px]" />
-      <div
-        className="absolute inset-0 opacity-[0.055]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px)`,
-          backgroundSize: '64px 64px',
-        }}
-      />
-    </>
-  );
-}
-
-function PlanoCard({
-  concurso,
-  hasAccess,
-}: {
-  concurso: SellableConcursoCard;
-  hasAccess: boolean;
-}) {
-  const href = hasAccess ? '/estudar' : getSellableConcursoLandingHref(concurso.slug);
-  const priceLabel = formatPriceBRL(concurso.price_cents);
-  const provaLabel = formatProvaDate(concurso.data_prova);
-
-  return (
-    <Link
-      href={href}
-      className="group flex h-full flex-col rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-2xl shadow-black/20 backdrop-blur-sm transition-all hover:border-cyan-400/25 hover:bg-white/[0.04]"
-    >
-      <div className="flex-1">
-        <div className="flex items-start justify-between gap-3">
-          <p className="text-[10px] font-black tracking-[0.22em] text-slate-500 uppercase">Edital</p>
-          {hasAccess ? (
-            <span className="shrink-0 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-black tracking-[0.14em] text-emerald-200 uppercase">
-              Você já tem acesso
-            </span>
-          ) : null}
-        </div>
-        <h2 className="mt-3 text-xl font-black tracking-tight text-white transition-colors group-hover:text-cyan-100">
-          {concurso.nome}
-        </h2>
-
-        <dl className="mt-5 space-y-3 text-sm">
-          {concurso.orgao ? (
-            <MetaRow icon={Building2} label="Órgão" value={concurso.orgao} />
-          ) : null}
-          {concurso.banca ? (
-            <MetaRow icon={Landmark} label="Banca" value={concurso.banca} />
-          ) : null}
-          {concurso.cidade ? (
-            <MetaRow icon={MapPin} label="Cidade" value={concurso.cidade} />
-          ) : null}
-          {provaLabel ? (
-            <MetaRow icon={CalendarDays} label="Data da prova" value={provaLabel} />
-          ) : null}
-        </dl>
-      </div>
-
-      <div className="mt-6 flex items-end justify-between gap-4 border-t border-white/10 pt-5">
-        <div>
-          <p className="text-[10px] font-black tracking-[0.22em] text-slate-500 uppercase">Investimento</p>
-          <p className="mt-1 text-2xl font-[1000] tracking-tight text-white">{priceLabel}</p>
-        </div>
-        <span className="inline-flex items-center gap-1.5 text-sm font-black uppercase tracking-wider text-[#BEF264]">
-          {hasAccess ? 'Entrar' : 'Ver pacote'}
-          <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" aria-hidden />
-        </span>
-      </div>
-    </Link>
-  );
-}
 
 function MetaRow({
   icon: Icon,
@@ -258,39 +37,145 @@ function MetaRow({
   value: string;
 }) {
   return (
-    <div className="flex items-start gap-3">
-      <Icon size={16} className="mt-0.5 shrink-0 text-cyan-300" aria-hidden />
+    <div className="flex gap-2 text-sm text-slate-300">
+      <Icon size={16} className="mt-0.5 shrink-0 text-slate-500" aria-hidden />
       <div>
-        <dt className="text-[10px] font-black tracking-[0.18em] text-slate-500 uppercase">{label}</dt>
-        <dd className="mt-1 font-semibold text-slate-200">{value}</dd>
+        <dt className="text-[10px] font-black uppercase tracking-widest text-slate-500">{label}</dt>
+        <dd className="font-medium text-slate-200">{value}</dd>
       </div>
     </div>
   );
 }
 
-function GeralFreeAccessBanner() {
+function LpCatalogCard({ item }: { item: LpCatalogItem }) {
+  const href = lpPublicHref(item.path);
+
   return (
-    <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-cyan-400/25 bg-gradient-to-br from-cyan-950/40 via-slate-900/90 to-slate-950 p-6 text-center sm:p-8">
-      <p className="text-[10px] font-black tracking-[0.22em] text-cyan-200 uppercase">AVANT Geral</p>
-      <h2 className="mt-2 text-xl font-black text-white sm:text-2xl">Estudar no catálogo geral (grátis)</h2>
-      <p className="mx-auto mt-3 max-w-lg text-sm text-slate-400">
-        1 questão por dia em qualquer módulo. Assine o AVANT Pro para remover o limite.
-      </p>
-      <Link
-        href="/estudar"
-        className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#BEF264] px-6 py-3.5 text-sm font-black uppercase tracking-wider text-slate-950 shadow-lg shadow-lime-400/20 transition-all hover:bg-[#d4f879]"
-      >
-        Entrar na vitrine
-        <ArrowRight size={18} aria-hidden />
-      </Link>
-    </div>
+    <Link
+      href={href}
+      className="group flex h-full flex-col rounded-3xl border border-white/10 bg-slate-950/70 p-6 shadow-2xl shadow-black/20 backdrop-blur-sm transition-all hover:border-cyan-400/25 hover:bg-white/[0.04]"
+    >
+      <div className="flex-1">
+        <p className="text-[10px] font-black tracking-[0.22em] text-slate-500 uppercase">
+          Concurso em destaque
+        </p>
+        <h2 className="mt-3 text-xl font-black tracking-tight text-white transition-colors group-hover:text-cyan-100">
+          {item.cidade}
+        </h2>
+        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-400">{item.headline}</p>
+
+        <dl className="mt-5 space-y-3">
+          <MetaRow icon={Landmark} label="Banca" value={item.banca} />
+          <MetaRow icon={Building2} label="Órgão" value={item.orgao} />
+          <MetaRow icon={MapPin} label="Cargo" value={item.cargo} />
+          <MetaRow icon={CalendarDays} label="Data da prova" value={item.dataProvaFormatada} />
+        </dl>
+      </div>
+
+      <div className="mt-6 flex items-end justify-between gap-4 border-t border-white/10 pt-5">
+        <div>
+          <p className="text-[10px] font-black tracking-[0.22em] text-slate-500 uppercase">
+            Inscrições
+          </p>
+          <p className="mt-1 text-sm font-semibold text-slate-200">{item.statusInscricoes}</p>
+        </div>
+        <span className="inline-flex items-center gap-1.5 text-sm font-black uppercase tracking-wider text-[#BEF264]">
+          Ver página
+          <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" aria-hidden />
+        </span>
+      </div>
+    </Link>
   );
 }
 
-function EmptyCatalog() {
+export default async function PlanosPage() {
+  const catalog = await listPublishedLpPagesForCatalog();
+
   return (
-    <p className="mx-auto mt-12 max-w-xl rounded-3xl border border-white/10 bg-white/[0.03] px-6 py-8 text-center text-sm text-slate-400">
-      Nenhum edital comercial está disponível no momento. Volte em breve ou acompanhe as novidades no blog.
-    </p>
+    <div className="min-h-screen bg-[#010409] text-slate-100">
+      <PublicDarkSiteHeader
+        ctaLabel="Comece grátis"
+        ctaLabelShort="Grátis"
+        ctaHref="/register"
+        showProSubscribe
+      />
+
+      <main className="relative overflow-hidden px-4 pb-24 pt-8 sm:px-6 lg:px-8">
+        <div className="pointer-events-none absolute top-0 left-1/2 h-[480px] w-[min(120%,900px)] -translate-x-1/2 rounded-full bg-cyan-500/15 blur-[120px]" />
+
+        <div className="relative mx-auto max-w-6xl">
+          <div className="mb-10 max-w-2xl">
+            <p className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-500/10 px-3 py-1 text-[10px] font-black tracking-[0.2em] text-cyan-200 uppercase">
+              <Sparkles size={12} aria-hidden />
+              Concursos abertos
+            </p>
+            <h1 className="mt-4 text-3xl font-[1000] tracking-tight text-white sm:text-4xl">
+              Editais em destaque para Técnico em Enfermagem
+            </h1>
+            <p className="mt-4 text-base leading-relaxed text-slate-400">
+              Escolha o concurso que você está acompanhando. Cada página traz o contexto do edital e
+              o caminho para assinar o{' '}
+              <span className="font-semibold text-white">AVANT Pro</span> — estudo com questões
+              reais e NeuroSlides.
+            </p>
+            <p className="mt-4 text-sm text-slate-500">
+              Já tem conta?{' '}
+              <Link href="/login" className="font-bold text-cyan-300 hover:text-cyan-200">
+                Entrar
+              </Link>
+            </p>
+          </div>
+
+          {catalog.length === 0 ? (
+            <div className="rounded-3xl border border-dashed border-white/15 bg-white/[0.02] px-6 py-16 text-center">
+              <p className="text-lg font-semibold text-slate-300">
+                Nenhum concurso em destaque no momento.
+              </p>
+              <p className="mx-auto mt-2 max-w-md text-sm text-slate-500">
+                Volte em breve ou assine o AVANT Pro para estudar com acesso completo à plataforma.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+                <Link
+                  href="/assinar-pro"
+                  className="inline-flex items-center gap-2 rounded-xl bg-[#BEF264] px-5 py-3 text-xs font-black uppercase tracking-wider text-slate-950"
+                >
+                  Assinar AVANT Pro
+                  <ArrowRight size={16} aria-hidden />
+                </Link>
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-5 py-3 text-xs font-black uppercase tracking-wider text-slate-200"
+                >
+                  Ver blog
+                </Link>
+              </div>
+            </div>
+          ) : (
+            <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              {catalog.map((item) => (
+                <li key={item.path}>
+                  <LpCatalogCard item={item} />
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {catalog.length > 0 ? (
+            <section className="mt-12 rounded-3xl border border-white/10 bg-slate-950/60 p-6 text-center sm:p-8">
+              <p className="text-sm text-slate-400">
+                Quer acesso completo a todos os editais e questões ilimitadas?
+              </p>
+              <Link
+                href="/assinar-pro"
+                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#BEF264] px-6 py-3 text-xs font-black uppercase tracking-wider text-slate-950 transition-transform hover:scale-[1.02]"
+              >
+                Assinar AVANT Pro
+                <ArrowRight size={16} aria-hidden />
+              </Link>
+            </section>
+          ) : null}
+        </div>
+      </main>
+    </div>
   );
 }

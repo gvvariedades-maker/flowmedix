@@ -42,6 +42,19 @@ export function isFreemiumUnlimitedEmail(email: string | null | undefined): bool
 }
 
 /**
+ * Acesso ilimitado ao estudo (admin por e-mail ou assinatura Pro ativa).
+ * Usado no checkout para não enviar ao Stripe quem já pode estudar sem limite.
+ */
+export async function userHasUnlimitedStudyAccess(
+  userId: string | undefined,
+  email: string | null | undefined,
+): Promise<boolean> {
+  if (isFreemiumUnlimitedEmail(email)) return true;
+  if (userId) return isUserPro(userId);
+  return false;
+}
+
+/**
  * Pro = matrícula em `geral` com origem `stripe_pro`, status ativo e `expires_at` válido.
  * Matrícula `cadastro` ou edital pago não contam como Pro.
  */

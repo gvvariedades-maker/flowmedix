@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   serverExternalPackages: ['@react-email/components'],
+  async redirects() {
+    return [
+      { source: '/campina-grande', destination: '/lp/campina-grande', permanent: true },
+      { source: '/goianinha', destination: '/lp/goianinha', permanent: true },
+    ];
+  },
   images: {
     remotePatterns: [
       {

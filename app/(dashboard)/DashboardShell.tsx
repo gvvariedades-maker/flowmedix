@@ -194,10 +194,16 @@ function CityCard({ cidadeExibicao, isPro }: { cidadeExibicao: string; isPro: bo
                 <p className="text-center text-xs font-medium text-slate-500">1 questão por dia</p>
                 <Link
                   href="/planos"
+                  className="flex w-full items-center justify-center rounded-xl border border-slate-200 bg-white px-3 py-2 text-[10px] font-black uppercase tracking-wider text-slate-800 transition-colors hover:bg-slate-50"
+                >
+                  Concursos abertos
+                </Link>
+                <Link
+                  href="/assinar-pro"
                   className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#BEF264] px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 shadow-md shadow-lime-400/20 transition-all hover:scale-[1.02] hover:bg-[#d4f879]"
                 >
                   <Zap size={11} fill="currentColor" aria-hidden />
-                  Assinar Pro — R$9,90
+                  Assinar Pro
                 </Link>
               </div>
             )}

@@ -42,7 +42,10 @@ export function ConcursoMarketingHeader({
             aria-label="Navegação do concurso"
           >
             <Link href="/planos" className={`${navLinkClass} shrink-0 px-2 sm:px-3`}>
-              Pacotes
+              Concursos abertos
+            </Link>
+            <Link href="/assinar-pro" className={`${navLinkClass} shrink-0 px-2 sm:px-3`}>
+              AVANT Pro
             </Link>
             <Link
               href={PRO_REGISTER_HREF}

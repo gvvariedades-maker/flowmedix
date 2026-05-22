@@ -12,6 +12,7 @@ import {
 import Link from 'next/link';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { compareModuloCurriculum } from '@/lib/vitrineOrder';
+import { ADMIN_MATRICULAS_PATH } from '@/lib/constants';
 
 const ASSUNTOS_POR_PAGINA_ADMIN = 12;
 
@@ -468,16 +469,32 @@ export default function AdminMaster() {
 
         <section className="bg-white p-6 sm:p-8 rounded-[32px] border-[1.5px] border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h2 className="font-black italic uppercase text-lg text-slate-900">Concursos e matrículas</h2>
+            <h2 className="font-black italic uppercase text-lg text-slate-900">Landings de concurso</h2>
             <p className="text-slate-500 text-sm mt-1">
-              Pacotes por edital, vínculo de publicação no laboratório e matrícula manual de alunos.
+              Crie e publique LPs reutilizáveis por edital — funil AVANT Pro.
             </p>
           </div>
           <Link
-            href="/admin/concursos"
+            href="/admin/landings"
+            className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-[#4F46E5] text-white font-black uppercase italic text-xs hover:bg-[#4338ca] transition-all"
+          >
+            Gerenciar LPs
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </section>
+
+        <section className="bg-white p-6 sm:p-8 rounded-[32px] border-[1.5px] border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h2 className="font-black italic uppercase text-lg text-slate-900">Liberar acesso por e-mail</h2>
+            <p className="text-slate-500 text-sm mt-1">
+              Cadastre e-mails para criar conta (se necessário) e matricular no AVANT com acesso ativo.
+            </p>
+          </div>
+          <Link
+            href={ADMIN_MATRICULAS_PATH}
             className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 text-[#BEF264] font-black uppercase italic text-xs hover:bg-[#4338ca] hover:text-white transition-all"
           >
-            Gerenciar concursos
+            Gerenciar acessos
             <ArrowRight className="w-4 h-4" />
           </Link>
         </section>

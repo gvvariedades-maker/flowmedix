@@ -5,6 +5,7 @@ import {
   isStepRevealed,
   isStepFuture,
   isStepActive,
+  shouldShowLogicFlowTapHint,
 } from '@/components/slides/variants/logicFlowReveal';
 
 jest.mock('framer-motion', () => ({
@@ -29,6 +30,14 @@ describe('logicFlowReveal — helpers', () => {
     expect(isStepActive(1, [0, 1], true)).toBe(true);
     expect(isStepActive(0, [0, 1], true)).toBe(false);
     expect(isStepActive(1, [0, 1], false)).toBe(false);
+  });
+
+  it('shouldShowLogicFlowTapHint até o penúltimo passo', () => {
+    expect(shouldShowLogicFlowTapHint(true, false, 4, 0)).toBe(true);
+    expect(shouldShowLogicFlowTapHint(true, false, 4, 2)).toBe(true);
+    expect(shouldShowLogicFlowTapHint(true, false, 4, 3)).toBe(false);
+    expect(shouldShowLogicFlowTapHint(true, true, 4, 2)).toBe(false);
+    expect(shouldShowLogicFlowTapHint(false, false, 4, 0)).toBe(false);
   });
 });
 

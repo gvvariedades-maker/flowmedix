@@ -37,7 +37,10 @@ export function PublicDarkAuthHeader({
             Blog
           </Link>
           <Link href="/planos" className={`${navLinkClass} hidden min-[500px]:inline-flex shrink-0`}>
-            Pacotes
+            Concursos abertos
+          </Link>
+          <Link href="/assinar-pro" className={`${navLinkClass} hidden min-[560px]:inline-flex shrink-0`}>
+            AVANT Pro
           </Link>
           <nav className="flex shrink-0 flex-nowrap items-center justify-end gap-1.5 sm:gap-2">
             {variant !== 'login' ? (

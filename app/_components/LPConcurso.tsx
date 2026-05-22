@@ -129,59 +129,59 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
         {/* 2 — Hero */}
         <LPMotionSection
           ariaLabel="Apresentação do concurso"
-          className="relative overflow-hidden px-4 pt-10 pb-12 sm:px-6 sm:pt-14 lg:px-8"
+          className="relative px-4 sm:px-6 pt-12 sm:pt-20 pb-16 sm:pb-24"
         >
           <div className="pointer-events-none absolute inset-0">
             <HeroBackdrop />
           </div>
-          <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_auto]">
-            <div>
-              <p
-                className={`mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-black sm:text-sm ${badgeClassName}`}
-              >
-                {concurso.statusInscricoes} · Prova em {concurso.dataProvaFormatada}
-              </p>
-
-              <h1 className="max-w-4xl bg-gradient-to-r from-white via-cyan-200 to-[#BEF264] bg-clip-text text-4xl leading-[1.05] font-[1000] tracking-tight text-transparent sm:text-5xl lg:text-6xl">
-                {copy.headlinePrincipal}
-              </h1>
-
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl">
-                {copy.subtitulo}
-              </p>
-
-              <div className="mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-4 [&::-webkit-scrollbar]:hidden">
-                {editalCards.map((card) => (
-                  <div
-                    key={card.label}
-                    className="min-w-[140px] shrink-0 snap-start rounded-2xl border border-white/10 bg-slate-900/80 p-4 backdrop-blur sm:min-w-[160px]"
-                  >
-                    <p className="text-xs font-semibold tracking-wide text-slate-400 uppercase">
-                      {card.label}
-                    </p>
-                    <p className="mt-1 text-sm font-black text-white">{card.value}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-8 max-w-md">
-                <LPCheckoutButton label={labelCta} />
-                <p className="mt-3 text-sm text-slate-500">
-                  Cancela quando quiser · Acesso completo · Preparação para {concurso.cidade} e
-                  todos os próximos concursos
+          <div className="relative mx-auto max-w-6xl">
+            <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr]">
+              <div>
+                <p
+                  className={`mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-black sm:text-sm ${badgeClassName}`}
+                >
+                  {concurso.statusInscricoes} · Prova em {concurso.dataProvaFormatada}
                 </p>
+
+                <h1 className="max-w-4xl bg-gradient-to-r from-white via-cyan-200 to-[#BEF264] bg-clip-text text-4xl leading-[1.05] font-[1000] tracking-tight text-transparent sm:text-5xl lg:text-6xl">
+                  {copy.headlinePrincipal}
+                </h1>
+
+                <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl">
+                  {copy.subtitulo}
+                </p>
+
+                <div className="mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-4 [&::-webkit-scrollbar]:hidden">
+                  {editalCards.map((card) => (
+                    <div
+                      key={card.label}
+                      className="min-w-[140px] shrink-0 snap-start rounded-2xl border border-white/10 bg-slate-900/80 p-4 backdrop-blur sm:min-w-[160px]"
+                    >
+                      <p className="text-xs font-semibold tracking-wide text-slate-400 uppercase">
+                        {card.label}
+                      </p>
+                      <p className="mt-1 text-sm font-black text-white">{card.value}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8 max-w-md">
+                  <LPCheckoutButton label={labelCta} />
+                  <p className="mt-3 text-sm text-slate-500">
+                    Cancela quando quiser · Acesso completo · Preparação para {concurso.cidade} e
+                    todos os próximos concursos
+                  </p>
+                </div>
+
+                <div className="mt-8">
+                  <LPCountdownDays
+                    dataProva={concurso.dataProva}
+                    dataProvaFormatada={concurso.dataProvaFormatada}
+                    variant="hero"
+                  />
+                </div>
               </div>
 
-              <div className="mt-8">
-                <LPCountdownDays
-                  dataProva={concurso.dataProva}
-                  dataProvaFormatada={concurso.dataProvaFormatada}
-                  variant="hero"
-                />
-              </div>
-            </div>
-
-            <div className="mx-auto min-w-[280px] w-full max-w-[340px] shrink-0 lg:mx-0">
               <LPNeuroSlideCarousel />
             </div>
           </div>

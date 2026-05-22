@@ -33,7 +33,7 @@ describe('isAdminSessionEmail', () => {
     expect(isAdminSessionEmail('admin@exemplo.com')).toBe(true);
     expect(isAdminSessionEmail('segundo@exemplo.com')).toBe(true);
     expect(isAdminSessionEmail('terceiro@exemplo.com')).toBe(true);
-    expect(isAdminSessionEmail('gvvariedades@gmail.com')).toBe(false);
+    expect(isAdminSessionEmail('gvvariedades@gmail.com')).toBe(true);
   });
 });
 

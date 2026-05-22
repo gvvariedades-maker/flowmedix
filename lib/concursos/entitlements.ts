@@ -11,29 +11,8 @@ import type {
 
 export const GERAL_CONCURSO_SLUG = 'geral';
 
-/** Pacote pago alinhado à banca IDECAN; vínculos errados não entram no catálogo do aluno. */
+/** Edital legado no catálogo; filtro de banca IDECAN em vínculos de módulos. */
 export const CAMPINA_GRANDE_2026_SLUG = 'campina-grande-2026';
-
-/** Landing de vendas (funil AVANT Pro via `/api/pagamentos/criar-sessao`); não usar `/concursos/.../comprar`. */
-export const CAMPINA_GRANDE_LANDING_HREF = '/campina-grande';
-
-/** Preço de venda em centavos (BRL). Deve coincidir com `concursos.price_cents` e com o Price no Stripe. */
-export const CAMPINA_GRANDE_2026_PRICE_CENTS = 3700;
-
-/** Pacote Goianinha/RN (slug no banco). */
-export const GOIANINHA_RN_SLUG = 'goianinha-rn';
-
-/** Landing de vendas (funil AVANT Pro via `/api/pagamentos/criar-sessao`); não usar `/concursos/.../comprar`. */
-export const GOIANINHA_LANDING_HREF = '/goianinha';
-
-/**
- * Destino de compra na vitrine: LP dedicada quando existir; senão `/concursos/[slug]/comprar`.
- */
-export function getSellableConcursoLandingHref(slug: string): string {
-  if (slug === CAMPINA_GRANDE_2026_SLUG) return CAMPINA_GRANDE_LANDING_HREF;
-  if (slug === GOIANINHA_RN_SLUG) return GOIANINHA_LANDING_HREF;
-  return `/concursos/${slug}/comprar`;
-}
 
 function moduloPermitidoNoVinculoConcurso(
   concursoSlug: string,

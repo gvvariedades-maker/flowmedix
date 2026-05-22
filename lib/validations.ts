@@ -549,6 +549,73 @@ export const ConcursoRegraModulosSchema = z.object({
 });
 
 // ============================================================================
+// LP PAGES (CMS — funil AVANT Pro)
+// ============================================================================
+
+export const LpPathSchema = z
+  .string()
+  .trim()
+  .min(2)
+  .max(80)
+  .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Path inválido');
+
+export const LpConcursoBlockSchema = z.object({
+  cidade: z.string().trim().min(1).max(120),
+  cargo: z.string().trim().min(1).max(120),
+  banca: z.string().trim().min(1).max(80),
+  nomeBanca: z.string().trim().min(1).max(80),
+  vagas: z.string().trim().min(1).max(40),
+  vagasPCD: z.string().trim().max(40).optional(),
+  cadastroReserva: z.string().trim().max(80).optional(),
+  dataProva: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Data da prova inválida (YYYY-MM-DD)'),
+  dataProvaFormatada: z.string().trim().min(1).max(40),
+  statusInscricoes: z.string().trim().min(1).max(120),
+  remuneracao: z.string().trim().min(1).max(80),
+  taxaInscricao: z.string().trim().min(1).max(40),
+  orgao: z.string().trim().min(1).max(160),
+});
+
+export const LpCopySchema = z.object({
+  headlinePrincipal: z.string().trim().min(1).max(300),
+  subtitulo: z.string().trim().min(1).max(500),
+  dores: z.tuple([z.string().trim().min(1).max(300), z.string().trim().min(1).max(300), z.string().trim().min(1).max(300)]),
+  perigosBanca: z.tuple([z.string().trim().min(1).max(300), z.string().trim().min(1).max(300), z.string().trim().min(1).max(300)]),
+  listaBeneficios: z.array(z.string().trim().min(1).max(300)).min(1).max(20),
+  disclaimer: z.string().trim().min(1).max(500),
+  disclaimerLegal: z.string().trim().min(1).max(800),
+});
+
+export const LpPageConfigSchema = z.object({
+  concurso: LpConcursoBlockSchema,
+  copy: LpCopySchema,
+  walkthrough: z.object({
+    imagens: z.array(z.string().trim().min(1).max(500)).min(1).max(16),
+  }),
+  oferta: z.object({ preco: z.string().trim().min(1).max(20) }).optional(),
+});
+
+export const LpPageSeoSchema = z.object({
+  title: z.string().trim().min(1).max(120),
+  description: z.string().trim().min(1).max(320),
+  canonical: z.string().trim().max(200).optional(),
+  ogTitle: z.string().trim().max(120).optional(),
+  ogDescription: z.string().trim().max(320).optional(),
+});
+
+export const LpPageAdminCreateSchema = z.object({
+  template_id: z.string().uuid('Template inválido'),
+  path: LpPathSchema,
+  internal_name: z.string().trim().min(2).max(200),
+  config: LpPageConfigSchema,
+  seo: LpPageSeoSchema,
+  utm_campaign: z.string().trim().max(80).nullable().optional(),
+});
+
+export const LpPageAdminUpdateSchema = LpPageAdminCreateSchema.partial().extend({
+  status: z.enum(['rascunho', 'ativo', 'arquivado']).optional(),
+});
+
+// ============================================================================
 // EXPORTS DE CONSTANTES E HELPERS
 // ============================================================================
 
@@ -604,6 +671,10 @@ export type ConcursoAdminMatriculaInput = z.infer<typeof ConcursoAdminMatriculaS
 export type AdminCriarUsuarioMatriculaInput = z.infer<typeof AdminCriarUsuarioMatriculaSchema>;
 export type ConcursoModuloLinkInput = z.infer<typeof ConcursoModuloLinkSchema>;
 export type ConcursoRegraModulosInput = z.infer<typeof ConcursoRegraModulosSchema>;
+export type LpPageConfigInput = z.infer<typeof LpPageConfigSchema>;
+export type LpPageSeoInput = z.infer<typeof LpPageSeoSchema>;
+export type LpPageAdminCreateInput = z.infer<typeof LpPageAdminCreateSchema>;
+export type LpPageAdminUpdateInput = z.infer<typeof LpPageAdminUpdateSchema>;
 export type ReverseStudySlideInput = z.infer<typeof ReverseStudySlideSchema>;
 export type ReverseStudySlideShellFieldsInput = z.infer<typeof ReverseStudySlideShellFieldsSchema>;
 export type SlideItemInput = z.infer<typeof SlideItemSchema>;

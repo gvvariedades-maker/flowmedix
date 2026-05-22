@@ -1,11 +1,12 @@
 import type Stripe from 'stripe';
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { GERAL_CONCURSO_SLUG } from '@/lib/concursos/entitlements';
-import { findAuthUserByEmail } from '@/lib/supabase/adminUsers';
+import { findAuthUserByEmail, findOrCreateAuthUserByEmail } from '@/lib/supabase/adminUsers';
 import { getStripeClient } from '@/lib/stripe/client';
 import { logger } from '@/lib/logger';
 import type { WebhookProcessResult } from '@/lib/pagamentos/webhook';
 import { AVANT_PRO_PRODUTO_ID } from '@/lib/pro/constants';
+import { sendProAccessMagicLinkEmail } from '@/lib/pro/sendProAccessEmail';
 
 function readCustomerEmail(session: Stripe.Checkout.Session): string | null {
   const fromDetails = session.customer_details?.email?.trim();
@@ -30,6 +31,36 @@ async function getGeralConcursoId(admin: SupabaseClient): Promise<string | null>
   return data?.id ?? null;
 }
 
+async function resolveProCheckoutUserId(
+  admin: SupabaseClient,
+  session: Stripe.Checkout.Session,
+): Promise<{ userId: string; created: boolean } | null> {
+  const userIdFromMeta = session.metadata?.user_id?.trim() || null;
+  const email = readCustomerEmail(session);
+  const displayName = session.customer_details?.name?.trim() || null;
+
+  if (userIdFromMeta) {
+    return { userId: userIdFromMeta, created: false };
+  }
+
+  if (!email) {
+    return null;
+  }
+
+  const { user, error } = await findAuthUserByEmail(admin, email);
+  if (error) {
+    logger.error('Falha ao buscar usuário por e-mail (Pro checkout)', error, { email });
+    throw error;
+  }
+
+  if (user?.id) {
+    return { userId: user.id, created: false };
+  }
+
+  const { userId, created } = await findOrCreateAuthUserByEmail(admin, email, displayName);
+  return { userId, created };
+}
+
 /**
  * Fulfillment AVANT Pro após checkout.session.completed (assinatura).
  */
@@ -45,26 +76,25 @@ export async function processProCheckoutCompleted(
     return { handled: false, reason: 'checkout_not_paid' };
   }
 
-  const userIdFromMeta = session.metadata?.user_id?.trim();
-  let userId: string | null = userIdFromMeta || null;
+  const resolved = await resolveProCheckoutUserId(admin, session);
+  if (!resolved) {
+    logger.warn('Checkout Pro sem user_id nem e-mail', { sessionId: session.id });
+    return { handled: false, reason: 'missing_user_and_email' };
+  }
 
-  if (!userId) {
-    const email = readCustomerEmail(session);
-    if (!email) {
-      logger.warn('Checkout Pro sem user_id nem e-mail', { sessionId: session.id });
-      return { handled: false, reason: 'missing_user_and_email' };
-    }
+  const { userId, created } = resolved;
+  const email = readCustomerEmail(session);
 
-    const { user, error } = await findAuthUserByEmail(admin, email);
-    if (error) {
-      logger.error('Falha ao buscar usuário por e-mail (Pro checkout)', error, { email });
-      throw error;
+  if (created && email) {
+    try {
+      await sendProAccessMagicLinkEmail(admin, email);
+    } catch (error) {
+      logger.error('Falha ao enviar e-mail de acesso pós-checkout Pro', error, {
+        userId,
+        email,
+        sessionId: session.id,
+      });
     }
-    if (!user?.id) {
-      logger.warn('Checkout Pro: usuário não encontrado por e-mail', { email, sessionId: session.id });
-      return { handled: false, reason: 'user_not_found' };
-    }
-    userId = user.id;
   }
 
   const concursoId = await getGeralConcursoId(admin);
@@ -89,7 +119,7 @@ export async function processProCheckoutCompleted(
     throw upsertError;
   }
 
-  logger.info('Matrícula AVANT Pro ativada via webhook', { userId, sessionId: session.id });
+  logger.info('Matrícula AVANT Pro ativada via webhook', { userId, sessionId: session.id, created });
   return { handled: true, userId };
 }
 

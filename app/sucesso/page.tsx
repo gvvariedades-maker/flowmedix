@@ -25,10 +25,10 @@ export default async function SucessoPage({ searchParams }: PageProps) {
       <div className="flex min-h-screen flex-col items-center justify-center bg-[#010409] px-4 text-center text-slate-300">
         <p className="max-w-md text-lg font-medium">Não encontramos o identificador da sessão de pagamento.</p>
         <p className="mt-2 max-w-md text-sm text-slate-500">
-          Abra o link enviado após o checkout ou volte à página do pacote e tente novamente.
+          Abra o link enviado após o checkout ou tente assinar novamente.
         </p>
         <Button asChild className="mt-8" variant="secondary">
-          <Link href="/campina-grande">Voltar ao pacote Campina Grande</Link>
+          <Link href="/assinar-pro">Assinar AVANT Pro</Link>
         </Button>
       </div>
     );
@@ -70,7 +70,7 @@ export default async function SucessoPage({ searchParams }: PageProps) {
           sessão.
         </p>
         <Button asChild className="mt-8" variant="secondary">
-          <Link href="/campina-grande">Voltar ao pacote</Link>
+          <Link href="/">Voltar ao início</Link>
         </Button>
       </div>
     );

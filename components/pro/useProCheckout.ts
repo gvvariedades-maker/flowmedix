@@ -2,7 +2,6 @@
 
 import { useCallback, useState } from 'react';
 import { GERAL_CONCURSO_SLUG } from '@/lib/concursos/entitlements';
-import { proCheckoutLoginHref } from '@/lib/pro/checkoutPaths';
 
 export function useProCheckout() {
   const [loading, setLoading] = useState(false);
@@ -25,11 +24,6 @@ export function useProCheckout() {
         url?: string;
         redirectUrl?: string;
       };
-
-      if (response.status === 401) {
-        window.location.href = proCheckoutLoginHref();
-        return;
-      }
 
       if (response.status === 409 && payload.redirectUrl) {
         window.location.href = payload.redirectUrl;

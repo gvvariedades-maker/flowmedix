@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, CheckCircle2, Circle, Hand } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
@@ -9,6 +9,7 @@ import {
   isStepRevealed,
   isStepFuture,
   isStepActive,
+  shouldShowLogicFlowTapHint,
   type LogicFlowRevealMode,
 } from './logicFlowReveal';
 import { LogicFlowFooter } from './LogicFlowFooter';
@@ -101,13 +102,17 @@ export const LogicFlow = ({
     isTapMode,
     isComplete,
     currentPasso,
+    activeStepIndex,
   } = useLogicFlowReveal(normalizedSteps.length, revealMode);
 
-  const [tapHintDismissed, setTapHintDismissed] = useState(false);
-  const showTapHint = isTapMode && !isComplete && !tapHintDismissed;
+  const showTapHint = shouldShowLogicFlowTapHint(
+    isTapMode,
+    isComplete,
+    normalizedSteps.length,
+    activeStepIndex,
+  );
 
   const handleAdvance = useCallback(() => {
-    setTapHintDismissed(true);
     advanceStep();
   }, [advanceStep]);
 
@@ -191,7 +196,9 @@ export const LogicFlow = ({
                   } ${active ? 'ring-2 ring-violet-400/60 shadow-[0_0_24px_rgba(139,92,246,0.25)]' : ''}`}
                   style={{ borderColor: revealed ? theme.glow : 'rgba(255,255,255,0.1)' }}
                 >
-                  <LogicFlowTapBadge visible={canTap && showTapHint} />
+                  <LogicFlowTapBadge
+                    visible={canTap && index < normalizedSteps.length - 1}
+                  />
                   <span
                     className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${theme.primary} text-sm font-black text-slate-900`}
                   >
@@ -262,7 +269,9 @@ export const LogicFlow = ({
                   boxShadow: revealed ? `0 0 20px ${theme.glow}40` : canTap ? '0 0 24px rgba(139,92,246,0.25)' : 'none',
                 }}
               >
-                <LogicFlowTapBadge visible={canTap && showTapHint} />
+                <LogicFlowTapBadge
+                  visible={canTap && index < normalizedSteps.length - 1}
+                />
                 <motion.div
                   className={`mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${theme.primary} text-sm font-black text-slate-900`}
                 >
@@ -367,7 +376,9 @@ export const LogicFlow = ({
                       borderColor: revealed ? theme.glow : 'rgba(255,255,255,0.1)',
                     }}
                   >
-                    <LogicFlowTapBadge visible={canTap && showTapHint} />
+                    <LogicFlowTapBadge
+                    visible={canTap && index < normalizedSteps.length - 1}
+                  />
                     <motion.div className="flex min-w-0 items-start gap-3">
                       <motion.div
                         animate={{

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { ArrowLeft, Loader2, Trash2, UserMinus, UserPlus } from 'lucide-react';
+import { ArrowLeft, Loader2, Trash2, UserMinus, UserPlus, Users } from 'lucide-react';
 
 type ConcursoHeader = { id: string; slug: string; nome: string };
 
@@ -29,6 +29,7 @@ export default function AdminConcursoMatriculasPage() {
   const [emailBusca, setEmailBusca] = useState('');
   const [nomeNovo, setNomeNovo] = useState('');
   const [emailNovo, setEmailNovo] = useState('');
+  const [emailsLote, setEmailsLote] = useState('');
   const [filtroLista, setFiltroLista] = useState('');
   const [resolvedUserId, setResolvedUserId] = useState('');
 
@@ -92,6 +93,14 @@ export default function AdminConcursoMatriculasPage() {
     }
   }
 
+  function parseEmailsLote(raw: string): string[] {
+    const parts = raw
+      .split(/[\n,;]+/)
+      .map((s) => s.trim().toLowerCase())
+      .filter(Boolean);
+    return [...new Set(parts)];
+  }
+
   async function criarUsuarioEMatricular() {
     const email = emailNovo.trim();
     if (!email || !concursoId) {
@@ -122,6 +131,46 @@ export default function AdminConcursoMatriculasPage() {
       await carregar();
     } catch (e) {
       setMessage(e instanceof Error ? e.message : 'Erro ao criar usuário');
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  async function liberarAcessoEmLote() {
+    const emails = parseEmailsLote(emailsLote);
+    if (!emails.length || !concursoId) {
+      setMessage('Cole ao menos um e-mail (um por linha ou separados por vírgula).');
+      return;
+    }
+    setSaving(true);
+    setMessage(null);
+    const ok: string[] = [];
+    const falhas: string[] = [];
+    try {
+      for (const email of emails) {
+        try {
+          const res = await fetch(`/api/admin/concursos/${concursoId}/matriculas/criar-usuario`, {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email }),
+          });
+          const payload = await res.json();
+          if (!res.ok) throw new Error(payload.error || 'Falha');
+          ok.push(email);
+        } catch (e) {
+          const msg = e instanceof Error ? e.message : 'Erro';
+          falhas.push(`${email}: ${msg}`);
+        }
+      }
+      if (ok.length) {
+        setEmailsLote('');
+        await carregar();
+      }
+      const resumo = `${ok.length} e-mail(s) com acesso liberado.`;
+      setMessage(
+        falhas.length ? `${resumo} Falhas: ${falhas.slice(0, 5).join(' · ')}${falhas.length > 5 ? '…' : ''}` : resumo,
+      );
     } finally {
       setSaving(false);
     }
@@ -213,13 +262,14 @@ export default function AdminConcursoMatriculasPage() {
     <div className="mx-auto max-w-4xl px-6 py-10">
       <div className="mb-8 flex flex-wrap items-center gap-4">
         <Link
-          href="/admin/concursos"
+          href="/admin"
           className="rounded-xl p-2 text-slate-400 transition-colors hover:bg-slate-100"
+          title="Voltar ao painel admin"
         >
           <ArrowLeft className="h-5 w-5" />
         </Link>
         <div className="min-w-0 flex-1">
-          <h1 className="text-2xl font-black text-slate-900">Matrículas do concurso</h1>
+          <h1 className="text-2xl font-black text-slate-900">Liberar acesso por e-mail</h1>
           {concurso ? (
             <p className="truncate text-sm text-slate-500">
               {concurso.nome} · <span className="font-mono">{concurso.slug}</span>
@@ -238,8 +288,32 @@ export default function AdminConcursoMatriculasPage() {
         </div>
       ) : null}
 
+      <section className="mb-10 rounded-3xl border border-emerald-200 bg-emerald-50/50 p-6 shadow-sm">
+        <h2 className="mb-1 text-lg font-black text-slate-900">Vários e-mails de uma vez</h2>
+        <p className="mb-4 text-sm text-slate-600">
+          Cole uma lista (um e-mail por linha ou separados por vírgula). Para cada endereço: cria a conta se não
+          existir e libera o acesso neste pacote.
+        </p>
+        <textarea
+          value={emailsLote}
+          onChange={(e) => setEmailsLote(e.target.value)}
+          placeholder={'aluno1@email.com\naluno2@email.com'}
+          rows={6}
+          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 font-mono text-sm"
+        />
+        <button
+          type="button"
+          disabled={saving || !emailsLote.trim()}
+          onClick={() => void liberarAcessoEmLote()}
+          className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl bg-emerald-600 px-4 py-3 font-black uppercase tracking-widest text-white disabled:opacity-50"
+        >
+          <Users className="h-4 w-4" />
+          Liberar acesso em lote
+        </button>
+      </section>
+
       <section className="mb-10 rounded-3xl border border-indigo-200 bg-indigo-50/40 p-6 shadow-sm">
-        <h2 className="mb-1 text-lg font-black text-slate-900">Criar conta e matricular</h2>
+        <h2 className="mb-1 text-lg font-black text-slate-900">Um e-mail — criar conta e matricular</h2>
         <p className="mb-4 text-sm text-slate-600">
           Cria o usuário no Auth (se o e-mail ainda não existir) e já matricula neste concurso. O aluno define a
           senha em <span className="font-semibold">Esqueci a senha</span> no login.

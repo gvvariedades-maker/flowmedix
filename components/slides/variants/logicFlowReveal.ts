@@ -60,6 +60,8 @@ export function useLogicFlowReveal(
   const isTapMode = effectiveMode === 'tap';
   const isComplete = stepCount > 0 && revealedSteps.length >= stepCount;
   const currentPasso = revealedSteps.length;
+  const activeStepIndex =
+    revealedSteps.length > 0 ? revealedSteps[revealedSteps.length - 1]! : 0;
 
   return {
     revealedSteps,
@@ -67,7 +69,19 @@ export function useLogicFlowReveal(
     isTapMode,
     isComplete,
     currentPasso,
+    activeStepIndex,
   };
+}
+
+/** Exibe «Toque aqui» no passo ativo até o penúltimo (oculta só no último passo). */
+export function shouldShowLogicFlowTapHint(
+  isTapMode: boolean,
+  isComplete: boolean,
+  stepCount: number,
+  activeStepIndex: number,
+): boolean {
+  if (!isTapMode || isComplete || stepCount <= 1) return false;
+  return activeStepIndex < stepCount - 1;
 }
 
 export function isStepRevealed(index: number, revealedSteps: number[]) {
