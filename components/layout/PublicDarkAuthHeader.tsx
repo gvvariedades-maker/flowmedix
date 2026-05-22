@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ArrowRight, Zap } from 'lucide-react';
+import { AVANT_PRO_LP_HREF } from '@/lib/pro/constants';
 
 const navLinkClass =
   'rounded-lg px-3 py-2 text-sm font-bold text-slate-300 transition-colors hover:text-white';
@@ -39,7 +40,7 @@ export function PublicDarkAuthHeader({
           <Link href="/planos" className={`${navLinkClass} hidden min-[500px]:inline-flex shrink-0`}>
             Concursos abertos
           </Link>
-          <Link href="/assinar-pro" className={`${navLinkClass} hidden min-[560px]:inline-flex shrink-0`}>
+          <Link href={AVANT_PRO_LP_HREF} className={`${navLinkClass} hidden min-[560px]:inline-flex shrink-0`}>
             AVANT Pro
           </Link>
           <nav className="flex shrink-0 flex-nowrap items-center justify-end gap-1.5 sm:gap-2">

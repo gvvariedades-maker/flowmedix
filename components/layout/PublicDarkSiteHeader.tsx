@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight, Zap } from 'lucide-react';
 import { ProSubscribeNavButton } from '@/components/pro/ProSubscribeNavButton';
+import { AVANT_PRO_LP_HREF } from '@/lib/pro/constants';
 import { cn } from '@/lib/utils';
 
 /** Mesmo estilo do link "Entrar" no header da landing. */
@@ -53,7 +54,7 @@ export function PublicDarkSiteHeader({
             <Link href="/planos" className={`${navLinkClass} hidden min-[500px]:inline-flex shrink-0`}>
               Concursos abertos
             </Link>
-            <Link href="/assinar-pro" className={`${navLinkClass} hidden min-[560px]:inline-flex shrink-0`}>
+            <Link href={AVANT_PRO_LP_HREF} className={`${navLinkClass} hidden min-[560px]:inline-flex shrink-0`}>
               AVANT Pro
             </Link>
             <nav className="flex min-w-0 shrink-0 flex-nowrap items-center justify-end gap-1.5 sm:gap-2">

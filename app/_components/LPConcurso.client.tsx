@@ -6,6 +6,10 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { Loader2, Zap } from 'lucide-react';
 import { useProCheckout } from '@/components/pro/useProCheckout';
+import { AVANT_PRO_LP_HREF } from '@/lib/pro/constants';
+
+const lpNavLinkClass =
+  'rounded-lg px-2 py-2 text-xs font-bold text-slate-300 transition-colors hover:text-white sm:px-3 sm:text-sm';
 
 const ONE_DAY_IN_MS = 1000 * 60 * 60 * 24;
 
@@ -40,7 +44,8 @@ const NEURO_SLIDES = [
   },
 ] as const;
 
-const AVANT_SLIDE_ASPECT = { width: 340, height: 420 };
+/** Proporção real dos screenshots do player (~487×1024). */
+const AVANT_SLIDE_ASPECT = { width: 487, height: 1024 } as const;
 
 function parseLocalDate(isoDate: string): Date {
   const [year, month, day] = isoDate.split('-').map(Number);
@@ -116,7 +121,7 @@ export function LPNeuroSlideCarousel() {
       initial={{ opacity: 0, y: 24, scale: 0.98 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ delay: 0.12, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-      className="relative mx-auto w-full overflow-visible"
+      className="relative mx-auto w-full max-w-[min(100%,340px)] justify-self-center overflow-visible lg:max-w-[360px]"
     >
       <div className="absolute -inset-8 rounded-full bg-cyan-400/10 blur-3xl" />
       <div
@@ -130,8 +135,8 @@ export function LPNeuroSlideCarousel() {
               key={s.src}
               className={
                 i === active
-                  ? 'relative'
-                  : 'pointer-events-none absolute inset-x-4 top-4 opacity-0'
+                  ? 'relative aspect-[487/1024] w-full'
+                  : 'pointer-events-none absolute inset-x-4 top-4 aspect-[487/1024] w-[calc(100%-2rem)] opacity-0'
               }
               aria-hidden={i !== active}
             >
@@ -141,10 +146,10 @@ export function LPNeuroSlideCarousel() {
                 width={AVANT_SLIDE_ASPECT.width}
                 height={AVANT_SLIDE_ASPECT.height}
                 priority={i === 0}
-                className={`w-full h-auto rounded-2xl transition-opacity duration-500 ${
+                sizes="(max-width: 1024px) 100vw, 360px"
+                className={`h-full w-full rounded-2xl object-contain transition-opacity duration-500 ${
                   i === active ? 'opacity-100' : 'opacity-0'
                 }`}
-                style={{ objectFit: 'contain' }}
               />
             </div>
           ))}
@@ -197,21 +202,40 @@ export function LPNavbar({
 
   return (
     <header className="fixed top-0 right-0 left-0 z-50 border-b border-white/8 bg-[#010409]/90 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="group flex shrink-0 items-center gap-2" aria-label="AVANT — início">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-500/40 transition-transform group-hover:scale-105">
-            <Zap size={22} className="text-[#BEF264]" fill="currentColor" aria-hidden />
+      <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-2">
+          <Link href="/" className="group flex shrink-0 items-center gap-2" aria-label="AVANT — início">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-500/40 transition-transform group-hover:scale-105">
+              <Zap size={22} className="text-[#BEF264]" fill="currentColor" aria-hidden />
+            </div>
+            <span className="text-xl font-[1000] tracking-tighter text-white italic">AVANT</span>
+          </Link>
+          <div className="relative shrink-0 sm:hidden">
+            <LPCheckoutButton label={ctaLabel} compact />
           </div>
-          <span className="text-xl font-[1000] tracking-tighter text-white italic">AVANT</span>
-        </Link>
+        </div>
 
-        <p className="hidden min-w-0 flex-1 truncate text-center text-xs font-bold text-cyan-100 sm:block sm:text-sm">
-          <Zap size={12} className="mr-1 inline text-[#BEF264]" aria-hidden />
-          {diasLabel} · {statusInscricoes}
-        </p>
+        <div className="flex flex-wrap items-center justify-between gap-2 sm:justify-end sm:gap-3">
+          <nav
+            className="flex flex-wrap items-center gap-0.5 sm:gap-1"
+            aria-label="Navegação principal"
+          >
+            <Link href="/planos" className={`${lpNavLinkClass} shrink-0`}>
+              Concursos abertos
+            </Link>
+            <Link href={AVANT_PRO_LP_HREF} className={`${lpNavLinkClass} shrink-0`}>
+              AVANT Pro
+            </Link>
+          </nav>
 
-        <div className="relative shrink-0">
-          <LPCheckoutButton label={ctaLabel} compact />
+          <p className="hidden min-w-0 truncate text-xs font-bold text-cyan-100 md:block md:max-w-[14rem] lg:max-w-none lg:text-sm">
+            <Zap size={12} className="mr-1 inline text-[#BEF264]" aria-hidden />
+            {diasLabel} · {statusInscricoes}
+          </p>
+
+          <div className="relative hidden shrink-0 sm:block">
+            <LPCheckoutButton label={ctaLabel} compact />
+          </div>
         </div>
       </div>
     </header>

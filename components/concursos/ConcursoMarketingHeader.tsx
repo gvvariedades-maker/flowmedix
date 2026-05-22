@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { Zap } from 'lucide-react';
+import { AVANT_PRO_LP_HREF } from '@/lib/pro/constants';
 
 /** Mesmo estilo do link "Entrar" no header da landing. */
 const navLinkClass =
@@ -44,7 +45,7 @@ export function ConcursoMarketingHeader({
             <Link href="/planos" className={`${navLinkClass} shrink-0 px-2 sm:px-3`}>
               Concursos abertos
             </Link>
-            <Link href="/assinar-pro" className={`${navLinkClass} shrink-0 px-2 sm:px-3`}>
+            <Link href={AVANT_PRO_LP_HREF} className={`${navLinkClass} shrink-0 px-2 sm:px-3`}>
               AVANT Pro
             </Link>
             <Link

@@ -2,6 +2,7 @@ import { createSupabaseServerClient } from '@/lib/supabase/server-auth';
 import { createServerSupabase } from '@/lib/supabase/server';
 import { logger } from '@/lib/logger';
 import type { LpTemplate } from '@/types/database';
+import { AVANT_PRO_LP_PATH } from '@/lib/pro/constants';
 import {
   type LpCatalogItem,
   type LpPageWithTemplate,
@@ -43,6 +44,7 @@ export async function listPublishedLpPagesForCatalog(): Promise<LpCatalogItem[]>
     .from('lp_pages')
     .select('path, internal_name, config, published_at')
     .eq('status', 'ativo')
+    .neq('path', AVANT_PRO_LP_PATH)
     .order('published_at', { ascending: false });
 
   if (error) {

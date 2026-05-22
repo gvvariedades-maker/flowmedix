@@ -135,7 +135,7 @@ export function LPConcurso({ config }: { config: LPConcursoConfig }) {
             <HeroBackdrop />
           </div>
           <div className="relative mx-auto max-w-6xl">
-            <div className="grid items-center gap-10 lg:grid-cols-[1.02fr_0.98fr]">
+            <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-12">
               <div>
                 <p
                   className={`mb-6 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-black sm:text-sm ${badgeClassName}`}
