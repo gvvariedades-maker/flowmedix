@@ -12,7 +12,7 @@ export interface Toast {
 
 interface ToastContextValue {
   toasts: Toast[];
-  addToast: (message: string, variant?: ToastVariant) => void;
+  addToast: (message: string, variant?: ToastVariant, durationMs?: number) => void;
   removeToast: (id: string) => void;
 }
 
@@ -34,10 +34,10 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const addToast = useCallback(
-    (message: string, variant: ToastVariant = 'info') => {
+    (message: string, variant: ToastVariant = 'info', durationMs = 3500) => {
       const id = `toast-${++counter}`;
       setToasts((prev) => [...prev, { id, message, variant }]);
-      const timer = setTimeout(() => removeToast(id), 3500);
+      const timer = setTimeout(() => removeToast(id), durationMs);
       timersRef.current.set(id, timer);
     },
     [removeToast],
@@ -50,8 +50,13 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function useToast() {
+const noopToastApi: ToastContextValue = {
+  toasts: [],
+  addToast: () => {},
+  removeToast: () => {},
+};
+
+export function useToast(): ToastContextValue {
   const ctx = useContext(ToastContext);
-  if (!ctx) throw new Error('useToast must be used inside <ToastProvider>');
-  return ctx;
+  return ctx ?? noopToastApi;
 }

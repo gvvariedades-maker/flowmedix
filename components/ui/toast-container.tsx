@@ -68,7 +68,7 @@ export function ToastContainer() {
   return (
     <div
       aria-label="Notificações"
-      className="pointer-events-none fixed bottom-6 left-1/2 z-[200] flex -translate-x-1/2 flex-col items-center gap-2 sm:left-auto sm:right-6 sm:translate-x-0 sm:items-end"
+      className="pointer-events-none fixed bottom-6 left-1/2 z-[99998] flex -translate-x-1/2 flex-col items-center gap-2 sm:left-auto sm:right-6 sm:translate-x-0 sm:items-end"
     >
       <AnimatePresence mode="sync">
         {toasts.map((toast) => (

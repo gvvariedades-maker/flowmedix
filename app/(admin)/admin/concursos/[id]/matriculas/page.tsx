@@ -1,7 +1,9 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { createPortal, flushSync } from 'react-dom';
 import Link from 'next/link';
+import { useToast } from '@/lib/toast-context';
 import { useParams } from 'next/navigation';
 import {
   AlertCircle,
@@ -47,8 +49,10 @@ type WelcomeToast = {
 };
 
 export default function AdminConcursoMatriculasPage() {
+  const { addToast } = useToast();
   const params = useParams();
   const concursoId = typeof params.id === 'string' ? params.id : '';
+  const [portalReady, setPortalReady] = useState(false);
 
   const [concurso, setConcurso] = useState<ConcursoHeader | null>(null);
   const [matriculas, setMatriculas] = useState<MatriculaRow[]>([]);
@@ -93,14 +97,12 @@ export default function AdminConcursoMatriculasPage() {
   }, [concursoId]);
 
   useEffect(() => {
-    void carregar();
-  }, [carregar]);
+    setPortalReady(true);
+  }, []);
 
   useEffect(() => {
-    if (welcomeToast?.variant !== 'success') return;
-    const t = window.setTimeout(() => setWelcomeToast(null), 12_000);
-    return () => window.clearTimeout(t);
-  }, [welcomeToast]);
+    void carregar();
+  }, [carregar]);
 
   useEffect(() => {
     for (const [userId, fb] of Object.entries(welcomeFeedback)) {
@@ -305,14 +307,17 @@ export default function AdminConcursoMatriculasPage() {
   }
 
   async function reenviarBoasVindas(userId: string, email: string) {
-    setWelcomeSendingUserId(userId);
-    setWelcomeFeedback((prev) => ({ ...prev, [userId]: { status: 'sending' } }));
-    setWelcomeToast({
-      variant: 'loading',
-      title: 'Enviando boas-vindas…',
-      detail: email,
-      email,
+    flushSync(() => {
+      setWelcomeSendingUserId(userId);
+      setWelcomeFeedback((prev) => ({ ...prev, [userId]: { status: 'sending' } }));
+      setWelcomeToast({
+        variant: 'loading',
+        title: 'Enviando boas-vindas…',
+        detail: email,
+        email,
+      });
     });
+    addToast(`Enviando boas-vindas para ${email}…`, 'info', 10_000);
 
     try {
       const res = await fetch('/api/admin/resend-welcome', {
@@ -352,6 +357,7 @@ export default function AdminConcursoMatriculasPage() {
           detail,
           email,
         });
+        addToast(`${email}: ${detail}`, 'danger', 12_000);
         showStatus('error', 'Boas-vindas não enviado', `${email}: ${detail}`);
         return;
       }
@@ -380,6 +386,7 @@ export default function AdminConcursoMatriculasPage() {
         detail: `${destino} · ${horario}. ${idResend}`,
         email: destino,
       });
+      addToast(`Boas-vindas enviado para ${destino} (${horario})`, 'success', 12_000);
       showStatus('success', 'E-mail de boas-vindas enviado', `Para ${destino} em ${horario}. ${idResend}`);
     } catch (e) {
       const detail = e instanceof Error ? e.message : 'Erro ao reenviar e-mail';
@@ -393,6 +400,7 @@ export default function AdminConcursoMatriculasPage() {
         detail,
         email,
       });
+      addToast(`${email}: ${detail}`, 'danger', 12_000);
       showStatus('error', 'Boas-vindas não enviado', `${email}: ${detail}`);
     } finally {
       setWelcomeSendingUserId(null);
@@ -637,6 +645,22 @@ export default function AdminConcursoMatriculasPage() {
               const welcome = welcomeFeedback[m.userId] ?? { status: 'idle' as const };
               const welcomeSending =
                 welcome.status === 'sending' || welcomeSendingUserId === m.userId;
+              const welcomeBtnLabel =
+                welcome.status === 'success'
+                  ? '✓ Enviado!'
+                  : welcome.status === 'error'
+                    ? '✗ Falhou — tentar de novo'
+                    : welcomeSending
+                      ? 'Enviando…'
+                      : 'Reenviar boas-vindas';
+              const welcomeBtnClass =
+                welcome.status === 'success'
+                  ? 'border-emerald-600 bg-emerald-600 text-white shadow-md shadow-emerald-600/30'
+                  : welcome.status === 'error'
+                    ? 'border-rose-600 bg-rose-600 text-white shadow-md shadow-rose-600/30'
+                    : welcomeSending
+                      ? 'border-cyan-400 bg-cyan-100 text-cyan-950'
+                      : 'border-cyan-200 bg-cyan-50 text-cyan-900 hover:bg-cyan-100';
 
               return (
               <li
@@ -693,14 +717,19 @@ export default function AdminConcursoMatriculasPage() {
                     type="button"
                     disabled={welcomeSending}
                     onClick={() => void reenviarBoasVindas(m.userId, m.email)}
-                    className="inline-flex items-center justify-center gap-2 rounded-2xl border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-bold text-cyan-900 hover:bg-cyan-100 disabled:cursor-not-allowed disabled:opacity-50"
+                    aria-live="polite"
+                    className={`inline-flex min-w-[11rem] items-center justify-center gap-2 rounded-2xl border px-4 py-2 text-sm font-bold disabled:cursor-not-allowed disabled:opacity-70 ${welcomeBtnClass}`}
                   >
                     {welcomeSending ? (
                       <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+                    ) : welcome.status === 'success' ? (
+                      <CheckCircle2 className="h-4 w-4" aria-hidden />
+                    ) : welcome.status === 'error' ? (
+                      <AlertCircle className="h-4 w-4" aria-hidden />
                     ) : (
                       <Mail className="h-4 w-4" aria-hidden />
                     )}
-                    {welcomeSending ? 'Enviando…' : 'Reenviar boas-vindas'}
+                    {welcomeBtnLabel}
                   </button>
                   {m.status === 'ativo' ? (
                     <button
@@ -743,39 +772,42 @@ export default function AdminConcursoMatriculasPage() {
         )}
       </section>
 
-      {welcomeToast ? (
-        <div
-          role="alert"
-          aria-live="assertive"
-          className={`fixed inset-x-4 bottom-6 z-[200] mx-auto flex max-w-lg gap-3 rounded-2xl border-2 px-4 py-4 shadow-2xl ${
-            welcomeToast.variant === 'success'
-              ? 'border-emerald-400 bg-emerald-50 text-emerald-950'
-              : welcomeToast.variant === 'error'
-                ? 'border-rose-400 bg-rose-50 text-rose-950'
-                : 'border-cyan-400 bg-cyan-50 text-cyan-950'
-          }`}
-        >
-          {welcomeToast.variant === 'success' ? (
-            <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-emerald-600" aria-hidden />
-          ) : welcomeToast.variant === 'error' ? (
-            <AlertCircle className="mt-0.5 h-6 w-6 shrink-0 text-rose-600" aria-hidden />
-          ) : (
-            <Loader2 className="mt-0.5 h-6 w-6 shrink-0 animate-spin text-cyan-600" aria-hidden />
-          )}
-          <div className="min-w-0 flex-1">
-            <p className="text-base font-black">{welcomeToast.title}</p>
-            <p className="mt-1 text-sm font-medium leading-relaxed">{welcomeToast.detail}</p>
-          </div>
-          <button
-            type="button"
-            onClick={() => setWelcomeToast(null)}
-            className="shrink-0 rounded-lg p-1 text-slate-500 hover:bg-black/5"
-            aria-label="Fechar aviso"
-          >
-            <X className="h-5 w-5" aria-hidden />
-          </button>
-        </div>
-      ) : null}
+      {portalReady && welcomeToast
+        ? createPortal(
+            <div
+              role="alert"
+              aria-live="assertive"
+              className={`fixed inset-x-3 top-3 z-[99999] mx-auto flex max-w-2xl gap-3 rounded-2xl border-4 px-5 py-4 shadow-2xl sm:inset-x-6 sm:top-6 ${
+                welcomeToast.variant === 'success'
+                  ? 'border-emerald-400 bg-emerald-50 text-emerald-950'
+                  : welcomeToast.variant === 'error'
+                    ? 'border-rose-400 bg-rose-50 text-rose-950'
+                    : 'border-cyan-400 bg-cyan-50 text-cyan-950'
+              }`}
+            >
+              {welcomeToast.variant === 'success' ? (
+                <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-emerald-600" aria-hidden />
+              ) : welcomeToast.variant === 'error' ? (
+                <AlertCircle className="mt-0.5 h-6 w-6 shrink-0 text-rose-600" aria-hidden />
+              ) : (
+                <Loader2 className="mt-0.5 h-6 w-6 shrink-0 animate-spin text-cyan-600" aria-hidden />
+              )}
+              <div className="min-w-0 flex-1">
+                <p className="text-base font-black">{welcomeToast.title}</p>
+                <p className="mt-1 text-sm font-medium leading-relaxed">{welcomeToast.detail}</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setWelcomeToast(null)}
+                className="shrink-0 rounded-lg p-1 text-slate-500 hover:bg-black/5"
+                aria-label="Fechar aviso"
+              >
+                <X className="h-5 w-5" aria-hidden />
+              </button>
+            </div>,
+            document.body,
+          )
+        : null}
     </div>
   );
 }

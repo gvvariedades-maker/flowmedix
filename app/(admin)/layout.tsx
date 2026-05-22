@@ -1,4 +1,5 @@
 import { redirect } from 'next/navigation';
+import { AdminToastShell } from '@/components/admin/AdminToastShell';
 import { getServerSession } from '@/lib/supabase/server-auth';
 import { isAdminSessionEmail } from '@/lib/constants';
 
@@ -28,8 +29,10 @@ export default async function AdminLayout({
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
-      {children}
-    </div>
+    <AdminToastShell>
+      <div className="min-h-screen bg-slate-50 text-slate-900">
+        {children}
+      </div>
+    </AdminToastShell>
   );
 }
