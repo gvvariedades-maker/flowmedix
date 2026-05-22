@@ -640,7 +640,7 @@ export const MarketingEmailSendSchema = z
     emails: z.array(z.string().trim().email()).max(50).optional(),
     concurso_id: z.string().uuid().optional(),
     confirm: z.literal(true, {
-      errorMap: () => ({ message: 'Confirme o envio com confirm: true' }),
+      message: 'Confirme o envio com confirm: true',
     }),
   })
   .superRefine((data, ctx) => {
