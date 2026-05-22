@@ -3,7 +3,7 @@ import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import { z } from 'zod';
 
-import { sendWelcomeEmail } from '@/lib/actions/email-actions';
+import { sendWelcomeEmail } from '@/lib/email/sendWelcomeEmail';
 import { isAdminSessionEmail } from '@/lib/constants';
 import { getResendServerConfig } from '@/lib/env';
 import { findAuthUserByEmail } from '@/lib/supabase/adminUsers';

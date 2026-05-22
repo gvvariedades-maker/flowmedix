@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import {
@@ -9,6 +9,7 @@ import {
   CheckCircle2,
   Loader2,
   Mail,
+  X,
   Trash2,
   UserMinus,
   UserPlus,
@@ -38,6 +39,13 @@ type WelcomeRowFeedback =
   | { status: 'success'; email: string; resendId: string | null; sentAt: string }
   | { status: 'error'; detail: string };
 
+type WelcomeToast = {
+  variant: 'loading' | 'success' | 'error';
+  title: string;
+  detail: string;
+  email: string;
+};
+
 export default function AdminConcursoMatriculasPage() {
   const params = useParams();
   const concursoId = typeof params.id === 'string' ? params.id : '';
@@ -48,6 +56,9 @@ export default function AdminConcursoMatriculasPage() {
   const [saving, setSaving] = useState(false);
   const [banner, setBanner] = useState<AdminBanner | null>(null);
   const [welcomeFeedback, setWelcomeFeedback] = useState<Record<string, WelcomeRowFeedback>>({});
+  const [welcomeToast, setWelcomeToast] = useState<WelcomeToast | null>(null);
+  const [welcomeSendingUserId, setWelcomeSendingUserId] = useState<string | null>(null);
+  const welcomeRowRefs = useRef<Record<string, HTMLLIElement | null>>({});
 
   const [emailBusca, setEmailBusca] = useState('');
   const [nomeNovo, setNomeNovo] = useState('');
@@ -84,6 +95,21 @@ export default function AdminConcursoMatriculasPage() {
   useEffect(() => {
     void carregar();
   }, [carregar]);
+
+  useEffect(() => {
+    if (welcomeToast?.variant !== 'success') return;
+    const t = window.setTimeout(() => setWelcomeToast(null), 12_000);
+    return () => window.clearTimeout(t);
+  }, [welcomeToast]);
+
+  useEffect(() => {
+    for (const [userId, fb] of Object.entries(welcomeFeedback)) {
+      if (fb.status === 'success' || fb.status === 'error') {
+        welcomeRowRefs.current[userId]?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        break;
+      }
+    }
+  }, [welcomeFeedback]);
 
   const matriculasFiltradas = useMemo(() => {
     const q = filtroLista.trim().toLowerCase();
@@ -198,6 +224,7 @@ export default function AdminConcursoMatriculasPage() {
       }
       const resumo = `${ok.length} e-mail(s) com acesso liberado.`;
       showStatus(
+        falhas.length ? 'error' : 'success',
         falhas.length ? 'Lote com falhas' : 'Lote concluído',
         falhas.length ? `${resumo} Falhas: ${falhas.slice(0, 5).join(' · ')}${falhas.length > 5 ? '…' : ''}` : resumo,
       );
@@ -278,9 +305,15 @@ export default function AdminConcursoMatriculasPage() {
   }
 
   async function reenviarBoasVindas(userId: string, email: string) {
+    setWelcomeSendingUserId(userId);
     setWelcomeFeedback((prev) => ({ ...prev, [userId]: { status: 'sending' } }));
-    setSaving(true);
-    setBanner(null);
+    setWelcomeToast({
+      variant: 'loading',
+      title: 'Enviando boas-vindas…',
+      detail: email,
+      email,
+    });
+
     try {
       const res = await fetch('/api/admin/resend-welcome', {
         method: 'POST',
@@ -288,55 +321,81 @@ export default function AdminConcursoMatriculasPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId }),
       });
-      const payload = (await res.json()) as {
-        sent?: boolean;
-        ok?: boolean;
-        error?: string;
-        message?: string;
-        email?: string;
-        resendId?: string | null;
-        sentAt?: string;
-      };
 
-      if (!res.ok || payload.sent !== true) {
-        const detail = payload.error ?? payload.message ?? 'Falha ao enviar e-mail';
+      const raw = await res.text();
+      let payload: Record<string, unknown> = {};
+      if (raw.trim()) {
+        try {
+          payload = JSON.parse(raw) as Record<string, unknown>;
+        } catch {
+          payload = { error: raw.slice(0, 240) || 'Resposta inválida do servidor' };
+        }
+      }
+
+      const sentOk =
+        res.ok &&
+        (payload.sent === true ||
+          (payload.ok === true && typeof payload.error !== 'string'));
+
+      if (!sentOk) {
+        const detail =
+          (typeof payload.error === 'string' && payload.error) ||
+          (typeof payload.message === 'string' && payload.message) ||
+          `Falha ao enviar (HTTP ${res.status})`;
         setWelcomeFeedback((prev) => ({
           ...prev,
           [userId]: { status: 'error', detail },
         }));
+        setWelcomeToast({
+          variant: 'error',
+          title: 'Boas-vindas não enviado',
+          detail,
+          email,
+        });
         showStatus('error', 'Boas-vindas não enviado', `${email}: ${detail}`);
         return;
       }
 
-      const destino = payload.email ?? email;
-      const horario = payload.sentAt
-        ? new Date(payload.sentAt).toLocaleString('pt-BR')
-        : new Date().toLocaleString('pt-BR');
-      const idResend = payload.resendId ? `ID Resend: ${payload.resendId}` : 'Sem ID Resend (verifique painel Resend)';
+      const destino = typeof payload.email === 'string' ? payload.email : email;
+      const sentAt =
+        typeof payload.sentAt === 'string' ? payload.sentAt : new Date().toISOString();
+      const resendId = typeof payload.resendId === 'string' ? payload.resendId : null;
+      const horario = new Date(sentAt).toLocaleString('pt-BR');
+      const idResend = resendId
+        ? `ID Resend: ${resendId}`
+        : 'Confira também o painel Resend se o e-mail não chegar.';
 
       setWelcomeFeedback((prev) => ({
         ...prev,
         [userId]: {
           status: 'success',
           email: destino,
-          resendId: payload.resendId ?? null,
-          sentAt: payload.sentAt ?? new Date().toISOString(),
+          resendId,
+          sentAt,
         },
       }));
-      showStatus(
-        'success',
-        'E-mail de boas-vindas enviado',
-        `Para ${destino} em ${horario}. ${idResend}.`,
-      );
+      setWelcomeToast({
+        variant: 'success',
+        title: 'E-mail enviado',
+        detail: `${destino} · ${horario}. ${idResend}`,
+        email: destino,
+      });
+      showStatus('success', 'E-mail de boas-vindas enviado', `Para ${destino} em ${horario}. ${idResend}`);
     } catch (e) {
       const detail = e instanceof Error ? e.message : 'Erro ao reenviar e-mail';
       setWelcomeFeedback((prev) => ({
         ...prev,
         [userId]: { status: 'error', detail },
       }));
+      setWelcomeToast({
+        variant: 'error',
+        title: 'Boas-vindas não enviado',
+        detail,
+        email,
+      });
       showStatus('error', 'Boas-vindas não enviado', `${email}: ${detail}`);
     } finally {
-      setSaving(false);
+      setWelcomeSendingUserId(null);
     }
   }
 
@@ -529,6 +588,33 @@ export default function AdminConcursoMatriculasPage() {
 
       <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 className="mb-4 text-lg font-black text-slate-900">Matriculados</h2>
+
+        {welcomeToast ? (
+          <div
+            role="alert"
+            aria-live="assertive"
+            className={`mb-4 flex gap-3 rounded-2xl border-2 px-4 py-3 text-sm ${
+              welcomeToast.variant === 'success'
+                ? 'border-emerald-300 bg-emerald-50 text-emerald-950'
+                : welcomeToast.variant === 'error'
+                  ? 'border-rose-300 bg-rose-50 text-rose-950'
+                  : 'border-cyan-300 bg-cyan-50 text-cyan-950'
+            }`}
+          >
+            {welcomeToast.variant === 'success' ? (
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" aria-hidden />
+            ) : welcomeToast.variant === 'error' ? (
+              <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-rose-600" aria-hidden />
+            ) : (
+              <Loader2 className="mt-0.5 h-5 w-5 shrink-0 animate-spin text-cyan-600" aria-hidden />
+            )}
+            <div className="min-w-0 flex-1">
+              <p className="font-black">{welcomeToast.title}</p>
+              <p className="mt-1 font-medium leading-relaxed">{welcomeToast.detail}</p>
+            </div>
+          </div>
+        ) : null}
+
         <div className="mb-4">
           <input
             type="search"
@@ -549,11 +635,15 @@ export default function AdminConcursoMatriculasPage() {
           <ul className="divide-y divide-slate-100">
             {matriculasFiltradas.map((m) => {
               const welcome = welcomeFeedback[m.userId] ?? { status: 'idle' as const };
-              const welcomeSending = welcome.status === 'sending';
+              const welcomeSending =
+                welcome.status === 'sending' || welcomeSendingUserId === m.userId;
 
               return (
               <li
                 key={m.userId}
+                ref={(el) => {
+                  welcomeRowRefs.current[m.userId] = el;
+                }}
                 className="flex flex-col gap-3 py-4 sm:flex-row sm:items-start sm:justify-between"
               >
                 <div className="min-w-0 flex-1">
@@ -601,7 +691,7 @@ export default function AdminConcursoMatriculasPage() {
                 <div className="flex shrink-0 flex-wrap items-center gap-2">
                   <button
                     type="button"
-                    disabled={saving || welcomeSending}
+                    disabled={welcomeSending}
                     onClick={() => void reenviarBoasVindas(m.userId, m.email)}
                     className="inline-flex items-center justify-center gap-2 rounded-2xl border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-bold text-cyan-900 hover:bg-cyan-100 disabled:cursor-not-allowed disabled:opacity-50"
                   >
@@ -652,6 +742,40 @@ export default function AdminConcursoMatriculasPage() {
           </ul>
         )}
       </section>
+
+      {welcomeToast ? (
+        <div
+          role="alert"
+          aria-live="assertive"
+          className={`fixed inset-x-4 bottom-6 z-[200] mx-auto flex max-w-lg gap-3 rounded-2xl border-2 px-4 py-4 shadow-2xl ${
+            welcomeToast.variant === 'success'
+              ? 'border-emerald-400 bg-emerald-50 text-emerald-950'
+              : welcomeToast.variant === 'error'
+                ? 'border-rose-400 bg-rose-50 text-rose-950'
+                : 'border-cyan-400 bg-cyan-50 text-cyan-950'
+          }`}
+        >
+          {welcomeToast.variant === 'success' ? (
+            <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-emerald-600" aria-hidden />
+          ) : welcomeToast.variant === 'error' ? (
+            <AlertCircle className="mt-0.5 h-6 w-6 shrink-0 text-rose-600" aria-hidden />
+          ) : (
+            <Loader2 className="mt-0.5 h-6 w-6 shrink-0 animate-spin text-cyan-600" aria-hidden />
+          )}
+          <div className="min-w-0 flex-1">
+            <p className="text-base font-black">{welcomeToast.title}</p>
+            <p className="mt-1 text-sm font-medium leading-relaxed">{welcomeToast.detail}</p>
+          </div>
+          <button
+            type="button"
+            onClick={() => setWelcomeToast(null)}
+            className="shrink-0 rounded-lg p-1 text-slate-500 hover:bg-black/5"
+            aria-label="Fechar aviso"
+          >
+            <X className="h-5 w-5" aria-hidden />
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 }

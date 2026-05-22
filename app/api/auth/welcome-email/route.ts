@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 
-import { sendWelcomeEmail } from '@/lib/actions/email-actions';
+import { sendWelcomeEmail } from '@/lib/email/sendWelcomeEmail';
 import { getResendServerConfig } from '@/lib/env';
 import { logger } from '@/lib/logger';
 import { createSupabaseServerClient } from '@/lib/supabase/server-auth';
