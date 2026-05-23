@@ -9,9 +9,7 @@ export type QuestaoNavigationContextValue = {
   cachePayload: (key: string, payload: EstudarQuestaoPayload) => void;
   getCachedPayload: (key: string) => EstudarQuestaoPayload | undefined;
   navigateEstudar: (slugComQuery: string) => void;
-  confirmServerArrival: (key: string) => void;
-  pendingTargetKey: string | null;
-  isOverlayActive: boolean;
+  prefetchEstudar: (slugComQuery: string) => void;
 };
 
 export const QuestaoNavigationContext =

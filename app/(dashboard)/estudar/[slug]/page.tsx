@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
 import EstudarQuestaoHydrator from '@/components/lesson/EstudarQuestaoHydrator';
+import { QuestaoNavigationProvider } from '@/components/lesson/QuestaoNavigationProvider';
 import {
   getQuestaoBySlugCached,
   getQuestoesByAssuntoCached,
@@ -216,19 +217,21 @@ export default async function PaginaQuestaoDinamica({
   return (
     <div className="flex flex-1 flex-col min-h-0 w-full bg-[#010409] px-3 py-3 sm:px-4 md:px-6 md:py-6 pb-safe font-sans">
       <div className="flex flex-1 flex-col min-h-0 w-full max-w-6xl mx-auto">
-        <EstudarQuestaoHydrator
-          dados={atual.conteudo_json}
-          mode="live"
-          proximaSlug={proximaSlugFinal}
-          anteriorSlug={anteriorSlugFinal}
-          moduloSlug={resolvedParams.slug}
-          questoesDoAssunto={questoesDoAssunto}
-          fromPlano={fromPlano}
-          fromCaderno={fromCaderno ? cadernoId : undefined}
-          listaContexto={listaContexto}
-          avantCodigo={avantCodigoAluno}
-          vitrineQuerySuffix={fromPlano || fromCaderno ? '' : vitrineQuerySuffix}
-        />
+        <QuestaoNavigationProvider>
+          <EstudarQuestaoHydrator
+            dados={atual.conteudo_json}
+            mode="live"
+            proximaSlug={proximaSlugFinal}
+            anteriorSlug={anteriorSlugFinal}
+            moduloSlug={resolvedParams.slug}
+            questoesDoAssunto={questoesDoAssunto}
+            fromPlano={fromPlano}
+            fromCaderno={fromCaderno ? cadernoId : undefined}
+            listaContexto={listaContexto}
+            avantCodigo={avantCodigoAluno}
+            vitrineQuerySuffix={fromPlano || fromCaderno ? '' : vitrineQuerySuffix}
+          />
+        </QuestaoNavigationProvider>
       </div>
     </div>
   );

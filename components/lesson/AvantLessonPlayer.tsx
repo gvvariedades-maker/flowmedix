@@ -179,11 +179,14 @@ export default function AvantLessonPlayer({
     };
   }, [mode, moduloSlug]);
 
-  useEffect(() => {
-    if (mode !== 'live') return;
-    if (proximaSlug) router.prefetch(buildEstudarHref(proximaSlug));
-    if (anteriorSlug) router.prefetch(buildEstudarHref(anteriorSlug));
-  }, [mode, proximaSlug, anteriorSlug, router]);
+  const prefetchSlug = (slugComQuery: string | null | undefined) => {
+    if (mode !== 'live' || !slugComQuery) return;
+    if (questaoNav) {
+      questaoNav.prefetchEstudar(slugComQuery);
+    } else {
+      router.prefetch(buildEstudarHref(slugComQuery));
+    }
+  };
 
   /** Após escolher uma alternativa, leva o botão Confirmar para a área visível do scroll. */
   useLayoutEffect(() => {
@@ -651,6 +654,12 @@ export default function AvantLessonPlayer({
                     onClick={() => {
                       handleNavegar(`${q.slug}${buildNavegacaoSuffix()}`);
                     }}
+                    onMouseEnter={() => {
+                      prefetchSlug(`${q.slug}${buildNavegacaoSuffix()}`);
+                    }}
+                    onFocus={() => {
+                      prefetchSlug(`${q.slug}${buildNavegacaoSuffix()}`);
+                    }}
                     title={`Questão ${i + 1}${q.estudada ? ' — estudada' : ''}`}
                     className={`shrink-0 rounded-full transition-all duration-200 flex items-center justify-center ${
                       isCurrent
@@ -677,7 +686,9 @@ export default function AvantLessonPlayer({
           <div className="px-2 sm:px-4 py-3 flex flex-wrap justify-between items-center gap-2">
             <button 
               type="button"
-              onClick={() => anteriorSlug && handleNavegar(anteriorSlug)} 
+              onClick={() => anteriorSlug && handleNavegar(anteriorSlug)}
+              onMouseEnter={() => prefetchSlug(anteriorSlug)}
+              onFocus={() => prefetchSlug(anteriorSlug)}
               disabled={!anteriorSlug} 
               className={`flex items-center gap-1.5 sm:gap-2 px-2 sm:px-4 py-2.5 sm:py-3 rounded-xl font-bold uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest transition-all min-h-[44px] ${
                 anteriorSlug ? 'text-slate-400 hover:bg-white/[0.05] hover:text-[#00f2ff]' : 'text-white/15 cursor-not-allowed'
@@ -688,7 +699,9 @@ export default function AvantLessonPlayer({
             {proximaSlug ? (
               <button 
                 type="button"
-                onClick={() => proximaSlug && handleNavegar(proximaSlug)} 
+                onClick={() => proximaSlug && handleNavegar(proximaSlug)}
+                onMouseEnter={() => prefetchSlug(proximaSlug)}
+                onFocus={() => prefetchSlug(proximaSlug)}
                 className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-white/[0.07] text-slate-200 font-black uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:bg-white/[0.12] transition-all min-h-[44px]"
               >
                 <span className="sm:hidden">Próxima</span>
@@ -942,6 +955,8 @@ export default function AvantLessonPlayer({
                         <button
                           type="button"
                           onClick={() => proximaSlug && handleNavegar(proximaSlug)}
+                          onMouseEnter={() => prefetchSlug(proximaSlug)}
+                          onFocus={() => prefetchSlug(proximaSlug)}
                           className="group flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-[#BEF264] px-4 py-3 text-[10px] font-black uppercase tracking-wide text-slate-900 shadow-[0_0_20px_rgba(190,242,100,0.35)] transition-all hover:bg-[#a3d648] active:scale-[0.98] sm:text-xs sm:tracking-widest"
                         >
                           Próxima questão

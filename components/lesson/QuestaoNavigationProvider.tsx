@@ -1,8 +1,7 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { useCallback, useMemo, useRef, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
-import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import {
   QuestaoNavigationContext,
   type EstudarQuestaoPayload,
@@ -12,7 +11,6 @@ import {
   buildEstudarCacheKeyFromSlugComQuery,
   buildEstudarHref,
 } from '@/lib/estudar/navigation';
-import { LessonPlayerSkeleton } from '@/components/lesson/LessonPlayerSkeleton';
 
 const CACHE_MAX_ENTRIES = 20;
 
@@ -43,12 +41,7 @@ class LruCache<T> {
 export function QuestaoNavigationProvider({ children }: { children: ReactNode }) {
   const router = useRouter();
   const cacheRef = useRef(new LruCache<EstudarQuestaoPayload>(CACHE_MAX_ENTRIES));
-
-  const [optimisticPayload, setOptimisticPayload] = useState<EstudarQuestaoPayload | null>(
-    null,
-  );
-  const [isNavigating, setIsNavigating] = useState(false);
-  const [pendingTargetKey, setPendingTargetKey] = useState<string | null>(null);
+  const prefetchedRef = useRef(new Set<string>());
 
   const cachePayload = useCallback((key: string, payload: EstudarQuestaoPayload) => {
     cacheRef.current.set(key, payload);
@@ -58,96 +51,35 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     return cacheRef.current.get(key);
   }, []);
 
-  const clearOptimistic = useCallback(() => {
-    setOptimisticPayload(null);
-    setIsNavigating(false);
-    setPendingTargetKey(null);
-  }, []);
-
-  const confirmServerArrival = useCallback(
-    (key: string) => {
-      if (pendingTargetKey === key) {
-        clearOptimistic();
-      }
-    },
-    [pendingTargetKey, clearOptimistic],
-  );
-
-  useEffect(() => {
-    if (!pendingTargetKey) return;
-    const onPopState = () => clearOptimistic();
-    window.addEventListener('popstate', onPopState);
-    return () => window.removeEventListener('popstate', onPopState);
-  }, [pendingTargetKey, clearOptimistic]);
-
-  const navigateEstudar = useCallback(
+  const prefetchEstudar = useCallback(
     (slugComQuery: string) => {
       const href = buildEstudarHref(slugComQuery);
-      const targetKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
-      const cached = cacheRef.current.get(targetKey);
-
-      setPendingTargetKey(targetKey);
-      if (cached) {
-        setOptimisticPayload(cached);
-        setIsNavigating(false);
-      } else {
-        setOptimisticPayload(null);
-        setIsNavigating(true);
-      }
-
-      router.push(href);
+      if (prefetchedRef.current.has(href)) return;
+      prefetchedRef.current.add(href);
+      router.prefetch(href);
     },
     [router],
   );
 
-  const isOverlayActive = optimisticPayload !== null || isNavigating;
+  const navigateEstudar = useCallback(
+    (slugComQuery: string) => {
+      router.push(buildEstudarHref(slugComQuery));
+    },
+    [router],
+  );
 
   const value = useMemo<QuestaoNavigationContextValue>(
     () => ({
       cachePayload,
       getCachedPayload,
       navigateEstudar,
-      confirmServerArrival,
-      pendingTargetKey,
-      isOverlayActive,
+      prefetchEstudar,
     }),
-    [
-      cachePayload,
-      getCachedPayload,
-      navigateEstudar,
-      confirmServerArrival,
-      pendingTargetKey,
-      isOverlayActive,
-    ],
+    [cachePayload, getCachedPayload, navigateEstudar, prefetchEstudar],
   );
 
   return (
-    <QuestaoNavigationContext.Provider value={value}>
-      <div className="flex flex-1 flex-col min-h-0 w-full relative">
-        <div
-          className={
-            isOverlayActive
-              ? 'invisible pointer-events-none absolute inset-0 overflow-hidden'
-              : 'flex flex-1 flex-col min-h-0 w-full'
-          }
-          aria-hidden={isOverlayActive}
-        >
-          {children}
-        </div>
-
-        {isOverlayActive && (
-          <div className="flex flex-1 flex-col min-h-0 w-full absolute inset-0 z-10 bg-[#010409] px-3 py-3 sm:px-4 md:px-6 md:py-6 pb-safe font-sans">
-            <div className="flex flex-1 flex-col min-h-0 w-full max-w-6xl mx-auto">
-              {optimisticPayload ? (
-                <AvantLessonPlayer {...optimisticPayload} />
-              ) : (
-                <LessonPlayerSkeleton />
-              )}
-            </div>
-          </div>
-        )}
-      </div>
-    </QuestaoNavigationContext.Provider>
+    <QuestaoNavigationContext.Provider value={value}>{children}</QuestaoNavigationContext.Provider>
   );
 }
 

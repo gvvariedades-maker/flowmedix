@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useLayoutEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
@@ -13,36 +13,13 @@ export type EstudarQuestaoHydratorProps = AvantLessonPlayerProps;
 export default function EstudarQuestaoHydrator(props: EstudarQuestaoHydratorProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const { cachePayload, confirmServerArrival, pendingTargetKey, isOverlayActive } =
-    useQuestaoNavigation();
+  const { cachePayload } = useQuestaoNavigation();
 
   const cacheKey = buildEstudarCacheKey(pathname, searchParams);
-  const payload: EstudarQuestaoPayload = props;
 
   useLayoutEffect(() => {
-    cachePayload(cacheKey, payload);
-  }, [
-    cacheKey,
-    cachePayload,
-    payload.dados,
-    payload.moduloSlug,
-    payload.proximaSlug,
-    payload.anteriorSlug,
-    payload.questoesDoAssunto,
-    payload.listaContexto,
-    payload.avantCodigo,
-    payload.fromPlano,
-    payload.fromCaderno,
-    payload.vitrineQuerySuffix,
-  ]);
-
-  useEffect(() => {
-    confirmServerArrival(cacheKey);
-  }, [cacheKey, confirmServerArrival]);
-
-  if (isOverlayActive && pendingTargetKey !== null && pendingTargetKey !== cacheKey) {
-    return null;
-  }
+    cachePayload(cacheKey, props as EstudarQuestaoPayload);
+  }, [cacheKey, cachePayload, props]);
 
   return <AvantLessonPlayer {...props} />;
 }
