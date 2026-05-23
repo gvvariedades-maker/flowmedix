@@ -4,19 +4,13 @@ import EstudarQuestaoHydrator from '@/components/lesson/EstudarQuestaoHydrator';
 import { QuestaoNavigationProvider } from '@/components/lesson/QuestaoNavigationProvider';
 import {
   getQuestaoBySlugCached,
-  getQuestoesByAssuntoCached,
-  getHistoricoQuestoesCached,
-  getModulosEstudoVitrineForUserCached,
+  getHistoricoQuestoesForSlugsCached,
+  estudadosSetFromHistorico,
 } from '@/lib/cache';
 import { userHasModuloAccess } from '@/lib/concursos/entitlements';
-import {
-  buildVitrineFilteredSlugList,
-  listaModulosQuestaoPorTituloAulaNoCatalogo,
-  type HistoricoQuestaoRow,
-  type ModuloEstudoRow,
-} from '@/lib/vitrineFilters';
 import { getTodayReviews } from '@/lib/spaced-repetition';
-import { isDataServiceUnavailableError } from '@/lib/dataServiceError';
+import { getQuestaoNavList } from '@/lib/estudar/questaoNav';
+import { sliceQuestoesNavWindow } from '@/lib/estudar/questaoNavWindow';
 
 interface ModuloListItem {
   id: string;
@@ -72,18 +66,15 @@ export default async function PaginaQuestaoDinamica({
 
   if (fromPlano && userId) {
     // ── Modo Plano Diário ──────────────────────────────────────────────────
-    const [revisoes, historico] = await Promise.all([
-      getTodayReviews(userId),
-      getHistoricoQuestoesCached(userId),
-    ]);
+    const revisoes = await getTodayReviews(userId);
 
     lista = revisoes.map(r => ({ id: r.modulo_slug, modulo_slug: r.modulo_slug }));
 
-    const estudadosSet = new Set<string>(
-      (historico as any[])
-        .filter(h => h.estudo_reverso_concluido === true)
-        .map(h => h.modulo_slug as string)
+    const historico = await getHistoricoQuestoesForSlugsCached(
+      userId,
+      lista.map((item) => item.modulo_slug),
     );
+    const estudadosSet = estudadosSetFromHistorico(historico);
 
     questoesDoAssunto = lista.map(item => ({
       slug: item.modulo_slug,
@@ -92,22 +83,19 @@ export default async function PaginaQuestaoDinamica({
 
   } else if (fromCaderno && cadernoId && userId) {
     // ── Modo Caderno ───────────────────────────────────────────────────────
-    const [{ data: cadernoItems }, historico] = await Promise.all([
-      supabase
-        .from('study_notebook_items')
-        .select('modulo_slug, titulo_aula')
-        .eq('notebook_id', cadernoId)
-        .order('position', { ascending: true }),
-      getHistoricoQuestoesCached(userId),
-    ]);
+    const { data: cadernoItems } = await supabase
+      .from('study_notebook_items')
+      .select('modulo_slug, titulo_aula')
+      .eq('notebook_id', cadernoId)
+      .order('position', { ascending: true });
 
     lista = (cadernoItems || []).map(i => ({ id: i.modulo_slug, modulo_slug: i.modulo_slug }));
 
-    const estudadosSet = new Set<string>(
-      (historico as any[])
-        .filter(h => h.estudo_reverso_concluido === true)
-        .map(h => h.modulo_slug as string)
+    const historico = await getHistoricoQuestoesForSlugsCached(
+      userId,
+      lista.map((item) => item.modulo_slug),
     );
+    const estudadosSet = estudadosSetFromHistorico(historico);
 
     questoesDoAssunto = lista.map(item => ({
       slug: item.modulo_slug,
@@ -115,74 +103,28 @@ export default async function PaginaQuestaoDinamica({
     }));
 
   } else {
-    // ── Modo Normal: vitrine com filtro (banca/assunto/q) ou só pelo assunto (titulo_aula) ─
     const tituloAula: string =
       atual.titulo_aula ||
       atual.conteudo_json?.meta?.subtopico ||
       atual.modulo_nome ||
       '';
 
-    const hasVitrineFilters = Boolean(vitrineBanca || vitrineAssunto || vitrineQ);
+    const nav = await getQuestaoNavList({
+      userId,
+      slug: resolvedParams.slug,
+      tituloAula,
+      vitrineFilters: {
+        banca: vitrineBanca || undefined,
+        assunto: vitrineAssunto || undefined,
+        q: vitrineQ || undefined,
+      },
+    });
 
-    const historico = userId ? await getHistoricoQuestoesCached(userId) : [];
-
-    const estudadosSet = new Set<string>(
-      (historico as { modulo_slug: string; estudo_reverso_concluido?: boolean }[])
-        .filter((h) => h.estudo_reverso_concluido === true)
-        .map((h) => h.modulo_slug as string),
-    );
-
-    let modulosCatalogoUsuario: ModuloEstudoRow[] = [];
-    if (userId) {
-      try {
-        modulosCatalogoUsuario = (await getModulosEstudoVitrineForUserCached(userId)) as ModuloEstudoRow[];
-      } catch (e) {
-        if (!isDataServiceUnavailableError(e)) throw e;
-      }
-    }
-
-    async function listaPorAssunto(): Promise<ModuloListItem[]> {
-      if (!tituloAula) return [];
-      if (userId && modulosCatalogoUsuario.length > 0) {
-        return listaModulosQuestaoPorTituloAulaNoCatalogo(modulosCatalogoUsuario, tituloAula);
-      }
-      try {
-        return (await getQuestoesByAssuntoCached(tituloAula)) as ModuloListItem[];
-      } catch (e) {
-        if (isDataServiceUnavailableError(e)) {
-          return [];
-        }
-        throw e;
-      }
-    }
-
-    if (hasVitrineFilters) {
-      const slugList = buildVitrineFilteredSlugList(
-        modulosCatalogoUsuario,
-        historico as HistoricoQuestaoRow[],
-        {
-          banca: vitrineBanca || undefined,
-          assunto: vitrineAssunto || undefined,
-          q: vitrineQ || undefined,
-        },
-      );
-
-      if (slugList.length > 0 && slugList.includes(resolvedParams.slug)) {
-        lista = slugList.map((slug) => ({ id: slug, modulo_slug: slug }));
-      } else {
-        lista = await listaPorAssunto();
-      }
-    } else {
-      lista = await listaPorAssunto();
-    }
-
-    questoesDoAssunto = lista.map((item) => ({
-      slug: item.modulo_slug,
-      estudada: estudadosSet.has(item.modulo_slug),
-    }));
+    lista = nav.lista;
+    questoesDoAssunto = nav.questoesDoAssunto;
   }
 
-  const indexAtual = lista.findIndex(item => item.modulo_slug === resolvedParams.slug);
+  const indexAtual = lista.findIndex((item) => item.modulo_slug === resolvedParams.slug);
   const anteriorSlug = indexAtual > 0 ? lista[indexAtual - 1].modulo_slug : null;
   const proximaSlug = indexAtual < lista.length - 1 ? lista[indexAtual + 1].modulo_slug : null;
 
@@ -208,6 +150,11 @@ export default async function PaginaQuestaoDinamica({
   const anteriorSlugFinal = anteriorSlug ? `${anteriorSlug}${suffix}` : null;
   const proximaSlugFinal = proximaSlug ? `${proximaSlug}${suffix}` : null;
 
+  const questoesDoAssuntoParaCliente = sliceQuestoesNavWindow(
+    questoesDoAssunto,
+    indexAtual,
+  );
+
   const rawCodigo = (atual as { avant_codigo?: unknown }).avant_codigo;
   const avantCodigoAluno =
     rawCodigo != null && rawCodigo !== '' && !Number.isNaN(Number(rawCodigo))
@@ -224,7 +171,7 @@ export default async function PaginaQuestaoDinamica({
             proximaSlug={proximaSlugFinal}
             anteriorSlug={anteriorSlugFinal}
             moduloSlug={resolvedParams.slug}
-            questoesDoAssunto={questoesDoAssunto}
+            questoesDoAssunto={questoesDoAssuntoParaCliente}
             fromPlano={fromPlano}
             fromCaderno={fromCaderno ? cadernoId : undefined}
             listaContexto={listaContexto}

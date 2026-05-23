@@ -7,6 +7,7 @@
  * - Dados de sessão: Cache em memória durante request
  */
 
+import { createHash } from 'crypto';
 import { unstable_cache } from 'next/cache';
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { cache as cacheByRequest } from 'react';
@@ -14,6 +15,7 @@ import { logger } from './logger';
 import { DataServiceUnavailableError } from './dataServiceError';
 import { withPostgrestReadRetry } from './supabaseReadRetry';
 import type { Concurso } from '@/types/database';
+import { SCALE_LIMITS } from '@/lib/scale/constants';
 
 // Cliente Supabase SEM cookies - para uso dentro de unstable_cache.
 // Lazy: evita createClient com URL/key indefinidos no import (ex.: `next build` / CI sem .env).
@@ -83,7 +85,7 @@ export const CACHE_CONFIG = {
 } as const;
 
 /** Limite da lista usada na vitrine (/estudar). Não usar 100: os N mais recentes podem ser só 1–2 assuntos e escondem o restante do catálogo. */
-const MODULOS_ESTUDO_VITRINE_LIMIT = 5000;
+const MODULOS_ESTUDO_VITRINE_LIMIT = SCALE_LIMITS.VITRINE_MODULOS;
 
 /**
  * Cache para lista de módulos de estudo
@@ -294,6 +296,86 @@ export const getQuestoesByBancaCached = cacheByRequest(
     )();
   },
 );
+
+/** Linha mínima de `historico_questoes` usada na vitrine e no player. */
+export type HistoricoQuestaoCachedRow = {
+  modulo_slug: string;
+  acertou: boolean;
+  estudo_reverso_concluido: boolean;
+};
+
+/** PostgREST: lotes de `modulo_slug` em `.in()` (mesmo padrão de `lib/spaced-repetition.ts`). */
+const HISTORICO_SLUG_IN_CHUNK = 120;
+
+function uniqueNonEmptySlugs(slugs: readonly string[]): string[] {
+  return [...new Set(slugs.map((s) => s?.trim()).filter((s): s is string => Boolean(s)))];
+}
+
+function historicoSlugsCacheKey(userId: string, slugs: readonly string[]): string {
+  const unique = uniqueNonEmptySlugs(slugs);
+  if (unique.length === 0) return `historico-slugs-${userId}-empty`;
+  const normalized = unique.slice().sort().join('\0');
+  const hash = createHash('sha256').update(normalized).digest('hex').slice(0, 16);
+  return `historico-slugs-${userId}-${hash}`;
+}
+
+/** Slugs com estudo reverso concluído (dots / navegação). */
+export function estudadosSetFromHistorico(
+  historico: readonly Pick<HistoricoQuestaoCachedRow, 'modulo_slug' | 'estudo_reverso_concluido'>[],
+): Set<string> {
+  return new Set(
+    historico
+      .filter((h) => h.estudo_reverso_concluido === true)
+      .map((h) => h.modulo_slug),
+  );
+}
+
+/**
+ * Histórico restrito aos slugs do contexto (player, assunto, vitrine).
+ * Evita buscar até 1000 linhas quando só o subconjunto atual importa.
+ * IMPORTANTE: userId deve ser obtido fora do cache (sessão) e passado como argumento.
+ */
+export async function getHistoricoQuestoesForSlugsCached(
+  userId: string | undefined,
+  slugs: readonly string[],
+): Promise<HistoricoQuestaoCachedRow[]> {
+  if (!userId) return [];
+
+  const unique = uniqueNonEmptySlugs(slugs);
+  if (unique.length === 0) return [];
+
+  const cacheKey = historicoSlugsCacheKey(userId, unique);
+
+  return unstable_cache(
+    async () => {
+      const { createServerSupabase } = await import('./supabase/server');
+      const supabase = await createServerSupabase();
+      const merged: HistoricoQuestaoCachedRow[] = [];
+
+      for (let i = 0; i < unique.length; i += HISTORICO_SLUG_IN_CHUNK) {
+        const part = unique.slice(i, i + HISTORICO_SLUG_IN_CHUNK);
+        const data = await withPostgrestReadRetry(
+          `historico_questoes:ctx:${userId.slice(0, 8)}:${part.length}`,
+          async () =>
+            supabase
+              .from('historico_questoes')
+              .select('modulo_slug, acertou, estudo_reverso_concluido')
+              .eq('user_id', userId)
+              .in('modulo_slug', part),
+        );
+        if (data?.length) merged.push(...(data as HistoricoQuestaoCachedRow[]));
+      }
+
+      trackCacheHit(cacheKey);
+      return merged;
+    },
+    [cacheKey],
+    {
+      ...CACHE_CONFIG.USER,
+      tags: ['historico', 'user', `user-${userId}`],
+    },
+  )();
+}
 
 /**
  * Cache para histórico de questões por usuário

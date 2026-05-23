@@ -708,9 +708,18 @@ export const validateSlides = (slides: unknown[]) => {
   };
 };
 
+/** Query params de `GET /api/vitrine` (vitrine paginada). */
+export const VitrineQuerySchema = z.object({
+  page: z.coerce.number().int().min(1).max(500).default(1),
+  banca: z.string().trim().max(LIMITS.BANCA_MAX).optional(),
+  assunto: z.string().trim().max(LIMITS.TOPICO_MAX).optional(),
+  q: z.string().trim().max(200).optional(),
+});
+
 // ============================================================================
 // TYPE EXPORTS
 // ============================================================================
+export type VitrineQueryInput = z.infer<typeof VitrineQuerySchema>;
 export type QuestaoCompletaInput = z.infer<typeof QuestaoCompletaSchema>;
 export type ResolveUserInput = z.infer<typeof ResolveUserSchema>;
 export type ConcursoMatriculaInput = z.infer<typeof ConcursoMatriculaSchema>;

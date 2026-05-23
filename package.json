@@ -14,6 +14,7 @@
     "db:push": "supabase db push",
     "db:link": "supabase link",
     "analyze:performance": "tsx scripts/analyze-performance.ts",
+    "scale:health": "tsx scripts/scale-health-check.ts",
     "setup:webhook": "bash scripts/setup-webhook.sh",
     "capture:tutorial": "tsx scripts/capture-tutorial-screens.ts",
     "capture:landing-neuroslides": "tsx scripts/capture-landing-neuroslides.ts",

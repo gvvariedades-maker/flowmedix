@@ -36,6 +36,7 @@ import {
 import { isCertoErradoQuestion } from '@/lib/questionKind';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
+import { buildDotsNavWindow } from '@/lib/estudar/dotsNavWindow';
 import { supabase } from '@/lib/supabase/client';
 import { PaywallModal } from '@/components/freemium/PaywallModal';
 import type { AvantLessonPlayerProps, LessonData, ReverseStudySlide } from '@/types/lesson';
@@ -121,15 +122,25 @@ export default function AvantLessonPlayer({
     const ro = new ResizeObserver(sync);
     ro.observe(el);
     return () => ro.disconnect();
-  }, [mode, questoesDoAssunto?.length]);
+  }, [mode]);
 
-  /** Garante que a bolinha da questão atual fique visível na faixa rolável (listas longas). */
+  const dotsNavItems = useMemo(
+    () =>
+      buildDotsNavWindow(questoesDoAssunto ?? [], {
+        currentSlug: moduloSlug,
+        currentIndice: listaContexto?.atual,
+        total: listaContexto?.total,
+      }),
+    [questoesDoAssunto, moduloSlug, listaContexto?.atual, listaContexto?.total],
+  );
+
+  /** Centraliza o dot atual na faixa (scroll instantâneo; faixa tem altura fixa). */
   useLayoutEffect(() => {
-    if (mode !== 'live' || !questoesDoAssunto?.length) return;
+    if (mode !== 'live' || dotsNavItems.length === 0) return;
     const btn = questaoAtualDotRef.current;
     if (!btn) return;
-    btn.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
-  }, [mode, moduloSlug, questoesDoAssunto?.length]);
+    btn.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'auto' });
+  }, [mode, moduloSlug, dotsNavItems]);
 
   // ============================================================================
   // ESTADOS (Pure React V15)
@@ -641,45 +652,69 @@ export default function AvantLessonPlayer({
           ref={bottomNavRef}
           className="bg-[#0d1117] border-t border-[rgba(255,255,255,0.10)] shrink-0 z-10 shadow-[0_-4px_24px_-8px_rgba(15,23,42,0.08)] pb-safe md:rounded-b-[40px]"
         >
-          {/* Dots de status das questões do assunto (rolagem horizontal quando não couber; 1 questão também mostra o indicador) */}
-          {questoesDoAssunto && questoesDoAssunto.length > 0 && (
-            <div className="w-full min-w-0 overflow-x-auto overflow-y-visible overscroll-x-contain scroll-smooth pt-3 pb-1">
-              <div className="mx-auto flex w-max min-w-full flex-nowrap items-center justify-center gap-1.5 px-3 sm:gap-2 sm:px-4">
-              {questoesDoAssunto.map((q, i) => {
-                const isCurrent = q.slug === moduloSlug;
-                return (
-                  <button
-                    key={q.slug}
-                    ref={isCurrent ? questaoAtualDotRef : undefined}
-                    onClick={() => {
-                      handleNavegar(`${q.slug}${buildNavegacaoSuffix()}`);
-                    }}
-                    onMouseEnter={() => {
-                      prefetchSlug(`${q.slug}${buildNavegacaoSuffix()}`);
-                    }}
-                    onFocus={() => {
-                      prefetchSlug(`${q.slug}${buildNavegacaoSuffix()}`);
-                    }}
-                    title={`Questão ${i + 1}${q.estudada ? ' — estudada' : ''}`}
-                    className={`shrink-0 rounded-full transition-all duration-200 flex items-center justify-center ${
-                      isCurrent
-                        ? 'w-7 h-7 bg-[#00f2ff] ring-2 ring-[rgba(0,242,255,0.40)] ring-offset-1 ring-offset-[#0d1117] shadow-md'
-                        : q.estudada
-                          ? 'w-5 h-5 bg-emerald-400 hover:bg-emerald-500'
-                          : 'w-5 h-5 bg-white/20 hover:bg-white/35'
-                    }`}
-                  >
-                    {isCurrent && (
-                      <span className="text-slate-900 text-[10px] font-black leading-none">{i + 1}</span>
-                    )}
-                    {!isCurrent && q.estudada && (
-                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                        <path d="M2 5l2.5 2.5L8 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    )}
-                  </button>
-                );
-              })}
+          {/* Dots janelados: N antes/depois + ellipsis; altura fixa (sem scroll horizontal). */}
+          {dotsNavItems.length > 0 && (
+            <div
+              className="flex h-12 w-full min-w-0 items-center justify-center px-3 sm:px-4"
+              aria-label={
+                listaContexto
+                  ? `Navegação entre questões, questão ${listaContexto.atual} de ${listaContexto.total}`
+                  : 'Navegação entre questões'
+              }
+            >
+              <div className="flex flex-nowrap items-center justify-center gap-1.5 sm:gap-2">
+                {dotsNavItems.map((item, i) => {
+                  if (item.type === 'ellipsis') {
+                    return (
+                      <span
+                        key={`ellipsis-${item.side}-${i}`}
+                        className="flex h-5 w-5 shrink-0 items-center justify-center text-[10px] font-bold leading-none text-slate-500 select-none"
+                        aria-hidden
+                      >
+                        …
+                      </span>
+                    );
+                  }
+
+                  const q = item.questao;
+                  const isCurrent = q.slug === moduloSlug;
+                  const posicaoLista = q.indice;
+                  return (
+                    <button
+                      key={q.slug}
+                      ref={isCurrent ? questaoAtualDotRef : undefined}
+                      type="button"
+                      onClick={() => {
+                        handleNavegar(`${q.slug}${buildNavegacaoSuffix()}`);
+                      }}
+                      onMouseEnter={() => {
+                        prefetchSlug(`${q.slug}${buildNavegacaoSuffix()}`);
+                      }}
+                      onFocus={() => {
+                        prefetchSlug(`${q.slug}${buildNavegacaoSuffix()}`);
+                      }}
+                      title={`Questão ${posicaoLista}${q.estudada ? ' — estudada' : ''}`}
+                      aria-label={`Questão ${posicaoLista}${isCurrent ? ', atual' : ''}${q.estudada ? ', estudada' : ''}`}
+                      aria-current={isCurrent ? 'step' : undefined}
+                      className={`shrink-0 rounded-full transition-all duration-200 flex items-center justify-center ${
+                        isCurrent
+                          ? 'w-7 h-7 bg-[#00f2ff] ring-2 ring-[rgba(0,242,255,0.40)] ring-offset-1 ring-offset-[#0d1117] shadow-md'
+                          : q.estudada
+                            ? 'w-5 h-5 bg-emerald-400 hover:bg-emerald-500'
+                            : 'w-5 h-5 bg-white/20 hover:bg-white/35'
+                      }`}
+                    >
+                      {isCurrent && (
+                        <span className="text-slate-900 text-[10px] font-black leading-none">{posicaoLista}</span>
+                      )}
+                      {!isCurrent && q.estudada && (
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden>
+                          <path d="M2 5l2.5 2.5L8 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           )}

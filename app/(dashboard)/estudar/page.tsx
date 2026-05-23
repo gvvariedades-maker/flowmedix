@@ -2,119 +2,23 @@ import { Suspense } from 'react';
 import { redirect } from 'next/navigation';
 import { getServerUser } from '@/lib/supabase/server-auth';
 import VitrineClient from '@/components/vitrine/VitrineClient';
-import { logger } from '@/lib/logger';
-import {
-  getModulosEstudoVitrineForUserCached,
-  getHistoricoQuestoesCached,
-} from '@/lib/cache';
-import { isDataServiceUnavailableError } from '@/lib/dataServiceError';
 import { getMatriculatedConcursos } from '@/lib/concursos/entitlements';
 
-/** Evita HTML/CDN com payload RSC desatualizado; catálogo vem de `unstable_cache` com revalidação própria. */
+/** Evita HTML/CDN com payload RSC desatualizado; catálogo vem da API `/api/vitrine`. */
 export const dynamic = 'force-dynamic';
-
-interface ModuloEstudoRow {
-  id: string;
-  modulo_slug: string;
-  modulo_nome: string | null;
-  titulo_aula: string | null;
-  banca: string;
-  [key: string]: any;
-}
-
-interface HistoricoQuestaoRow {
-  modulo_slug: string;
-  acertou: boolean;
-  estudo_reverso_concluido: boolean;
-  [key: string]: any;
-}
 
 export default async function VitrinePage() {
   const user = await getServerUser();
   const userId = user?.id;
   if (!userId) redirect('/login?next=/estudar');
 
-  let modulosData: unknown[] = [];
-  let historicoData: unknown[] = [];
-
-  try {
-    modulosData = await getModulosEstudoVitrineForUserCached(userId);
-  } catch (e) {
-    if (!isDataServiceUnavailableError(e)) throw e;
-    logger.warn('Vitrine: catálogo indisponível — fallback para lista vazia', {
-      userIdPresent: true,
-    });
-  }
-
-  try {
-    historicoData = await getHistoricoQuestoesCached(userId);
-  } catch (e) {
-    if (!isDataServiceUnavailableError(e)) throw e;
-    logger.warn('Vitrine: histórico indisponível — segue sem progresso', {
-      userIdPresent: true,
-    });
-  }
-
-  if (!modulosData?.length) {
-    logger.warn('Vitrine: catálogo de módulos vazio — verifique PostgREST, RLS e variáveis Supabase no deploy.', {
-      hasEnvUrl: Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL),
-    });
-  }
-
-  // Type assertions para compatibilidade
-  const modulosTyped = (modulosData || []) as ModuloEstudoRow[];
-  const historicoTyped = (historicoData || []) as HistoricoQuestaoRow[];
-
-  // Otimização: Criar Map para O(1) lookup em vez de O(n*m)
-  const historicoMap = new Map<string, HistoricoQuestaoRow[]>();
-  historicoTyped.forEach((h: HistoricoQuestaoRow) => {
-    const existing = historicoMap.get(h.modulo_slug) || [];
-    historicoMap.set(h.modulo_slug, [...existing, h]);
-  });
-
   const matriculatedConcursos = await getMatriculatedConcursos(userId).catch(() => []);
   const vitrineFallbackTitulo =
     matriculatedConcursos.find((concurso) => concurso.tipo === 'edital')?.nome ?? 'Estudo Reverso';
 
-  const modulosProcessados = modulosTyped.map((modulo: ModuloEstudoRow) => {
-    const tentativas = historicoMap.get(modulo.modulo_slug) || [];
-    const acertos = tentativas.filter((t: HistoricoQuestaoRow) => t.acertou).length;
-    const total = tentativas.length;
-    const percentual = total > 0 ? Math.round((acertos / total) * 100) : 0;
-    // "Estudada" = aluno confirmou explicitamente que concluiu o ciclo de estudo reverso
-    const estudoReversoConcluido = tentativas.some(
-      (t: HistoricoQuestaoRow) => t.estudo_reverso_concluido === true
-    );
-
-    let priorityScore = 0;
-    if (!estudoReversoConcluido) priorityScore = 50;
-    else if (percentual < 70) priorityScore = 100 + (70 - percentual);
-    else if (percentual >= 90) priorityScore = 10;
-    else priorityScore = 30;
-
-    return {
-      id: modulo.id,
-      modulo_slug: modulo.modulo_slug,
-      modulo_nome: modulo.modulo_nome || 'Módulo',
-      titulo_aula: modulo.titulo_aula || 'Aula sem título',
-      banca: modulo.banca,
-      /** Ordem canônica do assunto (vitrine / player), igual a `getQuestoesByAssuntoCached`. */
-      created_at: (modulo as { created_at?: string | null }).created_at ?? null,
-      avant_codigo:
-        modulo.avant_codigo != null && !Number.isNaN(Number(modulo.avant_codigo))
-          ? Number(modulo.avant_codigo)
-          : null,
-      estudoReversoConcluido,
-      stats: { acertos, total, percentual, priorityScore }
-    };
-  }).sort((a: any, b: any) => b.stats.priorityScore - a.stats.priorityScore);
-
   return (
     <Suspense fallback={<VitrineLoadingFallback />}>
-      <VitrineClient
-        initialModulos={modulosProcessados}
-        fallbackTitulo={vitrineFallbackTitulo}
-      />
+      <VitrineClient fallbackTitulo={vitrineFallbackTitulo} />
     </Suspense>
   );
 }

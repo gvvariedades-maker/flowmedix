@@ -178,6 +178,8 @@ export interface LessonData {
 export interface QuestaoDoAssunto {
   slug: string;
   estudada: boolean; // true = aluno concluiu o estudo reverso
+  /** Posição 1-based na lista completa (presente quando o servidor envia só uma janela). */
+  indice?: number;
 }
 
 // ============================================================================

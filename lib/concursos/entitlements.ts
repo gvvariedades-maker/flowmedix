@@ -1,5 +1,6 @@
 import { createServerSupabase } from '@/lib/supabase/server';
 import { logger } from '@/lib/logger';
+import { SCALE_LIMITS } from '@/lib/scale/constants';
 import type {
   Concurso,
   ConcursoMatriculaOrigem,
@@ -50,7 +51,7 @@ export interface ModuloEstudoListRow {
 }
 
 /** Alinhado ao limite da vitrine admin e ao cache global de módulos. */
-const ACCESSIBLE_MODULOS_LIMIT = 5000;
+const ACCESSIBLE_MODULOS_LIMIT = SCALE_LIMITS.ACCESSIBLE_MODULOS;
 /** PostgREST: páginas grandes de vínculos evitam resposta monolítica. */
 const CONCURSO_MODULOS_PAGE_SIZE = 1000;
 /** Fallback: consultas .in() muito grandes podem falhar. */
@@ -414,13 +415,27 @@ async function fetchModulosEstudoByIdsChunked(
   return [...byId.values()];
 }
 
+/** Filtros aplicáveis no PostgREST (`modulos_estudo!inner`) para navegação no player. */
+export type AccessibleModulosNavSqlFilters = {
+  banca?: string;
+  titulo_aula?: string;
+};
+
 async function collectModulosFromMatriculatedConcursos(
   userId: string,
   concursoIds: string[],
+  sqlFilters?: AccessibleModulosNavSqlFilters,
 ): Promise<ModuloEstudoListRow[]> {
   const supabase = await createServerSupabase();
   const collected: ModuloEstudoListRow[] = [];
   let offset = 0;
+
+  const bancaFilter = sqlFilters?.banca?.trim();
+  const tituloAulaFilter = sqlFilters?.titulo_aula?.trim();
+  const useInnerJoin = Boolean(bancaFilter || tituloAulaFilter);
+  const modulosEmbed = useInnerJoin
+    ? 'modulos_estudo!inner(id, modulo_slug, modulo_nome, titulo_aula, banca, created_at, avant_codigo)'
+    : 'modulos_estudo(id, modulo_slug, modulo_nome, titulo_aula, banca, created_at, avant_codigo)';
 
   const slugByConcursoId = new Map<string, string>();
   if (concursoIds.length) {
@@ -441,14 +456,17 @@ async function collectModulosFromMatriculatedConcursos(
   }
 
   while (true) {
-    const { data, error } = await supabase
+    let query = supabase
       .from('concurso_modulos')
-      .select(
-        'concurso_id, modulo_id, modulos_estudo(id, modulo_slug, modulo_nome, titulo_aula, banca, created_at, avant_codigo)',
-      )
+      .select(`concurso_id, modulo_id, ${modulosEmbed}`)
       .in('concurso_id', concursoIds)
       .order('modulo_id', { ascending: true })
       .range(offset, offset + CONCURSO_MODULOS_PAGE_SIZE - 1);
+
+    if (bancaFilter) query = query.eq('modulos_estudo.banca', bancaFilter);
+    if (tituloAulaFilter) query = query.eq('modulos_estudo.titulo_aula', tituloAulaFilter);
+
+    const { data, error } = await query;
 
     if (error) {
       logger.error('Falha ao listar módulos por matrícula', error, { userId });
@@ -503,13 +521,10 @@ export async function getAccessibleModulosForUser(userId: string): Promise<Modul
 }
 
 /**
- * Catálogo para vitrine e navegação no player alinhado à "turma exclusiva":
- * se o aluno tem matrícula em concurso tipo `edital`, mostra só módulos desse pacote
- * (não mistura com o catálogo `geral`). Sem edital ativo → mesmo conjunto que `getAccessibleModulosForUser`.
+ * Escopo de concursos para vitrine/navegação: pacote do edital matriculado quando existir;
+ * caso contrário, todos os concursos com matrícula ativa.
  */
-export async function getAccessibleModulosForMatriculatedEditalPacote(
-  userId: string,
-): Promise<ModuloEstudoListRow[]> {
+export async function resolveNavConcursoIds(userId: string): Promise<string[]> {
   const concursoIds = await getActiveMatriculatedConcursoIds(userId);
   if (!concursoIds.length) return [];
 
@@ -528,11 +543,37 @@ export async function getAccessibleModulosForMatriculatedEditalPacote(
     | { id: string }
     | undefined;
 
-  if (!edital?.id) {
-    return getAccessibleModulosForUser(userId);
-  }
+  if (edital?.id) return [edital.id];
+  return concursoIds;
+}
 
-  const collected = await collectModulosFromMatriculatedConcursos(userId, [edital.id]);
+/**
+ * Catálogo para vitrine e navegação no player alinhado à "turma exclusiva":
+ * se o aluno tem matrícula em concurso tipo `edital`, mostra só módulos desse pacote
+ * (não mistura com o catálogo `geral`). Sem edital ativo → mesmo conjunto que `getAccessibleModulosForUser`.
+ */
+export async function getAccessibleModulosForMatriculatedEditalPacote(
+  userId: string,
+): Promise<ModuloEstudoListRow[]> {
+  const concursoIds = await resolveNavConcursoIds(userId);
+  if (!concursoIds.length) return [];
+
+  const collected = await collectModulosFromMatriculatedConcursos(userId, concursoIds);
+  return finalizeAccessibleModulos(collected);
+}
+
+/**
+ * Módulos acessíveis para navegação no player, com filtros SQL opcionais (banca / titulo_aula).
+ * Evita carregar o catálogo inteiro da vitrine quando há filtros na URL.
+ */
+export async function fetchAccessibleModulosForNav(
+  userId: string,
+  sqlFilters?: AccessibleModulosNavSqlFilters,
+): Promise<ModuloEstudoListRow[]> {
+  const concursoIds = await resolveNavConcursoIds(userId);
+  if (!concursoIds.length) return [];
+
+  const collected = await collectModulosFromMatriculatedConcursos(userId, concursoIds, sqlFilters);
   return finalizeAccessibleModulos(collected);
 }
 
