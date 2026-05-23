@@ -13,6 +13,8 @@
 import { useState, useEffect, useMemo, useRef, useLayoutEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import { buildEstudarHref } from '@/lib/estudar/navigation';
+import { useQuestaoNavigationOptional } from '@/components/lesson/questao-navigation-context';
 import NeuroSlide from '@/components/slides/NeuroSlide';
 import {
   EstudoReversoSlideZoom,
@@ -60,6 +62,7 @@ export default function AvantLessonPlayer({
 }: AvantLessonPlayerProps) {
   
   const router = useRouter();
+  const questaoNav = useQuestaoNavigationOptional();
   const bottomNavRef = useRef<HTMLDivElement>(null);
   const questaoAtualDotRef = useRef<HTMLButtonElement | null>(null);
   /** Área com overflow-y-auto (enunciado + alternativas). Ref usada para wheel sobre <button>. */
@@ -175,6 +178,12 @@ export default function AvantLessonPlayer({
       cancelled = true;
     };
   }, [mode, moduloSlug]);
+
+  useEffect(() => {
+    if (mode !== 'live') return;
+    if (proximaSlug) router.prefetch(buildEstudarHref(proximaSlug));
+    if (anteriorSlug) router.prefetch(buildEstudarHref(anteriorSlug));
+  }, [mode, proximaSlug, anteriorSlug, router]);
 
   /** Após escolher uma alternativa, leva o botão Confirmar para a área visível do scroll. */
   useLayoutEffect(() => {
@@ -315,8 +324,18 @@ export default function AvantLessonPlayer({
   // ============================================================================
   // NAVEGAÇÃO
   // ============================================================================
+  const buildNavegacaoSuffix = () => {
+    if (fromPlano) return '?from=plano';
+    if (fromCaderno) return `?from=caderno&caderno_id=${encodeURIComponent(fromCaderno)}`;
+    return vitrineQuerySuffix || '';
+  };
+
   const handleNavegar = (slugComQuery: string) => {
-    router.push(`/estudar/${slugComQuery}`);
+    if (questaoNav) {
+      questaoNav.navigateEstudar(slugComQuery);
+    } else {
+      router.push(buildEstudarHref(slugComQuery));
+    }
   };
 
   const handleVoltarLista = () => {
@@ -630,12 +649,7 @@ export default function AvantLessonPlayer({
                     key={q.slug}
                     ref={isCurrent ? questaoAtualDotRef : undefined}
                     onClick={() => {
-                      const s = fromPlano
-                        ? '?from=plano'
-                        : fromCaderno
-                          ? `?from=caderno&caderno_id=${fromCaderno}`
-                          : vitrineQuerySuffix || '';
-                      router.push(`/estudar/${q.slug}${s}`);
+                      handleNavegar(`${q.slug}${buildNavegacaoSuffix()}`);
                     }}
                     title={`Questão ${i + 1}${q.estudada ? ' — estudada' : ''}`}
                     className={`shrink-0 rounded-full transition-all duration-200 flex items-center justify-center ${

@@ -1,11 +1,10 @@
+import { LessonPlayerSkeleton } from '@/components/lesson/LessonPlayerSkeleton';
+
 export default function LoadingQuestao() {
   return (
-    <div className="h-screen bg-[#010409] p-4 md:p-6 flex items-center justify-center font-sans">
-      <div className="w-full h-full max-w-6xl max-h-[90vh] flex items-center justify-center">
-        <div className="text-center space-y-4">
-          <div className="w-16 h-16 border-4 border-[#00f2ff] border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="text-slate-400 font-medium">Carregando questão...</p>
-        </div>
+    <div className="flex flex-1 flex-col min-h-0 w-full bg-[#010409] px-3 py-3 sm:px-4 md:px-6 md:py-6 pb-safe font-sans">
+      <div className="flex flex-1 flex-col min-h-0 w-full max-w-6xl mx-auto">
+        <LessonPlayerSkeleton />
       </div>
     </div>
   );

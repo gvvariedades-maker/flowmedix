@@ -1,0 +1,85 @@
+import {
+  buildEstudarCacheKey,
+  buildEstudarCacheKeyFromSlugComQuery,
+  buildEstudarHref,
+  normalizeSearchForCacheKey,
+  parseEstudarSlugComQuery,
+} from '@/lib/estudar/navigation';
+
+describe('lib/estudar/navigation', () => {
+  describe('buildEstudarHref', () => {
+    it('monta href com slug simples', () => {
+      expect(buildEstudarHref('questao-a')).toBe('/estudar/questao-a');
+    });
+
+    it('monta href com query embutida no slugComQuery', () => {
+      expect(buildEstudarHref('questao-a?from=plano')).toBe(
+        '/estudar/questao-a?from=plano',
+      );
+    });
+  });
+
+  describe('parseEstudarSlugComQuery', () => {
+    it('separa slug e search', () => {
+      expect(parseEstudarSlugComQuery('foo?from=caderno&caderno_id=abc')).toEqual({
+        slug: 'foo',
+        search: 'from=caderno&caderno_id=abc',
+      });
+    });
+
+    it('slug sem query', () => {
+      expect(parseEstudarSlugComQuery('bar')).toEqual({ slug: 'bar', search: '' });
+    });
+  });
+
+  describe('normalizeSearchForCacheKey', () => {
+    it('ordena params para chave estável', () => {
+      const a = normalizeSearchForCacheKey('banca=X&assunto=Y&q=Z');
+      const b = normalizeSearchForCacheKey('q=Z&assunto=Y&banca=X');
+      expect(a).toBe(b);
+      expect(a).toContain('assunto=Y');
+      expect(a).toContain('banca=X');
+      expect(a).toContain('q=Z');
+    });
+  });
+
+  describe('buildEstudarCacheKey', () => {
+    it('plano diário', () => {
+      expect(
+        buildEstudarCacheKey('/estudar/minha-questao', new URLSearchParams('from=plano')),
+      ).toBe('minha-questao|from=plano');
+    });
+
+    it('caderno', () => {
+      expect(
+        buildEstudarCacheKey(
+          '/estudar/q1',
+          new URLSearchParams('from=caderno&caderno_id=id-123'),
+        ),
+      ).toBe('q1|caderno_id=id-123&from=caderno');
+    });
+
+    it('vitrine com múltiplos filtros', () => {
+      const key = buildEstudarCacheKey(
+        '/estudar/q2',
+        new URLSearchParams('banca=CESPE&assunto=Urgências&q=rcp'),
+      );
+      expect(key).toMatch(/^q2\|/);
+      expect(key).toContain('assunto=');
+      expect(key).toContain('banca=');
+      expect(key).toContain('q=');
+    });
+
+    it('sem query retorna só slug', () => {
+      expect(buildEstudarCacheKey('/estudar/solo', '')).toBe('solo');
+    });
+  });
+
+  describe('buildEstudarCacheKeyFromSlugComQuery', () => {
+    it('equivale a pathname + search parseados', () => {
+      expect(buildEstudarCacheKeyFromSlugComQuery('x?from=plano')).toBe(
+        buildEstudarCacheKey('/estudar/x', 'from=plano'),
+      );
+    });
+  });
+});
