@@ -2,6 +2,15 @@ import { createServerSupabase } from '@/lib/supabase/server';
 import { isActiveMatriculaRow, GERAL_CONCURSO_SLUG } from '@/lib/concursos/entitlements';
 import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
+import type { ConcursoMatriculaOrigem } from '@/types/database';
+
+export type GeralMatriculaSnapshot = {
+  origem: ConcursoMatriculaOrigem;
+  status: string | null;
+  expires_at: string | null;
+};
+
+export type ProSource = 'stripe' | 'invite' | null;
 
 /** Offset fixo UTC−3 (horário de Brasília, sem DST). */
 const FREEMIUM_TZ_OFFSET_MS = 3 * 60 * 60 * 1000;
@@ -54,34 +63,73 @@ export async function userHasUnlimitedStudyAccess(
   return false;
 }
 
-/**
- * Pro = matrícula em `geral` com origem `stripe_pro`, status ativo e `expires_at` válido.
- * Matrícula `cadastro` ou edital pago não contam como Pro.
- */
-export async function isUserPro(userId: string): Promise<boolean> {
+/** Matrícula no concurso `geral` (qualquer origem), ou null se inexistente. */
+export async function getGeralMatriculaForUser(
+  userId: string,
+): Promise<GeralMatriculaSnapshot | null> {
   const supabase = await createServerSupabase();
   const { data, error } = await supabase
     .from('concurso_matriculas')
     .select(
       `
+      origem,
       status,
       expires_at,
       concurso:concursos!inner(slug)
     `,
     )
     .eq('user_id', userId)
-    .eq('origem', 'stripe_pro')
-    .eq('status', 'ativo')
     .eq('concurso.slug', GERAL_CONCURSO_SLUG)
     .maybeSingle();
 
   if (error) {
-    logger.error('Falha ao verificar assinatura Pro', error, { userId });
+    logger.error('Falha ao buscar matrícula geral', error, { userId });
     throw error;
   }
 
-  if (!data) return false;
-  return isActiveMatriculaRow(data);
+  if (!data?.origem) return null;
+
+  return {
+    origem: data.origem as ConcursoMatriculaOrigem,
+    status: data.status ?? null,
+    expires_at: data.expires_at ?? null,
+  };
+}
+
+function proSourceFromOrigem(origem: ConcursoMatriculaOrigem): ProSource {
+  if (origem === 'stripe_pro') return 'stripe';
+  if (origem === 'invite') return 'invite';
+  return null;
+}
+
+/**
+ * Pro = matrícula `geral` ativa com origem `stripe_pro` ou `invite` (trial por convite).
+ * Matrícula `cadastro` ou edital pago não contam como Pro.
+ */
+export async function isUserPro(userId: string): Promise<boolean> {
+  const matricula = await getGeralMatriculaForUser(userId);
+  if (!matricula || !isActiveMatriculaRow(matricula)) return false;
+  return matricula.origem === 'stripe_pro' || matricula.origem === 'invite';
+}
+
+/** Origem e fim do Pro ativo em `geral`, se houver. */
+export async function getActiveProInfoForUser(
+  userId: string,
+): Promise<{ proSource: ProSource; proExpiresAt: string | null }> {
+  const matricula = await getGeralMatriculaForUser(userId);
+  if (!matricula || !isActiveMatriculaRow(matricula)) {
+    return { proSource: null, proExpiresAt: null };
+  }
+
+  const proSource = proSourceFromOrigem(matricula.origem);
+  if (!proSource) {
+    return { proSource: null, proExpiresAt: null };
+  }
+
+  return {
+    proSource,
+    proExpiresAt: matricula.expires_at,
+  };
 }
 
 /** Contagem de questões respondidas no dia civil UTC−3 (sem cache). */
@@ -109,6 +157,8 @@ export type FreemiumStatusPayload = {
   questoesHoje: number;
   limiteAtingido: boolean;
   resetEm: string;
+  proSource: ProSource;
+  proExpiresAt: string | null;
 };
 
 /** Status freemium para UI/API (`/api/freemium/status`). */
@@ -124,12 +174,15 @@ export async function getFreemiumStatusForUser(
       questoesHoje: 0,
       limiteAtingido: false,
       resetEm: resetEm.toISOString(),
+      proSource: null,
+      proExpiresAt: null,
     };
   }
 
-  const [isPro, questoesHoje] = await Promise.all([
+  const [isPro, questoesHoje, proInfo] = await Promise.all([
     isUserPro(userId),
     countQuestoesHojeForUser(userId),
+    getActiveProInfoForUser(userId),
   ]);
 
   return {
@@ -137,6 +190,8 @@ export async function getFreemiumStatusForUser(
     questoesHoje,
     limiteAtingido: !isPro && questoesHoje >= 1,
     resetEm: resetEm.toISOString(),
+    proSource: isPro ? proInfo.proSource : null,
+    proExpiresAt: isPro ? proInfo.proExpiresAt : null,
   };
 }
 

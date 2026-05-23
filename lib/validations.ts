@@ -93,15 +93,6 @@ const htmlValidator = z.string().transform((val) => {
   return sanitizeHTML(val);
 });
 
-// Schema para Fluxograma API
-export const FluxogramaSchema = z.object({
-  title: z.string().min(1).max(200),
-  modulo_id: z.string().uuid('ID do módulo deve ser um UUID válido'),
-  content: z.record(z.string(), z.any()).optional(),
-  conteudo_json: z.record(z.string(), z.any()).optional(),
-  flow_title: z.string().optional(),
-});
-
 // Schema para Questão JSON (Laboratório) - COM LIMITES DE TAMANHO
 export const QuestaoMetaSchema = z.object({
   ano: z.string().max(40, 'Ano deve ter no máximo 40 caracteres').optional(),
@@ -464,11 +455,6 @@ export const QuestaoCompletaSchema = z
   .transform((val) => normalizeQuestaoSlideArrays(val))
   .pipe(QuestaoCompletaObjectSchema);
 
-// Schema para Enrollments API
-export const EnrollmentDeleteSchema = z.object({
-  enrollmentId: z.string().uuid('ID da matrícula deve ser um UUID válido'),
-});
-
 // Schema para Resolve User API
 export const ResolveUserSchema = z.object({
   email: z.string().email('E-mail inválido').min(1, 'E-mail é obrigatório'),
@@ -538,6 +524,27 @@ export const ConcursoAdminMatriculaRevogarSchema = z.object({
   userId: z.string().uuid('ID do usuário inválido'),
   /** Se true, remove também a conta no Auth (permite recadastro com o mesmo e-mail). */
   deleteAccount: z.boolean().optional().default(false),
+});
+
+// ============================================================================
+// Links de convite (Pro temporário)
+// ============================================================================
+
+export const InviteLinkCreateSchema = z.object({
+  pro_days: z.number().int().min(1).max(365),
+  link_valid_days: z.number().int().min(1).max(90),
+  max_uses: z.number().int().min(1).max(1000).default(1),
+  label: z
+    .string()
+    .trim()
+    .max(200)
+    .optional()
+    .nullable()
+    .transform((v) => (v === '' ? null : v ?? null)),
+});
+
+export const InviteRedeemSchema = z.object({
+  token: z.string().trim().min(8).max(128).optional(),
 });
 
 export const ConcursoModuloLinkSchema = z.object({
@@ -704,9 +711,7 @@ export const validateSlides = (slides: unknown[]) => {
 // ============================================================================
 // TYPE EXPORTS
 // ============================================================================
-export type FluxogramaInput = z.infer<typeof FluxogramaSchema>;
 export type QuestaoCompletaInput = z.infer<typeof QuestaoCompletaSchema>;
-export type EnrollmentDeleteInput = z.infer<typeof EnrollmentDeleteSchema>;
 export type ResolveUserInput = z.infer<typeof ResolveUserSchema>;
 export type ConcursoMatriculaInput = z.infer<typeof ConcursoMatriculaSchema>;
 export type CriarSessaoPagamentoInput = z.infer<typeof CriarSessaoPagamentoSchema>;
@@ -714,6 +719,8 @@ export type ConcursoCreateInput = z.infer<typeof ConcursoCreateSchema>;
 export type ConcursoAdminUpsertInput = z.infer<typeof ConcursoAdminUpsertSchema>;
 export type ConcursoAdminMatriculaInput = z.infer<typeof ConcursoAdminMatriculaSchema>;
 export type AdminCriarUsuarioMatriculaInput = z.infer<typeof AdminCriarUsuarioMatriculaSchema>;
+export type InviteLinkCreateInput = z.infer<typeof InviteLinkCreateSchema>;
+export type InviteRedeemInput = z.infer<typeof InviteRedeemSchema>;
 export type ConcursoModuloLinkInput = z.infer<typeof ConcursoModuloLinkSchema>;
 export type ConcursoRegraModulosInput = z.infer<typeof ConcursoRegraModulosSchema>;
 export type LpPageConfigInput = z.infer<typeof LpPageConfigSchema>;

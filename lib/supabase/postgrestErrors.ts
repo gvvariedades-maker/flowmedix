@@ -1,7 +1,7 @@
 import type { PostgrestError } from '@supabase/supabase-js';
 
 /**
- * Tabela/rel no PostgREST ausente (projeto mínimo sem módulo verticalizações/fluxogramas, etc.).
+ * Tabela/rel no PostgREST ausente (schema desatualizado ou tabela removida).
  */
 export function isPostgrestRelationMissingError(error: PostgrestError | null): boolean {
   if (!error) return false;

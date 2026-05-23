@@ -59,18 +59,10 @@ export async function sendWelcomeEmail(userId: string): Promise<SendWelcomeEmail
       return { success: false, error: 'Usuário não encontrado' };
     }
 
-    let firstName = firstNameFromAuthMetadata(
-      authData.user.user_metadata as Record<string, unknown> | undefined,
-    );
-
-    if (!firstName) {
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('full_name')
-        .eq('id', parsed.data)
-        .maybeSingle();
-      firstName = firstNameFromDisplayName(profile?.full_name ?? null);
-    }
+    const firstName =
+      firstNameFromAuthMetadata(
+        authData.user.user_metadata as Record<string, unknown> | undefined,
+      ) ?? 'estudante';
 
     const dbTemplate = await getEmailTemplateBySlug('welcome', supabase);
     const template = dbTemplate ?? {
@@ -86,7 +78,7 @@ export async function sendWelcomeEmail(userId: string): Promise<SendWelcomeEmail
     const sent = await sendTemplatedEmail({
       to: authData.user.email,
       template,
-      firstName: firstName ?? 'estudante',
+      firstName,
     });
 
     return { success: true, email: sent.to, resendId: sent.id };

@@ -335,81 +335,6 @@ export async function getHistoricoQuestoesCached(userId?: string) {
 }
 
 /**
- * Cache para fluxogramas por assunto
- * Revalida a cada 15 minutos (dados estáticos)
- */
-export async function getFluxogramaByAssuntoCached(assuntoId: string) {
-  const cacheKey = `fluxograma-assunto-${assuntoId}`;
-  
-  return unstable_cache(
-    async () => {
-      const supabase = getSupabaseAnon();
-      if (!supabase) {
-        return null;
-      }
-
-      const { data, error } = await supabase
-        .from('exam_contents')
-        .select(`
-          id,
-          subtopic_id,
-          flowchart_id,
-          flowcharts (
-            id,
-            title,
-            content,
-            modulo_id,
-            slug
-          )
-        `)
-        .eq('subtopic_id', assuntoId)
-        .maybeSingle();
-      
-      if (error) {
-        logger.error('Failed to fetch flowchart from cache', error, { assuntoId });
-        return null;
-      }
-      
-      return data;
-    },
-    [cacheKey],
-    {
-      ...CACHE_CONFIG.STATIC,
-      tags: ['fluxograma', 'static', `assunto-${assuntoId}`],
-    }
-  )();
-}
-
-/**
- * Cache para lista de fluxogramas
- * Revalida a cada 15 minutos
- */
-export const getFluxogramasCached = unstable_cache(
-  async () => {
-    const supabase = getSupabaseAnon();
-    if (!supabase) {
-      trackCacheMiss('fluxogramas-list');
-      return [];
-    }
-
-    const data = await withPostgrestReadRetry('flowcharts-list', async () =>
-      supabase
-        .from('flowcharts')
-        .select('id, title, slug, modulo_id')
-        .order('created_at', { ascending: false })
-        .limit(100),
-    );
-    trackCacheHit('fluxogramas-list');
-    return data ?? [];
-  },
-  ['fluxogramas-list'],
-  {
-    ...CACHE_CONFIG.STATIC,
-    tags: ['fluxogramas', 'static'],
-  }
-);
-
-/**
  * Perfil de revalidação imediata (Next.js 16+).
  * Um objeto vazio `{}` não é perfil documentado e pode não expirar o cache corretamente.
  * @see https://nextjs.org/docs/app/api-reference/functions/revalidateTag
@@ -436,7 +361,6 @@ export const invalidateModulosCache = () => revalidateCache(['modulos-estudo']);
 export const invalidateUserModulosCache = (userId: string) =>
   revalidateCache(['modulos-estudo', 'user', `user-${userId}`]);
 export const invalidateQuestoesCache = () => revalidateCache(['questoes']);
-export const invalidateFluxogramasCache = () => revalidateCache(['fluxogramas']);
 export const invalidateHistoricoCache = () => revalidateCache(['historico']);
 
 /**
@@ -514,7 +438,7 @@ export async function invalidateAdminConcursosCache() {
   await revalidateCache(['admin-concursos']);
 }
 
-/** Contato mínimo para e-mail transacional de boas-vindas (Auth + profiles). */
+/** Contato mínimo para e-mail transacional de boas-vindas (Auth metadata). */
 export type AuthUserWelcomeContact = {
   email: string;
   firstName: string;
@@ -574,22 +498,10 @@ export async function getAuthUserWelcomeContactCached(
         return null;
       }
 
-      let firstName = firstNameFromAuthMetadata(
-        authData.user.user_metadata as Record<string, unknown> | undefined,
-      );
-
-      if (!firstName) {
-        const profileRow = await withPostgrestReadRetry(
-          `profiles-welcome:${userId.slice(0, 8)}…`,
-          async () =>
-            supabase.from('profiles').select('full_name').eq('id', userId).maybeSingle(),
-        );
-        const fullName =
-          profileRow && typeof profileRow === 'object' && 'full_name' in profileRow
-            ? (profileRow as { full_name: string | null }).full_name
-            : null;
-        firstName = firstNameFromDisplayName(fullName);
-      }
+      const firstName =
+        firstNameFromAuthMetadata(
+          authData.user.user_metadata as Record<string, unknown> | undefined,
+        ) ?? 'estudante';
 
       trackCacheHit(cacheKey);
       return {

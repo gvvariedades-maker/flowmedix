@@ -9,6 +9,7 @@ import { supabase } from '@/lib/supabase/client';
 import { getPostLoginDestination } from '@/lib/getPostLoginDestination';
 import { applyAdminPostLoginOverride } from '@/lib/postLoginRedirect';
 import { buildAuthQueryPath } from '@/lib/authQueryPath';
+import { redeemInviteFromClient } from '@/lib/invite/clientRedeem';
 import { PublicDarkAuthHeader } from '@/components/layout/PublicDarkAuthHeader';
 import { AuthAtmosphericBackdrop } from '@/components/layout/AuthAtmosphericBackdrop';
 
@@ -18,7 +19,8 @@ function LoginTopBar() {
     ? decodeURIComponent(searchParams.get('cidade')!)
     : null;
   const concurso = searchParams.get('concurso')?.trim() || null;
-  const registerHref = buildAuthQueryPath('/register', cidade, concurso);
+  const invite = searchParams.get('invite')?.trim() || null;
+  const registerHref = buildAuthQueryPath('/register', cidade, concurso, invite);
 
   return <PublicDarkAuthHeader variant="login" registerHref={registerHref} />;
 }
@@ -32,19 +34,22 @@ function LoginContent() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [inviteNotice, setInviteNotice] = useState<string | null>(null);
 
   // Captura a cidade da URL (ex: ?cidade=Caicó - RN) e destino interno (ex: ?next=/material)
   const cidade = searchParams.get('cidade')
     ? decodeURIComponent(searchParams.get('cidade')!)
     : null;
   const concurso = searchParams.get('concurso')?.trim() || null;
+  const inviteToken = searchParams.get('invite')?.trim() || null;
   const nextPath = searchParams.get('next');
-  const registerHref = buildAuthQueryPath('/register', cidade, concurso);
+  const registerHref = buildAuthQueryPath('/register', cidade, concurso, inviteToken);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
+    setInviteNotice(null);
 
     try {
       // Autenticação real com Supabase
@@ -81,6 +86,17 @@ function LoginContent() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ concursoSlug: concurso }),
         }).catch(() => undefined);
+      }
+
+      if (inviteToken) {
+        const redeem = await redeemInviteFromClient(inviteToken);
+        if (redeem.ok && redeem.message) {
+          setInviteNotice(redeem.message);
+        } else if (!redeem.ok) {
+          setError(redeem.message);
+          setLoading(false);
+          return;
+        }
       }
 
       let destino = getPostLoginDestination(nextPath, cidade, concurso);
@@ -128,6 +144,11 @@ function LoginContent() {
         <p className="text-sm font-medium text-slate-400">
           Prepare-se para concursos de Técnico de Enfermagem com Estudo Reverso.
         </p>
+        {inviteToken ? (
+          <p className="mt-3 text-xs font-bold text-cyan-300/90">
+            Convite AVANT Pro detectado — ao entrar, o benefício será aplicado automaticamente.
+          </p>
+        ) : null}
       </div>
 
       {/* --- FORMULÁRIO --- */}
@@ -183,6 +204,13 @@ function LoginContent() {
             </Link>
           </div>
         </div>
+
+        {inviteNotice ? (
+          <div className="flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-950/35 p-3 text-emerald-100">
+            <CheckCircle2 size={16} className="shrink-0 text-emerald-400" />
+            <p className="text-xs font-bold">{inviteNotice}</p>
+          </div>
+        ) : null}
 
         {/* Mensagem de Erro */}
         {error && (

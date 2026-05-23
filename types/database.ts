@@ -2,10 +2,16 @@ import { FlowchartContent } from './flow';
 import { DecisionFlowData } from './simulator';
 
 /**
- * Tipos do banco de dados Supabase
+ * Tipos do banco de dados Supabase (schema `public` atual).
+ *
+ * Interfaces abaixo marcadas como legado descrevem tabelas removidas do projeto
+ * (`profiles`, `flowcharts`, `exam_contents`, `enrollments`, etc.) — mantidas só
+ * para referência histórica; não use em código novo.
  */
 
 export type SubscriptionStatus = 'free' | 'premium' | 'trial';
+
+/** @deprecated Tabela `profiles` não existe no Supabase AVANT. */
 export type ProgressStatus = 'started' | 'completed';
 
 export interface Profile {
@@ -90,7 +96,13 @@ export interface ExamPurchase {
 export type ConcursoTipo = 'geral' | 'edital';
 export type ConcursoStatus = 'rascunho' | 'ativo' | 'arquivado';
 export type ConcursoModuloOrigem = 'publicacao' | 'manual' | 'regra';
-export type ConcursoMatriculaOrigem = 'cadastro' | 'admin' | 'upgrade' | 'purchase' | 'stripe_pro';
+export type ConcursoMatriculaOrigem =
+  | 'cadastro'
+  | 'admin'
+  | 'upgrade'
+  | 'purchase'
+  | 'stripe_pro'
+  | 'invite';
 export type ConcursoMatriculaStatus = 'ativo' | 'expirado';
 export type ConcursoPurchaseStatus = 'pending' | 'paid' | 'refunded';
 
@@ -165,6 +177,29 @@ export interface LpPage {
   published_at: string | null;
   created_at: string;
   updated_at: string;
+}
+
+/** Link de convite com Pro temporário (criado no admin). */
+export interface InviteLink {
+  id: string;
+  token: string;
+  label: string | null;
+  pro_days: number;
+  link_expires_at: string;
+  max_uses: number;
+  use_count: number;
+  revoked_at: string | null;
+  created_by: string | null;
+  created_at: string;
+}
+
+/** Resgate de convite por usuário (auditoria). */
+export interface InviteRedemption {
+  id: string;
+  invite_link_id: string;
+  user_id: string;
+  redeemed_at: string;
+  pro_expires_at: string;
 }
 
 /** Acessos a produtos avulsos (ex.: pacote Campina Grande) após checkout Stripe. */

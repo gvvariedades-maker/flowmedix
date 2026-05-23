@@ -9,6 +9,7 @@ import { supabase } from '@/lib/supabase/client';
 import { getPostLoginDestination } from '@/lib/getPostLoginDestination';
 import { applyAdminPostLoginOverride } from '@/lib/postLoginRedirect';
 import { buildAuthQueryPath } from '@/lib/authQueryPath';
+import { redeemInviteFromClient } from '@/lib/invite/clientRedeem';
 import { mapRegisterAuthError } from '@/lib/authErrorMessages';
 import { AuthAtmosphericBackdrop } from '@/components/layout/AuthAtmosphericBackdrop';
 import { PublicDarkAuthHeader } from '@/components/layout/PublicDarkAuthHeader';
@@ -19,11 +20,12 @@ function RegisterTopBar() {
     ? decodeURIComponent(searchParams.get('cidade')!)
     : null;
   const concurso = searchParams.get('concurso')?.trim() || null;
+  const invite = searchParams.get('invite')?.trim() || null;
 
   return (
     <PublicDarkAuthHeader
       variant="register"
-      loginHref={buildAuthQueryPath('/login', cidade, concurso)}
+      loginHref={buildAuthQueryPath('/login', cidade, concurso, invite)}
     />
   );
 }
@@ -35,6 +37,7 @@ function RegisterForm() {
     ? decodeURIComponent(searchParams.get('cidade')!)
     : null;
   const concurso = searchParams.get('concurso')?.trim() || null;
+  const inviteToken = searchParams.get('invite')?.trim() || null;
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -46,11 +49,13 @@ function RegisterForm() {
   /** Quando o Supabase exige confirmação por e-mail antes de criar sessão */
   const [pendingEmailVerification, setPendingEmailVerification] = useState(false);
   const [emailJaCadastrado, setEmailJaCadastrado] = useState(false);
+  const [inviteNotice, setInviteNotice] = useState<string | null>(null);
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     setEmailJaCadastrado(false);
+    setInviteNotice(null);
 
     if (password.length < 6) {
       setError('A senha precisa ter no mínimo 6 caracteres.');
@@ -118,6 +123,17 @@ function RegisterForm() {
           }).catch(() => undefined);
         }
 
+        if (inviteToken) {
+          const redeem = await redeemInviteFromClient(inviteToken);
+          if (redeem.ok && redeem.message) {
+            setInviteNotice(redeem.message);
+          } else if (!redeem.ok) {
+            setError(redeem.message);
+            setLoading(false);
+            return;
+          }
+        }
+
         destinoEstudar = await applyAdminPostLoginOverride(destinoEstudar);
         router.push(destinoEstudar);
         router.refresh();
@@ -142,7 +158,7 @@ function RegisterForm() {
     }
   };
 
-  const loginHref = buildAuthQueryPath('/login', cidade, concurso);
+  const loginHref = buildAuthQueryPath('/login', cidade, concurso, inviteToken);
 
   const inputClassName =
     'w-full rounded-xl border border-[rgba(255,255,255,0.10)] bg-white/[0.05] p-4 font-bold text-white outline-none transition-all placeholder:font-normal placeholder:text-slate-500 focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20';
@@ -179,6 +195,11 @@ function RegisterForm() {
         <p className="mt-1 text-sm font-medium text-slate-400">
           Prepare-se para concursos de Técnico de Enfermagem com Estudo Reverso.
         </p>
+        {inviteToken ? (
+          <p className="mt-3 text-xs font-bold text-cyan-300/90">
+            Convite AVANT Pro — após criar a conta, o Pro temporário será ativado automaticamente.
+          </p>
+        ) : null}
       </div>
 
       {/* Formulário */}
@@ -274,6 +295,13 @@ function RegisterForm() {
                 </button>
               </div>
             </div>
+
+            {inviteNotice ? (
+              <div className="flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-950/35 p-3 text-emerald-100">
+                <CheckCircle2 size={16} className="shrink-0 text-emerald-400" />
+                <p className="text-xs font-bold">{inviteNotice}</p>
+              </div>
+            ) : null}
 
             {/* Mensagem de Erro */}
             {error && (

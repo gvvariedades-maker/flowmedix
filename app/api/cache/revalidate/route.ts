@@ -11,7 +11,6 @@ import {
   CACHE_REVALIDATE_IMMEDIATE,
   invalidateModulosCache,
   invalidateQuestoesCache,
-  invalidateFluxogramasCache,
   invalidateHistoricoCache,
   invalidateAllCache,
 } from '@/lib/cache';
@@ -69,12 +68,7 @@ export async function POST(request: NextRequest) {
         case 'historico_questoes':
           await invalidateHistoricoCache();
           break;
-        
-        case 'flowcharts':
-        case 'exam_contents':
-          await invalidateFluxogramasCache();
-          break;
-        
+
         default:
           // Invalidação completa se tabela desconhecida
           await invalidateAllCache();

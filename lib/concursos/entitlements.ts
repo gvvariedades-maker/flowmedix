@@ -289,6 +289,48 @@ async function assertCadastroMatriculaAllowed(
 }
 
 /**
+ * Reativa freemium em `geral` após expiração de trial por convite ou cadastro.
+ * Não altera `stripe_pro` nem matrículas de edital.
+ */
+export async function reactivateGeralFreeMatricula(userId: string): Promise<boolean> {
+  const geral = await getConcursoBySlug(GERAL_CONCURSO_SLUG);
+  if (!geral) return false;
+
+  const supabase = await createServerSupabase();
+  const { data, error } = await supabase
+    .from('concurso_matriculas')
+    .select('origem, status')
+    .eq('user_id', userId)
+    .eq('concurso_id', geral.id)
+    .maybeSingle();
+
+  if (error) {
+    logger.error('Falha ao buscar matrícula geral para reativação free', error, { userId });
+    throw error;
+  }
+
+  if (!data || data.status !== 'expirado') return false;
+  if (data.origem !== 'invite' && data.origem !== 'cadastro') return false;
+
+  const { error: updateError } = await supabase
+    .from('concurso_matriculas')
+    .update({
+      origem: 'cadastro',
+      status: 'ativo',
+      expires_at: null,
+    })
+    .eq('user_id', userId)
+    .eq('concurso_id', geral.id);
+
+  if (updateError) {
+    logger.error('Falha ao reativar matrícula geral free', updateError, { userId });
+    throw updateError;
+  }
+
+  return true;
+}
+
+/**
  * Garante matrícula ativa no catálogo `geral` (tier free: 1 questão/dia).
  * Idempotente — não sobrescreve matrícula Pro (`stripe_pro`) existente.
  */
