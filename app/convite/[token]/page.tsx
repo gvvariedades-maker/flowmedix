@@ -1,11 +1,9 @@
 import Link from 'next/link';
-import { cookies } from 'next/headers';
 import { Gift, Zap, AlertCircle, Clock, Ban } from 'lucide-react';
 
 import { AuthAtmosphericBackdrop } from '@/components/layout/AuthAtmosphericBackdrop';
 import { PublicDarkAuthHeader } from '@/components/layout/PublicDarkAuthHeader';
 import { buildAuthQueryPath } from '@/lib/authQueryPath';
-import { INVITE_TOKEN_COOKIE, inviteTokenCookieOptions } from '@/lib/invite/cookie';
 import { getInviteLinkPreview } from '@/lib/invite/links';
 import type { InviteLinkPublicStatus } from '@/lib/invite/shared';
 
@@ -52,16 +50,25 @@ export default async function ConvitePage({ params }: PageProps) {
   const token = decodeURIComponent(rawToken).trim();
 
   let preview: Awaited<ReturnType<typeof getInviteLinkPreview>> = null;
+  let loadError = false;
   if (token) {
-    preview = await getInviteLinkPreview(token);
-    if (preview?.status === 'active') {
-      const cookieStore = await cookies();
-      cookieStore.set(INVITE_TOKEN_COOKIE, token, inviteTokenCookieOptions());
+    try {
+      preview = await getInviteLinkPreview(token);
+    } catch {
+      loadError = true;
     }
   }
 
   const isValid = preview?.status === 'active';
-  const copy = preview ? statusCopy(preview.status) : statusCopy('expired');
+  const copy = loadError
+    ? {
+        title: 'Erro ao carregar convite',
+        detail: 'Não foi possível validar este link agora. Tente de novo em instantes.',
+        icon: AlertCircle,
+      }
+    : preview
+      ? statusCopy(preview.status)
+      : statusCopy('expired');
   const StatusIcon = copy.icon;
 
   const registerHref = buildAuthQueryPath('/register', null, null, isValid ? token : null);
