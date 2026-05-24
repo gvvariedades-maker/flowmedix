@@ -21,7 +21,11 @@ export async function getVitrineFacets(params: GetVitrineFacetsParams): Promise<
   try {
     return await fetchVitrineFacetsFromRpc({ userId, banca });
   } catch (err) {
-    logger.warn('get_vitrine_facets indisponível; fallback JS', err, { userId, banca });
+    logger.warn('get_vitrine_facets indisponível; fallback JS', {
+      userId,
+      banca,
+      error: err instanceof Error ? err.message : err,
+    });
   }
 
   const modulos = (await getModulosEstudoVitrineForUserCached(userId)) as ModuloEstudoRow[];

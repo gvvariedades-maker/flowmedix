@@ -107,7 +107,11 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
         facets: EMPTY_VITRINE_FACETS,
       };
     } catch (err) {
-      logger.warn('get_vitrine_page indisponível; pipeline JS', err, { userId, page });
+      logger.warn('get_vitrine_page indisponível; pipeline JS', {
+        userId,
+        page,
+        error: err instanceof Error ? err.message : err,
+      });
     }
   }
 
