@@ -4,7 +4,7 @@
 import { NextRequest } from 'next/server';
 
 import { POST } from '@/app/api/webhooks/auth/route';
-import { sendWelcomeEmail } from '@/lib/actions/email-actions';
+import { sendWelcomeEmail } from '@/lib/email/sendWelcomeEmail';
 
 jest.mock('@/lib/logger', () => ({
   logger: {
@@ -15,7 +15,7 @@ jest.mock('@/lib/logger', () => ({
   },
 }));
 
-jest.mock('@/lib/actions/email-actions', () => ({
+jest.mock('@/lib/email/sendWelcomeEmail', () => ({
   sendWelcomeEmail: jest.fn(),
 }));
 
