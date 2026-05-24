@@ -5,10 +5,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
-import { createServerSupabase } from '@/lib/supabase/server';
-import { isAdminSessionEmail } from '@/lib/constants';
+import { requireAdminApi } from '@/lib/admin/requireAdmin';
 import { logger } from '@/lib/logger';
 import { invalidateModulosCache, invalidateQuestoesCache, invalidateHistoricoCache } from '@/lib/cache';
 
@@ -19,41 +16,16 @@ export async function DELETE(
   _request: NextRequest,
   context: { params: Promise<{ id: string }> }
 ) {
+  const auth = await requireAdminApi();
+  if ('error' in auth) return auth.error;
+
   const { id } = await context.params;
 
   if (!id || !UUID_RE.test(id)) {
     return NextResponse.json({ error: 'ID inválido' }, { status: 400 });
   }
 
-  const cookieStore = await cookies();
-  const supabaseAuth = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll();
-        },
-        setAll() {},
-      },
-    }
-  );
-
-  const {
-    data: { session },
-  } = await supabaseAuth.auth.getSession();
-
-  if (!session?.user?.email) {
-    return NextResponse.json({ error: 'Não autenticado' }, { status: 401 });
-  }
-
-  if (!isAdminSessionEmail(session.user.email)) {
-    return NextResponse.json({ error: 'Acesso negado' }, { status: 403 });
-  }
-
-  const supabaseAdmin = await createServerSupabase();
-
-  const { data: row, error: fetchError } = await supabaseAdmin
+  const { data: row, error: fetchError } = await auth.admin
     .from('modulos_estudo')
     .select('id, modulo_slug, titulo_aula')
     .eq('id', id)
@@ -70,17 +42,17 @@ export async function DELETE(
 
   const slug = row.modulo_slug as string;
 
-  const { error: nbErr } = await supabaseAdmin.from('study_notebook_items').delete().eq('modulo_slug', slug);
+  const { error: nbErr } = await auth.admin.from('study_notebook_items').delete().eq('modulo_slug', slug);
   if (nbErr) {
     logger.warn('Admin delete: study_notebook_items', { message: nbErr.message, slug });
   }
 
-  const { error: histErr } = await supabaseAdmin.from('historico_questoes').delete().eq('modulo_slug', slug);
+  const { error: histErr } = await auth.admin.from('historico_questoes').delete().eq('modulo_slug', slug);
   if (histErr) {
     logger.warn('Admin delete: historico_questoes', { message: histErr.message, slug });
   }
 
-  const { error: delErr } = await supabaseAdmin.from('modulos_estudo').delete().eq('id', id);
+  const { error: delErr } = await auth.admin.from('modulos_estudo').delete().eq('id', id);
 
   if (delErr) {
     logger.error('Admin delete modulos_estudo failed', delErr, { id, slug });
@@ -99,7 +71,7 @@ export async function DELETE(
     id,
     slug,
     titulo_aula: row.titulo_aula,
-    email: session.user.email,
+    email: auth.email,
   });
 
   return NextResponse.json({ success: true, modulo_slug: slug });

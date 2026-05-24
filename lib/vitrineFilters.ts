@@ -3,7 +3,26 @@
  * questões no player — mesmo conjunto que o aluno vê ao aplicar banca/assunto/busca.
  */
 
+import type { AccessibleModulosNavSqlFilters } from '@/lib/concursos/entitlements';
 import { compareModuloCurriculum } from '@/lib/vitrineOrder';
+
+export type VitrineFilterParams = {
+  banca?: string;
+  assunto?: string;
+  q?: string;
+};
+
+/** Filtros que o PostgREST aplica em `modulos_estudo!inner` (reduz volume antes do filtro `q`). */
+export function vitrineFiltersToSqlNavFilters(
+  filters: VitrineFilterParams,
+): AccessibleModulosNavSqlFilters | undefined {
+  const banca = filters.banca?.trim();
+  const assunto = filters.assunto?.trim();
+  const out: AccessibleModulosNavSqlFilters = {};
+  if (banca) out.banca = banca;
+  if (assunto) out.titulo_aula = assunto;
+  return Object.keys(out).length > 0 ? out : undefined;
+}
 
 export type ModuloEstudoRow = {
   id: string;

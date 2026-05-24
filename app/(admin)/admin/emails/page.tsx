@@ -282,8 +282,8 @@ export default function AdminEmailsPage() {
               {selectedSlug === 'welcome' ? (
                 <p className="text-xs text-slate-500">
                   Use <code className="rounded bg-slate-100 px-1">{'{{firstName}}'}</code> no título
-                  para o nome do aluno. Este template é usado no cadastro e em «Reenviar
-                  boas-vindas» nas matrículas.
+                  (ex.: Olá, {'{{firstName}}'}!). Sem nome no cadastro, o AVANT usa «técnico de
+                  enfermagem». Este template é usado no cadastro e em «Reenviar boas-vindas».
                 </p>
               ) : null}
 

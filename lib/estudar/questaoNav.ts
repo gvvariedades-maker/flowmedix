@@ -8,13 +8,11 @@ import {
   getHistoricoQuestoesForSlugsCached,
   estudadosSetFromHistorico,
 } from '@/lib/cache';
-import {
-  fetchAccessibleModulosForNav,
-  type AccessibleModulosNavSqlFilters,
-} from '@/lib/concursos/entitlements';
+import { fetchAccessibleModulosForNav } from '@/lib/concursos/entitlements';
 import {
   buildVitrineFilteredSlugList,
   listaModulosQuestaoPorTituloAulaNoCatalogo,
+  vitrineFiltersToSqlNavFilters,
   type HistoricoQuestaoRow,
   type ModuloEstudoRow,
 } from '@/lib/vitrineFilters';
@@ -46,17 +44,7 @@ function hasVitrineFilters(filters?: QuestaoNavVitrineFilters): boolean {
   return Boolean(filters.banca?.trim() || filters.assunto?.trim() || filters.q?.trim());
 }
 
-/** Filtros que o PostgREST aplica em `modulos_estudo!inner` (reduz volume antes do filtro `q`). */
-export function vitrineFiltersToSqlNavFilters(
-  filters: QuestaoNavVitrineFilters,
-): AccessibleModulosNavSqlFilters | undefined {
-  const banca = filters.banca?.trim();
-  const assunto = filters.assunto?.trim();
-  const out: AccessibleModulosNavSqlFilters = {};
-  if (banca) out.banca = banca;
-  if (assunto) out.titulo_aula = assunto;
-  return Object.keys(out).length > 0 ? out : undefined;
-}
+export { vitrineFiltersToSqlNavFilters };
 
 async function listaPorAssuntoSemVitrine(
   userId: string | undefined,

@@ -16,9 +16,11 @@ const MUTED = '#94a3b8';
 export type BaseLayoutProps = {
   children: ReactNode;
   preview?: string;
+  /** Linha abaixo da marca (ex.: boas-vindas). */
+  brandTagline?: string;
 };
 
-export function BaseLayout({ children, preview }: BaseLayoutProps) {
+export function BaseLayout({ children, preview, brandTagline }: BaseLayoutProps) {
   return (
     <Html lang="pt-BR">
       <Head />
@@ -44,13 +46,28 @@ export function BaseLayout({ children, preview }: BaseLayoutProps) {
               style={{
                 margin: 0,
                 fontSize: '28px',
-                fontWeight: 700,
-                letterSpacing: '-0.02em',
-                color: ACCENT,
+                fontWeight: 800,
+                fontStyle: 'italic',
+                letterSpacing: '-0.04em',
+                color: '#ffffff',
               }}
             >
-              Avant
+              AVANT
             </Text>
+            {brandTagline ? (
+              <Text
+                style={{
+                  margin: '8px 0 0',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: ACCENT,
+                }}
+              >
+                {brandTagline}
+              </Text>
+            ) : null}
           </Section>
 
           <Section
@@ -79,7 +96,7 @@ export function BaseLayout({ children, preview }: BaseLayoutProps) {
                 textAlign: 'center',
               }}
             >
-              © Avant — Estudo reverso para concursos
+              © AVANT — Estudo reverso para Técnico de Enfermagem
             </Text>
           </Section>
         </Container>

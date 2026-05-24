@@ -1,47 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
-import { createServerSupabase } from '@/lib/supabase/server';
+import { requireAdminApi } from '@/lib/admin/requireAdmin';
 import { findAuthUserByEmail } from '@/lib/supabase/adminUsers';
-import { isAdminSessionEmail } from '@/lib/constants';
 import { ResolveUserSchema } from '@/lib/validations';
 import { logger } from '@/lib/logger';
 
 export async function POST(request: NextRequest) {
-  const cookieStore = await cookies();
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll();
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            );
-          } catch {
-            // O Next já lida com cookies no Server Component
-          }
-        },
-      },
-    }
-  );
-
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
-  if (!session || !session.user?.email) {
-    return NextResponse.json({ error: 'Acesso não autenticado' }, { status: 401 });
-  }
-
-  const email = session.user.email.toLowerCase();
-  if (!isAdminSessionEmail(email)) {
-    return NextResponse.json({ error: 'Acesso negado' }, { status: 403 });
-  }
+  const auth = await requireAdminApi();
+  if ('error' in auth) return auth.error;
 
   let body: unknown;
   try {
@@ -51,7 +16,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Payload inválido' }, { status: 400 });
   }
 
-  // Validação com Zod
   const validationResult = ResolveUserSchema.safeParse(body);
   if (!validationResult.success) {
     logger.warn('Validation failed for resolve-user', { errors: validationResult.error.issues });
@@ -63,8 +27,7 @@ export async function POST(request: NextRequest) {
 
   const { email: targetEmail } = validationResult.data;
 
-  const adminSupabase = await createServerSupabase();
-  const { user, error } = await findAuthUserByEmail(adminSupabase, targetEmail);
+  const { user, error } = await findAuthUserByEmail(auth.admin, targetEmail);
 
   if (error) {
     logger.error('Database error resolving user', error, { email: targetEmail });
@@ -82,12 +45,3 @@ export async function POST(request: NextRequest) {
   logger.info('User resolved successfully', { userId: user.id });
   return NextResponse.json({ userId: user.id });
 }
-
-
-
-
-
-
-
-
-

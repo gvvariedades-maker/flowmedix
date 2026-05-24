@@ -4,46 +4,20 @@
  */
 
 import { NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
-import { isAdminSessionEmail } from '@/lib/constants';
+import { requireAdminApi } from '@/lib/admin/requireAdmin';
 import { invalidateModulosCache, invalidateQuestoesCache } from '@/lib/cache';
 import { logger } from '@/lib/logger';
 
 export async function POST() {
-  const cookieStore = await cookies();
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll();
-        },
-        setAll() {
-          // Não precisa setar cookies nesta rota
-        },
-      },
-    }
-  );
-
-  const { data: { session } } = await supabase.auth.getSession();
-
-  if (!session?.user?.email) {
-    return NextResponse.json({ error: 'Não autenticado' }, { status: 401 });
-  }
-
-  const email = session.user.email.toLowerCase();
-  if (!isAdminSessionEmail(email)) {
-    return NextResponse.json({ error: 'Acesso negado' }, { status: 403 });
-  }
+  const auth = await requireAdminApi();
+  if ('error' in auth) return auth.error;
 
   try {
     await invalidateModulosCache();
     await invalidateQuestoesCache();
-    logger.info('Cache invalidado pelo admin', { email });
+    logger.info('Cache invalidado pelo admin', { email: auth.email });
     return NextResponse.json({ success: true, message: 'Cache invalidado' });
-  } catch (error: any) {
+  } catch (error: unknown) {
     logger.error('Erro ao invalidar cache', error);
     return NextResponse.json(
       { error: 'Erro ao invalidar cache' },

@@ -1,0 +1,125 @@
+import { z } from 'zod';
+import { createServerSupabase } from '@/lib/supabase/server';
+import { logger } from '@/lib/logger';
+import type { VitrineFacets, VitrinePageResponse } from '@/lib/vitrine/types';
+
+export const VITRINE_PAGE_RPC = 'get_vitrine_page' as const;
+export const VITRINE_FACETS_RPC = 'get_vitrine_facets' as const;
+
+const VitrineQuestaoItemSchema = z.object({
+  slug: z.string(),
+  numero: z.number(),
+  status: z.enum(['nao_estudada', 'estudada']),
+  avant_codigo: z.number().nullable(),
+  created_at: z.string().nullable(),
+});
+
+const VitrineGrupoSchema = z.object({
+  titulo_aula: z.string(),
+  modulo_nome: z.string(),
+  banca: z.string(),
+  questoes: z.array(VitrineQuestaoItemSchema),
+  acertos: z.number(),
+  erros: z.number(),
+  totalResolvidas: z.number(),
+  totalQuestoes: z.number(),
+  trabalhadas: z.number(),
+  percentual: z.number(),
+  firstSlug: z.string(),
+});
+
+const VitrinePageRpcSchema = z.object({
+  groups: z.array(VitrineGrupoSchema),
+  pagination: z.object({
+    page: z.number(),
+    perPage: z.number(),
+    totalGroups: z.number(),
+    totalPages: z.number(),
+  }),
+  totalModulosFiltrados: z.number(),
+});
+
+export type VitrinePageRpcResult = Omit<VitrinePageResponse, 'facets'>;
+
+export type FetchVitrinePageRpcParams = {
+  userId: string;
+  page: number;
+  filters?: {
+    banca?: string;
+    assunto?: string;
+    q?: string;
+  };
+};
+
+export async function fetchVitrinePageFromRpc(
+  params: FetchVitrinePageRpcParams,
+): Promise<VitrinePageRpcResult> {
+  const { userId, page, filters = {} } = params;
+  const supabase = await createServerSupabase();
+
+  const { data, error } = await supabase.rpc(VITRINE_PAGE_RPC, {
+    p_user_id: userId,
+    p_page: page,
+    p_banca: filters.banca?.trim() || null,
+    p_assunto: filters.assunto?.trim() || null,
+    p_q: filters.q?.trim() || null,
+  });
+
+  if (error) {
+    logger.warn('RPC get_vitrine_page falhou', { userId, page, code: error.code, message: error.message });
+    throw error;
+  }
+
+  const parsed = VitrinePageRpcSchema.safeParse(data);
+  if (!parsed.success) {
+    logger.warn('RPC get_vitrine_page payload inválido', {
+      userId,
+      issues: parsed.error.issues.length,
+    });
+    throw new Error('Resposta RPC get_vitrine_page inválida');
+  }
+
+  return parsed.data;
+}
+
+const VitrineFacetsRpcSchema = z.object({
+  bancas: z.array(z.string()),
+  assuntos: z.array(z.string()),
+});
+
+export type FetchVitrineFacetsRpcParams = {
+  userId: string;
+  banca?: string;
+};
+
+export async function fetchVitrineFacetsFromRpc(
+  params: FetchVitrineFacetsRpcParams,
+): Promise<VitrineFacets> {
+  const { userId, banca } = params;
+  const supabase = await createServerSupabase();
+
+  const { data, error } = await supabase.rpc(VITRINE_FACETS_RPC, {
+    p_user_id: userId,
+    p_banca: banca?.trim() || null,
+  });
+
+  if (error) {
+    logger.warn('RPC get_vitrine_facets falhou', {
+      userId,
+      code: error.code,
+      message: error.message,
+    });
+    throw error;
+  }
+
+  const parsed = VitrineFacetsRpcSchema.safeParse(data);
+  if (!parsed.success) {
+    logger.warn('RPC get_vitrine_facets payload inválido', {
+      userId,
+      issues: parsed.error.issues.length,
+    });
+    throw new Error('Resposta RPC get_vitrine_facets inválida');
+  }
+
+  return parsed.data;
+}

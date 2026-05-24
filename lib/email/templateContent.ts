@@ -1,5 +1,7 @@
 import { z } from 'zod';
 
+import { resolveWelcomeSalutation } from '@/lib/email/welcomeSalutation';
+
 export const EmailTemplateContentSchema = z.object({
   headline: z.string().trim().min(1).max(300),
   paragraph1: z.string().trim().min(1).max(2000),
@@ -13,11 +15,11 @@ export type EmailTemplateContent = z.infer<typeof EmailTemplateContentSchema>;
 export const DEFAULT_WELCOME_CONTENT: EmailTemplateContent = {
   headline: 'Olá, {{firstName}}!',
   paragraph1:
-    'Bem-vindo ao Avant. Cada questão vira um NeuroSlide — estudo reverso visual que fixa o raciocínio clínico em poucos minutos.',
+    'Você entrou no AVANT — estudo reverso feito para Técnicos de Enfermagem em concursos públicos. Cada questão vira um NeuroSlide que fixa o raciocínio clínico em poucos minutos.',
   paragraph2:
-    'Mapas, regras de ouro e fluxos de decisão na ordem certa para a sua banca — sem reler PDF inteiro.',
-  ctaLabel: 'Ir para o dashboard',
-  ctaUrl: '/dashboard',
+    'Mapas conceituais, regras de ouro e fluxos de decisão na ordem da sua banca — sem reler PDF inteiro.',
+  ctaLabel: 'Começar no AVANT',
+  ctaUrl: '/estudar',
 };
 
 export const DEFAULT_MARKETING_CONTENT: EmailTemplateContent = {
@@ -42,7 +44,7 @@ export function resolveEmailCtaUrl(pathOrUrl: string | undefined): string {
 
 /** Substitui {{firstName}} no texto (boas-vindas). */
 export function applyFirstNamePlaceholders(text: string, firstName: string): string {
-  const name = firstName.trim() || 'estudante';
+  const name = resolveWelcomeSalutation(firstName);
   return text.replace(/\{\{\s*firstName\s*\}\}/gi, name);
 }
 

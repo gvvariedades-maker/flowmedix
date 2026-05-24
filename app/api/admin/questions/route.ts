@@ -12,10 +12,7 @@
 
 import type { z } from 'zod';
 import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
-import { createServerSupabase } from '@/lib/supabase/server';
-import { isAdminSessionEmail } from '@/lib/constants';
+import { requireAdminApi } from '@/lib/admin/requireAdmin';
 import {
   QuestaoCompletaSchema,
   payloadContainsTecconcursosReference,
@@ -52,35 +49,10 @@ function generateSlug(data: { meta: { banca: string; topico: string; subtopico?:
 }
 
 export async function POST(request: NextRequest) {
-  // 1. Verifica autenticação e autorização admin
-  const cookieStore = await cookies();
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll();
-        },
-        setAll() {},
-      },
-    }
-  );
+  const auth = await requireAdminApi();
+  if ('error' in auth) return auth.error;
 
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
-  if (!session?.user?.email) {
-    return NextResponse.json({ error: 'Não autenticado' }, { status: 401 });
-  }
-
-  const email = session.user.email.toLowerCase();
-  if (!isAdminSessionEmail(email)) {
-    return NextResponse.json({ error: 'Acesso negado' }, { status: 403 });
-  }
-
-  // 2. Parse do body
+  // Parse do body
   let body: unknown;
   try {
     body = await request.json();
@@ -173,7 +145,7 @@ export async function POST(request: NextRequest) {
     }
   }
 
-  const supabaseAdmin = await createServerSupabase();
+  const supabaseAdmin = auth.admin;
   const timestamp = Date.now();
   const concursoAtivoHeader = request.headers.get('x-avant-concurso-id')?.trim();
   let concursoAtivoId: string;
@@ -271,7 +243,7 @@ export async function POST(request: NextRequest) {
   }
 
   logger.info('Questões processadas pelo admin', {
-    email,
+    email: auth.email,
     total: items.length,
     inserted: inserted.length,
     skipped: skipped.length,

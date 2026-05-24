@@ -716,10 +716,16 @@ export const VitrineQuerySchema = z.object({
   q: z.string().trim().max(200).optional(),
 });
 
+/** Query params de `GET /api/vitrine/facets`. */
+export const VitrineFacetsQuerySchema = z.object({
+  banca: z.string().trim().max(LIMITS.BANCA_MAX).optional(),
+});
+
 // ============================================================================
 // TYPE EXPORTS
 // ============================================================================
 export type VitrineQueryInput = z.infer<typeof VitrineQuerySchema>;
+export type VitrineFacetsQueryInput = z.infer<typeof VitrineFacetsQuerySchema>;
 export type QuestaoCompletaInput = z.infer<typeof QuestaoCompletaSchema>;
 export type ResolveUserInput = z.infer<typeof ResolveUserSchema>;
 export type ConcursoMatriculaInput = z.infer<typeof ConcursoMatriculaSchema>;

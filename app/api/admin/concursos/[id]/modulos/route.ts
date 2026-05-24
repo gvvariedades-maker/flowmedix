@@ -1,48 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
-import { createServerSupabase } from '@/lib/supabase/server';
-import { isAdminSessionEmail } from '@/lib/constants';
+import { requireAdminApi } from '@/lib/admin/requireAdmin';
 import { ConcursoModuloLinkSchema } from '@/lib/validations';
 import { linkModuloToConcurso, unlinkModuloFromConcurso } from '@/lib/concursos/entitlements';
 import { invalidateModulosCache } from '@/lib/cache';
 import { logger } from '@/lib/logger';
 
-async function requireAdmin() {
-  const cookieStore = await cookies();
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll();
-        },
-        setAll() {},
-      },
-    },
-  );
-
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
-  const email = session?.user?.email?.toLowerCase();
-  if (!email) {
-    return { error: NextResponse.json({ error: 'Não autenticado' }, { status: 401 }) };
-  }
-  if (!isAdminSessionEmail(email)) {
-    return { error: NextResponse.json({ error: 'Acesso negado' }, { status: 403 }) };
-  }
-
-  return { admin: await createServerSupabase() };
-}
-
 export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
-  const auth = await requireAdmin();
+  const auth = await requireAdminApi();
   if ('error' in auth) return auth.error;
 
   const { id: concursoId } = await params;
@@ -82,7 +49,7 @@ export async function DELETE(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
-  const auth = await requireAdmin();
+  const auth = await requireAdminApi();
   if ('error' in auth) return auth.error;
 
   const { id: concursoId } = await params;

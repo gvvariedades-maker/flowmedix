@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
-import { isAdminSessionEmail } from '@/lib/constants';
+import { requireAdminApi } from '@/lib/admin/requireAdmin';
 import { logger } from '@/lib/logger';
 import { createServerSupabase } from '@/lib/supabase/server';
 
@@ -15,37 +13,10 @@ function isAuthorizedCron(request: NextRequest): boolean {
   return authHeader === `Bearer ${cronSecret}`;
 }
 
-async function isAuthorizedAdmin(): Promise<boolean> {
-  const cookieStore = await cookies();
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll();
-        },
-        setAll() {
-          // Não precisa setar cookies nesta rota
-        },
-      },
-    },
-  );
-
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
-  if (!session?.user?.email) {
-    return false;
-  }
-
-  return isAdminSessionEmail(session.user.email);
-}
-
 async function expireMatriculas(request: NextRequest) {
-  if (!isAuthorizedCron(request) && !(await isAuthorizedAdmin())) {
-    return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
+  if (!isAuthorizedCron(request)) {
+    const auth = await requireAdminApi();
+    if ('error' in auth) return auth.error;
   }
 
   try {

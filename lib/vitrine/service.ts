@@ -2,14 +2,18 @@ import {
   getModulosEstudoVitrineForUserCached,
   getHistoricoQuestoesForSlugsCached,
 } from '@/lib/cache';
+import { fetchAccessibleModulosForNav } from '@/lib/concursos/entitlements';
 import {
   attachHistoricoStats,
   filterModulosLikeVitrine,
+  vitrineFiltersToSqlNavFilters,
   type ModuloEstudoRow,
 } from '@/lib/vitrineFilters';
 import { buildVitrineGroups } from '@/lib/vitrine/buildGroups';
-import { buildVitrineFacets } from '@/lib/vitrine/facets';
+import { buildVitrineFacets, EMPTY_VITRINE_FACETS } from '@/lib/vitrine/facets';
 import { VITRINE_ASSUNTOS_POR_PAGINA } from '@/lib/vitrine/constants';
+import { fetchVitrinePageFromRpc } from '@/lib/vitrine/rpc';
+import { logger } from '@/lib/logger';
 import type { VitrinePageResponse } from '@/lib/vitrine/types';
 
 export type VitrineListFilters = {
@@ -34,15 +38,25 @@ function paginateGroups<T>(items: T[], page: number, perPage: number): { slice: 
   };
 }
 
-/**
- * Página da vitrine com facets e grupos paginados por assunto.
- * Catálogo e histórico vêm do cache do servidor; histórico só dos slugs filtrados.
- */
-export async function getVitrinePage(params: GetVitrinePageParams): Promise<VitrinePageResponse> {
+function hasSearchQuery(filters: VitrineListFilters): boolean {
+  return Boolean(filters.q?.trim());
+}
+
+async function loadModulosForVitrine(
+  userId: string,
+  filters: VitrineListFilters,
+): Promise<ModuloEstudoRow[]> {
+  const sqlFilters = vitrineFiltersToSqlNavFilters(filters);
+  if (sqlFilters) {
+    return (await fetchAccessibleModulosForNav(userId, sqlFilters)) as ModuloEstudoRow[];
+  }
+  return (await getModulosEstudoVitrineForUserCached(userId)) as ModuloEstudoRow[];
+}
+
+async function getVitrinePageViaJs(params: GetVitrinePageParams): Promise<VitrinePageResponse> {
   const { userId, page, filters = {} } = params;
 
-  const modulosRaw = (await getModulosEstudoVitrineForUserCached(userId)) as ModuloEstudoRow[];
-
+  const modulosRaw = await loadModulosForVitrine(userId, filters);
   const facets = buildVitrineFacets(modulosRaw, { banca: filters.banca });
 
   const modulosComStatsPlaceholder = modulosRaw.map((m) => ({
@@ -75,4 +89,27 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
     },
     totalModulosFiltrados: withStats.length,
   };
+}
+
+/**
+ * Página da vitrine com facets e grupos paginados por assunto.
+ * Sem `q`: tenta RPC Postgres; em erro, fallback JS. Com `q`: pipeline JS.
+ */
+export async function getVitrinePage(params: GetVitrinePageParams): Promise<VitrinePageResponse> {
+  const { userId, page, filters = {} } = params;
+
+  if (!hasSearchQuery(filters)) {
+    try {
+      const rpcPage = await fetchVitrinePageFromRpc({ userId, page, filters });
+
+      return {
+        ...rpcPage,
+        facets: EMPTY_VITRINE_FACETS,
+      };
+    } catch (err) {
+      logger.warn('get_vitrine_page indisponível; pipeline JS', err, { userId, page });
+    }
+  }
+
+  return getVitrinePageViaJs(params);
 }

@@ -1,5 +1,32 @@
+import { getModulosEstudoVitrineForUserCached } from '@/lib/cache';
+import { fetchVitrineFacetsFromRpc } from '@/lib/vitrine/rpc';
+import { logger } from '@/lib/logger';
 import type { ModuloEstudoRow } from '@/lib/vitrineFilters';
 import type { VitrineFacets } from '@/lib/vitrine/types';
+
+/** Placeholder quando facets vêm de `/api/vitrine/facets` (campo legado na página). */
+export const EMPTY_VITRINE_FACETS: VitrineFacets = { bancas: [], assuntos: [] };
+
+export type GetVitrineFacetsParams = {
+  userId: string;
+  banca?: string;
+};
+
+/**
+ * Facets da vitrine: tenta RPC Postgres; em erro, fallback JS sobre catálogo do usuário.
+ */
+export async function getVitrineFacets(params: GetVitrineFacetsParams): Promise<VitrineFacets> {
+  const { userId, banca } = params;
+
+  try {
+    return await fetchVitrineFacetsFromRpc({ userId, banca });
+  } catch (err) {
+    logger.warn('get_vitrine_facets indisponível; fallback JS', err, { userId, banca });
+  }
+
+  const modulos = (await getModulosEstudoVitrineForUserCached(userId)) as ModuloEstudoRow[];
+  return buildVitrineFacets(modulos, { banca });
+}
 
 /**
  * Facets para filtros da vitrine.

@@ -1,5 +1,19 @@
-import { buildVitrineFacets } from '@/lib/vitrine/facets';
+import { buildVitrineFacets, getVitrineFacets } from '@/lib/vitrine/facets';
 import type { ModuloEstudoRow } from '@/lib/vitrineFilters';
+
+jest.mock('@/lib/cache', () => ({
+  getModulosEstudoVitrineForUserCached: jest.fn(),
+}));
+
+jest.mock('@/lib/vitrine/rpc', () => ({
+  fetchVitrineFacetsFromRpc: jest.fn(),
+}));
+
+import { getModulosEstudoVitrineForUserCached } from '@/lib/cache';
+import { fetchVitrineFacetsFromRpc } from '@/lib/vitrine/rpc';
+
+const getModulos = getModulosEstudoVitrineForUserCached as jest.Mock;
+const fetchFacetsRpc = fetchVitrineFacetsFromRpc as jest.Mock;
 
 const row = (partial: Partial<ModuloEstudoRow> & Pick<ModuloEstudoRow, 'modulo_slug'>): ModuloEstudoRow => ({
   id: partial.id ?? partial.modulo_slug,
@@ -32,5 +46,37 @@ describe('buildVitrineFacets', () => {
     const facets = buildVitrineFacets(modulos, { banca: 'FGV' });
     expect(facets.assuntos).toEqual(['Assunto FGV']);
     expect(facets.bancas).toHaveLength(2);
+  });
+});
+
+describe('getVitrineFacets', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it('usa RPC quando disponível', async () => {
+    fetchFacetsRpc.mockResolvedValue({
+      bancas: ['FGV'],
+      assuntos: ['Assunto FGV'],
+    });
+
+    const facets = await getVitrineFacets({ userId: 'u1', banca: 'FGV' });
+
+    expect(fetchFacetsRpc).toHaveBeenCalledWith({ userId: 'u1', banca: 'FGV' });
+    expect(getModulos).not.toHaveBeenCalled();
+    expect(facets.assuntos).toEqual(['Assunto FGV']);
+  });
+
+  it('faz fallback JS quando RPC falha', async () => {
+    fetchFacetsRpc.mockRejectedValue(new Error('RPC indisponível'));
+    getModulos.mockResolvedValue([
+      row({ modulo_slug: '1', banca: 'FGV', titulo_aula: 'Assunto FGV' }),
+      row({ modulo_slug: '2', banca: 'CESPE', titulo_aula: 'Assunto CESPE' }),
+    ]);
+
+    const facets = await getVitrineFacets({ userId: 'u1', banca: 'FGV' });
+
+    expect(getModulos).toHaveBeenCalledWith('u1');
+    expect(facets.assuntos).toEqual(['Assunto FGV']);
   });
 });

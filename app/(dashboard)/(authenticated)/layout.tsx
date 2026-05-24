@@ -1,0 +1,40 @@
+import { redirect } from 'next/navigation';
+import { getServerSession } from '@/lib/supabase/server-auth';
+import { isAdminSessionEmail } from '@/lib/constants';
+import {
+  ensureGeralCadastroMatricula,
+  userHasActiveMatricula,
+} from '@/lib/concursos/entitlements';
+import { logger } from '@/lib/logger';
+
+export default async function AuthenticatedLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const session = await getServerSession();
+
+  if (!session?.user?.id) {
+    redirect('/login');
+  }
+
+  const isAdmin = isAdminSessionEmail(session.user.email ?? null);
+
+  if (!isAdmin) {
+    let hasActiveMatricula = await userHasActiveMatricula(session.user.id).catch(() => false);
+    if (!hasActiveMatricula) {
+      await ensureGeralCadastroMatricula(session.user.id).catch((error) => {
+        logger.warn('Falha ao garantir matrícula geral (free)', {
+          userId: session.user.id,
+          error: error instanceof Error ? error.message : String(error),
+        });
+      });
+      hasActiveMatricula = await userHasActiveMatricula(session.user.id).catch(() => false);
+    }
+    if (!hasActiveMatricula) {
+      redirect('/planos');
+    }
+  }
+
+  return children;
+}

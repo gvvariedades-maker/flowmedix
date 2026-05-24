@@ -423,6 +423,85 @@ export async function getHistoricoQuestoesCached(userId?: string) {
  */
 export const CACHE_REVALIDATE_IMMEDIATE = { expire: 0 } as const;
 
+export type VitrinePageCacheFilters = {
+  banca?: string;
+  assunto?: string;
+  q?: string;
+};
+
+function vitrinePageCacheKey(
+  userId: string,
+  page: number,
+  filters: VitrinePageCacheFilters,
+): string {
+  const banca = filters.banca?.trim() || '';
+  const assunto = filters.assunto?.trim() || '';
+  const q = filters.q?.trim() || '';
+  const raw = `${userId}\0${page}\0${banca}\0${assunto}\0${q}`;
+  const hash = createHash('sha256').update(raw).digest('hex').slice(0, 16);
+  return `vitrine-page-${hash}`;
+}
+
+/**
+ * Página da vitrine com RPC + fallback JS (ver `lib/vitrine/service.ts`).
+ * TTL 2 min; invalidar via tags `vitrine-page` e `user-{id}`.
+ */
+export async function getVitrinePageCached(
+  userId: string,
+  page: number,
+  filters: VitrinePageCacheFilters = {},
+) {
+  const cacheKey = vitrinePageCacheKey(userId, page, filters);
+
+  return unstable_cache(
+    async () => {
+      const { getVitrinePage } = await import('./vitrine/service');
+      trackCacheHit(cacheKey);
+      return getVitrinePage({ userId, page, filters });
+    },
+    [cacheKey],
+    {
+      ...CACHE_CONFIG.USER,
+      tags: ['vitrine-page', 'user', `user-${userId}`],
+    },
+  )();
+}
+
+export type VitrineFacetsCacheFilters = {
+  banca?: string;
+};
+
+function vitrineFacetsCacheKey(userId: string, filters: VitrineFacetsCacheFilters = {}): string {
+  const banca = filters.banca?.trim() || '';
+  const raw = `${userId}\0${banca}`;
+  const hash = createHash('sha256').update(raw).digest('hex').slice(0, 16);
+  return `vitrine-facets-${hash}`;
+}
+
+/**
+ * Facets da vitrine (bancas/assuntos) com RPC + fallback JS.
+ * TTL 15 min; invalidar via tags `vitrine-facets` e `user-{id}`.
+ */
+export async function getVitrineFacetsCached(
+  userId: string,
+  filters: VitrineFacetsCacheFilters = {},
+) {
+  const cacheKey = vitrineFacetsCacheKey(userId, filters);
+
+  return unstable_cache(
+    async () => {
+      const { getVitrineFacets } = await import('./vitrine/facets');
+      trackCacheHit(cacheKey);
+      return getVitrineFacets({ userId, banca: filters.banca });
+    },
+    [cacheKey],
+    {
+      ...CACHE_CONFIG.STATIC,
+      tags: ['vitrine-facets', 'user', `user-${userId}`],
+    },
+  )();
+}
+
 /**
  * Função helper para invalidar cache por tag
  * Útil para invalidação via webhook do Supabase
@@ -439,11 +518,22 @@ export async function revalidateCache(tags: string[]) {
 /**
  * Funções de invalidação específicas
  */
-export const invalidateModulosCache = () => revalidateCache(['modulos-estudo']);
+export const invalidateModulosCache = () =>
+  revalidateCache(['modulos-estudo', 'vitrine-page', 'vitrine-facets']);
 export const invalidateUserModulosCache = (userId: string) =>
-  revalidateCache(['modulos-estudo', 'user', `user-${userId}`]);
+  revalidateCache([
+    'modulos-estudo',
+    'user',
+    `user-${userId}`,
+    'vitrine-page',
+    'vitrine-facets',
+  ]);
 export const invalidateQuestoesCache = () => revalidateCache(['questoes']);
-export const invalidateHistoricoCache = () => revalidateCache(['historico']);
+export const invalidateHistoricoCache = () => revalidateCache(['historico', 'vitrine-page']);
+export const invalidateVitrinePageCache = (userId?: string) =>
+  revalidateCache(userId ? ['vitrine-page', `user-${userId}`] : ['vitrine-page']);
+export const invalidateVitrineFacetsCache = (userId?: string) =>
+  revalidateCache(userId ? ['vitrine-facets', `user-${userId}`] : ['vitrine-facets']);
 
 /**
  * Invalidação completa de cache (usar com cuidado)
@@ -526,10 +616,10 @@ export type AuthUserWelcomeContact = {
   firstName: string;
 };
 
-function firstNameFromDisplayName(displayName: string | null | undefined): string {
-  if (!displayName?.trim()) return 'estudante';
+function firstNameFromDisplayName(displayName: string | null | undefined): string | null {
+  if (!displayName?.trim()) return null;
   const part = displayName.trim().split(/\s+/)[0];
-  return part || 'estudante';
+  return part || null;
 }
 
 function firstNameFromAuthMetadata(
@@ -580,10 +670,12 @@ export async function getAuthUserWelcomeContactCached(
         return null;
       }
 
-      const firstName =
+      const { resolveWelcomeSalutation } = await import('./email/welcomeSalutation');
+      const firstName = resolveWelcomeSalutation(
         firstNameFromAuthMetadata(
           authData.user.user_metadata as Record<string, unknown> | undefined,
-        ) ?? 'estudante';
+        ),
+      );
 
       trackCacheHit(cacheKey);
       return {

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { VitrineQuerySchema } from '@/lib/validations';
-import { getVitrinePageCached } from '@/lib/cache';
+import { VitrineFacetsQuerySchema } from '@/lib/validations';
+import { getVitrineFacetsCached } from '@/lib/cache';
 import { logger } from '@/lib/logger';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 
@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
     }
 
     const raw = Object.fromEntries(request.nextUrl.searchParams.entries());
-    const parsed = VitrineQuerySchema.safeParse(raw);
+    const parsed = VitrineFacetsQuerySchema.safeParse(raw);
     if (!parsed.success) {
       return NextResponse.json(
         { error: 'Parâmetros inválidos', details: parsed.error.flatten() },
@@ -20,18 +20,16 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const { page, banca, assunto, q } = parsed.data;
-    const payload = await getVitrinePageCached(auth.user.id, page, {
+    const { banca } = parsed.data;
+    const facets = await getVitrineFacetsCached(auth.user.id, {
       banca: banca || undefined,
-      assunto: assunto || undefined,
-      q: q || undefined,
     });
 
-    return NextResponse.json(payload, {
+    return NextResponse.json(facets, {
       headers: { 'Cache-Control': 'private, no-store' },
     });
   } catch (error) {
-    logger.error('Falha em GET /api/vitrine', error);
+    logger.error('Falha em GET /api/vitrine/facets', error);
     return NextResponse.json({ error: 'Erro interno' }, { status: 500 });
   }
 }

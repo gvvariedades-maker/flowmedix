@@ -144,6 +144,7 @@ export default function VitrineClient({
   const [paginaEfetiva, setPaginaEfetiva] = useState(1);
   const [perPage, setPerPage] = useState(12);
   const [loading, setLoading] = useState(true);
+  const [facetsLoading, setFacetsLoading] = useState(true);
   const [fetchError, setFetchError] = useState<string | null>(null);
   /**
    * Radix Select gera `aria-controls` (ids) que podem divergir entre SSR e hidratação (React/Next 16 + Turbopack).
@@ -183,6 +184,44 @@ export default function VitrineClient({
   useEffect(() => {
     let cancelled = false;
 
+    async function loadFacets() {
+      setFacetsLoading(true);
+
+      const params = new URLSearchParams();
+      if (bancaFilter) params.set('banca', bancaFilter);
+
+      try {
+        const query = params.toString();
+        const res = await fetchWithAuth(
+          query ? `/api/vitrine/facets?${query}` : '/api/vitrine/facets',
+        );
+        if (!res.ok) {
+          const body = (await res.json().catch(() => ({}))) as { error?: string };
+          throw new Error(body.error ?? `Erro ${res.status}`);
+        }
+        const data = (await res.json()) as VitrinePageResponse['facets'];
+        if (cancelled) return;
+
+        setBancas(data.bancas);
+        setAssuntos(data.assuntos);
+      } catch {
+        if (cancelled) return;
+        setBancas([]);
+        setAssuntos([]);
+      } finally {
+        if (!cancelled) setFacetsLoading(false);
+      }
+    }
+
+    void loadFacets();
+    return () => {
+      cancelled = true;
+    };
+  }, [bancaFilter]);
+
+  useEffect(() => {
+    let cancelled = false;
+
     async function loadVitrine() {
       setLoading(true);
       setFetchError(null);
@@ -203,8 +242,6 @@ export default function VitrineClient({
         if (cancelled) return;
 
         setGruposPagina(data.groups);
-        setBancas(data.facets.bancas);
-        setAssuntos(data.facets.assuntos);
         setTotalAssuntos(data.pagination.totalGroups);
         setTotalPaginas(data.pagination.totalPages);
         setPaginaEfetiva(data.pagination.page);
@@ -335,6 +372,7 @@ export default function VitrineClient({
               <>
                 <Select
                   value={bancaFilter || FILTER_ALL}
+                  disabled={facetsLoading && bancas.length === 0}
                   onValueChange={(v) => {
                     setBancaFilter(v === FILTER_ALL ? '' : v);
                     setPagina(1);
@@ -355,6 +393,7 @@ export default function VitrineClient({
 
                 <Select
                   value={assuntoFilter || FILTER_ALL}
+                  disabled={facetsLoading && assuntos.length === 0}
                   onValueChange={(v) => {
                     setAssuntoFilter(v === FILTER_ALL ? '' : v);
                     setPagina(1);

@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 import { AdminToastShell } from '@/components/admin/AdminToastShell';
-import { getServerSession } from '@/lib/supabase/server-auth';
+import { getServerUser } from '@/lib/supabase/server-auth';
 import { isAdminSessionEmail } from '@/lib/constants';
 
 /**
@@ -17,13 +17,13 @@ export default async function AdminLayout({
   children: React.ReactNode;
 }) {
   if (!E2E_BYPASS) {
-    const session = await getServerSession();
+    const user = await getServerUser();
 
-    if (!session?.user) {
+    if (!user?.email) {
       redirect('/login');
     }
 
-    if (!isAdminSessionEmail(session.user.email)) {
+    if (!isAdminSessionEmail(user.email)) {
       redirect('/');
     }
   }

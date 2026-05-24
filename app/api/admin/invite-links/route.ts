@@ -1,6 +1,4 @@
-import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
-import { createServerClient } from '@supabase/ssr';
 
 import { requireAdminApi } from '@/lib/admin/requireAdmin';
 import {
@@ -58,36 +56,13 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const cookieStore = await cookies();
-  const supabaseAuth = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll();
-        },
-        setAll() {},
-      },
-    },
-  );
-
-  const {
-    data: { session },
-  } = await supabaseAuth.auth.getSession();
-
-  const createdBy = session?.user?.email?.toLowerCase();
-  if (!createdBy) {
-    return NextResponse.json({ error: 'Sessão admin inválida' }, { status: 401 });
-  }
-
   try {
     const link = await createInviteLink({
       pro_days: parsed.data.pro_days,
       link_valid_days: parsed.data.link_valid_days,
       max_uses: parsed.data.max_uses,
       label: parsed.data.label,
-      created_by: createdBy,
+      created_by: auth.email,
     });
 
     const origin = request.nextUrl.origin || null;

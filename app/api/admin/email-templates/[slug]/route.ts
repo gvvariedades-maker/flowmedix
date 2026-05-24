@@ -53,7 +53,7 @@ export async function PATCH(request: NextRequest, { params }: RouteContext) {
       return NextResponse.json(
         {
           error:
-            'No boas-vindas, use {{firstName}} no título (ex.: Olá, {{firstName}}!) para personalizar.',
+            'No boas-vindas, use {{firstName}} no título (ex.: Olá, {{firstName}}!). Sem nome, substituímos por «técnico de enfermagem».',
         },
         { status: 422 },
       );

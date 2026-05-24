@@ -27,6 +27,12 @@ Para suportar até **10.000** módulos na vitrine global e leituras `.limit(1000
 3. Defina **≥ 10.000** (recomendado: **10.000** ou **15.000** se houver margem).
 4. Salve e aguarde propagação (geralmente imediata).
 
+**Automático (CLI):** com Personal Access Token (`data_api_config_write`):
+
+```bash
+SUPABASE_ACCESS_TOKEN=sbp_... npm run supabase:max-rows
+```
+
 Sem isso, o catálogo cacheado pode parar em ~1.000 módulos mesmo com o código em 10k.
 
 ## Paginação que não depende só de Max Rows

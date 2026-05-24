@@ -152,7 +152,11 @@ export async function sendTemplatedEmail(options: {
   const sent = await sendEmail(
     options.to,
     subject,
-    createElement(EditableMessageEmail, { preview, content }),
+    createElement(EditableMessageEmail, {
+      preview,
+      content,
+      variant: options.template.slug === 'welcome' ? 'welcome' : 'default',
+    }),
   );
   return sent;
 }

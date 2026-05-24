@@ -389,7 +389,7 @@ export default function RegisterPage() {
 
       <Suspense
         fallback={
-          <div className="min-h-[73px] shrink-0 border-b border-white/5 bg-slate-950/55 backdrop-blur-xl" />
+          <div className="min-h-[6.75rem] shrink-0 border-b border-white/5 bg-slate-950/55 backdrop-blur-xl sm:min-h-[73px]" />
         }
       >
         <RegisterTopBar />

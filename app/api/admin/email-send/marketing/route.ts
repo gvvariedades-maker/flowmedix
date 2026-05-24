@@ -1,36 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
 
 import { requireAdminApi } from '@/lib/admin/requireAdmin';
 import { sendMarketingCampaign } from '@/lib/email/marketingSend';
 import { getResendServerConfig } from '@/lib/env';
-import { isAdminSessionEmail } from '@/lib/constants';
 import { MarketingEmailSendSchema } from '@/lib/validations';
 import { logger } from '@/lib/logger';
 
 export const runtime = 'nodejs';
-
-async function adminSessionEmail(): Promise<string | null> {
-  const cookieStore = await cookies();
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll();
-        },
-        setAll() {},
-      },
-    },
-  );
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-  const email = session?.user?.email?.toLowerCase();
-  return email && isAdminSessionEmail(email) ? email : null;
-}
 
 export async function POST(request: NextRequest) {
   const auth = await requireAdminApi();
@@ -41,11 +17,6 @@ export async function POST(request: NextRequest) {
       { error: 'Resend não configurado (RESEND_API_KEY / RESEND_FROM_EMAIL)' },
       { status: 503 },
     );
-  }
-
-  const adminEmail = await adminSessionEmail();
-  if (!adminEmail) {
-    return NextResponse.json({ error: 'Sessão admin inválida' }, { status: 401 });
   }
 
   let body: unknown;
@@ -64,7 +35,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const result = await sendMarketingCampaign(auth.admin, parsed.data, adminEmail);
+    const result = await sendMarketingCampaign(auth.admin, parsed.data, auth.email);
     return NextResponse.json({
       ...result,
       message:

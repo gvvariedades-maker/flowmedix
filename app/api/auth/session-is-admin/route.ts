@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getServerSession } from '@/lib/supabase/server-auth';
+import { getServerUser } from '@/lib/supabase/server-auth';
 import { isAdminSessionEmail } from '@/lib/constants';
 
 /**
@@ -7,7 +7,7 @@ import { isAdminSessionEmail } from '@/lib/constants';
  * Usado no client logo após sign-in para ajustar o redirect default (/planos → /admin).
  */
 export async function GET() {
-  const session = await getServerSession();
-  const admin = isAdminSessionEmail(session?.user?.email);
+  const user = await getServerUser();
+  const admin = isAdminSessionEmail(user?.email);
   return NextResponse.json({ admin });
 }

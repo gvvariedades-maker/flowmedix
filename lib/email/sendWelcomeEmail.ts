@@ -6,6 +6,7 @@ import {
   DEFAULT_WELCOME_CONTENT,
   mergeEmailContent,
 } from '@/lib/email/templateContent';
+import { resolveWelcomeSalutation } from '@/lib/email/welcomeSalutation';
 import {
   getEmailTemplateBySlug,
   sendTemplatedEmail,
@@ -59,18 +60,19 @@ export async function sendWelcomeEmail(userId: string): Promise<SendWelcomeEmail
       return { success: false, error: 'Usuário não encontrado' };
     }
 
-    const firstName =
+    const firstName = resolveWelcomeSalutation(
       firstNameFromAuthMetadata(
         authData.user.user_metadata as Record<string, unknown> | undefined,
-      ) ?? 'estudante';
+      ),
+    );
 
     const dbTemplate = await getEmailTemplateBySlug('welcome', supabase);
     const template = dbTemplate ?? {
       slug: 'welcome',
       kind: 'transactional' as const,
       name: 'Boas-vindas',
-      subject: 'Bem-vindo ao Avant',
-      preview_text: 'Bem-vindo ao Avant — comece com NeuroSlides',
+      subject: 'Bem-vindo ao AVANT — Técnico de Enfermagem',
+      preview_text: 'Estudo reverso com NeuroSlides — comece pela sua primeira questão',
       content: DEFAULT_WELCOME_CONTENT,
       updated_at: new Date().toISOString(),
     };
