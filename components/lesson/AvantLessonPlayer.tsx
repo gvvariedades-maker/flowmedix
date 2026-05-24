@@ -150,6 +150,7 @@ export default function AvantLessonPlayer({
   const [slideAtual, setSlideAtual] = useState(0);
   const [estudoConcluido, setEstudoConcluido] = useState(false);
   const [marcandoConclusao, setMarcandoConclusao] = useState(false);
+  const [conclusaoErro, setConclusaoErro] = useState<string | null>(null);
   const [paywallOpen, setPaywallOpen] = useState(false);
   const [resetEm, setResetEm] = useState<string | null>(null);
   const [freemiumLimiteAtingido, setFreemiumLimiteAtingido] = useState(false);
@@ -157,14 +158,17 @@ export default function AvantLessonPlayer({
 
   // Reset ao mudar de questão
   useEffect(() => {
+    const jaEstudada =
+      questoesDoAssunto?.find((q) => q.slug === moduloSlug)?.estudada ?? false;
     setEtapa('pergunta');
     setSelecionada(null);
     setSlideAtual(0);
-    setEstudoConcluido(false);
+    setEstudoConcluido(jaEstudada);
     setMarcandoConclusao(false);
+    setConclusaoErro(null);
     setPaywallOpen(false);
     setFreemiumLimiteAtingido(false);
-  }, [dados]);
+  }, [dados, moduloSlug, questoesDoAssunto]);
 
   useEffect(() => {
     if (mode !== 'live') return;
@@ -316,20 +320,30 @@ export default function AvantLessonPlayer({
   const marcarEstudoConcluido = async () => {
     if (mode === 'preview' || marcandoConclusao || estudoConcluido) return;
     setMarcandoConclusao(true);
+    setConclusaoErro(null);
     try {
       const slug = moduloSlug || dados.modulo_slug || '';
+      if (!slug) {
+        setConclusaoErro('Não foi possível identificar a questão. Recarregue a página.');
+        return;
+      }
       const response = await postWithSessionRetry('/api/concluir-estudo-reverso', { modulo_slug: slug });
       if (response.ok) {
         setEstudoConcluido(true);
+        router.refresh();
       } else {
         if (response.status === 401) {
           logger.warn('Could not mark estudo concluido: unauthorized after session retry', { moduloSlug: slug });
+          setConclusaoErro('Sessão expirada. Faça login novamente para salvar o estudo.');
           return;
         }
+        const payload = (await response.json().catch(() => ({}))) as { error?: string };
         logger.error('Failed to mark estudo reverso as concluido', { status: response.status });
+        setConclusaoErro(payload.error ?? 'Não foi possível salvar. Tente de novo.');
       }
     } catch (error) {
       logger.error('Unexpected error marking estudo reverso', error);
+      setConclusaoErro('Erro de conexão. Verifique a internet e tente novamente.');
     } finally {
       setMarcandoConclusao(false);
     }
@@ -1008,11 +1022,12 @@ export default function AvantLessonPlayer({
                       )}
                     </div>
                   ) : (
+                    <motion.div layout className="flex flex-col items-end gap-2 order-2 sm:order-none max-w-[min(100%,280px)] sm:max-w-none">
                     <button
                       type="button"
                       onClick={marcarEstudoConcluido}
                       disabled={marcandoConclusao}
-                      className="group flex items-center gap-2 bg-[#BEF264] hover:bg-[#a3d648] disabled:opacity-60 disabled:cursor-not-allowed text-slate-900 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl font-black uppercase text-[9px] sm:text-xs tracking-wide sm:tracking-widest shadow-[0_0_20px_rgba(190,242,100,0.3)] transition-all min-h-[44px] order-2 sm:order-none max-w-[min(100%,280px)] sm:max-w-none"
+                      className="group flex items-center gap-2 bg-[#BEF264] hover:bg-[#a3d648] disabled:opacity-60 disabled:cursor-not-allowed text-slate-900 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl font-black uppercase text-[9px] sm:text-xs tracking-wide sm:tracking-widest shadow-[0_0_20px_rgba(190,242,100,0.3)] transition-all min-h-[44px] max-w-[min(100%,280px)] sm:max-w-none w-full sm:w-auto"
                     >
                       <BadgeCheck size={16} className="shrink-0" />
                       <span className="text-left leading-tight">
@@ -1024,6 +1039,12 @@ export default function AvantLessonPlayer({
                         )}
                       </span>
                     </button>
+                    {conclusaoErro ? (
+                      <p role="alert" className="text-[10px] sm:text-xs text-rose-400 text-right max-w-[280px] leading-snug">
+                        {conclusaoErro}
+                      </p>
+                    ) : null}
+                    </motion.div>
                   )}
                 </div>
               </div>

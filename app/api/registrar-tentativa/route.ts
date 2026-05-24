@@ -10,6 +10,7 @@ import {
 } from '@/lib/freemium';
 import { logger } from '@/lib/logger';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
+import { createServerSupabase } from '@/lib/supabase/server';
 
 export async function POST(request: NextRequest) {
   try {
@@ -24,7 +25,8 @@ export async function POST(request: NextRequest) {
     if (!auth) {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
     }
-    const { user, supabase } = auth;
+    const { user } = auth;
+    const supabase = await createServerSupabase();
 
     const gate = await assertCanAnswerQuestion(user.id, user.email);
     if (!gate.allowed) {
