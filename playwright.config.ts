@@ -52,11 +52,19 @@ export default defineConfig({
         url: 'http://localhost:3000',
         reuseExistingServer: false,
         timeout: 300_000,
+        env: {
+          ...process.env,
+          E2E_ADMIN_BYPASS: 'true',
+        },
       }
     : {
         command: 'npm run dev',
         url: 'http://localhost:3000',
         reuseExistingServer: true,
         timeout: 180_000,
+        env: {
+          ...process.env,
+          E2E_ADMIN_BYPASS: 'true',
+        },
       },
 });

@@ -1,7 +1,7 @@
 import { getServerSession } from '@/lib/supabase/server-auth';
 import { isAdminSessionEmail } from '@/lib/constants';
 import { getMatriculatedConcursos } from '@/lib/concursos/entitlements';
-import { isUserPro } from '@/lib/freemium';
+import { getActiveProInfoForUser, isUserPro, type ProSource } from '@/lib/freemium';
 import DashboardShell from './DashboardShell';
 
 function displayNameFromSessionUser(
@@ -21,12 +21,16 @@ export default async function DashboardLayout({ children }: { children: React.Re
   const email = session?.user?.email ?? null;
   const isAdmin = isAdminSessionEmail(email);
 
-  const [matriculatedConcursos, userIsPro] = session?.user?.id
+  const [matriculatedConcursos, userIsPro, proInfo] = session?.user?.id
     ? await Promise.all([
         getMatriculatedConcursos(session.user.id).catch(() => []),
         isUserPro(session.user.id).catch(() => false),
+        getActiveProInfoForUser(session.user.id).catch(() => ({
+          proSource: null as ProSource,
+          proExpiresAt: null,
+        })),
       ])
-    : [[], false];
+    : [[], false, { proSource: null as ProSource, proExpiresAt: null }];
 
   const isPro = isAdmin || userIsPro;
 
@@ -36,6 +40,8 @@ export default async function DashboardLayout({ children }: { children: React.Re
       initialDisplayName={displayNameFromSessionUser(session?.user ?? null)}
       initialIsAdmin={isAdmin}
       isPro={isPro}
+      proSource={isPro && !isAdmin ? proInfo.proSource : null}
+      proExpiresAt={isPro && !isAdmin ? proInfo.proExpiresAt : null}
       initialMatriculatedConcursos={matriculatedConcursos.map((concurso) => ({
         slug: concurso.slug,
         nome: concurso.nome,

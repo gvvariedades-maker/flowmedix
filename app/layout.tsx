@@ -5,6 +5,7 @@ import "./globals.css";
 import { validateAllEnv } from "@/lib/env";
 import { JsonLd, type JsonLdObject } from "@/components/seo/JsonLd";
 import { TextSizeProvider } from "@/components/providers/TextSizeProvider";
+import { RegisterServiceWorker } from "@/components/pwa/RegisterServiceWorker";
 import { getAbsoluteUrl, getSiteUrl } from "@/lib/siteUrl";
 import { buildTextSizeInitScript } from "@/lib/textSizePreference";
 
@@ -96,14 +97,23 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: siteName,
+  },
+  applicationName: siteName,
 };
 
-/** Celular: notch, barra de endereço, safe-area iOS */
+/** Celular: notch, barra de endereço, safe-area iOS, PWA */
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#f8fafc",
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#010409' },
+    { media: '(prefers-color-scheme: dark)', color: '#010409' },
+  ],
 };
 
 export default function RootLayout({
@@ -120,6 +130,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: buildTextSizeInitScript() }}
         />
         <JsonLd data={siteStructuredData} />
+        <RegisterServiceWorker />
         <TextSizeProvider>{children}</TextSizeProvider>
       </body>
     </html>

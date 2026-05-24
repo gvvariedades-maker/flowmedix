@@ -4,19 +4,20 @@ import { getServerUser } from '@/lib/supabase/server-auth';
 import { isAdminSessionEmail } from '@/lib/constants';
 
 /**
- * Em builds de CI com NEXT_PUBLIC_E2E_ADMIN_BYPASS=true a verificação de auth
- * é ignorada para que os testes Playwright consigam acessar as páginas de admin
- * sem credenciais reais (o Supabase usa URL placeholder no CI).
- * Em produção essa variável NUNCA é definida.
+ * Bypass server-only para E2E: ignora auth no AdminLayout quando
+ * E2E_ADMIN_BYPASS=true e (dev local ou CI). Em produção real (NODE_ENV=production
+ * sem CI) o bypass nunca ativa, mesmo com a variável setada por engano.
  */
-const E2E_BYPASS = process.env.NEXT_PUBLIC_E2E_ADMIN_BYPASS === 'true';
+const bypassEnabled =
+  process.env.E2E_ADMIN_BYPASS === 'true' &&
+  (process.env.NODE_ENV !== 'production' || process.env.CI === 'true');
 
 export default async function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  if (!E2E_BYPASS) {
+  if (!bypassEnabled) {
     const user = await getServerUser();
 
     if (!user?.email) {

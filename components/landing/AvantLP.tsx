@@ -292,7 +292,7 @@ function Hero() {
                   animation: 'avantLpPulse 2s infinite',
                 }}
               />
-              2.000 questões reais · 8.000 NeuroSlides · só para técnico
+              4.000 questões reais · 16.000 NeuroSlides · só para técnico
             </div>
 
             <h1
@@ -751,7 +751,7 @@ function Galeria() {
                 fontFamily: FONT_SORA,
               }}
             >
-              8.000 NEUROSLIDES
+              16.000 NEUROSLIDES
             </p>
             <h2
               style={{
@@ -1030,8 +1030,8 @@ function Fundador() {
 
 function PovaSocial() {
   const stats: StatItem[] = [
-    { n: '2.000+', l: 'questões reais de técnico', c: C.cyan },
-    { n: '8.000+', l: 'NeuroSlides disponíveis', c: C.emerald },
+    { n: '4.000+', l: 'questões reais de técnico', c: C.cyan },
+    { n: '16.000+', l: 'NeuroSlides disponíveis', c: C.emerald },
     { n: '4', l: 'slides por questão — sempre', c: '#a855f7' },
   ];
 
@@ -1101,8 +1101,8 @@ function PovaSocial() {
 
 function Oferta() {
   const features: Array<[string, string, string]> = [
-    ['✓', '2.000 questões reais de técnico de enfermagem', C.emerald],
-    ['✓', '8.000 NeuroSlides — 4 por questão', C.emerald],
+    ['✓', '4.000 questões reais de técnico de enfermagem', C.emerald],
+    ['✓', '16.000 NeuroSlides — 4 por questão', C.emerald],
     ['✓', 'Fluxo Lógico · Regra de Ouro · Zona de Perigo · Mapa Conceitual', C.emerald],
     ['✓', 'Acesso no celular — sem baixar app', C.emerald],
     ['✓', 'Apenas conteúdo que cai na prova de técnico', C.emerald],

@@ -25,6 +25,10 @@ npm run test:e2e:debug
 - `api-validation.spec.ts` - Testes de API
 - `cache.spec.ts` - Testes de cache
 
+## 🔐 Bypass admin (somente testes)
+
+O Playwright injeta `E2E_ADMIN_BYPASS=true` no servidor via `webServer.env` (`playwright.config.ts`). Isso permite acessar `/admin/*` nos E2E sem login. A variável é **server-only** (não vai para o bundle do browser) e só ativa em desenvolvimento ou com `CI=true` — **nunca configure em produção** (Vercel/deploy).
+
 ## 🔧 Configuração
 
 Ver `playwright.config.ts` para:

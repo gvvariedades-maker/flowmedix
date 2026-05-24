@@ -21,8 +21,11 @@ import {
 } from 'lucide-react';
 import { TextSizeControl } from '@/components/accessibility/TextSizeControl';
 import { EstudoReversoWelcomeModal } from '@/components/onboarding/EstudoReversoWelcomeModal';
+import { PwaInstallProvider } from '@/components/pwa/PwaInstallProvider';
+import { PwaInstallNavButton } from '@/components/pwa/PwaInstallNavButton';
 import { useEstudoReversoWelcome } from '@/components/onboarding/useEstudoReversoWelcome';
 import { cn } from '@/lib/utils';
+import type { ProSource } from '@/lib/freemium';
 import { supabase } from '@/lib/supabase/client';
 import { ToastProvider } from '@/lib/toast-context';
 import { ToastContainer } from '@/components/ui/toast-container';
@@ -151,7 +154,30 @@ type MatriculatedConcursoSummary = {
   tipo: 'geral' | 'edital';
 };
 
-function CityCard({ cidadeExibicao, isPro }: { cidadeExibicao: string; isPro: boolean }) {
+function formatProExpiryShort(iso: string | null): string | null {
+  if (!iso) return null;
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return null;
+  return date.toLocaleDateString('pt-BR', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    timeZone: 'America/Sao_Paulo',
+  });
+}
+
+function CityCard({
+  cidadeExibicao,
+  isPro,
+  proSource,
+  proExpiresAt,
+}: {
+  cidadeExibicao: string;
+  isPro: boolean;
+  proSource: ProSource;
+  proExpiresAt: string | null;
+}) {
+  const inviteExpiry = proSource === 'invite' ? formatProExpiryShort(proExpiresAt) : null;
   return (
     <div className="mb-1 px-3">
       <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 p-[1px] shadow-lg shadow-slate-900/25">
@@ -180,14 +206,29 @@ function CityCard({ cidadeExibicao, isPro }: { cidadeExibicao: string; isPro: bo
 
           <div className="mt-3.5">
             {isPro ? (
-              <div className="flex justify-center">
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-sm font-semibold text-emerald-100/95 backdrop-blur-sm">
-                  <span
-                    className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.85)] animate-pulse"
-                    aria-hidden
-                  />
-                  Acesso completo
-                </span>
+              <div className="space-y-2.5">
+                <div className="flex justify-center">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-sm font-semibold text-emerald-100/95 backdrop-blur-sm">
+                    <span
+                      className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.85)] animate-pulse"
+                      aria-hidden
+                    />
+                    Acesso completo
+                  </span>
+                </div>
+                {inviteExpiry ? (
+                  <p className="text-center text-xs font-medium text-slate-500">
+                    Pro por convite até {inviteExpiry}
+                  </p>
+                ) : null}
+                {proSource === 'stripe' || proSource === 'invite' ? (
+                  <Link
+                    href="/conta/assinatura"
+                    className="flex w-full items-center justify-center rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
+                  >
+                    {proSource === 'stripe' ? 'Gerenciar assinatura' : 'Ver assinatura'}
+                  </Link>
+                ) : null}
               </div>
             ) : (
               <div className="space-y-2.5">
@@ -218,10 +259,12 @@ function DashboardNav({
   menuItems,
   createQueryString,
   isAdminUser,
+  onNavAction,
 }: {
   menuItems: MenuItem[];
   createQueryString: (path: string) => string;
   isAdminUser: boolean;
+  onNavAction?: () => void;
 }) {
   return (
     <nav className="no-scrollbar mt-2 flex-1 space-y-2 overflow-y-auto px-2 pb-2">
@@ -229,6 +272,7 @@ function DashboardNav({
         <Link
           key={item.label}
           href={createQueryString(item.href)}
+          onClick={onNavAction}
             className={cn(
             'group relative flex w-full items-center gap-3 rounded-xl py-3 pl-4 pr-3 text-sm font-semibold transition-colors',
             item.active
@@ -250,6 +294,7 @@ function DashboardNav({
           {item.label}
         </Link>
       ))}
+      <PwaInstallNavButton onNavigate={onNavAction} />
       {isAdminUser && (
         <div className="mt-4 pl-1 pt-1">
           <Link
@@ -317,6 +362,8 @@ function DashboardContent({
   initialIsAdmin,
   initialMatriculatedConcursos,
   isPro,
+  proSource,
+  proExpiresAt,
 }: {
   children: React.ReactNode;
   initialUserEmail: string | null;
@@ -324,6 +371,8 @@ function DashboardContent({
   initialIsAdmin: boolean;
   initialMatriculatedConcursos: MatriculatedConcursoSummary[];
   isPro: boolean;
+  proSource: ProSource;
+  proExpiresAt: string | null;
 }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -502,7 +551,10 @@ function DashboardContent({
     { label: 'Material de Apoio', icon: BookOpen, href: '/material', active: isPathActive('/material') },
   ];
 
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
   return (
+    <PwaInstallProvider enabled={userEmail != null} blocked={estudoReversoWelcome.isOpen}>
     <div className="dashboard-surface flex h-[100dvh] max-h-[100dvh] min-h-0 bg-background font-sans text-foreground">
       {/* --- SIDEBAR FIXA --- */}
       <aside className="relative z-20 hidden w-[18rem] shrink-0 flex-col border-r border-white/10 bg-[#06090f] md:flex">
@@ -510,9 +562,19 @@ function DashboardContent({
           <LogoMark />
         </div>
 
-        <CityCard cidadeExibicao={cidadeExibicao} isPro={isPro} />
+        <CityCard
+          cidadeExibicao={cidadeExibicao}
+          isPro={isPro}
+          proSource={proSource}
+          proExpiresAt={proExpiresAt}
+        />
 
-        <DashboardNav menuItems={menuItems} createQueryString={createQueryString} isAdminUser={isAdminUser} />
+        <DashboardNav
+          menuItems={menuItems}
+          createQueryString={createQueryString}
+          isAdminUser={isAdminUser}
+          onNavAction={closeMobileMenu}
+        />
 
         <div className="mt-auto shrink-0 px-4 pb-1 pt-6">
           <TextSizeControl embedded />
@@ -566,9 +628,19 @@ function DashboardContent({
                 </button>
               </div>
 
-              <CityCard cidadeExibicao={cidadeExibicao} isPro={isPro} />
+              <CityCard
+          cidadeExibicao={cidadeExibicao}
+          isPro={isPro}
+          proSource={proSource}
+          proExpiresAt={proExpiresAt}
+        />
 
-              <DashboardNav menuItems={menuItems} createQueryString={createQueryString} isAdminUser={isAdminUser} />
+              <DashboardNav
+          menuItems={menuItems}
+          createQueryString={createQueryString}
+          isAdminUser={isAdminUser}
+          onNavAction={closeMobileMenu}
+        />
 
               <div className="mt-auto shrink-0 px-4 pb-1 pt-6">
                 <TextSizeControl embedded />
@@ -635,6 +707,7 @@ function DashboardContent({
         onSkip={estudoReversoWelcome.markSeenAndClose}
       />
     </div>
+    </PwaInstallProvider>
   );
 }
 
@@ -645,6 +718,8 @@ export default function DashboardShell({
   initialIsAdmin = false,
   initialMatriculatedConcursos = [],
   isPro = false,
+  proSource = null,
+  proExpiresAt = null,
 }: {
   children: React.ReactNode;
   initialUserEmail: string | null;
@@ -652,6 +727,8 @@ export default function DashboardShell({
   initialIsAdmin?: boolean;
   initialMatriculatedConcursos?: MatriculatedConcursoSummary[];
   isPro?: boolean;
+  proSource?: ProSource;
+  proExpiresAt?: string | null;
 }) {
   return (
     <ToastProvider>
@@ -662,6 +739,8 @@ export default function DashboardShell({
           initialIsAdmin={initialIsAdmin}
           initialMatriculatedConcursos={initialMatriculatedConcursos}
           isPro={isPro}
+          proSource={proSource}
+          proExpiresAt={proExpiresAt}
         >
           {children}
         </DashboardContent>
