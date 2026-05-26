@@ -10,6 +10,7 @@ const LOG_PREFIX = 'estudar-nav';
 const LS_KEY = 'avant:estudar-nav-telemetry';
 
 type SessionCounters = {
+  prefetchChainRuns: number;
   prefetchOk: number;
   prefetchFail: number;
   prefetchSkipped: number;
@@ -20,6 +21,7 @@ type SessionCounters = {
 };
 
 const session: SessionCounters = {
+  prefetchChainRuns: 0,
   prefetchOk: 0,
   prefetchFail: 0,
   prefetchSkipped: 0,
@@ -64,6 +66,7 @@ export function getEstudarNavSessionSnapshot() {
 }
 
 export function resetEstudarNavSession(): void {
+  session.prefetchChainRuns = 0;
   session.prefetchOk = 0;
   session.prefetchFail = 0;
   session.prefetchSkipped = 0;
@@ -122,6 +125,25 @@ export function recordPrefetchEnd(
       reason: outcome.reason,
     });
   }
+}
+
+export type PrefetchChainStoppedReason = 'depth' | 'no_proxima' | 'loop';
+
+export function recordPrefetchChain(
+  startCacheKey: string,
+  context: {
+    depth: number;
+    slugsPrefetched: string[];
+    stoppedReason: PrefetchChainStoppedReason;
+  },
+): void {
+  session.prefetchChainRuns++;
+  logEstudarNav('prefetch_chain', {
+    startCacheKey,
+    depth: context.depth,
+    slugsPrefetched: context.slugsPrefetched,
+    stoppedReason: context.stoppedReason,
+  });
 }
 
 export function markNavigateStart(cacheKey: string, slugComQuery: string): void {

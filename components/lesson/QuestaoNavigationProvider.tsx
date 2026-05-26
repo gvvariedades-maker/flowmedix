@@ -13,6 +13,7 @@ import {
   buildEstudarHref,
   buildEstudarQuestaoApiUrl,
 } from '@/lib/estudar/navigation';
+import { PREFETCH_FORWARD_DEPTH, warmForwardChain } from '@/lib/estudar/prefetchChain';
 import {
   attachEstudarNavTelemetryToWindow,
   clearPrefetchInFlight,
@@ -155,25 +156,25 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     [fetchPayloadIntoCache],
   );
 
+  const prefetchRoute = useCallback(
+    (href: string) => {
+      if (prefetchedRouteRef.current.has(href)) return;
+      prefetchedRouteRef.current.add(href);
+      router.prefetch(href);
+    },
+    [router],
+  );
+
   const prefetchEstudar = useCallback(
     (slugComQuery: string) => {
-      const href = buildEstudarHref(slugComQuery);
-      if (!prefetchedRouteRef.current.has(href)) {
-        prefetchedRouteRef.current.add(href);
-        router.prefetch(href);
-      }
-      void fetchPayloadIntoCache(slugComQuery).then((payload) => {
-        const proxima = payload?.proximaSlug;
-        if (!proxima || proxima === slugComQuery) return;
-        const proximaHref = buildEstudarHref(proxima);
-        if (!prefetchedRouteRef.current.has(proximaHref)) {
-          prefetchedRouteRef.current.add(proximaHref);
-          router.prefetch(proximaHref);
-        }
-        void fetchPayloadIntoCache(proxima);
+      prefetchRoute(buildEstudarHref(slugComQuery));
+      void warmForwardChain(slugComQuery, PREFETCH_FORWARD_DEPTH, {
+        fetchPayloadIntoCache,
+        prefetchRoute,
+        buildHref: buildEstudarHref,
       });
     },
-    [router, fetchPayloadIntoCache],
+    [fetchPayloadIntoCache, prefetchRoute],
   );
 
   const navigateEstudar = useCallback(
@@ -198,9 +199,12 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
           if (payload) {
             setDisplayPayload(payload);
             scheduleRouterPush(router, href);
-            const proxima = payload.proximaSlug;
-            if (proxima && proxima !== slugComQuery) {
-              void fetchPayloadIntoCache(proxima);
+            if (payload.proximaSlug) {
+              void warmForwardChain(payload.proximaSlug, PREFETCH_FORWARD_DEPTH, {
+                fetchPayloadIntoCache,
+                prefetchRoute,
+                buildHref: buildEstudarHref,
+              });
             }
             return;
           }
@@ -211,7 +215,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
         }
       })();
     },
-    [router, fetchPayloadIntoCache],
+    [router, fetchPayloadIntoCache, prefetchRoute],
   );
 
   const value = useMemo<QuestaoNavigationContextValue>(
