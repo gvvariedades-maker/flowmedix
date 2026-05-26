@@ -1,7 +1,7 @@
 'use client';
 
-import { useCallback, useMemo, useRef, type ReactNode } from 'react';
-import { useRouter } from 'next/navigation';
+import { useCallback, useEffect, useMemo, useRef, type ReactNode } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import {
   QuestaoNavigationContext,
   type EstudarQuestaoPayload,
@@ -40,8 +40,14 @@ class LruCache<T> {
 
 export function QuestaoNavigationProvider({ children }: { children: ReactNode }) {
   const router = useRouter();
+  const pathname = usePathname();
   const cacheRef = useRef(new LruCache<EstudarQuestaoPayload>(CACHE_MAX_ENTRIES));
   const prefetchedRef = useRef(new Set<string>());
+  const navegandoRef = useRef(false);
+
+  useEffect(() => {
+    navegandoRef.current = false;
+  }, [pathname]);
 
   const cachePayload = useCallback((key: string, payload: EstudarQuestaoPayload) => {
     cacheRef.current.set(key, payload);
@@ -63,6 +69,8 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
 
   const navigateEstudar = useCallback(
     (slugComQuery: string) => {
+      if (navegandoRef.current) return;
+      navegandoRef.current = true;
       router.push(buildEstudarHref(slugComQuery));
     },
     [router],

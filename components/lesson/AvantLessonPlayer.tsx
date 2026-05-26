@@ -73,6 +73,7 @@ export default function AvantLessonPlayer({
   const confirmarRespostaRef = useRef<HTMLDivElement>(null);
   const ativarEstudoRef = useRef<HTMLButtonElement>(null);
   const fecharEstudoRef = useRef<HTMLButtonElement>(null);
+  const navegandoRef = useRef(false);
   const [bottomNavHeightPx, setBottomNavHeightPx] = useState(0);
   const [keyboardInsetPx, setKeyboardInsetPx] = useState(0);
 
@@ -190,6 +191,7 @@ export default function AvantLessonPlayer({
 
   // Reset ao mudar de questão
   useEffect(() => {
+    navegandoRef.current = false;
     const jaEstudada =
       questoesDoAssunto?.find((q) => q.slug === moduloSlug)?.estudada ?? false;
     setEtapa('pergunta');
@@ -240,6 +242,12 @@ export default function AvantLessonPlayer({
       router.prefetch(buildEstudarHref(slugComQuery));
     }
   };
+
+  useEffect(() => {
+    if (mode !== 'live' || navegacaoBloqueada) return;
+    prefetchSlug(proximaSlug);
+    prefetchSlug(anteriorSlug);
+  }, [mode, proximaSlug, anteriorSlug, moduloSlug, navegacaoBloqueada]);
 
   /** Após escolher uma alternativa, leva o botão Confirmar para a área visível do scroll. */
   useLayoutEffect(() => {
@@ -451,7 +459,8 @@ export default function AvantLessonPlayer({
   };
 
   const handleNavegar = (slugComQuery: string) => {
-    if (navegacaoBloqueada) return;
+    if (navegacaoBloqueada || navegandoRef.current) return;
+    navegandoRef.current = true;
     if (questaoNav) {
       questaoNav.navigateEstudar(slugComQuery);
     } else {
