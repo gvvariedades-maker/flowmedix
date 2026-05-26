@@ -17,6 +17,7 @@ import {
   BookMarked,
   HelpCircle,
   BrainCircuit,
+  CreditCard,
   type LucideIcon,
 } from 'lucide-react';
 import { TextSizeControl } from '@/components/accessibility/TextSizeControl';
@@ -164,6 +165,13 @@ function formatProExpiryShort(iso: string | null): string | null {
     year: 'numeric',
     timeZone: 'America/Sao_Paulo',
   });
+}
+
+function getAssinaturaNavLabel(isAdminUser: boolean, proSource: ProSource): string | null {
+  if (isAdminUser) return null;
+  if (proSource === 'stripe') return 'Gerenciar assinatura';
+  if (proSource === 'invite') return 'Ver assinatura';
+  return 'Minha assinatura';
 }
 
 function CityCard({
@@ -314,14 +322,26 @@ function UserAccountFooter({
   userEmail,
   userDisplayName,
   userInitials,
+  proSource,
+  isAdminUser,
+  createQueryString,
+  isAssinaturaActive,
+  onNavAction,
   onLogout,
 }: {
   userEmail: string | null;
   userDisplayName: string | null;
   userInitials: string;
+  proSource: ProSource;
+  isAdminUser: boolean;
+  createQueryString: (path: string) => string;
+  isAssinaturaActive: boolean;
+  onNavAction?: () => void;
   onLogout: () => void;
 }) {
   const name = displayNameFromUser(userDisplayName, userEmail);
+  const assinaturaLabel = getAssinaturaNavLabel(isAdminUser, proSource);
+
   return (
     <div className="px-3 pb-5 pt-2">
       <div className="flex items-start gap-2.5">
@@ -350,6 +370,29 @@ function UserAccountFooter({
           <LogOut size={17} strokeWidth={MENU_ICON_STROKE} aria-hidden />
         </button>
       </div>
+      {assinaturaLabel ? (
+        <Link
+          href={createQueryString('/conta/assinatura')}
+          onClick={onNavAction}
+          className={cn(
+            'mt-3 flex w-full items-center gap-2.5 rounded-xl py-2.5 pl-3 pr-3 text-sm font-semibold transition-colors',
+            isAssinaturaActive
+              ? 'bg-white/8 text-slate-100'
+              : 'text-slate-400 hover:bg-white/5 hover:text-slate-200',
+          )}
+        >
+          <CreditCard
+            size={18}
+            strokeWidth={MENU_ICON_STROKE}
+            className={cn(
+              'shrink-0',
+              isAssinaturaActive ? 'text-slate-300' : 'text-slate-500',
+            )}
+            aria-hidden
+          />
+          {assinaturaLabel}
+        </Link>
+      ) : null}
     </div>
   );
 }
@@ -552,6 +595,7 @@ function DashboardContent({
   ];
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
+  const isAssinaturaActive = isPathActive('/conta/assinatura');
 
   return (
     <PwaInstallProvider enabled={userEmail != null} blocked={estudoReversoWelcome.isOpen}>
@@ -584,6 +628,10 @@ function DashboardContent({
           userEmail={userEmail}
           userDisplayName={userDisplayName}
           userInitials={userInitials}
+          proSource={proSource}
+          isAdminUser={isAdminUser}
+          createQueryString={createQueryString}
+          isAssinaturaActive={isAssinaturaActive}
           onLogout={handleLogout}
         />
       </aside>
@@ -650,6 +698,11 @@ function DashboardContent({
                 userEmail={userEmail}
                 userDisplayName={userDisplayName}
                 userInitials={userInitials}
+                proSource={proSource}
+                isAdminUser={isAdminUser}
+                createQueryString={createQueryString}
+                isAssinaturaActive={isAssinaturaActive}
+                onNavAction={closeMobileMenu}
                 onLogout={handleLogout}
               />
             </motion.div>
