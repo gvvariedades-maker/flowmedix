@@ -39,6 +39,10 @@ class LruCache<T> {
     return value;
   }
 
+  peek(key: string): T | undefined {
+    return this.map.get(key);
+  }
+
   set(key: string, value: T): void {
     if (this.map.has(key)) {
       this.map.delete(key);
@@ -50,12 +54,21 @@ class LruCache<T> {
   }
 }
 
+function scheduleRouterPush(router: ReturnType<typeof useRouter>, href: string): void {
+  const push = () => router.push(href);
+  if (typeof requestAnimationFrame !== 'undefined') {
+    requestAnimationFrame(push);
+  } else {
+    push();
+  }
+}
+
 export function QuestaoNavigationProvider({ children }: { children: ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
   const cacheRef = useRef(new LruCache<EstudarQuestaoPayload>(CACHE_MAX_ENTRIES));
-  const prefetchedRef = useRef(new Set<string>());
-  const prefetchedPayloadRef = useRef(new Set<string>());
+  const prefetchedRouteRef = useRef(new Set<string>());
+  const inFlightRef = useRef(new Map<string, Promise<EstudarQuestaoPayload | null>>());
   const navegandoRef = useRef(false);
   const [displayPayload, setDisplayPayload] = useState<EstudarQuestaoPayload | null>(null);
 
@@ -75,32 +88,27 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     return cacheRef.current.get(key);
   }, []);
 
-  const prefetchPayload = useCallback(
-    (slugComQuery: string) => {
+  const fetchPayloadIntoCache = useCallback(
+    (slugComQuery: string): Promise<EstudarQuestaoPayload | null> => {
       const cacheKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
-      if (prefetchedPayloadRef.current.has(cacheKey)) {
-        if (!cacheRef.current.get(cacheKey)) {
-          recordPrefetchSkipped(cacheKey, 'deduped');
-        }
-        return;
-      }
-      if (cacheRef.current.get(cacheKey)) {
-        prefetchedPayloadRef.current.add(cacheKey);
+      const cached = cacheRef.current.peek(cacheKey);
+      if (cached) {
         recordPrefetchSkipped(cacheKey, 'cached');
-        return;
+        return Promise.resolve(cached);
       }
 
-      prefetchedPayloadRef.current.add(cacheKey);
-      if (!markPrefetchInFlight(cacheKey)) {
+      const existing = inFlightRef.current.get(cacheKey);
+      if (existing) {
         recordPrefetchSkipped(cacheKey, 'deduped');
-        return;
+        return existing;
       }
 
+      markPrefetchInFlight(cacheKey);
       recordPrefetchStart(cacheKey, slugComQuery);
       const startedAt =
         typeof performance !== 'undefined' ? performance.now() : Date.now();
 
-      void (async () => {
+      const promise = (async (): Promise<EstudarQuestaoPayload | null> => {
         try {
           const res = await fetchWithAuth(buildEstudarQuestaoApiUrl(slugComQuery));
           const durationMs = Math.round(
@@ -112,11 +120,12 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
               durationMs,
               reason: `http_${res.status}`,
             });
-            return;
+            return null;
           }
           const payload = (await res.json()) as EstudarQuestaoPayload;
           cacheRef.current.set(cacheKey, payload);
           recordPrefetchEnd(cacheKey, { ok: true, durationMs, status: res.status });
+          return payload;
         } catch (err) {
           const durationMs = Math.round(
             (typeof performance !== 'undefined' ? performance.now() : Date.now()) - startedAt,
@@ -126,24 +135,45 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
             durationMs,
             reason: err instanceof Error ? err.message : 'network_error',
           });
+          return null;
         } finally {
+          inFlightRef.current.delete(cacheKey);
           clearPrefetchInFlight(cacheKey);
         }
       })();
+
+      inFlightRef.current.set(cacheKey, promise);
+      return promise;
     },
     [],
+  );
+
+  const prefetchPayload = useCallback(
+    (slugComQuery: string) => {
+      void fetchPayloadIntoCache(slugComQuery);
+    },
+    [fetchPayloadIntoCache],
   );
 
   const prefetchEstudar = useCallback(
     (slugComQuery: string) => {
       const href = buildEstudarHref(slugComQuery);
-      if (!prefetchedRef.current.has(href)) {
-        prefetchedRef.current.add(href);
+      if (!prefetchedRouteRef.current.has(href)) {
+        prefetchedRouteRef.current.add(href);
         router.prefetch(href);
       }
-      prefetchPayload(slugComQuery);
+      void fetchPayloadIntoCache(slugComQuery).then((payload) => {
+        const proxima = payload?.proximaSlug;
+        if (!proxima || proxima === slugComQuery) return;
+        const proximaHref = buildEstudarHref(proxima);
+        if (!prefetchedRouteRef.current.has(proximaHref)) {
+          prefetchedRouteRef.current.add(proximaHref);
+          router.prefetch(proximaHref);
+        }
+        void fetchPayloadIntoCache(proxima);
+      });
     },
-    [router, prefetchPayload],
+    [router, fetchPayloadIntoCache],
   );
 
   const navigateEstudar = useCallback(
@@ -152,17 +182,36 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       navegandoRef.current = true;
 
       const cacheKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
+      const href = buildEstudarHref(slugComQuery);
       markNavigateStart(cacheKey, slugComQuery);
 
-      const cached = cacheRef.current.get(cacheKey);
-      recordNavigateCacheResult(cacheKey, Boolean(cached));
-      if (cached) {
-        setDisplayPayload(cached);
-      }
+      void (async () => {
+        try {
+          let payload = cacheRef.current.peek(cacheKey) ?? null;
+          if (!payload) {
+            recordNavigateCacheResult(cacheKey, false);
+            payload = await fetchPayloadIntoCache(slugComQuery);
+          } else {
+            recordNavigateCacheResult(cacheKey, true);
+          }
 
-      router.push(buildEstudarHref(slugComQuery));
+          if (payload) {
+            setDisplayPayload(payload);
+            scheduleRouterPush(router, href);
+            const proxima = payload.proximaSlug;
+            if (proxima && proxima !== slugComQuery) {
+              void fetchPayloadIntoCache(proxima);
+            }
+            return;
+          }
+
+          scheduleRouterPush(router, href);
+        } catch {
+          scheduleRouterPush(router, href);
+        }
+      })();
     },
-    [router],
+    [router, fetchPayloadIntoCache],
   );
 
   const value = useMemo<QuestaoNavigationContextValue>(
