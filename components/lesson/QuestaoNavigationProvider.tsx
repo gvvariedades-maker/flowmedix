@@ -1,15 +1,17 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, type ReactNode } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import {
   QuestaoNavigationContext,
   type EstudarQuestaoPayload,
   type QuestaoNavigationContextValue,
 } from '@/components/lesson/questao-navigation-context';
+import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import {
   buildEstudarCacheKeyFromSlugComQuery,
   buildEstudarHref,
+  buildEstudarQuestaoApiUrl,
 } from '@/lib/estudar/navigation';
 
 const CACHE_MAX_ENTRIES = 20;
@@ -43,7 +45,9 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
   const pathname = usePathname();
   const cacheRef = useRef(new LruCache<EstudarQuestaoPayload>(CACHE_MAX_ENTRIES));
   const prefetchedRef = useRef(new Set<string>());
+  const prefetchedPayloadRef = useRef(new Set<string>());
   const navegandoRef = useRef(false);
+  const [displayPayload, setDisplayPayload] = useState<EstudarQuestaoPayload | null>(null);
 
   useEffect(() => {
     navegandoRef.current = false;
@@ -57,20 +61,54 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     return cacheRef.current.get(key);
   }, []);
 
+  const prefetchPayload = useCallback(
+    (slugComQuery: string) => {
+      const cacheKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
+      if (prefetchedPayloadRef.current.has(cacheKey)) return;
+      if (cacheRef.current.get(cacheKey)) {
+        prefetchedPayloadRef.current.add(cacheKey);
+        return;
+      }
+
+      prefetchedPayloadRef.current.add(cacheKey);
+
+      void (async () => {
+        try {
+          const res = await fetchWithAuth(buildEstudarQuestaoApiUrl(slugComQuery));
+          if (!res.ok) return;
+          const payload = (await res.json()) as EstudarQuestaoPayload;
+          cacheRef.current.set(cacheKey, payload);
+        } catch {
+          // prefetch best-effort; RSC confirma depois
+        }
+      })();
+    },
+    [],
+  );
+
   const prefetchEstudar = useCallback(
     (slugComQuery: string) => {
       const href = buildEstudarHref(slugComQuery);
-      if (prefetchedRef.current.has(href)) return;
-      prefetchedRef.current.add(href);
-      router.prefetch(href);
+      if (!prefetchedRef.current.has(href)) {
+        prefetchedRef.current.add(href);
+        router.prefetch(href);
+      }
+      prefetchPayload(slugComQuery);
     },
-    [router],
+    [router, prefetchPayload],
   );
 
   const navigateEstudar = useCallback(
     (slugComQuery: string) => {
       if (navegandoRef.current) return;
       navegandoRef.current = true;
+
+      const cacheKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
+      const cached = cacheRef.current.get(cacheKey);
+      if (cached) {
+        setDisplayPayload(cached);
+      }
+
       router.push(buildEstudarHref(slugComQuery));
     },
     [router],
@@ -78,12 +116,22 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
 
   const value = useMemo<QuestaoNavigationContextValue>(
     () => ({
+      displayPayload,
+      setDisplayPayload,
       cachePayload,
       getCachedPayload,
       navigateEstudar,
       prefetchEstudar,
+      prefetchPayload,
     }),
-    [cachePayload, getCachedPayload, navigateEstudar, prefetchEstudar],
+    [
+      displayPayload,
+      cachePayload,
+      getCachedPayload,
+      navigateEstudar,
+      prefetchEstudar,
+      prefetchPayload,
+    ],
   );
 
   return (

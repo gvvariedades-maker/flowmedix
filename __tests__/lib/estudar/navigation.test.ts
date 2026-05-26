@@ -2,6 +2,7 @@ import {
   buildEstudarCacheKey,
   buildEstudarCacheKeyFromSlugComQuery,
   buildEstudarHref,
+  buildEstudarQuestaoApiUrl,
   normalizeSearchForCacheKey,
   parseEstudarSlugComQuery,
 } from '@/lib/estudar/navigation';
@@ -80,6 +81,16 @@ describe('lib/estudar/navigation', () => {
       expect(buildEstudarCacheKeyFromSlugComQuery('x?from=plano')).toBe(
         buildEstudarCacheKey('/estudar/x', 'from=plano'),
       );
+    });
+  });
+
+  describe('buildEstudarQuestaoApiUrl', () => {
+    it('inclui slug e contexto de query', () => {
+      const url = buildEstudarQuestaoApiUrl('minha-q?from=plano');
+      expect(url).toMatch(/^\/api\/estudar\/questao\?/);
+      const params = new URLSearchParams(url.split('?')[1]);
+      expect(params.get('slug')).toBe('minha-q');
+      expect(params.get('from')).toBe('plano');
     });
   });
 });

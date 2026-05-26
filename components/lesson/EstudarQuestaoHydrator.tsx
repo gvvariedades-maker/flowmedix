@@ -2,7 +2,6 @@
 
 import { useLayoutEffect, useMemo } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
-import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
 import type { EstudarQuestaoPayload } from '@/components/lesson/questao-navigation-context';
 import { buildEstudarCacheKey } from '@/lib/estudar/navigation';
@@ -14,7 +13,7 @@ export type EstudarQuestaoHydratorProps = AvantLessonPlayerProps;
 export default function EstudarQuestaoHydrator(props: EstudarQuestaoHydratorProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const { cachePayload } = useQuestaoNavigation();
+  const { cachePayload, setDisplayPayload } = useQuestaoNavigation();
 
   const cacheKey = buildEstudarCacheKey(pathname, searchParams);
 
@@ -30,8 +29,10 @@ export default function EstudarQuestaoHydrator(props: EstudarQuestaoHydratorProp
   );
 
   useLayoutEffect(() => {
-    cachePayload(cacheKey, playerProps as EstudarQuestaoPayload);
-  }, [cacheKey, cachePayload, playerProps]);
+    const payload = playerProps as EstudarQuestaoPayload;
+    setDisplayPayload(payload);
+    cachePayload(cacheKey, payload);
+  }, [cacheKey, cachePayload, setDisplayPayload, playerProps]);
 
-  return <AvantLessonPlayer {...playerProps} />;
+  return null;
 }

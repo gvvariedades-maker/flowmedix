@@ -737,6 +737,16 @@ export const VitrineQuerySchema = z.object({
   q: z.string().trim().max(200).optional(),
 });
 
+/** Query params de `GET /api/estudar/questao` (prefetch do player logado). */
+export const EstudarQuestaoQuerySchema = z.object({
+  slug: z.string().trim().min(1).max(200),
+  from: z.enum(['plano', 'caderno']).optional(),
+  caderno_id: z.string().uuid().optional(),
+  banca: z.string().trim().max(LIMITS.BANCA_MAX).optional(),
+  assunto: z.string().trim().max(LIMITS.TOPICO_MAX).optional(),
+  q: z.string().trim().max(200).optional(),
+});
+
 /** Query params de `GET /api/vitrine/facets`. */
 export const VitrineFacetsQuerySchema = z.object({
   banca: z.string().trim().max(LIMITS.BANCA_MAX).optional(),
@@ -746,6 +756,7 @@ export const VitrineFacetsQuerySchema = z.object({
 // TYPE EXPORTS
 // ============================================================================
 export type VitrineQueryInput = z.infer<typeof VitrineQuerySchema>;
+export type EstudarQuestaoQueryInput = z.infer<typeof EstudarQuestaoQuerySchema>;
 export type VitrineFacetsQueryInput = z.infer<typeof VitrineFacetsQuerySchema>;
 export type QuestaoCompletaInput = z.infer<typeof QuestaoCompletaSchema>;
 export type ResolveUserInput = z.infer<typeof ResolveUserSchema>;

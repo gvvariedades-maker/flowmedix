@@ -6,10 +6,13 @@ import type { AvantLessonPlayerProps } from '@/types/lesson';
 export type EstudarQuestaoPayload = AvantLessonPlayerProps;
 
 export type QuestaoNavigationContextValue = {
+  displayPayload: EstudarQuestaoPayload | null;
+  setDisplayPayload: (payload: EstudarQuestaoPayload | null) => void;
   cachePayload: (key: string, payload: EstudarQuestaoPayload) => void;
   getCachedPayload: (key: string) => EstudarQuestaoPayload | undefined;
   navigateEstudar: (slugComQuery: string) => void;
   prefetchEstudar: (slugComQuery: string) => void;
+  prefetchPayload: (slugComQuery: string) => void;
 };
 
 export const QuestaoNavigationContext =

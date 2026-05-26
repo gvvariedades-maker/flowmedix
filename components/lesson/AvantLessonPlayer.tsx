@@ -10,7 +10,7 @@
  * - Registro de tentativas no Supabase (historico_questoes)
  */
 
-import { useState, useEffect, useMemo, useRef, useLayoutEffect } from 'react';
+import { useState, useEffect, useMemo, useRef, useLayoutEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { buildEstudarHref } from '@/lib/estudar/navigation';
@@ -234,20 +234,23 @@ export default function AvantLessonPlayer({
     };
   }, [mode, moduloSlug]);
 
-  const prefetchSlug = (slugComQuery: string | null | undefined) => {
-    if (mode !== 'live' || !slugComQuery) return;
-    if (questaoNav) {
-      questaoNav.prefetchEstudar(slugComQuery);
-    } else {
-      router.prefetch(buildEstudarHref(slugComQuery));
-    }
-  };
+  const prefetchSlug = useCallback(
+    (slugComQuery: string | null | undefined) => {
+      if (mode !== 'live' || !slugComQuery) return;
+      if (questaoNav) {
+        questaoNav.prefetchEstudar(slugComQuery);
+      } else {
+        router.prefetch(buildEstudarHref(slugComQuery));
+      }
+    },
+    [mode, questaoNav, router],
+  );
 
   useEffect(() => {
     if (mode !== 'live' || navegacaoBloqueada) return;
     prefetchSlug(proximaSlug);
     prefetchSlug(anteriorSlug);
-  }, [mode, proximaSlug, anteriorSlug, moduloSlug, navegacaoBloqueada]);
+  }, [mode, proximaSlug, anteriorSlug, navegacaoBloqueada, prefetchSlug]);
 
   /** Após escolher uma alternativa, leva o botão Confirmar para a área visível do scroll. */
   useLayoutEffect(() => {

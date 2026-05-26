@@ -64,3 +64,15 @@ export function buildEstudarCacheKeyFromHref(href: string): string {
   const normalized = normalizeSearchForCacheKey(search);
   return normalized ? `${slug}|${normalized}` : slug;
 }
+
+/** Query string para `GET /api/estudar/questao` a partir de `slugComQuery`. */
+export function buildEstudarQuestaoApiSearch(slugComQuery: string): string {
+  const { slug, search } = parseEstudarSlugComQuery(slugComQuery);
+  const params = new URLSearchParams(search);
+  params.set('slug', slug);
+  return params.toString();
+}
+
+export function buildEstudarQuestaoApiUrl(slugComQuery: string): string {
+  return `/api/estudar/questao?${buildEstudarQuestaoApiSearch(slugComQuery)}`;
+}
