@@ -177,13 +177,16 @@ test.describe('Laboratório Admin', () => {
   });
 
   test('deve destacar linhas com erro no editor', async ({ page }) => {
-    // JSON sintaticamente válido, porém inválido pelo schema Zod (campos obrigatórios faltando)
+    // JSON com campos presentes mas com valores inválidos — findErrorLocation consegue
+    // mapear os erros Zod a linhas pois as chaves existem no texto.
     const invalidJSON = `{
       "meta": {
-        "banca": "EBSERH"
+        "banca": "EBSERH",
+        "topico": ""
       },
       "question_data": {
-        "instruction": ""
+        "instruction": "Teste",
+        "options": []
       }
     }`;
 
