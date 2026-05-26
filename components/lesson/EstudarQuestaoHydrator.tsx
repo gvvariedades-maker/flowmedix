@@ -33,7 +33,7 @@ export default function EstudarQuestaoHydrator(props: EstudarQuestaoHydratorProp
     const payload = playerProps as EstudarQuestaoPayload;
     setDisplayPayload(payload);
     cachePayload(cacheKey, payload);
-    recordHydratorSync(cacheKey, props.moduloSlug);
+    recordHydratorSync(cacheKey, props.moduloSlug ?? undefined);
   }, [cacheKey, cachePayload, setDisplayPayload, playerProps, props.moduloSlug]);
 
   return null;
