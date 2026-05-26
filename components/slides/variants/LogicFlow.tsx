@@ -4,6 +4,7 @@ import React, { useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, CheckCircle2, Circle, Hand } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
+import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 import {
   useLogicFlowReveal,
   isStepRevealed,
@@ -85,16 +86,7 @@ export const LogicFlow = ({
 }: LogicFlowProps) => {
   const variant = layoutVariant || 'vertical';
 
-  const normalizedSteps = useMemo(() => {
-    if (!steps || steps.length === 0) return [];
-    return steps.map((step) => {
-      if (typeof step === 'string') return step;
-      if (typeof step === 'object' && step !== null && 'text' in step) {
-        return step.text;
-      }
-      return String(step);
-    });
-  }, [steps]);
+  const normalizedSteps = useMemo(() => normalizeLogicFlowSteps(steps), [steps]);
 
   const {
     revealedSteps,
@@ -350,7 +342,7 @@ export const LogicFlow = ({
                     }}
                     transition={{
                       duration: 0.6,
-                      repeat: isActiveHighlight ? Infinity : 0,
+                      repeat: isActiveHighlight ? 2 : 0,
                       repeatDelay: 1,
                     }}
                     role={canTap ? 'button' : undefined}

@@ -1,4 +1,4 @@
-import type { SupabaseClient } from '@supabase/supabase-js';
+import type { SupabaseClient, User } from '@supabase/supabase-js';
 import type Stripe from 'stripe';
 import { processProCheckoutCompleted } from '@/lib/pro/webhook';
 import { findAuthUserByEmail, findOrCreateAuthUserByEmail } from '@/lib/supabase/adminUsers';
@@ -93,14 +93,16 @@ describe('processProCheckoutCompleted', () => {
 
   it('reutiliza usuário existente por e-mail sem enviar magic link', async () => {
     mockFindAuthUserByEmail.mockResolvedValue({
-      user: { id: 'user-existing', email: 'existente@test.com' } as { id: string; email: string },
+      user: { id: 'user-existing', email: 'existente@test.com' } as User,
       error: null,
     });
 
     const supabase = createProSupabaseMock();
     const result = await processProCheckoutCompleted(
       supabase,
-      proSession({ customer_details: { email: 'existente@test.com' } }),
+      proSession({
+        customer_details: { email: 'existente@test.com' } as Stripe.Checkout.Session['customer_details'],
+      }),
     );
 
     expect(result).toEqual({ handled: true, userId: 'user-existing' });

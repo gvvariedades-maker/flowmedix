@@ -1,9 +1,32 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidateTag } from 'next/cache';
 import { CACHE_REVALIDATE_IMMEDIATE } from '@/lib/cache';
+import { userHasModuloAccess } from '@/lib/concursos/entitlements';
 import { logger } from '@/lib/logger';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { createServerSupabase } from '@/lib/supabase/server';
+
+async function denyModuloAccessResponse(
+  supabase: Awaited<ReturnType<typeof createServerSupabase>>,
+  moduloSlug: string,
+) {
+  const { data: modulo, error } = await supabase
+    .from('modulos_estudo')
+    .select('id')
+    .eq('modulo_slug', moduloSlug)
+    .maybeSingle();
+
+  if (error) {
+    logger.error('Failed to resolve modulo for access check', error, { moduloSlug });
+    return NextResponse.json({ error: 'Erro ao validar questão' }, { status: 500 });
+  }
+
+  if (!modulo) {
+    return NextResponse.json({ error: 'Questão não encontrada' }, { status: 404 });
+  }
+
+  return NextResponse.json({ error: 'Sem acesso a esta questão' }, { status: 403 });
+}
 
 export const runtime = 'nodejs';
 
@@ -23,6 +46,11 @@ export async function POST(request: NextRequest) {
     const { user } = auth;
 
     const supabase = await createServerSupabase();
+
+    const hasAccess = await userHasModuloAccess(user.id, modulo_slug);
+    if (!hasAccess) {
+      return denyModuloAccessResponse(supabase, modulo_slug);
+    }
 
     const { count, error: countError } = await supabase
       .from('historico_questoes')

@@ -29,7 +29,25 @@ const getIcon = (iconName?: string, fallback: React.ComponentType<{ size?: numbe
 };
 
 export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) => {
-  
+  const pointsA = Array.isArray(concept_a?.points)
+    ? concept_a.points.filter((point) => typeof point === 'string' && point.trim().length > 0)
+    : [];
+  const pointsB = Array.isArray(concept_b?.points)
+    ? concept_b.points.filter((point) => typeof point === 'string' && point.trim().length > 0)
+    : [];
+  const titleA = concept_a?.title?.trim() || 'Conceito A';
+  const titleB = concept_b?.title?.trim() || 'Conceito B';
+
+  if (pointsA.length === 0 || pointsB.length === 0) {
+    return (
+      <div className="flex w-full min-w-0 items-center justify-center rounded-xl bg-slate-800 p-6">
+        <p className="text-base italic text-slate-400">
+          Slide versus_arena incompleto: cada lado precisa de title e ao menos um ponto em points.
+        </p>
+      </div>
+    );
+  }
+
   // Animação dos Pontos
   const container = {
     hidden: { opacity: 0 },
@@ -41,8 +59,8 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
     show: { x: 0, opacity: 1 }
   };
 
-  const IconAComponent = getIcon(concept_a.icon, Shield);
-  const IconBComponent = getIcon(concept_b.icon, AlertCircle);
+  const IconAComponent = getIcon(concept_a?.icon, Shield);
+  const IconBComponent = getIcon(concept_b?.icon, AlertCircle);
 
   return (
     <div className="w-full min-h-full min-w-0 flex flex-col md:flex-row relative overflow-x-hidden bg-slate-950">
@@ -62,10 +80,10 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
             {React.createElement(IconAComponent, { size: 24 })}
           </div>
           <h3 className={`mb-6 text-xl font-[1000] uppercase italic tracking-tighter md:text-3xl ${theme.textPrimary}`}>
-            {concept_a.title}
+            {titleA}
           </h3>
           <motion.ul variants={container} initial="hidden" animate="show" className="space-y-3">
-            {concept_a.points.map((point, i) => (
+            {pointsA.map((point, i) => (
               <motion.li key={i} variants={item} className="flex items-start gap-3 text-base text-slate-300">
                 <span className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${theme.iconBg}`} />
                 <span>{point}</span>
@@ -109,12 +127,12 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
           
           {/* Título alinhado à direita no mobile, à esquerda no desktop */}
           <h3 className={`mb-6 text-right text-xl font-[1000] uppercase italic tracking-tighter md:text-left md:text-3xl ${theme.textPrimary}`}>
-            {concept_b.title}
+            {titleB}
           </h3>
           
           {/* Lista de pontos */}
           <motion.ul variants={container} initial="hidden" animate="show" className="space-y-3">
-            {concept_b.points.map((point, i) => (
+            {pointsB.map((point, i) => (
               <motion.li 
                 key={i} 
                 variants={item} 

@@ -40,6 +40,7 @@ import { buildDotsNavWindow } from '@/lib/estudar/dotsNavWindow';
 import { supabase } from '@/lib/supabase/client';
 import { PaywallModal } from '@/components/freemium/PaywallModal';
 import type { AvantLessonPlayerProps, LessonData, ReverseStudySlide } from '@/types/lesson';
+import type { GabaritoTentativa } from '@/lib/estudar/questionPayload';
 import { 
   CheckCircle2, XCircle, ChevronRight, ChevronLeft, 
   Lightbulb, ArrowRight, ArrowLeft, 
@@ -70,7 +71,16 @@ export default function AvantLessonPlayer({
   const questionBodyScrollRef = useRef<HTMLDivElement>(null);
   /** Bloco do botão Confirmar — scroll após escolher alternativa para não exigir rolar manualmente. */
   const confirmarRespostaRef = useRef<HTMLDivElement>(null);
+  const ativarEstudoRef = useRef<HTMLButtonElement>(null);
+  const fecharEstudoRef = useRef<HTMLButtonElement>(null);
   const [bottomNavHeightPx, setBottomNavHeightPx] = useState(0);
+  const [keyboardInsetPx, setKeyboardInsetPx] = useState(0);
+
+  const bottomNavPaddingBottom =
+    keyboardInsetPx > 0
+      ? `calc(${keyboardInsetPx}px + env(safe-area-inset-bottom, 0px))`
+      : undefined;
+  const gabaritoToastBottomPx = bottomNavHeightPx + keyboardInsetPx;
 
   /**
    * Garante que a roda do mouse sempre role o container correto (question body).
@@ -124,6 +134,26 @@ export default function AvantLessonPlayer({
     return () => ro.disconnect();
   }, [mode]);
 
+  /** Evita que a barra inferior fique atrás do teclado virtual em mobile. */
+  useEffect(() => {
+    if (mode !== 'live' || typeof window === 'undefined') return;
+    const vv = window.visualViewport;
+    if (!vv) return;
+
+    const syncKeyboardInset = () => {
+      const inset = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+      setKeyboardInsetPx(inset);
+    };
+
+    syncKeyboardInset();
+    vv.addEventListener('resize', syncKeyboardInset);
+    vv.addEventListener('scroll', syncKeyboardInset);
+    return () => {
+      vv.removeEventListener('resize', syncKeyboardInset);
+      vv.removeEventListener('scroll', syncKeyboardInset);
+    };
+  }, [mode, moduloSlug]);
+
   const dotsNavItems = useMemo(
     () =>
       buildDotsNavWindow(questoesDoAssunto ?? [], {
@@ -155,6 +185,8 @@ export default function AvantLessonPlayer({
   const [resetEm, setResetEm] = useState<string | null>(null);
   const [freemiumLimiteAtingido, setFreemiumLimiteAtingido] = useState(false);
   const [confirmandoResposta, setConfirmandoResposta] = useState(false);
+  const [tentativaErro, setTentativaErro] = useState<string | null>(null);
+  const [gabarito, setGabarito] = useState<GabaritoTentativa | null>(null);
 
   // Reset ao mudar de questão
   useEffect(() => {
@@ -165,10 +197,16 @@ export default function AvantLessonPlayer({
     setSlideAtual(0);
     setEstudoConcluido(jaEstudada);
     setMarcandoConclusao(false);
+    setConfirmandoResposta(false);
     setConclusaoErro(null);
     setPaywallOpen(false);
     setFreemiumLimiteAtingido(false);
+    setTentativaErro(null);
+    setGabarito(null);
+    questionBodyScrollRef.current?.scrollTo({ top: 0, behavior: 'auto' });
   }, [dados, moduloSlug, questoesDoAssunto]);
+
+  const navegacaoBloqueada = confirmandoResposta || marcandoConclusao;
 
   useEffect(() => {
     if (mode !== 'live') return;
@@ -211,6 +249,18 @@ export default function AvantLessonPlayer({
     el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
   }, [selecionada, etapa]);
 
+  useLayoutEffect(() => {
+    if (etapa === 'gabarito' && gabarito !== null) {
+      ativarEstudoRef.current?.focus();
+    }
+  }, [etapa, gabarito]);
+
+  useLayoutEffect(() => {
+    if (etapa === 'estudo') {
+      fecharEstudoRef.current?.focus();
+    }
+  }, [etapa, slideAtual]);
+
   const examHeaderLine = useMemo(() => {
     if (!dados?.meta) return '';
     const raw = dados.meta.header_line?.trim();
@@ -252,18 +302,31 @@ export default function AvantLessonPlayer({
     return doPost();
   };
 
-  type RegistrarTentativaResult = 'ok' | 'blocked' | 'unauthorized' | 'error';
+  type RegistrarTentativaResult =
+    | { status: 'ok'; gabarito: GabaritoTentativa }
+    | { status: 'blocked' }
+    | { status: 'unauthorized' }
+    | { status: 'error' };
+
+  const buildPreviewGabarito = (opcaoId: string): GabaritoTentativa => {
+    const opcaoCorretaId =
+      dados.question_data.options.find((option) => option.is_correct)?.id ?? '';
+    const opcaoEscolhida = dados.question_data.options.find((option) => option.id === opcaoId);
+    return {
+      acertou: opcaoEscolhida?.is_correct ?? false,
+      opcaoCorretaId,
+    };
+  };
 
   const registrarTentativa = async (opcaoId: string): Promise<RegistrarTentativaResult> => {
-    if (mode === 'preview') return 'ok';
+    if (mode === 'preview') {
+      return { status: 'ok', gabarito: buildPreviewGabarito(opcaoId) };
+    }
 
     try {
-      const opcaoEscolhida = dados.question_data.options.find((o: any) => o.id === opcaoId);
-      const acertou = opcaoEscolhida?.is_correct || false;
-
       const response = await postWithSessionRetry('/api/registrar-tentativa', {
         modulo_slug: moduloSlug || dados.modulo_slug || 'slug-legacy',
-        acertou,
+        opcao_id: opcaoId,
         banca: dados.meta?.banca || 'DESCONHECIDA',
         topico: dados.meta?.topico || 'Geral',
         subtopico: dados.meta?.subtopico || dados.meta?.topico || 'Geral',
@@ -277,22 +340,42 @@ export default function AvantLessonPlayer({
         if (payload.resetEm) setResetEm(payload.resetEm);
         setFreemiumLimiteAtingido(true);
         setPaywallOpen(true);
-        return 'blocked';
+        return { status: 'blocked' };
       }
 
       if (!response.ok) {
         if (response.status === 401) {
           logger.warn('Attempt not registered: unauthorized after session retry', { moduloSlug });
-          return 'unauthorized';
+          return { status: 'unauthorized' };
         }
         logger.error('Failed to register attempt via API', { status: response.status, moduloSlug });
-        return 'error';
+        return { status: 'error' };
       }
 
-      return 'ok';
+      const payload = (await response.json()) as {
+        acertou?: boolean;
+        opcao_correta_id?: string;
+      };
+
+      if (
+        typeof payload.acertou !== 'boolean' ||
+        typeof payload.opcao_correta_id !== 'string' ||
+        payload.opcao_correta_id.length === 0
+      ) {
+        logger.error('Invalid gabarito payload from registrar-tentativa', { moduloSlug });
+        return { status: 'error' };
+      }
+
+      return {
+        status: 'ok',
+        gabarito: {
+          acertou: payload.acertou,
+          opcaoCorretaId: payload.opcao_correta_id,
+        },
+      };
     } catch (error) {
       logger.error('Unexpected error registering attempt', error);
-      return 'error';
+      return { status: 'error' };
     }
   };
 
@@ -305,9 +388,18 @@ export default function AvantLessonPlayer({
     }
 
     setConfirmandoResposta(true);
+    setTentativaErro(null);
     try {
       const result = await registrarTentativa(selecionada);
-      if (result === 'blocked') return;
+      if (result.status !== 'ok') {
+        if (result.status === 'unauthorized') {
+          setTentativaErro('Sessão expirada. Faça login novamente para registrar sua resposta.');
+        } else if (result.status === 'error') {
+          setTentativaErro('Não foi possível registrar sua resposta. Tente novamente.');
+        }
+        return;
+      }
+      setGabarito(result.gabarito);
       setEtapa('gabarito');
     } finally {
       setConfirmandoResposta(false);
@@ -359,6 +451,7 @@ export default function AvantLessonPlayer({
   };
 
   const handleNavegar = (slugComQuery: string) => {
+    if (navegacaoBloqueada) return;
     if (questaoNav) {
       questaoNav.navigateEstudar(slugComQuery);
     } else {
@@ -457,10 +550,66 @@ export default function AvantLessonPlayer({
 
   const isPreviewMode = mode === 'preview';
 
+  const opcaoEstaCorreta = (optId: string): boolean => {
+    if (isPreviewMode) {
+      return dados.question_data.options.find((option) => option.id === optId)?.is_correct ?? false;
+    }
+    return gabarito?.opcaoCorretaId === optId;
+  };
+
+  const respostaAcertou =
+    gabarito != null
+      ? gabarito.acertou
+      : isPreviewMode && selecionada
+        ? opcaoEstaCorreta(selecionada)
+        : false;
+
   /** Na LP a demo fica no card — não usar overlay fixed em tela cheia. */
   const sairEstudoReverso = () => {
-    setEtapa('pergunta');
     setSlideAtual(0);
+    if (mode === 'preview') {
+      setEtapa('pergunta');
+      return;
+    }
+    setEtapa(gabarito !== null ? 'gabarito' : 'pergunta');
+  };
+
+  const buildOptionAriaLabel = (
+    opt: { id: string; text: string },
+    isSelected: boolean,
+    isCorrect: boolean,
+    showResult: boolean,
+  ): string => {
+    const base = `Alternativa ${opt.id}: ${opt.text}`;
+    if (!showResult) {
+      return isSelected ? `${base}, selecionada` : base;
+    }
+    if (isCorrect && isSelected) return `${base}, correta, sua escolha`;
+    if (isCorrect) return `${base}, correta`;
+    if (isSelected) return `${base}, sua escolha, incorreta`;
+    return base;
+  };
+
+  const handleOptionKeyDown = (
+    e: React.KeyboardEvent<HTMLButtonElement>,
+    index: number,
+    showResult: boolean,
+  ) => {
+    if (showResult) return;
+    const options = dados.question_data.options;
+    let nextIndex: number | null = null;
+    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+      nextIndex = (index + 1) % options.length;
+    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+      nextIndex = (index - 1 + options.length) % options.length;
+    }
+    if (nextIndex === null) return;
+    e.preventDefault();
+    const nextId = options[nextIndex].id;
+    setSelecionada(nextId);
+    requestAnimationFrame(() => {
+      document.getElementById(`lesson-option-${nextId}`)?.focus();
+    });
   };
 
   return (
@@ -560,16 +709,18 @@ export default function AvantLessonPlayer({
             className="px-6 pb-6 md:px-8 md:pb-7"
           >
             <div
+              role="radiogroup"
+              aria-label="Alternativas da questão"
               className={
                 certoErradoLayout
                   ? 'grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto'
                   : 'grid gap-1.5 md:gap-2'
               }
             >
-              {dados.question_data.options.map((opt) => {
+              {dados.question_data.options.map((opt, optionIndex) => {
                 const isSelected = selecionada === opt.id;
-                const isCorrect = opt.is_correct;
-                const showResult = etapa === 'gabarito' || etapa === 'estudo';
+                const isCorrect = opcaoEstaCorreta(opt.id);
+                const showResult = (etapa === 'gabarito' || etapa === 'estudo') && gabarito !== null;
                 
                 let styles = "border-[rgba(255,255,255,0.10)] bg-[#0d1117] hover:border-[rgba(0,242,255,0.30)] hover:bg-[rgba(0,242,255,0.05)]";
                 let badge = "border border-[rgba(255,255,255,0.15)] bg-white/[0.05] text-slate-400 group-hover:border-[rgba(0,242,255,0.35)] group-hover:text-[#00f2ff]";
@@ -597,13 +748,33 @@ export default function AvantLessonPlayer({
                   ? 'flex flex-col items-center justify-center text-center min-h-[92px] sm:min-h-[108px] gap-2 p-5 md:p-6'
                   : 'text-left flex items-start gap-3 px-3 py-3 md:px-4';
 
+                const optionAriaLabel = buildOptionAriaLabel(
+                  opt,
+                  isSelected,
+                  isCorrect,
+                  showResult,
+                );
+
                 return (
                   <motion.button 
                     key={opt.id}
+                    id={`lesson-option-${opt.id}`}
+                    type="button"
+                    role="radio"
+                    aria-checked={isSelected}
+                    aria-label={optionAriaLabel}
                     disabled={showResult}
+                    tabIndex={
+                      showResult
+                        ? -1
+                        : isSelected || (!selecionada && optionIndex === 0)
+                          ? 0
+                          : -1
+                    }
                     whileHover={!showResult ? { scale: 1.02 } : {}}
                     whileTap={!showResult ? { scale: 0.98 } : {}}
-                    onClick={() => setSelecionada(opt.id)} 
+                    onClick={() => setSelecionada(opt.id)}
+                    onKeyDown={(e) => handleOptionKeyDown(e, optionIndex, showResult)}
                     className={`group relative rounded-xl border transition-all duration-300 ${styles} ${rowLayout}`}
                   >
                     {!certoErradoLayout && (
@@ -615,12 +786,12 @@ export default function AvantLessonPlayer({
                       {opt.text}
                     </span>
                     {showResult && isCorrect && (
-                      <div className={`text-[#00ff88] animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`}>
+                      <div className={`text-[#00ff88] animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`} aria-hidden>
                         <CheckCircle2 size={certoErradoLayout ? 32 : 24} />
                       </div>
                     )}
                     {showResult && isSelected && !isCorrect && (
-                      <div className={`text-[#ff0055] animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`}>
+                      <div className={`text-[#ff0055] animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`} aria-hidden>
                         <XCircle size={certoErradoLayout ? 32 : 24} />
                       </div>
                     )}
@@ -644,6 +815,11 @@ export default function AvantLessonPlayer({
                 enabled={etapa === 'pergunta'}
                 className="w-full max-w-xl"
               />
+              {tentativaErro ? (
+                <p role="alert" className="w-full max-w-xl text-center text-sm text-[#ff4d72] font-medium px-2">
+                  {tentativaErro}
+                </p>
+              ) : null}
               <button 
                 type="button"
                 onClick={handleConfirmarResposta}
@@ -664,7 +840,9 @@ export default function AvantLessonPlayer({
       {mode === 'live' && (
         <div
           ref={bottomNavRef}
+          aria-busy={navegacaoBloqueada}
           className="bg-[#0d1117] border-t border-[rgba(255,255,255,0.10)] shrink-0 z-10 shadow-[0_-4px_24px_-8px_rgba(15,23,42,0.08)] pb-safe md:rounded-b-[40px]"
+          style={bottomNavPaddingBottom ? { paddingBottom: bottomNavPaddingBottom } : undefined}
         >
           {/* Dots janelados: N antes/depois + ellipsis; altura fixa (sem scroll horizontal). */}
           {dotsNavItems.length > 0 && (
@@ -698,19 +876,22 @@ export default function AvantLessonPlayer({
                       key={q.slug}
                       ref={isCurrent ? questaoAtualDotRef : undefined}
                       type="button"
+                      disabled={navegacaoBloqueada}
                       onClick={() => {
                         handleNavegar(`${q.slug}${buildNavegacaoSuffix()}`);
                       }}
                       onMouseEnter={() => {
+                        if (navegacaoBloqueada) return;
                         prefetchSlug(`${q.slug}${buildNavegacaoSuffix()}`);
                       }}
                       onFocus={() => {
+                        if (navegacaoBloqueada) return;
                         prefetchSlug(`${q.slug}${buildNavegacaoSuffix()}`);
                       }}
                       title={`Questão ${posicaoLista}${q.estudada ? ' — estudada' : ''}`}
                       aria-label={`Questão ${posicaoLista}${isCurrent ? ', atual' : ''}${q.estudada ? ', estudada' : ''}`}
                       aria-current={isCurrent ? 'step' : undefined}
-                      className={`shrink-0 rounded-full transition-all duration-200 flex items-center justify-center ${
+                      className={`shrink-0 rounded-full transition-all duration-200 flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-50 ${
                         isCurrent
                           ? 'w-7 h-7 bg-[#00f2ff] ring-2 ring-[rgba(0,242,255,0.40)] ring-offset-1 ring-offset-[#0d1117] shadow-md'
                           : q.estudada
@@ -736,11 +917,15 @@ export default function AvantLessonPlayer({
             <button 
               type="button"
               onClick={() => anteriorSlug && handleNavegar(anteriorSlug)}
-              onMouseEnter={() => prefetchSlug(anteriorSlug)}
-              onFocus={() => prefetchSlug(anteriorSlug)}
-              disabled={!anteriorSlug} 
+              onMouseEnter={() => {
+                if (!navegacaoBloqueada) prefetchSlug(anteriorSlug);
+              }}
+              onFocus={() => {
+                if (!navegacaoBloqueada) prefetchSlug(anteriorSlug);
+              }}
+              disabled={!anteriorSlug || navegacaoBloqueada} 
               className={`flex items-center gap-1.5 sm:gap-2 px-2 sm:px-4 py-2.5 sm:py-3 rounded-xl font-bold uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest transition-all min-h-[44px] ${
-                anteriorSlug ? 'text-slate-400 hover:bg-white/[0.05] hover:text-[#00f2ff]' : 'text-white/15 cursor-not-allowed'
+                anteriorSlug && !navegacaoBloqueada ? 'text-slate-400 hover:bg-white/[0.05] hover:text-[#00f2ff]' : 'text-white/15 cursor-not-allowed'
               }`}
             >
               <ArrowLeft size={16} /> <span>Anterior</span>
@@ -749,9 +934,14 @@ export default function AvantLessonPlayer({
               <button 
                 type="button"
                 onClick={() => proximaSlug && handleNavegar(proximaSlug)}
-                onMouseEnter={() => prefetchSlug(proximaSlug)}
-                onFocus={() => prefetchSlug(proximaSlug)}
-                className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-white/[0.07] text-slate-200 font-black uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:bg-white/[0.12] transition-all min-h-[44px]"
+                onMouseEnter={() => {
+                  if (!navegacaoBloqueada) prefetchSlug(proximaSlug);
+                }}
+                onFocus={() => {
+                  if (!navegacaoBloqueada) prefetchSlug(proximaSlug);
+                }}
+                disabled={navegacaoBloqueada}
+                className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-white/[0.07] text-slate-200 font-black uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:bg-white/[0.12] transition-all min-h-[44px] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 <span className="sm:hidden">Próxima</span>
                 <span className="hidden sm:inline">Próxima Questão</span>
@@ -778,23 +968,31 @@ export default function AvantLessonPlayer({
 
       {/* TOAST GABARITO */}
       <AnimatePresence>
-        {etapa === 'gabarito' && (
+        {etapa === 'gabarito' && gabarito !== null && (
           <motion.div 
             initial={{ y: "100%" }} 
             animate={{ y: 0 }} 
             exit={{ y: "100%" }}
             className="absolute left-0 right-0 z-20"
-            style={{ bottom: bottomNavHeightPx }}
+            style={{ bottom: gabaritoToastBottomPx }}
           >
             <div className="bg-[#0d1117] border-t border-white/10 p-4 pb-safe sm:p-6 md:p-8 shadow-[0_-10px_40px_rgba(0,0,0,0.4)]">
               <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 max-w-4xl mx-auto">
-                <div className="flex items-center gap-4">
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-inner ${
-                    dados.question_data.options.find((o:any) => o.id === selecionada)?.is_correct 
+                <div
+                  className="flex items-center gap-4"
+                  role="status"
+                  aria-live="polite"
+                  aria-atomic="true"
+                >
+                  <div
+                    className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-inner ${
+                    respostaAcertou 
                       ? 'bg-[rgba(0,255,136,0.12)] text-[#00ff88]' 
                       : 'bg-[rgba(255,0,85,0.12)] text-[#ff0055]'
-                  }`}>
-                    {dados.question_data.options.find((o:any) => o.id === selecionada)?.is_correct ? (
+                  }`}
+                    aria-hidden
+                  >
+                    {respostaAcertou ? (
                       <CheckCircle2 size={32} />
                     ) : (
                       <XCircle size={32} />
@@ -805,11 +1003,11 @@ export default function AvantLessonPlayer({
                       Diagnóstico
                     </p>
                     <p className={`text-xl font-black italic tracking-tighter uppercase ${
-                      dados.question_data.options.find((o:any) => o.id === selecionada)?.is_correct 
+                      respostaAcertou 
                         ? 'text-[#00ff88]' 
                         : 'text-[#ff0055]'
                     }`}>
-                      {dados.question_data.options.find((o:any) => o.id === selecionada)?.is_correct 
+                      {respostaAcertou 
                         ? 'Resposta Correta' 
                         : 'Resposta Incorreta'}
                     </p>
@@ -823,6 +1021,7 @@ export default function AvantLessonPlayer({
                     className="mb-3"
                   />
                   <button 
+                    ref={ativarEstudoRef}
                     type="button"
                     onClick={() => { 
                       setEtapa('estudo'); 
@@ -885,6 +1084,7 @@ export default function AvantLessonPlayer({
                   </div>
                   
                   <button
+                    ref={fecharEstudoRef}
                     type="button"
                     onClick={sairEstudoReverso}
                     className={
@@ -921,7 +1121,7 @@ export default function AvantLessonPlayer({
                 <EstudoReversoSlideZoom>
                   <AnimatePresence mode="wait">
                     <motion.div
-                      key={`slide-${slideAtual}-${currentSlide?.type || 'default'}-${JSON.stringify(currentSlide).substring(0, 20)}`}
+                      key={`slide-${slideAtual}-${currentSlide?.type ?? 'default'}`}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}

@@ -24,7 +24,14 @@ jest.mock('@/lib/cache', () => ({
 
 const mockGetUserAndClientFromBearer = jest.fn();
 jest.mock('@/lib/supabase/api-request-user', () => ({
-  getUserAndClientFromBearer: (...args: unknown[]) => mockGetUserAndClientFromBearer(...args),
+  getUserAndClientFromBearer: jest.fn((...args: unknown[]) =>
+    mockGetUserAndClientFromBearer(...args),
+  ),
+}));
+
+const mockUserHasModuloAccess = jest.fn();
+jest.mock('@/lib/concursos/entitlements', () => ({
+  userHasModuloAccess: jest.fn((...args: unknown[]) => mockUserHasModuloAccess(...args)),
 }));
 
 const mockFrom = jest.fn();
@@ -33,7 +40,7 @@ const mockCreateServerSupabase = jest.fn(async () => ({
 }));
 
 jest.mock('@/lib/supabase/server', () => ({
-  createServerSupabase: (...args: unknown[]) => mockCreateServerSupabase(...args),
+  createServerSupabase: jest.fn(() => mockCreateServerSupabase()),
 }));
 
 const USER_ID = '550e8400-e29b-41d4-a716-446655440000';
@@ -45,6 +52,7 @@ describe('POST /api/concluir-estudo-reverso', () => {
     mockGetUserAndClientFromBearer.mockResolvedValue({
       user: { id: USER_ID, email: 'aluno@test.com' },
     });
+    mockUserHasModuloAccess.mockResolvedValue(true);
   });
 
   function makeRequest(body: object) {
@@ -54,6 +62,35 @@ describe('POST /api/concluir-estudo-reverso', () => {
       headers: { 'content-type': 'application/json', authorization: 'Bearer token' },
     });
   }
+
+  it('retorna 403 sem entitlement no módulo', async () => {
+    mockUserHasModuloAccess.mockResolvedValue(false);
+    const moduloMaybeSingle = jest.fn().mockResolvedValue({
+      data: { id: 'modulo-uuid' },
+      error: null,
+    });
+    const moduloEq = jest.fn().mockReturnValue({ maybeSingle: moduloMaybeSingle });
+    const moduloSelect = jest.fn().mockReturnValue({ eq: moduloEq });
+    mockFrom.mockReturnValue({ select: moduloSelect, eq: moduloEq });
+
+    const response = await POST(makeRequest({ modulo_slug: SLUG }));
+
+    expect(response.status).toBe(403);
+    expect(await response.json()).toEqual({ error: 'Sem acesso a esta questão' });
+  });
+
+  it('retorna 404 quando o módulo não existe', async () => {
+    mockUserHasModuloAccess.mockResolvedValue(false);
+    const moduloMaybeSingle = jest.fn().mockResolvedValue({ data: null, error: null });
+    const moduloEq = jest.fn().mockReturnValue({ maybeSingle: moduloMaybeSingle });
+    const moduloSelect = jest.fn().mockReturnValue({ eq: moduloEq });
+    mockFrom.mockReturnValue({ select: moduloSelect, eq: moduloEq });
+
+    const response = await POST(makeRequest({ modulo_slug: 'slug-inexistente' }));
+
+    expect(response.status).toBe(404);
+    expect(await response.json()).toEqual({ error: 'Questão não encontrada' });
+  });
 
   it('retorna 401 sem auth', async () => {
     mockGetUserAndClientFromBearer.mockResolvedValue(null);

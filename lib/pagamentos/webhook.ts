@@ -190,7 +190,8 @@ export async function processStripeWebhookEvent(
         .from('concurso_matriculas')
         .update({ status: 'expirado' })
         .eq('user_id', purchase.user_id)
-        .eq('concurso_id', purchase.concurso_id);
+        .eq('concurso_id', purchase.concurso_id)
+        .eq('origem', 'purchase');
 
       if (matriculaError) {
         logger.error('Falha ao expirar matrícula após reembolso', matriculaError, {

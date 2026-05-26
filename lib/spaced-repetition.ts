@@ -96,6 +96,55 @@ function acertouToQuality(acertou: boolean, attempts: number): number {
 // FUNÇÕES PRINCIPAIS
 // ============================================================================
 
+const SM2_HISTORY_WINDOW = 10;
+
+export interface Sm2SimulationResult {
+  interval: number;
+  easeFactor: number;
+  repetitions: number;
+}
+
+/**
+ * Simula SM-2 sobre as tentativas mais recentes, em ordem cronológica (antigo → recente).
+ */
+export function simulateSm2FromAttempts(
+  attempts: HistoricoQuestao[]
+): Sm2SimulationResult {
+  const sorted = [...attempts].sort(
+    (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+  );
+  const cronologico = sorted.slice(0, SM2_HISTORY_WINDOW).reverse();
+
+  let interval = 1;
+  let easeFactor = 2.5;
+  let repetitions = 0;
+  let successCount = 0;
+
+  for (let i = 0; i < cronologico.length; i++) {
+    const attempt = cronologico[i];
+    let quality: number;
+    if (attempt.acertou) {
+      successCount++;
+      quality = acertouToQuality(true, successCount);
+    } else {
+      successCount = 0;
+      quality = acertouToQuality(false, 1);
+    }
+
+    const result = calculateNextInterval(interval, easeFactor, quality);
+    interval = result.interval;
+    easeFactor = result.easeFactor;
+
+    if (attempt.acertou) {
+      repetitions++;
+    } else {
+      repetitions = Math.max(0, repetitions - 1);
+    }
+  }
+
+  return { interval, easeFactor, repetitions };
+}
+
 /**
  * Gera lista de questões para revisar hoje
  */
@@ -163,26 +212,7 @@ export async function getTodayReviews(userId: string): Promise<ReviewItem[]> {
       const lastDate = new Date(lastAttempt.created_at);
       lastDate.setHours(0, 0, 0, 0);
 
-      // Calcular intervalo baseado no histórico
-      let interval = 1;
-      let easeFactor = 2.5;
-      let repetitions = 0;
-
-      // Simular algoritmo SM-2 com histórico
-      for (let i = 0; i < Math.min(sorted.length, 10); i++) {
-        const attempt = sorted[i];
-        const quality = acertouToQuality(attempt.acertou, i + 1);
-        
-        const result = calculateNextInterval(interval, easeFactor, quality);
-        interval = result.interval;
-        easeFactor = result.easeFactor;
-        
-        if (attempt.acertou) {
-          repetitions++;
-        } else {
-          repetitions = Math.max(0, repetitions - 1);
-        }
-      }
+      const { interval, easeFactor, repetitions } = simulateSm2FromAttempts(attempts);
 
       // Calcular próxima revisão
       const nextReview = new Date(lastDate);

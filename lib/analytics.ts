@@ -7,8 +7,8 @@
 import { logger } from './logger';
 import { unstable_cache } from 'next/cache';
 import { CACHE_CONFIG } from './cache';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
+import { SCALE_LIMITS } from './scale/constants';
+import { withPostgrestReadRetry } from './supabaseReadRetry';
 
 // ============================================================================
 // TIPOS E INTERFACES
@@ -84,60 +84,46 @@ export interface AnalyticsSummary {
 // ============================================================================
 
 /**
- * Busca histórico completo do usuário (com cache)
+ * Histórico completo por usuário — service role + filtro explícito.
+ * Nunca usar cookies/RLS de sessão aqui (também não dentro de unstable_cache).
  */
-export async function getHistoricoCompleto(userId: string): Promise<HistoricoQuestao[]> {
-  const cacheKey = `analytics-historico-${userId}`;
-  
-  return unstable_cache(
-    async () => {
-      try {
-        // Criar cliente Supabase dentro do cache function
-        const cookieStore = await cookies();
-        const supabase = createServerClient(
-          process.env.NEXT_PUBLIC_SUPABASE_URL!,
-          process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-          {
-            cookies: {
-              getAll() {
-                return cookieStore.getAll();
-              },
-              setAll(cookiesToSet) {
-                try {
-                  cookiesToSet.forEach(({ name, value, options }) =>
-                    cookieStore.set(name, value, options)
-                  );
-                } catch {
-                  // Next.js já cuida dos cookies em Server Components
-                }
-              },
-            },
-          }
-        );
-        
-        const { data, error } = await supabase
+async function fetchHistoricoCompletoRows(userId: string): Promise<HistoricoQuestao[]> {
+  try {
+    const { createServerSupabase } = await import('./supabase/server');
+    const supabase = await createServerSupabase();
+
+    const data = await withPostgrestReadRetry(
+      `historico_questoes:analytics:${userId.slice(0, 8)}…`,
+      async () =>
+        supabase
           .from('historico_questoes')
           .select('*')
           .eq('user_id', userId)
           .order('created_at', { ascending: false })
-          .limit(5000); // Limite razoável para analytics
-        
-        if (error) {
-          logger.error('Failed to fetch complete history', error, { userId });
-          return [];
-        }
-        
-        return (data || []) as HistoricoQuestao[];
-      } catch (error) {
-        logger.error('Unexpected error fetching history', error, { userId });
-        return [];
-      }
-    },
+          .limit(SCALE_LIMITS.HISTORICO_ANALYTICS_READ),
+    );
+
+    return (data ?? []) as HistoricoQuestao[];
+  } catch (error) {
+    logger.error('Unexpected error fetching history', error, { userId });
+    return [];
+  }
+}
+
+/**
+ * Busca histórico completo do usuário (com cache).
+ * IMPORTANTE: userId deve vir da sessão fora do cache; dentro usa service role.
+ */
+export async function getHistoricoCompleto(userId: string): Promise<HistoricoQuestao[]> {
+  const cacheKey = `analytics-historico-${userId}`;
+
+  return unstable_cache(
+    async () => fetchHistoricoCompletoRows(userId),
     [cacheKey],
     {
       ...CACHE_CONFIG.USER,
       tags: ['analytics', 'historico', `user-${userId}`],
-    }
+    },
   )();
 }
 
@@ -452,47 +438,9 @@ export async function getAnalyticsSummary(userId: string): Promise<AnalyticsSumm
 }
 
 /**
- * Busca histórico completo (sem cache, para uso em APIs)
+ * Busca histórico completo (sem cache, para uso em APIs).
+ * Callers devem passar userId autenticado (ex.: session.user.id).
  */
 export async function getHistoricoCompletoUncached(userId: string): Promise<HistoricoQuestao[]> {
-  try {
-    const cookieStore = await cookies();
-    const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        cookies: {
-          getAll() {
-            return cookieStore.getAll();
-          },
-          setAll(cookiesToSet) {
-            try {
-              cookiesToSet.forEach(({ name, value, options }) =>
-                cookieStore.set(name, value, options)
-              );
-            } catch {
-              // Next.js já cuida dos cookies em Server Components
-            }
-          },
-        },
-      }
-    );
-    
-    const { data, error } = await supabase
-      .from('historico_questoes')
-      .select('*')
-      .eq('user_id', userId)
-      .order('created_at', { ascending: false })
-      .limit(5000);
-    
-    if (error) {
-      logger.error('Failed to fetch complete history', error, { userId });
-      return [];
-    }
-    
-    return (data || []) as HistoricoQuestao[];
-  } catch (error) {
-    logger.error('Unexpected error fetching history', error, { userId });
-    return [];
-  }
+  return fetchHistoricoCompletoRows(userId);
 }

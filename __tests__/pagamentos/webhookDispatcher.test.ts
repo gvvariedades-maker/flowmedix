@@ -38,12 +38,12 @@ describe('dispatchStripeWebhookEvent', () => {
       id: 'cs_pro_123',
       payment_status: 'paid',
       metadata: { produto: 'avant-pro', user_id: 'user-pro-1' },
-    } as Stripe.Checkout.Session;
+    } as unknown as Stripe.Checkout.Session;
 
     const event = {
       type: 'checkout.session.completed',
       data: { object: session },
-    } as Stripe.Event;
+    } as unknown as Stripe.Event;
 
     const result = await dispatchStripeWebhookEvent(supabase, event);
 
@@ -62,7 +62,7 @@ describe('dispatchStripeWebhookEvent', () => {
           metadata: { purchase_id: 'purchase-auth-1' },
         },
       },
-    } as Stripe.Event;
+    } as unknown as Stripe.Event;
 
     const result = await dispatchStripeWebhookEvent(supabase, event);
 

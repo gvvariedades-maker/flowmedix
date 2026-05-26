@@ -553,6 +553,24 @@ describe('Validação de Questões', () => {
       expect(result.success).toBe(true);
     });
 
+    it('deve validar versus_arena com lados em objeto', () => {
+      const validSlide = {
+        type: 'versus_arena',
+        concept_a: {
+          title: 'Assepsia',
+          points: ['Previne entrada de microrganismos'],
+          icon: 'Shield',
+        },
+        concept_b: {
+          title: 'Antissepsia',
+          points: ['Destrói microrganismos na pele'],
+        },
+      };
+
+      const result = VersusArenaSlideSchema.safeParse(validSlide);
+      expect(result.success).toBe(true);
+    });
+
     it('deve rejeitar slide sem concept_a', () => {
       const invalidSlide = {
         type: 'versus_arena',

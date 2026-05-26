@@ -380,7 +380,12 @@ export async function getHistoricoQuestoesForSlugsCached(
 /**
  * Cache para histórico de questões por usuário
  * Revalida a cada 2 minutos (dados dinâmicos por usuário)
- * IMPORTANTE: userId deve ser obtido fora do cache (ex: cookies + auth.getUser) e passado como argumento
+ *
+ * Padrão canônico para dados por userId em unstable_cache:
+ * - userId na cache key (obtido fora do cache, ex.: sessão)
+ * - createServerSupabase (service role) dentro do callback — nunca cookies()/createServerClient
+ * - filtro explícito .eq('user_id', userId)
+ * Ver também lib/analytics.ts (getHistoricoCompleto).
  */
 export async function getHistoricoQuestoesCached(userId?: string) {
   // Sem userId = retornar vazio (segurança: não expor histórico de outros usuários)
@@ -529,7 +534,8 @@ export const invalidateUserModulosCache = (userId: string) =>
     'vitrine-facets',
   ]);
 export const invalidateQuestoesCache = () => revalidateCache(['questoes']);
-export const invalidateHistoricoCache = () => revalidateCache(['historico', 'vitrine-page']);
+export const invalidateHistoricoCache = () =>
+  revalidateCache(['historico', 'analytics', 'vitrine-page']);
 export const invalidateVitrinePageCache = (userId?: string) =>
   revalidateCache(userId ? ['vitrine-page', `user-${userId}`] : ['vitrine-page']);
 export const invalidateVitrineFacetsCache = (userId?: string) =>

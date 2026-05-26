@@ -12,7 +12,11 @@ import { getThemeForSlide, calculateLayoutVariant } from './themeGenerator';
 import { resolveDangerZoneLayoutVariant } from './dangerZoneLayout';
 import { resolveGoldenRuleLayoutVariant } from './goldenRuleLayout';
 import type { ThemeColors } from './themeGenerator';
-import { normalizeReverseStudySlide } from '@/lib/reverseStudySlidesNormalize';
+import {
+  isVersusArenaSideReady,
+  normalizeLogicFlowSteps,
+  normalizeReverseStudySlide,
+} from '@/lib/reverseStudySlidesNormalize';
 import { ReverseStudyShell } from './ReverseStudyShell';
 import type { ReverseStudyShellContext } from '@/types/lesson';
 
@@ -92,7 +96,7 @@ export const NeuroSlideHub = ({
     case 'logic_flow':
       return (
         <LogicFlow
-          steps={slide.steps || []}
+          steps={normalizeLogicFlowSteps(slide.steps)}
           theme={theme}
           layoutVariant={layoutVariant}
           revealMode={slide.reveal_mode ?? 'auto'}
@@ -100,8 +104,20 @@ export const NeuroSlideHub = ({
       );
     case 'syllable_scanner':
       return <SyllableScanner word={slide.word} tonicIndex={slide.tonicIndex} rule={slide.rule} theme={theme} />;
-    case 'versus_arena':
-      return <VersusArena concept_a={slide.concept_a} concept_b={slide.concept_b} theme={theme} />;
+    case 'versus_arena': {
+      const conceptA = slide.concept_a;
+      const conceptB = slide.concept_b;
+      if (!isVersusArenaSideReady(conceptA) || !isVersusArenaSideReady(conceptB)) {
+        return (
+          <div className="flex w-full min-w-0 items-center justify-center rounded-xl bg-slate-800 p-6">
+            <p className="text-base italic text-slate-400">
+              Slide versus_arena incompleto: defina concept_a e concept_b com title e points.
+            </p>
+          </div>
+        );
+      }
+      return <VersusArena concept_a={conceptA} concept_b={conceptB} theme={theme} />;
+    }
     default:
       return (
         <div className="flex w-full min-w-0 items-center justify-center rounded-xl bg-slate-800 p-6">
@@ -284,9 +300,7 @@ export default function NeuroSlide({
         );
         break;
       case 'logic_flow': {
-        const normalizedLogicSteps = Array.isArray(normalizedData.steps) && normalizedData.steps.length > 0
-          ? normalizedData.steps
-          : [];
+        const normalizedLogicSteps = normalizeLogicFlowSteps(normalizedData.steps);
         inner = (
           <LogicFlow
             steps={normalizedLogicSteps}
@@ -307,9 +321,22 @@ export default function NeuroSlide({
           />
         );
         break;
-      case 'versus_arena':
-        inner = <VersusArena concept_a={normalizedData.concept_a} concept_b={normalizedData.concept_b} theme={theme} />;
+      case 'versus_arena': {
+        const conceptA = normalizedData.concept_a;
+        const conceptB = normalizedData.concept_b;
+        if (!isVersusArenaSideReady(conceptA) || !isVersusArenaSideReady(conceptB)) {
+          inner = (
+            <div className="flex w-full items-center justify-center rounded-xl bg-slate-800 p-6">
+              <p className="text-base italic text-slate-400">
+                Slide versus_arena incompleto: defina concept_a e concept_b com title e points.
+              </p>
+            </div>
+          );
+        } else {
+          inner = <VersusArena concept_a={conceptA} concept_b={conceptB} theme={theme} />;
+        }
         break;
+      }
       default:
         inner = (
           <div className="flex w-full items-center justify-center rounded-xl bg-slate-800 p-6">

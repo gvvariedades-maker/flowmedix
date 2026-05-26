@@ -326,6 +326,19 @@ export const SyllableScannerSlideSchema = ReverseStudySlideShellFieldsSchema.mer
   design_system: z.any().optional(),
 }));
 
+const VersusArenaSideSchema = z.object({
+  title: z
+    .string()
+    .min(1, 'title é obrigatório no versus_arena')
+    .max(LIMITS.LABEL_MAX, `Title deve ter no máximo ${LIMITS.LABEL_MAX} caracteres`),
+  points: z
+    .array(z.string().max(LIMITS.DETAIL_MAX, `Ponto deve ter no máximo ${LIMITS.DETAIL_MAX} caracteres`))
+    .max(12, 'Máximo de 12 pontos por lado no versus_arena')
+    .optional()
+    .default([]),
+  icon: z.string().max(80).optional(),
+});
+
 // Schema para Versus Arena Slide - COM VALIDAÇÕES AVANÇADAS
 export const VersusArenaSlideSchema = ReverseStudySlideShellFieldsSchema.merge(z.object({
   type: z.literal('versus_arena'),
@@ -333,12 +346,20 @@ export const VersusArenaSlideSchema = ReverseStudySlideShellFieldsSchema.merge(z
   template: z.string().max(20, 'Template ID (ex: t01-t15)').optional(),
   theme_id: z.string().max(20, 'Alias de template').optional(),
   meta: SlideMetaSchema.optional(),
-  concept_a: z.string()
-    .min(1, 'concept_a é obrigatório para versus_arena')
-    .max(LIMITS.LABEL_MAX, `Concept A deve ter no máximo ${LIMITS.LABEL_MAX} caracteres`),
-  concept_b: z.string()
-    .min(1, 'concept_b é obrigatório para versus_arena')
-    .max(LIMITS.LABEL_MAX, `Concept B deve ter no máximo ${LIMITS.LABEL_MAX} caracteres`),
+  concept_a: z.union([
+    VersusArenaSideSchema,
+    z
+      .string()
+      .min(1, 'concept_a é obrigatório para versus_arena')
+      .max(LIMITS.LABEL_MAX, `Concept A deve ter no máximo ${LIMITS.LABEL_MAX} caracteres`),
+  ]),
+  concept_b: z.union([
+    VersusArenaSideSchema,
+    z
+      .string()
+      .min(1, 'concept_b é obrigatório para versus_arena')
+      .max(LIMITS.LABEL_MAX, `Concept B deve ter no máximo ${LIMITS.LABEL_MAX} caracteres`),
+  ]),
   footer_rule: z.string().max(LIMITS.FOOTER_RULE_MAX, `Footer rule deve ter no máximo ${LIMITS.FOOTER_RULE_MAX} caracteres`).optional(),
   // Campos de compatibilidade (DEPRECATED)
   layout_type: z.literal('versus_arena').optional(),

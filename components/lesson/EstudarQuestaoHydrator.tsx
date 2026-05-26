@@ -1,11 +1,12 @@
 'use client';
 
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect, useMemo } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
 import type { EstudarQuestaoPayload } from '@/components/lesson/questao-navigation-context';
 import { buildEstudarCacheKey } from '@/lib/estudar/navigation';
+import { stripQuestionAnswersForClient } from '@/lib/estudar/questionPayload';
 import type { AvantLessonPlayerProps } from '@/types/lesson';
 
 export type EstudarQuestaoHydratorProps = AvantLessonPlayerProps;
@@ -17,9 +18,20 @@ export default function EstudarQuestaoHydrator(props: EstudarQuestaoHydratorProp
 
   const cacheKey = buildEstudarCacheKey(pathname, searchParams);
 
-  useLayoutEffect(() => {
-    cachePayload(cacheKey, props as EstudarQuestaoPayload);
-  }, [cacheKey, cachePayload, props]);
+  const dados = useMemo(
+    () =>
+      props.mode === 'preview' ? props.dados : stripQuestionAnswersForClient(props.dados),
+    [props.mode, props.dados],
+  );
 
-  return <AvantLessonPlayer {...props} />;
+  const playerProps = useMemo(
+    (): EstudarQuestaoHydratorProps => ({ ...props, dados }),
+    [props, dados],
+  );
+
+  useLayoutEffect(() => {
+    cachePayload(cacheKey, playerProps as EstudarQuestaoPayload);
+  }, [cacheKey, cachePayload, playerProps]);
+
+  return <AvantLessonPlayer {...playerProps} />;
 }

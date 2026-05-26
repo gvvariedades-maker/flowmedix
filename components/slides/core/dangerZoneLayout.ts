@@ -1,5 +1,7 @@
 /** Item mínimo para decidir layout comparativo trap × correct. */
 export type DangerZoneItemLike = {
+  label?: string;
+  detail?: string;
   correct?: string;
 };
 

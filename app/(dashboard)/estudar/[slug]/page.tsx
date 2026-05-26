@@ -11,6 +11,7 @@ import { userHasModuloAccess } from '@/lib/concursos/entitlements';
 import { getTodayReviews } from '@/lib/spaced-repetition';
 import { getQuestaoNavList } from '@/lib/estudar/questaoNav';
 import { sliceQuestoesNavWindow } from '@/lib/estudar/questaoNavWindow';
+import { stripQuestionAnswersForClient } from '@/lib/estudar/questionPayload';
 
 interface ModuloListItem {
   id: string;
@@ -166,7 +167,7 @@ export default async function PaginaQuestaoDinamica({
       <div className="flex flex-1 flex-col min-h-0 w-full max-w-6xl mx-auto">
         <QuestaoNavigationProvider>
           <EstudarQuestaoHydrator
-            dados={atual.conteudo_json}
+            dados={stripQuestionAnswersForClient(atual.conteudo_json)}
             mode="live"
             proximaSlug={proximaSlugFinal}
             anteriorSlug={anteriorSlugFinal}

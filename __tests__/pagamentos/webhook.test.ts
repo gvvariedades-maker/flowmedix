@@ -26,10 +26,11 @@ function createSupabaseMock(purchase: PurchaseRow | null) {
       in: jest.fn().mockResolvedValue({ error: null }),
     }),
   });
+  const matriculaEqOrigem = jest.fn().mockResolvedValue({ error: null });
+  const matriculaEqConcurso = jest.fn().mockReturnValue({ eq: matriculaEqOrigem });
+  const matriculaEqUser = jest.fn().mockReturnValue({ eq: matriculaEqConcurso });
   const matriculaUpdate = jest.fn().mockReturnValue({
-    eq: jest.fn().mockReturnValue({
-      eq: jest.fn().mockResolvedValue({ error: null }),
-    }),
+    eq: matriculaEqUser,
   });
   const rpc = jest.fn().mockResolvedValue({ error: null });
 
@@ -57,10 +58,16 @@ function createSupabaseMock(purchase: PurchaseRow | null) {
     rpc,
     purchaseUpdate,
     matriculaUpdate,
+    matriculaEqUser,
+    matriculaEqConcurso,
+    matriculaEqOrigem,
   } as unknown as SupabaseClient & {
     rpc: jest.Mock;
     purchaseUpdate: jest.Mock;
     matriculaUpdate: jest.Mock;
+    matriculaEqUser: jest.Mock;
+    matriculaEqConcurso: jest.Mock;
+    matriculaEqOrigem: jest.Mock;
   };
 }
 
@@ -185,5 +192,32 @@ describe('processStripeWebhookEvent', () => {
     });
     expect(supabase.purchaseUpdate).toHaveBeenCalledWith({ status: 'refunded' });
     expect(supabase.matriculaUpdate).toHaveBeenCalledWith({ status: 'expirado' });
+    expect(supabase.matriculaEqUser).toHaveBeenCalledWith('user_id', purchase.user_id);
+    expect(supabase.matriculaEqConcurso).toHaveBeenCalledWith('concurso_id', purchase.concurso_id);
+    expect(supabase.matriculaEqOrigem).toHaveBeenCalledWith('origem', 'purchase');
+  });
+
+  it('charge.refunded expira só matrícula purchase (não stripe_pro no mesmo concurso)', async () => {
+    const purchase: PurchaseRow = {
+      id: 'purchase-1',
+      user_id: 'user-1',
+      concurso_id: 'geral-id',
+      status: 'paid',
+      gateway_payment_id: 'cs_test_123',
+    };
+    const supabase = createSupabaseMock(purchase);
+
+    const event = {
+      type: 'charge.refunded',
+      data: {
+        object: {
+          metadata: { purchase_id: purchase.id },
+        },
+      },
+    } as unknown as Stripe.Event;
+
+    await processStripeWebhookEvent(supabase, event);
+
+    expect(supabase.matriculaEqOrigem).toHaveBeenCalledWith('origem', 'purchase');
   });
 });

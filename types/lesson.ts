@@ -50,6 +50,12 @@ export interface DesignSystem {
 export type LayoutType = 'concept_map' | 'danger_zone' | 'logic_flow' | 'golden_rule' | 'syllable_scanner' | 'versus_arena';
 export type SlideType = 'concept_map' | 'danger_zone' | 'logic_flow' | 'golden_rule' | 'syllable_scanner' | 'versus_arena';
 
+export interface VersusArenaSide {
+  title: string;
+  points: string[];
+  icon?: string;
+}
+
 // ============================================================================
 // REVERSE STUDY SLIDE (Formato Semântico Simplificado - RECOMENDADO)
 // ============================================================================
@@ -112,8 +118,8 @@ export interface ReverseStudySlide {
   word?: string; // Para syllable_scanner
   tonicIndex?: number; // Para syllable_scanner
   rule?: string; // Para syllable_scanner
-  concept_a?: string; // Para versus_arena
-  concept_b?: string; // Para versus_arena
+  concept_a?: VersusArenaSide | string; // versus_arena (objeto no player; string legado no Zod)
+  concept_b?: VersusArenaSide | string;
   footer_rule?: string; // Regra de ouro (opcional)
   
   // Campos de compatibilidade com formato antigo (DEPRECATED)
@@ -130,7 +136,8 @@ export interface ReverseStudySlide {
 export interface QuestionOption {
   id: string; // ID da alternativa (ex: "A", "B", "C" ou "C"/"E" em Certo/Errado)
   text: string; // Texto da alternativa (em C/E: "Certo" e "Errado")
-  is_correct: boolean; // Se é a resposta correta
+  /** Presente em preview/admin; omitido no payload live ao aluno. */
+  is_correct?: boolean;
 }
 
 // ============================================================================
