@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { EstudarQuestaoQuerySchema } from '@/lib/validations';
 import { buildEstudarQuestaoPlayerPayload } from '@/lib/estudar/questaoPlayerPayload';
 import { logger } from '@/lib/logger';
+import { logEstudarNavApiBuild } from '@/lib/estudar/navigationTelemetry';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 
 export async function GET(request: NextRequest) {
@@ -21,11 +22,17 @@ export async function GET(request: NextRequest) {
     }
 
     const { slug, from, caderno_id, banca, assunto, q } = parsed.data;
+    const buildStartedAt = Date.now();
     const result = await buildEstudarQuestaoPlayerPayload({
       slug,
       userId: auth.user.id,
       searchParams: { from, caderno_id, banca, assunto, q },
       supabase: auth.supabase,
+    });
+    logEstudarNavApiBuild({
+      slug,
+      durationMs: Date.now() - buildStartedAt,
+      status: result.status,
     });
 
     if (result.status === 'forbidden') {

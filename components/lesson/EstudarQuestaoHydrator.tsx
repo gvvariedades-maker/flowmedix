@@ -5,6 +5,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
 import type { EstudarQuestaoPayload } from '@/components/lesson/questao-navigation-context';
 import { buildEstudarCacheKey } from '@/lib/estudar/navigation';
+import { recordHydratorSync } from '@/lib/estudar/navigationTelemetry';
 import { stripQuestionAnswersForClient } from '@/lib/estudar/questionPayload';
 import type { AvantLessonPlayerProps } from '@/types/lesson';
 
@@ -32,7 +33,8 @@ export default function EstudarQuestaoHydrator(props: EstudarQuestaoHydratorProp
     const payload = playerProps as EstudarQuestaoPayload;
     setDisplayPayload(payload);
     cachePayload(cacheKey, payload);
-  }, [cacheKey, cachePayload, setDisplayPayload, playerProps]);
+    recordHydratorSync(cacheKey, props.moduloSlug);
+  }, [cacheKey, cachePayload, setDisplayPayload, playerProps, props.moduloSlug]);
 
   return null;
 }

@@ -13,6 +13,16 @@ import {
   buildEstudarHref,
   buildEstudarQuestaoApiUrl,
 } from '@/lib/estudar/navigation';
+import {
+  attachEstudarNavTelemetryToWindow,
+  clearPrefetchInFlight,
+  markNavigateStart,
+  markPrefetchInFlight,
+  recordNavigateCacheResult,
+  recordPrefetchEnd,
+  recordPrefetchSkipped,
+  recordPrefetchStart,
+} from '@/lib/estudar/navigationTelemetry';
 
 const CACHE_MAX_ENTRIES = 20;
 
@@ -53,6 +63,10 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     navegandoRef.current = false;
   }, [pathname]);
 
+  useEffect(() => {
+    attachEstudarNavTelemetryToWindow();
+  }, []);
+
   const cachePayload = useCallback((key: string, payload: EstudarQuestaoPayload) => {
     cacheRef.current.set(key, payload);
   }, []);
@@ -64,22 +78,56 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
   const prefetchPayload = useCallback(
     (slugComQuery: string) => {
       const cacheKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
-      if (prefetchedPayloadRef.current.has(cacheKey)) return;
+      if (prefetchedPayloadRef.current.has(cacheKey)) {
+        if (!cacheRef.current.get(cacheKey)) {
+          recordPrefetchSkipped(cacheKey, 'deduped');
+        }
+        return;
+      }
       if (cacheRef.current.get(cacheKey)) {
         prefetchedPayloadRef.current.add(cacheKey);
+        recordPrefetchSkipped(cacheKey, 'cached');
         return;
       }
 
       prefetchedPayloadRef.current.add(cacheKey);
+      if (!markPrefetchInFlight(cacheKey)) {
+        recordPrefetchSkipped(cacheKey, 'deduped');
+        return;
+      }
+
+      recordPrefetchStart(cacheKey, slugComQuery);
+      const startedAt =
+        typeof performance !== 'undefined' ? performance.now() : Date.now();
 
       void (async () => {
         try {
           const res = await fetchWithAuth(buildEstudarQuestaoApiUrl(slugComQuery));
-          if (!res.ok) return;
+          const durationMs = Math.round(
+            (typeof performance !== 'undefined' ? performance.now() : Date.now()) - startedAt,
+          );
+          if (!res.ok) {
+            recordPrefetchEnd(cacheKey, {
+              ok: false,
+              durationMs,
+              reason: `http_${res.status}`,
+            });
+            return;
+          }
           const payload = (await res.json()) as EstudarQuestaoPayload;
           cacheRef.current.set(cacheKey, payload);
-        } catch {
-          // prefetch best-effort; RSC confirma depois
+          recordPrefetchEnd(cacheKey, { ok: true, durationMs, status: res.status });
+        } catch (err) {
+          const durationMs = Math.round(
+            (typeof performance !== 'undefined' ? performance.now() : Date.now()) - startedAt,
+          );
+          recordPrefetchEnd(cacheKey, {
+            ok: false,
+            durationMs,
+            reason: err instanceof Error ? err.message : 'network_error',
+          });
+        } finally {
+          clearPrefetchInFlight(cacheKey);
         }
       })();
     },
@@ -104,7 +152,10 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       navegandoRef.current = true;
 
       const cacheKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
+      markNavigateStart(cacheKey, slugComQuery);
+
       const cached = cacheRef.current.get(cacheKey);
+      recordNavigateCacheResult(cacheKey, Boolean(cached));
       if (cached) {
         setDisplayPayload(cached);
       }
