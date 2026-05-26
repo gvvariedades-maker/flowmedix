@@ -71,7 +71,7 @@ test.describe('Laboratório Admin', () => {
     
     // Verificar se modal abriu
     await expect(page.locator('text=Selecionar Template')).toBeVisible();
-    await expect(page.locator('text=Português - Básico')).toBeVisible();
+    await expect(page.locator('text=Fundamentos de Enfermagem')).toBeVisible();
   });
 
   test('deve carregar template ao selecionar', async ({ page }) => {

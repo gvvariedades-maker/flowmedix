@@ -480,6 +480,14 @@ export default function AvantLaboratory() {
             />
             <button
               type="button"
+              onClick={() => setShowTemplateSelector(true)}
+              className="flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest bg-violet-50 text-violet-700 hover:bg-violet-100 border border-violet-200 transition-all active:scale-95"
+            >
+              <Layers className="w-4 h-4" />
+              Templates
+            </button>
+            <button
+              type="button"
               onClick={() => jsonFileInputRef.current?.click()}
               className="flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-widest bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 hover:border-indigo-200 transition-all active:scale-95"
               aria-label="Abrir arquivo JSON do computador"
