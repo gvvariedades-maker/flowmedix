@@ -71,7 +71,7 @@ test.describe('Laboratório Admin', () => {
     
     // Verificar se modal abriu
     await expect(page.locator('text=Selecionar Template')).toBeVisible();
-    await expect(page.locator('text=Fundamentos de Enfermagem')).toBeVisible();
+    await expect(page.locator('h3:has-text("Fundamentos de Enfermagem")').first()).toBeVisible();
   });
 
   test('deve carregar template ao selecionar', async ({ page }) => {
@@ -113,8 +113,8 @@ test.describe('Laboratório Admin', () => {
     // Aguardar validação
     await page.waitForTimeout(1000);
     
-    // Verificar se erros aparecem
-    await expect(page.locator('text=Erros Encontrados').or(page.locator('text=Erro'))).toBeVisible({ timeout: 5000 });
+    // Verificar se erros aparecem (heading único do ValidationErrorsPanel)
+    await expect(page.getByRole('heading', { name: /Erros? Encontrado/ })).toBeVisible({ timeout: 5000 });
   });
 
   test('deve mostrar preview quando JSON é válido', async ({ page }) => {
@@ -149,7 +149,7 @@ test.describe('Laboratório Admin', () => {
 
   test('deve exibir ação para abrir JSON do arquivo', async ({ page }) => {
     // UI atual: "Abrir JSON" + input file oculto (antes: label "Importar")
-    const openJson = page.getByRole('button', { name: 'Abrir JSON' });
+    const openJson = page.locator('button:has-text("Abrir JSON")');
     await expect(openJson).toBeVisible();
 
     const fileInput = page.locator('input[type="file"][accept*="json"]');
