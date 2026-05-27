@@ -10,6 +10,7 @@ on:
 # Obrigatórias no build: NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY (URL válida para new URL()).
 # Usadas em: npm run build, Playwright webServer (npm run build && npm run start no CI).
 env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   NEXT_PUBLIC_SUPABASE_URL: https://ci-build-placeholder.supabase.co
   NEXT_PUBLIC_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ci-build-placeholder-key
   NEXT_PUBLIC_APP_URL: https://ci-build-placeholder.test
