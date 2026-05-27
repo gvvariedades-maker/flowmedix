@@ -23,12 +23,13 @@ import {
 } from '@/components/dashboard/dashboard-select-dark';
 import { createSimuladoSession, SimuladoApiError } from '@/lib/simulado/client';
 import { SimuladoCreateSessionSchema } from '@/lib/validations';
+import type { ZodIssue } from 'zod';
 import type { VitrineFacets } from '@/lib/vitrine/types';
 import { cn } from '@/lib/utils';
 
 const FILTER_ALL = FILTER_ALL_VALUE;
 
-function formatZodIssues(issues: { path: (string | number)[]; message: string }[]): string {
+function formatZodIssues(issues: ZodIssue[]): string {
   const first = issues[0];
   if (!first) return 'Verifique os campos do formulário.';
   const field = first.path.length ? String(first.path[0]) : 'formulário';

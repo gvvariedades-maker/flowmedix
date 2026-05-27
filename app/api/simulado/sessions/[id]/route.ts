@@ -31,12 +31,22 @@ type SimuladoRespostaSummaryRow = {
   } | null;
 };
 
-function extractQuestaoMeta(conteudoJson: SimuladoRespostaSummaryRow['modulos_estudo']) {
-  const meta = conteudoJson?.conteudo_json?.meta;
+type ModuloEstudoEmbed = NonNullable<SimuladoRespostaSummaryRow['modulos_estudo']>;
+
+function normalizeModuloEstudoEmbed(
+  raw: ModuloEstudoEmbed | ModuloEstudoEmbed[] | null | undefined,
+): ModuloEstudoEmbed | null {
+  if (!raw) return null;
+  return Array.isArray(raw) ? (raw[0] ?? null) : raw;
+}
+
+function extractQuestaoMeta(conteudoJson: ModuloEstudoEmbed | ModuloEstudoEmbed[] | null | undefined) {
+  const modulo = normalizeModuloEstudoEmbed(conteudoJson);
+  const meta = modulo?.conteudo_json?.meta;
   return {
-    banca: meta?.banca ?? conteudoJson?.banca ?? null,
-    topico: meta?.topico ?? conteudoJson?.modulo_nome ?? null,
-    subtopico: meta?.subtopico ?? conteudoJson?.titulo_aula ?? null,
+    banca: meta?.banca ?? modulo?.banca ?? null,
+    topico: meta?.topico ?? modulo?.modulo_nome ?? null,
+    subtopico: meta?.subtopico ?? modulo?.titulo_aula ?? null,
   };
 }
 
@@ -118,7 +128,11 @@ export async function GET(
       return NextResponse.json({ error: 'Erro ao carregar questões do simulado' }, { status: 500 });
     }
 
-    const rows = (respostas ?? []) as SimuladoRespostaSummaryRow[];
+    type RespostaDbRow = Omit<SimuladoRespostaSummaryRow, 'modulos_estudo'> & {
+      modulos_estudo: ModuloEstudoEmbed | ModuloEstudoEmbed[] | null;
+    };
+
+    const rows = (respostas ?? []) as RespostaDbRow[];
 
     let respondidas = 0;
     let acertos = 0;
