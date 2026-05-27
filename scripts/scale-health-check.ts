@@ -54,7 +54,9 @@ async function main() {
 
   const hasCritical = report.alerts.some((a) => a.level === 'critical');
   const hasWarn = report.alerts.some((a) => a.level === 'warn');
-  process.exit(hasCritical ? 2 : hasWarn ? 1 : 0);
+  // Evita encerramento abrupto do processo (especialmente no Windows/Node+tsx),
+  // que pode disparar asserts internos por handles ainda fechando.
+  process.exitCode = hasCritical ? 2 : hasWarn ? 1 : 0;
 }
 
 main().catch((err) => {

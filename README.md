@@ -71,3 +71,8 @@ Acesse [http://localhost:3000](http://localhost:3000)
 /supabase          # Schema SQL e migrações
 ```
 
+## Checklists Operacionais
+
+- Migrations (Supabase): `docs/MIGRATIONS_PR_CHECKLIST.md`
+- Deploy geral: `DEPLOY_CHECKLIST.md`
+

@@ -34,6 +34,7 @@ import {
   getHistoricoQuestoesCached,
   invalidateModulosCache,
   invalidateUserModulosCache,
+  invalidateVitrinePageCache,
 } from '@/lib/cache';
 import { revalidateTag } from 'next/cache';
 
@@ -83,6 +84,29 @@ describe('Sistema de Cache', () => {
       expect(revalidateTag).toHaveBeenCalledWith('modulos-estudo', { expire: 0 });
       expect(revalidateTag).toHaveBeenCalledWith('user', { expire: 0 });
       expect(revalidateTag).toHaveBeenCalledWith('user-user-42', { expire: 0 });
+      expect(revalidateTag).toHaveBeenCalledWith('vitrine-page-user-user-42', { expire: 0 });
+      expect(revalidateTag).toHaveBeenCalledWith('vitrine-facets-user-user-42', { expire: 0 });
+    });
+  });
+
+  describe('invalidateVitrinePageCache', () => {
+    it('invalida tags granulares por usuário e filtros', async () => {
+      await invalidateVitrinePageCache('user-42', {
+        banca: 'CESPE',
+        assunto: 'Farmacologia',
+        q: 'dose',
+      });
+
+      expect(revalidateTag).toHaveBeenCalledWith('vitrine-page', { expire: 0 });
+      expect(revalidateTag).toHaveBeenCalledWith('vitrine-page-user-user-42', { expire: 0 });
+      expect(revalidateTag).toHaveBeenCalledWith(
+        expect.stringMatching(/^vitrine-page-filter-[a-f0-9]{16}$/),
+        { expire: 0 },
+      );
+      expect(revalidateTag).toHaveBeenCalledWith(
+        expect.stringMatching(/^vitrine-page-user-filter-user-42-[a-f0-9]{16}$/),
+        { expire: 0 },
+      );
     });
   });
 });

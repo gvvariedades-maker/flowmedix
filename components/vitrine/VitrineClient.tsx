@@ -599,6 +599,9 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
 
   const todas = trabalhadas === totalQuestoes && totalQuestoes > 0;
   const pendentes = totalQuestoes - trabalhadas;
+  const questoesExibidas = questoes.length;
+  const questoesTruncadas = Math.max(0, totalQuestoes - questoesExibidas);
+  const listaFoiTruncada = questoesTruncadas > 0;
   const hasQuestions = totalQuestoes > 0;
   const mostrarNovo = totalResolvidas === 0 && !todas && hasQuestions;
   const mostrarBarraProgresso = totalResolvidas > 0 && !todas && hasQuestions;
@@ -715,7 +718,9 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
               <span className="text-xs font-medium">
                 {questoesExpandido
                   ? 'Ocultar questões'
-                  : `Ver ${totalQuestoes} questão${totalQuestoes !== 1 ? 'ões' : ''}`}
+                  : listaFoiTruncada
+                    ? `Ver ${questoesExibidas} de ${totalQuestoes} questões`
+                    : `Ver ${totalQuestoes} questão${totalQuestoes !== 1 ? 'ões' : ''}`}
               </span>
               {questoesExpandido ? <ChevronUp size={14} className="text-slate-500" /> : <ChevronDown size={14} className="text-slate-500" />}
             </button>
@@ -769,6 +774,13 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
                       );
                     })}
                   </div>
+                  {listaFoiTruncada && (
+                    <p className="mt-2 text-center text-[10px] font-medium text-slate-400">
+                      +{questoesTruncadas} questão{questoesTruncadas !== 1 ? 'ões' : ''} neste assunto. Abra pelo botão
+                      {' '}
+                      "Entrar no assunto" para navegar completo.
+                    </p>
+                  )}
                 </motion.div>
               )}
             </AnimatePresence>

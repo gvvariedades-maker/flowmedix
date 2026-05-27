@@ -1,0 +1,82 @@
+{
+  "baseline_date": "2026-05-27",
+  "scale_health": {
+    "metrics": {
+      "generated_at": "2026-05-27T14:04:02Z",
+      "modulos_estudo_count": 4042,
+      "historico_questoes_count": 187,
+      "json_bytes": {
+        "avg": 2023,
+        "max": 3410,
+        "p95": 2474,
+        "total": 8178082
+      },
+      "questions_over_100kb": 0,
+      "assuntos_over_200_count": 5,
+      "users_historico_over_5000": 0,
+      "reverse_slides": {
+        "avg": 4,
+        "not_four_slides": 0
+      }
+    },
+    "alerts": [
+      {
+        "level": "warn",
+        "code": "ASSUNTOS_OVER_NAV_LIMIT",
+        "message": "5 assunto(s) com mais de 200 questões — navegação no player corta em 200.",
+        "value": 5,
+        "limit": 200
+      }
+    ],
+    "rpcAvailable": true
+  },
+  "supabase": {
+    "postgrest_max_rows": {
+      "current": 15000,
+      "target": 15000,
+      "note": "Verificado via scripts/set-postgrest-max-rows.ts (dry-run) antes do scale:health."
+    }
+  },
+  "top_assuntos_por_volume": [
+    {
+      "titulo_aula": "Imunização",
+      "questoes": 469,
+      "avg_json_bytes": 1962,
+      "max_json_bytes": 3284
+    },
+    {
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "questoes": 349,
+      "avg_json_bytes": 1941,
+      "max_json_bytes": 2605
+    },
+    {
+      "titulo_aula": "Vias de Administração",
+      "questoes": 252,
+      "avg_json_bytes": 1927,
+      "max_json_bytes": 2744
+    },
+    {
+      "titulo_aula": "Urgências e Emergências",
+      "questoes": 210,
+      "avg_json_bytes": 1956,
+      "max_json_bytes": 2757
+    },
+    {
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "questoes": 210,
+      "avg_json_bytes": 2031,
+      "max_json_bytes": 3123
+    }
+  ],
+  "probe_routes": {
+    "requested": true,
+    "probe_estudar_sample": {
+      "status": 200,
+      "duration_ms": 6931,
+      "url": "http://localhost:3000/estudar/funcern-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-8",
+      "notes": "Probe executado com servidor local ativo; comando: npm run scale:health -- --probe --json."
+    }
+  }
+}
+

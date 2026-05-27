@@ -43,3 +43,61 @@ O **probe HTTP** é uma amostra única (último módulo por `created_at`), não 
 ## Latência do player
 
 O modelo atual (`/estudar/[slug]` RSC + `loading.tsx`) não entra no RPC. Para P95 de rota, use monitoramento de hosting ou testes e2e repetidos após deploy.
+
+## Baseline operacional (recomendado por release)
+
+1. Validar Max Rows (`npm run supabase:max-rows -- --dry-run`).
+2. Gerar saúde do catálogo (`npm run scale:health -- --json`).
+3. Gerar probe HTTP (`npm run scale:health -- --probe --json`).
+4. Salvar evidência em `docs/perf-baseline-YYYY-MM-DD.json` usando `docs/perf-baseline-template.json`.
+
+Campos mínimos no baseline:
+- data e ambiente (`dev|staging|prod`);
+- resultado completo do `scale:health --json`;
+- `postgrest.max_rows` atual/alvo;
+- resultado do probe (`status`, `duration_ms`, `url`).
+
+## Validação de plano de query (staging 10k)
+
+Após aplicar migrations da vitrine (Fase 1.1/Fase 1.3), validar no SQL Editor do staging:
+
+```sql
+-- 1) Confirmar índices aplicados
+SELECT indexname, indexdef
+FROM pg_indexes
+WHERE schemaname = 'public'
+  AND tablename = 'modulos_estudo'
+  AND indexname IN (
+    'idx_modulos_estudo_banca_titulo_aula',
+    'idx_modulos_estudo_titulo_aula_created_at',
+    'idx_modulos_estudo_titulo_aula_trgm',
+    'idx_modulos_estudo_modulo_nome_trgm',
+    'idx_modulos_estudo_banca_trgm',
+    'idx_modulos_estudo_modulo_slug_trgm'
+  )
+ORDER BY indexname;
+
+-- 2) Plano da busca textual (esperado: Bitmap/Index Scan, não Seq Scan dominante)
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT m.id
+FROM public.modulos_estudo m
+WHERE lower(coalesce(m.titulo_aula, '')) LIKE '%feridas%'
+   OR lower(coalesce(m.modulo_nome, '')) LIKE '%feridas%'
+   OR lower(coalesce(m.banca, '')) LIKE '%feridas%'
+   OR lower(coalesce(m.modulo_slug, '')) LIKE '%feridas%'
+LIMIT 200;
+
+-- 3) Plano para filtro banca + assunto + ordenação
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT m.id, m.titulo_aula, m.created_at
+FROM public.modulos_estudo m
+WHERE m.banca = 'IDECAN'
+  AND m.titulo_aula = 'Curativos e Manejo de Feridas'
+ORDER BY m.created_at DESC
+LIMIT 200;
+```
+
+Checklist de aceite em staging (catálogo >= 10k):
+- o plano da busca textual usa índices `trgm` na maior parte dos cenários de `q`;
+- o plano banca+assunto evita varredura completa em `modulos_estudo`;
+- sem regressão de p95 nas rotas `/api/vitrine` e `/api/vitrine/facets` vs baseline.

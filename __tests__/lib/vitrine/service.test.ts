@@ -18,6 +18,7 @@ import {
 import { fetchAccessibleModulosForNav } from '@/lib/concursos/entitlements';
 import { fetchVitrinePageFromRpc } from '@/lib/vitrine/rpc';
 import { getVitrinePage } from '@/lib/vitrine/service';
+import { SCALE_LIMITS } from '@/lib/scale/constants';
 
 const getModulos = getModulosEstudoVitrineForUserCached as jest.Mock;
 const getHistorico = getHistoricoQuestoesForSlugsCached as jest.Mock;
@@ -163,26 +164,50 @@ describe('getVitrinePage', () => {
     expect(result.facets).toEqual({ bancas: [], assuntos: [] });
   });
 
-  it('mantém pipeline JS quando há filtro q', async () => {
-    getModulos.mockResolvedValue([
-      {
-        id: '1',
-        modulo_slug: 'q-100',
-        modulo_nome: 'T',
-        titulo_aula: 'Assunto 1',
-        banca: 'FGV',
-        created_at: '2024-01-01',
-        avant_codigo: 100,
-      },
-    ]);
+  it('usa RPC também quando há filtro q', async () => {
+    fetchRpcPage.mockResolvedValue({
+      groups: [],
+      pagination: { page: 1, perPage: 12, totalGroups: 0, totalPages: 1 },
+      totalModulosFiltrados: 0,
+    });
 
-    await getVitrinePage({
+    const result = await getVitrinePage({
       userId: 'user-1',
       page: 1,
       filters: { q: 'q-100' },
     });
 
-    expect(fetchRpcPage).not.toHaveBeenCalled();
-    expect(getHistorico).toHaveBeenCalled();
+    expect(fetchRpcPage).toHaveBeenCalledWith({
+      userId: 'user-1',
+      page: 1,
+      filters: { q: 'q-100' },
+    });
+    expect(getHistorico).not.toHaveBeenCalled();
+    expect(result.facets).toEqual({ bancas: [], assuntos: [] });
+  });
+
+  it('limita questoes por grupo no fallback JS e preserva totalQuestoes agregado', async () => {
+    const totalNoAssunto = SCALE_LIMITS.QUESTOES_POR_ASSUNTO + 5;
+    fetchNavModulos.mockResolvedValue(
+      Array.from({ length: totalNoAssunto }, (_, i) => ({
+        id: String(i + 1),
+        modulo_slug: `assunto-denso-${i + 1}`,
+        modulo_nome: 'T',
+        titulo_aula: 'Assunto Denso',
+        banca: 'FGV',
+        created_at: `2024-03-${String((i % 28) + 1).padStart(2, '0')}T00:00:00Z`,
+        avant_codigo: 1000 + i,
+      })),
+    );
+
+    const result = await getVitrinePage({
+      userId: 'u',
+      page: 1,
+      filters: { assunto: 'Assunto Denso' },
+    });
+
+    expect(result.groups).toHaveLength(1);
+    expect(result.groups[0].totalQuestoes).toBe(totalNoAssunto);
+    expect(result.groups[0].questoes).toHaveLength(SCALE_LIMITS.QUESTOES_POR_ASSUNTO);
   });
 });

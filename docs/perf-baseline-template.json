@@ -1,0 +1,28 @@
+{
+  "baseline_date": "YYYY-MM-DD",
+  "environment": "dev|staging|prod",
+  "app_url": "https://seu-app-url",
+  "scale_health": {
+    "metrics": {},
+    "alerts": [],
+    "rpcAvailable": true
+  },
+  "supabase": {
+    "postgrest_max_rows": {
+      "current": 10000,
+      "target": 10000
+    }
+  },
+  "probe_routes": {
+    "requested": true,
+    "probe_estudar_sample": {
+      "status": 200,
+      "duration_ms": 0,
+      "url": "https://seu-app-url/estudar/{slug}"
+    }
+  },
+  "notes": [
+    "Capture também p95/payload das rotas críticas usando ferramenta de carga (k6/autocannon) quando aplicável."
+  ]
+}
+

@@ -16,6 +16,8 @@ env:
   RESEND_API_KEY: re_ci_build_placeholder_key
   RESEND_FROM_EMAIL: Avant <noreply@ci.placeholder.test>
   SUPABASE_WEBHOOK_SECRET: ci_supabase_webhook_secret_placeholder_32
+  METRICS_SECRET: ci_metrics_secret_placeholder
+  PERF_BASELINE_ENV: ci
 
 jobs:
   build:
@@ -107,4 +109,78 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report/
+          retention-days: 30
+
+  perf-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build app
+        run: npm run build
+        env:
+          NODE_ENV: production
+          NEXT_PUBLIC_SUPABASE_URL: ${{ env.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ env.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_APP_URL: ${{ env.NEXT_PUBLIC_APP_URL }}
+          RESEND_API_KEY: ${{ env.RESEND_API_KEY }}
+          RESEND_FROM_EMAIL: ${{ env.RESEND_FROM_EMAIL }}
+          SUPABASE_WEBHOOK_SECRET: ${{ env.SUPABASE_WEBHOOK_SECRET }}
+          METRICS_SECRET: ${{ env.METRICS_SECRET }}
+
+      - name: Generate synthetic 10k dataset
+        run: npm run scale:dataset -- --total 10000
+
+      - name: Start app
+        run: npm run start > /tmp/next-start.log 2>&1 &
+        env:
+          NODE_ENV: production
+          METRICS_SECRET: ${{ env.METRICS_SECRET }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ env.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ env.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_APP_URL: http://127.0.0.1:3000
+          RESEND_API_KEY: ${{ env.RESEND_API_KEY }}
+          RESEND_FROM_EMAIL: ${{ env.RESEND_FROM_EMAIL }}
+          SUPABASE_WEBHOOK_SECRET: ${{ env.SUPABASE_WEBHOOK_SECRET }}
+
+      - name: Wait for app
+        run: |
+          for i in {1..60}; do
+            if curl -fsS "http://127.0.0.1:3000/api/health" >/dev/null; then
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "App did not start in time"
+          exit 1
+
+      - name: Run perf smoke
+        run: npm run perf:smoke
+        env:
+          PERF_BASE_URL: http://127.0.0.1:3000
+          PERF_DURATION_MS: '20000'
+          PERF_CONCURRENCY: '20'
+          PERF_BUDGET_BASELINE_FILE: docs/perf-smoke-baseline-${{ env.PERF_BASELINE_ENV }}.json
+          PERF_REGRESSION_TOLERANCE: '0.20'
+          PERF_REPORT_OUTPUT: artifacts/perf-smoke-report.json
+          METRICS_SECRET: ${{ env.METRICS_SECRET }}
+
+      - name: Upload perf artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: perf-smoke-artifacts
+          path: |
+            artifacts/synthetic-catalog-10k.json
+            artifacts/perf-smoke-report.json
+            /tmp/next-start.log
           retention-days: 30

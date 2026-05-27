@@ -434,15 +434,51 @@ export type VitrinePageCacheFilters = {
   q?: string;
 };
 
+const VITRINE_PAGE_USER_TAG_PREFIX = 'vitrine-page-user';
+const VITRINE_PAGE_FILTER_TAG_PREFIX = 'vitrine-page-filter';
+const VITRINE_PAGE_USER_FILTER_TAG_PREFIX = 'vitrine-page-user-filter';
+const VITRINE_FACETS_USER_TAG_PREFIX = 'vitrine-facets-user';
+const VITRINE_FACETS_FILTER_TAG_PREFIX = 'vitrine-facets-filter';
+const VITRINE_FACETS_USER_FILTER_TAG_PREFIX = 'vitrine-facets-user-filter';
+
+function normalizeVitrineTextFilter(value?: string): string {
+  return value?.trim() || '';
+}
+
+function createVitrineFilterHash(parts: readonly string[]): string {
+  return createHash('sha256').update(parts.join('\0')).digest('hex').slice(0, 16);
+}
+
+export function getVitrinePageFiltersHash(filters: VitrinePageCacheFilters = {}): string {
+  return createVitrineFilterHash([
+    normalizeVitrineTextFilter(filters.banca),
+    normalizeVitrineTextFilter(filters.assunto),
+    normalizeVitrineTextFilter(filters.q),
+  ]);
+}
+
+export function getVitrinePageUserTag(userId: string): string {
+  return `${VITRINE_PAGE_USER_TAG_PREFIX}-${userId}`;
+}
+
+export function getVitrinePageFilterTag(filters: VitrinePageCacheFilters = {}): string {
+  return `${VITRINE_PAGE_FILTER_TAG_PREFIX}-${getVitrinePageFiltersHash(filters)}`;
+}
+
+export function getVitrinePageUserFilterTag(
+  userId: string,
+  filters: VitrinePageCacheFilters = {},
+): string {
+  return `${VITRINE_PAGE_USER_FILTER_TAG_PREFIX}-${userId}-${getVitrinePageFiltersHash(filters)}`;
+}
+
 function vitrinePageCacheKey(
   userId: string,
   page: number,
   filters: VitrinePageCacheFilters,
 ): string {
-  const banca = filters.banca?.trim() || '';
-  const assunto = filters.assunto?.trim() || '';
-  const q = filters.q?.trim() || '';
-  const raw = `${userId}\0${page}\0${banca}\0${assunto}\0${q}`;
+  const filtersHash = getVitrinePageFiltersHash(filters);
+  const raw = `${userId}\0${page}\0${filtersHash}`;
   const hash = createHash('sha256').update(raw).digest('hex').slice(0, 16);
   return `vitrine-page-${hash}`;
 }
@@ -457,6 +493,9 @@ export async function getVitrinePageCached(
   filters: VitrinePageCacheFilters = {},
 ) {
   const cacheKey = vitrinePageCacheKey(userId, page, filters);
+  const userTag = getVitrinePageUserTag(userId);
+  const filterTag = getVitrinePageFilterTag(filters);
+  const userFilterTag = getVitrinePageUserFilterTag(userId, filters);
 
   return unstable_cache(
     async () => {
@@ -467,7 +506,7 @@ export async function getVitrinePageCached(
     [cacheKey],
     {
       ...CACHE_CONFIG.USER,
-      tags: ['vitrine-page', 'user', `user-${userId}`],
+      tags: ['vitrine-page', 'user', `user-${userId}`, userTag, filterTag, userFilterTag],
     },
   )();
 }
@@ -476,9 +515,28 @@ export type VitrineFacetsCacheFilters = {
   banca?: string;
 };
 
+export function getVitrineFacetsFiltersHash(filters: VitrineFacetsCacheFilters = {}): string {
+  return createVitrineFilterHash([normalizeVitrineTextFilter(filters.banca)]);
+}
+
+export function getVitrineFacetsUserTag(userId: string): string {
+  return `${VITRINE_FACETS_USER_TAG_PREFIX}-${userId}`;
+}
+
+export function getVitrineFacetsFilterTag(filters: VitrineFacetsCacheFilters = {}): string {
+  return `${VITRINE_FACETS_FILTER_TAG_PREFIX}-${getVitrineFacetsFiltersHash(filters)}`;
+}
+
+export function getVitrineFacetsUserFilterTag(
+  userId: string,
+  filters: VitrineFacetsCacheFilters = {},
+): string {
+  return `${VITRINE_FACETS_USER_FILTER_TAG_PREFIX}-${userId}-${getVitrineFacetsFiltersHash(filters)}`;
+}
+
 function vitrineFacetsCacheKey(userId: string, filters: VitrineFacetsCacheFilters = {}): string {
-  const banca = filters.banca?.trim() || '';
-  const raw = `${userId}\0${banca}`;
+  const filtersHash = getVitrineFacetsFiltersHash(filters);
+  const raw = `${userId}\0${filtersHash}`;
   const hash = createHash('sha256').update(raw).digest('hex').slice(0, 16);
   return `vitrine-facets-${hash}`;
 }
@@ -492,6 +550,9 @@ export async function getVitrineFacetsCached(
   filters: VitrineFacetsCacheFilters = {},
 ) {
   const cacheKey = vitrineFacetsCacheKey(userId, filters);
+  const userTag = getVitrineFacetsUserTag(userId);
+  const filterTag = getVitrineFacetsFilterTag(filters);
+  const userFilterTag = getVitrineFacetsUserFilterTag(userId, filters);
 
   return unstable_cache(
     async () => {
@@ -502,7 +563,7 @@ export async function getVitrineFacetsCached(
     [cacheKey],
     {
       ...CACHE_CONFIG.STATIC,
-      tags: ['vitrine-facets', 'user', `user-${userId}`],
+      tags: ['vitrine-facets', 'user', `user-${userId}`, userTag, filterTag, userFilterTag],
     },
   )();
 }
@@ -530,16 +591,42 @@ export const invalidateUserModulosCache = (userId: string) =>
     'modulos-estudo',
     'user',
     `user-${userId}`,
-    'vitrine-page',
-    'vitrine-facets',
+    getVitrinePageUserTag(userId),
+    getVitrineFacetsUserTag(userId),
   ]);
 export const invalidateQuestoesCache = () => revalidateCache(['questoes']);
 export const invalidateHistoricoCache = () =>
   revalidateCache(['historico', 'analytics', 'vitrine-page']);
-export const invalidateVitrinePageCache = (userId?: string) =>
-  revalidateCache(userId ? ['vitrine-page', `user-${userId}`] : ['vitrine-page']);
-export const invalidateVitrineFacetsCache = (userId?: string) =>
-  revalidateCache(userId ? ['vitrine-facets', `user-${userId}`] : ['vitrine-facets']);
+export const invalidateHistoricoUserCache = (userId: string) =>
+  revalidateCache([
+    'historico',
+    'analytics',
+    `user-${userId}`,
+    getVitrinePageUserTag(userId),
+    getVitrineFacetsUserTag(userId),
+  ]);
+export const invalidateVitrinePageCache = (
+  userId?: string,
+  filters?: VitrinePageCacheFilters,
+) => {
+  if (!userId) return revalidateCache(['vitrine-page']);
+  const tags = ['vitrine-page', getVitrinePageUserTag(userId)];
+  if (filters) {
+    tags.push(getVitrinePageFilterTag(filters), getVitrinePageUserFilterTag(userId, filters));
+  }
+  return revalidateCache(tags);
+};
+export const invalidateVitrineFacetsCache = (
+  userId?: string,
+  filters?: VitrineFacetsCacheFilters,
+) => {
+  if (!userId) return revalidateCache(['vitrine-facets']);
+  const tags = ['vitrine-facets', getVitrineFacetsUserTag(userId)];
+  if (filters) {
+    tags.push(getVitrineFacetsFilterTag(filters), getVitrineFacetsUserFilterTag(userId, filters));
+  }
+  return revalidateCache(tags);
+};
 
 /**
  * Invalidação completa de cache (usar com cuidado)

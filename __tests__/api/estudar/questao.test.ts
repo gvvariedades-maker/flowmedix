@@ -28,6 +28,11 @@ jest.mock('@/lib/estudar/questaoPlayerPayload', () => ({
   ),
 }));
 
+const mockRecordPerformance = jest.fn();
+jest.mock('@/lib/metrics', () => ({
+  recordPerformance: jest.fn((...args: unknown[]) => mockRecordPerformance(...args)),
+}));
+
 const USER_ID = '550e8400-e29b-41d4-a716-446655440000';
 const SLUG = 'questao-prefetch-api';
 
@@ -75,6 +80,7 @@ describe('GET /api/estudar/questao', () => {
     expect(response.status).toBe(401);
     expect(await response.json()).toEqual({ error: 'Não autorizado' });
     expect(mockBuildEstudarQuestaoPlayerPayload).not.toHaveBeenCalled();
+    expect(mockRecordPerformance).toHaveBeenCalledWith('/api/estudar/questao', 'GET', expect.any(Number), false);
   });
 
   it('retorna 403 quando builder indica forbidden', async () => {
@@ -84,6 +90,7 @@ describe('GET /api/estudar/questao', () => {
 
     expect(response.status).toBe(403);
     expect(await response.json()).toEqual({ error: 'Sem acesso a este módulo' });
+    expect(mockRecordPerformance).toHaveBeenCalledWith('/api/estudar/questao', 'GET', expect.any(Number), false);
   });
 
   it('retorna 404 quando builder indica not_found', async () => {
@@ -93,6 +100,7 @@ describe('GET /api/estudar/questao', () => {
 
     expect(response.status).toBe(404);
     expect(await response.json()).toEqual({ error: 'Questão não encontrada' });
+    expect(mockRecordPerformance).toHaveBeenCalledWith('/api/estudar/questao', 'GET', expect.any(Number), false);
   });
 
   it('retorna 400 com slug ausente', async () => {
@@ -100,6 +108,7 @@ describe('GET /api/estudar/questao', () => {
 
     expect(response.status).toBe(400);
     expect(mockBuildEstudarQuestaoPlayerPayload).not.toHaveBeenCalled();
+    expect(mockRecordPerformance).toHaveBeenCalledWith('/api/estudar/questao', 'GET', expect.any(Number), false);
   });
 
   it('retorna 200 com payload do player e Cache-Control private', async () => {
@@ -127,5 +136,16 @@ describe('GET /api/estudar/questao', () => {
       },
       supabase: expect.any(Object),
     });
+    expect(mockRecordPerformance).toHaveBeenCalledWith('/api/estudar/questao', 'GET', expect.any(Number), true);
+  });
+
+  it('retorna 500 quando ocorre erro inesperado no builder', async () => {
+    mockBuildEstudarQuestaoPlayerPayload.mockRejectedValue(new Error('boom'));
+
+    const response = await GET(makeRequest({ slug: SLUG }));
+
+    expect(response.status).toBe(500);
+    expect(await response.json()).toEqual({ error: 'Erro interno' });
+    expect(mockRecordPerformance).toHaveBeenCalledWith('/api/estudar/questao', 'GET', expect.any(Number), false);
   });
 });

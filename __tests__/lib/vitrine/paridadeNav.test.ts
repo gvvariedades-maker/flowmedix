@@ -248,7 +248,11 @@ describe('filtros q e avant_codigo', () => {
       filters: { q: 'q-200' },
     });
 
-    expect(fetchRpcPage).not.toHaveBeenCalled();
+    expect(fetchRpcPage).toHaveBeenCalledWith({
+      userId: 'u',
+      page: 1,
+      filters: { q: 'q-200' },
+    });
     expect(result.totalModulosFiltrados).toBe(1);
     expect(result.groups).toHaveLength(1);
     expect(result.groups[0].questoes).toHaveLength(1);

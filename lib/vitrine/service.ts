@@ -13,7 +13,9 @@ import { buildVitrineGroups } from '@/lib/vitrine/buildGroups';
 import { buildVitrineFacets, EMPTY_VITRINE_FACETS } from '@/lib/vitrine/facets';
 import { VITRINE_ASSUNTOS_POR_PAGINA } from '@/lib/vitrine/constants';
 import { fetchVitrinePageFromRpc } from '@/lib/vitrine/rpc';
+import { logApiStrategy } from '@/lib/api/logApiStrategy';
 import { logger } from '@/lib/logger';
+import { SCALE_LIMITS } from '@/lib/scale/constants';
 import type { VitrinePageResponse } from '@/lib/vitrine/types';
 
 export type VitrineListFilters = {
@@ -28,6 +30,14 @@ export type GetVitrinePageParams = {
   filters?: VitrineListFilters;
 };
 
+function normalizeFiltersForLog(filters: VitrineListFilters): VitrineListFilters {
+  return {
+    banca: filters.banca?.trim() || undefined,
+    assunto: filters.assunto?.trim() || undefined,
+    q: filters.q?.trim() || undefined,
+  };
+}
+
 function paginateGroups<T>(items: T[], page: number, perPage: number): { slice: T[]; totalPages: number } {
   const totalPages = Math.max(1, Math.ceil(items.length / perPage));
   const pageClamped = Math.min(Math.max(1, page), totalPages);
@@ -36,10 +46,6 @@ function paginateGroups<T>(items: T[], page: number, perPage: number): { slice: 
     slice: items.slice(start, start + perPage),
     totalPages,
   };
-}
-
-function hasSearchQuery(filters: VitrineListFilters): boolean {
-  return Boolean(filters.q?.trim());
 }
 
 async function loadModulosForVitrine(
@@ -74,7 +80,10 @@ async function getVitrinePageViaJs(params: GetVitrinePageParams): Promise<Vitrin
     historico,
   );
 
-  const allGroups = buildVitrineGroups(withStats);
+  const allGroups = buildVitrineGroups(withStats).map((group) => ({
+    ...group,
+    questoes: group.questoes.slice(0, SCALE_LIMITS.QUESTOES_POR_ASSUNTO),
+  }));
   const { slice, totalPages } = paginateGroups(allGroups, page, VITRINE_ASSUNTOS_POR_PAGINA);
   const pageClamped = Math.min(Math.max(1, page), totalPages);
 
@@ -93,27 +102,78 @@ async function getVitrinePageViaJs(params: GetVitrinePageParams): Promise<Vitrin
 
 /**
  * Página da vitrine com facets e grupos paginados por assunto.
- * Sem `q`: tenta RPC Postgres; em erro, fallback JS. Com `q`: pipeline JS.
+ * Caminho feliz: RPC Postgres (incluindo busca `q`); em erro, fallback JS.
  */
 export async function getVitrinePage(params: GetVitrinePageParams): Promise<VitrinePageResponse> {
   const { userId, page, filters = {} } = params;
+  const normalizedFilters = normalizeFiltersForLog(filters);
+  const startAt = Date.now();
 
-  if (!hasSearchQuery(filters)) {
-    try {
-      const rpcPage = await fetchVitrinePageFromRpc({ userId, page, filters });
+  try {
+    const rpcPage = await fetchVitrinePageFromRpc({ userId, page, filters });
+    const durationMs = Date.now() - startAt;
 
-      return {
-        ...rpcPage,
-        facets: EMPTY_VITRINE_FACETS,
-      };
-    } catch (err) {
-      logger.warn('get_vitrine_page indisponível; pipeline JS', {
+    logApiStrategy({
+      event: 'vitrine_page',
+      strategy: 'rpc',
+      durationMs,
+      context: {
         userId,
         page,
-        error: err instanceof Error ? err.message : err,
-      });
-    }
+        filters: normalizedFilters,
+        rowCount: rpcPage.totalModulosFiltrados,
+      },
+    });
+    logger.info('Vitrine service resolved', {
+      strategy: 'rpc',
+      durationMs,
+      userId,
+      page,
+      filters: normalizedFilters,
+      rowCount: rpcPage.totalModulosFiltrados,
+      groupCount: rpcPage.pagination.totalGroups,
+    });
+
+    return {
+      ...rpcPage,
+      facets: EMPTY_VITRINE_FACETS,
+    };
+  } catch (err) {
+    const durationMs = Date.now() - startAt;
+
+    logger.warn('get_vitrine_page indisponível; pipeline JS', {
+      strategy: 'rpc',
+      durationMs,
+      userId,
+      page,
+      filters: normalizedFilters,
+      error: err instanceof Error ? err.message : err,
+    });
   }
 
-  return getVitrinePageViaJs(params);
+  const jsStartAt = Date.now();
+  const jsPage = await getVitrinePageViaJs(params);
+
+  logApiStrategy({
+    event: 'vitrine_page',
+    strategy: 'js',
+    durationMs: Date.now() - jsStartAt,
+    context: {
+      userId,
+      page,
+      filters: normalizedFilters,
+      rowCount: jsPage.totalModulosFiltrados,
+    },
+  });
+  logger.info('Vitrine service resolved', {
+    strategy: 'js',
+    durationMs: Date.now() - jsStartAt,
+    userId,
+    page,
+    filters: normalizedFilters,
+    rowCount: jsPage.totalModulosFiltrados,
+    groupCount: jsPage.pagination.totalGroups,
+  });
+
+  return jsPage;
 }

@@ -1,3 +1,24 @@
+# Migrations Legacy (arquivadas)
+
+Este diretório guarda migrations SQL **legadas** que estavam em `supabase/migrations/` fora do padrão exigido pelo Supabase CLI.
+
+## Por que estes arquivos foram movidos
+
+O Supabase CLI só considera migrations com nome no formato:
+
+`<timestamp>_name.sql`
+
+Arquivos fora desse padrão geravam ruído no fluxo (`Skipping migration ...`) e dificultavam a leitura do estado real de aplicação das migrations.
+
+## Regra daqui para frente
+
+- Novas migrations devem ser criadas/aplicadas apenas em `supabase/migrations/` com prefixo timestamp.
+- Arquivos deste diretório são **histórico de referência** e não participam do `db push`.
+- Se algum SQL legado ainda for necessário, ele deve ser convertido em migration timestamped antes de voltar ao fluxo oficial.
+
+## Observação operacional
+
+Após a limpeza, os comandos `supabase migration list` e `npm run db:push` passaram a rodar sem mensagens de `Skipping migration` para arquivos legados.
 # Migrações do Banco de Dados
 
 Este diretório contém scripts de migração SQL para atualizar o schema do banco de dados Supabase.

@@ -75,6 +75,7 @@
 2. Testar em ambiente de staging
 3. Deploy em produção
 4. Monitorar e iterar
+5. Para PRs com banco, seguir `docs/MIGRATIONS_PR_CHECKLIST.md`
 
 ---
 

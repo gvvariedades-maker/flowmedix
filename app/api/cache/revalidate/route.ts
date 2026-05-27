@@ -8,11 +8,16 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import {
-  CACHE_REVALIDATE_IMMEDIATE,
   invalidateModulosCache,
   invalidateQuestoesCache,
   invalidateHistoricoCache,
+  invalidateHistoricoUserCache,
+  invalidateVitrineFacetsCache,
+  invalidateVitrinePageCache,
   invalidateAllCache,
+  revalidateCache,
+  type VitrineFacetsCacheFilters,
+  type VitrinePageCacheFilters,
 } from '@/lib/cache';
 import { logger } from '@/lib/logger';
 
@@ -53,9 +58,20 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json().catch(() => ({}));
-    const { table, event, tags } = body;
+    const { table, event, tags, userId } = body as {
+      table?: string;
+      event?: string;
+      tags?: string[];
+      userId?: string;
+      filters?: {
+        page?: VitrinePageCacheFilters;
+        facets?: VitrineFacetsCacheFilters;
+      };
+    };
+    const pageFilters = body?.filters?.page as VitrinePageCacheFilters | undefined;
+    const facetsFilters = body?.filters?.facets as VitrineFacetsCacheFilters | undefined;
 
-    logger.info('Cache invalidation request', { table, event, tags });
+    logger.info('Cache invalidation request', { table, event, tags, userId, pageFilters, facetsFilters });
 
     // Invalidação baseada na tabela afetada
     if (table) {
@@ -63,10 +79,20 @@ export async function POST(request: NextRequest) {
         case 'modulos_estudo':
           await invalidateModulosCache();
           await invalidateQuestoesCache(); // Questões também são afetadas
+          if (userId) {
+            await invalidateVitrinePageCache(userId, pageFilters);
+            await invalidateVitrineFacetsCache(userId, facetsFilters);
+          }
           break;
         
         case 'historico_questoes':
-          await invalidateHistoricoCache();
+          if (userId) {
+            await invalidateHistoricoUserCache(userId);
+            await invalidateVitrinePageCache(userId, pageFilters);
+            await invalidateVitrineFacetsCache(userId, facetsFilters);
+          } else {
+            await invalidateHistoricoCache();
+          }
           break;
 
         default:
@@ -76,11 +102,10 @@ export async function POST(request: NextRequest) {
     } 
     // Invalidação por tags específicas
     else if (tags && Array.isArray(tags)) {
-      const { revalidateTag } = await import('next/cache');
-      tags.forEach((tag: string) => {
-        revalidateTag(tag, CACHE_REVALIDATE_IMMEDIATE);
-        logger.info('Cache tag invalidated', { tag });
-      });
+      const sanitized = tags.filter((tag): tag is string => typeof tag === 'string' && tag.length > 0);
+      if (sanitized.length > 0) {
+        await revalidateCache(sanitized);
+      }
     }
     // Invalidação completa se nenhum parâmetro específico
     else {

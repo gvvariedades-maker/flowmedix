@@ -1,0 +1,12 @@
+{
+  "scenarios": {
+    "api_vitrine_unauth": { "p95Ms": 400 },
+    "api_vitrine_q_unauth": { "p95Ms": 400 },
+    "api_estudar_questao_unauth": { "p95Ms": 400 },
+    "api_health": { "p95Ms": 700 },
+    "api_metrics": { "p95Ms": 700 }
+  },
+  "synthetic_10k_pipeline": {
+    "p95Ms": 1200
+  }
+}
