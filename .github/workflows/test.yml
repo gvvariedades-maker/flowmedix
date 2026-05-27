@@ -100,6 +100,7 @@ jobs:
           SUPABASE_WEBHOOK_SECRET: ${{ env.SUPABASE_WEBHOOK_SECRET }}
           # Server-only: AdminLayout pula auth no CI (NODE_ENV=production + CI=true)
           E2E_ADMIN_BYPASS: 'true'
+          E2E_DASHBOARD_BYPASS: 'true'
           # Necessário para o teste E2E de cache: next start roda em produção,
           # onde WEBHOOK_SECRET é obrigatório (isValidWebhook retorna false sem ele → 401)
           WEBHOOK_SECRET: 'dev-secret'

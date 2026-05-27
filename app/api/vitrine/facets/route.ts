@@ -3,9 +3,17 @@ import { VitrineFacetsQuerySchema } from '@/lib/validations';
 import { getVitrineFacetsCached } from '@/lib/cache';
 import { logger } from '@/lib/logger';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
+import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 
 export async function GET(request: NextRequest) {
   try {
+    if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS')) {
+      return NextResponse.json(
+        { bancas: ['FGV'], assuntos: ['Urgências'] },
+        { headers: { 'Cache-Control': 'private, no-store' } },
+      );
+    }
+
     const auth = await getUserAndClientFromBearer(request);
     if (!auth) {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });

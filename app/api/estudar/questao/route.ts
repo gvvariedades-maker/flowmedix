@@ -6,18 +6,15 @@ import { logEstudarNavApiBuild } from '@/lib/estudar/navigationTelemetry';
 import { logApiStrategy } from '@/lib/api/logApiStrategy';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { recordPerformance } from '@/lib/metrics';
+import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
+import { E2E_SIMULADO_SLUG } from '@/lib/e2e/constants';
+import { getE2eSimuladoLessonPayload } from '@/lib/e2e/simuladoSeed';
 
 export async function GET(request: NextRequest) {
   const requestStartedAt = Date.now();
   const endpoint = '/api/estudar/questao';
   const method = 'GET';
   try {
-    const auth = await getUserAndClientFromBearer(request);
-    if (!auth) {
-      recordPerformance(endpoint, method, Date.now() - requestStartedAt, false);
-      return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
-    }
-
     const raw = Object.fromEntries(request.nextUrl.searchParams.entries());
     const parsed = EstudarQuestaoQuerySchema.safeParse(raw);
     if (!parsed.success) {
@@ -29,6 +26,20 @@ export async function GET(request: NextRequest) {
     }
 
     const { slug, from, caderno_id, banca, assunto, q } = parsed.data;
+
+    if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS') && slug === E2E_SIMULADO_SLUG) {
+      recordPerformance(endpoint, method, Date.now() - requestStartedAt, true);
+      return NextResponse.json(getE2eSimuladoLessonPayload(), {
+        headers: { 'Cache-Control': 'private, no-store' },
+      });
+    }
+
+    const auth = await getUserAndClientFromBearer(request);
+    if (!auth) {
+      recordPerformance(endpoint, method, Date.now() - requestStartedAt, false);
+      return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
+    }
+
     const normalizedFilters = {
       banca: banca || undefined,
       assunto: assunto || undefined,

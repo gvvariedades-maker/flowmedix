@@ -6,12 +6,19 @@ import {
   userHasActiveMatricula,
 } from '@/lib/concursos/entitlements';
 import { logger } from '@/lib/logger';
+import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
+
+const dashboardBypassEnabled = isE2eBypassEnabled('E2E_DASHBOARD_BYPASS');
 
 export default async function AuthenticatedLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  if (dashboardBypassEnabled) {
+    return children;
+  }
+
   const session = await getServerSession();
 
   if (!session?.user?.id) {

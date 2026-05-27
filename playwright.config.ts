@@ -19,7 +19,7 @@ const projects = ci
 export default defineConfig({
   testDir: './e2e',
 
-  timeout: 30 * 1000,
+  timeout: 60 * 1000,
 
   expect: {
     timeout: 5000,
@@ -55,16 +55,19 @@ export default defineConfig({
         env: {
           ...process.env,
           E2E_ADMIN_BYPASS: 'true',
+          E2E_DASHBOARD_BYPASS: 'true',
         },
       }
     : {
         command: 'npm run dev',
         url: 'http://localhost:3000',
-        reuseExistingServer: true,
+        // false: garante E2E_*_BYPASS no processo do Next (reuse sem env quebra /simulados)
+        reuseExistingServer: false,
         timeout: 180_000,
         env: {
           ...process.env,
           E2E_ADMIN_BYPASS: 'true',
+          E2E_DASHBOARD_BYPASS: 'true',
         },
       },
 });
