@@ -47,3 +47,6 @@ next-env.d.ts
 # Supabase CLI
 supabase/.temp/
 
+# Tutorial videos (avoid committing large media)
+/public/tutorial/*.mp4
+

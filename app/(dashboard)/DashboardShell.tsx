@@ -25,6 +25,7 @@ import { EstudoReversoWelcomeModal } from '@/components/onboarding/EstudoReverso
 import { PwaInstallProvider } from '@/components/pwa/PwaInstallProvider';
 import { PwaInstallNavButton } from '@/components/pwa/PwaInstallNavButton';
 import { useEstudoReversoWelcome } from '@/components/onboarding/useEstudoReversoWelcome';
+import { AvantLogo } from '@/components/brand/AvantLogo';
 import { cn } from '@/lib/utils';
 import type { ProSource } from '@/lib/freemium';
 import { supabase } from '@/lib/supabase/client';
@@ -125,29 +126,6 @@ type MenuItem = {
   href: string;
   active: boolean;
 };
-
-function LogoMark({ compact }: { compact?: boolean }) {
-  return (
-    <div className="flex min-w-0 items-center gap-2.5">
-      <div
-        className={cn(
-          'flex shrink-0 items-center justify-center rounded-xl bg-indigo-500 text-[#BEF264] shadow-md shadow-indigo-500/35',
-          compact ? 'h-7 w-7' : 'h-10 w-10'
-        )}
-      >
-        <Zap size={compact ? 15 : 18} className="text-[#BEF264]" fill="currentColor" />
-      </div>
-      <span
-        className={cn(
-          'truncate font-extrabold tracking-tight text-white',
-          compact ? 'text-base' : 'text-[1.3rem] leading-tight'
-        )}
-      >
-        AVANT
-      </span>
-    </div>
-  );
-}
 
 type MatriculatedConcursoSummary = {
   slug: string;
@@ -603,7 +581,7 @@ function DashboardContent({
       {/* --- SIDEBAR FIXA --- */}
       <aside className="relative z-20 hidden w-[18rem] shrink-0 flex-col border-r border-white/10 bg-[#06090f] md:flex">
         <div className="px-5 pb-3 pt-10">
-          <LogoMark />
+          <AvantLogo variant="lockup" size="nav" animated={false} />
         </div>
 
         <CityCard
@@ -664,7 +642,7 @@ function DashboardContent({
               transition={drawerSpring}
             >
               <div className="flex items-center justify-between px-5 pb-2 pt-8">
-                <LogoMark />
+                <AvantLogo variant="lockup" size="nav" animated={false} />
                 <button
                   ref={closeDrawerButtonRef}
                   type="button"
@@ -727,7 +705,7 @@ function DashboardContent({
           </button>
 
           <div className="flex min-w-0 justify-center">
-            <LogoMark compact />
+            <AvantLogo variant="icon" size="nav" animated={false} />
           </div>
 
           <div

@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { AvantLogo } from '@/components/brand/AvantLogo';
 import { ProSubscribeNavButton } from '@/components/pro/ProSubscribeNavButton';
 import { AVANT_PRO_LP_HREF } from '@/lib/pro/constants';
 import { cn } from '@/lib/utils';
@@ -100,17 +101,7 @@ export function PublicDarkSiteHeader({
           {/* Mobile: logo isolada na 1ª linha; nav na 2ª */}
           <div className="flex flex-col gap-2 sm:hidden">
             <div className="flex items-center justify-between gap-2">
-              <Link
-                href="/"
-                className="group flex min-w-0 shrink items-center gap-2"
-              >
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-500/40">
-                  <Zap size={20} className="text-[#BEF264]" fill="currentColor" />
-                </div>
-                <span className="truncate text-lg font-[1000] italic tracking-tighter text-white">
-                  AVANT
-                </span>
-              </Link>
+              <AvantLogo href="/" variant="icon" size="nav" className="min-w-0" />
               <div className="flex shrink-0 items-center gap-1">
                 <Link href="/login" className={`${navLinkClassMobile} shrink-0`}>
                   Entrar
@@ -147,17 +138,13 @@ export function PublicDarkSiteHeader({
 
           {/* Desktop / tablet */}
           <div className="hidden items-center justify-between gap-4 sm:flex">
-            <Link
+            <AvantLogo
               href="/"
-              className="group flex min-w-[max(5rem,min-content)] flex-none items-center gap-2 sm:gap-2.5"
-            >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-500/40 transition-transform group-hover:scale-105">
-                <Zap size={22} className="text-[#BEF264]" fill="currentColor" />
-              </div>
-              <span className="shrink-0 text-xl font-[1000] italic tracking-tighter text-white">
-                AVANT
-              </span>
-            </Link>
+              variant="lockup"
+              size="nav"
+              animated={false}
+              className="flex-none transition-transform hover:scale-[1.02]"
+            />
             <div className="flex min-w-0 flex-1 items-center justify-end gap-1.5 sm:gap-3">
               <Link href="/blog" className={`${navLinkClass} hidden min-[400px]:inline-flex shrink-0`}>
                 Blog

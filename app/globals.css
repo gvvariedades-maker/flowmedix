@@ -404,6 +404,25 @@
   animation: popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* AVANT logo lockup — sombras alinhadas com lib/brand/avantLogoConstants.ts (AVANT_LOGO_SHELL_SHADOW) */
+@keyframes avantLogoPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 14px rgba(143, 224, 32, 0.22),
+      0 0 28px rgba(48, 24, 200, 0.18);
+  }
+  50% {
+    box-shadow:
+      0 0 22px rgba(143, 224, 32, 0.48),
+      0 0 44px rgba(48, 24, 200, 0.32);
+  }
+}
+
+.avant-logo-pulse {
+  animation: avantLogoPulse 5s ease-in-out infinite;
+}
+
 .react-flow__handle {
   display: none !important;
   visibility: hidden !important;

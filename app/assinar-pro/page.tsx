@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { Loader2, Zap } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
+import { AvantLogo } from '@/components/brand/AvantLogo';
 import { useProCheckout } from '@/components/pro/useProCheckout';
 
 /** Atalho legado: abre checkout Pro direto (sem exigir login). */
@@ -18,8 +19,8 @@ export default function AssinarProPage() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-[#010409] px-4 text-center text-slate-100">
-      <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-600">
-        <Zap size={24} className="text-[#BEF264]" fill="currentColor" aria-hidden />
+      <div className="mb-6">
+        <AvantLogo variant="icon" size="lg" animated={false} />
       </div>
       {loading && !error ? (
         <>

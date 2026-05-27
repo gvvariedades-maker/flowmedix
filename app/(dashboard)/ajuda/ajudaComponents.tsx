@@ -20,6 +20,52 @@ export function hasTutorialImage(name: string): boolean {
   return existsSync(join(TUTORIAL_DIR, name));
 }
 
+export function hasTutorialVideo(name: string): boolean {
+  return existsSync(join(TUTORIAL_DIR, name));
+}
+
+export function TutorialVideo({
+  file,
+  src,
+  title,
+  poster,
+}: {
+  file?: string;
+  src?: string;
+  title: string;
+  poster?: string;
+}) {
+  const resolvedSrc = src ?? (file ? `/tutorial/${file}` : null);
+  if (!resolvedSrc) return null;
+  if (!src && file && !hasTutorialVideo(file)) return null;
+  const posterSrc = poster && hasTutorialImage(poster) ? `/tutorial/${poster}` : undefined;
+
+  return (
+    <div className={`not-prose overflow-hidden shadow-md shadow-black/20 ${AJUDA_SURFACE}`}>
+      <div className="aspect-video w-full bg-black">
+        <video
+          className="h-full w-full"
+          controls
+          preload="metadata"
+          playsInline
+          controlsList="nodownload"
+          aria-label={title}
+          poster={posterSrc}
+        >
+          <source src={resolvedSrc} type="video/mp4" />
+          Seu navegador não suporta vídeo HTML5.
+        </video>
+      </div>
+      <div className="px-4 py-3">
+        <p className={`text-sm font-bold ${TEXT_MAIN}`}>{title}</p>
+        <p className={`mt-1 text-xs font-medium ${TEXT_MUTED}`}>
+          Dica: se o vídeo não carregar, atualize a página ou tente outra rede. Em iPhone/iPad, prefira Safari.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export function ClickLegend({ items }: { items: { alvo: string; acao: string }[] }) {
   return (
     <div className={`not-prose my-4 p-4 shadow-sm ${ONDE_CLICAR}`}>

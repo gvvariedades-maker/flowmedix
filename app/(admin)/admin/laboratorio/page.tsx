@@ -6,6 +6,7 @@ import {
   CheckCircle2, AlertCircle, Trash2, ClipboardPaste, Layers, FolderOpen,
 } from 'lucide-react';
 import Link from 'next/link';
+import { AvantLogo } from '@/components/brand/AvantLogo';
 import { logger } from '@/lib/logger';
 import {
   QuestaoCompletaSchema,
@@ -434,12 +435,10 @@ export default function AvantLaboratory() {
             <Link href="/estudar" className="p-2 hover:bg-slate-50 rounded-xl transition-colors text-slate-400">
               <ArrowLeft className="w-5 h-5" />
             </Link>
-            <div className="flex flex-col">
-              <span className="text-xl font-[1000] italic tracking-tighter text-[#4F46E5]">
-                AVANT{' '}
-                <span className="text-slate-300 font-light ml-2 text-sm uppercase tracking-[0.3em] not-italic">
-                  Universal Engine
-                </span>
+            <div className="flex flex-col gap-1">
+              <AvantLogo size="nav" animated={false} />
+              <span className="text-slate-400 text-[10px] font-light uppercase tracking-[0.3em]">
+                Universal Engine
               </span>
             </div>
             {isBatchMode && (

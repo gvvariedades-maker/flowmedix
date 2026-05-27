@@ -1,16 +1,38 @@
-<!-- AVANT: horizontal for white / light surfaces. Wordmark #0E0720; chip + bolt unchanged for instant brand recall on print and light UI. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 196 48" fill="none" aria-label="AVANT">
-  <g aria-hidden="true">
-    <rect width="48" height="48" rx="10.75" fill="#4B1FA8"/>
-    <path fill="#E8B800" d="M24 9.2 32.4 22.9h-6.35l2.05 15.9L15.55 23.55h6.9L24 9.2Z"/>
-    <circle cx="40" cy="10" r="1.75" fill="#00E5C3"/>
+<!-- AVANT: lockup horizontal para fundos claros (shell neutro, wordmark verde escuro). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" fill="none" aria-label="AVANT">
+  <defs>
+    <linearGradient id="avant-hl-icon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3018c8"/>
+      <stop offset="100%" stop-color="#180c80"/>
+    </linearGradient>
+    <linearGradient id="avant-hl-bolt" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d8ff70"/>
+      <stop offset="52%" stop-color="#8fe020"/>
+      <stop offset="100%" stop-color="#58b800"/>
+    </linearGradient>
+    <linearGradient id="avant-hl-wm" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58b800"/>
+      <stop offset="48%" stop-color="#3d8a00"/>
+      <stop offset="100%" stop-color="#6aa818"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="64" rx="18" fill="#f1f5f9"/>
+  <rect x="2" y="2" width="236" height="60" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="16" y="14" width="4" height="36" rx="2" fill="#8fe020"/>
+  <rect x="26" y="14" width="36" height="36" rx="9" fill="url(#avant-hl-icon)"/>
+  <rect x="26" y="14" width="36" height="15" rx="9" fill="#fff" fill-opacity="0.12"/>
+  <g transform="translate(31.5 19.5)">
+    <svg viewBox="0 0 38 42" width="25" height="28" aria-hidden="true">
+      <polygon points="22,0 8,20 15,20 10,42 30,16 18,16" fill="url(#avant-hl-bolt)"/>
+    </svg>
   </g>
-  <g fill="#0E0720" transform="translate(56 6)" aria-hidden="true">
-    <path d="M0 32 7.2 5.2h3.95L18.5 32h-3.85l-1.75-6.65H5.6L3.85 32H0Z"/>
-    <path fill="#E8B800" d="M8.85 5.2 11.05 9.85 6.65 9.85 8.85 5.2Z"/>
-    <path d="M21.5 5.2 28.65 32h3.55L39.35 5.2h-3.15l-5.45 20.85L24.65 5.2h-3.15Z"/>
-    <path d="M42.5 32l7.2-26.8h3.95L60.8 32H57l-1.75-6.65H48.1L46.35 32h-3.85Z"/>
-    <path d="M63.5 5.2V32h3.15V11.1L81.05 32h3.2V5.2h-3.15v20.9L66.65 5.2H63.5Z"/>
-    <path d="M86.5 5.2h28.2v3.95H101.35V32h-3.15V9.15H86.5V5.2Z"/>
-  </g>
+  <text
+    x="72"
+    y="42"
+    fill="url(#avant-hl-wm)"
+    font-family="Syne, ui-sans-serif, system-ui, sans-serif"
+    font-size="22"
+    font-weight="900"
+    letter-spacing="6"
+  >AVANT</text>
 </svg>

@@ -7,6 +7,7 @@ import {
   Note,
   Toc,
   TutorialFigure,
+  TutorialVideo,
   hasTutorialImage,
 } from './ajudaComponents';
 
@@ -207,6 +208,19 @@ export default function AjudaPage() {
         primeiro o que fazer,
         depois onde clicar, e por fim uma imagem limpa para confirmar visualmente.
       </p>
+
+      <section className={`mt-6 p-5 shadow-sm md:p-6 ${AJUDA_SURFACE}`}>
+        <h2 className="text-base font-black text-slate-100">Assista o tutorial em vídeo (MP4)</h2>
+        <p className="mt-2 text-sm leading-relaxed text-slate-400">
+          Se você preferir ver tudo em 2–3 minutos, este vídeo mostra o fluxo completo (vitrine → questão → estudo reverso → desempenho).
+        </p>
+        <div className="mt-4">
+          <TutorialVideo file="tutorial-avant.mp4" title="Como usar o AVANT — tutorial rápido" poster="seq-01.png" />
+        </div>
+        <p className="mt-3 text-xs font-semibold text-slate-500">
+          Arquivo esperado em <code>public/tutorial/tutorial-avant.mp4</code>.
+        </p>
+      </section>
 
       {!firstSeq && (
         <Note>

@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { AlertCircle, ArrowRight, CheckCircle2, Eye, EyeOff, Lock, Zap } from 'lucide-react';
+import { AlertCircle, ArrowRight, CheckCircle2, Eye, EyeOff, Lock } from 'lucide-react';
+import { AvantLogo } from '@/components/brand/AvantLogo';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -87,11 +88,8 @@ export default function RedefinirSenhaPage() {
 
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 mb-6">
-            <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/30">
-              <Zap size={24} className="text-[#BEF264]" fill="currentColor" />
-            </div>
-            <span className="text-3xl font-[1000] italic tracking-tighter text-slate-900">AVANT</span>
+          <div className="mb-6 flex justify-center">
+            <AvantLogo size="lg" />
           </div>
           <div className="inline-flex items-center gap-2 mb-2 bg-indigo-50 border border-indigo-100 px-4 py-1.5 rounded-full">
             <Lock size={14} className="text-indigo-500" />

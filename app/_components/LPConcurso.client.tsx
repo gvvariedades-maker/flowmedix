@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import { useEffect, useState, type ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { Loader2, Zap } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
+import { AvantLogo } from '@/components/brand/AvantLogo';
 import { useProCheckout } from '@/components/pro/useProCheckout';
 import { AVANT_PRO_LP_HREF } from '@/lib/pro/constants';
 
@@ -80,12 +81,7 @@ export function LPNavbar({ ctaLabel }: { ctaLabel: string }) {
         {/* Mobile: logo + CTAs; depois faixa de navegação */}
         <div className="flex flex-col gap-2 sm:hidden">
           <div className="flex items-center justify-between gap-2">
-            <Link href="/" className="group flex min-w-0 shrink items-center gap-2" aria-label="AVANT — início">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-500/40">
-                <Zap size={22} className="text-[#BEF264]" fill="currentColor" aria-hidden />
-              </div>
-              <span className="truncate text-xl font-[1000] tracking-tighter text-white italic">AVANT</span>
-            </Link>
+            <AvantLogo href="/" variant="icon" size="nav" className="min-w-0" />
             <div className="flex shrink-0 items-center gap-1.5">
               <Link href="/register" className={lpFreeCtaClass}>
                 <span className="sm:hidden">Grátis</span>
@@ -109,12 +105,13 @@ export function LPNavbar({ ctaLabel }: { ctaLabel: string }) {
 
         {/* Desktop / tablet */}
         <div className="hidden items-center justify-between gap-3 sm:flex">
-          <Link href="/" className="group flex shrink-0 items-center gap-2" aria-label="AVANT — início">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-500/40 transition-transform group-hover:scale-105">
-              <Zap size={22} className="text-[#BEF264]" fill="currentColor" aria-hidden />
-            </div>
-            <span className="text-xl font-[1000] tracking-tighter text-white italic">AVANT</span>
-          </Link>
+          <AvantLogo
+            href="/"
+            variant="lockup"
+            size="nav"
+            animated={false}
+            className="shrink-0 transition-transform hover:scale-[1.02]"
+          />
 
           <div className="flex min-w-0 flex-1 flex-wrap items-center justify-end gap-2 md:gap-3">
             <nav

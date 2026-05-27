@@ -3,7 +3,8 @@
 import { Suspense, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Zap, ArrowRight, Lock, MapPin, CheckCircle2, AlertCircle, Eye, EyeOff } from 'lucide-react';
+import { ArrowRight, Lock, MapPin, CheckCircle2, AlertCircle, Eye, EyeOff } from 'lucide-react';
+import { AvantLogo } from '@/components/brand/AvantLogo';
 import { motion } from 'framer-motion';
 import { supabase } from '@/lib/supabase/client';
 import { getPostLoginDestination } from '@/lib/getPostLoginDestination';
@@ -118,11 +119,8 @@ function LoginContent() {
     <div className="w-full max-w-md">
       {/* --- HEADER DO LOGIN --- */}
       <div className="mb-10 text-center">
-        <div className="mb-6 inline-flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-500/30">
-            <Zap size={24} className="text-[#BEF264]" fill="currentColor" />
-          </div>
-          <span className="text-3xl font-[1000] italic tracking-tighter text-white">AVANT</span>
+        <div className="mb-6 flex justify-center">
+          <AvantLogo size="lg" />
         </div>
 
         {/* MENSAGEM DINÂMICA (Turma confirmada) */}

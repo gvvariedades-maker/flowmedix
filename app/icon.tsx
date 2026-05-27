@@ -1,6 +1,15 @@
 import { ImageResponse } from 'next/og';
+import {
+  AVANT_LOGO_BOLT,
+  AVANT_LOGO_COLORS,
+  AVANT_LOGO_GRADIENTS,
+} from '@/lib/brand/avantLogoConstants';
 
 export const contentType = 'image/png';
+
+/** clip-path do raio (viewBox 38×42) em porcentagens para Satori. */
+const AVANT_BOLT_CLIP_PATH =
+  'polygon(57.9% 0%, 21.1% 47.6%, 39.5% 47.6%, 26.3% 100%, 78.9% 38.1%, 47.4% 38.1%)';
 
 export function generateImageMetadata() {
   return [
@@ -22,9 +31,10 @@ type IconProps = {
 };
 
 function AvantIconMark({ px }: { px: number }) {
-  const chip = Math.round(px * 0.375);
-  const chipRadius = Math.round(chip * 0.224);
-  const boltSize = Math.round(chip * 0.55);
+  const chip = Math.round(px * 0.42);
+  const chipRadius = Math.round(chip * 0.25);
+  const boltSize = Math.round(chip * 0.5);
+  const sheenHeight = Math.round(chip * 0.42);
 
   return (
     <div
@@ -34,7 +44,7 @@ function AvantIconMark({ px }: { px: number }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, #12082A 0%, #1E0E45 100%)',
+        background: '#010409',
       }}
     >
       <div
@@ -43,29 +53,30 @@ function AvantIconMark({ px }: { px: number }) {
           width: chip,
           height: chip,
           borderRadius: chipRadius,
-          background: '#4B1FA8',
+          background: AVANT_LOGO_GRADIENTS.icon,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          boxShadow: `0 0 ${Math.max(8, Math.round(px * 0.04))}px rgba(143, 224, 32, 0.35), 0 4px 16px rgba(48, 24, 200, 0.35)`,
         }}
       >
         <div
           style={{
-            width: boltSize,
-            height: boltSize,
-            background: '#E8B800',
-            clipPath: 'polygon(50% 8%, 78% 48%, 62% 48%, 68% 92%, 22% 52%, 38% 52%)',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: sheenHeight,
+            borderRadius: `${chipRadius}px ${chipRadius}px 0 0`,
+            background: AVANT_LOGO_COLORS.iconSheen,
           }}
         />
         <div
           style={{
-            position: 'absolute',
-            top: Math.round(chip * 0.08),
-            right: Math.round(chip * 0.08),
-            width: Math.round(chip * 0.12),
-            height: Math.round(chip * 0.12),
-            borderRadius: '50%',
-            background: '#00E5C3',
+            width: boltSize,
+            height: Math.round(boltSize * (AVANT_LOGO_BOLT.height / AVANT_LOGO_BOLT.width)),
+            background: AVANT_LOGO_GRADIENTS.bolt,
+            clipPath: AVANT_BOLT_CLIP_PATH,
           }}
         />
       </div>

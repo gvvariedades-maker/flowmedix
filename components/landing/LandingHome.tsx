@@ -27,8 +27,8 @@ import {
   Sparkles,
   Target,
   X,
-  Zap,
 } from 'lucide-react';
+import { AvantLogo } from '@/components/brand/AvantLogo';
 import { DemoInterativa } from '@/components/landing/DemoInterativa';
 import { SlideStylePreviews } from '@/components/landing/SlideStylePreviews';
 import { NeuroSlideCarousel } from '@/components/marketing/NeuroSlideCarousel';
@@ -518,14 +518,9 @@ export default function LandingHome() {
                 className="overflow-visible rounded-[2rem] border border-[#BEF264]/25 bg-gradient-to-b from-[#BEF264]/5 to-transparent shadow-[0_0_40px_rgba(190,242,100,0.08)]"
               >
                 <div className="border-b border-[#BEF264]/15 px-6 pb-4 pt-6">
-                  <div className="flex items-center gap-3">
-                    <Zap size={20} className="shrink-0 text-[#BEF264]" fill="currentColor" aria-hidden />
-                    <div>
-                      <span className="inline-flex rounded-full border border-[#BEF264]/20 bg-[#BEF264]/10 px-3 py-1 text-xs font-black uppercase tracking-wider text-[#BEF264]">
-                        AVANT
-                      </span>
-                      <p className="mt-1 text-xs font-medium text-slate-400">Feito para Técnico em Enfermagem</p>
-                    </div>
+                  <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+                    <AvantLogo size="md" animated={false} className="origin-left scale-[0.85] sm:scale-100" />
+                    <p className="text-xs font-medium text-slate-400">Feito para Técnico em Enfermagem</p>
                   </div>
                 </div>
                 <CompareAvantCarousel />
@@ -839,9 +834,8 @@ export default function LandingHome() {
       <footer className="relative z-10 border-t border-white/5 py-10 px-4 sm:px-6">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
           <div className="flex flex-col items-center gap-3 sm:items-start">
-            <div className="flex items-center gap-2">
-              <Zap size={18} className="text-[#BEF264]" fill="currentColor" />
-              <span className="font-[1000] italic tracking-tight text-white">AVANT</span>
+            <div className="flex flex-col items-center gap-2 sm:flex-row sm:items-center">
+              <AvantLogo size="md" animated={false} />
               <span className="text-sm text-slate-500">· Estudo reverso para Técnico em Enfermagem</span>
             </div>
             <Link

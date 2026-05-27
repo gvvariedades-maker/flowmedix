@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, Syne } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { validateAllEnv } from "@/lib/env";
@@ -29,6 +29,13 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["500", "600", "700", "800"],
   variable: "--font-plus-jakarta-sans",
+  display: "swap",
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["800"],
+  variable: "--font-syne",
   display: "swap",
 });
 
@@ -123,7 +130,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={`${inter.className} ${plusJakartaSans.variable}`} suppressHydrationWarning>
+      <body
+        className={`${inter.className} ${plusJakartaSans.variable} ${syne.variable}`}
+        suppressHydrationWarning
+      >
         <Script
           id="avant-text-size-init"
           strategy="beforeInteractive"

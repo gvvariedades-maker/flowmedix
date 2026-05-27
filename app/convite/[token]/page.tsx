@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Gift, Zap, AlertCircle, Clock, Ban } from 'lucide-react';
+import { Gift, AlertCircle, Clock, Ban } from 'lucide-react';
+import { AvantLogo } from '@/components/brand/AvantLogo';
 
 import { AuthAtmosphericBackdrop } from '@/components/layout/AuthAtmosphericBackdrop';
 import { PublicDarkAuthHeader } from '@/components/layout/PublicDarkAuthHeader';
@@ -82,11 +83,8 @@ export default async function ConvitePage({ params }: PageProps) {
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center p-6">
         <div className="w-full max-w-lg">
           <div className="mb-8 text-center">
-            <div className="mb-6 inline-flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 shadow-lg shadow-indigo-500/30">
-                <Zap size={24} className="text-[#BEF264]" fill="currentColor" />
-              </div>
-              <span className="text-3xl font-[1000] italic tracking-tighter text-white">AVANT</span>
+            <div className="mb-6 flex justify-center">
+              <AvantLogo size="lg" />
             </div>
           </div>
 

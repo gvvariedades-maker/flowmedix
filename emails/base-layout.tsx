@@ -8,6 +8,7 @@ import {
   Text,
 } from '@react-email/components';
 import type { ReactNode } from 'react';
+import { AvantLogoEmail } from '@/emails/AvantLogoEmail';
 
 const BG = '#010409';
 const ACCENT = '#00f2ff';
@@ -42,18 +43,7 @@ export function BaseLayout({ children, preview, brandTagline }: BaseLayoutProps)
           }}
         >
           <Section style={{ marginBottom: '32px' }}>
-            <Text
-              style={{
-                margin: 0,
-                fontSize: '28px',
-                fontWeight: 800,
-                fontStyle: 'italic',
-                letterSpacing: '-0.04em',
-                color: '#ffffff',
-              }}
-            >
-              AVANT
-            </Text>
+            <AvantLogoEmail />
             {brandTagline ? (
               <Text
                 style={{

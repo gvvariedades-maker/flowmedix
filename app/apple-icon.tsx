@@ -1,12 +1,22 @@
 import { ImageResponse } from 'next/og';
+import {
+  AVANT_LOGO_BOLT,
+  AVANT_LOGO_COLORS,
+  AVANT_LOGO_GRADIENTS,
+} from '@/lib/brand/avantLogoConstants';
 
 export const size = { width: 180, height: 180 };
 export const contentType = 'image/png';
 
+const AVANT_BOLT_CLIP_PATH =
+  'polygon(57.9% 0%, 21.1% 47.6%, 39.5% 47.6%, 26.3% 100%, 78.9% 38.1%, 47.4% 38.1%)';
+
 export default function AppleIcon() {
-  const chip = 68;
-  const chipRadius = 15;
-  const boltSize = 37;
+  const chip = 76;
+  const chipRadius = 19;
+  const boltW = 38;
+  const boltH = Math.round(boltW * (AVANT_LOGO_BOLT.height / AVANT_LOGO_BOLT.width));
+  const sheenHeight = 32;
 
   return new ImageResponse(
     (
@@ -17,7 +27,7 @@ export default function AppleIcon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #12082A 0%, #1E0E45 100%)',
+          background: '#010409',
         }}
       >
         <div
@@ -26,29 +36,31 @@ export default function AppleIcon() {
             width: chip,
             height: chip,
             borderRadius: chipRadius,
-            background: '#4B1FA8',
+            background: AVANT_LOGO_GRADIENTS.icon,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            boxShadow:
+              '0 0 14px rgba(143, 224, 32, 0.35), 0 4px 16px rgba(48, 24, 200, 0.35)',
           }}
         >
           <div
             style={{
-              width: boltSize,
-              height: boltSize,
-              background: '#E8B800',
-              clipPath: 'polygon(50% 8%, 78% 48%, 62% 48%, 68% 92%, 22% 52%, 38% 52%)',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: sheenHeight,
+              borderRadius: `${chipRadius}px ${chipRadius}px 0 0`,
+              background: AVANT_LOGO_COLORS.iconSheen,
             }}
           />
           <div
             style={{
-              position: 'absolute',
-              top: 5,
-              right: 5,
-              width: 8,
-              height: 8,
-              borderRadius: '50%',
-              background: '#00E5C3',
+              width: boltW,
+              height: boltH,
+              background: AVANT_LOGO_GRADIENTS.bolt,
+              clipPath: AVANT_BOLT_CLIP_PATH,
             }}
           />
         </div>
