@@ -23,21 +23,8 @@ import type { CadernoDetail, ModuloDisponivel, NotebookItem } from './page';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
-import {
-  FILTER_ALL_VALUE,
-  SELECT_CONTENT_DARK,
-  SELECT_ITEM_DARK,
-  SELECT_TRIGGER_DARK_PANEL,
-} from '@/components/dashboard/dashboard-select-dark';
-
-const FILTER_ALL = FILTER_ALL_VALUE;
+import { DashboardFilterSelect } from '@/components/dashboard/DashboardFilterSelect';
+import { SELECT_TRIGGER_DARK_PANEL } from '@/components/dashboard/dashboard-select-dark';
 
 // ── Componente: item do caderno ────────────────────────────────────────────
 function ItemCaderno({
@@ -294,42 +281,24 @@ function BuilderPanel({
         <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
           {filtrosMontados ? (
             <>
-              <Select
-                value={filtroTopico || FILTER_ALL}
-                onValueChange={(v) => setFiltroTopico(v === FILTER_ALL ? '' : v)}
-              >
-                <SelectTrigger className={SELECT_TRIGGER_DARK_PANEL}>
-                  <SelectValue placeholder="Todos os assuntos" />
-                </SelectTrigger>
-                <SelectContent position="item-aligned" className={SELECT_CONTENT_DARK}>
-                  <SelectItem value={FILTER_ALL} className={SELECT_ITEM_DARK}>
-                    Todos os assuntos
-                  </SelectItem>
-                  {topicos.map((t) => (
-                    <SelectItem key={t} value={t} className={SELECT_ITEM_DARK}>
-                      {t}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-              <Select
-                value={filtroBanca || FILTER_ALL}
-                onValueChange={(v) => setFiltroBanca(v === FILTER_ALL ? '' : v)}
-              >
-                <SelectTrigger className={SELECT_TRIGGER_DARK_PANEL}>
-                  <SelectValue placeholder="Todas as bancas" />
-                </SelectTrigger>
-                <SelectContent position="item-aligned" className={SELECT_CONTENT_DARK}>
-                  <SelectItem value={FILTER_ALL} className={SELECT_ITEM_DARK}>
-                    Todas as bancas
-                  </SelectItem>
-                  {bancas.map((b) => (
-                    <SelectItem key={b} value={b} className={SELECT_ITEM_DARK}>
-                      {b}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <DashboardFilterSelect
+                variant="panel"
+                placeholder="Todos os assuntos"
+                allLabel="Todos os assuntos"
+                sheetTitle="Filtrar por assunto"
+                value={filtroTopico}
+                options={topicos}
+                onValueChange={setFiltroTopico}
+              />
+              <DashboardFilterSelect
+                variant="panel"
+                placeholder="Todas as bancas"
+                allLabel="Todas as bancas"
+                sheetTitle="Filtrar por banca"
+                value={filtroBanca}
+                options={bancas}
+                onValueChange={setFiltroBanca}
+              />
             </>
           ) : (
             <>

@@ -32,6 +32,10 @@ import type { ProSource } from '@/lib/freemium';
 import { supabase } from '@/lib/supabase/client';
 import { ToastProvider } from '@/lib/toast-context';
 import { ToastContainer } from '@/components/ui/toast-container';
+import {
+  BackToVitrineBar,
+  shouldShowBackToVitrine,
+} from '@/components/dashboard/BackToVitrineLink';
 
 const drawerSpring = { type: 'spring' as const, stiffness: 300, damping: 30 };
 
@@ -574,6 +578,7 @@ function DashboardContent({
     return pathname === path || pathname.startsWith(`${path}/`);
   };
 
+  const showBackToVitrine = shouldShowBackToVitrine(pathname);
 
   const menuItems: MenuItem[] = [
     { label: 'Vitrine de Aulas', icon: LayoutDashboard, href: '/estudar', active: isPathActive('/estudar') },
@@ -745,6 +750,7 @@ function DashboardContent({
         </header>
 
         <main className="relative flex min-h-0 flex-1 flex-col overflow-x-hidden overflow-y-auto no-scrollbar">
+          {showBackToVitrine ? <BackToVitrineBar /> : null}
           <motion.div
             key={pathname}
             variants={pageVariants}

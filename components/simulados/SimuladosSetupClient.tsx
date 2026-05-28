@@ -8,19 +8,8 @@ import { PageHeader } from '@/components/ui/page-header';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { EmptyState } from '@/components/ui/empty-state';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
-import {
-  FILTER_ALL_VALUE,
-  SELECT_CONTENT_DARK,
-  SELECT_ITEM_DARK,
-  SELECT_TRIGGER_DARK_PANEL,
-} from '@/components/dashboard/dashboard-select-dark';
+import { DashboardFilterSelect } from '@/components/dashboard/DashboardFilterSelect';
+import { SELECT_TRIGGER_DARK_PANEL } from '@/components/dashboard/dashboard-select-dark';
 import {
   createSimuladoSession,
   getSimuladoPoolCount,
@@ -33,8 +22,6 @@ import type { VitrineFacets } from '@/lib/vitrine/types';
 import { cn } from '@/lib/utils';
 import type { SimuladoOpenSessionResponse } from '@/lib/simulado/types';
 import type { SimuladoModo } from '@/lib/simulado/types';
-
-const FILTER_ALL = FILTER_ALL_VALUE;
 
 function formatZodIssues(issues: ZodIssue[]): string {
   const first = issues[0];
@@ -367,32 +354,21 @@ export function SimuladosSetupClient() {
                 Banca (opcional)
               </span>
               {filtrosSelectMontados ? (
-                <Select
-                  value={banca || FILTER_ALL}
+                <DashboardFilterSelect
+                  id="simulado-banca"
+                  aria-labelledby="simulado-banca-label"
+                  variant="panel"
+                  placeholder="Todas as bancas"
+                  allLabel="Todas as bancas"
+                  sheetTitle="Filtrar por banca"
+                  value={banca}
+                  options={bancas}
                   disabled={loading || (facetsLoading && bancas.length === 0)}
                   onValueChange={(v) => {
-                    setBanca(v === FILTER_ALL ? '' : v);
+                    setBanca(v);
                     setNoQuestions(false);
                   }}
-                >
-                  <SelectTrigger
-                    id="simulado-banca"
-                    aria-labelledby="simulado-banca-label"
-                    className={SELECT_TRIGGER_DARK_PANEL}
-                  >
-                    <SelectValue placeholder="Todas as bancas" />
-                  </SelectTrigger>
-                  <SelectContent position="item-aligned" className={SELECT_CONTENT_DARK}>
-                    <SelectItem value={FILTER_ALL} className={SELECT_ITEM_DARK}>
-                      Todas as bancas
-                    </SelectItem>
-                    {bancas.map((b) => (
-                      <SelectItem key={b} value={b} className={SELECT_ITEM_DARK}>
-                        {b}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                />
               ) : (
                 <div
                   className={cn(SELECT_TRIGGER_DARK_PANEL, 'text-slate-400')}
@@ -409,32 +385,21 @@ export function SimuladosSetupClient() {
                 Assunto (opcional)
               </span>
               {filtrosSelectMontados ? (
-                <Select
-                  value={assunto || FILTER_ALL}
+                <DashboardFilterSelect
+                  id="simulado-assunto"
+                  aria-labelledby="simulado-assunto-label"
+                  variant="panel"
+                  placeholder="Todos os assuntos"
+                  allLabel="Todos os assuntos"
+                  sheetTitle="Filtrar por assunto"
+                  value={assunto}
+                  options={assuntos}
                   disabled={loading || (facetsLoading && assuntos.length === 0)}
                   onValueChange={(v) => {
-                    setAssunto(v === FILTER_ALL ? '' : v);
+                    setAssunto(v);
                     setNoQuestions(false);
                   }}
-                >
-                  <SelectTrigger
-                    id="simulado-assunto"
-                    aria-labelledby="simulado-assunto-label"
-                    className={SELECT_TRIGGER_DARK_PANEL}
-                  >
-                    <SelectValue placeholder="Todos os assuntos" />
-                  </SelectTrigger>
-                  <SelectContent position="item-aligned" className={SELECT_CONTENT_DARK}>
-                    <SelectItem value={FILTER_ALL} className={SELECT_ITEM_DARK}>
-                      Todos os assuntos
-                    </SelectItem>
-                    {assuntos.map((a) => (
-                      <SelectItem key={a} value={a} className={SELECT_ITEM_DARK}>
-                        {a}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                />
               ) : (
                 <div
                   className={cn(SELECT_TRIGGER_DARK_PANEL, 'text-slate-400')}

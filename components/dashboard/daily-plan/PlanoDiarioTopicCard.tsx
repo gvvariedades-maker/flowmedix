@@ -163,11 +163,6 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
                     Abrir questão
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild className="text-slate-200 focus:bg-white/10 focus:text-white">
-                  <Link href="/estudar" className="cursor-pointer">
-                    Ir à vitrine
-                  </Link>
-                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             <Link

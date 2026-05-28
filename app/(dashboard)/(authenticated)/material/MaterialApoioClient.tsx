@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, BookOpen, Sparkles } from 'lucide-react';
+import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
 import { TOTAL_MATERIAL_SLIDES } from '@/components/material/materialSlideLots';
 
 export default function MaterialApoioClient() {
@@ -19,16 +19,6 @@ export default function MaterialApoioClient() {
         />
         <div className="absolute left-1/2 top-[-12rem] h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-cyan-400/15 blur-[120px]" />
         <div className="absolute bottom-[-12rem] right-[-8rem] h-[30rem] w-[30rem] rounded-full bg-[#BEF264]/10 blur-[120px]" />
-
-        <div className="relative z-10 mx-auto mb-10 flex max-w-6xl justify-start">
-          <Link
-            href="/estudar"
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-bold text-slate-300 transition-colors hover:border-[#BEF264]/40 hover:bg-[#BEF264]/10 hover:text-white"
-          >
-            <ArrowLeft size={16} aria-hidden />
-            Voltar para a Vitrine
-          </Link>
-        </div>
 
         <div className="relative z-10 mx-auto max-w-2xl text-center">
           <motion.div

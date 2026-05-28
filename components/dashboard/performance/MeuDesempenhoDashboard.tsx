@@ -9,7 +9,6 @@ import {
   CalendarDays,
   ChevronRight,
   Flame,
-  LayoutGrid,
   Shield,
   Target,
   Trophy,
@@ -92,22 +91,13 @@ export function ProgressoEstudoDashboard({ dados }: { dados: DesempenhoData }) {
             ]}
             description="Metas, sequência e assuntos estudados nos últimos 30 dias."
             action={
-              <div className="flex flex-col gap-2 sm:flex-row">
-                <Button asChild variant="outline" className="h-11 shrink-0 gap-2 rounded-xl px-4 font-semibold">
-                  <Link href="/desempenho/simulados" className="inline-flex items-center">
-                    <Trophy className="h-4 w-4" aria-hidden />
-                    Meu desempenho
-                    <ChevronRight className="h-4 w-4 opacity-80" aria-hidden />
-                  </Link>
-                </Button>
-                <Button asChild className="h-11 shrink-0 gap-2 rounded-xl px-4 font-semibold">
-                  <Link href="/estudar" className="inline-flex items-center">
-                    <LayoutGrid className="h-4 w-4" aria-hidden />
-                    Ir à vitrine
-                    <ChevronRight className="h-4 w-4 opacity-80" aria-hidden />
-                  </Link>
-                </Button>
-              </div>
+              <Button asChild variant="outline" className="h-11 shrink-0 gap-2 rounded-xl px-4 font-semibold">
+                <Link href="/desempenho/simulados" className="inline-flex items-center">
+                  <Trophy className="h-4 w-4" aria-hidden />
+                  Meu desempenho
+                  <ChevronRight className="h-4 w-4 opacity-80" aria-hidden />
+                </Link>
+              </Button>
             }
           />
         </div>
@@ -194,7 +184,7 @@ export function ProgressoEstudoDashboard({ dados }: { dados: DesempenhoData }) {
                 <EmptyState
                   icon={BookOpen}
                   title="Nenhuma atividade ainda"
-                  description="Responda sua primeira questão para ver seu progresso aqui. Use o botão Ir à vitrine no topo da página."
+                  description="Responda sua primeira questão para ver seu progresso aqui. Use “Voltar para a Vitrine” no topo da página."
                 />
               </CardContent>
             </Card>

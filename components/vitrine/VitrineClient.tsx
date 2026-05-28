@@ -37,25 +37,12 @@ import { cn } from '@/lib/utils';
 import type { VitrineGrupoSubtopico, VitrinePageResponse } from '@/lib/vitrine/types';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
+import { DashboardFilterSelect } from '@/components/dashboard/DashboardFilterSelect';
 import { PageHeader } from '@/components/ui/page-header';
 import { NeonBadge } from '@/components/ui/neon-badge';
 import { EmptyState } from '@/components/ui/empty-state';
 import { ProgressRing } from '@/components/ui/progress-ring';
 
-import {
-  FILTER_ALL_VALUE,
-  SELECT_CONTENT_DARK,
-  SELECT_ITEM_DARK,
-} from '@/components/dashboard/dashboard-select-dark';
-
-const FILTER_ALL = FILTER_ALL_VALUE;
 const VITRINE_SEARCH_DEBOUNCE_MS = 350;
 
 const containerVariants = {
@@ -370,47 +357,31 @@ export default function VitrineClient({
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {filtrosSelectMontados ? (
               <>
-                <Select
-                  value={bancaFilter || FILTER_ALL}
+                <DashboardFilterSelect
+                  placeholder="Todas as bancas"
+                  allLabel="Todas as bancas"
+                  sheetTitle="Filtrar por banca"
+                  value={bancaFilter}
+                  options={bancas}
                   disabled={facetsLoading && bancas.length === 0}
                   onValueChange={(v) => {
-                    setBancaFilter(v === FILTER_ALL ? '' : v);
+                    setBancaFilter(v);
                     setPagina(1);
                   }}
-                >
-                  <SelectTrigger className="h-11 w-full rounded-xl">
-                    <SelectValue placeholder="Todas as bancas" />
-                  </SelectTrigger>
-                  <SelectContent position="item-aligned" className={SELECT_CONTENT_DARK}>
-                    <SelectItem value={FILTER_ALL} className={SELECT_ITEM_DARK}>Todas as bancas</SelectItem>
-                    {bancas.map((b) => (
-                      <SelectItem key={b} value={b} className={SELECT_ITEM_DARK}>
-                        {b}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                />
 
-                <Select
-                  value={assuntoFilter || FILTER_ALL}
+                <DashboardFilterSelect
+                  placeholder="Todos os assuntos"
+                  allLabel="Todos os assuntos"
+                  sheetTitle="Filtrar por assunto"
+                  value={assuntoFilter}
+                  options={assuntos}
                   disabled={facetsLoading && assuntos.length === 0}
                   onValueChange={(v) => {
-                    setAssuntoFilter(v === FILTER_ALL ? '' : v);
+                    setAssuntoFilter(v);
                     setPagina(1);
                   }}
-                >
-                  <SelectTrigger className="h-11 w-full rounded-xl">
-                    <SelectValue placeholder="Todos os assuntos" />
-                  </SelectTrigger>
-                  <SelectContent position="item-aligned" className={SELECT_CONTENT_DARK}>
-                    <SelectItem value={FILTER_ALL} className={SELECT_ITEM_DARK}>Todos os assuntos</SelectItem>
-                    {assuntos.map((a) => (
-                      <SelectItem key={a} value={a} className={SELECT_ITEM_DARK}>
-                        {a}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                />
               </>
             ) : (
               <>

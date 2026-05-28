@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Layers } from 'lucide-react';
+import { ArrowLeft, Layers } from 'lucide-react';
 import { MaterialSlidesModal } from '@/components/material/MaterialSlidesModal';
 import {
   MATERIAL_SLIDE_LOTS,
@@ -31,13 +31,6 @@ export default function MaterialNeuroslidesClient() {
             >
               <ArrowLeft size={18} aria-hidden />
               Voltar ao Material de Apoio
-            </Link>
-            <Link
-              href="/estudar"
-              className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-black uppercase tracking-wider text-slate-300 transition-colors hover:border-[#BEF264]/40 hover:bg-[#BEF264]/10 hover:text-white"
-            >
-              Vitrine de Aulas
-              <ArrowRight size={14} aria-hidden />
             </Link>
           </div>
           <p className="text-xs font-medium text-slate-500 sm:text-right">

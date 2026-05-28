@@ -53,7 +53,7 @@ export default function DashboardError({
               href="/estudar"
               className="inline-flex h-11 items-center justify-center rounded-xl border border-border bg-background px-6 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
             >
-              Ir à vitrine
+              Voltar para a Vitrine
             </Link>
           </div>
         </div>

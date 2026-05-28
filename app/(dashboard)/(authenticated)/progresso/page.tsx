@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { logger } from '@/lib/logger';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
@@ -106,13 +105,9 @@ export default async function ProgressoPage() {
     return (
       <div className="dashboard-surface flex min-h-screen items-center justify-center bg-background p-6 pb-safe text-foreground">
         <div className="max-w-md space-y-4 text-center">
-          <p className="text-sm text-muted-foreground">Erro ao carregar dados. Tente novamente.</p>
-          <Link
-            href="/estudar"
-            className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors duration-150 hover:bg-primary/90"
-          >
-            Voltar para estudos
-          </Link>
+          <p className="text-sm text-muted-foreground">
+            Erro ao carregar dados. Tente novamente ou use “Voltar para a Vitrine” no topo da página.
+          </p>
         </div>
       </div>
     );

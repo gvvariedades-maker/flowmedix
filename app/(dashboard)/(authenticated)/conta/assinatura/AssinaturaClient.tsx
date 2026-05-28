@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { ArrowRight, CreditCard, Loader2, Sparkles, Zap } from 'lucide-react';
 import type { ProSource } from '@/lib/freemium';
 import { useProBillingPortal } from '@/components/pro/useProBillingPortal';
@@ -174,11 +173,6 @@ export function AssinaturaClient({
         ) : null}
       </div>
 
-      <p className="mt-6 text-center text-xs text-slate-500">
-        <Link href="/estudar" className="font-semibold text-slate-400 hover:text-slate-300">
-          ← Voltar para a vitrine
-        </Link>
-      </p>
     </div>
   );
 }
