@@ -165,30 +165,38 @@ function CityCard({
   proExpiresAt: string | null;
 }) {
   const inviteExpiry = proSource === 'invite' ? formatProExpiryShort(proExpiresAt) : null;
+  const trimmedCidade = cidadeExibicao.trim();
+  const dynamicPlanName =
+    trimmedCidade && !/^geral$/i.test(trimmedCidade) && !/^técnico de enfermagem$/i.test(trimmedCidade)
+      ? trimmedCidade
+      : null;
+  const planTitle = dynamicPlanName ?? 'Seu Plano';
+
   return (
     <div className="mb-1 px-3">
-      <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 p-[1px] shadow-lg shadow-slate-900/25">
-        <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900/95 via-slate-800/98 to-indigo-950/95 p-4">
+      <div className="overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-slate-800/60 to-slate-900/80 p-4 shadow-[0_0_20px_rgba(0,242,255,0.08)]">
           <div className="mb-3 flex justify-center">
             <div
               className={`inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 ring-1 backdrop-blur-sm ${
-                isPro ? 'bg-[#BEF264]/15 ring-[#BEF264]/30' : 'bg-white/8 ring-white/10'
+                isPro ? 'bg-[#00f2ff]/10 ring-[#00f2ff]/30' : 'bg-white/8 ring-white/10'
               }`}
             >
               {isPro ? (
-                <Zap size={11} className="shrink-0 text-[#BEF264]" fill="currentColor" aria-hidden />
+                <span className="text-[#00f2ff] drop-shadow-[0_0_6px_#00f2ff]" aria-hidden>
+                  ⚡
+                </span>
               ) : null}
               <span
-                className={`text-[10px] font-black uppercase tracking-[0.15em] ${
-                  isPro ? 'text-[#BEF264]' : 'text-slate-400'
+                className={`text-[10px] font-black tracking-[0.12em] ${
+                  isPro ? 'text-[#00f2ff]' : 'text-slate-400'
                 }`}
               >
-                {isPro ? 'AVANT PRO' : 'PLANO GRATUITO'}
+                {isPro ? 'AVANT PRO — exclusivo para técnicos' : 'PLANO GRATUITO'}
               </span>
             </div>
           </div>
           <h3 className="text-balance text-center text-base font-bold leading-snug tracking-tight text-white sm:text-[1.05rem]">
-            {cidadeExibicao}
+            {planTitle}
           </h3>
 
           <div className="mt-3.5">
@@ -200,9 +208,14 @@ function CityCard({
                       className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.85)] animate-pulse"
                       aria-hidden
                     />
-                    Acesso completo
+                    Pro ativo
                   </span>
                 </div>
+                <p className="text-center text-xs text-white/50">
+                  A única plataforma de estudo reverso para técnicos de enfermagem
+                </p>
+                {/* TODO: Exibir métrica real de progresso quando houver dado no contexto/props.
+                    Ex.: "X NeuroSlides esta semana" ou "Última aula: [nome] - há X dias". */}
                 {inviteExpiry ? (
                   <p className="text-center text-xs font-medium text-slate-500">
                     Pro por convite até {inviteExpiry}
@@ -236,7 +249,6 @@ function CityCard({
               </div>
             )}
           </div>
-        </div>
       </div>
     </div>
   );
