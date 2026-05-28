@@ -132,8 +132,8 @@ test.describe('Meu desempenho (simulados)', () => {
       await expect(page.getByText('Erros', { exact: true }).first()).toBeVisible();
       await expect(page.getByText('Questões respondidas', { exact: true }).first()).toBeVisible();
     }
-    await expect(page.getByText('Onde focar agora')).toBeVisible();
-    await expect(page.getByText('Sua tendência na semana')).toBeVisible();
+    await expect(page.getByText('Onde focar agora').first()).toBeVisible();
+    await expect(page.getByText('Sua tendência na semana').first()).toBeVisible();
     await expect(page.getByRole('link', { name: 'Treinar agora' })).toBeVisible();
   });
 });
