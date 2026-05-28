@@ -156,7 +156,9 @@ describe('lib/simulado/client', () => {
 
     const result = await getSimuladoQuestionPayload('questao-a');
 
-    expect(mockFetchWithAuth).toHaveBeenCalledWith('/api/simulado/questao?slug=questao-a');
+    expect(mockFetchWithAuth).toHaveBeenCalledWith('/api/simulado/questao?slug=questao-a', {
+      signal: undefined,
+    });
     expect(result.dados.question_data.instruction).toBe('Enunciado');
   });
 
