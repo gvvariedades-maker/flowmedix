@@ -41,7 +41,7 @@ function buildQuestoes(state: SessionState) {
   const meta = {
     banca: E2E_SIMULADO_LESSON.meta.banca,
     topico: E2E_SIMULADO_LESSON.meta.topico,
-    subtopico: E2E_SIMULADO_LESSON.meta.subtopico,
+    subtopico: E2E_SIMULADO_LESSON.meta.subtopico ?? null,
   };
 
   if (!state.answered) {
