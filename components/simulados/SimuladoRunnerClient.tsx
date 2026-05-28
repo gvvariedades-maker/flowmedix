@@ -386,7 +386,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const showFinalFeedbackCta = finalFeedbackPending && !!feedback && !hasPending;
 
   return (
-    <div className="min-h-screen bg-[#010409] px-4 pb-[8.5rem] pt-6 sm:px-6 sm:pb-safe lg:px-8">
+    <div className="min-h-screen bg-[#010409] px-4 pb-[calc(11rem+env(safe-area-inset-bottom))] pt-6 sm:px-6 sm:pb-safe lg:px-8">
       <div className="mx-auto max-w-3xl space-y-6">
         <PageHeader
           title="Simulado em andamento"

@@ -231,35 +231,6 @@ export async function POST(request: NextRequest) {
     revalidateTag('historico', CACHE_REVALIDATE_IMMEDIATE);
     revalidateTag(`user-${auth.user.id}`, CACHE_REVALIDATE_IMMEDIATE);
 
-    const { count: pendentes, error: pendentesError } = await supabase
-      .from('simulado_respostas')
-      .select('id', { count: 'exact', head: true })
-      .eq('session_id', session_id)
-      .eq('user_id', auth.user.id)
-      .is('acertou', null);
-
-    if (pendentesError) {
-      logger.error('Falha ao contar pendências do simulado', pendentesError, {
-        userId: auth.user.id,
-        sessionId: session_id,
-      });
-      return NextResponse.json({ error: 'Erro ao atualizar progresso do simulado' }, { status: 500 });
-    }
-
-    const sessionStatus = (pendentes ?? 0) === 0 ? 'concluido' : 'aberto';
-
-    if (sessionStatus === 'concluido') {
-      await supabase
-        .from('simulado_sessions')
-        .update({
-          status: 'concluido',
-          concluida_em: new Date().toISOString(),
-        })
-        .eq('id', session_id)
-        .eq('user_id', auth.user.id)
-        .eq('status', 'aberto');
-    }
-
     const { data: progressRows, error: progressError } = await supabase
       .from('simulado_respostas')
       .select(RESPOSTA_PROGRESS_SELECT)
@@ -276,6 +247,21 @@ export async function POST(request: NextRequest) {
     }
 
     const rows = (progressRows ?? []) as SimuladoRespostaProgressRow[];
+    const pendentes = rows.reduce((acc, row) => acc + (row.acertou === null ? 1 : 0), 0);
+    const sessionStatus = pendentes === 0 ? 'concluido' : 'aberto';
+
+    if (sessionStatus === 'concluido') {
+      await supabase
+        .from('simulado_sessions')
+        .update({
+          status: 'concluido',
+          concluida_em: new Date().toISOString(),
+        })
+        .eq('id', session_id)
+        .eq('user_id', auth.user.id)
+        .eq('status', 'aberto');
+    }
+
     const answeredRow = rows.find((row) => row.modulo_slug === modulo_slug);
 
     if (!answeredRow || answeredRow.acertou === null) {
