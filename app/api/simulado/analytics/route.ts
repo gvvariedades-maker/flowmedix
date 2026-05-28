@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { SimuladoAnalyticsQuerySchema } from '@/lib/validations';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
+import { createServerSupabase } from '@/lib/supabase/server';
 import { loadSimuladoAnalyticsSummary, normalizeSimuladoAnalyticsFilters } from '@/lib/simulado/analyticsSummary';
+import { syncPendingSimuladoAnalytics } from '@/lib/simulado/analyticsSync';
 import { logger } from '@/lib/logger';
 import { withPerformanceTracking } from '@/lib/performance-tracker';
 
@@ -32,6 +34,16 @@ export const GET = withPerformanceTracking(async function GET(request: NextReque
       subtopicoRaw: parsed.data.subtopico ?? null,
       assuntoRaw: parsed.data.assunto ?? null,
     });
+
+    try {
+      const serviceSupabase = await createServerSupabase();
+      await syncPendingSimuladoAnalytics(serviceSupabase, auth.user.id);
+    } catch (syncError) {
+      logger.warn('Falha ao sincronizar analytics pendentes de simulado', {
+        userId: auth.user.id,
+        error: syncError instanceof Error ? syncError.message : 'unknown',
+      });
+    }
 
     const summary = await loadSimuladoAnalyticsSummary(auth.supabase, auth.user.id, filters);
 

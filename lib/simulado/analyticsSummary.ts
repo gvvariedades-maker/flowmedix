@@ -235,6 +235,79 @@ function computeDimensionMetrics(
     .slice(0, 12);
 }
 
+async function buildEvolucaoFromRespostas(
+  supabase: SupabaseClient,
+  userId: string,
+  periodStart: Date,
+  filters: SimuladoAnalyticsFilters,
+): Promise<SimuladoEvolucaoItem[]> {
+  const { data: sessionsRaw, error: sessionsError } = await supabase
+    .from('simulado_sessions')
+    .select('id, status, modo, filtros, concluida_em, created_at')
+    .eq('user_id', userId)
+    .eq('status', 'concluido')
+    .not('concluida_em', 'is', null)
+    .gte('concluida_em', periodStart.toISOString())
+    .order('concluida_em', { ascending: false })
+    .limit(500);
+
+  if (sessionsError || !sessionsRaw?.length) return [];
+
+  const sessions = (sessionsRaw as SimuladoSessionAnalyticsRow[])
+    .map((row) => ({ ...row, modo: normalizeSessionMode(row) }))
+    .filter((row) => filters.modo === 'todos' || row.modo === filters.modo);
+
+  if (sessions.length === 0) return [];
+
+  const sessionById = new Map(
+    sessions.map((row) => [row.id, toYmd(new Date(row.concluida_em ?? row.created_at))]),
+  );
+
+  const { data: respostas, error: respostasError } = await supabase
+    .from('simulado_respostas')
+    .select('session_id, acertou, tempo_ms')
+    .eq('user_id', userId)
+    .in('session_id', [...sessionById.keys()])
+    .not('acertou', 'is', null);
+
+  if (respostasError || !respostas?.length) return [];
+
+  const evolucaoMap = new Map<
+    string,
+    { total_questoes: number; acertos: number; erros: number; tempo_total_ms: number }
+  >();
+
+  for (const row of respostas) {
+    const dataRef = sessionById.get(row.session_id);
+    if (!dataRef) continue;
+
+    const acc = evolucaoMap.get(dataRef) ?? {
+      total_questoes: 0,
+      acertos: 0,
+      erros: 0,
+      tempo_total_ms: 0,
+    };
+    acc.total_questoes += 1;
+    if (row.acertou === true) acc.acertos += 1;
+    if (row.acertou === false) acc.erros += 1;
+    acc.tempo_total_ms += row.tempo_ms ?? 0;
+    evolucaoMap.set(dataRef, acc);
+  }
+
+  return Array.from(evolucaoMap.entries())
+    .map(([data_ref, value]) => ({
+      data_ref,
+      total_questoes: value.total_questoes,
+      acertos: value.acertos,
+      erros: value.erros,
+      percentual_acerto: calculatePercentual(value.acertos, value.total_questoes),
+      tempo_total_ms: value.tempo_total_ms,
+      tempo_medio_ms:
+        value.total_questoes > 0 ? Math.round(value.tempo_total_ms / value.total_questoes) : null,
+    }))
+    .sort((a, b) => a.data_ref.localeCompare(b.data_ref));
+}
+
 export function normalizeSimuladoAnalyticsFilters(input: {
   periodoRaw: string | null;
   modoRaw: string | null;
@@ -317,7 +390,7 @@ export async function loadSimuladoAnalyticsSummary(
     });
 
   const completedSessions = sessions.filter((row) => row.status === 'concluido');
-  const totalSimulados = sessions.length;
+  const totalSimulados = completedSessions.length;
   const mediaAcerto =
     completedSessions.length > 0
       ? Number(
@@ -357,7 +430,7 @@ export async function loadSimuladoAnalyticsSummary(
     acc.tempo_total_ms += row.tempo_total_ms ?? 0;
     evolucaoMap.set(row.data_ref, acc);
   }
-  const evolucaoTemporal = Array.from(evolucaoMap.entries())
+  let evolucaoTemporal = Array.from(evolucaoMap.entries())
     .map(([data_ref, value]) => ({
       data_ref,
       total_questoes: value.total_questoes,
@@ -369,6 +442,26 @@ export async function loadSimuladoAnalyticsSummary(
         value.total_questoes > 0 ? Math.round(value.tempo_total_ms / value.total_questoes) : null,
     }))
     .sort((a, b) => a.data_ref.localeCompare(b.data_ref));
+
+  if (evolucaoTemporal.length === 0 && completedSessions.length > 0) {
+    evolucaoTemporal = await buildEvolucaoFromRespostas(supabase, userId, periodStart, filters);
+  }
+
+  let mediaAcertoFinal = mediaAcerto;
+  if (mediaAcertoFinal === null && evolucaoTemporal.length > 0) {
+    const totalRespondidas = evolucaoTemporal.reduce((acc, row) => acc + row.total_questoes, 0);
+    const totalAcertos = evolucaoTemporal.reduce((acc, row) => acc + row.acertos, 0);
+    mediaAcertoFinal = calculatePercentual(totalAcertos, totalRespondidas);
+  }
+
+  let tempoMedioMsFinal = tempoMedioMs;
+  if (tempoMedioMsFinal === null && evolucaoTemporal.length > 0) {
+    const totalRespondidas = evolucaoTemporal.reduce((acc, row) => acc + row.total_questoes, 0);
+    const totalTempo = evolucaoTemporal.reduce((acc, row) => acc + row.tempo_total_ms, 0);
+    if (totalRespondidas > 0) {
+      tempoMedioMsFinal = Math.round(totalTempo / totalRespondidas);
+    }
+  }
 
   const desempenhoPorBanca = computeDimensionMetrics(dimsRows, 'banca');
   const desempenhoPorTopico = computeDimensionMetrics(dimsRows, 'topico');
@@ -420,9 +513,9 @@ export async function loadSimuladoAnalyticsSummary(
     sessions,
     completedSessions,
     totalSimulados,
-    mediaAcerto,
+    mediaAcerto: mediaAcertoFinal,
     melhorScore,
-    tempoMedioMs,
+    tempoMedioMs: tempoMedioMsFinal,
     ultimasSessoes,
     evolucaoTemporal,
     desempenhoPorBanca,

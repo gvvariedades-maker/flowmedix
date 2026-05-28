@@ -251,7 +251,7 @@ export async function POST(request: NextRequest) {
     const sessionStatus = pendentes === 0 ? 'concluido' : 'aberto';
 
     if (sessionStatus === 'concluido') {
-      await supabase
+      const { error: finalizeError } = await supabase
         .from('simulado_sessions')
         .update({
           status: 'concluido',
@@ -260,6 +260,24 @@ export async function POST(request: NextRequest) {
         .eq('id', session_id)
         .eq('user_id', auth.user.id)
         .eq('status', 'aberto');
+
+      if (finalizeError) {
+        logger.error('Falha ao concluir sessão de simulado', finalizeError, {
+          userId: auth.user.id,
+          sessionId: session_id,
+        });
+      } else {
+        const { error: refreshError } = await supabase.rpc('refresh_simulado_session_analytics', {
+          p_session_id: session_id,
+        });
+        if (refreshError) {
+          logger.warn('Falha ao materializar analytics da sessão concluída', {
+            userId: auth.user.id,
+            sessionId: session_id,
+            message: refreshError.message,
+          });
+        }
+      }
     }
 
     const answeredRow = rows.find((row) => row.modulo_slug === modulo_slug);
