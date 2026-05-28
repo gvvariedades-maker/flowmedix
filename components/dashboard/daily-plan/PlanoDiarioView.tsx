@@ -69,6 +69,25 @@ function PlanoDiarioInfoAlgoritmo() {
   );
 }
 
+function PlanoDiarioSimuladoCta() {
+  return (
+    <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-cyan-500/25 bg-cyan-500/10 p-4">
+      <div className="space-y-1">
+        <p className="text-sm font-semibold text-cyan-200">Meta do dia: 1 simulado de 10 questões</p>
+        <p className="text-xs text-cyan-100/80">
+          Use modo treino para reforço rápido ou modo prova para simular concurso real.
+        </p>
+      </div>
+      <Button
+        asChild
+        className="rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-200 hover:bg-cyan-500/25"
+      >
+        <Link href="/simulados">Abrir Simulados</Link>
+      </Button>
+    </div>
+  );
+}
+
 function PlanoDiarioLembretesToolbar() {
   const { limparHoje, marcadosCount } = usePlanoDiarioMarcadosContext();
   if (marcadosCount === 0) return null;
@@ -172,6 +191,7 @@ function PlanoDiarioConteúdo({
 
       <div className="mx-auto max-w-3xl space-y-8 px-4 py-10 md:px-10">
         <PlanoDiarioInfoAlgoritmo />
+        <PlanoDiarioSimuladoCta />
         <PlanoDiarioLembretesToolbar />
 
         <ul className="space-y-8">

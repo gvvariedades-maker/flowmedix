@@ -2,10 +2,11 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Loader2, ChevronRight, ClipboardList } from 'lucide-react';
-import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import {
   answerSimuladoQuestion,
+  getSimuladoQuestionPayload,
   getSimuladoSession,
   SimuladoApiError,
 } from '@/lib/simulado/client';
@@ -16,14 +17,17 @@ import { Button } from '@/components/ui/button';
 import { EmptyState } from '@/components/ui/empty-state';
 import { SimuladoResumoClient } from '@/components/simulados/SimuladoResumoClient';
 import { cn } from '@/lib/utils';
-
-type QuestaoPlayerPayload = {
-  dados: LessonData;
-};
+import { sanitizeHTML } from '@/lib/validations';
+import {
+  buildDerivedQuestionHeaderLine,
+  buildQuestionSubjectLine,
+  stripLeadingQuestionEnumeration,
+} from '@/lib/questionHeader';
 
 type FeedbackState = {
   acertou: boolean;
   opcao_correta_id: string;
+  opcao_correta_texto: string | null;
   opcao_id: string;
 } | null;
 
@@ -32,6 +36,7 @@ type SimuladoRunnerClientProps = {
 };
 
 export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
+  const router = useRouter();
   const [sessionData, setSessionData] = useState<SimuladoSessionDetailResponse | null>(null);
   const [loadingSession, setLoadingSession] = useState(true);
   const [sessionError, setSessionError] = useState<string | null>(null);
@@ -46,9 +51,13 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
 
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<FeedbackState>(null);
+  const [finalFeedbackPending, setFinalFeedbackPending] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [advancing, setAdvancing] = useState(false);
+  const [questionStartedAt, setQuestionStartedAt] = useState<number>(Date.now());
+  const [liveMessage, setLiveMessage] = useState('');
+  const optionsGroupRef = useRef<HTMLDivElement | null>(null);
 
   const loadSession = useCallback(async () => {
     setLoadingSession(true);
@@ -93,6 +102,11 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
     return sessionData.questoes.find((q) => q.modulo_slug === activeSlug) ?? null;
   }, [sessionData, activeSlug]);
 
+  useEffect(() => {
+    if (!activeItem || !activeItem.respondida) return;
+    setSelectedOption(activeItem.opcao_id);
+  }, [activeItem]);
+
   const progressPct = useMemo(() => {
     if (!sessionData?.session.total_questoes) return 0;
     return Math.round(
@@ -106,18 +120,17 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
     setQuestionData(null);
     setSelectedOption(null);
     setFeedback(null);
+    setFinalFeedbackPending(false);
     setSubmitError(null);
+    setLiveMessage('');
 
     try {
-      const res = await fetchWithAuth(`/api/estudar/questao?slug=${encodeURIComponent(slug)}`);
-      const json = (await res.json()) as QuestaoPlayerPayload & { error?: string };
-      if (!res.ok) {
-        setQuestionError(json.error ?? 'Não foi possível carregar a questão.');
-        return;
-      }
+      const json = await getSimuladoQuestionPayload(slug);
       setQuestionData(json.dados);
-    } catch {
-      setQuestionError('Erro de rede ao carregar a questão.');
+    } catch (err) {
+      setQuestionError(
+        err instanceof SimuladoApiError ? err.message : 'Erro de rede ao carregar a questão.',
+      );
     } finally {
       setLoadingQuestion(false);
     }
@@ -125,8 +138,11 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
 
   useEffect(() => {
     if (!activeSlug || sessionData?.session.status === 'concluido') return;
+    setQuestionStartedAt(Date.now());
     void loadQuestion(activeSlug);
   }, [activeSlug, sessionData?.session.status, loadQuestion]);
+
+  const isTreino = sessionData?.session.modo === 'treino';
 
   const handleConfirmAnswer = async () => {
     if (!activeItem || !activeSlug || !selectedOption || submitting || feedback) return;
@@ -139,24 +155,43 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
         session_id: sessionId,
         modulo_slug: activeSlug,
         opcao_id: selectedOption,
+        tempo_ms: Math.max(0, Date.now() - questionStartedAt),
       });
 
-      setFeedback({
-        acertou: result.acertou,
-        opcao_correta_id: result.opcao_correta_id,
-        opcao_id: selectedOption,
-      });
+      if (isTreino && result.acertou !== null && result.opcao_correta_id) {
+        const correctOption = options.find((opt) => opt.id === result.opcao_correta_id);
+        setFeedback({
+          acertou: result.acertou,
+          opcao_correta_id: result.opcao_correta_id,
+          opcao_correta_texto: correctOption?.text ?? null,
+          opcao_id: selectedOption,
+        });
+        setLiveMessage(
+          result.acertou
+            ? 'Resposta correta confirmada.'
+            : `Resposta incorreta. Gabarito ${result.opcao_correta_id}${correctOption?.text ? `: ${correctOption.text}` : ''}.`,
+        );
+      } else {
+        setFeedback(null);
+        setLiveMessage('Resposta registrada. Gabarito disponível no resumo final.');
+      }
 
       const refreshed = await getSimuladoSession(sessionId);
       setSessionData(refreshed);
+      setFinalFeedbackPending(result.session_status === 'concluido' && isTreino);
 
       if (result.session_status === 'concluido') {
         return;
+      }
+      if (!isTreino) {
+        const nextSlug = refreshed.questoes.find((q) => !q.respondida)?.modulo_slug ?? null;
+        if (nextSlug) setActiveSlug(nextSlug);
       }
     } catch (err) {
       setSubmitError(
         err instanceof SimuladoApiError ? err.message : 'Erro ao registrar resposta.',
       );
+      setLiveMessage('Erro ao registrar resposta. Tente novamente.');
     } finally {
       setSubmitting(false);
     }
@@ -175,9 +210,69 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
     setAdvancing(true);
     try {
       setActiveSlug(nextSlug);
+      const nextItem = sessionData.questoes.find((q) => q.modulo_slug === nextSlug);
+      if (nextItem?.ordem) {
+        setLiveMessage(`Questão ${nextItem.ordem} carregada.`);
+      } else {
+        setLiveMessage('Próxima questão carregada.');
+      }
     } finally {
       setAdvancing(false);
     }
+  };
+
+  const options = questionData?.question_data?.options ?? [];
+  const isAnswerLocked = submitting || (!isTreino && !!activeItem?.respondida);
+  const canConfirm = !!selectedOption && !submitting && !isAnswerLocked;
+  const canAdvance = !!feedback && !advancing;
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (!questionData || loadingQuestion || submitting) return;
+      const target = event.target as HTMLElement | null;
+      const isTypingTarget =
+        target &&
+        (target.tagName === 'INPUT' ||
+          target.tagName === 'TEXTAREA' ||
+          target.isContentEditable);
+      if (isTypingTarget) return;
+
+      const key = event.key.toUpperCase();
+      if (['A', 'B', 'C', 'D', 'E'].includes(key)) {
+        const optionExists = options.some((opt) => opt.id.toUpperCase() === key);
+        if (optionExists) {
+          event.preventDefault();
+          setSelectedOption(key);
+          setLiveMessage(`Alternativa ${key} selecionada.`);
+        }
+      }
+
+      if (event.key === 'Enter' && selectedOption && !feedback) {
+        event.preventDefault();
+        void handleConfirmAnswer();
+      }
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [questionData, loadingQuestion, submitting, options, selectedOption, feedback]);
+
+  const handleOptionsKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!options.length || feedback || isAnswerLocked) return;
+    if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp' && event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') {
+      return;
+    }
+
+    event.preventDefault();
+    const currentIndex = options.findIndex((opt) => opt.id === selectedOption);
+    const nextIndex =
+      event.key === 'ArrowDown' || event.key === 'ArrowRight'
+        ? (currentIndex + 1 + options.length) % options.length
+        : (currentIndex - 1 + options.length) % options.length;
+    const nextOption = options[nextIndex];
+    if (!nextOption) return;
+    setSelectedOption(nextOption.id);
+    setLiveMessage(`Alternativa ${nextOption.id} selecionada.`);
   };
 
   if (loadingSession && !sessionData) {
@@ -199,7 +294,7 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
             action={{
               label: 'Voltar para Simulados',
               onClick: () => {
-                window.location.href = '/simulados';
+                router.push('/simulados');
               },
             }}
           />
@@ -208,7 +303,7 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
     );
   }
 
-  if (sessionData.session.status === 'concluido') {
+  if (sessionData.session.status === 'concluido' && !finalFeedbackPending) {
     return (
       <SimuladoResumoClient
         session={sessionData.session}
@@ -218,12 +313,17 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
     );
   }
 
-  const options = questionData?.question_data?.options ?? [];
-  const instruction = questionData?.question_data?.instruction ?? '';
+  const examHeaderLine = questionData?.meta
+    ? (questionData.meta.header_line?.trim() || buildDerivedQuestionHeaderLine(questionData.meta))
+    : activeItem?.meta.banca ?? '';
+  const subjectLine = questionData?.meta ? buildQuestionSubjectLine(questionData.meta) : null;
+  const textFragment = questionData?.question_data?.text_fragment ?? '';
+  const instruction = stripLeadingQuestionEnumeration(questionData?.question_data?.instruction ?? '');
   const hasPending = sessionData.questoes.some((q) => !q.respondida);
+  const showFinalFeedbackCta = finalFeedbackPending && !!feedback && !hasPending;
 
   return (
-    <div className="min-h-screen bg-[#010409] px-4 pb-safe pt-6 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#010409] px-4 pb-[8.5rem] pt-6 sm:px-6 sm:pb-safe lg:px-8">
       <div className="mx-auto max-w-3xl space-y-6">
         <PageHeader
           title="Simulado em andamento"
@@ -231,7 +331,7 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
             { label: 'Simulados', href: '/simulados' },
             { label: `Questão ${activeItem?.ordem ?? '—'}` },
           ]}
-          description={`${sessionData.resumo.respondidas} de ${sessionData.session.total_questoes} respondidas`}
+          description={`${sessionData.resumo.respondidas} de ${sessionData.session.total_questoes} respondidas · ordem aleatória`}
           descriptionClassName="text-sm text-slate-400 mt-1"
           titleClassName="text-xl font-[1000] italic tracking-tighter text-white sm:text-2xl"
         />
@@ -248,6 +348,31 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
             className="h-full rounded-full bg-cyan-400 transition-all duration-300"
             style={{ width: `${progressPct}%` }}
           />
+        </div>
+
+        <div className="rounded-xl border border-white/10 bg-white/[0.02] p-3">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+            Mapa de questões
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {sessionData.questoes.map((item) => (
+              <button
+                key={`${item.ordem}-${item.modulo_slug}`}
+                type="button"
+                onClick={() => setActiveSlug(item.modulo_slug)}
+                className={cn(
+                  'h-8 min-w-8 rounded-lg border px-2 text-xs font-semibold',
+                  activeSlug === item.modulo_slug
+                    ? 'border-cyan-500/40 bg-cyan-500/10 text-cyan-300'
+                    : item.respondida
+                      ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300'
+                      : 'border-white/10 bg-white/[0.03] text-slate-300',
+                )}
+              >
+                {item.ordem}
+              </button>
+            ))}
+          </div>
         </div>
 
         {!activeSlug || !activeItem ? (
@@ -283,45 +408,69 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
           </div>
         ) : (
           <div className="glass-panel space-y-6 border border-white/10 p-6 sm:p-8">
-            {activeItem.meta.banca && (
-              <p className="text-xs font-medium uppercase tracking-wider text-cyan-400/80">
-                {activeItem.meta.banca}
-                {activeItem.meta.topico ? ` · ${activeItem.meta.topico}` : ''}
-              </p>
+            {examHeaderLine && (
+              <div className="space-y-2 border-b border-white/10 pb-4">
+                <p className="text-xs font-medium uppercase tracking-wider text-cyan-400/80">
+                  {examHeaderLine}
+                </p>
+                {subjectLine && <p className="text-sm font-semibold text-slate-100">{subjectLine}</p>}
+              </div>
             )}
 
-            <p className="whitespace-pre-wrap text-sm leading-relaxed text-slate-200">{instruction}</p>
+            {textFragment && (
+              <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm italic text-slate-300">
+                <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(textFragment) }} />
+              </div>
+            )}
 
-            <fieldset className="space-y-3" disabled={!!feedback || submitting}>
+            <div className="text-sm leading-relaxed text-slate-200 [&_p]:mb-2 [&_p:last-child]:mb-0">
+              <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(instruction) }} />
+            </div>
+
+            <fieldset className="space-y-3" disabled={isAnswerLocked}>
               <legend className="sr-only">Alternativas</legend>
-              {options.map((opt) => {
-                const isSelected = selectedOption === opt.id;
-                const showCorrect = feedback && feedback.opcao_correta_id === opt.id;
-                const showWrong =
-                  feedback && !feedback.acertou && feedback.opcao_id === opt.id;
+              <div
+                ref={optionsGroupRef}
+                className="space-y-3"
+                role="radiogroup"
+                aria-label="Alternativas da questão"
+                onKeyDown={handleOptionsKeyDown}
+              >
+                {options.map((opt) => {
+                  const isSelected = selectedOption === opt.id;
+                  const showCorrect = feedback && feedback.opcao_correta_id === opt.id;
+                  const showWrong =
+                    feedback && !feedback.acertou && feedback.opcao_id === opt.id;
 
-                return (
-                  <button
-                    key={opt.id}
-                    type="button"
-                    onClick={() => !feedback && setSelectedOption(opt.id)}
-                    className={cn(
-                      'btn-option w-full rounded-2xl border px-4 py-3 text-left text-sm transition-colors',
-                      isSelected && !feedback && 'border-cyan-500/50 bg-cyan-500/10',
-                      showCorrect && 'border-emerald-500/50 bg-emerald-500/10',
-                      showWrong && 'border-rose-500/50 bg-rose-500/10',
-                      !isSelected && !showCorrect && !showWrong && 'border-white/10 bg-white/[0.03]',
-                    )}
-                    aria-pressed={isSelected}
-                  >
-                    <span className="mr-2 font-mono text-cyan-400/90">{opt.id})</span>
-                    {opt.text}
-                  </button>
-                );
-              })}
+                  return (
+                    <button
+                      key={opt.id}
+                      type="button"
+                      onClick={() => {
+                        if (feedback) return;
+                        setSelectedOption(opt.id);
+                        setLiveMessage(`Alternativa ${opt.id} selecionada.`);
+                      }}
+                      className={cn(
+                        'btn-option w-full rounded-2xl border px-4 py-3 text-left text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#010409]',
+                        isSelected && !feedback && 'border-cyan-500/50 bg-cyan-500/10',
+                        showCorrect && 'border-emerald-500/50 bg-emerald-500/10',
+                        showWrong && 'border-rose-500/50 bg-rose-500/10',
+                        !isSelected && !showCorrect && !showWrong && 'border-white/10 bg-white/[0.03]',
+                      )}
+                      role="radio"
+                      aria-checked={isSelected}
+                    >
+                      <span className="mr-2 font-mono text-cyan-400/90">{opt.id})</span>
+                      {opt.text}
+                    </button>
+                  );
+                })}
+              </div>
             </fieldset>
 
-            <div aria-live="polite" className="min-h-[1.25rem]">
+            <div aria-live="polite" aria-atomic="true" className="min-h-[1.25rem]">
+              <p className="sr-only">{liveMessage}</p>
               {feedback && (
                 <p
                   className={cn(
@@ -334,8 +483,14 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
                     <span className="font-normal text-slate-400">
                       {' '}
                       Gabarito: {feedback.opcao_correta_id}
+                      {feedback.opcao_correta_texto ? ` — ${feedback.opcao_correta_texto}` : ''}
                     </span>
                   )}
+                </p>
+              )}
+              {!isTreino && !feedback && activeItem?.respondida && (
+                <p className="text-sm font-medium text-emerald-400">
+                  Resposta registrada. Gabarito disponível no resumo final.
                 </p>
               )}
               {submitError && (
@@ -345,12 +500,18 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
               )}
             </div>
 
-            <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
+            <div className="hidden flex-col gap-3 sm:flex sm:flex-row sm:justify-end">
               {feedback ? (
                 <Button
                   type="button"
                   disabled={advancing}
-                  onClick={() => void handleNext()}
+                  onClick={() => {
+                    if (showFinalFeedbackCta) {
+                      setFinalFeedbackPending(false);
+                      return;
+                    }
+                    void handleNext();
+                  }}
                   className="h-11 rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25"
                 >
                   {advancing ? (
@@ -360,7 +521,7 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
                     </>
                   ) : (
                     <>
-                      Próxima questão
+                      {showFinalFeedbackCta ? 'Ver resultado' : 'Próxima questão'}
                       <ChevronRight className="ml-1 h-4 w-4" aria-hidden />
                     </>
                   )}
@@ -368,7 +529,7 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
               ) : (
                 <Button
                   type="button"
-                  disabled={!selectedOption || submitting}
+                  disabled={!canConfirm}
                   onClick={() => void handleConfirmAnswer()}
                   className="h-11 rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50"
                 >
@@ -378,11 +539,58 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
                       Confirmando…
                     </>
                   ) : (
-                    'Confirmar resposta'
+                    activeItem?.respondida && isTreino ? 'Atualizar resposta' : 'Confirmar resposta'
                   )}
                 </Button>
               )}
             </div>
+          </div>
+        )}
+
+        {!loadingQuestion && !questionError && activeSlug && activeItem && (
+          <div className="fixed inset-x-0 bottom-0 z-20 border-t border-white/10 bg-[#010409]/95 p-4 pb-safe backdrop-blur supports-[backdrop-filter]:bg-[#010409]/80 sm:hidden">
+            {feedback ? (
+              <Button
+                type="button"
+                disabled={!canAdvance}
+                onClick={() => {
+                  if (showFinalFeedbackCta) {
+                    setFinalFeedbackPending(false);
+                    return;
+                  }
+                  void handleNext();
+                }}
+                className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25"
+              >
+                {advancing ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+                    Carregando…
+                  </>
+                ) : (
+                  <>
+                    {showFinalFeedbackCta ? 'Ver resultado' : 'Próxima questão'}
+                    <ChevronRight className="ml-1 h-4 w-4" aria-hidden />
+                  </>
+                )}
+              </Button>
+            ) : (
+              <Button
+                type="button"
+                disabled={!canConfirm}
+                onClick={() => void handleConfirmAnswer()}
+                className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50"
+              >
+                {submitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+                    Confirmando…
+                  </>
+                ) : (
+                  activeItem?.respondida && isTreino ? 'Atualizar resposta' : 'Confirmar resposta'
+                )}
+              </Button>
+            )}
           </div>
         )}
 

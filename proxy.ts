@@ -71,6 +71,7 @@ export async function proxy(request: NextRequest) {
 export const config = {
   matcher: [
     '/convite/:path*',
+    '/simulados/:path*',
     '/estudar/:path*',
     '/analytics/:path*',
     '/plano-diario/:path*',

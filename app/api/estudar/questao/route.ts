@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const { slug, from, caderno_id, banca, assunto, q } = parsed.data;
+    const { slug, from, caderno_id, context, banca, assunto, q } = parsed.data;
 
     if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS') && slug === E2E_SIMULADO_SLUG) {
       recordPerformance(endpoint, method, Date.now() - requestStartedAt, true);
@@ -80,7 +80,10 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Questão não encontrada' }, { status: 404 });
     }
 
-    return NextResponse.json(result.payload, {
+    const responsePayload =
+      context === 'simulado' ? { dados: result.payload.dados } : result.payload;
+
+    return NextResponse.json(responsePayload, {
       headers: { 'Cache-Control': 'private, no-store' },
     });
   } catch (error) {

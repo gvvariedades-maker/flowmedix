@@ -10,6 +10,7 @@ const SessionIdSchema = z.string().uuid('ID de sessão inválido');
 type SimuladoSessionRow = {
   id: string;
   status: 'aberto' | 'concluido' | 'cancelado';
+  modo: 'treino' | 'prova';
   total_questoes: number;
   filtros: Record<string, unknown>;
   created_at: string;
@@ -23,6 +24,7 @@ type SimuladoRespostaSummaryRow = {
   opcao_correta_id: string | null;
   acertou: boolean | null;
   respondida_em: string | null;
+  tempo_ms: number | null;
   modulos_estudo: {
     banca: string | null;
     titulo_aula: string | null;
@@ -81,7 +83,7 @@ export async function GET(
 
     const { data: session, error: sessionError } = await supabase
       .from('simulado_sessions')
-      .select('id, status, total_questoes, filtros, created_at, concluida_em')
+      .select('id, status, modo, total_questoes, filtros, created_at, concluida_em')
       .eq('id', sessionId)
       .eq('user_id', user.id)
       .maybeSingle<SimuladoSessionRow>();
@@ -108,6 +110,7 @@ export async function GET(
         opcao_correta_id,
         acertou,
         respondida_em,
+        tempo_ms,
         modulos_estudo (
           banca,
           titulo_aula,
@@ -137,6 +140,7 @@ export async function GET(
     let respondidas = 0;
     let acertos = 0;
     let erros = 0;
+    let tempoTotalMs = 0;
 
     const questoes = rows.map((row) => {
       const respondida = row.acertou !== null;
@@ -144,6 +148,7 @@ export async function GET(
         respondidas += 1;
         if (row.acertou) acertos += 1;
         else erros += 1;
+        tempoTotalMs += row.tempo_ms ?? 0;
       }
 
       const base = {
@@ -159,16 +164,19 @@ export async function GET(
 
       return {
         ...base,
-        acertou: row.acertou,
+        acertou: session.modo === 'prova' && session.status === 'aberto' ? false : row.acertou,
         opcao_id: row.opcao_id,
-        opcao_correta_id: row.opcao_correta_id,
+        opcao_correta_id:
+          session.modo === 'prova' && session.status === 'aberto' ? null : row.opcao_correta_id,
         respondida_em: row.respondida_em,
+        tempo_ms: row.tempo_ms,
       };
     });
 
     const pendentes = session.total_questoes - respondidas;
     const percentualAcerto =
       respondidas > 0 ? Math.round((acertos / respondidas) * 100) : 0;
+    const tempoMedioMs = respondidas > 0 ? Math.round(tempoTotalMs / respondidas) : 0;
 
     return NextResponse.json({
       session,
@@ -178,6 +186,8 @@ export async function GET(
         acertos,
         erros,
         percentual_acerto: percentualAcerto,
+        tempo_total_ms: tempoTotalMs,
+        tempo_medio_ms: tempoMedioMs,
       },
       questoes,
     });

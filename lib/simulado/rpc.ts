@@ -3,6 +3,7 @@ import { createServerSupabase } from '@/lib/supabase/server';
 import { logger } from '@/lib/logger';
 
 export const SIMULADO_POOL_RPC = 'get_simulado_question_pool' as const;
+export const SIMULADO_POOL_COUNT_RPC = 'get_simulado_question_pool_count' as const;
 
 const SimuladoPoolItemSchema = z.object({
   modulo_id: z.string().uuid(),
@@ -15,6 +16,15 @@ export type SimuladoPoolItem = z.infer<typeof SimuladoPoolItemSchema>;
 export type FetchSimuladoPoolRpcParams = {
   userId: string;
   quantidade: number;
+  filters?: {
+    banca?: string;
+    assunto?: string;
+    q?: string;
+  };
+};
+
+export type FetchSimuladoPoolCountRpcParams = {
+  userId: string;
   filters?: {
     banca?: string;
     assunto?: string;
@@ -53,6 +63,40 @@ export async function fetchSimuladoQuestionPoolFromRpc(
       issues: parsed.error.issues.length,
     });
     throw new Error('Resposta RPC get_simulado_question_pool inválida');
+  }
+
+  return parsed.data;
+}
+
+export async function fetchSimuladoQuestionPoolCountFromRpc(
+  params: FetchSimuladoPoolCountRpcParams,
+): Promise<number> {
+  const { userId, filters = {} } = params;
+  const supabase = await createServerSupabase();
+
+  const { data, error } = await supabase.rpc(SIMULADO_POOL_COUNT_RPC, {
+    p_user_id: userId,
+    p_banca: filters.banca?.trim() || null,
+    p_assunto: filters.assunto?.trim() || null,
+    p_q: filters.q?.trim() || null,
+  });
+
+  if (error) {
+    logger.warn('RPC get_simulado_question_pool_count falhou', {
+      userId,
+      code: error.code,
+      message: error.message,
+    });
+    throw error;
+  }
+
+  const parsed = z.coerce.number().int().min(0).safeParse(data);
+  if (!parsed.success) {
+    logger.warn('RPC get_simulado_question_pool_count payload inválido', {
+      userId,
+      dataType: typeof data,
+    });
+    throw new Error('Resposta RPC get_simulado_question_pool_count inválida');
   }
 
   return parsed.data;

@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   ArrowRight,
   CheckCircle2,
@@ -20,6 +21,7 @@ import type {
 } from '@/lib/simulado/types';
 import { isSimuladoQuestaoRespondida } from '@/lib/simulado/types';
 import { cn } from '@/lib/utils';
+import { createSimuladoSession, SimuladoApiError } from '@/lib/simulado/client';
 
 type SimuladoResumoClientProps = {
   session: SimuladoSessionSummary;
@@ -129,6 +131,10 @@ function QuestaoRevisaoItem({ item }: { item: SimuladoQuestaoItem }) {
 }
 
 export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResumoClientProps) {
+  const router = useRouter();
+  const [filtro, setFiltro] = useState<'todos' | 'erros' | 'acertos'>('todos');
+  const [retryingErrors, setRetryingErrors] = useState(false);
+  const [retryError, setRetryError] = useState<string | null>(null);
   const dataConclusao = session.concluida_em ?? session.created_at;
   const dataFormatada = new Date(dataConclusao).toLocaleDateString('pt-BR', {
     day: '2-digit',
@@ -143,6 +149,38 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
   }, [resumo]);
 
   const metricCols = resumo.pendentes > 0 ? 4 : 3;
+  const tempoTotalMin = Math.round((resumo.tempo_total_ms || 0) / 60000);
+  const tempoMedioSeg = Math.round((resumo.tempo_medio_ms || 0) / 1000);
+  const questoesFiltradas = useMemo(() => {
+    if (filtro === 'todos') return questoes;
+    return questoes.filter((item) => {
+      if (!isSimuladoQuestaoRespondida(item)) return false;
+      return filtro === 'erros' ? !item.acertou : item.acertou;
+    });
+  }, [filtro, questoes]);
+
+  async function handleRetryErrors() {
+    setRetryError(null);
+    setRetryingErrors(true);
+    try {
+      const response = await createSimuladoSession({
+        quantidade: Math.max(1, resumo.erros),
+        modo: 'treino',
+        from_session_id: session.id,
+        only_errors: true,
+        forcar_novo: true,
+      });
+      router.push(`/simulados/${response.session.id}`);
+    } catch (error) {
+      const message =
+        error instanceof SimuladoApiError
+          ? error.message
+          : 'Não foi possível criar simulado com erros.';
+      setRetryError(message);
+    } finally {
+      setRetryingErrors(false);
+    }
+  }
 
   return (
     <div className="min-h-screen bg-[#010409] px-4 pb-safe pt-6 sm:px-6 lg:px-8">
@@ -189,7 +227,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
           <div
             className={cn(
               'grid w-full max-w-md gap-6 text-center',
-              metricCols === 4 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-3',
+              metricCols === 4 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-2 sm:grid-cols-4',
             )}
           >
             <div>
@@ -203,6 +241,14 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
             <div>
               <p className="text-2xl font-bold text-slate-200">{resumo.respondidas}</p>
               <p className="text-xs uppercase tracking-wider text-slate-500">Respondidas</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-cyan-300">{tempoTotalMin}m</p>
+              <p className="text-xs uppercase tracking-wider text-slate-500">Tempo total</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-cyan-300">{tempoMedioSeg}s</p>
+              <p className="text-xs uppercase tracking-wider text-slate-500">Média/questão</p>
             </div>
             {resumo.pendentes > 0 && (
               <div>
@@ -222,17 +268,39 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
               Revisão por questão
             </h2>
             <p className="text-xs text-slate-600">
-              {questoes.length} {questoes.length === 1 ? 'item' : 'itens'}
+              {questoesFiltradas.length} {questoesFiltradas.length === 1 ? 'item' : 'itens'}
             </p>
           </div>
 
-          {questoes.length === 0 ? (
+          <div className="mb-4 flex flex-wrap gap-2">
+            {[
+              { id: 'todos', label: 'Todos' },
+              { id: 'erros', label: 'Só erros' },
+              { id: 'acertos', label: 'Só acertos' },
+            ].map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => setFiltro(item.id as typeof filtro)}
+                className={cn(
+                  'rounded-lg border px-3 py-1.5 text-xs font-semibold',
+                  filtro === item.id
+                    ? 'border-cyan-500/40 bg-cyan-500/15 text-cyan-300'
+                    : 'border-white/10 bg-white/[0.03] text-slate-300',
+                )}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+
+          {questoesFiltradas.length === 0 ? (
             <p className="rounded-2xl border border-white/10 bg-slate-900/60 p-6 text-center text-sm text-slate-400">
-              Nenhuma questão registrada nesta sessão.
+              Nenhuma questão para o filtro selecionado.
             </p>
           ) : (
             <ul className="space-y-3">
-              {questoes.map((item) => (
+              {questoesFiltradas.map((item) => (
                 <QuestaoRevisaoItem key={`${item.ordem}-${item.modulo_slug}`} item={item} />
               ))}
             </ul>
@@ -240,16 +308,36 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
         </section>
 
         <div className="flex justify-center pb-8">
-          <Button
-            asChild
-            className="h-12 rounded-2xl border border-cyan-500/40 bg-cyan-500/15 px-8 text-cyan-300 hover:bg-cyan-500/25"
-          >
-            <Link href="/simulados">
+          <div className="flex flex-wrap justify-center gap-3">
+            <Button
+              type="button"
+              onClick={() => void handleRetryErrors()}
+              disabled={retryingErrors || resumo.erros === 0}
+              className="h-12 rounded-2xl border border-cyan-500/40 bg-cyan-500/15 px-6 text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50"
+            >
               <ClipboardList className="mr-2 h-4 w-4" aria-hidden />
-              Novo simulado
-            </Link>
-          </Button>
+              {retryingErrors ? 'Criando...' : 'Refazer só erros'}
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => window.print()}
+              className="h-12 rounded-2xl border-white/15 bg-transparent px-6 text-slate-200 hover:bg-white/5"
+            >
+              Exportar resultado (PDF)
+            </Button>
+            <Button
+              asChild
+              className="h-12 rounded-2xl border border-cyan-500/40 bg-cyan-500/15 px-6 text-cyan-300 hover:bg-cyan-500/25"
+            >
+              <Link href="/simulados">
+                <ClipboardList className="mr-2 h-4 w-4" aria-hidden />
+                Novo simulado
+              </Link>
+            </Button>
+          </div>
         </div>
+        {retryError && <p className="text-center text-sm text-rose-400">{retryError}</p>}
       </div>
     </div>
   );

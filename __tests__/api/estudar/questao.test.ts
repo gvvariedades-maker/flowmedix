@@ -139,6 +139,30 @@ describe('GET /api/estudar/questao', () => {
     expect(mockRecordPerformance).toHaveBeenCalledWith('/api/estudar/questao', 'GET', expect.any(Number), true);
   });
 
+  it('retorna payload enxuto quando context=simulado', async () => {
+    mockBuildEstudarQuestaoPlayerPayload.mockResolvedValue({
+      status: 'ok',
+      payload: payloadOk,
+    });
+
+    const response = await GET(makeRequest({ slug: SLUG, context: 'simulado' }));
+
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ dados: payloadOk.dados });
+    expect(mockBuildEstudarQuestaoPlayerPayload).toHaveBeenCalledWith({
+      slug: SLUG,
+      userId: USER_ID,
+      searchParams: {
+        from: undefined,
+        caderno_id: undefined,
+        banca: undefined,
+        assunto: undefined,
+        q: undefined,
+      },
+      supabase: expect.any(Object),
+    });
+  });
+
   it('retorna 500 quando ocorre erro inesperado no builder', async () => {
     mockBuildEstudarQuestaoPlayerPayload.mockRejectedValue(new Error('boom'));
 

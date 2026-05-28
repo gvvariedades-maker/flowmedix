@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { ChevronDown, ClipboardList, Loader2, SearchX } from 'lucide-react';
+import { ChevronDown, ClipboardList, Loader2, PlayCircle, SearchX } from 'lucide-react';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { PageHeader } from '@/components/ui/page-header';
 import { Button } from '@/components/ui/button';
@@ -21,11 +21,18 @@ import {
   SELECT_ITEM_DARK,
   SELECT_TRIGGER_DARK_PANEL,
 } from '@/components/dashboard/dashboard-select-dark';
-import { createSimuladoSession, SimuladoApiError } from '@/lib/simulado/client';
+import {
+  createSimuladoSession,
+  getSimuladoPoolCount,
+  getOpenSimuladoSession,
+  SimuladoApiError,
+} from '@/lib/simulado/client';
 import { SimuladoCreateSessionSchema } from '@/lib/validations';
 import type { ZodIssue } from 'zod';
 import type { VitrineFacets } from '@/lib/vitrine/types';
 import { cn } from '@/lib/utils';
+import type { SimuladoOpenSessionResponse } from '@/lib/simulado/types';
+import type { SimuladoModo } from '@/lib/simulado/types';
 
 const FILTER_ALL = FILTER_ALL_VALUE;
 
@@ -42,6 +49,7 @@ export function SimuladosSetupClient() {
   const [banca, setBanca] = useState('');
   const [assunto, setAssunto] = useState('');
   const [q, setQ] = useState('');
+  const [modo, setModo] = useState<SimuladoModo>('treino');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [noQuestions, setNoQuestions] = useState(false);
@@ -50,10 +58,39 @@ export function SimuladosSetupClient() {
   const [assuntos, setAssuntos] = useState<string[]>([]);
   const [facetsLoading, setFacetsLoading] = useState(true);
   const [filtrosSelectMontados, setFiltrosSelectMontados] = useState(false);
+  const [openSession, setOpenSession] = useState<SimuladoOpenSessionResponse['session']>(null);
+  const [loadingOpenSession, setLoadingOpenSession] = useState(true);
+  const [poolCount, setPoolCount] = useState<number | null>(null);
+  const [poolLoading, setPoolLoading] = useState(false);
+  const [freemiumStatus, setFreemiumStatus] = useState<{
+    isPro: boolean;
+    limiteAtingido: boolean;
+    resetEm: string;
+  } | null>(null);
 
   useEffect(() => {
     const id = requestAnimationFrame(() => setFiltrosSelectMontados(true));
     return () => cancelAnimationFrame(id);
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    async function loadOpenSession() {
+      setLoadingOpenSession(true);
+      try {
+        const response = await getOpenSimuladoSession();
+        if (cancelled) return;
+        setOpenSession(response.session);
+      } catch {
+        if (!cancelled) setOpenSession(null);
+      } finally {
+        if (!cancelled) setLoadingOpenSession(false);
+      }
+    }
+    void loadOpenSession();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   useEffect(() => {
@@ -91,6 +128,53 @@ export function SimuladosSetupClient() {
     };
   }, [banca]);
 
+  useEffect(() => {
+    let cancelled = false;
+    async function loadFreemiumStatus() {
+      try {
+        const res = await fetchWithAuth('/api/freemium/status');
+        if (!res.ok) return;
+        const data = (await res.json()) as { isPro: boolean; limiteAtingido: boolean; resetEm: string };
+        if (!cancelled) setFreemiumStatus(data);
+      } catch {
+        // noop
+      }
+    }
+    void loadFreemiumStatus();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    const handle = window.setTimeout(async () => {
+      setPoolLoading(true);
+      try {
+        const data = await getSimuladoPoolCount({
+          ...(banca ? { banca } : {}),
+          ...(assunto ? { assunto } : {}),
+          ...(q.trim() ? { q: q.trim() } : {}),
+        });
+        if (!cancelled) setPoolCount(data.estimated_count);
+      } catch {
+        if (!cancelled) setPoolCount(null);
+      } finally {
+        if (!cancelled) setPoolLoading(false);
+      }
+    }, 250);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(handle);
+    };
+  }, [banca, assunto, q]);
+
+  const freeLimitReached = useMemo(
+    () => !!freemiumStatus && !freemiumStatus.isPro && freemiumStatus.limiteAtingido,
+    [freemiumStatus],
+  );
+
   const clearFilters = () => {
     setBanca('');
     setAssunto('');
@@ -99,17 +183,18 @@ export function SimuladosSetupClient() {
     setNoQuestions(false);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const startSession = async (opts?: { forcarNovo?: boolean }) => {
     setLoading(true);
     setError(null);
     setNoQuestions(false);
 
     const parsed = SimuladoCreateSessionSchema.safeParse({
       quantidade,
+      modo,
       ...(banca ? { banca } : {}),
       ...(assunto ? { assunto } : {}),
       ...(q.trim() ? { q: q.trim() } : {}),
+      ...(opts?.forcarNovo ? { forcar_novo: true } : {}),
     });
 
     if (!parsed.success) {
@@ -134,6 +219,8 @@ export function SimuladosSetupClient() {
                 .join(' ')
             : null;
           setError(fieldMsg || err.message);
+        } else if (err.status === 403) {
+          setError('Plano gratuito: 1 simulado por dia. Faça upgrade para liberar ilimitado.');
         } else {
           setError(err.message);
         }
@@ -143,6 +230,11 @@ export function SimuladosSetupClient() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await startSession();
   };
 
   return (
@@ -156,16 +248,81 @@ export function SimuladosSetupClient() {
         />
 
         <form
-          onSubmit={handleSubmit}
+          onSubmit={(e) => void handleSubmit(e)}
           className="glass-panel space-y-6 border border-white/10 p-6 sm:p-8"
           aria-busy={loading}
         >
+          {loadingOpenSession ? (
+            <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-slate-400">
+              <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+              Verificando sessão em andamento...
+            </div>
+          ) : openSession ? (
+            <div className="space-y-3 rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-4">
+              <p className="text-sm text-slate-200">
+                Você tem um simulado em andamento ({openSession.modo}) com {openSession.total_questoes}{' '}
+                questões.
+              </p>
+              <div className="flex flex-col gap-2 sm:flex-row">
+                <Button
+                  type="button"
+                  onClick={() => router.push(`/simulados/${openSession.id}`)}
+                  className="h-10 rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25"
+                >
+                  <PlayCircle className="mr-2 h-4 w-4" aria-hidden />
+                  Continuar simulado
+                </Button>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  disabled={loading}
+                  onClick={() => void startSession({ forcarNovo: true })}
+                  className="h-10 rounded-xl border border-white/15 text-slate-300 hover:bg-white/5"
+                >
+                  Iniciar novo simulado
+                </Button>
+              </div>
+            </div>
+          ) : null}
+
           <div className="flex items-center gap-3 rounded-2xl border border-cyan-500/20 bg-cyan-500/5 px-4 py-3">
             <ClipboardList className="h-5 w-5 shrink-0 text-cyan-400" aria-hidden />
             <p className="text-sm text-slate-300">
               Filtros opcionais refinam o pool. Sem filtros, o simulado usa questões acessíveis no seu
               plano.
             </p>
+          </div>
+
+          <div className="space-y-3 rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <p className="text-sm font-medium text-slate-200">Modo do simulado</p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <button
+                type="button"
+                onClick={() => setModo('treino')}
+                className={cn(
+                  'rounded-xl border px-4 py-3 text-left text-sm',
+                  modo === 'treino'
+                    ? 'border-cyan-500/40 bg-cyan-500/10 text-cyan-200'
+                    : 'border-white/10 bg-white/[0.02] text-slate-300',
+                )}
+              >
+                <span className="block font-semibold">Treino</span>
+                <span className="text-xs text-slate-400">Feedback imediato com gabarito por questão.</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setModo('prova')}
+                className={cn(
+                  'rounded-xl border px-4 py-3 text-left text-sm',
+                  modo === 'prova'
+                    ? 'border-cyan-500/40 bg-cyan-500/10 text-cyan-200'
+                    : 'border-white/10 bg-white/[0.02] text-slate-300',
+                )}
+              >
+                <span className="block font-semibold">Prova</span>
+                <span className="text-xs text-slate-400">Gabarito liberado apenas no resumo final.</span>
+              </button>
+            </div>
           </div>
 
           <div className="space-y-2">
@@ -184,6 +341,25 @@ export function SimuladosSetupClient() {
             />
             <p className="text-xs text-slate-500">Entre 1 e 100 questões (padrão: 20).</p>
           </div>
+
+          <div className="rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 text-sm text-slate-300">
+            {poolLoading ? (
+              <span>Estimando pool de questões...</span>
+            ) : poolCount !== null ? (
+              <span>
+                ~{poolCount} questões disponíveis com os filtros atuais.
+              </span>
+            ) : (
+              <span>Não foi possível estimar o pool com os filtros atuais.</span>
+            )}
+          </div>
+
+          {freeLimitReached && (
+            <div className="rounded-xl border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-sm text-amber-200">
+              Plano gratuito: limite de 1 simulado por dia atingido. Novo acesso em{' '}
+              {new Date(freemiumStatus!.resetEm).toLocaleString('pt-BR')}.
+            </div>
+          )}
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
@@ -306,7 +482,7 @@ export function SimuladosSetupClient() {
 
           <Button
             type="submit"
-            disabled={loading}
+            disabled={loading || freeLimitReached}
             className={cn(
               'h-12 w-full rounded-2xl text-base font-semibold',
               'border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25',
@@ -318,7 +494,7 @@ export function SimuladosSetupClient() {
                 Montando simulado…
               </>
             ) : (
-              'Iniciar simulado'
+              openSession ? 'Iniciar novo simulado' : 'Iniciar simulado'
             )}
           </Button>
         </form>

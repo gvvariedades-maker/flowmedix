@@ -10,6 +10,7 @@ type SessionState = {
   session: {
     id: string;
     status: SessionStatus;
+    modo: 'treino' | 'prova';
     total_questoes: number;
     filtros: Record<string, unknown>;
     created_at: string;
@@ -31,6 +32,8 @@ function buildSummary(state: SessionState) {
     acertos,
     erros: 0,
     percentual_acerto: respondidas > 0 ? Math.round((acertos / respondidas) * 100) : 0,
+    tempo_total_ms: state.answered ? 45000 : 0,
+    tempo_medio_ms: state.answered ? 45000 : 0,
   };
 }
 
@@ -62,6 +65,7 @@ function buildQuestoes(state: SessionState) {
       opcao_id: state.opcao_id,
       opcao_correta_id: 'A',
       respondida_em: new Date().toISOString(),
+      tempo_ms: 45000,
     },
   ];
 }
@@ -70,12 +74,13 @@ export function resetE2eSimuladoStore() {
   store.clear();
 }
 
-export function createE2eSimuladoSession(quantidade: number) {
+export function createE2eSimuladoSession(quantidade: number, modo: 'treino' | 'prova' = 'treino') {
   const total = Math.min(Math.max(quantidade, 1), 1);
   const state: SessionState = {
     session: {
       id: E2E_SIMULADO_SESSION_ID,
       status: 'aberto',
+      modo,
       total_questoes: total,
       filtros: { e2e: true, requested: quantidade, selected: total },
       created_at: new Date().toISOString(),
@@ -92,6 +97,7 @@ export function createE2eSimuladoSession(quantidade: number) {
       id: state.session.id,
       total_questoes: state.session.total_questoes,
       status: state.session.status,
+      modo: state.session.modo,
       created_at: state.session.created_at,
     },
     questoes: [{ modulo_slug: E2E_SIMULADO_SLUG, ordem: 1 }],
@@ -125,8 +131,8 @@ export function answerE2eSimuladoQuestion(
 
   return {
     success: true as const,
-    acertou,
-    opcao_correta_id: 'A',
+    acertou: state.session.modo === 'treino' ? acertou : null,
+    opcao_correta_id: state.session.modo === 'treino' ? 'A' : null,
     session_status: 'concluido' as const,
   };
 }

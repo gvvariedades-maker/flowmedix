@@ -1,6 +1,7 @@
 import {
   answerSimuladoQuestion,
   createSimuladoSession,
+  getOpenSimuladoSession,
   getSimuladoSession,
   SimuladoApiError,
 } from '@/lib/simulado/client';
@@ -33,6 +34,7 @@ describe('lib/simulado/client', () => {
           id: '11111111-1111-1111-1111-111111111111',
           total_questoes: 20,
           status: 'aberto',
+          modo: 'treino',
           created_at: '2026-05-27T00:00:00.000Z',
         },
         questoes: [{ modulo_slug: 'questao-a', ordem: 1 }],
@@ -41,6 +43,7 @@ describe('lib/simulado/client', () => {
 
     const result = await createSimuladoSession({
       quantidade: 20,
+      modo: 'treino',
       banca: 'FGV',
       assunto: 'Urgências',
       q: 'reanimação',
@@ -51,6 +54,7 @@ describe('lib/simulado/client', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         quantidade: 20,
+        modo: 'treino',
         banca: 'FGV',
         assunto: 'Urgências',
         q: 'reanimação',
@@ -85,12 +89,21 @@ describe('lib/simulado/client', () => {
           session: {
             id: '22222222-2222-2222-2222-222222222222',
             status: 'aberto',
+            modo: 'treino',
             total_questoes: 2,
             filtros: {},
             created_at: '2026-05-27T00:00:00.000Z',
             concluida_em: null,
           },
-          resumo: { respondidas: 1, pendentes: 1, acertos: 1, erros: 0, percentual_acerto: 100 },
+          resumo: {
+            respondidas: 1,
+            pendentes: 1,
+            acertos: 1,
+            erros: 0,
+            percentual_acerto: 100,
+            tempo_total_ms: 30000,
+            tempo_medio_ms: 30000,
+          },
           questoes: [],
         }),
       )
@@ -126,6 +139,28 @@ describe('lib/simulado/client', () => {
     expect(session.session.status).toBe('aberto');
     expect(answer.opcao_correta_id).toBe('B');
   });
+
+  it('consulta sessão aberta no setup', async () => {
+    mockFetchWithAuth.mockResolvedValue(
+      jsonResponse({
+        has_open_session: true,
+        session: {
+          id: 'dddddddd-dddd-4ddd-8ddd-dddddddddddd',
+          total_questoes: 20,
+          status: 'aberto',
+          modo: 'treino',
+          created_at: '2026-05-27T00:00:00.000Z',
+          filtros: {},
+        },
+      }),
+    );
+
+    const result = await getOpenSimuladoSession();
+
+    expect(mockFetchWithAuth).toHaveBeenCalledWith('/api/simulado/sessions');
+    expect(result.has_open_session).toBe(true);
+    expect(result.session?.id).toBe('dddddddd-dddd-4ddd-8ddd-dddddddddddd');
+  });
 });
 
 describe('lib/simulado/types guards', () => {
@@ -145,6 +180,7 @@ describe('lib/simulado/types guards', () => {
       opcao_id: 'A',
       opcao_correta_id: 'A',
       respondida_em: '2026-05-27T00:00:00.000Z',
+      tempo_ms: 30000,
     };
 
     expect(isSimuladoQuestaoRespondida(naoRespondida)).toBe(false);

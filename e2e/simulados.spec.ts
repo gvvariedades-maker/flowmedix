@@ -11,18 +11,32 @@ import {
 test.describe('Modo Simulado (aluno)', () => {
   test.describe.configure({ mode: 'serial' });
 
-  test('configuração → runner → resumo após responder', async ({ page }) => {
-    await page.goto('/simulados', { waitUntil: 'domcontentloaded' });
+  test('runner retoma sessão em andamento ao voltar para URL', async ({ page, request }) => {
+    const createRes = await request.post('/api/simulado/sessions', { data: { quantidade: 1 } });
+    expect(createRes.ok()).toBeTruthy();
+    const createPayload = (await createRes.json()) as { session?: { id?: string } };
+    const sessionId = createPayload.session?.id ?? E2E_SIMULADO_SESSION_ID;
 
-    await expect(page.getByRole('heading', { name: 'Simulados' })).toBeVisible({
-      timeout: 15_000,
-    });
-
-    await page.getByRole('button', { name: 'Iniciar simulado' }).click();
-
-    await page.waitForURL(new RegExp(`/simulados/${E2E_SIMULADO_SESSION_ID}$`), {
+    await page.goto(`/simulados/${sessionId}`, { waitUntil: 'domcontentloaded' });
+    await expect(page.getByRole('heading', { name: 'Simulado em andamento' })).toBeVisible({
       timeout: 30_000,
     });
+    await expect(page.getByText(/0 de 1 respondidas/i)).toBeVisible();
+
+    await page.goto('/estudar', { waitUntil: 'domcontentloaded' });
+    await page.goto(`/simulados/${sessionId}`, { waitUntil: 'domcontentloaded' });
+    await expect(page.getByRole('heading', { name: 'Simulado em andamento' })).toBeVisible({
+      timeout: 30_000,
+    });
+  });
+
+  test('runner mostra feedback final antes do resumo', async ({ page, request }) => {
+    const createRes = await request.post('/api/simulado/sessions', { data: { quantidade: 1 } });
+    expect(createRes.ok()).toBeTruthy();
+    const createPayload = (await createRes.json()) as { session?: { id?: string } };
+    const sessionId = createPayload.session?.id ?? E2E_SIMULADO_SESSION_ID;
+
+    await page.goto(`/simulados/${sessionId}`, { waitUntil: 'domcontentloaded' });
     await expect(page.getByRole('heading', { name: 'Simulado em andamento' })).toBeVisible({
       timeout: 15_000,
     });
@@ -31,14 +45,40 @@ test.describe('Modo Simulado (aluno)', () => {
       page.getByText('Paciente em parada cardiorrespiratória. Qual a primeira conduta?'),
     ).toBeVisible({ timeout: 30_000 });
 
-    await page.getByRole('button', { name: /A\).*compressões torácicas/i }).click();
+    await page.getByRole('radio', { name: /A\).*compressões torácicas/i }).click();
     await page.getByRole('button', { name: 'Confirmar resposta' }).click();
 
+    await expect(page.getByText('Resposta correta!')).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByRole('button', { name: 'Ver resultado' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Simulado concluído' })).not.toBeVisible();
+
+    await page.getByRole('button', { name: 'Ver resultado' }).click();
     await expect(page.getByRole('heading', { name: 'Simulado concluído' })).toBeVisible({
       timeout: 15_000,
     });
     await expect(page.getByText('100%', { exact: true })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Novo simulado' }).first()).toBeVisible();
+  });
+
+  test('mobile mantém CTA fixo acessível durante resposta', async ({ page, request }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    const createRes = await request.post('/api/simulado/sessions', { data: { quantidade: 1 } });
+    expect(createRes.ok()).toBeTruthy();
+    const createPayload = (await createRes.json()) as { session?: { id?: string } };
+    const sessionId = createPayload.session?.id ?? E2E_SIMULADO_SESSION_ID;
+
+    await page.goto(`/simulados/${sessionId}`, { waitUntil: 'domcontentloaded' });
+    await expect(page.getByRole('heading', { name: 'Simulado em andamento' })).toBeVisible({
+      timeout: 15_000,
+    });
+
+    await expect(page.getByRole('button', { name: 'Confirmar resposta' })).toBeVisible();
+    await page.getByRole('radio', { name: /A\).*compressões torácicas/i }).click();
+    await page.getByRole('button', { name: 'Confirmar resposta' }).click();
+
+    await expect(page.getByRole('button', { name: 'Ver resultado' })).toBeVisible({
+      timeout: 15_000,
+    });
   });
 
   test('retoma sessão concluída pela URL (refresh)', async ({ page, request }) => {
