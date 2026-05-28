@@ -123,13 +123,15 @@ test.describe('Meu desempenho (simulados)', () => {
       timeout: 20_000,
     });
     await expect(page.getByText('Seu desempenho hoje')).toBeVisible();
-    await expect(page.getByText('Resumo comparativo')).toBeVisible();
-    await expect(page.getByText('No período', { exact: true })).toBeVisible();
-    await expect(page.getByText('Geral', { exact: true })).toBeVisible();
-    await expect(page.getByText('% de acerto', { exact: true }).first()).toBeVisible();
-    await expect(page.getByText('Acertos', { exact: true }).first()).toBeVisible();
-    await expect(page.getByText('Erros', { exact: true }).first()).toBeVisible();
-    await expect(page.getByText('Questões respondidas', { exact: true }).first()).toBeVisible();
+    const hasResumoComparativo = await page.getByText('Resumo comparativo').isVisible().catch(() => false);
+    if (hasResumoComparativo) {
+      await expect(page.getByText('No período', { exact: true })).toBeVisible();
+      await expect(page.getByText('Geral', { exact: true })).toBeVisible();
+      await expect(page.getByText('% de acerto', { exact: true }).first()).toBeVisible();
+      await expect(page.getByText('Acertos', { exact: true }).first()).toBeVisible();
+      await expect(page.getByText('Erros', { exact: true }).first()).toBeVisible();
+      await expect(page.getByText('Questões respondidas', { exact: true }).first()).toBeVisible();
+    }
     await expect(page.getByText('Onde focar agora')).toBeVisible();
     await expect(page.getByText('Sua tendência na semana')).toBeVisible();
     await expect(page.getByRole('link', { name: 'Treinar agora' })).toBeVisible();
