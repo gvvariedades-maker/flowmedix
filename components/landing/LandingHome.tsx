@@ -51,7 +51,7 @@ type IconCard = {
 };
 
 const trustSignals = [
-  '+4.000 questões de concurso',
+  'Mais de 5.000 questões de concurso',
   'EBSERH e prefeituras',
   'Só para Técnico em Enfermagem',
   'NeuroSlides após cada questão',
@@ -176,7 +176,7 @@ const faqs = [
   {
     question: 'Quantas questões tem disponíveis?',
     answer:
-      'Hoje o banco conta com mais de 4.000 questões de concursos reais de EBSERH e prefeituras, focadas no cargo de Técnico em Enfermagem. O banco cresce continuamente — a meta é chegar a 10.000 questões.',
+      'Hoje o banco conta com mais de 5.000 questões de concursos reais de EBSERH e prefeituras, focadas no cargo de Técnico em Enfermagem. O banco cresce continuamente com novas provas e bancas.',
   },
   {
     question: 'Preciso já estar avançado nos estudos?',

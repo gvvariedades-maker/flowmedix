@@ -292,7 +292,7 @@ function Hero() {
                   animation: 'avantLpPulse 2s infinite',
                 }}
               />
-              4.000 questões reais · 16.000 NeuroSlides · só para técnico
+              Mais de 5.000 questões reais · 16.000 NeuroSlides · só para técnico
             </div>
 
             <h1
@@ -1030,7 +1030,7 @@ function Fundador() {
 
 function PovaSocial() {
   const stats: StatItem[] = [
-    { n: '4.000+', l: 'questões reais de técnico', c: C.cyan },
+    { n: '5.000+', l: 'questões reais de técnico', c: C.cyan },
     { n: '16.000+', l: 'NeuroSlides disponíveis', c: C.emerald },
     { n: '4', l: 'slides por questão — sempre', c: '#a855f7' },
   ];
@@ -1101,7 +1101,7 @@ function PovaSocial() {
 
 function Oferta() {
   const features: Array<[string, string, string]> = [
-    ['✓', '4.000 questões reais de técnico de enfermagem', C.emerald],
+    ['✓', 'Mais de 5.000 questões reais de técnico de enfermagem', C.emerald],
     ['✓', '16.000 NeuroSlides — 4 por questão', C.emerald],
     ['✓', 'Fluxo Lógico · Regra de Ouro · Zona de Perigo · Mapa Conceitual', C.emerald],
     ['✓', 'Acesso no celular — sem baixar app', C.emerald],
