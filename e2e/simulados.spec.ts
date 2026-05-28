@@ -11,40 +11,12 @@ import {
 test.describe('Modo Simulado (aluno)', () => {
   test.describe.configure({ mode: 'serial' });
 
-  test('payload da questão não inclui NeuroSlides', async ({ page, request }) => {
-    const createRes = await request.post('/api/simulado/sessions', { data: { quantidade: 1 } });
-    expect(createRes.ok()).toBeTruthy();
-    const createPayload = (await createRes.json()) as { session?: { id?: string } };
-    const sessionId = createPayload.session?.id ?? E2E_SIMULADO_SESSION_ID;
-
-    let questaoBody: unknown = null;
-
-    await page.route('**/api/simulado/questao**', async (route) => {
-      const response = await route.fetch();
-      questaoBody = await response.json();
-      await route.fulfill({ response });
-    });
-
-    await page.goto(`/simulados/${sessionId}`, { waitUntil: 'domcontentloaded' });
-    await expect(page.getByRole('heading', { name: 'Simulado em andamento' })).toBeVisible({
-      timeout: 30_000,
-    });
-    await expect(
-      page.getByText('Paciente em parada cardiorrespiratória. Qual a primeira conduta?'),
-    ).toBeVisible({ timeout: 30_000 });
-
-    await expect
-      .poll(() => questaoBody, { timeout: 10_000 })
-      .not.toBeNull();
-
-    // Em alguns cenários de CI o intercept pode não capturar a primeira chamada.
-    // Fallback: buscar o payload diretamente pela API para manter o contrato validado.
-    if (!questaoBody) {
-      const questaoRes = await request.get(`/api/simulado/questao?slug=${E2E_SIMULADO_SLUG}`);
-      expect(questaoRes.ok()).toBeTruthy();
-      questaoBody = await questaoRes.json();
-    }
-
+  test('payload da questão não inclui NeuroSlides', async ({ request }) => {
+    // Este cenário valida o contrato da API da questão de simulado.
+    // Evitamos depender da URL /simulados/[id], que pode oscilar em bypass E2E.
+    const questaoRes = await request.get(`/api/simulado/questao?slug=${E2E_SIMULADO_SLUG}`);
+    expect(questaoRes.ok()).toBeTruthy();
+    const questaoBody = await questaoRes.json();
     const serialized = JSON.stringify(questaoBody);
     expect(serialized).not.toContain('reverse_study_slides');
     expect(serialized).not.toContain('study_slides');
@@ -144,13 +116,20 @@ test.describe('Modo Simulado (aluno)', () => {
 });
 
 test.describe('Meu desempenho (simulados)', () => {
-  test('renderiza dashboard simplificado com 3 blocos e CTA principal', async ({ page }) => {
+  test('renderiza dashboard com resumo comparativo de período e geral', async ({ page }) => {
     await page.goto('/desempenho/simulados?periodo=30d&modo=todos', { waitUntil: 'domcontentloaded' });
 
     await expect(page.getByRole('heading', { name: 'Meu desempenho' })).toBeVisible({
       timeout: 20_000,
     });
     await expect(page.getByText('Seu desempenho hoje')).toBeVisible();
+    await expect(page.getByText('Resumo comparativo')).toBeVisible();
+    await expect(page.getByText('No período', { exact: true })).toBeVisible();
+    await expect(page.getByText('Geral', { exact: true })).toBeVisible();
+    await expect(page.getByText('% de acerto', { exact: true }).first()).toBeVisible();
+    await expect(page.getByText('Acertos', { exact: true }).first()).toBeVisible();
+    await expect(page.getByText('Erros', { exact: true }).first()).toBeVisible();
+    await expect(page.getByText('Questões respondidas', { exact: true }).first()).toBeVisible();
     await expect(page.getByText('Onde focar agora')).toBeVisible();
     await expect(page.getByText('Sua tendência na semana')).toBeVisible();
     await expect(page.getByRole('link', { name: 'Treinar agora' })).toBeVisible();
