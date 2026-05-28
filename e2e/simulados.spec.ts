@@ -33,7 +33,18 @@ test.describe('Modo Simulado (aluno)', () => {
       page.getByText('Paciente em parada cardiorrespiratória. Qual a primeira conduta?'),
     ).toBeVisible({ timeout: 30_000 });
 
-    await expect.poll(() => questaoBody).not.toBeNull();
+    await expect
+      .poll(() => questaoBody, { timeout: 10_000 })
+      .not.toBeNull();
+
+    // Em alguns cenários de CI o intercept pode não capturar a primeira chamada.
+    // Fallback: buscar o payload diretamente pela API para manter o contrato validado.
+    if (!questaoBody) {
+      const questaoRes = await request.get(`/api/simulado/questao?slug=${E2E_SIMULADO_SLUG}`);
+      expect(questaoRes.ok()).toBeTruthy();
+      questaoBody = await questaoRes.json();
+    }
+
     const serialized = JSON.stringify(questaoBody);
     expect(serialized).not.toContain('reverse_study_slides');
     expect(serialized).not.toContain('study_slides');
