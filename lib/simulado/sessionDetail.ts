@@ -14,6 +14,8 @@ import type {
   SimuladoSessionDetailResponse,
 } from '@/lib/simulado/types';
 
+export type { SimuladoRespostaProgressRow };
+
 export type SimuladoSessionDbRow = {
   id: string;
   status: 'aberto' | 'concluido' | 'cancelado';
