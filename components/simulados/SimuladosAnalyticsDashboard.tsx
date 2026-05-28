@@ -1,10 +1,9 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import Link from 'next/link';
-import { ClipboardList, Clock3, Target, TrendingUp } from 'lucide-react';
+import { ClipboardList } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import { getSimuladoAnalytics, SimuladoApiError } from '@/lib/simulado/client';
 import { createRequestTimer, trackSimuladoAnalyticsEvent } from '@/lib/simulado/analyticsTelemetry';
@@ -91,6 +90,74 @@ function getTrendLabel(values: Array<number | null>): {
   }
   return { label: 'Estável', detail: 'Seu desempenho está consistente nas últimas sessões.' };
 }
+
+type KpiValueTone = 'cyan' | 'emerald' | 'muted' | 'white';
+
+const KPI_VALUE_TONE_CLASSES: Record<KpiValueTone, string> = {
+  cyan: 'text-[#00f2ff]',
+  emerald: 'text-[#00ff88]',
+  muted: 'text-white/30',
+  white: 'text-white',
+};
+
+function SectionLabel({ children }: { children: ReactNode }) {
+  return (
+    <p className="mb-2 text-[11px] uppercase tracking-widest text-white/30">{children}</p>
+  );
+}
+
+function ResumoMetric({
+  label,
+  value,
+  valueClassName = 'text-white',
+}: {
+  label: string;
+  value: string | number;
+  valueClassName?: string;
+}) {
+  return (
+    <div>
+      <p className="text-[10px] uppercase tracking-widest text-white/40">{label}</p>
+      <p className={cn('mt-1 text-lg font-semibold', valueClassName)}>{value}</p>
+    </div>
+  );
+}
+
+function KpiMetricCard({
+  label,
+  value,
+  highlight,
+  valueTone,
+}: {
+  label: string;
+  value: string;
+  highlight?: boolean;
+  valueTone: KpiValueTone;
+}) {
+  return (
+    <div
+      className={cn(
+        'rounded-xl border border-white/[0.08] bg-white/[0.04] p-4',
+        highlight && 'border-[#00f2ff]/25 bg-[#00f2ff]/[0.06]',
+      )}
+    >
+      <p className="text-[10px] uppercase tracking-widest text-white/40">{label}</p>
+      <p
+        className={cn(
+          'mt-1 text-[26px] font-bold tracking-tight',
+          KPI_VALUE_TONE_CLASSES[valueTone],
+        )}
+      >
+        {value}
+      </p>
+    </div>
+  );
+}
+
+const FILTER_PILL_ACTIVE =
+  'border-[#00f2ff] bg-[#00f2ff]/15 text-[#00f2ff]';
+const FILTER_PILL_INACTIVE =
+  'border-white/10 bg-white/[0.05] text-white/40 hover:bg-white/[0.08]';
 
 export function SimuladosAnalyticsDashboard({
   periodoAtual,
@@ -245,18 +312,18 @@ export function SimuladosAnalyticsDashboard({
     return `No período, você está ${deltaAbs} p.p. abaixo do seu geral.`;
   }, [deltaPontosPercentuais]);
 
+  const tempoMedioValor = loadingAnalytics ? '...' : formatDuration(kpis?.tempo_medio_ms);
+  const tempoMedioTone: KpiValueTone = tempoMedioValor === '--' ? 'muted' : 'white';
+
   return (
     <div className="mx-auto grid max-w-4xl gap-4 px-4 py-6 md:px-8 md:pt-8">
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base">Filtros</CardTitle>
-          <CardDescription>
-            Escolha período e modo para uma leitura rápida do seu desempenho.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Periodo</p>
+      <div className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4">
+        <p className="text-[11px] text-white/35">
+          Escolha período e modo para uma leitura rápida do seu desempenho.
+        </p>
+        <div className="mt-4 space-y-4">
+          <div>
+            <p className="mb-1 text-[10px] uppercase tracking-widest text-white/30">Período</p>
             <div className="flex flex-wrap gap-2">
               {PERIODOS.map((periodo) => (
                 <Link
@@ -264,9 +331,7 @@ export function SimuladosAnalyticsDashboard({
                   href={buildFilterHref(periodo.value, modoAtual)}
                   className={cn(
                     'inline-flex items-center rounded-lg border px-3 py-1.5 text-sm transition-colors',
-                    periodoAtual === periodo.value
-                      ? 'border-primary bg-primary text-primary-foreground'
-                      : 'border-border bg-background hover:bg-muted',
+                    periodoAtual === periodo.value ? FILTER_PILL_ACTIVE : FILTER_PILL_INACTIVE,
                   )}
                 >
                   {periodo.label}
@@ -275,8 +340,8 @@ export function SimuladosAnalyticsDashboard({
             </div>
           </div>
 
-          <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Modo</p>
+          <div>
+            <p className="mb-1 text-[10px] uppercase tracking-widest text-white/30">Modo</p>
             <div className="flex flex-wrap gap-2">
               {MODOS.map((modo) => (
                 <Link
@@ -284,9 +349,7 @@ export function SimuladosAnalyticsDashboard({
                   href={buildFilterHref(periodoAtual, modo.value)}
                   className={cn(
                     'inline-flex items-center rounded-lg border px-3 py-1.5 text-sm transition-colors',
-                    modoAtual === modo.value
-                      ? 'border-primary bg-primary text-primary-foreground'
-                      : 'border-border bg-background hover:bg-muted',
+                    modoAtual === modo.value ? FILTER_PILL_ACTIVE : FILTER_PILL_INACTIVE,
                   )}
                 >
                   {modo.label}
@@ -294,174 +357,181 @@ export function SimuladosAnalyticsDashboard({
               ))}
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-base">
-            <Target className="h-4 w-4 text-cyan-400" aria-hidden />
-            Seu desempenho hoje
-          </CardTitle>
-          <CardDescription>Resumo direto do seu resultado no período escolhido.</CardDescription>
-        </CardHeader>
-        <CardContent className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
-          <div className="rounded-xl border border-border p-3">
-            <p className="text-xs text-muted-foreground">Simulados concluídos</p>
-            <p className="mt-1 text-lg font-semibold">
-              {loadingAnalytics ? '...' : (kpis?.total_simulados ?? 0)}
-            </p>
-          </div>
-          <div className="rounded-xl border border-border p-3">
-            <p className="inline-flex items-center gap-1 text-xs text-muted-foreground">
-              <Target className="h-3.5 w-3.5" aria-hidden /> Média de acerto
-            </p>
-            <p className="mt-1 text-lg font-semibold">
-              {loadingAnalytics ? '...' : formatPercent(kpis?.media_acerto)}
-            </p>
-          </div>
-          <div className="rounded-xl border border-border p-3">
-            <p className="text-xs text-muted-foreground">Questões respondidas</p>
-            <p className="mt-1 text-lg font-semibold">
-              {loadingAnalytics
+      <section>
+        <SectionLabel>Seu desempenho hoje</SectionLabel>
+        <p className="mb-3 text-[11px] text-white/35">
+          Resumo direto do seu resultado no período escolhido.
+        </p>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <KpiMetricCard
+            label="Simulados concluídos"
+            value={loadingAnalytics ? '...' : String(kpis?.total_simulados ?? 0)}
+            valueTone="cyan"
+          />
+          <KpiMetricCard
+            label="Média de acerto"
+            value={loadingAnalytics ? '...' : formatPercent(kpis?.media_acerto)}
+            highlight
+            valueTone="emerald"
+          />
+          <KpiMetricCard
+            label="Questões respondidas"
+            value={
+              loadingAnalytics
                 ? '...'
-                : evolucao.reduce((sum, item) => sum + item.total_questoes, 0)}
-            </p>
-          </div>
-          <div className="rounded-xl border border-border p-3">
-            <p className="inline-flex items-center gap-1 text-xs text-muted-foreground">
-              <Clock3 className="h-3.5 w-3.5" aria-hidden /> Tempo médio por questão
-            </p>
-            <p className="mt-1 text-lg font-semibold">
-              {loadingAnalytics ? '...' : formatDuration(kpis?.tempo_medio_ms)}
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+                : String(evolucao.reduce((sum, item) => sum + item.total_questoes, 0))
+            }
+            valueTone="white"
+          />
+          <KpiMetricCard
+            label="Tempo médio por questão"
+            value={tempoMedioValor}
+            valueTone={tempoMedioTone}
+          />
+        </div>
+      </section>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base">Resumo comparativo</CardTitle>
-          <CardDescription>Mesmo formato do resultado final do simulado: período atual e geral.</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="rounded-xl border border-border p-3">
-            <p className="text-sm font-semibold">No período</p>
-            <div className="mt-3 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-              <div>
-                <p className="text-xs text-muted-foreground">% de acerto</p>
-                <p className="text-lg font-semibold">
-                  {loadingAnalytics ? '...' : formatPercent(resumoPeriodo.percentual)}
-                </p>
-              </div>
-              <div>
-                <p className="text-xs text-muted-foreground">Acertos</p>
-                <p className="text-lg font-semibold">{loadingAnalytics ? '...' : resumoPeriodo.acertos}</p>
-              </div>
-              <div>
-                <p className="text-xs text-muted-foreground">Erros</p>
-                <p className="text-lg font-semibold">{loadingAnalytics ? '...' : resumoPeriodo.erros}</p>
-              </div>
-              <div>
-                <p className="text-xs text-muted-foreground">Questões respondidas</p>
-                <p className="text-lg font-semibold">
-                  {loadingAnalytics ? '...' : resumoPeriodo.respondidas}
-                </p>
-              </div>
+      <section>
+        <SectionLabel>Resumo comparativo</SectionLabel>
+        <p className="mb-3 text-[11px] text-white/35">
+          Mesmo formato do resultado final do simulado: período atual e geral.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-4">
+            <p className="text-sm font-semibold text-white/80">No período</p>
+            <div className="mt-3 grid grid-cols-2 gap-3">
+              <ResumoMetric
+                label="% de acerto"
+                value={loadingAnalytics ? '...' : formatPercent(resumoPeriodo.percentual)}
+                valueClassName="text-[#00f2ff]"
+              />
+              <ResumoMetric
+                label="Acertos"
+                value={loadingAnalytics ? '...' : resumoPeriodo.acertos}
+              />
+              <ResumoMetric
+                label="Erros"
+                value={loadingAnalytics ? '...' : resumoPeriodo.erros}
+                valueClassName="text-[#ff0055]"
+              />
+              <ResumoMetric
+                label="Questões respondidas"
+                value={loadingAnalytics ? '...' : resumoPeriodo.respondidas}
+              />
             </div>
           </div>
 
-          <div className="rounded-xl border border-border/70 bg-muted/20 p-3">
-            <p className="text-sm font-medium text-muted-foreground">{deltaMensagem}</p>
-          </div>
+          <p className="rounded-md bg-white/[0.03] px-3 py-2 text-center text-[11px] text-white/35 sm:col-span-2">
+            {deltaMensagem}
+          </p>
 
-          <div className="rounded-xl border border-border/70 bg-muted/10 p-3">
-            <p className="text-sm font-semibold text-muted-foreground">Geral</p>
-            <div className="mt-3 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-              <div>
-                <p className="text-xs text-muted-foreground">% de acerto</p>
-                <p className="text-lg font-semibold">
-                  {loadingGeral ? '...' : formatPercent(resumoGeral.percentual)}
-                </p>
-              </div>
-              <div>
-                <p className="text-xs text-muted-foreground">Acertos</p>
-                <p className="text-lg font-semibold">{loadingGeral ? '...' : resumoGeral.acertos}</p>
-              </div>
-              <div>
-                <p className="text-xs text-muted-foreground">Erros</p>
-                <p className="text-lg font-semibold">{loadingGeral ? '...' : resumoGeral.erros}</p>
-              </div>
-              <div>
-                <p className="text-xs text-muted-foreground">Questões respondidas</p>
-                <p className="text-lg font-semibold">{loadingGeral ? '...' : resumoGeral.respondidas}</p>
-              </div>
+          <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-4">
+            <p className="text-sm font-semibold text-white/80">Geral (histórico)</p>
+            <div className="mt-3 grid grid-cols-2 gap-3">
+              <ResumoMetric
+                label="% de acerto"
+                value={loadingGeral ? '...' : formatPercent(resumoGeral.percentual)}
+                valueClassName="text-[#00f2ff]"
+              />
+              <ResumoMetric
+                label="Acertos"
+                value={loadingGeral ? '...' : resumoGeral.acertos}
+              />
+              <ResumoMetric
+                label="Erros"
+                value={loadingGeral ? '...' : resumoGeral.erros}
+                valueClassName="text-[#ff0055]"
+              />
+              <ResumoMetric
+                label="Questões respondidas"
+                value={loadingGeral ? '...' : resumoGeral.respondidas}
+              />
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </section>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base">Onde focar agora</CardTitle>
-          <CardDescription>Priorize os assuntos com menor acerto para ganhar pontos mais rápido.</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          {loadingAnalytics ? (
-            <p className="text-sm text-muted-foreground">Carregando prioridades...</p>
-          ) : prioridades.length === 0 ? (
-            <p className="text-sm text-muted-foreground">
-              Responda mais questões para receber prioridades de revisão.
-            </p>
-          ) : (
-            <div className="space-y-2">
-              {prioridades.map((item) => (
-                <div key={item.nome} className="rounded-xl border border-border p-3">
-                  <p className="text-sm font-medium">{item.nome}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    Acerto atual: {formatPercent(item.percentual_acerto)} ({item.total_questoes} questões)
-                  </p>
-                </div>
-              ))}
-            </div>
-          )}
-          <Button
-            asChild
-            className="w-full rounded-xl"
-            onClick={() => trackSimuladoAnalyticsEvent('quick_action_train_now', { origem: 'simulados_simple' })}
-          >
-            <Link href="/simulados" className="inline-flex items-center justify-center gap-2">
-              <ClipboardList className="h-4 w-4" aria-hidden />
-              Treinar agora
-            </Link>
-          </Button>
-        </CardContent>
-      </Card>
+      <section>
+        <SectionLabel>Onde focar agora</SectionLabel>
+        <p className="mb-3 text-[11px] text-white/35">
+          Priorize os assuntos com menor acerto para ganhar pontos mais rápido.
+        </p>
+        <div className="rounded-xl border border-[#00ff88]/20 bg-[#00ff88]/[0.04] p-4">
+          <p className="flex items-center gap-2 text-sm font-semibold text-white/80">
+            <span className="h-2 w-2 shrink-0 rounded-full bg-[#00ff88] animate-pulse" aria-hidden />
+            Onde focar agora
+          </p>
+          <div className="mt-3 space-y-3">
+            {loadingAnalytics ? (
+              <p className="text-sm text-white/35">Carregando prioridades...</p>
+            ) : prioridades.length === 0 ? (
+              <p className="text-sm text-white/35">
+                Responda mais questões para receber prioridades de revisão.
+              </p>
+            ) : (
+              <div className="space-y-2">
+                {prioridades.map((item) => (
+                  <div
+                    key={item.nome}
+                    className="rounded-xl border border-white/[0.08] bg-white/[0.04] p-3"
+                  >
+                    <p className="text-sm font-medium text-white/90">{item.nome}</p>
+                    <p className="mt-1 text-xs text-white/35">
+                      Acerto atual: {formatPercent(item.percentual_acerto)} ({item.total_questoes}{' '}
+                      questões)
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+            <Button
+              asChild
+              className="w-full rounded-xl bg-[#00f2ff] py-3 font-bold text-[#010409] hover:bg-[#00f2ff]/90"
+              onClick={() =>
+                trackSimuladoAnalyticsEvent('quick_action_train_now', { origem: 'simulados_simple' })
+              }
+            >
+              <Link href="/simulados" className="inline-flex items-center justify-center gap-2">
+                <ClipboardList className="h-4 w-4" aria-hidden />
+                Treinar agora
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-base">
-            <TrendingUp className="h-4 w-4 text-emerald-400" aria-hidden />
+      <section>
+        <SectionLabel>Sua tendência na semana</SectionLabel>
+        <p className="mb-3 text-[11px] text-white/35">
+          Leitura rápida para entender se você está melhorando.
+        </p>
+        <div className="rounded-xl border border-[#00f2ff]/15 bg-transparent p-4">
+          <p className="flex items-center gap-2 text-sm font-semibold text-white/80">
+            <span className="h-2 w-2 shrink-0 rounded-full bg-[#00f2ff]" aria-hidden />
             Sua tendência na semana
-          </CardTitle>
-          <CardDescription>Leitura rápida para entender se você está melhorando.</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {error ? (
-            <p className="text-sm text-destructive">{error}</p>
-          ) : (
-            <div className="rounded-xl border border-border p-3">
-              <p className="text-lg font-semibold">{trend.label}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{trend.detail}</p>
-              {evolucao.length > 0 ? (
-                <p className="mt-3 text-xs text-muted-foreground">
-                  Última atualização: {formatDateLabel(evolucao[evolucao.length - 1]?.data_ref ?? '')}
-                </p>
-              ) : null}
-            </div>
-          )}
-        </CardContent>
-      </Card>
+          </p>
+          <div className="mt-3">
+            {error ? (
+              <p className="text-sm text-[#ff0055]">{error}</p>
+            ) : (
+              <>
+                <div className="inline-flex flex-col gap-1 rounded-lg border border-[#00f2ff]/20 bg-[#00f2ff]/[0.08] px-4 py-2">
+                  <span className="text-[15px] font-bold text-[#00f2ff]">{trend.label}</span>
+                  <span className="text-[11px] text-white/35">{trend.detail}</span>
+                </div>
+                {evolucao.length > 0 ? (
+                  <p className="mt-3 text-[11px] text-white/35">
+                    Última atualização: {formatDateLabel(evolucao[evolucao.length - 1]?.data_ref ?? '')}
+                  </p>
+                ) : null}
+              </>
+            )}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

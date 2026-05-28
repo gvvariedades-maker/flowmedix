@@ -126,7 +126,7 @@ test.describe('Meu desempenho (simulados)', () => {
     const hasResumoComparativo = await page.getByText('Resumo comparativo').isVisible().catch(() => false);
     if (hasResumoComparativo) {
       await expect(page.getByText('No período', { exact: true })).toBeVisible();
-      await expect(page.getByText('Geral', { exact: true })).toBeVisible();
+      await expect(page.getByText('Geral (histórico)', { exact: true })).toBeVisible();
       await expect(page.getByText('% de acerto', { exact: true }).first()).toBeVisible();
       await expect(page.getByText('Acertos', { exact: true }).first()).toBeVisible();
       await expect(page.getByText('Erros', { exact: true }).first()).toBeVisible();
