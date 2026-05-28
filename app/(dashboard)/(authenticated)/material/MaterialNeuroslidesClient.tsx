@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Layers } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Layers } from 'lucide-react';
 import { MaterialSlidesModal } from '@/components/material/MaterialSlidesModal';
 import {
   MATERIAL_SLIDE_LOTS,
