@@ -8,6 +8,7 @@ import { SimuladosAnalyticsDashboard } from '@/components/simulados/SimuladosAna
 import {
   normalizeSimuladoAnalyticsFilters,
 } from '@/lib/simulado/analyticsSummary';
+import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 
 type SearchParamsShape = {
   periodo?: string | string[];
@@ -28,8 +29,11 @@ export default async function DesempenhoSimuladosPage({
 }: {
   searchParams: Promise<SearchParamsShape>;
 }) {
-  const session = await getServerSession();
-  if (!session?.user) redirect('/login');
+  const e2eBypass = isE2eBypassEnabled('E2E_DASHBOARD_BYPASS');
+  if (!e2eBypass) {
+    const session = await getServerSession();
+    if (!session?.user) redirect('/login');
+  }
   const resolvedSearchParams = await searchParams;
 
   const periodoAtualRaw = normalizeSingleValue(resolvedSearchParams.periodo);

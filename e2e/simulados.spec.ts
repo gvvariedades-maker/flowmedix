@@ -133,15 +133,15 @@ test.describe('Modo Simulado (aluno)', () => {
 });
 
 test.describe('Meu desempenho (simulados)', () => {
-  test('renderiza dashboard de simulados com filtros e seções principais', async ({ page }) => {
+  test('renderiza dashboard simplificado com 3 blocos e CTA principal', async ({ page }) => {
     await page.goto('/desempenho/simulados?periodo=30d&modo=todos', { waitUntil: 'domcontentloaded' });
 
     await expect(page.getByRole('heading', { name: 'Meu desempenho' })).toBeVisible({
       timeout: 20_000,
     });
-    await expect(page.getByText('Visão analítica de simulados')).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Aplicar dimensões' })).toBeVisible();
-    await expect(page.getByText('KPIs do período')).toBeVisible();
-    await expect(page.getByText('Últimas sessões')).toBeVisible();
+    await expect(page.getByText('Seu desempenho hoje')).toBeVisible();
+    await expect(page.getByText('Onde focar agora')).toBeVisible();
+    await expect(page.getByText('Sua tendência na semana')).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Treinar agora' })).toBeVisible();
   });
 });
