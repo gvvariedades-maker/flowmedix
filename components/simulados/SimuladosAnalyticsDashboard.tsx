@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { ClipboardList, Clock3, Target, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -108,9 +107,10 @@ export function SimuladosAnalyticsDashboard({
   topicoAtual: string | null;
   subtopicoAtual: string | null;
 }) {
-  const router = useRouter();
   const [data, setData] = useState<SimuladoAnalyticsResponse | null>(null);
+  const [dataGeral, setDataGeral] = useState<SimuladoAnalyticsResponse | null>(null);
   const [loadingAnalytics, setLoadingAnalytics] = useState<boolean>(true);
+  const [loadingGeral, setLoadingGeral] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -165,8 +165,33 @@ export function SimuladosAnalyticsDashboard({
     };
   }, [periodoAtual, modoAtual]);
 
+  useEffect(() => {
+    let mounted = true;
+    getSimuladoAnalytics({
+      periodo: '12m',
+      modo: 'todos',
+    })
+      .then((result) => {
+        if (!mounted) return;
+        setDataGeral(result);
+      })
+      .catch(() => {
+        if (!mounted) return;
+        setDataGeral(null);
+      })
+      .finally(() => {
+        if (!mounted) return;
+        setLoadingGeral(false);
+      });
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
   const kpis = data?.kpis;
   const evolucao = data?.evolucao_temporal ?? [];
+  const evolucaoGeral = dataGeral?.evolucao_temporal ?? [];
 
   const prioridades = useMemo(() => {
     const bySubtopico = (data?.desempenho.por_subtopico ?? []).filter((item) => item.total_questoes > 0);
@@ -186,6 +211,39 @@ export function SimuladosAnalyticsDashboard({
     () => getTrendLabel(evolucao.map((item) => item.percentual_acerto)),
     [evolucao],
   );
+
+  const resumoPeriodo = useMemo(() => {
+    const respondidas = evolucao.reduce((sum, item) => sum + item.total_questoes, 0);
+    const acertos = evolucao.reduce((sum, item) => sum + item.acertos, 0);
+    const erros = evolucao.reduce((sum, item) => sum + item.erros, 0);
+    const percentual =
+      respondidas > 0 ? (acertos / respondidas) * 100 : (typeof kpis?.media_acerto === 'number' ? kpis.media_acerto : null);
+    return { respondidas, acertos, erros, percentual };
+  }, [evolucao, kpis?.media_acerto]);
+
+  const resumoGeral = useMemo(() => {
+    const respondidas = evolucaoGeral.reduce((sum, item) => sum + item.total_questoes, 0);
+    const acertos = evolucaoGeral.reduce((sum, item) => sum + item.acertos, 0);
+    const erros = evolucaoGeral.reduce((sum, item) => sum + item.erros, 0);
+    const percentual =
+      respondidas > 0
+        ? (acertos / respondidas) * 100
+        : (typeof dataGeral?.kpis.media_acerto === 'number' ? dataGeral.kpis.media_acerto : null);
+    return { respondidas, acertos, erros, percentual };
+  }, [dataGeral?.kpis.media_acerto, evolucaoGeral]);
+
+  const deltaPontosPercentuais = useMemo(() => {
+    if (typeof resumoPeriodo.percentual !== 'number' || typeof resumoGeral.percentual !== 'number') return null;
+    return resumoPeriodo.percentual - resumoGeral.percentual;
+  }, [resumoGeral.percentual, resumoPeriodo.percentual]);
+
+  const deltaMensagem = useMemo(() => {
+    if (deltaPontosPercentuais === null) return 'Sem dados suficientes para comparar período e geral.';
+    const deltaAbs = Math.round(Math.abs(deltaPontosPercentuais));
+    if (deltaAbs === 0) return 'No período, você está igual ao seu geral.';
+    if (deltaPontosPercentuais > 0) return `No período, você está ${deltaAbs} p.p. acima do seu geral.`;
+    return `No período, você está ${deltaAbs} p.p. abaixo do seu geral.`;
+  }, [deltaPontosPercentuais]);
 
   return (
     <div className="mx-auto grid max-w-4xl gap-4 px-4 py-6 md:px-8 md:pt-8">
@@ -277,6 +335,68 @@ export function SimuladosAnalyticsDashboard({
             <p className="mt-1 text-lg font-semibold">
               {loadingAnalytics ? '...' : formatDuration(kpis?.tempo_medio_ms)}
             </p>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-base">Resumo comparativo</CardTitle>
+          <CardDescription>Mesmo formato do resultado final do simulado: período atual e geral.</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="rounded-xl border border-border p-3">
+            <p className="text-sm font-semibold">No período</p>
+            <div className="mt-3 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+              <div>
+                <p className="text-xs text-muted-foreground">% de acerto</p>
+                <p className="text-lg font-semibold">
+                  {loadingAnalytics ? '...' : formatPercent(resumoPeriodo.percentual)}
+                </p>
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground">Acertos</p>
+                <p className="text-lg font-semibold">{loadingAnalytics ? '...' : resumoPeriodo.acertos}</p>
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground">Erros</p>
+                <p className="text-lg font-semibold">{loadingAnalytics ? '...' : resumoPeriodo.erros}</p>
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground">Questões respondidas</p>
+                <p className="text-lg font-semibold">
+                  {loadingAnalytics ? '...' : resumoPeriodo.respondidas}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-xl border border-border/70 bg-muted/20 p-3">
+            <p className="text-sm font-medium text-muted-foreground">{deltaMensagem}</p>
+          </div>
+
+          <div className="rounded-xl border border-border/70 bg-muted/10 p-3">
+            <p className="text-sm font-semibold text-muted-foreground">Geral</p>
+            <div className="mt-3 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+              <div>
+                <p className="text-xs text-muted-foreground">% de acerto</p>
+                <p className="text-lg font-semibold">
+                  {loadingGeral ? '...' : formatPercent(resumoGeral.percentual)}
+                </p>
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground">Acertos</p>
+                <p className="text-lg font-semibold">{loadingGeral ? '...' : resumoGeral.acertos}</p>
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground">Erros</p>
+                <p className="text-lg font-semibold">{loadingGeral ? '...' : resumoGeral.erros}</p>
+              </div>
+              <div>
+                <p className="text-xs text-muted-foreground">Questões respondidas</p>
+                <p className="text-lg font-semibold">{loadingGeral ? '...' : resumoGeral.respondidas}</p>
+              </div>
+            </div>
           </div>
         </CardContent>
       </Card>
