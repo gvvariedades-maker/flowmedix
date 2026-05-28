@@ -105,7 +105,10 @@ export function runSimuladoSession50PayloadScenario(): PayloadScenarioResult {
 
 /** Questão slim para o runner (sem NeuroSlides). Meta: &lt; 5 KB. */
 export function runSimuladoQuestaoSlimPayloadScenario(): PayloadScenarioResult {
-  const slim = stripQuestionForSimulado(loadPremiumQuestaoFixture() as Parameters<typeof stripQuestionForSimulado>[0]);
+  const lessonLike = loadPremiumQuestaoFixture() as unknown as Parameters<
+    typeof stripQuestionForSimulado
+  >[0];
+  const slim = stripQuestionForSimulado(lessonLike);
   const payload = { dados: slim };
   return runPayloadScenario('simulado_questao_slim', jsonByteSize(payload), QUESTAO_SLIM_BUDGET_BYTES);
 }
