@@ -28,15 +28,15 @@ export type SimuladoRespostaProgressRow = {
     | null;
 };
 
-type ModuloEstudoEmbed = NonNullable<
-  Exclude<SimuladoRespostaProgressRow['modulos_estudo'], null | undefined>
-> extends Array<infer U>
-  ? U
-  : NonNullable<SimuladoRespostaProgressRow['modulos_estudo']>;
+type ModuloEstudoBase = {
+  banca: string | null;
+  titulo_aula: string | null;
+  modulo_nome: string | null;
+};
 
 function normalizeModuloEstudoEmbed(
   raw: SimuladoRespostaProgressRow['modulos_estudo'],
-): ModuloEstudoEmbed | null {
+): ModuloEstudoBase | null {
   if (!raw) return null;
   return Array.isArray(raw) ? (raw[0] ?? null) : raw;
 }
