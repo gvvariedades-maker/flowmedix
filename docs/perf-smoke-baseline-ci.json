@@ -4,7 +4,13 @@
     "api_vitrine_q_unauth": { "p95Ms": 400 },
     "api_estudar_questao_unauth": { "p95Ms": 400 },
     "api_health": { "p95Ms": 700 },
-    "api_metrics": { "p95Ms": 700 }
+    "api_metrics": { "p95Ms": 700 },
+    "api_simulado_session_unauth": { "p95Ms": 400 },
+    "api_simulado_questao_unauth": { "p95Ms": 400 },
+    "api_simulado_responder_unauth": { "p95Ms": 400 },
+    "simulado_session_50": { "maxBytes": 80000 },
+    "simulado_questao_slim": { "maxBytes": 5000 },
+    "simulado_responder_patch": { "maxBytes": 4000 }
   },
   "synthetic_10k_pipeline": {
     "p95Ms": 1200

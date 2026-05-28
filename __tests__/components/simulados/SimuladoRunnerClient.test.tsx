@@ -107,7 +107,7 @@ describe('SimuladoRunnerClient', () => {
   });
 
   it('renderiza enunciado completo e exige feedback final antes do resumo', async () => {
-    mockGetSimuladoSession.mockResolvedValueOnce(abertaInicial).mockResolvedValueOnce(concluidaFinal);
+    mockGetSimuladoSession.mockResolvedValueOnce(abertaInicial);
     mockGetSimuladoQuestionPayload.mockResolvedValue({
       dados: {
         meta: {
@@ -130,6 +130,8 @@ describe('SimuladoRunnerClient', () => {
       acertou: true,
       opcao_correta_id: 'A',
       session_status: 'concluido',
+      questao_atualizada: concluidaFinal.questoes[0],
+      resumo: concluidaFinal.resumo,
     });
 
     render(<SimuladoRunnerClient sessionId="44444444-4444-4444-4444-444444444444" />);
@@ -152,7 +154,7 @@ describe('SimuladoRunnerClient', () => {
       ),
     );
 
-    await waitFor(() => expect(mockGetSimuladoSession).toHaveBeenCalledTimes(2));
+    await waitFor(() => expect(mockGetSimuladoSession).toHaveBeenCalledTimes(1));
     expect(screen.getAllByRole('button', { name: 'Ver resultado' }).length).toBeGreaterThan(0);
     expect(screen.queryByTestId('simulado-resumo')).not.toBeInTheDocument();
 
@@ -161,23 +163,7 @@ describe('SimuladoRunnerClient', () => {
   });
 
   it('mostra gabarito com texto da alternativa quando resposta está incorreta', async () => {
-    mockGetSimuladoSession.mockResolvedValueOnce(abertaInicial).mockResolvedValueOnce({
-      ...abertaInicial,
-      resumo: { ...abertaInicial.resumo, respondidas: 1, pendentes: 0, erros: 1 },
-      questoes: [
-        {
-          ordem: 1,
-          modulo_slug: 'questao-simulada',
-          respondida: true as const,
-          meta: abertaInicial.questoes[0].meta,
-          acertou: false,
-          opcao_id: 'B',
-          opcao_correta_id: 'A',
-          respondida_em: '2026-05-27T00:05:00.000Z',
-          tempo_ms: 60000,
-        },
-      ],
-    });
+    mockGetSimuladoSession.mockResolvedValueOnce(abertaInicial);
     mockGetSimuladoQuestionPayload.mockResolvedValue({
       dados: {
         meta: {
@@ -199,6 +185,26 @@ describe('SimuladoRunnerClient', () => {
       acertou: false,
       opcao_correta_id: 'A',
       session_status: 'concluido',
+      questao_atualizada: {
+        ordem: 1,
+        modulo_slug: 'questao-simulada',
+        respondida: true as const,
+        meta: abertaInicial.questoes[0].meta,
+        acertou: false,
+        opcao_id: 'B',
+        opcao_correta_id: 'A',
+        respondida_em: '2026-05-27T00:05:00.000Z',
+        tempo_ms: 60000,
+      },
+      resumo: {
+        ...abertaInicial.resumo,
+        respondidas: 1,
+        pendentes: 0,
+        erros: 1,
+        percentual_acerto: 0,
+        tempo_total_ms: 60000,
+        tempo_medio_ms: 60000,
+      },
     });
 
     render(<SimuladoRunnerClient sessionId="44444444-4444-4444-4444-444444444444" />);

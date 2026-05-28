@@ -11,6 +11,35 @@ import {
 test.describe('Modo Simulado (aluno)', () => {
   test.describe.configure({ mode: 'serial' });
 
+  test('payload da questão não inclui NeuroSlides', async ({ page, request }) => {
+    const createRes = await request.post('/api/simulado/sessions', { data: { quantidade: 1 } });
+    expect(createRes.ok()).toBeTruthy();
+    const createPayload = (await createRes.json()) as { session?: { id?: string } };
+    const sessionId = createPayload.session?.id ?? E2E_SIMULADO_SESSION_ID;
+
+    let questaoBody: unknown = null;
+
+    await page.route('**/api/simulado/questao**', async (route) => {
+      const response = await route.fetch();
+      questaoBody = await response.json();
+      await route.fulfill({ response });
+    });
+
+    await page.goto(`/simulados/${sessionId}`, { waitUntil: 'domcontentloaded' });
+    await expect(page.getByRole('heading', { name: 'Simulado em andamento' })).toBeVisible({
+      timeout: 30_000,
+    });
+    await expect(
+      page.getByText('Paciente em parada cardiorrespiratória. Qual a primeira conduta?'),
+    ).toBeVisible({ timeout: 30_000 });
+
+    await expect.poll(() => questaoBody).not.toBeNull();
+    const serialized = JSON.stringify(questaoBody);
+    expect(serialized).not.toContain('reverse_study_slides');
+    expect(serialized).not.toContain('study_slides');
+    expect(serialized).not.toContain('"is_correct"');
+  });
+
   test('runner retoma sessão em andamento ao voltar para URL', async ({ page, request }) => {
     const createRes = await request.post('/api/simulado/sessions', { data: { quantidade: 1 } });
     expect(createRes.ok()).toBeTruthy();
@@ -100,5 +129,19 @@ test.describe('Modo Simulado (aluno)', () => {
     });
     await expect(page.getByText('Revisão por questão')).toBeVisible();
     await expect(page.getByText('Acertou')).toBeVisible();
+  });
+});
+
+test.describe('Meu desempenho (simulados)', () => {
+  test('renderiza dashboard de simulados com filtros e seções principais', async ({ page }) => {
+    await page.goto('/desempenho/simulados?periodo=30d&modo=todos', { waitUntil: 'domcontentloaded' });
+
+    await expect(page.getByRole('heading', { name: 'Meu desempenho' })).toBeVisible({
+      timeout: 20_000,
+    });
+    await expect(page.getByText('Visão analítica de simulados')).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Aplicar dimensões' })).toBeVisible();
+    await expect(page.getByText('KPIs do período')).toBeVisible();
+    await expect(page.getByText('Últimas sessões')).toBeVisible();
   });
 });

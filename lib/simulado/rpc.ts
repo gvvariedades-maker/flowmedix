@@ -82,6 +82,14 @@ export async function fetchSimuladoQuestionPoolCountFromRpc(
   });
 
   if (error) {
+    if (error.code === 'PGRST202') {
+      const fallback = await fetchSimuladoQuestionPoolFromRpc({
+        userId,
+        quantidade: 10000,
+        filters,
+      });
+      return fallback.length;
+    }
     logger.warn('RPC get_simulado_question_pool_count falhou', {
       userId,
       code: error.code,

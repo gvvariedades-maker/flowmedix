@@ -25,7 +25,7 @@ import type { DesempenhoData, Periodo } from './types';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { ZerarDesempenhoDialog } from './zerar-desempenho-dialog';
 
-export default function MeuDesempenhoDashboard({ dados }: { dados: DesempenhoData }) {
+export function ProgressoEstudoDashboard({ dados }: { dados: DesempenhoData }) {
   const router = useRouter();
   const [periodo, setPeriodo] = useState<Periodo>(30);
   const [dialogZerar, setDialogZerar] = useState(false);
@@ -85,16 +85,29 @@ export default function MeuDesempenhoDashboard({ dados }: { dados: DesempenhoDat
       <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
         <div className="mx-auto max-w-3xl px-4 py-5 md:px-8">
           <PageHeader
-            title="Meu Desempenho"
-            description="Metas, sequência e assuntos nos últimos 30 dias."
+            title="Progresso de estudo"
+            breadcrumb={[
+              { label: 'Área do aluno', href: '/estudar' },
+              { label: 'Progresso de estudo' },
+            ]}
+            description="Metas, sequência e assuntos estudados nos últimos 30 dias."
             action={
-              <Button asChild className="h-11 shrink-0 gap-2 rounded-xl px-4 font-semibold">
-                <Link href="/estudar" className="inline-flex items-center">
-                  <LayoutGrid className="h-4 w-4" aria-hidden />
-                  Ir à vitrine
-                  <ChevronRight className="h-4 w-4 opacity-80" aria-hidden />
-                </Link>
-              </Button>
+              <div className="flex flex-col gap-2 sm:flex-row">
+                <Button asChild variant="outline" className="h-11 shrink-0 gap-2 rounded-xl px-4 font-semibold">
+                  <Link href="/desempenho/simulados" className="inline-flex items-center">
+                    <Trophy className="h-4 w-4" aria-hidden />
+                    Meu desempenho
+                    <ChevronRight className="h-4 w-4 opacity-80" aria-hidden />
+                  </Link>
+                </Button>
+                <Button asChild className="h-11 shrink-0 gap-2 rounded-xl px-4 font-semibold">
+                  <Link href="/estudar" className="inline-flex items-center">
+                    <LayoutGrid className="h-4 w-4" aria-hidden />
+                    Ir à vitrine
+                    <ChevronRight className="h-4 w-4 opacity-80" aria-hidden />
+                  </Link>
+                </Button>
+              </div>
             }
           />
         </div>
@@ -225,3 +238,10 @@ export default function MeuDesempenhoDashboard({ dados }: { dados: DesempenhoDat
     </div>
   );
 }
+
+/**
+ * @deprecated Use `ProgressoEstudoDashboard` em novos imports.
+ * Mantido para compatibilidade com referencias legadas.
+ */
+const MeuDesempenhoDashboard = ProgressoEstudoDashboard;
+export default MeuDesempenhoDashboard;

@@ -90,6 +90,8 @@ export type SimuladoAnswerResponse = {
   acertou: boolean | null;
   opcao_correta_id: string | null;
   session_status: SimuladoSessionStatus;
+  questao_atualizada: SimuladoQuestaoRespondida;
+  resumo: SimuladoResumo;
 };
 
 export type SimuladoPoolCountResponse = {
@@ -117,4 +119,113 @@ export type SimuladoQuestaoPayloadResponse = {
       }>;
     };
   };
+};
+
+export type SimuladoAnalyticsResponse = {
+  filters: {
+    periodo: '7d' | '30d' | '90d' | '12m';
+    modo: 'todos' | 'treino' | 'prova';
+    banca: string | null;
+    topico: string | null;
+    subtopico: string | null;
+  };
+  kpis: {
+    total_simulados: number;
+    media_acerto: number | null;
+    melhor_score: number | null;
+    tempo_medio_ms: number | null;
+  };
+  evolucao_temporal: Array<{
+    data_ref: string;
+    total_questoes: number;
+    acertos: number;
+    erros: number;
+    percentual_acerto: number | null;
+    tempo_total_ms: number;
+    tempo_medio_ms: number | null;
+  }>;
+  desempenho: {
+    por_banca: Array<{
+      nome: string;
+      total_questoes: number;
+      acertos: number;
+      erros: number;
+      percentual_acerto: number | null;
+    }>;
+    por_topico: Array<{
+      nome: string;
+      total_questoes: number;
+      acertos: number;
+      erros: number;
+      percentual_acerto: number | null;
+    }>;
+    por_subtopico: Array<{
+      nome: string;
+      total_questoes: number;
+      acertos: number;
+      erros: number;
+      percentual_acerto: number | null;
+    }>;
+  };
+  padroes_erro: Array<{
+    banca: string;
+    topico: string;
+    subtopico: string;
+    total_questoes: number;
+    erros: number;
+    taxa_erro: number | null;
+  }>;
+  metas_streaks: {
+    streaks: {
+      dias_ativos_periodo: number;
+      streak_atual_dias: number;
+      melhor_streak_dias: number;
+    };
+    metas: {
+      meta_semanal_sessoes: number;
+      sessoes_ultimos_7d: number;
+      progresso_meta_semanal: number;
+      meta_mensal_questoes: number;
+      questoes_ultimos_30d: number;
+      progresso_meta_mensal: number;
+    };
+  };
+  history_preview: Array<{
+    id: string;
+    status: string;
+    modo: 'treino' | 'prova';
+    percentual_acerto: number | null;
+    created_at: string;
+    concluida_em: string | null;
+  }>;
+};
+
+export type SimuladoHistoryResponse = {
+  filters: {
+    periodo: '7d' | '30d' | '90d' | '12m';
+    modo: 'todos' | 'treino' | 'prova';
+    banca: string | null;
+    topico: string | null;
+    subtopico: string | null;
+    status: 'todos' | 'aberto' | 'concluido' | 'cancelado';
+  };
+  pagination: {
+    total: number;
+    page: number;
+    page_size: number;
+    total_pages: number;
+  };
+  sessions: Array<{
+    id: string;
+    status: string;
+    modo: 'treino' | 'prova';
+    total_questoes: number | null;
+    acertos: number | null;
+    erros: number | null;
+    percentual_acerto: number | null;
+    tempo_total_ms: number | null;
+    tempo_medio_ms: number | null;
+    created_at: string;
+    concluida_em: string | null;
+  }>;
 };

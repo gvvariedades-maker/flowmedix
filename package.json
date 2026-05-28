@@ -35,6 +35,7 @@
     "@react-email/components": "^1.0.12",
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.98.0",
+    "@tanstack/react-virtual": "^3.13.26",
     "@xyflow/react": "^12.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",

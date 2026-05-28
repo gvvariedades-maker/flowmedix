@@ -33,6 +33,18 @@ export function stripQuestionAnswersForClient<T extends LessonData>(dados: T): T
   };
 }
 
+/**
+ * Payload mínimo para o runner de simulado: sem gabarito, sem NeuroSlides.
+ */
+export function stripQuestionForSimulado<T extends LessonData>(dados: T): T {
+  const slim = stripQuestionAnswersForClient(dados);
+  const { reverse_study_slides, study_slides, ...rest } = slim as T & {
+    reverse_study_slides?: unknown;
+    study_slides?: unknown;
+  };
+  return rest as T;
+}
+
 /** Retorna o id da alternativa correta no JSON completo da questão. */
 export function findCorrectOptionId(conteudoJson: unknown): string | null {
   const options = (conteudoJson as ConteudoJsonLike)?.question_data?.options;

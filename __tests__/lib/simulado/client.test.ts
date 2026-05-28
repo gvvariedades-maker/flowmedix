@@ -2,6 +2,7 @@ import {
   answerSimuladoQuestion,
   createSimuladoSession,
   getOpenSimuladoSession,
+  getSimuladoQuestionPayload,
   getSimuladoSession,
   SimuladoApiError,
 } from '@/lib/simulado/client';
@@ -138,6 +139,25 @@ describe('lib/simulado/client', () => {
     });
     expect(session.session.status).toBe('aberto');
     expect(answer.opcao_correta_id).toBe('B');
+  });
+
+  it('carrega questão slim pela rota dedicada', async () => {
+    mockFetchWithAuth.mockResolvedValue(
+      jsonResponse({
+        dados: {
+          meta: { banca: 'FGV', topico: 'Urgências' },
+          question_data: {
+            instruction: 'Enunciado',
+            options: [{ id: 'A', text: 'Opção A' }],
+          },
+        },
+      }),
+    );
+
+    const result = await getSimuladoQuestionPayload('questao-a');
+
+    expect(mockFetchWithAuth).toHaveBeenCalledWith('/api/simulado/questao?slug=questao-a');
+    expect(result.dados.question_data.instruction).toBe('Enunciado');
   });
 
   it('consulta sessão aberta no setup', async () => {

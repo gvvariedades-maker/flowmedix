@@ -12,10 +12,13 @@ type SimuladoOpenSessionRow = {
   id: string;
   total_questoes: number;
   status: 'aberto' | 'concluido' | 'cancelado';
-  modo: 'treino' | 'prova';
   created_at: string;
   filtros?: Record<string, unknown>;
 };
+
+function resolveSessionMode(filtros?: Record<string, unknown>): 'treino' | 'prova' {
+  return filtros?.modo === 'prova' ? 'prova' : 'treino';
+}
 
 export async function GET(request: NextRequest) {
   try {
@@ -31,7 +34,7 @@ export async function GET(request: NextRequest) {
     const supabase = await createServerSupabase();
     const { data: openSession, error: openSessionError } = await supabase
       .from('simulado_sessions')
-      .select('id, total_questoes, status, modo, created_at, filtros')
+      .select('id, total_questoes, status, created_at, filtros')
       .eq('user_id', auth.user.id)
       .eq('status', 'aberto')
       .order('created_at', { ascending: false })
@@ -47,7 +50,12 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
       has_open_session: openSession != null,
-      session: openSession ?? null,
+      session: openSession
+        ? {
+            ...openSession,
+            modo: resolveSessionMode(openSession.filtros),
+          }
+        : null,
     });
   } catch (error) {
     logger.error('Erro inesperado em GET /api/simulado/sessions', error);
@@ -96,7 +104,7 @@ export async function POST(request: NextRequest) {
     if (!forcar_novo) {
       const { data: openSession, error: openSessionError } = await supabase
         .from('simulado_sessions')
-        .select('id, total_questoes, status, modo, created_at')
+        .select('id, total_questoes, status, created_at, filtros')
         .eq('user_id', auth.user.id)
         .eq('status', 'aberto')
         .order('created_at', { ascending: false })
@@ -114,7 +122,10 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({
           success: true,
           resumed: true,
-          session: openSession,
+          session: {
+            ...openSession,
+            modo: resolveSessionMode(openSession.filtros),
+          },
           questoes: [],
         });
       }
@@ -168,29 +179,47 @@ export async function POST(request: NextRequest) {
       q: q || null,
       requested: quantidade,
       selected: pool.length,
+      modo,
+    };
+
+    const sessionInsertPayload = {
+      user_id: auth.user.id,
+      total_questoes: pool.length,
+      filtros: filters,
+      status: 'aberto' as const,
     };
 
     const { data: session, error: sessionError } = await supabase
       .from('simulado_sessions')
       .insert({
-        user_id: auth.user.id,
-        total_questoes: pool.length,
-        filtros: filters,
-        status: 'aberto',
+        ...sessionInsertPayload,
         modo,
       })
-      .select('id, total_questoes, status, modo, created_at')
+      .select('id, total_questoes, status, created_at, filtros')
       .single();
 
-    if (sessionError || !session) {
-      logger.error('Falha ao criar sessão de simulado', sessionError, {
+    let createdSession = session;
+    let createdSessionError = sessionError;
+
+    if (createdSessionError?.code === '42703') {
+      const fallbackInsert = await supabase
+        .from('simulado_sessions')
+        .insert(sessionInsertPayload)
+        .select('id, total_questoes, status, created_at, filtros')
+        .single();
+      createdSession = fallbackInsert.data;
+      createdSessionError = fallbackInsert.error;
+    }
+
+    if (createdSessionError || !createdSession) {
+      logger.error('Falha ao criar sessão de simulado', createdSessionError, {
         userId: auth.user.id,
       });
       return NextResponse.json({ error: 'Erro ao criar simulado' }, { status: 500 });
     }
 
     const respostas = pool.map((item) => ({
-      session_id: session.id,
+      session_id: createdSession.id,
       user_id: auth.user.id,
       modulo_id: item.modulo_id,
       modulo_slug: item.modulo_slug,
@@ -204,17 +233,20 @@ export async function POST(request: NextRequest) {
     if (respostasError) {
       logger.error('Falha ao persistir pool do simulado', respostasError, {
         userId: auth.user.id,
-        sessionId: session.id,
+        sessionId: createdSession.id,
       });
 
-      await supabase.from('simulado_sessions').delete().eq('id', session.id);
+      await supabase.from('simulado_sessions').delete().eq('id', createdSession.id);
       return NextResponse.json({ error: 'Erro ao iniciar simulado' }, { status: 500 });
     }
 
     return NextResponse.json({
       success: true,
       resumed: false,
-      session,
+      session: {
+        ...createdSession,
+        modo,
+      },
       questoes: pool.map(({ modulo_slug, ordem }) => ({ modulo_slug, ordem })),
     });
   } catch (error) {

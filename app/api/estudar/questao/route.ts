@@ -6,9 +6,6 @@ import { logEstudarNavApiBuild } from '@/lib/estudar/navigationTelemetry';
 import { logApiStrategy } from '@/lib/api/logApiStrategy';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { recordPerformance } from '@/lib/metrics';
-import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
-import { E2E_SIMULADO_SLUG } from '@/lib/e2e/constants';
-import { getE2eSimuladoLessonPayload } from '@/lib/e2e/simuladoSeed';
 
 export async function GET(request: NextRequest) {
   const requestStartedAt = Date.now();
@@ -25,14 +22,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const { slug, from, caderno_id, context, banca, assunto, q } = parsed.data;
-
-    if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS') && slug === E2E_SIMULADO_SLUG) {
-      recordPerformance(endpoint, method, Date.now() - requestStartedAt, true);
-      return NextResponse.json(getE2eSimuladoLessonPayload(), {
-        headers: { 'Cache-Control': 'private, no-store' },
-      });
-    }
+    const { slug, from, caderno_id, banca, assunto, q } = parsed.data;
 
     const auth = await getUserAndClientFromBearer(request);
     if (!auth) {
@@ -80,10 +70,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Questão não encontrada' }, { status: 404 });
     }
 
-    const responsePayload =
-      context === 'simulado' ? { dados: result.payload.dados } : result.payload;
-
-    return NextResponse.json(responsePayload, {
+    return NextResponse.json(result.payload, {
       headers: { 'Cache-Control': 'private, no-store' },
     });
   } catch (error) {

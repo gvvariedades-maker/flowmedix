@@ -72,7 +72,7 @@ describe('GET /api/metrics', () => {
     expect(response.status).toBe(200);
     expect(body.stats).toEqual({ p95TTFB: 10, totalRequests: 1 });
     expect(Array.isArray(body.recent)).toBe(true);
-    expect(mockGetPerformanceStats).toHaveBeenCalledWith('/api/vitrine');
+    expect(mockGetPerformanceStats).toHaveBeenCalledWith('/api/vitrine', undefined);
   });
 
   it('retorna 403 no DELETE fora de development', async () => {

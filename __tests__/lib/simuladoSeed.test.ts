@@ -20,6 +20,9 @@ describe('lib/e2e/simuladoSeed', () => {
 
     const answer = answerE2eSimuladoQuestion(E2E_SIMULADO_SESSION_ID, E2E_SIMULADO_SLUG, 'A');
     expect(answer?.session_status).toBe('concluido');
+    expect(answer?.questao_atualizada.respondida).toBe(true);
+    expect(answer?.resumo.respondidas).toBe(1);
+    expect(answer?.resumo.pendentes).toBe(0);
 
     const concluida = getE2eSimuladoSession(E2E_SIMULADO_SESSION_ID);
     expect(concluida?.session.status).toBe('concluido');

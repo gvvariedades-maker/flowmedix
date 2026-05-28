@@ -71,7 +71,7 @@ async function main() {
     }
 
     // 5 — Login com destino (explica áreas que pedem conta)
-    await page.goto(`${BASE}/login?next=${encodeURIComponent('/analytics')}`, {
+    await page.goto(`${BASE}/login?next=${encodeURIComponent('/progresso')}`, {
       waitUntil: 'load',
       timeout: 90_000,
     });
@@ -87,7 +87,7 @@ async function main() {
       await page.waitForURL((u) => !u.pathname.startsWith('/login'), { timeout: 45_000 });
 
       const logged = [
-        ['06-meu-desempenho.png', '/analytics'],
+        ['06-meu-desempenho.png', '/progresso'],
         ['07-plano-diario.png', '/plano-diario'],
         ['08-cadernos.png', '/cadernos'],
         ['09-material.png', '/material'],

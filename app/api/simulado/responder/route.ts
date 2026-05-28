@@ -2,6 +2,11 @@ import { NextRequest, NextResponse } from 'next/server';
 import { revalidateTag } from 'next/cache';
 import { CACHE_REVALIDATE_IMMEDIATE } from '@/lib/cache';
 import { resolveQuestionAttempt } from '@/lib/estudar/questionPayload';
+import {
+  buildSimuladoQuestaoRespondida,
+  computeSimuladoResumo,
+  type SimuladoRespostaProgressRow,
+} from '@/lib/simulado/sessionProgress';
 import { SimuladoAnswerSchema } from '@/lib/validations';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { createServerSupabase } from '@/lib/supabase/server';
@@ -14,6 +19,7 @@ type SimuladoRespostaRow = {
   session_id: string;
   modulo_id: string;
   modulo_slug: string;
+  ordem: number;
   acertou: boolean | null;
 };
 
@@ -21,8 +27,28 @@ type SimuladoSessionRow = {
   id: string;
   status: 'aberto' | 'concluido' | 'cancelado';
   user_id: string;
-  modo: 'treino' | 'prova';
+  total_questoes: number;
+  filtros: Record<string, unknown> | null;
 };
+
+const RESPOSTA_PROGRESS_SELECT = `
+  ordem,
+  modulo_slug,
+  opcao_id,
+  opcao_correta_id,
+  acertou,
+  respondida_em,
+  tempo_ms,
+  modulos_estudo (
+    banca,
+    titulo_aula,
+    modulo_nome
+  )
+`;
+
+function resolveSessionMode(filtros?: Record<string, unknown> | null): 'treino' | 'prova' {
+  return filtros?.modo === 'prova' ? 'prova' : 'treino';
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -54,7 +80,7 @@ export async function POST(request: NextRequest) {
 
     const { data: session, error: sessionError } = await supabase
       .from('simulado_sessions')
-      .select('id, status, user_id, modo')
+      .select('id, status, user_id, filtros, total_questoes')
       .eq('id', session_id)
       .maybeSingle<SimuladoSessionRow>();
 
@@ -70,13 +96,15 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Sessão não encontrada' }, { status: 404 });
     }
 
+    const sessionMode = resolveSessionMode(session.filtros);
+
     if (session.status !== 'aberto') {
       return NextResponse.json({ error: 'Sessão de simulado não está aberta' }, { status: 409 });
     }
 
     const { data: resposta, error: respostaError } = await supabase
       .from('simulado_respostas')
-      .select('id, session_id, modulo_id, modulo_slug, acertou')
+      .select('id, session_id, modulo_id, modulo_slug, ordem, acertou')
       .eq('session_id', session_id)
       .eq('modulo_slug', modulo_slug)
       .eq('user_id', auth.user.id)
@@ -95,7 +123,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Questão não encontrada na sessão' }, { status: 404 });
     }
 
-    if (resposta.acertou !== null && session.modo === 'prova') {
+    if (resposta.acertou !== null && sessionMode === 'prova') {
       return NextResponse.json({ error: 'Questão já respondida para esta sessão' }, { status: 409 });
     }
 
@@ -218,7 +246,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Erro ao atualizar progresso do simulado' }, { status: 500 });
     }
 
-    if ((pendentes ?? 0) === 0) {
+    const sessionStatus = (pendentes ?? 0) === 0 ? 'concluido' : 'aberto';
+
+    if (sessionStatus === 'concluido') {
       await supabase
         .from('simulado_sessions')
         .update({
@@ -230,11 +260,46 @@ export async function POST(request: NextRequest) {
         .eq('status', 'aberto');
     }
 
+    const { data: progressRows, error: progressError } = await supabase
+      .from('simulado_respostas')
+      .select(RESPOSTA_PROGRESS_SELECT)
+      .eq('session_id', session_id)
+      .eq('user_id', auth.user.id)
+      .order('ordem', { ascending: true });
+
+    if (progressError) {
+      logger.error('Falha ao carregar progresso após resposta do simulado', progressError, {
+        userId: auth.user.id,
+        sessionId: session_id,
+      });
+      return NextResponse.json({ error: 'Erro ao atualizar progresso do simulado' }, { status: 500 });
+    }
+
+    const rows = (progressRows ?? []) as SimuladoRespostaProgressRow[];
+    const answeredRow = rows.find((row) => row.modulo_slug === modulo_slug);
+
+    if (!answeredRow || answeredRow.acertou === null) {
+      logger.error('Resposta registrada mas progresso inconsistente', undefined, {
+        userId: auth.user.id,
+        sessionId: session_id,
+        moduloSlug: modulo_slug,
+      });
+      return NextResponse.json({ error: 'Erro ao atualizar progresso do simulado' }, { status: 500 });
+    }
+
+    const resumo = computeSimuladoResumo(rows, session.total_questoes);
+    const questao_atualizada = buildSimuladoQuestaoRespondida(answeredRow, {
+      sessionMode,
+      sessionStatus,
+    });
+
     return NextResponse.json({
       success: true,
-      acertou: session.modo === 'treino' ? acertou : null,
-      opcao_correta_id: session.modo === 'treino' ? opcaoCorretaId : null,
-      session_status: (pendentes ?? 0) === 0 ? 'concluido' : 'aberto',
+      acertou: sessionMode === 'treino' ? acertou : null,
+      opcao_correta_id: sessionMode === 'treino' ? opcaoCorretaId : null,
+      session_status: sessionStatus,
+      questao_atualizada,
+      resumo,
     });
   } catch (error) {
     logger.error('Erro inesperado em POST /api/simulado/responder', error);

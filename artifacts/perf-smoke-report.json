@@ -1,0 +1,125 @@
+{
+  "baseUrl": "http://127.0.0.1:3000",
+  "skipHttp": false,
+  "durationMs": 30000,
+  "concurrency": 20,
+  "budgetMultiplier": 1,
+  "regressionTolerance": 0.2,
+  "budgetBaselinePath": null,
+  "results": [
+    {
+      "name": "api_vitrine_unauth",
+      "p95Ms": 522,
+      "avgMs": 321.67088607594934,
+      "minMs": 209,
+      "maxMs": 2248,
+      "totalRequests": 1896,
+      "failureCount": 0
+    },
+    {
+      "name": "api_vitrine_q_unauth",
+      "p95Ms": 1627,
+      "avgMs": 455.48246241947027,
+      "minMs": 146,
+      "maxMs": 3209,
+      "totalRequests": 1397,
+      "failureCount": 0
+    },
+    {
+      "name": "api_estudar_questao_unauth",
+      "p95Ms": 469,
+      "avgMs": 288.58118433619865,
+      "minMs": 182,
+      "maxMs": 1984,
+      "totalRequests": 2094,
+      "failureCount": 0
+    },
+    {
+      "name": "api_health",
+      "p95Ms": 2262,
+      "avgMs": 1282.753164556962,
+      "minMs": 278,
+      "maxMs": 12391,
+      "totalRequests": 474,
+      "failureCount": 0
+    },
+    {
+      "name": "api_metrics",
+      "p95Ms": 2824,
+      "avgMs": 778.8470437017995,
+      "minMs": 62,
+      "maxMs": 8786,
+      "totalRequests": 778,
+      "failureCount": 18
+    },
+    {
+      "name": "api_simulado_session_unauth",
+      "p95Ms": 726,
+      "avgMs": 496.14367816091954,
+      "minMs": 145,
+      "maxMs": 2727,
+      "totalRequests": 1218,
+      "failureCount": 0
+    },
+    {
+      "name": "api_simulado_questao_unauth",
+      "p95Ms": 33,
+      "avgMs": 71.62559956884937,
+      "minMs": 2,
+      "maxMs": 40803,
+      "totalRequests": 18555,
+      "failureCount": 18495
+    },
+    {
+      "name": "api_simulado_responder_unauth",
+      "p95Ms": 861,
+      "avgMs": 400.432825943084,
+      "minMs": 214,
+      "maxMs": 1972,
+      "totalRequests": 1511,
+      "failureCount": 0
+    },
+    {
+      "name": "synthetic_10k_pipeline",
+      "p95Ms": 142,
+      "avgMs": 79.625,
+      "minMs": 36,
+      "maxMs": 142,
+      "totalRequests": 8,
+      "failureCount": 0
+    }
+  ],
+  "payloadResults": [
+    {
+      "name": "simulado_session_50",
+      "bytes": 7739,
+      "budgetBytes": 80000,
+      "failureCount": 0
+    },
+    {
+      "name": "simulado_questao_slim",
+      "bytes": 978,
+      "budgetBytes": 5000,
+      "failureCount": 0
+    },
+    {
+      "name": "simulado_responder_patch",
+      "bytes": 497,
+      "budgetBytes": 4000,
+      "failureCount": 0
+    }
+  ],
+  "failedBudgets": [
+    "api_vitrine_unauth",
+    "api_vitrine_q_unauth",
+    "api_health",
+    "api_metrics",
+    "api_simulado_session_unauth",
+    "api_simulado_responder_unauth"
+  ],
+  "failedPayloadBudgets": [],
+  "failedStatusChecks": [
+    "api_metrics",
+    "api_simulado_questao_unauth"
+  ]
+}

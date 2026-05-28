@@ -6,6 +6,8 @@ import type {
   SimuladoOpenSessionResponse,
   SimuladoPoolCountResponse,
   SimuladoQuestaoPayloadResponse,
+  SimuladoAnalyticsResponse,
+  SimuladoHistoryResponse,
   SimuladoSessionDetailResponse,
 } from '@/lib/simulado/types';
 
@@ -102,15 +104,79 @@ export async function getSimuladoPoolCount(filters?: {
 
 export async function getSimuladoQuestionPayload(
   slug: string,
+  init?: { signal?: AbortSignal },
 ): Promise<SimuladoQuestaoPayloadResponse> {
   const res = await fetchWithAuth(
-    `/api/estudar/questao?slug=${encodeURIComponent(slug)}&context=simulado`,
+    `/api/simulado/questao?slug=${encodeURIComponent(slug)}`,
+    { signal: init?.signal },
   );
   const json = await parseJsonResponse<SimuladoQuestaoPayloadResponse>(res);
   if (!res.ok) {
     throw new SimuladoApiError(
       res.status,
       json.error ?? 'Não foi possível carregar a questão.',
+      json.details,
+    );
+  }
+  return json;
+}
+
+export async function getSimuladoAnalytics(filters?: {
+  periodo?: '7d' | '30d' | '90d' | '12m';
+  modo?: 'todos' | 'treino' | 'prova';
+  banca?: string;
+  topico?: string;
+  subtopico?: string;
+}): Promise<SimuladoAnalyticsResponse> {
+  const params = new URLSearchParams();
+  if (filters?.periodo) params.set('periodo', filters.periodo);
+  if (filters?.modo) params.set('modo', filters.modo);
+  if (filters?.banca) params.set('banca', filters.banca);
+  if (filters?.topico) params.set('topico', filters.topico);
+  if (filters?.subtopico) params.set('subtopico', filters.subtopico);
+  const query = params.toString();
+  const res = await fetchWithAuth(
+    query ? `/api/simulado/analytics?${query}` : '/api/simulado/analytics',
+  );
+  const json = await parseJsonResponse<SimuladoAnalyticsResponse>(res);
+  if (!res.ok) {
+    throw new SimuladoApiError(
+      res.status,
+      json.error ?? 'Erro ao carregar analytics de simulados',
+      json.details,
+    );
+  }
+  return json;
+}
+
+export async function getSimuladoHistory(filters?: {
+  periodo?: '7d' | '30d' | '90d' | '12m';
+  modo?: 'todos' | 'treino' | 'prova';
+  banca?: string;
+  topico?: string;
+  subtopico?: string;
+  status?: 'todos' | 'aberto' | 'concluido' | 'cancelado';
+  page?: number;
+  page_size?: number;
+}): Promise<SimuladoHistoryResponse> {
+  const params = new URLSearchParams();
+  if (filters?.periodo) params.set('periodo', filters.periodo);
+  if (filters?.modo) params.set('modo', filters.modo);
+  if (filters?.banca) params.set('banca', filters.banca);
+  if (filters?.topico) params.set('topico', filters.topico);
+  if (filters?.subtopico) params.set('subtopico', filters.subtopico);
+  if (filters?.status) params.set('status', filters.status);
+  if (typeof filters?.page === 'number') params.set('page', String(filters.page));
+  if (typeof filters?.page_size === 'number') params.set('page_size', String(filters.page_size));
+  const query = params.toString();
+  const res = await fetchWithAuth(
+    query ? `/api/simulado/history?${query}` : '/api/simulado/history',
+  );
+  const json = await parseJsonResponse<SimuladoHistoryResponse>(res);
+  if (!res.ok) {
+    throw new SimuladoApiError(
+      res.status,
+      json.error ?? 'Erro ao carregar histórico de simulados',
       json.details,
     );
   }

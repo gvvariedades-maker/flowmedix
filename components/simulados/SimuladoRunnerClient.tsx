@@ -1,21 +1,37 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Loader2, ChevronRight, ClipboardList } from 'lucide-react';
-import {
-  answerSimuladoQuestion,
-  getSimuladoQuestionPayload,
-  getSimuladoSession,
-  SimuladoApiError,
-} from '@/lib/simulado/client';
+import { answerSimuladoQuestion, SimuladoApiError } from '@/lib/simulado/client';
 import type { SimuladoSessionDetailResponse } from '@/lib/simulado/types';
 import type { LessonData } from '@/types/lesson';
 import { PageHeader } from '@/components/ui/page-header';
 import { Button } from '@/components/ui/button';
 import { EmptyState } from '@/components/ui/empty-state';
-import { SimuladoResumoClient } from '@/components/simulados/SimuladoResumoClient';
+
+const SimuladoResumoClient = dynamic(
+  () =>
+    import('@/components/simulados/SimuladoResumoClient').then((mod) => ({
+      default: mod.SimuladoResumoClient,
+    })),
+  {
+    loading: () => (
+      <div className="flex min-h-screen items-center justify-center bg-[#010409]">
+        <Loader2 className="h-10 w-10 animate-spin text-cyan-400" aria-label="Carregando resumo" />
+      </div>
+    ),
+  },
+);
+import {
+  SimuladoSessionProvider,
+  useSimuladoSessionContext,
+} from '@/components/simulados/SimuladoSessionProvider';
+import { applyAnswerPatch } from '@/lib/simulado/applyAnswerPatch';
+import { findFirstPendingSlug } from '@/lib/simulado/questionNavigation';
+import { SimuladoQuestionMap } from '@/components/simulados/SimuladoQuestionMap';
 import { cn } from '@/lib/utils';
 import { sanitizeHTML } from '@/lib/validations';
 import {
@@ -33,16 +49,45 @@ type FeedbackState = {
 
 type SimuladoRunnerClientProps = {
   sessionId: string;
+  initialSession?: SimuladoSessionDetailResponse | null;
 };
 
-export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
-  const router = useRouter();
-  const [sessionData, setSessionData] = useState<SimuladoSessionDetailResponse | null>(null);
-  const [loadingSession, setLoadingSession] = useState(true);
-  const [sessionError, setSessionError] = useState<string | null>(null);
-
-  /** Slug da questão exibida — só avança em "Próxima questão", não no refetch pós-resposta. */
+export function SimuladoRunnerClient({ sessionId, initialSession }: SimuladoRunnerClientProps) {
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
+
+  return (
+    <SimuladoSessionProvider
+      sessionId={sessionId}
+      initialSession={initialSession}
+      activeSlug={activeSlug}
+    >
+      <SimuladoRunnerView
+        sessionId={sessionId}
+        activeSlug={activeSlug}
+        setActiveSlug={setActiveSlug}
+      />
+    </SimuladoSessionProvider>
+  );
+}
+
+type SimuladoRunnerViewProps = {
+  sessionId: string;
+  activeSlug: string | null;
+  setActiveSlug: (slug: string | null) => void;
+};
+
+function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRunnerViewProps) {
+  const router = useRouter();
+  const {
+    sessionData,
+    loadingSession,
+    sessionError,
+    loadSession,
+    applyAnswerPatchToSession,
+    getCachedQuestion,
+    loadQuestion: loadQuestionFromCache,
+  } = useSimuladoSessionContext();
+
   const sessionInitialized = useRef(false);
 
   const [questionData, setQuestionData] = useState<LessonData | null>(null);
@@ -58,35 +103,11 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
   const [questionStartedAt, setQuestionStartedAt] = useState<number>(Date.now());
   const [liveMessage, setLiveMessage] = useState('');
   const optionsGroupRef = useRef<HTMLDivElement | null>(null);
-
-  const loadSession = useCallback(async () => {
-    setLoadingSession(true);
-    setSessionError(null);
-    try {
-      const data = await getSimuladoSession(sessionId);
-      setSessionData(data);
-      return data;
-    } catch (err) {
-      const message =
-        err instanceof SimuladoApiError
-          ? err.status === 404
-            ? 'Sessão não encontrada.'
-            : err.message
-          : 'Erro ao carregar simulado.';
-      setSessionError(message);
-      return null;
-    } finally {
-      setLoadingSession(false);
-    }
-  }, [sessionId]);
-
-  useEffect(() => {
-    void loadSession();
-  }, [loadSession]);
+  const questionLoadIdRef = useRef(0);
 
   const firstPendingSlug = useMemo(() => {
     if (!sessionData) return null;
-    return sessionData.questoes.find((q) => !q.respondida)?.modulo_slug ?? null;
+    return findFirstPendingSlug(sessionData.questoes);
   }, [sessionData]);
 
   useEffect(() => {
@@ -95,7 +116,7 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
     if (!firstPendingSlug) return;
     sessionInitialized.current = true;
     setActiveSlug(firstPendingSlug);
-  }, [sessionData, firstPendingSlug]);
+  }, [sessionData, firstPendingSlug, setActiveSlug]);
 
   const activeItem = useMemo(() => {
     if (!sessionData || !activeSlug) return null;
@@ -114,27 +135,46 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
     );
   }, [sessionData]);
 
-  const loadQuestion = useCallback(async (slug: string) => {
-    setLoadingQuestion(true);
-    setQuestionError(null);
-    setQuestionData(null);
-    setSelectedOption(null);
-    setFeedback(null);
-    setFinalFeedbackPending(false);
-    setSubmitError(null);
-    setLiveMessage('');
+  const loadQuestion = useCallback(
+    async (slug: string) => {
+      const loadId = ++questionLoadIdRef.current;
 
-    try {
-      const json = await getSimuladoQuestionPayload(slug);
-      setQuestionData(json.dados);
-    } catch (err) {
-      setQuestionError(
-        err instanceof SimuladoApiError ? err.message : 'Erro de rede ao carregar a questão.',
-      );
-    } finally {
-      setLoadingQuestion(false);
-    }
-  }, []);
+      setQuestionError(null);
+      setFeedback(null);
+      setFinalFeedbackPending(false);
+      setSubmitError(null);
+      setLiveMessage('');
+
+      const cached = getCachedQuestion(slug);
+      if (cached) {
+        if (loadId !== questionLoadIdRef.current) return;
+        setQuestionData(cached as LessonData);
+        setSelectedOption(null);
+        setLoadingQuestion(false);
+        return;
+      }
+
+      setLoadingQuestion(true);
+      setQuestionData(null);
+      setSelectedOption(null);
+
+      try {
+        const dados = await loadQuestionFromCache(slug);
+        if (loadId !== questionLoadIdRef.current) return;
+        setQuestionData(dados as LessonData);
+      } catch (err) {
+        if (loadId !== questionLoadIdRef.current) return;
+        setQuestionError(
+          err instanceof SimuladoApiError ? err.message : 'Erro de rede ao carregar a questão.',
+        );
+      } finally {
+        if (loadId === questionLoadIdRef.current) {
+          setLoadingQuestion(false);
+        }
+      }
+    },
+    [getCachedQuestion, loadQuestionFromCache],
+  );
 
   useEffect(() => {
     if (!activeSlug || sessionData?.session.status === 'concluido') return;
@@ -143,8 +183,9 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
   }, [activeSlug, sessionData?.session.status, loadQuestion]);
 
   const isTreino = sessionData?.session.modo === 'treino';
+  const options = questionData?.question_data?.options ?? [];
 
-  const handleConfirmAnswer = async () => {
+  const handleConfirmAnswer = useCallback(async () => {
     if (!activeItem || !activeSlug || !selectedOption || submitting || feedback) return;
 
     setSubmitting(true);
@@ -157,6 +198,8 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
         opcao_id: selectedOption,
         tempo_ms: Math.max(0, Date.now() - questionStartedAt),
       });
+
+      applyAnswerPatchToSession(result);
 
       if (isTreino && result.acertou !== null && result.opcao_correta_id) {
         const correctOption = options.find((opt) => opt.id === result.opcao_correta_id);
@@ -176,31 +219,45 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
         setLiveMessage('Resposta registrada. Gabarito disponível no resumo final.');
       }
 
-      const refreshed = await getSimuladoSession(sessionId);
-      setSessionData(refreshed);
       setFinalFeedbackPending(result.session_status === 'concluido' && isTreino);
 
       if (result.session_status === 'concluido') {
         return;
       }
-      if (!isTreino) {
-        const nextSlug = refreshed.questoes.find((q) => !q.respondida)?.modulo_slug ?? null;
-        if (nextSlug) setActiveSlug(nextSlug);
+      if (!isTreino && sessionData) {
+        const patched = applyAnswerPatch(sessionData, result);
+        const nextFromPatch = findFirstPendingSlug(patched.questoes);
+        if (nextFromPatch) setActiveSlug(nextFromPatch);
       }
     } catch (err) {
       setSubmitError(
         err instanceof SimuladoApiError ? err.message : 'Erro ao registrar resposta.',
       );
       setLiveMessage('Erro ao registrar resposta. Tente novamente.');
+      void loadSession();
     } finally {
       setSubmitting(false);
     }
-  };
+  }, [
+    activeItem,
+    activeSlug,
+    selectedOption,
+    submitting,
+    feedback,
+    sessionId,
+    questionStartedAt,
+    applyAnswerPatchToSession,
+    isTreino,
+    options,
+    sessionData,
+    loadSession,
+    setActiveSlug,
+  ]);
 
   const handleNext = async () => {
     if (!sessionData || advancing) return;
 
-    const nextSlug = sessionData.questoes.find((q) => !q.respondida)?.modulo_slug ?? null;
+    const nextSlug = findFirstPendingSlug(sessionData.questoes);
     if (!nextSlug) {
       const refreshed = await loadSession();
       if (refreshed?.session.status === 'concluido') return;
@@ -221,7 +278,6 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
     }
   };
 
-  const options = questionData?.question_data?.options ?? [];
   const isAnswerLocked = submitting || (!isTreino && !!activeItem?.respondida);
   const canConfirm = !!selectedOption && !submitting && !isAnswerLocked;
   const canAdvance = !!feedback && !advancing;
@@ -255,7 +311,7 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [questionData, loadingQuestion, submitting, options, selectedOption, feedback]);
+  }, [questionData, loadingQuestion, submitting, options, selectedOption, feedback, handleConfirmAnswer]);
 
   const handleOptionsKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (!options.length || feedback || isAnswerLocked) return;
@@ -274,6 +330,13 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
     setSelectedOption(nextOption.id);
     setLiveMessage(`Alternativa ${nextOption.id} selecionada.`);
   };
+
+  const handleMapSelect = useCallback(
+    (slug: string) => {
+      setActiveSlug(slug);
+    },
+    [setActiveSlug],
+  );
 
   if (loadingSession && !sessionData) {
     return (
@@ -354,25 +417,11 @@ export function SimuladoRunnerClient({ sessionId }: SimuladoRunnerClientProps) {
           <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
             Mapa de questões
           </p>
-          <div className="flex flex-wrap gap-2">
-            {sessionData.questoes.map((item) => (
-              <button
-                key={`${item.ordem}-${item.modulo_slug}`}
-                type="button"
-                onClick={() => setActiveSlug(item.modulo_slug)}
-                className={cn(
-                  'h-8 min-w-8 rounded-lg border px-2 text-xs font-semibold',
-                  activeSlug === item.modulo_slug
-                    ? 'border-cyan-500/40 bg-cyan-500/10 text-cyan-300'
-                    : item.respondida
-                      ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300'
-                      : 'border-white/10 bg-white/[0.03] text-slate-300',
-                )}
-              >
-                {item.ordem}
-              </button>
-            ))}
-          </div>
+          <SimuladoQuestionMap
+            questoes={sessionData.questoes}
+            activeSlug={activeSlug}
+            onSelect={handleMapSelect}
+          />
         </div>
 
         {!activeSlug || !activeItem ? (

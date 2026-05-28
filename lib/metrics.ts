@@ -21,6 +21,8 @@ interface PerformanceMetrics {
   ttfb: number;
   timestamp: number;
   cached: boolean;
+  /** Dimensão opcional (ex.: `simulado` no runner). */
+  context?: string;
 }
 
 interface QueryMetrics {
@@ -70,7 +72,8 @@ export function recordPerformance(
   endpoint: string,
   method: string,
   ttfb: number,
-  cached: boolean = false
+  cached: boolean = false,
+  context?: string,
 ) {
   performanceMetrics.push({
     endpoint,
@@ -78,6 +81,7 @@ export function recordPerformance(
     ttfb,
     timestamp: Date.now(),
     cached,
+    ...(context ? { context } : {}),
   });
 
   // Limitar tamanho do array
@@ -111,22 +115,26 @@ export function getCacheMetrics(key?: string): CacheMetrics | Map<string, CacheM
  */
 export function getPerformanceMetrics(
   endpoint?: string,
-  limit: number = 100
+  limit: number = 100,
+  context?: string,
 ): PerformanceMetrics[] {
   let filtered = performanceMetrics;
-  
+
   if (endpoint) {
-    filtered = performanceMetrics.filter((m) => m.endpoint === endpoint);
+    filtered = filtered.filter((m) => m.endpoint === endpoint);
   }
-  
+  if (context) {
+    filtered = filtered.filter((m) => m.context === context);
+  }
+
   return filtered.slice(-limit);
 }
 
 /**
  * Obtém estatísticas agregadas de performance
  */
-export function getPerformanceStats(endpoint?: string) {
-  const metrics = getPerformanceMetrics(endpoint);
+export function getPerformanceStats(endpoint?: string, context?: string) {
+  const metrics = getPerformanceMetrics(endpoint, 100, context);
   
   if (metrics.length === 0) {
     return {

@@ -129,11 +129,19 @@ export function answerE2eSimuladoQuestion(
   state.session.status = 'concluido';
   state.session.concluida_em = new Date().toISOString();
 
+  const questoes = buildQuestoes(state);
+  const questaoAtualizada = questoes[0];
+  if (!questaoAtualizada || questaoAtualizada.respondida !== true) {
+    return null;
+  }
+
   return {
     success: true as const,
     acertou: state.session.modo === 'treino' ? acertou : null,
     opcao_correta_id: state.session.modo === 'treino' ? 'A' : null,
     session_status: 'concluido' as const,
+    questao_atualizada: questaoAtualizada,
+    resumo: buildSummary(state),
   };
 }
 

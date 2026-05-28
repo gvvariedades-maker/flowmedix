@@ -4,10 +4,14 @@ import { resolve, dirname } from 'path';
 import { attachHistoricoStats, filterModulosLikeVitrine } from '@/lib/vitrineFilters';
 import { buildVitrineGroups } from '@/lib/vitrine/buildGroups';
 import { generateSyntheticScaleDataset } from '@/lib/scale/syntheticDataset';
+import { runAllSimuladoPayloadScenarios } from '@/lib/simulado/perfSmokeScenarios';
+import { E2E_SIMULADO_SESSION_ID, E2E_SIMULADO_SLUG } from '@/lib/e2e/constants';
 
 type HttpScenario = {
   name: string;
   url: string;
+  method?: 'GET' | 'POST';
+  body?: string;
   expectedStatuses: number[];
   budgetMs: number;
   headers?: Record<string, string>;
@@ -23,8 +27,15 @@ type HttpScenarioResult = {
   failureCount: number;
 };
 
+type PayloadScenarioResult = {
+  name: string;
+  bytes: number;
+  budgetBytes: number;
+  failureCount: number;
+};
+
 type PerfBudgetBaseline = {
-  scenarios?: Record<string, { p95Ms: number }>;
+  scenarios?: Record<string, { p95Ms?: number; maxBytes?: number }>;
   synthetic_10k_pipeline?: { p95Ms: number };
 };
 
@@ -83,8 +94,9 @@ async function runHttpScenario(
       const startedAt = Date.now();
       try {
         const response = await fetch(scenario.url, {
-          method: 'GET',
+          method: scenario.method ?? 'GET',
           headers: scenario.headers,
+          body: scenario.body,
           cache: 'no-store',
         });
         latencies.push(Date.now() - startedAt);
@@ -130,6 +142,8 @@ async function main() {
   const skipHttp = process.env.PERF_SKIP_HTTP === '1';
   const baseline = readBudgetBaseline(budgetBaselinePath);
 
+  const simuladoSessionId = E2E_SIMULADO_SESSION_ID;
+
   const scenarios: HttpScenario[] = [
     {
       name: 'api_vitrine_unauth',
@@ -162,6 +176,31 @@ async function main() {
       headers: metricsSecret ? { authorization: `Bearer ${metricsSecret}` } : undefined,
       budgetMs: 700,
     },
+    {
+      name: 'api_simulado_session_unauth',
+      url: `${baseUrl}/api/simulado/sessions/${simuladoSessionId}`,
+      expectedStatuses: [401],
+      budgetMs: 480,
+    },
+    {
+      name: 'api_simulado_questao_unauth',
+      url: `${baseUrl}/api/simulado/questao?slug=${encodeURIComponent(E2E_SIMULADO_SLUG)}`,
+      expectedStatuses: [401],
+      budgetMs: 480,
+    },
+    {
+      name: 'api_simulado_responder_unauth',
+      url: `${baseUrl}/api/simulado/responder`,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        session_id: simuladoSessionId,
+        modulo_slug: E2E_SIMULADO_SLUG,
+        opcao_id: 'A',
+      }),
+      expectedStatuses: [401],
+      budgetMs: 480,
+    },
   ];
 
   const results: HttpScenarioResult[] = [];
@@ -171,6 +210,8 @@ async function main() {
     }
   }
   results.push(runSyntheticDatasetScenario());
+
+  const payloadResults: PayloadScenarioResult[] = runAllSimuladoPayloadScenarios();
 
   const budgetFailures = results.filter((r) => {
     const baselineScenarioBudget = baseline?.scenarios?.[r.name]?.p95Ms;
@@ -191,6 +232,14 @@ async function main() {
   });
   const statusFailures = results.filter((r) => r.failureCount > 0);
 
+  const payloadBudgetFailures = payloadResults.filter((r) => {
+    const baselineMaxBytes = baseline?.scenarios?.[r.name]?.maxBytes;
+    if (typeof baselineMaxBytes === 'number' && Number.isFinite(baselineMaxBytes)) {
+      return r.bytes > baselineMaxBytes;
+    }
+    return r.failureCount > 0;
+  });
+
   const report = {
     baseUrl,
     skipHttp,
@@ -200,7 +249,9 @@ async function main() {
     regressionTolerance,
     budgetBaselinePath: budgetBaselinePath || null,
     results,
+    payloadResults,
     failedBudgets: budgetFailures.map((r) => r.name),
+    failedPayloadBudgets: payloadBudgetFailures.map((r) => r.name),
     failedStatusChecks: statusFailures.map((r) => r.name),
   };
 
@@ -210,7 +261,11 @@ async function main() {
   writeFileSync(absoluteReportPath, JSON.stringify(report, null, 2), 'utf8');
   console.log(`\nSaved report: ${absoluteReportPath}`);
 
-  if (budgetFailures.length > 0 || statusFailures.length > 0) {
+  if (
+    budgetFailures.length > 0 ||
+    statusFailures.length > 0 ||
+    payloadBudgetFailures.length > 0
+  ) {
     process.exitCode = 1;
   }
 }

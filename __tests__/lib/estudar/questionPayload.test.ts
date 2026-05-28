@@ -2,6 +2,7 @@ import {
   findCorrectOptionId,
   resolveQuestionAttempt,
   stripQuestionAnswersForClient,
+  stripQuestionForSimulado,
 } from '@/lib/estudar/questionPayload';
 import type { LessonData } from '@/types/lesson';
 
@@ -15,6 +16,13 @@ const questaoCompleta: LessonData = {
       { id: 'C', text: 'Opção C', is_correct: false },
     ],
   },
+  reverse_study_slides: [
+    {
+      type: 'concept_map',
+      items: [{ label: 'Conceito', detail: 'Detalhe' }],
+    },
+  ],
+  study_slides: [{ type: 'golden_rule', content: 'Regra' }],
 };
 
 describe('stripQuestionAnswersForClient', () => {
@@ -27,6 +35,21 @@ describe('stripQuestionAnswersForClient', () => {
       { id: 'C', text: 'Opção C' },
     ]);
     expect(stripped.meta).toEqual(questaoCompleta.meta);
+  });
+});
+
+describe('stripQuestionForSimulado', () => {
+  it('remove gabarito e NeuroSlides', () => {
+    const stripped = stripQuestionForSimulado(questaoCompleta);
+
+    expect(stripped.question_data.options).toEqual([
+      { id: 'A', text: 'Opção A' },
+      { id: 'B', text: 'Opção B' },
+      { id: 'C', text: 'Opção C' },
+    ]);
+    expect(stripped.meta).toEqual(questaoCompleta.meta);
+    expect(stripped).not.toHaveProperty('reverse_study_slides');
+    expect(stripped).not.toHaveProperty('study_slides');
   });
 });
 

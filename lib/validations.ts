@@ -780,6 +780,40 @@ export const SimuladoPoolCountQuerySchema = z.object({
   q: z.string().trim().max(200).optional(),
 });
 
+/** Query params para analytics de sessões do simulado. */
+export const SimuladoAnalyticsQuerySchema = z.object({
+  periodo: z.enum(['7d', '30d', '90d', '12m']).optional(),
+  modo: z.enum(['todos', 'treino', 'prova']).optional(),
+  banca: z.string().trim().max(LIMITS.BANCA_MAX).optional(),
+  topico: z.string().trim().max(LIMITS.TOPICO_MAX).optional(),
+  subtopico: z.string().trim().max(LIMITS.TOPICO_MAX).optional(),
+  assunto: z.string().trim().max(LIMITS.TOPICO_MAX).optional(),
+});
+
+/** Query params para histórico paginado de simulados. */
+export const SimuladoHistoryQuerySchema = z.object({
+  periodo: z.enum(['7d', '30d', '90d', '12m']).optional(),
+  modo: z.enum(['todos', 'treino', 'prova']).optional(),
+  status: z.enum(['todos', 'aberto', 'concluido', 'cancelado']).optional(),
+  banca: z.string().trim().max(LIMITS.BANCA_MAX).optional(),
+  topico: z.string().trim().max(LIMITS.TOPICO_MAX).optional(),
+  subtopico: z.string().trim().max(LIMITS.TOPICO_MAX).optional(),
+  assunto: z.string().trim().max(LIMITS.TOPICO_MAX).optional(),
+  page: z.coerce.number().int().min(1).optional(),
+  page_size: z.coerce.number().int().min(1).max(100).optional(),
+});
+
+/** Query params para carregar questão no runner de simulado. */
+export const SimuladoQuestaoQuerySchema = z.object({
+  slug: z.string().trim().min(1).max(200),
+});
+
+/** Payload para executar retenção híbrida de analytics de simulados (admin/manutenção). */
+export const SimuladoRetentionRunSchema = z.object({
+  retention_months: z.coerce.number().int().min(1).max(36).optional().default(12),
+  reference_at: z.string().datetime().optional(),
+});
+
 // ============================================================================
 // TYPE EXPORTS
 // ============================================================================
@@ -789,6 +823,10 @@ export type VitrineFacetsQueryInput = z.infer<typeof VitrineFacetsQuerySchema>;
 export type SimuladoCreateSessionInput = z.input<typeof SimuladoCreateSessionSchema>;
 export type SimuladoAnswerInput = z.infer<typeof SimuladoAnswerSchema>;
 export type SimuladoPoolCountQueryInput = z.infer<typeof SimuladoPoolCountQuerySchema>;
+export type SimuladoAnalyticsQueryInput = z.infer<typeof SimuladoAnalyticsQuerySchema>;
+export type SimuladoHistoryQueryInput = z.infer<typeof SimuladoHistoryQuerySchema>;
+export type SimuladoQuestaoQueryInput = z.infer<typeof SimuladoQuestaoQuerySchema>;
+export type SimuladoRetentionRunInput = z.infer<typeof SimuladoRetentionRunSchema>;
 export type QuestaoCompletaInput = z.infer<typeof QuestaoCompletaSchema>;
 export type ResolveUserInput = z.infer<typeof ResolveUserSchema>;
 export type ConcursoMatriculaInput = z.infer<typeof ConcursoMatriculaSchema>;

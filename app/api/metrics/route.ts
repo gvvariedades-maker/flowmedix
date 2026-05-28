@@ -50,6 +50,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const type = searchParams.get('type');
     const endpoint = searchParams.get('endpoint');
+    const context = searchParams.get('context') || undefined;
     const limit = parseInt(searchParams.get('limit') || '100');
 
     // Retornar apenas métricas de cache
@@ -63,12 +64,13 @@ export async function GET(request: NextRequest) {
 
     // Retornar apenas métricas de performance
     if (type === 'performance') {
-      const stats = getPerformanceStats(endpoint || undefined);
-      const recent = getPerformanceMetrics(endpoint || undefined, limit);
-      
+      const stats = getPerformanceStats(endpoint || undefined, context);
+      const recent = getPerformanceMetrics(endpoint || undefined, limit, context);
+
       return NextResponse.json({
         stats,
         recent,
+        context: context ?? null,
         timestamp: Date.now(),
       });
     }
