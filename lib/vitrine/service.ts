@@ -19,7 +19,11 @@ import { SCALE_LIMITS } from '@/lib/scale/constants';
 import type { VitrinePageResponse } from '@/lib/vitrine/types';
 
 export type VitrineListFilters = {
+  bancas?: string[];
+  assuntos?: string[];
+  /** @deprecated use bancas */
   banca?: string;
+  /** @deprecated use assuntos */
   assunto?: string;
   q?: string;
 };
@@ -30,13 +34,23 @@ export type GetVitrinePageParams = {
   filters?: VitrineListFilters;
 };
 
-function normalizeFiltersForLog(filters: VitrineListFilters): VitrineListFilters {
+function normalizeVitrineListFilters(filters: VitrineListFilters = {}): VitrineListFilters {
+  const bancas = [
+    ...(filters.bancas?.map((b) => b.trim()).filter(Boolean) ?? []),
+    ...(filters.banca?.trim() ? [filters.banca.trim()] : []),
+  ];
+  const assuntos = [
+    ...(filters.assuntos?.map((a) => a.trim()).filter(Boolean) ?? []),
+    ...(filters.assunto?.trim() ? [filters.assunto.trim()] : []),
+  ];
   return {
-    banca: filters.banca?.trim() || undefined,
-    assunto: filters.assunto?.trim() || undefined,
+    bancas: bancas.length ? [...new Set(bancas)] : undefined,
+    assuntos: assuntos.length ? [...new Set(assuntos)] : undefined,
     q: filters.q?.trim() || undefined,
   };
 }
+
+const normalizeFiltersForLog = normalizeVitrineListFilters;
 
 function paginateGroups<T>(items: T[], page: number, perPage: number): { slice: T[]; totalPages: number } {
   const totalPages = Math.max(1, Math.ceil(items.length / perPage));
@@ -60,10 +74,11 @@ async function loadModulosForVitrine(
 }
 
 async function getVitrinePageViaJs(params: GetVitrinePageParams): Promise<VitrinePageResponse> {
-  const { userId, page, filters = {} } = params;
+  const { userId, page } = params;
+  const filters = normalizeVitrineListFilters(params.filters);
 
   const modulosRaw = await loadModulosForVitrine(userId, filters);
-  const facets = buildVitrineFacets(modulosRaw, { banca: filters.banca });
+  const facets = buildVitrineFacets(modulosRaw, { bancas: filters.bancas });
 
   const modulosComStatsPlaceholder = modulosRaw.map((m) => ({
     ...m,
@@ -105,7 +120,8 @@ async function getVitrinePageViaJs(params: GetVitrinePageParams): Promise<Vitrin
  * Caminho feliz: RPC Postgres (incluindo busca `q`); em erro, fallback JS.
  */
 export async function getVitrinePage(params: GetVitrinePageParams): Promise<VitrinePageResponse> {
-  const { userId, page, filters = {} } = params;
+  const { userId, page } = params;
+  const filters = normalizeVitrineListFilters(params.filters);
   const normalizedFilters = normalizeFiltersForLog(filters);
   const startAt = Date.now();
 

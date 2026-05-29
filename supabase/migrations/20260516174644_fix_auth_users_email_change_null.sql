@@ -9,7 +9,6 @@ WHERE email_change IS NULL
    OR email_change_token_new IS NULL
    OR email_change_token_current IS NULL;
 
--- Busca por e-mail sem paginar auth.admin.listUsers (uso server-side / service role).
 CREATE OR REPLACE FUNCTION public.admin_get_auth_user_id_by_email(user_email text)
 RETURNS uuid
 LANGUAGE sql
@@ -24,4 +23,4 @@ AS $$
 $$;
 
 REVOKE ALL ON FUNCTION public.admin_get_auth_user_id_by_email(text) FROM PUBLIC;
-GRANT EXECUTE ON FUNCTION public.admin_get_auth_user_id_by_email(text) TO service_role;
+GRANT EXECUTE ON FUNCTION public.admin_get_auth_user_id_by_email(text) TO service_role;;

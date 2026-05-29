@@ -5,6 +5,9 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Loader2, ChevronRight, ClipboardList } from 'lucide-react';
+import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
+import { PaywallModal } from '@/components/freemium/PaywallModal';
+import { FREEMIUM_SIMULADO_DAILY_LIMIT } from '@/lib/freemium';
 import { answerSimuladoQuestion, SimuladoApiError } from '@/lib/simulado/client';
 import type { SimuladoSessionDetailResponse } from '@/lib/simulado/types';
 import type { LessonData } from '@/types/lesson';
@@ -102,6 +105,9 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const [advancing, setAdvancing] = useState(false);
   const [questionStartedAt, setQuestionStartedAt] = useState<number>(Date.now());
   const [liveMessage, setLiveMessage] = useState('');
+  const [paywallOpen, setPaywallOpen] = useState(false);
+  const [resetEm, setResetEm] = useState<string | null>(null);
+  const [simuladoLimiteAtingido, setSimuladoLimiteAtingido] = useState(false);
   const optionsGroupRef = useRef<HTMLDivElement | null>(null);
   const questionLoadIdRef = useRef(0);
 
@@ -117,6 +123,30 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     sessionInitialized.current = true;
     setActiveSlug(firstPendingSlug);
   }, [sessionData, firstPendingSlug, setActiveSlug]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    fetchWithAuth('/api/freemium/status')
+      .then(async (response) => {
+        if (!response.ok || cancelled) return;
+        const data = (await response.json()) as {
+          isPro?: boolean;
+          simulado?: { limiteAtingido?: boolean };
+          resetEm?: string;
+        };
+        if (cancelled || data.isPro) return;
+        if (data.simulado?.limiteAtingido) {
+          setSimuladoLimiteAtingido(true);
+          if (data.resetEm) setResetEm(data.resetEm);
+        }
+      })
+      .catch(() => {});
+
+    return () => {
+      cancelled = true;
+    };
+  }, [sessionId]);
 
   const activeItem = useMemo(() => {
     if (!sessionData || !activeSlug) return null;
@@ -188,6 +218,12 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const handleConfirmAnswer = useCallback(async () => {
     if (!activeItem || !activeSlug || !selectedOption || submitting || feedback) return;
 
+    const needsNewAnswerSlot = !activeItem.respondida;
+    if (needsNewAnswerSlot && simuladoLimiteAtingido) {
+      setPaywallOpen(true);
+      return;
+    }
+
     setSubmitting(true);
     setSubmitError(null);
 
@@ -230,6 +266,17 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         if (nextFromPatch) setActiveSlug(nextFromPatch);
       }
     } catch (err) {
+      if (err instanceof SimuladoApiError && err.status === 403) {
+        const details = err.details as { limiteAtingido?: boolean; resetEm?: string } | undefined;
+        if (details?.limiteAtingido) {
+          setSimuladoLimiteAtingido(true);
+          if (details.resetEm) setResetEm(details.resetEm);
+          setPaywallOpen(true);
+          setSubmitError(null);
+          setLiveMessage('Limite diário de simulado atingido.');
+          return;
+        }
+      }
       setSubmitError(
         err instanceof SimuladoApiError ? err.message : 'Erro ao registrar resposta.',
       );
@@ -252,6 +299,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     sessionData,
     loadSession,
     setActiveSlug,
+    simuladoLimiteAtingido,
   ]);
 
   const handleNext = async () => {
@@ -278,8 +326,11 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     }
   };
 
-  const isAnswerLocked = submitting || (!isTreino && !!activeItem?.respondida);
-  const canConfirm = !!selectedOption && !submitting && !isAnswerLocked;
+  const simuladoBlockedForNewAnswer =
+    simuladoLimiteAtingido && activeItem != null && !activeItem.respondida;
+  const isAnswerLocked =
+    submitting || (!isTreino && !!activeItem?.respondida) || simuladoBlockedForNewAnswer;
+  const canConfirm = !!selectedOption && !submitting && !isAnswerLocked && !simuladoBlockedForNewAnswer;
   const canAdvance = !!feedback && !advancing;
 
   useEffect(() => {
@@ -643,12 +694,34 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           </div>
         )}
 
+        {simuladoBlockedForNewAnswer && (
+          <div className="rounded-xl border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-center text-sm text-amber-200">
+            Plano gratuito: você já respondeu {FREEMIUM_SIMULADO_DAILY_LIMIT} questões de simulado
+            hoje.{' '}
+            <button
+              type="button"
+              onClick={() => setPaywallOpen(true)}
+              className="font-semibold text-cyan-300 underline-offset-2 hover:underline"
+            >
+              Assine o Pro
+            </button>{' '}
+            para continuar ou volte amanhã.
+          </div>
+        )}
+
         <p className="text-center text-xs text-slate-600">
           <Link href="/simulados" className="transition-colors hover:text-slate-400">
             Sair e voltar à configuração
           </Link>
         </p>
       </div>
+
+      <PaywallModal
+        open={paywallOpen}
+        onClose={() => setPaywallOpen(false)}
+        resetEm={resetEm}
+        variant="simulado"
+      />
     </div>
   );
 }

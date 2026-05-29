@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { FREEMIUM_PLAN_LIMITS_COMPACT } from '@/lib/freemium';
 import { landingDemoQuestao } from '@/lib/landingDemoQuestao';
 
 const AvantLessonPlayer = dynamic(() => import('@/components/lesson/AvantLessonPlayer'), {
@@ -47,7 +48,7 @@ export function DemoInterativa() {
             <ArrowRight size={18} />
           </Link>
           <p className="text-center text-sm font-medium text-slate-500 sm:text-left">
-            1 questão grátis por dia após cadastro · sem cartão
+            {FREEMIUM_PLAN_LIMITS_COMPACT} após cadastro · sem cartão
           </p>
         </div>
       </div>

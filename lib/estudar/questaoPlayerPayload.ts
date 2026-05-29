@@ -38,12 +38,19 @@ export function parseEstudarSearchParams(searchParams: EstudarSearchParams) {
   const cadernoId = fromCaderno
     ? (typeof searchParams.caderno_id === 'string' ? searchParams.caderno_id : undefined)
     : undefined;
-  const vitrineBanca = typeof searchParams.banca === 'string' ? searchParams.banca.trim() : '';
-  const vitrineAssunto =
-    typeof searchParams.assunto === 'string' ? searchParams.assunto.trim() : '';
+  const vitrineBancas = Array.isArray(searchParams.banca)
+    ? searchParams.banca.map((b) => String(b).trim()).filter(Boolean)
+    : typeof searchParams.banca === 'string' && searchParams.banca.trim()
+      ? [searchParams.banca.trim()]
+      : [];
+  const vitrineAssuntos = Array.isArray(searchParams.assunto)
+    ? searchParams.assunto.map((a) => String(a).trim()).filter(Boolean)
+    : typeof searchParams.assunto === 'string' && searchParams.assunto.trim()
+      ? [searchParams.assunto.trim()]
+      : [];
   const vitrineQ = typeof searchParams.q === 'string' ? searchParams.q.trim() : '';
 
-  return { fromPlano, fromCaderno, cadernoId, vitrineBanca, vitrineAssunto, vitrineQ };
+  return { fromPlano, fromCaderno, cadernoId, vitrineBancas, vitrineAssuntos, vitrineQ };
 }
 
 export type BuildEstudarQuestaoPlayerPayloadInput = {
@@ -62,7 +69,7 @@ export async function buildEstudarQuestaoPlayerPayload(
   input: BuildEstudarQuestaoPlayerPayloadInput,
 ): Promise<EstudarQuestaoBuildResult> {
   const { slug, userId, searchParams = {} } = input;
-  const { fromPlano, fromCaderno, cadernoId, vitrineBanca, vitrineAssunto, vitrineQ } =
+  const { fromPlano, fromCaderno, cadernoId, vitrineBancas, vitrineAssuntos, vitrineQ } =
     parseEstudarSearchParams(searchParams);
 
   let atual: ModuloAtualRow | null = null;
@@ -144,8 +151,8 @@ export async function buildEstudarQuestaoPlayerPayload(
       slug,
       tituloAula,
       vitrineFilters: {
-        banca: vitrineBanca || undefined,
-        assunto: vitrineAssunto || undefined,
+        bancas: vitrineBancas.length ? vitrineBancas : undefined,
+        assuntos: vitrineAssuntos.length ? vitrineAssuntos : undefined,
         q: vitrineQ || undefined,
       },
     });
@@ -164,8 +171,8 @@ export async function buildEstudarQuestaoPlayerPayload(
       : undefined;
 
   const vitrineParams = new URLSearchParams();
-  if (vitrineBanca) vitrineParams.set('banca', vitrineBanca);
-  if (vitrineAssunto) vitrineParams.set('assunto', vitrineAssunto);
+  vitrineBancas.forEach((b) => vitrineParams.append('banca', b));
+  vitrineAssuntos.forEach((a) => vitrineParams.append('assunto', a));
   if (vitrineQ) vitrineParams.set('q', vitrineQ);
   const vitrineQueryString = vitrineParams.toString();
   const vitrineQuerySuffix = vitrineQueryString ? `?${vitrineQueryString}` : '';

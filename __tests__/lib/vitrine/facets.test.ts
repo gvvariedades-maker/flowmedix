@@ -62,7 +62,7 @@ describe('getVitrineFacets', () => {
 
     const facets = await getVitrineFacets({ userId: 'u1', banca: 'FGV' });
 
-    expect(fetchFacetsRpc).toHaveBeenCalledWith({ userId: 'u1', banca: 'FGV' });
+    expect(fetchFacetsRpc).toHaveBeenCalledWith({ userId: 'u1', bancas: ['FGV'] });
     expect(getModulos).not.toHaveBeenCalled();
     expect(facets.assuntos).toEqual(['Assunto FGV']);
   });

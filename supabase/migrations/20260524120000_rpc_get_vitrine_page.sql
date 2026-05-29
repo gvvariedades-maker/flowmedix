@@ -304,9 +304,7 @@ BEGIN
   );
 END;
 $$;
-
 REVOKE EXECUTE ON FUNCTION public.get_vitrine_page(uuid, int, text, text, text) FROM PUBLIC, anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.get_vitrine_page(uuid, int, text, text, text) TO service_role;
-
 COMMENT ON FUNCTION public.get_vitrine_page(uuid, int, text, text, text) IS
   'Vitrine paginada por titulo_aula: entitlements, filtros banca/assunto/q, histórico agregado e questões nested. Uso: service_role.';

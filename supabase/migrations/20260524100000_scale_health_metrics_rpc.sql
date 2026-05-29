@@ -70,9 +70,7 @@ AS $$
     )
   );
 $$;
-
 REVOKE EXECUTE ON FUNCTION public.avant_scale_health_metrics() FROM PUBLIC, anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.avant_scale_health_metrics() TO service_role;
-
 COMMENT ON FUNCTION public.avant_scale_health_metrics() IS
   'Agregados de escala (catálogo, JSON, histórico). Uso: service_role / scale-health-check.';

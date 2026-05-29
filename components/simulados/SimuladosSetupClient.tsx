@@ -2,14 +2,13 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { ChevronDown, ClipboardList, Loader2, PlayCircle, SearchX } from 'lucide-react';
+import { ClipboardList, Loader2, PlayCircle, SearchX } from 'lucide-react';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { PageHeader } from '@/components/ui/page-header';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { EmptyState } from '@/components/ui/empty-state';
-import { DashboardFilterSelect } from '@/components/dashboard/DashboardFilterSelect';
-import { SELECT_TRIGGER_DARK_PANEL } from '@/components/dashboard/dashboard-select-dark';
+import { MultiCheckboxFilter } from '@/components/ui/MultiCheckboxFilter';
 import {
   createSimuladoSession,
   getSimuladoPoolCount,
@@ -22,6 +21,9 @@ import type { VitrineFacets } from '@/lib/vitrine/types';
 import { cn } from '@/lib/utils';
 import type { SimuladoOpenSessionResponse } from '@/lib/simulado/types';
 import type { SimuladoModo } from '@/lib/simulado/types';
+import {
+  FREEMIUM_PLAN_LIMITS_DESCRIPTION,
+} from '@/lib/freemium';
 
 function formatZodIssues(issues: ZodIssue[]): string {
   const first = issues[0];
@@ -33,32 +35,31 @@ function formatZodIssues(issues: ZodIssue[]): string {
 export function SimuladosSetupClient() {
   const router = useRouter();
   const [quantidade, setQuantidade] = useState('20');
-  const [banca, setBanca] = useState('');
-  const [assunto, setAssunto] = useState('');
+  const [bancasSelecionadas, setBancasSelecionadas] = useState<string[]>([]);
+  const [assuntosSelecionados, setAssuntosSelecionados] = useState<string[]>([]);
   const [q, setQ] = useState('');
   const [modo, setModo] = useState<SimuladoModo>('treino');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [noQuestions, setNoQuestions] = useState(false);
 
-  const [bancas, setBancas] = useState<string[]>([]);
-  const [assuntos, setAssuntos] = useState<string[]>([]);
+  const [facetBancas, setFacetBancas] = useState<string[]>([]);
+  const [facetAssuntos, setFacetAssuntos] = useState<string[]>([]);
   const [facetsLoading, setFacetsLoading] = useState(true);
-  const [filtrosSelectMontados, setFiltrosSelectMontados] = useState(false);
   const [openSession, setOpenSession] = useState<SimuladoOpenSessionResponse['session']>(null);
   const [loadingOpenSession, setLoadingOpenSession] = useState(true);
   const [poolCount, setPoolCount] = useState<number | null>(null);
   const [poolLoading, setPoolLoading] = useState(false);
   const [freemiumStatus, setFreemiumStatus] = useState<{
     isPro: boolean;
-    limiteAtingido: boolean;
     resetEm: string;
+    simulado: {
+      questoesHoje: number;
+      limite: number;
+      restantes: number;
+      limiteAtingido: boolean;
+    };
   } | null>(null);
-
-  useEffect(() => {
-    const id = requestAnimationFrame(() => setFiltrosSelectMontados(true));
-    return () => cancelAnimationFrame(id);
-  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -86,7 +87,7 @@ export function SimuladosSetupClient() {
     async function loadFacets() {
       setFacetsLoading(true);
       const params = new URLSearchParams();
-      if (banca) params.set('banca', banca);
+      bancasSelecionadas.forEach((b) => params.append('banca', b));
 
       try {
         const query = params.toString();
@@ -96,13 +97,15 @@ export function SimuladosSetupClient() {
         if (!res.ok) throw new Error('facets');
         const data = (await res.json()) as VitrineFacets;
         if (cancelled) return;
-        setBancas(data.bancas);
-        setAssuntos(data.assuntos);
-        setAssunto((current) => (current && !data.assuntos.includes(current) ? '' : current));
+        setFacetBancas(data.bancas);
+        setFacetAssuntos(data.assuntos);
+        setAssuntosSelecionados((current) =>
+          current.filter((a) => data.assuntos.includes(a)),
+        );
       } catch {
         if (!cancelled) {
-          setBancas([]);
-          setAssuntos([]);
+          setFacetBancas([]);
+          setFacetAssuntos([]);
         }
       } finally {
         if (!cancelled) setFacetsLoading(false);
@@ -113,7 +116,7 @@ export function SimuladosSetupClient() {
     return () => {
       cancelled = true;
     };
-  }, [banca]);
+  }, [bancasSelecionadas]);
 
   useEffect(() => {
     let cancelled = false;
@@ -121,8 +124,17 @@ export function SimuladosSetupClient() {
       try {
         const res = await fetchWithAuth('/api/freemium/status');
         if (!res.ok) return;
-        const data = (await res.json()) as { isPro: boolean; limiteAtingido: boolean; resetEm: string };
-        if (!cancelled) setFreemiumStatus(data);
+        const data = (await res.json()) as {
+          isPro: boolean;
+          resetEm: string;
+          simulado: {
+            questoesHoje: number;
+            limite: number;
+            restantes: number;
+            limiteAtingido: boolean;
+          };
+        };
+        if (!cancelled && data.simulado) setFreemiumStatus(data);
       } catch {
         // noop
       }
@@ -139,8 +151,8 @@ export function SimuladosSetupClient() {
       setPoolLoading(true);
       try {
         const data = await getSimuladoPoolCount({
-          ...(banca ? { banca } : {}),
-          ...(assunto ? { assunto } : {}),
+          ...(bancasSelecionadas.length ? { bancas: bancasSelecionadas } : {}),
+          ...(assuntosSelecionados.length ? { assuntos: assuntosSelecionados } : {}),
           ...(q.trim() ? { q: q.trim() } : {}),
         });
         if (!cancelled) setPoolCount(data.estimated_count);
@@ -155,16 +167,26 @@ export function SimuladosSetupClient() {
       cancelled = true;
       window.clearTimeout(handle);
     };
-  }, [banca, assunto, q]);
+  }, [bancasSelecionadas, assuntosSelecionados, q]);
 
-  const freeLimitReached = useMemo(
-    () => !!freemiumStatus && !freemiumStatus.isPro && freemiumStatus.limiteAtingido,
+  const simuladoFreeLimitReached = useMemo(
+    () =>
+      !!freemiumStatus && !freemiumStatus.isPro && freemiumStatus.simulado.limiteAtingido,
     [freemiumStatus],
   );
 
+  const simuladoFreeHint = useMemo(() => {
+    if (!freemiumStatus || freemiumStatus.isPro) return null;
+    const { questoesHoje, limite, restantes } = freemiumStatus.simulado;
+    if (simuladoFreeLimitReached) {
+      return `Plano gratuito: limite de ${limite} questões de simulado por dia atingido (${FREEMIUM_PLAN_LIMITS_DESCRIPTION}). Novo acesso em ${new Date(freemiumStatus.resetEm).toLocaleString('pt-BR')}. Você ainda pode continuar um simulado em andamento para revisar questões já respondidas.`;
+    }
+    return `Plano gratuito para treinar: ${FREEMIUM_PLAN_LIMITS_DESCRIPTION}. No simulado: ${restantes} de ${limite} restante${restantes === 1 ? '' : 's'} hoje (${questoesHoje} respondida${questoesHoje === 1 ? '' : 's'}).`;
+  }, [freemiumStatus, simuladoFreeLimitReached]);
+
   const clearFilters = () => {
-    setBanca('');
-    setAssunto('');
+    setBancasSelecionadas([]);
+    setAssuntosSelecionados([]);
     setQ('');
     setError(null);
     setNoQuestions(false);
@@ -178,8 +200,8 @@ export function SimuladosSetupClient() {
     const parsed = SimuladoCreateSessionSchema.safeParse({
       quantidade,
       modo,
-      ...(banca ? { banca } : {}),
-      ...(assunto ? { assunto } : {}),
+      ...(bancasSelecionadas.length ? { bancas: bancasSelecionadas } : {}),
+      ...(assuntosSelecionados.length ? { assuntos: assuntosSelecionados } : {}),
       ...(q.trim() ? { q: q.trim() } : {}),
       ...(opts?.forcarNovo ? { forcar_novo: true } : {}),
     });
@@ -206,8 +228,6 @@ export function SimuladosSetupClient() {
                 .join(' ')
             : null;
           setError(fieldMsg || err.message);
-        } else if (err.status === 403) {
-          setError('Plano gratuito: 1 simulado por dia. Faça upgrade para liberar ilimitado.');
         } else {
           setError(err.message);
         }
@@ -341,10 +361,16 @@ export function SimuladosSetupClient() {
             )}
           </div>
 
-          {freeLimitReached && (
-            <div className="rounded-xl border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-sm text-amber-200">
-              Plano gratuito: limite de 1 simulado por dia atingido. Novo acesso em{' '}
-              {new Date(freemiumStatus!.resetEm).toLocaleString('pt-BR')}.
+          {simuladoFreeHint && (
+            <div
+              className={cn(
+                'rounded-xl border px-4 py-3 text-sm',
+                simuladoFreeLimitReached
+                  ? 'border-amber-400/30 bg-amber-400/10 text-amber-200'
+                  : 'border-white/10 bg-white/[0.02] text-slate-400',
+              )}
+            >
+              {simuladoFreeHint}
             </div>
           )}
 
@@ -353,62 +379,41 @@ export function SimuladosSetupClient() {
               <span id="simulado-banca-label" className="text-sm font-medium text-slate-300">
                 Banca (opcional)
               </span>
-              {filtrosSelectMontados ? (
-                <DashboardFilterSelect
-                  id="simulado-banca"
-                  aria-labelledby="simulado-banca-label"
-                  variant="panel"
-                  placeholder="Todas as bancas"
-                  allLabel="Todas as bancas"
-                  sheetTitle="Filtrar por banca"
-                  value={banca}
-                  options={bancas}
-                  disabled={loading || (facetsLoading && bancas.length === 0)}
-                  onValueChange={(v) => {
-                    setBanca(v);
-                    setNoQuestions(false);
-                  }}
-                />
-              ) : (
-                <div
-                  className={cn(SELECT_TRIGGER_DARK_PANEL, 'text-slate-400')}
-                  aria-hidden
-                >
-                  <span className="line-clamp-1">Todas as bancas</span>
-                  <ChevronDown className="h-4 w-4 opacity-50" />
-                </div>
-              )}
+              <MultiCheckboxFilter
+                id="simulado-banca"
+                aria-labelledby="simulado-banca-label"
+                emptyLabel="Todas as bancas"
+                searchPlaceholder="Buscar banca..."
+                emptySearchLabel="Nenhuma banca encontrada"
+                options={facetBancas}
+                value={bancasSelecionadas}
+                disabled={loading || (facetsLoading && facetBancas.length === 0)}
+                onChange={(next) => {
+                  setBancasSelecionadas(next);
+                  setNoQuestions(false);
+                }}
+              />
             </div>
 
             <div className="space-y-2">
               <span id="simulado-assunto-label" className="text-sm font-medium text-slate-300">
                 Assunto (opcional)
               </span>
-              {filtrosSelectMontados ? (
-                <DashboardFilterSelect
-                  id="simulado-assunto"
-                  aria-labelledby="simulado-assunto-label"
-                  variant="panel"
-                  placeholder="Todos os assuntos"
-                  allLabel="Todos os assuntos"
-                  sheetTitle="Filtrar por assunto"
-                  value={assunto}
-                  options={assuntos}
-                  disabled={loading || (facetsLoading && assuntos.length === 0)}
-                  onValueChange={(v) => {
-                    setAssunto(v);
-                    setNoQuestions(false);
-                  }}
-                />
-              ) : (
-                <div
-                  className={cn(SELECT_TRIGGER_DARK_PANEL, 'text-slate-400')}
-                  aria-hidden
-                >
-                  <span className="line-clamp-1">Todos os assuntos</span>
-                  <ChevronDown className="h-4 w-4 opacity-50" />
-                </div>
-              )}
+              <MultiCheckboxFilter
+                id="simulado-assunto"
+                aria-labelledby="simulado-assunto-label"
+                emptyLabel="Todos os assuntos"
+                searchPlaceholder="Buscar assunto..."
+                emptySearchLabel="Nenhum assunto encontrado"
+                contentMinWidth="min-w-[240px]"
+                options={facetAssuntos}
+                value={assuntosSelecionados}
+                disabled={loading || (facetsLoading && facetAssuntos.length === 0)}
+                onChange={(next) => {
+                  setAssuntosSelecionados(next);
+                  setNoQuestions(false);
+                }}
+              />
             </div>
           </div>
 
@@ -447,7 +452,7 @@ export function SimuladosSetupClient() {
 
           <Button
             type="submit"
-            disabled={loading || freeLimitReached}
+            disabled={loading}
             className={cn(
               'h-12 w-full rounded-2xl text-base font-semibold',
               'border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25',

@@ -5,6 +5,7 @@ import { AvantLogo } from '@/components/brand/AvantLogo';
 import { AuthAtmosphericBackdrop } from '@/components/layout/AuthAtmosphericBackdrop';
 import { PublicDarkAuthHeader } from '@/components/layout/PublicDarkAuthHeader';
 import { buildAuthQueryPath } from '@/lib/authQueryPath';
+import { FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium';
 import { getInviteLinkPreview } from '@/lib/invite/links';
 import type { InviteLinkPublicStatus } from '@/lib/invite/shared';
 
@@ -139,7 +140,7 @@ export default async function ConvitePage({ params }: PageProps) {
             ) : (
               <div className="flex flex-col gap-3">
                 <p className="text-center text-xs text-slate-500">
-                  Você ainda pode estudar no freemium (1 questão por dia).
+                  Você ainda pode estudar no freemium ({FREEMIUM_PLAN_LIMITS_DESCRIPTION}).
                 </p>
                 <Link
                   href="/register"

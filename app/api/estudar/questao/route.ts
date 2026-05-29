@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { searchParamsToQueryRecord } from '@/lib/api/query-params';
 import { EstudarQuestaoQuerySchema } from '@/lib/validations';
 import { buildEstudarQuestaoPlayerPayload } from '@/lib/estudar/questaoPlayerPayload';
 import { logger } from '@/lib/logger';
@@ -12,7 +13,7 @@ export async function GET(request: NextRequest) {
   const endpoint = '/api/estudar/questao';
   const method = 'GET';
   try {
-    const raw = Object.fromEntries(request.nextUrl.searchParams.entries());
+    const raw = searchParamsToQueryRecord(request.nextUrl.searchParams);
     const parsed = EstudarQuestaoQuerySchema.safeParse(raw);
     if (!parsed.success) {
       recordPerformance(endpoint, method, Date.now() - requestStartedAt, false);
@@ -22,7 +23,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const { slug, from, caderno_id, banca, assunto, q } = parsed.data;
+    const { slug, from, caderno_id, bancas, assuntos, q } = parsed.data;
 
     const auth = await getUserAndClientFromBearer(request);
     if (!auth) {
@@ -31,8 +32,8 @@ export async function GET(request: NextRequest) {
     }
 
     const normalizedFilters = {
-      banca: banca || undefined,
-      assunto: assunto || undefined,
+      bancas,
+      assuntos,
       q: q || undefined,
       from: from || undefined,
       caderno_id: caderno_id || undefined,
@@ -41,7 +42,13 @@ export async function GET(request: NextRequest) {
     const result = await buildEstudarQuestaoPlayerPayload({
       slug,
       userId: auth.user.id,
-      searchParams: { from, caderno_id, banca, assunto, q },
+      searchParams: {
+        from,
+        caderno_id,
+        banca: bancas,
+        assunto: assuntos,
+        q,
+      },
       supabase: auth.supabase,
     });
     logEstudarNavApiBuild({

@@ -37,7 +37,7 @@ import { cn } from '@/lib/utils';
 import type { VitrineGrupoSubtopico, VitrinePageResponse } from '@/lib/vitrine/types';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { DashboardFilterSelect } from '@/components/dashboard/DashboardFilterSelect';
+import { MultiCheckboxFilter } from '@/components/ui/MultiCheckboxFilter';
 import { PageHeader } from '@/components/ui/page-header';
 import { NeonBadge } from '@/components/ui/neon-badge';
 import { EmptyState } from '@/components/ui/empty-state';
@@ -84,6 +84,12 @@ function getTopicIcon(titulo_aula?: string | null, modulo_nome?: string | null):
   return Stethoscope;
 }
 
+function multiFilterResumo(items: string[], pluralLabel: string): string {
+  if (items.length === 0) return '';
+  if (items.length <= 2) return items.join(', ');
+  return `${items.length} ${pluralLabel}`;
+}
+
 // ─── Interfaces ───────────────────────────────────────────────────────────────
 
 type QuestaoStatus = 'nao_estudada' | 'estudada';
@@ -120,8 +126,8 @@ export default function VitrineClient({
   const [cidadeUrl, setCidadeUrl] = useState(fallbackTitulo);
   const [searchTerm, setSearchTerm] = useState('');
   const [debouncedSearch, setDebouncedSearch] = useState('');
-  const [bancaFilter, setBancaFilter] = useState('');
-  const [assuntoFilter, setAssuntoFilter] = useState('');
+  const [bancasSelecionadas, setBancasSelecionadas] = useState<string[]>([]);
+  const [assuntosSelecionados, setAssuntosSelecionados] = useState<string[]>([]);
   const [pagina, setPagina] = useState(1);
   const [gruposPagina, setGruposPagina] = useState<GrupoSubtopico[]>([]);
   const [bancas, setBancas] = useState<string[]>([]);
@@ -133,19 +139,6 @@ export default function VitrineClient({
   const [loading, setLoading] = useState(true);
   const [facetsLoading, setFacetsLoading] = useState(true);
   const [fetchError, setFetchError] = useState<string | null>(null);
-  /**
-   * Radix Select gera `aria-controls` (ids) que podem divergir entre SSR e hidratação (React/Next 16 + Turbopack).
-   * O primeiro frame usa placeholders estáticos; após o mount, os `Select` montam só no cliente.
-   */
-  const [filtrosSelectMontados, setFiltrosSelectMontados] = useState(false);
-
-  useEffect(() => {
-    const id = requestAnimationFrame(() => {
-      setFiltrosSelectMontados(true);
-    });
-    return () => cancelAnimationFrame(id);
-  }, []);
-
   /** Sincroniza estado com a barra de endereços (abertura, voltar/avançar, links externos). */
   useEffect(() => {
     const id = requestAnimationFrame(() => {
@@ -153,8 +146,10 @@ export default function VitrineClient({
       setCidadeUrl(c ? decodeURIComponent(c) : fallbackTitulo);
       setSearchTerm(searchParams.get('q') ?? '');
       setDebouncedSearch(searchParams.get('q') ?? '');
-      setBancaFilter(searchParams.get('banca') ?? '');
-      setAssuntoFilter(searchParams.get('assunto') ?? '');
+      setBancasSelecionadas(searchParams.getAll('banca').map((b) => b.trim()).filter(Boolean));
+      setAssuntosSelecionados(
+        searchParams.getAll('assunto').map((a) => a.trim()).filter(Boolean),
+      );
       const raw = parseInt(searchParams.get('page') || '1', 10);
       setPagina(Number.isFinite(raw) && raw >= 1 ? raw : 1);
     });
@@ -175,7 +170,7 @@ export default function VitrineClient({
       setFacetsLoading(true);
 
       const params = new URLSearchParams();
-      if (bancaFilter) params.set('banca', bancaFilter);
+      bancasSelecionadas.forEach((b) => params.append('banca', b));
 
       try {
         const query = params.toString();
@@ -204,7 +199,7 @@ export default function VitrineClient({
     return () => {
       cancelled = true;
     };
-  }, [bancaFilter]);
+  }, [bancasSelecionadas]);
 
   useEffect(() => {
     let cancelled = false;
@@ -215,8 +210,8 @@ export default function VitrineClient({
 
       const params = new URLSearchParams();
       params.set('page', String(pagina));
-      if (bancaFilter) params.set('banca', bancaFilter);
-      if (assuntoFilter) params.set('assunto', assuntoFilter);
+      bancasSelecionadas.forEach((b) => params.append('banca', b));
+      assuntosSelecionados.forEach((a) => params.append('assunto', a));
       if (debouncedSearch) params.set('q', debouncedSearch);
 
       try {
@@ -252,20 +247,23 @@ export default function VitrineClient({
     return () => {
       cancelled = true;
     };
-  }, [pagina, bancaFilter, assuntoFilter, debouncedSearch]);
+  }, [pagina, bancasSelecionadas, assuntosSelecionados, debouncedSearch]);
 
   useEffect(() => {
-    if (!assuntoFilter || assuntos.includes(assuntoFilter)) return;
-    setAssuntoFilter('');
-    setPagina(1);
-  }, [assuntos, assuntoFilter]);
+    if (!assuntosSelecionados.length) return;
+    const valid = assuntosSelecionados.filter((a) => assuntos.includes(a));
+    if (valid.length !== assuntosSelecionados.length) {
+      setAssuntosSelecionados(valid);
+      setPagina(1);
+    }
+  }, [assuntos, assuntosSelecionados]);
 
   useEffect(() => {
     const params = new URLSearchParams(searchParams.toString());
-    if (bancaFilter) params.set('banca', bancaFilter);
-    else params.delete('banca');
-    if (assuntoFilter) params.set('assunto', assuntoFilter);
-    else params.delete('assunto');
+    params.delete('banca');
+    bancasSelecionadas.forEach((b) => params.append('banca', b));
+    params.delete('assunto');
+    assuntosSelecionados.forEach((a) => params.append('assunto', a));
     if (searchTerm) params.set('q', searchTerm);
     else params.delete('q');
     if (pagina > 1) params.set('page', String(pagina));
@@ -275,17 +273,17 @@ export default function VitrineClient({
     if (typeof window !== 'undefined' && window.location.search !== newSearch) {
       router.replace(`${pathname}${newSearch}`, { scroll: false });
     }
-  }, [bancaFilter, assuntoFilter, searchTerm, pagina, pathname, router, searchParams]);
+  }, [bancasSelecionadas, assuntosSelecionados, searchTerm, pagina, pathname, router, searchParams]);
 
   /** Só banca/assunto/q — repassado ao abrir questão para o player usar a mesma lista filtrada. */
   const estudarQuery = useMemo(() => {
     const p = new URLSearchParams();
-    if (bancaFilter) p.set('banca', bancaFilter);
-    if (assuntoFilter) p.set('assunto', assuntoFilter);
+    bancasSelecionadas.forEach((b) => p.append('banca', b));
+    assuntosSelecionados.forEach((a) => p.append('assunto', a));
     if (searchTerm.trim()) p.set('q', searchTerm.trim());
     const s = p.toString();
     return s ? `?${s}` : '';
-  }, [bancaFilter, assuntoFilter, searchTerm]);
+  }, [bancasSelecionadas, assuntosSelecionados, searchTerm]);
 
   const vitrineListaRef = useRef<HTMLDivElement>(null);
   const paginaScrollSkipRef = useRef(true);
@@ -355,59 +353,39 @@ export default function VitrineClient({
             <span className="text-xs font-medium uppercase tracking-wider">Filtros</span>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {filtrosSelectMontados ? (
-              <>
-                <DashboardFilterSelect
-                  placeholder="Todas as bancas"
-                  allLabel="Todas as bancas"
-                  sheetTitle="Filtrar por banca"
-                  value={bancaFilter}
-                  options={bancas}
-                  disabled={facetsLoading && bancas.length === 0}
-                  onValueChange={(v) => {
-                    setBancaFilter(v);
-                    setPagina(1);
-                  }}
-                />
+            <MultiCheckboxFilter
+              emptyLabel="Todas as bancas"
+              searchPlaceholder="Buscar banca..."
+              emptySearchLabel="Nenhuma banca encontrada"
+              options={bancas}
+              value={bancasSelecionadas}
+              disabled={facetsLoading && bancas.length === 0}
+              onChange={(next) => {
+                setBancasSelecionadas(next);
+                setPagina(1);
+              }}
+            />
 
-                <DashboardFilterSelect
-                  placeholder="Todos os assuntos"
-                  allLabel="Todos os assuntos"
-                  sheetTitle="Filtrar por assunto"
-                  value={assuntoFilter}
-                  options={assuntos}
-                  disabled={facetsLoading && assuntos.length === 0}
-                  onValueChange={(v) => {
-                    setAssuntoFilter(v);
-                    setPagina(1);
-                  }}
-                />
-              </>
-            ) : (
-              <>
-                <div
-                  className="flex h-11 w-full items-center justify-between rounded-xl border border-input bg-muted/50 px-3 py-2 text-sm text-foreground/80 shadow-sm"
-                  aria-hidden
-                >
-                  <span className="line-clamp-1">Todas as bancas</span>
-                  <ChevronDown className="h-4 w-4 opacity-50" aria-hidden />
-                </div>
-                <div
-                  className="flex h-11 w-full items-center justify-between rounded-xl border border-input bg-muted/50 px-3 py-2 text-sm text-foreground/80 shadow-sm"
-                  aria-hidden
-                >
-                  <span className="line-clamp-1">Todos os assuntos</span>
-                  <ChevronDown className="h-4 w-4 opacity-50" aria-hidden />
-                </div>
-              </>
-            )}
+            <MultiCheckboxFilter
+              emptyLabel="Todos os assuntos"
+              searchPlaceholder="Buscar assunto..."
+              emptySearchLabel="Nenhum assunto encontrado"
+              contentMinWidth="min-w-[240px]"
+              options={assuntos}
+              value={assuntosSelecionados}
+              disabled={facetsLoading && assuntos.length === 0}
+              onChange={(next) => {
+                setAssuntosSelecionados(next);
+                setPagina(1);
+              }}
+            />
           </div>
-          {(bancaFilter || assuntoFilter) && (
+          {(bancasSelecionadas.length > 0 || assuntosSelecionados.length > 0) && (
             <button
               type="button"
               onClick={() => {
-                setBancaFilter('');
-                setAssuntoFilter('');
+                setBancasSelecionadas([]);
+                setAssuntosSelecionados([]);
                 setPagina(1);
               }}
               className="text-xs font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
@@ -425,8 +403,15 @@ export default function VitrineClient({
             title={
               searchTerm
                 ? `Resultados para "${searchTerm}"`
-                : bancaFilter || assuntoFilter
-                  ? `Filtrado${bancaFilter ? ` \u2022 ${bancaFilter}` : ''}${assuntoFilter ? ` \u2022 ${assuntoFilter}` : ''}`
+                : bancasSelecionadas.length || assuntosSelecionados.length
+                  ? (() => {
+                      const parts: string[] = ['Filtrado'];
+                      const bancasLabel = multiFilterResumo(bancasSelecionadas, 'bancas');
+                      const assuntosLabel = multiFilterResumo(assuntosSelecionados, 'assuntos');
+                      if (bancasLabel) parts.push(bancasLabel);
+                      if (assuntosLabel) parts.push(assuntosLabel);
+                      return parts.join(' \u2022 ');
+                    })()
                   : 'Vitrine de questões'
             }
             description={

@@ -26,6 +26,7 @@ type GeralMatriculaData = {
 function buildFreemiumSupabaseMock(opts: {
   geralMatricula?: GeralMatriculaData | null;
   questoesHoje?: number;
+  simuladoQuestoesHoje?: number;
 }) {
   const from = jest.fn((table: string) => {
     if (table === 'concurso_matriculas') {
@@ -57,6 +58,22 @@ function buildFreemiumSupabaseMock(opts: {
               lt: async () => ({
                 count: opts.questoesHoje ?? 0,
                 error: null,
+              }),
+            }),
+          }),
+        }),
+      };
+    }
+    if (table === 'simulado_respostas') {
+      return {
+        select: () => ({
+          eq: () => ({
+            not: () => ({
+              gte: () => ({
+                lt: async () => ({
+                  count: opts.simuladoQuestoesHoje ?? 0,
+                  error: null,
+                }),
               }),
             }),
           }),

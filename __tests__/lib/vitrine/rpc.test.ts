@@ -71,6 +71,8 @@ describe('fetchVitrinePageFromRpc', () => {
       p_page: 1,
       p_banca: null,
       p_assunto: null,
+      p_bancas: null,
+      p_assuntos: null,
       p_q: 'denso',
     });
     expect(result.groups).toHaveLength(1);

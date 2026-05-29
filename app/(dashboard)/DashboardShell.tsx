@@ -29,6 +29,7 @@ import { useEstudoReversoWelcome } from '@/components/onboarding/useEstudoRevers
 import { AvantLogo } from '@/components/brand/AvantLogo';
 import { cn } from '@/lib/utils';
 import type { ProSource } from '@/lib/freemium';
+import { FREEMIUM_PLAN_LIMITS_COMPACT } from '@/lib/freemium';
 import { supabase } from '@/lib/supabase/client';
 import { ToastProvider } from '@/lib/toast-context';
 import { ToastContainer } from '@/components/ui/toast-container';
@@ -236,7 +237,9 @@ function CityCard({
               </div>
             ) : (
               <div className="space-y-2.5">
-                <p className="text-center text-xs font-medium text-slate-500">1 questão por dia</p>
+                <p className="text-center text-xs font-medium text-slate-500">
+                  {FREEMIUM_PLAN_LIMITS_COMPACT}
+                </p>
                 <Link
                   href="/planos"
                   className="flex w-full items-center justify-center rounded-xl border border-slate-200 bg-white px-3 py-2 text-[10px] font-black uppercase tracking-wider text-slate-800 transition-colors hover:bg-slate-50"

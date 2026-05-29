@@ -729,41 +729,104 @@ export const validateSlides = (slides: unknown[]) => {
   };
 };
 
-/** Query params de `GET /api/vitrine` (vitrine paginada). */
-export const VitrineQuerySchema = z.object({
-  page: z.coerce.number().int().min(1).max(500).default(1),
+const QUERY_STRING_ARRAY_MAX_ITEMS = 20;
+
+/** Normaliza `string | string[]` de query/body em array trimado (máx. itens/tamanho). */
+export function zQueryStringArray(maxItemLength: number, maxItems = QUERY_STRING_ARRAY_MAX_ITEMS) {
+  return z.preprocess(
+    (val) => {
+      if (val === undefined || val === null || val === '') return [];
+      const raw = Array.isArray(val) ? val : [val];
+      const normalized: string[] = [];
+      for (const item of raw) {
+        if (typeof item !== 'string') continue;
+        const trimmed = item.trim();
+        if (!trimmed) continue;
+        normalized.push(trimmed.slice(0, maxItemLength));
+        if (normalized.length >= maxItems) break;
+      }
+      return normalized;
+    },
+    z.array(z.string().max(maxItemLength)).max(maxItems),
+  );
+}
+
+function mergeBancaAssuntoFields<
+  T extends {
+    bancas?: string[];
+    assuntos?: string[];
+    banca?: string;
+    assunto?: string;
+  },
+>(data: T): { bancas?: string[]; assuntos?: string[] } & Omit<T, 'banca' | 'assunto' | 'bancas' | 'assuntos'> {
+  const bancas = [...(data.bancas ?? [])];
+  const assuntos = [...(data.assuntos ?? [])];
+  const legacyBanca = data.banca?.trim();
+  const legacyAssunto = data.assunto?.trim();
+  if (legacyBanca && !bancas.includes(legacyBanca)) bancas.push(legacyBanca);
+  if (legacyAssunto && !assuntos.includes(legacyAssunto)) assuntos.push(legacyAssunto);
+  const { banca: _b, assunto: _a, bancas: _bs, assuntos: _as, ...rest } = data;
+  return {
+    ...rest,
+    ...(bancas.length ? { bancas } : {}),
+    ...(assuntos.length ? { assuntos } : {}),
+  };
+}
+
+const vitrineBancaAssuntoQueryBase = {
+  bancas: zQueryStringArray(LIMITS.BANCA_MAX).optional(),
+  assuntos: zQueryStringArray(LIMITS.TOPICO_MAX).optional(),
   banca: z.string().trim().max(LIMITS.BANCA_MAX).optional(),
   assunto: z.string().trim().max(LIMITS.TOPICO_MAX).optional(),
-  q: z.string().trim().max(200).optional(),
-});
+};
+
+/** Query params de `GET /api/vitrine` (vitrine paginada). */
+export const VitrineQuerySchema = z
+  .object({
+    page: z.coerce.number().int().min(1).max(500).default(1),
+    ...vitrineBancaAssuntoQueryBase,
+    q: z.string().trim().max(200).optional(),
+  })
+  .transform(mergeBancaAssuntoFields);
 
 /** Query params de `GET /api/estudar/questao` (prefetch do player logado). */
-export const EstudarQuestaoQuerySchema = z.object({
-  slug: z.string().trim().min(1).max(200),
-  from: z.enum(['plano', 'caderno']).optional(),
-  caderno_id: z.string().uuid().optional(),
-  context: z.enum(['simulado']).optional(),
-  banca: z.string().trim().max(LIMITS.BANCA_MAX).optional(),
-  assunto: z.string().trim().max(LIMITS.TOPICO_MAX).optional(),
-  q: z.string().trim().max(200).optional(),
-});
+export const EstudarQuestaoQuerySchema = z
+  .object({
+    slug: z.string().trim().min(1).max(200),
+    from: z.enum(['plano', 'caderno']).optional(),
+    caderno_id: z.string().uuid().optional(),
+    context: z.enum(['simulado']).optional(),
+    ...vitrineBancaAssuntoQueryBase,
+    q: z.string().trim().max(200).optional(),
+  })
+  .transform(mergeBancaAssuntoFields);
 
 /** Query params de `GET /api/vitrine/facets`. */
-export const VitrineFacetsQuerySchema = z.object({
-  banca: z.string().trim().max(LIMITS.BANCA_MAX).optional(),
-});
+export const VitrineFacetsQuerySchema = z
+  .object({
+    bancas: zQueryStringArray(LIMITS.BANCA_MAX).optional(),
+    banca: z.string().trim().max(LIMITS.BANCA_MAX).optional(),
+  })
+  .transform((data) => {
+    const bancas = [...(data.bancas ?? [])];
+    const legacy = data.banca?.trim();
+    if (legacy && !bancas.includes(legacy)) bancas.push(legacy);
+    const { banca: _b, bancas: _bs, ...rest } = data;
+    return { ...rest, ...(bancas.length ? { bancas } : {}) };
+  });
 
 /** Payload de criação de sessão do Modo Simulado. */
-export const SimuladoCreateSessionSchema = z.object({
-  quantidade: z.coerce.number().int().min(1).max(100).default(20),
-  modo: z.enum(['treino', 'prova']).default('treino'),
-  banca: z.string().trim().max(LIMITS.BANCA_MAX).optional(),
-  assunto: z.string().trim().max(LIMITS.TOPICO_MAX).optional(),
-  q: z.string().trim().max(200).optional(),
-  forcar_novo: z.boolean().optional().default(false),
-  from_session_id: z.string().uuid().optional(),
-  only_errors: z.boolean().optional().default(false),
-});
+export const SimuladoCreateSessionSchema = z
+  .object({
+    quantidade: z.coerce.number().int().min(1).max(100).default(20),
+    modo: z.enum(['treino', 'prova']).default('treino'),
+    ...vitrineBancaAssuntoQueryBase,
+    q: z.string().trim().max(200).optional(),
+    forcar_novo: z.boolean().optional().default(false),
+    from_session_id: z.string().uuid().optional(),
+    only_errors: z.boolean().optional().default(false),
+  })
+  .transform(mergeBancaAssuntoFields);
 
 /** Payload de resposta de questão dentro de uma sessão de simulado. */
 export const SimuladoAnswerSchema = z.object({
@@ -774,11 +837,12 @@ export const SimuladoAnswerSchema = z.object({
 });
 
 /** Query params para estimar o tamanho do pool do simulado. */
-export const SimuladoPoolCountQuerySchema = z.object({
-  banca: z.string().trim().max(LIMITS.BANCA_MAX).optional(),
-  assunto: z.string().trim().max(LIMITS.TOPICO_MAX).optional(),
-  q: z.string().trim().max(200).optional(),
-});
+export const SimuladoPoolCountQuerySchema = z
+  .object({
+    ...vitrineBancaAssuntoQueryBase,
+    q: z.string().trim().max(200).optional(),
+  })
+  .transform(mergeBancaAssuntoFields);
 
 /** Query params para analytics de sessões do simulado. */
 export const SimuladoAnalyticsQuerySchema = z.object({

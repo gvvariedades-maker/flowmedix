@@ -1,9 +1,13 @@
 'use client';
 
-import { forwardRef, useEffect, useRef, useState } from 'react';
+import { forwardRef, useEffect, useRef, useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Loader2, LockKeyhole, Sparkles, X, Zap } from 'lucide-react';
 import { GERAL_CONCURSO_SLUG } from '@/lib/concursos/entitlements';
+import {
+  FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT,
+  FREEMIUM_SIMULADO_DAILY_LIMIT,
+} from '@/lib/freemium';
 
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -30,12 +34,57 @@ function formatResetEm(resetEm: string | null): string | null {
   });
 }
 
+export type PaywallModalVariant = 'estudo_reverso' | 'simulado';
+
 type PaywallModalProps = {
   open: boolean;
   onClose: () => void;
   resetEm: string | null;
   loginHref?: string;
   isAuthenticated?: boolean;
+  variant?: PaywallModalVariant;
+};
+
+const PAYWALL_COPY: Record<
+  PaywallModalVariant,
+  { title: string; body: ReactNode; dailyLimit: number }
+> = {
+  estudo_reverso: {
+    title: 'Você já respondeu sua questão de hoje',
+    dailyLimit: 1,
+    body: (
+      <>
+        No plano gratuito, você pode resolver{' '}
+        <span className="font-semibold text-slate-200">
+          {FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT} questão por dia
+        </span>{' '}
+        no estudo reverso (com NeuroSlides). Simulados: até{' '}
+        <span className="font-semibold text-slate-200">
+          {FREEMIUM_SIMULADO_DAILY_LIMIT} questões/dia
+        </span>{' '}
+        para treinar. Com o <span className="font-semibold text-emerald-300">AVANT Pro</span>, estude
+        sem limite.
+      </>
+    ),
+  },
+  simulado: {
+    title: 'Limite diário de simulado atingido',
+    dailyLimit: 5,
+    body: (
+      <>
+        No plano gratuito, você pode responder até{' '}
+        <span className="font-semibold text-slate-200">
+          {FREEMIUM_SIMULADO_DAILY_LIMIT} questões de simulado por dia
+        </span>{' '}
+        para treinar. Estudo reverso:{' '}
+        <span className="font-semibold text-slate-200">
+          {FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT} questão/dia
+        </span>{' '}
+        (com NeuroSlides). Com o <span className="font-semibold text-emerald-300">AVANT Pro</span>,
+        simule sem limite.
+      </>
+    ),
+  },
 };
 
 export function PaywallModal({
@@ -44,7 +93,9 @@ export function PaywallModal({
   resetEm,
   loginHref = '/login?next=/planos',
   isAuthenticated = true,
+  variant = 'estudo_reverso',
 }: PaywallModalProps) {
+  const copy = PAYWALL_COPY[variant];
   const panelRef = useRef<HTMLDivElement>(null);
   const previousActiveElementRef = useRef<HTMLElement | null>(null);
   const [loading, setLoading] = useState(false);
@@ -161,19 +212,16 @@ export function PaywallModal({
           id="paywall-title"
           className="mt-3 text-center text-2xl font-[1000] tracking-tight text-white sm:text-3xl"
         >
-          Você já respondeu sua questão de hoje
+          {copy.title}
         </h2>
 
-        <p className="mt-4 text-center text-sm leading-relaxed text-slate-400">
-          No plano gratuito, você pode resolver{' '}
-          <span className="font-semibold text-slate-200">1 questão por dia</span>. Com o{' '}
-          <span className="font-semibold text-emerald-300">AVANT Pro</span>, estude sem limite em
-          qualquer módulo.
-        </p>
+        <p className="mt-4 text-center text-sm leading-relaxed text-slate-400">{copy.body}</p>
 
         {resetLabel ? (
           <p className="mt-3 text-center text-xs text-slate-500">
-            Próxima questão gratuita liberada às{' '}
+            {variant === 'simulado'
+              ? 'Próximas questões gratuitas de simulado liberadas às '
+              : 'Próxima questão gratuita liberada às '}
             <span className="font-semibold text-slate-300">{resetLabel}</span> (horário de Brasília).
           </p>
         ) : null}
@@ -185,7 +233,9 @@ export function PaywallModal({
           </li>
           <li className="flex items-start gap-2">
             <Zap size={16} className="mt-0.5 shrink-0 text-[#BEF264]" aria-hidden />
-            Estudo Reverso completo após cada tentativa
+            {variant === 'simulado'
+              ? 'Simulados e estudo reverso sem limite diário'
+              : 'Estudo Reverso completo após cada tentativa'}
           </li>
         </ul>
 

@@ -419,6 +419,8 @@ async function fetchModulosEstudoByIdsChunked(
 export type AccessibleModulosNavSqlFilters = {
   banca?: string;
   titulo_aula?: string;
+  bancas?: string[];
+  titulo_aulas?: string[];
 };
 
 async function collectModulosFromMatriculatedConcursos(
@@ -431,8 +433,12 @@ async function collectModulosFromMatriculatedConcursos(
   let offset = 0;
 
   const bancaFilter = sqlFilters?.banca?.trim();
+  const bancasFilter = sqlFilters?.bancas?.map((b) => b.trim()).filter(Boolean) ?? [];
   const tituloAulaFilter = sqlFilters?.titulo_aula?.trim();
-  const useInnerJoin = Boolean(bancaFilter || tituloAulaFilter);
+  const tituloAulasFilter = sqlFilters?.titulo_aulas?.map((t) => t.trim()).filter(Boolean) ?? [];
+  const useInnerJoin = Boolean(
+    bancaFilter || bancasFilter.length || tituloAulaFilter || tituloAulasFilter.length,
+  );
   const modulosEmbed = useInnerJoin
     ? 'modulos_estudo!inner(id, modulo_slug, modulo_nome, titulo_aula, banca, created_at, avant_codigo)'
     : 'modulos_estudo(id, modulo_slug, modulo_nome, titulo_aula, banca, created_at, avant_codigo)';
@@ -463,8 +469,16 @@ async function collectModulosFromMatriculatedConcursos(
       .order('modulo_id', { ascending: true })
       .range(offset, offset + CONCURSO_MODULOS_PAGE_SIZE - 1);
 
-    if (bancaFilter) query = query.eq('modulos_estudo.banca', bancaFilter);
-    if (tituloAulaFilter) query = query.eq('modulos_estudo.titulo_aula', tituloAulaFilter);
+    if (bancasFilter.length > 1) query = query.in('modulos_estudo.banca', bancasFilter);
+    else if (bancaFilter) query = query.eq('modulos_estudo.banca', bancaFilter);
+    else if (bancasFilter.length === 1) query = query.eq('modulos_estudo.banca', bancasFilter[0]!);
+    if (tituloAulasFilter.length > 1) {
+      query = query.in('modulos_estudo.titulo_aula', tituloAulasFilter);
+    } else if (tituloAulaFilter) {
+      query = query.eq('modulos_estudo.titulo_aula', tituloAulaFilter);
+    } else if (tituloAulasFilter.length === 1) {
+      query = query.eq('modulos_estudo.titulo_aula', tituloAulasFilter[0]!);
+    }
 
     const { data, error } = await query;
 

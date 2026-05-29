@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { searchParamsToQueryRecord } from '@/lib/api/query-params';
 import { VitrineFacetsQuerySchema } from '@/lib/validations';
 import { getVitrineFacetsCached } from '@/lib/cache';
 import { logger } from '@/lib/logger';
@@ -19,7 +20,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
     }
 
-    const raw = Object.fromEntries(request.nextUrl.searchParams.entries());
+    const raw = searchParamsToQueryRecord(request.nextUrl.searchParams);
     const parsed = VitrineFacetsQuerySchema.safeParse(raw);
     if (!parsed.success) {
       return NextResponse.json(
@@ -28,9 +29,9 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const { banca } = parsed.data;
+    const { bancas } = parsed.data;
     const facets = await getVitrineFacetsCached(auth.user.id, {
-      banca: banca || undefined,
+      bancas,
     });
 
     return NextResponse.json(facets, {

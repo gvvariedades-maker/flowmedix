@@ -2,6 +2,7 @@
 
 import { ArrowRight, CreditCard, Loader2, Sparkles, Zap } from 'lucide-react';
 import type { ProSource } from '@/lib/freemium';
+import { FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium';
 import { useProBillingPortal } from '@/components/pro/useProBillingPortal';
 import { useProCheckout } from '@/components/pro/useProCheckout';
 
@@ -100,7 +101,7 @@ export function AssinaturaClient({
               </p>
             ) : (
               <p className="text-sm font-medium text-slate-300">
-                1 questão por dia · sem cartão. Assine o Pro para estudar sem limite.
+                {FREEMIUM_PLAN_LIMITS_DESCRIPTION} · sem cartão. Assine o Pro para estudar sem limite.
               </p>
             )}
           </div>

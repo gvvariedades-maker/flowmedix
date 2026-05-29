@@ -56,12 +56,31 @@ describe('SimuladosSetupClient', () => {
       has_open_session: false,
       session: null,
     });
-    mockFetchWithAuth.mockResolvedValue(
-      jsonResponse({
-        bancas: ['FGV'],
-        assuntos: ['Urgências'],
-      }),
-    );
+    mockFetchWithAuth.mockImplementation((url: string) => {
+      if (url.includes('/api/freemium/status')) {
+        return Promise.resolve(
+          jsonResponse({
+            isPro: true,
+            resetEm: new Date().toISOString(),
+            simulado: {
+              questoesHoje: 0,
+              limite: 5,
+              restantes: 5,
+              limiteAtingido: false,
+            },
+          }),
+        );
+      }
+      if (url.includes('/api/simulado/pool-count')) {
+        return Promise.resolve(jsonResponse({ estimated_count: 100 }));
+      }
+      return Promise.resolve(
+        jsonResponse({
+          bancas: ['FGV'],
+          assuntos: ['Urgências'],
+        }),
+      );
+    });
   });
 
   it('envia formulário com sucesso e navega para sessão criada', async () => {

@@ -19,7 +19,11 @@ import {
 import { isDataServiceUnavailableError } from '@/lib/dataServiceError';
 
 export type QuestaoNavVitrineFilters = {
+  bancas?: string[];
+  assuntos?: string[];
+  /** @deprecated use bancas */
   banca?: string;
+  /** @deprecated use assuntos */
   assunto?: string;
   q?: string;
 };
@@ -41,7 +45,13 @@ export type QuestaoNavListResult = {
 
 function hasVitrineFilters(filters?: QuestaoNavVitrineFilters): boolean {
   if (!filters) return false;
-  return Boolean(filters.banca?.trim() || filters.assunto?.trim() || filters.q?.trim());
+  return Boolean(
+    filters.bancas?.length ||
+      filters.banca?.trim() ||
+      filters.assuntos?.length ||
+      filters.assunto?.trim() ||
+      filters.q?.trim(),
+  );
 }
 
 export { vitrineFiltersToSqlNavFilters };
@@ -120,11 +130,7 @@ export async function getQuestaoNavList(input: QuestaoNavListInput): Promise<Que
       modulosSlugs,
     )) as HistoricoQuestaoRow[];
 
-    const slugList = buildVitrineFilteredSlugList(modulos, historicoVitrine, {
-      banca: filters.banca,
-      assunto: filters.assunto,
-      q: filters.q,
-    });
+    const slugList = buildVitrineFilteredSlugList(modulos, historicoVitrine, filters);
 
     if (slugList.length > 0 && slugList.includes(slug)) {
       lista = listaFromSlugList(slugList);

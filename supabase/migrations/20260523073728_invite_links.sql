@@ -61,4 +61,4 @@ CREATE INDEX IF NOT EXISTS idx_invite_redemptions_link
 ALTER TABLE public.invite_links ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.invite_redemptions ENABLE ROW LEVEL SECURITY;
 
--- Sem policies: leitura/escrita apenas via service role nas APIs admin e convite.
+-- Sem policies: leitura/escrita apenas via service role nas APIs admin e convite.;

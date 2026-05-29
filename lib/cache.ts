@@ -429,10 +429,15 @@ export async function getHistoricoQuestoesCached(userId?: string) {
 export const CACHE_REVALIDATE_IMMEDIATE = { expire: 0 } as const;
 
 export type VitrinePageCacheFilters = {
-  banca?: string;
-  assunto?: string;
+  bancas?: string[];
+  assuntos?: string[];
   q?: string;
 };
+
+function normalizeVitrineArrayFilter(values?: string[]): string {
+  if (!values?.length) return '';
+  return [...values].map((v) => v.trim()).filter(Boolean).sort().join('\u0001');
+}
 
 const VITRINE_PAGE_USER_TAG_PREFIX = 'vitrine-page-user';
 const VITRINE_PAGE_FILTER_TAG_PREFIX = 'vitrine-page-filter';
@@ -451,8 +456,8 @@ function createVitrineFilterHash(parts: readonly string[]): string {
 
 export function getVitrinePageFiltersHash(filters: VitrinePageCacheFilters = {}): string {
   return createVitrineFilterHash([
-    normalizeVitrineTextFilter(filters.banca),
-    normalizeVitrineTextFilter(filters.assunto),
+    normalizeVitrineArrayFilter(filters.bancas),
+    normalizeVitrineArrayFilter(filters.assuntos),
     normalizeVitrineTextFilter(filters.q),
   ]);
 }
@@ -512,11 +517,11 @@ export async function getVitrinePageCached(
 }
 
 export type VitrineFacetsCacheFilters = {
-  banca?: string;
+  bancas?: string[];
 };
 
 export function getVitrineFacetsFiltersHash(filters: VitrineFacetsCacheFilters = {}): string {
-  return createVitrineFilterHash([normalizeVitrineTextFilter(filters.banca)]);
+  return createVitrineFilterHash([normalizeVitrineArrayFilter(filters.bancas)]);
 }
 
 export function getVitrineFacetsUserTag(userId: string): string {
@@ -558,7 +563,7 @@ export async function getVitrineFacetsCached(
     async () => {
       const { getVitrineFacets } = await import('./vitrine/facets');
       trackCacheHit(cacheKey);
-      return getVitrineFacets({ userId, banca: filters.banca });
+      return getVitrineFacets({ userId, bancas: filters.bancas });
     },
     [cacheKey],
     {

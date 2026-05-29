@@ -9,18 +9,36 @@ import { compareModuloCurriculum } from '@/lib/vitrineOrder';
 export type VitrineFilterParams = {
   banca?: string;
   assunto?: string;
+  bancas?: string[];
+  assuntos?: string[];
   q?: string;
 };
+
+function resolveBancas(filters: VitrineFilterParams): string[] {
+  const fromArray = filters.bancas?.map((b) => b.trim()).filter(Boolean) ?? [];
+  if (fromArray.length) return fromArray;
+  const single = filters.banca?.trim();
+  return single ? [single] : [];
+}
+
+function resolveAssuntos(filters: VitrineFilterParams): string[] {
+  const fromArray = filters.assuntos?.map((a) => a.trim()).filter(Boolean) ?? [];
+  if (fromArray.length) return fromArray;
+  const single = filters.assunto?.trim();
+  return single ? [single] : [];
+}
 
 /** Filtros que o PostgREST aplica em `modulos_estudo!inner` (reduz volume antes do filtro `q`). */
 export function vitrineFiltersToSqlNavFilters(
   filters: VitrineFilterParams,
 ): AccessibleModulosNavSqlFilters | undefined {
-  const banca = filters.banca?.trim();
-  const assunto = filters.assunto?.trim();
+  const bancas = resolveBancas(filters);
+  const assuntos = resolveAssuntos(filters);
   const out: AccessibleModulosNavSqlFilters = {};
-  if (banca) out.banca = banca;
-  if (assunto) out.titulo_aula = assunto;
+  if (bancas.length === 1) out.banca = bancas[0];
+  else if (bancas.length > 1) out.bancas = bancas;
+  if (assuntos.length === 1) out.titulo_aula = assuntos[0];
+  else if (assuntos.length > 1) out.titulo_aulas = assuntos;
   return Object.keys(out).length > 0 ? out : undefined;
 }
 
@@ -80,15 +98,15 @@ export function attachHistoricoStats(
 /** Mesma lógica de `filteredModulos` em `VitrineClient`. */
 export function filterModulosLikeVitrine(
   modulos: ModuloComStats[],
-  filters: { banca?: string; assunto?: string; q?: string },
+  filters: VitrineFilterParams,
 ): ModuloComStats[] {
   let result = modulos;
-  const banca = filters.banca?.trim();
-  const assunto = filters.assunto?.trim();
+  const bancas = resolveBancas(filters);
+  const assuntos = resolveAssuntos(filters);
   const qRaw = filters.q?.trim();
 
-  if (banca) result = result.filter((m) => m.banca === banca);
-  if (assunto) result = result.filter((m) => m.titulo_aula === assunto);
+  if (bancas.length) result = result.filter((m) => bancas.includes(m.banca));
+  if (assuntos.length) result = result.filter((m) => assuntos.includes(m.titulo_aula ?? ''));
   if (qRaw) {
     const q = qRaw.toLowerCase();
     const soNumero = q.replace(/^q-?/, '');
@@ -209,7 +227,7 @@ export function listaModulosQuestaoPorTituloAulaNoCatalogo(
 export function buildVitrineFilteredSlugList(
   modulos: ModuloEstudoRow[],
   historico: HistoricoQuestaoRow[],
-  filters: { banca?: string; assunto?: string; q?: string },
+  filters: VitrineFilterParams,
 ): string[] {
   const withStats = attachHistoricoStats(modulos, historico);
   const filtered = filterModulosLikeVitrine(withStats, filters);

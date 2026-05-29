@@ -78,6 +78,5 @@ BEGIN
   RETURN purchase_id;
 END;
 $$;
-
 COMMENT ON FUNCTION public.fulfill_concurso_purchase(uuid) IS
   'Marca compra como paid e concede/renova matrícula purchase com expires_at; idempotente se já paid. Compra avulsa não rebaixa matrícula stripe_pro existente.';

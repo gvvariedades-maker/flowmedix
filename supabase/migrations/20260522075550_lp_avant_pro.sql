@@ -79,4 +79,4 @@ BEGIN
     now()
   )
   ON CONFLICT (path) DO NOTHING;
-END $$;
+END $$;;

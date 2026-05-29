@@ -21,8 +21,6 @@ COMMENT ON TABLE public.email_templates IS 'Copy de e-mails transacionais e camp
 
 ALTER TABLE public.email_templates ENABLE ROW LEVEL SECURITY;
 
--- Sem policies: leitura/escrita só via service role nas rotas admin.
-
 INSERT INTO public.email_templates (slug, kind, name, subject, preview_text, content)
 VALUES
   (
@@ -53,4 +51,4 @@ VALUES
       'ctaUrl', '/planos'
     )
   )
-ON CONFLICT (slug) DO NOTHING;
+ON CONFLICT (slug) DO NOTHING;;

@@ -72,21 +72,28 @@ export async function answerSimuladoQuestion(
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
   });
-  const json = await parseJsonResponse<SimuladoAnswerResponse>(res);
+  const json = await parseJsonResponse<SimuladoAnswerResponse & { limiteAtingido?: boolean; resetEm?: string }>(
+    res,
+  );
   if (!res.ok) {
-    throw new SimuladoApiError(res.status, json.error ?? 'Erro ao registrar resposta', json.details);
+    const details =
+      json.details ??
+      (json.limiteAtingido != null
+        ? { limiteAtingido: json.limiteAtingido, resetEm: json.resetEm }
+        : undefined);
+    throw new SimuladoApiError(res.status, json.error ?? 'Erro ao registrar resposta', details);
   }
   return json;
 }
 
 export async function getSimuladoPoolCount(filters?: {
-  banca?: string;
-  assunto?: string;
+  bancas?: string[];
+  assuntos?: string[];
   q?: string;
 }): Promise<SimuladoPoolCountResponse> {
   const params = new URLSearchParams();
-  if (filters?.banca) params.set('banca', filters.banca);
-  if (filters?.assunto) params.set('assunto', filters.assunto);
+  filters?.bancas?.forEach((b) => params.append('banca', b));
+  filters?.assuntos?.forEach((a) => params.append('assunto', a));
   if (filters?.q) params.set('q', filters.q);
 
   const query = params.toString();

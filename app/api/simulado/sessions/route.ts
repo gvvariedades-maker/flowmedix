@@ -3,7 +3,6 @@ import { SimuladoCreateSessionSchema } from '@/lib/validations';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { createServerSupabase } from '@/lib/supabase/server';
 import { fetchSimuladoQuestionPoolFromRpc } from '@/lib/simulado/rpc';
-import { getFreemiumStatusForUser } from '@/lib/freemium';
 import { logger } from '@/lib/logger';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { createE2eSimuladoSession, resetE2eSimuladoStore } from '@/lib/e2e/simuladoSeed';
@@ -88,18 +87,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { quantidade, modo, banca, assunto, q, forcar_novo, from_session_id, only_errors } = parsed.data;
+    const { quantidade, modo, bancas, assuntos, q, forcar_novo, from_session_id, only_errors } =
+      parsed.data;
     const supabase = await createServerSupabase();
-    const freemium = await getFreemiumStatusForUser(auth.user.id, auth.user.email ?? null);
-    if (!freemium.isPro && freemium.limiteAtingido) {
-      return NextResponse.json(
-        {
-          error: 'Limite diário do plano gratuito atingido para simulados',
-          details: { resetEm: freemium.resetEm, limite: '1 simulado/dia' },
-        },
-        { status: 403 },
-      );
-    }
 
     if (!forcar_novo) {
       const { data: openSession, error: openSessionError } = await supabase
@@ -174,8 +164,8 @@ export async function POST(request: NextRequest) {
     }
 
     const filters = {
-      banca: banca || null,
-      assunto: assunto || null,
+      bancas: bancas?.length ? bancas : null,
+      assuntos: assuntos?.length ? assuntos : null,
       q: q || null,
       requested: quantidade,
       selected: pool.length,

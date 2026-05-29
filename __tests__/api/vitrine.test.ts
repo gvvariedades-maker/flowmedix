@@ -98,8 +98,8 @@ describe('GET /api/vitrine', () => {
     expect(await response.json()).toEqual(payloadOk);
     expect(response.headers.get('Cache-Control')).toBe('private, no-store');
     expect(mockGetVitrinePageCached).toHaveBeenCalledWith(USER_ID, 1, {
-      banca: 'FGV',
-      assunto: 'Urgências e Emergências',
+      bancas: ['FGV'],
+      assuntos: ['Urgências e Emergências'],
       q: 'choque',
     });
     expect(mockRecordPerformance).toHaveBeenCalledWith('/api/vitrine', 'GET', expect.any(Number), true);

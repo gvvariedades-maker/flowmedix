@@ -13,24 +13,34 @@ const SimuladoPoolItemSchema = z.object({
 
 export type SimuladoPoolItem = z.infer<typeof SimuladoPoolItemSchema>;
 
+export type SimuladoPoolRpcFilters = {
+  bancas?: string[];
+  assuntos?: string[];
+  q?: string;
+};
+
 export type FetchSimuladoPoolRpcParams = {
   userId: string;
   quantidade: number;
-  filters?: {
-    banca?: string;
-    assunto?: string;
-    q?: string;
-  };
+  filters?: SimuladoPoolRpcFilters;
 };
 
 export type FetchSimuladoPoolCountRpcParams = {
   userId: string;
-  filters?: {
-    banca?: string;
-    assunto?: string;
-    q?: string;
-  };
+  filters?: SimuladoPoolRpcFilters;
 };
+
+function rpcBancaAssuntoParams(filters: SimuladoPoolRpcFilters = {}) {
+  const bancas = filters.bancas?.filter((b) => b.trim()).map((b) => b.trim()) ?? [];
+  const assuntos = filters.assuntos?.filter((a) => a.trim()).map((a) => a.trim()) ?? [];
+  return {
+    p_banca: null as string | null,
+    p_assunto: null as string | null,
+    p_bancas: bancas.length ? bancas : null,
+    p_assuntos: assuntos.length ? assuntos : null,
+    p_q: filters.q?.trim() || null,
+  };
+}
 
 export async function fetchSimuladoQuestionPoolFromRpc(
   params: FetchSimuladoPoolRpcParams,
@@ -41,9 +51,7 @@ export async function fetchSimuladoQuestionPoolFromRpc(
   const { data, error } = await supabase.rpc(SIMULADO_POOL_RPC, {
     p_user_id: userId,
     p_quantidade: quantidade,
-    p_banca: filters.banca?.trim() || null,
-    p_assunto: filters.assunto?.trim() || null,
-    p_q: filters.q?.trim() || null,
+    ...rpcBancaAssuntoParams(filters),
   });
 
   if (error) {
@@ -76,9 +84,7 @@ export async function fetchSimuladoQuestionPoolCountFromRpc(
 
   const { data, error } = await supabase.rpc(SIMULADO_POOL_COUNT_RPC, {
     p_user_id: userId,
-    p_banca: filters.banca?.trim() || null,
-    p_assunto: filters.assunto?.trim() || null,
-    p_q: filters.q?.trim() || null,
+    ...rpcBancaAssuntoParams(filters),
   });
 
   if (error) {

@@ -5,6 +5,7 @@ import { resolveQuestionAttempt } from '@/lib/estudar/questionPayload';
 import {
   assertCanAnswerQuestion,
   countQuestoesHojeForUser,
+  FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT,
   getFreemiumDayBounds,
   isFreemiumUnlimitedEmail,
   isUserPro,
@@ -90,7 +91,7 @@ export async function POST(request: NextRequest) {
           countQuestoesHojeForUser(user.id),
           isUserPro(user.id),
         ]);
-        if (!isPro && recheck >= 1) {
+        if (!isPro && recheck >= FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT) {
           const { resetEm } = getFreemiumDayBounds();
           return NextResponse.json(
             { limiteAtingido: true, resetEm: resetEm.toISOString(), allowed: false },

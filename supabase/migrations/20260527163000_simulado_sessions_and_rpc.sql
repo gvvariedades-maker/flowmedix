@@ -11,10 +11,8 @@ CREATE TABLE IF NOT EXISTS public.simulado_sessions (
   created_at timestamptz NOT NULL DEFAULT now(),
   concluida_em timestamptz NULL
 );
-
 CREATE INDEX IF NOT EXISTS idx_simulado_sessions_user_status_created
   ON public.simulado_sessions(user_id, status, created_at DESC);
-
 CREATE TABLE IF NOT EXISTS public.simulado_respostas (
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   session_id uuid NOT NULL REFERENCES public.simulado_sessions(id) ON DELETE CASCADE,
@@ -30,30 +28,24 @@ CREATE TABLE IF NOT EXISTS public.simulado_respostas (
   UNIQUE(session_id, modulo_id),
   UNIQUE(session_id, ordem)
 );
-
 CREATE INDEX IF NOT EXISTS idx_simulado_respostas_session_ordem
   ON public.simulado_respostas(session_id, ordem);
-
 CREATE INDEX IF NOT EXISTS idx_simulado_respostas_user_session
   ON public.simulado_respostas(user_id, session_id);
-
 ALTER TABLE public.simulado_sessions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.simulado_respostas ENABLE ROW LEVEL SECURITY;
-
 DROP POLICY IF EXISTS "simulado_sessions_owner_select" ON public.simulado_sessions;
 CREATE POLICY "simulado_sessions_owner_select"
   ON public.simulado_sessions
   FOR SELECT
   TO authenticated
   USING (auth.uid() = user_id);
-
 DROP POLICY IF EXISTS "simulado_sessions_owner_insert" ON public.simulado_sessions;
 CREATE POLICY "simulado_sessions_owner_insert"
   ON public.simulado_sessions
   FOR INSERT
   TO authenticated
   WITH CHECK (auth.uid() = user_id);
-
 DROP POLICY IF EXISTS "simulado_sessions_owner_update" ON public.simulado_sessions;
 CREATE POLICY "simulado_sessions_owner_update"
   ON public.simulado_sessions
@@ -61,21 +53,18 @@ CREATE POLICY "simulado_sessions_owner_update"
   TO authenticated
   USING (auth.uid() = user_id)
   WITH CHECK (auth.uid() = user_id);
-
 DROP POLICY IF EXISTS "simulado_respostas_owner_select" ON public.simulado_respostas;
 CREATE POLICY "simulado_respostas_owner_select"
   ON public.simulado_respostas
   FOR SELECT
   TO authenticated
   USING (auth.uid() = user_id);
-
 DROP POLICY IF EXISTS "simulado_respostas_owner_insert" ON public.simulado_respostas;
 CREATE POLICY "simulado_respostas_owner_insert"
   ON public.simulado_respostas
   FOR INSERT
   TO authenticated
   WITH CHECK (auth.uid() = user_id);
-
 DROP POLICY IF EXISTS "simulado_respostas_owner_update" ON public.simulado_respostas;
 CREATE POLICY "simulado_respostas_owner_update"
   ON public.simulado_respostas
@@ -83,7 +72,6 @@ CREATE POLICY "simulado_respostas_owner_update"
   TO authenticated
   USING (auth.uid() = user_id)
   WITH CHECK (auth.uid() = user_id);
-
 CREATE OR REPLACE FUNCTION public.get_simulado_question_pool(
   p_user_id uuid,
   p_quantidade integer DEFAULT 20,
@@ -218,11 +206,9 @@ BEGIN
   FROM sampled s;
 END;
 $$;
-
 REVOKE EXECUTE ON FUNCTION public.get_simulado_question_pool(uuid, integer, text, text, text)
   FROM PUBLIC, anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.get_simulado_question_pool(uuid, integer, text, text, text)
   TO service_role;
-
 COMMENT ON FUNCTION public.get_simulado_question_pool(uuid, integer, text, text, text) IS
   'Sorteia questões acessíveis do aluno para sessão de simulado (com filtros banca/assunto/q).';

@@ -5,4 +5,4 @@ ALTER TABLE public.concursos
   ADD COLUMN IF NOT EXISTS destaque text;
 
 COMMENT ON COLUMN public.concursos.descricao IS 'Descrição do concurso (admin/builder); opcional.';
-COMMENT ON COLUMN public.concursos.destaque IS 'Destaque ou chamada curta (admin/builder); opcional.';
+COMMENT ON COLUMN public.concursos.destaque IS 'Destaque ou chamada curta (admin/builder); opcional.';;

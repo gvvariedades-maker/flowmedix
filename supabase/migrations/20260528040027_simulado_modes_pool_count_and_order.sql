@@ -277,4 +277,4 @@ GRANT EXECUTE ON FUNCTION public.get_simulado_question_pool_count(uuid, text, te
   TO service_role;
 
 COMMENT ON FUNCTION public.get_simulado_question_pool_count(uuid, text, text, text) IS
-  'Retorna contagem estimada de questões acessíveis para simulados com filtros.';
+  'Retorna contagem estimada de questões acessíveis para simulados com filtros.';;

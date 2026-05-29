@@ -121,9 +121,7 @@ BEGIN
   );
 END;
 $$;
-
 REVOKE EXECUTE ON FUNCTION public.get_vitrine_facets(uuid, text) FROM PUBLIC, anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.get_vitrine_facets(uuid, text) TO service_role;
-
 COMMENT ON FUNCTION public.get_vitrine_facets(uuid, text) IS
   'Facets da vitrine (bancas e assuntos) com entitlements do aluno. assuntos respeitam p_banca. Uso: service_role.';

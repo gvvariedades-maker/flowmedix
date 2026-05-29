@@ -41,15 +41,29 @@ const VitrinePageRpcSchema = z.object({
 
 export type VitrinePageRpcResult = Omit<VitrinePageResponse, 'facets'>;
 
+export type VitrineRpcFilters = {
+  bancas?: string[];
+  assuntos?: string[];
+  q?: string;
+};
+
 export type FetchVitrinePageRpcParams = {
   userId: string;
   page: number;
-  filters?: {
-    banca?: string;
-    assunto?: string;
-    q?: string;
-  };
+  filters?: VitrineRpcFilters;
 };
+
+function rpcBancaAssuntoParams(filters: VitrineRpcFilters = {}) {
+  const bancas = filters.bancas?.filter((b) => b.trim()).map((b) => b.trim()) ?? [];
+  const assuntos = filters.assuntos?.filter((a) => a.trim()).map((a) => a.trim()) ?? [];
+  return {
+    p_banca: null as string | null,
+    p_assunto: null as string | null,
+    p_bancas: bancas.length ? bancas : null,
+    p_assuntos: assuntos.length ? assuntos : null,
+    p_q: filters.q?.trim() || null,
+  };
+}
 
 export async function fetchVitrinePageFromRpc(
   params: FetchVitrinePageRpcParams,
@@ -60,9 +74,7 @@ export async function fetchVitrinePageFromRpc(
   const { data, error } = await supabase.rpc(VITRINE_PAGE_RPC, {
     p_user_id: userId,
     p_page: page,
-    p_banca: filters.banca?.trim() || null,
-    p_assunto: filters.assunto?.trim() || null,
-    p_q: filters.q?.trim() || null,
+    ...rpcBancaAssuntoParams(filters),
   });
 
   if (error) {
@@ -89,18 +101,20 @@ const VitrineFacetsRpcSchema = z.object({
 
 export type FetchVitrineFacetsRpcParams = {
   userId: string;
-  banca?: string;
+  bancas?: string[];
 };
 
 export async function fetchVitrineFacetsFromRpc(
   params: FetchVitrineFacetsRpcParams,
 ): Promise<VitrineFacets> {
-  const { userId, banca } = params;
+  const { userId, bancas = [] } = params;
   const supabase = await createServerSupabase();
+  const normalizedBancas = bancas.filter((b) => b.trim()).map((b) => b.trim());
 
   const { data, error } = await supabase.rpc(VITRINE_FACETS_RPC, {
     p_user_id: userId,
-    p_banca: banca?.trim() || null,
+    p_banca: null,
+    p_bancas: normalizedBancas.length ? normalizedBancas : null,
   });
 
   if (error) {

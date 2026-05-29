@@ -7,8 +7,6 @@ import { GET, POST } from '@/app/api/simulado/sessions/route';
 const mockGetUserAndClientFromBearer = jest.fn();
 const mockCreateServerSupabase = jest.fn();
 const mockFetchSimuladoQuestionPoolFromRpc = jest.fn();
-const mockGetFreemiumStatusForUser = jest.fn();
-
 jest.mock('@/lib/logger', () => ({
   logger: {
     debug: jest.fn(),
@@ -39,10 +37,6 @@ jest.mock('@/lib/simulado/rpc', () => ({
   fetchSimuladoQuestionPoolFromRpc: (...args: unknown[]) => mockFetchSimuladoQuestionPoolFromRpc(...args),
 }));
 
-jest.mock('@/lib/freemium', () => ({
-  getFreemiumStatusForUser: (...args: unknown[]) => mockGetFreemiumStatusForUser(...args),
-}));
-
 const USER_ID = '550e8400-e29b-41d4-a716-446655440000';
 
 function makeRequest(method: 'GET' | 'POST', body?: object) {
@@ -57,11 +51,6 @@ describe('/api/simulado/sessions', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     mockGetUserAndClientFromBearer.mockResolvedValue({ user: { id: USER_ID } });
-    mockGetFreemiumStatusForUser.mockResolvedValue({
-      isPro: true,
-      limiteAtingido: false,
-      resetEm: new Date().toISOString(),
-    });
   });
 
   it('GET retorna sessão aberta quando existir', async () => {

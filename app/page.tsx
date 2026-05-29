@@ -5,6 +5,7 @@ import { getServerSession } from '@/lib/supabase/server-auth';
 import { userHasActiveMatricula } from '@/lib/concursos/entitlements';
 import { isAdminSessionEmail } from '@/lib/constants';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
+import { FREEMIUM_PLAN_LIMITS_COMPACT, FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium';
 
 /** Chunk separado evita erro do Turbopack ao misturar grafo de módulos com `not-found`. */
 const LandingHome = dynamic(() => import('@/components/landing/LandingHome'), {
@@ -21,7 +22,7 @@ const LandingHome = dynamic(() => import('@/components/landing/LandingHome'), {
 
 const homeTitle = 'AVANT — Plataforma de Concursos para Técnico em Enfermagem';
 const homeDescription =
-  'Prepare-se para concursos de Técnico em Enfermagem com Estudo Reverso, NeuroSlides, revisão espaçada e plano diário automático. Questões reais de EBSERH e prefeituras. Comece grátis com 1 questão por dia.';
+  `Prepare-se para concursos de Técnico em Enfermagem com Estudo Reverso, NeuroSlides, revisão espaçada e plano diário automático. Questões reais de EBSERH e prefeituras. Comece grátis: ${FREEMIUM_PLAN_LIMITS_DESCRIPTION}.`;
 
 export const metadata: Metadata = {
   title: homeTitle,
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: homeTitle,
-    description: 'Estudo Reverso, NeuroSlides e revisão espaçada. 1 questão grátis por dia.',
+    description: `Estudo Reverso, NeuroSlides e simulados. ${FREEMIUM_PLAN_LIMITS_COMPACT} · sem cartão.`,
   },
   robots: {
     index: true,

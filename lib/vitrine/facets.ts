@@ -9,6 +9,8 @@ export const EMPTY_VITRINE_FACETS: VitrineFacets = { bancas: [], assuntos: [] };
 
 export type GetVitrineFacetsParams = {
   userId: string;
+  bancas?: string[];
+  /** @deprecated use bancas */
   banca?: string;
 };
 
@@ -16,20 +18,26 @@ export type GetVitrineFacetsParams = {
  * Facets da vitrine: tenta RPC Postgres; em erro, fallback JS sobre catálogo do usuário.
  */
 export async function getVitrineFacets(params: GetVitrineFacetsParams): Promise<VitrineFacets> {
-  const { userId, banca } = params;
+  const { userId } = params;
+  const bancas =
+    params.bancas?.length
+      ? params.bancas
+      : params.banca?.trim()
+        ? [params.banca.trim()]
+        : undefined;
 
   try {
-    return await fetchVitrineFacetsFromRpc({ userId, banca });
+    return await fetchVitrineFacetsFromRpc({ userId, bancas });
   } catch (err) {
     logger.warn('get_vitrine_facets indisponível; fallback JS', {
       userId,
-      banca,
+      bancas,
       error: err instanceof Error ? err.message : err,
     });
   }
 
   const modulos = (await getModulosEstudoVitrineForUserCached(userId)) as ModuloEstudoRow[];
-  return buildVitrineFacets(modulos, { banca });
+  return buildVitrineFacets(modulos, { bancas });
 }
 
 /**
@@ -38,15 +46,19 @@ export async function getVitrineFacets(params: GetVitrineFacetsParams): Promise<
  */
 export function buildVitrineFacets(
   modulos: ModuloEstudoRow[],
-  filters?: { banca?: string },
+  filters?: { banca?: string; bancas?: string[] },
 ): VitrineFacets {
   const bancas = [...new Set(modulos.map((m) => m.banca).filter(Boolean))].sort((a, b) =>
     a.localeCompare(b),
   );
 
-  const bancaFilter = filters?.banca?.trim();
-  const baseForAssuntos = bancaFilter
-    ? modulos.filter((m) => m.banca === bancaFilter)
+  const bancaSet = filters?.bancas?.length
+    ? filters.bancas.map((b) => b.trim()).filter(Boolean)
+    : filters?.banca?.trim()
+      ? [filters.banca.trim()]
+      : [];
+  const baseForAssuntos = bancaSet.length
+    ? modulos.filter((m) => bancaSet.includes(m.banca))
     : modulos;
 
   const assuntos = [

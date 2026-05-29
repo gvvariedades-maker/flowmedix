@@ -18,4 +18,4 @@ SET price_cents = 990
 WHERE slug = 'geral';
 
 CREATE INDEX IF NOT EXISTS idx_historico_questoes_user_date
-  ON public.historico_questoes (user_id, created_at DESC);
+  ON public.historico_questoes (user_id, created_at DESC);;

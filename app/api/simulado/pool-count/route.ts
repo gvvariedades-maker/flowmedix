@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { searchParamsToQueryRecord } from '@/lib/api/query-params';
 import { SimuladoPoolCountQuerySchema } from '@/lib/validations';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { fetchSimuladoQuestionPoolCountFromRpc } from '@/lib/simulado/rpc';
@@ -17,7 +18,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
     }
 
-    const raw = Object.fromEntries(request.nextUrl.searchParams.entries());
+    const raw = searchParamsToQueryRecord(request.nextUrl.searchParams);
     const parsed = SimuladoPoolCountQuerySchema.safeParse(raw);
     if (!parsed.success) {
       return NextResponse.json(

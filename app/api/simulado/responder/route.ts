@@ -7,6 +7,14 @@ import {
   computeSimuladoResumo,
   type SimuladoRespostaProgressRow,
 } from '@/lib/simulado/sessionProgress';
+import {
+  assertCanAnswerSimuladoQuestion,
+  countSimuladoQuestoesHojeForUser,
+  FREEMIUM_SIMULADO_DAILY_LIMIT,
+  getFreemiumDayBounds,
+  isFreemiumUnlimitedEmail,
+  isUserPro,
+} from '@/lib/freemium';
 import { SimuladoAnswerSchema } from '@/lib/validations';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { createServerSupabase } from '@/lib/supabase/server';
@@ -125,6 +133,42 @@ export async function POST(request: NextRequest) {
 
     if (resposta.acertou !== null && sessionMode === 'prova') {
       return NextResponse.json({ error: 'Questão já respondida para esta sessão' }, { status: 409 });
+    }
+
+    const isFirstAnswerInSession = resposta.acertou === null;
+
+    if (isFirstAnswerInSession) {
+      const gate = await assertCanAnswerSimuladoQuestion(auth.user.id, auth.user.email);
+      if (!gate.allowed) {
+        return NextResponse.json(
+          {
+            limiteAtingido: true,
+            resetEm: gate.resetEm,
+            allowed: false,
+            limite: FREEMIUM_SIMULADO_DAILY_LIMIT,
+          },
+          { status: 403 },
+        );
+      }
+
+      if (!isFreemiumUnlimitedEmail(auth.user.email)) {
+        const [recheck, isPro] = await Promise.all([
+          countSimuladoQuestoesHojeForUser(auth.user.id),
+          isUserPro(auth.user.id),
+        ]);
+        if (!isPro && recheck >= FREEMIUM_SIMULADO_DAILY_LIMIT) {
+          const { resetEm } = getFreemiumDayBounds();
+          return NextResponse.json(
+            {
+              limiteAtingido: true,
+              resetEm: resetEm.toISOString(),
+              allowed: false,
+              limite: FREEMIUM_SIMULADO_DAILY_LIMIT,
+            },
+            { status: 403 },
+          );
+        }
+      }
     }
 
     const { data: modulo, error: moduloError } = await supabase

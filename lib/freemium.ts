@@ -15,6 +15,18 @@ export type ProSource = 'stripe' | 'invite' | null;
 /** Offset fixo UTC−3 (horário de Brasília, sem DST). */
 const FREEMIUM_TZ_OFFSET_MS = 3 * 60 * 60 * 1000;
 
+/** Estudo reverso (registrar-tentativa): 1 questão nova por dia no plano gratuito. */
+export const FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT = 1;
+
+/** Simulado: questões respondidas por dia no plano gratuito. */
+export const FREEMIUM_SIMULADO_DAILY_LIMIT = 5;
+
+/** Badge / sidebar: limites diários do tier gratuito. */
+export const FREEMIUM_PLAN_LIMITS_COMPACT = `${FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT} estudo reverso + ${FREEMIUM_SIMULADO_DAILY_LIMIT} simulados/dia`;
+
+/** Frase completa para FAQ, assinatura e telas de configuração. */
+export const FREEMIUM_PLAN_LIMITS_DESCRIPTION = `${FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT} questão de estudo reverso e ${FREEMIUM_SIMULADO_DAILY_LIMIT} questões de simulado por dia para treinar`;
+
 export type AssertCanAnswerResult =
   | { allowed: true }
   | { allowed: false; resetEm: string };
@@ -152,6 +164,34 @@ export async function countQuestoesHojeForUser(userId: string): Promise<number> 
   return count ?? 0;
 }
 
+/** Respostas de simulado registradas no dia civil UTC−3 (sem cache). */
+export async function countSimuladoQuestoesHojeForUser(userId: string): Promise<number> {
+  const { start, end } = getFreemiumDayBounds();
+  const supabase = await createServerSupabase();
+
+  const { count, error } = await supabase
+    .from('simulado_respostas')
+    .select('*', { count: 'exact', head: true })
+    .eq('user_id', userId)
+    .not('respondida_em', 'is', null)
+    .gte('respondida_em', start.toISOString())
+    .lt('respondida_em', end.toISOString());
+
+  if (error) {
+    logger.error('Falha ao contar questões de simulado do dia (freemium)', error, { userId });
+    throw error;
+  }
+
+  return count ?? 0;
+}
+
+export type SimuladoFreemiumPayload = {
+  questoesHoje: number;
+  limite: number;
+  restantes: number;
+  limiteAtingido: boolean;
+};
+
 export type FreemiumStatusPayload = {
   isPro: boolean;
   questoesHoje: number;
@@ -159,6 +199,7 @@ export type FreemiumStatusPayload = {
   resetEm: string;
   proSource: ProSource;
   proExpiresAt: string | null;
+  simulado: SimuladoFreemiumPayload;
 };
 
 /** Status freemium para UI/API (`/api/freemium/status`). */
@@ -168,6 +209,13 @@ export async function getFreemiumStatusForUser(
 ): Promise<FreemiumStatusPayload> {
   const { resetEm } = getFreemiumDayBounds();
 
+  const simuladoUnlimited = {
+    questoesHoje: 0,
+    limite: FREEMIUM_SIMULADO_DAILY_LIMIT,
+    restantes: FREEMIUM_SIMULADO_DAILY_LIMIT,
+    limiteAtingido: false,
+  };
+
   if (isFreemiumUnlimitedEmail(userEmail)) {
     return {
       isPro: true,
@@ -176,22 +224,35 @@ export async function getFreemiumStatusForUser(
       resetEm: resetEm.toISOString(),
       proSource: null,
       proExpiresAt: null,
+      simulado: simuladoUnlimited,
     };
   }
 
-  const [isPro, questoesHoje, proInfo] = await Promise.all([
+  const [isPro, questoesHoje, simuladoQuestoesHoje, proInfo] = await Promise.all([
     isUserPro(userId),
     countQuestoesHojeForUser(userId),
+    countSimuladoQuestoesHojeForUser(userId),
     getActiveProInfoForUser(userId),
   ]);
+
+  const simuladoLimiteAtingido =
+    !isPro && simuladoQuestoesHoje >= FREEMIUM_SIMULADO_DAILY_LIMIT;
 
   return {
     isPro,
     questoesHoje,
-    limiteAtingido: !isPro && questoesHoje >= 1,
+    limiteAtingido: !isPro && questoesHoje >= FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT,
     resetEm: resetEm.toISOString(),
     proSource: isPro ? proInfo.proSource : null,
     proExpiresAt: isPro ? proInfo.proExpiresAt : null,
+    simulado: isPro
+      ? simuladoUnlimited
+      : {
+          questoesHoje: simuladoQuestoesHoje,
+          limite: FREEMIUM_SIMULADO_DAILY_LIMIT,
+          restantes: Math.max(0, FREEMIUM_SIMULADO_DAILY_LIMIT - simuladoQuestoesHoje),
+          limiteAtingido: simuladoLimiteAtingido,
+        },
   };
 }
 
@@ -212,7 +273,31 @@ export async function assertCanAnswerQuestion(
   }
 
   const questoesHoje = await countQuestoesHojeForUser(userId);
-  if (questoesHoje >= 1) {
+  if (questoesHoje >= FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT) {
+    const { resetEm } = getFreemiumDayBounds();
+    return { allowed: false, resetEm: resetEm.toISOString() };
+  }
+
+  return { allowed: true };
+}
+
+/**
+ * Gate freemium antes de registrar resposta no simulado (primeira resposta do item na sessão).
+ */
+export async function assertCanAnswerSimuladoQuestion(
+  userId: string,
+  userEmail?: string | null,
+): Promise<AssertCanAnswerResult> {
+  if (isFreemiumUnlimitedEmail(userEmail)) {
+    return { allowed: true };
+  }
+
+  if (await isUserPro(userId)) {
+    return { allowed: true };
+  }
+
+  const questoesHoje = await countSimuladoQuestoesHojeForUser(userId);
+  if (questoesHoje >= FREEMIUM_SIMULADO_DAILY_LIMIT) {
     const { resetEm } = getFreemiumDayBounds();
     return { allowed: false, resetEm: resetEm.toISOString() };
   }

@@ -1,4 +1,3 @@
--- Data oficial da prova IDIB Goianinha/RN (07/06/2026)
 UPDATE public.lp_pages
 SET
   config = jsonb_set(
@@ -7,4 +6,4 @@ SET
     '"07/06/2026"'
   ),
   updated_at = now()
-WHERE path = 'goianinha';
+WHERE path = 'goianinha';;

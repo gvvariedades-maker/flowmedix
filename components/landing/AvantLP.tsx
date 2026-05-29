@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { DM_Sans, Sora } from 'next/font/google';
 import { PublicDarkSiteHeader } from '@/components/layout/PublicDarkSiteHeader';
+import { FREEMIUM_PLAN_LIMITS_COMPACT, FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium';
 
 const sora = Sora({
   subsets: ['latin'],
@@ -365,7 +366,7 @@ function Hero() {
                   fontFamily: FONT_DM,
                 }}
               >
-                1 questão grátis/dia · Sem cartão. Acesso imediato. Cancela quando quiser.
+                {FREEMIUM_PLAN_LIMITS_COMPACT} · Sem cartão. Acesso imediato. Cancela quando quiser.
               </p>
             </div>
 
@@ -1234,7 +1235,7 @@ function Oferta() {
               Quero estudar do jeito certo →
             </Link>
             <p style={{ marginTop: 12, fontSize: 12, color: '#1a2a3a', fontFamily: FONT_DM }}>
-              Plano gratuito: 1 questão grátis/dia. Sem cartão para começar.
+              Plano gratuito: {FREEMIUM_PLAN_LIMITS_DESCRIPTION}. Sem cartão para começar.
             </p>
           </div>
         </FadeUp>

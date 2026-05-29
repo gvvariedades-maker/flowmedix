@@ -2,23 +2,18 @@
 -- reforça o filtro p_q da RPC get_vitrine_page no caminho indexável.
 
 CREATE EXTENSION IF NOT EXISTS pg_trgm WITH SCHEMA public;
-
 CREATE INDEX IF NOT EXISTS idx_modulos_estudo_titulo_aula_trgm
   ON public.modulos_estudo
   USING gin (lower(coalesce(titulo_aula, '')) gin_trgm_ops);
-
 CREATE INDEX IF NOT EXISTS idx_modulos_estudo_modulo_nome_trgm
   ON public.modulos_estudo
   USING gin (lower(coalesce(modulo_nome, '')) gin_trgm_ops);
-
 CREATE INDEX IF NOT EXISTS idx_modulos_estudo_banca_trgm
   ON public.modulos_estudo
   USING gin (lower(coalesce(banca, '')) gin_trgm_ops);
-
 CREATE INDEX IF NOT EXISTS idx_modulos_estudo_modulo_slug_trgm
   ON public.modulos_estudo
   USING gin (lower(coalesce(modulo_slug, '')) gin_trgm_ops);
-
 CREATE OR REPLACE FUNCTION public.get_vitrine_page(
   p_user_id uuid,
   p_page int DEFAULT 1,
@@ -322,9 +317,7 @@ BEGIN
   );
 END;
 $$;
-
 REVOKE EXECUTE ON FUNCTION public.get_vitrine_page(uuid, int, text, text, text) FROM PUBLIC, anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.get_vitrine_page(uuid, int, text, text, text) TO service_role;
-
 COMMENT ON FUNCTION public.get_vitrine_page(uuid, int, text, text, text) IS
   'Vitrine paginada por titulo_aula com filtros banca/assunto/q indexáveis via pg_trgm; uso service_role.';

@@ -5,6 +5,7 @@ import { getServerSession } from '@/lib/supabase/server-auth';
 import { userHasActiveMatricula } from '@/lib/concursos/entitlements';
 import { isAdminSessionEmail } from '@/lib/constants';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
+import { FREEMIUM_PLAN_LIMITS_COMPACT, FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium';
 
 /** Chunk separado evita erro do Turbopack ao misturar grafo de módulos com `not-found`. */
 const AvantLP = dynamic(() => import('@/components/landing/AvantLP'), {
@@ -18,7 +19,7 @@ const AvantLP = dynamic(() => import('@/components/landing/AvantLP'), {
 
 const v2Title = 'AVANT — O banco de questões feito por técnico, para técnico';
 const v2Description =
-  'Questões reais de concurso para Técnico em Enfermagem com Estudo Reverso e NeuroSlides. Aprenda só o que a banca cobra. Comece grátis com 1 questão por dia.';
+  `Questões reais de concurso para Técnico em Enfermagem com Estudo Reverso e NeuroSlides. Aprenda só o que a banca cobra. Comece grátis: ${FREEMIUM_PLAN_LIMITS_DESCRIPTION}.`;
 
 export const metadata: Metadata = {
   title: v2Title,
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: v2Title,
-    description: 'Estudo Reverso a partir da questão que você errou. 1 questão grátis por dia.',
+    description: `Estudo Reverso e simulados para treinar. ${FREEMIUM_PLAN_LIMITS_COMPACT} · sem cartão.`,
   },
   robots: {
     index: false,

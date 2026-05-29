@@ -29,6 +29,7 @@ import {
   X,
 } from 'lucide-react';
 import { AvantLogo } from '@/components/brand/AvantLogo';
+import { FREEMIUM_PLAN_LIMITS_COMPACT, FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium';
 import { DemoInterativa } from '@/components/landing/DemoInterativa';
 import { SlideStylePreviews } from '@/components/landing/SlideStylePreviews';
 import { NeuroSlideCarousel } from '@/components/marketing/NeuroSlideCarousel';
@@ -55,7 +56,7 @@ const trustSignals = [
   'EBSERH e prefeituras',
   'Só para Técnico em Enfermagem',
   'NeuroSlides após cada questão',
-  '1 questão grátis/dia · sem cartão',
+  `${FREEMIUM_PLAN_LIMITS_COMPACT} · sem cartão`,
 ];
 
 const painPoints = [
@@ -171,7 +172,7 @@ const faqs = [
   {
     question: 'O AVANT tem plano gratuito?',
     answer:
-      'Sim. No plano gratuito você resolve 1 questão por dia, sem cartão de crédito. Para estudar sem limite, o AVANT Pro custa R$ 14,90/mês e pode ser cancelado a qualquer momento.',
+      `Sim. No plano gratuito você treina com ${FREEMIUM_PLAN_LIMITS_DESCRIPTION}, sem cartão de crédito. Para estudar sem limite, o AVANT Pro custa R$ 14,90/mês e pode ser cancelado a qualquer momento.`,
   },
   {
     question: 'Quantas questões tem disponíveis?',

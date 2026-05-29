@@ -6,6 +6,7 @@ import { NextRequest } from 'next/server';
 const mockGetUserAndClientFromBearer = jest.fn();
 const mockCreateServerSupabase = jest.fn();
 const mockRevalidateTag = jest.fn();
+const mockAssertCanAnswerSimuladoQuestion = jest.fn();
 
 jest.mock('@/lib/logger', () => ({
   logger: {
@@ -38,6 +39,18 @@ jest.mock('@/lib/supabase/api-request-user', () => ({
 
 jest.mock('@/lib/supabase/server', () => ({
   createServerSupabase: (...args: unknown[]) => mockCreateServerSupabase(...args),
+}));
+
+jest.mock('@/lib/freemium', () => ({
+  assertCanAnswerSimuladoQuestion: (...args: unknown[]) =>
+    mockAssertCanAnswerSimuladoQuestion(...args),
+  countSimuladoQuestoesHojeForUser: jest.fn().mockResolvedValue(0),
+  FREEMIUM_SIMULADO_DAILY_LIMIT: 5,
+  getFreemiumDayBounds: jest.fn(() => ({
+    resetEm: new Date('2026-05-30T03:00:00.000Z'),
+  })),
+  isFreemiumUnlimitedEmail: jest.fn(() => false),
+  isUserPro: jest.fn().mockResolvedValue(false),
 }));
 
 import { POST } from '@/app/api/simulado/responder/route';
@@ -99,7 +112,10 @@ function buildRespostaProgressRows() {
 describe('POST /api/simulado/responder', () => {
   beforeEach(() => {
     jest.clearAllMocks();
-    mockGetUserAndClientFromBearer.mockResolvedValue({ user: { id: USER_ID } });
+    mockGetUserAndClientFromBearer.mockResolvedValue({
+      user: { id: USER_ID, email: 'free@test.com' },
+    });
+    mockAssertCanAnswerSimuladoQuestion.mockResolvedValue({ allowed: true });
   });
 
   it('sincroniza tentativa no histórico e retorna questao_atualizada + resumo', async () => {
@@ -438,5 +454,66 @@ describe('POST /api/simulado/responder', () => {
     });
     expect(historicoInsert).not.toHaveBeenCalled();
     expect(mockRevalidateTag).not.toHaveBeenCalled();
+  });
+
+  it('retorna 403 quando limite diário de simulado foi atingido', async () => {
+    mockAssertCanAnswerSimuladoQuestion.mockResolvedValue({
+      allowed: false,
+      resetEm: '2026-05-30T03:00:00.000Z',
+    });
+
+    const sessionMaybeSingle = jest.fn().mockResolvedValue({
+      data: {
+        id: SESSION_ID,
+        status: 'aberto',
+        user_id: USER_ID,
+        filtros: { modo: 'treino' },
+        total_questoes: 1,
+      },
+      error: null,
+    });
+    const sessionEqId = jest.fn().mockReturnValue({ maybeSingle: sessionMaybeSingle });
+    const sessionSelect = jest.fn().mockReturnValue({ eq: sessionEqId });
+
+    const respostaMaybeSingle = jest.fn().mockResolvedValue({
+      data: {
+        id: '44444444-4444-4444-8444-444444444444',
+        session_id: SESSION_ID,
+        modulo_id: '55555555-5555-4555-8555-555555555555',
+        modulo_slug: 'questao-slug',
+        ordem: 1,
+        acertou: null,
+      },
+      error: null,
+    });
+    const respostaEqUser = jest.fn().mockReturnValue({ maybeSingle: respostaMaybeSingle });
+    const respostaEqSlug = jest.fn().mockReturnValue({ eq: respostaEqUser });
+    const respostaEqSession = jest.fn().mockReturnValue({ eq: respostaEqSlug });
+    const respostaSelect = jest.fn().mockReturnValue({ eq: respostaEqSession });
+
+    const from = jest.fn().mockImplementation((table: string) => {
+      if (table === 'simulado_sessions') return { select: sessionSelect };
+      if (table === 'simulado_respostas') return { select: respostaSelect };
+      return { select: jest.fn() };
+    });
+    mockCreateServerSupabase.mockResolvedValue({ from });
+
+    const response = await POST(
+      makeRequest({
+        session_id: SESSION_ID,
+        modulo_slug: 'questao-slug',
+        opcao_id: 'B',
+      }),
+    );
+
+    expect(response.status).toBe(403);
+    expect(await response.json()).toEqual(
+      expect.objectContaining({
+        limiteAtingido: true,
+        allowed: false,
+        limite: 5,
+        resetEm: '2026-05-30T03:00:00.000Z',
+      }),
+    );
   });
 });
