@@ -37,6 +37,7 @@ import {
   BackToVitrineBar,
   shouldShowBackToVitrine,
 } from '@/components/dashboard/BackToVitrineLink';
+import { BottomNav } from '@/components/layout/BottomNav';
 
 const drawerSpring = { type: 'spring' as const, stiffness: 300, damping: 30 };
 
@@ -729,7 +730,7 @@ function DashboardContent({
             ref={openMenuButtonRef}
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="flex shrink-0 items-center justify-center p-1"
+            className="flex shrink-0 items-center justify-center p-1 opacity-0 pointer-events-none"
             aria-label="Abrir menu"
             aria-expanded={mobileMenuOpen}
             aria-controls={mobileMenuOpen ? 'dashboard-mobile-drawer' : undefined}
@@ -752,7 +753,7 @@ function DashboardContent({
           </div>
         </header>
 
-        <main className="relative flex min-h-0 flex-1 flex-col overflow-x-hidden overflow-y-auto no-scrollbar">
+        <main className="relative flex min-h-0 flex-1 flex-col overflow-x-hidden overflow-y-auto no-scrollbar pb-[72px] md:pb-0">
           {showBackToVitrine ? <BackToVitrineBar /> : null}
           <motion.div
             key={pathname}
@@ -764,6 +765,12 @@ function DashboardContent({
             {children}
           </motion.div>
         </main>
+
+        <BottomNav
+          currentPath={pathname ?? ''}
+          onMenuOpen={() => setMobileMenuOpen(true)}
+          menuOpen={mobileMenuOpen}
+        />
       </div>
 
       <EstudoReversoWelcomeModal
