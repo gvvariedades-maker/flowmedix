@@ -130,8 +130,8 @@ describe('GET /api/estudar/questao', () => {
       searchParams: {
         from: undefined,
         caderno_id: undefined,
-        banca: 'FGV',
-        assunto: 'Urgências',
+        banca: ['FGV'],
+        assunto: ['Urgências'],
         q: undefined,
       },
       supabase: expect.any(Object),

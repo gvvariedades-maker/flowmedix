@@ -124,7 +124,7 @@ export async function POST(request: NextRequest) {
     let pool = await fetchSimuladoQuestionPoolFromRpc({
       userId: auth.user.id,
       quantidade,
-      filters: { banca, assunto, q },
+      filters: { bancas, assuntos, q },
     });
 
     if (from_session_id && only_errors) {
