@@ -170,7 +170,7 @@ export default function VitrineClient({
       setFacetsLoading(true);
 
       const params = new URLSearchParams();
-      bancasSelecionadas.forEach((b) => params.append('banca', b));
+      bancasSelecionadas.forEach((b) => params.append('bancas', b));
 
       try {
         const query = params.toString();
@@ -210,8 +210,8 @@ export default function VitrineClient({
 
       const params = new URLSearchParams();
       params.set('page', String(pagina));
-      bancasSelecionadas.forEach((b) => params.append('banca', b));
-      assuntosSelecionados.forEach((a) => params.append('assunto', a));
+      bancasSelecionadas.forEach((b) => params.append('bancas', b));
+      assuntosSelecionados.forEach((a) => params.append('assuntos', a));
       if (debouncedSearch) params.set('q', debouncedSearch);
 
       try {
@@ -356,6 +356,8 @@ export default function VitrineClient({
             <MultiCheckboxFilter
               emptyLabel="Todas as bancas"
               searchPlaceholder="Buscar banca..."
+              addButtonLabel="Adicionar banca"
+              sheetTitle="Adicionar banca"
               emptySearchLabel="Nenhuma banca encontrada"
               options={bancas}
               value={bancasSelecionadas}
@@ -369,6 +371,8 @@ export default function VitrineClient({
             <MultiCheckboxFilter
               emptyLabel="Todos os assuntos"
               searchPlaceholder="Buscar assunto..."
+              addButtonLabel="Adicionar assunto"
+              sheetTitle="Adicionar assunto"
               emptySearchLabel="Nenhum assunto encontrado"
               contentMinWidth="min-w-[240px]"
               options={assuntos}

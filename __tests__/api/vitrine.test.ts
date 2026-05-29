@@ -61,8 +61,15 @@ describe('GET /api/vitrine', () => {
     });
   });
 
-  function makeRequest(query: Record<string, string>) {
-    const params = new URLSearchParams(query);
+  function makeRequest(query: Record<string, string | string[]>) {
+    const params = new URLSearchParams();
+    for (const [key, value] of Object.entries(query)) {
+      if (Array.isArray(value)) {
+        value.forEach((v) => params.append(key, v));
+      } else {
+        params.set(key, value);
+      }
+    }
     return new NextRequest(`https://avant.test/api/vitrine?${params}`, {
       headers: { authorization: 'Bearer token' },
     });
@@ -103,6 +110,42 @@ describe('GET /api/vitrine', () => {
       q: 'choque',
     });
     expect(mockRecordPerformance).toHaveBeenCalledWith('/api/vitrine', 'GET', expect.any(Number), true);
+  });
+
+  it('retorna 200 com múltiplas bancas e assuntos (bancas/assuntos)', async () => {
+    mockGetVitrinePageCached.mockResolvedValue(payloadOk);
+
+    const response = await GET(
+      makeRequest({
+        page: '1',
+        bancas: ['FGV', 'CESPE'],
+        assuntos: ['Urgências e Emergências', 'Farmacologia'],
+      }),
+    );
+
+    expect(response.status).toBe(200);
+    expect(mockGetVitrinePageCached).toHaveBeenCalledWith(USER_ID, 1, {
+      bancas: ['FGV', 'CESPE'],
+      assuntos: ['Urgências e Emergências', 'Farmacologia'],
+    });
+  });
+
+  it('retorna 200 com múltiplas bancas legado (?banca=A&banca=B)', async () => {
+    mockGetVitrinePageCached.mockResolvedValue(payloadOk);
+
+    const response = await GET(
+      makeRequest({
+        page: '1',
+        banca: ['FGV', 'CESPE'],
+        assunto: ['Urgências e Emergências', 'Farmacologia'],
+      }),
+    );
+
+    expect(response.status).toBe(200);
+    expect(mockGetVitrinePageCached).toHaveBeenCalledWith(USER_ID, 1, {
+      bancas: ['FGV', 'CESPE'],
+      assuntos: ['Urgências e Emergências', 'Farmacologia'],
+    });
   });
 
   it('retorna 500 quando ocorre erro inesperado ao montar a vitrine', async () => {

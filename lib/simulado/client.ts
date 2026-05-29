@@ -92,8 +92,8 @@ export async function getSimuladoPoolCount(filters?: {
   q?: string;
 }): Promise<SimuladoPoolCountResponse> {
   const params = new URLSearchParams();
-  filters?.bancas?.forEach((b) => params.append('banca', b));
-  filters?.assuntos?.forEach((a) => params.append('assunto', a));
+  filters?.bancas?.forEach((b) => params.append('bancas', b));
+  filters?.assuntos?.forEach((a) => params.append('assuntos', a));
   if (filters?.q) params.set('q', filters.q);
 
   const query = params.toString();

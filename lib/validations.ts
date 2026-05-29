@@ -755,16 +755,18 @@ function mergeBancaAssuntoFields<
   T extends {
     bancas?: string[];
     assuntos?: string[];
-    banca?: string;
-    assunto?: string;
+    banca?: string[];
+    assunto?: string[];
   },
 >(data: T): { bancas?: string[]; assuntos?: string[] } & Omit<T, 'banca' | 'assunto' | 'bancas' | 'assuntos'> {
   const bancas = [...(data.bancas ?? [])];
   const assuntos = [...(data.assuntos ?? [])];
-  const legacyBanca = data.banca?.trim();
-  const legacyAssunto = data.assunto?.trim();
-  if (legacyBanca && !bancas.includes(legacyBanca)) bancas.push(legacyBanca);
-  if (legacyAssunto && !assuntos.includes(legacyAssunto)) assuntos.push(legacyAssunto);
+  for (const b of data.banca ?? []) {
+    if (b && !bancas.includes(b)) bancas.push(b);
+  }
+  for (const a of data.assunto ?? []) {
+    if (a && !assuntos.includes(a)) assuntos.push(a);
+  }
   const { banca: _b, assunto: _a, bancas: _bs, assuntos: _as, ...rest } = data;
   return {
     ...rest,
@@ -776,8 +778,8 @@ function mergeBancaAssuntoFields<
 const vitrineBancaAssuntoQueryBase = {
   bancas: zQueryStringArray(LIMITS.BANCA_MAX).optional(),
   assuntos: zQueryStringArray(LIMITS.TOPICO_MAX).optional(),
-  banca: z.string().trim().max(LIMITS.BANCA_MAX).optional(),
-  assunto: z.string().trim().max(LIMITS.TOPICO_MAX).optional(),
+  banca: zQueryStringArray(LIMITS.BANCA_MAX).optional(),
+  assunto: zQueryStringArray(LIMITS.TOPICO_MAX).optional(),
 };
 
 /** Query params de `GET /api/vitrine` (vitrine paginada). */
@@ -805,12 +807,13 @@ export const EstudarQuestaoQuerySchema = z
 export const VitrineFacetsQuerySchema = z
   .object({
     bancas: zQueryStringArray(LIMITS.BANCA_MAX).optional(),
-    banca: z.string().trim().max(LIMITS.BANCA_MAX).optional(),
+    banca: zQueryStringArray(LIMITS.BANCA_MAX).optional(),
   })
   .transform((data) => {
     const bancas = [...(data.bancas ?? [])];
-    const legacy = data.banca?.trim();
-    if (legacy && !bancas.includes(legacy)) bancas.push(legacy);
+    for (const b of data.banca ?? []) {
+      if (b && !bancas.includes(b)) bancas.push(b);
+    }
     const { banca: _b, bancas: _bs, ...rest } = data;
     return { ...rest, ...(bancas.length ? { bancas } : {}) };
   });

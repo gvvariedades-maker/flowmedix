@@ -6,6 +6,7 @@ const mockPush = jest.fn();
 const mockFetchWithAuth = jest.fn();
 const mockCreateSimuladoSession = jest.fn();
 const mockGetOpenSimuladoSession = jest.fn();
+const mockGetSimuladoPoolCount = jest.fn();
 
 jest.mock('next/navigation', () => ({
   useRouter: () => ({
@@ -23,6 +24,7 @@ jest.mock('@/lib/simulado/client', () => {
     ...original,
     createSimuladoSession: (...args: unknown[]) => mockCreateSimuladoSession(...args),
     getOpenSimuladoSession: (...args: unknown[]) => mockGetOpenSimuladoSession(...args),
+    getSimuladoPoolCount: (...args: unknown[]) => mockGetSimuladoPoolCount(...args),
   };
 });
 
@@ -56,6 +58,7 @@ describe('SimuladosSetupClient', () => {
       has_open_session: false,
       session: null,
     });
+    mockGetSimuladoPoolCount.mockResolvedValue({ estimated_count: 100 });
     mockFetchWithAuth.mockImplementation((url: string) => {
       if (url.includes('/api/freemium/status')) {
         return Promise.resolve(
@@ -71,13 +74,10 @@ describe('SimuladosSetupClient', () => {
           }),
         );
       }
-      if (url.includes('/api/simulado/pool-count')) {
-        return Promise.resolve(jsonResponse({ estimated_count: 100 }));
-      }
       return Promise.resolve(
         jsonResponse({
-          bancas: ['FGV'],
-          assuntos: ['Urgências'],
+          bancas: ['FGV', 'CESPE'],
+          assuntos: ['Urgências', 'Farmacologia'],
         }),
       );
     });
@@ -147,6 +147,54 @@ describe('SimuladosSetupClient', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Continuar simulado' }));
 
     expect(mockPush).toHaveBeenCalledWith('/simulados/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa');
+  });
+
+  it('chama facets e pool-count com múltiplas bancas selecionadas', async () => {
+    render(<SimuladosSetupClient />);
+
+    await waitFor(() => {
+      const enabled = screen
+        .getAllByRole('button', { name: /Adicionar banca/i })
+        .find((b) => !(b as HTMLButtonElement).disabled);
+      expect(enabled).toBeTruthy();
+    });
+
+    const openAddBanca = () => {
+      const btn = screen
+        .getAllByRole('button', { name: /Adicionar banca/i })
+        .find((b) => !(b as HTMLButtonElement).disabled);
+      fireEvent.click(btn!);
+    };
+
+    openAddBanca();
+    fireEvent.click(await screen.findByRole('option', { name: 'FGV' }));
+
+    await waitFor(() =>
+      expect(mockFetchWithAuth).toHaveBeenCalledWith(
+        expect.stringContaining('/api/vitrine/facets?bancas=FGV'),
+      ),
+    );
+
+    await waitFor(() =>
+      expect(mockGetSimuladoPoolCount).toHaveBeenCalledWith(
+        expect.objectContaining({ bancas: ['FGV'] }),
+      ),
+    );
+
+    openAddBanca();
+    fireEvent.click(await screen.findByRole('option', { name: 'CESPE' }));
+
+    await waitFor(() =>
+      expect(mockFetchWithAuth).toHaveBeenCalledWith(
+        expect.stringMatching(/bancas=FGV.*bancas=CESPE|bancas=CESPE.*bancas=FGV/),
+      ),
+    );
+
+    await waitFor(() =>
+      expect(mockGetSimuladoPoolCount).toHaveBeenCalledWith(
+        expect.objectContaining({ bancas: ['FGV', 'CESPE'] }),
+      ),
+    );
   });
 
   it('força criação de novo simulado quando usuário clica em "Iniciar novo simulado"', async () => {

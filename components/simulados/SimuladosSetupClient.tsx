@@ -87,7 +87,7 @@ export function SimuladosSetupClient() {
     async function loadFacets() {
       setFacetsLoading(true);
       const params = new URLSearchParams();
-      bancasSelecionadas.forEach((b) => params.append('banca', b));
+      bancasSelecionadas.forEach((b) => params.append('bancas', b));
 
       try {
         const query = params.toString();
@@ -384,6 +384,8 @@ export function SimuladosSetupClient() {
                 aria-labelledby="simulado-banca-label"
                 emptyLabel="Todas as bancas"
                 searchPlaceholder="Buscar banca..."
+                addButtonLabel="Adicionar banca"
+                sheetTitle="Adicionar banca"
                 emptySearchLabel="Nenhuma banca encontrada"
                 options={facetBancas}
                 value={bancasSelecionadas}
@@ -404,6 +406,8 @@ export function SimuladosSetupClient() {
                 aria-labelledby="simulado-assunto-label"
                 emptyLabel="Todos os assuntos"
                 searchPlaceholder="Buscar assunto..."
+                addButtonLabel="Adicionar assunto"
+                sheetTitle="Adicionar assunto"
                 emptySearchLabel="Nenhum assunto encontrado"
                 contentMinWidth="min-w-[240px]"
                 options={facetAssuntos}
