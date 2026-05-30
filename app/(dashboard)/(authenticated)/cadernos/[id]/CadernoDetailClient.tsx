@@ -261,8 +261,8 @@ function BuilderPanel({
   };
 
   return (
-    <div className="flex h-full flex-col rounded-3xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117]">
-      <div className="space-y-3 border-b border-[rgba(255,255,255,0.08)] p-4">
+    <div className="flex min-h-0 flex-1 flex-col rounded-3xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117] max-lg:h-auto max-lg:flex-none">
+      <div className="shrink-0 space-y-3 border-b border-[rgba(255,255,255,0.08)] p-4">
         <p className="text-xs uppercase tracking-widest text-slate-400">Adicionar questões</p>
 
         {/* Busca */}
@@ -362,8 +362,8 @@ function BuilderPanel({
         )}
       </div>
 
-      {/* Resultados */}
-      <div className="flex-1 space-y-1 overflow-y-auto p-2">
+      {/* Resultados: scroll interno no desktop; no mobile o sheet pai rola tudo */}
+      <div className="min-h-0 flex-1 space-y-1 overflow-y-auto overscroll-y-contain p-2 touch-pan-y max-lg:flex-none max-lg:overflow-visible lg:min-h-0">
         {filtrados.length === 0 ? (
           <div className="text-center py-8 text-slate-400 text-sm">
             {busca || filtroTopico || filtroBanca

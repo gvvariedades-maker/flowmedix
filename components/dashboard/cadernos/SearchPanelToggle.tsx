@@ -105,10 +105,10 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
                   animate={{ y: 0 }}
                   exit={{ y: '100%' }}
                   transition={{ type: 'spring', stiffness: 380, damping: 34 }}
-                  className="absolute inset-x-0 bottom-0 z-[201] flex max-h-[min(90dvh,40rem)] flex-col rounded-t-3xl border border-white/10 bg-[#0d1117] pb-safe shadow-2xl"
+                  className="absolute inset-x-0 bottom-0 z-[201] flex max-h-[min(90dvh,40rem)] min-h-0 flex-col rounded-t-3xl border border-white/10 bg-[#0d1117] pb-safe shadow-2xl"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+                  <div className="flex shrink-0 items-center justify-between border-b border-white/10 px-4 py-3">
                     <div>
                       <p className="text-sm font-bold text-white">Buscar questões</p>
                       <p className="text-xs font-medium text-cyan-400">100% com NeuroSlide</p>
@@ -122,7 +122,7 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
                       <X size={18} aria-hidden />
                     </button>
                   </div>
-                  <div className="custom-scrollbar flex min-h-0 flex-1 flex-col overflow-hidden p-4 pt-3">
+                  <div className="custom-scrollbar flex min-h-0 min-w-0 flex-1 flex-col overflow-y-auto overscroll-y-contain touch-pan-y p-4 pt-3 lg:overflow-hidden">
                     {children}
                   </div>
                 </motion.div>
