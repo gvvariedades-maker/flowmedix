@@ -1,8 +1,10 @@
 import { Suspense } from 'react';
 import { redirect } from 'next/navigation';
-import { getServerUser } from '@/lib/supabase/server-auth';
-import VitrineClient from '@/components/vitrine/VitrineClient';
+import { getCatalogStats } from '@/lib/cache';
 import { getMatriculatedConcursos } from '@/lib/concursos/entitlements';
+import { getServerUser } from '@/lib/supabase/server-auth';
+import VitrineCatalogStats from '@/components/vitrine/VitrineCatalogStats';
+import VitrineClient from '@/components/vitrine/VitrineClient';
 
 /** Evita HTML/CDN com payload RSC desatualizado; catálogo vem da API `/api/vitrine`. */
 export const dynamic = 'force-dynamic';
@@ -12,13 +14,21 @@ export default async function VitrinePage() {
   const userId = user?.id;
   if (!userId) redirect('/login?next=/estudar');
 
-  const matriculatedConcursos = await getMatriculatedConcursos(userId).catch(() => []);
+  const [matriculatedConcursos, catalogStats] = await Promise.all([
+    getMatriculatedConcursos(userId).catch(() => []),
+    getCatalogStats(),
+  ]);
   const vitrineFallbackTitulo =
     matriculatedConcursos.find((concurso) => concurso.tipo === 'edital')?.nome ?? 'Estudo Reverso';
 
   return (
     <Suspense fallback={<VitrineLoadingFallback />}>
-      <VitrineClient fallbackTitulo={vitrineFallbackTitulo} />
+      <VitrineClient fallbackTitulo={vitrineFallbackTitulo}>
+        <VitrineCatalogStats
+          totalQuestions={catalogStats.totalQuestions}
+          totalSlides={catalogStats.totalSlides}
+        />
+      </VitrineClient>
     </Suspense>
   );
 }

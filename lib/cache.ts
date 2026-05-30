@@ -15,7 +15,7 @@ import { logger } from './logger';
 import { DataServiceUnavailableError } from './dataServiceError';
 import { withPostgrestReadRetry } from './supabaseReadRetry';
 import type { Concurso } from '@/types/database';
-import { SCALE_LIMITS } from '@/lib/scale/constants';
+import { CATALOG_STATS_RPC, SCALE_LIMITS } from '@/lib/scale/constants';
 
 // Cliente Supabase SEM cookies - para uso dentro de unstable_cache.
 // Lazy: evita createClient com URL/key indefinidos no import (ex.: `next build` / CI sem .env).
@@ -573,6 +573,70 @@ export async function getVitrineFacetsCached(
   )();
 }
 
+export type CatalogStats = {
+  totalQuestions: number;
+  totalSlides: number;
+};
+
+const EMPTY_CATALOG_STATS: CatalogStats = { totalQuestions: 0, totalSlides: 0 };
+
+function parseCatalogStatsPayload(data: unknown): CatalogStats {
+  if (!data || typeof data !== 'object') return EMPTY_CATALOG_STATS;
+  const o = data as Record<string, unknown>;
+  const toInt = (value: unknown) => {
+    if (typeof value === 'number' && Number.isFinite(value)) return Math.max(0, Math.trunc(value));
+    if (typeof value === 'string' && value.trim() !== '') {
+      const n = Number(value);
+      if (Number.isFinite(n)) return Math.max(0, Math.trunc(n));
+    }
+    return 0;
+  };
+  return {
+    totalQuestions: toInt(o.total_questions),
+    totalSlides: toInt(o.total_slides),
+  };
+}
+
+const CATALOG_STATS_CACHE_ID = 'catalog-stats-v1';
+
+/**
+ * Totais globais da plataforma: questões com estudo reverso e NeuroSlides agregados.
+ * TTL 1 h; invalidar via tag `catalog-stats` (incluída em `invalidateModulosCache`).
+ */
+export const getCatalogStats = unstable_cache(
+  async (): Promise<CatalogStats> => {
+    const { createServerSupabase } = await import('./supabase/server');
+    let supabase: Awaited<ReturnType<typeof createServerSupabase>>;
+    try {
+      supabase = await createServerSupabase();
+    } catch {
+      trackCacheMiss('catalog-stats');
+      throw new DataServiceUnavailableError(
+        'Configuração incompleta: variáveis NEXT_PUBLIC_SUPABASE_* ou SUPABASE_SERVICE_ROLE_KEY ausentes no servidor.',
+      );
+    }
+
+    try {
+      const data = await withPostgrestReadRetry('catalog-stats', async () =>
+        supabase.rpc(CATALOG_STATS_RPC),
+      );
+      trackCacheHit('catalog-stats');
+      return parseCatalogStatsPayload(data);
+    } catch (error) {
+      logger.warn('Falha ao buscar catalog stats', {
+        message: error instanceof Error ? error.message : String(error),
+      });
+      trackCacheMiss('catalog-stats');
+      return EMPTY_CATALOG_STATS;
+    }
+  },
+  [CATALOG_STATS_CACHE_ID],
+  {
+    revalidate: 3600,
+    tags: ['catalog-stats', 'static', 'modulos-estudo'],
+  },
+);
+
 /**
  * Função helper para invalidar cache por tag
  * Útil para invalidação via webhook do Supabase
@@ -590,7 +654,7 @@ export async function revalidateCache(tags: string[]) {
  * Funções de invalidação específicas
  */
 export const invalidateModulosCache = () =>
-  revalidateCache(['modulos-estudo', 'vitrine-page', 'vitrine-facets']);
+  revalidateCache(['modulos-estudo', 'catalog-stats', 'vitrine-page', 'vitrine-facets']);
 export const invalidateUserModulosCache = (userId: string) =>
   revalidateCache([
     'modulos-estudo',

@@ -15,3 +15,4 @@ export const SCALE_LIMITS = {
 } as const;
 
 export const SCALE_HEALTH_RPC = 'avant_scale_health_metrics' as const;
+export const CATALOG_STATS_RPC = 'avant_catalog_stats' as const;

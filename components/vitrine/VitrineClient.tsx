@@ -8,6 +8,7 @@ import {
   useRef,
   useCallback,
   createElement,
+  type ReactNode,
 } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
@@ -56,7 +57,9 @@ const VITRINE_SEARCH_DEBOUNCE_MS = 350;
 
 /** Offset acima do BottomNav mobile (DashboardShell). */
 const MOBILE_BOTTOM_NAV_CLEARANCE =
-  'bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))]';
+  'bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px)+0.75rem)]';
+/** Reserva scroll: faixa fixa (py-3 + h-11 + gap + legenda + py-3) acima do BottomNav. */
+const VITRINE_MOBILE_PAGINATION_SPACER = 'h-[7.5rem] sm:h-[6rem]';
 
 const VITRINE_FILTER_QUERY_KEYS = new Set([
   'banca',
@@ -188,12 +191,15 @@ type GrupoSubtopico = VitrineGrupoSubtopico;
 interface VitrineClientProps {
   /** Título quando a URL não traz `?cidade=` (ex.: nome do edital matriculado). */
   fallbackTitulo?: string;
+  /** Server Component (ex.: contadores globais do catálogo) — renderizado acima da lista de assuntos. */
+  children?: ReactNode;
 }
 
 // ─── Componente Principal ─────────────────────────────────────────────────────
 
 export default function VitrineClient({
   fallbackTitulo = 'Estudo Reverso',
+  children,
 }: VitrineClientProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -312,12 +318,14 @@ export default function VitrineClient({
     };
   }, [bancasSelecionadas]);
 
+  /** Paginação explícita (replace por página) — sem infinite scroll / append. */
   useEffect(() => {
     let cancelled = false;
 
     async function loadVitrine() {
       setLoading(true);
       setFetchError(null);
+      setGruposPagina([]);
 
       const params = new URLSearchParams();
       params.set('page', String(pagina));
@@ -359,6 +367,15 @@ export default function VitrineClient({
       cancelled = true;
     };
   }, [pagina, bancasSelecionadas, assuntosSelecionados, debouncedSearch]);
+
+  const searchPaginaResetSkipRef = useRef(true);
+  useEffect(() => {
+    if (searchPaginaResetSkipRef.current) {
+      searchPaginaResetSkipRef.current = false;
+      return;
+    }
+    setPagina(1);
+  }, [debouncedSearch]);
 
   useEffect(() => {
     if (!assuntosSelecionados.length) return;
@@ -405,7 +422,8 @@ export default function VitrineClient({
       paginaScrollSkipRef.current = false;
       return;
     }
-    vitrineListaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const main = document.querySelector('main');
+    main?.scrollTo({ top: 0, behavior: 'smooth' });
   }, [pagina]);
 
   const pageSectionTitle = searchTerm
@@ -771,7 +789,8 @@ export default function VitrineClient({
               )}
             </div>
           </div>
-          {loading && gruposPagina.length === 0 ? (
+          {children ? <div className="mb-6">{children}</div> : null}
+          {loading ? (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {Array.from({ length: 8 }).map((_, i) => (
                 <div key={i} className="h-72 animate-pulse rounded-3xl bg-muted/50" />
@@ -780,14 +799,12 @@ export default function VitrineClient({
           ) : gruposPagina.length > 0 ? (
             <>
               <motion.div
+                key={`vitrine-page-${paginaEfetiva}`}
                 ref={vitrineListaRef}
                 variants={containerVariants}
                 initial="initial"
                 animate="animate"
-                className={cn(
-                  'grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-5 xl:grid-cols-4',
-                  loading && 'pointer-events-none opacity-60',
-                )}
+                className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-5 xl:grid-cols-4"
               >
                 {gruposPagina.map((grupo, idx) => (
                   <SubtopicoCard key={grupo.titulo_aula} grupo={grupo} estudarQuery={estudarQuery} index={idx} />
@@ -795,7 +812,7 @@ export default function VitrineClient({
               </motion.div>
               {totalPaginas > 1 && (
                 <>
-                  <div className="h-[4.75rem] shrink-0 md:hidden" aria-hidden />
+                  <div className={cn('shrink-0 md:hidden', VITRINE_MOBILE_PAGINATION_SPACER)} aria-hidden />
                   <nav
                     className={cn(
                       'flex flex-col gap-3 border-t border-border pt-3 sm:flex-row sm:items-center sm:justify-between',
@@ -806,13 +823,13 @@ export default function VitrineClient({
                     aria-label="Paginação da vitrine"
                   >
                     <p className="order-2 text-center text-xs font-medium text-muted-foreground sm:order-1 sm:text-left">
-                      Página {paginaEfetiva} de {totalPaginas}
+                      Página {loading ? pagina : paginaEfetiva} de {totalPaginas}
                     </p>
                     <div className="order-1 flex items-center gap-2 sm:order-2 sm:ml-auto">
                       <Button
                         type="button"
                         variant="outline"
-                        disabled={paginaEfetiva <= 1 || loading}
+                        disabled={pagina <= 1 || loading}
                         onClick={() => setPagina((p) => Math.max(1, p - 1))}
                         className="h-11 flex-1 rounded-xl border-white/15 sm:flex-none"
                       >
@@ -822,7 +839,7 @@ export default function VitrineClient({
                       <Button
                         type="button"
                         variant="outline"
-                        disabled={paginaEfetiva >= totalPaginas || loading}
+                        disabled={pagina >= totalPaginas || loading}
                         onClick={() => setPagina((p) => Math.min(totalPaginas, p + 1))}
                         className="h-11 flex-1 rounded-xl border-white/15 sm:flex-none"
                       >

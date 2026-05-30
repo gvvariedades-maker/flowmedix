@@ -16,9 +16,15 @@ const mockSupabaseChain = {
   eq: () => mockSupabaseChain,
 };
 
+const mockRpc = jest.fn(async () => ({
+  data: { total_questions: 42, total_slides: 168 },
+  error: null,
+}));
+
 jest.mock('@/lib/supabase/server', () => ({
   createServerSupabase: jest.fn(async () => ({
     from: () => mockSupabaseChain,
+    rpc: mockRpc,
   })),
 }));
 
@@ -29,6 +35,7 @@ jest.mock('@supabase/supabase-js', () => ({
 }));
 
 import {
+  getCatalogStats,
   getModulosEstudoCached,
   getQuestaoBySlugCached,
   getHistoricoQuestoesCached,
@@ -70,10 +77,19 @@ describe('Sistema de Cache', () => {
     });
   });
 
+  describe('getCatalogStats', () => {
+    it('deve retornar totais parseados da RPC', async () => {
+      const result = await getCatalogStats();
+      expect(result).toEqual({ totalQuestions: 42, totalSlides: 168 });
+      expect(mockRpc).toHaveBeenCalledWith('avant_catalog_stats');
+    });
+  });
+
   describe('invalidateModulosCache', () => {
     it('deve invalidar cache sem erros', async () => {
       await expect(invalidateModulosCache()).resolves.not.toThrow();
       expect(revalidateTag).toHaveBeenCalledWith('modulos-estudo', { expire: 0 });
+      expect(revalidateTag).toHaveBeenCalledWith('catalog-stats', { expire: 0 });
     });
   });
 
