@@ -32,6 +32,17 @@ jest.mock('@/components/simulados/SimuladoResumoClient', () => ({
 
 beforeAll(() => {
   Element.prototype.scrollIntoView = jest.fn();
+  Element.prototype.scrollBy = jest.fn();
+  window.matchMedia = jest.fn().mockImplementation((query: string) => ({
+    matches: query.includes('min-width: 768px'),
+    media: query,
+    onchange: null,
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+  }));
 });
 
 const abertaInicial = {

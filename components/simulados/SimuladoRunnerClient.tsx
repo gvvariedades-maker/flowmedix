@@ -43,6 +43,42 @@ import {
   stripLeadingQuestionEnumeration,
 } from '@/lib/questionHeader';
 
+/** Reserva espaço acima do BottomNav mobile ao rolar botões de ação para a viewport. */
+const MOBILE_ACTION_SCROLL_MARGIN =
+  'scroll-mb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] md:scroll-mb-0';
+
+let safeAreaBottomPxCache: number | undefined;
+
+function mobileBottomNavClearancePx(): number {
+  const rootFont = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+  const base = rootFont * 4.5;
+  if (safeAreaBottomPxCache === undefined) {
+    const probe = document.createElement('div');
+    probe.style.paddingBottom = 'env(safe-area-inset-bottom, 0px)';
+    probe.style.position = 'fixed';
+    probe.style.visibility = 'hidden';
+    document.body.appendChild(probe);
+    safeAreaBottomPxCache = parseFloat(getComputedStyle(probe).paddingBottom) || 0;
+    probe.remove();
+  }
+  return base + safeAreaBottomPxCache;
+}
+
+function scrollActionAboveMobileBottomNav(el: HTMLElement) {
+  el.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+
+  if (window.matchMedia('(min-width: 768px)').matches) return;
+
+  const navClearance = mobileBottomNavClearancePx();
+  const rect = el.getBoundingClientRect();
+  const overlap = rect.bottom - (window.innerHeight - navClearance);
+  if (overlap <= 0) return;
+
+  const scrollParent =
+    el.closest('main') ?? document.scrollingElement ?? document.documentElement;
+  scrollParent.scrollBy({ top: overlap + 12, behavior: 'smooth' });
+}
+
 type FeedbackState = {
   acertou: boolean;
   opcao_correta_id: string;
@@ -110,6 +146,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const [simuladoLimiteAtingido, setSimuladoLimiteAtingido] = useState(false);
   const optionsGroupRef = useRef<HTMLDivElement | null>(null);
   const confirmarRespostaRef = useRef<HTMLDivElement>(null);
+  const proximaAcaoRef = useRef<HTMLDivElement>(null);
   const questionLoadIdRef = useRef(0);
 
   const firstPendingSlug = useMemo(() => {
@@ -338,13 +375,12 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const showConfirmAction = !!selectedOption && !feedback && !isAnswerLocked;
 
   useLayoutEffect(() => {
-    if (!showConfirmAction) return;
-    confirmarRespostaRef.current?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'nearest',
-      inline: 'nearest',
-    });
-  }, [showConfirmAction, selectedOption]);
+    const el = feedback ? proximaAcaoRef.current : showConfirmAction ? confirmarRespostaRef.current : null;
+    if (!el) return;
+
+    scrollActionAboveMobileBottomNav(el);
+    requestAnimationFrame(() => scrollActionAboveMobileBottomNav(el));
+  }, [showConfirmAction, selectedOption, feedback]);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -614,7 +650,13 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
             </div>
 
             {feedback ? (
-              <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:justify-end">
+              <div
+                ref={proximaAcaoRef}
+                className={cn(
+                  'flex flex-col gap-3 pt-2 sm:flex-row sm:justify-end',
+                  MOBILE_ACTION_SCROLL_MARGIN,
+                )}
+              >
                 <Button
                   type="button"
                   disabled={!canAdvance}
@@ -643,7 +685,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
             ) : showConfirmAction ? (
               <div
                 ref={confirmarRespostaRef}
-                className="scroll-mt-4 pt-2 sm:flex sm:justify-end"
+                className={cn('scroll-mt-4 pt-2 sm:flex sm:justify-end', MOBILE_ACTION_SCROLL_MARGIN)}
               >
                 <Button
                   type="button"
