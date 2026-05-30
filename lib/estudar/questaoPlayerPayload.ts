@@ -57,6 +57,8 @@ export type BuildEstudarQuestaoPlayerPayloadInput = {
   slug: string;
   userId?: string | null;
   searchParams?: EstudarSearchParams;
+  /** Gestor/admin: catálogo completo na vitrine sem matrícula em concurso. */
+  isAdmin?: boolean;
   /** Cliente com sessão do usuário (API Bearer). Se omitido no RSC, usa cookies via `createSupabaseServerClient`. */
   supabase?: SupabaseClient;
 };
@@ -68,7 +70,7 @@ export type BuildEstudarQuestaoPlayerPayloadInput = {
 export async function buildEstudarQuestaoPlayerPayload(
   input: BuildEstudarQuestaoPlayerPayloadInput,
 ): Promise<EstudarQuestaoBuildResult> {
-  const { slug, userId, searchParams = {} } = input;
+  const { slug, userId, searchParams = {}, isAdmin = false } = input;
   const { fromPlano, fromCaderno, cadernoId, vitrineBancas, vitrineAssuntos, vitrineQ } =
     parseEstudarSearchParams(searchParams);
 
@@ -76,20 +78,27 @@ export async function buildEstudarQuestaoPlayerPayload(
   let supabase: SupabaseClient | null = null;
 
   if (userId) {
-    const hasAccess = await userHasModuloAccess(userId, slug);
-    if (!hasAccess) return { status: 'forbidden' };
+    if (!isAdmin) {
+      const hasAccess = await userHasModuloAccess(userId, slug);
+      if (!hasAccess) return { status: 'forbidden' };
+    }
 
-    supabase = input.supabase ?? (await createSupabaseServerClient());
-    const { data, error } = await supabase
-      .from('modulos_estudo')
-      .select(
-        'id, modulo_slug, conteudo_json, banca, modulo_nome, titulo_aula, created_at, avant_codigo',
-      )
-      .eq('modulo_slug', slug)
-      .maybeSingle();
+    if (isAdmin) {
+      atual = (await getQuestaoBySlugCached(slug)) as ModuloAtualRow | null;
+      supabase = input.supabase ?? (await createSupabaseServerClient());
+    } else {
+      supabase = input.supabase ?? (await createSupabaseServerClient());
+      const { data, error } = await supabase
+        .from('modulos_estudo')
+        .select(
+          'id, modulo_slug, conteudo_json, banca, modulo_nome, titulo_aula, created_at, avant_codigo',
+        )
+        .eq('modulo_slug', slug)
+        .maybeSingle();
 
-    if (error) throw error;
-    atual = data as ModuloAtualRow | null;
+      if (error) throw error;
+      atual = data as ModuloAtualRow | null;
+    }
   } else {
     atual = (await getQuestaoBySlugCached(slug)) as ModuloAtualRow | null;
   }

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { searchParamsToQueryRecord } from '@/lib/api/query-params';
 import { EstudarQuestaoQuerySchema } from '@/lib/validations';
 import { buildEstudarQuestaoPlayerPayload } from '@/lib/estudar/questaoPlayerPayload';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import { logEstudarNavApiBuild } from '@/lib/estudar/navigationTelemetry';
 import { logApiStrategy } from '@/lib/api/logApiStrategy';
@@ -42,6 +43,7 @@ export async function GET(request: NextRequest) {
     const result = await buildEstudarQuestaoPlayerPayload({
       slug,
       userId: auth.user.id,
+      isAdmin: isAdminSessionEmail(auth.user.email ?? null),
       searchParams: {
         from,
         caderno_id,

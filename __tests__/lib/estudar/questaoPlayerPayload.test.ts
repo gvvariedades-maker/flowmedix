@@ -112,6 +112,27 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
     expect(mockGetQuestaoNavList).not.toHaveBeenCalled();
   });
 
+  it('admin abre questão via cache sem checar matrícula', async () => {
+    mockGetQuestaoBySlugCached.mockResolvedValue({
+      id: 'mod-1',
+      modulo_slug: SLUG,
+      conteudo_json: conteudoJson,
+      titulo_aula: 'Urgências',
+      modulo_nome: 'Urgências',
+      avant_codigo: 42,
+    });
+    mockCreateSupabaseServerClient.mockResolvedValue({ from: jest.fn() } as never);
+
+    const result = await buildEstudarQuestaoPlayerPayload({
+      slug: SLUG,
+      userId: USER_ID,
+      isAdmin: true,
+    });
+
+    expect(mockUserHasModuloAccess).not.toHaveBeenCalled();
+    expect(result.status).toBe('ok');
+  });
+
   it('retorna not_found quando o módulo não existe (logado)', async () => {
     mockUserHasModuloAccess.mockResolvedValue(true);
     const maybeSingle = jest.fn().mockResolvedValue({ data: null, error: null });

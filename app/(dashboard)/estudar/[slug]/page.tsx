@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import EstudarQuestaoHydrator from '@/components/lesson/EstudarQuestaoHydrator';
 import { buildEstudarQuestaoPlayerPayload } from '@/lib/estudar/questaoPlayerPayload';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { getServerSession } from '@/lib/supabase/server-auth';
 
 export default async function PaginaQuestaoDinamica({
@@ -17,6 +18,7 @@ export default async function PaginaQuestaoDinamica({
   const result = await buildEstudarQuestaoPlayerPayload({
     slug: resolvedParams.slug,
     userId,
+    isAdmin: isAdminSessionEmail(session?.user?.email ?? null),
     searchParams: resolvedSearch,
   });
 
