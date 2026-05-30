@@ -259,7 +259,7 @@ describe('SimuladosSetupClient', () => {
     render(<SimuladosSetupClient />);
     await screen.findByText(/Você tem um simulado em andamento/);
 
-    fireEvent.click(screen.getAllByRole('button', { name: 'Iniciar novo simulado' })[0]!);
+    fireEvent.click(screen.getByRole('button', { name: 'Iniciar novo simulado' }));
 
     await waitFor(() =>
       expect(mockCreateSimuladoSession).toHaveBeenCalledWith(
@@ -267,5 +267,33 @@ describe('SimuladosSetupClient', () => {
       ),
     );
     expect(mockPush).toHaveBeenCalledWith('/simulados/cccccccc-cccc-4ccc-8ccc-cccccccccccc');
+  });
+
+  it('exibe aviso quando quantidade excede pool estimado', async () => {
+    mockGetSimuladoPoolCount.mockResolvedValue({ estimated_count: 10 });
+
+    render(<SimuladosSetupClient />);
+
+    expect(
+      await screen.findByText(
+        /Você pediu 20 questões, mas o pool estimado tem ~10\. Reduza a quantidade ou amplie os filtros\./,
+      ),
+    ).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Diminuir quantidade' }));
+
+    await waitFor(() =>
+      expect(
+        screen.queryByText(/Você pediu 20 questões, mas o pool estimado/),
+      ).not.toBeInTheDocument(),
+    );
+
+    fireEvent.click(screen.getByRole('button', { name: 'Aumentar quantidade' }));
+
+    expect(
+      await screen.findByText(
+        /Você pediu 20 questões, mas o pool estimado tem ~10\. Reduza a quantidade ou amplie os filtros\./,
+      ),
+    ).toBeInTheDocument();
   });
 });

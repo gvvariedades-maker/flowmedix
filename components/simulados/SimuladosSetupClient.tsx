@@ -243,14 +243,6 @@ export function SimuladosSetupClient() {
     }
   };
 
-  const requestStartSession = (opts?: { forcarNovo?: boolean }) => {
-    if (simuladoFreeLimitReached) {
-      setPaywallOpen(true);
-      return;
-    }
-    void startSession(opts);
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (simuladoFreeLimitReached) {
@@ -312,22 +304,6 @@ export function SimuladosSetupClient() {
                 >
                   Continuar simulado
                 </Button>
-                <Button
-                  type="button"
-                  variant="ghost"
-                  disabled={loading}
-                  onClick={() => requestStartSession({ forcarNovo: true })}
-                  className="h-11 w-full rounded-xl border border-white/15 text-slate-300 hover:bg-white/5"
-                >
-                  {loading ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
-                      Montando simulado…
-                    </>
-                  ) : (
-                    'Iniciar novo simulado'
-                  )}
-                </Button>
               </div>
             </div>
           ) : null}
@@ -341,10 +317,18 @@ export function SimuladosSetupClient() {
           </div>
 
           <div className="space-y-3 rounded-2xl border border-white/10 bg-white/[0.02] p-4">
-            <p className="text-sm font-medium text-slate-200">Modo do simulado</p>
-            <div className="grid gap-3 sm:grid-cols-2">
+            <p id="simulado-modo-label" className="text-sm font-medium text-slate-200">
+              Modo do simulado
+            </p>
+            <div
+              role="radiogroup"
+              aria-labelledby="simulado-modo-label"
+              className="grid gap-3 sm:grid-cols-2"
+            >
               <button
                 type="button"
+                role="radio"
+                aria-checked={modo === 'treino'}
                 onClick={() => setModo('treino')}
                 className={cn(
                   'rounded-xl p-4 text-left',
@@ -372,6 +356,8 @@ export function SimuladosSetupClient() {
               </button>
               <button
                 type="button"
+                role="radio"
+                aria-checked={modo === 'prova'}
                 onClick={() => setModo('prova')}
                 className={cn(
                   'rounded-xl p-4 text-left',
@@ -452,6 +438,13 @@ export function SimuladosSetupClient() {
           ) : (
             <div className="rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3 text-sm text-slate-500">
               Não foi possível estimar o pool com os filtros atuais.
+            </div>
+          )}
+
+          {poolCount !== null && qNum > poolCount && !poolLoading && (
+            <div className="rounded-xl border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-sm text-amber-200">
+              Você pediu {qNum} questões, mas o pool estimado tem ~
+              {poolCount.toLocaleString('pt-BR')}. Reduza a quantidade ou amplie os filtros.
             </div>
           )}
 
