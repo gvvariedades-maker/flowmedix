@@ -43,6 +43,10 @@ import {
   stripLeadingQuestionEnumeration,
 } from '@/lib/questionHeader';
 
+/** Alinhado ao `pb-[72px]` do DashboardShell + safe area do BottomNav mobile. */
+const MOBILE_DASHBOARD_BOTTOM_NAV_CLEARANCE =
+  'calc(4.5rem + env(safe-area-inset-bottom, 0px))' as const;
+
 type FeedbackState = {
   acertou: boolean;
   opcao_correta_id: string;
@@ -437,7 +441,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const showFinalFeedbackCta = finalFeedbackPending && !!feedback && !hasPending;
 
   return (
-    <div className="min-h-screen bg-[#010409] px-4 pb-[calc(11rem+env(safe-area-inset-bottom))] pt-6 sm:px-6 sm:pb-safe lg:px-8">
+    <div className="min-h-screen bg-[#010409] px-4 pb-[calc(11rem+4.5rem+env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pb-safe lg:px-8">
       <div className="mx-auto max-w-3xl space-y-6">
         <PageHeader
           title="Simulado em andamento"
@@ -648,7 +652,10 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         )}
 
         {!loadingQuestion && !questionError && activeSlug && activeItem && (
-          <div className="fixed inset-x-0 bottom-0 z-20 border-t border-white/10 bg-[#010409]/95 p-4 pb-safe backdrop-blur supports-[backdrop-filter]:bg-[#010409]/80 sm:hidden">
+          <div
+            className="fixed inset-x-0 z-30 border-t border-white/10 bg-[#010409]/95 p-4 backdrop-blur supports-[backdrop-filter]:bg-[#010409]/80 sm:hidden"
+            style={{ bottom: MOBILE_DASHBOARD_BOTTOM_NAV_CLEARANCE }}
+          >
             {feedback ? (
               <Button
                 type="button"

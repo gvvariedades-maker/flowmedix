@@ -1,6 +1,15 @@
 ﻿'use client';
 
-import { useState, useMemo, useEffect, useRef, createElement } from 'react';
+import {
+  useState,
+  useMemo,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useCallback,
+  createElement,
+} from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
@@ -29,6 +38,7 @@ import {
   Scale,
   BookOpen,
   Stethoscope,
+  SlidersHorizontal,
   type LucideIcon,
 } from 'lucide-react';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
@@ -38,12 +48,78 @@ import type { VitrineGrupoSubtopico, VitrinePageResponse } from '@/lib/vitrine/t
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { MultiCheckboxFilter } from '@/components/ui/MultiCheckboxFilter';
-import { PageHeader } from '@/components/ui/page-header';
 import { NeonBadge } from '@/components/ui/neon-badge';
 import { EmptyState } from '@/components/ui/empty-state';
 import { ProgressRing } from '@/components/ui/progress-ring';
 
 const VITRINE_SEARCH_DEBOUNCE_MS = 350;
+
+const VITRINE_FILTER_QUERY_KEYS = new Set([
+  'banca',
+  'bancas',
+  'assunto',
+  'assuntos',
+  'q',
+  'page',
+]);
+
+function readMultiQueryParam(
+  searchParams: { getAll: (key: string) => string[] },
+  keys: string[],
+): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const key of keys) {
+    for (const raw of searchParams.getAll(key)) {
+      const value = raw.trim();
+      if (value && !seen.has(value)) {
+        seen.add(value);
+        out.push(value);
+      }
+    }
+  }
+  return out;
+}
+
+function stringArraysEqual(a: string[], b: string[]): boolean {
+  if (a.length !== b.length) return false;
+  return a.every((value, index) => value === b[index]);
+}
+
+/** Query de filtros na barra de endereço (preserva cidade, concurso, etc.). */
+function buildVitrineLocationSearch(
+  searchParams: { forEach: (cb: (value: string, key: string) => void) => void },
+  filters: {
+    bancas: string[];
+    assuntos: string[];
+    searchTerm: string;
+    pagina: number;
+  },
+): string {
+  const params = new URLSearchParams();
+  searchParams.forEach((value, key) => {
+    if (!VITRINE_FILTER_QUERY_KEYS.has(key)) {
+      params.append(key, value);
+    }
+  });
+  filters.bancas.forEach((b) => params.append('banca', b));
+  filters.assuntos.forEach((a) => params.append('assunto', a));
+  if (filters.searchTerm.trim()) params.set('q', filters.searchTerm.trim());
+  if (filters.pagina > 1) params.set('page', String(filters.pagina));
+  const query = params.toString();
+  return query ? `?${query}` : '';
+}
+
+function normalizeLocationSearch(search: string): string {
+  const raw = search.startsWith('?') ? search.slice(1) : search;
+  if (!raw) return '';
+  const params = new URLSearchParams(raw);
+  const entries = [...params.entries()].sort(
+    (a, b) => a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]),
+  );
+  const normalized = new URLSearchParams(entries).toString();
+  return normalized ? `?${normalized}` : '';
+}
 
 const containerVariants = {
   animate: { transition: { staggerChildren: 0.04 } },
@@ -129,6 +205,9 @@ export default function VitrineClient({
   const [bancasSelecionadas, setBancasSelecionadas] = useState<string[]>([]);
   const [assuntosSelecionados, setAssuntosSelecionados] = useState<string[]>([]);
   const [pagina, setPagina] = useState(1);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [bancaSheetOpen, setBancaSheetOpen] = useState(false);
+  const [assuntoSheetOpen, setAssuntoSheetOpen] = useState(false);
   const [gruposPagina, setGruposPagina] = useState<GrupoSubtopico[]>([]);
   const [bancas, setBancas] = useState<string[]>([]);
   const [assuntos, setAssuntos] = useState<string[]>([]);
@@ -139,21 +218,36 @@ export default function VitrineClient({
   const [loading, setLoading] = useState(true);
   const [facetsLoading, setFacetsLoading] = useState(true);
   const [fetchError, setFetchError] = useState<string | null>(null);
-  /** Sincroniza estado com a barra de endereços (abertura, voltar/avançar, links externos). */
-  useEffect(() => {
-    const id = requestAnimationFrame(() => {
-      const c = searchParams.get('cidade');
-      setCidadeUrl(c ? decodeURIComponent(c) : fallbackTitulo);
-      setSearchTerm(searchParams.get('q') ?? '');
-      setDebouncedSearch(searchParams.get('q') ?? '');
-      setBancasSelecionadas(searchParams.getAll('banca').map((b) => b.trim()).filter(Boolean));
-      setAssuntosSelecionados(
-        searchParams.getAll('assunto').map((a) => a.trim()).filter(Boolean),
-      );
-      const raw = parseInt(searchParams.get('page') || '1', 10);
-      setPagina(Number.isFinite(raw) && raw >= 1 ? raw : 1);
-    });
-    return () => cancelAnimationFrame(id);
+  /** Evita gravar na URL antes de ler os filtros (impede loop com estado inicial vazio). */
+  const filtersHydratedFromUrlRef = useRef(false);
+
+  /**
+   * URL → estado antes do paint e antes dos useEffects que gravam na URL / buscam dados.
+   * Sem useLayoutEffect, o efeito de escrita rodava com bancas=[] e apagava ?banca= da URL.
+   */
+  useLayoutEffect(() => {
+    const c = searchParams.get('cidade');
+    setCidadeUrl(c ? decodeURIComponent(c) : fallbackTitulo);
+
+    const q = searchParams.get('q') ?? '';
+    setSearchTerm((prev) => (prev === q ? prev : q));
+    setDebouncedSearch((prev) => (prev === q ? prev : q));
+
+    const bancasFromUrl = readMultiQueryParam(searchParams, ['banca', 'bancas']);
+    setBancasSelecionadas((prev) =>
+      stringArraysEqual(prev, bancasFromUrl) ? prev : bancasFromUrl,
+    );
+
+    const assuntosFromUrl = readMultiQueryParam(searchParams, ['assunto', 'assuntos']);
+    setAssuntosSelecionados((prev) =>
+      stringArraysEqual(prev, assuntosFromUrl) ? prev : assuntosFromUrl,
+    );
+
+    const raw = parseInt(searchParams.get('page') || '1', 10);
+    const page = Number.isFinite(raw) && raw >= 1 ? raw : 1;
+    setPagina((prev) => (prev === page ? prev : page));
+
+    filtersHydratedFromUrlRef.current = true;
   }, [searchParams, fallbackTitulo]);
 
   useEffect(() => {
@@ -258,19 +352,21 @@ export default function VitrineClient({
     }
   }, [assuntos, assuntosSelecionados]);
 
+  /** Estado → URL (só após hidratação; não depende de searchParams para evitar loop). */
   useEffect(() => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.delete('banca');
-    bancasSelecionadas.forEach((b) => params.append('banca', b));
-    params.delete('assunto');
-    assuntosSelecionados.forEach((a) => params.append('assunto', a));
-    if (searchTerm) params.set('q', searchTerm);
-    else params.delete('q');
-    if (pagina > 1) params.set('page', String(pagina));
-    else params.delete('page');
-    const queryString = params.toString();
-    const newSearch = queryString ? `?${queryString}` : '';
-    if (typeof window !== 'undefined' && window.location.search !== newSearch) {
+    if (!filtersHydratedFromUrlRef.current) return;
+
+    const newSearch = buildVitrineLocationSearch(searchParams, {
+      bancas: bancasSelecionadas,
+      assuntos: assuntosSelecionados,
+      searchTerm,
+      pagina,
+    });
+
+    if (
+      typeof window !== 'undefined' &&
+      normalizeLocationSearch(window.location.search) !== normalizeLocationSearch(newSearch)
+    ) {
       router.replace(`${pathname}${newSearch}`, { scroll: false });
     }
   }, [bancasSelecionadas, assuntosSelecionados, searchTerm, pagina, pathname, router, searchParams]);
@@ -295,58 +391,289 @@ export default function VitrineClient({
     vitrineListaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [pagina]);
 
+  const pageSectionTitle = searchTerm
+    ? `Resultados para "${searchTerm}"`
+    : bancasSelecionadas.length || assuntosSelecionados.length
+      ? (() => {
+          const parts: string[] = ['Filtrado'];
+          const bancasLabel = multiFilterResumo(bancasSelecionadas, 'bancas');
+          const assuntosLabel = multiFilterResumo(assuntosSelecionados, 'assuntos');
+          if (bancasLabel) parts.push(bancasLabel);
+          if (assuntosLabel) parts.push(assuntosLabel);
+          return parts.join(' \u2022 ');
+        })()
+      : 'Vitrine de questões';
+
+  const pageSectionDescription = fetchError
+    ? fetchError
+    : totalAssuntos > 0 && totalPaginas > 1
+      ? `Mostrando ${(paginaEfetiva - 1) * perPage + 1}\u2013${Math.min(paginaEfetiva * perPage, totalAssuntos)} de ${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`
+      : loading
+        ? 'Carregando assuntos…'
+        : `${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`;
+
   return (
     <div className="dashboard-surface min-h-screen bg-background pb-24 pb-safe text-foreground selection:bg-indigo-100 selection:text-indigo-900">
       <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
-        <header className="bg-transparent">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-5 md:flex-row">
-          <div className="flex w-full min-w-0 items-center gap-3 sm:gap-4 md:w-auto">
+        {/* Header mobile */}
+        <div className="flex items-center justify-between px-4 py-3 md:hidden">
+          <div className="flex min-w-0 flex-1 items-center gap-2.5">
             <div
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-50 to-violet-50/90 ring-1 ring-indigo-200/50 shadow-sm shadow-indigo-900/[0.06] sm:h-12 sm:w-12"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-50 to-violet-50/90 ring-1 ring-indigo-200/50"
               aria-hidden
             >
-              <LayoutDashboard size={24} className="text-indigo-600" strokeWidth={2} />
+              <LayoutDashboard size={20} className="text-indigo-600" strokeWidth={2} />
             </div>
-            <div className="min-w-0 flex-1 md:flex-none">
-              <h1 className="line-clamp-2 text-lg font-semibold leading-snug tracking-tight text-foreground md:line-clamp-1">
-                {cidadeUrl}
-              </h1>
-            </div>
+            <h1 className="line-clamp-2 min-w-0 text-base font-semibold leading-snug tracking-tight text-foreground">
+              {cidadeUrl}
+            </h1>
           </div>
+          <button
+            type="button"
+            onClick={() => setSearchOpen((open) => !open)}
+            aria-expanded={searchOpen}
+            aria-label={searchOpen ? 'Fechar busca' : 'Abrir busca'}
+            className={cn(
+              'ml-2 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-colors',
+              searchOpen
+                ? 'border-[#00f2ff]/50 bg-[#00f2ff]/10 text-[#00f2ff]'
+                : 'border-[#00f2ff]/40 bg-white/[0.04] text-slate-300 hover:border-[#00f2ff]/55 hover:text-[#00f2ff]',
+            )}
+          >
+            {searchOpen ? <X size={20} aria-hidden /> : <Search size={20} aria-hidden />}
+          </button>
+        </div>
 
-          <div className="group relative w-full max-w-xl flex-1">
-            <Search
-              className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground transition-colors group-focus-within:text-foreground"
-              aria-hidden
-            />
-            <Input
-              type="text"
-              placeholder="Assunto, tópico, banca, slug ou Q-…"
-              value={searchTerm}
-              onChange={(e) => {
-                setSearchTerm(e.target.value);
-                setPagina(1);
-              }}
-              className="h-11 rounded-2xl border-border/80 pl-11 pr-11"
-            />
-            {searchTerm && (
+        <AnimatePresence>
+          {searchOpen && (
+            <motion.div
+              key="vitrine-mobile-search"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="overflow-hidden border-t border-white/[0.06] px-4 py-3 md:hidden"
+            >
+              <div className="group relative">
+                <Search
+                  className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
+                  aria-hidden
+                />
+                <Input
+                  type="text"
+                  autoFocus
+                  placeholder="Assunto, tópico, banca, slug ou Q-…"
+                  value={searchTerm}
+                  onChange={(e) => {
+                    setSearchTerm(e.target.value);
+                    setPagina(1);
+                  }}
+                  className="h-10 rounded-xl border-border/80 pl-10 pr-10 text-sm"
+                />
+                {searchTerm && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSearchTerm('');
+                      setPagina(1);
+                    }}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-colors hover:text-destructive"
+                    aria-label="Limpar busca"
+                  >
+                    <X size={14} />
+                  </button>
+                )}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Chips de filtro — mobile */}
+        <section
+          aria-label="Filtros da vitrine"
+          className="flex gap-2 overflow-x-auto px-4 pb-3 pt-1 [-ms-overflow-style:none] [scrollbar-width:none] md:hidden [&::-webkit-scrollbar]:hidden"
+        >
+          {bancasSelecionadas.length > 0 ? (
+            <div
+              className={cn(
+                'inline-flex shrink-0 items-center rounded-full border border-[#00f2ff]/35 bg-[#00f2ff]/10 text-xs font-medium text-[#00f2ff]',
+                facetsLoading && bancas.length === 0 && 'opacity-50',
+              )}
+            >
               <button
                 type="button"
-                onClick={() => {
-                  setSearchTerm('');
+                disabled={facetsLoading && bancas.length === 0}
+                onClick={() => setBancaSheetOpen(true)}
+                className="inline-flex max-w-[10rem] items-center gap-1.5 rounded-l-full py-1.5 pl-3 pr-1 disabled:cursor-not-allowed"
+              >
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#00f2ff]" aria-hidden />
+                <span className="truncate">{multiFilterResumo(bancasSelecionadas, 'bancas')}</span>
+              </button>
+              <button
+                type="button"
+                aria-label="Limpar filtro de banca"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setBancasSelecionadas([]);
                   setPagina(1);
                 }}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-colors hover:text-destructive"
-                aria-label="Limpar busca"
+                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-r-full hover:bg-[#00f2ff]/20"
               >
-                <X size={16} />
+                <X size={12} aria-hidden />
               </button>
-            )}
-          </div>
-        </div>
-      </header>
+            </div>
+          ) : (
+            <button
+              type="button"
+              disabled={facetsLoading && bancas.length === 0}
+              onClick={() => setBancaSheetOpen(true)}
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <SlidersHorizontal size={14} aria-hidden />
+              Banca
+            </button>
+          )}
 
-        <div className="mx-auto max-w-7xl px-6 pb-6 pt-0">
+          {assuntosSelecionados.length > 0 ? (
+            <div
+              className={cn(
+                'inline-flex shrink-0 items-center rounded-full border border-[#00f2ff]/35 bg-[#00f2ff]/10 text-xs font-medium text-[#00f2ff]',
+                facetsLoading && assuntos.length === 0 && 'opacity-50',
+              )}
+            >
+              <button
+                type="button"
+                disabled={facetsLoading && assuntos.length === 0}
+                onClick={() => setAssuntoSheetOpen(true)}
+                className="inline-flex max-w-[10rem] items-center gap-1.5 rounded-l-full py-1.5 pl-3 pr-1 disabled:cursor-not-allowed"
+              >
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#00f2ff]" aria-hidden />
+                <span className="truncate">
+                  {multiFilterResumo(assuntosSelecionados, 'assuntos')}
+                </span>
+              </button>
+              <button
+                type="button"
+                aria-label="Limpar filtro de assunto"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setAssuntosSelecionados([]);
+                  setPagina(1);
+                }}
+                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-r-full hover:bg-[#00f2ff]/20"
+              >
+                <X size={12} aria-hidden />
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              disabled={facetsLoading && assuntos.length === 0}
+              onClick={() => setAssuntoSheetOpen(true)}
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <BookOpen size={14} aria-hidden />
+              Assunto
+            </button>
+          )}
+
+          {(bancasSelecionadas.length > 0 ||
+            assuntosSelecionados.length > 0 ||
+            searchTerm.trim().length > 0) && (
+            <button
+              type="button"
+              onClick={() => {
+                setBancasSelecionadas([]);
+                setAssuntosSelecionados([]);
+                setSearchTerm('');
+                setPagina(1);
+              }}
+              className="inline-flex shrink-0 items-center rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:border-white/20 hover:text-slate-200"
+            >
+              Limpar
+            </button>
+          )}
+        </section>
+
+        <VitrineMobileFilterSheet
+          open={bancaSheetOpen}
+          onClose={() => setBancaSheetOpen(false)}
+          title="Filtrar por banca"
+          options={bancas}
+          selected={bancasSelecionadas}
+          disabled={facetsLoading && bancas.length === 0}
+          searchPlaceholder="Buscar banca..."
+          emptySearchLabel="Nenhuma banca encontrada"
+          onChange={(next) => {
+            setBancasSelecionadas(next);
+            setPagina(1);
+          }}
+        />
+        <VitrineMobileFilterSheet
+          open={assuntoSheetOpen}
+          onClose={() => setAssuntoSheetOpen(false)}
+          title="Filtrar por assunto"
+          options={assuntos}
+          selected={assuntosSelecionados}
+          disabled={facetsLoading && assuntos.length === 0}
+          searchPlaceholder="Buscar assunto..."
+          emptySearchLabel="Nenhum assunto encontrado"
+          onChange={(next) => {
+            setAssuntosSelecionados(next);
+            setPagina(1);
+          }}
+        />
+
+        {/* Header desktop */}
+        <header className="hidden bg-transparent md:block">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-5 md:flex-row">
+            <div className="flex w-full min-w-0 items-center gap-3 sm:gap-4 md:w-auto">
+              <div
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-50 to-violet-50/90 ring-1 ring-indigo-200/50 shadow-sm shadow-indigo-900/[0.06] sm:h-12 sm:w-12"
+                aria-hidden
+              >
+                <LayoutDashboard size={24} className="text-indigo-600" strokeWidth={2} />
+              </div>
+              <div className="min-w-0 flex-1 md:flex-none">
+                <h1 className="line-clamp-2 text-lg font-semibold leading-snug tracking-tight text-foreground md:line-clamp-1">
+                  {cidadeUrl}
+                </h1>
+              </div>
+            </div>
+
+            <div className="group relative w-full max-w-xl flex-1">
+              <Search
+                className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground transition-colors group-focus-within:text-foreground"
+                aria-hidden
+              />
+              <Input
+                type="text"
+                placeholder="Assunto, tópico, banca, slug ou Q-…"
+                value={searchTerm}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  setPagina(1);
+                }}
+                className="h-11 rounded-2xl border-border/80 pl-11 pr-11"
+              />
+              {searchTerm && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSearchTerm('');
+                    setPagina(1);
+                  }}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-colors hover:text-destructive"
+                  aria-label="Limpar busca"
+                >
+                  <X size={16} />
+                </button>
+              )}
+            </div>
+          </div>
+        </header>
+
+        <div className="mx-auto hidden max-w-7xl px-6 pb-6 pt-0 md:block">
         <section className="space-y-4" aria-label="Filtros da vitrine">
           <div className="flex items-center gap-2 text-muted-foreground">
             <Filter size={16} aria-hidden />
@@ -403,32 +730,30 @@ export default function VitrineClient({
 
       <main className="mx-auto max-w-7xl space-y-8 px-6 pt-6 md:pt-8">
         <section className="space-y-8">
-          <PageHeader
-            title={
-              searchTerm
-                ? `Resultados para "${searchTerm}"`
-                : bancasSelecionadas.length || assuntosSelecionados.length
-                  ? (() => {
-                      const parts: string[] = ['Filtrado'];
-                      const bancasLabel = multiFilterResumo(bancasSelecionadas, 'bancas');
-                      const assuntosLabel = multiFilterResumo(assuntosSelecionados, 'assuntos');
-                      if (bancasLabel) parts.push(bancasLabel);
-                      if (assuntosLabel) parts.push(assuntosLabel);
-                      return parts.join(' \u2022 ');
-                    })()
-                  : 'Vitrine de questões'
-            }
-            description={
-              fetchError
-                ? fetchError
-                : totalAssuntos > 0 && totalPaginas > 1
-                  ? `Mostrando ${(paginaEfetiva - 1) * perPage + 1}\u2013${Math.min(paginaEfetiva * perPage, totalAssuntos)} de ${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`
-                  : loading
-                    ? 'Carregando assuntos…'
-                    : `${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`
-            }
-            titleClassName="border-l-4 border-cyan-400 pl-4 text-2xl font-black text-white truncate"
-          />
+          <div className="mb-8 flex items-start justify-between">
+            <div className="min-w-0">
+              <div className="flex items-center gap-3">
+                <div
+                  className="h-7 w-[3px] shrink-0 rounded-full bg-gradient-to-b from-[#00f2ff] to-[#7c3aed]"
+                  aria-hidden
+                />
+                <div className="flex min-w-0 flex-col gap-0.5">
+                  <span className="truncate text-[10px] font-semibold uppercase tracking-[0.12em] text-white/35">
+                    {cidadeUrl}
+                  </span>
+                  <h1
+                    className="truncate text-[22px] font-bold leading-tight tracking-tight text-white"
+                    style={{ fontFamily: 'var(--font-plus-jakarta-sans)' }}
+                  >
+                    {pageSectionTitle}
+                  </h1>
+                </div>
+              </div>
+              {pageSectionDescription && (
+                <p className="mt-1 text-sm text-[#8b949e]">{pageSectionDescription}</p>
+              )}
+            </div>
+          </div>
           {loading && gruposPagina.length === 0 ? (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {Array.from({ length: 8 }).map((_, i) => (
@@ -503,6 +828,189 @@ export default function VitrineClient({
   );
 }
 
+// ─── Sheet de filtro multi-select (mobile) ─────────────────────────────────────
+
+type VitrineMobileFilterSheetProps = {
+  open: boolean;
+  onClose: () => void;
+  title: string;
+  options: string[];
+  selected: string[];
+  onChange: (value: string[]) => void;
+  searchPlaceholder: string;
+  emptySearchLabel: string;
+  disabled?: boolean;
+};
+
+function VitrineMobileFilterSheet({
+  open,
+  onClose,
+  title,
+  options,
+  selected,
+  onChange,
+  searchPlaceholder,
+  emptySearchLabel,
+  disabled,
+}: VitrineMobileFilterSheetProps) {
+  const [busca, setBusca] = useState('');
+  const [portalReady, setPortalReady] = useState(false);
+  const selectedSet = useMemo(() => new Set(selected), [selected]);
+
+  const optionsFiltradas = useMemo(
+    () => options.filter((o) => o.toLowerCase().includes(busca.toLowerCase().trim())),
+    [options, busca],
+  );
+
+  const closeSheet = useCallback(() => {
+    onClose();
+    setBusca('');
+  }, [onClose]);
+
+  const toggleOption = useCallback(
+    (option: string) => {
+      if (disabled) return;
+      if (selectedSet.has(option)) {
+        onChange(selected.filter((v) => v !== option));
+      } else {
+        onChange([...selected, option]);
+      }
+    },
+    [disabled, onChange, selected, selectedSet],
+  );
+
+  useEffect(() => {
+    setPortalReady(true);
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      event.preventDefault();
+      closeSheet();
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', onKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [open, closeSheet]);
+
+  if (!portalReady || typeof document === 'undefined') return null;
+
+  return createPortal(
+    <AnimatePresence>
+      {open ? (
+        <motion.div
+          key="vitrine-mobile-filter-sheet"
+          className="fixed inset-0 z-[200] md:hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.15 }}
+        >
+          <button
+            type="button"
+            tabIndex={-1}
+            aria-label="Fechar filtros"
+            className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
+            onClick={closeSheet}
+          />
+          <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-label={title}
+            initial={{ y: '100%' }}
+            animate={{ y: 0 }}
+            exit={{ y: '100%' }}
+            transition={{ type: 'spring', stiffness: 380, damping: 34 }}
+            className="absolute inset-x-0 bottom-0 z-[201] flex max-h-[min(85dvh,32rem)] flex-col rounded-t-3xl border border-white/10 bg-[#0d1117] pb-safe shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+              <p className="text-sm font-bold text-white">{title}</p>
+              <button
+                type="button"
+                onClick={closeSheet}
+                aria-label="Fechar"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+              >
+                <X size={18} aria-hidden />
+              </button>
+            </div>
+            <div className="custom-scrollbar flex min-h-0 flex-1 flex-col overflow-hidden">
+              <div className="sticky top-0 z-10 bg-[#0d1117] px-2 pb-2 pt-2">
+                <input
+                  value={busca}
+                  onChange={(e) => setBusca(e.target.value)}
+                  placeholder={searchPlaceholder}
+                  aria-label={searchPlaceholder}
+                  disabled={disabled}
+                  className="w-full rounded-lg border border-white/10 bg-white/[0.05] px-3 py-2 text-sm text-slate-200 placeholder-slate-500 outline-none transition-colors focus:border-[#00f2ff]/40 focus:bg-[#00f2ff]/[0.04] disabled:opacity-50"
+                />
+              </div>
+              <ul
+                className="min-h-0 flex-1 overflow-y-auto overscroll-y-contain py-1"
+                role="listbox"
+                aria-label={searchPlaceholder}
+              >
+                {optionsFiltradas.length === 0 ? (
+                  <li className="py-4 text-center text-xs text-slate-500" role="presentation">
+                    {emptySearchLabel}
+                  </li>
+                ) : (
+                  optionsFiltradas.map((option) => {
+                    const isSelected = selectedSet.has(option);
+                    return (
+                      <li key={option}>
+                        <button
+                          type="button"
+                          role="option"
+                          aria-selected={isSelected}
+                          disabled={disabled}
+                          onClick={() => toggleOption(option)}
+                          className="flex w-full items-start gap-2 rounded-lg px-2 py-2 text-left text-sm text-slate-200 transition-colors hover:bg-cyan-400/10 hover:text-cyan-100 disabled:opacity-50"
+                        >
+                          <span
+                            className={cn(
+                              'mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded border',
+                              isSelected
+                                ? 'border-[#00f2ff]/60 bg-[#00f2ff]/20 text-[#00f2ff]'
+                                : 'border-white/25 bg-transparent',
+                            )}
+                            aria-hidden
+                          >
+                            {isSelected ? <CheckCircle2 className="h-3 w-3" /> : null}
+                          </span>
+                          <span className="min-w-0 flex-1 leading-snug">{option}</span>
+                        </button>
+                      </li>
+                    );
+                  })
+                )}
+              </ul>
+            </div>
+            <button
+              type="button"
+              className="border-t border-white/10 px-4 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-slate-400 transition-colors hover:bg-white/5 hover:text-white"
+              onClick={closeSheet}
+            >
+              Fechar
+            </button>
+          </motion.div>
+        </motion.div>
+      ) : null}
+    </AnimatePresence>,
+    document.body,
+  );
+}
+
 // ─── ProgressRingVitrine — anel de progresso com label interno ─────────────────
 
 function ProgressRingVitrine({
@@ -555,7 +1063,17 @@ function StatusBadge({ status }: { status: QuestaoStatus }) {
 function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; estudarQuery: string; index: number }) {
   const [assuntoExpandido, setAssuntoExpandido] = useState(false);
   const [questoesExpandido, setQuestoesExpandido] = useState(false);
-  const { titulo_aula, modulo_nome, totalResolvidas, totalQuestoes, trabalhadas, questoes, firstSlug } = grupo;
+  const {
+    titulo_aula,
+    modulo_nome,
+    banca,
+    totalResolvidas,
+    totalQuestoes,
+    percentual,
+    trabalhadas,
+    questoes,
+    firstSlug,
+  } = grupo;
 
   const todas = trabalhadas === totalQuestoes && totalQuestoes > 0;
   const pendentes = totalQuestoes - trabalhadas;
@@ -618,14 +1136,40 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
             className: 'text-cyan-400',
           })}
         </span>
-        <span
-          className={cn(
-            'min-w-0 flex-1 break-words text-sm font-semibold leading-snug text-white',
-            assuntoExpandido ? 'line-clamp-none' : 'line-clamp-2',
-          )}
-        >
-          {titulo_aula}
-        </span>
+        <div className="flex min-w-0 flex-1 flex-col">
+          <span
+            className={cn(
+              'break-words text-sm font-semibold leading-snug text-white',
+              assuntoExpandido ? 'line-clamp-none' : 'line-clamp-2',
+            )}
+          >
+            {titulo_aula}
+          </span>
+          <p className="mt-0.5 flex items-center gap-1.5 text-[11px] leading-none text-white/35">
+            <span>{banca}</span>
+            <span className="text-white/15">·</span>
+            <span>
+              {totalQuestoes} questão{totalQuestoes !== 1 ? 'ões' : ''}
+            </span>
+            {totalResolvidas > 0 && (
+              <>
+                <span className="text-white/15">·</span>
+                <span
+                  className={cn(
+                    'font-semibold',
+                    percentual >= 70
+                      ? 'text-[#00ff88]'
+                      : percentual >= 40
+                        ? 'text-amber-400'
+                        : 'text-[#ff0055]',
+                  )}
+                >
+                  {percentual}% acerto
+                </span>
+              </>
+            )}
+          </p>
+        </div>
         {mostrarCheckConclusao && (
           <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-[#6ee7b7]" aria-hidden />
         )}

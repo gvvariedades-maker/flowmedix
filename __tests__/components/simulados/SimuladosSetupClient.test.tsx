@@ -28,6 +28,10 @@ jest.mock('@/lib/simulado/client', () => {
   };
 });
 
+jest.mock('@/components/freemium/PaywallModal', () => ({
+  PaywallModal: () => null,
+}));
+
 jest.mock('@/components/ui/select', () => {
   const React = require('react');
   return {
@@ -83,6 +87,38 @@ describe('SimuladosSetupClient', () => {
     });
   });
 
+  it('exibe Iniciar simulado para conta gratuita dentro do limite diário', async () => {
+    mockFetchWithAuth.mockImplementation((url: string) => {
+      if (url.includes('/api/freemium/status')) {
+        return Promise.resolve(
+          jsonResponse({
+            isPro: false,
+            resetEm: new Date().toISOString(),
+            simulado: {
+              questoesHoje: 0,
+              limite: 5,
+              restantes: 5,
+              limiteAtingido: false,
+            },
+          }),
+        );
+      }
+      return Promise.resolve(
+        jsonResponse({
+          bancas: ['FGV'],
+          assuntos: ['Urgências'],
+        }),
+      );
+    });
+
+    render(<SimuladosSetupClient />);
+
+    await waitFor(() => {
+      expect(screen.getAllByRole('button', { name: 'Iniciar simulado' }).length).toBeGreaterThan(0);
+    });
+    expect(screen.getAllByRole('button', { name: 'Iniciar simulado' })[0]).toBeEnabled();
+  });
+
   it('envia formulário com sucesso e navega para sessão criada', async () => {
     mockCreateSimuladoSession.mockResolvedValue({
       success: true,
@@ -103,7 +139,7 @@ describe('SimuladosSetupClient', () => {
     fireEvent.change(screen.getByLabelText('Quantidade de questões'), {
       target: { value: '15' },
     });
-    fireEvent.click(screen.getByRole('button', { name: 'Iniciar simulado' }));
+    fireEvent.click(screen.getAllByRole('button', { name: 'Iniciar simulado' })[0]!);
 
     await waitFor(() =>
       expect(mockCreateSimuladoSession).toHaveBeenCalledWith(
@@ -121,7 +157,7 @@ describe('SimuladosSetupClient', () => {
     render(<SimuladosSetupClient />);
     await waitFor(() => expect(mockFetchWithAuth).toHaveBeenCalled());
 
-    fireEvent.click(screen.getByRole('button', { name: 'Iniciar simulado' }));
+    fireEvent.click(screen.getAllByRole('button', { name: 'Iniciar simulado' })[0]!);
 
     expect(
       await screen.findByText('Não há questões acessíveis com os filtros atuais. Amplie a busca ou remova filtros.'),
@@ -144,7 +180,7 @@ describe('SimuladosSetupClient', () => {
     render(<SimuladosSetupClient />);
 
     expect(await screen.findByText(/Você tem um simulado em andamento/)).toBeInTheDocument();
-    fireEvent.click(screen.getByRole('button', { name: 'Continuar simulado' }));
+    fireEvent.click(screen.getAllByRole('button', { name: 'Continuar simulado' })[0]!);
 
     expect(mockPush).toHaveBeenCalledWith('/simulados/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa');
   });

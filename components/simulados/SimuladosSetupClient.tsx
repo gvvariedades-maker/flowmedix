@@ -24,6 +24,7 @@ import type { SimuladoModo } from '@/lib/simulado/types';
 import {
   FREEMIUM_PLAN_LIMITS_DESCRIPTION,
 } from '@/lib/freemium';
+import { PaywallModal } from '@/components/freemium/PaywallModal';
 
 function formatZodIssues(issues: ZodIssue[]): string {
   const first = issues[0];
@@ -60,6 +61,7 @@ export function SimuladosSetupClient() {
       limiteAtingido: boolean;
     };
   } | null>(null);
+  const [paywallOpen, setPaywallOpen] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -175,6 +177,13 @@ export function SimuladosSetupClient() {
     [freemiumStatus],
   );
 
+  const startLabel = openSession ? 'Iniciar novo simulado' : 'Iniciar simulado';
+
+  const startButtonClassName = cn(
+    'h-12 w-full rounded-2xl text-base font-semibold',
+    'border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25',
+  );
+
   const simuladoFreeHint = useMemo(() => {
     if (!freemiumStatus || freemiumStatus.isPro) return null;
     const { questoesHoje, limite, restantes } = freemiumStatus.simulado;
@@ -239,13 +248,25 @@ export function SimuladosSetupClient() {
     }
   };
 
+  const requestStartSession = (opts?: { forcarNovo?: boolean }) => {
+    if (simuladoFreeLimitReached) {
+      setPaywallOpen(true);
+      return;
+    }
+    void startSession(opts);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await startSession();
+    if (simuladoFreeLimitReached) {
+      setPaywallOpen(true);
+      return;
+    }
+    await startSession(openSession ? { forcarNovo: true } : undefined);
   };
 
   return (
-    <div className="min-h-screen bg-[#010409] px-4 pb-safe pt-6 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#010409] px-4 pb-[calc(6.5rem+env(safe-area-inset-bottom))] pt-6 sm:px-6 sm:pb-24 lg:px-8">
       <div className="mx-auto max-w-3xl">
         <PageHeader
           title="Simulados"
@@ -255,6 +276,7 @@ export function SimuladosSetupClient() {
         />
 
         <form
+          id="simulado-setup-form"
           onSubmit={(e) => void handleSubmit(e)}
           className="glass-panel space-y-6 border border-white/10 p-6 sm:p-8"
           aria-busy={loading}
@@ -283,7 +305,7 @@ export function SimuladosSetupClient() {
                   type="button"
                   variant="ghost"
                   disabled={loading}
-                  onClick={() => void startSession({ forcarNovo: true })}
+                  onClick={() => requestStartSession({ forcarNovo: true })}
                   className="h-10 rounded-xl border border-white/15 text-slate-300 hover:bg-white/5"
                 >
                   Iniciar novo simulado
@@ -457,10 +479,7 @@ export function SimuladosSetupClient() {
           <Button
             type="submit"
             disabled={loading}
-            className={cn(
-              'h-12 w-full rounded-2xl text-base font-semibold',
-              'border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25',
-            )}
+            className={cn(startButtonClassName, 'hidden md:inline-flex')}
           >
             {loading ? (
               <>
@@ -468,11 +487,76 @@ export function SimuladosSetupClient() {
                 Montando simulado…
               </>
             ) : (
-              openSession ? 'Iniciar novo simulado' : 'Iniciar simulado'
+              startLabel
             )}
           </Button>
         </form>
       </div>
+
+      <div className="fixed inset-x-0 bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-30 border-t border-white/10 bg-[#010409]/95 p-4 backdrop-blur supports-[backdrop-filter]:bg-[#010409]/80 md:hidden">
+        {openSession ? (
+          <div className="mx-auto flex max-w-3xl flex-col gap-2">
+            <Button
+              type="button"
+              onClick={() => router.push(`/simulados/${openSession.id}`)}
+              className={startButtonClassName}
+            >
+              <PlayCircle className="mr-2 h-4 w-4" aria-hidden />
+              Continuar simulado
+            </Button>
+            <Button
+              type="button"
+              variant="ghost"
+              disabled={loading}
+              onClick={() => requestStartSession({ forcarNovo: true })}
+              className="h-10 w-full rounded-xl border border-white/15 text-slate-300 hover:bg-white/5"
+            >
+              {loading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+                  Montando simulado…
+                </>
+              ) : (
+                'Iniciar novo simulado'
+              )}
+            </Button>
+          </div>
+        ) : simuladoFreeLimitReached ? (
+          <div className="mx-auto max-w-3xl space-y-2">
+            <Button
+              type="button"
+              onClick={() => setPaywallOpen(true)}
+              className="h-12 w-full rounded-2xl border border-amber-400/40 bg-amber-400/15 text-base font-semibold text-amber-200 hover:bg-amber-400/25"
+            >
+              Limite diário atingido — ver AVANT Pro
+            </Button>
+          </div>
+        ) : (
+          <Button
+            type="submit"
+            form="simulado-setup-form"
+            disabled={loading}
+            className={cn(startButtonClassName, 'mx-auto max-w-3xl')}
+          >
+            {loading ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+                Montando simulado…
+              </>
+            ) : (
+              startLabel
+            )}
+          </Button>
+        )}
+      </div>
+
+      <PaywallModal
+        open={paywallOpen}
+        onClose={() => setPaywallOpen(false)}
+        resetEm={freemiumStatus?.resetEm ?? null}
+        isAuthenticated
+        variant="simulado"
+      />
     </div>
   );
 }
