@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { ClipboardList, Loader2, PlayCircle, SearchX } from 'lucide-react';
+import { Database, Info, Loader2, SearchX } from 'lucide-react';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { PageHeader } from '@/components/ui/page-header';
 import { Button } from '@/components/ui/button';
@@ -179,11 +179,6 @@ export function SimuladosSetupClient() {
 
   const startLabel = openSession ? 'Iniciar novo simulado' : 'Iniciar simulado';
 
-  const startButtonClassName = cn(
-    'h-12 w-full rounded-2xl text-base font-semibold',
-    'border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25',
-  );
-
   const simuladoFreeHint = useMemo(() => {
     if (!freemiumStatus || freemiumStatus.isPro) return null;
     const { questoesHoje, limite, restantes } = freemiumStatus.simulado;
@@ -265,14 +260,18 @@ export function SimuladosSetupClient() {
     await startSession(openSession ? { forcarNovo: true } : undefined);
   };
 
+  const qNum = Math.min(100, Math.max(1, parseInt(quantidade, 10) || 20));
+  const bump = (delta: number) =>
+    setQuantidade(String(Math.min(100, Math.max(1, qNum + delta))));
+
   return (
-    <div className="min-h-screen bg-[#010409] px-4 pb-[calc(6.5rem+env(safe-area-inset-bottom))] pt-6 sm:px-6 sm:pb-24 lg:px-8">
+    <div className="min-h-screen bg-[#010409] px-4 pb-6 pb-safe pt-6 sm:px-6 sm:pb-8 lg:px-8">
       <div className="mx-auto max-w-3xl">
         <PageHeader
           title="Simulados"
           description="Monte um simulado com questões do seu catálogo. Corrija questão a questão e revise o resultado ao final."
           descriptionClassName="text-sm text-slate-400 mt-1 max-w-xl"
-          titleClassName="text-2xl font-[1000] italic tracking-tighter text-white"
+          titleClassName="text-[22px] font-bold tracking-tight text-white"
         />
 
         <form
@@ -287,18 +286,30 @@ export function SimuladosSetupClient() {
               Verificando sessão em andamento...
             </div>
           ) : openSession ? (
-            <div className="space-y-3 rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-4">
-              <p className="text-sm text-slate-200">
-                Você tem um simulado em andamento ({openSession.modo}) com {openSession.total_questoes}{' '}
-                questões.
-              </p>
-              <div className="flex flex-col gap-2 sm:flex-row">
+            <div className="space-y-4 rounded-2xl border border-[#00f2ff]/20 bg-gradient-to-b from-[#00f2ff]/[0.06] to-transparent p-5">
+              <div className="space-y-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f2ff]/30 bg-[#00f2ff]/10 px-2.5 py-0.5 text-xs font-semibold text-[#00f2ff]">
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#00f2ff] opacity-75" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#00f2ff]" />
+                  </span>
+                  Em andamento
+                </span>
+                <p className="text-sm text-slate-200">
+                  {openSession.modo === 'treino' ? 'Treino' : 'Prova'} · {openSession.total_questoes}{' '}
+                  questões
+                </p>
+                <p className="sr-only">
+                  Você tem um simulado em andamento ({openSession.modo}) com {openSession.total_questoes}{' '}
+                  questões.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2">
                 <Button
                   type="button"
                   onClick={() => router.push(`/simulados/${openSession.id}`)}
-                  className="h-10 rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25"
+                  className="h-11 w-full rounded-xl bg-[#00f2ff] font-semibold text-[#010409] hover:bg-[#00f2ff]/90"
                 >
-                  <PlayCircle className="mr-2 h-4 w-4" aria-hidden />
                   Continuar simulado
                 </Button>
                 <Button
@@ -306,17 +317,24 @@ export function SimuladosSetupClient() {
                   variant="ghost"
                   disabled={loading}
                   onClick={() => requestStartSession({ forcarNovo: true })}
-                  className="h-10 rounded-xl border border-white/15 text-slate-300 hover:bg-white/5"
+                  className="h-11 w-full rounded-xl border border-white/15 text-slate-300 hover:bg-white/5"
                 >
-                  Iniciar novo simulado
+                  {loading ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+                      Montando simulado…
+                    </>
+                  ) : (
+                    'Iniciar novo simulado'
+                  )}
                 </Button>
               </div>
             </div>
           ) : null}
 
-          <div className="flex items-center gap-3 rounded-2xl border border-cyan-500/20 bg-cyan-500/5 px-4 py-3">
-            <ClipboardList className="h-5 w-5 shrink-0 text-cyan-400" aria-hidden />
-            <p className="text-sm text-slate-300">
+          <div className="flex items-start gap-3 rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3">
+            <Info size={14} className="mt-0.5 shrink-0 text-slate-500" aria-hidden />
+            <p className="text-xs leading-relaxed text-slate-500">
               Filtros opcionais refinam o pool. Sem filtros, o simulado usa questões acessíveis no seu
               plano.
             </p>
@@ -329,59 +347,113 @@ export function SimuladosSetupClient() {
                 type="button"
                 onClick={() => setModo('treino')}
                 className={cn(
-                  'rounded-xl border px-4 py-3 text-left text-sm',
+                  'rounded-xl p-4 text-left',
                   modo === 'treino'
-                    ? 'border-cyan-500/40 bg-cyan-500/10 text-cyan-200'
-                    : 'border-white/10 bg-white/[0.02] text-slate-300',
+                    ? 'border-2 border-[#00f2ff] bg-[#00f2ff]/[0.08]'
+                    : 'border border-white/[0.08] bg-white/[0.03] hover:border-white/20',
                 )}
               >
-                <span className="block font-semibold">Treino</span>
-                <span className="text-xs text-slate-400">Feedback imediato com gabarito por questão.</span>
+                <span
+                  className={cn(
+                    'block text-sm',
+                    modo === 'treino' ? 'font-bold text-[#00f2ff]' : 'font-semibold text-slate-300',
+                  )}
+                >
+                  Treino
+                </span>
+                <span
+                  className={cn(
+                    'mt-1 block text-xs',
+                    modo === 'treino' ? 'text-slate-300' : 'text-slate-500',
+                  )}
+                >
+                  Feedback imediato com gabarito por questão.
+                </span>
               </button>
               <button
                 type="button"
                 onClick={() => setModo('prova')}
                 className={cn(
-                  'rounded-xl border px-4 py-3 text-left text-sm',
+                  'rounded-xl p-4 text-left',
                   modo === 'prova'
-                    ? 'border-cyan-500/40 bg-cyan-500/10 text-cyan-200'
-                    : 'border-white/10 bg-white/[0.02] text-slate-300',
+                    ? 'border-2 border-[#00f2ff] bg-[#00f2ff]/[0.08]'
+                    : 'border border-white/[0.08] bg-white/[0.03] hover:border-white/20',
                 )}
               >
-                <span className="block font-semibold">Prova</span>
-                <span className="text-xs text-slate-400">Gabarito liberado apenas no resumo final.</span>
+                <span
+                  className={cn(
+                    'block text-sm',
+                    modo === 'prova' ? 'font-bold text-[#00f2ff]' : 'font-semibold text-slate-300',
+                  )}
+                >
+                  Prova
+                </span>
+                <span
+                  className={cn(
+                    'mt-1 block text-xs',
+                    modo === 'prova' ? 'text-slate-300' : 'text-slate-500',
+                  )}
+                >
+                  Gabarito liberado apenas no resumo final.
+                </span>
               </button>
             </div>
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="simulado-quantidade" className="text-sm font-medium text-slate-300">
+            <span id="simulado-quantidade-label" className="text-sm font-medium text-slate-300">
               Quantidade de questões
-            </label>
-            <Input
-              id="simulado-quantidade"
-              type="number"
-              min={1}
-              max={100}
-              value={quantidade}
-              onChange={(e) => setQuantidade(e.target.value)}
-              disabled={loading}
-              className="h-11 rounded-xl border-white/15 bg-[#0d1117] text-slate-100"
-            />
-            <p className="text-xs text-slate-500">Entre 1 e 100 questões (padrão: 20).</p>
+            </span>
+            <div
+              role="group"
+              aria-labelledby="simulado-quantidade-label"
+              className="flex items-center gap-3"
+            >
+              <button
+                type="button"
+                onClick={() => bump(-5)}
+                disabled={loading || qNum <= 1}
+                aria-label="Diminuir quantidade"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-[#0d1117] text-lg font-medium text-slate-200 transition-colors hover:border-white/25 hover:bg-white/[0.04] disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                −
+              </button>
+              <span className="min-w-[2.5rem] text-center text-lg font-semibold tabular-nums text-slate-100">
+                {qNum}
+              </span>
+              <button
+                type="button"
+                onClick={() => bump(5)}
+                disabled={loading || qNum >= 100}
+                aria-label="Aumentar quantidade"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-[#0d1117] text-lg font-medium text-slate-200 transition-colors hover:border-white/25 hover:bg-white/[0.04] disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                +
+              </button>
+            </div>
+            <p className="text-xs text-slate-500">Entre 1 e 100 questões (padrão: 20)</p>
           </div>
 
-          <div className="rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 text-sm text-slate-300">
-            {poolLoading ? (
-              <span>Estimando pool de questões...</span>
-            ) : poolCount !== null ? (
-              <span>
-                ~{poolCount} questões disponíveis com os filtros atuais.
-              </span>
-            ) : (
-              <span>Não foi possível estimar o pool com os filtros atuais.</span>
-            )}
-          </div>
+          {poolLoading ? (
+            <div className="flex items-center gap-2 rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3 text-sm text-slate-500">
+              <Loader2 className="h-4 w-4 shrink-0 animate-spin" aria-hidden />
+              Estimando pool de questões...
+            </div>
+          ) : poolCount !== null ? (
+            <div className="flex items-start gap-3 rounded-xl border border-[#00ff88]/20 bg-[#00ff88]/[0.06] px-4 py-3">
+              <Database size={16} className="mt-0.5 shrink-0 text-[#00ff88]" aria-hidden />
+              <div>
+                <p className="text-sm font-bold tabular-nums text-[#00ff88]">
+                  ~{poolCount.toLocaleString('pt-BR')}
+                </p>
+                <p className="text-xs text-slate-400">questões disponíveis com os filtros atuais</p>
+              </div>
+            </div>
+          ) : (
+            <div className="rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3 text-sm text-slate-500">
+              Não foi possível estimar o pool com os filtros atuais.
+            </div>
+          )}
 
           {simuladoFreeHint && (
             <div
@@ -476,40 +548,20 @@ export function SimuladosSetupClient() {
             />
           )}
 
-          <Button
-            type="submit"
-            disabled={loading}
-            className={cn(startButtonClassName, 'hidden md:inline-flex')}
-          >
-            {loading ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
-                Montando simulado…
-              </>
-            ) : (
-              startLabel
-            )}
-          </Button>
-        </form>
-      </div>
-
-      <div className="fixed inset-x-0 bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-30 border-t border-white/10 bg-[#010409]/95 p-4 backdrop-blur supports-[backdrop-filter]:bg-[#010409]/80 md:hidden">
-        {openSession ? (
-          <div className="mx-auto flex max-w-3xl flex-col gap-2">
+          {simuladoFreeLimitReached ? (
             <Button
               type="button"
-              onClick={() => router.push(`/simulados/${openSession.id}`)}
-              className={startButtonClassName}
-            >
-              <PlayCircle className="mr-2 h-4 w-4" aria-hidden />
-              Continuar simulado
-            </Button>
-            <Button
-              type="button"
-              variant="ghost"
               disabled={loading}
-              onClick={() => requestStartSession({ forcarNovo: true })}
-              className="h-10 w-full rounded-xl border border-white/15 text-slate-300 hover:bg-white/5"
+              onClick={() => setPaywallOpen(true)}
+              className="h-12 w-full rounded-2xl border border-amber-400/40 bg-amber-400/15 text-base font-semibold text-amber-200 hover:bg-amber-400/25"
+            >
+              Limite diário atingido — ver AVANT Pro
+            </Button>
+          ) : (
+            <Button
+              type="submit"
+              disabled={loading}
+              className="inline-flex h-12 w-full rounded-2xl border border-cyan-500/40 bg-cyan-500/15 text-base font-semibold text-cyan-300 hover:bg-cyan-500/25"
             >
               {loading ? (
                 <>
@@ -517,37 +569,11 @@ export function SimuladosSetupClient() {
                   Montando simulado…
                 </>
               ) : (
-                'Iniciar novo simulado'
+                startLabel
               )}
             </Button>
-          </div>
-        ) : simuladoFreeLimitReached ? (
-          <div className="mx-auto max-w-3xl space-y-2">
-            <Button
-              type="button"
-              onClick={() => setPaywallOpen(true)}
-              className="h-12 w-full rounded-2xl border border-amber-400/40 bg-amber-400/15 text-base font-semibold text-amber-200 hover:bg-amber-400/25"
-            >
-              Limite diário atingido — ver AVANT Pro
-            </Button>
-          </div>
-        ) : (
-          <Button
-            type="submit"
-            form="simulado-setup-form"
-            disabled={loading}
-            className={cn(startButtonClassName, 'mx-auto max-w-3xl')}
-          >
-            {loading ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
-                Montando simulado…
-              </>
-            ) : (
-              startLabel
-            )}
-          </Button>
-        )}
+          )}
+        </form>
       </div>
 
       <PaywallModal

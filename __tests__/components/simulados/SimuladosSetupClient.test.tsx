@@ -114,9 +114,9 @@ describe('SimuladosSetupClient', () => {
     render(<SimuladosSetupClient />);
 
     await waitFor(() => {
-      expect(screen.getAllByRole('button', { name: 'Iniciar simulado' }).length).toBeGreaterThan(0);
+      expect(screen.getByRole('button', { name: 'Iniciar simulado' })).toBeInTheDocument();
     });
-    expect(screen.getAllByRole('button', { name: 'Iniciar simulado' })[0]).toBeEnabled();
+    expect(screen.getByRole('button', { name: 'Iniciar simulado' })).toBeEnabled();
   });
 
   it('envia formulário com sucesso e navega para sessão criada', async () => {
@@ -136,10 +136,8 @@ describe('SimuladosSetupClient', () => {
 
     await waitFor(() => expect(mockFetchWithAuth).toHaveBeenCalled());
 
-    fireEvent.change(screen.getByLabelText('Quantidade de questões'), {
-      target: { value: '15' },
-    });
-    fireEvent.click(screen.getAllByRole('button', { name: 'Iniciar simulado' })[0]!);
+    fireEvent.click(screen.getByRole('button', { name: 'Diminuir quantidade' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Iniciar simulado' }));
 
     await waitFor(() =>
       expect(mockCreateSimuladoSession).toHaveBeenCalledWith(
@@ -157,7 +155,7 @@ describe('SimuladosSetupClient', () => {
     render(<SimuladosSetupClient />);
     await waitFor(() => expect(mockFetchWithAuth).toHaveBeenCalled());
 
-    fireEvent.click(screen.getAllByRole('button', { name: 'Iniciar simulado' })[0]!);
+    fireEvent.click(screen.getByRole('button', { name: 'Iniciar simulado' }));
 
     expect(
       await screen.findByText('Não há questões acessíveis com os filtros atuais. Amplie a busca ou remova filtros.'),
@@ -180,7 +178,7 @@ describe('SimuladosSetupClient', () => {
     render(<SimuladosSetupClient />);
 
     expect(await screen.findByText(/Você tem um simulado em andamento/)).toBeInTheDocument();
-    fireEvent.click(screen.getAllByRole('button', { name: 'Continuar simulado' })[0]!);
+    fireEvent.click(screen.getByRole('button', { name: 'Continuar simulado' }));
 
     expect(mockPush).toHaveBeenCalledWith('/simulados/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa');
   });
@@ -261,7 +259,7 @@ describe('SimuladosSetupClient', () => {
     render(<SimuladosSetupClient />);
     await screen.findByText(/Você tem um simulado em andamento/);
 
-    fireEvent.click(screen.getAllByRole('button', { name: 'Iniciar novo simulado' })[0]);
+    fireEvent.click(screen.getAllByRole('button', { name: 'Iniciar novo simulado' })[0]!);
 
     await waitFor(() =>
       expect(mockCreateSimuladoSession).toHaveBeenCalledWith(
