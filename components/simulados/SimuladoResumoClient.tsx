@@ -8,9 +8,11 @@ import {
   CheckCircle2,
   Circle,
   ClipboardList,
+  RotateCcw,
   XCircle,
 } from 'lucide-react';
 import { PageHeader } from '@/components/ui/page-header';
+import { SimuladosBackLink } from '@/components/simulados/SimuladosBackLink';
 import { Button } from '@/components/ui/button';
 import { ProgressRing } from '@/components/ui/progress-ring';
 import { NeonBadge } from '@/components/ui/neon-badge';
@@ -22,7 +24,7 @@ import type {
 import { isSimuladoQuestaoRespondida } from '@/lib/simulado/types';
 import { cn } from '@/lib/utils';
 import { createSimuladoSession, SimuladoApiError } from '@/lib/simulado/client';
-import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
+import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 
 type SimuladoResumoClientProps = {
   session: SimuladoSessionSummary;
@@ -135,7 +137,9 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
   const router = useRouter();
   const [filtro, setFiltro] = useState<'todos' | 'erros' | 'acertos'>('todos');
   const [retryingErrors, setRetryingErrors] = useState(false);
+  const [retryingSession, setRetryingSession] = useState(false);
   const [retryError, setRetryError] = useState<string | null>(null);
+  const { pageBottomPadding } = useDashboardBottomInset('default');
   const dataConclusao = session.concluida_em ?? session.created_at;
   const dataFormatada = new Date(dataConclusao).toLocaleDateString('pt-BR', {
     day: '2-digit',
@@ -183,15 +187,44 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
     }
   }
 
+  async function handleRetrySession() {
+    setRetryError(null);
+    setRetryingSession(true);
+    try {
+      const response = await createSimuladoSession({
+        quantidade: session.total_questoes,
+        modo: session.modo,
+        from_session_id: session.id,
+        only_errors: false,
+        forcar_novo: true,
+      });
+      router.push(`/simulados/${response.session.id}`);
+    } catch (error) {
+      const message =
+        error instanceof SimuladoApiError
+          ? error.message
+          : 'Não foi possível refazer este simulado.';
+      setRetryError(message);
+    } finally {
+      setRetryingSession(false);
+    }
+  }
+
+  const retryBusy = retryingErrors || retryingSession;
+
   return (
-    <DashboardMobilePage
-      variant="default"
-      className="min-h-screen bg-[#010409] px-4 pt-6 sm:px-6 sm:pb-8 lg:px-8"
+    <div
+      className={cn(
+        'min-h-screen bg-[#010409] px-4 pt-6 sm:px-6 lg:px-8',
+        pageBottomPadding,
+      )}
     >
       <div className="mx-auto max-w-3xl space-y-8">
         <p className="sr-only" aria-live="polite" aria-atomic="true">
           {liveSummary}
         </p>
+
+        <SimuladosBackLink className="mb-3" />
 
         <PageHeader
           title="Simulado concluído"
@@ -202,7 +235,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
             <Button
               asChild
               variant="outline"
-              className="rounded-xl border-white/15 bg-transparent text-slate-200 hover:bg-white/5"
+              className="hidden rounded-xl border-white/15 bg-transparent text-slate-200 hover:bg-white/5 sm:inline-flex"
             >
               <Link href="/simulados/novo">Novo simulado</Link>
             </Button>
@@ -311,28 +344,30 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
           )}
         </section>
 
-        <div className="flex justify-center pb-8">
-          <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex justify-center pb-4 sm:pb-8">
+          <div className="flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center">
+            <Button
+              type="button"
+              onClick={() => void handleRetrySession()}
+              disabled={retryBusy}
+              className="h-12 w-full rounded-2xl bg-[#00f2ff] px-6 text-sm font-bold text-[#010409] hover:bg-[#00f2ff]/90 disabled:opacity-50 sm:w-auto"
+            >
+              <RotateCcw className="mr-2 h-4 w-4" aria-hidden />
+              {retryingSession ? 'Criando...' : 'Refazer simulado'}
+            </Button>
             <Button
               type="button"
               onClick={() => void handleRetryErrors()}
-              disabled={retryingErrors || resumo.erros === 0}
-              className="h-12 rounded-2xl border border-cyan-500/40 bg-cyan-500/15 px-6 text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50"
+              disabled={retryBusy || resumo.erros === 0}
+              className="h-12 w-full rounded-2xl border border-cyan-500/40 bg-cyan-500/15 px-6 text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50 sm:w-auto"
             >
               <ClipboardList className="mr-2 h-4 w-4" aria-hidden />
               {retryingErrors ? 'Criando...' : 'Refazer só erros'}
             </Button>
             <Button
-              type="button"
-              variant="outline"
-              onClick={() => window.print()}
-              className="h-12 rounded-2xl border-white/15 bg-transparent px-6 text-slate-200 hover:bg-white/5"
-            >
-              Exportar resultado (PDF)
-            </Button>
-            <Button
               asChild
-              className="h-12 rounded-2xl border border-cyan-500/40 bg-cyan-500/15 px-6 text-cyan-300 hover:bg-cyan-500/25"
+              variant="outline"
+              className="h-12 w-full rounded-2xl border-white/15 bg-transparent px-6 text-slate-200 hover:bg-white/5 sm:w-auto"
             >
               <Link href="/simulados/novo">
                 <ClipboardList className="mr-2 h-4 w-4" aria-hidden />
@@ -341,8 +376,8 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
             </Button>
           </div>
         </div>
-        {retryError && <p className="text-center text-sm text-rose-400">{retryError}</p>}
+        {retryError && <p className="pb-2 text-center text-sm text-rose-400">{retryError}</p>}
       </div>
-    </DashboardMobilePage>
+    </div>
   );
 }

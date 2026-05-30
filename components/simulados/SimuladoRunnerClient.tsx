@@ -814,7 +814,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
 
         <p className="mb-6 text-center text-xs text-slate-600 md:mb-0">
           <Link href="/simulados" className="transition-colors hover:text-slate-400">
-            Sair e voltar à configuração
+            Voltar para Simulados
           </Link>
         </p>
       </div>

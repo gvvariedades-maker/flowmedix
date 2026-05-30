@@ -127,32 +127,41 @@ export async function POST(request: NextRequest) {
       filters: { bancas, assuntos, q },
     });
 
-    if (from_session_id && only_errors) {
-      const { data: erroRows, error: errosLookupError } = await supabase
+    if (from_session_id) {
+      let derivedQuery = supabase
         .from('simulado_respostas')
-        .select('modulo_id, modulo_slug')
+        .select('modulo_id, modulo_slug, ordem')
         .eq('session_id', from_session_id)
-        .eq('user_id', auth.user.id)
-        .eq('acertou', false)
-        .order('respondida_em', { ascending: true, nullsFirst: false })
-        .limit(quantidade);
+        .eq('user_id', auth.user.id);
 
-      if (errosLookupError) {
-        logger.error('Falha ao buscar erros para simulado derivado', errosLookupError, {
+      if (only_errors) {
+        derivedQuery = derivedQuery
+          .eq('acertou', false)
+          .order('respondida_em', { ascending: true, nullsFirst: false })
+          .limit(quantidade);
+      } else {
+        derivedQuery = derivedQuery.order('ordem', { ascending: true }).limit(100);
+      }
+
+      const { data: derivedRows, error: derivedLookupError } = await derivedQuery;
+
+      if (derivedLookupError) {
+        logger.error('Falha ao buscar questões para simulado derivado', derivedLookupError, {
           userId: auth.user.id,
           fromSessionId: from_session_id,
+          onlyErrors: only_errors,
         });
         return NextResponse.json({ error: 'Erro ao criar simulado derivado' }, { status: 500 });
       }
 
-      const errorPool = (erroRows ?? []).map((row, idx) => ({
+      const derivedPool = (derivedRows ?? []).map((row, idx) => ({
         modulo_id: row.modulo_id as string,
         modulo_slug: row.modulo_slug as string,
-        ordem: idx + 1,
+        ordem: only_errors ? idx + 1 : (row.ordem as number),
       }));
 
-      if (errorPool.length > 0) {
-        pool = errorPool;
+      if (derivedPool.length > 0) {
+        pool = derivedPool;
       }
     }
 

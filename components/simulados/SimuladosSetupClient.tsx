@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Database, Info, Loader2, SearchX } from 'lucide-react';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { PageHeader } from '@/components/ui/page-header';
+import { SimuladosBackLink } from '@/components/simulados/SimuladosBackLink';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { EmptyState } from '@/components/ui/empty-state';
@@ -263,12 +264,9 @@ export function SimuladosSetupClient() {
       className="min-h-screen bg-[#010409] px-4 pt-6 sm:px-6 sm:pb-8 lg:px-8"
     >
       <div className="mx-auto max-w-3xl">
+        <SimuladosBackLink className="mb-3" />
         <PageHeader
           title="Novo simulado"
-          breadcrumb={[
-            { label: 'Simulados', href: '/simulados' },
-            { label: 'Novo simulado' },
-          ]}
           description="Monte um simulado com questões do seu catálogo. Corrija questão a questão e revise o resultado ao final."
           descriptionClassName="text-sm text-slate-400 mt-1 max-w-xl"
           titleClassName="text-[22px] font-bold tracking-tight text-white"
