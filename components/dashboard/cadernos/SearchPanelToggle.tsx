@@ -34,26 +34,12 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
   const [preferenceLoaded, setPreferenceLoaded] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [portalReady, setPortalReady] = useState(false);
-  /** Evita montar `children` duas vezes (painel oculto + sheet no mobile). */
-  const [isLgViewport, setIsLgViewport] = useState<boolean | null>(null);
 
   useEffect(() => {
     setCollapsed(readCollapsedPreference());
     setPreferenceLoaded(true);
     setPortalReady(true);
   }, []);
-
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 1024px)');
-    const sync = () => setIsLgViewport(mq.matches);
-    sync();
-    mq.addEventListener('change', sync);
-    return () => mq.removeEventListener('change', sync);
-  }, []);
-
-  useEffect(() => {
-    if (isLgViewport) setMobileOpen(false);
-  }, [isLgViewport]);
 
   const toggleCollapsed = useCallback(() => {
     setCollapsed((prev) => {
@@ -147,29 +133,25 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
         )
       : null;
 
-  const showDesktopPanel = isLgViewport === true;
-  const showMobileChrome = isLgViewport === false;
-
   return (
     <>
-      {showMobileChrome ? (
-        <div>
-          <button
-            type="button"
-            onClick={() => setMobileOpen(true)}
-            className="mb-3 flex w-full items-center justify-center gap-2 rounded-2xl border border-cyan-400/30 bg-[rgba(0,242,255,0.08)] px-4 py-3 text-xs font-black uppercase tracking-widest text-cyan-200 transition-colors hover:bg-[rgba(0,242,255,0.12)]"
-          >
-            <Search size={14} aria-hidden />
-            Buscar questões
-          </button>
-          {mobileSheet}
-        </div>
-      ) : null}
+      {/* Mobile: botão + bottom sheet (CSS lg:hidden — visível sem esperar JS) */}
+      <div className="lg:hidden">
+        <button
+          type="button"
+          onClick={() => setMobileOpen(true)}
+          className="mb-3 flex w-full items-center justify-center gap-2 rounded-2xl border border-cyan-400/30 bg-[rgba(0,242,255,0.08)] px-4 py-3 text-xs font-black uppercase tracking-widest text-cyan-200 transition-colors hover:bg-[rgba(0,242,255,0.12)]"
+        >
+          <Search size={14} aria-hidden />
+          Buscar questões
+        </button>
+        {mobileSheet}
+      </div>
 
-      {showDesktopPanel ? (
+      {/* Desktop: colapsável via CSS hidden lg:flex — painel sempre no DOM em telas grandes */}
       <div
         className={cn(
-          'min-h-0 shrink-0 flex-col transition-[width] duration-300 flex',
+          'hidden min-h-0 shrink-0 flex-col transition-[width] duration-300 lg:flex',
           preferenceLoaded && collapsed ? 'w-12' : 'w-full lg:w-[min(42%,28rem)]',
         )}
       >
@@ -183,7 +165,14 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
             >
               <ChevronLeft size={16} aria-hidden />
             </button>
-            <Search size={18} className="text-cyan-400/80" aria-hidden />
+            <button
+              type="button"
+              onClick={toggleCollapsed}
+              aria-label="Expandir painel de busca"
+              className="flex h-9 w-9 items-center justify-center rounded-xl text-cyan-400/80 transition-colors hover:text-cyan-300"
+            >
+              <Search size={18} aria-hidden />
+            </button>
           </div>
         ) : (
           <div className="sticky top-6 flex h-[calc(100vh-160px)] min-h-0 flex-col">
@@ -202,7 +191,6 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
           </div>
         )}
       </div>
-      ) : null}
     </>
   );
 }
