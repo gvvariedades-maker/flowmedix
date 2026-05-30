@@ -366,7 +366,11 @@ function BuilderPanel({
       <div className="flex-1 space-y-1 overflow-y-auto p-2">
         {filtrados.length === 0 ? (
           <div className="text-center py-8 text-slate-400 text-sm">
-            {busca || filtroTopico || filtroBanca ? 'Nenhum resultado' : 'Todas as questões já estão no caderno'}
+            {busca || filtroTopico || filtroBanca
+              ? 'Nenhum resultado'
+              : modulos.length === 0
+                ? 'Nenhuma questão disponível no seu pacote. Verifique sua matrícula em Planos.'
+                : 'Todas as questões já estão no caderno'}
           </div>
         ) : (
           filtrados.map(m => (
