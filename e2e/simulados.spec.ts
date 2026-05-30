@@ -118,12 +118,12 @@ test.describe('Modo Simulado (aluno)', () => {
 
 test.describe('Meu desempenho (simulados)', () => {
   test('renderiza dashboard com resumo comparativo de período e geral', async ({ page }) => {
-    await page.goto('/desempenho/simulados?periodo=30d&modo=todos', { waitUntil: 'domcontentloaded' });
+    await page.goto('/desempenho/simulados?periodo=1d&modo=todos', { waitUntil: 'domcontentloaded' });
 
     await expect(page.getByRole('heading', { name: 'Meu desempenho' })).toBeVisible({
       timeout: 20_000,
     });
-    await expect(page.getByText('Seu desempenho hoje')).toBeVisible();
+    await expect(page.getByText('Hoje')).toBeVisible();
     const hasResumoComparativo = await page.getByText('Resumo comparativo').isVisible().catch(() => false);
     if (hasResumoComparativo) {
       await expect(page.getByText('No período', { exact: true })).toBeVisible();

@@ -11,6 +11,7 @@ import type { SimuladoAnalyticsResponse } from '@/lib/simulado/types';
 import type { SimuladoAnalyticsMode, SimuladoAnalyticsPeriod } from '@/lib/simulado/analyticsSummary';
 
 const PERIODOS = [
+  { value: '1d', label: 'Hoje' },
   { value: '7d', label: '7 dias' },
   { value: '30d', label: '30 dias' },
   { value: '90d', label: '90 dias' },
@@ -315,6 +316,13 @@ export function SimuladosAnalyticsDashboard({
   const tempoMedioValor = loadingAnalytics ? '...' : formatDuration(kpis?.tempo_medio_ms);
   const tempoMedioTone: KpiValueTone = tempoMedioValor === '--' ? 'muted' : 'white';
 
+  const resumoSectionTitle =
+    periodoAtual === '1d' ? 'Seu desempenho hoje' : 'Seu desempenho no período';
+  const resumoSectionHint =
+    periodoAtual === '1d'
+      ? 'Simulados concluídos hoje (horário de Brasília).'
+      : 'Resumo direto do seu resultado no período escolhido.';
+
   return (
     <div className="mx-auto grid max-w-4xl gap-4 px-4 py-6 md:px-8 md:pt-8">
       <div className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4">
@@ -361,10 +369,8 @@ export function SimuladosAnalyticsDashboard({
       </div>
 
       <section>
-        <SectionLabel>Seu desempenho hoje</SectionLabel>
-        <p className="mb-3 text-[11px] text-white/35">
-          Resumo direto do seu resultado no período escolhido.
-        </p>
+        <SectionLabel>{resumoSectionTitle}</SectionLabel>
+        <p className="mb-3 text-[11px] text-white/35">{resumoSectionHint}</p>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           <KpiMetricCard
             label="Simulados concluídos"
@@ -494,7 +500,7 @@ export function SimuladosAnalyticsDashboard({
                 trackSimuladoAnalyticsEvent('quick_action_train_now', { origem: 'simulados_simple' })
               }
             >
-              <Link href="/simulados" className="inline-flex items-center justify-center gap-2">
+              <Link href="/simulados/novo" className="inline-flex items-center justify-center gap-2">
                 <ClipboardList className="h-4 w-4" aria-hidden />
                 Treinar agora
               </Link>

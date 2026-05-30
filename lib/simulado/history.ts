@@ -1,7 +1,9 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import {
-  getPeriodStart,
+  getAnalyticsPeriodBounds,
+  isTimestampInAnalyticsPeriod,
   normalizeSessionMode,
+  normalizeSimuladoAnalyticsFilters,
   type SimuladoAnalyticsDimensionFilters,
   type SimuladoAnalyticsMode,
   type SimuladoAnalyticsPeriod,
@@ -30,8 +32,8 @@ export async function loadSimuladoHistory(
   userId: string,
   filters: SimuladoHistoryFilters,
 ): Promise<SimuladoHistoryResult> {
-  const periodStart = getPeriodStart(filters.periodo);
-  const periodStartYmd = periodStart.toISOString().slice(0, 10);
+  const bounds = getAnalyticsPeriodBounds(filters.periodo);
+  const periodStartYmd = bounds.queryStartYmd;
 
   let matchingSessionIds: Set<string> | null = null;
   if (filters.banca || filters.topico || filters.subtopico) {
@@ -80,7 +82,7 @@ export async function loadSimuladoHistory(
       if (filters.modo !== 'todos' && row.modo !== filters.modo) return false;
       if (filters.status !== 'todos' && row.status !== filters.status) return false;
       const baseDate = row.concluida_em ?? row.created_at;
-      if (new Date(baseDate) < periodStart) return false;
+      if (!isTimestampInAnalyticsPeriod(baseDate, bounds)) return false;
       if (!matchingSessionIds) return true;
       return matchingSessionIds.has(row.id);
     });

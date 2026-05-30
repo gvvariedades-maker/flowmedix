@@ -1,4 +1,6 @@
 import {
+  getAnalyticsPeriodBounds,
+  isTimestampInAnalyticsPeriod,
   loadSimuladoAnalyticsSummary,
   normalizeSessionMode,
   normalizeSimuladoAnalyticsFilters,
@@ -39,6 +41,99 @@ describe('lib/simulado/analyticsSummary', () => {
       topico: 'Urgências',
       subtopico: 'RCP',
     });
+  });
+
+  it('aceita periodo 1d (Hoje) na normalização', () => {
+    expect(
+      normalizeSimuladoAnalyticsFilters({ periodoRaw: '1d', modoRaw: 'treino' }),
+    ).toEqual({
+      periodo: '1d',
+      modo: 'treino',
+      banca: null,
+      topico: null,
+      subtopico: null,
+    });
+  });
+
+  it('periodo 1d limita ao dia civil de Brasília', () => {
+    const now = new Date('2026-05-30T18:00:00.000Z');
+    const bounds = getAnalyticsPeriodBounds('1d', now);
+    expect(bounds.start.toISOString()).toBe('2026-05-30T03:00:00.000Z');
+    expect(bounds.endExclusive.toISOString()).toBe('2026-05-31T03:00:00.000Z');
+    expect(isTimestampInAnalyticsPeriod('2026-05-29T22:00:00.000Z', bounds)).toBe(false);
+    expect(isTimestampInAnalyticsPeriod('2026-05-30T12:00:00.000Z', bounds)).toBe(true);
+  });
+
+  it('periodo 1d exclui simulados concluídos em dias anteriores', async () => {
+    const now = new Date('2026-05-30T18:00:00.000Z');
+    const todayIso = '2026-05-30T12:00:00.000Z';
+    const yesterdayIso = '2026-05-29T12:00:00.000Z';
+
+    const supabase = createSupabaseMock({
+      simulado_sessions: [
+        {
+          id: 's1',
+          status: 'concluido',
+          modo: 'treino',
+          percentual_acerto: 80,
+          tempo_medio_ms: 40000,
+          created_at: todayIso,
+          concluida_em: todayIso,
+        },
+        {
+          id: 's2',
+          status: 'concluido',
+          modo: 'treino',
+          percentual_acerto: 60,
+          tempo_medio_ms: 50000,
+          created_at: yesterdayIso,
+          concluida_em: yesterdayIso,
+        },
+      ],
+      simulado_analytics_daily: [],
+      simulado_analytics_session_dims: [
+        {
+          session_id: 's1',
+          data_ref: '2026-05-30',
+          modo: 'treino',
+          banca: 'FGV',
+          topico: 'Urgências',
+          subtopico: 'RCP',
+          total_questoes: 10,
+          acertos: 8,
+          erros: 2,
+          tempo_total_ms: 400000,
+        },
+        {
+          session_id: 's2',
+          data_ref: '2026-05-29',
+          modo: 'treino',
+          banca: 'FGV',
+          topico: 'Urgências',
+          subtopico: 'RCP',
+          total_questoes: 10,
+          acertos: 6,
+          erros: 4,
+          tempo_total_ms: 500000,
+        },
+      ],
+    });
+
+    jest.useFakeTimers();
+    jest.setSystemTime(now);
+    try {
+      const summary = await loadSimuladoAnalyticsSummary(supabase, 'user-1', {
+        periodo: '1d',
+        modo: 'todos',
+        banca: null,
+        topico: null,
+        subtopico: null,
+      });
+      expect(summary.totalSimulados).toBe(1);
+      expect(summary.mediaAcerto).toBe(80);
+    } finally {
+      jest.useRealTimers();
+    }
   });
 
   it('calcula KPIs, evolução e metas de forma consistente', async () => {

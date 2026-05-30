@@ -204,7 +204,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
               variant="outline"
               className="rounded-xl border-white/15 bg-transparent text-slate-200 hover:bg-white/5"
             >
-              <Link href="/simulados">Novo simulado</Link>
+              <Link href="/simulados/novo">Novo simulado</Link>
             </Button>
           }
         />
@@ -334,7 +334,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
               asChild
               className="h-12 rounded-2xl border border-cyan-500/40 bg-cyan-500/15 px-6 text-cyan-300 hover:bg-cyan-500/25"
             >
-              <Link href="/simulados">
+              <Link href="/simulados/novo">
                 <ClipboardList className="mr-2 h-4 w-4" aria-hidden />
                 Novo simulado
               </Link>

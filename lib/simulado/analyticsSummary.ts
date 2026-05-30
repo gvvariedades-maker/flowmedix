@@ -1,6 +1,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
+import { getFreemiumDayBounds } from '@/lib/freemium';
 
-export const SIMULADO_ANALYTICS_PERIODS = ['7d', '30d', '90d', '12m'] as const;
+export const SIMULADO_ANALYTICS_PERIODS = ['1d', '7d', '30d', '90d', '12m'] as const;
 export const SIMULADO_ANALYTICS_MODES = ['todos', 'treino', 'prova'] as const;
 
 export type SimuladoAnalyticsPeriod = (typeof SIMULADO_ANALYTICS_PERIODS)[number];
@@ -116,8 +117,45 @@ export type SimuladoAnalyticsSummary = {
   goals: SimuladoGoalsMetrics;
 };
 
-export function getPeriodStart(periodo: SimuladoAnalyticsPeriod): Date {
-  const now = new Date();
+export type AnalyticsPeriodBounds = {
+  start: Date;
+  /** Limite superior exclusivo; para períodos rolling, usa instante atual + 1ms. */
+  endExclusive: Date;
+  /** YMD conservador para queries `gte` em `data_ref`. */
+  queryStartYmd: string;
+};
+
+export function isTimestampInAnalyticsPeriod(iso: string, bounds: AnalyticsPeriodBounds): boolean {
+  const instant = new Date(iso);
+  return instant >= bounds.start && instant < bounds.endExclusive;
+}
+
+export function getAnalyticsPeriodBounds(
+  periodo: SimuladoAnalyticsPeriod,
+  now: Date = new Date(),
+): AnalyticsPeriodBounds {
+  if (periodo === '1d') {
+    const { start, end } = getFreemiumDayBounds(now);
+    const queryStart = new Date(start.getTime() - 86_400_000);
+    return {
+      start,
+      endExclusive: end,
+      queryStartYmd: toYmd(queryStart),
+    };
+  }
+
+  const start = getPeriodStart(periodo, now);
+  return {
+    start,
+    endExclusive: new Date(now.getTime() + 1),
+    queryStartYmd: toYmd(start),
+  };
+}
+
+export function getPeriodStart(periodo: SimuladoAnalyticsPeriod, now: Date = new Date()): Date {
+  if (periodo === '1d') {
+    return getFreemiumDayBounds(now).start;
+  }
   const base = new Date(now);
   if (periodo === '7d') base.setDate(now.getDate() - 7);
   if (periodo === '30d') base.setDate(now.getDate() - 30);
@@ -238,18 +276,21 @@ function computeDimensionMetrics(
 async function buildEvolucaoFromRespostas(
   supabase: SupabaseClient,
   userId: string,
-  periodStart: Date,
+  bounds: AnalyticsPeriodBounds,
   filters: SimuladoAnalyticsFilters,
 ): Promise<SimuladoEvolucaoItem[]> {
-  const { data: sessionsRaw, error: sessionsError } = await supabase
+  let sessionsQuery = supabase
     .from('simulado_sessions')
     .select('id, status, modo, filtros, concluida_em, created_at')
     .eq('user_id', userId)
     .eq('status', 'concluido')
     .not('concluida_em', 'is', null)
-    .gte('concluida_em', periodStart.toISOString())
+    .gte('concluida_em', bounds.start.toISOString())
+    .lt('concluida_em', bounds.endExclusive.toISOString())
     .order('concluida_em', { ascending: false })
     .limit(500);
+
+  const { data: sessionsRaw, error: sessionsError } = await sessionsQuery;
 
   if (sessionsError || !sessionsRaw?.length) return [];
 
@@ -336,8 +377,8 @@ export async function loadSimuladoAnalyticsSummary(
   userId: string,
   filters: SimuladoAnalyticsFilters,
 ): Promise<SimuladoAnalyticsSummary> {
-  const periodStart = getPeriodStart(filters.periodo);
-  const periodStartYmd = toYmd(periodStart);
+  const bounds = getAnalyticsPeriodBounds(filters.periodo);
+  const periodStartYmd = bounds.queryStartYmd;
 
   const [sessionsResult, dailyResult, dimsResult] = await Promise.all([
     supabase
@@ -369,25 +410,35 @@ export async function loadSimuladoAnalyticsSummary(
   const dimsRowsRaw = (dimsResult.data ?? []) as SimuladoAnalyticsSessionDimsRow[];
 
   const dailyRows = dailyRowsRaw.filter((row) => {
+    if (filters.periodo === '1d') return false;
     if (filters.modo !== 'todos' && row.modo !== filters.modo) return false;
     return matchesDimensionFilters(row, filters);
   });
 
-  const dimsRows = dimsRowsRaw.filter((row) => {
+  let dimsRows = dimsRowsRaw.filter((row) => {
     if (filters.modo !== 'todos' && row.modo !== filters.modo) return false;
     return matchesDimensionFilters(row, filters);
   });
 
-  const matchingSessionIds = new Set(dimsRows.map((row) => row.session_id));
-  const sessions = ((rawSessions ?? []) as SimuladoSessionAnalyticsRow[])
+  const sessionsInPeriod = ((rawSessions ?? []) as SimuladoSessionAnalyticsRow[])
     .map((row) => ({ ...row, modo: normalizeSessionMode(row) }))
     .filter((row) => {
       if (filters.modo !== 'todos' && row.modo !== filters.modo) return false;
       const baseDate = row.concluida_em ?? row.created_at;
-      if (new Date(baseDate) < periodStart) return false;
-      if (!filters.banca && !filters.topico && !filters.subtopico) return true;
-      return matchingSessionIds.has(row.id);
+      return isTimestampInAnalyticsPeriod(baseDate, bounds);
     });
+
+  const sessionIdsInPeriod = new Set(sessionsInPeriod.map((row) => row.id));
+
+  if (filters.periodo === '1d') {
+    dimsRows = dimsRows.filter((row) => sessionIdsInPeriod.has(row.session_id));
+  }
+
+  const matchingSessionIds = new Set(dimsRows.map((row) => row.session_id));
+  const sessions = sessionsInPeriod.filter((row) => {
+    if (!filters.banca && !filters.topico && !filters.subtopico) return true;
+    return matchingSessionIds.has(row.id);
+  });
 
   const completedSessions = sessions.filter((row) => row.status === 'concluido');
   const totalSimulados = completedSessions.length;
@@ -417,7 +468,7 @@ export async function loadSimuladoAnalyticsSummary(
     string,
     { total_questoes: number; acertos: number; erros: number; tempo_total_ms: number }
   >();
-  for (const row of dailyRows) {
+  for (const row of filters.periodo === '1d' ? dimsRows : dailyRows) {
     const acc = evolucaoMap.get(row.data_ref) ?? {
       total_questoes: 0,
       acertos: 0,
@@ -444,7 +495,7 @@ export async function loadSimuladoAnalyticsSummary(
     .sort((a, b) => a.data_ref.localeCompare(b.data_ref));
 
   if (evolucaoTemporal.length === 0 && completedSessions.length > 0) {
-    evolucaoTemporal = await buildEvolucaoFromRespostas(supabase, userId, periodStart, filters);
+    evolucaoTemporal = await buildEvolucaoFromRespostas(supabase, userId, bounds, filters);
   }
 
   let mediaAcertoFinal = mediaAcerto;

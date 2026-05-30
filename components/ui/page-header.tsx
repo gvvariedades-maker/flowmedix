@@ -19,8 +19,8 @@ export function PageHeader({
   descriptionClassName,
 }: PageHeaderProps) {
   return (
-    <div className="flex items-start justify-between mb-8">
-      <div className="min-w-0">
+    <div className="mb-6 flex flex-col gap-3 sm:mb-8 sm:flex-row sm:items-start sm:justify-between">
+      <div className="min-w-0 flex-1">
         {breadcrumb && (
           <nav className="flex items-center gap-1.5 mb-2" aria-label="Breadcrumb">
             {breadcrumb.map((crumb, i) => (
@@ -50,7 +50,7 @@ export function PageHeader({
           <p className={descriptionClassName ?? 'text-sm text-[#8b949e] mt-1'}>{description}</p>
         )}
       </div>
-      {action && <div className="ml-4 shrink-0">{action}</div>}
+      {action ? <div className="w-full shrink-0 sm:ml-4 sm:w-auto">{action}</div> : null}
     </div>
   );
 }

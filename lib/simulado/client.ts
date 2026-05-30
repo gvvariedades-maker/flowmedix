@@ -142,7 +142,7 @@ export async function getSimuladoQuestionPayload(
 }
 
 export async function getSimuladoAnalytics(filters?: {
-  periodo?: '7d' | '30d' | '90d' | '12m';
+  periodo?: '1d' | '7d' | '30d' | '90d' | '12m';
   modo?: 'todos' | 'treino' | 'prova';
   banca?: string;
   topico?: string;
@@ -170,7 +170,7 @@ export async function getSimuladoAnalytics(filters?: {
 }
 
 export async function getSimuladoHistory(filters?: {
-  periodo?: '7d' | '30d' | '90d' | '12m';
+  periodo?: '1d' | '7d' | '30d' | '90d' | '12m';
   modo?: 'todos' | 'treino' | 'prova';
   banca?: string;
   topico?: string;

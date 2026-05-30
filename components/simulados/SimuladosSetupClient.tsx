@@ -264,7 +264,11 @@ export function SimuladosSetupClient() {
     >
       <div className="mx-auto max-w-3xl">
         <PageHeader
-          title="Simulados"
+          title="Novo simulado"
+          breadcrumb={[
+            { label: 'Simulados', href: '/simulados' },
+            { label: 'Novo simulado' },
+          ]}
           description="Monte um simulado com questões do seu catálogo. Corrija questão a questão e revise o resultado ao final."
           descriptionClassName="text-sm text-slate-400 mt-1 max-w-xl"
           titleClassName="text-[22px] font-bold tracking-tight text-white"

@@ -84,9 +84,9 @@ export default async function DesempenhoSimuladosPage({
               <Button
                 asChild
                 variant="ghost"
-                className="h-11 shrink-0 gap-2 rounded-xl px-4 font-semibold text-[#00f2ff] hover:bg-[#00f2ff]/10 hover:text-[#00f2ff]"
+                className="h-11 w-full gap-2 rounded-xl px-4 font-semibold text-[#00f2ff] hover:bg-[#00f2ff]/10 hover:text-[#00f2ff] sm:w-auto"
               >
-                <Link href="/simulados" className="inline-flex items-center">
+                <Link href="/simulados/novo" className="inline-flex w-full items-center justify-center sm:w-auto">
                   <ClipboardList className="h-4 w-4" aria-hidden />
                   Iniciar simulado
                 </Link>

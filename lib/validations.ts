@@ -849,7 +849,7 @@ export const SimuladoPoolCountQuerySchema = z
 
 /** Query params para analytics de sessões do simulado. */
 export const SimuladoAnalyticsQuerySchema = z.object({
-  periodo: z.enum(['7d', '30d', '90d', '12m']).optional(),
+  periodo: z.enum(['1d', '7d', '30d', '90d', '12m']).optional(),
   modo: z.enum(['todos', 'treino', 'prova']).optional(),
   banca: z.string().trim().max(LIMITS.BANCA_MAX).optional(),
   topico: z.string().trim().max(LIMITS.TOPICO_MAX).optional(),
@@ -859,7 +859,7 @@ export const SimuladoAnalyticsQuerySchema = z.object({
 
 /** Query params para histórico paginado de simulados. */
 export const SimuladoHistoryQuerySchema = z.object({
-  periodo: z.enum(['7d', '30d', '90d', '12m']).optional(),
+  periodo: z.enum(['1d', '7d', '30d', '90d', '12m']).optional(),
   modo: z.enum(['todos', 'treino', 'prova']).optional(),
   status: z.enum(['todos', 'aberto', 'concluido', 'cancelado']).optional(),
   banca: z.string().trim().max(LIMITS.BANCA_MAX).optional(),

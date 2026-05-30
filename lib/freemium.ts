@@ -57,6 +57,16 @@ export function getFreemiumDayBounds(now: Date = new Date()): FreemiumDayBounds 
   return { start, end: resetEm, resetEm };
 }
 
+/** Data civil YYYY-MM-DD no fuso freemium (UTC−3 / Brasília). */
+export function toFreemiumTimezoneYmd(instant: Date = new Date()): string {
+  const localMs = instant.getTime() - FREEMIUM_TZ_OFFSET_MS;
+  const local = new Date(localMs);
+  const y = local.getUTCFullYear();
+  const mo = local.getUTCMonth() + 1;
+  const d = local.getUTCDate();
+  return `${y}-${String(mo).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+}
+
 /** Admin e contas com acesso ilimitado não entram no limite de 1 questão/dia. */
 export function isFreemiumUnlimitedEmail(email: string | null | undefined): boolean {
   return isAdminSessionEmail(email);
