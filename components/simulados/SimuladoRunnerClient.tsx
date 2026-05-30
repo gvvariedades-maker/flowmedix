@@ -44,8 +44,9 @@ import {
 } from '@/lib/questionHeader';
 
 /** Reserva espaço acima do BottomNav mobile ao rolar botões de ação para a viewport. */
+const MOBILE_BOTTOM_NAV_GAP_PX = 16;
 const MOBILE_ACTION_SCROLL_MARGIN =
-  'scroll-mb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] md:scroll-mb-0';
+  'scroll-mb-[calc(4.5rem+env(safe-area-inset-bottom,0px)+1rem)] md:scroll-mb-0';
 
 let safeAreaBottomPxCache: number | undefined;
 
@@ -64,19 +65,33 @@ function mobileBottomNavClearancePx(): number {
   return base + safeAreaBottomPxCache;
 }
 
-function scrollActionAboveMobileBottomNav(el: HTMLElement) {
-  el.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+function measureMobileBottomNavClearancePx(): number {
+  const nav = document.querySelector('nav[aria-label="Navegação principal"]');
+  if (nav instanceof HTMLElement) {
+    return nav.getBoundingClientRect().height + MOBILE_BOTTOM_NAV_GAP_PX;
+  }
+  return mobileBottomNavClearancePx() + MOBILE_BOTTOM_NAV_GAP_PX;
+}
 
+function scrollActionAboveMobileBottomNav(el: HTMLElement) {
   if (window.matchMedia('(min-width: 768px)').matches) return;
 
-  const navClearance = mobileBottomNavClearancePx();
-  const rect = el.getBoundingClientRect();
-  const overlap = rect.bottom - (window.innerHeight - navClearance);
-  if (overlap <= 0) return;
+  const scrollParent = el.closest('main') ?? document.scrollingElement ?? document.documentElement;
+  if (!scrollParent) return;
 
-  const scrollParent =
-    el.closest('main') ?? document.scrollingElement ?? document.documentElement;
-  scrollParent.scrollBy({ top: overlap + 12, behavior: 'smooth' });
+  const align = (behavior: ScrollBehavior) => {
+    const clearance = measureMobileBottomNavClearancePx();
+    const rect = el.getBoundingClientRect();
+    const overflow = rect.bottom - (window.innerHeight - clearance);
+    if (overflow > 0) {
+      scrollParent.scrollBy({ top: overflow, behavior });
+    }
+  };
+
+  align('smooth');
+  requestAnimationFrame(() => align('auto'));
+  window.setTimeout(() => align('auto'), 400);
+  window.setTimeout(() => align('auto'), 720);
 }
 
 type FeedbackState = {
@@ -380,6 +395,8 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
 
     scrollActionAboveMobileBottomNav(el);
     requestAnimationFrame(() => scrollActionAboveMobileBottomNav(el));
+    const retryTimer = window.setTimeout(() => scrollActionAboveMobileBottomNav(el), 400);
+    return () => window.clearTimeout(retryTimer);
   }, [showConfirmAction, selectedOption, feedback]);
 
   useEffect(() => {
@@ -486,7 +503,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const showFinalFeedbackCta = finalFeedbackPending && !!feedback && !hasPending;
 
   return (
-    <div className="min-h-screen bg-[#010409] px-4 pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pb-safe lg:px-8">
+    <div className="min-h-screen bg-[#010409] px-4 pb-[calc(4.5rem+env(safe-area-inset-bottom,0px)+1rem)] pt-6 sm:px-6 sm:pb-safe lg:px-8">
       <div className="mx-auto max-w-3xl space-y-6">
         <PageHeader
           title="Simulado em andamento"

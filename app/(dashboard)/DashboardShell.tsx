@@ -29,7 +29,6 @@ import { useEstudoReversoWelcome } from '@/components/onboarding/useEstudoRevers
 import { AvantLogo } from '@/components/brand/AvantLogo';
 import { cn } from '@/lib/utils';
 import type { ProSource } from '@/lib/freemium';
-import { FREEMIUM_PLAN_LIMITS_COMPACT } from '@/lib/freemium';
 import { supabase } from '@/lib/supabase/client';
 import { ToastProvider } from '@/lib/toast-context';
 import { ToastContainer } from '@/components/ui/toast-container';
@@ -38,6 +37,7 @@ import {
   shouldShowBackToVitrine,
 } from '@/components/dashboard/BackToVitrineLink';
 import { BottomNav } from '@/components/layout/BottomNav';
+import { PlanStatusCard } from '@/components/plan/PlanStatusCard';
 
 const drawerSpring = { type: 'spring' as const, stiffness: 300, damping: 30 };
 
@@ -140,126 +140,11 @@ type MatriculatedConcursoSummary = {
   tipo: 'geral' | 'edital';
 };
 
-function formatProExpiryShort(iso: string | null): string | null {
-  if (!iso) return null;
-  const date = new Date(iso);
-  if (Number.isNaN(date.getTime())) return null;
-  return date.toLocaleDateString('pt-BR', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-    timeZone: 'America/Sao_Paulo',
-  });
-}
-
 function getAssinaturaNavLabel(isAdminUser: boolean, proSource: ProSource): string | null {
   if (isAdminUser) return null;
   if (proSource === 'stripe') return 'Gerenciar assinatura';
   if (proSource === 'invite') return 'Ver assinatura';
   return 'Minha assinatura';
-}
-
-function CityCard({
-  cidadeExibicao,
-  isPro,
-  proSource,
-  proExpiresAt,
-}: {
-  cidadeExibicao: string;
-  isPro: boolean;
-  proSource: ProSource;
-  proExpiresAt: string | null;
-}) {
-  const inviteExpiry = proSource === 'invite' ? formatProExpiryShort(proExpiresAt) : null;
-  const trimmedCidade = cidadeExibicao.trim();
-  const dynamicPlanName =
-    trimmedCidade && !/^geral$/i.test(trimmedCidade) && !/^técnico de enfermagem$/i.test(trimmedCidade)
-      ? trimmedCidade
-      : null;
-  const planTitle = dynamicPlanName ?? 'Seu Plano';
-
-  return (
-    <div className="mb-1 px-3">
-      <div className="overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-slate-800/60 to-slate-900/80 p-4 shadow-[0_0_20px_rgba(0,242,255,0.08)]">
-          <div className="mb-3 flex justify-center">
-            <div
-              className={`inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 ring-1 backdrop-blur-sm ${
-                isPro ? 'bg-[#00f2ff]/10 ring-[#00f2ff]/30' : 'bg-white/8 ring-white/10'
-              }`}
-            >
-              {isPro ? (
-                <span className="text-[#00f2ff] drop-shadow-[0_0_6px_#00f2ff]" aria-hidden>
-                  ⚡
-                </span>
-              ) : null}
-              <span
-                className={`text-[10px] font-black tracking-[0.12em] ${
-                  isPro ? 'text-[#00f2ff]' : 'text-slate-400'
-                }`}
-              >
-                {isPro ? 'AVANT PRO — exclusivo para técnicos' : 'PLANO GRATUITO'}
-              </span>
-            </div>
-          </div>
-          <h3 className="text-balance text-center text-base font-bold leading-snug tracking-tight text-white sm:text-[1.05rem]">
-            {planTitle}
-          </h3>
-
-          <div className="mt-3.5">
-            {isPro ? (
-              <div className="space-y-2.5">
-                <div className="flex justify-center">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-sm font-semibold text-emerald-100/95 backdrop-blur-sm">
-                    <span
-                      className="h-2 w-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.85)] animate-pulse"
-                      aria-hidden
-                    />
-                    Pro ativo
-                  </span>
-                </div>
-                <p className="text-center text-xs text-white/50">
-                  A única plataforma de estudo reverso para técnicos de enfermagem
-                </p>
-                {/* TODO: Exibir métrica real de progresso quando houver dado no contexto/props.
-                    Ex.: "X NeuroSlides esta semana" ou "Última aula: [nome] - há X dias". */}
-                {inviteExpiry ? (
-                  <p className="text-center text-xs font-medium text-slate-500">
-                    Pro por convite até {inviteExpiry}
-                  </p>
-                ) : null}
-                {proSource === 'stripe' || proSource === 'invite' ? (
-                  <Link
-                    href="/conta/assinatura"
-                    className="flex w-full items-center justify-center rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
-                  >
-                    {proSource === 'stripe' ? 'Gerenciar assinatura' : 'Ver assinatura'}
-                  </Link>
-                ) : null}
-              </div>
-            ) : (
-              <div className="space-y-2.5">
-                <p className="text-center text-xs font-medium text-slate-500">
-                  {FREEMIUM_PLAN_LIMITS_COMPACT}
-                </p>
-                <Link
-                  href="/planos"
-                  className="flex w-full items-center justify-center rounded-xl border border-slate-200 bg-white px-3 py-2 text-[10px] font-black uppercase tracking-wider text-slate-800 transition-colors hover:bg-slate-50"
-                >
-                  Concursos abertos
-                </Link>
-                <Link
-                  href="/assinar-pro"
-                  className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#BEF264] px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 shadow-md shadow-lime-400/20 transition-all hover:scale-[1.02] hover:bg-[#d4f879]"
-                >
-                  <Zap size={11} fill="currentColor" aria-hidden />
-                  Assinar Pro
-                </Link>
-              </div>
-            )}
-          </div>
-      </div>
-    </div>
-  );
 }
 
 function DashboardNav({
@@ -618,7 +503,7 @@ function DashboardContent({
           <AvantLogo variant="lockup" size="nav" animated={false} />
         </div>
 
-        <CityCard
+        <PlanStatusCard
           cidadeExibicao={cidadeExibicao}
           isPro={isPro}
           proSource={proSource}
@@ -688,7 +573,7 @@ function DashboardContent({
                 </button>
               </div>
 
-              <CityCard
+              <PlanStatusCard
           cidadeExibicao={cidadeExibicao}
           isPro={isPro}
           proSource={proSource}

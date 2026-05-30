@@ -54,6 +54,10 @@ import { ProgressRing } from '@/components/ui/progress-ring';
 
 const VITRINE_SEARCH_DEBOUNCE_MS = 350;
 
+/** Offset acima do BottomNav mobile (DashboardShell). */
+const MOBILE_BOTTOM_NAV_CLEARANCE =
+  'bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))]';
+
 const VITRINE_FILTER_QUERY_KEYS = new Set([
   'banca',
   'bancas',
@@ -790,36 +794,44 @@ export default function VitrineClient({
                 ))}
               </motion.div>
               {totalPaginas > 1 && (
-                <nav
-                  className="flex flex-col gap-4 border-t border-border pt-2 sm:flex-row sm:items-center sm:justify-between"
-                  aria-label="Paginação da vitrine"
-                >
-                  <p className="order-2 text-xs font-medium text-muted-foreground sm:order-1">
-                    Página {paginaEfetiva} de {totalPaginas}
-                  </p>
-                  <div className="order-1 flex items-center gap-2 sm:order-2 sm:ml-auto">
-                    <Button
-                      type="button"
-                      variant="outline"
-                      disabled={paginaEfetiva <= 1}
-                      onClick={() => setPagina((p) => Math.max(1, p - 1))}
-                      className="rounded-xl"
-                    >
-                      <ChevronLeft size={18} className="mr-1" />
-                      Anterior
-                    </Button>
-                    <Button
-                      type="button"
-                      variant="outline"
-                      disabled={paginaEfetiva >= totalPaginas}
-                      onClick={() => setPagina((p) => Math.min(totalPaginas, p + 1))}
-                      className="rounded-xl"
-                    >
-                      Próxima
-                      <ChevronRight size={18} className="ml-1" />
-                    </Button>
-                  </div>
-                </nav>
+                <>
+                  <div className="h-[4.75rem] shrink-0 md:hidden" aria-hidden />
+                  <nav
+                    className={cn(
+                      'flex flex-col gap-3 border-t border-border pt-3 sm:flex-row sm:items-center sm:justify-between',
+                      'fixed inset-x-0 z-30 border-white/10 bg-background/95 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-background/90',
+                      MOBILE_BOTTOM_NAV_CLEARANCE,
+                      'md:static md:z-auto md:border-border md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none',
+                    )}
+                    aria-label="Paginação da vitrine"
+                  >
+                    <p className="order-2 text-center text-xs font-medium text-muted-foreground sm:order-1 sm:text-left">
+                      Página {paginaEfetiva} de {totalPaginas}
+                    </p>
+                    <div className="order-1 flex items-center gap-2 sm:order-2 sm:ml-auto">
+                      <Button
+                        type="button"
+                        variant="outline"
+                        disabled={paginaEfetiva <= 1 || loading}
+                        onClick={() => setPagina((p) => Math.max(1, p - 1))}
+                        className="h-11 flex-1 rounded-xl border-white/15 sm:flex-none"
+                      >
+                        <ChevronLeft size={18} className="mr-1" />
+                        Anterior
+                      </Button>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        disabled={paginaEfetiva >= totalPaginas || loading}
+                        onClick={() => setPagina((p) => Math.min(totalPaginas, p + 1))}
+                        className="h-11 flex-1 rounded-xl border-white/15 sm:flex-none"
+                      >
+                        Próxima
+                        <ChevronRight size={18} className="ml-1" />
+                      </Button>
+                    </div>
+                  </nav>
+                </>
               )}
             </>
           ) : fetchError ? (
