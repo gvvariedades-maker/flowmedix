@@ -1,7 +1,8 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Loader2, ChevronRight, ClipboardList } from 'lucide-react';
@@ -42,56 +43,45 @@ import {
   buildQuestionSubjectLine,
   stripLeadingQuestionEnumeration,
 } from '@/lib/questionHeader';
+import {
+  MOBILE_ACTION_BAR_SPACER,
+  MOBILE_ACTION_BAR_Z,
+  MOBILE_BOTTOM_NAV_FIXED_BOTTOM,
+  MOBILE_PAGE_BOTTOM_PADDING,
+} from '@/lib/layout/mobileBottomNav';
 
-/** Reserva espaço acima do BottomNav mobile ao rolar botões de ação para a viewport. */
-const MOBILE_BOTTOM_NAV_GAP_PX = 16;
-const MOBILE_ACTION_SCROLL_MARGIN =
-  'scroll-mb-[calc(4.5rem+env(safe-area-inset-bottom,0px)+1rem)] md:scroll-mb-0';
+const MOBILE_ACTION_BAR_SHELL = cn(
+  'fixed inset-x-0 border-t border-white/10 bg-[#010409]/95 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-[#010409]/90',
+  MOBILE_BOTTOM_NAV_FIXED_BOTTOM,
+  MOBILE_ACTION_BAR_Z,
+);
 
-let safeAreaBottomPxCache: number | undefined;
+type SimuladoMobileActionBarProps = {
+  actionRef?: RefObject<HTMLDivElement | null>;
+  className?: string;
+  children: React.ReactNode;
+};
 
-function mobileBottomNavClearancePx(): number {
-  const rootFont = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-  const base = rootFont * 4.5;
-  if (safeAreaBottomPxCache === undefined) {
-    const probe = document.createElement('div');
-    probe.style.paddingBottom = 'env(safe-area-inset-bottom, 0px)';
-    probe.style.position = 'fixed';
-    probe.style.visibility = 'hidden';
-    document.body.appendChild(probe);
-    safeAreaBottomPxCache = parseFloat(getComputedStyle(probe).paddingBottom) || 0;
-    probe.remove();
-  }
-  return base + safeAreaBottomPxCache;
-}
+function SimuladoMobileActionBar({ actionRef, className, children }: SimuladoMobileActionBarProps) {
+  const [mounted, setMounted] = useState(false);
 
-function measureMobileBottomNavClearancePx(): number {
-  const nav = document.querySelector('nav[aria-label="Navegação principal"]');
-  if (nav instanceof HTMLElement) {
-    return nav.getBoundingClientRect().height + MOBILE_BOTTOM_NAV_GAP_PX;
-  }
-  return mobileBottomNavClearancePx() + MOBILE_BOTTOM_NAV_GAP_PX;
-}
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-function scrollActionAboveMobileBottomNav(el: HTMLElement) {
-  if (window.matchMedia('(min-width: 768px)').matches) return;
+  const mobileBar = (
+    <div ref={actionRef} className={cn(MOBILE_ACTION_BAR_SHELL, className)}>
+      <div className="mx-auto w-full max-w-3xl">{children}</div>
+    </div>
+  );
 
-  const scrollParent = el.closest('main') ?? document.scrollingElement ?? document.documentElement;
-  if (!scrollParent) return;
-
-  const align = (behavior: ScrollBehavior) => {
-    const clearance = measureMobileBottomNavClearancePx();
-    const rect = el.getBoundingClientRect();
-    const overflow = rect.bottom - (window.innerHeight - clearance);
-    if (overflow > 0) {
-      scrollParent.scrollBy({ top: overflow, behavior });
-    }
-  };
-
-  align('smooth');
-  requestAnimationFrame(() => align('auto'));
-  window.setTimeout(() => align('auto'), 400);
-  window.setTimeout(() => align('auto'), 720);
+  return (
+    <>
+      <div className={cn('shrink-0 md:hidden', MOBILE_ACTION_BAR_SPACER)} aria-hidden />
+      {mounted ? createPortal(mobileBar, document.body) : null}
+      <div className={cn('hidden w-full md:flex', className)}>{children}</div>
+    </>
+  );
 }
 
 type FeedbackState = {
@@ -389,16 +379,6 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     activeItem?.respondida && isTreino ? 'Atualizar resposta' : 'Confirmar resposta';
   const showConfirmAction = !!selectedOption && !feedback && !isAnswerLocked;
 
-  useLayoutEffect(() => {
-    const el = feedback ? proximaAcaoRef.current : showConfirmAction ? confirmarRespostaRef.current : null;
-    if (!el) return;
-
-    scrollActionAboveMobileBottomNav(el);
-    requestAnimationFrame(() => scrollActionAboveMobileBottomNav(el));
-    const retryTimer = window.setTimeout(() => scrollActionAboveMobileBottomNav(el), 400);
-    return () => window.clearTimeout(retryTimer);
-  }, [showConfirmAction, selectedOption, feedback]);
-
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (!questionData || loadingQuestion || submitting) return;
@@ -503,7 +483,13 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const showFinalFeedbackCta = finalFeedbackPending && !!feedback && !hasPending;
 
   return (
-    <div className="min-h-screen bg-[#010409] px-4 pb-[calc(4.5rem+env(safe-area-inset-bottom,0px)+1rem)] pt-6 sm:px-6 sm:pb-safe lg:px-8">
+    <div
+      className={cn(
+        'min-h-screen bg-[#010409] px-4 pt-6 sm:px-6 lg:px-8',
+        MOBILE_PAGE_BOTTOM_PADDING,
+        'md:pb-8',
+      )}
+    >
       <div className="mx-auto max-w-3xl space-y-6">
         <PageHeader
           title="Simulado em andamento"
@@ -667,12 +653,9 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
             </div>
 
             {feedback ? (
-              <div
-                ref={proximaAcaoRef}
-                className={cn(
-                  'flex flex-col gap-3 pt-2 sm:flex-row sm:justify-end',
-                  MOBILE_ACTION_SCROLL_MARGIN,
-                )}
+              <SimuladoMobileActionBar
+                actionRef={proximaAcaoRef}
+                className="flex flex-col gap-3 pt-2 sm:flex-row sm:justify-end"
               >
                 <Button
                   type="button"
@@ -698,11 +681,11 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                     </>
                   )}
                 </Button>
-              </div>
+              </SimuladoMobileActionBar>
             ) : showConfirmAction ? (
-              <div
-                ref={confirmarRespostaRef}
-                className={cn('scroll-mt-4 pt-2 sm:flex sm:justify-end', MOBILE_ACTION_SCROLL_MARGIN)}
+              <SimuladoMobileActionBar
+                actionRef={confirmarRespostaRef}
+                className="pt-2 sm:flex sm:justify-end"
               >
                 <Button
                   type="button"
@@ -719,7 +702,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                     confirmLabel
                   )}
                 </Button>
-              </div>
+              </SimuladoMobileActionBar>
             ) : null}
           </div>
         )}
