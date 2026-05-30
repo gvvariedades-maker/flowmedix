@@ -348,11 +348,20 @@ export default function AvantLessonPlayer({
         const payload = (await response.json().catch(() => ({}))) as {
           limiteAtingido?: boolean;
           resetEm?: string;
+          error?: string;
         };
-        if (payload.resetEm) setResetEm(payload.resetEm);
-        setFreemiumLimiteAtingido(true);
-        setPaywallOpen(true);
-        return { status: 'blocked' };
+        if (payload.limiteAtingido) {
+          if (payload.resetEm) setResetEm(payload.resetEm);
+          setFreemiumLimiteAtingido(true);
+          setPaywallOpen(true);
+          return { status: 'blocked' };
+        }
+        logger.warn('Attempt blocked by access check', {
+          moduloSlug,
+          error: payload.error,
+        });
+        setTentativaErro(payload.error ?? 'Sem acesso a esta questão.');
+        return { status: 'error' };
       }
 
       if (!response.ok) {

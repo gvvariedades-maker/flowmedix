@@ -7,10 +7,12 @@ import {
   getQuestoesByAssuntoCached,
   getHistoricoQuestoesForSlugsCached,
   estudadosSetFromHistorico,
+  getModulosEstudoCached,
 } from '@/lib/cache';
 import { fetchAccessibleModulosForNav } from '@/lib/concursos/entitlements';
 import {
   buildVitrineFilteredSlugList,
+  filterModulosLikeVitrine,
   listaModulosQuestaoPorTituloAulaNoCatalogo,
   vitrineFiltersToSqlNavFilters,
   type HistoricoQuestaoRow,
@@ -33,6 +35,7 @@ export type QuestaoNavListInput = {
   slug: string;
   tituloAula: string;
   vitrineFilters?: QuestaoNavVitrineFilters;
+  isAdmin?: boolean;
 };
 
 export type QuestaoNavListItem = { id: string; modulo_slug: string };
@@ -59,8 +62,14 @@ export { vitrineFiltersToSqlNavFilters };
 async function listaPorAssuntoSemVitrine(
   userId: string | undefined,
   tituloAula: string,
+  isAdmin = false,
 ): Promise<QuestaoNavListItem[]> {
   if (!tituloAula) return [];
+
+  if (isAdmin) {
+    const modulos = (await getModulosEstudoCached()) as ModuloEstudoRow[];
+    return listaModulosQuestaoPorTituloAulaNoCatalogo(modulos, tituloAula);
+  }
 
   if (userId) {
     try {
@@ -86,7 +95,24 @@ async function listaPorAssuntoSemVitrine(
 async function fetchModulosForVitrineNav(
   userId: string,
   filters: QuestaoNavVitrineFilters,
+  isAdmin = false,
 ): Promise<ModuloEstudoRow[]> {
+  if (isAdmin) {
+    const modulos = (await getModulosEstudoCached()) as ModuloEstudoRow[];
+    const sqlFilters = vitrineFiltersToSqlNavFilters(filters);
+    if (!sqlFilters) return modulos;
+    const placeholder = modulos.map((m) => ({
+      ...m,
+      estudoReversoConcluido: false,
+      stats: { acertos: 0, total: 0, percentual: 0, priorityScore: 0 },
+    }));
+    return filterModulosLikeVitrine(placeholder, {
+      bancas: filters.bancas,
+      assuntos: filters.assuntos,
+      q: filters.q,
+    }) as ModuloEstudoRow[];
+  }
+
   const sqlFilters = vitrineFiltersToSqlNavFilters(filters);
   try {
     return (await fetchAccessibleModulosForNav(userId, sqlFilters)) as ModuloEstudoRow[];
@@ -115,14 +141,14 @@ function buildQuestoesComEstudada(
  * Plano e caderno continuam na page — listas pequenas e origem diferente.
  */
 export async function getQuestaoNavList(input: QuestaoNavListInput): Promise<QuestaoNavListResult> {
-  const { userId, slug, tituloAula, vitrineFilters } = input;
+  const { userId, slug, tituloAula, vitrineFilters, isAdmin = false } = input;
   const filters = vitrineFilters ?? {};
 
   let lista: QuestaoNavListItem[] = [];
   let historicoVitrine: HistoricoQuestaoRow[] | null = null;
 
-  if (hasVitrineFilters(filters) && userId) {
-    const modulos = await fetchModulosForVitrineNav(userId, filters);
+  if (hasVitrineFilters(filters) && (userId || isAdmin)) {
+    const modulos = await fetchModulosForVitrineNav(userId ?? '', filters, isAdmin);
     const modulosSlugs = modulos.map((m) => m.modulo_slug);
 
     historicoVitrine = (await getHistoricoQuestoesForSlugsCached(
@@ -135,11 +161,11 @@ export async function getQuestaoNavList(input: QuestaoNavListInput): Promise<Que
     if (slugList.length > 0 && slugList.includes(slug)) {
       lista = listaFromSlugList(slugList);
     } else {
-      lista = await listaPorAssuntoSemVitrine(userId, tituloAula);
+      lista = await listaPorAssuntoSemVitrine(userId, tituloAula, isAdmin);
       historicoVitrine = null;
     }
   } else {
-    lista = await listaPorAssuntoSemVitrine(userId, tituloAula);
+    lista = await listaPorAssuntoSemVitrine(userId, tituloAula, isAdmin);
   }
 
   const listaSlugs = lista.map((item) => item.modulo_slug);

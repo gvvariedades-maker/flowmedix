@@ -355,6 +355,21 @@ describe('entitlements — união de pacotes matriculados', () => {
     await expect(userHasModuloAccess('user-1', 'modulo-inexistente')).resolves.toBe(false);
   });
 
+  it('userHasModuloAccess com skipEntitlement ignora matrícula quando módulo existe', async () => {
+    mockCreateServerSupabase.mockResolvedValue(
+      createSupabaseMock({
+        matriculas: [],
+        modulosBySlug: { 'modulo-a': { id: 'mod-1' } },
+        concursoModulos: [],
+      }) as never,
+    );
+
+    await expect(
+      userHasModuloAccess('user-1', 'modulo-a', { skipEntitlement: true }),
+    ).resolves.toBe(true);
+    await expect(userHasModuloAccess('user-1', 'modulo-a')).resolves.toBe(false);
+  });
+
   it('une Geral e edital com muitos vínculos sem lançar erro', async () => {
     const concursoModulos = Array.from({ length: 200 }, (_, index) => {
       const modulo = makeModuloRow(index);

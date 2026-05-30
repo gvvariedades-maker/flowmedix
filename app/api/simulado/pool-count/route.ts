@@ -3,6 +3,10 @@ import { searchParamsToQueryRecord } from '@/lib/api/query-params';
 import { SimuladoPoolCountQuerySchema } from '@/lib/validations';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { fetchSimuladoQuestionPoolCountFromRpc } from '@/lib/simulado/rpc';
+import {
+  fetchSimuladoQuestionPoolCountFromCatalog,
+} from '@/lib/simulado/poolFromCatalog';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 
@@ -27,10 +31,20 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const estimatedCount = await fetchSimuladoQuestionPoolCountFromRpc({
+    const isAdmin = isAdminSessionEmail(auth.user.email ?? null);
+
+    let estimatedCount = await fetchSimuladoQuestionPoolCountFromRpc({
       userId: auth.user.id,
       filters: parsed.data,
     });
+
+    if (estimatedCount === 0) {
+      estimatedCount = await fetchSimuladoQuestionPoolCountFromCatalog({
+        userId: auth.user.id,
+        filters: parsed.data,
+        isAdmin,
+      });
+    }
 
     return NextResponse.json({ estimated_count: estimatedCount });
   } catch (error) {

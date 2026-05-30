@@ -1,6 +1,7 @@
 import {
   getModulosEstudoVitrineForUserCached,
   getHistoricoQuestoesForSlugsCached,
+  getModulosEstudoCached,
 } from '@/lib/cache';
 import { resolveAccessibleModulosWhenEmpty } from '@/lib/concursos/resolveCatalogWhenEmpty';
 import { fetchAccessibleModulosForNav } from '@/lib/concursos/entitlements';
@@ -76,13 +77,17 @@ async function loadModulosForVitrine(
   filters: VitrineListFilters,
   isAdmin = false,
 ): Promise<ModuloEstudoRow[]> {
+  if (isAdmin) {
+    return (await getModulosEstudoCached()) as ModuloEstudoRow[];
+  }
+
   const sqlFilters = vitrineFiltersToSqlNavFilters(filters);
   if (sqlFilters) {
     return (await fetchAccessibleModulosForNav(userId, sqlFilters)) as ModuloEstudoRow[];
   }
   const modulos = (await getModulosEstudoVitrineForUserCached(userId)) as ModuloEstudoRow[];
   if (modulos.length > 0) return modulos;
-  return (await resolveAccessibleModulosWhenEmpty(userId, isAdmin)) as ModuloEstudoRow[];
+  return (await resolveAccessibleModulosWhenEmpty(userId, false)) as ModuloEstudoRow[];
 }
 
 async function getVitrinePageViaJs(params: GetVitrinePageParams): Promise<VitrinePageResponse> {
@@ -137,57 +142,58 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
   const normalizedFilters = normalizeFiltersForLog(filters);
   const startAt = Date.now();
 
-  try {
-    const rpcPage = await fetchVitrinePageFromRpc({ userId, page, filters });
-    const durationMs = Date.now() - startAt;
+  if (!isAdmin) {
+    try {
+      const rpcPage = await fetchVitrinePageFromRpc({ userId, page, filters });
+      const durationMs = Date.now() - startAt;
 
-    const rpcHasResults =
-      rpcPage.pagination.totalGroups > 0 || rpcPage.totalModulosFiltrados > 0;
+      const rpcHasResults =
+        rpcPage.pagination.totalGroups > 0 || rpcPage.totalModulosFiltrados > 0;
 
-    if (rpcHasResults || vitrineHasActiveFilters(filters)) {
-      logApiStrategy({
-        event: 'vitrine_page',
-        strategy: 'rpc',
-        durationMs,
-        context: {
+      if (rpcHasResults || vitrineHasActiveFilters(filters)) {
+        logApiStrategy({
+          event: 'vitrine_page',
+          strategy: 'rpc',
+          durationMs,
+          context: {
+            userId,
+            page,
+            filters: normalizedFilters,
+            rowCount: rpcPage.totalModulosFiltrados,
+          },
+        });
+        logger.info('Vitrine service resolved', {
+          strategy: 'rpc',
+          durationMs,
           userId,
           page,
           filters: normalizedFilters,
           rowCount: rpcPage.totalModulosFiltrados,
-        },
+          groupCount: rpcPage.pagination.totalGroups,
+        });
+
+        return {
+          ...rpcPage,
+          facets: EMPTY_VITRINE_FACETS,
+        };
+      }
+
+      logger.warn('RPC get_vitrine_page vazio sem filtros; tentando pipeline JS', {
+        userId,
+        page,
       });
-      logger.info('Vitrine service resolved', {
+    } catch (err) {
+      const durationMs = Date.now() - startAt;
+
+      logger.warn('get_vitrine_page indisponível; pipeline JS', {
         strategy: 'rpc',
         durationMs,
         userId,
         page,
         filters: normalizedFilters,
-        rowCount: rpcPage.totalModulosFiltrados,
-        groupCount: rpcPage.pagination.totalGroups,
+        error: err instanceof Error ? err.message : err,
       });
-
-      return {
-        ...rpcPage,
-        facets: EMPTY_VITRINE_FACETS,
-      };
     }
-
-    logger.warn('RPC get_vitrine_page vazio sem filtros; tentando pipeline JS', {
-      userId,
-      page,
-      isAdmin,
-    });
-  } catch (err) {
-    const durationMs = Date.now() - startAt;
-
-    logger.warn('get_vitrine_page indisponível; pipeline JS', {
-      strategy: 'rpc',
-      durationMs,
-      userId,
-      page,
-      filters: normalizedFilters,
-      error: err instanceof Error ? err.message : err,
-    });
   }
 
   const jsStartAt = Date.now();

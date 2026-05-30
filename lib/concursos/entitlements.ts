@@ -620,6 +620,7 @@ async function isModuloLinkedToMatriculatedConcursos(
 export async function userHasModuloAccess(
   userId: string,
   moduloSlugOrId: string,
+  options?: { skipEntitlement?: boolean },
 ): Promise<boolean> {
   const supabase = await createServerSupabase();
   const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(
@@ -641,6 +642,8 @@ export async function userHasModuloAccess(
     throw moduloError;
   }
   if (!modulo) return false;
+
+  if (options?.skipEntitlement) return true;
 
   const concursoIds = await getActiveMatriculatedConcursoIds(userId);
   if (!concursoIds.length) return false;

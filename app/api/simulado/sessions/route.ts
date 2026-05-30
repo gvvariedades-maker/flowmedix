@@ -3,6 +3,10 @@ import { SimuladoCreateSessionSchema } from '@/lib/validations';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { createServerSupabase } from '@/lib/supabase/server';
 import { fetchSimuladoQuestionPoolFromRpc } from '@/lib/simulado/rpc';
+import {
+  fetchSimuladoQuestionPoolFromCatalog,
+} from '@/lib/simulado/poolFromCatalog';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { createE2eSimuladoSession, resetE2eSimuladoStore } from '@/lib/e2e/simuladoSeed';
@@ -126,6 +130,17 @@ export async function POST(request: NextRequest) {
       quantidade,
       filters: { bancas, assuntos, q },
     });
+
+    const isAdmin = isAdminSessionEmail(auth.user.email ?? null);
+
+    if (!pool.length && !from_session_id) {
+      pool = await fetchSimuladoQuestionPoolFromCatalog({
+        userId: auth.user.id,
+        quantidade,
+        filters: { bancas, assuntos, q },
+        isAdmin,
+      });
+    }
 
     if (from_session_id) {
       let derivedQuery = supabase

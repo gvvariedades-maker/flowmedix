@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { SimuladoQuestaoQuerySchema } from '@/lib/validations';
 import { buildSimuladoQuestaoPayload } from '@/lib/estudar/questaoSimuladoPayload';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { stripQuestionForSimulado } from '@/lib/estudar/questionPayload';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { logger } from '@/lib/logger';
@@ -45,6 +46,7 @@ export async function GET(request: NextRequest) {
       slug,
       userId: auth.user.id,
       supabase: auth.supabase,
+      isAdmin: isAdminSessionEmail(auth.user.email ?? null),
     });
 
     const cached = result.status === 'ok';

@@ -159,6 +159,7 @@ export async function buildEstudarQuestaoPlayerPayload(
       userId: userId ?? undefined,
       slug,
       tituloAula,
+      isAdmin,
       vitrineFilters: {
         bancas: vitrineBancas.length ? vitrineBancas : undefined,
         assuntos: vitrineAssuntos.length ? vitrineAssuntos : undefined,

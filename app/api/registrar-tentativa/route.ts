@@ -11,6 +11,7 @@ import {
   isUserPro,
 } from '@/lib/freemium';
 import { userHasModuloAccess } from '@/lib/concursos/entitlements';
+import { moduloAccessOptionsFromEmail } from '@/lib/concursos/studyAccess';
 import { logger } from '@/lib/logger';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { createServerSupabase } from '@/lib/supabase/server';
@@ -53,7 +54,11 @@ export async function POST(request: NextRequest) {
     const { user } = auth;
     const supabase = await createServerSupabase();
 
-    const hasAccess = await userHasModuloAccess(user.id, modulo_slug);
+    const hasAccess = await userHasModuloAccess(
+      user.id,
+      modulo_slug,
+      moduloAccessOptionsFromEmail(user.email),
+    );
     if (!hasAccess) {
       return denyModuloAccessResponse(supabase, modulo_slug);
     }
