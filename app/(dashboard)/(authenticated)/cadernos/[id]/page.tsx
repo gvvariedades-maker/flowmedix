@@ -5,9 +5,8 @@ import {
   aggregateNotebookProgress,
   estudadosSetFromHistorico,
   getHistoricoQuestoesForSlugsCached,
-  getModulosEstudoCached,
-  getModulosEstudoVitrineForUserCached,
 } from '@/lib/cache';
+import { resolveAccessibleModulosWhenEmpty } from '@/lib/concursos/resolveCatalogWhenEmpty';
 import CadernoDetailClient from './CadernoDetailClient';
 import CadernoDetailMetrics from '@/components/dashboard/cadernos/CadernoDetailMetrics';
 import CadernoReverseStudyBadge from '@/components/dashboard/cadernos/CadernoReverseStudyBadge';
@@ -76,7 +75,7 @@ export default async function CadernoDetailPage({
     const isAdmin = isAdminSessionEmail(session.user.email ?? null);
 
     const [modulos, historico] = await Promise.all([
-      loadModulosForCadernoBuilder(session.user.id, isAdmin),
+      resolveAccessibleModulosWhenEmpty(session.user.id, isAdmin),
       getHistoricoQuestoesForSlugsCached(session.user.id, slugs),
     ]);
 
@@ -137,24 +136,4 @@ export default async function CadernoDetailPage({
       </div>
     );
   }
-}
-
-/** Catálogo para adicionar questões — alinhado à vitrine; admin e matrícula free têm fallback. */
-async function loadModulosForCadernoBuilder(userId: string, isAdmin: boolean) {
-  let modulos = await getModulosEstudoVitrineForUserCached(userId);
-  if (modulos.length > 0) return modulos;
-
-  if (isAdmin) {
-    return getModulosEstudoCached();
-  }
-
-  const { ensureGeralCadastroMatricula, getAccessibleModulosForMatriculatedEditalPacote } =
-    await import('@/lib/concursos/entitlements');
-  await ensureGeralCadastroMatricula(userId).catch((error) => {
-    logger.warn('Falha ao garantir matrícula geral no caderno', {
-      userId,
-      error: error instanceof Error ? error.message : String(error),
-    });
-  });
-  return getAccessibleModulosForMatriculatedEditalPacote(userId);
 }

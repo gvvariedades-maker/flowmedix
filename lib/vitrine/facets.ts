@@ -1,4 +1,4 @@
-import { getModulosEstudoVitrineForUserCached } from '@/lib/cache';
+import { resolveAccessibleModulosWhenEmpty } from '@/lib/concursos/resolveCatalogWhenEmpty';
 import { fetchVitrineFacetsFromRpc } from '@/lib/vitrine/rpc';
 import { logger } from '@/lib/logger';
 import type { ModuloEstudoRow } from '@/lib/vitrineFilters';
@@ -10,6 +10,7 @@ export const EMPTY_VITRINE_FACETS: VitrineFacets = { bancas: [], assuntos: [] };
 export type GetVitrineFacetsParams = {
   userId: string;
   bancas?: string[];
+  isAdmin?: boolean;
   /** @deprecated use bancas */
   banca?: string;
 };
@@ -18,7 +19,7 @@ export type GetVitrineFacetsParams = {
  * Facets da vitrine: tenta RPC Postgres; em erro, fallback JS sobre catálogo do usuário.
  */
 export async function getVitrineFacets(params: GetVitrineFacetsParams): Promise<VitrineFacets> {
-  const { userId } = params;
+  const { userId, isAdmin = false } = params;
   const bancas =
     params.bancas?.length
       ? params.bancas
@@ -36,7 +37,7 @@ export async function getVitrineFacets(params: GetVitrineFacetsParams): Promise<
     });
   }
 
-  const modulos = (await getModulosEstudoVitrineForUserCached(userId)) as ModuloEstudoRow[];
+  const modulos = (await resolveAccessibleModulosWhenEmpty(userId, isAdmin)) as ModuloEstudoRow[];
   return buildVitrineFacets(modulos, { bancas });
 }
 

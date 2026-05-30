@@ -16,7 +16,7 @@ export default async function VitrinePage() {
 
   const [matriculatedConcursos, catalogStats] = await Promise.all([
     getMatriculatedConcursos(userId).catch(() => []),
-    getCatalogStats(),
+    getCatalogStats().catch(() => ({ totalQuestions: 0, totalSlides: 0 })),
   ]);
   const vitrineFallbackTitulo =
     matriculatedConcursos.find((concurso) => concurso.tipo === 'edital')?.nome ?? 'Estudo Reverso';

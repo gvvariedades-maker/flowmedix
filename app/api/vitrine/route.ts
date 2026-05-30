@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { searchParamsToQueryRecord } from '@/lib/api/query-params';
 import { VitrineQuerySchema } from '@/lib/validations';
 import { getVitrinePageCached } from '@/lib/cache';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import { logApiStrategy } from '@/lib/api/logApiStrategy';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
@@ -36,7 +37,7 @@ export async function GET(request: NextRequest) {
     };
     const payload = await getVitrinePageCached(auth.user.id, page, {
       ...normalizedFilters,
-    });
+    }, isAdminSessionEmail(auth.user.email ?? null));
 
     logApiStrategy({
       event: 'api_vitrine',

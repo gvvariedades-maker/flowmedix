@@ -128,6 +128,7 @@ function normalizeLocationSearch(search: string): string {
 }
 
 const containerVariants = {
+  initial: {},
   animate: { transition: { staggerChildren: 0.04 } },
 };
 const itemVariants = {
@@ -328,7 +329,6 @@ export default function VitrineClient({
     async function loadVitrine() {
       setLoading(true);
       setFetchError(null);
-      setGruposPagina([]);
 
       const params = new URLSearchParams();
       params.set('page', String(pagina));
@@ -798,7 +798,7 @@ export default function VitrineClient({
             </div>
           </div>
           {children ? <div className="mb-6">{children}</div> : null}
-          {loading ? (
+          {loading && gruposPagina.length === 0 ? (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {Array.from({ length: 8 }).map((_, i) => (
                 <div key={i} className="h-72 animate-pulse rounded-3xl bg-muted/50" />
@@ -812,7 +812,10 @@ export default function VitrineClient({
                 variants={containerVariants}
                 initial="initial"
                 animate="animate"
-                className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-5 xl:grid-cols-4"
+                className={cn(
+                  'grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-5 xl:grid-cols-4',
+                  loading && 'pointer-events-none opacity-60',
+                )}
               >
                 {gruposPagina.map((grupo, idx) => (
                   <SubtopicoCard key={grupo.titulo_aula} grupo={grupo} estudarQuery={estudarQuery} index={idx} />

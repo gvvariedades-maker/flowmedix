@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { searchParamsToQueryRecord } from '@/lib/api/query-params';
 import { VitrineFacetsQuerySchema } from '@/lib/validations';
 import { getVitrineFacetsCached } from '@/lib/cache';
+import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
@@ -32,7 +33,7 @@ export async function GET(request: NextRequest) {
     const { bancas } = parsed.data;
     const facets = await getVitrineFacetsCached(auth.user.id, {
       bancas,
-    });
+    }, isAdminSessionEmail(auth.user.email ?? null));
 
     return NextResponse.json(facets, {
       headers: { 'Cache-Control': 'private, no-store' },

@@ -541,6 +541,7 @@ export async function getVitrinePageCached(
   userId: string,
   page: number,
   filters: VitrinePageCacheFilters = {},
+  isAdmin = false,
 ) {
   const cacheKey = vitrinePageCacheKey(userId, page, filters);
   const userTag = getVitrinePageUserTag(userId);
@@ -551,7 +552,7 @@ export async function getVitrinePageCached(
     async () => {
       const { getVitrinePage } = await import('./vitrine/service');
       trackCacheHit(cacheKey);
-      return getVitrinePage({ userId, page, filters });
+      return getVitrinePage({ userId, page, filters, isAdmin });
     },
     [cacheKey],
     {
@@ -598,6 +599,7 @@ function vitrineFacetsCacheKey(userId: string, filters: VitrineFacetsCacheFilter
 export async function getVitrineFacetsCached(
   userId: string,
   filters: VitrineFacetsCacheFilters = {},
+  isAdmin = false,
 ) {
   const cacheKey = vitrineFacetsCacheKey(userId, filters);
   const userTag = getVitrineFacetsUserTag(userId);
@@ -608,7 +610,7 @@ export async function getVitrineFacetsCached(
     async () => {
       const { getVitrineFacets } = await import('./vitrine/facets');
       trackCacheHit(cacheKey);
-      return getVitrineFacets({ userId, bancas: filters.bancas });
+      return getVitrineFacets({ userId, bancas: filters.bancas, isAdmin });
     },
     [cacheKey],
     {

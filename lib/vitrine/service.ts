@@ -2,6 +2,7 @@ import {
   getModulosEstudoVitrineForUserCached,
   getHistoricoQuestoesForSlugsCached,
 } from '@/lib/cache';
+import { resolveAccessibleModulosWhenEmpty } from '@/lib/concursos/resolveCatalogWhenEmpty';
 import { fetchAccessibleModulosForNav } from '@/lib/concursos/entitlements';
 import {
   attachHistoricoStats,
@@ -32,7 +33,15 @@ export type GetVitrinePageParams = {
   userId: string;
   page: number;
   filters?: VitrineListFilters;
+  isAdmin?: boolean;
 };
+
+function vitrineHasActiveFilters(filters: VitrineListFilters): boolean {
+  const normalized = normalizeVitrineListFilters(filters);
+  return Boolean(
+    normalized.bancas?.length || normalized.assuntos?.length || normalized.q,
+  );
+}
 
 function normalizeVitrineListFilters(filters: VitrineListFilters = {}): VitrineListFilters {
   const bancas = [
@@ -65,19 +74,22 @@ function paginateGroups<T>(items: T[], page: number, perPage: number): { slice: 
 async function loadModulosForVitrine(
   userId: string,
   filters: VitrineListFilters,
+  isAdmin = false,
 ): Promise<ModuloEstudoRow[]> {
   const sqlFilters = vitrineFiltersToSqlNavFilters(filters);
   if (sqlFilters) {
     return (await fetchAccessibleModulosForNav(userId, sqlFilters)) as ModuloEstudoRow[];
   }
-  return (await getModulosEstudoVitrineForUserCached(userId)) as ModuloEstudoRow[];
+  const modulos = (await getModulosEstudoVitrineForUserCached(userId)) as ModuloEstudoRow[];
+  if (modulos.length > 0) return modulos;
+  return (await resolveAccessibleModulosWhenEmpty(userId, isAdmin)) as ModuloEstudoRow[];
 }
 
 async function getVitrinePageViaJs(params: GetVitrinePageParams): Promise<VitrinePageResponse> {
-  const { userId, page } = params;
+  const { userId, page, isAdmin = false } = params;
   const filters = normalizeVitrineListFilters(params.filters);
 
-  const modulosRaw = await loadModulosForVitrine(userId, filters);
+  const modulosRaw = await loadModulosForVitrine(userId, filters, isAdmin);
   const facets = buildVitrineFacets(modulosRaw, { bancas: filters.bancas });
 
   const modulosComStatsPlaceholder = modulosRaw.map((m) => ({
@@ -120,7 +132,7 @@ async function getVitrinePageViaJs(params: GetVitrinePageParams): Promise<Vitrin
  * Caminho feliz: RPC Postgres (incluindo busca `q`); em erro, fallback JS.
  */
 export async function getVitrinePage(params: GetVitrinePageParams): Promise<VitrinePageResponse> {
-  const { userId, page } = params;
+  const { userId, page, isAdmin = false } = params;
   const filters = normalizeVitrineListFilters(params.filters);
   const normalizedFilters = normalizeFiltersForLog(filters);
   const startAt = Date.now();
@@ -129,31 +141,42 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
     const rpcPage = await fetchVitrinePageFromRpc({ userId, page, filters });
     const durationMs = Date.now() - startAt;
 
-    logApiStrategy({
-      event: 'vitrine_page',
-      strategy: 'rpc',
-      durationMs,
-      context: {
+    const rpcHasResults =
+      rpcPage.pagination.totalGroups > 0 || rpcPage.totalModulosFiltrados > 0;
+
+    if (rpcHasResults || vitrineHasActiveFilters(filters)) {
+      logApiStrategy({
+        event: 'vitrine_page',
+        strategy: 'rpc',
+        durationMs,
+        context: {
+          userId,
+          page,
+          filters: normalizedFilters,
+          rowCount: rpcPage.totalModulosFiltrados,
+        },
+      });
+      logger.info('Vitrine service resolved', {
+        strategy: 'rpc',
+        durationMs,
         userId,
         page,
         filters: normalizedFilters,
         rowCount: rpcPage.totalModulosFiltrados,
-      },
-    });
-    logger.info('Vitrine service resolved', {
-      strategy: 'rpc',
-      durationMs,
+        groupCount: rpcPage.pagination.totalGroups,
+      });
+
+      return {
+        ...rpcPage,
+        facets: EMPTY_VITRINE_FACETS,
+      };
+    }
+
+    logger.warn('RPC get_vitrine_page vazio sem filtros; tentando pipeline JS', {
       userId,
       page,
-      filters: normalizedFilters,
-      rowCount: rpcPage.totalModulosFiltrados,
-      groupCount: rpcPage.pagination.totalGroups,
+      isAdmin,
     });
-
-    return {
-      ...rpcPage,
-      facets: EMPTY_VITRINE_FACETS,
-    };
   } catch (err) {
     const durationMs = Date.now() - startAt;
 
