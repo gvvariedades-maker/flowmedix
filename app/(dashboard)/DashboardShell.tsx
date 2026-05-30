@@ -26,7 +26,6 @@ import { EstudoReversoWelcomeModal } from '@/components/onboarding/EstudoReverso
 import { PwaInstallProvider } from '@/components/pwa/PwaInstallProvider';
 import { PwaInstallNavButton } from '@/components/pwa/PwaInstallNavButton';
 import { useEstudoReversoWelcome } from '@/components/onboarding/useEstudoReversoWelcome';
-import { AvantLogo } from '@/components/brand/AvantLogo';
 import { cn } from '@/lib/utils';
 import type { ProSource } from '@/lib/freemium';
 import { supabase } from '@/lib/supabase/client';
@@ -499,16 +498,14 @@ function DashboardContent({
     <div className="dashboard-surface flex h-[100dvh] max-h-[100dvh] min-h-0 bg-background font-sans text-foreground">
       {/* --- SIDEBAR FIXA --- */}
       <aside className="relative z-20 hidden w-[18rem] shrink-0 flex-col border-r border-white/10 bg-[#06090f] md:flex">
-        <div className="px-5 pb-3 pt-10">
-          <AvantLogo variant="lockup" size="nav" animated={false} />
-        </div>
-
+        <div className="pt-6">
         <PlanStatusCard
           cidadeExibicao={cidadeExibicao}
           isPro={isPro}
           proSource={proSource}
           proExpiresAt={proExpiresAt}
         />
+        </div>
 
         <DashboardNav
           menuItems={menuItems}
@@ -560,8 +557,7 @@ function DashboardContent({
               exit={{ x: '-100%' }}
               transition={drawerSpring}
             >
-              <div className="flex items-center justify-between px-5 pb-2 pt-8">
-                <AvantLogo variant="lockup" size="nav" animated={false} />
+              <div className="flex items-center justify-end px-5 pb-2 pt-6">
                 <button
                   ref={closeDrawerButtonRef}
                   type="button"

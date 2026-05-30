@@ -2,9 +2,8 @@
 
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
-import { BarChart3, Brain, Zap, type LucideIcon } from 'lucide-react';
+import { Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 import type { ProSource } from '@/lib/freemium';
 import { FREEMIUM_PLAN_LIMITS_COMPACT } from '@/lib/freemium';
 
@@ -23,48 +22,6 @@ const cardEnter = {
     transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const },
   },
 };
-
-const featureEnter = (delay: number, reduced: boolean) =>
-  reduced
-    ? { hidden: { opacity: 1, x: 0 }, visible: { opacity: 1, x: 0 } }
-    : {
-        hidden: { opacity: 0, x: 8 },
-        visible: {
-          opacity: 1,
-          x: 0,
-          transition: { duration: 0.35, delay, ease: [0.16, 1, 0.3, 1] as const },
-        },
-      };
-
-const PRO_FEATURES: {
-  icon: LucideIcon;
-  label: string;
-  detail: string;
-  iconClass: string;
-  boxClass: string;
-}[] = [
-  {
-    icon: Brain,
-    label: 'NeuroSlides ilimitados',
-    detail: 'todos os 4 tipos',
-    iconClass: 'text-[#00f2ff]',
-    boxClass: 'border-[#00f2ff]/25 bg-[#00f2ff]/10',
-  },
-  {
-    icon: BarChart3,
-    label: 'Simulados completos',
-    detail: 'com análise por banca',
-    iconClass: 'text-[#00ff88]',
-    boxClass: 'border-[#00ff88]/25 bg-[#00ff88]/[0.08]',
-  },
-  {
-    icon: Zap,
-    label: 'Estudo reverso guiado',
-    detail: 'por questão de concurso',
-    iconClass: 'text-[#ff0055]',
-    boxClass: 'border-[#ff0055]/25 bg-[#ff0055]/[0.08]',
-  },
-];
 
 function formatProExpiryShort(iso: string | null): string | null {
   if (!iso) return null;
@@ -200,46 +157,11 @@ export function PlanStatusCard({
             </div>
           )}
 
-          {isPro ? (
-            <motion.ul
-              className="space-y-2.5"
-              initial="hidden"
-              animate="visible"
-              variants={{
-                visible: { transition: { staggerChildren: reducedMotion ? 0 : 0.08 } },
-              }}
-            >
-              {PRO_FEATURES.map((feature, index) => {
-                const Icon = feature.icon;
-                const delay = 0.1 + index * 0.05;
-                return (
-                  <motion.li
-                    key={feature.label}
-                    variants={featureEnter(delay, !!reducedMotion)}
-                    className="flex items-start gap-3"
-                  >
-                    <div
-                      className={cn(
-                        'flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border',
-                        feature.boxClass,
-                      )}
-                    >
-                      <Icon size={16} className={feature.iconClass} aria-hidden />
-                    </div>
-                    <p className="text-[13px] leading-snug text-slate-300">
-                      <span className="font-semibold text-slate-100">{feature.label}</span>
-                      {' — '}
-                      <span className="font-normal text-slate-400">{feature.detail}</span>
-                    </p>
-                  </motion.li>
-                );
-              })}
-            </motion.ul>
-          ) : (
+          {!isPro ? (
             <p className="text-center text-xs font-medium leading-relaxed text-slate-500">
               {FREEMIUM_PLAN_LIMITS_COMPACT}
             </p>
-          )}
+          ) : null}
 
           {inviteExpiry ? (
             <p className="text-center text-xs font-medium text-slate-500">
