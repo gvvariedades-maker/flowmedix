@@ -1,8 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useCallback, useEffect, useMemo, useRef, useState, type RefObject } from 'react';
-import { createPortal } from 'react-dom';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Loader2, ChevronRight, ClipboardList } from 'lucide-react';
@@ -43,52 +42,9 @@ import {
   buildQuestionSubjectLine,
   stripLeadingQuestionEnumeration,
 } from '@/lib/questionHeader';
-import {
-  MOBILE_ACTION_BAR_Z,
-  MOBILE_BOTTOM_NAV_FIXED_BOTTOM,
-} from '@/lib/layout/mobileBottomNav';
+import { SimuladoMobileActionBar } from '@/components/simulados/SimuladoMobileActionBar';
 import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
-
-const MOBILE_ACTION_BAR_SHELL = cn(
-  'fixed inset-x-0 border-t border-white/10 bg-[#010409]/95 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-[#010409]/90',
-  MOBILE_BOTTOM_NAV_FIXED_BOTTOM,
-  MOBILE_ACTION_BAR_Z,
-);
-
-type SimuladoMobileActionBarProps = {
-  actionRef?: RefObject<HTMLDivElement | null>;
-  className?: string;
-  children: React.ReactNode;
-};
-
-function SimuladoMobileActionBar({ actionRef, className, children }: SimuladoMobileActionBarProps) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  /** Dois botões empilhados no mobile (confirmar/finalizar + próxima). */
-  const mobileSpacer = 'h-[8.5rem]';
-
-  return (
-    <>
-      <div className={cn('shrink-0 md:hidden', mobileSpacer)} aria-hidden />
-      {mounted
-        ? createPortal(
-            <div ref={actionRef} className={cn(MOBILE_ACTION_BAR_SHELL, 'md:hidden')}>
-              <div className={cn('mx-auto w-full max-w-3xl', className)}>{children}</div>
-            </div>,
-            document.body,
-          )
-        : null}
-      <div className="hidden w-full md:block">
-        <div className={cn('mx-auto w-full max-w-3xl', className)}>{children}</div>
-      </div>
-    </>
-  );
-}
 
 type FeedbackState = {
   acertou: boolean;

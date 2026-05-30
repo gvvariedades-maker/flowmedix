@@ -41,16 +41,23 @@ type SimuladosListClientProps = {
 };
 
 export function SimuladosListClient({ openSession, recentSessions }: SimuladosListClientProps) {
-  const { pageBottomPadding } = useDashboardBottomInset('default');
+  const { pwaVisible } = useDashboardBottomInset('default');
   const isEmpty = !openSession && recentSessions.length === 0;
 
   return (
-    <div className={cn('min-h-screen bg-[#010409]', pageBottomPadding)}>
+    <div className="bg-[#010409]">
       <div className="sticky top-0 z-20 border-b border-[rgba(255,255,255,0.08)] bg-[#010409]/95 shadow-[0_8px_32px_-16px_rgba(0,0,0,0.5)] backdrop-blur-md supports-[backdrop-filter]:bg-[#010409]/90">
         <SimuladosHeader />
       </div>
 
-      <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 md:px-10 md:pt-8">
+      <div
+        className={cn(
+          'mx-auto max-w-4xl px-4 py-6 sm:px-6 md:px-10 md:pt-8 md:pb-8',
+          pwaVisible
+            ? 'max-md:pb-[calc(5rem+6rem+env(safe-area-inset-bottom,0px)+1.25rem)]'
+            : 'max-md:pb-[calc(5rem+env(safe-area-inset-bottom,0px)+1.25rem)]',
+        )}
+      >
         {isEmpty ? (
           <SimuladosEmptyState />
         ) : (

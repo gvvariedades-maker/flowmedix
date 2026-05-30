@@ -18,7 +18,6 @@ export default async function PlanoDiarioPage() {
 
   return (
     <PlanoDiarioClient
-      userId={userId}
       revisoes={revisoesDoDia}
       totalPendentes={total}
       limite={LIMITE_DIARIO}

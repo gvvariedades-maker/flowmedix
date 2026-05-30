@@ -26,7 +26,7 @@ import {
   FREEMIUM_PLAN_LIMITS_DESCRIPTION,
 } from '@/lib/freemium';
 import { PaywallModal } from '@/components/freemium/PaywallModal';
-import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
+import { SimuladoMobileActionBar } from '@/components/simulados/SimuladoMobileActionBar';
 
 function formatZodIssues(issues: ZodIssue[]): string {
   const first = issues[0];
@@ -258,11 +258,36 @@ export function SimuladosSetupClient() {
   const bump = (delta: number) =>
     setQuantidade(String(Math.min(100, Math.max(1, qNum + delta))));
 
+  const submitButton =
+    simuladoFreeLimitReached ? (
+      <Button
+        type="button"
+        disabled={loading}
+        onClick={() => setPaywallOpen(true)}
+        className="h-12 w-full rounded-2xl border border-amber-400/40 bg-amber-400/15 text-base font-semibold text-amber-200 hover:bg-amber-400/25"
+      >
+        Limite diário atingido — ver AVANT Pro
+      </Button>
+    ) : (
+      <Button
+        type="submit"
+        form="simulado-setup-form"
+        disabled={loading}
+        className="inline-flex h-12 w-full rounded-2xl border border-cyan-500/40 bg-cyan-500/15 text-base font-semibold text-cyan-300 hover:bg-cyan-500/25"
+      >
+        {loading ? (
+          <>
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+            Montando simulado…
+          </>
+        ) : (
+          startLabel
+        )}
+      </Button>
+    );
+
   return (
-    <DashboardMobilePage
-      variant="default"
-      className="min-h-screen bg-[#010409] px-4 pt-6 sm:px-6 sm:pb-8 lg:px-8"
-    >
+    <div className="bg-[#010409] px-4 pt-6 sm:px-6 lg:px-8 md:pb-8">
       <div className="mx-auto max-w-3xl">
         <SimuladosBackLink className="mb-3" />
         <PageHeader
@@ -546,33 +571,11 @@ export function SimuladosSetupClient() {
               className="py-10"
             />
           )}
-
-          {simuladoFreeLimitReached ? (
-            <Button
-              type="button"
-              disabled={loading}
-              onClick={() => setPaywallOpen(true)}
-              className="h-12 w-full rounded-2xl border border-amber-400/40 bg-amber-400/15 text-base font-semibold text-amber-200 hover:bg-amber-400/25"
-            >
-              Limite diário atingido — ver AVANT Pro
-            </Button>
-          ) : (
-            <Button
-              type="submit"
-              disabled={loading}
-              className="inline-flex h-12 w-full rounded-2xl border border-cyan-500/40 bg-cyan-500/15 text-base font-semibold text-cyan-300 hover:bg-cyan-500/25"
-            >
-              {loading ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
-                  Montando simulado…
-                </>
-              ) : (
-                startLabel
-              )}
-            </Button>
-          )}
         </form>
+
+        <SimuladoMobileActionBar className="mt-2 flex flex-col gap-2">
+          {submitButton}
+        </SimuladoMobileActionBar>
       </div>
 
       <PaywallModal
@@ -582,6 +585,6 @@ export function SimuladosSetupClient() {
         isAuthenticated
         variant="simulado"
       />
-    </DashboardMobilePage>
+    </div>
   );
 }

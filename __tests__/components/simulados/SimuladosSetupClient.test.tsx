@@ -32,6 +32,11 @@ jest.mock('@/components/freemium/PaywallModal', () => ({
   PaywallModal: () => null,
 }));
 
+jest.mock('@/components/simulados/SimuladoMobileActionBar', () => ({
+  SimuladoMobileActionBar: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+  SIMULADO_RESUMO_MOBILE_ACTION_SPACER: 'h-[12.5rem]',
+}));
+
 jest.mock('@/components/ui/select', () => {
   const React = require('react');
   return {

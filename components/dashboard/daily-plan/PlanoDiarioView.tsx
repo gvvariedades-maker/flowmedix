@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import {
   BookOpen,
   CalendarDays,
-  CheckCircle2,
   Clock,
   Flame,
   Lock,
@@ -15,9 +14,6 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
-import { MOBILE_STICKY_ABOVE_NAV_BOTTOM } from '@/lib/layout/mobileBottomNav';
-import { cn } from '@/lib/utils';
-import { PlanoDiarioMarcadosProvider, usePlanoDiarioMarcadosContext } from './PlanoDiarioMarcadosContext';
 import { PlanoDiarioTopicCard } from './PlanoDiarioTopicCard';
 import type { PlanoDiarioProps } from './types';
 
@@ -85,29 +81,7 @@ function PlanoDiarioSimuladoCta() {
   );
 }
 
-function PlanoDiarioLembretesToolbar() {
-  const { limparHoje, marcadosCount } = usePlanoDiarioMarcadosContext();
-  if (marcadosCount === 0) return null;
-  return (
-    <div className="flex flex-wrap items-center justify-center gap-2">
-      <p className="text-center text-xs text-slate-400">
-        {marcadosCount} {marcadosCount === 1 ? 'item' : 'itens'} lembrado
-        {marcadosCount === 1 ? '' : 's'} neste aparelho
-      </p>
-      <Button
-        type="button"
-        variant="ghost"
-        size="sm"
-        onClick={limparHoje}
-        className="h-auto py-1 text-xs font-medium text-sky-400 underline-offset-2 hover:text-sky-300 hover:underline"
-      >
-        Limpar lembretes de hoje
-      </Button>
-    </div>
-  );
-}
-
-export default function PlanoDiarioView({ userId, revisoes, totalPendentes, limite }: PlanoDiarioProps) {
+export default function PlanoDiarioView({ revisoes, totalPendentes, limite }: PlanoDiarioProps) {
   const hoje = new Date();
   const dataFormatada = hoje.toLocaleDateString('pt-BR', {
     weekday: 'long',
@@ -120,14 +94,12 @@ export default function PlanoDiarioView({ userId, revisoes, totalPendentes, limi
   }
 
   return (
-    <PlanoDiarioMarcadosProvider userId={userId}>
-      <PlanoDiarioConteúdo
-        dataFormatada={dataFormatada}
-        limite={limite}
-        revisoes={revisoes}
-        totalPendentes={totalPendentes}
-      />
-    </PlanoDiarioMarcadosProvider>
+    <PlanoDiarioConteúdo
+      dataFormatada={dataFormatada}
+      limite={limite}
+      revisoes={revisoes}
+      totalPendentes={totalPendentes}
+    />
   );
 }
 
@@ -189,7 +161,6 @@ function PlanoDiarioConteúdo({
       <div className="mx-auto max-w-3xl space-y-8 px-4 py-10 md:px-10">
         <PlanoDiarioInfoAlgoritmo />
         <PlanoDiarioSimuladoCta />
-        <PlanoDiarioLembretesToolbar />
 
         <ul className="space-y-8">
           {revisoes.map((item, index) => (
@@ -227,24 +198,6 @@ function PlanoDiarioConteúdo({
               Estudar novas questões
             </Link>
           </Button>
-        </div>
-
-        <div
-          className={cn(
-            'sticky z-10 mb-6 flex justify-center',
-            MOBILE_STICKY_ABOVE_NAV_BOTTOM,
-            'md:bottom-6',
-          )}
-        >
-          <div className="pointer-events-none max-w-md px-2">
-            <div className="pointer-events-auto flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.10)] bg-[#0d1117]/95 px-4 py-3 text-left shadow-lg shadow-black/40 backdrop-blur-sm">
-              <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" aria-hidden />
-              <span className="text-xs font-medium text-slate-400">
-                O checkbox marca um lembrete local (só neste aparelho). A revisão oficial exige o estudo reverso
-                na questão.
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </DashboardMobilePage>

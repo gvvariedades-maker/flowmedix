@@ -3,7 +3,6 @@ import type { ReviewItem } from '@/lib/spaced-repetition';
 
 /** Payload do Plano Diário (Server → Client). */
 export interface PlanoDiarioProps {
-  userId: string;
   revisoes: ReviewItem[];
   totalPendentes: number;
   limite: number;

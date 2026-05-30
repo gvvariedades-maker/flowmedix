@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { ChevronRight, Clock, Flame, MoreVertical, RefreshCcw } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Checkbox } from '@/components/ui/checkbox';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,8 +13,6 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import type { ReviewItem } from './types';
-import { getPlanoItemId } from './plano-marcados-storage';
-import { usePlanoDiarioMarcadosContext } from './PlanoDiarioMarcadosContext';
 import { categoriaTópico, prioridadeBarPct, urgenciaInfo } from './topic-helpers';
 import { cn } from '@/lib/utils';
 
@@ -29,9 +26,6 @@ function assuntoDisplay(item: ReviewItem): string {
 }
 
 export function PlanoDiarioTopicCard({ item, index }: Props) {
-  const { isMarcado, toggle, hydrated } = usePlanoDiarioMarcadosContext();
-  const itemId = getPlanoItemId(item);
-  const marcado = hydrated && isMarcado(itemId);
   const href = `/estudar/${item.modulo_slug}?from=plano`;
   const cat = categoriaTópico(item);
   const urg = urgenciaInfo(item);
@@ -54,20 +48,9 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
           'shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]',
           'transition-all duration-300 ease-out',
           'hover:scale-[1.01] hover:shadow-md hover:shadow-black/40',
-          marcado &&
-            'border-emerald-500/35 bg-emerald-950/[0.35] ring-1 ring-emerald-500/30',
         )}
       >
         <div className="flex flex-1 items-start gap-4">
-          <div className="pt-0.5">
-            <Checkbox
-              className="mt-0.5"
-              checked={marcado}
-              onCheckedChange={() => toggle(itemId)}
-              aria-label={`Marcar lembrete local — questão ${index + 1} (não substitui o estudo reverso)`}
-            />
-          </div>
-
           <div
             className={cn(
               'flex h-12 w-12 shrink-0 items-center justify-center rounded-full transition-transform duration-200',
