@@ -1,7 +1,14 @@
 import { redirect, notFound } from 'next/navigation';
 import { logger } from '@/lib/logger';
-import { getModulosEstudoForUserCached, getHistoricoQuestoesCached } from '@/lib/cache';
+import {
+  aggregateNotebookProgress,
+  estudadosSetFromHistorico,
+  getHistoricoQuestoesForSlugsCached,
+  getModulosEstudoForUserCached,
+} from '@/lib/cache';
 import CadernoDetailClient from './CadernoDetailClient';
+import CadernoDetailMetrics from '@/components/dashboard/cadernos/CadernoDetailMetrics';
+import CadernoReverseStudyBadge from '@/components/dashboard/cadernos/CadernoReverseStudyBadge';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
 
 export interface NotebookItem {
@@ -63,16 +70,15 @@ export default async function CadernoDetailPage({
 
     if (itemsError) throw itemsError;
 
+    const slugs = (items ?? []).map((item) => item.modulo_slug);
+
     const [modulos, historico] = await Promise.all([
       getModulosEstudoForUserCached(session.user.id),
-      getHistoricoQuestoesCached(session.user.id),
+      getHistoricoQuestoesForSlugsCached(session.user.id, slugs),
     ]);
 
-    const estudadosSet = new Set<string>(
-      (historico as any[])
-        .filter(h => h.estudo_reverso_concluido === true)
-        .map(h => h.modulo_slug as string)
-    );
+    const stats = aggregateNotebookProgress(slugs, historico);
+    const estudadosSet = estudadosSetFromHistorico(historico);
 
     const codigoPorSlug = new Map<string, number | null>();
     const accessibleSlugs = new Set<string>();
@@ -116,6 +122,8 @@ export default async function CadernoDetailPage({
       <CadernoDetailClient
         caderno={caderno}
         modulosDisponiveis={modulosDisponiveis}
+        metricsSlot={<CadernoDetailMetrics stats={stats} />}
+        reverseStudyBadgeSlot={<CadernoReverseStudyBadge />}
       />
     );
   } catch (error) {

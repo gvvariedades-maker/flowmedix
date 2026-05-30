@@ -330,6 +330,51 @@ export function estudadosSetFromHistorico(
   );
 }
 
+/** Métricas agregadas de progresso de um caderno (slugs do caderno × histórico). */
+export type NotebookProgressStats = {
+  totalQuestions: number;
+  /** Slugs do caderno com qualquer linha em `historico_questoes`. */
+  answeredQuestions: number;
+  /** Slugs do caderno com `estudo_reverso_concluido === true`. */
+  reversoCompleted: number;
+};
+
+/**
+ * Agrega progresso do caderno a partir dos slugs e do histórico filtrado.
+ * Deduplica por `modulo_slug` no histórico (pode haver várias linhas por slug).
+ */
+export function aggregateNotebookProgress(
+  slugs: readonly string[],
+  historico: readonly Pick<HistoricoQuestaoCachedRow, 'modulo_slug' | 'estudo_reverso_concluido'>[],
+): NotebookProgressStats {
+  const notebookSlugs = uniqueNonEmptySlugs(slugs);
+
+  const answeredBySlug = new Set<string>();
+  const reversoBySlug = new Set<string>();
+
+  for (const row of historico) {
+    const slug = row.modulo_slug?.trim();
+    if (!slug) continue;
+    answeredBySlug.add(slug);
+    if (row.estudo_reverso_concluido === true) {
+      reversoBySlug.add(slug);
+    }
+  }
+
+  let answeredQuestions = 0;
+  let reversoCompleted = 0;
+  for (const slug of notebookSlugs) {
+    if (answeredBySlug.has(slug)) answeredQuestions++;
+    if (reversoBySlug.has(slug)) reversoCompleted++;
+  }
+
+  return {
+    totalQuestions: notebookSlugs.length,
+    answeredQuestions,
+    reversoCompleted,
+  };
+}
+
 /**
  * Histórico restrito aos slugs do contexto (player, assunto, vitrine).
  * Evita buscar até 1000 linhas quando só o subconjunto atual importa.

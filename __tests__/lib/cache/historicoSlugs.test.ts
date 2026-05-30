@@ -26,6 +26,7 @@ jest.mock('@/lib/supabase/server', () => ({
 }));
 
 import {
+  aggregateNotebookProgress,
   estudadosSetFromHistorico,
   getHistoricoQuestoesForSlugsCached,
 } from '@/lib/cache';
@@ -59,5 +60,68 @@ describe('estudadosSetFromHistorico', () => {
     expect(set.has('slug-a')).toBe(true);
     expect(set.has('slug-b')).toBe(false);
     expect(set.size).toBe(1);
+  });
+});
+
+describe('aggregateNotebookProgress', () => {
+  it('conta respondidas e estudo reverso com dedupe por slug no histórico', () => {
+    const slugs = ['slug-a', 'slug-b', 'slug-c'];
+    const historico = [
+      { modulo_slug: 'slug-a', estudo_reverso_concluido: true },
+      { modulo_slug: 'slug-a', estudo_reverso_concluido: false },
+      { modulo_slug: 'slug-b', estudo_reverso_concluido: false },
+    ];
+
+    expect(aggregateNotebookProgress(slugs, historico)).toEqual({
+      totalQuestions: 3,
+      answeredQuestions: 2,
+      reversoCompleted: 1,
+    });
+  });
+
+  it('retorna zeros com caderno vazio', () => {
+    expect(aggregateNotebookProgress([], historicoRows)).toEqual({
+      totalQuestions: 0,
+      answeredQuestions: 0,
+      reversoCompleted: 0,
+    });
+  });
+
+  it('deduplica slugs repetidos no caderno ao contar totalQuestions', () => {
+    expect(
+      aggregateNotebookProgress(['slug-a', 'slug-a', 'slug-b'], [
+        { modulo_slug: 'slug-a', estudo_reverso_concluido: true },
+      ]),
+    ).toEqual({
+      totalQuestions: 2,
+      answeredQuestions: 1,
+      reversoCompleted: 1,
+    });
+  });
+
+  it('ignora histórico de slugs fora do caderno', () => {
+    expect(
+      aggregateNotebookProgress(['slug-a'], [
+        { modulo_slug: 'slug-a', estudo_reverso_concluido: false },
+        { modulo_slug: 'slug-outro', estudo_reverso_concluido: true },
+      ]),
+    ).toEqual({
+      totalQuestions: 1,
+      answeredQuestions: 1,
+      reversoCompleted: 0,
+    });
+  });
+
+  it('marca estudo reverso se qualquer linha duplicada tiver concluído', () => {
+    expect(
+      aggregateNotebookProgress(['slug-a'], [
+        { modulo_slug: 'slug-a', estudo_reverso_concluido: false },
+        { modulo_slug: 'slug-a', estudo_reverso_concluido: true },
+      ]),
+    ).toEqual({
+      totalQuestions: 1,
+      answeredQuestions: 1,
+      reversoCompleted: 1,
+    });
   });
 });

@@ -19,6 +19,7 @@ import {
   BookMarked,
   ChevronDown,
 } from 'lucide-react';
+import type { ReactNode } from 'react';
 import type { CadernoDetail, ModuloDisponivel, NotebookItem } from './page';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
@@ -26,6 +27,7 @@ import { cn } from '@/lib/utils';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 import { DashboardFilterSelect } from '@/components/dashboard/DashboardFilterSelect';
 import { SELECT_TRIGGER_DARK_PANEL } from '@/components/dashboard/dashboard-select-dark';
+import { SearchPanelToggle } from '@/components/dashboard/cadernos/SearchPanelToggle';
 
 // ── Componente: item do caderno ────────────────────────────────────────────
 function ItemCaderno({
@@ -413,9 +415,13 @@ function BuilderPanel({
 export default function CadernoDetailClient({
   caderno,
   modulosDisponiveis: inicial,
+  metricsSlot,
+  reverseStudyBadgeSlot,
 }: {
   caderno: CadernoDetail;
   modulosDisponiveis: ModuloDisponivel[];
+  metricsSlot?: ReactNode;
+  reverseStudyBadgeSlot?: ReactNode;
 }) {
   const { pageBottomPadding } = useDashboardBottomInset('default');
   const router = useRouter();
@@ -452,7 +458,6 @@ export default function CadernoDetailClient({
     setModulos(prev => prev.filter(m => !slugs.has(m.modulo_slug)));
   };
 
-  const estudadas = items.filter(i => i.estudada).length;
   const firstSlug = items.find(i => !i.estudada)?.modulo_slug || items[0]?.modulo_slug;
 
   return (
@@ -481,12 +486,7 @@ export default function CadernoDetailClient({
                     <Layers size={11} className="mr-1 inline" aria-hidden />
                     {items.length} {items.length === 1 ? 'questão' : 'questões'}
                   </span>
-                  {items.length > 0 && (
-                    <span className="text-xs font-bold text-emerald-400">
-                      <CheckCircle2 size={11} className="mr-1 inline" aria-hidden />
-                      {estudadas}/{items.length} estudadas
-                    </span>
-                  )}
+                  {metricsSlot}
                 </div>
               </div>
 
@@ -495,7 +495,7 @@ export default function CadernoDetailClient({
                   href={`/estudar/${firstSlug}?from=caderno&caderno_id=${caderno.id}`}
                   className="flex items-center gap-2 rounded-2xl bg-cyan-500 px-5 py-3 text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-cyan-950/40 transition-all hover:bg-cyan-600"
                 >
-                  <Play size={15} aria-hidden /> Estudar caderno
+                  <Play size={15} aria-hidden /> ESTUDAR COM NEUROSLIDES
                 </Link>
               )}
             </div>
@@ -503,11 +503,12 @@ export default function CadernoDetailClient({
         </div>
       </div>
 
-      {/* Conteúdo: 2 colunas */}
+      {/* Conteúdo: lista + painel de busca */}
       <div className="mx-auto max-w-6xl px-6 py-6 md:px-10 md:pt-8">
-        <div className="grid min-h-[70vh] grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className="flex min-h-[70vh] flex-col gap-6 lg:flex-row">
           {/* Coluna esquerda: itens do caderno */}
-          <div className="flex flex-col gap-3">
+          <div className="flex min-w-0 flex-1 flex-col gap-3">
+            {reverseStudyBadgeSlot}
             <p className="px-1 text-[10px] font-black uppercase tracking-widest text-slate-500">
               Questões no caderno ({items.length})
             </p>
@@ -517,7 +518,7 @@ export default function CadernoDetailClient({
                 <BookOpen size={32} className="text-slate-500" aria-hidden />
                 <p className="text-sm font-bold text-slate-400">Nenhuma questão ainda</p>
                 <p className="max-w-xs text-xs text-slate-400">
-                  Use o painel ao lado para buscar e adicionar questões ao caderno.
+                  Use o painel de busca para adicionar questões ao caderno.
                 </p>
               </div>
             ) : (
@@ -537,20 +538,14 @@ export default function CadernoDetailClient({
             )}
           </div>
 
-          {/* Coluna direita: builder */}
-          <div className="lg:sticky lg:top-6 lg:h-[calc(100vh-160px)]">
-            <p className="mb-3 px-1 text-xs font-black uppercase tracking-widest text-slate-500">
-              Buscar questões ({modulos.length} disponíveis)
-            </p>
-            <div className="h-[calc(100%-28px)]">
-              <BuilderPanel
-                modulos={modulos}
-                notebookId={caderno.id}
-                onAdded={handleAdded}
-                onAddedMany={handleAddedMany}
-              />
-            </div>
-          </div>
+          <SearchPanelToggle modulosCount={modulos.length}>
+            <BuilderPanel
+              modulos={modulos}
+              notebookId={caderno.id}
+              onAdded={handleAdded}
+              onAddedMany={handleAddedMany}
+            />
+          </SearchPanelToggle>
         </div>
       </div>
     </div>
