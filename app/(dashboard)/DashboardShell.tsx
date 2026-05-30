@@ -11,7 +11,7 @@ import {
   ShieldCheck,
   BarChart3,
   LogOut,
-  Menu,
+  Search,
   X,
   CalendarDays,
   BookMarked,
@@ -725,31 +725,43 @@ function DashboardContent({
       {/* --- ÁREA PRINCIPAL ---
           Sombra interna só em md+: cobre artefatos escuros no encaixe com a sidebar; evita linha na barra quando não há sidebar. */}
       <div className="flex h-full min-h-0 flex-1 flex-col overflow-hidden">
-        <header className="sticky top-0 z-30 grid shrink-0 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-2 border-b border-border bg-background/85 px-4 py-3 pt-safe backdrop-blur-md md:hidden">
+        <header className="sticky top-0 z-30 flex shrink-0 items-center justify-between border-b border-white/[0.08] bg-[#06090f]/90 px-4 py-3 pt-safe backdrop-blur-xl md:hidden">
           <button
             ref={openMenuButtonRef}
             type="button"
-            onClick={() => setMobileMenuOpen(true)}
-            className="flex shrink-0 items-center justify-center p-1 opacity-0 pointer-events-none"
+            className="sr-only"
             aria-label="Abrir menu"
             aria-expanded={mobileMenuOpen}
             aria-controls={mobileMenuOpen ? 'dashboard-mobile-drawer' : undefined}
-          >
-            <Menu size={20} className="text-slate-400 hover:text-white transition-colors" />
-          </button>
+            tabIndex={-1}
+          />
 
-          <div className="flex min-w-0 justify-center">
-            <AvantLogo variant="icon" size="nav" animated={false} />
+          <div className="flex items-center gap-2">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-indigo-500 shadow-md shadow-indigo-500/35">
+              <Zap size={15} className="text-[#BEF264]" fill="currentColor" aria-hidden />
+            </div>
+            <span className="text-[17px] font-extrabold tracking-tight text-white">AVANT</span>
           </div>
 
-          <div
-            className={cn(
-              'flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-bold',
-              USER_AVATAR_CLASSES,
-            )}
-            aria-hidden
-          >
-            {userInitials}
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new CustomEvent('avant:open-search'))}
+              aria-label="Abrir busca"
+              className="flex h-8 w-8 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-slate-400 transition-colors hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
+            >
+              <Search size={15} aria-hidden />
+            </button>
+
+            <div
+              className={cn(
+                'flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold',
+                USER_AVATAR_CLASSES,
+              )}
+              aria-hidden
+            >
+              {userInitials}
+            </div>
           </div>
         </header>
 

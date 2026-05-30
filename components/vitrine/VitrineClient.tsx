@@ -207,6 +207,19 @@ export default function VitrineClient({
   const [pagina, setPagina] = useState(1);
   const [searchOpen, setSearchOpen] = useState(false);
   const [bancaSheetOpen, setBancaSheetOpen] = useState(false);
+
+  useEffect(() => {
+    const handler = () => {
+      setSearchOpen(true);
+      requestAnimationFrame(() => {
+        document
+          .querySelector<HTMLInputElement>('input[placeholder*="Assunto"]')
+          ?.focus();
+      });
+    };
+    window.addEventListener('avant:open-search', handler);
+    return () => window.removeEventListener('avant:open-search', handler);
+  }, []);
   const [assuntoSheetOpen, setAssuntoSheetOpen] = useState(false);
   const [gruposPagina, setGruposPagina] = useState<GrupoSubtopico[]>([]);
   const [bancas, setBancas] = useState<string[]>([]);
