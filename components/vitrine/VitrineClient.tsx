@@ -413,7 +413,7 @@ export default function VitrineClient({
         : `${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`;
 
   return (
-    <div className="dashboard-surface min-h-screen bg-background pb-24 pb-safe text-foreground selection:bg-indigo-100 selection:text-indigo-900">
+    <div className="dashboard-surface min-h-screen bg-background pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] text-foreground selection:bg-indigo-100 selection:text-indigo-900 md:pb-8">
       <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
         {/* Header mobile */}
         <div className="flex items-center justify-between px-4 py-3 md:hidden">
@@ -1069,7 +1069,6 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
     banca,
     totalResolvidas,
     totalQuestoes,
-    percentual,
     trabalhadas,
     questoes,
     firstSlug,
@@ -1151,23 +1150,6 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
             <span>
               {totalQuestoes} questão{totalQuestoes !== 1 ? 'ões' : ''}
             </span>
-            {totalResolvidas > 0 && (
-              <>
-                <span className="text-white/15">·</span>
-                <span
-                  className={cn(
-                    'font-semibold',
-                    percentual >= 70
-                      ? 'text-[#00ff88]'
-                      : percentual >= 40
-                        ? 'text-amber-400'
-                        : 'text-[#ff0055]',
-                  )}
-                >
-                  {percentual}% acerto
-                </span>
-              </>
-            )}
           </p>
         </div>
         {mostrarCheckConclusao && (

@@ -1,7 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Loader2, ChevronRight, ClipboardList } from 'lucide-react';
@@ -42,10 +42,6 @@ import {
   buildQuestionSubjectLine,
   stripLeadingQuestionEnumeration,
 } from '@/lib/questionHeader';
-
-/** Alinhado ao `pb-[72px]` do DashboardShell + safe area do BottomNav mobile. */
-const MOBILE_DASHBOARD_BOTTOM_NAV_CLEARANCE =
-  'calc(4.5rem + env(safe-area-inset-bottom, 0px))' as const;
 
 type FeedbackState = {
   acertou: boolean;
@@ -113,6 +109,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const [resetEm, setResetEm] = useState<string | null>(null);
   const [simuladoLimiteAtingido, setSimuladoLimiteAtingido] = useState(false);
   const optionsGroupRef = useRef<HTMLDivElement | null>(null);
+  const confirmarRespostaRef = useRef<HTMLDivElement>(null);
   const questionLoadIdRef = useRef(0);
 
   const firstPendingSlug = useMemo(() => {
@@ -336,6 +333,18 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     submitting || (!isTreino && !!activeItem?.respondida) || simuladoBlockedForNewAnswer;
   const canConfirm = !!selectedOption && !submitting && !isAnswerLocked && !simuladoBlockedForNewAnswer;
   const canAdvance = !!feedback && !advancing;
+  const confirmLabel =
+    activeItem?.respondida && isTreino ? 'Atualizar resposta' : 'Confirmar resposta';
+  const showConfirmAction = !!selectedOption && !feedback && !isAnswerLocked;
+
+  useLayoutEffect(() => {
+    if (!showConfirmAction) return;
+    confirmarRespostaRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'nearest',
+    });
+  }, [showConfirmAction, selectedOption]);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -441,7 +450,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const showFinalFeedbackCta = finalFeedbackPending && !!feedback && !hasPending;
 
   return (
-    <div className="min-h-screen bg-[#010409] px-4 pb-[calc(11rem+4.5rem+env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pb-safe lg:px-8">
+    <div className="min-h-screen bg-[#010409] px-4 pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] pt-6 sm:px-6 sm:pb-safe lg:px-8">
       <div className="mx-auto max-w-3xl space-y-6">
         <PageHeader
           title="Simulado em andamento"
@@ -604,11 +613,11 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
               )}
             </div>
 
-            <div className="hidden flex-col gap-3 sm:flex sm:flex-row sm:justify-end">
-              {feedback ? (
+            {feedback ? (
+              <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:justify-end">
                 <Button
                   type="button"
-                  disabled={advancing}
+                  disabled={!canAdvance}
                   onClick={() => {
                     if (showFinalFeedbackCta) {
                       setFinalFeedbackPending(false);
@@ -616,7 +625,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                     }
                     void handleNext();
                   }}
-                  className="h-11 rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25"
+                  className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 sm:w-auto sm:min-w-[12rem]"
                 >
                   {advancing ? (
                     <>
@@ -630,12 +639,17 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                     </>
                   )}
                 </Button>
-              ) : (
+              </div>
+            ) : showConfirmAction ? (
+              <div
+                ref={confirmarRespostaRef}
+                className="scroll-mt-4 pt-2 sm:flex sm:justify-end"
+              >
                 <Button
                   type="button"
                   disabled={!canConfirm}
                   onClick={() => void handleConfirmAnswer()}
-                  className="h-11 rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50"
+                  className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50 sm:w-auto sm:min-w-[12rem]"
                 >
                   {submitting ? (
                     <>
@@ -643,61 +657,11 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                       Confirmando…
                     </>
                   ) : (
-                    activeItem?.respondida && isTreino ? 'Atualizar resposta' : 'Confirmar resposta'
+                    confirmLabel
                   )}
                 </Button>
-              )}
-            </div>
-          </div>
-        )}
-
-        {!loadingQuestion && !questionError && activeSlug && activeItem && (
-          <div
-            className="fixed inset-x-0 z-30 border-t border-white/10 bg-[#010409]/95 p-4 backdrop-blur supports-[backdrop-filter]:bg-[#010409]/80 sm:hidden"
-            style={{ bottom: MOBILE_DASHBOARD_BOTTOM_NAV_CLEARANCE }}
-          >
-            {feedback ? (
-              <Button
-                type="button"
-                disabled={!canAdvance}
-                onClick={() => {
-                  if (showFinalFeedbackCta) {
-                    setFinalFeedbackPending(false);
-                    return;
-                  }
-                  void handleNext();
-                }}
-                className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25"
-              >
-                {advancing ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
-                    Carregando…
-                  </>
-                ) : (
-                  <>
-                    {showFinalFeedbackCta ? 'Ver resultado' : 'Próxima questão'}
-                    <ChevronRight className="ml-1 h-4 w-4" aria-hidden />
-                  </>
-                )}
-              </Button>
-            ) : (
-              <Button
-                type="button"
-                disabled={!canConfirm}
-                onClick={() => void handleConfirmAnswer()}
-                className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50"
-              >
-                {submitting ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
-                    Confirmando…
-                  </>
-                ) : (
-                  activeItem?.respondida && isTreino ? 'Atualizar resposta' : 'Confirmar resposta'
-                )}
-              </Button>
-            )}
+              </div>
+            ) : null}
           </div>
         )}
 
