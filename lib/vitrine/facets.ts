@@ -16,7 +16,7 @@ export type GetVitrineFacetsParams = {
 };
 
 /**
- * Facets da vitrine: tenta RPC Postgres; em erro, fallback JS sobre catálogo do usuário.
+ * Facets da vitrine: admin e RPC vazio usam catálogo JS (mesma regra da página).
  */
 export async function getVitrineFacets(params: GetVitrineFacetsParams): Promise<VitrineFacets> {
   const { userId, isAdmin = false } = params;
@@ -27,14 +27,24 @@ export async function getVitrineFacets(params: GetVitrineFacetsParams): Promise<
         ? [params.banca.trim()]
         : undefined;
 
-  try {
-    return await fetchVitrineFacetsFromRpc({ userId, bancas });
-  } catch (err) {
-    logger.warn('get_vitrine_facets indisponível; fallback JS', {
-      userId,
-      bancas,
-      error: err instanceof Error ? err.message : err,
-    });
+  if (!isAdmin) {
+    try {
+      const rpcFacets = await fetchVitrineFacetsFromRpc({ userId, bancas });
+      const rpcHasResults =
+        rpcFacets.bancas.length > 0 || rpcFacets.assuntos.length > 0;
+
+      if (rpcHasResults) {
+        return rpcFacets;
+      }
+
+      logger.warn('RPC get_vitrine_facets vazio; fallback JS', { userId, bancas });
+    } catch (err) {
+      logger.warn('get_vitrine_facets indisponível; fallback JS', {
+        userId,
+        bancas,
+        error: err instanceof Error ? err.message : err,
+      });
+    }
   }
 
   const modulos = (await resolveAccessibleModulosWhenEmpty(userId, isAdmin)) as ModuloEstudoRow[];

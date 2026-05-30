@@ -3,16 +3,18 @@ import type { ModuloEstudoRow } from '@/lib/vitrineFilters';
 
 jest.mock('@/lib/cache', () => ({
   getModulosEstudoVitrineForUserCached: jest.fn(),
+  getModulosEstudoCached: jest.fn(),
 }));
 
 jest.mock('@/lib/vitrine/rpc', () => ({
   fetchVitrineFacetsFromRpc: jest.fn(),
 }));
 
-import { getModulosEstudoVitrineForUserCached } from '@/lib/cache';
+import { getModulosEstudoCached, getModulosEstudoVitrineForUserCached } from '@/lib/cache';
 import { fetchVitrineFacetsFromRpc } from '@/lib/vitrine/rpc';
 
 const getModulos = getModulosEstudoVitrineForUserCached as jest.Mock;
+const getModulosGlobal = getModulosEstudoCached as jest.Mock;
 const fetchFacetsRpc = fetchVitrineFacetsFromRpc as jest.Mock;
 
 const row = (partial: Partial<ModuloEstudoRow> & Pick<ModuloEstudoRow, 'modulo_slug'>): ModuloEstudoRow => ({
@@ -78,5 +80,34 @@ describe('getVitrineFacets', () => {
 
     expect(getModulos).toHaveBeenCalledWith('u1');
     expect(facets.assuntos).toEqual(['Assunto FGV']);
+  });
+
+  it('faz fallback JS quando RPC retorna facets vazios', async () => {
+    fetchFacetsRpc.mockResolvedValue({ bancas: [], assuntos: [] });
+    getModulos.mockResolvedValue([
+      row({ modulo_slug: '1', banca: 'FGV', titulo_aula: 'Assunto FGV' }),
+      row({ modulo_slug: '2', banca: 'CESPE', titulo_aula: 'Assunto CESPE' }),
+    ]);
+
+    const facets = await getVitrineFacets({ userId: 'u1' });
+
+    expect(facets.bancas).toEqual(['CESPE', 'FGV']);
+    expect(facets.assuntos).toEqual(['Assunto CESPE', 'Assunto FGV']);
+  });
+
+  it('admin ignora RPC e usa catálogo global', async () => {
+    fetchFacetsRpc.mockResolvedValue({ bancas: ['FGV'], assuntos: ['X'] });
+    getModulos.mockResolvedValue([]);
+    getModulosGlobal.mockResolvedValue([
+      row({ modulo_slug: '1', banca: 'FGV', titulo_aula: 'Assunto FGV' }),
+      row({ modulo_slug: '2', banca: 'CESPE', titulo_aula: 'Assunto CESPE' }),
+    ]);
+
+    const facets = await getVitrineFacets({ userId: 'admin-1', isAdmin: true });
+
+    expect(fetchFacetsRpc).not.toHaveBeenCalled();
+    expect(getModulosGlobal).toHaveBeenCalled();
+    expect(facets.bancas).toEqual(['CESPE', 'FGV']);
+    expect(facets.assuntos).toEqual(['Assunto CESPE', 'Assunto FGV']);
   });
 });
