@@ -71,7 +71,7 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
   const panelHeader = (
     <div className="mb-3 px-1">
       <p className="text-xs font-black uppercase tracking-widest text-slate-500">
-        Buscar questões ({modulosCount} disponíveis)
+        Inserir questões ({modulosCount} disponíveis)
       </p>
       <p className="mt-0.5 text-xs font-medium text-cyan-400">100% com NeuroSlide</p>
     </div>
@@ -93,14 +93,14 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
                 <button
                   type="button"
                   tabIndex={-1}
-                  aria-label="Fechar busca de questões"
+                  aria-label="Fechar painel de inserir questões"
                   className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
                   onClick={() => setMobileOpen(false)}
                 />
                 <motion.div
                   role="dialog"
                   aria-modal="true"
-                  aria-label="Buscar questões"
+                  aria-label="Inserir questões"
                   initial={{ y: '100%' }}
                   animate={{ y: 0 }}
                   exit={{ y: '100%' }}
@@ -110,7 +110,7 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
                 >
                   <div className="flex shrink-0 items-center justify-between border-b border-white/10 px-4 py-3">
                     <div>
-                      <p className="text-sm font-bold text-white">Buscar questões</p>
+                      <p className="text-sm font-bold text-white">Inserir questões</p>
                       <p className="text-xs font-medium text-cyan-400">100% com NeuroSlide</p>
                     </div>
                     <button
@@ -143,7 +143,7 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
           className="mb-3 flex w-full items-center justify-center gap-2 rounded-2xl border border-cyan-400/30 bg-[rgba(0,242,255,0.08)] px-4 py-3 text-xs font-black uppercase tracking-widest text-cyan-200 transition-colors hover:bg-[rgba(0,242,255,0.12)]"
         >
           <Search size={14} aria-hidden />
-          Buscar questões
+          Inserir questões
         </button>
         {mobileSheet}
       </div>
@@ -160,7 +160,7 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
             <button
               type="button"
               onClick={toggleCollapsed}
-              aria-label="Expandir painel de busca"
+              aria-label="Expandir painel de inserir questões"
               className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 text-slate-400 transition-colors hover:border-cyan-500/30 hover:text-cyan-300"
             >
               <ChevronLeft size={16} aria-hidden />
@@ -168,7 +168,7 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
             <button
               type="button"
               onClick={toggleCollapsed}
-              aria-label="Expandir painel de busca"
+              aria-label="Expandir painel de inserir questões"
               className="flex h-9 w-9 items-center justify-center rounded-xl text-cyan-400/80 transition-colors hover:text-cyan-300"
             >
               <Search size={18} aria-hidden />
@@ -181,7 +181,7 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
               <button
                 type="button"
                 onClick={toggleCollapsed}
-                aria-label="Recolher painel de busca"
+                aria-label="Recolher painel de inserir questões"
                 className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 text-slate-400 transition-colors hover:border-cyan-500/30 hover:text-cyan-300"
               >
                 <ChevronRight size={16} aria-hidden />

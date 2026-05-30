@@ -522,7 +522,7 @@ export default function CadernoDetailClient({
                 <BookOpen size={32} className="text-slate-500" aria-hidden />
                 <p className="text-sm font-bold text-slate-400">Nenhuma questão ainda</p>
                 <p className="max-w-xs text-xs text-slate-400">
-                  Use o painel de busca para adicionar questões ao caderno.
+                  Toque em Inserir questões para adicionar ao caderno.
                 </p>
               </div>
             ) : (
