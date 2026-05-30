@@ -3,6 +3,7 @@ import { logger } from '@/lib/logger';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
 import { ProgressoEstudoDashboard } from '@/components/dashboard/progresso/ProgressoEstudoDashboard';
 import type { AssuntoTop, DesempenhoData, DiaEstudo } from '@/components/dashboard/progresso/ProgressoEstudoDashboard';
+import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
 
 export type { AssuntoTop, DesempenhoData, DiaEstudo } from '@/components/dashboard/progresso/ProgressoEstudoDashboard';
 
@@ -103,13 +104,16 @@ export default async function ProgressoPage() {
   } catch (error) {
     logger.error('Failed to load progresso-estudo', error, { userId });
     return (
-      <div className="dashboard-surface flex min-h-screen items-center justify-center bg-background p-6 pb-safe text-foreground">
+      <DashboardMobilePage
+        variant="default"
+        className="dashboard-surface flex min-h-screen items-center justify-center bg-background p-6 text-foreground"
+      >
         <div className="max-w-md space-y-4 text-center">
           <p className="text-sm text-muted-foreground">
             Erro ao carregar dados. Tente novamente ou use “Voltar para a Vitrine” no topo da página.
           </p>
         </div>
-      </div>
+      </DashboardMobilePage>
     );
   }
 }

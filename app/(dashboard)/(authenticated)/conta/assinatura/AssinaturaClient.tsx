@@ -5,6 +5,8 @@ import type { ProSource } from '@/lib/freemium';
 import { FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium';
 import { useProBillingPortal } from '@/components/pro/useProBillingPortal';
 import { useProCheckout } from '@/components/pro/useProCheckout';
+import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
+import { cn } from '@/lib/utils';
 
 function formatProExpiry(iso: string | null): string | null {
   if (!iso) return null;
@@ -31,6 +33,7 @@ export function AssinaturaClient({
   proExpiresAt,
   isAdmin,
 }: AssinaturaClientProps) {
+  const { pageBottomPadding } = useDashboardBottomInset('default');
   const { openBillingPortal, loading: portalLoading, error: portalError } = useProBillingPortal();
   const { handleCheckout, loading: checkoutLoading, error: checkoutError } = useProCheckout();
 
@@ -40,7 +43,7 @@ export function AssinaturaClient({
   const showUpgrade = !isPro || proSource === 'invite';
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12">
+    <div className={cn('mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12', pageBottomPadding)}>
       <div className="mb-8">
         <p className="mb-2 text-[10px] font-black uppercase tracking-[0.35em] text-cyan-300">
           Minha conta

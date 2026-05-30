@@ -9,6 +9,7 @@ import {
   normalizeSimuladoAnalyticsFilters,
 } from '@/lib/simulado/analyticsSummary';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
+import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
 
 type SearchParamsShape = {
   periodo?: string | string[];
@@ -66,7 +67,10 @@ export default async function DesempenhoSimuladosPage({
   });
 
   return (
-    <div className="dashboard-surface min-h-screen bg-background pb-24 pb-safe text-foreground">
+    <DashboardMobilePage
+      variant="default"
+      className="dashboard-surface min-h-screen bg-background text-foreground"
+    >
       <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
         <div className="mx-auto max-w-4xl px-4 py-5 md:px-8">
           <PageHeader
@@ -100,6 +104,6 @@ export default async function DesempenhoSimuladosPage({
         topicoAtual={topicoAtual}
         subtopicoAtual={subtopicoAtual}
       />
-    </div>
+    </DashboardMobilePage>
   );
 }

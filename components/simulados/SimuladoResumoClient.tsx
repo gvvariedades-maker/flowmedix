@@ -22,6 +22,7 @@ import type {
 import { isSimuladoQuestaoRespondida } from '@/lib/simulado/types';
 import { cn } from '@/lib/utils';
 import { createSimuladoSession, SimuladoApiError } from '@/lib/simulado/client';
+import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
 
 type SimuladoResumoClientProps = {
   session: SimuladoSessionSummary;
@@ -183,7 +184,10 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
   }
 
   return (
-    <div className="min-h-screen bg-[#010409] px-4 pb-safe pt-6 sm:px-6 lg:px-8">
+    <DashboardMobilePage
+      variant="default"
+      className="min-h-screen bg-[#010409] px-4 pt-6 sm:px-6 sm:pb-8 lg:px-8"
+    >
       <div className="mx-auto max-w-3xl space-y-8">
         <p className="sr-only" aria-live="polite" aria-atomic="true">
           {liveSummary}
@@ -339,6 +343,6 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
         </div>
         {retryError && <p className="text-center text-sm text-rose-400">{retryError}</p>}
       </div>
-    </div>
+    </DashboardMobilePage>
   );
 }

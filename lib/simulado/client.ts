@@ -64,6 +64,19 @@ export async function getSimuladoSession(sessionId: string): Promise<SimuladoSes
   return json;
 }
 
+export async function finalizeSimuladoSession(
+  sessionId: string,
+): Promise<SimuladoSessionDetailResponse> {
+  const res = await fetchWithAuth(`/api/simulado/sessions/${sessionId}/concluir`, {
+    method: 'POST',
+  });
+  const json = await parseJsonResponse<SimuladoSessionDetailResponse>(res);
+  if (!res.ok) {
+    throw new SimuladoApiError(res.status, json.error ?? 'Erro ao finalizar simulado', json.details);
+  }
+  return json;
+}
+
 export async function answerSimuladoQuestion(
   body: SimuladoAnswerInput,
 ): Promise<SimuladoAnswerResponse> {

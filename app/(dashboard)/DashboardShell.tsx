@@ -36,6 +36,7 @@ import {
   shouldShowBackToVitrine,
 } from '@/components/dashboard/BackToVitrineLink';
 import { BottomNav } from '@/components/layout/BottomNav';
+import { MOBILE_PAGE_BOTTOM_PADDING } from '@/lib/layout/mobileBottomNav';
 import { PlanStatusCard } from '@/components/plan/PlanStatusCard';
 
 const drawerSpring = { type: 'spring' as const, stiffness: 300, damping: 30 };
@@ -646,7 +647,12 @@ function DashboardContent({
           </div>
         </header>
 
-        <main className="relative flex min-h-0 flex-1 flex-col overflow-x-hidden overflow-y-auto no-scrollbar pb-[72px] md:pb-0">
+        <main
+          className={cn(
+            'relative flex min-h-0 flex-1 flex-col overflow-x-hidden overflow-y-auto no-scrollbar md:pb-0',
+            MOBILE_PAGE_BOTTOM_PADDING,
+          )}
+        >
           {showBackToVitrine ? <BackToVitrineBar /> : null}
           <motion.div
             key={pathname}

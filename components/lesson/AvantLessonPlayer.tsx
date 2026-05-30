@@ -37,6 +37,7 @@ import { isCertoErradoQuestion } from '@/lib/questionKind';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { buildDotsNavWindow } from '@/lib/estudar/dotsNavWindow';
+import { MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM } from '@/lib/layout/mobileBottomNav';
 import { supabase } from '@/lib/supabase/client';
 import { PaywallModal } from '@/components/freemium/PaywallModal';
 import type { AvantLessonPlayerProps, LessonData, ReverseStudySlide } from '@/types/lesson';
@@ -819,7 +820,7 @@ export default function AvantLessonPlayer({
               ref={confirmarRespostaRef}
               initial={{ y: 20, opacity: 0 }} 
               animate={{ y: 0, opacity: 1 }} 
-              className="flex flex-col items-center gap-2 scroll-mt-4 px-6 pt-1 pb-5"
+              className={`flex flex-col items-center gap-2 scroll-mt-4 px-6 pt-1 pb-5 ${MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM}`}
             >
               <MicroTip
                 storageKey="reverse-study.answer-before-feedback"

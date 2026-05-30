@@ -45,6 +45,11 @@ import {
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
+import {
+  MOBILE_VITRINE_PAGINATION_FIXED_BOTTOM,
+  MOBILE_VITRINE_PAGINATION_SPACER,
+} from '@/lib/layout/mobileBottomNav';
+import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 import type { VitrineGrupoSubtopico, VitrinePageResponse } from '@/lib/vitrine/types';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -54,12 +59,6 @@ import { EmptyState } from '@/components/ui/empty-state';
 import { ProgressRing } from '@/components/ui/progress-ring';
 
 const VITRINE_SEARCH_DEBOUNCE_MS = 350;
-
-/** Offset acima do BottomNav mobile (DashboardShell). */
-const MOBILE_BOTTOM_NAV_CLEARANCE =
-  'bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px)+0.75rem)]';
-/** Reserva scroll: faixa fixa (py-3 + h-11 + gap + legenda + py-3) acima do BottomNav. */
-const VITRINE_MOBILE_PAGINATION_SPACER = 'h-[7.5rem] sm:h-[6rem]';
 
 const VITRINE_FILTER_QUERY_KEYS = new Set([
   'banca',
@@ -236,6 +235,10 @@ export default function VitrineClient({
   const [assuntos, setAssuntos] = useState<string[]>([]);
   const [totalAssuntos, setTotalAssuntos] = useState(0);
   const [totalPaginas, setTotalPaginas] = useState(1);
+  const paginationAtiva = totalPaginas > 1;
+  const { pageBottomPadding } = useDashboardBottomInset(
+    paginationAtiva ? 'vitrinePagination' : 'default',
+  );
   const [paginaEfetiva, setPaginaEfetiva] = useState(1);
   const [perPage, setPerPage] = useState(12);
   const [loading, setLoading] = useState(true);
@@ -448,7 +451,12 @@ export default function VitrineClient({
         : `${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`;
 
   return (
-    <div className="dashboard-surface min-h-screen bg-background pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] text-foreground selection:bg-indigo-100 selection:text-indigo-900 md:pb-8">
+    <div
+      className={cn(
+        'dashboard-surface min-h-screen bg-background text-foreground selection:bg-indigo-100 selection:text-indigo-900 md:pb-8',
+        pageBottomPadding,
+      )}
+    >
       <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
         {/* Header mobile */}
         <div className="flex items-center justify-between px-4 py-3 md:hidden">
@@ -812,12 +820,15 @@ export default function VitrineClient({
               </motion.div>
               {totalPaginas > 1 && (
                 <>
-                  <div className={cn('shrink-0 md:hidden', VITRINE_MOBILE_PAGINATION_SPACER)} aria-hidden />
+                  <div
+                    className={cn('shrink-0 md:hidden', MOBILE_VITRINE_PAGINATION_SPACER)}
+                    aria-hidden
+                  />
                   <nav
                     className={cn(
                       'flex flex-col gap-3 border-t border-border pt-3 sm:flex-row sm:items-center sm:justify-between',
                       'fixed inset-x-0 z-30 border-white/10 bg-background/95 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-background/90',
-                      MOBILE_BOTTOM_NAV_CLEARANCE,
+                      MOBILE_VITRINE_PAGINATION_FIXED_BOTTOM,
                       'md:static md:z-auto md:border-border md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none',
                     )}
                     aria-label="Paginação da vitrine"

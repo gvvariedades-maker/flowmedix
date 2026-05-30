@@ -4,10 +4,14 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
 import { TOTAL_MATERIAL_SLIDES } from '@/components/material/materialSlideLots';
+import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
+import { cn } from '@/lib/utils';
 
 export default function MaterialApoioClient() {
+  const { pageBottomPadding } = useDashboardBottomInset('default');
+
   return (
-    <div className="min-h-full bg-[#010409] pb-16 text-white">
+    <div className={cn('min-h-full bg-[#010409] text-white', pageBottomPadding)}>
       <section className="relative overflow-hidden border-b border-white/10 px-4 py-16 sm:px-6 md:py-24">
         <div
           className="absolute inset-0 opacity-[0.06]"

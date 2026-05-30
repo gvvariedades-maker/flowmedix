@@ -23,8 +23,11 @@ import { TopAssuntosRanking } from './top-assuntos-ranking';
 import type { DesempenhoData, Periodo } from './types';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { ZerarDesempenhoDialog } from './zerar-desempenho-dialog';
+import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
+import { cn } from '@/lib/utils';
 
 export function ProgressoEstudoDashboard({ dados }: { dados: DesempenhoData }) {
+  const { pageBottomPadding } = useDashboardBottomInset('default');
   const router = useRouter();
   const [periodo, setPeriodo] = useState<Periodo>(30);
   const [dialogZerar, setDialogZerar] = useState(false);
@@ -69,7 +72,12 @@ export function ProgressoEstudoDashboard({ dados }: { dados: DesempenhoData }) {
   }
 
   return (
-    <div className="dashboard-surface relative min-h-screen bg-background pb-24 pb-safe text-foreground">
+    <div
+      className={cn(
+        'dashboard-surface relative min-h-screen bg-background text-foreground',
+        pageBottomPadding,
+      )}
+    >
       <ZerarDesempenhoDialog
         open={dialogZerar}
         zerando={zerando}

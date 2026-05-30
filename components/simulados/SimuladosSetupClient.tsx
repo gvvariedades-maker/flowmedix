@@ -25,6 +25,7 @@ import {
   FREEMIUM_PLAN_LIMITS_DESCRIPTION,
 } from '@/lib/freemium';
 import { PaywallModal } from '@/components/freemium/PaywallModal';
+import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
 
 function formatZodIssues(issues: ZodIssue[]): string {
   const first = issues[0];
@@ -257,7 +258,10 @@ export function SimuladosSetupClient() {
     setQuantidade(String(Math.min(100, Math.max(1, qNum + delta))));
 
   return (
-    <div className="min-h-screen bg-[#010409] px-4 pb-6 pb-safe pt-6 sm:px-6 sm:pb-8 lg:px-8">
+    <DashboardMobilePage
+      variant="default"
+      className="min-h-screen bg-[#010409] px-4 pt-6 sm:px-6 sm:pb-8 lg:px-8"
+    >
       <div className="mx-auto max-w-3xl">
         <PageHeader
           title="Simulados"
@@ -576,6 +580,6 @@ export function SimuladosSetupClient() {
         isAuthenticated
         variant="simulado"
       />
-    </div>
+    </DashboardMobilePage>
   );
 }

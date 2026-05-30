@@ -9,11 +9,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
+import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 
 /**
  * Página de criação de caderno — alinhada ao design system dark do dashboard.
  */
 export default function NovoCadernoClient() {
+  const { pageBottomPadding } = useDashboardBottomInset('default');
   const router = useRouter();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -48,7 +50,10 @@ export default function NovoCadernoClient() {
     'h-12 rounded-xl border border-white/10 bg-white/[0.05] text-white shadow-none placeholder:text-slate-500 focus-visible:border-cyan-400/50 focus-visible:ring-2 focus-visible:ring-cyan-400/30 focus-visible:ring-offset-0';
 
   return (
-    <div className="min-h-screen pb-24 pb-safe" style={{ backgroundColor: '#010409' }}>
+    <div
+      className={cn('min-h-screen', pageBottomPadding)}
+      style={{ backgroundColor: '#010409' }}
+    >
       <div className="sticky top-0 z-20 border-b border-white/10 bg-[#010409]/95 backdrop-blur-md">
         <header className="bg-transparent">
           <div className="mx-auto max-w-4xl px-4 py-5 sm:px-6 md:px-10">

@@ -1,6 +1,11 @@
+import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
+
 export default function SimuladoSessionLoading() {
   return (
-    <div className="min-h-screen bg-[#010409] px-4 pb-[8.5rem] pt-6 sm:px-6 sm:pb-safe lg:px-8">
+    <DashboardMobilePage
+      variant="actionBar"
+      className="min-h-screen bg-[#010409] px-4 pt-6 sm:px-6 md:pb-8 lg:px-8"
+    >
       <div className="mx-auto max-w-3xl animate-pulse space-y-6">
         <div className="space-y-3">
           <div className="h-3 w-28 rounded-lg bg-white/5" />
@@ -38,6 +43,6 @@ export default function SimuladoSessionLoading() {
           </div>
         </div>
       </div>
-    </div>
+    </DashboardMobilePage>
   );
 }

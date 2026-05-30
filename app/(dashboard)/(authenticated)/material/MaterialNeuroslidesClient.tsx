@@ -10,8 +10,11 @@ import {
   TOTAL_MATERIAL_SLIDES,
   type MaterialSlideLotId,
 } from '@/components/material/materialSlideLots';
+import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
+import { cn } from '@/lib/utils';
 
 export default function MaterialNeuroslidesClient() {
+  const { pageBottomPadding } = useDashboardBottomInset('default');
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedLot, setSelectedLot] = useState<MaterialSlideLotId>(1);
 
@@ -21,7 +24,7 @@ export default function MaterialNeuroslidesClient() {
   };
 
   return (
-    <div className="flex flex-col bg-[#010409] text-white">
+    <div className={cn('flex flex-col bg-[#010409] text-white', pageBottomPadding)}>
       <div className="shrink-0 border-b border-white/10 bg-slate-950/40 px-4 py-4 backdrop-blur-xl sm:px-6">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">

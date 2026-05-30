@@ -145,6 +145,16 @@ export function answerE2eSimuladoQuestion(
   };
 }
 
+export function finalizeE2eSimuladoSession(sessionId: string) {
+  const state = store.get(sessionId);
+  if (!state) return null;
+
+  state.session.status = 'concluido';
+  state.session.concluida_em = new Date().toISOString();
+
+  return getE2eSimuladoSession(sessionId);
+}
+
 export function getE2eSimuladoLessonPayload() {
   return { dados: E2E_SIMULADO_LESSON };
 }

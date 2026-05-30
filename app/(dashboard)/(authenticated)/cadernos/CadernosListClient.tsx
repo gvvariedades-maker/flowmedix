@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { NeonBadge } from '@/components/ui/neon-badge';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
+import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 import type { NotebookSummary } from './page';
 
 function tempoRelativo(iso: string): string {
@@ -98,11 +99,12 @@ function ConfirmExcluirModal({
 }
 
 export default function CadernosListClient({ cadernos: inicial }: { cadernos: NotebookSummary[] }) {
+  const { pageBottomPadding } = useDashboardBottomInset('default');
   const [cadernos, setCadernos] = useState(inicial);
   const [pendingDelete, setPendingDelete] = useState<NotebookSummary | null>(null);
 
   return (
-    <div className="min-h-screen bg-[#010409] pb-24 pb-safe">
+    <div className={cn('min-h-screen bg-[#010409]', pageBottomPadding)}>
       <div className="sticky top-0 z-20 border-b border-[rgba(255,255,255,0.08)] bg-[#010409]/95 shadow-[0_8px_32px_-16px_rgba(0,0,0,0.5)] backdrop-blur-md supports-[backdrop-filter]:bg-[#010409]/90">
         <CadernosHeader />
       </div>

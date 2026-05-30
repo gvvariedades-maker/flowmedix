@@ -23,6 +23,7 @@ import type { CadernoDetail, ModuloDisponivel, NotebookItem } from './page';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
+import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 import { DashboardFilterSelect } from '@/components/dashboard/DashboardFilterSelect';
 import { SELECT_TRIGGER_DARK_PANEL } from '@/components/dashboard/dashboard-select-dark';
 
@@ -416,6 +417,7 @@ export default function CadernoDetailClient({
   caderno: CadernoDetail;
   modulosDisponiveis: ModuloDisponivel[];
 }) {
+  const { pageBottomPadding } = useDashboardBottomInset('default');
   const router = useRouter();
   const [items, setItems] = useState(caderno.items);
   const [modulos, setModulos] = useState(inicial);
@@ -454,7 +456,7 @@ export default function CadernoDetailClient({
   const firstSlug = items.find(i => !i.estudada)?.modulo_slug || items[0]?.modulo_slug;
 
   return (
-    <div className="min-h-screen bg-[#010409] pb-24 pb-safe">
+    <div className={cn('min-h-screen bg-[#010409]', pageBottomPadding)}>
       <div className="sticky top-0 z-20 border-b border-[rgba(255,255,255,0.08)] bg-[#010409]/95 shadow-[0_8px_32px_-16px_rgba(0,0,0,0.5)] backdrop-blur-md supports-[backdrop-filter]:bg-[#010409]/90">
         <div className="bg-transparent px-6 py-5 md:px-10">
           <div className="mx-auto max-w-6xl">

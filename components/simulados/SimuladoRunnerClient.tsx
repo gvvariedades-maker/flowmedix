@@ -9,7 +9,7 @@ import { Loader2, ChevronRight, ClipboardList } from 'lucide-react';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { PaywallModal } from '@/components/freemium/PaywallModal';
 import { FREEMIUM_SIMULADO_DAILY_LIMIT } from '@/lib/freemium';
-import { answerSimuladoQuestion, SimuladoApiError } from '@/lib/simulado/client';
+import { answerSimuladoQuestion, finalizeSimuladoSession, SimuladoApiError } from '@/lib/simulado/client';
 import type { SimuladoSessionDetailResponse } from '@/lib/simulado/types';
 import type { LessonData } from '@/types/lesson';
 import { PageHeader } from '@/components/ui/page-header';
@@ -44,11 +44,11 @@ import {
   stripLeadingQuestionEnumeration,
 } from '@/lib/questionHeader';
 import {
-  MOBILE_ACTION_BAR_SPACER,
   MOBILE_ACTION_BAR_Z,
   MOBILE_BOTTOM_NAV_FIXED_BOTTOM,
-  MOBILE_PAGE_BOTTOM_PADDING,
 } from '@/lib/layout/mobileBottomNav';
+import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
+import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 
 const MOBILE_ACTION_BAR_SHELL = cn(
   'fixed inset-x-0 border-t border-white/10 bg-[#010409]/95 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-[#010409]/90',
@@ -69,17 +69,23 @@ function SimuladoMobileActionBar({ actionRef, className, children }: SimuladoMob
     setMounted(true);
   }, []);
 
-  const mobileBar = (
-    <div ref={actionRef} className={cn(MOBILE_ACTION_BAR_SHELL, className)}>
-      <div className="mx-auto w-full max-w-3xl">{children}</div>
-    </div>
-  );
+  /** Dois botões empilhados no mobile (confirmar/finalizar + próxima). */
+  const mobileSpacer = 'h-[8.5rem]';
 
   return (
     <>
-      <div className={cn('shrink-0 md:hidden', MOBILE_ACTION_BAR_SPACER)} aria-hidden />
-      {mounted ? createPortal(mobileBar, document.body) : null}
-      <div className={cn('hidden w-full md:flex', className)}>{children}</div>
+      <div className={cn('shrink-0 md:hidden', mobileSpacer)} aria-hidden />
+      {mounted
+        ? createPortal(
+            <div ref={actionRef} className={cn(MOBILE_ACTION_BAR_SHELL, 'md:hidden')}>
+              <div className={cn('mx-auto w-full max-w-3xl', className)}>{children}</div>
+            </div>,
+            document.body,
+          )
+        : null}
+      <div className="hidden w-full md:block">
+        <div className={cn('mx-auto w-full max-w-3xl', className)}>{children}</div>
+      </div>
     </>
   );
 }
@@ -122,6 +128,7 @@ type SimuladoRunnerViewProps = {
 
 function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRunnerViewProps) {
   const router = useRouter();
+  const { pageBottomPadding } = useDashboardBottomInset('default');
   const {
     sessionData,
     loadingSession,
@@ -144,6 +151,8 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [advancing, setAdvancing] = useState(false);
+  const [finalizing, setFinalizing] = useState(false);
+  const [finalizeError, setFinalizeError] = useState<string | null>(null);
   const [questionStartedAt, setQuestionStartedAt] = useState<number>(Date.now());
   const [liveMessage, setLiveMessage] = useState('');
   const [paywallOpen, setPaywallOpen] = useState(false);
@@ -345,6 +354,34 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     simuladoLimiteAtingido,
   ]);
 
+  const handleFinalizeSimulado = useCallback(async () => {
+    if (!sessionData || finalizing) return;
+
+    const pendentes = sessionData.resumo.pendentes;
+    if (pendentes > 0) {
+      const ok = window.confirm(
+        `Ainda há ${pendentes} questão${pendentes !== 1 ? 'ões' : ''} sem resposta. Deseja finalizar o simulado e ver o resultado?`,
+      );
+      if (!ok) return;
+    }
+
+    setFinalizeError(null);
+    setFinalizing(true);
+    try {
+      await finalizeSimuladoSession(sessionId);
+      setFeedback(null);
+      setFinalFeedbackPending(false);
+      await loadSession();
+      setLiveMessage('Simulado finalizado. Confira o resumo.');
+    } catch (err) {
+      setFinalizeError(
+        err instanceof SimuladoApiError ? err.message : 'Não foi possível finalizar o simulado.',
+      );
+    } finally {
+      setFinalizing(false);
+    }
+  }, [sessionData, finalizing, sessionId, loadSession]);
+
   const handleNext = async () => {
     if (!sessionData || advancing) return;
 
@@ -437,7 +474,12 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
 
   if (loadingSession && !sessionData) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#010409]">
+      <div
+        className={cn(
+          'flex min-h-screen items-center justify-center bg-[#010409]',
+          pageBottomPadding,
+        )}
+      >
         <Loader2 className="h-10 w-10 animate-spin text-cyan-400" aria-label="Carregando simulado" />
       </div>
     );
@@ -445,7 +487,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
 
   if (sessionError || !sessionData) {
     return (
-      <div className="min-h-screen bg-[#010409] px-4 pb-safe pt-6">
+      <div className={cn('min-h-screen bg-[#010409] px-4 pt-6', pageBottomPadding)}>
         <div className="mx-auto max-w-lg">
           <EmptyState
             icon={ClipboardList}
@@ -481,14 +523,31 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const instruction = stripLeadingQuestionEnumeration(questionData?.question_data?.instruction ?? '');
   const hasPending = sessionData.questoes.some((q) => !q.respondida);
   const showFinalFeedbackCta = finalFeedbackPending && !!feedback && !hasPending;
+  const hasMobileActionBar = !!feedback || showConfirmAction;
+
+  const finalizeButton = (
+    <Button
+      type="button"
+      variant="outline"
+      disabled={finalizing || submitting}
+      onClick={() => void handleFinalizeSimulado()}
+      className="h-10 shrink-0 rounded-xl border-white/15 bg-white/[0.03] text-xs font-bold text-slate-200 hover:bg-white/[0.06] sm:text-sm"
+    >
+      {finalizing ? (
+        <>
+          <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+          Finalizando…
+        </>
+      ) : (
+        'Finalizar simulado'
+      )}
+    </Button>
+  );
 
   return (
-    <div
-      className={cn(
-        'min-h-screen bg-[#010409] px-4 pt-6 sm:px-6 lg:px-8',
-        MOBILE_PAGE_BOTTOM_PADDING,
-        'md:pb-8',
-      )}
+    <DashboardMobilePage
+      variant={hasMobileActionBar ? 'actionBar' : 'default'}
+      className="min-h-screen bg-[#010409] px-4 pt-6 sm:px-6 md:pb-8 lg:px-8"
     >
       <div className="mx-auto max-w-3xl space-y-6">
         <PageHeader
@@ -500,7 +559,14 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           description={`${sessionData.resumo.respondidas} de ${sessionData.session.total_questoes} respondidas · ordem aleatória`}
           descriptionClassName="text-sm text-slate-400 mt-1"
           titleClassName="text-xl font-[1000] italic tracking-tighter text-white sm:text-2xl"
+          action={finalizeButton}
         />
+
+        {finalizeError && (
+          <p className="text-sm text-rose-400" role="alert">
+            {finalizeError}
+          </p>
+        )}
 
         <div
           className="h-1.5 overflow-hidden rounded-full bg-white/10"
@@ -655,8 +721,19 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
             {feedback ? (
               <SimuladoMobileActionBar
                 actionRef={proximaAcaoRef}
-                className="flex flex-col gap-3 pt-2 sm:flex-row sm:justify-end"
+                className="flex flex-col gap-2 pt-2 sm:flex-row sm:flex-wrap sm:justify-end sm:gap-3"
               >
+                {!showFinalFeedbackCta ? (
+                  <Button
+                    type="button"
+                    variant="outline"
+                    disabled={finalizing}
+                    onClick={() => void handleFinalizeSimulado()}
+                    className="h-12 w-full rounded-xl border-white/15 bg-white/[0.03] text-slate-200 hover:bg-white/[0.06] sm:order-1 sm:w-auto sm:min-w-[10rem]"
+                  >
+                    Finalizar simulado
+                  </Button>
+                ) : null}
                 <Button
                   type="button"
                   disabled={!canAdvance}
@@ -667,7 +744,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                     }
                     void handleNext();
                   }}
-                  className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 sm:w-auto sm:min-w-[12rem]"
+                  className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 sm:order-2 sm:w-auto sm:min-w-[12rem]"
                 >
                   {advancing ? (
                     <>
@@ -685,13 +762,22 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
             ) : showConfirmAction ? (
               <SimuladoMobileActionBar
                 actionRef={confirmarRespostaRef}
-                className="pt-2 sm:flex sm:justify-end"
+                className="flex flex-col gap-2 pt-2 sm:flex-row sm:flex-wrap sm:justify-end sm:gap-3"
               >
+                <Button
+                  type="button"
+                  variant="outline"
+                  disabled={finalizing}
+                  onClick={() => void handleFinalizeSimulado()}
+                  className="h-12 w-full rounded-xl border-white/15 bg-white/[0.03] text-slate-200 hover:bg-white/[0.06] sm:order-1 sm:w-auto sm:min-w-[10rem]"
+                >
+                  Finalizar simulado
+                </Button>
                 <Button
                   type="button"
                   disabled={!canConfirm}
                   onClick={() => void handleConfirmAnswer()}
-                  className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50 sm:w-auto sm:min-w-[12rem]"
+                  className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50 sm:order-2 sm:w-auto sm:min-w-[12rem]"
                 >
                   {submitting ? (
                     <>
@@ -703,7 +789,11 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                   )}
                 </Button>
               </SimuladoMobileActionBar>
-            ) : null}
+            ) : (
+              <div className="flex justify-end pt-2 md:pt-0">
+                {finalizeButton}
+              </div>
+            )}
           </div>
         )}
 
@@ -722,7 +812,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           </div>
         )}
 
-        <p className="text-center text-xs text-slate-600">
+        <p className="mb-6 text-center text-xs text-slate-600 md:mb-0">
           <Link href="/simulados" className="transition-colors hover:text-slate-400">
             Sair e voltar à configuração
           </Link>
@@ -735,6 +825,6 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         resetEm={resetEm}
         variant="simulado"
       />
-    </div>
+    </DashboardMobilePage>
   );
 }

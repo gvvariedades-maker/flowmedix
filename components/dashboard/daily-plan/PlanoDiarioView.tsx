@@ -14,13 +14,19 @@ import {
   Zap,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
+import { MOBILE_STICKY_ABOVE_NAV_BOTTOM } from '@/lib/layout/mobileBottomNav';
+import { cn } from '@/lib/utils';
 import { PlanoDiarioMarcadosProvider, usePlanoDiarioMarcadosContext } from './PlanoDiarioMarcadosContext';
 import { PlanoDiarioTopicCard } from './PlanoDiarioTopicCard';
 import type { PlanoDiarioProps } from './types';
 
 function PlanoDiarioEmpty() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#010409] px-4 pb-safe pt-6">
+    <DashboardMobilePage
+      variant="default"
+      className="flex min-h-screen items-center justify-center bg-[#010409] px-4 pt-6"
+    >
       <motion.div
         initial={{ scale: 0.94, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -39,7 +45,7 @@ function PlanoDiarioEmpty() {
           </p>
         </div>
       </motion.div>
-    </div>
+    </DashboardMobilePage>
   );
 }
 
@@ -137,7 +143,7 @@ function PlanoDiarioConteúdo({
   limite: number;
 }) {
   return (
-    <div className="min-h-screen bg-[#010409] pb-safe">
+    <DashboardMobilePage variant="default" className="min-h-screen bg-[#010409]">
       <header className="border-b border-[rgba(255,255,255,0.08)] bg-[#010409] shadow-sm shadow-black/30">
         <div className="mx-auto max-w-3xl px-4 py-8 md:px-10">
           <div className="flex flex-col items-center text-center sm:block sm:text-left">
@@ -223,7 +229,13 @@ function PlanoDiarioConteúdo({
           </Button>
         </div>
 
-        <div className="sticky bottom-4 z-10 mb-6 flex justify-center sm:bottom-6">
+        <div
+          className={cn(
+            'sticky z-10 mb-6 flex justify-center',
+            MOBILE_STICKY_ABOVE_NAV_BOTTOM,
+            'md:bottom-6',
+          )}
+        >
           <div className="pointer-events-none max-w-md px-2">
             <div className="pointer-events-auto flex items-center gap-2 rounded-full border border-[rgba(255,255,255,0.10)] bg-[#0d1117]/95 px-4 py-3 text-left shadow-lg shadow-black/40 backdrop-blur-sm">
               <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" aria-hidden />
@@ -235,6 +247,6 @@ function PlanoDiarioConteúdo({
           </div>
         </div>
       </div>
-    </div>
+    </DashboardMobilePage>
   );
 }
