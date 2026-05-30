@@ -30,6 +30,10 @@ jest.mock('@/components/simulados/SimuladoResumoClient', () => ({
   ),
 }));
 
+beforeAll(() => {
+  Element.prototype.scrollIntoView = jest.fn();
+});
+
 const abertaInicial = {
   session: {
     id: '44444444-4444-4444-4444-444444444444',

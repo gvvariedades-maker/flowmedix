@@ -72,7 +72,7 @@ test.describe('Modo Simulado (aluno)', () => {
     await expect(page.getByRole('link', { name: 'Novo simulado' }).first()).toBeVisible();
   });
 
-  test('mobile mantém CTA fixo acessível durante resposta', async ({ page, request }) => {
+  test('mobile exibe CTA de confirmar após selecionar alternativa', async ({ page, request }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     const createRes = await request.post('/api/simulado/sessions', { data: { quantidade: 1 } });
     expect(createRes.ok()).toBeTruthy();
@@ -84,8 +84,9 @@ test.describe('Modo Simulado (aluno)', () => {
       timeout: 15_000,
     });
 
-    await expect(page.getByRole('button', { name: 'Confirmar resposta' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Confirmar resposta' })).not.toBeVisible();
     await page.getByRole('radio', { name: /A\).*compressões torácicas/i }).click();
+    await expect(page.getByRole('button', { name: 'Confirmar resposta' })).toBeVisible();
     await page.getByRole('button', { name: 'Confirmar resposta' }).click();
 
     await expect(page.getByRole('button', { name: 'Ver resultado' })).toBeVisible({
