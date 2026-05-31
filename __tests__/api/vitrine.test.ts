@@ -104,11 +104,12 @@ describe('GET /api/vitrine', () => {
     expect(response.status).toBe(200);
     expect(await response.json()).toEqual(payloadOk);
     expect(response.headers.get('Cache-Control')).toBe('private, no-store');
-    expect(mockGetVitrinePageCached).toHaveBeenCalledWith(USER_ID, 1, {
-      bancas: ['FGV'],
-      assuntos: ['Urgências e Emergências'],
-      q: 'choque',
-    });
+    expect(mockGetVitrinePageCached).toHaveBeenCalledWith(
+      USER_ID,
+      1,
+      { bancas: ['FGV'], assuntos: ['Urgências e Emergências'], q: 'choque' },
+      false,
+    );
     expect(mockRecordPerformance).toHaveBeenCalledWith('/api/vitrine', 'GET', expect.any(Number), true);
   });
 
@@ -124,10 +125,15 @@ describe('GET /api/vitrine', () => {
     );
 
     expect(response.status).toBe(200);
-    expect(mockGetVitrinePageCached).toHaveBeenCalledWith(USER_ID, 1, {
-      bancas: ['FGV', 'CESPE'],
-      assuntos: ['Urgências e Emergências', 'Farmacologia'],
-    });
+    expect(mockGetVitrinePageCached).toHaveBeenCalledWith(
+      USER_ID,
+      1,
+      {
+        bancas: ['FGV', 'CESPE'],
+        assuntos: ['Urgências e Emergências', 'Farmacologia'],
+      },
+      false,
+    );
   });
 
   it('retorna 200 com múltiplas bancas legado (?banca=A&banca=B)', async () => {
@@ -142,10 +148,15 @@ describe('GET /api/vitrine', () => {
     );
 
     expect(response.status).toBe(200);
-    expect(mockGetVitrinePageCached).toHaveBeenCalledWith(USER_ID, 1, {
-      bancas: ['FGV', 'CESPE'],
-      assuntos: ['Urgências e Emergências', 'Farmacologia'],
-    });
+    expect(mockGetVitrinePageCached).toHaveBeenCalledWith(
+      USER_ID,
+      1,
+      {
+        bancas: ['FGV', 'CESPE'],
+        assuntos: ['Urgências e Emergências', 'Farmacologia'],
+      },
+      false,
+    );
   });
 
   it('retorna 500 quando ocorre erro inesperado ao montar a vitrine', async () => {

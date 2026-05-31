@@ -123,7 +123,7 @@ test.describe('Meu desempenho (simulados)', () => {
     await expect(page.getByRole('heading', { name: 'Meu desempenho' })).toBeVisible({
       timeout: 20_000,
     });
-    await expect(page.getByText('Hoje')).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Hoje' })).toBeVisible();
     const hasResumoComparativo = await page.getByText('Resumo comparativo').isVisible().catch(() => false);
     if (hasResumoComparativo) {
       await expect(page.getByText('No período', { exact: true })).toBeVisible();

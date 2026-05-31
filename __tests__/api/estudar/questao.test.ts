@@ -127,6 +127,7 @@ describe('GET /api/estudar/questao', () => {
     expect(mockBuildEstudarQuestaoPlayerPayload).toHaveBeenCalledWith({
       slug: SLUG,
       userId: USER_ID,
+      isAdmin: false,
       searchParams: {
         from: undefined,
         caderno_id: undefined,

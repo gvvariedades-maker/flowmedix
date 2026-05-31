@@ -114,6 +114,7 @@ describe('GET /api/simulado/questao', () => {
       slug: SLUG,
       userId: USER_ID,
       supabase: expect.any(Object),
+      isAdmin: false,
     });
     expect(mockRecordPerformance).toHaveBeenCalledWith(
       '/api/simulado/questao',

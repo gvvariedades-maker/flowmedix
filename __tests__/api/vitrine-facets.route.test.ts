@@ -76,17 +76,21 @@ describe('GET /api/vitrine/facets', () => {
     expect(response.status).toBe(200);
     expect(await response.json()).toEqual(facetsOk);
     expect(response.headers.get('Cache-Control')).toBe('private, no-store');
-    expect(mockGetVitrineFacetsCached).toHaveBeenCalledWith(USER_ID, {
-      bancas: ['FGV', 'CESPE'],
-    });
+    expect(mockGetVitrineFacetsCached).toHaveBeenCalledWith(
+      USER_ID,
+      { bancas: ['FGV', 'CESPE'] },
+      false,
+    );
   });
 
   it('retorna 200 com múltiplas bancas legado (?banca=A&banca=B)', async () => {
     const response = await GET(makeRequest({ banca: ['FGV', 'CESPE'] }));
 
     expect(response.status).toBe(200);
-    expect(mockGetVitrineFacetsCached).toHaveBeenCalledWith(USER_ID, {
-      bancas: ['FGV', 'CESPE'],
-    });
+    expect(mockGetVitrineFacetsCached).toHaveBeenCalledWith(
+      USER_ID,
+      { bancas: ['FGV', 'CESPE'] },
+      false,
+    );
   });
 });
