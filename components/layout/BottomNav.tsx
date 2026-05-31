@@ -12,6 +12,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { MOBILE_BOTTOM_NAV_Z } from '@/lib/layout/mobileBottomNav';
 
 const NAV_ITEMS = [
   { label: 'Estudar', href: '/estudar', icon: LayoutGrid },
@@ -30,7 +31,10 @@ export function BottomNav({ currentPath, onMenuOpen, menuOpen }: BottomNavProps)
   return (
     <LayoutGroup id="bottom-nav">
       <nav
-        className="fixed bottom-0 inset-x-0 z-40 grid grid-cols-5 border-t border-white/[0.08] bg-[#06090f]/95 pb-safe backdrop-blur-xl md:hidden"
+        className={cn(
+          'fixed bottom-0 inset-x-0 grid grid-cols-5 border-t border-white/[0.08] bg-[#06090f]/95 pb-safe backdrop-blur-xl md:hidden',
+          MOBILE_BOTTOM_NAV_Z,
+        )}
         aria-label="Navegação principal"
       >
         {NAV_ITEMS.map(({ label, href, icon: Icon }) => {

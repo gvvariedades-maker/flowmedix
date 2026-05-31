@@ -36,7 +36,11 @@ import {
   shouldShowBackToVitrine,
 } from '@/components/dashboard/BackToVitrineLink';
 import { BottomNav } from '@/components/layout/BottomNav';
-import { MOBILE_PAGE_BOTTOM_PADDING } from '@/lib/layout/mobileBottomNav';
+import {
+  MOBILE_DRAWER_OVERLAY_Z,
+  MOBILE_DRAWER_PANEL_Z,
+  MOBILE_PAGE_BOTTOM_PADDING,
+} from '@/lib/layout/mobileBottomNav';
 import { PlanStatusCard } from '@/components/plan/PlanStatusCard';
 
 const drawerSpring = { type: 'spring' as const, stiffness: 300, damping: 30 };
@@ -537,7 +541,10 @@ function DashboardContent({
           <>
             <motion.div
               key="dashboard-drawer-overlay"
-              className="fixed inset-0 z-40 bg-black/35 backdrop-blur-sm md:hidden"
+              className={cn(
+                'fixed inset-0 bg-black/35 backdrop-blur-sm md:hidden',
+                MOBILE_DRAWER_OVERLAY_Z,
+              )}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -552,7 +559,10 @@ function DashboardContent({
               role="dialog"
               aria-modal="true"
               aria-label="Menu de navegação"
-              className="fixed left-0 top-0 z-50 flex h-full w-[18rem] shrink-0 flex-col overflow-hidden border-r border-white/10 bg-[#06090f] outline-none md:hidden"
+              className={cn(
+                'fixed left-0 top-0 flex h-full w-[18rem] shrink-0 flex-col overflow-hidden border-r border-white/10 bg-[#06090f] outline-none md:hidden',
+                MOBILE_DRAWER_PANEL_Z,
+              )}
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}

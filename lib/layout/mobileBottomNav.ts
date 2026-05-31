@@ -27,8 +27,17 @@ export const MOBILE_ACTION_BAR_STACK_SPACER =
 export const MOBILE_ACTION_BAR_STACK_SPACER_WITH_PWA =
   'h-[calc(5rem+1.25rem+5.25rem+6rem+env(safe-area-inset-bottom,0px))]';
 
-/** z-index acima do BottomNav (`z-40`). */
+/** z-index do BottomNav fixo. */
+export const MOBILE_BOTTOM_NAV_Z = 'z-40';
+
+/** z-index acima do BottomNav (`z-40`); abaixo do drawer mobile e modais. */
 export const MOBILE_ACTION_BAR_Z = 'z-50';
+
+/** Overlay escuro do drawer mobile (`DashboardShell`); acima da faixa de ação e do banner PWA. */
+export const MOBILE_DRAWER_OVERLAY_Z = 'z-[65]';
+
+/** Painel do drawer mobile; acima do overlay e de barras fixas inferiores. */
+export const MOBILE_DRAWER_PANEL_Z = 'z-[70]';
 
 /** Padding inferior de páginas longas só com BottomNav (sem faixa de ação fixa). */
 export const MOBILE_PAGE_BOTTOM_PADDING =

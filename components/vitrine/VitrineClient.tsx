@@ -45,10 +45,6 @@ import {
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
-import {
-  MOBILE_VITRINE_PAGINATION_FIXED_BOTTOM,
-  MOBILE_VITRINE_PAGINATION_SPACER,
-} from '@/lib/layout/mobileBottomNav';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 import type { VitrineGrupoSubtopico, VitrinePageResponse } from '@/lib/vitrine/types';
 import { Input } from '@/components/ui/input';
@@ -236,10 +232,7 @@ export default function VitrineClient({
   const [assuntos, setAssuntos] = useState<string[]>([]);
   const [totalAssuntos, setTotalAssuntos] = useState(0);
   const [totalPaginas, setTotalPaginas] = useState(1);
-  const paginationAtiva = totalPaginas > 1;
-  const { pageBottomPadding } = useDashboardBottomInset(
-    paginationAtiva ? 'vitrinePagination' : 'default',
-  );
+  const { pageBottomPadding } = useDashboardBottomInset('default');
   const [paginaEfetiva, setPaginaEfetiva] = useState(1);
   const [perPage, setPerPage] = useState(12);
   const [loading, setLoading] = useState(true);
@@ -822,47 +815,36 @@ export default function VitrineClient({
                 ))}
               </motion.div>
               {totalPaginas > 1 && (
-                <>
-                  <div
-                    className={cn('shrink-0 md:hidden', MOBILE_VITRINE_PAGINATION_SPACER)}
-                    aria-hidden
-                  />
-                  <nav
-                    className={cn(
-                      'flex flex-col gap-3 border-t border-border pt-3 sm:flex-row sm:items-center sm:justify-between',
-                      'fixed inset-x-0 z-30 border-white/10 bg-background/95 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-background/90',
-                      MOBILE_VITRINE_PAGINATION_FIXED_BOTTOM,
-                      'md:static md:z-auto md:border-border md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none',
-                    )}
-                    aria-label="Paginação da vitrine"
-                  >
-                    <p className="order-2 text-center text-xs font-medium text-muted-foreground sm:order-1 sm:text-left">
-                      Página {loading ? pagina : paginaEfetiva} de {totalPaginas}
-                    </p>
-                    <div className="order-1 flex items-center gap-2 sm:order-2 sm:ml-auto">
-                      <Button
-                        type="button"
-                        variant="outline"
-                        disabled={pagina <= 1 || loading}
-                        onClick={() => setPagina((p) => Math.max(1, p - 1))}
-                        className="h-11 flex-1 rounded-xl border-white/15 sm:flex-none"
-                      >
-                        <ChevronLeft size={18} className="mr-1" />
-                        Anterior
-                      </Button>
-                      <Button
-                        type="button"
-                        variant="outline"
-                        disabled={pagina >= totalPaginas || loading}
-                        onClick={() => setPagina((p) => Math.min(totalPaginas, p + 1))}
-                        className="h-11 flex-1 rounded-xl border-white/15 sm:flex-none"
-                      >
-                        Próxima
-                        <ChevronRight size={18} className="ml-1" />
-                      </Button>
-                    </div>
-                  </nav>
-                </>
+                <nav
+                  className="mt-6 flex flex-col gap-3 border-t border-white/10 pt-4 sm:flex-row sm:items-center sm:justify-between"
+                  aria-label="Paginação da vitrine"
+                >
+                  <p className="order-2 text-center text-xs font-medium text-muted-foreground sm:order-1 sm:text-left">
+                    Página {loading ? pagina : paginaEfetiva} de {totalPaginas}
+                  </p>
+                  <div className="order-1 flex items-center gap-2 sm:order-2 sm:ml-auto">
+                    <Button
+                      type="button"
+                      variant="outline"
+                      disabled={pagina <= 1 || loading}
+                      onClick={() => setPagina((p) => Math.max(1, p - 1))}
+                      className="h-11 flex-1 rounded-xl border-white/15 sm:flex-none"
+                    >
+                      <ChevronLeft size={18} className="mr-1" />
+                      Anterior
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="outline"
+                      disabled={pagina >= totalPaginas || loading}
+                      onClick={() => setPagina((p) => Math.min(totalPaginas, p + 1))}
+                      className="h-11 flex-1 rounded-xl border-white/15 sm:flex-none"
+                    >
+                      Próxima
+                      <ChevronRight size={18} className="ml-1" />
+                    </Button>
+                  </div>
+                </nav>
               )}
             </>
           ) : fetchError ? (
