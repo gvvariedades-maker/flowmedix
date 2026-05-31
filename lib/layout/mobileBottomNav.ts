@@ -1,55 +1,65 @@
 /**
- * Layout mobile do dashboard: BottomNav fixo (DashboardShell) + faixas de ação.
- * Usar as mesmas constantes em vitrine/simulados para alinhar offset e z-index.
+ * Layout mobile do dashboard: BottomNav no flex shell + faixas opcionais.
+ * O `<main>` do DashboardShell é a única área de scroll; o BottomNav fica fora (shrink-0).
  *
- * Tokens deste arquivo são para **conteúdo** (padding, scroll-margin, sticky).
- * Offsets `bottom-[calc(...)]` das barras fixas (BottomNav, paginação, faixa de
- * ação, PWA) não devem ser alterados neste contrato — ajuste só o scroll area.
+ * Tokens deste arquivo: padding de conteúdo, scroll-margin, z-index e offsets
+ * para elementos fixed acima do slot do BottomNav (ex.: banner PWA).
  *
  * IMPORTANTE: manter classes literais (Tailwind JIT não vê template strings).
  */
 
-/** Offset `bottom` para elementos `fixed` acima do BottomNav + safe area. */
-export const MOBILE_BOTTOM_NAV_FIXED_BOTTOM =
-  'bottom-[calc(5rem+env(safe-area-inset-bottom,0px)+1.25rem)]';
+/** Altura nominal do BottomNav no flex shell (~5rem incl. labels). */
+export const MOBILE_BOTTOM_NAV_HEIGHT = '5rem';
 
-/** Reserva de scroll para faixa de ação (botão h-12 + py-3 + borda). */
+/** Offset `bottom` para elementos `fixed` acima do slot do BottomNav + safe area. */
+export const MOBILE_BOTTOM_NAV_FIXED_BOTTOM =
+  'bottom-[calc(5rem+env(safe-area-inset-bottom,0px))]';
+
+/** @deprecated Faixa fixa legada; preferir ação inline no fluxo do main. */
 export const MOBILE_ACTION_BAR_SPACER = 'h-[5.25rem]';
 
-/**
- * Reserva no fluxo do documento: BottomNav + gap + faixa de ação + safe area.
- * Alinha com `MOBILE_PAGE_ACTION_BAR_STACK_PADDING` (altura equivalente).
- */
+/** @deprecated Spacer legado (nav + faixa fixa); shell flex não usa. */
 export const MOBILE_ACTION_BAR_STACK_SPACER =
   'h-[calc(5rem+1.25rem+5.25rem+env(safe-area-inset-bottom,0px))]';
 
-/** Stack action bar + banner PWA visível + safe area. */
+/** @deprecated Spacer legado com banner PWA. */
 export const MOBILE_ACTION_BAR_STACK_SPACER_WITH_PWA =
   'h-[calc(5rem+1.25rem+5.25rem+6rem+env(safe-area-inset-bottom,0px))]';
 
-/** z-index do BottomNav fixo. */
+/** z-index do BottomNav fixo no flex shell. */
 export const MOBILE_BOTTOM_NAV_Z = 'z-40';
 
-/** z-index acima do BottomNav (`z-40`); abaixo do drawer mobile e modais. */
+/** z-index legado para faixas fixed acima do nav. */
 export const MOBILE_ACTION_BAR_Z = 'z-50';
 
-/** Overlay escuro do drawer mobile (`DashboardShell`); acima da faixa de ação e do banner PWA. */
+/** Overlay escuro do drawer mobile (`DashboardShell`). */
 export const MOBILE_DRAWER_OVERLAY_Z = 'z-[65]';
 
-/** Painel do drawer mobile; acima do overlay e de barras fixas inferiores. */
+/** Painel do drawer mobile. */
 export const MOBILE_DRAWER_PANEL_Z = 'z-[70]';
 
-/** Padding inferior de páginas longas só com BottomNav (sem faixa de ação fixa). */
-export const MOBILE_PAGE_BOTTOM_PADDING =
-  'pb-[calc(5rem+env(safe-area-inset-bottom,0px))]';
+/**
+ * @deprecated BottomNav está fora do scroll — shell não aplica padding de nav no main.
+ * Mantido vazio para compatibilidade de imports.
+ */
+export const MOBILE_PAGE_BOTTOM_PADDING = 'pb-0';
+
+/**
+ * Padding no conteúdo quando o banner PWA flutua sobre a parte inferior do main
+ * (acima do BottomNav no flex shell).
+ */
+export const MOBILE_PAGE_PWA_BANNER_PADDING =
+  'pb-[calc(6rem+0.5rem+env(safe-area-inset-bottom,0px))]';
+
+/** @deprecated Use MOBILE_PAGE_PWA_BANNER_PADDING; nav não entra mais no cálculo. */
+export const MOBILE_PAGE_BOTTOM_PADDING_WITH_PWA = MOBILE_PAGE_PWA_BANNER_PADDING;
 
 /** Nav (5rem) + gap da faixa (1.25rem) + altura da faixa (5.25rem) + safe area. */
 export const MOBILE_PAGE_ACTION_BAR_STACK_PADDING =
   'pb-[calc(5rem+1.25rem+5.25rem+env(safe-area-inset-bottom,0px))]';
 
-/** scrollIntoView: BottomNav + safe area + 1rem de folga visual. */
-export const MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM =
-  'scroll-mb-[calc(5rem+env(safe-area-inset-bottom,0px)+1rem)]';
+/** scrollIntoView: folga visual no fim do main. */
+export const MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM = 'scroll-mb-4';
 
 /** Sticky acima do BottomNav + safe area + 1rem de folga (substitui `bottom-4`). */
 export const MOBILE_STICKY_ABOVE_NAV_BOTTOM =
@@ -57,26 +67,22 @@ export const MOBILE_STICKY_ABOVE_NAV_BOTTOM =
 
 /**
  * Altura reservada do banner PWA fixo (`PwaInstallPanel` + margens).
- * Medido ~6rem; não alterar offsets da barra PWA em `PwaInstallProvider`.
+ * Medido ~6rem; posicionado com MOBILE_BOTTOM_NAV_FIXED_BOTTOM.
  */
 export const MOBILE_PWA_INSTALL_BANNER_CLEARANCE = '6rem';
 
-/** BottomNav + banner PWA visível + safe area (substitui `MOBILE_PAGE_BOTTOM_PADDING`). */
-export const MOBILE_PAGE_BOTTOM_PADDING_WITH_PWA =
-  'pb-[calc(5rem+6rem+env(safe-area-inset-bottom,0px))]';
-
-/** Stack nav + faixa de ação + banner PWA + safe area. */
+/** @deprecated Shell flex: nav fora do scroll. */
 export const MOBILE_PAGE_ACTION_BAR_STACK_PADDING_WITH_PWA =
   'pb-[calc(5rem+1.25rem+5.25rem+6rem+env(safe-area-inset-bottom,0px))]';
 
-/** Offset `bottom` da paginação fixa da vitrine (acima do BottomNav 5rem). */
+/** @deprecated Paginação vitrine inline no fluxo. */
 export const MOBILE_VITRINE_PAGINATION_FIXED_BOTTOM =
   'bottom-[calc(5rem+0.75rem+env(safe-area-inset-bottom,0px))]';
 
-/** Reserva no fluxo do documento: faixa de paginação (botões + legenda + py) + folga. */
+/** @deprecated */
 export const MOBILE_VITRINE_PAGINATION_SPACER = 'h-[8.5rem]';
 
-/** BottomNav + gap + faixa de paginação + safe area + 1rem de folga visual. */
+/** @deprecated */
 export const MOBILE_PAGE_VITRINE_PAGINATION_STACK_PADDING =
   'pb-[calc(5rem+0.75rem+7.5rem+1rem+env(safe-area-inset-bottom,0px))]';
 
@@ -85,20 +91,14 @@ export const MOBILE_PAGE_VITRINE_PAGINATION_STACK_PADDING_WITH_PWA =
 
 export type DashboardPageBottomPaddingVariant = 'default' | 'actionBar' | 'vitrinePagination';
 
-/** Padding inferior de página conforme faixa de ação e banner PWA (sem React). */
+/**
+ * Padding inferior opcional no conteúdo das páginas (dentro do main rolável).
+ * Com flex shell, só o banner PWA exige reserva quando visível.
+ */
 export function getDashboardPageBottomPadding(
-  variant: DashboardPageBottomPaddingVariant,
+  _variant: DashboardPageBottomPaddingVariant,
   pwaVisible: boolean,
-): string {
-  if (variant === 'actionBar') {
-    return pwaVisible
-      ? MOBILE_PAGE_ACTION_BAR_STACK_PADDING_WITH_PWA
-      : MOBILE_PAGE_ACTION_BAR_STACK_PADDING;
-  }
-  if (variant === 'vitrinePagination') {
-    return pwaVisible
-      ? MOBILE_PAGE_VITRINE_PAGINATION_STACK_PADDING_WITH_PWA
-      : MOBILE_PAGE_VITRINE_PAGINATION_STACK_PADDING;
-  }
-  return pwaVisible ? MOBILE_PAGE_BOTTOM_PADDING_WITH_PWA : MOBILE_PAGE_BOTTOM_PADDING;
+): string | undefined {
+  if (!pwaVisible) return undefined;
+  return MOBILE_PAGE_PWA_BANNER_PADDING;
 }

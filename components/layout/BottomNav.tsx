@@ -32,7 +32,7 @@ export function BottomNav({ currentPath, onMenuOpen, menuOpen }: BottomNavProps)
     <LayoutGroup id="bottom-nav">
       <nav
         className={cn(
-          'fixed bottom-0 inset-x-0 grid grid-cols-5 border-t border-white/[0.08] bg-[#06090f]/95 pb-safe backdrop-blur-xl md:hidden',
+          'shrink-0 inset-x-0 grid grid-cols-5 border-t border-white/[0.08] bg-[#06090f]/95 pb-safe backdrop-blur-xl md:hidden',
           MOBILE_BOTTOM_NAV_Z,
         )}
         aria-label="Navegação principal"

@@ -1,6 +1,6 @@
 'use client';
 
-import { usePwaInstallContext } from '@/components/pwa/PwaInstallProvider';
+import { usePwaInstallVisible } from '@/components/pwa/PwaInstallProvider';
 import {
   getDashboardPageBottomPadding,
   type DashboardPageBottomPaddingVariant,
@@ -9,11 +9,11 @@ import {
 export type DashboardBottomInsetVariant = DashboardPageBottomPaddingVariant | 'none';
 
 /**
- * Padding inferior do conteúdo quando o banner PWA está visível (z-[60]).
- * Usar em páginas longas P0/P1; não altera markup do `PwaInstallPanel`.
+ * Padding inferior opcional no conteúdo (dentro do main rolável).
+ * Com flex shell, BottomNav fica fora do scroll; só banner PWA exige reserva.
  */
 export function useDashboardBottomInset(variant: DashboardBottomInsetVariant = 'default') {
-  const { visible: pwaVisible } = usePwaInstallContext();
+  const pwaVisible = usePwaInstallVisible();
 
   const pageBottomPadding =
     variant === 'none' ? undefined : getDashboardPageBottomPadding(variant, pwaVisible);

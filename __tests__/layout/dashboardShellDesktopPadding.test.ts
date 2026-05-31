@@ -1,12 +1,19 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-describe('DashboardShell desktop padding', () => {
-  it('main do shell zera padding inferior em md+ (md:pb-0)', () => {
+describe('DashboardShell mobile scroll shell', () => {
+  it('main é área de scroll sem padding compensatório de BottomNav', () => {
     const shellPath = join(process.cwd(), 'app', '(dashboard)', 'DashboardShell.tsx');
     const source = readFileSync(shellPath, 'utf8');
-    expect(source).toMatch(/<main[\s\S]*?md:pb-0/);
-    expect(source).toContain('MOBILE_PAGE_BOTTOM_PADDING');
+    expect(source).toMatch(/<main[\s\S]*?overflow-y-auto[\s\S]*?md:pb-0/);
+    expect(source).not.toContain('MOBILE_PAGE_BOTTOM_PADDING');
+  });
+
+  it('BottomNav não usa position fixed', () => {
+    const navPath = join(process.cwd(), 'components', 'layout', 'BottomNav.tsx');
+    const source = readFileSync(navPath, 'utf8');
+    expect(source).toContain('shrink-0');
+    expect(source).not.toMatch(/\bfixed\b/);
   });
 
   it('DashboardMobilePage usa PWA por padrão (pwaAware true)', () => {

@@ -39,7 +39,6 @@ import { BottomNav } from '@/components/layout/BottomNav';
 import {
   MOBILE_DRAWER_OVERLAY_Z,
   MOBILE_DRAWER_PANEL_Z,
-  MOBILE_PAGE_BOTTOM_PADDING,
 } from '@/lib/layout/mobileBottomNav';
 import { PlanStatusCard } from '@/components/plan/PlanStatusCard';
 
@@ -658,10 +657,7 @@ function DashboardContent({
         </header>
 
         <main
-          className={cn(
-            'relative flex min-h-0 flex-1 flex-col overflow-x-hidden overflow-y-auto no-scrollbar md:pb-0',
-            MOBILE_PAGE_BOTTOM_PADDING,
-          )}
+          className="relative flex min-h-0 flex-1 flex-col overflow-x-hidden overflow-y-auto no-scrollbar md:pb-0"
         >
           {showBackToVitrine ? <BackToVitrineBar /> : null}
           <motion.div

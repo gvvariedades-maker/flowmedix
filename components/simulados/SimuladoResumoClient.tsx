@@ -24,10 +24,7 @@ import type {
 import { isSimuladoQuestaoRespondida } from '@/lib/simulado/types';
 import { cn } from '@/lib/utils';
 import { createSimuladoSession, SimuladoApiError } from '@/lib/simulado/client';
-import {
-  SimuladoMobileActionBar,
-  SIMULADO_RESUMO_MOBILE_ACTION_SPACER,
-} from '@/components/simulados/SimuladoMobileActionBar';
+import { SimuladoMobileActionBar } from '@/components/simulados/SimuladoMobileActionBar';
 
 type SimuladoResumoClientProps = {
   session: SimuladoSessionSummary;
@@ -380,10 +377,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
           </p>
         )}
 
-        <SimuladoMobileActionBar
-          mobileSpacerClassName={SIMULADO_RESUMO_MOBILE_ACTION_SPACER}
-          className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center"
-        >
+        <SimuladoMobileActionBar className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
           {actionButtons}
         </SimuladoMobileActionBar>
       </div>
