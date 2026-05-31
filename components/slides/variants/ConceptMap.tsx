@@ -84,10 +84,10 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
                     <Icon size={24} />
                   </div>
                   <div>
-                    <h4 className={`font-black ${theme.textPrimary} text-xl tracking-tight mb-2`}>
+                    <h4 className={`font-display font-extrabold tracking-tight ${theme.textPrimary} text-xl mb-2`}>
                       {concept.title}
                     </h4>
-                    <p className={`${theme.textSecondary} text-base leading-relaxed md:text-sm`}>
+                    <p className={`font-body leading-relaxed ${theme.textSecondary} text-base md:text-sm`}>
                       {concept.description}
                     </p>
                   </div>
@@ -130,7 +130,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
                     </div>
                     <span
                       lang="pt-BR"
-                      className={`font-black uppercase ${theme.textPrimary} w-full max-w-[min(100%,6.75rem)] sm:max-w-[7rem] md:max-w-[7.5rem] text-sm leading-tight tracking-wide break-words [overflow-wrap:anywhere] hyphens-auto md:text-[10px] md:leading-snug md:tracking-widest lg:text-xs`}
+                      className={`font-display font-extrabold tracking-tight uppercase ${theme.textPrimary} w-full max-w-[min(100%,6.75rem)] sm:max-w-[7rem] md:max-w-[7.5rem] text-sm leading-tight break-words [overflow-wrap:anywhere] hyphens-auto md:text-[10px] md:leading-snug lg:text-xs`}
                     >
                       {concept.title}
                     </span>
@@ -145,7 +145,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
                   )}
                   
                   {/* Tooltip Description */}
-                  <div className={`absolute top-full mt-4 left-1/2 -translate-x-1/2 w-48 text-center text-xs ${theme.textSecondary} opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 p-2 rounded-lg z-20`}>
+                  <div className={`absolute top-full mt-4 left-1/2 -translate-x-1/2 w-48 text-center font-body text-xs ${theme.textSecondary} opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 p-2 rounded-lg z-20`}>
                     {concept.description}
                   </div>
                 </motion.div>
@@ -156,7 +156,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: concepts.length * 0.2 }}
-            className={`mt-8 ${theme.textSecondary} text-sm italic tracking-widest`}
+            className={`mt-8 font-mono tracking-widest ${theme.textSecondary} text-sm italic`}
           >
             Estrutura Molecular da Palavra
           </motion.p>
@@ -181,15 +181,15 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
               transition={{ delay: i * 0.15 }}
               className={`flex items-center justify-between bg-slate-800/50 backdrop-blur-sm p-4 rounded-xl border-l-4 ${theme.borderColor} transition-all duration-300 hover:bg-slate-800/70`}
             >
-              <div className={`text-xl font-bold ${theme.textPrimary} w-1/3 md:text-base`}>
+              <div className={`font-display font-bold text-xl ${theme.textPrimary} w-1/3 md:text-base`}>
                 {concept.title}
               </div>
               <div className="flex-1 h-px bg-slate-600 relative mx-4">
-                <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-900 px-2 text-sm uppercase md:text-[10px] ${theme.textSecondary}`}>
+                <span className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-900 px-2 font-mono text-[10px] uppercase ${theme.textSecondary}`}>
                   Exige
-                </div>
+                </span>
               </div>
-              <div className={`${theme.textSecondary} w-1/3 text-right text-base md:text-sm`}>
+              <div className={`font-body ${theme.textSecondary} w-1/3 text-right text-base md:text-sm`}>
                 {concept.description}
               </div>
             </motion.div>
@@ -223,8 +223,8 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
                     <Icon size={24} />
                   </div>
                   <div>
-                    <h4 className={`font-black ${theme.textPrimary} text-xl mb-2 md:text-lg`}>{concept.title}</h4>
-                    <p className={`${theme.textSecondary} text-base md:text-sm`}>{concept.description}</p>
+                    <h4 className={`font-display font-extrabold tracking-tight ${theme.textPrimary} text-xl mb-2 md:text-lg`}>{concept.title}</h4>
+                    <p className={`font-body leading-relaxed ${theme.textSecondary} text-base md:text-sm`}>{concept.description}</p>
                   </div>
                 </div>
               </motion.div>

@@ -62,10 +62,10 @@ export const MorphologicalConceptMap = ({ concepts, theme }: MorphologicalConcep
                 {React.createElement(getIcon(centralConcept.icon), { size: 32 })}
               </div>
               <div>
-                <h3 className={`font-black ${theme.textPrimary} text-xl tracking-tight mb-3 md:text-3xl`}>
+                <h3 className={`font-display font-extrabold tracking-tight ${theme.textPrimary} text-xl mb-3 md:text-3xl`}>
                   {centralConcept.title}
                 </h3>
-                <p className={`${theme.textSecondary} text-base leading-relaxed md:text-lg`}>
+                <p className={`font-body leading-relaxed ${theme.textSecondary} text-base md:text-lg`}>
                   {centralConcept.description}
                 </p>
               </div>
@@ -93,10 +93,10 @@ export const MorphologicalConceptMap = ({ concepts, theme }: MorphologicalConcep
                   <Icon size={24} />
                 </div>
                 <div>
-                  <h4 className={`font-black ${theme.textPrimary} text-xl tracking-tight mb-2`}>
+                  <h4 className={`font-display font-extrabold tracking-tight ${theme.textPrimary} text-xl mb-2`}>
                     {concept.title}
                   </h4>
-                  <p className={`${theme.textSecondary} text-base leading-relaxed md:text-sm`}>
+                  <p className={`font-body leading-relaxed ${theme.textSecondary} text-base md:text-sm`}>
                     {concept.description}
                   </p>
                 </div>

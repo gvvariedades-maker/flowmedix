@@ -41,7 +41,7 @@ function TrapBullet({
     );
   }
   return (
-    <span className="shrink-0 font-black text-red-400 text-sm md:text-lg tabular-nums">
+    <span className="shrink-0 font-mono tabular-nums text-sm text-red-400 md:text-lg">
       {itemId || `${index + 1}.`}
     </span>
   );
@@ -60,10 +60,10 @@ function ItemContent({
     <motion.div layout className="flex items-start gap-3">
       <TrapBullet bulletStyle={bulletStyle} index={index} itemId={item.id} />
       <div className="min-w-0 flex-1">
-        <h4 className="mb-2 text-base font-bold text-red-300 md:text-lg">
+        <h4 className="mb-2 font-display text-base font-bold text-red-300 md:text-lg">
           {item.label || item.title || 'Pegadinha'}
         </h4>
-        <p className="text-base leading-relaxed text-slate-200">
+        <p className="font-body text-base leading-relaxed text-slate-200">
           {item.detail || item.description || ''}
         </p>
       </div>
@@ -104,14 +104,14 @@ export const DangerZone = ({
         >
           {content ? (
             <motion.div className="mb-6 rounded-xl border border-red-500/30 bg-red-950/40 p-5 md:p-6">
-              <p className="text-base font-bold leading-relaxed text-slate-100 md:text-xl">{content}</p>
+              <p className="font-body text-base leading-relaxed text-slate-100 md:text-xl">{content}</p>
             </motion.div>
           ) : null}
 
           {items && items.length > 0 ? (
             <div className="space-y-4">
               <motion.div
-                className="hidden grid-cols-2 gap-3 px-1 text-[10px] font-black uppercase tracking-widest md:grid"
+                className="hidden grid-cols-2 gap-3 px-1 font-mono text-[10px] uppercase tracking-widest md:grid"
                 aria-hidden
               >
                 <span className="text-red-400/90">Pegadinha</span>
@@ -134,22 +134,22 @@ export const DangerZone = ({
                   >
                     <div className="rounded-xl border-l-4 border-red-500 bg-slate-900/70 p-4 md:p-5">
                       <div className="mb-2 flex items-center gap-2 md:hidden">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-red-400/90">
+                        <span className="font-mono text-[10px] uppercase tracking-widest text-red-400/90">
                           Pegadinha
                         </span>
                       </div>
                       <div className="flex items-start gap-3">
                         <TrapBullet bulletStyle={bulletStyle} index={index} itemId={item.id} />
                         <motion.div className="min-w-0 flex-1">
-                          <h4 className="mb-1.5 text-sm font-bold text-red-300 md:text-base">{label}</h4>
-                          <p className="text-sm leading-relaxed text-slate-300 md:text-base">{trapText}</p>
+                          <h4 className="mb-1.5 font-display text-sm font-bold text-red-300 md:text-base">{label}</h4>
+                          <p className="font-body text-sm leading-relaxed text-slate-300 md:text-base">{trapText}</p>
                         </motion.div>
                       </div>
                     </div>
 
                     <div className="rounded-xl border-l-4 border-emerald-500 bg-slate-900/50 p-4 md:p-5">
                       <motion.div className="mb-2 flex items-center gap-2 md:hidden">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400/90">
+                        <span className="font-mono text-[10px] uppercase tracking-widest text-emerald-400/90">
                           Correto
                         </span>
                       </motion.div>
@@ -161,8 +161,8 @@ export const DangerZone = ({
                           <CheckCircle2 className="h-4 w-4 text-emerald-400" strokeWidth={2.5} />
                         </span>
                         <div className="min-w-0 flex-1">
-                          <h4 className="mb-1.5 text-sm font-bold text-emerald-300 md:text-base">{label}</h4>
-                          <p className="text-sm leading-relaxed text-slate-200 md:text-base">
+                          <h4 className="mb-1.5 font-display text-sm font-bold text-emerald-300 md:text-base">{label}</h4>
+                          <p className="font-body text-sm leading-relaxed text-slate-200 md:text-base">
                             {correctText || '—'}
                           </p>
                         </div>
@@ -176,7 +176,7 @@ export const DangerZone = ({
 
           {footerRule ? (
             <div className="mt-6 rounded-xl border border-red-500/20 bg-red-900/30 p-4 md:p-5">
-              <p className="text-sm font-semibold italic text-red-200 md:text-base">💡 {footerRule}</p>
+              <p className="font-body text-sm italic text-red-200 md:text-base">💡 {footerRule}</p>
             </div>
           ) : null}
         </div>
@@ -197,12 +197,12 @@ export const DangerZone = ({
             <AlertTriangle size={140} className="text-red-500" />
           </div>
           <div className="relative z-10 space-y-6">
-            <h3 className="danger-zone-title flex items-center gap-3 text-sm font-black text-red-400 md:text-2xl">
+            <h3 className="danger-zone-title flex items-center gap-3 font-mono text-sm text-red-400 md:text-2xl">
               <AlertTriangle className="h-6 w-6 shrink-0 animate-pulse md:h-7 md:w-7" strokeWidth={2} /> CUIDADO COM A PEGADINHA
             </h3>
             {content && (
               <div className="danger-zone-content bg-red-950/40 rounded-xl p-6 border border-red-500/30">
-                <p className="text-base font-bold leading-relaxed text-slate-100 md:text-2xl">{content}</p>
+                <p className="font-body text-base font-semibold leading-relaxed text-slate-100 md:text-2xl">{content}</p>
               </div>
             )}
             {items && items.length > 0 && (
@@ -216,7 +216,7 @@ export const DangerZone = ({
             )}
             {footerRule && (
               <div className="danger-zone-footer bg-red-900/30 rounded-xl p-5 border border-red-500/20">
-                <p className="text-sm font-semibold italic text-red-200 md:text-base">💡 {footerRule}</p>
+                <p className="font-body text-sm italic text-red-200 md:text-base">💡 {footerRule}</p>
               </div>
             )}
           </div>
@@ -233,7 +233,7 @@ export const DangerZone = ({
         <div className="relative z-10 w-full max-w-5xl flex flex-col gap-6 py-8">
           {content && (
             <div className="bg-red-950/50 rounded-2xl p-6 border-2 border-red-500/50">
-              <p className="text-lg md:text-xl text-slate-100 font-bold leading-relaxed">{content}</p>
+              <p className="font-body text-lg font-semibold leading-relaxed text-slate-100 md:text-xl">{content}</p>
             </div>
           )}
           {items && items.length > 0 && (
@@ -253,7 +253,7 @@ export const DangerZone = ({
           )}
           {footerRule && (
             <div className="bg-red-900/30 rounded-xl p-4 border border-red-500/30">
-              <p className="text-sm font-semibold italic text-red-200 md:text-sm">💡 {footerRule}</p>
+              <p className="font-body text-sm italic text-red-200 md:text-sm">💡 {footerRule}</p>
             </div>
           )}
         </div>
@@ -267,10 +267,10 @@ export const DangerZone = ({
       <div className="w-full min-h-full min-w-0 flex items-center justify-center p-6 relative">
         <div className="absolute inset-0 bg-slate-900/95" />
         <motion.div className="relative z-10 w-full max-w-3xl space-y-4">
-          <div className="flex items-center gap-2 text-sm font-black text-red-400 md:text-lg">
+          <div className="flex items-center gap-2 font-mono text-sm text-red-400 md:text-lg">
             <ShieldAlert size={24} className="shrink-0" /> CUIDADO
           </div>
-          {content && <p className="text-base font-semibold text-slate-200 md:text-lg">{content}</p>}
+          {content && <p className="font-body text-base text-slate-200 md:text-lg">{content}</p>}
           {items && items.length > 0 && (
             <div className="space-y-2">
               {items.map((item, index) => (
@@ -278,19 +278,19 @@ export const DangerZone = ({
                   {bulletStyle === 'x_icon' ? (
                     <X className="mt-0.5 h-4 w-4 shrink-0 text-red-400" strokeWidth={3} aria-hidden />
                   ) : (
-                    <span className="shrink-0 font-bold text-sm text-red-400 md:text-base">
+                    <span className="shrink-0 font-mono tabular-nums text-sm text-red-400 md:text-base">
                       {item.id || `${index + 1}.`}
                     </span>
                   )}
                   <div className="min-w-0 text-slate-300">
-                    <span className="text-base font-bold text-red-300">{item.label || item.title || 'Pegadinha'}: </span>
-                    <span className="text-base md:text-sm">{item.detail || item.description || ''}</span>
+                    <span className="font-display text-base font-bold text-red-300">{item.label || item.title || 'Pegadinha'}: </span>
+                    <span className="font-body text-base md:text-sm">{item.detail || item.description || ''}</span>
                   </div>
                 </div>
               ))}
             </div>
           )}
-          {footerRule && <p className="pt-2 text-sm italic text-red-200">💡 {footerRule}</p>}
+          {footerRule && <p className="pt-2 font-body text-sm italic text-red-200">💡 {footerRule}</p>}
         </motion.div>
       </div>
     );
@@ -301,16 +301,16 @@ export const DangerZone = ({
     <div className="relative flex min-h-full w-full min-w-0 flex-col items-center justify-start p-4 pb-8">
       <div className="absolute inset-0 bg-gradient-to-br from-red-950/90 via-slate-900/90 to-red-950/90" />
       <div className="relative z-10 my-4 w-full max-w-4xl rounded-2xl border-l-4 border-red-500 p-6 backdrop-blur-xl">
-        <h3 className="mb-4 flex items-center gap-2 text-sm font-black text-red-400 md:text-2xl">
+        <h3 className="mb-4 flex items-center gap-2 font-mono text-sm text-red-400 md:text-2xl">
           <AlertTriangle size={24} className="shrink-0" /> CUIDADO
         </h3>
-        {content && <p className="mb-4 text-base font-bold text-slate-100 md:text-lg">{content}</p>}
+        {content && <p className="mb-4 font-body text-base font-semibold text-slate-100 md:text-lg">{content}</p>}
         {items && items.length > 0 && items.map((item, index) => (
           <motion.div key={index} className="mb-2 rounded-lg border-l-4 border-red-500 bg-slate-900/60 p-4">
             <ItemContent item={item} index={index} bulletStyle={bulletStyle} />
           </motion.div>
         ))}
-        {footerRule && <p className="mt-4 text-sm italic text-red-200">💡 {footerRule}</p>}
+        {footerRule && <p className="mt-4 font-body text-sm italic text-red-200">💡 {footerRule}</p>}
       </div>
     </div>
   );

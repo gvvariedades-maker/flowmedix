@@ -36,7 +36,7 @@ export function LogicFlowFooter({
             role="status"
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex max-w-md items-center justify-center gap-2 rounded-xl border border-violet-400/35 bg-violet-500/15 px-4 py-3 text-center text-sm font-semibold leading-snug text-violet-100"
+            className="font-body flex max-w-md items-center justify-center gap-2 rounded-xl border border-violet-400/35 bg-violet-500/15 px-4 py-3 text-center text-sm font-semibold leading-snug text-violet-100"
           >
             <Hand className="h-4 w-4 shrink-0 text-violet-300" aria-hidden />
             <span>
@@ -45,7 +45,7 @@ export function LogicFlowFooter({
           </motion.p>
         ) : null}
         <motion.div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/60 px-4 py-2 backdrop-blur-xl">
-          <span className="text-sm text-slate-300 md:text-xs">
+          <span className="font-mono tabular-nums text-sm text-slate-300 md:text-xs">
             Passo {Math.min(currentPasso, total)} de {total}
           </span>
         </motion.div>
@@ -71,7 +71,7 @@ export function LogicFlowFooter({
       className="mt-8 text-center"
     >
       <motion.div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/60 px-4 py-2 backdrop-blur-xl">
-        <span className="text-sm text-slate-400 md:text-xs">
+        <span className="font-mono tabular-nums text-sm text-slate-400 md:text-xs">
           {revealedCount} de {total} passos concluídos
         </span>
       </motion.div>

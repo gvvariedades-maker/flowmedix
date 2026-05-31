@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Plus_Jakarta_Sans, Syne } from "next/font/google";
+import { DM_Sans, Inter, JetBrains_Mono, Plus_Jakarta_Sans, Syne } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { validateAllEnv } from "@/lib/env";
@@ -34,8 +34,20 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const syne = Syne({
   subsets: ["latin"],
-  weight: ["800"],
+  weight: ["700", "800"],
   variable: "--font-syne",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
   display: "swap",
 });
 
@@ -131,7 +143,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={`${inter.className} ${plusJakartaSans.variable} ${syne.variable}`}
+        className={`${inter.className} ${plusJakartaSans.variable} ${syne.variable} ${jetbrainsMono.variable} ${dmSans.variable}`}
         suppressHydrationWarning
       >
         <Script

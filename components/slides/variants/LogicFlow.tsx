@@ -65,7 +65,7 @@ function LogicFlowTapBadge({ visible }: { visible: boolean }) {
     <motion.span
       initial={{ opacity: 0, y: 4 }}
       animate={{ opacity: 1, y: 0 }}
-      className="pointer-events-none absolute -top-2 right-3 z-10 inline-flex items-center gap-1 rounded-full bg-violet-500 px-2.5 py-1 text-[10px] font-black uppercase tracking-wide text-white shadow-lg shadow-violet-500/40"
+      className="pointer-events-none absolute -top-2 right-3 z-10 inline-flex items-center gap-1 rounded-full bg-violet-500 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wide text-white shadow-lg shadow-violet-500/40"
     >
       <Hand className="h-3 w-3 shrink-0" aria-hidden />
       Toque aqui
@@ -111,7 +111,7 @@ export const LogicFlow = ({
   if (!normalizedSteps || normalizedSteps.length === 0) {
     return (
       <motion.div className="flex min-h-full w-full min-w-0 items-center justify-center p-6">
-        <p className="text-base text-slate-400">Nenhum passo definido</p>
+        <p className="font-body text-base text-slate-400">Nenhum passo definido</p>
       </motion.div>
     );
   }
@@ -192,12 +192,12 @@ export const LogicFlow = ({
                     visible={canTap && index < normalizedSteps.length - 1}
                   />
                   <span
-                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${theme.primary} text-sm font-black text-slate-900`}
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br font-mono tabular-nums ${theme.primary} text-sm font-bold text-slate-900`}
                   >
                     {revealed ? <CheckCircle2 size={18} /> : index + 1}
                   </span>
                   <p
-                    className={`min-w-0 text-base font-semibold leading-snug break-words [overflow-wrap:anywhere] ${
+                    className={`font-body min-w-0 text-base font-semibold leading-snug break-words [overflow-wrap:anywhere] ${
                       revealed ? 'text-slate-50' : 'text-slate-500/70'
                     }`}
                   >
@@ -265,12 +265,12 @@ export const LogicFlow = ({
                   visible={canTap && index < normalizedSteps.length - 1}
                 />
                 <motion.div
-                  className={`mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${theme.primary} text-sm font-black text-slate-900`}
+                  className={`mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br font-mono tabular-nums ${theme.primary} text-sm font-bold text-slate-900`}
                 >
                   {revealed ? <CheckCircle2 size={20} /> : index + 1}
                 </motion.div>
                 <p
-                  className={`text-base font-semibold leading-relaxed ${
+                  className={`font-body text-base font-semibold leading-relaxed ${
                     revealed ? 'text-slate-50' : 'text-slate-500/70'
                   }`}
                 >
@@ -397,7 +397,7 @@ export const LogicFlow = ({
                           <Circle className="h-5 w-5 opacity-50 md:h-6 md:w-6" />
                         )}
                         {!revealed && (
-                          <span className="absolute inset-0 flex items-center justify-center">
+                          <span className="absolute inset-0 flex items-center justify-center font-mono tabular-nums">
                             {index + 1}
                           </span>
                         )}
@@ -406,7 +406,7 @@ export const LogicFlow = ({
                       <motion.div className="min-w-0 flex-1 pt-1">
                         <p
                           className={`
-                            text-base font-semibold leading-relaxed
+                            font-body text-base font-semibold leading-relaxed
                             break-words [overflow-wrap:anywhere]
                             transition-colors duration-300
                             ${revealed ? 'text-slate-50 [text-shadow:0_1px_2px_rgba(0,0,0,0.4)]' : 'text-slate-500/60'}

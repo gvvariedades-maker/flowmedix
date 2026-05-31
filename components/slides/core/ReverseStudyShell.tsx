@@ -53,7 +53,7 @@ export function ReverseStudyShell({
         <div className="flex flex-wrap items-center justify-between gap-2">
           <span
             className={[
-              'inline-flex max-w-full items-center rounded-full px-2.5 py-1 text-[10px] font-black uppercase tracking-widest ring-1',
+              'inline-flex max-w-full items-center rounded-full px-2.5 py-1 text-[10px] font-mono uppercase tracking-widest ring-1',
               chipBadgeClass(slideType),
             ].join(' ')}
             aria-label={`Tipo de slide: ${chipText}`}
@@ -62,7 +62,7 @@ export function ReverseStudyShell({
           </span>
           {banca?.trim() ? (
             <span
-              className="inline-flex max-w-[min(100%,14rem)] shrink-0 items-center truncate rounded-full border border-white/15 bg-slate-950/50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white/70 backdrop-blur-sm"
+              className="inline-flex max-w-[min(100%,14rem)] shrink-0 items-center truncate rounded-full border border-white/15 bg-slate-950/50 px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wide text-white/70 backdrop-blur-sm"
               title={banca.trim()}
             >
               {banca.trim()}
@@ -71,17 +71,17 @@ export function ReverseStudyShell({
         </div>
 
         {slideTitle?.trim() ? (
-          <h2 className="text-sm font-black uppercase leading-tight tracking-tight text-white sm:text-base md:text-lg">
+          <h2 className="font-display text-sm font-extrabold uppercase leading-tight tracking-tight text-white sm:text-base md:text-lg">
             {slideTitle.trim()}
           </h2>
         ) : null}
 
         <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/45 sm:text-[11px]">
-          <span className="tabular-nums text-white/55">{positionLabel}</span>
+          <span className="font-mono tabular-nums text-white/55">{positionLabel}</span>
           <span className="mx-2 text-white/25" aria-hidden>
             —
           </span>
-          <span>{arcLabel}</span>
+          <span className="font-body">{arcLabel}</span>
         </p>
       </header>
 
