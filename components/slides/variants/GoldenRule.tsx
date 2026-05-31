@@ -125,9 +125,14 @@ export const GoldenRule = ({
           <div className="golden-rule-shine pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
           <div className="relative z-10 min-w-0">
             <Sparkles className={`${theme.iconText} w-10 h-10 md:w-14 md:h-14 mx-auto mb-4 drop-shadow-2xl`} />
-            <h2 className="golden-rule-text font-display text-lg font-extrabold uppercase leading-tight tracking-tight break-words [overflow-wrap:anywhere] hyphens-auto text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)] md:text-3xl lg:text-4xl xl:text-6xl">
+            <h2 className="golden-rule-text font-display text-lg font-extrabold uppercase tracking-tighter leading-tight break-words [overflow-wrap:anywhere] hyphens-auto text-white [text-shadow:0_0_40px_rgba(255,255,255,0.15)] md:text-3xl lg:text-4xl xl:text-6xl">
               {content}
             </h2>
+            {footerRule ? (
+              <p className={`font-body mt-4 text-sm italic leading-relaxed md:mt-6 md:text-base ${theme.textSecondary}`}>
+                {footerRule}
+              </p>
+            ) : null}
           </div>
         </motion.div>
       </div>
@@ -149,6 +154,11 @@ export const GoldenRule = ({
           <p className={`font-display min-w-0 text-base font-bold leading-relaxed break-words [overflow-wrap:anywhere] hyphens-auto md:text-lg lg:text-xl ${theme.textPrimary}`}>
             {content}
           </p>
+          {footerRule ? (
+            <p className={`font-body mt-4 text-sm italic leading-relaxed md:mt-5 md:text-base ${theme.textSecondary}`}>
+              {footerRule}
+            </p>
+          ) : null}
         </motion.div>
       </motion.div>
     );
@@ -163,6 +173,11 @@ export const GoldenRule = ({
           <p className={`font-body text-base italic leading-relaxed break-words [overflow-wrap:anywhere] hyphens-auto md:text-xl ${theme.textPrimary}`}>
             {content}
           </p>
+          {footerRule ? (
+            <p className={`font-body mt-4 text-sm italic leading-relaxed md:mt-5 md:text-base ${theme.textSecondary}`}>
+              {footerRule}
+            </p>
+          ) : null}
         </motion.div>
       </motion.div>
     );
@@ -180,6 +195,11 @@ export const GoldenRule = ({
           <h2 className="font-display w-full min-w-0 text-center text-lg font-extrabold uppercase tracking-tight leading-tight break-words [overflow-wrap:anywhere] hyphens-auto text-white md:text-2xl lg:text-3xl">
             {content}
           </h2>
+          {footerRule ? (
+            <p className="font-body w-full text-center text-sm italic leading-relaxed text-white/80 md:text-base">
+              {footerRule}
+            </p>
+          ) : null}
         </motion.div>
       </motion.div>
     );
@@ -194,9 +214,14 @@ export const GoldenRule = ({
         style={{ boxShadow: `0 0 80px -20px ${theme.glow}` }}
       >
         <Sparkles className={`${theme.iconText} w-10 h-10 md:w-14 md:h-14 mx-auto mb-4`} />
-        <h2 className="font-display text-lg font-extrabold uppercase tracking-tight break-words [overflow-wrap:anywhere] hyphens-auto text-white md:text-3xl">
+        <h2 className="font-display text-lg font-extrabold uppercase tracking-tighter leading-tight break-words [overflow-wrap:anywhere] hyphens-auto text-white [text-shadow:0_0_40px_rgba(255,255,255,0.15)] md:text-3xl">
           {content}
         </h2>
+        {footerRule ? (
+          <p className={`font-body mt-4 text-sm italic leading-relaxed md:mt-6 md:text-base ${theme.textSecondary}`}>
+            {footerRule}
+          </p>
+        ) : null}
       </motion.div>
     </motion.div>
   );

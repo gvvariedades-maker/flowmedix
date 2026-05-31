@@ -197,7 +197,7 @@ export const DangerZone = ({
             <AlertTriangle size={140} className="text-red-500" />
           </div>
           <div className="relative z-10 space-y-6">
-            <h3 className="danger-zone-title flex items-center gap-3 font-mono text-sm text-red-400 md:text-2xl">
+            <h3 className="danger-zone-title flex items-center gap-3 font-mono text-sm font-black text-red-400 md:text-2xl">
               <AlertTriangle className="h-6 w-6 shrink-0 animate-pulse md:h-7 md:w-7" strokeWidth={2} /> CUIDADO COM A PEGADINHA
             </h3>
             {content && (
@@ -301,7 +301,7 @@ export const DangerZone = ({
     <div className="relative flex min-h-full w-full min-w-0 flex-col items-center justify-start p-4 pb-8">
       <div className="absolute inset-0 bg-gradient-to-br from-red-950/90 via-slate-900/90 to-red-950/90" />
       <div className="relative z-10 my-4 w-full max-w-4xl rounded-2xl border-l-4 border-red-500 p-6 backdrop-blur-xl">
-        <h3 className="mb-4 flex items-center gap-2 font-mono text-sm text-red-400 md:text-2xl">
+        <h3 className="mb-4 flex items-center gap-2 font-mono text-sm font-black text-red-400 md:text-2xl">
           <AlertTriangle size={24} className="shrink-0" /> CUIDADO
         </h3>
         {content && <p className="mb-4 font-body text-base font-semibold text-slate-100 md:text-lg">{content}</p>}

@@ -11,7 +11,8 @@
  */
 
 import { useState, useEffect, useMemo, useRef, useLayoutEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import type { Target, Transition } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { buildEstudarHref } from '@/lib/estudar/navigation';
 import { useQuestaoNavigationOptional } from '@/components/lesson/questao-navigation-context';
@@ -49,6 +50,62 @@ import {
 } from 'lucide-react';
 
 const QUESTION_TEXT_TYPOGRAPHY = 'text-base md:text-lg leading-relaxed';
+
+type SlideMotionProps = {
+  initial: Target;
+  animate: Target;
+  exit: Target;
+  transition: Transition;
+};
+
+function getSlideVariants(slideKind: string, reducedMotion: boolean): SlideMotionProps {
+  if (reducedMotion) {
+    return {
+      initial: { opacity: 0 },
+      animate: { opacity: 1 },
+      exit: { opacity: 0 },
+      transition: { duration: 0.2 },
+    };
+  }
+
+  switch (slideKind) {
+    case 'golden_rule':
+      return {
+        initial: { opacity: 0, scale: 0.93, filter: 'blur(6px)' },
+        animate: { opacity: 1, scale: 1, filter: 'blur(0px)' },
+        exit: { opacity: 0, scale: 1.03 },
+        transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] },
+      };
+    case 'danger_zone':
+      return {
+        initial: { opacity: 0, x: -16, rotate: -0.8 },
+        animate: { opacity: 1, x: 0, rotate: 0 },
+        exit: { opacity: 0, x: 16 },
+        transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+      };
+    case 'logic_flow':
+      return {
+        initial: { opacity: 0, y: 24 },
+        animate: { opacity: 1, y: 0 },
+        exit: { opacity: 0, y: -12 },
+        transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
+      };
+    case 'concept_map':
+      return {
+        initial: { opacity: 0, scale: 0.96, y: 10 },
+        animate: { opacity: 1, scale: 1, y: 0 },
+        exit: { opacity: 0, y: -8 },
+        transition: { duration: 0.38, ease: [0.34, 1.4, 0.64, 1] },
+      };
+    default:
+      return {
+        initial: { opacity: 0, y: 14 },
+        animate: { opacity: 1, y: 0 },
+        exit: { opacity: 0, y: -8 },
+        transition: { duration: 0.32, ease: [0.16, 1, 0.3, 1] },
+      };
+  }
+}
 
 export default function AvantLessonPlayer({ 
   dados, 
@@ -290,6 +347,8 @@ export default function AvantLessonPlayer({
     if (!raw) return '';
     return stripLeadingQuestionEnumeration(raw);
   }, [dados?.question_data?.instruction]);
+
+  const prefersReducedMotion = useReducedMotion() ?? false;
 
   if (!dados || !dados.question_data) return null;
 
@@ -555,6 +614,8 @@ export default function AvantLessonPlayer({
 
   const slidesArray = (slidesSource?.length ? slidesSource : [fallbackSlide]).map(normalizeSlide);
   const currentSlide = slidesArray[slideAtual];
+  const slideKind = currentSlide?.type ?? currentSlide?.layout_type ?? 'default';
+  const slideMotion = getSlideVariants(slideKind, prefersReducedMotion);
   const currentSlideMicrotipKey = getReverseStudySlideMicrotipKey(currentSlide?.type ?? currentSlide?.layout_type);
   const totalSlides = slidesArray.length;
   const fadeInUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };
@@ -1067,9 +1128,10 @@ export default function AvantLessonPlayer({
       <AnimatePresence>
         {etapa === 'estudo' && (
           <motion.div 
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
-            exit={{ opacity: 0 }}
+            initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: prefersReducedMotion ? 0 : 8 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className={
               isPreviewMode
                 ? 'absolute inset-0 z-30 flex h-full max-h-full flex-col overflow-hidden rounded-b-[2rem] bg-[#010409] overscroll-y-contain'
@@ -1143,11 +1205,11 @@ export default function AvantLessonPlayer({
                 <EstudoReversoSlideZoom>
                   <AnimatePresence mode="wait">
                     <motion.div
-                      key={`slide-${slideAtual}-${currentSlide?.type ?? 'default'}`}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.35, ease: 'easeInOut' }}
+                      key={`slide-${slideAtual}-${slideKind}`}
+                      initial={slideMotion.initial}
+                      animate={slideMotion.animate}
+                      exit={slideMotion.exit}
+                      transition={slideMotion.transition}
                       className="flex w-full min-w-0 flex-col items-center"
                     >
                       <NeuroSlide

@@ -380,7 +380,7 @@ export const LogicFlow = ({
                         transition={{ delay: isTapMode ? 0 : index * 0.1 + 0.2 }}
                         className={`
                           flex h-10 w-10 shrink-0 items-center justify-center rounded-xl
-                          md:h-12 md:w-12 font-black text-base md:text-lg
+                          md:h-12 md:w-12 font-bold text-base md:text-lg
                           bg-gradient-to-br ${theme.primary} text-slate-900 relative
                         `}
                         style={{ boxShadow: `0 0 20px ${theme.glow}` }}
@@ -397,7 +397,7 @@ export const LogicFlow = ({
                           <Circle className="h-5 w-5 opacity-50 md:h-6 md:w-6" />
                         )}
                         {!revealed && (
-                          <span className="absolute inset-0 flex items-center justify-center font-mono tabular-nums">
+                          <span className="absolute inset-0 flex items-center justify-center font-mono font-bold tabular-nums">
                             {index + 1}
                           </span>
                         )}

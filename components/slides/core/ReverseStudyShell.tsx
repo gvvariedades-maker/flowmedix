@@ -53,7 +53,7 @@ export function ReverseStudyShell({
         <div className="flex flex-wrap items-center justify-between gap-2">
           <span
             className={[
-              'inline-flex max-w-full items-center rounded-full px-2.5 py-1 text-[10px] font-mono uppercase tracking-widest ring-1',
+              'inline-flex max-w-full items-center rounded-full px-2.5 py-1 text-[11px] font-mono uppercase tracking-widest ring-1',
               chipBadgeClass(slideType),
             ].join(' ')}
             aria-label={`Tipo de slide: ${chipText}`}
