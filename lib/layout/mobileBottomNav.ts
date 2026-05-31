@@ -16,6 +16,17 @@ export const MOBILE_BOTTOM_NAV_FIXED_BOTTOM =
 /** Reserva de scroll para faixa de ação (botão h-12 + py-3 + borda). */
 export const MOBILE_ACTION_BAR_SPACER = 'h-[5.25rem]';
 
+/**
+ * Reserva no fluxo do documento: BottomNav + gap + faixa de ação + safe area.
+ * Alinha com `MOBILE_PAGE_ACTION_BAR_STACK_PADDING` (altura equivalente).
+ */
+export const MOBILE_ACTION_BAR_STACK_SPACER =
+  'h-[calc(5rem+1.25rem+5.25rem+env(safe-area-inset-bottom,0px))]';
+
+/** Stack action bar + banner PWA visível + safe area. */
+export const MOBILE_ACTION_BAR_STACK_SPACER_WITH_PWA =
+  'h-[calc(5rem+1.25rem+5.25rem+6rem+env(safe-area-inset-bottom,0px))]';
+
 /** z-index acima do BottomNav (`z-40`). */
 export const MOBILE_ACTION_BAR_Z = 'z-50';
 

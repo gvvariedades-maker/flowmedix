@@ -3,6 +3,8 @@ import {
   MOBILE_PAGE_BOTTOM_PADDING_WITH_PWA,
   MOBILE_PAGE_ACTION_BAR_STACK_PADDING,
   MOBILE_PAGE_ACTION_BAR_STACK_PADDING_WITH_PWA,
+  MOBILE_ACTION_BAR_STACK_SPACER,
+  MOBILE_ACTION_BAR_STACK_SPACER_WITH_PWA,
   MOBILE_PWA_INSTALL_BANNER_CLEARANCE,
   MOBILE_PAGE_VITRINE_PAGINATION_STACK_PADDING,
   MOBILE_VITRINE_PAGINATION_FIXED_BOTTOM,
@@ -13,6 +15,11 @@ describe('mobileBottomNav tokens', () => {
   it('exporta padding base com BottomNav 5rem e safe area', () => {
     expect(MOBILE_PAGE_BOTTOM_PADDING).toContain('5rem');
     expect(MOBILE_PAGE_BOTTOM_PADDING).toContain('safe-area-inset-bottom');
+  });
+
+  it('exporta spacer da faixa de ação alinhado ao stack padding', () => {
+    expect(MOBILE_ACTION_BAR_STACK_SPACER).toContain('5rem+1.25rem+5.25rem');
+    expect(MOBILE_ACTION_BAR_STACK_SPACER_WITH_PWA).toContain('5.25rem+6rem');
   });
 
   it('exporta padding com banner PWA (+6rem)', () => {

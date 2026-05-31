@@ -3,7 +3,10 @@
 import { useEffect, useState, type ReactNode, type RefObject } from 'react';
 import { createPortal } from 'react-dom';
 import { cn } from '@/lib/utils';
+import { usePwaInstallContext } from '@/components/pwa/PwaInstallProvider';
 import {
+  MOBILE_ACTION_BAR_STACK_SPACER,
+  MOBILE_ACTION_BAR_STACK_SPACER_WITH_PWA,
   MOBILE_ACTION_BAR_Z,
   MOBILE_BOTTOM_NAV_FIXED_BOTTOM,
 } from '@/lib/layout/mobileBottomNav';
@@ -29,9 +32,13 @@ export function SimuladoMobileActionBar({
   actionRef,
   className,
   children,
-  mobileSpacerClassName = 'h-[8.5rem]',
+  mobileSpacerClassName,
 }: SimuladoMobileActionBarProps) {
   const [mounted, setMounted] = useState(false);
+  const { visible: pwaVisible } = usePwaInstallContext();
+  const resolvedSpacerClassName =
+    mobileSpacerClassName ??
+    (pwaVisible ? MOBILE_ACTION_BAR_STACK_SPACER_WITH_PWA : MOBILE_ACTION_BAR_STACK_SPACER);
 
   useEffect(() => {
     setMounted(true);
@@ -39,7 +46,7 @@ export function SimuladoMobileActionBar({
 
   return (
     <>
-      <div className={cn('shrink-0 md:hidden', mobileSpacerClassName)} aria-hidden />
+      <div className={cn('shrink-0 md:hidden', resolvedSpacerClassName)} aria-hidden />
       {mounted
         ? createPortal(
             <div ref={actionRef} className={cn(MOBILE_ACTION_BAR_SHELL, 'md:hidden')}>

@@ -26,6 +26,7 @@ import {
   FREEMIUM_PLAN_LIMITS_DESCRIPTION,
 } from '@/lib/freemium';
 import { PaywallModal } from '@/components/freemium/PaywallModal';
+import { MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM } from '@/lib/layout/mobileBottomNav';
 import { SimuladoMobileActionBar } from '@/components/simulados/SimuladoMobileActionBar';
 
 function formatZodIssues(issues: ZodIssue[]): string {
@@ -552,7 +553,10 @@ export function SimuladosSetupClient() {
               }}
               disabled={loading}
               placeholder="Palavra-chave no enunciado ou metadados"
-              className="h-11 rounded-xl border-white/15 bg-[#0d1117] text-slate-100"
+              className={cn(
+                'h-11 rounded-xl border-white/15 bg-[#0d1117] text-slate-100 md:scroll-mb-0',
+                MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM,
+              )}
             />
           </div>
 
