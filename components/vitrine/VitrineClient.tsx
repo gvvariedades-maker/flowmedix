@@ -46,7 +46,12 @@ import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
-import type { VitrineGrupoSubtopico, VitrinePageResponse } from '@/lib/vitrine/types';
+import {
+  vitrineFacetsQueryKey,
+  vitrineListQueryKey,
+  type VitrineListQuery,
+} from '@/lib/vitrine/parseListQuery';
+import type { VitrineFacets, VitrineGrupoSubtopico, VitrinePageResponse } from '@/lib/vitrine/types';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { MultiCheckboxFilter } from '@/components/ui/MultiCheckboxFilter';
@@ -189,6 +194,15 @@ interface VitrineClientProps {
   fallbackTitulo?: string;
   /** Server Component (ex.: contadores globais do catálogo) — renderizado acima da lista de assuntos. */
   children?: ReactNode;
+  /** Query da URL já resolvida no RSC (alinha hidratação com SSR). */
+  initialListQuery?: VitrineListQuery;
+  /** Primeira página da vitrine pré-carregada no servidor. */
+  initialPageData?: VitrinePageResponse | null;
+  /** Facets pré-carregados no servidor. */
+  initialFacetsData?: VitrineFacets | null;
+  /** Chaves para pular o 1º fetch client quando bater com a query atual. */
+  ssrListQueryKey?: string;
+  ssrFacetsQueryKey?: string;
 }
 
 // ─── Componente Principal ─────────────────────────────────────────────────────
@@ -196,21 +210,33 @@ interface VitrineClientProps {
 export default function VitrineClient({
   fallbackTitulo = 'Estudo Reverso',
   children,
+  initialListQuery,
+  initialPageData = null,
+  initialFacetsData = null,
+  ssrListQueryKey,
+  ssrFacetsQueryKey,
 }: VitrineClientProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
 
+  const ssrQuery = initialListQuery ?? {
+    page: 1,
+    bancas: [] as string[],
+    assuntos: [] as string[],
+    q: undefined as string | undefined,
+  };
+
   /**
-   * Não ler `searchParams` no primeiro render: no SSR / primeiro paint o cliente pode
-   * divergir da URL real → erro de hidratação. Defaults iguais ao servidor; URL aplica depois.
+   * Estado inicial alinhado ao SSR quando `initialListQuery` veio do RSC.
+   * `useLayoutEffect` ainda sincroniza mudanças de URL após navegação client-side.
    */
   const [cidadeUrl, setCidadeUrl] = useState(fallbackTitulo);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [debouncedSearch, setDebouncedSearch] = useState('');
-  const [bancasSelecionadas, setBancasSelecionadas] = useState<string[]>([]);
-  const [assuntosSelecionados, setAssuntosSelecionados] = useState<string[]>([]);
-  const [pagina, setPagina] = useState(1);
+  const [searchTerm, setSearchTerm] = useState(ssrQuery.q ?? '');
+  const [debouncedSearch, setDebouncedSearch] = useState(ssrQuery.q ?? '');
+  const [bancasSelecionadas, setBancasSelecionadas] = useState<string[]>(ssrQuery.bancas);
+  const [assuntosSelecionados, setAssuntosSelecionados] = useState<string[]>(ssrQuery.assuntos);
+  const [pagina, setPagina] = useState(ssrQuery.page);
   const [searchOpen, setSearchOpen] = useState(false);
   const [bancaSheetOpen, setBancaSheetOpen] = useState(false);
 
@@ -227,19 +253,29 @@ export default function VitrineClient({
     return () => window.removeEventListener('avant:open-search', handler);
   }, []);
   const [assuntoSheetOpen, setAssuntoSheetOpen] = useState(false);
-  const [gruposPagina, setGruposPagina] = useState<GrupoSubtopico[]>([]);
-  const [bancas, setBancas] = useState<string[]>([]);
-  const [assuntos, setAssuntos] = useState<string[]>([]);
-  const [totalAssuntos, setTotalAssuntos] = useState(0);
-  const [totalPaginas, setTotalPaginas] = useState(1);
+  const [gruposPagina, setGruposPagina] = useState<GrupoSubtopico[]>(
+    () => initialPageData?.groups ?? [],
+  );
+  const [bancas, setBancas] = useState<string[]>(() => initialFacetsData?.bancas ?? []);
+  const [assuntos, setAssuntos] = useState<string[]>(() => initialFacetsData?.assuntos ?? []);
+  const [totalAssuntos, setTotalAssuntos] = useState(
+    () => initialPageData?.pagination.totalGroups ?? 0,
+  );
+  const [totalPaginas, setTotalPaginas] = useState(
+    () => initialPageData?.pagination.totalPages ?? 1,
+  );
   const { pageBottomPadding } = useDashboardBottomInset('default');
-  const [paginaEfetiva, setPaginaEfetiva] = useState(1);
-  const [perPage, setPerPage] = useState(12);
-  const [loading, setLoading] = useState(true);
-  const [facetsLoading, setFacetsLoading] = useState(true);
+  const [paginaEfetiva, setPaginaEfetiva] = useState(
+    () => initialPageData?.pagination.page ?? ssrQuery.page,
+  );
+  const [perPage, setPerPage] = useState(() => initialPageData?.pagination.perPage ?? 12);
+  const [loading, setLoading] = useState(() => !initialPageData);
+  const [facetsLoading, setFacetsLoading] = useState(() => !initialFacetsData);
   const [fetchError, setFetchError] = useState<string | null>(null);
   /** Evita gravar na URL antes de ler os filtros (impede loop com estado inicial vazio). */
-  const filtersHydratedFromUrlRef = useRef(false);
+  const filtersHydratedFromUrlRef = useRef(Boolean(initialListQuery));
+  const ssrListConsumedRef = useRef(false);
+  const ssrFacetsConsumedRef = useRef(false);
 
   /**
    * URL → estado antes do paint e antes dos useEffects que gravam na URL / buscam dados.
@@ -281,6 +317,16 @@ export default function VitrineClient({
     let cancelled = false;
 
     async function loadFacets() {
+      const currentFacetsKey = vitrineFacetsQueryKey(bancasSelecionadas);
+      if (
+        !ssrFacetsConsumedRef.current &&
+        initialFacetsData &&
+        ssrFacetsQueryKey === currentFacetsKey
+      ) {
+        ssrFacetsConsumedRef.current = true;
+        return;
+      }
+
       setFacetsLoading(true);
 
       const params = new URLSearchParams();
@@ -313,13 +359,28 @@ export default function VitrineClient({
     return () => {
       cancelled = true;
     };
-  }, [bancasSelecionadas]);
+  }, [bancasSelecionadas, initialFacetsData, ssrFacetsQueryKey]);
 
   /** Paginação explícita (replace por página) — sem infinite scroll / append. */
   useEffect(() => {
     let cancelled = false;
 
     async function loadVitrine() {
+      const currentListKey = vitrineListQueryKey({
+        page: pagina,
+        bancas: bancasSelecionadas,
+        assuntos: assuntosSelecionados,
+        q: debouncedSearch || undefined,
+      });
+      if (
+        !ssrListConsumedRef.current &&
+        initialPageData &&
+        ssrListQueryKey === currentListKey
+      ) {
+        ssrListConsumedRef.current = true;
+        return;
+      }
+
       setLoading(true);
       setFetchError(null);
 
@@ -362,7 +423,14 @@ export default function VitrineClient({
     return () => {
       cancelled = true;
     };
-  }, [pagina, bancasSelecionadas, assuntosSelecionados, debouncedSearch]);
+  }, [
+    pagina,
+    bancasSelecionadas,
+    assuntosSelecionados,
+    debouncedSearch,
+    initialPageData,
+    ssrListQueryKey,
+  ]);
 
   const searchPaginaResetSkipRef = useRef(true);
   useEffect(() => {
@@ -401,15 +469,16 @@ export default function VitrineClient({
     }
   }, [bancasSelecionadas, assuntosSelecionados, searchTerm, pagina, pathname, router, searchParams]);
 
-  /** Só banca/assunto/q — repassado ao abrir questão para o player usar a mesma lista filtrada. */
+  /** Filtros + página da vitrine — repassados ao abrir questão para navegação e retorno à mesma página. */
   const estudarQuery = useMemo(() => {
     const p = new URLSearchParams();
     bancasSelecionadas.forEach((b) => p.append('banca', b));
     assuntosSelecionados.forEach((a) => p.append('assunto', a));
     if (searchTerm.trim()) p.set('q', searchTerm.trim());
+    if (pagina > 1) p.set('page', String(pagina));
     const s = p.toString();
     return s ? `?${s}` : '';
-  }, [bancasSelecionadas, assuntosSelecionados, searchTerm]);
+  }, [bancasSelecionadas, assuntosSelecionados, searchTerm, pagina]);
 
   const vitrineListaRef = useRef<HTMLDivElement>(null);
   const paginaScrollSkipRef = useRef(true);

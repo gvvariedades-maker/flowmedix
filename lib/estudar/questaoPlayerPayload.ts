@@ -49,8 +49,19 @@ export function parseEstudarSearchParams(searchParams: EstudarSearchParams) {
       ? [searchParams.assunto.trim()]
       : [];
   const vitrineQ = typeof searchParams.q === 'string' ? searchParams.q.trim() : '';
+  const rawPage =
+    typeof searchParams.page === 'string' ? parseInt(searchParams.page, 10) : 1;
+  const vitrinePage = Number.isFinite(rawPage) && rawPage >= 1 ? rawPage : 1;
 
-  return { fromPlano, fromCaderno, cadernoId, vitrineBancas, vitrineAssuntos, vitrineQ };
+  return {
+    fromPlano,
+    fromCaderno,
+    cadernoId,
+    vitrineBancas,
+    vitrineAssuntos,
+    vitrineQ,
+    vitrinePage,
+  };
 }
 
 export type BuildEstudarQuestaoPlayerPayloadInput = {
@@ -71,8 +82,15 @@ export async function buildEstudarQuestaoPlayerPayload(
   input: BuildEstudarQuestaoPlayerPayloadInput,
 ): Promise<EstudarQuestaoBuildResult> {
   const { slug, userId, searchParams = {}, isAdmin = false } = input;
-  const { fromPlano, fromCaderno, cadernoId, vitrineBancas, vitrineAssuntos, vitrineQ } =
-    parseEstudarSearchParams(searchParams);
+  const {
+    fromPlano,
+    fromCaderno,
+    cadernoId,
+    vitrineBancas,
+    vitrineAssuntos,
+    vitrineQ,
+    vitrinePage,
+  } = parseEstudarSearchParams(searchParams);
 
   let atual: ModuloAtualRow | null = null;
   let supabase: SupabaseClient | null = null;
@@ -184,6 +202,7 @@ export async function buildEstudarQuestaoPlayerPayload(
   vitrineBancas.forEach((b) => vitrineParams.append('banca', b));
   vitrineAssuntos.forEach((a) => vitrineParams.append('assunto', a));
   if (vitrineQ) vitrineParams.set('q', vitrineQ);
+  if (vitrinePage > 1) vitrineParams.set('page', String(vitrinePage));
   const vitrineQueryString = vitrineParams.toString();
   const vitrineQuerySuffix = vitrineQueryString ? `?${vitrineQueryString}` : '';
 

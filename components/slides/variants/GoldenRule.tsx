@@ -125,7 +125,7 @@ export const GoldenRule = ({
           <div className="golden-rule-shine pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
           <div className="relative z-10 min-w-0">
             <Sparkles className={`${theme.iconText} w-8 h-8 md:w-10 md:h-10 mx-auto mb-3 drop-shadow-2xl`} />
-            <h2 className="golden-rule-text font-display text-lg font-extrabold uppercase tracking-tighter leading-tight break-words [overflow-wrap:anywhere] hyphens-auto text-white [text-shadow:0_0_40px_rgba(255,255,255,0.15)] md:text-3xl lg:text-4xl xl:text-6xl">
+            <h2 className="golden-rule-text font-display text-lg font-extrabold uppercase tracking-tighter leading-tight break-words [overflow-wrap:anywhere] hyphens-none text-white [text-shadow:0_0_40px_rgba(255,255,255,0.15)] md:text-3xl lg:text-4xl xl:text-6xl">
               {content}
             </h2>
             {footerRule ? (
@@ -214,7 +214,7 @@ export const GoldenRule = ({
         style={{ boxShadow: `0 0 80px -20px ${theme.glow}` }}
       >
         <Sparkles className={`${theme.iconText} w-8 h-8 md:w-10 md:h-10 mx-auto mb-3`} />
-        <h2 className="font-display text-lg font-extrabold uppercase tracking-tighter leading-tight break-words [overflow-wrap:anywhere] hyphens-auto text-white [text-shadow:0_0_40px_rgba(255,255,255,0.15)] md:text-3xl">
+        <h2 className="font-display text-lg font-extrabold uppercase tracking-tighter leading-tight break-words [overflow-wrap:anywhere] hyphens-none text-white [text-shadow:0_0_40px_rgba(255,255,255,0.15)] md:text-3xl">
           {content}
         </h2>
         {footerRule ? (

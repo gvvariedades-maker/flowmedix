@@ -55,7 +55,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
     };
 
     return (
-      <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 md:p-6 relative">
+      <div className="w-full min-h-0 min-w-0 flex flex-1 items-start justify-center overflow-y-auto p-4 md:p-6 relative">
         {/* Background animado com tema */}
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
         
@@ -63,7 +63,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-1 min-[420px]:[grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))] gap-3 md:gap-5 p-1 md:p-3 w-full max-w-5xl relative z-10 my-auto"
+          className="grid grid-cols-1 min-[420px]:[grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))] gap-3 md:gap-5 p-1 md:p-3 w-full max-w-5xl relative z-10"
           style={{ contentVisibility: 'auto' }}
         >
           {concepts.map((concept, index) => {
@@ -179,17 +179,17 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.15 }}
-              className={`flex items-center justify-between bg-slate-800/50 backdrop-blur-sm p-3 md:p-4 rounded-xl border-l-4 ${theme.borderColor} transition-all duration-300 hover:bg-slate-800/70`}
+              className={`flex flex-col gap-2 md:flex-row md:items-center md:justify-between bg-slate-800/50 backdrop-blur-sm p-3 md:p-4 rounded-xl border-l-4 ${theme.borderColor} transition-all duration-300 hover:bg-slate-800/70`}
             >
-              <div className={`font-display font-bold text-xl ${theme.textPrimary} w-1/3 md:text-base`}>
+              <div className={`font-display font-bold text-xl ${theme.textPrimary} min-w-0 w-full md:w-2/5 md:text-base`}>
                 {concept.title}
               </div>
-              <div className="flex-1 h-px bg-slate-600 relative mx-4">
+              <div className="hidden md:flex flex-1 h-px bg-slate-600 relative mx-4">
                 <span className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-900 px-2 font-mono text-[10px] uppercase ${theme.textSecondary}`}>
                   Exige
                 </span>
               </div>
-              <div className={`font-body ${theme.textSecondary} w-1/3 text-right text-base md:text-sm`}>
+              <div className={`font-body ${theme.textSecondary} min-w-0 w-full md:w-2/5 md:text-right text-left text-sm`}>
                 {concept.description}
               </div>
             </motion.div>

@@ -553,13 +553,13 @@ export default function AvantLessonPlayer({
     if (fromPlano) return router.push('/plano-diario');
     // Lista "Meus cadernos" — não a página de edição `/cadernos/[id]`
     if (fromCaderno) return router.push('/cadernos');
-    router.push('/estudar');
+    router.push(`/estudar${buildNavegacaoSuffix()}`);
   };
 
   const handleConcluir = () => {
     if (fromPlano) return router.push('/plano-diario');
     if (fromCaderno) return router.push('/cadernos');
-    router.push('/estudar');
+    router.push(`/estudar${buildNavegacaoSuffix()}`);
   };
 
   // ============================================================================

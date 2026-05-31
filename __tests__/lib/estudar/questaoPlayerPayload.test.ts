@@ -208,4 +208,23 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
 
     expect(result).toEqual({ status: 'not_found' });
   });
+
+  it('repassa page da vitrine no vitrineQuerySuffix e nos slugs de navegação', async () => {
+    mockUserHasModuloAccess.mockResolvedValue(true);
+    const supabase = mockSupabaseModuloRow();
+
+    const result = await buildEstudarQuestaoPlayerPayload({
+      slug: SLUG,
+      userId: USER_ID,
+      supabase: supabase as never,
+      searchParams: { banca: 'FGV', page: '3' },
+    });
+
+    expect(result.status).toBe('ok');
+    if (result.status !== 'ok') return;
+
+    expect(result.payload.vitrineQuerySuffix).toBe('?banca=FGV&page=3');
+    expect(result.payload.anteriorSlug).toBe('questao-anterior?banca=FGV&page=3');
+    expect(result.payload.proximaSlug).toBe('questao-proxima?banca=FGV&page=3');
+  });
 });
