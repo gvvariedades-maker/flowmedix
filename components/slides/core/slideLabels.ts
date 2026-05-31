@@ -1,3 +1,12 @@
+import {
+  GitBranch,
+  Network,
+  ScanText,
+  ShieldAlert,
+  Sparkles,
+  Swords,
+  type LucideIcon,
+} from 'lucide-react';
 import type { SlideType } from '@/types/lesson';
 
 /** Rótulos padrão do chip por tipo (PT-BR, uppercase — alinhado ao material de marketing). */
@@ -47,4 +56,18 @@ export function getSlideArcLabel(
 ): string {
   if (type && isSlideType(type)) return SLIDE_ARC_BY_TYPE[type];
   return POSITION_ARC_FALLBACK[slideIndex] ?? `Etapa ${slideIndex + 1}`;
+}
+
+export const SLIDE_TYPE_ICON: Record<SlideType, LucideIcon> = {
+  concept_map: Network,
+  golden_rule: Sparkles,
+  logic_flow: GitBranch,
+  danger_zone: ShieldAlert,
+  syllable_scanner: ScanText,
+  versus_arena: Swords,
+};
+
+export function getSlideTypeIcon(type: string | undefined): LucideIcon | undefined {
+  if (type && isSlideType(type)) return SLIDE_TYPE_ICON[type];
+  return undefined;
 }

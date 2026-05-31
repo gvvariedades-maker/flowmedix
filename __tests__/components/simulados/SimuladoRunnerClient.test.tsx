@@ -157,7 +157,7 @@ describe('SimuladoRunnerClient', () => {
     expect(await screen.findByText('Enunciado da questão')).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('radio', { name: /A\) Alternativa A/i }));
-    fireEvent.click(screen.getAllByRole('button', { name: 'Confirmar resposta' })[0]);
+    fireEvent.click(screen.getByRole('button', { name: 'Confirmar resposta' }));
 
     await waitFor(() =>
       expect(mockAnswerSimuladoQuestion).toHaveBeenCalledWith(
@@ -170,10 +170,10 @@ describe('SimuladoRunnerClient', () => {
     );
 
     await waitFor(() => expect(mockGetSimuladoSession).toHaveBeenCalledTimes(1));
-    expect(screen.getAllByRole('button', { name: 'Ver resultado' }).length).toBeGreaterThan(0);
+    expect(screen.getByRole('button', { name: 'Ver resultado' })).toBeInTheDocument();
     expect(screen.queryByTestId('simulado-resumo')).not.toBeInTheDocument();
 
-    fireEvent.click(screen.getAllByRole('button', { name: 'Ver resultado' })[0]);
+    fireEvent.click(screen.getByRole('button', { name: 'Ver resultado' }));
     expect(await screen.findByTestId('simulado-resumo')).toHaveTextContent('Resumo 100%');
   });
 
@@ -227,11 +227,11 @@ describe('SimuladoRunnerClient', () => {
     await screen.findByText('Enunciado da questão');
 
     fireEvent.click(screen.getByRole('radio', { name: /B\) Alternativa incorreta/i }));
-    fireEvent.click(screen.getAllByRole('button', { name: 'Confirmar resposta' })[0]);
+    fireEvent.click(screen.getByRole('button', { name: 'Confirmar resposta' }));
 
     expect(await screen.findByText('Resposta incorreta.')).toBeInTheDocument();
     expect(await screen.findByText('Gabarito: A — Alternativa correta')).toBeInTheDocument();
-    expect(screen.getAllByRole('button', { name: 'Ver resultado' }).length).toBeGreaterThan(0);
+    expect(screen.getByRole('button', { name: 'Ver resultado' })).toBeInTheDocument();
   });
 
 });

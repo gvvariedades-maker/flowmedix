@@ -107,7 +107,16 @@ function getSlideVariants(slideKind: string, reducedMotion: boolean): SlideMotio
   }
 }
 
-export default function AvantLessonPlayer({ 
+const SLIDE_KIND_COLOR: Record<string, string> = {
+  concept_map: 'text-cyan-300',
+  golden_rule: 'text-amber-300',
+  logic_flow: 'text-violet-300',
+  danger_zone: 'text-red-300',
+  syllable_scanner: 'text-emerald-300',
+  versus_arena: 'text-fuchsia-300',
+};
+
+export default function AvantLessonPlayer({
   dados, 
   mode = 'live', 
   proximaSlug, 
@@ -615,6 +624,7 @@ export default function AvantLessonPlayer({
   const slidesArray = (slidesSource?.length ? slidesSource : [fallbackSlide]).map(normalizeSlide);
   const currentSlide = slidesArray[slideAtual];
   const slideKind = currentSlide?.type ?? currentSlide?.layout_type ?? 'default';
+  const slideCounterColor = SLIDE_KIND_COLOR[slideKind] ?? 'text-white/60';
   const slideMotion = getSlideVariants(slideKind, prefersReducedMotion);
   const currentSlideMicrotipKey = getReverseStudySlideMicrotipKey(currentSlide?.type ?? currentSlide?.layout_type);
   const totalSlides = slidesArray.length;
@@ -1161,8 +1171,13 @@ export default function AvantLessonPlayer({
                 
                 <div className="flex items-center gap-2 sm:gap-3 shrink-0">
                   <div className="flex items-center gap-2 sm:gap-3">
-                    <div className="text-[#BEF264] font-black text-xl sm:text-2xl opacity-60 italic tabular-nums whitespace-nowrap">
-                      {slideAtual + 1}/{totalSlides}
+                    <div className="flex items-baseline gap-0.5 whitespace-nowrap font-mono tabular-nums">
+                      <span className={`text-xl sm:text-2xl font-black ${slideCounterColor}`}>
+                        {slideAtual + 1}
+                      </span>
+                      <span className="text-sm sm:text-base font-bold text-white/25">
+                        /{totalSlides}
+                      </span>
                     </div>
                     <EstudoReversoSlideZoomToolbar />
                   </div>

@@ -1,23 +1,78 @@
 'use client';
 
 import React from 'react';
-import { getSlideArcLabel, getSlideChipLabel } from './slideLabels';
+import { getSlideArcLabel, getSlideChipLabel, getSlideTypeIcon } from './slideLabels';
 import type { SlideType } from '@/types/lesson';
 
-const CHIP_BADGE_CLASS: Record<SlideType, string> = {
-  concept_map: 'bg-cyan-400/20 text-cyan-300 ring-cyan-400/25',
-  golden_rule: 'bg-amber-400/20 text-amber-300 ring-amber-400/25',
-  logic_flow: 'bg-violet-400/20 text-violet-300 ring-violet-400/25',
-  danger_zone: 'bg-red-400/20 text-red-300 ring-red-400/25',
-  syllable_scanner: 'bg-emerald-400/20 text-emerald-300 ring-emerald-400/25',
-  versus_arena: 'bg-fuchsia-400/20 text-fuchsia-300 ring-fuchsia-400/25',
+type ChipConfig = {
+  badge: string;
+  glow: string;
+  iconClass: string;
 };
 
-function chipBadgeClass(slideType: string | undefined): string {
-  if (slideType && slideType in CHIP_BADGE_CLASS) {
-    return CHIP_BADGE_CLASS[slideType as SlideType];
+const CHIP_CONFIG: Record<SlideType, ChipConfig> = {
+  concept_map: {
+    badge: 'bg-cyan-400/15 text-cyan-300 ring-cyan-400/25',
+    glow: 'shadow-[0_0_12px_rgba(34,211,238,0.25)]',
+    iconClass: 'text-cyan-300',
+  },
+  golden_rule: {
+    badge: 'bg-amber-400/15 text-amber-300 ring-amber-400/25',
+    glow: 'shadow-[0_0_12px_rgba(251,191,36,0.25)]',
+    iconClass: 'text-amber-300',
+  },
+  logic_flow: {
+    badge: 'bg-violet-400/15 text-violet-300 ring-violet-400/25',
+    glow: 'shadow-[0_0_12px_rgba(167,139,250,0.25)]',
+    iconClass: 'text-violet-300',
+  },
+  danger_zone: {
+    badge: 'bg-red-400/15 text-red-300 ring-red-400/25',
+    glow: 'shadow-[0_0_12px_rgba(248,113,113,0.25)]',
+    iconClass: 'text-red-300',
+  },
+  syllable_scanner: {
+    badge: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/25',
+    glow: 'shadow-[0_0_12px_rgba(52,211,153,0.25)]',
+    iconClass: 'text-emerald-300',
+  },
+  versus_arena: {
+    badge: 'bg-fuchsia-400/15 text-fuchsia-300 ring-fuchsia-400/25',
+    glow: 'shadow-[0_0_12px_rgba(232,121,249,0.25)]',
+    iconClass: 'text-fuchsia-300',
+  },
+};
+
+const CHIP_CONFIG_FALLBACK: ChipConfig = {
+  badge: 'bg-white/10 text-white/80 ring-white/15',
+  glow: '',
+  iconClass: 'text-white/80',
+};
+
+function getChipConfig(slideType: string | undefined): ChipConfig {
+  if (slideType && slideType in CHIP_CONFIG) {
+    return CHIP_CONFIG[slideType as SlideType];
   }
-  return 'bg-white/10 text-white/80 ring-white/15';
+  return CHIP_CONFIG_FALLBACK;
+}
+
+function getHeaderBorderClass(slideType: string | undefined): string {
+  switch (slideType) {
+    case 'concept_map':
+      return 'border-cyan-500/10';
+    case 'golden_rule':
+      return 'border-amber-500/10';
+    case 'logic_flow':
+      return 'border-violet-500/10';
+    case 'danger_zone':
+      return 'border-red-500/10';
+    case 'syllable_scanner':
+      return 'border-emerald-500/10';
+    case 'versus_arena':
+      return 'border-fuchsia-500/10';
+    default:
+      return 'border-white/5';
+  }
 }
 
 export interface ReverseStudyShellProps {
@@ -46,23 +101,39 @@ export function ReverseStudyShell({
   const chipText = getSlideChipLabel(slideType, chipLabel);
   const arcLabel = getSlideArcLabel(slideType, slideIndex, totalSlides);
   const positionLabel = `Slide ${slideIndex + 1} de ${totalSlides}`;
+  const chipConf = getChipConfig(slideType);
+  const SlideIcon = getSlideTypeIcon(slideType);
 
   return (
     <div className="flex w-full min-w-0 flex-col">
-      <header className="mb-4 w-full max-w-5xl shrink-0 space-y-2 self-center px-1 sm:mb-5">
+      <header
+        className={[
+          'mb-4 w-full max-w-5xl shrink-0 space-y-2 self-center',
+          'border-b px-1 pb-4 sm:mb-5',
+          getHeaderBorderClass(slideType),
+        ].join(' ')}
+      >
         <div className="flex flex-wrap items-center justify-between gap-2">
           <span
             className={[
-              'inline-flex max-w-full items-center rounded-full px-2.5 py-1 text-[11px] font-mono uppercase tracking-widest ring-1',
-              chipBadgeClass(slideType),
+              'inline-flex min-w-0 max-w-full items-center gap-1.5 rounded-full px-2.5 py-1 font-mono text-[11px] font-black uppercase tracking-widest ring-1',
+              chipConf.badge,
+              chipConf.glow,
             ].join(' ')}
             aria-label={`Tipo de slide: ${chipText}`}
           >
-            {chipText}
+            {SlideIcon ? (
+              <SlideIcon
+                size={11}
+                className={['shrink-0', chipConf.iconClass].join(' ')}
+                aria-hidden
+              />
+            ) : null}
+            <span className="truncate">{chipText}</span>
           </span>
           {banca?.trim() ? (
             <span
-              className="inline-flex max-w-[min(100%,14rem)] shrink-0 items-center truncate rounded-full border border-white/15 bg-slate-950/50 px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wide text-white/70 backdrop-blur-sm"
+              className="inline-flex max-w-[min(100%,14rem)] shrink-0 items-center truncate rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-mono font-bold uppercase tracking-widest text-white/50 transition-colors hover:border-white/20 hover:text-white/70"
               title={banca.trim()}
             >
               {banca.trim()}

@@ -63,7 +63,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-1 min-[420px]:[grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))] gap-4 md:gap-6 p-2 md:p-4 w-full max-w-5xl relative z-10 my-auto"
+          className="grid grid-cols-1 min-[420px]:[grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))] gap-3 md:gap-5 p-1 md:p-3 w-full max-w-5xl relative z-10 my-auto"
           style={{ contentVisibility: 'auto' }}
         >
           {concepts.map((concept, index) => {
@@ -74,13 +74,13 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
                 key={index}
                 variants={item}
                 whileHover={{ scale: 1.03, translateY: -8 }}
-                className={`group relative overflow-hidden p-6 rounded-3xl bg-slate-900/70 backdrop-blur-xl border ${theme.borderColor} shadow-2xl shadow-black/50 transition-all duration-500`}
+                className={`group relative overflow-hidden p-4 md:p-5 rounded-3xl bg-slate-900/70 backdrop-blur-xl border ${theme.borderColor} shadow-2xl shadow-black/50 transition-all duration-500`}
               >
                 {/* Efeito de Glow no Hover */}
                 <div className={`absolute -inset-0.5 bg-gradient-to-br ${theme.glowGradient} to-transparent opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 rounded-3xl`} />
                 
-                <div className="relative z-10 flex flex-col gap-4">
-                  <div className={`w-12 h-12 rounded-2xl ${theme.iconBg} flex items-center justify-center ${theme.iconText} ${theme.iconHoverBg} ${theme.iconHoverText} transition-all duration-300 shadow-lg`}>
+                <div className="relative z-10 flex flex-col gap-3">
+                  <div className={`w-10 h-10 rounded-2xl ${theme.iconBg} flex items-center justify-center ${theme.iconText} ${theme.iconHoverBg} ${theme.iconHoverText} transition-all duration-300 shadow-lg`}>
                     <Icon size={24} />
                   </div>
                   <div>
@@ -108,7 +108,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
         
         <div className="flex flex-col items-center justify-center min-h-[min(100%,32rem)] w-full gap-2 relative z-10 py-4">
-          <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 relative">
+          <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 relative">
             {concepts.map((concept, i) => {
               const Icon = getIcon(concept.icon);
               
@@ -156,7 +156,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: concepts.length * 0.2 }}
-            className={`mt-8 font-mono tracking-widest ${theme.textSecondary} text-sm italic`}
+            className={`mt-6 font-mono tracking-widest ${theme.textSecondary} text-sm italic`}
           >
             Estrutura Molecular da Palavra
           </motion.p>
@@ -172,14 +172,14 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
         {/* Background animado com tema */}
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
         
-        <div className="w-full max-w-3xl flex flex-col gap-4 relative z-10">
+        <div className="w-full max-w-3xl flex flex-col gap-3 relative z-10">
           {concepts.map((concept, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.15 }}
-              className={`flex items-center justify-between bg-slate-800/50 backdrop-blur-sm p-4 rounded-xl border-l-4 ${theme.borderColor} transition-all duration-300 hover:bg-slate-800/70`}
+              className={`flex items-center justify-between bg-slate-800/50 backdrop-blur-sm p-3 md:p-4 rounded-xl border-l-4 ${theme.borderColor} transition-all duration-300 hover:bg-slate-800/70`}
             >
               <div className={`font-display font-bold text-xl ${theme.textPrimary} w-1/3 md:text-base`}>
                 {concept.title}
@@ -208,7 +208,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
           initial="hidden"
           animate="show"
           variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.15 } } }}
-          className="flex flex-col gap-4 w-full max-w-2xl relative z-10 my-auto"
+          className="flex flex-col gap-3 w-full max-w-2xl relative z-10 my-auto"
         >
           {concepts.map((concept, index) => {
             const Icon = getIcon(concept.icon);
@@ -216,9 +216,9 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
               <motion.div
                 key={index}
                 variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
-                className={`p-6 rounded-2xl bg-slate-900/70 backdrop-blur-xl border ${theme.borderColor}`}
+                className={`p-4 md:p-5 rounded-2xl bg-slate-900/70 backdrop-blur-xl border ${theme.borderColor}`}
               >
-                <div className="flex gap-4">
+                <div className="flex gap-3">
                   <div className={`w-12 h-12 rounded-xl ${theme.iconBg} flex items-center justify-center ${theme.iconText}`}>
                     <Icon size={24} />
                   </div>

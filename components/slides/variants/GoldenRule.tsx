@@ -31,10 +31,10 @@ function ReferenceTableLayout({
   const title = content?.trim();
 
   return (
-    <motion.div className="relative flex min-h-full w-full min-w-0 items-start justify-center p-3 md:p-8">
+    <motion.div className="relative flex min-h-full w-full min-w-0 items-start justify-center p-4 md:p-8">
       <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-90`} />
       <motion.div
-        className={`relative z-10 w-full min-w-0 max-w-4xl rounded-[1.5rem] border-2 ${theme.borderColor} bg-slate-950/40 p-4 backdrop-blur-sm md:rounded-[2rem] md:p-8`}
+        className={`relative z-10 w-full min-w-0 max-w-4xl rounded-[1.5rem] border-2 ${theme.borderColor} bg-slate-950/40 p-5 backdrop-blur-sm md:rounded-[2rem] md:p-7`}
         style={{ boxShadow: `0 0 60px -20px ${theme.glow}` }}
       >
         <div className="mb-4 flex items-center gap-3 md:mb-6">
@@ -116,15 +116,15 @@ export const GoldenRule = ({
   // VARIANTE 1: CENTER (padrão) — Tipografia gigante centralizada
   if (variant === 'center') {
     return (
-      <div className="relative flex min-h-full w-full min-w-0 items-start justify-center p-3 md:p-8">
+      <div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-3 md:p-8">
         <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-90`} />
         <motion.div
-          className={`golden-rule-card relative z-10 w-full min-w-0 max-w-4xl p-5 md:p-10 lg:p-12 rounded-[2rem] md:rounded-[3rem] text-center border-4 ${theme.borderColor} backdrop-blur-sm`}
+          className={`golden-rule-card relative z-10 w-full min-w-0 max-w-4xl p-6 md:p-8 lg:p-10 rounded-[2rem] md:rounded-[3rem] text-center border-4 ${theme.borderColor} backdrop-blur-sm`}
           style={{ boxShadow: `0 0 80px -20px ${theme.glow}` }}
         >
           <div className="golden-rule-shine pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
           <div className="relative z-10 min-w-0">
-            <Sparkles className={`${theme.iconText} w-10 h-10 md:w-14 md:h-14 mx-auto mb-4 drop-shadow-2xl`} />
+            <Sparkles className={`${theme.iconText} w-8 h-8 md:w-10 md:h-10 mx-auto mb-3 drop-shadow-2xl`} />
             <h2 className="golden-rule-text font-display text-lg font-extrabold uppercase tracking-tighter leading-tight break-words [overflow-wrap:anywhere] hyphens-auto text-white [text-shadow:0_0_40px_rgba(255,255,255,0.15)] md:text-3xl lg:text-4xl xl:text-6xl">
               {content}
             </h2>
@@ -142,10 +142,10 @@ export const GoldenRule = ({
   // VARIANTE 2: COMPACT — Ícone no topo, texto abaixo
   if (variant === 'compact') {
     return (
-      <motion.div className="relative flex min-h-full w-full min-w-0 items-start justify-center p-4 md:p-10">
+      <motion.div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-4 md:p-6 lg:p-10">
         <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-70`} />
         <motion.div
-          className={`relative z-10 w-full min-w-0 max-w-3xl p-5 md:p-8 rounded-2xl border-2 ${theme.borderColor} backdrop-blur-xl`}
+          className={`relative z-10 w-full min-w-0 max-w-3xl p-5 md:p-7 rounded-2xl border-2 ${theme.borderColor} backdrop-blur-xl`}
           style={{ boxShadow: `0 0 40px ${theme.glow}` }}
         >
           <motion.div className={`w-10 h-10 rounded-xl ${theme.iconBg} flex items-center justify-center ${theme.iconText} mb-3`}>
@@ -167,9 +167,9 @@ export const GoldenRule = ({
   // VARIANTE 3: MINIMAL — Apenas texto com borda sutil
   if (variant === 'minimal') {
     return (
-      <motion.div className="relative flex min-h-full w-full min-w-0 items-start justify-center p-6">
+      <motion.div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-6">
         <motion.div className={`absolute inset-0 bg-slate-900/95`} />
-        <motion.div className={`relative z-10 w-full min-w-0 max-w-2xl py-6 px-5 border-l-4 ${theme.borderColor}`}>
+        <motion.div className={`relative z-10 w-full min-w-0 max-w-2xl py-5 px-5 border-l-4 ${theme.borderColor}`}>
           <p className={`font-body text-base italic leading-relaxed break-words [overflow-wrap:anywhere] hyphens-auto md:text-xl ${theme.textPrimary}`}>
             {content}
           </p>
@@ -186,9 +186,9 @@ export const GoldenRule = ({
   // VARIANTE 4: BANNER — Ícone no topo + texto abaixo (coluna, evita corte horizontal)
   if (variant === 'banner') {
     return (
-      <motion.div className="relative flex min-h-full w-full min-w-0 items-start justify-center p-3 md:p-6">
+      <motion.div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-3 md:p-6">
         <motion.div className={`absolute inset-0 bg-gradient-to-r ${theme.primary} opacity-90`} />
-        <motion.div className="relative z-10 flex w-full min-w-0 max-w-5xl flex-col items-center gap-4 p-5 md:p-8 rounded-2xl border-2 border-white/20">
+        <motion.div className="relative z-10 flex w-full min-w-0 max-w-5xl flex-col items-center gap-4 p-6 md:p-8 rounded-2xl border-2 border-white/20">
           <motion.div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
             <Zap className="w-6 h-6 text-white" />
           </motion.div>
@@ -207,13 +207,13 @@ export const GoldenRule = ({
 
   // Fallback: center
   return (
-    <motion.div className="relative flex min-h-full w-full min-w-0 items-start justify-center p-3 md:p-8">
+    <motion.div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-3 md:p-8">
       <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-90`} />
       <motion.div
-        className={`relative z-10 w-full min-w-0 max-w-4xl p-5 md:p-10 rounded-[2rem] text-center border-4 ${theme.borderColor} backdrop-blur-sm`}
+        className={`relative z-10 w-full min-w-0 max-w-4xl p-6 md:p-8 lg:p-10 rounded-[2rem] text-center border-4 ${theme.borderColor} backdrop-blur-sm`}
         style={{ boxShadow: `0 0 80px -20px ${theme.glow}` }}
       >
-        <Sparkles className={`${theme.iconText} w-10 h-10 md:w-14 md:h-14 mx-auto mb-4`} />
+        <Sparkles className={`${theme.iconText} w-8 h-8 md:w-10 md:h-10 mx-auto mb-3`} />
         <h2 className="font-display text-lg font-extrabold uppercase tracking-tighter leading-tight break-words [overflow-wrap:anywhere] hyphens-auto text-white [text-shadow:0_0_40px_rgba(255,255,255,0.15)] md:text-3xl">
           {content}
         </h2>

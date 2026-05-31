@@ -479,9 +479,9 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const instruction = stripLeadingQuestionEnumeration(questionData?.question_data?.instruction ?? '');
   const hasPending = sessionData.questoes.some((q) => !q.respondida);
   const showFinalFeedbackCta = finalFeedbackPending && !!feedback && !hasPending;
-  const hasMobileActionBar = !!feedback || showConfirmAction;
+  const showQuestionActions = !!feedback || showConfirmAction;
 
-  const finalizeButton = (
+  const finalizeButtonCompact = (
     <Button
       type="button"
       variant="outline"
@@ -500,9 +500,28 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     </Button>
   );
 
+  const finalizeButtonPrimary = (
+    <Button
+      type="button"
+      variant="outline"
+      disabled={finalizing}
+      onClick={() => void handleFinalizeSimulado()}
+      className="h-12 w-full rounded-xl border-white/15 bg-white/[0.03] text-slate-200 hover:bg-white/[0.06] sm:order-1 sm:w-auto sm:min-w-[10rem]"
+    >
+      {finalizing ? (
+        <>
+          <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+          Finalizando…
+        </>
+      ) : (
+        'Finalizar simulado'
+      )}
+    </Button>
+  );
+
   return (
     <DashboardMobilePage
-      variant={hasMobileActionBar ? 'actionBar' : 'default'}
+      variant={showQuestionActions ? 'actionBar' : 'default'}
       className="min-h-screen bg-[#010409] px-4 pt-6 sm:px-6 md:pb-8 lg:px-8"
     >
       <div className="mx-auto max-w-3xl space-y-6">
@@ -515,7 +534,11 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           description={`${sessionData.resumo.respondidas} de ${sessionData.session.total_questoes} respondidas · ordem aleatória`}
           descriptionClassName="text-sm text-slate-400 mt-1"
           titleClassName="text-xl font-[1000] italic tracking-tighter text-white sm:text-2xl"
-          action={finalizeButton}
+          action={
+            !showQuestionActions ? (
+              <div className="hidden sm:block">{finalizeButtonCompact}</div>
+            ) : undefined
+          }
         />
 
         {finalizeError && (
@@ -674,81 +697,57 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
               )}
             </div>
 
-            {feedback ? (
+            {showQuestionActions ? (
               <SimuladoMobileActionBar
-                actionRef={proximaAcaoRef}
+                actionRef={feedback ? proximaAcaoRef : confirmarRespostaRef}
                 className="flex flex-col gap-2 pt-2 sm:flex-row sm:flex-wrap sm:justify-end sm:gap-3"
               >
-                {!showFinalFeedbackCta ? (
+                {!showFinalFeedbackCta ? finalizeButtonPrimary : null}
+                {feedback ? (
                   <Button
                     type="button"
-                    variant="outline"
-                    disabled={finalizing}
-                    onClick={() => void handleFinalizeSimulado()}
-                    className="h-12 w-full rounded-xl border-white/15 bg-white/[0.03] text-slate-200 hover:bg-white/[0.06] sm:order-1 sm:w-auto sm:min-w-[10rem]"
+                    disabled={!canAdvance}
+                    onClick={() => {
+                      if (showFinalFeedbackCta) {
+                        setFinalFeedbackPending(false);
+                        return;
+                      }
+                      void handleNext();
+                    }}
+                    className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 sm:order-2 sm:w-auto sm:min-w-[12rem]"
                   >
-                    Finalizar simulado
+                    {advancing ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+                        Carregando…
+                      </>
+                    ) : (
+                      <>
+                        {showFinalFeedbackCta ? 'Ver resultado' : 'Próxima questão'}
+                        <ChevronRight className="ml-1 h-4 w-4" aria-hidden />
+                      </>
+                    )}
                   </Button>
-                ) : null}
-                <Button
-                  type="button"
-                  disabled={!canAdvance}
-                  onClick={() => {
-                    if (showFinalFeedbackCta) {
-                      setFinalFeedbackPending(false);
-                      return;
-                    }
-                    void handleNext();
-                  }}
-                  className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 sm:order-2 sm:w-auto sm:min-w-[12rem]"
-                >
-                  {advancing ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
-                      Carregando…
-                    </>
-                  ) : (
-                    <>
-                      {showFinalFeedbackCta ? 'Ver resultado' : 'Próxima questão'}
-                      <ChevronRight className="ml-1 h-4 w-4" aria-hidden />
-                    </>
-                  )}
-                </Button>
-              </SimuladoMobileActionBar>
-            ) : showConfirmAction ? (
-              <SimuladoMobileActionBar
-                actionRef={confirmarRespostaRef}
-                className="flex flex-col gap-2 pt-2 sm:flex-row sm:flex-wrap sm:justify-end sm:gap-3"
-              >
-                <Button
-                  type="button"
-                  variant="outline"
-                  disabled={finalizing}
-                  onClick={() => void handleFinalizeSimulado()}
-                  className="h-12 w-full rounded-xl border-white/15 bg-white/[0.03] text-slate-200 hover:bg-white/[0.06] sm:order-1 sm:w-auto sm:min-w-[10rem]"
-                >
-                  Finalizar simulado
-                </Button>
-                <Button
-                  type="button"
-                  disabled={!canConfirm}
-                  onClick={() => void handleConfirmAnswer()}
-                  className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50 sm:order-2 sm:w-auto sm:min-w-[12rem]"
-                >
-                  {submitting ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
-                      Confirmando…
-                    </>
-                  ) : (
-                    confirmLabel
-                  )}
-                </Button>
+                ) : (
+                  <Button
+                    type="button"
+                    disabled={!canConfirm}
+                    onClick={() => void handleConfirmAnswer()}
+                    className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50 sm:order-2 sm:w-auto sm:min-w-[12rem]"
+                  >
+                    {submitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+                        Confirmando…
+                      </>
+                    ) : (
+                      confirmLabel
+                    )}
+                  </Button>
+                )}
               </SimuladoMobileActionBar>
             ) : (
-              <div className="flex justify-end pt-2 md:pt-0">
-                {finalizeButton}
-              </div>
+              <div className="flex justify-end pt-2 sm:hidden">{finalizeButtonPrimary}</div>
             )}
           </div>
         )}

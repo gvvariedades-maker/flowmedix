@@ -27,7 +27,6 @@ import {
 } from '@/lib/freemium';
 import { PaywallModal } from '@/components/freemium/PaywallModal';
 import { MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM } from '@/lib/layout/mobileBottomNav';
-import { SimuladoMobileActionBar } from '@/components/simulados/SimuladoMobileActionBar';
 
 function formatZodIssues(issues: ZodIssue[]): string {
   const first = issues[0];
@@ -272,7 +271,6 @@ export function SimuladosSetupClient() {
     ) : (
       <Button
         type="submit"
-        form="simulado-setup-form"
         disabled={loading}
         className="inline-flex h-12 w-full rounded-2xl border border-cyan-500/40 bg-cyan-500/15 text-base font-semibold text-cyan-300 hover:bg-cyan-500/25"
       >
@@ -575,11 +573,9 @@ export function SimuladosSetupClient() {
               className="py-10"
             />
           )}
-        </form>
 
-        <SimuladoMobileActionBar className="mt-2 flex flex-col gap-2">
-          {submitButton}
-        </SimuladoMobileActionBar>
+          <div className="pt-2">{submitButton}</div>
+        </form>
       </div>
 
       <PaywallModal

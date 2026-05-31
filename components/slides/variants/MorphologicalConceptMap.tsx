@@ -45,19 +45,19 @@ export const MorphologicalConceptMap = ({ concepts, theme }: MorphologicalConcep
       
       {/* Grid CSS Fluido - Navegador calcula automaticamente */}
       <div 
-        className="morph-grid-container w-full max-w-6xl relative z-10 my-auto grid grid-cols-1 gap-6 sm:[grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))]"
+        className="morph-grid-container w-full max-w-6xl relative z-10 my-auto grid grid-cols-1 gap-4 md:gap-5 sm:[grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))]"
       >
         {/* Conceito Central (Pai) - Ocupa mais espaço, glow mais intenso */}
         {centralConcept && (
           <div
-            className={`morph-central-card relative overflow-hidden rounded-[1.5rem] bg-slate-900/80 backdrop-blur-xl border-2 min-h-[200px] sm:min-h-[260px] transition-all duration-200 hover:-translate-y-1 ${detailConcepts.length > 0 ? 'col-span-1 sm:col-span-2' : 'col-span-1'}`}
+            className={`morph-central-card relative overflow-hidden rounded-[1.5rem] bg-slate-900/80 backdrop-blur-xl border-2 min-h-[180px] sm:min-h-[220px] transition-all duration-200 hover:-translate-y-1 ${detailConcepts.length > 0 ? 'col-span-1 sm:col-span-2' : 'col-span-1'}`}
             style={{
               boxShadow: `0 0 40px ${glowColor}`,
               borderColor: borderColorClass.replace('border-', '').replace('/30', '').replace('/40', '').replace('/50', '') + '30',
               animation: 'morphReveal 0.4s ease-out',
             }}
           >
-            <div className="relative z-10 flex flex-col gap-4 p-6 md:p-8">
+            <div className="relative z-10 flex flex-col gap-3 p-5 md:p-7">
               <div className={`w-16 h-16 rounded-2xl ${theme.iconBg} flex items-center justify-center ${theme.iconText} shadow-lg`}>
                 {React.createElement(getIcon(centralConcept.icon), { size: 32 })}
               </div>
@@ -80,7 +80,7 @@ export const MorphologicalConceptMap = ({ concepts, theme }: MorphologicalConcep
           return (
             <div
               key={index}
-              className="morph-detail-card relative overflow-hidden rounded-[1.25rem] bg-slate-900/70 backdrop-blur-xl border min-h-[200px] transition-all duration-200 hover:-translate-y-0.5"
+              className="morph-detail-card relative overflow-hidden rounded-[1.25rem] bg-slate-900/70 backdrop-blur-xl border min-h-[160px] transition-all duration-200 hover:-translate-y-0.5"
               style={{
                 boxShadow: `0 0 20px ${glowColor}40`,
                 borderColor: borderColorClass.replace('border-', '').replace('/30', '').replace('/40', '').replace('/50', '') + '20',
@@ -88,7 +88,7 @@ export const MorphologicalConceptMap = ({ concepts, theme }: MorphologicalConcep
                 animationDelay: `${0.1 * (index + 1)}s`,
               }}
             >
-              <div className="relative z-10 flex flex-col gap-3 p-5 md:p-6">
+              <div className="relative z-10 flex flex-col gap-2 md:gap-3 p-4 md:p-5">
                 <div className={`w-12 h-12 rounded-xl ${theme.iconBg} flex items-center justify-center ${theme.iconText} shadow-md`}>
                   <Icon size={24} />
                 </div>

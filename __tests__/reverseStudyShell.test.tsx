@@ -38,4 +38,16 @@ describe('ReverseStudyShell', () => {
     expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Critérios de choque');
     expect(screen.queryByText('CPCON')).not.toBeInTheDocument();
   });
+
+  it('renderiza ícone Lucide no chip para concept_map', () => {
+    render(
+      <ReverseStudyShell slideType="concept_map" slideIndex={0} totalSlides={4}>
+        <p>Mapa</p>
+      </ReverseStudyShell>,
+    );
+
+    const chip = screen.getByLabelText(/tipo de slide/i);
+    expect(chip.querySelector('svg[aria-hidden="true"]')).toBeInTheDocument();
+    expect(chip).toHaveTextContent('MAPA DE CONCEITOS');
+  });
 });

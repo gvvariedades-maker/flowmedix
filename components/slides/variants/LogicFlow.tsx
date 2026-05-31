@@ -159,7 +159,7 @@ export const LogicFlow = ({
     return (
       <motion.div className="relative flex min-h-full w-full min-w-0 items-start justify-center p-4">
         {baseBg}
-        <motion.div className="relative z-10 flex w-full max-w-3xl flex-col gap-3 py-6">
+        <motion.div className="relative z-10 flex w-full max-w-3xl flex-col gap-2 py-4">
           {normalizedSteps.map((step, index) => {
             const { revealed, future, active } = getStepState(index);
             const isLast = index === normalizedSteps.length - 1;
@@ -183,7 +183,7 @@ export const LogicFlow = ({
                     }
                   }}
                   aria-label={canTap ? 'Toque para revelar o próximo passo' : undefined}
-                  className={`relative flex min-h-11 min-w-0 items-start gap-3 rounded-xl border-2 ${theme.borderColor} bg-slate-900/80 px-4 py-3 backdrop-blur-xl ${
+                  className={`relative flex min-h-11 min-w-0 items-start gap-3 rounded-xl border-2 ${theme.borderColor} bg-slate-900/80 px-3 py-2.5 backdrop-blur-xl ${
                     canTap ? 'cursor-pointer hover:border-violet-400/50' : ''
                   } ${active ? 'ring-2 ring-violet-400/60 shadow-[0_0_24px_rgba(139,92,246,0.25)]' : ''}`}
                   style={{ borderColor: revealed ? theme.glow : 'rgba(255,255,255,0.1)' }}
@@ -228,7 +228,7 @@ export const LogicFlow = ({
     return (
       <motion.div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-4">
         {baseBg}
-        <motion.div className="relative z-10 grid w-full max-w-5xl grid-cols-1 gap-4 py-8 sm:grid-cols-2 lg:grid-cols-4">
+        <motion.div className="relative z-10 grid w-full max-w-5xl grid-cols-1 gap-3 py-5 sm:grid-cols-2 lg:grid-cols-4">
           {normalizedSteps.map((step, index) => {
             const { revealed, future, active } = getStepState(index);
             const isActiveHighlight =
@@ -253,7 +253,7 @@ export const LogicFlow = ({
                   }
                 }}
                 aria-label={canTap ? 'Toque para revelar o próximo passo' : undefined}
-                className={`relative min-h-11 rounded-2xl border-2 ${theme.borderColor} bg-slate-900/80 p-5 backdrop-blur-xl transition-all ${
+                className={`relative min-h-11 rounded-2xl border-2 ${theme.borderColor} bg-slate-900/80 p-4 backdrop-blur-xl transition-all ${
                   canTap ? 'cursor-pointer hover:border-violet-400/50' : ''
                 } ${isActiveHighlight || active ? 'ring-2 ring-offset-2 ring-offset-slate-900 ring-violet-400/60' : ''}`}
                 style={{
@@ -287,7 +287,7 @@ export const LogicFlow = ({
 
   // VARIANTE PADRÃO: VERTICAL
   return (
-    <motion.div className="relative flex min-h-full w-full min-w-0 flex-col items-center justify-center p-4 md:p-6 lg:p-12">
+    <motion.div className="relative flex min-h-full w-full min-w-0 flex-col items-center justify-center p-4 md:p-6 lg:p-8">
       <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-60`} />
       <motion.div
         className="absolute inset-0 opacity-5"
@@ -302,7 +302,7 @@ export const LogicFlow = ({
         }}
       />
 
-      <motion.div className="relative z-10 w-full max-w-3xl py-4 md:py-8">
+      <motion.div className="relative z-10 w-full max-w-3xl py-3 md:py-6">
         <motion.div className="relative">
           {normalizedSteps.map((step, index) => {
             const { revealed, future, active } = getStepState(index);
@@ -356,7 +356,7 @@ export const LogicFlow = ({
                       }
                     }}
                     className={`
-                      relative min-h-11 rounded-2xl p-4 md:p-6 min-w-0
+                      relative min-h-11 rounded-2xl p-3 md:p-5 min-w-0
                       bg-slate-900/80 backdrop-blur-xl
                       border-2 ${theme.borderColor}
                       transition-all duration-300
@@ -431,7 +431,7 @@ export const LogicFlow = ({
                   </motion.div>
 
                   {!isLast && (
-                    <motion.div className="relative flex justify-center py-2">
+                    <motion.div className="relative flex justify-center py-1.5">
                       <motion.div
                         className="h-8 w-0.5 bg-gradient-to-b from-slate-700/50 to-transparent"
                         style={{ opacity: revealed ? 0.3 : 0.1 }}

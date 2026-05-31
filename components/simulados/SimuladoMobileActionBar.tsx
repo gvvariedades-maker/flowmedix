@@ -25,17 +25,9 @@ export function SimuladoMobileActionBar({
   children,
 }: SimuladoMobileActionBarProps) {
   return (
-    <>
-      <div
-        ref={actionRef}
-        className={cn('md:hidden', MOBILE_ACTION_BAR_SHELL, className)}
-      >
-        {children}
-      </div>
-      <div className={cn('hidden w-full md:block', className)}>
-        {children}
-      </div>
-    </>
+    <div ref={actionRef} className={cn('w-full', MOBILE_ACTION_BAR_SHELL, className)}>
+      {children}
+    </div>
   );
 }
 
