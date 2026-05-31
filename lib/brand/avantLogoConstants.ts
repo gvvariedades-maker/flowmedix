@@ -1,6 +1,6 @@
 /**
  * AVANT logo — cores, geometria do raio, dimensões base e tokens de escala.
- * Fonte única para AvantLogo, PWA (icon.tsx) e e-mail estático.
+ * Fonte única para AvantLogo, PWA (public/brand/avant-pwa-icon.png) e e-mail estático.
  */
 
 export type AvantLogoSizeToken = 'nav' | 'md' | 'lg';
