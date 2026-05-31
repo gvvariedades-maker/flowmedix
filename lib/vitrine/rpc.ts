@@ -28,6 +28,11 @@ const VitrineGrupoSchema = z.object({
   firstSlug: z.string(),
 });
 
+const VitrineFacetsRpcSchema = z.object({
+  bancas: z.array(z.string()),
+  assuntos: z.array(z.string()),
+});
+
 const VitrinePageRpcSchema = z.object({
   groups: z.array(VitrineGrupoSchema),
   pagination: z.object({
@@ -37,9 +42,13 @@ const VitrinePageRpcSchema = z.object({
     totalPages: z.number(),
   }),
   totalModulosFiltrados: z.number(),
+  /** Embutido na RPC Fase 2; opcional para rollout com migration pendente. */
+  facets: VitrineFacetsRpcSchema.optional(),
 });
 
-export type VitrinePageRpcResult = Omit<VitrinePageResponse, 'facets'>;
+export type VitrinePageRpcResult = Omit<VitrinePageResponse, 'facets'> & {
+  facets?: VitrineFacets;
+};
 
 export type VitrineRpcFilters = {
   bancas?: string[];
@@ -93,11 +102,6 @@ export async function fetchVitrinePageFromRpc(
 
   return parsed.data;
 }
-
-const VitrineFacetsRpcSchema = z.object({
-  bancas: z.array(z.string()),
-  assuntos: z.array(z.string()),
-});
 
 export type FetchVitrineFacetsRpcParams = {
   userId: string;

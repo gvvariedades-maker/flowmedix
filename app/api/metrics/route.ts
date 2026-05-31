@@ -16,6 +16,7 @@ import {
   getPerformanceStats,
   getQueryMetrics,
   getPerformanceMetrics,
+  getVitrineStrategyStats,
 } from '@/lib/metrics';
 import { logger } from '@/lib/logger';
 
@@ -71,6 +72,14 @@ export async function GET(request: NextRequest) {
         stats,
         recent,
         context: context ?? null,
+        timestamp: Date.now(),
+      });
+    }
+
+    // Retornar métricas de estratégia da vitrine (RPC vs JS)
+    if (type === 'vitrine') {
+      return NextResponse.json({
+        vitrineStrategy: getVitrineStrategyStats(),
         timestamp: Date.now(),
       });
     }

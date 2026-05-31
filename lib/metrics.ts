@@ -31,6 +31,15 @@ interface QueryMetrics {
   reduction: number;
 }
 
+export type VitrineStrategyKind = 'rpc' | 'js';
+
+interface VitrineStrategyMetrics {
+  rpc: { count: number; durationsMs: number[] };
+  js: { count: number; durationsMs: number[] };
+}
+
+const VITRINE_STRATEGY_MAX_SAMPLES = 500;
+
 // Armazenamento em memória (em produção, usar Redis ou banco)
 const cacheMetrics = new Map<string, CacheMetrics>();
 const performanceMetrics: PerformanceMetrics[] = [];
@@ -39,9 +48,54 @@ const queryMetrics: QueryMetrics = {
   cachedQueries: 0,
   reduction: 0,
 };
+const vitrineStrategyMetrics: VitrineStrategyMetrics = {
+  rpc: { count: 0, durationsMs: [] },
+  js: { count: 0, durationsMs: [] },
+};
 
 // Limite de métricas em memória (evitar vazamento)
 const MAX_METRICS = 1000;
+
+/**
+ * Registra estratégia de resolução da vitrine (RPC Postgres vs pipeline JS).
+ */
+export function recordVitrineStrategy(strategy: VitrineStrategyKind, durationMs: number) {
+  const bucket = vitrineStrategyMetrics[strategy];
+  bucket.count++;
+  bucket.durationsMs.push(Math.max(0, durationMs));
+  if (bucket.durationsMs.length > VITRINE_STRATEGY_MAX_SAMPLES) {
+    bucket.durationsMs.shift();
+  }
+}
+
+function percentile(sorted: number[], p: number): number {
+  if (sorted.length === 0) return 0;
+  return sorted[Math.min(sorted.length - 1, Math.floor(sorted.length * p))] ?? 0;
+}
+
+/**
+ * Estatísticas agregadas de estratégia da vitrine.
+ */
+export function getVitrineStrategyStats() {
+  const build = (kind: VitrineStrategyKind) => {
+    const { count, durationsMs } = vitrineStrategyMetrics[kind];
+    const sorted = [...durationsMs].sort((a, b) => a - b);
+    const total = vitrineStrategyMetrics.rpc.count + vitrineStrategyMetrics.js.count;
+    return {
+      count,
+      sharePercent: total > 0 ? (count / total) * 100 : 0,
+      avgDurationMs: sorted.length ? sorted.reduce((a, b) => a + b, 0) / sorted.length : 0,
+      p50DurationMs: percentile(sorted, 0.5),
+      p95DurationMs: percentile(sorted, 0.95),
+    };
+  };
+
+  return {
+    rpc: build('rpc'),
+    js: build('js'),
+    totalRequests: vitrineStrategyMetrics.rpc.count + vitrineStrategyMetrics.js.count,
+  };
+}
 
 /**
  * Registra cache hit
@@ -180,6 +234,7 @@ export function getAllMetrics() {
     cache: cacheStats,
     performance: getPerformanceStats(),
     queries: getQueryMetrics(),
+    vitrineStrategy: getVitrineStrategyStats(),
     timestamp: Date.now(),
   };
 }
@@ -206,4 +261,6 @@ export function resetMetrics() {
   queryMetrics.totalQueries = 0;
   queryMetrics.cachedQueries = 0;
   queryMetrics.reduction = 0;
+  vitrineStrategyMetrics.rpc = { count: 0, durationsMs: [] };
+  vitrineStrategyMetrics.js = { count: 0, durationsMs: [] };
 }

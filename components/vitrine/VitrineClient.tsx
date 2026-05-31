@@ -26,6 +26,7 @@ import {
   ChevronLeft,
   CheckCircle2,
   Circle,
+  RefreshCw,
   Baby,
   Scissors,
   HeartPulse,
@@ -200,6 +201,8 @@ interface VitrineClientProps {
   initialPageData?: VitrinePageResponse | null;
   /** Facets pré-carregados no servidor. */
   initialFacetsData?: VitrineFacets | null;
+  /** Erro explícito do SSR — exibe banner de retry em vez de skeleton infinito. */
+  initialPayloadError?: string | null;
   /** Chaves para pular o 1º fetch client quando bater com a query atual. */
   ssrListQueryKey?: string;
   ssrFacetsQueryKey?: string;
@@ -213,6 +216,7 @@ export default function VitrineClient({
   initialListQuery,
   initialPageData = null,
   initialFacetsData = null,
+  initialPayloadError = null,
   ssrListQueryKey,
   ssrFacetsQueryKey,
 }: VitrineClientProps) {
@@ -269,13 +273,23 @@ export default function VitrineClient({
     () => initialPageData?.pagination.page ?? ssrQuery.page,
   );
   const [perPage, setPerPage] = useState(() => initialPageData?.pagination.perPage ?? 12);
-  const [loading, setLoading] = useState(() => !initialPageData);
+  const [loading, setLoading] = useState(
+    () => !initialPageData && !initialPayloadError,
+  );
+  const [isRefreshing, setIsRefreshing] = useState(false);
   const [facetsLoading, setFacetsLoading] = useState(() => !initialFacetsData);
-  const [fetchError, setFetchError] = useState<string | null>(null);
+  const [fetchError, setFetchError] = useState<string | null>(initialPayloadError);
+  const [ssrErrorDismissed, setSsrErrorDismissed] = useState(false);
+  const [retryNonce, setRetryNonce] = useState(0);
+  const gruposPaginaRef = useRef<GrupoSubtopico[]>(initialPageData?.groups ?? []);
   /** Evita gravar na URL antes de ler os filtros (impede loop com estado inicial vazio). */
   const filtersHydratedFromUrlRef = useRef(Boolean(initialListQuery));
   const ssrListConsumedRef = useRef(false);
   const ssrFacetsConsumedRef = useRef(false);
+
+  useEffect(() => {
+    gruposPaginaRef.current = gruposPagina;
+  }, [gruposPagina]);
 
   /**
    * URL → estado antes do paint e antes dos useEffects que gravam na URL / buscam dados.
@@ -318,6 +332,17 @@ export default function VitrineClient({
 
     async function loadFacets() {
       const currentFacetsKey = vitrineFacetsQueryKey(bancasSelecionadas);
+
+      if (bancasSelecionadas.length === 0 && initialFacetsData) {
+        if (
+          !ssrFacetsConsumedRef.current &&
+          ssrFacetsQueryKey === currentFacetsKey
+        ) {
+          ssrFacetsConsumedRef.current = true;
+        }
+        return;
+      }
+
       if (
         !ssrFacetsConsumedRef.current &&
         initialFacetsData &&
@@ -381,7 +406,12 @@ export default function VitrineClient({
         return;
       }
 
-      setLoading(true);
+      const hasExistingGroups = gruposPaginaRef.current.length > 0;
+      if (hasExistingGroups) {
+        setIsRefreshing(true);
+      } else {
+        setLoading(true);
+      }
       setFetchError(null);
 
       const params = new URLSearchParams();
@@ -410,12 +440,18 @@ export default function VitrineClient({
         }
       } catch (e) {
         if (cancelled) return;
-        setFetchError(e instanceof Error ? e.message : 'Falha ao carregar vitrine');
-        setGruposPagina([]);
-        setTotalAssuntos(0);
-        setTotalPaginas(1);
+        const message = e instanceof Error ? e.message : 'Falha ao carregar vitrine';
+        setFetchError(message);
+        if (gruposPaginaRef.current.length === 0) {
+          setGruposPagina([]);
+          setTotalAssuntos(0);
+          setTotalPaginas(1);
+        }
       } finally {
-        if (!cancelled) setLoading(false);
+        if (!cancelled) {
+          setLoading(false);
+          setIsRefreshing(false);
+        }
       }
     }
 
@@ -430,6 +466,7 @@ export default function VitrineClient({
     debouncedSearch,
     initialPageData,
     ssrListQueryKey,
+    retryNonce,
   ]);
 
   const searchPaginaResetSkipRef = useRef(true);
@@ -445,10 +482,24 @@ export default function VitrineClient({
     if (!assuntosSelecionados.length) return;
     const valid = assuntosSelecionados.filter((a) => assuntos.includes(a));
     if (valid.length !== assuntosSelecionados.length) {
+      const prevKey = vitrineListQueryKey({
+        page: pagina,
+        bancas: bancasSelecionadas,
+        assuntos: assuntosSelecionados,
+        q: debouncedSearch || undefined,
+      });
+      const nextKey = vitrineListQueryKey({
+        page: pagina,
+        bancas: bancasSelecionadas,
+        assuntos: valid,
+        q: debouncedSearch || undefined,
+      });
       setAssuntosSelecionados(valid);
-      setPagina(1);
+      if (prevKey !== nextKey) {
+        setPagina(1);
+      }
     }
-  }, [assuntos, assuntosSelecionados]);
+  }, [assuntos, assuntosSelecionados, bancasSelecionadas, debouncedSearch, pagina]);
 
   /** Estado → URL (só após hidratação; não depende de searchParams para evitar loop). */
   useEffect(() => {
@@ -504,13 +555,30 @@ export default function VitrineClient({
         })()
       : 'Vitrine de questões';
 
+  const listBusy = loading || isRefreshing;
+
   const pageSectionDescription = fetchError
     ? fetchError
     : totalAssuntos > 0 && totalPaginas > 1
       ? `Mostrando ${(paginaEfetiva - 1) * perPage + 1}\u2013${Math.min(paginaEfetiva * perPage, totalAssuntos)} de ${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`
       : loading
         ? 'Carregando assuntos…'
-        : `${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`;
+        : isRefreshing
+          ? 'Atualizando assuntos…'
+          : `${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`;
+
+  const showSsrErrorBanner =
+    Boolean(initialPayloadError) && !ssrErrorDismissed && !initialPageData;
+
+  const handleRetryLoad = useCallback(() => {
+    setSsrErrorDismissed(true);
+    setFetchError(null);
+    if (gruposPaginaRef.current.length === 0) {
+      setLoading(true);
+    }
+    setRetryNonce((n) => n + 1);
+    router.refresh();
+  }, [router]);
 
   return (
     <div
@@ -834,6 +902,24 @@ export default function VitrineClient({
       </div>
 
       <main className="mx-auto max-w-7xl space-y-8 px-6 pt-6 md:pt-8">
+        {showSsrErrorBanner && (
+          <div
+            role="alert"
+            className="flex flex-col gap-3 rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 sm:flex-row sm:items-center sm:justify-between"
+          >
+            <p className="text-sm text-amber-100/90">{initialPayloadError}</p>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={handleRetryLoad}
+              className="shrink-0 border-amber-500/40 text-amber-100 hover:bg-amber-500/15"
+            >
+              <RefreshCw size={16} className="mr-2" aria-hidden />
+              Tentar novamente
+            </Button>
+          </div>
+        )}
         <section className="space-y-8">
           <div className="mb-8 flex items-start justify-between">
             <div className="min-w-0">
@@ -876,7 +962,7 @@ export default function VitrineClient({
                 animate="animate"
                 className={cn(
                   'grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-5 xl:grid-cols-4',
-                  loading && 'pointer-events-none opacity-60',
+                  isRefreshing && 'pointer-events-none opacity-70',
                 )}
               >
                 {gruposPagina.map((grupo, idx) => (
@@ -889,13 +975,13 @@ export default function VitrineClient({
                   aria-label="Paginação da vitrine"
                 >
                   <p className="order-2 text-center text-xs font-medium text-muted-foreground sm:order-1 sm:text-left">
-                    Página {loading ? pagina : paginaEfetiva} de {totalPaginas}
+                    Página {listBusy ? pagina : paginaEfetiva} de {totalPaginas}
                   </p>
                   <div className="order-1 flex items-center gap-2 sm:order-2 sm:ml-auto">
                     <Button
                       type="button"
                       variant="outline"
-                      disabled={pagina <= 1 || loading}
+                      disabled={pagina <= 1 || listBusy}
                       onClick={() => setPagina((p) => Math.max(1, p - 1))}
                       className="h-11 flex-1 rounded-xl border-white/15 sm:flex-none"
                     >
@@ -905,7 +991,7 @@ export default function VitrineClient({
                     <Button
                       type="button"
                       variant="outline"
-                      disabled={pagina >= totalPaginas || loading}
+                      disabled={pagina >= totalPaginas || listBusy}
                       onClick={() => setPagina((p) => Math.min(totalPaginas, p + 1))}
                       className="h-11 flex-1 rounded-xl border-white/15 sm:flex-none"
                     >

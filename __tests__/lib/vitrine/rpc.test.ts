@@ -52,6 +52,10 @@ describe('fetchVitrinePageFromRpc', () => {
           totalPages: 1,
         },
         totalModulosFiltrados: 205,
+        facets: {
+          bancas: ['FGV', 'CESPE'],
+          assuntos: ['Assunto Denso', 'Outro'],
+        },
       },
       error: null,
     });
@@ -79,6 +83,32 @@ describe('fetchVitrinePageFromRpc', () => {
     expect(result.groups[0].questoes).toHaveLength(2);
     expect(result.groups[0].totalQuestoes).toBe(205);
     expect(result.totalModulosFiltrados).toBe(205);
+    expect(result.facets).toEqual({
+      bancas: ['FGV', 'CESPE'],
+      assuntos: ['Assunto Denso', 'Outro'],
+    });
+  });
+
+  it('aceita payload sem facets (migration pendente)', async () => {
+    const rpcMock = jest.fn().mockResolvedValue({
+      data: {
+        groups: [],
+        pagination: { page: 1, perPage: 12, totalGroups: 0, totalPages: 1 },
+        totalModulosFiltrados: 0,
+      },
+      error: null,
+    });
+
+    createServerSupabaseMock.mockResolvedValue({
+      rpc: rpcMock,
+    });
+
+    const result = await fetchVitrinePageFromRpc({
+      userId: 'user-1',
+      page: 1,
+    });
+
+    expect(result.facets).toBeUndefined();
   });
 
   it('lança erro quando payload RPC não respeita schema esperado', async () => {

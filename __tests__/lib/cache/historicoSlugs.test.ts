@@ -11,10 +11,21 @@ const historicoRows = [
   { modulo_slug: 'slug-b', acertou: false, estudo_reverso_concluido: false },
 ];
 
+let inCallCount = 0;
+let maxConcurrentInCalls = 0;
+let activeInCalls = 0;
+
 const mockSupabaseChain = {
   select: () => mockSupabaseChain,
   eq: () => mockSupabaseChain,
-  in: () => Promise.resolve({ data: historicoRows, error: null }),
+  in: () => {
+    inCallCount += 1;
+    activeInCalls += 1;
+    maxConcurrentInCalls = Math.max(maxConcurrentInCalls, activeInCalls);
+    return Promise.resolve({ data: historicoRows, error: null }).finally(() => {
+      activeInCalls -= 1;
+    });
+  },
   order: () => mockSupabaseChain,
   limit: () => Promise.resolve({ data: [], error: null }),
 };
@@ -38,6 +49,12 @@ describe('getHistoricoQuestoesForSlugsCached', () => {
     process.env.SUPABASE_SERVICE_ROLE_KEY = 'test-service-role-key';
   });
 
+  beforeEach(() => {
+    inCallCount = 0;
+    maxConcurrentInCalls = 0;
+    activeInCalls = 0;
+  });
+
   it('retorna vazio sem userId', async () => {
     const result = await getHistoricoQuestoesForSlugsCached(undefined, ['slug-a']);
     expect(result).toEqual([]);
@@ -51,6 +68,13 @@ describe('getHistoricoQuestoesForSlugsCached', () => {
   it('consulta apenas slugs informados', async () => {
     const result = await getHistoricoQuestoesForSlugsCached('user-1', ['slug-a', 'slug-b', 'slug-a']);
     expect(result).toEqual(historicoRows);
+  });
+
+  it('consulta chunks em paralelo quando há mais de 120 slugs', async () => {
+    const slugs = Array.from({ length: 250 }, (_, i) => `slug-${i}`);
+    await getHistoricoQuestoesForSlugsCached('user-1', slugs);
+    expect(inCallCount).toBe(3);
+    expect(maxConcurrentInCalls).toBeGreaterThan(1);
   });
 });
 

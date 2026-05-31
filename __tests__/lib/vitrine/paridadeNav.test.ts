@@ -6,6 +6,7 @@ jest.mock('next/cache', () => ({
 jest.mock('@/lib/cache', () => ({
   getModulosEstudoVitrineForUserCached: jest.fn(),
   getHistoricoQuestoesForSlugsCached: jest.fn(),
+  getAccessibleModulosForNavCached: jest.fn(),
   estudadosSetFromHistorico: (
     historico: { modulo_slug: string; estudo_reverso_concluido: boolean }[],
   ) =>
@@ -14,6 +15,11 @@ jest.mock('@/lib/cache', () => ({
         .filter((h) => h.estudo_reverso_concluido === true)
         .map((h) => h.modulo_slug),
     ),
+}));
+
+jest.mock('@/lib/vitrine/facets', () => ({
+  ...jest.requireActual('@/lib/vitrine/facets'),
+  getVitrineFacets: jest.fn().mockResolvedValue({ bancas: [], assuntos: [] }),
 }));
 
 jest.mock('@/lib/concursos/entitlements', () => ({
@@ -25,6 +31,7 @@ jest.mock('@/lib/vitrine/rpc', () => ({
 }));
 
 import {
+  getAccessibleModulosForNavCached,
   getModulosEstudoVitrineForUserCached,
   getHistoricoQuestoesForSlugsCached,
 } from '@/lib/cache';
@@ -45,6 +52,7 @@ import type { VitrineGrupoSubtopico } from '@/lib/vitrine/types';
 
 const getModulos = getModulosEstudoVitrineForUserCached as jest.Mock;
 const getHistorico = getHistoricoQuestoesForSlugsCached as jest.Mock;
+const fetchNavModulosCached = getAccessibleModulosForNavCached as jest.Mock;
 const fetchNavModulos = fetchAccessibleModulosForNav as jest.Mock;
 const fetchRpcPage = fetchVitrinePageFromRpc as jest.Mock;
 
@@ -133,6 +141,7 @@ function expectedSlugList(
 function setupCatalog(modulos: ModuloEstudoRow[], historico: HistoricoQuestaoRow[] = []) {
   getModulos.mockResolvedValue(modulos);
   fetchNavModulos.mockResolvedValue(modulos);
+  fetchNavModulosCached.mockResolvedValue(modulos);
   getHistorico.mockImplementation(async (_userId: string, slugs: string[]) =>
     historico.filter((h) => slugs.includes(h.modulo_slug)),
   );

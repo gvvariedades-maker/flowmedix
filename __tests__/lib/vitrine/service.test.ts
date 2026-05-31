@@ -1,6 +1,12 @@
 jest.mock('@/lib/cache', () => ({
   getModulosEstudoVitrineForUserCached: jest.fn(),
   getHistoricoQuestoesForSlugsCached: jest.fn(),
+  getAccessibleModulosForNavCached: jest.fn(),
+}));
+
+jest.mock('@/lib/vitrine/facets', () => ({
+  ...jest.requireActual('@/lib/vitrine/facets'),
+  getVitrineFacets: jest.fn(),
 }));
 
 jest.mock('@/lib/concursos/entitlements', () => ({
@@ -12,23 +18,28 @@ jest.mock('@/lib/vitrine/rpc', () => ({
 }));
 
 import {
+  getAccessibleModulosForNavCached,
   getModulosEstudoVitrineForUserCached,
   getHistoricoQuestoesForSlugsCached,
 } from '@/lib/cache';
 import { fetchAccessibleModulosForNav } from '@/lib/concursos/entitlements';
+import { getVitrineFacets } from '@/lib/vitrine/facets';
 import { fetchVitrinePageFromRpc } from '@/lib/vitrine/rpc';
 import { getVitrinePage } from '@/lib/vitrine/service';
 import { SCALE_LIMITS } from '@/lib/scale/constants';
 
 const getModulos = getModulosEstudoVitrineForUserCached as jest.Mock;
 const getHistorico = getHistoricoQuestoesForSlugsCached as jest.Mock;
+const fetchNavModulosCached = getAccessibleModulosForNavCached as jest.Mock;
 const fetchNavModulos = fetchAccessibleModulosForNav as jest.Mock;
 const fetchRpcPage = fetchVitrinePageFromRpc as jest.Mock;
+const fetchFacets = getVitrineFacets as jest.Mock;
 
 describe('getVitrinePage', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     getHistorico.mockResolvedValue([]);
+    fetchFacets.mockResolvedValue({ bancas: [], assuntos: [] });
     fetchRpcPage.mockRejectedValue(new Error('RPC indisponível nos testes'));
   });
 
@@ -63,7 +74,7 @@ describe('getVitrinePage', () => {
   });
 
   it('filtra por banca antes de paginar', async () => {
-    fetchNavModulos.mockResolvedValue([
+    fetchNavModulosCached.mockResolvedValue([
       {
         id: '1',
         modulo_slug: 's1',
@@ -81,15 +92,15 @@ describe('getVitrinePage', () => {
       filters: { banca: 'FGV' },
     });
 
-    expect(fetchNavModulos).toHaveBeenCalledWith('u', { banca: 'FGV' });
+    expect(fetchNavModulosCached).toHaveBeenCalledWith('u', { banca: 'FGV' });
     expect(getModulos).not.toHaveBeenCalled();
     expect(result.pagination.totalGroups).toBe(1);
     expect(result.groups[0].banca).toBe('FGV');
     expect(getHistorico).toHaveBeenCalledWith('u', ['s1']);
   });
 
-  it('usa fetchAccessibleModulosForNav quando assunto está na URL', async () => {
-    fetchNavModulos.mockResolvedValue([
+  it('usa getAccessibleModulosForNavCached quando assunto está na URL', async () => {
+    fetchNavModulosCached.mockResolvedValue([
       {
         id: '1',
         modulo_slug: 's1',
@@ -107,7 +118,7 @@ describe('getVitrinePage', () => {
       filters: { assunto: 'Assunto X' },
     });
 
-    expect(fetchNavModulos).toHaveBeenCalledWith('u', { titulo_aula: 'Assunto X' });
+    expect(fetchNavModulosCached).toHaveBeenCalledWith('u', { titulo_aula: 'Assunto X' });
     expect(getModulos).not.toHaveBeenCalled();
     expect(getHistorico).toHaveBeenCalledWith('u', ['s1']);
   });
@@ -150,6 +161,7 @@ describe('getVitrinePage', () => {
       ],
       pagination: { page: 1, perPage: 12, totalGroups: 1, totalPages: 1 },
       totalModulosFiltrados: 1,
+      facets: { bancas: ['FGV'], assuntos: ['Assunto 1'] },
     });
 
     const result = await getVitrinePage({ userId: 'user-1', page: 1 });
@@ -159,9 +171,28 @@ describe('getVitrinePage', () => {
       page: 1,
       filters: {},
     });
+    expect(fetchFacets).not.toHaveBeenCalled();
     expect(getHistorico).not.toHaveBeenCalled();
     expect(result.groups).toHaveLength(1);
-    expect(result.facets).toEqual({ bancas: [], assuntos: [] });
+    expect(result.facets).toEqual({ bancas: ['FGV'], assuntos: ['Assunto 1'] });
+  });
+
+  it('usa getVitrineFacets quando RPC não traz facets (rollout)', async () => {
+    fetchRpcPage.mockResolvedValue({
+      groups: [],
+      pagination: { page: 1, perPage: 12, totalGroups: 0, totalPages: 1 },
+      totalModulosFiltrados: 0,
+    });
+    fetchFacets.mockResolvedValue({ bancas: ['FGV'], assuntos: ['A'] });
+
+    const result = await getVitrinePage({ userId: 'user-1', page: 1 });
+
+    expect(fetchFacets).toHaveBeenCalledWith({
+      userId: 'user-1',
+      bancas: undefined,
+      isAdmin: false,
+    });
+    expect(result.facets).toEqual({ bancas: ['FGV'], assuntos: ['A'] });
   });
 
   it('usa RPC também quando há filtro q', async () => {
@@ -170,6 +201,7 @@ describe('getVitrinePage', () => {
       pagination: { page: 1, perPage: 12, totalGroups: 0, totalPages: 1 },
       totalModulosFiltrados: 0,
     });
+    fetchFacets.mockResolvedValue({ bancas: ['FGV'], assuntos: ['A'] });
 
     const result = await getVitrinePage({
       userId: 'user-1',
@@ -183,12 +215,30 @@ describe('getVitrinePage', () => {
       filters: { q: 'q-100' },
     });
     expect(getHistorico).not.toHaveBeenCalled();
-    expect(result.facets).toEqual({ bancas: [], assuntos: [] });
+    expect(getModulos).not.toHaveBeenCalled();
+    expect(result.facets).toEqual({ bancas: ['FGV'], assuntos: ['A'] });
+  });
+
+  it('RPC vazio sem filtros não aciona pipeline JS', async () => {
+    fetchRpcPage.mockResolvedValue({
+      groups: [],
+      pagination: { page: 1, perPage: 12, totalGroups: 0, totalPages: 1 },
+      totalModulosFiltrados: 0,
+      facets: { bancas: ['CESPE'], assuntos: ['Urgências'] },
+    });
+
+    const result = await getVitrinePage({ userId: 'user-1', page: 1 });
+
+    expect(getModulos).not.toHaveBeenCalled();
+    expect(getHistorico).not.toHaveBeenCalled();
+    expect(fetchFacets).not.toHaveBeenCalled();
+    expect(result.groups).toHaveLength(0);
+    expect(result.facets).toEqual({ bancas: ['CESPE'], assuntos: ['Urgências'] });
   });
 
   it('limita questoes por grupo no fallback JS e preserva totalQuestoes agregado', async () => {
     const totalNoAssunto = SCALE_LIMITS.QUESTOES_POR_ASSUNTO + 5;
-    fetchNavModulos.mockResolvedValue(
+    fetchNavModulosCached.mockResolvedValue(
       Array.from({ length: totalNoAssunto }, (_, i) => ({
         id: String(i + 1),
         modulo_slug: `assunto-denso-${i + 1}`,

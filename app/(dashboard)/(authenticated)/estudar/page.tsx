@@ -1,15 +1,16 @@
 import { Suspense } from 'react';
 import { redirect } from 'next/navigation';
-import { getCatalogStats, getVitrineFacetsCached, getVitrinePageCached } from '@/lib/cache';
-import { getMatriculatedConcursos } from '@/lib/concursos/entitlements';
+import { getMatriculatedConcursosCached, getVitrineInitialPayloadCached } from '@/lib/cache';
 import { isAdminSessionEmail } from '@/lib/constants';
+import { logger } from '@/lib/logger';
 import { getServerUser } from '@/lib/supabase/server-auth';
 import {
   parseVitrineListQuery,
   vitrineFacetsQueryKey,
   vitrineListQueryKey,
 } from '@/lib/vitrine/parseListQuery';
-import VitrineCatalogStats from '@/components/vitrine/VitrineCatalogStats';
+import VitrineCatalogStatsSection from '@/components/vitrine/VitrineCatalogStatsSection';
+import VitrineCatalogStatsSkeleton from '@/components/vitrine/VitrineCatalogStatsSkeleton';
 import VitrineClient from '@/components/vitrine/VitrineClient';
 
 /** Catálogo inicial no SSR (cache 2 min); cliente refetch em filtros/paginação. */
@@ -32,17 +33,42 @@ export default async function VitrinePage({
     q: listQuery.q,
   };
 
-  const [matriculatedConcursos, catalogStats, initialPageData, initialFacetsData] =
-    await Promise.all([
-      getMatriculatedConcursos(userId).catch(() => []),
-      getCatalogStats().catch(() => ({ totalQuestions: 0, totalSlides: 0 })),
-      getVitrinePageCached(userId, listQuery.page, vitrineFilters, isAdmin).catch(() => null),
-      getVitrineFacetsCached(
+  const facetsFilters = {
+    bancas: listQuery.bancas.length ? listQuery.bancas : undefined,
+  };
+
+  const [matriculatedConcursos, initialPayloadResult] = await Promise.all([
+    getMatriculatedConcursosCached(userId).catch((err) => {
+      logger.warn('SSR vitrine: falha ao carregar concursos matriculados', {
         userId,
-        { bancas: listQuery.bancas.length ? listQuery.bancas : undefined },
-        isAdmin,
-      ).catch(() => null),
-    ]);
+        error: err instanceof Error ? err.message : String(err),
+      });
+      return [] as Awaited<ReturnType<typeof getMatriculatedConcursosCached>>;
+    }),
+    getVitrineInitialPayloadCached(
+      userId,
+      listQuery.page,
+      vitrineFilters,
+      facetsFilters,
+      isAdmin,
+    )
+      .then((payload) => ({ payload, error: null as string | null }))
+      .catch((err) => {
+        logger.warn('SSR vitrine: falha ao carregar payload inicial', {
+          userId,
+          page: listQuery.page,
+          error: err instanceof Error ? err.message : String(err),
+        });
+        return {
+          payload: null,
+          error: 'Não foi possível carregar a vitrine. Tente novamente.',
+        };
+      }),
+  ]);
+
+  const initialPageData = initialPayloadResult.payload?.page ?? null;
+  const initialFacetsData = initialPageData?.facets ?? null;
+  const initialPayloadError = initialPayloadResult.error;
 
   const vitrineFallbackTitulo =
     matriculatedConcursos.find((concurso) => concurso.tipo === 'edital')?.nome ?? 'Estudo Reverso';
@@ -54,13 +80,13 @@ export default async function VitrinePage({
         initialListQuery={listQuery}
         initialPageData={initialPageData}
         initialFacetsData={initialFacetsData}
+        initialPayloadError={initialPayloadError}
         ssrListQueryKey={vitrineListQueryKey(listQuery)}
         ssrFacetsQueryKey={vitrineFacetsQueryKey(listQuery.bancas)}
       >
-        <VitrineCatalogStats
-          totalQuestions={catalogStats.totalQuestions}
-          totalSlides={catalogStats.totalSlides}
-        />
+        <Suspense fallback={<VitrineCatalogStatsSkeleton />}>
+          <VitrineCatalogStatsSection />
+        </Suspense>
       </VitrineClient>
     </Suspense>
   );

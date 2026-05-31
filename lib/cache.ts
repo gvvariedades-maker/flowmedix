@@ -15,6 +15,7 @@ import { logger } from './logger';
 import { DataServiceUnavailableError } from './dataServiceError';
 import { withPostgrestReadRetry } from './supabaseReadRetry';
 import type { Concurso } from '@/types/database';
+import type { VitrinePageResponse } from '@/lib/vitrine/types';
 import { CATALOG_STATS_RPC, SCALE_LIMITS } from '@/lib/scale/constants';
 
 // Cliente Supabase SEM cookies - para uso dentro de unstable_cache.
@@ -34,17 +35,6 @@ function getSupabaseAnon(): SupabaseClient | null {
 }
 
 // Helper para tracking de métricas (opcional, não bloqueia se não disponível)
-function trackCacheHit(key: string) {
-  try {
-    // Importação dinâmica para evitar problemas de inicialização
-    const { recordCacheHit } = require('./metrics');
-    recordCacheHit(key);
-  } catch (e) {
-    // Métricas podem não estar disponíveis em todos os contextos
-    // Não é crítico, apenas ignora
-  }
-}
-
 function trackCacheMiss(key: string) {
   try {
     const { recordCacheMiss } = require('./metrics');
@@ -53,6 +43,11 @@ function trackCacheMiss(key: string) {
     // Métricas podem não estar disponíveis em todos os contextos
     // Não é crítico, apenas ignora
   }
+}
+
+/** Callback de unstable_cache = miss (fetch); hit não é observável aqui. */
+function trackUnstableCacheFetch(key: string) {
+  trackCacheMiss(key);
 }
 
 /**
@@ -115,7 +110,7 @@ const modulosCacheFn = unstable_cache(
         .order('created_at', { ascending: false })
         .limit(MODULOS_ESTUDO_VITRINE_LIMIT),
     );
-    trackCacheHit('modulos-estudo-list');
+    trackUnstableCacheFetch('modulos-estudo-list');
     return data ?? [];
   },
   [MODULOS_ESTUDO_CACHE_ID],
@@ -139,7 +134,7 @@ export async function getModulosEstudoForUserCached(userId: string) {
   return unstable_cache(
     async () => {
       const { getAccessibleModulosForUser } = await import('./concursos/entitlements');
-      trackCacheHit(cacheKey);
+      trackUnstableCacheFetch(cacheKey);
       return getAccessibleModulosForUser(userId);
     },
     [cacheKey],
@@ -164,13 +159,88 @@ export async function getModulosEstudoVitrineForUserCached(userId: string) {
       const { getAccessibleModulosForMatriculatedEditalPacote } = await import(
         './concursos/entitlements'
       );
-      trackCacheHit(cacheKey);
+      trackUnstableCacheFetch(cacheKey);
       return getAccessibleModulosForMatriculatedEditalPacote(userId);
     },
     [cacheKey],
     {
       ...CACHE_CONFIG.USER,
       tags: ['modulos-estudo', 'user', `user-${userId}`],
+    },
+  )();
+}
+
+const ACCESSIBLE_MODULOS_NAV_CACHE_PREFIX = 'accessible-modulos-nav-v1';
+const MATRICULATED_CONCURSOS_CACHE_PREFIX = 'matriculated-concursos-v1';
+
+export type AccessibleModulosNavCacheFilters = {
+  banca?: string;
+  titulo_aula?: string;
+  bancas?: string[];
+  titulo_aulas?: string[];
+};
+
+export function getAccessibleModulosNavFiltersHash(
+  filters: AccessibleModulosNavCacheFilters = {},
+): string {
+  return createVitrineFilterHash([
+    normalizeVitrineTextFilter(filters.banca),
+    normalizeVitrineArrayFilter(filters.bancas),
+    normalizeVitrineTextFilter(filters.titulo_aula),
+    normalizeVitrineArrayFilter(filters.titulo_aulas),
+  ]);
+}
+
+export function getAccessibleModulosNavFilterTag(
+  userId: string,
+  filters: AccessibleModulosNavCacheFilters = {},
+): string {
+  return `nav-filter-${userId}-${getAccessibleModulosNavFiltersHash(filters)}`;
+}
+
+/**
+ * Módulos acessíveis com filtros SQL (banca/assunto) para vitrine e player.
+ * TTL 2 min; invalidar via `modulos-estudo` e `user-{id}`.
+ */
+export async function getAccessibleModulosForNavCached(
+  userId: string,
+  sqlFilters: AccessibleModulosNavCacheFilters,
+) {
+  const filtersHash = getAccessibleModulosNavFiltersHash(sqlFilters);
+  const cacheKey = `${ACCESSIBLE_MODULOS_NAV_CACHE_PREFIX}-${userId}-${filtersHash}`;
+  const filterTag = getAccessibleModulosNavFilterTag(userId, sqlFilters);
+
+  return unstable_cache(
+    async () => {
+      const { fetchAccessibleModulosForNav } = await import('./concursos/entitlements');
+      trackCacheMiss(cacheKey);
+      return fetchAccessibleModulosForNav(userId, sqlFilters);
+    },
+    [cacheKey],
+    {
+      ...CACHE_CONFIG.USER,
+      tags: ['modulos-estudo', 'user', `user-${userId}`, filterTag],
+    },
+  )();
+}
+
+/**
+ * Concursos matriculados ativos do usuário (título edital na vitrine, shell do dashboard).
+ * TTL 2 min; invalidar via `modulos-estudo` e `user-{id}`.
+ */
+export async function getMatriculatedConcursosCached(userId: string) {
+  const cacheKey = `${MATRICULATED_CONCURSOS_CACHE_PREFIX}-${userId}`;
+
+  return unstable_cache(
+    async () => {
+      const { getMatriculatedConcursos } = await import('./concursos/entitlements');
+      trackCacheMiss(cacheKey);
+      return getMatriculatedConcursos(userId);
+    },
+    [cacheKey],
+    {
+      ...CACHE_CONFIG.USER,
+      tags: ['modulos-estudo', 'user', `user-${userId}`, `matriculated-${userId}`],
     },
   )();
 }
@@ -205,7 +275,7 @@ export async function getQuestaoBySlugCached(slug: string) {
         return null;
       }
       
-      trackCacheHit(cacheKey);
+      trackUnstableCacheFetch(cacheKey);
       return data;
     },
     [cacheKey],
@@ -244,7 +314,7 @@ export const getQuestoesByAssuntoCached = cacheByRequest(async (tituloAula: stri
             .order('created_at', { ascending: true })
             .limit(200),
       );
-      trackCacheHit(cacheKey);
+      trackUnstableCacheFetch(cacheKey);
       return data ?? [];
     },
     [cacheKey],
@@ -285,7 +355,7 @@ export const getQuestoesByBancaCached = cacheByRequest(
           }
           return q.order('created_at', { ascending: true }).limit(100);
         });
-        trackCacheHit(cacheKey);
+        trackUnstableCacheFetch(cacheKey);
         return data ?? [];
       },
       [cacheKey],
@@ -395,24 +465,28 @@ export async function getHistoricoQuestoesForSlugsCached(
     async () => {
       const { createServerSupabase } = await import('./supabase/server');
       const supabase = await createServerSupabase();
-      const merged: HistoricoQuestaoCachedRow[] = [];
 
+      const chunks: string[][] = [];
       for (let i = 0; i < unique.length; i += HISTORICO_SLUG_IN_CHUNK) {
-        const part = unique.slice(i, i + HISTORICO_SLUG_IN_CHUNK);
-        const data = await withPostgrestReadRetry(
-          `historico_questoes:ctx:${userId.slice(0, 8)}:${part.length}`,
-          async () =>
-            supabase
-              .from('historico_questoes')
-              .select('modulo_slug, acertou, estudo_reverso_concluido')
-              .eq('user_id', userId)
-              .in('modulo_slug', part),
-        );
-        if (data?.length) merged.push(...(data as HistoricoQuestaoCachedRow[]));
+        chunks.push(unique.slice(i, i + HISTORICO_SLUG_IN_CHUNK));
       }
 
-      trackCacheHit(cacheKey);
-      return merged;
+      const chunkResults = await Promise.all(
+        chunks.map((part) =>
+          withPostgrestReadRetry(
+            `historico_questoes:ctx:${userId.slice(0, 8)}:${part.length}`,
+            async () =>
+              supabase
+                .from('historico_questoes')
+                .select('modulo_slug, acertou, estudo_reverso_concluido')
+                .eq('user_id', userId)
+                .in('modulo_slug', part),
+          ),
+        ),
+      );
+
+      trackCacheMiss(cacheKey);
+      return chunkResults.flatMap((data) => (data ?? []) as HistoricoQuestaoCachedRow[]);
     },
     [cacheKey],
     {
@@ -455,7 +529,7 @@ export async function getHistoricoQuestoesCached(userId?: string) {
             .eq('user_id', userId)
             .limit(1000),
       );
-      trackCacheHit(cacheKey);
+      trackUnstableCacheFetch(cacheKey);
       return data ?? [];
     },
     [cacheKey],
@@ -551,7 +625,7 @@ export async function getVitrinePageCached(
   return unstable_cache(
     async () => {
       const { getVitrinePage } = await import('./vitrine/service');
-      trackCacheHit(cacheKey);
+      trackUnstableCacheFetch(cacheKey);
       return getVitrinePage({ userId, page, filters, isAdmin });
     },
     [cacheKey],
@@ -594,7 +668,7 @@ function vitrineFacetsCacheKey(userId: string, filters: VitrineFacetsCacheFilter
 
 /**
  * Facets da vitrine (bancas/assuntos) com RPC + fallback JS.
- * TTL 15 min; invalidar via tags `vitrine-facets` e `user-{id}`.
+ * TTL 2 min (alinhado à página); invalidar via tags `vitrine-facets` e `user-{id}`.
  */
 export async function getVitrineFacetsCached(
   userId: string,
@@ -609,13 +683,80 @@ export async function getVitrineFacetsCached(
   return unstable_cache(
     async () => {
       const { getVitrineFacets } = await import('./vitrine/facets');
-      trackCacheHit(cacheKey);
+      trackUnstableCacheFetch(cacheKey);
       return getVitrineFacets({ userId, bancas: filters.bancas, isAdmin });
     },
     [cacheKey],
     {
-      ...CACHE_CONFIG.STATIC,
+      ...CACHE_CONFIG.USER,
       tags: ['vitrine-facets', 'user', `user-${userId}`, userTag, filterTag, userFilterTag],
+    },
+  )();
+}
+
+/** Payload SSR inicial da vitrine: página com facets já mesclados. */
+export type VitrineInitialPayload = {
+  page: VitrinePageResponse;
+};
+
+function vitrineInitialPayloadCacheKey(
+  userId: string,
+  page: number,
+  pageFilters: VitrinePageCacheFilters,
+  facetsFilters: VitrineFacetsCacheFilters,
+): string {
+  const pageFiltersHash = getVitrinePageFiltersHash(pageFilters);
+  const facetsFiltersHash = getVitrineFacetsFiltersHash(facetsFilters);
+  const raw = `${userId}\0${page}\0${pageFiltersHash}\0${facetsFiltersHash}`;
+  const hash = createHash('sha256').update(raw).digest('hex').slice(0, 16);
+  return `vitrine-initial-${hash}`;
+}
+
+/**
+ * Bundle SSR da vitrine: uma RPC get_vitrine_page (facets embutidos) via getVitrinePage.
+ * facetsFilters permanece na cache key para invalidação ao trocar banca no client.
+ */
+export async function getVitrineInitialPayloadCached(
+  userId: string,
+  page: number,
+  pageFilters: VitrinePageCacheFilters = {},
+  facetsFilters: VitrineFacetsCacheFilters = {},
+  isAdmin = false,
+): Promise<VitrineInitialPayload> {
+  const cacheKey = vitrineInitialPayloadCacheKey(userId, page, pageFilters, facetsFilters);
+  const pageUserTag = getVitrinePageUserTag(userId);
+  const pageFilterTag = getVitrinePageFilterTag(pageFilters);
+  const pageUserFilterTag = getVitrinePageUserFilterTag(userId, pageFilters);
+  const facetsUserTag = getVitrineFacetsUserTag(userId);
+  const facetsFilterTag = getVitrineFacetsFilterTag(facetsFilters);
+  const facetsUserFilterTag = getVitrineFacetsUserFilterTag(userId, facetsFilters);
+
+  return unstable_cache(
+    async () => {
+      const { getVitrinePage } = await import('./vitrine/service');
+
+      const pageData = await getVitrinePage({ userId, page, filters: pageFilters, isAdmin });
+
+      trackUnstableCacheFetch(cacheKey);
+      return {
+        page: pageData,
+      };
+    },
+    [cacheKey],
+    {
+      ...CACHE_CONFIG.USER,
+      tags: [
+        'vitrine-page',
+        'vitrine-facets',
+        'user',
+        `user-${userId}`,
+        pageUserTag,
+        pageFilterTag,
+        pageUserFilterTag,
+        facetsUserTag,
+        facetsFilterTag,
+        facetsUserFilterTag,
+      ],
     },
   )();
 }
@@ -667,7 +808,7 @@ export const getCatalogStats = unstable_cache(
       const data = await withPostgrestReadRetry('catalog-stats', async () =>
         supabase.rpc(CATALOG_STATS_RPC),
       );
-      trackCacheHit('catalog-stats');
+      trackUnstableCacheFetch('catalog-stats');
       return parseCatalogStatsPayload(data);
     } catch (error) {
       logger.warn('Falha ao buscar catalog stats', {
@@ -795,7 +936,7 @@ const adminConcursosListCached = unstable_cache(
         .order('created_at', { ascending: false }),
     );
 
-    trackCacheHit('admin-concursos-list');
+    trackUnstableCacheFetch('admin-concursos-list');
     const rows = (raw ?? []) as unknown as Array<Record<string, unknown>>;
     return rows.map((row) => {
       const { concurso_modulos: nested, ...rest } = row;
@@ -886,7 +1027,7 @@ export async function getAuthUserWelcomeContactCached(
         ),
       );
 
-      trackCacheHit(cacheKey);
+      trackUnstableCacheFetch(cacheKey);
       return {
         email: authData.user.email,
         firstName,

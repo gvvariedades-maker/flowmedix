@@ -1,6 +1,6 @@
 import { getServerSession } from '@/lib/supabase/server-auth';
 import { isAdminSessionEmail } from '@/lib/constants';
-import { getMatriculatedConcursos } from '@/lib/concursos/entitlements';
+import { getMatriculatedConcursosCached } from '@/lib/cache';
 import { getActiveProInfoForUser, isUserPro, type ProSource } from '@/lib/freemium';
 import DashboardShell from './DashboardShell';
 
@@ -23,7 +23,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
 
   const [matriculatedConcursos, userIsPro, proInfo] = session?.user?.id
     ? await Promise.all([
-        getMatriculatedConcursos(session.user.id).catch(() => []),
+        getMatriculatedConcursosCached(session.user.id).catch(() => []),
         isUserPro(session.user.id).catch(() => false),
         getActiveProInfoForUser(session.user.id).catch(() => ({
           proSource: null as ProSource,
