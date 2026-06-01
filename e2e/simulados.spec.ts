@@ -39,10 +39,14 @@ test.describe('Modo Simulado (aluno)', () => {
     await expect(page.getByRole('heading', { name: 'Prova E2E' })).toBeVisible({
       timeout: 15_000,
     });
-    await expect(page.getByRole('button', { name: 'Iniciar prova' })).toBeVisible();
+    const iniciarProvaBtn = page.getByRole('button', { name: 'Iniciar prova' });
+    await expect(iniciarProvaBtn).toBeVisible();
+    await expect(iniciarProvaBtn).toBeDisabled();
     await expect(page.getByText(/Meta:/)).not.toBeVisible();
 
-    await page.getByRole('button', { name: 'Iniciar prova' }).click();
+    await page.getByRole('checkbox', { name: /Li as instruções/i }).check();
+    await expect(iniciarProvaBtn).toBeEnabled();
+    await iniciarProvaBtn.click();
 
     await expect(page.getByText(/Meta:/)).toBeVisible({ timeout: 15_000 });
     await expect(page.getByText(/00:00:/)).toBeVisible();
