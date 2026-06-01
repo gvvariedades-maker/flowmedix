@@ -13,6 +13,9 @@ describe('lib/simulado/sessionDetail', () => {
         id: '11111111-1111-4111-8111-111111111111',
         status: 'aberto',
         total_questoes: 2,
+        titulo: 'Treino · 2 questões',
+        ritmo_meta_segundos_por_questao: null,
+        prova_iniciada_em: null,
         filtros: { modo: 'treino', requested: 2 },
         created_at: '2026-05-27T00:00:00.000Z',
         concluida_em: null,
@@ -46,6 +49,9 @@ describe('lib/simulado/sessionDetail', () => {
     );
 
     expect(detail.session.modo).toBe('treino');
+    expect(detail.session.titulo).toBe('Treino · 2 questões');
+    expect(detail.session.ritmo_meta_segundos_por_questao).toBeNull();
+    expect(detail.session.prova_iniciada_em).toBeNull();
     expect(detail.resumo.respondidas).toBe(1);
     expect(detail.resumo.pendentes).toBe(1);
     expect(detail.questoes).toHaveLength(2);

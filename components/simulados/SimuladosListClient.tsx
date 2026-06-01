@@ -16,6 +16,7 @@ import { Button } from '@/components/ui/button';
 import { NeonBadge } from '@/components/ui/neon-badge';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 import type { SimuladoHubOpenSession, SimuladoHubSessionItem } from '@/lib/simulado/hubLoad';
+import { sessionDisplayTitulo } from '@/lib/simulado/provaMeta';
 import { cn } from '@/lib/utils';
 
 function tempoRelativo(iso: string): string {
@@ -81,7 +82,9 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
                         <Play className="h-5 w-5 text-[#00f2ff]" aria-hidden />
                       </div>
                       <div className="min-w-0">
-                        <p className="text-base font-black text-white">Simulado em andamento</p>
+                        <p className="text-base font-black text-white">
+                          {sessionDisplayTitulo(openSession.titulo, openSession.modo)}
+                        </p>
                         <div className="mt-2 flex flex-wrap items-center gap-2">
                           <NeonBadge variant="brand">{modoLabel(openSession.modo)}</NeonBadge>
                           <span className="flex items-center gap-1 text-sm font-semibold text-slate-400">
@@ -147,9 +150,12 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
                           </div>
                           <div className="min-w-0">
                             <p className="text-sm font-bold text-white">
-                              Simulado · {modoLabel(session.modo)}
+                              {sessionDisplayTitulo(session.titulo, session.modo)}
                             </p>
                             <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold text-slate-400">
+                              <NeonBadge variant="brand" className="text-[10px]">
+                                {modoLabel(session.modo)}
+                              </NeonBadge>
                               <span>{formatPercent(session.percentual_acerto)} acerto</span>
                               <span>
                                 {session.total_questoes ?? '—'}{' '}

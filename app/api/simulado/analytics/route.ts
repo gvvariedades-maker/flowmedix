@@ -71,6 +71,7 @@ export const GET = withPerformanceTracking(async function GET(request: NextReque
           id: session.id,
           status: session.status,
           modo: session.modo,
+          titulo: session.titulo?.trim() ?? '',
           percentual_acerto: session.percentual_acerto ?? null,
           created_at: session.created_at,
           concluida_em: session.concluida_em ?? null,

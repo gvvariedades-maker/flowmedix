@@ -818,11 +818,26 @@ export const VitrineFacetsQuerySchema = z
     return { ...rest, ...(bancas.length ? { bancas } : {}) };
   });
 
+/** Payload de criação de template salvo do Modo Simulado. */
+export const SimuladoTemplateCreateSchema = z
+  .object({
+    titulo: z.string().trim().min(1, 'Título é obrigatório').max(120),
+    modo: z.enum(['treino', 'prova']),
+    quantidade: z.coerce.number().int().min(1).max(100),
+    ritmo_meta: z.enum(['2min', '3min', 'none']).default('3min'),
+    ...vitrineBancaAssuntoQueryBase,
+    q: z.string().trim().max(200).optional(),
+  })
+  .transform(mergeBancaAssuntoFields);
+
 /** Payload de criação de sessão do Modo Simulado. */
 export const SimuladoCreateSessionSchema = z
   .object({
     quantidade: z.coerce.number().int().min(1).max(100).default(20),
     modo: z.enum(['treino', 'prova']).default('treino'),
+    titulo: z.string().trim().max(120).optional(),
+    ritmo_meta: z.enum(['2min', '3min', 'none']).default('3min'),
+    template_id: z.string().uuid().optional(),
     ...vitrineBancaAssuntoQueryBase,
     q: z.string().trim().max(200).optional(),
     forcar_novo: z.boolean().optional().default(false),
@@ -937,6 +952,7 @@ export const AdminErrorReportPatchSchema = z
 export type VitrineQueryInput = z.infer<typeof VitrineQuerySchema>;
 export type EstudarQuestaoQueryInput = z.infer<typeof EstudarQuestaoQuerySchema>;
 export type VitrineFacetsQueryInput = z.infer<typeof VitrineFacetsQuerySchema>;
+export type SimuladoTemplateCreateInput = z.infer<typeof SimuladoTemplateCreateSchema>;
 export type SimuladoCreateSessionInput = z.input<typeof SimuladoCreateSessionSchema>;
 export type SimuladoAnswerInput = z.infer<typeof SimuladoAnswerSchema>;
 export type SimuladoPoolCountQueryInput = z.infer<typeof SimuladoPoolCountQuerySchema>;

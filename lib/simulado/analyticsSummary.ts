@@ -10,6 +10,7 @@ export type SimuladoAnalyticsMode = (typeof SIMULADO_ANALYTICS_MODES)[number];
 export type SimuladoSessionAnalyticsRow = {
   id: string;
   status: string;
+  titulo?: string | null;
   modo?: string | null;
   filtros?: Record<string, unknown> | null;
   total_questoes?: number | null;

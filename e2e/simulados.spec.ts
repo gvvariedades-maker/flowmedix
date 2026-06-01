@@ -23,6 +23,43 @@ test.describe('Modo Simulado (aluno)', () => {
     expect(serialized).not.toContain('"is_correct"');
   });
 
+  test('modo prova: instruções, cronômetro e resposta sem gabarito imediato', async ({
+    page,
+    request,
+  }) => {
+    const createRes = await request.post('/api/simulado/sessions', {
+      data: { quantidade: 1, modo: 'prova', titulo: 'Prova E2E' },
+    });
+    expect(createRes.ok()).toBeTruthy();
+    const createPayload = (await createRes.json()) as { session?: { id?: string } };
+    const sessionId = createPayload.session?.id ?? E2E_SIMULADO_SESSION_ID;
+
+    await page.goto(`/simulados/${sessionId}`, { waitUntil: 'domcontentloaded' });
+
+    await expect(page.getByRole('heading', { name: 'Prova E2E' })).toBeVisible({
+      timeout: 15_000,
+    });
+    await expect(page.getByRole('button', { name: 'Iniciar prova' })).toBeVisible();
+    await expect(page.getByText(/Meta:/)).not.toBeVisible();
+
+    await page.getByRole('button', { name: 'Iniciar prova' }).click();
+
+    await expect(page.getByText(/Meta:/)).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText(/00:00:/)).toBeVisible();
+
+    await expect(
+      page.getByText('Paciente em parada cardiorrespiratória. Qual a primeira conduta?'),
+    ).toBeVisible({ timeout: 30_000 });
+
+    await page.getByRole('radio', { name: /A\).*compressões torácicas/i }).click();
+    await page.getByRole('button', { name: 'Confirmar resposta' }).click();
+
+    await expect(page.getByText('Resposta correta!')).not.toBeVisible({ timeout: 5_000 });
+    await expect(
+      page.getByText('Resposta registrada. Gabarito disponível no resumo final.'),
+    ).toBeVisible({ timeout: 15_000 });
+  });
+
   test('runner retoma sessão em andamento ao voltar para URL', async ({ page, request }) => {
     const createRes = await request.post('/api/simulado/sessions', { data: { quantidade: 1 } });
     expect(createRes.ok()).toBeTruthy();

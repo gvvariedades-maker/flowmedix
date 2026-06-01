@@ -6,6 +6,7 @@ export type SimuladoHubOpenSession = {
   id: string;
   total_questoes: number;
   modo: 'treino' | 'prova';
+  titulo: string;
   created_at: string;
 };
 
@@ -13,6 +14,7 @@ export type SimuladoHubSessionItem = {
   id: string;
   status: string;
   modo: 'treino' | 'prova';
+  titulo: string;
   total_questoes: number | null;
   percentual_acerto: number | null;
   created_at: string;
@@ -28,6 +30,7 @@ type OpenSessionRow = {
   id: string;
   total_questoes: number;
   status: string;
+  titulo?: string | null;
   created_at: string;
   filtros?: Record<string, unknown> | null;
 };
@@ -38,7 +41,7 @@ export async function loadSimuladosHubData(
 ): Promise<SimuladosHubData> {
   const { data: openRow, error: openError } = await supabase
     .from('simulado_sessions')
-    .select('id, total_questoes, status, created_at, filtros')
+    .select('id, total_questoes, status, titulo, created_at, filtros')
     .eq('user_id', userId)
     .eq('status', 'aberto')
     .order('created_at', { ascending: false })
@@ -59,6 +62,7 @@ export async function loadSimuladosHubData(
           filtros: openRow.filtros ?? undefined,
           created_at: openRow.created_at,
         }),
+        titulo: openRow.titulo?.trim() ?? '',
         created_at: openRow.created_at,
       }
     : null;
@@ -80,6 +84,7 @@ export async function loadSimuladosHubData(
       id: row.id,
       status: row.status,
       modo: row.modo,
+      titulo: row.titulo?.trim() ?? '',
       total_questoes: row.total_questoes ?? null,
       percentual_acerto: row.percentual_acerto ?? null,
       created_at: row.created_at,

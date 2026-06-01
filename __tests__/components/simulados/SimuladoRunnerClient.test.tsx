@@ -1,14 +1,19 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { SimuladoRunnerClient } from '@/components/simulados/SimuladoRunnerClient';
 
 const mockGetSimuladoSession = jest.fn();
 const mockAnswerSimuladoQuestion = jest.fn();
 const mockGetSimuladoQuestionPayload = jest.fn();
 
+const mockIniciarSimuladoProva = jest.fn();
+const mockFinalizeSimuladoSession = jest.fn();
+
 jest.mock('@/lib/simulado/client', () => ({
   getSimuladoSession: (...args: unknown[]) => mockGetSimuladoSession(...args),
   answerSimuladoQuestion: (...args: unknown[]) => mockAnswerSimuladoQuestion(...args),
   getSimuladoQuestionPayload: (...args: unknown[]) => mockGetSimuladoQuestionPayload(...args),
+  iniciarSimuladoProva: (...args: unknown[]) => mockIniciarSimuladoProva(...args),
+  finalizeSimuladoSession: (...args: unknown[]) => mockFinalizeSimuladoSession(...args),
   SimuladoApiError: class SimuladoApiError extends Error {
     status: number;
     constructor(status: number, message: string) {
@@ -50,6 +55,9 @@ const abertaInicial = {
     id: '44444444-4444-4444-4444-444444444444',
     status: 'aberto' as const,
     modo: 'treino' as const,
+    titulo: '',
+    ritmo_meta_segundos_por_questao: null,
+    prova_iniciada_em: null,
     total_questoes: 1,
     filtros: {},
     created_at: '2026-05-27T00:00:00.000Z',
@@ -119,6 +127,8 @@ describe('SimuladoRunnerClient', () => {
     mockGetSimuladoSession.mockReset();
     mockAnswerSimuladoQuestion.mockReset();
     mockGetSimuladoQuestionPayload.mockReset();
+    mockIniciarSimuladoProva.mockReset();
+    mockFinalizeSimuladoSession.mockReset();
   });
 
   it('renderiza enunciado completo e exige feedback final antes do resumo', async () => {
@@ -232,6 +242,121 @@ describe('SimuladoRunnerClient', () => {
     expect(await screen.findByText('Resposta incorreta.')).toBeInTheDocument();
     expect(await screen.findByText('Gabarito: A — Alternativa correta')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Ver resultado' })).toBeInTheDocument();
+  });
+
+  it('modo prova: exibe instruções, inicia cronômetro e oculta gabarito imediato', async () => {
+    const provaAberta = {
+      ...abertaInicial,
+      session: {
+        ...abertaInicial.session,
+        modo: 'prova' as const,
+        titulo: 'Prova Urgências',
+        ritmo_meta_segundos_por_questao: 180,
+        prova_iniciada_em: null,
+      },
+    };
+
+    const provaIniciada = {
+      ...provaAberta,
+      session: {
+        ...provaAberta.session,
+        prova_iniciada_em: '2026-06-01T12:00:00.000Z',
+      },
+    };
+
+    mockGetSimuladoSession
+      .mockResolvedValueOnce(provaAberta)
+      .mockResolvedValueOnce(provaIniciada);
+    mockIniciarSimuladoProva.mockResolvedValue(provaIniciada);
+    mockGetSimuladoQuestionPayload.mockResolvedValue({
+      dados: {
+        meta: abertaInicial.questoes[0].meta,
+        question_data: {
+          instruction: 'Enunciado da prova',
+          options: [
+            { id: 'A', text: 'Alternativa A' },
+            { id: 'B', text: 'Alternativa B' },
+          ],
+        },
+      },
+    });
+    mockAnswerSimuladoQuestion.mockResolvedValue({
+      success: true,
+      acertou: true,
+      opcao_correta_id: 'A',
+      session_status: 'aberto',
+      questao_atualizada: {
+        ...provaIniciada.questoes[0],
+        respondida: true as const,
+        acertou: true,
+        opcao_id: 'A',
+        opcao_correta_id: 'A',
+        respondida_em: '2026-06-01T12:01:00.000Z',
+        tempo_ms: 5000,
+      },
+      resumo: {
+        ...provaAberta.resumo,
+        respondidas: 1,
+        pendentes: 0,
+        acertos: 1,
+        percentual_acerto: 100,
+      },
+    });
+
+    render(<SimuladoRunnerClient sessionId="44444444-4444-4444-4444-444444444444" />);
+
+    expect(await screen.findByRole('heading', { name: 'Prova Urgências' })).toBeInTheDocument();
+    const iniciarBtn = screen.getByRole('button', { name: 'Iniciar prova' });
+    expect(iniciarBtn).toBeDisabled();
+    expect(screen.queryByText(/Meta:/)).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('checkbox'));
+    await act(async () => {
+      fireEvent.click(iniciarBtn);
+    });
+
+    await waitFor(() => expect(mockIniciarSimuladoProva).toHaveBeenCalled());
+    await waitFor(() => expect(screen.getByText(/Meta: 00:03:00/)).toBeInTheDocument());
+
+    await screen.findByText('Enunciado da prova');
+    fireEvent.click(screen.getByRole('radio', { name: /A\) Alternativa A/i }));
+    fireEvent.click(screen.getByRole('button', { name: 'Confirmar resposta' }));
+
+    await waitFor(() => expect(mockAnswerSimuladoQuestion).toHaveBeenCalled());
+    expect(screen.queryByText('Resposta correta!')).not.toBeInTheDocument();
+    expect(
+      screen.getAllByText('Resposta registrada. Gabarito disponível no resumo final.').length,
+    ).toBeGreaterThan(0);
+
+    const answeredCell = await screen.findByRole('button', { name: 'Questão 1, respondida' });
+    expect(answeredCell.className).not.toContain('emerald');
+  });
+
+  it('mantém Finalizar simulado no topo junto a Reportar erro', async () => {
+    mockGetSimuladoSession.mockResolvedValueOnce(abertaInicial);
+    mockGetSimuladoQuestionPayload.mockResolvedValue({
+      dados: {
+        meta: abertaInicial.questoes[0].meta,
+        question_data: {
+          instruction: 'Enunciado da questão',
+          options: [
+            { id: 'A', text: 'Alternativa A' },
+            { id: 'B', text: 'Alternativa B' },
+          ],
+        },
+      },
+    });
+
+    render(<SimuladoRunnerClient sessionId="44444444-4444-4444-4444-444444444444" />);
+
+    await screen.findByText('Enunciado da questão');
+    expect(screen.getByRole('button', { name: 'Finalizar simulado' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Reportar erro' })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Confirmar resposta' })).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('radio', { name: /A\) Alternativa A/i }));
+    expect(screen.getByRole('button', { name: 'Confirmar resposta' })).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: 'Finalizar simulado' })).toHaveLength(1);
   });
 
 });

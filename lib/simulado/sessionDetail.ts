@@ -20,6 +20,9 @@ export type SimuladoSessionDbRow = {
   id: string;
   status: 'aberto' | 'concluido' | 'cancelado';
   total_questoes: number;
+  titulo?: string | null;
+  ritmo_meta_segundos_por_questao?: number | null;
+  prova_iniciada_em?: string | null;
   filtros: Record<string, unknown>;
   created_at: string;
   concluida_em: string | null;
@@ -59,6 +62,9 @@ export function buildSimuladoSessionDetail(
       id: session.id,
       status: session.status,
       modo: sessionMode,
+      titulo: session.titulo?.trim() ?? '',
+      ritmo_meta_segundos_por_questao: session.ritmo_meta_segundos_por_questao ?? null,
+      prova_iniciada_em: session.prova_iniciada_em ?? null,
       total_questoes: session.total_questoes,
       filtros: session.filtros,
       created_at: session.created_at,
@@ -96,7 +102,9 @@ export async function getSimuladoSessionDetailForUser(
 ): Promise<SimuladoSessionDetailResult> {
   const { data: session, error: sessionError } = await supabase
     .from('simulado_sessions')
-    .select('id, status, total_questoes, filtros, created_at, concluida_em')
+    .select(
+      'id, status, total_questoes, titulo, ritmo_meta_segundos_por_questao, prova_iniciada_em, filtros, created_at, concluida_em',
+    )
     .eq('id', sessionId)
     .eq('user_id', userId)
     .maybeSingle<SimuladoSessionDbRow>();

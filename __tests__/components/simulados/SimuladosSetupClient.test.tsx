@@ -132,6 +132,9 @@ describe('SimuladosSetupClient', () => {
         total_questoes: 20,
         status: 'aberto',
         modo: 'treino',
+        titulo: '',
+        ritmo_meta_segundos_por_questao: null,
+        prova_iniciada_em: null,
         created_at: '2026-05-27T00:00:00.000Z',
       },
       questoes: [{ modulo_slug: 'questao-a', ordem: 1 }],
@@ -175,6 +178,9 @@ describe('SimuladosSetupClient', () => {
         total_questoes: 20,
         status: 'aberto',
         modo: 'treino',
+        titulo: '',
+        ritmo_meta_segundos_por_questao: null,
+        prova_iniciada_em: null,
         created_at: '2026-05-27T00:00:00.000Z',
         filtros: { requested: 20 },
       },
@@ -244,6 +250,9 @@ describe('SimuladosSetupClient', () => {
         total_questoes: 20,
         status: 'aberto',
         modo: 'treino',
+        titulo: '',
+        ritmo_meta_segundos_por_questao: null,
+        prova_iniciada_em: null,
         created_at: '2026-05-27T00:00:00.000Z',
         filtros: {},
       },
@@ -256,6 +265,9 @@ describe('SimuladosSetupClient', () => {
         total_questoes: 10,
         status: 'aberto',
         modo: 'treino',
+        titulo: '',
+        ritmo_meta_segundos_por_questao: null,
+        prova_iniciada_em: null,
         created_at: '2026-05-27T00:00:00.000Z',
       },
       questoes: [],
@@ -272,6 +284,45 @@ describe('SimuladosSetupClient', () => {
       ),
     );
     expect(mockPush).toHaveBeenCalledWith('/simulados/cccccccc-cccc-4ccc-8ccc-cccccccccccc');
+  });
+
+  it('em modo prova envia titulo e ritmo_meta ao criar sessão', async () => {
+    mockCreateSimuladoSession.mockResolvedValue({
+      success: true,
+      session: {
+        id: 'dddddddd-dddd-4ddd-8ddd-dddddddddddd',
+        total_questoes: 20,
+        status: 'aberto',
+        modo: 'prova',
+        titulo: 'Prova CESPE',
+        ritmo_meta_segundos_por_questao: 180,
+        prova_iniciada_em: null,
+        created_at: '2026-05-27T00:00:00.000Z',
+      },
+      questoes: [],
+    });
+
+    render(<SimuladosSetupClient />);
+    await waitFor(() => expect(mockFetchWithAuth).toHaveBeenCalled());
+
+    fireEvent.click(screen.getByRole('radio', { name: /Prova/i }));
+    fireEvent.change(screen.getByLabelText(/Nome do simulado/i), {
+      target: { value: 'Prova CESPE' },
+    });
+    fireEvent.change(screen.getByLabelText(/Ritmo sugerido/i), {
+      target: { value: '2min' },
+    });
+    fireEvent.click(screen.getByRole('button', { name: 'Iniciar simulado' }));
+
+    await waitFor(() =>
+      expect(mockCreateSimuladoSession).toHaveBeenCalledWith(
+        expect.objectContaining({
+          modo: 'prova',
+          titulo: 'Prova CESPE',
+          ritmo_meta: '2min',
+        }),
+      ),
+    );
   });
 
   it('exibe aviso quando quantidade excede pool estimado', async () => {

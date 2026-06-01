@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Database, Info, Loader2, SearchX } from 'lucide-react';
+import { BookmarkPlus, Database, Info, Loader2, SearchX, Trash2 } from 'lucide-react';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { PageHeader } from '@/components/ui/page-header';
 import { SimuladosBackLink } from '@/components/simulados/SimuladosBackLink';
@@ -12,16 +12,24 @@ import { EmptyState } from '@/components/ui/empty-state';
 import { MultiCheckboxFilter } from '@/components/ui/MultiCheckboxFilter';
 import {
   createSimuladoSession,
+  createSimuladoTemplate,
+  deleteSimuladoTemplate,
   getSimuladoPoolCount,
   getOpenSimuladoSession,
+  listSimuladoTemplates,
   SimuladoApiError,
 } from '@/lib/simulado/client';
-import { SimuladoCreateSessionSchema } from '@/lib/validations';
+import { SimuladoCreateSessionSchema, SimuladoTemplateCreateSchema } from '@/lib/validations';
 import type { ZodIssue } from 'zod';
 import type { VitrineFacets } from '@/lib/vitrine/types';
 import { cn } from '@/lib/utils';
-import type { SimuladoOpenSessionResponse } from '@/lib/simulado/types';
-import type { SimuladoModo } from '@/lib/simulado/types';
+import type {
+  SimuladoOpenSessionResponse,
+  SimuladoModo,
+  SimuladoTemplateSummary,
+} from '@/lib/simulado/types';
+import type { RitmoMetaOption } from '@/lib/simulado/provaMeta';
+import { buildDefaultTitulo, formatRitmoMetaLabel, sessionDisplayTitulo } from '@/lib/simulado/provaMeta';
 import {
   FREEMIUM_PLAN_LIMITS_DESCRIPTION,
 } from '@/lib/freemium';
@@ -42,6 +50,8 @@ export function SimuladosSetupClient() {
   const [assuntosSelecionados, setAssuntosSelecionados] = useState<string[]>([]);
   const [q, setQ] = useState('');
   const [modo, setModo] = useState<SimuladoModo>('treino');
+  const [titulo, setTitulo] = useState('');
+  const [ritmoMeta, setRitmoMeta] = useState<RitmoMetaOption>('3min');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [noQuestions, setNoQuestions] = useState(false);
@@ -64,6 +74,11 @@ export function SimuladosSetupClient() {
     };
   } | null>(null);
   const [paywallOpen, setPaywallOpen] = useState(false);
+  const [templates, setTemplates] = useState<SimuladoTemplateSummary[]>([]);
+  const [templatesLoading, setTemplatesLoading] = useState(true);
+  const [savingTemplate, setSavingTemplate] = useState(false);
+  const [templateActionId, setTemplateActionId] = useState<string | null>(null);
+  const [templateMessage, setTemplateMessage] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -124,6 +139,25 @@ export function SimuladosSetupClient() {
 
   useEffect(() => {
     let cancelled = false;
+    async function loadTemplates() {
+      setTemplatesLoading(true);
+      try {
+        const response = await listSimuladoTemplates();
+        if (!cancelled) setTemplates(response.templates);
+      } catch {
+        if (!cancelled) setTemplates([]);
+      } finally {
+        if (!cancelled) setTemplatesLoading(false);
+      }
+    }
+    void loadTemplates();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
     async function loadFreemiumStatus() {
       try {
         const res = await fetchWithAuth('/api/freemium/status');
@@ -180,6 +214,18 @@ export function SimuladosSetupClient() {
   );
 
   const startLabel = openSession ? 'Iniciar novo simulado' : 'Iniciar simulado';
+  const qNum = Math.min(100, Math.max(1, parseInt(quantidade, 10) || 20));
+
+  const tituloAutoPreview = useMemo(
+    () =>
+      buildDefaultTitulo({
+        bancas: bancasSelecionadas,
+        assuntos: assuntosSelecionados,
+        quantidade: qNum,
+        modo,
+      }),
+    [assuntosSelecionados, bancasSelecionadas, modo, qNum],
+  );
 
   const simuladoFreeHint = useMemo(() => {
     if (!freemiumStatus || freemiumStatus.isPro) return null;
@@ -198,6 +244,116 @@ export function SimuladosSetupClient() {
     setNoQuestions(false);
   };
 
+  const applyTemplateToForm = (template: SimuladoTemplateSummary) => {
+    setModo(template.modo);
+    setQuantidade(String(template.quantidade));
+    setTitulo(template.titulo);
+    setRitmoMeta(template.ritmo_meta);
+    const filtros = template.filtros ?? {};
+    setBancasSelecionadas(
+      Array.isArray(filtros.bancas)
+        ? filtros.bancas.filter((item): item is string => typeof item === 'string')
+        : [],
+    );
+    setAssuntosSelecionados(
+      Array.isArray(filtros.assuntos)
+        ? filtros.assuntos.filter((item): item is string => typeof item === 'string')
+        : [],
+    );
+    setQ(typeof filtros.q === 'string' ? filtros.q : '');
+    setError(null);
+    setNoQuestions(false);
+    setTemplateMessage(null);
+  };
+
+  const handleSaveTemplate = async () => {
+    setTemplateMessage(null);
+    setSavingTemplate(true);
+
+    const tituloSalvar =
+      (modo === 'prova' ? titulo.trim() : '') || tituloAutoPreview;
+
+    const parsed = SimuladoTemplateCreateSchema.safeParse({
+      titulo: tituloSalvar,
+      modo,
+      quantidade: qNum,
+      ...(modo === 'prova' ? { ritmo_meta: ritmoMeta } : {}),
+      ...(bancasSelecionadas.length ? { bancas: bancasSelecionadas } : {}),
+      ...(assuntosSelecionados.length ? { assuntos: assuntosSelecionados } : {}),
+      ...(q.trim() ? { q: q.trim() } : {}),
+    });
+
+    if (!parsed.success) {
+      setTemplateMessage(formatZodIssues(parsed.error.issues));
+      setSavingTemplate(false);
+      return;
+    }
+
+    try {
+      const result = await createSimuladoTemplate(parsed.data);
+      setTemplates((current) => [result.template, ...current.filter((t) => t.id !== result.template.id)]);
+      setTemplateMessage('Configuração salva com sucesso.');
+    } catch (err) {
+      setTemplateMessage(
+        err instanceof SimuladoApiError
+          ? err.message
+          : 'Não foi possível salvar a configuração.',
+      );
+    } finally {
+      setSavingTemplate(false);
+    }
+  };
+
+  const handleDeleteTemplate = async (templateId: string) => {
+    setTemplateActionId(templateId);
+    setTemplateMessage(null);
+    try {
+      await deleteSimuladoTemplate(templateId);
+      setTemplates((current) => current.filter((t) => t.id !== templateId));
+    } catch (err) {
+      setTemplateMessage(
+        err instanceof SimuladoApiError
+          ? err.message
+          : 'Não foi possível excluir o simulado salvo.',
+      );
+    } finally {
+      setTemplateActionId(null);
+    }
+  };
+
+  const startFromTemplate = async (template: SimuladoTemplateSummary) => {
+    if (simuladoFreeLimitReached) {
+      setPaywallOpen(true);
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+    setNoQuestions(false);
+    setTemplateMessage(null);
+
+    try {
+      const result = await createSimuladoSession({
+        template_id: template.id,
+        forcar_novo: true,
+      });
+      router.push(`/simulados/${result.session.id}`);
+    } catch (err) {
+      if (err instanceof SimuladoApiError) {
+        if (err.status === 404) {
+          setNoQuestions(true);
+          setError(null);
+        } else {
+          setError(err.message);
+        }
+      } else {
+        setError('Não foi possível iniciar o simulado salvo.');
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const startSession = async (opts?: { forcarNovo?: boolean }) => {
     setLoading(true);
     setError(null);
@@ -206,6 +362,8 @@ export function SimuladosSetupClient() {
     const parsed = SimuladoCreateSessionSchema.safeParse({
       quantidade,
       modo,
+      ...(modo === 'prova' && titulo.trim() ? { titulo: titulo.trim() } : {}),
+      ...(modo === 'prova' ? { ritmo_meta: ritmoMeta } : {}),
       ...(bancasSelecionadas.length ? { bancas: bancasSelecionadas } : {}),
       ...(assuntosSelecionados.length ? { assuntos: assuntosSelecionados } : {}),
       ...(q.trim() ? { q: q.trim() } : {}),
@@ -254,7 +412,6 @@ export function SimuladosSetupClient() {
     await startSession(openSession ? { forcarNovo: true } : undefined);
   };
 
-  const qNum = Math.min(100, Math.max(1, parseInt(quantidade, 10) || 20));
   const bump = (delta: number) =>
     setQuantidade(String(Math.min(100, Math.max(1, qNum + delta))));
 
@@ -317,6 +474,10 @@ export function SimuladosSetupClient() {
                   </span>
                   Em andamento
                 </span>
+                <p className="text-sm font-semibold text-white">
+                  {openSession.titulo?.trim() ||
+                    (openSession.modo === 'prova' ? 'Prova' : 'Simulado · Treino')}
+                </p>
                 <p className="text-sm text-slate-200">
                   {openSession.modo === 'treino' ? 'Treino' : 'Prova'} · {openSession.total_questoes}{' '}
                   questões
@@ -415,6 +576,44 @@ export function SimuladosSetupClient() {
               </button>
             </div>
           </div>
+
+          {modo === 'prova' ? (
+            <div className="space-y-4 rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+              <div className="space-y-2">
+                <label htmlFor="simulado-titulo" className="text-sm font-medium text-slate-200">
+                  Nome do simulado
+                </label>
+                <Input
+                  id="simulado-titulo"
+                  value={titulo}
+                  onChange={(e) => setTitulo(e.target.value)}
+                  disabled={loading}
+                  maxLength={120}
+                  placeholder={tituloAutoPreview}
+                  className="h-11 rounded-xl border-white/15 bg-[#0d1117] text-slate-100"
+                />
+                <p className="text-xs text-slate-500">
+                  Deixe em branco para usar: <span className="text-slate-400">{tituloAutoPreview}</span>
+                </p>
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="simulado-ritmo" className="text-sm font-medium text-slate-200">
+                  Ritmo sugerido
+                </label>
+                <select
+                  id="simulado-ritmo"
+                  value={ritmoMeta}
+                  onChange={(e) => setRitmoMeta(e.target.value as RitmoMetaOption)}
+                  disabled={loading}
+                  className="h-11 w-full rounded-xl border border-white/15 bg-[#0d1117] px-3 text-sm text-slate-100"
+                >
+                  <option value="3min">3 min/questão (padrão)</option>
+                  <option value="2min">2 min/questão</option>
+                  <option value="none">Sem meta</option>
+                </select>
+              </div>
+            </div>
+          ) : null}
 
           <div className="space-y-2">
             <span id="simulado-quantidade-label" className="text-sm font-medium text-slate-300">
@@ -564,6 +763,41 @@ export function SimuladosSetupClient() {
             </p>
           )}
 
+          {templateMessage && (
+            <p
+              className={cn(
+                'text-sm',
+                templateMessage.includes('sucesso') ? 'text-emerald-400' : 'text-rose-400',
+              )}
+              role="status"
+              aria-live="polite"
+            >
+              {templateMessage}
+            </p>
+          )}
+
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <Button
+              type="button"
+              variant="outline"
+              disabled={loading || savingTemplate}
+              onClick={() => void handleSaveTemplate()}
+              className="h-11 rounded-xl border-white/15 bg-transparent text-slate-200 hover:bg-white/5"
+            >
+              {savingTemplate ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+                  Salvando…
+                </>
+              ) : (
+                <>
+                  <BookmarkPlus className="mr-2 h-4 w-4" aria-hidden />
+                  Salvar esta configuração
+                </>
+              )}
+            </Button>
+          </div>
+
           {noQuestions && (
             <EmptyState
               icon={SearchX}
@@ -576,6 +810,118 @@ export function SimuladosSetupClient() {
 
           <div className="pt-2">{submitButton}</div>
         </form>
+
+        <section
+          aria-labelledby="simulados-salvos-titulo"
+          className="glass-panel mt-8 space-y-4 border border-white/10 p-6 sm:p-8"
+        >
+          <div className="space-y-1">
+            <h2
+              id="simulados-salvos-titulo"
+              className="text-lg font-semibold tracking-tight text-white"
+            >
+              Meus simulados salvos
+            </h2>
+            <p className="text-sm text-slate-400">
+              Reutilize configurações com um clique — ideal para provas recorrentes.
+            </p>
+          </div>
+
+          {templatesLoading ? (
+            <div className="flex items-center gap-2 text-sm text-slate-500">
+              <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+              Carregando simulados salvos…
+            </div>
+          ) : templates.length === 0 ? (
+            <p className="rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-6 text-center text-sm text-slate-500">
+              Nenhuma configuração salva ainda. Ajuste os filtros acima e use &quot;Salvar esta
+              configuração&quot;.
+            </p>
+          ) : (
+            <ul className="space-y-3">
+              {templates.map((template) => {
+                const filtros = template.filtros ?? {};
+                const bancasCount = Array.isArray(filtros.bancas) ? filtros.bancas.length : 0;
+                const assuntosCount = Array.isArray(filtros.assuntos) ? filtros.assuntos.length : 0;
+                const resumoFiltros = [
+                  bancasCount === 1
+                    ? String((filtros.bancas as string[])[0])
+                    : bancasCount > 1
+                      ? `${bancasCount} bancas`
+                      : null,
+                  assuntosCount === 1
+                    ? String((filtros.assuntos as string[])[0])
+                    : assuntosCount > 1
+                      ? `${assuntosCount} assuntos`
+                      : null,
+                ]
+                  .filter(Boolean)
+                  .join(' · ');
+
+                return (
+                  <li
+                    key={template.id}
+                    className="rounded-2xl border border-white/10 bg-white/[0.02] p-4"
+                  >
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                      <div className="min-w-0 space-y-1">
+                        <p className="truncate font-semibold text-slate-100">
+                          {sessionDisplayTitulo(template.titulo, template.modo)}
+                        </p>
+                        <p className="text-xs text-slate-400">
+                          {template.modo === 'prova' ? 'Prova' : 'Treino'} · {template.quantidade}{' '}
+                          questões
+                          {template.modo === 'prova'
+                            ? ` · ${formatRitmoMetaLabel(template.ritmo_meta_segundos_por_questao)}`
+                            : ''}
+                        </p>
+                        {resumoFiltros ? (
+                          <p className="truncate text-xs text-slate-500">{resumoFiltros}</p>
+                        ) : null}
+                      </div>
+                      <div className="flex shrink-0 flex-wrap gap-2">
+                        <Button
+                          type="button"
+                          size="sm"
+                          disabled={loading || templateActionId === template.id}
+                          onClick={() => void startFromTemplate(template)}
+                          className="rounded-lg border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25"
+                        >
+                          Iniciar
+                        </Button>
+                        <Button
+                          type="button"
+                          size="sm"
+                          variant="outline"
+                          disabled={loading || templateActionId === template.id}
+                          onClick={() => applyTemplateToForm(template)}
+                          className="rounded-lg border-white/15 bg-transparent text-slate-300 hover:bg-white/5"
+                        >
+                          Editar
+                        </Button>
+                        <Button
+                          type="button"
+                          size="sm"
+                          variant="outline"
+                          disabled={loading || templateActionId === template.id}
+                          onClick={() => void handleDeleteTemplate(template.id)}
+                          aria-label={`Excluir ${template.titulo}`}
+                          className="rounded-lg border-white/15 bg-transparent text-slate-400 hover:border-rose-500/30 hover:text-rose-300"
+                        >
+                          {templateActionId === template.id ? (
+                            <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+                          ) : (
+                            <Trash2 className="h-4 w-4" aria-hidden />
+                          )}
+                        </Button>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </section>
       </div>
 
       <PaywallModal

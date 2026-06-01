@@ -70,6 +70,7 @@ export const GET = withPerformanceTracking(async function GET(request: NextReque
           id: session.id,
           status: session.status,
           modo: session.modo,
+          titulo: session.titulo?.trim() ?? '',
           total_questoes: session.total_questoes ?? null,
           acertos: session.acertos ?? null,
           erros: session.erros ?? null,

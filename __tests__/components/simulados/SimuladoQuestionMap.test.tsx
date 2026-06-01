@@ -53,6 +53,36 @@ describe('SimuladoQuestionMap', () => {
     expect(screen.queryByTestId('simulado-question-map-flex')).not.toBeInTheDocument();
   });
 
+  it('em modo prova usa estilo neutro para questões respondidas', () => {
+    const questoes = buildQuestoes(3);
+    render(
+      <SimuladoQuestionMap
+        questoes={questoes}
+        activeSlug="slug-2"
+        variant="prova"
+        onSelect={jest.fn()}
+      />,
+    );
+
+    const answered = screen.getByRole('button', { name: 'Questão 1, respondida' });
+    expect(answered.className).toContain('border-white/15');
+    expect(answered.className).not.toContain('emerald');
+  });
+
+  it('em modo treino mantém verde para questões respondidas corretas', () => {
+    render(
+      <SimuladoQuestionMap
+        questoes={buildQuestoes(3)}
+        activeSlug="slug-2"
+        variant="treino"
+        onSelect={jest.fn()}
+      />,
+    );
+
+    const answered = screen.getByRole('button', { name: 'Questão 1, respondida' });
+    expect(answered.className).toContain('emerald');
+  });
+
   it('dispara onSelect ao clicar na célula', () => {
     const onSelect = jest.fn();
     render(

@@ -11,6 +11,9 @@ type SessionState = {
     id: string;
     status: SessionStatus;
     modo: 'treino' | 'prova';
+    titulo: string;
+    ritmo_meta_segundos_por_questao: number | null;
+    prova_iniciada_em: string | null;
     total_questoes: number;
     filtros: Record<string, unknown>;
     created_at: string;
@@ -74,15 +77,23 @@ export function resetE2eSimuladoStore() {
   store.clear();
 }
 
-export function createE2eSimuladoSession(quantidade: number, modo: 'treino' | 'prova' = 'treino') {
+export function createE2eSimuladoSession(
+  quantidade: number,
+  modo: 'treino' | 'prova' = 'treino',
+  opts?: { titulo?: string; ritmo_meta_segundos_por_questao?: number | null },
+) {
   const total = Math.min(Math.max(quantidade, 1), 1);
   const state: SessionState = {
     session: {
       id: E2E_SIMULADO_SESSION_ID,
       status: 'aberto',
       modo,
+      titulo: opts?.titulo?.trim() ?? (modo === 'prova' ? 'Prova E2E' : ''),
+      ritmo_meta_segundos_por_questao:
+        modo === 'prova' ? (opts?.ritmo_meta_segundos_por_questao ?? 180) : null,
+      prova_iniciada_em: null,
       total_questoes: total,
-      filtros: { e2e: true, requested: quantidade, selected: total },
+      filtros: { e2e: true, requested: quantidade, selected: total, modo },
       created_at: new Date().toISOString(),
       concluida_em: null,
     },
@@ -98,6 +109,9 @@ export function createE2eSimuladoSession(quantidade: number, modo: 'treino' | 'p
       total_questoes: state.session.total_questoes,
       status: state.session.status,
       modo: state.session.modo,
+      titulo: state.session.titulo,
+      ritmo_meta_segundos_por_questao: state.session.ritmo_meta_segundos_por_questao,
+      prova_iniciada_em: state.session.prova_iniciada_em,
       created_at: state.session.created_at,
     },
     questoes: [{ modulo_slug: E2E_SIMULADO_SLUG, ordem: 1 }],
@@ -113,6 +127,19 @@ export function getE2eSimuladoSession(sessionId: string) {
     resumo: buildSummary(state),
     questoes: buildQuestoes(state),
   };
+}
+
+export function iniciarE2eSimuladoProva(sessionId: string) {
+  const state = store.get(sessionId);
+  if (!state || state.session.modo !== 'prova' || state.session.status !== 'aberto') {
+    return null;
+  }
+
+  if (!state.session.prova_iniciada_em) {
+    state.session.prova_iniciada_em = new Date().toISOString();
+  }
+
+  return getE2eSimuladoSession(sessionId);
 }
 
 export function answerE2eSimuladoQuestion(

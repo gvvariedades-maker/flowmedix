@@ -1,15 +1,21 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Loader2, ChevronRight, ClipboardList } from 'lucide-react';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { PaywallModal } from '@/components/freemium/PaywallModal';
 import { FREEMIUM_SIMULADO_DAILY_LIMIT } from '@/lib/freemium';
-import { answerSimuladoQuestion, finalizeSimuladoSession, SimuladoApiError } from '@/lib/simulado/client';
+import {
+  answerSimuladoQuestion,
+  finalizeSimuladoSession,
+  iniciarSimuladoProva,
+  SimuladoApiError,
+} from '@/lib/simulado/client';
 import type { SimuladoSessionDetailResponse } from '@/lib/simulado/types';
+import { sessionDisplayTitulo } from '@/lib/simulado/provaMeta';
 import type { LessonData } from '@/types/lesson';
 import { PageHeader } from '@/components/ui/page-header';
 import { Button } from '@/components/ui/button';
@@ -35,6 +41,8 @@ import {
 import { applyAnswerPatch } from '@/lib/simulado/applyAnswerPatch';
 import { findFirstPendingSlug } from '@/lib/simulado/questionNavigation';
 import { SimuladoQuestionMap } from '@/components/simulados/SimuladoQuestionMap';
+import { ProvaTimerBar } from '@/components/simulados/ProvaTimerBar';
+import { SimuladoProvaInstrucoes } from '@/components/simulados/SimuladoProvaInstrucoes';
 import { cn } from '@/lib/utils';
 import { sanitizeHTML } from '@/lib/validations';
 import {
@@ -42,7 +50,6 @@ import {
   buildQuestionSubjectLine,
   stripLeadingQuestionEnumeration,
 } from '@/lib/questionHeader';
-import { SimuladoMobileActionBar } from '@/components/simulados/SimuladoMobileActionBar';
 import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 import { ReportErrorDialog } from '@/components/report/ReportErrorDialog';
@@ -115,6 +122,8 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const [paywallOpen, setPaywallOpen] = useState(false);
   const [resetEm, setResetEm] = useState<string | null>(null);
   const [simuladoLimiteAtingido, setSimuladoLimiteAtingido] = useState(false);
+  const [iniciandoProva, setIniciandoProva] = useState(false);
+  const [iniciarProvaError, setIniciarProvaError] = useState<string | null>(null);
   const optionsGroupRef = useRef<HTMLDivElement | null>(null);
   const confirmarRespostaRef = useRef<HTMLDivElement>(null);
   const proximaAcaoRef = useRef<HTMLDivElement>(null);
@@ -125,13 +134,17 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     return findFirstPendingSlug(sessionData.questoes);
   }, [sessionData]);
 
+  const provaAguardandoInicio =
+    sessionData?.session.modo === 'prova' && !sessionData.session.prova_iniciada_em;
+
   useEffect(() => {
     if (!sessionData || sessionData.session.status === 'concluido') return;
+    if (provaAguardandoInicio) return;
     if (sessionInitialized.current) return;
     if (!firstPendingSlug) return;
     sessionInitialized.current = true;
     setActiveSlug(firstPendingSlug);
-  }, [sessionData, firstPendingSlug, setActiveSlug]);
+  }, [sessionData, firstPendingSlug, setActiveSlug, provaAguardandoInicio]);
 
   useEffect(() => {
     let cancelled = false;
@@ -216,10 +229,10 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   );
 
   useEffect(() => {
-    if (!activeSlug || sessionData?.session.status === 'concluido') return;
+    if (!activeSlug || sessionData?.session.status === 'concluido' || provaAguardandoInicio) return;
     setQuestionStartedAt(Date.now());
     void loadQuestion(activeSlug);
-  }, [activeSlug, sessionData?.session.status, loadQuestion]);
+  }, [activeSlug, sessionData?.session.status, loadQuestion, provaAguardandoInicio]);
 
   const isTreino = sessionData?.session.modo === 'treino';
   const options = questionData?.question_data?.options ?? [];
@@ -404,6 +417,24 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [questionData, loadingQuestion, submitting, options, selectedOption, feedback, handleConfirmAnswer]);
 
+  useLayoutEffect(() => {
+    if (!selectedOption || feedback) return;
+    confirmarRespostaRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'nearest',
+    });
+  }, [selectedOption, feedback]);
+
+  useLayoutEffect(() => {
+    if (!feedback) return;
+    proximaAcaoRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'nearest',
+    });
+  }, [feedback]);
+
   const handleOptionsKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (!options.length || feedback || isAnswerLocked) return;
     if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp' && event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') {
@@ -428,6 +459,23 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     },
     [setActiveSlug],
   );
+
+  const handleIniciarProva = useCallback(async () => {
+    if (iniciandoProva) return;
+    setIniciandoProva(true);
+    setIniciarProvaError(null);
+    try {
+      await iniciarSimuladoProva(sessionId);
+      sessionInitialized.current = false;
+      await loadSession();
+    } catch (err) {
+      setIniciarProvaError(
+        err instanceof SimuladoApiError ? err.message : 'Não foi possível iniciar a prova.',
+      );
+    } finally {
+      setIniciandoProva(false);
+    }
+  }, [iniciandoProva, sessionId, loadSession]);
 
   if (loadingSession && !sessionData) {
     return (
@@ -472,6 +520,25 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     );
   }
 
+  if (provaAguardandoInicio) {
+    return (
+      <DashboardMobilePage
+        variant="default"
+        className="min-h-screen bg-[#010409] px-4 pt-6 sm:px-6 md:pb-8 lg:px-8"
+      >
+        <SimuladoProvaInstrucoes
+          titulo={sessionData.session.titulo}
+          modo={sessionData.session.modo}
+          totalQuestoes={sessionData.session.total_questoes}
+          ritmoMetaSegundosPorQuestao={sessionData.session.ritmo_meta_segundos_por_questao}
+          iniciandoProva={iniciandoProva}
+          iniciarProvaError={iniciarProvaError}
+          onIniciar={() => void handleIniciarProva()}
+        />
+      </DashboardMobilePage>
+    );
+  }
+
   const examHeaderLine = questionData?.meta
     ? (questionData.meta.header_line?.trim() || buildDerivedQuestionHeaderLine(questionData.meta))
     : activeItem?.meta.banca ?? '';
@@ -480,7 +547,19 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const instruction = stripLeadingQuestionEnumeration(questionData?.question_data?.instruction ?? '');
   const hasPending = sessionData.questoes.some((q) => !q.respondida);
   const showFinalFeedbackCta = finalFeedbackPending && !!feedback && !hasPending;
-  const showQuestionActions = !!feedback || showConfirmAction;
+  const isProvaAtiva = sessionData.session.modo === 'prova';
+  const runnerTitle = isProvaAtiva
+    ? sessionDisplayTitulo(sessionData.session.titulo, sessionData.session.modo)
+    : 'Simulado em andamento';
+  const runnerDescription = isProvaAtiva
+    ? `Questão ${activeItem?.ordem ?? '—'} · ${sessionData.resumo.respondidas} de ${sessionData.session.total_questoes} respondidas`
+    : `${sessionData.resumo.respondidas} de ${sessionData.session.total_questoes} respondidas · ordem aleatória`;
+  const runnerBreadcrumb = isProvaAtiva
+    ? [{ label: 'Simulados', href: '/simulados' }, { label: runnerTitle }]
+    : [
+        { label: 'Simulados', href: '/simulados' },
+        { label: `Questão ${activeItem?.ordem ?? '—'}` },
+      ];
 
   const finalizeButtonCompact = (
     <Button
@@ -489,25 +568,6 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
       disabled={finalizing || submitting}
       onClick={() => void handleFinalizeSimulado()}
       className="h-10 shrink-0 rounded-xl border-white/15 bg-white/[0.03] text-xs font-bold text-slate-200 hover:bg-white/[0.06] sm:text-sm"
-    >
-      {finalizing ? (
-        <>
-          <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
-          Finalizando…
-        </>
-      ) : (
-        'Finalizar simulado'
-      )}
-    </Button>
-  );
-
-  const finalizeButtonPrimary = (
-    <Button
-      type="button"
-      variant="outline"
-      disabled={finalizing}
-      onClick={() => void handleFinalizeSimulado()}
-      className="h-12 w-full rounded-xl border-white/15 bg-white/[0.03] text-slate-200 hover:bg-white/[0.06] sm:order-1 sm:w-auto sm:min-w-[10rem]"
     >
       {finalizing ? (
         <>
@@ -537,27 +597,38 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     />
   );
 
+  const mapVariant =
+    sessionData.session.modo === 'prova' && sessionData.session.status === 'aberto'
+      ? 'prova'
+      : 'treino';
+
+  const runnerToolbar = (
+    <div className="flex w-full flex-wrap items-center justify-end gap-2">
+      {finalizeButtonCompact}
+      {reportErrorControl}
+    </div>
+  );
+
   return (
     <DashboardMobilePage
-      variant={showQuestionActions ? 'actionBar' : 'default'}
+      variant="default"
       className="min-h-screen bg-[#010409] px-4 pt-6 sm:px-6 md:pb-8 lg:px-8"
     >
+      {sessionData.session.modo === 'prova' && sessionData.session.prova_iniciada_em ? (
+        <ProvaTimerBar
+          provaIniciadaEm={sessionData.session.prova_iniciada_em}
+          totalQuestoes={sessionData.session.total_questoes}
+          ritmoMetaSegundosPorQuestao={sessionData.session.ritmo_meta_segundos_por_questao}
+        />
+      ) : null}
       <div className="mx-auto max-w-3xl space-y-6">
         <PageHeader
-          title="Simulado em andamento"
-          breadcrumb={[
-            { label: 'Simulados', href: '/simulados' },
-            { label: `Questão ${activeItem?.ordem ?? '—'}` },
-          ]}
-          description={`${sessionData.resumo.respondidas} de ${sessionData.session.total_questoes} respondidas · ordem aleatória`}
+          title={runnerTitle}
+          breadcrumb={runnerBreadcrumb}
+          description={runnerDescription}
           descriptionClassName="text-sm text-slate-400 mt-1"
           titleClassName="text-xl font-[1000] italic tracking-tighter text-white sm:text-2xl"
-          action={
-            <div className="hidden sm:flex items-center gap-2">
-              {!showQuestionActions ? finalizeButtonCompact : null}
-              {reportErrorControl}
-            </div>
-          }
+          action={runnerToolbar}
         />
 
         {finalizeError && (
@@ -587,11 +658,10 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           <SimuladoQuestionMap
             questoes={sessionData.questoes}
             activeSlug={activeSlug}
+            variant={mapVariant}
             onSelect={handleMapSelect}
           />
         </div>
-
-        <div className="sm:hidden">{reportErrorControl}</div>
 
         {!activeSlug || !activeItem ? (
           <EmptyState
@@ -707,7 +777,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                 </p>
               )}
               {!isTreino && !feedback && activeItem?.respondida && (
-                <p className="text-sm font-medium text-emerald-400">
+                <p className="text-sm font-medium text-slate-300">
                   Resposta registrada. Gabarito disponível no resumo final.
                 </p>
               )}
@@ -718,58 +788,63 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
               )}
             </div>
 
-            {showQuestionActions ? (
-              <SimuladoMobileActionBar
-                actionRef={feedback ? proximaAcaoRef : confirmarRespostaRef}
-                className="flex flex-col gap-2 pt-2 sm:flex-row sm:flex-wrap sm:justify-end sm:gap-3"
+            {showConfirmAction ? (
+              <div
+                ref={confirmarRespostaRef}
+                className="flex scroll-mt-4 flex-col items-center gap-2 pt-2"
               >
-                {!showFinalFeedbackCta ? finalizeButtonPrimary : null}
-                {feedback ? (
-                  <Button
-                    type="button"
-                    disabled={!canAdvance}
-                    onClick={() => {
-                      if (showFinalFeedbackCta) {
-                        setFinalFeedbackPending(false);
-                        return;
-                      }
-                      void handleNext();
-                    }}
-                    className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 sm:order-2 sm:w-auto sm:min-w-[12rem]"
-                  >
-                    {advancing ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
-                        Carregando…
-                      </>
-                    ) : (
-                      <>
-                        {showFinalFeedbackCta ? 'Ver resultado' : 'Próxima questão'}
-                        <ChevronRight className="ml-1 h-4 w-4" aria-hidden />
-                      </>
-                    )}
-                  </Button>
-                ) : (
-                  <Button
-                    type="button"
-                    disabled={!canConfirm}
-                    onClick={() => void handleConfirmAnswer()}
-                    className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50 sm:order-2 sm:w-auto sm:min-w-[12rem]"
-                  >
-                    {submitting ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
-                        Confirmando…
-                      </>
-                    ) : (
-                      confirmLabel
-                    )}
-                  </Button>
-                )}
-              </SimuladoMobileActionBar>
-            ) : (
-              <div className="flex justify-end pt-2 sm:hidden">{finalizeButtonPrimary}</div>
-            )}
+                <Button
+                  type="button"
+                  disabled={!canConfirm}
+                  onClick={() => void handleConfirmAnswer()}
+                  className="h-12 rounded-full border border-cyan-500/40 bg-cyan-500/15 px-8 text-sm font-bold uppercase tracking-wider text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50"
+                >
+                  {submitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+                      Confirmando…
+                    </>
+                  ) : (
+                    <>
+                      {confirmLabel}
+                      <ChevronRight className="ml-2 h-4 w-4" aria-hidden />
+                    </>
+                  )}
+                </Button>
+              </div>
+            ) : null}
+
+            {feedback ? (
+              <div
+                ref={proximaAcaoRef}
+                className="flex scroll-mt-4 flex-col items-center gap-2 pt-2"
+              >
+                <Button
+                  type="button"
+                  disabled={!canAdvance}
+                  onClick={() => {
+                    if (showFinalFeedbackCta) {
+                      setFinalFeedbackPending(false);
+                      return;
+                    }
+                    void handleNext();
+                  }}
+                  className="h-12 rounded-full border border-cyan-500/40 bg-cyan-500/15 px-8 text-sm font-bold uppercase tracking-wider text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50"
+                >
+                  {advancing ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+                      Carregando…
+                    </>
+                  ) : (
+                    <>
+                      {showFinalFeedbackCta ? 'Ver resultado' : 'Próxima questão'}
+                      <ChevronRight className="ml-2 h-4 w-4" aria-hidden />
+                    </>
+                  )}
+                </Button>
+              </div>
+            ) : null}
           </div>
         )}
 

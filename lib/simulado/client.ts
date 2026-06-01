@@ -1,5 +1,5 @@
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
-import type { SimuladoAnswerInput, SimuladoCreateSessionInput } from '@/lib/validations';
+import type { SimuladoAnswerInput, SimuladoCreateSessionInput, SimuladoTemplateCreateInput } from '@/lib/validations';
 import type {
   SimuladoAnswerResponse,
   SimuladoCreateSessionResponse,
@@ -9,6 +9,9 @@ import type {
   SimuladoAnalyticsResponse,
   SimuladoHistoryResponse,
   SimuladoSessionDetailResponse,
+  SimuladoTemplateCreateResponse,
+  SimuladoTemplatesListResponse,
+  SimuladoProvaEvolucaoResponse,
 } from '@/lib/simulado/types';
 
 export class SimuladoApiError extends Error {
@@ -60,6 +63,19 @@ export async function getSimuladoSession(sessionId: string): Promise<SimuladoSes
   const json = await parseJsonResponse<SimuladoSessionDetailResponse>(res);
   if (!res.ok) {
     throw new SimuladoApiError(res.status, json.error ?? 'Erro ao carregar simulado', json.details);
+  }
+  return json;
+}
+
+export async function iniciarSimuladoProva(
+  sessionId: string,
+): Promise<SimuladoSessionDetailResponse> {
+  const res = await fetchWithAuth(`/api/simulado/sessions/${sessionId}/iniciar-prova`, {
+    method: 'POST',
+  });
+  const json = await parseJsonResponse<SimuladoSessionDetailResponse>(res);
+  if (!res.ok) {
+    throw new SimuladoApiError(res.status, json.error ?? 'Erro ao iniciar prova', json.details);
   }
   return json;
 }
@@ -197,6 +213,69 @@ export async function getSimuladoHistory(filters?: {
     throw new SimuladoApiError(
       res.status,
       json.error ?? 'Erro ao carregar histórico de simulados',
+      json.details,
+    );
+  }
+  return json;
+}
+
+export async function listSimuladoTemplates(): Promise<SimuladoTemplatesListResponse> {
+  const res = await fetchWithAuth('/api/simulado/templates');
+  const json = await parseJsonResponse<SimuladoTemplatesListResponse>(res);
+  if (!res.ok) {
+    throw new SimuladoApiError(
+      res.status,
+      json.error ?? 'Erro ao carregar simulados salvos',
+      json.details,
+    );
+  }
+  return json;
+}
+
+export async function createSimuladoTemplate(
+  body: SimuladoTemplateCreateInput,
+): Promise<SimuladoTemplateCreateResponse> {
+  const res = await fetchWithAuth('/api/simulado/templates', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+  const json = await parseJsonResponse<SimuladoTemplateCreateResponse>(res);
+  if (!res.ok) {
+    throw new SimuladoApiError(
+      res.status,
+      json.error ?? 'Erro ao salvar configuração',
+      json.details,
+    );
+  }
+  return json;
+}
+
+export async function deleteSimuladoTemplate(templateId: string): Promise<void> {
+  const res = await fetchWithAuth(`/api/simulado/templates/${templateId}`, {
+    method: 'DELETE',
+  });
+  const json = await parseJsonResponse<{ success?: boolean; error?: string }>(res);
+  if (!res.ok) {
+    throw new SimuladoApiError(
+      res.status,
+      json.error ?? 'Erro ao excluir simulado salvo',
+      json.details,
+    );
+  }
+}
+
+export async function getSimuladoProvaEvolucao(
+  titulo: string,
+  limit = 5,
+): Promise<SimuladoProvaEvolucaoResponse> {
+  const params = new URLSearchParams({ titulo, limit: String(limit) });
+  const res = await fetchWithAuth(`/api/simulado/evolucao?${params.toString()}`);
+  const json = await parseJsonResponse<SimuladoProvaEvolucaoResponse>(res);
+  if (!res.ok) {
+    throw new SimuladoApiError(
+      res.status,
+      json.error ?? 'Erro ao carregar evolução',
       json.details,
     );
   }

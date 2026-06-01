@@ -10,14 +10,36 @@ import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { createE2eSimuladoSession, resetE2eSimuladoStore } from '@/lib/e2e/simuladoSeed';
+import { buildDefaultTitulo, ritmoToSecondsPerQuestion } from '@/lib/simulado/provaMeta';
+import {
+  getSimuladoTemplateById,
+  templateToSessionConfig,
+  touchSimuladoTemplateUsage,
+} from '@/lib/simulado/templates';
+
+const SESSION_PUBLIC_SELECT =
+  'id, total_questoes, status, created_at, filtros, titulo, ritmo_meta_segundos_por_questao, prova_iniciada_em';
 
 type SimuladoOpenSessionRow = {
   id: string;
   total_questoes: number;
   status: 'aberto' | 'concluido' | 'cancelado';
   created_at: string;
+  titulo?: string | null;
+  ritmo_meta_segundos_por_questao?: number | null;
+  prova_iniciada_em?: string | null;
   filtros?: Record<string, unknown>;
 };
+
+function mapSessionResponse<T extends SimuladoOpenSessionRow>(row: T) {
+  return {
+    ...row,
+    titulo: row.titulo?.trim() ?? '',
+    ritmo_meta_segundos_por_questao: row.ritmo_meta_segundos_por_questao ?? null,
+    prova_iniciada_em: row.prova_iniciada_em ?? null,
+    modo: resolveSessionMode(row.filtros),
+  };
+}
 
 function resolveSessionMode(filtros?: Record<string, unknown>): 'treino' | 'prova' {
   return filtros?.modo === 'prova' ? 'prova' : 'treino';
@@ -37,7 +59,7 @@ export async function GET(request: NextRequest) {
     const supabase = await createServerSupabase();
     const { data: openSession, error: openSessionError } = await supabase
       .from('simulado_sessions')
-      .select('id, total_questoes, status, created_at, filtros')
+      .select(SESSION_PUBLIC_SELECT)
       .eq('user_id', auth.user.id)
       .eq('status', 'aberto')
       .order('created_at', { ascending: false })
@@ -53,12 +75,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
       has_open_session: openSession != null,
-      session: openSession
-        ? {
-            ...openSession,
-            modo: resolveSessionMode(openSession.filtros),
-          }
-        : null,
+      session: openSession ? mapSessionResponse(openSession) : null,
     });
   } catch (error) {
     logger.error('Erro inesperado em GET /api/simulado/sessions', error);
@@ -91,14 +108,51 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { quantidade, modo, bancas, assuntos, q, forcar_novo, from_session_id, only_errors } =
-      parsed.data;
+    const {
+      quantidade: quantidadeInput,
+      modo: modoInput,
+      titulo: tituloInput,
+      ritmo_meta: ritmoMetaInput,
+      template_id,
+      bancas: bancasInput,
+      assuntos: assuntosInput,
+      q: qInput,
+      forcar_novo,
+      from_session_id,
+      only_errors,
+    } = parsed.data;
     const supabase = await createServerSupabase();
+
+    let templateIdForSession: string | null = null;
+    let quantidade = quantidadeInput;
+    let modo = modoInput;
+    let tituloOverride = tituloInput;
+    let ritmo_meta = ritmoMetaInput;
+    let bancas = bancasInput;
+    let assuntos = assuntosInput;
+    let q = qInput;
+
+    if (template_id) {
+      const template = await getSimuladoTemplateById(supabase, auth.user.id, template_id);
+      if (!template) {
+        return NextResponse.json({ error: 'Template não encontrado' }, { status: 404 });
+      }
+
+      const config = templateToSessionConfig(template);
+      templateIdForSession = template.id;
+      quantidade = config.quantidade;
+      modo = config.modo;
+      tituloOverride = config.titulo;
+      ritmo_meta = config.ritmo_meta;
+      bancas = config.bancas;
+      assuntos = config.assuntos;
+      q = config.q;
+    }
 
     if (!forcar_novo) {
       const { data: openSession, error: openSessionError } = await supabase
         .from('simulado_sessions')
-        .select('id, total_questoes, status, created_at, filtros')
+        .select(SESSION_PUBLIC_SELECT)
         .eq('user_id', auth.user.id)
         .eq('status', 'aberto')
         .order('created_at', { ascending: false })
@@ -116,10 +170,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({
           success: true,
           resumed: true,
-          session: {
-            ...openSession,
-            modo: resolveSessionMode(openSession.filtros),
-          },
+          session: mapSessionResponse(openSession as SimuladoOpenSessionRow),
           questoes: [],
         });
       }
@@ -196,11 +247,26 @@ export async function POST(request: NextRequest) {
       modo,
     };
 
+    const titulo =
+      tituloOverride?.trim() ||
+      buildDefaultTitulo({
+        bancas,
+        assuntos,
+        quantidade: pool.length,
+        modo,
+      });
+    const ritmoMetaSegundos =
+      modo === 'prova' ? ritmoToSecondsPerQuestion(ritmo_meta) : null;
+
     const sessionInsertPayload = {
       user_id: auth.user.id,
       total_questoes: pool.length,
       filtros: filters,
       status: 'aberto' as const,
+      titulo,
+      ritmo_meta_segundos_por_questao: ritmoMetaSegundos,
+      prova_iniciada_em: null,
+      ...(templateIdForSession ? { template_id: templateIdForSession } : {}),
     };
 
     const { data: session, error: sessionError } = await supabase
@@ -209,17 +275,18 @@ export async function POST(request: NextRequest) {
         ...sessionInsertPayload,
         modo,
       })
-      .select('id, total_questoes, status, created_at, filtros')
+      .select(SESSION_PUBLIC_SELECT)
       .single();
 
     let createdSession = session;
     let createdSessionError = sessionError;
 
     if (createdSessionError?.code === '42703') {
+      const { template_id: _templateId, ...payloadWithoutOptionalCols } = sessionInsertPayload;
       const fallbackInsert = await supabase
         .from('simulado_sessions')
-        .insert(sessionInsertPayload)
-        .select('id, total_questoes, status, created_at, filtros')
+        .insert(payloadWithoutOptionalCols)
+        .select(SESSION_PUBLIC_SELECT)
         .single();
       createdSession = fallbackInsert.data;
       createdSessionError = fallbackInsert.error;
@@ -254,13 +321,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Erro ao iniciar simulado' }, { status: 500 });
     }
 
+    if (templateIdForSession) {
+      await touchSimuladoTemplateUsage(supabase, auth.user.id, templateIdForSession);
+    }
+
     return NextResponse.json({
       success: true,
       resumed: false,
-      session: {
-        ...createdSession,
-        modo,
-      },
+      session: mapSessionResponse(createdSession as SimuladoOpenSessionRow),
       questoes: pool.map(({ modulo_slug, ordem }) => ({ modulo_slug, ordem })),
     });
   } catch (error) {

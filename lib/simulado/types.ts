@@ -5,6 +5,9 @@ export type SimuladoSessionSummary = {
   id: string;
   status: SimuladoSessionStatus;
   modo: SimuladoModo;
+  titulo: string;
+  ritmo_meta_segundos_por_questao: number | null;
+  prova_iniciada_em: string | null;
   total_questoes: number;
   filtros: Record<string, unknown>;
   created_at: string;
@@ -68,6 +71,9 @@ export type SimuladoCreateSessionResponse = {
     total_questoes: number;
     status: SimuladoSessionStatus;
     modo: SimuladoModo;
+    titulo: string;
+    ritmo_meta_segundos_por_questao: number | null;
+    prova_iniciada_em: string | null;
     created_at: string;
   };
   questoes: Array<{ modulo_slug: string; ordem: number }>;
@@ -80,6 +86,9 @@ export type SimuladoOpenSessionResponse = {
     total_questoes: number;
     status: SimuladoSessionStatus;
     modo: SimuladoModo;
+    titulo: string;
+    ritmo_meta_segundos_por_questao: number | null;
+    prova_iniciada_em: string | null;
     created_at: string;
     filtros?: Record<string, unknown>;
   } | null;
@@ -194,10 +203,47 @@ export type SimuladoAnalyticsResponse = {
     id: string;
     status: string;
     modo: 'treino' | 'prova';
+    titulo: string;
     percentual_acerto: number | null;
     created_at: string;
     concluida_em: string | null;
   }>;
+};
+
+export type SimuladoTemplateSummary = {
+  id: string;
+  titulo: string;
+  modo: SimuladoModo;
+  quantidade: number;
+  filtros: Record<string, unknown>;
+  ritmo_meta: '2min' | '3min' | 'none';
+  ritmo_meta_segundos_por_questao: number | null;
+  ultimo_uso_em: string | null;
+  created_at: string;
+};
+
+export type SimuladoTemplatesListResponse = {
+  templates: SimuladoTemplateSummary[];
+};
+
+export type SimuladoTemplateCreateResponse = {
+  success: true;
+  template: SimuladoTemplateSummary;
+};
+
+export type SimuladoProvaEvolucaoItem = {
+  id: string;
+  titulo: string;
+  percentual_acerto: number | null;
+  tempo_total_ms: number | null;
+  tempo_label: string | null;
+  concluida_em: string | null;
+  created_at: string;
+};
+
+export type SimuladoProvaEvolucaoResponse = {
+  titulo_base: string;
+  items: SimuladoProvaEvolucaoItem[];
 };
 
 export type SimuladoHistoryResponse = {
@@ -219,6 +265,7 @@ export type SimuladoHistoryResponse = {
     id: string;
     status: string;
     modo: 'treino' | 'prova';
+    titulo: string;
     total_questoes: number | null;
     acertos: number | null;
     erros: number | null;

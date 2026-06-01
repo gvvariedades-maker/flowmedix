@@ -4,6 +4,7 @@ import {
   getOpenSimuladoSession,
   getSimuladoQuestionPayload,
   getSimuladoSession,
+  iniciarSimuladoProva,
   SimuladoApiError,
 } from '@/lib/simulado/client';
 import { isSimuladoQuestaoRespondida } from '@/lib/simulado/types';
@@ -36,6 +37,9 @@ describe('lib/simulado/client', () => {
           total_questoes: 20,
           status: 'aberto',
           modo: 'treino',
+          titulo: '',
+          ritmo_meta_segundos_por_questao: null,
+          prova_iniciada_em: null,
           created_at: '2026-05-27T00:00:00.000Z',
         },
         questoes: [{ modulo_slug: 'questao-a', ordem: 1 }],
@@ -91,6 +95,9 @@ describe('lib/simulado/client', () => {
             id: '22222222-2222-2222-2222-222222222222',
             status: 'aberto',
             modo: 'treino',
+            titulo: '',
+            ritmo_meta_segundos_por_questao: null,
+            prova_iniciada_em: null,
             total_questoes: 2,
             filtros: {},
             created_at: '2026-05-27T00:00:00.000Z',
@@ -160,6 +167,43 @@ describe('lib/simulado/client', () => {
       signal: undefined,
     });
     expect(result.dados.question_data.instruction).toBe('Enunciado');
+  });
+
+  it('inicia prova pela rota dedicada', async () => {
+    mockFetchWithAuth.mockResolvedValue(
+      jsonResponse({
+        session: {
+          id: 'eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee',
+          status: 'aberto',
+          modo: 'prova',
+          titulo: 'Prova',
+          ritmo_meta_segundos_por_questao: 180,
+          prova_iniciada_em: '2026-06-01T10:00:00.000Z',
+          total_questoes: 20,
+          filtros: { modo: 'prova' },
+          created_at: '2026-06-01T09:00:00.000Z',
+          concluida_em: null,
+        },
+        resumo: {
+          respondidas: 0,
+          pendentes: 20,
+          acertos: 0,
+          erros: 0,
+          percentual_acerto: 0,
+          tempo_total_ms: 0,
+          tempo_medio_ms: 0,
+        },
+        questoes: [],
+      }),
+    );
+
+    const result = await iniciarSimuladoProva('eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee');
+
+    expect(mockFetchWithAuth).toHaveBeenCalledWith(
+      '/api/simulado/sessions/eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee/iniciar-prova',
+      { method: 'POST' },
+    );
+    expect(result.session.prova_iniciada_em).toBe('2026-06-01T10:00:00.000Z');
   });
 
   it('consulta sessão aberta no setup', async () => {
