@@ -137,10 +137,13 @@ describe('lib/simulado/analyticsSummary', () => {
   });
 
   it('calcula KPIs, evolução e metas de forma consistente', async () => {
-    const now = new Date();
-    const today = now.toISOString().slice(0, 10);
-    const yesterday = new Date(now.getTime() - 86_400_000).toISOString().slice(0, 10);
+    const now = new Date('2026-06-01T12:00:00.000Z');
+    const today = '2026-06-01';
+    const yesterday = '2026-05-31';
 
+    jest.useFakeTimers();
+    jest.setSystemTime(now);
+    try {
     const supabase = createSupabaseMock({
       simulado_sessions: [
         {
@@ -236,6 +239,9 @@ describe('lib/simulado/analyticsSummary', () => {
     });
     expect(summary.errorPatterns.length).toBeGreaterThan(0);
     expect(summary.goals.progresso_meta_mensal).toBeGreaterThan(0);
+    } finally {
+      jest.useRealTimers();
+    }
   });
 
   it('normaliza modo da sessão com compatibilidade legado', () => {
