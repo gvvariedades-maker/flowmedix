@@ -59,10 +59,9 @@ test.describe('Modo Simulado (aluno)', () => {
     await page.getByRole('button', { name: 'Confirmar resposta' }).click();
 
     await expect(page.getByText('Resposta correta!')).not.toBeVisible({ timeout: 5_000 });
-    // Com 1 questão a sessão conclui e redireciona ao resumo (sem feedback imediato no runner).
-    await expect(page.getByRole('heading', { name: 'Simulado concluído' })).toBeVisible({
-      timeout: 15_000,
-    });
+    // Com 1 questão a sessão conclui e abre o resumo (título da prova; resumo em sr-only).
+    await expect(page.getByText(/Simulado concluído/)).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText('Revisão por questão')).toBeVisible();
   });
 
   test('runner retoma sessão em andamento ao voltar para URL', async ({ page, request }) => {
