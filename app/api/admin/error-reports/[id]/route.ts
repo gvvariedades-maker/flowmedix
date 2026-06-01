@@ -47,7 +47,7 @@ export async function PATCH(request: NextRequest, context: RouteContext) {
   if (payload.status === 'resolvido') {
     updateData.resolved_at = new Date().toISOString();
     updateData.resolved_by = auth.user.id;
-  } else if (payload.status && payload.status !== 'resolvido') {
+  } else if (payload.status !== undefined) {
     updateData.resolved_at = null;
     updateData.resolved_by = null;
   }
