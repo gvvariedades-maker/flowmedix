@@ -84,7 +84,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
                     <Icon size={24} />
                   </div>
                   <div>
-                    <h4 className={`font-display font-extrabold tracking-tight ${theme.textPrimary} text-xl mb-2`}>
+                    <h4 className={`font-body font-bold tracking-normal ${theme.textPrimary} text-xl mb-2`}>
                       {concept.title}
                     </h4>
                     <p className={`font-body leading-relaxed ${theme.textSecondary} text-base md:text-sm`}>
@@ -130,7 +130,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
                     </div>
                     <span
                       lang="pt-BR"
-                      className={`font-display font-extrabold tracking-tight uppercase ${theme.textPrimary} w-full max-w-[min(100%,6.75rem)] sm:max-w-[7rem] md:max-w-[7.5rem] text-sm leading-tight break-words [overflow-wrap:anywhere] hyphens-auto md:text-[10px] md:leading-snug lg:text-xs`}
+                      className={`font-body font-bold tracking-normal ${theme.textPrimary} w-full max-w-[min(100%,6.75rem)] sm:max-w-[7rem] md:max-w-[7.5rem] text-sm leading-tight break-words [overflow-wrap:anywhere] hyphens-auto md:text-[10px] md:leading-snug lg:text-xs`}
                     >
                       {concept.title}
                     </span>
@@ -181,7 +181,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
               transition={{ delay: i * 0.15 }}
               className={`flex flex-col gap-2 md:flex-row md:items-center md:justify-between bg-slate-800/50 backdrop-blur-sm p-3 md:p-4 rounded-xl border-l-4 ${theme.borderColor} transition-all duration-300 hover:bg-slate-800/70`}
             >
-              <div className={`font-display font-bold text-xl ${theme.textPrimary} min-w-0 w-full md:w-2/5 md:text-base`}>
+              <div className={`font-body font-bold tracking-normal text-xl ${theme.textPrimary} min-w-0 w-full md:w-2/5 md:text-base`}>
                 {concept.title}
               </div>
               <div className="hidden md:flex flex-1 h-px bg-slate-600 relative mx-4">
@@ -223,7 +223,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
                     <Icon size={24} />
                   </div>
                   <div>
-                    <h4 className={`font-display font-extrabold tracking-tight ${theme.textPrimary} text-xl mb-2 md:text-lg`}>{concept.title}</h4>
+                    <h4 className={`font-body font-bold tracking-normal ${theme.textPrimary} text-xl mb-2 md:text-lg`}>{concept.title}</h4>
                     <p className={`font-body leading-relaxed ${theme.textSecondary} text-base md:text-sm`}>{concept.description}</p>
                   </div>
                 </div>
