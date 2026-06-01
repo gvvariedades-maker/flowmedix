@@ -59,9 +59,10 @@ test.describe('Modo Simulado (aluno)', () => {
     await page.getByRole('button', { name: 'Confirmar resposta' }).click();
 
     await expect(page.getByText('Resposta correta!')).not.toBeVisible({ timeout: 5_000 });
-    await expect(
-      page.getByText('Resposta registrada. Gabarito disponível no resumo final.'),
-    ).toBeVisible({ timeout: 15_000 });
+    // Com 1 questão a sessão conclui e redireciona ao resumo (sem feedback imediato no runner).
+    await expect(page.getByRole('heading', { name: 'Simulado concluído' })).toBeVisible({
+      timeout: 15_000,
+    });
   });
 
   test('runner retoma sessão em andamento ao voltar para URL', async ({ page, request }) => {
