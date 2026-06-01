@@ -103,12 +103,11 @@ test.describe('Modo Simulado (aluno)', () => {
 
     await expect(page.getByText('Resposta correta!')).toBeVisible({ timeout: 15_000 });
     await expect(page.getByRole('button', { name: 'Ver resultado' })).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'Simulado concluído' })).not.toBeVisible();
+    await expect(page.getByText(/Simulado concluído/)).not.toBeVisible();
 
     await page.getByRole('button', { name: 'Ver resultado' }).click();
-    await expect(page.getByRole('heading', { name: 'Simulado concluído' })).toBeVisible({
-      timeout: 15_000,
-    });
+    await expect(page.getByText(/Simulado concluído/)).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByRole('heading', { name: 'Simulado · Treino' })).toBeVisible();
     await expect(page.getByText('100%', { exact: true })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Novo simulado' }).first()).toBeVisible();
   });
@@ -149,9 +148,8 @@ test.describe('Modo Simulado (aluno)', () => {
       waitUntil: 'domcontentloaded',
     });
 
-    await expect(page.getByRole('heading', { name: 'Simulado concluído' })).toBeVisible({
-      timeout: 15_000,
-    });
+    await expect(page.getByText(/Simulado concluído/)).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByRole('heading', { name: 'Simulado · Treino' })).toBeVisible();
     await expect(page.getByText('Revisão por questão')).toBeVisible();
     await expect(page.getByText('Acertou')).toBeVisible();
   });
