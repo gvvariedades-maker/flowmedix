@@ -106,9 +106,9 @@ describe('freemium simulado', () => {
   });
 
   it('expõe copy canônica dos limites do plano gratuito', () => {
-    expect(FREEMIUM_PLAN_LIMITS_COMPACT).toBe('1 estudo reverso + 5 simulados/dia');
+    expect(FREEMIUM_PLAN_LIMITS_COMPACT).toBe('1 questão ER + 5 questões simulado grátis/dia');
     expect(FREEMIUM_PLAN_LIMITS_DESCRIPTION).toBe(
-      '1 questão de estudo reverso e 5 questões de simulado por dia para treinar',
+      '1 questão de estudo reverso e 5 questões de simulado grátis por dia',
     );
   });
 });

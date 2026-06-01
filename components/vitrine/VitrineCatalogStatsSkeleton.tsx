@@ -4,8 +4,8 @@ export default function VitrineCatalogStatsSkeleton() {
       className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 animate-pulse"
       aria-hidden
     >
-      <div className="h-[88px] rounded-2xl bg-muted/50" />
-      <div className="h-[88px] rounded-2xl bg-muted/50" />
+      <div className="h-[104px] rounded-2xl bg-muted/50 sm:h-[112px]" />
+      <div className="h-[104px] rounded-2xl bg-muted/50 sm:h-[112px]" />
     </div>
   );
 }

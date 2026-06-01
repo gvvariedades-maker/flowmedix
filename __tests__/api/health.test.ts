@@ -7,10 +7,10 @@ const mockSingle = jest.fn();
 const mockLimit = jest.fn(() => ({ single: mockSingle }));
 const mockSelect = jest.fn(() => ({ limit: mockLimit }));
 const mockFrom = jest.fn(() => ({ select: mockSelect }));
-const mockCreateClient = jest.fn(() => ({ from: mockFrom }));
+const mockCreateClient = jest.fn((_url: string, _key: string) => ({ from: mockFrom }));
 
 jest.mock('@supabase/supabase-js', () => ({
-  createClient: (...args: unknown[]) => mockCreateClient(...args),
+  createClient: (url: string, key: string) => mockCreateClient(url, key),
 }));
 
 jest.mock('@/lib/logger', () => ({

@@ -20,7 +20,7 @@ describe('navigationTelemetry', () => {
   });
 
   it('habilitado em development por padrão', () => {
-    process.env.NODE_ENV = 'development';
+    process.env = { ...originalEnv, NODE_ENV: 'development' };
     delete process.env.NEXT_PUBLIC_ESTUDAR_NAV_TELEMETRY;
     expect(isEstudarNavTelemetryEnabled()).toBe(true);
   });

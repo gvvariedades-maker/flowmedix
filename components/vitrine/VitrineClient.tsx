@@ -923,26 +923,25 @@ export default function VitrineClient({
         <section className="space-y-8">
           <div className="mb-8 flex items-start justify-between">
             <div className="min-w-0">
-              <div className="flex items-center gap-3">
+              <div className="flex items-stretch gap-3">
                 <div
-                  className="h-7 w-[3px] shrink-0 rounded-full bg-gradient-to-b from-[#00f2ff] to-[#7c3aed]"
+                  className="w-1 shrink-0 rounded-full bg-gradient-to-b from-cyan-400 to-cyan-500/30"
                   aria-hidden
                 />
-                <div className="flex min-w-0 flex-col gap-0.5">
-                  <span className="truncate text-[10px] font-semibold uppercase tracking-[0.12em] text-white/35">
-                    {cidadeUrl}
-                  </span>
-                  <h1
-                    className="truncate text-[22px] font-bold leading-tight tracking-tight text-white"
-                    style={{ fontFamily: 'var(--font-plus-jakarta-sans)' }}
-                  >
+                <div className="min-w-0">
+                  <p className="mb-1 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-cyan-500/70">
+                    Estudo Reverso
+                  </p>
+                  <h1 className="font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
                     {pageSectionTitle}
                   </h1>
+                  {pageSectionDescription ? (
+                    <p className="mt-1 font-mono text-[11px] tabular-nums text-slate-500">
+                      {pageSectionDescription}
+                    </p>
+                  ) : null}
                 </div>
               </div>
-              {pageSectionDescription && (
-                <p className="mt-1 text-sm text-[#8b949e]">{pageSectionDescription}</p>
-              )}
             </div>
           </div>
           {children ? <div className="mb-6">{children}</div> : null}

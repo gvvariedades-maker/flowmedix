@@ -21,11 +21,11 @@ export const FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT = 1;
 /** Simulado: questões respondidas por dia no plano gratuito. */
 export const FREEMIUM_SIMULADO_DAILY_LIMIT = 5;
 
-/** Badge / sidebar: limites diários do tier gratuito. */
-export const FREEMIUM_PLAN_LIMITS_COMPACT = `${FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT} estudo reverso + ${FREEMIUM_SIMULADO_DAILY_LIMIT} simulados/dia`;
+/** Badge / sidebar: limites diários do tier gratuito (curto; ER = estudo reverso). */
+export const FREEMIUM_PLAN_LIMITS_COMPACT = `${FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT} questão ER + ${FREEMIUM_SIMULADO_DAILY_LIMIT} questões simulado grátis/dia`;
 
-/** Frase completa para FAQ, assinatura e telas de configuração. */
-export const FREEMIUM_PLAN_LIMITS_DESCRIPTION = `${FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT} questão de estudo reverso e ${FREEMIUM_SIMULADO_DAILY_LIMIT} questões de simulado por dia para treinar`;
+/** Frase completa para FAQ, assinatura, paywall e telas de configuração. */
+export const FREEMIUM_PLAN_LIMITS_DESCRIPTION = `${FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT} questão de estudo reverso e ${FREEMIUM_SIMULADO_DAILY_LIMIT} questões de simulado grátis por dia`;
 
 export type AssertCanAnswerResult =
   | { allowed: true }

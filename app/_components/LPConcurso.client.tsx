@@ -83,9 +83,8 @@ export function LPNavbar({ ctaLabel }: { ctaLabel: string }) {
           <div className="flex items-center justify-between gap-2">
             <AvantLogo href="/" variant="icon" size="nav" className="min-w-0" />
             <div className="flex shrink-0 items-center gap-1.5">
-              <Link href="/register" className={lpFreeCtaClass}>
-                <span className="sm:hidden">Grátis</span>
-                <span className="hidden sm:inline">Comece grátis</span>
+              <Link href="/register" className={lpFreeCtaClass} aria-label="Comece grátis">
+                Comece grátis
               </Link>
               <LPCheckoutButton label={ctaLabel} compactLabel="Assinar Pro" compact />
             </div>

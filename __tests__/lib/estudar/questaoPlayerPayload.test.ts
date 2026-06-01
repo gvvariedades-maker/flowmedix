@@ -117,8 +117,10 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
       id: 'mod-1',
       modulo_slug: SLUG,
       conteudo_json: conteudoJson,
+      banca: 'FGV',
       titulo_aula: 'Urgências',
       modulo_nome: 'Urgências',
+      created_at: '2024-01-01T00:00:00.000Z',
       avant_codigo: 42,
     });
     mockCreateSupabaseServerClient.mockResolvedValue({ from: jest.fn() } as never);
@@ -187,8 +189,10 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
       id: 'mod-anon',
       modulo_slug: SLUG,
       conteudo_json: conteudoJson,
+      banca: 'FGV',
       titulo_aula: 'Urgências',
       modulo_nome: 'Urgências',
+      created_at: '2024-01-01T00:00:00.000Z',
       avant_codigo: null,
     });
 

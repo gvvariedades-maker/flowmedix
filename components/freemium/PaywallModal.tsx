@@ -6,6 +6,7 @@ import { ArrowRight, Loader2, LockKeyhole, Sparkles, X, Zap } from 'lucide-react
 import { GERAL_CONCURSO_SLUG } from '@/lib/concursos/entitlements';
 import {
   FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT,
+  FREEMIUM_PLAN_LIMITS_DESCRIPTION,
   FREEMIUM_SIMULADO_DAILY_LIMIT,
 } from '@/lib/freemium';
 
@@ -51,37 +52,24 @@ const PAYWALL_COPY: Record<
 > = {
   estudo_reverso: {
     title: 'Você já respondeu sua questão de hoje',
-    dailyLimit: 1,
+    dailyLimit: FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT,
     body: (
       <>
-        No plano gratuito, você pode resolver{' '}
-        <span className="font-semibold text-slate-200">
-          {FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT} questão por dia
-        </span>{' '}
-        no estudo reverso (com NeuroSlides). Simulados: até{' '}
-        <span className="font-semibold text-slate-200">
-          {FREEMIUM_SIMULADO_DAILY_LIMIT} questões/dia
-        </span>{' '}
-        para treinar. Com o <span className="font-semibold text-emerald-300">AVANT Pro</span>, estude
-        sem limite.
+        No plano gratuito:{' '}
+        <span className="font-semibold text-slate-200">{FREEMIUM_PLAN_LIMITS_DESCRIPTION}</span>{' '}
+        (estudo reverso com NeuroSlides). Com o{' '}
+        <span className="font-semibold text-emerald-300">AVANT Pro</span>, estude sem limite.
       </>
     ),
   },
   simulado: {
     title: 'Limite diário de simulado atingido',
-    dailyLimit: 5,
+    dailyLimit: FREEMIUM_SIMULADO_DAILY_LIMIT,
     body: (
       <>
-        No plano gratuito, você pode responder até{' '}
-        <span className="font-semibold text-slate-200">
-          {FREEMIUM_SIMULADO_DAILY_LIMIT} questões de simulado por dia
-        </span>{' '}
-        para treinar. Estudo reverso:{' '}
-        <span className="font-semibold text-slate-200">
-          {FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT} questão/dia
-        </span>{' '}
-        (com NeuroSlides). Com o <span className="font-semibold text-emerald-300">AVANT Pro</span>,
-        simule sem limite.
+        No plano gratuito:{' '}
+        <span className="font-semibold text-slate-200">{FREEMIUM_PLAN_LIMITS_DESCRIPTION}</span>.
+        Com o <span className="font-semibold text-emerald-300">AVANT Pro</span>, simule sem limite.
       </>
     ),
   },

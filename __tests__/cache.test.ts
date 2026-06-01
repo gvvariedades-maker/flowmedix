@@ -108,8 +108,8 @@ describe('Sistema de Cache', () => {
   describe('invalidateVitrinePageCache', () => {
     it('invalida tags granulares por usuário e filtros', async () => {
       await invalidateVitrinePageCache('user-42', {
-        banca: 'CESPE',
-        assunto: 'Farmacologia',
+        bancas: ['CESPE'],
+        assuntos: ['Farmacologia'],
         q: 'dose',
       });
 

@@ -150,6 +150,18 @@ function getAssinaturaNavLabel(isAdminUser: boolean, proSource: ProSource): stri
   return 'Minha assinatura';
 }
 
+function SidebarZoneDivider() {
+  return <div className="mx-3 my-2 h-px shrink-0 bg-white/5" aria-hidden />;
+}
+
+function SidebarSectionLabel({ children }: { children: string }) {
+  return (
+    <p className="mb-1 shrink-0 px-3 font-mono text-[10px] uppercase tracking-widest text-white/25">
+      {children}
+    </p>
+  );
+}
+
 function DashboardNav({
   menuItems,
   createQueryString,
@@ -162,17 +174,20 @@ function DashboardNav({
   onNavAction?: () => void;
 }) {
   return (
-    <nav className="no-scrollbar mt-2 flex-1 space-y-2 overflow-y-auto px-2 pb-2">
+    <nav
+      className="no-scrollbar flex-1 space-y-2 overflow-y-auto px-2 pb-2"
+      aria-label="Navegação principal"
+    >
       {menuItems.map((item) => (
         <Link
           key={item.label}
           href={createQueryString(item.href)}
           onClick={onNavAction}
-            className={cn(
-            'group relative flex w-full items-center gap-3 rounded-xl py-3 pl-4 pr-3 text-sm font-semibold transition-colors',
+          className={cn(
+            'group relative flex w-full items-center gap-3 rounded-xl py-3 pl-4 pr-3 text-sm transition-colors',
             item.active
-              ? 'bg-[rgba(139,92,246,0.12)] text-[#c4b5fd] before:absolute before:left-0 before:top-1/2 before:h-8 before:w-[3px] before:-translate-y-1/2 before:rounded-r-full before:bg-[#8b5cf6]'
-              : 'text-slate-400 hover:bg-white/5 hover:text-slate-100'
+              ? 'bg-[rgba(139,92,246,0.12)] font-medium text-white before:absolute before:left-0 before:top-1/2 before:h-8 before:w-[3px] before:-translate-y-1/2 before:rounded-r-full before:bg-[#8b5cf6]'
+              : 'text-slate-400 hover:bg-white/5 hover:text-slate-200',
           )}
         >
           <item.icon
@@ -181,7 +196,7 @@ function DashboardNav({
             className={cn(
               'shrink-0 transition-colors',
               item.active
-                ? 'text-[#a78bfa]'
+                ? 'text-white'
                 : 'text-slate-500 group-hover:text-slate-300'
             )}
             aria-hidden
@@ -230,7 +245,8 @@ function UserAccountFooter({
   const assinaturaLabel = getAssinaturaNavLabel(isAdminUser, proSource);
 
   return (
-    <div className="px-3 pb-5 pt-2">
+    <div className="px-1 pb-4 pt-2">
+      <div className="mx-2 rounded-xl bg-white/[0.03] p-2">
       <div className="flex items-start gap-2.5">
         <div
           className={cn(
@@ -280,7 +296,88 @@ function UserAccountFooter({
           {assinaturaLabel}
         </Link>
       ) : null}
+      </div>
     </div>
+  );
+}
+
+function DashboardSidebarPanels({
+  identityClassName = 'shrink-0 pt-6',
+  cidadeExibicao,
+  isPro,
+  proSource,
+  proExpiresAt,
+  menuItems,
+  createQueryString,
+  isAdminUser,
+  onNavAction,
+  userEmail,
+  userDisplayName,
+  userInitials,
+  isAssinaturaActive,
+  onLogout,
+}: {
+  identityClassName?: string;
+  cidadeExibicao: string;
+  isPro: boolean;
+  proSource: ProSource;
+  proExpiresAt: string | null;
+  menuItems: MenuItem[];
+  createQueryString: (path: string) => string;
+  isAdminUser: boolean;
+  onNavAction?: () => void;
+  userEmail: string | null;
+  userDisplayName: string | null;
+  userInitials: string;
+  isAssinaturaActive: boolean;
+  onLogout: () => void;
+}) {
+  return (
+    <>
+      <div className={identityClassName}>
+        <PlanStatusCard
+          cidadeExibicao={cidadeExibicao}
+          isPro={isPro}
+          proSource={proSource}
+          proExpiresAt={proExpiresAt}
+        />
+      </div>
+
+      <SidebarZoneDivider />
+
+      <div className="flex min-h-0 flex-1 flex-col">
+        <SidebarSectionLabel>Navegação</SidebarSectionLabel>
+        <DashboardNav
+          menuItems={menuItems}
+          createQueryString={createQueryString}
+          isAdminUser={isAdminUser}
+          onNavAction={onNavAction}
+        />
+      </div>
+
+      <SidebarZoneDivider />
+
+      <div className="mt-auto shrink-0">
+        <SidebarSectionLabel>Preferências</SidebarSectionLabel>
+        <div className="px-4 pb-1 pt-1">
+          <TextSizeControl embedded />
+        </div>
+      </div>
+
+      <SidebarZoneDivider />
+
+      <UserAccountFooter
+        userEmail={userEmail}
+        userDisplayName={userDisplayName}
+        userInitials={userInitials}
+        proSource={proSource}
+        isAdminUser={isAdminUser}
+        createQueryString={createQueryString}
+        isAssinaturaActive={isAssinaturaActive}
+        onNavAction={onNavAction}
+        onLogout={onLogout}
+      />
+    </>
   );
 }
 
@@ -501,34 +598,19 @@ function DashboardContent({
     <PwaInstallProvider enabled={userEmail != null} blocked={estudoReversoWelcome.isOpen}>
     <div className="dashboard-surface flex h-[100dvh] max-h-[100dvh] min-h-0 bg-background font-sans text-foreground">
       {/* --- SIDEBAR FIXA --- */}
-      <aside className="relative z-20 hidden w-[18rem] shrink-0 flex-col border-r border-white/10 bg-[#06090f] md:flex">
-        <div className="pt-6">
-        <PlanStatusCard
+      <aside className="relative z-20 hidden h-full w-[18rem] shrink-0 flex-col border-r border-white/10 bg-[#06090f] md:flex">
+        <DashboardSidebarPanels
           cidadeExibicao={cidadeExibicao}
           isPro={isPro}
           proSource={proSource}
           proExpiresAt={proExpiresAt}
-        />
-        </div>
-
-        <DashboardNav
           menuItems={menuItems}
           createQueryString={createQueryString}
           isAdminUser={isAdminUser}
           onNavAction={closeMobileMenu}
-        />
-
-        <div className="mt-auto shrink-0 px-4 pb-1 pt-6">
-          <TextSizeControl embedded />
-        </div>
-
-        <UserAccountFooter
           userEmail={userEmail}
           userDisplayName={userDisplayName}
           userInitials={userInitials}
-          proSource={proSource}
-          isAdminUser={isAdminUser}
-          createQueryString={createQueryString}
           isAssinaturaActive={isAssinaturaActive}
           onLogout={handleLogout}
         />
@@ -579,33 +661,20 @@ function DashboardContent({
                 </button>
               </div>
 
-              <PlanStatusCard
-          cidadeExibicao={cidadeExibicao}
-          isPro={isPro}
-          proSource={proSource}
-          proExpiresAt={proExpiresAt}
-        />
-
-              <DashboardNav
-          menuItems={menuItems}
-          createQueryString={createQueryString}
-          isAdminUser={isAdminUser}
-          onNavAction={closeMobileMenu}
-        />
-
-              <div className="mt-auto shrink-0 px-4 pb-1 pt-6">
-                <TextSizeControl embedded />
-              </div>
-
-              <UserAccountFooter
+              <DashboardSidebarPanels
+                identityClassName="shrink-0 pt-0"
+                cidadeExibicao={cidadeExibicao}
+                isPro={isPro}
+                proSource={proSource}
+                proExpiresAt={proExpiresAt}
+                menuItems={menuItems}
+                createQueryString={createQueryString}
+                isAdminUser={isAdminUser}
+                onNavAction={closeMobileMenu}
                 userEmail={userEmail}
                 userDisplayName={userDisplayName}
                 userInitials={userInitials}
-                proSource={proSource}
-                isAdminUser={isAdminUser}
-                createQueryString={createQueryString}
                 isAssinaturaActive={isAssinaturaActive}
-                onNavAction={closeMobileMenu}
                 onLogout={handleLogout}
               />
             </motion.div>

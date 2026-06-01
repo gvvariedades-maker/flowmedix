@@ -190,7 +190,7 @@ export function PlanStatusCard({
               </Button>
               <Button
                 asChild
-                className="h-10 w-full rounded-xl bg-[#BEF264] font-mono text-xs font-bold uppercase tracking-wider text-slate-950 shadow-md shadow-lime-400/20 hover:bg-[#d4f879]"
+                className="h-10 w-full rounded-xl bg-[#BEF264] font-mono text-xs font-bold uppercase tracking-wider text-slate-950 shadow-md shadow-lime-400/20 shadow-[0_0_20px_rgba(190,242,100,0.25)] hover:bg-[#d4f879]"
               >
                 <Link href="/assinar-pro" className="gap-1.5">
                   <Zap size={12} fill="currentColor" aria-hidden />
