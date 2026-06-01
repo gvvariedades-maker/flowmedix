@@ -882,6 +882,56 @@ export const SimuladoRetentionRunSchema = z.object({
 });
 
 // ============================================================================
+// ERROR REPORTS (Aluno + Admin)
+// ============================================================================
+
+export const ErrorReportContextTypeSchema = z.enum(['lesson', 'simulado']);
+export const ErrorReportCategorySchema = z.enum([
+  'enunciado',
+  'alternativas',
+  'gabarito',
+  'slides',
+  'navegacao',
+  'outro',
+]);
+export const ErrorReportStatusSchema = z.enum(['novo', 'triagem', 'resolvido', 'descartado']);
+export const ErrorReportPrioritySchema = z.enum(['p0', 'p1', 'p2', 'p3']);
+
+export const ErrorReportCreateSchema = z.object({
+  context_type: ErrorReportContextTypeSchema,
+  category: ErrorReportCategorySchema,
+  description: z.string().trim().min(1, 'Descrição é obrigatória').max(4000, 'Descrição muito longa'),
+  modulo_slug: z.string().trim().min(1).max(200).optional(),
+  simulado_session_id: z.string().uuid('simulado_session_id inválido').optional(),
+  page_url: z.string().trim().url('page_url inválida').max(2000).optional(),
+  metadata: z.record(z.string(), z.unknown()).optional(),
+});
+
+/** Query params para triagem/admin de reports de erro. */
+export const AdminErrorReportListQuerySchema = z.object({
+  page: z.coerce.number().int().min(1).max(500).default(1),
+  page_size: z.coerce.number().int().min(1).max(100).default(20),
+  status: ErrorReportStatusSchema.optional(),
+  priority: ErrorReportPrioritySchema.optional(),
+  context_type: ErrorReportContextTypeSchema.optional(),
+  category: ErrorReportCategorySchema.optional(),
+  q: z.string().trim().max(300).optional(),
+  from: z.string().datetime('from deve estar em formato ISO-8601').optional(),
+  to: z.string().datetime('to deve estar em formato ISO-8601').optional(),
+});
+
+export const AdminErrorReportPatchSchema = z
+  .object({
+    status: ErrorReportStatusSchema.optional(),
+    priority: ErrorReportPrioritySchema.optional(),
+    admin_notes: z.string().trim().max(5000).optional(),
+  })
+  .refine(
+    (data) => data.status !== undefined || data.priority !== undefined || data.admin_notes !== undefined,
+    { message: 'Informe ao menos um campo para atualização (status, priority, admin_notes)' },
+  );
+
+// ============================================================================
 // TYPE EXPORTS
 // ============================================================================
 export type VitrineQueryInput = z.infer<typeof VitrineQuerySchema>;
@@ -894,6 +944,13 @@ export type SimuladoAnalyticsQueryInput = z.infer<typeof SimuladoAnalyticsQueryS
 export type SimuladoHistoryQueryInput = z.infer<typeof SimuladoHistoryQuerySchema>;
 export type SimuladoQuestaoQueryInput = z.infer<typeof SimuladoQuestaoQuerySchema>;
 export type SimuladoRetentionRunInput = z.infer<typeof SimuladoRetentionRunSchema>;
+export type ErrorReportContextTypeInput = z.infer<typeof ErrorReportContextTypeSchema>;
+export type ErrorReportCategoryInput = z.infer<typeof ErrorReportCategorySchema>;
+export type ErrorReportStatusInput = z.infer<typeof ErrorReportStatusSchema>;
+export type ErrorReportPriorityInput = z.infer<typeof ErrorReportPrioritySchema>;
+export type ErrorReportCreateInput = z.infer<typeof ErrorReportCreateSchema>;
+export type AdminErrorReportListQueryInput = z.infer<typeof AdminErrorReportListQuerySchema>;
+export type AdminErrorReportPatchInput = z.infer<typeof AdminErrorReportPatchSchema>;
 export type QuestaoCompletaInput = z.infer<typeof QuestaoCompletaSchema>;
 export type ResolveUserInput = z.infer<typeof ResolveUserSchema>;
 export type ConcursoMatriculaInput = z.infer<typeof ConcursoMatriculaSchema>;

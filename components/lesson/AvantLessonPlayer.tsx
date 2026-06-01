@@ -41,6 +41,7 @@ import { buildDotsNavWindow } from '@/lib/estudar/dotsNavWindow';
 import { MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM } from '@/lib/layout/mobileBottomNav';
 import { supabase } from '@/lib/supabase/client';
 import { PaywallModal } from '@/components/freemium/PaywallModal';
+import { ReportErrorDialog } from '@/components/report/ReportErrorDialog';
 import type { AvantLessonPlayerProps, LessonData, ReverseStudySlide } from '@/types/lesson';
 import type { GabaritoTentativa } from '@/lib/estudar/questionPayload';
 import { 
@@ -741,14 +742,31 @@ export default function AvantLessonPlayer({
                   {fromPlano ? 'Plano diário' : fromCaderno ? 'Meus cadernos' : 'Vitrine'}
                 </span>
               </button>
-              {listaContexto && listaContexto.total > 0 && (
-                <span
-                  className="text-xs sm:text-sm font-semibold tabular-nums text-slate-300 bg-white/[0.05] border border-white/10 px-3 py-1.5 rounded-full shrink-0"
-                  aria-label={`Questão ${listaContexto.atual} de ${listaContexto.total}`}
-                >
-                  Questão {listaContexto.atual} de {listaContexto.total}
-                </span>
-              )}
+              <div className="flex items-center gap-2">
+                {listaContexto && listaContexto.total > 0 && (
+                  <span
+                    className="text-xs sm:text-sm font-semibold tabular-nums text-slate-300 bg-white/[0.05] border border-white/10 px-3 py-1.5 rounded-full shrink-0"
+                    aria-label={`Questão ${listaContexto.atual} de ${listaContexto.total}`}
+                  >
+                    Questão {listaContexto.atual} de {listaContexto.total}
+                  </span>
+                )}
+                <ReportErrorDialog
+                  contextType="lesson"
+                  moduloSlug={moduloSlug || dados.modulo_slug}
+                  metadata={{
+                    etapa,
+                    slide_atual: slideAtual,
+                    total_slides: totalSlides,
+                    question_hash: questionHash,
+                    alternativa_selecionada: selecionada,
+                    acertou: gabarito?.acertou ?? null,
+                    opcao_correta_id: gabarito?.opcaoCorretaId ?? null,
+                  }}
+                  triggerLabel="Reportar erro"
+                  triggerClassName="h-9 px-3 text-xs font-semibold"
+                />
+              </div>
             </div>
           )}
 

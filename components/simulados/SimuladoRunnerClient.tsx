@@ -45,6 +45,7 @@ import {
 import { SimuladoMobileActionBar } from '@/components/simulados/SimuladoMobileActionBar';
 import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
+import { ReportErrorDialog } from '@/components/report/ReportErrorDialog';
 
 type FeedbackState = {
   acertou: boolean;
@@ -519,6 +520,23 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     </Button>
   );
 
+  const reportErrorControl = (
+    <ReportErrorDialog
+      contextType="simulado"
+      moduloSlug={activeSlug}
+      simuladoSessionId={sessionId}
+      metadata={{
+        question_order: activeItem?.ordem ?? null,
+        feedback_visible: !!feedback,
+        selected_option: selectedOption,
+        acertou: feedback?.acertou ?? null,
+        opcao_correta_id: feedback?.opcao_correta_id ?? null,
+      }}
+      triggerLabel="Reportar erro"
+      triggerClassName="h-10 shrink-0 rounded-xl border-white/15 bg-white/[0.03] text-xs font-bold text-slate-200 hover:bg-white/[0.06] sm:text-sm"
+    />
+  );
+
   return (
     <DashboardMobilePage
       variant={showQuestionActions ? 'actionBar' : 'default'}
@@ -535,9 +553,10 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           descriptionClassName="text-sm text-slate-400 mt-1"
           titleClassName="text-xl font-[1000] italic tracking-tighter text-white sm:text-2xl"
           action={
-            !showQuestionActions ? (
-              <div className="hidden sm:block">{finalizeButtonCompact}</div>
-            ) : undefined
+            <div className="hidden sm:flex items-center gap-2">
+              {!showQuestionActions ? finalizeButtonCompact : null}
+              {reportErrorControl}
+            </div>
           }
         />
 
@@ -571,6 +590,8 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
             onSelect={handleMapSelect}
           />
         </div>
+
+        <div className="sm:hidden">{reportErrorControl}</div>
 
         {!activeSlug || !activeItem ? (
           <EmptyState
