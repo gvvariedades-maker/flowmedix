@@ -7,6 +7,7 @@ const mockFetchWithAuth = jest.fn();
 const mockCreateSimuladoSession = jest.fn();
 const mockGetOpenSimuladoSession = jest.fn();
 const mockGetSimuladoPoolCount = jest.fn();
+const mockListSimuladoTemplates = jest.fn();
 
 jest.mock('next/navigation', () => ({
   useRouter: () => ({
@@ -25,6 +26,7 @@ jest.mock('@/lib/simulado/client', () => {
     createSimuladoSession: (...args: unknown[]) => mockCreateSimuladoSession(...args),
     getOpenSimuladoSession: (...args: unknown[]) => mockGetOpenSimuladoSession(...args),
     getSimuladoPoolCount: (...args: unknown[]) => mockGetSimuladoPoolCount(...args),
+    listSimuladoTemplates: (...args: unknown[]) => mockListSimuladoTemplates(...args),
   };
 });
 
@@ -68,6 +70,7 @@ describe('SimuladosSetupClient', () => {
       session: null,
     });
     mockGetSimuladoPoolCount.mockResolvedValue({ estimated_count: 100 });
+    mockListSimuladoTemplates.mockResolvedValue({ templates: [] });
     mockFetchWithAuth.mockImplementation((url: string) => {
       if (url.includes('/api/freemium/status')) {
         return Promise.resolve(

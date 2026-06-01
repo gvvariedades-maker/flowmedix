@@ -1,6 +1,6 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
-import { normalizeSessionMode } from '@/lib/simulado/analyticsSummary';
 import { formatDurationFriendly } from '@/lib/simulado/provaMeta';
+import { resolveSessionMode } from '@/lib/simulado/sessionDetail';
 
 const TENTATIVA_SUFFIX_RE = / — tentativa \d+$/i;
 
@@ -53,7 +53,7 @@ export async function getProvaEvolucaoPorTitulo(
   if (error || !data?.length) return [];
 
   return (data as ProvaEvolucaoRow[])
-    .filter((row) => normalizeSessionMode(row) === 'prova')
+    .filter((row) => resolveSessionMode(row.filtros ?? {}) === 'prova' || row.modo === 'prova')
     .filter((row) => normalizeTituloForEvolucao(row.titulo ?? '') === normalized)
     .slice(0, limit)
     .map((row) => ({
