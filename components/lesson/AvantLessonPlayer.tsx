@@ -18,6 +18,11 @@ import { buildEstudarHref } from '@/lib/estudar/navigation';
 import { useQuestaoNavigationOptional } from '@/components/lesson/questao-navigation-context';
 import NeuroSlide from '@/components/slides/NeuroSlide';
 import {
+  ReadableTextZoomProvider,
+  ReadableTextZoomToolbar,
+  ReadableTextZoomContent,
+} from '@/components/accessibility/ReadableTextZoom';
+import {
   EstudoReversoSlideZoom,
   EstudoReversoSlideZoomProvider,
   EstudoReversoSlideZoomToolbar,
@@ -642,6 +647,9 @@ export default function AvantLessonPlayer({
     dados.modulo_slug || '',
   ].filter(Boolean).join('-') || JSON.stringify(dados).substring(0, 100);
 
+  const questionZoomContentKey = `${moduloSlug ?? questionHash}-${etapa}`;
+  const showQuestionZoom = etapa === 'pergunta' || etapa === 'gabarito';
+
   const isPreviewMode = mode === 'preview';
 
   const opcaoEstaCorreta = (optId: string): boolean => {
@@ -706,6 +714,237 @@ export default function AvantLessonPlayer({
     });
   };
 
+  const renderQuestionScrollBody = (withZoom: boolean) => {
+    const zoomableContent = (
+      <>
+        {dados.question_data.text_fragment && (
+          <div className="px-6 pt-4 pb-2 md:px-8">
+            <div className="bg-white/[0.04] border border-[rgba(255,255,255,0.10)] p-4 rounded-lg text-slate-300 text-sm font-serif leading-relaxed italic">
+              <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(dados.question_data.text_fragment) }} />
+            </div>
+          </div>
+        )}
+
+        <div className="min-w-0 px-6 pt-3 pb-2 md:px-8 md:pt-4 md:pb-3">
+          <div className={`${QUESTION_TEXT_TYPOGRAPHY} text-slate-100 font-normal whitespace-pre-wrap break-words overflow-x-hidden [&_strong]:font-semibold [&_p]:mb-2 [&_p:last-child]:mb-0`}>
+            <span dangerouslySetInnerHTML={{ __html: sanitizeHTML(instructionParaExibicao) }} />
+          </div>
+        </div>
+
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          transition={{ delay: 0.2 }}
+          className="px-6 pb-6 md:px-8 md:pb-7"
+        >
+          <div
+            role="radiogroup"
+            aria-label="Alternativas da questão"
+            className={
+              certoErradoLayout
+                ? 'grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto'
+                : 'grid gap-1.5 md:gap-2'
+            }
+          >
+            {dados.question_data.options.map((opt, optionIndex) => {
+              const isSelected = selecionada === opt.id;
+              const isCorrect = opcaoEstaCorreta(opt.id);
+              const showResult = (etapa === 'gabarito' || etapa === 'estudo') && gabarito !== null;
+
+              let styles = "border-[rgba(255,255,255,0.10)] bg-[#0d1117] hover:border-[rgba(0,242,255,0.30)] hover:bg-[rgba(0,242,255,0.05)]";
+              let badge = "border border-[rgba(255,255,255,0.15)] bg-white/[0.05] text-slate-400 group-hover:border-[rgba(0,242,255,0.35)] group-hover:text-[#00f2ff]";
+              let text = "text-slate-200";
+
+              if (showResult) {
+                if (isCorrect) {
+                  styles = "border-[#00ff88] bg-[rgba(0,255,136,0.08)]";
+                  badge = "bg-[#00ff88] text-slate-900 shadow-md";
+                  text = "text-[#00ff88] font-bold";
+                } else if (isSelected && !isCorrect) {
+                  styles = "border-[#ff0055] bg-[rgba(255,0,85,0.08)]";
+                  badge = "bg-[#ff0055] text-white shadow-md";
+                  text = "text-[#ff4d72] font-bold";
+                } else {
+                  styles = "border-white/5 bg-white/[0.02] opacity-40";
+                }
+              } else if (isSelected) {
+                styles = "border-[#00f2ff] bg-[rgba(0,242,255,0.08)] shadow-[0_0_16px_rgba(0,242,255,0.12)]";
+                badge = "bg-[#00f2ff] text-slate-900 shadow-md";
+                text = "text-[#00f2ff] font-bold";
+              }
+
+              const rowLayout = certoErradoLayout
+                ? 'flex flex-col items-center justify-center text-center min-h-[92px] sm:min-h-[108px] gap-2 p-5 md:p-6'
+                : 'text-left flex items-start gap-3 px-3 py-3 md:px-4';
+
+              const optionAriaLabel = buildOptionAriaLabel(
+                opt,
+                isSelected,
+                isCorrect,
+                showResult,
+              );
+
+              return (
+                <motion.button
+                  key={opt.id}
+                  id={`lesson-option-${opt.id}`}
+                  type="button"
+                  role="radio"
+                  aria-checked={isSelected}
+                  aria-label={optionAriaLabel}
+                  disabled={showResult}
+                  tabIndex={
+                    showResult
+                      ? -1
+                      : isSelected || (!selecionada && optionIndex === 0)
+                        ? 0
+                        : -1
+                  }
+                  whileHover={!showResult ? { scale: 1.02 } : {}}
+                  whileTap={!showResult ? { scale: 0.98 } : {}}
+                  onClick={() => setSelecionada(opt.id)}
+                  onKeyDown={(e) => handleOptionKeyDown(e, optionIndex, showResult)}
+                  className={`group relative rounded-xl border transition-all duration-300 ${styles} ${rowLayout}`}
+                >
+                  {!certoErradoLayout && (
+                    <span className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-bold transition-colors duration-300 ${badge}`}>
+                      {opt.id}
+                    </span>
+                  )}
+                  <span className={`${QUESTION_TEXT_TYPOGRAPHY} ${certoErradoLayout ? 'font-semibold' : 'font-normal'} ${text}`}>
+                    {opt.text}
+                  </span>
+                  {showResult && isCorrect && (
+                    <div className={`text-[#00ff88] animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`} aria-hidden>
+                      <CheckCircle2 size={certoErradoLayout ? 32 : 24} />
+                    </div>
+                  )}
+                  {showResult && isSelected && !isCorrect && (
+                    <div className={`text-[#ff0055] animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`} aria-hidden>
+                      <XCircle size={certoErradoLayout ? 32 : 24} />
+                    </div>
+                  )}
+                </motion.button>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {etapa === 'pergunta' && selecionada && (
+          <motion.div
+            ref={confirmarRespostaRef}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            className={`flex flex-col items-center gap-2 scroll-mt-4 px-6 pt-1 pb-5 ${MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM}`}
+          >
+            <MicroTip
+              storageKey="reverse-study.answer-before-feedback"
+              tip={REVERSE_STUDY_MICROTIPS['answer-before-feedback']}
+              enabled={etapa === 'pergunta'}
+              className="w-full max-w-xl"
+            />
+            {tentativaErro ? (
+              <p role="alert" className="w-full max-w-xl text-center text-sm text-[#ff4d72] font-medium px-2">
+                {tentativaErro}
+              </p>
+            ) : null}
+            <button
+              type="button"
+              onClick={handleConfirmarResposta}
+              disabled={confirmandoResposta}
+              className="group bg-slate-900 text-white pl-8 pr-2 py-3 rounded-full font-bold uppercase tracking-widest text-xs shadow-xl shadow-slate-900/20 hover:scale-105 transition-all flex items-center gap-4 disabled:cursor-not-allowed disabled:opacity-70"
+            >
+              {confirmandoResposta ? 'Registrando…' : 'Confirmar Resposta'}
+              <span className="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center group-hover:bg-[#BEF264] group-hover:text-slate-900 transition-colors">
+                <ChevronRight size={16} />
+              </span>
+            </button>
+          </motion.div>
+        )}
+      </>
+    );
+
+    return (
+      <>
+        {mode === 'live' && (
+          <div className="px-4 sm:px-6 pt-3 sm:pt-4 pb-1.5 flex flex-wrap items-center justify-between gap-3">
+            <button
+              type="button"
+              onClick={handleVoltarLista}
+              className="group flex items-center gap-2 text-slate-400 hover:text-[#00f2ff] transition-colors min-h-[44px] min-w-[44px] -ml-1 px-1 rounded-xl"
+            >
+              <div className="w-9 h-9 rounded-full bg-white/[0.05] flex items-center justify-center group-hover:bg-[rgba(0,242,255,0.10)] transition-all">
+                <ArrowLeft size={16} />
+              </div>
+              <span className="text-sm font-medium">
+                {fromPlano ? 'Plano diário' : fromCaderno ? 'Meus cadernos' : 'Vitrine'}
+              </span>
+            </button>
+            <div className="flex items-center gap-2">
+              {listaContexto && listaContexto.total > 0 && (
+                <span
+                  className="text-xs sm:text-sm font-semibold tabular-nums text-slate-300 bg-white/[0.05] border border-white/10 px-3 py-1.5 rounded-full shrink-0"
+                  aria-label={`Questão ${listaContexto.atual} de ${listaContexto.total}`}
+                >
+                  Questão {listaContexto.atual} de {listaContexto.total}
+                </span>
+              )}
+              {withZoom ? (
+                <ReadableTextZoomToolbar ariaLabel="Tamanho do texto da questão" />
+              ) : null}
+              <ReportErrorDialog
+                contextType="lesson"
+                moduloSlug={moduloSlug || dados.modulo_slug}
+                metadata={{
+                  etapa,
+                  slide_atual: slideAtual,
+                  total_slides: totalSlides,
+                  question_hash: questionHash,
+                  alternativa_selecionada: selecionada,
+                  acertou: gabarito?.acertou ?? null,
+                  opcao_correta_id: gabarito?.opcaoCorretaId ?? null,
+                }}
+                triggerLabel="Reportar erro"
+                triggerClassName="h-9 px-3 text-xs font-semibold"
+              />
+            </div>
+          </div>
+        )}
+
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          className="border-b border-[rgba(255,255,255,0.10)] bg-[#0d1117] px-6 py-3 md:px-8 md:py-4"
+        >
+          {formatAvantCodigo(avantCodigo) && (
+            <p
+              className="text-[11px] font-mono font-black text-[#00f2ff] mb-1 tracking-wide"
+              title="Código da questão (igual ao painel admin)"
+            >
+              {formatAvantCodigo(avantCodigo)}
+            </p>
+          )}
+          <p className="text-sm md:text-[15px] text-slate-400 leading-snug font-medium tracking-tight">
+            {examHeaderLine}
+          </p>
+          {subjectLine && (
+            <p className="mt-2 text-base md:text-lg font-semibold text-slate-100 border-l-4 border-[#00f2ff] pl-3 leading-snug">
+              {subjectLine}
+            </p>
+          )}
+        </motion.div>
+
+        {withZoom ? (
+          <ReadableTextZoomContent>{zoomableContent}</ReadableTextZoomContent>
+        ) : (
+          zoomableContent
+        )}
+      </>
+    );
+  };
+
   return (
     <>
     <div className="w-full h-full flex-1 min-h-0 flex flex-col relative bg-[#0d1117] md:rounded-[40px] shadow-2xl overflow-hidden border border-[rgba(255,255,255,0.10)] font-sans">
@@ -726,223 +965,12 @@ export default function AvantLessonPlayer({
         className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden custom-scrollbar bg-[#0d1117] flex flex-col touch-pan-y"
       >
         <div className="flex flex-col min-w-0 shrink-0">
-          
-          {/* Botão Voltar (se mode === 'live') */}
-          {mode === 'live' && (
-            <div className="px-4 sm:px-6 pt-3 sm:pt-4 pb-1.5 flex flex-wrap items-center justify-between gap-3">
-              <button 
-                type="button"
-                onClick={handleVoltarLista}
-                className="group flex items-center gap-2 text-slate-400 hover:text-[#00f2ff] transition-colors min-h-[44px] min-w-[44px] -ml-1 px-1 rounded-xl"
-              >
-                <div className="w-9 h-9 rounded-full bg-white/[0.05] flex items-center justify-center group-hover:bg-[rgba(0,242,255,0.10)] transition-all">
-                  <ArrowLeft size={16} />
-                </div>
-                <span className="text-sm font-medium">
-                  {fromPlano ? 'Plano diário' : fromCaderno ? 'Meus cadernos' : 'Vitrine'}
-                </span>
-              </button>
-              <div className="flex items-center gap-2">
-                {listaContexto && listaContexto.total > 0 && (
-                  <span
-                    className="text-xs sm:text-sm font-semibold tabular-nums text-slate-300 bg-white/[0.05] border border-white/10 px-3 py-1.5 rounded-full shrink-0"
-                    aria-label={`Questão ${listaContexto.atual} de ${listaContexto.total}`}
-                  >
-                    Questão {listaContexto.atual} de {listaContexto.total}
-                  </span>
-                )}
-                <ReportErrorDialog
-                  contextType="lesson"
-                  moduloSlug={moduloSlug || dados.modulo_slug}
-                  metadata={{
-                    etapa,
-                    slide_atual: slideAtual,
-                    total_slides: totalSlides,
-                    question_hash: questionHash,
-                    alternativa_selecionada: selecionada,
-                    acertou: gabarito?.acertou ?? null,
-                    opcao_correta_id: gabarito?.opcaoCorretaId ?? null,
-                  }}
-                  triggerLabel="Reportar erro"
-                  triggerClassName="h-9 px-3 text-xs font-semibold"
-                />
-              </div>
-            </div>
-          )}
-
-          {/* Cabeçalho estilo caderno: linha da prova + matéria (tópico - subtópico) */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
-            className="border-b border-[rgba(255,255,255,0.10)] bg-[#0d1117] px-6 py-3 md:px-8 md:py-4"
-          >
-            {formatAvantCodigo(avantCodigo) && (
-              <p
-                className="text-[11px] font-mono font-black text-[#00f2ff] mb-1 tracking-wide"
-                title="Código da questão (igual ao painel admin)"
-              >
-                {formatAvantCodigo(avantCodigo)}
-              </p>
-            )}
-            <p className="text-sm md:text-[15px] text-slate-400 leading-snug font-medium tracking-tight">
-              {examHeaderLine}
-            </p>
-            {subjectLine && (
-              <p className="mt-2 text-base md:text-lg font-semibold text-slate-100 border-l-4 border-[#00f2ff] pl-3 leading-snug">
-                {subjectLine}
-              </p>
-            )}
-          </motion.div>
-
-          {/* ÁREA DE TEXTO DE APOIO (SE HOUVER CITACÃO DE TEXTO) */}
-          {dados.question_data.text_fragment && (
-              <div className="px-6 pt-4 pb-2 md:px-8">
-                  <div className="bg-white/[0.04] border border-[rgba(255,255,255,0.10)] p-4 rounded-lg text-slate-300 text-sm font-serif leading-relaxed italic">
-                      <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(dados.question_data.text_fragment) }} />
-                  </div>
-              </div>
-          )}
-
-          {/* ENUNCIADO: quebras de linha preservadas (I, II, III em blocos) */}
-          <div className="min-w-0 px-6 pt-3 pb-2 md:px-8 md:pt-4 md:pb-3">
-            <div className={`${QUESTION_TEXT_TYPOGRAPHY} text-slate-100 font-normal whitespace-pre-wrap break-words overflow-x-hidden [&_strong]:font-semibold [&_p]:mb-2 [&_p:last-child]:mb-0`}>
-              <span dangerouslySetInnerHTML={{ __html: sanitizeHTML(instructionParaExibicao) }} />
-            </div>
-          </div>
-          
-          {/* ALTERNATIVAS (layout dedicado para Certo / Errado) */}
-          <motion.div 
-            initial="hidden" 
-            animate="visible" 
-            variants={fadeInUp} 
-            transition={{ delay: 0.2 }} 
-            className="px-6 pb-6 md:px-8 md:pb-7"
-          >
-            <div
-              role="radiogroup"
-              aria-label="Alternativas da questão"
-              className={
-                certoErradoLayout
-                  ? 'grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto'
-                  : 'grid gap-1.5 md:gap-2'
-              }
-            >
-              {dados.question_data.options.map((opt, optionIndex) => {
-                const isSelected = selecionada === opt.id;
-                const isCorrect = opcaoEstaCorreta(opt.id);
-                const showResult = (etapa === 'gabarito' || etapa === 'estudo') && gabarito !== null;
-                
-                let styles = "border-[rgba(255,255,255,0.10)] bg-[#0d1117] hover:border-[rgba(0,242,255,0.30)] hover:bg-[rgba(0,242,255,0.05)]";
-                let badge = "border border-[rgba(255,255,255,0.15)] bg-white/[0.05] text-slate-400 group-hover:border-[rgba(0,242,255,0.35)] group-hover:text-[#00f2ff]";
-                let text = "text-slate-200";
-
-                if (showResult) {
-                    if (isCorrect) {
-                        styles = "border-[#00ff88] bg-[rgba(0,255,136,0.08)]";
-                        badge = "bg-[#00ff88] text-slate-900 shadow-md";
-                        text = "text-[#00ff88] font-bold";
-                    } else if (isSelected && !isCorrect) {
-                        styles = "border-[#ff0055] bg-[rgba(255,0,85,0.08)]";
-                        badge = "bg-[#ff0055] text-white shadow-md";
-                        text = "text-[#ff4d72] font-bold";
-                    } else {
-                        styles = "border-white/5 bg-white/[0.02] opacity-40";
-                    }
-                } else if (isSelected) {
-                    styles = "border-[#00f2ff] bg-[rgba(0,242,255,0.08)] shadow-[0_0_16px_rgba(0,242,255,0.12)]";
-                    badge = "bg-[#00f2ff] text-slate-900 shadow-md";
-                    text = "text-[#00f2ff] font-bold";
-                }
-
-                const rowLayout = certoErradoLayout
-                  ? 'flex flex-col items-center justify-center text-center min-h-[92px] sm:min-h-[108px] gap-2 p-5 md:p-6'
-                  : 'text-left flex items-start gap-3 px-3 py-3 md:px-4';
-
-                const optionAriaLabel = buildOptionAriaLabel(
-                  opt,
-                  isSelected,
-                  isCorrect,
-                  showResult,
-                );
-
-                return (
-                  <motion.button 
-                    key={opt.id}
-                    id={`lesson-option-${opt.id}`}
-                    type="button"
-                    role="radio"
-                    aria-checked={isSelected}
-                    aria-label={optionAriaLabel}
-                    disabled={showResult}
-                    tabIndex={
-                      showResult
-                        ? -1
-                        : isSelected || (!selecionada && optionIndex === 0)
-                          ? 0
-                          : -1
-                    }
-                    whileHover={!showResult ? { scale: 1.02 } : {}}
-                    whileTap={!showResult ? { scale: 0.98 } : {}}
-                    onClick={() => setSelecionada(opt.id)}
-                    onKeyDown={(e) => handleOptionKeyDown(e, optionIndex, showResult)}
-                    className={`group relative rounded-xl border transition-all duration-300 ${styles} ${rowLayout}`}
-                  >
-                    {!certoErradoLayout && (
-                      <span className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-bold transition-colors duration-300 ${badge}`}>
-                        {opt.id}
-                      </span>
-                    )}
-                    <span className={`${QUESTION_TEXT_TYPOGRAPHY} ${certoErradoLayout ? 'font-semibold' : 'font-normal'} ${text}`}>
-                      {opt.text}
-                    </span>
-                    {showResult && isCorrect && (
-                      <div className={`text-[#00ff88] animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`} aria-hidden>
-                        <CheckCircle2 size={certoErradoLayout ? 32 : 24} />
-                      </div>
-                    )}
-                    {showResult && isSelected && !isCorrect && (
-                      <div className={`text-[#ff0055] animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`} aria-hidden>
-                        <XCircle size={certoErradoLayout ? 32 : 24} />
-                      </div>
-                    )}
-                  </motion.button>
-                )
-              })}
-            </div>
-          </motion.div>
-
-          {/* BOTÃO CONFIRMAR */}
-          {etapa === 'pergunta' && selecionada && (
-            <motion.div 
-              ref={confirmarRespostaRef}
-              initial={{ y: 20, opacity: 0 }} 
-              animate={{ y: 0, opacity: 1 }} 
-              className={`flex flex-col items-center gap-2 scroll-mt-4 px-6 pt-1 pb-5 ${MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM}`}
-            >
-              <MicroTip
-                storageKey="reverse-study.answer-before-feedback"
-                tip={REVERSE_STUDY_MICROTIPS['answer-before-feedback']}
-                enabled={etapa === 'pergunta'}
-                className="w-full max-w-xl"
-              />
-              {tentativaErro ? (
-                <p role="alert" className="w-full max-w-xl text-center text-sm text-[#ff4d72] font-medium px-2">
-                  {tentativaErro}
-                </p>
-              ) : null}
-              <button 
-                type="button"
-                onClick={handleConfirmarResposta}
-                disabled={confirmandoResposta}
-                className="group bg-slate-900 text-white pl-8 pr-2 py-3 rounded-full font-bold uppercase tracking-widest text-xs shadow-xl shadow-slate-900/20 hover:scale-105 transition-all flex items-center gap-4 disabled:cursor-not-allowed disabled:opacity-70"
-              >
-                {confirmandoResposta ? 'Registrando…' : 'Confirmar Resposta'}
-                <span className="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center group-hover:bg-[#BEF264] group-hover:text-slate-900 transition-colors">
-                  <ChevronRight size={16} />
-                </span>
-              </button>
-            </motion.div>
+          {showQuestionZoom ? (
+            <ReadableTextZoomProvider contentKey={questionZoomContentKey}>
+              {renderQuestionScrollBody(true)}
+            </ReadableTextZoomProvider>
+          ) : (
+            renderQuestionScrollBody(false)
           )}
         </div>
       </div>

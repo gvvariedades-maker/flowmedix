@@ -1,9 +1,9 @@
 import {
   TEXT_SCALE_STEPS,
   computeZoomInnerWidthPx,
-} from '@/components/lesson/EstudoReversoSlideZoom';
+} from '@/components/accessibility/ReadableTextZoom';
 
-describe('EstudoReversoSlideZoom — zoom mobile', () => {
+describe('ReadableTextZoom — zoom mobile', () => {
   it('expõe escala em 5 degraus crescentes', () => {
     expect(TEXT_SCALE_STEPS).toHaveLength(5);
     expect(TEXT_SCALE_STEPS[0]).toBe(1);

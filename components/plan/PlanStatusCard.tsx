@@ -5,7 +5,6 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ProSource } from '@/lib/freemium';
-import { FREEMIUM_PLAN_LIMITS_COMPACT } from '@/lib/freemium';
 
 export type PlanStatusCardProps = {
   cidadeExibicao: string;
@@ -157,12 +156,6 @@ export function PlanStatusCard({
             </div>
           )}
 
-          {!isPro ? (
-            <p className="text-center text-xs font-medium leading-relaxed text-slate-500">
-              {FREEMIUM_PLAN_LIMITS_COMPACT}
-            </p>
-          ) : null}
-
           {inviteExpiry ? (
             <p className="text-center text-xs font-medium text-slate-500">
               Pro por convite até {inviteExpiry}
@@ -180,24 +173,15 @@ export function PlanStatusCard({
               </Button>
             ) : null
           ) : (
-            <div className="space-y-2">
-              <Button
-                asChild
-                variant="outline"
-                className="h-10 w-full rounded-xl border border-slate-200 bg-white font-mono text-[10px] font-bold uppercase tracking-wider text-slate-800 hover:bg-slate-50"
-              >
-                <Link href="/planos">Concursos abertos</Link>
-              </Button>
-              <Button
-                asChild
-                className="h-10 w-full rounded-xl bg-[#BEF264] font-mono text-xs font-bold uppercase tracking-wider text-slate-950 shadow-md shadow-lime-400/20 shadow-[0_0_20px_rgba(190,242,100,0.25)] hover:bg-[#d4f879]"
-              >
-                <Link href="/assinar-pro" className="gap-1.5">
-                  <Zap size={12} fill="currentColor" aria-hidden />
-                  Assinar Pro
-                </Link>
-              </Button>
-            </div>
+            <Button
+              asChild
+              className="h-10 w-full rounded-xl bg-[#BEF264] font-mono text-xs font-bold uppercase tracking-wider text-slate-950 shadow-md shadow-lime-400/20 shadow-[0_0_20px_rgba(190,242,100,0.25)] hover:bg-[#d4f879]"
+            >
+              <Link href="/assinar-pro" className="gap-1.5">
+                <Zap size={12} fill="currentColor" aria-hidden />
+                Assinar Pro
+              </Link>
+            </Button>
           )}
         </div>
       </motion.div>

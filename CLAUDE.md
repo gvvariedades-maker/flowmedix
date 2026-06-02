@@ -685,6 +685,7 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 | [`SISTEMA_TEMAS_UNICOS.md`](docs/SISTEMA_TEMAS_UNICOS.md) | Temas por slide |
 | [`DEPLOY.md`](docs/DEPLOY.md) / [`DEPLOY_CHECKLIST.md`](DEPLOY_CHECKLIST.md) | Deploy |
 | [`TESTES_QUICK_START.md`](docs/TESTES_QUICK_START.md) | Jest e Playwright |
+| [`ZOOM_MOBILE_POLICY.md`](docs/ZOOM_MOBILE_POLICY.md) | Pinch vs toolbar A+/A− no mobile (Modelos A/B/E) |
 
 ### Regras Cursor (não duplicar aqui)
 

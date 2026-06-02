@@ -3,9 +3,14 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import {
+  ReadableTextZoomContent,
+  useReadableTextZoomContext,
+} from '@/components/accessibility/ReadableTextZoom';
+import {
   getMaterialSlideLot,
   type MaterialSlideLotId,
 } from '@/components/material/materialSlideLots';
+import { cn } from '@/lib/utils';
 
 /** Tamanho lógico do stage (px). A escala nunca ultrapassa o encaixe na área medida — evita corte por `overflow` + `transform`. */
 const DESIGN_BASE_W = 360;
@@ -23,9 +28,15 @@ type MaterialSlidesPlayerProps = {
   selectedLot: MaterialSlideLotId;
   /** Só o slide na tela: sem moldura pesada nem faixa de título sobre o card (modal imersivo). */
   immersive?: boolean;
+  /** Notifica o índice atual (para reset de zoom no modal). */
+  onIndexChange?: (index: number) => void;
 };
 
-export function MaterialSlidesPlayer({ selectedLot, immersive = false }: MaterialSlidesPlayerProps) {
+export function MaterialSlidesPlayer({
+  selectedLot,
+  immersive = false,
+  onIndexChange,
+}: MaterialSlidesPlayerProps) {
   const activeLot = getMaterialSlideLot(selectedLot);
   const ActiveContent = activeLot.Component;
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,6 +45,10 @@ export function MaterialSlidesPlayer({ selectedLot, immersive = false }: Materia
   const [compactViewport, setCompactViewport] = useState(false);
 
   const lastIndex = activeLot.count - 1;
+
+  useEffect(() => {
+    onIndexChange?.(currentIndex);
+  }, [currentIndex, onIndexChange]);
 
   useEffect(() => {
     const mq = window.matchMedia(COMPACT_VIEWPORT_MQ);
@@ -100,6 +115,9 @@ export function MaterialSlidesPlayer({ selectedLot, immersive = false }: Materia
     ? 'border-white/15 bg-slate-950/75 opacity-80 hover:opacity-100'
     : 'border-white/10 bg-slate-950/70 hover:bg-white/10';
 
+  const { narrowViewport, textStep } = useReadableTextZoomContext();
+  const isTextScaled = narrowViewport && textStep > 0;
+
   return (
     <div className={shellClass}>
       {!immersive ? (
@@ -128,8 +146,15 @@ export function MaterialSlidesPlayer({ selectedLot, immersive = false }: Materia
             transformOrigin: 'center center',
           }}
         >
-          <div className="material-player-slide-frame h-full w-full min-h-0 overflow-hidden rounded-2xl">
-            <ActiveContent />
+          <div
+            className={cn(
+              'material-player-slide-frame h-full w-full min-h-0 rounded-2xl',
+              isTextScaled ? 'overflow-auto touch-pan-y' : 'overflow-hidden',
+            )}
+          >
+            <ReadableTextZoomContent className="h-full min-h-0">
+              <ActiveContent />
+            </ReadableTextZoomContent>
           </div>
         </div>
       </div>

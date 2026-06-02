@@ -1,13 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Inter, JetBrains_Mono, Plus_Jakarta_Sans, Syne } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { validateAllEnv } from "@/lib/env";
 import { JsonLd, type JsonLdObject } from "@/components/seo/JsonLd";
-import { TextSizeProvider } from "@/components/providers/TextSizeProvider";
 import { RegisterServiceWorker } from "@/components/pwa/RegisterServiceWorker";
 import { getAbsoluteUrl, getSiteUrl } from "@/lib/siteUrl";
-import { buildTextSizeInitScript } from "@/lib/textSizePreference";
 
 // Validar variáveis de ambiente no startup (apenas no servidor)
 if (typeof window === 'undefined') {
@@ -148,14 +145,9 @@ export default function RootLayout({
         className={`${inter.className} ${plusJakartaSans.variable} ${syne.variable} ${jetbrainsMono.variable} ${dmSans.variable}`}
         suppressHydrationWarning
       >
-        <Script
-          id="avant-text-size-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: buildTextSizeInitScript() }}
-        />
         <JsonLd data={siteStructuredData} />
         <RegisterServiceWorker />
-        <TextSizeProvider>{children}</TextSizeProvider>
+        {children}
       </body>
     </html>
   );

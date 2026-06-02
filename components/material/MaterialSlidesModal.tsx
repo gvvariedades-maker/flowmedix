@@ -8,6 +8,10 @@ import {
   MATERIAL_SLIDE_LOTS,
   type MaterialSlideLotId,
 } from '@/components/material/materialSlideLots';
+import {
+  ReadableTextZoomProvider,
+  ReadableTextZoomToolbar,
+} from '@/components/accessibility/ReadableTextZoom';
 import { MaterialSlidesPlayer } from '@/components/material/MaterialSlidesPlayer';
 import {
   DropdownMenu,
@@ -92,6 +96,7 @@ function MaterialLotDrawerList({ activeLotId, onSelectLot }: LotSelectionProps) 
 
 export function MaterialSlidesModal({ open, selectedLot, onSelectLot, onClose }: MaterialSlidesModalProps) {
   const [lotPickerOpen, setLotPickerOpen] = useState(false);
+  const [slideIndex, setSlideIndex] = useState(0);
 
   const handleSelectLot = useCallback(
     (id: MaterialSlideLotId) => {
@@ -102,7 +107,10 @@ export function MaterialSlidesModal({ open, selectedLot, onSelectLot, onClose }:
   );
 
   useEffect(() => {
-    if (open) return;
+    setSlideIndex(0);
+  }, [selectedLot]);
+
+  useEffect(() => {
     const id = requestAnimationFrame(() => setLotPickerOpen(false));
     return () => cancelAnimationFrame(id);
   }, [open]);
@@ -153,6 +161,7 @@ export function MaterialSlidesModal({ open, selectedLot, onSelectLot, onClose }:
             }
           }}
         >
+          <ReadableTextZoomProvider contentKey={`${selectedLot}-${slideIndex}`}>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -197,18 +206,26 @@ export function MaterialSlidesModal({ open, selectedLot, onSelectLot, onClose }:
                 <span className="max-w-[8.5rem] truncate">{activeLot.shortTitle}</span>
               </button>
 
-              <button
-                type="button"
-                onClick={onClose}
-                className="pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-slate-950/80 text-slate-200 shadow-lg backdrop-blur-md transition-colors hover:bg-white/10 hover:text-white active:bg-white/15"
-                aria-label="Fechar"
-              >
-                <X size={18} aria-hidden />
-              </button>
+              <div className="pointer-events-auto flex items-center gap-2">
+                <ReadableTextZoomToolbar ariaLabel="Tamanho do texto do NeuroSlide" />
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-slate-950/80 text-slate-200 shadow-lg backdrop-blur-md transition-colors hover:bg-white/10 hover:text-white active:bg-white/15"
+                  aria-label="Fechar"
+                >
+                  <X size={18} aria-hidden />
+                </button>
+              </div>
             </div>
 
             <div className="relative z-10 min-h-0 flex-1 overflow-hidden">
-              <MaterialSlidesPlayer key={selectedLot} immersive selectedLot={selectedLot} />
+              <MaterialSlidesPlayer
+                key={selectedLot}
+                immersive
+                selectedLot={selectedLot}
+                onIndexChange={setSlideIndex}
+              />
             </div>
 
             <AnimatePresence>
@@ -268,6 +285,7 @@ export function MaterialSlidesModal({ open, selectedLot, onSelectLot, onClose }:
               ) : null}
             </AnimatePresence>
           </motion.div>
+          </ReadableTextZoomProvider>
         </motion.div>
       )}
     </AnimatePresence>
