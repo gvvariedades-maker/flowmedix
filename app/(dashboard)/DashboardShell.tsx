@@ -26,7 +26,7 @@ import { PwaInstallProvider } from '@/components/pwa/PwaInstallProvider';
 import { PwaInstallNavButton } from '@/components/pwa/PwaInstallNavButton';
 import { useEstudoReversoWelcome } from '@/components/onboarding/useEstudoReversoWelcome';
 import { cn } from '@/lib/utils';
-import type { ProSource } from '@/lib/freemium';
+import type { ProSource } from '@/lib/freemium/constants';
 import { supabase } from '@/lib/supabase/client';
 import { ToastProvider } from '@/lib/toast-context';
 import { ToastContainer } from '@/components/ui/toast-container';

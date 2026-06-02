@@ -17,6 +17,7 @@ export type GetVitrineFacetsParams = {
 
 /**
  * Facets da vitrine: admin e RPC vazio usam catálogo JS (mesma regra da página).
+ * Endpoint dedicado `GET /api/vitrine/facets` + cache 15 min (`getVitrineFacetsCached`).
  */
 export async function getVitrineFacets(params: GetVitrineFacetsParams): Promise<VitrineFacets> {
   const { userId, isAdmin = false } = params;

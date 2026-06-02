@@ -60,6 +60,7 @@ const conteudoJson = {
       { id: 'B', text: 'Opção B', is_correct: true },
     ],
   },
+  reverse_study_slides: [{ type: 'golden_rule', content: 'Regra de ouro' }],
 };
 
 function mockSupabaseModuloRow() {
@@ -211,6 +212,23 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
     const result = await buildEstudarQuestaoPlayerPayload({ slug: 'inexistente' });
 
     expect(result).toEqual({ status: 'not_found' });
+  });
+
+  it('layers=core omite NeuroSlides do payload', async () => {
+    mockUserHasModuloAccess.mockResolvedValue(true);
+    const supabase = mockSupabaseModuloRow();
+
+    const result = await buildEstudarQuestaoPlayerPayload({
+      slug: SLUG,
+      userId: USER_ID,
+      supabase: supabase as never,
+      layers: 'core',
+    });
+
+    expect(result.status).toBe('ok');
+    if (result.status !== 'ok') return;
+    expect(result.payload.dados).not.toHaveProperty('reverse_study_slides');
+    expect(result.payload.dados.question_data.options).toHaveLength(2);
   });
 
   it('repassa page da vitrine no vitrineQuerySuffix e nos slugs de navegação', async () => {

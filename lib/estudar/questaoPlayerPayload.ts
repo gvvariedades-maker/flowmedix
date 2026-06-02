@@ -10,9 +10,17 @@ import { userHasModuloAccess } from '@/lib/concursos/entitlements';
 import { getTodayReviews } from '@/lib/spaced-repetition';
 import { getQuestaoNavList } from '@/lib/estudar/questaoNav';
 import { sliceQuestoesNavWindow } from '@/lib/estudar/questaoNavWindow';
+import {
+  ESTUDAR_QUESTAO_LAYERS_DEFAULT,
+  stripSlidesForCoreLayer,
+  type EstudarQuestaoLayers,
+} from '@/lib/estudar/questaoLayers';
 import { stripQuestionAnswersForClient } from '@/lib/estudar/questionPayload';
+import type { EstudarSearchParams } from '@/lib/estudar/parseEstudarSearchParams';
+import { parseEstudarSearchParams } from '@/lib/estudar/parseEstudarSearchParams';
 
-export type EstudarSearchParams = Record<string, string | string[] | undefined>;
+export type { EstudarSearchParams } from '@/lib/estudar/parseEstudarSearchParams';
+export { parseEstudarSearchParams } from '@/lib/estudar/parseEstudarSearchParams';
 
 export type EstudarQuestaoBuildResult =
   | { status: 'ok'; payload: AvantLessonPlayerProps }
@@ -31,43 +39,12 @@ type ModuloAtualRow = {
   avant_codigo?: unknown;
 };
 
-export function parseEstudarSearchParams(searchParams: EstudarSearchParams) {
-  const from = searchParams.from as string | undefined;
-  const fromPlano = from === 'plano';
-  const fromCaderno = from === 'caderno';
-  const cadernoId = fromCaderno
-    ? (typeof searchParams.caderno_id === 'string' ? searchParams.caderno_id : undefined)
-    : undefined;
-  const vitrineBancas = Array.isArray(searchParams.banca)
-    ? searchParams.banca.map((b) => String(b).trim()).filter(Boolean)
-    : typeof searchParams.banca === 'string' && searchParams.banca.trim()
-      ? [searchParams.banca.trim()]
-      : [];
-  const vitrineAssuntos = Array.isArray(searchParams.assunto)
-    ? searchParams.assunto.map((a) => String(a).trim()).filter(Boolean)
-    : typeof searchParams.assunto === 'string' && searchParams.assunto.trim()
-      ? [searchParams.assunto.trim()]
-      : [];
-  const vitrineQ = typeof searchParams.q === 'string' ? searchParams.q.trim() : '';
-  const rawPage =
-    typeof searchParams.page === 'string' ? parseInt(searchParams.page, 10) : 1;
-  const vitrinePage = Number.isFinite(rawPage) && rawPage >= 1 ? rawPage : 1;
-
-  return {
-    fromPlano,
-    fromCaderno,
-    cadernoId,
-    vitrineBancas,
-    vitrineAssuntos,
-    vitrineQ,
-    vitrinePage,
-  };
-}
-
 export type BuildEstudarQuestaoPlayerPayloadInput = {
   slug: string;
   userId?: string | null;
   searchParams?: EstudarSearchParams;
+  /** `core` omite NeuroSlides (prefetch); `full` inclui slides (RSC / estudo reverso). */
+  layers?: EstudarQuestaoLayers;
   /** Gestor/admin: catálogo completo na vitrine sem matrícula em concurso. */
   isAdmin?: boolean;
   /** Cliente com sessão do usuário (API Bearer). Se omitido no RSC, usa cookies via `createSupabaseServerClient`. */
@@ -81,7 +58,13 @@ export type BuildEstudarQuestaoPlayerPayloadInput = {
 export async function buildEstudarQuestaoPlayerPayload(
   input: BuildEstudarQuestaoPlayerPayloadInput,
 ): Promise<EstudarQuestaoBuildResult> {
-  const { slug, userId, searchParams = {}, isAdmin = false } = input;
+  const {
+    slug,
+    userId,
+    searchParams = {},
+    isAdmin = false,
+    layers = ESTUDAR_QUESTAO_LAYERS_DEFAULT,
+  } = input;
   const {
     fromPlano,
     fromCaderno,
@@ -223,8 +206,13 @@ export async function buildEstudarQuestaoPlayerPayload(
       ? Number(rawCodigo)
       : null;
 
+  let dadosCliente = stripQuestionAnswersForClient(atual.conteudo_json);
+  if (layers === 'core') {
+    dadosCliente = stripSlidesForCoreLayer(dadosCliente);
+  }
+
   const payload: AvantLessonPlayerProps = {
-    dados: stripQuestionAnswersForClient(atual.conteudo_json),
+    dados: dadosCliente,
     mode: 'live',
     proximaSlug: proximaSlugFinal,
     anteriorSlug: anteriorSlugFinal,

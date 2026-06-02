@@ -2,11 +2,14 @@
 
 import type { ReactNode } from 'react';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
-import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
+import EstudarQuestaoSkeleton from '@/components/lesson/EstudarQuestaoSkeleton';
+import { useEstudarQuestaoShellState } from '@/components/lesson/useEstudarQuestaoShellState';
 import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
+import { cn } from '@/lib/utils';
 
 export default function EstudarQuestaoShell({ children }: { children: ReactNode }) {
-  const { displayPayload } = useQuestaoNavigation();
+  const { showPlayer, showSkeleton, displayPayload, isPayloadStale } =
+    useEstudarQuestaoShellState();
 
   return (
     <DashboardMobilePage
@@ -14,7 +17,19 @@ export default function EstudarQuestaoShell({ children }: { children: ReactNode 
       className="flex min-h-0 w-full flex-1 flex-col bg-[#010409] px-3 py-3 font-sans sm:px-4 md:px-6 md:py-6 md:pb-6"
     >
       <div className="mx-auto flex min-h-0 w-full max-w-6xl flex-1 flex-col">
-        {displayPayload ? <AvantLessonPlayer {...displayPayload} /> : null}
+        {showPlayer && displayPayload ? (
+          <div
+            className={cn(
+              'flex min-h-0 flex-1 flex-col [view-transition-name:estudar-questao-root]',
+              isPayloadStale && 'pointer-events-none opacity-90',
+            )}
+            aria-busy={isPayloadStale || undefined}
+          >
+            <AvantLessonPlayer key="estudar-lesson-player" {...displayPayload} />
+          </div>
+        ) : showSkeleton ? (
+          <EstudarQuestaoSkeleton />
+        ) : null}
         {children}
       </div>
     </DashboardMobilePage>

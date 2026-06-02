@@ -77,13 +77,12 @@ async function loadModulosForVitrine(
   filters: VitrineListFilters,
   isAdmin = false,
 ): Promise<ModuloEstudoRow[]> {
-  if (isAdmin) {
-    return (await getModulosEstudoCached()) as ModuloEstudoRow[];
-  }
-
   const sqlFilters = vitrineFiltersToSqlNavFilters(filters);
   if (sqlFilters) {
     return (await getAccessibleModulosForNavCached(userId, sqlFilters)) as ModuloEstudoRow[];
+  }
+  if (isAdmin) {
+    return (await getModulosEstudoCached()) as ModuloEstudoRow[];
   }
   const modulos = (await getModulosEstudoVitrineForUserCached(userId)) as ModuloEstudoRow[];
   if (modulos.length > 0) return modulos;
@@ -142,66 +141,66 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
   const normalizedFilters = normalizeFiltersForLog(filters);
   const startAt = Date.now();
 
-  if (!isAdmin) {
-    try {
-      const rpcPage = await fetchVitrinePageFromRpc({ userId, page, filters });
-      const durationMs = Date.now() - startAt;
+  try {
+    const rpcPage = await fetchVitrinePageFromRpc({ userId, page, filters });
+    const durationMs = Date.now() - startAt;
 
-      const rpcHasResults =
-        rpcPage.pagination.totalGroups > 0 || rpcPage.totalModulosFiltrados > 0;
+    const rpcHasResults =
+      rpcPage.pagination.totalGroups > 0 || rpcPage.totalModulosFiltrados > 0;
 
-      if (!rpcHasResults && !vitrineHasActiveFilters(filters)) {
-        logger.error('RPC get_vitrine_page vazio sem filtros; verificar matrícula/dados', {
-          userId,
-          page,
-        });
-      }
-
-      const facets =
-        rpcPage.facets ??
-        (await getVitrineFacets({
-          userId,
-          bancas: filters.bancas,
-          isAdmin,
-        }));
-
-      logApiStrategy({
-        event: 'vitrine_page',
-        strategy: 'rpc',
-        durationMs,
-        context: {
-          userId,
-          page,
-          filters: normalizedFilters,
-          rowCount: rpcPage.totalModulosFiltrados,
-        },
+    if (!rpcHasResults && !vitrineHasActiveFilters(filters)) {
+      logger.error('RPC get_vitrine_page vazio sem filtros; verificar matrícula/dados', {
+        userId,
+        page,
+        isAdmin,
       });
-      logger.info('Vitrine service resolved', {
-        strategy: 'rpc',
-        durationMs,
+    }
+
+    const facets =
+      rpcPage.facets ??
+      (await getVitrineFacets({
+        userId,
+        bancas: filters.bancas,
+        isAdmin,
+      }));
+
+    logApiStrategy({
+      event: 'vitrine_page',
+      strategy: 'rpc',
+      durationMs,
+      context: {
         userId,
         page,
         filters: normalizedFilters,
         rowCount: rpcPage.totalModulosFiltrados,
-        groupCount: rpcPage.pagination.totalGroups,
-      });
+        isAdmin,
+      },
+    });
+    logger.info('Vitrine service resolved', {
+      strategy: 'rpc',
+      durationMs,
+      userId,
+      page,
+      filters: normalizedFilters,
+      rowCount: rpcPage.totalModulosFiltrados,
+      groupCount: rpcPage.pagination.totalGroups,
+      isAdmin,
+    });
 
-      return {
-        ...rpcPage,
-        facets,
-      };
-    } catch (err) {
-      const durationMs = Date.now() - startAt;
-
-      logger.warn('get_vitrine_page indisponível; pipeline JS', {
-        strategy: 'rpc',
-        durationMs,
-        userId,
-        page,
-        filters: normalizedFilters,
-        error: err instanceof Error ? err.message : err,
-      });
-    }
+    return {
+      ...rpcPage,
+      facets,
+    };
+  } catch (err) {
+    logger.warn('get_vitrine_page indisponível; pipeline JS', {
+      strategy: 'rpc',
+      durationMs: Date.now() - startAt,
+      userId,
+      page,
+      filters: normalizedFilters,
+      isAdmin,
+      error: err instanceof Error ? err.message : err,
+    });
   }
 
   const jsStartAt = Date.now();
@@ -216,9 +215,10 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
       page,
       filters: normalizedFilters,
       rowCount: jsPage.totalModulosFiltrados,
+      isAdmin,
     },
   });
-  logger.info('Vitrine service resolved', {
+  logger.warn('Vitrine service resolved via pipeline JS', {
     strategy: 'js',
     durationMs: Date.now() - jsStartAt,
     userId,
@@ -226,6 +226,7 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
     filters: normalizedFilters,
     rowCount: jsPage.totalModulosFiltrados,
     groupCount: jsPage.pagination.totalGroups,
+    isAdmin,
   });
 
   return jsPage;

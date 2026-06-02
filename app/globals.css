@@ -451,3 +451,40 @@
 .react-flow__background {
   display: none !important;
 }
+
+/* View Transitions — navegação /estudar/[slug] (passo 4.1, progressive enhancement) */
+@supports (view-transition-name: none) {
+  @media (prefers-reduced-motion: no-preference) {
+    ::view-transition-old(estudar-questao-root),
+    ::view-transition-new(estudar-questao-root) {
+      animation-duration: 0.22s;
+      animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    ::view-transition-old(estudar-questao-root) {
+      animation-name: estudar-questao-fade-out;
+    }
+
+    ::view-transition-new(estudar-questao-root) {
+      animation-name: estudar-questao-fade-in;
+    }
+  }
+}
+
+@keyframes estudar-questao-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.92;
+  }
+}
+
+@keyframes estudar-questao-fade-in {
+  from {
+    opacity: 0.92;
+  }
+  to {
+    opacity: 1;
+  }
+}

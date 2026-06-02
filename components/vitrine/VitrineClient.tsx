@@ -11,7 +11,6 @@ import {
   type ReactNode,
 } from 'react';
 import { createPortal } from 'react-dom';
-import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -59,6 +58,10 @@ import { MultiCheckboxFilter } from '@/components/ui/MultiCheckboxFilter';
 import { NeonBadge } from '@/components/ui/neon-badge';
 import { EmptyState } from '@/components/ui/empty-state';
 import { ProgressRing } from '@/components/ui/progress-ring';
+import { VitrineQuestaoLink } from '@/components/vitrine/VitrineQuestaoLink';
+import { useVitrineVisiblePrefetch, VITRINE_PREFETCH_DATA_ATTR } from '@/hooks/useVitrineVisiblePrefetch';
+import { useVitrineListSwr } from '@/hooks/useVitrineListSwr';
+import { buildVitrineEstudarQuery } from '@/lib/vitrine/estudarQuery';
 
 const VITRINE_SEARCH_DEBOUNCE_MS = 350;
 
@@ -257,39 +260,52 @@ export default function VitrineClient({
     return () => window.removeEventListener('avant:open-search', handler);
   }, []);
   const [assuntoSheetOpen, setAssuntoSheetOpen] = useState(false);
-  const [gruposPagina, setGruposPagina] = useState<GrupoSubtopico[]>(
-    () => initialPageData?.groups ?? [],
-  );
   const [bancas, setBancas] = useState<string[]>(() => initialFacetsData?.bancas ?? []);
   const [assuntos, setAssuntos] = useState<string[]>(() => initialFacetsData?.assuntos ?? []);
-  const [totalAssuntos, setTotalAssuntos] = useState(
-    () => initialPageData?.pagination.totalGroups ?? 0,
-  );
-  const [totalPaginas, setTotalPaginas] = useState(
-    () => initialPageData?.pagination.totalPages ?? 1,
-  );
-  const { pageBottomPadding } = useDashboardBottomInset('default');
-  const [paginaEfetiva, setPaginaEfetiva] = useState(
-    () => initialPageData?.pagination.page ?? ssrQuery.page,
-  );
-  const [perPage, setPerPage] = useState(() => initialPageData?.pagination.perPage ?? 12);
-  const [loading, setLoading] = useState(
-    () => !initialPageData && !initialPayloadError,
-  );
-  const [isRefreshing, setIsRefreshing] = useState(false);
   const [facetsLoading, setFacetsLoading] = useState(() => !initialFacetsData);
-  const [fetchError, setFetchError] = useState<string | null>(initialPayloadError);
+  const { pageBottomPadding } = useDashboardBottomInset('default');
   const [ssrErrorDismissed, setSsrErrorDismissed] = useState(false);
   const [retryNonce, setRetryNonce] = useState(0);
-  const gruposPaginaRef = useRef<GrupoSubtopico[]>(initialPageData?.groups ?? []);
+  const vitrineListaRef = useRef<HTMLDivElement>(null);
   /** Evita gravar na URL antes de ler os filtros (impede loop com estado inicial vazio). */
   const filtersHydratedFromUrlRef = useRef(Boolean(initialListQuery));
-  const ssrListConsumedRef = useRef(false);
   const ssrFacetsConsumedRef = useRef(false);
 
+  const vitrineListQuery = useMemo(
+    (): VitrineListQuery => ({
+      page: pagina,
+      bancas: bancasSelecionadas,
+      assuntos: assuntosSelecionados,
+      q: debouncedSearch || undefined,
+    }),
+    [pagina, bancasSelecionadas, assuntosSelecionados, debouncedSearch],
+  );
+
+  const {
+    data: vitrinePageData,
+    error: vitrineFetchError,
+    isLoading: vitrineLoading,
+    isValidating: vitrineValidating,
+  } = useVitrineListSwr(vitrineListQuery, {
+    fallbackData: initialPageData,
+    ssrListQueryKey,
+    retryNonce,
+  });
+
+  const gruposPagina = vitrinePageData?.groups ?? [];
+  const totalAssuntos = vitrinePageData?.pagination.totalGroups ?? 0;
+  const totalPaginas = vitrinePageData?.pagination.totalPages ?? 1;
+  const paginaEfetiva = vitrinePageData?.pagination.page ?? pagina;
+  const perPage = vitrinePageData?.pagination.perPage ?? 12;
+  const fetchError = vitrineFetchError ?? (retryNonce === 0 ? initialPayloadError : null);
+  const loading = vitrineLoading && gruposPagina.length === 0;
+  const isRefreshing = vitrineValidating && gruposPagina.length > 0;
+
   useEffect(() => {
-    gruposPaginaRef.current = gruposPagina;
-  }, [gruposPagina]);
+    if (vitrinePageData && vitrinePageData.pagination.page !== pagina) {
+      setPagina(vitrinePageData.pagination.page);
+    }
+  }, [vitrinePageData, pagina]);
 
   /**
    * URL → estado antes do paint e antes dos useEffects que gravam na URL / buscam dados.
@@ -386,89 +402,6 @@ export default function VitrineClient({
     };
   }, [bancasSelecionadas, initialFacetsData, ssrFacetsQueryKey]);
 
-  /** Paginação explícita (replace por página) — sem infinite scroll / append. */
-  useEffect(() => {
-    let cancelled = false;
-
-    async function loadVitrine() {
-      const currentListKey = vitrineListQueryKey({
-        page: pagina,
-        bancas: bancasSelecionadas,
-        assuntos: assuntosSelecionados,
-        q: debouncedSearch || undefined,
-      });
-      if (
-        !ssrListConsumedRef.current &&
-        initialPageData &&
-        ssrListQueryKey === currentListKey
-      ) {
-        ssrListConsumedRef.current = true;
-        return;
-      }
-
-      const hasExistingGroups = gruposPaginaRef.current.length > 0;
-      if (hasExistingGroups) {
-        setIsRefreshing(true);
-      } else {
-        setLoading(true);
-      }
-      setFetchError(null);
-
-      const params = new URLSearchParams();
-      params.set('page', String(pagina));
-      bancasSelecionadas.forEach((b) => params.append('bancas', b));
-      assuntosSelecionados.forEach((a) => params.append('assuntos', a));
-      if (debouncedSearch) params.set('q', debouncedSearch);
-
-      try {
-        const res = await fetchWithAuth(`/api/vitrine?${params.toString()}`);
-        if (!res.ok) {
-          const body = (await res.json().catch(() => ({}))) as { error?: string };
-          throw new Error(body.error ?? `Erro ${res.status}`);
-        }
-        const data = (await res.json()) as VitrinePageResponse;
-        if (cancelled) return;
-
-        setGruposPagina(data.groups);
-        setTotalAssuntos(data.pagination.totalGroups);
-        setTotalPaginas(data.pagination.totalPages);
-        setPaginaEfetiva(data.pagination.page);
-        setPerPage(data.pagination.perPage);
-
-        if (data.pagination.page !== pagina) {
-          setPagina(data.pagination.page);
-        }
-      } catch (e) {
-        if (cancelled) return;
-        const message = e instanceof Error ? e.message : 'Falha ao carregar vitrine';
-        setFetchError(message);
-        if (gruposPaginaRef.current.length === 0) {
-          setGruposPagina([]);
-          setTotalAssuntos(0);
-          setTotalPaginas(1);
-        }
-      } finally {
-        if (!cancelled) {
-          setLoading(false);
-          setIsRefreshing(false);
-        }
-      }
-    }
-
-    void loadVitrine();
-    return () => {
-      cancelled = true;
-    };
-  }, [
-    pagina,
-    bancasSelecionadas,
-    assuntosSelecionados,
-    debouncedSearch,
-    initialPageData,
-    ssrListQueryKey,
-    retryNonce,
-  ]);
-
   const searchPaginaResetSkipRef = useRef(true);
   useEffect(() => {
     if (searchPaginaResetSkipRef.current) {
@@ -520,18 +453,18 @@ export default function VitrineClient({
     }
   }, [bancasSelecionadas, assuntosSelecionados, searchTerm, pagina, pathname, router, searchParams]);
 
-  /** Filtros + página da vitrine — repassados ao abrir questão para navegação e retorno à mesma página. */
-  const estudarQuery = useMemo(() => {
-    const p = new URLSearchParams();
-    bancasSelecionadas.forEach((b) => p.append('banca', b));
-    assuntosSelecionados.forEach((a) => p.append('assunto', a));
-    if (searchTerm.trim()) p.set('q', searchTerm.trim());
-    if (pagina > 1) p.set('page', String(pagina));
-    const s = p.toString();
-    return s ? `?${s}` : '';
-  }, [bancasSelecionadas, assuntosSelecionados, searchTerm, pagina]);
+  /** Filtros + página da vitrine — repassados ao abrir questão (paridade com prefetch). */
+  const estudarQuery = useMemo(
+    () =>
+      buildVitrineEstudarQuery({
+        bancas: bancasSelecionadas,
+        assuntos: assuntosSelecionados,
+        q: debouncedSearch || undefined,
+        page: paginaEfetiva,
+      }),
+    [bancasSelecionadas, assuntosSelecionados, debouncedSearch, paginaEfetiva],
+  );
 
-  const vitrineListaRef = useRef<HTMLDivElement>(null);
   const paginaScrollSkipRef = useRef(true);
   useEffect(() => {
     if (paginaScrollSkipRef.current) {
@@ -557,6 +490,11 @@ export default function VitrineClient({
 
   const listBusy = loading || isRefreshing;
 
+  useVitrineVisiblePrefetch(vitrineListaRef, {
+    enabled: gruposPagina.length > 0 && !listBusy,
+    observeKey: `p${paginaEfetiva}-${gruposPagina.length}`,
+  });
+
   const pageSectionDescription = fetchError
     ? fetchError
     : totalAssuntos > 0 && totalPaginas > 1
@@ -572,10 +510,6 @@ export default function VitrineClient({
 
   const handleRetryLoad = useCallback(() => {
     setSsrErrorDismissed(true);
-    setFetchError(null);
-    if (gruposPaginaRef.current.length === 0) {
-      setLoading(true);
-    }
     setRetryNonce((n) => n + 1);
     router.refresh();
   }, [router]);
@@ -1291,6 +1225,7 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
     <motion.div
       layout
       variants={index < 8 ? itemVariants : itemGroupVariants}
+      {...{ [VITRINE_PREFETCH_DATA_ATTR]: `${firstSlug}${estudarQuery}` }}
       className={cn(
         'relative flex flex-col overflow-hidden rounded-3xl border bg-slate-900/40 backdrop-blur-sm transition-all hover:bg-slate-900/60',
         todas
@@ -1374,7 +1309,9 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
                 </NeonBadge>
               )}
               <Button asChild variant="outline" size="sm" className="ml-auto rounded-xl border-white/15 bg-white/[0.06] text-slate-200 hover:bg-white/[0.12] hover:border-white/25 hover:text-white">
-                <Link href={`/estudar/${firstSlug}${estudarQuery}`}>Entrar no assunto</Link>
+                <VitrineQuestaoLink slug={firstSlug} estudarQuery={estudarQuery}>
+                  Entrar no assunto
+                </VitrineQuestaoLink>
               </Button>
             </div>
 
@@ -1416,9 +1353,10 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
                     {questoes.map((q) => {
                       const estudada = q.status === 'estudada';
                       return (
-                        <Link
+                        <VitrineQuestaoLink
                           key={q.slug}
-                          href={`/estudar/${q.slug}${estudarQuery}`}
+                          slug={q.slug}
+                          estudarQuery={estudarQuery}
                           className={cn(
                             'group flex min-h-[44px] items-center gap-3 rounded-xl border px-3 py-2.5 transition-all',
                             estudada
@@ -1448,7 +1386,7 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
                             size={12}
                             className="shrink-0 text-slate-600 opacity-40 transition-opacity group-hover:opacity-80"
                           />
-                        </Link>
+                        </VitrineQuestaoLink>
                       );
                     })}
                   </div>

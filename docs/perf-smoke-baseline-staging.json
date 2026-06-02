@@ -10,7 +10,8 @@
     "api_simulado_responder_unauth": { "p95Ms": 500 },
     "simulado_session_50": { "maxBytes": 80000 },
     "simulado_questao_slim": { "maxBytes": 5000 },
-    "simulado_responder_patch": { "maxBytes": 4000 }
+    "simulado_responder_patch": { "maxBytes": 4000 },
+    "estudar_questao_core": { "maxBytes": 80000 }
   },
   "synthetic_10k_pipeline": {
     "p95Ms": 1400

@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const { slug, from, caderno_id, bancas, assuntos, q } = parsed.data;
+    const { slug, layers, from, caderno_id, bancas, assuntos, q } = parsed.data;
 
     const auth = await getUserAndClientFromBearer(request);
     if (!auth) {
@@ -42,6 +42,7 @@ export async function GET(request: NextRequest) {
     const buildStartedAt = Date.now();
     const result = await buildEstudarQuestaoPlayerPayload({
       slug,
+      layers,
       userId: auth.user.id,
       isAdmin: isAdminSessionEmail(auth.user.email ?? null),
       searchParams: {

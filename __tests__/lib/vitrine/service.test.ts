@@ -2,6 +2,7 @@ jest.mock('@/lib/cache', () => ({
   getModulosEstudoVitrineForUserCached: jest.fn(),
   getHistoricoQuestoesForSlugsCached: jest.fn(),
   getAccessibleModulosForNavCached: jest.fn(),
+  getModulosEstudoCached: jest.fn(),
 }));
 
 jest.mock('@/lib/vitrine/facets', () => ({
@@ -21,6 +22,7 @@ import {
   getAccessibleModulosForNavCached,
   getModulosEstudoVitrineForUserCached,
   getHistoricoQuestoesForSlugsCached,
+  getModulosEstudoCached,
 } from '@/lib/cache';
 import { fetchAccessibleModulosForNav } from '@/lib/concursos/entitlements';
 import { getVitrineFacets } from '@/lib/vitrine/facets';
@@ -34,6 +36,7 @@ const fetchNavModulosCached = getAccessibleModulosForNavCached as jest.Mock;
 const fetchNavModulos = fetchAccessibleModulosForNav as jest.Mock;
 const fetchRpcPage = fetchVitrinePageFromRpc as jest.Mock;
 const fetchFacets = getVitrineFacets as jest.Mock;
+const getModulosCatalog = getModulosEstudoCached as jest.Mock;
 
 describe('getVitrinePage', () => {
   beforeEach(() => {
@@ -219,23 +222,6 @@ describe('getVitrinePage', () => {
     expect(result.facets).toEqual({ bancas: ['FGV'], assuntos: ['A'] });
   });
 
-  it('RPC vazio sem filtros não aciona pipeline JS', async () => {
-    fetchRpcPage.mockResolvedValue({
-      groups: [],
-      pagination: { page: 1, perPage: 12, totalGroups: 0, totalPages: 1 },
-      totalModulosFiltrados: 0,
-      facets: { bancas: ['CESPE'], assuntos: ['Urgências'] },
-    });
-
-    const result = await getVitrinePage({ userId: 'user-1', page: 1 });
-
-    expect(getModulos).not.toHaveBeenCalled();
-    expect(getHistorico).not.toHaveBeenCalled();
-    expect(fetchFacets).not.toHaveBeenCalled();
-    expect(result.groups).toHaveLength(0);
-    expect(result.facets).toEqual({ bancas: ['CESPE'], assuntos: ['Urgências'] });
-  });
-
   it('limita questoes por grupo no fallback JS e preserva totalQuestoes agregado', async () => {
     const totalNoAssunto = SCALE_LIMITS.QUESTOES_POR_ASSUNTO + 5;
     fetchNavModulosCached.mockResolvedValue(
@@ -259,5 +245,65 @@ describe('getVitrinePage', () => {
     expect(result.groups).toHaveLength(1);
     expect(result.groups[0].totalQuestoes).toBe(totalNoAssunto);
     expect(result.groups[0].questoes).toHaveLength(SCALE_LIMITS.QUESTOES_POR_ASSUNTO);
+  });
+
+  it('RPC vazio sem filtros não aciona pipeline JS', async () => {
+    fetchRpcPage.mockResolvedValue({
+      groups: [],
+      pagination: { page: 1, perPage: 12, totalGroups: 0, totalPages: 1 },
+      totalModulosFiltrados: 0,
+      facets: { bancas: ['CESPE'], assuntos: ['Urgências'] },
+    });
+
+    const result = await getVitrinePage({ userId: 'user-1', page: 1 });
+
+    expect(getModulos).not.toHaveBeenCalled();
+    expect(getHistorico).not.toHaveBeenCalled();
+    expect(fetchFacets).not.toHaveBeenCalled();
+    expect(result.groups).toHaveLength(0);
+    expect(result.facets).toEqual({ bancas: ['CESPE'], assuntos: ['Urgências'] });
+  });
+
+  it('admin com filtro usa nav cached em fallback JS (não catálogo inteiro)', async () => {
+    fetchRpcPage.mockRejectedValue(new Error('RPC indisponível'));
+    fetchNavModulosCached.mockResolvedValue([
+      {
+        id: '1',
+        modulo_slug: 's1',
+        modulo_nome: 'T',
+        titulo_aula: 'Assunto X',
+        banca: 'FGV',
+        created_at: '2024-01-01',
+        avant_codigo: null,
+      },
+    ]);
+
+    await getVitrinePage({
+      userId: 'admin-u',
+      page: 1,
+      filters: { banca: 'FGV' },
+      isAdmin: true,
+    });
+
+    expect(fetchNavModulosCached).toHaveBeenCalledWith('admin-u', { banca: 'FGV' });
+    expect(getModulosCatalog).not.toHaveBeenCalled();
+  });
+
+  it('admin tenta RPC antes do fallback JS', async () => {
+    fetchRpcPage.mockResolvedValue({
+      groups: [],
+      pagination: { page: 1, perPage: 12, totalGroups: 0, totalPages: 1 },
+      totalModulosFiltrados: 0,
+      facets: { bancas: ['FGV'], assuntos: [] },
+    });
+
+    await getVitrinePage({ userId: 'admin-u', page: 1, isAdmin: true });
+
+    expect(fetchRpcPage).toHaveBeenCalledWith({
+      userId: 'admin-u',
+      page: 1,
+      filters: {},
+    });
+    expect(getModulosCatalog).not.toHaveBeenCalled();
   });
 });

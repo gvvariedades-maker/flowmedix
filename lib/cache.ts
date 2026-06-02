@@ -17,6 +17,69 @@ import { withPostgrestReadRetry } from './supabaseReadRetry';
 import type { Concurso } from '@/types/database';
 import type { VitrinePageResponse } from '@/lib/vitrine/types';
 import { CATALOG_STATS_RPC, SCALE_LIMITS } from '@/lib/scale/constants';
+import { normalizeSearchForCacheKey } from '@/lib/estudar/navigation';
+import {
+  ESTUDAR_QUESTAO_LAYERS_DEFAULT,
+  type EstudarQuestaoLayers,
+} from '@/lib/estudar/questaoLayers';
+import {
+  estudarPayloadSearchContextKey,
+  type EstudarSearchParams,
+} from '@/lib/estudar/parseEstudarSearchParams';
+import type { EstudarQuestaoBuildResult } from '@/lib/estudar/questaoPlayerPayload';
+import {
+  getVitrineFacetsFilterTag,
+  getVitrineFacetsFiltersHash,
+  getVitrineFacetsUserFilterTag,
+  getVitrineFacetsUserTag,
+  getVitrinePageFilterTag,
+  getVitrinePageFiltersHash,
+  getVitrinePageUserFilterTag,
+  getVitrinePageUserTag,
+  vitrineFacetsCacheKey,
+  vitrinePageCacheKey,
+  createVitrineFilterHash,
+  normalizeVitrineArrayFilter,
+  normalizeVitrineTextFilter,
+  type VitrineFacetsCacheFilters,
+  type VitrinePageCacheFilters,
+} from '@/lib/cache/vitrineTags';
+
+import {
+  CACHE_REVALIDATE_IMMEDIATE,
+  revalidateCache,
+  invalidateModulosCache,
+  invalidateUserModulosCache,
+  invalidateQuestoesCache,
+  invalidateHistoricoCache,
+  invalidateHistoricoUserCache,
+  invalidateVitrinePageCache,
+  invalidateVitrineFacetsCache,
+} from '@/lib/cache/revalidate';
+
+export {
+  CACHE_REVALIDATE_IMMEDIATE,
+  revalidateCache,
+  invalidateModulosCache,
+  invalidateUserModulosCache,
+  invalidateQuestoesCache,
+  invalidateHistoricoCache,
+  invalidateHistoricoUserCache,
+  invalidateVitrinePageCache,
+  invalidateVitrineFacetsCache,
+} from '@/lib/cache/revalidate';
+
+export type { VitrineFacetsCacheFilters, VitrinePageCacheFilters, EstudarSearchParams };
+export {
+  getVitrineFacetsFilterTag,
+  getVitrineFacetsFiltersHash,
+  getVitrineFacetsUserFilterTag,
+  getVitrineFacetsUserTag,
+  getVitrinePageFilterTag,
+  getVitrinePageFiltersHash,
+  getVitrinePageUserFilterTag,
+  getVitrinePageUserTag,
+} from '@/lib/cache/vitrineTags';
 
 // Cliente Supabase SEM cookies - para uso dentro de unstable_cache.
 // Lazy: evita createClient com URL/key indefinidos no import (ex.: `next build` / CI sem .env).
@@ -286,6 +349,71 @@ export async function getQuestaoBySlugCached(slug: string) {
   )();
 }
 
+function estudarPayloadSearchContextKeyFromParams(searchParams: EstudarSearchParams = {}): string {
+  return estudarPayloadSearchContextKey(searchParams);
+}
+
+export type GetEstudarQuestaoPayloadCachedInput = {
+  slug: string;
+  userId?: string | null;
+  isAdmin?: boolean;
+  searchParams?: EstudarSearchParams;
+  layers?: EstudarQuestaoLayers;
+};
+
+/**
+ * Cache do payload do player em `/estudar/[slug]` (RSC).
+ * TTL 120 s; tags `estudar-questao`, `questao-{slug}`, `user-{id}`.
+ */
+export async function getEstudarQuestaoPayloadCached(
+  input: GetEstudarQuestaoPayloadCachedInput,
+): Promise<EstudarQuestaoBuildResult> {
+  const userKey = input.userId?.trim() || 'anon';
+  const layers = input.layers ?? ESTUDAR_QUESTAO_LAYERS_DEFAULT;
+  const contextKey = estudarPayloadSearchContextKeyFromParams(input.searchParams);
+  const cacheKey = `estudar-questao-payload-${input.slug}-${userKey}-${layers}-${contextKey}`;
+
+  return unstable_cache(
+    async () => {
+      let supabase: Awaited<
+        ReturnType<typeof import('./supabase/server').createServerSupabase>
+      > | undefined;
+
+      if (input.userId) {
+        try {
+          const { createServerSupabase } = await import('./supabase/server');
+          supabase = await createServerSupabase();
+        } catch {
+          trackCacheMiss(cacheKey);
+          throw new DataServiceUnavailableError(
+            'Configuração incompleta: SUPABASE_SERVICE_ROLE_KEY ausente no servidor.',
+          );
+        }
+      }
+
+      trackUnstableCacheFetch(cacheKey);
+      const { buildEstudarQuestaoPlayerPayload } = await import('./estudar/questaoPlayerPayload');
+      return buildEstudarQuestaoPlayerPayload({
+        slug: input.slug,
+        userId: input.userId,
+        isAdmin: input.isAdmin,
+        searchParams: input.searchParams,
+        layers,
+        supabase,
+      });
+    },
+    [cacheKey],
+    {
+      revalidate: CACHE_CONFIG.USER.revalidate,
+      tags: [
+        'estudar-questao',
+        `questao-${input.slug}`,
+        ...(input.userId ? [`user-${input.userId}`] : []),
+      ],
+    },
+  )();
+}
+
 /**
  * Cache para lista de questões por assunto (titulo_aula)
  * Usado para navegação entre questões do mesmo assunto
@@ -541,73 +669,6 @@ export async function getHistoricoQuestoesCached(userId?: string) {
 }
 
 /**
- * Perfil de revalidação imediata (Next.js 16+).
- * Um objeto vazio `{}` não é perfil documentado e pode não expirar o cache corretamente.
- * @see https://nextjs.org/docs/app/api-reference/functions/revalidateTag
- */
-export const CACHE_REVALIDATE_IMMEDIATE = { expire: 0 } as const;
-
-export type VitrinePageCacheFilters = {
-  bancas?: string[];
-  assuntos?: string[];
-  q?: string;
-};
-
-function normalizeVitrineArrayFilter(values?: string[]): string {
-  if (!values?.length) return '';
-  return [...values].map((v) => v.trim()).filter(Boolean).sort().join('\u0001');
-}
-
-const VITRINE_PAGE_USER_TAG_PREFIX = 'vitrine-page-user';
-const VITRINE_PAGE_FILTER_TAG_PREFIX = 'vitrine-page-filter';
-const VITRINE_PAGE_USER_FILTER_TAG_PREFIX = 'vitrine-page-user-filter';
-const VITRINE_FACETS_USER_TAG_PREFIX = 'vitrine-facets-user';
-const VITRINE_FACETS_FILTER_TAG_PREFIX = 'vitrine-facets-filter';
-const VITRINE_FACETS_USER_FILTER_TAG_PREFIX = 'vitrine-facets-user-filter';
-
-function normalizeVitrineTextFilter(value?: string): string {
-  return value?.trim() || '';
-}
-
-function createVitrineFilterHash(parts: readonly string[]): string {
-  return createHash('sha256').update(parts.join('\0')).digest('hex').slice(0, 16);
-}
-
-export function getVitrinePageFiltersHash(filters: VitrinePageCacheFilters = {}): string {
-  return createVitrineFilterHash([
-    normalizeVitrineArrayFilter(filters.bancas),
-    normalizeVitrineArrayFilter(filters.assuntos),
-    normalizeVitrineTextFilter(filters.q),
-  ]);
-}
-
-export function getVitrinePageUserTag(userId: string): string {
-  return `${VITRINE_PAGE_USER_TAG_PREFIX}-${userId}`;
-}
-
-export function getVitrinePageFilterTag(filters: VitrinePageCacheFilters = {}): string {
-  return `${VITRINE_PAGE_FILTER_TAG_PREFIX}-${getVitrinePageFiltersHash(filters)}`;
-}
-
-export function getVitrinePageUserFilterTag(
-  userId: string,
-  filters: VitrinePageCacheFilters = {},
-): string {
-  return `${VITRINE_PAGE_USER_FILTER_TAG_PREFIX}-${userId}-${getVitrinePageFiltersHash(filters)}`;
-}
-
-function vitrinePageCacheKey(
-  userId: string,
-  page: number,
-  filters: VitrinePageCacheFilters,
-): string {
-  const filtersHash = getVitrinePageFiltersHash(filters);
-  const raw = `${userId}\0${page}\0${filtersHash}`;
-  const hash = createHash('sha256').update(raw).digest('hex').slice(0, 16);
-  return `vitrine-page-${hash}`;
-}
-
-/**
  * Página da vitrine com RPC + fallback JS (ver `lib/vitrine/service.ts`).
  * TTL 2 min; invalidar via tags `vitrine-page` e `user-{id}`.
  */
@@ -636,39 +697,9 @@ export async function getVitrinePageCached(
   )();
 }
 
-export type VitrineFacetsCacheFilters = {
-  bancas?: string[];
-};
-
-export function getVitrineFacetsFiltersHash(filters: VitrineFacetsCacheFilters = {}): string {
-  return createVitrineFilterHash([normalizeVitrineArrayFilter(filters.bancas)]);
-}
-
-export function getVitrineFacetsUserTag(userId: string): string {
-  return `${VITRINE_FACETS_USER_TAG_PREFIX}-${userId}`;
-}
-
-export function getVitrineFacetsFilterTag(filters: VitrineFacetsCacheFilters = {}): string {
-  return `${VITRINE_FACETS_FILTER_TAG_PREFIX}-${getVitrineFacetsFiltersHash(filters)}`;
-}
-
-export function getVitrineFacetsUserFilterTag(
-  userId: string,
-  filters: VitrineFacetsCacheFilters = {},
-): string {
-  return `${VITRINE_FACETS_USER_FILTER_TAG_PREFIX}-${userId}-${getVitrineFacetsFiltersHash(filters)}`;
-}
-
-function vitrineFacetsCacheKey(userId: string, filters: VitrineFacetsCacheFilters = {}): string {
-  const filtersHash = getVitrineFacetsFiltersHash(filters);
-  const raw = `${userId}\0${filtersHash}`;
-  const hash = createHash('sha256').update(raw).digest('hex').slice(0, 16);
-  return `vitrine-facets-${hash}`;
-}
-
 /**
  * Facets da vitrine (bancas/assuntos) com RPC + fallback JS.
- * TTL 2 min (alinhado à página); invalidar via tags `vitrine-facets` e `user-{id}`.
+ * TTL 15 min — facets mudam com catálogo, não com paginação da lista.
  */
 export async function getVitrineFacetsCached(
   userId: string,
@@ -688,7 +719,7 @@ export async function getVitrineFacetsCached(
     },
     [cacheKey],
     {
-      ...CACHE_CONFIG.USER,
+      ...CACHE_CONFIG.STATIC,
       tags: ['vitrine-facets', 'user', `user-${userId}`, userTag, filterTag, userFilterTag],
     },
   )();
@@ -826,69 +857,9 @@ export const getCatalogStats = unstable_cache(
 );
 
 /**
- * Função helper para invalidar cache por tag
- * Útil para invalidação via webhook do Supabase
- */
-export async function revalidateCache(tags: string[]) {
-  const { revalidateTag } = await import('next/cache');
-
-  for (const tag of tags) {
-    revalidateTag(tag, CACHE_REVALIDATE_IMMEDIATE);
-    logger.info('Cache invalidated', { tag });
-  }
-}
-
-/**
- * Funções de invalidação específicas
- */
-export const invalidateModulosCache = () =>
-  revalidateCache(['modulos-estudo', 'catalog-stats', 'vitrine-page', 'vitrine-facets']);
-export const invalidateUserModulosCache = (userId: string) =>
-  revalidateCache([
-    'modulos-estudo',
-    'user',
-    `user-${userId}`,
-    getVitrinePageUserTag(userId),
-    getVitrineFacetsUserTag(userId),
-  ]);
-export const invalidateQuestoesCache = () => revalidateCache(['questoes']);
-export const invalidateHistoricoCache = () =>
-  revalidateCache(['historico', 'analytics', 'vitrine-page']);
-export const invalidateHistoricoUserCache = (userId: string) =>
-  revalidateCache([
-    'historico',
-    'analytics',
-    `user-${userId}`,
-    getVitrinePageUserTag(userId),
-    getVitrineFacetsUserTag(userId),
-  ]);
-export const invalidateVitrinePageCache = (
-  userId?: string,
-  filters?: VitrinePageCacheFilters,
-) => {
-  if (!userId) return revalidateCache(['vitrine-page']);
-  const tags = ['vitrine-page', getVitrinePageUserTag(userId)];
-  if (filters) {
-    tags.push(getVitrinePageFilterTag(filters), getVitrinePageUserFilterTag(userId, filters));
-  }
-  return revalidateCache(tags);
-};
-export const invalidateVitrineFacetsCache = (
-  userId?: string,
-  filters?: VitrineFacetsCacheFilters,
-) => {
-  if (!userId) return revalidateCache(['vitrine-facets']);
-  const tags = ['vitrine-facets', getVitrineFacetsUserTag(userId)];
-  if (filters) {
-    tags.push(getVitrineFacetsFilterTag(filters), getVitrineFacetsUserFilterTag(userId, filters));
-  }
-  return revalidateCache(tags);
-};
-
-/**
  * Invalidação completa de cache (usar com cuidado)
  */
-export const invalidateAllCache = () => 
+export const invalidateAllCache = () =>
   revalidateCache(['static', 'semi-static', 'dynamic', 'user']);
 
 const ADMIN_CONCURSOS_LIST_CACHE_ID = 'admin-concursos-list-v1';

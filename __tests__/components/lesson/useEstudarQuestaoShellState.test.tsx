@@ -1,0 +1,79 @@
+import { renderHook } from '@testing-library/react';
+import { useEstudarQuestaoShellState } from '@/components/lesson/useEstudarQuestaoShellState';
+
+const mockUsePathname = jest.fn();
+const mockUseSearchParams = jest.fn();
+const mockUseQuestaoNavigation = jest.fn();
+
+jest.mock('next/navigation', () => ({
+  usePathname: () => mockUsePathname(),
+  useSearchParams: () => mockUseSearchParams(),
+}));
+
+jest.mock('@/components/lesson/questao-navigation-context', () => ({
+  useQuestaoNavigation: () => mockUseQuestaoNavigation(),
+}));
+
+describe('useEstudarQuestaoShellState', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    mockUseSearchParams.mockReturnValue(new URLSearchParams());
+  });
+
+  it('na vitrine não exibe player nem skeleton', () => {
+    mockUsePathname.mockReturnValue('/estudar');
+    mockUseQuestaoNavigation.mockReturnValue({ displayPayload: null });
+
+    const { result } = renderHook(() => useEstudarQuestaoShellState());
+
+    expect(result.current.isQuestaoRoute).toBe(false);
+    expect(result.current.showPlayer).toBe(false);
+    expect(result.current.showSkeleton).toBe(false);
+  });
+
+  it('na rota da questão sem payload exibe skeleton', () => {
+    mockUsePathname.mockReturnValue('/estudar/questao-a');
+    mockUseQuestaoNavigation.mockReturnValue({ displayPayload: null });
+
+    const { result } = renderHook(() => useEstudarQuestaoShellState());
+
+    expect(result.current.showSkeleton).toBe(true);
+    expect(result.current.showPlayer).toBe(false);
+    expect(result.current.displayPayload).toBeNull();
+  });
+
+  it('mantém player montado com isPayloadStale quando slug do payload não casa com a rota', () => {
+    const stalePayload = {
+      moduloSlug: 'questao-a',
+      vitrineQuerySuffix: '?banca=FGV',
+      dados: {},
+    };
+    mockUsePathname.mockReturnValue('/estudar/questao-b');
+    mockUseSearchParams.mockReturnValue(new URLSearchParams('banca=FGV'));
+    mockUseQuestaoNavigation.mockReturnValue({ displayPayload: stalePayload });
+
+    const { result } = renderHook(() => useEstudarQuestaoShellState());
+
+    expect(result.current.showSkeleton).toBe(false);
+    expect(result.current.showPlayer).toBe(true);
+    expect(result.current.isPayloadStale).toBe(true);
+    expect(result.current.displayPayload).toBe(stalePayload);
+  });
+
+  it('exibe player quando chave de cache coincide', () => {
+    const payload = {
+      moduloSlug: 'questao-a',
+      vitrineQuerySuffix: '?banca=FGV&page=2',
+      dados: { meta: { banca: 'FGV' } },
+    };
+    mockUsePathname.mockReturnValue('/estudar/questao-a');
+    mockUseSearchParams.mockReturnValue(new URLSearchParams('banca=FGV&page=2'));
+    mockUseQuestaoNavigation.mockReturnValue({ displayPayload: payload });
+
+    const { result } = renderHook(() => useEstudarQuestaoShellState());
+
+    expect(result.current.showPlayer).toBe(true);
+    expect(result.current.showSkeleton).toBe(false);
+    expect(result.current.displayPayload).toBe(payload);
+  });
+});

@@ -4,8 +4,10 @@ import { resolve, dirname } from 'path';
 import { attachHistoricoStats, filterModulosLikeVitrine } from '@/lib/vitrineFilters';
 import { buildVitrineGroups } from '@/lib/vitrine/buildGroups';
 import { generateSyntheticScaleDataset } from '@/lib/scale/syntheticDataset';
+import { runAllEstudarPayloadScenarios } from '@/lib/estudar/perfSmokeScenarios';
 import { runAllSimuladoPayloadScenarios } from '@/lib/simulado/perfSmokeScenarios';
 import { E2E_SIMULADO_SESSION_ID, E2E_SIMULADO_SLUG } from '@/lib/e2e/constants';
+import { mergeWithVercelProtectionHeaders } from '@/lib/perf/vercelProtection';
 
 type HttpScenario = {
   name: string;
@@ -95,7 +97,7 @@ async function runHttpScenario(
       try {
         const response = await fetch(scenario.url, {
           method: scenario.method ?? 'GET',
-          headers: scenario.headers,
+          headers: mergeWithVercelProtectionHeaders(scenario.headers),
           body: scenario.body,
           cache: 'no-store',
         });
@@ -211,7 +213,10 @@ async function main() {
   }
   results.push(runSyntheticDatasetScenario());
 
-  const payloadResults: PayloadScenarioResult[] = runAllSimuladoPayloadScenarios();
+  const payloadResults: PayloadScenarioResult[] = [
+    ...runAllSimuladoPayloadScenarios(),
+    ...runAllEstudarPayloadScenarios(),
+  ];
 
   const budgetFailures = results.filter((r) => {
     const baselineScenarioBudget = baseline?.scenarios?.[r.name]?.p95Ms;
@@ -243,6 +248,7 @@ async function main() {
   const report = {
     baseUrl,
     skipHttp,
+    vercelProtectionBypass: Boolean(process.env.VERCEL_PROTECTION_BYPASS?.trim()),
     durationMs,
     concurrency,
     budgetMultiplier,

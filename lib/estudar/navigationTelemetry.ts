@@ -97,7 +97,7 @@ export function getPrefetchInFlightAgeMs(cacheKey: string): number | undefined {
   return Math.round(nowMs() - started);
 }
 
-export function recordPrefetchSkipped(cacheKey: string, reason: 'cached' | 'deduped'): void {
+export function recordPrefetchSkipped(cacheKey: string, reason: 'cached' | 'deduped' | 'forbidden'): void {
   session.prefetchSkipped++;
   logEstudarNav('prefetch_skip', { cacheKey, reason });
 }

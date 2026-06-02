@@ -63,7 +63,7 @@ export type ModuloComStats = ModuloEstudoRow & {
   stats: { acertos: number; total: number; percentual: number; priorityScore: number };
 };
 
-/** Anexa stats e prioridade como em `app/(dashboard)/estudar/page.tsx`. */
+/** Anexa stats e prioridade como em `app/(dashboard)/(authenticated)/estudar/page.tsx`. */
 export function attachHistoricoStats(
   modulos: ModuloEstudoRow[],
   historico: HistoricoQuestaoRow[],

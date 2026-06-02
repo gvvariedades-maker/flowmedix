@@ -1,71 +1,33 @@
 import { createServerSupabase } from '@/lib/supabase/server';
-import { isActiveMatriculaRow, GERAL_CONCURSO_SLUG } from '@/lib/concursos/entitlements';
+import { GERAL_CONCURSO_SLUG } from '@/lib/concursos/catalogSlugs';
+import { isActiveMatriculaRow } from '@/lib/concursos/matriculaActive';
 import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import type { ConcursoMatriculaOrigem } from '@/types/database';
+
+import {
+  FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT,
+  FREEMIUM_SIMULADO_DAILY_LIMIT,
+  getFreemiumDayBounds,
+  type AssertCanAnswerResult,
+  type ProSource,
+} from '@/lib/freemium/constants';
+
+export type { ProSource, AssertCanAnswerResult, FreemiumDayBounds } from '@/lib/freemium/constants';
+export {
+  FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT,
+  FREEMIUM_SIMULADO_DAILY_LIMIT,
+  FREEMIUM_PLAN_LIMITS_COMPACT,
+  FREEMIUM_PLAN_LIMITS_DESCRIPTION,
+  getFreemiumDayBounds,
+  toFreemiumTimezoneYmd,
+} from '@/lib/freemium/constants';
 
 export type GeralMatriculaSnapshot = {
   origem: ConcursoMatriculaOrigem;
   status: string | null;
   expires_at: string | null;
 };
-
-export type ProSource = 'stripe' | 'invite' | null;
-
-/** Offset fixo UTC−3 (horário de Brasília, sem DST). */
-const FREEMIUM_TZ_OFFSET_MS = 3 * 60 * 60 * 1000;
-
-/** Estudo reverso (registrar-tentativa): 1 questão nova por dia no plano gratuito. */
-export const FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT = 1;
-
-/** Simulado: questões respondidas por dia no plano gratuito. */
-export const FREEMIUM_SIMULADO_DAILY_LIMIT = 5;
-
-/** Badge / sidebar: limites diários do tier gratuito (curto; ER = estudo reverso). */
-export const FREEMIUM_PLAN_LIMITS_COMPACT = `${FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT} questão ER + ${FREEMIUM_SIMULADO_DAILY_LIMIT} questões simulado grátis/dia`;
-
-/** Frase completa para FAQ, assinatura, paywall e telas de configuração. */
-export const FREEMIUM_PLAN_LIMITS_DESCRIPTION = `${FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT} questão de estudo reverso e ${FREEMIUM_SIMULADO_DAILY_LIMIT} questões de simulado grátis por dia`;
-
-export type AssertCanAnswerResult =
-  | { allowed: true }
-  | { allowed: false; resetEm: string };
-
-export interface FreemiumDayBounds {
-  /** Início do dia civil (meia-noite UTC−3), instante UTC. */
-  start: Date;
-  /** Fim exclusivo do dia civil (= próxima meia-noite UTC−3). */
-  end: Date;
-  /** Próxima meia-noite UTC−3 — quando o limite diário free é liberado. */
-  resetEm: Date;
-}
-
-/**
- * Limites do “dia” freemium no calendário UTC−3 (Brasília).
- * `resetEm` é a próxima meia-noite nesse fuso.
- */
-export function getFreemiumDayBounds(now: Date = new Date()): FreemiumDayBounds {
-  const localMs = now.getTime() - FREEMIUM_TZ_OFFSET_MS;
-  const local = new Date(localMs);
-  const y = local.getUTCFullYear();
-  const m = local.getUTCMonth();
-  const d = local.getUTCDate();
-
-  const start = new Date(Date.UTC(y, m, d) + FREEMIUM_TZ_OFFSET_MS);
-  const resetEm = new Date(Date.UTC(y, m, d + 1) + FREEMIUM_TZ_OFFSET_MS);
-
-  return { start, end: resetEm, resetEm };
-}
-
-/** Data civil YYYY-MM-DD no fuso freemium (UTC−3 / Brasília). */
-export function toFreemiumTimezoneYmd(instant: Date = new Date()): string {
-  const localMs = instant.getTime() - FREEMIUM_TZ_OFFSET_MS;
-  const local = new Date(localMs);
-  const y = local.getUTCFullYear();
-  const mo = local.getUTCMonth() + 1;
-  const d = local.getUTCDate();
-  return `${y}-${String(mo).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-}
 
 /** Admin e contas com acesso ilimitado não entram no limite de 1 questão/dia. */
 export function isFreemiumUnlimitedEmail(email: string | null | undefined): boolean {

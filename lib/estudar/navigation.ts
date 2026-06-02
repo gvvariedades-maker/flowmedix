@@ -2,10 +2,25 @@
  * Utilitários de URL e chave de cache para navegação em /estudar/[slug].
  */
 
+import type { EstudarQuestaoLayers } from '@/lib/estudar/questaoLayers';
+
+export type BuildEstudarQuestaoApiUrlOptions = {
+  /** Prefetch client usa `core` (menor); estudo reverso busca `full` sob demanda. */
+  layers?: EstudarQuestaoLayers;
+};
+
 export function buildEstudarHref(slugComQuery: string): string {
   const trimmed = slugComQuery.trim();
   if (!trimmed) return '/estudar';
   return `/estudar/${trimmed}`;
+}
+
+/** Slug da questão em `/estudar/[slug]`; `null` na vitrine (`/estudar` apenas). */
+export function parseEstudarSlugFromPathname(pathname: string): string | null {
+  const segments = pathname.split('/').filter(Boolean);
+  if (segments[0] !== 'estudar' || segments.length < 2) return null;
+  const slug = segments[1]?.trim();
+  return slug || null;
 }
 
 export function parseEstudarSlugComQuery(slugComQuery: string): {
@@ -66,13 +81,22 @@ export function buildEstudarCacheKeyFromHref(href: string): string {
 }
 
 /** Query string para `GET /api/estudar/questao` a partir de `slugComQuery`. */
-export function buildEstudarQuestaoApiSearch(slugComQuery: string): string {
+export function buildEstudarQuestaoApiSearch(
+  slugComQuery: string,
+  options?: BuildEstudarQuestaoApiUrlOptions,
+): string {
   const { slug, search } = parseEstudarSlugComQuery(slugComQuery);
   const params = new URLSearchParams(search);
   params.set('slug', slug);
+  if (options?.layers) {
+    params.set('layers', options.layers);
+  }
   return params.toString();
 }
 
-export function buildEstudarQuestaoApiUrl(slugComQuery: string): string {
-  return `/api/estudar/questao?${buildEstudarQuestaoApiSearch(slugComQuery)}`;
+export function buildEstudarQuestaoApiUrl(
+  slugComQuery: string,
+  options?: BuildEstudarQuestaoApiUrlOptions,
+): string {
+  return `/api/estudar/questao?${buildEstudarQuestaoApiSearch(slugComQuery, options)}`;
 }

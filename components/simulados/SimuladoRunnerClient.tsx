@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import { Loader2, ChevronRight, ClipboardList } from 'lucide-react';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { PaywallModal } from '@/components/freemium/PaywallModal';
-import { FREEMIUM_SIMULADO_DAILY_LIMIT } from '@/lib/freemium';
+import { FREEMIUM_SIMULADO_DAILY_LIMIT } from '@/lib/freemium/constants';
 import {
   answerSimuladoQuestion,
   finalizeSimuladoSession,

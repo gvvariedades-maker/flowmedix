@@ -1,6 +1,12 @@
 import { createServerSupabase } from '@/lib/supabase/server';
 import { logger } from '@/lib/logger';
 import { SCALE_LIMITS } from '@/lib/scale/constants';
+import {
+  CAMPINA_GRANDE_2026_SLUG,
+  GERAL_CONCURSO_SLUG,
+} from '@/lib/concursos/catalogSlugs';
+export { GERAL_CONCURSO_SLUG, CAMPINA_GRANDE_2026_SLUG } from '@/lib/concursos/catalogSlugs';
+export { isActiveMatriculaRow } from '@/lib/concursos/matriculaActive';
 import type {
   Concurso,
   ConcursoMatriculaOrigem,
@@ -9,11 +15,7 @@ import type {
   ConcursoStatus,
   ConcursoTipo,
 } from '@/types/database';
-
-export const GERAL_CONCURSO_SLUG = 'geral';
-
-/** Edital legado no catálogo; filtro de banca IDECAN em vínculos de módulos. */
-export const CAMPINA_GRANDE_2026_SLUG = 'campina-grande-2026';
+import { isActiveMatriculaRow } from '@/lib/concursos/matriculaActive';
 
 function moduloPermitidoNoVinculoConcurso(
   concursoSlug: string,
@@ -113,14 +115,7 @@ function modulosToSlugSet(modulos: ModuloEstudoListRow[]): Set<string> {
   return slugs;
 }
 
-export function isActiveMatriculaRow(matricula: {
-  status?: string | null;
-  expires_at?: string | null;
-}): boolean {
-  if (matricula.status && matricula.status !== 'ativo') return false;
-  if (!matricula.expires_at) return true;
-  return new Date(matricula.expires_at).getTime() > Date.now();
-}
+// isActiveMatriculaRow → lib/concursos/matriculaActive.ts
 
 async function listMatriculaRowsForUser(userId: string): Promise<ConcursoMatriculaListRow[]> {
   const supabase = await createServerSupabase();

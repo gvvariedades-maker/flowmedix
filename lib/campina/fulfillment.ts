@@ -1,10 +1,10 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { CAMPINA_GRANDE_PRODUTO_ID } from '@/lib/campina/constants';
+import { CAMPINA_GRANDE_2026_SLUG } from '@/lib/concursos/catalogSlugs';
 import {
-  CAMPINA_GRANDE_2026_SLUG,
   getConcursoBySlug,
 } from '@/lib/concursos/entitlements';
-import { invalidateUserModulosCache } from '@/lib/cache';
+import { invalidateUserModulosCache } from '@/lib/cache/revalidate';
 import { logger } from '@/lib/logger';
 
 /**

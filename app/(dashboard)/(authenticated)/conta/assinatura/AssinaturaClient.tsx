@@ -1,8 +1,8 @@
 'use client';
 
 import { ArrowRight, CreditCard, Loader2, Sparkles, Zap } from 'lucide-react';
-import type { ProSource } from '@/lib/freemium';
-import { FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium';
+import type { ProSource } from '@/lib/freemium/constants';
+import { FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium/constants';
 import { useProBillingPortal } from '@/components/pro/useProBillingPortal';
 import { useProCheckout } from '@/components/pro/useProCheckout';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';

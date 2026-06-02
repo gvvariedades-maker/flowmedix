@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { FREEMIUM_PLAN_LIMITS_COMPACT } from '@/lib/freemium';
+import { FREEMIUM_PLAN_LIMITS_COMPACT } from '@/lib/freemium/constants';
 import { landingDemoQuestao } from '@/lib/landingDemoQuestao';
 
 const AvantLessonPlayer = dynamic(() => import('@/components/lesson/AvantLessonPlayer'), {

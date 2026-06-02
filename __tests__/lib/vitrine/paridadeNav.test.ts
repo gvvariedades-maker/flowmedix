@@ -193,6 +193,76 @@ describe('paridade vitrine vs player', () => {
 
     expect(vitrineSlugs).toEqual(expected);
   });
+
+  it('RPC (caminho feliz) preserva ordem de slugs do player', async () => {
+    const rpcGroups: VitrineGrupoSubtopico[] = [
+      {
+        titulo_aula: 'Assunto Alpha',
+        modulo_nome: 'Fundamentos',
+        banca: 'FGV',
+        questoes: [
+          {
+            slug: 'fgv-a-1',
+            numero: 1,
+            status: 'estudada',
+            avant_codigo: 100,
+            created_at: '2024-01-01T00:00:00Z',
+          },
+          {
+            slug: 'fgv-a-2',
+            numero: 2,
+            status: 'nao_estudada',
+            avant_codigo: 101,
+            created_at: '2024-01-02T00:00:00Z',
+          },
+        ],
+        acertos: 1,
+        erros: 0,
+        totalResolvidas: 1,
+        totalQuestoes: 2,
+        trabalhadas: 1,
+        percentual: 100,
+        firstSlug: 'fgv-a-1',
+      },
+      {
+        titulo_aula: 'Assunto Gamma',
+        modulo_nome: 'Urgências',
+        banca: 'FGV',
+        questoes: [
+          {
+            slug: 'fgv-c-1',
+            numero: 1,
+            status: 'nao_estudada',
+            avant_codigo: 300,
+            created_at: '2024-01-05T00:00:00Z',
+          },
+        ],
+        acertos: 0,
+        erros: 0,
+        totalResolvidas: 0,
+        totalQuestoes: 1,
+        trabalhadas: 0,
+        percentual: 0,
+        firstSlug: 'fgv-c-1',
+      },
+    ];
+
+    fetchRpcPage.mockResolvedValue({
+      groups: rpcGroups,
+      pagination: { page: 1, perPage: 12, totalGroups: 2, totalPages: 1 },
+      totalModulosFiltrados: 3,
+      facets: { bancas: ['FGV'], assuntos: ['Assunto Alpha', 'Assunto Gamma'] },
+    });
+
+    const expected = expectedSlugList(FIXTURE_MODULOS, FIXTURE_HISTORICO, { banca: 'FGV' });
+    const vitrineSlugs = slugsFromGroups(
+      (await getVitrinePage({ userId: 'user-rpc', page: 1, filters: { banca: 'FGV' } })).groups,
+    );
+
+    expect(fetchRpcPage).toHaveBeenCalled();
+    expect(getModulos).not.toHaveBeenCalled();
+    expect(vitrineSlugs).toEqual(expected);
+  });
 });
 
 describe('paginação vitrine', () => {

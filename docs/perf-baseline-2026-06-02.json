@@ -1,0 +1,83 @@
+{
+  "captured_at": "2026-06-02T17:55:06.201Z",
+  "git_commit": "dcc1987",
+  "environment": "local",
+  "perf_target": "local",
+  "base_url": "http://localhost:3000",
+  "base_url_source": "NEXT_PUBLIC_APP_URL",
+  "env_files": [
+    ".env.local"
+  ],
+  "vercel_protection_bypass": false,
+  "server_reachable": false,
+  "user": {
+    "id": "95c2b942-a165-4c56-8529-b48923ec0cb3",
+    "email_domain": "gmail.com",
+    "is_admin": false,
+    "source": "matricula"
+  },
+  "scale_health": {
+    "metrics": {
+      "generated_at": "2026-06-02T17:55:15Z",
+      "modulos_estudo_count": 5178,
+      "historico_questoes_count": 376,
+      "json_bytes": {
+        "avg": 2041,
+        "max": 3410,
+        "p95": 2500,
+        "total": 10569216
+      },
+      "questions_over_100kb": 0,
+      "assuntos_over_200_count": 6,
+      "users_historico_over_5000": 0,
+      "reverse_slides": {
+        "avg": 4,
+        "not_four_slides": 0
+      }
+    },
+    "alerts": [
+      {
+        "level": "warn",
+        "code": "ASSUNTOS_OVER_NAV_LIMIT",
+        "message": "6 assunto(s) com mais de 200 questões — navegação no player corta em 200.",
+        "value": 6,
+        "limit": 200
+      }
+    ],
+    "rpcAvailable": true
+  },
+  "server_side": {
+    "vitrine_page_1": {
+      "samples": 20,
+      "minMs": 394,
+      "maxMs": 917,
+      "p50Ms": 812,
+      "p95Ms": 899
+    },
+    "vitrine_strategy": {
+      "rpc": {
+        "count": 20,
+        "sharePercent": 100,
+        "avgDurationMs": 740.15,
+        "p50DurationMs": 816,
+        "p95DurationMs": 917
+      },
+      "js": {
+        "count": 0,
+        "sharePercent": 0,
+        "avgDurationMs": 0,
+        "p50DurationMs": 0,
+        "p95DurationMs": 0
+      },
+      "totalRequests": 20
+    },
+    "estudar_questao_build": null,
+    "estudar_questao_payload_gzip_bytes": null
+  },
+  "http_authenticated": null,
+  "browser_navigation_telemetry": null,
+  "notes": [
+    "P95 HTTP = latência total fetch (rede local + servidor). Preferir mesma máquina que o dev server.",
+    "Antes da fase 2, vitrine não usa VitrineQuestaoLink — telemetria navigateHit pode permanecer em 0."
+  ]
+}

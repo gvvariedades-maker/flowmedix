@@ -795,6 +795,7 @@ export const VitrineQuerySchema = z
 export const EstudarQuestaoQuerySchema = z
   .object({
     slug: z.string().trim().min(1).max(200),
+    layers: z.enum(['core', 'full']).default('full'),
     from: z.enum(['plano', 'caderno']).optional(),
     caderno_id: z.string().uuid().optional(),
     context: z.enum(['simulado']).optional(),

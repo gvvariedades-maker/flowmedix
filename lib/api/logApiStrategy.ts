@@ -21,9 +21,16 @@ export function logApiStrategy(params: LogApiStrategyParams): void {
     }
   }
 
-  logger.info(`${event} strategy`, {
+  const payload = {
     strategy,
     durationMs,
     ...context,
-  });
+  };
+
+  if (event === 'vitrine_page' && strategy === 'js') {
+    logger.warn(`${event} strategy: pipeline JS (investigar RPC/entitlements)`, payload);
+    return;
+  }
+
+  logger.info(`${event} strategy`, payload);
 }

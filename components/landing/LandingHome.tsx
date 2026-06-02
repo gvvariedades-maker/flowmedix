@@ -29,7 +29,7 @@ import {
   X,
 } from 'lucide-react';
 import { AvantLogo } from '@/components/brand/AvantLogo';
-import { FREEMIUM_PLAN_LIMITS_COMPACT, FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium';
+import { FREEMIUM_PLAN_LIMITS_COMPACT, FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium/constants';
 import { DemoInterativa } from '@/components/landing/DemoInterativa';
 import { SlideStylePreviews } from '@/components/landing/SlideStylePreviews';
 import { NeuroSlideCarousel } from '@/components/marketing/NeuroSlideCarousel';

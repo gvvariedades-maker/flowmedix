@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { DM_Sans, Sora } from 'next/font/google';
 import { PublicDarkSiteHeader } from '@/components/layout/PublicDarkSiteHeader';
-import { FREEMIUM_PLAN_LIMITS_COMPACT, FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium';
+import { FREEMIUM_PLAN_LIMITS_COMPACT, FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium/constants';
 
 const sora = Sora({
   subsets: ['latin'],

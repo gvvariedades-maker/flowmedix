@@ -4,10 +4,22 @@ import {
   buildEstudarHref,
   buildEstudarQuestaoApiUrl,
   normalizeSearchForCacheKey,
+  parseEstudarSlugFromPathname,
   parseEstudarSlugComQuery,
 } from '@/lib/estudar/navigation';
 
 describe('lib/estudar/navigation', () => {
+  describe('parseEstudarSlugFromPathname', () => {
+    it('retorna slug em /estudar/[slug]', () => {
+      expect(parseEstudarSlugFromPathname('/estudar/minha-questao')).toBe('minha-questao');
+    });
+
+    it('retorna null na vitrine', () => {
+      expect(parseEstudarSlugFromPathname('/estudar')).toBeNull();
+      expect(parseEstudarSlugFromPathname('/estudar/')).toBeNull();
+    });
+  });
+
   describe('buildEstudarHref', () => {
     it('monta href com slug simples', () => {
       expect(buildEstudarHref('questao-a')).toBe('/estudar/questao-a');
@@ -91,6 +103,13 @@ describe('lib/estudar/navigation', () => {
       const params = new URLSearchParams(url.split('?')[1]);
       expect(params.get('slug')).toBe('minha-q');
       expect(params.get('from')).toBe('plano');
+    });
+
+    it('aceita layers=core para prefetch', () => {
+      const url = buildEstudarQuestaoApiUrl('minha-q', { layers: 'core' });
+      const params = new URLSearchParams(url.split('?')[1]);
+      expect(params.get('slug')).toBe('minha-q');
+      expect(params.get('layers')).toBe('core');
     });
   });
 });

@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useState } from 'react';
-import { GERAL_CONCURSO_SLUG } from '@/lib/concursos/entitlements';
+import { GERAL_CONCURSO_SLUG } from '@/lib/concursos/catalogSlugs';
 
 export function useProCheckout() {
   const [loading, setLoading] = useState(false);

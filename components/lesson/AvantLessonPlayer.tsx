@@ -14,7 +14,16 @@ import { useState, useEffect, useMemo, useRef, useLayoutEffect, useCallback } fr
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import type { Target, Transition } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { buildEstudarHref } from '@/lib/estudar/navigation';
+import {
+  buildEstudarCacheKeyFromSlugComQuery,
+  buildEstudarHref,
+  buildEstudarQuestaoApiUrl,
+} from '@/lib/estudar/navigation';
+import {
+  buildEstudarSlugComQueryFromPlayerProps,
+  lessonDataHasSlides,
+  mergeSlidesIntoLessonData,
+} from '@/lib/estudar/questaoLayers';
 import { useQuestaoNavigationOptional } from '@/components/lesson/questao-navigation-context';
 import NeuroSlide from '@/components/slides/NeuroSlide';
 import {
@@ -123,7 +132,7 @@ const SLIDE_KIND_COLOR: Record<string, string> = {
 };
 
 export default function AvantLessonPlayer({
-  dados, 
+  dados: dadosIniciais,
   mode = 'live', 
   proximaSlug, 
   anteriorSlug,
@@ -261,6 +270,14 @@ export default function AvantLessonPlayer({
   const [confirmandoResposta, setConfirmandoResposta] = useState(false);
   const [tentativaErro, setTentativaErro] = useState<string | null>(null);
   const [gabarito, setGabarito] = useState<GabaritoTentativa | null>(null);
+  const [dadosComSlides, setDadosComSlides] = useState<LessonData | null>(null);
+  const slidesLayerFetchRef = useRef(false);
+  const activeDados = dadosComSlides ?? dadosIniciais;
+
+  useEffect(() => {
+    setDadosComSlides(null);
+    slidesLayerFetchRef.current = false;
+  }, [dadosIniciais, moduloSlug]);
 
   // Reset ao mudar de questão
   useEffect(() => {
@@ -279,7 +296,7 @@ export default function AvantLessonPlayer({
     setTentativaErro(null);
     setGabarito(null);
     questionBodyScrollRef.current?.scrollTo({ top: 0, behavior: 'auto' });
-  }, [dados, moduloSlug, questoesDoAssunto]);
+  }, [dadosIniciais, moduloSlug, questoesDoAssunto]);
 
   const navegacaoBloqueada = confirmandoResposta || marcandoConclusao;
 
@@ -345,29 +362,89 @@ export default function AvantLessonPlayer({
     }
   }, [etapa, slideAtual]);
 
+  /** L1: prefetch `layers=core` não traz slides — busca `full` ao entrar no estudo reverso. */
+  useEffect(() => {
+    if (etapa !== 'estudo' || mode !== 'live' || lessonDataHasSlides(activeDados)) return;
+    if (!moduloSlug || slidesLayerFetchRef.current) return;
+
+    const slugComQuery = buildEstudarSlugComQueryFromPlayerProps({
+      moduloSlug,
+      fromPlano,
+      fromCaderno,
+      vitrineQuerySuffix,
+    });
+    if (!slugComQuery) return;
+
+    slidesLayerFetchRef.current = true;
+    let cancelled = false;
+
+    void (async () => {
+      try {
+        const res = await fetchWithAuth(
+          buildEstudarQuestaoApiUrl(slugComQuery, { layers: 'full' }),
+        );
+        if (!res.ok || cancelled) {
+          if (!cancelled) slidesLayerFetchRef.current = false;
+          return;
+        }
+        const payload = (await res.json()) as { dados?: LessonData };
+        const fullDados = payload.dados;
+        if (!fullDados || cancelled || !lessonDataHasSlides(fullDados)) {
+          if (!cancelled) slidesLayerFetchRef.current = false;
+          return;
+        }
+        const merged = mergeSlidesIntoLessonData(activeDados, fullDados);
+        setDadosComSlides(merged);
+        if (questaoNav) {
+          const cacheKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
+          const cached = questaoNav.getCachedPayload(cacheKey);
+          if (cached) {
+            questaoNav.cachePayload(cacheKey, { ...cached, dados: merged });
+          }
+        }
+      } catch (error) {
+        slidesLayerFetchRef.current = false;
+        logger.error('Falha ao carregar NeuroSlides (layers=full)', error, { moduloSlug });
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [
+    etapa,
+    mode,
+    moduloSlug,
+    fromPlano,
+    fromCaderno,
+    vitrineQuerySuffix,
+    activeDados,
+    questaoNav,
+  ]);
+
   const examHeaderLine = useMemo(() => {
-    if (!dados?.meta) return '';
-    const raw = dados.meta.header_line?.trim();
+    if (!activeDados?.meta) return '';
+    const raw = activeDados.meta.header_line?.trim();
     if (raw) return raw;
-    return buildDerivedQuestionHeaderLine(dados.meta);
-  }, [dados?.meta]);
+    return buildDerivedQuestionHeaderLine(activeDados.meta);
+  }, [activeDados.meta]);
 
   const subjectLine = useMemo(() => {
-    if (!dados?.meta) return null;
-    return buildQuestionSubjectLine(dados.meta);
-  }, [dados?.meta]);
+    if (!activeDados?.meta) return null;
+    return buildQuestionSubjectLine(activeDados.meta);
+  }, [activeDados.meta]);
 
   const instructionParaExibicao = useMemo(() => {
-    const raw = dados?.question_data?.instruction;
+    const raw = activeDados?.question_data?.instruction;
     if (!raw) return '';
     return stripLeadingQuestionEnumeration(raw);
-  }, [dados?.question_data?.instruction]);
+  }, [activeDados.question_data?.instruction]);
 
   const prefersReducedMotion = useReducedMotion() ?? false;
 
-  if (!dados || !dados.question_data) return null;
+  if (!activeDados?.question_data) return null;
 
-  const certoErradoLayout = isCertoErradoQuestion(dados.question_data.options);
+  const certoErradoLayout = isCertoErradoQuestion(activeDados.question_data.options);
 
   // ============================================================================
   // LÓGICA DE BANCO (Supabase)
@@ -396,8 +473,8 @@ export default function AvantLessonPlayer({
 
   const buildPreviewGabarito = (opcaoId: string): GabaritoTentativa => {
     const opcaoCorretaId =
-      dados.question_data.options.find((option) => option.is_correct)?.id ?? '';
-    const opcaoEscolhida = dados.question_data.options.find((option) => option.id === opcaoId);
+      activeDados.question_data.options.find((option) => option.is_correct)?.id ?? '';
+    const opcaoEscolhida = activeDados.question_data.options.find((option) => option.id === opcaoId);
     return {
       acertou: opcaoEscolhida?.is_correct ?? false,
       opcaoCorretaId,
@@ -411,11 +488,11 @@ export default function AvantLessonPlayer({
 
     try {
       const response = await postWithSessionRetry('/api/registrar-tentativa', {
-        modulo_slug: moduloSlug || dados.modulo_slug || 'slug-legacy',
+        modulo_slug: moduloSlug || activeDados.modulo_slug || 'slug-legacy',
         opcao_id: opcaoId,
-        banca: dados.meta?.banca || 'DESCONHECIDA',
-        topico: dados.meta?.topico || 'Geral',
-        subtopico: dados.meta?.subtopico || dados.meta?.topico || 'Geral',
+        banca: activeDados.meta?.banca || 'DESCONHECIDA',
+        topico: activeDados.meta?.topico || 'Geral',
+        subtopico: activeDados.meta?.subtopico || activeDados.meta?.topico || 'Geral',
       });
 
       if (response.status === 403) {
@@ -509,7 +586,7 @@ export default function AvantLessonPlayer({
     setMarcandoConclusao(true);
     setConclusaoErro(null);
     try {
-      const slug = moduloSlug || dados.modulo_slug || '';
+      const slug = moduloSlug || activeDados.modulo_slug || '';
       if (!slug) {
         setConclusaoErro('Não foi possível identificar a questão. Recarregue a página.');
         return;
@@ -571,14 +648,14 @@ export default function AvantLessonPlayer({
   // ============================================================================
   // RENDER HELPERS
   // ============================================================================
-  const questionSubject = dados.meta.topico || dados.meta.subtopico || 'Geral';
-  const subtopicLabel = dados.meta.subtopico
-    ? `Subtópico: ${dados.meta.subtopico}`
-    : dados.meta.topico
-      ? `Tópico: ${dados.meta.topico}`
+  const questionSubject = activeDados.meta.topico || activeDados.meta.subtopico || 'Geral';
+  const subtopicLabel = activeDados.meta.subtopico
+    ? `Subtópico: ${activeDados.meta.subtopico}`
+    : activeDados.meta.topico
+      ? `Tópico: ${activeDados.meta.topico}`
       : 'Revisão guiada por estudo reverso';
 
-  const slidesSource = ((dados.reverse_study_slides || (dados as any).study_slides) ?? []) as LessonData['reverse_study_slides'];
+  const slidesSource = ((activeDados.reverse_study_slides || activeDados.study_slides) ?? []) as LessonData['reverse_study_slides'];
   const fallbackSlide: ReverseStudySlide = {
     type: 'golden_rule',
     layout_type: 'golden_rule',
@@ -587,23 +664,23 @@ export default function AvantLessonPlayer({
         title: `Estudo reverso: ${questionSubject}`,
         subtitle: subtopicLabel,
       },
-      main_text: dados.question_data.instruction,
-      footer_rule: dados.question_data.instruction,
+      main_text: activeDados.question_data.instruction,
+      footer_rule: activeDados.question_data.instruction,
     },
     design_system: {
       accent_color: 'cyan',
     },
     subject: questionSubject,
     meta: {
-      topico: dados.meta.topico,
-      subtopico: dados.meta.subtopico,
+      topico: activeDados.meta.topico,
+      subtopico: activeDados.meta.subtopico,
     },
   };
 
   const normalizeStructure = (structure?: ReverseStudySlide['structure']) => {
     if (!structure) return undefined;
     const headerBase = structure.header || { title: '' };
-    const fallbackTitle = dados.question_data.instruction || questionSubject;
+    const fallbackTitle = activeDados.question_data.instruction || questionSubject;
     const fallbackSubtitle = headerBase.subtitle || subtopicLabel;
     return {
       ...structure,
@@ -612,7 +689,7 @@ export default function AvantLessonPlayer({
         title: headerBase.title || fallbackTitle,
         subtitle: headerBase.subtitle || fallbackSubtitle,
       },
-      footer_rule: structure.footer_rule || dados.question_data.instruction || `Revisão de ${questionSubject}`,
+      footer_rule: structure.footer_rule || activeDados.question_data.instruction || `Revisão de ${questionSubject}`,
     };
   };
 
@@ -620,8 +697,8 @@ export default function AvantLessonPlayer({
     ...slide,
     subject: slide.subject || questionSubject,
     meta: {
-      topico: slide.meta?.topico || dados.meta.topico,
-      subtopico: slide.meta?.subtopico || dados.meta.subtopico,
+      topico: slide.meta?.topico || activeDados.meta.topico,
+      subtopico: slide.meta?.subtopico || activeDados.meta.subtopico,
       ...slide.meta,
     },
     structure: normalizeStructure(slide.structure) ?? slide.structure,
@@ -639,13 +716,13 @@ export default function AvantLessonPlayer({
   // Gera hash único e robusto da questão para tema visual único
   // Combina múltiplos fatores para garantir unicidade: instruction + meta + modulo_slug
   const questionHash = [
-    dados.question_data?.instruction || '',
-    dados.meta?.banca || '',
-    dados.meta?.ano || '',
-    dados.meta?.topico || '',
-    dados.meta?.subtopico || '',
-    dados.modulo_slug || '',
-  ].filter(Boolean).join('-') || JSON.stringify(dados).substring(0, 100);
+    activeDados.question_data?.instruction || '',
+    activeDados.meta?.banca || '',
+    activeDados.meta?.ano || '',
+    activeDados.meta?.topico || '',
+    activeDados.meta?.subtopico || '',
+    activeDados.modulo_slug || '',
+  ].filter(Boolean).join('-') || JSON.stringify(activeDados).substring(0, 100);
 
   const questionZoomContentKey = `${moduloSlug ?? questionHash}-${etapa}`;
   const showQuestionZoom = etapa === 'pergunta' || etapa === 'gabarito';
@@ -654,7 +731,7 @@ export default function AvantLessonPlayer({
 
   const opcaoEstaCorreta = (optId: string): boolean => {
     if (isPreviewMode) {
-      return dados.question_data.options.find((option) => option.id === optId)?.is_correct ?? false;
+      return activeDados.question_data.options.find((option) => option.id === optId)?.is_correct ?? false;
     }
     return gabarito?.opcaoCorretaId === optId;
   };
@@ -698,7 +775,7 @@ export default function AvantLessonPlayer({
     showResult: boolean,
   ) => {
     if (showResult) return;
-    const options = dados.question_data.options;
+    const options = activeDados.question_data.options;
     let nextIndex: number | null = null;
     if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
       nextIndex = (index + 1) % options.length;
@@ -750,7 +827,7 @@ export default function AvantLessonPlayer({
           ) : null}
           <ReportErrorDialog
             contextType="lesson"
-            moduloSlug={moduloSlug || dados.modulo_slug}
+            moduloSlug={moduloSlug || activeDados.modulo_slug}
             metadata={{
               etapa,
               slide_atual: slideAtual,
@@ -771,10 +848,10 @@ export default function AvantLessonPlayer({
   const renderQuestionScrollBody = (withZoom: boolean) => {
     const zoomableContent = (
       <>
-        {dados.question_data.text_fragment && (
+        {activeDados.question_data.text_fragment && (
           <div className="px-6 pt-4 pb-2 md:px-8">
             <div className="bg-white/[0.04] border border-[rgba(255,255,255,0.10)] p-4 rounded-lg text-slate-300 text-sm font-serif leading-relaxed italic">
-              <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(dados.question_data.text_fragment) }} />
+              <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(activeDados.question_data.text_fragment) }} />
             </div>
           </div>
         )}
@@ -801,7 +878,7 @@ export default function AvantLessonPlayer({
                 : 'grid gap-1.5 md:gap-2'
             }
           >
-            {dados.question_data.options.map((opt, optionIndex) => {
+            {activeDados.question_data.options.map((opt, optionIndex) => {
               const isSelected = selecionada === opt.id;
               const isCorrect = opcaoEstaCorreta(opt.id);
               const showResult = (etapa === 'gabarito' || etapa === 'estudo') && gabarito !== null;
@@ -1296,7 +1373,7 @@ export default function AvantLessonPlayer({
                         shellContext={{
                           slideIndex: slideAtual,
                           totalSlides,
-                          banca: dados.meta?.banca,
+                          banca: activeDados.meta?.banca,
                         }}
                       />
                     </motion.div>

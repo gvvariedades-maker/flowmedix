@@ -111,6 +111,19 @@ describe('GET /api/estudar/questao', () => {
     expect(mockRecordPerformance).toHaveBeenCalledWith('/api/estudar/questao', 'GET', expect.any(Number), false);
   });
 
+  it('repassa layers=core ao builder', async () => {
+    mockBuildEstudarQuestaoPlayerPayload.mockResolvedValue({
+      status: 'ok',
+      payload: payloadOk,
+    });
+
+    await GET(makeRequest({ slug: SLUG, layers: 'core' }));
+
+    expect(mockBuildEstudarQuestaoPlayerPayload).toHaveBeenCalledWith(
+      expect.objectContaining({ slug: SLUG, layers: 'core' }),
+    );
+  });
+
   it('retorna 200 com payload do player e Cache-Control private', async () => {
     mockBuildEstudarQuestaoPlayerPayload.mockResolvedValue({
       status: 'ok',
@@ -126,6 +139,7 @@ describe('GET /api/estudar/questao', () => {
     expect(response.headers.get('Cache-Control')).toBe('private, no-store');
     expect(mockBuildEstudarQuestaoPlayerPayload).toHaveBeenCalledWith({
       slug: SLUG,
+      layers: 'full',
       userId: USER_ID,
       isAdmin: false,
       searchParams: {

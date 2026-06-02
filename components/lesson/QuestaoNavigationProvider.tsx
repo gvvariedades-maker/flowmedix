@@ -24,8 +24,16 @@ import {
   recordPrefetchSkipped,
   recordPrefetchStart,
 } from '@/lib/estudar/navigationTelemetry';
+import { runEstudarViewTransition } from '@/lib/estudar/viewTransition';
+import { useToast } from '@/lib/toast-context';
 
 const CACHE_MAX_ENTRIES = 20;
+const TOAST_SEM_ACESSO = 'Sem acesso';
+
+type FetchPayloadResult =
+  | { kind: 'ok'; payload: EstudarQuestaoPayload }
+  | { kind: 'forbidden' }
+  | { kind: 'error' };
 
 class LruCache<T> {
   private map = new Map<string, T>();
@@ -57,21 +65,29 @@ class LruCache<T> {
 
 function scheduleRouterPush(router: ReturnType<typeof useRouter>, href: string): void {
   const push = () => router.push(href);
-  if (typeof requestAnimationFrame !== 'undefined') {
-    requestAnimationFrame(push);
-  } else {
-    push();
-  }
+  runEstudarViewTransition(() => {
+    if (typeof requestAnimationFrame !== 'undefined') {
+      requestAnimationFrame(push);
+    } else {
+      push();
+    }
+  });
 }
 
 export function QuestaoNavigationProvider({ children }: { children: ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
+  const { addToast } = useToast();
   const cacheRef = useRef(new LruCache<EstudarQuestaoPayload>(CACHE_MAX_ENTRIES));
+  const forbiddenKeysRef = useRef(new Set<string>());
   const prefetchedRouteRef = useRef(new Set<string>());
-  const inFlightRef = useRef(new Map<string, Promise<EstudarQuestaoPayload | null>>());
+  const inFlightRef = useRef(new Map<string, Promise<FetchPayloadResult>>());
   const navegandoRef = useRef(false);
   const [displayPayload, setDisplayPayload] = useState<EstudarQuestaoPayload | null>(null);
+
+  const notifySemAcesso = useCallback(() => {
+    addToast(TOAST_SEM_ACESSO, 'danger');
+  }, [addToast]);
 
   useEffect(() => {
     navegandoRef.current = false;
@@ -90,12 +106,17 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
   }, []);
 
   const fetchPayloadIntoCache = useCallback(
-    (slugComQuery: string): Promise<EstudarQuestaoPayload | null> => {
+    (slugComQuery: string): Promise<FetchPayloadResult> => {
       const cacheKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
+      if (forbiddenKeysRef.current.has(cacheKey)) {
+        recordPrefetchSkipped(cacheKey, 'forbidden');
+        return Promise.resolve({ kind: 'forbidden' });
+      }
+
       const cached = cacheRef.current.peek(cacheKey);
       if (cached) {
         recordPrefetchSkipped(cacheKey, 'cached');
-        return Promise.resolve(cached);
+        return Promise.resolve({ kind: 'ok', payload: cached });
       }
 
       const existing = inFlightRef.current.get(cacheKey);
@@ -109,24 +130,35 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       const startedAt =
         typeof performance !== 'undefined' ? performance.now() : Date.now();
 
-      const promise = (async (): Promise<EstudarQuestaoPayload | null> => {
+      const promise = (async (): Promise<FetchPayloadResult> => {
         try {
-          const res = await fetchWithAuth(buildEstudarQuestaoApiUrl(slugComQuery));
+          const res = await fetchWithAuth(
+            buildEstudarQuestaoApiUrl(slugComQuery, { layers: 'core' }),
+          );
           const durationMs = Math.round(
             (typeof performance !== 'undefined' ? performance.now() : Date.now()) - startedAt,
           );
+          if (res.status === 403) {
+            forbiddenKeysRef.current.add(cacheKey);
+            recordPrefetchEnd(cacheKey, {
+              ok: false,
+              durationMs,
+              reason: 'http_403',
+            });
+            return { kind: 'forbidden' };
+          }
           if (!res.ok) {
             recordPrefetchEnd(cacheKey, {
               ok: false,
               durationMs,
               reason: `http_${res.status}`,
             });
-            return null;
+            return { kind: 'error' };
           }
           const payload = (await res.json()) as EstudarQuestaoPayload;
           cacheRef.current.set(cacheKey, payload);
           recordPrefetchEnd(cacheKey, { ok: true, durationMs, status: res.status });
-          return payload;
+          return { kind: 'ok', payload };
         } catch (err) {
           const durationMs = Math.round(
             (typeof performance !== 'undefined' ? performance.now() : Date.now()) - startedAt,
@@ -136,7 +168,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
             durationMs,
             reason: err instanceof Error ? err.message : 'network_error',
           });
-          return null;
+          return { kind: 'error' };
         } finally {
           inFlightRef.current.delete(cacheKey);
           clearPrefetchInFlight(cacheKey);
@@ -169,7 +201,10 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     (slugComQuery: string) => {
       prefetchRoute(buildEstudarHref(slugComQuery));
       void warmForwardChain(slugComQuery, PREFETCH_FORWARD_DEPTH, {
-        fetchPayloadIntoCache,
+        fetchPayloadIntoCache: async (slug) => {
+          const result = await fetchPayloadIntoCache(slug);
+          return result.kind === 'ok' ? result.payload : null;
+        },
         prefetchRoute,
         buildHref: buildEstudarHref,
       });
@@ -186,12 +221,30 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       const href = buildEstudarHref(slugComQuery);
       markNavigateStart(cacheKey, slugComQuery);
 
+      const finishWithoutNavigate = () => {
+        navegandoRef.current = false;
+      };
+
       void (async () => {
         try {
+          if (forbiddenKeysRef.current.has(cacheKey)) {
+            notifySemAcesso();
+            finishWithoutNavigate();
+            return;
+          }
+
           let payload = cacheRef.current.peek(cacheKey) ?? null;
           if (!payload) {
             recordNavigateCacheResult(cacheKey, false);
-            payload = await fetchPayloadIntoCache(slugComQuery);
+            const result = await fetchPayloadIntoCache(slugComQuery);
+            if (result.kind === 'forbidden') {
+              notifySemAcesso();
+              finishWithoutNavigate();
+              return;
+            }
+            if (result.kind === 'ok') {
+              payload = result.payload;
+            }
           } else {
             recordNavigateCacheResult(cacheKey, true);
           }
@@ -201,7 +254,10 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
             scheduleRouterPush(router, href);
             if (payload.proximaSlug) {
               void warmForwardChain(payload.proximaSlug, PREFETCH_FORWARD_DEPTH, {
-                fetchPayloadIntoCache,
+                fetchPayloadIntoCache: async (slug) => {
+                  const result = await fetchPayloadIntoCache(slug);
+                  return result.kind === 'ok' ? result.payload : null;
+                },
                 prefetchRoute,
                 buildHref: buildEstudarHref,
               });
@@ -215,7 +271,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
         }
       })();
     },
-    [router, fetchPayloadIntoCache, prefetchRoute],
+    [router, fetchPayloadIntoCache, prefetchRoute, notifySemAcesso],
   );
 
   const value = useMemo<QuestaoNavigationContextValue>(

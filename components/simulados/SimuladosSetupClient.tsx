@@ -32,7 +32,7 @@ import type { RitmoMetaOption } from '@/lib/simulado/provaMeta';
 import { buildDefaultTitulo, formatRitmoMetaLabel, sessionDisplayTitulo } from '@/lib/simulado/provaMeta';
 import {
   FREEMIUM_PLAN_LIMITS_DESCRIPTION,
-} from '@/lib/freemium';
+} from '@/lib/freemium/constants';
 import { PaywallModal } from '@/components/freemium/PaywallModal';
 import { MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM } from '@/lib/layout/mobileBottomNav';
 

@@ -3,12 +3,12 @@
 import { forwardRef, useEffect, useRef, useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Loader2, LockKeyhole, Sparkles, X, Zap } from 'lucide-react';
-import { GERAL_CONCURSO_SLUG } from '@/lib/concursos/entitlements';
+import { GERAL_CONCURSO_SLUG } from '@/lib/concursos/catalogSlugs';
 import {
   FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT,
   FREEMIUM_PLAN_LIMITS_DESCRIPTION,
   FREEMIUM_SIMULADO_DAILY_LIMIT,
-} from '@/lib/freemium';
+} from '@/lib/freemium/constants';
 
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
