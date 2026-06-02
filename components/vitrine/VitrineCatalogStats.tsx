@@ -32,8 +32,7 @@ export default function VitrineCatalogStats({
 
         <div className="relative z-10">
           <p
-            className="font-display text-4xl font-extrabold tabular-nums
-              tracking-tight text-[#00f2ff] sm:text-5xl"
+            className="font-mono text-4xl font-bold tabular-nums tracking-tight text-[#00f2ff] sm:text-5xl"
             style={{ textShadow: '0 0 30px rgba(0,242,255,0.4)' }}
           >
             {formatCatalogCount(totalQuestions)}
@@ -65,8 +64,7 @@ export default function VitrineCatalogStats({
 
         <div className="relative z-10">
           <p
-            className="font-display text-4xl font-extrabold tabular-nums
-              tracking-tight text-[#00ff88] sm:text-5xl"
+            className="font-mono text-4xl font-bold tabular-nums tracking-tight text-[#00ff88] sm:text-5xl"
             style={{ textShadow: '0 0 30px rgba(0,255,136,0.4)' }}
           >
             {formatCatalogCount(totalSlides)}

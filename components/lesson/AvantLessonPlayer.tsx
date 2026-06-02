@@ -714,6 +714,60 @@ export default function AvantLessonPlayer({
     });
   };
 
+  const renderQuestionLiveHeader = (withZoom: boolean) => {
+    if (mode !== 'live') return null;
+
+    return (
+      <div className="flex min-w-0 shrink-0 flex-wrap items-center justify-between gap-x-2 gap-y-2 px-4 pb-1.5 pt-3 sm:gap-x-3 sm:px-6 sm:pt-4">
+        <button
+          type="button"
+          onClick={handleVoltarLista}
+          className="group flex min-w-0 max-w-[45%] items-center gap-2 rounded-xl px-1 -ml-1 text-slate-400 transition-colors hover:text-[#00f2ff] min-h-[44px] min-w-[44px] sm:max-w-none"
+        >
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/[0.05] transition-all group-hover:bg-[rgba(0,242,255,0.10)]">
+            <ArrowLeft size={16} />
+          </div>
+          <span className="truncate text-sm font-medium">
+            {fromPlano ? 'Plano diário' : fromCaderno ? 'Meus cadernos' : 'Vitrine'}
+          </span>
+        </button>
+        <div className="ml-auto flex min-w-0 max-w-full flex-wrap items-center justify-end gap-1.5 sm:gap-2">
+          {listaContexto && listaContexto.total > 0 && (
+            <span
+              className="shrink-0 rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1.5 text-[11px] font-semibold tabular-nums text-slate-300 sm:px-3 sm:text-xs sm:text-sm"
+              aria-label={`Questão ${listaContexto.atual} de ${listaContexto.total}`}
+            >
+              <span className="sm:hidden">
+                {listaContexto.atual}/{listaContexto.total}
+              </span>
+              <span className="hidden sm:inline">
+                Questão {listaContexto.atual} de {listaContexto.total}
+              </span>
+            </span>
+          )}
+          {withZoom ? (
+            <ReadableTextZoomToolbar ariaLabel="Tamanho do texto da questão" />
+          ) : null}
+          <ReportErrorDialog
+            contextType="lesson"
+            moduloSlug={moduloSlug || dados.modulo_slug}
+            metadata={{
+              etapa,
+              slide_atual: slideAtual,
+              total_slides: totalSlides,
+              question_hash: questionHash,
+              alternativa_selecionada: selecionada,
+              acertou: gabarito?.acertou ?? null,
+              opcao_correta_id: gabarito?.opcaoCorretaId ?? null,
+            }}
+            triggerLabel="Reportar erro"
+            triggerClassName="h-9 w-9 px-0 sm:h-9 sm:w-auto sm:px-3 text-xs font-semibold"
+          />
+        </div>
+      </div>
+    );
+  };
+
   const renderQuestionScrollBody = (withZoom: boolean) => {
     const zoomableContent = (
       <>
@@ -867,51 +921,6 @@ export default function AvantLessonPlayer({
 
     return (
       <>
-        {mode === 'live' && (
-          <div className="px-4 sm:px-6 pt-3 sm:pt-4 pb-1.5 flex flex-wrap items-center justify-between gap-3">
-            <button
-              type="button"
-              onClick={handleVoltarLista}
-              className="group flex items-center gap-2 text-slate-400 hover:text-[#00f2ff] transition-colors min-h-[44px] min-w-[44px] -ml-1 px-1 rounded-xl"
-            >
-              <div className="w-9 h-9 rounded-full bg-white/[0.05] flex items-center justify-center group-hover:bg-[rgba(0,242,255,0.10)] transition-all">
-                <ArrowLeft size={16} />
-              </div>
-              <span className="text-sm font-medium">
-                {fromPlano ? 'Plano diário' : fromCaderno ? 'Meus cadernos' : 'Vitrine'}
-              </span>
-            </button>
-            <div className="flex items-center gap-2">
-              {listaContexto && listaContexto.total > 0 && (
-                <span
-                  className="text-xs sm:text-sm font-semibold tabular-nums text-slate-300 bg-white/[0.05] border border-white/10 px-3 py-1.5 rounded-full shrink-0"
-                  aria-label={`Questão ${listaContexto.atual} de ${listaContexto.total}`}
-                >
-                  Questão {listaContexto.atual} de {listaContexto.total}
-                </span>
-              )}
-              {withZoom ? (
-                <ReadableTextZoomToolbar ariaLabel="Tamanho do texto da questão" />
-              ) : null}
-              <ReportErrorDialog
-                contextType="lesson"
-                moduloSlug={moduloSlug || dados.modulo_slug}
-                metadata={{
-                  etapa,
-                  slide_atual: slideAtual,
-                  total_slides: totalSlides,
-                  question_hash: questionHash,
-                  alternativa_selecionada: selecionada,
-                  acertou: gabarito?.acertou ?? null,
-                  opcao_correta_id: gabarito?.opcaoCorretaId ?? null,
-                }}
-                triggerLabel="Reportar erro"
-                triggerClassName="h-9 px-3 text-xs font-semibold"
-              />
-            </div>
-          </div>
-        )}
-
         <motion.div
           initial="hidden"
           animate="visible"
@@ -958,22 +967,29 @@ export default function AvantLessonPlayer({
         }`} />
       </div>
 
-      {/* ÁREA DE QUESTÃO (SCROLLÁVEL) */}
-      <div
-        ref={questionBodyScrollRef}
-        data-testid="lesson-scroll-body"
-        className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden custom-scrollbar bg-[#0d1117] flex flex-col touch-pan-y"
-      >
-        <div className="flex flex-col min-w-0 shrink-0">
-          {showQuestionZoom ? (
-            <ReadableTextZoomProvider contentKey={questionZoomContentKey}>
-              {renderQuestionScrollBody(true)}
-            </ReadableTextZoomProvider>
-          ) : (
-            renderQuestionScrollBody(false)
-          )}
-        </div>
-      </div>
+      {showQuestionZoom ? (
+        <ReadableTextZoomProvider contentKey={questionZoomContentKey}>
+          {renderQuestionLiveHeader(true)}
+          <div
+            ref={questionBodyScrollRef}
+            data-testid="lesson-scroll-body"
+            className="flex min-h-0 min-w-0 flex-1 flex-col overflow-x-hidden overflow-y-auto touch-pan-y bg-[#0d1117] custom-scrollbar"
+          >
+            <div className="flex min-w-0 flex-col">{renderQuestionScrollBody(true)}</div>
+          </div>
+        </ReadableTextZoomProvider>
+      ) : (
+        <>
+          {renderQuestionLiveHeader(false)}
+          <div
+            ref={questionBodyScrollRef}
+            data-testid="lesson-scroll-body"
+            className="flex min-h-0 min-w-0 flex-1 flex-col overflow-x-hidden overflow-y-auto touch-pan-y bg-[#0d1117] custom-scrollbar"
+          >
+            <div className="flex min-w-0 flex-col">{renderQuestionScrollBody(false)}</div>
+          </div>
+        </>
+      )}
 
       {/* NAVEGAÇÃO INFERIOR — fora do scroll: fica fixa no rodapé do card */}
       {mode === 'live' && (

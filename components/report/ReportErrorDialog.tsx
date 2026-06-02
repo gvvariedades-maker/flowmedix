@@ -159,13 +159,14 @@ export function ReportErrorDialog({
           type="button"
           variant="outline"
           onClick={() => setOpen(true)}
+          aria-label={triggerLabel}
           className={cn(
-            'rounded-xl border-white/15 bg-white/[0.03] text-slate-200 hover:bg-white/[0.08] hover:text-white',
+            'shrink-0 rounded-xl border-white/15 bg-white/[0.03] text-slate-200 hover:bg-white/[0.08] hover:text-white',
             triggerClassName,
           )}
         >
-          <AlertTriangle size={16} className="mr-2 text-amber-300" aria-hidden />
-          {triggerLabel}
+          <AlertTriangle size={16} className="text-amber-300 sm:mr-2" aria-hidden />
+          <span className="hidden sm:inline">{triggerLabel}</span>
         </Button>
       )}
 
