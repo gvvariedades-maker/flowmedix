@@ -9,9 +9,11 @@ import {
 } from '@/components/lesson/questao-navigation-context';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import {
+  buildEstudarCacheKey,
   buildEstudarCacheKeyFromSlugComQuery,
   buildEstudarHref,
   buildEstudarQuestaoApiUrl,
+  parseEstudarSlugFromPathname,
 } from '@/lib/estudar/navigation';
 import { PREFETCH_FORWARD_DEPTH, warmForwardChain } from '@/lib/estudar/prefetchChain';
 import {
@@ -71,13 +73,17 @@ class LruCache<T> {
   }
 }
 
-function scheduleRouterPush(router: ReturnType<typeof useRouter>, href: string): void {
-  const push = () => router.push(href);
+function scheduleRouterNavigate(
+  router: ReturnType<typeof useRouter>,
+  href: string,
+  method: 'push' | 'replace',
+): void {
+  const navigate = () => (method === 'replace' ? router.replace(href) : router.push(href));
   runEstudarViewTransition(() => {
     if (typeof requestAnimationFrame !== 'undefined') {
-      requestAnimationFrame(push);
+      requestAnimationFrame(navigate);
     } else {
-      push();
+      navigate();
     }
   });
 }
@@ -91,15 +97,12 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
   const prefetchedRouteRef = useRef(new Set<string>());
   const inFlightRef = useRef(new Map<string, Promise<FetchPayloadResult>>());
   const navegandoRef = useRef(false);
+  const routePayloadSyncKeyRef = useRef<string | null>(null);
   const [displayPayload, setDisplayPayload] = useState<EstudarQuestaoPayload | null>(null);
 
   const notifySemAcesso = useCallback(() => {
     addToast(TOAST_SEM_ACESSO, 'danger');
   }, [addToast]);
-
-  useEffect(() => {
-    navegandoRef.current = false;
-  }, [pathname]);
 
   useEffect(() => {
     attachEstudarNavTelemetryToWindow();
@@ -219,6 +222,58 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     [readPayloadFromIdb],
   );
 
+  /**
+   * Soft navigation (intercept @modal) atualiza a URL mas pode deixar a vitrine no slot
+   * `children` sem montar o Hydrator. Sincroniza payload pelo cache/API quando a rota
+   * já é `/estudar/[slug]`; `router.refresh()` só se a API falhar.
+   */
+  useEffect(() => {
+    navegandoRef.current = false;
+    const slug = parseEstudarSlugFromPathname(pathname);
+    if (slug === null) {
+      routePayloadSyncKeyRef.current = null;
+      setDisplayPayload(null);
+      return;
+    }
+    if (typeof window === 'undefined') return;
+
+    const cacheKey = buildEstudarCacheKey(
+      pathname,
+      new URLSearchParams(window.location.search),
+    );
+    if (routePayloadSyncKeyRef.current === cacheKey) return;
+
+    const cached = cacheRef.current.peek(cacheKey);
+    if (cached) {
+      routePayloadSyncKeyRef.current = cacheKey;
+      setDisplayPayload(cached);
+      return;
+    }
+
+    const slugComQuery = `${slug}${window.location.search}`;
+    let cancelled = false;
+
+    void (async () => {
+      const result = await fetchPayloadIntoCache(slugComQuery);
+      if (cancelled) return;
+      routePayloadSyncKeyRef.current = cacheKey;
+
+      if (result.kind === 'ok') {
+        setDisplayPayload(result.payload);
+        return;
+      }
+      if (result.kind === 'forbidden') {
+        notifySemAcesso();
+        return;
+      }
+      router.refresh();
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [pathname, fetchPayloadIntoCache, router, notifySemAcesso]);
+
   const prefetchPayload = useCallback(
     (slugComQuery: string) => {
       void fetchPayloadIntoCache(slugComQuery);
@@ -259,15 +314,10 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       const href = buildEstudarHref(slugComQuery);
       markNavigateStart(cacheKey, slugComQuery);
 
-      const finishWithoutNavigate = () => {
-        navegandoRef.current = false;
-      };
-
       void (async () => {
         try {
           if (forbiddenKeysRef.current.has(cacheKey)) {
             notifySemAcesso();
-            finishWithoutNavigate();
             return;
           }
 
@@ -277,7 +327,6 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
             const result = await fetchPayloadIntoCache(slugComQuery);
             if (result.kind === 'forbidden') {
               notifySemAcesso();
-              finishWithoutNavigate();
               return;
             }
             if (result.kind === 'ok') {
@@ -289,27 +338,30 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
 
           if (payload) {
             setDisplayPayload(payload);
-            scheduleRouterPush(router, href);
-            if (payload.proximaSlug) {
-              void warmForwardChain(payload.proximaSlug, PREFETCH_FORWARD_DEPTH, {
-                fetchPayloadIntoCache: async (slug) => {
-                  const result = await fetchPayloadIntoCache(slug);
-                  return result.kind === 'ok' ? result.payload : null;
-                },
-                prefetchRoute,
-                buildHref: buildEstudarHref,
-              });
-            }
-            return;
           }
 
-          scheduleRouterPush(router, href);
+          const alreadyOnQuestao = parseEstudarSlugFromPathname(pathname) !== null;
+          scheduleRouterNavigate(router, href, alreadyOnQuestao ? 'replace' : 'push');
+
+          if (payload?.proximaSlug) {
+            void warmForwardChain(payload.proximaSlug, PREFETCH_FORWARD_DEPTH, {
+              fetchPayloadIntoCache: async (slug) => {
+                const result = await fetchPayloadIntoCache(slug);
+                return result.kind === 'ok' ? result.payload : null;
+              },
+              prefetchRoute,
+              buildHref: buildEstudarHref,
+            });
+          }
         } catch {
-          scheduleRouterPush(router, href);
+          const alreadyOnQuestao = parseEstudarSlugFromPathname(pathname) !== null;
+          scheduleRouterNavigate(router, href, alreadyOnQuestao ? 'replace' : 'push');
+        } finally {
+          navegandoRef.current = false;
         }
       })();
     },
-    [router, fetchPayloadIntoCache, prefetchRoute, notifySemAcesso],
+    [router, pathname, fetchPayloadIntoCache, prefetchRoute, notifySemAcesso],
   );
 
   const value = useMemo<QuestaoNavigationContextValue>(

@@ -76,17 +76,17 @@ describe('VitrineQuestaoLink', () => {
     expect(prefetchEstudar).toHaveBeenCalledWith('questao-b');
   });
 
-  it('navega com navigateEstudar no clique simples', () => {
+  it('clique simples não chama navigateEstudar (navegação nativa do Link)', () => {
     render(
       <VitrineQuestaoLink slug="questao-c" estudarQuery="?q=rcp">
         Iniciar
       </VitrineQuestaoLink>,
     );
     fireEvent.click(screen.getByRole('link', { name: 'Iniciar' }));
-    expect(navigateEstudar).toHaveBeenCalledWith('questao-c?q=rcp');
+    expect(navigateEstudar).not.toHaveBeenCalled();
   });
 
-  it('não intercepta clique com modificador (nova aba)', () => {
+  it('não altera clique com modificador (nova aba)', () => {
     render(<VitrineQuestaoLink slug="questao-d">Abrir</VitrineQuestaoLink>);
     const link = screen.getByRole('link', { name: 'Abrir' });
     fireEvent.click(link, { ctrlKey: true });

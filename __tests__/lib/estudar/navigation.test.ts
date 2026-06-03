@@ -3,6 +3,7 @@ import {
   buildEstudarCacheKeyFromSlugComQuery,
   buildEstudarHref,
   buildEstudarQuestaoApiUrl,
+  buildEstudarVitrineHref,
   normalizeSearchForCacheKey,
   parseEstudarSlugFromPathname,
   parseEstudarSlugComQuery,
@@ -29,6 +30,19 @@ describe('lib/estudar/navigation', () => {
       expect(buildEstudarHref('questao-a?from=plano')).toBe(
         '/estudar/questao-a?from=plano',
       );
+    });
+  });
+
+  describe('buildEstudarVitrineHref', () => {
+    it('preserva filtros da vitrine', () => {
+      expect(buildEstudarVitrineHref({ vitrineQuerySuffix: '?banca=FGV&page=2' })).toBe(
+        '/estudar?banca=FGV&page=2',
+      );
+    });
+
+    it('redireciona plano e caderno', () => {
+      expect(buildEstudarVitrineHref({ fromPlano: true })).toBe('/plano-diario');
+      expect(buildEstudarVitrineHref({ fromCaderno: 'id-1' })).toBe('/cadernos');
     });
   });
 

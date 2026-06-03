@@ -57,9 +57,9 @@ export const VitrineQuestaoLink = forwardRef<HTMLAnchorElement, VitrineQuestaoLi
 
     const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
       onClick?.(event);
-      if (event.defaultPrevented || isModifiedClick(event) || !nav) return;
-      event.preventDefault();
-      nav.navigateEstudar(slugComQuery);
+      if (event.defaultPrevented || isModifiedClick(event)) return;
+      // Navegação nativa do Next.js Link (intercept @modal + Hydrator no servidor).
+      // Evita depender só de navigateEstudar, que falhava ao voltar da vitrine.
     };
 
     const handlePointerEnter = (event: PointerEvent<HTMLAnchorElement>) => {

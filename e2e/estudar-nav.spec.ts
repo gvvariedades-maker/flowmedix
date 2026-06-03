@@ -50,6 +50,37 @@ test.describe('Estudar — navegação vitrine → questão', () => {
     await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
   });
 
+  test('vitrine → questão → vitrine → abre de novo', async ({ page }) => {
+    await page.goto(`/estudar?banca=${encodeURIComponent(E2E_ESTUDAR_BANCA)}`, {
+      waitUntil: 'domcontentloaded',
+    });
+
+    await expect(page.getByText(E2E_ESTUDAR_TITULO_AULA)).toBeVisible({ timeout: 15_000 });
+
+    const assuntoBtn = page.getByRole('button', { name: new RegExp(E2E_ESTUDAR_TITULO_AULA) });
+    await assuntoBtn.click();
+    const panel = page.locator(`#assunto-panel-${E2E_ESTUDAR_SLUG_1}`);
+    await expect(panel).toBeVisible({ timeout: 15_000 });
+    await panel.getByRole('link', { name: 'Entrar no assunto' }).click();
+
+    await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
+
+    await page.goto(`/estudar?banca=${encodeURIComponent(E2E_ESTUDAR_BANCA)}`, {
+      waitUntil: 'domcontentloaded',
+    });
+    await expect(page.getByText(E2E_ESTUDAR_TITULO_AULA)).toBeVisible({ timeout: 15_000 });
+
+    await assuntoBtn.click();
+    await expect(panel).toBeVisible({ timeout: 15_000 });
+    await panel.getByRole('link', { name: 'Entrar no assunto' }).click();
+
+    await expect(page).toHaveURL(
+      new RegExp(`/estudar/${E2E_ESTUDAR_SLUG_1}.*banca=${encodeURIComponent(E2E_ESTUDAR_BANCA)}`),
+      { timeout: 15_000 },
+    );
+    await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
+  });
+
   test('próxima questão preserva banca na URL', async ({ page }) => {
     await page.goto(
       `/estudar/${E2E_ESTUDAR_SLUG_1}?banca=${encodeURIComponent(E2E_ESTUDAR_BANCA)}`,

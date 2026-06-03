@@ -97,3 +97,17 @@ export function buildEstudarQuestaoApiUrl(
 ): string {
   return `/api/estudar/questao?${buildEstudarQuestaoApiSearch(slugComQuery, options)}`;
 }
+
+export type EstudarVitrineReturnContext = {
+  fromPlano?: boolean;
+  fromCaderno?: string;
+  vitrineQuerySuffix?: string;
+};
+
+/** Destino ao fechar questão (modal, botão Vitrine) — preserva filtros da vitrine. */
+export function buildEstudarVitrineHref(ctx: EstudarVitrineReturnContext = {}): string {
+  if (ctx.fromPlano) return '/plano-diario';
+  if (ctx.fromCaderno) return '/cadernos';
+  const suffix = ctx.vitrineQuerySuffix?.trim() ?? '';
+  return `/estudar${suffix}`;
+}

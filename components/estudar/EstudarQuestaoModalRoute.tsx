@@ -6,6 +6,8 @@ import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import EstudarQuestaoSkeleton from '@/components/lesson/EstudarQuestaoSkeleton';
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
 import { isEstudarModalRouteEnabled } from '@/lib/estudar/estudarL0Config';
+import { buildEstudarVitrineHref } from '@/lib/estudar/navigation';
+import { MOBILE_BOTTOM_NAV_FIXED_BOTTOM } from '@/lib/layout/mobileBottomNav';
 import { cn } from '@/lib/utils';
 import { X } from 'lucide-react';
 
@@ -20,20 +22,31 @@ type EstudarQuestaoModalRouteProps = {
  */
 export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteProps) {
   const router = useRouter();
-  const { displayPayload } = useQuestaoNavigation();
+  const { displayPayload, setDisplayPayload } = useQuestaoNavigation();
   const modalEnabled = isEstudarModalRouteEnabled();
 
   if (!modalEnabled) {
     return <>{children}</>;
   }
 
-  const close = () => router.back();
+  const close = () => {
+    const href = buildEstudarVitrineHref({
+      fromPlano: displayPayload?.fromPlano,
+      fromCaderno: displayPayload?.fromCaderno,
+      vitrineQuerySuffix: displayPayload?.vitrineQuerySuffix,
+    });
+    setDisplayPayload(null);
+    router.push(href);
+  };
 
   return (
     <>
       {children}
       <div
-        className="fixed inset-0 z-[100] flex flex-col md:hidden"
+        className={cn(
+          'fixed inset-x-0 top-0 z-[100] flex flex-col md:hidden',
+          MOBILE_BOTTOM_NAV_FIXED_BOTTOM,
+        )}
         role="dialog"
         aria-modal="true"
         aria-label="Questão"
@@ -46,7 +59,7 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
         />
         <div
           className={cn(
-            'relative mt-auto flex max-h-[92dvh] min-h-0 flex-1 flex-col',
+            'relative mt-auto flex min-h-0 max-h-full flex-1 flex-col',
             'rounded-t-[2rem] border border-white/10 bg-[#010409] shadow-2xl',
             '[view-transition-name:estudar-questao-root]',
           )}

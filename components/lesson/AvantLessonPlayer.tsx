@@ -18,6 +18,7 @@ import {
   buildEstudarCacheKeyFromSlugComQuery,
   buildEstudarHref,
   buildEstudarQuestaoApiUrl,
+  buildEstudarVitrineHref,
 } from '@/lib/estudar/navigation';
 import {
   buildEstudarSlugComQueryFromPlayerProps,
@@ -633,16 +634,23 @@ export default function AvantLessonPlayer({
   };
 
   const handleVoltarLista = () => {
-    if (fromPlano) return router.push('/plano-diario');
-    // Lista "Meus cadernos" — não a página de edição `/cadernos/[id]`
-    if (fromCaderno) return router.push('/cadernos');
-    router.push(`/estudar${buildNavegacaoSuffix()}`);
+    const href = buildEstudarVitrineHref({
+      fromPlano,
+      fromCaderno,
+      vitrineQuerySuffix: buildNavegacaoSuffix(),
+    });
+    questaoNav?.setDisplayPayload(null);
+    router.push(href);
   };
 
   const handleConcluir = () => {
-    if (fromPlano) return router.push('/plano-diario');
-    if (fromCaderno) return router.push('/cadernos');
-    router.push(`/estudar${buildNavegacaoSuffix()}`);
+    const href = buildEstudarVitrineHref({
+      fromPlano,
+      fromCaderno,
+      vitrineQuerySuffix: buildNavegacaoSuffix(),
+    });
+    questaoNav?.setDisplayPayload(null);
+    router.push(href);
   };
 
   // ============================================================================

@@ -1,7 +1,10 @@
 import { renderHook } from '@testing-library/react';
 import { useEstudarModalActive } from '@/components/estudar/useEstudarModalActive';
 
+const mockUsePathname = jest.fn(() => '/estudar/questao-e2e-estudar-1');
+
 jest.mock('next/navigation', () => ({
+  usePathname: () => mockUsePathname(),
   useSelectedLayoutSegment: jest.fn(() => 'questao-e2e-estudar-1'),
 }));
 
@@ -21,6 +24,7 @@ describe('useEstudarModalActive', () => {
   beforeEach(() => {
     process.env = { ...env };
     mockUseDashboardDesktop.mockReturnValue(false);
+    mockUsePathname.mockReturnValue('/estudar/questao-e2e-estudar-1');
   });
 
   afterAll(() => {
@@ -42,6 +46,13 @@ describe('useEstudarModalActive', () => {
   it('retorna false no desktop mesmo com flag e segmento modal', () => {
     process.env.NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE = '1';
     mockUseDashboardDesktop.mockReturnValue(true);
+    const { result } = renderHook(() => useEstudarModalActive());
+    expect(result.current).toBe(false);
+  });
+
+  it('retorna false na vitrine (/estudar) mesmo com segmento modal preso', () => {
+    process.env.NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE = '1';
+    mockUsePathname.mockReturnValue('/estudar');
     const { result } = renderHook(() => useEstudarModalActive());
     expect(result.current).toBe(false);
   });

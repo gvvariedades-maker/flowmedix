@@ -17,7 +17,7 @@ type EstudarQuestaoShellProps = {
 export default function EstudarQuestaoShell({ children, modal = null }: EstudarQuestaoShellProps) {
   const interceptActive = useEstudarInterceptActive();
   const modalActive = useEstudarModalActive();
-  const { showPlayer, showSkeleton, displayPayload, isPayloadStale } =
+  const { isQuestaoRoute, showPlayer, showSkeleton, displayPayload, isPayloadStale } =
     useEstudarQuestaoShellState({ modalActive });
 
   return (
@@ -40,8 +40,11 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
           <EstudarQuestaoSkeleton />
         ) : null}
         <div
-          className={cn(interceptActive && 'pointer-events-none select-none')}
-          aria-hidden={interceptActive || undefined}
+          className={cn(
+            (interceptActive || isQuestaoRoute) && 'hidden',
+            interceptActive && 'pointer-events-none select-none',
+          )}
+          aria-hidden={interceptActive || isQuestaoRoute || undefined}
         >
           {children}
         </div>

@@ -4,13 +4,15 @@ import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-con
 import type { EstudarQuestaoPayload } from '@/components/lesson/questao-navigation-context';
 
 const mockPush = jest.fn();
+const mockReplace = jest.fn();
 const mockPrefetch = jest.fn();
+const mockUsePathname = jest.fn(() => '/estudar');
 const mockAddToast = jest.fn();
 const mockFetchWithAuth = jest.fn();
 
 jest.mock('next/navigation', () => ({
-  useRouter: () => ({ push: mockPush, prefetch: mockPrefetch }),
-  usePathname: () => '/estudar',
+  useRouter: () => ({ push: mockPush, replace: mockReplace, prefetch: mockPrefetch }),
+  usePathname: () => mockUsePathname(),
 }));
 
 jest.mock('@/lib/api/fetch-with-auth', () => ({
@@ -74,6 +76,7 @@ function Probe() {
 describe('QuestaoNavigationProvider', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    mockUsePathname.mockReturnValue('/estudar');
     mockFetchWithAuth.mockResolvedValue({
       ok: true,
       status: 200,
@@ -150,5 +153,44 @@ describe('QuestaoNavigationProvider', () => {
       expect(mockPush).toHaveBeenCalledWith('/estudar/questao-a');
       expect(mockFetchWithAuth).toHaveBeenCalledTimes(1);
     });
+  });
+
+  it('usa replace ao trocar de questão já aberta (não empilha histórico)', async () => {
+    mockUsePathname.mockReturnValue('/estudar/questao-a');
+
+    const { getByRole } = render(
+      <QuestaoNavigationProvider>
+        <Probe />
+      </QuestaoNavigationProvider>,
+    );
+
+    await act(async () => {
+      getByRole('button', { name: 'Ir' }).click();
+    });
+
+    await waitFor(() => {
+      expect(mockReplace).toHaveBeenCalledWith('/estudar/questao-a');
+      expect(mockPush).not.toHaveBeenCalled();
+    });
+  });
+
+  it('permite segunda navegação na vitrine após a primeira concluir (navegandoRef liberado)', async () => {
+    const { getByRole } = render(
+      <QuestaoNavigationProvider>
+        <Probe />
+      </QuestaoNavigationProvider>,
+    );
+
+    const btn = getByRole('button', { name: 'Ir' });
+
+    await act(async () => {
+      btn.click();
+    });
+    await waitFor(() => expect(mockPush).toHaveBeenCalledTimes(1));
+
+    await act(async () => {
+      btn.click();
+    });
+    await waitFor(() => expect(mockPush).toHaveBeenCalledTimes(2));
   });
 });
