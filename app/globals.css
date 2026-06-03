@@ -199,7 +199,6 @@
   }
   /* Layout Morfológico - Grid CSS Fluido */
   .morph-grid-container {
-    content-visibility: auto; /* Otimização de performance */
   }
 
   /* Zero Layout Shift - Dimensões fixas */

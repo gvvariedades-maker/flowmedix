@@ -266,6 +266,8 @@ export default function VitrineClient({
   const [ssrErrorDismissed, setSsrErrorDismissed] = useState(false);
   const [retryNonce, setRetryNonce] = useState(0);
   const vitrineListaRef = useRef<HTMLDivElement>(null);
+  /** Evita scrollIntoView quando setPagina(1) veio de filtro/busca, não de Anterior/Próxima. */
+  const paginaViaFiltroRef = useRef(false);
   /** Evita gravar na URL antes de ler os filtros (impede loop com estado inicial vazio). */
   const filtersHydratedFromUrlRef = useRef(Boolean(initialListQuery));
   const ssrFacetsConsumedRef = useRef(false);
@@ -285,7 +287,6 @@ export default function VitrineClient({
     error: vitrineFetchError,
     isLoading: vitrineLoading,
     isValidating: vitrineValidating,
-    listKey: vitrineListKey,
   } = useVitrineListSwr(vitrineListQuery, {
     fallbackData: initialPageData,
     ssrListQueryKey,
@@ -412,6 +413,7 @@ export default function VitrineClient({
       searchPaginaResetSkipRef.current = false;
       return;
     }
+    paginaViaFiltroRef.current = true;
     setPagina(1);
   }, [debouncedSearch]);
 
@@ -433,6 +435,7 @@ export default function VitrineClient({
       });
       setAssuntosSelecionados(valid);
       if (prevKey !== nextKey) {
+        paginaViaFiltroRef.current = true;
         setPagina(1);
       }
     }
@@ -469,22 +472,13 @@ export default function VitrineClient({
     [bancasSelecionadas, assuntosSelecionados, debouncedSearch, paginaEfetiva],
   );
 
-  const vitrineListKeyScrollRef = useRef<string | null>(null);
-  const vitrineScrollHydrateSkipRef = useRef(true);
   useEffect(() => {
-    if (vitrineScrollHydrateSkipRef.current) {
-      vitrineScrollHydrateSkipRef.current = false;
-      vitrineListKeyScrollRef.current = vitrineListKey;
+    if (paginaViaFiltroRef.current) {
+      paginaViaFiltroRef.current = false;
       return;
     }
-    if (!vitrinePageData || !vitrineResponseMatchesListKey(vitrinePageData, vitrineListQuery)) {
-      return;
-    }
-    if (vitrineListKeyScrollRef.current === vitrineListKey) return;
-    vitrineListKeyScrollRef.current = vitrineListKey;
-    const main = document.querySelector('main');
-    main?.scrollTo({ top: 0, behavior: 'auto' });
-  }, [vitrineListKey, vitrinePageData, vitrineListQuery]);
+    vitrineListaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [pagina]);
 
   const pageSectionTitle = searchTerm
     ? `Resultados para "${searchTerm}"`
@@ -563,6 +557,7 @@ export default function VitrineClient({
                 onClick={(e) => {
                   e.stopPropagation();
                   setBancasSelecionadas([]);
+                  paginaViaFiltroRef.current = true;
                   setPagina(1);
                 }}
                 className="flex h-7 w-7 shrink-0 items-center justify-center rounded-r-full hover:bg-[#00f2ff]/20"
@@ -606,6 +601,7 @@ export default function VitrineClient({
                 onClick={(e) => {
                   e.stopPropagation();
                   setAssuntosSelecionados([]);
+                  paginaViaFiltroRef.current = true;
                   setPagina(1);
                 }}
                 className="flex h-7 w-7 shrink-0 items-center justify-center rounded-r-full hover:bg-[#00f2ff]/20"
@@ -634,6 +630,7 @@ export default function VitrineClient({
                 setBancasSelecionadas([]);
                 setAssuntosSelecionados([]);
                 setSearchTerm('');
+                paginaViaFiltroRef.current = true;
                 setPagina(1);
               }}
               className="inline-flex shrink-0 items-center rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:border-white/20 hover:text-slate-200"
@@ -655,6 +652,7 @@ export default function VitrineClient({
           emptySearchLabel="Nenhuma banca encontrada"
           onChange={(next) => {
             setBancasSelecionadas(next);
+            paginaViaFiltroRef.current = true;
             setPagina(1);
           }}
         />
@@ -669,6 +667,7 @@ export default function VitrineClient({
           emptySearchLabel="Nenhum assunto encontrado"
           onChange={(next) => {
             setAssuntosSelecionados(next);
+            paginaViaFiltroRef.current = true;
             setPagina(1);
           }}
         />
@@ -701,6 +700,7 @@ export default function VitrineClient({
                 value={searchTerm}
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
+                  paginaViaFiltroRef.current = true;
                   setPagina(1);
                 }}
                 className="h-11 rounded-2xl border-border/80 pl-11 pr-11"
@@ -710,6 +710,7 @@ export default function VitrineClient({
                   type="button"
                   onClick={() => {
                     setSearchTerm('');
+                    paginaViaFiltroRef.current = true;
                     setPagina(1);
                   }}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-colors hover:text-destructive"
@@ -740,6 +741,7 @@ export default function VitrineClient({
               disabled={facetsLoading && bancas.length === 0}
               onChange={(next) => {
                 setBancasSelecionadas(next);
+                paginaViaFiltroRef.current = true;
                 setPagina(1);
               }}
             />
@@ -756,6 +758,7 @@ export default function VitrineClient({
               disabled={facetsLoading && assuntos.length === 0}
               onChange={(next) => {
                 setAssuntosSelecionados(next);
+                paginaViaFiltroRef.current = true;
                 setPagina(1);
               }}
             />
@@ -766,6 +769,7 @@ export default function VitrineClient({
               onClick={() => {
                 setBancasSelecionadas([]);
                 setAssuntosSelecionados([]);
+                paginaViaFiltroRef.current = true;
                 setPagina(1);
               }}
               className="text-xs font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
@@ -830,7 +834,7 @@ export default function VitrineClient({
           ) : gruposPagina.length > 0 ? (
             <>
               <motion.div
-                key={`vitrine-page-${paginaEfetiva}`}
+                key={`${bancasSelecionadas.join('|')}-${assuntosSelecionados.join('|')}-${searchTerm}`}
                 ref={vitrineListaRef}
                 variants={containerVariants}
                 initial="initial"
