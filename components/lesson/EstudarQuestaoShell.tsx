@@ -17,8 +17,18 @@ type EstudarQuestaoShellProps = {
 export default function EstudarQuestaoShell({ children, modal = null }: EstudarQuestaoShellProps) {
   const interceptActive = useEstudarInterceptActive();
   const modalActive = useEstudarModalActive();
-  const { isQuestaoRoute, showPlayer, showSkeleton, displayPayload, isPayloadStale } =
-    useEstudarQuestaoShellState({ modalActive });
+  const {
+    isQuestaoRoute,
+    showPlayer,
+    showSkeleton,
+    displayPayload,
+    isPayloadStale,
+    isDismissingToVitrine,
+  } = useEstudarQuestaoShellState({ modalActive });
+
+  const hideVitrineChildren = modalActive
+    ? Boolean(displayPayload) && !isDismissingToVitrine
+    : isQuestaoRoute && (showPlayer || showSkeleton);
 
   return (
     <DashboardMobilePage
@@ -41,10 +51,10 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
         ) : null}
         <div
           className={cn(
-            (interceptActive || isQuestaoRoute) && 'hidden',
-            interceptActive && 'pointer-events-none select-none',
+            hideVitrineChildren && 'hidden',
+            interceptActive && !isDismissingToVitrine && 'pointer-events-none select-none',
           )}
-          aria-hidden={interceptActive || isQuestaoRoute || undefined}
+          aria-hidden={hideVitrineChildren || undefined}
         >
           {children}
         </div>

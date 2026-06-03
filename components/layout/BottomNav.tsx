@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import { createPortal } from 'react-dom';
+import { useEffect, useState } from 'react';
 import { LayoutGroup, motion } from 'framer-motion';
 import {
   BarChart2,
@@ -12,7 +14,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { MOBILE_BOTTOM_NAV_Z } from '@/lib/layout/mobileBottomNav';
+import { MOBILE_BOTTOM_NAV_FIXED, MOBILE_BOTTOM_NAV_Z } from '@/lib/layout/mobileBottomNav';
 
 const NAV_ITEMS = [
   { label: 'Estudar', href: '/estudar', icon: LayoutGrid },
@@ -28,11 +30,15 @@ export type BottomNavProps = {
 };
 
 export function BottomNav({ currentPath, onMenuOpen, menuOpen }: BottomNavProps) {
-  return (
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const nav = (
     <LayoutGroup id="bottom-nav">
       <nav
         className={cn(
-          'shrink-0 inset-x-0 grid grid-cols-5 border-t border-white/[0.08] bg-[#06090f]/95 pb-safe backdrop-blur-xl md:hidden',
+          MOBILE_BOTTOM_NAV_FIXED,
+          'grid grid-cols-5 border-t border-white/[0.08] bg-[#06090f]/95 pb-safe backdrop-blur-xl',
           MOBILE_BOTTOM_NAV_Z,
         )}
         aria-label="Navegação principal"
@@ -101,4 +107,7 @@ export function BottomNav({ currentPath, onMenuOpen, menuOpen }: BottomNavProps)
       </nav>
     </LayoutGroup>
   );
+
+  if (!mounted) return null;
+  return createPortal(nav, document.body);
 }

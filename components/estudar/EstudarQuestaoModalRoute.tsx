@@ -1,8 +1,7 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
-import EstudarQuestaoSkeleton from '@/components/lesson/EstudarQuestaoSkeleton';
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
 import { isEstudarModalRouteEnabled } from '@/lib/estudar/estudarL0Config';
 import { MOBILE_BOTTOM_NAV_FIXED_BOTTOM } from '@/lib/layout/mobileBottomNav';
@@ -19,8 +18,18 @@ type EstudarQuestaoModalRouteProps = {
  * `children` inclui EstudarQuestaoHydrator (render null).
  */
 export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteProps) {
-  const { displayPayload, dismissToVitrine } = useQuestaoNavigation();
+  const { displayPayload, dismissToVitrine, isDismissingToVitrine } = useQuestaoNavigation();
   const modalEnabled = isEstudarModalRouteEnabled();
+  const showModalOverlay = Boolean(displayPayload) && !isDismissingToVitrine;
+
+  useEffect(() => {
+    if (!modalEnabled || !showModalOverlay) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [modalEnabled, showModalOverlay]);
 
   if (!modalEnabled) {
     return <>{children}</>;
@@ -37,6 +46,7 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
   return (
     <>
       {children}
+      {showModalOverlay ? (
       <div
         className={cn(
           'fixed inset-x-0 top-0 z-[100] flex flex-col md:hidden',
@@ -70,14 +80,11 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
             </button>
           </div>
           <div className="flex min-h-0 flex-1 flex-col overflow-hidden px-3 pb-safe">
-            {displayPayload ? (
-              <AvantLessonPlayer key="estudar-lesson-player-modal" {...displayPayload} />
-            ) : (
-              <EstudarQuestaoSkeleton />
-            )}
+            <AvantLessonPlayer key="estudar-lesson-player-modal" {...displayPayload!} />
           </div>
         </div>
       </div>
+      ) : null}
     </>
   );
 }

@@ -74,6 +74,14 @@ import {
 
 const QUESTION_TEXT_TYPOGRAPHY = 'text-base md:text-lg leading-relaxed';
 
+function resetDashboardMainScroll() {
+  if (typeof document === 'undefined') return;
+  const mainEl =
+    document.querySelector('main[class*="overflow-y-auto"]') ??
+    document.querySelector('main');
+  if (mainEl) mainEl.scrollTop = 0;
+}
+
 type SlideMotionProps = {
   initial: Target;
   animate: Target;
@@ -649,9 +657,10 @@ export default function AvantLessonPlayer({
   const handleVoltarLista = () => {
     if (questaoNav) {
       questaoNav.dismissToVitrine(vitrineReturnContext());
-      return;
+    } else {
+      router.replace(buildEstudarVitrineHref(vitrineReturnContext()));
     }
-    router.replace(buildEstudarVitrineHref(vitrineReturnContext()));
+    resetDashboardMainScroll();
   };
 
   const handleConcluir = () => {
@@ -765,9 +774,11 @@ export default function AvantLessonPlayer({
     setSlideAtual(0);
     if (mode === 'preview') {
       setEtapa('pergunta');
+      resetDashboardMainScroll();
       return;
     }
     setEtapa(gabarito !== null ? 'gabarito' : 'pergunta');
+    resetDashboardMainScroll();
   };
 
   const buildOptionAriaLabel = (
@@ -1304,7 +1315,7 @@ export default function AvantLessonPlayer({
                     'fixed inset-x-0 top-0 flex flex-col overflow-hidden bg-[#010409] overscroll-y-contain',
                     ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM,
                     ESTUDO_REVERSO_DESKTOP_INSET,
-                    'max-md:h-auto max-md:max-h-none md:h-[100dvh] md:max-h-[100dvh]',
+                    'h-full max-h-full',
                     ESTUDO_REVERSO_FULLSCREEN_Z,
                   )
             }

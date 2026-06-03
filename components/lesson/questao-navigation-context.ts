@@ -16,6 +16,8 @@ export type QuestaoNavigationContextValue = {
   prefetchPayload: (slugComQuery: string) => void;
   /** Fecha questão e volta à vitrine (replace — evita reabrir pelo sync de URL). */
   dismissToVitrine: (ctx?: EstudarVitrineReturnContext) => void;
+  /** True entre dismiss e a URL voltar para `/estudar` (evita skeleton e re-hidratação). */
+  isDismissingToVitrine: boolean;
 };
 
 export const QuestaoNavigationContext =

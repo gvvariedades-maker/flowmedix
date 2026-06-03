@@ -22,7 +22,10 @@ describe('useEstudarQuestaoShellState', () => {
 
   it('na vitrine não exibe player nem skeleton', () => {
     mockUsePathname.mockReturnValue('/estudar');
-    mockUseQuestaoNavigation.mockReturnValue({ displayPayload: null });
+    mockUseQuestaoNavigation.mockReturnValue({
+      displayPayload: null,
+      isDismissingToVitrine: false,
+    });
 
     const { result } = renderHook(() => useEstudarQuestaoShellState());
 
@@ -33,7 +36,10 @@ describe('useEstudarQuestaoShellState', () => {
 
   it('na rota da questão sem payload exibe skeleton', () => {
     mockUsePathname.mockReturnValue('/estudar/questao-a');
-    mockUseQuestaoNavigation.mockReturnValue({ displayPayload: null });
+    mockUseQuestaoNavigation.mockReturnValue({
+      displayPayload: null,
+      isDismissingToVitrine: false,
+    });
 
     const { result } = renderHook(() => useEstudarQuestaoShellState());
 
@@ -50,7 +56,10 @@ describe('useEstudarQuestaoShellState', () => {
     };
     mockUsePathname.mockReturnValue('/estudar/questao-b');
     mockUseSearchParams.mockReturnValue(new URLSearchParams('banca=FGV'));
-    mockUseQuestaoNavigation.mockReturnValue({ displayPayload: stalePayload });
+    mockUseQuestaoNavigation.mockReturnValue({
+      displayPayload: stalePayload,
+      isDismissingToVitrine: false,
+    });
 
     const { result } = renderHook(() => useEstudarQuestaoShellState());
 
@@ -58,6 +67,21 @@ describe('useEstudarQuestaoShellState', () => {
     expect(result.current.showPlayer).toBe(true);
     expect(result.current.isPayloadStale).toBe(true);
     expect(result.current.displayPayload).toBe(stalePayload);
+  });
+
+  it('com modal ativo não exibe skeleton no shell sem payload', () => {
+    mockUsePathname.mockReturnValue('/estudar/questao-a');
+    mockUseQuestaoNavigation.mockReturnValue({
+      displayPayload: null,
+      isDismissingToVitrine: false,
+    });
+
+    const { result } = renderHook(() =>
+      useEstudarQuestaoShellState({ modalActive: true }),
+    );
+
+    expect(result.current.showSkeleton).toBe(false);
+    expect(result.current.showPlayer).toBe(false);
   });
 
   it('exibe player quando chave de cache coincide', () => {
@@ -68,7 +92,10 @@ describe('useEstudarQuestaoShellState', () => {
     };
     mockUsePathname.mockReturnValue('/estudar/questao-a');
     mockUseSearchParams.mockReturnValue(new URLSearchParams('banca=FGV&page=2'));
-    mockUseQuestaoNavigation.mockReturnValue({ displayPayload: payload });
+    mockUseQuestaoNavigation.mockReturnValue({
+      displayPayload: payload,
+      isDismissingToVitrine: false,
+    });
 
     const { result } = renderHook(() => useEstudarQuestaoShellState());
 

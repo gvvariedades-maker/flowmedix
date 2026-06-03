@@ -29,6 +29,10 @@ export const MOBILE_ACTION_BAR_STACK_SPACER_WITH_PWA =
 /** z-index do BottomNav fixo no flex shell. */
 export const MOBILE_BOTTOM_NAV_Z = 'z-40';
 
+/** BottomNav no viewport (portal no body) — fora de transforms do shell. */
+export const MOBILE_BOTTOM_NAV_FIXED =
+  'fixed bottom-0 left-0 right-0 md:hidden';
+
 /** z-index legado para faixas fixed acima do nav. */
 export const MOBILE_ACTION_BAR_Z = 'z-50';
 

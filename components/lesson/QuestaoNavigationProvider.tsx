@@ -102,6 +102,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
   const routePayloadSyncKeyRef = useRef<string | null>(null);
   /** Bloqueia re-hidratação do payload enquanto `replace` volta à vitrine. */
   const dismissingToVitrineRef = useRef(false);
+  const [isDismissingToVitrine, setIsDismissingToVitrine] = useState(false);
   const [displayPayload, setDisplayPayload] = useState<EstudarQuestaoPayload | null>(null);
 
   const notifySemAcesso = useCallback(() => {
@@ -236,6 +237,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     const slug = parseEstudarSlugFromPathname(pathname);
     if (slug === null) {
       dismissingToVitrineRef.current = false;
+      setIsDismissingToVitrine(false);
       routePayloadSyncKeyRef.current = null;
       setDisplayPayload(null);
       return;
@@ -314,8 +316,8 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
   const dismissToVitrine = useCallback(
     (ctx: EstudarVitrineReturnContext = {}) => {
       dismissingToVitrineRef.current = true;
+      setIsDismissingToVitrine(true);
       routePayloadSyncKeyRef.current = null;
-      setDisplayPayload(null);
       scheduleRouterNavigate(router, buildEstudarVitrineHref(ctx), 'replace');
     },
     [router],
@@ -390,6 +392,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       prefetchEstudar,
       prefetchPayload,
       dismissToVitrine,
+      isDismissingToVitrine,
     }),
     [
       displayPayload,
@@ -399,6 +402,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       prefetchEstudar,
       prefetchPayload,
       dismissToVitrine,
+      isDismissingToVitrine,
     ],
   );
 

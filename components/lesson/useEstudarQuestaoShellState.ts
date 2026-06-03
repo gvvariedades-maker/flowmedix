@@ -16,7 +16,7 @@ export function useEstudarQuestaoShellState(options: UseEstudarQuestaoShellState
   const { modalActive = false } = options;
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const { displayPayload } = useQuestaoNavigation();
+  const { displayPayload, isDismissingToVitrine } = useQuestaoNavigation();
 
   const slugFromPath = parseEstudarSlugFromPathname(pathname);
   const isQuestaoRoute = slugFromPath !== null;
@@ -38,7 +38,8 @@ export function useEstudarQuestaoShellState(options: UseEstudarQuestaoShellState
 
   /** Mantém o player montado entre slugs quando há payload em memória (passo 4.3). */
   const showPlayer = isQuestaoRoute && Boolean(displayPayload) && !modalActive;
-  const showSkeleton = isQuestaoRoute && !displayPayload;
+  const showSkeleton =
+    isQuestaoRoute && !displayPayload && !modalActive && !isDismissingToVitrine;
   const isPayloadStale = showPlayer && !payloadMatchesRoute;
 
   return {
@@ -46,6 +47,7 @@ export function useEstudarQuestaoShellState(options: UseEstudarQuestaoShellState
     showPlayer,
     showSkeleton,
     isPayloadStale,
+    isDismissingToVitrine,
     displayPayload: showPlayer ? displayPayload : null,
   };
 }

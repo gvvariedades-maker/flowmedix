@@ -46,11 +46,10 @@ import { PlanStatusCard } from '@/components/plan/PlanStatusCard';
 const drawerSpring = { type: 'spring' as const, stiffness: 300, damping: 30 };
 
 const pageVariants = {
-  initial: { opacity: 0, y: 8 },
+  initial: { opacity: 0 },
   animate: {
     opacity: 1,
-    y: 0,
-    transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] as const },
+    transition: { duration: 0.18, ease: 'easeOut' },
   },
 };
 
@@ -707,7 +706,7 @@ function DashboardContent({
         </header>
 
         <main
-          className="relative flex min-h-0 flex-1 flex-col overflow-x-hidden overflow-y-auto no-scrollbar md:pb-0"
+          className="relative flex min-h-0 flex-1 flex-col overflow-x-hidden overflow-y-auto no-scrollbar max-md:pb-[calc(5rem+env(safe-area-inset-bottom,0px))] md:pb-0"
         >
           {showBackToVitrine ? <BackToVitrineBar /> : null}
           <motion.div
