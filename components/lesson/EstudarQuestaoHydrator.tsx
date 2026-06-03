@@ -13,7 +13,7 @@ export type EstudarQuestaoHydratorProps = AvantLessonPlayerProps;
 
 export default function EstudarQuestaoHydrator(props: EstudarQuestaoHydratorProps) {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+const searchParams = useSearchParams();
   const { cachePayload, setDisplayPayload } = useQuestaoNavigation();
 
   const cacheKey = buildEstudarCacheKey(pathname, searchParams);

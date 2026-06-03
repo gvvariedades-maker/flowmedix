@@ -27,10 +27,10 @@ export function useEstudarQuestaoShellState(options: UseEstudarQuestaoShellState
 
   const payloadCacheKey =
     displayPayload?.moduloSlug != null
-      ? buildEstudarCacheKey(
-          `/estudar/${displayPayload.moduloSlug}`,
-          (displayPayload.vitrineQuerySuffix ?? '').replace(/^\?/, ''),
-        )
+          ? buildEstudarCacheKey(
+              `/estudar/${displayPayload.moduloSlug}`,
+              new URLSearchParams((displayPayload.vitrineQuerySuffix ?? '').replace(/^\?/, '')),
+            )
       : '';
 
   const payloadMatchesRoute =

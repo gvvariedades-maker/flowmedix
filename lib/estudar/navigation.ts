@@ -52,14 +52,11 @@ export function normalizeSearchForCacheKey(search: string): string {
  */
 export function buildEstudarCacheKey(
   pathname: string,
-  searchParams: URLSearchParams | string,
+  searchParams: URLSearchParams,
 ): string {
   const segments = pathname.split('/').filter(Boolean);
   const slug = segments[segments.length - 1] ?? '';
-  const search =
-    typeof searchParams === 'string'
-      ? searchParams
-      : searchParams.toString();
+  const search = searchParams.toString();
   const normalized = normalizeSearchForCacheKey(search);
   return normalized ? `${slug}|${normalized}` : slug;
 }
