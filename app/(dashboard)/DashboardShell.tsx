@@ -49,7 +49,7 @@ const pageVariants = {
   initial: { opacity: 0 },
   animate: {
     opacity: 1,
-    transition: { duration: 0.18, ease: 'easeOut' },
+    transition: { duration: 0.18, ease: 'easeOut' as const },
   },
 };
 
