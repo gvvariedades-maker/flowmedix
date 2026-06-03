@@ -49,7 +49,9 @@ test.describe('Estudar — navegação vitrine → questão', () => {
     );
     await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
 
-    await page.getByRole('button', { name: /Próxima/i }).click();
+    const proximaBtn = page.getByRole('button', { name: /Próxima/i });
+    await proximaBtn.scrollIntoViewIfNeeded();
+    await proximaBtn.click({ timeout: 15_000 });
 
     await expect(page).toHaveURL(
       new RegExp(`/estudar/${E2E_ESTUDAR_SLUG_2}.*banca=${encodeURIComponent(E2E_ESTUDAR_BANCA)}`),

@@ -37,7 +37,12 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
         ) : showSkeleton ? (
           <EstudarQuestaoSkeleton />
         ) : null}
-        {children}
+        <div
+          className={cn(modalActive && 'pointer-events-none select-none')}
+          aria-hidden={modalActive || undefined}
+        >
+          {children}
+        </div>
         {modal}
       </div>
     </DashboardMobilePage>
