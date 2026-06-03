@@ -18,7 +18,7 @@ export function isEstudarIdbL0Enabled(): boolean {
 
 /**
  * Intercepting route @modal — opt-in via NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE=1.
- * Mobile: questão sobre a vitrine; desktop: overlay full-screen (mesmo provider).
+ * Mobile: questão sobre a vitrine; desktop: player no shell (sidebar visível).
  */
 export function isEstudarModalRouteEnabled(): boolean {
   return process.env.NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE === '1';

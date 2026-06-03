@@ -15,6 +15,7 @@ type EstudarQuestaoModalRouteProps = {
 
 /**
  * Intercepting route @modal (fase 11.2): questão sobre a vitrine no mobile.
+ * Desktop: sem overlay — player permanece no shell ao lado da sidebar.
  * `children` inclui EstudarQuestaoHydrator (render null).
  */
 export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteProps) {
@@ -32,14 +33,14 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
     <>
       {children}
       <div
-        className="fixed inset-0 z-[100] flex flex-col md:z-[100]"
+        className="fixed inset-0 z-[100] flex flex-col md:hidden"
         role="dialog"
         aria-modal="true"
         aria-label="Questão"
       >
         <button
           type="button"
-          className="absolute inset-0 bg-black/70 backdrop-blur-[2px] md:bg-[#010409]"
+          className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"
           aria-label="Fechar questão"
           onClick={close}
         />
@@ -47,11 +48,10 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
           className={cn(
             'relative mt-auto flex max-h-[92dvh] min-h-0 flex-1 flex-col',
             'rounded-t-[2rem] border border-white/10 bg-[#010409] shadow-2xl',
-            'md:mt-0 md:max-h-none md:rounded-none md:border-0',
             '[view-transition-name:estudar-questao-root]',
           )}
         >
-          <div className="flex shrink-0 items-center justify-end px-3 pt-3 md:hidden">
+          <div className="flex shrink-0 items-center justify-end px-3 pt-3">
             <button
               type="button"
               onClick={close}
@@ -61,7 +61,7 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
               <X className="h-5 w-5" />
             </button>
           </div>
-          <div className="flex min-h-0 flex-1 flex-col overflow-hidden px-3 pb-safe md:px-4 md:py-3">
+          <div className="flex min-h-0 flex-1 flex-col overflow-hidden px-3 pb-safe">
             {displayPayload ? (
               <AvantLessonPlayer key="estudar-lesson-player-modal" {...displayPayload} />
             ) : (
