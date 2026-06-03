@@ -12,6 +12,8 @@ import {
 import VitrineCatalogStatsSection from '@/components/vitrine/VitrineCatalogStatsSection';
 import VitrineCatalogStatsSkeleton from '@/components/vitrine/VitrineCatalogStatsSkeleton';
 import VitrineClient from '@/components/vitrine/VitrineClient';
+import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
+import { getE2eEstudarVitrinePage } from '@/lib/e2e/estudarSeed';
 
 /** Catálogo inicial no SSR (cache 2 min); cliente refetch em filtros/paginação. */
 export const dynamic = 'force-dynamic';
@@ -21,11 +23,30 @@ export default async function VitrinePage({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const [user, resolvedSearch] = await Promise.all([getServerUser(), searchParams]);
+  const resolvedSearch = await searchParams;
+  const listQuery = parseVitrineListQuery(resolvedSearch);
+
+  if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS')) {
+    const initialPageData = getE2eEstudarVitrinePage(listQuery);
+    return (
+      <Suspense fallback={<VitrineLoadingFallback />}>
+        <VitrineClient
+          fallbackTitulo="Estudo Reverso E2E"
+          initialListQuery={listQuery}
+          initialPageData={initialPageData}
+          initialFacetsData={initialPageData.facets}
+          initialPayloadError={null}
+          ssrListQueryKey={vitrineListQueryKey(listQuery)}
+          ssrFacetsQueryKey={vitrineFacetsQueryKey(listQuery.bancas)}
+        />
+      </Suspense>
+    );
+  }
+
+  const user = await getServerUser();
   const userId = user?.id;
   if (!userId) redirect('/login?next=/estudar');
 
-  const listQuery = parseVitrineListQuery(resolvedSearch);
   const isAdmin = isAdminSessionEmail(user.email ?? null);
   const vitrineFilters = {
     bancas: listQuery.bancas.length ? listQuery.bancas : undefined,

@@ -20,6 +20,29 @@ env:
   PERF_BASELINE_ENV: ci
 
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      perf: ${{ steps.filter.outputs.perf }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            perf:
+              - 'lib/cache/**'
+              - 'lib/vitrine/**'
+              - 'lib/estudar/**'
+              - 'components/vitrine/**'
+              - 'components/lesson/Questao*'
+              - 'components/lesson/EstudarQuestao*'
+              - 'components/lesson/useEstudarQuestaoShellState.ts'
+              - 'app/**/estudar/**'
+              - 'scripts/perf-smoke.ts'
+              - 'scripts/capture-perf-baseline.ts'
+              - 'docs/perf-smoke-baseline*.json'
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -92,6 +115,7 @@ jobs:
         run: npm run test:e2e
         env:
           PLAYWRIGHT_TEST_BASE_URL: http://localhost:3000
+          NEXT_PUBLIC_E2E_DASHBOARD_BYPASS: 'true'
           NEXT_PUBLIC_SUPABASE_URL: ${{ env.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ env.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           NEXT_PUBLIC_APP_URL: ${{ env.NEXT_PUBLIC_APP_URL }}
@@ -114,6 +138,8 @@ jobs:
           retention-days: 30
 
   perf-smoke:
+    needs: changes
+    if: github.event_name == 'push' || needs.changes.outputs.perf == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6

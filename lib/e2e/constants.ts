@@ -15,3 +15,15 @@ export const E2E_SIMULADO_LESSON: LessonData = {
     ],
   },
 };
+
+/** Fluxo E2E vitrine → questão → próxima (Playwright). */
+export const E2E_ESTUDAR_SLUG_1 = 'questao-e2e-estudar-1';
+export const E2E_ESTUDAR_SLUG_2 = 'questao-e2e-estudar-2';
+export const E2E_ESTUDAR_BANCA = 'FGV';
+export const E2E_ESTUDAR_TITULO_AULA = 'Urgências e Emergências E2E';
+
+export const E2E_ESTUDAR_SLUGS = [E2E_ESTUDAR_SLUG_1, E2E_ESTUDAR_SLUG_2] as const;
+
+export function isE2eEstudarSlug(slug: string): boolean {
+  return (E2E_ESTUDAR_SLUGS as readonly string[]).includes(slug);
+}

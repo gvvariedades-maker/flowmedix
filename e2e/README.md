@@ -23,14 +23,17 @@ npm run test:e2e:debug
 
 - `laboratorio.spec.ts` - Testes do laboratório admin
 - `simulados.spec.ts` - Fluxo aluno (setup → runner → resumo)
+- `estudar-nav.spec.ts` - Vitrine → questão → próxima (query preservada)
 - `api-validation.spec.ts` - Testes de API
 - `cache.spec.ts` - Testes de cache
 
 ## 🔐 Bypass admin (somente testes)
 
-O Playwright injeta `E2E_ADMIN_BYPASS=true` e `E2E_DASHBOARD_BYPASS=true` no servidor via `webServer.env` (`playwright.config.ts`). Isso permite acessar `/admin/*` e rotas autenticadas do dashboard (ex.: `/simulados`) nos E2E sem login. As variáveis são **server-only** e só ativam em desenvolvimento ou com `CI=true` — **nunca configure em produção** (Vercel/deploy).
+O Playwright injeta `E2E_ADMIN_BYPASS=true`, `E2E_DASHBOARD_BYPASS=true` e `NEXT_PUBLIC_E2E_DASHBOARD_BYPASS=true` no servidor via `webServer.env` (`playwright.config.ts`). Isso permite acessar `/admin/*` e rotas autenticadas do dashboard (ex.: `/estudar`, `/simulados`) nos E2E sem login. As variáveis `E2E_*` são **server-only**; `NEXT_PUBLIC_E2E_DASHBOARD_BYPASS` evita que `fetchWithAuth` trave em `getSession()` contra Supabase placeholder no CI. **Nunca configure em produção** (Vercel/deploy).
 
 O spec `simulados.spec.ts` usa seed in-memory no servidor (`lib/e2e/simuladoSeed.ts`, ID fixo em `lib/e2e/constants.ts`) quando `E2E_DASHBOARD_BYPASS=true`.
+
+O spec `estudar-nav.spec.ts` usa seed em `lib/e2e/estudarSeed.ts` (slugs `questao-e2e-estudar-1/2`).
 
 ## 🔧 Configuração
 

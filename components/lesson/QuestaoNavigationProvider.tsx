@@ -19,11 +19,19 @@ import {
   clearPrefetchInFlight,
   markNavigateStart,
   markPrefetchInFlight,
+  recordIdbHit,
+  recordIdbHydrate,
+  recordIdbMiss,
   recordNavigateCacheResult,
   recordPrefetchEnd,
   recordPrefetchSkipped,
   recordPrefetchStart,
 } from '@/lib/estudar/navigationTelemetry';
+import {
+  getQuestaoFromIdb,
+  hydrateQuestaoLruFromIdb,
+  setQuestaoInIdb,
+} from '@/lib/estudar/questaoIdbCache';
 import { runEstudarViewTransition } from '@/lib/estudar/viewTransition';
 import { useToast } from '@/lib/toast-context';
 
@@ -99,10 +107,30 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
 
   const cachePayload = useCallback((key: string, payload: EstudarQuestaoPayload) => {
     cacheRef.current.set(key, payload);
+    void setQuestaoInIdb(key, payload);
   }, []);
 
   const getCachedPayload = useCallback((key: string) => {
     return cacheRef.current.get(key);
+  }, []);
+
+  useEffect(() => {
+    void hydrateQuestaoLruFromIdb((key, payload) => {
+      cacheRef.current.set(key, payload);
+    }).then((count) => {
+      if (count > 0) recordIdbHydrate(count);
+    });
+  }, []);
+
+  const readPayloadFromIdb = useCallback(async (cacheKey: string) => {
+    const fromIdb = await getQuestaoFromIdb(cacheKey);
+    if (fromIdb) {
+      cacheRef.current.set(cacheKey, fromIdb);
+      recordIdbHit(cacheKey);
+      return fromIdb;
+    }
+    recordIdbMiss(cacheKey);
+    return null;
   }, []);
 
   const fetchPayloadIntoCache = useCallback(
@@ -131,6 +159,15 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
         typeof performance !== 'undefined' ? performance.now() : Date.now();
 
       const promise = (async (): Promise<FetchPayloadResult> => {
+        const fromIdb = await readPayloadFromIdb(cacheKey);
+        if (fromIdb) {
+          const durationMs = Math.round(
+            (typeof performance !== 'undefined' ? performance.now() : Date.now()) - startedAt,
+          );
+          recordPrefetchEnd(cacheKey, { ok: true, durationMs, status: 200 });
+          return { kind: 'ok', payload: fromIdb };
+        }
+
         try {
           const res = await fetchWithAuth(
             buildEstudarQuestaoApiUrl(slugComQuery, { layers: 'core' }),
@@ -157,6 +194,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
           }
           const payload = (await res.json()) as EstudarQuestaoPayload;
           cacheRef.current.set(cacheKey, payload);
+          void setQuestaoInIdb(cacheKey, payload);
           recordPrefetchEnd(cacheKey, { ok: true, durationMs, status: res.status });
           return { kind: 'ok', payload };
         } catch (err) {
@@ -178,7 +216,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       inFlightRef.current.set(cacheKey, promise);
       return promise;
     },
-    [],
+    [readPayloadFromIdb],
   );
 
   const prefetchPayload = useCallback(

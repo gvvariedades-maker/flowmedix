@@ -8,6 +8,17 @@ import { logEstudarNavApiBuild } from '@/lib/estudar/navigationTelemetry';
 import { logApiStrategy } from '@/lib/api/logApiStrategy';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { recordPerformance } from '@/lib/metrics';
+import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
+import { buildE2eEstudarQuestaoPayload } from '@/lib/e2e/estudarSeed';
+import { isE2eEstudarSlug } from '@/lib/e2e/constants';
+
+/** Headers para cache L0 no Service Worker (Vary: Authorization). */
+function estudarQuestaoApiCacheHeaders(): HeadersInit {
+  return {
+    'Cache-Control': 'private, no-store',
+    Vary: 'Authorization',
+  };
+}
 
 export async function GET(request: NextRequest) {
   const requestStartedAt = Date.now();
@@ -25,6 +36,26 @@ export async function GET(request: NextRequest) {
     }
 
     const { slug, layers, from, caderno_id, bancas, assuntos, q } = parsed.data;
+
+    if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS') && isE2eEstudarSlug(slug)) {
+      const result = buildE2eEstudarQuestaoPayload(slug, {
+        from,
+        caderno_id,
+        banca: bancas,
+        assunto: assuntos,
+        q,
+      }, layers);
+      recordPerformance(endpoint, method, Date.now() - requestStartedAt, result.status === 'ok');
+      if (result.status === 'not_found') {
+        return NextResponse.json({ error: 'Questão não encontrada' }, { status: 404 });
+      }
+      if (result.status === 'forbidden') {
+        return NextResponse.json({ error: 'Sem acesso a este módulo' }, { status: 403 });
+      }
+      return NextResponse.json(result.payload, {
+        headers: estudarQuestaoApiCacheHeaders(),
+      });
+    }
 
     const auth = await getUserAndClientFromBearer(request);
     if (!auth) {
@@ -81,7 +112,7 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json(result.payload, {
-      headers: { 'Cache-Control': 'private, no-store' },
+      headers: estudarQuestaoApiCacheHeaders(),
     });
   } catch (error) {
     recordPerformance(endpoint, method, Date.now() - requestStartedAt, false);

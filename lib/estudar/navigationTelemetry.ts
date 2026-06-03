@@ -18,6 +18,9 @@ type SessionCounters = {
   navigateMiss: number;
   navigateMissInflight: number;
   hydratorSync: number;
+  idbHit: number;
+  idbMiss: number;
+  idbHydrate: number;
 };
 
 const session: SessionCounters = {
@@ -29,6 +32,9 @@ const session: SessionCounters = {
   navigateMiss: 0,
   navigateMissInflight: 0,
   hydratorSync: 0,
+  idbHit: 0,
+  idbMiss: 0,
+  idbHydrate: 0,
 };
 
 /** cacheKey → timestamp (performance.now) do clique em navegar */
@@ -74,6 +80,9 @@ export function resetEstudarNavSession(): void {
   session.navigateMiss = 0;
   session.navigateMissInflight = 0;
   session.hydratorSync = 0;
+  session.idbHit = 0;
+  session.idbMiss = 0;
+  session.idbHydrate = 0;
   navigateStartedAt.clear();
   prefetchInFlight.clear();
 }
@@ -184,6 +193,21 @@ export function recordHydratorSync(cacheKey: string, moduloSlug?: string): void 
     moduloSlug,
     rscConfirmMs,
   });
+}
+
+export function recordIdbHit(cacheKey: string): void {
+  session.idbHit++;
+  logEstudarNav('idb_hit', { cacheKey });
+}
+
+export function recordIdbMiss(cacheKey: string): void {
+  session.idbMiss++;
+  logEstudarNav('idb_miss', { cacheKey });
+}
+
+export function recordIdbHydrate(count: number): void {
+  session.idbHydrate += count;
+  logEstudarNav('idb_hydrate', { count });
 }
 
 /** Tempo de build no servidor (API / RSC). */

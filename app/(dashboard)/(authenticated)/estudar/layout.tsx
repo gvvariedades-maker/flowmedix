@@ -5,11 +5,17 @@ import { EstudarSpeculationRules } from '@/components/estudar/EstudarSpeculation
 import { QuestaoNavigationProvider } from '@/components/lesson/QuestaoNavigationProvider';
 import EstudarQuestaoShell from '@/components/lesson/EstudarQuestaoShell';
 
-export default function EstudarLayout({ children }: { children: ReactNode }) {
+export default function EstudarLayout({
+  children,
+  modal,
+}: {
+  children: ReactNode;
+  modal: ReactNode;
+}) {
   return (
     <QuestaoNavigationProvider>
       <EstudarSpeculationRules />
-      <EstudarQuestaoShell>{children}</EstudarQuestaoShell>
+      <EstudarQuestaoShell modal={modal}>{children}</EstudarQuestaoShell>
     </QuestaoNavigationProvider>
   );
 }

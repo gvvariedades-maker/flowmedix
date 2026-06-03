@@ -27,10 +27,19 @@ jest.mock('@/lib/estudar/navigationTelemetry', () => ({
   clearPrefetchInFlight: jest.fn(),
   markNavigateStart: jest.fn(),
   markPrefetchInFlight: jest.fn(),
+  recordIdbHit: jest.fn(),
+  recordIdbHydrate: jest.fn(),
+  recordIdbMiss: jest.fn(),
   recordNavigateCacheResult: jest.fn(),
   recordPrefetchEnd: jest.fn(),
   recordPrefetchSkipped: jest.fn(),
   recordPrefetchStart: jest.fn(),
+}));
+
+jest.mock('@/lib/estudar/questaoIdbCache', () => ({
+  getQuestaoFromIdb: jest.fn().mockResolvedValue(null),
+  hydrateQuestaoLruFromIdb: jest.fn().mockResolvedValue(0),
+  setQuestaoInIdb: jest.fn().mockResolvedValue(undefined),
 }));
 
 jest.mock('@/lib/estudar/viewTransition', () => ({

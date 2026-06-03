@@ -4,12 +4,19 @@ import type { ReactNode } from 'react';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import EstudarQuestaoSkeleton from '@/components/lesson/EstudarQuestaoSkeleton';
 import { useEstudarQuestaoShellState } from '@/components/lesson/useEstudarQuestaoShellState';
+import { useEstudarModalActive } from '@/components/estudar/useEstudarModalActive';
 import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
 import { cn } from '@/lib/utils';
 
-export default function EstudarQuestaoShell({ children }: { children: ReactNode }) {
+type EstudarQuestaoShellProps = {
+  children: ReactNode;
+  modal?: ReactNode;
+};
+
+export default function EstudarQuestaoShell({ children, modal = null }: EstudarQuestaoShellProps) {
+  const modalActive = useEstudarModalActive();
   const { showPlayer, showSkeleton, displayPayload, isPayloadStale } =
-    useEstudarQuestaoShellState();
+    useEstudarQuestaoShellState({ modalActive });
 
   return (
     <DashboardMobilePage
@@ -31,6 +38,7 @@ export default function EstudarQuestaoShell({ children }: { children: ReactNode 
           <EstudarQuestaoSkeleton />
         ) : null}
         {children}
+        {modal}
       </div>
     </DashboardMobilePage>
   );

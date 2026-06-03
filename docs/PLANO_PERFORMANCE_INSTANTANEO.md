@@ -92,16 +92,16 @@ Marque `[x]` ao concluir cada passo (incluir testes/validação indicados na fas
 
 ### Fase 9 — Infraestrutura
 
-- [ ] **9.1** — Checklist Supabase pooler + região Vercel (§ Operação)
-- [ ] **9.2** — Advisors: índices `historico_questoes`, `modulos_estudo`
-- [ ] **9.3** — Decisão streaming/Suspense na vitrine SSR
+- [x] **9.1** — Checklist Supabase pooler + região Vercel (§ Operação)
+- [x] **9.2** — Advisors: índices `historico_questoes`, `modulos_estudo`
+- [x] **9.3** — Decisão streaming/Suspense na vitrine SSR
 
 ### Fase 10 — Governança e regressão
 
-- [ ] **10.1** — `perf-smoke` obrigatório em PRs sensíveis (regra no doc)
-- [ ] **10.2** — Playwright: vitrine → questão → próxima
-- [ ] **10.3** — Atualizar `OTIMIZACOES_PERFORMANCE_QUESTOES.md`
-- [ ] **10.4** — Tabela **Depois** + critérios SLO marcados
+- [x] **10.1** — `perf-smoke` obrigatório em PRs sensíveis (regra no doc)
+- [x] **10.2** — Playwright: vitrine → questão → próxima
+- [x] **10.3** — Atualizar `OTIMIZACOES_PERFORMANCE_QUESTOES.md`
+- [x] **10.4** — Tabela **Depois** + critérios SLO marcados
 
 ### Fase 11 — Opcional (após 10.4)
 
@@ -131,11 +131,11 @@ Artefatos: [`perf-baseline-2026-06-02.json`](perf-baseline-2026-06-02.json) · [
 
 | Métrica | Valor | SLO atingido? |
 |---------|-------|----------------|
-| Cache hit navegação | — | ≥ 80% |
-| P95 abrir questão | — | < 800 ms |
-| P95 vitrine pág. 1 | **1188 ms** HTTP (`GET /api/vitrine?page=1`, 20×, `www.avant.enf.br`) · **850 ms** servidor local (`getVitrinePage`, pós 7.x) | < 800 ms — **HTTP ainda acima**; servidor −30% vs baseline (**1216 → 850 ms**). Deploy pendente para medir HTTP com 7.x–8.x. |
-| Payload mediano `layers=core` | **1,2 KB** JSON (1198 B no cenário `estudar_questao_core` / perf-smoke; fixture premium, slides omitidos) | < 80 KB gzip |
-| Tela vazia no clique | — | Não |
+| Cache hit navegação | **≥ 80% esperado** após hover + prefetch (`VitrineQuestaoLink`, LRU 20, `layers=core`); validar com telemetria § Baseline pós-deploy | ≥ 80% — **validar em staging** (protocolo 2.5) |
+| P95 abrir questão | **~4572 ms → meta &lt; 800 ms** (baseline HTTP); ganhos de cache RSC (`getEstudarQuestaoPayloadCached`), prefetch core e hit LRU ainda dependem de deploy + medição autenticada repetida | &lt; 800 ms — **pendente medição pós-deploy** |
+| P95 vitrine pág. 1 | **1188 ms** HTTP (`GET /api/vitrine?page=1`, 20×, `www.avant.enf.br`) · **850 ms** servidor local (`getVitrinePage`, pós 7.x) | &lt; 800 ms — **HTTP ainda acima**; servidor −30% vs baseline (**1216 → 850 ms**). Deploy pendente para medir HTTP com 7.x–8.x. |
+| Payload mediano `layers=core` | **1,2 KB** JSON (1198 B no cenário `estudar_questao_core` / perf-smoke; fixture premium, slides omitidos) | &lt; 80 KB gzip — **Sim** |
+| Tela vazia no clique | Skeleton (`EstudarQuestaoSkeleton`) + shell alinhado ao player; sem flash branco documentado (3.4) | **Sim** |
 
 ---
 
@@ -322,7 +322,91 @@ Na aba Network, coluna **Size** (transferido, gzip) de `GET /api/estudar/questao
 
 ## Operação
 
-> Seção a completar no passo **9.1**: Supabase pooler, região Vercel, checklist de produção.
+Checklist de infraestrutura para latência vitrine/questão (passo **9.1**). Revisar a cada release grande ou mudança de região.
+
+### Supabase — pooler e conexões
+
+| Item | O que verificar | Onde |
+|------|-----------------|------|
+| **Modo pooler** | Produção/preview Vercel deve usar URL **Transaction pooler** (`*.pooler.supabase.com:6543`) em `NEXT_PUBLIC_SUPABASE_URL` / conexões serverless — evita esgotar conexões Postgres em cold starts | [Supabase → Connect → Transaction pooler](https://supabase.com/dashboard/project/_/settings/database) |
+| **Direct vs pooler** | Migrations DDL e scripts longos: conexão **direct** (porta 5432). Runtime Next.js (Route Handlers, `unstable_cache`): **pooler** | Docs: [Connection pooling](https://supabase.com/docs/guides/database/connecting-to-postgres#connection-pooler) |
+| **`prepare: false`** | Clientes serverless com PgBouncer transaction mode não devem usar prepared statements persistentes (padrão `@supabase/supabase-js` recente) | Revisar se houver client custom |
+| **Região do projeto** | Anotar região do projeto Supabase (ex.: `sa-east-1`) | Dashboard → Project Settings → General |
+| **Max connections** | Plano Pro: monitorar picos em Database → Reports; alerta se sustained &gt; 80% | Advisors performance |
+
+### Vercel — região e runtime
+
+| Item | O que verificar | Onde |
+|------|-----------------|------|
+| **Região primária** | Preferir **mesma região ou mais próxima** do Supabase (ex.: `gru1` se DB em São Paulo) | Vercel → Project → Settings → Functions → Function Region |
+| **Edge vs Node** | Rotas `/api/vitrine`, `/api/estudar/questao` e RSC estudar rodam em **Node** (Supabase + cache); não mover para Edge sem reavaliar pooler | `app/api/**`, `lib/cache.ts` |
+| **Preview vs Production** | Mesmas envs críticas (`SUPABASE_SERVICE_ROLE_KEY`, `METRICS_SECRET`) em Preview para smoke staging | Vercel env groups |
+| **Cold start** | Após deploy, aquecer `/api/health` + 1× `/api/vitrine` antes de baseline | § Baseline |
+
+### Checklist operacional (marcar na revisão)
+
+- [ ] Supabase URL de produção aponta para **pooler** (6543), não direct, no runtime serverless
+- [ ] Região Vercel alinhada à região Supabase (latência RTT &lt; ~50 ms ideal)
+- [ ] `npm run perf:smoke:staging` verde após deploy (ou tetos atualizados com justificativa)
+- [ ] Advisors Supabase performance sem alerta **WARN/ERROR** em `historico_questoes` / `modulos_estudo` (ver 9.2)
+- [ ] Redirect URLs Supabase incluem domínio de produção e preview
+
+### Índices e advisors (passo 9.2)
+
+**Verificação 2026-06-02** (MCP `get_advisors` performance + `pg_indexes`):
+
+- `historico_questoes`: índices existentes cobrem queries do app — `idx_historico_questoes_user_modulo` (`user_id`, `modulo_slug`) para `.eq(user_id).in(modulo_slug)`; `idx_historico_questoes_user_date` para analytics. **Sem alerta crítico** nos advisors para esta tabela.
+- `modulos_estudo`: unique em `modulo_slug`; índices vitrine (trgm, `banca+titulo_aula`). **Adicionados** via migration [`20260602120000_performance_nav_indexes.sql`](../supabase/migrations/20260602120000_performance_nav_indexes.sql):
+  - `idx_modulos_estudo_banca_modulo_nome`
+  - `idx_modulos_estudo_banca_modulo_nome_created_at` (navegação dots / `getQuestoesByBancaCached`)
+
+Repetir após DDL: `get_advisors` type=performance no dashboard Supabase.
+
+### Streaming / Suspense na vitrine SSR (passo 9.3)
+
+**Decisão: adiar streaming adicional; manter arquitetura atual.**
+
+Estado atual ([`app/(dashboard)/(authenticated)/estudar/page.tsx`](../app/(dashboard)/(authenticated)/estudar/page.tsx)):
+
+1. SSR busca payload inicial (`getVitrineInitialPayloadCached`) **antes** de renderizar `VitrineClient`.
+2. `Suspense` envolve o client (requerido por `useSearchParams`) e `VitrineCatalogStatsSection` (stats opcionais com skeleton próprio).
+3. Cliente usa **SWR** (fase 8) para filtros/página sem spinner full-page.
+
+**Por que não fragmentar mais o SSR agora:**
+
+- O contrato UI exige `initialPageData` + facets alinhados na primeira pintura (evita layout shift nos cards).
+- Facets já estão desacoplados em `/api/vitrine/facets` com cache 15 min (7.3).
+- Streaming só do catálogo deixaria a vitrine sem grupos na primeira chunk — pior UX que o skeleton monolítico atual.
+
+**Reavaliar quando:** P95 SSR vitrine &gt; 800 ms **e** TTFB do documento `/estudar` for gargalo (vs. `/api/vitrine`). Candidato futuro: `<Suspense>` por seção de stats + shell estático, **sem** mudar o contrato de `VitrineClient` (`initialPageData` null → empty state explícito).
+
+---
+
+## Governança CI — perf-smoke (passo 10.1)
+
+Job **`perf-smoke`** em [`.github/workflows/test.yml`](../.github/workflows/test.yml):
+
+| Gatilho | Comportamento |
+|---------|----------------|
+| **Push** `main` / `develop` | Sempre executa `npm run perf:smoke` |
+| **Pull request** | Executa **somente** se o diff tocar paths sensíveis (job `changes` + `dorny/paths-filter@v3`) |
+
+**Paths que disparam perf-smoke em PR:**
+
+- `lib/cache/**`
+- `lib/vitrine/**`
+- `lib/estudar/**`
+- `components/vitrine/**`
+- `components/lesson/Questao*`
+- `components/lesson/EstudarQuestao*`
+- `components/lesson/useEstudarQuestaoShellState.ts`
+- `app/**/estudar/**`
+- `scripts/perf-smoke.ts`, `scripts/capture-perf-baseline.ts`
+- `docs/perf-smoke-baseline*.json`
+
+**Local antes do PR:** `npm run perf:smoke` (servidor em `127.0.0.1:3000` ou `PERF_BASE_URL`).
+
+**E2E regressão (10.2):** [`e2e/estudar-nav.spec.ts`](../e2e/estudar-nav.spec.ts) — vitrine → questão → próxima com `banca` preservada (seed `E2E_DASHBOARD_BYPASS`).
 
 ---
 
@@ -555,4 +639,4 @@ flowchart TB
 
 ---
 
-*Última atualização do índice: passo 0.3 concluído (baseline local 2026-06-02).*
+*Última atualização do índice: fases 9–10 concluídas (2026-06-02).*

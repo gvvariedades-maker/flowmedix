@@ -56,6 +56,7 @@ export default defineConfig({
           ...process.env,
           E2E_ADMIN_BYPASS: 'true',
           E2E_DASHBOARD_BYPASS: 'true',
+          NEXT_PUBLIC_E2E_DASHBOARD_BYPASS: 'true',
         },
       }
     : {
@@ -68,6 +69,7 @@ export default defineConfig({
           ...process.env,
           E2E_ADMIN_BYPASS: 'true',
           E2E_DASHBOARD_BYPASS: 'true',
+          NEXT_PUBLIC_E2E_DASHBOARD_BYPASS: 'true',
         },
       },
 });
