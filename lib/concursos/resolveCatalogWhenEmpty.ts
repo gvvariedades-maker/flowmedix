@@ -17,6 +17,14 @@ export async function resolveAccessibleModulosWhenEmpty(
   if (modulos.length > 0) return modulos;
 
   if (isAdmin) {
+    const { createServerSupabase } = await import('@/lib/supabase/server');
+    const supabase = await createServerSupabase();
+    const { data } = await supabase
+      .from('modulos_estudo')
+      .select('id, modulo_slug, modulo_nome, titulo_aula, banca, created_at, avant_codigo')
+      .order('created_at', { ascending: false })
+      .limit(10000);
+    if (data && data.length > 0) return data as ModuloEstudoListRow[];
     return (await getModulosEstudoCached()) as ModuloEstudoListRow[];
   }
 

@@ -76,16 +76,21 @@ export function vitrinePageCacheKey(
   userId: string,
   page: number,
   filters: VitrinePageCacheFilters,
+  isAdmin = false,
 ): string {
   const filtersHash = getVitrinePageFiltersHash(filters);
-  const raw = `${userId}\0${page}\0${filtersHash}`;
+  const raw = `${userId}\0${page}\0${filtersHash}\0${isAdmin}`;
   const hash = createHash('sha256').update(raw).digest('hex').slice(0, 16);
-  return `vitrine-page-${hash}`;
+  return `vitrine-page-v2-${hash}`;
 }
 
-export function vitrineFacetsCacheKey(userId: string, filters: VitrineFacetsCacheFilters = {}): string {
+export function vitrineFacetsCacheKey(
+  userId: string,
+  filters: VitrineFacetsCacheFilters = {},
+  isAdmin = false,
+): string {
   const filtersHash = getVitrineFacetsFiltersHash(filters);
-  const raw = `${userId}\0${filtersHash}`;
+  const raw = `${userId}\0${filtersHash}\0${isAdmin}`;
   const hash = createHash('sha256').update(raw).digest('hex').slice(0, 16);
-  return `vitrine-facets-${hash}`;
+  return `vitrine-facets-v2-${hash}`;
 }

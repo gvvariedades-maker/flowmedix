@@ -129,7 +129,7 @@ export function ReportErrorDialog({
               ? 'Muitos envios em sequência. Aguarde alguns segundos e tente de novo.'
               : 'Não foi possível enviar o reporte agora.';
         const apiMessage = data.error?.trim();
-        const finalMessage = apiMessage || fallbackMessage;
+        const finalMessage = response.status === 401 ? fallbackMessage : (apiMessage || fallbackMessage);
         setInlineError(finalMessage);
         addToast(finalMessage, 'danger');
         return;

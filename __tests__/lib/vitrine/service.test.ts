@@ -41,6 +41,7 @@ const getModulosCatalog = getModulosEstudoCached as jest.Mock;
 describe('getVitrinePage', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    getModulos.mockResolvedValue([]);
     getHistorico.mockResolvedValue([]);
     fetchFacets.mockResolvedValue({ bancas: [], assuntos: [] });
     fetchRpcPage.mockRejectedValue(new Error('RPC indisponível nos testes'));
@@ -182,9 +183,9 @@ describe('getVitrinePage', () => {
 
   it('usa getVitrineFacets quando RPC não traz facets (rollout)', async () => {
     fetchRpcPage.mockResolvedValue({
-      groups: [],
-      pagination: { page: 1, perPage: 12, totalGroups: 0, totalPages: 1 },
-      totalModulosFiltrados: 0,
+      groups: [{ titulo_aula: 'Aula 1', modulo_nome: 'M', banca: 'FGV', questoes: [] }],
+      pagination: { page: 1, perPage: 12, totalGroups: 1, totalPages: 1 },
+      totalModulosFiltrados: 1,
     });
     fetchFacets.mockResolvedValue({ bancas: ['FGV'], assuntos: ['A'] });
 
@@ -247,21 +248,30 @@ describe('getVitrinePage', () => {
     expect(result.groups[0].questoes).toHaveLength(SCALE_LIMITS.QUESTOES_POR_ASSUNTO);
   });
 
-  it('RPC vazio sem filtros não aciona pipeline JS', async () => {
+  it('RPC vazio sem filtros aciona pipeline JS para reativação/matrícula', async () => {
     fetchRpcPage.mockResolvedValue({
       groups: [],
       pagination: { page: 1, perPage: 12, totalGroups: 0, totalPages: 1 },
       totalModulosFiltrados: 0,
       facets: { bancas: ['CESPE'], assuntos: ['Urgências'] },
     });
+    getModulos.mockResolvedValue([
+      {
+        id: '1',
+        modulo_slug: 'slug-a',
+        modulo_nome: 'T',
+        titulo_aula: 'Urgências',
+        banca: 'CESPE',
+        created_at: '2024-01-01',
+        avant_codigo: 1,
+      }
+    ]);
 
     const result = await getVitrinePage({ userId: 'user-1', page: 1 });
 
-    expect(getModulos).not.toHaveBeenCalled();
-    expect(getHistorico).not.toHaveBeenCalled();
-    expect(fetchFacets).not.toHaveBeenCalled();
-    expect(result.groups).toHaveLength(0);
-    expect(result.facets).toEqual({ bancas: ['CESPE'], assuntos: ['Urgências'] });
+    expect(getModulos).toHaveBeenCalledWith('user-1');
+    expect(getHistorico).toHaveBeenCalledWith('user-1', ['slug-a']);
+    expect(result.groups).toHaveLength(1);
   });
 
   it('admin com filtro usa nav cached em fallback JS (não catálogo inteiro)', async () => {
@@ -291,9 +301,9 @@ describe('getVitrinePage', () => {
 
   it('admin tenta RPC antes do fallback JS', async () => {
     fetchRpcPage.mockResolvedValue({
-      groups: [],
-      pagination: { page: 1, perPage: 12, totalGroups: 0, totalPages: 1 },
-      totalModulosFiltrados: 0,
+      groups: [{ titulo_aula: 'Aula 1', modulo_nome: 'M', banca: 'FGV', questoes: [] }],
+      pagination: { page: 1, perPage: 12, totalGroups: 1, totalPages: 1 },
+      totalModulosFiltrados: 1,
       facets: { bancas: ['FGV'], assuntos: [] },
     });
 

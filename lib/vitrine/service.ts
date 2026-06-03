@@ -79,21 +79,46 @@ async function loadModulosForVitrine(
 ): Promise<ModuloEstudoRow[]> {
   const sqlFilters = vitrineFiltersToSqlNavFilters(filters);
   if (sqlFilters) {
-    return (await getAccessibleModulosForNavCached(userId, sqlFilters)) as ModuloEstudoRow[];
+    const modulos = (await getAccessibleModulosForNavCached(userId, sqlFilters)) as ModuloEstudoRow[];
+    logger.warn('loadModulosForVitrine: sqlFilters result', { count: modulos.length, isAdmin });
+    if (modulos.length > 0 || !isAdmin) {
+      return modulos;
+    }
   }
   if (isAdmin) {
-    return (await getModulosEstudoCached()) as ModuloEstudoRow[];
+    const { createServerSupabase } = await import('@/lib/supabase/server');
+    const supabase = await createServerSupabase();
+    const { data, error } = await supabase
+      .from('modulos_estudo')
+      .select('id, modulo_slug, modulo_nome, titulo_aula, banca, created_at, avant_codigo')
+      .order('created_at', { ascending: false })
+      .limit(SCALE_LIMITS.VITRINE_MODULOS);
+    
+    if (error) {
+      logger.error('loadModulosForVitrine: admin DB bypass error', error);
+      return (await getModulosEstudoCached()) as ModuloEstudoRow[];
+    }
+    const modulos = (data ?? []) as ModuloEstudoRow[];
+    logger.warn('loadModulosForVitrine: admin DB bypass result', { count: modulos.length });
+    return modulos;
   }
   const modulos = (await getModulosEstudoVitrineForUserCached(userId)) as ModuloEstudoRow[];
+  logger.warn('loadModulosForVitrine: user vitrine result', { count: modulos.length });
   if (modulos.length > 0) return modulos;
-  return (await resolveAccessibleModulosWhenEmpty(userId, false)) as ModuloEstudoRow[];
+  const emptyFallback = (await resolveAccessibleModulosWhenEmpty(userId, false)) as ModuloEstudoRow[];
+  logger.warn('loadModulosForVitrine: empty fallback result', { count: emptyFallback.length });
+  return emptyFallback;
 }
 
 async function getVitrinePageViaJs(params: GetVitrinePageParams): Promise<VitrinePageResponse> {
   const { userId, page, isAdmin = false } = params;
   const filters = normalizeVitrineListFilters(params.filters);
 
+  logger.warn('getVitrinePageViaJs started', { userId, isAdmin, filters });
+
   const modulosRaw = await loadModulosForVitrine(userId, filters, isAdmin);
+  logger.warn('getVitrinePageViaJs: loadModulosForVitrine result', { count: modulosRaw.length });
+
   const facets = buildVitrineFacets(modulosRaw, { bancas: filters.bancas });
 
   const modulosComStatsPlaceholder = modulosRaw.map((m) => ({
@@ -103,6 +128,8 @@ async function getVitrinePageViaJs(params: GetVitrinePageParams): Promise<Vitrin
   }));
 
   const filtered = filterModulosLikeVitrine(modulosComStatsPlaceholder, filters);
+  logger.warn('getVitrinePageViaJs: filtered count', { count: filtered.length });
+
   const slugs = filtered.map((m) => m.modulo_slug);
   const historico = await getHistoricoQuestoesForSlugsCached(userId, slugs);
 
@@ -115,6 +142,13 @@ async function getVitrinePageViaJs(params: GetVitrinePageParams): Promise<Vitrin
     ...group,
     questoes: group.questoes.slice(0, SCALE_LIMITS.QUESTOES_POR_ASSUNTO),
   }));
+
+  logger.warn('getVitrinePageViaJs: total groups built', { 
+    totalGroups: allGroups.length, 
+    userId, 
+    isAdmin 
+  });
+
   const { slice, totalPages } = paginateGroups(allGroups, page, VITRINE_ASSUNTOS_POR_PAGINA);
   const pageClamped = Math.min(Math.max(1, page), totalPages);
 
@@ -141,6 +175,8 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
   const normalizedFilters = normalizeFiltersForLog(filters);
   const startAt = Date.now();
 
+  logger.warn('getVitrinePage called', { userId, page, isAdmin, filters: normalizedFilters });
+
   try {
     const rpcPage = await fetchVitrinePageFromRpc({ userId, page, filters });
     const durationMs = Date.now() - startAt;
@@ -148,12 +184,18 @@ export async function getVitrinePage(params: GetVitrinePageParams): Promise<Vitr
     const rpcHasResults =
       rpcPage.pagination.totalGroups > 0 || rpcPage.totalModulosFiltrados > 0;
 
-    if (!rpcHasResults && !vitrineHasActiveFilters(filters)) {
-      logger.error('RPC get_vitrine_page vazio sem filtros; verificar matrícula/dados', {
-        userId,
-        page,
-        isAdmin,
-      });
+    if (!rpcHasResults) {
+      if (isAdmin) {
+        throw new Error('Admin RPC returned empty, forcing fallback JS with full catalog');
+      }
+      if (!vitrineHasActiveFilters(filters)) {
+        logger.error('RPC get_vitrine_page vazio sem filtros; verificar matrícula/dados', {
+          userId,
+          page,
+          isAdmin,
+        });
+        throw new Error('RPC returned empty result without active filters');
+      }
     }
 
     const facets =

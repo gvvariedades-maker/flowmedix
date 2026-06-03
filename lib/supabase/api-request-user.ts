@@ -36,7 +36,10 @@ export async function getUserAndClientFromBearer(
     error,
   } = await supabase.auth.getUser(accessToken);
 
-  if (error || !user) return null;
+  if (error || !user) {
+    console.error('getUserAndClientFromBearer erro:', error?.message);
+    return null;
+  }
 
   return { user, supabase };
 }

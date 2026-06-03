@@ -150,7 +150,7 @@ const MODULOS_ESTUDO_VITRINE_LIMIT = SCALE_LIMITS.VITRINE_MODULOS;
  * Revalida a cada 5 minutos (dados semi-estáticos)
  */
 // Chave versionada: evita `unstable_cache` antigo com `[]` (rede/env) por vários minutos.
-const MODULOS_ESTUDO_CACHE_ID = 'modulos-estudo-catalog-v2';
+const MODULOS_ESTUDO_CACHE_ID = 'modulos-estudo-catalog-v3';
 
 // Cache wrapper com tracking
 const modulosCacheFn = unstable_cache(
@@ -678,7 +678,7 @@ export async function getVitrinePageCached(
   filters: VitrinePageCacheFilters = {},
   isAdmin = false,
 ) {
-  const cacheKey = vitrinePageCacheKey(userId, page, filters);
+  const cacheKey = vitrinePageCacheKey(userId, page, filters, isAdmin);
   const userTag = getVitrinePageUserTag(userId);
   const filterTag = getVitrinePageFilterTag(filters);
   const userFilterTag = getVitrinePageUserFilterTag(userId, filters);
@@ -692,7 +692,15 @@ export async function getVitrinePageCached(
     [cacheKey],
     {
       ...CACHE_CONFIG.USER,
-      tags: ['vitrine-page', 'user', `user-${userId}`, userTag, filterTag, userFilterTag],
+      tags: [
+        'vitrine-page',
+        'user',
+        `user-${userId}`,
+        userTag,
+        filterTag,
+        userFilterTag,
+        isAdmin ? 'admin' : 'student',
+      ],
     },
   )();
 }
@@ -706,7 +714,7 @@ export async function getVitrineFacetsCached(
   filters: VitrineFacetsCacheFilters = {},
   isAdmin = false,
 ) {
-  const cacheKey = vitrineFacetsCacheKey(userId, filters);
+  const cacheKey = vitrineFacetsCacheKey(userId, filters, isAdmin);
   const userTag = getVitrineFacetsUserTag(userId);
   const filterTag = getVitrineFacetsFilterTag(filters);
   const userFilterTag = getVitrineFacetsUserFilterTag(userId, filters);
@@ -720,7 +728,15 @@ export async function getVitrineFacetsCached(
     [cacheKey],
     {
       ...CACHE_CONFIG.STATIC,
-      tags: ['vitrine-facets', 'user', `user-${userId}`, userTag, filterTag, userFilterTag],
+      tags: [
+        'vitrine-facets',
+        'user',
+        `user-${userId}`,
+        userTag,
+        filterTag,
+        userFilterTag,
+        isAdmin ? 'admin' : 'student',
+      ],
     },
   )();
 }
@@ -735,12 +751,13 @@ function vitrineInitialPayloadCacheKey(
   page: number,
   pageFilters: VitrinePageCacheFilters,
   facetsFilters: VitrineFacetsCacheFilters,
+  isAdmin = false,
 ): string {
   const pageFiltersHash = getVitrinePageFiltersHash(pageFilters);
   const facetsFiltersHash = getVitrineFacetsFiltersHash(facetsFilters);
-  const raw = `${userId}\0${page}\0${pageFiltersHash}\0${facetsFiltersHash}`;
+  const raw = `${userId}\0${page}\0${pageFiltersHash}\0${facetsFiltersHash}\0${isAdmin}`;
   const hash = createHash('sha256').update(raw).digest('hex').slice(0, 16);
-  return `vitrine-initial-${hash}`;
+  return `vitrine-initial-v2-${hash}`;
 }
 
 /**
@@ -754,7 +771,7 @@ export async function getVitrineInitialPayloadCached(
   facetsFilters: VitrineFacetsCacheFilters = {},
   isAdmin = false,
 ): Promise<VitrineInitialPayload> {
-  const cacheKey = vitrineInitialPayloadCacheKey(userId, page, pageFilters, facetsFilters);
+  const cacheKey = vitrineInitialPayloadCacheKey(userId, page, pageFilters, facetsFilters, isAdmin);
   const pageUserTag = getVitrinePageUserTag(userId);
   const pageFilterTag = getVitrinePageFilterTag(pageFilters);
   const pageUserFilterTag = getVitrinePageUserFilterTag(userId, pageFilters);
@@ -787,6 +804,7 @@ export async function getVitrineInitialPayloadCached(
         facetsUserTag,
         facetsFilterTag,
         facetsUserFilterTag,
+        isAdmin ? 'admin' : 'student',
       ],
     },
   )();

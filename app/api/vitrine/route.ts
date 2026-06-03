@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { searchParamsToQueryRecord } from '@/lib/api/query-params';
 import { VitrineQuerySchema } from '@/lib/validations';
-import { getVitrinePageCached } from '@/lib/cache';
+import { getVitrinePageCached, revalidateCache } from '@/lib/cache';
 import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import { logApiStrategy } from '@/lib/api/logApiStrategy';
@@ -39,14 +39,39 @@ export async function GET(request: NextRequest) {
     }
 
     const { page, bancas, assuntos, q } = parsed.data;
+    const isAdmin = isAdminSessionEmail(auth.user.email ?? null);
+    
+    logger.warn('API Vitrine: identidades', { 
+      userId: auth.user.id, 
+      email: auth.user.email, 
+      emailLength: auth.user.email?.length,
+      isAdmin,
+      userAgent: request.headers.get('user-agent'),
+      cfRay: request.headers.get('cf-ray')
+    });
+
     const normalizedFilters = {
       bancas,
       assuntos,
       q: q || undefined,
     };
+    if (isAdmin) {
+      logger.warn('API Vitrine: admin detected, bypassing cache for test');
+      const { getVitrinePage } = await import('@/lib/vitrine/service');
+      const payload = await getVitrinePage({
+        userId: auth.user.id,
+        page,
+        filters: normalizedFilters,
+        isAdmin,
+      });
+      return NextResponse.json(payload, {
+        headers: { 'Cache-Control': 'private, no-store' },
+      });
+    }
+
     const payload = await getVitrinePageCached(auth.user.id, page, {
       ...normalizedFilters,
-    }, isAdminSessionEmail(auth.user.email ?? null));
+    }, isAdmin);
 
     logApiStrategy({
       event: 'api_vitrine',

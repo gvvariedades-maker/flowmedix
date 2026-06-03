@@ -295,7 +295,7 @@ export async function reactivateGeralFreeMatricula(userId: string): Promise<bool
   const supabase = await createServerSupabase();
   const { data, error } = await supabase
     .from('concurso_matriculas')
-    .select('origem, status')
+    .select('origem, status, expires_at')
     .eq('user_id', userId)
     .eq('concurso_id', geral.id)
     .maybeSingle();
@@ -305,7 +305,13 @@ export async function reactivateGeralFreeMatricula(userId: string): Promise<bool
     throw error;
   }
 
-  if (!data || data.status !== 'expirado') return false;
+  if (!data) return false;
+
+  const isExpired =
+    data.status === 'expirado' ||
+    (data.expires_at && new Date(data.expires_at).getTime() <= Date.now());
+
+  if (!isExpired) return false;
   if (data.origem !== 'invite' && data.origem !== 'cadastro') return false;
 
   const { error: updateError } = await supabase
@@ -336,6 +342,9 @@ export async function ensureGeralCadastroMatricula(userId: string): Promise<Conc
 
   const alreadyActive = await userHasActiveMatricula(userId, geral.id);
   if (alreadyActive) return geral;
+
+  const reactivated = await reactivateGeralFreeMatricula(userId);
+  if (reactivated) return geral;
 
   return matricularPorSlug(userId, GERAL_CONCURSO_SLUG, 'cadastro');
 }
