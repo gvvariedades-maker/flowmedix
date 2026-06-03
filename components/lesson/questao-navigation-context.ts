@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext } from 'react';
+import type { EstudarVitrineReturnContext } from '@/lib/estudar/navigation';
 import type { AvantLessonPlayerProps } from '@/types/lesson';
 
 export type EstudarQuestaoPayload = AvantLessonPlayerProps;
@@ -13,6 +14,8 @@ export type QuestaoNavigationContextValue = {
   navigateEstudar: (slugComQuery: string) => void;
   prefetchEstudar: (slugComQuery: string) => void;
   prefetchPayload: (slugComQuery: string) => void;
+  /** Fecha questão e volta à vitrine (replace — evita reabrir pelo sync de URL). */
+  dismissToVitrine: (ctx?: EstudarVitrineReturnContext) => void;
 };
 
 export const QuestaoNavigationContext =

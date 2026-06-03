@@ -10,6 +10,11 @@ import {
   MOBILE_DRAWER_PANEL_Z,
   MOBILE_PWA_INSTALL_BANNER_CLEARANCE,
   MOBILE_VITRINE_PAGINATION_FIXED_BOTTOM,
+  ESTUDO_REVERSO_FULLSCREEN_Z,
+  ESTUDO_REVERSO_DESKTOP_INSET,
+  ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM,
+  MOBILE_DRAWER_ABOVE_OVERLAYS_PANEL_Z,
+  DASHBOARD_SIDEBAR_WIDTH,
   getDashboardPageBottomPadding,
 } from '@/lib/layout/mobileBottomNav';
 
@@ -24,6 +29,25 @@ describe('mobileBottomNav tokens', () => {
     expect(MOBILE_ACTION_BAR_Z).toBe('z-50');
     expect(MOBILE_DRAWER_OVERLAY_Z).toBe('z-[65]');
     expect(MOBILE_DRAWER_PANEL_Z).toBe('z-[70]');
+  });
+
+  it('estudo reverso fullscreen fica acima do modal de questão', () => {
+    expect(ESTUDO_REVERSO_FULLSCREEN_Z).toBe('z-[110]');
+  });
+
+  it('estudo reverso no desktop respeita largura da sidebar', () => {
+    expect(DASHBOARD_SIDEBAR_WIDTH).toBe('18rem');
+    expect(ESTUDO_REVERSO_DESKTOP_INSET).toContain('18rem');
+  });
+
+  it('estudo reverso no celular reserva altura do BottomNav', () => {
+    expect(ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM).toContain('max-md:bottom');
+    expect(ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM).toContain('5rem');
+  });
+
+  it('drawer mobile fica acima do modal de questão quando aberto', () => {
+    expect(MOBILE_DRAWER_ABOVE_OVERLAYS_PANEL_Z).toBe('z-[120]');
+    expect(ESTUDO_REVERSO_FULLSCREEN_Z).toBe('z-[110]');
   });
 
   it('getDashboardPageBottomPadding só reserva espaço para banner PWA', () => {

@@ -73,6 +73,15 @@ function Probe() {
   );
 }
 
+function DismissProbe() {
+  const nav = useQuestaoNavigation();
+  return (
+    <button type="button" onClick={() => nav.dismissToVitrine({ vitrineQuerySuffix: '?page=2' })}>
+      Fechar
+    </button>
+  );
+}
+
 describe('QuestaoNavigationProvider', () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -170,6 +179,25 @@ describe('QuestaoNavigationProvider', () => {
 
     await waitFor(() => {
       expect(mockReplace).toHaveBeenCalledWith('/estudar/questao-a');
+      expect(mockPush).not.toHaveBeenCalled();
+    });
+  });
+
+  it('dismissToVitrine usa replace e não re-hidrata payload na URL antiga', async () => {
+    mockUsePathname.mockReturnValue('/estudar/questao-a');
+
+    const { getByRole } = render(
+      <QuestaoNavigationProvider>
+        <DismissProbe />
+      </QuestaoNavigationProvider>,
+    );
+
+    await act(async () => {
+      getByRole('button', { name: 'Fechar' }).click();
+    });
+
+    await waitFor(() => {
+      expect(mockReplace).toHaveBeenCalledWith('/estudar?page=2');
       expect(mockPush).not.toHaveBeenCalled();
     });
   });

@@ -1,12 +1,10 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import type { ReactNode } from 'react';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import EstudarQuestaoSkeleton from '@/components/lesson/EstudarQuestaoSkeleton';
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
 import { isEstudarModalRouteEnabled } from '@/lib/estudar/estudarL0Config';
-import { buildEstudarVitrineHref } from '@/lib/estudar/navigation';
 import { MOBILE_BOTTOM_NAV_FIXED_BOTTOM } from '@/lib/layout/mobileBottomNav';
 import { cn } from '@/lib/utils';
 import { X } from 'lucide-react';
@@ -21,8 +19,7 @@ type EstudarQuestaoModalRouteProps = {
  * `children` inclui EstudarQuestaoHydrator (render null).
  */
 export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteProps) {
-  const router = useRouter();
-  const { displayPayload, setDisplayPayload } = useQuestaoNavigation();
+  const { displayPayload, dismissToVitrine } = useQuestaoNavigation();
   const modalEnabled = isEstudarModalRouteEnabled();
 
   if (!modalEnabled) {
@@ -30,13 +27,11 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
   }
 
   const close = () => {
-    const href = buildEstudarVitrineHref({
+    dismissToVitrine({
       fromPlano: displayPayload?.fromPlano,
       fromCaderno: displayPayload?.fromCaderno,
       vitrineQuerySuffix: displayPayload?.vitrineQuerySuffix,
     });
-    setDisplayPayload(null);
-    router.push(href);
   };
 
   return (
@@ -59,7 +54,7 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
         />
         <div
           className={cn(
-            'relative mt-auto flex min-h-0 max-h-full flex-1 flex-col',
+            'relative z-10 mt-auto flex min-h-0 max-h-full flex-1 flex-col',
             'rounded-t-[2rem] border border-white/10 bg-[#010409] shadow-2xl',
             '[view-transition-name:estudar-questao-root]',
           )}

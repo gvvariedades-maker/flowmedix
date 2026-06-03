@@ -13,7 +13,9 @@ import {
   buildEstudarCacheKeyFromSlugComQuery,
   buildEstudarHref,
   buildEstudarQuestaoApiUrl,
+  buildEstudarVitrineHref,
   parseEstudarSlugFromPathname,
+  type EstudarVitrineReturnContext,
 } from '@/lib/estudar/navigation';
 import { PREFETCH_FORWARD_DEPTH, warmForwardChain } from '@/lib/estudar/prefetchChain';
 import {
@@ -98,6 +100,8 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
   const inFlightRef = useRef(new Map<string, Promise<FetchPayloadResult>>());
   const navegandoRef = useRef(false);
   const routePayloadSyncKeyRef = useRef<string | null>(null);
+  /** Bloqueia re-hidratação do payload enquanto `replace` volta à vitrine. */
+  const dismissingToVitrineRef = useRef(false);
   const [displayPayload, setDisplayPayload] = useState<EstudarQuestaoPayload | null>(null);
 
   const notifySemAcesso = useCallback(() => {
@@ -231,10 +235,12 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     navegandoRef.current = false;
     const slug = parseEstudarSlugFromPathname(pathname);
     if (slug === null) {
+      dismissingToVitrineRef.current = false;
       routePayloadSyncKeyRef.current = null;
       setDisplayPayload(null);
       return;
     }
+    if (dismissingToVitrineRef.current) return;
     if (typeof window === 'undefined') return;
 
     const cacheKey = buildEstudarCacheKey(
@@ -305,6 +311,16 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     [fetchPayloadIntoCache, prefetchRoute],
   );
 
+  const dismissToVitrine = useCallback(
+    (ctx: EstudarVitrineReturnContext = {}) => {
+      dismissingToVitrineRef.current = true;
+      routePayloadSyncKeyRef.current = null;
+      setDisplayPayload(null);
+      scheduleRouterNavigate(router, buildEstudarVitrineHref(ctx), 'replace');
+    },
+    [router],
+  );
+
   const navigateEstudar = useCallback(
     (slugComQuery: string) => {
       if (navegandoRef.current) return;
@@ -373,6 +389,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       navigateEstudar,
       prefetchEstudar,
       prefetchPayload,
+      dismissToVitrine,
     }),
     [
       displayPayload,
@@ -381,6 +398,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       navigateEstudar,
       prefetchEstudar,
       prefetchPayload,
+      dismissToVitrine,
     ],
   );
 

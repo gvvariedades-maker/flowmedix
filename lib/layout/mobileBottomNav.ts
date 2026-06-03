@@ -32,11 +32,29 @@ export const MOBILE_BOTTOM_NAV_Z = 'z-40';
 /** z-index legado para faixas fixed acima do nav. */
 export const MOBILE_ACTION_BAR_Z = 'z-50';
 
+/** Largura da sidebar fixa do dashboard (desktop ≥ md). */
+export const DASHBOARD_SIDEBAR_WIDTH = '18rem';
+
+/** Estudo reverso no celular: não cobre o BottomNav (Menu, Estudar, …). */
+export const ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM =
+  'max-md:bottom-[calc(5rem+env(safe-area-inset-bottom,0px))]';
+
+/** Estudo reverso no desktop: não cobre a sidebar esquerda. */
+export const ESTUDO_REVERSO_DESKTOP_INSET = 'md:inset-y-0 md:right-0 md:left-[18rem] md:bottom-0';
+
+/** Estudo reverso imersivo — acima do modal de questão (z-100); abaixo do drawer quando aberto. */
+export const ESTUDO_REVERSO_FULLSCREEN_Z = 'z-[110]';
+
 /** Overlay escuro do drawer mobile (`DashboardShell`). */
 export const MOBILE_DRAWER_OVERLAY_Z = 'z-[65]';
 
 /** Painel do drawer mobile. */
 export const MOBILE_DRAWER_PANEL_Z = 'z-[70]';
+
+/** Drawer acima do modal de questão / estudo reverso (usuário abre Menu com overlay ativo). */
+export const MOBILE_DRAWER_ABOVE_OVERLAYS_OVERLAY_Z = 'z-[115]';
+
+export const MOBILE_DRAWER_ABOVE_OVERLAYS_PANEL_Z = 'z-[120]';
 
 /**
  * @deprecated BottomNav está fora do scroll — shell não aplica padding de nav no main.

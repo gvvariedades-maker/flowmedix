@@ -36,6 +36,8 @@ import {
 } from '@/components/dashboard/BackToVitrineLink';
 import { BottomNav } from '@/components/layout/BottomNav';
 import {
+  MOBILE_DRAWER_ABOVE_OVERLAYS_OVERLAY_Z,
+  MOBILE_DRAWER_ABOVE_OVERLAYS_PANEL_Z,
   MOBILE_DRAWER_OVERLAY_Z,
   MOBILE_DRAWER_PANEL_Z,
 } from '@/lib/layout/mobileBottomNav';
@@ -599,7 +601,9 @@ function DashboardContent({
               key="dashboard-drawer-overlay"
               className={cn(
                 'fixed inset-0 bg-black/35 backdrop-blur-sm md:hidden',
-                MOBILE_DRAWER_OVERLAY_Z,
+                mobileMenuOpen
+                  ? MOBILE_DRAWER_ABOVE_OVERLAYS_OVERLAY_Z
+                  : MOBILE_DRAWER_OVERLAY_Z,
               )}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -617,7 +621,9 @@ function DashboardContent({
               aria-label="Menu de navegação"
               className={cn(
                 'fixed left-0 top-0 flex h-full w-[18rem] shrink-0 flex-col overflow-hidden border-r border-white/10 bg-[#06090f] outline-none md:hidden',
-                MOBILE_DRAWER_PANEL_Z,
+                mobileMenuOpen
+                  ? MOBILE_DRAWER_ABOVE_OVERLAYS_PANEL_Z
+                  : MOBILE_DRAWER_PANEL_Z,
               )}
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}

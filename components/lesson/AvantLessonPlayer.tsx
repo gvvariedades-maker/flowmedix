@@ -53,7 +53,14 @@ import { isCertoErradoQuestion } from '@/lib/questionKind';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { buildDotsNavWindow } from '@/lib/estudar/dotsNavWindow';
-import { MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM } from '@/lib/layout/mobileBottomNav';
+import { cn } from '@/lib/utils';
+import {
+  MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM,
+  ESTUDO_REVERSO_FULLSCREEN_Z,
+  ESTUDO_REVERSO_DESKTOP_INSET,
+  ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM,
+} from '@/lib/layout/mobileBottomNav';
+import { EstudoReversoHost } from '@/components/lesson/EstudoReversoFullscreenPortal';
 import { supabase } from '@/lib/supabase/client';
 import { PaywallModal } from '@/components/freemium/PaywallModal';
 import { ReportErrorDialog } from '@/components/report/ReportErrorDialog';
@@ -633,24 +640,26 @@ export default function AvantLessonPlayer({
     }
   };
 
+  const vitrineReturnContext = () => ({
+    fromPlano,
+    fromCaderno,
+    vitrineQuerySuffix: buildNavegacaoSuffix(),
+  });
+
   const handleVoltarLista = () => {
-    const href = buildEstudarVitrineHref({
-      fromPlano,
-      fromCaderno,
-      vitrineQuerySuffix: buildNavegacaoSuffix(),
-    });
-    questaoNav?.setDisplayPayload(null);
-    router.push(href);
+    if (questaoNav) {
+      questaoNav.dismissToVitrine(vitrineReturnContext());
+      return;
+    }
+    router.replace(buildEstudarVitrineHref(vitrineReturnContext()));
   };
 
   const handleConcluir = () => {
-    const href = buildEstudarVitrineHref({
-      fromPlano,
-      fromCaderno,
-      vitrineQuerySuffix: buildNavegacaoSuffix(),
-    });
-    questaoNav?.setDisplayPayload(null);
-    router.push(href);
+    if (questaoNav) {
+      questaoNav.dismissToVitrine(vitrineReturnContext());
+      return;
+    }
+    router.replace(buildEstudarVitrineHref(vitrineReturnContext()));
   };
 
   // ============================================================================
@@ -1279,9 +1288,8 @@ export default function AvantLessonPlayer({
         )}
       </AnimatePresence>
 
-      {/* ========================================================================
-          Estudo Reverso — fullscreen no app; embutido no card na demo da LP (preview)
-          ======================================================================== */}
+      {/* Estudo Reverso — fullscreen (portal) no app; embutido no card na demo da LP */}
+      <EstudoReversoHost preview={isPreviewMode}>
       <AnimatePresence>
         {etapa === 'estudo' && (
           <motion.div 
@@ -1292,18 +1300,18 @@ export default function AvantLessonPlayer({
             className={
               isPreviewMode
                 ? 'absolute inset-0 z-30 flex h-full max-h-full flex-col overflow-hidden rounded-b-[2rem] bg-[#010409] overscroll-y-contain'
-                : 'absolute inset-0 z-[40] flex flex-col bg-black/95 backdrop-blur-md h-full overscroll-y-contain'
+                : cn(
+                    'fixed inset-x-0 top-0 flex flex-col overflow-hidden bg-[#010409] overscroll-y-contain',
+                    ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM,
+                    ESTUDO_REVERSO_DESKTOP_INSET,
+                    'max-md:h-auto max-md:max-h-none md:h-[100dvh] md:max-h-[100dvh]',
+                    ESTUDO_REVERSO_FULLSCREEN_Z,
+                  )
             }
           >
             {/* overflow-y: contido no filho (scroll vertical). overflow-x: auto para texto ampliado (zoom) não ser cortado. */}
             <EstudoReversoSlideZoomProvider key={slideAtual} slideKey={slideAtual}>
-            <div
-              className={
-                isPreviewMode
-                  ? 'flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-x-auto overflow-y-hidden'
-                  : 'flex min-h-0 w-full min-w-0 max-h-[100dvh] flex-1 flex-col overflow-x-auto overflow-y-hidden'
-              }
-            >
+            <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-x-auto overflow-y-hidden">
               
               {/* Header Minimalista (Top Bar) — zoom mobile ao lado da numeração, fixo fora da rolagem do slide */}
               <div className="shrink-0 px-4 sm:px-6 md:px-12 pt-3 sm:pt-6 pb-2 flex justify-between items-center gap-2 min-w-0">
@@ -1500,6 +1508,7 @@ export default function AvantLessonPlayer({
           </motion.div>
         )}
       </AnimatePresence>
+      </EstudoReversoHost>
     </div>
 
     {mode === 'live' ? (
