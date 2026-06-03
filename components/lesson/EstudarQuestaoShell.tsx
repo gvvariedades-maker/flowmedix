@@ -23,7 +23,7 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
   return (
     <DashboardMobilePage
       variant="default"
-      className="flex min-h-0 w-full flex-1 flex-col bg-[#010409] px-3 py-3 font-sans sm:px-4 md:px-6 md:py-6 md:pb-6"
+      className="relative flex min-h-0 w-full flex-1 flex-col bg-[#010409] px-3 py-3 font-sans sm:px-4 md:px-6 md:py-6 md:pb-6"
     >
       <div className="mx-auto flex min-h-0 w-full max-w-6xl flex-1 flex-col">
         {showPlayer && displayPayload ? (
