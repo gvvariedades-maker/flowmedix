@@ -5,6 +5,7 @@ import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import EstudarQuestaoSkeleton from '@/components/lesson/EstudarQuestaoSkeleton';
 import { useEstudarQuestaoShellState } from '@/components/lesson/useEstudarQuestaoShellState';
 import { useEstudarModalActive } from '@/components/estudar/useEstudarModalActive';
+import { useEstudarInterceptActive } from '@/components/estudar/useEstudarInterceptActive';
 import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
 import { cn } from '@/lib/utils';
 
@@ -14,6 +15,7 @@ type EstudarQuestaoShellProps = {
 };
 
 export default function EstudarQuestaoShell({ children, modal = null }: EstudarQuestaoShellProps) {
+  const interceptActive = useEstudarInterceptActive();
   const modalActive = useEstudarModalActive();
   const { showPlayer, showSkeleton, displayPayload, isPayloadStale } =
     useEstudarQuestaoShellState({ modalActive });
@@ -38,8 +40,8 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
           <EstudarQuestaoSkeleton />
         ) : null}
         <div
-          className={cn(modalActive && 'pointer-events-none select-none')}
-          aria-hidden={modalActive || undefined}
+          className={cn(interceptActive && 'pointer-events-none select-none')}
+          aria-hidden={interceptActive || undefined}
         >
           {children}
         </div>

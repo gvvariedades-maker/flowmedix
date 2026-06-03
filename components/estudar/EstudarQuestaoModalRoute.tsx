@@ -32,7 +32,7 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
     <>
       {children}
       <div
-        className="fixed inset-0 z-[60] flex flex-col md:z-50"
+        className="fixed inset-0 z-[100] flex flex-col md:z-[100]"
         role="dialog"
         aria-modal="true"
         aria-label="Questão"
