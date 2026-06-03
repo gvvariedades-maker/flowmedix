@@ -1284,7 +1284,7 @@ export default function AvantLessonPlayer({
             className={
               isPreviewMode
                 ? 'absolute inset-0 z-30 flex h-full max-h-full flex-col overflow-hidden rounded-b-[2rem] bg-[#010409] overscroll-y-contain'
-                : 'fixed inset-0 z-50 flex flex-col bg-black/95 backdrop-blur-md pt-safe h-[100dvh] max-h-[100dvh] overscroll-y-contain'
+                : 'absolute inset-0 z-[40] flex flex-col bg-black/95 backdrop-blur-md h-full overscroll-y-contain'
             }
           >
             {/* overflow-y: contido no filho (scroll vertical). overflow-x: auto para texto ampliado (zoom) não ser cortado. */}
