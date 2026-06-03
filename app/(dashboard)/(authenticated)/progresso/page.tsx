@@ -1,4 +1,5 @@
 import { redirect } from 'next/navigation';
+import { toFreemiumTimezoneYmd } from '@/lib/freemium/constants';
 import { logger } from '@/lib/logger';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
 import { ProgressoEstudoDashboard } from '@/components/dashboard/progresso/ProgressoEstudoDashboard';
@@ -44,34 +45,56 @@ export default async function ProgressoPage() {
       throw error;
     }
 
-    const registros = (data || []) as any[];
+    type ProgressoRegistro = {
+      created_at: string;
+      subtopico: string | null;
+      topico: string | null;
+      modulo_slug: string;
+    };
+
+    const registros = (data || []) as ProgressoRegistro[];
     const totalTodosTempos = totalHistorico ?? 0;
 
-    const toDateStr = (iso: string) => iso.slice(0, 10);
-    const todayStr = new Date().toISOString().slice(0, 10);
+    const toDateStr = (iso: string) => toFreemiumTimezoneYmd(new Date(iso));
+    const todayStr = toFreemiumTimezoneYmd();
 
-    const hoje = registros.filter((r) => toDateStr(r.created_at) === todayStr).length;
-    const totalGeral = registros.length;
+    /** Uma questão por `modulo_slug` por dia (evita inflar com linhas duplicadas no histórico). */
+    const slugsPorDia = new Map<string, Set<string>>();
+    for (const r of registros) {
+      const d = toDateStr(r.created_at);
+      const slug = r.modulo_slug?.trim();
+      if (!slug) continue;
+      let set = slugsPorDia.get(d);
+      if (!set) {
+        set = new Set();
+        slugsPorDia.set(d, set);
+      }
+      set.add(slug);
+    }
+
+    const hoje = slugsPorDia.get(todayStr)?.size ?? 0;
+    const totalGeral = new Set(
+      registros.map((r) => r.modulo_slug?.trim()).filter((slug): slug is string => Boolean(slug)),
+    ).size;
 
     const countByDay = new Map<string, number>();
-    registros.forEach((r) => {
-      const d = toDateStr(r.created_at);
-      countByDay.set(d, (countByDay.get(d) || 0) + 1);
+    slugsPorDia.forEach((slugs, d) => {
+      countByDay.set(d, slugs.size);
     });
 
     const serie30dias: DiaEstudo[] = [];
     for (let i = 29; i >= 0; i--) {
-      const d = new Date();
-      d.setDate(d.getDate() - i);
-      const str = d.toISOString().slice(0, 10);
+      const anchor = new Date();
+      anchor.setDate(anchor.getDate() - i);
+      const str = toFreemiumTimezoneYmd(anchor);
       serie30dias.push({ data: str, count: countByDay.get(str) || 0 });
     }
 
     let streak = 0;
     for (let i = 0; i < 30; i++) {
-      const d = new Date();
-      d.setDate(d.getDate() - i);
-      const str = d.toISOString().slice(0, 10);
+      const anchor = new Date();
+      anchor.setDate(anchor.getDate() - i);
+      const str = toFreemiumTimezoneYmd(anchor);
       if ((countByDay.get(str) || 0) > 0) {
         streak++;
       } else {
@@ -80,13 +103,20 @@ export default async function ProgressoPage() {
       }
     }
 
-    const countByAssunto = new Map<string, number>();
+    const countByAssunto = new Map<string, Set<string>>();
     registros.forEach((r) => {
+      const slug = r.modulo_slug?.trim();
+      if (!slug) return;
       const nome = r.subtopico || r.topico || r.modulo_slug || 'Geral';
-      countByAssunto.set(nome, (countByAssunto.get(nome) || 0) + 1);
+      let slugs = countByAssunto.get(nome);
+      if (!slugs) {
+        slugs = new Set();
+        countByAssunto.set(nome, slugs);
+      }
+      slugs.add(slug);
     });
     const topAssuntos: AssuntoTop[] = Array.from(countByAssunto.entries())
-      .map(([nome, count]) => ({ nome, count }))
+      .map(([nome, slugs]) => ({ nome, count: slugs.size }))
       .sort((a, b) => b.count - a.count)
       .slice(0, 5);
 

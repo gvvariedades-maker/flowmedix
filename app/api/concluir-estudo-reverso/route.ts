@@ -71,10 +71,16 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Erro ao consultar histórico' }, { status: 500 });
     }
 
+    const concluidoEm = new Date().toISOString();
+
     if ((count ?? 0) > 0) {
       const { error: updateError } = await supabase
         .from('historico_questoes')
-        .update({ estudo_reverso_concluido: true })
+        .update({
+          estudo_reverso_concluido: true,
+          /** Progresso/streak usam `created_at`; sem isso, marcar estudado não aparece em /progresso. */
+          created_at: concluidoEm,
+        })
         .eq('user_id', user.id)
         .eq('modulo_slug', modulo_slug);
 
@@ -91,6 +97,7 @@ export async function POST(request: NextRequest) {
         modulo_slug,
         acertou: false,
         estudo_reverso_concluido: true,
+        created_at: concluidoEm,
         banca: 'DESCONHECIDA',
         topico: 'Geral',
         subtopico: 'Geral',

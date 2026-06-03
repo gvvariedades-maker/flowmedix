@@ -45,7 +45,6 @@ import {
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
-import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 import {
   vitrineFacetsQueryKey,
   vitrineListQueryKey,
@@ -95,6 +94,21 @@ function readMultiQueryParam(
 function stringArraysEqual(a: string[], b: string[]): boolean {
   if (a.length !== b.length) return false;
   return a.every((value, index) => value === b[index]);
+}
+
+/** Evita aplicar paginação de cache SWR (keepPreviousData) de outra página/filtro. */
+function vitrineResponseMatchesListKey(
+  data: VitrinePageResponse,
+  requested: VitrineListQuery,
+): boolean {
+  return (
+    vitrineListQueryKey({
+      page: data.pagination.page,
+      bancas: requested.bancas,
+      assuntos: requested.assuntos,
+      q: requested.q,
+    }) === vitrineListQueryKey(requested)
+  );
 }
 
 /** Query de filtros na barra de endereço (preserva cidade, concurso, etc.). */
@@ -244,26 +258,11 @@ export default function VitrineClient({
   const [bancasSelecionadas, setBancasSelecionadas] = useState<string[]>(ssrQuery.bancas);
   const [assuntosSelecionados, setAssuntosSelecionados] = useState<string[]>(ssrQuery.assuntos);
   const [pagina, setPagina] = useState(ssrQuery.page);
-  const [searchOpen, setSearchOpen] = useState(false);
   const [bancaSheetOpen, setBancaSheetOpen] = useState(false);
-
-  useEffect(() => {
-    const handler = () => {
-      setSearchOpen(true);
-      requestAnimationFrame(() => {
-        document
-          .querySelector<HTMLInputElement>('input[placeholder*="Assunto"]')
-          ?.focus();
-      });
-    };
-    window.addEventListener('avant:open-search', handler);
-    return () => window.removeEventListener('avant:open-search', handler);
-  }, []);
   const [assuntoSheetOpen, setAssuntoSheetOpen] = useState(false);
   const [bancas, setBancas] = useState<string[]>(() => initialFacetsData?.bancas ?? []);
   const [assuntos, setAssuntos] = useState<string[]>(() => initialFacetsData?.assuntos ?? []);
   const [facetsLoading, setFacetsLoading] = useState(() => !initialFacetsData);
-  const { pageBottomPadding } = useDashboardBottomInset('default');
   const [ssrErrorDismissed, setSsrErrorDismissed] = useState(false);
   const [retryNonce, setRetryNonce] = useState(0);
   const vitrineListaRef = useRef<HTMLDivElement>(null);
@@ -286,6 +285,7 @@ export default function VitrineClient({
     error: vitrineFetchError,
     isLoading: vitrineLoading,
     isValidating: vitrineValidating,
+    listKey: vitrineListKey,
   } = useVitrineListSwr(vitrineListQuery, {
     fallbackData: initialPageData,
     ssrListQueryKey,
@@ -302,10 +302,14 @@ export default function VitrineClient({
   const isRefreshing = vitrineValidating && gruposPagina.length > 0;
 
   useEffect(() => {
-    if (vitrinePageData && vitrinePageData.pagination.page !== pagina) {
-      setPagina(vitrinePageData.pagination.page);
+    if (!vitrinePageData || !vitrineResponseMatchesListKey(vitrinePageData, vitrineListQuery)) {
+      return;
     }
-  }, [vitrinePageData, pagina]);
+    const pageFromApi = vitrinePageData.pagination.page;
+    if (pageFromApi !== pagina) {
+      setPagina(pageFromApi);
+    }
+  }, [vitrinePageData, vitrineListQuery, pagina]);
 
   /**
    * URL → estado antes do paint e antes dos useEffects que gravam na URL / buscam dados.
@@ -465,15 +469,22 @@ export default function VitrineClient({
     [bancasSelecionadas, assuntosSelecionados, debouncedSearch, paginaEfetiva],
   );
 
-  const paginaScrollSkipRef = useRef(true);
+  const vitrineListKeyScrollRef = useRef<string | null>(null);
+  const vitrineScrollHydrateSkipRef = useRef(true);
   useEffect(() => {
-    if (paginaScrollSkipRef.current) {
-      paginaScrollSkipRef.current = false;
+    if (vitrineScrollHydrateSkipRef.current) {
+      vitrineScrollHydrateSkipRef.current = false;
+      vitrineListKeyScrollRef.current = vitrineListKey;
       return;
     }
+    if (!vitrinePageData || !vitrineResponseMatchesListKey(vitrinePageData, vitrineListQuery)) {
+      return;
+    }
+    if (vitrineListKeyScrollRef.current === vitrineListKey) return;
+    vitrineListKeyScrollRef.current = vitrineListKey;
     const main = document.querySelector('main');
-    main?.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [pagina]);
+    main?.scrollTo({ top: 0, behavior: 'auto' });
+  }, [vitrineListKey, vitrinePageData, vitrineListQuery]);
 
   const pageSectionTitle = searchTerm
     ? `Resultados para "${searchTerm}"`
@@ -518,88 +529,18 @@ export default function VitrineClient({
     <div
       className={cn(
         'dashboard-surface min-h-screen bg-background text-foreground selection:bg-indigo-100 selection:text-indigo-900 md:pb-8',
-        pageBottomPadding,
       )}
     >
       <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
-        {/* Header mobile */}
-        <div className="flex items-center justify-between px-4 py-3 md:hidden">
-          <div className="flex min-w-0 flex-1 items-center gap-2.5">
-            <div
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-50 to-violet-50/90 ring-1 ring-indigo-200/50"
-              aria-hidden
-            >
-              <LayoutDashboard size={20} className="text-indigo-600" strokeWidth={2} />
-            </div>
-            <h1 className="line-clamp-2 min-w-0 text-base font-semibold leading-snug tracking-tight text-foreground">
-              {cidadeUrl}
-            </h1>
-          </div>
-          <button
-            type="button"
-            onClick={() => setSearchOpen((open) => !open)}
-            aria-expanded={searchOpen}
-            aria-label={searchOpen ? 'Fechar busca' : 'Abrir busca'}
-            className={cn(
-              'ml-2 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-colors',
-              searchOpen
-                ? 'border-[#00f2ff]/50 bg-[#00f2ff]/10 text-[#00f2ff]'
-                : 'border-[#00f2ff]/40 bg-white/[0.04] text-slate-300 hover:border-[#00f2ff]/55 hover:text-[#00f2ff]',
-            )}
+        {/* Header mobile — título + filtros em uma linha */}
+        <div className="flex items-center justify-between gap-3 px-4 py-3 md:hidden">
+          <h1 className="min-w-0 flex-1 truncate text-base font-black leading-snug tracking-tight text-foreground">
+            {cidadeUrl}
+          </h1>
+          <div
+            className="flex shrink-0 items-center gap-2 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            aria-label="Filtros da vitrine"
           >
-            {searchOpen ? <X size={20} aria-hidden /> : <Search size={20} aria-hidden />}
-          </button>
-        </div>
-
-        <AnimatePresence>
-          {searchOpen && (
-            <motion.div
-              key="vitrine-mobile-search"
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="overflow-hidden border-t border-white/[0.06] px-4 py-3 md:hidden"
-            >
-              <div className="group relative">
-                <Search
-                  className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
-                  aria-hidden
-                />
-                <Input
-                  type="text"
-                  autoFocus
-                  placeholder="Assunto, tópico, banca, slug ou Q-…"
-                  value={searchTerm}
-                  onChange={(e) => {
-                    setSearchTerm(e.target.value);
-                    setPagina(1);
-                  }}
-                  className="h-10 rounded-xl border-border/80 pl-10 pr-10 text-sm"
-                />
-                {searchTerm && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSearchTerm('');
-                      setPagina(1);
-                    }}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-colors hover:text-destructive"
-                    aria-label="Limpar busca"
-                  >
-                    <X size={14} />
-                  </button>
-                )}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Chips de filtro — mobile */}
-        <section
-          aria-label="Filtros da vitrine"
-          className="flex gap-2 overflow-x-auto px-4 pb-3 pt-1 [-ms-overflow-style:none] [scrollbar-width:none] md:hidden [&::-webkit-scrollbar]:hidden"
-        >
           {bancasSelecionadas.length > 0 ? (
             <div
               className={cn(
@@ -700,7 +641,8 @@ export default function VitrineClient({
               Limpar
             </button>
           )}
-        </section>
+          </div>
+        </div>
 
         <VitrineMobileFilterSheet
           open={bancaSheetOpen}
@@ -1223,7 +1165,6 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
 
   return (
     <motion.div
-      layout
       variants={index < 8 ? itemVariants : itemGroupVariants}
       {...{ [VITRINE_PREFETCH_DATA_ATTR]: `${firstSlug}${estudarQuery}` }}
       className={cn(

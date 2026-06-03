@@ -76,7 +76,6 @@ export const config = {
     '/analytics/:path*',
     '/plano-diario/:path*',
     '/cadernos/:path*',
-    '/material/:path*',
     '/admin/:path*',
   ],
 };

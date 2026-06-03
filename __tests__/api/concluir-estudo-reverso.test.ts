@@ -114,7 +114,12 @@ describe('POST /api/concluir-estudo-reverso', () => {
     expect(response.status).toBe(200);
     expect(await response.json()).toEqual({ success: true });
     expect(mockCreateServerSupabase).toHaveBeenCalled();
-    expect(update).toHaveBeenCalledWith({ estudo_reverso_concluido: true });
+    expect(update).toHaveBeenCalledWith(
+      expect.objectContaining({
+        estudo_reverso_concluido: true,
+        created_at: expect.any(String),
+      }),
+    );
   });
 
   it('insere historico quando ainda nao ha tentativa', async () => {

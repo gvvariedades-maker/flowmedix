@@ -9,7 +9,6 @@ import {
   ArrowRight,
   BarChart3,
   BookMarked,
-  BookOpen,
   Brain,
   CalendarDays,
   CheckCircle2,
@@ -160,11 +159,6 @@ const features: IconCard[] = [
     title: 'Cadernos',
     text: 'Organize questões e retome pontos críticos.',
     icon: BookMarked,
-  },
-  {
-    title: 'Material de apoio',
-    text: 'Use resumos e referências quando precisar reforçar base.',
-    icon: BookOpen,
   },
 ];
 

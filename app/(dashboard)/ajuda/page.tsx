@@ -37,7 +37,6 @@ const TOC = [
   { id: 'passo-08', label: 'Usar o plano diário' },
   { id: 'passo-09', label: 'Criar caderno' },
   { id: 'passo-10', label: 'Adicionar questões e estudar caderno' },
-  { id: 'material-apoio', label: 'Passo 11 — Usar o Material de Apoio (NeuroSlides)' },
 ] as const;
 
 const STEPS: {
@@ -191,7 +190,6 @@ const QUICK_START = [
   'Responda, confirme e ative o estudo reverso.',
   'Passe pelos slides NEURO e marque como estudado.',
   'Depois acompanhe o Progresso de estudo ou organize questões em cadernos.',
-  'Quando quiser revisar por tema, abra o Material de Apoio (NeuroSlides).',
 ] as const;
 
 export default function AjudaPage() {
@@ -224,7 +222,7 @@ export default function AjudaPage() {
 
       {!firstSeq && (
         <Note>
-          <strong>Sem imagem:</strong> se os PNGs em <code>public/tutorial/</code> (seq-01 a seq-10 e material-apoio-01 a 03) faltarem,
+          <strong>Sem imagem:</strong> se os PNGs em <code>public/tutorial/</code> (seq-01 a seq-10) faltarem,
           execute o script de cópia do repositório ou peça suporte. Enquanto isso, o texto e o índice permanecem úteis.
         </Note>
       )}
@@ -286,63 +284,6 @@ export default function AjudaPage() {
           </section>
         ))}
       </div>
-
-      <section
-        id="material-apoio"
-        className={`mt-12 scroll-mt-10 p-5 shadow-sm md:p-6 ${AJUDA_SURFACE}`}
-      >
-        <p className="text-[11px] font-black uppercase tracking-widest text-indigo-400">Passo 11</p>
-        <h2 className="mt-1 text-xl font-black tracking-tight text-slate-100 md:text-2xl">
-          Como usar o Material de Apoio (NeuroSlides)
-        </h2>
-        <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate-400 md:text-base">
-          <p>
-            <strong className="text-slate-100">Objetivo:</strong> revisar conteúdos por tema, com foco visual, fora do fluxo de uma questão
-            específica.
-          </p>
-
-          <div className={`border-2 p-4 ${ONDE_CLICAR}`}>
-            <p className="flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-cyan-300">
-              <MousePointerClick className="h-4 w-4" aria-hidden />
-              Onde clicar
-            </p>
-            <ol className="mt-2 list-decimal space-y-2 pl-5 font-semibold text-slate-200">
-              <li>No menu lateral, clique em <strong>Material de Apoio</strong>.</li>
-              <li>Na tela inicial, clique em <strong>Abrir NeuroSlide</strong>.</li>
-              <li>Escolha uma coleção (Fundamentos, Medicações, SUS, etc.) e clique em <strong>Abrir</strong>.</li>
-              <li>No modal, navegue pelos slides com os botões na parte inferior (voltar/avançar), pelas bolinhas ou pelo teclado (← / →).</li>
-              <li>Para trocar de coleção sem sair, use o seletor no canto superior esquerdo.</li>
-            </ol>
-            <div className="mt-3 flex flex-wrap gap-2">
-              <ActionLink href="/material">Abrir Material de Apoio</ActionLink>
-              <ActionLink href="/material/neuroslides">Ir direto para coleções NeuroSlide</ActionLink>
-            </div>
-          </div>
-
-          <p>
-            <strong className="text-slate-100">Depois disso:</strong> use os NeuroSlides como revisão rápida antes de simulados e, em seguida,
-            volte para a <InternalLink href="/estudar">Vitrine de Aulas</InternalLink> para consolidar com questões.
-          </p>
-        </div>
-
-        <div className="mt-6 grid gap-5 md:grid-cols-3">
-          <TutorialFigure
-            file="material-apoio-01-entrada.png"
-            alt="Tela de entrada do Material de Apoio com botão Abrir NeuroSlide"
-            caption="Figura A — entrada do Material de Apoio com CTA para abrir NeuroSlides."
-          />
-          <TutorialFigure
-            file="material-apoio-02-colecoes.png"
-            alt="Página de coleções NeuroSlide com cards por tema"
-            caption="Figura B — seleção de coleções NeuroSlide por tema."
-          />
-          <TutorialFigure
-            file="material-apoio-03-player.png"
-            alt="Modal player de NeuroSlides com navegação e seletor de coleção"
-            caption="Figura C — player em tela cheia, com navegação por slides e troca de coleção."
-          />
-        </div>
-      </section>
 
     </div>
   );
