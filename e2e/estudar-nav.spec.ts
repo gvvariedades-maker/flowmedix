@@ -35,14 +35,19 @@ test.describe('Estudar — navegação vitrine → questão', () => {
 
     await expect(page.getByText(E2E_ESTUDAR_TITULO_AULA)).toBeVisible({ timeout: 15_000 });
 
-    await page.getByRole('button', { name: E2E_ESTUDAR_TITULO_AULA }).click();
-    await page.getByRole('link', { name: 'Entrar no assunto' }).click();
+    const assuntoBtn = page.getByRole('button', { name: new RegExp(E2E_ESTUDAR_TITULO_AULA) });
+    await assuntoBtn.click();
+    await expect(assuntoBtn).toHaveAttribute('aria-expanded', 'true', { timeout: 15_000 });
+
+    const panel = page.locator(`#assunto-panel-${E2E_ESTUDAR_SLUG_1}`);
+    await expect(panel).toBeVisible({ timeout: 15_000 });
+    await panel.getByRole('link', { name: 'Entrar no assunto' }).click();
 
     await expect(page).toHaveURL(
       new RegExp(`/estudar/${E2E_ESTUDAR_SLUG_1}.*banca=${encodeURIComponent(E2E_ESTUDAR_BANCA)}`),
       { timeout: 15_000 },
     );
-    await expect(page.getByText('Questão E2E 1:')).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
 
     await page.getByRole('button', { name: /Próxima/i }).click();
 
@@ -50,6 +55,6 @@ test.describe('Estudar — navegação vitrine → questão', () => {
       new RegExp(`/estudar/${E2E_ESTUDAR_SLUG_2}.*banca=${encodeURIComponent(E2E_ESTUDAR_BANCA)}`),
       { timeout: 15_000 },
     );
-    await expect(page.getByText('Questão E2E 2:')).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText(/Questão E2E 2:/)).toBeVisible({ timeout: 15_000 });
   });
 });

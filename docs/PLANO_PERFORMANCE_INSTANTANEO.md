@@ -105,9 +105,9 @@ Marque `[x]` ao concluir cada passo (incluir testes/validação indicados na fas
 
 ### Fase 11 — Opcional (após 10.4)
 
-- [ ] **11.1** — IndexedDB para LRU L0 persistido
-- [ ] **11.2** — Intercepting Routes (`@modal`) questão sobre vitrine
-- [ ] **11.3** — Service Worker cache L0
+- [x] **11.1** — IndexedDB para LRU L0 persistido
+- [x] **11.2** — Intercepting Routes (`@modal`) questão sobre vitrine
+- [x] **11.3** — Service Worker cache L0
 
 ---
 
