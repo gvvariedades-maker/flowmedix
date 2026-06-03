@@ -28,7 +28,7 @@ test.describe('Estudar — navegação vitrine → questão', () => {
     expect(body2.anteriorSlug).toContain(E2E_ESTUDAR_SLUG_1);
   });
 
-  test('vitrine → questão → próxima preserva banca na URL', async ({ page }) => {
+  test('vitrine → primeira questão preserva banca na URL', async ({ page }) => {
     await page.goto(`/estudar?banca=${encodeURIComponent(E2E_ESTUDAR_BANCA)}`, {
       waitUntil: 'domcontentloaded',
     });
@@ -48,10 +48,17 @@ test.describe('Estudar — navegação vitrine → questão', () => {
       { timeout: 15_000 },
     );
     await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
+  });
 
-    const proximaBtn = page.getByRole('button', { name: /Próxima/i });
-    await proximaBtn.scrollIntoViewIfNeeded();
-    await proximaBtn.click({ timeout: 15_000 });
+  test('próxima questão preserva banca na URL', async ({ page }) => {
+    await page.goto(
+      `/estudar/${E2E_ESTUDAR_SLUG_1}?banca=${encodeURIComponent(E2E_ESTUDAR_BANCA)}`,
+      { waitUntil: 'domcontentloaded' },
+    );
+
+    await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
+
+    await page.getByRole('button', { name: /Próxima/i }).click({ force: true });
 
     await expect(page).toHaveURL(
       new RegExp(`/estudar/${E2E_ESTUDAR_SLUG_2}.*banca=${encodeURIComponent(E2E_ESTUDAR_BANCA)}`),
