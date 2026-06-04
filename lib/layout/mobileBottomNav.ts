@@ -11,6 +11,13 @@
 /** Altura nominal do BottomNav no flex shell (~5rem incl. labels). */
 export const MOBILE_BOTTOM_NAV_HEIGHT = '5rem';
 
+/**
+ * Padding inferior do `<main>` rolável no dashboard mobile (BottomNav + safe area).
+ * Classe literal para Tailwind JIT — usar no DashboardShell.
+ */
+export const MOBILE_MAIN_SCROLL_PADDING =
+  'pb-[calc(5rem+env(safe-area-inset-bottom,0px))]';
+
 /** Offset `bottom` para elementos `fixed` acima do slot do BottomNav + safe area. */
 export const MOBILE_BOTTOM_NAV_FIXED_BOTTOM =
   'bottom-[calc(5rem+env(safe-area-inset-bottom,0px))]';

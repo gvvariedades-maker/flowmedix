@@ -5,7 +5,16 @@ describe('DashboardShell mobile scroll shell', () => {
   it('main é área de scroll com padding inferior para o BottomNav fixo', () => {
     const shellPath = join(process.cwd(), 'app', '(dashboard)', 'DashboardShell.tsx');
     const source = readFileSync(shellPath, 'utf8');
-    expect(source).toMatch(/<main[\s\S]*?overflow-y-auto[\s\S]*?pb-\[calc\(4rem\+env\(safe-area-inset-bottom,0px\)\)\][\s\S]*?md:pb-0/);
+    expect(source).toContain('MOBILE_MAIN_SCROLL_PADDING');
+    expect(source).toMatch(
+      /<main[\s\S]*?overflow-y-auto[\s\S]*?MOBILE_MAIN_SCROLL_PADDING[\s\S]*?md:pb-0|<main[\s\S]*?overflow-y-auto[\s\S]*?md:pb-0[\s\S]*?MOBILE_MAIN_SCROLL_PADDING/,
+    );
+
+    const tokensPath = join(process.cwd(), 'lib', 'layout', 'mobileBottomNav.ts');
+    const tokens = readFileSync(tokensPath, 'utf8');
+    expect(tokens).toMatch(
+      /MOBILE_MAIN_SCROLL_PADDING\s*=\s*'pb-\[calc\(5rem\+env\(safe-area-inset-bottom,0px\)\)\]'/,
+    );
     expect(source).not.toContain('MOBILE_PAGE_BOTTOM_PADDING');
   });
 

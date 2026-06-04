@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
 import { isEstudarModalRouteEnabled } from '@/lib/estudar/estudarL0Config';
-import { MOBILE_BOTTOM_NAV_FIXED_BOTTOM } from '@/lib/layout/mobileBottomNav';
+import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
 import { cn } from '@/lib/utils';
 
 type EstudarQuestaoModalRouteProps = {
@@ -21,14 +21,7 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
   const modalEnabled = isEstudarModalRouteEnabled();
   const showModalOverlay = Boolean(displayPayload) && !isDismissingToVitrine;
 
-  useEffect(() => {
-    if (!modalEnabled || !showModalOverlay) return;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [modalEnabled, showModalOverlay]);
+  useBodyScrollLock(modalEnabled && showModalOverlay);
 
   if (!modalEnabled) {
     return <>{children}</>;
@@ -47,10 +40,7 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
       {children}
       {showModalOverlay ? (
       <div
-        className={cn(
-          'fixed inset-x-0 top-0 z-[100] flex flex-col md:hidden',
-          MOBILE_BOTTOM_NAV_FIXED_BOTTOM,
-        )}
+        className="fixed inset-0 z-[100] flex flex-col md:hidden"
         role="dialog"
         aria-modal="true"
         aria-label="Questão"
@@ -63,12 +53,12 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
         />
         <div
           className={cn(
-            'relative z-10 mt-auto flex min-h-0 max-h-full flex-1 flex-col',
+            'relative z-10 mt-auto flex min-h-0 max-h-full flex-1 flex-col pt-safe',
             'rounded-t-[2rem] border border-white/10 bg-[#010409] shadow-2xl',
             '[view-transition-name:estudar-questao-root]',
           )}
         >
-          <div className="flex min-h-0 flex-1 flex-col overflow-hidden px-3 pt-3 pb-safe">
+          <div className="flex min-h-0 flex-1 flex-col overflow-hidden px-3 pt-3">
             <AvantLessonPlayer key="estudar-lesson-player-modal" {...displayPayload!} />
           </div>
         </div>
