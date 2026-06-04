@@ -15,7 +15,7 @@ export function ensureLessonDataForPlayer<T extends LessonData>(dados: T): T {
     return {
       meta: { ...LESSON_META_FALLBACK },
       question_data: { instruction: '', options: [] },
-    } as T;
+    } as unknown as T;
   }
   const question_data = dados.question_data ?? { instruction: '', options: [] };
   const meta = dados.meta ?? LESSON_META_FALLBACK;
