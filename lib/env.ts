@@ -328,7 +328,10 @@ export function validateCronEnv(): void {
   const message =
     'CRON_SECRET not set. Configure it on Vercel for the enrollment expiration cron when Stripe checkout is enabled.';
 
-  if (current.NODE_ENV === 'production') {
+  const isProductionDeploy =
+    current.NODE_ENV === 'production' && process.env.VERCEL_ENV !== 'preview';
+
+  if (isProductionDeploy) {
     throw new Error(`❌ ${message}`);
   }
 
