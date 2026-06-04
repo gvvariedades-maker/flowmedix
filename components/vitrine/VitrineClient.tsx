@@ -271,6 +271,7 @@ export default function VitrineClient({
   /** Evita gravar na URL antes de ler os filtros (impede loop com estado inicial vazio). */
   const filtersHydratedFromUrlRef = useRef(Boolean(initialListQuery));
   const ssrFacetsConsumedRef = useRef(false);
+  const searchParamsRef = useRef(searchParams);
 
   const vitrineListQuery = useMemo(
     (): VitrineListQuery => ({
@@ -441,11 +442,14 @@ export default function VitrineClient({
     }
   }, [assuntos, assuntosSelecionados, bancasSelecionadas, debouncedSearch, pagina]);
 
-  /** Estado → URL (só após hidratação; não depende de searchParams para evitar loop). */
+  searchParamsRef.current = searchParams;
+
+  /** Estado → URL (só após hidratação; searchParams via ref para não re-disparar em router.replace). */
   useEffect(() => {
     if (!filtersHydratedFromUrlRef.current) return;
 
-    const newSearch = buildVitrineLocationSearch(searchParams, {
+    const preservedParams = new URLSearchParams(searchParamsRef.current.toString());
+    const newSearch = buildVitrineLocationSearch(preservedParams, {
       bancas: bancasSelecionadas,
       assuntos: assuntosSelecionados,
       searchTerm,
@@ -458,7 +462,7 @@ export default function VitrineClient({
     ) {
       router.replace(`${pathname}${newSearch}`, { scroll: false });
     }
-  }, [bancasSelecionadas, assuntosSelecionados, searchTerm, pagina, pathname, router, searchParams]);
+  }, [bancasSelecionadas, assuntosSelecionados, searchTerm, pagina, pathname, router]);
 
   /** Filtros + página da vitrine — repassados ao abrir questão (paridade com prefetch). */
   const estudarQuery = useMemo(

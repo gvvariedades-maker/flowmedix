@@ -10,7 +10,7 @@
  * - Registro de tentativas no Supabase (historico_questoes)
  */
 
-import { useState, useEffect, useMemo, useRef, useLayoutEffect, useCallback } from 'react';
+import { useState, useEffect, useMemo, useRef, useLayoutEffect, useCallback, useTransition } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import type { Target, Transition } from 'framer-motion';
 import { useRouter } from 'next/navigation';
@@ -163,6 +163,7 @@ export default function AvantLessonPlayer({
   
   const router = useRouter();
   const questaoNav = useQuestaoNavigationOptional();
+  const [isNavigating, startTransition] = useTransition();
   const bottomNavRef = useRef<HTMLDivElement>(null);
   const questaoAtualDotRef = useRef<HTMLButtonElement | null>(null);
   /** Área com overflow-y-auto (enunciado + alternativas). Ref usada para wheel sobre <button>. */
@@ -641,11 +642,13 @@ export default function AvantLessonPlayer({
   const handleNavegar = (slugComQuery: string) => {
     if (navegacaoBloqueada || navegandoRef.current) return;
     navegandoRef.current = true;
-    if (questaoNav) {
-      questaoNav.navigateEstudar(slugComQuery);
-    } else {
-      router.push(buildEstudarHref(slugComQuery));
-    }
+    startTransition(() => {
+      if (questaoNav) {
+        questaoNav.navigateEstudar(slugComQuery);
+      } else {
+        router.push(buildEstudarHref(slugComQuery));
+      }
+    });
   };
 
   const vitrineReturnContext = () => ({
@@ -1183,12 +1186,12 @@ export default function AvantLessonPlayer({
               onFocus={() => {
                 if (!navegacaoBloqueada) prefetchSlug(anteriorSlug);
               }}
-              disabled={!anteriorSlug || navegacaoBloqueada} 
+              disabled={!anteriorSlug || navegacaoBloqueada || isNavigating} 
               className={`flex items-center gap-1.5 sm:gap-2 px-2 sm:px-4 py-2.5 sm:py-3 rounded-xl font-bold uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest transition-all min-h-[44px] ${
-                anteriorSlug && !navegacaoBloqueada ? 'text-slate-400 hover:bg-white/[0.05] hover:text-[#00f2ff]' : 'text-white/15 cursor-not-allowed'
+                anteriorSlug && !navegacaoBloqueada && !isNavigating ? 'text-slate-400 hover:bg-white/[0.05] hover:text-[#00f2ff]' : 'text-white/15 cursor-not-allowed'
               }`}
             >
-              <ArrowLeft size={16} /> <span>Anterior</span>
+              <ArrowLeft size={16} /> <span>{isNavigating ? 'Carregando...' : 'Anterior'}</span>
             </button>
             {proximaSlug ? (
               <button 
@@ -1200,11 +1203,11 @@ export default function AvantLessonPlayer({
                 onFocus={() => {
                   if (!navegacaoBloqueada) prefetchSlug(proximaSlug);
                 }}
-                disabled={navegacaoBloqueada}
+                disabled={navegacaoBloqueada || isNavigating}
                 className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-white/[0.07] text-slate-200 font-black uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:bg-white/[0.12] transition-all min-h-[44px] disabled:cursor-not-allowed disabled:opacity-50"
               >
-                <span className="sm:hidden">Próxima</span>
-                <span className="hidden sm:inline">Próxima Questão</span>
+                <span className="sm:hidden">{isNavigating ? 'Carregando...' : 'Próxima'}</span>
+                <span className="hidden sm:inline">{isNavigating ? 'Carregando...' : 'Próxima Questão'}</span>
                 <ArrowRight size={16} className="shrink-0" />
               </button>
             ) : (

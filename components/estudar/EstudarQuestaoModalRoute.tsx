@@ -6,7 +6,6 @@ import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-con
 import { isEstudarModalRouteEnabled } from '@/lib/estudar/estudarL0Config';
 import { MOBILE_BOTTOM_NAV_FIXED_BOTTOM } from '@/lib/layout/mobileBottomNav';
 import { cn } from '@/lib/utils';
-import { X } from 'lucide-react';
 
 type EstudarQuestaoModalRouteProps = {
   children: ReactNode;
@@ -69,17 +68,7 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
             '[view-transition-name:estudar-questao-root]',
           )}
         >
-          <div className="flex shrink-0 items-center justify-end px-3 pt-3">
-            <button
-              type="button"
-              onClick={close}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-slate-900/80 text-white/80"
-              aria-label="Fechar"
-            >
-              <X className="h-5 w-5" />
-            </button>
-          </div>
-          <div className="flex min-h-0 flex-1 flex-col overflow-hidden px-3 pb-safe">
+          <div className="flex min-h-0 flex-1 flex-col overflow-hidden px-3 pt-3 pb-safe">
             <AvantLessonPlayer key="estudar-lesson-player-modal" {...displayPayload!} />
           </div>
         </div>
