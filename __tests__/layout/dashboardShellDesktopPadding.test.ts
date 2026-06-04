@@ -6,9 +6,8 @@ describe('DashboardShell mobile scroll shell', () => {
     const shellPath = join(process.cwd(), 'app', '(dashboard)', 'DashboardShell.tsx');
     const source = readFileSync(shellPath, 'utf8');
     expect(source).toContain('MOBILE_MAIN_SCROLL_PADDING');
-    expect(source).toMatch(
-      /<main[\s\S]*?overflow-y-auto[\s\S]*?MOBILE_MAIN_SCROLL_PADDING[\s\S]*?md:pb-0|<main[\s\S]*?overflow-y-auto[\s\S]*?md:pb-0[\s\S]*?MOBILE_MAIN_SCROLL_PADDING/,
-    );
+    expect(source).toMatch(/<main[\s\S]*?md:pb-0[\s\S]*?MOBILE_MAIN_SCROLL_PADDING/);
+    expect(source).toContain("'overflow-y-auto no-scrollbar'");
 
     const tokensPath = join(process.cwd(), 'lib', 'layout', 'mobileBottomNav.ts');
     const tokens = readFileSync(tokensPath, 'utf8');
@@ -78,6 +77,17 @@ describe('DashboardShell mobile scroll shell', () => {
     );
     expect(vitrine).not.toContain('useDashboardBottomInset');
     expect(cadernos).toContain('useDashboardBottomInset');
+  });
+
+  it('main sem scroll externo na questão inline (card preenche altura no desktop)', () => {
+    const shell = readFileSync(
+      join(process.cwd(), 'app', '(dashboard)', 'DashboardShell.tsx'),
+      'utf8',
+    );
+    expect(shell).toContain('estudarQuestaoFillViewport');
+    expect(shell).toMatch(
+      /estudarQuestaoFillViewport[\s\S]*\?[\s\S]*'overflow-hidden'[\s\S]*'overflow-y-auto no-scrollbar'/,
+    );
   });
 
   it('vitrine usa acordeão CSS grid (sem height auto do Framer)', () => {

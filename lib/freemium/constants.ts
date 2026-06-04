@@ -49,3 +49,25 @@ export function toFreemiumTimezoneYmd(instant: Date = new Date()): string {
   const d = local.getUTCDate();
   return `${y}-${String(mo).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
 }
+
+/** Início do dia civil YMD no fuso freemium (para exibição / APIs que esperam Date). */
+export function freemiumYmdToDate(ymd: string): Date {
+  const [y, mo, d] = ymd.split('-').map((part) => Number(part));
+  return new Date(Date.UTC(y, mo - 1, d) + FREEMIUM_TZ_OFFSET_MS);
+}
+
+/** Soma dias civis no fuso freemium (YYYY-MM-DD). */
+export function addFreemiumDaysToYmd(ymd: string, days: number): string {
+  const [y, mo, d] = ymd.split('-').map((part) => Number(part));
+  const dayStart = new Date(Date.UTC(y, mo - 1, d) + FREEMIUM_TZ_OFFSET_MS);
+  return toFreemiumTimezoneYmd(new Date(dayStart.getTime() + days * 86_400_000));
+}
+
+/** Dias civis entre duas datas YMD no fuso freemium (b − a). */
+export function freemiumYmdDiffDays(fromYmd: string, toYmd: string): number {
+  const [y1, m1, d1] = fromYmd.split('-').map(Number);
+  const [y2, m2, d2] = toYmd.split('-').map(Number);
+  const a = Date.UTC(y1, m1 - 1, d1);
+  const b = Date.UTC(y2, m2 - 1, d2);
+  return Math.round((b - a) / 86_400_000);
+}

@@ -36,10 +36,19 @@ function PlanoDiarioEmpty() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">Plano de estudo diário</p>
           <h1 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Você está em dia</h1>
           <p className="text-sm leading-relaxed text-slate-400">
-            Nenhuma questão pendente de revisão hoje. Use “Voltar para a Vitrine” no topo para novas questões; o
-            algoritmo agendará revisões no tempo certo.
+            Nenhuma questão pendente de revisão hoje. Estude novas questões na vitrine; o algoritmo de revisão
+            espaçada agendará retornos conforme seu desempenho.
           </p>
         </div>
+        <Button
+          asChild
+          className="w-full rounded-2xl bg-[#00f2ff]/15 font-semibold text-[#00f2ff] hover:bg-[#00f2ff]/25"
+        >
+          <Link href="/estudar" className="inline-flex items-center justify-center gap-2">
+            <BookOpen className="h-4 w-4" aria-hidden />
+            Ir para a Vitrine
+          </Link>
+        </Button>
       </motion.div>
     </DashboardMobilePage>
   );

@@ -127,15 +127,7 @@ export function buildE2eEstudarQuestaoPayload(
     return { status: 'not_found' };
   }
 
-  const {
-    fromPlano,
-    fromCaderno,
-    cadernoId,
-    vitrineBancas,
-    vitrineAssuntos,
-    vitrineQ,
-    vitrinePage,
-  } = parseEstudarSearchParams(searchParams);
+  const { fromPlano, fromCaderno, cadernoId } = parseEstudarSearchParams(searchParams);
 
   const suffix = buildVitrineQuerySuffix(searchParams);
   const indexAtual = E2E_ESTUDAR_SLUGS.indexOf(slug as (typeof E2E_ESTUDAR_SLUGS)[number]);
@@ -145,14 +137,6 @@ export function buildE2eEstudarQuestaoPayload(
     indexAtual >= 0 && indexAtual < E2E_ESTUDAR_SLUGS.length - 1
       ? `${E2E_ESTUDAR_SLUGS[indexAtual + 1]}${suffix}`
       : null;
-
-  const vitrineParams = new URLSearchParams();
-  vitrineBancas.forEach((b) => vitrineParams.append('banca', b));
-  vitrineAssuntos.forEach((a) => vitrineParams.append('assunto', a));
-  if (vitrineQ) vitrineParams.set('q', vitrineQ);
-  if (vitrinePage > 1) vitrineParams.set('page', String(vitrinePage));
-  const vitrineQueryString = vitrineParams.toString();
-  const vitrineQuerySuffix = vitrineQueryString ? `?${vitrineQueryString}` : '';
 
   let dados = stripQuestionAnswersForClient(E2E_LESSONS[slug as (typeof E2E_ESTUDAR_SLUGS)[number]]);
   if (layers === 'core') {
@@ -174,7 +158,7 @@ export function buildE2eEstudarQuestaoPayload(
     fromCaderno: fromCaderno ? cadernoId : undefined,
     listaContexto: { atual: indexAtual + 1, total: E2E_ESTUDAR_SLUGS.length },
     avantCodigo: 900001 + indexAtual,
-    vitrineQuerySuffix: fromPlano || fromCaderno ? '' : vitrineQuerySuffix,
+    vitrineQuerySuffix: suffix,
   };
 
   return { status: 'ok', payload };

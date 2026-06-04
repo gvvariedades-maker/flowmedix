@@ -5,7 +5,7 @@
 export default function EstudarQuestaoSkeleton() {
   return (
     <div
-      className="flex min-h-[min(72vh,640px)] w-full flex-1 flex-col overflow-hidden border border-[rgba(255,255,255,0.10)] bg-[#0d1117] font-sans shadow-2xl md:min-h-[560px] md:rounded-[40px]"
+      className="flex min-h-0 w-full flex-1 flex-col overflow-hidden border border-[rgba(255,255,255,0.10)] bg-[#0d1117] font-sans shadow-2xl max-md:min-h-[min(72vh,640px)] md:rounded-[40px]"
       role="status"
       aria-busy="true"
       aria-label="Carregando questão"

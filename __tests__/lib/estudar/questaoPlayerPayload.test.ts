@@ -249,4 +249,53 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
     expect(result.payload.anteriorSlug).toBe('questao-anterior?banca=FGV&page=3');
     expect(result.payload.proximaSlug).toBe('questao-proxima?banca=FGV&page=3');
   });
+
+  it('preserva query de caderno em vitrineQuerySuffix (evita player congelado)', async () => {
+    const cadernoId = '550e8400-e29b-41d4-a716-446655440099';
+    mockUserHasModuloAccess.mockResolvedValue(true);
+
+    const maybeSingleModulo = jest.fn().mockResolvedValue({
+      data: {
+        id: 'mod-1',
+        modulo_slug: SLUG,
+        conteudo_json: conteudoJson,
+        titulo_aula: 'Urgências',
+        modulo_nome: 'Urgências',
+        avant_codigo: 42,
+      },
+      error: null,
+    });
+    const order = jest.fn().mockResolvedValue({
+      data: [
+        { modulo_slug: 'questao-anterior' },
+        { modulo_slug: SLUG },
+        { modulo_slug: 'questao-proxima' },
+      ],
+      error: null,
+    });
+    const eqNotebook = jest.fn().mockReturnValue({ order });
+    const selectNotebook = jest.fn().mockReturnValue({ eq: eqNotebook });
+    const eqModulo = jest.fn().mockReturnValue({ maybeSingle: maybeSingleModulo });
+    const selectModulo = jest.fn().mockReturnValue({ eq: eqModulo });
+    const from = jest.fn((table: string) => {
+      if (table === 'modulos_estudo') return { select: selectModulo, eq: eqModulo };
+      if (table === 'study_notebook_items') return { select: selectNotebook, eq: eqNotebook };
+      return { select: selectModulo };
+    });
+
+    const result = await buildEstudarQuestaoPlayerPayload({
+      slug: SLUG,
+      userId: USER_ID,
+      supabase: { from } as never,
+      searchParams: { from: 'caderno', caderno_id: cadernoId },
+    });
+
+    expect(result.status).toBe('ok');
+    if (result.status !== 'ok') return;
+
+    const expectedSuffix = `?from=caderno&caderno_id=${encodeURIComponent(cadernoId)}`;
+    expect(result.payload.vitrineQuerySuffix).toBe(expectedSuffix);
+    expect(result.payload.fromCaderno).toBe(cadernoId);
+    expect(result.payload.proximaSlug).toBe(`questao-proxima${expectedSuffix}`);
+  });
 });

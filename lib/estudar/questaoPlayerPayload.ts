@@ -222,7 +222,7 @@ export async function buildEstudarQuestaoPlayerPayload(
     fromCaderno: fromCaderno ? cadernoId : undefined,
     listaContexto,
     avantCodigo: avantCodigoAluno,
-    vitrineQuerySuffix: fromPlano || fromCaderno ? '' : vitrineQuerySuffix,
+    vitrineQuerySuffix: suffix,
   };
 
   return { status: 'ok', payload };

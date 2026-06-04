@@ -34,6 +34,7 @@ import {
   shouldShowBackToVitrine,
 } from '@/components/dashboard/BackToVitrineLink';
 import { useEstudarModalActive } from '@/components/estudar/useEstudarModalActive';
+import { parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
 import { BottomNav } from '@/components/layout/BottomNav';
 import {
   MOBILE_DRAWER_ABOVE_OVERLAYS_OVERLAY_Z,
@@ -398,6 +399,9 @@ function DashboardContent({
   const pageVariants = isDashboardDesktop ? pageVariantsDesktop : pageVariantsMobile;
   const estudoReversoWelcome = useEstudoReversoWelcome({ enabled: userEmail != null });
   const isVitrineRoute = pathname === '/estudar';
+  /** Player inline no shell: main sem scroll externo para o card preencher a altura (desktop). */
+  const estudarQuestaoFillViewport =
+    parseEstudarSlugFromPathname(pathname) !== null && !modalQuestaoAtivo;
   /** Drawer acima de ER/modal só quando o modal de questão não está ativo (z-100). */
   const drawerAboveOverlays = mobileMenuOpen && !modalQuestaoAtivo;
 
@@ -730,7 +734,10 @@ function DashboardContent({
 
         <main
           className={cn(
-            'relative flex min-h-0 flex-1 flex-col overflow-x-hidden overflow-y-auto no-scrollbar md:pb-0',
+            'relative flex min-h-0 flex-1 flex-col overflow-x-hidden md:pb-0',
+            estudarQuestaoFillViewport
+              ? 'overflow-hidden'
+              : 'overflow-y-auto no-scrollbar',
             MOBILE_MAIN_SCROLL_PADDING,
           )}
         >
@@ -740,7 +747,10 @@ function DashboardContent({
             variants={pageVariants}
             initial="initial"
             animate="animate"
-            className="flex min-h-0 flex-1 flex-col"
+            className={cn(
+              'flex min-h-0 flex-1 flex-col',
+              estudarQuestaoFillViewport && 'min-h-full',
+            )}
           >
             {children}
           </motion.div>

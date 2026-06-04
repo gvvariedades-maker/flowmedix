@@ -218,6 +218,7 @@ describe('POST /api/registrar-tentativa', () => {
       expect.objectContaining({
         acertou: false,
         banca: 'DESCONHECIDA',
+        created_at: expect.any(String),
       }),
     );
   });

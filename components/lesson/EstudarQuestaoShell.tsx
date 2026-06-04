@@ -30,16 +30,26 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
     ? Boolean(displayPayload) && !isDismissingToVitrine
     : isQuestaoRoute && (showPlayer || showSkeleton);
 
+  const fillViewport = showPlayer || showSkeleton;
+
   return (
     <DashboardMobilePage
       variant="default"
-      className="relative flex min-h-0 w-full flex-1 flex-col bg-[#010409] px-3 py-3 font-sans sm:px-4 md:px-6 md:py-6 md:pb-6"
+      className={cn(
+        'relative flex min-h-0 w-full flex-1 flex-col bg-[#010409] px-3 py-3 font-sans sm:px-4 md:px-6 md:py-6 md:pb-6',
+        fillViewport && 'min-h-full',
+      )}
     >
-      <div className="mx-auto flex min-h-0 w-full max-w-6xl flex-1 flex-col">
+      <div
+        className={cn(
+          'mx-auto flex min-h-0 w-full max-w-6xl flex-1 flex-col',
+          fillViewport && 'min-h-full',
+        )}
+      >
         {showPlayer && displayPayload ? (
           <div
             className={cn(
-              'flex min-h-0 flex-1 flex-col [view-transition-name:estudar-questao-root]',
+              'flex h-full min-h-0 flex-1 flex-col [view-transition-name:estudar-questao-root]',
               isPayloadStale && 'pointer-events-none opacity-90',
             )}
             aria-busy={isPayloadStale || undefined}

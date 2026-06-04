@@ -101,6 +101,29 @@ describe('useEstudarQuestaoShellState', () => {
 
     expect(result.current.showPlayer).toBe(true);
     expect(result.current.showSkeleton).toBe(false);
+    expect(result.current.isPayloadStale).toBe(false);
     expect(result.current.displayPayload).toBe(payload);
+  });
+
+  it('não marca payload stale em rota de caderno quando vitrineQuerySuffix casa', () => {
+    const cadernoId = '550e8400-e29b-41d4-a716-446655440000';
+    const payload = {
+      moduloSlug: 'questao-a',
+      vitrineQuerySuffix: `?from=caderno&caderno_id=${cadernoId}`,
+      dados: {},
+    };
+    mockUsePathname.mockReturnValue('/estudar/questao-a');
+    mockUseSearchParams.mockReturnValue(
+      new URLSearchParams(`from=caderno&caderno_id=${cadernoId}`),
+    );
+    mockUseQuestaoNavigation.mockReturnValue({
+      displayPayload: payload,
+      isDismissingToVitrine: false,
+    });
+
+    const { result } = renderHook(() => useEstudarQuestaoShellState());
+
+    expect(result.current.showPlayer).toBe(true);
+    expect(result.current.isPayloadStale).toBe(false);
   });
 });

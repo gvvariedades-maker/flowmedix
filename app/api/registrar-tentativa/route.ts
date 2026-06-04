@@ -135,11 +135,17 @@ export async function POST(request: NextRequest) {
       subtopico: subtopico || topico || 'Geral',
     };
 
+    const reviewedAt = new Date().toISOString();
+
     const persistError = isReplay
       ? (
           await supabase
             .from('historico_questoes')
-            .update(historicoPayload)
+            .update({
+              ...historicoPayload,
+              /** Plano diário (SM-2) e /progresso usam `created_at` como última revisão. */
+              created_at: reviewedAt,
+            })
             .eq('id', historicoExistente.id)
         ).error
       : (

@@ -7,6 +7,12 @@
 
 import type { HistoricoQuestao } from './analytics';
 import { getAccessibleModuloSlugs } from './concursos/entitlements';
+import {
+  addFreemiumDaysToYmd,
+  freemiumYmdDiffDays,
+  freemiumYmdToDate,
+  toFreemiumTimezoneYmd,
+} from '@/lib/freemium/constants';
 import { logger } from './logger';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
@@ -188,8 +194,7 @@ export async function getTodayReviews(userId: string): Promise<ReviewItem[]> {
 
     const historico = (data || []) as HistoricoQuestao[];
     const accessibleSlugs = await getAccessibleModuloSlugs(userId);
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    const todayYmd = toFreemiumTimezoneYmd();
 
     // Agrupar tentativas por módulo
     const moduleMap = new Map<string, HistoricoQuestao[]>();
@@ -209,32 +214,26 @@ export async function getTodayReviews(userId: string): Promise<ReviewItem[]> {
       );
 
       const lastAttempt = sorted[0];
-      const lastDate = new Date(lastAttempt.created_at);
-      lastDate.setHours(0, 0, 0, 0);
+      const lastYmd = toFreemiumTimezoneYmd(new Date(lastAttempt.created_at));
 
       const { interval, easeFactor, repetitions } = simulateSm2FromAttempts(attempts);
 
-      // Calcular próxima revisão
-      const nextReview = new Date(lastDate);
-      nextReview.setDate(nextReview.getDate() + interval);
+      const nextReviewYmd = addFreemiumDaysToYmd(lastYmd, interval);
 
-      // Se próxima revisão é hoje ou passou, incluir na lista
-      if (nextReview <= today) {
-        // Calcular prioridade (quanto mais urgente, maior)
-        const daysOverdue = Math.floor(
-          (today.getTime() - nextReview.getTime()) / (1000 * 60 * 60 * 24)
-        );
+      // Próxima revisão é hoje ou já passou (fuso Brasília, alinhado ao freemium)
+      if (nextReviewYmd <= todayYmd) {
+        const daysOverdue = freemiumYmdDiffDays(nextReviewYmd, todayYmd);
         const priority = daysOverdue * 10 + (lastAttempt.acertou ? 0 : 50);
 
         reviews.push({
           modulo_slug: moduloSlug,
           topico: lastAttempt.topico || undefined,
           subtopico: lastAttempt.subtopico || undefined,
-          nextReview,
+          nextReview: freemiumYmdToDate(nextReviewYmd),
           interval,
           easeFactor,
           repetitions,
-          lastReview: lastDate,
+          lastReview: freemiumYmdToDate(lastYmd),
           priority,
         });
       }
@@ -306,10 +305,11 @@ export function recordReviewResult(
  */
 export async function getOverdueCount(userId: string): Promise<number> {
   const reviews = await getTodayReviews(userId);
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  const todayYmd = toFreemiumTimezoneYmd();
 
-  return reviews.filter((r) => r.nextReview < today).length;
+  return reviews.filter(
+    (r) => toFreemiumTimezoneYmd(r.nextReview) < todayYmd,
+  ).length;
 }
 
 /**
