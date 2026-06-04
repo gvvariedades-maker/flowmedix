@@ -14,7 +14,7 @@ export type EstudarQuestaoHydratorProps = AvantLessonPlayerProps;
 export default function EstudarQuestaoHydrator(props: EstudarQuestaoHydratorProps) {
   const pathname = usePathname();
 const searchParams = useSearchParams();
-  const { cachePayload, setDisplayPayload } = useQuestaoNavigation();
+  const { cachePayload, setDisplayPayload, displayPayload } = useQuestaoNavigation();
 
   const cacheKey = buildEstudarCacheKey(pathname, searchParams);
 
@@ -31,10 +31,19 @@ const searchParams = useSearchParams();
 
   useLayoutEffect(() => {
     const payload = playerProps as EstudarQuestaoPayload;
-    setDisplayPayload(payload);
     cachePayload(cacheKey, payload);
     recordHydratorSync(cacheKey, props.moduloSlug ?? undefined);
-  }, [cacheKey, cachePayload, setDisplayPayload, playerProps, props.moduloSlug]);
+    // Navegação client-side já atualizou displayPayload; evita 2º render ao hidratar o RSC.
+    if (displayPayload?.moduloSlug === props.moduloSlug) return;
+    setDisplayPayload(payload);
+  }, [
+    cacheKey,
+    cachePayload,
+    setDisplayPayload,
+    playerProps,
+    props.moduloSlug,
+    displayPayload?.moduloSlug,
+  ]);
 
   return null;
 }

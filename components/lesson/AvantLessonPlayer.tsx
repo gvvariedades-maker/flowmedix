@@ -294,9 +294,9 @@ export default function AvantLessonPlayer({
   useEffect(() => {
     setDadosComSlides(null);
     slidesLayerFetchRef.current = false;
-  }, [dadosIniciais, moduloSlug]);
+  }, [moduloSlug]);
 
-  // Reset ao mudar de questão
+  // Reset ao mudar de questão (só slug — não re-dispara quando o Hydrator reenvia o mesmo slug)
   useEffect(() => {
     navegandoRef.current = false;
     const jaEstudada =
@@ -313,7 +313,7 @@ export default function AvantLessonPlayer({
     setTentativaErro(null);
     setGabarito(null);
     questionBodyScrollRef.current?.scrollTo({ top: 0, behavior: 'auto' });
-  }, [dadosIniciais, moduloSlug, questoesDoAssunto]);
+  }, [moduloSlug, questoesDoAssunto]);
 
   const navegacaoBloqueada = confirmandoResposta || marcandoConclusao;
 

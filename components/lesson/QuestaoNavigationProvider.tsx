@@ -355,6 +355,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
           }
 
           if (payload) {
+            routePayloadSyncKeyRef.current = cacheKey;
             setDisplayPayload(payload);
           }
 
