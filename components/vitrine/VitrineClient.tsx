@@ -63,6 +63,8 @@ import { VitrineQuestaoLink } from '@/components/vitrine/VitrineQuestaoLink';
 import { useVitrineVisiblePrefetch, VITRINE_PREFETCH_DATA_ATTR } from '@/hooks/useVitrineVisiblePrefetch';
 import { useVitrineListSwr } from '@/hooks/useVitrineListSwr';
 import { buildVitrineEstudarQuery } from '@/lib/vitrine/estudarQuery';
+import { labelQuestoes } from '@/lib/labelQuestoes';
+import { parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
 
 const VITRINE_SEARCH_DEBOUNCE_MS = 350;
 
@@ -269,6 +271,8 @@ export default function VitrineClient({
   const [ssrErrorDismissed, setSsrErrorDismissed] = useState(false);
   const [retryNonce, setRetryNonce] = useState(0);
   const vitrineListaRef = useRef<HTMLDivElement>(null);
+  /** Persiste entre soft-nav; zera ao abrir questão para não voltar com card aberto. */
+  const [expandedPanelSlug, setExpandedPanelSlug] = useState<string | null>(null);
   /** Evita scrollIntoView quando setPagina(1) veio de filtro/busca, não de Anterior/Próxima. */
   const paginaViaFiltroRef = useRef(false);
   /** Evita gravar na URL antes de ler os filtros (impede loop com estado inicial vazio). */
@@ -320,6 +324,12 @@ export default function VitrineClient({
    * URL → estado antes do paint e antes dos useEffects que gravam na URL / buscam dados.
    * Sem useLayoutEffect, o efeito de escrita rodava com bancas=[] e apagava ?banca= da URL.
    */
+  useEffect(() => {
+    if (parseEstudarSlugFromPathname(pathname) !== null) {
+      setExpandedPanelSlug(null);
+    }
+  }, [pathname]);
+
   useLayoutEffect(() => {
     const c = searchParams.get('cidade');
     setCidadeUrl(c ? decodeURIComponent(c) : fallbackTitulo);
@@ -916,16 +926,27 @@ export default function VitrineClient({
               <motion.div
                 key={`${bancasSelecionadas.join('|')}-${assuntosSelecionados.join('|')}-${searchTerm}`}
                 ref={vitrineListaRef}
+                data-vitrine-list-ready={listBusy ? 'false' : 'true'}
+                aria-busy={listBusy || undefined}
                 variants={containerVariants}
-                initial="initial"
+                initial={false}
                 animate="animate"
                 className={cn(
                   'grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-5 xl:grid-cols-4',
-                  isRefreshing && 'pointer-events-none opacity-70',
+                  isRefreshing && 'opacity-80',
                 )}
               >
                 {gruposPagina.map((grupo, idx) => (
-                  <SubtopicoCard key={grupo.titulo_aula} grupo={grupo} estudarQuery={estudarQuery} index={idx} />
+                  <SubtopicoCard
+                    key={grupo.titulo_aula}
+                    grupo={grupo}
+                    estudarQuery={estudarQuery}
+                    index={idx}
+                    assuntoExpandido={expandedPanelSlug === grupo.firstSlug}
+                    onAssuntoExpandedChange={(open) =>
+                      setExpandedPanelSlug(open ? grupo.firstSlug : null)
+                    }
+                  />
                 ))}
               </motion.div>
               {totalPaginas > 1 && (
@@ -1219,8 +1240,19 @@ function StatusBadge({ status }: { status: QuestaoStatus }) {
   return <Circle size={15} className="shrink-0 text-slate-600" />;
 }
 
-function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; estudarQuery: string; index: number }) {
-  const [assuntoExpandido, setAssuntoExpandido] = useState(false);
+function SubtopicoCard({
+  grupo,
+  estudarQuery,
+  index,
+  assuntoExpandido,
+  onAssuntoExpandedChange,
+}: {
+  grupo: GrupoSubtopico;
+  estudarQuery: string;
+  index: number;
+  assuntoExpandido: boolean;
+  onAssuntoExpandedChange: (open: boolean) => void;
+}) {
   const [questoesExpandido, setQuestoesExpandido] = useState(false);
   const {
     titulo_aula,
@@ -1245,11 +1277,9 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
   const progressoPct = hasQuestions ? Math.round((trabalhadas / totalQuestoes) * 100) : 0;
   const panelId = `assunto-panel-${firstSlug}`;
   const toggleAssunto = () => {
-    setAssuntoExpandido((prev) => {
-      const next = !prev;
-      if (!next) setQuestoesExpandido(false);
-      return next;
-    });
+    const next = !assuntoExpandido;
+    if (!next) setQuestoesExpandido(false);
+    onAssuntoExpandedChange(next);
   };
 
   const topicIcon = getTopicIcon(titulo_aula, modulo_nome);
@@ -1307,7 +1337,7 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
             <span>{banca}</span>
             <span className="text-white/15">·</span>
             <span>
-              {totalQuestoes} questão{totalQuestoes !== 1 ? 'ões' : ''}
+              {totalQuestoes} {labelQuestoes(totalQuestoes)}
             </span>
           </p>
         </div>
@@ -1367,7 +1397,7 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
                   ? 'Ocultar questões'
                   : listaFoiTruncada
                     ? `Ver ${questoesExibidas} de ${totalQuestoes} questões`
-                    : `Ver ${totalQuestoes} questão${totalQuestoes !== 1 ? 'ões' : ''}`}
+                    : `Ver ${totalQuestoes} ${labelQuestoes(totalQuestoes)}`}
               </span>
               {questoesExpandido ? <ChevronUp size={14} className="text-slate-500" /> : <ChevronDown size={14} className="text-slate-500" />}
             </button>
@@ -1423,7 +1453,7 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
                   </div>
                   {listaFoiTruncada && (
                     <p className="mt-2 text-center text-[10px] font-medium text-slate-400">
-                      +{questoesTruncadas} questão{questoesTruncadas !== 1 ? 'ões' : ''} neste assunto. Abra pelo botão
+                      +{questoesTruncadas} {labelQuestoes(questoesTruncadas)} neste assunto. Abra pelo botão
                       {' '}
                       "Entrar no assunto" para navegar completo.
                     </p>
@@ -1433,7 +1463,7 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
 
             <div className="flex items-center justify-between gap-2 border-t border-white/10 pt-2">
               <span className="text-[10px] font-medium uppercase tracking-wide text-slate-400">
-                {totalQuestoes} questão{totalQuestoes !== 1 ? 'ões' : ''} no assunto
+                {totalQuestoes} {labelQuestoes(totalQuestoes)} no assunto
               </span>
               {totalResolvidas === 0 && (
                 <NeonBadge variant="neutral">Não iniciado</NeonBadge>

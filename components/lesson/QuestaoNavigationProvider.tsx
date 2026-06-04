@@ -1,6 +1,14 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import {
   QuestaoNavigationContext,
@@ -260,22 +268,27 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     [readPayloadFromIdb],
   );
 
+  /** Limpa soft-nav e player antes do paint ao voltar à vitrine (evita vitrine inerte). */
+  useLayoutEffect(() => {
+    navegandoRef.current = false;
+    const slug = parseEstudarSlugFromPathname(pathname);
+    if (slug !== null) return;
+
+    dismissingToVitrineRef.current = false;
+    setIsDismissingToVitrine(false);
+    routePayloadSyncKeyRef.current = null;
+    setEstudarRoute(null);
+    setDisplayPayload(null);
+  }, [pathname]);
+
   /**
    * Soft navigation (intercept @modal) atualiza a URL mas pode deixar a vitrine no slot
    * `children` sem montar o Hydrator. Sincroniza payload pelo cache/API quando a rota
    * já é `/estudar/[slug]`; `router.refresh()` só se a API falhar.
    */
   useEffect(() => {
-    navegandoRef.current = false;
     const slug = parseEstudarSlugFromPathname(pathname);
-    if (slug === null) {
-      dismissingToVitrineRef.current = false;
-      setIsDismissingToVitrine(false);
-      routePayloadSyncKeyRef.current = null;
-      setDisplayPayload(null);
-      setEstudarRoute(null);
-      return;
-    }
+    if (slug === null) return;
     if (dismissingToVitrineRef.current) return;
     if (typeof window === 'undefined') return;
 
