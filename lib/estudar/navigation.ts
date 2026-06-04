@@ -15,6 +15,30 @@ export function buildEstudarHref(slugComQuery: string): string {
   return `/estudar/${trimmed}`;
 }
 
+export type EstudarRouteSnapshot = {
+  pathname: string;
+  /** Query string com `?` ou vazio. */
+  search: string;
+};
+
+/**
+ * Atualiza a URL no browser sem `router.replace` (evita RSC na troca Q1→Q2 no caderno).
+ * Retorna pathname + search para o shell alinhar cache key ao payload em memória.
+ */
+export function applySoftEstudarHistoryUrl(href: string): EstudarRouteSnapshot {
+  const trimmed = href.trim();
+  const path = trimmed.startsWith('/') ? trimmed : `/${trimmed}`;
+  const qIndex = path.indexOf('?');
+  const pathname = qIndex === -1 ? path : path.slice(0, qIndex);
+  const search = qIndex === -1 ? '' : path.slice(qIndex);
+
+  if (typeof window !== 'undefined') {
+    window.history.replaceState(window.history.state, '', pathname + search);
+  }
+
+  return { pathname, search };
+}
+
 /** Slug da questão em `/estudar/[slug]`; `null` na vitrine (`/estudar` apenas). */
 export function parseEstudarSlugFromPathname(pathname: string): string | null {
   const segments = pathname.split('/').filter(Boolean);

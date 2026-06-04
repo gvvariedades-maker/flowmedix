@@ -13,6 +13,7 @@ const mockFetchWithAuth = jest.fn();
 jest.mock('next/navigation', () => ({
   useRouter: () => ({ push: mockPush, replace: mockReplace, prefetch: mockPrefetch }),
   usePathname: () => mockUsePathname(),
+  useSearchParams: () => new URLSearchParams(),
 }));
 
 jest.mock('@/lib/api/fetch-with-auth', () => ({
@@ -164,7 +165,8 @@ describe('QuestaoNavigationProvider', () => {
     });
   });
 
-  it('usa replace ao trocar de questão já aberta (não empilha histórico)', async () => {
+  it('troca de slug in-player via history (sem router.replace, evita RSC)', async () => {
+    const replaceStateSpy = jest.spyOn(window.history, 'replaceState').mockImplementation(() => {});
     mockUsePathname.mockReturnValue('/estudar/questao-a');
 
     const { getByRole } = render(
@@ -178,9 +180,12 @@ describe('QuestaoNavigationProvider', () => {
     });
 
     await waitFor(() => {
-      expect(mockReplace).toHaveBeenCalledWith('/estudar/questao-a');
+      expect(replaceStateSpy).toHaveBeenCalled();
+      expect(mockReplace).not.toHaveBeenCalled();
       expect(mockPush).not.toHaveBeenCalled();
     });
+
+    replaceStateSpy.mockRestore();
   });
 
   it('dismissToVitrine usa replace e não re-hidrata payload na URL antiga', async () => {

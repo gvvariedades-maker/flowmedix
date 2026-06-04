@@ -264,7 +264,10 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
 
   const indexAtual = lista.findIndex((item) => item.modulo_slug === slug);
   const anteriorSlug = indexAtual > 0 ? lista[indexAtual - 1].modulo_slug : null;
-  const proximaSlug = indexAtual < lista.length - 1 ? lista[indexAtual + 1].modulo_slug : null;
+  const proximaSlug =
+    indexAtual >= 0 && indexAtual < lista.length - 1
+      ? lista[indexAtual + 1].modulo_slug
+      : null;
 
   const listaContexto =
     lista.length > 0 && indexAtual >= 0

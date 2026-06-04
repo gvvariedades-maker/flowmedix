@@ -25,6 +25,7 @@ describe('useEstudarQuestaoShellState', () => {
     mockUseQuestaoNavigation.mockReturnValue({
       displayPayload: null,
       isDismissingToVitrine: false,
+      estudarRoute: null,
     });
 
     const { result } = renderHook(() => useEstudarQuestaoShellState());
@@ -39,6 +40,7 @@ describe('useEstudarQuestaoShellState', () => {
     mockUseQuestaoNavigation.mockReturnValue({
       displayPayload: null,
       isDismissingToVitrine: false,
+      estudarRoute: null,
     });
 
     const { result } = renderHook(() => useEstudarQuestaoShellState());
@@ -59,6 +61,7 @@ describe('useEstudarQuestaoShellState', () => {
     mockUseQuestaoNavigation.mockReturnValue({
       displayPayload: stalePayload,
       isDismissingToVitrine: false,
+      estudarRoute: null,
     });
 
     const { result } = renderHook(() => useEstudarQuestaoShellState());
@@ -74,6 +77,7 @@ describe('useEstudarQuestaoShellState', () => {
     mockUseQuestaoNavigation.mockReturnValue({
       displayPayload: null,
       isDismissingToVitrine: false,
+      estudarRoute: null,
     });
 
     const { result } = renderHook(() =>
@@ -95,6 +99,7 @@ describe('useEstudarQuestaoShellState', () => {
     mockUseQuestaoNavigation.mockReturnValue({
       displayPayload: payload,
       isDismissingToVitrine: false,
+      estudarRoute: null,
     });
 
     const { result } = renderHook(() => useEstudarQuestaoShellState());
@@ -103,6 +108,29 @@ describe('useEstudarQuestaoShellState', () => {
     expect(result.current.showSkeleton).toBe(false);
     expect(result.current.isPayloadStale).toBe(false);
     expect(result.current.displayPayload).toBe(payload);
+  });
+
+  it('usa estudarRoute (soft nav) para cache key sem marcar stale', () => {
+    const payload = {
+      moduloSlug: 'questao-b',
+      vitrineQuerySuffix: '?from=caderno&caderno_id=abc',
+      dados: {},
+    };
+    mockUsePathname.mockReturnValue('/estudar/questao-a');
+    mockUseSearchParams.mockReturnValue(new URLSearchParams('from=caderno&caderno_id=abc'));
+    mockUseQuestaoNavigation.mockReturnValue({
+      displayPayload: payload,
+      isDismissingToVitrine: false,
+      estudarRoute: {
+        pathname: '/estudar/questao-b',
+        search: '?from=caderno&caderno_id=abc',
+      },
+    });
+
+    const { result } = renderHook(() => useEstudarQuestaoShellState());
+
+    expect(result.current.isPayloadStale).toBe(false);
+    expect(result.current.showPlayer).toBe(true);
   });
 
   it('não marca payload stale em rota de caderno quando vitrineQuerySuffix casa', () => {
@@ -119,6 +147,7 @@ describe('useEstudarQuestaoShellState', () => {
     mockUseQuestaoNavigation.mockReturnValue({
       displayPayload: payload,
       isDismissingToVitrine: false,
+      estudarRoute: null,
     });
 
     const { result } = renderHook(() => useEstudarQuestaoShellState());

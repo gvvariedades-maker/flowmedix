@@ -16,13 +16,18 @@ export function useEstudarQuestaoShellState(options: UseEstudarQuestaoShellState
   const { modalActive = false } = options;
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const { displayPayload, isDismissingToVitrine } = useQuestaoNavigation();
+  const { displayPayload, isDismissingToVitrine, estudarRoute } = useQuestaoNavigation();
 
-  const slugFromPath = parseEstudarSlugFromPathname(pathname);
+  const effectivePathname = estudarRoute?.pathname ?? pathname;
+  const effectiveSearchParams = estudarRoute
+    ? new URLSearchParams(estudarRoute.search.replace(/^\?/, ''))
+    : searchParams;
+
+  const slugFromPath = parseEstudarSlugFromPathname(effectivePathname);
   const isQuestaoRoute = slugFromPath !== null;
 
   const routeCacheKey = isQuestaoRoute
-    ? buildEstudarCacheKey(pathname, searchParams)
+    ? buildEstudarCacheKey(effectivePathname, effectiveSearchParams)
     : '';
 
   const payloadCacheKey =

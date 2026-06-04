@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext } from 'react';
-import type { EstudarVitrineReturnContext } from '@/lib/estudar/navigation';
+import type { EstudarRouteSnapshot, EstudarVitrineReturnContext } from '@/lib/estudar/navigation';
 import type { AvantLessonPlayerProps } from '@/types/lesson';
 
 export type EstudarQuestaoPayload = AvantLessonPlayerProps;
@@ -18,6 +18,8 @@ export type QuestaoNavigationContextValue = {
   dismissToVitrine: (ctx?: EstudarVitrineReturnContext) => void;
   /** True entre dismiss e a URL voltar para `/estudar` (evita skeleton e re-hidratação). */
   isDismissingToVitrine: boolean;
+  /** Rota efetiva do player (soft nav); quando null, use `usePathname` / `useSearchParams`. */
+  estudarRoute: EstudarRouteSnapshot | null;
 };
 
 export const QuestaoNavigationContext =

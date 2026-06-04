@@ -1,4 +1,5 @@
 import {
+  applySoftEstudarHistoryUrl,
   buildEstudarCacheKey,
   buildEstudarCacheKeyFromSlugComQuery,
   buildEstudarHref,
@@ -18,6 +19,23 @@ describe('lib/estudar/navigation', () => {
     it('retorna null na vitrine', () => {
       expect(parseEstudarSlugFromPathname('/estudar')).toBeNull();
       expect(parseEstudarSlugFromPathname('/estudar/')).toBeNull();
+    });
+  });
+
+  describe('applySoftEstudarHistoryUrl', () => {
+    it('retorna pathname e search sem router', () => {
+      const replaceStateSpy = jest.spyOn(window.history, 'replaceState').mockImplementation(() => {});
+      const snap = applySoftEstudarHistoryUrl('/estudar/q2?from=caderno&caderno_id=abc');
+      expect(snap).toEqual({
+        pathname: '/estudar/q2',
+        search: '?from=caderno&caderno_id=abc',
+      });
+      expect(replaceStateSpy).toHaveBeenCalledWith(
+        window.history.state,
+        '',
+        '/estudar/q2?from=caderno&caderno_id=abc',
+      );
+      replaceStateSpy.mockRestore();
     });
   });
 

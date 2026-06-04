@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import {
   QuestaoNavigationContext,
   type EstudarQuestaoPayload,
@@ -12,10 +12,12 @@ import { logger } from '@/lib/logger';
 import {
   buildEstudarCacheKey,
   buildEstudarCacheKeyFromSlugComQuery,
+  applySoftEstudarHistoryUrl,
   buildEstudarHref,
   buildEstudarQuestaoApiUrl,
   buildEstudarVitrineHref,
   parseEstudarSlugFromPathname,
+  type EstudarRouteSnapshot,
   type EstudarVitrineReturnContext,
 } from '@/lib/estudar/navigation';
 import { PREFETCH_FORWARD_DEPTH, warmForwardChain } from '@/lib/estudar/prefetchChain';
@@ -95,6 +97,7 @@ function scheduleRouterNavigate(
 export function QuestaoNavigationProvider({ children }: { children: ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const { addToast } = useToast();
   const cacheRef = useRef(new LruCache<EstudarQuestaoPayload>(CACHE_MAX_ENTRIES));
   const forbiddenKeysRef = useRef(new Set<string>());
@@ -106,6 +109,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
   const dismissingToVitrineRef = useRef(false);
   const [isDismissingToVitrine, setIsDismissingToVitrine] = useState(false);
   const [displayPayload, setDisplayPayload] = useState<EstudarQuestaoPayload | null>(null);
+  const [estudarRoute, setEstudarRoute] = useState<EstudarRouteSnapshot | null>(null);
 
   const notifySemAcesso = useCallback(() => {
     addToast(TOAST_SEM_ACESSO, 'danger');
@@ -117,6 +121,25 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
 
   useEffect(() => {
     attachEstudarNavTelemetryToWindow();
+  }, []);
+
+  /** Quando o App Router alcança a URL do soft-nav, volta a usar pathname/search do Next. */
+  useEffect(() => {
+    if (!estudarRoute) return;
+    const softSearch = estudarRoute.search.replace(/^\?/, '');
+    const routerSearch = searchParams.toString();
+    if (pathname === estudarRoute.pathname && routerSearch === softSearch) {
+      setEstudarRoute(null);
+    }
+  }, [pathname, searchParams, estudarRoute]);
+
+  useEffect(() => {
+    const onPopState = () => {
+      setEstudarRoute(null);
+      routePayloadSyncKeyRef.current = null;
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
   const cachePayload = useCallback((key: string, payload: EstudarQuestaoPayload) => {
@@ -250,6 +273,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       setIsDismissingToVitrine(false);
       routePayloadSyncKeyRef.current = null;
       setDisplayPayload(null);
+      setEstudarRoute(null);
       return;
     }
     if (dismissingToVitrineRef.current) return;
@@ -332,6 +356,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       dismissingToVitrineRef.current = true;
       setIsDismissingToVitrine(true);
       routePayloadSyncKeyRef.current = null;
+      setEstudarRoute(null);
       scheduleRouterNavigate(router, buildEstudarVitrineHref(ctx), 'replace');
     },
     [router],
@@ -381,7 +406,13 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
           setDisplayPayload(payload);
 
           const alreadyOnQuestao = parseEstudarSlugFromPathname(pathname) !== null;
-          scheduleRouterNavigate(router, href, alreadyOnQuestao ? 'replace' : 'push');
+          if (alreadyOnQuestao) {
+            const route = applySoftEstudarHistoryUrl(href);
+            setEstudarRoute(route);
+          } else {
+            setEstudarRoute(null);
+            scheduleRouterNavigate(router, href, 'push');
+          }
 
           if (payload.proximaSlug) {
             void warmForwardChain(payload.proximaSlug, PREFETCH_FORWARD_DEPTH, {
@@ -415,6 +446,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       prefetchPayload,
       dismissToVitrine,
       isDismissingToVitrine,
+      estudarRoute,
     }),
     [
       displayPayload,
@@ -425,6 +457,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       prefetchPayload,
       dismissToVitrine,
       isDismissingToVitrine,
+      estudarRoute,
     ],
   );
 
