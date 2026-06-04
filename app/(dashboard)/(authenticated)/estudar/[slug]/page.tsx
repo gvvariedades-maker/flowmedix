@@ -132,7 +132,14 @@ export default async function PaginaQuestaoDinamica({
   }
 
   if (result.status === 'forbidden' && userId) {
-    await logEntitlementDiagnostics(userId, resolvedParams.slug);
+    try {
+      await logEntitlementDiagnostics(userId, resolvedParams.slug);
+    } catch (diagErr) {
+      logger.error('Falha no diagnóstico de entitlement', diagErr, {
+        slug: resolvedParams.slug,
+        userId,
+      });
+    }
     return notFound();
   }
 

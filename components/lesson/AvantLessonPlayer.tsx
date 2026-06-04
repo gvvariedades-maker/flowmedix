@@ -469,7 +469,13 @@ export default function AvantLessonPlayer({
 
   const prefersReducedMotion = useReducedMotion() ?? false;
 
-  if (!activeDados?.question_data) return null;
+  if (!activeDados?.question_data?.options?.length) return null;
+
+  const meta = activeDados.meta ?? {
+    banca: 'DESCONHECIDA',
+    topico: 'Geral',
+    subtopico: 'Geral',
+  };
 
   const certoErradoLayout = isCertoErradoQuestion(activeDados.question_data.options);
 
@@ -687,11 +693,11 @@ export default function AvantLessonPlayer({
   // ============================================================================
   // RENDER HELPERS
   // ============================================================================
-  const questionSubject = activeDados.meta.topico || activeDados.meta.subtopico || 'Geral';
-  const subtopicLabel = activeDados.meta.subtopico
-    ? `Subtópico: ${activeDados.meta.subtopico}`
-    : activeDados.meta.topico
-      ? `Tópico: ${activeDados.meta.topico}`
+  const questionSubject = meta.topico || meta.subtopico || 'Geral';
+  const subtopicLabel = meta.subtopico
+    ? `Subtópico: ${meta.subtopico}`
+    : meta.topico
+      ? `Tópico: ${meta.topico}`
       : 'Revisão guiada por estudo reverso';
 
   const slidesSource = ((activeDados.reverse_study_slides || activeDados.study_slides) ?? []) as LessonData['reverse_study_slides'];
@@ -711,8 +717,8 @@ export default function AvantLessonPlayer({
     },
     subject: questionSubject,
     meta: {
-      topico: activeDados.meta.topico,
-      subtopico: activeDados.meta.subtopico,
+      topico: meta.topico,
+      subtopico: meta.subtopico,
     },
   };
 
@@ -736,8 +742,8 @@ export default function AvantLessonPlayer({
     ...slide,
     subject: slide.subject || questionSubject,
     meta: {
-      topico: slide.meta?.topico || activeDados.meta.topico,
-      subtopico: slide.meta?.subtopico || activeDados.meta.subtopico,
+      topico: slide.meta?.topico || meta.topico,
+      subtopico: slide.meta?.subtopico || meta.subtopico,
       ...slide.meta,
     },
     structure: normalizeStructure(slide.structure) ?? slide.structure,

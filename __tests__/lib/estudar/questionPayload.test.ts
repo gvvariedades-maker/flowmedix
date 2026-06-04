@@ -1,5 +1,7 @@
 import {
+  ensureLessonDataForPlayer,
   findCorrectOptionId,
+  lessonDataHasPlayableQuestion,
   resolveQuestionAttempt,
   stripQuestionAnswersForClient,
   stripQuestionForSimulado,
@@ -50,6 +52,20 @@ describe('stripQuestionForSimulado', () => {
     expect(stripped.meta).toEqual(questaoCompleta.meta);
     expect(stripped).not.toHaveProperty('reverse_study_slides');
     expect(stripped).not.toHaveProperty('study_slides');
+  });
+});
+
+describe('ensureLessonDataForPlayer', () => {
+  it('preenche meta quando o JSON legado omite o campo', () => {
+    const semMeta = {
+      question_data: questaoCompleta.question_data,
+    } as LessonData;
+
+    const normalized = ensureLessonDataForPlayer(semMeta);
+
+    expect(normalized.meta?.banca).toBe('DESCONHECIDA');
+    expect(normalized.meta?.topico).toBe('Geral');
+    expect(lessonDataHasPlayableQuestion(normalized)).toBe(true);
   });
 });
 

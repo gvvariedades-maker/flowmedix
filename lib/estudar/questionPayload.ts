@@ -1,5 +1,27 @@
 import type { LessonData } from '@/types/lesson';
 
+const LESSON_META_FALLBACK: NonNullable<LessonData['meta']> = {
+  banca: 'DESCONHECIDA',
+  topico: 'Geral',
+  subtopico: 'Geral',
+};
+
+/**
+ * Garante `meta` e `question_data` mínimos antes de serializar para o player.
+ * Evita crash no client quando o JSON legado omite `meta`.
+ */
+export function ensureLessonDataForPlayer<T extends LessonData>(dados: T): T {
+  const question_data = dados?.question_data ?? { instruction: '', options: [] };
+  const meta = dados?.meta ?? LESSON_META_FALLBACK;
+  return { ...dados, meta, question_data };
+}
+
+/** Payload inválido para exibir questão (sem alternativas). */
+export function lessonDataHasPlayableQuestion(dados: LessonData): boolean {
+  const options = dados?.question_data?.options;
+  return Array.isArray(options) && options.length > 0;
+}
+
 /** Alternativa exposta ao cliente em modo live (sem gabarito). */
 export type QuestionOptionClient = {
   id: string;

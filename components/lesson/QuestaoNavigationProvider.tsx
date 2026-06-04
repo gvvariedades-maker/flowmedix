@@ -8,6 +8,7 @@ import {
   type QuestaoNavigationContextValue,
 } from '@/components/lesson/questao-navigation-context';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
+import { logger } from '@/lib/logger';
 import {
   buildEstudarCacheKey,
   buildEstudarCacheKeyFromSlugComQuery,
@@ -272,6 +273,12 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       }
       if (result.kind === 'forbidden') {
         notifySemAcesso();
+        return;
+      }
+      if (result.kind === 'error') {
+        logger.warn('Sincronização de payload da questão falhou na troca de rota', {
+          slugComQuery: slug,
+        });
         return;
       }
       router.refresh();

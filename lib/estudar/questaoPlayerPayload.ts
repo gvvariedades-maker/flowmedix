@@ -15,7 +15,11 @@ import {
   stripSlidesForCoreLayer,
   type EstudarQuestaoLayers,
 } from '@/lib/estudar/questaoLayers';
-import { stripQuestionAnswersForClient } from '@/lib/estudar/questionPayload';
+import {
+  ensureLessonDataForPlayer,
+  lessonDataHasPlayableQuestion,
+  stripQuestionAnswersForClient,
+} from '@/lib/estudar/questionPayload';
 import type { EstudarSearchParams } from '@/lib/estudar/parseEstudarSearchParams';
 import { parseEstudarSearchParams } from '@/lib/estudar/parseEstudarSearchParams';
 
@@ -114,6 +118,12 @@ export async function buildEstudarQuestaoPlayerPayload(
 
   if (!atual) return { status: 'not_found' };
 
+  const dadosNormalizados = ensureLessonDataForPlayer(atual.conteudo_json);
+  if (!lessonDataHasPlayableQuestion(dadosNormalizados)) {
+    logger.warn('Questão sem alternativas jogáveis', { slug, userId });
+    return { status: 'not_found' };
+  }
+
   let lista: ModuloListItem[] = [];
   let questoesDoAssunto: { slug: string; estudada: boolean }[] = [];
 
@@ -170,8 +180,13 @@ export async function buildEstudarQuestaoPlayerPayload(
 
     let cadernoRows = cadernoItems || [];
     if (!isAdmin) {
-      const accessibleSlugs = await getAccessibleModuloSlugs(userId);
-      cadernoRows = cadernoRows.filter((i) => accessibleSlugs.has(i.modulo_slug));
+      try {
+        const accessibleSlugs = await getAccessibleModuloSlugs(userId);
+        cadernoRows = cadernoRows.filter((i) => accessibleSlugs.has(i.modulo_slug));
+      } catch (err) {
+        logger.error('Falha ao filtrar itens do caderno por pacote', err, { userId, cadernoId });
+        return { status: 'not_found' };
+      }
     }
 
     lista = cadernoRows.map((i) => ({
@@ -192,7 +207,7 @@ export async function buildEstudarQuestaoPlayerPayload(
   } else {
     const tituloAula: string =
       atual.titulo_aula ||
-      (atual.conteudo_json as { meta?: { subtopico?: string } })?.meta?.subtopico ||
+      dadosNormalizados.meta?.subtopico ||
       atual.modulo_nome ||
       '';
 
@@ -246,7 +261,7 @@ export async function buildEstudarQuestaoPlayerPayload(
       ? Number(rawCodigo)
       : null;
 
-  let dadosCliente = stripQuestionAnswersForClient(atual.conteudo_json);
+  let dadosCliente = stripQuestionAnswersForClient(dadosNormalizados);
   if (layers === 'core') {
     dadosCliente = stripSlidesForCoreLayer(dadosCliente);
   }
