@@ -14,8 +14,6 @@ import {
   toFreemiumTimezoneYmd,
 } from '@/lib/freemium/constants';
 import { logger } from './logger';
-import { cookies } from 'next/headers';
-import { createServerClient } from '@supabase/ssr';
 
 // ============================================================================
 // TIPOS E INTERFACES
@@ -158,27 +156,8 @@ const SLUG_CHUNK = 120;
 
 export async function getTodayReviews(userId: string): Promise<ReviewItem[]> {
   try {
-    const cookieStore = await cookies();
-    const supabase = createServerClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        cookies: {
-          getAll() {
-            return cookieStore.getAll();
-          },
-          setAll(cookiesToSet) {
-            try {
-              cookiesToSet.forEach(({ name, value, options }) =>
-                cookieStore.set(name, value, options)
-              );
-            } catch {
-              // Next.js já cuida dos cookies
-            }
-          },
-        },
-      }
-    );
+    const { createServerSupabase } = await import('./supabase/server');
+    const supabase = await createServerSupabase();
 
     const { data, error } = await supabase
       .from('historico_questoes')

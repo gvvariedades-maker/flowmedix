@@ -1,7 +1,9 @@
 import { notFound } from 'next/navigation';
 import EstudarQuestaoHydrator from '@/components/lesson/EstudarQuestaoHydrator';
 import { getEstudarQuestaoPayloadCached } from '@/lib/cache';
+import { isDataServiceUnavailableError } from '@/lib/dataServiceError';
 import { isAdminSessionEmail } from '@/lib/constants';
+import { logger } from '@/lib/logger';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { buildE2eEstudarQuestaoPayload } from '@/lib/e2e/estudarSeed';
 import { isE2eEstudarSlug } from '@/lib/e2e/constants';
@@ -30,14 +32,25 @@ export default async function EstudarQuestaoPageContent({
   const session = await getServerSession();
   const userId = session?.user?.id;
 
-  const result = await getEstudarQuestaoPayloadCached({
-    slug: resolvedParams.slug,
-    userId,
-    isAdmin: isAdminSessionEmail(session?.user?.email ?? null),
-    searchParams: resolvedSearch,
-    layers: 'full',
-  });
+  let result: Awaited<ReturnType<typeof getEstudarQuestaoPayloadCached>>;
+  try {
+    result = await getEstudarQuestaoPayloadCached({
+      slug: resolvedParams.slug,
+      userId,
+      isAdmin: isAdminSessionEmail(session?.user?.email ?? null),
+      searchParams: resolvedSearch,
+      layers: 'full',
+    });
+  } catch (err) {
+    if (isDataServiceUnavailableError(err)) throw err;
+    logger.error('Falha ao montar payload da questão', err, {
+      slug: resolvedParams.slug,
+      userId,
+    });
+    return notFound();
+  }
 
+  if (result.status === 'forbidden') return notFound();
   if (result.status !== 'ok') return notFound();
 
   return <EstudarQuestaoHydrator {...result.payload} />;

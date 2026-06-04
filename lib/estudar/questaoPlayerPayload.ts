@@ -1,6 +1,6 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import type { AvantLessonPlayerProps } from '@/types/lesson';
-import { createSupabaseServerClient } from '@/lib/supabase/server-auth';
+import { logger } from '@/lib/logger';
 import {
   getQuestaoBySlugCached,
   getHistoricoQuestoesForSlugsCached,
@@ -80,15 +80,20 @@ export async function buildEstudarQuestaoPlayerPayload(
 
   if (userId) {
     if (!isAdmin) {
-      const hasAccess = await userHasModuloAccess(userId, slug);
-      if (!hasAccess) return { status: 'forbidden' };
+      try {
+        const hasAccess = await userHasModuloAccess(userId, slug);
+        if (!hasAccess) return { status: 'forbidden' };
+      } catch (err) {
+        logger.error('Falha ao verificar acesso ao módulo', err, { userId, slug });
+        return { status: 'not_found' };
+      }
     }
 
     if (isAdmin) {
       atual = (await getQuestaoBySlugCached(slug)) as ModuloAtualRow | null;
-      supabase = input.supabase ?? (await createSupabaseServerClient());
     } else {
-      supabase = input.supabase ?? (await createSupabaseServerClient());
+      const { createServerSupabase } = await import('@/lib/supabase/server');
+      supabase = input.supabase ?? (await createServerSupabase());
       const { data, error } = await supabase
         .from('modulos_estudo')
         .select(
@@ -97,7 +102,10 @@ export async function buildEstudarQuestaoPlayerPayload(
         .eq('modulo_slug', slug)
         .maybeSingle();
 
-      if (error) throw error;
+      if (error) {
+        logger.error('Falha ao carregar módulo para o player', error, { slug, userId });
+        return { status: 'not_found' };
+      }
       atual = data as ModuloAtualRow | null;
     }
   } else {
@@ -108,6 +116,13 @@ export async function buildEstudarQuestaoPlayerPayload(
 
   let lista: ModuloListItem[] = [];
   let questoesDoAssunto: { slug: string; estudada: boolean }[] = [];
+
+  const ensureSupabase = async (): Promise<SupabaseClient> => {
+    if (supabase) return supabase;
+    const { createServerSupabase } = await import('@/lib/supabase/server');
+    supabase = input.supabase ?? (await createServerSupabase());
+    return supabase;
+  };
 
   if (fromPlano && userId) {
     const revisoes = await getTodayReviews(userId);
@@ -124,15 +139,34 @@ export async function buildEstudarQuestaoPlayerPayload(
       estudada: estudadosSet.has(item.modulo_slug),
     }));
   } else if (fromCaderno && cadernoId && userId) {
-    if (!supabase) {
-      supabase = input.supabase ?? (await createSupabaseServerClient());
+    const db = await ensureSupabase();
+
+    const { data: notebook, error: notebookError } = await db
+      .from('study_notebooks')
+      .select('id')
+      .eq('id', cadernoId)
+      .eq('user_id', userId)
+      .maybeSingle();
+
+    if (notebookError || !notebook) {
+      logger.warn('Caderno inexistente ou sem acesso', {
+        userId,
+        cadernoId,
+        message: notebookError?.message,
+      });
+      return { status: 'not_found' };
     }
 
-    const { data: cadernoItems } = await supabase
+    const { data: cadernoItems, error: itemsError } = await db
       .from('study_notebook_items')
       .select('modulo_slug, titulo_aula')
       .eq('notebook_id', cadernoId)
       .order('position', { ascending: true });
+
+    if (itemsError) {
+      logger.error('Falha ao listar itens do caderno', itemsError, { userId, cadernoId });
+      return { status: 'not_found' };
+    }
 
     lista = (cadernoItems || []).map((i) => ({
       id: i.modulo_slug,

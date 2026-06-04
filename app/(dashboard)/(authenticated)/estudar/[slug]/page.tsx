@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import EstudarQuestaoHydrator from '@/components/lesson/EstudarQuestaoHydrator';
 import { getEstudarQuestaoPayloadCached } from '@/lib/cache';
+import { isDataServiceUnavailableError } from '@/lib/dataServiceError';
 import { getActiveMatriculatedConcursoIds } from '@/lib/concursos/entitlements';
 import { isAdminSessionEmail } from '@/lib/constants';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
@@ -112,13 +113,23 @@ export default async function PaginaQuestaoDinamica({
   const userId = session?.user?.id;
   const isAdmin = isAdminSessionEmail(session?.user?.email ?? null);
 
-  const result = await getEstudarQuestaoPayloadCached({
-    slug: resolvedParams.slug,
-    userId,
-    isAdmin,
-    searchParams: resolvedSearch,
-    layers: 'full',
-  });
+  let result: Awaited<ReturnType<typeof getEstudarQuestaoPayloadCached>>;
+  try {
+    result = await getEstudarQuestaoPayloadCached({
+      slug: resolvedParams.slug,
+      userId,
+      isAdmin,
+      searchParams: resolvedSearch,
+      layers: 'full',
+    });
+  } catch (err) {
+    if (isDataServiceUnavailableError(err)) throw err;
+    logger.error('Falha ao montar payload da questão', err, {
+      slug: resolvedParams.slug,
+      userId,
+    });
+    return notFound();
+  }
 
   if (result.status === 'forbidden' && userId) {
     await logEntitlementDiagnostics(userId, resolvedParams.slug);

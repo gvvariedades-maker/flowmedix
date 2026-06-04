@@ -265,6 +265,10 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
       },
       error: null,
     });
+    const notebookMaybeSingle = jest.fn().mockResolvedValue({
+      data: { id: cadernoId },
+      error: null,
+    });
     const order = jest.fn().mockResolvedValue({
       data: [
         { modulo_slug: 'questao-anterior' },
@@ -273,13 +277,17 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
       ],
       error: null,
     });
-    const eqNotebook = jest.fn().mockReturnValue({ order });
-    const selectNotebook = jest.fn().mockReturnValue({ eq: eqNotebook });
+    const eqUser = jest.fn().mockReturnValue({ maybeSingle: notebookMaybeSingle });
+    const eqNotebookId = jest.fn().mockReturnValue({ eq: eqUser });
+    const selectNotebook = jest.fn().mockReturnValue({ eq: eqNotebookId });
+    const eqItemsNotebook = jest.fn().mockReturnValue({ order });
+    const selectItems = jest.fn().mockReturnValue({ eq: eqItemsNotebook });
     const eqModulo = jest.fn().mockReturnValue({ maybeSingle: maybeSingleModulo });
     const selectModulo = jest.fn().mockReturnValue({ eq: eqModulo });
     const from = jest.fn((table: string) => {
       if (table === 'modulos_estudo') return { select: selectModulo, eq: eqModulo };
-      if (table === 'study_notebook_items') return { select: selectNotebook, eq: eqNotebook };
+      if (table === 'study_notebooks') return { select: selectNotebook, eq: eqNotebookId };
+      if (table === 'study_notebook_items') return { select: selectItems, eq: eqItemsNotebook };
       return { select: selectModulo };
     });
 
