@@ -4,7 +4,7 @@ import { useLayoutEffect, useMemo } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
 import type { EstudarQuestaoPayload } from '@/components/lesson/questao-navigation-context';
-import { buildEstudarCacheKey } from '@/lib/estudar/navigation';
+import { buildEstudarCacheKey, parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
 import { recordHydratorSync } from '@/lib/estudar/navigationTelemetry';
 import { stripQuestionAnswersForClient } from '@/lib/estudar/questionPayload';
 import type { AvantLessonPlayerProps } from '@/types/lesson';
@@ -14,7 +14,8 @@ export type EstudarQuestaoHydratorProps = AvantLessonPlayerProps;
 export default function EstudarQuestaoHydrator(props: EstudarQuestaoHydratorProps) {
   const pathname = usePathname();
 const searchParams = useSearchParams();
-  const { cachePayload, setDisplayPayload, displayPayload } = useQuestaoNavigation();
+  const { cachePayload, setDisplayPayload, displayPayload, estudarRoute } =
+    useQuestaoNavigation();
 
   const cacheKey = buildEstudarCacheKey(pathname, searchParams);
 
@@ -35,6 +36,11 @@ const searchParams = useSearchParams();
     recordHydratorSync(cacheKey, props.moduloSlug ?? undefined);
     // Navegação client-side já atualizou displayPayload; evita 2º render ao hidratar o RSC.
     if (displayPayload?.moduloSlug === props.moduloSlug) return;
+
+    const effectivePathname = estudarRoute?.pathname ?? pathname;
+    const routeSlug = parseEstudarSlugFromPathname(effectivePathname);
+    if (routeSlug && routeSlug !== props.moduloSlug) return;
+
     setDisplayPayload(payload);
   }, [
     cacheKey,
@@ -43,6 +49,8 @@ const searchParams = useSearchParams();
     playerProps,
     props.moduloSlug,
     displayPayload?.moduloSlug,
+    estudarRoute?.pathname,
+    pathname,
   ]);
 
   return null;
