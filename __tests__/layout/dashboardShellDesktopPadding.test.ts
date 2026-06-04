@@ -33,6 +33,20 @@ describe('DashboardShell mobile scroll shell', () => {
     expect(wrapper).toMatch(/pwaAware\s*=\s*true/);
   });
 
+  it('oculta header mobile do shell na vitrine (header único no VitrineClient)', () => {
+    const shell = readFileSync(
+      join(process.cwd(), 'app', '(dashboard)', 'DashboardShell.tsx'),
+      'utf8',
+    );
+    expect(shell).toMatch(/!\s*isVitrineRoute\s*\?/);
+    const vitrine = readFileSync(
+      join(process.cwd(), 'components', 'vitrine', 'VitrineClient.tsx'),
+      'utf8',
+    );
+    expect(vitrine).toContain('data-vitrine-shell-search');
+    expect(vitrine).toContain('avant:open-search');
+  });
+
   it('vitrine não duplica padding inferior (reservado no main do shell)', () => {
     const vitrine = readFileSync(
       join(process.cwd(), 'components', 'vitrine', 'VitrineClient.tsx'),

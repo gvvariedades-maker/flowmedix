@@ -260,6 +260,7 @@ export default function VitrineClient({
   const [pagina, setPagina] = useState(ssrQuery.page);
   const [bancaSheetOpen, setBancaSheetOpen] = useState(false);
   const [assuntoSheetOpen, setAssuntoSheetOpen] = useState(false);
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const [bancas, setBancas] = useState<string[]>(() => initialFacetsData?.bancas ?? []);
   const [assuntos, setAssuntos] = useState<string[]>(() => initialFacetsData?.assuntos ?? []);
   const [facetsLoading, setFacetsLoading] = useState(() => !initialFacetsData);
@@ -484,6 +485,17 @@ export default function VitrineClient({
     vitrineListaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [pagina]);
 
+  useEffect(() => {
+    const handler = () => {
+      setMobileSearchOpen(true);
+      requestAnimationFrame(() => {
+        document.querySelector<HTMLInputElement>('[data-vitrine-shell-search]')?.focus();
+      });
+    };
+    window.addEventListener('avant:open-search', handler);
+    return () => window.removeEventListener('avant:open-search', handler);
+  }, []);
+
   const pageSectionTitle = searchTerm
     ? `Resultados para "${searchTerm}"`
     : bancasSelecionadas.length || assuntosSelecionados.length
@@ -529,20 +541,82 @@ export default function VitrineClient({
         'dashboard-surface min-h-screen bg-background text-foreground selection:bg-indigo-100 selection:text-indigo-900 md:pb-8',
       )}
     >
-      <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
-        {/* Header mobile — título + filtros em uma linha */}
-        <div className="flex items-center justify-between gap-3 px-4 py-3 md:hidden">
-          <h1 className="min-w-0 flex-1 truncate text-base font-black leading-snug tracking-tight text-foreground">
-            {cidadeUrl}
-          </h1>
+      <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 pt-safe shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90 md:pt-0">
+        {/* Header mobile — cidade, busca e filtros (único sticky; shell oculto em /estudar) */}
+        <div className="md:hidden">
+          <div className="flex items-center gap-2 px-4 py-3">
+            <h1 className="min-w-0 flex-1 truncate text-base font-black leading-snug tracking-tight text-foreground">
+              {cidadeUrl}
+            </h1>
+            <button
+              type="button"
+              onClick={() => {
+                setMobileSearchOpen((open) => {
+                  const next = !open;
+                  if (next) {
+                    requestAnimationFrame(() => {
+                      document
+                        .querySelector<HTMLInputElement>('[data-vitrine-shell-search]')
+                        ?.focus();
+                    });
+                  }
+                  return next;
+                });
+              }}
+              aria-expanded={mobileSearchOpen}
+              aria-label={mobileSearchOpen ? 'Fechar busca' : 'Abrir busca'}
+              className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-slate-400 transition-colors hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
+            >
+              <Search size={16} aria-hidden />
+            </button>
+          </div>
+
+          {mobileSearchOpen ? (
+            <div className="border-t border-border/70 px-4 pb-3 pt-2">
+              <div className="group relative">
+                <Search
+                  className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
+                  aria-hidden
+                />
+                <Input
+                  type="text"
+                  data-vitrine-shell-search
+                  autoFocus
+                  placeholder="Assunto, tópico, banca, slug ou Q-…"
+                  value={searchTerm}
+                  onChange={(e) => {
+                    setSearchTerm(e.target.value);
+                    paginaViaFiltroRef.current = true;
+                    setPagina(1);
+                  }}
+                  className="h-11 rounded-xl border-border/80 bg-white/[0.05] pl-10 pr-11 text-sm"
+                />
+                {searchTerm ? (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSearchTerm('');
+                      paginaViaFiltroRef.current = true;
+                      setPagina(1);
+                    }}
+                    className="absolute right-1 top-1/2 flex min-h-[44px] min-w-[44px] -translate-y-1/2 items-center justify-center text-muted-foreground transition-colors hover:text-destructive"
+                    aria-label="Limpar busca"
+                  >
+                    <X size={16} aria-hidden />
+                  </button>
+                ) : null}
+              </div>
+            </div>
+          ) : null}
+
           <div
-            className="flex shrink-0 items-center gap-2 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex items-center gap-2 overflow-x-auto scroll-pl-4 px-4 pb-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             aria-label="Filtros da vitrine"
           >
           {bancasSelecionadas.length > 0 ? (
             <div
               className={cn(
-                'inline-flex shrink-0 items-center rounded-full border border-[#00f2ff]/35 bg-[#00f2ff]/10 text-xs font-medium text-[#00f2ff]',
+                'inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-[#00f2ff]/35 bg-[#00f2ff]/10 text-xs font-medium text-[#00f2ff]',
                 facetsLoading && bancas.length === 0 && 'opacity-50',
               )}
             >
@@ -550,7 +624,7 @@ export default function VitrineClient({
                 type="button"
                 disabled={facetsLoading && bancas.length === 0}
                 onClick={() => setBancaSheetOpen(true)}
-                className="inline-flex max-w-[10rem] items-center gap-1.5 rounded-l-full py-1.5 pl-3 pr-1 disabled:cursor-not-allowed"
+                className="inline-flex min-h-[44px] max-w-[10rem] items-center gap-1.5 rounded-l-full py-1.5 pl-3 pr-1 disabled:cursor-not-allowed"
               >
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#00f2ff]" aria-hidden />
                 <span className="truncate">{multiFilterResumo(bancasSelecionadas, 'bancas')}</span>
@@ -564,9 +638,9 @@ export default function VitrineClient({
                   paginaViaFiltroRef.current = true;
                   setPagina(1);
                 }}
-                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-r-full hover:bg-[#00f2ff]/20"
+                className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-r-full hover:bg-[#00f2ff]/20"
               >
-                <X size={12} aria-hidden />
+                <X size={14} aria-hidden />
               </button>
             </div>
           ) : (
@@ -574,7 +648,7 @@ export default function VitrineClient({
               type="button"
               disabled={facetsLoading && bancas.length === 0}
               onClick={() => setBancaSheetOpen(true)}
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
+              className="inline-flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
             >
               <SlidersHorizontal size={14} aria-hidden />
               Banca
@@ -584,7 +658,7 @@ export default function VitrineClient({
           {assuntosSelecionados.length > 0 ? (
             <div
               className={cn(
-                'inline-flex shrink-0 items-center rounded-full border border-[#00f2ff]/35 bg-[#00f2ff]/10 text-xs font-medium text-[#00f2ff]',
+                'inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-[#00f2ff]/35 bg-[#00f2ff]/10 text-xs font-medium text-[#00f2ff]',
                 facetsLoading && assuntos.length === 0 && 'opacity-50',
               )}
             >
@@ -592,7 +666,7 @@ export default function VitrineClient({
                 type="button"
                 disabled={facetsLoading && assuntos.length === 0}
                 onClick={() => setAssuntoSheetOpen(true)}
-                className="inline-flex max-w-[10rem] items-center gap-1.5 rounded-l-full py-1.5 pl-3 pr-1 disabled:cursor-not-allowed"
+                className="inline-flex min-h-[44px] max-w-[10rem] items-center gap-1.5 rounded-l-full py-1.5 pl-3 pr-1 disabled:cursor-not-allowed"
               >
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#00f2ff]" aria-hidden />
                 <span className="truncate">
@@ -608,9 +682,9 @@ export default function VitrineClient({
                   paginaViaFiltroRef.current = true;
                   setPagina(1);
                 }}
-                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-r-full hover:bg-[#00f2ff]/20"
+                className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-r-full hover:bg-[#00f2ff]/20"
               >
-                <X size={12} aria-hidden />
+                <X size={14} aria-hidden />
               </button>
             </div>
           ) : (
@@ -618,7 +692,7 @@ export default function VitrineClient({
               type="button"
               disabled={facetsLoading && assuntos.length === 0}
               onClick={() => setAssuntoSheetOpen(true)}
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
+              className="inline-flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
             >
               <BookOpen size={14} aria-hidden />
               Assunto
@@ -637,7 +711,7 @@ export default function VitrineClient({
                 paginaViaFiltroRef.current = true;
                 setPagina(1);
               }}
-              className="inline-flex shrink-0 items-center rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:border-white/20 hover:text-slate-200"
+              className="inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:border-white/20 hover:text-slate-200"
             >
               Limpar
             </button>

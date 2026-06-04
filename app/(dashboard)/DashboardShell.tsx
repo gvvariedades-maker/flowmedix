@@ -42,7 +42,6 @@ import {
   MOBILE_MAIN_SCROLL_PADDING,
 } from '@/lib/layout/mobileBottomNav';
 import { PlanStatusCard } from '@/components/plan/PlanStatusCard';
-import { Input } from '@/components/ui/input';
 
 const drawerSpring = { type: 'spring' as const, stiffness: 300, damping: 30 };
 
@@ -386,10 +385,8 @@ function DashboardContent({
   const [userDisplayName, setUserDisplayName] = useState<string | null>(initialDisplayName);
   const [isAdminUser, setIsAdminUser] = useState<boolean>(initialIsAdmin);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileVitrineSearchOpen, setMobileVitrineSearchOpen] = useState(false);
   const estudoReversoWelcome = useEstudoReversoWelcome({ enabled: userEmail != null });
   const isVitrineRoute = pathname === '/estudar';
-  const vitrineSearchQ = searchParams.get('q') ?? '';
 
   const userInitials = useMemo(() => {
     const fromMeta = userDisplayName?.trim() ?? null;
@@ -476,37 +473,6 @@ function DashboardContent({
     const id = requestAnimationFrame(() => setMobileMenuOpen(false));
     return () => cancelAnimationFrame(id);
   }, [pathname]);
-
-  useEffect(() => {
-    if (!isVitrineRoute) {
-      const id = requestAnimationFrame(() => setMobileVitrineSearchOpen(false));
-      return () => cancelAnimationFrame(id);
-    }
-  }, [isVitrineRoute]);
-
-  useEffect(() => {
-    const handler = () => {
-      if (pathname !== '/estudar') return;
-      setMobileVitrineSearchOpen(true);
-      requestAnimationFrame(() => {
-        document
-          .querySelector<HTMLInputElement>('[data-vitrine-shell-search]')
-          ?.focus();
-      });
-    };
-    window.addEventListener('avant:open-search', handler);
-    return () => window.removeEventListener('avant:open-search', handler);
-  }, [pathname]);
-
-  const handleVitrineSearchChange = (value: string) => {
-    if (pathname !== '/estudar') return;
-    const params = new URLSearchParams(searchParams.toString());
-    if (value) params.set('q', value);
-    else params.delete('q');
-    params.delete('page');
-    const qs = params.toString();
-    router.replace(qs ? `/estudar?${qs}` : '/estudar', { scroll: false });
-  };
 
   // Escape fecha o drawer
   useEffect(() => {
@@ -699,6 +665,7 @@ function DashboardContent({
       {/* --- ÁREA PRINCIPAL ---
           Sombra interna só em md+: cobre artefatos escuros no encaixe com a sidebar; evita linha na barra quando não há sidebar. */}
       <div className="flex h-full min-h-0 flex-1 flex-col overflow-hidden">
+        {!isVitrineRoute ? (
         <div className="sticky top-0 z-30 shrink-0 border-b border-white/[0.08] bg-[#06090f]/90 backdrop-blur-xl md:hidden">
           <header className="flex items-center justify-between px-4 py-3 pt-safe">
             <button
@@ -721,26 +688,9 @@ function DashboardContent({
             <div className="flex items-center gap-2">
               <button
                 type="button"
-                onClick={() => {
-                  if (isVitrineRoute) {
-                    setMobileVitrineSearchOpen((open) => {
-                      const next = !open;
-                      if (next) {
-                        requestAnimationFrame(() => {
-                          document
-                            .querySelector<HTMLInputElement>('[data-vitrine-shell-search]')
-                            ?.focus();
-                        });
-                      }
-                      return next;
-                    });
-                  } else {
-                    window.dispatchEvent(new CustomEvent('avant:open-search'));
-                  }
-                }}
-                aria-expanded={isVitrineRoute ? mobileVitrineSearchOpen : undefined}
-                aria-label={mobileVitrineSearchOpen ? 'Fechar busca' : 'Abrir busca'}
-                className="flex h-8 w-8 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-slate-400 transition-colors hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
+                onClick={() => window.dispatchEvent(new CustomEvent('avant:open-search'))}
+                aria-label="Abrir busca"
+                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-slate-400 transition-colors hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
               >
                 <Search size={15} aria-hidden />
               </button>
@@ -756,37 +706,8 @@ function DashboardContent({
               </div>
             </div>
           </header>
-
-          {mobileVitrineSearchOpen && isVitrineRoute ? (
-            <div className="border-t border-white/[0.08] px-4 pb-3 pt-2">
-              <div className="group relative">
-                <Search
-                  className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500"
-                  aria-hidden
-                />
-                <Input
-                  type="text"
-                  data-vitrine-shell-search
-                  autoFocus
-                  placeholder="Assunto, tópico, banca, slug ou Q-…"
-                  value={vitrineSearchQ}
-                  onChange={(e) => handleVitrineSearchChange(e.target.value)}
-                  className="h-10 rounded-xl border-white/10 bg-white/[0.05] pl-10 pr-10 text-sm text-slate-200"
-                />
-                {vitrineSearchQ ? (
-                  <button
-                    type="button"
-                    onClick={() => handleVitrineSearchChange('')}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 transition-colors hover:text-rose-400"
-                    aria-label="Limpar busca"
-                  >
-                    <X size={14} aria-hidden />
-                  </button>
-                ) : null}
-              </div>
-            </div>
-          ) : null}
         </div>
+        ) : null}
 
         <main
           className={cn(

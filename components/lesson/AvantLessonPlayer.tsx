@@ -1154,22 +1154,35 @@ export default function AvantLessonPlayer({
                       title={`Questão ${posicaoLista}${q.estudada ? ' — estudada' : ''}`}
                       aria-label={`Questão ${posicaoLista}${isCurrent ? ', atual' : ''}${q.estudada ? ', estudada' : ''}`}
                       aria-current={isCurrent ? 'step' : undefined}
-                      className={`shrink-0 rounded-full transition-all duration-200 flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-50 ${
-                        isCurrent
-                          ? 'w-7 h-7 bg-[#00f2ff] ring-2 ring-[rgba(0,242,255,0.40)] ring-offset-1 ring-offset-[#0d1117] shadow-md'
-                          : q.estudada
-                            ? 'w-5 h-5 bg-emerald-400 hover:bg-emerald-500'
-                            : 'w-5 h-5 bg-white/20 hover:bg-white/35'
-                      }`}
+                      className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-full transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50"
                     >
-                      {isCurrent && (
-                        <span className="text-slate-900 text-[10px] font-black leading-none">{posicaoLista}</span>
-                      )}
-                      {!isCurrent && q.estudada && (
-                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden>
-                          <path d="M2 5l2.5 2.5L8 3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      )}
+                      <span
+                        className={`flex items-center justify-center rounded-full transition-all duration-200 ${
+                          isCurrent
+                            ? 'h-7 w-7 bg-[#00f2ff] ring-2 ring-[rgba(0,242,255,0.40)] ring-offset-1 ring-offset-[#0d1117] shadow-md'
+                            : q.estudada
+                              ? 'h-5 w-5 bg-emerald-400 hover:bg-emerald-500'
+                              : 'h-5 w-5 bg-white/20 hover:bg-white/35'
+                        }`}
+                        aria-hidden
+                      >
+                        {isCurrent && (
+                          <span className="text-[10px] font-black leading-none text-slate-900">
+                            {posicaoLista}
+                          </span>
+                        )}
+                        {!isCurrent && q.estudada && (
+                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden>
+                            <path
+                              d="M2 5l2.5 2.5L8 3"
+                              stroke="white"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        )}
+                      </span>
                     </button>
                   );
                 })}
