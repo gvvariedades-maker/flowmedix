@@ -4,7 +4,7 @@
 # 
 # Uso: ./scripts/setup-webhook.sh
 #
-# Requer: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY e WEBHOOK_SECRET
+# Requer: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY e SUPABASE_WEBHOOK_SECRET (ou WEBHOOK_SECRET legado)
 
 set -e
 
@@ -29,18 +29,24 @@ if [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then
     exit 1
 fi
 
-if [ -z "$WEBHOOK_SECRET" ]; then
-    echo -e "${YELLOW}⚠️  WEBHOOK_SECRET não definida, usando padrão 'dev-secret'${NC}"
-    WEBHOOK_SECRET="dev-secret"
+CACHE_WEBHOOK_SECRET="${SUPABASE_WEBHOOK_SECRET:-$WEBHOOK_SECRET}"
+if [ -z "$CACHE_WEBHOOK_SECRET" ]; then
+    echo -e "${YELLOW}⚠️  SUPABASE_WEBHOOK_SECRET não definida, usando padrão 'dev-secret'${NC}"
+    CACHE_WEBHOOK_SECRET="dev-secret"
 fi
 
-# URL do webhook (ajustar conforme seu domínio)
+# URL do webhook (ajustar conforme NEXT_PUBLIC_APP_URL)
 WEBHOOK_URL="${WEBHOOK_URL:-http://localhost:3000/api/cache/revalidate}"
 
 echo -e "${GREEN}📋 Configuração:${NC}"
 echo "  SUPABASE_URL: $SUPABASE_URL"
 echo "  WEBHOOK_URL: $WEBHOOK_URL"
-echo "  WEBHOOK_SECRET: $WEBHOOK_SECRET"
+echo "  SUPABASE_WEBHOOK_SECRET: (oculto)"
+echo ""
+echo -e "${YELLOW}  Configure também no Supabase SQL Editor:${NC}"
+echo "  ALTER DATABASE postgres SET app.webhook_url = 'http://localhost:3000';"
+echo "  ALTER DATABASE postgres SET app.webhook_secret = '<mesmo secret>';"
+echo "  Ver: supabase/scripts/set_cache_webhook_gucs.sql"
 echo ""
 
 # Tabelas para monitorar
@@ -63,7 +69,7 @@ for TABLE in "${TABLES[@]}"; do
     echo "  URL: $WEBHOOK_URL"
     echo "  HTTP Method: POST"
     echo "  HTTP Headers:"
-    echo "    Authorization: Bearer $WEBHOOK_SECRET"
+    echo "    Authorization: Bearer $CACHE_WEBHOOK_SECRET"
     echo "    Content-Type: application/json"
     echo "  HTTP Body:"
     echo "    {"
@@ -77,6 +83,6 @@ echo -e "${GREEN}✅ Configuração concluída!${NC}"
 echo ""
 echo -e "${YELLOW}💡 Dica: Teste o webhook com:${NC}"
 echo "curl -X POST $WEBHOOK_URL \\"
-echo "  -H 'Authorization: Bearer $WEBHOOK_SECRET' \\"
+echo "  -H 'Authorization: Bearer $CACHE_WEBHOOK_SECRET' \\"
 echo "  -H 'Content-Type: application/json' \\"
 echo "  -d '{\"table\": \"modulos_estudo\", \"event\": \"INSERT\"}'"

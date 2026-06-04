@@ -7,10 +7,15 @@ import { test, expect } from '@playwright/test';
  */
 
 test.describe('Sistema de Cache', () => {
+  const webhookSecret =
+    process.env.SUPABASE_WEBHOOK_SECRET?.trim() ||
+    process.env.WEBHOOK_SECRET?.trim() ||
+    'dev-secret';
+
   test('deve invalidar cache via API', async ({ request }) => {
     const response = await request.post('/api/cache/revalidate', {
       headers: {
-        'Authorization': 'Bearer dev-secret',
+        Authorization: `Bearer ${webhookSecret}`,
         'Content-Type': 'application/json',
       },
       data: {

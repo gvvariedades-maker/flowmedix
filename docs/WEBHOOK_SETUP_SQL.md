@@ -24,34 +24,40 @@ Criar triggers SQL que automaticamente invalidam o cache quando dados são inser
 4. **Cole todo o conteúdo** no editor SQL
 5. Clique em **"Run"** ou pressione `Ctrl+Enter`
 
-### 2. Configurar Variáveis (Opcional mas Recomendado)
+### 2. Configurar GUCs (obrigatório)
 
-Após executar a migration, configure as variáveis de ambiente do banco:
+Após a migration `20260604130000_cache_webhook_hardening`, a função **não** usa mais fallback `localhost` / `dev-secret`. Configure no SQL Editor (valores alinhados à Vercel):
 
-#### Para Desenvolvimento Local
+| GUC | Valor |
+|-----|--------|
+| `app.webhook_url` | `NEXT_PUBLIC_APP_URL` **sem** barra final (ex.: `https://avant.enf.br`) |
+| `app.webhook_secret` | Mesmo valor que `SUPABASE_WEBHOOK_SECRET` na Vercel |
+
+Arquivo copiável: [`supabase/scripts/set_cache_webhook_gucs.sql`](../supabase/scripts/set_cache_webhook_gucs.sql)
+
+#### Desenvolvimento local
 
 ```sql
--- Configurar URL do webhook para desenvolvimento
 ALTER DATABASE postgres SET app.webhook_url = 'http://localhost:3000';
-
--- Configurar secret (ou use o padrão 'dev-secret')
 ALTER DATABASE postgres SET app.webhook_secret = 'dev-secret';
 ```
 
-#### Para Produção
+Defina também no `.env.local`: `SUPABASE_WEBHOOK_SECRET=dev-secret`
+
+#### Produção
 
 ```sql
--- Substitua pela URL da sua aplicação em produção
 ALTER DATABASE postgres SET app.webhook_url = 'https://seu-dominio.com';
-
--- Use um secret forte em produção
-ALTER DATABASE postgres SET app.webhook_secret = 'seu-secret-super-seguro-aqui';
+ALTER DATABASE postgres SET app.webhook_secret = 'cole_o_mesmo_hex_da_vercel';
 ```
 
-**⚠️ Importante:** Gere um secret forte:
+Gere o secret uma vez:
+
 ```bash
 openssl rand -hex 32
 ```
+
+Use o mesmo valor em `SUPABASE_WEBHOOK_SECRET` (Vercel) e `app.webhook_secret` (SQL acima).
 
 ### 3. Verificar Instalação
 

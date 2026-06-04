@@ -50,9 +50,30 @@ npm run scale:health
 
 Alertas `CATALOG_NEAR_VITRINE_CAP` / `CATALOG_AT_VITRINE_CAP` usam `SCALE_LIMITS.VITRINE_MODULOS` (10k). Ver também `docs/SCALE_HEALTH.md`.
 
+## Valor confirmado (produção)
+
+Registro após `npm run supabase:max-rows` (Management API + probe `modulos_estudo`).
+
+| Campo | Valor |
+|-------|-------|
+| **Projeto** | `ozgouenqrofnvgrlgfwd` |
+| **Data** | 2026-06-04 |
+| **Max Rows (PostgREST)** | **15.000** |
+| **Alvo do script** | `max(10_000, 15_000)` → 15.000 (`scripts/set-postgrest-max-rows.ts`) |
+| **Módulos no banco** | 5.178 |
+| **Linhas devolvidas pelo PostgREST** (`.limit(10_000)`) | 5.178 (sem truncamento) |
+| **Ação** | Nenhum PATCH — teto já ≥ alvo |
+
+Repetir após mudança de projeto ou se `scale:health` reportar truncamento de catálogo:
+
+```bash
+npm run supabase:max-rows
+npm run supabase:max-rows -- --dry-run   # só leitura
+```
+
 ## Checklist deploy (10k questões)
 
-- [ ] Max Rows ≥ 10.000 no Supabase
+- [x] Max Rows ≥ 10.000 no Supabase (confirmado **15.000** em 2026-06-04)
 - [ ] `npm run scale:health` sem crítico de catálogo
 - [ ] Vitrine `/estudar` carrega via `/api/vitrine` (Network: payload pequeno por página)
 - [ ] Player `/estudar/[slug]` continua com navegação e dots janelados (Fases 1–2)

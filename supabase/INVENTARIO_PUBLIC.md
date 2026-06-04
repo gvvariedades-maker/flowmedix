@@ -24,13 +24,15 @@ Projeto Supabase: **`ozgouenqrofnvgrlgfwd`**.
 
 Não remova estas tabelas sem migrar o app.
 
-### Tabelas service-only (RLS ligado, sem policy anon)
+### Tabelas service-only (RLS + policy `service_role`)
 
-Bloqueio total para `anon`/`authenticated`; acesso via `createServerSupabase()`:
+Bloqueio para `anon`/`authenticated`; acesso via `createServerSupabase()` (service role). Policies explícitas (`20260604150000`):
 
-- `email_templates`
-- `invite_links`
-- `invite_redemptions`
+| Tabela | Policy |
+|--------|--------|
+| `email_templates` | `email_templates_service_all` (FOR ALL TO service_role) |
+| `invite_links` | `invite_links_service_all` |
+| `invite_redemptions` | `invite_redemptions_service_all` |
 
 ## Tabelas legadas (não existem no banco)
 
@@ -49,7 +51,7 @@ Padrão: `SECURITY DEFINER`, `REVOKE` de `PUBLIC`/`anon`/`authenticated`, `GRANT
 | `admin_get_auth_user_id_by_email(text)` | Admin: resolver usuário por e-mail |
 | `expire_concurso_matriculas()` | Cron: expirar matrículas |
 | `fulfill_concurso_purchase(uuid)` | Webhook Stripe: liberar concurso |
-| `invalidate_cache_via_webhook(text, text)` | Trigger Postgres → `POST /api/cache/revalidate` |
+| `invalidate_cache_via_webhook(text, text)` | Trigger → `POST /api/cache/revalidate`; config `private.cache_webhook_config` ou GUCs `app.webhook_*` (`20260604130000`, `20260604140000`) |
 | `get_vitrine_page(uuid, int, text, text, text, text[], text[])` | Vitrine paginada (`lib/vitrine/rpc.ts`) |
 | `get_vitrine_facets(uuid, text, text[])` | Facets banca/assunto |
 | `get_simulado_question_pool(uuid, integer, text, text, text, text[], text[])` | Pool do simulado |
@@ -65,7 +67,7 @@ Assinaturas com `p_bancas` / `p_assuntos` (`text[]`): migration `20260529143147_
 
 | Função | Notas |
 |--------|--------|
-| `on_simulado_session_finalize_refresh_analytics()` | Wrapper do trigger em `simulado_sessions`; **advisor:** ainda executável por `anon`/`authenticated` — revogar EXECUTE (Fase 2 do plano) |
+| `on_simulado_session_finalize_refresh_analytics()` | Wrapper do trigger em `simulado_sessions`; EXECUTE revogado de `anon`/`authenticated` (`20260604150000`) — não invocar via PostgREST |
 
 ## O que não apagar
 
@@ -82,7 +84,10 @@ Assinaturas com `p_bancas` / `p_assuntos` (`text[]`): migration `20260529143147_
 | `20260524120000` / `20260524130000` | `get_vitrine_page`, `get_vitrine_facets` |
 | `20260527163000` / `20260528040027` | Simulado sessions + pool + count |
 | `20260528175704` | `refresh_simulado_session_analytics` + trigger |
+| `20260604130000` | Harden `invalidate_cache_via_webhook` (sem fallback localhost) |
+| `20260604140000` | `private.cache_webhook_config` (Supabase Cloud) |
 | `20260604120000` | `simulado_run_retention` (retenção híbrida) |
+| `20260604150000` | Revoke trigger wrapper simulado + RLS service_role em `email_templates` / `invite_*` |
 | `20260529143147` | Multi banca/assunto nas RPCs vitrine/simulado |
 | `20260530055807` | `avant_catalog_stats` |
 

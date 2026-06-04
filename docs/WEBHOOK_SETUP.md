@@ -1,208 +1,118 @@
-# Configuração de Webhook do Supabase
+# Configuração de Webhook do Supabase (cache + Auth)
 
-## 📋 Visão Geral
+## Visão geral
 
-Este guia explica como configurar webhooks no Supabase para invalidar automaticamente o cache quando dados são atualizados.
+O AVANT invalida cache de duas formas:
 
-## 🎯 Objetivo
+1. **Triggers Postgres (`pg_net`)** em `modulos_estudo` e `historico_questoes` → `POST /api/cache/revalidate` (recomendado em produção).
+2. **Webhooks do Dashboard** (HTTP Request) — alternativa manual; mesma URL e secret.
 
-Quando dados são inseridos, atualizados ou deletados no Supabase, o webhook automaticamente invalida o cache correspondente, garantindo que os usuários sempre vejam dados atualizados.
+O secret canônico é **`SUPABASE_WEBHOOK_SECRET`** (Vercel / `.env`). O endpoint de cache aceita `Authorization: Bearer <secret>`. A variável legada `WEBHOOK_SECRET` ainda funciona como fallback durante a transição.
 
-## 🔧 Pré-requisitos
-
-1. Acesso ao Supabase Dashboard
-2. URL da sua aplicação em produção (ou localhost para desenvolvimento)
-3. Secret para autenticação do webhook (definir em `.env.local`)
-
-## 📝 Passo a Passo
-
-> 💡 **Prefere usar SQL?** Veja o guia alternativo: [WEBHOOK_SETUP_SQL.md](./WEBHOOK_SETUP_SQL.md)
-
-### 1. Configurar Variável de Ambiente
-
-Adicione ao seu `.env.local`:
-
-```env
-WEBHOOK_SECRET=seu-secret-super-seguro-aqui
-```
-
-**⚠️ Importante:** Use um secret forte em produção!
-
-### 2. Acessar Supabase Dashboard
-
-1. Acesse [https://app.supabase.com](https://app.supabase.com)
-2. Selecione seu projeto
-3. Vá em **Database** → **Webhooks**
-
-### 3. Criar Webhook para `modulos_estudo`
-
-1. Clique em **"Create a new webhook"**
-2. Preencha os campos:
-
-   **Name:** `Invalidate Cache - modulos_estudo`
-   
-   **Table:** `modulos_estudo`
-   
-   **Events:** Selecione:
-   - ✅ INSERT
-   - ✅ UPDATE
-   - ✅ DELETE
-   
-   **Type:** `HTTP Request`
-   
-   **HTTP Method:** `POST`
-   
-   **HTTP URL:** 
-   ```
-   https://seu-dominio.com/api/cache/revalidate
-   ```
-   (Para desenvolvimento local: `http://localhost:3000/api/cache/revalidate`)
-   
-   **HTTP Headers:**
-   ```
-   Authorization: Bearer ${WEBHOOK_SECRET}
-   Content-Type: application/json
-   ```
-   
-   **HTTP Body:**
-   ```json
-   {
-     "table": "modulos_estudo",
-     "event": "{{event}}"
-   }
-   ```
-
-3. Clique em **"Save"**
-
-### 4. Criar Webhook para `historico_questoes`
-
-Repita o processo acima com:
-
-- **Name:** `Invalidate Cache - historico_questoes`
-- **Table:** `historico_questoes`
-- **HTTP Body:**
-  ```json
-  {
-    "table": "historico_questoes",
-    "event": "{{event}}"
-  }
-  ```
-
-### 5. Criar Webhook para `flowcharts`
-
-- **Name:** `Invalidate Cache - flowcharts`
-- **Table:** `flowcharts`
-- **HTTP Body:**
-  ```json
-  {
-    "table": "flowcharts",
-    "event": "{{event}}"
-  }
-  ```
-
-### 6. Criar Webhook para `exam_contents`
-
-- **Name:** `Invalidate Cache - exam_contents`
-- **Table:** `exam_contents`
-- **HTTP Body:**
-  ```json
-  {
-    "table": "exam_contents",
-    "event": "{{event}}"
-  }
-  ```
-
-## 🧪 Testar Webhook
-
-### Via cURL
+## Secret único
 
 ```bash
-curl -X POST http://localhost:3000/api/cache/revalidate \
-  -H "Authorization: Bearer seu-secret-aqui" \
+openssl rand -hex 32
+```
+
+Configure **o mesmo valor** em:
+
+| Onde | Variável / GUC |
+|------|----------------|
+| Vercel / `.env` | `SUPABASE_WEBHOOK_SECRET` |
+| Postgres (SQL Editor) | `app.webhook_secret` |
+| URL base do app | `NEXT_PUBLIC_APP_URL` → GUC `app.webhook_url` (sem barra final, sem `/api/...`) |
+
+Script de referência: [`supabase/scripts/set_cache_webhook_gucs.sql`](../supabase/scripts/set_cache_webhook_gucs.sql)
+
+### Config no Supabase Cloud (recomendado — migration `20260604140000`)
+
+Em projetos hospedados, `ALTER DATABASE … app.webhook_*` costuma retornar **permission denied**. Use a tabela singleton:
+
+```sql
+INSERT INTO private.cache_webhook_config (id, base_url, secret)
+VALUES (1, 'https://www.avant.enf.br', 'mesmo_valor_de_SUPABASE_WEBHOOK_SECRET_na_Vercel')
+ON CONFLICT (id) DO UPDATE SET
+  base_url = EXCLUDED.base_url,
+  secret = EXCLUDED.secret,
+  updated_at = now();
+```
+
+### GUCs (self-hosted ou quando o painel permitir)
+
+```sql
+ALTER DATABASE postgres SET app.webhook_url = 'https://seu-dominio.com';
+ALTER DATABASE postgres SET app.webhook_secret = 'mesmo_valor_de_SUPABASE_WEBHOOK_SECRET';
+```
+
+Desenvolvimento local:
+
+```sql
+ALTER DATABASE postgres SET app.webhook_url = 'http://localhost:3000';
+ALTER DATABASE postgres SET app.webhook_secret = 'dev-secret';
+```
+
+A função `invalidate_cache_via_webhook` **não** envia mais POST para `localhost` se os GUCs estiverem vazios (evita cache stale silencioso em produção).
+
+Guia SQL completo (triggers): [WEBHOOK_SETUP_SQL.md](./WEBHOOK_SETUP_SQL.md)
+
+## Pré-requisitos
+
+1. Migration `20260604130000_cache_webhook_hardening.sql` aplicada (`npm run db:push`).
+2. `NEXT_PUBLIC_APP_URL` e `SUPABASE_WEBHOOK_SECRET` na Vercel (`npm run validate:env`).
+3. GUCs `app.webhook_url` / `app.webhook_secret` configurados no projeto Supabase.
+
+## Verificação pós-deploy
+
+1. `INSERT` ou `UPDATE` em `modulos_estudo` no SQL Editor.
+2. Logs Postgres: sem `WARNING` de GUC ausente; opcional `Cache invalidation triggered`.
+3. Logs Vercel: `Cache invalidation request` com status **200** em `/api/cache/revalidate`.
+
+Teste manual:
+
+```bash
+curl -X POST "$NEXT_PUBLIC_APP_URL/api/cache/revalidate" \
+  -H "Authorization: Bearer $SUPABASE_WEBHOOK_SECRET" \
   -H "Content-Type: application/json" \
-  -d '{
-    "table": "modulos_estudo",
-    "event": "INSERT"
-  }'
+  -d '{"table": "modulos_estudo", "event": "INSERT"}'
 ```
 
-### Via Script
+## Webhooks via Dashboard (opcional)
 
-Execute o script de configuração:
+Se não usar triggers SQL, crie webhooks em **Database → Webhooks**:
 
-```bash
-npm run setup:webhook
-```
+| Campo | Valor |
+|-------|--------|
+| URL | `{NEXT_PUBLIC_APP_URL}/api/cache/revalidate` |
+| Headers | `Authorization: Bearer <SUPABASE_WEBHOOK_SECRET>` |
+| Body | `{"table": "modulos_estudo", "event": "{{event}}"}` |
 
-Ou manualmente:
+Tabelas críticas: `modulos_estudo`, `historico_questoes`.
 
-```bash
-bash scripts/setup-webhook.sh
-```
+## Auth (e-mail de boas-vindas)
 
-## ✅ Verificação
+Webhook separado: `POST /api/webhooks/auth` com header **`x-webhook-secret`** (mesmo `SUPABASE_WEBHOOK_SECRET`). Ver implementação em [`app/api/webhooks/auth/route.ts`](../app/api/webhooks/auth/route.ts).
 
-Após configurar, teste:
+## Troubleshooting
 
-1. **Inserir um novo módulo** no Supabase
-2. **Verificar logs** da aplicação - deve aparecer:
-   ```
-   Cache invalidated { tag: 'modulos-estudo' }
-   ```
-3. **Acessar a página** de módulos - deve mostrar o novo módulo imediatamente
+### WARNING: `invalidate_cache_via_webhook skipped`
 
-## 🔍 Troubleshooting
+GUCs não configurados. Rode o SQL da seção [GUCs no Supabase](#gucs-no-supabase-obrigatório-após-migration-20260604130000).
 
-### Webhook não está sendo chamado
+### Erro 401 no `/api/cache/revalidate`
 
-1. Verifique se o webhook está **ativo** no Supabase Dashboard
-2. Verifique os **logs do webhook** no Supabase (aba "Logs")
-3. Verifique se a URL está correta e acessível
+1. `SUPABASE_WEBHOOK_SECRET` na Vercel igual ao `app.webhook_secret`.
+2. Header `Authorization: Bearer ...` (não `x-webhook-secret`).
+3. Em produção, pelo menos um dos dois envs deve existir (`SUPABASE_WEBHOOK_SECRET` preferido).
 
-### Erro 401 (Não autorizado)
+### Cache não atualiza
 
-1. Verifique se o `WEBHOOK_SECRET` está correto
-2. Verifique se o header `Authorization` está sendo enviado corretamente
-3. Em desenvolvimento, o webhook aceita qualquer header (verifique `isValidWebhook`)
+1. Smoke acima (curl).
+2. [`SISTEMA_CACHE.md`](./SISTEMA_CACHE.md) — TTL de fallback (5–15 min) se webhook falhar.
+3. `npm run scale:health` — catálogo dentro do teto.
 
-### Cache não está sendo invalidado
+## Referências
 
-1. Verifique os logs da aplicação
-2. Teste manualmente via cURL
-3. Verifique se as tags de cache estão corretas
-
-## 📊 Monitoramento
-
-Após configurar, monitore:
-
-1. **Logs do Supabase:** Database → Webhooks → [Seu Webhook] → Logs
-2. **Logs da Aplicação:** Procure por "Cache invalidated"
-3. **Métricas:** Acesse `/api/metrics` para ver estatísticas
-
-## 🔐 Segurança
-
-### Em Produção
-
-1. **Use HTTPS** para o webhook URL
-2. **Use um secret forte** (gerar com: `openssl rand -hex 32`)
-3. **Limite acesso** ao endpoint `/api/cache/revalidate` apenas para webhooks
-4. **Monitore tentativas** de acesso não autorizadas
-
-### Em Desenvolvimento
-
-- O webhook aceita qualquer header em desenvolvimento
-- Use `localhost` ou ngrok para testar localmente
-
-## 📚 Referências
-
-- [Supabase Webhooks Documentation](https://supabase.com/docs/guides/database/webhooks)
-- [Next.js API Routes](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)
-
-## 🎯 Próximos Passos
-
-Após configurar webhooks:
-
-1. ✅ Monitorar métricas de cache (`/api/metrics`)
-2. ✅ Analisar performance (`npm run analyze:performance`)
-3. ✅ Ajustar tempos de cache conforme necessário
-4. ✅ Configurar alertas para falhas de webhook
+- [SUPABASE_MAINTENANCE.md](./SUPABASE_MAINTENANCE.md) — checklist deploy
+- [SISTEMA_CACHE.md](./SISTEMA_CACHE.md)
+- [Supabase Database Webhooks](https://supabase.com/docs/guides/database/webhooks)
