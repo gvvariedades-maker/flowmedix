@@ -356,7 +356,7 @@ Checklist de infraestrutura para latência vitrine/questão (passo **9.1**). Rev
 **Verificação 2026-06-02** (MCP `get_advisors` performance + `pg_indexes`):
 
 - `historico_questoes`: índices existentes cobrem queries do app — `idx_historico_questoes_user_modulo` (`user_id`, `modulo_slug`) para `.eq(user_id).in(modulo_slug)`; `idx_historico_questoes_user_date` para analytics. **Sem alerta crítico** nos advisors para esta tabela.
-- `modulos_estudo`: unique em `modulo_slug`; índices vitrine (trgm, `banca+titulo_aula`). **Adicionados** via migration [`20260602120000_performance_nav_indexes.sql`](../supabase/migrations/20260602120000_performance_nav_indexes.sql):
+- `modulos_estudo`: unique em `modulo_slug`; índices vitrine (trgm, `banca+titulo_aula`). **Adicionados** via migration [`20260603004659_performance_nav_indexes.sql`](../supabase/migrations/20260603004659_performance_nav_indexes.sql):
   - `idx_modulos_estudo_banca_modulo_nome`
   - `idx_modulos_estudo_banca_modulo_nome_created_at` (navegação dots / `getQuestoesByBancaCached`)
 

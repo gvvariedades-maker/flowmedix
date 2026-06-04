@@ -19,35 +19,13 @@ import {
   type VitrineFacetsCacheFilters,
   type VitrinePageCacheFilters,
 } from '@/lib/cache';
+import { isCacheRevalidateWebhookAuthorized } from '@/lib/webhooks/cacheRevalidateAuth';
 import { logger } from '@/lib/logger';
-
-/**
- * Validação de webhook secret
- * Em produção: exige WEBHOOK_SECRET configurado
- * Em desenvolvimento: exige WEBHOOK_SECRET ou aceita se não configurado (apenas local)
- */
-function isValidWebhook(request: NextRequest): boolean {
-  const authHeader = request.headers.get('authorization');
-  const webhookSecret = process.env.WEBHOOK_SECRET;
-
-  if (process.env.NODE_ENV === 'production') {
-    if (!webhookSecret) {
-      return false; // Em produção, WEBHOOK_SECRET é obrigatório
-    }
-    return authHeader === `Bearer ${webhookSecret}`;
-  }
-
-  // Em desenvolvimento: se WEBHOOK_SECRET estiver definido, validar; senão aceitar (apenas localhost)
-  if (webhookSecret) {
-    return authHeader === `Bearer ${webhookSecret}`;
-  }
-  return true;
-}
 
 export async function POST(request: NextRequest) {
   try {
     // Validação de segurança
-    if (!isValidWebhook(request)) {
+    if (!isCacheRevalidateWebhookAuthorized(request)) {
       logger.warn('Invalid webhook request', { 
         hasAuth: !!request.headers.get('authorization') 
       });

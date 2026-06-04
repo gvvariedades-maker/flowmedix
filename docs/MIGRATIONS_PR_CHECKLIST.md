@@ -17,7 +17,8 @@ Use este checklist em todo PR que adiciona ou altera migrations.
 
 ## 3) Validação local (obrigatória)
 
-- [ ] `npx supabase migration list` (local/remoto consistente)
+- [ ] `npm run migration:list` (local/remoto consistente)
+- [ ] `npm run check:architecture` (padrões cache/Supabase — também no CI)
 - [ ] `npm run db:push` sem erro
 - [ ] Se houver mudança de query crítica: executar `EXPLAIN (ANALYZE, BUFFERS)` em ambiente apropriado
 
@@ -30,7 +31,8 @@ Use este checklist em todo PR que adiciona ou altera migrations.
 ## 5) Staging (obrigatório antes de produção)
 
 - [ ] Migration aplicada em staging
-- [ ] `npx supabase migration list` alinhado em staging
+- [ ] `npm run migration:list` alinhado em staging
+- [ ] `npm run check:db-types` (ou `--update` se migration alterou schema)
 - [ ] `npm run scale:health -- --json` coletado quando a mudança afeta escala/performance
 - [ ] Evidência de baseline/performance anexada quando aplicável
 
@@ -42,7 +44,9 @@ Use este checklist em todo PR que adiciona ou altera migrations.
 ## Comandos rápidos
 
 ```bash
-npx supabase migration list
+npm run migration:list
+npm run check:architecture
+npm run check:db-types
 npm run db:push
 npm run scale:health -- --json
 ```

@@ -55,6 +55,7 @@ npm run test:e2e
 
 1. Schema base: `supabase/schema.sql` (se aplicável ao seu fluxo).
 2. Migrações incrementais em `supabase/migrations/` — aplicar na ordem correta no SQL Editor ou via CLI do Supabase, conforme o seu processo.
+3. **Auth (Dashboard):** ativar [Leaked password protection](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection) no projeto — passo a passo em [`SUPABASE_MAINTENANCE.md`](./SUPABASE_MAINTENANCE.md#auth-leaked-password-protection).
 
 Consulte `supabase/migrations/README.md` se existir.
 

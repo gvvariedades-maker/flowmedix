@@ -39,18 +39,24 @@ jest.mock('@/lib/logger', () => ({
 }));
 
 describe('POST /api/cache/revalidate', () => {
+  const originalSupabaseWebhookSecret = process.env.SUPABASE_WEBHOOK_SECRET;
   const originalWebhookSecret = process.env.WEBHOOK_SECRET;
+  const originalNodeEnv = process.env.NODE_ENV;
 
   beforeEach(() => {
     jest.clearAllMocks();
-    process.env.WEBHOOK_SECRET = 'secret-test';
+    process.env.SUPABASE_WEBHOOK_SECRET = 'secret-test-cache-revalidate-32';
+    delete process.env.WEBHOOK_SECRET;
+    process.env.NODE_ENV = 'test';
   });
 
   afterAll(() => {
+    process.env.SUPABASE_WEBHOOK_SECRET = originalSupabaseWebhookSecret;
     process.env.WEBHOOK_SECRET = originalWebhookSecret;
+    process.env.NODE_ENV = originalNodeEnv;
   });
 
-  function makeRequest(body: object, auth = 'Bearer secret-test') {
+  function makeRequest(body: object, auth = 'Bearer secret-test-cache-revalidate-32') {
     return new NextRequest('https://avant.test/api/cache/revalidate', {
       method: 'POST',
       body: JSON.stringify(body),
@@ -101,5 +107,28 @@ describe('POST /api/cache/revalidate', () => {
 
     expect(response.status).toBe(200);
     expect(mockRevalidateCache).toHaveBeenCalledWith(['vitrine-page', 'user-123']);
+  });
+
+  it('aceita WEBHOOK_SECRET legado quando SUPABASE_WEBHOOK_SECRET não está definido', async () => {
+    delete process.env.SUPABASE_WEBHOOK_SECRET;
+    process.env.WEBHOOK_SECRET = 'legacy-secret-only';
+
+    const response = await POST(
+      makeRequest({ table: 'modulos_estudo' }, 'Bearer legacy-secret-only'),
+    );
+
+    expect(response.status).toBe(200);
+    expect(mockInvalidateModulosCache).toHaveBeenCalled();
+  });
+
+  it('retorna 401 em produção sem secret configurado', async () => {
+    process.env.NODE_ENV = 'production';
+    delete process.env.SUPABASE_WEBHOOK_SECRET;
+    delete process.env.WEBHOOK_SECRET;
+
+    const response = await POST(makeRequest({ table: 'modulos_estudo' }, 'Bearer anything'));
+
+    expect(response.status).toBe(401);
+    expect(mockInvalidateModulosCache).not.toHaveBeenCalled();
   });
 });

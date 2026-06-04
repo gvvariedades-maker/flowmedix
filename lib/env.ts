@@ -52,6 +52,7 @@ const EnvSchema = z.object({
   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: stripePublishableKeySchema.optional(),
   STRIPE_PRICE_ID_PRO: z.string().min(1).optional(),
   CRON_SECRET: z.string().min(1).optional(),
+  /** Legado: fallback em /api/cache/revalidate; preferir SUPABASE_WEBHOOK_SECRET */
   WEBHOOK_SECRET: z.string().min(1).optional(),
   METRICS_SECRET: z.string().min(1).optional(),
   ADMIN_EMAIL: z.string().email().optional(),
