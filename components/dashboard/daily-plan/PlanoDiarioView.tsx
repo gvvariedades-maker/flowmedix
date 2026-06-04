@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
+import { phraseQuestoesAgendadas } from '@/lib/labelQuestoes';
 import { PlanoDiarioTopicCard } from './PlanoDiarioTopicCard';
 import type { PlanoDiarioProps } from './types';
 
@@ -138,8 +139,7 @@ function PlanoDiarioConteúdo({
               </h1>
             </div>
             <p className="mt-2 text-sm text-slate-400">
-              {revisoes.length} questão{revisoes.length !== 1 ? 'ões' : ''} agendada
-              {revisoes.length !== 1 ? 's' : ''} para hoje
+              {phraseQuestoesAgendadas(revisoes.length)} para hoje
               {totalPendentes > limite && (
                 <span className="ml-1 font-medium text-rose-500">
                   (de {totalPendentes} pendentes — priorizando as mais urgentes)

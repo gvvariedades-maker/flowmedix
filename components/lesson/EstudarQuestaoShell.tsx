@@ -30,6 +30,9 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
     ? Boolean(displayPayload) && !isDismissingToVitrine
     : isQuestaoRoute && (showPlayer || showSkeleton);
 
+  const vitrineSlotInteractive =
+    !hideVitrineChildren && !(interceptActive && !isDismissingToVitrine);
+
   const fillViewport = showPlayer || showSkeleton;
 
   return (
@@ -60,6 +63,7 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
           <EstudarQuestaoSkeleton />
         ) : null}
         <div
+          data-vitrine-slot-ready={vitrineSlotInteractive ? 'true' : 'false'}
           className={cn(
             hideVitrineChildren && 'hidden',
             interceptActive && !isDismissingToVitrine && 'pointer-events-none select-none',

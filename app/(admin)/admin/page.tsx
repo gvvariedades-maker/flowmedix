@@ -13,6 +13,7 @@ import Link from 'next/link';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { compareModuloCurriculum } from '@/lib/vitrineOrder';
 import { ADMIN_MATRICULAS_PATH } from '@/lib/constants';
+import { phraseCountQuestoes } from '@/lib/labelQuestoes';
 
 const ASSUNTOS_POR_PAGINA_ADMIN = 12;
 
@@ -157,7 +158,7 @@ function AdminGrupoAssuntoCard({
               </span>
             ) : null}
             <span className="text-[10px] font-bold text-slate-400">
-              {grupo.totalQuestoes} questão{grupo.totalQuestoes !== 1 ? 'es' : ''}
+              {phraseCountQuestoes(grupo.totalQuestoes)}
             </span>
           </div>
         </div>

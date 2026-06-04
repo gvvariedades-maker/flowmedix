@@ -35,6 +35,25 @@ describe('useEstudarQuestaoShellState', () => {
     expect(result.current.showSkeleton).toBe(false);
   });
 
+  it('na vitrine ignora estudarRoute pendente (volta da questão)', () => {
+    mockUsePathname.mockReturnValue('/estudar');
+    mockUseSearchParams.mockReturnValue(new URLSearchParams('banca=FGV'));
+    mockUseQuestaoNavigation.mockReturnValue({
+      displayPayload: null,
+      isDismissingToVitrine: false,
+      estudarRoute: {
+        pathname: '/estudar/questao-a',
+        search: '?banca=FGV',
+      },
+    });
+
+    const { result } = renderHook(() => useEstudarQuestaoShellState());
+
+    expect(result.current.isQuestaoRoute).toBe(false);
+    expect(result.current.showSkeleton).toBe(false);
+    expect(result.current.showPlayer).toBe(false);
+  });
+
   it('na rota da questão sem payload exibe skeleton', () => {
     mockUsePathname.mockReturnValue('/estudar/questao-a');
     mockUseQuestaoNavigation.mockReturnValue({

@@ -18,10 +18,16 @@ export function useEstudarQuestaoShellState(options: UseEstudarQuestaoShellState
   const searchParams = useSearchParams();
   const { displayPayload, isDismissingToVitrine, estudarRoute } = useQuestaoNavigation();
 
-  const effectivePathname = estudarRoute?.pathname ?? pathname;
-  const effectiveSearchParams = estudarRoute
-    ? new URLSearchParams(estudarRoute.search.replace(/^\?/, ''))
-    : searchParams;
+  /** URL real da vitrine prevalece sobre soft-nav pendente (volta /estudar → ?). */
+  const isVitrineListing = parseEstudarSlugFromPathname(pathname) === null;
+  const effectivePathname = isVitrineListing
+    ? pathname
+    : (estudarRoute?.pathname ?? pathname);
+  const effectiveSearchParams = isVitrineListing
+    ? searchParams
+    : estudarRoute
+      ? new URLSearchParams(estudarRoute.search.replace(/^\?/, ''))
+      : searchParams;
 
   const slugFromPath = parseEstudarSlugFromPathname(effectivePathname);
   const isQuestaoRoute = slugFromPath !== null;
