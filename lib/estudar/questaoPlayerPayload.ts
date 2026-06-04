@@ -6,7 +6,7 @@ import {
   getHistoricoQuestoesForSlugsCached,
   estudadosSetFromHistorico,
 } from '@/lib/cache';
-import { userHasModuloAccess } from '@/lib/concursos/entitlements';
+import { getAccessibleModuloSlugs, userHasModuloAccess } from '@/lib/concursos/entitlements';
 import { getTodayReviews } from '@/lib/spaced-repetition';
 import { getQuestaoNavList } from '@/lib/estudar/questaoNav';
 import { sliceQuestoesNavWindow } from '@/lib/estudar/questaoNavWindow';
@@ -168,7 +168,13 @@ export async function buildEstudarQuestaoPlayerPayload(
       return { status: 'not_found' };
     }
 
-    lista = (cadernoItems || []).map((i) => ({
+    let cadernoRows = cadernoItems || [];
+    if (!isAdmin) {
+      const accessibleSlugs = await getAccessibleModuloSlugs(userId);
+      cadernoRows = cadernoRows.filter((i) => accessibleSlugs.has(i.modulo_slug));
+    }
+
+    lista = cadernoRows.map((i) => ({
       id: i.modulo_slug,
       modulo_slug: i.modulo_slug,
     }));

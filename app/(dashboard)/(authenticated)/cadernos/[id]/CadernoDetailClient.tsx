@@ -462,7 +462,9 @@ export default function CadernoDetailClient({
     setModulos(prev => prev.filter(m => !slugs.has(m.modulo_slug)));
   };
 
-  const firstSlug = items.find(i => !i.estudada)?.modulo_slug || items[0]?.modulo_slug;
+  const firstSlug =
+    items.find(i => i.acessivel && !i.estudada)?.modulo_slug ||
+    items.find(i => i.acessivel)?.modulo_slug;
 
   return (
     <div className={cn('min-h-screen bg-[#010409]', pageBottomPadding)}>

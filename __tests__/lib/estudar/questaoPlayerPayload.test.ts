@@ -1,5 +1,6 @@
 jest.mock('@/lib/concursos/entitlements', () => ({
   userHasModuloAccess: jest.fn(),
+  getAccessibleModuloSlugs: jest.fn(),
 }));
 
 jest.mock('@/lib/cache', () => ({
@@ -20,7 +21,7 @@ jest.mock('@/lib/spaced-repetition', () => ({
   getTodayReviews: jest.fn(),
 }));
 
-import { userHasModuloAccess } from '@/lib/concursos/entitlements';
+import { getAccessibleModuloSlugs, userHasModuloAccess } from '@/lib/concursos/entitlements';
 import {
   getQuestaoBySlugCached,
   getHistoricoQuestoesForSlugsCached,
@@ -32,6 +33,9 @@ import { buildEstudarQuestaoPlayerPayload } from '@/lib/estudar/questaoPlayerPay
 
 const mockUserHasModuloAccess = userHasModuloAccess as jest.MockedFunction<
   typeof userHasModuloAccess
+>;
+const mockGetAccessibleModuloSlugs = getAccessibleModuloSlugs as jest.MockedFunction<
+  typeof getAccessibleModuloSlugs
 >;
 const mockGetQuestaoBySlugCached = getQuestaoBySlugCached as jest.MockedFunction<
   typeof getQuestaoBySlugCached
@@ -84,6 +88,7 @@ function mockSupabaseModuloRow() {
 describe('buildEstudarQuestaoPlayerPayload', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    mockGetAccessibleModuloSlugs.mockResolvedValue(new Set());
     mockEstudadosSetFromHistorico.mockReturnValue(new Set());
     mockGetHistoricoQuestoesForSlugsCached.mockResolvedValue([]);
     mockGetQuestaoNavList.mockResolvedValue({
@@ -253,6 +258,9 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
   it('preserva query de caderno em vitrineQuerySuffix (evita player congelado)', async () => {
     const cadernoId = '550e8400-e29b-41d4-a716-446655440099';
     mockUserHasModuloAccess.mockResolvedValue(true);
+    mockGetAccessibleModuloSlugs.mockResolvedValue(
+      new Set(['questao-anterior', SLUG, 'questao-proxima']),
+    );
 
     const maybeSingleModulo = jest.fn().mockResolvedValue({
       data: {
@@ -305,5 +313,67 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
     expect(result.payload.vitrineQuerySuffix).toBe(expectedSuffix);
     expect(result.payload.fromCaderno).toBe(cadernoId);
     expect(result.payload.proximaSlug).toBe(`questao-proxima${expectedSuffix}`);
+  });
+
+  it('navegação do caderno pula itens fora do pacote (evita 404 na próxima)', async () => {
+    const cadernoId = '550e8400-e29b-41d4-a716-446655440099';
+    const proximaAcessivel = 'questao-proxima-acessivel';
+    mockUserHasModuloAccess.mockResolvedValue(true);
+    mockGetAccessibleModuloSlugs.mockResolvedValue(
+      new Set(['questao-anterior', SLUG, proximaAcessivel]),
+    );
+
+    const maybeSingleModulo = jest.fn().mockResolvedValue({
+      data: {
+        id: 'mod-1',
+        modulo_slug: SLUG,
+        conteudo_json: conteudoJson,
+        titulo_aula: 'Urgências',
+        modulo_nome: 'Urgências',
+        avant_codigo: 42,
+      },
+      error: null,
+    });
+    const notebookMaybeSingle = jest.fn().mockResolvedValue({
+      data: { id: cadernoId },
+      error: null,
+    });
+    const order = jest.fn().mockResolvedValue({
+      data: [
+        { modulo_slug: 'questao-anterior' },
+        { modulo_slug: SLUG },
+        { modulo_slug: 'questao-bloqueada' },
+        { modulo_slug: proximaAcessivel },
+      ],
+      error: null,
+    });
+    const eqUser = jest.fn().mockReturnValue({ maybeSingle: notebookMaybeSingle });
+    const eqNotebookId = jest.fn().mockReturnValue({ eq: eqUser });
+    const selectNotebook = jest.fn().mockReturnValue({ eq: eqNotebookId });
+    const eqItemsNotebook = jest.fn().mockReturnValue({ order });
+    const selectItems = jest.fn().mockReturnValue({ eq: eqItemsNotebook });
+    const eqModulo = jest.fn().mockReturnValue({ maybeSingle: maybeSingleModulo });
+    const selectModulo = jest.fn().mockReturnValue({ eq: eqModulo });
+    const from = jest.fn((table: string) => {
+      if (table === 'modulos_estudo') return { select: selectModulo, eq: eqModulo };
+      if (table === 'study_notebooks') return { select: selectNotebook, eq: eqNotebookId };
+      if (table === 'study_notebook_items') return { select: selectItems, eq: eqItemsNotebook };
+      return { select: selectModulo };
+    });
+
+    const result = await buildEstudarQuestaoPlayerPayload({
+      slug: SLUG,
+      userId: USER_ID,
+      supabase: { from } as never,
+      searchParams: { from: 'caderno', caderno_id: cadernoId },
+    });
+
+    expect(result.status).toBe('ok');
+    if (result.status !== 'ok') return;
+
+    const expectedSuffix = `?from=caderno&caderno_id=${encodeURIComponent(cadernoId)}`;
+    expect(result.payload.proximaSlug).toBe(`${proximaAcessivel}${expectedSuffix}`);
+    expect(result.payload.listaContexto).toEqual({ atual: 2, total: 3 });
+    expect(result.payload.questoesDoAssunto?.map((q) => q.slug)).not.toContain('questao-bloqueada');
   });
 });
