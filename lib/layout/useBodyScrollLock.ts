@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 
 let lockCount = 0;
 let savedOverflow: string | null = null;
+let savedTouchAction: string | null = null;
 
 /** Bloqueia scroll do `document.body` (refcount — vários overlays podem empilhar). */
 export function lockBodyScroll(): void {
@@ -11,7 +12,9 @@ export function lockBodyScroll(): void {
   lockCount += 1;
   if (lockCount === 1) {
     savedOverflow = document.body.style.overflow;
+    savedTouchAction = document.body.style.touchAction;
     document.body.style.overflow = 'hidden';
+    document.body.style.touchAction = 'none';
   }
 }
 
@@ -22,7 +25,9 @@ export function unlockBodyScroll(): void {
   lockCount -= 1;
   if (lockCount === 0) {
     document.body.style.overflow = savedOverflow ?? '';
+    document.body.style.touchAction = savedTouchAction ?? '';
     savedOverflow = null;
+    savedTouchAction = null;
   }
 }
 
@@ -30,8 +35,10 @@ export function unlockBodyScroll(): void {
 export function resetBodyScrollLockForTests(): void {
   lockCount = 0;
   savedOverflow = null;
+  savedTouchAction = null;
   if (typeof document !== 'undefined') {
     document.body.style.overflow = '';
+    document.body.style.touchAction = '';
   }
 }
 

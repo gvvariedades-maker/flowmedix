@@ -12,9 +12,7 @@ describe('DashboardShell mobile scroll shell', () => {
 
     const tokensPath = join(process.cwd(), 'lib', 'layout', 'mobileBottomNav.ts');
     const tokens = readFileSync(tokensPath, 'utf8');
-    expect(tokens).toMatch(
-      /MOBILE_MAIN_SCROLL_PADDING\s*=\s*'pb-\[calc\(5rem\+env\(safe-area-inset-bottom,0px\)\)\]'/,
-    );
+    expect(tokens).toMatch(/MOBILE_MAIN_SCROLL_PADDING\s*=\s*'pb-nav-safe'/);
     expect(source).not.toContain('MOBILE_PAGE_BOTTOM_PADDING');
   });
 

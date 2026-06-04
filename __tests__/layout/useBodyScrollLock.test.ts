@@ -25,6 +25,22 @@ describe('useBodyScrollLock refcount', () => {
     expect(document.body.style.overflow).toBe('scroll');
   });
 
+  it('bloqueia touchAction no primeiro lock e restaura após unlocks empilhados', () => {
+    document.body.style.touchAction = 'pan-y';
+
+    lockBodyScroll();
+    expect(document.body.style.touchAction).toBe('none');
+
+    lockBodyScroll();
+    expect(document.body.style.touchAction).toBe('none');
+
+    unlockBodyScroll();
+    expect(document.body.style.touchAction).toBe('none');
+
+    unlockBodyScroll();
+    expect(document.body.style.touchAction).toBe('pan-y');
+  });
+
   it('unlock extra não altera overflow após contador zerar', () => {
     lockBodyScroll();
     unlockBodyScroll();

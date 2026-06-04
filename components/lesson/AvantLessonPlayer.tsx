@@ -175,15 +175,6 @@ export default function AvantLessonPlayer({
   const navegandoRef = useRef(false);
   const [bottomNavHeightPx, setBottomNavHeightPx] = useState(0);
   const [keyboardInsetPx, setKeyboardInsetPx] = useState(0);
-  const [hoverCapable, setHoverCapable] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia('(hover: hover) and (pointer: fine)');
-    const sync = () => setHoverCapable(mq.matches);
-    sync();
-    mq.addEventListener('change', sync);
-    return () => mq.removeEventListener('change', sync);
-  }, []);
 
   const bottomNavPaddingBottom =
     keyboardInsetPx > 0
@@ -982,11 +973,10 @@ export default function AvantLessonPlayer({
                         ? 0
                         : -1
                   }
-                  whileHover={hoverCapable && !showResult ? { scale: 1.02 } : undefined}
                   whileTap={!showResult ? { scale: 0.98 } : undefined}
                   onClick={() => setSelecionada(opt.id)}
                   onKeyDown={(e) => handleOptionKeyDown(e, optionIndex, showResult)}
-                  className={`group relative rounded-xl border transition-all duration-300 ${styles} ${rowLayout}`}
+                  className={`group relative rounded-xl border transition-all duration-300 active:scale-[0.98] ${styles} ${rowLayout}`}
                 >
                   {!certoErradoLayout && (
                     <span className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-bold transition-colors duration-300 ${badge}`}>

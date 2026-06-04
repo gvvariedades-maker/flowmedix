@@ -55,9 +55,9 @@ function ToastItem({ toast, onDismiss }: { toast: Toast; onDismiss: () => void }
         type="button"
         onClick={onDismiss}
         aria-label="Fechar notificação"
-        className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md text-[#484f58] transition-colors hover:bg-white/10 hover:text-[#8b949e]"
+        className="-mr-2 -my-1 flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-md text-[#484f58] transition-colors hover:bg-white/10 hover:text-[#8b949e]"
       >
-        <X size={13} />
+        <X size={18} />
       </button>
     </motion.div>
   );

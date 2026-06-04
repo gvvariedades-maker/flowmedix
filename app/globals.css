@@ -70,30 +70,32 @@
     --color-text-primary:   #e6edf3;
     --color-text-secondary: #8b949e;
     --color-text-tertiary:  #484f58;
+
+    /* BottomNav mobile (DashboardShell) */
+    --bottom-nav-height: 5rem;
   }
 
   /* O SEGREDO: Aplicamos o fundo no HTML e no BODY */
   html, body {
     @apply min-h-screen antialiased;
     background-color: #010409 !important;
-    /* Padrão de listras diagonais técnicas */
+    color: white;
+  }
+
+  /* Listras diagonais em pseudo-elemento fixo — evita jank do `background-attachment: fixed` no iOS */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
     background-image: repeating-linear-gradient(
       -45deg,
       rgba(255, 255, 255, 0.05) 0px,
       rgba(255, 255, 255, 0.05) 1px,
       transparent 1px,
       transparent 12px
-    ) !important;
-    background-attachment: fixed !important;
-    color: white;
-  }
-
-  /* iOS Safari: `background-attachment: fixed` causa jank/scroll bleed no mobile */
-  @media (max-width: 767px) {
-    html,
-    body {
-      background-attachment: scroll !important;
-    }
+    );
   }
 
   /* Garante que nenhum container principal cubra as listras */
@@ -176,6 +178,15 @@
   /* Safe area — iPhone notch / home indicator */
   .pb-safe {
     padding-bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
+  }
+  .pb-nav {
+    padding-bottom: var(--bottom-nav-height, 5rem);
+  }
+  .pb-nav-safe {
+    padding-bottom: calc(
+      var(--bottom-nav-height, 5rem) +
+      env(safe-area-inset-bottom, 0px)
+    );
   }
   .pt-safe {
     padding-top: max(0px, env(safe-area-inset-top, 0px));

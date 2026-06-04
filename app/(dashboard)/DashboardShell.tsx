@@ -752,6 +752,7 @@ function DashboardContent({
             if (!modalQuestaoAtivo) setMobileMenuOpen(true);
           }}
           menuOpen={mobileMenuOpen}
+          questaoModalOpen={modalQuestaoAtivo}
         />
       </div>
 

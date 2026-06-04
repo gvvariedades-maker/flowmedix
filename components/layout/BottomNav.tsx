@@ -27,9 +27,16 @@ export type BottomNavProps = {
   currentPath: string;
   onMenuOpen: () => void;
   menuOpen: boolean;
+  /** Modal de questão sobre a vitrine — isola nav do leitor de tela e da ordem de tab. */
+  questaoModalOpen?: boolean;
 };
 
-export function BottomNav({ currentPath, onMenuOpen, menuOpen }: BottomNavProps) {
+export function BottomNav({
+  currentPath,
+  onMenuOpen,
+  menuOpen,
+  questaoModalOpen = false,
+}: BottomNavProps) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -42,6 +49,7 @@ export function BottomNav({ currentPath, onMenuOpen, menuOpen }: BottomNavProps)
           MOBILE_BOTTOM_NAV_Z,
         )}
         aria-label="Navegação principal"
+        aria-hidden={questaoModalOpen ? true : undefined}
       >
         {NAV_ITEMS.map(({ label, href, icon: Icon }) => {
           const isActive = currentPath.startsWith(href);
@@ -50,6 +58,7 @@ export function BottomNav({ currentPath, onMenuOpen, menuOpen }: BottomNavProps)
             <Link
               key={href}
               href={href}
+              tabIndex={questaoModalOpen ? -1 : undefined}
               aria-current={isActive ? 'page' : undefined}
               className="flex min-h-[48px] flex-col items-center justify-center gap-0.5 px-1 py-2"
             >
@@ -85,6 +94,7 @@ export function BottomNav({ currentPath, onMenuOpen, menuOpen }: BottomNavProps)
         <button
           type="button"
           onClick={onMenuOpen}
+          tabIndex={questaoModalOpen ? -1 : undefined}
           className="flex min-h-[48px] flex-col items-center justify-center gap-0.5 px-1 py-2"
           aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={menuOpen}
