@@ -1,6 +1,10 @@
 import { buildVitrineFacets, getVitrineFacets } from '@/lib/vitrine/facets';
 import type { ModuloEstudoRow } from '@/lib/vitrineFilters';
 
+jest.mock('@/lib/supabase/server', () => ({
+  createServerSupabase: jest.fn(),
+}));
+
 jest.mock('@/lib/cache', () => ({
   getModulosEstudoVitrineForUserCached: jest.fn(),
   getModulosEstudoCached: jest.fn(),
@@ -12,10 +16,12 @@ jest.mock('@/lib/vitrine/rpc', () => ({
 
 import { getModulosEstudoCached, getModulosEstudoVitrineForUserCached } from '@/lib/cache';
 import { fetchVitrineFacetsFromRpc } from '@/lib/vitrine/rpc';
+import { createServerSupabase } from '@/lib/supabase/server';
 
 const getModulos = getModulosEstudoVitrineForUserCached as jest.Mock;
 const getModulosGlobal = getModulosEstudoCached as jest.Mock;
 const fetchFacetsRpc = fetchVitrineFacetsFromRpc as jest.Mock;
+const createServerSupabaseMock = createServerSupabase as jest.Mock;
 
 const row = (partial: Partial<ModuloEstudoRow> & Pick<ModuloEstudoRow, 'modulo_slug'>): ModuloEstudoRow => ({
   id: partial.id ?? partial.modulo_slug,
@@ -54,6 +60,7 @@ describe('buildVitrineFacets', () => {
 describe('getVitrineFacets', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    createServerSupabaseMock.mockReset();
   });
 
   it('usa RPC quando disponível', async () => {
@@ -98,6 +105,15 @@ describe('getVitrineFacets', () => {
   it('admin ignora RPC e usa catálogo global', async () => {
     fetchFacetsRpc.mockResolvedValue({ bancas: ['FGV'], assuntos: ['X'] });
     getModulos.mockResolvedValue([]);
+    createServerSupabaseMock.mockResolvedValue({
+      from: jest.fn(() => ({
+        select: jest.fn(() => ({
+          order: jest.fn(() => ({
+            limit: jest.fn(async () => ({ data: [] })),
+          })),
+        })),
+      })),
+    });
     getModulosGlobal.mockResolvedValue([
       row({ modulo_slug: '1', banca: 'FGV', titulo_aula: 'Assunto FGV' }),
       row({ modulo_slug: '2', banca: 'CESPE', titulo_aula: 'Assunto CESPE' }),

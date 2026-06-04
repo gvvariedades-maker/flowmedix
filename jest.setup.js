@@ -9,6 +9,7 @@ const jestEnvDefaults = {
   RESEND_API_KEY: 're_test_jest_placeholder',
   RESEND_FROM_EMAIL: 'Avant <noreply@test.local>',
   SUPABASE_WEBHOOK_SECRET: 'jest_supabase_webhook_secret_32',
+  SUPABASE_SERVICE_ROLE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.test-service-role-key',
 };
 for (const [key, value] of Object.entries(jestEnvDefaults)) {
   if (!process.env[key]) {
