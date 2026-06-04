@@ -42,6 +42,7 @@ import { useToast } from '@/lib/toast-context';
 
 const CACHE_MAX_ENTRIES = 20;
 const TOAST_SEM_ACESSO = 'Sem acesso';
+const TOAST_CARREGAR_QUESTAO = 'Não foi possível carregar esta questão. Tente novamente.';
 
 type FetchPayloadResult =
   | { kind: 'ok'; payload: EstudarQuestaoPayload }
@@ -110,6 +111,10 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     addToast(TOAST_SEM_ACESSO, 'danger');
   }, [addToast]);
 
+  const notifyFalhaCarregar = useCallback(() => {
+    addToast(TOAST_CARREGAR_QUESTAO, 'danger');
+  }, [addToast]);
+
   useEffect(() => {
     attachEstudarNavTelemetryToWindow();
   }, []);
@@ -143,7 +148,11 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
   }, []);
 
   const fetchPayloadIntoCache = useCallback(
-    (slugComQuery: string): Promise<FetchPayloadResult> => {
+    (
+      slugComQuery: string,
+      options?: { layers?: 'core' | 'full' },
+    ): Promise<FetchPayloadResult> => {
+      const layers = options?.layers ?? 'core';
       const cacheKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
       if (forbiddenKeysRef.current.has(cacheKey)) {
         recordPrefetchSkipped(cacheKey, 'forbidden');
@@ -179,7 +188,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
 
         try {
           const res = await fetchWithAuth(
-            buildEstudarQuestaoApiUrl(slugComQuery, { layers: 'core' }),
+            buildEstudarQuestaoApiUrl(slugComQuery, { layers }),
           );
           const durationMs = Math.round(
             (typeof performance !== 'undefined' ? performance.now() : Date.now()) - startedAt,
@@ -263,11 +272,11 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     let cancelled = false;
 
     void (async () => {
-      const result = await fetchPayloadIntoCache(slugComQuery);
+      const result = await fetchPayloadIntoCache(slugComQuery, { layers: 'full' });
       if (cancelled) return;
-      routePayloadSyncKeyRef.current = cacheKey;
 
       if (result.kind === 'ok') {
+        routePayloadSyncKeyRef.current = cacheKey;
         setDisplayPayload(result.payload);
         return;
       }
@@ -275,19 +284,17 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
         notifySemAcesso();
         return;
       }
-      if (result.kind === 'error') {
-        logger.warn('Sincronização de payload da questão falhou na troca de rota', {
-          slugComQuery: slug,
-        });
-        return;
-      }
-      router.refresh();
+      logger.warn('Sincronização de payload da questão falhou na troca de rota', {
+        slugComQuery: slug,
+        kind: result.kind,
+      });
+      notifyFalhaCarregar();
     })();
 
     return () => {
       cancelled = true;
     };
-  }, [pathname, fetchPayloadIntoCache, router, notifySemAcesso]);
+  }, [pathname, fetchPayloadIntoCache, notifySemAcesso, notifyFalhaCarregar]);
 
   const prefetchPayload = useCallback(
     (slugComQuery: string) => {
@@ -349,9 +356,13 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
           let payload = cacheRef.current.peek(cacheKey) ?? null;
           if (!payload) {
             recordNavigateCacheResult(cacheKey, false);
-            const result = await fetchPayloadIntoCache(slugComQuery);
+            const result = await fetchPayloadIntoCache(slugComQuery, { layers: 'full' });
             if (result.kind === 'forbidden') {
               notifySemAcesso();
+              return;
+            }
+            if (result.kind === 'error') {
+              notifyFalhaCarregar();
               return;
             }
             if (result.kind === 'ok') {
@@ -361,15 +372,18 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
             recordNavigateCacheResult(cacheKey, true);
           }
 
-          if (payload) {
-            routePayloadSyncKeyRef.current = cacheKey;
-            setDisplayPayload(payload);
+          if (!payload) {
+            notifyFalhaCarregar();
+            return;
           }
+
+          routePayloadSyncKeyRef.current = cacheKey;
+          setDisplayPayload(payload);
 
           const alreadyOnQuestao = parseEstudarSlugFromPathname(pathname) !== null;
           scheduleRouterNavigate(router, href, alreadyOnQuestao ? 'replace' : 'push');
 
-          if (payload?.proximaSlug) {
+          if (payload.proximaSlug) {
             void warmForwardChain(payload.proximaSlug, PREFETCH_FORWARD_DEPTH, {
               fetchPayloadIntoCache: async (slug) => {
                 const result = await fetchPayloadIntoCache(slug);
@@ -379,15 +393,15 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
               buildHref: buildEstudarHref,
             });
           }
-        } catch {
-          const alreadyOnQuestao = parseEstudarSlugFromPathname(pathname) !== null;
-          scheduleRouterNavigate(router, href, alreadyOnQuestao ? 'replace' : 'push');
+        } catch (err) {
+          logger.error('Falha na navegação client-side entre questões', err, { slugComQuery });
+          notifyFalhaCarregar();
         } finally {
           navegandoRef.current = false;
         }
       })();
     },
-    [router, pathname, fetchPayloadIntoCache, prefetchRoute, notifySemAcesso],
+    [router, pathname, fetchPayloadIntoCache, prefetchRoute, notifySemAcesso, notifyFalhaCarregar],
   );
 
   const value = useMemo<QuestaoNavigationContextValue>(

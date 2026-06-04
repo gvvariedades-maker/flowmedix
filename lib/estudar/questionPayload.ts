@@ -11,9 +11,24 @@ const LESSON_META_FALLBACK: NonNullable<LessonData['meta']> = {
  * Evita crash no client quando o JSON legado omite `meta`.
  */
 export function ensureLessonDataForPlayer<T extends LessonData>(dados: T): T {
-  const question_data = dados?.question_data ?? { instruction: '', options: [] };
-  const meta = dados?.meta ?? LESSON_META_FALLBACK;
+  if (!dados || typeof dados !== 'object') {
+    return {
+      meta: { ...LESSON_META_FALLBACK },
+      question_data: { instruction: '', options: [] },
+    } as T;
+  }
+  const question_data = dados.question_data ?? { instruction: '', options: [] };
+  const meta = dados.meta ?? LESSON_META_FALLBACK;
   return { ...dados, meta, question_data };
+}
+
+/** Remove valores não serializáveis antes de passar props RSC → client. */
+export function serializeLessonPayloadForClient<T>(value: T): T {
+  try {
+    return JSON.parse(JSON.stringify(value)) as T;
+  } catch {
+    return value;
+  }
 }
 
 /** Payload inválido para exibir questão (sem alternativas). */

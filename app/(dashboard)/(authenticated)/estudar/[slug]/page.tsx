@@ -94,7 +94,17 @@ async function logEntitlementDiagnostics(userId: string, slug: string): Promise<
   });
 }
 
-export default async function PaginaQuestaoDinamica({
+export default async function PaginaQuestaoDinamica(props: EstudarQuestaoPageContentProps) {
+  try {
+    return await renderPaginaQuestaoDinamica(props);
+  } catch (err) {
+    if (isDataServiceUnavailableError(err)) throw err;
+    logger.error('Erro não tratado na página da questão', err);
+    return notFound();
+  }
+}
+
+async function renderPaginaQuestaoDinamica({
   params,
   searchParams,
 }: EstudarQuestaoPageContentProps) {

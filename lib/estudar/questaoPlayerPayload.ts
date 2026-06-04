@@ -18,6 +18,7 @@ import {
 import {
   ensureLessonDataForPlayer,
   lessonDataHasPlayableQuestion,
+  serializeLessonPayloadForClient,
   stripQuestionAnswersForClient,
 } from '@/lib/estudar/questionPayload';
 import type { EstudarSearchParams } from '@/lib/estudar/parseEstudarSearchParams';
@@ -55,11 +56,41 @@ export type BuildEstudarQuestaoPlayerPayloadInput = {
   supabase?: SupabaseClient;
 };
 
+async function historicoForSlugsSafe(
+  userId: string,
+  slugs: readonly string[],
+): Promise<Awaited<ReturnType<typeof getHistoricoQuestoesForSlugsCached>>> {
+  try {
+    return await getHistoricoQuestoesForSlugsCached(userId, slugs);
+  } catch (err) {
+    logger.warn('Histórico indisponível para navegação do player', {
+      userId,
+      slugCount: slugs.length,
+      message: err instanceof Error ? err.message : String(err),
+    });
+    return [];
+  }
+}
+
 /**
  * Monta props do `AvantLessonPlayer` para `/estudar/[slug]` (RSC e prefetch API).
  * Logado: entitlement + módulo via Supabase autenticado. Anônimo: cache anon.
  */
 export async function buildEstudarQuestaoPlayerPayload(
+  input: BuildEstudarQuestaoPlayerPayloadInput,
+): Promise<EstudarQuestaoBuildResult> {
+  try {
+    return await buildEstudarQuestaoPlayerPayloadImpl(input);
+  } catch (err) {
+    logger.error('Erro inesperado ao montar payload da questão', err, {
+      slug: input.slug,
+      userId: input.userId,
+    });
+    return { status: 'not_found' };
+  }
+}
+
+async function buildEstudarQuestaoPlayerPayloadImpl(
   input: BuildEstudarQuestaoPlayerPayloadInput,
 ): Promise<EstudarQuestaoBuildResult> {
   const {
@@ -85,7 +116,11 @@ export async function buildEstudarQuestaoPlayerPayload(
   if (userId) {
     if (!isAdmin) {
       try {
-        const hasAccess = await userHasModuloAccess(userId, slug);
+        let hasAccess = await userHasModuloAccess(userId, slug);
+        if (!hasAccess) {
+          const pacote = await getAccessibleModuloSlugs(userId);
+          hasAccess = pacote.has(slug);
+        }
         if (!hasAccess) return { status: 'forbidden' };
       } catch (err) {
         logger.error('Falha ao verificar acesso ao módulo', err, { userId, slug });
@@ -138,7 +173,7 @@ export async function buildEstudarQuestaoPlayerPayload(
     const revisoes = await getTodayReviews(userId);
     lista = revisoes.map((r) => ({ id: r.modulo_slug, modulo_slug: r.modulo_slug }));
 
-    const historico = await getHistoricoQuestoesForSlugsCached(
+    const historico = await historicoForSlugsSafe(
       userId,
       lista.map((item) => item.modulo_slug),
     );
@@ -194,7 +229,7 @@ export async function buildEstudarQuestaoPlayerPayload(
       modulo_slug: i.modulo_slug,
     }));
 
-    const historico = await getHistoricoQuestoesForSlugsCached(
+    const historico = await historicoForSlugsSafe(
       userId,
       lista.map((item) => item.modulo_slug),
     );
@@ -266,7 +301,7 @@ export async function buildEstudarQuestaoPlayerPayload(
     dadosCliente = stripSlidesForCoreLayer(dadosCliente);
   }
 
-  const payload: AvantLessonPlayerProps = {
+  const payload: AvantLessonPlayerProps = serializeLessonPayloadForClient({
     dados: dadosCliente,
     mode: 'live',
     proximaSlug: proximaSlugFinal,
@@ -278,7 +313,7 @@ export async function buildEstudarQuestaoPlayerPayload(
     listaContexto,
     avantCodigo: avantCodigoAluno,
     vitrineQuerySuffix: suffix,
-  };
+  });
 
   return { status: 'ok', payload };
 }

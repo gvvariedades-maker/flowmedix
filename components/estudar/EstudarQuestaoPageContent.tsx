@@ -14,7 +14,17 @@ export type EstudarQuestaoPageContentProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 };
 
-export default async function EstudarQuestaoPageContent({
+export default async function EstudarQuestaoPageContent(props: EstudarQuestaoPageContentProps) {
+  try {
+    return await renderEstudarQuestaoPageContent(props);
+  } catch (err) {
+    if (isDataServiceUnavailableError(err)) throw err;
+    logger.error('Erro não tratado no conteúdo da questão (modal)', err);
+    return notFound();
+  }
+}
+
+async function renderEstudarQuestaoPageContent({
   params,
   searchParams,
 }: EstudarQuestaoPageContentProps) {
