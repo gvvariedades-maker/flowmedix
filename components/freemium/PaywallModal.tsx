@@ -9,6 +9,7 @@ import {
   FREEMIUM_PLAN_LIMITS_DESCRIPTION,
   FREEMIUM_SIMULADO_DAILY_LIMIT,
 } from '@/lib/freemium/constants';
+import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
 
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -115,13 +116,7 @@ export function PaywallModal({
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [open, onClose]);
 
-  useEffect(() => {
-    if (!open) return;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [open]);
+  useBodyScrollLock(open);
 
   const handleCheckout = async () => {
     setLoading(true);

@@ -33,6 +33,7 @@ import {
   BackToVitrineBar,
   shouldShowBackToVitrine,
 } from '@/components/dashboard/BackToVitrineLink';
+import { useEstudarModalActive } from '@/components/estudar/useEstudarModalActive';
 import { BottomNav } from '@/components/layout/BottomNav';
 import {
   MOBILE_DRAWER_ABOVE_OVERLAYS_OVERLAY_Z,
@@ -42,15 +43,22 @@ import {
   MOBILE_MAIN_SCROLL_PADDING,
 } from '@/lib/layout/mobileBottomNav';
 import { PlanStatusCard } from '@/components/plan/PlanStatusCard';
+import { useDashboardDesktop } from '@/lib/layout/useDashboardDesktop';
 
 const drawerSpring = { type: 'spring' as const, stiffness: 300, damping: 30 };
 
-const pageVariants = {
+const pageVariantsDesktop = {
   initial: { opacity: 0 },
   animate: {
     opacity: 1,
     transition: { duration: 0.18, ease: 'easeOut' as const },
   },
+};
+
+/** Sem fade no mobile — menos flash entre rotas do dashboard. */
+const pageVariantsMobile = {
+  initial: { opacity: 1 },
+  animate: { opacity: 1 },
 };
 
 function initialsFromEmail(email: string | null): string {
@@ -256,7 +264,7 @@ function UserAccountFooter({
           onClick={onLogout}
           title="Sair da conta"
           aria-label="Sair da conta"
-          className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-white/10 hover:text-slate-300"
+          className="mt-0.5 flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-white/10 hover:text-slate-300"
         >
           <LogOut size={17} strokeWidth={MENU_ICON_STROKE} aria-hidden />
         </button>
@@ -385,8 +393,13 @@ function DashboardContent({
   const [userDisplayName, setUserDisplayName] = useState<string | null>(initialDisplayName);
   const [isAdminUser, setIsAdminUser] = useState<boolean>(initialIsAdmin);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const modalQuestaoAtivo = useEstudarModalActive();
+  const isDashboardDesktop = useDashboardDesktop();
+  const pageVariants = isDashboardDesktop ? pageVariantsDesktop : pageVariantsMobile;
   const estudoReversoWelcome = useEstudoReversoWelcome({ enabled: userEmail != null });
   const isVitrineRoute = pathname === '/estudar';
+  /** Drawer acima de ER/modal só quando o modal de questão não está ativo (z-100). */
+  const drawerAboveOverlays = mobileMenuOpen && !modalQuestaoAtivo;
 
   const userInitials = useMemo(() => {
     const fromMeta = userDisplayName?.trim() ?? null;
@@ -473,6 +486,12 @@ function DashboardContent({
     const id = requestAnimationFrame(() => setMobileMenuOpen(false));
     return () => cancelAnimationFrame(id);
   }, [pathname]);
+
+  useEffect(() => {
+    if (!modalQuestaoAtivo) return;
+    const id = requestAnimationFrame(() => setMobileMenuOpen(false));
+    return () => cancelAnimationFrame(id);
+  }, [modalQuestaoAtivo]);
 
   // Escape fecha o drawer
   useEffect(() => {
@@ -600,7 +619,7 @@ function DashboardContent({
               key="dashboard-drawer-overlay"
               className={cn(
                 'fixed inset-0 bg-black/35 backdrop-blur-sm md:hidden',
-                mobileMenuOpen
+                drawerAboveOverlays
                   ? MOBILE_DRAWER_ABOVE_OVERLAYS_OVERLAY_Z
                   : MOBILE_DRAWER_OVERLAY_Z,
               )}
@@ -620,7 +639,7 @@ function DashboardContent({
               aria-label="Menu de navegação"
               className={cn(
                 'fixed left-0 top-0 flex h-full w-[18rem] shrink-0 flex-col overflow-hidden border-r border-white/10 bg-[#06090f] outline-none md:hidden',
-                mobileMenuOpen
+                drawerAboveOverlays
                   ? MOBILE_DRAWER_ABOVE_OVERLAYS_PANEL_Z
                   : MOBILE_DRAWER_PANEL_Z,
               )}
@@ -634,7 +653,7 @@ function DashboardContent({
                   ref={closeDrawerButtonRef}
                   type="button"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                  className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                   aria-label="Fechar menu"
                 >
                   <X size={18} />
@@ -697,7 +716,7 @@ function DashboardContent({
 
               <div
                 className={cn(
-                  'flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold',
+                  'flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-full text-xs font-bold',
                   USER_AVATAR_CLASSES,
                 )}
                 aria-hidden
@@ -729,7 +748,9 @@ function DashboardContent({
 
         <BottomNav
           currentPath={pathname ?? ''}
-          onMenuOpen={() => setMobileMenuOpen(true)}
+          onMenuOpen={() => {
+            if (!modalQuestaoAtivo) setMobileMenuOpen(true);
+          }}
           menuOpen={mobileMenuOpen}
         />
       </div>

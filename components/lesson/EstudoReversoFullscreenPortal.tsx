@@ -9,12 +9,15 @@ type EstudoReversoHostProps = {
   children: ReactNode;
 };
 
-/** Escapa transforms do shell (Framer page, modal da questão) para fullscreen real. */
+/**
+ * Escapa transforms do shell (Framer page, modal da questão) para fullscreen real.
+ * Antes do mount do portal, mantém children na árvore (evita flash vazio no 1º paint).
+ */
 export function EstudoReversoHost({ preview, children }: EstudoReversoHostProps) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
   if (preview) return children;
-  if (!mounted) return null;
+  if (!mounted) return children;
   return createPortal(children, document.body);
 }

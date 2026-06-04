@@ -18,6 +18,8 @@ import {
   SELECT_TRIGGER_DARK_PANEL,
 } from '@/components/dashboard/dashboard-select-dark';
 import { cn } from '@/lib/utils';
+import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
+import { useMobileSheetKeyboardInset } from '@/lib/layout/useMobileSheetKeyboardInset';
 
 const FILTER_ALL = FILTER_ALL_VALUE;
 
@@ -67,6 +69,9 @@ export function DashboardFilterSelect({
     setPortalReady(true);
   }, []);
 
+  useBodyScrollLock(sheetOpen);
+  const keyboardInsetPx = useMobileSheetKeyboardInset(sheetOpen);
+
   useEffect(() => {
     if (!sheetOpen) return;
 
@@ -76,14 +81,8 @@ export function DashboardFilterSelect({
       setSheetOpen(false);
     };
 
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', onKeyDown);
-
-    return () => {
-      document.removeEventListener('keydown', onKeyDown);
-      document.body.style.overflow = previousOverflow;
-    };
+    return () => document.removeEventListener('keydown', onKeyDown);
   }, [sheetOpen]);
 
   const defaultTriggerClass =
@@ -138,7 +137,7 @@ export function DashboardFilterSelect({
                       type="button"
                       onClick={() => setSheetOpen(false)}
                       aria-label="Fechar"
-                      className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+                      className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-white/10 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
                     >
                       <X size={18} aria-hidden />
                     </button>
@@ -148,6 +147,11 @@ export function DashboardFilterSelect({
                     role="listbox"
                     aria-label={title}
                     className="custom-scrollbar flex-1 overflow-y-auto overscroll-y-contain px-2 py-2"
+                    style={
+                      keyboardInsetPx > 0
+                        ? { scrollPaddingBottom: keyboardInsetPx + 16 }
+                        : undefined
+                    }
                   >
                     {sheetItems.map((item) => {
                       const selected = value === item.value;
@@ -162,7 +166,7 @@ export function DashboardFilterSelect({
                               setSheetOpen(false);
                             }}
                             className={cn(
-                              'flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left text-sm transition-colors',
+                              'flex min-h-[44px] w-full items-center gap-3 rounded-xl px-3 py-3 text-left text-sm transition-colors',
                               selected
                                 ? 'bg-cyan-400/10 font-semibold text-cyan-300'
                                 : 'text-slate-200 hover:bg-white/5',
@@ -179,7 +183,12 @@ export function DashboardFilterSelect({
                   </ul>
                   <button
                     type="button"
-                    className="border-t border-white/10 px-4 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-slate-400 transition-colors hover:bg-white/5 hover:text-white"
+                    className="min-h-[44px] border-t border-white/10 px-4 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-slate-400 transition-colors hover:bg-white/5 hover:text-white"
+                    style={
+                      keyboardInsetPx > 0
+                        ? { paddingBottom: `calc(0.875rem + ${keyboardInsetPx}px)` }
+                        : undefined
+                    }
                     onClick={() => setSheetOpen(false)}
                   >
                     Fechar

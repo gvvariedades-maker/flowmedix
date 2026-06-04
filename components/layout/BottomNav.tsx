@@ -51,7 +51,7 @@ export function BottomNav({ currentPath, onMenuOpen, menuOpen }: BottomNavProps)
               key={href}
               href={href}
               aria-current={isActive ? 'page' : undefined}
-              className="flex flex-col items-center gap-0.5 px-1 py-2.5"
+              className="flex min-h-[48px] flex-col items-center justify-center gap-0.5 px-1 py-2"
             >
               <Icon
                 size={20}
@@ -85,7 +85,7 @@ export function BottomNav({ currentPath, onMenuOpen, menuOpen }: BottomNavProps)
         <button
           type="button"
           onClick={onMenuOpen}
-          className="flex flex-col items-center gap-0.5 px-1 py-2.5"
+          className="flex min-h-[48px] flex-col items-center justify-center gap-0.5 px-1 py-2"
           aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={menuOpen}
           aria-controls={menuOpen ? 'dashboard-mobile-drawer' : undefined}
@@ -108,6 +108,19 @@ export function BottomNav({ currentPath, onMenuOpen, menuOpen }: BottomNavProps)
     </LayoutGroup>
   );
 
-  if (!mounted) return null;
+  if (!mounted) {
+    return (
+      <nav
+        className={cn(
+          MOBILE_BOTTOM_NAV_FIXED,
+          MOBILE_BOTTOM_NAV_Z,
+          'min-h-[5rem]',
+          'border-t border-white/[0.08] bg-[#06090f]/95 pb-safe backdrop-blur-xl pointer-events-none md:hidden',
+        )}
+        aria-hidden="true"
+      />
+    );
+  }
+
   return createPortal(nav, document.body);
 }

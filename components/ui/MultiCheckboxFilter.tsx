@@ -5,6 +5,8 @@ import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Plus, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
+import { useMobileSheetKeyboardInset } from '@/lib/layout/useMobileSheetKeyboardInset';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
 export type MultiCheckboxFilterProps = {
@@ -43,6 +45,7 @@ type PickerListProps = {
   listboxId?: string;
   className?: string;
   searchSticky?: boolean;
+  scrollPaddingBottom?: number;
 };
 
 function PickerList({
@@ -55,6 +58,7 @@ function PickerList({
   listboxId,
   className,
   searchSticky,
+  scrollPaddingBottom,
 }: PickerListProps) {
   const optionsFiltradas = useMemo(
     () => options.filter((o) => o.toLowerCase().includes(busca.toLowerCase().trim())),
@@ -85,6 +89,11 @@ function PickerList({
         )}
         role="listbox"
         aria-label={searchPlaceholder}
+        style={
+          scrollPaddingBottom && scrollPaddingBottom > 0
+            ? { scrollPaddingBottom: scrollPaddingBottom + 16 }
+            : undefined
+        }
       >
         {optionsFiltradas.length === 0 ? (
           <li className="py-4 text-center text-xs text-slate-500" role="presentation">
@@ -98,7 +107,7 @@ function PickerList({
                 role="option"
                 aria-selected={false}
                 onClick={() => onSelect(option)}
-                className="flex w-full items-start gap-2 rounded-lg px-2 py-2 text-left text-sm text-slate-200 transition-colors hover:bg-cyan-400/10 hover:text-cyan-100"
+                className="flex min-h-[44px] w-full items-start gap-2 rounded-lg px-2 py-2 text-left text-sm text-slate-200 transition-colors hover:bg-cyan-400/10 hover:text-cyan-100"
               >
                 <span
                   className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded border border-white/25 bg-transparent"
@@ -171,6 +180,9 @@ export function MultiCheckboxFilter({
     setPortalReady(true);
   }, []);
 
+  useBodyScrollLock(sheetOpen);
+  const keyboardInsetPx = useMobileSheetKeyboardInset(sheetOpen);
+
   useEffect(() => {
     if (!sheetOpen) return;
 
@@ -180,14 +192,8 @@ export function MultiCheckboxFilter({
       closePicker();
     };
 
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', onKeyDown);
-
-    return () => {
-      document.removeEventListener('keydown', onKeyDown);
-      document.body.style.overflow = previousOverflow;
-    };
+    return () => document.removeEventListener('keydown', onKeyDown);
   }, [sheetOpen, closePicker]);
 
   const mobileSheet =
@@ -227,7 +233,7 @@ export function MultiCheckboxFilter({
                       type="button"
                       onClick={closePicker}
                       aria-label="Fechar"
-                      className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+                      className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-white/10 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
                     >
                       <X size={18} aria-hidden />
                     </button>
@@ -241,11 +247,17 @@ export function MultiCheckboxFilter({
                     emptySearchLabel={emptySearchLabel}
                     listboxId={listboxId}
                     searchSticky
+                    scrollPaddingBottom={keyboardInsetPx}
                     className="custom-scrollbar flex min-h-0 flex-1 flex-col overflow-hidden"
                   />
                   <button
                     type="button"
-                    className="border-t border-white/10 px-4 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-slate-400 transition-colors hover:bg-white/5 hover:text-white"
+                    className="min-h-[44px] border-t border-white/10 px-4 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-slate-400 transition-colors hover:bg-white/5 hover:text-white"
+                    style={
+                      keyboardInsetPx > 0
+                        ? { paddingBottom: `calc(0.875rem + ${keyboardInsetPx}px)` }
+                        : undefined
+                    }
                     onClick={closePicker}
                   >
                     Fechar

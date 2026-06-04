@@ -115,7 +115,7 @@ export function ReadableTextZoomToolbar({ ariaLabel }: ReadableTextZoomToolbarPr
     >
       <button
         type="button"
-        className="flex h-9 w-9 items-center justify-center rounded-md text-white/95 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
+        className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-white/95 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
         onClick={dec}
         disabled={textStep <= 0}
         aria-label="Diminuir texto"
@@ -124,7 +124,7 @@ export function ReadableTextZoomToolbar({ ariaLabel }: ReadableTextZoomToolbarPr
       </button>
       <button
         type="button"
-        className="flex h-9 w-9 items-center justify-center rounded-md text-white/95 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
+        className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-white/95 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
         onClick={inc}
         disabled={textStep >= maxStep}
         aria-label="Aumentar texto"
@@ -133,7 +133,7 @@ export function ReadableTextZoomToolbar({ ariaLabel }: ReadableTextZoomToolbarPr
       </button>
       <button
         type="button"
-        className="flex h-9 w-9 items-center justify-center rounded-md text-white/80 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
+        className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-white/80 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
         onClick={resetScale}
         disabled={textStep === 0}
         aria-label="Tamanho de texto padrão"

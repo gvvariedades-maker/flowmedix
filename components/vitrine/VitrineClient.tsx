@@ -45,6 +45,8 @@ import {
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
+import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
+import { useMobileSheetKeyboardInset } from '@/lib/layout/useMobileSheetKeyboardInset';
 import {
   vitrineFacetsQueryKey,
   vitrineListQueryKey,
@@ -859,7 +861,7 @@ export default function VitrineClient({
         </div>
       </div>
 
-      <main className="mx-auto max-w-7xl space-y-8 px-6 pt-6 md:pt-8">
+      <main className="mx-auto max-w-7xl space-y-8 px-4 pt-6 md:px-6 md:pt-8">
         {showSsrErrorBanner && (
           <div
             role="alert"
@@ -1029,6 +1031,9 @@ function VitrineMobileFilterSheet({
     [disabled, onChange, selected, selectedSet],
   );
 
+  useBodyScrollLock(open);
+  const keyboardInsetPx = useMobileSheetKeyboardInset(open);
+
   useEffect(() => {
     setPortalReady(true);
   }, []);
@@ -1042,14 +1047,8 @@ function VitrineMobileFilterSheet({
       closeSheet();
     };
 
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', onKeyDown);
-
-    return () => {
-      document.removeEventListener('keydown', onKeyDown);
-      document.body.style.overflow = previousOverflow;
-    };
+    return () => document.removeEventListener('keydown', onKeyDown);
   }, [open, closeSheet]);
 
   if (!portalReady || typeof document === 'undefined') return null;
@@ -1089,7 +1088,7 @@ function VitrineMobileFilterSheet({
                 type="button"
                 onClick={closeSheet}
                 aria-label="Fechar"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-white/10 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
               >
                 <X size={18} aria-hidden />
               </button>
@@ -1109,6 +1108,11 @@ function VitrineMobileFilterSheet({
                 className="min-h-0 flex-1 overflow-y-auto overscroll-y-contain py-1"
                 role="listbox"
                 aria-label={searchPlaceholder}
+                style={
+                  keyboardInsetPx > 0
+                    ? { scrollPaddingBottom: keyboardInsetPx + 16 }
+                    : undefined
+                }
               >
                 {optionsFiltradas.length === 0 ? (
                   <li className="py-4 text-center text-xs text-slate-500" role="presentation">
@@ -1125,7 +1129,7 @@ function VitrineMobileFilterSheet({
                           aria-selected={isSelected}
                           disabled={disabled}
                           onClick={() => toggleOption(option)}
-                          className="flex w-full items-start gap-2 rounded-lg px-2 py-2 text-left text-sm text-slate-200 transition-colors hover:bg-cyan-400/10 hover:text-cyan-100 disabled:opacity-50"
+                          className="flex min-h-[44px] w-full items-start gap-2 rounded-lg px-2 py-2 text-left text-sm text-slate-200 transition-colors hover:bg-cyan-400/10 hover:text-cyan-100 disabled:opacity-50"
                         >
                           <span
                             className={cn(
@@ -1148,7 +1152,12 @@ function VitrineMobileFilterSheet({
             </div>
             <button
               type="button"
-              className="border-t border-white/10 px-4 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-slate-400 transition-colors hover:bg-white/5 hover:text-white"
+              className="min-h-[44px] border-t border-white/10 px-4 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-slate-400 transition-colors hover:bg-white/5 hover:text-white"
+              style={
+                keyboardInsetPx > 0
+                  ? { paddingBottom: `calc(0.875rem + ${keyboardInsetPx}px)` }
+                  : undefined
+              }
               onClick={closeSheet}
             >
               Fechar
@@ -1312,16 +1321,16 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
         )}
       </button>
 
-      <AnimatePresence>
-        {assuntoExpandido && (
-          <motion.div
-            id={panelId}
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.22, ease: 'easeInOut' }}
-            className="space-y-3 overflow-hidden sm:space-y-4"
-          >
+      <div
+        id={panelId}
+        aria-hidden={!assuntoExpandido}
+        className={cn(
+          'grid transition-[grid-template-rows] duration-200 ease-in-out',
+          assuntoExpandido ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
+        )}
+      >
+        <div className="overflow-hidden">
+          <div className="space-y-3 sm:space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-2">
               {todas && (
                 <NeonBadge variant="success">Completo</NeonBadge>
@@ -1351,7 +1360,7 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
             <button
               type="button"
               onClick={() => setQuestoesExpandido((v) => !v)}
-              className="flex w-full items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-200 transition-colors hover:bg-white/[0.08] hover:text-white"
+              className="flex min-h-[44px] w-full items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-200 transition-colors hover:bg-white/[0.08] hover:text-white"
             >
               <span className="text-xs font-medium">
                 {questoesExpandido
@@ -1363,15 +1372,14 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
               {questoesExpandido ? <ChevronUp size={14} className="text-slate-500" /> : <ChevronDown size={14} className="text-slate-500" />}
             </button>
 
-            <AnimatePresence>
-              {questoesExpandido && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.22, ease: 'easeInOut' }}
-                  className="overflow-hidden"
-                >
+            <div
+              aria-hidden={!questoesExpandido}
+              className={cn(
+                'grid transition-[grid-template-rows] duration-200 ease-in-out',
+                questoesExpandido ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
+              )}
+            >
+              <div className="overflow-hidden">
                   <div className="max-h-[min(50vh,20rem)] space-y-1.5 overflow-y-auto overscroll-contain pt-1 pr-1">
                     {questoes.map((q) => {
                       const estudada = q.status === 'estudada';
@@ -1420,9 +1428,8 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
                       "Entrar no assunto" para navegar completo.
                     </p>
                   )}
-                </motion.div>
-              )}
-            </AnimatePresence>
+              </div>
+            </div>
 
             <div className="flex items-center justify-between gap-2 border-t border-white/10 pt-2">
               <span className="text-[10px] font-medium uppercase tracking-wide text-slate-400">
@@ -1436,9 +1443,9 @@ function SubtopicoCard({ grupo, estudarQuery, index }: { grupo: GrupoSubtopico; 
               )}
               {todas && <NeonBadge variant="success">Concluído</NeonBadge>}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      </div>
 
       </div>
 

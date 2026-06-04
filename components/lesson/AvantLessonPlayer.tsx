@@ -175,6 +175,15 @@ export default function AvantLessonPlayer({
   const navegandoRef = useRef(false);
   const [bottomNavHeightPx, setBottomNavHeightPx] = useState(0);
   const [keyboardInsetPx, setKeyboardInsetPx] = useState(0);
+  const [hoverCapable, setHoverCapable] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const sync = () => setHoverCapable(mq.matches);
+    sync();
+    mq.addEventListener('change', sync);
+    return () => mq.removeEventListener('change', sync);
+  }, []);
 
   const bottomNavPaddingBottom =
     keyboardInsetPx > 0
@@ -252,7 +261,7 @@ export default function AvantLessonPlayer({
       vv.removeEventListener('resize', syncKeyboardInset);
       vv.removeEventListener('scroll', syncKeyboardInset);
     };
-  }, [mode, moduloSlug]);
+  }, [mode]);
 
   const dotsNavItems = useMemo(
     () =>
@@ -289,6 +298,8 @@ export default function AvantLessonPlayer({
   const [gabarito, setGabarito] = useState<GabaritoTentativa | null>(null);
   const [dadosComSlides, setDadosComSlides] = useState<LessonData | null>(null);
   const slidesLayerFetchRef = useRef(false);
+  const questoesDoAssuntoRef = useRef(questoesDoAssunto);
+  questoesDoAssuntoRef.current = questoesDoAssunto;
   const activeDados = dadosComSlides ?? dadosIniciais;
 
   useEffect(() => {
@@ -300,7 +311,7 @@ export default function AvantLessonPlayer({
   useEffect(() => {
     navegandoRef.current = false;
     const jaEstudada =
-      questoesDoAssunto?.find((q) => q.slug === moduloSlug)?.estudada ?? false;
+      questoesDoAssuntoRef.current?.find((q) => q.slug === moduloSlug)?.estudada ?? false;
     setEtapa('pergunta');
     setSelecionada(null);
     setSlideAtual(0);
@@ -313,7 +324,7 @@ export default function AvantLessonPlayer({
     setTentativaErro(null);
     setGabarito(null);
     questionBodyScrollRef.current?.scrollTo({ top: 0, behavior: 'auto' });
-  }, [moduloSlug, questoesDoAssunto]);
+  }, [moduloSlug]);
 
   const navegacaoBloqueada = confirmandoResposta || marcandoConclusao;
 
@@ -364,8 +375,16 @@ export default function AvantLessonPlayer({
     if (etapa !== 'pergunta' || !selecionada) return;
     const el = confirmarRespostaRef.current;
     if (!el) return;
-    el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
-  }, [selecionada, etapa]);
+    const scrollMarginBottom = bottomNavHeightPx + keyboardInsetPx + 16;
+    el.style.scrollMarginBottom = `${scrollMarginBottom}px`;
+    const narrowViewport =
+      typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches;
+    el.scrollIntoView({
+      behavior: narrowViewport ? 'auto' : 'smooth',
+      block: 'end',
+      inline: 'nearest',
+    });
+  }, [selecionada, etapa, bottomNavHeightPx, keyboardInsetPx]);
 
   useLayoutEffect(() => {
     if (etapa === 'gabarito' && gabarito !== null) {
@@ -869,7 +888,7 @@ export default function AvantLessonPlayer({
               opcao_correta_id: gabarito?.opcaoCorretaId ?? null,
             }}
             triggerLabel="Reportar erro"
-            triggerClassName="h-9 w-9 px-0 sm:h-9 sm:w-auto sm:px-3 text-xs font-semibold"
+            triggerClassName="min-h-[44px] min-w-[44px] h-11 w-11 px-0 sm:h-9 sm:min-h-0 sm:min-w-0 sm:w-auto sm:px-3 text-xs font-semibold"
           />
         </div>
       </div>
@@ -938,7 +957,7 @@ export default function AvantLessonPlayer({
 
               const rowLayout = certoErradoLayout
                 ? 'flex flex-col items-center justify-center text-center min-h-[92px] sm:min-h-[108px] gap-2 p-5 md:p-6'
-                : 'text-left flex items-start gap-3 px-3 py-3 md:px-4';
+                : 'text-left flex min-h-[48px] items-start gap-3 px-3 py-3 md:px-4';
 
               const optionAriaLabel = buildOptionAriaLabel(
                 opt,
@@ -963,8 +982,8 @@ export default function AvantLessonPlayer({
                         ? 0
                         : -1
                   }
-                  whileHover={!showResult ? { scale: 1.02 } : {}}
-                  whileTap={!showResult ? { scale: 0.98 } : {}}
+                  whileHover={hoverCapable && !showResult ? { scale: 1.02 } : undefined}
+                  whileTap={!showResult ? { scale: 0.98 } : undefined}
                   onClick={() => setSelecionada(opt.id)}
                   onKeyDown={(e) => handleOptionKeyDown(e, optionIndex, showResult)}
                   className={`group relative rounded-xl border transition-all duration-300 ${styles} ${rowLayout}`}
@@ -1015,7 +1034,7 @@ export default function AvantLessonPlayer({
               type="button"
               onClick={handleConfirmarResposta}
               disabled={confirmandoResposta}
-              className="group bg-slate-900 text-white pl-8 pr-2 py-3 rounded-full font-bold uppercase tracking-widest text-xs shadow-xl shadow-slate-900/20 hover:scale-105 transition-all flex items-center gap-4 disabled:cursor-not-allowed disabled:opacity-70"
+              className="group flex min-h-[48px] items-center gap-4 rounded-full bg-slate-900 py-3 pl-8 pr-2 text-xs font-bold uppercase tracking-widest text-white shadow-xl shadow-slate-900/20 transition-all hover:scale-105 disabled:cursor-not-allowed disabled:opacity-70"
             >
               {confirmandoResposta ? 'Registrando…' : 'Confirmar Resposta'}
               <span className="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center group-hover:bg-[#BEF264] group-hover:text-slate-900 transition-colors">
@@ -1371,7 +1390,7 @@ export default function AvantLessonPlayer({
                     className={
                       isPreviewMode
                         ? 'flex min-h-[40px] shrink-0 items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3 py-2 text-[10px] font-black uppercase tracking-widest text-white transition-colors hover:bg-white/20'
-                        : 'flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-md transition-colors hover:bg-white/20'
+                        : 'flex min-h-[44px] min-w-[44px] h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-md transition-colors hover:bg-white/20'
                     }
                     aria-label="Fechar estudo reverso"
                   >

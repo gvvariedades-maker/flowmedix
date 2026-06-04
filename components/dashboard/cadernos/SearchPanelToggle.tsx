@@ -5,6 +5,8 @@ import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Search, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
+import { useMobileSheetKeyboardInset } from '@/lib/layout/useMobileSheetKeyboardInset';
 
 const STORAGE_KEY = 'avant.caderno.search-panel.collapsed';
 
@@ -49,6 +51,9 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
     });
   }, []);
 
+  useBodyScrollLock(mobileOpen);
+  const keyboardInsetPx = useMobileSheetKeyboardInset(mobileOpen);
+
   useEffect(() => {
     if (!mobileOpen) return;
 
@@ -58,14 +63,8 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
       setMobileOpen(false);
     };
 
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', onKeyDown);
-
-    return () => {
-      document.removeEventListener('keydown', onKeyDown);
-      document.body.style.overflow = previousOverflow;
-    };
+    return () => document.removeEventListener('keydown', onKeyDown);
   }, [mobileOpen]);
 
   const panelHeader = (
@@ -117,12 +116,19 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
                       type="button"
                       onClick={() => setMobileOpen(false)}
                       aria-label="Fechar"
-                      className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+                      className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-white/10 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
                     >
                       <X size={18} aria-hidden />
                     </button>
                   </div>
-                  <div className="custom-scrollbar flex min-h-0 min-w-0 flex-1 flex-col overflow-y-auto overscroll-y-contain touch-pan-y p-4 pt-3 lg:overflow-hidden">
+                  <div
+                    className="custom-scrollbar flex min-h-0 min-w-0 flex-1 flex-col overflow-y-auto overscroll-y-contain touch-pan-y p-4 pt-3 lg:overflow-hidden"
+                    style={
+                      keyboardInsetPx > 0
+                        ? { paddingBottom: keyboardInsetPx + 16 }
+                        : undefined
+                    }
+                  >
                     {children}
                   </div>
                 </motion.div>
@@ -140,7 +146,7 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
         <button
           type="button"
           onClick={() => setMobileOpen(true)}
-          className="mb-3 flex w-full items-center justify-center gap-2 rounded-2xl border border-cyan-400/30 bg-[rgba(0,242,255,0.08)] px-4 py-3 text-xs font-black uppercase tracking-widest text-cyan-200 transition-colors hover:bg-[rgba(0,242,255,0.12)]"
+          className="mb-3 flex min-h-[44px] w-full items-center justify-center gap-2 rounded-2xl border border-cyan-400/30 bg-[rgba(0,242,255,0.08)] px-4 py-3 text-xs font-black uppercase tracking-widest text-cyan-200 transition-colors hover:bg-[rgba(0,242,255,0.12)]"
         >
           <Search size={14} aria-hidden />
           Inserir questões

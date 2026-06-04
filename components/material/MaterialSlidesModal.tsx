@@ -19,6 +19,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
 
 type MaterialSlidesModalProps = {
   open: boolean;
@@ -115,6 +116,8 @@ export function MaterialSlidesModal({ open, selectedLot, onSelectLot, onClose }:
     return () => cancelAnimationFrame(id);
   }, [open]);
 
+  useBodyScrollLock(open);
+
   useEffect(() => {
     if (!open) return;
 
@@ -129,13 +132,7 @@ export function MaterialSlidesModal({ open, selectedLot, onSelectLot, onClose }:
     };
 
     document.addEventListener('keydown', handleKeyDown);
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = originalOverflow;
-    };
+    return () => document.removeEventListener('keydown', handleKeyDown);
   }, [lotPickerOpen, onClose, open]);
 
   const activeLot = getMaterialSlideLot(selectedLot);

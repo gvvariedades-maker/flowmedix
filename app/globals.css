@@ -88,6 +88,14 @@
     color: white;
   }
 
+  /* iOS Safari: `background-attachment: fixed` causa jank/scroll bleed no mobile */
+  @media (max-width: 767px) {
+    html,
+    body {
+      background-attachment: scroll !important;
+    }
+  }
+
   /* Garante que nenhum container principal cubra as listras */
   main, section, #__next {
     background-color: transparent !important;

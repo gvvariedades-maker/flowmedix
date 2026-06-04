@@ -13,6 +13,7 @@ import {
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { useToast } from '@/lib/toast-context';
 import { cn } from '@/lib/utils';
+import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
 import type { ErrorReportCategoryInput, ErrorReportContextTypeInput } from '@/lib/validations';
 
 const CATEGORY_OPTIONS: Array<{ value: ErrorReportCategoryInput; label: string }> = [
@@ -82,6 +83,8 @@ export function ReportErrorDialog({
     [category, contextType, details, effectivePageUrl, metadata, moduloSlug, simuladoSessionId],
   );
 
+  useBodyScrollLock(open);
+
   useEffect(() => {
     if (!open) return;
     const onKeyDown = (event: KeyboardEvent) => {
@@ -90,12 +93,7 @@ export function ReportErrorDialog({
       setOpen(false);
     };
     document.addEventListener('keydown', onKeyDown);
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', onKeyDown);
-      document.body.style.overflow = previousOverflow;
-    };
+    return () => document.removeEventListener('keydown', onKeyDown);
   }, [open, submitting]);
 
   const resetForm = () => {
@@ -171,7 +169,7 @@ export function ReportErrorDialog({
       )}
 
       {open ? (
-        <div className="fixed inset-0 z-[120] flex items-end justify-center p-4 sm:items-center">
+        <div className="fixed inset-0 z-[120] flex items-end justify-center p-4 pb-safe sm:items-center sm:pb-4">
           <button
             type="button"
             tabIndex={-1}
@@ -184,13 +182,13 @@ export function ReportErrorDialog({
             role="dialog"
             aria-modal="true"
             aria-labelledby="report-error-title"
-            className="relative z-10 w-full max-w-xl rounded-2xl border border-white/10 bg-[#0d1117] p-5 shadow-2xl sm:p-6"
+            className="relative z-10 w-full max-w-xl rounded-2xl border border-white/10 bg-[#0d1117] p-5 pb-safe shadow-2xl sm:p-6 sm:pb-6"
           >
             <button
               type="button"
               onClick={closeDialog}
               disabled={submitting}
-              className="absolute right-3 top-3 rounded-full border border-white/10 bg-white/5 p-2 text-slate-400 transition-colors hover:bg-white/10 hover:text-white disabled:opacity-50"
+              className="absolute right-3 top-3 flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-400 transition-colors hover:bg-white/10 hover:text-white disabled:opacity-50"
               aria-label="Fechar"
             >
               <X size={16} aria-hidden />

@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { CheckCircle2, AlertCircle, AlertTriangle, Info, X } from 'lucide-react';
 import { useToast, type Toast, type ToastVariant } from '@/lib/toast-context';
 import { cn } from '@/lib/utils';
+import { MOBILE_TOAST_FIXED_BOTTOM } from '@/lib/layout/mobileBottomNav';
 
 const variantConfig: Record<
   ToastVariant,
@@ -68,7 +69,11 @@ export function ToastContainer() {
   return (
     <div
       aria-label="Notificações"
-      className="pointer-events-none fixed bottom-6 left-1/2 z-[99998] flex -translate-x-1/2 flex-col items-center gap-2 sm:left-auto sm:right-6 sm:translate-x-0 sm:items-end"
+      className={cn(
+        'pointer-events-none fixed bottom-6 left-1/2 z-[99998] flex -translate-x-1/2 flex-col items-center gap-2',
+        MOBILE_TOAST_FIXED_BOTTOM,
+        'sm:left-auto sm:right-6 sm:translate-x-0 sm:items-end',
+      )}
     >
       <AnimatePresence mode="sync">
         {toasts.map((toast) => (
