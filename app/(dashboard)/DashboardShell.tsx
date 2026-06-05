@@ -706,6 +706,8 @@ function DashboardContent({
           }}
           menuOpen={mobileMenuOpen}
           questaoModalOpen={modalQuestaoAtivo}
+          drawerOpen={mobileMenuOpen}
+          welcomeOpen={estudoReversoWelcome.isOpen}
         />
       </div>
 

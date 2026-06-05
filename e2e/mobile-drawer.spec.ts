@@ -20,10 +20,12 @@ async function gotoEstudar(page: Page) {
   await dismissWelcomeIfVisible(page);
 }
 
+function bottomNav(page: Page) {
+  return page.locator('nav.fixed.bottom-0[aria-label="Navegação rápida"]');
+}
+
 function maisButton(page: Page) {
-  return page
-    .locator('nav.fixed.bottom-0[aria-label="Navegação principal"]')
-    .getByRole('button', { name: /Abrir menu|Fechar menu/ });
+  return bottomNav(page).getByRole('button', { name: /Abrir menu|Fechar menu/ });
 }
 
 /**
@@ -130,5 +132,25 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
     await page.keyboard.press('Escape');
     await expect(page.locator('#dashboard-mobile-drawer')).not.toBeVisible({ timeout: 10_000 });
     await expect(maisButton(page)).toBeFocused({ timeout: 10_000 });
+  });
+
+  test('D9 — drawer aberto: link Estudar não navega', async ({ page }) => {
+    await page.goto('/ajuda', { waitUntil: 'domcontentloaded' });
+    await dismissWelcomeIfVisible(page);
+    await maisButton(page).click();
+    await expect(page.locator('#dashboard-mobile-drawer')).toBeVisible({ timeout: 10_000 });
+
+    await bottomNav(page).locator('a[href="/estudar"]').click({ force: true });
+    await expect(page).toHaveURL(/\/ajuda/, { timeout: 5_000 });
+    await expect(page.locator('#dashboard-mobile-drawer')).toBeVisible({ timeout: 5_000 });
+  });
+
+  test('D10 — rota do drawer: botão Mais com estado ativo', async ({ page }) => {
+    await page.goto('/ajuda', { waitUntil: 'domcontentloaded' });
+    await dismissWelcomeIfVisible(page);
+
+    const mais = bottomNav(page).getByRole('button', { name: 'Abrir menu' });
+    await expect(mais).toHaveAttribute('aria-current', 'page');
+    await expect(mais.locator('span', { hasText: 'Mais' })).toHaveClass(/text-\[#00f2ff\]/);
   });
 });

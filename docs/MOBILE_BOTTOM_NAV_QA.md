@@ -47,7 +47,7 @@ Preencher em staging com viewport 390×844. Marcar **OK** / **Falha** / **N/A**.
 |----|---------|--------|-------------------|-----|
 | M1 | Abertura soft-nav | Vitrine filtrada → «Entrar no assunto» | Dialog `role="dialog"` visível; questão no painel inferior; URL `/estudar/[slug]` com query preservada | |
 | M2 | Sem tela morta na carga | Repetir M1 em rede lenta (DevTools 3G) ou cold open | Skeleton ou dialog visível em &lt; 1 s; vitrine **não** fica clicável por baixo durante carga (`pointer-events-none` no slot) | |
-| M3 | BottomNav isolado | Com modal aberto | `nav[aria-label="Navegação principal"]` com `aria-hidden="true"`; links do nav não recebem foco via Tab | |
+| M3 | BottomNav isolado | Com modal aberto | `nav[aria-label="Navegação rápida"]` com `aria-hidden="true"`; links do nav não recebem foco via Tab | |
 | M4 | Focus trap | Tab / Shift+Tab no player | Foco circula dentro do painel do modal; não «vaza» para vitrine nem BottomNav | |
 | M5 | Escape | `Escape` com modal aberto | Modal fecha; URL volta à vitrine; `[data-vitrine-slot-ready="true"]`; cards clicáveis sem F5 | |
 | M6 | Backdrop | Toque na **faixa escurecida** acima do sheet (pode ser estreita em telas baixas — painel `flex-1`) | Mesmo resultado que M5; handler `Fechar questão` dispara dismiss | |
@@ -130,8 +130,10 @@ Checklist manual após mudanças em `DashboardShell`, `MobileDashboardDrawer`, `
 | D6 | Scroll lock | Com drawer aberto, tentar rolar vitrine | `main` não incrementa `scrollTop`; body sem scroll | |
 | D7 | Modal questão | Com modal aberto (`NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE=1`) → **Mais** | Drawer **não** abre | |
 | D8 | Foco | Fechar drawer (Escape ou overlay) | Foco no botão **Mais** (`Abrir menu`) | |
+| D9 | Nav inerte | `/plano-diario` ou `/ajuda` → **Mais** → tocar **Estudar** no BottomNav | URL inalterada; drawer continua aberto; links com `aria-hidden` (nav sem `aria-hidden` — **Mais** ainda no SR). E2E automatizado usa `/ajuda` ( `/plano-diario` exige login). | |
+| D10 | Mais ativo | `/plano-diario` ou `/ajuda` (drawer fechado) | Botão **Mais** com `aria-current="page"` e label cyan (`text-[#00f2ff]`). E2E automatizado usa `/ajuda`. | |
 
-Rotas mínimas pós-deploy: `/estudar`, `/cadernos`, `/simulados`, `/plano-diario`, `/conta/assinatura` (via link do drawer).
+Rotas mínimas pós-deploy: `/estudar`, `/cadernos`, `/simulados`, `/plano-diario`, `/conta/assinatura` (via link do drawer). Confirmar **D10** também em `/ajuda`, `/material` e `/conta/assinatura` (rotas exclusivas do drawer).
 
 ### Automatizado (drawer)
 
@@ -140,13 +142,16 @@ npm test -- __tests__/layout/dashboardShellMobileDrawer.test.ts
 npm run test:e2e:drawer
 ```
 
-- [`e2e/mobile-drawer.spec.ts`](../e2e/mobile-drawer.spec.ts) — matriz D1–D8 (D7 skip sem flag modal).
+- [`e2e/mobile-drawer.spec.ts`](../e2e/mobile-drawer.spec.ts) — matriz D1–D10 (D7 skip sem flag modal).
 - D7 compartilha staging com modal: `npm run test:e2e:modal:staging` quando flag ligada.
 
 ---
 
 ## Automatizado (Jest)
 
+- `__tests__/layout/bottomNavActive.test.ts` — matriz de rotas ativas (links + **Mais**).
+- `__tests__/layout/bottomNav.test.ts` — indicador abaixo do label, inércia com drawer/welcome, `aria-label`, props no shell.
+- `__tests__/layout/useBottomNavHeightSync.test.ts` — `--bottom-nav-height` via `ResizeObserver`.
 - `__tests__/layout/mobileBottomNav.test.ts` — tokens ativos e `getDashboardPageBottomPadding`.
 - `__tests__/layout/dashboardShellDesktopPadding.test.ts` — `MOBILE_MAIN_SCROLL_PADDING` no `<main>`; vitrine header único.
 - `__tests__/layout/dashboardShellMobileDrawer.test.ts` — toggle, scroll lock, portal, welcome, aria-hidden, focusable util.
@@ -159,6 +164,7 @@ npm run test:e2e:drawer
 ## Comandos
 
 ```bash
+npm test -- __tests__/layout/bottomNavActive.test.ts __tests__/layout/bottomNav.test.ts __tests__/layout/useBottomNavHeightSync.test.ts
 npm test -- __tests__/layout/useBodyScrollLock.test.ts
 npm test -- __tests__/layout/mobileBottomNav.test.ts __tests__/layout/dashboardShellDesktopPadding.test.ts
 npm run test:e2e:modal
