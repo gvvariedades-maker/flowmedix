@@ -35,7 +35,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const { slug, layers, from, caderno_id, bancas, assuntos, q } = parsed.data;
+    const { slug, layers, from, caderno_id, bancas, assuntos, q, page } = parsed.data;
 
     if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS') && isE2eEstudarSlug(slug)) {
       const result = buildE2eEstudarQuestaoPayload(slug, {
@@ -44,6 +44,7 @@ export async function GET(request: NextRequest) {
         banca: bancas,
         assunto: assuntos,
         q,
+        ...(page != null && page > 1 ? { page: String(page) } : {}),
       }, layers);
       recordPerformance(endpoint, method, Date.now() - requestStartedAt, result.status === 'ok');
       if (result.status === 'not_found') {
@@ -82,6 +83,7 @@ export async function GET(request: NextRequest) {
         banca: bancas,
         assunto: assuntos,
         q,
+        ...(page != null && page > 1 ? { page: String(page) } : {}),
       },
       supabase: auth.supabase,
     });
