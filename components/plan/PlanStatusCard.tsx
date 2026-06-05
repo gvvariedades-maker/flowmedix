@@ -105,7 +105,7 @@ export function PlanStatusCard({
 
         <div className="space-y-4 p-4">
           <div>
-            <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/30">Assinatura</p>
+            <p className="font-mono text-[9px] uppercase tracking-[0.12em] text-white/50">Assinatura</p>
             {showSeuPlano ? (
               <h3
                 className="mt-1 text-[26px] font-extrabold leading-tight tracking-tight text-white"

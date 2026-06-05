@@ -3,7 +3,7 @@
 import React, { Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   LayoutDashboard,
   Zap,
@@ -11,7 +11,6 @@ import {
   BarChart3,
   LogOut,
   Search,
-  X,
   CalendarDays,
   BookMarked,
   ClipboardList,
@@ -36,17 +35,12 @@ import {
 import { useEstudarModalActive } from '@/components/estudar/useEstudarModalActive';
 import { parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
 import { BottomNav } from '@/components/layout/BottomNav';
-import {
-  MOBILE_DRAWER_ABOVE_OVERLAYS_OVERLAY_Z,
-  MOBILE_DRAWER_ABOVE_OVERLAYS_PANEL_Z,
-  MOBILE_DRAWER_OVERLAY_Z,
-  MOBILE_DRAWER_PANEL_Z,
-  MOBILE_MAIN_SCROLL_PADDING,
-} from '@/lib/layout/mobileBottomNav';
+import { MobileDashboardDrawer } from '@/components/layout/MobileDashboardDrawer';
+import { MOBILE_MAIN_SCROLL_PADDING } from '@/lib/layout/mobileBottomNav';
 import { PlanStatusCard } from '@/components/plan/PlanStatusCard';
+import { getFocusableIn } from '@/lib/a11y/focusable';
+import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
 import { useDashboardDesktop } from '@/lib/layout/useDashboardDesktop';
-
-const drawerSpring = { type: 'spring' as const, stiffness: 300, damping: 30 };
 
 const pageVariantsDesktop = {
   initial: { opacity: 0 },
@@ -123,21 +117,6 @@ const USER_AVATAR_CLASSES =
   'bg-gradient-to-br from-emerald-500 to-emerald-700 text-white shadow-sm ring-2 ring-emerald-200/90';
 
 const MENU_ICON_STROKE = 2 as const;
-
-/** Seletor de elementos focáveis para armadilha de foco no drawer (a11y). */
-const FOCUSABLE_SELECTOR =
-  'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
-
-function getFocusableIn(container: HTMLElement | null): HTMLElement[] {
-  if (!container) return [];
-  return Array.from(container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)).filter((el) => {
-    if (el.getAttribute('tabindex') === '-1') return false;
-    if (el.hasAttribute('disabled')) return false;
-    const style = window.getComputedStyle(el);
-    if (style.visibility === 'hidden' || style.display === 'none') return false;
-    return typeof el.tabIndex === 'number' && el.tabIndex >= 0;
-  });
-}
 
 type MenuItem = {
   label: string;
@@ -242,7 +221,7 @@ function UserAccountFooter({
   const assinaturaLabel = getAssinaturaNavLabel(isAdminUser, proSource);
 
   return (
-    <div className="px-1 pb-4 pt-2">
+    <div className="px-1 pb-safe pt-2">
       <div className="rounded-xl border border-white/5 bg-white/[0.03] p-3">
       <div className="flex items-start gap-2.5">
         <div
@@ -256,7 +235,10 @@ function UserAccountFooter({
         </div>
         <div className="min-w-0 flex-1 pt-0.5">
           <p className="truncate text-sm font-bold leading-tight text-slate-100">{name}</p>
-          <p className="mt-0.5 truncate text-xs font-normal text-slate-400">
+          <p
+            className="mt-0.5 truncate text-xs font-normal text-slate-400"
+            title={userEmail ?? undefined}
+          >
             {userEmail ?? <span className="animate-pulse text-slate-500">carregando…</span>}
           </p>
         </div>
@@ -405,6 +387,8 @@ function DashboardContent({
   /** Drawer acima de ER/modal só quando o modal de questão não está ativo (z-100). */
   const drawerAboveOverlays = mobileMenuOpen && !modalQuestaoAtivo;
 
+  useBodyScrollLock(mobileMenuOpen && !isDashboardDesktop);
+
   const userInitials = useMemo(() => {
     const fromMeta = userDisplayName?.trim() ?? null;
     if (fromMeta) return initialsFromDisplayName(fromMeta, userEmail);
@@ -417,7 +401,7 @@ function DashboardContent({
     return initialsFromEmail(userEmail);
   }, [userDisplayName, userEmail]);
 
-  const openMenuButtonRef = useRef<HTMLButtonElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const closeDrawerButtonRef = useRef<HTMLButtonElement>(null);
   const drawerPanelRef = useRef<HTMLDivElement>(null);
   /** Evita devolver foco ao botão "Abrir" na montagem inicial (menu já fechado). */
@@ -497,6 +481,12 @@ function DashboardContent({
     return () => cancelAnimationFrame(id);
   }, [modalQuestaoAtivo]);
 
+  useEffect(() => {
+    if (!estudoReversoWelcome.isOpen) return;
+    const id = requestAnimationFrame(() => setMobileMenuOpen(false));
+    return () => cancelAnimationFrame(id);
+  }, [estudoReversoWelcome.isOpen]);
+
   // Escape fecha o drawer
   useEffect(() => {
     if (!mobileMenuOpen) return;
@@ -522,7 +512,7 @@ function DashboardContent({
     if (drawerWasOpenRef.current) {
       drawerWasOpenRef.current = false;
       requestAnimationFrame(() => {
-        openMenuButtonRef.current?.focus();
+        menuButtonRef.current?.focus();
       });
     }
   }, [mobileMenuOpen]);
@@ -592,6 +582,7 @@ function DashboardContent({
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
   const isAssinaturaActive = isPathActive('/conta/assinatura');
+  const hideMainFromAssistiveTech = mobileMenuOpen && !isDashboardDesktop;
 
   return (
     <PwaInstallProvider enabled={userEmail != null} blocked={estudoReversoWelcome.isOpen}>
@@ -615,92 +606,41 @@ function DashboardContent({
         />
       </aside>
 
-      {/* --- DRAWER MOBILE (framer-motion) --- */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <>
-            <motion.div
-              key="dashboard-drawer-overlay"
-              className={cn(
-                'fixed inset-0 bg-black/35 backdrop-blur-sm md:hidden',
-                drawerAboveOverlays
-                  ? MOBILE_DRAWER_ABOVE_OVERLAYS_OVERLAY_Z
-                  : MOBILE_DRAWER_OVERLAY_Z,
-              )}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={() => setMobileMenuOpen(false)}
-              aria-hidden="true"
-            />
-            <motion.div
-              key="dashboard-drawer-panel"
-              ref={drawerPanelRef}
-              id="dashboard-mobile-drawer"
-              role="dialog"
-              aria-modal="true"
-              aria-label="Menu de navegação"
-              className={cn(
-                'fixed left-0 top-0 flex h-full w-[18rem] shrink-0 flex-col overflow-hidden border-r border-white/10 bg-[#06090f] outline-none md:hidden',
-                drawerAboveOverlays
-                  ? MOBILE_DRAWER_ABOVE_OVERLAYS_PANEL_Z
-                  : MOBILE_DRAWER_PANEL_Z,
-              )}
-              initial={{ x: '-100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '-100%' }}
-              transition={drawerSpring}
-            >
-              <div className="flex items-center justify-end px-5 pb-2 pt-6">
-                <button
-                  ref={closeDrawerButtonRef}
-                  type="button"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                  aria-label="Fechar menu"
-                >
-                  <X size={18} />
-                </button>
-              </div>
-
-              <DashboardSidebarPanels
-                identityClassName="shrink-0 pt-0"
-                cidadeExibicao={cidadeExibicao}
-                isPro={isPro}
-                proSource={proSource}
-                proExpiresAt={proExpiresAt}
-                menuItems={menuItems}
-                createQueryString={createQueryString}
-                isAdminUser={isAdminUser}
-                onNavAction={closeMobileMenu}
-                userEmail={userEmail}
-                userDisplayName={userDisplayName}
-                userInitials={userInitials}
-                isAssinaturaActive={isAssinaturaActive}
-                onLogout={handleLogout}
-              />
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+      <MobileDashboardDrawer
+        open={mobileMenuOpen}
+        drawerAboveOverlays={drawerAboveOverlays}
+        panelRef={drawerPanelRef}
+        closeButtonRef={closeDrawerButtonRef}
+        onClose={closeMobileMenu}
+      >
+        <DashboardSidebarPanels
+          identityClassName="shrink-0 pt-0"
+          cidadeExibicao={cidadeExibicao}
+          isPro={isPro}
+          proSource={proSource}
+          proExpiresAt={proExpiresAt}
+          menuItems={menuItems}
+          createQueryString={createQueryString}
+          isAdminUser={isAdminUser}
+          onNavAction={closeMobileMenu}
+          userEmail={userEmail}
+          userDisplayName={userDisplayName}
+          userInitials={userInitials}
+          isAssinaturaActive={isAssinaturaActive}
+          onLogout={handleLogout}
+        />
+      </MobileDashboardDrawer>
 
       {/* --- ÁREA PRINCIPAL ---
           Sombra interna só em md+: cobre artefatos escuros no encaixe com a sidebar; evita linha na barra quando não há sidebar. */}
       <div className="flex h-full min-h-0 flex-1 flex-col overflow-hidden">
+        <div
+          className="flex min-h-0 flex-1 flex-col overflow-hidden"
+          aria-hidden={hideMainFromAssistiveTech ? true : undefined}
+        >
         {!isVitrineRoute ? (
         <div className="sticky top-0 z-30 shrink-0 border-b border-white/[0.08] bg-[#06090f]/90 backdrop-blur-xl md:hidden">
           <header className="flex items-center justify-between px-4 py-3 pt-safe">
-            <button
-              ref={openMenuButtonRef}
-              type="button"
-              className="sr-only"
-              aria-label="Abrir menu"
-              aria-expanded={mobileMenuOpen}
-              aria-controls={mobileMenuOpen ? 'dashboard-mobile-drawer' : undefined}
-              tabIndex={-1}
-            />
-
             <div className="flex items-center gap-2">
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-indigo-500 shadow-md shadow-indigo-500/35">
                 <Zap size={15} className="text-[#BEF264]" fill="currentColor" aria-hidden />
@@ -735,7 +675,7 @@ function DashboardContent({
         <main
           className={cn(
             'relative flex min-h-0 flex-1 flex-col overflow-x-hidden md:pb-0',
-            estudarQuestaoFillViewport
+            hideMainFromAssistiveTech || estudarQuestaoFillViewport
               ? 'overflow-hidden'
               : 'overflow-y-auto no-scrollbar',
             MOBILE_MAIN_SCROLL_PADDING,
@@ -755,11 +695,14 @@ function DashboardContent({
             {children}
           </motion.div>
         </main>
+        </div>
 
         <BottomNav
+          ref={menuButtonRef}
           currentPath={pathname ?? ''}
-          onMenuOpen={() => {
-            if (!modalQuestaoAtivo) setMobileMenuOpen(true);
+          onMenuToggle={() => {
+            if (modalQuestaoAtivo || estudoReversoWelcome.isOpen) return;
+            setMobileMenuOpen((open) => !open);
           }}
           menuOpen={mobileMenuOpen}
           questaoModalOpen={modalQuestaoAtivo}

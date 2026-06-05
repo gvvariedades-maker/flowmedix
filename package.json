@@ -12,6 +12,8 @@
     "test:e2e:chromium": "playwright test --project=chromium",
     "test:e2e:modal": "tsx scripts/run-e2e-estudar-modal.ts",
     "test:e2e:modal:staging": "tsx scripts/run-e2e-estudar-modal.ts --target=staging",
+    "test:e2e:drawer": "tsx scripts/run-e2e-mobile-drawer.ts",
+    "test:e2e:drawer:staging": "tsx scripts/run-e2e-mobile-drawer.ts --target=staging",
     "validate:env": "tsx scripts/validate-env.ts",
     "db:push": "supabase db push",
     "db:link": "supabase link",

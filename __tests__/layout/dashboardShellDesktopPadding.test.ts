@@ -46,10 +46,15 @@ describe('DashboardShell mobile scroll shell', () => {
       join(process.cwd(), 'app', '(dashboard)', 'DashboardShell.tsx'),
       'utf8',
     );
+    const drawer = readFileSync(
+      join(process.cwd(), 'components', 'layout', 'MobileDashboardDrawer.tsx'),
+      'utf8',
+    );
     expect(shell).toContain('useEstudarModalActive');
     expect(shell).toContain('drawerAboveOverlays');
-    expect(shell).toMatch(/drawerAboveOverlays[\s\S]*?MOBILE_DRAWER_ABOVE_OVERLAYS_OVERLAY_Z/);
-    expect(shell).toMatch(/!modalQuestaoAtivo[\s\S]*?setMobileMenuOpen\(true\)/);
+    expect(shell).toContain('drawerAboveOverlays={drawerAboveOverlays}');
+    expect(drawer).toMatch(/drawerAboveOverlays[\s\S]*?MOBILE_DRAWER_ABOVE_OVERLAYS_OVERLAY_Z/);
+    expect(shell).toMatch(/modalQuestaoAtivo[\s\S]*?setMobileMenuOpen\(\(open\) => !open\)/);
   });
 
   it('oculta header mobile do shell na vitrine (header único no VitrineClient)', () => {

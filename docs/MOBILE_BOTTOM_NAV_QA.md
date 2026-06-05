@@ -112,11 +112,45 @@ Responsável: _______________  Data: _______________
 - Barras **não** alteradas neste trabalho: `BottomNav` (`fixed bottom-0 z-40`), wrapper PWA `z-[60]`.
 - Páginas com `md:pb-8` na root (ex. vitrine, simulados) mantêm espaçamento desktop intencional.
 
+## Drawer mobile (Mais)
+
+Checklist manual após mudanças em `DashboardShell`, `MobileDashboardDrawer`, `BottomNav` ou `PlanStatusCard` no drawer.
+
+**Viewport:** 390×844, safe area simulada no DevTools.
+
+### Matriz manual — drawer (mobile)
+
+| ID | Cenário | Passos | Critério de aceite | OK |
+|----|---------|--------|-------------------|-----|
+| D1 | Abertura | `/estudar` → **Mais** | `#dashboard-mobile-drawer` visível; ícone X no nav | |
+| D2 | Toggle fecha | Com drawer aberto → **Mais** (X) | Drawer ausente; ícone hamburger | |
+| D3 | Overlay | Toque na área escurecida à direita do painel | Drawer fecha | |
+| D4 | Escape | `Escape` com drawer aberto | Drawer fecha | |
+| D5 | Navegação | Link «Como usar (tutorial)» | Navega para `/ajuda`; drawer fecha | |
+| D6 | Scroll lock | Com drawer aberto, tentar rolar vitrine | `main` não incrementa `scrollTop`; body sem scroll | |
+| D7 | Modal questão | Com modal aberto (`NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE=1`) → **Mais** | Drawer **não** abre | |
+| D8 | Foco | Fechar drawer (Escape ou overlay) | Foco no botão **Mais** (`Abrir menu`) | |
+
+Rotas mínimas pós-deploy: `/estudar`, `/cadernos`, `/simulados`, `/plano-diario`, `/conta/assinatura` (via link do drawer).
+
+### Automatizado (drawer)
+
+```bash
+npm test -- __tests__/layout/dashboardShellMobileDrawer.test.ts
+npm run test:e2e:drawer
+```
+
+- [`e2e/mobile-drawer.spec.ts`](../e2e/mobile-drawer.spec.ts) — matriz D1–D8 (D7 skip sem flag modal).
+- D7 compartilha staging com modal: `npm run test:e2e:modal:staging` quando flag ligada.
+
+---
+
 ## Automatizado (Jest)
 
 - `__tests__/layout/mobileBottomNav.test.ts` — tokens ativos e `getDashboardPageBottomPadding`.
 - `__tests__/layout/dashboardShellDesktopPadding.test.ts` — `MOBILE_MAIN_SCROLL_PADDING` no `<main>`; vitrine header único.
-- `__tests__/layout/useBodyScrollLock.test.ts` — refcount de overlays empilhados.
+- `__tests__/layout/dashboardShellMobileDrawer.test.ts` — toggle, scroll lock, portal, welcome, aria-hidden, focusable util.
+- `__tests__/layout/useBodyScrollLock.test.ts` — refcount de overlays empilhados (drawer + modal empilhados).
 - `__tests__/layout/useMobileSheetKeyboardInset.test.ts` — inset do teclado virtual.
 - `__tests__/lib/vitrine/paridadeNav.test.ts` — ordem de slugs vitrine ↔ player.
 - `__tests__/lib/estudar/questaoPlayerPayload.test.ts` — `anteriorSlug` / `proximaSlug` por índice na lista.
@@ -128,6 +162,7 @@ Responsável: _______________  Data: _______________
 npm test -- __tests__/layout/useBodyScrollLock.test.ts
 npm test -- __tests__/layout/mobileBottomNav.test.ts __tests__/layout/dashboardShellDesktopPadding.test.ts
 npm run test:e2e:modal
+npm run test:e2e:drawer
 npm run build
 rg "background-attachment" app/globals.css
 ```

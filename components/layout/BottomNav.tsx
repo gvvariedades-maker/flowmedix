@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { createPortal } from 'react-dom';
-import { useEffect, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import { LayoutGroup, motion } from 'framer-motion';
 import {
   BarChart2,
@@ -25,18 +25,16 @@ const NAV_ITEMS = [
 
 export type BottomNavProps = {
   currentPath: string;
-  onMenuOpen: () => void;
+  onMenuToggle: () => void;
   menuOpen: boolean;
   /** Modal de questão sobre a vitrine — isola nav do leitor de tela e da ordem de tab. */
   questaoModalOpen?: boolean;
 };
 
-export function BottomNav({
-  currentPath,
-  onMenuOpen,
-  menuOpen,
-  questaoModalOpen = false,
-}: BottomNavProps) {
+export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function BottomNav(
+  { currentPath, onMenuToggle, menuOpen, questaoModalOpen = false },
+  ref,
+) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -92,8 +90,9 @@ export function BottomNav({
         })}
 
         <button
+          ref={ref}
           type="button"
-          onClick={onMenuOpen}
+          onClick={onMenuToggle}
           tabIndex={questaoModalOpen ? -1 : undefined}
           className="flex min-h-[48px] flex-col items-center justify-center gap-0.5 px-1 py-2"
           aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
@@ -133,4 +132,4 @@ export function BottomNav({
   }
 
   return createPortal(nav, document.body);
-}
+});

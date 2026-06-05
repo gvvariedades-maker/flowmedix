@@ -48,4 +48,21 @@ describe('useBodyScrollLock refcount', () => {
     unlockBodyScroll();
     expect(document.body.style.overflow).toBe('auto');
   });
+
+  it('drawer + modal empilhados mantêm lock até o último unlock', () => {
+    document.body.style.overflow = 'scroll';
+    document.body.style.touchAction = 'pan-y';
+
+    lockBodyScroll();
+    lockBodyScroll();
+    expect(document.body.style.overflow).toBe('hidden');
+    expect(document.body.style.touchAction).toBe('none');
+
+    unlockBodyScroll();
+    expect(document.body.style.overflow).toBe('hidden');
+
+    unlockBodyScroll();
+    expect(document.body.style.overflow).toBe('scroll');
+    expect(document.body.style.touchAction).toBe('pan-y');
+  });
 });
