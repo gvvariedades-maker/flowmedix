@@ -287,7 +287,7 @@ export const LogicFlow = ({
 
   // VARIANTE PADRÃO: VERTICAL
   return (
-    <motion.div className="relative flex min-h-full w-full min-w-0 flex-col items-center justify-center p-4 md:p-6 lg:p-8">
+    <motion.div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-stretch justify-start p-4 md:p-6 lg:p-8">
       <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-60`} />
       <motion.div
         className="absolute inset-0 opacity-5"

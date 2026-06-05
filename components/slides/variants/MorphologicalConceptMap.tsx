@@ -39,13 +39,13 @@ export const MorphologicalConceptMap = ({ concepts, theme }: MorphologicalConcep
   const borderColorClass = theme.borderColor;
 
   return (
-    <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 md:p-6 relative">
+    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col p-3 md:p-4">
       {/* Background com tema */}
       <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
       
-      {/* Grid CSS Fluido - Navegador calcula automaticamente */}
+      {/* Grid CSS Fluido - preenche área disponível */}
       <div 
-        className="morph-grid-container w-full max-w-6xl relative z-10 my-auto grid grid-cols-1 gap-4 md:gap-5 sm:[grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))]"
+        className="morph-grid-container relative z-10 grid w-full flex-1 grid-cols-1 gap-4 md:gap-5 sm:[grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))]"
       >
         {/* Conceito Central (Pai) - Ocupa mais espaço, glow mais intenso */}
         {centralConcept && (

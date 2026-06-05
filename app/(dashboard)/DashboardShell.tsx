@@ -749,7 +749,7 @@ function DashboardContent({
             animate="animate"
             className={cn(
               'flex min-h-0 flex-1 flex-col',
-              estudarQuestaoFillViewport && 'min-h-full',
+              estudarQuestaoFillViewport && 'h-full min-h-full',
             )}
           >
             {children}

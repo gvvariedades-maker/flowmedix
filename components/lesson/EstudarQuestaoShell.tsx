@@ -39,14 +39,16 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
     <DashboardMobilePage
       variant="default"
       className={cn(
-        'relative flex min-h-0 w-full flex-1 flex-col bg-[#010409] px-3 py-3 font-sans sm:px-4 md:px-6 md:py-6 md:pb-6',
-        fillViewport && 'min-h-full',
+        'relative flex min-h-0 w-full flex-1 flex-col bg-[#010409] font-sans',
+        fillViewport
+          ? 'h-full px-0 py-0'
+          : 'px-3 py-3 sm:px-4 md:px-6 md:py-6 md:pb-6',
       )}
     >
       <div
         className={cn(
-          'mx-auto flex min-h-0 w-full max-w-6xl flex-1 flex-col',
-          fillViewport && 'min-h-full',
+          'flex min-h-0 w-full flex-1 flex-col',
+          fillViewport ? 'mx-0 h-full max-w-none' : 'mx-auto max-w-6xl',
         )}
       >
         {showPlayer && displayPayload ? (

@@ -93,13 +93,13 @@ export const DangerZone = ({
   // VARIANTE COMPARE — duas colunas: pegadinha × correto
   if (variant === 'compare') {
     return (
-      <div className="relative flex min-h-full w-full min-w-0 flex-col items-center justify-start p-4 pb-6 md:p-6 md:pb-8 lg:p-7 lg:pb-10">
+      <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-stretch justify-start p-4 pb-6 md:p-6 md:pb-8 lg:p-7 lg:pb-10">
         <motion.div
           className="absolute inset-0 bg-gradient-to-br from-red-950/90 via-slate-900/90 to-emerald-950/40"
           aria-hidden
         />
         <div
-          className="relative z-10 mt-2 mb-6 w-full max-w-5xl rounded-2xl border border-red-500/30 p-4 backdrop-blur-xl md:mt-4 md:mb-10 md:rounded-3xl md:p-6 lg:p-8"
+          className="relative z-10 mt-2 mb-6 w-full rounded-2xl border border-red-500/30 p-4 backdrop-blur-xl md:mt-4 md:mb-10 md:rounded-3xl md:p-6 lg:p-8"
           style={{ boxShadow: '0 0 60px -15px rgba(239,68,68,0.35)' }}
         >
           {content ? (
@@ -187,10 +187,10 @@ export const DangerZone = ({
   // VARIANTE 1: LIST (padrão) - Lista com borda vermelha
   if (variant === 'list') {
     return (
-      <motion.div layout className="relative flex min-h-full w-full min-w-0 flex-col items-center justify-start p-4 pb-8 md:p-6 md:pb-10 lg:p-8 lg:pb-12">
+      <motion.div layout className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-stretch justify-start p-4 pb-8 md:p-6 md:pb-10 lg:p-8 lg:pb-12">
         <div className="absolute inset-0 bg-gradient-to-br from-red-950/90 via-slate-900/90 to-red-950/90" />
         <div
-          className="danger-zone-container relative z-10 mt-2 mb-4 w-full max-w-4xl rounded-2xl border-l-4 border-red-500 p-5 backdrop-blur-xl md:mt-4 md:mb-6 md:rounded-3xl md:border-l-8 md:p-7 lg:p-9"
+          className="danger-zone-container relative z-10 mt-2 mb-4 w-full rounded-2xl border-l-4 border-red-500 p-5 backdrop-blur-xl md:mt-4 md:mb-6 md:rounded-3xl md:border-l-8 md:p-7 lg:p-9"
           style={{ boxShadow: '0 0 60px -15px rgba(239,68,68,0.5)', minHeight: '200px' }}
         >
           <div className="danger-zone-alert-icon absolute top-4 right-4 opacity-20">

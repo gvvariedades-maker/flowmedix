@@ -5,7 +5,7 @@
 export default function EstudarQuestaoSkeleton() {
   return (
     <div
-      className="flex min-h-0 w-full flex-1 flex-col overflow-hidden border border-[rgba(255,255,255,0.10)] bg-[#0d1117] font-sans shadow-2xl max-md:min-h-[min(72vh,640px)] md:rounded-[40px]"
+      className="flex min-h-0 w-full flex-1 flex-col overflow-hidden border border-[rgba(255,255,255,0.10)] bg-[#0d1117] font-sans shadow-none max-md:min-h-[min(72vh,640px)]"
       role="status"
       aria-busy="true"
       aria-label="Carregando questão"
@@ -57,7 +57,7 @@ export default function EstudarQuestaoSkeleton() {
         </div>
       </div>
 
-      <div className="shrink-0 border-t border-[rgba(255,255,255,0.10)] pb-safe md:rounded-b-[40px]">
+      <div className="shrink-0 border-t border-[rgba(255,255,255,0.10)] pb-safe">
         <div className="flex h-12 items-center justify-center gap-2 px-4">
           {Array.from({ length: 5 }, (_, i) => (
             <div

@@ -187,7 +187,6 @@ export default function AvantLessonPlayer({
     keyboardInsetPx > 0
       ? `calc(${keyboardInsetPx}px + env(safe-area-inset-bottom, 0px))`
       : undefined;
-  const gabaritoToastBottomPx = bottomNavHeightPx + keyboardInsetPx;
 
   /**
    * Garante que a roda do mouse sempre role o container correto (question body).
@@ -1364,7 +1363,14 @@ export default function AvantLessonPlayer({
 
   return (
     <>
-    <div className="w-full h-full flex-1 min-h-0 flex flex-col relative bg-[#0d1117] md:rounded-[40px] shadow-2xl overflow-hidden border border-[rgba(255,255,255,0.10)] font-sans">
+    <div
+      className={cn(
+        'relative flex h-full min-h-0 w-full flex-1 flex-col overflow-hidden bg-[#0d1117] font-sans',
+        mode === 'live'
+          ? 'border-0 shadow-none'
+          : 'border border-[rgba(255,255,255,0.10)] shadow-2xl md:rounded-[40px]',
+      )}
+    >
       
       {/* BARRA DE PROGRESSO */}
       <div className="h-2 w-full bg-white/10 flex shrink-0">
@@ -1404,9 +1410,78 @@ export default function AvantLessonPlayer({
         <div
           ref={bottomNavRef}
           aria-busy={navegacaoIndisponivel || undefined}
-          className="bg-[#0d1117] border-t border-[rgba(255,255,255,0.10)] shrink-0 z-10 shadow-[0_-4px_24px_-8px_rgba(15,23,42,0.08)] pb-safe md:rounded-b-[40px]"
+          className="z-10 shrink-0 border-t border-[rgba(255,255,255,0.10)] bg-[#0d1117] shadow-[0_-4px_24px_-8px_rgba(15,23,42,0.08)] pb-safe"
           style={bottomNavPaddingBottom ? { paddingBottom: bottomNavPaddingBottom } : undefined}
         >
+          <AnimatePresence>
+            {etapa === 'gabarito' && gabarito !== null && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                className="overflow-hidden border-b border-white/10"
+              >
+                <div className="p-4 sm:p-6 md:p-8">
+                  <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 sm:gap-6 md:flex-row">
+                    <div
+                      className="flex items-center gap-4"
+                      role="status"
+                      aria-live="polite"
+                      aria-atomic="true"
+                    >
+                      <div
+                        className={`flex h-14 w-14 items-center justify-center rounded-2xl shadow-inner ${
+                          respostaAcertou
+                            ? 'bg-[rgba(0,255,136,0.12)] text-[#00ff88]'
+                            : 'bg-[rgba(255,0,85,0.12)] text-[#ff0055]'
+                        }`}
+                        aria-hidden
+                      >
+                        {respostaAcertou ? (
+                          <CheckCircle2 size={32} />
+                        ) : (
+                          <XCircle size={32} />
+                        )}
+                      </div>
+                      <div>
+                        <p className="mb-0.5 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                          Diagnóstico
+                        </p>
+                        <p
+                          className={`text-xl font-black italic uppercase tracking-tighter ${
+                            respostaAcertou ? 'text-[#00ff88]' : 'text-[#ff0055]'
+                          }`}
+                        >
+                          {respostaAcertou ? 'Resposta Correta' : 'Resposta Incorreta'}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="w-full md:w-auto md:max-w-sm">
+                      <MicroTip
+                        storageKey="reverse-study.feedback-learning"
+                        tip={REVERSE_STUDY_MICROTIPS['feedback-learning']}
+                        enabled={etapa === 'gabarito'}
+                        className="mb-3"
+                      />
+                      <button
+                        ref={ativarEstudoRef}
+                        type="button"
+                        onClick={() => {
+                          setEtapa('estudo');
+                          setSlideAtual(0);
+                        }}
+                        className="flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 py-3.5 text-[10px] font-bold uppercase tracking-wide shadow-lg shadow-indigo-500/30 transition-all hover:bg-indigo-700 sm:gap-3 sm:px-8 sm:py-4 sm:text-[11px] sm:tracking-widest sm:hover:-translate-y-1"
+                      >
+                        <BrainCircuit size={18} className="shrink-0" />
+                        <span className="text-center leading-tight">Ativar Estudo Reverso</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
           {/* Dots janelados: N antes/depois + ellipsis; altura fixa (sem scroll horizontal). */}
           {dotsNavItems.length > 0 && (
             <div className="w-full min-w-0 px-3 sm:px-4 pt-1">
@@ -1571,79 +1646,6 @@ export default function AvantLessonPlayer({
         </div>
       )}
 
-      {/* TOAST GABARITO */}
-      <AnimatePresence>
-        {etapa === 'gabarito' && gabarito !== null && (
-          <motion.div 
-            initial={{ y: "100%" }} 
-            animate={{ y: 0 }} 
-            exit={{ y: "100%" }}
-            className="absolute left-0 right-0 z-20"
-            style={{ bottom: gabaritoToastBottomPx }}
-          >
-            <div className="bg-[#0d1117] border-t border-white/10 p-4 pb-safe sm:p-6 md:p-8 shadow-[0_-10px_40px_rgba(0,0,0,0.4)]">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 max-w-4xl mx-auto">
-                <div
-                  className="flex items-center gap-4"
-                  role="status"
-                  aria-live="polite"
-                  aria-atomic="true"
-                >
-                  <div
-                    className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-inner ${
-                    respostaAcertou 
-                      ? 'bg-[rgba(0,255,136,0.12)] text-[#00ff88]' 
-                      : 'bg-[rgba(255,0,85,0.12)] text-[#ff0055]'
-                  }`}
-                    aria-hidden
-                  >
-                    {respostaAcertou ? (
-                      <CheckCircle2 size={32} />
-                    ) : (
-                      <XCircle size={32} />
-                    )}
-                  </div>
-                  <div>
-                    <p className="text-[10px] text-slate-400 font-black uppercase tracking-widest mb-0.5">
-                      Diagnóstico
-                    </p>
-                    <p className={`text-xl font-black italic tracking-tighter uppercase ${
-                      respostaAcertou 
-                        ? 'text-[#00ff88]' 
-                        : 'text-[#ff0055]'
-                    }`}>
-                      {respostaAcertou 
-                        ? 'Resposta Correta' 
-                        : 'Resposta Incorreta'}
-                    </p>
-                  </div>
-                </div>
-                <div className="w-full md:w-auto md:max-w-sm">
-                  <MicroTip
-                    storageKey="reverse-study.feedback-learning"
-                    tip={REVERSE_STUDY_MICROTIPS['feedback-learning']}
-                    enabled={etapa === 'gabarito'}
-                    className="mb-3"
-                  />
-                  <button 
-                    ref={ativarEstudoRef}
-                    type="button"
-                    onClick={() => { 
-                      setEtapa('estudo'); 
-                      setSlideAtual(0); 
-                    }}
-                    className="w-full min-h-[48px] bg-indigo-600 hover:bg-indigo-700 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold uppercase text-[10px] sm:text-[11px] tracking-wide sm:tracking-widest shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2 sm:gap-3 transition-all sm:hover:-translate-y-1"
-                  >
-                    <BrainCircuit size={18} className="shrink-0" /> 
-                    <span className="text-center leading-tight">Ativar Estudo Reverso</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       {/* Estudo Reverso — fullscreen (portal) no app; embutido no card na demo da LP */}
       <EstudoReversoHost preview={isPreviewMode}>
       <AnimatePresence>
@@ -1670,7 +1672,7 @@ export default function AvantLessonPlayer({
             <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-x-auto overflow-y-hidden">
               
               {/* Header Minimalista (Top Bar) — zoom mobile ao lado da numeração, fixo fora da rolagem do slide */}
-              <div className="shrink-0 px-4 sm:px-6 md:px-12 pt-3 sm:pt-6 pb-2 flex justify-between items-center gap-2 min-w-0">
+              <div className="shrink-0 px-4 pb-2 pt-3 sm:px-6 md:px-8 sm:pt-6 flex justify-between items-center gap-2 min-w-0">
                 <div className="flex items-center gap-3 min-w-0">
                   <div className="bg-[#BEF264] text-slate-900 p-2 rounded-lg shrink-0">
                     <Lightbulb size={20} fill="black" />
@@ -1712,7 +1714,7 @@ export default function AvantLessonPlayer({
 
               {showSlidesFallbackBanner ? (
                 <div
-                  className="mx-auto w-full max-w-5xl shrink-0 px-4 pb-2 sm:px-6 md:px-12"
+                  className="mx-auto w-full shrink-0 px-4 pb-2 sm:px-6 md:px-8"
                   role="status"
                 >
                   <p className="rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-2.5 text-center text-[11px] font-semibold text-amber-200 sm:text-xs">
@@ -1763,7 +1765,7 @@ export default function AvantLessonPlayer({
                   </div>
                 ) : (
                 <>
-                <div className="mx-auto w-full max-w-5xl shrink-0 px-4 pb-2 sm:px-6 md:px-12">
+                <div className="mx-auto w-full shrink-0 px-4 pb-2 sm:px-6 md:px-8">
                   <MicroTip
                     storageKey="reverse-study.intro"
                     tip={REVERSE_STUDY_MICROTIPS['reverse-study-intro']}
@@ -1788,7 +1790,7 @@ export default function AvantLessonPlayer({
                       animate={slideMotion.animate}
                       exit={slideMotion.exit}
                       transition={slideMotion.transition}
-                      className="flex w-full min-w-0 flex-col items-center"
+                      className="flex h-full min-h-0 w-full min-w-0 flex-1 flex-col items-stretch"
                     >
                       <NeuroSlide
                         data={currentSlide}
@@ -1809,8 +1811,8 @@ export default function AvantLessonPlayer({
               </div>
 
               {/* Footer de Navegação (Bottom Bar) */}
-              <div className="shrink-0 bg-black/40 backdrop-blur-xl border-t border-white/5 px-4 sm:px-6 md:px-12 py-4 sm:py-6 pb-safe">
-                <div className="flex flex-wrap justify-center sm:justify-between items-center gap-3 sm:gap-4 max-w-6xl mx-auto">
+              <div className="shrink-0 border-t border-white/5 bg-black/40 px-4 py-4 backdrop-blur-xl sm:px-6 md:px-8 sm:py-6 pb-safe">
+                <div className="mx-auto flex w-full max-w-none flex-wrap items-center justify-center gap-3 sm:justify-between sm:gap-4">
                   
                   {/* Botão Anterior */}
                   <button 
