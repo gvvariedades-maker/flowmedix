@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { NeonBadge } from '@/components/ui/neon-badge';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
+import { DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 import type { NotebookSummary } from './page';
 
@@ -104,7 +105,7 @@ export default function CadernosListClient({ cadernos: inicial }: { cadernos: No
   const [pendingDelete, setPendingDelete] = useState<NotebookSummary | null>(null);
 
   return (
-    <div className={cn('min-h-screen bg-[#010409]', pageBottomPadding)}>
+    <div className={cn(DASHBOARD_PAGE_ROOT, 'bg-[#010409]', pageBottomPadding)}>
       <div className="sticky top-0 z-20 border-b border-[rgba(255,255,255,0.08)] bg-[#010409]/95 shadow-[0_8px_32px_-16px_rgba(0,0,0,0.5)] backdrop-blur-md supports-[backdrop-filter]:bg-[#010409]/90">
         <CadernosHeader />
       </div>

@@ -26,7 +26,7 @@ async function waitVitrineListReady(page: Page) {
 }
 
 function bottomNav(page: Page) {
-  return page.locator('nav.fixed.bottom-0[aria-label="Navegação rápida"]');
+  return page.locator('nav[aria-label="Navegação rápida"]');
 }
 
 function inlinePagination(page: Page) {

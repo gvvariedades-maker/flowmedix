@@ -1,9 +1,10 @@
 /**
- * Layout mobile do dashboard: BottomNav no flex shell + faixas opcionais.
- * O `<main>` do DashboardShell é a única área de scroll; o BottomNav fica fora (shrink-0).
+ * Layout mobile do dashboard: shell flex 100dvh com três faixas.
+ * - Header mobile: shrink-0
+ * - `<main>`: flex-1 overflow-y-auto (única área de scroll)
+ * - BottomNav: shrink-0 no flex (não fixed)
  *
- * Tokens deste arquivo: padding de conteúdo, scroll-margin, z-index e offsets
- * para elementos fixed acima do slot do BottomNav (ex.: banner PWA).
+ * Tokens: scroll-margin, z-index e offsets para overlays fixed acima do nav (PWA, drawer, toasts).
  *
  * IMPORTANTE: manter classes literais (Tailwind JIT não vê template strings).
  */
@@ -17,10 +18,13 @@ export const BOTTOM_NAV_HEIGHT_PX = 80;
 export const BOTTOM_NAV_HEIGHT_CSS = '5rem';
 
 /**
- * Padding inferior do `<main>` rolável no dashboard mobile (BottomNav + safe area).
- * Classe literal para Tailwind JIT — usar no DashboardShell.
+ * @deprecated Nav ocupa slot no flex shell — não aplicar padding de nav no `<main>`.
+ * Mantido para utilitário CSS `pb-nav-safe` e testes de regressão.
  */
 export const MOBILE_MAIN_SCROLL_PADDING = 'pb-nav-safe';
+
+/** BottomNav inline no flex shell do DashboardShell (shrink-0, não fixed). */
+export const MOBILE_BOTTOM_NAV_SHELL = 'shrink-0 w-full md:hidden';
 
 /** Offset `bottom` para elementos `fixed` acima do slot do BottomNav + safe area. */
 export const MOBILE_BOTTOM_NAV_FIXED_BOTTOM =
@@ -30,12 +34,14 @@ export const MOBILE_BOTTOM_NAV_FIXED_BOTTOM =
 export const MOBILE_TOAST_FIXED_BOTTOM =
   'max-md:bottom-[calc(1.5rem+5rem+env(safe-area-inset-bottom,0px))]';
 
-/** z-index do BottomNav fixo no flex shell. */
+/** z-index do BottomNav no flex shell. */
 export const MOBILE_BOTTOM_NAV_Z = 'z-40';
 
-/** BottomNav no viewport (portal no body) — fora de transforms do shell. */
-export const MOBILE_BOTTOM_NAV_FIXED =
-  'fixed bottom-0 left-0 right-0 md:hidden';
+/** Raiz de página dentro do `<main>` rolável — preenche coluna sem forçar 100vh. */
+export const DASHBOARD_PAGE_ROOT = 'min-h-0 flex-1';
+
+/** Estados vazios/erro centralizados na área visível do main (não 100vh). */
+export const DASHBOARD_PAGE_CENTER = 'flex min-h-full items-center justify-center';
 
 /** z-index legado para faixas fixed acima do nav (simulado mobile action bar). */
 export const MOBILE_ACTION_BAR_Z = 'z-50';
@@ -66,7 +72,7 @@ export const MOBILE_DRAWER_ABOVE_OVERLAYS_PANEL_Z = 'z-[120]';
 
 /**
  * Padding no conteúdo quando o banner PWA flutua sobre a parte inferior do main
- * (acima do BottomNav no flex shell). Soma só o banner — nav já está no `MOBILE_MAIN_SCROLL_PADDING`.
+ * (acima do BottomNav no flex shell). Soma só o banner — nav já ocupa slot shrink-0.
  */
 export const MOBILE_PAGE_PWA_BANNER_PADDING =
   'pb-[calc(6rem+0.5rem+env(safe-area-inset-bottom,0px))]';

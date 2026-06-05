@@ -21,7 +21,7 @@ async function gotoEstudar(page: Page) {
 }
 
 function bottomNav(page: Page) {
-  return page.locator('nav.fixed.bottom-0[aria-label="Navegação rápida"]');
+  return page.locator('nav[aria-label="Navegação rápida"]');
 }
 
 function maisButton(page: Page) {
@@ -86,7 +86,7 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
 
   test('D6 — main não rola com drawer aberto', async ({ page }) => {
     await gotoEstudar(page);
-    const shellMain = page.locator('main.pb-nav-safe');
+    const shellMain = page.locator('main.overflow-y-auto');
     await maisButton(page).click();
     await expect(page.locator('#dashboard-mobile-drawer')).toBeVisible({ timeout: 10_000 });
 

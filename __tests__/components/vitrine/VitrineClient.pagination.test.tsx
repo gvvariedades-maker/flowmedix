@@ -28,8 +28,9 @@ describe('VitrineClient paginação', () => {
     expect(paginationConditionals).toHaveLength(1);
   });
 
-  it('não duplica pb-nav-safe (reservado no main do shell)', () => {
+  it('não duplica padding de nav (BottomNav no flex shell)', () => {
     expect(source).not.toContain('pb-nav-safe');
     expect(source).not.toContain('MOBILE_MAIN_SCROLL_PADDING');
+    expect(source).not.toMatch(/calc\(5rem/);
   });
 });

@@ -14,7 +14,9 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
+import { DASHBOARD_PAGE_CENTER, DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
 import { phraseQuestoesAgendadas } from '@/lib/labelQuestoes';
+import { cn } from '@/lib/utils';
 import { PlanoDiarioTopicCard } from './PlanoDiarioTopicCard';
 import type { PlanoDiarioProps } from './types';
 
@@ -22,7 +24,7 @@ function PlanoDiarioEmpty() {
   return (
     <DashboardMobilePage
       variant="default"
-      className="flex min-h-screen items-center justify-center bg-[#010409] px-4 pt-6"
+      className={cn('bg-[#010409] px-4 pt-6', DASHBOARD_PAGE_CENTER)}
     >
       <motion.div
         initial={{ scale: 0.94, opacity: 0 }}
@@ -125,7 +127,7 @@ function PlanoDiarioConteúdo({
   limite: number;
 }) {
   return (
-    <DashboardMobilePage variant="default" className="min-h-screen bg-[#010409]">
+    <DashboardMobilePage variant="default" className={cn(DASHBOARD_PAGE_ROOT, 'bg-[#010409]')}>
       <header className="border-b border-[rgba(255,255,255,0.08)] bg-[#010409] shadow-sm shadow-black/30">
         <div className="mx-auto max-w-3xl px-4 py-8 md:px-10">
           <div className="flex flex-col items-center text-center sm:block sm:text-left">

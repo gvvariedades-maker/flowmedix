@@ -53,12 +53,12 @@ describe('BottomNav', () => {
     expect(shell).toContain('welcomeOpen={estudoReversoWelcome.isOpen}');
   });
 
-  it('sincroniza altura via useBottomNavHeightSync desde o placeholder pré-mount', () => {
+  it('sincroniza altura via useBottomNavHeightSync no nav inline do flex shell', () => {
     const source = readFileSync(bottomNavPath, 'utf8');
     const hook = readFileSync(heightSyncPath, 'utf8');
-    expect(source).toContain('useBottomNavHeightSync(navRef, true, mounted)');
-    expect(source).toMatch(/if \(!mounted\)[\s\S]*ref=\{navRef\}/);
+    expect(source).toContain('useBottomNavHeightSync(navRef');
     expect(source).toMatch(/ref=\{navRef\}/);
+    expect(source).not.toContain('createPortal');
     expect(hook).toContain('--bottom-nav-height');
     expect(hook).toContain('ResizeObserver');
     expect(hook).toContain('useLayoutEffect');

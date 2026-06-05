@@ -5,6 +5,7 @@ import {
   MOBILE_ACTION_BAR_Z,
   MOBILE_BOTTOM_NAV_Z,
   MOBILE_BOTTOM_NAV_HEIGHT,
+  MOBILE_BOTTOM_NAV_SHELL,
   MOBILE_MAIN_SCROLL_PADDING,
   MOBILE_TOAST_FIXED_BOTTOM,
   MOBILE_DRAWER_OVERLAY_Z,
@@ -19,8 +20,10 @@ import {
 } from '@/lib/layout/mobileBottomNav';
 
 describe('mobileBottomNav tokens', () => {
-  it('BottomNav no flex shell reserva 5rem no main rolável', () => {
+  it('BottomNav no flex shell usa shrink-0 (nav fora do scroll do main)', () => {
     expect(MOBILE_BOTTOM_NAV_HEIGHT).toBe('5rem');
+    expect(MOBILE_BOTTOM_NAV_SHELL).toContain('shrink-0');
+    expect(MOBILE_BOTTOM_NAV_SHELL).toContain('md:hidden');
     expect(MOBILE_MAIN_SCROLL_PADDING).toBe('pb-nav-safe');
   });
 

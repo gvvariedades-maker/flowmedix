@@ -36,7 +36,6 @@ import { useEstudarModalActive } from '@/components/estudar/useEstudarModalActiv
 import { parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
 import { BottomNav } from '@/components/layout/BottomNav';
 import { MobileDashboardDrawer } from '@/components/layout/MobileDashboardDrawer';
-import { MOBILE_MAIN_SCROLL_PADDING } from '@/lib/layout/mobileBottomNav';
 import { PlanStatusCard } from '@/components/plan/PlanStatusCard';
 import { getFocusableIn } from '@/lib/a11y/focusable';
 import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
@@ -671,11 +670,10 @@ function DashboardContent({
 
         <main
           className={cn(
-            'relative flex min-h-0 flex-1 flex-col overflow-x-hidden md:pb-0',
+            'relative flex min-h-0 flex-1 flex-col overflow-x-hidden',
             hideMainFromAssistiveTech || estudarQuestaoFillViewport
               ? 'overflow-hidden'
               : 'overflow-y-auto no-scrollbar',
-            MOBILE_MAIN_SCROLL_PADDING,
           )}
         >
           {showBackToVitrine ? <BackToVitrineBar /> : null}

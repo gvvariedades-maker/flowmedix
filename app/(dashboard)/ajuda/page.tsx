@@ -195,7 +195,7 @@ const QUICK_START = [
 export default function AjudaPage() {
   const firstSeq = hasTutorialImage('seq-01.png');
   return (
-    <div className="mx-auto w-full max-w-4xl px-4 py-8 pb-20 md:px-6">
+    <div className="mx-auto w-full max-w-4xl px-4 py-8 pb-6 md:px-6">
       <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-slate-400">
         <Sparkles className="h-3.5 w-3.5 text-[#00f2ff]" aria-hidden />
         Guia do aluno — início rápido

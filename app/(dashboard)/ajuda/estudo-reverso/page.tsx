@@ -47,7 +47,7 @@ export const metadata = {
 
 export default function EstudoReversoPage() {
   return (
-    <div className="mx-auto w-full max-w-4xl px-4 py-8 pb-20 md:px-6">
+    <div className="mx-auto w-full max-w-4xl px-4 py-8 pb-6 md:px-6">
       <HeroEstudoReverso {...HERO} />
 
       <section

@@ -87,7 +87,7 @@ test.describe('Estudar — modal intercept (mobile)', () => {
     await gotoVitrineFiltrada(page);
     await abrirPrimeiraQuestaoDaVitrine(page);
 
-    const bottomNav = page.locator('nav.fixed.bottom-0[aria-label="Navegação rápida"]');
+    const bottomNav = page.locator('nav[aria-label="Navegação rápida"]');
     await expect(bottomNav).toHaveAttribute('aria-hidden', 'true', { timeout: 15_000 });
   });
 
@@ -109,7 +109,7 @@ test.describe('Estudar — modal intercept (mobile)', () => {
     });
     await waitVitrineListReady(page);
 
-    const bottomNav = page.locator('nav.fixed.bottom-0[aria-label="Navegação rápida"]');
+    const bottomNav = page.locator('nav[aria-label="Navegação rápida"]');
     await expect(bottomNav).not.toHaveAttribute('aria-hidden', 'true');
 
     const iniciar = page

@@ -133,7 +133,7 @@ export default async function VitrinePage({
 /** Evita mismatch de hidratação com `useSearchParams` (Next exige Suspense no segmento). */
 function VitrineLoadingFallback() {
   return (
-    <div className="dashboard-surface min-h-screen bg-background px-6 py-8 text-foreground">
+    <div className="dashboard-surface min-h-0 flex-1 bg-background px-6 py-8 text-foreground">
       <div className="mx-auto max-w-7xl space-y-8 animate-pulse">
         <div className="h-24 rounded-xl bg-muted/70" />
         <div className="h-11 max-w-xl rounded-2xl bg-muted/70" />

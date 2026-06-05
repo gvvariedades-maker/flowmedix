@@ -1,8 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { createPortal } from 'react-dom';
-import { forwardRef, useEffect, useRef, useState } from 'react';
+import { forwardRef, useRef } from 'react';
 import { LayoutGroup, motion } from 'framer-motion';
 import {
   BarChart2,
@@ -15,7 +14,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { isBottomNavItemActive, isBottomNavMaisActive } from '@/lib/layout/bottomNavActive';
-import { MOBILE_BOTTOM_NAV_FIXED, MOBILE_BOTTOM_NAV_Z } from '@/lib/layout/mobileBottomNav';
+import { MOBILE_BOTTOM_NAV_SHELL, MOBILE_BOTTOM_NAV_Z } from '@/lib/layout/mobileBottomNav';
 import { useBottomNavHeightSync } from '@/lib/layout/useBottomNavHeightSync';
 import { useDashboardDesktop } from '@/lib/layout/useDashboardDesktop';
 
@@ -49,12 +48,10 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
   },
   ref,
 ) {
-  const [mounted, setMounted] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const isDesktop = useDashboardDesktop();
 
-  useEffect(() => setMounted(true), []);
-  useBottomNavHeightSync(navRef, true, mounted);
+  useBottomNavHeightSync(navRef, !isDesktop);
 
   const mobileOverlayBlocksNav =
     !isDesktop && (drawerOpen || welcomeOpen || questaoModalOpen);
@@ -66,13 +63,13 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
   const maisTabIndex = maisInteractive ? 0 : mobileOverlayBlocksNav || questaoModalOpen ? -1 : undefined;
   const maisActive = !menuOpen && isBottomNavMaisActive(currentPath);
 
-  const nav = (
+  return (
     <LayoutGroup id="bottom-nav">
       <nav
         ref={navRef}
         className={cn(
-          MOBILE_BOTTOM_NAV_FIXED,
-          'grid grid-cols-5 border-t border-white/[0.08] bg-[#06090f]/95 pb-safe backdrop-blur-xl',
+          MOBILE_BOTTOM_NAV_SHELL,
+          'grid min-h-[5rem] grid-cols-5 border-t border-white/[0.08] bg-[#06090f]/95 pb-safe backdrop-blur-xl',
           MOBILE_BOTTOM_NAV_Z,
           mobileOverlayBlocksNav && 'pointer-events-none',
         )}
@@ -167,21 +164,4 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
       </nav>
     </LayoutGroup>
   );
-
-  if (!mounted) {
-    return (
-      <nav
-        ref={navRef}
-        className={cn(
-          MOBILE_BOTTOM_NAV_FIXED,
-          MOBILE_BOTTOM_NAV_Z,
-          'grid min-h-[5rem] grid-cols-5',
-          'border-t border-white/[0.08] bg-[#06090f]/95 pb-safe backdrop-blur-xl pointer-events-none md:hidden',
-        )}
-        aria-hidden="true"
-      />
-    );
-  }
-
-  return createPortal(nav, document.body);
 });

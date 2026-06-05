@@ -32,7 +32,7 @@ export const VitrinePaginationBar = forwardRef<HTMLElement, VitrinePaginationBar
     return (
       <nav
         ref={ref}
-        className="mt-6 flex flex-col gap-3 border-t border-white/10 pt-4 pb-12 sm:flex-row sm:items-center sm:justify-between sm:pb-0"
+        className="mt-6 flex flex-col gap-3 border-t border-white/10 pt-4 pb-4 sm:flex-row sm:items-center sm:justify-between sm:pb-0"
         aria-label="Paginação da vitrine"
         aria-busy={listBusy || undefined}
       >

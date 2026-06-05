@@ -5,6 +5,8 @@ import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/ser
 import { ProgressoEstudoDashboard } from '@/components/dashboard/progresso/ProgressoEstudoDashboard';
 import type { AssuntoTop, DesempenhoData, DiaEstudo } from '@/components/dashboard/progresso/ProgressoEstudoDashboard';
 import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
+import { DASHBOARD_PAGE_CENTER } from '@/lib/layout/mobileBottomNav';
+import { cn } from '@/lib/utils';
 
 export type { AssuntoTop, DesempenhoData, DiaEstudo } from '@/components/dashboard/progresso/ProgressoEstudoDashboard';
 
@@ -136,7 +138,7 @@ export default async function ProgressoPage() {
     return (
       <DashboardMobilePage
         variant="default"
-        className="dashboard-surface flex min-h-screen items-center justify-center bg-background p-6 text-foreground"
+        className={cn('dashboard-surface bg-background p-6 text-foreground', DASHBOARD_PAGE_CENTER)}
       >
         <div className="max-w-md space-y-4 text-center">
           <p className="text-sm text-muted-foreground">
