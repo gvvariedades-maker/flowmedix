@@ -1,0 +1,152 @@
+{
+  "captured_at": "2026-06-05T01:48:38.583Z",
+  "git_commit": "6344ca4",
+  "environment": "staging",
+  "perf_target": "staging",
+  "base_url": "https://www.avant.enf.br",
+  "base_url_source": "PERF_BASE_URL",
+  "env_files": [
+    ".env.local",
+    ".env.staging.local"
+  ],
+  "vercel_protection_bypass": false,
+  "server_reachable": true,
+  "user": {
+    "id": "95c2b942-a165-4c56-8529-b48923ec0cb3",
+    "email_domain": "gmail.com",
+    "is_admin": false,
+    "source": "matricula"
+  },
+  "scale_health": {
+    "metrics": {
+      "generated_at": "2026-06-05T01:46:51Z",
+      "modulos_estudo_count": 5178,
+      "historico_questoes_count": 411,
+      "json_bytes": {
+        "avg": 2041,
+        "max": 3410,
+        "p95": 2500,
+        "total": 10569216
+      },
+      "questions_over_100kb": 0,
+      "assuntos_over_200_count": 6,
+      "users_historico_over_5000": 0,
+      "reverse_slides": {
+        "avg": 4,
+        "not_four_slides": 0
+      }
+    },
+    "alerts": [
+      {
+        "level": "warn",
+        "code": "ASSUNTOS_OVER_NAV_LIMIT",
+        "message": "6 assunto(s) com mais de 200 questões — navegação no player corta em 200.",
+        "value": 6,
+        "limit": 200
+      }
+    ],
+    "rpcAvailable": true,
+    "probe": {
+      "url": "https://www.avant.enf.br/estudar/idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-1",
+      "status": 200,
+      "durationMs": 1408
+    }
+  },
+  "server_side": {
+    "vitrine_page_1": {
+      "samples": 20,
+      "minMs": 778,
+      "maxMs": 1202,
+      "p50Ms": 831,
+      "p95Ms": 895
+    },
+    "vitrine_strategy": {
+      "rpc": {
+        "count": 20,
+        "sharePercent": 100,
+        "avgDurationMs": 852.1,
+        "p50DurationMs": 832,
+        "p95DurationMs": 1202
+      },
+      "js": {
+        "count": 0,
+        "sharePercent": 0,
+        "avgDurationMs": 0,
+        "p50DurationMs": 0,
+        "p95DurationMs": 0
+      },
+      "totalRequests": 20
+    },
+    "estudar_questao_build": {
+      "samples": 12,
+      "minMs": 2822,
+      "maxMs": 3973,
+      "p50Ms": 2842,
+      "p95Ms": 3973
+    },
+    "estudar_questao_payload_gzip_bytes": {
+      "median": 0,
+      "samples": 0,
+      "values": []
+    }
+  },
+  "http_authenticated": {
+    "vitrine_api_page_1": {
+      "samples": 20,
+      "minMs": 300,
+      "maxMs": 1582,
+      "p50Ms": 315,
+      "p95Ms": 492
+    },
+    "estudar_questao_api": {
+      "samples": 20,
+      "minMs": 1446,
+      "maxMs": 3456,
+      "p50Ms": 1488,
+      "p95Ms": 1705
+    },
+    "estudar_questao_api_core": {
+      "samples": 20,
+      "minMs": 1447,
+      "maxMs": 2144,
+      "p50Ms": 1493,
+      "p95Ms": 1869
+    },
+    "estudar_questao_payload_gzip_bytes": {
+      "median": 2306,
+      "samples": 20
+    },
+    "estudar_questao_core_payload_gzip_bytes": {
+      "median": 1542,
+      "samples": 20
+    }
+  },
+  "browser_navigation_telemetry": {
+    "skipped": true,
+    "reason": "Nenhum link /estudar/ na vitrine",
+    "linksFound": 0
+  },
+  "slo_checklist": {
+    "navigate_hit_rate_pct": null,
+    "navigate_hit_slo_met": null,
+    "p95_vitrine_http_ms": 492,
+    "p95_vitrine_http_slo_met": true,
+    "p95_questao_http_ms": 1705,
+    "p95_questao_http_slo_met": false,
+    "p95_questao_core_http_ms": 1869,
+    "p95_questao_core_http_slo_met": false,
+    "p95_vitrine_server_ms": 895,
+    "p95_vitrine_server_slo_met": false,
+    "p95_questao_build_server_ms": 3973,
+    "p95_questao_build_server_slo_met": false,
+    "targets": {
+      "navigate_hit_rate_pct": 80,
+      "p95_ms": 800
+    }
+  },
+  "notes": [
+    "P95 HTTP inclui rede até a preview Vercel (não comparar 1:1 com getVitrinePage local).",
+    "Telemetria: NEXT_PUBLIC_ESTUDAR_NAV_TELEMETRY=1 ou localStorage avant:estudar-nav-telemetry; meta navigateHitRatePct ≥ 80% após hover.",
+    "P95 > 800 ms: aquecer cache (visitar /estudar), pooler Supabase 6543, região Vercel ≈ DB — ver docs/PLANO_PERFORMANCE_INSTANTANEO.md § Operação."
+  ]
+}

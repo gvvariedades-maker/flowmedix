@@ -131,18 +131,21 @@ Artefatos: [`perf-baseline-2026-06-02.json`](perf-baseline-2026-06-02.json) · [
 
 | Métrica | Valor | SLO atingido? |
 |---------|-------|----------------|
-| Cache hit navegação | Protocolo § Baseline (20 cliques, 10 com hover ≥550 ms); `slo_checklist.navigate_hit_rate_pct` no JSON de `npm run perf:baseline` · meta **≥ 80%** com `VitrineQuestaoLink` + LRU + `layers=core` | ≥ 80% — medir em **staging/prod** com `NEXT_PUBLIC_ESTUDAR_NAV_TELEMETRY=1` após deploy |
-| P95 abrir questão | **Baseline HTTP (2026-06-02): 4572 ms** · servidor local build payload P95 **3360 ms** ([`perf-baseline-pos-deploy-2026-06-04.json`](perf-baseline-pos-deploy-2026-06-04.json), sem dev server HTTP). Repetir `GET /api/estudar/questao` autenticado em staging; incluir `layers=core` no relatório (`estudar_questao_api_core`) | &lt; 800 ms — **não** no build direto fora do Next; HTTP pós-deploy obrigatório |
-| P95 vitrine pág. 1 | **894 ms** servidor `getVitrinePage` P95 (20×, 2026-06-04, commit `3c80188`) · histórico HTTP prod **1188 ms** (2026-06-02) · meta local anterior **850 ms** | &lt; 800 ms — servidor **quase** (894); HTTP prod ainda acima — aquecer cache + § Operação |
-| Payload mediano `layers=core` | **1,2 KB** JSON (1198 B / perf-smoke `estudar_questao_core`); baseline reporta `estudar_questao_core_payload_gzip_bytes.median` quando HTTP disponível | &lt; 80 KB gzip — **Sim** |
+| Cache hit navegação | Playwright em prod (**2026-06-05**): **0 links** `main a[href^="/estudar/"]` — `VitrineQuestaoLink` não expõe `<a>`; telemetria automática **skip**. Medir manual: DevTools + `window.__avantEstudarNavTelemetry.snapshot()` (§ Baseline §1) | ≥ 80% — **pendente medição manual** no browser |
+| P95 abrir questão | **1705 ms** HTTP `layers=full` (20×, `www.avant.enf.br`, 2026-06-05) · **1869 ms** `layers=core` · antes **4572 ms** (2026-06-02) — **−63%** vs baseline Antes | &lt; 800 ms — **não** (ainda &gt;2× meta) |
+| P95 vitrine pág. 1 | **492 ms** HTTP `GET /api/vitrine?page=1` (20×, prod 2026-06-05) · antes **2339 ms** local / **1188 ms** prod antigo · servidor `getVitrinePage` P95 **895 ms** (script local→DB) | &lt; 800 ms — **Sim** (HTTP prod) |
+| Payload mediano `layers=core` | **1542 B** gzip HTTP prod (20 slugs) · full **2306 B** · perf-smoke fixture **1198 B** | &lt; 80 KB gzip — **Sim** |
 | Tela vazia no clique | Skeleton (`EstudarQuestaoSkeleton`) + shell alinhado ao player; sem flash branco documentado (3.4) | **Sim** |
 
-**Artefato pós-deploy (Fase 7 — questões 100%):** [`perf-baseline-pos-deploy-2026-06-04.json`](perf-baseline-pos-deploy-2026-06-04.json) — inclui `slo_checklist` (telemetria, P95 HTTP/servidor, tetos 80% / 800 ms).
+**Artefatos pós-deploy (Fase 7):**
+
+- [`perf-baseline-staging-prod-2026-06-05.json`](perf-baseline-staging-prod-2026-06-05.json) — **prod** `www.avant.enf.br`, pós-merge PR #3 (`88f1d99`), `slo_checklist` completo
+- [`perf-baseline-pos-deploy-2026-06-04.json`](perf-baseline-pos-deploy-2026-06-04.json) — servidor local (sem HTTP)
 
 **Checklist pós-deploy (repetir após cada release estudar/vitrine):**
 
-1. `NEXT_PUBLIC_ESTUDAR_NAV_TELEMETRY=1` no preview/prod → protocolo § Baseline §1 → `navigateHitRatePct` ≥ 80%.
-2. `npm run perf:baseline:staging` (servidor + HTTP + browser) → atualizar linhas P95 e cache hit nesta tabela.
+1. `NEXT_PUBLIC_ESTUDAR_NAV_TELEMETRY=1` no preview/prod → protocolo § Baseline §1 **no browser** (Playwright não acha cards se não houver `<a href="/estudar/…">`) → `navigateHitRatePct` ≥ 80%.
+2. `npm run perf:baseline:staging` com `.env.staging.local` → `PERF_BASE_URL=https://www.avant.enf.br` (evidência: [`perf-baseline-staging-prod-2026-06-05.json`](perf-baseline-staging-prod-2026-06-05.json)).
 3. Se `p95_vitrine_http_ms` ou `p95_questao_http_ms` &gt; 800 ms: § Operação (pooler 6543, região Vercel ≈ Supabase, aquecer `/estudar` antes da amostra) — **sem** nova arquitetura.
 4. `npm run perf:smoke:staging` verde ou tetos justificados em `docs/perf-smoke-baseline-staging.json`.
 
@@ -326,7 +329,7 @@ Na aba Network, coluna **Size** (transferido, gzip) de `GET /api/estudar/questao
 | Tetos perf-smoke staging | [`perf-smoke-baseline-staging.json`](perf-smoke-baseline-staging.json) |
 | Saúde do catálogo 10k | [`SCALE_HEALTH.md`](SCALE_HEALTH.md) |
 | Testes de telemetria | [`__tests__/lib/estudar/navigationTelemetry.test.ts`](../__tests__/lib/estudar/navigationTelemetry.test.ts) |
-| Baseline pós-deploy (JSON + SLO) | [`perf-baseline-pos-deploy-2026-06-04.json`](perf-baseline-pos-deploy-2026-06-04.json) |
+| Baseline pós-deploy (JSON + SLO) | [`perf-baseline-staging-prod-2026-06-05.json`](perf-baseline-staging-prod-2026-06-05.json) · [`perf-baseline-pos-deploy-2026-06-04.json`](perf-baseline-pos-deploy-2026-06-04.json) |
 | Auditoria slides catálogo | [`CATALOGO_AUDITORIA_LABORATORIO.md`](CATALOGO_AUDITORIA_LABORATORIO.md) |
 
 ---
@@ -650,4 +653,4 @@ flowchart TB
 
 ---
 
-*Última atualização: Fase 7 pós-deploy (tabela Depois + `slo_checklist` no baseline) — 2026-06-04.*
+*Última atualização: baseline HTTP prod (`www.avant.enf.br`, 2026-06-05) — tabela Depois com P95 e payload.*
