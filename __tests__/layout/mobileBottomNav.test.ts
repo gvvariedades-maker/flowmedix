@@ -16,6 +16,8 @@ import {
   MOBILE_DRAWER_ABOVE_OVERLAYS_PANEL_Z,
   DASHBOARD_SIDEBAR_WIDTH,
   MOBILE_VITRINE_STICKY_PAGINATION_BAR_HEIGHT,
+  MOBILE_VITRINE_STICKY_PAGINATION_GAP,
+  MOBILE_VITRINE_STICKY_PAGINATION_CLEARANCE,
   MOBILE_VITRINE_STICKY_PAGINATION_PADDING,
   MOBILE_VITRINE_GRID_STICKY_PAGINATION_PADDING,
   getDashboardPageBottomPadding,
@@ -72,18 +74,20 @@ describe('mobileBottomNav tokens', () => {
     expect(MOBILE_PAGE_PWA_BANNER_PADDING).toContain('6rem');
   });
 
-  it('vitrine sticky pagination reserva barra sticky + safe area (nav no main)', () => {
-    expect(MOBILE_VITRINE_STICKY_PAGINATION_BAR_HEIGHT).toBe('5.5rem');
+  it('vitrine sticky pagination reserva gap + barra sticky (nav/safe area no main)', () => {
+    expect(MOBILE_VITRINE_STICKY_PAGINATION_GAP).toBe('1rem');
+    expect(MOBILE_VITRINE_STICKY_PAGINATION_BAR_HEIGHT).toBe('6.75rem');
+    expect(MOBILE_VITRINE_STICKY_PAGINATION_CLEARANCE).toBe('calc(1rem + 6.75rem)');
     expect(MOBILE_VITRINE_STICKY_PAGINATION_PADDING).toBe('pb-vitrine-sticky-pagination');
     expect(MOBILE_VITRINE_GRID_STICKY_PAGINATION_PADDING).toBe(
       'pb-vitrine-sticky-pagination md:pb-0',
     );
 
     const globals = readFileSync(join(process.cwd(), 'app', 'globals.css'), 'utf8');
-    expect(globals).toContain('.pb-vitrine-sticky-pagination');
-    expect(globals).toContain('5.5rem');
-    expect(globals).not.toContain('var(--bottom-nav-height, 5rem) +\n      3.5rem');
-    expect(globals).toContain('env(safe-area-inset-bottom, 0px)');
+    const vitrineBlock =
+      globals.match(/\.pb-vitrine-sticky-pagination\s*\{[^}]+\}/)?.[0] ?? '';
+    expect(vitrineBlock).toContain('calc(1rem + 6.75rem)');
+    expect(vitrineBlock).not.toContain('safe-area-inset-bottom');
   });
 });
 

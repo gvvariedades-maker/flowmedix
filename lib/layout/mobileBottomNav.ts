@@ -81,11 +81,21 @@ export const MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM = 'scroll-mb-4';
 export const MOBILE_STICKY_ABOVE_NAV_BOTTOM =
   'bottom-[calc(5rem+env(safe-area-inset-bottom,0px)+1rem)]';
 
-/** Altura da barra sticky de paginação da vitrine (Anterior/Próxima, ~56px + py). */
-export const MOBILE_VITRINE_STICKY_PAGINATION_BAR_HEIGHT = '5.5rem';
+/** Folga entre a barra sticky de paginação e o topo do BottomNav (`MOBILE_STICKY_ABOVE_NAV_BOTTOM`). */
+export const MOBILE_VITRINE_STICKY_PAGINATION_GAP = '1rem';
+
+/** Altura nominal da barra sticky (botões 44px + rótulo + py; pb-safe fica dentro do fixed). */
+export const MOBILE_VITRINE_STICKY_PAGINATION_BAR_HEIGHT = '6.75rem';
 
 /**
- * Padding inferior na grade da vitrine mobile: BottomNav + barra sticky + safe area.
+ * Reserva na grade mobile: gap acima do nav + barra sticky.
+ * Safe area do home indicator já vem de `pb-nav-safe` no `<main>` — não somar de novo aqui.
+ */
+export const MOBILE_VITRINE_STICKY_PAGINATION_CLEARANCE =
+  'calc(1rem + 6.75rem)';
+
+/**
+ * Padding inferior na grade da vitrine mobile (barra sticky Anterior/Próxima).
  * Classe literal para Tailwind JIT — usar com `max-md:` no wrapper da lista.
  */
 export const MOBILE_VITRINE_STICKY_PAGINATION_PADDING = 'pb-vitrine-sticky-pagination';

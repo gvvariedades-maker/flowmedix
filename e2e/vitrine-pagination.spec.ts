@@ -109,6 +109,36 @@ test.describe('Vitrine — paginação mobile sticky', () => {
     await expect(stickyPagination(page).getByText(/Página 2 de 2/)).toBeVisible();
   });
 
+  test('último card da lista não fica sob a paginação sticky', async ({ page }) => {
+    await waitVitrineListReady(page);
+
+    const sticky = stickyPagination(page);
+    await expect(sticky).toBeVisible({ timeout: 10_000 });
+
+    const cards = vitrineCards(page);
+    await expect(cards.first()).toBeVisible();
+    const lastCard = cards.last();
+
+    await page.locator('main.overflow-y-auto').evaluate((main) => {
+      main.scrollTop = main.scrollHeight - main.clientHeight;
+    });
+
+    await expect
+      .poll(async () => {
+        const stickyBox = await sticky.boundingBox();
+        const cardBox = await lastCard.boundingBox();
+        if (!stickyBox || !cardBox) return false;
+        return cardBox.y + cardBox.height <= stickyBox.y + 2;
+      })
+      .toBe(true);
+
+    const stickyBox = await sticky.boundingBox();
+    const cardBox = await lastCard.boundingBox();
+    expect(stickyBox).not.toBeNull();
+    expect(cardBox).not.toBeNull();
+    expect(cardBox!.y + cardBox!.height).toBeLessThanOrEqual(stickyBox!.y + 2);
+  });
+
   test('último card da lista não fica sob o BottomNav', async ({ page }) => {
     await waitVitrineListReady(page);
 
