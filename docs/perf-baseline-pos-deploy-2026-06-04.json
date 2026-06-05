@@ -1,0 +1,112 @@
+{
+  "captured_at": "2026-06-05T00:05:49.933Z",
+  "git_commit": "3c80188",
+  "environment": "local",
+  "perf_target": "local",
+  "base_url": "http://localhost:3000",
+  "base_url_source": "NEXT_PUBLIC_APP_URL",
+  "env_files": [
+    ".env.local"
+  ],
+  "vercel_protection_bypass": false,
+  "server_reachable": false,
+  "user": {
+    "id": "95c2b942-a165-4c56-8529-b48923ec0cb3",
+    "email_domain": "gmail.com",
+    "is_admin": false,
+    "source": "matricula"
+  },
+  "scale_health": {
+    "metrics": {
+      "generated_at": "2026-06-05T00:05:29Z",
+      "modulos_estudo_count": 5178,
+      "historico_questoes_count": 411,
+      "json_bytes": {
+        "avg": 2041,
+        "max": 3410,
+        "p95": 2500,
+        "total": 10569216
+      },
+      "questions_over_100kb": 0,
+      "assuntos_over_200_count": 6,
+      "users_historico_over_5000": 0,
+      "reverse_slides": {
+        "avg": 4,
+        "not_four_slides": 0
+      }
+    },
+    "alerts": [
+      {
+        "level": "warn",
+        "code": "ASSUNTOS_OVER_NAV_LIMIT",
+        "message": "6 assunto(s) com mais de 200 questões — navegação no player corta em 200.",
+        "value": 6,
+        "limit": 200
+      }
+    ],
+    "rpcAvailable": true
+  },
+  "server_side": {
+    "vitrine_page_1": {
+      "samples": 20,
+      "minMs": 417,
+      "maxMs": 1187,
+      "p50Ms": 787,
+      "p95Ms": 894
+    },
+    "vitrine_strategy": {
+      "rpc": {
+        "count": 20,
+        "sharePercent": 100,
+        "avgDurationMs": 798.95,
+        "p50DurationMs": 804,
+        "p95DurationMs": 1187
+      },
+      "js": {
+        "count": 0,
+        "sharePercent": 0,
+        "avgDurationMs": 0,
+        "p50DurationMs": 0,
+        "p95DurationMs": 0
+      },
+      "totalRequests": 20
+    },
+    "estudar_questao_build": {
+      "samples": 12,
+      "minMs": 2734,
+      "maxMs": 3360,
+      "p50Ms": 2807,
+      "p95Ms": 3360
+    },
+    "estudar_questao_payload_gzip_bytes": {
+      "median": 0,
+      "samples": 0,
+      "values": []
+    }
+  },
+  "http_authenticated": null,
+  "browser_navigation_telemetry": null,
+  "slo_checklist": {
+    "navigate_hit_rate_pct": null,
+    "navigate_hit_slo_met": null,
+    "p95_vitrine_http_ms": null,
+    "p95_vitrine_http_slo_met": null,
+    "p95_questao_http_ms": null,
+    "p95_questao_http_slo_met": null,
+    "p95_questao_core_http_ms": null,
+    "p95_questao_core_http_slo_met": null,
+    "p95_vitrine_server_ms": 894,
+    "p95_vitrine_server_slo_met": false,
+    "p95_questao_build_server_ms": 3360,
+    "p95_questao_build_server_slo_met": false,
+    "targets": {
+      "navigate_hit_rate_pct": 80,
+      "p95_ms": 800
+    }
+  },
+  "notes": [
+    "P95 HTTP = latência total fetch (rede local + servidor). Preferir mesma máquina que o dev server.",
+    "Telemetria: NEXT_PUBLIC_ESTUDAR_NAV_TELEMETRY=1 ou localStorage avant:estudar-nav-telemetry; meta navigateHitRatePct ≥ 80% após hover.",
+    "P95 > 800 ms: aquecer cache (visitar /estudar), pooler Supabase 6543, região Vercel ≈ DB — ver docs/PLANO_PERFORMANCE_INSTANTANEO.md § Operação."
+  ]
+}

@@ -376,19 +376,19 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
   );
 
   const navigateEstudar = useCallback(
-    (slugComQuery: string) => {
-      if (navegandoRef.current) return;
+    (slugComQuery: string): Promise<boolean> => {
+      if (navegandoRef.current) return Promise.resolve(false);
       navegandoRef.current = true;
 
       const cacheKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
       const href = buildEstudarHref(slugComQuery);
       markNavigateStart(cacheKey, slugComQuery);
 
-      void (async () => {
+      return (async (): Promise<boolean> => {
         try {
           if (forbiddenKeysRef.current.has(cacheKey)) {
             notifySemAcesso();
-            return;
+            return false;
           }
 
           let payload = cacheRef.current.peek(cacheKey) ?? null;
@@ -397,11 +397,11 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
             const result = await fetchPayloadIntoCache(slugComQuery, { layers: 'full' });
             if (result.kind === 'forbidden') {
               notifySemAcesso();
-              return;
+              return false;
             }
             if (result.kind === 'error') {
               notifyFalhaCarregar();
-              return;
+              return false;
             }
             if (result.kind === 'ok') {
               payload = result.payload;
@@ -412,7 +412,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
 
           if (!payload) {
             notifyFalhaCarregar();
-            return;
+            return false;
           }
 
           routePayloadSyncKeyRef.current = cacheKey;
@@ -437,9 +437,11 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
               buildHref: buildEstudarHref,
             });
           }
+          return true;
         } catch (err) {
           logger.error('Falha na navegação client-side entre questões', err, { slugComQuery });
           notifyFalhaCarregar();
+          return false;
         } finally {
           navegandoRef.current = false;
         }

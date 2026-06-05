@@ -1,6 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 
 const ci = !!process.env.CI;
+/** Dev já rodando com E2E_*_BYPASS (ex.: `npm run dev` + este env). */
+const skipWebServer = process.env.PLAYWRIGHT_SKIP_WEBSERVER === 'true';
 
 const projects = ci
   ? [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }]
@@ -46,7 +48,9 @@ export default defineConfig({
 
   projects,
 
-  webServer: ci
+  webServer: skipWebServer
+    ? undefined
+    : ci
     ? {
         command: 'npm run build && npm run start',
         url: 'http://localhost:3000',

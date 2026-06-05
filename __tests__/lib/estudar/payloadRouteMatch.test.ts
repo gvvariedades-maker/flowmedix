@@ -1,0 +1,38 @@
+import {
+  buildPayloadCacheKey,
+  estudarPayloadMatchesRoute,
+} from '@/lib/estudar/payloadRouteMatch';
+
+describe('payloadRouteMatch', () => {
+  it('estudarPayloadMatchesRoute compara slug e query de contexto', () => {
+    const payload = {
+      moduloSlug: 'questao-a',
+      vitrineQuerySuffix: '?banca=FGV&page=2',
+    };
+
+    expect(
+      estudarPayloadMatchesRoute(
+        payload,
+        '/estudar/questao-a',
+        new URLSearchParams('banca=FGV&page=2'),
+      ),
+    ).toBe(true);
+
+    expect(
+      estudarPayloadMatchesRoute(
+        payload,
+        '/estudar/questao-b',
+        new URLSearchParams('banca=FGV&page=2'),
+      ),
+    ).toBe(false);
+  });
+
+  it('buildPayloadCacheKey inclui query normalizada', () => {
+    expect(
+      buildPayloadCacheKey({
+        moduloSlug: 'q-1',
+        vitrineQuerySuffix: '?page=2&banca=FGV',
+      }),
+    ).toBe('q-1|banca=FGV&page=2');
+  });
+});

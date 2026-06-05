@@ -68,8 +68,26 @@ const samplePayload = {
 function Probe() {
   const nav = useQuestaoNavigation();
   return (
-    <button type="button" onClick={() => nav.navigateEstudar('questao-a')}>
+    <button type="button" onClick={() => void nav.navigateEstudar('questao-a')}>
       Ir
+    </button>
+  );
+}
+
+function NavigateResultProbe({
+  onResult,
+}: {
+  onResult: (ok: boolean) => void;
+}) {
+  const nav = useQuestaoNavigation();
+  return (
+    <button
+      type="button"
+      onClick={async () => {
+        onResult(await nav.navigateEstudar('questao-a'));
+      }}
+    >
+      Ir com resultado
     </button>
   );
 }
@@ -92,6 +110,30 @@ describe('QuestaoNavigationProvider', () => {
       status: 200,
       json: async () => samplePayload,
     });
+  });
+
+  it('retorna false em 403 sem aplicar payload', async () => {
+    mockFetchWithAuth.mockResolvedValue({
+      ok: false,
+      status: 403,
+      json: async () => ({ error: 'Sem acesso a este módulo' }),
+    });
+
+    const onResult = jest.fn();
+    const { getByRole } = render(
+      <QuestaoNavigationProvider>
+        <NavigateResultProbe onResult={onResult} />
+      </QuestaoNavigationProvider>,
+    );
+
+    await act(async () => {
+      getByRole('button', { name: 'Ir com resultado' }).click();
+    });
+
+    await waitFor(() => {
+      expect(onResult).toHaveBeenCalledWith(false);
+    });
+    expect(mockPush).not.toHaveBeenCalled();
   });
 
   it('não navega e exibe toast em 403', async () => {
@@ -205,6 +247,46 @@ describe('QuestaoNavigationProvider', () => {
       expect(mockReplace).toHaveBeenCalledWith('/estudar?page=2');
       expect(mockPush).not.toHaveBeenCalled();
     });
+  });
+
+  it('permite segunda navegação após falha de API (navegandoRef liberado no finally)', async () => {
+    mockFetchWithAuth
+      .mockResolvedValueOnce({
+        ok: false,
+        status: 500,
+        json: async () => ({ error: 'server error' }),
+      })
+      .mockResolvedValueOnce({
+        ok: true,
+        status: 200,
+        json: async () => samplePayload,
+      });
+
+    const { getByRole } = render(
+      <QuestaoNavigationProvider>
+        <Probe />
+      </QuestaoNavigationProvider>,
+    );
+
+    const btn = getByRole('button', { name: 'Ir' });
+
+    await act(async () => {
+      btn.click();
+    });
+    await waitFor(() => {
+      expect(mockAddToast).toHaveBeenCalledWith('Não foi possível carregar esta questão. Tente novamente.', 'danger');
+      expect(mockPush).not.toHaveBeenCalled();
+    });
+
+    mockAddToast.mockClear();
+
+    await act(async () => {
+      btn.click();
+    });
+    await waitFor(() => {
+      expect(mockPush).toHaveBeenCalledWith('/estudar/questao-a');
+    });
+    expect(mockFetchWithAuth).toHaveBeenCalledTimes(2);
   });
 
   it('permite segunda navegação na vitrine após a primeira concluir (navegandoRef liberado)', async () => {

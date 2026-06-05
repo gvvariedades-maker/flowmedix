@@ -36,6 +36,39 @@ export function mergeSlidesIntoLessonData<T extends LessonData>(
 }
 
 /** Monta `slugComQuery` para API a partir das props do player. */
+export const SLIDES_LAYER_LOAD_ERROR_MESSAGE =
+  'Não foi possível carregar o material de estudo reverso. Verifique sua conexão e tente de novo.';
+
+export const SLIDES_LAYER_FALLBACK_BANNER =
+  'Material completo indisponível — exibindo resumo da questão';
+
+export type FetchLessonSlidesLayerResult =
+  | { status: 'success'; dados: LessonData }
+  | { status: 'empty' }
+  | { status: 'http_error'; httpStatus: number }
+  | { status: 'network_error' };
+
+/** Busca `layers=full` e valida presença de NeuroSlides no payload. */
+export async function fetchLessonSlidesLayer(
+  apiUrl: string,
+  fetchFn: (url: string) => Promise<Response>,
+): Promise<FetchLessonSlidesLayerResult> {
+  try {
+    const res = await fetchFn(apiUrl);
+    if (!res.ok) {
+      return { status: 'http_error', httpStatus: res.status };
+    }
+    const payload = (await res.json()) as { dados?: LessonData };
+    const fullDados = payload.dados;
+    if (!fullDados || !lessonDataHasSlides(fullDados)) {
+      return { status: 'empty' };
+    }
+    return { status: 'success', dados: fullDados };
+  } catch {
+    return { status: 'network_error' };
+  }
+}
+
 export function buildEstudarSlugComQueryFromPlayerProps(
   props: Pick<
     AvantLessonPlayerProps,

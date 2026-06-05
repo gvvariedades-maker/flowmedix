@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, type ReactNode } from 'react';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
+import { useEstudarPayloadStale } from '@/components/lesson/useEstudarPayloadStale';
 import { isEstudarModalRouteEnabled } from '@/lib/estudar/estudarL0Config';
 import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
 import { cn } from '@/lib/utils';
@@ -32,6 +33,7 @@ type EstudarQuestaoModalRouteProps = {
  */
 export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteProps) {
   const { displayPayload, dismissToVitrine, isDismissingToVitrine } = useQuestaoNavigation();
+  const payloadStale = useEstudarPayloadStale();
   const panelRef = useRef<HTMLDivElement>(null);
   const previousActiveElementRef = useRef<HTMLElement | null>(null);
   const modalEnabled = isEstudarModalRouteEnabled();
@@ -126,8 +128,18 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
             '[view-transition-name:estudar-questao-root]',
           )}
         >
-          <div className="flex min-h-0 flex-1 flex-col overflow-hidden px-3 pt-3">
-            <AvantLessonPlayer key="estudar-lesson-player-modal" {...displayPayload!} />
+          <div
+            className={cn(
+              'flex min-h-0 flex-1 flex-col overflow-hidden px-3 pt-3',
+              payloadStale && 'pointer-events-none opacity-90',
+            )}
+            aria-busy={payloadStale || undefined}
+          >
+            <AvantLessonPlayer
+              key="estudar-lesson-player-modal"
+              {...displayPayload!}
+              payloadStale={payloadStale}
+            />
           </div>
         </div>
       </div>

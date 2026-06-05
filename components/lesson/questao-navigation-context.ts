@@ -11,7 +11,8 @@ export type QuestaoNavigationContextValue = {
   setDisplayPayload: (payload: EstudarQuestaoPayload | null) => void;
   cachePayload: (key: string, payload: EstudarQuestaoPayload) => void;
   getCachedPayload: (key: string) => EstudarQuestaoPayload | undefined;
-  navigateEstudar: (slugComQuery: string) => void;
+  /** `true` quando o payload foi aplicado; `false` em forbidden/erro/cancelado ou navegação em andamento. */
+  navigateEstudar: (slugComQuery: string) => Promise<boolean>;
   prefetchEstudar: (slugComQuery: string) => void;
   prefetchPayload: (slugComQuery: string) => void;
   /** Fecha questão e volta à vitrine (replace — evita reabrir pelo sync de URL). */

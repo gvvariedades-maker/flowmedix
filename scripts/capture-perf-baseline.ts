@@ -219,7 +219,9 @@ async function measureHttp(
 ): Promise<{
   vitrine: PercentileResult;
   questao: PercentileResult;
+  questao_core: PercentileResult;
   questaoPayloadGzip: number[];
+  questaoCorePayloadGzip: number[];
 }> {
   const vitrineSamples: number[] = [];
   const questaoSamples: number[] = [];
@@ -246,6 +248,9 @@ async function measureHttp(
   const slugList =
     slugs.length > 0 ? slugs : ['placeholder-slug-will-404'];
 
+  const questaoCoreSamples: number[] = [];
+  const questaoCorePayloadGzip: number[] = [];
+
   for (let i = 0; i < SAMPLE_COUNT; i += 1) {
     const slug = slugList[i % slugList.length]!;
     const questaoStarted = Date.now();
@@ -258,12 +263,25 @@ async function measureHttp(
     if (questaoRes.ok) {
       questaoPayloadGzip.push(gzipSync(Buffer.from(body)).length);
     }
+
+    const coreStarted = Date.now();
+    const coreRes = await fetch(
+      `${baseUrl}/api/estudar/questao?slug=${encodeURIComponent(slug)}&layers=core`,
+      { headers, cache: 'no-store' },
+    );
+    questaoCoreSamples.push(Date.now() - coreStarted);
+    const coreBody = await coreRes.arrayBuffer();
+    if (coreRes.ok) {
+      questaoCorePayloadGzip.push(gzipSync(Buffer.from(coreBody)).length);
+    }
   }
 
   return {
     vitrine: summarizeMs(vitrineSamples),
     questao: summarizeMs(questaoSamples),
+    questao_core: summarizeMs(questaoCoreSamples),
     questaoPayloadGzip,
+    questaoCorePayloadGzip,
   };
 }
 
@@ -390,7 +408,48 @@ async function runBrowserNavTelemetry(
     clicksAttempted: target,
     snapshot,
     note:
-      'Vitrine usa <Link> nativo (fase 2 ainda não aplicada); navigateHit/Miss refletem só chamadas ao QuestaoNavigationProvider.',
+      'Protocolo 20 cliques (10 com hover ≥550ms). VitrineQuestaoLink + QuestaoNavigationProvider; meta SLO navigateHitRatePct ≥ 80%.',
+  };
+}
+
+const NAV_HIT_SLO_PCT = 80;
+const P95_SLO_MS = 800;
+
+function buildSloChecklist(input: {
+  http: Awaited<ReturnType<typeof measureHttp>> | null;
+  browserNav: Record<string, unknown> | null;
+  vitrineServer: Awaited<ReturnType<typeof measureServerVitrine>>;
+  questaoServer: Awaited<ReturnType<typeof measureServerQuestao>> | null;
+}) {
+  const snap = input.browserNav?.snapshot as
+    | { navigateHitRatePct?: number | null; navigateHit?: number; navigateMiss?: number }
+    | undefined;
+  const hitRate = snap?.navigateHitRatePct ?? null;
+  const vitrineHttpP95 = input.http?.vitrine.p95Ms ?? null;
+  const questaoHttpP95 = input.http?.questao.p95Ms ?? null;
+  const questaoCoreHttpP95 = input.http?.questao_core.p95Ms ?? null;
+  const vitrineServerP95 = input.vitrineServer.timing.p95Ms;
+  const questaoServerP95 = input.questaoServer?.timing.p95Ms ?? null;
+
+  return {
+    navigate_hit_rate_pct: hitRate,
+    navigate_hit_slo_met:
+      hitRate === null ? null : hitRate >= NAV_HIT_SLO_PCT,
+    p95_vitrine_http_ms: vitrineHttpP95,
+    p95_vitrine_http_slo_met:
+      vitrineHttpP95 === null ? null : vitrineHttpP95 < P95_SLO_MS,
+    p95_questao_http_ms: questaoHttpP95,
+    p95_questao_http_slo_met:
+      questaoHttpP95 === null ? null : questaoHttpP95 < P95_SLO_MS,
+    p95_questao_core_http_ms: questaoCoreHttpP95,
+    p95_questao_core_http_slo_met:
+      questaoCoreHttpP95 === null ? null : questaoCoreHttpP95 < P95_SLO_MS,
+    p95_vitrine_server_ms: vitrineServerP95,
+    p95_vitrine_server_slo_met: vitrineServerP95 < P95_SLO_MS,
+    p95_questao_build_server_ms: questaoServerP95,
+    p95_questao_build_server_slo_met:
+      questaoServerP95 === null ? null : questaoServerP95 < P95_SLO_MS,
+    targets: { navigate_hit_rate_pct: NAV_HIT_SLO_PCT, p95_ms: P95_SLO_MS },
   };
 }
 
@@ -470,6 +529,13 @@ async function main() {
     );
   }
 
+  const slo_checklist = buildSloChecklist({
+    http,
+    browserNav,
+    vitrineServer,
+    questaoServer,
+  });
+
   const report = {
     captured_at: new Date().toISOString(),
     git_commit: (() => {
@@ -509,18 +575,25 @@ async function main() {
       ? {
           vitrine_api_page_1: http.vitrine,
           estudar_questao_api: http.questao,
+          estudar_questao_api_core: http.questao_core,
           estudar_questao_payload_gzip_bytes: {
             median: median(http.questaoPayloadGzip),
             samples: http.questaoPayloadGzip.length,
           },
+          estudar_questao_core_payload_gzip_bytes: {
+            median: median(http.questaoCorePayloadGzip),
+            samples: http.questaoCorePayloadGzip.length,
+          },
         }
       : null,
     browser_navigation_telemetry: browserNav,
+    slo_checklist,
     notes: [
       perfTarget === 'staging'
         ? 'P95 HTTP inclui rede até a preview Vercel (não comparar 1:1 com getVitrinePage local).'
         : 'P95 HTTP = latência total fetch (rede local + servidor). Preferir mesma máquina que o dev server.',
-      'Antes da fase 2, vitrine não usa VitrineQuestaoLink — telemetria navigateHit pode permanecer em 0.',
+      'Telemetria: NEXT_PUBLIC_ESTUDAR_NAV_TELEMETRY=1 ou localStorage avant:estudar-nav-telemetry; meta navigateHitRatePct ≥ 80% após hover.',
+      'P95 > 800 ms: aquecer cache (visitar /estudar), pooler Supabase 6543, região Vercel ≈ DB — ver docs/PLANO_PERFORMANCE_INSTANTANEO.md § Operação.',
     ],
   };
 

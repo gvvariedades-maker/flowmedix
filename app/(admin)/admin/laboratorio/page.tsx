@@ -20,6 +20,7 @@ import { findErrorLocation, findAllErrorLocations, type ErrorLocation } from '@/
 import { applySuggestion } from '@/lib/autoFix';
 import { TemplateSelector } from '@/components/admin/TemplateSelector';
 import { EnhancedPreview } from '@/components/admin/EnhancedPreview';
+import { LaboratorioCatalogAuditPanel } from '@/components/admin/LaboratorioCatalogAuditPanel';
 import type { QuestaoCompleta } from '@/types/lesson';
 import { tryRecoverUtf8FromLatin1Misread } from '@/lib/fixUtf8Mojibake';
 
@@ -599,6 +600,7 @@ export default function AvantLaboratory() {
               Documentação: <code className="rounded bg-slate-100 px-1">docs/IMPORTACAO_LABORATORIO.md</code>
             </p>
           </details>
+          <LaboratorioCatalogAuditPanel />
         </aside>
 
         {/* EDITOR */}

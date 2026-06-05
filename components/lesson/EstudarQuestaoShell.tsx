@@ -57,7 +57,11 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
             )}
             aria-busy={isPayloadStale || undefined}
           >
-            <AvantLessonPlayer key="estudar-lesson-player" {...displayPayload} />
+            <AvantLessonPlayer
+              key="estudar-lesson-player"
+              {...displayPayload}
+              payloadStale={isPayloadStale}
+            />
           </div>
         ) : showSkeleton ? (
           <EstudarQuestaoSkeleton />

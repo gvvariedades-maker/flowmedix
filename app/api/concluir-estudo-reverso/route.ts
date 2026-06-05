@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidateTag } from 'next/cache';
 import { CACHE_REVALIDATE_IMMEDIATE } from '@/lib/cache';
+import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
+import { markE2eEstudarConcluido } from '@/lib/e2e/estudarSeed';
+import { isE2eEstudarSlug } from '@/lib/e2e/constants';
 import { userHasModuloAccess } from '@/lib/concursos/entitlements';
 import { moduloAccessOptionsFromEmail } from '@/lib/concursos/studyAccess';
 import { logger } from '@/lib/logger';
@@ -38,6 +41,11 @@ export async function POST(request: NextRequest) {
 
     if (!modulo_slug || typeof modulo_slug !== 'string') {
       return NextResponse.json({ error: 'modulo_slug obrigatório' }, { status: 400 });
+    }
+
+    if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS') && isE2eEstudarSlug(modulo_slug)) {
+      markE2eEstudarConcluido(modulo_slug);
+      return NextResponse.json({ success: true });
     }
 
     const auth = await getUserAndClientFromBearer(request);

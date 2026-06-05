@@ -320,3 +320,5 @@ async function buildEstudarQuestaoPlayerPayloadImpl(
 
   return { status: 'ok', payload };
 }
+
+export { patchQuestaoEstudadaInPayload } from '@/lib/estudar/patchQuestaoEstudada';

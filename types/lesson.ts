@@ -222,4 +222,6 @@ export interface AvantLessonPlayerProps {
   listaContexto?: ListaContextoQuestao;
   /** Código Q-… (modulos_estudo.avant_codigo), igual ao admin. */
   avantCodigo?: number | null;
+  /** Payload desatualizado em relação à URL (soft nav) — desabilita navegação entre questões. */
+  payloadStale?: boolean;
 }

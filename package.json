@@ -28,7 +28,8 @@
     "perf:smoke": "tsx scripts/perf-smoke.ts",
     "perf:smoke:staging": "tsx scripts/run-perf-smoke-staging.ts",
     "perf:baseline": "tsx scripts/capture-perf-baseline.ts",
-    "perf:baseline:staging": "tsx scripts/capture-perf-baseline.ts --target=staging"
+    "perf:baseline:staging": "tsx scripts/capture-perf-baseline.ts --target=staging",
+    "catalog:audit": "tsx scripts/catalog-content-audit-cli.ts"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
