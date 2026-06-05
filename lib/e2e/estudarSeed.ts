@@ -20,6 +20,7 @@ import {
   E2E_ESTUDAR_SLUG_2,
   E2E_ESTUDAR_SLUGS,
   E2E_ESTUDAR_TITULO_AULA,
+  E2E_ESTUDAR_TITULO_AULA_PAGE2,
   isE2eEstudarSlug,
 } from '@/lib/e2e/constants';
 
@@ -169,7 +170,11 @@ function buildE2eEstudarVitrineGroup(
 function buildE2eEstudarVitrineGroups(): VitrinePageResponse['groups'] {
   return Array.from({ length: E2E_VITRINE_PAGINATION_GROUP_COUNT }, (_, index) => {
     const titulo =
-      index === 0 ? E2E_ESTUDAR_TITULO_AULA : `Assunto E2E paginação ${index + 1}`;
+      index === 0
+        ? E2E_ESTUDAR_TITULO_AULA
+        : index === E2E_VITRINE_PAGINATION_GROUP_COUNT - 1
+          ? E2E_ESTUDAR_TITULO_AULA_PAGE2
+          : `Assunto E2E paginação ${index + 1}`;
     return buildE2eEstudarVitrineGroup(titulo);
   });
 }

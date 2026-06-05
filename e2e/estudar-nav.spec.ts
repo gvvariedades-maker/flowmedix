@@ -4,6 +4,7 @@ import {
   E2E_ESTUDAR_SLUG_1,
   E2E_ESTUDAR_SLUG_2,
   E2E_ESTUDAR_TITULO_AULA,
+  E2E_ESTUDAR_TITULO_AULA_PAGE2,
 } from '../lib/e2e/constants';
 
 const BANCA_QUERY = encodeURIComponent(E2E_ESTUDAR_BANCA);
@@ -48,12 +49,15 @@ async function gotoVitrineFiltrada(page: Page) {
 
 async function gotoVitrinePage2(page: Page) {
   await page.goto(`/estudar?banca=${BANCA_QUERY}&page=2`, { waitUntil: 'domcontentloaded' });
-  await expect(page.getByText(E2E_ESTUDAR_TITULO_AULA)).toBeVisible({ timeout: 15_000 });
   await waitVitrineListReady(page);
+  await expect(page.getByText(E2E_ESTUDAR_TITULO_AULA_PAGE2)).toBeVisible({ timeout: 15_000 });
 }
 
-async function garantirPainelAssuntoAberto(page: Page) {
-  const assuntoBtn = page.getByRole('button', { name: new RegExp(E2E_ESTUDAR_TITULO_AULA) });
+async function garantirPainelAssuntoAberto(
+  page: Page,
+  tituloAssunto: string = E2E_ESTUDAR_TITULO_AULA,
+) {
+  const assuntoBtn = page.getByRole('button', { name: new RegExp(tituloAssunto) });
   const entrar = page.getByRole('link', { name: 'Entrar no assunto' }).first();
 
   try {
@@ -293,7 +297,7 @@ test.describe('Estudar — page, dots, history (Fase 3.2)', () => {
     await gotoVitrinePage2(page);
     expect(isVitrineUrl(page.url(), { page: '2' })).toBe(true);
 
-    await garantirPainelAssuntoAberto(page);
+    await garantirPainelAssuntoAberto(page, E2E_ESTUDAR_TITULO_AULA_PAGE2);
     const entrar = page.getByRole('link', { name: 'Entrar no assunto' }).first();
     await entrar.scrollIntoViewIfNeeded();
 
@@ -355,7 +359,7 @@ test.describe('Estudar — page, dots, history (Fase 3.2)', () => {
 
   test('browser back/forward após soft-nav preserva vitrine page=2 e questão', async ({ page }) => {
     await gotoVitrinePage2(page);
-    await garantirPainelAssuntoAberto(page);
+    await garantirPainelAssuntoAberto(page, E2E_ESTUDAR_TITULO_AULA_PAGE2);
 
     const entrar = page.getByRole('link', { name: 'Entrar no assunto' }).first();
     await Promise.all([
@@ -377,7 +381,7 @@ test.describe('Estudar — page, dots, history (Fase 3.2)', () => {
     // Soft-nav usa replaceState: voltar retorna à vitrine (entrada anterior no histórico).
     await page.goBack();
     await page.waitForURL((url) => isVitrineUrl(url, { page: '2' }), { timeout: 15_000 });
-    await expect(page.getByText(E2E_ESTUDAR_TITULO_AULA)).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText(E2E_ESTUDAR_TITULO_AULA_PAGE2)).toBeVisible({ timeout: 15_000 });
 
     await page.goForward();
     await page.waitForURL((url) => isQuestaoUrl(url, E2E_ESTUDAR_SLUG_2, { page: '2' }), {
