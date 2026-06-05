@@ -74,18 +74,16 @@ export function MobileDashboardDrawer({
             exit={{ x: '-100%' }}
             transition={drawerSpring}
           >
-            <div className="flex items-center justify-end px-5 pb-2 pt-[max(1.5rem,env(safe-area-inset-top,0px))]">
-              <button
-                ref={closeButtonRef}
-                type="button"
-                onClick={onClose}
-                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                aria-label="Fechar menu"
-              >
-                <X size={18} />
-              </button>
-            </div>
-            {children}
+            <button
+              ref={closeButtonRef}
+              type="button"
+              onClick={onClose}
+              className="absolute right-2 top-[max(0px,env(safe-area-inset-top,0px))] z-10 flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              aria-label="Fechar menu"
+            >
+              <X size={18} />
+            </button>
+            <div className="flex min-h-0 flex-1 flex-col overflow-hidden pt-safe">{children}</div>
           </motion.div>
         </>
       ) : null}

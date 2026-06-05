@@ -48,7 +48,8 @@ describe('DashboardShell mobile drawer', () => {
     expect(drawer).toContain('createPortal');
     expect(drawer).toContain('document.body');
     expect(drawer).toContain('dashboard-mobile-drawer');
-    expect(drawer).toMatch(/pt-\[max\(1\.5rem,env\(safe-area-inset-top/);
+    expect(drawer).toContain('pt-safe');
+    expect(drawer).toContain('absolute right-2');
     expect(drawer).toContain('MOBILE_BOTTOM_NAV_FIXED_BOTTOM');
   });
 
