@@ -6,6 +6,7 @@ import EstudarQuestaoSkeleton from '@/components/lesson/EstudarQuestaoSkeleton';
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
 import { useEstudarPayloadStale } from '@/components/lesson/useEstudarPayloadStale';
 import { isEstudarModalRouteEnabled } from '@/lib/estudar/estudarL0Config';
+import { setEstudarModalOverlayOpen } from '@/lib/estudar/estudarModalOpenBridge';
 import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
 import { cn } from '@/lib/utils';
 
@@ -42,6 +43,12 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
   const showModalOverlay = !isDismissingToVitrine;
 
   useBodyScrollLock(modalEnabled && showModalOverlay);
+
+  useEffect(() => {
+    if (!modalEnabled) return;
+    setEstudarModalOverlayOpen(showModalOverlay);
+    return () => setEstudarModalOverlayOpen(false);
+  }, [modalEnabled, showModalOverlay]);
 
   const close = useCallback(() => {
     dismissToVitrine({

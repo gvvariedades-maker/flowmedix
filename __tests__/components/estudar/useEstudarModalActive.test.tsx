@@ -1,5 +1,9 @@
 import { renderHook } from '@testing-library/react';
 import { useEstudarModalActive } from '@/components/estudar/useEstudarModalActive';
+import {
+  resetEstudarModalOverlayOpenForTests,
+  setEstudarModalOverlayOpen,
+} from '@/lib/estudar/estudarModalOpenBridge';
 
 const mockUsePathname = jest.fn(() => '/estudar/questao-e2e-estudar-1');
 
@@ -23,6 +27,7 @@ describe('useEstudarModalActive', () => {
 
   beforeEach(() => {
     process.env = { ...env };
+    resetEstudarModalOverlayOpenForTests();
     mockUseDashboardDesktop.mockReturnValue(false);
     mockUsePathname.mockReturnValue('/estudar/questao-e2e-estudar-1');
   });
@@ -55,5 +60,16 @@ describe('useEstudarModalActive', () => {
     mockUsePathname.mockReturnValue('/estudar');
     const { result } = renderHook(() => useEstudarModalActive());
     expect(result.current).toBe(false);
+  });
+
+  it('retorna true via bridge quando segmento modal não alcança o shell ancestral', () => {
+    const { useSelectedLayoutSegment } = jest.requireMock('next/navigation') as {
+      useSelectedLayoutSegment: jest.Mock;
+    };
+    useSelectedLayoutSegment.mockReturnValueOnce(null);
+    process.env.NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE = '1';
+    setEstudarModalOverlayOpen(true);
+    const { result } = renderHook(() => useEstudarModalActive());
+    expect(result.current).toBe(true);
   });
 });

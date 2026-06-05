@@ -10,6 +10,8 @@
     "test": "jest",
     "test:e2e": "playwright test",
     "test:e2e:chromium": "playwright test --project=chromium",
+    "test:e2e:modal": "tsx scripts/run-e2e-estudar-modal.ts",
+    "test:e2e:modal:staging": "tsx scripts/run-e2e-estudar-modal.ts --target=staging",
     "validate:env": "tsx scripts/validate-env.ts",
     "db:push": "supabase db push",
     "db:link": "supabase link",

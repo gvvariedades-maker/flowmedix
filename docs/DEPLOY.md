@@ -31,6 +31,7 @@ Performance (LCP, INP, CLS) depende de medir em produção (Vercel Analytics, We
 | `GOOGLE_API_KEY` | Production | Opcional (recursos de IA) |
 | `WEBHOOK_SECRET` | Production | Se usar webhooks de cache/invalidação |
 | `METRICS_SECRET` | Production | Se usar endpoint de métricas protegido |
+| `NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE` | Preview (staging) → Production após QA | Opcional (`1` = modal questão sobre vitrine no mobile). **Preview primeiro** — matriz em [`MOBILE_BOTTOM_NAV_QA.md`](./MOBILE_BOTTOM_NAV_QA.md#fase-5--rollout-modal-next_public_estudar_modal_route1). E2E: `npm run test:e2e:modal:staging`. |
 
 **Não** commite segredos. `NEXT_PUBLIC_*` são expostas ao browser — apenas chaves públicas.
 
