@@ -1,6 +1,6 @@
 #!/usr/bin/env tsx
 /**
- * E2E da paginação sticky da vitrine (mobile).
+ * E2E da paginação inline da vitrine (mobile).
  * Local: npm run test:e2e:vitrine-pagination
  * Staging: npm run test:e2e:vitrine-pagination:staging
  */

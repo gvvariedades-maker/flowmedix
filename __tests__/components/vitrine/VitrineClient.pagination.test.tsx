@@ -6,28 +6,26 @@ const vitrinePath = join(process.cwd(), 'components', 'vitrine', 'VitrineClient.
 describe('VitrineClient paginação', () => {
   const source = readFileSync(vitrinePath, 'utf8');
 
-  it('renderiza duas instâncias de VitrinePaginationBar quando totalPaginas > 1', () => {
+  it('renderiza uma única VitrinePaginationBar quando totalPaginas > 1', () => {
     expect(source).toMatch(/totalPaginas\s*>\s*1\s*\?\s*\(\s*<VitrinePaginationBar/);
-    expect(source.match(/<VitrinePaginationBar/g)?.length).toBe(2);
+    expect(source.match(/<VitrinePaginationBar/g)?.length).toBe(1);
   });
 
-  it('usa variantes inline (desktop) e sticky (mobile)', () => {
-    expect(source).toContain('variant="inline"');
-    expect(source).toContain('variant="sticky"');
+  it('paginação inline no fim da lista com ref para scroll', () => {
     expect(source).toContain('ref={vitrinePaginationInlineRef}');
+    expect(source).not.toContain('variant="sticky"');
+    expect(source).not.toContain('variant="inline"');
   });
 
-  it('aplica padding da grade só no mobile quando há paginação', () => {
-    expect(source).toContain('MOBILE_VITRINE_GRID_STICKY_PAGINATION_PADDING');
-    expect(source).toMatch(
-      /totalPaginas\s*>\s*1\s*&&\s*MOBILE_VITRINE_GRID_STICKY_PAGINATION_PADDING/,
-    );
+  it('não reserva padding extra para barra sticky fixa', () => {
+    expect(source).not.toContain('MOBILE_VITRINE_GRID_STICKY_PAGINATION_PADDING');
+    expect(source).not.toContain('pb-vitrine-sticky-pagination');
   });
 
-  it('só monta barras de paginação dentro de condicionais totalPaginas > 1', () => {
+  it('só monta barra de paginação dentro de condicional totalPaginas > 1', () => {
     const paginationConditionals =
       source.match(/totalPaginas\s*>\s*1\s*\?[\s\S]*?<VitrinePaginationBar[\s\S]*?:\s*null/g) ?? [];
-    expect(paginationConditionals).toHaveLength(2);
+    expect(paginationConditionals).toHaveLength(1);
   });
 
   it('não duplica pb-nav-safe (reservado no main do shell)', () => {

@@ -1,9 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { VitrinePaginationBar } from '@/components/vitrine/VitrinePaginationBar';
-import { MOBILE_STICKY_ABOVE_NAV_BOTTOM } from '@/lib/layout/mobileBottomNav';
 
 describe('VitrinePaginationBar', () => {
-  it('variante inline usa layout desktop (hidden em mobile)', () => {
+  it('renderiza paginação inline no fluxo da lista (mobile e desktop)', () => {
     const { container } = render(
       <VitrinePaginationBar
         pagina={2}
@@ -12,34 +11,14 @@ describe('VitrinePaginationBar', () => {
         listBusy={false}
         onPrev={jest.fn()}
         onNext={jest.fn()}
-        variant="inline"
       />,
     );
 
     const nav = container.querySelector('nav');
-    expect(nav).toHaveClass('hidden', 'md:flex');
-    expect(nav).not.toHaveClass('fixed');
-  });
-
-  it('variante sticky fica fixa acima do BottomNav só no mobile', () => {
-    const { container } = render(
-      <VitrinePaginationBar
-        pagina={2}
-        paginaEfetiva={2}
-        totalPaginas={5}
-        listBusy={false}
-        onPrev={jest.fn()}
-        onNext={jest.fn()}
-        variant="sticky"
-      />,
-    );
-
-    const nav = container.querySelector('nav');
-    expect(nav).toHaveClass('fixed', 'inset-x-0', 'z-30', 'md:hidden');
-    expect(nav?.className).toContain(MOBILE_STICKY_ABOVE_NAV_BOTTOM);
-    expect(nav).toHaveClass('pb-safe', 'backdrop-blur-xl');
-    expect(screen.getByTestId('vitrine-pagination-prev-sticky')).toBeInTheDocument();
-    expect(screen.getByTestId('vitrine-pagination-next-sticky')).toBeInTheDocument();
+    expect(nav).toHaveClass('flex', 'flex-col', 'border-t', 'border-white/10');
+    expect(nav).not.toHaveClass('fixed', 'hidden');
+    expect(screen.getByTestId('vitrine-pagination-prev')).toBeInTheDocument();
+    expect(screen.getByTestId('vitrine-pagination-next')).toBeInTheDocument();
   });
 
   it('desabilita botões e marca aria-busy quando listBusy', () => {

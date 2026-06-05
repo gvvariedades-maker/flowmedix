@@ -1,6 +1,6 @@
 import { test, expect, type Page, devices } from '@playwright/test';
 
-/** Paginação sticky e BottomNav são `md:hidden` — forçar viewport mobile no CI (só chromium desktop). */
+/** Paginação inline e BottomNav — viewport mobile no CI (só chromium desktop). */
 test.use({ ...devices['Pixel 5'] });
 
 async function dismissWelcomeIfVisible(page: Page) {
@@ -29,20 +29,25 @@ function bottomNav(page: Page) {
   return page.locator('nav.fixed.bottom-0[aria-label="Navegação rápida"]');
 }
 
-/** Barra sticky mobile (variant="sticky") — acima do BottomNav. */
-function stickyPagination(page: Page) {
-  return page.locator('nav.fixed.inset-x-0[aria-label="Paginação da vitrine"]');
+function inlinePagination(page: Page) {
+  return page.getByRole('navigation', { name: 'Paginação da vitrine' });
 }
 
 function vitrineCards(page: Page) {
   return page.locator('[data-vitrine-list-ready="true"] > div');
 }
 
+async function scrollMainToBottom(page: Page) {
+  await page.locator('main.overflow-y-auto').evaluate((main) => {
+    main.scrollTop = main.scrollHeight - main.clientHeight;
+  });
+}
+
 /**
- * Vitrine mobile — paginação sticky acima do BottomNav e navegação ?page=2.
+ * Vitrine mobile — paginação inline no fim da lista e navegação ?page=2.
  * Rodar: npm run test:e2e:vitrine-pagination
  */
-test.describe('Vitrine — paginação mobile sticky', () => {
+test.describe('Vitrine — paginação mobile inline', () => {
   test.describe.configure({ mode: 'serial', timeout: 60_000 });
 
   test.beforeEach(async ({ page }) => {
@@ -56,36 +61,41 @@ test.describe('Vitrine — paginação mobile sticky', () => {
     await gotoEstudar(page);
   });
 
-  test('barra sticky visível quando há mais de uma página', async ({ page }) => {
+  test('não existe barra fixed de paginação', async ({ page }) => {
     await waitVitrineListReady(page);
 
-    const sticky = stickyPagination(page);
-    await expect(sticky).toBeVisible({ timeout: 10_000 });
-    await expect(sticky.getByText(/Página 1 de \d+/)).toBeVisible();
-
-    const inlineNav = page.locator(
-      'nav.mt-6.hidden[aria-label="Paginação da vitrine"]',
-    );
-    await expect(inlineNav).toBeHidden();
+    await expect(page.locator('nav.fixed.inset-x-0[aria-label="Paginação da vitrine"]')).toHaveCount(0);
   });
 
-  test('botões Anterior/Próxima ficam acima do BottomNav', async ({ page }) => {
+  test('paginação inline visível após rolar até o fim', async ({ page }) => {
+    await waitVitrineListReady(page);
+
+    const pagination = inlinePagination(page);
+    await scrollMainToBottom(page);
+
+    await expect(pagination).toBeVisible({ timeout: 10_000 });
+    await expect(pagination.getByText(/Página 1 de \d+/)).toBeVisible();
+    await expect(page.getByTestId('vitrine-pagination-prev')).toBeVisible();
+    await expect(page.getByTestId('vitrine-pagination-next')).toBeVisible();
+  });
+
+  test('botões Anterior/Próxima ficam acima do BottomNav ao rolar até o fim', async ({ page }) => {
     await waitVitrineListReady(page);
 
     const nav = bottomNav(page);
     await expect(nav).toBeVisible({ timeout: 15_000 });
+    await scrollMainToBottom(page);
 
     const navBox = await nav.boundingBox();
     expect(navBox).not.toBeNull();
 
-    const proxima = stickyPagination(page).getByRole('button', { name: 'Próxima' });
+    const proxima = page.getByTestId('vitrine-pagination-next');
     await expect(proxima).toBeVisible();
     const proximaBox = await proxima.boundingBox();
     expect(proximaBox).not.toBeNull();
-
     expect(proximaBox!.y + proximaBox!.height).toBeLessThanOrEqual(navBox!.y + 2);
 
-    const anterior = stickyPagination(page).getByRole('button', { name: 'Anterior' });
+    const anterior = page.getByTestId('vitrine-pagination-prev');
     const anteriorBox = await anterior.boundingBox();
     expect(anteriorBox).not.toBeNull();
     expect(anteriorBox!.y + anteriorBox!.height).toBeLessThanOrEqual(navBox!.y + 2);
@@ -93,10 +103,11 @@ test.describe('Vitrine — paginação mobile sticky', () => {
 
   test('Próxima navega para page=2 e atualiza contador de assuntos', async ({ page }) => {
     await waitVitrineListReady(page);
+    await scrollMainToBottom(page);
 
-    const proxima = page.getByTestId('vitrine-pagination-next-sticky');
+    const proxima = page.getByTestId('vitrine-pagination-next');
     await expect(proxima).toBeVisible();
-    await expect(stickyPagination(page).getByText(/Página 1 de 2/)).toBeVisible();
+    await expect(inlinePagination(page).getByText(/Página 1 de 2/)).toBeVisible();
     await expect(proxima).toBeEnabled();
 
     await expect(async () => {
@@ -106,37 +117,35 @@ test.describe('Vitrine — paginação mobile sticky', () => {
 
     await waitVitrineListReady(page);
     await expect(page.getByText(/Mostrando 13[\u2013-]/)).toBeVisible({ timeout: 10_000 });
-    await expect(stickyPagination(page).getByText(/Página 2 de 2/)).toBeVisible();
+    await scrollMainToBottom(page);
+    await expect(inlinePagination(page).getByText(/Página 2 de 2/)).toBeVisible();
   });
 
-  test('último card da lista não fica sob a paginação sticky', async ({ page }) => {
+  test('último card da lista não fica sob a paginação inline', async ({ page }) => {
     await waitVitrineListReady(page);
 
-    const sticky = stickyPagination(page);
-    await expect(sticky).toBeVisible({ timeout: 10_000 });
-
+    const pagination = inlinePagination(page);
     const cards = vitrineCards(page);
     await expect(cards.first()).toBeVisible();
     const lastCard = cards.last();
 
-    await page.locator('main.overflow-y-auto').evaluate((main) => {
-      main.scrollTop = main.scrollHeight - main.clientHeight;
-    });
+    await scrollMainToBottom(page);
+    await expect(pagination).toBeVisible({ timeout: 10_000 });
 
     await expect
       .poll(async () => {
-        const stickyBox = await sticky.boundingBox();
+        const paginationBox = await pagination.boundingBox();
         const cardBox = await lastCard.boundingBox();
-        if (!stickyBox || !cardBox) return false;
-        return cardBox.y + cardBox.height <= stickyBox.y + 2;
+        if (!paginationBox || !cardBox) return false;
+        return cardBox.y + cardBox.height <= paginationBox.y + 2;
       })
       .toBe(true);
 
-    const stickyBox = await sticky.boundingBox();
+    const paginationBox = await pagination.boundingBox();
     const cardBox = await lastCard.boundingBox();
-    expect(stickyBox).not.toBeNull();
+    expect(paginationBox).not.toBeNull();
     expect(cardBox).not.toBeNull();
-    expect(cardBox!.y + cardBox!.height).toBeLessThanOrEqual(stickyBox!.y + 2);
+    expect(cardBox!.y + cardBox!.height).toBeLessThanOrEqual(paginationBox!.y + 2);
   });
 
   test('último card da lista não fica sob o BottomNav', async ({ page }) => {
@@ -149,9 +158,7 @@ test.describe('Vitrine — paginação mobile sticky', () => {
     await expect(cards.first()).toBeVisible();
     const lastCard = cards.last();
 
-    await page.locator('main.overflow-y-auto').evaluate((main) => {
-      main.scrollTop = main.scrollHeight - main.clientHeight;
-    });
+    await scrollMainToBottom(page);
 
     await expect
       .poll(async () => {

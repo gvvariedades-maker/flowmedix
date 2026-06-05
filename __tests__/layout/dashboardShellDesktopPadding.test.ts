@@ -84,7 +84,7 @@ describe('DashboardShell mobile scroll shell', () => {
     expect(cadernos).toContain('useDashboardBottomInset');
   });
 
-  it('paginação sticky da vitrine só no mobile (inline hidden até md)', () => {
+  it('paginação da vitrine fica inline no fim da lista (mobile e desktop)', () => {
     const vitrine = readFileSync(
       join(process.cwd(), 'components', 'vitrine', 'VitrineClient.tsx'),
       'utf8',
@@ -93,10 +93,11 @@ describe('DashboardShell mobile scroll shell', () => {
       join(process.cwd(), 'components', 'vitrine', 'VitrinePaginationBar.tsx'),
       'utf8',
     );
-    expect(vitrine).toContain('variant="sticky"');
-    expect(vitrine).toContain('variant="inline"');
-    expect(paginationBar).toContain('md:hidden');
-    expect(paginationBar).toContain('hidden flex-col gap-3 border-t border-white/10 pt-4 md:flex');
+    expect(vitrine).not.toContain('variant="sticky"');
+    expect(vitrine.match(/<VitrinePaginationBar/g)?.length).toBe(1);
+    expect(paginationBar).not.toContain('fixed');
+    expect(paginationBar).not.toContain('className="mt-6 hidden');
+    expect(paginationBar).toContain('border-t border-white/10');
   });
 
   it('main sem scroll externo na questão inline (card preenche altura no desktop)', () => {

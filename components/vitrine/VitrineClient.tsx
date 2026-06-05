@@ -60,10 +60,7 @@ import { EmptyState } from '@/components/ui/empty-state';
 import { ProgressRing } from '@/components/ui/progress-ring';
 import { VitrineQuestaoLink } from '@/components/vitrine/VitrineQuestaoLink';
 import { VitrinePaginationBar } from '@/components/vitrine/VitrinePaginationBar';
-import {
-  MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM,
-  MOBILE_VITRINE_GRID_STICKY_PAGINATION_PADDING,
-} from '@/lib/layout/mobileBottomNav';
+import { MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM } from '@/lib/layout/mobileBottomNav';
 import { useVitrineVisiblePrefetch, VITRINE_PREFETCH_DATA_ATTR } from '@/hooks/useVitrineVisiblePrefetch';
 import { useVitrineListSwr } from '@/hooks/useVitrineListSwr';
 import { buildVitrineEstudarQuery } from '@/lib/vitrine/estudarQuery';
@@ -980,54 +977,36 @@ export default function VitrineClient({
             </div>
           ) : gruposPagina.length > 0 ? (
             <>
-              <div
+              <motion.div
+                key={`${bancasSelecionadas.join('|')}-${assuntosSelecionados.join('|')}-${searchTerm}`}
+                ref={vitrineListaRef}
+                data-vitrine-list-ready={listBusy ? 'false' : 'true'}
+                aria-busy={listBusy || undefined}
+                variants={containerVariants}
+                initial={false}
+                animate="animate"
                 className={cn(
-                  totalPaginas > 1 && MOBILE_VITRINE_GRID_STICKY_PAGINATION_PADDING,
+                  'grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-5 xl:grid-cols-4',
+                  MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM,
+                  isRefreshing && 'opacity-80',
                 )}
               >
-                <motion.div
-                  key={`${bancasSelecionadas.join('|')}-${assuntosSelecionados.join('|')}-${searchTerm}`}
-                  ref={vitrineListaRef}
-                  data-vitrine-list-ready={listBusy ? 'false' : 'true'}
-                  aria-busy={listBusy || undefined}
-                  variants={containerVariants}
-                  initial={false}
-                  animate="animate"
-                  className={cn(
-                    'grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-5 xl:grid-cols-4',
-                    MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM,
-                    isRefreshing && 'opacity-80',
-                  )}
-                >
-                  {gruposPagina.map((grupo, idx) => (
-                    <SubtopicoCard
-                      key={grupo.titulo_aula}
-                      grupo={grupo}
-                      estudarQuery={estudarQuery}
-                      index={idx}
-                      assuntoExpandido={expandedPanelSlug === grupo.firstSlug}
-                      onAssuntoExpandedChange={(open) =>
-                        setExpandedPanelSlug(open ? grupo.firstSlug : null)
-                      }
-                    />
-                  ))}
-                </motion.div>
-                {totalPaginas > 1 ? (
-                  <VitrinePaginationBar
-                    ref={vitrinePaginationInlineRef}
-                    variant="inline"
-                    pagina={pagina}
-                    paginaEfetiva={paginaEfetiva}
-                    totalPaginas={totalPaginas}
-                    listBusy={paginationBusy}
-                    onPrev={() => goToPagina(pagina - 1)}
-                    onNext={() => goToPagina(pagina + 1)}
+                {gruposPagina.map((grupo, idx) => (
+                  <SubtopicoCard
+                    key={grupo.titulo_aula}
+                    grupo={grupo}
+                    estudarQuery={estudarQuery}
+                    index={idx}
+                    assuntoExpandido={expandedPanelSlug === grupo.firstSlug}
+                    onAssuntoExpandedChange={(open) =>
+                      setExpandedPanelSlug(open ? grupo.firstSlug : null)
+                    }
                   />
-                ) : null}
-              </div>
+                ))}
+              </motion.div>
               {totalPaginas > 1 ? (
                 <VitrinePaginationBar
-                  variant="sticky"
+                  ref={vitrinePaginationInlineRef}
                   pagina={pagina}
                   paginaEfetiva={paginaEfetiva}
                   totalPaginas={totalPaginas}
