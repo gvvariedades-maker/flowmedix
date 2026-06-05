@@ -799,6 +799,7 @@ export const EstudarQuestaoQuerySchema = z
     from: z.enum(['plano', 'caderno']).optional(),
     caderno_id: z.string().uuid().optional(),
     context: z.enum(['simulado']).optional(),
+    page: z.coerce.number().int().min(1).max(500).optional(),
     ...vitrineBancaAssuntoQueryBase,
     q: z.string().trim().max(200).optional(),
   })

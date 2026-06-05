@@ -124,6 +124,21 @@ describe('GET /api/estudar/questao', () => {
     );
   });
 
+  it('repassa page da vitrine ao builder (evita payloadStale na soft-nav)', async () => {
+    mockBuildEstudarQuestaoPlayerPayload.mockResolvedValue({
+      status: 'ok',
+      payload: payloadOk,
+    });
+
+    await GET(makeRequest({ slug: SLUG, page: '2' }));
+
+    expect(mockBuildEstudarQuestaoPlayerPayload).toHaveBeenCalledWith(
+      expect.objectContaining({
+        searchParams: expect.objectContaining({ page: '2' }),
+      }),
+    );
+  });
+
   it('retorna 200 com payload do player e Cache-Control private', async () => {
     mockBuildEstudarQuestaoPlayerPayload.mockResolvedValue({
       status: 'ok',
