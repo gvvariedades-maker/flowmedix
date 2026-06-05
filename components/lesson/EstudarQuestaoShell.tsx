@@ -1,6 +1,7 @@
 'use client';
 
 import type { ReactNode } from 'react';
+import { Loader2 } from 'lucide-react';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import EstudarQuestaoSkeleton from '@/components/lesson/EstudarQuestaoSkeleton';
 import { useEstudarQuestaoShellState } from '@/components/lesson/useEstudarQuestaoShellState';
@@ -32,6 +33,9 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
 
   const vitrineSlotInteractive =
     !hideVitrineChildren && !(interceptActive && !isDismissingToVitrine);
+
+  const showVitrineInterceptLoading =
+    interceptActive && !isDismissingToVitrine && !hideVitrineChildren;
 
   const fillViewport = showPlayer || showSkeleton;
 
@@ -71,12 +75,23 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
         <div
           data-vitrine-slot-ready={vitrineSlotInteractive ? 'true' : 'false'}
           className={cn(
+            'relative',
             hideVitrineChildren && 'hidden',
-            interceptActive && !isDismissingToVitrine && 'pointer-events-none select-none',
+            showVitrineInterceptLoading && 'pointer-events-none select-none',
           )}
           aria-hidden={hideVitrineChildren || undefined}
+          aria-busy={showVitrineInterceptLoading || undefined}
         >
-          {children}
+          <div className={cn(showVitrineInterceptLoading && 'opacity-60')}>{children}</div>
+          {showVitrineInterceptLoading ? (
+            <div
+              role="status"
+              aria-label="Carregando questão"
+              className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-[#010409]/30 backdrop-blur-[1px]"
+            >
+              <Loader2 className="h-8 w-8 animate-spin text-cyan-400" aria-hidden />
+            </div>
+          ) : null}
         </div>
         {modal}
       </div>

@@ -1,15 +1,19 @@
 'use client';
 
-import { type RefObject, useEffect } from 'react';
+import { type RefObject, useLayoutEffect } from 'react';
 
 const BOTTOM_NAV_HEIGHT_VAR = '--bottom-nav-height';
 
-/** Observa a altura real do BottomNav e sincroniza `--bottom-nav-height` no `:root`. */
+/**
+ * Observa a altura real do BottomNav e sincroniza `--bottom-nav-height` no `:root`.
+ * `remountKey` (ex.: flag `mounted` do portal) força re-sync quando o nó medido troca.
+ */
 export function useBottomNavHeightSync(
   navRef: RefObject<HTMLElement | null>,
   enabled = true,
+  remountKey?: unknown,
 ): void {
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!enabled) return;
     const el = navRef.current;
     if (!el) return;
@@ -30,5 +34,5 @@ export function useBottomNavHeightSync(
       ro.disconnect();
       document.documentElement.style.removeProperty(BOTTOM_NAV_HEIGHT_VAR);
     };
-  }, [navRef, enabled]);
+  }, [navRef, enabled, remountKey]);
 }

@@ -76,4 +76,26 @@ describe('useBottomNavHeightSync', () => {
     renderHook(() => useBottomNavHeightSync(navRef, false));
     expect(document.documentElement.style.getPropertyValue('--bottom-nav-height')).toBe('');
   });
+
+  it('re-sincroniza quando remountKey muda (placeholder → portal)', () => {
+    const navRef = createRef<HTMLElement>();
+    const placeholder = document.createElement('nav');
+    Object.defineProperty(placeholder, 'offsetHeight', { configurable: true, value: 80 });
+    navRef.current = placeholder;
+    document.body.appendChild(placeholder);
+
+    const { rerender } = renderHook(
+      ({ mounted }: { mounted: boolean }) => useBottomNavHeightSync(navRef, true, mounted),
+      { initialProps: { mounted: false } },
+    );
+    expect(document.documentElement.style.getPropertyValue('--bottom-nav-height')).toBe('80px');
+
+    const portaled = document.createElement('nav');
+    Object.defineProperty(portaled, 'offsetHeight', { configurable: true, value: 92 });
+    navRef.current = portaled;
+    document.body.appendChild(portaled);
+
+    rerender({ mounted: true });
+    expect(document.documentElement.style.getPropertyValue('--bottom-nav-height')).toBe('92px');
+  });
 });

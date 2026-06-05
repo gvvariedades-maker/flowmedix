@@ -84,6 +84,21 @@ describe('DashboardShell mobile scroll shell', () => {
     expect(cadernos).toContain('useDashboardBottomInset');
   });
 
+  it('paginação sticky da vitrine só no mobile (inline hidden até md)', () => {
+    const vitrine = readFileSync(
+      join(process.cwd(), 'components', 'vitrine', 'VitrineClient.tsx'),
+      'utf8',
+    );
+    const paginationBar = readFileSync(
+      join(process.cwd(), 'components', 'vitrine', 'VitrinePaginationBar.tsx'),
+      'utf8',
+    );
+    expect(vitrine).toContain('variant="sticky"');
+    expect(vitrine).toContain('variant="inline"');
+    expect(paginationBar).toContain('md:hidden');
+    expect(paginationBar).toContain('hidden flex-col gap-3 border-t border-white/10 pt-4 md:flex');
+  });
+
   it('main sem scroll externo na questão inline (card preenche altura no desktop)', () => {
     const shell = readFileSync(
       join(process.cwd(), 'app', '(dashboard)', 'DashboardShell.tsx'),

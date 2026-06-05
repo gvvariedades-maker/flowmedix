@@ -57,7 +57,7 @@ Preencher em staging com viewport 390×844. Marcar **OK** / **Falha** / **N/A**.
 | M10 | Estudo reverso | Gabarito → Ativar estudo → slides → Marcar estudado | ER imersivo acima do modal (`z` ER &gt; modal); ao fechar ER, player no modal ainda funcional | |
 | M11 | Menu hamburger | Com modal aberto, tocar Menu | Menu **não** abre por cima do modal (drawer bloqueado quando `questaoModalOpen`) | |
 | M12 | Pós-dismiss | Após M5/M6/M7, abrir outra questão | Segunda abertura sem overlay fantasma nem vitrine `hidden` permanente | |
-| M13 | `page=2` | Vitrine `?page=2` → questão → Vitrine | Retorno na mesma página da vitrine; próxima questão mantém `page=2` | |
+| M13 | `page=2` | Vitrine `?page=2` → questão → Vitrine | Retorno na mesma página da vitrine; barra sticky ainda visível; Próxima/Anterior funcionam; próxima questão mantém `page=2` | |
 
 ### Matriz manual — desktop (flag ligada)
 
@@ -65,6 +65,15 @@ Preencher em staging com viewport 390×844. Marcar **OK** / **Falha** / **N/A**.
 |----|---------|-------------------|-----|
 | D1 | Vitrine → questão em ≥ 768px | **Sem** overlay modal; player no shell ao lado da sidebar (`md:hidden` no overlay) | |
 | D2 | Navegação prev/próxima | Paridade com fluxo pré-flag (sem regressão de padding `md:pb-0`) | |
+
+### Sign-off staging (antes de Production)
+
+Checklist após deploy preview com paginação sticky + `NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE=1`:
+
+1. **Automatizado local (obrigatório em CI/dev):** `npm run test:e2e:vitrine-pagination` — 4 testes Pixel 5 (sticky, nav, `page=2`, último card).
+2. **Preview Vercel:** matriz **M1–M13** + rota **#4** manual (390×844) — E2E remoto exige sessão autenticada (sem `E2E_DASHBOARD_BYPASS` no preview).
+3. **Modal staging (se flag ligada):** `npm run test:e2e:modal:staging` + Jest em `EstudarQuestaoModalRoute` / `useEstudarModalActive`.
+4. **Desktop:** **D1–D2** (sem overlay modal em ≥768px).
 
 ### Sign-off produção
 
@@ -74,6 +83,8 @@ Só habilitar `NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE=1` em **Production** quando:
 - [ ] **D1–D2** OK em desktop no mesmo deploy.
 - [ ] `npm run test:e2e:modal:staging` verde contra o preview.
 - [ ] Rotas **#1–#8** da seção abaixo revalidadas com a flag ligada (regressão BottomNav).
+- [ ] Rota **#4** (`/estudar`): paginação sticky + último card acima do nav validados (`npm run test:e2e:vitrine-pagination:staging`).
+- [ ] `npm run test:e2e:vitrine-pagination:staging` verde contra o preview (mobile Pixel 5).
 - [ ] Nenhum bug P0 aberto em navegação estudar / modal.
 
 Responsável: _______________  Data: _______________
@@ -87,7 +98,7 @@ Responsável: _______________  Data: _______________
 | 1 | `/simulados` | Botão final do formulário visível acima do BottomNav; com banner PWA aberto, submit ainda rolável |
 | 2 | `/simulados/[id]` | Confirmar / próxima; link «Sair e voltar» acima da faixa de ação + nav |
 | 3 | `/simulados/[id]` (resumo) | Três CTAs inferiores sem corte |
-| 4 | `/estudar` | Último card da lista; paginação inline visível; filtros Banca/Assunto com sheet + teclado iOS não cobre «Fechar»; **modal questão aberto:** Tab não alcança vitrine nem BottomNav; foco permanece no sheet/player (`EstudarQuestaoModalRoute`); Escape fecha; **opt-in** `NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE=1` em staging antes de produção |
+| 4 | `/estudar` | Último card da lista rolável até acima do BottomNav (padding `pb-vitrine-sticky-pagination` na grade); **paginação sticky** Anterior/Próxima sempre visível acima do nav quando `totalPaginas > 1` (`VitrinePaginationBar` variant sticky); paginação inline só em `md+`; filtros Banca/Assunto com sheet + teclado iOS não cobre «Fechar»; **modal questão aberto:** Tab não alcança vitrine nem BottomNav; foco permanece no sheet/player (`EstudarQuestaoModalRoute`); Escape fecha; **`page=2`** preservado ao abrir/voltar da questão; opt-in `NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE=1` em staging antes de produção |
 | 5 | `/estudar/[slug]` | Última alternativa + confirmar; scroll até confirmar sem ficar sob o nav |
 | 6 | `/plano-diario` | Card sticky de lembrete acima do BottomNav; lista rolável até o fim |
 | 7 | `/cadernos` | Sheet «Inserir questões» com busca — teclado iOS não cobre conteúdo; botão fechar ≥ 44px |
@@ -98,6 +109,7 @@ Responsável: _______________  Data: _______________
 | Item | O que verificar |
 |------|-----------------|
 | Filtros vitrine (Banca/Assunto) | Itens da lista ≥ 44px; busca com teclado aberto — footer «Fechar» acessível |
+| Paginação vitrine (mobile) | Barra sticky Anterior/Próxima acima do BottomNav; botões ≥ 44px; `?page=N` na URL; último card da página rolável sem corte pelo nav |
 | Acordeão assunto | Expandir/colapsar assunto e lista de questões sem jank perceptível (Safari iOS) |
 | `DashboardFilterSelect` / `MultiCheckboxFilter` | Paridade: fechar 44px, body lock, teclado iOS |
 | Reporte de erro | Painel com `pb-safe`; botão fechar ≥ 44px |
@@ -169,6 +181,7 @@ npm test -- __tests__/layout/useBodyScrollLock.test.ts
 npm test -- __tests__/layout/mobileBottomNav.test.ts __tests__/layout/dashboardShellDesktopPadding.test.ts
 npm run test:e2e:modal
 npm run test:e2e:drawer
+npm run test:e2e:vitrine-pagination
 npm run build
 rg "background-attachment" app/globals.css
 ```
@@ -179,3 +192,11 @@ rg "background-attachment" app/globals.css
 
 - [`e2e/estudar-modal.spec.ts`](../e2e/estudar-modal.spec.ts) — Escape, backdrop, BottomNav `aria-hidden`, vitrine reativa, anti dead-zone.
 - Requer `NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE=1` (script `npm run test:e2e:modal` injeta no webServer local).
+
+## Automatizado (E2E vitrine paginação)
+
+- [`e2e/vitrine-pagination.spec.ts`](../e2e/vitrine-pagination.spec.ts) — barra sticky acima do BottomNav, navegação `?page=2`, último card não sob o nav (viewport Pixel 5).
+- Local: `npm run test:e2e:vitrine-pagination`
+- Staging/preview: `npm run test:e2e:vitrine-pagination:staging` (`.env.staging.local` com `PERF_BASE_URL` + `VERCEL_PROTECTION_BYPASS` quando aplicável).
+- **Preview autenticado:** o deploy staging **não** usa `E2E_DASHBOARD_BYPASS` — o spec redireciona para `/login` sem sessão. Rodar contra preview exige login Playwright (cookies) **ou** validar rota **#4** / **M13** manualmente em 390×844 após deploy com paginação sticky. Local/CI (`npm run test:e2e:vitrine-pagination`) cobre regressão automatizada.
+- Cobertura parcial da rota **#4** e critério **M13** (retorno `page=2` — complementar com matriz manual modal).

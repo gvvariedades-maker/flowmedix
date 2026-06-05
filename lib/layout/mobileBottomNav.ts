@@ -81,6 +81,19 @@ export const MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM = 'scroll-mb-4';
 export const MOBILE_STICKY_ABOVE_NAV_BOTTOM =
   'bottom-[calc(5rem+env(safe-area-inset-bottom,0px)+1rem)]';
 
+/** Altura da barra sticky de paginação da vitrine (Anterior/Próxima, ~56px + py). */
+export const MOBILE_VITRINE_STICKY_PAGINATION_BAR_HEIGHT = '5.5rem';
+
+/**
+ * Padding inferior na grade da vitrine mobile: BottomNav + barra sticky + safe area.
+ * Classe literal para Tailwind JIT — usar com `max-md:` no wrapper da lista.
+ */
+export const MOBILE_VITRINE_STICKY_PAGINATION_PADDING = 'pb-vitrine-sticky-pagination';
+
+/** Atalho mobile-only para o wrapper da grade + paginação inline da vitrine. */
+export const MOBILE_VITRINE_GRID_STICKY_PAGINATION_PADDING =
+  'pb-vitrine-sticky-pagination md:pb-0';
+
 /**
  * Altura reservada do banner PWA fixo (`PwaInstallPanel` + margens).
  * Medido ~6rem; posicionado com MOBILE_BOTTOM_NAV_FIXED_BOTTOM.
@@ -100,4 +113,4 @@ export function getDashboardPageBottomPadding(
   if (!pwaVisible) return undefined;
   return MOBILE_PAGE_PWA_BANNER_PADDING;
 }
-
+

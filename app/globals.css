@@ -188,6 +188,13 @@
       env(safe-area-inset-bottom, 0px)
     );
   }
+  /** Vitrine mobile: barra sticky Anterior/Próxima + safe area (nav já reservado no main via pb-nav-safe) */
+  .pb-vitrine-sticky-pagination {
+    padding-bottom: calc(
+      5.5rem +
+      env(safe-area-inset-bottom, 0px)
+    );
+  }
   .pt-safe {
     padding-top: max(0px, env(safe-area-inset-top, 0px));
   }

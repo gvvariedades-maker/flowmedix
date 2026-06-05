@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import {
   MOBILE_PAGE_PWA_BANNER_PADDING,
   MOBILE_ACTION_BAR_Z,
@@ -13,6 +15,9 @@ import {
   ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM,
   MOBILE_DRAWER_ABOVE_OVERLAYS_PANEL_Z,
   DASHBOARD_SIDEBAR_WIDTH,
+  MOBILE_VITRINE_STICKY_PAGINATION_BAR_HEIGHT,
+  MOBILE_VITRINE_STICKY_PAGINATION_PADDING,
+  MOBILE_VITRINE_GRID_STICKY_PAGINATION_PADDING,
   getDashboardPageBottomPadding,
 } from '@/lib/layout/mobileBottomNav';
 
@@ -66,5 +71,19 @@ describe('mobileBottomNav tokens', () => {
     expect(MOBILE_PWA_INSTALL_BANNER_CLEARANCE).toBe('6rem');
     expect(MOBILE_PAGE_PWA_BANNER_PADDING).toContain('6rem');
   });
+
+  it('vitrine sticky pagination reserva barra sticky + safe area (nav no main)', () => {
+    expect(MOBILE_VITRINE_STICKY_PAGINATION_BAR_HEIGHT).toBe('5.5rem');
+    expect(MOBILE_VITRINE_STICKY_PAGINATION_PADDING).toBe('pb-vitrine-sticky-pagination');
+    expect(MOBILE_VITRINE_GRID_STICKY_PAGINATION_PADDING).toBe(
+      'pb-vitrine-sticky-pagination md:pb-0',
+    );
+
+    const globals = readFileSync(join(process.cwd(), 'app', 'globals.css'), 'utf8');
+    expect(globals).toContain('.pb-vitrine-sticky-pagination');
+    expect(globals).toContain('5.5rem');
+    expect(globals).not.toContain('var(--bottom-nav-height, 5rem) +\n      3.5rem');
+    expect(globals).toContain('env(safe-area-inset-bottom, 0px)');
+  });
 });
-
+

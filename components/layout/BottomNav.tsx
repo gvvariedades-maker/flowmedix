@@ -54,7 +54,7 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
   const isDesktop = useDashboardDesktop();
 
   useEffect(() => setMounted(true), []);
-  useBottomNavHeightSync(navRef, mounted);
+  useBottomNavHeightSync(navRef, true, mounted);
 
   const mobileOverlayBlocksNav =
     !isDesktop && (drawerOpen || welcomeOpen || questaoModalOpen);
@@ -171,10 +171,11 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
   if (!mounted) {
     return (
       <nav
+        ref={navRef}
         className={cn(
           MOBILE_BOTTOM_NAV_FIXED,
           MOBILE_BOTTOM_NAV_Z,
-          'min-h-[5rem]',
+          'grid min-h-[5rem] grid-cols-5',
           'border-t border-white/[0.08] bg-[#06090f]/95 pb-safe backdrop-blur-xl pointer-events-none md:hidden',
         )}
         aria-hidden="true"
