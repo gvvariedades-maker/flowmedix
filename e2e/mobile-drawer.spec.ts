@@ -1,9 +1,17 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect, type Page, devices } from '@playwright/test';
+
+/** BottomNav e drawer são `md:hidden` — CI usa só projeto chromium (desktop). */
+test.use({ ...devices['Pixel 5'] });
 
 async function dismissWelcomeIfVisible(page: Page) {
-  const entendi = page.getByRole('button', { name: 'Entendi' });
-  if (await entendi.isVisible().catch(() => false)) {
-    await entendi.click();
+  const skip = page.getByRole('button', { name: 'Não mostrar novamente' });
+  if (await skip.isVisible().catch(() => false)) {
+    await skip.click();
+    return;
+  }
+  const close = page.getByRole('button', { name: 'Fechar introdução' });
+  if (await close.isVisible().catch(() => false)) {
+    await close.click();
   }
 }
 
@@ -19,11 +27,21 @@ function maisButton(page: Page) {
 }
 
 /**
- * Drawer mobile (botão Mais) — mobile viewport via projeto "Mobile Chrome".
+ * Drawer mobile (botão Mais). Viewport mobile forçado (CI usa só chromium/desktop).
  * Rodar: npm run test:e2e:drawer
  */
 test.describe('Dashboard — drawer mobile (Mais)', () => {
   test.describe.configure({ mode: 'serial', timeout: 60_000 });
+
+  test.beforeEach(async ({ page }) => {
+    await page.addInitScript(() => {
+      try {
+        localStorage.setItem('avant.estudoReverso.welcomeShown', 'true');
+      } catch {
+        /* storage indisponível */
+      }
+    });
+  });
 
   test('D1 — /estudar → Mais abre drawer', async ({ page }) => {
     await gotoEstudar(page);
