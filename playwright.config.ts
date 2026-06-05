@@ -1,6 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
+import { getVercelProtectionHeaders } from './lib/perf/vercelProtection';
 
 const ci = !!process.env.CI;
+const vercelProtectionHeaders = getVercelProtectionHeaders();
 /** Dev já rodando com E2E_*_BYPASS (ex.: `npm run dev` + este env). */
 const skipWebServer = process.env.PLAYWRIGHT_SKIP_WEBSERVER === 'true';
 
@@ -41,6 +43,9 @@ export default defineConfig({
 
   use: {
     baseURL: process.env.PLAYWRIGHT_TEST_BASE_URL || 'http://localhost:3000',
+    ...(Object.keys(vercelProtectionHeaders).length > 0
+      ? { extraHTTPHeaders: vercelProtectionHeaders }
+      : {}),
     screenshot: 'only-on-failure',
     video: 'retry-with-video',
     trace: 'retry-with-trace',

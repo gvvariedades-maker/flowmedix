@@ -9,6 +9,7 @@ import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { recordPerformance } from '@/lib/metrics';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { getE2eEstudarVitrinePage } from '@/lib/e2e/estudarSeed';
+import { parseVitrineListQuery } from '@/lib/vitrine/parseListQuery';
 
 export async function GET(request: NextRequest) {
   const requestStartedAt = Date.now();
@@ -16,8 +17,11 @@ export async function GET(request: NextRequest) {
   const method = 'GET';
   try {
     if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS')) {
+      const listQuery = parseVitrineListQuery(
+        searchParamsToQueryRecord(request.nextUrl.searchParams),
+      );
       recordPerformance(endpoint, method, Date.now() - requestStartedAt, true);
-      return NextResponse.json(getE2eEstudarVitrinePage(), {
+      return NextResponse.json(getE2eEstudarVitrinePage(listQuery), {
         headers: { 'Cache-Control': 'private, no-store' },
       });
     }

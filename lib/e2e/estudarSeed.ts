@@ -145,36 +145,41 @@ export function getE2eEstudarFacets(): VitrineFacets {
   };
 }
 
-export function getE2eEstudarVitrinePage(_listQuery?: VitrineListQuery): VitrinePageResponse {
-  const facets = getE2eEstudarFacets();
+function buildE2eEstudarVitrineGroup(): VitrinePageResponse['groups'][number] {
   return {
-    groups: [
-      {
-        titulo_aula: E2E_ESTUDAR_TITULO_AULA,
-        modulo_nome: 'Módulo E2E',
-        banca: E2E_ESTUDAR_BANCA,
-        questoes: E2E_ESTUDAR_SLUGS.map((slug, index) => ({
-          slug,
-          numero: index + 1,
-          status: 'nao_estudada' as const,
-          avant_codigo: 900001 + index,
-          created_at: null,
-        })),
-        acertos: 0,
-        erros: 0,
-        totalResolvidas: 0,
-        totalQuestoes: E2E_ESTUDAR_SLUGS.length,
-        trabalhadas: 0,
-        percentual: 0,
-        firstSlug: E2E_ESTUDAR_SLUG_1,
-      },
-    ],
+    titulo_aula: E2E_ESTUDAR_TITULO_AULA,
+    modulo_nome: 'Módulo E2E',
+    banca: E2E_ESTUDAR_BANCA,
+    questoes: E2E_ESTUDAR_SLUGS.map((slug, index) => ({
+      slug,
+      numero: index + 1,
+      status: 'nao_estudada' as const,
+      avant_codigo: 900001 + index,
+      created_at: null,
+    })),
+    acertos: 0,
+    erros: 0,
+    totalResolvidas: 0,
+    totalQuestoes: E2E_ESTUDAR_SLUGS.length,
+    trabalhadas: 0,
+    percentual: 0,
+    firstSlug: E2E_ESTUDAR_SLUG_1,
+  };
+}
+
+export function getE2eEstudarVitrinePage(listQuery?: VitrineListQuery): VitrinePageResponse {
+  const facets = getE2eEstudarFacets();
+  const page = listQuery?.page ?? 1;
+  const e2eGroup = buildE2eEstudarVitrineGroup();
+
+  return {
+    groups: [e2eGroup],
     facets,
     pagination: {
-      page: 1,
+      page,
       perPage: 12,
       totalGroups: 1,
-      totalPages: 1,
+      totalPages: Math.max(page, 2),
     },
     totalModulosFiltrados: E2E_ESTUDAR_SLUGS.length,
   };

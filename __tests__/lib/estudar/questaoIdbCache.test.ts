@@ -1,5 +1,7 @@
 import type { EstudarQuestaoPayload } from '@/components/lesson/questao-navigation-context';
 import {
+  clearAllQuestaoIdb,
+  deleteQuestaoFromIdbBySlug,
   getQuestaoFromIdb,
   hydrateQuestaoLruFromIdb,
   setQuestaoInIdb,
@@ -44,6 +46,10 @@ function installFakeIndexedDb() {
     },
     delete: (key: string) => {
       records.delete(key);
+      return makeRequest(undefined);
+    },
+    clear: () => {
+      records.clear();
       return makeRequest(undefined);
     },
   } as IDBObjectStore;
@@ -131,5 +137,27 @@ describe('questaoIdbCache', () => {
     await setQuestaoInIdb('questao-a', samplePayload);
     const loaded = await getQuestaoFromIdb('questao-a');
     expect(loaded).toBeNull();
+  });
+
+  it('deleteQuestaoFromIdbBySlug remove chave exata e variantes com query', async () => {
+    await setQuestaoInIdb('questao-a', samplePayload);
+    await setQuestaoInIdb('questao-a|page=2', samplePayload);
+    await setQuestaoInIdb('questao-b', { ...samplePayload, moduloSlug: 'questao-b' });
+
+    await deleteQuestaoFromIdbBySlug('questao-a');
+
+    expect(await getQuestaoFromIdb('questao-a')).toBeNull();
+    expect(await getQuestaoFromIdb('questao-a|page=2')).toBeNull();
+    expect(await getQuestaoFromIdb('questao-b')).not.toBeNull();
+  });
+
+  it('clearAllQuestaoIdb remove todas as entradas', async () => {
+    await setQuestaoInIdb('questao-a', samplePayload);
+    await setQuestaoInIdb('questao-b', { ...samplePayload, moduloSlug: 'questao-b' });
+
+    await clearAllQuestaoIdb();
+
+    expect(await getQuestaoFromIdb('questao-a')).toBeNull();
+    expect(await getQuestaoFromIdb('questao-b')).toBeNull();
   });
 });

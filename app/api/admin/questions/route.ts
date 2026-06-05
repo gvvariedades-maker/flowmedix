@@ -20,7 +20,11 @@ import {
 } from '@/lib/validations';
 import { logger } from '@/lib/logger';
 import { generateContentHash } from '@/lib/contentHash';
-import { invalidateModulosCache, invalidateQuestoesCache } from '@/lib/cache';
+import {
+  invalidateModulosCache,
+  invalidateQuestoesCache,
+  invalidateQuestaoSlugsCache,
+} from '@/lib/cache';
 import { getDefaultConcursoId, linkModuloToConcurso } from '@/lib/concursos/entitlements';
 
 const MAX_BATCH_SIZE = 100;
@@ -104,6 +108,7 @@ export async function POST(request: NextRequest) {
 
   // 4. Erros de validação Zod (índice da requisição original)
   const inserted: number[] = [];
+  const insertedSlugs: string[] = [];
   const skipped: Array<{ index: number; reason: string }> = [];
   const errors: Array<{ index: number; reason: string }> = [];
 
@@ -232,6 +237,7 @@ export async function POST(request: NextRequest) {
           });
         }
         inserted.push(row.index);
+        insertedSlugs.push(slug);
         existingHashes.add(row.hash);
       }
     } catch (e: unknown) {
@@ -253,7 +259,11 @@ export async function POST(request: NextRequest) {
   // 5. Invalida cache uma única vez se algo foi inserido
   if (inserted.length > 0) {
     try {
-      await Promise.all([invalidateModulosCache(), invalidateQuestoesCache()]);
+      await Promise.all([
+        invalidateModulosCache(),
+        invalidateQuestoesCache(),
+        invalidateQuestaoSlugsCache(insertedSlugs),
+      ]);
       const { revalidatePath } = await import('next/cache');
       revalidatePath('/estudar', 'layout');
     } catch (e) {

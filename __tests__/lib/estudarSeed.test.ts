@@ -16,11 +16,31 @@ describe('estudarSeed E2E', () => {
     resetE2eEstudarStore();
   });
 
-  it('monta vitrine com dois slugs', () => {
-    const page = getE2eEstudarVitrinePage();
-    expect(page.groups).toHaveLength(1);
-    expect(page.groups[0]?.firstSlug).toBe(E2E_ESTUDAR_SLUG_1);
-    expect(page.groups[0]?.questoes).toHaveLength(2);
+  it('monta vitrine com dois slugs e reflete page na paginação', () => {
+    const page1 = getE2eEstudarVitrinePage({ page: 1, bancas: [], assuntos: [] });
+    expect(page1.groups).toHaveLength(1);
+    expect(page1.groups[0]?.firstSlug).toBe(E2E_ESTUDAR_SLUG_1);
+    expect(page1.groups[0]?.questoes).toHaveLength(2);
+    expect(page1.pagination.page).toBe(1);
+
+    const page2 = getE2eEstudarVitrinePage({ page: 2, bancas: [], assuntos: [] });
+    expect(page2.pagination.page).toBe(2);
+    expect(page2.pagination.totalPages).toBeGreaterThanOrEqual(2);
+  });
+
+  it('preserva page=2 na navegação', () => {
+    const q1 = buildE2eEstudarQuestaoPayload(E2E_ESTUDAR_SLUG_1, {
+      banca: [E2E_ESTUDAR_BANCA],
+      page: '2',
+    });
+    expect(q1.status).toBe('ok');
+    if (q1.status !== 'ok') return;
+    expect(q1.payload.proximaSlug).toBe(
+      `${E2E_ESTUDAR_SLUG_2}?banca=${encodeURIComponent(E2E_ESTUDAR_BANCA)}&page=2`,
+    );
+    expect(q1.payload.vitrineQuerySuffix).toBe(
+      `?banca=${encodeURIComponent(E2E_ESTUDAR_BANCA)}&page=2`,
+    );
   });
 
   it('preserva query da vitrine na navegação', () => {

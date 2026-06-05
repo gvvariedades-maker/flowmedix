@@ -40,6 +40,8 @@ import {
   getQuestaoBySlugCached,
   getHistoricoQuestoesCached,
   invalidateModulosCache,
+  invalidateQuestaoSlugCache,
+  invalidateQuestaoSlugsCache,
   invalidateUserModulosCache,
   invalidateVitrinePageCache,
 } from '@/lib/cache';
@@ -123,6 +125,25 @@ describe('Sistema de Cache', () => {
         expect.stringMatching(/^vitrine-page-user-filter-user-42-[a-f0-9]{16}$/),
         { expire: 0 },
       );
+    });
+  });
+
+  describe('invalidateQuestaoSlugCache', () => {
+    it('invalida tags globais e por slug', async () => {
+      await invalidateQuestaoSlugCache('questao-rcp');
+
+      expect(revalidateTag).toHaveBeenCalledWith('questoes', { expire: 0 });
+      expect(revalidateTag).toHaveBeenCalledWith('estudar-questao', { expire: 0 });
+      expect(revalidateTag).toHaveBeenCalledWith('questao-questao-rcp', { expire: 0 });
+    });
+  });
+
+  describe('invalidateQuestaoSlugsCache', () => {
+    it('deduplica slugs e invalida cada tag questao-{slug}', async () => {
+      await invalidateQuestaoSlugsCache(['questao-a', 'questao-a', '  ', 'questao-b']);
+
+      expect(revalidateTag).toHaveBeenCalledWith('questao-questao-a', { expire: 0 });
+      expect(revalidateTag).toHaveBeenCalledWith('questao-questao-b', { expire: 0 });
     });
   });
 });

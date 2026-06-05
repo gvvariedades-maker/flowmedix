@@ -4,7 +4,8 @@
  * Respeita Vary: Authorization — respostas por usuário/sessão.
  */
 
-const CACHE_NAME = 'avant-estudar-questao-l0-v1';
+const CACHE_NAME = 'avant-estudar-questao-l0-v2';
+const L0_CLEAR_MESSAGE = 'AVANT_CLEAR_ESTUDAR_L0';
 const QUESTAO_API_PATH = '/api/estudar/questao';
 const TTL_MS = 120_000;
 const MAX_ENTRIES = 20;
@@ -100,6 +101,38 @@ async function handleQuestaoFetch(request) {
     throw error;
   }
 }
+
+async function clearQuestaoL0Cache(slugs) {
+  const cache = await caches.open(CACHE_NAME);
+  if (!slugs || slugs.length === 0) {
+    const keys = await cache.keys();
+    await Promise.all(keys.map((request) => cache.delete(request)));
+    return;
+  }
+
+  const slugSet = new Set(slugs);
+  const keys = await cache.keys();
+  await Promise.all(
+    keys.map(async (request) => {
+      try {
+        const url = new URL(request.url);
+        const slug = url.searchParams.get('slug');
+        if (slug && slugSet.has(slug)) {
+          await cache.delete(request);
+        }
+      } catch {
+        // ignore malformed URL
+      }
+    }),
+  );
+}
+
+self.addEventListener('message', (event) => {
+  const data = event.data;
+  if (!data || data.type !== L0_CLEAR_MESSAGE) return;
+  const slugs = Array.isArray(data.slugs) ? data.slugs.filter((s) => typeof s === 'string') : null;
+  event.waitUntil(clearQuestaoL0Cache(slugs));
+});
 
 self.addEventListener('fetch', (event) => {
   if (!isQuestaoApiGet(event.request)) {

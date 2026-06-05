@@ -10,8 +10,13 @@ const BYPASS_HEADER = 'x-vercel-protection-bypass';
 const SET_COOKIE_HEADER = 'x-vercel-set-bypass-cookie';
 
 export function getVercelProtectionBypassSecret(): string | undefined {
-  const secret = process.env.VERCEL_PROTECTION_BYPASS?.trim();
-  return secret || undefined;
+  const secret =
+    process.env.VERCEL_PROTECTION_BYPASS?.trim() ||
+    process.env.VERCEL_AUTOMATION_BYPASS_SECRET?.trim();
+  if (!secret) return undefined;
+  // Nome do header HTTP — não é o valor do secret gerado na Vercel.
+  if (secret === BYPASS_HEADER || secret === SET_COOKIE_HEADER) return undefined;
+  return secret;
 }
 
 /** Headers para `fetch` / Playwright contra preview com protection ativa. */

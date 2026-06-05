@@ -39,6 +39,22 @@ export const invalidateUserModulosCache = (userId: string) =>
 
 export const invalidateQuestoesCache = () => revalidateCache(['questoes', 'estudar-questao']);
 
+export const invalidateQuestaoSlugCache = (slug: string) => {
+  const trimmed = slug.trim();
+  if (!trimmed) return Promise.resolve();
+  return revalidateCache(['questoes', 'estudar-questao', `questao-${trimmed}`]);
+};
+
+export const invalidateQuestaoSlugsCache = (slugs: string[]) => {
+  const unique = [...new Set(slugs.map((s) => s.trim()).filter(Boolean))];
+  if (unique.length === 0) return Promise.resolve();
+  return revalidateCache([
+    'questoes',
+    'estudar-questao',
+    ...unique.map((slug) => `questao-${slug}`),
+  ]);
+};
+
 export const invalidateHistoricoCache = () =>
   revalidateCache(['historico', 'analytics', 'vitrine-page']);
 

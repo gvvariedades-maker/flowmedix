@@ -42,6 +42,7 @@ import {
   recordPrefetchSkipped,
   recordPrefetchStart,
 } from '@/lib/estudar/navigationTelemetry';
+import { fetchAndSyncEstudarL0Meta } from '@/lib/estudar/questaoL0Client';
 import {
   getQuestaoFromIdb,
   hydrateQuestaoLruFromIdb,
@@ -164,11 +165,13 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
   }, []);
 
   useEffect(() => {
-    void hydrateQuestaoLruFromIdb((key, payload) => {
-      cacheRef.current.set(key, payload);
-    }).then((count) => {
+    void (async () => {
+      await fetchAndSyncEstudarL0Meta();
+      const count = await hydrateQuestaoLruFromIdb((key, payload) => {
+        cacheRef.current.set(key, payload);
+      });
       if (count > 0) recordIdbHydrate(count);
-    });
+    })();
   }, []);
 
   const readPayloadFromIdb = useCallback(async (cacheKey: string) => {

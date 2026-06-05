@@ -104,5 +104,13 @@ Camadas L0 avançadas — implementadas com flags de produto:
 | **11.1** | IndexedDB L0 (persiste LRU após refresh) | [`lib/estudar/questaoIdbCache.ts`](../lib/estudar/questaoIdbCache.ts) — default on; `NEXT_PUBLIC_ESTUDAR_IDB_L0=0` desliga |
 | **11.2** | Intercepting Routes `@modal` (questão sobre vitrine, mobile) | [`app/(dashboard)/(authenticated)/estudar/@modal/`](../app/(dashboard)/(authenticated)/estudar/@modal/) — opt-in `NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE=1` |
 | **11.3** | Service Worker cache L0 | [`public/sw.js`](../public/sw.js) — GET `/api/estudar/questao`, TTL 120 s, `Vary: Authorization`; `NEXT_PUBLIC_ESTUDAR_SW_L0=0` desliga |
+| **4.1** | Invalidação L0 no publish | [`lib/estudar/questaoL0Client.ts`](../lib/estudar/questaoL0Client.ts) + [`GET /api/estudar/l0-meta`](../app/api/estudar/l0-meta/route.ts) |
+
+### Invalidação L0 (fase 4.1)
+
+- **Publish/delete admin** invalida tags server `questao-{slug}` via [`invalidateQuestaoSlugsCache`](../lib/cache/revalidate.ts) (além de `modulos-estudo` / `estudar-questao`).
+- **Cliente:** `QuestaoNavigationProvider` chama `fetchAndSyncEstudarL0Meta()` antes de hidratar IDB. Fingerprint (`count` + `max(created_at)` + versão IDB) vem de `/api/estudar/l0-meta`; se mudou, purge IDB + mensagem `AVANT_CLEAR_ESTUDAR_L0` ao Service Worker.
+- **Bump de versão:** `ESTUDAR_IDB_DB_VERSION` / `ESTUDAR_SW_CACHE_NAME` v2 — descarta entradas legadas (ex. chaves pré-fix sem `page` no contexto de vitrine).
+- **TTL natural:** entradas L0 expiram em **120 s** (`ESTUDAR_L0_TTL_MS`), alinhado ao cache server-side do payload por usuário.
 
 Telemetria IDB: `idbHit`, `idbMiss`, `idbHydrate` em `window.__avantEstudarNavTelemetry.snapshot()`.

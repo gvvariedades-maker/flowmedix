@@ -34,7 +34,8 @@ export function isEstudarSwL0Enabled(): boolean {
 
 export const ESTUDAR_IDB_DB_NAME = 'avant-estudar-l0';
 export const ESTUDAR_IDB_STORE_NAME = 'questao-payloads';
-export const ESTUDAR_IDB_DB_VERSION = 1;
+/** Bump invalida entradas legadas (ex.: chaves pré-fix sem `page` no contexto). */
+export const ESTUDAR_IDB_DB_VERSION = 2;
 
-export const ESTUDAR_SW_CACHE_NAME = 'avant-estudar-questao-l0-v1';
+export const ESTUDAR_SW_CACHE_NAME = 'avant-estudar-questao-l0-v2';
 export const ESTUDAR_SW_QUESTAO_API_PATH = '/api/estudar/questao';

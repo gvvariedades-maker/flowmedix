@@ -1,4 +1,5 @@
 import {
+  ESTUDAR_IDB_DB_VERSION,
   ESTUDAR_L0_MAX_ENTRIES,
   ESTUDAR_L0_TTL_MS,
   ESTUDAR_SW_CACHE_NAME,
@@ -22,7 +23,8 @@ describe('estudarL0Config', () => {
   it('expõe constantes alinhadas ao LRU server-side', () => {
     expect(ESTUDAR_L0_MAX_ENTRIES).toBe(20);
     expect(ESTUDAR_L0_TTL_MS).toBe(120_000);
-    expect(ESTUDAR_SW_CACHE_NAME).toContain('avant-estudar-questao');
+    expect(ESTUDAR_IDB_DB_VERSION).toBeGreaterThanOrEqual(2);
+    expect(ESTUDAR_SW_CACHE_NAME).toContain('avant-estudar-questao-l0-v2');
     expect(ESTUDAR_SW_QUESTAO_API_PATH).toBe('/api/estudar/questao');
   });
 

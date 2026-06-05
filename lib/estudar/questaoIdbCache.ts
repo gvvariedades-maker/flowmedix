@@ -28,8 +28,14 @@ function openQuestaoIdb(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
     const request = indexedDB.open(ESTUDAR_IDB_DB_NAME, ESTUDAR_IDB_DB_VERSION);
     request.onerror = () => reject(request.error ?? new Error('idb_open_failed'));
-    request.onupgradeneeded = () => {
+    request.onupgradeneeded = (event) => {
       const db = request.result;
+      const upgrade = event as IDBVersionChangeEvent;
+      if (upgrade.oldVersion > 0 && upgrade.oldVersion < ESTUDAR_IDB_DB_VERSION) {
+        if (db.objectStoreNames.contains(ESTUDAR_IDB_STORE_NAME)) {
+          db.deleteObjectStore(ESTUDAR_IDB_STORE_NAME);
+        }
+      }
       if (!db.objectStoreNames.contains(ESTUDAR_IDB_STORE_NAME)) {
         const store = db.createObjectStore(ESTUDAR_IDB_STORE_NAME, { keyPath: 'key' });
         store.createIndex('lastAccessAt', 'lastAccessAt', { unique: false });
@@ -136,6 +142,41 @@ export async function deleteQuestaoFromIdb(key: string): Promise<void> {
   try {
     await withStore('readwrite', async (store) => {
       store.delete(key);
+    });
+  } catch {
+    // ignore
+  }
+}
+
+function matchesQuestaoSlugCacheKey(key: string, slug: string): boolean {
+  return key === slug || key.startsWith(`${slug}|`);
+}
+
+/** Remove todas as variantes de contexto (`slug|query`) para um slug. */
+export async function deleteQuestaoFromIdbBySlug(slug: string): Promise<void> {
+  const trimmed = slug.trim();
+  if (!trimmed || !isQuestaoIdbAvailable()) return;
+
+  try {
+    await withStore('readwrite', async (store) => {
+      const all = await idbRequest<QuestaoIdbEntry[]>(store.getAll());
+      for (const entry of all) {
+        if (matchesQuestaoSlugCacheKey(entry.key, trimmed)) {
+          store.delete(entry.key);
+        }
+      }
+    });
+  } catch {
+    // ignore
+  }
+}
+
+export async function clearAllQuestaoIdb(): Promise<void> {
+  if (!isEstudarIdbL0Enabled() || !isQuestaoIdbAvailable()) return;
+
+  try {
+    await withStore('readwrite', async (store) => {
+      await idbRequest(store.clear());
     });
   } catch {
     // ignore

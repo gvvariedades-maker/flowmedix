@@ -11,6 +11,7 @@ import {
   parsePerfTarget,
   resolvePerfBaseUrl,
 } from '@/lib/perf/loadPerfEnv';
+import { getVercelProtectionBypassSecret } from '@/lib/perf/vercelProtection';
 
 const target = parsePerfTarget(process.argv.slice(2));
 const envMeta = loadPerfEnv(target);
@@ -40,7 +41,19 @@ const result = spawnSync(command, {
   cwd: process.cwd(),
 });
 
+const protectionBypass = Boolean(getVercelProtectionBypassSecret());
+const rawBypass = process.env.VERCEL_PROTECTION_BYPASS?.trim();
+if (againstRemote && rawBypass === 'x-vercel-protection-bypass') {
+  console.warn(
+    '[test:e2e:modal] VERCEL_PROTECTION_BYPASS está com o nome do header HTTP, não o secret. Copie o valor em Vercel → Settings → Deployment Protection → Protection Bypass for Automation (string ~32 caracteres).',
+  );
+} else if (againstRemote && !protectionBypass) {
+  console.warn(
+    '[test:e2e:modal] Preview com Deployment Protection: defina VERCEL_PROTECTION_BYPASS (ou VERCEL_AUTOMATION_BYPASS_SECRET) em .env.staging.local.',
+  );
+}
+
 console.log(
-  `[test:e2e:modal] target=${target} baseUrl=${baseUrl} modal=1 remote=${againstRemote} env=${envMeta.loadedFiles.join(', ')}`,
+  `[test:e2e:modal] target=${target} baseUrl=${baseUrl} modal=1 remote=${againstRemote} vercelBypass=${protectionBypass} env=${envMeta.loadedFiles.join(', ')}`,
 );
 process.exit(result.status ?? 1);

@@ -45,6 +45,10 @@ jest.mock('@/lib/estudar/navigationTelemetry', () => ({
   recordPrefetchStart: jest.fn(),
 }));
 
+jest.mock('@/lib/estudar/questaoL0Client', () => ({
+  fetchAndSyncEstudarL0Meta: jest.fn().mockResolvedValue(false),
+}));
+
 jest.mock('@/lib/estudar/questaoIdbCache', () => ({
   getQuestaoFromIdb: jest.fn().mockResolvedValue(null),
   hydrateQuestaoLruFromIdb: jest.fn().mockResolvedValue(0),
