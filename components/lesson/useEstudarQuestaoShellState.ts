@@ -38,12 +38,16 @@ export function useEstudarQuestaoShellState(options: UseEstudarQuestaoShellState
   const showPlayer = isQuestaoRoute && Boolean(displayPayload) && !modalActive;
   const showSkeleton =
     isQuestaoRoute && !displayPayload && !modalActive && !isDismissingToVitrine;
+  /** Modal @modal: overlay com skeleton enquanto hidrata (evita vitrine inerte). */
+  const showModalLoading =
+    modalActive && isQuestaoRoute && !displayPayload && !isDismissingToVitrine;
   const isPayloadStale = showPlayer && !payloadMatchesRoute;
 
   return {
     isQuestaoRoute,
     showPlayer,
     showSkeleton,
+    showModalLoading,
     isPayloadStale,
     isDismissingToVitrine,
     displayPayload: showPlayer ? displayPayload : null,

@@ -6,12 +6,18 @@ import type { EstudarQuestaoPayload } from '@/components/lesson/questao-navigati
 const mockPush = jest.fn();
 const mockReplace = jest.fn();
 const mockPrefetch = jest.fn();
+const mockRefresh = jest.fn();
 const mockUsePathname = jest.fn(() => '/estudar');
 const mockAddToast = jest.fn();
 const mockFetchWithAuth = jest.fn();
 
 jest.mock('next/navigation', () => ({
-  useRouter: () => ({ push: mockPush, replace: mockReplace, prefetch: mockPrefetch }),
+  useRouter: () => ({
+    push: mockPush,
+    replace: mockReplace,
+    prefetch: mockPrefetch,
+    refresh: mockRefresh,
+  }),
   usePathname: () => mockUsePathname(),
   useSearchParams: () => new URLSearchParams(),
 }));
@@ -53,16 +59,28 @@ jest.mock('@/lib/toast-context', () => ({
   useToast: () => ({ addToast: mockAddToast, toasts: [], removeToast: jest.fn() }),
 }));
 
-const samplePayload = {
+const samplePayloadA = {
   dados: {
     meta: { banca: 'IBFC', topico: 'Urgências' },
     question_data: {
-      instruction: 'Enunciado',
+      instruction: 'Enunciado A',
       options: [{ id: 'a', text: 'A', is_correct: true }],
     },
   },
   moduloSlug: 'questao-a',
   vitrineQuerySuffix: '',
+} as EstudarQuestaoPayload;
+
+const samplePayloadB = {
+  ...samplePayloadA,
+  dados: {
+    ...samplePayloadA.dados,
+    question_data: {
+      instruction: 'Enunciado B',
+      options: [{ id: 'a', text: 'A', is_correct: true }],
+    },
+  },
+  moduloSlug: 'questao-b',
 } as EstudarQuestaoPayload;
 
 function Probe() {
@@ -101,14 +119,27 @@ function DismissProbe() {
   );
 }
 
+function DisplayPayloadProbe({
+  onModuloSlug,
+}: {
+  onModuloSlug: (slug: string | undefined) => void;
+}) {
+  const nav = useQuestaoNavigation();
+  onModuloSlug(nav.displayPayload?.moduloSlug);
+  return null;
+}
+
 describe('QuestaoNavigationProvider', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     mockUsePathname.mockReturnValue('/estudar');
-    mockFetchWithAuth.mockResolvedValue({
-      ok: true,
-      status: 200,
-      json: async () => samplePayload,
+    mockFetchWithAuth.mockImplementation(async (url: string) => {
+      const isB = String(url).includes('slug=questao-b');
+      return {
+        ok: true,
+        status: 200,
+        json: async () => (isB ? samplePayloadB : samplePayloadA),
+      };
     });
   });
 
@@ -259,7 +290,7 @@ describe('QuestaoNavigationProvider', () => {
       .mockResolvedValueOnce({
         ok: true,
         status: 200,
-        json: async () => samplePayload,
+        json: async () => samplePayloadA,
       });
 
     const { getByRole } = render(
@@ -287,6 +318,96 @@ describe('QuestaoNavigationProvider', () => {
       expect(mockPush).toHaveBeenCalledWith('/estudar/questao-a');
     });
     expect(mockFetchWithAuth).toHaveBeenCalledTimes(2);
+  });
+
+  it('route-sync em erro de API chama router.refresh após toast', async () => {
+    mockUsePathname.mockReturnValue('/estudar/q-b');
+    mockFetchWithAuth.mockResolvedValue({
+      ok: false,
+      status: 500,
+      json: async () => ({ error: 'server error' }),
+    });
+
+    render(
+      <QuestaoNavigationProvider>
+        <span>shell</span>
+      </QuestaoNavigationProvider>,
+    );
+
+    await waitFor(() => {
+      expect(mockAddToast).toHaveBeenCalledWith(
+        'Não foi possível carregar esta questão. Tente novamente.',
+        'danger',
+      );
+      expect(mockRefresh).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  it('route-sync em 403 redireciona à vitrine após toast', async () => {
+    mockUsePathname.mockReturnValue('/estudar/q-b');
+    mockFetchWithAuth.mockResolvedValue({
+      ok: false,
+      status: 403,
+      json: async () => ({ error: 'Sem acesso a este módulo' }),
+    });
+
+    render(
+      <QuestaoNavigationProvider>
+        <span>shell</span>
+      </QuestaoNavigationProvider>,
+    );
+
+    await waitFor(() => {
+      expect(mockAddToast).toHaveBeenCalledWith('Sem acesso', 'danger');
+      expect(mockReplace).toHaveBeenCalledWith('/estudar');
+    });
+    expect(mockRefresh).not.toHaveBeenCalled();
+  });
+
+  it('popstate reconcilia displayPayload com a URL do browser (cache hit)', async () => {
+    jest.spyOn(window.history, 'replaceState').mockImplementation(() => {});
+    mockUsePathname.mockReturnValue('/estudar/questao-a');
+
+    const onModuloSlug = jest.fn();
+
+    function NavigateBProbe() {
+      const n = useQuestaoNavigation();
+      return (
+        <button type="button" onClick={() => void n.navigateEstudar('questao-b')}>
+          Ir B
+        </button>
+      );
+    }
+
+    const { getByRole } = render(
+      <QuestaoNavigationProvider>
+        <DisplayPayloadProbe onModuloSlug={onModuloSlug} />
+        <NavigateBProbe />
+      </QuestaoNavigationProvider>,
+    );
+
+    await waitFor(() => {
+      expect(onModuloSlug).toHaveBeenCalledWith('questao-a');
+    });
+
+    await act(async () => {
+      getByRole('button', { name: 'Ir B' }).click();
+    });
+
+    await waitFor(() => {
+      expect(onModuloSlug).toHaveBeenCalledWith('questao-b');
+    });
+
+    onModuloSlug.mockClear();
+
+    await act(async () => {
+      window.history.replaceState(window.history.state, '', '/estudar/questao-a');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    });
+
+    await waitFor(() => {
+      expect(onModuloSlug).toHaveBeenCalledWith('questao-a');
+    });
   });
 
   it('permite segunda navegação na vitrine após a primeira concluir (navegandoRef liberado)', async () => {

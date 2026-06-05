@@ -39,8 +39,20 @@ export function mergeSlidesIntoLessonData<T extends LessonData>(
 export const SLIDES_LAYER_LOAD_ERROR_MESSAGE =
   'Não foi possível carregar o material de estudo reverso. Verifique sua conexão e tente de novo.';
 
+export const SLIDES_LAYER_SESSION_ERROR_MESSAGE =
+  'Sessão expirada. Faça login novamente para carregar o estudo reverso.';
+
+export const SLIDES_LAYER_FORBIDDEN_ERROR_MESSAGE =
+  'Sem acesso ao material desta questão.';
+
 export const SLIDES_LAYER_FALLBACK_BANNER =
   'Material completo indisponível — exibindo resumo da questão';
+
+export function slidesLayerErrorMessage(httpStatus: number): string {
+  if (httpStatus === 401) return SLIDES_LAYER_SESSION_ERROR_MESSAGE;
+  if (httpStatus === 403) return SLIDES_LAYER_FORBIDDEN_ERROR_MESSAGE;
+  return SLIDES_LAYER_LOAD_ERROR_MESSAGE;
+}
 
 export type FetchLessonSlidesLayerResult =
   | { status: 'success'; dados: LessonData }

@@ -26,7 +26,7 @@ import {
   lessonDataHasSlides,
   mergeSlidesIntoLessonData,
   SLIDES_LAYER_FALLBACK_BANNER,
-  SLIDES_LAYER_LOAD_ERROR_MESSAGE,
+  slidesLayerErrorMessage,
 } from '@/lib/estudar/questaoLayers';
 import { useQuestaoNavigationOptional } from '@/components/lesson/questao-navigation-context';
 import NeuroSlide from '@/components/slides/NeuroSlide';
@@ -56,6 +56,8 @@ import { isCertoErradoQuestion } from '@/lib/questionKind';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { buildDotsNavWindow } from '@/lib/estudar/dotsNavWindow';
+import { parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
+import { ESTUDAR_STALE_RECOVERY_MS } from '@/components/lesson/useEstudarStaleRecovery';
 import { patchQuestaoEstudadaInPayload } from '@/lib/estudar/patchQuestaoEstudada';
 import { cn } from '@/lib/utils';
 import {
@@ -169,6 +171,7 @@ export default function AvantLessonPlayer({
   const router = useRouter();
   const questaoNav = useQuestaoNavigationOptional();
   const [isNavigating, setIsNavigating] = useState(false);
+  const [staleElapsedMs, setStaleElapsedMs] = useState(0);
   const bottomNavRef = useRef<HTMLDivElement>(null);
   const questaoAtualDotRef = useRef<HTMLButtonElement | null>(null);
   /** Área com overflow-y-auto (enunciado + alternativas). Ref usada para wheel sobre <button>. */
@@ -288,12 +291,15 @@ export default function AvantLessonPlayer({
   const [paywallOpen, setPaywallOpen] = useState(false);
   const [resetEm, setResetEm] = useState<string | null>(null);
   const [freemiumLimiteAtingido, setFreemiumLimiteAtingido] = useState(false);
+  const [freemiumStatusWarning, setFreemiumStatusWarning] = useState<string | null>(null);
   const [confirmandoResposta, setConfirmandoResposta] = useState(false);
   const [tentativaErro, setTentativaErro] = useState<string | null>(null);
+  const [tentativaAccessDenied, setTentativaAccessDenied] = useState(false);
   const [gabarito, setGabarito] = useState<GabaritoTentativa | null>(null);
   const [dadosComSlides, setDadosComSlides] = useState<LessonData | null>(null);
   const [slidesLoading, setSlidesLoading] = useState(false);
   const [slidesLoadError, setSlidesLoadError] = useState<string | null>(null);
+  const [slidesAccessDenied, setSlidesAccessDenied] = useState(false);
   const [slidesUsingFallback, setSlidesUsingFallback] = useState(false);
   const [slidesFetchTrigger, setSlidesFetchTrigger] = useState(0);
   const slidesLayerFetchRef = useRef(false);
@@ -308,6 +314,7 @@ export default function AvantLessonPlayer({
     slidesPersistFailedRef.current = false;
     setSlidesLoading(false);
     setSlidesLoadError(null);
+    setSlidesAccessDenied(false);
     setSlidesUsingFallback(false);
   }, [moduloSlug]);
 
@@ -330,14 +337,46 @@ export default function AvantLessonPlayer({
     setConclusaoErro(null);
     setPaywallOpen(false);
     setFreemiumLimiteAtingido(false);
+    setFreemiumStatusWarning(null);
     setTentativaErro(null);
+    setTentativaAccessDenied(false);
     setGabarito(null);
     questionBodyScrollRef.current?.scrollTo({ top: 0, behavior: 'auto' });
   }, [moduloSlug]);
 
   const navegacaoBloqueada = confirmandoResposta || marcandoConclusao;
-  const navegacaoCarregando = isNavigating || payloadStale;
-  const navegacaoIndisponivel = navegacaoBloqueada || navegacaoCarregando;
+  const navegacaoIndisponivel = navegacaoBloqueada || isNavigating || payloadStale;
+  const navegacaoStatusLabel = isNavigating
+    ? 'Carregando...'
+    : payloadStale
+      ? 'Sincronizando...'
+      : null;
+
+  useEffect(() => {
+    if (!payloadStale) {
+      setStaleElapsedMs(0);
+      return;
+    }
+    const startedAt = Date.now();
+    const tick = () => setStaleElapsedMs(Date.now() - startedAt);
+    tick();
+    const intervalId = window.setInterval(tick, 250);
+    return () => window.clearInterval(intervalId);
+  }, [payloadStale]);
+
+  const showStaleRetry =
+    payloadStale &&
+    staleElapsedMs >= ESTUDAR_STALE_RECOVERY_MS &&
+    Boolean(questaoNav?.refetchRoutePayload);
+
+  const handleStaleRetry = useCallback(() => {
+    if (typeof window === 'undefined' || !questaoNav) return;
+    const slug = parseEstudarSlugFromPathname(window.location.pathname);
+    if (!slug) return;
+    void questaoNav.refetchRoutePayload(`${slug}${window.location.search}`, {
+      skipCache: true,
+    });
+  }, [questaoNav]);
 
   useEffect(() => {
     if (mode !== 'live') return;
@@ -345,18 +384,31 @@ export default function AvantLessonPlayer({
 
     fetchWithAuth('/api/freemium/status')
       .then(async (response) => {
-        if (!response.ok || cancelled) return;
+        if (cancelled) return;
+        if (!response.ok) {
+          setFreemiumStatusWarning(
+            'Não foi possível verificar seu plano gratuito. O limite diário pode não estar atualizado.',
+          );
+          return;
+        }
         const data = (await response.json()) as {
           limiteAtingido?: boolean;
           resetEm?: string;
         };
         if (cancelled) return;
+        setFreemiumStatusWarning(null);
         if (data.limiteAtingido) {
           setFreemiumLimiteAtingido(true);
           if (data.resetEm) setResetEm(data.resetEm);
         }
       })
-      .catch(() => {});
+      .catch(() => {
+        if (!cancelled) {
+          setFreemiumStatusWarning(
+            'Não foi possível verificar seu plano gratuito. O limite diário pode não estar atualizado.',
+          );
+        }
+      });
 
     return () => {
       cancelled = true;
@@ -414,6 +466,7 @@ export default function AvantLessonPlayer({
     slidesPersistFailedRef.current = false;
     setSlidesLoading(false);
     setSlidesLoadError(null);
+    setSlidesAccessDenied(false);
     setSlidesUsingFallback(false);
   }, [etapa]);
 
@@ -440,6 +493,7 @@ export default function AvantLessonPlayer({
     let cancelled = false;
     setSlidesLoading(true);
     setSlidesLoadError(null);
+    setSlidesAccessDenied(false);
 
     const apiUrl = buildEstudarQuestaoApiUrl(slugComQuery, { layers: 'full' });
 
@@ -479,7 +533,13 @@ export default function AvantLessonPlayer({
           });
         } else {
           slidesPersistFailedRef.current = true;
-          setSlidesLoadError(SLIDES_LAYER_LOAD_ERROR_MESSAGE);
+          if (result.status === 'http_error') {
+            setSlidesLoadError(slidesLayerErrorMessage(result.httpStatus));
+            setSlidesAccessDenied(result.httpStatus === 403);
+          } else {
+            setSlidesLoadError(slidesLayerErrorMessage(0));
+            setSlidesAccessDenied(false);
+          }
         }
         if (result.status === 'http_error') {
           logger.error('Falha HTTP ao carregar NeuroSlides (layers=full)', undefined, {
@@ -534,7 +594,54 @@ export default function AvantLessonPlayer({
 
   const prefersReducedMotion = useReducedMotion() ?? false;
 
-  if (!activeDados?.question_data?.options?.length) return null;
+  if (!activeDados?.question_data?.options?.length) {
+    const vitrineSuffix = fromPlano
+      ? '?from=plano'
+      : fromCaderno
+        ? `?from=caderno&caderno_id=${encodeURIComponent(fromCaderno)}`
+        : vitrineQuerySuffix || '';
+    const handleVoltarVitrine = () => {
+      const ctx = { fromPlano, fromCaderno, vitrineQuerySuffix: vitrineSuffix };
+      if (questaoNav) {
+        questaoNav.dismissToVitrine(ctx);
+      } else {
+        router.replace(buildEstudarVitrineHref(ctx));
+      }
+      resetDashboardMainScroll();
+    };
+    const vitrineDestinoLabel = fromPlano
+      ? 'plano diário'
+      : fromCaderno
+        ? 'cadernos'
+        : 'vitrine';
+
+    return (
+      <div
+        data-testid="lesson-empty-question-error"
+        className="flex h-full min-h-0 w-full flex-1 flex-col overflow-hidden border border-[rgba(255,255,255,0.10)] bg-[#0d1117] font-sans shadow-2xl md:rounded-[40px]"
+      >
+        <div className="flex flex-1 flex-col items-center justify-center gap-6 px-6 py-12 text-center">
+          <div className="flex h-16 w-16 items-center justify-center rounded-full border border-rose-500/30 bg-rose-500/10">
+            <XCircle size={32} className="text-rose-400" aria-hidden />
+          </div>
+          <div className="space-y-2">
+            <h2 className="text-lg font-bold text-slate-100">Questão indisponível</h2>
+            <p className="max-w-md text-sm text-slate-400">
+              Esta questão não possui alternativas válidas para exibição. Volte à {vitrineDestinoLabel} e escolha outra.
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={handleVoltarVitrine}
+            className="group flex min-h-[48px] items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/15"
+          >
+            <ArrowLeft size={16} className="shrink-0" aria-hidden />
+            Voltar à {vitrineDestinoLabel}
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   const meta = activeDados.meta ?? {
     banca: 'DESCONHECIDA',
@@ -567,6 +674,7 @@ export default function AvantLessonPlayer({
     | { status: 'ok'; gabarito: GabaritoTentativa }
     | { status: 'blocked' }
     | { status: 'unauthorized' }
+    | { status: 'forbidden'; message: string }
     | { status: 'error' };
 
   const buildPreviewGabarito = (opcaoId: string): GabaritoTentativa => {
@@ -609,8 +717,10 @@ export default function AvantLessonPlayer({
           moduloSlug,
           error: payload.error,
         });
-        setTentativaErro(payload.error ?? 'Sem acesso a esta questão.');
-        return { status: 'error' };
+        const message = payload.error ?? 'Sem acesso a esta questão.';
+        setTentativaAccessDenied(true);
+        setTentativaErro(message);
+        return { status: 'forbidden', message };
       }
 
       if (!response.ok) {
@@ -659,11 +769,15 @@ export default function AvantLessonPlayer({
 
     setConfirmandoResposta(true);
     setTentativaErro(null);
+    setTentativaAccessDenied(false);
     try {
       const result = await registrarTentativa(selecionada);
       if (result.status !== 'ok') {
         if (result.status === 'unauthorized') {
           setTentativaErro('Sessão expirada. Faça login novamente para registrar sua resposta.');
+        } else if (result.status === 'forbidden') {
+          setTentativaAccessDenied(true);
+          setTentativaErro(result.message);
         } else if (result.status === 'error') {
           setTentativaErro('Não foi possível registrar sua resposta. Tente novamente.');
         }
@@ -671,6 +785,39 @@ export default function AvantLessonPlayer({
       }
       setGabarito(result.gabarito);
       setEtapa('gabarito');
+      if (questaoNav && estudoConcluido) {
+        const slug = moduloSlug || activeDados.modulo_slug || '';
+        if (slug) {
+          const slugComQuery = buildEstudarSlugComQueryFromPlayerProps({
+            moduloSlug: slug,
+            fromPlano,
+            fromCaderno,
+            vitrineQuerySuffix,
+          });
+          const basePayload =
+            questaoNav.displayPayload?.moduloSlug === slug
+              ? questaoNav.displayPayload
+              : {
+                  dados: activeDados,
+                  mode,
+                  proximaSlug,
+                  anteriorSlug,
+                  moduloSlug: slug,
+                  questoesDoAssunto,
+                  fromPlano,
+                  fromCaderno,
+                  listaContexto,
+                  avantCodigo,
+                  vitrineQuerySuffix,
+                };
+          const patched = patchQuestaoEstudadaInPayload(basePayload, slug);
+          questaoNav.setDisplayPayload(patched);
+          if (slugComQuery) {
+            const cacheKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
+            questaoNav.cachePayload(cacheKey, patched);
+          }
+        }
+      }
     } finally {
       setConfirmandoResposta(false);
     }
@@ -1125,6 +1272,15 @@ export default function AvantLessonPlayer({
           </div>
         </motion.div>
 
+        {mode === 'live' && freemiumStatusWarning ? (
+          <div
+            role="status"
+            className="mx-6 mb-2 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-2.5 text-center text-xs font-medium text-amber-200 md:mx-8"
+          >
+            {freemiumStatusWarning}
+          </div>
+        ) : null}
+
         {etapa === 'pergunta' && selecionada && (
           <motion.div
             ref={confirmarRespostaRef}
@@ -1139,9 +1295,21 @@ export default function AvantLessonPlayer({
               className="w-full max-w-xl"
             />
             {tentativaErro ? (
-              <p role="alert" className="w-full max-w-xl text-center text-sm text-[#ff4d72] font-medium px-2">
-                {tentativaErro}
-              </p>
+              <div
+                role="alert"
+                className="flex w-full max-w-xl flex-col items-center gap-2 px-2 text-center"
+              >
+                <p className="text-sm font-medium text-[#ff4d72]">{tentativaErro}</p>
+                {tentativaAccessDenied ? (
+                  <button
+                    type="button"
+                    onClick={handleVoltarLista}
+                    className="text-xs font-semibold text-[#00f2ff] underline-offset-2 transition-colors hover:text-white hover:underline"
+                  >
+                    Voltar à vitrine
+                  </button>
+                ) : null}
+              </div>
             ) : null}
             <button
               type="button"
@@ -1339,6 +1507,17 @@ export default function AvantLessonPlayer({
               </span>
             </div>
           )}
+          {showStaleRetry && (
+            <div className="flex justify-center px-3 pt-2">
+              <button
+                type="button"
+                onClick={handleStaleRetry}
+                className="text-[10px] font-semibold uppercase tracking-wide text-[#00f2ff] hover:text-white transition-colors"
+              >
+                Tentar novamente
+              </button>
+            </div>
+          )}
           <div className="px-2 sm:px-4 py-3 flex flex-wrap justify-between items-center gap-2">
             <button 
               type="button"
@@ -1354,7 +1533,7 @@ export default function AvantLessonPlayer({
                 anteriorSlug && !navegacaoIndisponivel ? 'text-slate-400 hover:bg-white/[0.05] hover:text-[#00f2ff]' : 'text-white/15 cursor-not-allowed'
               }`}
             >
-              <ArrowLeft size={16} /> <span>{navegacaoCarregando ? 'Carregando...' : 'Anterior'}</span>
+              <ArrowLeft size={16} /> <span>{navegacaoStatusLabel ?? 'Anterior'}</span>
             </button>
             {proximaSlug ? (
               <button 
@@ -1369,8 +1548,8 @@ export default function AvantLessonPlayer({
                 disabled={navegacaoIndisponivel}
                 className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-white/[0.07] text-slate-200 font-black uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:bg-white/[0.12] transition-all min-h-[44px] disabled:cursor-not-allowed disabled:opacity-50"
               >
-                <span className="sm:hidden">{navegacaoCarregando ? 'Carregando...' : 'Próxima'}</span>
-                <span className="hidden sm:inline">{navegacaoCarregando ? 'Carregando...' : 'Próxima Questão'}</span>
+                <span className="sm:hidden">{navegacaoStatusLabel ?? 'Próxima'}</span>
+                <span className="hidden sm:inline">{navegacaoStatusLabel ?? 'Próxima Questão'}</span>
                 <ArrowRight size={16} className="shrink-0" />
               </button>
             ) : (
@@ -1561,13 +1740,26 @@ export default function AvantLessonPlayer({
                     role="alert"
                   >
                     <p className="max-w-md text-center text-sm text-slate-300">{slidesLoadError}</p>
-                    <button
-                      type="button"
-                      onClick={retrySlidesLoad}
-                      className="min-h-[44px] rounded-xl border border-cyan-500/40 bg-cyan-500/15 px-6 py-2.5 text-xs font-bold uppercase tracking-widest text-cyan-300 transition-colors hover:bg-cyan-500/25"
-                    >
-                      Tentar de novo
-                    </button>
+                    <div className="flex flex-col items-center gap-3">
+                      {!slidesAccessDenied ? (
+                        <button
+                          type="button"
+                          onClick={retrySlidesLoad}
+                          className="min-h-[44px] rounded-xl border border-cyan-500/40 bg-cyan-500/15 px-6 py-2.5 text-xs font-bold uppercase tracking-widest text-cyan-300 transition-colors hover:bg-cyan-500/25"
+                        >
+                          Tentar de novo
+                        </button>
+                      ) : null}
+                      {slidesAccessDenied ? (
+                        <button
+                          type="button"
+                          onClick={handleVoltarLista}
+                          className="min-h-[44px] rounded-xl border border-white/20 bg-white/10 px-6 py-2.5 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-white/15"
+                        >
+                          Voltar à vitrine
+                        </button>
+                      ) : null}
+                    </div>
                   </div>
                 ) : (
                 <>

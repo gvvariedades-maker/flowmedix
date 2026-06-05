@@ -1,4 +1,5 @@
 import { act, render, screen, waitFor } from '@testing-library/react';
+import { ESTUDAR_STALE_RECOVERY_MS } from '@/components/lesson/useEstudarStaleRecovery';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import {
@@ -9,6 +10,7 @@ import type { AvantLessonPlayerProps } from '@/types/lesson';
 
 const mockPush = jest.fn();
 const navigateEstudar = jest.fn();
+const refetchRoutePayload = jest.fn();
 const mockFetchWithAuth = fetchWithAuth as jest.MockedFunction<typeof fetchWithAuth>;
 
 jest.mock('next/navigation', () => ({
@@ -103,6 +105,7 @@ function renderPlayerWithNav(overrides: Partial<AvantLessonPlayerProps> = {}) {
     navigateEstudar,
     prefetchEstudar: jest.fn(),
     prefetchPayload: jest.fn(),
+    refetchRoutePayload,
     dismissToVitrine: jest.fn(),
     isDismissingToVitrine: false,
     estudarRoute: null,
@@ -168,12 +171,12 @@ describe('AvantLessonPlayer navigation', () => {
     await waitFor(() => expect(navigateEstudar).toHaveBeenCalledTimes(2));
   });
 
-  it('não navega com payloadStale (dots e Próxima desabilitados)', async () => {
+  it('não navega com payloadStale (dots e Próxima desabilitados, label Sincronizando)', async () => {
     renderPlayerWithNav({ payloadStale: true });
 
-    const carregandoBtns = screen.getAllByRole('button', { name: /carregando/i });
-    expect(carregandoBtns.length).toBeGreaterThanOrEqual(1);
-    const proximaBtn = carregandoBtns[carregandoBtns.length - 1]!;
+    const sincronizandoBtns = screen.getAllByRole('button', { name: /sincronizando/i });
+    expect(sincronizandoBtns.length).toBeGreaterThanOrEqual(1);
+    const proximaBtn = sincronizandoBtns[sincronizandoBtns.length - 1]!;
     expect(proximaBtn).toBeDisabled();
 
     await act(async () => {
@@ -191,5 +194,56 @@ describe('AvantLessonPlayer navigation', () => {
       outroDot!.click();
     });
     expect(navigateEstudar).not.toHaveBeenCalled();
+  });
+
+  it('mostra Carregando... enquanto navigateEstudar está em andamento', async () => {
+    let resolveNavigate: (value: boolean) => void = () => {};
+    navigateEstudar.mockImplementation(
+      () =>
+        new Promise<boolean>((resolve) => {
+          resolveNavigate = resolve;
+        }),
+    );
+
+    renderPlayerWithNav();
+
+    const proximaBtn = screen.getByRole('button', { name: /próxima/i });
+
+    await act(async () => {
+      proximaBtn.click();
+    });
+
+    expect(screen.getAllByRole('button', { name: /carregando/i }).length).toBeGreaterThanOrEqual(1);
+
+    await act(async () => {
+      resolveNavigate(true);
+    });
+
+    await waitFor(() => {
+      expect(screen.getByRole('button', { name: /próxima/i })).toBeInTheDocument();
+    });
+  });
+
+  it('exibe Tentar novamente após stale prolongado e chama refetchRoutePayload', async () => {
+    jest.useFakeTimers();
+    refetchRoutePayload.mockResolvedValue('ok');
+    window.history.pushState({}, '', '/estudar/questao-a');
+
+    renderPlayerWithNav({ payloadStale: true });
+
+    expect(screen.queryByRole('button', { name: /tentar novamente/i })).not.toBeInTheDocument();
+
+    await act(async () => {
+      jest.advanceTimersByTime(ESTUDAR_STALE_RECOVERY_MS);
+    });
+
+    const retryBtn = screen.getByRole('button', { name: /tentar novamente/i });
+    await act(async () => {
+      retryBtn.click();
+    });
+
+    expect(refetchRoutePayload).toHaveBeenCalledWith('questao-a', { skipCache: true });
+
+    jest.useRealTimers();
   });
 });

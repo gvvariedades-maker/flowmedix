@@ -27,7 +27,7 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
   } = useEstudarQuestaoShellState({ modalActive });
 
   const hideVitrineChildren = modalActive
-    ? Boolean(displayPayload) && !isDismissingToVitrine
+    ? isQuestaoRoute && !isDismissingToVitrine
     : isQuestaoRoute && (showPlayer || showSkeleton);
 
   const vitrineSlotInteractive =

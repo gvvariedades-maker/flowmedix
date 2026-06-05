@@ -48,11 +48,24 @@ import {
   setQuestaoInIdb,
 } from '@/lib/estudar/questaoIdbCache';
 import { runEstudarViewTransition } from '@/lib/estudar/viewTransition';
+import { useEstudarStaleRecovery } from '@/components/lesson/useEstudarStaleRecovery';
 import { useToast } from '@/lib/toast-context';
 
 const CACHE_MAX_ENTRIES = 20;
 const TOAST_SEM_ACESSO = 'Sem acesso';
 const TOAST_CARREGAR_QUESTAO = 'Não foi possível carregar esta questão. Tente novamente.';
+
+function buildVitrineReturnContextFromLocationSearch(): EstudarVitrineReturnContext {
+  if (typeof window === 'undefined') return {};
+  const search = window.location.search;
+  const params = new URLSearchParams(search);
+  if (params.get('from') === 'plano') return { fromPlano: true };
+  const cadernoId = params.get('caderno_id');
+  if (params.get('from') === 'caderno' && cadernoId) {
+    return { fromCaderno: cadernoId };
+  }
+  return search ? { vitrineQuerySuffix: search } : {};
+}
 
 type FetchPayloadResult =
   | { kind: 'ok'; payload: EstudarQuestaoPayload }
@@ -141,15 +154,6 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     }
   }, [pathname, searchParams, estudarRoute]);
 
-  useEffect(() => {
-    const onPopState = () => {
-      setEstudarRoute(null);
-      routePayloadSyncKeyRef.current = null;
-    };
-    window.addEventListener('popstate', onPopState);
-    return () => window.removeEventListener('popstate', onPopState);
-  }, []);
-
   const cachePayload = useCallback((key: string, payload: EstudarQuestaoPayload) => {
     cacheRef.current.set(key, payload);
     void setQuestaoInIdb(key, payload);
@@ -181,22 +185,26 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
   const fetchPayloadIntoCache = useCallback(
     (
       slugComQuery: string,
-      options?: { layers?: 'core' | 'full' },
+      options?: { layers?: 'core' | 'full'; skipCache?: boolean },
     ): Promise<FetchPayloadResult> => {
       const layers = options?.layers ?? 'core';
+      const skipCache = options?.skipCache ?? false;
       const cacheKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
       if (forbiddenKeysRef.current.has(cacheKey)) {
         recordPrefetchSkipped(cacheKey, 'forbidden');
         return Promise.resolve({ kind: 'forbidden' });
       }
 
-      const cached = cacheRef.current.peek(cacheKey);
-      if (cached) {
-        recordPrefetchSkipped(cacheKey, 'cached');
-        return Promise.resolve({ kind: 'ok', payload: cached });
+      if (!skipCache) {
+        const cached = cacheRef.current.peek(cacheKey);
+        if (cached) {
+          recordPrefetchSkipped(cacheKey, 'cached');
+          return Promise.resolve({ kind: 'ok', payload: cached });
+        }
       }
 
-      const existing = inFlightRef.current.get(cacheKey);
+      const inFlightKey = skipCache ? `skip:${cacheKey}` : cacheKey;
+      const existing = inFlightRef.current.get(inFlightKey);
       if (existing) {
         recordPrefetchSkipped(cacheKey, 'deduped');
         return existing;
@@ -208,13 +216,15 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
         typeof performance !== 'undefined' ? performance.now() : Date.now();
 
       const promise = (async (): Promise<FetchPayloadResult> => {
-        const fromIdb = await readPayloadFromIdb(cacheKey);
-        if (fromIdb) {
-          const durationMs = Math.round(
-            (typeof performance !== 'undefined' ? performance.now() : Date.now()) - startedAt,
-          );
-          recordPrefetchEnd(cacheKey, { ok: true, durationMs, status: 200 });
-          return { kind: 'ok', payload: fromIdb };
+        if (!skipCache) {
+          const fromIdb = await readPayloadFromIdb(cacheKey);
+          if (fromIdb) {
+            const durationMs = Math.round(
+              (typeof performance !== 'undefined' ? performance.now() : Date.now()) - startedAt,
+            );
+            recordPrefetchEnd(cacheKey, { ok: true, durationMs, status: 200 });
+            return { kind: 'ok', payload: fromIdb };
+          }
         }
 
         try {
@@ -257,16 +267,91 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
           });
           return { kind: 'error' };
         } finally {
-          inFlightRef.current.delete(cacheKey);
+          inFlightRef.current.delete(inFlightKey);
           clearPrefetchInFlight(cacheKey);
         }
       })();
 
-      inFlightRef.current.set(cacheKey, promise);
+      inFlightRef.current.set(inFlightKey, promise);
       return promise;
     },
     [readPayloadFromIdb],
   );
+
+  const dismissToVitrine = useCallback(
+    (ctx: EstudarVitrineReturnContext = {}) => {
+      dismissingToVitrineRef.current = true;
+      setIsDismissingToVitrine(true);
+      routePayloadSyncKeyRef.current = null;
+      setEstudarRoute(null);
+      scheduleRouterNavigate(router, buildEstudarVitrineHref(ctx), 'replace');
+    },
+    [router],
+  );
+
+  const reconcileDisplayPayloadFromBrowserUrl = useCallback(() => {
+    if (typeof window === 'undefined') return;
+    if (dismissingToVitrineRef.current) return;
+
+    const browserPathname = window.location.pathname;
+    const slug = parseEstudarSlugFromPathname(browserPathname);
+    if (slug === null) {
+      routePayloadSyncKeyRef.current = null;
+      setDisplayPayload(null);
+      return;
+    }
+
+    const cacheKey = buildEstudarCacheKey(
+      browserPathname,
+      new URLSearchParams(window.location.search),
+    );
+    if (routePayloadSyncKeyRef.current === cacheKey) return;
+
+    const cached = cacheRef.current.peek(cacheKey);
+    if (cached) {
+      routePayloadSyncKeyRef.current = cacheKey;
+      setDisplayPayload(cached);
+      return;
+    }
+
+    const slugComQuery = `${slug}${window.location.search}`;
+
+    void (async () => {
+      const result = await fetchPayloadIntoCache(slugComQuery, { layers: 'full' });
+      if (result.kind === 'ok') {
+        routePayloadSyncKeyRef.current = cacheKey;
+        setDisplayPayload(result.payload);
+        return;
+      }
+      if (result.kind === 'forbidden') {
+        notifySemAcesso();
+        dismissToVitrine(buildVitrineReturnContextFromLocationSearch());
+        return;
+      }
+      logger.warn('Reconciliação de payload após popstate falhou', {
+        slugComQuery: slug,
+        kind: result.kind,
+      });
+      notifyFalhaCarregar();
+      router.refresh();
+    })();
+  }, [
+    fetchPayloadIntoCache,
+    notifySemAcesso,
+    notifyFalhaCarregar,
+    dismissToVitrine,
+    router,
+  ]);
+
+  useEffect(() => {
+    const onPopState = () => {
+      setEstudarRoute(null);
+      routePayloadSyncKeyRef.current = null;
+      reconcileDisplayPayloadFromBrowserUrl();
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, [reconcileDisplayPayloadFromBrowserUrl]);
 
   /** Limpa soft-nav e player antes do paint ao voltar à vitrine (evita vitrine inerte). */
   useLayoutEffect(() => {
@@ -319,6 +404,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       }
       if (result.kind === 'forbidden') {
         notifySemAcesso();
+        dismissToVitrine(buildVitrineReturnContextFromLocationSearch());
         return;
       }
       logger.warn('Sincronização de payload da questão falhou na troca de rota', {
@@ -326,16 +412,44 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
         kind: result.kind,
       });
       notifyFalhaCarregar();
+      router.refresh();
     })();
 
     return () => {
       cancelled = true;
     };
-  }, [pathname, fetchPayloadIntoCache, notifySemAcesso, notifyFalhaCarregar]);
+  }, [
+    pathname,
+    router,
+    fetchPayloadIntoCache,
+    notifySemAcesso,
+    notifyFalhaCarregar,
+    dismissToVitrine,
+  ]);
 
   const prefetchPayload = useCallback(
     (slugComQuery: string) => {
       void fetchPayloadIntoCache(slugComQuery);
+    },
+    [fetchPayloadIntoCache],
+  );
+
+  const refetchRoutePayload = useCallback(
+    async (
+      slugComQuery: string,
+      options?: { skipCache?: boolean },
+    ): Promise<'ok' | 'forbidden' | 'error'> => {
+      const result = await fetchPayloadIntoCache(slugComQuery, {
+        layers: 'full',
+        skipCache: options?.skipCache,
+      });
+      if (result.kind === 'ok') {
+        const cacheKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
+        routePayloadSyncKeyRef.current = cacheKey;
+        setDisplayPayload(result.payload);
+        return 'ok';
+      }
+      return result.kind;
     },
     [fetchPayloadIntoCache],
   );
@@ -362,17 +476,6 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       });
     },
     [fetchPayloadIntoCache, prefetchRoute],
-  );
-
-  const dismissToVitrine = useCallback(
-    (ctx: EstudarVitrineReturnContext = {}) => {
-      dismissingToVitrineRef.current = true;
-      setIsDismissingToVitrine(true);
-      routePayloadSyncKeyRef.current = null;
-      setEstudarRoute(null);
-      scheduleRouterNavigate(router, buildEstudarVitrineHref(ctx), 'replace');
-    },
-    [router],
   );
 
   const navigateEstudar = useCallback(
@@ -459,6 +562,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       navigateEstudar,
       prefetchEstudar,
       prefetchPayload,
+      refetchRoutePayload,
       dismissToVitrine,
       isDismissingToVitrine,
       estudarRoute,
@@ -470,6 +574,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
       navigateEstudar,
       prefetchEstudar,
       prefetchPayload,
+      refetchRoutePayload,
       dismissToVitrine,
       isDismissingToVitrine,
       estudarRoute,
@@ -477,8 +582,16 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
   );
 
   return (
-    <QuestaoNavigationContext.Provider value={value}>{children}</QuestaoNavigationContext.Provider>
+    <QuestaoNavigationContext.Provider value={value}>
+      <EstudarStaleRecoveryRunner />
+      {children}
+    </QuestaoNavigationContext.Provider>
   );
+}
+
+function EstudarStaleRecoveryRunner() {
+  useEstudarStaleRecovery();
+  return null;
 }
 
 export type { EstudarQuestaoPayload } from '@/components/lesson/questao-navigation-context';

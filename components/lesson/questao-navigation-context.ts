@@ -15,6 +15,14 @@ export type QuestaoNavigationContextValue = {
   navigateEstudar: (slugComQuery: string) => Promise<boolean>;
   prefetchEstudar: (slugComQuery: string) => void;
   prefetchPayload: (slugComQuery: string) => void;
+  /**
+   * Re-fetch do payload da rota (recovery de stale); `skipCache` ignora LRU/IDB.
+   * Retorna `ok` quando o payload foi aplicado em memória.
+   */
+  refetchRoutePayload: (
+    slugComQuery: string,
+    options?: { skipCache?: boolean },
+  ) => Promise<'ok' | 'forbidden' | 'error'>;
   /** Fecha questão e volta à vitrine (replace — evita reabrir pelo sync de URL). */
   dismissToVitrine: (ctx?: EstudarVitrineReturnContext) => void;
   /** True entre dismiss e a URL voltar para `/estudar` (evita skeleton e re-hidratação). */

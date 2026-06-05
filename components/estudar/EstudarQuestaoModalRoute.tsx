@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, type ReactNode } from 'react';
 import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
+import EstudarQuestaoSkeleton from '@/components/lesson/EstudarQuestaoSkeleton';
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
 import { useEstudarPayloadStale } from '@/components/lesson/useEstudarPayloadStale';
 import { isEstudarModalRouteEnabled } from '@/lib/estudar/estudarL0Config';
@@ -37,7 +38,8 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
   const panelRef = useRef<HTMLDivElement>(null);
   const previousActiveElementRef = useRef<HTMLElement | null>(null);
   const modalEnabled = isEstudarModalRouteEnabled();
-  const showModalOverlay = Boolean(displayPayload) && !isDismissingToVitrine;
+  const showModalLoading = !displayPayload;
+  const showModalOverlay = !isDismissingToVitrine;
 
   useBodyScrollLock(modalEnabled && showModalOverlay);
 
@@ -107,42 +109,47 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
     <>
       {children}
       {showModalOverlay ? (
-      <div
-        className="fixed inset-0 z-[100] flex flex-col md:hidden"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Questão"
-      >
-        <button
-          type="button"
-          tabIndex={-1}
-          className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"
-          aria-label="Fechar questão"
-          onClick={close}
-        />
         <div
-          ref={panelRef}
-          className={cn(
-            'relative z-10 mt-auto flex min-h-0 max-h-full flex-1 flex-col pt-safe',
-            'rounded-t-[2rem] border border-white/10 bg-[#010409] shadow-2xl',
-            '[view-transition-name:estudar-questao-root]',
-          )}
+          className="fixed inset-0 z-[100] flex flex-col md:hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-label={showModalLoading ? 'Carregando questão' : 'Questão'}
+          aria-busy={showModalLoading || payloadStale || undefined}
         >
+          <button
+            type="button"
+            tabIndex={-1}
+            className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"
+            aria-label="Fechar questão"
+            onClick={close}
+          />
           <div
+            ref={panelRef}
             className={cn(
-              'flex min-h-0 flex-1 flex-col overflow-hidden px-3 pt-3',
-              payloadStale && 'pointer-events-none opacity-90',
+              'relative z-10 mt-auto flex min-h-0 max-h-full flex-1 flex-col pt-safe',
+              'rounded-t-[2rem] border border-white/10 bg-[#010409] shadow-2xl',
+              '[view-transition-name:estudar-questao-root]',
             )}
-            aria-busy={payloadStale || undefined}
           >
-            <AvantLessonPlayer
-              key="estudar-lesson-player-modal"
-              {...displayPayload!}
-              payloadStale={payloadStale}
-            />
+            <div
+              className={cn(
+                'flex min-h-0 flex-1 flex-col overflow-hidden px-3 pt-3',
+                payloadStale && 'pointer-events-none opacity-90',
+              )}
+              aria-busy={payloadStale || undefined}
+            >
+              {showModalLoading ? (
+                <EstudarQuestaoSkeleton />
+              ) : (
+                <AvantLessonPlayer
+                  key="estudar-lesson-player-modal"
+                  {...displayPayload!}
+                  payloadStale={payloadStale}
+                />
+              )}
+            </div>
           </div>
         </div>
-      </div>
       ) : null}
     </>
   );

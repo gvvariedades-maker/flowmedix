@@ -105,6 +105,22 @@ describe('useEstudarQuestaoShellState', () => {
 
     expect(result.current.showSkeleton).toBe(false);
     expect(result.current.showPlayer).toBe(false);
+    expect(result.current.showModalLoading).toBe(true);
+  });
+
+  it('com modal ativo e dismiss não exibe loading no modal', () => {
+    mockUsePathname.mockReturnValue('/estudar/questao-a');
+    mockUseQuestaoNavigation.mockReturnValue({
+      displayPayload: null,
+      isDismissingToVitrine: true,
+      estudarRoute: null,
+    });
+
+    const { result } = renderHook(() =>
+      useEstudarQuestaoShellState({ modalActive: true }),
+    );
+
+    expect(result.current.showModalLoading).toBe(false);
   });
 
   it('exibe player quando chave de cache coincide', () => {
