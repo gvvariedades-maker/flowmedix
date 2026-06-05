@@ -380,7 +380,6 @@ function DashboardContent({
   const isDashboardDesktop = useDashboardDesktop();
   const pageVariants = isDashboardDesktop ? pageVariantsDesktop : pageVariantsMobile;
   const estudoReversoWelcome = useEstudoReversoWelcome({ enabled: userEmail != null });
-  const isVitrineRoute = pathname === '/estudar';
   /** Player inline no shell: main sem scroll externo para o card preencher a altura (desktop). */
   const estudarQuestaoFillViewport =
     parseEstudarSlugFromPathname(pathname) !== null && !modalQuestaoAtivo;
@@ -638,7 +637,6 @@ function DashboardContent({
           className="flex min-h-0 flex-1 flex-col overflow-hidden"
           aria-hidden={hideMainFromAssistiveTech ? true : undefined}
         >
-        {!isVitrineRoute ? (
         <div className="sticky top-0 z-30 shrink-0 border-b border-white/[0.08] bg-[#06090f]/90 backdrop-blur-xl md:hidden">
           <header className="flex items-center justify-between px-4 py-3 pt-safe">
             <div className="flex items-center gap-2">
@@ -670,7 +668,6 @@ function DashboardContent({
             </div>
           </header>
         </div>
-        ) : null}
 
         <main
           className={cn(

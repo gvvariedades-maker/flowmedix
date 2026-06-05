@@ -57,18 +57,23 @@ describe('DashboardShell mobile scroll shell', () => {
     expect(shell).toMatch(/modalQuestaoAtivo[\s\S]*?setMobileMenuOpen\(\(open\) => !open\)/);
   });
 
-  it('oculta header mobile do shell na vitrine (header único no VitrineClient)', () => {
+  it('exibe header mobile global na vitrine (paridade com Cadernos)', () => {
     const shell = readFileSync(
       join(process.cwd(), 'app', '(dashboard)', 'DashboardShell.tsx'),
       'utf8',
     );
-    expect(shell).toMatch(/!\s*isVitrineRoute\s*\?/);
+    expect(shell).not.toContain('isVitrineRoute');
+    expect(shell).toContain('AVANT');
+    expect(shell).toContain("new CustomEvent('avant:open-search')");
     const vitrine = readFileSync(
       join(process.cwd(), 'components', 'vitrine', 'VitrineClient.tsx'),
       'utf8',
     );
     expect(vitrine).toContain('data-vitrine-shell-search');
     expect(vitrine).toContain('avant:open-search');
+    expect(vitrine).not.toMatch(
+      /md:hidden[\s\S]*min-w-0 flex-1 truncate text-base font-black[\s\S]*Abrir busca/,
+    );
   });
 
   it('vitrine não duplica padding inferior (reservado no main do shell)', () => {

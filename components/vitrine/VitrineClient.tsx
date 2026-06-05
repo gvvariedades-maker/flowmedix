@@ -608,35 +608,8 @@ export default function VitrineClient({
       )}
     >
       <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 pt-safe shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90 md:pt-0">
-        {/* Header mobile — cidade, busca e filtros (único sticky; shell oculto em /estudar) */}
+        {/* Mobile — busca (via header global) e filtros; logo/avatar no DashboardShell */}
         <div className="md:hidden">
-          <div className="flex items-center gap-2 px-4 py-3">
-            <h1 className="min-w-0 flex-1 truncate text-base font-black leading-snug tracking-tight text-foreground">
-              {cidadeUrl}
-            </h1>
-            <button
-              type="button"
-              onClick={() => {
-                setMobileSearchOpen((open) => {
-                  const next = !open;
-                  if (next) {
-                    requestAnimationFrame(() => {
-                      document
-                        .querySelector<HTMLInputElement>('[data-vitrine-shell-search]')
-                        ?.focus();
-                    });
-                  }
-                  return next;
-                });
-              }}
-              aria-expanded={mobileSearchOpen}
-              aria-label={mobileSearchOpen ? 'Fechar busca' : 'Abrir busca'}
-              className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-slate-400 transition-colors hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
-            >
-              <Search size={16} aria-hidden />
-            </button>
-          </div>
-
           {mobileSearchOpen ? (
             <div className="border-t border-border/70 px-4 pb-3 pt-2">
               <div className="group relative">
