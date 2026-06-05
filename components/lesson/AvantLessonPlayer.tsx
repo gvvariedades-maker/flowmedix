@@ -10,7 +10,7 @@
  * - Registro de tentativas no Supabase (historico_questoes)
  */
 
-import { useState, useEffect, useMemo, useRef, useLayoutEffect, useCallback, useTransition } from 'react';
+import { useState, useEffect, useMemo, useRef, useLayoutEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import type { Target, Transition } from 'framer-motion';
 import { useRouter } from 'next/navigation';
@@ -22,8 +22,11 @@ import {
 } from '@/lib/estudar/navigation';
 import {
   buildEstudarSlugComQueryFromPlayerProps,
+  fetchLessonSlidesLayer,
   lessonDataHasSlides,
   mergeSlidesIntoLessonData,
+  SLIDES_LAYER_FALLBACK_BANNER,
+  SLIDES_LAYER_LOAD_ERROR_MESSAGE,
 } from '@/lib/estudar/questaoLayers';
 import { useQuestaoNavigationOptional } from '@/components/lesson/questao-navigation-context';
 import NeuroSlide from '@/components/slides/NeuroSlide';
@@ -53,6 +56,7 @@ import { isCertoErradoQuestion } from '@/lib/questionKind';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { buildDotsNavWindow } from '@/lib/estudar/dotsNavWindow';
+import { patchQuestaoEstudadaInPayload } from '@/lib/estudar/patchQuestaoEstudada';
 import { cn } from '@/lib/utils';
 import {
   MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM,
@@ -69,7 +73,7 @@ import type { GabaritoTentativa } from '@/lib/estudar/questionPayload';
 import { 
   CheckCircle2, XCircle, ChevronRight, ChevronLeft, 
   Lightbulb, ArrowRight, ArrowLeft, 
-  Flag, BrainCircuit, X, BadgeCheck
+  Flag, BrainCircuit, X, BadgeCheck, Loader2
 } from 'lucide-react';
 
 const QUESTION_TEXT_TYPOGRAPHY = 'text-base md:text-lg leading-relaxed';
@@ -159,11 +163,12 @@ export default function AvantLessonPlayer({
   listaContexto,
   avantCodigo,
   vitrineQuerySuffix = '',
+  payloadStale = false,
 }: AvantLessonPlayerProps) {
   
   const router = useRouter();
   const questaoNav = useQuestaoNavigationOptional();
-  const [isNavigating, startTransition] = useTransition();
+  const [isNavigating, setIsNavigating] = useState(false);
   const bottomNavRef = useRef<HTMLDivElement>(null);
   const questaoAtualDotRef = useRef<HTMLButtonElement | null>(null);
   /** Área com overflow-y-auto (enunciado + alternativas). Ref usada para wheel sobre <button>. */
@@ -172,7 +177,6 @@ export default function AvantLessonPlayer({
   const confirmarRespostaRef = useRef<HTMLDivElement>(null);
   const ativarEstudoRef = useRef<HTMLButtonElement>(null);
   const fecharEstudoRef = useRef<HTMLButtonElement>(null);
-  const navegandoRef = useRef(false);
   const [bottomNavHeightPx, setBottomNavHeightPx] = useState(0);
   const [keyboardInsetPx, setKeyboardInsetPx] = useState(0);
 
@@ -288,7 +292,12 @@ export default function AvantLessonPlayer({
   const [tentativaErro, setTentativaErro] = useState<string | null>(null);
   const [gabarito, setGabarito] = useState<GabaritoTentativa | null>(null);
   const [dadosComSlides, setDadosComSlides] = useState<LessonData | null>(null);
+  const [slidesLoading, setSlidesLoading] = useState(false);
+  const [slidesLoadError, setSlidesLoadError] = useState<string | null>(null);
+  const [slidesUsingFallback, setSlidesUsingFallback] = useState(false);
+  const [slidesFetchTrigger, setSlidesFetchTrigger] = useState(0);
   const slidesLayerFetchRef = useRef(false);
+  const slidesPersistFailedRef = useRef(false);
   const questoesDoAssuntoRef = useRef(questoesDoAssunto);
   questoesDoAssuntoRef.current = questoesDoAssunto;
   const activeDados = dadosComSlides ?? dadosIniciais;
@@ -296,11 +305,20 @@ export default function AvantLessonPlayer({
   useEffect(() => {
     setDadosComSlides(null);
     slidesLayerFetchRef.current = false;
+    slidesPersistFailedRef.current = false;
+    setSlidesLoading(false);
+    setSlidesLoadError(null);
+    setSlidesUsingFallback(false);
   }, [moduloSlug]);
+
+  const retrySlidesLoad = useCallback(() => {
+    slidesLayerFetchRef.current = false;
+    setSlidesLoadError(null);
+    setSlidesFetchTrigger((n) => n + 1);
+  }, []);
 
   // Reset ao mudar de questão (só slug — não re-dispara quando o Hydrator reenvia o mesmo slug)
   useEffect(() => {
-    navegandoRef.current = false;
     const jaEstudada =
       questoesDoAssuntoRef.current?.find((q) => q.slug === moduloSlug)?.estudada ?? false;
     setEtapa('pergunta');
@@ -318,6 +336,8 @@ export default function AvantLessonPlayer({
   }, [moduloSlug]);
 
   const navegacaoBloqueada = confirmandoResposta || marcandoConclusao;
+  const navegacaoCarregando = isNavigating || payloadStale;
+  const navegacaoIndisponivel = navegacaoBloqueada || navegacaoCarregando;
 
   useEffect(() => {
     if (mode !== 'live') return;
@@ -389,9 +409,23 @@ export default function AvantLessonPlayer({
     }
   }, [etapa, slideAtual]);
 
+  useEffect(() => {
+    if (etapa === 'estudo') return;
+    slidesPersistFailedRef.current = false;
+    setSlidesLoading(false);
+    setSlidesLoadError(null);
+    setSlidesUsingFallback(false);
+  }, [etapa]);
+
   /** L1: prefetch `layers=core` não traz slides — busca `full` ao entrar no estudo reverso. */
   useEffect(() => {
-    if (etapa !== 'estudo' || mode !== 'live' || lessonDataHasSlides(activeDados)) return;
+    if (etapa !== 'estudo' || mode !== 'live') return;
+    if (lessonDataHasSlides(activeDados)) {
+      setSlidesLoading(false);
+      setSlidesLoadError(null);
+      setSlidesUsingFallback(false);
+      return;
+    }
     if (!moduloSlug || slidesLayerFetchRef.current) return;
 
     const slugComQuery = buildEstudarSlugComQueryFromPlayerProps({
@@ -404,34 +438,64 @@ export default function AvantLessonPlayer({
 
     slidesLayerFetchRef.current = true;
     let cancelled = false;
+    setSlidesLoading(true);
+    setSlidesLoadError(null);
+
+    const apiUrl = buildEstudarQuestaoApiUrl(slugComQuery, { layers: 'full' });
 
     void (async () => {
       try {
-        const res = await fetchWithAuth(
-          buildEstudarQuestaoApiUrl(slugComQuery, { layers: 'full' }),
-        );
-        if (!res.ok || cancelled) {
-          if (!cancelled) slidesLayerFetchRef.current = false;
-          return;
-        }
-        const payload = (await res.json()) as { dados?: LessonData };
-        const fullDados = payload.dados;
-        if (!fullDados || cancelled || !lessonDataHasSlides(fullDados)) {
-          if (!cancelled) slidesLayerFetchRef.current = false;
-          return;
-        }
-        const merged = mergeSlidesIntoLessonData(activeDados, fullDados);
-        setDadosComSlides(merged);
-        if (questaoNav) {
-          const cacheKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
-          const cached = questaoNav.getCachedPayload(cacheKey);
-          if (cached) {
-            questaoNav.cachePayload(cacheKey, { ...cached, dados: merged });
+        const result = await fetchLessonSlidesLayer(apiUrl, fetchWithAuth);
+        if (cancelled) return;
+
+        if (result.status === 'success') {
+          slidesPersistFailedRef.current = false;
+          const merged = mergeSlidesIntoLessonData(activeDados, result.dados);
+          setDadosComSlides(merged);
+          setSlidesUsingFallback(false);
+          setSlidesLoadError(null);
+          if (questaoNav) {
+            const cacheKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
+            const cached = questaoNav.getCachedPayload(cacheKey);
+            if (cached) {
+              questaoNav.cachePayload(cacheKey, { ...cached, dados: merged });
+            }
           }
+          return;
         }
-      } catch (error) {
-        slidesLayerFetchRef.current = false;
-        logger.error('Falha ao carregar NeuroSlides (layers=full)', error, { moduloSlug });
+
+        if (result.status === 'empty') {
+          setSlidesUsingFallback(true);
+          setSlidesLoadError(null);
+          return;
+        }
+
+        if (slidesPersistFailedRef.current) {
+          setSlidesUsingFallback(true);
+          setSlidesLoadError(null);
+          logger.warn('NeuroSlides indisponíveis após retry — usando resumo', {
+            moduloSlug,
+            kind: result.status,
+          });
+        } else {
+          slidesPersistFailedRef.current = true;
+          setSlidesLoadError(SLIDES_LAYER_LOAD_ERROR_MESSAGE);
+        }
+        if (result.status === 'http_error') {
+          logger.error('Falha HTTP ao carregar NeuroSlides (layers=full)', undefined, {
+            moduloSlug,
+            httpStatus: result.httpStatus,
+          });
+        } else if (result.status === 'network_error') {
+          logger.error('Falha de rede ao carregar NeuroSlides (layers=full)', undefined, {
+            moduloSlug,
+          });
+        }
+      } finally {
+        if (!cancelled) {
+          slidesLayerFetchRef.current = false;
+          setSlidesLoading(false);
+        }
       }
     })();
 
@@ -447,6 +511,7 @@ export default function AvantLessonPlayer({
     vitrineQuerySuffix,
     activeDados,
     questaoNav,
+    slidesFetchTrigger,
   ]);
 
   const examHeaderLine = useMemo(() => {
@@ -627,6 +692,36 @@ export default function AvantLessonPlayer({
       const response = await postWithSessionRetry('/api/concluir-estudo-reverso', { modulo_slug: slug });
       if (response.ok) {
         setEstudoConcluido(true);
+        if (questaoNav) {
+          const slugComQuery = buildEstudarSlugComQueryFromPlayerProps({
+            moduloSlug: slug,
+            fromPlano,
+            fromCaderno,
+            vitrineQuerySuffix,
+          });
+          const basePayload =
+            questaoNav.displayPayload?.moduloSlug === slug
+              ? questaoNav.displayPayload
+              : {
+                  dados: activeDados,
+                  mode,
+                  proximaSlug,
+                  anteriorSlug,
+                  moduloSlug: slug,
+                  questoesDoAssunto,
+                  fromPlano,
+                  fromCaderno,
+                  listaContexto,
+                  avantCodigo,
+                  vitrineQuerySuffix,
+                };
+          const patched = patchQuestaoEstudadaInPayload(basePayload, slug);
+          questaoNav.setDisplayPayload(patched);
+          if (slugComQuery) {
+            const cacheKey = buildEstudarCacheKeyFromSlugComQuery(slugComQuery);
+            questaoNav.cachePayload(cacheKey, patched);
+          }
+        }
         router.refresh();
       } else {
         if (response.status === 401) {
@@ -655,17 +750,22 @@ export default function AvantLessonPlayer({
     return vitrineQuerySuffix || '';
   };
 
-  const handleNavegar = (slugComQuery: string) => {
-    if (navegacaoBloqueada || navegandoRef.current) return;
-    navegandoRef.current = true;
-    startTransition(() => {
-      if (questaoNav) {
-        questaoNav.navigateEstudar(slugComQuery);
-      } else {
-        router.push(buildEstudarHref(slugComQuery));
+  const handleNavegar = useCallback(
+    async (slugComQuery: string) => {
+      if (navegacaoIndisponivel) return;
+      setIsNavigating(true);
+      try {
+        if (questaoNav) {
+          await questaoNav.navigateEstudar(slugComQuery);
+        } else {
+          router.push(buildEstudarHref(slugComQuery));
+        }
+      } finally {
+        setIsNavigating(false);
       }
-    });
-  };
+    },
+    [navegacaoIndisponivel, questaoNav, router],
+  );
 
   const vitrineReturnContext = () => ({
     fromPlano,
@@ -749,7 +849,24 @@ export default function AvantLessonPlayer({
     structure: normalizeStructure(slide.structure) ?? slide.structure,
   });
 
-  const slidesArray = (slidesSource?.length ? slidesSource : [fallbackSlide]).map(normalizeSlide);
+  const hasRealSlides = lessonDataHasSlides(activeDados);
+  const slidesArray = (
+    hasRealSlides
+      ? (slidesSource ?? [])
+      : slidesUsingFallback || (mode === 'preview' && !hasRealSlides)
+        ? [fallbackSlide]
+        : []
+  ).map(normalizeSlide);
+  const showSlidesLoading =
+    etapa === 'estudo' && mode === 'live' && !hasRealSlides && slidesLoading;
+  const showSlidesLoadError =
+    etapa === 'estudo' &&
+    mode === 'live' &&
+    !hasRealSlides &&
+    !slidesUsingFallback &&
+    Boolean(slidesLoadError);
+  const showSlidesFallbackBanner =
+    etapa === 'estudo' && slidesUsingFallback && !hasRealSlides;
   const currentSlide = slidesArray[slideAtual];
   const slideKind = currentSlide?.type ?? currentSlide?.layout_type ?? 'default';
   const slideCounterColor = SLIDE_KIND_COLOR[slideKind] ?? 'text-white/60';
@@ -1118,21 +1235,22 @@ export default function AvantLessonPlayer({
       {mode === 'live' && (
         <div
           ref={bottomNavRef}
-          aria-busy={navegacaoBloqueada}
+          aria-busy={navegacaoIndisponivel || undefined}
           className="bg-[#0d1117] border-t border-[rgba(255,255,255,0.10)] shrink-0 z-10 shadow-[0_-4px_24px_-8px_rgba(15,23,42,0.08)] pb-safe md:rounded-b-[40px]"
           style={bottomNavPaddingBottom ? { paddingBottom: bottomNavPaddingBottom } : undefined}
         >
           {/* Dots janelados: N antes/depois + ellipsis; altura fixa (sem scroll horizontal). */}
           {dotsNavItems.length > 0 && (
-            <div
-              className="flex h-12 w-full min-w-0 items-center justify-center px-3 sm:px-4"
-              aria-label={
-                listaContexto
-                  ? `Navegação entre questões, questão ${listaContexto.atual} de ${listaContexto.total}`
-                  : 'Navegação entre questões'
-              }
-            >
-              <div className="flex flex-nowrap items-center justify-center gap-1.5 sm:gap-2">
+            <div className="w-full min-w-0 px-3 sm:px-4 pt-1">
+              <div
+                className="flex h-12 w-full min-w-0 items-center justify-center"
+                aria-label={
+                  listaContexto
+                    ? `Navegação entre questões, questão ${listaContexto.atual} de ${listaContexto.total}`
+                    : 'Navegação entre questões'
+                }
+              >
+                <div className="flex flex-nowrap items-center justify-center gap-1.5 sm:gap-2">
                 {dotsNavItems.map((item, i) => {
                   if (item.type === 'ellipsis') {
                     return (
@@ -1154,7 +1272,7 @@ export default function AvantLessonPlayer({
                       key={q.slug}
                       ref={isCurrent ? questaoAtualDotRef : undefined}
                       type="button"
-                      disabled={navegacaoBloqueada}
+                      disabled={navegacaoIndisponivel}
                       onClick={() => {
                         handleNavegar(`${q.slug}${buildNavegacaoSuffix()}`);
                       }}
@@ -1166,8 +1284,8 @@ export default function AvantLessonPlayer({
                         if (navegacaoBloqueada) return;
                         prefetchSlug(`${q.slug}${buildNavegacaoSuffix()}`);
                       }}
-                      title={`Questão ${posicaoLista}${q.estudada ? ' — estudada' : ''}`}
-                      aria-label={`Questão ${posicaoLista}${isCurrent ? ', atual' : ''}${q.estudada ? ', estudada' : ''}`}
+                      title={`Questão ${posicaoLista}${q.estudada ? ' — estudo reverso concluído' : ''}`}
+                      aria-label={`Questão ${posicaoLista}${isCurrent ? ', atual' : ''}${q.estudada ? ', estudo reverso concluído' : ''}`}
                       aria-current={isCurrent ? 'step' : undefined}
                       className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-full transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50"
                     >
@@ -1201,7 +1319,24 @@ export default function AvantLessonPlayer({
                     </button>
                   );
                 })}
+                </div>
               </div>
+              <p className="text-center text-[10px] sm:text-[11px] text-slate-500 leading-snug pb-1">
+                Verde = estudo reverso concluído
+              </p>
+              <MicroTip
+                storageKey="reverse-study.dots-meaning"
+                tip={REVERSE_STUDY_MICROTIPS['dots-meaning']}
+                enabled={dotsNavItems.length > 0}
+                className="mb-2"
+              />
+            </div>
+          )}
+          {gabarito !== null && !estudoConcluido && (
+            <div className="flex justify-center px-3 pb-1.5" role="status">
+              <span className="inline-flex items-center rounded-full border border-amber-500/25 bg-amber-500/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-200/90">
+                Estudo reverso pendente
+              </span>
             </div>
           )}
           <div className="px-2 sm:px-4 py-3 flex flex-wrap justify-between items-center gap-2">
@@ -1214,12 +1349,12 @@ export default function AvantLessonPlayer({
               onFocus={() => {
                 if (!navegacaoBloqueada) prefetchSlug(anteriorSlug);
               }}
-              disabled={!anteriorSlug || navegacaoBloqueada || isNavigating} 
+              disabled={!anteriorSlug || navegacaoIndisponivel} 
               className={`flex items-center gap-1.5 sm:gap-2 px-2 sm:px-4 py-2.5 sm:py-3 rounded-xl font-bold uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest transition-all min-h-[44px] ${
-                anteriorSlug && !navegacaoBloqueada && !isNavigating ? 'text-slate-400 hover:bg-white/[0.05] hover:text-[#00f2ff]' : 'text-white/15 cursor-not-allowed'
+                anteriorSlug && !navegacaoIndisponivel ? 'text-slate-400 hover:bg-white/[0.05] hover:text-[#00f2ff]' : 'text-white/15 cursor-not-allowed'
               }`}
             >
-              <ArrowLeft size={16} /> <span>{isNavigating ? 'Carregando...' : 'Anterior'}</span>
+              <ArrowLeft size={16} /> <span>{navegacaoCarregando ? 'Carregando...' : 'Anterior'}</span>
             </button>
             {proximaSlug ? (
               <button 
@@ -1231,11 +1366,11 @@ export default function AvantLessonPlayer({
                 onFocus={() => {
                   if (!navegacaoBloqueada) prefetchSlug(proximaSlug);
                 }}
-                disabled={navegacaoBloqueada || isNavigating}
+                disabled={navegacaoIndisponivel}
                 className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-white/[0.07] text-slate-200 font-black uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:bg-white/[0.12] transition-all min-h-[44px] disabled:cursor-not-allowed disabled:opacity-50"
               >
-                <span className="sm:hidden">{isNavigating ? 'Carregando...' : 'Próxima'}</span>
-                <span className="hidden sm:inline">{isNavigating ? 'Carregando...' : 'Próxima Questão'}</span>
+                <span className="sm:hidden">{navegacaoCarregando ? 'Carregando...' : 'Próxima'}</span>
+                <span className="hidden sm:inline">{navegacaoCarregando ? 'Carregando...' : 'Próxima Questão'}</span>
                 <ArrowRight size={16} className="shrink-0" />
               </button>
             ) : (
@@ -1396,8 +1531,46 @@ export default function AvantLessonPlayer({
                 </div>
               </div>
 
+              {showSlidesFallbackBanner ? (
+                <div
+                  className="mx-auto w-full max-w-5xl shrink-0 px-4 pb-2 sm:px-6 md:px-12"
+                  role="status"
+                >
+                  <p className="rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-2.5 text-center text-[11px] font-semibold text-amber-200 sm:text-xs">
+                    {SLIDES_LAYER_FALLBACK_BANNER}
+                  </p>
+                </div>
+              ) : null}
+
               {/* Sem overflow-x-hidden: com zoom mobile o conteúdo pode ultrapassar a largura — rolagem horizontal fica no EstudoReversoSlideZoom / pai. */}
               <div className="relative flex min-h-0 min-w-0 flex-1 flex-col">
+                {showSlidesLoading ? (
+                  <div
+                    className="flex flex-1 flex-col items-center justify-center gap-3 px-6 py-12"
+                    aria-busy="true"
+                    aria-live="polite"
+                  >
+                    <Loader2 className="h-10 w-10 animate-spin text-cyan-400" aria-hidden />
+                    <p className="text-center text-sm font-semibold text-slate-300">
+                      Carregando material…
+                    </p>
+                  </div>
+                ) : showSlidesLoadError ? (
+                  <div
+                    className="flex flex-1 flex-col items-center justify-center gap-4 px-6 py-12"
+                    role="alert"
+                  >
+                    <p className="max-w-md text-center text-sm text-slate-300">{slidesLoadError}</p>
+                    <button
+                      type="button"
+                      onClick={retrySlidesLoad}
+                      className="min-h-[44px] rounded-xl border border-cyan-500/40 bg-cyan-500/15 px-6 py-2.5 text-xs font-bold uppercase tracking-widest text-cyan-300 transition-colors hover:bg-cyan-500/25"
+                    >
+                      Tentar de novo
+                    </button>
+                  </div>
+                ) : (
+                <>
                 <div className="mx-auto w-full max-w-5xl shrink-0 px-4 pb-2 sm:px-6 md:px-12">
                   <MicroTip
                     storageKey="reverse-study.intro"
@@ -1415,6 +1588,7 @@ export default function AvantLessonPlayer({
                   ) : null}
                 </div>
                 <EstudoReversoSlideZoom>
+                  {totalSlides > 0 && currentSlide ? (
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={`slide-${slideAtual}-${slideKind}`}
@@ -1436,7 +1610,10 @@ export default function AvantLessonPlayer({
                       />
                     </motion.div>
                   </AnimatePresence>
+                  ) : null}
                 </EstudoReversoSlideZoom>
+                </>
+                )}
               </div>
 
               {/* Footer de Navegação (Bottom Bar) */}
@@ -1447,7 +1624,7 @@ export default function AvantLessonPlayer({
                   <button 
                     type="button"
                     onClick={() => setSlideAtual(Math.max(0, slideAtual - 1))} 
-                    disabled={slideAtual === 0} 
+                    disabled={slideAtual === 0 || totalSlides === 0} 
                     className="flex items-center gap-2 text-white/60 font-bold uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed min-h-[44px] px-1 order-1 sm:order-none"
                   >
                     <ChevronLeft size={16} /> Voltar
@@ -1468,7 +1645,11 @@ export default function AvantLessonPlayer({
                   </div>
                   
                   {/* Botão Próximo / Confirmação no último slide */}
-                  {slideAtual < totalSlides - 1 ? (
+                  {totalSlides === 0 ? (
+                    <span className="order-2 text-[10px] font-bold uppercase tracking-widest text-white/30 sm:order-none">
+                      {showSlidesLoading ? 'Aguarde…' : showSlidesLoadError ? 'Material indisponível' : ''}
+                    </span>
+                  ) : slideAtual < totalSlides - 1 ? (
                     <button 
                       type="button"
                       onClick={() => setSlideAtual(slideAtual + 1)} 
@@ -1502,7 +1683,8 @@ export default function AvantLessonPlayer({
                           onClick={() => proximaSlug && handleNavegar(proximaSlug)}
                           onMouseEnter={() => prefetchSlug(proximaSlug)}
                           onFocus={() => prefetchSlug(proximaSlug)}
-                          className="group flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-[#BEF264] px-4 py-3 text-[10px] font-black uppercase tracking-wide text-slate-900 shadow-[0_0_20px_rgba(190,242,100,0.35)] transition-all hover:bg-[#a3d648] active:scale-[0.98] sm:text-xs sm:tracking-widest"
+                          disabled={navegacaoIndisponivel}
+                          className="group flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-[#BEF264] px-4 py-3 text-[10px] font-black uppercase tracking-wide text-slate-900 shadow-[0_0_20px_rgba(190,242,100,0.35)] transition-all hover:bg-[#a3d648] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 sm:text-xs sm:tracking-widest"
                         >
                           Próxima questão
                           <ArrowRight size={18} className="shrink-0" aria-hidden />

@@ -62,6 +62,7 @@ test.describe('Estudar — navegação vitrine → questão', () => {
     expect(res1.ok()).toBeTruthy();
     const body1 = await res1.json();
     expect(body1.dados?.question_data?.instruction).toContain('Questão E2E 1');
+    expect(body1.dados?.reverse_study_slides).toHaveLength(4);
 
     const res2 = await request.get(
       `/api/estudar/questao?slug=${E2E_ESTUDAR_SLUG_2}&banca=${encodeURIComponent(E2E_ESTUDAR_BANCA)}`,
@@ -108,5 +109,106 @@ test.describe('Estudar — navegação vitrine → questão', () => {
 
     await expect(page.getByText(/Questão E2E 2:/)).toBeVisible({ timeout: 15_000 });
     await expect(page).toHaveURL(SLUG_2_URL);
+  });
+});
+
+async function abrirQuestao1Direto(page: Page) {
+  await page.goto(`/estudar/${E2E_ESTUDAR_SLUG_1}?banca=${BANCA_QUERY}`, {
+    waitUntil: 'domcontentloaded',
+  });
+  await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
+}
+
+async function selecionarAlternativaA(page: Page) {
+  await page
+    .getByRole('radio', { name: /Alternativa A:.*compressões torácicas/i })
+    .click();
+}
+
+async function confirmarRespostaEGabarito(page: Page) {
+  await page.getByRole('button', { name: 'Confirmar Resposta' }).click();
+  await expect(page.getByText('Resposta Correta')).toBeVisible({ timeout: 15_000 });
+}
+
+async function clicarProximaQuestao(page: Page) {
+  const proxima = page.getByRole('button', { name: /Próxima/i }).first();
+  await expect(proxima).toBeEnabled({ timeout: 15_000 });
+  await proxima.click();
+}
+
+/**
+ * Ciclo aluno: responder, pular estudo, estudo completo e regressão de navegação.
+ * APIs de tentativa/conclusão usam seed E2E quando E2E_DASHBOARD_BYPASS=true.
+ */
+test.describe('Estudar — ciclo aluno (resposta, pular, estudo)', () => {
+  test.describe.configure({ mode: 'serial' });
+
+  test('abrir questão, responder e exibir toast de gabarito', async ({ page }) => {
+    await abrirQuestao1Direto(page);
+    await selecionarAlternativaA(page);
+    await confirmarRespostaEGabarito(page);
+    await expect(page.getByRole('button', { name: /Ativar Estudo Reverso/i })).toBeVisible();
+  });
+
+  test('pular estudo reverso: próxima questão sem ativar estudo', async ({ page }) => {
+    await abrirQuestao1Direto(page);
+    await selecionarAlternativaA(page);
+    await confirmarRespostaEGabarito(page);
+
+    await Promise.all([
+      page.waitForURL(SLUG_2_URL, { timeout: 15_000 }),
+      clicarProximaQuestao(page),
+    ]);
+
+    await expect(page).toHaveURL(SLUG_2_URL);
+    await expect(page.getByText(/Questão E2E 2:/)).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByRole('radiogroup', { name: 'Alternativas da questão' })).toBeVisible({
+      timeout: 15_000,
+    });
+    await expect(page.getByRole('button', { name: /Ativar Estudo Reverso/i })).not.toBeVisible();
+  });
+
+  test('estudo reverso: slides, marcar estudado e dot verde', async ({ page }) => {
+    await abrirQuestao1Direto(page);
+    await selecionarAlternativaA(page);
+    await confirmarRespostaEGabarito(page);
+
+    await page.getByRole('button', { name: /Ativar Estudo Reverso/i }).click();
+    await expect(page.getByText(/Avant Neuro-Learning/i)).toBeVisible({ timeout: 15_000 });
+
+    const avancarSlide = page.getByRole('button', { name: /^Próximo$/i });
+    for (let i = 0; i < 3; i += 1) {
+      await expect(avancarSlide).toBeEnabled({ timeout: 15_000 });
+      await avancarSlide.click();
+    }
+
+    await page.getByRole('button', { name: /Marcar (como )?[Ee]studado/i }).click();
+    await expect(page.getByText('Estudo concluído')).toBeVisible({ timeout: 15_000 });
+
+    await page.getByRole('button', { name: /Fechar estudo reverso/i }).click();
+    await expect(page.getByRole('button', { name: /Questão 1.*estudo reverso concluído/i })).toBeVisible({
+      timeout: 15_000,
+    });
+  });
+
+  test('regressão de navegação após pular: anterior e próxima sem reload', async ({ page }) => {
+    await page.goto(`/estudar/${E2E_ESTUDAR_SLUG_2}?banca=${BANCA_QUERY}`, {
+      waitUntil: 'domcontentloaded',
+    });
+    await expect(page.getByText(/Questão E2E 2:/)).toBeVisible({ timeout: 15_000 });
+
+    for (let round = 0; round < 2; round += 1) {
+      await Promise.all([
+        page.waitForURL(SLUG_1_URL, { timeout: 15_000 }),
+        page.getByRole('button', { name: /Anterior/i }).click(),
+      ]);
+      await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
+
+      await Promise.all([
+        page.waitForURL(SLUG_2_URL, { timeout: 15_000 }),
+        clicarProximaQuestao(page),
+      ]);
+      await expect(page.getByText(/Questão E2E 2:/)).toBeVisible({ timeout: 15_000 });
+    }
   });
 });

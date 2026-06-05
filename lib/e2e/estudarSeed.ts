@@ -1,6 +1,10 @@
 import type { AvantLessonPlayerProps, LessonData } from '@/types/lesson';
 import type { EstudarQuestaoBuildResult } from '@/lib/estudar/questaoPlayerPayload';
 import {
+  resolveQuestionAttempt,
+  type GabaritoTentativa,
+} from '@/lib/estudar/questionPayload';
+import {
   ESTUDAR_QUESTAO_LAYERS_DEFAULT,
   stripSlidesForCoreLayer,
   type EstudarQuestaoLayers,
@@ -18,6 +22,63 @@ import {
   isE2eEstudarSlug,
 } from '@/lib/e2e/constants';
 
+/** Pacote mínimo de 4 NeuroSlides para fluxo E2E de estudo reverso (slug 1). */
+const E2E_REVERSE_STUDY_SLIDES: NonNullable<LessonData['reverse_study_slides']> = [
+  {
+    type: 'concept_map',
+    meta: { topico: 'Urgências', subtopico: 'Urgências e Emergências' },
+    items: [
+      { label: 'RCP', detail: 'Compressões de alta qualidade primeiro.', icon: 'HeartPulse' },
+      { label: 'DEA', detail: 'Usar assim que disponível.', icon: 'Zap' },
+    ],
+  },
+  {
+    type: 'golden_rule',
+    meta: { topico: 'Urgências', subtopico: 'Urgências e Emergências' },
+    content: 'RCP E2E',
+    rows: [{ label: 'Proporção', value: '30:2' }],
+  },
+  {
+    type: 'logic_flow',
+    meta: { topico: 'Urgências', subtopico: 'Urgências e Emergências' },
+    steps: ['Checar responsividade', 'Acionar ajuda', 'Iniciar compressões'],
+  },
+  {
+    type: 'danger_zone',
+    content: 'Pegadinhas E2E',
+    meta: { topico: 'Urgências', subtopico: 'Urgências e Emergências' },
+    items: [
+      {
+        label: 'Atropina na PCR',
+        detail: 'Dar atropina como primeira droga.',
+        correct: 'Adrenalina é a droga vasoativa na PCR.',
+      },
+    ],
+  },
+];
+
+const e2eEstudarConcluidos = new Set<string>();
+
+export function markE2eEstudarConcluido(slug: string): void {
+  if (isE2eEstudarSlug(slug)) e2eEstudarConcluidos.add(slug);
+}
+
+export function isE2eEstudarConcluido(slug: string): boolean {
+  return e2eEstudarConcluidos.has(slug);
+}
+
+export function resetE2eEstudarStore(): void {
+  e2eEstudarConcluidos.clear();
+}
+
+export function resolveE2eEstudarAttempt(
+  slug: string,
+  opcaoId: string,
+): GabaritoTentativa | null {
+  if (!isE2eEstudarSlug(slug)) return null;
+  return resolveQuestionAttempt(E2E_LESSONS[slug as (typeof E2E_ESTUDAR_SLUGS)[number]], opcaoId);
+}
+
 const E2E_LESSONS: Record<(typeof E2E_ESTUDAR_SLUGS)[number], LessonData> = {
   [E2E_ESTUDAR_SLUG_1]: {
     meta: {
@@ -32,6 +93,7 @@ const E2E_LESSONS: Record<(typeof E2E_ESTUDAR_SLUGS)[number], LessonData> = {
         { id: 'B', text: 'Administrar atropina EV', is_correct: false },
       ],
     },
+    reverse_study_slides: E2E_REVERSE_STUDY_SLIDES,
   },
   [E2E_ESTUDAR_SLUG_2]: {
     meta: {
@@ -151,7 +213,7 @@ export function buildE2eEstudarQuestaoPayload(
     moduloSlug: slug,
     questoesDoAssunto: E2E_ESTUDAR_SLUGS.map((navSlug, index) => ({
       slug: navSlug,
-      estudada: false,
+      estudada: isE2eEstudarConcluido(navSlug),
       indice: index + 1,
     })),
     fromPlano,

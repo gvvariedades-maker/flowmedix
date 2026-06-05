@@ -131,11 +131,20 @@ Artefatos: [`perf-baseline-2026-06-02.json`](perf-baseline-2026-06-02.json) · [
 
 | Métrica | Valor | SLO atingido? |
 |---------|-------|----------------|
-| Cache hit navegação | **≥ 80% esperado** após hover + prefetch (`VitrineQuestaoLink`, LRU 20, `layers=core`); validar com telemetria § Baseline pós-deploy | ≥ 80% — **validar em staging** (protocolo 2.5) |
-| P95 abrir questão | **~4572 ms → meta &lt; 800 ms** (baseline HTTP); ganhos de cache RSC (`getEstudarQuestaoPayloadCached`), prefetch core e hit LRU ainda dependem de deploy + medição autenticada repetida | &lt; 800 ms — **pendente medição pós-deploy** |
-| P95 vitrine pág. 1 | **1188 ms** HTTP (`GET /api/vitrine?page=1`, 20×, `www.avant.enf.br`) · **850 ms** servidor local (`getVitrinePage`, pós 7.x) | &lt; 800 ms — **HTTP ainda acima**; servidor −30% vs baseline (**1216 → 850 ms**). Deploy pendente para medir HTTP com 7.x–8.x. |
-| Payload mediano `layers=core` | **1,2 KB** JSON (1198 B no cenário `estudar_questao_core` / perf-smoke; fixture premium, slides omitidos) | &lt; 80 KB gzip — **Sim** |
+| Cache hit navegação | Protocolo § Baseline (20 cliques, 10 com hover ≥550 ms); `slo_checklist.navigate_hit_rate_pct` no JSON de `npm run perf:baseline` · meta **≥ 80%** com `VitrineQuestaoLink` + LRU + `layers=core` | ≥ 80% — medir em **staging/prod** com `NEXT_PUBLIC_ESTUDAR_NAV_TELEMETRY=1` após deploy |
+| P95 abrir questão | **Baseline HTTP (2026-06-02): 4572 ms** · servidor local build payload P95 **3360 ms** ([`perf-baseline-pos-deploy-2026-06-04.json`](perf-baseline-pos-deploy-2026-06-04.json), sem dev server HTTP). Repetir `GET /api/estudar/questao` autenticado em staging; incluir `layers=core` no relatório (`estudar_questao_api_core`) | &lt; 800 ms — **não** no build direto fora do Next; HTTP pós-deploy obrigatório |
+| P95 vitrine pág. 1 | **894 ms** servidor `getVitrinePage` P95 (20×, 2026-06-04, commit `3c80188`) · histórico HTTP prod **1188 ms** (2026-06-02) · meta local anterior **850 ms** | &lt; 800 ms — servidor **quase** (894); HTTP prod ainda acima — aquecer cache + § Operação |
+| Payload mediano `layers=core` | **1,2 KB** JSON (1198 B / perf-smoke `estudar_questao_core`); baseline reporta `estudar_questao_core_payload_gzip_bytes.median` quando HTTP disponível | &lt; 80 KB gzip — **Sim** |
 | Tela vazia no clique | Skeleton (`EstudarQuestaoSkeleton`) + shell alinhado ao player; sem flash branco documentado (3.4) | **Sim** |
+
+**Artefato pós-deploy (Fase 7 — questões 100%):** [`perf-baseline-pos-deploy-2026-06-04.json`](perf-baseline-pos-deploy-2026-06-04.json) — inclui `slo_checklist` (telemetria, P95 HTTP/servidor, tetos 80% / 800 ms).
+
+**Checklist pós-deploy (repetir após cada release estudar/vitrine):**
+
+1. `NEXT_PUBLIC_ESTUDAR_NAV_TELEMETRY=1` no preview/prod → protocolo § Baseline §1 → `navigateHitRatePct` ≥ 80%.
+2. `npm run perf:baseline:staging` (servidor + HTTP + browser) → atualizar linhas P95 e cache hit nesta tabela.
+3. Se `p95_vitrine_http_ms` ou `p95_questao_http_ms` &gt; 800 ms: § Operação (pooler 6543, região Vercel ≈ Supabase, aquecer `/estudar` antes da amostra) — **sem** nova arquitetura.
+4. `npm run perf:smoke:staging` verde ou tetos justificados em `docs/perf-smoke-baseline-staging.json`.
 
 ---
 
@@ -317,6 +326,8 @@ Na aba Network, coluna **Size** (transferido, gzip) de `GET /api/estudar/questao
 | Tetos perf-smoke staging | [`perf-smoke-baseline-staging.json`](perf-smoke-baseline-staging.json) |
 | Saúde do catálogo 10k | [`SCALE_HEALTH.md`](SCALE_HEALTH.md) |
 | Testes de telemetria | [`__tests__/lib/estudar/navigationTelemetry.test.ts`](../__tests__/lib/estudar/navigationTelemetry.test.ts) |
+| Baseline pós-deploy (JSON + SLO) | [`perf-baseline-pos-deploy-2026-06-04.json`](perf-baseline-pos-deploy-2026-06-04.json) |
+| Auditoria slides catálogo | [`CATALOGO_AUDITORIA_LABORATORIO.md`](CATALOGO_AUDITORIA_LABORATORIO.md) |
 
 ---
 
@@ -639,4 +650,4 @@ flowchart TB
 
 ---
 
-*Última atualização do índice: fases 9–10 concluídas (2026-06-02).*
+*Última atualização: Fase 7 pós-deploy (tabela Depois + `slo_checklist` no baseline) — 2026-06-04.*

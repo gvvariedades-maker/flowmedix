@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { revalidateTag } from 'next/cache';
 import { CACHE_REVALIDATE_IMMEDIATE } from '@/lib/cache';
+import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
+import { resolveE2eEstudarAttempt } from '@/lib/e2e/estudarSeed';
+import { isE2eEstudarSlug } from '@/lib/e2e/constants';
 import { resolveQuestionAttempt } from '@/lib/estudar/questionPayload';
 import {
   assertCanAnswerQuestion,
@@ -45,6 +48,18 @@ export async function POST(request: NextRequest) {
 
     if (!modulo_slug || !opcao_id) {
       return NextResponse.json({ error: 'Campos obrigatórios ausentes' }, { status: 400 });
+    }
+
+    if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS') && isE2eEstudarSlug(modulo_slug)) {
+      const gabarito = resolveE2eEstudarAttempt(modulo_slug, opcao_id);
+      if (!gabarito) {
+        return NextResponse.json({ error: 'Alternativa inválida' }, { status: 400 });
+      }
+      return NextResponse.json({
+        success: true,
+        acertou: gabarito.acertou,
+        opcao_correta_id: gabarito.opcaoCorretaId,
+      });
     }
 
     const auth = await getUserAndClientFromBearer(request);

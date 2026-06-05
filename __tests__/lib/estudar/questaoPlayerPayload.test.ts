@@ -29,7 +29,11 @@ import {
 } from '@/lib/cache';
 import { createSupabaseServerClient } from '@/lib/supabase/server-auth';
 import { getQuestaoNavList } from '@/lib/estudar/questaoNav';
-import { buildEstudarQuestaoPlayerPayload } from '@/lib/estudar/questaoPlayerPayload';
+import {
+  buildEstudarQuestaoPlayerPayload,
+  patchQuestaoEstudadaInPayload,
+} from '@/lib/estudar/questaoPlayerPayload';
+import type { AvantLessonPlayerProps } from '@/types/lesson';
 
 const mockUserHasModuloAccess = userHasModuloAccess as jest.MockedFunction<
   typeof userHasModuloAccess
@@ -84,6 +88,42 @@ function mockSupabaseModuloRow() {
   const from = jest.fn().mockReturnValue({ select, eq });
   return { from, maybeSingle };
 }
+
+describe('patchQuestaoEstudadaInPayload', () => {
+  const basePayload: AvantLessonPlayerProps = {
+    dados: conteudoJson,
+    mode: 'live',
+    moduloSlug: SLUG,
+    questoesDoAssunto: [
+      { slug: 'questao-anterior', estudada: false },
+      { slug: SLUG, estudada: false },
+      { slug: 'questao-proxima', estudada: false },
+    ],
+  };
+
+  it('marca estudada apenas no slug alvo', () => {
+    const patched = patchQuestaoEstudadaInPayload(basePayload, SLUG);
+
+    expect(patched.questoesDoAssunto).toEqual([
+      { slug: 'questao-anterior', estudada: false },
+      { slug: SLUG, estudada: true },
+      { slug: 'questao-proxima', estudada: false },
+    ]);
+    expect(patched).not.toBe(basePayload);
+    expect(basePayload.questoesDoAssunto?.[1].estudada).toBe(false);
+  });
+
+  it('retorna o mesmo objeto quando slug não está na lista', () => {
+    const patched = patchQuestaoEstudadaInPayload(basePayload, 'outro-slug');
+    expect(patched).toBe(basePayload);
+  });
+
+  it('retorna o mesmo objeto quando não há questoesDoAssunto', () => {
+    const withoutList = { ...basePayload, questoesDoAssunto: undefined };
+    const patched = patchQuestaoEstudadaInPayload(withoutList, SLUG);
+    expect(patched).toBe(withoutList);
+  });
+});
 
 describe('buildEstudarQuestaoPlayerPayload', () => {
   beforeEach(() => {
@@ -188,6 +228,96 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
         tituloAula: 'Urgências',
       }),
     );
+  });
+
+  it('primeira questão da lista não define anteriorSlug', async () => {
+    mockUserHasModuloAccess.mockResolvedValue(true);
+    mockGetQuestaoNavList.mockResolvedValue({
+      lista: [
+        { id: '1', modulo_slug: 'questao-primeira' },
+        { id: '2', modulo_slug: 'questao-segunda' },
+      ],
+      questoesDoAssunto: [
+        { slug: 'questao-primeira', estudada: false },
+        { slug: 'questao-segunda', estudada: false },
+      ],
+      indexAtual: 0,
+    });
+
+    const maybeSingle = jest.fn().mockResolvedValue({
+      data: {
+        id: 'mod-1',
+        modulo_slug: 'questao-primeira',
+        conteudo_json: conteudoJson,
+        titulo_aula: 'Urgências',
+        modulo_nome: 'Urgências',
+        avant_codigo: 1,
+      },
+      error: null,
+    });
+    const eq = jest.fn().mockReturnValue({ maybeSingle });
+    const select = jest.fn().mockReturnValue({ eq });
+    const supabase = { from: jest.fn().mockReturnValue({ select, eq }) };
+
+    const result = await buildEstudarQuestaoPlayerPayload({
+      slug: 'questao-primeira',
+      userId: USER_ID,
+      supabase: supabase as never,
+    });
+
+    expect(result.status).toBe('ok');
+    if (result.status !== 'ok') return;
+
+    expect(result.payload.anteriorSlug).toBeNull();
+    expect(result.payload.proximaSlug).toBe('questao-segunda');
+    expect(result.payload.listaContexto).toEqual({ atual: 1, total: 2 });
+  });
+
+  it('índice > 0 define anteriorSlug (ex.: questão 8 de 1067)', async () => {
+    const slugAtual = 'q-8';
+    const lista1067 = Array.from({ length: 1067 }, (_, i) => ({
+      id: String(i + 1),
+      modulo_slug: `q-${i + 1}`,
+    }));
+
+    mockUserHasModuloAccess.mockResolvedValue(true);
+    mockGetQuestaoNavList.mockResolvedValue({
+      lista: lista1067,
+      questoesDoAssunto: lista1067.map((item) => ({
+        slug: item.modulo_slug,
+        estudada: false,
+      })),
+      indexAtual: 7,
+    });
+
+    const maybeSingle = jest.fn().mockResolvedValue({
+      data: {
+        id: 'mod-8',
+        modulo_slug: slugAtual,
+        conteudo_json: conteudoJson,
+        titulo_aula: 'Assunto Denso',
+        modulo_nome: 'Fundamentos',
+        avant_codigo: 1067,
+      },
+      error: null,
+    });
+    const eq = jest.fn().mockReturnValue({ maybeSingle });
+    const select = jest.fn().mockReturnValue({ eq });
+    const supabase = { from: jest.fn().mockReturnValue({ select, eq }) };
+
+    const result = await buildEstudarQuestaoPlayerPayload({
+      slug: slugAtual,
+      userId: USER_ID,
+      supabase: supabase as never,
+    });
+
+    expect(result.status).toBe('ok');
+    if (result.status !== 'ok') return;
+
+    expect(result.payload.anteriorSlug).toBe('q-7');
+    expect(result.payload.proximaSlug).toBe('q-9');
+    expect(result.payload.listaContexto).toEqual({ atual: 8, total: 1067 });
+    expect(result.payload.avantCodigo).toBe(1067);
   });
 
   it('anônimo usa cache anon e não checa entitlement', async () => {

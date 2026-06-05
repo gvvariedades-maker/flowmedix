@@ -2,6 +2,7 @@ export type ReverseStudyMicrotipKey =
   | 'answer-before-feedback'
   | 'feedback-learning'
   | 'reverse-study-intro'
+  | 'dots-meaning'
   | 'concept-map'
   | 'golden-rule'
   | 'logic-flow'
@@ -32,6 +33,12 @@ export const REVERSE_STUDY_MICROTIPS: Record<ReverseStudyMicrotipKey, ReverseStu
     title: 'Cada questão vira uma mini aula',
     body: 'O Estudo Reverso organiza o conceito, a regra, a lógica da resposta e as pegadinhas da banca.',
     tone: 'indigo',
+  },
+  'dots-meaning': {
+    title: 'O que significa o verde?',
+    body: 'O ponto verde indica que você concluiu o estudo reverso da questão — isso é independente de ter acertado ou errado no gabarito.',
+    tone: 'emerald',
+    learnMoreHref: '/ajuda/estudo-reverso',
   },
   'concept-map': {
     title: 'Mapa conceitual',

@@ -2,10 +2,8 @@
 
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
-import {
-  buildEstudarCacheKey,
-  parseEstudarSlugFromPathname,
-} from '@/lib/estudar/navigation';
+import { estudarPayloadMatchesRoute } from '@/lib/estudar/payloadRouteMatch';
+import { parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
 
 type UseEstudarQuestaoShellStateOptions = {
   /** Quando true, o player fica no slot @modal (fase 11.2). */
@@ -32,20 +30,9 @@ export function useEstudarQuestaoShellState(options: UseEstudarQuestaoShellState
   const slugFromPath = parseEstudarSlugFromPathname(effectivePathname);
   const isQuestaoRoute = slugFromPath !== null;
 
-  const routeCacheKey = isQuestaoRoute
-    ? buildEstudarCacheKey(effectivePathname, effectiveSearchParams)
-    : '';
-
-  const payloadCacheKey =
-    displayPayload?.moduloSlug != null
-          ? buildEstudarCacheKey(
-              `/estudar/${displayPayload.moduloSlug}`,
-              new URLSearchParams((displayPayload.vitrineQuerySuffix ?? '').replace(/^\?/, '')),
-            )
-      : '';
-
   const payloadMatchesRoute =
-    Boolean(displayPayload) && routeCacheKey === payloadCacheKey;
+    isQuestaoRoute &&
+    estudarPayloadMatchesRoute(displayPayload, effectivePathname, effectiveSearchParams);
 
   /** Mantém o player montado entre slugs quando há payload em memória (passo 4.3). */
   const showPlayer = isQuestaoRoute && Boolean(displayPayload) && !modalActive;
