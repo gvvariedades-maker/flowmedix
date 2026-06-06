@@ -39,6 +39,7 @@ import { MobileDashboardDrawer } from '@/components/layout/MobileDashboardDrawer
 import { PlanStatusCard } from '@/components/plan/PlanStatusCard';
 import { getFocusableIn } from '@/lib/a11y/focusable';
 import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
+import { DASHBOARD_MAIN_SCROLL_ATTR } from '@/lib/layout/dashboardMainScroll';
 import { useDashboardDesktop } from '@/lib/layout/useDashboardDesktop';
 
 const pageVariantsDesktop = {
@@ -387,6 +388,14 @@ function DashboardContent({
 
   useBodyScrollLock(mobileMenuOpen && !isDashboardDesktop);
 
+  /** Evita scroll no document — shell 100dvh é a única superfície rolável (main interno). */
+  useEffect(() => {
+    if (isDashboardDesktop) return;
+    const root = document.documentElement;
+    root.classList.add('dashboard-mobile-shell');
+    return () => root.classList.remove('dashboard-mobile-shell');
+  }, [isDashboardDesktop]);
+
   const userInitials = useMemo(() => {
     const fromMeta = userDisplayName?.trim() ?? null;
     if (fromMeta) return initialsFromDisplayName(fromMeta, userEmail);
@@ -669,6 +678,7 @@ function DashboardContent({
         </div>
 
         <main
+          {...{ [DASHBOARD_MAIN_SCROLL_ATTR]: '' }}
           className={cn(
             'relative flex min-h-0 flex-1 flex-col overflow-x-hidden',
             hideMainFromAssistiveTech || estudarQuestaoFillViewport

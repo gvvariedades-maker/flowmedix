@@ -75,14 +75,16 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
         <div
           data-vitrine-slot-ready={vitrineSlotInteractive ? 'true' : 'false'}
           className={cn(
-            'relative',
+            'relative flex min-h-0 flex-1 flex-col',
             hideVitrineChildren && 'hidden',
             showVitrineInterceptLoading && 'pointer-events-none select-none',
           )}
           aria-hidden={hideVitrineChildren || undefined}
           aria-busy={showVitrineInterceptLoading || undefined}
         >
-          <div className={cn(showVitrineInterceptLoading && 'opacity-60')}>{children}</div>
+          <div className={cn('flex min-h-0 flex-1 flex-col', showVitrineInterceptLoading && 'opacity-60')}>
+            {children}
+          </div>
           {showVitrineInterceptLoading ? (
             <div
               role="status"

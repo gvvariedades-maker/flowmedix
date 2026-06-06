@@ -37,10 +37,29 @@ function vitrineCards(page: Page) {
   return page.locator('[data-vitrine-list-ready="true"] > div');
 }
 
+function dashboardScrollMain(page: Page) {
+  return page.locator('main[data-dashboard-main-scroll]');
+}
+
 async function scrollMainToBottom(page: Page) {
-  await page.locator('main.overflow-y-auto').evaluate((main) => {
+  await dashboardScrollMain(page).evaluate((main) => {
     main.scrollTop = main.scrollHeight - main.clientHeight;
   });
+}
+
+/** BottomNav deve permanecer colado ao rodapé físico (sem scroll manual pós-paginação). */
+async function expectBottomNavAnchored(page: Page) {
+  await expect
+    .poll(async () => {
+      const navBox = await bottomNav(page).boundingBox();
+      if (!navBox) return false;
+      const viewportBottom = await page.evaluate(() => {
+        const vv = window.visualViewport;
+        return (vv?.height ?? window.innerHeight) + (vv?.offsetTop ?? 0);
+      });
+      return Math.abs(navBox.y + navBox.height - viewportBottom) <= 4;
+    })
+    .toBe(true);
 }
 
 /**
@@ -117,8 +136,38 @@ test.describe('Vitrine — paginação mobile inline', () => {
 
     await waitVitrineListReady(page);
     await expect(page.getByText(/Mostrando 13[\u2013-]/)).toBeVisible({ timeout: 10_000 });
+    await expectBottomNavAnchored(page);
     await scrollMainToBottom(page);
     await expect(inlinePagination(page).getByText(/Página 2 de 2/)).toBeVisible();
+  });
+
+  test('BottomNav permanece ancorado ao rodapé logo após Próxima (sem scroll manual)', async ({
+    page,
+  }) => {
+    await waitVitrineListReady(page);
+    await scrollMainToBottom(page);
+
+    const proxima = page.getByTestId('vitrine-pagination-next');
+    await expect(proxima).toBeVisible();
+    await expect(inlinePagination(page).getByText(/Página 1 de \d+/)).toBeVisible();
+    await expect(proxima).toBeEnabled();
+
+    await expect(async () => {
+      await proxima.click();
+      await expect(page).toHaveURL(/[?&]page=2/);
+    }).toPass({ timeout: 20_000 });
+
+    await waitVitrineListReady(page);
+
+    await expectBottomNavAnchored(page);
+
+    const headerBar = page
+      .locator('div.sticky.top-0')
+      .filter({ has: page.getByRole('button', { name: 'Abrir busca' }) });
+    await expect(headerBar).toBeVisible();
+    const headerBox = await headerBar.boundingBox();
+    expect(headerBox).not.toBeNull();
+    expect(headerBox!.y).toBeGreaterThanOrEqual(0);
   });
 
   test('último card da lista não fica sob a paginação inline', async ({ page }) => {

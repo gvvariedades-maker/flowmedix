@@ -8,6 +8,8 @@ describe('DashboardShell mobile scroll shell', () => {
     expect(source).not.toContain('MOBILE_MAIN_SCROLL_PADDING');
     expect(source).toMatch(/<main[\s\S]*?'overflow-y-auto no-scrollbar'/);
     expect(source).not.toContain('MOBILE_PAGE_BOTTOM_PADDING');
+    expect(source).toContain('dashboard-mobile-shell');
+    expect(source).toContain('DASHBOARD_MAIN_SCROLL_ATTR');
 
     const tokensPath = join(process.cwd(), 'lib', 'layout', 'mobileBottomNav.ts');
     const tokens = readFileSync(tokensPath, 'utf8');
@@ -87,6 +89,7 @@ describe('DashboardShell mobile scroll shell', () => {
     expect(vitrine).not.toContain('useDashboardBottomInset');
     expect(cadernos).toContain('useDashboardBottomInset');
     expect(vitrine).not.toContain('pb-nav-safe');
+    expect(vitrine).toContain('flex-1 flex-col');
   });
 
   it('simulados não duplica padding de nav (5rem)', () => {

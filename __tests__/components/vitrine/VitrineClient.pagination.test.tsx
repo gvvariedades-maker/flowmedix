@@ -13,6 +13,8 @@ describe('VitrineClient paginação', () => {
 
   it('paginação inline no fim da lista com ref para scroll', () => {
     expect(source).toContain('ref={vitrinePaginationInlineRef}');
+    expect(source).toContain('scrollDashboardMainToTop');
+    expect(source).not.toContain('scrollIntoView');
     expect(source).not.toContain('variant="sticky"');
     expect(source).not.toContain('variant="inline"');
   });

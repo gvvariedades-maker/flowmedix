@@ -60,6 +60,7 @@ import { EmptyState } from '@/components/ui/empty-state';
 import { ProgressRing } from '@/components/ui/progress-ring';
 import { VitrineQuestaoLink } from '@/components/vitrine/VitrineQuestaoLink';
 import { VitrinePaginationBar } from '@/components/vitrine/VitrinePaginationBar';
+import { scrollDashboardMainToTop } from '@/lib/layout/dashboardMainScroll';
 import { MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM } from '@/lib/layout/mobileBottomNav';
 import { useVitrineVisiblePrefetch, VITRINE_PREFETCH_DATA_ATTR } from '@/hooks/useVitrineVisiblePrefetch';
 import { useVitrineListSwr } from '@/hooks/useVitrineListSwr';
@@ -276,7 +277,7 @@ export default function VitrineClient({
   const totalPaginasRef = useRef(1);
   /** Persiste entre soft-nav; zera ao abrir questão para não voltar com card aberto. */
   const [expandedPanelSlug, setExpandedPanelSlug] = useState<string | null>(null);
-  /** Evita scrollIntoView quando setPagina(1) veio de filtro/busca, não de Anterior/Próxima. */
+  /** Evita scroll ao topo quando setPagina(1) veio de filtro/busca, não de Anterior/Próxima. */
   const paginaViaFiltroRef = useRef(false);
   /** Evita gravar na URL antes de ler os filtros (impede loop com estado inicial vazio). */
   const filtersHydratedFromUrlRef = useRef(Boolean(initialListQuery));
@@ -540,7 +541,7 @@ export default function VitrineClient({
     }
 
     const frame = requestAnimationFrame(() => {
-      vitrineListaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      scrollDashboardMainToTop('auto');
     });
 
     return () => cancelAnimationFrame(frame);
@@ -604,7 +605,7 @@ export default function VitrineClient({
   return (
     <div
       className={cn(
-        'dashboard-surface min-h-0 bg-background text-foreground selection:bg-indigo-100 selection:text-indigo-900 md:min-h-screen md:pb-8',
+        'dashboard-surface flex min-h-0 flex-1 flex-col bg-background text-foreground selection:bg-indigo-100 selection:text-indigo-900 md:min-h-screen md:pb-8',
       )}
     >
       <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 pt-safe shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90 md:pt-0">
