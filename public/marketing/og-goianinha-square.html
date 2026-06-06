@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Status Zap — Simulado Goianinha (1080×1080)</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1080px;
+      height: 1080px;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: #0c0c16;
+    }
+    .card {
+      width: 1080px;
+      height: 1080px;
+      position: relative;
+      background: linear-gradient(160deg, #0c0c16 0%, #12122a 50%, #0a1628 100%);
+      color: #f0f0ff;
+      padding: 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .glow {
+      position: absolute;
+      top: -80px;
+      right: -60px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,212,207,0.3) 0%, transparent 70%);
+    }
+    .brand { display: flex; align-items: center; gap: 16px; position: relative; z-index: 1; }
+    .logo {
+      width: 64px; height: 64px; border-radius: 16px;
+      background: linear-gradient(135deg, #00d4cf, #0066ff);
+      display: flex; align-items: center; justify-content: center; font-size: 32px;
+    }
+    .brand-name { font-size: 42px; font-weight: 900; letter-spacing: 4px; }
+    .badge {
+      margin-left: auto;
+      padding: 12px 24px; border-radius: 999px;
+      background: rgba(0,212,207,0.12); border: 2px solid rgba(0,212,207,0.45);
+      color: #00d4cf; font-size: 20px; font-weight: 800;
+    }
+    .main { position: relative; z-index: 1; }
+    .loc {
+      display: inline-block; margin-bottom: 28px; padding: 10px 22px; border-radius: 999px;
+      background: rgba(100,180,255,0.12); border: 1px solid rgba(100,180,255,0.35);
+      color: #64b4ff; font-size: 22px; font-weight: 700;
+    }
+    h1 { font-size: 72px; font-weight: 900; line-height: 1.08; margin-bottom: 24px; }
+    .sub { font-size: 32px; color: #8888aa; line-height: 1.4; }
+    .sub strong { color: #f0f0ff; }
+    .stats { display: flex; gap: 48px; position: relative; z-index: 1; }
+    .num { font-size: 56px; font-weight: 900; color: #00d4cf; }
+    .lbl { font-size: 16px; color: #8888aa; letter-spacing: 2px; margin-top: 8px; font-weight: 700; }
+    .footer {
+      position: relative; z-index: 1;
+      padding: 28px 32px; border-radius: 20px;
+      background: rgba(255,77,106,0.1); border: 2px solid rgba(255,77,106,0.35);
+      text-align: center;
+    }
+    .footer-red { font-size: 22px; font-weight: 800; color: #ff4d6a; }
+    .footer-date { font-size: 40px; font-weight: 900; margin: 8px 0; }
+    .footer-green { font-size: 24px; color: #00d48e; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="glow"></div>
+    <div class="brand">
+      <div class="logo">⚡</div>
+      <div class="brand-name">AVANT</div>
+      <div class="badge">GRÁTIS</div>
+    </div>
+    <div class="main">
+      <div class="loc">📍 Goianinha RN · IDIB</div>
+      <h1>Simulado<br>Técnico de<br>Enfermagem</h1>
+      <p class="sub"><strong>10 questões reais</strong><br>Resultado na hora · diagnóstico por eixo</p>
+    </div>
+    <div class="stats">
+      <div><div class="num">10</div><div class="lbl">QUESTÕES</div></div>
+      <div><div class="num">~15</div><div class="lbl">MIN</div></div>
+      <div><div class="num">6</div><div class="lbl">EIXOS</div></div>
+    </div>
+    <div class="footer">
+      <div class="footer-red">🚨 PROVA AMANHÃ</div>
+      <div class="footer-date">07/06/2026</div>
+      <div class="footer-green">+ 7 dias AVANT Pro ao finalizar</div>
+    </div>
+  </div>
+</body>
+</html>
