@@ -15,6 +15,11 @@ const mockFetchWithAuth = fetchWithAuth as jest.MockedFunction<typeof fetchWithA
 
 jest.mock('next/navigation', () => ({
   useRouter: () => ({ push: mockPush, replace: jest.fn(), prefetch: jest.fn() }),
+  usePathname: () => '/estudar/questao-a',
+}));
+
+jest.mock('@/lib/layout/useDashboardDesktop', () => ({
+  useDashboardDesktop: jest.fn(() => false),
 }));
 
 jest.mock('@/lib/api/fetch-with-auth', () => ({
@@ -147,6 +152,13 @@ describe('AvantLessonPlayer navigation', () => {
       ok: true,
       json: async () => ({}),
     } as Awaited<ReturnType<typeof fetchWithAuth>>);
+  });
+
+  it('expõe Anterior e Próxima com aria-label na barra inline de dots', () => {
+    renderPlayerWithNav({ anteriorSlug: 'questao-prev' });
+
+    expect(screen.getByRole('button', { name: 'Anterior' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Próxima' })).toBeInTheDocument();
   });
 
   it('segundo clique em Próxima após falha ainda chama navigateEstudar', async () => {

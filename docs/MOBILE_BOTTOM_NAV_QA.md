@@ -47,7 +47,7 @@ Preencher em staging com viewport 390×844. Marcar **OK** / **Falha** / **N/A**.
 |----|---------|--------|-------------------|-----|
 | M1 | Abertura soft-nav | Vitrine filtrada → «Entrar no assunto» | Dialog `role="dialog"` visível; questão no painel inferior; URL `/estudar/[slug]` com query preservada | |
 | M2 | Sem tela morta na carga | Repetir M1 em rede lenta (DevTools 3G) ou cold open | Skeleton ou dialog visível em &lt; 1 s; vitrine **não** fica clicável por baixo durante carga (`pointer-events-none` no slot) | |
-| M3 | BottomNav isolado | Com modal aberto | `nav[aria-label="Navegação rápida"]` com `aria-hidden="true"`; links do nav não recebem foco via Tab | |
+| M3 | BottomNav isolado | Com modal aberto | `nav[aria-label="Navegação rápida"]` **ausente** (immersive) ou `aria-hidden="true"`; links do nav não recebem foco via Tab | |
 | M4 | Focus trap | Tab / Shift+Tab no player | Foco circula dentro do painel do modal; não «vaza» para vitrine nem BottomNav | |
 | M5 | Escape | `Escape` com modal aberto | Modal fecha; URL volta à vitrine; `[data-vitrine-slot-ready="true"]`; cards clicáveis sem F5 | |
 | M6 | Backdrop | Toque na **faixa escurecida** acima do sheet (pode ser estreita em telas baixas — painel `flex-1`) | Mesmo resultado que M5; handler `Fechar questão` dispara dismiss | |
@@ -99,7 +99,7 @@ Responsável: _______________  Data: _______________
 | 2 | `/simulados/[id]` | Confirmar / próxima; link «Sair e voltar» acima da faixa de ação + nav |
 | 3 | `/simulados/[id]` (resumo) | Três CTAs inferiores sem corte |
 | 4 | `/estudar` | Último card da lista rolável até acima do BottomNav (padding `pb-vitrine-sticky-pagination` na grade); **paginação sticky** Anterior/Próxima sempre visível acima do nav quando `totalPaginas > 1` (`VitrinePaginationBar` variant sticky); paginação inline só em `md+`; filtros Banca/Assunto com sheet + teclado iOS não cobre «Fechar»; **modal questão aberto:** Tab não alcança vitrine nem BottomNav; foco permanece no sheet/player (`EstudarQuestaoModalRoute`); Escape fecha; **`page=2`** preservado ao abrir/voltar da questão; opt-in `NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE=1` em staging antes de produção |
-| 5 | `/estudar/[slug]` | Última alternativa + confirmar; scroll até confirmar sem ficar sob o nav |
+| 5 | `/estudar/[slug]` | **Imersivo mobile** (`useEstudarQuestaoImmersive`): header global + BottomNav ocultos; última alternativa + **Confirmar Resposta** visível sem cobertura inferior; toolbar **A+/A−** no player; ER fullscreen colado ao rodapé (`bottom-0`); voltar à vitrine restaura header + nav. Automatizado: `npm run test:e2e:estudar-nav` (describe «immersive inline mobile») |
 | 6 | `/plano-diario` | Card sticky de lembrete acima do BottomNav; lista rolável até o fim |
 | 7 | `/cadernos` | Sheet «Inserir questões» com busca — teclado iOS não cobre conteúdo; botão fechar ≥ 44px |
 | 8 | Banner PWA | Com painel «Instale o AVANT» visível: rotas longas do dashboard — conteúdo final acima do banner (`MOBILE_PAGE_PWA_BANNER_PADDING` via `useDashboardBottomInset` / `DashboardMobilePage`; nav já reservado em `MOBILE_MAIN_SCROLL_PADDING` no shell) |
@@ -171,7 +171,20 @@ npm run test:e2e:drawer
 - `__tests__/layout/useMobileSheetKeyboardInset.test.ts` — inset do teclado virtual.
 - `__tests__/lib/vitrine/paridadeNav.test.ts` — ordem de slugs vitrine ↔ player.
 - `__tests__/lib/estudar/questaoPlayerPayload.test.ts` — `anteriorSlug` / `proximaSlug` por índice na lista.
-- `__tests__/components/lesson/AvantLessonPlayer.navigation.test.tsx` — `payloadStale` bloqueia dots e Próxima.
+- `__tests__/components/lesson/AvantLessonPlayer.navigation.test.tsx` — `payloadStale` bloqueia dots e Próxima; barra inline expõe `aria-label` Anterior/Próxima.
+- `__tests__/layout/useEstudarQuestaoImmersive.test.ts` — pathname `/estudar` vs `/estudar/[slug]`, desktop off.
+
+### Matriz manual — questão inline imersiva (rota #5, 390×844)
+
+Preencher após Fase 1 (flag modal **off** ou navegação direta `/estudar/[slug]`). Automatizado parcial em `e2e/estudar-nav.spec.ts`.
+
+| ID | Cenário | Critério de aceite | Automatizado | OK |
+|----|---------|-------------------|--------------|-----|
+| I5-1 | Shell imersivo | Header «AVANT» e BottomNav ausentes na questão | `estudar-nav` — oculta header e nav | |
+| I5-2 | Confirmar visível | Scroll até última alternativa; **Confirmar Resposta** ≥ 44px e acima do rodapé do player | `estudar-nav` — confirmar no viewport | |
+| I5-3 | Zoom mobile | Botões **Aumentar texto** / **Diminuir texto** no header do player | `estudar-nav` + Jest `readableTextZoom` | |
+| I5-4 | Estudo reverso | Gabarito → Ativar ER → painel fullscreen sem faixa inferior (nav off) | `estudar-nav` — ER ancorado ao rodapé | |
+| I5-5 | Retorno vitrine | «Vitrine» → header + BottomNav visíveis; lista clicável | `estudar-nav` — restaura shell | |
 
 ## Comandos
 
@@ -179,18 +192,27 @@ npm run test:e2e:drawer
 npm test -- __tests__/layout/bottomNavActive.test.ts __tests__/layout/bottomNav.test.ts __tests__/layout/useBottomNavHeightSync.test.ts
 npm test -- __tests__/layout/useBodyScrollLock.test.ts
 npm test -- __tests__/layout/mobileBottomNav.test.ts __tests__/layout/dashboardShellDesktopPadding.test.ts
+npm test -- __tests__/layout/useEstudarQuestaoImmersive.test.ts __tests__/components/lesson/AvantLessonPlayer.navigation.test.tsx
+npm run test:e2e:estudar-nav
 npm run test:e2e:modal
 npm run test:e2e:drawer
 npm run test:e2e:vitrine-pagination
+npm test -- readableTextZoom
 npm run build
 rg "background-attachment" app/globals.css
 ```
 
 `rg` deve retornar **zero** declarações CSS (comentário em `globals.css` é aceitável). `useBodyScrollLock` aplica `touch-action: none` no primeiro lock do body.
 
+## Automatizado (E2E estudar-nav)
+
+- [`e2e/estudar-nav.spec.ts`](../e2e/estudar-nav.spec.ts) — vitrine → questão → próxima/anterior; dots; `page=2`; **rota #5 imersiva** (Pixel 5).
+- Local: `npm run test:e2e:estudar-nav`
+- Staging: `npm run test:e2e:estudar-nav:staging`
+
 ## Automatizado (E2E modal)
 
-- [`e2e/estudar-modal.spec.ts`](../e2e/estudar-modal.spec.ts) — Escape, backdrop, BottomNav `aria-hidden`, vitrine reativa, anti dead-zone.
+- [`e2e/estudar-modal.spec.ts`](../e2e/estudar-modal.spec.ts) — Escape, backdrop, BottomNav `aria-hidden`, vitrine reativa, anti dead-zone, **M8** Anterior/Próxima inline.
 - Requer `NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE=1` (script `npm run test:e2e:modal` injeta no webServer local).
 
 ## Automatizado (E2E vitrine paginação)

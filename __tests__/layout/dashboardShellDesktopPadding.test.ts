@@ -66,6 +66,8 @@ describe('DashboardShell mobile scroll shell', () => {
     expect(shell).not.toContain('isVitrineRoute');
     expect(shell).toContain('AVANT');
     expect(shell).toContain("new CustomEvent('avant:open-search')");
+    expect(shell).toContain('useEstudarQuestaoImmersive');
+    expect(shell).toMatch(/!estudarQuestaoImmersive[\s\S]*AVANT/);
     const vitrine = readFileSync(
       join(process.cwd(), 'components', 'vitrine', 'VitrineClient.tsx'),
       'utf8',
@@ -118,6 +120,15 @@ describe('DashboardShell mobile scroll shell', () => {
     expect(paginationBar).not.toContain('className="mt-6 hidden');
     expect(paginationBar).toContain('border-t border-white/10');
     expect(paginationBar).not.toContain('pb-12');
+  });
+
+  it('oculta BottomNav na questão inline mobile (immersive)', () => {
+    const shell = readFileSync(
+      join(process.cwd(), 'app', '(dashboard)', 'DashboardShell.tsx'),
+      'utf8',
+    );
+    expect(shell).toContain('estudarQuestaoImmersive');
+    expect(shell).toMatch(/!estudarQuestaoImmersive[\s\S]*<BottomNav/);
   });
 
   it('main sem scroll externo na questão inline (card preenche altura no desktop)', () => {

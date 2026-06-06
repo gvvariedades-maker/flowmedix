@@ -414,3 +414,117 @@ test.describe('Estudar — page, dots, history (Fase 3.2)', () => {
     await page.waitForURL((url) => isVitrineUrl(url, { page: '2' }), { timeout: 15_000 });
   });
 });
+
+function globalMobileHeader(page: Page) {
+  return page.locator('header').filter({ hasText: 'AVANT' }).first();
+}
+
+function bottomNav(page: Page) {
+  return page.locator('nav[aria-label="Navegação rápida"]');
+}
+
+async function dismissWelcomeIfVisible(page: Page) {
+  const skip = page.getByRole('button', { name: 'Não mostrar novamente' });
+  if (await skip.isVisible().catch(() => false)) {
+    await skip.click();
+    return;
+  }
+  const close = page.getByRole('button', { name: 'Fechar introdução' });
+  if (await close.isVisible().catch(() => false)) {
+    await close.click();
+  }
+}
+
+/**
+ * Rota #5 — questão inline imersiva (header global + BottomNav off no mobile).
+ * Viewport 390×844 (Pixel 5). Rodar: npm run test:e2e:estudar-nav
+ */
+test.describe('Estudar — immersive inline mobile (rota #5)', () => {
+  test.use({ viewport: { width: 390, height: 844 }, hasTouch: true });
+  test.describe.configure({ mode: 'serial', timeout: 60_000 });
+
+  test.beforeEach(async ({ page }) => {
+    await page.addInitScript(() => {
+      try {
+        localStorage.setItem('avant.estudoReverso.welcomeShown', 'true');
+      } catch {
+        /* storage indisponível */
+      }
+    });
+  });
+
+  test('questão inline oculta header global e BottomNav', async ({ page }) => {
+    await abrirQuestao1Direto(page);
+    await expect(globalMobileHeader(page)).not.toBeVisible();
+    await expect(bottomNav(page)).not.toBeVisible();
+  });
+
+  test('Confirmar Resposta visível após última alternativa (sem cobertura inferior)', async ({
+    page,
+  }) => {
+    await abrirQuestao1Direto(page);
+
+    const scrollBody = page.getByTestId('lesson-scroll-body').first();
+    await scrollBody.evaluate((el) => {
+      el.scrollTop = el.scrollHeight;
+    });
+
+    await page
+      .getByRole('radio', { name: /Alternativa B:.*atropina/i })
+      .click();
+
+    const confirmar = page.getByRole('button', { name: 'Confirmar Resposta' });
+    await confirmar.scrollIntoViewIfNeeded();
+    await expect(confirmar).toBeVisible();
+    await expect(confirmar).toBeEnabled();
+
+    const confirmBox = await confirmar.boundingBox();
+    expect(confirmBox).not.toBeNull();
+    const viewportBottom = await page.evaluate(() => window.innerHeight);
+    expect(confirmBox!.y + confirmBox!.height).toBeLessThanOrEqual(viewportBottom + 4);
+  });
+
+  test('toolbar zoom A+/A− visível no player imersivo', async ({ page }) => {
+    await abrirQuestao1Direto(page);
+    await expect(page.getByRole('button', { name: 'Aumentar texto' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Diminuir texto' })).toBeVisible();
+  });
+
+  test('estudo reverso fullscreen ocupa base da tela (bottom-0 imersivo)', async ({ page }) => {
+    await abrirQuestao1Direto(page);
+    await selecionarAlternativaA(page);
+    await confirmarRespostaEGabarito(page);
+
+    await page.getByRole('button', { name: /Ativar Estudo Reverso/i }).click();
+    const fecharEr = page.getByRole('button', { name: /Fechar estudo reverso/i });
+    await expect(fecharEr).toBeVisible({ timeout: 15_000 });
+
+    await expect
+      .poll(async () => {
+        const erPanel = page.locator('.fixed.inset-x-0.top-0').filter({ has: fecharEr });
+        const box = await erPanel.boundingBox();
+        if (!box) return false;
+        const viewportBottom = await page.evaluate(() => {
+          const vv = window.visualViewport;
+          return (vv?.height ?? window.innerHeight) + (vv?.offsetTop ?? 0);
+        });
+        return Math.abs(box.y + box.height - viewportBottom) <= 4;
+      })
+      .toBe(true);
+  });
+
+  test('voltar à vitrine restaura header global e BottomNav', async ({ page }) => {
+    await abrirQuestao1Direto(page);
+    await expect(bottomNav(page)).not.toBeVisible();
+
+    await page.getByRole('button', { name: 'Vitrine' }).click();
+    await expect(page).toHaveURL(new RegExp(`/estudar(?:\\?.*banca=${BANCA_QUERY})?`), {
+      timeout: 15_000,
+    });
+    await dismissWelcomeIfVisible(page);
+    await waitVitrineListReady(page);
+
+    await expect(globalMobileHeader(page)).toBeVisible();
+    await expect(bottomNav(page)).toBeVisible();
+  });
+});

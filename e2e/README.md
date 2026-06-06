@@ -23,7 +23,8 @@ npm run test:e2e:debug
 
 - `laboratorio.spec.ts` - Testes do laboratório admin
 - `simulados.spec.ts` - Fluxo aluno (setup → runner → resumo)
-- `estudar-nav.spec.ts` - Vitrine → questão → próxima (query preservada)
+- `estudar-nav.spec.ts` - Vitrine → questão → próxima (query preservada); rota #5 imersiva (`npm run test:e2e:estudar-nav`)
+- `estudar-modal.spec.ts` - Modal intercept (`npm run test:e2e:modal`, flag `NEXT_PUBLIC_ESTUDAR_MODAL_ROUTE=1`)
 - `api-validation.spec.ts` - Testes de API
 - `cache.spec.ts` - Testes de cache
 

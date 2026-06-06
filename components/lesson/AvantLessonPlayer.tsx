@@ -65,7 +65,9 @@ import {
   ESTUDO_REVERSO_FULLSCREEN_Z,
   ESTUDO_REVERSO_DESKTOP_INSET,
   ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM,
+  ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM_IMMERSIVE,
 } from '@/lib/layout/mobileBottomNav';
+import { useEstudarQuestaoImmersive } from '@/lib/layout/useEstudarQuestaoImmersive';
 import { EstudoReversoHost } from '@/components/lesson/EstudoReversoFullscreenPortal';
 import { supabase } from '@/lib/supabase/client';
 import { PaywallModal } from '@/components/freemium/PaywallModal';
@@ -169,6 +171,7 @@ export default function AvantLessonPlayer({
 }: AvantLessonPlayerProps) {
   
   const router = useRouter();
+  const estudarQuestaoImmersive = useEstudarQuestaoImmersive();
   const questaoNav = useQuestaoNavigationOptional();
   const [isNavigating, setIsNavigating] = useState(false);
   const [staleElapsedMs, setStaleElapsedMs] = useState(0);
@@ -1104,18 +1107,21 @@ export default function AvantLessonPlayer({
   const renderQuestionLiveHeader = (withZoom: boolean) => {
     if (mode !== 'live') return null;
 
+    const voltarDestino = fromPlano ? 'Plano diário' : fromCaderno ? 'Meus cadernos' : 'Vitrine';
+
     return (
       <div className="flex min-w-0 shrink-0 flex-wrap items-center justify-between gap-x-2 gap-y-2 px-4 pb-1.5 pt-3 sm:gap-x-3 sm:px-6 sm:pt-4">
         <button
           type="button"
           onClick={handleVoltarLista}
-          className="group flex min-w-0 max-w-[45%] items-center gap-2 rounded-xl px-1 -ml-1 text-slate-400 transition-colors hover:text-[#00f2ff] min-h-[44px] min-w-[44px] sm:max-w-none"
+          aria-label={`Voltar para ${voltarDestino}`}
+          className="group flex min-w-0 shrink-0 items-center gap-2 rounded-xl px-1 -ml-1 text-slate-400 transition-colors hover:text-[#00f2ff] min-h-[44px] min-w-[44px] sm:max-w-none"
         >
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/[0.05] transition-all group-hover:bg-[rgba(0,242,255,0.10)]">
             <ArrowLeft size={16} />
           </div>
-          <span className="truncate text-sm font-medium">
-            {fromPlano ? 'Plano diário' : fromCaderno ? 'Meus cadernos' : 'Vitrine'}
+          <span className="hidden truncate text-sm font-medium sm:inline">
+            {voltarDestino}
           </span>
         </button>
         <div className="ml-auto flex min-w-0 max-w-full flex-wrap items-center justify-end gap-1.5 sm:gap-2">
@@ -1482,99 +1488,162 @@ export default function AvantLessonPlayer({
               </motion.div>
             )}
           </AnimatePresence>
-          {/* Dots janelados: N antes/depois + ellipsis; altura fixa (sem scroll horizontal). */}
-          {dotsNavItems.length > 0 && (
-            <div className="w-full min-w-0 px-3 sm:px-4 pt-1">
-              <div
-                className="flex h-12 w-full min-w-0 items-center justify-center"
-                aria-label={
-                  listaContexto
-                    ? `Navegação entre questões, questão ${listaContexto.atual} de ${listaContexto.total}`
-                    : 'Navegação entre questões'
-                }
+          {/* Navegação inline: Anterior | dots janelados | Próxima/Concluir */}
+          <div className="w-full min-w-0 px-2 pb-2 pt-1 sm:px-4 sm:pb-3">
+            <div className="flex h-12 w-full min-w-0 items-center gap-1 sm:gap-2">
+              <button
+                type="button"
+                aria-label={navegacaoStatusLabel ?? 'Anterior'}
+                onClick={() => anteriorSlug && handleNavegar(anteriorSlug)}
+                onMouseEnter={() => {
+                  if (!navegacaoBloqueada) prefetchSlug(anteriorSlug);
+                }}
+                onFocus={() => {
+                  if (!navegacaoBloqueada) prefetchSlug(anteriorSlug);
+                }}
+                disabled={!anteriorSlug || navegacaoIndisponivel}
+                className={`flex h-11 min-h-[44px] min-w-[44px] shrink-0 items-center justify-center gap-1 rounded-xl px-2 font-bold uppercase text-[10px] tracking-wide transition-all sm:gap-1.5 sm:px-3 sm:text-xs ${
+                  anteriorSlug && !navegacaoIndisponivel
+                    ? 'text-slate-400 hover:bg-white/[0.05] hover:text-[#00f2ff]'
+                    : 'cursor-not-allowed text-white/15'
+                }`}
               >
-                <div className="flex flex-nowrap items-center justify-center gap-1.5 sm:gap-2">
-                {dotsNavItems.map((item, i) => {
-                  if (item.type === 'ellipsis') {
-                    return (
-                      <span
-                        key={`ellipsis-${item.side}-${i}`}
-                        className="flex h-5 w-5 shrink-0 items-center justify-center text-[10px] font-bold leading-none text-slate-500 select-none"
-                        aria-hidden
-                      >
-                        …
-                      </span>
-                    );
-                  }
+                <ArrowLeft size={16} className="shrink-0" aria-hidden />
+                <span className="hidden sm:inline">{navegacaoStatusLabel ?? 'Anterior'}</span>
+              </button>
 
-                  const q = item.questao;
-                  const isCurrent = q.slug === moduloSlug;
-                  const posicaoLista = q.indice;
-                  return (
-                    <button
-                      key={q.slug}
-                      ref={isCurrent ? questaoAtualDotRef : undefined}
-                      type="button"
-                      disabled={navegacaoIndisponivel}
-                      onClick={() => {
-                        handleNavegar(`${q.slug}${buildNavegacaoSuffix()}`);
-                      }}
-                      onMouseEnter={() => {
-                        if (navegacaoBloqueada) return;
-                        prefetchSlug(`${q.slug}${buildNavegacaoSuffix()}`);
-                      }}
-                      onFocus={() => {
-                        if (navegacaoBloqueada) return;
-                        prefetchSlug(`${q.slug}${buildNavegacaoSuffix()}`);
-                      }}
-                      title={`Questão ${posicaoLista}${q.estudada ? ' — estudo reverso concluído' : ''}`}
-                      aria-label={`Questão ${posicaoLista}${isCurrent ? ', atual' : ''}${q.estudada ? ', estudo reverso concluído' : ''}`}
-                      aria-current={isCurrent ? 'step' : undefined}
-                      className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-full transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50"
-                    >
-                      <span
-                        className={`flex items-center justify-center rounded-full transition-all duration-200 ${
-                          isCurrent
-                            ? 'h-7 w-7 bg-[#00f2ff] ring-2 ring-[rgba(0,242,255,0.40)] ring-offset-1 ring-offset-[#0d1117] shadow-md'
-                            : q.estudada
-                              ? 'h-5 w-5 bg-emerald-400 hover:bg-emerald-500'
-                              : 'h-5 w-5 bg-white/20 hover:bg-white/35'
-                        }`}
-                        aria-hidden
-                      >
-                        {isCurrent && (
-                          <span className="text-[10px] font-black leading-none text-slate-900">
-                            {posicaoLista}
+              {dotsNavItems.length > 0 ? (
+                <div
+                  className="flex min-w-0 flex-1 items-center justify-center"
+                  aria-label={
+                    listaContexto
+                      ? `Navegação entre questões, questão ${listaContexto.atual} de ${listaContexto.total}`
+                      : 'Navegação entre questões'
+                  }
+                >
+                  <div className="flex flex-nowrap items-center justify-center gap-1.5 sm:gap-2">
+                    {dotsNavItems.map((item, i) => {
+                      if (item.type === 'ellipsis') {
+                        return (
+                          <span
+                            key={`ellipsis-${item.side}-${i}`}
+                            className="flex h-5 w-5 shrink-0 items-center justify-center text-[10px] font-bold leading-none text-slate-500 select-none"
+                            aria-hidden
+                          >
+                            …
                           </span>
-                        )}
-                        {!isCurrent && q.estudada && (
-                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden>
-                            <path
-                              d="M2 5l2.5 2.5L8 3"
-                              stroke="white"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        )}
-                      </span>
-                    </button>
-                  );
-                })}
+                        );
+                      }
+
+                      const q = item.questao;
+                      const isCurrent = q.slug === moduloSlug;
+                      const posicaoLista = q.indice;
+                      return (
+                        <button
+                          key={q.slug}
+                          ref={isCurrent ? questaoAtualDotRef : undefined}
+                          type="button"
+                          disabled={navegacaoIndisponivel}
+                          onClick={() => {
+                            handleNavegar(`${q.slug}${buildNavegacaoSuffix()}`);
+                          }}
+                          onMouseEnter={() => {
+                            if (navegacaoBloqueada) return;
+                            prefetchSlug(`${q.slug}${buildNavegacaoSuffix()}`);
+                          }}
+                          onFocus={() => {
+                            if (navegacaoBloqueada) return;
+                            prefetchSlug(`${q.slug}${buildNavegacaoSuffix()}`);
+                          }}
+                          title={`Questão ${posicaoLista}${q.estudada ? ' — estudo reverso concluído' : ''}`}
+                          aria-label={`Questão ${posicaoLista}${isCurrent ? ', atual' : ''}${q.estudada ? ', estudo reverso concluído' : ''}`}
+                          aria-current={isCurrent ? 'step' : undefined}
+                          className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-full transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50"
+                        >
+                          <span
+                            className={`flex items-center justify-center rounded-full transition-all duration-200 ${
+                              isCurrent
+                                ? 'h-7 w-7 bg-[#00f2ff] ring-2 ring-[rgba(0,242,255,0.40)] ring-offset-1 ring-offset-[#0d1117] shadow-md'
+                                : q.estudada
+                                  ? 'h-5 w-5 bg-emerald-400 hover:bg-emerald-500'
+                                  : 'h-5 w-5 bg-white/20 hover:bg-white/35'
+                            }`}
+                            aria-hidden
+                          >
+                            {isCurrent && (
+                              <span className="text-[10px] font-black leading-none text-slate-900">
+                                {posicaoLista}
+                              </span>
+                            )}
+                            {!isCurrent && q.estudada && (
+                              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden>
+                                <path
+                                  d="M2 5l2.5 2.5L8 3"
+                                  stroke="white"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </svg>
+                            )}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-              <p className="text-center text-[10px] sm:text-[11px] text-slate-500 leading-snug pb-1">
-                Verde = estudo reverso concluído
-              </p>
-              <MicroTip
-                storageKey="reverse-study.dots-meaning"
-                tip={REVERSE_STUDY_MICROTIPS['dots-meaning']}
-                enabled={dotsNavItems.length > 0}
-                className="mb-2"
-              />
+              ) : (
+                <div className="min-w-0 flex-1" aria-hidden />
+              )}
+
+              {proximaSlug ? (
+                <button
+                  type="button"
+                  aria-label={navegacaoStatusLabel ?? 'Próxima'}
+                  onClick={() => proximaSlug && handleNavegar(proximaSlug)}
+                  onMouseEnter={() => {
+                    if (!navegacaoBloqueada) prefetchSlug(proximaSlug);
+                  }}
+                  onFocus={() => {
+                    if (!navegacaoBloqueada) prefetchSlug(proximaSlug);
+                  }}
+                  disabled={navegacaoIndisponivel}
+                  className="flex h-11 min-h-[44px] min-w-[44px] shrink-0 items-center justify-center gap-1 rounded-xl bg-white/[0.07] px-2 font-black uppercase text-[10px] tracking-wide text-slate-200 transition-all hover:bg-white/[0.12] disabled:cursor-not-allowed disabled:opacity-50 sm:gap-1.5 sm:px-3 sm:text-xs"
+                >
+                  <span className="hidden sm:inline">{navegacaoStatusLabel ?? 'Próxima Questão'}</span>
+                  <ArrowRight size={16} className="shrink-0" aria-hidden />
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  aria-label={
+                    fromPlano ? 'Concluir Plano' : fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'
+                  }
+                  onClick={handleConcluir}
+                  className="flex h-11 min-h-[44px] min-w-[44px] shrink-0 items-center justify-center gap-1 rounded-xl bg-[#BEF264] px-2 font-black uppercase text-[10px] tracking-wide text-slate-900 transition-all hover:bg-[#a3d648] hover:shadow-lg sm:gap-1.5 sm:px-3 sm:text-xs"
+                >
+                  <span className="hidden sm:inline">
+                    {fromPlano ? 'Concluir Plano' : fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'}
+                  </span>
+                  <Flag size={16} className="shrink-0" aria-hidden />
+                </button>
+              )}
             </div>
-          )}
+
+            {dotsNavItems.length > 0 ? (
+              <>
+                <p className="text-center text-[10px] sm:text-[11px] text-slate-500 leading-snug pb-1">
+                  Verde = estudo reverso concluído
+                </p>
+                <MicroTip
+                  storageKey="reverse-study.dots-meaning"
+                  tip={REVERSE_STUDY_MICROTIPS['dots-meaning']}
+                  enabled={dotsNavItems.length > 0}
+                  className="mb-2"
+                />
+              </>
+            ) : null}
+          </div>
           {gabarito !== null && !estudoConcluido && (
             <div className="flex justify-center px-3 pb-1.5" role="status">
               <span className="inline-flex items-center rounded-full border border-amber-500/25 bg-amber-500/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-200/90">
@@ -1593,56 +1662,6 @@ export default function AvantLessonPlayer({
               </button>
             </div>
           )}
-          <div className="px-2 sm:px-4 py-3 flex flex-wrap justify-between items-center gap-2">
-            <button 
-              type="button"
-              onClick={() => anteriorSlug && handleNavegar(anteriorSlug)}
-              onMouseEnter={() => {
-                if (!navegacaoBloqueada) prefetchSlug(anteriorSlug);
-              }}
-              onFocus={() => {
-                if (!navegacaoBloqueada) prefetchSlug(anteriorSlug);
-              }}
-              disabled={!anteriorSlug || navegacaoIndisponivel} 
-              className={`flex items-center gap-1.5 sm:gap-2 px-2 sm:px-4 py-2.5 sm:py-3 rounded-xl font-bold uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest transition-all min-h-[44px] ${
-                anteriorSlug && !navegacaoIndisponivel ? 'text-slate-400 hover:bg-white/[0.05] hover:text-[#00f2ff]' : 'text-white/15 cursor-not-allowed'
-              }`}
-            >
-              <ArrowLeft size={16} /> <span>{navegacaoStatusLabel ?? 'Anterior'}</span>
-            </button>
-            {proximaSlug ? (
-              <button 
-                type="button"
-                onClick={() => proximaSlug && handleNavegar(proximaSlug)}
-                onMouseEnter={() => {
-                  if (!navegacaoBloqueada) prefetchSlug(proximaSlug);
-                }}
-                onFocus={() => {
-                  if (!navegacaoBloqueada) prefetchSlug(proximaSlug);
-                }}
-                disabled={navegacaoIndisponivel}
-                className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-white/[0.07] text-slate-200 font-black uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:bg-white/[0.12] transition-all min-h-[44px] disabled:cursor-not-allowed disabled:opacity-50"
-              >
-                <span className="sm:hidden">{navegacaoStatusLabel ?? 'Próxima'}</span>
-                <span className="hidden sm:inline">{navegacaoStatusLabel ?? 'Próxima Questão'}</span>
-                <ArrowRight size={16} className="shrink-0" />
-              </button>
-            ) : (
-              <button 
-                type="button"
-                onClick={handleConcluir} 
-                className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-[#BEF264] text-slate-900 font-black uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:bg-[#a3d648] hover:shadow-lg transition-all min-h-[44px]"
-              >
-                <span className="max-[380px]:hidden">
-                  {fromPlano ? 'Concluir Plano' : fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'}
-                </span>
-                <span className="hidden max-[380px]:inline">
-                  {fromPlano ? 'Plano' : fromCaderno ? 'Caderno' : 'Fim'}
-                </span>
-                <Flag size={16} className="shrink-0" />
-              </button>
-            )}
-          </div>
         </div>
       )}
 
@@ -1660,7 +1679,9 @@ export default function AvantLessonPlayer({
                 ? 'absolute inset-0 z-30 flex h-full max-h-full flex-col overflow-hidden rounded-b-[2rem] bg-[#010409] overscroll-y-contain'
                 : cn(
                     'fixed inset-x-0 top-0 flex flex-col overflow-hidden bg-[#010409] overscroll-y-contain',
-                    ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM,
+                    estudarQuestaoImmersive
+                      ? ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM_IMMERSIVE
+                      : ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM,
                     ESTUDO_REVERSO_DESKTOP_INSET,
                     'h-full max-h-full',
                     ESTUDO_REVERSO_FULLSCREEN_Z,

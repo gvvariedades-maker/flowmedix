@@ -64,6 +64,16 @@ describe('BottomNav', () => {
     expect(hook).toContain('useLayoutEffect');
   });
 
+  it('desabilita useBottomNavHeightSync no mobile immersive (questão inline)', () => {
+    const source = readFileSync(bottomNavPath, 'utf8');
+    const hook = readFileSync(heightSyncPath, 'utf8');
+    expect(source).toContain('useEstudarQuestaoImmersive');
+    expect(source).toMatch(
+      /useBottomNavHeightSync\(navRef,\s*!isDesktop\s*&&\s*!estudarQuestaoImmersive\)/,
+    );
+    expect(hook).toMatch(/if \(!enabled\)[\s\S]*removeProperty\(BOTTOM_NAV_HEIGHT_VAR\)/);
+  });
+
   it('botão Mais usa isBottomNavMaisActive para estado ativo', () => {
     const source = readFileSync(bottomNavPath, 'utf8');
     expect(source).toContain('isBottomNavMaisActive');

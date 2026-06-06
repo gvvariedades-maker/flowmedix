@@ -53,6 +53,9 @@ export const DASHBOARD_SIDEBAR_WIDTH = '18rem';
 export const ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM =
   'max-md:bottom-[calc(5rem+env(safe-area-inset-bottom,0px))]';
 
+/** Estudo reverso imersivo (questão inline): BottomNav oculto — base da tela no mobile. */
+export const ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM_IMMERSIVE = 'max-md:bottom-0';
+
 /** Estudo reverso no desktop: não cobre a sidebar esquerda. */
 export const ESTUDO_REVERSO_DESKTOP_INSET = 'md:inset-y-0 md:right-0 md:left-[18rem] md:bottom-0';
 

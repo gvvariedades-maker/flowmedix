@@ -43,6 +43,10 @@ async function garantirPainelAssuntoAberto(page: Page) {
   await expect(entrar).toBeVisible({ timeout: 15_000 });
 }
 
+function bottomNav(page: Page) {
+  return page.locator('nav[aria-label="Navegação rápida"]');
+}
+
 async function abrirPrimeiraQuestaoDaVitrine(page: Page) {
   await garantirPainelAssuntoAberto(page);
 
@@ -83,12 +87,12 @@ test.describe('Estudar — modal intercept (mobile)', () => {
     await expect(page.getByText(/Questão E2E 1:/)).toBeVisible();
   });
 
-  test('BottomNav fica aria-hidden com modal aberto', async ({ page }) => {
+  test('BottomNav ausente na questão modal (immersive + aria-hidden legado)', async ({ page }) => {
     await gotoVitrineFiltrada(page);
     await abrirPrimeiraQuestaoDaVitrine(page);
 
-    const bottomNav = page.locator('nav[aria-label="Navegação rápida"]');
-    await expect(bottomNav).toHaveAttribute('aria-hidden', 'true', { timeout: 15_000 });
+    const nav = bottomNav(page);
+    await expect(nav).toHaveCount(0, { timeout: 15_000 });
   });
 
   test('Escape fecha modal e reativa vitrine', async ({ page }) => {
@@ -109,8 +113,7 @@ test.describe('Estudar — modal intercept (mobile)', () => {
     });
     await waitVitrineListReady(page);
 
-    const bottomNav = page.locator('nav[aria-label="Navegação rápida"]');
-    await expect(bottomNav).not.toHaveAttribute('aria-hidden', 'true');
+    await expect(bottomNav(page)).toBeVisible({ timeout: 15_000 });
 
     const iniciar = page
       .locator(`a[href*="/estudar/${E2E_ESTUDAR_SLUG_1}"]`)
@@ -118,6 +121,22 @@ test.describe('Estudar — modal intercept (mobile)', () => {
       .first();
     await iniciar.click({ force: true });
     await expect(page.getByRole('dialog')).toBeVisible({ timeout: 15_000 });
+  });
+
+  test('navegação inline Anterior/Próxima no modal (M8)', async ({ page }) => {
+    await gotoVitrineFiltrada(page);
+    await abrirPrimeiraQuestaoDaVitrine(page);
+    await expect(page.getByRole('dialog')).toBeVisible({ timeout: 15_000 });
+
+    const proxima = page.getByRole('button', { name: /Próxima/i }).first();
+    await expect(proxima).toBeEnabled({ timeout: 30_000 });
+    await proxima.click();
+    await expect(page.getByText(/Questão E2E 2:/)).toBeVisible({ timeout: 15_000 });
+
+    const anterior = page.getByRole('button', { name: /Anterior/i }).first();
+    await expect(anterior).toBeEnabled({ timeout: 15_000 });
+    await anterior.click();
+    await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
   });
 
   test('backdrop fecha modal e vitrine permanece clicável', async ({ page }) => {
@@ -165,12 +184,20 @@ test.describe('Estudar — modal intercept (mobile)', () => {
 
     const entrar = linkEntrarNoAssunto(page);
     await entrar.scrollIntoViewIfNeeded();
-    await entrar.click({ force: true });
 
     const dialogOrSkeleton = page
       .getByRole('dialog')
       .or(page.getByTestId('estudar-questao-skeleton'));
-    await expect(dialogOrSkeleton.first()).toBeVisible({ timeout: 45_000 });
-    await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 45_000 });
+
+    await Promise.all([
+      entrar.click({ force: true }),
+      expect(dialogOrSkeleton.first()).toBeVisible({ timeout: 15_000 }),
+    ]);
+
+    await Promise.race([
+      page.waitForURL(SLUG_1_URL, { timeout: 45_000, waitUntil: 'commit' }),
+      expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 45_000 }),
+    ]);
+    await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
   });
 });

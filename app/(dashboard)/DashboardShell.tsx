@@ -34,6 +34,7 @@ import {
 } from '@/components/dashboard/BackToVitrineLink';
 import { useEstudarModalActive } from '@/components/estudar/useEstudarModalActive';
 import { parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
+import { useEstudarQuestaoImmersive } from '@/lib/layout/useEstudarQuestaoImmersive';
 import { BottomNav } from '@/components/layout/BottomNav';
 import { MobileDashboardDrawer } from '@/components/layout/MobileDashboardDrawer';
 import { PlanStatusCard } from '@/components/plan/PlanStatusCard';
@@ -377,6 +378,7 @@ function DashboardContent({
   const [isAdminUser, setIsAdminUser] = useState<boolean>(initialIsAdmin);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const modalQuestaoAtivo = useEstudarModalActive();
+  const estudarQuestaoImmersive = useEstudarQuestaoImmersive();
   const isDashboardDesktop = useDashboardDesktop();
   const pageVariants = isDashboardDesktop ? pageVariantsDesktop : pageVariantsMobile;
   const estudoReversoWelcome = useEstudoReversoWelcome({ enabled: userEmail != null });
@@ -645,37 +647,39 @@ function DashboardContent({
           className="flex min-h-0 flex-1 flex-col overflow-hidden"
           aria-hidden={hideMainFromAssistiveTech ? true : undefined}
         >
-        <div className="sticky top-0 z-30 shrink-0 border-b border-white/[0.08] bg-[#06090f]/90 backdrop-blur-xl md:hidden">
-          <header className="flex items-center justify-between px-4 py-3 pt-safe">
-            <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-indigo-500 shadow-md shadow-indigo-500/35">
-                <Zap size={15} className="text-[#BEF264]" fill="currentColor" aria-hidden />
+        {!estudarQuestaoImmersive ? (
+          <div className="sticky top-0 z-30 shrink-0 border-b border-white/[0.08] bg-[#06090f]/90 backdrop-blur-xl md:hidden">
+            <header className="flex items-center justify-between px-4 py-3 pt-safe">
+              <div className="flex items-center gap-2">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-indigo-500 shadow-md shadow-indigo-500/35">
+                  <Zap size={15} className="text-[#BEF264]" fill="currentColor" aria-hidden />
+                </div>
+                <span className="text-[17px] font-extrabold tracking-tight text-white">AVANT</span>
               </div>
-              <span className="text-[17px] font-extrabold tracking-tight text-white">AVANT</span>
-            </div>
 
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => window.dispatchEvent(new CustomEvent('avant:open-search'))}
-                aria-label="Abrir busca"
-                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-slate-400 transition-colors hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
-              >
-                <Search size={15} aria-hidden />
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new CustomEvent('avant:open-search'))}
+                  aria-label="Abrir busca"
+                  className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-slate-400 transition-colors hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
+                >
+                  <Search size={15} aria-hidden />
+                </button>
 
-              <div
-                className={cn(
-                  'flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-full text-xs font-bold',
-                  USER_AVATAR_CLASSES,
-                )}
-                aria-hidden
-              >
-                {userInitials}
+                <div
+                  className={cn(
+                    'flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-full text-xs font-bold',
+                    USER_AVATAR_CLASSES,
+                  )}
+                  aria-hidden
+                >
+                  {userInitials}
+                </div>
               </div>
-            </div>
-          </header>
-        </div>
+            </header>
+          </div>
+        ) : null}
 
         <main
           {...{ [DASHBOARD_MAIN_SCROLL_ATTR]: '' }}
@@ -702,18 +706,20 @@ function DashboardContent({
         </main>
         </div>
 
-        <BottomNav
-          ref={menuButtonRef}
-          currentPath={pathname ?? ''}
-          onMenuToggle={() => {
-            if (modalQuestaoAtivo || estudoReversoWelcome.isOpen) return;
-            setMobileMenuOpen((open) => !open);
-          }}
-          menuOpen={mobileMenuOpen}
-          questaoModalOpen={modalQuestaoAtivo}
-          drawerOpen={mobileMenuOpen}
-          welcomeOpen={estudoReversoWelcome.isOpen}
-        />
+        {!estudarQuestaoImmersive ? (
+          <BottomNav
+            ref={menuButtonRef}
+            currentPath={pathname ?? ''}
+            onMenuToggle={() => {
+              if (modalQuestaoAtivo || estudoReversoWelcome.isOpen) return;
+              setMobileMenuOpen((open) => !open);
+            }}
+            menuOpen={mobileMenuOpen}
+            questaoModalOpen={modalQuestaoAtivo}
+            drawerOpen={mobileMenuOpen}
+            welcomeOpen={estudoReversoWelcome.isOpen}
+          />
+        ) : null}
       </div>
 
       <EstudoReversoWelcomeModal

@@ -14,7 +14,10 @@ export function useBottomNavHeightSync(
   remountKey?: unknown,
 ): void {
   useLayoutEffect(() => {
-    if (!enabled) return;
+    if (!enabled) {
+      document.documentElement.style.removeProperty(BOTTOM_NAV_HEIGHT_VAR);
+      return;
+    }
     const el = navRef.current;
     if (!el) return;
 

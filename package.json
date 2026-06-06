@@ -16,6 +16,8 @@
     "test:e2e:drawer:staging": "tsx scripts/run-e2e-mobile-drawer.ts --target=staging",
     "test:e2e:vitrine-pagination": "tsx scripts/run-e2e-vitrine-pagination.ts",
     "test:e2e:vitrine-pagination:staging": "tsx scripts/run-e2e-vitrine-pagination.ts --target=staging",
+    "test:e2e:estudar-nav": "tsx scripts/run-e2e-estudar-nav.ts",
+    "test:e2e:estudar-nav:staging": "tsx scripts/run-e2e-estudar-nav.ts --target=staging",
     "validate:env": "tsx scripts/validate-env.ts",
     "db:push": "supabase db push",
     "db:link": "supabase link",

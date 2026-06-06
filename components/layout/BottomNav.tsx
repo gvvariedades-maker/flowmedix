@@ -17,6 +17,7 @@ import { isBottomNavItemActive, isBottomNavMaisActive } from '@/lib/layout/botto
 import { MOBILE_BOTTOM_NAV_SHELL, MOBILE_BOTTOM_NAV_Z } from '@/lib/layout/mobileBottomNav';
 import { useBottomNavHeightSync } from '@/lib/layout/useBottomNavHeightSync';
 import { useDashboardDesktop } from '@/lib/layout/useDashboardDesktop';
+import { useEstudarQuestaoImmersive } from '@/lib/layout/useEstudarQuestaoImmersive';
 
 const NAV_ITEMS = [
   { label: 'Estudar', href: '/estudar', icon: LayoutGrid },
@@ -50,8 +51,9 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
 ) {
   const navRef = useRef<HTMLElement>(null);
   const isDesktop = useDashboardDesktop();
+  const estudarQuestaoImmersive = useEstudarQuestaoImmersive();
 
-  useBottomNavHeightSync(navRef, !isDesktop);
+  useBottomNavHeightSync(navRef, !isDesktop && !estudarQuestaoImmersive);
 
   const mobileOverlayBlocksNav =
     !isDesktop && (drawerOpen || welcomeOpen || questaoModalOpen);
