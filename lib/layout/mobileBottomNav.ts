@@ -56,8 +56,8 @@ export const ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM =
 /** Estudo reverso imersivo (questão inline): BottomNav oculto — base da tela no mobile. */
 export const ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM_IMMERSIVE = 'max-md:bottom-0';
 
-/** Estudo reverso no desktop: não cobre a sidebar esquerda. */
-export const ESTUDO_REVERSO_DESKTOP_INSET = 'md:inset-y-0 md:right-0 md:left-[18rem] md:bottom-0';
+/** Estudo reverso no desktop: viewport inteiro (`z-[110]` cobre a sidebar `z-20`). */
+export const ESTUDO_REVERSO_DESKTOP_INSET = 'md:inset-0';
 
 /** Estudo reverso imersivo — acima do modal de questão (z-100); abaixo do drawer quando aberto. */
 export const ESTUDO_REVERSO_FULLSCREEN_Z = 'z-[110]';

@@ -44,9 +44,9 @@ describe('mobileBottomNav tokens', () => {
     expect(ESTUDO_REVERSO_FULLSCREEN_Z).toBe('z-[110]');
   });
 
-  it('estudo reverso no desktop respeita largura da sidebar', () => {
+  it('estudo reverso no desktop cobre o viewport inteiro', () => {
     expect(DASHBOARD_SIDEBAR_WIDTH).toBe('18rem');
-    expect(ESTUDO_REVERSO_DESKTOP_INSET).toContain('18rem');
+    expect(ESTUDO_REVERSO_DESKTOP_INSET).toBe('md:inset-0');
   });
 
   it('estudo reverso no celular reserva altura do BottomNav', () => {
