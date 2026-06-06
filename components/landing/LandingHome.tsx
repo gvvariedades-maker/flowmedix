@@ -28,6 +28,7 @@ import {
   X,
 } from 'lucide-react';
 import { AvantLogo } from '@/components/brand/AvantLogo';
+import { WhatsAppSupportLink } from '@/components/support/WhatsAppSupportLink';
 import { FREEMIUM_PLAN_LIMITS_COMPACT, FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium/constants';
 import { DemoInterativa } from '@/components/landing/DemoInterativa';
 import { SlideStylePreviews } from '@/components/landing/SlideStylePreviews';
@@ -833,12 +834,18 @@ export default function LandingHome() {
               <AvantLogo size="md" animated={false} />
               <span className="text-sm text-slate-500">· Estudo reverso para Técnico em Enfermagem</span>
             </div>
-            <Link
-              href="/blog"
-              className="text-sm font-bold text-slate-400 transition-colors hover:text-white"
-            >
-              Blog
-            </Link>
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:justify-start">
+              <Link
+                href="/blog"
+                className="text-sm font-bold text-slate-400 transition-colors hover:text-white"
+              >
+                Blog
+              </Link>
+              <WhatsAppSupportLink
+                campaign="landing"
+                className="text-sm text-slate-400 hover:text-[#25D366]"
+              />
+            </div>
           </div>
           <p className="text-xs font-medium text-slate-500">
             © {new Date().getFullYear()} AVANT. Estudo reverso para apoiar sua preparação.

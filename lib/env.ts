@@ -57,6 +57,11 @@ const EnvSchema = z.object({
   METRICS_SECRET: z.string().min(1).optional(),
   ADMIN_EMAIL: z.string().email().optional(),
   ADMIN_EMAILS: z.string().min(1).optional(),
+  NEXT_PUBLIC_WHATSAPP_NUMBER: z
+    .string()
+    .regex(/^\d{10,15}$/, 'NEXT_PUBLIC_WHATSAPP_NUMBER deve conter só dígitos (DDI + DDD + número)')
+    .optional(),
+  NEXT_PUBLIC_WHATSAPP_DEFAULT_MESSAGE: z.string().min(1).max(500).optional(),
 });
 
 export type Env = z.infer<typeof EnvSchema>;
@@ -101,6 +106,8 @@ const ENV_KEYS = [
   'METRICS_SECRET',
   'ADMIN_EMAIL',
   'ADMIN_EMAILS',
+  'NEXT_PUBLIC_WHATSAPP_NUMBER',
+  'NEXT_PUBLIC_WHATSAPP_DEFAULT_MESSAGE',
 ] as const;
 
 function readTrimmedEnv(key: string): string | undefined {

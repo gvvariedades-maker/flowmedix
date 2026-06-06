@@ -1,4 +1,6 @@
-import { CheckCircle2, MousePointerClick, Sparkles } from 'lucide-react';
+import { CheckCircle2, MessageCircle, MousePointerClick, Sparkles } from 'lucide-react';
+import { WhatsAppSupportLink } from '@/components/support/WhatsAppSupportLink';
+import { formatWhatsAppDisplay } from '@/lib/whatsapp';
 import {
   AJUDA_SURFACE,
   ONDE_CLICAR,
@@ -284,6 +286,25 @@ export default function AjudaPage() {
           </section>
         ))}
       </div>
+
+      <section className={`mt-12 p-5 shadow-sm md:p-6 ${AJUDA_SURFACE}`}>
+        <h2 className="flex items-center gap-2 text-base font-black text-slate-100">
+          <MessageCircle className="h-5 w-5 text-[#25D366]" aria-hidden />
+          Ainda com dúvida?
+        </h2>
+        <p className="mt-3 text-sm leading-relaxed text-slate-400 md:text-base">
+          Se algo não ficou claro no tutorial, fale com a gente no WhatsApp ({formatWhatsAppDisplay()}).
+          Respondemos o mais rápido possível em horário comercial.
+        </p>
+        <div className="mt-4">
+          <WhatsAppSupportLink
+            campaign="ajuda"
+            className="inline-flex items-center justify-center rounded-xl bg-[#25D366] px-5 py-3 text-sm font-black text-white shadow-sm shadow-emerald-900/30 transition-colors hover:bg-[#20bd5a] hover:text-white"
+          >
+            Abrir WhatsApp
+          </WhatsAppSupportLink>
+        </div>
+      </section>
 
     </div>
   );

@@ -42,6 +42,9 @@ import { getFocusableIn } from '@/lib/a11y/focusable';
 import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
 import { DASHBOARD_MAIN_SCROLL_ATTR } from '@/lib/layout/dashboardMainScroll';
 import { useDashboardDesktop } from '@/lib/layout/useDashboardDesktop';
+import { WhatsAppFab } from '@/components/support/WhatsAppFab';
+import { WhatsAppIcon } from '@/components/support/WhatsAppIcon';
+import { buildWhatsAppUrl } from '@/lib/whatsapp';
 
 const pageVariantsDesktop = {
   initial: { opacity: 0 },
@@ -181,6 +184,16 @@ function DashboardNav({
           {item.label}
         </Link>
       ))}
+      <a
+        href={buildWhatsAppUrl({ campaign: 'menu' })}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onNavAction}
+        className="group flex w-full items-center gap-3 rounded-xl py-2.5 pl-4 pr-3 text-sm text-slate-400 transition-colors hover:bg-white/5 hover:text-[#25D366]"
+      >
+        <WhatsAppIcon size={20} className="text-slate-500 transition-colors group-hover:text-[#25D366]" />
+        Tirar dúvidas (WhatsApp)
+      </a>
       <PwaInstallNavButton onNavigate={onNavAction} />
       {isAdminUser && (
         <div className="mt-4 pl-1 pt-1">
@@ -727,6 +740,8 @@ function DashboardContent({
         onClose={estudoReversoWelcome.markSeenAndClose}
         onSkip={estudoReversoWelcome.markSeenAndClose}
       />
+
+      {!estudarQuestaoImmersive ? <WhatsAppFab campaign="dashboard" /> : null}
     </div>
     </PwaInstallProvider>
   );
