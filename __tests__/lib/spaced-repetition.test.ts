@@ -1,5 +1,5 @@
 import type { HistoricoQuestao } from '@/lib/analytics';
-import { simulateSm2FromAttempts } from '@/lib/spaced-repetition';
+import { groupHistoricoByModulo, simulateSm2FromAttempts } from '@/lib/spaced-repetition';
 
 const base: Omit<HistoricoQuestao, 'id' | 'acertou' | 'created_at'> = {
   user_id: 'user-test',
@@ -44,6 +44,22 @@ function simulateSm2NewestFirstBug(attempts: HistoricoQuestao[]): number {
 
   return interval;
 }
+
+describe('groupHistoricoByModulo', () => {
+  it('agrupa todo o histórico sem depender de matrícula ativa', () => {
+    const historico: HistoricoQuestao[] = [
+      { ...base, id: '1', acertou: false, created_at: '2026-06-01T10:00:00Z' },
+      { ...base, id: '2', modulo_slug: 'mod-y', acertou: true, created_at: '2026-06-02T10:00:00Z' },
+      { ...base, id: '3', acertou: true, created_at: '2026-06-03T10:00:00Z' },
+    ];
+
+    const grouped = groupHistoricoByModulo(historico);
+
+    expect(grouped.size).toBe(2);
+    expect(grouped.get('mod-x')).toHaveLength(2);
+    expect(grouped.get('mod-y')).toHaveLength(1);
+  });
+});
 
 describe('simulateSm2FromAttempts', () => {
   it('após 3 erros e 2 acertos recentes, intervalo > 1 dia (ordem cronológica)', () => {
