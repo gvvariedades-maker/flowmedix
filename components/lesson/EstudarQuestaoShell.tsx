@@ -29,7 +29,7 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
 
   const hideVitrineChildren = modalActive
     ? isQuestaoRoute && !isDismissingToVitrine
-    : isQuestaoRoute && (showPlayer || showSkeleton);
+    : isQuestaoRoute && (showPlayer || showSkeleton) && !isDismissingToVitrine;
 
   const vitrineSlotInteractive =
     !hideVitrineChildren && !(interceptActive && !isDismissingToVitrine);
@@ -64,7 +64,7 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
             aria-busy={isPayloadStale || undefined}
           >
             <AvantLessonPlayer
-              key="estudar-lesson-player"
+              key={displayPayload.moduloSlug ?? 'estudar-lesson-player'}
               {...displayPayload}
               payloadStale={isPayloadStale}
             />
@@ -72,29 +72,34 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
         ) : showSkeleton ? (
           <EstudarQuestaoSkeleton />
         ) : null}
-        <div
-          data-vitrine-slot-ready={vitrineSlotInteractive ? 'true' : 'false'}
-          className={cn(
-            'relative flex min-h-0 flex-1 flex-col',
-            hideVitrineChildren && 'hidden',
-            showVitrineInterceptLoading && 'pointer-events-none select-none',
-          )}
-          aria-hidden={hideVitrineChildren || undefined}
-          aria-busy={showVitrineInterceptLoading || undefined}
-        >
-          <div className={cn('flex min-h-0 flex-1 flex-col', showVitrineInterceptLoading && 'opacity-60')}>
-            {children}
-          </div>
-          {showVitrineInterceptLoading ? (
+        {!hideVitrineChildren ? (
+          <div
+            data-vitrine-slot-ready={vitrineSlotInteractive ? 'true' : 'false'}
+            className={cn(
+              'relative flex min-h-0 flex-1 flex-col',
+              showVitrineInterceptLoading && 'pointer-events-none select-none',
+            )}
+            aria-busy={showVitrineInterceptLoading || undefined}
+          >
             <div
-              role="status"
-              aria-label="Carregando questão"
-              className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-[#010409]/30 backdrop-blur-[1px]"
+              className={cn(
+                'flex min-h-0 flex-1 flex-col',
+                showVitrineInterceptLoading && 'opacity-60',
+              )}
             >
-              <Loader2 className="h-8 w-8 animate-spin text-cyan-400" aria-hidden />
+              {children}
             </div>
-          ) : null}
-        </div>
+            {showVitrineInterceptLoading ? (
+              <div
+                role="status"
+                aria-label="Carregando questão"
+                className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-[#010409]/30 backdrop-blur-[1px]"
+              >
+                <Loader2 className="h-8 w-8 animate-spin text-cyan-400" aria-hidden />
+              </div>
+            ) : null}
+          </div>
+        ) : null}
         {modal}
       </div>
     </DashboardMobilePage>

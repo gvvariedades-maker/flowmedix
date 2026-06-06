@@ -134,9 +134,14 @@ function DisplayPayloadProbe({
 }
 
 describe('QuestaoNavigationProvider', () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
   beforeEach(() => {
     jest.clearAllMocks();
     mockUsePathname.mockReturnValue('/estudar');
+    window.history.replaceState(window.history.state, '', '/estudar');
     mockFetchWithAuth.mockImplementation(async (url: string) => {
       const isB = String(url).includes('slug=questao-b');
       return {
@@ -245,6 +250,7 @@ describe('QuestaoNavigationProvider', () => {
   it('troca de slug in-player via history (sem router.replace, evita RSC)', async () => {
     const replaceStateSpy = jest.spyOn(window.history, 'replaceState').mockImplementation(() => {});
     mockUsePathname.mockReturnValue('/estudar/questao-a');
+    window.history.replaceState(window.history.state, '', '/estudar/questao-a');
 
     const { getByRole } = render(
       <QuestaoNavigationProvider>
@@ -265,8 +271,53 @@ describe('QuestaoNavigationProvider', () => {
     replaceStateSpy.mockRestore();
   });
 
-  it('dismissToVitrine usa replace e não re-hidrata payload na URL antiga', async () => {
+  it('dismissToVitrine usa replace, limpa payload e sincroniza a barra de endereço', async () => {
+    const replaceStateSpy = jest.spyOn(window.history, 'replaceState').mockImplementation(() => {});
     mockUsePathname.mockReturnValue('/estudar/questao-a');
+
+    const onModuloSlug = jest.fn();
+
+    const { getByRole } = render(
+      <QuestaoNavigationProvider>
+        <DisplayPayloadProbe onModuloSlug={onModuloSlug} />
+        <Probe />
+        <DismissProbe />
+      </QuestaoNavigationProvider>,
+    );
+
+    await act(async () => {
+      getByRole('button', { name: 'Ir' }).click();
+    });
+
+    await waitFor(() => {
+      expect(onModuloSlug).toHaveBeenCalledWith('questao-a');
+    });
+
+    onModuloSlug.mockClear();
+
+    await act(async () => {
+      getByRole('button', { name: 'Fechar' }).click();
+    });
+
+    await waitFor(() => {
+      expect(mockReplace).toHaveBeenCalledWith('/estudar?page=2');
+      expect(mockPush).not.toHaveBeenCalled();
+      expect(replaceStateSpy).toHaveBeenCalledWith(
+        window.history.state,
+        '',
+        '/estudar?page=2',
+      );
+      expect(onModuloSlug).toHaveBeenCalledWith(undefined);
+    });
+
+    replaceStateSpy.mockRestore();
+  });
+
+  it('dismissToVitrine usa history.back quando há histórico no browser', async () => {
+    const backSpy = jest.spyOn(window.history, 'back').mockImplementation(() => {});
+    Object.defineProperty(window.history, 'length', { value: 2, configurable: true });
+    mockUsePathname.mockReturnValue('/estudar/questao-a');
+    window.history.replaceState(window.history.state, '', '/estudar/questao-a');
 
     const { getByRole } = render(
       <QuestaoNavigationProvider>
@@ -279,9 +330,10 @@ describe('QuestaoNavigationProvider', () => {
     });
 
     await waitFor(() => {
-      expect(mockReplace).toHaveBeenCalledWith('/estudar?page=2');
-      expect(mockPush).not.toHaveBeenCalled();
+      expect(backSpy).toHaveBeenCalled();
     });
+    expect(mockReplace).not.toHaveBeenCalled();
+    backSpy.mockRestore();
   });
 
   it('permite segunda navegação após falha de API (navegandoRef liberado no finally)', async () => {
@@ -326,6 +378,7 @@ describe('QuestaoNavigationProvider', () => {
 
   it('route-sync em erro de API chama router.refresh após toast', async () => {
     mockUsePathname.mockReturnValue('/estudar/q-b');
+    window.history.replaceState(window.history.state, '', '/estudar/q-b');
     mockFetchWithAuth.mockResolvedValue({
       ok: false,
       status: 500,
@@ -348,7 +401,9 @@ describe('QuestaoNavigationProvider', () => {
   });
 
   it('route-sync em 403 redireciona à vitrine após toast', async () => {
+    Object.defineProperty(window.history, 'length', { value: 1, configurable: true });
     mockUsePathname.mockReturnValue('/estudar/q-b');
+    window.history.replaceState(window.history.state, '', '/estudar/q-b');
     mockFetchWithAuth.mockResolvedValue({
       ok: false,
       status: 403,
@@ -369,7 +424,7 @@ describe('QuestaoNavigationProvider', () => {
   });
 
   it('popstate reconcilia displayPayload com a URL do browser (cache hit)', async () => {
-    jest.spyOn(window.history, 'replaceState').mockImplementation(() => {});
+    const replaceStateSpy = jest.spyOn(window.history, 'replaceState').mockImplementation(() => {});
     mockUsePathname.mockReturnValue('/estudar/questao-a');
 
     const onModuloSlug = jest.fn();
@@ -386,9 +441,14 @@ describe('QuestaoNavigationProvider', () => {
     const { getByRole } = render(
       <QuestaoNavigationProvider>
         <DisplayPayloadProbe onModuloSlug={onModuloSlug} />
+        <Probe />
         <NavigateBProbe />
       </QuestaoNavigationProvider>,
     );
+
+    await act(async () => {
+      getByRole('button', { name: 'Ir' }).click();
+    });
 
     await waitFor(() => {
       expect(onModuloSlug).toHaveBeenCalledWith('questao-a');
@@ -403,6 +463,7 @@ describe('QuestaoNavigationProvider', () => {
     });
 
     onModuloSlug.mockClear();
+    replaceStateSpy.mockRestore();
 
     await act(async () => {
       window.history.replaceState(window.history.state, '', '/estudar/questao-a');

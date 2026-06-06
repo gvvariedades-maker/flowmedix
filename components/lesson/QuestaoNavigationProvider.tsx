@@ -24,7 +24,10 @@ import {
   buildEstudarHref,
   buildEstudarQuestaoApiUrl,
   buildEstudarVitrineHref,
+  canDismissEstudarViaHistoryBack,
+  isEstudarVitrinePathname,
   parseEstudarSlugFromPathname,
+  shouldSkipEstudarRoutePayloadSync,
   type EstudarRouteSnapshot,
   type EstudarVitrineReturnContext,
 } from '@/lib/estudar/navigation';
@@ -55,6 +58,8 @@ import { useToast } from '@/lib/toast-context';
 const CACHE_MAX_ENTRIES = 20;
 const TOAST_SEM_ACESSO = 'Sem acesso';
 const TOAST_CARREGAR_QUESTAO = 'Não foi possível carregar esta questão. Tente novamente.';
+/** Fallback se `router.replace` não alcançar `/estudar` após dismiss interno. */
+const DISMISS_VITRINE_FALLBACK_MS = 2_500;
 
 function buildVitrineReturnContextFromLocationSearch(): EstudarVitrineReturnContext {
   if (typeof window === 'undefined') return {};
@@ -129,6 +134,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
   const routePayloadSyncKeyRef = useRef<string | null>(null);
   /** Bloqueia re-hidratação do payload enquanto `replace` volta à vitrine. */
   const dismissingToVitrineRef = useRef(false);
+  const dismissFallbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isDismissingToVitrine, setIsDismissingToVitrine] = useState(false);
   const [displayPayload, setDisplayPayload] = useState<EstudarQuestaoPayload | null>(null);
   const [estudarRoute, setEstudarRoute] = useState<EstudarRouteSnapshot | null>(null);
@@ -281,15 +287,69 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     [readPayloadFromIdb],
   );
 
+  const clearDismissFallbackTimer = useCallback(() => {
+    if (dismissFallbackTimerRef.current) {
+      clearTimeout(dismissFallbackTimerRef.current);
+      dismissFallbackTimerRef.current = null;
+    }
+  }, []);
+
+  const resetDismissToVitrineState = useCallback(() => {
+    dismissingToVitrineRef.current = false;
+    setIsDismissingToVitrine(false);
+    clearDismissFallbackTimer();
+  }, [clearDismissFallbackTimer]);
+
+  const scheduleDismissVitrineFallback = useCallback(
+    (href: string) => {
+      clearDismissFallbackTimer();
+      dismissFallbackTimerRef.current = setTimeout(() => {
+        dismissFallbackTimerRef.current = null;
+        if (!dismissingToVitrineRef.current) return;
+
+        logger.warn('dismissToVitrine: fallback após timeout — reforçando vitrine', {
+          nextPathname: pathname,
+          browserPathname:
+            typeof window !== 'undefined' ? window.location.pathname : undefined,
+        });
+
+        setDisplayPayload(null);
+        setEstudarRoute(null);
+        routePayloadSyncKeyRef.current = null;
+
+        if (typeof window !== 'undefined') {
+          applySoftEstudarHistoryUrl(href);
+        }
+        scheduleRouterNavigate(router, href, 'replace');
+      }, DISMISS_VITRINE_FALLBACK_MS);
+    },
+    [router, pathname, clearDismissFallbackTimer],
+  );
+
   const dismissToVitrine = useCallback(
     (ctx: EstudarVitrineReturnContext = {}) => {
+      const href = buildEstudarVitrineHref(ctx);
+
       dismissingToVitrineRef.current = true;
       setIsDismissingToVitrine(true);
       routePayloadSyncKeyRef.current = null;
       setEstudarRoute(null);
-      scheduleRouterNavigate(router, buildEstudarVitrineHref(ctx), 'replace');
+      setDisplayPayload(null);
+
+      if (canDismissEstudarViaHistoryBack(ctx)) {
+        window.history.back();
+        scheduleDismissVitrineFallback(href);
+        return;
+      }
+
+      if (typeof window !== 'undefined') {
+        applySoftEstudarHistoryUrl(href);
+      }
+
+      scheduleRouterNavigate(router, href, 'replace');
+      scheduleDismissVitrineFallback(href);
     },
-    [router],
+    [router, scheduleDismissVitrineFallback],
   );
 
   const reconcileDisplayPayloadFromBrowserUrl = useCallback(() => {
@@ -350,24 +410,34 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     const onPopState = () => {
       setEstudarRoute(null);
       routePayloadSyncKeyRef.current = null;
+
+      if (
+        typeof window !== 'undefined' &&
+        isEstudarVitrinePathname(window.location.pathname)
+      ) {
+        resetDismissToVitrineState();
+        setDisplayPayload(null);
+        return;
+      }
+
       reconcileDisplayPayloadFromBrowserUrl();
     };
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
-  }, [reconcileDisplayPayloadFromBrowserUrl]);
+  }, [reconcileDisplayPayloadFromBrowserUrl, resetDismissToVitrineState]);
 
   /** Limpa soft-nav e player antes do paint ao voltar à vitrine (evita vitrine inerte). */
   useLayoutEffect(() => {
     navegandoRef.current = false;
-    const slug = parseEstudarSlugFromPathname(pathname);
-    if (slug !== null) return;
+    if (!isEstudarVitrinePathname(pathname)) return;
 
-    dismissingToVitrineRef.current = false;
-    setIsDismissingToVitrine(false);
+    resetDismissToVitrineState();
     routePayloadSyncKeyRef.current = null;
     setEstudarRoute(null);
     setDisplayPayload(null);
-  }, [pathname]);
+  }, [pathname, resetDismissToVitrineState]);
+
+  useEffect(() => () => clearDismissFallbackTimer(), [clearDismissFallbackTimer]);
 
   /**
    * Soft navigation (intercept @modal) atualiza a URL mas pode deixar a vitrine no slot
@@ -379,6 +449,10 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     if (slug === null) return;
     if (dismissingToVitrineRef.current) return;
     if (typeof window === 'undefined') return;
+
+    if (shouldSkipEstudarRoutePayloadSync(slug)) {
+      return;
+    }
 
     const cacheKey = buildEstudarCacheKey(
       pathname,

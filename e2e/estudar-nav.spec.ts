@@ -391,6 +391,35 @@ test.describe('Estudar — page, dots, history (Fase 3.2)', () => {
     await expectNavButtonsReady(page, { requireProxima: false });
   });
 
+  test('voltar interno após soft-nav (Próxima) retorna à vitrine estável', async ({ page }) => {
+    await gotoVitrinePage2(page);
+    await garantirPainelAssuntoAberto(page, E2E_ESTUDAR_TITULO_AULA_PAGE2);
+
+    const entrar = page.getByRole('link', { name: 'Entrar no assunto' }).first();
+    await Promise.all([
+      page.waitForURL((url) => isQuestaoUrl(url, E2E_ESTUDAR_SLUG_1, { page: '2' }), {
+        timeout: 15_000,
+      }),
+      entrar.click(),
+    ]);
+    await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
+
+    await Promise.all([
+      page.waitForURL((url) => isQuestaoUrl(url, E2E_ESTUDAR_SLUG_2, { page: '2' }), {
+        timeout: 15_000,
+      }),
+      clicarProximaQuestao(page),
+    ]);
+    await expect(page.getByText(/Questão E2E 2:/)).toBeVisible({ timeout: 15_000 });
+
+    await page.getByRole('button', { name: /Voltar para Vitrine/i }).click();
+    await page.waitForURL((url) => isVitrineUrl(url, { page: '2' }), { timeout: 15_000 });
+    await expect(page.getByText(E2E_ESTUDAR_TITULO_AULA_PAGE2)).toBeVisible({ timeout: 15_000 });
+    await waitVitrineListReady(page);
+    await expect(page.getByText(/Questão E2E 1:/)).not.toBeVisible();
+    await expect(page.getByText(/Tentar novamente/i)).not.toBeVisible();
+  });
+
   test('cold load direto em /estudar/[slug]?page=2 carrega e navega', async ({ page }) => {
     await page.goto(`/estudar/${E2E_ESTUDAR_SLUG_1}?banca=${BANCA_QUERY}&page=2`, {
       waitUntil: 'domcontentloaded',

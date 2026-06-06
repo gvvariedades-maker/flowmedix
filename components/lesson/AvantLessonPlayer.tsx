@@ -313,6 +313,7 @@ export default function AvantLessonPlayer({
   const [slidesFetchTrigger, setSlidesFetchTrigger] = useState(0);
   const slidesLayerFetchRef = useRef(false);
   const slidesPersistFailedRef = useRef(false);
+  const tentativaAbortRef = useRef<AbortController | null>(null);
   const questoesDoAssuntoRef = useRef(questoesDoAssunto);
   questoesDoAssuntoRef.current = questoesDoAssunto;
   const activeDados = dadosComSlides ?? dadosIniciais;
@@ -332,6 +333,18 @@ export default function AvantLessonPlayer({
     setSlidesLoadError(null);
     setSlidesFetchTrigger((n) => n + 1);
   }, []);
+
+  useEffect(() => {
+    tentativaAbortRef.current?.abort();
+    tentativaAbortRef.current = null;
+  }, [moduloSlug]);
+
+  useEffect(
+    () => () => {
+      tentativaAbortRef.current?.abort();
+    },
+    [],
+  );
 
   // Reset ao mudar de questão (só slug — não re-dispara quando o Hydrator reenvia o mesmo slug)
   useEffect(() => {
@@ -601,6 +614,16 @@ export default function AvantLessonPlayer({
     return stripLeadingQuestionEnumeration(raw);
   }, [activeDados.question_data?.instruction]);
 
+  const sanitizedInstructionHtml = useMemo(
+    () => sanitizeHTML(instructionParaExibicao),
+    [instructionParaExibicao],
+  );
+
+  const sanitizedTextFragmentHtml = useMemo(() => {
+    const fragment = activeDados?.question_data?.text_fragment;
+    return fragment ? sanitizeHTML(fragment) : null;
+  }, [activeDados?.question_data?.text_fragment]);
+
   const prefersReducedMotion = useReducedMotion() ?? false;
 
   if (!activeDados?.question_data?.options?.length) {
@@ -663,12 +686,17 @@ export default function AvantLessonPlayer({
   // ============================================================================
   // LÓGICA DE BANCO (Supabase)
   // ============================================================================
-  const postWithSessionRetry = async (url: string, payload: Record<string, unknown>) => {
+  const postWithSessionRetry = async (
+    url: string,
+    payload: Record<string, unknown>,
+    signal?: AbortSignal,
+  ) => {
     const doPost = () =>
       fetchWithAuth(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
+        signal,
       });
 
     let response = await doPost();
@@ -701,14 +729,26 @@ export default function AvantLessonPlayer({
       return { status: 'ok', gabarito: buildPreviewGabarito(opcaoId) };
     }
 
+    tentativaAbortRef.current?.abort();
+    const controller = new AbortController();
+    tentativaAbortRef.current = controller;
+
     try {
-      const response = await postWithSessionRetry('/api/registrar-tentativa', {
-        modulo_slug: moduloSlug || activeDados.modulo_slug || 'slug-legacy',
-        opcao_id: opcaoId,
-        banca: activeDados.meta?.banca || 'DESCONHECIDA',
-        topico: activeDados.meta?.topico || 'Geral',
-        subtopico: activeDados.meta?.subtopico || activeDados.meta?.topico || 'Geral',
-      });
+      const response = await postWithSessionRetry(
+        '/api/registrar-tentativa',
+        {
+          modulo_slug: moduloSlug || activeDados.modulo_slug || 'slug-legacy',
+          opcao_id: opcaoId,
+          banca: activeDados.meta?.banca || 'DESCONHECIDA',
+          topico: activeDados.meta?.topico || 'Geral',
+          subtopico: activeDados.meta?.subtopico || activeDados.meta?.topico || 'Geral',
+        },
+        controller.signal,
+      );
+
+      if (controller.signal.aborted) {
+        return { status: 'error' as const };
+      }
 
       if (response.status === 403) {
         const payload = (await response.json().catch(() => ({}))) as {
@@ -763,8 +803,15 @@ export default function AvantLessonPlayer({
         },
       };
     } catch (error) {
+      if (error instanceof Error && error.name === 'AbortError') {
+        return { status: 'error' as const };
+      }
       logger.error('Unexpected error registering attempt', error);
       return { status: 'error' };
+    } finally {
+      if (tentativaAbortRef.current === controller) {
+        tentativaAbortRef.current = null;
+      }
     }
   };
 
@@ -1174,14 +1221,14 @@ export default function AvantLessonPlayer({
         {activeDados.question_data.text_fragment && (
           <div className="px-6 pt-4 pb-2 md:px-8">
             <div className="bg-white/[0.04] border border-[rgba(255,255,255,0.10)] p-4 rounded-lg text-slate-300 text-sm font-serif leading-relaxed italic">
-              <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(activeDados.question_data.text_fragment) }} />
+              <div dangerouslySetInnerHTML={{ __html: sanitizedTextFragmentHtml ?? '' }} />
             </div>
           </div>
         )}
 
         <div className="min-w-0 px-6 pt-3 pb-2 md:px-8 md:pt-4 md:pb-3">
           <div className={`${QUESTION_TEXT_TYPOGRAPHY} text-slate-100 font-normal whitespace-pre-wrap break-words overflow-x-hidden [&_strong]:font-semibold [&_p]:mb-2 [&_p:last-child]:mb-0`}>
-            <span dangerouslySetInnerHTML={{ __html: sanitizeHTML(instructionParaExibicao) }} />
+            <span dangerouslySetInnerHTML={{ __html: sanitizedInstructionHtml }} />
           </div>
         </div>
 

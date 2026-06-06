@@ -5,9 +5,13 @@ import {
   buildEstudarHref,
   buildEstudarQuestaoApiUrl,
   buildEstudarVitrineHref,
+  isEstudarVitrinePathname,
   normalizeSearchForCacheKey,
+  parseEstudarSlugFromBrowserPathname,
   parseEstudarSlugFromPathname,
   parseEstudarSlugComQuery,
+  shouldSkipEstudarRoutePayloadSync,
+  canDismissEstudarViaHistoryBack,
 } from '@/lib/estudar/navigation';
 
 describe('lib/estudar/navigation', () => {
@@ -19,6 +23,54 @@ describe('lib/estudar/navigation', () => {
     it('retorna null na vitrine', () => {
       expect(parseEstudarSlugFromPathname('/estudar')).toBeNull();
       expect(parseEstudarSlugFromPathname('/estudar/')).toBeNull();
+    });
+  });
+
+  describe('isEstudarVitrinePathname', () => {
+    it('identifica vitrine e exclui slug', () => {
+      expect(isEstudarVitrinePathname('/estudar')).toBe(true);
+      expect(isEstudarVitrinePathname('/estudar/questao-a')).toBe(false);
+    });
+  });
+
+  describe('parseEstudarSlugFromBrowserPathname', () => {
+    it('lê slug da barra de endereço', () => {
+      window.history.replaceState(window.history.state, '', '/estudar/q-browser');
+      expect(parseEstudarSlugFromBrowserPathname()).toBe('q-browser');
+      window.history.replaceState(window.history.state, '', '/estudar');
+      expect(parseEstudarSlugFromBrowserPathname()).toBeNull();
+    });
+  });
+
+  describe('canDismissEstudarViaHistoryBack', () => {
+    it('permite history.back na vitrine com histórico', () => {
+      Object.defineProperty(window.history, 'length', { value: 2, configurable: true });
+      window.history.replaceState(window.history.state, '', '/estudar/questao-a');
+      expect(canDismissEstudarViaHistoryBack({})).toBe(true);
+    });
+
+    it('bloqueia quando destino é plano ou caderno', () => {
+      Object.defineProperty(window.history, 'length', { value: 2, configurable: true });
+      expect(canDismissEstudarViaHistoryBack({ fromPlano: true })).toBe(false);
+      expect(canDismissEstudarViaHistoryBack({ fromCaderno: 'id' })).toBe(false);
+    });
+
+    it('bloqueia cold load sem histórico anterior', () => {
+      Object.defineProperty(window.history, 'length', { value: 1, configurable: true });
+      window.history.replaceState(window.history.state, '', '/estudar/questao-a');
+      expect(canDismissEstudarViaHistoryBack({})).toBe(false);
+    });
+  });
+
+  describe('shouldSkipEstudarRoutePayloadSync', () => {
+    it('pula sync quando browser está na vitrine e Next ainda tem slug', () => {
+      window.history.replaceState(window.history.state, '', '/estudar?page=2');
+      expect(shouldSkipEstudarRoutePayloadSync('questao-a')).toBe(true);
+    });
+
+    it('não pula quando browser e Next apontam para a mesma questão', () => {
+      window.history.replaceState(window.history.state, '', '/estudar/questao-a');
+      expect(shouldSkipEstudarRoutePayloadSync('questao-a')).toBe(false);
     });
   });
 
