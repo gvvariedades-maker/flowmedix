@@ -86,13 +86,13 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
 
   test('D6 — main não rola com drawer aberto', async ({ page }) => {
     await gotoEstudar(page);
-    const shellMain = page.locator('main.overflow-y-auto');
+    const shellMain = page.locator('main[data-dashboard-main-scroll]');
     await maisButton(page).click();
     await expect(page.locator('#dashboard-mobile-drawer')).toBeVisible({ timeout: 10_000 });
 
     const overflowY = await shellMain.evaluate((el) => getComputedStyle(el).overflowY);
     expect(overflowY).toBe('hidden');
-    const bodyOverflow = await page.evaluate(() => document.body.style.overflow);
+    const bodyOverflow = await page.evaluate(() => getComputedStyle(document.body).overflow);
     expect(bodyOverflow).toBe('hidden');
     const touchAction = await page.evaluate(() => document.body.style.touchAction);
     expect(touchAction).toBe('none');
