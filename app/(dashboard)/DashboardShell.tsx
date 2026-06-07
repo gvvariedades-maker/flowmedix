@@ -185,7 +185,7 @@ function DashboardNav({
         </Link>
       ))}
       <a
-        href={buildWhatsAppUrl({ campaign: 'menu' })}
+        href={buildWhatsAppUrl()}
         target="_blank"
         rel="noopener noreferrer"
         onClick={onNavAction}
@@ -741,7 +741,7 @@ function DashboardContent({
         onSkip={estudoReversoWelcome.markSeenAndClose}
       />
 
-      {!estudarQuestaoImmersive ? <WhatsAppFab campaign="dashboard" /> : null}
+      {!estudarQuestaoImmersive ? <WhatsAppFab /> : null}
     </div>
     </PwaInstallProvider>
   );

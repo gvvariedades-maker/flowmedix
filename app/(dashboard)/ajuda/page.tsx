@@ -297,10 +297,7 @@ export default function AjudaPage() {
           Respondemos o mais rápido possível em horário comercial.
         </p>
         <div className="mt-4">
-          <WhatsAppSupportLink
-            campaign="ajuda"
-            className="inline-flex items-center justify-center rounded-xl bg-[#25D366] px-5 py-3 text-sm font-black text-white shadow-sm shadow-emerald-900/30 transition-colors hover:bg-[#20bd5a] hover:text-white"
-          >
+          <WhatsAppSupportLink className="inline-flex items-center justify-center rounded-xl bg-[#25D366] px-5 py-3 text-sm font-black text-white shadow-sm shadow-emerald-900/30 transition-colors hover:bg-[#20bd5a] hover:text-white">
             Abrir WhatsApp
           </WhatsAppSupportLink>
         </div>

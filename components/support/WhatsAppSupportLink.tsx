@@ -3,19 +3,17 @@ import { buildWhatsAppUrl, formatWhatsAppDisplay } from '@/lib/whatsapp';
 import { WhatsAppIcon } from '@/components/support/WhatsAppIcon';
 
 type WhatsAppSupportLinkProps = {
-  campaign: string;
   className?: string;
   showNumber?: boolean;
   children?: React.ReactNode;
 };
 
 export function WhatsAppSupportLink({
-  campaign,
   className,
   showNumber = false,
   children,
 }: WhatsAppSupportLinkProps) {
-  const href = buildWhatsAppUrl({ campaign });
+  const href = buildWhatsAppUrl();
 
   return (
     <a

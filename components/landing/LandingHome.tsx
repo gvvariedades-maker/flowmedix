@@ -841,10 +841,7 @@ export default function LandingHome() {
               >
                 Blog
               </Link>
-              <WhatsAppSupportLink
-                campaign="landing"
-                className="text-sm text-slate-400 hover:text-[#25D366]"
-              />
+              <WhatsAppSupportLink className="text-sm text-slate-400 hover:text-[#25D366]" />
             </div>
           </div>
           <p className="text-xs font-medium text-slate-500">

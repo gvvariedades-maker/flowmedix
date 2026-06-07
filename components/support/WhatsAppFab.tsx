@@ -6,14 +6,13 @@ import { MOBILE_BOTTOM_NAV_FIXED_BOTTOM } from '@/lib/layout/mobileBottomNav';
 import { WhatsAppIcon } from '@/components/support/WhatsAppIcon';
 
 type WhatsAppFabProps = {
-  campaign: string;
   /** Dashboard mobile: acima do BottomNav. Páginas públicas: canto inferior. */
   variant?: 'dashboard' | 'public';
   className?: string;
 };
 
-export function WhatsAppFab({ campaign, variant = 'dashboard', className }: WhatsAppFabProps) {
-  const href = buildWhatsAppUrl({ campaign });
+export function WhatsAppFab({ variant = 'dashboard', className }: WhatsAppFabProps) {
+  const href = buildWhatsAppUrl();
 
   return (
     <a

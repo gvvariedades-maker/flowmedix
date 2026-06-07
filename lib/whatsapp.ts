@@ -1,14 +1,6 @@
 /** Número padrão de suporte (DDI + DDD + número, só dígitos). */
 export const DEFAULT_WHATSAPP_NUMBER = '5584998049641';
 
-export const DEFAULT_WHATSAPP_MESSAGE = 'Olá! Tenho uma dúvida sobre o AVANT.';
-
-export type WhatsAppLinkOptions = {
-  message?: string;
-  /** Identificador curto para rastrear origem (ex.: menu, ajuda, landing). */
-  campaign?: string;
-};
-
 function sanitizeDigits(value: string | undefined): string | undefined {
   if (!value) return undefined;
   const digits = value.replace(/\D/g, '');
@@ -19,20 +11,8 @@ export function getWhatsAppNumber(): string {
   return sanitizeDigits(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER) ?? DEFAULT_WHATSAPP_NUMBER;
 }
 
-export function buildWhatsAppUrl(options?: WhatsAppLinkOptions): string {
-  const number = getWhatsAppNumber();
-  const baseMessage =
-    options?.message?.trim() ||
-    process.env.NEXT_PUBLIC_WHATSAPP_DEFAULT_MESSAGE?.trim() ||
-    DEFAULT_WHATSAPP_MESSAGE;
-
-  const utm = options?.campaign
-    ? `utm_source=avant&utm_medium=whatsapp&utm_campaign=${options.campaign}`
-    : undefined;
-
-  const text = utm ? `${baseMessage}\n\n${utm}` : baseMessage;
-
-  return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
+export function buildWhatsAppUrl(): string {
+  return `https://wa.me/${getWhatsAppNumber()}`;
 }
 
 /** Ex.: 5584998049641 → +55 (84) 99804-9641 */
