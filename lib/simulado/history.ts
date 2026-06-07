@@ -57,7 +57,8 @@ export async function loadSimuladoHistory(
       dimsQuery = dimsQuery.eq('subtopico', filters.subtopico);
     }
 
-    const { data: dimsRows } = await dimsQuery;
+    const { data: dimsRows, error: dimsError } = await dimsQuery;
+    if (dimsError) throw dimsError;
     matchingSessionIds = new Set((dimsRows ?? []).map((row) => row.session_id as string));
     if (matchingSessionIds.size === 0) {
       return {
@@ -69,12 +70,14 @@ export async function loadSimuladoHistory(
     }
   }
 
-  const { data: rawSessions } = await supabase
+  const { data: rawSessions, error: sessionsError } = await supabase
     .from('simulado_sessions')
     .select('*')
     .eq('user_id', userId)
     .order('created_at', { ascending: false })
     .limit(1000);
+
+  if (sessionsError) throw sessionsError;
 
   const filtered = ((rawSessions ?? []) as SimuladoSessionAnalyticsRow[])
     .map((row) => ({ ...row, modo: normalizeSessionMode(row) }))

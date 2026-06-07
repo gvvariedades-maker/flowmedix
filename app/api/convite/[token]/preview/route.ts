@@ -2,10 +2,18 @@ import { NextRequest, NextResponse } from 'next/server';
 
 import { getInviteLinkPreview } from '@/lib/invite/links';
 import { logger } from '@/lib/logger';
+import { distributedRateLimit } from '@/lib/rate-limit';
 
 type RouteContext = { params: Promise<{ token: string }> };
 
-export async function GET(_request: NextRequest, context: RouteContext) {
+export async function GET(request: NextRequest, context: RouteContext) {
+  if (!(await distributedRateLimit(request, { key: 'convite-preview', limit: 30, windowMs: 60_000 }))) {
+    return NextResponse.json(
+      { error: 'Muitas requisições. Tente novamente em alguns instantes.' },
+      { status: 429 },
+    );
+  }
+
   const { token } = await context.params;
   const decoded = decodeURIComponent(token).trim();
 

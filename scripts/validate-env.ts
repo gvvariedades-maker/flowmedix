@@ -30,4 +30,17 @@ if (stripeConfig) {
   console.log('ℹ️  Stripe não configurado (checkout desabilitado neste ambiente)');
 }
 
+const hasUpstash =
+  Boolean(process.env.UPSTASH_REDIS_REST_URL?.trim() || process.env.KV_REST_API_URL?.trim()) &&
+  Boolean(process.env.UPSTASH_REDIS_REST_TOKEN?.trim() || process.env.KV_REST_API_TOKEN?.trim());
+if (hasUpstash) {
+  console.log('✅ Upstash Redis configurado (rate limit distribuído)');
+} else if (process.env.NODE_ENV === 'production') {
+  console.warn(
+    '⚠️  Upstash ausente em produção — rate limit usará fallback in-memory (não distribuído em serverless).',
+  );
+} else {
+  console.log('ℹ️  Upstash ausente (opcional em dev; rate limit in-memory)');
+}
+
 console.log('✅ Variáveis de ambiente OK');

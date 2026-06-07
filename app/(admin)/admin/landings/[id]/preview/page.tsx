@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import { LPConcurso } from '@/app/_components/LPConcurso';
-import { getServerSession } from '@/lib/supabase/server-auth';
+import { getServerUser } from '@/lib/supabase/server-auth';
 import { isAdminSessionEmail } from '@/lib/constants';
 import { getLpPageByIdForAdmin } from '@/lib/lp/pages';
 import { lpPublicHref, resolveLpConcursoConfig } from '@/lib/lp/shared';
@@ -10,8 +10,8 @@ import { lpPublicHref, resolveLpConcursoConfig } from '@/lib/lp/shared';
 type PageProps = { params: Promise<{ id: string }> };
 
 export default async function LpPreviewPage({ params }: PageProps) {
-  const session = await getServerSession();
-  if (!isAdminSessionEmail(session?.user?.email)) {
+  const user = await getServerUser();
+  if (!isAdminSessionEmail(user?.email)) {
     redirect('/login');
   }
 

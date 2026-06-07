@@ -3,7 +3,7 @@
  */
 import { NextRequest } from 'next/server';
 
-import { POST } from '@/app/api/cache/revalidate/route';
+import { GET, POST } from '@/app/api/cache/revalidate/route';
 
 const mockInvalidateModulosCache = jest.fn();
 const mockInvalidateQuestoesCache = jest.fn();
@@ -130,5 +130,21 @@ describe('POST /api/cache/revalidate', () => {
 
     expect(response.status).toBe(401);
     expect(mockInvalidateModulosCache).not.toHaveBeenCalled();
+  });
+
+  it('GET retorna 401 sem Authorization', async () => {
+    const response = await GET(new NextRequest('https://avant.test/api/cache/revalidate'));
+    expect(response.status).toBe(401);
+  });
+
+  it('GET retorna 200 com Bearer válido', async () => {
+    const response = await GET(
+      new NextRequest('https://avant.test/api/cache/revalidate', {
+        headers: { authorization: 'Bearer secret-test-cache-revalidate-32' },
+      }),
+    );
+    expect(response.status).toBe(200);
+    const body = await response.json();
+    expect(body.status).toBe('ok');
   });
 });

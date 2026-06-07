@@ -1,19 +1,12 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { z } from 'zod';
+import { NextResponse } from 'next/server';
 
 import { sendWelcomeEmail } from '@/lib/email/sendWelcomeEmail';
 import { getResendServerConfig } from '@/lib/env';
 import { logger } from '@/lib/logger';
-import { createSupabaseServerClient } from '@/lib/supabase/server-auth';
-import { createServerSupabase } from '@/lib/supabase/server';
+import { distributedRateLimit } from '@/lib/rate-limit';
+import { getServerUser } from '@/lib/supabase/server-auth';
 
 export const runtime = 'nodejs';
-
-const FreshSignupBodySchema = z.object({
-  userId: z.string().uuid(),
-});
-
-const FRESH_SIGNUP_WINDOW_MS = 15 * 60 * 1000;
 
 async function sendWelcomeForUser(userId: string) {
   if (!getResendServerConfig()) {
@@ -48,43 +41,22 @@ async function sendWelcomeForUser(userId: string) {
 }
 
 /**
- * Dispara e-mail de boas-vindas após cadastro.
- * - Com sessão: usa o usuário logado.
- * - Sem sessão (confirmação por e-mail pendente): aceita userId de signup recente (< 15 min).
+ * Dispara e-mail de boas-vindas após cadastro com sessão ativa (signup imediato).
+ * Cadastros com confirmação por e-mail: webhook Supabase `auth.users` INSERT → `/api/webhooks/auth`.
  */
-export async function POST(request: NextRequest) {
-  const supabase = await createSupabaseServerClient();
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
-  if (session?.user?.id) {
-    return sendWelcomeForUser(session.user.id);
+export async function POST(request: Request) {
+  if (!(await distributedRateLimit(request, { key: 'welcome-email', limit: 5, windowMs: 60_000 }))) {
+    return NextResponse.json(
+      { error: 'Muitas requisições. Tente novamente em alguns instantes.' },
+      { status: 429 },
+    );
   }
 
-  let body: unknown;
-  try {
-    body = await request.json();
-  } catch {
-    return NextResponse.json({ error: 'Body JSON inválido' }, { status: 400 });
+  const user = await getServerUser();
+
+  if (!user?.id) {
+    return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
   }
 
-  const parsed = FreshSignupBodySchema.safeParse(body);
-  if (!parsed.success) {
-    return NextResponse.json({ error: 'userId inválido' }, { status: 400 });
-  }
-
-  const admin = await createServerSupabase();
-  const { data: authData, error: authError } = await admin.auth.admin.getUserById(parsed.data.userId);
-
-  if (authError || !authData.user) {
-    return NextResponse.json({ error: 'Usuário não encontrado' }, { status: 404 });
-  }
-
-  const createdAt = authData.user.created_at ? new Date(authData.user.created_at).getTime() : 0;
-  if (!createdAt || Date.now() - createdAt > FRESH_SIGNUP_WINDOW_MS) {
-    return NextResponse.json({ error: 'Cadastro fora da janela para envio automático' }, { status: 403 });
-  }
-
-  return sendWelcomeForUser(parsed.data.userId);
+  return sendWelcomeForUser(user.id);
 }

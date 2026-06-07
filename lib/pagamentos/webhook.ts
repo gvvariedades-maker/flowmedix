@@ -202,6 +202,16 @@ export async function processStripeWebhookEvent(
         throw matriculaError;
       }
 
+      try {
+        await invalidateUserModulosCache(purchase.user_id);
+      } catch (cacheError) {
+        logger.warn('Falha ao invalidar cache após reembolso', {
+          purchaseId,
+          userId: purchase.user_id,
+          error: cacheError instanceof Error ? cacheError.message : String(cacheError),
+        });
+      }
+
       return { handled: true, purchaseId: purchase.id, userId: purchase.user_id };
     }
 

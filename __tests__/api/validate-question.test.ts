@@ -1,26 +1,158 @@
 /**
+ * @jest-environment node
+ *
  * Testes de Integração para API de Validação
  */
 
+import { NextRequest, NextResponse } from 'next/server';
 import { QuestaoCompletaSchema, validateSlides, sanitizeHTML } from '@/lib/validations';
+import { GET, POST } from '@/app/api/validate-question/route';
+
+const mockRequireAdminApi = jest.fn();
+
+jest.mock('@/lib/admin/requireAdmin', () => ({
+  requireAdminApi: (...args: unknown[]) => mockRequireAdminApi(...args),
+}));
+
+jest.mock('@/lib/rate-limit', () => ({
+  distributedRateLimit: jest.fn(async () => true),
+}));
+
+jest.mock('@/lib/logger', () => ({
+  logger: {
+    debug: jest.fn(),
+    info: jest.fn(),
+    warn: jest.fn(),
+    error: jest.fn(),
+  },
+}));
+
+const validQuestion = {
+  meta: {
+    banca: 'EBSERH',
+    ano: '2024',
+    topico: 'Fundamentos de Enfermagem',
+    subtopico: 'SAE',
+  },
+  question_data: {
+    instruction: 'Teste de instrução',
+    options: [
+      { id: 'A', text: 'Opção A', is_correct: false },
+      { id: 'B', text: 'Opção B', is_correct: true },
+    ],
+  },
+};
+
+function mockAdminAuth() {
+  mockRequireAdminApi.mockResolvedValue({
+    admin: { from: jest.fn() },
+    user: { id: 'admin-id', email: 'admin@avant.com' },
+    email: 'admin@avant.com',
+  });
+}
+
+describe('API /api/validate-question — route handlers', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it('POST retorna 401 sem autenticação admin', async () => {
+    mockRequireAdminApi.mockResolvedValue({
+      error: NextResponse.json({ error: 'Não autenticado' }, { status: 401 }),
+    });
+
+    const request = new NextRequest('https://avant.test/api/validate-question', {
+      method: 'POST',
+      body: JSON.stringify(validQuestion),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    const response = await POST(request);
+
+    expect(response.status).toBe(401);
+    expect(await response.json()).toEqual({ error: 'Não autenticado' });
+  });
+
+  it('POST retorna 403 para usuário autenticado sem permissão admin', async () => {
+    mockRequireAdminApi.mockResolvedValue({
+      error: NextResponse.json({ error: 'Acesso negado' }, { status: 403 }),
+    });
+
+    const request = new NextRequest('https://avant.test/api/validate-question', {
+      method: 'POST',
+      body: JSON.stringify(validQuestion),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    const response = await POST(request);
+
+    expect(response.status).toBe(403);
+    expect(await response.json()).toEqual({ error: 'Acesso negado' });
+  });
+
+  it('POST valida questão válida quando admin autenticado', async () => {
+    mockAdminAuth();
+
+    const request = new NextRequest('https://avant.test/api/validate-question', {
+      method: 'POST',
+      body: JSON.stringify(validQuestion),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    const response = await POST(request);
+    const body = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(body.valid).toBe(true);
+    expect(body.data.meta.banca).toBe('EBSERH');
+  });
+
+  it('POST rejeita questão inválida quando admin autenticado', async () => {
+    mockAdminAuth();
+
+    const invalidQuestion = {
+      ...validQuestion,
+      question_data: {
+        ...validQuestion.question_data,
+        options: [],
+      },
+    };
+
+    const request = new NextRequest('https://avant.test/api/validate-question', {
+      method: 'POST',
+      body: JSON.stringify(invalidQuestion),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    const response = await POST(request);
+    const body = await response.json();
+
+    expect(response.status).toBe(400);
+    expect(body.valid).toBe(false);
+    expect(body.errors).toBeDefined();
+  });
+
+  it('GET retorna 401 sem autenticação admin', async () => {
+    mockRequireAdminApi.mockResolvedValue({
+      error: NextResponse.json({ error: 'Não autenticado' }, { status: 401 }),
+    });
+
+    const response = await GET();
+
+    expect(response.status).toBe(401);
+    expect(await response.json()).toEqual({ error: 'Não autenticado' });
+  });
+
+  it('GET retorna metadata quando admin autenticado', async () => {
+    mockAdminAuth();
+
+    const response = await GET();
+    const body = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(body.limits).toBeDefined();
+    expect(body.allowedTags).toBeDefined();
+    expect(body.slideTypes).toBeDefined();
+  });
+});
 
 describe('API /api/validate-question', () => {
-  const validQuestion = {
-    meta: {
-      banca: 'EBSERH',
-      ano: '2024',
-      topico: 'Fundamentos de Enfermagem',
-      subtopico: 'SAE',
-    },
-    question_data: {
-      instruction: 'Teste de instrução',
-      options: [
-        { id: 'A', text: 'Opção A', is_correct: false },
-        { id: 'B', text: 'Opção B', is_correct: true },
-      ],
-    },
-  };
-
   describe('QuestaoCompletaSchema', () => {
     it('deve validar questão válida', () => {
       const result = QuestaoCompletaSchema.safeParse(validQuestion);

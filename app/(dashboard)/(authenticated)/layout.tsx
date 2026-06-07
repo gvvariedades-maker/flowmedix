@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
-import { getServerSession } from '@/lib/supabase/server-auth';
+import { getServerUser } from '@/lib/supabase/server-auth';
 import { isAdminSessionEmail } from '@/lib/constants';
 import {
   ensureGeralCadastroMatricula,
@@ -19,24 +19,24 @@ export default async function AuthenticatedLayout({
     return children;
   }
 
-  const session = await getServerSession();
+  const user = await getServerUser();
 
-  if (!session?.user?.id) {
+  if (!user?.id) {
     redirect('/login');
   }
 
-  const isAdmin = isAdminSessionEmail(session.user.email ?? null);
+  const isAdmin = isAdminSessionEmail(user.email ?? null);
 
   if (!isAdmin) {
-    let hasActiveMatricula = await userHasActiveMatricula(session.user.id).catch(() => false);
+    let hasActiveMatricula = await userHasActiveMatricula(user.id).catch(() => false);
     if (!hasActiveMatricula) {
-      await ensureGeralCadastroMatricula(session.user.id).catch((error) => {
+      await ensureGeralCadastroMatricula(user.id).catch((error) => {
         logger.warn('Falha ao garantir matrícula geral (free)', {
-          userId: session.user.id,
+          userId: user.id,
           error: error instanceof Error ? error.message : String(error),
         });
       });
-      hasActiveMatricula = await userHasActiveMatricula(session.user.id).catch(() => false);
+      hasActiveMatricula = await userHasActiveMatricula(user.id).catch(() => false);
     }
     if (!hasActiveMatricula) {
       redirect('/planos');

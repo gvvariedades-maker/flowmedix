@@ -13,13 +13,14 @@ export async function DELETE(
     if (!auth) return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
     const { user, supabase } = auth;
 
-    const { data: notebook } = await supabase
+    const { data: notebook, error: notebookError } = await supabase
       .from('study_notebooks')
       .select('id')
       .eq('id', notebookId)
       .eq('user_id', user.id)
-      .single();
+      .maybeSingle();
 
+    if (notebookError) throw notebookError;
     if (!notebook) return NextResponse.json({ error: 'Caderno não encontrado' }, { status: 404 });
 
     const { error } = await supabase

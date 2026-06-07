@@ -57,10 +57,31 @@ const EnvSchema = z.object({
   METRICS_SECRET: z.string().min(1).optional(),
   ADMIN_EMAIL: z.string().email().optional(),
   ADMIN_EMAILS: z.string().min(1).optional(),
+  UPSTASH_REDIS_REST_URL: z.string().url().optional(),
+  UPSTASH_REDIS_REST_TOKEN: z.string().min(1).optional(),
+  /** Injetadas pela integração Vercel Marketplace (Upstash for Redis) */
+  KV_REST_API_URL: z.string().url().optional(),
+  KV_REST_API_TOKEN: z.string().min(1).optional(),
   NEXT_PUBLIC_WHATSAPP_NUMBER: z
     .string()
     .regex(/^\d{10,15}$/, 'NEXT_PUBLIC_WHATSAPP_NUMBER deve conter só dígitos (DDI + DDD + número)')
     .optional(),
+}).superRefine((data, ctx) => {
+  if (data.NODE_ENV !== 'production') return;
+  if (!data.ADMIN_EMAIL?.trim() && !data.ADMIN_EMAILS?.trim()) {
+    ctx.addIssue({
+      code: 'custom',
+      message: 'ADMIN_EMAIL ou ADMIN_EMAILS é obrigatório em produção',
+      path: ['ADMIN_EMAIL'],
+    });
+  }
+  if (!data.SUPABASE_SERVICE_ROLE_KEY?.trim()) {
+    ctx.addIssue({
+      code: 'custom',
+      message: 'SUPABASE_SERVICE_ROLE_KEY é obrigatória em produção',
+      path: ['SUPABASE_SERVICE_ROLE_KEY'],
+    });
+  }
 });
 
 export type Env = z.infer<typeof EnvSchema>;
@@ -105,6 +126,10 @@ const ENV_KEYS = [
   'METRICS_SECRET',
   'ADMIN_EMAIL',
   'ADMIN_EMAILS',
+  'UPSTASH_REDIS_REST_URL',
+  'UPSTASH_REDIS_REST_TOKEN',
+  'KV_REST_API_URL',
+  'KV_REST_API_TOKEN',
   'NEXT_PUBLIC_WHATSAPP_NUMBER',
 ] as const;
 
@@ -359,6 +384,29 @@ export function getStripeServerConfig(): StripeServerConfig | null {
   };
 }
 
+export function validateUpstashEnv(): void {
+  const current = getEnv();
+  if (current.NODE_ENV !== 'production') return;
+
+  const hasUpstashUrl = Boolean(current.UPSTASH_REDIS_REST_URL?.trim() || current.KV_REST_API_URL?.trim());
+  const hasUpstashToken = Boolean(
+    current.UPSTASH_REDIS_REST_TOKEN?.trim() || current.KV_REST_API_TOKEN?.trim(),
+  );
+
+  if (hasUpstashUrl && hasUpstashToken) return;
+
+  if (hasUpstashUrl !== hasUpstashToken) {
+    console.warn(
+      '⚠️  Upstash incompleto: configure URL e TOKEN (UPSTASH_* ou KV_REST_API_* da Vercel). Rate limit cai para in-memory.',
+    );
+    return;
+  }
+
+  console.warn(
+    '⚠️  Upstash Redis não configurado em produção — rate limit in-memory (não distribuído em serverless).',
+  );
+}
+
 export function validateAllEnv(): void {
   getEnv();
   validateSupabaseUrl();
@@ -366,4 +414,5 @@ export function validateAllEnv(): void {
   validateResendEnv();
   validateProPriceEnv();
   validateCronEnv();
+  validateUpstashEnv();
 }

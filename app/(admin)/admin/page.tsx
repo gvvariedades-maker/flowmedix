@@ -12,7 +12,7 @@ import {
 import Link from 'next/link';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { compareModuloCurriculum } from '@/lib/vitrineOrder';
-import { ADMIN_MATRICULAS_PATH } from '@/lib/constants';
+import { ADMIN_MATRICULAS_PATH } from '@/lib/admin/paths';
 import { phraseCountQuestoes } from '@/lib/labelQuestoes';
 
 const ASSUNTOS_POR_PAGINA_ADMIN = 12;

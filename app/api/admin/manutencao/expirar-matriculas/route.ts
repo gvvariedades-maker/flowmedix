@@ -1,20 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { requireAdminApi } from '@/lib/admin/requireAdmin';
+import { isAuthorizedCronRequest } from '@/lib/cron/authorizeCron';
 import { logger } from '@/lib/logger';
 import { createServerSupabase } from '@/lib/supabase/server';
 
-function isAuthorizedCron(request: NextRequest): boolean {
-  const cronSecret = process.env.CRON_SECRET?.trim();
-  if (!cronSecret) {
-    return false;
-  }
-
-  const authHeader = request.headers.get('authorization');
-  return authHeader === `Bearer ${cronSecret}`;
-}
-
 async function expireMatriculas(request: NextRequest) {
-  if (!isAuthorizedCron(request)) {
+  if (!isAuthorizedCronRequest(request)) {
     const auth = await requireAdminApi();
     if ('error' in auth) return auth.error;
   }

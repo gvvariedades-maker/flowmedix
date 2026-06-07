@@ -7,7 +7,7 @@ jest.mock('@/lib/supabase/api-request-user', () => ({
 }));
 
 jest.mock('@/lib/supabase/server-auth', () => ({
-  getServerSession: jest.fn(),
+  getServerUser: jest.fn(),
 }));
 
 jest.mock('@/lib/freemium', () => ({
@@ -29,7 +29,7 @@ jest.mock('@/lib/siteUrl', () => ({
 import { NextRequest } from 'next/server';
 import { POST } from '@/app/api/pro/billing-portal/route';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
-import { getServerSession } from '@/lib/supabase/server-auth';
+import { getServerUser } from '@/lib/supabase/server-auth';
 import { getActiveProInfoForUser } from '@/lib/freemium';
 import { findStripeCustomerIdByEmail } from '@/lib/pro/stripeCustomer';
 import { getStripeClient } from '@/lib/stripe/client';
@@ -37,7 +37,7 @@ import { getStripeClient } from '@/lib/stripe/client';
 const mockGetUserAndClientFromBearer = getUserAndClientFromBearer as jest.MockedFunction<
   typeof getUserAndClientFromBearer
 >;
-const mockGetServerSession = getServerSession as jest.MockedFunction<typeof getServerSession>;
+const mockGetServerUser = getServerUser as jest.MockedFunction<typeof getServerUser>;
 const mockGetActiveProInfoForUser = getActiveProInfoForUser as jest.MockedFunction<
   typeof getActiveProInfoForUser
 >;
@@ -52,7 +52,7 @@ describe('POST /api/pro/billing-portal', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     mockGetUserAndClientFromBearer.mockResolvedValue(null);
-    mockGetServerSession.mockResolvedValue(null);
+    mockGetServerUser.mockResolvedValue(null);
     mockGetActiveProInfoForUser.mockResolvedValue({ proSource: 'stripe', proExpiresAt: null });
     mockFindStripeCustomerIdByEmail.mockResolvedValue('cus_test');
     portalCreate.mockResolvedValue({ url: 'https://billing.stripe.test/portal' });
@@ -72,9 +72,10 @@ describe('POST /api/pro/billing-portal', () => {
   });
 
   it('retorna 403 quando Pro não é via Stripe', async () => {
-    mockGetServerSession.mockResolvedValue({
-      user: { id: 'user-1', email: 'aluno@teste.com' },
-    } as Awaited<ReturnType<typeof getServerSession>>);
+    mockGetServerUser.mockResolvedValue({
+      id: 'user-1',
+      email: 'aluno@teste.com',
+    } as Awaited<ReturnType<typeof getServerUser>>);
     mockGetActiveProInfoForUser.mockResolvedValue({ proSource: 'invite', proExpiresAt: null });
 
     const request = new NextRequest('https://avant.test/api/pro/billing-portal', {
@@ -87,9 +88,10 @@ describe('POST /api/pro/billing-portal', () => {
   });
 
   it('cria sessão do Billing Portal para assinante Stripe', async () => {
-    mockGetServerSession.mockResolvedValue({
-      user: { id: 'user-1', email: 'aluno@teste.com' },
-    } as Awaited<ReturnType<typeof getServerSession>>);
+    mockGetServerUser.mockResolvedValue({
+      id: 'user-1',
+      email: 'aluno@teste.com',
+    } as Awaited<ReturnType<typeof getServerUser>>);
 
     const request = new NextRequest('https://avant.test/api/pro/billing-portal', {
       method: 'POST',

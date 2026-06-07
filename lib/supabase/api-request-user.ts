@@ -1,6 +1,8 @@
 import { createClient, type SupabaseClient, type User } from '@supabase/supabase-js';
 import type { NextRequest } from 'next/server';
 
+import { logger } from '@/lib/logger';
+
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
@@ -37,7 +39,9 @@ export async function getUserAndClientFromBearer(
   } = await supabase.auth.getUser(accessToken);
 
   if (error || !user) {
-    console.error('getUserAndClientFromBearer erro:', error?.message);
+    logger.error('getUserAndClientFromBearer falhou', error, {
+      message: error?.message,
+    });
     return null;
   }
 

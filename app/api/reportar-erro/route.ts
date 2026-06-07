@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { ErrorReportCreateSchema } from '@/lib/validations';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { logger } from '@/lib/logger';
-import { rateLimitWithInfo } from '@/lib/rate-limit';
+import { distributedRateLimitWithInfo } from '@/lib/rate-limit';
 
 const REPORT_ERROR_RATE_LIMIT = {
   limit: 5,
@@ -23,11 +23,12 @@ export async function POST(request: NextRequest) {
     }
 
     const userIp = getRequestIp(request);
-    const limiter = rateLimitWithInfo(
-      `error-report:${auth.user.id}:${userIp}`,
-      REPORT_ERROR_RATE_LIMIT.limit,
-      REPORT_ERROR_RATE_LIMIT.windowMs,
-    );
+    const limiter = await distributedRateLimitWithInfo(request, {
+      key: 'reportar-erro',
+      limit: REPORT_ERROR_RATE_LIMIT.limit,
+      windowMs: REPORT_ERROR_RATE_LIMIT.windowMs,
+      identifier: `${auth.user.id}:${userIp}`,
+    });
     if (!limiter.allowed) {
       logger.warn('Rate limit excedido em POST /api/reportar-erro', {
         userId: auth.user.id,

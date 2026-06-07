@@ -2,8 +2,12 @@
  * @jest-environment node
  */
 
+jest.mock('@/lib/rate-limit', () => ({
+  distributedRateLimit: jest.fn(async () => true),
+}));
+
 jest.mock('@/lib/supabase/server-auth', () => ({
-  getServerSession: jest.fn(),
+  getServerUser: jest.fn(),
 }));
 
 jest.mock('@/lib/freemium', () => ({
@@ -29,13 +33,13 @@ jest.mock('@/lib/siteUrl', () => ({
 
 import { NextRequest } from 'next/server';
 import { POST } from '@/app/api/pagamentos/criar-sessao/route';
-import { getServerSession } from '@/lib/supabase/server-auth';
+import { getServerUser } from '@/lib/supabase/server-auth';
 import { isAdminSessionEmail } from '@/lib/constants';
 import { userHasUnlimitedStudyAccess } from '@/lib/freemium';
 import { requireStripePriceIdPro } from '@/lib/pro/env';
 import { getStripeClient } from '@/lib/stripe/client';
 
-const mockGetServerSession = getServerSession as jest.MockedFunction<typeof getServerSession>;
+const mockGetServerUser = getServerUser as jest.MockedFunction<typeof getServerUser>;
 const mockUserHasUnlimitedStudyAccess = userHasUnlimitedStudyAccess as jest.MockedFunction<
   typeof userHasUnlimitedStudyAccess
 >;
@@ -50,7 +54,7 @@ describe('POST /api/pagamentos/criar-sessao', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    mockGetServerSession.mockResolvedValue(null);
+    mockGetServerUser.mockResolvedValue(null);
     checkoutCreate.mockResolvedValue({ url: 'https://checkout.stripe.test/cs_pro' });
     mockGetStripeClient.mockReturnValue({
       checkout: { sessions: { create: checkoutCreate } },
@@ -102,9 +106,10 @@ describe('POST /api/pagamentos/criar-sessao', () => {
   });
 
   it('redireciona admin logado sem abrir Stripe', async () => {
-    mockGetServerSession.mockResolvedValue({
-      user: { id: 'admin-1', email: 'admin@avant.test' },
-    } as Awaited<ReturnType<typeof getServerSession>>);
+    mockGetServerUser.mockResolvedValue({
+      id: 'admin-1',
+      email: 'admin@avant.test',
+    } as Awaited<ReturnType<typeof getServerUser>>);
     mockUserHasUnlimitedStudyAccess.mockResolvedValue(true);
     mockIsAdminSessionEmail.mockReturnValue(true);
 
@@ -123,9 +128,10 @@ describe('POST /api/pagamentos/criar-sessao', () => {
   });
 
   it('cria sessão Pro com customer_email quando usuário está logado', async () => {
-    mockGetServerSession.mockResolvedValue({
-      user: { id: 'user-1', email: 'aluno@test.com' },
-    } as Awaited<ReturnType<typeof getServerSession>>);
+    mockGetServerUser.mockResolvedValue({
+      id: 'user-1',
+      email: 'aluno@test.com',
+    } as Awaited<ReturnType<typeof getServerUser>>);
 
     const request = new NextRequest('https://avant.test/api/pagamentos/criar-sessao', {
       method: 'POST',
