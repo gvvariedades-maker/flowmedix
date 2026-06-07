@@ -805,6 +805,26 @@ export const EstudarQuestaoQuerySchema = z
   })
   .transform(mergeBancaAssuntoFields);
 
+/** Query params de `GET /api/vitrine/questao` (atalho por número/código no card). */
+export const VitrineResolveQuestaoQuerySchema = z
+  .object({
+    assunto: z.string().trim().min(1).max(LIMITS.TOPICO_MAX),
+    alvo: z.string().trim().min(1).max(20),
+    bancas: zQueryStringArray(LIMITS.BANCA_MAX).optional(),
+    banca: zQueryStringArray(LIMITS.BANCA_MAX).optional(),
+  })
+  .transform((data) => {
+    const bancas = [...(data.bancas ?? [])];
+    for (const b of data.banca ?? []) {
+      if (b && !bancas.includes(b)) bancas.push(b);
+    }
+    const { banca: _b, bancas: _bs, ...rest } = data;
+    return {
+      ...rest,
+      ...(bancas.length ? { bancas } : {}),
+    };
+  });
+
 /** Query params de `GET /api/vitrine/facets`. */
 export const VitrineFacetsQuerySchema = z
   .object({
@@ -954,6 +974,7 @@ export const AdminErrorReportPatchSchema = z
 export type VitrineQueryInput = z.infer<typeof VitrineQuerySchema>;
 export type EstudarQuestaoQueryInput = z.infer<typeof EstudarQuestaoQuerySchema>;
 export type VitrineFacetsQueryInput = z.infer<typeof VitrineFacetsQuerySchema>;
+export type VitrineResolveQuestaoQueryInput = z.infer<typeof VitrineResolveQuestaoQuerySchema>;
 export type SimuladoTemplateCreateInput = z.infer<typeof SimuladoTemplateCreateSchema>;
 export type SimuladoCreateSessionInput = z.input<typeof SimuladoCreateSessionSchema>;
 export type SimuladoAnswerInput = z.infer<typeof SimuladoAnswerSchema>;
