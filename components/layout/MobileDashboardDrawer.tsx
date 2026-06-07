@@ -1,7 +1,8 @@
 'use client';
 
+import { useClientMounted } from '@/lib/hooks/useClientMounted';
 import { createPortal } from 'react-dom';
-import { useEffect, useState, type ReactNode, type RefObject } from 'react';
+import { type ReactNode, type RefObject } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -32,8 +33,7 @@ export function MobileDashboardDrawer({
   closeButtonRef,
   children,
 }: MobileDashboardDrawerProps) {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const mounted = useClientMounted();
 
   const drawer = (
     <AnimatePresence>

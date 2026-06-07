@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useClientMounted } from '@/lib/hooks/useClientMounted';
 import {
   hasDismissedPwaInstallPrompt,
   isIosSafari,
@@ -21,22 +22,19 @@ export function usePwaInstall({
   enabled: boolean;
   blocked?: boolean;
 }) {
+  const mounted = useClientMounted();
   const [autoVisible, setAutoVisible] = useState(false);
   const [manualVisible, setManualVisible] = useState(false);
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
-  const [isIos, setIsIos] = useState(false);
-  const [showNavItem, setShowNavItem] = useState(false);
+
+  const showNavItem =
+    mounted && enabled && isMobileUserAgent() && !isStandaloneDisplayMode();
+  const isIos = mounted && isIosSafari();
 
   useEffect(() => {
     if (!enabled) return;
     if (typeof window === 'undefined') return;
-
-    const standalone = isStandaloneDisplayMode();
-    const mobile = isMobileUserAgent();
-    setShowNavItem(mobile && !standalone);
-    setIsIos(isIosSafari());
-
-    if (standalone || !mobile) return;
+    if (isStandaloneDisplayMode() || !isMobileUserAgent()) return;
 
     const onBeforeInstall = (event: Event) => {
       event.preventDefault();
@@ -90,7 +88,7 @@ export function usePwaInstall({
       visible,
       autoVisible,
       manualVisible,
-      showNavItem: enabled && showNavItem,
+      showNavItem,
       isIos,
       canNativeInstall: deferredPrompt !== null,
       open,
@@ -103,7 +101,6 @@ export function usePwaInstall({
       close,
       deferredPrompt,
       dismiss,
-      enabled,
       install,
       isIos,
       manualVisible,

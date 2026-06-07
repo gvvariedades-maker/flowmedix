@@ -1,35 +1,37 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
+
+function subscribeKeyboardInset(active: boolean, onStoreChange: () => void): () => void {
+  if (!active || typeof window === 'undefined') return () => {};
+
+  const vv = window.visualViewport;
+  if (!vv) return () => {};
+
+  vv.addEventListener('resize', onStoreChange);
+  vv.addEventListener('scroll', onStoreChange);
+  return () => {
+    vv.removeEventListener('resize', onStoreChange);
+    vv.removeEventListener('scroll', onStoreChange);
+  };
+}
+
+function getKeyboardInsetSnapshot(active: boolean): number {
+  if (!active || typeof window === 'undefined') return 0;
+
+  const vv = window.visualViewport;
+  if (!vv) return 0;
+
+  return Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+}
 
 /**
  * Inset inferior (px) quando o teclado virtual reduz o visualViewport — sheets mobile com busca.
  */
 export function useMobileSheetKeyboardInset(active: boolean): number {
-  const [insetPx, setInsetPx] = useState(0);
-
-  useEffect(() => {
-    if (!active || typeof window === 'undefined') {
-      setInsetPx(0);
-      return;
-    }
-
-    const vv = window.visualViewport;
-    if (!vv) return;
-
-    const sync = () => {
-      setInsetPx(Math.max(0, window.innerHeight - vv.height - vv.offsetTop));
-    };
-
-    sync();
-    vv.addEventListener('resize', sync);
-    vv.addEventListener('scroll', sync);
-    return () => {
-      vv.removeEventListener('resize', sync);
-      vv.removeEventListener('scroll', sync);
-      setInsetPx(0);
-    };
-  }, [active]);
-
-  return insetPx;
+  return useSyncExternalStore(
+    (onStoreChange) => subscribeKeyboardInset(active, onStoreChange),
+    () => getKeyboardInsetSnapshot(active),
+    () => 0,
+  );
 }

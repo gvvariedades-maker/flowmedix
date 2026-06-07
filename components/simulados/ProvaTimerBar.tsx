@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { useProvaElapsed, type UseProvaElapsedInput } from '@/lib/simulado/useProvaElapsed';
 
@@ -22,15 +21,7 @@ function ProvaTimerBarActive({
     ritmoMetaSegundosPorQuestao,
   });
 
-  const announcedRef = useRef(false);
-  const [liveMessage, setLiveMessage] = useState('');
-
-  useEffect(() => {
-    if (passedMeta && !announcedRef.current) {
-      announcedRef.current = true;
-      setLiveMessage('Tempo acima da meta sugerida');
-    }
-  }, [passedMeta]);
+  const liveMessage = passedMeta ? 'Tempo acima da meta sugerida' : '';
 
   return (
     <div

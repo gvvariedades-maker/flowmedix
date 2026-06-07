@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { getSlideArcLabel, getSlideChipLabel, getSlideTypeIcon } from './slideLabels';
+import { GitBranch, Network, ScanText, ShieldAlert, Sparkles, Swords } from 'lucide-react';
+import { getSlideArcLabel, getSlideChipLabel } from './slideLabels';
 import type { SlideType } from '@/types/lesson';
 
 type ChipConfig = {
@@ -89,6 +90,31 @@ export interface ReverseStudyShellProps {
  * Shell único do estudo reverso: chip de tipo, badge de banca, título opcional e fio condutor.
  * Uso interno — montado apenas por `NeuroSlide` quando há `shellContext` ou `standalone`.
  */
+function SlideTypeIcon({
+  slideType,
+  className,
+}: {
+  slideType: string | undefined;
+  className: string;
+}) {
+  switch (slideType) {
+    case 'concept_map':
+      return <Network size={11} className={className} aria-hidden />;
+    case 'golden_rule':
+      return <Sparkles size={11} className={className} aria-hidden />;
+    case 'logic_flow':
+      return <GitBranch size={11} className={className} aria-hidden />;
+    case 'danger_zone':
+      return <ShieldAlert size={11} className={className} aria-hidden />;
+    case 'syllable_scanner':
+      return <ScanText size={11} className={className} aria-hidden />;
+    case 'versus_arena':
+      return <Swords size={11} className={className} aria-hidden />;
+    default:
+      return null;
+  }
+}
+
 export function ReverseStudyShell({
   slideType,
   chipLabel,
@@ -102,7 +128,7 @@ export function ReverseStudyShell({
   const arcLabel = getSlideArcLabel(slideType, slideIndex, totalSlides);
   const positionLabel = `Slide ${slideIndex + 1} de ${totalSlides}`;
   const chipConf = getChipConfig(slideType);
-  const SlideIcon = getSlideTypeIcon(slideType);
+  const iconClassName = ['shrink-0', chipConf.iconClass].join(' ');
 
   return (
     <div className="flex h-full min-h-0 w-full min-w-0 flex-1 flex-col">
@@ -122,13 +148,7 @@ export function ReverseStudyShell({
             ].join(' ')}
             aria-label={`Tipo de slide: ${chipText}`}
           >
-            {SlideIcon ? (
-              <SlideIcon
-                size={11}
-                className={['shrink-0', chipConf.iconClass].join(' ')}
-                aria-hidden
-              />
-            ) : null}
+            <SlideTypeIcon slideType={slideType} className={iconClassName} />
             <span className="truncate">{chipText}</span>
           </span>
           {banca?.trim() ? (

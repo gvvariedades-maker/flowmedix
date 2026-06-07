@@ -635,6 +635,23 @@ export default function AvantLessonPlayer({
 
   const prefersReducedMotion = useReducedMotion() ?? false;
 
+  const handleNavegar = useCallback(
+    async (slugComQuery: string) => {
+      if (navegacaoIndisponivel) return;
+      setIsNavigating(true);
+      try {
+        if (questaoNav) {
+          await questaoNav.navigateEstudar(slugComQuery);
+        } else {
+          router.push(buildEstudarHref(slugComQuery));
+        }
+      } finally {
+        setIsNavigating(false);
+      }
+    },
+    [navegacaoIndisponivel, questaoNav, router],
+  );
+
   if (!activeDados?.question_data?.options?.length) {
     const vitrineSuffix = fromPlano
       ? '?from=plano'
@@ -961,23 +978,6 @@ export default function AvantLessonPlayer({
     if (fromCaderno) return `?from=caderno&caderno_id=${encodeURIComponent(fromCaderno)}`;
     return vitrineQuerySuffix || '';
   };
-
-  const handleNavegar = useCallback(
-    async (slugComQuery: string) => {
-      if (navegacaoIndisponivel) return;
-      setIsNavigating(true);
-      try {
-        if (questaoNav) {
-          await questaoNav.navigateEstudar(slugComQuery);
-        } else {
-          router.push(buildEstudarHref(slugComQuery));
-        }
-      } finally {
-        setIsNavigating(false);
-      }
-    },
-    [navegacaoIndisponivel, questaoNav, router],
-  );
 
   const vitrineReturnContext = () => ({
     fromPlano,
