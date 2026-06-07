@@ -98,8 +98,6 @@ function RegisterForm() {
         return;
       }
 
-      const welcomeUserId = data.user?.id;
-
       if (data.session) {
         await supabase.auth.getSession();
 
@@ -141,16 +139,8 @@ function RegisterForm() {
         return;
       }
 
-      // Confirmação por e-mail ativa no Supabase: sem sessão até o usuário clicar no link
-      if (welcomeUserId) {
-        void fetch('/api/auth/welcome-email', {
-          method: 'POST',
-          credentials: 'same-origin',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ userId: welcomeUserId }),
-        }).catch(() => undefined);
-      }
-
+      // Confirmação por e-mail ativa no Supabase: sem sessão até o usuário clicar no link.
+      // E-mail de boas-vindas: webhook Supabase auth.users INSERT → /api/webhooks/auth
       setPendingEmailVerification(true);
       setLoading(false);
     } catch (err: unknown) {

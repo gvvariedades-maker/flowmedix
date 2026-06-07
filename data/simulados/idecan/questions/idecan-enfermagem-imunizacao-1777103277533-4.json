@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "ano": "2024",
+    "banca": "IDECAN",
+    "orgao": "(Enfermagem)",
+    "prova": "Tec (PB Saúde)",
+    "topico": "Enfermagem",
+    "subtopico": "Imunização"
+  },
+  "question_data": {
+    "instruction": "5115) A administração de vacinas em crianças menores de 2 anos deve seguir recomendações específicas para garantir a segurança e a eficácia da imunização.\nConsiderando as vacinas tríplice viral (sarampo, caxumba e rubéola) e febre amarela, marque a opção correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Não podem ser administradas simultaneamente, devendo-se respeitar um intervalo de pelo menos 30 dias entre as doses.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Podem ser administradas simultaneamente, desde que em locais anatômicos diferentes.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Devem ser administradas com um intervalo mínimo de 15 dias entre elas para evitar interferência imunológica.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Devem ser administradas com um intervalo mínimo de 60 dias entre elas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Ambas as vacinas não são recomendadas para crianças menores de 2 anos, exceto em situações de surto.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "items": [
+        {
+          "id": "1",
+          "label": "Tríplice Viral",
+          "detail": "Vírus atenuados: Sarampo, Caxumba, Rubéola",
+          "icon": "Shield"
+        },
+        {
+          "id": "2",
+          "label": "Febre Amarela",
+          "detail": "Vírus atenuado: Proteção contra arbovirose",
+          "icon": "FlaskConical"
+        },
+        {
+          "id": "3",
+          "label": "Regra de Ouro",
+          "detail": "Intervalo de 30 dias entre vacinas virais atenuadas",
+          "icon": "AlertTriangle"
+        },
+        {
+          "id": "4",
+          "label": "Segurança",
+          "detail": "Evitar interferência imunológica",
+          "icon": "CheckCircle2"
+        }
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "content": "VACINAS VIRAIS ATENUADAS NÃO ADMINISTRADAS SIMULTANEAMENTE DEVEM TER INTERVALO MÍNIMO DE 30 DIAS.",
+      "footer_rule": "Respeite o calendário vacinal vigente."
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "steps": [
+        "Identificação da necessidade de vacinas virais atenuadas",
+        "Verificação da data da última dose de vacina viral",
+        "Aplicação da primeira dose respeitando contraindicações",
+        "Agendamento da segunda dose com intervalo de 30 dias"
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "danger_zone",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Imunização"
+      },
+      "content": "Erros comuns na administração de imunobiológicos",
+      "items": [
+        {
+          "id": "1",
+          "label": "Ponto 1",
+          "detail": "Confundir intervalo de vacinas inativadas vs atenuadas"
+        },
+        {
+          "id": "2",
+          "label": "Ponto 2",
+          "detail": "Administrar vacinas virais simultaneamente sem critério"
+        },
+        {
+          "id": "3",
+          "label": "Ponto 3",
+          "detail": "Ignorar histórico vacinal do paciente"
+        }
+      ],
+      "footer_rule": "Sempre consulte o Manual de Normas e Procedimentos para Vacinação."
+    }
+  ],
+  "modulo_slug": "idecan-enfermagem-imunizacao-1777103277533-4"
+}

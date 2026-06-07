@@ -4,7 +4,6 @@
  */
 
 import {
-  getQuestoesByAssuntoCached,
   getHistoricoQuestoesForSlugsCached,
   estudadosSetFromHistorico,
   getModulosEstudoCached,
@@ -76,20 +75,14 @@ async function listaPorAssuntoSemVitrine(
       const modulos = (await fetchAccessibleModulosForNav(userId, {
         titulo_aula: tituloAula,
       })) as ModuloEstudoRow[];
-      if (modulos.length > 0) {
-        return listaModulosQuestaoPorTituloAulaNoCatalogo(modulos, tituloAula);
-      }
+      return listaModulosQuestaoPorTituloAulaNoCatalogo(modulos, tituloAula);
     } catch (e) {
-      if (!isDataServiceUnavailableError(e)) throw e;
+      if (isDataServiceUnavailableError(e)) return [];
+      throw e;
     }
   }
 
-  try {
-    return (await getQuestoesByAssuntoCached(tituloAula)) as QuestaoNavListItem[];
-  } catch (e) {
-    if (isDataServiceUnavailableError(e)) return [];
-    throw e;
-  }
+  return [];
 }
 
 async function fetchModulosForVitrineNav(

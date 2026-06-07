@@ -29,7 +29,7 @@ SELECT
       ) ~ 'select auth\.uid\(\)'
   ) = 4 AS all_use_initplan;
 
--- 2) concursos / concurso_modulos / modulos_estudo: uma policy SELECT consolidada
+-- 2) concursos / concurso_modulos: SELECT enrolled_or_sellable; modulos_estudo: enrolled_only
 SELECT tablename, policyname, cmd
 FROM pg_policies
 WHERE schemaname = 'public'
@@ -37,14 +37,27 @@ WHERE schemaname = 'public'
   AND cmd = 'SELECT'
 ORDER BY tablename;
 
--- Esperado: exatamente 3 linhas (nomes *_select_enrolled_or_sellable)
 SELECT
-  (
-    SELECT count(*)::int FROM pg_policies
-    WHERE schemaname = 'public'
-      AND tablename IN ('concursos', 'concurso_modulos', 'modulos_estudo')
-      AND cmd = 'SELECT'
-  ) = 3 AS single_select_policy_per_table;
+  EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE schemaname = 'public' AND tablename = 'concursos'
+      AND policyname = 'concursos_select_enrolled_or_sellable' AND cmd = 'SELECT'
+  ) AS concursos_policy_ok,
+  EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE schemaname = 'public' AND tablename = 'concurso_modulos'
+      AND policyname = 'concurso_modulos_select_enrolled_or_sellable' AND cmd = 'SELECT'
+  ) AS concurso_modulos_policy_ok,
+  EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE schemaname = 'public' AND tablename = 'modulos_estudo'
+      AND policyname = 'modulos_estudo_select_enrolled_only' AND cmd = 'SELECT'
+  ) AS modulos_estudo_enrolled_only,
+  NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE schemaname = 'public' AND tablename = 'modulos_estudo'
+      AND policyname = 'modulos_estudo_select_enrolled_or_sellable'
+  ) AS modulos_sellable_policy_dropped;
 
 -- 3) Índice duplicado content_hash removido
 SELECT
@@ -88,3 +101,10 @@ JOIN public.concursos c ON c.id = cm.concurso_id
 WHERE cm.status = 'ativo'::concurso_matricula_status
   AND (cm.expires_at IS NULL OR cm.expires_at > now())
 LIMIT 10;
+
+-- 7) Anon não lê conteudo_json de módulo pago (comportamental)
+-- SQL Editor (postgres/service role) vê o catálogo; anon key deve retornar 0 linhas.
+-- Automatizado: npm run smoke:rls → check anon_modulos_estudo_vazio.
+-- Manual REST: GET /rest/v1/modulos_estudo?select=id,conteudo_json com apikey anon → [].
+SELECT count(*)::int AS modulos_total_service_role
+FROM public.modulos_estudo;

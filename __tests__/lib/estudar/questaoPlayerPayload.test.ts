@@ -320,33 +320,61 @@ describe('buildEstudarQuestaoPlayerPayload', () => {
     expect(result.payload.avantCodigo).toBe(1067);
   });
 
-  it('anônimo usa cache anon e não checa entitlement', async () => {
-    mockGetQuestaoBySlugCached.mockResolvedValue({
-      id: 'mod-anon',
-      modulo_slug: SLUG,
-      conteudo_json: conteudoJson,
-      banca: 'FGV',
-      titulo_aula: 'Urgências',
-      modulo_nome: 'Urgências',
-      created_at: '2024-01-01T00:00:00.000Z',
-      avant_codigo: null,
-    });
-
+  it('sem userId retorna not_found', async () => {
     const result = await buildEstudarQuestaoPlayerPayload({ slug: SLUG });
 
     expect(mockUserHasModuloAccess).not.toHaveBeenCalled();
-    expect(mockGetQuestaoBySlugCached).toHaveBeenCalledWith(SLUG);
-    expect(result.status).toBe('ok');
-    if (result.status !== 'ok') return;
-    expect(result.payload.dados.question_data.options?.[0]).not.toHaveProperty('is_correct');
+    expect(mockGetQuestaoBySlugCached).not.toHaveBeenCalled();
+    expect(result).toEqual({ status: 'not_found' });
   });
 
-  it('anônimo retorna not_found quando cache não tem questão', async () => {
-    mockGetQuestaoBySlugCached.mockResolvedValue(null);
+  it('propaga DataServiceUnavailableError do cache', async () => {
+    mockUserHasModuloAccess.mockResolvedValue(true);
+    const supabase = mockSupabaseModuloRow();
+    const { DataServiceUnavailableError } = await import('@/lib/dataServiceError');
+    mockGetQuestaoNavList.mockRejectedValue(new DataServiceUnavailableError());
 
-    const result = await buildEstudarQuestaoPlayerPayload({ slug: 'inexistente' });
+    await expect(
+      buildEstudarQuestaoPlayerPayload({
+        slug: SLUG,
+        userId: USER_ID,
+        supabase: supabase as never,
+      }),
+    ).rejects.toBeInstanceOf(DataServiceUnavailableError);
+  });
 
-    expect(result).toEqual({ status: 'not_found' });
+  it('propaga DataServiceUnavailableError quando o Supabase falha ao carregar módulo', async () => {
+    mockUserHasModuloAccess.mockResolvedValue(true);
+    const maybeSingle = jest.fn().mockResolvedValue({
+      data: null,
+      error: { message: 'connection timeout', code: 'PGRST000' },
+    });
+    const eq = jest.fn().mockReturnValue({ maybeSingle });
+    const select = jest.fn().mockReturnValue({ eq });
+    const supabase = { from: jest.fn().mockReturnValue({ select, eq }) };
+    const { DataServiceUnavailableError } = await import('@/lib/dataServiceError');
+
+    await expect(
+      buildEstudarQuestaoPlayerPayload({
+        slug: SLUG,
+        userId: USER_ID,
+        supabase: supabase as never,
+      }),
+    ).rejects.toBeInstanceOf(DataServiceUnavailableError);
+
+    expect(mockGetQuestaoNavList).not.toHaveBeenCalled();
+  });
+
+  it('propaga DataServiceUnavailableError quando entitlement falha por infra', async () => {
+    mockUserHasModuloAccess.mockRejectedValue(new Error('connection refused'));
+    const { DataServiceUnavailableError } = await import('@/lib/dataServiceError');
+
+    await expect(
+      buildEstudarQuestaoPlayerPayload({
+        slug: SLUG,
+        userId: USER_ID,
+      }),
+    ).rejects.toBeInstanceOf(DataServiceUnavailableError);
   });
 
   it('layers=core omite NeuroSlides do payload', async () => {

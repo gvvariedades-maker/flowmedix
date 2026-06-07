@@ -186,7 +186,7 @@ export async function getTodayReviews(userId: string): Promise<ReviewItem[]> {
 
     if (error) {
       logger.error('Failed to fetch history for reviews', error, { userId });
-      return [];
+      throw error;
     }
 
     const historico = (data || []) as HistoricoQuestao[];
@@ -237,8 +237,8 @@ export async function getTodayReviews(userId: string): Promise<ReviewItem[]> {
           .select('modulo_slug, avant_codigo')
           .in('modulo_slug', part);
         if (modErr) {
-          logger.warn('Failed to fetch avant_codigo for reviews', { message: modErr.message });
-          break;
+          logger.error('Failed to fetch avant_codigo for reviews', modErr, { userId });
+          throw modErr;
         }
         (rows as { modulo_slug: string; avant_codigo: number | null }[] | null)?.forEach((row) => {
           codeBySlug.set(row.modulo_slug, row.avant_codigo);
@@ -254,7 +254,7 @@ export async function getTodayReviews(userId: string): Promise<ReviewItem[]> {
       .sort((a, b) => b.priority - a.priority);
   } catch (error) {
     logger.error('Failed to get today reviews', error, { userId });
-    return [];
+    throw error;
   }
 }
 

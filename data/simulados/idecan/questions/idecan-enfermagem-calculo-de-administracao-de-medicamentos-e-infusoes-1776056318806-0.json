@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "ano": "2021",
+    "banca": "IDECAN",
+    "orgao": "(Pref Campina Gde)",
+    "prova": "TEnf (Campina Gde)",
+    "topico": "Enfermagem",
+    "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+  },
+  "question_data": {
+    "instruction": "1071) Com base em convenções sobre medidas e equivalências adotadas no Brasil, com exceção de alguns medicamentos que fogem aos padrões, assinale a alternativa\ncorreta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "As seringas para aplicação de insulina são graduadas em unidades, adequadas à concentração U-100, o que significa que em 1 ml, há 10 unidades (UI) de insulina.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "1 ml corresponde a 20 gotas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "1 gota possui 35 microgotas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "1 macrogota equivale à 10 microgotas.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+      },
+      "items": [
+        {
+          "id": "1",
+          "label": "1 ml",
+          "detail": "Equivale a 20 gotas",
+          "icon": "FlaskConical"
+        },
+        {
+          "id": "2",
+          "label": "1 gota",
+          "detail": "Equivale a 3 microgotas",
+          "icon": "BookOpen"
+        },
+        {
+          "id": "3",
+          "label": "1 ml",
+          "detail": "Equivale a 60 microgotas",
+          "icon": "Scale"
+        },
+        {
+          "id": "4",
+          "label": "Insulina U-100",
+          "detail": "100 UI em 1 ml",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+      },
+      "content": "PARA CONVERSÃO DE GOTAS PARA MICROGOTAS, MULTIPLIQUE O NÚMERO DE GOTAS POR 3.",
+      "footer_rule": "Regra de ouro: 1 ml = 20 gotas = 60 microgotas."
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+      },
+      "steps": [
+        "Identificar o volume total prescrito em ml",
+        "Aplicar a constante de gotejamento (20 para gotas, 60 para microgotas)",
+        "Dividir o volume pelo tempo em minutos",
+        "Multiplicar o resultado pela constante de conversão"
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "danger_zone",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+      },
+      "content": "Erros comuns em cálculos de gotejamento",
+      "items": [
+        {
+          "id": "1",
+          "label": "Ponto 1",
+          "detail": "Confundir a constante de gotas (20) com microgotas (60)"
+        },
+        {
+          "id": "2",
+          "label": "Ponto 2",
+          "detail": "Esquecer de converter horas para minutos no cálculo"
+        },
+        {
+          "id": "3",
+          "label": "Ponto 3",
+          "detail": "Errar a leitura da concentração de insulina (U-100)"
+        }
+      ],
+      "footer_rule": "Sempre confira a unidade de medida antes de realizar a infusão."
+    }
+  ],
+  "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-0"
+}

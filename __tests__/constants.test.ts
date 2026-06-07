@@ -16,12 +16,12 @@ describe('isAdminSessionEmail', () => {
     jest.resetModules();
   });
 
-  it('usa fallback documentado quando ADMIN_EMAIL não está na env', async () => {
+  it('sem ADMIN_EMAIL na env, nenhum e-mail é admin', async () => {
     delete process.env.ADMIN_EMAIL;
     delete process.env.ADMIN_EMAILS;
     const { isAdminSessionEmail } = await import('@/lib/constants');
 
-    expect(isAdminSessionEmail('gvvariedades@gmail.com')).toBe(true);
+    expect(isAdminSessionEmail('gvvariedades@gmail.com')).toBe(false);
     expect(isAdminSessionEmail('outro@gmail.com')).toBe(false);
   });
 
@@ -33,7 +33,7 @@ describe('isAdminSessionEmail', () => {
     expect(isAdminSessionEmail('admin@exemplo.com')).toBe(true);
     expect(isAdminSessionEmail('segundo@exemplo.com')).toBe(true);
     expect(isAdminSessionEmail('terceiro@exemplo.com')).toBe(true);
-    expect(isAdminSessionEmail('gvvariedades@gmail.com')).toBe(true);
+    expect(isAdminSessionEmail('gvvariedades@gmail.com')).toBe(false);
   });
 });
 

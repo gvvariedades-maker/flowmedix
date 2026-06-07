@@ -5,6 +5,7 @@
  */
 
 import { logger } from './logger';
+import { DataServiceUnavailableError, isDataServiceUnavailableError } from './dataServiceError';
 import { unstable_cache } from 'next/cache';
 import { CACHE_CONFIG } from './cache';
 import { SCALE_LIMITS } from './scale/constants';
@@ -106,7 +107,7 @@ async function fetchHistoricoCompletoRows(userId: string): Promise<HistoricoQues
     return (data ?? []) as HistoricoQuestao[];
   } catch (error) {
     logger.error('Unexpected error fetching history', error, { userId });
-    return [];
+    throw new DataServiceUnavailableError();
   }
 }
 
@@ -417,23 +418,9 @@ export async function getAnalyticsSummary(userId: string): Promise<AnalyticsSumm
       strongAreas,
     };
   } catch (error) {
+    if (isDataServiceUnavailableError(error)) throw error;
     logger.error('Failed to generate analytics summary', error, { userId });
-    // Retorna estrutura vazia em caso de erro
-    return {
-      overall: {
-        total: 0,
-        acertos: 0,
-        erros: 0,
-        percentual: 0,
-        streak: 0,
-      },
-      byTopic: [],
-      byBanca: [],
-      timeSeries: generateTimeSeries([], 30),
-      errorPatterns: [],
-      weakAreas: [],
-      strongAreas: [],
-    };
+    throw error;
   }
 }
 

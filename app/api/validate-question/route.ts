@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { requireAdminApi } from '@/lib/admin/requireAdmin';
 import {
   QuestaoCompletaSchema,
   validateSlides,
@@ -6,15 +7,18 @@ import {
   TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE,
 } from '@/lib/validations';
 import { logger } from '@/lib/logger';
-import { apiRateLimit } from '@/lib/rate-limit';
+import { distributedRateLimit } from '@/lib/rate-limit';
 
 /**
  * POST /api/validate-question
  * Valida uma questão completa usando Zod
  */
 export async function POST(req: Request) {
+  const auth = await requireAdminApi();
+  if ('error' in auth) return auth.error;
+
   // Rate limiting (20 requisições por 10 segundos)
-  if (!apiRateLimit(req, 20, 10000)) {
+  if (!(await distributedRateLimit(req, { key: 'validate-question', limit: 20, windowMs: 10_000 }))) {
     logger.warn('Rate limit exceeded', { endpoint: '/api/validate-question' });
     return NextResponse.json(
       { error: 'Muitas requisições. Tente novamente em alguns segundos.' },
@@ -119,6 +123,9 @@ export async function POST(req: Request) {
  * Retorna informações sobre os limites e regras de validação
  */
 export async function GET() {
+  const auth = await requireAdminApi();
+  if ('error' in auth) return auth.error;
+
   return NextResponse.json({
     limits: {
       INSTRUCTION_MAX: 2000,

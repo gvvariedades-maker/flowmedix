@@ -1,6 +1,6 @@
 #!/usr/bin/env tsx
 /**
- * Smoke pós-deploy: RLS performance (20260604191239 + 20260604191246).
+ * Smoke pós-deploy: RLS performance (20260604191239 + 20260604191246 + 20260607131626).
  *
  * Uso:
  *   npm run smoke:rls
@@ -58,23 +58,25 @@ async function main() {
     });
   }
 
-  // Anon: módulos ligados a concursos vendáveis (amostra)
+  // Anon: modulos_estudo deve ficar vazio (conteúdo pago — só matriculados via JWT)
   const { count: modulosAnonCount, error: modulosErr } = await anon
     .from('modulos_estudo')
     .select('id', { count: 'exact', head: true });
 
   if (modulosErr) {
     checks.push({
-      name: 'anon_modulos_estudo',
-      ok: false,
-      detail: modulosErr.message,
+      name: 'anon_modulos_estudo_vazio',
+      ok: true,
+      detail: `acesso bloqueado (${modulosErr.message}) — esperado sem matrícula`,
     });
   } else {
-    const n = modulosAnonCount ?? 0;
     checks.push({
-      name: 'anon_modulos_estudo',
-      ok: n > 0,
-      detail: n > 0 ? `${n} módulo(s) visível(is) para anon` : '0 linhas — conferir RLS',
+      name: 'anon_modulos_estudo_vazio',
+      ok: (modulosAnonCount ?? 0) === 0,
+      detail:
+        (modulosAnonCount ?? 0) === 0
+          ? '0 linhas sem login — OK (conteúdo protegido)'
+          : `${modulosAnonCount} módulo(s) expostos a anon — falha de RLS`,
     });
   }
 

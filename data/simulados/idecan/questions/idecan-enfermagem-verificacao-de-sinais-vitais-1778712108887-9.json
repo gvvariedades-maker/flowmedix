@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "IDECAN",
+    "orgao": "(Enfermagem / \"Sem Especialidade\")",
+    "prova": "Tec (SESAP RN)",
+    "topico": "Enfermagem",
+    "subtopico": "Verificação de Sinais Vitais"
+  },
+  "question_data": {
+    "instruction": "Diante de um paciente admitido na unidade com suspeita de descontrole metabólico, a aferição correta dos sinais vitais e a mensuração da glicemia capilar tornam-se estratégias prioritárias. Assim, marque a alternativa correta, segundo as recomendações atuais de protocolos de enfermagem.",
+    "text_fragment": "<p>\"Sem Especialidade\"</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "A frequência respiratória deve ser verificada em 1 minuto, associada à oximetria de pulso, priorizando o registro mínimo de 30 segundos em casos graves.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Para pacientes diabéticos, a glicemia capilar deve ser checada apenas em jejum, evitando medições no período noturno para reduzir falsos positivos.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A pressão arterial pode ser aferida duas vezes consecutivas, com intervalo de 1 a 2 minutos entre as mensurações, visando maior acurácia nos valores obtidos.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "A avaliação do pulso radial dispensa a verificação do pulso apical, mesmo em situações de arritmias cardíacas ou instabilidade hemodinâmica.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Em resultados muito elevados de glicemia capilar, a repetição da coleta deve ocorrer sem o descarte da primeira gota de sangue, a fim de agilizar o diagnóstico.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Verificação de Sinais Vitais"
+      },
+      "items": [
+        {
+          "id": "1",
+          "label": "Pressão Arterial",
+          "detail": "Intervalo de 1-2 min entre medidas",
+          "icon": "Scale"
+        },
+        {
+          "id": "2",
+          "label": "Frequência Respiratória",
+          "detail": "Contagem completa por 1 minuto",
+          "icon": "BookOpen"
+        },
+        {
+          "id": "3",
+          "label": "Glicemia Capilar",
+          "detail": "Descartar a primeira gota de sangue",
+          "icon": "FlaskConical"
+        },
+        {
+          "id": "4",
+          "label": "Pulso",
+          "detail": "Avaliar ritmo, frequência e amplitude",
+          "icon": "BookOpen"
+        }
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Verificação de Sinais Vitais"
+      },
+      "content": "A PRECISÃO NA AFERIÇÃO DOS SINAIS VITAIS É A BASE PARA A TOMADA DE DECISÃO CLÍNICA SEGURA.",
+      "footer_rule": "Siga sempre o protocolo institucional vigente."
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Verificação de Sinais Vitais"
+      },
+      "steps": [
+        "Preparar o paciente e o ambiente (repouso de 5 min).",
+        "Posicionar o braço ao nível do coração.",
+        "Realizar a primeira aferição da PA.",
+        "Aguardar de 1 a 2 minutos.",
+        "Realizar a segunda aferição para confirmação."
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "danger_zone",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Verificação de Sinais Vitais"
+      },
+      "content": "Erros comuns na prática",
+      "items": [
+        {
+          "id": "1",
+          "label": "Ponto 1",
+          "detail": "Não descartar a primeira gota na glicemia capilar."
+        },
+        {
+          "id": "2",
+          "label": "Ponto 2",
+          "detail": "Aferir PA sem repouso prévio do paciente."
+        },
+        {
+          "id": "3",
+          "label": "Ponto 3",
+          "detail": "Ignorar arritmias ao avaliar apenas o pulso radial."
+        }
+      ],
+      "footer_rule": "Sinais vitais alterados exigem reavaliação imediata e notificação ao enfermeiro."
+    }
+  ],
+  "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712108887-9"
+}

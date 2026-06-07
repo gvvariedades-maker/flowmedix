@@ -9,9 +9,17 @@ import { getStripeClient } from '@/lib/stripe/client';
 import { STRIPE_CHECKOUT_PAYMENT_METHOD_TYPES } from '@/lib/stripe/checkoutOptions';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
 import { logger } from '@/lib/logger';
-import { getServerSession } from '@/lib/supabase/server-auth';
+import { distributedRateLimit } from '@/lib/rate-limit';
+import { getServerUser } from '@/lib/supabase/server-auth';
 
 export async function POST(request: NextRequest) {
+  if (!(await distributedRateLimit(request, { key: 'criar-sessao', limit: 10, windowMs: 60_000 }))) {
+    return NextResponse.json(
+      { error: 'Muitas requisições. Tente novamente em alguns instantes.' },
+      { status: 429 },
+    );
+  }
+
   const stripe = getStripeClient();
   if (!stripe) {
     return NextResponse.json({ error: 'Pagamentos indisponíveis no momento.' }, { status: 503 });
@@ -33,8 +41,8 @@ export async function POST(request: NextRequest) {
   }
 
   const concursoSlug = parsed.data.concurso_slug;
-  const session = await getServerSession();
-  const userId = session?.user?.id;
+  const user = await getServerUser();
+  const userId = user?.id;
 
   if (concursoSlug !== GERAL_CONCURSO_SLUG) {
     return NextResponse.json(
@@ -46,7 +54,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const sessionEmail = session?.user?.email ?? null;
+  const sessionEmail = user?.email ?? null;
   try {
     if (await userHasUnlimitedStudyAccess(userId, sessionEmail)) {
       const redirectUrl = isAdminSessionEmail(sessionEmail) ? '/admin' : '/estudar';
@@ -74,7 +82,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const loggedInEmail = session?.user?.email?.trim().toLowerCase();
+  const loggedInEmail = user?.email?.trim().toLowerCase();
   const proUserIdMeta = userId ?? '';
 
   try {

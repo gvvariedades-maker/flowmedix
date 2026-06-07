@@ -6,13 +6,12 @@ import { getStripeClient } from '@/lib/stripe/client';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
 import { logger } from '@/lib/logger';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
-import { getServerSession } from '@/lib/supabase/server-auth';
+import { getServerUser } from '@/lib/supabase/server-auth';
 
 async function resolveAuthedUser(request: NextRequest): Promise<User | null> {
   const bearer = await getUserAndClientFromBearer(request);
   if (bearer) return bearer.user;
-  const session = await getServerSession();
-  return session?.user ?? null;
+  return (await getServerUser()) ?? null;
 }
 
 export async function POST(request: NextRequest) {

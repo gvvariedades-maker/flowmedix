@@ -20,10 +20,11 @@ export async function GET(request: NextRequest) {
     const ids = (data || []).map(n => n.id);
     let countMap: Record<string, number> = {};
     if (ids.length > 0) {
-      const { data: counts } = await supabase
+      const { data: counts, error: countsError } = await supabase
         .from('study_notebook_items')
         .select('notebook_id')
         .in('notebook_id', ids);
+      if (countsError) throw countsError;
       (counts || []).forEach(c => {
         countMap[c.notebook_id] = (countMap[c.notebook_id] || 0) + 1;
       });

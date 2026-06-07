@@ -91,7 +91,11 @@ Tabelas críticas: `modulos_estudo`, `historico_questoes`.
 
 ## Auth (e-mail de boas-vindas)
 
-Webhook separado: `POST /api/webhooks/auth` com header **`x-webhook-secret`** (mesmo `SUPABASE_WEBHOOK_SECRET`). Ver implementação em [`app/api/webhooks/auth/route.ts`](../app/api/webhooks/auth/route.ts).
+Migration `20260607140000_auth_users_welcome_webhook.sql`: trigger `auth_users_welcome_webhook` em `auth.users` (INSERT) → `POST /api/webhooks/auth` via `pg_net`, header **`x-webhook-secret`** (mesmo secret de `private.cache_webhook_config` / `SUPABASE_WEBHOOK_SECRET`).
+
+Implementação Next.js: [`app/api/webhooks/auth/route.ts`](../app/api/webhooks/auth/route.ts).
+
+**Alternativa manual:** Database Webhook no Dashboard (schema `auth`, tabela `users`, evento INSERT) com a mesma URL e header — só necessária se o trigger SQL não estiver aplicado.
 
 ## Troubleshooting
 
