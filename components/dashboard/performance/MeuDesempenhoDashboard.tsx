@@ -23,6 +23,7 @@ import { TopAssuntosRanking } from './top-assuntos-ranking';
 import type { DesempenhoData, Periodo } from './types';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { ZerarDesempenhoDialog } from './zerar-desempenho-dialog';
+import { DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 import { cn } from '@/lib/utils';
 
@@ -74,7 +75,8 @@ export function ProgressoEstudoDashboard({ dados }: { dados: DesempenhoData }) {
   return (
     <div
       className={cn(
-        'dashboard-surface relative min-h-screen bg-background text-foreground',
+        'dashboard-surface relative bg-background text-foreground',
+        DASHBOARD_PAGE_ROOT,
         pageBottomPadding,
       )}
     >

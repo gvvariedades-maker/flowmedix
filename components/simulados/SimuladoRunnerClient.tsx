@@ -28,7 +28,7 @@ const SimuladoResumoClient = dynamic(
     })),
   {
     loading: () => (
-      <div className="flex min-h-screen items-center justify-center bg-[#010409]">
+      <div className={cn('bg-[#010409]', DASHBOARD_PAGE_CENTER)}>
         <Loader2 className="h-10 w-10 animate-spin text-cyan-400" aria-label="Carregando resumo" />
       </div>
     ),
@@ -51,6 +51,7 @@ import {
   stripLeadingQuestionEnumeration,
 } from '@/lib/questionHeader';
 import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
+import { DASHBOARD_PAGE_CENTER, DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 import { ReportErrorDialog } from '@/components/report/ReportErrorDialog';
 
@@ -481,7 +482,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     return (
       <div
         className={cn(
-          'flex min-h-screen items-center justify-center bg-[#010409]',
+          cn('bg-[#010409]', DASHBOARD_PAGE_CENTER),
           pageBottomPadding,
         )}
       >
@@ -492,7 +493,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
 
   if (sessionError || !sessionData) {
     return (
-      <div className={cn('min-h-screen bg-[#010409] px-4 pt-6', pageBottomPadding)}>
+      <div className={cn(DASHBOARD_PAGE_ROOT, 'bg-[#010409] px-4 pt-6', pageBottomPadding)}>
         <div className="mx-auto max-w-lg">
           <EmptyState
             icon={ClipboardList}
@@ -524,7 +525,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     return (
       <DashboardMobilePage
         variant="default"
-        className="min-h-screen bg-[#010409] px-4 pt-6 sm:px-6 md:pb-8 lg:px-8"
+        className={cn(DASHBOARD_PAGE_ROOT, 'bg-[#010409] px-4 pt-6 sm:px-6 md:pb-8 lg:px-8')}
       >
         <SimuladoProvaInstrucoes
           titulo={sessionData.session.titulo}
@@ -612,7 +613,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   return (
     <DashboardMobilePage
       variant="default"
-      className="min-h-screen bg-[#010409] px-4 pt-6 sm:px-6 md:pb-8 lg:px-8"
+      className={cn(DASHBOARD_PAGE_ROOT, 'bg-[#010409] px-4 pt-6 sm:px-6 md:pb-8 lg:px-8')}
     >
       {sessionData.session.modo === 'prova' && sessionData.session.prova_iniciada_em ? (
         <ProvaTimerBar

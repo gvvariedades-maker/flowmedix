@@ -224,4 +224,10 @@ export interface AvantLessonPlayerProps {
   avantCodigo?: number | null;
   /** Payload desatualizado em relação à URL (soft nav) — desabilita navegação entre questões. */
   payloadStale?: boolean;
+  /** Preview sem bordas/arredondamento — preenche o container (ex.: laboratório admin). */
+  previewImmersive?: boolean;
+  /** Preview público: abre direto em gabarito ou estudo (ex.: simulado Campina). */
+  previewInitialEtapa?: 'pergunta' | 'gabarito' | 'estudo';
+  /** Alternativa já escolhida no simulado público (contexto do preview). */
+  previewInitialOpcaoId?: string;
 }

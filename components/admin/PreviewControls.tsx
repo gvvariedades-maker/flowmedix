@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type RefObject } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Monitor, 
@@ -32,6 +32,7 @@ interface PreviewControlsProps {
     banca?: string;
     topico?: string;
   };
+  fullscreenTargetRef?: RefObject<HTMLElement | null>;
 }
 
 export function PreviewControls({
@@ -47,24 +48,31 @@ export function PreviewControls({
   onReset,
   onFullscreenToggle,
   questionMeta,
+  fullscreenTargetRef,
 }: PreviewControlsProps) {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  const handleFullscreen = () => {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
-      setIsFullscreen(true);
-    } else {
-      document.exitFullscreen();
+  const handleFullscreen = async () => {
+    const target = fullscreenTargetRef?.current ?? document.documentElement;
+
+    try {
+      if (!document.fullscreenElement) {
+        await target.requestFullscreen();
+        setIsFullscreen(true);
+      } else {
+        await document.exitFullscreen();
+        setIsFullscreen(false);
+      }
+      onFullscreenToggle();
+    } catch {
       setIsFullscreen(false);
     }
-    onFullscreenToggle();
   };
 
   return (
     <>
       {/* Header com Controles */}
-      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-3 flex items-center justify-between shrink-0">
+      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 px-3 py-2 flex items-center justify-between shrink-0">
         <div className="flex items-center gap-3">
           <Eye className="w-5 h-5 text-white" />
           <h3 className="text-white font-bold text-sm">Preview em Tempo Real</h3>
@@ -131,7 +139,7 @@ export function PreviewControls({
       </div>
 
       {/* Estado e Progresso */}
-      <div className="bg-slate-50 px-4 py-2 flex items-center justify-between text-xs shrink-0 border-b border-slate-200">
+      <div className="bg-slate-50 px-3 py-1.5 flex items-center justify-between text-xs shrink-0 border-b border-slate-200">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
             <span className="text-slate-600 font-medium">Estado:</span>

@@ -12,6 +12,12 @@
     "test:e2e:chromium": "playwright test --project=chromium",
     "test:e2e:modal": "tsx scripts/run-e2e-estudar-modal.ts",
     "test:e2e:modal:staging": "tsx scripts/run-e2e-estudar-modal.ts --target=staging",
+    "test:e2e:drawer": "tsx scripts/run-e2e-mobile-drawer.ts",
+    "test:e2e:drawer:staging": "tsx scripts/run-e2e-mobile-drawer.ts --target=staging",
+    "test:e2e:vitrine-pagination": "tsx scripts/run-e2e-vitrine-pagination.ts",
+    "test:e2e:vitrine-pagination:staging": "tsx scripts/run-e2e-vitrine-pagination.ts --target=staging",
+    "test:e2e:estudar-nav": "tsx scripts/run-e2e-estudar-nav.ts",
+    "test:e2e:estudar-nav:staging": "tsx scripts/run-e2e-estudar-nav.ts --target=staging",
     "validate:env": "tsx scripts/validate-env.ts",
     "db:push": "supabase db push",
     "db:link": "supabase link",
@@ -31,7 +37,8 @@
     "perf:smoke:staging": "tsx scripts/run-perf-smoke-staging.ts",
     "perf:baseline": "tsx scripts/capture-perf-baseline.ts",
     "perf:baseline:staging": "tsx scripts/capture-perf-baseline.ts --target=staging",
-    "catalog:audit": "tsx scripts/catalog-content-audit-cli.ts"
+    "catalog:audit": "tsx scripts/catalog-content-audit-cli.ts",
+    "export:simulado-pool": "tsx scripts/export-public-simulado-pool.ts"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -47,6 +54,8 @@
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.98.0",
     "@tanstack/react-virtual": "^3.13.26",
+    "@upstash/ratelimit": "^2.0.8",
+    "@upstash/redis": "^1.38.0",
     "@xyflow/react": "^12.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",

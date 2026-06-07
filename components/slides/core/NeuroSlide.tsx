@@ -247,10 +247,6 @@ export default function NeuroSlide({
 
   if (!data) return null;
 
-  /** Altura intrínseca do conteúdo; centralização vertical fica no `EstudoReversoSlideZoom` (só quando cabe na viewport). */
-  const shellClass =
-    'box-border flex w-full min-w-0 flex-col items-center px-3 py-6 sm:px-5 sm:py-8 md:px-8 md:py-10';
-
   let inner: React.ReactNode;
 
   // Se o slide tem o formato novo (com type), usa o Hub com sistema híbrido
@@ -351,6 +347,9 @@ export default function NeuroSlide({
     ? { slideIndex: 0, totalSlides: 1 }
     : null);
 
+  const shellClass = useShell
+    ? 'box-border flex h-full min-h-0 w-full min-w-0 flex-1 flex-col px-3 py-2 sm:px-4 md:px-6 md:py-3'
+    : 'box-border flex w-full min-w-0 flex-col items-center px-3 py-6 sm:px-5 sm:py-8 md:px-8 md:py-10';
   const slideType = normalizedData.type ?? normalizedData.layout_type;
   const chipLabel = normalizedData.chip_label as string | undefined;
   const slideTitle = normalizedData.slide_title as string | undefined;

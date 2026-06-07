@@ -5,6 +5,7 @@ import { supabase } from '@/lib/supabase/client';
  * Server-side continua validando `E2E_DASHBOARD_BYPASS` nas rotas `/api`.
  */
 function shouldUseE2eClientFetch(): boolean {
+  if (process.env.NODE_ENV === 'production') return false;
   return process.env.NEXT_PUBLIC_E2E_DASHBOARD_BYPASS === 'true';
 }
 

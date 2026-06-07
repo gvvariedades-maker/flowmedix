@@ -21,6 +21,48 @@ export type EstudarRouteSnapshot = {
   search: string;
 };
 
+/** `true` quando o pathname aponta para a vitrine (`/estudar` sem slug). */
+export function isEstudarVitrinePathname(pathname: string): boolean {
+  return parseEstudarSlugFromPathname(pathname) === null;
+}
+
+/** `true` quando `window.location` reflete uma rota `/estudar` (após replaceState ou navegação real). */
+export function isBrowserOnEstudarRoute(): boolean {
+  if (typeof window === 'undefined') return false;
+  const pathname = window.location.pathname;
+  return pathname === '/estudar' || pathname.startsWith('/estudar/');
+}
+
+/** Lê o slug da questão na barra de endereço (SSR-safe: retorna `null` sem `window`). */
+export function parseEstudarSlugFromBrowserPathname(): string | null {
+  if (typeof window === 'undefined') return null;
+  if (!isBrowserOnEstudarRoute()) return null;
+  return parseEstudarSlugFromPathname(window.location.pathname);
+}
+
+/**
+ * Voltar interno pode usar `history.back()` quando há entrada anterior (ex.: vitrine → questão).
+ * Não aplica a retornos para plano/caderno nem cold load direto na questão.
+ */
+export function canDismissEstudarViaHistoryBack(
+  ctx: EstudarVitrineReturnContext = {},
+): boolean {
+  if (ctx.fromPlano || ctx.fromCaderno) return false;
+  if (typeof window === 'undefined') return false;
+  if (window.history.length <= 1) return false;
+  return isBrowserOnEstudarRoute();
+}
+
+/**
+ * Evita reidratar payload de questão quando o browser já está na vitrine
+ * mas o App Router ainda reporta `/estudar/[slug]` (pós-dismiss com soft-nav).
+ */
+export function shouldSkipEstudarRoutePayloadSync(nextSlug: string | null): boolean {
+  if (!nextSlug) return true;
+  if (!isBrowserOnEstudarRoute()) return false;
+  return parseEstudarSlugFromBrowserPathname() === null;
+}
+
 /**
  * Atualiza a URL no browser sem `router.replace` (evita RSC na troca Q1→Q2 no caderno).
  * Retorna pathname + search para o shell alinhar cache key ao payload em memória.

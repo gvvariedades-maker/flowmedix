@@ -6,7 +6,6 @@
  */
 
 import type { HistoricoQuestao } from './analytics';
-import { getAccessibleModuloSlugs } from './concursos/entitlements';
 import {
   addFreemiumDaysToYmd,
   freemiumYmdDiffDays,
@@ -150,6 +149,25 @@ export function simulateSm2FromAttempts(
 }
 
 /**
+ * Agrupa histórico por questão para o SM-2.
+ * Usa todo o histórico do usuário — matrícula expirada ou admin sem vínculo ativo
+ * não deve zerar o plano diário de quem já estudou.
+ */
+export function groupHistoricoByModulo(
+  historico: HistoricoQuestao[],
+): Map<string, HistoricoQuestao[]> {
+  const moduleMap = new Map<string, HistoricoQuestao[]>();
+  for (const h of historico) {
+    const slug = h.modulo_slug?.trim();
+    if (!slug) continue;
+    const existing = moduleMap.get(slug) ?? [];
+    existing.push(h);
+    moduleMap.set(slug, existing);
+  }
+  return moduleMap;
+}
+
+/**
  * Gera lista de questões para revisar hoje
  */
 const SLUG_CHUNK = 120;
@@ -168,21 +186,12 @@ export async function getTodayReviews(userId: string): Promise<ReviewItem[]> {
 
     if (error) {
       logger.error('Failed to fetch history for reviews', error, { userId });
-      return [];
+      throw error;
     }
 
     const historico = (data || []) as HistoricoQuestao[];
-    const accessibleSlugs = await getAccessibleModuloSlugs(userId);
     const todayYmd = toFreemiumTimezoneYmd();
-
-    // Agrupar tentativas por módulo
-    const moduleMap = new Map<string, HistoricoQuestao[]>();
-    historico.forEach((h) => {
-      if (!accessibleSlugs.has(h.modulo_slug)) return;
-      const existing = moduleMap.get(h.modulo_slug) || [];
-      existing.push(h);
-      moduleMap.set(h.modulo_slug, existing);
-    });
+    const moduleMap = groupHistoricoByModulo(historico);
 
     const reviews: ReviewItem[] = [];
 
@@ -228,8 +237,8 @@ export async function getTodayReviews(userId: string): Promise<ReviewItem[]> {
           .select('modulo_slug, avant_codigo')
           .in('modulo_slug', part);
         if (modErr) {
-          logger.warn('Failed to fetch avant_codigo for reviews', { message: modErr.message });
-          break;
+          logger.error('Failed to fetch avant_codigo for reviews', modErr, { userId });
+          throw modErr;
         }
         (rows as { modulo_slug: string; avant_codigo: number | null }[] | null)?.forEach((row) => {
           codeBySlug.set(row.modulo_slug, row.avant_codigo);
@@ -245,7 +254,7 @@ export async function getTodayReviews(userId: string): Promise<ReviewItem[]> {
       .sort((a, b) => b.priority - a.priority);
   } catch (error) {
     logger.error('Failed to get today reviews', error, { userId });
-    return [];
+    throw error;
   }
 }
 

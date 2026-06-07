@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "IDECAN",
+    "orgao": "(Enfermagem)",
+    "prova": "Tec (UFOB)",
+    "topico": "Enfermagem",
+    "subtopico": "Cuidados na Administração de Medicamentos"
+  },
+  "question_data": {
+    "instruction": "A administração de medicamentos é uma das atividades mais críticas da enfermagem, exigindo atenção e cumprimento rigoroso de protocolos de segurança. Em um hospital universitário, a equipe de enfermagem recebe uma nova prescrição para administração de um antibiótico intravenoso a um paciente com infecção respiratória.\n\nAntes de iniciar o procedimento, o profissional deve realizar a checagem dos seis direitos da administração medicamentosa para evitar erros e garantir a segurança do paciente. Assinale qual dos itens a seguir faz parte dessa verificação essencial.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Administrar o medicamento independentemente da prescrição médica.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Desconsiderar alergias relatadas pelo paciente, pois os medicamentos são testados antes da liberação.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Administrar todos os medicamentos prescritos no mesmo horário para otimizar o tempo de cuidado.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Registrar a administração do medicamento apenas no final do turno para evitar redundâncias.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Confirmar a identidade do paciente antes de administrar o medicamento.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "items": [
+        {
+          "id": "1",
+          "label": "Paciente Certo",
+          "detail": "Confirmação por pulseira ou nome completo",
+          "icon": "Users"
+        },
+        {
+          "id": "2",
+          "label": "Medicamento Certo",
+          "detail": "Conferência da prescrição e rótulo",
+          "icon": "FlaskConical"
+        },
+        {
+          "id": "3",
+          "label": "Via Certa",
+          "detail": "Verificação da via prescrita (IV, IM, VO)",
+          "icon": "ArrowRight"
+        },
+        {
+          "id": "4",
+          "label": "Dose Certa",
+          "detail": "Cálculo e conferência da dosagem",
+          "icon": "Scale"
+        }
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "NUNCA ADMINISTRE UM MEDICAMENTO SEM CONFERIR A IDENTIDADE DO PACIENTE E A PRESCRIÇÃO MÉDICA VIGENTE.",
+      "footer_rule": "A segurança do paciente é inegociável."
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "steps": [
+        "Recebimento e leitura da prescrição médica",
+        "Separação do medicamento e conferência dos 6 certos",
+        "Identificação inequívoca do paciente",
+        "Administração do fármaco",
+        "Registro imediato em prontuário"
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "danger_zone",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "Erros comuns na administração",
+      "items": [
+        {
+          "id": "1",
+          "label": "Ponto 1",
+          "detail": "Confiar na memória em vez de checar o rótulo"
+        },
+        {
+          "id": "2",
+          "label": "Ponto 2",
+          "detail": "Identificar o paciente apenas pelo leito"
+        },
+        {
+          "id": "3",
+          "label": "Ponto 3",
+          "detail": "Atrasar o registro da medicação"
+        }
+      ],
+      "footer_rule": "O registro deve ser feito logo após a administração, nunca antes ou muito tempo depois."
+    }
+  ],
+  "modulo_slug": "idecan-enfermagem-cuidados-na-administracao-de-medicamentos-1778712108887-7"
+}

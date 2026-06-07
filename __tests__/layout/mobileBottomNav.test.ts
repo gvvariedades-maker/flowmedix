@@ -1,8 +1,11 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import {
   MOBILE_PAGE_PWA_BANNER_PADDING,
   MOBILE_ACTION_BAR_Z,
   MOBILE_BOTTOM_NAV_Z,
   MOBILE_BOTTOM_NAV_HEIGHT,
+  MOBILE_BOTTOM_NAV_SHELL,
   MOBILE_MAIN_SCROLL_PADDING,
   MOBILE_TOAST_FIXED_BOTTOM,
   MOBILE_DRAWER_OVERLAY_Z,
@@ -11,14 +14,17 @@ import {
   ESTUDO_REVERSO_FULLSCREEN_Z,
   ESTUDO_REVERSO_DESKTOP_INSET,
   ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM,
+  ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM_IMMERSIVE,
   MOBILE_DRAWER_ABOVE_OVERLAYS_PANEL_Z,
   DASHBOARD_SIDEBAR_WIDTH,
   getDashboardPageBottomPadding,
 } from '@/lib/layout/mobileBottomNav';
 
 describe('mobileBottomNav tokens', () => {
-  it('BottomNav no flex shell reserva 5rem no main rolável', () => {
+  it('BottomNav no flex shell usa shrink-0 (nav fora do scroll do main)', () => {
     expect(MOBILE_BOTTOM_NAV_HEIGHT).toBe('5rem');
+    expect(MOBILE_BOTTOM_NAV_SHELL).toContain('shrink-0');
+    expect(MOBILE_BOTTOM_NAV_SHELL).toContain('md:hidden');
     expect(MOBILE_MAIN_SCROLL_PADDING).toBe('pb-nav-safe');
   });
 
@@ -38,14 +44,30 @@ describe('mobileBottomNav tokens', () => {
     expect(ESTUDO_REVERSO_FULLSCREEN_Z).toBe('z-[110]');
   });
 
-  it('estudo reverso no desktop respeita largura da sidebar', () => {
+  it('estudo reverso no desktop cobre o viewport inteiro', () => {
     expect(DASHBOARD_SIDEBAR_WIDTH).toBe('18rem');
-    expect(ESTUDO_REVERSO_DESKTOP_INSET).toContain('18rem');
+    expect(ESTUDO_REVERSO_DESKTOP_INSET).toBe('md:inset-0');
   });
 
   it('estudo reverso no celular reserva altura do BottomNav', () => {
     expect(ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM).toContain('max-md:bottom');
     expect(ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM).toContain('5rem');
+  });
+
+  it('estudo reverso imersivo usa bottom-0 no mobile (sem offset do nav)', () => {
+    expect(ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM_IMMERSIVE).toBe('max-md:bottom-0');
+  });
+
+  it('AvantLessonPlayer aplica token imersivo quando useEstudarQuestaoImmersive', () => {
+    const player = readFileSync(
+      join(process.cwd(), 'components', 'lesson', 'AvantLessonPlayer.tsx'),
+      'utf8',
+    );
+    expect(player).toContain('useEstudarQuestaoImmersive');
+    expect(player).toContain('ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM_IMMERSIVE');
+    expect(player).toMatch(
+      /estudarQuestaoImmersive[\s\S]*ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM_IMMERSIVE[\s\S]*ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM/,
+    );
   });
 
   it('drawer mobile fica acima do modal de questão quando aberto', () => {
@@ -66,5 +88,9 @@ describe('mobileBottomNav tokens', () => {
     expect(MOBILE_PWA_INSTALL_BANNER_CLEARANCE).toBe('6rem');
     expect(MOBILE_PAGE_PWA_BANNER_PADDING).toContain('6rem');
   });
+
+  it('vitrine não usa utilitário legado de padding sticky', () => {
+    const globals = readFileSync(join(process.cwd(), 'app', 'globals.css'), 'utf8');
+    expect(globals).not.toContain('.pb-vitrine-sticky-pagination');
+  });
 });
-

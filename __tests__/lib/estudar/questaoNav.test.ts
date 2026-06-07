@@ -4,7 +4,6 @@ jest.mock('next/cache', () => ({
 }));
 
 jest.mock('@/lib/cache', () => ({
-  getQuestoesByAssuntoCached: jest.fn(),
   getHistoricoQuestoesForSlugsCached: jest.fn(),
   estudadosSetFromHistorico: (
     historico: { modulo_slug: string; estudo_reverso_concluido: boolean }[],
@@ -22,7 +21,6 @@ jest.mock('@/lib/concursos/entitlements', () => ({
 
 import {
   getHistoricoQuestoesForSlugsCached,
-  getQuestoesByAssuntoCached,
 } from '@/lib/cache';
 import { fetchAccessibleModulosForNav } from '@/lib/concursos/entitlements';
 import {
@@ -35,9 +33,6 @@ const mockFetchNav = fetchAccessibleModulosForNav as jest.MockedFunction<
 >;
 const mockHistorico = getHistoricoQuestoesForSlugsCached as jest.MockedFunction<
   typeof getHistoricoQuestoesForSlugsCached
->;
-const mockByAssunto = getQuestoesByAssuntoCached as jest.MockedFunction<
-  typeof getQuestoesByAssuntoCached
 >;
 
 describe('vitrineFiltersToSqlNavFilters', () => {
@@ -134,20 +129,15 @@ describe('getQuestaoNavList', () => {
     expect(result.indexAtual).toBe(0);
   });
 
-  it('sem userId: usa cache global por assunto', async () => {
-    mockByAssunto.mockResolvedValue([
-      { id: '1', modulo_slug: 'anon-1' },
-      { id: '2', modulo_slug: 'anon-2' },
-    ]);
-
+  it('sem userId: retorna lista vazia (sem fallback global)', async () => {
     const result = await getQuestaoNavList({
       slug: 'anon-2',
       tituloAula: 'Farmacologia',
     });
 
     expect(mockFetchNav).not.toHaveBeenCalled();
-    expect(mockByAssunto).toHaveBeenCalledWith('Farmacologia');
-    expect(result.indexAtual).toBe(1);
+    expect(result.lista).toEqual([]);
+    expect(result.indexAtual).toBe(-1);
     expect(mockHistorico).not.toHaveBeenCalled();
   });
 });

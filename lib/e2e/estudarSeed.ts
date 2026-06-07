@@ -13,12 +13,14 @@ import { parseEstudarSearchParams } from '@/lib/estudar/parseEstudarSearchParams
 import { stripQuestionAnswersForClient } from '@/lib/estudar/questionPayload';
 import type { VitrineFacets, VitrinePageResponse } from '@/lib/vitrine/types';
 import type { VitrineListQuery } from '@/lib/vitrine/parseListQuery';
+import { VITRINE_ASSUNTOS_POR_PAGINA } from '@/lib/vitrine/constants';
 import {
   E2E_ESTUDAR_BANCA,
   E2E_ESTUDAR_SLUG_1,
   E2E_ESTUDAR_SLUG_2,
   E2E_ESTUDAR_SLUGS,
   E2E_ESTUDAR_TITULO_AULA,
+  E2E_ESTUDAR_TITULO_AULA_PAGE2,
   isE2eEstudarSlug,
 } from '@/lib/e2e/constants';
 
@@ -138,16 +140,14 @@ function buildVitrineQuerySuffix(
   return s ? `?${s}` : '';
 }
 
-export function getE2eEstudarFacets(): VitrineFacets {
-  return {
-    bancas: [E2E_ESTUDAR_BANCA],
-    assuntos: [E2E_ESTUDAR_TITULO_AULA],
-  };
-}
+/** Assuntos extras para paginação E2E (page 1 = 12, page 2 = 13º). */
+const E2E_VITRINE_PAGINATION_GROUP_COUNT = 13;
 
-function buildE2eEstudarVitrineGroup(): VitrinePageResponse['groups'][number] {
+function buildE2eEstudarVitrineGroup(
+  tituloAula: string = E2E_ESTUDAR_TITULO_AULA,
+): VitrinePageResponse['groups'][number] {
   return {
-    titulo_aula: E2E_ESTUDAR_TITULO_AULA,
+    titulo_aula: tituloAula,
     modulo_nome: 'Módulo E2E',
     banca: E2E_ESTUDAR_BANCA,
     questoes: E2E_ESTUDAR_SLUGS.map((slug, index) => ({
@@ -167,21 +167,61 @@ function buildE2eEstudarVitrineGroup(): VitrinePageResponse['groups'][number] {
   };
 }
 
+function buildE2eEstudarVitrineGroups(): VitrinePageResponse['groups'] {
+  return Array.from({ length: E2E_VITRINE_PAGINATION_GROUP_COUNT }, (_, index) => {
+    const titulo =
+      index === 0
+        ? E2E_ESTUDAR_TITULO_AULA
+        : index === E2E_VITRINE_PAGINATION_GROUP_COUNT - 1
+          ? E2E_ESTUDAR_TITULO_AULA_PAGE2
+          : `Assunto E2E paginação ${index + 1}`;
+    return buildE2eEstudarVitrineGroup(titulo);
+  });
+}
+
+export function getE2eEstudarFacets(): VitrineFacets {
+  return {
+    bancas: [E2E_ESTUDAR_BANCA],
+    assuntos: buildE2eEstudarVitrineGroups().map((group) => group.titulo_aula),
+  };
+}
+
+function filterE2eEstudarVitrineGroups(
+  groups: VitrinePageResponse['groups'],
+  listQuery?: VitrineListQuery,
+): VitrinePageResponse['groups'] {
+  const bancas = listQuery?.bancas ?? [];
+  const assuntos = listQuery?.assuntos ?? [];
+  const q = listQuery?.q?.trim().toLowerCase() ?? '';
+
+  return groups.filter((group) => {
+    if (bancas.length > 0 && !bancas.includes(group.banca)) return false;
+    if (assuntos.length > 0 && !assuntos.includes(group.titulo_aula)) return false;
+    if (q && !group.titulo_aula.toLowerCase().includes(q)) return false;
+    return true;
+  });
+}
+
 export function getE2eEstudarVitrinePage(listQuery?: VitrineListQuery): VitrinePageResponse {
   const facets = getE2eEstudarFacets();
-  const page = listQuery?.page ?? 1;
-  const e2eGroup = buildE2eEstudarVitrineGroup();
+  const page = Math.max(1, listQuery?.page ?? 1);
+  const perPage = VITRINE_ASSUNTOS_POR_PAGINA;
+  const allGroups = filterE2eEstudarVitrineGroups(buildE2eEstudarVitrineGroups(), listQuery);
+  const totalGroups = allGroups.length;
+  const totalPages = Math.max(1, Math.ceil(totalGroups / perPage));
+  const pageClamped = Math.min(page, totalPages);
+  const start = (pageClamped - 1) * perPage;
 
   return {
-    groups: [e2eGroup],
+    groups: allGroups.slice(start, start + perPage),
     facets,
     pagination: {
-      page,
-      perPage: 12,
-      totalGroups: 1,
-      totalPages: Math.max(page, 2),
+      page: pageClamped,
+      perPage,
+      totalGroups,
+      totalPages,
     },
-    totalModulosFiltrados: E2E_ESTUDAR_SLUGS.length,
+    totalModulosFiltrados: E2E_ESTUDAR_SLUGS.length * allGroups.length,
   };
 }
 

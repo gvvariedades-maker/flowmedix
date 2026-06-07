@@ -105,17 +105,15 @@ export async function POST(request: NextRequest) {
 }
 
 /**
- * GET endpoint para verificar status do cache
+ * GET — health check protegido (mesmo secret do POST).
  */
-export async function GET() {
+export async function GET(request: NextRequest) {
+  if (!isCacheRevalidateWebhookAuthorized(request)) {
+    return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
+  }
+
   return NextResponse.json({
     status: 'ok',
     message: 'Cache revalidation endpoint está ativo',
-    config: {
-      static: '15 minutos',
-      semiStatic: '5 minutos',
-      dynamic: '1 minuto',
-      user: '2 minutos',
-    },
   });
 }

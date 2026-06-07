@@ -103,6 +103,17 @@
     background-color: transparent !important;
   }
 
+  /**
+   * Dashboard mobile: shell 100dvh — scroll só no `<main data-dashboard-main-scroll>`.
+   * Impede o "efeito sanfona" (header + BottomNav sobem juntos) quando o conteúdo encolhe.
+   */
+  html.dashboard-mobile-shell,
+  html.dashboard-mobile-shell body {
+    overflow: hidden;
+    height: 100%;
+    overscroll-behavior: none;
+  }
+
   * {
     @apply border-border;
   }

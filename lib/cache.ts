@@ -9,7 +9,6 @@
 
 import { createHash } from 'crypto';
 import { unstable_cache } from 'next/cache';
-import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { cache as cacheByRequest } from 'react';
 import { logger } from './logger';
 import { DataServiceUnavailableError } from './dataServiceError';
@@ -84,22 +83,6 @@ export {
   getVitrinePageUserFilterTag,
   getVitrinePageUserTag,
 } from '@/lib/cache/vitrineTags';
-
-// Cliente Supabase SEM cookies - para uso dentro de unstable_cache.
-// Lazy: evita createClient com URL/key indefinidos no import (ex.: `next build` / CI sem .env).
-let supabaseAnonSingleton: SupabaseClient | null | undefined;
-
-function getSupabaseAnon(): SupabaseClient | null {
-  if (supabaseAnonSingleton !== undefined) return supabaseAnonSingleton;
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url?.trim() || !key?.trim()) {
-    supabaseAnonSingleton = null;
-    return null;
-  }
-  supabaseAnonSingleton = createClient(url, key);
-  return supabaseAnonSingleton;
-}
 
 // Helper para tracking de métricas (opcional, não bloqueia se não disponível)
 function trackCacheMiss(key: string) {
@@ -320,28 +303,37 @@ export async function getMatriculatedConcursosCached(userId: string) {
  */
 export async function getQuestaoBySlugCached(slug: string) {
   const cacheKey = `questao-${slug}`;
-  
+
   return unstable_cache(
     async () => {
-      const supabase = getSupabaseAnon();
-      if (!supabase) {
+      const { createServerSupabase } = await import('./supabase/server');
+      let supabase: Awaited<ReturnType<typeof createServerSupabase>>;
+      try {
+        supabase = await createServerSupabase();
+      } catch {
         trackCacheMiss(cacheKey);
-        return null;
+        throw new DataServiceUnavailableError(
+          'Configuração incompleta: SUPABASE_SERVICE_ROLE_KEY ausente no servidor.',
+        );
       }
 
-      // OTIMIZAÇÃO: Seleciona apenas campos necessários (não *)
       const { data, error } = await supabase
         .from('modulos_estudo')
         .select('id, modulo_slug, conteudo_json, banca, modulo_nome, titulo_aula, created_at, avant_codigo')
         .eq('modulo_slug', slug)
-        .single();
-      
+        .maybeSingle();
+
       if (error) {
         logger.error('Failed to fetch question from cache', error, { slug });
         trackCacheMiss(cacheKey);
+        throw new DataServiceUnavailableError();
+      }
+
+      if (!data) {
+        trackCacheMiss(cacheKey);
         return null;
       }
-      
+
       trackUnstableCacheFetch(cacheKey);
       return data;
     },
@@ -349,7 +341,7 @@ export async function getQuestaoBySlugCached(slug: string) {
     {
       revalidate: 600, // 10 minutos (otimizado de 5 para melhor cache)
       tags: ['questao', 'semi-static', `questao-${slug}`],
-    }
+    },
   )();
 }
 
@@ -430,10 +422,15 @@ export const getQuestoesByAssuntoCached = cacheByRequest(async (tituloAula: stri
 
   return unstable_cache(
     async () => {
-      const supabase = getSupabaseAnon();
-      if (!supabase) {
+      const { createServerSupabase } = await import('./supabase/server');
+      let supabase: Awaited<ReturnType<typeof createServerSupabase>>;
+      try {
+        supabase = await createServerSupabase();
+      } catch {
         trackCacheMiss(cacheKey);
-        throw new DataServiceUnavailableError();
+        throw new DataServiceUnavailableError(
+          'Configuração incompleta: SUPABASE_SERVICE_ROLE_KEY ausente no servidor.',
+        );
       }
 
       const data = await withPostgrestReadRetry(
@@ -468,10 +465,15 @@ export const getQuestoesByBancaCached = cacheByRequest(
 
     return unstable_cache(
       async () => {
-        const supabase = getSupabaseAnon();
-        if (!supabase) {
+        const { createServerSupabase } = await import('./supabase/server');
+        let supabase: Awaited<ReturnType<typeof createServerSupabase>>;
+        try {
+          supabase = await createServerSupabase();
+        } catch {
           trackCacheMiss(cacheKey);
-          throw new DataServiceUnavailableError();
+          throw new DataServiceUnavailableError(
+            'Configuração incompleta: SUPABASE_SERVICE_ROLE_KEY ausente no servidor.',
+          );
         }
 
         const data = await withPostgrestReadRetry(`questoes-banca:${banca}`, async () => {
@@ -864,11 +866,9 @@ export const getCatalogStats = unstable_cache(
       trackUnstableCacheFetch('catalog-stats');
       return parseCatalogStatsPayload(data);
     } catch (error) {
-      logger.warn('Falha ao buscar catalog stats', {
-        message: error instanceof Error ? error.message : String(error),
-      });
+      logger.error('Falha ao buscar catalog stats', error);
       trackCacheMiss('catalog-stats');
-      return EMPTY_CATALOG_STATS;
+      throw new DataServiceUnavailableError();
     }
   },
   [CATALOG_STATS_CACHE_ID],

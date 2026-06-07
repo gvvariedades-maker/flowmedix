@@ -1,0 +1,2233 @@
+{
+  "exported_at": "2026-06-07T19:05:20.120Z",
+  "banca": "IDECAN",
+  "total": 318,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-0",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1023
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-1",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1651
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1652
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-3",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1653
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712409051-9",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1696
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712418722-0",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1697
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712418722-1",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1698
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778968239687-7",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1953
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778968263411-0",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1954
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1780067024707-0",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5163
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1780067024707-1",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5164
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1778712242196-3",
+      "titulo_aula": "Auditoria e Gestão da Qualidade (Enfermagem)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1587
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 340
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712108887-0",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1505
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712108887-1",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1506
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712122855-9",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1524
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780066909125-6",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5119
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780066909125-7",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5120
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1780066909125-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5121
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1549
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-5",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1550
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-6",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1551
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-7",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1552
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-8",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1553
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-2",
+      "titulo_aula": "Cuidados Gerais com Higiene e Conforto do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1557
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-3",
+      "titulo_aula": "Cuidados Gerais com Higiene e Conforto do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1558
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-4",
+      "titulo_aula": "Cuidados Gerais com Higiene e Conforto do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1559
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-5",
+      "titulo_aula": "Cuidados Gerais com Higiene e Conforto do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1560
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-6",
+      "titulo_aula": "Cuidados Gerais com Higiene e Conforto do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1561
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1780066938846-3",
+      "titulo_aula": "Cuidados Gerais com Higiene e Conforto do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5127
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-na-administracao-de-medicamentos-1778712108887-7",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1512
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-na-administracao-de-medicamentos-1778712108887-8",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1513
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-paliativos-1778712409051-4",
+      "titulo_aula": "Cuidados Paliativos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1691
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-curativos-e-manejo-de-feridas-1778712165781-0",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1545
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-curativos-e-manejo-de-feridas-1778712165781-1",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1546
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-curativos-e-manejo-de-feridas-1778712165781-2",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1547
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-4",
+      "titulo_aula": "Doenças Cardiovasculares e Metabólicas Crônicas (Diabete, Hipertensão, ICC etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1645
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-5",
+      "titulo_aula": "Doenças Cardiovasculares e Metabólicas Crônicas (Diabete, Hipertensão, ICC etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1646
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-6",
+      "titulo_aula": "Doenças Cardiovasculares e Metabólicas Crônicas (Diabete, Hipertensão, ICC etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1647
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1780067001671-0",
+      "titulo_aula": "Doenças Cardiovasculares e Metabólicas Crônicas (Diabete, Hipertensão, ICC, etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5150
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-parasitarias-e-zoonoses-1778712315153-0",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1641
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-parasitarias-e-zoonoses-1778712315153-1",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1642
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-parasitarias-e-zoonoses-1780066992037-3",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5145
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-parasitarias-e-zoonoses-1780066992037-4",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5146
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-parasitarias-e-zoonoses-1780066992037-5",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5147
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-renais-e-hematologicas-cronicas-1778712315153-7",
+      "titulo_aula": "Doenças Renais e Hematológicas Crônicas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1648
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-efeitos-adversos-dos-medicamentos-1780066909125-3",
+      "titulo_aula": "Efeitos Adversos dos Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5118
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-6",
+      "titulo_aula": "Enfermagem do Trabalho",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1693
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-7",
+      "titulo_aula": "Enfermagem do Trabalho",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1694
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-8",
+      "titulo_aula": "Enfermagem do Trabalho",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1695
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1661
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-3",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1662
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-4",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1663
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-5",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1664
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-6",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1665
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-7",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1666
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-0",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5154
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-1",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5155
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-4",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1654
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-5",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1655
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-6",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1656
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-7",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1657
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-8",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1658
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712381105-0",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1659
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712381105-1",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1660
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1780067001671-6",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5151
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1780067001671-7",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5152
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1780067001671-8",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5153
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-oncologia-1778712409051-5",
+      "titulo_aula": "Enfermagem em Oncologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1692
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-uti-1778712381105-8",
+      "titulo_aula": "Enfermagem em UTI",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1667
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-uti-1778712392541-0",
+      "titulo_aula": "Enfermagem em UTI",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1668
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-uti-1778712392541-1",
+      "titulo_aula": "Enfermagem em UTI",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1669
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712242196-4",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1588
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712242196-5",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1589
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712242196-6",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1590
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712242196-7",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1591
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712242196-8",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1592
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712242196-9",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1593
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-0",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1594
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-1",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1595
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-2",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1596
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-3",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1597
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-4",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1598
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-5",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1599
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-6",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1600
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-7",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1601
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-8",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1602
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-9",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1603
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712270872-0",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1604
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1780066961947-8",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5133
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1780066961947-9",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5134
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1780066977710-0",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5135
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1780066977710-1",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5136
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1780066977710-2",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5137
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-complementares-1778712242196-2",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1586
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-complementares-1779563685104-2",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 3333
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-laboratoriais-1778712242196-1",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1585
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-laboratoriais-1780066961947-6",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5132
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1521
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1522
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-8",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1523
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-1",
+      "titulo_aula": "Feridas e Queimaduras",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1688
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-2",
+      "titulo_aula": "Feridas e Queimaduras",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1689
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-3",
+      "titulo_aula": "Feridas e Queimaduras",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1690
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1780067013432-7",
+      "titulo_aula": "Feridas e Queimaduras",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5160
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1780067013432-8",
+      "titulo_aula": "Feridas e Queimaduras",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5161
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1780067013432-9",
+      "titulo_aula": "Feridas e Queimaduras",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5162
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1515
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1777103277533-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 872
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1777103277533-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 873
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1777103277533-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 874
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712270872-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1610
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712270872-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1611
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712270872-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1612
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712270872-9",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1613
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1614
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1615
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1616
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1617
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1618
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1619
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1620
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1621
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1622
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-9",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1623
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1779563986606-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 3685
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1779564031957-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 3738
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1780066977710-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5138
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1780066977710-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5139
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1780066977710-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5140
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1780066977710-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5141
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-4",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 672
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-5",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 673
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-6",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 674
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-2",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1576
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-3",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1577
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-4",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1578
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-0",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1624
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-1",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1625
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-2",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1626
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-3",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1627
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-4",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1628
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-5",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1629
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-6",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1630
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-7",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1631
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-0",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1632
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-1",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1633
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-2",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1634
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-3",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1635
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-4",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1636
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-5",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1637
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-6",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1638
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-7",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1639
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-8",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1640
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1780066977710-8",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5142
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1780066977710-9",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5143
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-instalacao-e-manejo-de-sondas-1776056526805-9",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 493
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-instalacao-e-manejo-de-sondas-1776056578580-5",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 535
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-instalacao-e-manejo-de-sondas-1776056578580-6",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 536
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-instalacao-e-manejo-de-sondas-1776056578580-7",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 537
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-instalacao-e-manejo-de-sondas-1776056591416-3",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 541
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-instalacao-e-manejo-de-sondas-1776056591416-4",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 542
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-instalacao-e-manejo-de-sondas-1778712135178-6",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1531
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-instalacao-e-manejo-de-sondas-1778712135178-7",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1532
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-instalacao-e-manejo-de-sondas-1778712135178-8",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1533
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-instalacao-e-manejo-de-sondas-1778712135178-9",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1534
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-instalacao-e-manejo-de-sondas-1778712147345-0",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1535
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-instalacao-e-manejo-de-sondas-1778712147345-1",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1536
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1778712203076-8",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1573
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1778712220716-0",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1574
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1778712220716-1",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1575
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780066938846-8",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5128
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778712165781-9",
+      "titulo_aula": "Mobilização e Posicionamento do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1554
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778712184780-0",
+      "titulo_aula": "Mobilização e Posicionamento do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1555
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778712184780-1",
+      "titulo_aula": "Mobilização e Posicionamento do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1556
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nocoes-de-anatomia-1778712122855-1",
+      "titulo_aula": "Noções de Anatomia",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1516
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nocoes-de-fisiologia-1780066909125-0",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5115
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nocoes-de-fisiologia-1780066992037-2",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5144
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nutricao-aplicada-a-enfermagem-1780066961947-2",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5129
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nutricao-aplicada-a-enfermagem-1780066961947-3",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5130
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778712315153-2",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1643
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778712315153-3",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1644
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1780066992037-7",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5148
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778712315153-8",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1649
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778712325916-0",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1650
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-2",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1537
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-3",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1538
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-4",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1539
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-5",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1540
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-6",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1541
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-7",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1542
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-8",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1543
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-9",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1544
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-7",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1562
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-8",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1563
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-9",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1564
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-0",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1565
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-1",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1566
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-2",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1567
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-3",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1568
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-4",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1569
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-5",
+      "titulo_aula": "Processamento de Artigos e Produtos de Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1570
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-6",
+      "titulo_aula": "Processamento de Artigos e Produtos de Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1571
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-7",
+      "titulo_aula": "Processamento de Artigos e Produtos de Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1572
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1519
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1520
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1780066909125-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5116
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1780066909125-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5117
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1605
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-2",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1606
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-3",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1607
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1608
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-5",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1609
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1778712437306-8",
+      "titulo_aula": "Protocolos e Diretrizes do Ministério da Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1722
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1778712437306-9",
+      "titulo_aula": "Protocolos e Diretrizes do Ministério da Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1723
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067036141-9",
+      "titulo_aula": "Protocolos e Diretrizes do Ministério da Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5180
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-0",
+      "titulo_aula": "Protocolos e Diretrizes do Ministério da Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5181
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-1",
+      "titulo_aula": "Protocolos e Diretrizes do Ministério da Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5182
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778712165781-3",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1548
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1780066938846-2",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5126
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1780066992037-8",
+      "titulo_aula": "Questões Mescladas e Outras Doenças Agudas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5149
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-3",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1700
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-4",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1701
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-5",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1702
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-6",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1703
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-7",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1704
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-0",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1705
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-1",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1706
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-2",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1707
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-3",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1708
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-4",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1709
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-5",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1710
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1780067024707-3",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5166
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1780067024707-4",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5167
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1780067024707-5",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5168
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1777104335102-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1424
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1777104389226-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1469
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1778712437306-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1714
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1778712437306-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1715
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1778712437306-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1716
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1778712437306-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1717
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1778712437306-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1718
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067024707-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5169
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067024707-8",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5170
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067024707-9",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5171
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5172
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5173
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5174
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5175
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5176
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5177
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-6",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1711
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-7",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1712
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-8",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1713
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-homem-1780067036141-6",
+      "titulo_aula": "Saúde do Homem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5178
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-5",
+      "titulo_aula": "Saúde do Idoso",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1719
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-6",
+      "titulo_aula": "Saúde do Idoso",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1720
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-7",
+      "titulo_aula": "Saúde do Idoso",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1721
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1780067036141-7",
+      "titulo_aula": "Saúde do Idoso",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5179
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-mental-1778712418722-2",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1699
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-mental-1780067024707-2",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5165
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1777102802022-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 684
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-5",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1579
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1580
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1581
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-8",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1582
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-9",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1583
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712242196-0",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1584
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-semiologia-em-enfermagem-1780066961947-5",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5131
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-teorias-em-enfermagem-1778712122855-2",
+      "titulo_aula": "Teorias em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1517
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-teorias-em-enfermagem-1778712122855-3",
+      "titulo_aula": "Teorias em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1518
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-2",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1670
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-3",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1671
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-4",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1672
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-5",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1673
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-6",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1674
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-7",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1675
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-8",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1676
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-0",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1677
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-1",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1678
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-2",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1679
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-3",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1680
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-4",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1681
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-5",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1682
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-6",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1683
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-7",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1684
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-8",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1685
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-9",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1686
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712409051-0",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1687
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-3",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5156
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-4",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5157
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-5",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5158
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-6",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5159
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712108887-9",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1514
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1525
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1526
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1527
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1528
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1529
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1530
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778969752567-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 2260
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1779343856589-8",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 2444
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1779344237445-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 2660
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1779344237445-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 2661
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1780066924385-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5123
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1780066924385-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5124
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1780066924385-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5125
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1776056418941-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 445
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1778712108887-2",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1507
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1778712108887-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1508
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1778712108887-4",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1509
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1778712108887-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1510
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1778712108887-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1511
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1778968997293-4",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 2107
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-vias-de-administracao-1780066924385-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5122
+    },
+    {
+      "modulo_slug": "idecan-geral-calculo-de-administracao-de-medicamentos-e-infusoes-1776056309743-8",
+      "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+      "modulo_nome": "Geral",
+      "banca": "IDECAN",
+      "avant_codigo": 339
+    },
+    {
+      "modulo_slug": "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7",
+      "titulo_aula": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "modulo_nome": "Geral",
+      "banca": "IDECAN",
+      "avant_codigo": 374
+    },
+    {
+      "modulo_slug": "idecan-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103496829-8",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "IDECAN",
+      "avant_codigo": 918
+    }
+  ]
+}

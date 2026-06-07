@@ -42,7 +42,7 @@ type SimuladosListClientProps = {
 };
 
 export function SimuladosListClient({ openSession, recentSessions }: SimuladosListClientProps) {
-  const { pwaVisible } = useDashboardBottomInset('default');
+  const { pageBottomPadding } = useDashboardBottomInset('default');
   const isEmpty = !openSession && recentSessions.length === 0;
 
   return (
@@ -54,9 +54,7 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
       <div
         className={cn(
           'mx-auto max-w-4xl px-4 py-6 sm:px-6 md:px-10 md:pt-8 md:pb-8',
-          pwaVisible
-            ? 'max-md:pb-[calc(5rem+6rem+env(safe-area-inset-bottom,0px)+1.25rem)]'
-            : 'max-md:pb-[calc(5rem+env(safe-area-inset-bottom,0px)+1.25rem)]',
+          pageBottomPadding,
         )}
       >
         {isEmpty ? (

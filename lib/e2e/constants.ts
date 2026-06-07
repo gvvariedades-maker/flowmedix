@@ -21,6 +21,8 @@ export const E2E_ESTUDAR_SLUG_1 = 'questao-e2e-estudar-1';
 export const E2E_ESTUDAR_SLUG_2 = 'questao-e2e-estudar-2';
 export const E2E_ESTUDAR_BANCA = 'FGV';
 export const E2E_ESTUDAR_TITULO_AULA = 'Urgências e Emergências E2E';
+/** 13º assunto do seed paginado — único card na vitrine `page=2` (12/página). */
+export const E2E_ESTUDAR_TITULO_AULA_PAGE2 = 'Assunto E2E paginação 13';
 
 export const E2E_ESTUDAR_SLUGS = [E2E_ESTUDAR_SLUG_1, E2E_ESTUDAR_SLUG_2] as const;
 

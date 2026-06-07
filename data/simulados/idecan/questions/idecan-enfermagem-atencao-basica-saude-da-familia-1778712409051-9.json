@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "IDECAN",
+    "orgao": "(Enfermagem)",
+    "prova": "Tec (UFOB)",
+    "topico": "Enfermagem",
+    "subtopico": "Atenção Básica / Saúde da Família"
+  },
+  "question_data": {
+    "instruction": "Lucas é técnico de enfermagem em uma Unidade Básica de Saúde (UBS) e percebe que muitos pacientes com doenças crônicas, como hipertensão e diabetes, só procuram atendimento quando a doença já está avançada. Durante uma capacitação, ele aprende que a Atenção Primária à Saúde (APS) desempenha um papel essencial na organização do cuidado, garantindo acompanhamento contínuo e prevenindo complicações.\n\nA partir desse contexto, identifique a alternativa que descreve corretamente o papel da Atenção Primária à Saúde no cuidado das doenças crônicas.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Atua apenas no atendimento de urgências e emergências, sem responsabilidade pelo acompanhamento contínuo dos pacientes.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Tem como principal função encaminhar todos os pacientes para atendimento especializado, sem necessidade de acompanhamento na UBS.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Deve garantir a promoção da saúde, a prevenção de agravos, o diagnóstico precoce e o manejo adequado das doenças crônicas.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Atua apenas no fornecimento de medicamentos para controle das doenças crônicas, sem envolvimento em ações de promoção da saúde.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Possui um papel secundário no sistema de saúde, sendo substituída pelos hospitais na gestão dos pacientes com doenças crônicas.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família"
+      },
+      "items": [
+        {
+          "id": "1",
+          "label": "Porta de Entrada",
+          "detail": "Acesso preferencial e primeiro contato do usuário no sistema.",
+          "icon": "Globe2"
+        },
+        {
+          "id": "2",
+          "label": "Longitudinalidade",
+          "detail": "Acompanhamento contínuo do paciente ao longo do tempo.",
+          "icon": "BookOpen"
+        },
+        {
+          "id": "3",
+          "label": "Coordenação",
+          "detail": "Integração do cuidado com outros níveis de complexidade.",
+          "icon": "Layers"
+        },
+        {
+          "id": "4",
+          "label": "Integralidade",
+          "detail": "Visão holística do indivíduo e suas necessidades de saúde.",
+          "icon": "Users"
+        }
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família"
+      },
+      "content": "A APS É O CENTRO ORDENADOR DO CUIDADO E O ELO DE LIGAÇÃO ENTRE O USUÁRIO E A REDE DE ATENÇÃO À SAÚDE.",
+      "footer_rule": "Foco na longitudinalidade e na resolutividade."
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família"
+      },
+      "steps": [
+        "Acolhimento e escuta qualificada do usuário",
+        "Identificação de fatores de risco e diagnóstico precoce",
+        "Elaboração do Plano de Cuidado Individualizado",
+        "Monitoramento contínuo e busca ativa de faltosos",
+        "Educação em saúde para autocuidado"
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "danger_zone",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família"
+      },
+      "content": "Erros comuns sobre a APS",
+      "items": [
+        {
+          "id": "1",
+          "label": "Ponto 1",
+          "detail": "Achar que APS serve apenas para curativos e vacinas"
+        },
+        {
+          "id": "2",
+          "label": "Ponto 2",
+          "detail": "Acreditar que a APS é um nível de baixa complexidade técnica"
+        },
+        {
+          "id": "3",
+          "label": "Ponto 3",
+          "detail": "Confundir APS com atendimento exclusivo de urgência"
+        }
+      ],
+      "footer_rule": "A APS é de alta densidade tecnológica de relações e baixa densidade tecnológica de equipamentos."
+    }
+  ],
+  "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712409051-9"
+}

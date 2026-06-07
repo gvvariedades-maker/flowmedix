@@ -28,29 +28,24 @@ type EnhancedPreviewContentProps = {
 function EnhancedPreviewContent({ question }: EnhancedPreviewContentProps) {
   const [viewMode, setViewMode] = useState<ViewMode>('desktop');
   const [previewState, setPreviewState] = useState<PreviewState>('question');
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [autoPlay, setAutoPlay] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const previewRef = useRef<HTMLDivElement>(null);
 
-  // Auto-play simulation
+  // Auto-play simulation (controles externos — fluxo principal é pelo player)
   useEffect(() => {
     if (!autoPlay) return;
 
     const timer = setTimeout(() => {
-      if (previewState === 'question' && !selectedOption) {
-        const firstOption = question.question_data.options[0]?.id;
-        if (firstOption) {
-          setSelectedOption(firstOption);
-          setTimeout(() => setPreviewState('answer'), 1000);
-        }
+      if (previewState === 'question') {
+        setPreviewState('answer');
       } else if (previewState === 'answer') {
-        setTimeout(() => setPreviewState('study'), 1500);
+        setPreviewState('study');
       }
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, [autoPlay, previewState, selectedOption, question]);
+  }, [autoPlay, previewState]);
 
   useEffect(() => {
     const root = previewRef.current;
@@ -86,14 +81,13 @@ function EnhancedPreviewContent({ question }: EnhancedPreviewContentProps) {
 
   const handleReset = () => {
     setPreviewState('question');
-    setSelectedOption(null);
     setCurrentSlide(0);
   };
 
   return (
     <div
       ref={previewRef}
-      className="relative flex h-full min-h-0 flex-col overflow-hidden rounded-xl border-2 border-slate-200 bg-white"
+      className="relative flex h-full min-h-0 w-full flex-col overflow-hidden bg-[#0d1117]"
     >
       <PreviewControls
         viewMode={viewMode}
@@ -102,16 +96,12 @@ function EnhancedPreviewContent({ question }: EnhancedPreviewContentProps) {
         totalSlides={totalSlides}
         autoPlay={autoPlay}
         onViewModeChange={setViewMode}
-        onPreviewStateChange={(state) => {
-          setPreviewState(state);
-          if (state === 'question') {
-            setSelectedOption(null);
-          }
-        }}
+        onPreviewStateChange={setPreviewState}
         onSlideChange={setCurrentSlide}
         onAutoPlayToggle={() => setAutoPlay(!autoPlay)}
         onReset={handleReset}
         onFullscreenToggle={() => {}}
+        fullscreenTargetRef={previewRef}
         questionMeta={{
           banca: question.meta.banca,
           topico: question.meta.topico,
@@ -120,50 +110,28 @@ function EnhancedPreviewContent({ question }: EnhancedPreviewContentProps) {
 
       <div
         data-testid="preview-scroll-fallback"
-        className={`min-h-0 flex-1 bg-slate-100 p-4 ${
+        className={
           viewMode === 'mobile'
-            ? 'flex items-center justify-center overflow-auto'
-            : 'flex flex-col overflow-y-auto overflow-x-hidden'
-        }`}
+            ? 'flex min-h-0 flex-1 items-center justify-center overflow-auto bg-slate-900/40 p-3'
+            : 'flex min-h-0 h-0 flex-1 flex-col overflow-hidden bg-[#0d1117]'
+        }
       >
         <div
-          className={`flex flex-col rounded-xl shadow-2xl transition-all duration-300 ${
+          className={
             viewMode === 'mobile'
-              ? 'h-[667px] max-h-full w-[375px] shrink-0 overflow-hidden'
-              : 'mx-auto h-full w-full max-w-6xl min-h-0 flex-1 overflow-hidden'
-          }`}
+              ? 'h-[min(780px,100%)] w-[min(390px,100%)] shrink-0 overflow-hidden rounded-[2rem] shadow-2xl'
+              : 'flex h-full min-h-0 w-full flex-1 flex-col overflow-hidden'
+          }
         >
-          <div className="flex h-full min-h-0 flex-1 flex-col" key={JSON.stringify(question)}>
-            <AvantLessonPlayer dados={question} mode="preview" />
+          <div className="flex h-full min-h-0 flex-1 flex-col" key={previewQuestionKey(question)}>
+            <AvantLessonPlayer
+              dados={question}
+              mode="preview"
+              previewImmersive={viewMode === 'desktop'}
+            />
           </div>
         </div>
       </div>
-
-      {previewState === 'question' && (
-        <div className="shrink-0 border-t border-slate-200 bg-slate-50 px-4 py-2">
-          <div className="flex flex-wrap items-center gap-2 text-xs text-slate-600">
-            <span className="font-medium">Simular Resposta:</span>
-            {question.question_data.options.map((option) => (
-              <button
-                key={option.id}
-                type="button"
-                onClick={() => {
-                  setSelectedOption(option.id);
-                  setTimeout(() => setPreviewState('answer'), 500);
-                }}
-                className={`rounded px-3 py-1 text-xs font-medium transition-colors ${
-                  selectedOption === option.id
-                    ? 'bg-indigo-600 text-white'
-                    : 'border border-slate-300 bg-white text-slate-700 hover:bg-slate-100'
-                }`}
-              >
-                {option.id}
-                {option.is_correct && ' ✓'}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 }

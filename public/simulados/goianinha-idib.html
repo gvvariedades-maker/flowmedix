@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Simulado Gratuito IDIB · Técnico de Enfermagem Goianinha RN</title>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.avant.enf.br/simulados/goianinha-idib.html">
+<meta property="og:title" content="Simulado Gratuito IDIB · Técnico de Enfermagem Goianinha RN">
+<meta property="og:description" content="10 questões reais IDIB · resultado na hora · 7 dias AVANT Pro grátis ao finalizar. Goianinha RN — prova 07/06/2026.">
+<meta property="og:image" content="https://www.avant.enf.br/og-avant-goianinha.jpg?v=2">
+<meta property="og:image:secure_url" content="https://www.avant.enf.br/og-avant-goianinha.jpg?v=2">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="AVANT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Simulado Gratuito IDIB · Goianinha RN">
+<meta name="twitter:description" content="10 questões reais IDIB · 7 dias AVANT Pro grátis ao finalizar. Goianinha RN.">
+<meta name="twitter:image" content="https://www.avant.enf.br/og-avant-goianinha.jpg?v=2">
+<meta name="description" content="Simulado gratuito IDIB Goianinha RN — 10 questões, diagnóstico na hora e 7 dias AVANT Pro ao finalizar.">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html, body { width:100%; height:100%; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif; background:#0c0c16; color:#f0f0ff; overflow:hidden; }
+:root {
+  --bg:#0c0c16; --surface:#161622; --surface2:#1e1e2e;
+  --cyan:#00d4cf; --cyan-dim:rgba(0,212,207,0.12);
+  --red:#ff4d6a; --red-bg:#1f0a0e;
+  --green:#00d48e; --green-bg:#0a1f14;
+  --text:#f0f0ff; --text2:#8888aa;
+  --border:rgba(255,255,255,0.07); --radius:16px;
+}
+#app { width:100%; height:100%; overflow:hidden; position:relative; }
+.screen { position:absolute; top:0; left:0; width:100%; height:100%; overflow-y:auto; display:none; -webkit-overflow-scrolling:touch; }
+.screen.active { display:block; }
+
+.topbar { position:sticky; top:0; z-index:50; background:#0c0c16; padding:14px 16px 10px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border); }
+.topbar-logo { display:flex; align-items:center; gap:10px; }
+.logo-icon { width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg,#00d4cf,#0066ff); display:flex; align-items:center; justify-content:center; font-size:18px; }
+.logo-text { font-size:20px; font-weight:800; color:#fff; letter-spacing:1px; }
+.topbar-right { display:flex; align-items:center; gap:10px; }
+.icon-btn { width:36px; height:36px; border-radius:50%; border:none; cursor:pointer; background:var(--surface); color:var(--text2); display:flex; align-items:center; justify-content:center; font-size:15px; }
+.avatar { width:36px; height:36px; border-radius:50%; background:#1a4a7a; color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; }
+
+.bottomnav { position:fixed; bottom:0; left:0; width:100%; background:#0f0f1a; border-top:1px solid var(--border); padding:10px 16px 20px; display:flex; align-items:center; justify-content:space-between; z-index:50; }
+.nav-brand { display:flex; align-items:center; gap:8px; }
+.nav-brand-icon { width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg,#00d4cf,#0066ff); display:flex; align-items:center; justify-content:center; font-size:14px; }
+.nav-brand-txt { font-size:14px; font-weight:800; color:#fff; letter-spacing:1px; }
+.nav-cta { padding:7px 16px; border-radius:20px; background:var(--cyan); color:#0c0c16; font-size:13px; font-weight:800; cursor:pointer; border:none; text-decoration:none; display:inline-block; }
+
+.btn-primary { width:100%; padding:16px; border:none; border-radius:14px; cursor:pointer; background:var(--cyan); color:#0c0c16; font-size:16px; font-weight:800; }
+.btn-secondary { width:100%; padding:14px; border-radius:14px; cursor:pointer; background:var(--surface); color:var(--text); font-size:15px; font-weight:600; border:1px solid var(--border); }
+.btn-outline { width:100%; padding:14px; border-radius:14px; cursor:pointer; background:transparent; color:var(--cyan); font-size:15px; font-weight:600; border:2px solid var(--cyan); }
+.btn-disabled { opacity:0.35; cursor:not-allowed; }
+
+.content { padding:16px 16px 100px; }
+.intro-badge { display:inline-block; padding:6px 16px; border-radius:20px; background:rgba(0,212,207,0.1); border:1px solid rgba(0,212,207,0.3); color:var(--cyan); font-size:12px; font-weight:700; letter-spacing:1px; margin-bottom:16px; }
+.intro-title { font-size:30px; font-weight:800; line-height:1.2; margin-bottom:8px; }
+.intro-sub { font-size:15px; color:var(--text2); line-height:1.5; }
+.intro-card { background:var(--surface); border-radius:var(--radius); padding:20px; margin:24px 0; border:1px solid var(--border); }
+.intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px; }
+.intro-stat { text-align:center; }
+.intro-stat-num { font-size:34px; font-weight:900; color:var(--cyan); }
+.intro-stat-lbl { font-size:11px; color:var(--text2); margin-top:2px; letter-spacing:1px; }
+.tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+.tag { padding:5px 12px; border-radius:20px; font-size:12px; font-weight:600; background:var(--surface2); color:var(--text2); border:1px solid var(--border); }
+.tag-c { background:rgba(0,212,207,0.1); color:var(--cyan); border-color:rgba(0,212,207,0.3); }
+.rn-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(100,180,255,0.1); border:1px solid rgba(100,180,255,0.3); color:#64b4ff; padding:6px 14px; border-radius:20px; font-size:12px; font-weight:700; margin-bottom:16px; }
+
+.q-prog-bar { height:3px; background:var(--border); margin:0 16px 4px; border-radius:2px; overflow:hidden; }
+.q-prog-fill { height:100%; background:var(--cyan); transition:width 0.3s ease; }
+.q-meta { display:flex; justify-content:space-between; align-items:center; padding:8px 16px 12px; }
+.q-counter-lbl { font-size:14px; color:var(--text2); }
+.q-card { background:var(--surface); border-radius:var(--radius); padding:20px; margin:0 16px 14px; }
+.q-fonte { font-size:11px; color:var(--cyan); font-weight:700; letter-spacing:0.8px; margin-bottom:4px; text-transform:uppercase; }
+.q-eixo { font-size:15px; font-weight:700; color:var(--text); margin-bottom:12px; }
+.q-divider { height:1px; background:var(--border); margin-bottom:16px; }
+.q-texto { font-size:15px; line-height:1.65; color:var(--text); }
+.q-opcoes { padding:0 16px 8px; }
+.q-opcao { display:flex; align-items:flex-start; gap:12px; padding:14px 16px; border-radius:12px; margin-bottom:10px; border:1.5px solid var(--border); cursor:pointer; background:var(--surface); transition:border-color 0.15s, background 0.15s; }
+.q-opcao.selected { border-color:var(--cyan); background:var(--cyan-dim); }
+.q-opcao-letra { font-size:15px; font-weight:700; color:var(--cyan); min-width:22px; }
+.q-opcao-txt { font-size:14px; line-height:1.55; color:var(--text); }
+.q-actions { position:fixed; bottom:0; left:0; width:100%; padding:10px 16px 24px; background:var(--bg); border-top:1px solid var(--border); display:flex; flex-direction:column; gap:8px; z-index:40; }
+
+.res-header { padding:20px 16px 8px; }
+.res-title { font-size:26px; font-weight:800; }
+.res-sub { font-size:13px; color:var(--text2); margin-top:4px; }
+.res-card { margin:14px 16px; background:var(--surface); border-radius:var(--radius); padding:28px 20px 20px; border:1px solid var(--border); }
+.res-circle-wrap { display:flex; justify-content:center; margin-bottom:24px; }
+.res-circle { position:relative; width:180px; height:180px; }
+.res-circle svg { transform:rotate(-90deg); }
+.res-pct-label { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; }
+.res-pct-num { font-size:40px; font-weight:900; }
+.res-pct-txt { font-size:11px; color:var(--text2); letter-spacing:1.5px; margin-top:2px; }
+.res-stats { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.res-stat { text-align:center; }
+.res-stat-num { font-size:36px; font-weight:900; }
+.res-stat-lbl { font-size:11px; color:var(--text2); letter-spacing:1px; margin-top:3px; }
+.s-green { color:var(--green); } .s-red { color:var(--red); } .s-cyan { color:var(--cyan); } .s-white { color:var(--text); }
+.res-stat-full { text-align:center; margin-top:16px; }
+.diag-section { margin:0 16px 16px; }
+.diag-section-title { font-size:11px; font-weight:700; color:var(--text2); letter-spacing:2px; margin-bottom:14px; }
+.diag-item { margin-bottom:12px; }
+.diag-row { display:flex; justify-content:space-between; margin-bottom:5px; }
+.diag-eixo-nome { font-size:13px; color:var(--text); }
+.diag-eixo-cnt { font-size:13px; font-weight:700; color:var(--red); }
+.diag-bar-bg { height:6px; background:var(--border); border-radius:3px; overflow:hidden; }
+.diag-bar { height:100%; border-radius:3px; background:var(--red); }
+.diag-note { margin-top:12px; font-size:12px; color:var(--text2); text-align:center; padding:10px 12px; background:rgba(255,77,106,0.07); border-radius:10px; border:1px solid rgba(255,77,106,0.15); line-height:1.5; }
+.res-actions { padding:0 16px 16px; display:flex; flex-direction:column; gap:10px; }
+
+.rev-header { padding:20px 16px 8px; display:flex; justify-content:space-between; align-items:center; }
+.rev-title-lbl { font-size:12px; font-weight:700; color:var(--text2); letter-spacing:2px; }
+.rev-count-lbl { font-size:13px; color:var(--text2); }
+.rev-filters { display:flex; gap:8px; padding:0 16px 14px; }
+.rev-filter { padding:7px 16px; border-radius:20px; font-size:13px; font-weight:600; cursor:pointer; border:1.5px solid var(--border); background:var(--surface); color:var(--text2); }
+.rev-filter.active { background:var(--surface2); color:var(--text); border-color:var(--cyan); }
+.rev-item { margin:0 16px 12px; border-radius:var(--radius); padding:16px; border:1.5px solid transparent; }
+.rev-item.errou { background:var(--red-bg); border-color:rgba(255,77,106,0.2); }
+.rev-item.acertou { background:var(--green-bg); border-color:rgba(0,212,142,0.2); }
+.rev-item-top { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.rev-status-icon { font-size:18px; }
+.rev-num { font-size:13px; color:var(--text2); }
+.rev-banca { padding:2px 10px; border-radius:10px; font-size:11px; font-weight:700; background:rgba(0,212,207,0.12); color:var(--cyan); border:1px solid rgba(0,212,207,0.25); }
+.rev-status-txt { font-size:13px; font-weight:700; margin-left:auto; }
+.errou .rev-status-txt { color:var(--red); }
+.acertou .rev-status-txt { color:var(--green); }
+.rev-eixo { font-size:14px; font-weight:600; color:var(--text); margin-bottom:6px; }
+.rev-respostas { font-size:13px; color:var(--text2); margin-bottom:3px; }
+.rev-respostas span { color:var(--text); font-weight:700; }
+.rev-link { font-size:14px; color:var(--cyan); font-weight:600; cursor:pointer; display:flex; align-items:center; gap:4px; margin-top:10px; }
+
+#modal-neuro { display:none; position:fixed; inset:0; z-index:200; background:rgba(0,0,0,0.85); align-items:flex-end; justify-content:center; }
+#modal-neuro.open { display:flex; }
+.modal-sheet { background:var(--surface); border-radius:24px 24px 0 0; width:100%; max-width:480px; padding:20px 20px 40px; }
+.modal-handle { width:40px; height:4px; background:var(--border); border-radius:2px; margin:0 auto 20px; }
+.modal-title { font-size:18px; font-weight:800; margin-bottom:4px; }
+.modal-sub { font-size:13px; color:var(--text2); margin-bottom:16px; }
+.neuro-preview { background:var(--surface2); border-radius:12px; padding:16px; margin-bottom:16px; position:relative; overflow:hidden; min-height:110px; }
+.neuro-blur { filter:blur(5px); opacity:0.5; pointer-events:none; }
+.neuro-locked { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px; }
+.lock-icon { font-size:28px; }
+.lock-txt { font-size:13px; color:var(--text2); text-align:center; line-height:1.4; }
+.modal-close-btn { width:100%; padding:13px; border:none; border-radius:12px; cursor:pointer; background:var(--surface2); color:var(--text2); font-size:14px; margin-top:8px; }
+
+.avant-wrap { margin:24px 16px; background:var(--surface); border-radius:var(--radius); padding:28px 20px; border:1px solid rgba(0,212,207,0.2); }
+.avant-logo { font-size:36px; font-weight:900; color:var(--cyan); letter-spacing:2px; margin-bottom:8px; }
+.avant-badge-lbl { display:inline-block; padding:4px 12px; border-radius:20px; background:rgba(0,212,207,0.1); color:var(--cyan); font-size:11px; font-weight:700; border:1px solid rgba(0,212,207,0.3); margin-bottom:14px; letter-spacing:1px; }
+.avant-headline { font-size:22px; font-weight:800; line-height:1.25; margin-bottom:10px; }
+.avant-sub { font-size:14px; color:var(--text2); line-height:1.6; margin-bottom:20px; }
+.avant-features { margin-bottom:22px; }
+.avant-feat { display:flex; align-items:flex-start; gap:12px; padding:10px 0; border-bottom:1px solid var(--border); }
+.avant-feat:last-child { border-bottom:none; }
+.avant-feat-icon { font-size:20px; margin-top:1px; }
+.avant-feat-txt { font-size:14px; line-height:1.4; }
+.coupon-card { margin:0 16px 16px; padding:18px 20px; border-radius:var(--radius); background:rgba(0,212,142,0.08); border:1px solid rgba(0,212,142,0.35); }
+.coupon-title { font-size:15px; font-weight:800; color:var(--green); margin-bottom:6px; }
+.coupon-sub { font-size:13px; color:var(--text2); line-height:1.5; }
+.nav-cta-invite { background:var(--green); color:#0a1f14; }
+</style>
+</head>
+<body>
+<div id="app">
+
+<!-- INTRO -->
+<div class="screen active" id="screen-intro">
+  <div class="topbar">
+    <div class="topbar-logo">
+      <div class="logo-icon">⚡</div>
+      <div class="logo-text">AVANT</div>
+    </div>
+    <div class="topbar-right">
+      <div class="icon-btn">🔍</div>
+      <div class="avatar">TE</div>
+    </div>
+  </div>
+  <div class="content">
+    <div style="margin-bottom:6px;">
+      <div class="rn-badge">📍 Goianinha · RN · 07/06/2026</div>
+    </div>
+    <div class="intro-badge">DIAGNÓSTICO AVANT · IDIB</div>
+    <div class="intro-title">Simulado Técnico<br>de Enfermagem</div>
+    <div class="intro-sub">Prefeitura de Goianinha RN<br>Questões oficiais IDIB verificadas</div>
+    <div class="intro-card">
+      <div class="intro-grid">
+        <div class="intro-stat"><div class="intro-stat-num">10</div><div class="intro-stat-lbl">QUESTÕES</div></div>
+        <div class="intro-stat"><div class="intro-stat-num">~15</div><div class="intro-stat-lbl">MINUTOS</div></div>
+        <div class="intro-stat"><div class="intro-stat-num">6</div><div class="intro-stat-lbl">EIXOS</div></div>
+        <div class="intro-stat"><div class="intro-stat-num">100%</div><div class="intro-stat-lbl">GRATUITO</div></div>
+      </div>
+      <div class="tags">
+        <div class="tag tag-c">IDIB</div>
+        <div class="tag">Fisiologia</div>
+        <div class="tag">SAE</div>
+        <div class="tag">Cálculo</div>
+        <div class="tag">Medicamentos</div>
+        <div class="tag">Sinais Vitais</div>
+        <div class="tag">Teorias</div>
+      </div>
+    </div>
+    <div style="background:rgba(100,180,255,0.07); border:1px solid rgba(100,180,255,0.2); border-radius:12px; padding:14px 16px; margin-bottom:14px;">
+      <div id="intro-urgency-title" style="font-size:12px; font-weight:700; color:#ff4d6a; letter-spacing:1px; margin-bottom:4px;">🚨 PROVA EM 07/06/2026</div>
+      <div style="font-size:13px; color:var(--text2); line-height:1.5;">Este simulado testa os eixos mais cobrados pela IDIB — cálculo, sinais vitais e SAE. Descubra seus pontos fracos agora.</div>
+    </div>
+    <div class="coupon-card" style="margin:0 0 20px;">
+      <div class="coupon-title">🎁 Ao finalizar: 7 dias de AVANT Pro grátis</div>
+      <div class="coupon-sub">Estudo reverso completo com NeuroSlides nos eixos que você errou.</div>
+    </div>
+    <button class="btn-primary" onclick="iniciarSimulado()">⚡ Iniciar Diagnóstico</button>
+    <div style="height:12px;"></div>
+    <div style="font-size:12px; color:var(--text2); text-align:center;">Ao finalizar, resgate seu cupom e revise com estudo reverso.</div>
+  </div>
+  <div class="bottomnav">
+    <div class="nav-brand">
+      <div class="nav-brand-icon">⚡</div>
+      <div class="nav-brand-txt">AVANT</div>
+    </div>
+    <a href="https://www.avant.enf.br/lp/goianinha" class="nav-cta nav-cta-invite" data-avant-invite-cta>7 dias Pro grátis →</a>
+  </div>
+</div>
+
+<!-- QUESTÃO -->
+<div class="screen" id="screen-question">
+  <div class="topbar">
+    <div class="topbar-logo">
+      <div class="logo-icon">⚡</div>
+      <div class="logo-text">AVANT</div>
+    </div>
+    <div class="topbar-right">
+      <div id="q-timer-lbl" style="font-size:14px; font-weight:700; color:var(--cyan);">0:00</div>
+    </div>
+  </div>
+  <div class="q-prog-bar"><div class="q-prog-fill" id="q-prog-fill"></div></div>
+  <div class="q-meta">
+    <div class="q-counter-lbl" id="q-counter-lbl"></div>
+  </div>
+  <div id="q-card-area" style="padding-bottom:140px;"></div>
+  <div class="q-actions">
+    <button class="btn-secondary" id="btn-finalizar" style="display:none;" onclick="finalizarSimulado()">Finalizar simulado</button>
+    <button class="btn-primary btn-disabled" id="btn-confirmar" onclick="confirmarResposta()">Confirmar resposta</button>
+  </div>
+</div>
+
+<!-- RESULTADO -->
+<div class="screen" id="screen-result">
+  <div class="topbar">
+    <div class="topbar-logo">
+      <div class="logo-icon">⚡</div>
+      <div class="logo-text">AVANT</div>
+    </div>
+    <div class="topbar-right">
+      <div class="icon-btn">🔍</div>
+      <div class="avatar">TE</div>
+    </div>
+  </div>
+  <div style="padding:10px 16px 4px;">
+    <div style="font-size:13px; color:var(--text2); cursor:pointer;" onclick="showScreen('screen-intro')">← Simulados</div>
+  </div>
+  <div class="res-header">
+    <div class="res-title">Simulado concluído</div>
+    <div class="res-sub" id="res-sub"></div>
+  </div>
+  <div class="res-card">
+    <div class="res-circle-wrap">
+      <div class="res-circle">
+        <svg width="180" height="180" viewBox="0 0 180 180">
+          <circle cx="90" cy="90" r="70" fill="none" stroke="#1e1e2e" stroke-width="10"/>
+          <circle id="res-arc" cx="90" cy="90" r="70" fill="none" stroke="#00d4cf" stroke-width="10" stroke-linecap="round" stroke-dasharray="439.8" stroke-dashoffset="439.8"/>
+        </svg>
+        <div class="res-pct-label">
+          <div class="res-pct-num" id="res-pct-num">0%</div>
+          <div class="res-pct-txt">DE ACERTO</div>
+        </div>
+      </div>
+    </div>
+    <div class="res-stats">
+      <div class="res-stat"><div class="res-stat-num s-green" id="res-acertos">0</div><div class="res-stat-lbl">ACERTOS</div></div>
+      <div class="res-stat"><div class="res-stat-num s-red" id="res-erros">0</div><div class="res-stat-lbl">ERROS</div></div>
+      <div class="res-stat"><div class="res-stat-num s-white">10</div><div class="res-stat-lbl">RESPONDIDAS</div></div>
+      <div class="res-stat"><div class="res-stat-num s-cyan" id="res-tempo">0m</div><div class="res-stat-lbl">TEMPO TOTAL</div></div>
+    </div>
+    <div class="res-stat-full">
+      <div class="res-stat-num s-cyan" id="res-media">0s</div>
+      <div class="res-stat-lbl">MÉDIA/QUESTÃO</div>
+    </div>
+  </div>
+  <div class="diag-section">
+    <div class="diag-section-title">SEUS PONTOS FRACOS</div>
+    <div id="diag-items"></div>
+    <div class="diag-note" id="diag-note"></div>
+  </div>
+  <div class="coupon-card">
+    <div class="coupon-title">🎁 Você ganhou 7 dias de AVANT Pro</div>
+    <div class="coupon-sub">Revise seus erros com NeuroSlides, simulados ilimitados e plano diário — grátis por 7 dias.</div>
+  </div>
+  <div class="res-actions">
+    <a data-avant-invite-cta style="text-decoration:none; display:block;">
+      <button class="btn-primary" style="background:var(--green); color:#0a1f14;">⚡ Resgatar 7 dias Pro grátis</button>
+    </a>
+    <button class="btn-primary" onclick="showRevisao()">📋 Ver revisão por questão</button>
+    <button class="btn-outline" onclick="showAvant()">Saiba mais sobre o AVANT</button>
+  </div>
+  <div class="bottomnav">
+    <div class="nav-brand">
+      <div class="nav-brand-icon">⚡</div>
+      <div class="nav-brand-txt">AVANT</div>
+    </div>
+    <a href="https://www.avant.enf.br/lp/goianinha" class="nav-cta nav-cta-invite" data-avant-invite-cta>7 dias Pro →</a>
+  </div>
+</div>
+
+<!-- REVISÃO -->
+<div class="screen" id="screen-review">
+  <div class="topbar">
+    <div class="topbar-logo">
+      <div class="logo-icon">⚡</div>
+      <div class="logo-text">AVANT</div>
+    </div>
+    <div class="topbar-right">
+      <div class="icon-btn">🔍</div>
+      <div class="avatar">TE</div>
+    </div>
+  </div>
+  <div class="rev-header">
+    <div class="rev-title-lbl">REVISÃO POR QUESTÃO</div>
+    <div class="rev-count-lbl">10 itens</div>
+  </div>
+  <div class="rev-filters">
+    <div class="rev-filter active" id="f-todos" onclick="filtrar('todos')">Todos</div>
+    <div class="rev-filter" id="f-erros" onclick="filtrar('erros')">Só erros</div>
+    <div class="rev-filter" id="f-acertos" onclick="filtrar('acertos')">Só acertos</div>
+  </div>
+  <div id="rev-lista" style="padding-bottom:130px;"></div>
+  <div style="padding:0 16px 16px; display:flex; flex-direction:column; gap:10px;">
+    <a data-avant-invite-cta style="text-decoration:none; display:block;">
+      <button class="btn-primary" style="background:var(--green); color:#0a1f14;">🎁 Resgatar 7 dias Pro grátis</button>
+    </a>
+    <button class="btn-secondary" onclick="showScreen('screen-result')">← Voltar ao resultado</button>
+  </div>
+  <div class="bottomnav">
+    <div class="nav-brand">
+      <div class="nav-brand-icon">⚡</div>
+      <div class="nav-brand-txt">AVANT</div>
+    </div>
+    <a href="https://www.avant.enf.br/lp/goianinha" class="nav-cta nav-cta-invite" data-avant-invite-cta>7 dias Pro →</a>
+  </div>
+</div>
+
+<!-- AVANT CTA -->
+<div class="screen" id="screen-avant">
+  <div class="topbar">
+    <div class="topbar-logo">
+      <div class="logo-icon">⚡</div>
+      <div class="logo-text">AVANT</div>
+    </div>
+    <div class="topbar-right">
+      <div style="font-size:13px; color:var(--text2); cursor:pointer;" onclick="showScreen('screen-result')">← Voltar</div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="avant-wrap">
+      <div class="avant-logo">⚡ AVANT</div>
+      <div class="avant-badge-lbl">SIMULADO DIAGNÓSTICO · GOIANINHA RN</div>
+      <div class="avant-headline" id="avant-headline">A prova é amanhã. Use cada hora a seu favor.</div>
+      <div style="background:rgba(0,212,142,0.08); border:1px solid rgba(0,212,142,0.35); border-radius:12px; padding:14px 16px; margin-bottom:18px;">
+        <div style="font-size:13px; font-weight:800; color:var(--green); margin-bottom:4px;">🎁 Seu cupom: 7 dias AVANT Pro grátis</div>
+        <div style="font-size:13px; color:var(--text2); line-height:1.5;">NeuroSlides nos eixos que você errou, simulados ilimitados e plano de revisão.</div>
+      </div>
+      <div style="background:rgba(255,77,106,0.08); border:1px solid rgba(255,77,106,0.3); border-radius:12px; padding:14px 16px; margin-bottom:18px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <div style="font-size:11px; color:#ff4d6a; font-weight:700; letter-spacing:1px;">🚨 PROVA EM</div>
+          <div style="font-size:18px; font-weight:900; color:#fff; margin-top:2px;">07/06/2026</div>
+          <div style="font-size:12px; color:var(--text2); margin-top:2px;">Use bem cada hora que falta</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:42px; font-weight:900; color:#ff4d6a;" id="dias-restantes">1</div>
+          <div style="font-size:11px; color:var(--text2); letter-spacing:1px;" id="dias-restantes-lbl">DIA</div>
+        </div>
+      </div>
+      <div class="avant-features">
+        <div class="avant-feat"><div class="avant-feat-icon">🧠</div><div class="avant-feat-txt">NeuroSlides após cada questão: Mapa Mental, Regra de Ouro e Zona de Perigo</div></div>
+        <div class="avant-feat"><div class="avant-feat-icon">🎯</div><div class="avant-feat-txt">+5.000 questões reais de técnico de enfermagem — IDIB, IDECAN, VUNESP, IBFC e mais</div></div>
+        <div class="avant-feat"><div class="avant-feat-icon">📊</div><div class="avant-feat-txt">Diagnóstico imediato dos seus pontos fracos por eixo temático</div></div>
+        <div class="avant-feat"><div class="avant-feat-icon">📅</div><div class="avant-feat-txt">Revisão espaçada automática — plano diário adaptado ao seu desempenho</div></div>
+        <div class="avant-feat"><div class="avant-feat-icon">📱</div><div class="avant-feat-txt">100% no celular — estude no plantão, no ônibus, em qualquer lugar</div></div>
+      </div>
+      <a data-avant-invite-cta style="text-decoration:none; display:block; margin-bottom:10px;">
+        <button class="btn-primary" style="font-size:17px; padding:18px; background:var(--green); color:#0a1f14;">🎁 Resgatar 7 dias Pro grátis</button>
+      </a>
+      <a data-avant-lp-cta style="text-decoration:none; display:block;">
+        <button class="btn-outline">Conhecer planos AVANT →</button>
+      </a>
+    </div>
+    <div style="text-align:center; font-size:12px; color:var(--text2); padding-bottom:20px;">
+      Técnico de Enfermagem · Goianinha RN · IDIB
+    </div>
+  </div>
+</div>
+
+<!-- MODAL NEURO -->
+<div id="modal-neuro">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-title">Estudo Reverso</div>
+    <div class="modal-sub" id="modal-eixo"></div>
+    <div class="neuro-preview">
+      <div class="neuro-blur">
+        <div style="font-size:10px; color:var(--cyan); letter-spacing:1px; margin-bottom:6px;">NEURO SLIDE · AVANT</div>
+        <div style="font-size:20px; font-weight:900; color:var(--cyan); margin-bottom:8px;">CONCEITO-CHAVE</div>
+        <div style="height:7px; background:rgba(0,212,207,0.2); border-radius:4px; margin:6px 0;"></div>
+        <div style="height:7px; background:rgba(255,255,255,0.06); border-radius:4px; margin:4px 0; width:75%;"></div>
+        <div style="height:7px; background:rgba(255,255,255,0.06); border-radius:4px; margin:4px 0; width:60%;"></div>
+        <div style="height:7px; background:rgba(255,77,106,0.2); border-radius:4px; margin:10px 0 4px;"></div>
+        <div style="height:7px; background:rgba(255,255,255,0.06); border-radius:4px; margin:4px 0; width:80%;"></div>
+      </div>
+      <div class="neuro-locked">
+        <div class="lock-icon">🔒</div>
+        <div class="lock-txt">Conteúdo disponível<br>no AVANT completo</div>
+      </div>
+    </div>
+    <a data-avant-invite-cta style="text-decoration:none; display:block;" onclick="fecharModal()">
+      <button class="btn-primary" style="background:var(--green); color:#0a1f14;">🎁 7 dias Pro — estudo reverso →</button>
+    </a>
+    <button class="modal-close-btn" onclick="fecharModal()">Fechar</button>
+  </div>
+</div>
+
+<script>
+/**
+ * CONFIG — cole o token do convite criado em /admin/convites (7 dias Pro, label goianinha-simulado).
+ * Enquanto vazio, os CTAs apontam para /lp/goianinha.
+ */
+var AVANT_CONFIG = {
+  SITE: 'https://www.avant.enf.br',
+  INVITE_TOKEN: 'jNDBT60wPqJOpNHZvB-yiHSc',
+  UTM_INVITE: 'utm_source=simulado&utm_medium=whatsapp&utm_campaign=goianinha-idib',
+  UTM_LP: 'utm_source=simulado&utm_medium=whatsapp&utm_campaign=goianinha-lp'
+};
+
+function buildInviteUrl() {
+  if (!AVANT_CONFIG.INVITE_TOKEN) return buildLpUrl();
+  return AVANT_CONFIG.SITE + '/convite/' + encodeURIComponent(AVANT_CONFIG.INVITE_TOKEN) + '?' + AVANT_CONFIG.UTM_INVITE;
+}
+function buildLpUrl() {
+  return AVANT_CONFIG.SITE + '/lp/goianinha?' + AVANT_CONFIG.UTM_LP;
+}
+function wireAvantLinks() {
+  var inviteUrl = buildInviteUrl();
+  var lpUrl = buildLpUrl();
+  var inviteEls = document.querySelectorAll('[data-avant-invite-cta]');
+  for (var i = 0; i < inviteEls.length; i++) { inviteEls[i].href = inviteUrl; }
+  var lpEls = document.querySelectorAll('[data-avant-lp-cta]');
+  for (var j = 0; j < lpEls.length; j++) { lpEls[j].href = lpUrl; }
+}
+function atualizarUrgencia() {
+  var prova = new Date(2026, 5, 7);
+  var hoje = new Date();
+  hoje.setHours(0, 0, 0, 0);
+  var provaDia = new Date(prova.getFullYear(), prova.getMonth(), prova.getDate());
+  var diff = Math.ceil((provaDia - hoje) / (1000 * 60 * 60 * 24));
+  var diasEl = document.getElementById('dias-restantes');
+  var diasLbl = document.getElementById('dias-restantes-lbl');
+  var introTitle = document.getElementById('intro-urgency-title');
+  var avantHead = document.getElementById('avant-headline');
+  if (diff <= 0) {
+    if (introTitle) introTitle.textContent = '🚨 PROVA HOJE — 07/06/2026';
+    if (avantHead) avantHead.textContent = 'A prova é hoje. Revise o que ainda dá tempo.';
+    if (diasEl) diasEl.textContent = '0';
+    if (diasLbl) diasLbl.textContent = 'HOJE';
+  } else if (diff === 1) {
+    if (introTitle) introTitle.textContent = '🚨 PROVA AMANHÃ — 07/06/2026';
+    if (avantHead) avantHead.textContent = 'A prova é amanhã. Use cada hora a seu favor.';
+    if (diasEl) diasEl.textContent = '1';
+    if (diasLbl) diasLbl.textContent = 'DIA';
+  } else {
+    if (introTitle) introTitle.textContent = '🚨 PROVA EM 07/06/2026 — ' + diff + ' DIAS';
+    if (avantHead) avantHead.textContent = 'Faltam ' + diff + ' dias. Use cada hora a seu favor.';
+    if (diasEl) diasEl.textContent = String(diff);
+    if (diasLbl) diasLbl.textContent = diff === 1 ? 'DIA' : 'DIAS';
+  }
+}
+
+var questoes = [
+  {
+    id:"q1",
+    fonte:"IDIB · TEnf (Pref Umirim) · 2023",
+    eixo:"Noções de Fisiologia",
+    texto:"O soro é uma solução que pode ser isotônica, hipertônica e hipotônica e tem como finalidades: hidratação, alimentação, curativos, solvente de medicações (ampolas), compressa ocular, compressas diversas, e outros. Dessa forma, define-se que na solução isotônica:",
+    opcoes:{A:"ocorrem as mesmas características e produzem no organismo os mesmos efeitos que um medicamento de marca.",B:"a concentração é maior que a do plasma sanguíneo.",C:"é sempre medida em unidades internacionais (UI) ou (U).",D:"a concentração é igual ou próxima a do plasma sanguíneo.",E:"a concentração é menor que a do plasma sanguíneo."},
+    gabarito:"D"
+  },
+  {
+    id:"q2",
+    fonte:"IDIB · TcI (Pref Araguaína) · 2020",
+    eixo:"Teorias em Enfermagem",
+    texto:"Sobre as principais teorias administrativas na Enfermagem, assinale a alternativa correta.",
+    opcoes:{A:"A Teoria de Wanda Horta é centrada nas tarefas, foi reflexo de um estudo realizado e aborda o reflexo da padronização. O empregado será um especialista na tarefa executada por este.",B:"A Teoria Científica tem ênfase na estrutura e funções. Defende que não adianta pensar em produção se não se fornecer uma estrutura adequada de trabalho para o funcionário.",C:"A relação da Teoria Clássica na assistência de enfermagem ocorre quando o enfermeiro se preocupa tanto com a estrutura de trabalho que é oferecida para ele quanto com a estrutura que este irá oferecer para sua equipe.",D:"A relação da Teoria Clássica ocorre na elaboração ou simples adoção de manuais de técnicas e procedimentos, escalas diárias de divisão de atividades e quando busca melhorar a produtividade dos profissionais."},
+    gabarito:"C"
+  },
+  {
+    id:"q3",
+    fonte:"IDIB · TcI (Pref Araguaína) · 2020",
+    eixo:"Processo de Enfermagem · SAE",
+    texto:"A Síndrome da Imunodeficiência Adquirida (Aids) é uma severa imunossupressão associada com o surgimento de infecções oportunistas e alguns tipos de neoplasias, causada pelo HIV. Assinale a alternativa em que o título do Diagnóstico de Enfermagem NÃO se aplica ao paciente portador de HIV.",
+    opcoes:{A:"Enfrentamento defensivo.",B:"Risco de sentimento de impotência.",C:"Risco de integridade da pele prejudicada.",D:"Disposição para processo perinatológico melhorada."},
+    gabarito:"D"
+  },
+  {
+    id:"q4",
+    fonte:"IDIB · TcI (Pref Araguaína) · 2020",
+    eixo:"Processo de Enfermagem · SAE",
+    texto:"O Planejamento da Assistência de Enfermagem consiste em uma das etapas da SAE e este inicia-se pela priorização dos diagnósticos de enfermagem. Sobre o tema, assinale a alternativa correta.",
+    opcoes:{A:"Os Resultados esperados são componentes essenciais na fase do Planejamento. Representam condições favoráveis que possam ser alcançadas por meio de ações prescritas e realizadas pela enfermagem.",B:"Na NIC constam listagens de resultados de enfermagem para cada diagnóstico da NANDA. Tem o propósito de verificar as mudanças apresentadas por eles após as intervenções de enfermagem.",C:"Na NOC temos a classificação das intervenções de enfermagem. Tem o objetivo de padronizar a linguagem usada pelos enfermeiros na descrição dos cuidados que eles realizam com os pacientes.",D:"Os Diagnósticos de Enfermagem configuram o roteiro diário que coordena as ações da equipe de enfermagem junto aos clientes. Corresponde à dinamização do plano assistencial."},
+    gabarito:"A"
+  },
+  {
+    id:"q5",
+    fonte:"IDIB · TcI (Pref Araguaína) · 2020",
+    eixo:"Cuidados de Enfermagem · Hemodinâmica",
+    texto:"O cateterismo cardíaco é um exame invasivo que pode ser realizado de forma eletiva ou de urgência/emergência. Sobre os cuidados de enfermagem pós cateterismo, assinale a afirmativa INCORRETA.",
+    opcoes:{A:"Os cateteres são removidos e o introdutor é retirado pela equipe de enfermagem da Hemodinâmica, seguido de compressão manual para hemostasia de 15 a 20 minutos (se via braquial ou femoral) e curativo compressivo.",B:"No caso de o exame ter sido realizado pelo braço (artéria radial), será realizada apenas a retirada do introdutor e fechamento com curativo compressivo. O curativo será checado periodicamente para averiguar presença de sangramento.",C:"O tempo mínimo de repouso absoluto será de 8 a 10 horas (se por via femoral). A cabeceira do leito não poderá ser erguida a mais que 30°. O paciente ficará em repouso em decúbito lateral com o membro inferior onde foi realizado o cateterismo fletido.",D:"O repouso após o cateterismo será realizado na unidade de recuperação do serviço de Hemodinâmica, onde o paciente ficará sob cuidados de enfermagem, tendo seus sinais vitais avaliados sempre que necessário."},
+    gabarito:"C"
+  },
+  {
+    id:"q6",
+    fonte:"IDIB · AEnf (Pref Jaguaribe) · 2020",
+    eixo:"Cálculo de Medicamentos",
+    texto:"Em uma unidade de clínica médica foi prescrito ao paciente R.S.J, 52 anos, 60mg de diclofenaco de sódio. Na unidade tem disponível ampolas de 3ml, 25mg/ml. Ao realizar o cálculo de administração, o Auxiliar de Enfermagem deve administrar:",
+    opcoes:{A:"2,8 ml",B:"2,4 ml",C:"1,5 ml",D:"2,0 ml"},
+    gabarito:"B"
+  },
+  {
+    id:"q7",
+    fonte:"IDIB · AEnf (Pref Jaguaribe) · 2020",
+    eixo:"Administração de Medicamentos",
+    texto:"Para executar a prescrição médica com segurança é necessário que o profissional de enfermagem tenha domínio científico e tecnológico, o que envolve conhecimento sobre farmacologia, dose, efeitos terapêuticos, efeitos adversos e contraindicações. Sobre a administração de digitálicos, assinale o item que é dever do Auxiliar de Enfermagem:",
+    opcoes:{A:"Realizar o teste de allen.",B:"Colocar o paciente na posição de sims.",C:"Verificar o pulso antes da administração da droga.",D:"Verificar a temperatura do paciente após 30 minutos da administração da droga."},
+    gabarito:"C"
+  },
+  {
+    id:"q8",
+    fonte:"IDIB · TcI (Pref Araguaína) · 2020",
+    eixo:"Administração de Medicamentos",
+    texto:"A via subcutânea vem surgindo cada vez mais como opção de infusão de medicamentos, com a hipodermóclise. Sobre o tema, assinale a alternativa correta.",
+    opcoes:{A:"O acesso poderá ser puncionado em áreas edemaciadas, com hematoma e estado avançado de caquexia por hipotrofia do subcutâneo.",B:"Algumas indicações são, em casos de paciente com alterações gastrintestinais, fístula traqueobrônquica, coma e debilidade extrema.",C:"Podem ser infundidas soluções aquosas irritantes, pois a vascularização do tecido subcutâneo é similar à do tecido muscular.",D:"Nos casos de alguns fármacos, como a morfina, a biodisponibilidade após a administração por via subcutânea é menor que na via oral."},
+    gabarito:"B"
+  },
+  {
+    id:"q9",
+    fonte:"IDIB · TEnf (Pref Umirim) · 2023",
+    eixo:"Sinais Vitais",
+    texto:"Com base nos ritmos respiratórios, assinale a alternativa correta correspondente ao ritmo caracterizado por aumento da frequência e da profundidade da respiração, causada por acidose metabólica, como por exemplo a condição de cetoacidose diabética.",
+    opcoes:{A:"Hiperventilação",B:"Biot",C:"Kussmaul",D:"Taquipneia",E:"Cheyne-Stokes"},
+    gabarito:"C"
+  },
+  {
+    id:"q10",
+    fonte:"IDIB · AEnf (Pref Jaguaribe) · 2020",
+    eixo:"Sinais Vitais",
+    texto:"Com relação aos cuidados de enfermagem e a verificação dos sinais vitais, assinale a alternativa correta.",
+    opcoes:{A:"A verificação da pressão arterial possibilita conhecer os valores de pressão sistólica, diastólica e pressão de pulso.",B:"A temperatura retal é menos acurada do que a temperatura axilar.",C:"Em uma avaliação da frequência respiratória de um paciente com 37 irpm: o paciente encontra-se eupneico.",D:"A frequência cardíaca no adulto varia de 60 a 100 bpm. O paciente que possui uma FC de 57 bpm, encontra-se taquicárdico."},
+    gabarito:"A"
+  }
+];
+
+var currentQ = 0;
+var respostas = {};
+var startTime = 0;
+var endTime = 0;
+var timerInt = null;
+var filtroAtivo = "todos";
+
+function showScreen(id) {
+  var all = document.querySelectorAll(".screen");
+  for (var i = 0; i < all.length; i++) { all[i].classList.remove("active"); all[i].scrollTop = 0; }
+  var t = document.getElementById(id);
+  if (t) { t.classList.add("active"); }
+}
+
+function iniciarSimulado() {
+  currentQ = 0; respostas = {};
+  startTime = Date.now();
+  timerInt = setInterval(function() {
+    var sec = Math.floor((Date.now() - startTime) / 1000);
+    var m = Math.floor(sec / 60); var s = sec % 60;
+    var el = document.getElementById("q-timer-lbl");
+    if (el) { el.textContent = m + ":" + (s < 10 ? "0" : "") + s; }
+  }, 1000);
+  showScreen("screen-question");
+  renderQ();
+}
+
+function renderQ() {
+  var q = questoes[currentQ];
+  var total = questoes.length;
+  document.getElementById("q-prog-fill").style.width = ((currentQ / total) * 100) + "%";
+  document.getElementById("q-counter-lbl").textContent = "Questão " + (currentQ + 1) + " de " + total;
+  var keys = Object.keys(q.opcoes);
+  var html = "";
+  for (var i = 0; i < keys.length; i++) {
+    var l = keys[i];
+    var sel = (respostas[q.id] === l) ? " selected" : "";
+    html += "<div class='q-opcao" + sel + "' id='op-" + q.id + "-" + l + "' onclick='selecionarOp(\"" + q.id + "\",\"" + l + "\")'><div class='q-opcao-letra'>" + l + ")</div><div class='q-opcao-txt'>" + q.opcoes[l] + "</div></div>";
+  }
+  document.getElementById("q-card-area").innerHTML =
+    "<div class='q-card'><div class='q-fonte'>" + q.fonte + "</div><div class='q-eixo'>Enfermagem · " + q.eixo + "</div><div class='q-divider'></div><div class='q-texto'>" + q.texto + "</div></div>" +
+    "<div class='q-opcoes'>" + html + "</div>";
+  var bc = document.getElementById("btn-confirmar");
+  bc.classList[respostas[q.id] ? "remove" : "add"]("btn-disabled");
+  document.getElementById("btn-finalizar").style.display = (currentQ === total - 1) ? "block" : "none";
+}
+
+function selecionarOp(qId, letra) {
+  respostas[qId] = letra;
+  var q = questoes[currentQ];
+  var keys = Object.keys(q.opcoes);
+  for (var i = 0; i < keys.length; i++) {
+    var el = document.getElementById("op-" + qId + "-" + keys[i]);
+    if (el) { el.classList[keys[i] === letra ? "add" : "remove"]("selected"); }
+  }
+  document.getElementById("btn-confirmar").classList.remove("btn-disabled");
+}
+
+function confirmarResposta() {
+  if (!respostas[questoes[currentQ].id]) { return; }
+  if (currentQ < questoes.length - 1) {
+    currentQ++; renderQ();
+    document.getElementById("screen-question").scrollTop = 0;
+  } else { finalizarSimulado(); }
+}
+
+function finalizarSimulado() {
+  clearInterval(timerInt); endTime = Date.now();
+  calcularResultado(); showScreen("screen-result");
+}
+
+function calcularResultado() {
+  var acertos = 0;
+  for (var i = 0; i < questoes.length; i++) {
+    if (respostas[questoes[i].id] === questoes[i].gabarito) { acertos++; }
+  }
+  var total = questoes.length;
+  var pct = Math.round((acertos / total) * 100);
+  var tempoSec = Math.floor((endTime - startTime) / 1000);
+  var media = Math.round(tempoSec / total);
+  var m = Math.floor(tempoSec / 60); var s = tempoSec % 60;
+  animarCirculo(pct);
+  document.getElementById("res-acertos").textContent = acertos;
+  document.getElementById("res-erros").textContent = total - acertos;
+  document.getElementById("res-tempo").textContent = m + "m " + s + "s";
+  document.getElementById("res-media").textContent = media + "s";
+  var now = new Date();
+  var meses = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+  document.getElementById("res-sub").textContent = total + " questões · " + now.getDate() + " de " + meses[now.getMonth()] + ". de " + now.getFullYear();
+  renderDiagnostico();
+}
+
+function animarCirculo(alvo) {
+  var atual = 0; var circ = 439.8;
+  var arc = document.getElementById("res-arc");
+  var num = document.getElementById("res-pct-num");
+  var t = setInterval(function() {
+    atual += 2;
+    if (atual >= alvo) { atual = alvo; clearInterval(t); }
+    num.textContent = atual + "%";
+    arc.setAttribute("stroke-dashoffset", circ - (atual / 100) * circ);
+  }, 18);
+}
+
+function renderDiagnostico() {
+  var erros = {}; var totais = {};
+  for (var i = 0; i < questoes.length; i++) {
+    var q = questoes[i];
+    if (!totais[q.eixo]) { totais[q.eixo] = 0; erros[q.eixo] = 0; }
+    totais[q.eixo]++;
+    if (respostas[q.id] !== q.gabarito) { erros[q.eixo]++; }
+  }
+  var lista = [];
+  for (var eixo in erros) { if (erros[eixo] > 0) { lista.push({eixo:eixo, e:erros[eixo], t:totais[eixo]}); } }
+  lista.sort(function(a,b) { return b.e - a.e; });
+  var top = lista.slice(0, 3);
+  var el = document.getElementById("diag-items");
+  var note = document.getElementById("diag-note");
+  if (lista.length === 0) {
+    el.innerHTML = "<div style='text-align:center; color:var(--green); font-size:16px; padding:12px;'>🏆 Gabaritou! Desempenho perfeito!</div>";
+    note.textContent = "Parabéns! Continue praticando no AVANT."; return;
+  }
+  var html = "";
+  for (var j = 0; j < top.length; j++) {
+    var item = top[j];
+    var pctBar = Math.round((item.e / item.t) * 100);
+    html += "<div class='diag-item'><div class='diag-row'><div class='diag-eixo-nome'>" + item.eixo + "</div><div class='diag-eixo-cnt'>" + item.e + " erro" + (item.e > 1 ? "s" : "") + "</div></div><div class='diag-bar-bg'><div class='diag-bar' style='width:" + pctBar + "%;'></div></div></div>";
+  }
+  el.innerHTML = html;
+  note.textContent = "Esses são os eixos mais cobrados pela IDIB. O AVANT tem estudo reverso completo para todos — com neuro slides, questões e plano de revisão.";
+}
+
+function showRevisao() {
+  filtroAtivo = "todos"; renderRevisao(); showScreen("screen-review");
+}
+
+function filtrar(f) {
+  filtroAtivo = f;
+  document.getElementById("f-todos").classList[f === "todos" ? "add" : "remove"]("active");
+  document.getElementById("f-erros").classList[f === "erros" ? "add" : "remove"]("active");
+  document.getElementById("f-acertos").classList[f === "acertos" ? "add" : "remove"]("active");
+  renderRevisao();
+}
+
+function renderRevisao() {
+  var html = "";
+  for (var i = 0; i < questoes.length; i++) {
+    var q = questoes[i];
+    var resp = respostas[q.id] || "—";
+    var ok = (resp === q.gabarito);
+    if (filtroAtivo === "erros" && ok) { continue; }
+    if (filtroAtivo === "acertos" && !ok) { continue; }
+    var sc = ok ? "acertou" : "errou";
+    html += "<div class='rev-item " + sc + "'><div class='rev-item-top'><div class='rev-status-icon'>" + (ok ? "✅" : "❌") + "</div><div class='rev-num'>#" + (i+1) + "</div><div class='rev-banca'>IDIB</div><div class='rev-status-txt'>" + (ok ? "Acertou" : "Errou") + "</div></div><div class='rev-eixo'>Enfermagem · " + q.eixo + "</div><div class='rev-respostas'>Sua resposta: <span>" + resp + "</span></div><div class='rev-respostas'>Gabarito: <span style='color:" + (ok ? "var(--green)" : "var(--red)") + "'>" + q.gabarito + "</span></div><div class='rev-link' onclick='abrirNeuro(\"" + q.eixo.replace(/'/g,"\\'") + "\")'>Revisar no estudo reverso →</div></div>";
+  }
+  document.getElementById("rev-lista").innerHTML = html;
+}
+
+function abrirNeuro(eixo) {
+  document.getElementById("modal-eixo").textContent = eixo;
+  document.getElementById("modal-neuro").classList.add("open");
+}
+
+function fecharModal() { document.getElementById("modal-neuro").classList.remove("open"); }
+function showAvant() { fecharModal(); showScreen("screen-avant"); }
+window.onload = function() {
+  showScreen("screen-intro");
+  wireAvantLinks();
+  atualizarUrgencia();
+};
+</script>
+</body>
+</html>

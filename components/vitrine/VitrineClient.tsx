@@ -22,7 +22,6 @@ import {
   ChevronDown,
   ChevronUp,
   ChevronRight,
-  ChevronLeft,
   CheckCircle2,
   Circle,
   RefreshCw,
@@ -60,6 +59,9 @@ import { NeonBadge } from '@/components/ui/neon-badge';
 import { EmptyState } from '@/components/ui/empty-state';
 import { ProgressRing } from '@/components/ui/progress-ring';
 import { VitrineQuestaoLink } from '@/components/vitrine/VitrineQuestaoLink';
+import { VitrinePaginationBar } from '@/components/vitrine/VitrinePaginationBar';
+import { scrollDashboardMainToTop } from '@/lib/layout/dashboardMainScroll';
+import { MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM } from '@/lib/layout/mobileBottomNav';
 import { useVitrineVisiblePrefetch, VITRINE_PREFETCH_DATA_ATTR } from '@/hooks/useVitrineVisiblePrefetch';
 import { useVitrineListSwr } from '@/hooks/useVitrineListSwr';
 import { buildVitrineEstudarQuery } from '@/lib/vitrine/estudarQuery';
@@ -271,14 +273,20 @@ export default function VitrineClient({
   const [ssrErrorDismissed, setSsrErrorDismissed] = useState(false);
   const [retryNonce, setRetryNonce] = useState(0);
   const vitrineListaRef = useRef<HTMLDivElement>(null);
+  const vitrinePaginationInlineRef = useRef<HTMLElement>(null);
+  const totalPaginasRef = useRef(1);
   /** Persiste entre soft-nav; zera ao abrir questão para não voltar com card aberto. */
   const [expandedPanelSlug, setExpandedPanelSlug] = useState<string | null>(null);
-  /** Evita scrollIntoView quando setPagina(1) veio de filtro/busca, não de Anterior/Próxima. */
+  /** Evita scroll ao topo quando setPagina(1) veio de filtro/busca, não de Anterior/Próxima. */
   const paginaViaFiltroRef = useRef(false);
   /** Evita gravar na URL antes de ler os filtros (impede loop com estado inicial vazio). */
   const filtersHydratedFromUrlRef = useRef(Boolean(initialListQuery));
+  /** Última query já aplicada ao estado (evita re-sync URL→estado com mesma string). */
+  const vitrineUrlSyncedRef = useRef<string | null>(null);
   const ssrFacetsConsumedRef = useRef(false);
   const searchParamsRef = useRef(searchParams);
+  /** Evita re-sync URL→estado quando `useSearchParams()` muda referência sem mudar query. */
+  const searchParamsString = searchParams.toString();
 
   const vitrineListQuery = useMemo(
     (): VitrineListQuery => ({
@@ -304,6 +312,7 @@ export default function VitrineClient({
   const gruposPagina = vitrinePageData?.groups ?? [];
   const totalAssuntos = vitrinePageData?.pagination.totalGroups ?? 0;
   const totalPaginas = vitrinePageData?.pagination.totalPages ?? 1;
+  totalPaginasRef.current = totalPaginas;
   const paginaEfetiva = vitrinePageData?.pagination.page ?? pagina;
   const perPage = vitrinePageData?.pagination.perPage ?? 12;
   const fetchError = vitrineFetchError ?? (retryNonce === 0 ? initialPayloadError : null);
@@ -331,6 +340,9 @@ export default function VitrineClient({
   }, [pathname]);
 
   useLayoutEffect(() => {
+    if (vitrineUrlSyncedRef.current === searchParamsString) return;
+    vitrineUrlSyncedRef.current = searchParamsString;
+
     const c = searchParams.get('cidade');
     setCidadeUrl(c ? decodeURIComponent(c) : fallbackTitulo);
 
@@ -353,7 +365,7 @@ export default function VitrineClient({
     setPagina((prev) => (prev === page ? prev : page));
 
     filtersHydratedFromUrlRef.current = true;
-  }, [searchParams, fallbackTitulo]);
+  }, [searchParamsString, fallbackTitulo]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -457,6 +469,38 @@ export default function VitrineClient({
 
   searchParamsRef.current = searchParams;
 
+  const replaceVitrineLocation = useCallback(
+    (nextPagina: number) => {
+      if (!filtersHydratedFromUrlRef.current) return;
+
+      const preservedParams = new URLSearchParams(searchParamsRef.current.toString());
+      const newSearch = buildVitrineLocationSearch(preservedParams, {
+        bancas: bancasSelecionadas,
+        assuntos: assuntosSelecionados,
+        searchTerm,
+        pagina: nextPagina,
+      });
+      vitrineUrlSyncedRef.current = newSearch.startsWith('?') ? newSearch.slice(1) : newSearch;
+
+      if (
+        typeof window !== 'undefined' &&
+        normalizeLocationSearch(window.location.search) !== normalizeLocationSearch(newSearch)
+      ) {
+        router.replace(`${pathname}${newSearch}`, { scroll: false });
+      }
+    },
+    [assuntosSelecionados, bancasSelecionadas, pathname, router, searchTerm],
+  );
+
+  const goToPagina = useCallback(
+    (next: number) => {
+      const clamped = Math.min(Math.max(1, next), totalPaginasRef.current);
+      setPagina(clamped);
+      replaceVitrineLocation(clamped);
+    },
+    [replaceVitrineLocation],
+  );
+
   /** Estado → URL (só após hidratação; searchParams via ref para não re-disparar em router.replace). */
   useEffect(() => {
     if (!filtersHydratedFromUrlRef.current) return;
@@ -468,6 +512,7 @@ export default function VitrineClient({
       searchTerm,
       pagina,
     });
+    vitrineUrlSyncedRef.current = newSearch.startsWith('?') ? newSearch.slice(1) : newSearch;
 
     if (
       typeof window !== 'undefined' &&
@@ -494,7 +539,12 @@ export default function VitrineClient({
       paginaViaFiltroRef.current = false;
       return;
     }
-    vitrineListaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    const frame = requestAnimationFrame(() => {
+      scrollDashboardMainToTop('auto');
+    });
+
+    return () => cancelAnimationFrame(frame);
   }, [pagina]);
 
   useEffect(() => {
@@ -522,6 +572,11 @@ export default function VitrineClient({
       : 'Vitrine de questões';
 
   const listBusy = loading || isRefreshing;
+  const listDataMatchesQuery =
+    vitrinePageData != null &&
+    vitrineResponseMatchesListKey(vitrinePageData, vitrineListQuery);
+  /** Bloqueia Anterior/Próxima enquanto SWR exibe página/filtro anterior (keepPreviousData). */
+  const paginationBusy = listBusy || !listDataMatchesQuery;
 
   useVitrineVisiblePrefetch(vitrineListaRef, {
     enabled: gruposPagina.length > 0 && !listBusy,
@@ -550,39 +605,12 @@ export default function VitrineClient({
   return (
     <div
       className={cn(
-        'dashboard-surface min-h-screen bg-background text-foreground selection:bg-indigo-100 selection:text-indigo-900 md:pb-8',
+        'dashboard-surface flex min-h-0 flex-1 flex-col bg-background text-foreground selection:bg-indigo-100 selection:text-indigo-900 md:min-h-screen md:pb-8',
       )}
     >
       <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 pt-safe shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90 md:pt-0">
-        {/* Header mobile — cidade, busca e filtros (único sticky; shell oculto em /estudar) */}
+        {/* Mobile — busca (via header global) e filtros; logo/avatar no DashboardShell */}
         <div className="md:hidden">
-          <div className="flex items-center gap-2 px-4 py-3">
-            <h1 className="min-w-0 flex-1 truncate text-base font-black leading-snug tracking-tight text-foreground">
-              {cidadeUrl}
-            </h1>
-            <button
-              type="button"
-              onClick={() => {
-                setMobileSearchOpen((open) => {
-                  const next = !open;
-                  if (next) {
-                    requestAnimationFrame(() => {
-                      document
-                        .querySelector<HTMLInputElement>('[data-vitrine-shell-search]')
-                        ?.focus();
-                    });
-                  }
-                  return next;
-                });
-              }}
-              aria-expanded={mobileSearchOpen}
-              aria-label={mobileSearchOpen ? 'Fechar busca' : 'Abrir busca'}
-              className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-slate-400 transition-colors hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
-            >
-              <Search size={16} aria-hidden />
-            </button>
-          </div>
-
           {mobileSearchOpen ? (
             <div className="border-t border-border/70 px-4 pb-3 pt-2">
               <div className="group relative">
@@ -933,6 +961,7 @@ export default function VitrineClient({
                 animate="animate"
                 className={cn(
                   'grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-5 xl:grid-cols-4',
+                  MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM,
                   isRefreshing && 'opacity-80',
                 )}
               >
@@ -949,38 +978,17 @@ export default function VitrineClient({
                   />
                 ))}
               </motion.div>
-              {totalPaginas > 1 && (
-                <nav
-                  className="mt-6 flex flex-col gap-3 border-t border-white/10 pt-4 sm:flex-row sm:items-center sm:justify-between"
-                  aria-label="Paginação da vitrine"
-                >
-                  <p className="order-2 text-center text-xs font-medium text-muted-foreground sm:order-1 sm:text-left">
-                    Página {listBusy ? pagina : paginaEfetiva} de {totalPaginas}
-                  </p>
-                  <div className="order-1 flex items-center gap-2 sm:order-2 sm:ml-auto">
-                    <Button
-                      type="button"
-                      variant="outline"
-                      disabled={pagina <= 1 || listBusy}
-                      onClick={() => setPagina((p) => Math.max(1, p - 1))}
-                      className="h-11 flex-1 rounded-xl border-white/15 sm:flex-none"
-                    >
-                      <ChevronLeft size={18} className="mr-1" />
-                      Anterior
-                    </Button>
-                    <Button
-                      type="button"
-                      variant="outline"
-                      disabled={pagina >= totalPaginas || listBusy}
-                      onClick={() => setPagina((p) => Math.min(totalPaginas, p + 1))}
-                      className="h-11 flex-1 rounded-xl border-white/15 sm:flex-none"
-                    >
-                      Próxima
-                      <ChevronRight size={18} className="ml-1" />
-                    </Button>
-                  </div>
-                </nav>
-              )}
+              {totalPaginas > 1 ? (
+                <VitrinePaginationBar
+                  ref={vitrinePaginationInlineRef}
+                  pagina={pagina}
+                  paginaEfetiva={paginaEfetiva}
+                  totalPaginas={totalPaginas}
+                  listBusy={paginationBusy}
+                  onPrev={() => goToPagina(pagina - 1)}
+                  onNext={() => goToPagina(pagina + 1)}
+                />
+              ) : null}
             </>
           ) : fetchError ? (
             <EmptyState
@@ -1452,10 +1460,17 @@ function SubtopicoCard({
                     })}
                   </div>
                   {listaFoiTruncada && (
-                    <p className="mt-2 text-center text-[10px] font-medium text-slate-400">
-                      +{questoesTruncadas} {labelQuestoes(questoesTruncadas)} neste assunto. Abra pelo botão
-                      {' '}
-                      "Entrar no assunto" para navegar completo.
+                    <p className="mt-2 flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-center text-[11px] font-medium text-amber-400/90">
+                      <span>
+                        +{questoesTruncadas} {labelQuestoes(questoesTruncadas)} neste assunto.
+                      </span>
+                      <VitrineQuestaoLink
+                        slug={firstSlug}
+                        estudarQuery={estudarQuery}
+                        className="inline-flex min-h-[44px] items-center font-semibold text-amber-300 underline-offset-2 hover:text-amber-200 hover:underline"
+                      >
+                        Ver todas
+                      </VitrineQuestaoLink>
                     </p>
                   )}
               </div>

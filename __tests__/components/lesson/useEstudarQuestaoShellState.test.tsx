@@ -108,6 +108,21 @@ describe('useEstudarQuestaoShellState', () => {
     expect(result.current.showModalLoading).toBe(true);
   });
 
+  it('no shell, dismiss libera vitrine mesmo com pathname ainda na questão', () => {
+    mockUsePathname.mockReturnValue('/estudar/questao-a');
+    mockUseQuestaoNavigation.mockReturnValue({
+      displayPayload: null,
+      isDismissingToVitrine: true,
+      estudarRoute: null,
+    });
+
+    const { result } = renderHook(() => useEstudarQuestaoShellState());
+
+    expect(result.current.showPlayer).toBe(false);
+    expect(result.current.showSkeleton).toBe(false);
+    expect(result.current.isQuestaoRoute).toBe(true);
+  });
+
   it('com modal ativo e dismiss não exibe loading no modal', () => {
     mockUsePathname.mockReturnValue('/estudar/questao-a');
     mockUseQuestaoNavigation.mockReturnValue({

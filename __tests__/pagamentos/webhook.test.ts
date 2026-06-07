@@ -1,7 +1,44 @@
+/**
+ * @jest-environment node
+ */
+import { NextRequest } from 'next/server';
 import type { SupabaseClient } from '@supabase/supabase-js';
 import type Stripe from 'stripe';
 import { processStripeWebhookEvent } from '@/lib/pagamentos/webhook';
 import { invalidateUserModulosCache } from '@/lib/cache';
+import {
+  handleStripeWebhookRequest,
+  isRetriableWebhookFailure,
+} from '@/lib/stripe/webhookRouteHandler';
+import { dispatchStripeWebhookEvent } from '@/lib/stripe/webhookDispatcher';
+import { constructWebhookEvent } from '@/lib/stripe/client';
+import { getStripeServerConfig } from '@/lib/env';
+import { createServerSupabase } from '@/lib/supabase/server';
+
+jest.mock('@/lib/stripe/webhookDispatcher', () => ({
+  dispatchStripeWebhookEvent: jest.fn(),
+}));
+
+jest.mock('@/lib/stripe/client', () => ({
+  constructWebhookEvent: jest.fn(),
+}));
+
+jest.mock('@/lib/env', () => ({
+  getStripeServerConfig: jest.fn(),
+}));
+
+jest.mock('@/lib/supabase/server', () => ({
+  createServerSupabase: jest.fn(),
+}));
+
+jest.mock('@/lib/logger', () => ({
+  logger: {
+    debug: jest.fn(),
+    info: jest.fn(),
+    warn: jest.fn(),
+    error: jest.fn(),
+  },
+}));
 
 jest.mock('@/lib/cache', () => ({
   invalidateUserModulosCache: jest.fn().mockResolvedValue(undefined),
@@ -9,6 +46,18 @@ jest.mock('@/lib/cache', () => ({
 
 const mockInvalidateUserModulosCache = invalidateUserModulosCache as jest.MockedFunction<
   typeof invalidateUserModulosCache
+>;
+const mockDispatchStripeWebhookEvent = dispatchStripeWebhookEvent as jest.MockedFunction<
+  typeof dispatchStripeWebhookEvent
+>;
+const mockConstructWebhookEvent = constructWebhookEvent as jest.MockedFunction<
+  typeof constructWebhookEvent
+>;
+const mockGetStripeServerConfig = getStripeServerConfig as jest.MockedFunction<
+  typeof getStripeServerConfig
+>;
+const mockCreateServerSupabase = createServerSupabase as jest.MockedFunction<
+  typeof createServerSupabase
 >;
 
 type PurchaseRow = {
@@ -195,6 +244,7 @@ describe('processStripeWebhookEvent', () => {
     expect(supabase.matriculaEqUser).toHaveBeenCalledWith('user_id', purchase.user_id);
     expect(supabase.matriculaEqConcurso).toHaveBeenCalledWith('concurso_id', purchase.concurso_id);
     expect(supabase.matriculaEqOrigem).toHaveBeenCalledWith('origem', 'purchase');
+    expect(mockInvalidateUserModulosCache).toHaveBeenCalledWith(purchase.user_id);
   });
 
   it('charge.refunded expira só matrícula purchase (não stripe_pro no mesmo concurso)', async () => {
@@ -219,5 +269,117 @@ describe('processStripeWebhookEvent', () => {
     await processStripeWebhookEvent(supabase, event);
 
     expect(supabase.matriculaEqOrigem).toHaveBeenCalledWith('origem', 'purchase');
+  });
+});
+
+describe('isRetriableWebhookFailure', () => {
+  it.each([
+    'purchase_not_found',
+    'geral_concurso_missing',
+    'missing_customer_email',
+    'concurso_not_found',
+    'missing_concurso_slug',
+  ])('marca %s como retriável', (reason) => {
+    expect(isRetriableWebhookFailure(reason)).toBe(true);
+  });
+
+  it.each([
+    'ignored_event_payment_intent.succeeded',
+    'not_guest_checkout',
+    'checkout_not_paid',
+    'missing_purchase_id',
+  ])('marca %s como não retriável', (reason) => {
+    expect(isRetriableWebhookFailure(reason)).toBe(false);
+  });
+});
+
+describe('handleStripeWebhookRequest', () => {
+  const supabase = {} as SupabaseClient;
+  const stripeEvent = {
+    type: 'checkout.session.completed',
+    data: { object: { id: 'cs_test_123' } },
+  } as unknown as Stripe.Event;
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+    mockGetStripeServerConfig.mockReturnValue({
+      secretKey: 'sk_test',
+      webhookSecret: 'whsec_test',
+    });
+    mockConstructWebhookEvent.mockReturnValue(stripeEvent);
+    mockCreateServerSupabase.mockResolvedValue(supabase);
+  });
+
+  function makeWebhookRequest(body = '{}') {
+    return new NextRequest('https://avant.test/api/pagamentos/webhook', {
+      method: 'POST',
+      body,
+      headers: {
+        'content-type': 'application/json',
+        'stripe-signature': 'sig_test',
+      },
+    });
+  }
+
+  it('retorna 500 quando falha é retriável (purchase_not_found)', async () => {
+    mockDispatchStripeWebhookEvent.mockResolvedValue({
+      handled: false,
+      reason: 'purchase_not_found',
+    });
+
+    const response = await handleStripeWebhookRequest(makeWebhookRequest());
+
+    expect(response.status).toBe(500);
+    expect(await response.json()).toEqual({
+      error: 'Falha temporária ao processar webhook.',
+      reason: 'purchase_not_found',
+    });
+  });
+
+  it('retorna 500 quando falha guest é retriável (missing_customer_email)', async () => {
+    mockDispatchStripeWebhookEvent.mockResolvedValue({
+      handled: false,
+      reason: 'missing_customer_email',
+    });
+
+    const response = await handleStripeWebhookRequest(makeWebhookRequest());
+
+    expect(response.status).toBe(500);
+    expect(await response.json()).toEqual({
+      error: 'Falha temporária ao processar webhook.',
+      reason: 'missing_customer_email',
+    });
+  });
+
+  it('retorna 200 quando evento é genuinamente ignorado', async () => {
+    mockDispatchStripeWebhookEvent.mockResolvedValue({
+      handled: false,
+      reason: 'ignored_event_payment_intent.succeeded',
+    });
+
+    const response = await handleStripeWebhookRequest(makeWebhookRequest());
+
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({
+      received: true,
+      handled: false,
+      reason: 'ignored_event_payment_intent.succeeded',
+    });
+  });
+
+  it('retorna 200 quando checkout guest já pago (handled true)', async () => {
+    mockDispatchStripeWebhookEvent.mockResolvedValue({
+      handled: true,
+      purchaseId: 'purchase-guest-1',
+      userId: 'user-guest-1',
+    });
+
+    const response = await handleStripeWebhookRequest(makeWebhookRequest());
+
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({
+      received: true,
+      handled: true,
+    });
   });
 });

@@ -1,4 +1,6 @@
-import { CheckCircle2, MousePointerClick, Sparkles } from 'lucide-react';
+import { CheckCircle2, MessageCircle, MousePointerClick, Sparkles } from 'lucide-react';
+import { WhatsAppSupportLink } from '@/components/support/WhatsAppSupportLink';
+import { formatWhatsAppDisplay } from '@/lib/whatsapp';
 import {
   AJUDA_SURFACE,
   ONDE_CLICAR,
@@ -195,7 +197,7 @@ const QUICK_START = [
 export default function AjudaPage() {
   const firstSeq = hasTutorialImage('seq-01.png');
   return (
-    <div className="mx-auto w-full max-w-4xl px-4 py-8 pb-20 md:px-6">
+    <div className="mx-auto w-full max-w-4xl px-4 py-8 pb-6 md:px-6">
       <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-slate-400">
         <Sparkles className="h-3.5 w-3.5 text-[#00f2ff]" aria-hidden />
         Guia do aluno — início rápido
@@ -284,6 +286,22 @@ export default function AjudaPage() {
           </section>
         ))}
       </div>
+
+      <section className={`mt-12 p-5 shadow-sm md:p-6 ${AJUDA_SURFACE}`}>
+        <h2 className="flex items-center gap-2 text-base font-black text-slate-100">
+          <MessageCircle className="h-5 w-5 text-[#25D366]" aria-hidden />
+          Ainda com dúvida?
+        </h2>
+        <p className="mt-3 text-sm leading-relaxed text-slate-400 md:text-base">
+          Se algo não ficou claro no tutorial, fale com a gente no WhatsApp ({formatWhatsAppDisplay()}).
+          Respondemos o mais rápido possível em horário comercial.
+        </p>
+        <div className="mt-4">
+          <WhatsAppSupportLink className="inline-flex items-center justify-center rounded-xl bg-[#25D366] px-5 py-3 text-sm font-black text-white shadow-sm shadow-emerald-900/30 transition-colors hover:bg-[#20bd5a] hover:text-white">
+            Abrir WhatsApp
+          </WhatsAppSupportLink>
+        </div>
+      </section>
 
     </div>
   );

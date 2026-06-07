@@ -1,5 +1,6 @@
 import type Stripe from 'stripe';
 import type { SupabaseClient } from '@supabase/supabase-js';
+import { invalidateUserModulosCache } from '@/lib/cache';
 import { GERAL_CONCURSO_SLUG } from '@/lib/concursos/entitlements';
 import { findAuthUserByEmail, findOrCreateAuthUserByEmail } from '@/lib/supabase/adminUsers';
 import { getStripeClient } from '@/lib/stripe/client';
@@ -119,6 +120,16 @@ export async function processProCheckoutCompleted(
     throw upsertError;
   }
 
+  try {
+    await invalidateUserModulosCache(userId);
+  } catch (cacheError) {
+    logger.warn('Falha ao invalidar cache após checkout Pro', {
+      userId,
+      sessionId: session.id,
+      error: cacheError instanceof Error ? cacheError.message : String(cacheError),
+    });
+  }
+
   logger.info('Matrícula AVANT Pro ativada via webhook', { userId, sessionId: session.id, created });
   return { handled: true, userId };
 }
@@ -188,6 +199,16 @@ export async function processProSubscriptionCancelled(
     logger.warn('Cancelamento Pro: nenhuma matrícula stripe_pro atualizada', {
       userId: user.id,
       subscriptionId: subscription.id,
+    });
+  }
+
+  try {
+    await invalidateUserModulosCache(user.id);
+  } catch (cacheError) {
+    logger.warn('Falha ao invalidar cache após cancelamento Pro', {
+      userId: user.id,
+      subscriptionId: subscription.id,
+      error: cacheError instanceof Error ? cacheError.message : String(cacheError),
     });
   }
 

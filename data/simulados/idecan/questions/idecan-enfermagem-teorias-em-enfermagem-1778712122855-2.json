@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "IDECAN",
+    "orgao": "(Enfermagem / \"Sem Especialidade\")",
+    "prova": "Tec (SESAP RN)",
+    "topico": "Enfermagem",
+    "subtopico": "Teorias em Enfermagem"
+  },
+  "question_data": {
+    "instruction": "Analise o contexto em que a equipe de enfermagem atua na promoção da humanização do cuidado, considerando o envolvimento do paciente, a corresponsabilidade e a escuta qualificada, e marque a opção correta.",
+    "text_fragment": "<p>\"Sem Especialidade\"</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "Defende a adoção de protocolos rígidos, desconsiderando a singularidade do usuário, pois a padronização absoluta garante equidade e segurança em qualquer cenário.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Enfatiza a participação do paciente como observador passivo, sem poder decisório, mas com direito a receber informações fidedignas sobre as condutas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Estimula a segregação disciplinar entre profissionais de enfermagem e demais equipes de saúde, para garantir maior autonomia dos núcleos de saber.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Limita o acolhimento ao ambiente hospitalar de alta complexidade, entendendo que a Atenção Primária não demanda estratégias de humanização específicas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Propõe a corresponsabilidade na assistência, fortalecendo o vínculo interpessoal, a inclusão do paciente na tomada de decisões e a valorização de sua história de vida.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Teorias em Enfermagem"
+      },
+      "items": [
+        {
+          "id": "1",
+          "label": "Escuta Qualificada",
+          "detail": "Acolhimento atento e empático ao relato do usuário.",
+          "icon": "Users"
+        },
+        {
+          "id": "2",
+          "label": "Corresponsabilidade",
+          "detail": "Paciente e equipe como parceiros no cuidado.",
+          "icon": "Scale"
+        },
+        {
+          "id": "3",
+          "label": "Singularidade",
+          "detail": "Reconhecimento da história de vida do paciente.",
+          "icon": "BookOpen"
+        },
+        {
+          "id": "4",
+          "label": "Vínculo",
+          "detail": "Fortalecimento da relação interpessoal profissional-usuário.",
+          "icon": "BookOpen"
+        }
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Teorias em Enfermagem"
+      },
+      "content": "A HUMANIZAÇÃO NÃO É UM PROCEDIMENTO TÉCNICO, MAS UMA POSTURA ÉTICA QUE COLOCA O SUJEITO NO CENTRO DO CUIDADO.",
+      "footer_rule": "O cuidado humanizado é transversal a todos os níveis de atenção à saúde."
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Teorias em Enfermagem"
+      },
+      "steps": [
+        "Acolhimento do paciente com escuta ativa.",
+        "Identificação das necessidades e singularidades do usuário.",
+        "Inclusão do paciente na tomada de decisão terapêutica.",
+        "Fortalecimento do vínculo e corresponsabilidade no plano de cuidado."
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "danger_zone",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Teorias em Enfermagem"
+      },
+      "content": "Erros comuns na interpretação da humanização",
+      "items": [
+        {
+          "id": "1",
+          "label": "Ponto 1",
+          "detail": "Confundir humanização com apenas ser 'gentil' ou 'educado'."
+        },
+        {
+          "id": "2",
+          "label": "Ponto 2",
+          "detail": "Acreditar que protocolos rígidos substituem a necessidade de escuta."
+        },
+        {
+          "id": "3",
+          "label": "Ponto 3",
+          "detail": "Limitar a humanização apenas ao ambiente hospitalar."
+        }
+      ],
+      "footer_rule": "A humanização exige mudança de paradigma, não apenas de comportamento."
+    }
+  ],
+  "modulo_slug": "idecan-enfermagem-teorias-em-enfermagem-1778712122855-2"
+}

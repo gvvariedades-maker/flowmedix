@@ -131,7 +131,7 @@ export default async function CadernoDetailPage({
   } catch (error) {
     logger.error('Failed to load caderno detail', error, { id });
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6 pb-safe">
+      <div className="flex min-h-full items-center justify-center bg-slate-50 p-6">
         <p className="text-slate-500 text-sm">Erro ao carregar caderno. Tente novamente.</p>
       </div>
     );

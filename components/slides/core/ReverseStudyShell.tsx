@@ -105,11 +105,11 @@ export function ReverseStudyShell({
   const SlideIcon = getSlideTypeIcon(slideType);
 
   return (
-    <div className="flex w-full min-w-0 flex-col">
+    <div className="flex h-full min-h-0 w-full min-w-0 flex-1 flex-col">
       <header
         className={[
-          'mb-4 w-full max-w-5xl shrink-0 space-y-2 self-center',
-          'border-b px-1 pb-4 sm:mb-5',
+          'mb-3 w-full shrink-0 space-y-2 self-stretch',
+          'border-b px-1 pb-3 sm:mb-4',
           getHeaderBorderClass(slideType),
         ].join(' ')}
       >
@@ -156,7 +156,7 @@ export function ReverseStudyShell({
         </p>
       </header>
 
-      <div className="flex w-full min-w-0 flex-1 flex-col">{children}</div>
+      <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col">{children}</div>
     </div>
   );
 }

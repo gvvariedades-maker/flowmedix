@@ -1,18 +1,16 @@
 import type { QuestaoDoAssunto } from '@/types/lesson';
 
-/** Raio visível no client: no máximo 2 * radius + 1 dots (+ ellipsis). */
-export const DOTS_NAV_VISIBLE_RADIUS = 5;
+/** Raio visível no carrossel: no máximo 2 * radius + 1 dots (5 centrais). */
+export const DOTS_NAV_VISIBLE_RADIUS = 2;
 
 export const DOTS_NAV_VISIBLE_MAX = DOTS_NAV_VISIBLE_RADIUS * 2 + 1;
-
-export type DotsNavEllipsis = { type: 'ellipsis'; side: 'start' | 'end' };
 
 export type DotsNavDot = {
   type: 'dot';
   questao: QuestaoDoAssunto & { indice: number };
 };
 
-export type DotsNavItem = DotsNavEllipsis | DotsNavDot;
+export type DotsNavItem = DotsNavDot;
 
 export interface BuildDotsNavWindowOptions {
   currentSlug?: string | null;
@@ -24,8 +22,8 @@ export interface BuildDotsNavWindowOptions {
 }
 
 /**
- * Monta a faixa de dots visível no player: N antes/depois da atual + ellipsis
- * quando há questões fora da janela renderizada.
+ * Monta a faixa de dots visível no player: janela deslizante de até 5 itens
+ * centrada na questão atual (carrossel truncado).
  */
 export function buildDotsNavWindow(
   questoes: QuestaoDoAssunto[],
@@ -57,19 +55,11 @@ export function buildDotsNavWindow(
 
   const items: DotsNavItem[] = [];
 
-  if (visibleStart > 1) {
-    items.push({ type: 'ellipsis', side: 'start' });
-  }
-
   for (let indice = visibleStart; indice <= visibleEnd; indice++) {
     const questao = byIndice.get(indice);
     if (questao) {
       items.push({ type: 'dot', questao: { ...questao, indice } });
     }
-  }
-
-  if (visibleEnd < total) {
-    items.push({ type: 'ellipsis', side: 'end' });
   }
 
   return items;

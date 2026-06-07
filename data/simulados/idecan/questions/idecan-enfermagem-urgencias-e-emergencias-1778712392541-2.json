@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "IDECAN",
+    "orgao": "(Enfermagem / \"Sem Especialidade\")",
+    "prova": "Tec (SESAP RN)",
+    "topico": "Enfermagem",
+    "subtopico": "Urgências e Emergências"
+  },
+  "question_data": {
+    "instruction": "Durante o socorro a uma vítima inconsciente com suspeita de trauma na coluna cervical, marque a opção correta sobre a conduta prioritária, conforme protocolos brasileiros de primeiros socorros.",
+    "text_fragment": "<p>\"Sem Especialidade\"</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "Realizar tração cervical vigorosa ao reposicionar a cabeça, priorizando a ventilação antes de verificar a presença de pulso.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Aguardar a equipe avançada sem manipular a vítima, evitando riscos de responsabilização legal.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Aplicar compressões torácicas imediatas, sem checar responsividade, para garantir perfusão cerebral contínua.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Retirar dispositivos de proteção cervical para facilitar a intubação, considerando a estabilização secundária desnecessária.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Manter a imobilização manual da coluna e abrir a via aérea com a manobra de elevação da mandíbula (jaw thrust), avaliando respiração.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "items": [
+        {
+          "id": "1",
+          "label": "Imobilização",
+          "detail": "Manual imediata da coluna cervical",
+          "icon": "Shield"
+        },
+        {
+          "id": "2",
+          "label": "Via Aérea",
+          "detail": "Uso da manobra de Jaw Thrust",
+          "icon": "AlertTriangle"
+        },
+        {
+          "id": "3",
+          "label": "Avaliação",
+          "detail": "Checagem de respiração e pulso",
+          "icon": "BookOpen"
+        },
+        {
+          "id": "4",
+          "label": "Segurança",
+          "detail": "Evitar hiperextensão do pescoço",
+          "icon": "Lock"
+        }
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "EM CASO DE SUSPEITA DE TRAUMA CERVICAL, A ESTABILIZAÇÃO DA COLUNA É PRIORIDADE ABSOLUTA DURANTE A ABERTURA DE VIAS AÉREAS.",
+      "footer_rule": "Nunca realize a manobra de inclinação da cabeça (Head Tilt) em vítimas de trauma."
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "steps": [
+        "Identificação de vítima inconsciente com trauma",
+        "Imobilização manual da coluna cervical pelo socorrista",
+        "Abertura de via aérea via Jaw Thrust (elevação da mandíbula)",
+        "Avaliação de respiração e circulação",
+        "Manutenção da estabilização até a chegada do suporte avançado"
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "danger_zone",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências"
+      },
+      "content": "Erros comuns no atendimento ao trauma",
+      "items": [
+        {
+          "id": "1",
+          "label": "Ponto 1",
+          "detail": "Realizar hiperextensão do pescoço (Head Tilt)"
+        },
+        {
+          "id": "2",
+          "label": "Ponto 2",
+          "detail": "Retirar colar cervical antes da liberação médica"
+        },
+        {
+          "id": "3",
+          "label": "Ponto 3",
+          "detail": "Priorizar intubação sem estabilização cervical"
+        }
+      ],
+      "footer_rule": "A manipulação indevida pode causar lesão medular irreversível."
+    }
+  ],
+  "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-2"
+}

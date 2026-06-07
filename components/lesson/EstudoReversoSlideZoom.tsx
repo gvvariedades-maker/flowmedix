@@ -1,7 +1,6 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { useCenterIfFitsScroll } from '@/lib/hooks/useCenterIfFitsScroll';
 import {
   ReadableTextZoomProvider,
   ReadableTextZoomToolbar,
@@ -46,37 +45,28 @@ type EstudoReversoSlideZoomProps = {
 };
 
 /**
- * Área do slide no estudo reverso:
- * - **Desktop:** rolagem nativa; sem toolbar de escala.
- * - **Mobile:** rolagem nativa (sem `TransformWrapper` — evita roubar toques do scroll).
- * - **Mobile:** escala via contexto (toolbar no header do modal).
- * - **Centralização:** via `useCenterIfFitsScroll` (centraliza quando cabe; senão alinha ao topo).
+ * Área do slide no estudo reverso (fullscreen):
+ * - Preenche altura entre header e footer; conteúdo alinhado ao topo (sem centralização vertical).
+ * - Mobile: escala via contexto (toolbar no header do modal).
  */
 export function EstudoReversoSlideZoom({ children }: EstudoReversoSlideZoomProps) {
-  const { contentKey, narrowViewport, textStep } = useReadableTextZoomContext();
+  const { narrowViewport, textStep } = useReadableTextZoomContext();
 
   const scale = narrowViewport ? TEXT_SCALE_STEPS[Math.min(textStep, TEXT_SCALE_STEPS.length - 1)] : 1;
   const isTextScaled = scale > 1;
-
-  const { scrollRef, slotRef, centerVertically } = useCenterIfFitsScroll(
-    `${contentKey}-${narrowViewport ? 1 : 0}-${textStep}`,
-  );
-
-  const justifySlot = centerVertically && !isTextScaled ? 'justify-center' : 'justify-start';
 
   const scrollAreaClassName = cn(
     'relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto overflow-x-hidden overscroll-y-contain touch-pan-y',
   );
 
   const slotClassName = cn(
-    'relative box-border flex min-h-full w-full max-w-full flex-col items-center',
-    justifySlot,
-    isTextScaled ? 'py-3 pb-16 sm:pb-20' : 'py-3 pb-12 md:py-4 md:pb-16',
+    'relative box-border flex min-h-full w-full max-w-full flex-1 flex-col items-stretch justify-start',
+    isTextScaled ? 'py-3 pb-16 sm:pb-20' : 'py-2 pb-8 md:py-3 md:pb-10',
   );
 
   return (
-    <div ref={scrollRef} className={scrollAreaClassName}>
-      <div ref={slotRef} className={slotClassName}>
+    <div className={scrollAreaClassName}>
+      <div className={slotClassName}>
         <ReadableTextZoomContent>{children}</ReadableTextZoomContent>
       </div>
     </div>

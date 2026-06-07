@@ -16,16 +16,19 @@ describe('estudarSeed E2E', () => {
     resetE2eEstudarStore();
   });
 
-  it('monta vitrine com dois slugs e reflete page na paginação', () => {
+  it('monta vitrine paginada com 13 assuntos e reflete page na paginação', () => {
     const page1 = getE2eEstudarVitrinePage({ page: 1, bancas: [], assuntos: [] });
-    expect(page1.groups).toHaveLength(1);
+    expect(page1.groups).toHaveLength(12);
     expect(page1.groups[0]?.firstSlug).toBe(E2E_ESTUDAR_SLUG_1);
     expect(page1.groups[0]?.questoes).toHaveLength(2);
     expect(page1.pagination.page).toBe(1);
+    expect(page1.pagination.totalGroups).toBe(13);
+    expect(page1.pagination.totalPages).toBe(2);
 
     const page2 = getE2eEstudarVitrinePage({ page: 2, bancas: [], assuntos: [] });
+    expect(page2.groups).toHaveLength(1);
     expect(page2.pagination.page).toBe(2);
-    expect(page2.pagination.totalPages).toBeGreaterThanOrEqual(2);
+    expect(page2.pagination.totalPages).toBe(2);
   });
 
   it('preserva page=2 na navegação', () => {

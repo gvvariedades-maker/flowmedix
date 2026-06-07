@@ -149,7 +149,7 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
                 <EstudarQuestaoSkeleton />
               ) : (
                 <AvantLessonPlayer
-                  key="estudar-lesson-player-modal"
+                  key={displayPayload!.moduloSlug ?? 'estudar-lesson-player-modal'}
                   {...displayPayload!}
                   payloadStale={payloadStale}
                 />

@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
+import { DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 
 /**
@@ -51,7 +52,7 @@ export default function NovoCadernoClient() {
 
   return (
     <div
-      className={cn('min-h-screen', pageBottomPadding)}
+      className={cn(DASHBOARD_PAGE_ROOT, pageBottomPadding)}
       style={{ backgroundColor: '#010409' }}
     >
       <div className="sticky top-0 z-20 border-b border-white/10 bg-[#010409]/95 backdrop-blur-md">

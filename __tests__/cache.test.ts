@@ -13,6 +13,7 @@ const mockSupabaseChain = {
   order: () => mockSupabaseChain,
   limit: () => Promise.resolve({ data: [], error: null }),
   single: () => Promise.resolve({ data: null, error: { code: 'PGRST116' } }),
+  maybeSingle: () => Promise.resolve({ data: null, error: null }),
   eq: () => mockSupabaseChain,
 };
 
@@ -84,6 +85,13 @@ describe('Sistema de Cache', () => {
       const result = await getCatalogStats();
       expect(result).toEqual({ totalQuestions: 42, totalSlides: 168 });
       expect(mockRpc).toHaveBeenCalledWith('avant_catalog_stats');
+    });
+
+    it('propaga DataServiceUnavailableError quando a RPC falha', async () => {
+      const { DataServiceUnavailableError } = await import('@/lib/dataServiceError');
+      mockRpc.mockRejectedValueOnce(new Error('connection refused'));
+
+      await expect(getCatalogStats()).rejects.toBeInstanceOf(DataServiceUnavailableError);
     });
   });
 

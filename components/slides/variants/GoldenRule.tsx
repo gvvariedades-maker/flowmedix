@@ -207,7 +207,7 @@ export const GoldenRule = ({
 
   // Fallback: center
   return (
-    <motion.div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-3 md:p-8">
+    <motion.div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-stretch justify-start p-3 md:p-8">
       <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-90`} />
       <motion.div
         className={`relative z-10 w-full min-w-0 max-w-4xl p-6 md:p-8 lg:p-10 rounded-[2rem] text-center border-4 ${theme.borderColor} backdrop-blur-sm`}

@@ -1,10 +1,11 @@
 import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
+import { DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
 
 export default function SimuladosLoading() {
   return (
     <DashboardMobilePage
       variant="default"
-      className="min-h-screen bg-[#010409]"
+      className={`${DASHBOARD_PAGE_ROOT} bg-[#010409]`}
     >
       <div className="sticky top-0 z-20 border-b border-[rgba(255,255,255,0.08)] bg-[#010409]/95 backdrop-blur-md">
         <div className="mx-auto max-w-4xl animate-pulse px-4 py-5 sm:px-6 md:px-10">

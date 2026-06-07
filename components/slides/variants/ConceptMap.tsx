@@ -55,7 +55,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
     };
 
     return (
-      <div className="w-full min-h-0 min-w-0 flex flex-1 items-start justify-center overflow-y-auto p-4 md:p-6 relative">
+      <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-3 md:p-4">
         {/* Background animado com tema */}
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
         
@@ -63,7 +63,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-1 min-[420px]:[grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))] gap-3 md:gap-5 p-1 md:p-3 w-full max-w-5xl relative z-10"
+          className="relative z-10 grid w-full flex-1 grid-cols-1 gap-3 p-1 md:gap-5 md:p-3 min-[420px]:[grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))]"
           style={{ contentVisibility: 'auto' }}
         >
           {concepts.map((concept, index) => {

@@ -9,6 +9,8 @@ import {
   DATA_SERVICE_FRIENDLY_TITLE,
   isDataServiceUnavailableError,
 } from '@/lib/dataServiceError';
+import { DASHBOARD_PAGE_CENTER } from '@/lib/layout/mobileBottomNav';
+import { cn } from '@/lib/utils';
 
 export default function DashboardError({
   error,
@@ -28,7 +30,7 @@ export default function DashboardError({
 
   if (dataService) {
     return (
-      <div className="dashboard-surface min-h-screen flex flex-col items-center justify-center bg-background p-6">
+      <div className={cn('dashboard-surface flex-col bg-background p-6', DASHBOARD_PAGE_CENTER)}>
         <div className="max-w-md w-full rounded-3xl border border-border bg-card/80 p-8 text-center shadow-lg shadow-indigo-500/5">
           <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-500/10 text-indigo-600">
             <CloudOff className="h-7 w-7" aria-hidden />
@@ -62,7 +64,7 @@ export default function DashboardError({
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#010409] p-4">
+    <div className={cn('bg-[#010409] p-4', DASHBOARD_PAGE_CENTER)}>
       <div className="max-w-md w-full text-center space-y-6">
         <div className="space-y-2">
           <h1 className="text-4xl font-black text-red-400 mb-2">⚠️ Erro no Dashboard</h1>

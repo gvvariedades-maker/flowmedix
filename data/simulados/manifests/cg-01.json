@@ -1,0 +1,26 @@
+{
+  "id": "cg-01",
+  "titulo": "Diagnóstico IDECAN",
+  "subtitulo": "Campina Grande 2026 · Técnico de Enfermagem",
+  "descricao": "10 questões reais IDECAN · diagnóstico por eixo · estudo reverso nos erros",
+  "cidade": "Campina Grande",
+  "uf": "PB",
+  "banca": "IDECAN",
+  "dataProva": "2026-08-30",
+  "dataProvaFormatada": "30/08/2026",
+  "quantidade": 10,
+  "ctaLpPath": "/lp/campina-grande",
+  "utmCampaign": "campina-cg01",
+  "questoes": [
+    "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-0",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712108887-9",
+    "idecan-enfermagem-processo-de-enfermagem-1778712122855-4",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-2",
+    "idecan-enfermagem-cuidados-na-administracao-de-medicamentos-1778712108887-7",
+    "idecan-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1778712203076-8",
+    "idecan-enfermagem-imunizacao-1777103277533-4",
+    "idecan-enfermagem-nocoes-de-fisiologia-1780066909125-0",
+    "idecan-enfermagem-teorias-em-enfermagem-1778712122855-2",
+    "idecan-enfermagem-atencao-basica-saude-da-familia-1778712409051-9"
+  ]
+}
