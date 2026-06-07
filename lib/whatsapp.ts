@@ -1,6 +1,9 @@
 /** Número padrão de suporte (DDI + DDD + número, só dígitos). */
 export const DEFAULT_WHATSAPP_NUMBER = '5584998049641';
 
+/** URL canônica — sem ?text= para não pré-preencher o composer. */
+export const WHATSAPP_URL = `https://wa.me/${DEFAULT_WHATSAPP_NUMBER}` as const;
+
 function sanitizeDigits(value: string | undefined): string | undefined {
   if (!value) return undefined;
   const digits = value.replace(/\D/g, '');
@@ -12,7 +15,16 @@ export function getWhatsAppNumber(): string {
 }
 
 export function buildWhatsAppUrl(): string {
-  return `https://wa.me/${getWhatsAppNumber()}`;
+  const number = getWhatsAppNumber();
+  if (number === DEFAULT_WHATSAPP_NUMBER) {
+    return WHATSAPP_URL;
+  }
+  return `https://wa.me/${number}`;
+}
+
+/** Abre o chat no browser/app sem parâmetro text (client only). */
+export function openWhatsAppChat(): void {
+  window.open(buildWhatsAppUrl(), '_blank', 'noopener,noreferrer');
 }
 
 /** Ex.: 5584998049641 → +55 (84) 99804-9641 */

@@ -1,6 +1,7 @@
 import {
   buildWhatsAppUrl,
   DEFAULT_WHATSAPP_NUMBER,
+  WHATSAPP_URL,
   formatWhatsAppDisplay,
   getWhatsAppNumber,
 } from '@/lib/whatsapp';
@@ -22,7 +23,8 @@ describe('whatsapp', () => {
   });
 
   it('builds wa.me url without pre-filled message', () => {
-    expect(buildWhatsAppUrl()).toBe(`https://wa.me/${DEFAULT_WHATSAPP_NUMBER}`);
+    expect(buildWhatsAppUrl()).toBe(WHATSAPP_URL);
+    expect(buildWhatsAppUrl()).not.toContain('text=');
   });
 
   it('formats brazilian mobile number for display', () => {

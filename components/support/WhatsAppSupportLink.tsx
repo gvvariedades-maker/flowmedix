@@ -1,5 +1,7 @@
+'use client';
+
 import { cn } from '@/lib/utils';
-import { buildWhatsAppUrl, formatWhatsAppDisplay } from '@/lib/whatsapp';
+import { buildWhatsAppUrl, formatWhatsAppDisplay, openWhatsAppChat } from '@/lib/whatsapp';
 import { WhatsAppIcon } from '@/components/support/WhatsAppIcon';
 
 type WhatsAppSupportLinkProps = {
@@ -13,13 +15,10 @@ export function WhatsAppSupportLink({
   showNumber = false,
   children,
 }: WhatsAppSupportLinkProps) {
-  const href = buildWhatsAppUrl();
-
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+    <button
+      type="button"
+      onClick={openWhatsAppChat}
       className={cn(
         'inline-flex items-center gap-2 font-bold text-[#25D366] transition-colors hover:text-[#20bd5a]',
         className,
@@ -30,6 +29,7 @@ export function WhatsAppSupportLink({
         {children ?? 'Falar no WhatsApp'}
         {showNumber ? ` (${formatWhatsAppDisplay()})` : null}
       </span>
-    </a>
+      <span className="sr-only">{buildWhatsAppUrl()}</span>
+    </button>
   );
 }

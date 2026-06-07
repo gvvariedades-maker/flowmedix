@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { buildWhatsAppUrl } from '@/lib/whatsapp';
+import { buildWhatsAppUrl, openWhatsAppChat } from '@/lib/whatsapp';
 import { MOBILE_BOTTOM_NAV_FIXED_BOTTOM } from '@/lib/layout/mobileBottomNav';
 import { WhatsAppIcon } from '@/components/support/WhatsAppIcon';
 
@@ -12,13 +12,10 @@ type WhatsAppFabProps = {
 };
 
 export function WhatsAppFab({ variant = 'dashboard', className }: WhatsAppFabProps) {
-  const href = buildWhatsAppUrl();
-
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+    <button
+      type="button"
+      onClick={openWhatsAppChat}
       aria-label="Tirar dúvidas no WhatsApp"
       title="Tirar dúvidas no WhatsApp"
       className={cn(
@@ -33,6 +30,8 @@ export function WhatsAppFab({ variant = 'dashboard', className }: WhatsAppFabPro
       )}
     >
       <WhatsAppIcon size={28} />
-    </a>
+      {/* Fallback para leitores que inspecionam href em botões de link externo */}
+      <span className="sr-only">{buildWhatsAppUrl()}</span>
+    </button>
   );
 }
