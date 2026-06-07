@@ -224,4 +224,6 @@ export interface AvantLessonPlayerProps {
   avantCodigo?: number | null;
   /** Payload desatualizado em relação à URL (soft nav) — desabilita navegação entre questões. */
   payloadStale?: boolean;
+  /** Preview sem bordas/arredondamento — preenche o container (ex.: laboratório admin). */
+  previewImmersive?: boolean;
 }

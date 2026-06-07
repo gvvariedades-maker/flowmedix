@@ -168,6 +168,7 @@ export default function AvantLessonPlayer({
   avantCodigo,
   vitrineQuerySuffix = '',
   payloadStale = false,
+  previewImmersive = false,
 }: AvantLessonPlayerProps) {
   
   const router = useRouter();
@@ -1426,7 +1427,7 @@ export default function AvantLessonPlayer({
     <div
       className={cn(
         'relative flex h-full min-h-0 w-full flex-1 flex-col overflow-hidden bg-[#0d1117] font-sans',
-        mode === 'live'
+        mode === 'live' || previewImmersive
           ? 'border-0 shadow-none'
           : 'border border-[rgba(255,255,255,0.10)] shadow-2xl md:rounded-[40px]',
       )}
@@ -1737,7 +1738,10 @@ export default function AvantLessonPlayer({
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className={
               isPreviewMode
-                ? 'absolute inset-0 z-30 flex h-full max-h-full flex-col overflow-hidden rounded-b-[2rem] bg-[#010409] overscroll-y-contain'
+                ? cn(
+                    'absolute inset-0 z-30 flex h-full max-h-full flex-col overflow-hidden bg-[#010409] overscroll-y-contain',
+                    previewImmersive ? 'rounded-none' : 'rounded-b-[2rem]',
+                  )
                 : cn(
                     'fixed inset-x-0 top-0 flex flex-col overflow-hidden bg-[#010409] overscroll-y-contain',
                     estudarQuestaoImmersive
