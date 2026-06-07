@@ -42,7 +42,6 @@ export function useProvaElapsed({
   useEffect(() => {
     if (!provaIniciadaEm) return;
 
-    setNowMs(Date.now());
     const id = window.setInterval(() => setNowMs(Date.now()), 1000);
     return () => window.clearInterval(id);
   }, [provaIniciadaEm]);

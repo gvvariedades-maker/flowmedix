@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useId, useMemo, useState } from 'react';
+import { useClientMounted } from '@/lib/hooks/useClientMounted';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Plus, X } from 'lucide-react';
@@ -141,7 +142,7 @@ export function MultiCheckboxFilter({
   const [desktopOpen, setDesktopOpen] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
   const [busca, setBusca] = useState('');
-  const [portalReady, setPortalReady] = useState(false);
+  const portalReady = useClientMounted();
   const listboxId = useId();
 
   const selectedSet = useMemo(() => new Set(value), [value]);
@@ -175,10 +176,6 @@ export function MultiCheckboxFilter({
     },
     [onChange, value],
   );
-
-  useEffect(() => {
-    setPortalReady(true);
-  }, []);
 
   useBodyScrollLock(sheetOpen);
   const keyboardInsetPx = useMobileSheetKeyboardInset(sheetOpen);

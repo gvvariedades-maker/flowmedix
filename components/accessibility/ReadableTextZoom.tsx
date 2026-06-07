@@ -56,10 +56,12 @@ type ReadableTextZoomProviderProps = {
 export function ReadableTextZoomProvider({ contentKey, children }: ReadableTextZoomProviderProps) {
   const [narrowViewport, setNarrowViewport] = useState(false);
   const [textStep, setTextStep] = useState(0);
+  const [prevContentKey, setPrevContentKey] = useState(contentKey);
 
-  useLayoutEffect(() => {
+  if (contentKey !== prevContentKey) {
+    setPrevContentKey(contentKey);
     setTextStep(0);
-  }, [contentKey]);
+  }
 
   useLayoutEffect(() => {
     const mq = window.matchMedia(`(max-width: ${MAX_WIDTH_MOBILE_CONTROLS_PX}px)`);

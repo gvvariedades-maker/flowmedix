@@ -1,5 +1,6 @@
 'use client';
 
+import { useClientMounted } from '@/lib/hooks/useClientMounted';
 import { useCallback, useEffect, useId, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -51,7 +52,7 @@ export function DashboardFilterSelect({
   variant = 'default',
 }: DashboardFilterSelectProps) {
   const [sheetOpen, setSheetOpen] = useState(false);
-  const [portalReady, setPortalReady] = useState(false);
+  const portalReady = useClientMounted();
   const listboxId = useId();
 
   const displayLabel = value || allLabel;
@@ -64,10 +65,6 @@ export function DashboardFilterSelect({
     },
     [onValueChange],
   );
-
-  useEffect(() => {
-    setPortalReady(true);
-  }, []);
 
   useBodyScrollLock(sheetOpen);
   const keyboardInsetPx = useMobileSheetKeyboardInset(sheetOpen);

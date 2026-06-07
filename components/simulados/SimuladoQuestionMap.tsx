@@ -104,6 +104,8 @@ function SimuladoQuestionMapVirtual({
   const parentRef = useRef<HTMLDivElement>(null);
   const stride = MAP_CELL_SIZE_PX + MAP_CELL_GAP_PX;
 
+  // TanStack Virtual expõe funções instáveis — uso intencional; React Compiler ignora memoização aqui.
+  // eslint-disable-next-line react-hooks/incompatible-library -- API oficial da lib
   const virtualizer = useVirtualizer({
     count: questoes.length,
     getScrollElement: () => parentRef.current,

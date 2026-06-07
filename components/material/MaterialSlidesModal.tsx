@@ -97,7 +97,22 @@ function MaterialLotDrawerList({ activeLotId, onSelectLot }: LotSelectionProps) 
 
 export function MaterialSlidesModal({ open, selectedLot, onSelectLot, onClose }: MaterialSlidesModalProps) {
   const [lotPickerOpen, setLotPickerOpen] = useState(false);
-  const [slideIndex, setSlideIndex] = useState(0);
+  const [slideIndexByLot, setSlideIndexByLot] = useState<
+    Partial<Record<MaterialSlideLotId, number>>
+  >({});
+  const [prevOpen, setPrevOpen] = useState(open);
+  const slideIndex = slideIndexByLot[selectedLot] ?? 0;
+  const setSlideIndex = useCallback(
+    (index: number) => {
+      setSlideIndexByLot((prev) => ({ ...prev, [selectedLot]: index }));
+    },
+    [selectedLot],
+  );
+
+  if (open !== prevOpen) {
+    setPrevOpen(open);
+    setLotPickerOpen(false);
+  }
 
   const handleSelectLot = useCallback(
     (id: MaterialSlideLotId) => {
@@ -106,15 +121,6 @@ export function MaterialSlidesModal({ open, selectedLot, onSelectLot, onClose }:
     },
     [onSelectLot],
   );
-
-  useEffect(() => {
-    setSlideIndex(0);
-  }, [selectedLot]);
-
-  useEffect(() => {
-    const id = requestAnimationFrame(() => setLotPickerOpen(false));
-    return () => cancelAnimationFrame(id);
-  }, [open]);
 
   useBodyScrollLock(open);
 
