@@ -318,6 +318,7 @@ describe('QuestaoNavigationProvider', () => {
     Object.defineProperty(window.history, 'length', { value: 2, configurable: true });
     mockUsePathname.mockReturnValue('/estudar/questao-a');
     window.history.replaceState(window.history.state, '', '/estudar/questao-a');
+    sessionStorage.setItem('avant.estudar.vitrineReturnEligible', '1');
 
     const { getByRole } = render(
       <QuestaoNavigationProvider>

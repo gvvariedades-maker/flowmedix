@@ -105,19 +105,23 @@ test.describe('Vitrine — paginação mobile inline', () => {
     await expect(nav).toBeVisible({ timeout: 15_000 });
     await scrollMainToBottom(page);
 
-    const navBox = await nav.boundingBox();
-    expect(navBox).not.toBeNull();
-
     const proxima = page.getByTestId('vitrine-pagination-next');
-    await expect(proxima).toBeVisible();
-    const proximaBox = await proxima.boundingBox();
-    expect(proximaBox).not.toBeNull();
-    expect(proximaBox!.y + proximaBox!.height).toBeLessThanOrEqual(navBox!.y + 2);
-
     const anterior = page.getByTestId('vitrine-pagination-prev');
-    const anteriorBox = await anterior.boundingBox();
-    expect(anteriorBox).not.toBeNull();
-    expect(anteriorBox!.y + anteriorBox!.height).toBeLessThanOrEqual(navBox!.y + 2);
+    await proxima.scrollIntoViewIfNeeded();
+    await expect(proxima).toBeVisible();
+
+    await expect
+      .poll(async () => {
+        const navBox = await nav.boundingBox();
+        const proximaBox = await proxima.boundingBox();
+        const anteriorBox = await anterior.boundingBox();
+        if (!navBox || !proximaBox || !anteriorBox) return false;
+        return (
+          proximaBox.y + proximaBox.height <= navBox.y + 2 &&
+          anteriorBox.y + anteriorBox.height <= navBox.y + 2
+        );
+      })
+      .toBe(true);
   });
 
   test('Próxima navega para page=2 e atualiza contador de assuntos', async ({ page }) => {

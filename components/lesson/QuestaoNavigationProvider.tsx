@@ -25,6 +25,8 @@ import {
   buildEstudarQuestaoApiUrl,
   buildEstudarVitrineHref,
   canDismissEstudarViaHistoryBack,
+  clearEstudarVitrineReturnEligible,
+  markEstudarVitrineReturnEligible,
   isEstudarVitrinePathname,
   parseEstudarSlugFromPathname,
   shouldSkipEstudarRoutePayloadSync,
@@ -298,6 +300,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
     dismissingToVitrineRef.current = false;
     setIsDismissingToVitrine(false);
     clearDismissFallbackTimer();
+    clearEstudarVitrineReturnEligible();
   }, [clearDismissFallbackTimer]);
 
   const scheduleDismissVitrineFallback = useCallback(
@@ -603,6 +606,7 @@ export function QuestaoNavigationProvider({ children }: { children: ReactNode })
             const route = applySoftEstudarHistoryUrl(href);
             setEstudarRoute(route);
           } else {
+            markEstudarVitrineReturnEligible();
             setEstudarRoute(null);
             scheduleRouterNavigate(router, href, 'push');
           }

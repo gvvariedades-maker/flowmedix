@@ -40,6 +40,36 @@ export function parseEstudarSlugFromBrowserPathname(): string | null {
   return parseEstudarSlugFromPathname(window.location.pathname);
 }
 
+const VITRINE_RETURN_ELIGIBLE_KEY = 'avant.estudar.vitrineReturnEligible';
+
+/** Marca navegação interna vitrine → questão (habilita `history.back` no dismiss). */
+export function markEstudarVitrineReturnEligible(): void {
+  if (typeof window === 'undefined') return;
+  try {
+    sessionStorage.setItem(VITRINE_RETURN_ELIGIBLE_KEY, '1');
+  } catch {
+    /* storage indisponível */
+  }
+}
+
+export function clearEstudarVitrineReturnEligible(): void {
+  if (typeof window === 'undefined') return;
+  try {
+    sessionStorage.removeItem(VITRINE_RETURN_ELIGIBLE_KEY);
+  } catch {
+    /* storage indisponível */
+  }
+}
+
+function isEstudarVitrineReturnEligible(): boolean {
+  if (typeof window === 'undefined') return false;
+  try {
+    return sessionStorage.getItem(VITRINE_RETURN_ELIGIBLE_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
+
 /**
  * Voltar interno pode usar `history.back()` quando há entrada anterior (ex.: vitrine → questão).
  * Não aplica a retornos para plano/caderno nem cold load direto na questão.
@@ -50,7 +80,8 @@ export function canDismissEstudarViaHistoryBack(
   if (ctx.fromPlano || ctx.fromCaderno) return false;
   if (typeof window === 'undefined') return false;
   if (window.history.length <= 1) return false;
-  return isBrowserOnEstudarRoute();
+  if (!isBrowserOnEstudarRoute()) return false;
+  return isEstudarVitrineReturnEligible();
 }
 
 /**
