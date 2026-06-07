@@ -609,7 +609,7 @@ function DashboardContent({
 
   return (
     <PwaInstallProvider enabled={userEmail != null} blocked={estudoReversoWelcome.isOpen}>
-    <div className="dashboard-surface flex h-[100dvh] max-h-[100dvh] min-h-0 bg-background font-sans text-foreground">
+    <div className="dashboard-surface flex h-[100svh] max-h-[100svh] min-h-0 bg-background font-sans text-foreground md:h-[100dvh] md:max-h-[100dvh]">
       {/* --- SIDEBAR FIXA --- */}
       <aside className="relative z-20 hidden h-full w-[18rem] shrink-0 flex-col border-r border-white/10 bg-[#06090f] md:flex">
         <DashboardSidebarPanels
@@ -769,7 +769,7 @@ export default function DashboardShell({
 }) {
   return (
     <ToastProvider>
-      <Suspense fallback={<div className="dashboard-surface min-h-[100dvh] bg-background" />}>
+      <Suspense fallback={<div className="dashboard-surface min-h-[100svh] bg-background md:min-h-[100dvh]" />}>
         <DashboardContent
           initialUserEmail={initialUserEmail}
           initialDisplayName={initialDisplayName}
