@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "IDECAN",
+    "orgao": "(Enfermagem)",
+    "prova": "Tec (DEGASE)",
+    "topico": "Enfermagem",
+    "subtopico": "Processo de Enfermagem"
+  },
+  "question_data": {
+    "instruction": "A luz das diretrizes nacionais voltadas à promoção de uma cultura de paz e à prevenção de diferentes formas de violências no âmbito da Atenção Básica, assinale a opção correta que orienta a atuação do técnico de enfermagem, considerando o fortalecimento da rede intersetorial e a redução de danos às vítimas.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deve-se priorizar a assistência apenas aos agravos visíveis, pois o preenchimento de fichas de notificação compulsória restringe-se a lesões físicas de caráter urgente.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A adoção de protocolos de biossegurança descarta o uso de avaliação multiprofissional, já que a proteção do profissional se sobrepõe à abordagem intersetorial.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A avaliação do contexto de vulnerabilidade, aliada à notificação sistemática dos casos e ao encaminhamento multiprofissional, integra o manejo integral das vítimas de violência.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "O aconselhamento centrado no histórico subjetivo do paciente dispensa registros em prontuário e notificação, por ser matéria de ética e privacidade profissional.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "A elaboração de planos de cuidado deve restringir-se à esfera hospitalar, prescindindo de articulação com redes de proteção social e serviços de saúde mental.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "items": [
+        {
+          "id": "1",
+          "label": "Vulnerabilidade",
+          "detail": "Avaliação do contexto social e familiar",
+          "icon": "Users"
+        },
+        {
+          "id": "2",
+          "label": "Notificação",
+          "detail": "Registro sistemático e obrigatório",
+          "icon": "FileText"
+        },
+        {
+          "id": "3",
+          "label": "Intersetorialidade",
+          "detail": "Articulação com rede de proteção",
+          "icon": "Globe2"
+        },
+        {
+          "id": "4",
+          "label": "Integralidade",
+          "detail": "Manejo completo da vítima",
+          "icon": "Shield"
+        }
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "content": "A NOTIFICAÇÃO DE VIOLÊNCIA É UM ATO DE CUIDADO E PROTEÇÃO LEGAL, NÃO SENDO DISPENSÁVEL POR SIGILO PROFISSIONAL.",
+      "footer_rule": "Notificar é dever ético e legal do profissional de saúde."
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "steps": [
+        "Identificação de sinais de violência",
+        "Acolhimento humanizado e escuta qualificada",
+        "Avaliação de riscos e vulnerabilidades",
+        "Notificação compulsória e encaminhamento à rede"
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "danger_zone",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "content": "Erros comuns no manejo de casos de violência:",
+      "items": [
+        {
+          "id": "1",
+          "label": "Ponto 1",
+          "detail": "Ignorar sinais subjetivos por falta de lesão física"
+        },
+        {
+          "id": "2",
+          "label": "Ponto 2",
+          "detail": "Negligenciar o preenchimento da ficha de notificação"
+        },
+        {
+          "id": "3",
+          "label": "Ponto 3",
+          "detail": "Isolar o cuidado apenas ao ambiente hospitalar"
+        }
+      ],
+      "footer_rule": "A violência é um fenômeno multicausal que exige rede de apoio."
+    }
+  ],
+  "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-4"
+}

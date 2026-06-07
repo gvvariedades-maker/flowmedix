@@ -169,6 +169,8 @@ export default function AvantLessonPlayer({
   vitrineQuerySuffix = '',
   payloadStale = false,
   previewImmersive = false,
+  previewInitialEtapa,
+  previewInitialOpcaoId,
 }: AvantLessonPlayerProps) {
   
   const router = useRouter();
@@ -292,8 +294,12 @@ export default function AvantLessonPlayer({
   // ============================================================================
   // ESTADOS (Pure React V15)
   // ============================================================================
-  const [etapa, setEtapa] = useState<'pergunta' | 'gabarito' | 'estudo'>('pergunta');
-  const [selecionada, setSelecionada] = useState<string | null>(null);
+  const [etapa, setEtapa] = useState<'pergunta' | 'gabarito' | 'estudo'>(() =>
+    mode === 'preview' && previewInitialEtapa ? previewInitialEtapa : 'pergunta',
+  );
+  const [selecionada, setSelecionada] = useState<string | null>(() =>
+    mode === 'preview' ? previewInitialOpcaoId ?? null : null,
+  );
   const [slideAtual, setSlideAtual] = useState(0);
   const [estudoConcluido, setEstudoConcluido] = useState(false);
   const [marcandoConclusao, setMarcandoConclusao] = useState(false);
@@ -351,8 +357,10 @@ export default function AvantLessonPlayer({
   useEffect(() => {
     const jaEstudada =
       questoesDoAssuntoRef.current?.find((q) => q.slug === moduloSlug)?.estudada ?? false;
-    setEtapa('pergunta');
-    setSelecionada(null);
+    const initialEtapa =
+      mode === 'preview' && previewInitialEtapa ? previewInitialEtapa : 'pergunta';
+    setEtapa(initialEtapa);
+    setSelecionada(mode === 'preview' && previewInitialOpcaoId ? previewInitialOpcaoId : null);
     setSlideAtual(0);
     setEstudoConcluido(jaEstudada);
     setMarcandoConclusao(false);
@@ -365,7 +373,7 @@ export default function AvantLessonPlayer({
     setTentativaAccessDenied(false);
     setGabarito(null);
     questionBodyScrollRef.current?.scrollTo({ top: 0, behavior: 'auto' });
-  }, [moduloSlug]);
+  }, [moduloSlug, mode, previewInitialEtapa, previewInitialOpcaoId]);
 
   const navegacaoBloqueada = confirmandoResposta || marcandoConclusao;
   const navegacaoIndisponivel = navegacaoBloqueada || isNavigating || payloadStale;

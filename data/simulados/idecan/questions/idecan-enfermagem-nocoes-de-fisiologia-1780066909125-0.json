@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "ano": "2017",
+    "banca": "IDECAN",
+    "orgao": "(Pref Manhumirim)",
+    "prova": "TEnf (Manhumirim)",
+    "topico": "Enfermagem",
+    "subtopico": "Noções de Fisiologia"
+  },
+  "question_data": {
+    "instruction": "O diabetes é uma doença causada pelo aumento da glicose na corrente sanguínea, sendo uma das principais síndromes crônicas que acometem a população atual. Pode acontecer quando há falta de insulina ou uma dificuldade da insulina do nosso corpo em exercer adequadamente seus efeitos. Dessa forma, a insulina é:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Um açúcar.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Uma enzima.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Um hormônio.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Um carboidrato.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Fisiologia"
+      },
+      "items": [
+        {
+          "id": "1",
+          "label": "Produção",
+          "detail": "Células beta das Ilhotas de Langerhans",
+          "icon": "FlaskConical"
+        },
+        {
+          "id": "2",
+          "label": "Função",
+          "detail": "Facilitar a entrada de glicose nas células",
+          "icon": "Activity"
+        },
+        {
+          "id": "3",
+          "label": "Órgão",
+          "detail": "Pâncreas (glândula mista)",
+          "icon": "HeartPulse"
+        },
+        {
+          "id": "4",
+          "label": "Efeito",
+          "detail": "Hipoglicemiante (reduz glicemia)",
+          "icon": "BookOpen"
+        }
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Fisiologia"
+      },
+      "content": "Regulação Glicêmica Pancreática",
+      "rows": [
+        {
+          "label": "Insulina",
+          "value": "Reduz a glicemia no sangue"
+        },
+        {
+          "label": "Glucagon",
+          "value": "Aumenta a glicemia no sangue"
+        },
+        {
+          "label": "Células Beta",
+          "value": "Secretam Insulina"
+        },
+        {
+          "label": "Células Alfa",
+          "value": "Secretam Glucagon"
+        }
+      ],
+      "footer_rule": "Regulação Glicêmica Pancreática"
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Fisiologia"
+      },
+      "steps": [
+        "Ingestão de carboidratos eleva a glicose plasmática",
+        "Pâncreas detecta a hiperglicemia",
+        "Células beta liberam insulina na corrente sanguínea",
+        "Insulina liga-se aos receptores celulares",
+        "Glicose entra na célula e glicemia reduz"
+      ],
+      "reveal_mode": "tap"
+    },
+    {
+      "type": "danger_zone",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Fisiologia"
+      },
+      "content": "Mitos sobre a Insulina",
+      "items": [
+        {
+          "label": "É um açúcar",
+          "detail": "Confusão por atuar na glicose",
+          "correct": "É um hormônio proteico"
+        },
+        {
+          "label": "É um carboidrato",
+          "detail": "Confusão pelo metabolismo energético",
+          "correct": "É um hormônio de sinalização"
+        },
+        {
+          "label": "É uma enzima",
+          "detail": "Confusão por ser proteína",
+          "correct": "É um mensageiro químico"
+        }
+      ],
+      "footer_rule": "Insulina não é nutriente, é sinalizador metabólico.",
+      "bullet_style": "x_icon"
+    }
+  ],
+  "modulo_slug": "idecan-enfermagem-nocoes-de-fisiologia-1780066909125-0"
+}

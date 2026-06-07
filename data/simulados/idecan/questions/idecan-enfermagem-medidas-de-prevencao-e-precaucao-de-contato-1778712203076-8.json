@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "IDECAN",
+    "orgao": "(Enfermagem)",
+    "prova": "Tec (DEGASE)",
+    "topico": "Enfermagem",
+    "subtopico": "Medidas de Prevenção e Precaução de Contato"
+  },
+  "question_data": {
+    "instruction": "Considerando os protocolos recentes sobre limpeza e desinfecção de superficies em serviços de saúde, principalmente em ambientes criticos que demandam maior rigor no controle de infecções, analise as afirmações a seguir e marque a opção correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "A adoção do procedimento em duas etapas - limpeza criteriosa seguida de desinfecao - reduz a biocarga e elimina microrganismos, exigindo respeito ao tempo de contato.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "A limpeza concorrente prescinde de remoção previa de materia orgânica, pois agentes a base de cloro compensam a presença de sujidade.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A desinfecção terminal exige aplicação de desinfetante de alto nivel em todas as superfícies, independentemente do tipo de contato com fluidos.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Para superficies não criticas, a utilização de detergente enzimático com fricção mecânica substitui plenamente a desinfecção, desde que a equipe use EPIs.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "O uso de quaternario de amonio em superficies dispensa a limpeza prévia e requer apenas 1 minuto de contato para eficácia total.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Medidas de Prevenção e Precaução de Contato"
+      },
+      "items": [
+        {
+          "id": "1",
+          "label": "Limpeza",
+          "detail": "Remoção física de sujidade e matéria orgânica",
+          "icon": "Sparkles"
+        },
+        {
+          "id": "2",
+          "label": "Desinfecção",
+          "detail": "Eliminação de microrganismos em superfícies",
+          "icon": "Shield"
+        },
+        {
+          "id": "3",
+          "label": "Tempo de Contato",
+          "detail": "Período necessário para ação do agente químico",
+          "icon": "BookOpen"
+        },
+        {
+          "id": "4",
+          "label": "Ambientes Críticos",
+          "detail": "Exigem maior rigor e protocolos específicos",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Medidas de Prevenção e Precaução de Contato"
+      },
+      "content": "NÃO EXISTE DESINFECÇÃO EFICAZ SEM LIMPEZA PRÉVIA",
+      "footer_rule": "A matéria orgânica inativa a maioria dos desinfetantes químicos."
+    },
+    {
+      "type": "logic_flow",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Medidas de Prevenção e Precaução de Contato"
+      },
+      "steps": [
+        "Avaliação do nível de risco da superfície",
+        "Limpeza mecânica para remoção de sujidade",
+        "Aplicação do desinfetante adequado",
+        "Respeito rigoroso ao tempo de contato",
+        "Secagem natural ou com material limpo"
+      ],
+      "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+    },
+    {
+      "type": "danger_zone",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Medidas de Prevenção e Precaução de Contato"
+      },
+      "content": "ERROS COMUNS EM PROCESSAMENTO",
+      "items": [
+        {
+          "id": "1",
+          "label": "Ponto 1",
+          "detail": "Ignorar o tempo de contato do produto"
+        },
+        {
+          "id": "2",
+          "label": "Ponto 2",
+          "detail": "Pular a etapa de limpeza mecânica"
+        },
+        {
+          "id": "3",
+          "label": "Ponto 3",
+          "detail": "Uso incorreto de EPIs durante a desinfecção"
+        }
+      ],
+      "footer_rule": "Sempre verifique as instruções do fabricante quanto à diluição e tempo."
+    }
+  ],
+  "modulo_slug": "idecan-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1778712203076-8"
+}
