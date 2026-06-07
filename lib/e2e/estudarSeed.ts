@@ -14,6 +14,8 @@ import { stripQuestionAnswersForClient } from '@/lib/estudar/questionPayload';
 import type { VitrineFacets, VitrinePageResponse } from '@/lib/vitrine/types';
 import type { VitrineListQuery } from '@/lib/vitrine/parseListQuery';
 import { VITRINE_ASSUNTOS_POR_PAGINA } from '@/lib/vitrine/constants';
+import { parseQuestaoAlvo } from '@/lib/vitrine/parseQuestaoAlvo';
+import type { ResolveQuestaoInAssuntoResult } from '@/lib/vitrine/resolveQuestao';
 import {
   E2E_ESTUDAR_BANCA,
   E2E_ESTUDAR_SLUG_1,
@@ -200,6 +202,40 @@ function filterE2eEstudarVitrineGroups(
     if (q && !group.titulo_aula.toLowerCase().includes(q)) return false;
     return true;
   });
+}
+
+export function resolveE2eQuestaoInAssunto(input: {
+  assunto: string;
+  alvo: string;
+  bancas?: string[];
+}): ResolveQuestaoInAssuntoResult | null {
+  const parsed = parseQuestaoAlvo(input.alvo);
+  if (!parsed) return null;
+
+  const groups = buildE2eEstudarVitrineGroups();
+  const group = groups.find((g) => g.titulo_aula === input.assunto.trim());
+  if (!group) return null;
+  if (input.bancas?.length && !input.bancas.includes(group.banca)) return null;
+
+  if (parsed.kind === 'codigo') {
+    const questao = group.questoes.find((q) => q.avant_codigo === parsed.value);
+    if (!questao) return null;
+    return {
+      slug: questao.slug,
+      numero: questao.numero,
+      totalQuestoes: group.totalQuestoes,
+      avant_codigo: questao.avant_codigo,
+    };
+  }
+
+  const questao = group.questoes.find((q) => q.numero === parsed.value);
+  if (!questao) return null;
+  return {
+    slug: questao.slug,
+    numero: questao.numero,
+    totalQuestoes: group.totalQuestoes,
+    avant_codigo: questao.avant_codigo,
+  };
 }
 
 export function getE2eEstudarVitrinePage(listQuery?: VitrineListQuery): VitrinePageResponse {

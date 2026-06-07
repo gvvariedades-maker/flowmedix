@@ -42,7 +42,6 @@ import { getFocusableIn } from '@/lib/a11y/focusable';
 import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
 import { DASHBOARD_MAIN_SCROLL_ATTR } from '@/lib/layout/dashboardMainScroll';
 import { useDashboardDesktop } from '@/lib/layout/useDashboardDesktop';
-import { WhatsAppFab } from '@/components/support/WhatsAppFab';
 import { WhatsAppIcon } from '@/components/support/WhatsAppIcon';
 import { openWhatsAppChat } from '@/lib/whatsapp';
 
@@ -742,7 +741,6 @@ function DashboardContent({
         onSkip={estudoReversoWelcome.markSeenAndClose}
       />
 
-      {!estudarQuestaoImmersive ? <WhatsAppFab /> : null}
     </div>
     </PwaInstallProvider>
   );

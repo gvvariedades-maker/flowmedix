@@ -66,8 +66,10 @@ import { MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM } from '@/lib/layout/mobileBottomNa
 import { useVitrineVisiblePrefetch, VITRINE_PREFETCH_DATA_ATTR } from '@/hooks/useVitrineVisiblePrefetch';
 import { useVitrineListSwr } from '@/hooks/useVitrineListSwr';
 import { buildVitrineEstudarQuery } from '@/lib/vitrine/estudarQuery';
+import { buildVitrineResolveQuestaoSearchParams } from '@/lib/vitrine/resolveQuestaoUrl';
 import { labelQuestoes } from '@/lib/labelQuestoes';
-import { parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
+import { buildEstudarHref, parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
+import { buildVitrineSlugComQuery } from '@/components/vitrine/VitrineQuestaoLink';
 
 const VITRINE_SEARCH_DEBOUNCE_MS = 350;
 
@@ -931,7 +933,14 @@ export default function VitrineClient({
                   <p className="mb-1 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-cyan-500/70">
                     Estudo Reverso
                   </p>
-                  <h1 className="font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+                  <h1
+                    className={cn(
+                      'font-plus-jakarta text-2xl tracking-tight sm:text-3xl',
+                      pageSectionTitle === 'Vitrine de questões'
+                        ? 'text-neon-gradient'
+                        : 'font-semibold text-[#e6edf3]',
+                    )}
+                  >
                     {pageSectionTitle}
                   </h1>
                   {pageSectionDescription ? (
@@ -1258,7 +1267,11 @@ function SubtopicoCard({
   assuntoExpandido: boolean;
   onAssuntoExpandedChange: (open: boolean) => void;
 }) {
+  const router = useRouter();
   const [questoesExpandido, setQuestoesExpandido] = useState(false);
+  const [jumpAlvo, setJumpAlvo] = useState('');
+  const [jumpError, setJumpError] = useState<string | null>(null);
+  const [jumpLoading, setJumpLoading] = useState(false);
   const {
     titulo_aula,
     modulo_nome,
@@ -1288,6 +1301,36 @@ function SubtopicoCard({
   };
 
   const topicIcon = getTopicIcon(titulo_aula, modulo_nome);
+
+  const handleJumpToQuestao = useCallback(async () => {
+    const alvo = jumpAlvo.trim();
+    if (!alvo) {
+      setJumpError('Informe o número ou código Q-…');
+      return;
+    }
+
+    setJumpLoading(true);
+    setJumpError(null);
+    try {
+      const params = buildVitrineResolveQuestaoSearchParams({
+        assunto: titulo_aula,
+        alvo,
+        estudarQuery,
+      });
+      const res = await fetchWithAuth(`/api/vitrine/questao?${params.toString()}`);
+      const body = (await res.json().catch(() => ({}))) as { slug?: string; error?: string };
+      if (!res.ok || !body.slug) {
+        setJumpError(body.error ?? 'Questão não encontrada neste assunto');
+        return;
+      }
+      const destino = buildEstudarHref(buildVitrineSlugComQuery(body.slug, estudarQuery));
+      router.push(destino);
+    } catch {
+      setJumpError('Não foi possível abrir a questão. Tente de novo.');
+    } finally {
+      setJumpLoading(false);
+    }
+  }, [estudarQuery, jumpAlvo, router, titulo_aula]);
 
   return (
     <motion.div
@@ -1392,6 +1435,57 @@ function SubtopicoCard({
               </p>
             </div>
 
+            {hasQuestions ? (
+              <form
+                className="space-y-1.5"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  void handleJumpToQuestao();
+                }}
+              >
+                <label
+                  htmlFor={`jump-questao-${firstSlug}`}
+                  className="text-[10px] font-medium uppercase tracking-wide text-slate-400"
+                >
+                  Ir para questão
+                </label>
+                <div className="flex gap-2">
+                  <Input
+                    id={`jump-questao-${firstSlug}`}
+                    type="text"
+                    inputMode="numeric"
+                    autoComplete="off"
+                    enterKeyHint="go"
+                    placeholder={listaFoiTruncada ? `1–${totalQuestoes} ou Q-…` : 'Nº ou Q-…'}
+                    value={jumpAlvo}
+                    onChange={(e) => {
+                      setJumpAlvo(e.target.value);
+                      if (jumpError) setJumpError(null);
+                    }}
+                    disabled={jumpLoading}
+                    className="h-11 min-h-[44px] flex-1 rounded-xl border-white/10 bg-white/[0.04] text-sm text-slate-100 placeholder:text-slate-500"
+                  />
+                  <Button
+                    type="submit"
+                    size="sm"
+                    disabled={jumpLoading || !jumpAlvo.trim()}
+                    className="h-11 min-h-[44px] shrink-0 rounded-xl px-4"
+                  >
+                    {jumpLoading ? '…' : 'Ir'}
+                  </Button>
+                </div>
+                {jumpError ? (
+                  <p className="text-[11px] font-medium text-rose-400/90" role="alert">
+                    {jumpError}
+                  </p>
+                ) : listaFoiTruncada ? (
+                  <p className="text-[10px] text-slate-500">
+                    A lista abaixo mostra as primeiras {questoesExibidas} de {totalQuestoes}.
+                  </p>
+                ) : null}
+              </form>
+            ) : null}
+
             <button
               type="button"
               onClick={() => setQuestoesExpandido((v) => !v)}
@@ -1466,7 +1560,7 @@ function SubtopicoCard({
                         estudarQuery={estudarQuery}
                         className="inline-flex min-h-[44px] items-center font-semibold text-amber-300 underline-offset-2 hover:text-amber-200 hover:underline"
                       >
-                        Ver todas
+                        Próxima pendente
                       </VitrineQuestaoLink>
                     </p>
                   )}
