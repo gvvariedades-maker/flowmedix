@@ -1,5 +1,6 @@
 'use client';
 
+import { useClientMounted } from '@/lib/hooks/useClientMounted';
 import { useCallback, useEffect, useState, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -32,16 +33,15 @@ type Props = {
 };
 
 export function SearchPanelToggle({ modulosCount, children }: Props) {
+  const mounted = useClientMounted();
   const [collapsed, setCollapsed] = useState(false);
-  const [preferenceLoaded, setPreferenceLoaded] = useState(false);
+  const [prefSynced, setPrefSynced] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [portalReady, setPortalReady] = useState(false);
 
-  useEffect(() => {
+  if (mounted && !prefSynced) {
+    setPrefSynced(true);
     setCollapsed(readCollapsedPreference());
-    setPreferenceLoaded(true);
-    setPortalReady(true);
-  }, []);
+  }
 
   const toggleCollapsed = useCallback(() => {
     setCollapsed((prev) => {
@@ -77,7 +77,7 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
   );
 
   const mobileSheet =
-    portalReady && typeof document !== 'undefined'
+    mounted && typeof document !== 'undefined'
       ? createPortal(
           <AnimatePresence>
             {mobileOpen ? (
@@ -158,10 +158,10 @@ export function SearchPanelToggle({ modulosCount, children }: Props) {
       <div
         className={cn(
           'hidden min-h-0 shrink-0 flex-col transition-[width] duration-300 lg:flex',
-          preferenceLoaded && collapsed ? 'w-12' : 'w-full lg:w-[min(42%,28rem)]',
+          mounted && collapsed ? 'w-12' : 'w-full lg:w-[min(42%,28rem)]',
         )}
       >
-        {preferenceLoaded && collapsed ? (
+        {mounted && collapsed ? (
           <div className="sticky top-6 flex h-[calc(100vh-160px)] flex-col items-center gap-2 rounded-3xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117] py-3">
             <button
               type="button"

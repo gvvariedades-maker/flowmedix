@@ -258,8 +258,14 @@ export function SimuladosAnalyticsDashboard({
   }, []);
 
   const kpis = data?.kpis;
-  const evolucao = data?.evolucao_temporal ?? [];
-  const evolucaoGeral = dataGeral?.evolucao_temporal ?? [];
+  const evolucao = useMemo(
+    () => data?.evolucao_temporal ?? [],
+    [data?.evolucao_temporal],
+  );
+  const evolucaoGeral = useMemo(
+    () => dataGeral?.evolucao_temporal ?? [],
+    [dataGeral?.evolucao_temporal],
+  );
 
   const prioridades = useMemo(() => {
     const bySubtopico = (data?.desempenho.por_subtopico ?? []).filter((item) => item.total_questoes > 0);
@@ -287,7 +293,7 @@ export function SimuladosAnalyticsDashboard({
     const percentual =
       respondidas > 0 ? (acertos / respondidas) * 100 : (typeof kpis?.media_acerto === 'number' ? kpis.media_acerto : null);
     return { respondidas, acertos, erros, percentual };
-  }, [evolucao, kpis?.media_acerto]);
+  }, [evolucao, kpis]);
 
   const resumoGeral = useMemo(() => {
     const respondidas = evolucaoGeral.reduce((sum, item) => sum + item.total_questoes, 0);
@@ -298,7 +304,7 @@ export function SimuladosAnalyticsDashboard({
         ? (acertos / respondidas) * 100
         : (typeof dataGeral?.kpis.media_acerto === 'number' ? dataGeral.kpis.media_acerto : null);
     return { respondidas, acertos, erros, percentual };
-  }, [dataGeral?.kpis.media_acerto, evolucaoGeral]);
+  }, [dataGeral, evolucaoGeral]);
 
   const deltaPontosPercentuais = useMemo(() => {
     if (typeof resumoPeriodo.percentual !== 'number' || typeof resumoGeral.percentual !== 'number') return null;

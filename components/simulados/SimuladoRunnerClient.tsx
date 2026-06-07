@@ -236,7 +236,10 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   }, [activeSlug, sessionData?.session.status, loadQuestion, provaAguardandoInicio]);
 
   const isTreino = sessionData?.session.modo === 'treino';
-  const options = questionData?.question_data?.options ?? [];
+  const options = useMemo(
+    () => questionData?.question_data?.options ?? [],
+    [questionData?.question_data?.options],
+  );
 
   const handleConfirmAnswer = useCallback(async () => {
     if (!activeItem || !activeSlug || !selectedOption || submitting || feedback) return;

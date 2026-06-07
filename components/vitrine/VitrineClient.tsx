@@ -45,6 +45,7 @@ import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
 import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
+import { useClientMounted } from '@/lib/hooks/useClientMounted';
 import { useMobileSheetKeyboardInset } from '@/lib/layout/useMobileSheetKeyboardInset';
 import {
   vitrineFacetsQueryKey,
@@ -365,7 +366,7 @@ export default function VitrineClient({
     setPagina((prev) => (prev === page ? prev : page));
 
     filtersHydratedFromUrlRef.current = true;
-  }, [searchParamsString, fallbackTitulo]);
+  }, [searchParamsString, fallbackTitulo, searchParams]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -1035,7 +1036,7 @@ function VitrineMobileFilterSheet({
   disabled,
 }: VitrineMobileFilterSheetProps) {
   const [busca, setBusca] = useState('');
-  const [portalReady, setPortalReady] = useState(false);
+  const portalReady = useClientMounted();
   const selectedSet = useMemo(() => new Set(selected), [selected]);
 
   const optionsFiltradas = useMemo(
@@ -1062,10 +1063,6 @@ function VitrineMobileFilterSheet({
 
   useBodyScrollLock(open);
   const keyboardInsetPx = useMobileSheetKeyboardInset(open);
-
-  useEffect(() => {
-    setPortalReady(true);
-  }, []);
 
   useEffect(() => {
     if (!open) return;

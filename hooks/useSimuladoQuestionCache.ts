@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, type RefObject } from 'react';
 import { getSimuladoQuestionPayload, SimuladoApiError } from '@/lib/simulado/client';
 import type { SimuladoQuestaoPayloadResponse } from '@/lib/simulado/types';
 import {
@@ -12,6 +12,15 @@ import {
 export type SimuladoQuestionSlim = SimuladoQuestaoPayloadResponse['dados'];
 
 const PREFETCH_DEPTH = 2;
+
+function abortAllPendingFetches(
+  abortBySlugRef: RefObject<Map<string, AbortController>>,
+  abortSlugFetch: (slug: string) => void,
+) {
+  for (const slug of [...abortBySlugRef.current.keys()]) {
+    abortSlugFetch(slug);
+  }
+}
 
 type UseSimuladoQuestionCacheOptions = {
   activeSlug: string | null;
@@ -128,11 +137,7 @@ export function useSimuladoQuestionCache({
   }, [activeSlug, prefetchTargets, prefetchSlugsInBackground]);
 
   useEffect(() => {
-    return () => {
-      for (const slug of [...abortBySlugRef.current.keys()]) {
-        abortSlugFetch(slug);
-      }
-    };
+    return () => abortAllPendingFetches(abortBySlugRef, abortSlugFetch);
   }, [abortSlugFetch]);
 
   return {

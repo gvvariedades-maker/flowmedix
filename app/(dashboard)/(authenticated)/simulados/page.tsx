@@ -12,15 +12,10 @@ export default async function SimuladosPage() {
     const session = await getServerSession();
     if (!session?.user) redirect('/login');
 
+    let hub: Awaited<ReturnType<typeof loadSimuladosHubData>>;
     try {
       const supabase = await createSupabaseServerClient();
-      const hub = await loadSimuladosHubData(supabase, session.user.id);
-      return (
-        <SimuladosListClient
-          openSession={hub.openSession}
-          recentSessions={hub.recentSessions}
-        />
-      );
+      hub = await loadSimuladosHubData(supabase, session.user.id);
     } catch (error) {
       logger.error('Failed to load simulados hub', error);
       return (
@@ -29,6 +24,13 @@ export default async function SimuladosPage() {
         </div>
       );
     }
+
+    return (
+      <SimuladosListClient
+        openSession={hub.openSession}
+        recentSessions={hub.recentSessions}
+      />
+    );
   }
 
   return <SimuladosListClient openSession={null} recentSessions={[]} />;
