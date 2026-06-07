@@ -12,6 +12,8 @@ import {
   parseEstudarSlugComQuery,
   shouldSkipEstudarRoutePayloadSync,
   canDismissEstudarViaHistoryBack,
+  clearEstudarVitrineReturnEligible,
+  markEstudarVitrineReturnEligible,
 } from '@/lib/estudar/navigation';
 
 describe('lib/estudar/navigation', () => {
@@ -43,10 +45,22 @@ describe('lib/estudar/navigation', () => {
   });
 
   describe('canDismissEstudarViaHistoryBack', () => {
+    afterEach(() => {
+      clearEstudarVitrineReturnEligible();
+    });
+
     it('permite history.back na vitrine com histórico', () => {
       Object.defineProperty(window.history, 'length', { value: 2, configurable: true });
       window.history.replaceState(window.history.state, '', '/estudar/questao-a');
+      markEstudarVitrineReturnEligible();
       expect(canDismissEstudarViaHistoryBack({})).toBe(true);
+    });
+
+    it('bloqueia quando há histórico mas sem navegação interna da vitrine', () => {
+      Object.defineProperty(window.history, 'length', { value: 2, configurable: true });
+      window.history.replaceState(window.history.state, '', '/estudar/questao-a');
+      clearEstudarVitrineReturnEligible();
+      expect(canDismissEstudarViaHistoryBack({})).toBe(false);
     });
 
     it('bloqueia quando destino é plano ou caderno', () => {
