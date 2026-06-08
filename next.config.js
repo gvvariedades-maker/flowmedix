@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   serverExternalPackages: ['@react-email/components', '@react-email/render', 'resend'],
+  experimental: {
+    // Tree-shaking agressivo de libs com muitos exports — reduz JS no mobile/4G.
+    optimizePackageImports: ['lucide-react', 'framer-motion', '@radix-ui/react-tabs'],
+  },
   async redirects() {
     return [
       { source: '/campina-grande', destination: '/lp/campina-grande', permanent: true },

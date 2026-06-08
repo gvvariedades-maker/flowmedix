@@ -100,13 +100,13 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
                 {urg.label}
               </span>
               {repetiu && (
-                <span className="inline-flex items-center gap-1 rounded-full border border-violet-200 bg-violet-50 px-2 py-0.5 text-[10px] font-semibold text-violet-800">
+                <span className="inline-flex items-center gap-1 rounded-full border border-violet-500/30 bg-violet-500/10 px-2 py-0.5 text-[10px] font-semibold text-violet-200">
                   <RefreshCcw className="h-2.5 w-2.5" aria-hidden />
                   {item.repetitions}× revisada
                 </span>
               )}
               {item.priority >= 50 && (
-                <span className="inline-flex items-center gap-1 rounded-full border border-rose-200 bg-rose-50 px-2 py-0.5 text-[10px] font-semibold text-rose-800">
+                <span className="inline-flex items-center gap-1 rounded-full border border-rose-500/30 bg-rose-500/10 px-2 py-0.5 text-[10px] font-semibold text-rose-200">
                   <Flame className="h-2.5 w-2.5" aria-hidden />
                   Precisa atenção
                 </span>
@@ -114,7 +114,7 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
             </div>
 
             <div
-              className="mt-4 h-1.5 w-full max-w-md overflow-hidden rounded-full bg-slate-100"
+              className="mt-4 h-1.5 w-full max-w-md overflow-hidden rounded-full bg-white/10"
               title="Prioridade de revisão (algoritmo)"
             >
               <div
@@ -131,7 +131,7 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
                   type="button"
                   variant="ghost"
                   size="icon"
-                  className="h-9 w-9 text-slate-500 transition-colors duration-200 hover:bg-white/5 hover:text-slate-200"
+                  className="h-11 w-11 text-slate-500 transition-colors duration-200 hover:bg-white/5 hover:text-slate-200"
                   aria-label="Mais opções do tópico"
                 >
                   <MoreVertical className="h-4 w-4" />
@@ -150,7 +150,7 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
             </DropdownMenu>
             <Link
               href={href}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 transition-colors duration-200 hover:bg-white/5 hover:text-[#00f2ff]"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-slate-500 transition-colors duration-200 hover:bg-white/5 hover:text-[#00f2ff]"
               aria-label="Ir para a questão"
             >
               <ChevronRight className="h-5 w-5" />

@@ -4,6 +4,7 @@ import "./globals.css";
 import { validateAllEnv } from "@/lib/env";
 import { JsonLd, type JsonLdObject } from "@/components/seo/JsonLd";
 import { RegisterServiceWorker } from "@/components/pwa/RegisterServiceWorker";
+import { GlobalErrorListeners } from "@/components/monitoring/GlobalErrorListeners";
 import { getAbsoluteUrl, getSiteUrl } from "@/lib/siteUrl";
 
 // Validar variáveis de ambiente no startup (apenas no servidor)
@@ -45,7 +46,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-body",
   display: "swap",
 });
@@ -147,6 +148,7 @@ export default function RootLayout({
       >
         <JsonLd data={siteStructuredData} />
         <RegisterServiceWorker />
+        <GlobalErrorListeners />
         {children}
       </body>
     </html>

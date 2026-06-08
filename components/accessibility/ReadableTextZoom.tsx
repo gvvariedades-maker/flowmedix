@@ -158,27 +158,56 @@ type ReadableTextZoomContentProps = {
 export function ReadableTextZoomContent({ children, className }: ReadableTextZoomContentProps) {
   const { narrowViewport, textStep } = useReadableTextZoomContext();
   const [containerPx, setContainerPx] = useState(0);
+  const [innerHeightPx, setInnerHeightPx] = useState(0);
+  // CSS `zoom` reflui o conteudo (WebKit/Blink e Firefox 126+). Em navegadores
+  // sem suporte, caimos para `transform: scale` com compensacao de altura.
+  const [zoomSupported, setZoomSupported] = useState(true);
   const outerWrapperRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
 
   const scale = narrowViewport ? TEXT_SCALE_STEPS[Math.min(textStep, TEXT_SCALE_STEPS.length - 1)] : 1;
   const isTextScaled = scale > 1;
 
   useLayoutEffect(() => {
+    setZoomSupported(
+      typeof CSS !== 'undefined' &&
+        typeof CSS.supports === 'function' &&
+        CSS.supports('zoom', '1'),
+    );
+  }, []);
+
+  useLayoutEffect(() => {
     const el = outerWrapperRef.current;
     if (!el) return;
-    const update = () => setContainerPx(el.offsetWidth);
+    const update = () => {
+      setContainerPx(el.offsetWidth);
+      if (innerRef.current) setInnerHeightPx(innerRef.current.offsetHeight);
+    };
     update();
     const ro = new ResizeObserver(update);
     ro.observe(el);
+    if (innerRef.current) ro.observe(innerRef.current);
     return () => ro.disconnect();
   }, []);
 
   const innerWidthPx = computeZoomInnerWidthPx(containerPx, scale);
+  const useTransformFallback = scale !== 1 && innerWidthPx !== null && !zoomSupported;
 
   const zoomStyle: CSSProperties | undefined =
     scale !== 1 && innerWidthPx !== null
-      ? ({ zoom: scale, width: `${innerWidthPx}px`, boxSizing: 'border-box' } as CSSProperties)
+      ? useTransformFallback
+        ? ({
+            transform: `scale(${scale})`,
+            transformOrigin: 'top left',
+            width: `${innerWidthPx}px`,
+            boxSizing: 'border-box',
+          } as CSSProperties)
+        : ({ zoom: scale, width: `${innerWidthPx}px`, boxSizing: 'border-box' } as CSSProperties)
       : undefined;
+
+  // transform nao ocupa espaco de layout — reserva a altura escalada no wrapper externo.
+  const outerStyle: CSSProperties | undefined =
+    useTransformFallback && innerHeightPx > 0 ? { height: `${innerHeightPx * scale}px` } : undefined;
 
   const zoomContentClassName = cn(
     'min-w-0 max-w-full box-border',
@@ -195,8 +224,8 @@ export function ReadableTextZoomContent({ children, className }: ReadableTextZoo
   );
 
   return (
-    <div ref={outerWrapperRef} className="w-full min-w-0 self-stretch">
-      <div className={zoomContentClassName} style={zoomStyle}>
+    <div ref={outerWrapperRef} className="w-full min-w-0 self-stretch" style={outerStyle}>
+      <div ref={innerRef} className={zoomContentClassName} style={zoomStyle}>
         {children}
       </div>
     </div>

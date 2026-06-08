@@ -410,7 +410,7 @@ export default function AvantLaboratory() {
   const invalidBatchCount = batchItems.filter((i) => !i.valid).length;
 
   return (
-    <div className="h-screen overflow-hidden bg-white text-slate-900 font-sans">
+    <div className="min-h-screen overflow-x-hidden lg:h-screen lg:overflow-hidden bg-white text-slate-900 font-sans">
 
       {/* TOAST NOTIFICATION */}
       {toast && (
@@ -569,7 +569,7 @@ export default function AvantLaboratory() {
       </nav>
 
       {/* ÁREA DE TRABALHO */}
-      <main className="mx-auto grid h-[calc(100vh-88px)] max-w-[1920px] grid-cols-12 grid-rows-[auto_minmax(0,1fr)] gap-4 p-4 lg:gap-5 lg:p-5">
+      <main className="mx-auto flex max-w-[1920px] flex-col gap-4 p-4 lg:grid lg:h-[calc(100vh-88px)] lg:grid-cols-12 lg:grid-rows-[auto_minmax(0,1fr)] lg:gap-5 lg:p-5">
 
         <aside className="col-span-12 min-h-0 shrink-0">
           <details className="group rounded-2xl border border-slate-200 bg-amber-50/60 px-4 py-3 text-slate-700 shadow-sm open:pb-4">
@@ -604,7 +604,7 @@ export default function AvantLaboratory() {
         </aside>
 
         {/* EDITOR */}
-        <div className="col-span-12 flex min-h-0 flex-col gap-3 overflow-y-auto lg:col-span-3">
+        <div className="col-span-12 flex min-h-0 flex-col gap-3 overflow-y-auto max-lg:h-[60vh] lg:col-span-3">
           <div className="flex items-center justify-between px-2">
             <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 flex items-center gap-2">
               <Code className="w-3 h-3 text-[#4F46E5]" /> Payload Input
@@ -703,7 +703,7 @@ export default function AvantLaboratory() {
         </div>
 
         {/* PREVIEW (individual) / SUMÁRIO DE LOTE */}
-        <div className="col-span-12 flex min-h-0 flex-col overflow-hidden lg:col-span-9">
+        <div className="col-span-12 flex min-h-0 flex-col overflow-hidden max-lg:h-[75vh] lg:col-span-9">
           <div className="relative flex h-full min-h-0 w-full flex-1 overflow-hidden rounded-2xl border border-slate-200 bg-[#0d1117] shadow-lg">
             {isBatchMode ? (
               /* ------------------------------------------------------------------ */

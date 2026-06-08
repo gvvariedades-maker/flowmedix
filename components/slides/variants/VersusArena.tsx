@@ -73,7 +73,7 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
         initial={{ x: '-100%' }}
         animate={{ x: 0 }}
         transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-        className="flex-1 p-6 md:p-10 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/10 relative bg-gradient-to-r from-slate-900/80 to-transparent backdrop-blur-sm"
+        className="flex-1 p-6 max-md:pb-16 md:p-10 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/10 relative bg-gradient-to-r from-slate-900/80 to-transparent backdrop-blur-sm"
       >
         <div className="relative z-10 max-w-md mx-auto md:ml-auto md:mr-10">
           <div className={`inline-flex items-center justify-center p-3 rounded-xl ${theme.iconBg} ${theme.iconText} mb-4 shadow-lg`}>
@@ -115,7 +115,7 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
         initial={{ x: '100%' }}
         animate={{ x: 0 }}
         transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-        className="flex-1 p-6 md:p-10 flex flex-col justify-center relative bg-gradient-to-l from-slate-900/80 to-transparent backdrop-blur-sm"
+        className="flex-1 p-6 max-md:pt-16 md:p-10 flex flex-col justify-center relative bg-gradient-to-l from-slate-900/80 to-transparent backdrop-blur-sm"
       >
         <div className="relative z-10 max-w-md mx-auto md:mr-auto md:ml-10">
           {/* Ícone alinhado à direita no mobile, à esquerda no desktop */}

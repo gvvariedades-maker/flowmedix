@@ -109,9 +109,10 @@ function getSlideVariants(slideKind: string, reducedMotion: boolean): SlideMotio
 
   switch (slideKind) {
     case 'golden_rule':
+      // Sem filter: blur — compositing de blur anima mal em GPUs mobile de baixo/medio porte.
       return {
-        initial: { opacity: 0, scale: 0.93, filter: 'blur(6px)' },
-        animate: { opacity: 1, scale: 1, filter: 'blur(0px)' },
+        initial: { opacity: 0, scale: 0.93 },
+        animate: { opacity: 1, scale: 1 },
         exit: { opacity: 0, scale: 1.03 },
         transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] },
       };
@@ -1766,7 +1767,7 @@ export default function AvantLessonPlayer({
             <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-x-auto overflow-y-hidden">
               
               {/* Header Minimalista (Top Bar) — zoom mobile ao lado da numeração, fixo fora da rolagem do slide */}
-              <div className="shrink-0 px-4 pb-2 pt-3 sm:px-6 md:px-8 sm:pt-6 flex justify-between items-center gap-2 min-w-0">
+              <div className="shrink-0 px-4 pb-2 pt-[max(0.75rem,env(safe-area-inset-top,0px))] sm:px-6 md:px-8 sm:pt-[max(1.5rem,env(safe-area-inset-top,0px))] flex justify-between items-center gap-2 min-w-0">
                 <div className="flex items-center gap-3 min-w-0">
                   <div className="bg-[#BEF264] text-slate-900 p-2 rounded-lg shrink-0">
                     <Lightbulb size={20} fill="black" />
