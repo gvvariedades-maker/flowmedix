@@ -23,6 +23,7 @@ const VitrineGrupoSchema = z.object({
   erros: z.number(),
   totalResolvidas: z.number(),
   totalQuestoes: z.number(),
+  totalNeuroSlides: z.number().default(0),
   trabalhadas: z.number(),
   percentual: z.number(),
   firstSlug: z.string(),
