@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
+import * as Sentry from '@sentry/nextjs';
 import { logger } from '@/lib/logger';
+import { isSentryServerEnabled } from '@/lib/env';
 
 export const runtime = 'nodejs';
 
@@ -41,6 +43,16 @@ export async function POST(req: Request) {
     url,
     userAgent,
   });
+
+  // Encaminha para o Sentry quando habilitado (DSN presente). No-op sem DSN.
+  if (isSentryServerEnabled()) {
+    const error = new Error(message);
+    if (stack) error.stack = stack;
+    Sentry.captureException(error, {
+      tags: { source: source ?? 'unknown', origin: 'client-error-route' },
+      extra: { digest, url, userAgent },
+    });
+  }
 
   return new NextResponse(null, { status: 204 });
 }

@@ -66,6 +66,16 @@ const EnvSchema = z.object({
     .string()
     .regex(/^\d{10,15}$/, 'NEXT_PUBLIC_WHATSAPP_NUMBER deve conter só dígitos (DDI + DDD + número)')
     .optional(),
+  /**
+   * Sentry (observabilidade) — todas opcionais. Sem DSN, o Sentry fica
+   * desativado (no-op) e a app continua usando o seam /api/client-error.
+   */
+  SENTRY_DSN: z.string().min(1).optional(),
+  NEXT_PUBLIC_SENTRY_DSN: z.string().min(1).optional(),
+  /** Token usado só em CI para upload de source maps (withSentryConfig). */
+  SENTRY_AUTH_TOKEN: z.string().min(1).optional(),
+  SENTRY_ORG: z.string().min(1).optional(),
+  SENTRY_PROJECT: z.string().min(1).optional(),
 }).superRefine((data, ctx) => {
   if (data.NODE_ENV !== 'production') return;
   if (!data.ADMIN_EMAIL?.trim() && !data.ADMIN_EMAILS?.trim()) {
@@ -131,6 +141,11 @@ const ENV_KEYS = [
   'KV_REST_API_URL',
   'KV_REST_API_TOKEN',
   'NEXT_PUBLIC_WHATSAPP_NUMBER',
+  'SENTRY_DSN',
+  'NEXT_PUBLIC_SENTRY_DSN',
+  'SENTRY_AUTH_TOKEN',
+  'SENTRY_ORG',
+  'SENTRY_PROJECT',
 ] as const;
 
 function readTrimmedEnv(key: string): string | undefined {
@@ -407,6 +422,46 @@ export function validateUpstashEnv(): void {
   );
 }
 
+/**
+ * DSN efetivo do Sentry no servidor: prefere SENTRY_DSN; cai para o público
+ * (NEXT_PUBLIC_SENTRY_DSN) quando só esse estiver configurado. `null` = Sentry
+ * desativado no servidor (no-op).
+ */
+export function getSentryServerDsn(): string | null {
+  const current = getEnv();
+  return current.SENTRY_DSN?.trim() || current.NEXT_PUBLIC_SENTRY_DSN?.trim() || null;
+}
+
+/** Indica se o Sentry está habilitado no servidor (há DSN). */
+export function isSentryServerEnabled(): boolean {
+  return getSentryServerDsn() !== null;
+}
+
+export function validateSentryEnv(): void {
+  const current = getEnv();
+  const dsn = getSentryServerDsn();
+
+  if (!dsn) {
+    if (current.NODE_ENV !== 'production') {
+      console.log('ℹ️  Sentry desativado (defina SENTRY_DSN ou NEXT_PUBLIC_SENTRY_DSN para habilitar).');
+    }
+    return;
+  }
+
+  // Source maps só sobem em CI quando há token + org + project. Sem eles o
+  // build continua e os erros chegam ao Sentry (apenas sem desminificação).
+  const hasUploadCreds =
+    Boolean(current.SENTRY_AUTH_TOKEN?.trim()) &&
+    Boolean(current.SENTRY_ORG?.trim()) &&
+    Boolean(current.SENTRY_PROJECT?.trim());
+
+  if (!hasUploadCreds && process.env.CI) {
+    console.warn(
+      '⚠️  Sentry ativo, mas upload de source maps desligado: defina SENTRY_AUTH_TOKEN, SENTRY_ORG e SENTRY_PROJECT no CI.',
+    );
+  }
+}
+
 export function validateAllEnv(): void {
   getEnv();
   validateSupabaseUrl();
@@ -415,4 +470,5 @@ export function validateAllEnv(): void {
   validateProPriceEnv();
   validateCronEnv();
   validateUpstashEnv();
+  validateSentryEnv();
 }

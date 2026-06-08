@@ -43,4 +43,23 @@ if (hasUpstash) {
   console.log('ℹ️  Upstash ausente (opcional em dev; rate limit in-memory)');
 }
 
+const hasSentryDsn = Boolean(
+  process.env.SENTRY_DSN?.trim() || process.env.NEXT_PUBLIC_SENTRY_DSN?.trim(),
+);
+if (hasSentryDsn) {
+  console.log('✅ Sentry configurado (crash reporting ativo)');
+  const hasUploadCreds = Boolean(
+    process.env.SENTRY_AUTH_TOKEN?.trim() &&
+      process.env.SENTRY_ORG?.trim() &&
+      process.env.SENTRY_PROJECT?.trim(),
+  );
+  if (!hasUploadCreds) {
+    console.log(
+      'ℹ️  Source maps do Sentry desligados (defina SENTRY_AUTH_TOKEN, SENTRY_ORG e SENTRY_PROJECT no CI para desminificar stack traces).',
+    );
+  }
+} else {
+  console.log('ℹ️  Sentry desativado (defina SENTRY_DSN ou NEXT_PUBLIC_SENTRY_DSN para habilitar; app usa /api/client-error).');
+}
+
 console.log('✅ Variáveis de ambiente OK');

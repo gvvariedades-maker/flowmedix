@@ -28,11 +28,32 @@ function isDuplicate(signature: string): boolean {
   return false;
 }
 
+/**
+ * Encaminha ao Sentry no client quando NEXT_PUBLIC_SENTRY_DSN está definido.
+ * Como o valor é inlined no build, sem DSN este bloco (e o import dinâmico do
+ * Sentry) é eliminado por tree-shaking. O /api/client-error segue como fallback.
+ */
+function captureToSentry(payload: ClientErrorPayload): void {
+  if (!process.env.NEXT_PUBLIC_SENTRY_DSN) return;
+  void import('@sentry/nextjs')
+    .then((Sentry) => {
+      const error = new Error(payload.message);
+      if (payload.stack) error.stack = payload.stack;
+      Sentry.captureException(error, {
+        tags: { source: payload.source ?? 'unknown', origin: 'reportClientError' },
+        extra: { digest: payload.digest, url: payload.url },
+      });
+    })
+    .catch(() => {});
+}
+
 export function reportClientError(payload: ClientErrorPayload): void {
   if (typeof window === 'undefined') return;
 
   const signature = `${payload.source ?? ''}:${payload.message}`;
   if (isDuplicate(signature)) return;
+
+  captureToSentry(payload);
 
   const body = JSON.stringify({
     message: payload.message.slice(0, 2000),
