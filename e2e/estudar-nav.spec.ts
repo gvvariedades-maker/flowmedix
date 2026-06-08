@@ -556,4 +556,31 @@ test.describe('Estudar — immersive inline mobile (rota #5)', () => {
     await expect(globalMobileHeader(page)).toBeVisible();
     await expect(bottomNav(page)).toBeVisible();
   });
+
+  test('card da vitrine → voltar à vitrine restaura BottomNav e vitrine clicável', async ({
+    page,
+  }) => {
+    await gotoVitrineFiltrada(page);
+    await expect(bottomNav(page)).toBeVisible();
+
+    await abrirPrimeiraQuestaoDaVitrine(page);
+    await expect(globalMobileHeader(page)).not.toBeVisible();
+    await expect(bottomNav(page)).not.toBeVisible();
+    await expect(page.getByText(/Questão E2E 1:/)).toBeVisible();
+
+    await page.getByRole('button', { name: /Voltar para Vitrine/i }).click();
+    await expect(page).toHaveURL(new RegExp(`/estudar(?:\\?.*banca=${BANCA_QUERY})?`), {
+      timeout: 15_000,
+    });
+    await dismissWelcomeIfVisible(page);
+    await waitVitrineListReady(page);
+
+    await expect(globalMobileHeader(page)).toBeVisible();
+    await expect(bottomNav(page)).toBeVisible();
+    await expect(page.getByText(/Questão E2E 1:/)).not.toBeVisible();
+
+    await abrirPrimeiraQuestaoDaVitrine(page);
+    await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
+    await expect(bottomNav(page)).not.toBeVisible();
+  });
 });

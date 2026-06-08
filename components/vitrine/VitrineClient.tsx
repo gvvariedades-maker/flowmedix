@@ -68,7 +68,11 @@ import { useVitrineListSwr } from '@/hooks/useVitrineListSwr';
 import { buildVitrineEstudarQuery } from '@/lib/vitrine/estudarQuery';
 import { buildVitrineResolveQuestaoSearchParams } from '@/lib/vitrine/resolveQuestaoUrl';
 import { labelQuestoes } from '@/lib/labelQuestoes';
-import { buildEstudarHref, parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
+import {
+  buildEstudarHref,
+  markEstudarVitrineReturnEligible,
+  parseEstudarSlugFromPathname,
+} from '@/lib/estudar/navigation';
 import { buildVitrineSlugComQuery } from '@/components/vitrine/VitrineQuestaoLink';
 
 const VITRINE_SEARCH_DEBOUNCE_MS = 350;
@@ -1324,6 +1328,7 @@ function SubtopicoCard({
         return;
       }
       const destino = buildEstudarHref(buildVitrineSlugComQuery(body.slug, estudarQuery));
+      markEstudarVitrineReturnEligible();
       router.push(destino);
     } catch {
       setJumpError('Não foi possível abrir a questão. Tente de novo.');
