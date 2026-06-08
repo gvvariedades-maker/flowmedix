@@ -29,8 +29,23 @@ jest.mock('@/lib/estudar/prefetchPolicy', () => ({
   shouldSkipEstudarPrefetch: jest.fn(() => false),
 }));
 
+jest.mock('@/lib/estudar/navigation', () => {
+  const actual = jest.requireActual<typeof import('@/lib/estudar/navigation')>(
+    '@/lib/estudar/navigation',
+  );
+  return {
+    ...actual,
+    markEstudarVitrineReturnEligible: jest.fn(),
+  };
+});
+
 import { useQuestaoNavigationOptional } from '@/components/lesson/questao-navigation-context';
+import { markEstudarVitrineReturnEligible } from '@/lib/estudar/navigation';
 import { shouldSkipEstudarPrefetch } from '@/lib/estudar/prefetchPolicy';
+
+const mockMarkVitrineReturnEligible = markEstudarVitrineReturnEligible as jest.MockedFunction<
+  typeof markEstudarVitrineReturnEligible
+>;
 
 const mockUseNav = useQuestaoNavigationOptional as jest.MockedFunction<
   typeof useQuestaoNavigationOptional
@@ -84,6 +99,7 @@ describe('VitrineQuestaoLink', () => {
     );
     fireEvent.click(screen.getByRole('link', { name: 'Iniciar' }));
     expect(navigateEstudar).not.toHaveBeenCalled();
+    expect(mockMarkVitrineReturnEligible).toHaveBeenCalledTimes(1);
   });
 
   it('não altera clique com modificador (nova aba)', () => {
@@ -91,6 +107,7 @@ describe('VitrineQuestaoLink', () => {
     const link = screen.getByRole('link', { name: 'Abrir' });
     fireEvent.click(link, { ctrlKey: true });
     expect(navigateEstudar).not.toHaveBeenCalled();
+    expect(mockMarkVitrineReturnEligible).not.toHaveBeenCalled();
   });
 
   it('sem provider usa Link nativo (sem prefetch nem navigate)', () => {

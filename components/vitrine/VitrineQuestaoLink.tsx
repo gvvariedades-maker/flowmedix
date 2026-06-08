@@ -9,7 +9,10 @@ import {
   type PointerEvent,
 } from 'react';
 import { useQuestaoNavigationOptional } from '@/components/lesson/questao-navigation-context';
-import { buildEstudarHref } from '@/lib/estudar/navigation';
+import {
+  buildEstudarHref,
+  markEstudarVitrineReturnEligible,
+} from '@/lib/estudar/navigation';
 import { shouldSkipEstudarPrefetch } from '@/lib/estudar/prefetchPolicy';
 
 export type VitrineQuestaoLinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'href'> & {
@@ -60,6 +63,10 @@ export const VitrineQuestaoLink = forwardRef<HTMLAnchorElement, VitrineQuestaoLi
       if (event.defaultPrevented || isModifiedClick(event)) return;
       // Navegação nativa do Next.js Link (intercept @modal + Hydrator no servidor).
       // Evita depender só de navigateEstudar, que falhava ao voltar da vitrine.
+      // O push do Link cria a entrada vitrine → questão no histórico; marcar elegível
+      // permite que "voltar à vitrine" use history.back() (sem replace + View Transition,
+      // que trava a tela no mobile).
+      markEstudarVitrineReturnEligible();
     };
 
     const handlePointerEnter = (event: PointerEvent<HTMLAnchorElement>) => {
