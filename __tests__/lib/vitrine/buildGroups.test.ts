@@ -36,6 +36,17 @@ describe('buildVitrineGroups', () => {
     expect(groups[1].titulo_aula).toBe('Assunto A');
   });
 
+  it('soma totalNeuroSlides por assunto', () => {
+    const groups = buildVitrineGroups([
+      modulo({ modulo_slug: 'q1', titulo_aula: 'X', slide_count: 4 }),
+      modulo({ modulo_slug: 'q2', titulo_aula: 'X', slide_count: 3 }),
+      modulo({ modulo_slug: 'q3', titulo_aula: 'Y', slide_count: 4 }),
+    ]);
+
+    expect(groups.find((g) => g.titulo_aula === 'X')?.totalNeuroSlides).toBe(7);
+    expect(groups.find((g) => g.titulo_aula === 'Y')?.totalNeuroSlides).toBe(4);
+  });
+
   it('define firstSlug como primeira questão não estudada', () => {
     const groups = buildVitrineGroups([
       modulo({ modulo_slug: 'q1', titulo_aula: 'X', estudoReversoConcluido: true }),

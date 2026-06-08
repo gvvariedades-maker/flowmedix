@@ -61,6 +61,8 @@ export type HistoricoQuestaoRow = {
 export type ModuloComStats = ModuloEstudoRow & {
   estudoReversoConcluido: boolean;
   stats: { acertos: number; total: number; percentual: number; priorityScore: number };
+  /** Preenchido no fallback JS da vitrine para agregar NeuroSlides por assunto. */
+  slide_count?: number;
 };
 
 /** Anexa stats e prioridade como em `app/(dashboard)/(authenticated)/estudar/page.tsx`. */

@@ -25,6 +25,7 @@ export function buildVitrineGroups(modulos: ModuloComStats[]): VitrineGrupoSubto
         erros: 0,
         totalResolvidas: 0,
         totalQuestoes: 0,
+        totalNeuroSlides: 0,
         trabalhadas: 0,
         percentual: 0,
         firstSlug: m.modulo_slug,
@@ -45,6 +46,7 @@ export function buildVitrineGroups(modulos: ModuloComStats[]): VitrineGrupoSubto
     grupo.erros += m.stats.total - m.stats.acertos;
     grupo.totalResolvidas += m.stats.total;
     grupo.totalQuestoes += 1;
+    grupo.totalNeuroSlides += m.slide_count ?? 0;
     if (m.estudoReversoConcluido) grupo.trabalhadas += 1;
     const tentativas = grupo.acertos + grupo.erros;
     grupo.percentual = tentativas > 0 ? Math.round((grupo.acertos / tentativas) * 100) : 0;

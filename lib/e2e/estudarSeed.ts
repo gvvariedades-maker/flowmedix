@@ -163,6 +163,7 @@ function buildE2eEstudarVitrineGroup(
     erros: 0,
     totalResolvidas: 0,
     totalQuestoes: E2E_ESTUDAR_SLUGS.length,
+    totalNeuroSlides: E2E_ESTUDAR_SLUGS.length * E2E_REVERSE_STUDY_SLIDES.length,
     trabalhadas: 0,
     percentual: 0,
     firstSlug: E2E_ESTUDAR_SLUG_1,

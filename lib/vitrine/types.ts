@@ -17,6 +17,8 @@ export type VitrineGrupoSubtopico = {
   erros: number;
   totalResolvidas: number;
   totalQuestoes: number;
+  /** Soma real de NeuroSlides (`reverse_study_slides` / `study_slides`) no assunto. */
+  totalNeuroSlides: number;
   trabalhadas: number;
   percentual: number;
   firstSlug: string;
