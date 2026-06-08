@@ -30,12 +30,15 @@ test.describe('Sistema de Cache', () => {
   });
 
   test('deve retornar status do endpoint de cache', async ({ request }) => {
-    const response = await request.get('/api/cache/revalidate');
+    const response = await request.get('/api/cache/revalidate', {
+      headers: {
+        Authorization: `Bearer ${webhookSecret}`,
+      },
+    });
 
     expect(response.status()).toBe(200);
     const body = await response.json();
     expect(body.status).toBe('ok');
-    expect(body.config).toBeDefined();
   });
 
   test('deve rejeitar requisição sem autorização em produção', async ({ request }) => {

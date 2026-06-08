@@ -17,6 +17,7 @@ const config = {
     extend: {
       fontFamily: {
         display: ['var(--font-syne)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        'plus-jakarta': ['var(--font-plus-jakarta-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
         body: ['var(--font-body)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
