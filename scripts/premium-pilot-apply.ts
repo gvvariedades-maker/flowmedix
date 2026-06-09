@@ -15,7 +15,10 @@ loadEnvConfig(process.cwd());
 import { createServerSupabase } from '@/lib/supabase/server';
 import { applyLoteToSupabase } from '@/lib/catalogMigration/applyLote';
 import { hasFlag } from '@/lib/catalogMigration/cliArgs';
-import { validateAndNormalizeQuestao } from '@/lib/catalogMigration/validatePayload';
+import {
+  validateAndNormalizeQuestao,
+  type ValidatedQuestao,
+} from '@/lib/catalogMigration/validatePayload';
 
 type ManifestItem = {
   id: string;
@@ -38,7 +41,7 @@ async function main() {
   const manifest = JSON.parse(readFileSync(manifestPath, 'utf8')) as Manifest;
   const supabase = await createServerSupabase();
 
-  const items: { modulo_slug: string; payload: NonNullable<ReturnType<typeof validateAndNormalizeQuestao> extends { ok: true; data: infer D } ? D : never> }[] = [];
+  const items: { modulo_slug: string; payload: ValidatedQuestao }[] = [];
   const skipped: { id: string; modulo_slug: string; detail: string }[] = [];
   const failed: { id: string; modulo_slug: string; detail: string }[] = [];
 

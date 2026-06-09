@@ -1,8 +1,14 @@
 import { calculateLayoutVariant } from './themeGenerator';
-import { resolveConceptMapLayoutVariant } from './conceptMapLayout';
+import {
+  resolveConceptMapLayoutVariant,
+  type ConceptMapItemLike,
+} from './conceptMapLayout';
 import { resolveGoldenRuleLayoutVariant } from './goldenRuleLayout';
 import { resolveLogicFlowLayoutVariant } from './logicFlowLayout';
-import { resolveDangerZoneLayoutVariant } from './dangerZoneLayout';
+import {
+  resolveDangerZoneLayoutVariant,
+  type DangerZoneItemLike,
+} from './dangerZoneLayout';
 import { resolveLogicFlowRevealMode } from './logicFlowRevealMode';
 import { resolveSlideTitle } from './slideTitleResolve';
 import { enhanceGoldenRuleRows } from './goldenRuleRowsEnhance';
@@ -41,7 +47,10 @@ export function resolveSlidePresentation(slide: {
   switch (slideType) {
     case 'concept_map':
       layoutVariant = resolveConceptMapLayoutVariant(
-        slide,
+        {
+          items: slide.items as ConceptMapItemLike[] | undefined,
+          concepts: slide.concepts,
+        },
         explicitLayoutVariant,
         mapLayoutVariant,
       );
@@ -62,7 +71,7 @@ export function resolveSlidePresentation(slide: {
       break;
     case 'danger_zone':
       layoutVariant = resolveDangerZoneLayoutVariant(
-        slide,
+        { items: slide.items as DangerZoneItemLike[] | undefined },
         explicitLayoutVariant,
         mapLayoutVariant,
       );

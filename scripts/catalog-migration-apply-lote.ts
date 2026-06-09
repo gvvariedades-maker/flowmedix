@@ -6,6 +6,7 @@
  *   npm run catalog:apply-lote -- --lote=pilot-goldens --dry-run
  *   npm run catalog:apply-lote -- --lote=pilot-goldens --apply
  *   npm run catalog:apply-lote -- --lote=pilot-goldens --apply --allow-insert
+ *   npm run catalog:apply-lote -- --lote=imunizacao-lote-02 --apply --only-slugs-file=data/catalog-migration/imunizacao-lote-02/sub01-slugs.json
  */
 
 import { loadEnvConfig } from '@next/env';
@@ -16,9 +17,12 @@ loadEnvConfig(process.cwd());
 
 import { createServerSupabase } from '@/lib/supabase/server';
 import { applyLoteToSupabase } from '@/lib/catalogMigration/applyLote';
-import { hasFlag, requireArg } from '@/lib/catalogMigration/cliArgs';
+import { hasFlag, parseArg, parseCsvArg, requireArg } from '@/lib/catalogMigration/cliArgs';
 import { loteQuestionsDir } from '@/lib/catalogMigration/paths';
-import { validateAndNormalizeQuestao } from '@/lib/catalogMigration/validatePayload';
+import {
+  validateAndNormalizeQuestao,
+  type ValidatedQuestao,
+} from '@/lib/catalogMigration/validatePayload';
 
 async function main() {
   const lote = requireArg('lote');
@@ -33,12 +37,26 @@ async function main() {
     throw new Error(`Lote não encontrado: ${questionsDir}`);
   }
 
-  const files = readdirSync(questionsDir).filter((f) => f.endsWith('.json'));
+  let files = readdirSync(questionsDir).filter((f) => f.endsWith('.json'));
+
+  const onlySlugsFile = parseArg('only-slugs-file');
+  const onlySlugsCsv = parseCsvArg('only-slugs');
+  let onlySlugs: Set<string> | null = null;
+  if (onlySlugsFile) {
+    const list = JSON.parse(readFileSync(resolve(process.cwd(), onlySlugsFile), 'utf8')) as string[];
+    onlySlugs = new Set(list);
+  } else if (onlySlugsCsv?.length) {
+    onlySlugs = new Set(onlySlugsCsv);
+  }
+  if (onlySlugs) {
+    files = files.filter((f) => onlySlugs!.has(f.replace(/\.json$/, '')));
+  }
+
   if (files.length === 0) {
     throw new Error(`Nenhum JSON em ${questionsDir}`);
   }
 
-  const items: { modulo_slug: string; payload: ReturnType<typeof validateAndNormalizeQuestao> extends { ok: true; data: infer D } ? D : never }[] = [];
+  const items: { modulo_slug: string; payload: ValidatedQuestao }[] = [];
   const loadFailures: { file: string; reason: string }[] = [];
 
   for (const file of files.sort()) {
