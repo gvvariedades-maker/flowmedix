@@ -28,4 +28,18 @@ describe('goldenRuleLayout', () => {
     expect(goldenRuleHasTableRows([{ label: 'PAS', value: '90' }])).toBe(true);
     expect(goldenRuleHasTableRows([{ label: '', value: 'x' }])).toBe(false);
   });
+
+  it('B1: rows vence mapa compact quando layout_variant não está no JSON', () => {
+    const slide = {
+      rows: [{ label: 'FC', value: '60–100' }],
+    };
+    expect(resolveGoldenRuleLayoutVariant(slide, undefined, 'compact')).toBe('reference_table');
+  });
+
+  it('B1: layout_variant compact explícito no JSON bloqueia tabela', () => {
+    const slide = {
+      rows: [{ label: 'FC', value: '60–100' }],
+    };
+    expect(resolveGoldenRuleLayoutVariant(slide, 'compact', 'center')).toBe('compact');
+  });
 });

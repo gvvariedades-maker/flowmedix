@@ -34,10 +34,17 @@ describe('dangerZoneLayout', () => {
     expect(resolveDangerZoneLayoutVariant({ items: [] }, 'compare')).toBe('compare');
   });
 
-  it('respeita override cards quando não é legado list/compare', () => {
+  it('respeita override cards quando explícito no JSON', () => {
     const slide = {
       items: [{ label: 'T', detail: 'D', correct: 'C' }],
     };
     expect(resolveDangerZoneLayoutVariant(slide, 'cards')).toBe('cards');
+  });
+
+  it('correct vence mapa compact quando layout_variant não está no JSON', () => {
+    const slide = {
+      items: [{ label: 'Trap', detail: 'X', correct: 'Conduta certa' }],
+    };
+    expect(resolveDangerZoneLayoutVariant(slide, undefined, 'compact')).toBe('compare');
   });
 });

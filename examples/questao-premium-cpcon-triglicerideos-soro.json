@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "Tec Enf",
+    "orgao": "UEPB",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Coleta de Exames Laboratoriais"
+  },
+  "question_data": {
+    "instruction": "Para a dosagem de triglicerídeos, a amostra biológica indicada é:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Urina.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Soro.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Líquor.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Sêmen.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Escarro.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "layout_variant": "morphological",
+      "slide_title": "Triglicerídeos — a amostra certa",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "items": [
+        {
+          "label": "Triglicerídeos",
+          "detail": "Dosagem bioquímica rotineira feita em amostra sérica. Em prova, a banca costuma perguntar pela matriz correta antes mesmo do valor de referência.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Soro",
+          "detail": "É a resposta esperada na questão: sangue coletado, coagulado e separado para análise laboratorial.",
+          "icon": "TestTube2"
+        },
+        {
+          "label": "Fase pré-analítica",
+          "detail": "Identificação, preparo do paciente, tipo de tubo e transporte impactam diretamente o resultado final.",
+          "icon": "ClipboardList"
+        },
+        {
+          "label": "Erro comum",
+          "detail": "Trocar a amostra sérica por urina, líquor ou secreções respiratórias é pegadinha clássica em exames bioquímicos.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Leitura da banca",
+          "detail": "Quando o exame é de perfil lipídico, pense primeiro em soro/plasma e depois em condições de coleta.",
+          "icon": "Search"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra B: soro.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Triglicerídeos em prova = biomarcador sérico; desconfie de alternativas de secreção ou excreção"
+    },
+    {
+      "type": "golden_rule",
+      "layout_variant": "reference_table",
+      "template": "t09",
+      "slide_title": "Regra de ouro — perfil lipídico",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "TRIGLICERÍDEOS - AMOSTRA DE ROTINA",
+      "rows": [
+        {
+          "label": "Amostra recomendada",
+          "value": "Soro",
+          "badge": "hot"
+        },
+        {
+          "label": "Finalidade",
+          "value": "Dosagem bioquímica do perfil lipídico",
+          "badge": "info"
+        },
+        {
+          "label": "Ponto crítico",
+          "value": "Separar corretamente a fração sérica e enviar conforme o protocolo do laboratório",
+          "badge": "ok"
+        },
+        {
+          "label": "Pegadinha",
+          "value": "Urina, líquor, sêmen e escarro são distratores típicos",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Leitura rápida",
+          "value": "Exame lipídico pede matriz sanguínea, não material excretado",
+          "badge": "ok"
+        }
+      ],
+      "footer_rule": "Memorize: triglicerídeos = soro; o resto é distração de prova"
+    },
+    {
+      "type": "logic_flow",
+      "layout_variant": "cards",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "steps": [
+        "Ler o pedido: triglicerídeos é um exame bioquímico do perfil lipídico.",
+        "Perguntar qual é a matriz laboratorial habitual.",
+        "Associar perfil lipídico a amostra de sangue processada em soro.",
+        "Eliminar urina, líquor, sêmen e escarro por não serem matrizes do exame.",
+        "Marcar soro como alternativa correta.",
+        "Fixar: em bioquímica, a banca quase sempre cobra o tipo de amostra antes do valor em si."
+      ],
+      "footer_rule": "Fluxo mental: exame bioquímico → sangue → soro → letra B"
+    },
+    {
+      "type": "danger_zone",
+      "layout_variant": "compare",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "PEGADINHAS CPCON — TRIGLICERÍDEOS",
+      "items": [
+        {
+          "label": "Achar que qualquer fluido biológico serve",
+          "detail": "A lista mistura urina, líquor, sêmen e escarro para testar se você reconhece o exame bioquímico.",
+          "correct": "Triglicerídeos são dosados em soro."
+        },
+        {
+          "label": "Confundir perfil lipídico com coleta de urina",
+          "detail": "Urina é um distrator porque aparece muito em questões de laboratório, mas não aqui.",
+          "correct": "A matriz correta continua sendo sanguínea."
+        },
+        {
+          "label": "Trocar soro por plasma sem ler o enunciado",
+          "detail": "A banca pode cobrar detalhes do tubo, mas nesta questão o foco é a amostra sérica.",
+          "correct": "Soro é a resposta segura para a dosagem de triglicerídeos."
+        },
+        {
+          "label": "Marcar líquido corporal por associação clínica",
+          "detail": "Quem pensa em infecção ou neurologia tende a cair em líquor ou secreção respiratória.",
+          "correct": "O exame pede bioquímica do sangue, não análise de secreções."
+        }
+      ],
+      "footer_rule": "Se a pergunta for triglicerídeos, pense em soro e descarte os fluidos distratores"
+    }
+  ]
+}

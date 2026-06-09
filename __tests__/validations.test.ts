@@ -435,6 +435,31 @@ describe('Validação de Questões', () => {
       expect(result.success).toBe(true);
     });
 
+    it('deve validar slide golden_rule com rows premium (emphasis e badge)', () => {
+      const validSlide = {
+        type: 'golden_rule',
+        content: 'REFERÊNCIA',
+        rows: [
+          { label: 'Norma', value: 'Lei 8.080', emphasis: 'highlight', badge: 'hot' },
+          { label: 'Pegadinha', value: '8.142 ≠ composição', emphasis: 'alert', badge: 'warn' },
+          { label: 'Gabarito', value: 'Letra C', emphasis: 'success', badge: 'ok' },
+        ],
+      };
+
+      const result = GoldenRuleSlideSchema.safeParse(validSlide);
+      expect(result.success).toBe(true);
+    });
+
+    it('deve rejeitar badge inválido em golden_rule rows', () => {
+      const invalidSlide = {
+        type: 'golden_rule',
+        rows: [{ label: 'X', value: 'Y', badge: 'invalid' }],
+      };
+
+      const result = GoldenRuleSlideSchema.safeParse(invalidSlide);
+      expect(result.success).toBe(false);
+    });
+
     it('deve rejeitar slide sem content nem rows', () => {
       const invalidSlide = {
         type: 'golden_rule',

@@ -51,4 +51,7 @@ supabase/.temp/
 # Tutorial videos (avoid committing large media)
 /public/tutorial/*.mp4
 
+# Lotes de migração premium (cópias de trabalho; goldens canônicos ficam em examples/)
+/data/catalog-migration/*/questions/
+
 .env*

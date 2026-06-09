@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "IDECAN",
+    "orgao": "Enfermagem",
+    "prova": "Tec (DEGASE)",
+    "topico": "Enfermagem",
+    "subtopico": "Processo de Enfermagem",
+    "cargo_header": "Técnico de Enfermagem"
+  },
+  "question_data": {
+    "options": [
+      {
+        "id": "A",
+        "text": "Deve-se priorizar a assistência apenas aos agravos visíveis, pois o preenchimento de fichas de notificação compulsória restringe-se a lesões físicas de caráter urgente.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A adoção de protocolos de biossegurança descarta o uso de avaliação multiprofissional, já que a proteção do profissional se sobrepõe à abordagem intersetorial.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "A avaliação do contexto de vulnerabilidade, aliada à notificação sistemática dos casos e ao encaminhamento multiprofissional, integra o manejo integral das vítimas de violência.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "O aconselhamento centrado no histórico subjetivo do paciente dispensa registros em prontuário e notificação, por ser matéria de ética e privacidade profissional.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "A elaboração de planos de cuidado deve restringir-se à esfera hospitalar, prescindindo de articulação com redes de proteção social e serviços de saúde mental.",
+        "is_correct": false
+      }
+    ],
+    "instruction": "A luz das diretrizes nacionais voltadas à promoção de uma cultura de paz e à prevenção de diferentes formas de violências no âmbito da Atenção Básica, assinale a opção correta que orienta a atuação do técnico de enfermagem, considerando o fortalecimento da rede intersetorial e a redução de danos às vítimas."
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "slide_title": "Violência na Atenção Básica",
+      "items": [
+        {
+          "id": "1",
+          "icon": "Users",
+          "label": "Vulnerabilidade",
+          "detail": "Avaliação do contexto social, familiar e territorial."
+        },
+        {
+          "id": "2",
+          "icon": "FileText",
+          "label": "Notificação",
+          "detail": "Registro sistemático e obrigatório dos casos suspeitos."
+        },
+        {
+          "id": "3",
+          "icon": "Globe2",
+          "label": "Intersetorialidade",
+          "detail": "Articulação com rede de proteção e assistência."
+        },
+        {
+          "id": "4",
+          "icon": "Shield",
+          "label": "Integralidade",
+          "detail": "Cuidado ampliado para reduzir danos e proteger a vítima."
+        }
+      ],
+      "footer_rule": "Violência na Atenção Básica exige olhar ampliado, notificação e rede de cuidado."
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "content": "MANEJO DE VIOLÊNCIA: AVALIAR, NOTIFICAR E ENCAMINHAR.",
+      "rows": [
+        {
+          "label": "Avaliação",
+          "value": "Identificar vulnerabilidades e sinais de violência."
+        },
+        {
+          "label": "Notificação",
+          "value": "Registrar o caso conforme fluxo compulsório."
+        },
+        {
+          "label": "Encaminhamento",
+          "value": "Acionar rede multiprofissional e intersetorial."
+        },
+        {
+          "label": "Gabarito",
+          "value": "C"
+        }
+      ],
+      "footer_rule": "A atuação técnica integra cuidado, registro e articulação em rede."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "steps": [
+        "Reconhecer que a questão trata de violência no âmbito da Atenção Básica.",
+        "Avaliar vulnerabilidade e contexto familiar do usuário.",
+        "Registrar e notificar os casos suspeitos ou confirmados.",
+        "Encaminhar para rede multiprofissional e intersetorial.",
+        "Construir plano de cuidado com foco na redução de danos.",
+        "Marcar a alternativa C."
+      ],
+      "footer_rule": "O manejo correto une avaliação, notificação e rede de proteção."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "content": "ERROS COMUNS NO CUIDADO À VÍTIMA DE VIOLÊNCIA",
+      "items": [
+        {
+          "id": "1",
+          "label": "Olhar só a lesão visível",
+          "detail": "Reduzir a violência a traumas físicos aparentes.",
+          "correct": "A avaliação precisa incluir contexto, risco e vulnerabilidade."
+        },
+        {
+          "id": "2",
+          "label": "Dispensar notificação",
+          "detail": "Tratar o caso apenas como assunto de sigilo e aconselhamento verbal.",
+          "correct": "A notificação é parte do cuidado e da vigilância em saúde."
+        },
+        {
+          "id": "3",
+          "label": "Encerrar o cuidado na unidade",
+          "detail": "Não articular com assistência social, psicologia ou rede protetiva.",
+          "correct": "O encaminhamento multiprofissional é parte do manejo integral."
+        }
+      ],
+      "footer_rule": "Violência é fenômeno multicausal e pede resposta em rede."
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "meta": {
+    "banca": "IDECAN",
+    "prova": "Enfermagem",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Assistência Perioperatória (Inclui SRPA)"
+  },
+  "question_data": {
+    "instruction": "Na SRPA, o técnico de enfermagem pode observar e trocar o curativo do cateter peridural, desde que sob supervisão do enfermeiro.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Certo.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Errado.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "layout_variant": "morphological",
+      "slide_title": "SRPA e cateter peridural — leitura da prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Assistência Perioperatória (Inclui SRPA)"
+      },
+      "items": [
+        {
+          "label": "SRPA",
+          "detail": "Sala de recuperação pós-anestésica: ambiente de monitorização intensiva após o procedimento cirúrgico e anestésico.",
+          "icon": "Bed"
+        },
+        {
+          "label": "Cateter peridural (CPD)",
+          "detail": "Dispositivo que exige técnica e atribuições específicas. A troca de curativo não é tarefa liberada ao técnico como execução autônoma.",
+          "icon": "ShieldAlert"
+        },
+        {
+          "label": "Papel do técnico",
+          "detail": "Observar, monitorar, comunicar alterações e apoiar o cuidado dentro de sua competência técnica.",
+          "icon": "UserCheck"
+        },
+        {
+          "label": "Papel do enfermeiro",
+          "detail": "Avaliar, decidir condutas de enfermagem e realizar procedimentos privativos, como curativos de dispositivos complexos.",
+          "icon": "Stethoscope"
+        },
+        {
+          "label": "Pegadinha da banca",
+          "detail": "A questão mistura supervisão com execução para fazer parecer que “observar” autoriza “trocar curativo”.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "B: errado.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Na SRPA, supervisão não transforma atribuição privativa em tarefa do técnico"
+    },
+    {
+      "type": "golden_rule",
+      "layout_variant": "reference_table",
+      "template": "t05",
+      "slide_title": "Regra de ouro — atribuições na SRPA",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Assistência Perioperatória (Inclui SRPA)"
+      },
+      "content": "SRPA - O QUE O TÉCNICO PODE E O QUE NÃO PODE",
+      "rows": [
+        {
+          "label": "Pode",
+          "value": "Monitorar sinais, observar o paciente e comunicar intercorrências",
+          "badge": "ok"
+        },
+        {
+          "label": "Não pode executar sozinho",
+          "value": "Troca de curativo de CPD como atribuição privativa",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Conduta segura",
+          "value": "Percebeu alteração? Observa, registra e avisa o enfermeiro",
+          "badge": "info"
+        },
+        {
+          "label": "Armadilha da questão",
+          "value": "\"Sob supervisão\" não elimina a natureza privativa do procedimento",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Resposta",
+          "value": "Errado",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Competência técnica não é o mesmo que autorização para procedimento privativo"
+    },
+    {
+      "type": "logic_flow",
+      "layout_variant": "cards",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Assistência Perioperatória (Inclui SRPA)"
+      },
+      "steps": [
+        "Ler a frase inteira e separar dois verbos: observar e trocar curativo.",
+        "Reconhecer que a SRPA exige vigilância contínua, mas isso não amplia atribuições privativas.",
+        "Lembrar: curativo de CPD é procedimento de responsabilidade do enfermeiro.",
+        "Entender que supervisionar não autoriza o técnico a executar aquilo que é privativo.",
+        "Julgar a assertiva como errada.",
+        "Marcar B.",
+        "Fixação: técnico observa, monitora e comunica; enfermeiro decide e executa o que é privativo."
+      ],
+      "footer_rule": "Passo a passo: verbo privativo identificado → resposta errada"
+    },
+    {
+      "type": "danger_zone",
+      "layout_variant": "compare",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Assistência Perioperatória (Inclui SRPA)"
+      },
+      "content": "PEGADINHAS IDECAN — SRPA e CPD",
+      "items": [
+        {
+          "label": "Achar que supervisão libera procedimento",
+          "detail": "A banca usa “sob supervisão do enfermeiro” para parecer que tudo fica permitido.",
+          "correct": "Se a atribuição é privativa, supervisão não transforma o técnico em executor."
+        },
+        {
+          "label": "Confundir observar com fazer",
+          "detail": "O técnico pode acompanhar o curativo e relatar alterações, mas não assumir a troca como ato próprio.",
+          "correct": "Observar e comunicar é diferente de realizar o procedimento."
+        },
+        {
+          "label": "Ignorar a especificidade do CPD",
+          "detail": "Cateter peridural envolve cuidado sensível, com risco e responsabilidade técnica.",
+          "correct": "Curativo de CPD fica na esfera do enfermeiro."
+        },
+        {
+          "label": "Marcar Certo por causa da SRPA",
+          "detail": "A sigla da unidade induz o aluno a pensar só em monitorização pós-anestésica.",
+          "correct": "A unidade não muda a atribuição profissional do procedimento."
+        }
+      ],
+      "footer_rule": "Se a frase mistura supervisão com ato privativo, o gabarito tende a ser errado"
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "generated_at": "2026-06-09T08:01:23.277Z",
+  "catalog_total": 5180,
+  "family_distribution": {
+    "legis": 28,
+    "protocolo": 1091,
+    "calc": 338,
+    "vf": 47,
+    "certo_errado": 260,
+    "conceito": 3401,
+    "text_fragment": 15
+  },
+  "existing_goldens_excluded": [
+    "fepese-enfermagem-processo-de-enfermagem-1776056021381-0",
+    "fundatec-enfermagem-imunizacao-1777103182944-8",
+    "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-0",
+    "cpcon-uepb-enfermagem-vias-de-administracao-1776056366158-7",
+    "vunesp-enfermagem-vias-de-administracao-1776056338955-3"
+  ],
+  "curated_recommended_slugs": [
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-3",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-2",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+    "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712122855-9",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+    "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-7",
+    "idecan-enfermagem-processo-de-enfermagem-1778712122855-4",
+    "fepese-enfermagem-nocoes-de-anatomia-1775447762008-7",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-6",
+    "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-2",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-2",
+    "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2"
+  ],
+  "curated_notes": "Lista revisada manualmente: troca legis fraca, cálculo mal classificado (dengue) e prioriza slugs do manifest CG-01 / Certo-Errado SV.",
+  "selected_count": 12,
+  "selected_slugs": [
+    "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+    "cpcon-uepb-enfermagem-exames-complementares-1779563668619-0",
+    "fepese-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103510083-4",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+    "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-7",
+    "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2",
+    "fepese-enfermagem-nocoes-de-anatomia-1775447762008-7",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-4",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-6",
+    "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-2",
+    "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-1",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7"
+  ],
+  "candidates": [
+    {
+      "modulo_slug": "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+      "banca": "IDECAN",
+      "subtopico": "História da Enfermagem",
+      "family": "legis",
+      "score": 53,
+      "reasons": [
+        "Legislação (2ª variante)",
+        "Zod OK",
+        "slides genéricos (candidata refatoração)",
+        "enunciado com corpo útil",
+        "alternativas A–E",
+        "gabarito único",
+        "banca frequente",
+        "subtópico canônico"
+      ],
+      "instruction_preview": "Sobre a evolução histórica da saúde pública no Brasil, analise a seguinte situação: Um técnico de enfermagem que trabalha em uma Unidade Bás",
+      "option_count": 5,
+      "has_generic_slides": true,
+      "already_golden": false
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-complementares-1779563668619-0",
+      "banca": "CPCON UEPB",
+      "subtopico": "Exames complementares",
+      "family": "protocolo",
+      "score": 59,
+      "reasons": [
+        "Protocolo (2ª variante)",
+        "Zod OK",
+        "slides genéricos (candidata refatoração)",
+        "enunciado com corpo útil",
+        "alternativas A–E",
+        "gabarito único",
+        "banca frequente",
+        "subtópico canônico",
+        "parâmetro numérico de prova"
+      ],
+      "instruction_preview": "Em consultório é realizado atendimento de rotina a um homem de 29 anos e registra-se os seguintes dados: FR: 18 irpm; SpO2: 96% (em ar ambie",
+      "option_count": 5,
+      "has_generic_slides": true,
+      "already_golden": false
+    },
+    {
+      "modulo_slug": "fepese-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103510083-4",
+      "banca": "FEPESE",
+      "subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "family": "calc",
+      "score": 59,
+      "reasons": [
+        "Cálculo (2ª variante)",
+        "Zod OK",
+        "slides genéricos (candidata refatoração)",
+        "enunciado com corpo útil",
+        "alternativas A–E",
+        "gabarito único",
+        "banca frequente",
+        "subtópico canônico",
+        "cálculo com unidades"
+      ],
+      "instruction_preview": "A dengue é uma doença infecciosa, de origem viral, que afeta bebês, crianças e adultos e tornou-se um sério problema de saúde pública no Bra",
+      "option_count": 5,
+      "has_generic_slides": true,
+      "already_golden": false
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+      "banca": "CPCON UEPB",
+      "subtopico": "Atenção Básica / Saúde da Família",
+      "family": "vf",
+      "score": 59,
+      "reasons": [
+        "I/II/III V/F",
+        "Zod OK",
+        "slides genéricos (candidata refatoração)",
+        "enunciado com corpo útil",
+        "alternativas A–E",
+        "gabarito único",
+        "banca frequente",
+        "subtópico canônico",
+        "V/F com III explícito"
+      ],
+      "instruction_preview": "Analise as assertivas a respeito da visita domiciliar realizada peloAgente Comunitário de Saúde. I- Avisita domiciliar é um instrumento de i",
+      "option_count": 5,
+      "has_generic_slides": true,
+      "already_golden": false
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-7",
+      "banca": "CPCON UEPB",
+      "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "family": "vf",
+      "score": 59,
+      "reasons": [
+        "I/II/III V/F",
+        "Zod OK",
+        "slides genéricos (candidata refatoração)",
+        "enunciado com corpo útil",
+        "alternativas A–E",
+        "gabarito único",
+        "banca frequente",
+        "subtópico canônico",
+        "V/F com III explícito"
+      ],
+      "instruction_preview": "A Paralisia Flácida Aguda (PFA), também chamada de Poliomielite ou Paralisia Infantil, apresentou alta incidência no Brasil até o início da ",
+      "option_count": 5,
+      "has_generic_slides": true,
+      "already_golden": false
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2",
+      "banca": "IDECAN",
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "family": "certo_errado",
+      "score": 51,
+      "reasons": [
+        "Certo/Errado",
+        "Zod OK",
+        "slides genéricos (candidata refatoração)",
+        "enunciado com corpo útil",
+        "Certo/Errado",
+        "gabarito único",
+        "banca frequente",
+        "subtópico canônico"
+      ],
+      "instruction_preview": "Na Sala de Recuperação Pós Anestésica, é atribuição da enfermagem, em pacientes com bloqueio regional, observar condições do curativo do cat",
+      "option_count": 2,
+      "has_generic_slides": true,
+      "already_golden": false
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-nocoes-de-anatomia-1775447762008-7",
+      "banca": "FEPESE",
+      "subtopico": "Noções de Anatomia",
+      "family": "conceito",
+      "score": 58,
+      "reasons": [
+        "Conceito / definição",
+        "Zod OK",
+        "slides não genéricos",
+        "enunciado com corpo útil",
+        "alternativas A–E",
+        "gabarito único",
+        "banca frequente",
+        "subtópico canônico"
+      ],
+      "instruction_preview": "Na anatomia, utiliza-se terminologia padronizada para descrever posições e relações entre estruturas. Assinale a alternativa correta em rela",
+      "option_count": 5,
+      "has_generic_slides": false,
+      "already_golden": false
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-4",
+      "banca": "CPCON UEPB",
+      "subtopico": "Atenção Básica / Saúde da Família",
+      "family": "conceito",
+      "score": 53,
+      "reasons": [
+        "Conceito / definição",
+        "Zod OK",
+        "slides genéricos (candidata refatoração)",
+        "enunciado com corpo útil",
+        "alternativas A–E",
+        "gabarito único",
+        "banca frequente",
+        "subtópico canônico"
+      ],
+      "instruction_preview": "No atendimento à população, o processo pelo qual se utilizam critérios clínicos, sociais, econômicos, familiares e outros, com base em diret",
+      "option_count": 5,
+      "has_generic_slides": true,
+      "already_golden": false
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-6",
+      "banca": "CPCON UEPB",
+      "subtopico": "Coleta de Exames Laboratoriais",
+      "family": "conceito",
+      "score": 53,
+      "reasons": [
+        "Conceito / definição",
+        "Zod OK",
+        "slides genéricos (candidata refatoração)",
+        "enunciado com corpo útil",
+        "alternativas A–E",
+        "gabarito único",
+        "banca frequente",
+        "subtópico canônico"
+      ],
+      "instruction_preview": "A dosagem de triglicerídeos é um exame muito solicitado na rotina de um laboratório de análises clínicas. Qual é a amostra biológica utiliza",
+      "option_count": 5,
+      "has_generic_slides": true,
+      "already_golden": false
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-2",
+      "banca": "FUNATEC",
+      "subtopico": "Semiologia em Enfermagem",
+      "family": "text_fragment",
+      "score": 48,
+      "reasons": [
+        "Caso clínico (text_fragment)",
+        "Zod OK",
+        "slides genéricos (candidata refatoração)",
+        "enunciado com corpo útil",
+        "alternativas A–E",
+        "gabarito único",
+        "subtópico canônico"
+      ],
+      "instruction_preview": "Em uma Clínica Médico-Cirúrgica, um paciente está sendo monitorado após uma cirurgia abdominal. Durante a avaliação, o técnico de enfermagem",
+      "option_count": 4,
+      "has_generic_slides": true,
+      "already_golden": false
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-1",
+      "banca": "IDECAN",
+      "subtopico": "Protocolos e Diretrizes do Ministério da Saúde",
+      "family": "legis",
+      "score": 53,
+      "reasons": [
+        "Legislação (3ª variante)",
+        "Zod OK",
+        "slides genéricos (candidata refatoração)",
+        "enunciado com corpo útil",
+        "alternativas A–E",
+        "gabarito único",
+        "banca frequente",
+        "subtópico canônico"
+      ],
+      "instruction_preview": "O Sistema Nacional de Transplantes (SNT) brasileiro é o mais democrático do mundo, todos têm o mesmo nível de acesso, e quase 100% dos trans",
+      "option_count": 4,
+      "has_generic_slides": true,
+      "already_golden": false
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+      "banca": "FEPESE",
+      "subtopico": "Verificação de Sinais Vitais",
+      "family": "protocolo",
+      "score": 59,
+      "reasons": [
+        "Protocolo (3ª variante)",
+        "Zod OK",
+        "slides genéricos (candidata refatoração)",
+        "enunciado com corpo útil",
+        "alternativas A–E",
+        "gabarito único",
+        "banca frequente",
+        "subtópico canônico",
+        "parâmetro numérico de prova"
+      ],
+      "instruction_preview": "Ao verificar os sinais vitais do paciente, você identificou os seguintes valores: \" PA 110×75 mmHg \" Temperatura axilar 36,5°C \" FC 110 bpm ",
+      "option_count": 5,
+      "has_generic_slides": true,
+      "already_golden": false
+    }
+  ]
+}

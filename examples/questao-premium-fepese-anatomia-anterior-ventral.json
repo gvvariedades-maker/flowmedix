@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "ano": "2025",
+    "banca": "FEPESE",
+    "orgao": "Pref Ágs de Chapecó",
+    "prova": "TEn (Ágs de Chapecó)",
+    "topico": "Enfermagem",
+    "subtopico": "Noções de Anatomia",
+    "cargo_header": "Técnico de Enfermagem"
+  },
+  "question_data": {
+    "options": [
+      {
+        "id": "A",
+        "text": "\"Medial\" indica posição afastada da linha média do corpo.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "\"Proximal\" refere-se às estruturas mais distantes da origem de um membro.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "\"Posterior\" é sinônimo de \"cranial\", indicando posição em direção à cabeça.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "\"Superior\" é sinônimo de \"caudal\", indicando estruturas próximas aos pés.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "\"Anterior\" é sinônimo de \"ventral\", indicando a parte da frente do corpo.",
+        "is_correct": true
+      }
+    ],
+    "instruction": "Na anatomia, utiliza-se terminologia padronizada para descrever posições e relações entre estruturas.\nAssinale a alternativa correta em relação ao tema."
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Anatomia"
+      },
+      "slide_title": "Terminologia anatômica",
+      "items": [
+        {
+          "id": "1",
+          "icon": "ArrowRight",
+          "label": "Anterior / Ventral",
+          "detail": "Parte da frente do corpo."
+        },
+        {
+          "id": "2",
+          "icon": "ArrowRight",
+          "label": "Posterior / Dorsal",
+          "detail": "Parte de trás do corpo."
+        },
+        {
+          "id": "3",
+          "icon": "ArrowRight",
+          "label": "Superior / Cranial",
+          "detail": "Em direção à cabeça."
+        },
+        {
+          "id": "4",
+          "icon": "ArrowRight",
+          "label": "Inferior / Caudal",
+          "detail": "Em direção aos pés."
+        }
+      ],
+      "footer_rule": "A posição anatômica padroniza a descrição do corpo humano."
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Anatomia"
+      },
+      "content": "ANTERIOR É SINÔNIMO DE VENTRAL.",
+      "rows": [
+        {
+          "label": "Anterior",
+          "value": "Ventral"
+        },
+        {
+          "label": "Posterior",
+          "value": "Dorsal"
+        },
+        {
+          "label": "Superior",
+          "value": "Cranial"
+        },
+        {
+          "label": "Inferior",
+          "value": "Caudal"
+        },
+        {
+          "label": "Gabarito",
+          "value": "E"
+        }
+      ],
+      "footer_rule": "Memorize os pares clássicos e evite inverter os eixos."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Anatomia"
+      },
+      "steps": [
+        "Ler o termo anatômico principal da alternativa.",
+        "Buscar o sinônimo clássico usado na posição anatômica.",
+        "Comparar com o sentido oposto para evitar pegadinha.",
+        "Confirmar que anterior corresponde a ventral.",
+        "Marcar a alternativa E."
+      ],
+      "footer_rule": "Quando a banca pergunta posição, compare sempre com o eixo oposto."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Anatomia"
+      },
+      "content": "PEGADINHAS DE TERMINOLOGIA ANATÔMICA",
+      "items": [
+        {
+          "id": "1",
+          "label": "Medial é afastado",
+          "detail": "Trocar medial com lateral.",
+          "correct": "Medial é próximo da linha média; lateral é afastado."
+        },
+        {
+          "id": "2",
+          "label": "Proximal é distante",
+          "detail": "Trocar proximal com distal.",
+          "correct": "Proximal é próximo da origem; distal é distante."
+        },
+        {
+          "id": "3",
+          "label": "Posterior é cranial",
+          "detail": "Misturar costas com direção à cabeça.",
+          "correct": "Posterior é dorsal; cranial é superior."
+        }
+      ],
+      "footer_rule": "Sinônimos anatômicos caem muito quando a banca troca os pares opostos."
+    }
+  ]
+}

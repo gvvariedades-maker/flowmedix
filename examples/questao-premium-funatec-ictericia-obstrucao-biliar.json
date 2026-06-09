@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "banca": "FUNATEC",
+    "prova": "Enfermagem",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Semiologia em Enfermagem"
+  },
+  "question_data": {
+    "instruction": "A tríade de sintomas observada no paciente, composta por icterícia, urina escura e fezes claras, é sugestiva de uma potencial obstrução do __________________.",
+    "text_fragment": "<p>\"A tríade de sintomas observada no paciente, composta por icterícia, urina escura e fezes claras, é sugestiva de uma potencial obstrução do __________________.\"</p>",
+    "options": [
+      {
+        "id": "A",
+        "text": "Sistema urinário.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Sistema respiratório.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Sistema nervoso central.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Trato gastrointestinal.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Sistema musculoesquelético.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "layout_variant": "morphological",
+      "slide_title": "Icterícia obstrutiva — leitura semiológica",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Semiologia em Enfermagem"
+      },
+      "items": [
+        {
+          "label": "Icterícia",
+          "detail": "Coloração amarelada da pele e mucosas por acúmulo de bilirrubina. É o sinal que “abre” a leitura clínica da questão.",
+          "icon": "Eye"
+        },
+        {
+          "label": "Urina escura",
+          "detail": "Colúria: bilirrubina conjugada eliminada pela urina, reforçando quadro de obstrução do fluxo biliar.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Fezes claras",
+          "detail": "Acolia fecal: menos pigmentos biliares no intestino, o que sugere bloqueio no trânsito da bile.",
+          "icon": "ClipboardList"
+        },
+        {
+          "label": "Semiologia em prova",
+          "detail": "A banca costuma juntar três sinais clássicos para cobrar interpretação do quadro, e não apenas memorização de termo isolado.",
+          "icon": "Stethoscope"
+        },
+        {
+          "label": "Sinal-chave",
+          "detail": "Icterícia + colúria + fezes claras = pensar em obstrução biliar/colestática com a redação da banca.",
+          "icon": "ShieldAlert"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra D.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Tríade semiológica clássica: icterícia, colúria e fezes claras"
+    },
+    {
+      "type": "golden_rule",
+      "layout_variant": "reference_table",
+      "template": "t03",
+      "slide_title": "Regra de ouro — tríade ictérica",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Semiologia em Enfermagem"
+      },
+      "content": "TRÍADE CLÁSSICA DA OBSTRUÇÃO",
+      "rows": [
+        {
+          "label": "Icterícia",
+          "value": "Sinal visível de bilirrubina elevada",
+          "badge": "hot"
+        },
+        {
+          "label": "Urina escura",
+          "value": "Colúria",
+          "badge": "ok"
+        },
+        {
+          "label": "Fezes claras",
+          "value": "Acolia fecal",
+          "badge": "ok"
+        },
+        {
+          "label": "Interpretação de prova",
+          "value": "Quadro compatível com obstrução do trato gastrointestinal, na forma como a banca redigiu o enunciado",
+          "emphasis": "highlight",
+          "badge": "info"
+        },
+        {
+          "label": "Armadilha",
+          "value": "Pensar apenas em fígado e esquecer o padrão clínico completo",
+          "emphasis": "alert",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "A banca usa a tríade para reconhecer obstrução do fluxo biliar com redação objetiva"
+    },
+    {
+      "type": "logic_flow",
+      "layout_variant": "cards",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Semiologia em Enfermagem"
+      },
+      "steps": [
+        "Ler a tríade de sintomas: icterícia, urina escura e fezes claras.",
+        "Reconhecer que urina escura sugere eliminação de bilirrubina conjugada.",
+        "Associar fezes claras à redução de pigmentos biliares no intestino.",
+        "Juntar os sinais e concluir que a obstrução é do trato gastrointestinal, como traz a alternativa correta.",
+        "Descartar sistemas urinário, respiratório, nervoso central e musculoesquelético.",
+        "Marcar D e lembrar da tríade colúria + icterícia + acolia fecal."
+      ],
+      "footer_rule": "Semiologia de prova: três sinais unidos valem mais que um sintoma isolado"
+    },
+    {
+      "type": "danger_zone",
+      "layout_variant": "compare",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Semiologia em Enfermagem"
+      },
+      "content": "PEGADINHAS FUNATEC — Icterícia, urina escura e fezes claras",
+      "items": [
+        {
+          "label": "Pensar só em urina escura",
+          "detail": "Colúria isolada pode lembrar desidratação ou outros quadros, mas a questão traz a tríade completa.",
+          "correct": "O conjunto com icterícia e fezes claras é o que aponta o diagnóstico sindrômico."
+        },
+        {
+          "label": "Ignorar fezes claras",
+          "detail": "Acolia fecal é o detalhe que amarra a obstrução do fluxo biliar e separa esta questão de outras causas de icterícia.",
+          "correct": "Fezes claras reforçam obstrução e não apenas alteração de hidratação."
+        },
+        {
+          "label": "Mudar o sistema-alvo",
+          "detail": "A banca oferece sistemas anatomofisiológicos para confundir a leitura semiológica.",
+          "correct": "O padrão descrito é de obstrução gastrointestinal/biliar, não de sistemas urinário ou respiratório."
+        },
+        {
+          "label": "Não relacionar icterícia com bilirrubina",
+          "detail": "Se o candidato não pensar em pigmentos biliares, perde a chave da questão.",
+          "correct": "Icterícia é a porta de entrada para o raciocínio sobre colestase."
+        }
+      ],
+      "footer_rule": "Tríade icterícia + colúria + acolia fecal: não se deixe distrair pelo sistema errado"
+    }
+  ]
+}
