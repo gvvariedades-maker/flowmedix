@@ -1,7 +1,11 @@
 /**
  * Regressão Sprint 5: slides legados (sem campos premium) vs payload premium completo.
+ * Fase C: defaults de render (tap / x_icon no compare) vivem no NeuroSlide — JSON legado
+ * continua sem reveal_mode/bullet_style no schema.
  */
 import { QuestaoCompletaSchema, validateSlides } from '@/lib/validations';
+import { resolveDangerZoneLayoutVariant } from '@/components/slides/core/dangerZoneLayout';
+import { resolveLogicFlowRevealMode } from '@/components/slides/core/logicFlowRevealMode';
 
 const baseMeta = {
   banca: 'EBSERH',
@@ -135,5 +139,29 @@ describe('slides premium — regressão legado vs premium', () => {
   it('validateSlides aceita payload premium', () => {
     const result = validateSlides([...premiumSlides]);
     expect(result.valid).toBe(true);
+  });
+
+  it('Fase C: compare sem bullet_style no JSON — default de render é x_icon (resolver)', () => {
+    const dangerSlide = {
+      type: 'danger_zone',
+      content: 'Armadilhas',
+      items: [{ label: 'Trap', detail: 'X', correct: 'Certo' }],
+    };
+    const layout = resolveDangerZoneLayoutVariant(dangerSlide, undefined, 'list');
+    expect(layout).toBe('compare');
+    const defaultBullet = layout === 'compare' ? 'x_icon' : 'numbered';
+    expect(defaultBullet).toBe('x_icon');
+  });
+
+  it('legado logic_flow sem reveal_mode no JSON permanece válido (default tap só no player)', () => {
+    const legacyLogic = legacySlides[2];
+    expect((legacyLogic as { reveal_mode?: string }).reveal_mode).toBeUndefined();
+    const result = validateSlides([legacyLogic]);
+    expect(result.valid).toBe(true);
+  });
+
+  it('C+: legado com 3 passos → tap; 2 passos → auto (resolver)', () => {
+    expect(resolveLogicFlowRevealMode(3, undefined)).toBe('tap');
+    expect(resolveLogicFlowRevealMode(2, undefined)).toBe('auto');
   });
 });

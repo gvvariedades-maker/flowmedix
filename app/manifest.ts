@@ -16,6 +16,12 @@ export default function manifest(): MetadataRoute.Manifest {
     categories: ['education'],
     icons: [
       {
+        src: '/brand/avant-app-icon.svg',
+        sizes: 'any',
+        type: 'image/svg+xml',
+        purpose: 'any',
+      },
+      {
         src: '/brand/avant-pwa-icon.png',
         sizes: '512x512',
         type: 'image/png',

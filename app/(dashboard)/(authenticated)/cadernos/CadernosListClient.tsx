@@ -63,9 +63,10 @@ function ConfirmExcluirModal({
           <button
             type="button"
             onClick={onClose}
-            className="flex h-8 w-8 items-center justify-center rounded-xl bg-white/[0.06] text-slate-400 transition-colors hover:bg-white/[0.1] hover:text-slate-200"
+            className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/[0.06] text-slate-400 transition-colors hover:bg-white/[0.1] hover:text-slate-200"
+            aria-label="Fechar"
           >
-            <X size={16} aria-hidden />
+            <X size={18} aria-hidden />
           </button>
         </div>
         <p className="mb-1 text-sm leading-relaxed text-slate-300">

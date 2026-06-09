@@ -1,0 +1,27 @@
+{
+  "lote": "pilot-goldens",
+  "seeded_at": "2026-06-09T08:15:33.486Z",
+  "source": "examples",
+  "from_manifest": "data/premium-pilot-manifest.json",
+  "slugs": [
+    "fepese-enfermagem-processo-de-enfermagem-1776056021381-0",
+    "fundatec-enfermagem-imunizacao-1777103182944-8",
+    "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-0",
+    "cpcon-uepb-enfermagem-vias-de-administracao-1776056366158-7",
+    "vunesp-enfermagem-vias-de-administracao-1776056338955-3",
+    "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+    "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-3",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-2",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+    "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712122855-9",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+    "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-7",
+    "idecan-enfermagem-processo-de-enfermagem-1778712122855-4",
+    "fepese-enfermagem-nocoes-de-anatomia-1775447762008-7",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-6",
+    "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-2",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-2",
+    "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2"
+  ]
+}

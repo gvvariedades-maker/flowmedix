@@ -1,13 +1,47 @@
 'use client';
 
 import type { ComponentType } from 'react';
-import { MaterialSlidesLote1Content } from '@/data/material-apoio-lotes/gerado/lote-01-content';
-import { MaterialSlidesLote2Content } from '@/data/material-apoio-lotes/gerado/lote-02-content';
-import { MaterialSlidesLote3Content } from '@/data/material-apoio-lotes/gerado/lote-03-content';
-import { MaterialSlidesLote4Content } from '@/data/material-apoio-lotes/gerado/lote-04-content';
-import { MaterialSlidesLote5Content } from '@/data/material-apoio-lotes/gerado/lote-05-content';
-import { MaterialSlidesLote6Content } from '@/data/material-apoio-lotes/gerado/lote-06-content';
-import { MaterialSlidesLote7Content } from '@/data/material-apoio-lotes/gerado/lote-07-content';
+import { Loader2 } from 'lucide-react';
+import dynamic from 'next/dynamic';
+
+// Cada lote (~centenas de linhas de conteudo) e carregado sob demanda — apenas
+// o lote aberto baixa o chunk, em vez dos 7 no bundle inicial de /material.
+function lotLoading() {
+  return (
+    <div className="flex min-h-[40vh] items-center justify-center" role="status" aria-label="Carregando material">
+      <Loader2 className="h-8 w-8 animate-spin text-cyan-400" aria-hidden />
+    </div>
+  );
+}
+
+const MaterialSlidesLote1Content = dynamic(
+  () => import('@/data/material-apoio-lotes/gerado/lote-01-content').then((m) => m.MaterialSlidesLote1Content),
+  { loading: lotLoading },
+);
+const MaterialSlidesLote2Content = dynamic(
+  () => import('@/data/material-apoio-lotes/gerado/lote-02-content').then((m) => m.MaterialSlidesLote2Content),
+  { loading: lotLoading },
+);
+const MaterialSlidesLote3Content = dynamic(
+  () => import('@/data/material-apoio-lotes/gerado/lote-03-content').then((m) => m.MaterialSlidesLote3Content),
+  { loading: lotLoading },
+);
+const MaterialSlidesLote4Content = dynamic(
+  () => import('@/data/material-apoio-lotes/gerado/lote-04-content').then((m) => m.MaterialSlidesLote4Content),
+  { loading: lotLoading },
+);
+const MaterialSlidesLote5Content = dynamic(
+  () => import('@/data/material-apoio-lotes/gerado/lote-05-content').then((m) => m.MaterialSlidesLote5Content),
+  { loading: lotLoading },
+);
+const MaterialSlidesLote6Content = dynamic(
+  () => import('@/data/material-apoio-lotes/gerado/lote-06-content').then((m) => m.MaterialSlidesLote6Content),
+  { loading: lotLoading },
+);
+const MaterialSlidesLote7Content = dynamic(
+  () => import('@/data/material-apoio-lotes/gerado/lote-07-content').then((m) => m.MaterialSlidesLote7Content),
+  { loading: lotLoading },
+);
 
 export type MaterialSlideLotId = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 

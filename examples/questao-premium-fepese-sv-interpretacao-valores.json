@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "ano": "2024",
+    "banca": "FEPESE",
+    "orgao": "Pref Concórdia / SAMU",
+    "prova": "TEnf (Concórdia)",
+    "topico": "Enfermagem",
+    "subtopico": "Verificação de Sinais Vitais",
+    "cargo_header": "Técnico de Enfermagem"
+  },
+  "question_data": {
+    "instruction": "Ao verificar os sinais vitais do paciente, você identificou os seguintes valores:\n\" PA 110×75 mmHg\n\" Temperatura axilar 36,5°C\n\" FC 110 bpm\n\" FR 30 mpm\nConsiderando os resultados acima, você diria que o paciente está:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Normotenso, afebril, taquicárdico e taquipneico.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Normotenso, febril, taquicárdico e eupneico.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Hipotenso, afebril, normocárdico e taquipneico.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Hipertenso, afebril, taquicárdico e taquipneico.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Normotenso, afebril, normocárdico e taquipneico.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Verificação de Sinais Vitais"
+      },
+      "items": [
+        {
+          "id": "1",
+          "icon": "Scale",
+          "label": "PA 110×75",
+          "detail": "Compatível com normotensão no adulto em repouso."
+        },
+        {
+          "id": "2",
+          "icon": "Thermometer",
+          "label": "36,5°C axilar",
+          "detail": "Valor compatível com afebril / normotermia."
+        },
+        {
+          "id": "3",
+          "icon": "HeartPulse",
+          "label": "FC 110 bpm",
+          "detail": "Acima de 100 bpm: taquicardia."
+        },
+        {
+          "id": "4",
+          "icon": "Wind",
+          "label": "FR 30 mpm",
+          "detail": "Acima de 20 irpm: taquipneia."
+        }
+      ],
+      "footer_rule": "Leia cada sinal vital e traduza o valor em termo clínico antes de marcar a alternativa."
+    },
+    {
+      "type": "golden_rule",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Verificação de Sinais Vitais"
+      },
+      "content": "PA NORMAL, FEBRE AUSENTE, FC E FR ELEVADAS: A BANCA QUER A CLASSIFICAÇÃO CORRETA.",
+      "rows": [
+        {
+          "label": "PA 110×75 mmHg",
+          "value": "Normotenso"
+        },
+        {
+          "label": "Temperatura axilar 36,5°C",
+          "value": "Afebril"
+        },
+        {
+          "label": "FC 110 bpm",
+          "value": "Taquicárdico"
+        },
+        {
+          "label": "FR 30 mpm",
+          "value": "Taquipneico"
+        },
+        {
+          "label": "Conclusão",
+          "value": "Alternativa A"
+        }
+      ],
+      "footer_rule": "A leitura clínica é combinada: pressão e temperatura normais, frequência cardíaca e respiratória elevadas."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Verificação de Sinais Vitais"
+      },
+      "steps": [
+        "Interpretar a pressão arterial: 110×75 mmHg = normotenso.",
+        "Interpretar a temperatura axilar: 36,5°C = afebril.",
+        "Interpretar a frequência cardíaca: 110 bpm = taquicárdico.",
+        "Interpretar a frequência respiratória: 30 mpm = taquipneico.",
+        "Combinar os achados e marcar a alternativa A."
+      ],
+      "footer_rule": "Na interpretação de SV, traduza cada número para o termo clínico correspondente."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Verificação de Sinais Vitais"
+      },
+      "content": "PEGADINHAS NA INTERPRETAÇÃO DOS VALORES",
+      "items": [
+        {
+          "id": "1",
+          "label": "Chamar FC 110 de normal",
+          "detail": "A frequência cardíaca acima de 100 bpm não é normocárdica.",
+          "correct": "FC 110 bpm indica taquicardia."
+        },
+        {
+          "id": "2",
+          "label": "Chamar FR 30 de eupneia",
+          "detail": "A respiração acima do padrão adulto em repouso é acelerada.",
+          "correct": "FR 30 mpm indica taquipneia."
+        },
+        {
+          "id": "3",
+          "label": "Trocar afebril por febril",
+          "detail": "36,5°C axilar costuma ser valor de temperatura normal.",
+          "correct": "36,5°C é compatível com afebril."
+        }
+      ],
+      "footer_rule": "A combinação correta do caso é normotenso, afebril, taquicárdico e taquipneico."
+    }
+  ]
+}

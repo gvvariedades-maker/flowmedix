@@ -21,8 +21,27 @@ export function stripOuterParens(s: string): string {
   return t;
 }
 
+const EN_DASH = '\u2013';
+
+/** Rótulo padrão na linha 1 para provas de Técnico em Enfermagem. */
+export const DEFAULT_CARGO_HEADER = 'Técnico de Enfermagem';
+
+const LEGACY_CARGO_ALIASES = new Set(['tecnico', 'técnico']);
+
+/** Normaliza cargo legado abreviado (`TÉCNICO`) para o rótulo completo. */
+export function normalizeCargoHeader(cargo?: string): string {
+  const trimmed = cargo?.trim() || '';
+  if (!trimmed) return '';
+  const key = trimmed
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .toLowerCase();
+  if (LEGACY_CARGO_ALIASES.has(key)) return DEFAULT_CARGO_HEADER;
+  return trimmed;
+}
+
 /**
- * Infere rótulo de cargo para a linha de prova (ex.: PDF "Tec Enf" → TÉCNICO).
+ * Infere rótulo de cargo para a linha de prova (ex.: PDF "Tec Enf" → Técnico de Enfermagem).
  * Use `meta.cargo_header` quando quiser forçar outro texto (ex.: ENFERMEIRO).
  */
 export function inferCargoHeaderFromProva(prova?: string): string {
@@ -31,17 +50,15 @@ export function inferCargoHeaderFromProva(prova?: string): string {
     .normalize('NFD')
     .replace(/\p{M}/gu, '')
     .toLowerCase();
-  if (/\btec(\.|nico)?\s*enf\b/.test(n)) return 'TÉCNICO';
-  if (/tecnico\s+de\s+enfermagem/.test(n)) return 'TÉCNICO';
-  if (/\bt[eé]cnico\b/.test(n) && /\benf\b/.test(n)) return 'TÉCNICO';
+  if (/\btec(\.|nico)?\s*enf\b/.test(n)) return DEFAULT_CARGO_HEADER;
+  if (/tecnico\s+de\s+enfermagem/.test(n)) return DEFAULT_CARGO_HEADER;
+  if (/\bt[eé]cnico\b/.test(n) && /\benf\b/.test(n)) return DEFAULT_CARGO_HEADER;
   return '';
 }
 
-const EN_DASH = '\u2013';
-
 /**
- * Linha 1 — formato AVANT (estilo CPCON / concurso técnico):
- * `BANCA – TÉCNICO (Órgão) ANO`
+ * Linha 1 — formato AVANT (concurso técnico enfermagem):
+ * `BANCA – Técnico de Enfermagem (Órgão) ANO`
  *
  * Não inclui tópico/subtópico (ficam na linha 2 via buildQuestionSubjectLine).
  * Se não houver dados para esse formato, usa o legado `Banca - Prova/Órgão/Ano`.
@@ -51,7 +68,7 @@ export function buildDerivedQuestionHeaderLine(meta: LessonMeta): string {
   const orgaoInner = stripOuterParens(meta.orgao?.trim() || '');
   const ano = meta.ano?.trim() || '';
   const cargo =
-    meta.cargo_header?.trim() ||
+    normalizeCargoHeader(meta.cargo_header) ||
     inferCargoHeaderFromProva(meta.prova);
 
   if (banca && cargo && orgaoInner) {

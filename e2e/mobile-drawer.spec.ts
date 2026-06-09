@@ -63,7 +63,13 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
     await gotoEstudar(page);
     await maisButton(page).click();
     await expect(page.locator('#dashboard-mobile-drawer')).toBeVisible({ timeout: 10_000 });
-    await page.getByTestId('dashboard-drawer-overlay').click({ force: true });
+    // Clique por coordenada à direita do painel (18rem): evita o detach do node animado
+    // (AnimatePresence) que fazia o .click() entrar em loop de retry até o timeout.
+    const overlay = page.getByTestId('dashboard-drawer-overlay');
+    await expect(overlay).toBeVisible();
+    const box = await overlay.boundingBox();
+    expect(box).not.toBeNull();
+    await page.mouse.click(box!.x + box!.width - 12, box!.y + box!.height / 2);
     await expect(page.locator('#dashboard-mobile-drawer')).not.toBeVisible({ timeout: 10_000 });
   });
 

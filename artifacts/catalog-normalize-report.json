@@ -1,0 +1,1250 @@
+{
+  "generated_at": "2026-06-08T05:12:37.226Z",
+  "mode": "dry-run",
+  "catalog_total": 5178,
+  "summary": {
+    "would_change": 5170,
+    "applied": 0,
+    "skipped_unchanged": 0,
+    "exceptions": 5,
+    "zod_failures_after": 7,
+    "tecconcursos_blocked": 1,
+    "meta_cargo_header": 5168,
+    "meta_prova": 12,
+    "meta_topico": 169,
+    "meta_banca": 6,
+    "meta_orgao": 5163,
+    "meta_ano": 0,
+    "meta_subtopico": 0,
+    "meta_header_line_removed": 0,
+    "instruction_cleaned": 3453,
+    "text_fragment_cleaned": 0,
+    "slides_normalized": 5170
+  },
+  "samples": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Uma família residente em área rural enfrenta dificuldade no comparecimento ao posto de saúde. Após visitas domiciliares, o técnico de enfermagem identifica\nproblemas como falta de saneamento básico, abastecimento hídrico irregular e desconhecimento de práticas de higiene. Como ab",
+      "after_instruction": "Uma família residente em área rural enfrenta dificuldade no comparecimento ao posto de saúde. Após visitas domiciliares, o técnico de enfermagem identifica\nproblemas como falta de saneamento básico, abastecimento hídrico irregular e desconhecimento de práticas de higiene. Como ab",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / Sem Especialidade",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / Sem Especialidade",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-1",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Motoristas de UTI Móvel, como integrantes de uma equipe multidisciplinar de saúde, muitas vezes colaboram com Agentes Comunitários de Saúde (ACS) e\nAgentes de Combate a Endemias (ACE) em áreas rurais e urbanas. Analise as seguintes afirmações sobre as funções do Agente Comunitári",
+      "after_instruction": "Motoristas de UTI Móvel, como integrantes de uma equipe multidisciplinar de saúde, muitas vezes colaboram com Agentes Comunitários de Saúde (ACS) e\nAgentes de Combate a Endemias (ACE) em áreas rurais e urbanas. Analise as seguintes afirmações sobre as funções do Agente Comunitári",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "UTI Móvel",
+        "prova": "Moto (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "UTI Móvel",
+        "prova": "Moto (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-2",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Uma das possíveis fontes de oxigênio para a Oxigenoterapia em domicílio é o cilindro de oxigênio. Indique abaixo o item que corresponde a uma de suas\nvantagens.",
+      "after_instruction": "Uma das possíveis fontes de oxigênio para a Oxigenoterapia em domicílio é o cilindro de oxigênio. Indique abaixo o item que corresponde a uma de suas\nvantagens.",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-3",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Considerando a abordagem multifacetada do tratamento do HIV na Saúde Pública, qual das seguintes afirmações melhor descreve a estratégia global adotada\npara o controle da epidemia?",
+      "after_instruction": "Considerando a abordagem multifacetada do tratamento do HIV na Saúde Pública, qual das seguintes afirmações melhor descreve a estratégia global adotada\npara o controle da epidemia?",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Imobilização Ortopédica",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Imobilização Ortopédica",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Os Sistemas de Informação em Saúde desempenham um papel crucial na gestão e no monitoramento dos serviços de saúde. Considere uma unidade de saúde\nque deseja implementar um sistema de informação para acompanhar a vacinação de crianças na comunidade.\nQual dos seguintes benefícios ",
+      "after_instruction": "Os Sistemas de Informação em Saúde desempenham um papel crucial na gestão e no monitoramento dos serviços de saúde. Considere uma unidade de saúde\nque deseja implementar um sistema de informação para acompanhar a vacinação de crianças na comunidade.\nQual dos seguintes benefícios ",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Imobilização Ortopédica",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Imobilização Ortopédica",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-2",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Analise as afirmativas a seguir:\nI. É considerada atividade do Agente Comunitário de Saúde, compartilhadas com os demais membros da equipe, a participação no planejamento e no\nmapeamento institucional, social e demográfico.\nII. É considerada atividade exclusiva do Agente Comunitá",
+      "after_instruction": "Analise as afirmativas a seguir:\nI. É considerada atividade do Agente Comunitário de Saúde, compartilhadas com os demais membros da equipe, a participação no planejamento e no\nmapeamento institucional, social e demográfico.\nII. É considerada atividade exclusiva do Agente Comunitá",
+      "before_meta": {
+        "ano": "2023",
+        "banca": "Adm&Tec",
+        "orgao": "Pref Timbaúba",
+        "prova": "ACS",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2023",
+        "banca": "Adm&Tec",
+        "orgao": "Pref Timbaúba",
+        "prova": "ACS",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-3",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Analise as afirmativas a seguir:\nI. Todo Agente Comunitário de Saúde deve atuar na medição de glicemia capilar, durante a visita domiciliar, em caráter excepcional, encaminhando o paciente para\na unidade de saúde de referência.\nII. Todo Agente Comunitário de Saúde deverá utilizar",
+      "after_instruction": "Analise as afirmativas a seguir:\nI. Todo Agente Comunitário de Saúde deve atuar na medição de glicemia capilar, durante a visita domiciliar, em caráter excepcional, encaminhando o paciente para\na unidade de saúde de referência.\nII. Todo Agente Comunitário de Saúde deverá utilizar",
+      "before_meta": {
+        "ano": "2023",
+        "banca": "Adm&Tec",
+        "orgao": "Pref Timbaúba",
+        "prova": "ACS",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2023",
+        "banca": "Adm&Tec",
+        "orgao": "Pref Timbaúba",
+        "prova": "ACS",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-4",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Analise as afirmativas a seguir:\nI. Agindo de forma independente, o Agente Comunitário de Saúde deverá aferir temperatura axilar, durante a visita domiciliar.\nII. Agindo de forma independente, o Agente Comunitário de Saúde deverá realizar a verificação antropométrica.\nIII. Agindo",
+      "after_instruction": "Analise as afirmativas a seguir:\nI. Agindo de forma independente, o Agente Comunitário de Saúde deverá aferir temperatura axilar, durante a visita domiciliar.\nII. Agindo de forma independente, o Agente Comunitário de Saúde deverá realizar a verificação antropométrica.\nIII. Agindo",
+      "before_meta": {
+        "ano": "2023",
+        "banca": "Adm&Tec",
+        "orgao": "Pref Timbaúba",
+        "prova": "ACS",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2023",
+        "banca": "Adm&Tec",
+        "orgao": "Pref Timbaúba",
+        "prova": "ACS",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Os tubos em que o sangue é coletado podem conter um ou mais aditivos, dependendo do objetivo da análise. O padrão de cores dos tubos irá identificar quaisaditivos estão presentes. A recomendação da sequência dos tubos deve ser respeitada, para que não ocorra contaminação por adit",
+      "after_instruction": "Os tubos em que o sangue é coletado podem conter um ou mais aditivos, dependendo do objetivo da análise. O padrão de cores dos tubos irá identificar quaisaditivos estão presentes. A recomendação da sequência dos tubos deve ser respeitada, para que não ocorra contaminação por adit",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem",
+        "prova": "Tec (CIMPAJEÚ)",
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem",
+        "prova": "Tec (CIMPAJEÚ)",
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-6",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Considere as seguintes afirmativas a respeito dos cuidados na coleta de materiais para exames laboratoriais em ambiente hospitalar:\nI\n. Em amostras de urina de 24 horas, a perda de parte do volume coletado não interfere no resultado, desde que o recipiente seja mantido sob refrig",
+      "after_instruction": "Considere as seguintes afirmativas a respeito dos cuidados na coleta de materiais para exames laboratoriais em ambiente hospitalar:\nI\n. Em amostras de urina de 24 horas, a perda de parte do volume coletado não interfere no resultado, desde que o recipiente seja mantido sob refrig",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / Sem Especialidade",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / Sem Especialidade",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-curativos-e-manejo-de-feridas-1779344773456-1",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Um paciente com lesão musculoesquelética aguda foi submetido a sessões de aplicação de calor úmido para alívio da dor e redução de espasmos musculares.Durante a terapia, relatou maior sensibilidade na área de aplicação e vermelhidão acentuada. Diante desse quadro, qual ação do té",
+      "after_instruction": "Um paciente com lesão musculoesquelética aguda foi submetido a sessões de aplicação de calor úmido para alívio da dor e redução de espasmos musculares.Durante a terapia, relatou maior sensibilidade na área de aplicação e vermelhidão acentuada. Diante desse quadro, qual ação do té",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / Sem Especialidade",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Curativos e Manejo de Feridas",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / Sem Especialidade",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Curativos e Manejo de Feridas",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-2",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Analise as afirmações a seguir:\nI\n. O Sistema de Informações sobre Nascidos Vivos tem o objetivo de coletar dados sobre os nascimentos ocorridos em todo o território nacional.\nII\n. O documento padrão de uso obrigatório em todo o território nacional e essencial à coleta de dados d",
+      "after_instruction": "Analise as afirmações a seguir:\nI\n. O Sistema de Informações sobre Nascidos Vivos tem o objetivo de coletar dados sobre os nascimentos ocorridos em todo o território nacional.\nII\n. O documento padrão de uso obrigatório em todo o território nacional e essencial à coleta de dados d",
+      "before_meta": {
+        "ano": "2023",
+        "banca": "Adm&Tec",
+        "orgao": "FMS Águas Belas",
+        "prova": "ACS (FMS Ág Belas)",
+        "topico": "Enfermagem",
+        "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2023",
+        "banca": "Adm&Tec",
+        "orgao": "FMS Águas Belas",
+        "prova": "ACS (FMS Ág Belas)",
+        "topico": "Enfermagem",
+        "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-3",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Analise as afirmações a seguir:\nI\n. Vigilância epidemiológica é um conjunto de ações capaz de eliminar, diminuir ou prevenir riscos à saúde e de intervir nos problemas de saúde públicadecorrentes do meio ambiente, da produção e circulação de bens e da prestação de serviços de int",
+      "after_instruction": "Analise as afirmações a seguir:\nI\n. Vigilância epidemiológica é um conjunto de ações capaz de eliminar, diminuir ou prevenir riscos à saúde e de intervir nos problemas de saúde públicadecorrentes do meio ambiente, da produção e circulação de bens e da prestação de serviços de int",
+      "before_meta": {
+        "ano": "2023",
+        "banca": "Adm&Tec",
+        "orgao": "FMS Águas Belas",
+        "prova": "ACS (FMS Ág Belas)",
+        "topico": "Enfermagem",
+        "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2023",
+        "banca": "Adm&Tec",
+        "orgao": "FMS Águas Belas",
+        "prova": "ACS (FMS Ág Belas)",
+        "topico": "Enfermagem",
+        "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-5",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Qual dos itens abaixo consta na Lista Nacional de Doenças de Notificação Compulsória Imediata?",
+      "after_instruction": "Qual dos itens abaixo consta na Lista Nacional de Doenças de Notificação Compulsória Imediata?",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-6",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "'\"(..) é uma medida muito utilizada como indicador de saúde; é calculada pela divisão do número de óbitos pela população em risco \". A que conceitoepidemiológico se refere esse trecho?",
+      "after_instruction": "'\"(..) é uma medida muito utilizada como indicador de saúde; é calculada pela divisão do número de óbitos pela população em risco \". A que conceitoepidemiológico se refere esse trecho?",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-exames-complementares-1779563668619-6",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Um paciente se queixa de dor persistente no quadril após uma queda. O médico ortopedista suspeita de uma possível fratura do quadril e decide solicitar umexame de imagem para confirmar o diagnóstico. Qual dos seguintes exames de imagem é mais indicado para avaliar uma possível fr",
+      "after_instruction": "Um paciente se queixa de dor persistente no quadril após uma queda. O médico ortopedista suspeita de uma possível fratura do quadril e decide solicitar umexame de imagem para confirmar o diagnóstico. Qual dos seguintes exames de imagem é mais indicado para avaliar uma possível fr",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Imobilização Ortopédica",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Exames complementares",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Imobilização Ortopédica",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Exames complementares",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-exames-laboratoriais-1779563613404-2",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "O Teste do Pezinho é um exame obrigatório para todos os recém-nascidos e gratuito na rede pública de saúde. Segundo o Ministério da Saúde, qual o objetivo doTeste do Pezinho?",
+      "after_instruction": "O Teste do Pezinho é um exame obrigatório para todos os recém-nascidos e gratuito na rede pública de saúde. Segundo o Ministério da Saúde, qual o objetivo doTeste do Pezinho?",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Pref São L Quitunde",
+        "prova": "Tec Enf",
+        "topico": "Enfermagem",
+        "subtopico": "Exames Laboratoriais",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Pref São L Quitunde",
+        "prova": "Tec Enf",
+        "topico": "Enfermagem",
+        "subtopico": "Exames Laboratoriais",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1777103244679-1",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Segundo o calendário vacinal da Sociedade Brasileira de Imunizações, com que idade uma criança deve ser vacinada com a primeira dose da vacina de febre\namarela?",
+      "after_instruction": "Segundo o calendário vacinal da Sociedade Brasileira de Imunizações, com que idade uma criança deve ser vacinada com a primeira dose da vacina de febre\namarela?",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Imunização",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Imunização",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1779563986606-5",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Um adolescente chega à unidade de saúde com histórico incompleto de vacinação. A mãe relata que ele perdeu o cartão vacinal e não possui qualquercomprovação de doses anteriores. Em conformidade com o Programa Nacional de Imunização, o que o técnico de enfermagem, em conjunto com ",
+      "after_instruction": "Um adolescente chega à unidade de saúde com histórico incompleto de vacinação. A mãe relata que ele perdeu o cartão vacinal e não possui qualquercomprovação de doses anteriores. Em conformidade com o Programa Nacional de Imunização, o que o técnico de enfermagem, em conjunto com ",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / Sem Especialidade",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Imunização",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / Sem Especialidade",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Imunização",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1779564031957-5",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Analise as afirmações a seguir:\nI. Muitas doenças comuns no mundo e no Brasil deixaram de ser um problema de saúde pública por conta das políticas públicas gratuitas de vacinação massiva da\npopulação.\nII. Poliomielite, sarampo, rubéola, tétano e coqueluche são alguns tipos de doe",
+      "after_instruction": "Analise as afirmações a seguir:\nI. Muitas doenças comuns no mundo e no Brasil deixaram de ser um problema de saúde pública por conta das políticas públicas gratuitas de vacinação massiva da\npopulação.\nII. Poliomielite, sarampo, rubéola, tétano e coqueluche são alguns tipos de doe",
+      "before_meta": {
+        "ano": "2023",
+        "banca": "Adm&Tec",
+        "orgao": "FMS Águas Belas",
+        "prova": "ACS (FMS Ág Belas)",
+        "topico": "Enfermagem",
+        "subtopico": "Imunização",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2023",
+        "banca": "Adm&Tec",
+        "orgao": "FMS Águas Belas",
+        "prova": "ACS (FMS Ág Belas)",
+        "topico": "Enfermagem",
+        "subtopico": "Imunização",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-6",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "As Ureirites Infecciosas podem ser classificadas de acordo com o agente etiológico em uretrites gonocócica e não gonocócica. Na uretrite não gonocócica, ospatógenos mais frequentes são",
+      "after_instruction": "As Ureirites Infecciosas podem ser classificadas de acordo com o agente etiológico em uretrites gonocócica e não gonocócica. Na uretrite não gonocócica, ospatógenos mais frequentes são",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-8",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Considere as seguintes afirmativas sobre cateterismo vesical e punções venosas periféricas:\nI. A utilização de cateter vesical de demora deve ser priorizada para todos os pacientes críticos, pois reduz o risco de infecção urinária associada à permanência\nprolongada do dispositivo",
+      "after_instruction": "Considere as seguintes afirmativas sobre cateterismo vesical e punções venosas periféricas:\nI. A utilização de cateter vesical de demora deve ser priorizada para todos os pacientes críticos, pois reduz o risco de infecção urinária associada à permanência\nprolongada do dispositivo",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / PSF",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Instalação e Manejo de Sondas",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / PSF",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Instalação e Manejo de Sondas",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-9",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Um paciente internado na unidade de terapia intensiva apresenta insuficiência respiratória aguda, necessitando de ventilação mecânica invasiva. Durante a\nassistência de enfermagem, observa-se um aumento significativo na pressão do cuff do tubo endotraqueal. Assinale a alternativa",
+      "after_instruction": "Um paciente internado na unidade de terapia intensiva apresenta insuficiência respiratória aguda, necessitando de ventilação mecânica invasiva. Durante a\nassistência de enfermagem, observa-se um aumento significativo na pressão do cuff do tubo endotraqueal. Assinale a alternativa",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / PSF",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Instalação e Manejo de Sondas",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / PSF",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Instalação e Manejo de Sondas",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-nocoes-de-fisiologia-1775448586547-3",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Em relação a utilização de compressas quentes durante o tratamento de um paciente com lesão tecidual superficial, assinale a alternativa que indica a finalidade\nfisiológica dessa intervenção.",
+      "after_instruction": "Em relação a utilização de compressas quentes durante o tratamento de um paciente com lesão tecidual superficial, assinale a alternativa que indica a finalidade\nfisiológica dessa intervenção.",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem",
+        "prova": "Tec (CIMPAJEÚ)",
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Fisiologia",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem",
+        "prova": "Tec (CIMPAJEÚ)",
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Fisiologia",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-nocoes-de-fisiologia-1775501962697-2",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Sobre a finalidade da aplicação do calor e frio, é CORRETO afirmar que:",
+      "after_instruction": "Sobre a finalidade da aplicação do calor e frio, é CORRETO afirmar que:",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Pref São L Quitunde",
+        "prova": "Tec Enf",
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Fisiologia",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Pref São L Quitunde",
+        "prova": "Tec Enf",
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Fisiologia",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-7",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "No manejo de pacientes com insuficiência respiratória, o técnico de enfermagem deve estar atento ao uso correto de dispositivos de oxigenoterapia. A máscara de\nVenturi é indicada quando ____.",
+      "after_instruction": "No manejo de pacientes com insuficiência respiratória, o técnico de enfermagem deve estar atento ao uso correto de dispositivos de oxigenoterapia. A máscara de\nVenturi é indicada quando ____.",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem",
+        "prova": "Tec (CIMPAJEÚ)",
+        "topico": "Enfermagem",
+        "subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem",
+        "prova": "Tec (CIMPAJEÚ)",
+        "topico": "Enfermagem",
+        "subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-0",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Um paciente com doença pulmonar crônica recebe suplementação de oxigênio por cateter nasal, com fluxo ajustado segundo prescrição médica. Qual medida do\ntécnico de enfermagem mais otimiza a eficácia do tratamento e previne complicações?",
+      "after_instruction": "Um paciente com doença pulmonar crônica recebe suplementação de oxigênio por cateter nasal, com fluxo ajustado segundo prescrição médica. Qual medida do\ntécnico de enfermagem mais otimiza a eficácia do tratamento e previne complicações?",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / Sem Especialidade",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / Sem Especialidade",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-3",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Oxigenoterapia é um tema vital em saúde, principalmente no tratamento de pacientes com insuficiência respiratória. Com relação aos dispositivo deoxigenoterapia, assinale a alternativa correta:",
+      "after_instruction": "Oxigenoterapia é um tema vital em saúde, principalmente no tratamento de pacientes com insuficiência respiratória. Com relação aos dispositivo deoxigenoterapia, assinale a alternativa correta:",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Pref M de Camaragibe",
+        "prova": "TEnf",
+        "topico": "Enfermagem",
+        "subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Pref M de Camaragibe",
+        "prova": "TEnf",
+        "topico": "Enfermagem",
+        "subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-4",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "A oxigenoterapia é uma intervenção destinada à administração de oxigênio medicinal com finalidade terapêutica. Um dos meios de administração de oxigênio éatravés do Cateter nasal, a respeito deste, assinale a alternativa\nCORRETA\n:",
+      "after_instruction": "A oxigenoterapia é uma intervenção destinada à administração de oxigênio medicinal com finalidade terapêutica. Um dos meios de administração de oxigênio éatravés do Cateter nasal, a respeito deste, assinale a alternativa\nCORRETA\n:",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Pref São L Quitunde",
+        "prova": "Tec Enf",
+        "topico": "Enfermagem",
+        "subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Pref São L Quitunde",
+        "prova": "Tec Enf",
+        "topico": "Enfermagem",
+        "subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056021381-3",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "São deveres do paciente:\nI. Prestar informações imprecisas sobre seu histórico de saúde.\nII. Respeitar os direitos dos demais usuários, funcionários e prestadores de serviços da Instituição, tratando-os com civilidade e cortesia.\nIII. Zelar pelas instalações da Instituição coloca",
+      "after_instruction": "São deveres do paciente:\nI. Prestar informações imprecisas sobre seu histórico de saúde.\nII. Respeitar os direitos dos demais usuários, funcionários e prestadores de serviços da Instituição, tratando-os com civilidade e cortesia.\nIII. Zelar pelas instalações da Instituição coloca",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "SAMU",
+        "prova": "Moto (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "SAMU",
+        "prova": "Moto (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056021381-4",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Durante uma consulta de acompanhamento com um paciente oncológico em estágio avançado, ele expressa preocupação com os efeitos colaterais do tratamento\nde quimioterapia, incluindo náuseas e fadiga intensa. Qual das seguintes intervenções de enfermagem é mais apropriada para auxil",
+      "after_instruction": "Durante uma consulta de acompanhamento com um paciente oncológico em estágio avançado, ele expressa preocupação com os efeitos colaterais do tratamento\nde quimioterapia, incluindo náuseas e fadiga intensa. Qual das seguintes intervenções de enfermagem é mais apropriada para auxil",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Imobilização Ortopédica",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Imobilização Ortopédica",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056129848-4",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Um paciente com doença crônica relata detalhes sensíveis de seu histórico familiar, temendo discriminação caso essas informações sejam divulgadas. Pouco depois,\num familiar solicita acesso ao prontuário, alegando necessidade de conhecer todo o conteúdo. Assinale a alternativa que",
+      "after_instruction": "Um paciente com doença crônica relata detalhes sensíveis de seu histórico familiar, temendo discriminação caso essas informações sejam divulgadas. Pouco depois,\num familiar solicita acesso ao prontuário, alegando necessidade de conhecer todo o conteúdo. Assinale a alternativa que",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / PSF",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / PSF",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056129848-5",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Um paciente idoso, após estabilização de fratura de fêmur, encontra-se em processo de alta hospitalar. Assinale a opção que descreve a conduta mais adequada do\ntécnico de enfermagem para garantir a efetividade dessa transição.",
+      "after_instruction": "Um paciente idoso, após estabilização de fratura de fêmur, encontra-se em processo de alta hospitalar. Assinale a opção que descreve a conduta mais adequada do\ntécnico de enfermagem para garantir a efetividade dessa transição.",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / Sem Especialidade",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / Sem Especialidade",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Uma equipe multidisciplinar foi designada para implementar ações de saúde pública relacionadas às Práticas Integrativas e Complementares (PICS) em umacomunidade que apresenta alta incidência de doenças crônicas. Muitas famílias desconhecem práticas como fitoterapia e auriculotera",
+      "after_instruction": "Uma equipe multidisciplinar foi designada para implementar ações de saúde pública relacionadas às Práticas Integrativas e Complementares (PICS) em umacomunidade que apresenta alta incidência de doenças crônicas. Muitas famílias desconhecem práticas como fitoterapia e auriculotera",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Práticas Integrativas",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Práticas Integrativas",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-2",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Um centro de atenção primária desenvolveu um projeto para prevenir doenças crônicas, incentivando práticas integrativas como a fitoterapia. Entretanto, muitosusuários relutam em aderir às orientações, alegando desconhecer os benefícios dessas terapias. Como o profissional pode at",
+      "after_instruction": "Um centro de atenção primária desenvolveu um projeto para prevenir doenças crônicas, incentivando práticas integrativas como a fitoterapia. Entretanto, muitosusuários relutam em aderir às orientações, alegando desconhecer os benefícios dessas terapias. Como o profissional pode at",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Práticas Integrativas",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Práticas Integrativas",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-3",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Em relatórios sobre iniciativas de sucesso em diversos países, equipes multiprofissionais relataram a integração de práticas como massagem, meditação e usoracional de plantas medicinais em centros urbanos. Assinale o fator que, segundo esses relatos, favorece a consolidação dessa",
+      "after_instruction": "Em relatórios sobre iniciativas de sucesso em diversos países, equipes multiprofissionais relataram a integração de práticas como massagem, meditação e usoracional de plantas medicinais em centros urbanos. Assinale o fator que, segundo esses relatos, favorece a consolidação dessa",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Práticas Integrativas",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Práticas Integrativas",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-4",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao",
+        "instruction_cleaned"
+      ],
+      "zodValid": true,
+      "before_instruction": "Sobre os impactos das práticas integrativas na saúde coletiva, avalie as afirmativas:\nI.\nAs práticas integrativas podem contribuir para a redução da sobrecarga dos serviços de emergência ao promover a prevenção de agravos e o manejocomplementar de condições crônicas.\nII\n. O uso d",
+      "after_instruction": "Sobre os impactos das práticas integrativas na saúde coletiva, avalie as afirmativas:\nI.\nAs práticas integrativas podem contribuir para a redução da sobrecarga dos serviços de emergência ao promover a prevenção de agravos e o manejocomplementar de condições crônicas.\nII\n. O uso d",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Práticas Integrativas",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Práticas Integrativas",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-6",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Na implementação de programas de Educação em Saúde, qual dos seguintes métodos é mais eficaz para promover mudanças comportamentais e hábitossaudáveis na comunidade?",
+      "after_instruction": "Na implementação de programas de Educação em Saúde, qual dos seguintes métodos é mais eficaz para promover mudanças comportamentais e hábitossaudáveis na comunidade?",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Imobilização Ortopédica",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Imobilização Ortopédica",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-7",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Qual o objetivo da Vigilância em Saúde?",
+      "after_instruction": "Qual o objetivo da Vigilância em Saúde?",
+      "before_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Imobilização Ortopédica",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2024",
+        "banca": "Adm&Tec",
+        "orgao": "Imobilização Ortopédica",
+        "prova": "Tec (Pref BM de Deus)",
+        "topico": "Enfermagem",
+        "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+      "changes": [
+        "slides_normalized",
+        "meta_cargo_header",
+        "meta_orgao"
+      ],
+      "zodValid": true,
+      "before_instruction": "Em uma unidade de terapia intensiva, observa-se aumento na incidência de infecções relacionadas a cateter venoso central. Assinale a abordagem mais efetivapara minimizar essa ocorrência, considerando os protocolos vigentes de prevenção.",
+      "after_instruction": "Em uma unidade de terapia intensiva, observa-se aumento na incidência de infecções relacionadas a cateter venoso central. Assinale a abordagem mais efetivapara minimizar essa ocorrência, considerando os protocolos vigentes de prevenção.",
+      "before_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / PSF",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "after_meta": {
+        "ano": "2025",
+        "banca": "Adm&Tec",
+        "orgao": "Enfermagem / PSF",
+        "prova": "Tec (Pref João Alfredo)",
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres",
+        "cargo_header": "Técnico de enfermagem"
+      }
+    }
+  ],
+  "exceptions": [
+    {
+      "modulo_slug": "educa-pb-enfermagem-nocoes-de-fisiologia-1775501938701-2",
+      "reason": "tecconcursos_reference"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-fisiologia-1775448586547-5",
+      "reason": "zod_invalid_after_normalize",
+      "zodMessage": "Invalid input: expected string, received undefined"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448529213-0",
+      "reason": "zod_invalid_after_normalize",
+      "zodMessage": "Invalid input: expected string, received undefined"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-nocoes-de-fisiologia-1775448529213-5",
+      "reason": "zod_invalid_after_normalize",
+      "zodMessage": "Invalid input: expected string, received undefined"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448615466-6",
+      "reason": "zod_invalid_after_normalize",
+      "zodMessage": "Invalid input: expected string, received undefined"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-2",
+      "reason": "zod_invalid_after_normalize",
+      "zodMessage": "Invalid input: expected string, received undefined"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-4",
+      "reason": "zod_invalid_after_normalize",
+      "zodMessage": "Invalid input: expected string, received undefined"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-nocoes-de-fisiologia-1775448599930-7",
+      "reason": "zod_invalid_after_normalize",
+      "zodMessage": "Invalid input: expected string, received undefined"
+    }
+  ],
+  "notes": [
+    "Linha 2 no player: topico === \"Enfermagem\" exibe só subtopico (alteração em lib/questionHeader.ts).",
+    "orgao_not_inferable: meta corrigida onde possível; revisar manualmente se cabeçalho ainda incompleto."
+  ]
+}

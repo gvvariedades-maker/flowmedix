@@ -8,9 +8,9 @@ import { DangerZone } from '../variants/DangerZone';
 import { LogicFlow } from '../variants/LogicFlow';
 import { SyllableScanner } from '../variants/SyllableScanner';
 import { VersusArena } from '../variants/VersusArena';
-import { getThemeForSlide, calculateLayoutVariant } from './themeGenerator';
-import { resolveDangerZoneLayoutVariant } from './dangerZoneLayout';
-import { resolveGoldenRuleLayoutVariant } from './goldenRuleLayout';
+import { getThemeForSlide } from './themeGenerator';
+import { resolveSlidePresentation, type SlidePresentationContext } from './slidePresentation';
+import type { FamilyId } from './questionFamily';
 import type { ThemeColors } from './themeGenerator';
 import {
   isVersusArenaSideReady,
@@ -23,26 +23,33 @@ import type { ReverseStudyShellContext } from '@/types/lesson';
 // ============================================================================
 // COMPONENTE ORQUESTRADOR (O HUB) COM TEMAS HÍBRIDOS
 // ============================================================================
-export const NeuroSlideHub = ({ 
-  slide, 
-  questionHash, 
-  slideIndex 
-}: { 
-  slide: any; 
+export const NeuroSlideHub = ({
+  slide,
+  questionHash,
+  questionSlug,
+  slideIndex,
+  jsonLayoutVariant,
+  questionFamilyId,
+}: {
+  slide: any;
   questionHash: string;
+  questionSlug?: string;
   slideIndex?: number;
+  jsonLayoutVariant?: string;
+  questionFamilyId?: FamilyId;
 }) => {
   // Sistema híbrido: prioriza subject, fallback para hash com variações únicas
   const theme = getThemeForSlide(slide, questionHash, slideIndex);
-  
-  // Calcula layout_variant automaticamente se não fornecido (formato novo)
-  const baseLayoutVariant = slide.layout_variant || calculateLayoutVariant(slide);
-  const layoutVariant =
-    slide.type === 'danger_zone'
-      ? resolveDangerZoneLayoutVariant(slide, baseLayoutVariant)
-      : slide.type === 'golden_rule'
-        ? resolveGoldenRuleLayoutVariant(slide, baseLayoutVariant)
-        : baseLayoutVariant;
+
+  const presentationContext: SlidePresentationContext = {
+    questionSlug: questionSlug ?? questionHash,
+    slideIndex,
+    jsonLayoutVariant,
+    familyId: questionFamilyId,
+  };
+
+  const { layoutVariant, revealMode: logicRevealMode, bulletStyle: dangerBulletStyle, rows: goldenRows } =
+    resolveSlidePresentation(slide, presentationContext);
   
   // Helper para mapear items para concepts quando necessário
   const getConcepts = () => {
@@ -70,7 +77,7 @@ export const NeuroSlideHub = ({
       return (
         <GoldenRule
           content={slide.content || slide.main_text || ''}
-          rows={slide.rows}
+          rows={goldenRows}
           theme={theme}
           layoutVariant={layoutVariant}
           footerRule={slide.footer_rule}
@@ -90,7 +97,7 @@ export const NeuroSlideHub = ({
           items={dangerItems}
           footerRule={dangerFooterRule}
           layoutVariant={layoutVariant}
-          bulletStyle={slide.bullet_style ?? 'numbered'}
+          bulletStyle={dangerBulletStyle}
         />
       );
     case 'logic_flow':
@@ -99,7 +106,7 @@ export const NeuroSlideHub = ({
           steps={normalizeLogicFlowSteps(slide.steps)}
           theme={theme}
           layoutVariant={layoutVariant}
-          revealMode={slide.reveal_mode ?? 'auto'}
+          revealMode={logicRevealMode}
         />
       );
     case 'syllable_scanner':
@@ -133,19 +140,35 @@ export const NeuroSlideHub = ({
 export default function NeuroSlide({
   data,
   questionHash,
+  questionSlug,
   slideIndex,
   shellContext,
   standalone = false,
+  questionFamilyId,
 }: {
   data: any;
   questionHash?: string;
+  questionSlug?: string;
   slideIndex?: number;
   shellContext?: ReverseStudyShellContext;
   /** Preview/material: shell com slide 1/1, sem badge de banca. */
   standalone?: boolean;
+  /** Família pedagógica (7 goldens) — âncora visual no player. */
+  questionFamilyId?: FamilyId;
 }) {
   const safeData = useMemo(() => normalizeReverseStudySlide(data ?? {}) as any, [data]);
   const hashSource = questionHash || safeData.id || JSON.stringify(safeData).substring(0, 50) || 'default';
+  const slugSource = questionSlug || safeData.id || hashSource;
+
+  const presentationContext: SlidePresentationContext = useMemo(
+    () => ({
+      questionSlug: slugSource,
+      slideIndex,
+      jsonLayoutVariant: safeData.layout_variant,
+      familyId: questionFamilyId,
+    }),
+    [slugSource, slideIndex, safeData.layout_variant, questionFamilyId],
+  );
 
   const normalizedData = useMemo(() => {
     const pickNonEmptySteps = (top: unknown, nested: unknown) => {
@@ -173,7 +196,7 @@ export default function NeuroSlide({
         ...safeData,
         meta: safeData.meta || {},
         steps: Array.isArray(safeData.steps) ? safeData.steps : [],
-        layout_variant: safeData.layout_variant || calculateLayoutVariant(safeData),
+        layout_variant: safeData.layout_variant,
       };
     }
 
@@ -225,21 +248,14 @@ export default function NeuroSlide({
         design_system: safeData.design_system,
         meta: safeData.meta || {},
         subject: safeData.subject,
-        layout_variant:
-          criticalFields.layout_variant ||
-          calculateLayoutVariant({
-            type: criticalFields.type,
-            items: criticalFields.items,
-            concepts: mappedConcepts,
-            steps: criticalFields.steps,
-          }),
+        layout_variant: criticalFields.layout_variant,
       };
     }
 
     return {
       ...safeData,
       meta: safeData.meta || {},
-      layout_variant: safeData.layout_variant || calculateLayoutVariant(safeData),
+      layout_variant: safeData.layout_variant,
     };
   }, [safeData]);
 
@@ -251,31 +267,54 @@ export default function NeuroSlide({
 
   // Se o slide tem o formato novo (com type), usa o Hub com sistema híbrido
   if (normalizedData.type) {
-    inner = <NeuroSlideHub slide={normalizedData} questionHash={hashSource} slideIndex={slideIndex} />;
+    inner = (
+      <NeuroSlideHub
+        slide={normalizedData}
+        questionHash={hashSource}
+        questionSlug={slugSource}
+        slideIndex={slideIndex}
+        jsonLayoutVariant={safeData.layout_variant}
+        questionFamilyId={questionFamilyId}
+      />
+    );
   } else {
+    const legacyPresentation = resolveSlidePresentation(
+      {
+        ...normalizedData,
+        type: normalizedData.layout_type,
+      },
+      presentationContext,
+    );
     switch (normalizedData.layout_type) {
-      case 'concept_map':
-        if (normalizedData.items && Array.isArray(normalizedData.items)) {
-          const concepts = normalizedData.items.map((item: any) => ({
-            icon: item.icon || 'HelpCircle',
-            title: item.label || item.title || '',
-            description: item.detail || item.description || ''
-          }));
-          inner = <ConceptMap concepts={concepts} theme={theme} layoutVariant={normalizedData.layout_variant} />;
+      case 'concept_map': {
+        const concepts =
+          normalizedData.items && Array.isArray(normalizedData.items)
+            ? normalizedData.items.map((item: any) => ({
+                icon: item.icon || 'HelpCircle',
+                title: item.label || item.title || '',
+                description: item.detail || item.description || '',
+              }))
+            : normalizedData.concepts || [];
+        if (legacyPresentation.layoutVariant === 'morphological') {
+          inner = <MorphologicalConceptMap concepts={concepts} theme={theme} />;
         } else {
-          inner = <ConceptMap concepts={normalizedData.concepts || []} theme={theme} layoutVariant={normalizedData.layout_variant} />;
+          inner = (
+            <ConceptMap
+              concepts={concepts}
+              theme={theme}
+              layoutVariant={legacyPresentation.layoutVariant}
+            />
+          );
         }
         break;
+      }
       case 'golden_rule':
         inner = (
           <GoldenRule
             content={normalizedData.content || normalizedData.main_text || normalizedData.items?.[0]?.label || ''}
-            rows={normalizedData.rows}
+            rows={legacyPresentation.rows}
             theme={theme}
-            layoutVariant={resolveGoldenRuleLayoutVariant(
-              normalizedData,
-              normalizedData.layout_variant,
-            )}
+            layoutVariant={legacyPresentation.layoutVariant}
             footerRule={normalizedData.footer_rule}
           />
         );
@@ -285,13 +324,10 @@ export default function NeuroSlide({
           <DangerZone
             content={normalizedData.header?.title || normalizedData.footer_rule}
             theme={theme}
-            layoutVariant={resolveDangerZoneLayoutVariant(
-              normalizedData,
-              normalizedData.layout_variant,
-            )}
+            layoutVariant={legacyPresentation.layoutVariant}
             items={normalizedData.items}
             footerRule={normalizedData.footer_rule}
-            bulletStyle={normalizedData.bullet_style ?? 'numbered'}
+            bulletStyle={legacyPresentation.bulletStyle}
           />
         );
         break;
@@ -301,8 +337,8 @@ export default function NeuroSlide({
           <LogicFlow
             steps={normalizedLogicSteps}
             theme={theme}
-            layoutVariant={normalizedData.layout_variant}
-            revealMode={(normalizedData.reveal_mode as 'auto' | 'tap' | undefined) ?? 'auto'}
+            layoutVariant={legacyPresentation.layoutVariant}
+            revealMode={legacyPresentation.revealMode}
           />
         );
         break;
@@ -352,7 +388,8 @@ export default function NeuroSlide({
     : 'box-border flex w-full min-w-0 flex-col items-center px-3 py-6 sm:px-5 sm:py-8 md:px-8 md:py-10';
   const slideType = normalizedData.type ?? normalizedData.layout_type;
   const chipLabel = normalizedData.chip_label as string | undefined;
-  const slideTitle = normalizedData.slide_title as string | undefined;
+  const presentation = resolveSlidePresentation(normalizedData, presentationContext);
+  const slideTitle = presentation.slideTitle;
 
   const body = useShell && resolvedShell ? (
     <ReverseStudyShell
@@ -362,6 +399,7 @@ export default function NeuroSlide({
       slideIndex={resolvedShell.slideIndex}
       totalSlides={resolvedShell.totalSlides}
       banca={resolvedShell.banca}
+      theme={theme}
     >
       {inner}
     </ReverseStudyShell>

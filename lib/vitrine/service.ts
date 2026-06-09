@@ -15,6 +15,7 @@ import { buildVitrineGroups } from '@/lib/vitrine/buildGroups';
 import { buildVitrineFacets, getVitrineFacets } from '@/lib/vitrine/facets';
 import { VITRINE_ASSUNTOS_POR_PAGINA } from '@/lib/vitrine/constants';
 import { fetchVitrinePageFromRpc } from '@/lib/vitrine/rpc';
+import { fetchSlideCountsByModuloIds } from '@/lib/vitrine/slideCounts';
 import { logApiStrategy } from '@/lib/api/logApiStrategy';
 import { logger } from '@/lib/logger';
 import { SCALE_LIMITS } from '@/lib/scale/constants';
@@ -131,12 +132,18 @@ async function getVitrinePageViaJs(params: GetVitrinePageParams): Promise<Vitrin
   logger.warn('getVitrinePageViaJs: filtered count', { count: filtered.length });
 
   const slugs = filtered.map((m) => m.modulo_slug);
-  const historico = await getHistoricoQuestoesForSlugsCached(userId, slugs);
+  const [historico, slideCounts] = await Promise.all([
+    getHistoricoQuestoesForSlugsCached(userId, slugs),
+    fetchSlideCountsByModuloIds(filtered.map((m) => m.id)),
+  ]);
 
   const withStats = attachHistoricoStats(
     filtered.map(({ estudoReversoConcluido: _e, stats: _s, ...m }) => m),
     historico,
-  );
+  ).map((modulo) => ({
+    ...modulo,
+    slide_count: slideCounts.get(modulo.id) ?? 0,
+  }));
 
   const allGroups = buildVitrineGroups(withStats).map((group) => ({
     ...group,

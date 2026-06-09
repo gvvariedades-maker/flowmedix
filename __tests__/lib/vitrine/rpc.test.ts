@@ -40,6 +40,7 @@ describe('fetchVitrinePageFromRpc', () => {
             erros: 5,
             totalResolvidas: 15,
             totalQuestoes: 205,
+            totalNeuroSlides: 820,
             trabalhadas: 100,
             percentual: 67,
             firstSlug: 'q-1',
@@ -82,6 +83,7 @@ describe('fetchVitrinePageFromRpc', () => {
     expect(result.groups).toHaveLength(1);
     expect(result.groups[0].questoes).toHaveLength(2);
     expect(result.groups[0].totalQuestoes).toBe(205);
+    expect(result.groups[0].totalNeuroSlides).toBe(820);
     expect(result.totalModulosFiltrados).toBe(205);
     expect(result.facets).toEqual({
       bancas: ['FGV', 'CESPE'],

@@ -1,4 +1,35 @@
-import { Node, Edge, Viewport } from '@xyflow/react';
+/**
+ * Tipos da estrutura JSON de fluxograma armazenada no banco.
+ * Definidos localmente (formato React Flow) para nao depender do pacote
+ * @xyflow/react — o conteudo e apenas dados serializados, sem runtime.
+ */
+export interface Viewport {
+  x: number;
+  y: number;
+  zoom: number;
+}
+
+export interface Node<
+  Data extends Record<string, unknown> = Record<string, unknown>,
+  Type extends string = string,
+> {
+  id: string;
+  position: { x: number; y: number };
+  data: Data;
+  type?: Type;
+  width?: number;
+  height?: number;
+  [key: string]: unknown;
+}
+
+export interface Edge {
+  id: string;
+  source: string;
+  target: string;
+  type?: string;
+  label?: string;
+  [key: string]: unknown;
+}
 
 /**
  * Tipos customizados de nós para o React Flow

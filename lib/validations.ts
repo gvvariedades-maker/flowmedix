@@ -237,6 +237,9 @@ export const LogicFlowSlideSchema = ReverseStudySlideShellFieldsSchema.merge(z.o
   design_system: z.any().optional(),
 }));
 
+export const GoldenRuleRowEmphasisSchema = z.enum(['default', 'highlight', 'alert', 'success']);
+export const GoldenRuleRowBadgeSchema = z.enum(['hot', 'warn', 'ok', 'info']);
+
 export const GoldenRuleRowSchema = z.object({
   label: z
     .string()
@@ -246,6 +249,10 @@ export const GoldenRuleRowSchema = z.object({
     .string()
     .min(1, 'Cada row deve ter value')
     .max(LIMITS.DETAIL_MAX, `Value deve ter no máximo ${LIMITS.DETAIL_MAX} caracteres`),
+  /** Destaque visual da linha no layout `reference_table`. */
+  emphasis: GoldenRuleRowEmphasisSchema.optional(),
+  /** Badge opcional (coluna direita em desktop). */
+  badge: GoldenRuleRowBadgeSchema.optional(),
 });
 
 // Schema para Golden Rule Slide - COM VALIDAÇÕES AVANÇADAS

@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 export const SIMULADO_MAP_VIRTUAL_THRESHOLD = 40;
 
 const MAP_CELL_GAP_PX = 8;
-const MAP_CELL_SIZE_PX = 32;
+const MAP_CELL_SIZE_PX = 44;
 
 export type SimuladoMapVariant = 'treino' | 'prova';
 
@@ -46,7 +46,7 @@ export const SimuladoMapCell = memo(function SimuladoMapCell({
       type="button"
       onClick={() => onSelect(item.modulo_slug)}
       className={cn(
-        'h-8 min-w-8 shrink-0 rounded-lg border px-2 text-xs font-semibold',
+        'h-11 min-w-11 shrink-0 rounded-lg border px-2 text-sm font-semibold',
         isActive
           ? 'border-cyan-500/40 bg-cyan-500/10 text-cyan-300'
           : answeredNeutral
@@ -124,7 +124,7 @@ function SimuladoQuestionMapVirtual({
       aria-label="Mapa de questões"
     >
       <div
-        className="relative h-8"
+        className="relative h-11"
         style={{ width: virtualizer.getTotalSize(), minWidth: '100%' }}
       >
         {virtualizer.getVirtualItems().map((virtualItem) => {

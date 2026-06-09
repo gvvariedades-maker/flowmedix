@@ -1,0 +1,247 @@
+{
+  "meta": {
+    "banca": "Cesgranrio",
+    "prova": "Ag Uni (UNEMAT)",
+    "orgao": "UNEMAT",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Saúde Pública",
+    "subtopico": "Promoção à Saúde e Prevenção de Agravos"
+  },
+  "question_data": {
+    "instruction": "O Sistema Único de Saúde, SUS, é um dos maiores e mais complexos sistemas de saúde pública do mundo. A atual Constituição Federal preconiza o acesso universal ao SUS, sem discriminação, e a atenção integral à saúde como um direito de todos os brasileiros.\n\nDe acordo com a Lei Orgânica da Saúde, constitui o Sistema Único de Saúde o conjunto de",
+    "options": [
+      {
+        "id": "A",
+        "text": "serviços hospitalares prestados na rede básica e em institutos de referência nacional em saúde de instituições públicas federais, estaduais e municipais.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "serviços de atenção básica à saúde prestados em instituições públicas federais, estaduais e municipais, não incluídos os de odontologia especializada, ofertados nas instituições conveniadas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "ações e serviços de saúde prestados por órgãos e instituições públicas federais, estaduais e municipais, da Administração direta e indireta e das fundações mantidas pelo Poder Público.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "ações e serviços de saúde prestados por unidades de média e de alta complexidade em instituições públicas federais, estaduais e municipais da Administração direta.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "ações e serviços de saúde prestados por órgãos e instituições públicas federais, estaduais e municipais, não incluídos os de pesquisa e os de produção de insumos e de medicamentos.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "layout_variant": "morphological",
+      "slide_title": "Mapa da prova — composição legal do SUS",
+      "meta": {
+        "topico": "Saúde Pública",
+        "subtopico": "Promoção à Saúde e Prevenção de Agravos"
+      },
+      "items": [
+        {
+          "label": "Lei Orgânica da Saúde",
+          "detail": "Lei nº 8.080/1990 — norma-mãe do SUS. Questões de “o que compõe o SUS” remetem ao Art. 4º, não à CF isolada nem à 8.142.",
+          "icon": "Scale"
+        },
+        {
+          "label": "Art. 4º — núcleo da questão",
+          "detail": "Define o SUS como conjunto de ações e serviços de saúde, prestados por órgãos e instituições públicas federais, estaduais e municipais.",
+          "icon": "FileText"
+        },
+        {
+          "label": "Ações + serviços",
+          "detail": "Par de termos obrigatório no gabarito. A banca erra quando troca por “só hospital”, “só atenção básica” ou “só média/alta complexidade”.",
+          "icon": "Layers"
+        },
+        {
+          "label": "Três esferas de governo",
+          "detail": "União, estados e municípios. Alternativas incompletas costumam omitir um ente ou restringir a um único nível de atenção.",
+          "icon": "Landmark"
+        },
+        {
+          "label": "Administração direta e indireta",
+          "detail": "Direta: ministérios, secretarias. Indireta: autarquias, fundações, empresas públicas. Pegadinha clássica: citar só a administração direta (letra D).",
+          "icon": "Building2"
+        },
+        {
+          "label": "Fundações públicas",
+          "detail": "“Fundações mantidas pelo Poder Público” entram expressamente no Art. 4º. Gabarito que exclui fundações ou gestão indireta está errado.",
+          "icon": "Library"
+        },
+        {
+          "label": "Universalidade e integralidade",
+          "detail": "Princípios da CF/Art. 196 citados no enunciado. Servem de contexto, mas a pergunta pede a definição legal do Art. 4º da 8.080 — não confunda princípio com composição.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Padrão Cesgranrio",
+          "detail": "Banca costuma manter a redação mais ampla e literal. Distratores restringem escopo (só hospital, só AB, só direta, excluem pesquisa/insumos).",
+          "icon": "Target"
+        }
+      ],
+      "footer_rule": "DECORE A ESTRUTURA DO ART. 4º: ações + serviços | 3 esferas | direta + indireta | fundações públicas"
+    },
+    {
+      "type": "golden_rule",
+      "layout_variant": "reference_table",
+      "template": "t04",
+      "slide_title": "Referência de prova — Art. 4º e entorno",
+      "meta": {
+        "topico": "Saúde Pública",
+        "subtopico": "Promoção à Saúde e Prevenção de Agravos"
+      },
+      "content": "COMPOSIÇÃO DO SUS — O QUE A BANCA COBRA",
+      "rows": [
+        {
+          "label": "Norma central",
+          "value": "Lei 8.080/1990 — Lei Orgânica da Saúde",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Dispositivo-chave",
+          "value": "Art. 4º — define o que constitui o SUS",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Natureza",
+          "value": "Ações e serviços de saúde (par completo)",
+          "badge": "warn"
+        },
+        {
+          "label": "Prestadores",
+          "value": "Órgãos e instituições públicas (União, UF, municípios)",
+          "badge": "warn"
+        },
+        {
+          "label": "Gestão incluída",
+          "value": "Administração direta e indireta",
+          "badge": "ok"
+        },
+        {
+          "label": "Também integram",
+          "value": "Fundações mantidas pelo Poder Público",
+          "badge": "ok"
+        },
+        {
+          "label": "CF/88 — Art. 196",
+          "value": "Saúde = direito de todos + dever do Estado (contexto do enunciado)",
+          "badge": "info"
+        },
+        {
+          "label": "Não confundir com",
+          "value": "Lei 8.142/90 — participação da comunidade e conselhos (outro foco)",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Letra C — gabarito",
+          "value": "Única que reproduz integralmente o Art. 4º",
+          "emphasis": "success",
+          "badge": "hot"
+        },
+        {
+          "label": "Mnemônico",
+          "value": "A-S-E-D-I-F: Ações, Serviços, Esferas, Direta/Indireta, Fundações",
+          "emphasis": "highlight",
+          "badge": "ok"
+        },
+        {
+          "label": "Regra Cesgranrio",
+          "value": "Alternativa mais ampla + redação legal fiel = tendência de gabarito",
+          "badge": "info"
+        }
+      ],
+      "footer_rule": "Em concurso: literalidade do Art. 4º vale mais que “senso comum”. Se pedir “compõe o SUS”, volte sempre ao Art. 4º."
+    },
+    {
+      "type": "logic_flow",
+      "layout_variant": "cards",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Saúde Pública",
+        "subtopico": "Promoção à Saúde e Prevenção de Agravos"
+      },
+      "steps": [
+        "Ler o comando: “constitui o Sistema Único de Saúde o conjunto de…” — pede definição legal, não princípio isolado.",
+        "Identificar a fonte: “Lei Orgânica da Saúde” = Lei 8.080/1990 → Art. 4º.",
+        "Recuperar mentalmente os 4 blocos do Art. 4º: ações e serviços | esferas | direta/indireta | fundações.",
+        "Conferir se a alternativa traz “ações e serviços” juntos — se trouxer só um recorte (hospital, AB, média/alta), descarte.",
+        "Conferir se inclui União, estados e municípios — não basta citar “instituições públicas” sem as três esferas quando a banca detalha.",
+        "Conferir administração direta E indireta — alternativa só com “Administração direta” (D) viola o dispositivo.",
+        "Conferir fundações mantidas pelo Poder Público — omissão ou exclusão indica distrator.",
+        "Testar A: fala só em hospital/referência → restritiva demais → eliminar.",
+        "Testar B: limita à atenção básica e exclui odonto/conveniadas → restritiva → eliminar.",
+        "Testar D: média/alta + só direta → corta AB e indireta → eliminar.",
+        "Testar E: exclui pesquisa e insumos → inventa limitação não prevista no Art. 4º → eliminar.",
+        "Marcar C: única redação integral e fiel ao Art. 4º da Lei 8.080/1990.",
+        "Fixação para outras provas: sempre compare cada alternativa com os 4 blocos do Art. 4º — falta um bloco, está errada."
+      ],
+      "footer_rule": "Estratégia reproduzível: comando → lei → artigo → 4 blocos → eliminação por recorte"
+    },
+    {
+      "type": "danger_zone",
+      "layout_variant": "compare",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Saúde Pública",
+        "subtopico": "Promoção à Saúde e Prevenção de Agravos"
+      },
+      "content": "PEGADINHAS DE CONCURSO — NÃO REPETIR EM OUTRAS QUESTÕES DE SUS",
+      "items": [
+        {
+          "label": "Letra A — recorte hospitalar",
+          "detail": "Troca “ações e serviços” por “serviços hospitalares” e rede básica/referência — restringe o SUS a um segmento.",
+          "correct": "Art. 4º exige ações e serviços em sentido amplo — não só hospital."
+        },
+        {
+          "label": "Letra B — recorte da APS",
+          "detail": "Limita à atenção básica e ainda exclui odontologia especializada e conveniadas — inventa exclusões.",
+          "correct": "Composição legal não restringe o SUS à APS nem exclui odonto como a alternativa sugere."
+        },
+        {
+          "label": "Letra D — média/alta + só direta",
+          "detail": "Corta atenção básica e elimina administração indireta — dois erros clássicos em uma frase.",
+          "correct": "Art. 4º inclui todos os níveis de atenção na lógica de ações/serviços e exige direta + indireta."
+        },
+        {
+          "label": "Letra E — exclui pesquisa e insumos",
+          "detail": "Acrescenta exclusão de pesquisa e produção de insumos/medicamentos — limitação não presente no Art. 4º.",
+          "correct": "Gabarito legal não exclui essas ações quando integradas ao setor público de saúde."
+        },
+        {
+          "label": "Confundir CF com Lei 8.080",
+          "detail": "Enunciado cita universalidade/integralidade (CF), mas a pergunta é sobre composição na Lei Orgânica.",
+          "correct": "Responda pelo Art. 4º da 8.080 — princípios contextualizam, não substituem a definição legal."
+        },
+        {
+          "label": "Confundir 8.080 com 8.142",
+          "detail": "Em outras questões, a banca mistura participação social (8.142) com organização do sistema (8.080).",
+          "correct": "8.080 = organização e diretrizes; 8.142 = conselhos e participação — não troque de lei."
+        },
+        {
+          "label": "Achar que “público” inclui privado",
+          "detail": "Art. 4º fala em órgãos e instituições públicas — complementaridade privada é regime jurídico distinto.",
+          "correct": "Composição do SUS no Art. 4º = setor público (direta, indireta, fundações)."
+        },
+        {
+          "label": "Marcar a alternativa “menor”",
+          "detail": "Instinto de escolher a opção mais curta ou “menos exagerada” — Cesgranrio prefere literalidade ampla.",
+          "correct": "Quando a questão pede definição legal, a alternativa fiel ao dispositivo (C) prevalece."
+        }
+      ],
+      "footer_rule": "Transferência: em qualquer questão “o que compõe o SUS”, aplique os 4 blocos do Art. 4º — recorte ou exclusão = distrator"
+    }
+  ]
+}

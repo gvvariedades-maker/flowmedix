@@ -1,0 +1,206 @@
+{
+  "meta": {
+    "banca": "IDECAN",
+    "prova": "TEnf (Campina Gde)",
+    "orgao": "Pref Campina Gde",
+    "ano": "2021",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+  },
+  "question_data": {
+    "instruction": "Com base em convenções sobre medidas e equivalências adotadas no Brasil, com exceção de alguns medicamentos que fogem aos padrões, assinale a alternativa correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "As seringas para aplicação de insulina são graduadas em unidades, adequadas à concentração U-100, o que significa que em 1 ml, há 10 unidades (UI) de insulina.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "1 ml corresponde a 20 gotas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "1 gota possui 35 microgotas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "1 macrogota equivale à 10 microgotas.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "layout_variant": "morphological",
+      "slide_title": "Equivalências de prova — gotas e microgotas",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+      },
+      "items": [
+        {
+          "label": "1 mL = 20 gotas",
+          "detail": "Constante padrão no Brasil para macrogotas em equipo de venóclise — núcleo da alternativa B e base para gts/min em prova.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "1 mL = 60 microgotas",
+          "detail": "Equipo de microgotas: três microgotas por macrogota. Confundir 20 com 60 é erro clássico em infusão.",
+          "icon": "FlaskConical"
+        },
+        {
+          "label": "1 gota = 3 microgotas",
+          "detail": "Relação fixa de conversão. A alternativa C (35) e a D (10) invertem ou inventam valores.",
+          "icon": "ArrowLeftRight"
+        },
+        {
+          "label": "Insulina U-100",
+          "detail": "100 UI em 1 mL — não 10 UI. A letra A troca o dígito da concentração padrão.",
+          "icon": "Syringe"
+        },
+        {
+          "label": "Exceções do enunciado",
+          "detail": "“Alguns medicamentos fogem aos padrões” — alerta de prova, mas as equivalências gerais (20/60/3) continuam cobradas.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Padrão IDECAN neste tema",
+          "detail": "Banca testa decore de equivalência + distrator de insulina. Gabarito costuma ser a afirmativa com constante correta (B).",
+          "icon": "Target"
+        }
+      ],
+      "footer_rule": "DECORE: 1 mL = 20 gotas = 60 microgotas | 1 gota = 3 microgotas | U-100 = 100 UI/mL"
+    },
+    {
+      "type": "golden_rule",
+      "layout_variant": "reference_table",
+      "template": "t12",
+      "slide_title": "Referência de prova — equivalências",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+      },
+      "content": "EQUIVALÊNCIAS — O QUE A BANCA COBRA",
+      "rows": [
+        {
+          "label": "1 mL",
+          "value": "20 gotas (macrogota)",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "1 mL",
+          "value": "60 microgotas",
+          "badge": "ok"
+        },
+        {
+          "label": "1 gota",
+          "value": "3 microgotas",
+          "badge": "ok"
+        },
+        {
+          "label": "Insulina U-100",
+          "value": "100 UI em 1 mL (não 10 UI)",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Letra B — gabarito",
+          "value": "Única equivalência correta da questão",
+          "emphasis": "success",
+          "badge": "hot"
+        },
+        {
+          "label": "Letra A — erro",
+          "value": "10 UI/mL — troca 100 por 10 na U-100"
+        },
+        {
+          "label": "Letra C — erro",
+          "value": "35 microgotas/gota — valor inventado"
+        },
+        {
+          "label": "Letra D — erro",
+          "value": "10 microgotas/macrogota — deveria ser 3"
+        },
+        {
+          "label": "Mnemônico 20-60-3",
+          "value": "mL→gotas (20) | mL→micro (60) | gota→micro (3)"
+        },
+        {
+          "label": "Para gts/min",
+          "value": "(mL × constante) ÷ minutos — constante = 20 ou 60 conforme equipo"
+        }
+      ],
+      "footer_rule": "Em concurso: memorize 20-60-3 antes de qualquer conta de infusão"
+    },
+    {
+      "type": "logic_flow",
+      "layout_variant": "cards",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+      },
+      "steps": [
+        "Ler o comando: “convenções de medidas e equivalências no Brasil” — questão de decore, não caso clínico.",
+        "Recuperar o trio fixo: 1 mL = 20 gotas; 1 mL = 60 microgotas; 1 gota = 3 microgotas.",
+        "Testar A: insulina U-100 → 100 UI em 1 mL, não 10 UI → eliminar.",
+        "Testar B: “1 mL corresponde a 20 gotas” → bate com a constante padrão → candidata forte.",
+        "Testar C: “1 gota possui 35 microgotas” → deveria ser 3 → eliminar.",
+        "Testar D: “1 macrogota equivale a 10 microgotas” → deveria ser 3 → eliminar.",
+        "Conferir se só restou B após cruzar cada alternativa com o trio 20-60-3.",
+        "Marcar B.",
+        "Fixação: em questões de gts/min futuras, identifique primeiro se o equipo é macrogota (20) ou microgota (60)."
+      ],
+      "footer_rule": "Estratégia: decore 20-60-3 → testar cada alternativa → marcar a que reproduz a constante certa"
+    },
+    {
+      "type": "danger_zone",
+      "layout_variant": "compare",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+      },
+      "content": "PEGADINHAS IDECAN — EQUIVALÊNCIAS E INSULINA",
+      "items": [
+        {
+          "label": "Letra A — 10 UI/mL na U-100",
+          "detail": "Mantém “U-100” no texto, mas troca 100 por 10 — parece técnica, porém errada.",
+          "correct": "U-100 = 100 unidades de insulina em 1 mL de solução."
+        },
+        {
+          "label": "Letra C — 35 microgotas por gota",
+          "detail": "Inventa número alto para confundir quem lembra “60” mas não a relação gota↔microgota.",
+          "correct": "1 gota (macrogota) = 3 microgotas — não 35."
+        },
+        {
+          "label": "Letra D — 10 microgotas por macrogota",
+          "detail": "Outro valor inventado próximo de “dez” — distrai de 3.",
+          "correct": "1 macrogota = 3 microgotas."
+        },
+        {
+          "label": "Confundir 20 com 60 no mL",
+          "detail": "Transferência de questões de gts/min: usar constante errada do equipo.",
+          "correct": "Macrogota: 20 gts/mL | Microgota: 60 microgts/mL."
+        },
+        {
+          "label": "Ignorar exceções do enunciado",
+          "detail": "“Medicamentos que fogem aos padrões” não invalida B — equivalência geral continua valendo na prova.",
+          "correct": "Responda pela convenção padrão brasileira salvo dado explícito no enunciado."
+        },
+        {
+          "label": "Marcar A por parecer “mais completa”",
+          "detail": "Alternativa longa sobre insulina chama atenção, mas viola U-100.",
+          "correct": "Em equivalência, prefira a afirmativa que reproduz a constante correta (B)."
+        }
+      ],
+      "footer_rule": "Transferência: toda questão de infusão começa identificando equipo (20 ou 60) e insulina (100 UI/mL)"
+    }
+  ]
+}

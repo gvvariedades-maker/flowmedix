@@ -96,6 +96,8 @@ export interface ReverseStudySlide {
   rows?: Array<{
     label: string;
     value: string;
+    emphasis?: 'default' | 'highlight' | 'alert' | 'success';
+    badge?: 'hot' | 'warn' | 'ok' | 'info';
   }>;
   items?: Array<{ // Para concept_map, danger_zone
     id?: string;
@@ -160,7 +162,7 @@ export interface LessonMeta {
   /** Linha única de cabeçalho (opcional). Se ausente, o player monta a partir de banca/prova/orgao/ano. */
   header_line?: string;
   /**
-   * Rótulo do cargo na linha 1 (ex.: "TÉCNICO"). Se vazio, tenta inferir de `prova` (ex.: "Tec Enf").
+   * Rótulo do cargo na linha 1 (ex.: "Técnico de Enfermagem"). Se vazio, tenta inferir de `prova` (ex.: "Tec Enf").
    * Formato: `BANCA – cargo_header (orgao) ano`
    */
   cargo_header?: string;

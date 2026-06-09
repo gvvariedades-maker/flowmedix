@@ -24,10 +24,18 @@ Lista de referências oficiais para gerar ou validar JSON de questões compatív
 - **`.cursor/skills/avant-json-template/SKILL.md`** (geração de JSON; pasta `.cursor` pode estar no `.gitignore` — manter cópia ou sincronizar com o time).
 - **`.cursor/rules/avant-agent-json.mdc`** — regra **alwaysApply** com `meta`, cabeçalho, `instruction` e slides. **Cópia versionada no Git:** `docs/cursor/avant-agent-json.mdc` (se a rule local sumir após clone, copiar esse arquivo para `.cursor/rules/`).
 - **`docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md`**
+- **`docs/PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`** — famílias pedagógicas (legislação, protocolo, cálculo, I/II/III, conceito), visual premium, evidências UX, anti-repetição e checklist de publicação
+
+## Migração de catálogo e visual
+
+- **`lib/catalogMigration/upgradePremiumHybrid.ts`** — conteúdo pedagógico por família; **não** injeta `layout_variant` (visual no player).
+- **`lib/catalogMigration/familyLayoutProfile.ts`** — golden visual por `FamilyId` (referência do player, não copiar para cada questão).
+- **`lib/catalogMigration/stripLayoutVariant.ts`** — remove `layout_variant` de JSONs legados; CLI: `npm run catalog:strip-layout-variant`.
 
 ## Exemplos “golden”
 
-- **`examples/questao-premium-urgencias-rcp.json`** — estudo reverso premium (`reveal_mode: "tap"`, `danger_zone` com `correct`, `golden_rule` com `rows`, `slide_title`; validar no Laboratório)
+- **`examples/questao-premium-urgencias-rcp.json`** — família **protocolo** (pedagógico + vitrine; `reveal_mode: "tap"`, `danger_zone` com `correct`, `golden_rule` com `rows`, `slide_title`)
+- **`examples/questao-premium-sus-lei-8080-cesgranrio.json`** — família **legislação** (estudo aprofundado concurso; questão sem cola; overrides `morphological` / `reference_table` / `cards` / `compare`)
 - **`examples/questao-preview-logic-flow-tap.json`** — preview mínimo só do `logic_flow` tap
 - **`examples/questao-enfermagem-sae.json`**
 - **`examples/questao-teste-simples.json`**

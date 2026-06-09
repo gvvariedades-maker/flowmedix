@@ -144,14 +144,35 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
                     />
                   )}
                   
-                  {/* Tooltip Description */}
-                  <div className={`absolute top-full mt-4 left-1/2 -translate-x-1/2 w-48 text-center font-body text-xs ${theme.textSecondary} opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 p-2 rounded-lg z-20`}>
+                  {/* Tooltip Description — apenas desktop (hover); no mobile usamos lista estatica abaixo */}
+                  <div className={`hidden md:block absolute top-full mt-4 left-1/2 -translate-x-1/2 w-48 text-center font-body text-xs ${theme.textSecondary} opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 p-2 rounded-lg z-20`}>
                     {concept.description}
                   </div>
                 </motion.div>
               );
             })}
           </div>
+
+          {/* Descricoes acessiveis no mobile (sem hover) */}
+          {concepts.some((c) => c.description) && (
+            <div className="md:hidden mt-4 w-full max-w-md space-y-2">
+              {concepts.map((concept, i) =>
+                concept.description ? (
+                  <div
+                    key={i}
+                    className={`rounded-lg border ${theme.borderColor} bg-slate-900/80 px-3 py-2`}
+                  >
+                    <span className={`font-body text-sm font-bold ${theme.textPrimary}`}>
+                      {concept.title}:{' '}
+                    </span>
+                    <span className={`font-body text-sm ${theme.textSecondary}`}>
+                      {concept.description}
+                    </span>
+                  </div>
+                ) : null,
+              )}
+            </div>
+          )}
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

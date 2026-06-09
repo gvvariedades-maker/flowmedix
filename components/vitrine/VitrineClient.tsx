@@ -1279,9 +1279,9 @@ function SubtopicoCard({
   const {
     titulo_aula,
     modulo_nome,
-    banca,
     totalResolvidas,
     totalQuestoes,
+    totalNeuroSlides,
     trabalhadas,
     questoes,
     firstSlug,
@@ -1386,11 +1386,19 @@ function SubtopicoCard({
           >
             {titulo_aula}
           </span>
-          <p className="mt-0.5 flex items-center gap-1.5 text-[11px] leading-none text-white/35">
-            <span>{banca}</span>
-            <span className="text-white/15">·</span>
+          <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11px] leading-none text-white/35">
             <span>
-              {totalQuestoes} {labelQuestoes(totalQuestoes)}
+              <span className="font-medium tabular-nums text-cyan-400/80">{totalQuestoes.toLocaleString('pt-BR')}</span>{' '}
+              {labelQuestoes(totalQuestoes)}
+            </span>
+            <span className="text-white/15" aria-hidden>
+              ·
+            </span>
+            <span>
+              <span className="font-medium tabular-nums text-emerald-400/80">
+                {totalNeuroSlides.toLocaleString('pt-BR')}
+              </span>{' '}
+              NeuroSlides
             </span>
           </p>
         </div>

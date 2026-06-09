@@ -35,8 +35,10 @@ Ao gerar ou editar JSON de questão para o Laboratório ou `QuestaoCompletaSchem
 
 ## Referência
 
+- `docs/PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md` — famílias pedagógicas, visual premium, evidências UX
 - `docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md` (inclui seção 12 — cabeçalho da questão)
 - `docs/AVANT_AGENT_SOURCES.md`
-- `examples/questao-premium-urgencias-rcp.json` — exemplo golden premium completo
+- `examples/questao-premium-urgencias-rcp.json` — golden família protocolo
+- `examples/questao-premium-sus-lei-8080-cesgranrio.json` — golden família legislação (aprofundado)
 - `lib/validations.ts` — `QuestaoMetaSchema`, `QuestaoCompletaSchema`
 - `lib/questionHeader.ts` — lógica da linha derivada
