@@ -1,3 +1,8 @@
+import type { FamilyId } from '@/lib/catalogMigration/classifyFamily';
+import {
+  getFamilyVisualSlideProfile,
+  type FamilySlideType,
+} from '@/lib/catalogMigration/familyLayoutProfile';
 import { calculateLayoutVariant } from './themeGenerator';
 import {
   resolveConceptMapLayoutVariant,
@@ -30,7 +35,21 @@ export type SlidePresentationContext = {
   questionSlug?: string;
   slideIndex?: number;
   jsonLayoutVariant?: string;
+  /** Família pedagógica (7 goldens) — âncora visual + pool de rotação por slug. */
+  familyId?: FamilyId;
 };
+
+function familySlideKey(slideType: string | undefined): FamilySlideType | null {
+  if (
+    slideType === 'concept_map' ||
+    slideType === 'golden_rule' ||
+    slideType === 'logic_flow' ||
+    slideType === 'danger_zone'
+  ) {
+    return slideType;
+  }
+  return null;
+}
 
 /** Resolve layout, interação e título para um slide NeuroSlide. */
 export function resolveSlidePresentation(
@@ -49,7 +68,7 @@ export function resolveSlidePresentation(
   presentationContext?: SlidePresentationContext,
 ): ResolvedSlidePresentation {
   const slideType = slide.type;
-  const mapLayoutVariant = calculateLayoutVariant(slide);
+  const subtopicFallback = calculateLayoutVariant(slide);
   const explicitLayoutVariant = presentationContext?.jsonLayoutVariant;
 
   const rotationCtx: LayoutRotationContext | undefined =
@@ -60,7 +79,18 @@ export function resolveSlidePresentation(
         }
       : undefined;
 
-  let layoutVariant = explicitLayoutVariant || mapLayoutVariant;
+  const familySlide = presentationContext?.familyId
+    ? familySlideKey(slideType)
+    : null;
+  const familyVisual =
+    presentationContext?.familyId && familySlide
+      ? getFamilyVisualSlideProfile(presentationContext.familyId, familySlide)
+      : undefined;
+
+  const rotationAnchor = familyVisual?.anchor ?? subtopicFallback;
+  const familyPool = familyVisual?.pool;
+
+  let layoutVariant = explicitLayoutVariant || rotationAnchor;
 
   switch (slideType) {
     case 'concept_map':
@@ -70,7 +100,7 @@ export function resolveSlidePresentation(
           concepts: slide.concepts,
         },
         explicitLayoutVariant,
-        mapLayoutVariant,
+        rotationAnchor,
         rotationCtx,
       );
       break;
@@ -78,14 +108,16 @@ export function resolveSlidePresentation(
       layoutVariant = resolveGoldenRuleLayoutVariant(
         slide,
         explicitLayoutVariant,
-        mapLayoutVariant,
+        rotationAnchor,
+        rotationCtx,
+        familyPool,
       );
       break;
     case 'logic_flow':
       layoutVariant = resolveLogicFlowLayoutVariant(
         slide,
         explicitLayoutVariant,
-        mapLayoutVariant,
+        rotationAnchor,
         rotationCtx,
       );
       break;
@@ -93,7 +125,9 @@ export function resolveSlidePresentation(
       layoutVariant = resolveDangerZoneLayoutVariant(
         { items: slide.items as DangerZoneItemLike[] | undefined },
         explicitLayoutVariant,
-        mapLayoutVariant,
+        rotationAnchor,
+        rotationCtx,
+        familyPool,
       );
       break;
   }

@@ -2,6 +2,8 @@ import { generateRobustQuestionHash } from './themeGenerator';
 
 export const CONCEPT_MAP_GEOMETRIC_POOL = ['bridge', 'grid', 'molecular'] as const;
 export const LOGIC_FLOW_POOL = ['horizontal', 'vertical', 'cards'] as const;
+export const GOLDEN_RULE_TYPOGRAPHY_POOL = ['center', 'minimal', 'banner', 'compact'] as const;
+export const DANGER_ZONE_LAYOUT_POOL = ['compare', 'list', 'cards'] as const;
 
 const DEFAULT_ANCHOR = 'grid';
 

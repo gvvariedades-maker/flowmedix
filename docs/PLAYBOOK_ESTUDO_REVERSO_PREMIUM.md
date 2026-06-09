@@ -138,14 +138,20 @@ Formato **plano** (`items` / `content` / `steps` no mesmo nível que `type`). Ve
 
 ### 5.1 Automático vs override
 
-O **player** resolve o visual: `SUBTOPIC_DESIGN_MAP` + [`FAMILY_LAYOUT_PROFILE`](../lib/catalogMigration/familyLayoutProfile.ts) + rotação por `modulo_slug`. A migração híbrida (`upgradePremiumHybrid`) **não grava** `layout_variant` no JSON — só conteúdo semântico.
+O **player** resolve o visual em camadas:
+
+1. **Cor/tema** — `SUBTOPIC_DESIGN_MAP` (~41 subtópicos)
+2. **Âncora + pool** — [`FAMILY_VISUAL_PROFILE`](../lib/catalogMigration/familyLayoutProfile.ts) (7 famílias via `classifyFamily` no player)
+3. **Rotação** — offset determinístico por `modulo_slug` + índice do slide
+
+A migração híbrida (`upgradePremiumHybrid`) **não grava** `layout_variant` no JSON — só conteúdo semântico.
 
 | Slide | No JSON (premium) | Layout no player |
 |-------|-------------------|------------------|
-| `concept_map` | 3+ `items` com ícones | `bridge` / `grid` / `molecular` (rotação por slug) |
-| `golden_rule` | `rows[]` quando tabela | `reference_table` automático |
-| `logic_flow` | `reveal_mode: "tap"` + 3+ `steps` | horizontal / vertical / cards (rotação) |
-| `danger_zone` | `items[].correct` | `compare` + `x_icon` automático |
+| `concept_map` | 3+ `items` com ícones | âncora da família + pool bridge/grid/molecular (rotação por slug) |
+| `golden_rule` | `rows[]` quando tabela | `reference_table` automático; sem rows → pool tipográfico (center/minimal/banner/compact) |
+| `logic_flow` | `reveal_mode: "tap"` + 3+ `steps` | âncora da família + pool horizontal/vertical/cards |
+| `danger_zone` | `items[].correct` | `compare` + `x_icon` automático; sem `correct` → pool compare/list/cards |
 
 **Override:** `layout_variant` ou `template` no JSON só quando o humano pedir exceção intencional (vitrine fixa, piloto visual).
 
@@ -224,13 +230,19 @@ Antes de publicar, responder:
 
 ## 8. Exemplos golden (referência)
 
-| Família | Arquivo |
-|---------|---------|
-| Legislação | [`questao-premium-sus-lei-8080-cesgranrio.json`](../examples/questao-premium-sus-lei-8080-cesgranrio.json) |
-| Protocolo | [`questao-premium-urgencias-rcp.json`](../examples/questao-premium-urgencias-rcp.json) |
-| Logic flow tap (mínimo) | [`questao-preview-logic-flow-tap.json`](../examples/questao-preview-logic-flow-tap.json) |
+| Família | Pedagógico (`examples/`) | Âncora visual (`FAMILY_VISUAL_PROFILE`) |
+|---------|--------------------------|----------------------------------------|
+| `legis` | [`questao-premium-sus-lei-8080-cesgranrio.json`](../examples/questao-premium-sus-lei-8080-cesgranrio.json) | bridge · center* · vertical · compare |
+| `protocolo` | [`questao-premium-urgencias-rcp.json`](../examples/questao-premium-urgencias-rcp.json) | molecular · banner · cards · compare |
+| `calc` | [`questao-premium-idecan-calculo-equivalencias-gotas.json`](../examples/questao-premium-idecan-calculo-equivalencias-gotas.json) | stack · center* · horizontal · compare |
+| `vf` | [`questao-premium-cpcon-vias-im-vf.json`](../examples/questao-premium-cpcon-vias-im-vf.json) | morphological · center · vertical · compare |
+| `certo_errado` | [`questao-premium-cpcon-poliomielite-pfa-vf.json`](../examples/questao-premium-cpcon-poliomielite-pfa-vf.json) | grid · minimal · cards · compare |
+| `conceito` | [`questao-premium-fundatec-meningococica-3meses.json`](../examples/questao-premium-fundatec-meningococica-3meses.json) | bridge · center · cards · compare |
+| `text_fragment` | [`questao-premium-fepese-anotacao-enfermagem-sae.json`](../examples/questao-premium-fepese-anotacao-enfermagem-sae.json) | grid · compact · vertical · cards |
 
-Cálculo, I/II/III e conceito: adicionar novos golden em `examples/` conforme questões forem refatoradas.
+\* `reference_table` no golden_rule é resolvido só quando há `rows[]` no JSON.
+
+Logic flow tap (mínimo): [`questao-preview-logic-flow-tap.json`](../examples/questao-preview-logic-flow-tap.json).
 
 ---
 

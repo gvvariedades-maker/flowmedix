@@ -30,6 +30,7 @@ import {
 } from '@/lib/estudar/questaoLayers';
 import { useQuestaoNavigationOptional } from '@/components/lesson/questao-navigation-context';
 import NeuroSlide from '@/components/slides/NeuroSlide';
+import { resolveQuestionFamilyId } from '@/components/slides/core/questionFamily';
 import {
   ReadableTextZoomProvider,
   ReadableTextZoomToolbar,
@@ -1099,6 +1100,23 @@ export default function AvantLessonPlayer({
     activeDados.modulo_slug || '',
   ].filter(Boolean).join('-') || JSON.stringify(activeDados).substring(0, 100);
 
+  const questionFamilyId = useMemo(
+    () =>
+      resolveQuestionFamilyId({
+        instruction: activeDados.question_data?.instruction,
+        subtopico: activeDados.meta?.subtopico ?? activeDados.meta?.topico,
+        options: activeDados.question_data?.options,
+        textFragment: activeDados.question_data?.text_fragment,
+      }),
+    [
+      activeDados.question_data?.instruction,
+      activeDados.question_data?.options,
+      activeDados.question_data?.text_fragment,
+      activeDados.meta?.subtopico,
+      activeDados.meta?.topico,
+    ],
+  );
+
   const questionZoomContentKey = `${moduloSlug ?? questionHash}-${etapa}`;
   const showQuestionZoom = etapa === 'pergunta' || etapa === 'gabarito';
 
@@ -1892,6 +1910,7 @@ export default function AvantLessonPlayer({
                         questionHash={questionHash}
                         questionSlug={moduloSlug || activeDados.modulo_slug}
                         slideIndex={slideAtual}
+                        questionFamilyId={questionFamilyId}
                         shellContext={{
                           slideIndex: slideAtual,
                           totalSlides,

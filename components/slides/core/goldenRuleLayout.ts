@@ -1,3 +1,9 @@
+import {
+  GOLDEN_RULE_TYPOGRAPHY_POOL,
+  pickRotatedLayoutVariant,
+} from './layoutRotation';
+import type { LayoutRotationContext } from './conceptMapLayout';
+
 /** Linha mínima para decidir layout tabular no golden_rule. */
 export type GoldenRuleRowLike = {
   label?: string;
@@ -16,6 +22,8 @@ export function resolveGoldenRuleLayoutVariant(
   slide: { rows?: GoldenRuleRowLike[] } | undefined,
   explicitVariant?: string,
   fallbackVariant?: string,
+  ctx?: LayoutRotationContext,
+  familyPool?: readonly string[],
 ): string {
   const rows = slide?.rows;
   const hasTableRows =
@@ -37,7 +45,20 @@ export function resolveGoldenRuleLayoutVariant(
     return 'reference_table';
   }
 
-  return explicitVariant || fallbackVariant || 'center';
+  if (explicitVariant) return explicitVariant;
+
+  const pool = familyPool && familyPool.length > 0 ? familyPool : GOLDEN_RULE_TYPOGRAPHY_POOL;
+  if (ctx?.slug) {
+    return pickRotatedLayoutVariant(
+      pool,
+      fallbackVariant ?? 'center',
+      ctx.slug,
+      ctx.slideIndex ?? 0,
+      'golden_rule',
+    );
+  }
+
+  return fallbackVariant || 'center';
 }
 
 export function goldenRuleHasTableRows(rows?: GoldenRuleRowLike[]): boolean {

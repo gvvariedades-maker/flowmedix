@@ -1,3 +1,6 @@
+import { DANGER_ZONE_LAYOUT_POOL, pickRotatedLayoutVariant } from './layoutRotation';
+import type { LayoutRotationContext } from './conceptMapLayout';
+
 /** Item mínimo para decidir layout comparativo trap × correct. */
 export type DangerZoneItemLike = {
   label?: string;
@@ -19,6 +22,8 @@ export function resolveDangerZoneLayoutVariant(
   slide: { items?: DangerZoneItemLike[] } | undefined,
   explicitVariant?: string,
   fallbackVariant?: string,
+  ctx?: LayoutRotationContext,
+  familyPool?: readonly string[],
 ): string {
   const items = slide?.items;
   const hasCompareItems =
@@ -34,7 +39,20 @@ export function resolveDangerZoneLayoutVariant(
     return 'compare';
   }
 
-  return explicitVariant || fallbackVariant || 'list';
+  if (explicitVariant) return explicitVariant;
+
+  const pool = familyPool && familyPool.length > 0 ? familyPool : DANGER_ZONE_LAYOUT_POOL;
+  if (ctx?.slug) {
+    return pickRotatedLayoutVariant(
+      pool,
+      fallbackVariant ?? 'list',
+      ctx.slug,
+      ctx.slideIndex ?? 0,
+      'danger_zone',
+    );
+  }
+
+  return fallbackVariant || 'list';
 }
 
 export function dangerZoneHasCompareItems(items?: DangerZoneItemLike[]): boolean {

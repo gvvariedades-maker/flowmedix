@@ -10,6 +10,7 @@ import { SyllableScanner } from '../variants/SyllableScanner';
 import { VersusArena } from '../variants/VersusArena';
 import { getThemeForSlide } from './themeGenerator';
 import { resolveSlidePresentation, type SlidePresentationContext } from './slidePresentation';
+import type { FamilyId } from './questionFamily';
 import type { ThemeColors } from './themeGenerator';
 import {
   isVersusArenaSideReady,
@@ -28,12 +29,14 @@ export const NeuroSlideHub = ({
   questionSlug,
   slideIndex,
   jsonLayoutVariant,
+  questionFamilyId,
 }: {
   slide: any;
   questionHash: string;
   questionSlug?: string;
   slideIndex?: number;
   jsonLayoutVariant?: string;
+  questionFamilyId?: FamilyId;
 }) => {
   // Sistema híbrido: prioriza subject, fallback para hash com variações únicas
   const theme = getThemeForSlide(slide, questionHash, slideIndex);
@@ -42,6 +45,7 @@ export const NeuroSlideHub = ({
     questionSlug: questionSlug ?? questionHash,
     slideIndex,
     jsonLayoutVariant,
+    familyId: questionFamilyId,
   };
 
   const { layoutVariant, revealMode: logicRevealMode, bulletStyle: dangerBulletStyle, rows: goldenRows } =
@@ -140,6 +144,7 @@ export default function NeuroSlide({
   slideIndex,
   shellContext,
   standalone = false,
+  questionFamilyId,
 }: {
   data: any;
   questionHash?: string;
@@ -148,6 +153,8 @@ export default function NeuroSlide({
   shellContext?: ReverseStudyShellContext;
   /** Preview/material: shell com slide 1/1, sem badge de banca. */
   standalone?: boolean;
+  /** Família pedagógica (7 goldens) — âncora visual no player. */
+  questionFamilyId?: FamilyId;
 }) {
   const safeData = useMemo(() => normalizeReverseStudySlide(data ?? {}) as any, [data]);
   const hashSource = questionHash || safeData.id || JSON.stringify(safeData).substring(0, 50) || 'default';
@@ -158,8 +165,9 @@ export default function NeuroSlide({
       questionSlug: slugSource,
       slideIndex,
       jsonLayoutVariant: safeData.layout_variant,
+      familyId: questionFamilyId,
     }),
-    [slugSource, slideIndex, safeData.layout_variant],
+    [slugSource, slideIndex, safeData.layout_variant, questionFamilyId],
   );
 
   const normalizedData = useMemo(() => {
@@ -266,6 +274,7 @@ export default function NeuroSlide({
         questionSlug={slugSource}
         slideIndex={slideIndex}
         jsonLayoutVariant={safeData.layout_variant}
+        questionFamilyId={questionFamilyId}
       />
     );
   } else {

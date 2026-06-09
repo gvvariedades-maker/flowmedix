@@ -2,6 +2,7 @@ import {
   resolveDangerZoneLayoutVariant,
   dangerZoneHasCompareItems,
 } from '@/components/slides/core/dangerZoneLayout';
+import { DANGER_ZONE_LAYOUT_POOL } from '@/components/slides/core/layoutRotation';
 
 describe('dangerZoneLayout', () => {
   it('retorna list sem items.correct (legado)', () => {
@@ -46,5 +47,19 @@ describe('dangerZoneLayout', () => {
       items: [{ label: 'Trap', detail: 'X', correct: 'Conduta certa' }],
     };
     expect(resolveDangerZoneLayoutVariant(slide, undefined, 'compact')).toBe('compare');
+  });
+
+  it('rotaciona list/compare/cards com slug sem items.correct', () => {
+    const slide = {
+      items: [{ label: 'Erro', detail: 'Descrição' }],
+    };
+    const result = resolveDangerZoneLayoutVariant(
+      slide,
+      undefined,
+      'cards',
+      { slug: 'text-fragment-sae-1', slideIndex: 3 },
+      DANGER_ZONE_LAYOUT_POOL,
+    );
+    expect(DANGER_ZONE_LAYOUT_POOL).toContain(result);
   });
 });
