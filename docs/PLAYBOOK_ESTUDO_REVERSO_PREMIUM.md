@@ -138,16 +138,18 @@ Formato **plano** (`items` / `content` / `steps` no mesmo nível que `type`). Ve
 
 ### 5.1 Automático vs override
 
-O mapa `SUBTOPIC_DESIGN_MAP` em [`themeGenerator.ts`](../components/slides/core/themeGenerator.ts) define cor + layout padrão. Subtópicos “compactos” **bloqueiam** auto-upgrade para `reference_table` e `compare` quando o mapa impõe `compact`.
+O **player** resolve o visual: `SUBTOPIC_DESIGN_MAP` + [`FAMILY_LAYOUT_PROFILE`](../lib/catalogMigration/familyLayoutProfile.ts) + rotação por `modulo_slug`. A migração híbrida (`upgradePremiumHybrid`) **não grava** `layout_variant` no JSON — só conteúdo semântico.
 
-**Solução:** declarar `layout_variant` explícito quando o objetivo é vitrine premium:
+| Slide | No JSON (premium) | Layout no player |
+|-------|-------------------|------------------|
+| `concept_map` | 3+ `items` com ícones | `bridge` / `grid` / `molecular` (rotação por slug) |
+| `golden_rule` | `rows[]` quando tabela | `reference_table` automático |
+| `logic_flow` | `reveal_mode: "tap"` + 3+ `steps` | horizontal / vertical / cards (rotação) |
+| `danger_zone` | `items[].correct` | `compare` + `x_icon` automático |
 
-| Slide | Layout premium típico |
-|-------|------------------------|
-| `concept_map` | `morphological` (3+ itens) |
-| `golden_rule` com `rows` | `reference_table` |
-| `logic_flow` novo | `cards` + `reveal_mode: "tap"` |
-| `danger_zone` com `correct` | `compare` + `bullet_style: "x_icon"` |
+**Override:** `layout_variant` ou `template` no JSON só quando o humano pedir exceção intencional (vitrine fixa, piloto visual).
+
+**Catálogo já migrado com `layout_variant`:** `npm run catalog:strip-layout-variant` em `data/catalog-migration/` antes de reaplicar lotes.
 
 ### 5.2 Campos que melhoram percepção (sem mudar código)
 

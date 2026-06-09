@@ -42,6 +42,8 @@
     "catalog:export-lote": "tsx scripts/catalog-migration-export-lote.ts",
     "catalog:seed-lote": "tsx scripts/catalog-migration-seed-lote.ts",
     "catalog:apply-lote": "tsx scripts/catalog-migration-apply-lote.ts",
+    "catalog:upgrade-premium": "tsx scripts/catalog-migration-upgrade-premium.ts",
+    "catalog:strip-layout-variant": "tsx scripts/catalog-migration-strip-layout-variant.ts",
     "export:simulado-pool": "tsx scripts/export-public-simulado-pool.ts"
   },
   "dependencies": {
