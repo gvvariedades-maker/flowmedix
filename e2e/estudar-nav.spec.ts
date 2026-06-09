@@ -237,7 +237,10 @@ test.describe('Estudar — ciclo aluno (resposta, pular, estudo)', () => {
     await confirmarRespostaEGabarito(page);
 
     await page.getByRole('button', { name: /Ativar Estudo Reverso/i }).click();
-    await expect(page.getByText(/Avant Neuro-Learning/i)).toBeVisible({ timeout: 15_000 });
+    // Gate de prontidão do ER visível no mobile (o label "Avant Neuro-Learning" é hidden sm:inline).
+    await expect(page.getByRole('button', { name: /Fechar estudo reverso/i })).toBeVisible({
+      timeout: 15_000,
+    });
 
     const avancarSlide = page.getByRole('button', { name: /^Próximo$/i });
     for (let i = 0; i < 3; i += 1) {

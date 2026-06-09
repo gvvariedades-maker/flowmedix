@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "Tec Enf",
+    "orgao": "UEPB",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Coleta de Exames Laboratoriais"
+  },
+  "question_data": {
+    "instruction": "Considerando a coleta, o acondicionamento e o transporte de amostras biológicas, analise as afirmativas a seguir:\nI- Na coleta de sangue venoso, a veia mediana cubital costuma ser preferida à cefálica.\nII- Amostras que necessitam de refrigeração devem ser transportadas, em regra, entre 2°C e 8°C.\nIII- Luvas e gazes podem ser descartadas no mesmo recipiente de perfurocortantes e resíduos infectantes, desde que o volume seja pequeno.\nÉ CORRETO o que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I e III apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "II e III apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I e II apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "III apenas.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "layout_variant": "morphological",
+      "slide_title": "Coleta e transporte — mapa da prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "items": [
+        {
+          "label": "Mediana cubital",
+          "detail": "Veia de escolha frequente para punção venosa periférica por calibre, estabilidade e facilidade técnica.",
+          "icon": "PackageCheck"
+        },
+        {
+          "label": "Refrigeração",
+          "detail": "Quando o exame exige frio, o transporte costuma ser feito entre 2°C e 8°C, conforme protocolo.",
+          "icon": "Thermometer"
+        },
+        {
+          "label": "Segregação de resíduos",
+          "detail": "Perfurocortantes não podem ser misturados com gaze, luva ou outro resíduo comum/infectante no mesmo recipiente.",
+          "icon": "ShieldCheck"
+        },
+        {
+          "label": "Fase pré-analítica",
+          "detail": "A maior parte dos erros laboratoriais acontece antes da análise propriamente dita: coleta, identificação, acondicionamento e transporte.",
+          "icon": "ClipboardList"
+        },
+        {
+          "label": "Pegadinha da III",
+          "detail": "A frase mistura perfurocortante e resíduo infectante para induzir descarte errado.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra D: I e II apenas.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Coleta correta = escolha do sítio + temperatura adequada + segregação de resíduos"
+    },
+    {
+      "type": "golden_rule",
+      "layout_variant": "reference_table",
+      "template": "t09",
+      "slide_title": "Regra de ouro — pré-analítica",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "COLETA E TRANSPORTE - O QUE A BANCA COBRA",
+      "rows": [
+        {
+          "label": "I — acesso venoso",
+          "value": "Verdadeira: mediana cubital costuma ser preferida à cefálica",
+          "badge": "ok"
+        },
+        {
+          "label": "II — temperatura",
+          "value": "Verdadeira: transporte refrigerado em geral entre 2°C e 8°C",
+          "badge": "hot"
+        },
+        {
+          "label": "III — descarte",
+          "value": "Falsa: perfurocortante exige segregação e recipiente próprio",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Ponto de atenção",
+          "value": "A fase pré-analítica exige identificação, acondicionamento e envio corretos",
+          "badge": "info"
+        },
+        {
+          "label": "Resposta final",
+          "value": "I e II apenas",
+          "emphasis": "highlight",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Na pré-analítica, a banca adora inverter venopunção, temperatura e descarte"
+    },
+    {
+      "type": "logic_flow",
+      "layout_variant": "cards",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "steps": [
+        "Ler a questão como combinação V/F de três afirmativas.",
+        "Julgar I: mediana cubital é via preferida? → verdadeiro.",
+        "Julgar II: transporte refrigerado entre 2°C e 8°C? → verdadeiro.",
+        "Julgar III: luvas e gazes no mesmo recipiente dos perfurocortantes? → falso.",
+        "Montar o conjunto correto: I e II apenas.",
+        "Eliminar alternativas que incluam III.",
+        "Marcar D.",
+        "Fixação: se a frase fala em descarte de perfurocortante, pense em recipiente próprio e segregação."
+      ],
+      "footer_rule": "Raciocínio seguro: punção adequada + temperatura + segregação = acerto"
+    },
+    {
+      "type": "danger_zone",
+      "layout_variant": "compare",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais"
+      },
+      "content": "PEGADINHAS CPCON — COLETA E TRANSPORTE",
+      "items": [
+        {
+          "label": "Substituir mediana cubital por cefálica sem critério",
+          "detail": "A cefálica pode ser usada, mas a banca quer a veia mais favorecida na prática.",
+          "correct": "A mediana cubital costuma ser preferida na coleta venosa periférica."
+        },
+        {
+          "label": "Ignorar a faixa de 2°C a 8°C",
+          "detail": "Quando o exame pede refrigeração, não basta dizer “manter frio” de modo genérico.",
+          "correct": "O transporte refrigerado costuma seguir 2°C a 8°C, conforme protocolo."
+        },
+        {
+          "label": "Juntar resíduos incompatíveis",
+          "detail": "Misturar luvas, gazes e perfurocortantes parece prático, mas é erro de biossegurança.",
+          "correct": "Perfurocortantes vão para recipiente próprio, com segregação correta."
+        },
+        {
+          "label": "Trocar a fase pré-analítica pela analítica",
+          "detail": "A questão cobra coleta e envio, não leitura do equipamento.",
+          "correct": "O foco é pré-analítico: punção, acondicionamento e transporte."
+        }
+      ],
+      "footer_rule": "Banca costuma errar na pegadinha da III: descarte nunca é “mistura geral”"
+    }
+  ]
+}

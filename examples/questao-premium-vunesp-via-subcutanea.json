@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "banca": "VUNESP",
+    "prova": "TEnf",
+    "orgao": "Pref Itapevi",
+    "ano": "2025",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Vias de Administração"
+  },
+  "question_data": {
+    "instruction": "A via subcutânea para administração de medicamentos está indicada quando a medicação",
+    "options": [
+      {
+        "id": "A",
+        "text": "precisa ser absorvida rapidamente na corrente sanguínea.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "necessita de uma absorção mais lenta e contínua.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "tem alta viscosidade.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "deve ser administrada em doses grandes para um efeito rápido.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "deve ser administrada com alta pressão.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "layout_variant": "morphological",
+      "slide_title": "Via subcutânea — mapa da prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Vias de Administração"
+      },
+      "items": [
+        {
+          "label": "Via subcutânea (SC/H)",
+          "detail": "Depósito no tecido hipodérmico (entre derme e músculo). Indicada quando a banca pede absorção lenta e contínua — núcleo da letra B.",
+          "icon": "Layers"
+        },
+        {
+          "label": "Velocidade de absorção",
+          "detail": "SC é mais lenta que IM e muito mais lenta que IV. Evita picos plasmáticos rápidos — efeito prolongado e constante.",
+          "icon": "TrendingDown"
+        },
+        {
+          "label": "Comparativo de vias",
+          "detail": "IV = imediata | IM = rápida | SC = lenta/contínua | VO = variável. A erra ao pedir absorção rápida (perfil de IV/IM).",
+          "icon": "GitCompare"
+        },
+        {
+          "label": "Volume e dose",
+          "detail": "SC admite volumes pequenos (em geral até ~1 mL; alguns textos até 1,5 mL). D erra ao falar em doses grandes + efeito rápido.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Exemplos de prova",
+          "detail": "Insulina, heparina de baixa dose molecular, vacinas, analgésicos SC — medicamentos que precisam de liberação gradual.",
+          "icon": "Syringe"
+        },
+        {
+          "label": "Técnica resumida",
+          "detail": "Prega cutânea quando indicado; ângulo 45° ou 90° conforme adiposidade; sem massagem em heparina; rodízio de locais.",
+          "icon": "Hand"
+        },
+        {
+          "label": "Padrão VUNESP neste tema",
+          "detail": "Banca testa indicação da via (absorção lenta) versus distractors que descrevem IV (rápida), volume alto ou pressão.",
+          "icon": "Target"
+        }
+      ],
+      "footer_rule": "SC = absorção lenta e contínua — não rápida, não dose grande, não alta pressão"
+    },
+    {
+      "type": "golden_rule",
+      "layout_variant": "reference_table",
+      "template": "t02",
+      "slide_title": "Referência — indicação da via SC",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Vias de Administração"
+      },
+      "content": "VIAS DE ADMINISTRAÇÃO — VELOCIDADE DE ABSORÇÃO",
+      "rows": [
+        {
+          "label": "Intravenosa (IV)",
+          "value": "Imediata — efeito rápido",
+          "badge": "info"
+        },
+        {
+          "label": "Intramuscular (IM)",
+          "value": "Rápida — mais vascularizada que SC",
+          "badge": "info"
+        },
+        {
+          "label": "Subcutânea (SC)",
+          "value": "Lenta e contínua — indicação da questão",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Oral (VO)",
+          "value": "Variável — passa pelo TGI",
+          "badge": "info"
+        },
+        {
+          "label": "Letra B — gabarito",
+          "value": "Única que descreve o perfil farmacocinético da SC",
+          "emphasis": "success",
+          "badge": "hot"
+        },
+        {
+          "label": "Volume típico SC",
+          "value": "Pequeno (até ~1–1,5 mL por sítio)"
+        },
+        {
+          "label": "Mnemônico",
+          "value": "SC = Slow & Continuous (lenta e contínua)"
+        },
+        {
+          "label": "Não confundir",
+          "value": "Absorção rápida → IV ou IM, não SC"
+        }
+      ],
+      "footer_rule": "Em concurso: indicação da via = velocidade de absorção que a medicação exige"
+    },
+    {
+      "type": "logic_flow",
+      "layout_variant": "cards",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Vias de Administração"
+      },
+      "steps": [
+        "Ler o comando: “via subcutânea está indicada quando a medicação…” — pede critério de escolha da via, não técnica de punção.",
+        "Recuperar o perfil da SC: depósito no tecido adiposo → absorção lenta, contínua, sem pico imediato.",
+        "Testar A: “absorvida rapidamente na corrente sanguínea” → perfil de IV/IM → eliminar.",
+        "Testar B: “absorção mais lenta e contínua” → bate com farmacocinética da SC → candidata forte.",
+        "Testar C: “alta viscosidade” → não é critério clássico de indicação da SC; viscoso pode exigir outra via → eliminar.",
+        "Testar D: “doses grandes + efeito rápido” → SC usa volumes pequenos e efeito gradual → eliminar.",
+        "Testar E: “alta pressão” → SC não pressuriza como IV em bomba; técnica é lenta e controlada → eliminar.",
+        "Confirmar: só B descreve corretamente a indicação farmacológica da via subcutânea.",
+        "Marcar B.",
+        "Fixação: em questões de vias, cruze “velocidade desejada” com IV/IM/SC antes de olhar volume ou técnica."
+      ],
+      "footer_rule": "Estratégia: perfil de absorção → eliminar A/D/E → confirmar B"
+    },
+    {
+      "type": "danger_zone",
+      "layout_variant": "compare",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Vias de Administração"
+      },
+      "content": "PEGADINHAS VUNESP — VIA SUBCUTÂNEA",
+      "items": [
+        {
+          "label": "Letra A — absorção rápida",
+          "detail": "Descreve IV ou, em menor grau, IM — o oposto da indicação da SC.",
+          "correct": "SC é para liberação lenta e contínua no tecido hipodérmico."
+        },
+        {
+          "label": "Letra C — alta viscosidade",
+          "detail": "Parece “técnica difícil”, mas não é o critério farmacológico de indicação da via SC.",
+          "correct": "Indicação da SC = perfil de absorção, não viscosidade isolada."
+        },
+        {
+          "label": "Letra D — dose grande + efeito rápido",
+          "detail": "Junta dois erros: SC não usa volumes grandes nem busca efeito imediato.",
+          "correct": "SC = volume pequeno + absorção gradual."
+        },
+        {
+          "label": "Letra E — alta pressão",
+          "detail": "Confunde com infusão IV pressurizada ou técnica de injeção forçada.",
+          "correct": "SC é administrada lentamente, sem “alta pressão”."
+        },
+        {
+          "label": "Confundir SC com IM",
+          "detail": "Transferência da questão CPCON: IM absorve mais rápido que SC.",
+          "correct": "Quanto mais profunda/vascularizada a via, mais rápida a absorção."
+        },
+        {
+          "label": "Responder pela técnica, não pela indicação",
+          "detail": "Aluno lembra ângulo 45°/90° ou prega, mas a pergunta é “quando indicar a via”.",
+          "correct": "Critério da questão = farmacocinética (lenta e contínua)."
+        },
+        {
+          "label": "Marcar A por “corrente sanguínea”",
+          "detail": "Termo sedutor — toda via chega à circulação, mas a velocidade é que define a escolha.",
+          "correct": "A banca cobra velocidade: rápida (A) ≠ indicação da SC (B)."
+        }
+      ],
+      "footer_rule": "Transferência: toda questão “via X indicada quando” → teste velocidade de absorção antes da técnica"
+    }
+  ]
+}

@@ -1,4 +1,18 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
+
+/**
+ * Preenche o editor de JSON do Laboratório de forma robusta.
+ * O editor é um textarea controlado; um `fill` disparado antes da hidratação do React
+ * pode ser descartado (o valor não "pega"). Reescrevemos até o value persistir.
+ */
+async function fillJsonEditor(page: Page, content: string) {
+  const jsonInput = page.locator('textarea').first();
+  await expect(jsonInput).toBeVisible({ timeout: 15_000 });
+  await expect(async () => {
+    await jsonInput.fill(content);
+    await expect(jsonInput).toHaveValue(content, { timeout: 2_000 });
+  }).toPass({ timeout: 15_000 });
+}
 
 /**
  * Testes E2E para o Laboratório Admin
@@ -92,8 +106,7 @@ test.describe('Laboratório Admin', () => {
 
   test('deve validar JSON em tempo real', async ({ page }) => {
     // Colar JSON válido
-    const jsonInput = page.locator('textarea').first();
-    await jsonInput.fill(JSON.stringify(validQuestionJSON, null, 2));
+    await fillJsonEditor(page, JSON.stringify(validQuestionJSON, null, 2));
     
     // Aguardar validação
     await page.waitForTimeout(1000);
@@ -107,20 +120,18 @@ test.describe('Laboratório Admin', () => {
     const invalidJSON = { ...validQuestionJSON, meta: { ...validQuestionJSON.meta } };
     delete (invalidJSON.meta as Partial<typeof invalidJSON.meta>).banca;
     
-    const jsonInput = page.locator('textarea').first();
-    await jsonInput.fill(JSON.stringify(invalidJSON, null, 2));
+    await fillJsonEditor(page, JSON.stringify(invalidJSON, null, 2));
     
     // Aguardar validação
     await page.waitForTimeout(1000);
     
     // Verificar se erros aparecem (heading único do ValidationErrorsPanel)
-    await expect(page.getByRole('heading', { name: /Erros? Encontrado/ })).toBeVisible({ timeout: 5000 });
+    await expect(page.getByRole('heading', { name: /Erros? Encontrado/ })).toBeVisible({ timeout: 10000 });
   });
 
   test('deve mostrar preview quando JSON é válido', async ({ page }) => {
     // Colar JSON válido
-    const jsonInput = page.locator('textarea').first();
-    await jsonInput.fill(JSON.stringify(validQuestionJSON, null, 2));
+    await fillJsonEditor(page, JSON.stringify(validQuestionJSON, null, 2));
     
     // Aguardar validação e preview
     await page.waitForTimeout(2000);
@@ -137,8 +148,7 @@ test.describe('Laboratório Admin', () => {
   });
 
   test('deve habilitar publicar quando JSON é válido', async ({ page }) => {
-    const jsonInput = page.locator('textarea').first();
-    await jsonInput.fill(JSON.stringify(validQuestionJSON, null, 2));
+    await fillJsonEditor(page, JSON.stringify(validQuestionJSON, null, 2));
 
     await page.waitForTimeout(2000);
 
@@ -159,8 +169,7 @@ test.describe('Laboratório Admin', () => {
 
   test('deve mostrar controles de preview', async ({ page }) => {
     // Colar JSON válido
-    const jsonInput = page.locator('textarea').first();
-    await jsonInput.fill(JSON.stringify(validQuestionJSON, null, 2));
+    await fillJsonEditor(page, JSON.stringify(validQuestionJSON, null, 2));
     
     // Aguardar preview carregar
     await page.waitForTimeout(2000);
@@ -190,8 +199,7 @@ test.describe('Laboratório Admin', () => {
       }
     }`;
 
-    const jsonInput = page.locator('textarea').first();
-    await jsonInput.fill(invalidJSON);
+    await fillJsonEditor(page, invalidJSON);
 
     await expect(page.getByText(/Erros Encontrados|Erro Encontrado/)).toBeVisible({
       timeout: 10000,

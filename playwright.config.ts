@@ -2,12 +2,33 @@ import { defineConfig, devices } from '@playwright/test';
 import { getVercelProtectionHeaders } from './lib/perf/vercelProtection';
 
 const ci = !!process.env.CI;
+/**
+ * Servidor de produção (build + start) também localmente via PLAYWRIGHT_PROD=true.
+ * Elimina a recompilação lazy do `next dev`, causa-raiz de timeouts/flakiness no E2E mobile.
+ */
+const prodServer = ci || process.env.PLAYWRIGHT_PROD === 'true';
 const vercelProtectionHeaders = getVercelProtectionHeaders();
 /** Dev já rodando com E2E_*_BYPASS (ex.: `npm run dev` + este env). */
 const skipWebServer = process.env.PLAYWRIGHT_SKIP_WEBSERVER === 'true';
 
+/**
+ * Segredo do webhook de cache (/api/cache/revalidate).
+ * O Next carrega `.env.local` no servidor, mas o processo do Playwright não — sem alinhar
+ * o valor entre os dois, o teste manda um secret diferente e recebe 401. Fixamos um valor
+ * determinístico no `process.env` (herdado pelo webServer) só quando nenhum já existe.
+ * O Next não sobrescreve env já definido a partir do `.env.local`, então ambos ficam iguais.
+ */
+const E2E_CACHE_WEBHOOK_SECRET = 'e2e-cache-revalidate-secret';
+if (!process.env.SUPABASE_WEBHOOK_SECRET?.trim() && !process.env.WEBHOOK_SECRET?.trim()) {
+  process.env.SUPABASE_WEBHOOK_SECRET = E2E_CACHE_WEBHOOK_SECRET;
+}
+
 const projects = ci
-  ? [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }]
+  ? [
+      { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+      // Mobile no CI: trava regressoes de layout/safe-area no fluxo do aluno.
+      { name: 'Mobile Chrome', use: { ...devices['Pixel 5'] } },
+    ]
   : [
       { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
       { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
@@ -17,8 +38,8 @@ const projects = ci
     ];
 
 /**
- * CI: servidor via `next build` + `next start` (mais estável que dev).
- * Local: `next dev` com reuse.
+ * CI (ou PLAYWRIGHT_PROD=true): servidor via `next build` + `next start` (mais estável).
+ * Local padrão: `next dev`.
  */
 export default defineConfig({
   testDir: './e2e',
@@ -55,7 +76,7 @@ export default defineConfig({
 
   webServer: skipWebServer
     ? undefined
-    : ci
+    : prodServer
     ? {
         command: 'npm run build && npm run start',
         url: 'http://localhost:3000',
@@ -63,6 +84,9 @@ export default defineConfig({
         timeout: 300_000,
         env: {
           ...process.env,
+          // `isE2eBypassEnabled` exige CI=true para engatar em produção (NODE_ENV=production).
+          // Sem isto, o servidor de prod redireciona tudo para /login. Espelha o ambiente do CI.
+          CI: 'true',
           E2E_ADMIN_BYPASS: 'true',
           E2E_DASHBOARD_BYPASS: 'true',
           NEXT_PUBLIC_E2E_DASHBOARD_BYPASS: 'true',

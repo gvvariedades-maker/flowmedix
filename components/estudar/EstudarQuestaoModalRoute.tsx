@@ -1,8 +1,13 @@
 'use client';
 
 import { useCallback, useEffect, useRef, type ReactNode } from 'react';
-import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
+import dynamic from 'next/dynamic';
 import EstudarQuestaoSkeleton from '@/components/lesson/EstudarQuestaoSkeleton';
+
+const AvantLessonPlayer = dynamic(() => import('@/components/lesson/AvantLessonPlayer'), {
+  ssr: false,
+  loading: () => <EstudarQuestaoSkeleton />,
+});
 import { useQuestaoNavigation } from '@/components/lesson/questao-navigation-context';
 import { useEstudarPayloadStale } from '@/components/lesson/useEstudarPayloadStale';
 import { isEstudarModalRouteEnabled } from '@/lib/estudar/estudarL0Config';

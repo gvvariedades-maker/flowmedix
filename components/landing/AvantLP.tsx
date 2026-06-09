@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
-import { DM_Sans, Sora } from 'next/font/google';
+import { Sora } from 'next/font/google';
 import { PublicDarkSiteHeader } from '@/components/layout/PublicDarkSiteHeader';
 import { FREEMIUM_PLAN_LIMITS_COMPACT, FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium/constants';
 
@@ -13,14 +13,10 @@ const sora = Sora({
   display: 'swap',
 });
 
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-});
-
 export const FONT_SORA = sora.style.fontFamily;
-export const FONT_DM = dmSans.style.fontFamily;
+// Reusa a DM Sans ja carregada no layout raiz (--font-body) em vez de baixar
+// uma segunda instancia so para a landing.
+export const FONT_DM = 'var(--font-body)';
 
 const C = { bg: '#010409', cyan: '#00f2ff', emerald: '#00ff88', rose: '#ff0055' };
 
@@ -1277,7 +1273,7 @@ function Footer() {
 export default function AvantLP() {
   return (
     <div
-      className={`${sora.className} ${dmSans.className}`}
+      className={sora.className}
       style={{ fontFamily: FONT_DM, background: C.bg, minHeight: '100vh', overflowX: 'hidden' }}
     >
       <style dangerouslySetInnerHTML={{ __html: LP_STYLES }} />

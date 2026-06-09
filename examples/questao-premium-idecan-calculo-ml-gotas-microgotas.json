@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "ano": "2022",
+    "banca": "IDECAN",
+    "orgao": "Enfermagem",
+    "prova": "Tec (UFBA)",
+    "topico": "Enfermagem",
+    "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+    "cargo_header": "Técnico de Enfermagem"
+  },
+  "question_data": {
+    "instruction": "Em relação a diluição e administração de medicamentos, em se tratando de equivalências, podemos afirmar que 1 ml é igual a 30 gotas, que é igual a 90 microgotas.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Certo",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Errado",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+      },
+      "items": [
+        {
+          "id": "1",
+          "icon": "FlaskConical",
+          "label": "1 ml",
+          "detail": "Equivale a 20 gotas no gotejamento padrão."
+        },
+        {
+          "id": "2",
+          "icon": "Scale",
+          "label": "1 gota",
+          "detail": "Equivale a 3 microgotas."
+        },
+        {
+          "id": "3",
+          "icon": "BookOpen",
+          "label": "1 ml",
+          "detail": "Equivale a 60 microgotas."
+        },
+        {
+          "id": "4",
+          "icon": "AlertTriangle",
+          "label": "A armadilha",
+          "detail": "Trocar 20 por 30 ou 60 por 90 é o erro clássico."
+        }
+      ],
+      "footer_rule": "Memorize a equivalência padrão: 1 ml = 20 gotas = 60 microgotas."
+    },
+    {
+      "type": "golden_rule",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+      },
+      "content": "1 ML = 20 GOTAS = 60 MICROGOTAS.",
+      "rows": [
+        {
+          "label": "1 ml",
+          "value": "20 gotas"
+        },
+        {
+          "label": "1 ml",
+          "value": "60 microgotas"
+        },
+        {
+          "label": "1 gota",
+          "value": "3 microgotas"
+        },
+        {
+          "label": "Valor da questão",
+          "value": "1 ml = 30 gotas = 90 microgotas (falso)"
+        }
+      ],
+      "footer_rule": "Se a questão trocar 20 por 30, o enunciado está errado."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+      },
+      "steps": [
+        "Lembrar da constante padrão de gotejamento.",
+        "Aplicar 1 ml = 20 gotas.",
+        "Converter para microgotas: 1 gota = 3 microgotas.",
+        "Verificar se a equivalência proposta bate com 60 microgotas.",
+        "Marcar errado quando aparecer 30 gotas ou 90 microgotas."
+      ],
+      "footer_rule": "A equivalência correta é 1 ml = 20 gotas = 60 microgotas."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+      },
+      "content": "PEGADINHAS NA EQUIVALÊNCIA DE GOTAS",
+      "items": [
+        {
+          "id": "1",
+          "label": "Trocar 20 por 30 gotas",
+          "detail": "A banca às vezes aumenta o valor para induzir erro de cálculo.",
+          "correct": "O padrão é 1 ml = 20 gotas."
+        },
+        {
+          "id": "2",
+          "label": "Trocar 60 por 90 microgotas",
+          "detail": "O número maior parece coerente, mas rompe a constante.",
+          "correct": "O padrão é 1 ml = 60 microgotas."
+        },
+        {
+          "id": "3",
+          "label": "Achar que 1 gota = 1 microgota",
+          "detail": "Isso destrói a relação de conversão entre os sistemas.",
+          "correct": "1 gota corresponde a 3 microgotas."
+        }
+      ],
+      "footer_rule": "Em cálculo de infusão, a memória-base é 20 gotas e 60 microgotas por ml."
+    }
+  ]
+}

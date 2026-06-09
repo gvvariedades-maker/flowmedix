@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import { logger } from '@/lib/logger';
+import { reportClientError } from '@/lib/monitoring/reportClientError';
 
 export default function Error({
   error,
@@ -12,9 +13,14 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
-    // Log do erro para monitoramento
     logger.error('Application error caught by error boundary', error, {
       digest: error.digest,
+    });
+    reportClientError({
+      message: error.message,
+      stack: error.stack,
+      digest: error.digest,
+      source: 'error-boundary',
     });
   }, [error]);
 
@@ -26,7 +32,7 @@ export default function Error({
             ⚠️ Erro Inesperado
           </h1>
           <p className="text-slate-300 text-lg">
-            Algo deu errado. Nossa equipe foi notificada.
+            Algo deu errado. O erro foi registrado e você pode tentar novamente.
           </p>
           {process.env.NODE_ENV === 'development' && (
             <div className="mt-4 p-4 bg-red-950/40 rounded-lg border border-red-500/30 text-left">

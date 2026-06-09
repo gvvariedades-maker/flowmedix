@@ -1,9 +1,16 @@
 'use client';
 
 import type { ReactNode } from 'react';
+import dynamic from 'next/dynamic';
 import { Loader2 } from 'lucide-react';
-import AvantLessonPlayer from '@/components/lesson/AvantLessonPlayer';
 import EstudarQuestaoSkeleton from '@/components/lesson/EstudarQuestaoSkeleton';
+
+// Player pesado (~2k linhas + framer-motion): carrega sob demanda para nao
+// pesar o bundle inicial da vitrine. Client-only (interatividade total).
+const AvantLessonPlayer = dynamic(() => import('@/components/lesson/AvantLessonPlayer'), {
+  ssr: false,
+  loading: () => <EstudarQuestaoSkeleton />,
+});
 import { useEstudarQuestaoShellState } from '@/components/lesson/useEstudarQuestaoShellState';
 import { useEstudarModalActive } from '@/components/estudar/useEstudarModalActive';
 import { useEstudarInterceptActive } from '@/components/estudar/useEstudarInterceptActive';

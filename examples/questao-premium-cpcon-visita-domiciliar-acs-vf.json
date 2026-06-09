@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "ano": "2024",
+    "banca": "CPCON UEPB",
+    "orgao": "Comunitário de Saúde",
+    "prova": "Ag (Pref SJ Piranhas)",
+    "topico": "Enfermagem",
+    "subtopico": "Atenção Básica / Saúde da Família",
+    "cargo_header": "Técnico de Enfermagem"
+  },
+  "question_data": {
+    "options": [
+      {
+        "id": "A",
+        "text": "I e III apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "I, II, III e IV.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "II e IV apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "II, III e IV apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "I, II e III apenas.",
+        "is_correct": false
+      }
+    ],
+    "instruction": "Analise as assertivas a respeito da visita domiciliar realizada pelo Agente Comunitário de Saúde.\nI- A visita domiciliar é um instrumento de intervenção fundamental da estratégia de Saúde da Família que possibilita ao profissional conhecer o contexto de vida do usuário e a constatação das reais condições de habitação, bem como a identificação in loco das relações familiares.\nII- Por se tratar de ação corriqueira do Agente Comunitário de Saúde, não há necessidade de planejamento prévio para a realização da visita domiciliar.\nIII- Os Agentes Comunitários de Saúde constroem o elo entre os usuários e a unidade de saúde por meio da visita domiciliar.\nIV- Na visita domiciliar, o Agente Comunitário de Saúde é livre para usar qualquer tipo de traje que lhe convier.\nÉ CORRETO o que se afirma em:"
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família"
+      },
+      "slide_title": "Visita domiciliar do ACS",
+      "items": [
+        {
+          "id": "1",
+          "icon": "Target",
+          "label": "Objetivo",
+          "detail": "Conhecer o contexto de vida e as condições reais da família."
+        },
+        {
+          "id": "2",
+          "icon": "FileText",
+          "label": "Planejamento",
+          "detail": "Organiza roteiro, prioridades e registros da visita."
+        },
+        {
+          "id": "3",
+          "icon": "Users",
+          "label": "Elo",
+          "detail": "Conecta usuários, território e unidade de saúde."
+        },
+        {
+          "id": "4",
+          "icon": "Shield",
+          "label": "Identificação",
+          "detail": "Uniforme e crachá reforçam segurança e função pública."
+        }
+      ],
+      "footer_rule": "Na visita domiciliar, planejamento e identificação correta são parte da rotina profissional."
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família"
+      },
+      "content": "VISITA DOMICILIAR: ROTINA TÉCNICA, PLANEJADA E VINCULADA AO TERRITÓRIO.",
+      "rows": [
+        {
+          "label": "I",
+          "value": "Verdadeira: a visita permite conhecer contexto, habitação e relações familiares."
+        },
+        {
+          "label": "II",
+          "value": "Falsa: a visita domiciliar exige planejamento prévio."
+        },
+        {
+          "label": "III",
+          "value": "Verdadeira: o ACS faz o elo entre comunidade e unidade de saúde."
+        },
+        {
+          "label": "IV",
+          "value": "Falsa: o ACS deve seguir a identificação e o padrão institucional."
+        },
+        {
+          "label": "Gabarito",
+          "value": "I e III apenas."
+        }
+      ],
+      "footer_rule": "A visita domiciliar é uma ação organizada, não improvisada."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família"
+      },
+      "steps": [
+        "Ler a questão como V/F com quatro afirmativas.",
+        "Julgar I: a visita conhece contexto de vida e habitação? Sim, é verdadeira.",
+        "Julgar II: visita corriqueira dispensa planejamento? Não, é falsa.",
+        "Julgar III: ACS faz o elo com a unidade? Sim, é verdadeira.",
+        "Julgar IV: ACS pode usar qualquer traje? Não, é falsa.",
+        "Montar o conjunto final: I e III apenas.",
+        "Marcar a alternativa A."
+      ],
+      "footer_rule": "Em visita domiciliar, as pegadinhas costumam atacar planejamento e identificação."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família"
+      },
+      "content": "PEGADINHAS DA VISITA DOMICILIAR",
+      "items": [
+        {
+          "id": "1",
+          "label": "Dispensar planejamento",
+          "detail": "Tratar a visita como ação automática e corriqueira.",
+          "correct": "Planejamento prévio é necessário para organizar objetivos e prioridades."
+        },
+        {
+          "id": "2",
+          "label": "Ignorar o vínculo",
+          "detail": "Não reconhecer o ACS como elo entre território e unidade.",
+          "correct": "O ACS aproxima a equipe da comunidade e fortalece o cuidado longitudinal."
+        },
+        {
+          "id": "3",
+          "label": "Usar traje livre",
+          "detail": "Achar que qualquer roupa serve para a atuação em campo.",
+          "correct": "A identificação funcional e o padrão institucional devem ser preservados."
+        }
+      ],
+      "footer_rule": "A banca costuma inverter o papel do planejamento e da identificação do ACS."
+    }
+  ]
+}

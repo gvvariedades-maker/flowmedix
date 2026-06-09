@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "banca": "FEPESE",
+    "prova": "TEnf (Concórdia)",
+    "orgao": "Pref Concórdia / SAMU",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Processo de Enfermagem"
+  },
+  "question_data": {
+    "instruction": "A anotação de enfermagem compreende o registro das ações realizadas em prol do paciente/cliente pela equipe de enfermagem.\nSobre esse tema, é correto afirmar:",
+    "options": [
+      {
+        "id": "A",
+        "text": "É facultativo o uso do carimbo e nome legível completo pelo profissional de Enfermagem em documento firmado, quando do exercício profissional, em cumprimento ao Código de Ética dos Profissionais de Enfermagem.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "É privativo do enfermeiro o registro dos diagnósticos de enfermagem e da evolução ou avaliação de enfermagem.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "As anotações de enfermagem podem ser realizas a lápis ou ter rasuras desde que estas sejam assinadas e seguidas do respectivo número do registro no conselho de enfermagem.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "O prontuário é privativo do médico e enfermeiro, não sendo permitidos os registros por parte dos demais membros da equipe de enfermagem.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Fica permitido, em situações de intercorrências, realizar anotações de cuidados que não tenham sido executados ou mesmo que outro profissional registre suas ações.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "layout_variant": "morphological",
+      "slide_title": "Anotação de enfermagem — mapa da prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "items": [
+        {
+          "label": "Anotação de enfermagem",
+          "detail": "Registro escrito das ações de enfermagem executadas em favor do paciente/cliente — parte integrante do prontuário. A questão testa o que é legalmente correto sobre esse registro.",
+          "icon": "FileText"
+        },
+        {
+          "label": "Resolução COFEN nº 358/2009",
+          "detail": "Norma central de registro de enfermagem no Brasil. Define tipos de registro, responsabilidades por categoria profissional e exigências de legibilidade e autenticidade.",
+          "icon": "Scale"
+        },
+        {
+          "label": "Lei 7.498/1986 — Art. 11",
+          "detail": "Atribui ao enfermeiro, entre outras, a identificação de problemas de enfermagem e a prescrição/ execução de cuidados. Diagnóstico e evolução/avaliação de enfermagem são âmbito privativo do enfermeiro.",
+          "icon": "BookOpen"
+        },
+        {
+          "label": "Privativo × colaborativo",
+          "detail": "Enfermeiro: diagnóstico de enfermagem + evolução/avaliação. Técnico/auxiliar: registra ações de cuidado que executou — não substitui o enfermeiro nem registra diagnóstico.",
+          "icon": "UserCheck"
+        },
+        {
+          "label": "Prontuário compartilhado",
+          "detail": "Documento multiprofissional. Não é exclusivo de médico e enfermeiro: demais membros da equipe de enfermagem registram o que executam, com identificação.",
+          "icon": "FolderOpen"
+        },
+        {
+          "label": "Identificação profissional",
+          "detail": "Carimbo, nome legível e assinatura (ou identificação eletrônica conforme norma) são obrigatórios — não facultativos. Cada profissional responde pelo que registra.",
+          "icon": "Stamp"
+        },
+        {
+          "label": "Integridade do registro",
+          "detail": "Proibido lápis, rasura sem protocolo ou registro de cuidado não realizado. O registro deve ser contemporâneo, verídico e atribuível ao executor.",
+          "icon": "ShieldCheck"
+        },
+        {
+          "label": "Padrão FEPESE neste tema",
+          "detail": "Banca costuma misturar ética (carimbo), SAE (privativas do enfermeiro) e pegadinhas sobre quem pode escrever no prontuário. Gabarito exige distinguir atribuição legal de opinião comum.",
+          "icon": "Target"
+        }
+      ],
+      "footer_rule": "DECORE: anotação = ações da equipe | diagnóstico + evolução/avaliação = privativo do ENFERMEIRO"
+    },
+    {
+      "type": "golden_rule",
+      "layout_variant": "reference_table",
+      "template": "t05",
+      "slide_title": "Referência de prova — registro e privativas",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "content": "ANOTAÇÃO DE ENFERMAGEM — O QUE A BANCA COBRA",
+      "rows": [
+        {
+          "label": "Definição (enunciado)",
+          "value": "Registro das ações da equipe de enfermagem em prol do paciente/cliente",
+          "badge": "info"
+        },
+        {
+          "label": "Norma de registro",
+          "value": "Resolução COFEN nº 358/2009 (Registro de Enfermagem)",
+          "badge": "info"
+        },
+        {
+          "label": "Privativo do enfermeiro",
+          "value": "Diagnóstico de enfermagem + evolução ou avaliação de enfermagem",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Técnico / auxiliar",
+          "value": "Registra cuidados executados — não registra diagnóstico nem evolução de enfermagem",
+          "badge": "ok"
+        },
+        {
+          "label": "Pegadinhas A / C / D / E",
+          "value": "Carimbo obrigatório · sem lápis/rasura livre · prontuário compartilhado · registro verídico",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Letra B — gabarito",
+          "value": "Única alternativa correta: privativa do enfermeiro na SAE",
+          "emphasis": "success",
+          "badge": "hot"
+        },
+        {
+          "label": "Mnemônico DEA",
+          "value": "Diagnóstico + Evolução/Avaliação = Enfermeiro",
+          "emphasis": "highlight",
+          "badge": "ok"
+        }
+      ],
+      "footer_rule": "Em concurso: privativa do enfermeiro na SAE vale mais que “achismo” sobre quem anota no prontuário"
+    },
+    {
+      "type": "logic_flow",
+      "layout_variant": "cards",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "steps": [
+        "Ler o comando: “é correto afirmar” sobre anotação de enfermagem — buscar afirmativa alinhada à Res. COFEN 358/2009 e Lei 7.498/86.",
+        "Fixar o núcleo do enunciado: anotação = registro das ações da equipe — não confundir com diagnóstico ou evolução (camadas distintas da SAE).",
+        "Recuperar a privativa: diagnóstico de enfermagem + evolução/avaliação de enfermagem → enfermeiro (Art. 11 / Res. 358).",
+        "Testar A: “facultativo carimbo e nome legível” → falso — identificação é obrigatória no documento firmado (Código de Ética + normas de registro).",
+        "Testar B: “privativo do enfermeiro diagnóstico + evolução/avaliação” → bate com a lei e a Res. COFEN → candidata forte.",
+        "Testar C: “a lápis ou rasuras assinadas” → falso — registro exige permanência e integridade; lápis e rasura livre violam norma.",
+        "Testar D: “prontuário privativo médico e enfermeiro” → falso — técnico e auxiliar também registram o que executam.",
+        "Testar E: “registrar cuidado não executado ou outro registrar por você” → falso — quebra veracidade e responsabilidade profissional.",
+        "Eliminar A, C, D e E por violarem identificação, integridade, acesso ou veracidade do registro.",
+        "Marcar B: única alternativa que descreve corretamente a privativa do enfermeiro na SAE.",
+        "Fixação: em questões similares, separe “quem registra cuidado executado” (equipe) de “quem registra diagnóstico/evolução” (enfermeiro)."
+      ],
+      "footer_rule": "Estratégia: comando → definição do enunciado → privativa do enfermeiro → eliminar A/C/D/E por termo-chave"
+    },
+    {
+      "type": "danger_zone",
+      "layout_variant": "compare",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem"
+      },
+      "content": "PEGADINHAS FEPESE — ANOTAÇÃO E REGISTRO DE ENFERMAGEM",
+      "items": [
+        {
+          "label": "Letra A — carimbo facultativo",
+          "detail": "Diz que carimbo e nome legível são facultativos “em cumprimento ao Código de Ética” — inverte a obrigação.",
+          "correct": "Identificação do profissional (carimbo, nome legível, assinatura) é obrigatória no registro firmado."
+        },
+        {
+          "label": "Letra C — lápis e rasura permitidos",
+          "detail": "Autoriza anotações a lápis ou rasuras desde que assinadas — parece “razoável”, mas viola integridade documental.",
+          "correct": "Registro permanente e legível; lápis e rasura sem protocolo não são conduta correta de prova."
+        },
+        {
+          "label": "Letra D — prontuário só médico/enfermeiro",
+          "detail": "Exclui técnico e auxiliar de registrar — confunde privativa de diagnóstico com proibição de anotar cuidados.",
+          "correct": "Equipe de enfermagem registra ações executadas; privativo do enfermeiro é diagnóstico + evolução/avaliação."
+        },
+        {
+          "label": "Letra E — registro fictício ou terceirizado",
+          "detail": "Permite anotar cuidado não feito ou outro profissional registrar por você “em intercorrências”.",
+          "correct": "Registro deve ser verídico, contemporâneo e atribuído a quem executou a ação."
+        },
+        {
+          "label": "Confundir anotação com diagnóstico",
+          "detail": "Enunciado fala em “anotação” (ações da equipe), mas alternativas misturam SAE e privativas.",
+          "correct": "Anotação ≠ diagnóstico de enfermagem — este último é privativo do enfermeiro (B)."
+        },
+        {
+          "label": "Achar que técnico “nunca escreve”",
+          "detail": "Transferência de outras questões: muitos alunos marcam D por achar que só enfermeiro registra qualquer coisa.",
+          "correct": "Técnico registra cuidados que executa; não registra diagnóstico nem evolução de enfermagem."
+        },
+        {
+          "label": "Generalizar “tudo é privativo do enfermeiro”",
+          "detail": "Extremo oposto: marcar B por intução, mas sem eliminar D/E pelos termos “privativo” mal aplicados.",
+          "correct": "Privativa específica: diagnóstico + evolução/avaliação — não todo o prontuário."
+        },
+        {
+          "label": "Ignorar Código de Ética citado na A",
+          "detail": "A banca cita ética para dar verossimilhança a uma afirmativa falsa sobre facultatividade.",
+          "correct": "Ética exige responsabilidade e identificação — reforça que A está errada, não certa."
+        }
+      ],
+      "footer_rule": "Transferência: em registro de enfermagem, teste identificação (A), integridade (C), acesso (D) e veracidade (E) antes de confirmar B"
+    }
+  ]
+}

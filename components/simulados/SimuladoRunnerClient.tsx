@@ -571,7 +571,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
       variant="outline"
       disabled={finalizing || submitting}
       onClick={() => void handleFinalizeSimulado()}
-      className="h-10 shrink-0 rounded-xl border-white/15 bg-white/[0.03] text-xs font-bold text-slate-200 hover:bg-white/[0.06] sm:text-sm"
+      className="min-h-[44px] shrink-0 rounded-xl border-white/15 bg-white/[0.03] text-xs font-bold text-slate-200 hover:bg-white/[0.06] sm:text-sm"
     >
       {finalizing ? (
         <>
@@ -597,7 +597,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         opcao_correta_id: feedback?.opcao_correta_id ?? null,
       }}
       triggerLabel="Reportar erro"
-      triggerClassName="h-10 shrink-0 rounded-xl border-white/15 bg-white/[0.03] text-xs font-bold text-slate-200 hover:bg-white/[0.06] sm:text-sm"
+      triggerClassName="min-h-[44px] shrink-0 rounded-xl border-white/15 bg-white/[0.03] text-xs font-bold text-slate-200 hover:bg-white/[0.06] sm:text-sm"
     />
   );
 

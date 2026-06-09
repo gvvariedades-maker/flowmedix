@@ -1,0 +1,144 @@
+{
+  "generated_at": "2026-06-09T08:11:12.619Z",
+  "mode": "dry-run",
+  "total": 19,
+  "ok": 17,
+  "skipped": 0,
+  "failed": 2,
+  "applied_slugs": [],
+  "results": [
+    {
+      "id": "fepese-sae",
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1776056021381-0",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "id": "fundatec-imunizacao",
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1777103182944-8",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "id": "idecan-calculo-gotas",
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056318806-0",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "id": "cpcon-vias-vf",
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1776056366158-7",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "id": "vunesp-via-sc",
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1776056338955-3",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "id": "sus-lei-8080",
+      "modulo_slug": "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+      "mode": "insert",
+      "status": "failed",
+      "detail": "slug piloto já existe — use update manual"
+    },
+    {
+      "id": "urgencias-rcp",
+      "modulo_slug": "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
+      "mode": "insert",
+      "status": "failed",
+      "detail": "slug piloto já existe — use update manual"
+    },
+    {
+      "id": "idecan-sv-ce",
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-3",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "id": "idecan-urgencias-trauma",
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-2",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "id": "fepese-sv-valores",
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "id": "idecan-calculo-microgotas",
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712122855-9",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "id": "cpcon-visita-domiciliar",
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "id": "cpcon-poliomielite",
+      "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-7",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "id": "idecan-violencia-ab",
+      "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-4",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "id": "fepese-anatomia",
+      "modulo_slug": "fepese-enfermagem-nocoes-de-anatomia-1775447762008-7",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "id": "cpcon-triglicerideos",
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-6",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "id": "funatec-ictericia",
+      "modulo_slug": "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-2",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "id": "cpcon-coleta-vf",
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-2",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    },
+    {
+      "id": "idecan-srpa-cpd",
+      "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2",
+      "mode": "update",
+      "status": "ok",
+      "detail": "dry-run: would update conteudo_json"
+    }
+  ]
+}

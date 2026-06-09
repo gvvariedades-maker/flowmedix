@@ -1,0 +1,1672 @@
+{
+  "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-3": {
+    "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-3",
+    "banca": "IDECAN",
+    "titulo_aula": "Verificação de Sinais Vitais",
+    "conteudo_json": {
+      "meta": {
+        "ano": "2022",
+        "banca": "IDECAN",
+        "orgao": "Enfermagem",
+        "prova": "Tec (UFBA)",
+        "topico": "Enfermagem",
+        "subtopico": "Verificação de Sinais Vitais",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-3",
+      "question_data": {
+        "options": [
+          {
+            "id": "A",
+            "text": "Certo",
+            "is_correct": true
+          },
+          {
+            "id": "B",
+            "text": "Errado",
+            "is_correct": false
+          }
+        ],
+        "instruction": "Leia o enunciado abaixo e depois responda:\nA frequência cardíaca é frequentemente aferida pela palpação do pulso radial, por um período de 60 segundos e com sua normalidade se mostrando na faixa entre 60-100 batimentos por minuto."
+      },
+      "reverse_study_slides": [
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Verificação de Sinais Vitais"
+          },
+          "type": "concept_map",
+          "items": [
+            {
+              "id": "1",
+              "icon": "Target",
+              "label": "Pulso Radial",
+              "detail": "Local mais comum para aferição de rotina"
+            },
+            {
+              "id": "2",
+              "icon": "BookOpen",
+              "label": "Frequência Normal",
+              "detail": "60 a 100 batimentos por minuto"
+            },
+            {
+              "id": "3",
+              "icon": "BookOpen",
+              "label": "Duração Ideal",
+              "detail": "60 segundos para precisão total"
+            },
+            {
+              "id": "4",
+              "icon": "AlertTriangle",
+              "label": "Taquicardia",
+              "detail": "Acima de 100 bpm"
+            }
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Verificação de Sinais Vitais"
+          },
+          "type": "golden_rule",
+          "content": "EM CASO DE PULSO IRREGULAR, A AFERIÇÃO DEVE SER REALIZADA POR 60 SEGUNDOS COMPLETOS NO APICE CARDÍACO.",
+          "subject": "Enfermagem",
+          "footer_rule": "A precisão do sinal vital é a base da avaliação clínica."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Verificação de Sinais Vitais"
+          },
+          "type": "logic_flow",
+          "steps": [
+            "Posicionar o paciente em repouso",
+            "Localizar a artéria radial com os dedos indicador e médio",
+            "Contar as pulsações durante o período de 60 segundos",
+            "Registrar o valor e observar o ritmo e a amplitude"
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Verificação de Sinais Vitais"
+          },
+          "type": "danger_zone",
+          "items": [
+            {
+              "id": "1",
+              "label": "Ponto 1",
+              "detail": "Utilizar o polegar para palpar (o polegar possui pulsação própria)"
+            },
+            {
+              "id": "2",
+              "label": "Ponto 2",
+              "detail": "Aplicar pressão excessiva bloqueando o fluxo arterial"
+            },
+            {
+              "id": "3",
+              "label": "Ponto 3",
+              "detail": "Aferir por apenas 15 ou 30 segundos em pacientes com arritmias"
+            }
+          ],
+          "content": "ERROS COMUNS NA AFERIÇÃO",
+          "subject": "Enfermagem",
+          "footer_rule": "Nunca use o polegar para verificar o pulso de terceiros."
+        }
+      ]
+    }
+  },
+  "idecan-enfermagem-urgencias-e-emergencias-1778712392541-2": {
+    "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-2",
+    "banca": "IDECAN",
+    "titulo_aula": "Urgências e Emergências",
+    "conteudo_json": {
+      "meta": {
+        "ano": "2025",
+        "banca": "IDECAN",
+        "orgao": "Enfermagem / \"Sem Especialidade\"",
+        "prova": "Tec (SESAP RN)",
+        "topico": "Enfermagem",
+        "subtopico": "Urgências e Emergências",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-2",
+      "question_data": {
+        "options": [
+          {
+            "id": "A",
+            "text": "Realizar tração cervical vigorosa ao reposicionar a cabeça, priorizando a ventilação antes de verificar a presença de pulso.",
+            "is_correct": false
+          },
+          {
+            "id": "B",
+            "text": "Aguardar a equipe avançada sem manipular a vítima, evitando riscos de responsabilização legal.",
+            "is_correct": false
+          },
+          {
+            "id": "C",
+            "text": "Aplicar compressões torácicas imediatas, sem checar responsividade, para garantir perfusão cerebral contínua.",
+            "is_correct": false
+          },
+          {
+            "id": "D",
+            "text": "Retirar dispositivos de proteção cervical para facilitar a intubação, considerando a estabilização secundária desnecessária.",
+            "is_correct": false
+          },
+          {
+            "id": "E",
+            "text": "Manter a imobilização manual da coluna e abrir a via aérea com a manobra de elevação da mandíbula (jaw thrust), avaliando respiração.",
+            "is_correct": true
+          }
+        ],
+        "instruction": "Durante o socorro a uma vítima inconsciente com suspeita de trauma na coluna cervical, marque a opção correta sobre a conduta prioritária, conforme protocolos brasileiros de primeiros socorros.",
+        "text_fragment": "<p>\"Sem Especialidade\"</p>"
+      },
+      "reverse_study_slides": [
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Urgências e Emergências"
+          },
+          "type": "concept_map",
+          "items": [
+            {
+              "id": "1",
+              "icon": "Shield",
+              "label": "Imobilização",
+              "detail": "Manual imediata da coluna cervical"
+            },
+            {
+              "id": "2",
+              "icon": "AlertTriangle",
+              "label": "Via Aérea",
+              "detail": "Uso da manobra de Jaw Thrust"
+            },
+            {
+              "id": "3",
+              "icon": "BookOpen",
+              "label": "Avaliação",
+              "detail": "Checagem de respiração e pulso"
+            },
+            {
+              "id": "4",
+              "icon": "Lock",
+              "label": "Segurança",
+              "detail": "Evitar hiperextensão do pescoço"
+            }
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Urgências e Emergências"
+          },
+          "type": "golden_rule",
+          "content": "EM CASO DE SUSPEITA DE TRAUMA CERVICAL, A ESTABILIZAÇÃO DA COLUNA É PRIORIDADE ABSOLUTA DURANTE A ABERTURA DE VIAS AÉREAS.",
+          "subject": "Enfermagem",
+          "footer_rule": "Nunca realize a manobra de inclinação da cabeça (Head Tilt) em vítimas de trauma."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Urgências e Emergências"
+          },
+          "type": "logic_flow",
+          "steps": [
+            "Identificação de vítima inconsciente com trauma",
+            "Imobilização manual da coluna cervical pelo socorrista",
+            "Abertura de via aérea via Jaw Thrust (elevação da mandíbula)",
+            "Avaliação de respiração e circulação",
+            "Manutenção da estabilização até a chegada do suporte avançado"
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Urgências e Emergências"
+          },
+          "type": "danger_zone",
+          "items": [
+            {
+              "id": "1",
+              "label": "Ponto 1",
+              "detail": "Realizar hiperextensão do pescoço (Head Tilt)"
+            },
+            {
+              "id": "2",
+              "label": "Ponto 2",
+              "detail": "Retirar colar cervical antes da liberação médica"
+            },
+            {
+              "id": "3",
+              "label": "Ponto 3",
+              "detail": "Priorizar intubação sem estabilização cervical"
+            }
+          ],
+          "content": "Erros comuns no atendimento ao trauma",
+          "subject": "Enfermagem",
+          "footer_rule": "A manipulação indevida pode causar lesão medular irreversível."
+        }
+      ]
+    }
+  },
+  "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7": {
+    "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+    "banca": "FEPESE",
+    "titulo_aula": "Verificação de Sinais Vitais",
+    "conteudo_json": {
+      "meta": {
+        "ano": "2024",
+        "banca": "FEPESE",
+        "orgao": "Pref Concórdia / SAMU",
+        "prova": "TEnf (Concórdia)",
+        "topico": "Enfermagem",
+        "subtopico": "Verificação de Sinais Vitais",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+      "question_data": {
+        "options": [
+          {
+            "id": "A",
+            "text": "Normotenso, afebril, taquicárdico e taquipneico.",
+            "is_correct": true
+          },
+          {
+            "id": "B",
+            "text": "Normotenso, febril, taquicárdico e eupneico.",
+            "is_correct": false
+          },
+          {
+            "id": "C",
+            "text": "Hipotenso, afebril, normocárdico e taquipneico.",
+            "is_correct": false
+          },
+          {
+            "id": "D",
+            "text": "Hipertenso, afebril, taquicárdico e taquipneico.",
+            "is_correct": false
+          },
+          {
+            "id": "E",
+            "text": "Normotenso, afebril, normocárdico e taquipneico.",
+            "is_correct": false
+          }
+        ],
+        "instruction": "Ao verificar os sinais vitais do paciente, você identificou os seguintes valores:\n\" PA 110×75 mmHg\n\" Temperatura axilar 36,5°C\n\" FC 110 bpm\n\" FR 30 mpm\nConsiderando os resultados acima, você diria que o paciente está:"
+      },
+      "reverse_study_slides": [
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Verificação de Sinais Vitais"
+          },
+          "type": "concept_map",
+          "items": [
+            {
+              "id": "1",
+              "icon": "Scale",
+              "label": "PA Normal",
+              "detail": "Até 120/80 mmHg"
+            },
+            {
+              "id": "2",
+              "icon": "BookOpen",
+              "label": "Temperatura",
+              "detail": "36°C a 37,5°C (Axilar)"
+            },
+            {
+              "id": "3",
+              "icon": "BookOpen",
+              "label": "FC Taquicardia",
+              "detail": "Acima de 100 bpm"
+            },
+            {
+              "id": "4",
+              "icon": "BookOpen",
+              "label": "FR Taquipneia",
+              "detail": "Acima de 20 mpm"
+            }
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Verificação de Sinais Vitais"
+          },
+          "type": "golden_rule",
+          "content": "TAQUICARDIA É FC > 100 BPM E TAQUIPNEIA É FR > 20 MPM EM ADULTOS EM REPOUSO.",
+          "subject": "Enfermagem",
+          "footer_rule": "Sempre correlacione os valores encontrados com os parâmetros de normalidade."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Verificação de Sinais Vitais"
+          },
+          "type": "logic_flow",
+          "steps": [
+            "Avaliar a Pressão Arterial (Sistólica e Diastólica)",
+            "Verificar a temperatura corporal (normotermia)",
+            "Contar a frequência cardíaca (pulso periférico)",
+            "Observar o padrão respiratório (frequência e ritmo)"
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Verificação de Sinais Vitais"
+          },
+          "type": "danger_zone",
+          "items": [
+            {
+              "id": "1",
+              "label": "Ponto 1",
+              "detail": "Confundir taquipneia com dispneia (dificuldade respiratória)"
+            },
+            {
+              "id": "2",
+              "label": "Ponto 2",
+              "detail": "Ignorar o estado emocional do paciente na FC"
+            },
+            {
+              "id": "3",
+              "label": "Ponto 3",
+              "detail": "Não considerar a idade na interpretação dos valores"
+            }
+          ],
+          "content": "Erros comuns na avaliação",
+          "subject": "Enfermagem",
+          "footer_rule": "A frequência respiratória deve ser contada sem que o paciente perceba para evitar alterações voluntárias."
+        }
+      ]
+    }
+  },
+  "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712122855-9": {
+    "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712122855-9",
+    "banca": "IDECAN",
+    "titulo_aula": "Cálculo de Administração de Medicamentos e Infusões",
+    "conteudo_json": {
+      "meta": {
+        "ano": "2022",
+        "banca": "IDECAN",
+        "orgao": "Enfermagem",
+        "prova": "Tec (UFBA)",
+        "topico": "Enfermagem",
+        "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "modulo_slug": "idecan-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1778712122855-9",
+      "question_data": {
+        "options": [
+          {
+            "id": "A",
+            "text": "Certo",
+            "is_correct": false
+          },
+          {
+            "id": "B",
+            "text": "Errado",
+            "is_correct": true
+          }
+        ],
+        "instruction": "Em relação a diluição e administração de medicamentos, em se tratando de equivalências, podemos afirmar que 1 ml é igual a 30 gotas, que é igual a 90 microgotas."
+      },
+      "reverse_study_slides": [
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+          },
+          "type": "concept_map",
+          "items": [
+            {
+              "id": "1",
+              "icon": "BookOpen",
+              "label": "1 ml",
+              "detail": "Equivale a 20 gotas"
+            },
+            {
+              "id": "2",
+              "icon": "Scale",
+              "label": "1 gota",
+              "detail": "Equivale a 3 microgotas"
+            },
+            {
+              "id": "3",
+              "icon": "FlaskConical",
+              "label": "1 ml",
+              "detail": "Equivale a 60 microgotas"
+            },
+            {
+              "id": "4",
+              "icon": "AlertTriangle",
+              "label": "Regra de Ouro",
+              "detail": "Sempre conferir a constante de gotejamento"
+            }
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+          },
+          "type": "golden_rule",
+          "content": "1 ML SEMPRE EQUIVALE A 20 GOTAS E 60 MICROGOTAS NO CÁLCULO DE GOTEJAMENTO PADRÃO.",
+          "subject": "Enfermagem",
+          "footer_rule": "Memorize a proporção 1:3 entre gotas e microgotas."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+          },
+          "type": "logic_flow",
+          "steps": [
+            "Identificar o volume total prescrito em ml",
+            "Aplicar a constante de conversão (20 para gotas, 60 para microgotas)",
+            "Calcular o número de gotas ou microgotas por minuto",
+            "Verificar a precisão do cálculo antes da infusão"
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+          },
+          "type": "danger_zone",
+          "items": [
+            {
+              "id": "1",
+              "label": "Ponto 1",
+              "detail": "Confundir a constante de gotas (20) com a de microgotas (60)"
+            },
+            {
+              "id": "2",
+              "label": "Ponto 2",
+              "detail": "Inverter a relação de equivalência (ex: achar que 1 gota = 3 ml)"
+            },
+            {
+              "id": "3",
+              "label": "Ponto 3",
+              "detail": "Esquecer de converter o tempo total para minutos"
+            }
+          ],
+          "content": "Erros comuns em cálculos de infusão",
+          "subject": "Enfermagem",
+          "footer_rule": "Erros de cálculo podem levar a sobredose ou subdose medicamentosa grave."
+        }
+      ]
+    }
+  },
+  "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1": {
+    "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+    "banca": "CPCON UEPB",
+    "titulo_aula": "Atenção Básica / Saúde da Família",
+    "conteudo_json": {
+      "meta": {
+        "ano": "2024",
+        "banca": "CPCON UEPB",
+        "orgao": "Comunitário de Saúde",
+        "prova": "Ag (Pref SJ Piranhas)",
+        "topico": "Enfermagem",
+        "subtopico": "Atenção Básica / Saúde da Família",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+      "question_data": {
+        "options": [
+          {
+            "id": "A",
+            "text": "I e III apenas.",
+            "is_correct": true
+          },
+          {
+            "id": "B",
+            "text": "I, II, III e IV.",
+            "is_correct": false
+          },
+          {
+            "id": "C",
+            "text": "II e IV apenas.",
+            "is_correct": false
+          },
+          {
+            "id": "D",
+            "text": "II, III e IV apenas.",
+            "is_correct": false
+          },
+          {
+            "id": "E",
+            "text": "I, II e III apenas.",
+            "is_correct": false
+          }
+        ],
+        "instruction": "Analise as assertivas a respeito da visita domiciliar realizada peloAgente Comunitário de Saúde.\nI- Avisita domiciliar é um instrumento de intervenção fundamental da estratégia de Saúde da Família que possibilita ao profissional conhecer o contexto de vida do\nusuário e a constatação das reais condições de habitação, bem como a identificação das in loco relações familiares.\nII- Por se tratar de ação corriqueira do Agente Comunitário de Saúde, não há necessidade de planejamento prévio pra a realização da visita domiciliar.\nIII- OsAgentes Comunitários de Saúde constroem o elo entre os usuários e a unidade de saúde por meio da visita domiciliar.\nIV- Na visita domiciliar, oAgente Comunitário de Saúde é livre para usar qualquer tipo de traje que lhe convier.\nÉ CORRETO o que se afirma em:"
+      },
+      "reverse_study_slides": [
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Atenção Básica / Saúde da Família"
+          },
+          "type": "concept_map",
+          "items": [
+            {
+              "id": "1",
+              "icon": "Target",
+              "label": "Objetivo",
+              "detail": "Conhecer o contexto de vida e condições de habitação"
+            },
+            {
+              "id": "2",
+              "icon": "Users",
+              "label": "Elo",
+              "detail": "Conexão entre a comunidade e a Unidade de Saúde"
+            },
+            {
+              "id": "3",
+              "icon": "FileText",
+              "label": "Planejamento",
+              "detail": "Essencial para organizar o roteiro e prioridades"
+            },
+            {
+              "id": "4",
+              "icon": "Shield",
+              "label": "Identificação",
+              "detail": "Uso obrigatório de uniforme e crachá"
+            }
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Atenção Básica / Saúde da Família"
+          },
+          "type": "golden_rule",
+          "content": "A VISITA DOMICILIAR É UMA FERRAMENTA TÉCNICA E PLANEJADA, NÃO UMA AÇÃO ESPONTÂNEA OU INFORMAL.",
+          "subject": "Enfermagem",
+          "footer_rule": "O planejamento é requisito para a qualidade da assistência."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Atenção Básica / Saúde da Família"
+          },
+          "type": "logic_flow",
+          "steps": [
+            "Planejamento prévio das visitas do dia",
+            "Identificação visual correta do ACS",
+            "Abordagem e escuta ativa no domicílio",
+            "Registro das informações no sistema de saúde"
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Atenção Básica / Saúde da Família"
+          },
+          "type": "danger_zone",
+          "items": [
+            {
+              "id": "1",
+              "label": "Ponto 1",
+              "detail": "Realizar visitas sem planejamento prévio"
+            },
+            {
+              "id": "2",
+              "label": "Ponto 2",
+              "detail": "Ignorar o uso do uniforme e identificação"
+            },
+            {
+              "id": "3",
+              "label": "Ponto 3",
+              "detail": "Não registrar os dados coletados no domicílio"
+            }
+          ],
+          "content": "Erros comuns na atuação do ACS",
+          "subject": "Enfermagem",
+          "footer_rule": "A falta de planejamento compromete a vigilância em saúde."
+        }
+      ]
+    }
+  },
+  "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-7": {
+    "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-7",
+    "banca": "CPCON UEPB",
+    "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+    "conteudo_json": {
+      "meta": {
+        "ano": "2021",
+        "banca": "CPCON UEPB",
+        "orgao": "Pref Cacimba Dentro / Comunitário de Saúde",
+        "prova": "Ag (Pref Cacimba D)",
+        "topico": "Enfermagem",
+        "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-7",
+      "question_data": {
+        "options": [
+          {
+            "id": "A",
+            "text": "I , II e III , apenas.",
+            "is_correct": true
+          },
+          {
+            "id": "B",
+            "text": "I , II , III e IV .",
+            "is_correct": false
+          },
+          {
+            "id": "C",
+            "text": "II , III e IV , apenas.",
+            "is_correct": false
+          },
+          {
+            "id": "D",
+            "text": "II e IV , apenas.",
+            "is_correct": false
+          },
+          {
+            "id": "E",
+            "text": "III e IV , apenas.",
+            "is_correct": false
+          }
+        ],
+        "instruction": "A Paralisia Flácida Aguda (PFA), também chamada de Poliomielite ou Paralisia Infantil, apresentou alta incidência no Brasil até o início da década de 1980,deixando sequelas permanentes. No Brasil, o último caso de poliomielite causada pelo poliovírus selvagem ocorreu em 1989. A eliminação da doença no país foi alcançadapor meio da administração da vacina oral contra a pólio (VOP) em campanhas de vacinação em massa e na vacinação de rotina das crianças, aliadas à vigilânciaepidemiológica da PFA.\n(Fonte: Guia de Vigilância em saúde, 2019).\nAnalise as afirmativas sobre esta doença:\nI\n- Um dos objetivos da vigilância em saúde é manter o Brasil livre da circulação de poliovírus selvagem.\nII\n- A vacinação é a principal medida de prevenção da poliomielite.\nIII\n- O Continente Americano foi certificado como região livre da transmissão autóctone do poliovírus selvagem.\nIV\n- O recém-nascido não apresenta proteção nenhum contra a paralisia infantil.\nÉ CORRETO o que se afirma em:"
+      },
+      "reverse_study_slides": [
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Epidemiologia e Vigilância Epidemiológica"
+          },
+          "type": "concept_map",
+          "items": [
+            {
+              "id": "1",
+              "icon": "BookOpen",
+              "label": "Vigilância",
+              "detail": "Monitoramento constante de casos de PFA"
+            },
+            {
+              "id": "2",
+              "icon": "BookOpen",
+              "label": "Prevenção",
+              "detail": "Vacinação é a estratégia central"
+            },
+            {
+              "id": "3",
+              "icon": "BookOpen",
+              "label": "Certificação",
+              "detail": "Américas livre de poliovírus selvagem"
+            },
+            {
+              "id": "4",
+              "icon": "BookOpen",
+              "label": "Imunidade",
+              "detail": "Proteção passiva materna é temporária"
+            }
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Epidemiologia e Vigilância Epidemiológica"
+          },
+          "rows": [
+            {
+              "label": "Último caso Brasil",
+              "value": "1989"
+            },
+            {
+              "label": "Principal medida",
+              "value": "Vacinação (VOP/VIP)"
+            },
+            {
+              "label": "Status Américas",
+              "value": "Livre de circulação autóctone"
+            }
+          ],
+          "type": "golden_rule",
+          "content": "Poliomielite: Dados Chave",
+          "subject": "Enfermagem",
+          "footer_rule": "Poliomielite: Dados Chave"
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Epidemiologia e Vigilância Epidemiológica"
+          },
+          "type": "logic_flow",
+          "steps": [
+            "Notificação imediata de qualquer caso de Paralisia Flácida Aguda (PFA).",
+            "Investigação epidemiológica e coleta de amostras de fezes.",
+            "Análise laboratorial para exclusão de poliovírus selvagem.",
+            "Manutenção de altas coberturas vacinais para evitar reintrodução."
+          ],
+          "subject": "Enfermagem",
+          "reveal_mode": "tap"
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Epidemiologia e Vigilância Epidemiológica"
+          },
+          "type": "danger_zone",
+          "items": [
+            {
+              "label": "Imunidade do RN",
+              "detail": "Afirmar que o RN não tem proteção nenhuma.",
+              "correct": "RN possui imunidade passiva materna (IgG)."
+            },
+            {
+              "label": "Status da doença",
+              "detail": "Acreditar que o poliovírus selvagem ainda circula no Brasil.",
+              "correct": "Brasil é certificado como área livre de transmissão autóctone."
+            },
+            {
+              "label": "Vigilância",
+              "detail": "Ignorar a importância da vigilância da PFA.",
+              "correct": "A vigilância é essencial para manter a certificação de eliminação."
+            }
+          ],
+          "content": "Erros Comuns na Prova",
+          "subject": "Enfermagem",
+          "footer_rule": "A vacinação é a única forma eficaz de prevenção permanente.",
+          "bullet_style": "x_icon"
+        }
+      ]
+    }
+  },
+  "idecan-enfermagem-processo-de-enfermagem-1778712122855-4": {
+    "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-4",
+    "banca": "IDECAN",
+    "titulo_aula": "Processo de Enfermagem",
+    "conteudo_json": {
+      "meta": {
+        "ano": "2025",
+        "banca": "IDECAN",
+        "orgao": "Enfermagem",
+        "prova": "Tec (DEGASE)",
+        "topico": "Enfermagem",
+        "subtopico": "Processo de Enfermagem",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-4",
+      "question_data": {
+        "options": [
+          {
+            "id": "A",
+            "text": "Deve-se priorizar a assistência apenas aos agravos visíveis, pois o preenchimento de fichas de notificação compulsória restringe-se a lesões físicas de caráter urgente.",
+            "is_correct": false
+          },
+          {
+            "id": "B",
+            "text": "A adoção de protocolos de biossegurança descarta o uso de avaliação multiprofissional, já que a proteção do profissional se sobrepõe à abordagem intersetorial.",
+            "is_correct": false
+          },
+          {
+            "id": "C",
+            "text": "A avaliação do contexto de vulnerabilidade, aliada à notificação sistemática dos casos e ao encaminhamento multiprofissional, integra o manejo integral das vítimas de violência.",
+            "is_correct": true
+          },
+          {
+            "id": "D",
+            "text": "O aconselhamento centrado no histórico subjetivo do paciente dispensa registros em prontuário e notificação, por ser matéria de ética e privacidade profissional.",
+            "is_correct": false
+          },
+          {
+            "id": "E",
+            "text": "A elaboração de planos de cuidado deve restringir-se à esfera hospitalar, prescindindo de articulação com redes de proteção social e serviços de saúde mental.",
+            "is_correct": false
+          }
+        ],
+        "instruction": "A luz das diretrizes nacionais voltadas à promoção de uma cultura de paz e à prevenção de diferentes formas de violências no âmbito da Atenção Básica, assinale a opção correta que orienta a atuação do técnico de enfermagem, considerando o fortalecimento da rede intersetorial e a redução de danos às vítimas."
+      },
+      "reverse_study_slides": [
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Processo de Enfermagem"
+          },
+          "type": "concept_map",
+          "items": [
+            {
+              "id": "1",
+              "icon": "Users",
+              "label": "Vulnerabilidade",
+              "detail": "Avaliação do contexto social e familiar"
+            },
+            {
+              "id": "2",
+              "icon": "FileText",
+              "label": "Notificação",
+              "detail": "Registro sistemático e obrigatório"
+            },
+            {
+              "id": "3",
+              "icon": "Globe2",
+              "label": "Intersetorialidade",
+              "detail": "Articulação com rede de proteção"
+            },
+            {
+              "id": "4",
+              "icon": "Shield",
+              "label": "Integralidade",
+              "detail": "Manejo completo da vítima"
+            }
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Processo de Enfermagem"
+          },
+          "type": "golden_rule",
+          "content": "A NOTIFICAÇÃO DE VIOLÊNCIA É UM ATO DE CUIDADO E PROTEÇÃO LEGAL, NÃO SENDO DISPENSÁVEL POR SIGILO PROFISSIONAL.",
+          "subject": "Enfermagem",
+          "footer_rule": "Notificar é dever ético e legal do profissional de saúde."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Processo de Enfermagem"
+          },
+          "type": "logic_flow",
+          "steps": [
+            "Identificação de sinais de violência",
+            "Acolhimento humanizado e escuta qualificada",
+            "Avaliação de riscos e vulnerabilidades",
+            "Notificação compulsória e encaminhamento à rede"
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Processo de Enfermagem"
+          },
+          "type": "danger_zone",
+          "items": [
+            {
+              "id": "1",
+              "label": "Ponto 1",
+              "detail": "Ignorar sinais subjetivos por falta de lesão física"
+            },
+            {
+              "id": "2",
+              "label": "Ponto 2",
+              "detail": "Negligenciar o preenchimento da ficha de notificação"
+            },
+            {
+              "id": "3",
+              "label": "Ponto 3",
+              "detail": "Isolar o cuidado apenas ao ambiente hospitalar"
+            }
+          ],
+          "content": "Erros comuns no manejo de casos de violência:",
+          "subject": "Enfermagem",
+          "footer_rule": "A violência é um fenômeno multicausal que exige rede de apoio."
+        }
+      ]
+    }
+  },
+  "fepese-enfermagem-nocoes-de-anatomia-1775447762008-7": {
+    "modulo_slug": "fepese-enfermagem-nocoes-de-anatomia-1775447762008-7",
+    "banca": "FEPESE",
+    "titulo_aula": "Noções de Anatomia",
+    "conteudo_json": {
+      "meta": {
+        "ano": "2025",
+        "banca": "FEPESE",
+        "orgao": "Pref Ágs de Chapecó",
+        "prova": "TEn (Ágs de Chapecó)",
+        "topico": "Enfermagem",
+        "subtopico": "Noções de Anatomia",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "modulo_slug": "fepese-enfermagem-nocoes-de-anatomia-1775447762008-7",
+      "question_data": {
+        "options": [
+          {
+            "id": "A",
+            "text": "\"Medial\" indica posição afastada da linha média do corpo.",
+            "is_correct": false
+          },
+          {
+            "id": "B",
+            "text": "\"Proximal\" refere-se às estruturas mais distantes da origem de um membro.",
+            "is_correct": false
+          },
+          {
+            "id": "C",
+            "text": "\"Posterior\" é sinônimo de \"cranial\", indicando posição em direção à cabeça.",
+            "is_correct": false
+          },
+          {
+            "id": "D",
+            "text": "\"Superior\" é sinônimo de \"caudal\", indicando estruturas próximas aos pés.",
+            "is_correct": false
+          },
+          {
+            "id": "E",
+            "text": "\"Anterior\" é sinônimo de \"ventral\", indicando a parte da frente do corpo.",
+            "is_correct": true
+          }
+        ],
+        "instruction": "Na anatomia, utiliza-se terminologia padronizada para descrever posições e relações entre estruturas.\nAssinale a alternativa correta em relação ao tema."
+      },
+      "reverse_study_slides": [
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Noções de Anatomia"
+          },
+          "type": "concept_map",
+          "items": [
+            {
+              "id": "1",
+              "icon": "ArrowRight",
+              "label": "Anterior/Ventral",
+              "detail": "Parte da frente do corpo."
+            },
+            {
+              "id": "2",
+              "icon": "ArrowRight",
+              "label": "Posterior/Dorsal",
+              "detail": "Parte de trás do corpo."
+            },
+            {
+              "id": "3",
+              "icon": "ArrowRight",
+              "label": "Superior/Cranial",
+              "detail": "Em direção à cabeça."
+            },
+            {
+              "id": "4",
+              "icon": "ArrowRight",
+              "label": "Inferior/Caudal",
+              "detail": "Em direção aos pés."
+            },
+            {
+              "id": "5",
+              "icon": "ArrowRight",
+              "label": "Medial/Lateral",
+              "detail": "Perto/Afastado da linha média."
+            },
+            {
+              "id": "6",
+              "icon": "ArrowRight",
+              "label": "Proximal/Distal",
+              "detail": "Perto/Afastado da origem de um membro ou estrutura."
+            }
+          ],
+          "subject": "Terminologia Anatômica Essencial",
+          "footer_rule": "Dominar esses termos é fundamental para descrever posições no corpo humano."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Noções de Anatomia"
+          },
+          "type": "golden_rule",
+          "content": "ANTERIOR É SINÔNIMO DE VENTRAL (FRENTE DO CORPO). POSTERIOR É SINÔNIMO DE DORSAL (COSTAS DO CORPO). SUPERIOR É SINÔNIMO DE CRANIAL (EM DIREÇÃO À CABEÇA). INFERIOR É SINÔNIMO DE CAUDAL (EM DIREÇÃO AOS PÉS).",
+          "subject": "Sinônimos Chave na Anatomia",
+          "footer_rule": "Memorize os pares de sinônimos para evitar confusões comuns."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Noções de Anatomia"
+          },
+          "type": "logic_flow",
+          "steps": [
+            "Visualize a Posição Anatômica Padrão (corpo ereto, palmas para frente).",
+            "Identifique a Estrutura de Referência (linha média, origem de membro, etc.).",
+            "Determine a Relação Posicional (onde a estrutura está em relação à referência).",
+            "Aplique o Termo Anatômico Correto (e seus sinônimos, se houver).",
+            "Verifique se a descrição faz sentido na prática."
+          ],
+          "subject": "Como Analisar Termos Anatômicos",
+          "footer_rule": "A posição anatômica padrão é a base para todas as descrições."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Noções de Anatomia"
+          },
+          "type": "danger_zone",
+          "items": [
+            {
+              "id": "1",
+              "label": "Medial vs. Lateral",
+              "detail": "Medial é PRÓXIMO à linha média. Lateral é AFASTADO da linha média. Não confunda a direção!"
+            },
+            {
+              "id": "2",
+              "label": "Proximal vs. Distal",
+              "detail": "Proximal é PRÓXIMO à origem de um membro. Distal é DISTANTE da origem. Pense na 'distância' para distal."
+            },
+            {
+              "id": "3",
+              "label": "Posterior não é Cranial",
+              "detail": "Posterior (dorsal) refere-se à parte de trás. Cranial (superior) refere-se à direção da cabeça. São conceitos diferentes."
+            },
+            {
+              "id": "4",
+              "label": "Superior não é Caudal",
+              "detail": "Superior (cranial) é em direção à cabeça. Caudal (inferior) é em direção aos pés. São opostos, não sinônimos."
+            }
+          ],
+          "content": "AS BANCAS ADORAM TROCAR OU INVERTER OS SIGNIFICADOS DOS TERMOS OU SEUS SINÔNIMOS. FIQUE ATENTO AOS PARES OPOSTOS E AOS SINÔNIMOS CORRETOS!",
+          "subject": "Armadilhas da Terminologia Anatômica",
+          "footer_rule": "Conhecer os opostos e sinônimos é a chave para evitar erros."
+        }
+      ]
+    }
+  },
+  "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-6": {
+    "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-6",
+    "banca": "CPCON UEPB",
+    "titulo_aula": "Coleta de Exames Laboratoriais",
+    "conteudo_json": {
+      "meta": {
+        "ano": "2025",
+        "banca": "CPCON UEPB",
+        "orgao": "Laboratório de Análise Clínica",
+        "prova": "Tec (Pref Pombal)",
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-6",
+      "question_data": {
+        "options": [
+          {
+            "id": "A",
+            "text": "Urina.",
+            "is_correct": false
+          },
+          {
+            "id": "B",
+            "text": "Soro.",
+            "is_correct": true
+          },
+          {
+            "id": "C",
+            "text": "Líquor.",
+            "is_correct": false
+          },
+          {
+            "id": "D",
+            "text": "Sêmem.",
+            "is_correct": false
+          },
+          {
+            "id": "E",
+            "text": "Escarro.",
+            "is_correct": false
+          }
+        ],
+        "instruction": "A dosagem de triglicerídeos é um exame muito solicitado na rotina de um laboratório de análises clínicas. Qual é a amostra biológica utilizada para a realizaçãodesse exame?"
+      },
+      "reverse_study_slides": [
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Coleta de Exames Laboratoriais"
+          },
+          "type": "concept_map",
+          "items": [
+            {
+              "id": "1",
+              "icon": "FlaskConical",
+              "label": "Amostra",
+              "detail": "Soro ou Plasma"
+            },
+            {
+              "id": "2",
+              "icon": "BookOpen",
+              "label": "Preparo",
+              "detail": "Jejum de 8 a 12 horas"
+            },
+            {
+              "id": "3",
+              "icon": "BookOpen",
+              "label": "Coleta",
+              "detail": "Punção venosa periférica"
+            },
+            {
+              "id": "4",
+              "icon": "Activity",
+              "label": "Processamento",
+              "detail": "Centrifugação imediata"
+            }
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Coleta de Exames Laboratoriais"
+          },
+          "rows": [
+            {
+              "label": "Jejum obrigatório",
+              "value": "8 a 12 horas"
+            },
+            {
+              "label": "Álcool",
+              "value": "Abstinência 72h antes"
+            },
+            {
+              "label": "Amostra preferencial",
+              "value": "Soro"
+            },
+            {
+              "label": "Estabilidade",
+              "value": "Refrigerado 2-8°C"
+            }
+          ],
+          "type": "golden_rule",
+          "content": "Perfil Lipídico: Requisitos",
+          "subject": "Enfermagem",
+          "footer_rule": "Perfil Lipídico: Requisitos"
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Coleta de Exames Laboratoriais"
+          },
+          "type": "logic_flow",
+          "steps": [
+            "Identificação correta do paciente e do tubo",
+            "Realização da punção venosa com técnica asséptica",
+            "Coleta de sangue em tubo seco (sem anticoagulante)",
+            "Repouso da amostra para retração do coágulo",
+            "Centrifugação para separação do soro"
+          ],
+          "subject": "Enfermagem",
+          "reveal_mode": "tap"
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Coleta de Exames Laboratoriais"
+          },
+          "type": "danger_zone",
+          "items": [
+            {
+              "label": "Jejum inadequado",
+              "detail": "Induz lipemia na amostra",
+              "correct": "Jejum rigoroso de 8-12h"
+            },
+            {
+              "label": "Hemólise",
+              "detail": "Interfere na dosagem enzimática",
+              "correct": "Evitar agitação vigorosa"
+            },
+            {
+              "label": "Uso de anticoagulante",
+              "detail": "Pode alterar resultados",
+              "correct": "Utilizar tubo seco (tampa vermelha/amarela)"
+            }
+          ],
+          "content": "Erros Comuns na Coleta",
+          "subject": "Enfermagem",
+          "footer_rule": "A amostra ideal para triglicerídeos é o soro livre de hemólise.",
+          "bullet_style": "x_icon"
+        }
+      ]
+    }
+  },
+  "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-2": {
+    "modulo_slug": "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-2",
+    "banca": "FUNATEC",
+    "titulo_aula": "Semiologia em Enfermagem",
+    "conteudo_json": {
+      "meta": {
+        "ano": "2023",
+        "banca": "Funatec",
+        "orgao": "SES DF",
+        "prova": "Tec Enf",
+        "topico": "Enfermagem",
+        "subtopico": "Semiologia em Enfermagem",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "modulo_slug": "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-2",
+      "question_data": {
+        "options": [
+          {
+            "id": "A",
+            "text": "sistema respiratório.",
+            "is_correct": false
+          },
+          {
+            "id": "B",
+            "text": "trato urinário inferior.",
+            "is_correct": false
+          },
+          {
+            "id": "C",
+            "text": "sistema cardiovascular.",
+            "is_correct": false
+          },
+          {
+            "id": "D",
+            "text": "trato gastrointestinal.",
+            "is_correct": true
+          }
+        ],
+        "instruction": "Em uma Clínica Médico-Cirúrgica, um paciente está sendo monitorado após uma cirurgia abdominal. Durante a avaliação, o técnico de enfermagem identifica apresença de icterícia, urina escura e fezes claras no paciente. Complete a frase a seguir com a alternativa correta.",
+        "text_fragment": "<p>\"A tríade de sintomas observada no paciente, composta por icterícia, urina escura e fezes claras, é sugestiva de uma potencial obstrução do __________________.\"</p>"
+      },
+      "reverse_study_slides": [
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Semiologia em Enfermagem"
+          },
+          "type": "concept_map",
+          "items": [
+            {
+              "id": "1",
+              "icon": "AlertTriangle",
+              "label": "Icterícia",
+              "detail": "Coloração amarelada da pele e mucosas"
+            },
+            {
+              "id": "2",
+              "icon": "BookOpen",
+              "label": "Colúria",
+              "detail": "Urina cor de 'coca-cola' ou escura"
+            },
+            {
+              "id": "3",
+              "icon": "Activity",
+              "label": "Acolia Fecal",
+              "detail": "Fezes esbranquiçadas ou claras"
+            },
+            {
+              "id": "4",
+              "icon": "Scissors",
+              "label": "Causa Base",
+              "detail": "Obstrução do fluxo biliar"
+            }
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Semiologia em Enfermagem"
+          },
+          "rows": [
+            {
+              "label": "Bilirrubina na pele",
+              "value": "Aumentada (Icterícia)"
+            },
+            {
+              "label": "Bilirrubina na urina",
+              "value": "Presente (Colúria)"
+            },
+            {
+              "label": "Bilirrubina nas fezes",
+              "value": "Ausente (Acolia)"
+            }
+          ],
+          "type": "golden_rule",
+          "content": "Sinais de Obstrução Biliar",
+          "subject": "Enfermagem",
+          "footer_rule": "Sinais de Obstrução Biliar"
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Semiologia em Enfermagem"
+          },
+          "type": "logic_flow",
+          "steps": [
+            "Obstrução do ducto biliar comum (coledocolitíase).",
+            "Retenção de bilirrubina conjugada no sangue.",
+            "Deposição de bilirrubina nos tecidos (icterícia).",
+            "Excreção renal de bilirrubina (urina escura).",
+            "Ausência de pigmento biliar no intestino (fezes claras)."
+          ],
+          "subject": "Enfermagem",
+          "reveal_mode": "tap"
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Semiologia em Enfermagem"
+          },
+          "type": "danger_zone",
+          "items": [
+            {
+              "label": "Hemólise",
+              "detail": "Causa icterícia, mas não causa acolia fecal",
+              "correct": "Obstrução biliar"
+            },
+            {
+              "label": "Insuficiência Renal",
+              "detail": "Causa alteração na cor da urina, mas não icterícia",
+              "correct": "Obstrução biliar"
+            },
+            {
+              "label": "Dieta rica em betacaroteno",
+              "detail": "Pode causar pele amarelada, mas poupa escleras",
+              "correct": "Icterícia verdadeira"
+            }
+          ],
+          "content": "CUIDADO: Diagnósticos Diferenciais",
+          "subject": "Enfermagem",
+          "footer_rule": "A tríade clássica confirma obstrução biliar.",
+          "bullet_style": "x_icon"
+        }
+      ]
+    }
+  },
+  "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-2": {
+    "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-2",
+    "banca": "CPCON UEPB",
+    "titulo_aula": "Coleta de Exames Laboratoriais",
+    "conteudo_json": {
+      "meta": {
+        "ano": "2023",
+        "banca": "CPCON UEPB",
+        "orgao": "Pref Dona Inês",
+        "prova": "TEnf (Pref Dna Inês)",
+        "topico": "Enfermagem",
+        "subtopico": "Coleta de Exames Laboratoriais",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-2",
+      "question_data": {
+        "options": [
+          {
+            "id": "A",
+            "text": "II apenas.",
+            "is_correct": false
+          },
+          {
+            "id": "B",
+            "text": "I , II e III .",
+            "is_correct": false
+          },
+          {
+            "id": "C",
+            "text": "I e III apenas.",
+            "is_correct": false
+          },
+          {
+            "id": "D",
+            "text": "I e II apenas.",
+            "is_correct": true
+          },
+          {
+            "id": "E",
+            "text": "II e III apenas.",
+            "is_correct": false
+          }
+        ],
+        "instruction": "A coleta, acondicionamento e transporte de amostras biológicas para realização de exames laboratoriais requer uso de técnicas apropriadas para evitarcontaminação, problemas que invalidem as amostras ou complicações para os pacientes. Neste sentido, analise as proposições a seguir:\nI\n- As veias basílica mediana e a cefálica são as mais utilizadas, sendo que a basílica mediana é a melhor opção, pois a cefálica é mais propensa à formação dehematomas.\nII\n- As amostras de sangue devem ser acondicionados à temperatura de 2oC a 8oC. Altas temperaturas no transporte e centrifugação aceleram a deterioração dosconstituintes sanguíneos e em temperatura abaixo de 0 oC podem causar hemólise.\nIII\n- Papéis, luvas, gaze, algodão e outros materiais usados durante a coleta de amostras biológicas devem ser desprezados juntamente com as agulhas, seringas,tubos quebrados, tubos contendo sangue ou soro, em caixas coletoras próprias para material infectante e sinalizadas como \"INFECTANTE\".\n2764)\n2765)\n2766)\n2767)\n2768)\nApós análise das proposições apresentadas, é\nCORRETO\no que se afirma em:"
+      },
+      "reverse_study_slides": [
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Coleta de Exames Laboratoriais"
+          },
+          "type": "concept_map",
+          "items": [
+            {
+              "id": "1",
+              "icon": "Activity",
+              "label": "Veia Mediana",
+              "detail": "Escolha preferencial para punção"
+            },
+            {
+              "id": "2",
+              "icon": "BookOpen",
+              "label": "Temperatura",
+              "detail": "Manter entre 2°C e 8°C"
+            },
+            {
+              "id": "3",
+              "icon": "AlertTriangle",
+              "label": "Hemólise",
+              "detail": "Evitar congelamento e agitação"
+            },
+            {
+              "id": "4",
+              "icon": "BookOpen",
+              "label": "Descarte",
+              "detail": "Segregar resíduos conforme risco"
+            }
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Coleta de Exames Laboratoriais"
+          },
+          "rows": [
+            {
+              "label": "Temperatura ideal",
+              "value": "2°C a 8°C"
+            },
+            {
+              "label": "Risco < 0°C",
+              "value": "Hemólise da amostra"
+            },
+            {
+              "label": "Risco > 25°C",
+              "value": "Deterioração de constituintes"
+            }
+          ],
+          "type": "golden_rule",
+          "content": "Parâmetros de Conservação de Amostras",
+          "subject": "Enfermagem",
+          "footer_rule": "Parâmetros de Conservação de Amostras"
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Coleta de Exames Laboratoriais"
+          },
+          "type": "logic_flow",
+          "steps": [
+            "Identificação correta do paciente e do tubo",
+            "Seleção da veia (preferencialmente mediana)",
+            "Punção venosa com técnica asséptica",
+            "Acondicionamento térmico imediato (2-8°C)",
+            "Transporte seguro ao laboratório"
+          ],
+          "subject": "Enfermagem",
+          "reveal_mode": "tap"
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Coleta de Exames Laboratoriais"
+          },
+          "type": "danger_zone",
+          "items": [
+            {
+              "label": "Descarte de luvas",
+              "detail": "Jogar luvas limpas no coletor de perfurocortantes",
+              "correct": "Descartar em lixo comum ou infectante conforme contaminação"
+            },
+            {
+              "label": "Papel e gaze",
+              "detail": "Misturar resíduos comuns com agulhas",
+              "correct": "Segregação rigorosa: perfurocortantes em caixa rígida"
+            },
+            {
+              "label": "Tubos vazios",
+              "detail": "Descartar tubos de vidro em lixo comum",
+              "correct": "Tubos de vidro devem ser descartados em caixa de perfurocortantes"
+            }
+          ],
+          "content": "Erros Comuns no Descarte",
+          "subject": "Enfermagem",
+          "footer_rule": "Segregação correta evita acidentes com material biológico.",
+          "bullet_style": "x_icon"
+        }
+      ]
+    }
+  },
+  "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2": {
+    "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2",
+    "banca": "IDECAN",
+    "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+    "conteudo_json": {
+      "meta": {
+        "ano": "2022",
+        "banca": "IDECAN",
+        "orgao": "Enfermagem",
+        "prova": "Tec (UFBA)",
+        "topico": "Enfermagem",
+        "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+        "cargo_header": "Técnico de enfermagem"
+      },
+      "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2",
+      "question_data": {
+        "options": [
+          {
+            "id": "A",
+            "text": "Certo",
+            "is_correct": false
+          },
+          {
+            "id": "B",
+            "text": "Errado",
+            "is_correct": true
+          }
+        ],
+        "instruction": "Na Sala de Recuperação Pós Anestésica, é atribuição da enfermagem, em pacientes com bloqueio regional, observar condições do curativo do cateter peridural (CPD) quanto à fixação adequada e presença de secreção ou sangramento no local de inserção na pele, trocando se necessário, pelo técnico de enfermagem."
+      },
+      "reverse_study_slides": [
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Assistência Perioperatória (Inclui SRPA)"
+          },
+          "type": "concept_map",
+          "items": [
+            {
+              "id": "1",
+              "icon": "FlaskConical",
+              "label": "Cateter Peridural",
+              "detail": "Dispositivo invasivo de alta complexidade"
+            },
+            {
+              "id": "2",
+              "icon": "Shield",
+              "label": "Troca de Curativo",
+              "detail": "Procedimento privativo do enfermeiro"
+            },
+            {
+              "id": "3",
+              "icon": "AlertCircle",
+              "label": "Monitorização",
+              "detail": "Atribuição da equipe de enfermagem"
+            },
+            {
+              "id": "4",
+              "icon": "AlertTriangle",
+              "label": "Sinais de Alerta",
+              "detail": "Sangramento, secreção ou descolamento"
+            }
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Assistência Perioperatória (Inclui SRPA)"
+          },
+          "type": "golden_rule",
+          "content": "A MANIPULAÇÃO E TROCA DE CURATIVOS EM CATETERES INVASIVOS DE LONGA PERMANÊNCIA OU BLOQUEIO REGIONAL SÃO ATRIBUIÇÕES PRIVATIVAS DO ENFERMEIRO.",
+          "subject": "Enfermagem",
+          "footer_rule": "Respeite a Lei do Exercício Profissional"
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Assistência Perioperatória (Inclui SRPA)"
+          },
+          "type": "logic_flow",
+          "steps": [
+            "Identificar a presença de cateter peridural",
+            "Realizar inspeção visual do curativo e sítio de inserção",
+            "Notificar o enfermeiro em caso de sujidade, descolamento ou sangramento",
+            "Aguardar a execução da troca pelo enfermeiro responsável"
+          ],
+          "subject": "Enfermagem",
+          "footer_rule": "Relacione o tema da questão à norma ou conceito indicado no gabarito."
+        },
+        {
+          "meta": {
+            "topico": "Enfermagem",
+            "subtopico": "Assistência Perioperatória (Inclui SRPA)"
+          },
+          "type": "danger_zone",
+          "items": [
+            {
+              "id": "1",
+              "label": "Ponto 1",
+              "detail": "Técnico realizar troca de curativo de cateter peridural"
+            },
+            {
+              "id": "2",
+              "label": "Ponto 2",
+              "detail": "Ignorar sinais de sangramento no local de inserção"
+            },
+            {
+              "id": "3",
+              "label": "Ponto 3",
+              "detail": "Deixar de comunicar o enfermeiro sobre a integridade do curativo"
+            }
+          ],
+          "content": "Erros comuns na SRPA",
+          "subject": "Enfermagem",
+          "footer_rule": "O técnico de enfermagem auxilia na vigilância, mas não executa a troca."
+        }
+      ]
+    }
+  }
+}

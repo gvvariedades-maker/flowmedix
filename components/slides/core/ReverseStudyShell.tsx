@@ -4,6 +4,7 @@ import React from 'react';
 import { GitBranch, Network, ScanText, ShieldAlert, Sparkles, Swords } from 'lucide-react';
 import { getSlideArcLabel, getSlideChipLabel } from './slideLabels';
 import type { SlideType } from '@/types/lesson';
+import type { ThemeColors } from './themeGenerator';
 
 type ChipConfig = {
   badge: string;
@@ -83,6 +84,8 @@ export interface ReverseStudyShellProps {
   slideIndex: number;
   totalSlides: number;
   banca?: string;
+  /** Cor do subtópico — chip usa tema exceto em danger_zone (vermelho fixo). */
+  theme?: Pick<ThemeColors, 'iconBg' | 'iconText' | 'borderColor' | 'glow'>;
   children: React.ReactNode;
 }
 
@@ -115,6 +118,28 @@ function SlideTypeIcon({
   }
 }
 
+function resolveChipPresentation(
+  slideType: string | undefined,
+  theme?: Pick<ThemeColors, 'iconBg' | 'iconText' | 'borderColor' | 'glow'>,
+): { badge: string; glow: string; iconClass: string; border: string; glowStyle?: string } {
+  const fallback = getChipConfig(slideType);
+  if (!theme || slideType === 'danger_zone') {
+    return {
+      badge: fallback.badge,
+      glow: fallback.glow,
+      iconClass: fallback.iconClass,
+      border: getHeaderBorderClass(slideType),
+    };
+  }
+  return {
+    badge: `${theme.iconBg} ${theme.iconText} ring-1 ring-white/10`,
+    glow: '',
+    glowStyle: `0 0 14px ${theme.glow}`,
+    iconClass: theme.iconText,
+    border: `border-b ${theme.borderColor}`,
+  };
+}
+
 export function ReverseStudyShell({
   slideType,
   chipLabel,
@@ -122,12 +147,13 @@ export function ReverseStudyShell({
   slideIndex,
   totalSlides,
   banca,
+  theme,
   children,
 }: ReverseStudyShellProps) {
   const chipText = getSlideChipLabel(slideType, chipLabel);
   const arcLabel = getSlideArcLabel(slideType, slideIndex, totalSlides);
   const positionLabel = `Slide ${slideIndex + 1} de ${totalSlides}`;
-  const chipConf = getChipConfig(slideType);
+  const chipConf = resolveChipPresentation(slideType, theme);
   const iconClassName = ['shrink-0', chipConf.iconClass].join(' ');
 
   return (
@@ -136,7 +162,7 @@ export function ReverseStudyShell({
         className={[
           'mb-3 w-full shrink-0 space-y-2 self-stretch',
           'border-b px-1 pb-3 sm:mb-4',
-          getHeaderBorderClass(slideType),
+          theme && slideType !== 'danger_zone' ? chipConf.border : getHeaderBorderClass(slideType),
         ].join(' ')}
       >
         <div className="flex flex-wrap items-center justify-between gap-2">
@@ -146,6 +172,7 @@ export function ReverseStudyShell({
               chipConf.badge,
               chipConf.glow,
             ].join(' ')}
+            style={chipConf.glowStyle ? { boxShadow: chipConf.glowStyle } : undefined}
             aria-label={`Tipo de slide: ${chipText}`}
           >
             <SlideTypeIcon slideType={slideType} className={iconClassName} />

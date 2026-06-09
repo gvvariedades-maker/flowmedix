@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "ano": "2021",
+    "banca": "CPCON UEPB",
+    "orgao": "Pref Cacimba Dentro / Comunitário de Saúde",
+    "prova": "Ag (Pref Cacimba D)",
+    "topico": "Enfermagem",
+    "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+    "cargo_header": "Técnico de Enfermagem"
+  },
+  "question_data": {
+    "options": [
+      {
+        "id": "A",
+        "text": "I , II e III , apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "I , II , III e IV .",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "II , III e IV , apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "II e IV , apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III e IV , apenas.",
+        "is_correct": false
+      }
+    ],
+    "instruction": "A Paralisia Flácida Aguda (PFA), também chamada de Poliomielite ou Paralisia Infantil, apresentou alta incidência no Brasil até o início da década de 1980, deixando sequelas permanentes. No Brasil, o último caso de poliomielite causada pelo poliovírus selvagem ocorreu em 1989. A eliminação da doença no país foi alcançada por meio da administração da vacina oral contra a pólio (VOP) em campanhas de vacinação em massa e na vacinação de rotina das crianças, aliadas à vigilância epidemiológica da PFA.\n(Fonte: Guia de Vigilância em saúde, 2019).\nAnalise as afirmativas sobre esta doença:\nI\n- Um dos objetivos da vigilância em saúde é manter o Brasil livre da circulação de poliovírus selvagem.\nII\n- A vacinação é a principal medida de prevenção da poliomielite.\nIII\n- O Continente Americano foi certificado como região livre da transmissão autóctone do poliovírus selvagem.\nIV\n- O recém-nascido não apresenta proteção nenhum contra a paralisia infantil.\nÉ CORRETO o que se afirma em:"
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Epidemiologia e Vigilância Epidemiológica"
+      },
+      "slide_title": "PFA e poliomielite",
+      "items": [
+        {
+          "id": "1",
+          "icon": "Shield",
+          "label": "Vigilância",
+          "detail": "Monitora e notifica casos suspeitos de PFA."
+        },
+        {
+          "id": "2",
+          "icon": "Syringe",
+          "label": "Prevenção",
+          "detail": "Vacinação é a principal medida contra a doença."
+        },
+        {
+          "id": "3",
+          "icon": "Globe2",
+          "label": "Certificação",
+          "detail": "As Américas foram certificadas como livres da transmissão autóctone."
+        },
+        {
+          "id": "4",
+          "icon": "Baby",
+          "label": "Proteção do RN",
+          "detail": "A proteção materna é passiva e temporária."
+        }
+      ],
+      "footer_rule": "Na poliomielite, vigilância e vacinação caminham juntas para sustentar a eliminação."
+    },
+    {
+      "type": "golden_rule",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Epidemiologia e Vigilância Epidemiológica"
+      },
+      "content": "PFA E POLIOMIELITE: DADOS QUE A BANCA COBRA.",
+      "rows": [
+        {
+          "label": "Último caso no Brasil",
+          "value": "1989"
+        },
+        {
+          "label": "Estratégia de eliminação",
+          "value": "VOP em campanha + rotina infantil"
+        },
+        {
+          "label": "Objetivo da vigilância",
+          "value": "Manter o país livre do poliovírus selvagem"
+        },
+        {
+          "label": "Proteção do recém-nascido",
+          "value": "Passiva materna, não ausência total de proteção"
+        },
+        {
+          "label": "Gabarito",
+          "value": "I, II e III apenas."
+        }
+      ],
+      "footer_rule": "Memorize 1989, VOP e vigilância da PFA."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Epidemiologia e Vigilância Epidemiológica"
+      },
+      "steps": [
+        "Reconhecer o tema: PFA/poliomielite com referência ao Guia de Vigilância.",
+        "Julgar I: vigilância para manter o Brasil livre do poliovírus selvagem? Verdadeiro.",
+        "Julgar II: vacinação é a principal prevenção? Verdadeiro.",
+        "Julgar III: as Américas foram certificadas como livres da transmissão autóctone? Verdadeiro.",
+        "Julgar IV: o recém-nascido não tem nenhuma proteção? Falso, há proteção passiva materna.",
+        "Montar o conjunto final: I, II e III apenas.",
+        "Marcar a alternativa A."
+      ],
+      "footer_rule": "Em PFA, a armadilha costuma estar na proteção do RN e na vigilância."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "subject": "Enfermagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Epidemiologia e Vigilância Epidemiológica"
+      },
+      "content": "PEGADINHAS DA POLIOMIELITE",
+      "items": [
+        {
+          "id": "1",
+          "label": "Negar a vigilância",
+          "detail": "Achar que a vigilância da PFA não é relevante após a eliminação.",
+          "correct": "A vigilância é essencial para manter o status de eliminação."
+        },
+        {
+          "id": "2",
+          "label": "Desprezar a vacinação",
+          "detail": "Reduzir a prevenção a medidas gerais sem imunização.",
+          "correct": "A vacinação é a principal medida de prevenção da poliomielite."
+        },
+        {
+          "id": "3",
+          "label": "Zerar a proteção neonatal",
+          "detail": "Dizer que o recém-nascido não tem proteção alguma.",
+          "correct": "O RN pode receber proteção passiva materna, ainda que temporária."
+        }
+      ],
+      "footer_rule": "A banca mistura vigilância, vacinação e proteção materna para confundir a resposta."
+    }
+  ]
+}
