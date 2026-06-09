@@ -1105,7 +1105,11 @@ export default function AvantLessonPlayer({
       resolveQuestionFamilyId({
         instruction: activeDados.question_data?.instruction,
         subtopico: activeDados.meta?.subtopico ?? activeDados.meta?.topico,
-        options: activeDados.question_data?.options,
+        options: activeDados.question_data?.options?.map((option) => ({
+          id: option.id,
+          text: option.text,
+          is_correct: option.is_correct ?? false,
+        })),
         textFragment: activeDados.question_data?.text_fragment,
       }),
     [

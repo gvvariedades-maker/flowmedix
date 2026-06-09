@@ -664,8 +664,8 @@ export function upgradePremiumHybrid(
 
   const nextSlides = ensureFourSlides([conceptMap, goldenRule, logicFlow, dangerZone]);
 
-  const working = {
-    ...base,
+  const working: Record<string, unknown> = {
+    ...(base as Record<string, unknown>),
     reverse_study_slides: nextSlides,
   };
   delete working.study_slides;

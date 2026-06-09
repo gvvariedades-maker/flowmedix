@@ -39,16 +39,16 @@ export type SlidePresentationContext = {
   familyId?: FamilyId;
 };
 
+const FAMILY_SLIDE_TYPE_MAP: Record<string, FamilySlideType> = {
+  concept_map: 'conceptMap',
+  golden_rule: 'goldenRule',
+  logic_flow: 'logicFlow',
+  danger_zone: 'dangerZone',
+};
+
 function familySlideKey(slideType: string | undefined): FamilySlideType | null {
-  if (
-    slideType === 'concept_map' ||
-    slideType === 'golden_rule' ||
-    slideType === 'logic_flow' ||
-    slideType === 'danger_zone'
-  ) {
-    return slideType;
-  }
-  return null;
+  if (!slideType) return null;
+  return FAMILY_SLIDE_TYPE_MAP[slideType] ?? null;
 }
 
 /** Resolve layout, interação e título para um slide NeuroSlide. */
