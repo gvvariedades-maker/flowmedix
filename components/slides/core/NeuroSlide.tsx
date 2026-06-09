@@ -8,8 +8,8 @@ import { DangerZone } from '../variants/DangerZone';
 import { LogicFlow } from '../variants/LogicFlow';
 import { SyllableScanner } from '../variants/SyllableScanner';
 import { VersusArena } from '../variants/VersusArena';
-import { getThemeForSlide, calculateLayoutVariant } from './themeGenerator';
-import { resolveSlidePresentation } from './slidePresentation';
+import { getThemeForSlide } from './themeGenerator';
+import { resolveSlidePresentation, type SlidePresentationContext } from './slidePresentation';
 import type { ThemeColors } from './themeGenerator';
 import {
   isVersusArenaSideReady,
@@ -22,20 +22,30 @@ import type { ReverseStudyShellContext } from '@/types/lesson';
 // ============================================================================
 // COMPONENTE ORQUESTRADOR (O HUB) COM TEMAS HÍBRIDOS
 // ============================================================================
-export const NeuroSlideHub = ({ 
-  slide, 
-  questionHash, 
-  slideIndex 
-}: { 
-  slide: any; 
+export const NeuroSlideHub = ({
+  slide,
+  questionHash,
+  questionSlug,
+  slideIndex,
+  jsonLayoutVariant,
+}: {
+  slide: any;
   questionHash: string;
+  questionSlug?: string;
   slideIndex?: number;
+  jsonLayoutVariant?: string;
 }) => {
   // Sistema híbrido: prioriza subject, fallback para hash com variações únicas
   const theme = getThemeForSlide(slide, questionHash, slideIndex);
-  
+
+  const presentationContext: SlidePresentationContext = {
+    questionSlug: questionSlug ?? questionHash,
+    slideIndex,
+    jsonLayoutVariant,
+  };
+
   const { layoutVariant, revealMode: logicRevealMode, bulletStyle: dangerBulletStyle, rows: goldenRows } =
-    resolveSlidePresentation(slide);
+    resolveSlidePresentation(slide, presentationContext);
   
   // Helper para mapear items para concepts quando necessário
   const getConcepts = () => {
@@ -126,12 +136,14 @@ export const NeuroSlideHub = ({
 export default function NeuroSlide({
   data,
   questionHash,
+  questionSlug,
   slideIndex,
   shellContext,
   standalone = false,
 }: {
   data: any;
   questionHash?: string;
+  questionSlug?: string;
   slideIndex?: number;
   shellContext?: ReverseStudyShellContext;
   /** Preview/material: shell com slide 1/1, sem badge de banca. */
@@ -139,6 +151,16 @@ export default function NeuroSlide({
 }) {
   const safeData = useMemo(() => normalizeReverseStudySlide(data ?? {}) as any, [data]);
   const hashSource = questionHash || safeData.id || JSON.stringify(safeData).substring(0, 50) || 'default';
+  const slugSource = questionSlug || safeData.id || hashSource;
+
+  const presentationContext: SlidePresentationContext = useMemo(
+    () => ({
+      questionSlug: slugSource,
+      slideIndex,
+      jsonLayoutVariant: safeData.layout_variant,
+    }),
+    [slugSource, slideIndex, safeData.layout_variant],
+  );
 
   const normalizedData = useMemo(() => {
     const pickNonEmptySteps = (top: unknown, nested: unknown) => {
@@ -166,7 +188,7 @@ export default function NeuroSlide({
         ...safeData,
         meta: safeData.meta || {},
         steps: Array.isArray(safeData.steps) ? safeData.steps : [],
-        layout_variant: safeData.layout_variant || calculateLayoutVariant(safeData),
+        layout_variant: safeData.layout_variant,
       };
     }
 
@@ -218,21 +240,14 @@ export default function NeuroSlide({
         design_system: safeData.design_system,
         meta: safeData.meta || {},
         subject: safeData.subject,
-        layout_variant:
-          criticalFields.layout_variant ||
-          calculateLayoutVariant({
-            type: criticalFields.type,
-            items: criticalFields.items,
-            concepts: mappedConcepts,
-            steps: criticalFields.steps,
-          }),
+        layout_variant: criticalFields.layout_variant,
       };
     }
 
     return {
       ...safeData,
       meta: safeData.meta || {},
-      layout_variant: safeData.layout_variant || calculateLayoutVariant(safeData),
+      layout_variant: safeData.layout_variant,
     };
   }, [safeData]);
 
@@ -244,12 +259,23 @@ export default function NeuroSlide({
 
   // Se o slide tem o formato novo (com type), usa o Hub com sistema híbrido
   if (normalizedData.type) {
-    inner = <NeuroSlideHub slide={normalizedData} questionHash={hashSource} slideIndex={slideIndex} />;
+    inner = (
+      <NeuroSlideHub
+        slide={normalizedData}
+        questionHash={hashSource}
+        questionSlug={slugSource}
+        slideIndex={slideIndex}
+        jsonLayoutVariant={safeData.layout_variant}
+      />
+    );
   } else {
-    const legacyPresentation = resolveSlidePresentation({
-      ...normalizedData,
-      type: normalizedData.layout_type,
-    });
+    const legacyPresentation = resolveSlidePresentation(
+      {
+        ...normalizedData,
+        type: normalizedData.layout_type,
+      },
+      presentationContext,
+    );
     switch (normalizedData.layout_type) {
       case 'concept_map': {
         const concepts =
@@ -353,7 +379,7 @@ export default function NeuroSlide({
     : 'box-border flex w-full min-w-0 flex-col items-center px-3 py-6 sm:px-5 sm:py-8 md:px-8 md:py-10';
   const slideType = normalizedData.type ?? normalizedData.layout_type;
   const chipLabel = normalizedData.chip_label as string | undefined;
-  const presentation = resolveSlidePresentation(normalizedData);
+  const presentation = resolveSlidePresentation(normalizedData, presentationContext);
   const slideTitle = presentation.slideTitle;
 
   const body = useShell && resolvedShell ? (

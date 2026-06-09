@@ -1,19 +1,32 @@
-const LOGIC_FLOW_LAYOUT_OVERRIDES = new Set(['vertical', 'horizontal']);
+import { LOGIC_FLOW_POOL, pickRotatedLayoutVariant } from './layoutRotation';
+import type { LayoutRotationContext } from './conceptMapLayout';
+
+const LOGIC_FLOW_LAYOUT_OVERRIDES = new Set(['vertical', 'horizontal', 'cards']);
 
 /**
  * Resolve `layout_variant` do logic_flow.
- * - Com ≥3 passos → `cards` (salvo override explícito vertical/horizontal no JSON).
+ * - Com ≥3 passos → rotação horizontal/vertical/cards por slug (salvo override explícito no JSON).
  */
 export function resolveLogicFlowLayoutVariant(
   slide: { steps?: unknown[] } | undefined,
   explicitVariant?: string,
   fallbackVariant?: string,
+  ctx?: LayoutRotationContext,
 ): string {
   const stepCount = Array.isArray(slide?.steps) ? slide.steps.length : 0;
 
   if (stepCount >= 3) {
-    if (explicitVariant && LOGIC_FLOW_LAYOUT_OVERRIDES.has(explicitVariant)) {
+    if (explicitVariant) {
       return explicitVariant;
+    }
+    if (ctx?.slug) {
+      return pickRotatedLayoutVariant(
+        LOGIC_FLOW_POOL,
+        fallbackVariant ?? 'cards',
+        ctx.slug,
+        ctx.slideIndex ?? 0,
+        'logic_flow',
+      );
     }
     return 'cards';
   }

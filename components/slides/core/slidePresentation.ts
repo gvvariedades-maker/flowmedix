@@ -2,6 +2,7 @@ import { calculateLayoutVariant } from './themeGenerator';
 import {
   resolveConceptMapLayoutVariant,
   type ConceptMapItemLike,
+  type LayoutRotationContext,
 } from './conceptMapLayout';
 import { resolveGoldenRuleLayoutVariant } from './goldenRuleLayout';
 import { resolveLogicFlowLayoutVariant } from './logicFlowLayout';
@@ -25,22 +26,39 @@ export type ResolvedSlidePresentation = {
   rows?: GoldenRuleRow[];
 };
 
+export type SlidePresentationContext = {
+  questionSlug?: string;
+  slideIndex?: number;
+  jsonLayoutVariant?: string;
+};
+
 /** Resolve layout, interação e título para um slide NeuroSlide. */
-export function resolveSlidePresentation(slide: {
-  type?: string;
-  layout_variant?: string;
-  items?: unknown[];
-  concepts?: unknown[];
-  steps?: unknown[];
-  rows?: GoldenRuleRow[];
-  bullet_style?: DangerZoneBulletStyle;
-  reveal_mode?: LogicFlowRevealMode;
-  slide_title?: string;
-  meta?: { subtopico?: string; topico?: string };
-}): ResolvedSlidePresentation {
+export function resolveSlidePresentation(
+  slide: {
+    type?: string;
+    layout_variant?: string;
+    items?: unknown[];
+    concepts?: unknown[];
+    steps?: unknown[];
+    rows?: GoldenRuleRow[];
+    bullet_style?: DangerZoneBulletStyle;
+    reveal_mode?: LogicFlowRevealMode;
+    slide_title?: string;
+    meta?: { subtopico?: string; topico?: string };
+  },
+  presentationContext?: SlidePresentationContext,
+): ResolvedSlidePresentation {
   const slideType = slide.type;
   const mapLayoutVariant = calculateLayoutVariant(slide);
-  const explicitLayoutVariant = slide.layout_variant;
+  const explicitLayoutVariant = presentationContext?.jsonLayoutVariant;
+
+  const rotationCtx: LayoutRotationContext | undefined =
+    presentationContext?.questionSlug
+      ? {
+          slug: presentationContext.questionSlug,
+          slideIndex: presentationContext.slideIndex,
+        }
+      : undefined;
 
   let layoutVariant = explicitLayoutVariant || mapLayoutVariant;
 
@@ -53,6 +71,7 @@ export function resolveSlidePresentation(slide: {
         },
         explicitLayoutVariant,
         mapLayoutVariant,
+        rotationCtx,
       );
       break;
     case 'golden_rule':
@@ -67,6 +86,7 @@ export function resolveSlidePresentation(slide: {
         slide,
         explicitLayoutVariant,
         mapLayoutVariant,
+        rotationCtx,
       );
       break;
     case 'danger_zone':

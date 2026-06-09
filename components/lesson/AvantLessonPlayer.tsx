@@ -1890,6 +1890,7 @@ export default function AvantLessonPlayer({
                       <NeuroSlide
                         data={currentSlide}
                         questionHash={questionHash}
+                        questionSlug={moduloSlug || activeDados.modulo_slug}
                         slideIndex={slideAtual}
                         shellContext={{
                           slideIndex: slideAtual,
