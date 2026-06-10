@@ -1,0 +1,18 @@
+{
+  "lote": "atencao-basica-saude-da-familia-lote-04",
+  "exported_at": "2026-06-10T04:14:52.721Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Atenção Básica / Saúde da Família",
+    "limit": 50,
+    "exclude_count": 150
+  },
+  "slugs": [
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968125784-1",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968180610-7",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968221218-3",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968323839-4",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-0",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-4"
+  ]
+}

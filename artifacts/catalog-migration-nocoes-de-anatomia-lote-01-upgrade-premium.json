@@ -1,0 +1,480 @@
+{
+  "generated_at": "2026-06-10T04:35:31.200Z",
+  "lote": "nocoes-de-anatomia-lote-01",
+  "mode": "write",
+  "force": false,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 50,
+  "upgraded": 19,
+  "skipped": 31,
+  "failed": 0,
+  "family_counts": {
+    "conceito": 46,
+    "certo_errado": 4
+  },
+  "results": [
+    {
+      "modulo_slug": "agirh-enfermagem-nocoes-de-anatomia-1775448514037-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow"
+      ]
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-nocoes-de-anatomia-1775448514037-4",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-anatomia-1775447762008-5",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-anatomia-1775448491347-1",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775331667969-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775447782763-2",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-6",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-2",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-4",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-5",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448475837-0",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448475837-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-0",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-1",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-0",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-1",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-2",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-nocoes-de-anatomia-1775448475837-4",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-nocoes-de-anatomia-1775448475837-5",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-nocoes-de-anatomia-1775448514037-3",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-2",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-3",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-8",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447834740-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow"
+      ]
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775448475837-6",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-nocoes-de-anatomia-1775447834740-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow"
+      ]
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-nocoes-de-anatomia-1775447762008-6",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-nocoes-de-anatomia-1775447762008-7",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-nocoes-de-anatomia-1775448491347-7",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-nocoes-de-anatomia-1775448514037-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow"
+      ]
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775447762008-4",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448475837-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow"
+      ]
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448491347-0",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448491347-2",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448514037-5",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448514037-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow"
+      ]
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448514037-7",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448529213-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-nocoes-de-anatomia-1775331667969-7",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-nocoes-de-anatomia-1775331667969-8",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-anatomia-1775447762008-0",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-anatomia-1775447762008-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow"
+      ]
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-anatomia-1775448275334-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow"
+      ]
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-0",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow"
+      ]
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow"
+      ]
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448458316-0",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nocoes-de-anatomia-1778712122855-1",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    }
+  ]
+}

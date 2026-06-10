@@ -1,0 +1,280 @@
+{
+  "exported_at": "2026-06-10T04:15:11.152Z",
+  "lote": "enfermagem-em-centro-cirurgico-lote-03",
+  "total": 39,
+  "entries": [
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-1",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 1134
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-2",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 1135
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103831211-3",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1047
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-1",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1069
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-2",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1070
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-7",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1075
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103857889-0",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1076
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103857889-1",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1077
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103857889-2",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1078
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-6",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1096
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-enfermagem-em-centro-cirurgico-1777103843559-5",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO DARWIN",
+      "avant_codigo": 1065
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-5",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO DARWIN",
+      "avant_codigo": 1104
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-6",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO DARWIN",
+      "avant_codigo": 1105
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-7",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO DARWIN",
+      "avant_codigo": 1106
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-8",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO DARWIN",
+      "avant_codigo": 1107
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-0",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 1082
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-2",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 1084
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-3",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 1040
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-5",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 1095
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-enfermagem-em-centro-cirurgico-1777103907464-5",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "METROCAPITAL",
+      "avant_codigo": 1122
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-6",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 1043
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-3",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 1102
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-4",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 1103
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-3",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "NOSSO RUMO",
+      "avant_codigo": 1111
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-4",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "NOSSO RUMO",
+      "avant_codigo": 1112
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-5",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "NOSSO RUMO",
+      "avant_codigo": 1113
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-7",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 1059
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-0",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 1108
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-1",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 1109
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103907464-2",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 1119
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-1",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 1141
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-2",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 1054
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-3",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 1093
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-4",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 1094
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-enfermagem-em-centro-cirurgico-1777103933896-5",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 1152
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-enfermagem-em-centro-cirurgico-1777103933896-6",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 1153
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-0",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1068
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-3",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1085
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-enfermagem-em-centro-cirurgico-1777103913966-6",
+      "titulo_aula": "Enfermagem em Centro Cirúrgico",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1131
+    }
+  ]
+}

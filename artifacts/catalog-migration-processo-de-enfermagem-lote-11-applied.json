@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:40:55.494Z",
+  "lote": "processo-de-enfermagem-lote-11",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fundatec-enfermagem-processo-de-enfermagem-1780006954613-6",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006954613-7",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006954613-8",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006954613-9",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006962671-0",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006962671-1",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006962671-2",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006962671-3",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006962671-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006962671-5",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006962671-6",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006969552-3",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006969552-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006969552-5",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006969552-6",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006969552-7",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006969552-8",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006969552-9",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-1",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-3",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-5",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-6",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-7",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-8",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-9",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-0",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-1",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-2",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-3",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-5",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-6",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-7",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011956256-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011956256-5",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011956256-6",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011956256-7",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011956256-9",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011961798-0",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011961798-1",
+    "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056149404-3",
+    "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-1",
+    "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-2",
+    "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-3",
+    "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-4",
+    "furb-enfermagem-processo-de-enfermagem-1776056129848-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011961798-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011961798-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056149404-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1776056129848-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

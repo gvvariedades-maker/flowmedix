@@ -1,0 +1,320 @@
+[
+    {
+        "lote":  "imunizacao-lote-02",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "imunizacao-lote-03",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "imunizacao-lote-04",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "imunizacao-lote-05",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "imunizacao-lote-06",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "imunizacao-lote-07",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "imunizacao-lote-08",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "imunizacao-lote-09",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "imunizacao-lote-10",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "imunizacao-lote-11",
+        "ok":  "25",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "layout-pilot-v2",
+        "ok":  "10",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "pilot-goldens",
+        "ok":  "19",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-01",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-02",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-03",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-04",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-05",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-06",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-07",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-08",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-09",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-10",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-11",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-12",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-13",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-14",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-15",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-16",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-17",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-18",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-19",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-20",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-21",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "processo-de-enfermagem-lote-22",
+        "ok":  "15",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "urgencias-e-emergencias-lote-01",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "urgencias-e-emergencias-lote-02",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "urgencias-e-emergencias-lote-03",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "urgencias-e-emergencias-lote-04",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "urgencias-e-emergencias-lote-05",
+        "ok":  "23",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "verificacao-de-sinais-vitais-lote-01",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "verificacao-de-sinais-vitais-lote-02",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "verificacao-de-sinais-vitais-lote-03",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "verificacao-de-sinais-vitais-lote-04",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "verificacao-de-sinais-vitais-lote-05",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "verificacao-de-sinais-vitais-lote-06",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "verificacao-de-sinais-vitais-lote-07",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "verificacao-de-sinais-vitais-lote-08",
+        "ok":  "8",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "vias-de-administracao-lote-01",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "vias-de-administracao-lote-02",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "vias-de-administracao-lote-03",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "vias-de-administracao-lote-04",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "vias-de-administracao-lote-05",
+        "ok":  "50",
+        "skipped":  "0",
+        "failed":  "0"
+    },
+    {
+        "lote":  "vias-de-administracao-lote-06",
+        "ok":  "1",
+        "skipped":  "0",
+        "failed":  "0"
+    }
+]

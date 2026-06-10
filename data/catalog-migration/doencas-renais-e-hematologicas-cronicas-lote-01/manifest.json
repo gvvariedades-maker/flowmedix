@@ -1,0 +1,13 @@
+{
+  "lote": "doencas-renais-e-hematologicas-cronicas-lote-01",
+  "exported_at": "2026-06-10T05:54:27.522Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Doenças Renais e Hematológicas Crônicas",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "idecan-enfermagem-doencas-renais-e-hematologicas-cronicas-1778712315153-7"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-06-10T05:55:12.722Z",
+  "lote": "neoplasias-e-cancer-lote-01",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "igeduc-enfermagem-neoplasias-e-cancer-1780001148264-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "igeduc-enfermagem-neoplasias-e-cancer-1780001148264-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

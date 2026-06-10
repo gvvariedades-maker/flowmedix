@@ -1,0 +1,104 @@
+{
+  "generated_at": "2026-06-10T04:57:50.472Z",
+  "lote": "enfermagem-em-central-de-material-e-esterilizacao-cme-lote-01",
+  "mode": "apply",
+  "total_files": 13,
+  "ok": 13,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "icece-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-2",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-3",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-4",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-5",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-6",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-7",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-0",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-1",
+    "idib-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778934918280-9",
+    "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1",
+    "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3",
+    "quadrix-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "icece-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778934918280-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

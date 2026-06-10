@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T03:39:54.382Z",
+  "lote": "saude-da-mulher-lote-01",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-saude-da-mulher-1777104301763-1",
+    "adm-tec-enfermagem-saude-da-mulher-1777104306781-2",
+    "adm-tec-enfermagem-saude-da-mulher-1777104329543-2",
+    "adm-tec-enfermagem-saude-da-mulher-1777104432986-2",
+    "agirh-enfermagem-saude-da-mulher-1777104306781-1",
+    "amauc-enfermagem-saude-da-mulher-1777104295283-5",
+    "amauc-enfermagem-saude-da-mulher-1777104295283-6",
+    "amauc-enfermagem-saude-da-mulher-1777104295283-7",
+    "amauc-enfermagem-saude-da-mulher-1777104295283-8",
+    "ameosc-enfermagem-saude-da-mulher-1777104306781-6",
+    "ameosc-enfermagem-saude-da-mulher-1777104340484-4",
+    "ameosc-enfermagem-saude-da-mulher-1777104376057-5",
+    "atame-enfermagem-saude-da-mulher-1777104347186-6",
+    "atame-enfermagem-saude-da-mulher-1777104347186-7",
+    "atame-enfermagem-saude-da-mulher-1777104347186-8",
+    "atame-enfermagem-saude-da-mulher-1777104382533-0",
+    "avancasp-enfermagem-saude-da-mulher-1777104323066-2",
+    "cebraspe-cespe-enfermagem-saude-da-mulher-1777104288275-0",
+    "cebraspe-cespe-enfermagem-saude-da-mulher-1777104376057-3",
+    "cev-urca-enfermagem-saude-da-mulher-1777104329543-3",
+    "cev-urca-enfermagem-saude-da-mulher-1777104347186-3",
+    "cotec-fadenor-enfermagem-saude-da-mulher-1777104235003-1",
+    "cotec-fadenor-enfermagem-saude-da-mulher-1777104301763-2",
+    "cotec-fadenor-enfermagem-saude-da-mulher-1777104323066-8",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-4",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-5",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-6",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104340484-7",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104376057-4",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104382533-4",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104382533-6",
+    "cpcon-uepb-enfermagem-saude-da-mulher-1777104408379-0",
+    "cpcon-uepb-geral-saude-da-mulher-1777104382533-5",
+    "educa-pb-enfermagem-saude-da-mulher-1777104408379-1",
+    "facet-enfermagem-saude-da-mulher-1777104261182-4",
+    "facet-enfermagem-saude-da-mulher-1777104261182-5",
+    "fadesp-enfermagem-saude-da-mulher-1777104347186-1",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104261182-8",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104288275-5",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104288275-6",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104295283-0",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104295283-9",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104301763-5",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-0",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-1",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-7",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-8",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104340484-1",
+    "fau-unicentro-enfermagem-saude-da-mulher-1777104340484-2",
+    "fenix-instituto-enfermagem-saude-da-mulher-1777104261182-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-saude-da-mulher-1777104301763-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-saude-da-mulher-1777104306781-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-saude-da-mulher-1777104329543-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-saude-da-mulher-1777104432986-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-saude-da-mulher-1777104306781-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-da-mulher-1777104295283-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-da-mulher-1777104295283-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-da-mulher-1777104295283-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-da-mulher-1777104295283-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-saude-da-mulher-1777104306781-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-saude-da-mulher-1777104340484-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-saude-da-mulher-1777104376057-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-saude-da-mulher-1777104347186-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-saude-da-mulher-1777104347186-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-saude-da-mulher-1777104347186-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-saude-da-mulher-1777104382533-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-saude-da-mulher-1777104323066-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-saude-da-mulher-1777104288275-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-saude-da-mulher-1777104376057-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-saude-da-mulher-1777104329543-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-saude-da-mulher-1777104347186-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-saude-da-mulher-1777104235003-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-saude-da-mulher-1777104301763-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-saude-da-mulher-1777104323066-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104329543-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104340484-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104376057-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104382533-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104382533-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-saude-da-mulher-1777104408379-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-geral-saude-da-mulher-1777104382533-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-saude-da-mulher-1777104408379-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-saude-da-mulher-1777104261182-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-saude-da-mulher-1777104261182-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fadesp-enfermagem-saude-da-mulher-1777104347186-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104261182-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104288275-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104288275-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104295283-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104295283-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104301763-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104329543-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104340484-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-da-mulher-1777104340484-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-saude-da-mulher-1777104261182-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

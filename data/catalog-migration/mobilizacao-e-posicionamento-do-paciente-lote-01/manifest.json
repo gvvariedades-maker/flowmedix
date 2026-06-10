@@ -1,0 +1,18 @@
+{
+  "lote": "mobilizacao-e-posicionamento-do-paciente-lote-01",
+  "exported_at": "2026-06-10T04:52:35.312Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Mobilização e Posicionamento do Paciente",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "icece-enfermagem-mobilizacao-e-posicionamento-do-paciente-1780000535393-5",
+    "idecan-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778712165781-9",
+    "idecan-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778712184780-0",
+    "idecan-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778712184780-1",
+    "idib-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778934890864-4",
+    "idib-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778934890864-5"
+  ]
+}

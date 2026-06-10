@@ -1,0 +1,29 @@
+{
+  "lote": "coleta-de-exames-laboratoriais-lote-03",
+  "exported_at": "2026-06-10T04:19:18.866Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Coleta de Exames Laboratoriais",
+    "limit": 50,
+    "exclude_count": 100
+  },
+  "slugs": [
+    "unifil-enfermagem-coleta-de-exames-laboratoriais-1779563288910-8",
+    "univali-enfermagem-coleta-de-exames-laboratoriais-1779563165114-9",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562716126-4",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-3",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-4",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-5",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-9",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-0",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-1",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-7",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-8",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-0",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-1",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-3",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-4",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563248005-5",
+    "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563272300-7"
+  ]
+}

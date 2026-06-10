@@ -1,0 +1,16 @@
+{
+  "lote": "outras-questoes-mescladas-doencas-cronicas-nao-transmissiveis-lote-01",
+  "exported_at": "2026-06-10T05:27:13.758Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "idecan-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778712315153-8",
+    "idecan-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778712325916-0",
+    "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-5",
+    "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-6"
+  ]
+}

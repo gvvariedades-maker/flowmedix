@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-06-10T07:43:57.669Z",
+  "mode": "apply",
+  "tier_filter": null,
+  "catalog_total": 5180,
+  "mapped_legacy_labels": 27,
+  "skipped_already_canonical": 5180,
+  "skipped_unmapped": 0,
+  "would_change": 0,
+  "applied": 0,
+  "zod_failures": 0,
+  "by_from_label": {},
+  "by_to_label": {},
+  "unmapped_labels": {},
+  "samples": [],
+  "exceptions": []
+}

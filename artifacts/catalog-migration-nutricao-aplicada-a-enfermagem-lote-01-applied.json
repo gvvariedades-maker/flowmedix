@@ -1,0 +1,342 @@
+{
+  "generated_at": "2026-06-10T05:46:59.810Z",
+  "lote": "nutricao-aplicada-a-enfermagem-lote-01",
+  "mode": "apply",
+  "total_files": 47,
+  "ok": 47,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "amauc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-6",
+    "amauc-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-1",
+    "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-3",
+    "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-6",
+    "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-0",
+    "cebraspe-cespe-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-5",
+    "consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-6",
+    "copese-uft-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-3",
+    "cotec-fadenor-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-6",
+    "cotec-fadenor-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-2",
+    "cpcon-uepb-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-8",
+    "fafipa-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-4",
+    "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-7",
+    "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-7",
+    "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-6",
+    "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-9",
+    "fauel-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-5",
+    "fepese-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-3",
+    "funatec-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-4",
+    "gama-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-0",
+    "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
+    "idcap-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-0",
+    "ideap-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-5",
+    "idecan-enfermagem-nutricao-aplicada-a-enfermagem-1780066961947-2",
+    "idecan-enfermagem-nutricao-aplicada-a-enfermagem-1780066961947-3",
+    "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-4",
+    "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-2",
+    "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-4",
+    "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-5",
+    "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-7",
+    "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1780000630425-0",
+    "instituto-consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-7",
+    "instituto-consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-0",
+    "instituto-iacp-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-2",
+    "ms-sarmento-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-5",
+    "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-1",
+    "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-2",
+    "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-3",
+    "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-8",
+    "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-5",
+    "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-1",
+    "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-7",
+    "univida-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-3",
+    "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-1",
+    "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-4",
+    "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-1",
+    "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "amauc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-uft-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ideap-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nutricao-aplicada-a-enfermagem-1780066961947-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nutricao-aplicada-a-enfermagem-1780066961947-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1780000630425-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

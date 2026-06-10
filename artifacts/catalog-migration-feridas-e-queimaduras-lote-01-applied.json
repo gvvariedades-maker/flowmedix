@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-06-10T05:16:55.560Z",
+  "lote": "feridas-e-queimaduras-lote-01",
+  "mode": "apply",
+  "total_files": 9,
+  "ok": 9,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "icece-enfermagem-feridas-e-queimaduras-1780001297464-5",
+    "idecan-enfermagem-feridas-e-queimaduras-1778712409051-1",
+    "idecan-enfermagem-feridas-e-queimaduras-1778712409051-2",
+    "idecan-enfermagem-feridas-e-queimaduras-1778712409051-3",
+    "idecan-enfermagem-feridas-e-queimaduras-1780067013432-7",
+    "idecan-enfermagem-feridas-e-queimaduras-1780067013432-8",
+    "idecan-enfermagem-feridas-e-queimaduras-1780067013432-9",
+    "idib-enfermagem-feridas-e-queimaduras-1778934936220-2",
+    "quadrix-enfermagem-feridas-e-queimaduras-1780001297464-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "icece-enfermagem-feridas-e-queimaduras-1780001297464-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1780067013432-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1780067013432-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1780067013432-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-feridas-e-queimaduras-1778934936220-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-feridas-e-queimaduras-1780001297464-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-06-10T09:07:46.140Z",
+  "mode": "apply",
+  "bucket": "Questões Mescladas e Outras Doenças Agudas",
+  "min_confidence_apply": 0.85,
+  "limit": 10000,
+  "inference_source": "heuristic",
+  "summary": {
+    "scanned": 2,
+    "inferred": 2,
+    "errors": 0,
+    "keep_current": 0,
+    "same_subtopico": 0,
+    "applicable": 2,
+    "applied": 2
+  },
+  "proposals": [
+    {
+      "modulo_slug": "idecan-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1780066992037-8",
+      "from": "Questões Mescladas e Outras Doenças Agudas",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (O2): enunciado indica Oxigenoterapia e Cuidados Respiratórios",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1778934918280-2",
+      "from": "Questões Mescladas e Outras Doenças Agudas",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (O2): enunciado indica Oxigenoterapia e Cuidados Respiratórios",
+      "applicable": true,
+      "source": "heuristic"
+    }
+  ],
+  "apply_errors": []
+}

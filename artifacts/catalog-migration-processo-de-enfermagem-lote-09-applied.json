@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:39:50.837Z",
+  "lote": "processo-de-enfermagem-lote-09",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fcpc-enfermagem-processo-de-enfermagem-1780004628956-8",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004628956-9",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-0",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-1",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-2",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-3",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-4",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-5",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-6",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-7",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-8",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-9",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780001790945-9",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-0",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-1",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-2",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-3",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-4",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-5",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-6",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-7",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-8",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780001903454-0",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006456417-9",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-0",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-1",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-2",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-3",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-4",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-5",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-6",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-7",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-8",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-9",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-0",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-1",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-2",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-3",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-4",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-5",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-6",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-7",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-8",
+    "fepese-enfermagem-processo-de-enfermagem-1780002110600-7",
+    "fepese-enfermagem-processo-de-enfermagem-1780002110600-8",
+    "fepese-enfermagem-processo-de-enfermagem-1780002110600-9",
+    "fepese-enfermagem-processo-de-enfermagem-1780002217274-0",
+    "fepese-enfermagem-processo-de-enfermagem-1780002217274-1",
+    "fepese-enfermagem-processo-de-enfermagem-1780002217274-2",
+    "fepese-enfermagem-processo-de-enfermagem-1780002217274-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001790945-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001903454-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006456417-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002110600-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002110600-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002110600-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:44:56.976Z",
+  "lote": "processo-de-enfermagem-lote-19",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "legalle-enfermagem-processo-de-enfermagem-1780011887822-3",
+    "legalle-enfermagem-processo-de-enfermagem-1780011887822-4",
+    "legalle-enfermagem-processo-de-enfermagem-1780011967989-0",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1776056021381-2",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1776056140199-0",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-6",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-7",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-8",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-9",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-0",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-1",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-2",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-3",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-4",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-5",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-6",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-7",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-8",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-9",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008225255-0",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008225255-1",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008225255-2",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-4",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-5",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-6",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-7",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-8",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-9",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-0",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-1",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-2",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-3",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-4",
+    "quadrix-enfermagem-processo-de-enfermagem-1776056181857-6",
+    "quadrix-enfermagem-processo-de-enfermagem-1776056181857-7",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-2",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-3",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-4",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-5",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-6",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-7",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-8",
+    "quadrix-enfermagem-processo-de-enfermagem-1780008241722-9",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009281546-0",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009281546-1",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009281546-2",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009281546-3",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009281546-4",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009281546-5",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009281546-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011887822-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011887822-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011967989-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1776056021381-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1776056140199-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008225255-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008225255-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008225255-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1776056181857-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1776056181857-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-06-10T05:53:50.736Z",
+  "lote": "outros-temas-de-enfermagem-lote-01",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "icece-enfermagem-outros-temas-de-enfermagem-1780001440222-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "icece-enfermagem-outros-temas-de-enfermagem-1780001440222-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

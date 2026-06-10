@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T04:14:55.905Z",
+  "lote": "enfermagem-em-centro-cirurgico-lote-02",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103933896-0",
+    "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103933896-1",
+    "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103933896-2",
+    "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103933896-3",
+    "ibfc-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-3",
+    "ibfc-enfermagem-enfermagem-em-centro-cirurgico-1777103857889-3",
+    "ibfc-enfermagem-enfermagem-em-centro-cirurgico-1777103857889-5",
+    "ibfc-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-6",
+    "ibfc-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-7",
+    "ibfc-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-6",
+    "ibfc-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-0",
+    "idcap-enfermagem-enfermagem-em-centro-cirurgico-1777103843559-0",
+    "idcap-enfermagem-enfermagem-em-centro-cirurgico-1777103843559-1",
+    "idcap-enfermagem-enfermagem-em-centro-cirurgico-1777103843559-2",
+    "idcap-enfermagem-enfermagem-em-centro-cirurgico-1777103843559-3",
+    "idcap-enfermagem-enfermagem-em-centro-cirurgico-1777103843559-4",
+    "idcap-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-6",
+    "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-4",
+    "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-5",
+    "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-6",
+    "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-7",
+    "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-8",
+    "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712381105-0",
+    "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712381105-1",
+    "idecan-enfermagem-enfermagem-em-centro-cirurgico-1780067001671-6",
+    "idecan-enfermagem-enfermagem-em-centro-cirurgico-1780067001671-7",
+    "idecan-enfermagem-enfermagem-em-centro-cirurgico-1780067001671-8",
+    "idesg-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-2",
+    "idesg-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-3",
+    "idib-enfermagem-enfermagem-em-centro-cirurgico-1778934918280-7",
+    "idib-enfermagem-enfermagem-em-centro-cirurgico-1778934918280-8",
+    "ieses-enfermagem-enfermagem-em-centro-cirurgico-1777103843559-7",
+    "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1777103801993-5",
+    "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-4",
+    "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-1",
+    "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-2",
+    "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1780001148264-8",
+    "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1780001148264-9",
+    "imparh-enfermagem-enfermagem-em-centro-cirurgico-1777103907464-3",
+    "imparh-enfermagem-enfermagem-em-centro-cirurgico-1777103907464-4",
+    "inaz-do-para-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-4",
+    "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103843559-6",
+    "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103907464-6",
+    "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103907464-7",
+    "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103913966-0",
+    "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103913966-1",
+    "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103913966-2",
+    "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103913966-3",
+    "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103913966-4",
+    "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103913966-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103933896-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103933896-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103933896-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103933896-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-enfermagem-em-centro-cirurgico-1777103857889-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-enfermagem-em-centro-cirurgico-1777103857889-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-enfermagem-em-centro-cirurgico-1777103843559-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-enfermagem-em-centro-cirurgico-1777103843559-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-enfermagem-em-centro-cirurgico-1777103843559-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-enfermagem-em-centro-cirurgico-1777103843559-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-enfermagem-em-centro-cirurgico-1777103843559-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712381105-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712381105-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1780067001671-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1780067001671-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1780067001671-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-enfermagem-em-centro-cirurgico-1778934918280-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-enfermagem-em-centro-cirurgico-1778934918280-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-enfermagem-em-centro-cirurgico-1777103843559-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1777103801993-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1780001148264-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1780001148264-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-enfermagem-em-centro-cirurgico-1777103907464-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-enfermagem-em-centro-cirurgico-1777103907464-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103843559-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103907464-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103907464-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103913966-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103913966-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103913966-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103913966-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103913966-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-enfermagem-em-centro-cirurgico-1777103913966-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

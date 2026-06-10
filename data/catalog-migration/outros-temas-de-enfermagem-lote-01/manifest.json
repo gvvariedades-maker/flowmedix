@@ -1,0 +1,13 @@
+{
+  "lote": "outros-temas-de-enfermagem-lote-01",
+  "exported_at": "2026-06-10T05:53:43.694Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Outros Temas de Enfermagem",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "icece-enfermagem-outros-temas-de-enfermagem-1780001440222-3"
+  ]
+}

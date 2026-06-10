@@ -19,11 +19,16 @@ import {
   CreditCard,
   type LucideIcon,
 } from 'lucide-react';
+import { CadernoOnboardingBanner } from '@/components/onboarding/CadernoOnboardingBanner';
 import { EstudoReversoWelcomeModal } from '@/components/onboarding/EstudoReversoWelcomeModal';
+import { useCadernoOnboarding } from '@/components/onboarding/useCadernoOnboarding';
+import { subscribeNotebookActivationRefresh } from '@/lib/cadernos/notebookActivationBridge';
 import { PwaInstallProvider } from '@/components/pwa/PwaInstallProvider';
 import { PwaInstallNavButton } from '@/components/pwa/PwaInstallNavButton';
 import { useEstudoReversoWelcome } from '@/components/onboarding/useEstudoReversoWelcome';
 import { cn } from '@/lib/utils';
+import type { NotebookActivationStatus } from '@/lib/cadernos/activation';
+import { EMPTY_NOTEBOOK_ACTIVATION } from '@/lib/cadernos/activation';
 import type { ProSource } from '@/lib/freemium/constants';
 import { supabase } from '@/lib/supabase/client';
 import { ToastProvider } from '@/lib/toast-context';
@@ -138,6 +143,9 @@ type MatriculatedConcursoSummary = {
   slug: string;
   nome: string;
   tipo: 'geral' | 'edital';
+  banca: string | null;
+  orgao: string | null;
+  ano: number | null;
 };
 
 function getAssinaturaNavLabel(isAdminUser: boolean, proSource: ProSource): string | null {
@@ -383,6 +391,7 @@ function DashboardContent({
   initialDisplayName,
   initialIsAdmin,
   initialMatriculatedConcursos,
+  initialNotebookActivation,
   isPro,
   proSource,
   proExpiresAt,
@@ -392,6 +401,7 @@ function DashboardContent({
   initialDisplayName: string | null;
   initialIsAdmin: boolean;
   initialMatriculatedConcursos: MatriculatedConcursoSummary[];
+  initialNotebookActivation: NotebookActivationStatus;
   isPro: boolean;
   proSource: ProSource;
   proExpiresAt: string | null;
@@ -409,6 +419,23 @@ function DashboardContent({
   const isDashboardDesktop = useDashboardDesktop();
   const pageVariants = isDashboardDesktop ? pageVariantsDesktop : pageVariantsMobile;
   const estudoReversoWelcome = useEstudoReversoWelcome({ enabled: userEmail != null });
+  const cadernoOnboarding = useCadernoOnboarding({
+    enabled: userEmail != null,
+    initialActivation: initialNotebookActivation,
+    isAdmin: isAdminUser,
+    isPro,
+    proSource,
+    welcomeOpen: estudoReversoWelcome.isOpen,
+    questaoModalOpen: modalQuestaoAtivo,
+    estudarQuestaoImmersive,
+  });
+
+  useEffect(() => {
+    return subscribeNotebookActivationRefresh(() => {
+      void cadernoOnboarding.refreshActivation();
+    });
+  }, [cadernoOnboarding.refreshActivation]);
+
   /** Player inline no shell: main sem scroll externo para o card preencher a altura (desktop). */
   const estudarQuestaoFillViewport =
     parseEstudarSlugFromPathname(pathname) !== null && !modalQuestaoAtivo;
@@ -756,6 +783,16 @@ function DashboardContent({
           )}
         >
           {showBackToVitrine ? <BackToVitrineBar /> : null}
+          {cadernoOnboarding.isVisible ? (
+            <CadernoOnboardingBanner
+              isPro={isPro}
+              proSource={proSource}
+              editalAtivo={editalAtivo}
+              ctaHref={cadernoOnboarding.cta.href}
+              ctaLabel={cadernoOnboarding.cta.label}
+              onSnooze={cadernoOnboarding.snooze}
+            />
+          ) : null}
           <motion.div
             key={pathname?.split('/').slice(0, 2).join('/') ?? pathname}
             variants={pageVariants}
@@ -804,6 +841,7 @@ export default function DashboardShell({
   initialDisplayName = null,
   initialIsAdmin = false,
   initialMatriculatedConcursos = [],
+  initialNotebookActivation = EMPTY_NOTEBOOK_ACTIVATION,
   isPro = false,
   proSource = null,
   proExpiresAt = null,
@@ -813,6 +851,7 @@ export default function DashboardShell({
   initialDisplayName?: string | null;
   initialIsAdmin?: boolean;
   initialMatriculatedConcursos?: MatriculatedConcursoSummary[];
+  initialNotebookActivation?: NotebookActivationStatus;
   isPro?: boolean;
   proSource?: ProSource;
   proExpiresAt?: string | null;
@@ -825,6 +864,7 @@ export default function DashboardShell({
           initialDisplayName={initialDisplayName}
           initialIsAdmin={initialIsAdmin}
           initialMatriculatedConcursos={initialMatriculatedConcursos}
+          initialNotebookActivation={initialNotebookActivation}
           isPro={isPro}
           proSource={proSource}
           proExpiresAt={proExpiresAt}

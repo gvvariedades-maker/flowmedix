@@ -1,0 +1,1650 @@
+{
+  "generated_at": "2026-06-10T11:37:48.005Z",
+  "mode": "apply",
+  "bucket": "Atenção Básica / Saúde da Família",
+  "min_confidence_apply": 0.85,
+  "limit": 10000,
+  "inference_source": "gemini",
+  "summary": {
+    "scanned": 163,
+    "inferred": 163,
+    "errors": 0,
+    "keep_current": 118,
+    "same_subtopico": 118,
+    "applicable": 45,
+    "applied": 45
+  },
+  "proposals": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente as atribuições e o papel dos Agentes Comunitários de Saúde (ACS) e Agentes de Combate a Endemias (ACE) dentro da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente as atribuições do Agente Comunitário de Saúde no contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições do Agente Comunitário de Saúde no âmbito da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda as atribuições e o escopo de atuação do Agente Comunitário de Saúde dentro da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "A questão aborda o planejamento em saúde no âmbito do SUS, tema central da gestão e organização da Atenção Básica e políticas públicas.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967504475-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "A questão aborda diretamente as atribuições do Agente Comunitário de Saúde dentro da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado trata especificamente da organização e carga horária das Equipes de Saúde da Família Ribeirinha, tema central da Política Nacional de Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a estrutura e as diretrizes de dimensionamento populacional das equipes de Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente o sistema de informação e-SUS AB utilizado no contexto da Atenção Primária à Saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado foca explicitamente na atuação do técnico de enfermagem dentro da Estratégia Saúde da Família (ESF) e no acompanhamento de condições crônicas no contexto da atenção primária.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente a atuação do técnico de enfermagem dentro da Estratégia Saúde da Família e a dinâmica da visita domiciliar.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado descreve uma situação prática de atuação do técnico de enfermagem dentro do contexto da Estratégia Saúde da Família e assistência na Atenção Primária.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente a prática da visita domiciliar no contexto da Estratégia de Saúde da Família (ESF), tema central do subtópico indicado.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a atuação do técnico de enfermagem dentro da Estratégia Saúde da Família (ESF) e o contexto da Atenção Primária.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições e o papel do técnico de enfermagem dentro da Estratégia Saúde da Família (ESF).",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições do Agente Comunitário de Saúde dentro da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente o processo de trabalho do Agente Comunitário de Saúde e o cadastramento de famílias no âmbito da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente as atribuições e o papel do Agente Comunitário de Saúde (ACS) dentro da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente as atribuições e a atuação do Agente Comunitário de Saúde no contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente as atribuições do Agente Comunitário de Saúde dentro da estratégia de Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente o papel do Agente Comunitário de Saúde (ACS) e o conceito de intersetorialidade, pilares fundamentais da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado aborda orientações sobre hábitos saudáveis e hidratação, que se enquadram em ações de promoção à saúde e educação alimentar.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O cálculo de IMC é uma medida antropométrica utilizada em diversos contextos clínicos, não se restringindo exclusivamente à Atenção Básica.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "A aferição de peso corporal em ambiente hospitalar é um procedimento de rotina técnica relacionado ao monitoramento de parâmetros vitais e controle hídrico do paciente.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "avancasp-geral-atencao-basica-saude-da-familia-1778968221218-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda o diagnóstico comunitário e as atribuições do Agente Comunitário de Saúde (ACS) dentro do contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado trata de cuidados específicos de enfermagem na alimentação de pacientes com disfagia, o que se enquadra melhor em procedimentos de assistência ao paciente do que na atenção básica.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Saúde da Mulher",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o aleitamento materno e as características do colostro, temas centrais na assistência à saúde da mulher e puerpério.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o controle de vetores e manejo ambiental, temas centrais das ações de vigilância epidemiológica e controle de endemias.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Enfermagem do Trabalho",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "A questão aborda medidas de proteção e segurança do trabalho (hierarquia de controle de riscos) aplicadas aos agentes de combate a endemias.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "copese-uft-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado foca especificamente na Terapia Nutricional Enteral, abordando vias de administração, métodos de infusão e procedimentos de sondagem.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado descreve o conceito de estratificação de risco, que é uma ferramenta fundamental da gestão do cuidado e da organização da Atenção Básica e das Redes de Atenção à Saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda instrumentos de avaliação familiar utilizados especificamente no contexto da Atenção Primária à Saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968207422-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Saúde Mental",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Embora o contexto seja a Atenção Primária, o foco central da questão é a conduta e o manejo clínico de pacientes com transtornos mentais graves.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente as atribuições e a prática da visita domiciliar no contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda protocolos de encaminhamento da Atenção Básica para a atenção especializada, sendo este o tema central da questão.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições do Agente Comunitário de Saúde dentro da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente ferramentas de avaliação de risco familiar utilizadas no contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado aborda o manejo do aleitamento materno e conservação do leite, temas centrais da puericultura e saúde da criança.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-atencao-basica-saude-da-familia-1778968357339-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a atuação do Agente Comunitário de Saúde e a intersetorialidade, pilares fundamentais da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-atencao-basica-saude-da-familia-1778968357339-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente o trabalho do Agente Comunitário de Saúde e os instrumentos de registro do Sistema de Informação da Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968028412-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente a atuação do Agente Comunitário de Saúde (ACS) no contexto da visita domiciliar e da atenção primária à saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente o papel do Agente Comunitário de Saúde (ACS) e os determinantes sociais, temas centrais da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições e o papel do Agente Comunitário de Saúde (ACS) no contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda conceitos fundamentais da Estratégia Saúde da Família, como territorialização, microáreas e atuação do ACS, que são pilares da Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado foca exclusivamente na definição e aplicação prática de indicadores epidemiológicos (incidência, prevalência e mortalidade) no contexto da saúde pública.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda a avaliação de serviços e indicadores no contexto da atuação do Agente Comunitário de Saúde dentro da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fadesp-enfermagem-atencao-basica-saude-da-familia-1778968194611-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente as atribuições do técnico de enfermagem dentro do contexto da Política Nacional de Atenção Básica (PNAB).",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda a aplicação de triagem de risco em visita domiciliar, prática inerente às ações da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968039063-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O SIAB e seus instrumentos de coleta de dados (Ficha A) são componentes fundamentais da organização da Atenção Básica e da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968039063-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a composição e as diretrizes da Estratégia Saúde da Família (ESF).",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente as atribuições do técnico de enfermagem dentro do contexto da Estratégia Saúde da Família (ESF).",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a Estratégia Saúde da Família como um modelo de atenção à saúde, tema central do subtópico.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a definição e o local de realização da visita domiciliar no contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado descreve a dinâmica de trabalho em equipe dentro da Estratégia Saúde da Família, focada no planejamento e monitoramento das ações da unidade.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda conceitos fundamentais da Política Nacional de Atenção Básica, especificamente sobre o acolhimento como diretriz do processo de trabalho na ESF.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a estrutura e as diretrizes de dimensionamento populacional das equipes na Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "A questão aborda a função biológica de um micronutriente (ferro) no organismo, o que se enquadra no estudo das funções orgânicas e fisiologia.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.85,
+      "keep_current": false,
+      "rationale": "O enunciado trata de instrumentos de avaliação clínica e escalas de risco, que se enquadram melhor em procedimentos de avaliação geral do que em um subtópico específico.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "A questão aborda a fonte de obtenção da Vitamina D, tema relacionado à nutrição e prevenção de agravos à saúde.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-atencao-basica-saude-da-familia-1778968180610-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições do técnico de enfermagem dentro da Estratégia Saúde da Família e Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-atencao-basica-saude-da-familia-1778968239687-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "A comunicação terapêutica é uma competência transversal da enfermagem e não se enquadra em temas clínicos específicos, sendo melhor classificada como procedimento geral.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-atencao-basica-saude-da-familia-1778968144588-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente o acolhimento e os princípios do SUS no contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-atencao-basica-saude-da-familia-1778968156152-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a prática do técnico de enfermagem no contexto das unidades básicas de saúde e o acolhimento, que são pilares da Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda conceitos fundamentais da Atenção Primária à Saúde, como territorialização e planejamento em equipe, temas centrais da APS.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a atuação do técnico de enfermagem dentro da Estratégia de Saúde da Família e o cuidado integral ao idoso no contexto da APS.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente os princípios, diretrizes e responsabilidades da Atenção Básica conforme a Política Nacional de Atenção Básica (PNAB).",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a Política Nacional de Atenção Básica (PNAB) e as atribuições das equipes na Estratégia de Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968125784-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente diretrizes da Política Nacional de Atenção Básica (PNAB) sobre o acesso e o acolhimento nas unidades de saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968221218-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições das equipes no contexto da Atenção Básica, mantendo o tema central original.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-atencao-basica-saude-da-familia-1778968194611-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições do técnico de enfermagem dentro do contexto da Atenção Básica e Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-atencao-basica-saude-da-familia-1778968239687-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente o processo de trabalho na Estratégia Saúde da Família, focando nas atribuições e na rotina do Agente Comunitário de Saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-atencao-basica-saude-da-familia-1778968239687-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente a organização, atribuições e o funcionamento da equipe de enfermagem dentro do contexto das Unidades Básicas de Saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a prática da visita domiciliar no contexto da Estratégia de Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda conceitos fundamentais da Estratégia Saúde da Família, especificamente sobre a delimitação de microáreas e a atuação do Agente Comunitário de Saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a definição de área e o dimensionamento populacional dentro da Estratégia de Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente o conceito de territorialização, que é um pilar fundamental da organização da Atenção Básica e da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente o cadastramento familiar e as atribuições das equipes na Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições do Agente Comunitário de Saúde, tema central da Estratégia Saúde da Família e da Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições do Agente Comunitário de Saúde dentro do contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968323839-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretrizes da Estratégia Saúde da Família sobre o acompanhamento de gestantes na atenção primária.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a prática de visita domiciliar e a abordagem do agente comunitário no contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "A questão aborda a organização do trabalho na Estratégia Saúde da Família e o planejamento das visitas domiciliares.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente o cadastramento familiar e territorial, que são pilares fundamentais da Estratégia Saúde da Família na Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado trata da implementação de dietas hospitalares, um procedimento de assistência direta ao paciente que não se enquadra em categorias clínicas específicas.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-atencao-basica-saude-da-familia-1778968239687-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente o conceito de territorialização, que é um pilar fundamental da Estratégia Saúde da Família e da Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "O enunciado aborda competências e conhecimentos específicos voltados para a prática do Agente Comunitário de Saúde dentro da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda competências e ferramentas de trabalho específicas do Agente Comunitário de Saúde dentro do contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda territorialização e planejamento em saúde, conceitos fundamentais da Atenção Básica e Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda a gestão de condicionalidades de programas sociais no âmbito da Estratégia Saúde da Família e da Atenção Primária.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-atencao-basica-saude-da-familia-1778968112153-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado foca especificamente em medidas de prevenção de doenças e promoção da saúde bucal, o que se enquadra melhor no subtópico de prevenção de agravos.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "A questão aborda a avaliação antropométrica e o cálculo de IMC, que são ferramentas fundamentais na promoção da saúde e prevenção de agravos nutricionais.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ideap-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado foca especificamente em orientações nutricionais voltadas para o acompanhamento pré-natal de gestantes.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712418722-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado descreve medidas de controle ambiental e vigilância sanitária para prevenção de zoonoses, típicas de ações de vigilância epidemiológica.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778968263411-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado descreve medidas de controle ambiental e vigilância sanitária voltadas ao combate de roedores, típicas das ações de vigilância epidemiológica e controle de zoonoses.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1780067024707-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente as atribuições do Agente Comunitário de Saúde dentro do contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1780067024707-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Saúde da Mulher",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda especificamente a assistência ao puerpério, que é um tema central dentro da saúde da mulher.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nutricao-aplicada-a-enfermagem-1780066961947-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "A questão aborda orientações nutricionais voltadas à prevenção de doenças crônicas como a hipertensão arterial.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nutricao-aplicada-a-enfermagem-1780066961947-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a função dos nutrientes e a importância das vitaminas para a saúde, tema central de educação nutricional e promoção da saúde.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente os princípios, objetivos e a estrutura da Estratégia Saúde da Família (ESF).",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda a intersetorialidade como diretriz fundamental da gestão e do cuidado no âmbito da Atenção Básica e da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778968194611-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente os princípios, objetivos e a estrutura da Estratégia Saúde da Família (ESF).",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a organização e o programa central da Atenção Básica no Brasil.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado foca especificamente nas atribuições do técnico de enfermagem dentro do contexto da assistência na Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado contextualiza o atendimento dentro da Estratégia Saúde da Família e foca nas atribuições do técnico no acompanhamento de pacientes crônicos na APS.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado foca especificamente nas ações de enfermagem voltadas ao enfrentamento e controle de verminoses, que se enquadram no subtópico de doenças parasitárias.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado foca explicitamente nas atribuições do Técnico de Enfermagem dentro da Estratégia Saúde da Família (ESF) no contexto da atenção oncológica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições do técnico de enfermagem dentro da Estratégia Saúde da Família e o contexto da Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a operacionalização da assistência ao idoso no contexto da Atenção Básica e das Unidades Básicas de Saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente as atribuições e deveres éticos do Agente Comunitário de Saúde (ACS) no contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado trata especificamente de instrumentos de registro e acompanhamento utilizados no âmbito da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001297464-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado foca especificamente nas atribuições do técnico de enfermagem dentro do contexto da assistência à criança na Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001297464-9",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado contextualiza o atendimento dentro da Estratégia Saúde da Família e foca nas atribuições do técnico de enfermagem no acompanhamento de pacientes crônicos na APS.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Embora o contexto seja a Atenção Básica, o foco central da questão é a atuação do técnico frente às verminoses, que se enquadra melhor em doenças parasitárias.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado foca especificamente nas atribuições do técnico de enfermagem dentro do contexto da Estratégia Saúde da Família (ESF) e da Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições do técnico de enfermagem dentro da Estratégia Saúde da Família e o contexto da Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado aborda especificamente a nutrição e o desenvolvimento fetal no contexto da gestação, tema central da saúde da mulher.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a classificação e função de nutrientes no organismo humano, tema central da fisiologia da nutrição.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado trata de tipos de dietas hospitalares, que se enquadra melhor em procedimentos gerais de assistência ao paciente do que em atenção básica.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda orientações dietéticas e de estilo de vida para pacientes com diabetes, que é uma doença crônica não transmissível.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-atencao-basica-saude-da-familia-1778968207422-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições do Agente Comunitário de Saúde no contexto da Estratégia Saúde da Família e territorialização.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-atencao-basica-saude-da-familia-1778968207422-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições dos Agentes Comunitários de Saúde no contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-atencao-basica-saude-da-familia-1778968221218-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as ferramentas de trabalho do Agente Comunitário de Saúde, figura central na Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-access-geral-atencao-basica-saude-da-familia-1778968207422-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a territorialização e a atuação do Agente Comunitário de Saúde, pilares da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968094018-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente as atribuições do técnico de enfermagem dentro do contexto da Atenção Primária à Saúde e puericultura.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a estrutura familiar no contexto da Estratégia de Saúde da Família (ESF), sendo um tema central da Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente o papel do Agente Comunitário de Saúde e da Equipe de Saúde da Família (ESF) no contexto da atenção primária.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda conceitos de estrutura familiar no contexto da assistência e do cuidado na Atenção Primária à Saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado aborda especificamente cuidados com a pele do recém-nascido e orientações de puericultura, temas centrais da saúde da criança.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda ações específicas realizadas na Unidade Básica de Saúde (UBS) dentro do contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Saúde da Criança",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "O enunciado aborda especificamente o acompanhamento do crescimento e desenvolvimento infantil (puericultura) e o calendário de consultas de rotina para crianças.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968144588-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado foca especificamente na assistência ao recém-nascido e puerpério, temas centrais da puericultura e saúde da criança.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968194611-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Imunização",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "Embora o enunciado mencione a ESF, o conteúdo central da questão é sobre os passos operacionais e estratégias específicas do programa de imunização.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968323839-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda o planejamento e o conhecimento do território, conceitos fundamentais da estratégia de Saúde da Família e da Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O cálculo do IMC é uma medida antropométrica fundamental utilizada na avaliação nutricional e rastreamento de riscos à saúde na atenção primária.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "A questão aborda conceitos de nutrição e metabolismo, que se enquadram melhor no estudo das funções orgânicas e fisiologia aplicada.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "A questão aborda a terminologia técnica relacionada a uma função orgânica (paladar) e suas alterações fisiológicas no envelhecimento.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado aborda especificamente o controle de vetores e arboviroses, tema central das zoonoses e doenças parasitárias.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda a visita domiciliar no contexto da Estratégia Saúde da Família e o acompanhamento do binômio mãe-filho na APS.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições do técnico de enfermagem dentro da Política Nacional de Atenção Básica e da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "intec-enfermagem-atencao-basica-saude-da-familia-1778968357339-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "O enunciado trata especificamente do fluxo de encaminhamento da Atenção Básica para serviços especializados no contexto de protocolos de saúde pública.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-atencao-basica-saude-da-familia-1778968263411-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente o conceito de matriciamento, que é uma estratégia fundamental e estruturante da Atenção Básica e da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-atencao-basica-saude-da-familia-1778968263411-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente o rastreamento e diagnóstico de hipertensão no contexto da Atenção Básica, seguindo as diretrizes de manejo clínico na APS.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-atencao-basica-saude-da-familia-1778968207422-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições do ACS e o processo de cadastramento de famílias, que são pilares da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretrizes de gestão, cogestão e humanização no contexto da rede de atenção à saúde, temas centrais da Política Nacional de Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "A questão aborda a definição fisiológica e clínica de um distúrbio da deglutição, tratando de funções orgânicas básicas.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado aborda especificamente o manejo e classificação da obesidade, que é uma doença crônica não transmissível, conforme o Caderno de Atenção Básica.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-atencao-basica-saude-da-familia-1778968357339-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as atribuições dos profissionais de enfermagem dentro do contexto específico da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-atencao-basica-saude-da-familia-1778968125784-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as diretrizes e as atribuições do técnico de enfermagem no contexto da Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "A NOB/SUS 96 é um marco fundamental na estruturação da gestão e organização do SUS, sendo um tema central dentro da Atenção Básica e políticas de saúde.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1778967504475-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado aborda atividades de vigilância e controle de vetores, que são competências centrais da vigilância epidemiológica e controle de endemias.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1778968028412-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente as atribuições do técnico de enfermagem dentro do contexto da Atenção Básica e do programa de pré-natal.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1778968357339-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente as atribuições do Agente Comunitário de Saúde dentro do contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1780001297464-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente as atribuições do técnico de enfermagem dentro do programa de pré-natal no contexto da Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado aborda conceitos de guias alimentares e classificação de alimentos, temas centrais das ações de promoção à saúde e educação alimentar na atenção básica.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968077998-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente as diretrizes e o cuidado integral no contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968125784-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda diretamente a Política Nacional de Atenção Básica e a estratégia prioritária de consolidação da ESF.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968323839-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente as atribuições do técnico de enfermagem no contexto da assistência pré-natal dentro da Atenção Básica.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda conceitos fundamentais da Estratégia Saúde da Família, especificamente o conceito de população adscrita no território.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda especificamente as atribuições do técnico de enfermagem dentro do contexto da Atenção Básica e da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda a dinâmica de trabalho em equipe multiprofissional no contexto da Estratégia Saúde da Família.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 1,
+      "keep_current": false,
+      "rationale": "A questão aborda a classificação de dietas hospitalares, que se enquadra em procedimentos de assistência nutricional e cuidados gerais de enfermagem.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "O enunciado aborda especificamente cuidados técnicos na administração de dieta por sonda nasoenteral, focando na prevenção de complicações gastrointestinais relacionadas ao procedimento.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "A recomendação de consumo de sal está diretamente relacionada à prevenção de doenças crônicas como a hipertensão arterial.",
+      "applicable": true,
+      "source": "gemini"
+    }
+  ],
+  "apply_errors": []
+}

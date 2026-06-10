@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-06-09T21:34:43.776Z",
+  "lote": "layout-pilot-v2",
+  "mode": "apply",
+  "total_files": 10,
+  "ok": 10,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-vias-de-administracao-1776056401060-9",
+    "ameosc-enfermagem-imunizacao-1779572207173-7",
+    "ameosc-enfermagem-processo-de-enfermagem-1780002934000-7",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3",
+    "ameosc-enfermagem-vias-de-administracao-1776056348175-5",
+    "avancasp-enfermagem-vias-de-administracao-1776056338955-1",
+    "cebraspe-cespe-enfermagem-vias-de-administracao-1776056401060-2",
+    "fgv-enfermagem-imunizacao-1779564085730-5",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777104007115-6",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-vias-de-administracao-1776056401060-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056348175-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056338955-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1776056401060-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564085730-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104007115-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -26,6 +26,7 @@ import {
   type EstudarSearchParams,
 } from '@/lib/estudar/parseEstudarSearchParams';
 import type { EstudarQuestaoBuildResult } from '@/lib/estudar/questaoPlayerPayload';
+import type { NotebookActivationStatus } from '@/lib/cadernos/activation';
 import {
   getVitrineFacetsFilterTag,
   getVitrineFacetsFiltersHash,
@@ -54,6 +55,7 @@ import {
   invalidateQuestaoSlugsCache,
   invalidateHistoricoCache,
   invalidateHistoricoUserCache,
+  invalidateNotebookActivationCache,
   invalidateVitrinePageCache,
   invalidateVitrineFacetsCache,
 } from '@/lib/cache/revalidate';
@@ -68,9 +70,13 @@ export {
   invalidateQuestaoSlugsCache,
   invalidateHistoricoCache,
   invalidateHistoricoUserCache,
+  invalidateNotebookActivationCache,
   invalidateVitrinePageCache,
   invalidateVitrineFacetsCache,
 } from '@/lib/cache/revalidate';
+
+export type { NotebookActivationStatus } from '@/lib/cadernos/activation';
+export { EMPTY_NOTEBOOK_ACTIVATION } from '@/lib/cadernos/activation';
 
 export type { VitrineFacetsCacheFilters, VitrinePageCacheFilters, EstudarSearchParams };
 export {
@@ -671,6 +677,34 @@ export async function getHistoricoQuestoesCached(userId?: string) {
       ...CACHE_CONFIG.USER,
       tags: ['historico', 'user', userId ? `user-${userId}` : 'global'],
     }
+  )();
+}
+
+/**
+ * Status de ativação de cadernos (onboarding / banner).
+ * Revalida a cada 2 minutos; invalidar via `invalidateNotebookActivationCache`.
+ */
+export async function getNotebookActivationCached(
+  userId?: string,
+): Promise<NotebookActivationStatus> {
+  if (!userId) {
+    const { EMPTY_NOTEBOOK_ACTIVATION } = await import('@/lib/cadernos/activation');
+    return EMPTY_NOTEBOOK_ACTIVATION;
+  }
+
+  const cacheKey = `notebook-activation-${userId}`;
+
+  return unstable_cache(
+    async () => {
+      const { getNotebookActivationStatus } = await import('@/lib/cadernos/activation');
+      trackUnstableCacheFetch(cacheKey);
+      return getNotebookActivationStatus(userId);
+    },
+    [cacheKey],
+    {
+      ...CACHE_CONFIG.USER,
+      tags: ['notebook-activation', 'user', `user-${userId}`],
+    },
   )();
 }
 

@@ -44,6 +44,8 @@
     "catalog:apply-lote": "tsx scripts/catalog-migration-apply-lote.ts",
     "catalog:upgrade-premium": "tsx scripts/catalog-migration-upgrade-premium.ts",
     "catalog:strip-layout-variant": "tsx scripts/catalog-migration-strip-layout-variant.ts",
+    "catalog:reclassify-subtopico": "tsx scripts/catalog-reclassify-subtopico-cli.ts",
+    "catalog:infer-subtopico": "tsx scripts/catalog-infer-subtopico-cli.ts",
     "export:simulado-pool": "tsx scripts/export-public-simulado-pool.ts"
   },
   "dependencies": {

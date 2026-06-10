@@ -1,0 +1,125 @@
+{
+  "generated_at": "2026-06-10T04:06:11.391Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-lote-05",
+  "mode": "apply",
+  "total_files": 16,
+  "ok": 16,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "unifil-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-4",
+    "univali-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-0",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-9",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-0",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-5",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-6",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-5",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-4",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-4",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-5",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-8",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-3",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-7",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-1",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-2",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "unifil-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

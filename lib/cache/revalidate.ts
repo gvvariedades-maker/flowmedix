@@ -67,6 +67,9 @@ export const invalidateHistoricoUserCache = (userId: string) =>
     getVitrineFacetsUserTag(userId),
   ]);
 
+export const invalidateNotebookActivationCache = (userId: string) =>
+  revalidateCache(['notebook-activation', 'user', `user-${userId}`]);
+
 export const invalidateVitrinePageCache = (
   userId?: string,
   filters?: VitrinePageCacheFilters,

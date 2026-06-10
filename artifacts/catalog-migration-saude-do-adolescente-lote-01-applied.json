@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-06-10T05:07:14.888Z",
+  "lote": "saude-do-adolescente-lote-01",
+  "mode": "apply",
+  "total_files": 11,
+  "ok": 11,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "agirh-enfermagem-saude-do-adolescente-1777104229064-4",
+    "amauc-enfermagem-saude-do-adolescente-1777104229064-5",
+    "amauc-enfermagem-saude-do-adolescente-1777104229064-6",
+    "cogeps-unioeste-enfermagem-saude-do-adolescente-1777104229064-7",
+    "fau-unicentro-enfermagem-saude-do-adolescente-1777104229064-3",
+    "funcern-enfermagem-saude-do-adolescente-1777104229064-1",
+    "ideap-enfermagem-saude-do-adolescente-1777104229064-2",
+    "idecan-enfermagem-saude-do-adolescente-1778712426701-6",
+    "idecan-enfermagem-saude-do-adolescente-1778712426701-7",
+    "idecan-enfermagem-saude-do-adolescente-1778712426701-8",
+    "nao-informado-geral-saude-do-adolescente-1777104229064-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "agirh-enfermagem-saude-do-adolescente-1777104229064-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-do-adolescente-1777104229064-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-do-adolescente-1777104229064-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-saude-do-adolescente-1777104229064-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-do-adolescente-1777104229064-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-saude-do-adolescente-1777104229064-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ideap-enfermagem-saude-do-adolescente-1777104229064-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-saude-do-adolescente-1777104229064-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

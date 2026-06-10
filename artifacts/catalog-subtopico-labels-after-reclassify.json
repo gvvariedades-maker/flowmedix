@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-06-10T07:44:12.740Z",
+  "distinct_labels": 42,
+  "legacy_labels": 0,
+  "legacy": [],
+  "top_labels": [
+    [
+      "Processo de Enfermagem",
+      1067
+    ],
+    [
+      "Verificação de Sinais Vitais",
+      483
+    ],
+    [
+      "Imunização",
+      476
+    ],
+    [
+      "Vias de Administração",
+      253
+    ],
+    [
+      "Urgências e Emergências",
+      229
+    ],
+    [
+      "Coleta de Exames Laboratoriais",
+      226
+    ],
+    [
+      "Epidemiologia e Vigilância Epidemiológica",
+      216
+    ],
+    [
+      "Atenção Básica / Saúde da Família",
+      203
+    ],
+    [
+      "Saúde da Mulher",
+      184
+    ],
+    [
+      "Instalação e Manejo de Sondas",
+      155
+    ],
+    [
+      "Oxigenoterapia e Cuidados Respiratórios",
+      151
+    ],
+    [
+      "Promoção à Saúde e Prevenção de Agravos",
+      145
+    ],
+    [
+      "Segurança do Paciente",
+      145
+    ],
+    [
+      "Curativos e Manejo de Feridas",
+      139
+    ],
+    [
+      "Enfermagem em Centro Cirúrgico",
+      139
+    ]
+  ]
+}

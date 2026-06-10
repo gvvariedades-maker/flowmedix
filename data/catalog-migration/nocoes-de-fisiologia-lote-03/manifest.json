@@ -1,0 +1,24 @@
+{
+  "lote": "nocoes-de-fisiologia-lote-03",
+  "exported_at": "2026-06-10T04:28:50.327Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Noções de Fisiologia",
+    "limit": 50,
+    "exclude_count": 98
+  },
+  "slugs": [
+    "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775448615466-3",
+    "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775501962697-1",
+    "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775501962697-4",
+    "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775503376143-0",
+    "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1776055998470-3",
+    "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1776056116422-4",
+    "quadrix-enfermagem-nocoes-de-fisiologia-1775501938701-1",
+    "sc-treinamentos-enfermagem-nocoes-de-fisiologia-1776055986110-5",
+    "selecon-enfermagem-nocoes-de-fisiologia-1775448586547-1",
+    "unesc-enfermagem-nocoes-de-fisiologia-1775501962697-0",
+    "unesc-enfermagem-nocoes-de-fisiologia-1776055811481-0",
+    "unesc-enfermagem-nocoes-de-fisiologia-1776055811481-1"
+  ]
+}

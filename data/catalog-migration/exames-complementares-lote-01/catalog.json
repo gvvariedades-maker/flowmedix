@@ -1,0 +1,301 @@
+{
+  "exported_at": "2026-06-10T05:47:17.795Z",
+  "lote": "exames-complementares-lote-01",
+  "total": 42,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-exames-complementares-1779563668619-6",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3314
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-exames-complementares-1779563679414-3",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3328
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-complementares-1779563650975-7",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3297
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-complementares-1779563679414-1",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3326
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-exames-complementares-1779563655698-8",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3306
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-exames-complementares-1779563655698-9",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3307
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-complementares-1779563655698-2",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3300
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-complementares-1779563655698-3",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3301
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-complementares-1779563668619-0",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3308
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-exames-complementares-1779423306557-0",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 2864
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-exames-complementares-1779563668619-7",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3315
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-exames-complementares-1779563679414-2",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3327
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-exames-complementares-1779563674260-8",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3325
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-exames-complementares-1779563668619-5",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 3313
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563650975-6",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3296
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563655698-0",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3298
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563655698-6",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3304
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563668619-2",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3310
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563668619-3",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3311
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563674260-3",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3320
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563679414-5",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3330
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563685104-1",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3332
+    },
+    {
+      "modulo_slug": "gama-enfermagem-exames-complementares-1779563674260-2",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 3319
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-exames-complementares-1779563674260-0",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 3317
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-exames-complementares-1779563668619-8",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 3316
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-complementares-1778712242196-2",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1586
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-complementares-1779563685104-2",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 3333
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-exames-complementares-1779563655698-1",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3299
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-exames-complementares-1779563674260-5",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 3322
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-exames-complementares-1779563674260-6",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 3323
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-exames-complementares-1779563655698-7",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO EVO",
+      "avant_codigo": 3305
+    },
+    {
+      "modulo_slug": "isba-enfermagem-exames-complementares-1779563685104-3",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "ISBA",
+      "avant_codigo": 3334
+    },
+    {
+      "modulo_slug": "iset-enfermagem-exames-complementares-1779563655698-4",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "ISET",
+      "avant_codigo": 3302
+    },
+    {
+      "modulo_slug": "iset-enfermagem-exames-complementares-1779563655698-5",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "ISET",
+      "avant_codigo": 3303
+    },
+    {
+      "modulo_slug": "itame-enfermagem-exames-complementares-1779563679414-4",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 3329
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-exames-complementares-1779563668619-1",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 3309
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-exames-complementares-1779563668619-4",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3312
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-exames-complementares-1779563674260-7",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3324
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-exames-complementares-1779563674260-4",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 3321
+    },
+    {
+      "modulo_slug": "univali-enfermagem-exames-complementares-1779563674260-1",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 3318
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-complementares-1779424094915-0",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2865
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-complementares-1779563685104-0",
+      "titulo_aula": "Exames complementares",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3331
+    }
+  ]
+}

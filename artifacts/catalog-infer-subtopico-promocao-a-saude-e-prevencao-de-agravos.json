@@ -1,0 +1,1468 @@
+{
+  "generated_at": "2026-06-10T10:58:56.529Z",
+  "mode": "infer",
+  "bucket": "Promoção à Saúde e Prevenção de Agravos",
+  "min_confidence_apply": 0.85,
+  "limit": 10000,
+  "inference_source": "heuristic",
+  "summary": {
+    "scanned": 145,
+    "inferred": 145,
+    "errors": 0,
+    "keep_current": 77,
+    "same_subtopico": 77,
+    "applicable": 68
+  },
+  "proposals": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "aocp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-9",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (DCNT): enunciado indica Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (parasitária): enunciado indica Doenças Parasitárias e Zoonoses",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Enfermagem em Central de Material e Esterilização (CME)",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (CME): enunciado indica Enfermagem em Central de Material e Esterilização (CME)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "contemax-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (parasitária): enunciado indica Doenças Parasitárias e Zoonoses",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.85,
+      "keep_current": false,
+      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (parasitária): enunciado indica Doenças Parasitárias e Zoonoses",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Heurística (criança): enunciado indica Saúde da Criança",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (viral): enunciado indica Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (mulher): enunciado indica Saúde da Mulher",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Imunização",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (imunização): enunciado indica Imunização",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (mulher): enunciado indica Saúde da Mulher",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Curativos e Manejo de Feridas",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Heurística (curativos): enunciado indica Curativos e Manejo de Feridas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (parasitária): enunciado indica Doenças Parasitárias e Zoonoses",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibam-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.85,
+      "keep_current": false,
+      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Heurística (criança): enunciado indica Saúde da Criança",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (parasitária): enunciado indica Doenças Parasitárias e Zoonoses",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1778712437306-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1778712437306-9",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.85,
+      "keep_current": false,
+      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067036141-9",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (viral): enunciado indica Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-homem-1780067036141-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Imunização",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (imunização): enunciado indica Imunização",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1780067036141-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778934900821-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-do-homem-1778934944659-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-do-idoso-1778934944659-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.85,
+      "keep_current": false,
+      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-do-idoso-1778934944659-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Imunização",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (imunização): enunciado indica Imunização",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-do-idoso-1780001440222-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-do-idoso-1780001440222-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Imunização",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (imunização): enunciado indica Imunização",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Heurística (criança): enunciado indica Saúde da Criança",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-9",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-9",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-9",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.85,
+      "keep_current": false,
+      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Curativos e Manejo de Feridas",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Heurística (curativos): enunciado indica Curativos e Manejo de Feridas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (promoção): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-0",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Heurística (criança): enunciado indica Saúde da Criança",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-1",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (DCNT): enunciado indica Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-4",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Curativos e Manejo de Feridas",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Heurística (curativos): enunciado indica Curativos e Manejo de Feridas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-6",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-5",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-7",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-8",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-2",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-3",
+      "from": "Promoção à Saúde e Prevenção de Agravos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    }
+  ]
+}

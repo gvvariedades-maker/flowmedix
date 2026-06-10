@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-06-10T04:19:17.396Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-lote-03",
+  "mode": "apply",
+  "total_files": 10,
+  "ok": 10,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6",
+    "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-6",
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-2",
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-3",
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-2",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-4",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-4",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-0",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

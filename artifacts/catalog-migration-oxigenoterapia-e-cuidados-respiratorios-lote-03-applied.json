@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T03:55:43.977Z",
+  "lote": "oxigenoterapia-e-cuidados-respiratorios-lote-03",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "imparh-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-1",
+    "imparh-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344701804-6",
+    "instituto-access-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-2",
+    "instituto-access-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-6",
+    "instituto-access-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-7",
+    "instituto-aocp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-6",
+    "instituto-consulpam-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-1",
+    "instituto-consulplan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344701804-4",
+    "instituto-consulplan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-6",
+    "instituto-consulplan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-7",
+    "instituto-iacp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-4",
+    "instituto-jk-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-3",
+    "instituto-jk-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-4",
+    "instituto-verbena-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-1",
+    "itame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-6",
+    "itame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-2",
+    "ivin-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-7",
+    "legalle-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344742779-4",
+    "lj-assessoria-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-3",
+    "lj-assessoria-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-5",
+    "maranatha-assessoria-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-8",
+    "ms-sarmento-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-3",
+    "ms-sarmento-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-6",
+    "ms-sarmento-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-0",
+    "nosso-rumo-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-5",
+    "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-0",
+    "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-5",
+    "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-3",
+    "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-4",
+    "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-5",
+    "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-7",
+    "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-8",
+    "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-7",
+    "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-6",
+    "omni-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344742779-1",
+    "omni-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344751294-4",
+    "quadrix-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-7",
+    "quadrix-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1780000535393-0",
+    "selecon-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-7",
+    "selecon-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-6",
+    "selecon-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-9",
+    "unesc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-6",
+    "unesc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-3",
+    "unifil-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-7",
+    "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-8",
+    "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-9",
+    "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-5",
+    "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-8",
+    "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-1",
+    "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344667377-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "imparh-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344701804-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344701804-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344742779-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344742779-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344751294-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1780000535393-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344667377-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

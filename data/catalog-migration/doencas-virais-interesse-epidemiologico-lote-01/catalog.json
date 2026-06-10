@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-10T04:41:11.010Z",
+  "lote": "doencas-virais-interesse-epidemiologico-lote-01",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "amauc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103604185-3",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "AMAUC",
+      "avant_codigo": 993
+    },
+    {
+      "modulo_slug": "apice-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-7",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "ÁPICE",
+      "avant_codigo": 940
+    },
+    {
+      "modulo_slug": "apice-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103554284-1",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "ÁPICE",
+      "avant_codigo": 948
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103539922-0",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 941
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103539922-1",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 942
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103611576-6",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 1004
+    },
+    {
+      "modulo_slug": "cev-urca-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103478442-0",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "CEV URCA",
+      "avant_codigo": 896
+    },
+    {
+      "modulo_slug": "consulplan-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103583552-1",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "CONSULPLAN",
+      "avant_codigo": 968
+    },
+    {
+      "modulo_slug": "contemax-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103496829-2",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "CONTEMAX",
+      "avant_codigo": 912
+    },
+    {
+      "modulo_slug": "copese-ufpi-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103554284-6",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "COPESE UFPI",
+      "avant_codigo": 953
+    },
+    {
+      "modulo_slug": "coseac-uff-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103502990-5",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "COSEAC UFF",
+      "avant_codigo": 924
+    },
+    {
+      "modulo_slug": "cotec-fadenor-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103562647-2",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 957
+    },
+    {
+      "modulo_slug": "cotec-fadenor-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103597693-5",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 988
+    },
+    {
+      "modulo_slug": "cpcon-uepb-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103478442-1",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 897
+    },
+    {
+      "modulo_slug": "cpcon-uepb-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103496829-3",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 913
+    },
+    {
+      "modulo_slug": "cpcon-uepb-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103590498-6",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 982
+    },
+    {
+      "modulo_slug": "fau-unicentro-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103539922-7",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 946
+    },
+    {
+      "modulo_slug": "fau-unicentro-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103575693-2",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 960
+    },
+    {
+      "modulo_slug": "fau-unicentro-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103597693-4",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 987
+    },
+    {
+      "modulo_slug": "fcc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103510083-3",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "FCC",
+      "avant_codigo": 930
+    },
+    {
+      "modulo_slug": "fepese-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103510083-4",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "FEPESE",
+      "avant_codigo": 931
+    },
+    {
+      "modulo_slug": "fepese-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103583552-2",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "FEPESE",
+      "avant_codigo": 969
+    },
+    {
+      "modulo_slug": "fgv-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103575693-1",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "FGV",
+      "avant_codigo": 959
+    },
+    {
+      "modulo_slug": "fumarc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1776580984502-0",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "FUMARC",
+      "avant_codigo": 637
+    },
+    {
+      "modulo_slug": "funcern-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103539922-2",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "FUNCERN",
+      "avant_codigo": 943
+    },
+    {
+      "modulo_slug": "funcern-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103539922-5",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "FUNCERN",
+      "avant_codigo": 945
+    },
+    {
+      "modulo_slug": "fundatec-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103478442-2",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "FUNDATEC",
+      "avant_codigo": 898
+    },
+    {
+      "modulo_slug": "fundatec-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103583552-5",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "FUNDATEC",
+      "avant_codigo": 972
+    },
+    {
+      "modulo_slug": "furb-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1776576717580-0",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "FURB",
+      "avant_codigo": 630
+    },
+    {
+      "modulo_slug": "furb-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-5",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "FURB",
+      "avant_codigo": 938
+    },
+    {
+      "modulo_slug": "gama-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1776579669882-0",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "GAMA",
+      "avant_codigo": 636
+    },
+    {
+      "modulo_slug": "ibade-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103452899-0",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "IBADE",
+      "avant_codigo": 877
+    },
+    {
+      "modulo_slug": "ibade-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103510083-5",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "IBADE",
+      "avant_codigo": 932
+    },
+    {
+      "modulo_slug": "ibade-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103590498-3",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "IBADE",
+      "avant_codigo": 979
+    },
+    {
+      "modulo_slug": "ibfc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103496829-5",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "IBFC",
+      "avant_codigo": 915
+    },
+    {
+      "modulo_slug": "ibfc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-6",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "IBFC",
+      "avant_codigo": 939
+    },
+    {
+      "modulo_slug": "idcap-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103478442-4",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "IDCAP",
+      "avant_codigo": 900
+    },
+    {
+      "modulo_slug": "idecan-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103496829-8",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "IDECAN",
+      "avant_codigo": 918
+    },
+    {
+      "modulo_slug": "igeduc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103471372-2",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "IGEDUC",
+      "avant_codigo": 888
+    },
+    {
+      "modulo_slug": "igeduc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103471372-3",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "IGEDUC",
+      "avant_codigo": 889
+    },
+    {
+      "modulo_slug": "igeduc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103471372-6",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "IGEDUC",
+      "avant_codigo": 892
+    },
+    {
+      "modulo_slug": "instituto-access-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103510083-1",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 928
+    },
+    {
+      "modulo_slug": "instituto-consulpam-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103575693-6",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 964
+    },
+    {
+      "modulo_slug": "instituto-consulpam-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103575693-7",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 965
+    },
+    {
+      "modulo_slug": "instituto-consulplan-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103471372-9",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 895
+    },
+    {
+      "modulo_slug": "instituto-verbena-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103452899-1",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 878
+    },
+    {
+      "modulo_slug": "instituto-verbena-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103452899-8",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 885
+    },
+    {
+      "modulo_slug": "instituto-verbena-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103583552-7",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 974
+    },
+    {
+      "modulo_slug": "ivin-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103478442-3",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "IVIN",
+      "avant_codigo": 899
+    },
+    {
+      "modulo_slug": "ivin-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103496829-1",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Geral",
+      "banca": "IVIN",
+      "avant_codigo": 911
+    }
+  ]
+}

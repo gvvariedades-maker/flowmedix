@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:45:55.129Z",
+  "lote": "processo-de-enfermagem-lote-21",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "unifil-enfermagem-processo-de-enfermagem-1780003654722-1",
+    "unifil-enfermagem-processo-de-enfermagem-1780003654722-2",
+    "unifil-enfermagem-processo-de-enfermagem-1780004452857-4",
+    "unifil-enfermagem-processo-de-enfermagem-1780004452857-5",
+    "unifil-enfermagem-processo-de-enfermagem-1780004452857-6",
+    "unifil-enfermagem-processo-de-enfermagem-1780004452857-7",
+    "unifil-enfermagem-processo-de-enfermagem-1780004452857-8",
+    "unifil-enfermagem-processo-de-enfermagem-1780004452857-9",
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-0",
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-1",
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-2",
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-3",
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-4",
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-5",
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-6",
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-7",
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-8",
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-9",
+    "univali-enfermagem-processo-de-enfermagem-1780010594524-5",
+    "univali-enfermagem-processo-de-enfermagem-1780010594524-6",
+    "univali-enfermagem-processo-de-enfermagem-1780010594524-7",
+    "univali-enfermagem-processo-de-enfermagem-1780010594524-8",
+    "univali-enfermagem-processo-de-enfermagem-1780010594524-9",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-0",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-1",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-2",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-3",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-4",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-5",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-6",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-7",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-8",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
+    "univali-enfermagem-processo-de-enfermagem-1780010905023-0",
+    "univali-enfermagem-processo-de-enfermagem-1780010905023-1",
+    "univali-enfermagem-processo-de-enfermagem-1780010905023-2",
+    "univali-enfermagem-processo-de-enfermagem-1780010905023-3",
+    "univali-enfermagem-processo-de-enfermagem-1780010905023-4",
+    "univali-enfermagem-processo-de-enfermagem-1780010905023-5",
+    "univali-enfermagem-processo-de-enfermagem-1780010905023-6",
+    "vunesp-enfermagem-processo-de-enfermagem-1776055865890-0",
+    "vunesp-enfermagem-processo-de-enfermagem-1776056009428-5",
+    "vunesp-enfermagem-processo-de-enfermagem-1776056149404-7",
+    "vunesp-enfermagem-processo-de-enfermagem-1776056149404-8",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-2",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-3",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-5",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-6",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003654722-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003654722-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010594524-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010594524-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010594524-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010594524-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010594524-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1776055865890-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1776056009428-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1776056149404-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1776056149404-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "lote": "saude-do-homem-lote-01",
+  "exported_at": "2026-06-10T05:53:07.557Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Saúde do Homem",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "idecan-enfermagem-saude-do-homem-1780067036141-6",
+    "idib-enfermagem-saude-do-homem-1778934944659-5"
+  ]
+}

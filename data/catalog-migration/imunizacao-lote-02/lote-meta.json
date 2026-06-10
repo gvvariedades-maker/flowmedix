@@ -1,0 +1,21 @@
+{
+  "lote": "imunizacao-lote-02",
+  "subtopico": "Imunização",
+  "catalog_total_subtopico": 476,
+  "exported_count": 50,
+  "excluded_premium_slugs": 19,
+  "golden_reference": "examples/questao-premium-fundatec-meningococica-3meses.json",
+  "familia_pedagogica": "conceito / calendário PNI / esquema vacinal",
+  "status": "sub01_applied",
+  "sub01_applied_at": "2026-06-09",
+  "sub01_count": 10,
+  "sub01_slugs_file": "sub01-slugs.json",
+  "premium_total_lote": 10,
+  "pending_in_lote": 40,
+  "workflow": [
+    "1. Editar JSON em questions/ (4 slides premium por questão; manter question_data da prova)",
+    "2. npm run catalog:apply-lote -- --lote=imunizacao-lote-02 --dry-run",
+    "3. npm run catalog:apply-lote -- --lote=imunizacao-lote-02 --apply",
+    "4. Próximo lote: catalog:export-lote com --limit=50 e mesmo exclude-manifest (pega os próximos 50 slugs)"
+  ]
+}

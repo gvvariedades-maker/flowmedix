@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T04:24:20.297Z",
+  "lote": "cuidados-na-administracao-de-medicamentos-lote-02",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "funatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-5",
+    "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-1",
+    "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-2",
+    "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-4",
+    "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-2",
+    "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-6",
+    "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-7",
+    "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-1",
+    "fundep-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-1",
+    "furb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-1",
+    "furb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-0",
+    "furb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-1",
+    "fuvest-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-4",
+    "iaupe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-0",
+    "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-6",
+    "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-3",
+    "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-4",
+    "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-5",
+    "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-3",
+    "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-6",
+    "ibec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-6",
+    "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-4",
+    "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-5",
+    "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-6",
+    "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-7",
+    "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+    "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-8",
+    "idecan-enfermagem-cuidados-na-administracao-de-medicamentos-1778712108887-7",
+    "idecan-enfermagem-cuidados-na-administracao-de-medicamentos-1778712108887-8",
+    "idib-enfermagem-cuidados-na-administracao-de-medicamentos-1778934863952-6",
+    "idib-enfermagem-cuidados-na-administracao-de-medicamentos-1778934863952-7",
+    "ieses-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-1",
+    "igeduc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-3",
+    "igeduc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-6",
+    "igeduc-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-5",
+    "igeduc-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-8",
+    "instituto-access-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-6",
+    "instituto-access-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-8",
+    "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-5",
+    "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-7",
+    "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-5",
+    "instituto-darwin-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-7",
+    "instituto-verbena-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-6",
+    "isba-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-0",
+    "ivin-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-5",
+    "ms-sarmento-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-2",
+    "nc-ufpr-funpar-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-4",
+    "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-2",
+    "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-0",
+    "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "funatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibec-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-na-administracao-de-medicamentos-1778712108887-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-na-administracao-de-medicamentos-1778712108887-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-cuidados-na-administracao-de-medicamentos-1778934863952-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-cuidados-na-administracao-de-medicamentos-1778934863952-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "isba-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

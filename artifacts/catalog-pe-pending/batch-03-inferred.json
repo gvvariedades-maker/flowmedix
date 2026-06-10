@@ -1,0 +1,76 @@
+{
+  "batch": "03",
+  "bucket": "Processo de Enfermagem",
+  "inferences": [
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-6",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Medidas de prevenção de quedas (calçados, grades, ambiente) são conteúdo central de NSP, não SAE/NANDA."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-2",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Higienização das mãos como principal ação preventiva integra precauções padrão de biossegurança."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-4",
+      "suggested_subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Orientar o paciente e verificar preparo no pré-operatório é função típica da assistência perioperatória."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Priorizar segurança e manutenção da vida em emergência é princípio do atendimento de urgência."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-6",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Transporte intra-hospitalar exige estabilidade clínica, monitorização e identificação — protocolos de segurança."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-7",
+      "suggested_subtopico": "Infecções no Contexto da Biossegurança",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Prevenção de infecções hospitalares e diretrizes de higiene cobrem IRAS e controle infeccioso."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-9",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.98,
+      "keep_current": false,
+      "rationale": "Classificação topográfica dos ossos (apendiculares) é anatomia básica dos membros."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Reconhecimento dos sinais de alerta de AVC é emergência neurovascular aguda."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Protocolo ABCDE no politraumatizado é metodologia clássica de urgência e trauma."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003031246-7",
+      "suggested_subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Finalidade do material estéril (reduzir risco de infecção) pertence à esterilização e processamento."
+    }
+  ]
+}

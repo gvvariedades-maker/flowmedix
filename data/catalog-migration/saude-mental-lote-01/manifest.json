@@ -1,0 +1,16 @@
+{
+  "lote": "saude-mental-lote-01",
+  "exported_at": "2026-06-10T05:04:53.873Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Saúde Mental",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "idecan-enfermagem-saude-mental-1778712418722-2",
+    "idecan-enfermagem-saude-mental-1780067024707-2",
+    "igeduc-enfermagem-saude-mental-1780001362784-4",
+    "vunesp-enfermagem-saude-mental-1780001362784-5"
+  ]
+}

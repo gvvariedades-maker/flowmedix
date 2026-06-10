@@ -1,0 +1,76 @@
+{
+  "batch": "02",
+  "bucket": "Processo de Enfermagem",
+  "inferences": [
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056129848-7",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Regras de prontuário e anotações de enfermagem (objetividade, veracidade, identificação) — documentação para continuidade e segurança, sem cobrança de SAE."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-0",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Registro objetivo de incidentes e alterações clínicas no prontuário com notificação à equipe — foco em rastreabilidade e notificação de ocorrências."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-1",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Conceito de saúde da OMS e processo saúde-doença — fundamentos de promoção da saúde, não etapas do processo de enfermagem."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-3",
+      "suggested_subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Cálculo de volume de KCL 10% para diluir 3 g em soro fisiológico — questão de dose/diluição de medicamento."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-5",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "Diferencia anotação de enfermagem da evolução de enfermagem, etapa do PE, e cobra requisitos do registro assistencial."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-7",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Avaliação primária do trauma pelo mnemônico XABCDE e controle de hemorragias na etapa X."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Organização e autoridade técnica do SAMU 192 na regulação e destino hospitalar do paciente."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-9",
+      "suggested_subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Limpeza e desinfecção de superfícies e materiais na ambulância — métodos e produtos de desinfecção."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Triagem de vítimas múltiplas com etiquetas coloridas (start) em cenário de emergência e recursos limitados."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-7",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.90,
+      "keep_current": true,
+      "rationale": "Conceito de evolução do paciente e resposta às prescrições de enfermagem durante a internação — etapa do PE."
+    }
+  ]
+}

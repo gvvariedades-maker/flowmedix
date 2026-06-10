@@ -1,0 +1,80 @@
+{
+  "generated_at": "2026-06-10T09:11:42.866Z",
+  "mode": "apply",
+  "bucket": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+  "min_confidence_apply": 0.85,
+  "limit": 10000,
+  "inference_source": "heuristic",
+  "summary": {
+    "scanned": 6,
+    "inferred": 6,
+    "errors": 0,
+    "keep_current": 3,
+    "same_subtopico": 3,
+    "applicable": 3,
+    "applied": 3
+  },
+  "proposals": [
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-4",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-renais-e-hematologicas-cronicas-1778712315153-7",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778712315153-8",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-5",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (respiratória crônica): enunciado indica Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-6",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Heurística (DCNT): tema compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-neoplasias-e-cancer-1780001148264-6",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    }
+  ],
+  "apply_errors": []
+}

@@ -1,0 +1,223 @@
+{
+  "generated_at": "2026-06-10T04:24:57.294Z",
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-lote-03",
+  "mode": "apply",
+  "total_files": 30,
+  "ok": 30,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-7",
+    "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-8",
+    "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-9",
+    "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-0",
+    "lj-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-0",
+    "maranatha-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-1",
+    "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
+    "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-1",
+    "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-2",
+    "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-0",
+    "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-6",
+    "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-8",
+    "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-5",
+    "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-8",
+    "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-0",
+    "sc-treinamentos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-1",
+    "selecon-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-4",
+    "ufmt-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-3",
+    "unesc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-8",
+    "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-2",
+    "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-2",
+    "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-2",
+    "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-3",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-6",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-7",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-5",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-7",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-8",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-2",
+    "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

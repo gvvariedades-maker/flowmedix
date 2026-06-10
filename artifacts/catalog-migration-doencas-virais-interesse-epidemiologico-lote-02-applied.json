@@ -1,0 +1,139 @@
+{
+  "generated_at": "2026-06-10T04:42:08.805Z",
+  "lote": "doencas-virais-interesse-epidemiologico-lote-02",
+  "mode": "apply",
+  "total_files": 18,
+  "ok": 18,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "legalle-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103621567-0",
+    "metrocapital-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103575693-3",
+    "ms-sarmento-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103510083-0",
+    "objetiva-concursos-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-2",
+    "objetiva-concursos-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-3",
+    "objetiva-concursos-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-4",
+    "objetiva-concursos-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103583552-3",
+    "quadrix-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103452899-4",
+    "quadrix-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103452899-5",
+    "quadrix-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103496829-4",
+    "quadrix-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103496829-7",
+    "selecon-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103471372-7",
+    "unesc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103502990-7",
+    "unesc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-0",
+    "unesc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-1",
+    "unifil-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103604185-0",
+    "unifil-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103611576-1",
+    "vunesp-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103583552-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "legalle-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103621567-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "metrocapital-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103575693-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103510083-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103583552-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103452899-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103452899-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103496829-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103496829-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103471372-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103502990-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103604185-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103611576-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103583552-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

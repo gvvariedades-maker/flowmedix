@@ -1,0 +1,98 @@
+{
+  "exported_at": "2026-06-10T04:48:20.941Z",
+  "lote": "doencas-virais-label-curto-lote-01",
+  "total": 13,
+  "entries": [
+    {
+      "modulo_slug": "amauc-geral-doencas-virais-de-interesse-epidemiologico-1777103604185-4",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico",
+      "modulo_nome": "Geral",
+      "banca": "AMAUC",
+      "avant_codigo": 994
+    },
+    {
+      "modulo_slug": "ameosc-geral-doencas-virais-de-interesse-epidemiologico-1777103611576-3",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico",
+      "modulo_nome": "Geral",
+      "banca": "AMEOSC",
+      "avant_codigo": 1001
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-geral-doencas-virais-de-interesse-epidemiologico-1777103611576-7",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico",
+      "modulo_nome": "Geral",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 1005
+    },
+    {
+      "modulo_slug": "copese-ufpi-geral-doencas-virais-de-interesse-epidemiologico-1777103554284-4",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico",
+      "modulo_nome": "Geral",
+      "banca": "COPESE UFPI",
+      "avant_codigo": 951
+    },
+    {
+      "modulo_slug": "copese-ufpi-geral-doencas-virais-de-interesse-epidemiologico-1777103554284-5",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico",
+      "modulo_nome": "Geral",
+      "banca": "COPESE UFPI",
+      "avant_codigo": 952
+    },
+    {
+      "modulo_slug": "copese-ufpi-geral-doencas-virais-de-interesse-epidemiologico-1777103554284-7",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico",
+      "modulo_nome": "Geral",
+      "banca": "COPESE UFPI",
+      "avant_codigo": 954
+    },
+    {
+      "modulo_slug": "fau-unicentro-geral-doencas-virais-de-interesse-epidemiologico-1777103575693-4",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico",
+      "modulo_nome": "Geral",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 962
+    },
+    {
+      "modulo_slug": "fcm-geral-doencas-virais-de-interesse-epidemiologico-1777103604185-5",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico",
+      "modulo_nome": "Geral",
+      "banca": "FCM",
+      "avant_codigo": 995
+    },
+    {
+      "modulo_slug": "igeduc-geral-doencas-virais-de-interesse-epidemiologico-1777103471372-0",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico",
+      "modulo_nome": "Geral",
+      "banca": "IGEDUC",
+      "avant_codigo": 886
+    },
+    {
+      "modulo_slug": "instituto-aocp-geral-doencas-virais-de-interesse-epidemiologico-1777103611576-0",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico",
+      "modulo_nome": "Geral",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 998
+    },
+    {
+      "modulo_slug": "unesc-geral-doencas-virais-de-interesse-epidemiologico-1777103597693-6",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico",
+      "modulo_nome": "Geral",
+      "banca": "UNESC",
+      "avant_codigo": 989
+    },
+    {
+      "modulo_slug": "unifil-geral-doencas-virais-de-interesse-epidemiologico-1777103604185-1",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico",
+      "modulo_nome": "Geral",
+      "banca": "UNIFIL",
+      "avant_codigo": 991
+    },
+    {
+      "modulo_slug": "vunesp-geral-doencas-virais-de-interesse-epidemiologico-1777103502990-3",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico",
+      "modulo_nome": "Geral",
+      "banca": "VUNESP",
+      "avant_codigo": 922
+    }
+  ]
+}

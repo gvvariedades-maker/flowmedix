@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BookMarked, BookOpen, Clock, Layers, X, Loader2, Trash2, Play, Pencil } from 'lucide-react';
+import { BookMarked, BookOpen, Clock, Layers, X, Loader2, Trash2, Play, Pencil, Plus } from 'lucide-react';
 import { CadernosEmptyState } from '@/components/dashboard/cadernos/CadernosEmptyState';
 import { CadernosHeader } from '@/components/dashboard/cadernos/CadernosHeader';
 import { Button } from '@/components/ui/button';
-import { NeonBadge } from '@/components/ui/neon-badge';
+import { ProgressRing } from '@/components/ui/progress-ring';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
 import { DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
@@ -20,6 +20,32 @@ function tempoRelativo(iso: string): string {
   if (dias === 0) return 'Hoje';
   if (dias === 1) return 'Ontem';
   return `Há ${dias} dias`;
+}
+
+function ProgressRingCaderno({ studied, total }: { studied: number; total: number }) {
+  const complete = studied === total && total > 0;
+  const value = total > 0 ? (studied / total) * 100 : 0;
+  const size = 52;
+  const strokeWidth = 4;
+
+  return (
+    <div
+      className="relative flex shrink-0 items-center justify-center"
+      style={{ width: size, height: size }}
+      aria-label={`${studied} de ${total} questões concluídas`}
+    >
+      <ProgressRing
+        value={value}
+        size={size}
+        strokeWidth={strokeWidth}
+        variant={complete ? 'success' : 'brand'}
+      />
+      <div className="absolute inset-0 flex flex-col items-center justify-center select-none">
+        <span className="text-sm font-bold tabular-nums leading-none text-white">{studied}</span>
+        <span className="mt-0.5 text-[9px] font-medium uppercase tracking-wide text-slate-500">/{total}</span>
+      </div>
+    </div>
+  );
 }
 
 function ConfirmExcluirModal({
@@ -100,7 +126,13 @@ function ConfirmExcluirModal({
   );
 }
 
-export default function CadernosListClient({ cadernos: inicial }: { cadernos: NotebookSummary[] }) {
+export default function CadernosListClient({
+  cadernos: inicial,
+  editalBanca = null,
+}: {
+  cadernos: NotebookSummary[];
+  editalBanca?: string | null;
+}) {
   const { pageBottomPadding } = useDashboardBottomInset('default');
   const [cadernos, setCadernos] = useState(inicial);
   const [pendingDelete, setPendingDelete] = useState<NotebookSummary | null>(null);
@@ -113,7 +145,7 @@ export default function CadernosListClient({ cadernos: inicial }: { cadernos: No
 
       <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 md:px-10 md:pt-8">
         {cadernos.length === 0 ? (
-          <CadernosEmptyState />
+          <CadernosEmptyState editalBanca={editalBanca} />
         ) : (
           <>
             <ul className="space-y-4">
@@ -133,21 +165,26 @@ export default function CadernosListClient({ cadernos: inicial }: { cadernos: No
                     )}
                   >
                     <div className="flex min-w-0 flex-1 items-start gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[rgba(0,242,255,0.20)] bg-[rgba(0,242,255,0.08)]">
-                        <BookMarked size={22} className="text-cyan-300" aria-hidden />
-                      </div>
+                      {c.itemCount > 0 ? (
+                        <ProgressRingCaderno studied={c.studiedCount} total={c.itemCount} />
+                      ) : (
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[rgba(0,242,255,0.20)] bg-[rgba(0,242,255,0.08)]">
+                          <BookMarked size={22} className="text-cyan-300" aria-hidden />
+                        </div>
+                      )}
                       <div className="min-w-0 flex-1">
                         <p className="truncate text-base font-black text-white">{c.title}</p>
                         {c.description && (
                           <p className="mt-0.5 truncate text-sm font-medium text-slate-400">{c.description}</p>
                         )}
+                        {c.studyEntryTitle && c.itemCount > 0 && (
+                          <p className="mt-1 truncate text-xs font-semibold text-cyan-300/90">
+                            Próxima
+                            {c.studyEntryPosition != null ? ` (${c.studyEntryPosition}/${c.itemCount})` : ''}:{' '}
+                            {c.studyEntryTitle}
+                          </p>
+                        )}
                         <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
-                          {c.itemCount > 0 && (
-                            <NeonBadge variant={c.studiedCount === c.itemCount && c.itemCount > 0 ? 'success' : 'brand'}>
-                              <Layers className="mr-1 h-2.5 w-2.5" aria-hidden />
-                              {c.studiedCount}/{c.itemCount}
-                            </NeonBadge>
-                          )}
                           <span className="flex items-center gap-1 text-sm font-semibold text-slate-400">
                             <Layers className="h-3.5 w-3.5 shrink-0" aria-hidden />
                             {c.itemCount} {c.itemCount === 1 ? 'questão' : 'questões'}
@@ -162,30 +199,21 @@ export default function CadernosListClient({ cadernos: inicial }: { cadernos: No
 
                     <div className="flex flex-wrap items-center justify-end gap-2 sm:shrink-0">
                       {c.studyEntrySlug ? (
-                        <Button
-                          asChild
-                          size="sm"
-                          className="rounded-xl bg-cyan-500 text-xs font-semibold text-white shadow-sm hover:bg-cyan-600"
+                        <Link
+                          href={`/estudar/${c.studyEntrySlug}?from=caderno&caderno_id=${c.id}`}
+                          className="inline-flex min-h-9 items-center justify-center gap-1.5 rounded-xl bg-cyan-500 px-4 text-xs font-black uppercase tracking-widest text-slate-950 shadow-sm transition-colors hover:bg-cyan-400"
                         >
-                          <Link
-                            href={`/estudar/${c.studyEntrySlug}?from=caderno&caderno_id=${c.id}`}
-                            className="inline-flex items-center gap-1.5"
-                          >
-                            <Play className="h-3.5 w-3.5" aria-hidden />
-                            Estudar caderno
-                          </Link>
-                        </Button>
-                      ) : (
-                        <Button
-                          type="button"
-                          size="sm"
-                          disabled
-                          title="Adicione questões ao caderno para começar a estudar"
-                          className="rounded-xl border border-[rgba(255,255,255,0.12)] bg-white/[0.04] text-xs font-semibold text-slate-500"
-                        >
-                          <Play className="mr-1.5 h-3.5 w-3.5" aria-hidden />
+                          <Play className="h-3.5 w-3.5" aria-hidden />
                           Estudar caderno
-                        </Button>
+                        </Link>
+                      ) : (
+                        <Link
+                          href={`/cadernos/${c.id}?setup=1`}
+                          className="inline-flex min-h-9 items-center justify-center gap-1.5 rounded-xl bg-cyan-500 px-4 text-xs font-black uppercase tracking-widest text-slate-950 shadow-sm transition-colors hover:bg-cyan-400"
+                        >
+                          <Plus className="h-3.5 w-3.5" aria-hidden />
+                          Adicionar questões
+                        </Link>
                       )}
                       <Button
                         variant="outline"

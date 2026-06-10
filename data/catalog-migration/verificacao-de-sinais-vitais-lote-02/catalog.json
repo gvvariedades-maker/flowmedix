@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-09T10:53:33.403Z",
+  "lote": "verificacao-de-sinais-vitais-lote-02",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343845367-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2431
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343865210-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2448
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2463
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2464
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2465
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2466
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2467
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2470
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2471
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2472
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2476
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2477
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343932809-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2491
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343932809-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2492
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2497
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2498
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2499
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2500
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2501
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2502
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343956155-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2508
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343956155-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2509
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344097180-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2535
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344097180-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2536
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2602
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2603
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2604
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2605
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-8",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2606
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2607
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2608
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2609
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344205200-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2642
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344205200-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2646
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344189558-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2625
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2665
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-1",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2666
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2667
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2669
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-5",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2670
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2671
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2672
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-geral-verificacao-de-sinais-vitais-1779344245160-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Geral",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2668
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-verificacao-de-sinais-vitais-1778969752567-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEV URCA",
+      "avant_codigo": 2262
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344122526-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 2569
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344127707-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 2580
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344137078-4",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 2585
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344152370-2",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 2592
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344152370-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 2596
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344205200-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 2647
+    }
+  ]
+}

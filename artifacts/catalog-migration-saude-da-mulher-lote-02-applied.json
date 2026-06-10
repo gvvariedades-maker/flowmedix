@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T03:41:28.293Z",
+  "lote": "saude-da-mulher-lote-02",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fepese-enfermagem-saude-da-mulher-1777104222222-0",
+    "fepese-enfermagem-saude-da-mulher-1777104222222-4",
+    "fepese-enfermagem-saude-da-mulher-1777104323066-5",
+    "fgv-enfermagem-saude-da-mulher-1777104222222-6",
+    "fgv-enfermagem-saude-da-mulher-1777104323066-0",
+    "fgv-enfermagem-saude-da-mulher-1777104340484-3",
+    "funatec-enfermagem-saude-da-mulher-1777104415052-1",
+    "funatec-enfermagem-saude-da-mulher-1777104415052-2",
+    "funatec-enfermagem-saude-da-mulher-1777104415052-3",
+    "funatec-enfermagem-saude-da-mulher-1777104415052-4",
+    "funcern-enfermagem-saude-da-mulher-1777104288275-7",
+    "funcern-enfermagem-saude-da-mulher-1777104288275-8",
+    "funcern-enfermagem-saude-da-mulher-1777104301763-0",
+    "funcern-enfermagem-saude-da-mulher-1777104415052-7",
+    "funcern-enfermagem-saude-da-mulher-1777104415052-8",
+    "fundatec-enfermagem-saude-da-mulher-1777104306781-0",
+    "fundatec-enfermagem-saude-da-mulher-1777104382533-7",
+    "fundatec-enfermagem-saude-da-mulher-1777104382533-8",
+    "fundatec-enfermagem-saude-da-mulher-1777104389226-5",
+    "fundatec-enfermagem-saude-da-mulher-1777104408379-5",
+    "fundatec-enfermagem-saude-da-mulher-1777104424950-0",
+    "fundepes-copeve-ufal-enfermagem-saude-da-mulher-1777104415052-5",
+    "fundepes-copeve-ufal-enfermagem-saude-da-mulher-1777104415052-6",
+    "gama-enfermagem-saude-da-mulher-1777104261182-3",
+    "gama-enfermagem-saude-da-mulher-1777104382533-1",
+    "gama-enfermagem-saude-da-mulher-1777104382533-2",
+    "iaupe-enfermagem-saude-da-mulher-1777104288275-1",
+    "iaupe-enfermagem-saude-da-mulher-1777104288275-2",
+    "iaupe-enfermagem-saude-da-mulher-1777104288275-3",
+    "iaupe-enfermagem-saude-da-mulher-1777104288275-4",
+    "iaupe-enfermagem-saude-da-mulher-1777104424950-3",
+    "iaupe-enfermagem-saude-da-mulher-1777104424950-4",
+    "iaupe-enfermagem-saude-da-mulher-1777104424950-5",
+    "iaupe-enfermagem-saude-da-mulher-1777104424950-6",
+    "iaupe-enfermagem-saude-da-mulher-1777104432986-0",
+    "ibade-enfermagem-saude-da-mulher-1777104323066-4",
+    "ibade-enfermagem-saude-da-mulher-1777104408379-4",
+    "ibam-enfermagem-saude-da-mulher-1777104340484-5",
+    "icece-enfermagem-saude-da-mulher-1777104261182-0",
+    "icece-enfermagem-saude-da-mulher-1780001362784-9",
+    "idcap-enfermagem-saude-da-mulher-1777104301763-7",
+    "idcap-enfermagem-saude-da-mulher-1777104389226-3",
+    "idcap-enfermagem-saude-da-mulher-1777104389226-4",
+    "idcap-enfermagem-saude-da-mulher-1777104389226-6",
+    "idecan-enfermagem-saude-da-mulher-1777104335102-4",
+    "idecan-enfermagem-saude-da-mulher-1777104389226-7",
+    "idecan-enfermagem-saude-da-mulher-1778712437306-0",
+    "idecan-enfermagem-saude-da-mulher-1778712437306-1",
+    "idecan-enfermagem-saude-da-mulher-1778712437306-2",
+    "idecan-enfermagem-saude-da-mulher-1778712437306-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fepese-enfermagem-saude-da-mulher-1777104222222-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-saude-da-mulher-1777104222222-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-saude-da-mulher-1777104323066-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-saude-da-mulher-1777104222222-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-saude-da-mulher-1777104323066-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-saude-da-mulher-1777104340484-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-saude-da-mulher-1777104415052-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-saude-da-mulher-1777104415052-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-saude-da-mulher-1777104415052-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-saude-da-mulher-1777104415052-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-saude-da-mulher-1777104288275-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-saude-da-mulher-1777104288275-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-saude-da-mulher-1777104301763-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-saude-da-mulher-1777104415052-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-saude-da-mulher-1777104415052-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-saude-da-mulher-1777104306781-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-saude-da-mulher-1777104382533-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-saude-da-mulher-1777104382533-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-saude-da-mulher-1777104389226-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-saude-da-mulher-1777104408379-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-saude-da-mulher-1777104424950-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-saude-da-mulher-1777104415052-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-saude-da-mulher-1777104415052-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-saude-da-mulher-1777104261182-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-saude-da-mulher-1777104382533-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-saude-da-mulher-1777104382533-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104288275-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104424950-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104424950-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104424950-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104424950-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-saude-da-mulher-1777104432986-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-saude-da-mulher-1777104323066-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-saude-da-mulher-1777104408379-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibam-enfermagem-saude-da-mulher-1777104340484-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-saude-da-mulher-1777104261182-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-saude-da-mulher-1780001362784-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-saude-da-mulher-1777104301763-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-saude-da-mulher-1777104389226-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-saude-da-mulher-1777104389226-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-saude-da-mulher-1777104389226-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1777104335102-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1777104389226-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1778712437306-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1778712437306-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1778712437306-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1778712437306-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

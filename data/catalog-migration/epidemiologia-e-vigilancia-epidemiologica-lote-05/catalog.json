@@ -1,0 +1,119 @@
+{
+  "exported_at": "2026-06-10T04:05:57.537Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-lote-05",
+  "total": 16,
+  "entries": [
+    {
+      "modulo_slug": "unifil-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-4",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3511
+    },
+    {
+      "modulo_slug": "univali-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-0",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 3468
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-9",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3223
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-0",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3234
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-5",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3381
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-6",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3382
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-5",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3390
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-4",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3407
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-4",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3425
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-5",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3426
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-8",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3476
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-3",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3480
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-7",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3484
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-1",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3487
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-2",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3488
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-3",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3492
+    }
+  ]
+}

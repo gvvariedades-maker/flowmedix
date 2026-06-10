@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:43:56.996Z",
+  "lote": "processo-de-enfermagem-lote-17",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-7",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-8",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-0",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-1",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-2",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-3",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-4",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-5",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-6",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-7",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-8",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-9",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-0",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-1",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-2",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-3",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-4",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-5",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-6",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-7",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-8",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-9",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-0",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-1",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-2",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-3",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1776056140199-6",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1776056149404-1",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780002389285-9",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-0",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-1",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-2",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-3",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-3",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-4",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-5",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-6",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-7",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-8",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-9",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-0",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-1",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-2",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-3",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-4",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-5",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-0",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-1",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-2",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1776056140199-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1776056149404-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780002389285-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

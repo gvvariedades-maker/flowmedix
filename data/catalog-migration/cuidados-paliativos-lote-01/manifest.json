@@ -1,0 +1,13 @@
+{
+  "lote": "cuidados-paliativos-lote-01",
+  "exported_at": "2026-06-10T05:53:57.762Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Cuidados Paliativos",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "idecan-enfermagem-cuidados-paliativos-1778712409051-4"
+  ]
+}

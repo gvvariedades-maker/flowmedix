@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-06-10T05:05:02.398Z",
+  "lote": "saude-mental-lote-01",
+  "mode": "apply",
+  "total_files": 4,
+  "ok": 4,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idecan-enfermagem-saude-mental-1778712418722-2",
+    "idecan-enfermagem-saude-mental-1780067024707-2",
+    "igeduc-enfermagem-saude-mental-1780001362784-4",
+    "vunesp-enfermagem-saude-mental-1780001362784-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-saude-mental-1778712418722-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-mental-1780067024707-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-mental-1780001362784-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-mental-1780001362784-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

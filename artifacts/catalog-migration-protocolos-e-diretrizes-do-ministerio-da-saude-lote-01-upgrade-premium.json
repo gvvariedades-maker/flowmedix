@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-06-10T05:52:13.081Z",
+  "lote": "protocolos-e-diretrizes-do-ministerio-da-saude-lote-01",
+  "mode": "write",
+  "force": false,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 5,
+  "upgraded": 5,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "protocolo": 4,
+    "legis": 1
+  },
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1778712437306-8",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1778712437306-9",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067036141-9",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-0",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-1",
+      "status": "upgraded",
+      "family": "legis",
+      "golden_reference": "questao-premium-sus-lei-8080-cesgranrio.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    }
+  ]
+}

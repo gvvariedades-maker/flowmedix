@@ -1,0 +1,168 @@
+{
+  "exported_at": "2026-06-10T05:39:05.373Z",
+  "lote": "semiologia-em-enfermagem-lote-03",
+  "total": 23,
+  "entries": [
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-7",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "REIS E REIS",
+      "avant_codigo": 3152
+    },
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-semiologia-em-enfermagem-1779563549311-4",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "SC TREINAMENTOS",
+      "avant_codigo": 3191
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563467322-6",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3071
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563486900-0",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3083
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563500147-1",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3110
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563505333-2",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3120
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563512485-1",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3128
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563512485-2",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3129
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563521756-4",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3149
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563537258-1",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3172
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563537258-5",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3176
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-semiologia-em-enfermagem-1779563537258-6",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3177
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-semiologia-em-enfermagem-1779563467322-5",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 3070
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-semiologia-em-enfermagem-1779563486900-1",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 3084
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-semiologia-em-enfermagem-1779563486900-4",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 3087
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-semiologia-em-enfermagem-1779563549311-0",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 3187
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563467322-8",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3073
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563491765-2",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3094
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563491765-3",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3095
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563491765-7",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3099
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563495719-2",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3103
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563527042-7",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3160
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563531989-0",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3161
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "lote": "acidente-vascular-cerebral-avc-lote-01",
+  "exported_at": "2026-06-10T05:54:53.012Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Acidente Vascular Cerebral (AVC)",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "idib-enfermagem-acidente-vascular-cerebral-avc-1778934918280-1"
+  ]
+}

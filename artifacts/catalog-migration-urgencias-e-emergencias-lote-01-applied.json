@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:46:35.038Z",
+  "lote": "urgencias-e-emergencias-lote-01",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-7",
+    "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+    "avancasp-enfermagem-urgencias-e-emergencias-1777103970505-1",
+    "avancasp-enfermagem-urgencias-e-emergencias-1777104024064-5",
+    "avancasp-enfermagem-urgencias-e-emergencias-1777104083571-4",
+    "avancasp-geral-urgencias-e-emergencias-1777104083571-3",
+    "com-exam-pref-bauru-enfermagem-urgencias-e-emergencias-1777104056718-4",
+    "cotec-fadenor-enfermagem-urgencias-e-emergencias-1777104018306-8",
+    "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-0",
+    "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-1",
+    "cpcon-uepb-geral-urgencias-e-emergencias-1777103970505-0",
+    "educa-pb-enfermagem-urgencias-e-emergencias-1777104070286-6",
+    "facet-enfermagem-urgencias-e-emergencias-1777103976379-2",
+    "facet-enfermagem-urgencias-e-emergencias-1777103976379-3",
+    "facet-geral-urgencias-e-emergencias-1777103976379-4",
+    "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-3",
+    "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-4",
+    "fauel-enfermagem-urgencias-e-emergencias-1777104018306-9",
+    "fauel-enfermagem-urgencias-e-emergencias-1777104024064-0",
+    "fepese-enfermagem-urgencias-e-emergencias-1777103988389-9",
+    "fepese-enfermagem-urgencias-e-emergencias-1777103994618-0",
+    "fepese-enfermagem-urgencias-e-emergencias-1777103994618-1",
+    "fgv-enfermagem-urgencias-e-emergencias-1777104056718-6",
+    "fgv-enfermagem-urgencias-e-emergencias-1777104063550-1",
+    "fgv-enfermagem-urgencias-e-emergencias-1777104063550-2",
+    "funatec-enfermagem-urgencias-e-emergencias-1777104077075-3",
+    "funatec-enfermagem-urgencias-e-emergencias-1777104077075-4",
+    "funatec-enfermagem-urgencias-e-emergencias-1777104077075-5",
+    "funcern-enfermagem-urgencias-e-emergencias-1777104000896-4",
+    "funcern-enfermagem-urgencias-e-emergencias-1777104007115-4",
+    "funcern-enfermagem-urgencias-e-emergencias-1777104007115-5",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777103976379-5",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777103994618-3",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777104007115-6",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-7",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-8",
+    "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-2",
+    "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-3",
+    "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104007115-7",
+    "funtef-enfermagem-urgencias-e-emergencias-1777103970505-2",
+    "funtef-enfermagem-urgencias-e-emergencias-1777103970505-3",
+    "furb-enfermagem-urgencias-e-emergencias-1777104012755-4",
+    "furb-enfermagem-urgencias-e-emergencias-1777104012755-5",
+    "furb-enfermagem-urgencias-e-emergencias-1777104012755-6",
+    "gama-enfermagem-urgencias-e-emergencias-1777104031822-5",
+    "gama-enfermagem-urgencias-e-emergencias-1777104031822-6",
+    "iaupe-enfermagem-urgencias-e-emergencias-1777104012755-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-urgencias-e-emergencias-1777103970505-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-urgencias-e-emergencias-1777104024064-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-urgencias-e-emergencias-1777104083571-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-geral-urgencias-e-emergencias-1777104083571-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "com-exam-pref-bauru-enfermagem-urgencias-e-emergencias-1777104056718-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-urgencias-e-emergencias-1777104018306-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-geral-urgencias-e-emergencias-1777103970505-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-urgencias-e-emergencias-1777104070286-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-geral-urgencias-e-emergencias-1777103976379-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-urgencias-e-emergencias-1777104018306-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-urgencias-e-emergencias-1777104024064-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-urgencias-e-emergencias-1777103988389-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-urgencias-e-emergencias-1777104056718-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-urgencias-e-emergencias-1777104000896-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-urgencias-e-emergencias-1777104007115-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-urgencias-e-emergencias-1777104007115-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777103976379-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777103994618-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104007115-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104007115-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-urgencias-e-emergencias-1777103970505-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-urgencias-e-emergencias-1777103970505-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-urgencias-e-emergencias-1777104012755-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-urgencias-e-emergencias-1777104012755-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-urgencias-e-emergencias-1777104012755-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-urgencias-e-emergencias-1777104031822-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-urgencias-e-emergencias-1777104031822-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-urgencias-e-emergencias-1777104012755-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

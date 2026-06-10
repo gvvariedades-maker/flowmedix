@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-06-10T04:15:03.491Z",
+  "lote": "atencao-basica-saude-da-familia-lote-04",
+  "mode": "apply",
+  "total_files": 6,
+  "ok": 6,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968125784-1",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968180610-7",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968221218-3",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968323839-4",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-0",
+    "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968125784-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968180610-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968221218-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968323839-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

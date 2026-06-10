@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-09T09:39:54.242Z",
+  "lote": "imunizacao-lote-09",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564044052-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3757
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564067000-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3804
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3900
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3901
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3902
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3903
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3904
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 3905
+    },
+    {
+      "modulo_slug": "ipefae-enfermagem-imunizacao-1779564090395-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IPEFAE",
+      "avant_codigo": 3855
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1777103182944-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 776
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1777103204932-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 785
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1777103257434-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 850
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1777103257434-9",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 851
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1779564048247-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 3771
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1779564048247-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 3772
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1779564048247-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 3773
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1779564067000-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 3807
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-imunizacao-1779572166628-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "LEGALLE",
+      "avant_codigo": 3938
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-imunizacao-1779572166628-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "LEGALLE",
+      "avant_codigo": 3939
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-imunizacao-1779572166628-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "LEGALLE",
+      "avant_codigo": 3940
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-imunizacao-1779563986606-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MARANATHA ASSESSORIA",
+      "avant_codigo": 3682
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-imunizacao-1779564006577-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MARANATHA ASSESSORIA",
+      "avant_codigo": 3724
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-imunizacao-1779564096589-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "METROCAPITAL",
+      "avant_codigo": 3859
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 790
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 791
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 792
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 793
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 794
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103230085-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 813
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103244679-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 830
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103244679-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 831
+    },
+    {
+      "modulo_slug": "nao-informado-geral-imunizacao-1779564031957-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Geral",
+      "banca": "NÃO INFORMADO",
+      "avant_codigo": 3735
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-imunizacao-1777103222102-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "NC UFPR (FUNPAR)",
+      "avant_codigo": 804
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-imunizacao-1779564074967-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "NOSSO RUMO",
+      "avant_codigo": 3819
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-imunizacao-1779564074967-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "NOSSO RUMO",
+      "avant_codigo": 3820
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-imunizacao-1779564071106-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3814
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-imunizacao-1779564090395-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3849
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-imunizacao-1779572236985-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 4012
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572166628-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 3943
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572166628-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 3944
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572171486-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 3951
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572220683-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 3998
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572220683-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 3999
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1777103182944-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 773
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1777103277533-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 868
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779563961175-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 3650
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779563961175-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 3651
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779564011849-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 3733
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779564011849-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 3734
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1780000630425-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 4085
+    }
+  ]
+}

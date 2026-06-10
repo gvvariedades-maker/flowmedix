@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-06-10T04:52:44.842Z",
+  "lote": "mobilizacao-e-posicionamento-do-paciente-lote-01",
+  "mode": "apply",
+  "total_files": 6,
+  "ok": 6,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "icece-enfermagem-mobilizacao-e-posicionamento-do-paciente-1780000535393-5",
+    "idecan-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778712165781-9",
+    "idecan-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778712184780-0",
+    "idecan-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778712184780-1",
+    "idib-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778934890864-4",
+    "idib-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778934890864-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "icece-enfermagem-mobilizacao-e-posicionamento-do-paciente-1780000535393-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778712165781-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778712184780-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778712184780-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778934890864-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778934890864-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

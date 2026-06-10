@@ -1,0 +1,17 @@
+{
+  "lote": "historia-da-enfermagem-lote-01",
+  "exported_at": "2026-06-10T05:02:23.956Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "História da Enfermagem",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+    "avancasp-enfermagem-historia-da-enfermagem-1775331667969-2",
+    "idcap-enfermagem-historia-da-enfermagem-1775331667969-3",
+    "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+    "ieses-enfermagem-historia-da-enfermagem-1775331667969-5"
+  ]
+}

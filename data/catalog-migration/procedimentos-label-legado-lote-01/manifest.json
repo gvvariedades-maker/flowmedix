@@ -1,0 +1,13 @@
+{
+  "lote": "procedimentos-label-legado-lote-01",
+  "exported_at": "2026-06-10T05:55:19.952Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Procedimentos",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "instituto-aocp-geral-procedimentos-1777103510083-2"
+  ]
+}

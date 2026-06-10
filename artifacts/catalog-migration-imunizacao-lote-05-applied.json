@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:31:40.337Z",
+  "lote": "imunizacao-lote-05",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fcm-enfermagem-imunizacao-1779564096589-1",
+    "fcm-geral-imunizacao-1779564090395-8",
+    "fenix-instituto-enfermagem-imunizacao-1779563970889-3",
+    "fenix-instituto-enfermagem-imunizacao-1780000630425-7",
+    "fepese-enfermagem-imunizacao-1777103204932-3",
+    "fepese-enfermagem-imunizacao-1777103270218-0",
+    "fepese-enfermagem-imunizacao-1779564001927-4",
+    "fepese-enfermagem-imunizacao-1779564011849-5",
+    "fepese-enfermagem-imunizacao-1779564109452-3",
+    "fepese-enfermagem-imunizacao-1779564119665-1",
+    "fepese-enfermagem-imunizacao-1779564119665-2",
+    "fepese-enfermagem-imunizacao-1779572166628-5",
+    "fepese-enfermagem-imunizacao-1779572171486-0",
+    "fepese-enfermagem-imunizacao-1779572171486-7",
+    "fgv-enfermagem-imunizacao-1777103215560-7",
+    "fgv-enfermagem-imunizacao-1779563970889-2",
+    "fgv-enfermagem-imunizacao-1779563970889-9",
+    "fgv-enfermagem-imunizacao-1779563992006-6",
+    "fgv-enfermagem-imunizacao-1779563992006-7",
+    "fgv-enfermagem-imunizacao-1779563992006-8",
+    "fgv-enfermagem-imunizacao-1779564053668-6",
+    "fgv-enfermagem-imunizacao-1779564059030-0",
+    "fgv-enfermagem-imunizacao-1779564059030-1",
+    "fgv-enfermagem-imunizacao-1779564085730-2",
+    "fgv-enfermagem-imunizacao-1779564085730-3",
+    "fgv-enfermagem-imunizacao-1779564085730-4",
+    "fgv-enfermagem-imunizacao-1779564085730-5",
+    "fgv-enfermagem-imunizacao-1779572215875-6",
+    "fumarc-enfermagem-imunizacao-1777103251447-1",
+    "fumarc-enfermagem-imunizacao-1777103251447-2",
+    "fumarc-enfermagem-imunizacao-1779564006577-8",
+    "funatec-enfermagem-imunizacao-1777103264001-6",
+    "funatec-enfermagem-imunizacao-1779564063274-2",
+    "funatec-enfermagem-imunizacao-1779564063274-3",
+    "funcern-enfermagem-imunizacao-1777103238173-5",
+    "funcern-enfermagem-imunizacao-1777103238173-6",
+    "funcern-enfermagem-imunizacao-1777103238173-7",
+    "funcern-enfermagem-imunizacao-1777103244679-0",
+    "funcern-enfermagem-imunizacao-1777103244679-4",
+    "funcern-enfermagem-imunizacao-1779564125198-0",
+    "fundatec-enfermagem-imunizacao-1777103182944-3",
+    "fundatec-enfermagem-imunizacao-1777103204932-0",
+    "fundatec-enfermagem-imunizacao-1777103257434-4",
+    "fundatec-enfermagem-imunizacao-1779563970889-1",
+    "fundatec-enfermagem-imunizacao-1779563975447-1",
+    "fundatec-enfermagem-imunizacao-1779563975447-2",
+    "fundatec-enfermagem-imunizacao-1779563975447-6",
+    "fundatec-enfermagem-imunizacao-1779563986606-2",
+    "fundatec-enfermagem-imunizacao-1779564001927-3",
+    "fundatec-enfermagem-imunizacao-1779564006577-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fcm-enfermagem-imunizacao-1779564096589-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcm-geral-imunizacao-1779564090395-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-imunizacao-1779563970889-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-imunizacao-1780000630425-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1777103204932-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1777103270218-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779564001927-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779564011849-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779564109452-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779564119665-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779564119665-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779572166628-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779572171486-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779572171486-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1777103215560-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563970889-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563970889-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563992006-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563992006-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563992006-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564053668-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564059030-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564059030-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564085730-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564085730-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564085730-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564085730-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779572215875-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-imunizacao-1777103251447-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-imunizacao-1777103251447-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-imunizacao-1779564006577-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-imunizacao-1777103264001-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-imunizacao-1779564063274-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-imunizacao-1779564063274-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1777103238173-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1777103238173-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1777103238173-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1777103244679-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1777103244679-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1779564125198-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1777103182944-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1777103204932-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1777103257434-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779563970889-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779563975447-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779563975447-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779563975447-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779563986606-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779564001927-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779564006577-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

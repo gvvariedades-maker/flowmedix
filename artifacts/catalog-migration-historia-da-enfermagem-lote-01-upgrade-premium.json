@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-06-10T05:02:26.419Z",
+  "lote": "historia-da-enfermagem-lote-01",
+  "mode": "write",
+  "force": false,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 5,
+  "upgraded": 2,
+  "skipped": 3,
+  "failed": 0,
+  "family_counts": {
+    "legis": 3,
+    "conceito": 2
+  },
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+      "status": "skipped",
+      "family": "legis",
+      "golden_reference": "questao-premium-sus-lei-8080-cesgranrio.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-2",
+      "status": "upgraded",
+      "family": "legis",
+      "golden_reference": "questao-premium-sus-lei-8080-cesgranrio.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow"
+      ]
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-historia-da-enfermagem-1775331667969-3",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+      "status": "upgraded",
+      "family": "legis",
+      "golden_reference": "questao-premium-sus-lei-8080-cesgranrio.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-historia-da-enfermagem-1775331667969-5",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "detail": "slides já premium (use --force para sobrescrever)"
+    }
+  ]
+}

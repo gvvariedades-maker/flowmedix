@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-06-10T13:45:21.422Z",
+  "bucket": "Processo de Enfermagem",
+  "batch_size": 10,
+  "total": 192,
+  "batch_files": [
+    "artifacts/catalog-pe-pending/batch-01.json",
+    "artifacts/catalog-pe-pending/batch-02.json",
+    "artifacts/catalog-pe-pending/batch-03.json",
+    "artifacts/catalog-pe-pending/batch-04.json",
+    "artifacts/catalog-pe-pending/batch-05.json",
+    "artifacts/catalog-pe-pending/batch-06.json",
+    "artifacts/catalog-pe-pending/batch-07.json",
+    "artifacts/catalog-pe-pending/batch-08.json",
+    "artifacts/catalog-pe-pending/batch-09.json",
+    "artifacts/catalog-pe-pending/batch-10.json",
+    "artifacts/catalog-pe-pending/batch-11.json",
+    "artifacts/catalog-pe-pending/batch-12.json",
+    "artifacts/catalog-pe-pending/batch-13.json",
+    "artifacts/catalog-pe-pending/batch-14.json",
+    "artifacts/catalog-pe-pending/batch-15.json",
+    "artifacts/catalog-pe-pending/batch-16.json",
+    "artifacts/catalog-pe-pending/batch-17.json",
+    "artifacts/catalog-pe-pending/batch-18.json",
+    "artifacts/catalog-pe-pending/batch-19.json",
+    "artifacts/catalog-pe-pending/batch-20.json"
+  ]
+}

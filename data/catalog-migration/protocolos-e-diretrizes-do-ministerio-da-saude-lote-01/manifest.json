@@ -1,0 +1,17 @@
+{
+  "lote": "protocolos-e-diretrizes-do-ministerio-da-saude-lote-01",
+  "exported_at": "2026-06-10T05:52:09.651Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Protocolos e Diretrizes do Ministério da Saúde",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1778712437306-8",
+    "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1778712437306-9",
+    "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067036141-9",
+    "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-0",
+    "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-1"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "exported_at": "2026-06-10T05:10:21.515Z",
+  "lote": "doencas-bacterianas-e-fungicas-lote-03",
+  "total": 2,
+  "entries": [
+    {
+      "modulo_slug": "fgv-geral-doencas-bacterianas-e-fungicas-1777103502990-0",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas",
+      "modulo_nome": "Geral",
+      "banca": "FGV",
+      "avant_codigo": 919
+    },
+    {
+      "modulo_slug": "vunesp-geral-doencas-bacterianas-e-fungicas-1776576813096-0",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas",
+      "modulo_nome": "Geral",
+      "banca": "VUNESP",
+      "avant_codigo": 631
+    }
+  ]
+}

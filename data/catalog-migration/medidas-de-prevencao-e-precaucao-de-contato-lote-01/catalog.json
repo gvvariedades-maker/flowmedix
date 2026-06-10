@@ -1,0 +1,91 @@
+{
+  "exported_at": "2026-06-10T04:54:52.627Z",
+  "lote": "medidas-de-prevencao-e-precaucao-de-contato-lote-01",
+  "total": 12,
+  "entries": [
+    {
+      "modulo_slug": "icece-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780000569658-6",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "ICECE",
+      "avant_codigo": 4078
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1778712203076-8",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1573
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1778712220716-0",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1574
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1778712220716-1",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1575
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780066938846-8",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5128
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780000535393-9",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 4071
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780000569658-0",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 4072
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780000569658-1",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4073
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780000569658-2",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4074
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780000569658-3",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4075
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780000569658-4",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4076
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780000569658-5",
+      "titulo_aula": "Medidas de Prevenção e Precaução de Contato",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4077
+    }
+  ]
+}

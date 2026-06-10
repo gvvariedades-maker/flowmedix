@@ -1,0 +1,22 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-lote-03",
+  "exported_at": "2026-06-10T04:19:03.900Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Punção Venosa e Cuidados com Cateteres",
+    "limit": 50,
+    "exclude_count": 100
+  },
+  "slugs": [
+    "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6",
+    "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-6",
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-2",
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-3",
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-2",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-4",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-4",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-0",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-4"
+  ]
+}

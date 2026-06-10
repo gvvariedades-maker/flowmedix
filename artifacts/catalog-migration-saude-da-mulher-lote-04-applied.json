@@ -1,0 +1,251 @@
+{
+  "generated_at": "2026-06-10T03:47:34.774Z",
+  "lote": "saude-da-mulher-lote-04",
+  "mode": "apply",
+  "total_files": 34,
+  "ok": 34,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "itame-enfermagem-saude-da-mulher-1777104432986-1",
+    "lj-assessoria-enfermagem-saude-da-mulher-1777104389226-0",
+    "maranatha-assessoria-enfermagem-saude-da-mulher-1777104306781-5",
+    "ms-sarmento-enfermagem-saude-da-mulher-1777104222222-1",
+    "ms-sarmento-enfermagem-saude-da-mulher-1777104222222-2",
+    "ms-sarmento-enfermagem-saude-da-mulher-1777104235003-8",
+    "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-3",
+    "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-4",
+    "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104222222-7",
+    "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104235003-0",
+    "objetiva-concursos-enfermagem-saude-da-mulher-1777104301763-6",
+    "objetiva-concursos-enfermagem-saude-da-mulher-1777104301763-8",
+    "objetiva-concursos-enfermagem-saude-da-mulher-1777104424950-1",
+    "quadrix-enfermagem-saude-da-mulher-1777104376057-6",
+    "quadrix-enfermagem-saude-da-mulher-1777104376057-7",
+    "quadrix-enfermagem-saude-da-mulher-1777104408379-2",
+    "selecon-enfermagem-saude-da-mulher-1777104347186-2",
+    "selecon-enfermagem-saude-da-mulher-1777104376057-2",
+    "unesc-enfermagem-saude-da-mulher-1777104295283-2",
+    "unesc-enfermagem-saude-da-mulher-1777104295283-3",
+    "unesc-enfermagem-saude-da-mulher-1777104295283-4",
+    "unesc-enfermagem-saude-da-mulher-1777104382533-3",
+    "unifil-enfermagem-saude-da-mulher-1777104376057-1",
+    "univida-enfermagem-saude-da-mulher-1777104389226-1",
+    "univida-enfermagem-saude-da-mulher-1777104389226-2",
+    "vunesp-enfermagem-saude-da-mulher-1777104261182-2",
+    "vunesp-enfermagem-saude-da-mulher-1777104261182-6",
+    "vunesp-enfermagem-saude-da-mulher-1777104295283-1",
+    "vunesp-enfermagem-saude-da-mulher-1777104323066-6",
+    "vunesp-enfermagem-saude-da-mulher-1777104340484-0",
+    "vunesp-enfermagem-saude-da-mulher-1777104408379-3",
+    "vunesp-enfermagem-saude-da-mulher-1777104408379-6",
+    "vunesp-enfermagem-saude-da-mulher-1777104408379-7",
+    "vunesp-enfermagem-saude-da-mulher-1777104415052-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "itame-enfermagem-saude-da-mulher-1777104432986-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-saude-da-mulher-1777104389226-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-saude-da-mulher-1777104306781-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104222222-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104222222-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104235003-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104222222-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104235003-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-saude-da-mulher-1777104301763-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-saude-da-mulher-1777104301763-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-saude-da-mulher-1777104424950-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-mulher-1777104376057-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-mulher-1777104376057-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-mulher-1777104408379-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-saude-da-mulher-1777104347186-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-saude-da-mulher-1777104376057-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104382533-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-saude-da-mulher-1777104376057-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-saude-da-mulher-1777104389226-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-saude-da-mulher-1777104389226-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104261182-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104261182-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104295283-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104323066-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104340484-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104415052-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "lote": "oxigenoterapia-e-cuidados-respiratorios-lote-04",
+  "exported_at": "2026-06-10T03:55:47.009Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+    "limit": 50,
+    "exclude_count": 150
+  },
+  "slugs": [
+    "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344701804-5"
+  ]
+}

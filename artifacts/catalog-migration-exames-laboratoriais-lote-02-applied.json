@@ -1,0 +1,132 @@
+{
+  "generated_at": "2026-06-10T05:43:43.286Z",
+  "lote": "exames-laboratoriais-lote-02",
+  "mode": "apply",
+  "total_files": 17,
+  "ok": 17,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-8",
+    "objetiva-concursos-enfermagem-exames-laboratoriais-1779563621885-7",
+    "objetiva-concursos-enfermagem-exames-laboratoriais-1779563631609-7",
+    "omni-enfermagem-exames-laboratoriais-1779563646977-5",
+    "omni-enfermagem-exames-laboratoriais-1779563650975-5",
+    "quadrix-enfermagem-exames-laboratoriais-1779563613404-6",
+    "selecon-enfermagem-exames-laboratoriais-1779563621885-4",
+    "unesc-enfermagem-exames-laboratoriais-1779563621885-5",
+    "unifil-enfermagem-exames-laboratoriais-1779563613404-9",
+    "unifil-enfermagem-exames-laboratoriais-1779563646977-4",
+    "unifil-enfermagem-exames-laboratoriais-1779563646977-6",
+    "unifil-enfermagem-exames-laboratoriais-1779563646977-7",
+    "unifil-enfermagem-exames-laboratoriais-1779563646977-8",
+    "unifil-enfermagem-exames-laboratoriais-1779563650975-0",
+    "unifil-enfermagem-exames-laboratoriais-1779563650975-1",
+    "vunesp-enfermagem-exames-laboratoriais-1779563621885-2",
+    "vunesp-enfermagem-exames-laboratoriais-1779563650975-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563621885-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563631609-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-exames-laboratoriais-1779563646977-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-exames-laboratoriais-1779563650975-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-exames-laboratoriais-1779563613404-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-exames-laboratoriais-1779563621885-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-exames-laboratoriais-1779563621885-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563613404-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563646977-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563646977-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563646977-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563646977-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563650975-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563650975-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-laboratoriais-1779563621885-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-laboratoriais-1779563650975-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

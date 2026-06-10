@@ -1,0 +1,98 @@
+{
+  "exported_at": "2026-06-10T05:50:56.902Z",
+  "lote": "teorias-em-enfermagem-lote-01",
+  "total": 13,
+  "entries": [
+    {
+      "modulo_slug": "funatec-enfermagem-teorias-em-enfermagem-1776055843703-3",
+      "titulo_aula": "Teorias em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 178
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-teorias-em-enfermagem-1776055843703-4",
+      "titulo_aula": "Teorias em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 179
+    },
+    {
+      "modulo_slug": "ibec-enfermagem-teorias-em-enfermagem-1776055843703-5",
+      "titulo_aula": "Teorias em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBEC",
+      "avant_codigo": 180
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-teorias-em-enfermagem-1778712122855-2",
+      "titulo_aula": "Teorias em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1517
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-teorias-em-enfermagem-1778712122855-3",
+      "titulo_aula": "Teorias em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1518
+    },
+    {
+      "modulo_slug": "idib-enfermagem-teorias-em-enfermagem-1778934863952-1",
+      "titulo_aula": "Teorias em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1724
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-teorias-em-enfermagem-1776055843703-7",
+      "titulo_aula": "Teorias em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 182
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-teorias-em-enfermagem-1776055843703-1",
+      "titulo_aula": "Teorias em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INAZ DO PARÁ",
+      "avant_codigo": 176
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-teorias-em-enfermagem-1776056009428-2",
+      "titulo_aula": "Teorias em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 207
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-teorias-em-enfermagem-1776056009428-1",
+      "titulo_aula": "Teorias em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 206
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-teorias-em-enfermagem-1776056009428-0",
+      "titulo_aula": "Teorias em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 205
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-teorias-em-enfermagem-1776055843703-6",
+      "titulo_aula": "Teorias em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 181
+    },
+    {
+      "modulo_slug": "univali-enfermagem-teorias-em-enfermagem-1776055843703-2",
+      "titulo_aula": "Teorias em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 177
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "generated_at": "2026-06-09T21:48:20.022Z",
+  "lote": "urgencias-e-emergencias-lote-05",
+  "mode": "apply",
+  "total_files": 23,
+  "ok": 23,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104012755-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-6",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-7",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-3",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-4",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-5",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-6",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-7",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-8",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-1",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-2",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-3",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-4",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-5",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104077075-9",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-1",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-2",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-1",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104012755-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104077075-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

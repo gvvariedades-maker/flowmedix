@@ -1,0 +1,28 @@
+{
+  "lote": "outras-doencas-e-questoes-mescladas-transmissiveis-lote-01",
+  "exported_at": "2026-06-10T05:24:23.777Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "apice-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103554284-2",
+    "cev-urca-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103604185-7",
+    "cogeps-unioeste-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103583552-0",
+    "cotec-fadenor-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103502990-6",
+    "fcm-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103604185-6",
+    "fepese-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776578199777-0",
+    "funcern-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581011815-0",
+    "fundatec-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776580999967-0",
+    "idecan-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778712315153-2",
+    "idecan-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778712315153-3",
+    "idecan-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1780066992037-7",
+    "idib-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778934918280-0",
+    "igeduc-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103471372-5",
+    "instituto-verbena-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103583552-8",
+    "selecon-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581030438-0",
+    "vunesp-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1779564125198-1"
+  ]
+}

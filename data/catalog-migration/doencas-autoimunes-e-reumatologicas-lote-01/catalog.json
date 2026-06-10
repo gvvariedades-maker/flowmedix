@@ -1,0 +1,21 @@
+{
+  "exported_at": "2026-06-10T05:53:24.356Z",
+  "lote": "doencas-autoimunes-e-reumatologicas-lote-01",
+  "total": 2,
+  "entries": [
+    {
+      "modulo_slug": "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-3",
+      "titulo_aula": "Doenças Autoimunes e Reumatológicas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1765
+    },
+    {
+      "modulo_slug": "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-4",
+      "titulo_aula": "Doenças Autoimunes e Reumatológicas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1766
+    }
+  ]
+}

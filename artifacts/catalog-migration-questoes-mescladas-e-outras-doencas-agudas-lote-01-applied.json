@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-06-10T05:26:19.521Z",
+  "lote": "questoes-mescladas-e-outras-doencas-agudas-lote-01",
+  "mode": "apply",
+  "total_files": 2,
+  "ok": 2,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idecan-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1780066992037-8",
+    "idib-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1778934918280-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1780066992037-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1778934918280-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

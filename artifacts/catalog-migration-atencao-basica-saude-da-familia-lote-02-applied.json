@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T04:13:54.398Z",
+  "lote": "atencao-basica-saude-da-familia-lote-02",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-7",
+    "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-0",
+    "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-1",
+    "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-2",
+    "fcm-enfermagem-atencao-basica-saude-da-familia-1778967504475-1",
+    "fgv-enfermagem-atencao-basica-saude-da-familia-1778968180610-6",
+    "fumarc-enfermagem-atencao-basica-saude-da-familia-1778968094018-5",
+    "funatec-enfermagem-atencao-basica-saude-da-familia-1778968239687-0",
+    "funcern-enfermagem-atencao-basica-saude-da-familia-1778968144588-7",
+    "funcern-enfermagem-atencao-basica-saude-da-familia-1778968156152-0",
+    "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-0",
+    "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-1",
+    "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-5",
+    "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-6",
+    "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968125784-0",
+    "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968221218-2",
+    "fundep-enfermagem-atencao-basica-saude-da-familia-1778968194611-8",
+    "fundepes-copeve-ufal-enfermagem-atencao-basica-saude-da-familia-1778968239687-1",
+    "fundepes-copeve-ufal-enfermagem-atencao-basica-saude-da-familia-1778968239687-2",
+    "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-5",
+    "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-6",
+    "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-7",
+    "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-8",
+    "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-4",
+    "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-5",
+    "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-6",
+    "furb-enfermagem-atencao-basica-saude-da-familia-1778968323839-1",
+    "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-3",
+    "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-4",
+    "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-5",
+    "iaupe-enfermagem-atencao-basica-saude-da-familia-1778968239687-3",
+    "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-1",
+    "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-2",
+    "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-3",
+    "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-4",
+    "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-5",
+    "idcap-enfermagem-atencao-basica-saude-da-familia-1778968112153-4",
+    "idecan-enfermagem-atencao-basica-saude-da-familia-1778712409051-9",
+    "idecan-enfermagem-atencao-basica-saude-da-familia-1778712418722-0",
+    "idecan-enfermagem-atencao-basica-saude-da-familia-1778712418722-1",
+    "idecan-enfermagem-atencao-basica-saude-da-familia-1778968239687-7",
+    "idecan-enfermagem-atencao-basica-saude-da-familia-1778968263411-0",
+    "idecan-enfermagem-atencao-basica-saude-da-familia-1780067024707-0",
+    "idecan-enfermagem-atencao-basica-saude-da-familia-1780067024707-1",
+    "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-4",
+    "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-5",
+    "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-6",
+    "idib-enfermagem-atencao-basica-saude-da-familia-1778968194611-3",
+    "idib-enfermagem-atencao-basica-saude-da-familia-1778968194611-4",
+    "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-atencao-basica-saude-da-familia-1778967504475-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-atencao-basica-saude-da-familia-1778968180610-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-atencao-basica-saude-da-familia-1778968094018-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-atencao-basica-saude-da-familia-1778968239687-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-atencao-basica-saude-da-familia-1778968144588-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-atencao-basica-saude-da-familia-1778968156152-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968125784-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968221218-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-atencao-basica-saude-da-familia-1778968194611-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-atencao-basica-saude-da-familia-1778968239687-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-atencao-basica-saude-da-familia-1778968239687-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968323839-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-atencao-basica-saude-da-familia-1778968239687-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-atencao-basica-saude-da-familia-1778968112153-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712409051-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712418722-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712418722-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778968239687-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778968263411-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1780067024707-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1780067024707-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778968194611-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778968194611-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

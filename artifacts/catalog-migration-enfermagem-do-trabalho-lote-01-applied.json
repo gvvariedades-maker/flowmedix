@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-06-10T05:08:31.138Z",
+  "lote": "enfermagem-do-trabalho-lote-01",
+  "mode": "apply",
+  "total_files": 14,
+  "ok": 14,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-enfermagem-do-trabalho-1778967789485-7",
+    "copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1",
+    "copese-ufpi-geral-enfermagem-do-trabalho-1777103554284-3",
+    "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-6",
+    "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-7",
+    "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-8",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-2",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-3",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-4",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-5",
+    "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-6",
+    "unesc-enfermagem-enfermagem-do-trabalho-1780001297464-6",
+    "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-0",
+    "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-enfermagem-do-trabalho-1778967789485-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-enfermagem-do-trabalho-1778967789485-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-geral-enfermagem-do-trabalho-1777103554284-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-do-trabalho-1778712409051-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-do-trabalho-1778967789485-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-enfermagem-do-trabalho-1780001297464-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-enfermagem-do-trabalho-1778967935713-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

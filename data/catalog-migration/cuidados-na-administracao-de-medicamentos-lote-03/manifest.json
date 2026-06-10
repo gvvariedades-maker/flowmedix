@@ -1,0 +1,37 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-lote-03",
+  "exported_at": "2026-06-10T04:24:31.562Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Cuidados na Administração de Medicamentos",
+    "limit": 50,
+    "exclude_count": 100
+  },
+  "slugs": [
+    "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-9",
+    "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-3",
+    "objetiva-concursos-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-3",
+    "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-1",
+    "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-2",
+    "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-3",
+    "quadrix-enfermagem-cuidados-na-administracao-de-medicamentos-1780000237780-4",
+    "selecon-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-1",
+    "unesc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-5",
+    "unesc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-7",
+    "unesc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-4",
+    "unifil-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-8",
+    "unifil-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-0",
+    "unifil-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-4",
+    "univali-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-1",
+    "univali-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-2",
+    "univida-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-1",
+    "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-7",
+    "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-8",
+    "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-0",
+    "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-1",
+    "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-3",
+    "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-2",
+    "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-7",
+    "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-7"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-06-10T05:53:46.415Z",
+  "lote": "outros-temas-de-enfermagem-lote-01",
+  "mode": "write",
+  "force": false,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 1,
+  "upgraded": 1,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "protocolo": 1
+  },
+  "results": [
+    {
+      "modulo_slug": "icece-enfermagem-outros-temas-de-enfermagem-1780001440222-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    }
+  ]
+}

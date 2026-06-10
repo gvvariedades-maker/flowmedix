@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-09T09:31:25.961Z",
+  "lote": "imunizacao-lote-05",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "fcm-enfermagem-imunizacao-1779564096589-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCM",
+      "avant_codigo": 3858
+    },
+    {
+      "modulo_slug": "fcm-geral-imunizacao-1779564090395-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Geral",
+      "banca": "FCM",
+      "avant_codigo": 3856
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-imunizacao-1779563970889-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 3666
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-imunizacao-1780000630425-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4084
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1777103204932-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 784
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1777103270218-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 860
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779564001927-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 3713
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779564011849-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 3732
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779564109452-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 3867
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779564119665-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 3883
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779564119665-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 3884
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779572166628-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 3941
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779572171486-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 3946
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779572171486-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 3952
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1777103215560-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 795
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563970889-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3665
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563970889-9",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3672
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563992006-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3697
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563992006-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3698
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563992006-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3699
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564053668-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3780
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564059030-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3781
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564059030-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3782
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564085730-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3840
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564085730-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3841
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564085730-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3842
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779564085730-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3843
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779572215875-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3988
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-imunizacao-1777103251447-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUMARC",
+      "avant_codigo": 833
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-imunizacao-1777103251447-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUMARC",
+      "avant_codigo": 834
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-imunizacao-1779564006577-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUMARC",
+      "avant_codigo": 3725
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-imunizacao-1777103264001-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 858
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-imunizacao-1779564063274-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 3793
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-imunizacao-1779564063274-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 3794
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1777103238173-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 820
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1777103238173-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 821
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1777103238173-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 822
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1777103244679-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 823
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1777103244679-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 827
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-imunizacao-1779564125198-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 3890
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1777103182944-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 775
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1777103204932-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 781
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1777103257434-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 846
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779563970889-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3664
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779563975447-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3674
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779563975447-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3675
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779563975447-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3679
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779563986606-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3684
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779564001927-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3712
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779564006577-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3717
+    }
+  ]
+}

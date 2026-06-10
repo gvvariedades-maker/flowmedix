@@ -1,0 +1,151 @@
+{
+  "generated_at": "2026-06-09T13:44:50.289Z",
+  "lote": "visual-preview-10",
+  "mode": "write",
+  "force": true,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 10,
+  "upgraded": 10,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "calc": 2,
+    "conceito": 3,
+    "protocolo": 1,
+    "vf": 1,
+    "certo_errado": 3
+  },
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-vias-de-administracao-1776056401060-9",
+      "status": "upgraded",
+      "family": "calc",
+      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-vias-de-administracao-1778968768987-7",
+      "status": "upgraded",
+      "family": "calc",
+      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056348175-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056357082-5",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056366158-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056338955-1",
+      "status": "upgraded",
+      "family": "vf",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
+      "generic_before": false,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056338955-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1776056401060-2",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
+      "generic_before": false,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1778968997293-6",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
+      "generic_before": false,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1778968997293-7",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
+      "generic_before": false,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
+    }
+  ]
+}

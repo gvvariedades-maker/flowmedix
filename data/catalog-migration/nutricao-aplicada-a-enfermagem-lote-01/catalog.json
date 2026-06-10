@@ -1,0 +1,336 @@
+{
+  "exported_at": "2026-06-10T05:46:27.460Z",
+  "lote": "nutricao-aplicada-a-enfermagem-lote-01",
+  "total": 47,
+  "entries": [
+    {
+      "modulo_slug": "amauc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-6",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 693
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-1",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 767
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-3",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 707
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-6",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 710
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-0",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 720
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-5",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 771
+    },
+    {
+      "modulo_slug": "consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-6",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CONSULPLAN",
+      "avant_codigo": 762
+    },
+    {
+      "modulo_slug": "copese-uft-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-3",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "COPESE-UFT",
+      "avant_codigo": 723
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-6",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 726
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-2",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 758
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-8",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 728
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-4",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAFIPA",
+      "avant_codigo": 724
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-7",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 694
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-7",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 711
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-6",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 744
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-9",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 765
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-5",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 725
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-3",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 769
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-4",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 760
+    },
+    {
+      "modulo_slug": "gama-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-0",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 738
+    },
+    {
+      "modulo_slug": "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBAM",
+      "avant_codigo": 704
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-0",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 766
+    },
+    {
+      "modulo_slug": "ideap-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-5",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDEAP",
+      "avant_codigo": 761
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nutricao-aplicada-a-enfermagem-1780066961947-2",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5129
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nutricao-aplicada-a-enfermagem-1780066961947-3",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5130
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-4",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 691
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-2",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 706
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-4",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 742
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-5",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 743
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-7",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 745
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1780000630425-0",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4082
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-7",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 727
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-0",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 756
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-2",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IACP",
+      "avant_codigo": 740
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-5",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 709
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-1",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 721
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-2",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 722
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-3",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 741
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-8",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 764
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-5",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 692
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-1",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 739
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-7",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 763
+    },
+    {
+      "modulo_slug": "univida-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-3",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVIDA",
+      "avant_codigo": 759
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-1",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 705
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-4",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 708
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-1",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 757
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-4",
+      "titulo_aula": "Nutrição Aplicada à Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 770
+    }
+  ]
+}

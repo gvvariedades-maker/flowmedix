@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-06-10T05:55:25.847Z",
+  "lote": "procedimentos-label-legado-lote-01",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-aocp-geral-procedimentos-1777103510083-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-aocp-geral-procedimentos-1777103510083-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

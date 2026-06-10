@@ -1,0 +1,49 @@
+{
+  "exported_at": "2026-06-10T04:52:35.312Z",
+  "lote": "mobilizacao-e-posicionamento-do-paciente-lote-01",
+  "total": 6,
+  "entries": [
+    {
+      "modulo_slug": "icece-enfermagem-mobilizacao-e-posicionamento-do-paciente-1780000535393-5",
+      "titulo_aula": "Mobilização e Posicionamento do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "ICECE",
+      "avant_codigo": 4067
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778712165781-9",
+      "titulo_aula": "Mobilização e Posicionamento do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1554
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778712184780-0",
+      "titulo_aula": "Mobilização e Posicionamento do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1555
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778712184780-1",
+      "titulo_aula": "Mobilização e Posicionamento do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1556
+    },
+    {
+      "modulo_slug": "idib-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778934890864-4",
+      "titulo_aula": "Mobilização e Posicionamento do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1737
+    },
+    {
+      "modulo_slug": "idib-enfermagem-mobilizacao-e-posicionamento-do-paciente-1778934890864-5",
+      "titulo_aula": "Mobilização e Posicionamento do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1738
+    }
+  ]
+}

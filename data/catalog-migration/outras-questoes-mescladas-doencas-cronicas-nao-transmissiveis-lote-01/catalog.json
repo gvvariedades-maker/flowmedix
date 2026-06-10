@@ -1,0 +1,35 @@
+{
+  "exported_at": "2026-06-10T05:27:13.758Z",
+  "lote": "outras-questoes-mescladas-doencas-cronicas-nao-transmissiveis-lote-01",
+  "total": 4,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778712315153-8",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1649
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778712325916-0",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1650
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-5",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1767
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-6",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1768
+    }
+  ]
+}

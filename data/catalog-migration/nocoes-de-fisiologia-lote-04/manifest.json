@@ -1,0 +1,11 @@
+{
+  "lote": "nocoes-de-fisiologia-lote-04",
+  "exported_at": "2026-06-10T04:29:06.056Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Noções de Fisiologia",
+    "limit": 50,
+    "exclude_count": 110
+  },
+  "slugs": []
+}

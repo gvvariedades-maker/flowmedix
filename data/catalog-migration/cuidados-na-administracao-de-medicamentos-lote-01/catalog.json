@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-10T04:22:47.023Z",
+  "lote": "cuidados-na-administracao-de-medicamentos-lote-01",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-8",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2147
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-0",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2154
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-1",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2155
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-7",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2161
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-3",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2166
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-4",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2134
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-0",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2139
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-6",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2145
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-4",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2152
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-2",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2198
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-5",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2220
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-6",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2221
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-0",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2171
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-7",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2178
+    },
+    {
+      "modulo_slug": "cetap-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-6",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETAP",
+      "avant_codigo": 2185
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-0",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 2179
+    },
+    {
+      "modulo_slug": "com-exam-pref-bauru-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-2",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "COM EXAM PREF BAURU",
+      "avant_codigo": 2150
+    },
+    {
+      "modulo_slug": "consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-5",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CONSULPLAN",
+      "avant_codigo": 2153
+    },
+    {
+      "modulo_slug": "consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-6",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CONSULPLAN",
+      "avant_codigo": 2160
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-0",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "COSEAC UFF",
+      "avant_codigo": 2511
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-1",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "COSEAC UFF",
+      "avant_codigo": 2512
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-2",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "COSEAC UFF",
+      "avant_codigo": 2513
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-3",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "COSEAC UFF",
+      "avant_codigo": 2514
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-4",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "COSEAC UFF",
+      "avant_codigo": 2515
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-7",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 2222
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-0",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 2148
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-4",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "DECORP",
+      "avant_codigo": 2158
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-5",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "DECORP",
+      "avant_codigo": 2159
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969752567-5",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "DECORP",
+      "avant_codigo": 2261
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-8",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 2162
+    },
+    {
+      "modulo_slug": "facet-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-5",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 2228
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-3",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 2190
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-1",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 2207
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-2",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 2208
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-8",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAURGS",
+      "avant_codigo": 2204
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-2",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 2132
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-7",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 2137
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-3",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 2157
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-5",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 2176
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-3",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 2182
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-4",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 2210
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-2",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 2141
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-3",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 2142
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-4",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 2143
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-3",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 2151
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-6",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 2169
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-3",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 2174
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-0",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 2206
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-2",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 2217
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969737311-2",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 2242
+    }
+  ]
+}

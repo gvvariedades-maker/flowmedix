@@ -1,0 +1,126 @@
+{
+  "exported_at": "2026-06-10T04:19:18.866Z",
+  "lote": "coleta-de-exames-laboratoriais-lote-03",
+  "total": 17,
+  "entries": [
+    {
+      "modulo_slug": "unifil-enfermagem-coleta-de-exames-laboratoriais-1779563288910-8",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3037
+    },
+    {
+      "modulo_slug": "univali-enfermagem-coleta-de-exames-laboratoriais-1779563165114-9",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 2992
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562716126-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2927
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-3",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2941
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2942
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-5",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2943
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-9",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2947
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-0",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2948
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-1",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2966
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-7",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2990
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-8",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2991
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-0",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2993
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-1",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2994
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-3",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2996
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2997
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563248005-5",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3017
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563272300-7",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3028
+    }
+  ]
+}

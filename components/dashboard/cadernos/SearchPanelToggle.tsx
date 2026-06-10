@@ -1,7 +1,7 @@
 'use client';
 
 import { useClientMounted } from '@/lib/hooks/useClientMounted';
-import { useCallback, useEffect, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useImperativeHandle, useState, type ReactNode, type Ref } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Search, X } from 'lucide-react';
@@ -27,16 +27,39 @@ function persistCollapsedPreference(collapsed: boolean) {
   }
 }
 
+export type SearchPanelToggleHandle = {
+  open: () => void;
+};
+
 type Props = {
   modulosCount: number;
   children: ReactNode;
+  panelRef?: Ref<SearchPanelToggleHandle>;
+  initialOpen?: boolean;
 };
 
-export function SearchPanelToggle({ modulosCount, children }: Props) {
+export function SearchPanelToggle({ modulosCount, children, panelRef, initialOpen = false }: Props) {
   const mounted = useClientMounted();
   const [collapsed, setCollapsed] = useState(false);
   const [prefSynced, setPrefSynced] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(initialOpen);
+  const [initialOpenApplied, setInitialOpenApplied] = useState(false);
+
+  const openPanel = useCallback(() => {
+    setCollapsed(false);
+    setMobileOpen(true);
+  }, []);
+
+  useImperativeHandle(panelRef, () => ({ open: openPanel }), [openPanel]);
+
+  useEffect(() => {
+    if (!initialOpen || initialOpenApplied) return;
+    const id = window.requestAnimationFrame(() => {
+      openPanel();
+      setInitialOpenApplied(true);
+    });
+    return () => window.cancelAnimationFrame(id);
+  }, [initialOpen, initialOpenApplied, openPanel]);
 
   if (mounted && !prefSynced) {
     setPrefSynced(true);

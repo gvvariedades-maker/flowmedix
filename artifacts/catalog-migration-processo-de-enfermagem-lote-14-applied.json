@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:42:26.439Z",
+  "lote": "processo-de-enfermagem-lote-14",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "igeduc-enfermagem-processo-de-enfermagem-1780011859940-0",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011859940-1",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011859940-2",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011859940-3",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011872350-7",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011872350-8",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011872350-9",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011879977-0",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011879977-1",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011879977-2",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011879977-3",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011879977-4",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1776056140199-7",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011915153-9",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-0",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-1",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-2",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-3",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-4",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-5",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-6",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-7",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-8",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-9",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-0",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-1",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-2",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-3",
+    "instituto-access-enfermagem-processo-de-enfermagem-1776056140199-2",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005791580-9",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-0",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-1",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-2",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-3",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-4",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-5",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-6",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-7",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-9",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1776056140199-3",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1776056140199-4",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-7",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-8",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-9",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-0",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-1",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-3",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011859940-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011859940-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011859940-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011859940-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011872350-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011872350-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011872350-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1776056140199-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011915153-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1776056140199-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005791580-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1776056140199-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1776056140199-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

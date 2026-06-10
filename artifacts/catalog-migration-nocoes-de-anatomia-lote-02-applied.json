@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T04:36:51.804Z",
+  "lote": "nocoes-de-anatomia-lote-02",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idesg-enfermagem-nocoes-de-anatomia-1775448275334-0",
+    "idesg-enfermagem-nocoes-de-anatomia-1775448291915-6",
+    "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-3",
+    "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-4",
+    "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-5",
+    "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-6",
+    "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-7",
+    "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-8",
+    "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-9",
+    "imparh-enfermagem-nocoes-de-anatomia-1775448491347-5",
+    "inaz-do-para-enfermagem-nocoes-de-anatomia-1775448275334-4",
+    "instituto-access-enfermagem-nocoes-de-anatomia-1775448413684-0",
+    "instituto-agata-enfermagem-nocoes-de-anatomia-1775448291915-4",
+    "instituto-agata-enfermagem-nocoes-de-anatomia-1775448291915-5",
+    "instituto-consulpam-enfermagem-nocoes-de-anatomia-1775448413684-1",
+    "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448440742-3",
+    "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448491347-3",
+    "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448491347-4",
+    "instituto-darwin-enfermagem-nocoes-de-anatomia-1775447834740-1",
+    "instituto-iacp-enfermagem-nocoes-de-anatomia-1775448275334-5",
+    "instituto-iacp-enfermagem-nocoes-de-anatomia-1775448291915-7",
+    "instituto-iacp-enfermagem-nocoes-de-anatomia-1775448529213-2",
+    "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448275334-2",
+    "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448275334-3",
+    "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448475837-2",
+    "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448475837-3",
+    "itame-enfermagem-nocoes-de-anatomia-1775447834740-4",
+    "itame-enfermagem-nocoes-de-anatomia-1775448514037-2",
+    "lj-assessoria-enfermagem-nocoes-de-anatomia-1775448458316-1",
+    "metrocapital-enfermagem-nocoes-de-anatomia-1775448491347-6",
+    "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-3",
+    "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-4",
+    "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-5",
+    "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-6",
+    "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775447834740-2",
+    "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775447834740-3",
+    "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775448275334-6",
+    "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775448291915-3",
+    "selecon-enfermagem-nocoes-de-anatomia-1775447819736-0",
+    "selecon-enfermagem-nocoes-de-anatomia-1775448440742-0",
+    "selecon-enfermagem-nocoes-de-anatomia-1775448440742-1",
+    "selecon-enfermagem-nocoes-de-anatomia-1775448440742-2",
+    "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-2",
+    "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-3",
+    "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-4",
+    "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-5",
+    "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-6",
+    "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-7",
+    "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-8",
+    "vunesp-enfermagem-nocoes-de-anatomia-1775448529213-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idesg-enfermagem-nocoes-de-anatomia-1775448275334-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-nocoes-de-anatomia-1775448291915-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-nocoes-de-anatomia-1775448491347-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-nocoes-de-anatomia-1775448275334-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-nocoes-de-anatomia-1775448413684-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-agata-enfermagem-nocoes-de-anatomia-1775448291915-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-agata-enfermagem-nocoes-de-anatomia-1775448291915-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-nocoes-de-anatomia-1775448413684-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448440742-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448491347-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448491347-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-nocoes-de-anatomia-1775447834740-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-nocoes-de-anatomia-1775448275334-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-nocoes-de-anatomia-1775448291915-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-nocoes-de-anatomia-1775448529213-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448275334-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448275334-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448475837-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448475837-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-nocoes-de-anatomia-1775447834740-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-nocoes-de-anatomia-1775448514037-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-nocoes-de-anatomia-1775448458316-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-nocoes-de-anatomia-1775448491347-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775447834740-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775447834740-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775448275334-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-anatomia-1775448291915-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-nocoes-de-anatomia-1775447819736-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-nocoes-de-anatomia-1775448440742-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-nocoes-de-anatomia-1775448440742-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-nocoes-de-anatomia-1775448440742-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448413684-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nocoes-de-anatomia-1775448529213-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

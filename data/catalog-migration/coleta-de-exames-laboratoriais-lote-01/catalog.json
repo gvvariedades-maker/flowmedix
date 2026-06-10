@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-10T04:17:35.280Z",
+  "lote": "coleta-de-exames-laboratoriais-lote-01",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 2933
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-6",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 2937
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562725491-3",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2935
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-0",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2938
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-1",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2939
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2949
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-1",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2957
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-2",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2958
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-3",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2959
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2960
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-5",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2961
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562716126-7",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2930
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562725491-0",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2932
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-0",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2965
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-3",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2968
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2969
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-5",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2970
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-7",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2972
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-8",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2973
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-2",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2985
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-3",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2986
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-5",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2988
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-6",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2989
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-8",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3001
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563225798-0",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3002
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563248005-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3016
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-6",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 2944
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-7",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 2945
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-8",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 2946
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-1",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3003
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-2",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3004
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3006
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-coleta-de-exames-laboratoriais-1779562725491-5",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "DECORP",
+      "avant_codigo": 2936
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-3",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "DECORP",
+      "avant_codigo": 2951
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "DECORP",
+      "avant_codigo": 2952
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-coleta-de-exames-laboratoriais-1779562768558-6",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 2962
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-coleta-de-exames-laboratoriais-1779563165114-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAFIPA",
+      "avant_codigo": 2987
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-coleta-de-exames-laboratoriais-1779563288910-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3033
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-coleta-de-exames-laboratoriais-1779562780466-2",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 2967
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-coleta-de-exames-laboratoriais-1779563225798-7",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3009
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-coleta-de-exames-laboratoriais-1779563225798-8",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3010
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-coleta-de-exames-laboratoriais-1779562735777-6",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2954
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-coleta-de-exames-laboratoriais-1779563140631-4",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2978
+    },
+    {
+      "modulo_slug": "furb-enfermagem-coleta-de-exames-laboratoriais-1779563140631-0",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 2974
+    },
+    {
+      "modulo_slug": "furb-enfermagem-coleta-de-exames-laboratoriais-1779563140631-3",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 2977
+    },
+    {
+      "modulo_slug": "furb-enfermagem-coleta-de-exames-laboratoriais-1779563200105-6",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 2999
+    },
+    {
+      "modulo_slug": "furb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-6",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 3008
+    },
+    {
+      "modulo_slug": "gama-enfermagem-coleta-de-exames-laboratoriais-1779562716126-5",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 2928
+    },
+    {
+      "modulo_slug": "gama-enfermagem-coleta-de-exames-laboratoriais-1779562716126-6",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 2929
+    },
+    {
+      "modulo_slug": "gama-enfermagem-coleta-de-exames-laboratoriais-1779562735777-5",
+      "titulo_aula": "Coleta de Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 2953
+    }
+  ]
+}

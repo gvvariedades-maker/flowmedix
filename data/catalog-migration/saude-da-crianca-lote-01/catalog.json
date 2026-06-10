@@ -1,0 +1,140 @@
+{
+  "exported_at": "2026-06-10T05:05:41.166Z",
+  "lote": "saude-da-crianca-lote-01",
+  "total": 19,
+  "entries": [
+    {
+      "modulo_slug": "fepese-geral-saude-da-crianca-1777104415052-9",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Geral",
+      "banca": "FEPESE",
+      "avant_codigo": 1487
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-3",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1700
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-4",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1701
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-5",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1702
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-6",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1703
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-7",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1704
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-0",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1705
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-1",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1706
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-2",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1707
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-3",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1708
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-4",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1709
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-5",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1710
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1780067024707-3",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5166
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1780067024707-4",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5167
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1780067024707-5",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5168
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-crianca-1778934936220-7",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1788
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-crianca-1778934936220-8",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1789
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-crianca-1780001362784-6",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 4120
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-crianca-1780001362784-7",
+      "titulo_aula": "Saúde da Criança",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4121
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-06-10T05:51:34.942Z",
+  "lote": "cuidados-gerais-com-higiene-e-conforto-do-paciente-lote-01",
+  "mode": "apply",
+  "total_files": 10,
+  "ok": 10,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fenix-instituto-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1780000535393-6",
+    "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-2",
+    "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-3",
+    "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-4",
+    "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-5",
+    "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-6",
+    "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1780066938846-3",
+    "idib-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778934890864-6",
+    "idib-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778934890864-7",
+    "idib-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778934890864-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1780000535393-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1780066938846-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778934890864-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778934890864-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778934890864-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

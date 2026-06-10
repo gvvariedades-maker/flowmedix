@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:53:04.855Z",
+  "lote": "vias-de-administracao-lote-02",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cev-urca-enfermagem-vias-de-administracao-1778968906156-7",
+    "cogeps-unioeste-enfermagem-vias-de-administracao-1778968768987-2",
+    "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-1",
+    "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-3",
+    "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-6",
+    "cogeps-unioeste-enfermagem-vias-de-administracao-1778968968468-2",
+    "cogeps-unioeste-enfermagem-vias-de-administracao-1778968968468-3",
+    "contemax-enfermagem-vias-de-administracao-1778968598934-5",
+    "coseac-uff-enfermagem-vias-de-administracao-1778969007166-2",
+    "coseac-uff-enfermagem-vias-de-administracao-1778969007166-3",
+    "coseac-uff-enfermagem-vias-de-administracao-1778969007166-4",
+    "coseac-uff-enfermagem-vias-de-administracao-1778969007166-5",
+    "coseac-uff-enfermagem-vias-de-administracao-1778969007166-6",
+    "coseac-uff-enfermagem-vias-de-administracao-1778969007166-7",
+    "coseac-uff-enfermagem-vias-de-administracao-1778969007166-8",
+    "cotec-fadenor-enfermagem-vias-de-administracao-1778968666352-3",
+    "cpcon-uepb-enfermagem-vias-de-administracao-1776056348175-1",
+    "cpcon-uepb-enfermagem-vias-de-administracao-1776056357082-8",
+    "cpcon-uepb-enfermagem-vias-de-administracao-1776056427936-2",
+    "cpcon-uepb-enfermagem-vias-de-administracao-1778968629127-0",
+    "cpcon-uepb-enfermagem-vias-de-administracao-1778968687469-2",
+    "cpcon-uepb-enfermagem-vias-de-administracao-1778968877204-0",
+    "cpcon-uepb-enfermagem-vias-de-administracao-1778968877204-1",
+    "decorp-enfermagem-vias-de-administracao-1776056357082-0",
+    "educa-pb-enfermagem-vias-de-administracao-1776056366158-4",
+    "educa-pb-enfermagem-vias-de-administracao-1776056374837-4",
+    "educa-pb-enfermagem-vias-de-administracao-1776056427936-0",
+    "educa-pb-enfermagem-vias-de-administracao-1778968629127-6",
+    "facet-enfermagem-vias-de-administracao-1777178733298-0",
+    "fau-unicentro-enfermagem-vias-de-administracao-1776056348175-8",
+    "fau-unicentro-enfermagem-vias-de-administracao-1776056357082-6",
+    "fau-unicentro-enfermagem-vias-de-administracao-1776056383154-1",
+    "fau-unicentro-enfermagem-vias-de-administracao-1776056401060-6",
+    "fau-unicentro-enfermagem-vias-de-administracao-1776056409987-2",
+    "fau-unicentro-enfermagem-vias-de-administracao-1778968666352-4",
+    "fau-unicentro-enfermagem-vias-de-administracao-1778968968468-8",
+    "fcc-enfermagem-vias-de-administracao-1776056418941-0",
+    "fepese-enfermagem-vias-de-administracao-1776056383154-5",
+    "fepese-enfermagem-vias-de-administracao-1776056391403-2",
+    "fepese-enfermagem-vias-de-administracao-1776056418941-4",
+    "fepese-enfermagem-vias-de-administracao-1778968787431-4",
+    "fepese-enfermagem-vias-de-administracao-1778968787431-5",
+    "fepese-enfermagem-vias-de-administracao-1778968997293-1",
+    "fepese-enfermagem-vias-de-administracao-1778968997293-8",
+    "fgv-enfermagem-vias-de-administracao-1776056366158-0",
+    "fgv-enfermagem-vias-de-administracao-1776056401060-0",
+    "fgv-enfermagem-vias-de-administracao-1778968687469-7",
+    "fgv-enfermagem-vias-de-administracao-1778968956139-4",
+    "fgv-enfermagem-vias-de-administracao-1778968968468-0",
+    "fgv-enfermagem-vias-de-administracao-1778968968468-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cev-urca-enfermagem-vias-de-administracao-1778968906156-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968768987-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968968468-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968968468-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "contemax-enfermagem-vias-de-administracao-1778968598934-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-vias-de-administracao-1778968666352-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1776056348175-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1776056357082-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1776056427936-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1778968629127-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1778968687469-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1778968877204-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1778968877204-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-vias-de-administracao-1776056357082-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-vias-de-administracao-1776056366158-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-vias-de-administracao-1776056374837-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-vias-de-administracao-1776056427936-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-vias-de-administracao-1778968629127-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-vias-de-administracao-1777178733298-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056348175-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056357082-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056383154-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056401060-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056409987-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1778968666352-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1778968968468-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcc-enfermagem-vias-de-administracao-1776056418941-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1776056383154-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1776056391403-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1776056418941-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1778968787431-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1778968787431-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1778968997293-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1778968997293-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-vias-de-administracao-1776056366158-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-vias-de-administracao-1776056401060-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-vias-de-administracao-1778968687469-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-vias-de-administracao-1778968956139-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-vias-de-administracao-1778968968468-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-vias-de-administracao-1778968968468-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

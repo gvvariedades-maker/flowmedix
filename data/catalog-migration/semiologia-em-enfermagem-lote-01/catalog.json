@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-10T05:37:22.018Z",
+  "lote": "semiologia-em-enfermagem-lote-01",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563486900-6",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3089
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563491765-0",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3092
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563517223-6",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3142
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3117
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-0",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3074
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-1",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3075
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563486900-2",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3085
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563500147-8",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3116
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-1",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3137
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-4",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3140
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-semiologia-em-enfermagem-1779563549311-2",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3189
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-semiologia-em-enfermagem-1779563491765-1",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEV URCA",
+      "avant_codigo": 3093
+    },
+    {
+      "modulo_slug": "consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-4",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CONSULPLAN",
+      "avant_codigo": 3165
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563531989-9",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "COSEAC UFF",
+      "avant_codigo": 3170
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563549311-3",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "COSEAC UFF",
+      "avant_codigo": 3190
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-semiologia-em-enfermagem-1779563537258-0",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 3171
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563491765-4",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3096
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-3",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3112
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-4",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3113
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-5",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3114
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-3",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3121
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-4",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3122
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-5",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3123
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-7",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3125
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563517223-3",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3139
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563521756-2",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3147
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563521756-3",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3148
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-semiologia-em-enfermagem-1779563527042-1",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 3154
+    },
+    {
+      "modulo_slug": "facape-enfermagem-semiologia-em-enfermagem-1779563486900-8",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACAPE",
+      "avant_codigo": 3091
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563480978-6",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3080
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563480978-7",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3081
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563480978-8",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3082
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563486900-5",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3088
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563491765-6",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3098
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563505333-1",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3119
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-1",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAURGS",
+      "avant_codigo": 3181
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-2",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAURGS",
+      "avant_codigo": 3182
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-3",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAURGS",
+      "avant_codigo": 3183
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563467322-3",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 3068
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-3",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 3104
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-5",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 3106
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3100
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3101
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-2",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 3155
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-3",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 3156
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-2",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3076
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-3",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3077
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-4",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3078
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563486900-3",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3086
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563495719-4",
+      "titulo_aula": "Semiologia em Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3105
+    }
+  ]
+}

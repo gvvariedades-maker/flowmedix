@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:30:07.813Z",
+  "lote": "imunizacao-lote-02",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-imunizacao-1777103244679-1",
+    "adm-tec-enfermagem-imunizacao-1779563986606-5",
+    "adm-tec-enfermagem-imunizacao-1779564031957-5",
+    "agirh-enfermagem-imunizacao-1779563975447-7",
+    "agirh-enfermagem-imunizacao-1779564109452-6",
+    "agirh-enfermagem-imunizacao-1779564109452-7",
+    "agirh-enfermagem-imunizacao-1779564113760-0",
+    "amauc-enfermagem-imunizacao-1779563975447-4",
+    "amauc-enfermagem-imunizacao-1779564006577-1",
+    "amauc-enfermagem-imunizacao-1779564109452-2",
+    "amauc-enfermagem-imunizacao-1779572227744-7",
+    "amauc-enfermagem-imunizacao-1779572227744-8",
+    "ameosc-enfermagem-imunizacao-1779564006577-2",
+    "ameosc-enfermagem-imunizacao-1779564074967-2",
+    "ameosc-enfermagem-imunizacao-1779564074967-3",
+    "ameosc-enfermagem-imunizacao-1779564079834-1",
+    "ameosc-enfermagem-imunizacao-1779572180830-9",
+    "ameosc-enfermagem-imunizacao-1779572198133-0",
+    "ameosc-enfermagem-imunizacao-1779572198133-1",
+    "ameosc-enfermagem-imunizacao-1779572207173-7",
+    "ameosc-enfermagem-imunizacao-1779572207173-8",
+    "ameosc-enfermagem-imunizacao-1779572207173-9",
+    "apice-enfermagem-imunizacao-1779564079834-2",
+    "apice-enfermagem-imunizacao-1779564079834-3",
+    "apice-enfermagem-imunizacao-1779564079834-4",
+    "avancasp-enfermagem-imunizacao-1777103222102-4",
+    "avancasp-enfermagem-imunizacao-1777103222102-5",
+    "avancasp-enfermagem-imunizacao-1777103222102-6",
+    "avancasp-enfermagem-imunizacao-1777103257434-2",
+    "avancasp-enfermagem-imunizacao-1777103257434-3",
+    "avancasp-enfermagem-imunizacao-1779564125198-7",
+    "avancasp-enfermagem-imunizacao-1779564125198-8",
+    "avancasp-enfermagem-imunizacao-1779564129617-0",
+    "cebraspe-cespe-enfermagem-imunizacao-1777103230085-8",
+    "cebraspe-cespe-enfermagem-imunizacao-1777103238173-0",
+    "cebraspe-cespe-enfermagem-imunizacao-1777103238173-1",
+    "cebraspe-cespe-enfermagem-imunizacao-1777103238173-2",
+    "cebraspe-cespe-enfermagem-imunizacao-1779572166628-0",
+    "cebraspe-cespe-enfermagem-imunizacao-1779572166628-1",
+    "cebraspe-cespe-enfermagem-imunizacao-1779572171486-8",
+    "cetrede-enfermagem-imunizacao-1777103204932-6",
+    "cetrede-enfermagem-imunizacao-1777103215560-0",
+    "cetrede-enfermagem-imunizacao-1777103215560-1",
+    "cetrede-enfermagem-imunizacao-1779563970889-6",
+    "cetrede-enfermagem-imunizacao-1779563970889-7",
+    "cetrede-enfermagem-imunizacao-1779572171486-2",
+    "cetrede-enfermagem-imunizacao-1779572171486-3",
+    "cev-urca-enfermagem-imunizacao-1779563986606-6",
+    "cev-urca-enfermagem-imunizacao-1779563986606-7",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564090395-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1777103244679-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1779563986606-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1779564031957-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779563975447-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564109452-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564109452-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564113760-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779563975447-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779564006577-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779564109452-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779572227744-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779572227744-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564006577-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564074967-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564074967-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564079834-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572180830-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572198133-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572198133-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-imunizacao-1779564079834-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-imunizacao-1779564079834-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-imunizacao-1779564079834-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1777103222102-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1777103222102-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1777103222102-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1777103257434-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1777103257434-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1779564125198-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1779564125198-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1779564129617-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1777103230085-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1777103238173-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1777103238173-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1777103238173-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1779572166628-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1779572166628-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1779572171486-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1777103204932-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1777103215560-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1777103215560-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1779563970889-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1779563970889-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1779572171486-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1779572171486-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-imunizacao-1779563986606-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-imunizacao-1779563986606-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564090395-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T04:14:00.152Z",
+  "lote": "enfermagem-em-centro-cirurgico-lote-01",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "amauc-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-0",
+    "ameosc-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-5",
+    "ameosc-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-6",
+    "ameosc-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-1",
+    "apice-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-8",
+    "avancasp-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-4",
+    "avancasp-enfermagem-enfermagem-em-centro-cirurgico-1777103831211-1",
+    "avancasp-enfermagem-enfermagem-em-centro-cirurgico-1777103831211-2",
+    "avancasp-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-2",
+    "cebraspe-cespe-enfermagem-enfermagem-em-centro-cirurgico-1777103831211-6",
+    "cebraspe-cespe-enfermagem-enfermagem-em-centro-cirurgico-1777103831211-7",
+    "cebraspe-cespe-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-1",
+    "cetrede-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-5",
+    "copese-ufpi-enfermagem-enfermagem-em-centro-cirurgico-1777103907464-0",
+    "cpcon-uepb-enfermagem-enfermagem-em-centro-cirurgico-1777103933896-7",
+    "fauel-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-0",
+    "fcm-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-2",
+    "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-1",
+    "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-6",
+    "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103801993-6",
+    "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-0",
+    "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-1",
+    "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103831211-0",
+    "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-7",
+    "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-8",
+    "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-0",
+    "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-1",
+    "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103907464-1",
+    "funatec-enfermagem-enfermagem-em-centro-cirurgico-1777103857889-4",
+    "funatec-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-4",
+    "funcern-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-5",
+    "fundatec-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-0",
+    "fundatec-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-2",
+    "fundatec-enfermagem-enfermagem-em-centro-cirurgico-1777103913966-7",
+    "fundatec-enfermagem-enfermagem-em-centro-cirurgico-1777103933896-4",
+    "furb-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-5",
+    "furb-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-6",
+    "fuvest-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-4",
+    "fuvest-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-5",
+    "iaupe-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-3",
+    "iaupe-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-4",
+    "iaupe-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-7",
+    "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103831211-4",
+    "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103831211-5",
+    "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-5",
+    "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-2",
+    "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-3",
+    "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-4",
+    "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-5",
+    "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "amauc-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-enfermagem-em-centro-cirurgico-1777103831211-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-enfermagem-em-centro-cirurgico-1777103831211-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-enfermagem-em-centro-cirurgico-1777103831211-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-enfermagem-em-centro-cirurgico-1777103831211-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-enfermagem-em-centro-cirurgico-1777103907464-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-enfermagem-em-centro-cirurgico-1777103933896-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103801993-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103818790-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103831211-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-enfermagem-em-centro-cirurgico-1777103907464-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-enfermagem-em-centro-cirurgico-1777103857889-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-enfermagem-em-centro-cirurgico-1777103913966-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-enfermagem-em-centro-cirurgico-1777103933896-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103831211-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103831211-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

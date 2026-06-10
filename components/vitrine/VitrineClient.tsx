@@ -10,7 +10,6 @@ import {
   createElement,
   type ReactNode,
 } from 'react';
-import { createPortal } from 'react-dom';
 import { useRouter, usePathname } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -18,7 +17,6 @@ import {
   LayoutDashboard,
   Search,
   X,
-  Filter,
   ChevronDown,
   ChevronUp,
   ChevronRight,
@@ -44,9 +42,6 @@ import {
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
-import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
-import { useClientMounted } from '@/lib/hooks/useClientMounted';
-import { useMobileSheetKeyboardInset } from '@/lib/layout/useMobileSheetKeyboardInset';
 import {
   vitrineFacetsQueryKey,
   vitrineListQueryKey,
@@ -55,7 +50,9 @@ import {
 import type { VitrineFacets, VitrineGrupoSubtopico, VitrinePageResponse } from '@/lib/vitrine/types';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { MultiCheckboxFilter } from '@/components/ui/MultiCheckboxFilter';
+import { QuestaoFilterBar } from '@/components/questao-filter/QuestaoFilterBar';
+import { QuestaoFilterMobileRow } from '@/components/questao-filter/QuestaoFilterMobileRow';
+import { multiFilterResumo } from '@/lib/questao-filter/multiFilterResumo';
 import { NeonBadge } from '@/components/ui/neon-badge';
 import { EmptyState } from '@/components/ui/empty-state';
 import { ProgressRing } from '@/components/ui/progress-ring';
@@ -197,12 +194,6 @@ function getTopicIcon(titulo_aula?: string | null, modulo_nome?: string | null):
   if (/histor|fundament|semiolog/.test(src)) return BookOpen;
 
   return Stethoscope;
-}
-
-function multiFilterResumo(items: string[], pluralLabel: string): string {
-  if (items.length === 0) return '';
-  if (items.length <= 2) return items.join(', ');
-  return `${items.length} ${pluralLabel}`;
 }
 
 // ─── Interfaces ───────────────────────────────────────────────────────────────
@@ -615,6 +606,11 @@ export default function VitrineClient({
     router.refresh();
   }, [router]);
 
+  const markFilterPaginaReset = useCallback(() => {
+    paginaViaFiltroRef.current = true;
+    setPagina(1);
+  }, []);
+
   return (
     <div
       className={cn(
@@ -687,147 +683,43 @@ export default function VitrineClient({
           </div>
 
           {mobileFiltersExpanded ? (
-          <div
-            className="flex items-center gap-2 overflow-x-auto scroll-pl-4 px-4 pb-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            aria-label="Filtros da vitrine"
-          >
-          {bancasSelecionadas.length > 0 ? (
-            <div
-              className={cn(
-                'inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-[#00f2ff]/35 bg-[#00f2ff]/10 text-xs font-medium text-[#00f2ff]',
-                facetsLoading && bancas.length === 0 && 'opacity-50',
-              )}
-            >
-              <button
-                type="button"
-                disabled={facetsLoading && bancas.length === 0}
-                onClick={() => setBancaSheetOpen(true)}
-                className="inline-flex min-h-[44px] max-w-[10rem] items-center gap-1.5 rounded-l-full py-1.5 pl-3 pr-1 disabled:cursor-not-allowed"
-              >
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#00f2ff]" aria-hidden />
-                <span className="truncate">{multiFilterResumo(bancasSelecionadas, 'bancas')}</span>
-              </button>
-              <button
-                type="button"
-                aria-label="Limpar filtro de banca"
-                onClick={(e) => {
-                  e.stopPropagation();
+            <div className="scroll-pl-4 px-4 pb-3">
+              <QuestaoFilterMobileRow
+                bancasSelected={bancasSelecionadas}
+                assuntosSelected={assuntosSelecionados}
+                searchTerm={searchTerm}
+                facets={{ bancas, assuntos }}
+                facetsLoading={facetsLoading}
+                bancaSheetOpen={bancaSheetOpen}
+                assuntoSheetOpen={assuntoSheetOpen}
+                onBancaSheetOpenChange={setBancaSheetOpen}
+                onAssuntoSheetOpenChange={setAssuntoSheetOpen}
+                onBancasChange={(next) => {
+                  setBancasSelecionadas(next);
+                  markFilterPaginaReset();
+                }}
+                onAssuntosChange={(next) => {
+                  setAssuntosSelecionados(next);
+                  markFilterPaginaReset();
+                }}
+                onClearBancas={() => {
                   setBancasSelecionadas([]);
-                  paginaViaFiltroRef.current = true;
-                  setPagina(1);
+                  markFilterPaginaReset();
                 }}
-                className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-r-full hover:bg-[#00f2ff]/20"
-              >
-                <X size={14} aria-hidden />
-              </button>
-            </div>
-          ) : (
-            <button
-              type="button"
-              disabled={facetsLoading && bancas.length === 0}
-              onClick={() => setBancaSheetOpen(true)}
-              className="inline-flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              <SlidersHorizontal size={14} aria-hidden />
-              Banca
-            </button>
-          )}
-
-          {assuntosSelecionados.length > 0 ? (
-            <div
-              className={cn(
-                'inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-[#00f2ff]/35 bg-[#00f2ff]/10 text-xs font-medium text-[#00f2ff]',
-                facetsLoading && assuntos.length === 0 && 'opacity-50',
-              )}
-            >
-              <button
-                type="button"
-                disabled={facetsLoading && assuntos.length === 0}
-                onClick={() => setAssuntoSheetOpen(true)}
-                className="inline-flex min-h-[44px] max-w-[10rem] items-center gap-1.5 rounded-l-full py-1.5 pl-3 pr-1 disabled:cursor-not-allowed"
-              >
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#00f2ff]" aria-hidden />
-                <span className="truncate">
-                  {multiFilterResumo(assuntosSelecionados, 'assuntos')}
-                </span>
-              </button>
-              <button
-                type="button"
-                aria-label="Limpar filtro de assunto"
-                onClick={(e) => {
-                  e.stopPropagation();
+                onClearAssuntos={() => {
                   setAssuntosSelecionados([]);
-                  paginaViaFiltroRef.current = true;
-                  setPagina(1);
+                  markFilterPaginaReset();
                 }}
-                className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-r-full hover:bg-[#00f2ff]/20"
-              >
-                <X size={14} aria-hidden />
-              </button>
+                onClearAll={() => {
+                  setBancasSelecionadas([]);
+                  setAssuntosSelecionados([]);
+                  setSearchTerm('');
+                  markFilterPaginaReset();
+                }}
+              />
             </div>
-          ) : (
-            <button
-              type="button"
-              disabled={facetsLoading && assuntos.length === 0}
-              onClick={() => setAssuntoSheetOpen(true)}
-              className="inline-flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              <BookOpen size={14} aria-hidden />
-              Assunto
-            </button>
-          )}
-
-          {(bancasSelecionadas.length > 0 ||
-            assuntosSelecionados.length > 0 ||
-            searchTerm.trim().length > 0) && (
-            <button
-              type="button"
-              onClick={() => {
-                setBancasSelecionadas([]);
-                setAssuntosSelecionados([]);
-                setSearchTerm('');
-                paginaViaFiltroRef.current = true;
-                setPagina(1);
-              }}
-              className="inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:border-white/20 hover:text-slate-200"
-            >
-              Limpar
-            </button>
-          )}
-          </div>
           ) : null}
         </div>
-
-        <VitrineMobileFilterSheet
-          open={bancaSheetOpen}
-          onClose={() => setBancaSheetOpen(false)}
-          title="Filtrar por banca"
-          options={bancas}
-          selected={bancasSelecionadas}
-          disabled={facetsLoading && bancas.length === 0}
-          searchPlaceholder="Buscar banca..."
-          emptySearchLabel="Nenhuma banca encontrada"
-          onChange={(next) => {
-            setBancasSelecionadas(next);
-            paginaViaFiltroRef.current = true;
-            setPagina(1);
-          }}
-        />
-        <VitrineMobileFilterSheet
-          open={assuntoSheetOpen}
-          onClose={() => setAssuntoSheetOpen(false)}
-          title="Filtrar por assunto"
-          options={assuntos}
-          selected={assuntosSelecionados}
-          disabled={facetsLoading && assuntos.length === 0}
-          searchPlaceholder="Buscar assunto..."
-          emptySearchLabel="Nenhum assunto encontrado"
-          onChange={(next) => {
-            setAssuntosSelecionados(next);
-            paginaViaFiltroRef.current = true;
-            setPagina(1);
-          }}
-        />
 
         {/* Header desktop */}
         <header className="hidden bg-transparent md:block">
@@ -881,60 +773,27 @@ export default function VitrineClient({
         </header>
 
         <div className="mx-auto hidden max-w-7xl px-6 pb-6 pt-0 md:block">
-        <section className="space-y-4" aria-label="Filtros da vitrine">
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <Filter size={16} aria-hidden />
-            <span className="text-xs font-medium uppercase tracking-wider">Filtros</span>
-          </div>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <MultiCheckboxFilter
-              emptyLabel="Todas as bancas"
-              searchPlaceholder="Buscar banca..."
-              addButtonLabel="Adicionar banca"
-              sheetTitle="Adicionar banca"
-              emptySearchLabel="Nenhuma banca encontrada"
-              options={bancas}
-              value={bancasSelecionadas}
-              disabled={facetsLoading && bancas.length === 0}
-              onChange={(next) => {
-                setBancasSelecionadas(next);
-                paginaViaFiltroRef.current = true;
-                setPagina(1);
-              }}
-            />
-
-            <MultiCheckboxFilter
-              emptyLabel="Todos os assuntos"
-              searchPlaceholder="Buscar assunto..."
-              addButtonLabel="Adicionar assunto"
-              sheetTitle="Adicionar assunto"
-              emptySearchLabel="Nenhum assunto encontrado"
-              contentMinWidth="min-w-[240px]"
-              options={assuntos}
-              value={assuntosSelecionados}
-              disabled={facetsLoading && assuntos.length === 0}
-              onChange={(next) => {
-                setAssuntosSelecionados(next);
-                paginaViaFiltroRef.current = true;
-                setPagina(1);
-              }}
-            />
-          </div>
-          {(bancasSelecionadas.length > 0 || assuntosSelecionados.length > 0) && (
-            <button
-              type="button"
-              onClick={() => {
-                setBancasSelecionadas([]);
-                setAssuntosSelecionados([]);
-                paginaViaFiltroRef.current = true;
-                setPagina(1);
-              }}
-              className="text-xs font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
-            >
-              Limpar filtros
-            </button>
-          )}
-        </section>
+          <QuestaoFilterBar
+            variant="vitrine"
+            showSearch={false}
+            facets={{ bancas, assuntos }}
+            facetsLoading={facetsLoading}
+            bancasSelected={bancasSelecionadas}
+            assuntosSelected={assuntosSelecionados}
+            searchTerm={searchTerm}
+            onBancasChange={(next) => {
+              setBancasSelecionadas(next);
+              markFilterPaginaReset();
+            }}
+            onAssuntosChange={(next) => {
+              setAssuntosSelecionados(next);
+              markFilterPaginaReset();
+            }}
+            onSearchChange={(term) => {
+              setSearchTerm(term);
+              markFilterPaginaReset();
+            }}
+          />
         </div>
       </div>
 
@@ -1052,192 +911,6 @@ export default function VitrineClient({
         </section>
       </main>
     </div>
-  );
-}
-
-// ─── Sheet de filtro multi-select (mobile) ─────────────────────────────────────
-
-type VitrineMobileFilterSheetProps = {
-  open: boolean;
-  onClose: () => void;
-  title: string;
-  options: string[];
-  selected: string[];
-  onChange: (value: string[]) => void;
-  searchPlaceholder: string;
-  emptySearchLabel: string;
-  disabled?: boolean;
-};
-
-function VitrineMobileFilterSheet({
-  open,
-  onClose,
-  title,
-  options,
-  selected,
-  onChange,
-  searchPlaceholder,
-  emptySearchLabel,
-  disabled,
-}: VitrineMobileFilterSheetProps) {
-  const [busca, setBusca] = useState('');
-  const portalReady = useClientMounted();
-  const selectedSet = useMemo(() => new Set(selected), [selected]);
-
-  const optionsFiltradas = useMemo(
-    () => options.filter((o) => o.toLowerCase().includes(busca.toLowerCase().trim())),
-    [options, busca],
-  );
-
-  const closeSheet = useCallback(() => {
-    onClose();
-    setBusca('');
-  }, [onClose]);
-
-  const toggleOption = useCallback(
-    (option: string) => {
-      if (disabled) return;
-      if (selectedSet.has(option)) {
-        onChange(selected.filter((v) => v !== option));
-      } else {
-        onChange([...selected, option]);
-      }
-    },
-    [disabled, onChange, selected, selectedSet],
-  );
-
-  useBodyScrollLock(open);
-  const keyboardInsetPx = useMobileSheetKeyboardInset(open);
-
-  useEffect(() => {
-    if (!open) return;
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key !== 'Escape') return;
-      event.preventDefault();
-      closeSheet();
-    };
-
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
-  }, [open, closeSheet]);
-
-  if (!portalReady || typeof document === 'undefined') return null;
-
-  return createPortal(
-    <AnimatePresence>
-      {open ? (
-        <motion.div
-          key="vitrine-mobile-filter-sheet"
-          className="fixed inset-0 z-[200] md:hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.15 }}
-        >
-          <button
-            type="button"
-            tabIndex={-1}
-            aria-label="Fechar filtros"
-            className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
-            onClick={closeSheet}
-          />
-          <motion.div
-            role="dialog"
-            aria-modal="true"
-            aria-label={title}
-            initial={{ y: '100%' }}
-            animate={{ y: 0 }}
-            exit={{ y: '100%' }}
-            transition={{ type: 'spring', stiffness: 380, damping: 34 }}
-            className="absolute inset-x-0 bottom-0 z-[201] flex max-h-[min(85dvh,32rem)] flex-col rounded-t-3xl border border-white/10 bg-[#0d1117] pb-safe shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
-              <p className="text-sm font-bold text-white">{title}</p>
-              <button
-                type="button"
-                onClick={closeSheet}
-                aria-label="Fechar"
-                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-white/10 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
-              >
-                <X size={18} aria-hidden />
-              </button>
-            </div>
-            <div className="custom-scrollbar flex min-h-0 flex-1 flex-col overflow-hidden">
-              <div className="sticky top-0 z-10 bg-[#0d1117] px-2 pb-2 pt-2">
-                <input
-                  value={busca}
-                  onChange={(e) => setBusca(e.target.value)}
-                  placeholder={searchPlaceholder}
-                  aria-label={searchPlaceholder}
-                  disabled={disabled}
-                  className="w-full rounded-lg border border-white/10 bg-white/[0.05] px-3 py-2 text-sm text-slate-200 placeholder-slate-500 outline-none transition-colors focus:border-[#00f2ff]/40 focus:bg-[#00f2ff]/[0.04] disabled:opacity-50"
-                />
-              </div>
-              <ul
-                className="min-h-0 flex-1 overflow-y-auto overscroll-y-contain py-1"
-                role="listbox"
-                aria-label={searchPlaceholder}
-                style={
-                  keyboardInsetPx > 0
-                    ? { scrollPaddingBottom: keyboardInsetPx + 16 }
-                    : undefined
-                }
-              >
-                {optionsFiltradas.length === 0 ? (
-                  <li className="py-4 text-center text-xs text-slate-500" role="presentation">
-                    {emptySearchLabel}
-                  </li>
-                ) : (
-                  optionsFiltradas.map((option) => {
-                    const isSelected = selectedSet.has(option);
-                    return (
-                      <li key={option}>
-                        <button
-                          type="button"
-                          role="option"
-                          aria-selected={isSelected}
-                          disabled={disabled}
-                          onClick={() => toggleOption(option)}
-                          className="flex min-h-[44px] w-full items-start gap-2 rounded-lg px-2 py-2 text-left text-sm text-slate-200 transition-colors hover:bg-cyan-400/10 hover:text-cyan-100 disabled:opacity-50"
-                        >
-                          <span
-                            className={cn(
-                              'mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded border',
-                              isSelected
-                                ? 'border-[#00f2ff]/60 bg-[#00f2ff]/20 text-[#00f2ff]'
-                                : 'border-white/25 bg-transparent',
-                            )}
-                            aria-hidden
-                          >
-                            {isSelected ? <CheckCircle2 className="h-3 w-3" /> : null}
-                          </span>
-                          <span className="min-w-0 flex-1 leading-snug">{option}</span>
-                        </button>
-                      </li>
-                    );
-                  })
-                )}
-              </ul>
-            </div>
-            <button
-              type="button"
-              className="min-h-[44px] border-t border-white/10 px-4 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-slate-400 transition-colors hover:bg-white/5 hover:text-white"
-              style={
-                keyboardInsetPx > 0
-                  ? { paddingBottom: `calc(0.875rem + ${keyboardInsetPx}px)` }
-                  : undefined
-              }
-              onClick={closeSheet}
-            >
-              Fechar
-            </button>
-          </motion.div>
-        </motion.div>
-      ) : null}
-    </AnimatePresence>,
-    document.body,
   );
 }
 

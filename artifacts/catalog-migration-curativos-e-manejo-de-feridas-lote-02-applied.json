@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T04:01:49.755Z",
+  "lote": "curativos-e-manejo-de-feridas-lote-02",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "educa-pb-enfermagem-curativos-e-manejo-de-feridas-1779269305691-7",
+    "educa-pb-enfermagem-curativos-e-manejo-de-feridas-1779344779828-1",
+    "facet-enfermagem-curativos-e-manejo-de-feridas-1779269305691-5",
+    "facet-enfermagem-curativos-e-manejo-de-feridas-1779344751294-9",
+    "facet-enfermagem-curativos-e-manejo-de-feridas-1779344759089-0",
+    "facet-enfermagem-curativos-e-manejo-de-feridas-1779344779828-5",
+    "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-7",
+    "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-8",
+    "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-9",
+    "fau-unicentro-enfermagem-curativos-e-manejo-de-feridas-1779344759089-4",
+    "fau-unicentro-enfermagem-curativos-e-manejo-de-feridas-1779344773456-4",
+    "fepese-enfermagem-curativos-e-manejo-de-feridas-1779340178514-6",
+    "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344779828-7",
+    "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344819753-2",
+    "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344819753-3",
+    "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344759089-2",
+    "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344759089-5",
+    "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344819753-5",
+    "funatec-enfermagem-curativos-e-manejo-de-feridas-1779269315587-8",
+    "fundatec-enfermagem-curativos-e-manejo-de-feridas-1779344813448-1",
+    "fundatec-enfermagem-curativos-e-manejo-de-feridas-1779344813448-2",
+    "fundep-enfermagem-curativos-e-manejo-de-feridas-1779269212740-6",
+    "funtef-enfermagem-curativos-e-manejo-de-feridas-1779269305691-4",
+    "furb-enfermagem-curativos-e-manejo-de-feridas-1779344786992-1",
+    "gama-enfermagem-curativos-e-manejo-de-feridas-1779269291153-3",
+    "gama-enfermagem-curativos-e-manejo-de-feridas-1779269291153-4",
+    "iaupe-enfermagem-curativos-e-manejo-de-feridas-1779269228428-1",
+    "iaupe-enfermagem-curativos-e-manejo-de-feridas-1779269315587-9",
+    "iaupe-enfermagem-curativos-e-manejo-de-feridas-1779344819753-7",
+    "ibade-enfermagem-curativos-e-manejo-de-feridas-1779344819753-6",
+    "ibam-enfermagem-curativos-e-manejo-de-feridas-1779344779828-0",
+    "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269228428-6",
+    "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269228428-7",
+    "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-0",
+    "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-1",
+    "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-2",
+    "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-1",
+    "ibgp-enfermagem-curativos-e-manejo-de-feridas-1779340178514-8",
+    "idecan-enfermagem-curativos-e-manejo-de-feridas-1778712165781-0",
+    "idecan-enfermagem-curativos-e-manejo-de-feridas-1778712165781-1",
+    "idecan-enfermagem-curativos-e-manejo-de-feridas-1778712165781-2",
+    "idesg-enfermagem-curativos-e-manejo-de-feridas-1779344759089-7",
+    "idesg-enfermagem-curativos-e-manejo-de-feridas-1779344759089-8",
+    "idesg-enfermagem-curativos-e-manejo-de-feridas-1779344766321-0",
+    "igeduc-enfermagem-curativos-e-manejo-de-feridas-1779344751294-8",
+    "igeduc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-3",
+    "inaz-do-para-enfermagem-curativos-e-manejo-de-feridas-1779269228428-0",
+    "inaz-do-para-enfermagem-curativos-e-manejo-de-feridas-1779269228428-2",
+    "inaz-do-para-enfermagem-curativos-e-manejo-de-feridas-1779269244710-7",
+    "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779269291153-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "educa-pb-enfermagem-curativos-e-manejo-de-feridas-1779269305691-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-curativos-e-manejo-de-feridas-1779344779828-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779269305691-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344751294-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344759089-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344779828-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-curativos-e-manejo-de-feridas-1779344759089-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-curativos-e-manejo-de-feridas-1779344773456-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-curativos-e-manejo-de-feridas-1779340178514-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344779828-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344819753-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344819753-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344759089-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344759089-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344819753-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-curativos-e-manejo-de-feridas-1779269315587-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-curativos-e-manejo-de-feridas-1779344813448-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-curativos-e-manejo-de-feridas-1779344813448-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-curativos-e-manejo-de-feridas-1779269212740-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-curativos-e-manejo-de-feridas-1779269305691-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-curativos-e-manejo-de-feridas-1779344786992-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-curativos-e-manejo-de-feridas-1779269291153-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-curativos-e-manejo-de-feridas-1779269291153-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-curativos-e-manejo-de-feridas-1779269228428-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-curativos-e-manejo-de-feridas-1779269315587-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-curativos-e-manejo-de-feridas-1779344819753-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-curativos-e-manejo-de-feridas-1779344819753-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibam-enfermagem-curativos-e-manejo-de-feridas-1779344779828-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269228428-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269228428-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibgp-enfermagem-curativos-e-manejo-de-feridas-1779340178514-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-curativos-e-manejo-de-feridas-1778712165781-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-curativos-e-manejo-de-feridas-1778712165781-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-curativos-e-manejo-de-feridas-1778712165781-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-curativos-e-manejo-de-feridas-1779344759089-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-curativos-e-manejo-de-feridas-1779344759089-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-curativos-e-manejo-de-feridas-1779344766321-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-curativos-e-manejo-de-feridas-1779344751294-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-curativos-e-manejo-de-feridas-1779269228428-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-curativos-e-manejo-de-feridas-1779269228428-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-curativos-e-manejo-de-feridas-1779269244710-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779269291153-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

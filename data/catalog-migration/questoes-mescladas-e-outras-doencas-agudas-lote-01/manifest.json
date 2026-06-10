@@ -1,0 +1,14 @@
+{
+  "lote": "questoes-mescladas-e-outras-doencas-agudas-lote-01",
+  "exported_at": "2026-06-10T05:26:09.315Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Questões Mescladas e Outras Doenças Agudas",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "idecan-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1780066992037-8",
+    "idib-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1778934918280-2"
+  ]
+}

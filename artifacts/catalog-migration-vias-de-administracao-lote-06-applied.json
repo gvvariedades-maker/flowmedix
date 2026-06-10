@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-06-09T21:54:41.087Z",
+  "lote": "vias-de-administracao-lote-06",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "vunesp-enfermagem-vias-de-administracao-1778968787431-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1778968787431-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

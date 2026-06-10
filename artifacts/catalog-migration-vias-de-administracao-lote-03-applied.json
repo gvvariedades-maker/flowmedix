@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:53:35.014Z",
+  "lote": "vias-de-administracao-lote-03",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fumarc-enfermagem-vias-de-administracao-1776056383154-0",
+    "funatec-enfermagem-vias-de-administracao-1776056418941-1",
+    "funatec-enfermagem-vias-de-administracao-1776056418941-3",
+    "funatec-enfermagem-vias-de-administracao-1778968609115-0",
+    "funatec-enfermagem-vias-de-administracao-1778968609115-1",
+    "fundatec-enfermagem-vias-de-administracao-1776056338955-5",
+    "fundatec-enfermagem-vias-de-administracao-1776056338955-8",
+    "fundatec-enfermagem-vias-de-administracao-1776056374837-7",
+    "fundatec-enfermagem-vias-de-administracao-1776056383154-3",
+    "fundatec-enfermagem-vias-de-administracao-1776056383154-6",
+    "fundatec-enfermagem-vias-de-administracao-1776056391403-0",
+    "fundatec-enfermagem-vias-de-administracao-1776056409987-1",
+    "fundatec-enfermagem-vias-de-administracao-1776056409987-7",
+    "fundatec-enfermagem-vias-de-administracao-1778968666352-6",
+    "fundatec-enfermagem-vias-de-administracao-1778968666352-7",
+    "fundatec-enfermagem-vias-de-administracao-1778968666352-8",
+    "fundatec-enfermagem-vias-de-administracao-1778968825263-0",
+    "fundatec-enfermagem-vias-de-administracao-1778968825263-2",
+    "fundatec-enfermagem-vias-de-administracao-1778968862077-6",
+    "fundatec-enfermagem-vias-de-administracao-1778968862077-7",
+    "fundep-enfermagem-vias-de-administracao-1776056427936-6",
+    "fundep-enfermagem-vias-de-administracao-1778969007166-0",
+    "funtef-enfermagem-vias-de-administracao-1778968598934-3",
+    "funtef-enfermagem-vias-de-administracao-1778968598934-4",
+    "furb-enfermagem-vias-de-administracao-1776056348175-3",
+    "furb-enfermagem-vias-de-administracao-1776056366158-9",
+    "furb-enfermagem-vias-de-administracao-1776056401060-8",
+    "furb-enfermagem-vias-de-administracao-1776056409987-0",
+    "furb-enfermagem-vias-de-administracao-1778968609115-4",
+    "furb-enfermagem-vias-de-administracao-1778968629127-1",
+    "fuvest-enfermagem-vias-de-administracao-1778968768987-8",
+    "gama-enfermagem-vias-de-administracao-1778968573722-3",
+    "gama-enfermagem-vias-de-administracao-1778968598934-0",
+    "gama-enfermagem-vias-de-administracao-1778968629127-2",
+    "gama-geral-vias-de-administracao-1776056427936-3",
+    "gualimp-enfermagem-vias-de-administracao-1778968687469-3",
+    "gualimp-enfermagem-vias-de-administracao-1778968968468-4",
+    "iaupe-enfermagem-vias-de-administracao-1776056401060-4",
+    "iaupe-enfermagem-vias-de-administracao-1776056401060-5",
+    "iaupe-enfermagem-vias-de-administracao-1778968877204-6",
+    "ibade-enfermagem-vias-de-administracao-1776056357082-2",
+    "ibade-enfermagem-vias-de-administracao-1776056418941-5",
+    "ibade-enfermagem-vias-de-administracao-1778968825263-7",
+    "ibade-enfermagem-vias-de-administracao-1778968825263-8",
+    "ibade-enfermagem-vias-de-administracao-1778968862077-0",
+    "ibade-enfermagem-vias-de-administracao-1778968862077-1",
+    "ibade-enfermagem-vias-de-administracao-1778968862077-2",
+    "ibade-enfermagem-vias-de-administracao-1778968862077-3",
+    "ibade-enfermagem-vias-de-administracao-1778968862077-4",
+    "ibade-enfermagem-vias-de-administracao-1778968862077-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fumarc-enfermagem-vias-de-administracao-1776056383154-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-vias-de-administracao-1776056418941-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-vias-de-administracao-1776056418941-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-vias-de-administracao-1778968609115-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-vias-de-administracao-1778968609115-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056338955-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056338955-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056374837-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056383154-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056383154-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056391403-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056409987-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056409987-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968666352-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968666352-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968666352-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968825263-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968825263-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968862077-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968862077-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-vias-de-administracao-1776056427936-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-vias-de-administracao-1778969007166-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-vias-de-administracao-1778968598934-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-vias-de-administracao-1778968598934-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1776056348175-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1776056366158-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1776056401060-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1776056409987-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1778968609115-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1778968629127-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-vias-de-administracao-1778968768987-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-vias-de-administracao-1778968573722-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-vias-de-administracao-1778968598934-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-vias-de-administracao-1778968629127-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-geral-vias-de-administracao-1776056427936-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-vias-de-administracao-1778968687469-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-vias-de-administracao-1778968968468-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-vias-de-administracao-1776056401060-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-vias-de-administracao-1776056401060-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-vias-de-administracao-1778968877204-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1776056357082-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1776056418941-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968825263-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968825263-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968862077-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968862077-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968862077-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968862077-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968862077-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968862077-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

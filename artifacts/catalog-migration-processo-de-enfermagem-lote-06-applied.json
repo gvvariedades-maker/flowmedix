@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:38:09.367Z",
+  "lote": "processo-de-enfermagem-lote-06",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-3",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-4",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-5",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-6",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-7",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-8",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-5",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-6",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-7",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-8",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-9",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-0",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-1",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-2",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-3",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-4",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-3",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-4",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-5",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-6",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-7",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-8",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-9",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003349182-0",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003349182-1",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-3",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-4",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-5",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-6",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-7",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-8",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-9",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003709908-0",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-1",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-2",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-4",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-5",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-6",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-0",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-1",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-2",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-3",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-4",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-5",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-6",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-7",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-8",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-9",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003349182-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003349182-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003709908-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}
