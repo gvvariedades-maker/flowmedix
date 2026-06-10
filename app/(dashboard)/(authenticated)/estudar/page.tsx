@@ -58,11 +58,6 @@ export default async function VitrinePage({
     bancas: listQuery.bancas.length ? listQuery.bancas : undefined,
   };
 
-  const bypassCache = isAdmin;
-  if (bypassCache) {
-    logger.warn('SSR vitrine: admin detected, bypassing cache for initial load');
-  }
-
   const [matriculatedConcursos, initialPayloadResult] = await Promise.all([
     getMatriculatedConcursosCached(userId).catch((err) => {
       logger.warn('SSR vitrine: falha ao carregar concursos matriculados', {
@@ -71,26 +66,14 @@ export default async function VitrinePage({
       });
       return [] as Awaited<ReturnType<typeof getMatriculatedConcursosCached>>;
     }),
-    (bypassCache 
-      ? (async () => {
-          const { getVitrinePage } = await import('@/lib/vitrine/service');
-          const pageData = await getVitrinePage({ 
-            userId, 
-            page: listQuery.page, 
-            filters: vitrineFilters, 
-            isAdmin 
-          });
-          return { payload: { page: pageData }, error: null as string | null };
-        })()
-      : getVitrineInitialPayloadCached(
-          userId,
-          listQuery.page,
-          vitrineFilters,
-          facetsFilters,
-          isAdmin,
-        )
-          .then((payload) => ({ payload, error: null as string | null }))
+    getVitrineInitialPayloadCached(
+      userId,
+      listQuery.page,
+      vitrineFilters,
+      facetsFilters,
+      isAdmin,
     )
+      .then((payload) => ({ payload, error: null as string | null }))
       .catch((err) => {
         logger.warn('SSR vitrine: falha ao carregar payload inicial', {
           userId,
