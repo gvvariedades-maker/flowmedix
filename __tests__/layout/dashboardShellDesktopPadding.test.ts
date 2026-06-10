@@ -64,10 +64,11 @@ describe('DashboardShell mobile scroll shell', () => {
       'utf8',
     );
     expect(shell).not.toContain('isVitrineRoute');
-    expect(shell).toContain('AVANT');
+    expect(shell).toContain('AvantBrandMark');
     expect(shell).toContain("new CustomEvent('avant:open-search')");
     expect(shell).toContain('useEstudarQuestaoImmersive');
-    expect(shell).toMatch(/!estudarQuestaoImmersive[\s\S]*AVANT/);
+    expect(shell).toMatch(/!estudarQuestaoImmersive[\s\S]*AvantBrandMark/);
+    expect(shell).toContain('Abrir menu da conta');
     const vitrine = readFileSync(
       join(process.cwd(), 'components', 'vitrine', 'VitrineClient.tsx'),
       'utf8',
