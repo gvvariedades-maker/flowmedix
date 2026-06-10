@@ -46,7 +46,8 @@
     "catalog:strip-layout-variant": "tsx scripts/catalog-migration-strip-layout-variant.ts",
     "catalog:reclassify-subtopico": "tsx scripts/catalog-reclassify-subtopico-cli.ts",
     "catalog:infer-subtopico": "tsx scripts/catalog-infer-subtopico-cli.ts",
-    "export:simulado-pool": "tsx scripts/export-public-simulado-pool.ts"
+    "export:simulado-pool": "tsx scripts/export-public-simulado-pool.ts",
+    "backup:assemble": "powershell -ExecutionPolicy Bypass -File scripts/assemble-avant-backup.ps1"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

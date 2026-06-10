@@ -54,4 +54,7 @@ supabase/.temp/
 # Lotes de migração premium (cópias de trabalho; goldens canônicos ficam em examples/)
 /data/catalog-migration/*/questions/
 
+# Pacotes de backup local (env + dados Supabase — upload manual no Drive)
+/backups/
+
 .env*
