@@ -174,7 +174,7 @@ function loadResumeMap(reportPath: string): Map<string, InferProposalRow> {
 
 function writeInferReport(
   reportPath: string,
-  report: Omit<InferReport, 'summary'> & { summary: InferReport['summary'] },
+  report: Omit<InferReport, 'summary' | 'generated_at'> & { summary: InferReport['summary'] },
 ) {
   mkdirSync(resolve(process.cwd(), 'artifacts'), { recursive: true });
   writeFileSync(reportPath, JSON.stringify({ ...report, generated_at: new Date().toISOString() }, null, 2) + '\n');
