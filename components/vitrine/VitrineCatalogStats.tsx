@@ -13,70 +13,52 @@ export default function VitrineCatalogStats({
 }: VitrineCatalogStatsProps) {
   return (
     <div
-      className="grid grid-cols-1 gap-4 sm:grid-cols-2"
+      className="grid grid-cols-2 gap-2 sm:gap-4"
       aria-label="Totais do catálogo na plataforma"
     >
       {/* Card — Questões */}
       <div
-        className="group relative overflow-hidden rounded-2xl border border-cyan-500/20
-          bg-slate-900/80 p-5 backdrop-blur-xl transition-all duration-500
-          hover:border-cyan-500/40"
+        className="group relative overflow-hidden rounded-xl border border-cyan-500/20 bg-slate-900/80 p-3 backdrop-blur-xl transition-all duration-500 sm:rounded-2xl sm:p-5 hover:border-cyan-500/40"
         style={{ boxShadow: '0 0 40px -12px rgba(0,242,255,0.2)' }}
       >
-        {/* Glow de fundo */}
         <div
-          className="pointer-events-none absolute -top-8 -right-8 h-32 w-32
-          rounded-full bg-cyan-500/10 blur-2xl
-          transition-all duration-500 group-hover:bg-cyan-500/20"
+          className="pointer-events-none absolute -top-8 -right-8 hidden h-32 w-32 rounded-full bg-cyan-500/10 blur-2xl transition-all duration-500 group-hover:bg-cyan-500/20 sm:block"
         />
 
         <div className="relative z-10">
           <p
-            className="font-mono text-4xl font-bold tabular-nums tracking-tight text-[#00f2ff] sm:text-5xl"
-            style={{ textShadow: '0 0 30px rgba(0,242,255,0.4)' }}
+            className="font-mono text-2xl font-bold tabular-nums tracking-tight text-[#00f2ff] sm:text-4xl lg:text-5xl"
+            style={{ textShadow: '0 0 20px rgba(0,242,255,0.35)' }}
           >
             {formatCatalogCount(totalQuestions)}
           </p>
-          <p className="font-body mt-2 text-sm font-medium text-slate-400">
+          <p className="font-body mt-1 text-[11px] font-medium leading-snug text-slate-400 sm:mt-2 sm:text-sm">
             Questões com estudo reverso
           </p>
-          {/* Linha accent */}
-          <div
-            className="mt-3 h-px w-12 bg-gradient-to-r
-            from-cyan-500/60 to-transparent"
-          />
+          <div className="mt-2 hidden h-px w-12 bg-gradient-to-r from-cyan-500/60 to-transparent sm:block" />
         </div>
       </div>
 
       {/* Card — NeuroSlides */}
       <div
-        className="group relative overflow-hidden rounded-2xl border border-emerald-500/20
-          bg-slate-900/80 p-5 backdrop-blur-xl transition-all duration-500
-          hover:border-emerald-500/40"
+        className="group relative overflow-hidden rounded-xl border border-emerald-500/20 bg-slate-900/80 p-3 backdrop-blur-xl transition-all duration-500 sm:rounded-2xl sm:p-5 hover:border-emerald-500/40"
         style={{ boxShadow: '0 0 40px -12px rgba(0,255,136,0.2)' }}
       >
-        {/* Glow de fundo */}
         <div
-          className="pointer-events-none absolute -top-8 -right-8 h-32 w-32
-          rounded-full bg-emerald-500/10 blur-2xl
-          transition-all duration-500 group-hover:bg-emerald-500/20"
+          className="pointer-events-none absolute -top-8 -right-8 hidden h-32 w-32 rounded-full bg-emerald-500/10 blur-2xl transition-all duration-500 group-hover:bg-emerald-500/20 sm:block"
         />
 
         <div className="relative z-10">
           <p
-            className="font-mono text-4xl font-bold tabular-nums tracking-tight text-[#00ff88] sm:text-5xl"
-            style={{ textShadow: '0 0 30px rgba(0,255,136,0.4)' }}
+            className="font-mono text-2xl font-bold tabular-nums tracking-tight text-[#00ff88] sm:text-4xl lg:text-5xl"
+            style={{ textShadow: '0 0 20px rgba(0,255,136,0.35)' }}
           >
             {formatCatalogCount(totalSlides)}
           </p>
-          <p className="font-body mt-2 text-sm font-medium text-slate-400">
+          <p className="font-body mt-1 text-[11px] font-medium leading-snug text-slate-400 sm:mt-2 sm:text-sm">
             NeuroSlides disponíveis
           </p>
-          {/* Linha accent */}
-          <div
-            className="mt-3 h-px w-12 bg-gradient-to-r
-            from-emerald-500/60 to-transparent"
-          />
+          <div className="mt-2 hidden h-px w-12 bg-gradient-to-r from-emerald-500/60 to-transparent sm:block" />
         </div>
       </div>
     </div>

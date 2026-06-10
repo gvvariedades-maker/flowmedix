@@ -6,14 +6,14 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import {
   LayoutDashboard,
-  Zap,
   ShieldCheck,
   BarChart3,
   LogOut,
   Search,
   CalendarDays,
   BookMarked,
-  ClipboardList,
+  ListChecks,
+  TrendingUp,
   HelpCircle,
   BrainCircuit,
   CreditCard,
@@ -37,6 +37,13 @@ import { parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
 import { useEstudarQuestaoImmersive } from '@/lib/layout/useEstudarQuestaoImmersive';
 import { BottomNav } from '@/components/layout/BottomNav';
 import { MobileDashboardDrawer } from '@/components/layout/MobileDashboardDrawer';
+import {
+  MENU_ACCENT_STYLES,
+  MENU_ICON_STROKE,
+  MenuNavIconChip,
+  type MenuAccentKey,
+} from '@/components/layout/MenuNavIconChip';
+import { AvantBrandMark } from '@/components/brand/AvantBrandMark';
 import { PlanStatusCard } from '@/components/plan/PlanStatusCard';
 import { getFocusableIn } from '@/lib/a11y/focusable';
 import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
@@ -119,13 +126,12 @@ function displayNameFromUser(displayName: string | null, email: string | null): 
 const USER_AVATAR_CLASSES =
   'bg-gradient-to-br from-emerald-500 to-emerald-700 text-white shadow-sm ring-2 ring-emerald-200/90';
 
-const MENU_ICON_STROKE = 2 as const;
-
 type MenuItem = {
   label: string;
   icon: LucideIcon;
   href: string;
   active: boolean;
+  accent: MenuAccentKey;
 };
 
 type MatriculatedConcursoSummary = {
@@ -154,44 +160,49 @@ function DashboardNav({
 }) {
   return (
     <nav
-      className="no-scrollbar flex-1 space-y-1 overflow-y-auto px-2 pb-2"
+      className="no-scrollbar min-h-0 flex-1 space-y-0.5 overflow-y-auto px-2 pb-2"
       aria-label="Navegação principal"
     >
-      {menuItems.map((item) => (
-        <Link
-          key={item.label}
-          href={createQueryString(item.href)}
-          onClick={onNavAction}
-          className={cn(
-            'group relative flex w-full items-center gap-3 rounded-xl py-2.5 pl-4 pr-3 text-sm transition-colors',
-            item.active
-              ? 'bg-[rgba(139,92,246,0.12)] font-medium text-white before:absolute before:left-0 before:top-1/2 before:h-8 before:w-[3px] before:-translate-y-1/2 before:rounded-r-full before:bg-[#8b5cf6]'
-              : 'text-slate-400 hover:bg-white/5 hover:text-slate-200',
-          )}
-        >
-          <item.icon
-            size={20}
-            strokeWidth={MENU_ICON_STROKE}
+      {menuItems.map((item) => {
+        const accent = MENU_ACCENT_STYLES[item.accent];
+
+        return (
+          <Link
+            key={item.label}
+            href={createQueryString(item.href)}
+            onClick={onNavAction}
             className={cn(
-              'shrink-0 transition-colors',
+              'group relative flex w-full items-center gap-3 rounded-xl py-2 pl-3 pr-3 text-sm transition-colors',
               item.active
-                ? 'text-white'
-                : 'text-slate-500 group-hover:text-slate-300'
+                ? cn(accent.rowActive, 'font-medium text-white')
+                : 'text-slate-300 hover:bg-white/[0.04] hover:text-white',
             )}
-            aria-hidden
-          />
-          {item.label}
-        </Link>
-      ))}
+          >
+            {item.active ? (
+              <span
+                className={cn(
+                  'absolute left-0 top-1/2 h-8 w-[3px] -translate-y-1/2 rounded-r-full',
+                  accent.bar,
+                )}
+                aria-hidden
+              />
+            ) : null}
+            <MenuNavIconChip icon={item.icon} accent={item.accent} active={item.active} />
+            {item.label}
+          </Link>
+        );
+      })}
       <button
         type="button"
         onClick={() => {
           onNavAction?.();
           openWhatsAppChat();
         }}
-        className="group flex w-full items-center gap-3 rounded-xl py-2.5 pl-4 pr-3 text-sm text-slate-400 transition-colors hover:bg-white/5 hover:text-[#25D366]"
+        className="group flex w-full items-center gap-3 rounded-xl py-2 pl-3 pr-3 text-sm text-slate-300 transition-colors hover:bg-[#25D366]/[0.06] hover:text-[#25D366]"
       >
-        <WhatsAppIcon size={20} className="text-slate-500 transition-colors group-hover:text-[#25D366]" />
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/[0.04] bg-[#25D366]/10 transition-all duration-200 group-hover:border-[#25D366]/20 group-hover:shadow-[0_0_12px_rgba(37,211,102,0.2)]">
+          <WhatsAppIcon size={18} className="text-[#25D366]/80 transition-colors group-hover:text-[#25D366]" />
+        </span>
         Tirar dúvidas (WhatsApp)
       </button>
       <PwaInstallNavButton onNavigate={onNavAction} />
@@ -327,7 +338,7 @@ function DashboardSidebarPanels({
 }) {
   return (
     <>
-      <div className={identityClassName}>
+      <div className={cn(identityClassName, 'shrink-0')}>
         <PlanStatusCard
           cidadeExibicao={cidadeExibicao}
           isPro={isPro}
@@ -336,7 +347,10 @@ function DashboardSidebarPanels({
         />
       </div>
 
-      <div className="mt-6 flex min-h-0 flex-1 flex-col">
+      <div className="flex min-h-0 flex-1 flex-col overflow-hidden pt-2">
+        <p className="shrink-0 px-4 pb-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500">
+          Menu
+        </p>
         <DashboardNav
           menuItems={menuItems}
           createQueryString={createQueryString}
@@ -345,7 +359,7 @@ function DashboardSidebarPanels({
         />
       </div>
 
-      <div className="mt-auto shrink-0 pt-4">
+      <div className="shrink-0 border-t border-white/[0.06] pt-2">
         <UserAccountFooter
           userEmail={userEmail}
           userDisplayName={userDisplayName}
@@ -582,24 +596,62 @@ function DashboardContent({
   const showBackToVitrine = shouldShowBackToVitrine(pathname);
 
   const menuItems: MenuItem[] = [
-    { label: 'Vitrine de Aulas', icon: LayoutDashboard, href: '/estudar', active: isPathActive('/estudar') },
-    { label: 'Como usar (tutorial)', icon: HelpCircle, href: '/ajuda', active: pathname === '/ajuda' },
-    { label: 'Estudo Reverso (método)', icon: BrainCircuit, href: '/ajuda/estudo-reverso', active: pathname === '/ajuda/estudo-reverso' },
+    {
+      label: 'Vitrine de Aulas',
+      icon: LayoutDashboard,
+      href: '/estudar',
+      active: isPathActive('/estudar'),
+      accent: 'cyan',
+    },
+    {
+      label: 'Como usar (tutorial)',
+      icon: HelpCircle,
+      href: '/ajuda',
+      active: pathname === '/ajuda',
+      accent: 'sky',
+    },
+    {
+      label: 'Estudo Reverso (método)',
+      icon: BrainCircuit,
+      href: '/ajuda/estudo-reverso',
+      active: pathname === '/ajuda/estudo-reverso',
+      accent: 'violet',
+    },
     {
       label: 'Progresso de estudo',
       icon: BarChart3,
       href: '/progresso',
       active: pathname === '/progresso' || pathname === '/analytics',
+      accent: 'emerald',
     },
     {
       label: 'Meu desempenho (simulados)',
-      icon: ClipboardList,
+      icon: TrendingUp,
       href: '/desempenho/simulados',
       active: isPathActive('/desempenho/simulados'),
+      accent: 'amber',
     },
-    { label: 'Simulados', icon: ClipboardList, href: '/simulados', active: isPathActive('/simulados') },
-    { label: 'Plano de Estudo Diário', icon: CalendarDays, href: '/plano-diario', active: pathname === '/plano-diario' },
-    { label: 'Cadernos de Estudo', icon: BookMarked, href: '/cadernos', active: isPathActive('/cadernos') },
+    {
+      label: 'Simulados',
+      icon: ListChecks,
+      href: '/simulados',
+      active: isPathActive('/simulados'),
+      accent: 'rose',
+    },
+    {
+      label: 'Plano de Estudo Diário',
+      icon: CalendarDays,
+      href: '/plano-diario',
+      active: pathname === '/plano-diario',
+      accent: 'teal',
+    },
+    {
+      label: 'Cadernos de Estudo',
+      icon: BookMarked,
+      href: '/cadernos',
+      active: isPathActive('/cadernos'),
+      accent: 'indigo',
+    },
   ];
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
@@ -663,12 +715,7 @@ function DashboardContent({
         {!estudarQuestaoImmersive ? (
           <div className="sticky top-0 z-30 shrink-0 border-b border-white/[0.08] bg-[#06090f]/90 backdrop-blur-xl md:hidden">
             <header className="flex items-center justify-between px-4 py-3 pt-safe">
-              <div className="flex items-center gap-2">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-indigo-500 shadow-md shadow-indigo-500/35">
-                  <Zap size={15} className="text-[#BEF264]" fill="currentColor" aria-hidden />
-                </div>
-                <span className="text-[17px] font-extrabold tracking-tight text-white">AVANT</span>
-              </div>
+              <AvantBrandMark size="sm" />
 
               <div className="flex items-center gap-2">
                 <button
@@ -680,15 +727,20 @@ function DashboardContent({
                   <Search size={15} aria-hidden />
                 </button>
 
-                <div
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (modalQuestaoAtivo || estudoReversoWelcome.isOpen) return;
+                    setMobileMenuOpen(true);
+                  }}
+                  aria-label="Abrir menu da conta"
                   className={cn(
-                    'flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-full text-xs font-bold',
+                    'flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-full text-xs font-bold transition-opacity hover:opacity-90',
                     USER_AVATAR_CLASSES,
                   )}
-                  aria-hidden
                 >
                   {userInitials}
-                </div>
+                </button>
               </div>
             </header>
           </div>

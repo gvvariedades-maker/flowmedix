@@ -274,6 +274,7 @@ export default function VitrineClient({
   const [bancaSheetOpen, setBancaSheetOpen] = useState(false);
   const [assuntoSheetOpen, setAssuntoSheetOpen] = useState(false);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+  const [mobileFiltersExpanded, setMobileFiltersExpanded] = useState(false);
   const [bancas, setBancas] = useState<string[]>(() => initialFacetsData?.bancas ?? []);
   const [assuntos, setAssuntos] = useState<string[]>(() => initialFacetsData?.assuntos ?? []);
   const [facetsLoading, setFacetsLoading] = useState(() => !initialFacetsData);
@@ -603,6 +604,11 @@ export default function VitrineClient({
   const showSsrErrorBanner =
     Boolean(initialPayloadError) && !ssrErrorDismissed && !initialPageData;
 
+  const activeMobileFilterCount =
+    (bancasSelecionadas.length > 0 ? 1 : 0) +
+    (assuntosSelecionados.length > 0 ? 1 : 0) +
+    (searchTerm.trim().length > 0 ? 1 : 0);
+
   const handleRetryLoad = useCallback(() => {
     setSsrErrorDismissed(true);
     setRetryNonce((n) => n + 1);
@@ -656,6 +662,31 @@ export default function VitrineClient({
             </div>
           ) : null}
 
+          <div className="px-4 pb-2">
+            <button
+              type="button"
+              onClick={() => setMobileFiltersExpanded((open) => !open)}
+              aria-expanded={mobileFiltersExpanded}
+              className="flex min-h-[40px] w-full items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-medium text-slate-300 transition-colors hover:border-white/15 hover:bg-white/[0.06]"
+            >
+              <span className="inline-flex items-center gap-2">
+                <SlidersHorizontal size={15} className="text-slate-400" aria-hidden />
+                Filtrar
+                {activeMobileFilterCount > 0 ? (
+                  <span className="inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-[#00f2ff]/15 px-1.5 py-0.5 font-mono text-[10px] font-bold text-[#00f2ff]">
+                    {activeMobileFilterCount}
+                  </span>
+                ) : null}
+              </span>
+              {mobileFiltersExpanded ? (
+                <ChevronUp size={16} className="shrink-0 text-slate-500" aria-hidden />
+              ) : (
+                <ChevronDown size={16} className="shrink-0 text-slate-500" aria-hidden />
+              )}
+            </button>
+          </div>
+
+          {mobileFiltersExpanded ? (
           <div
             className="flex items-center gap-2 overflow-x-auto scroll-pl-4 px-4 pb-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             aria-label="Filtros da vitrine"
@@ -764,6 +795,7 @@ export default function VitrineClient({
             </button>
           )}
           </div>
+          ) : null}
         </div>
 
         <VitrineMobileFilterSheet
@@ -906,7 +938,7 @@ export default function VitrineClient({
         </div>
       </div>
 
-      <main className="mx-auto max-w-7xl space-y-8 px-4 pt-6 md:px-6 md:pt-8">
+      <main className="mx-auto max-w-7xl space-y-5 px-4 pt-4 md:space-y-8 md:px-6 md:pt-8">
         {showSsrErrorBanner && (
           <div
             role="alert"
@@ -925,8 +957,8 @@ export default function VitrineClient({
             </Button>
           </div>
         )}
-        <section className="space-y-8">
-          <div className="mb-8 flex items-start justify-between">
+        <section className="space-y-5 md:space-y-8">
+          <div className="mb-4 flex items-start justify-between md:mb-8">
             <div className="min-w-0">
               <div className="flex items-stretch gap-3">
                 <div
@@ -956,7 +988,7 @@ export default function VitrineClient({
               </div>
             </div>
           </div>
-          {children ? <div className="mb-6">{children}</div> : null}
+          {children ? <div className="mb-4 md:mb-6">{children}</div> : null}
           {loading && gruposPagina.length === 0 ? (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {Array.from({ length: 8 }).map((_, i) => (

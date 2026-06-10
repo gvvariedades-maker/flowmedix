@@ -4,10 +4,10 @@ import Link from 'next/link';
 import { forwardRef, useRef } from 'react';
 import { LayoutGroup, motion } from 'framer-motion';
 import {
-  BarChart2,
-  BookOpen,
-  ClipboardList,
-  LayoutGrid,
+  BarChart3,
+  BookMarked,
+  LayoutDashboard,
+  ListChecks,
   Menu,
   X,
   type LucideIcon,
@@ -18,13 +18,18 @@ import { MOBILE_BOTTOM_NAV_SHELL, MOBILE_BOTTOM_NAV_Z } from '@/lib/layout/mobil
 import { useBottomNavHeightSync } from '@/lib/layout/useBottomNavHeightSync';
 import { useDashboardDesktop } from '@/lib/layout/useDashboardDesktop';
 import { useEstudarQuestaoImmersive } from '@/lib/layout/useEstudarQuestaoImmersive';
+import {
+  MENU_ACCENT_STYLES,
+  MenuNavIconChip,
+  type MenuAccentKey,
+} from '@/components/layout/MenuNavIconChip';
 
 const NAV_ITEMS = [
-  { label: 'Estudar', href: '/estudar', icon: LayoutGrid },
-  { label: 'Simulados', href: '/simulados', icon: ClipboardList },
-  { label: 'Progresso', href: '/progresso', icon: BarChart2 },
-  { label: 'Cadernos', href: '/cadernos', icon: BookOpen },
-] satisfies { label: string; href: string; icon: LucideIcon }[];
+  { label: 'Estudar', href: '/estudar', icon: LayoutDashboard, accent: 'cyan' },
+  { label: 'Simulados', href: '/simulados', icon: ListChecks, accent: 'rose' },
+  { label: 'Progresso', href: '/progresso', icon: BarChart3, accent: 'emerald' },
+  { label: 'Cadernos', href: '/cadernos', icon: BookMarked, accent: 'indigo' },
+] satisfies { label: string; href: string; icon: LucideIcon; accent: MenuAccentKey }[];
 
 export type BottomNavProps = {
   currentPath: string;
@@ -64,6 +69,7 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
   const linkTabIndex = mobileOverlayBlocksNav ? -1 : undefined;
   const maisTabIndex = maisInteractive ? 0 : mobileOverlayBlocksNav || questaoModalOpen ? -1 : undefined;
   const maisActive = !menuOpen && isBottomNavMaisActive(currentPath);
+  const maisAccent = MENU_ACCENT_STYLES.slate;
 
   return (
     <LayoutGroup id="bottom-nav">
@@ -78,8 +84,9 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
         aria-label="Navegação rápida"
         aria-hidden={navAriaHidden === true ? true : undefined}
       >
-        {NAV_ITEMS.map(({ label, href, icon: Icon }) => {
+        {NAV_ITEMS.map(({ label, href, icon, accent }) => {
           const isActive = isBottomNavItemActive(currentPath, href);
+          const styles = MENU_ACCENT_STYLES[accent];
 
           return (
             <Link
@@ -88,21 +95,13 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
               tabIndex={linkTabIndex}
               aria-hidden={mobileOverlayBlocksNav ? true : undefined}
               aria-current={isActive ? 'page' : undefined}
-              className="flex min-h-[48px] flex-col items-center justify-center gap-0.5 px-1 py-2"
+              className="flex min-h-[48px] flex-col items-center justify-center gap-0.5 px-1 py-1.5"
             >
-              <Icon
-                size={20}
-                className={cn(
-                  isActive
-                    ? 'text-[#00f2ff] drop-shadow-[0_0_6px_rgba(0,242,255,0.6)]'
-                    : 'text-slate-400',
-                )}
-                aria-hidden
-              />
+              <MenuNavIconChip icon={icon} accent={accent} active={isActive} size="bottom" />
               <span
                 className={cn(
                   'text-[10px] font-semibold tracking-wide',
-                  isActive ? 'text-[#00f2ff]' : 'text-slate-400',
+                  isActive ? styles.labelActive : 'text-slate-400',
                 )}
               >
                 {label}
@@ -110,7 +109,7 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
               {isActive ? (
                 <motion.div
                   layoutId="bottom-nav-indicator"
-                  className="mt-0.5 h-[2px] w-6 rounded-full bg-[#00f2ff] shadow-[0_0_6px_#00f2ff]"
+                  className={cn('mt-0.5 h-[2px] w-6 rounded-full shadow-[0_0_6px_currentColor]', styles.bar)}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                 />
@@ -125,7 +124,7 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
           onClick={onMenuToggle}
           tabIndex={maisTabIndex}
           className={cn(
-            'flex min-h-[48px] flex-col items-center justify-center gap-0.5 px-1 py-2',
+            'flex min-h-[48px] flex-col items-center justify-center gap-0.5 px-1 py-1.5',
             maisInteractive && 'pointer-events-auto',
           )}
           aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
@@ -133,23 +132,16 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
           aria-controls={menuOpen ? 'dashboard-mobile-drawer' : undefined}
           aria-current={maisActive ? 'page' : undefined}
         >
-          {menuOpen ? (
-            <X size={20} className="text-white" aria-hidden />
-          ) : (
-            <Menu
-              size={20}
-              className={cn(
-                maisActive
-                  ? 'text-[#00f2ff] drop-shadow-[0_0_6px_rgba(0,242,255,0.6)]'
-                  : 'text-slate-400',
-              )}
-              aria-hidden
-            />
-          )}
+          <MenuNavIconChip
+            icon={menuOpen ? X : Menu}
+            accent="slate"
+            active={menuOpen || maisActive}
+            size="bottom"
+          />
           <span
             className={cn(
               'text-[10px] font-semibold tracking-wide',
-              menuOpen ? 'text-white' : maisActive ? 'text-[#00f2ff]' : 'text-slate-400',
+              menuOpen || maisActive ? maisAccent.labelActive : 'text-slate-400',
             )}
           >
             Mais
@@ -157,7 +149,7 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
           {maisActive ? (
             <motion.div
               layoutId="bottom-nav-indicator"
-              className="mt-0.5 h-[2px] w-6 rounded-full bg-[#00f2ff] shadow-[0_0_6px_#00f2ff]"
+              className={cn('mt-0.5 h-[2px] w-6 rounded-full shadow-[0_0_6px_currentColor]', maisAccent.bar)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             />
