@@ -1,0 +1,19 @@
+<!-- AVANT: wordmark para fundos claros — mesma geometria, verde mais escuro para contraste. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none" aria-label="AVANT">
+  <defs>
+    <linearGradient id="avant-wm-light" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58b800"/>
+      <stop offset="48%" stop-color="#3d8a00"/>
+      <stop offset="100%" stop-color="#6aa818"/>
+    </linearGradient>
+  </defs>
+  <text
+    x="4"
+    y="30"
+    fill="url(#avant-wm-light)"
+    font-family="Syne, ui-sans-serif, system-ui, sans-serif"
+    font-size="26"
+    font-weight="900"
+    letter-spacing="7"
+  >AVANT</text>
+</svg>
