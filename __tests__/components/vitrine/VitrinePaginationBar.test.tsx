@@ -15,7 +15,7 @@ describe('VitrinePaginationBar', () => {
     );
 
     const nav = container.querySelector('nav');
-    expect(nav).toHaveClass('flex', 'flex-col', 'border-t', 'border-white/10');
+    expect(nav).toHaveClass('flex', 'flex-col', 'border-t', 'border-slate-200');
     expect(nav).not.toHaveClass('fixed', 'hidden');
     expect(screen.getByTestId('vitrine-pagination-prev')).toBeInTheDocument();
     expect(screen.getByTestId('vitrine-pagination-next')).toBeInTheDocument();

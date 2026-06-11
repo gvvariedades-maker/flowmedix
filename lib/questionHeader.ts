@@ -83,11 +83,14 @@ export function buildDerivedQuestionHeaderLine(meta: LessonMeta): string {
   return `${banca} - ${tail.join('/')}`;
 }
 
-/** Linha de matéria: `Tópico - Subtópico` quando ambos existem. */
+/** Linha de matéria: `Tópico - Subtópico` quando ambos existem. Tópico genérico "Enfermagem" → só subtópico. */
 export function buildQuestionSubjectLine(meta: LessonMeta): string | null {
   const topico = meta.topico?.trim();
   const sub = meta.subtopico?.trim();
   if (!topico) return null;
-  if (sub && sub !== topico) return `${topico} - ${sub}`;
+  if (sub && sub !== topico) {
+    if (topico.toLowerCase() === 'enfermagem') return sub;
+    return `${topico} - ${sub}`;
+  }
   return topico;
 }

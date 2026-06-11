@@ -73,10 +73,10 @@ describe('DashboardShell mobile drawer', () => {
     expect(shell).toMatch(/title=\{userEmail \?\? undefined\}/);
   });
 
-  it('PlanStatusCard — label Assinatura legível (tracking e contraste)', () => {
+  it('PlanStatusCard — label Assinatura legível (tracking e contraste editorial)', () => {
     const card = readFileSync(planCardPath, 'utf8');
     expect(card).toContain('tracking-[0.12em]');
-    expect(card).toContain('text-white/50');
+    expect(card).toContain('text-slate-500');
     expect(card).not.toContain('tracking-[0.2em]');
     expect(card).not.toContain('text-white/30');
   });

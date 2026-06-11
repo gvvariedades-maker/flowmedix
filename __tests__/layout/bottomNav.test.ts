@@ -22,10 +22,9 @@ describe('BottomNav', () => {
     expect(source).not.toMatch(/currentPath\.startsWith\(href\)/);
   });
 
-  it('labels inativos com contraste text-slate-400', () => {
+  it('labels inativos com contraste text-slate-500 (editorial claro)', () => {
     const source = readFileSync(bottomNavPath, 'utf8');
-    expect(source).toContain("'text-slate-400'");
-    expect(source).not.toContain("'text-slate-500'");
+    expect(source).toContain("'text-slate-500'");
   });
 
   it('aria-label distinto do drawer (Navegação rápida)', () => {
