@@ -120,7 +120,7 @@ export default function EstudoReversoPage() {
             ))}
           </ol>
           <div className="mt-5">
-            <ActionLink href="/estudar">Ir para a Vitrine de Aulas</ActionLink>
+            <ActionLink href="/estudar">Ir para a Vitrine</ActionLink>
           </div>
         </section>
 

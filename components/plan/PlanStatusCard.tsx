@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { Zap } from 'lucide-react';
 import { AvantBrandMark } from '@/components/brand/AvantBrandMark';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import type { ProSource } from '@/lib/freemium/constants';
 
 export type PlanStatusCardProps = {
@@ -12,6 +13,8 @@ export type PlanStatusCardProps = {
   isPro: boolean;
   proSource: ProSource;
   proExpiresAt: string | null;
+  /** Quando definido, o logo navega para a vitrine (preserva query de concurso/cidade). */
+  brandHref?: string;
 };
 
 const cardEnter = {
@@ -131,13 +134,29 @@ export function PlanStatusCard({
   isPro,
   proSource,
   proExpiresAt,
+  brandHref,
 }: PlanStatusCardProps) {
   const reducedMotion = useReducedMotion();
   const inviteExpiry = proSource === 'invite' ? formatProExpiryShort(proExpiresAt) : null;
 
+  const brandMark = <AvantBrandMark className="px-1" />;
+
   return (
-    <div className="space-y-2 px-3 pt-3 pb-1">
-      <AvantBrandMark className="px-1" />
+    <div className="space-y-2 px-2.5 pt-3 pb-1">
+      {brandHref ? (
+        <Link
+          href={brandHref}
+          aria-label="Ir para vitrine de aulas"
+          className={cn(
+            'inline-flex rounded-lg outline-none transition-shadow',
+            'focus-visible:ring-2 focus-visible:ring-[#8fe020]/50',
+          )}
+        >
+          {brandMark}
+        </Link>
+      ) : (
+        brandMark
+      )}
       {isPro ? (
         <ProStatusStrip inviteExpiry={inviteExpiry} reducedMotion={reducedMotion} />
       ) : (

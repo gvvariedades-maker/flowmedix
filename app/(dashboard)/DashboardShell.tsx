@@ -4,21 +4,7 @@ import React, { Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
-import {
-  LayoutDashboard,
-  ShieldCheck,
-  BarChart3,
-  LogOut,
-  Search,
-  CalendarDays,
-  BookMarked,
-  ListChecks,
-  TrendingUp,
-  HelpCircle,
-  BrainCircuit,
-  CreditCard,
-  type LucideIcon,
-} from 'lucide-react';
+import { ShieldCheck, LogOut, Search, CreditCard } from 'lucide-react';
 import { CadernoOnboardingBanner } from '@/components/onboarding/CadernoOnboardingBanner';
 import { EstudoReversoWelcomeModal } from '@/components/onboarding/EstudoReversoWelcomeModal';
 import { useCadernoOnboarding } from '@/components/onboarding/useCadernoOnboarding';
@@ -43,11 +29,16 @@ import { useEstudarQuestaoImmersive } from '@/lib/layout/useEstudarQuestaoImmers
 import { BottomNav } from '@/components/layout/BottomNav';
 import { MobileDashboardDrawer } from '@/components/layout/MobileDashboardDrawer';
 import {
-  MENU_ACCENT_STYLES,
   MENU_ICON_STROKE,
+  MENU_NAV_ACTIVE,
+  MENU_NAV_ROW_IDLE,
   MenuNavIconChip,
-  type MenuAccentKey,
 } from '@/components/layout/MenuNavIconChip';
+import {
+  buildMenuSections,
+  type DashboardNavItem,
+  type DashboardNavSection,
+} from '@/lib/layout/dashboardNav';
 import { AvantBrandMark } from '@/components/brand/AvantBrandMark';
 import { PlanStatusCard } from '@/components/plan/PlanStatusCard';
 import { getFocusableIn } from '@/lib/a11y/focusable';
@@ -132,14 +123,6 @@ function displayNameFromUser(displayName: string | null, email: string | null): 
 const USER_AVATAR_CLASSES =
   'bg-gradient-to-br from-emerald-500 to-emerald-700 text-white shadow-sm ring-2 ring-emerald-200/90';
 
-type MenuItem = {
-  label: string;
-  icon: LucideIcon;
-  href: string;
-  active: boolean;
-  accent: MenuAccentKey;
-};
-
 type MatriculatedConcursoSummary = {
   slug: string;
   nome: string;
@@ -156,70 +139,114 @@ function getAssinaturaNavLabel(isAdminUser: boolean, proSource: ProSource): stri
   return 'Minha assinatura';
 }
 
-function DashboardNav({
-  menuItems,
+function DashboardNavLink({
+  item,
   createQueryString,
-  isAdminUser,
   onNavAction,
 }: {
-  menuItems: MenuItem[];
+  item: DashboardNavItem;
   createQueryString: (path: string) => string;
-  isAdminUser: boolean;
   onNavAction?: () => void;
 }) {
   return (
-    <nav
-      className="no-scrollbar min-h-0 flex-1 space-y-0.5 overflow-y-auto px-2 pb-2"
-      aria-label="Navegação principal"
+    <Link
+      href={createQueryString(item.href)}
+      onClick={onNavAction}
+      title={item.title}
+      aria-current={item.active ? 'page' : undefined}
+      className={cn(
+        'group relative flex w-full items-center gap-2.5 rounded-xl py-2 pl-2.5 pr-2 text-sm transition-colors',
+        item.active
+          ? cn(MENU_NAV_ACTIVE.row, 'font-semibold', MENU_NAV_ACTIVE.label)
+          : MENU_NAV_ROW_IDLE,
+      )}
     >
-      {menuItems.map((item) => {
-        const accent = MENU_ACCENT_STYLES[item.accent];
+      {item.active ? (
+        <span
+          className={cn(
+            'absolute left-0 top-1/2 h-8 w-[3px] -translate-y-1/2 rounded-r-full',
+            MENU_NAV_ACTIVE.bar,
+          )}
+          aria-hidden
+        />
+      ) : null}
+      <MenuNavIconChip icon={item.icon} accent={item.accent} active={item.active} />
+      {item.label}
+    </Link>
+  );
+}
 
-        return (
-          <Link
-            key={item.label}
-            href={createQueryString(item.href)}
-            onClick={onNavAction}
+function DashboardNav({
+  menuSections,
+  createQueryString,
+  isAdminUser,
+  isAdminActive,
+  onNavAction,
+}: {
+  menuSections: DashboardNavSection[];
+  createQueryString: (path: string) => string;
+  isAdminUser: boolean;
+  isAdminActive: boolean;
+  onNavAction?: () => void;
+}) {
+  return (
+    <nav className="space-y-0.5 px-1.5 pb-2" aria-label="Navegação principal">
+      {menuSections.map((section, sectionIndex) => (
+        <div key={section.id} className="pb-1">
+          <p
             className={cn(
-              'group relative flex w-full items-center gap-3 rounded-xl py-2 pl-3 pr-3 text-sm transition-colors',
-              item.active
-                ? cn(accent.rowActive, 'font-semibold text-slate-900')
-                : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900',
+              'px-3 pb-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500',
+              sectionIndex === 0 ? 'pt-0' : 'pt-2',
             )}
           >
-            {item.active ? (
-              <span
-                className={cn(
-                  'absolute left-0 top-1/2 h-8 w-[3px] -translate-y-1/2 rounded-r-full',
-                  accent.bar,
-                )}
-                aria-hidden
+            {section.label}
+          </p>
+          <div className="space-y-0.5">
+            {section.items.map((item) => (
+              <DashboardNavLink
+                key={item.href}
+                item={item}
+                createQueryString={createQueryString}
+                onNavAction={onNavAction}
               />
-            ) : null}
-            <MenuNavIconChip icon={item.icon} accent={item.accent} active={item.active} />
-            {item.label}
-          </Link>
-        );
-      })}
-      <button
-        type="button"
-        onClick={() => {
-          onNavAction?.();
-          openWhatsAppChat();
-        }}
-        className="group flex w-full items-center gap-3 rounded-xl py-2 pl-3 pr-3 text-sm text-slate-600 transition-colors hover:bg-[#25D366]/[0.08] hover:text-[#128C7E]"
-      >
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-[#25D366]/10 transition-all duration-200 group-hover:border-[#25D366]/30">
-          <WhatsAppIcon size={18} className="text-[#25D366]/80 transition-colors group-hover:text-[#25D366]" />
-        </span>
-        Tirar dúvidas (WhatsApp)
-      </button>
-      <PwaInstallNavButton onNavigate={onNavAction} />
+            ))}
+          </div>
+        </div>
+      ))}
+      <div className="mt-2 border-t border-slate-100 pt-3">
+        <p className="px-3 pb-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">
+          Suporte
+        </p>
+        <div className="space-y-0.5">
+          <button
+            type="button"
+            title="Tirar dúvidas pelo WhatsApp"
+            onClick={() => {
+              onNavAction?.();
+              openWhatsAppChat();
+            }}
+            className={cn(
+              'group flex w-full items-center gap-2.5 rounded-xl py-2 pl-2.5 pr-2 text-sm transition-colors',
+              'text-slate-600 hover:bg-[#25D366]/12 hover:text-[#128C7E]',
+            )}
+          >
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200/90 bg-slate-100 transition-all duration-200 group-hover:border-[#25D366]/30 group-hover:bg-[#25D366]/10">
+              <WhatsAppIcon
+                size={18}
+                className="text-slate-500 transition-colors group-hover:text-[#25D366]"
+              />
+            </span>
+            WhatsApp
+          </button>
+          <PwaInstallNavButton onNavigate={onNavAction} />
+        </div>
+      </div>
       {isAdminUser && (
         <div className="mt-4 pl-1 pt-1">
           <Link
             href="/admin"
-            className="flex items-center gap-3 rounded-xl py-2.5 pl-3 pr-2 text-xs font-semibold text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-800"
+            aria-current={isAdminActive ? 'page' : undefined}
+            className="flex items-center gap-2.5 rounded-xl py-2 pl-2.5 pr-2 text-xs font-semibold text-slate-500 transition-colors hover:bg-slate-200/70 hover:text-slate-800"
           >
             <ShieldCheck size={18} strokeWidth={MENU_ICON_STROKE} className="shrink-0 text-slate-600" aria-hidden />
             Painel do Gestor
@@ -255,60 +282,53 @@ function UserAccountFooter({
   const assinaturaLabel = getAssinaturaNavLabel(isAdminUser, proSource);
 
   return (
-    <div className="px-1 pb-safe pt-2">
-      <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
-      <div className="flex items-start gap-2.5">
-        <div
-          className={cn(
-            'flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-sm font-bold',
-            USER_AVATAR_CLASSES,
-          )}
-          aria-hidden
-        >
-          {userInitials}
-        </div>
-        <div className="min-w-0 flex-1 pt-0.5">
-          <p className="truncate text-sm font-bold leading-tight text-slate-900">{name}</p>
-          <p
-            className="mt-0.5 truncate text-xs font-normal text-slate-500"
-            title={userEmail ?? undefined}
-          >
-            {userEmail ?? <span className="animate-pulse text-slate-500">carregando…</span>}
-          </p>
-        </div>
-        <button
-          type="button"
-          onClick={onLogout}
-          title="Sair da conta"
-          aria-label="Sair da conta"
-          className="mt-0.5 flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-slate-200 hover:text-slate-800"
-        >
-          <LogOut size={17} strokeWidth={MENU_ICON_STROKE} aria-hidden />
-        </button>
-      </div>
-      {assinaturaLabel ? (
-        <Link
-          href={createQueryString('/conta/assinatura')}
-          onClick={onNavAction}
-          className={cn(
-            'mt-3 flex w-full items-center gap-2.5 rounded-xl py-2.5 pl-3 pr-3 text-sm font-semibold transition-colors',
-            isAssinaturaActive
-              ? 'bg-[#8fe020]/12 text-[#3d6b0f]'
-              : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900',
-          )}
-        >
-          <CreditCard
-            size={18}
-            strokeWidth={MENU_ICON_STROKE}
+    <div className="px-1.5 pb-safe pt-2">
+      <div className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+        <div className="flex items-start gap-2 p-2.5">
+          <div
             className={cn(
-              'shrink-0',
-              isAssinaturaActive ? 'text-[#3d6b0f]' : 'text-slate-500',
+              'flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold',
+              USER_AVATAR_CLASSES,
             )}
             aria-hidden
-          />
-          {assinaturaLabel}
-        </Link>
-      ) : null}
+          >
+            {userInitials}
+          </div>
+          <div className="min-w-0 flex-1 pt-0.5">
+            <p className="truncate text-sm font-bold leading-tight text-slate-900">{name}</p>
+            <p
+              className="mt-0.5 truncate text-xs font-normal text-slate-500"
+              title={userEmail ?? undefined}
+            >
+              {userEmail ?? <span className="animate-pulse text-slate-500">carregando…</span>}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={onLogout}
+            title="Sair da conta"
+            aria-label="Sair da conta"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-slate-200/70 hover:text-slate-800"
+          >
+            <LogOut size={17} strokeWidth={MENU_ICON_STROKE} aria-hidden />
+          </button>
+        </div>
+        {assinaturaLabel ? (
+          <Link
+            href={createQueryString('/conta/assinatura')}
+            onClick={onNavAction}
+            aria-current={isAssinaturaActive ? 'page' : undefined}
+            className={cn(
+              'flex w-full items-center gap-2.5 border-t border-slate-100 py-2 pl-2.5 pr-2 text-sm font-semibold transition-colors',
+              isAssinaturaActive
+                ? cn(MENU_NAV_ACTIVE.row, MENU_NAV_ACTIVE.label)
+                : MENU_NAV_ROW_IDLE,
+            )}
+          >
+            <MenuNavIconChip icon={CreditCard} accent="slate" active={isAssinaturaActive} />
+            {assinaturaLabel}
+          </Link>
+        ) : null}
       </div>
     </div>
   );
@@ -320,9 +340,10 @@ function DashboardSidebarPanels({
   isPro,
   proSource,
   proExpiresAt,
-  menuItems,
+  menuSections,
   createQueryString,
   isAdminUser,
+  isAdminActive,
   onNavAction,
   userEmail,
   userDisplayName,
@@ -335,9 +356,10 @@ function DashboardSidebarPanels({
   isPro: boolean;
   proSource: ProSource;
   proExpiresAt: string | null;
-  menuItems: MenuItem[];
+  menuSections: DashboardNavSection[];
   createQueryString: (path: string) => string;
   isAdminUser: boolean;
+  isAdminActive: boolean;
   onNavAction?: () => void;
   userEmail: string | null;
   userDisplayName: string | null;
@@ -347,28 +369,32 @@ function DashboardSidebarPanels({
 }) {
   return (
     <>
-      <div className={cn(identityClassName, 'shrink-0')}>
+      <div
+        className={cn(
+          'sticky top-0 z-10 shrink-0 border-b border-slate-100 bg-white pb-2',
+          identityClassName,
+        )}
+      >
         <PlanStatusCard
           cidadeExibicao={cidadeExibicao}
           isPro={isPro}
           proSource={proSource}
           proExpiresAt={proExpiresAt}
+          brandHref={createQueryString('/estudar')}
         />
       </div>
 
-      <div className="flex min-h-0 flex-1 flex-col overflow-hidden pt-2">
-        <p className="shrink-0 px-4 pb-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400">
-          Menu
-        </p>
+      <div className="no-scrollbar min-h-0 flex-1 overflow-y-auto pt-2">
         <DashboardNav
-          menuItems={menuItems}
+          menuSections={menuSections}
           createQueryString={createQueryString}
           isAdminUser={isAdminUser}
+          isAdminActive={isAdminActive}
           onNavAction={onNavAction}
         />
       </div>
 
-      <div className="shrink-0 border-t border-slate-200 pt-2">
+      <div className="shrink-0 border-t border-slate-200 bg-white pt-2">
         <UserAccountFooter
           userEmail={userEmail}
           userDisplayName={userDisplayName}
@@ -625,64 +651,8 @@ function DashboardContent({
 
   const showBackToVitrine = shouldShowBackToVitrine(pathname);
 
-  const menuItems: MenuItem[] = [
-    {
-      label: 'Vitrine de Aulas',
-      icon: LayoutDashboard,
-      href: '/estudar',
-      active: isPathActive('/estudar'),
-      accent: 'brand',
-    },
-    {
-      label: 'Como usar (tutorial)',
-      icon: HelpCircle,
-      href: '/ajuda',
-      active: pathname === '/ajuda',
-      accent: 'sky',
-    },
-    {
-      label: 'Estudo Reverso (método)',
-      icon: BrainCircuit,
-      href: '/ajuda/estudo-reverso',
-      active: pathname === '/ajuda/estudo-reverso',
-      accent: 'violet',
-    },
-    {
-      label: 'Progresso de estudo',
-      icon: BarChart3,
-      href: '/progresso',
-      active: pathname === '/progresso' || pathname === '/analytics',
-      accent: 'emerald',
-    },
-    {
-      label: 'Meu desempenho (simulados)',
-      icon: TrendingUp,
-      href: '/desempenho/simulados',
-      active: isPathActive('/desempenho/simulados'),
-      accent: 'amber',
-    },
-    {
-      label: 'Simulados',
-      icon: ListChecks,
-      href: '/simulados',
-      active: isPathActive('/simulados'),
-      accent: 'rose',
-    },
-    {
-      label: 'Plano de Estudo Diário',
-      icon: CalendarDays,
-      href: '/plano-diario',
-      active: pathname === '/plano-diario',
-      accent: 'teal',
-    },
-    {
-      label: 'Cadernos de Estudo',
-      icon: BookMarked,
-      href: '/cadernos',
-      active: isPathActive('/cadernos'),
-      accent: 'indigo',
-    },
-  ];
+  const menuSections = buildMenuSections(isPathActive);
+  const isAdminActive = pathname?.startsWith('/admin') ?? false;
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
   const isAssinaturaActive = isPathActive('/conta/assinatura');
@@ -692,15 +662,16 @@ function DashboardContent({
     <PwaInstallProvider enabled={userEmail != null} blocked={estudoReversoWelcome.isOpen}>
     <div className="dashboard-surface flex h-[100svh] max-h-[100svh] min-h-0 bg-background font-sans text-foreground md:h-[100dvh] md:max-h-[100dvh]">
       {/* --- SIDEBAR FIXA --- */}
-      <aside className="relative z-20 hidden h-full w-[18rem] shrink-0 flex-col border-r border-slate-200 bg-white md:flex">
+      <aside className="relative z-20 hidden h-full min-h-0 w-[16rem] shrink-0 flex-col overflow-hidden border-r border-slate-200 bg-white md:flex">
         <DashboardSidebarPanels
           cidadeExibicao={cidadeExibicao}
           isPro={isPro}
           proSource={proSource}
           proExpiresAt={proExpiresAt}
-          menuItems={menuItems}
+          menuSections={menuSections}
           createQueryString={createQueryString}
           isAdminUser={isAdminUser}
+          isAdminActive={isAdminActive}
           onNavAction={closeMobileMenu}
           userEmail={userEmail}
           userDisplayName={userDisplayName}
@@ -723,9 +694,10 @@ function DashboardContent({
           isPro={isPro}
           proSource={proSource}
           proExpiresAt={proExpiresAt}
-          menuItems={menuItems}
+          menuSections={menuSections}
           createQueryString={createQueryString}
           isAdminUser={isAdminUser}
+          isAdminActive={isAdminActive}
           onNavAction={closeMobileMenu}
           userEmail={userEmail}
           userDisplayName={userDisplayName}

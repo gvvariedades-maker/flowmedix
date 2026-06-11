@@ -63,7 +63,7 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
     await gotoEstudar(page);
     await maisButton(page).click();
     await expect(page.locator('#dashboard-mobile-drawer')).toBeVisible({ timeout: 10_000 });
-    // Clique por coordenada à direita do painel (18rem): evita o detach do node animado
+    // Clique por coordenada à direita do painel (16rem): evita o detach do node animado
     // (AnimatePresence) que fazia o .click() entrar em loop de retry até o timeout.
     const overlay = page.getByTestId('dashboard-drawer-overlay');
     await expect(overlay).toBeVisible();
@@ -81,13 +81,31 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
     await expect(page.locator('#dashboard-mobile-drawer')).not.toBeVisible({ timeout: 10_000 });
   });
 
-  test('D5 — link Como usar navega e fecha drawer', async ({ page }) => {
+  test('D5 — link Tutorial navega, fecha drawer e marca aria-current', async ({ page }) => {
     await gotoEstudar(page);
     await maisButton(page).click();
-    await expect(page.locator('#dashboard-mobile-drawer')).toBeVisible({ timeout: 10_000 });
-    await page.getByRole('link', { name: 'Como usar (tutorial)' }).click();
-    await expect(page).toHaveURL(/\/ajuda/, { timeout: 15_000 });
-    await expect(page.locator('#dashboard-mobile-drawer')).not.toBeVisible({ timeout: 10_000 });
+    const drawer = page.locator('#dashboard-mobile-drawer');
+    await expect(drawer).toBeVisible({ timeout: 10_000 });
+    await drawer.getByRole('link', { name: 'Tutorial' }).click();
+    await expect(page).toHaveURL(/\/ajuda$/, { timeout: 15_000 });
+    await expect(drawer).not.toBeVisible({ timeout: 10_000 });
+
+    await maisButton(page).click();
+    await expect(drawer).toBeVisible({ timeout: 10_000 });
+    await expect(drawer.getByRole('link', { name: 'Tutorial' })).toHaveAttribute('aria-current', 'page');
+  });
+
+  test('D5b — Método reverso ativo em /ajuda/estudo-reverso', async ({ page }) => {
+    await page.goto('/ajuda/estudo-reverso', { waitUntil: 'domcontentloaded' });
+    await dismissWelcomeIfVisible(page);
+    await maisButton(page).click();
+    const drawer = page.locator('#dashboard-mobile-drawer');
+    await expect(drawer).toBeVisible({ timeout: 10_000 });
+    await expect(drawer.getByRole('link', { name: 'Método reverso' })).toHaveAttribute(
+      'aria-current',
+      'page',
+    );
+    await expect(drawer.getByRole('link', { name: 'Tutorial' })).not.toHaveAttribute('aria-current');
   });
 
   test('D6 — main não rola com drawer aberto', async ({ page }) => {
@@ -158,5 +176,16 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
     const mais = bottomNav(page).getByRole('button', { name: 'Abrir menu' });
     await expect(mais).toHaveAttribute('aria-current', 'page');
     await expect(mais.locator('span', { hasText: 'Mais' })).toHaveClass(/text-\[#00f2ff\]/);
+  });
+
+  test('D11 — seção Suporte e WhatsApp acessíveis no drawer', async ({ page }) => {
+    await gotoEstudar(page);
+    await maisButton(page).click();
+    const drawer = page.locator('#dashboard-mobile-drawer');
+    await expect(drawer).toBeVisible({ timeout: 10_000 });
+
+    const nav = drawer.getByRole('navigation', { name: 'Navegação principal' });
+    await nav.getByText('Suporte', { exact: true }).scrollIntoViewIfNeeded();
+    await expect(nav.getByRole('button', { name: 'WhatsApp' })).toBeVisible();
   });
 });

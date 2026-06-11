@@ -1,3 +1,4 @@
+import { Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 type AvantBrandMarkProps = {
@@ -26,7 +27,13 @@ export function AvantBrandMark({
         )}
         aria-hidden
       >
-        ⚡
+        <Zap
+          size={isSm ? 15 : 16}
+          strokeWidth={2.25}
+          fill="currentColor"
+          className="shrink-0"
+          aria-hidden
+        />
       </div>
       <span
         className={cn(

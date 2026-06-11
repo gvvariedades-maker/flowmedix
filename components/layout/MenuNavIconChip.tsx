@@ -5,6 +5,16 @@ import { cn } from '@/lib/utils';
 
 export const MENU_ICON_STROKE = 2 as const;
 
+export const MENU_NAV_ACTIVE = {
+  row: 'bg-[#8fe020]/10',
+  bar: 'bg-[#8fe020]',
+  label: 'text-[#3d6b0f]',
+} as const;
+
+/** Linha de nav inativa — hover mais legível que slate-100 sobre branco. */
+export const MENU_NAV_ROW_IDLE =
+  'text-slate-600 hover:bg-slate-200/70 hover:text-slate-900';
+
 export type MenuAccentKey =
   | 'brand'
   | 'cyan'

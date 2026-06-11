@@ -80,4 +80,58 @@ describe('DashboardShell mobile drawer', () => {
     expect(card).not.toContain('tracking-[0.2em]');
     expect(card).not.toContain('text-white/30');
   });
+
+  it('PlanStatusCard — logo clicável com brandHref e aria-label', () => {
+    const card = readFileSync(planCardPath, 'utf8');
+    const shell = readFileSync(shellPath, 'utf8');
+    expect(card).toContain('brandHref?: string');
+    expect(card).toContain('aria-label="Ir para vitrine de aulas"');
+    expect(card).toContain('focus-visible:ring-[#8fe020]/50');
+    expect(shell).toContain("brandHref={createQueryString('/estudar')}");
+  });
+
+  it('sidebar renderiza por seções sem label global MENU', () => {
+    const shell = readFileSync(shellPath, 'utf8');
+    expect(shell).toContain('buildMenuSections(isPathActive)');
+    expect(shell).toMatch(/menuSections\.map\(\(section/);
+    expect(shell).not.toMatch(/>\s*Menu\s*</);
+    expect(shell).not.toContain('menuItems');
+  });
+
+  it('seção Suporte isolada com WhatsApp acessível', () => {
+    const shell = readFileSync(shellPath, 'utf8');
+    expect(shell).toContain('border-t border-slate-100');
+    expect(shell).toMatch(/>\s*Suporte\s*</);
+    expect(shell).toContain('title="Tirar dúvidas pelo WhatsApp"');
+    expect(shell).toMatch(/>\s*WhatsApp\s*</);
+  });
+
+  it('DashboardNavLink usa MENU_NAV_ACTIVE e aria-current no item ativo', () => {
+    const shell = readFileSync(shellPath, 'utf8');
+    expect(shell).toContain("from '@/components/layout/MenuNavIconChip'");
+    expect(shell).toContain('MENU_NAV_ACTIVE');
+    expect(shell).toMatch(/aria-current=\{item\.active \? 'page' : undefined\}/);
+    expect(shell).toContain('MENU_NAV_ACTIVE.row');
+    expect(shell).toContain('MENU_NAV_ACTIVE.bar');
+    expect(shell).toContain('MENU_NAV_ACTIVE.label');
+    expect(shell).toContain('MENU_NAV_ROW_IDLE');
+  });
+
+  it('link admin usa aria-current quando rota /admin', () => {
+    const shell = readFileSync(shellPath, 'utf8');
+    expect(shell).toContain("pathname?.startsWith('/admin')");
+    expect(shell).toMatch(/aria-current=\{isAdminActive \? 'page' : undefined\}/);
+  });
+
+  it('DashboardSidebarPanels — topo sticky com logo e plano', () => {
+    const shell = readFileSync(shellPath, 'utf8');
+    expect(shell).toContain('sticky top-0 z-10 shrink-0 border-b border-slate-100 bg-white pb-2');
+  });
+
+  it('UserAccountFooter — assinatura com MenuNavIconChip slate', () => {
+    const shell = readFileSync(shellPath, 'utf8');
+    expect(shell).toMatch(
+      /MenuNavIconChip icon=\{CreditCard\} accent="slate" active=\{isAssinaturaActive\}/,
+    );
+  });
 });

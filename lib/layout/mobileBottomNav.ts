@@ -47,7 +47,7 @@ export const DASHBOARD_PAGE_CENTER = 'flex min-h-full items-center justify-cente
 export const MOBILE_ACTION_BAR_Z = 'z-50';
 
 /** Largura da sidebar fixa do dashboard (desktop ≥ md). */
-export const DASHBOARD_SIDEBAR_WIDTH = '18rem';
+export const DASHBOARD_SIDEBAR_WIDTH = '16rem';
 
 /** Estudo reverso no celular: não cobre o BottomNav (Menu, Estudar, …). */
 export const ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM =

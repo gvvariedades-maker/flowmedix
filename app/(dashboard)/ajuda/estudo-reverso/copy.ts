@@ -61,7 +61,7 @@ export const CICLO = {
       n: '4',
       nome: 'Revisar',
       desc: 'A repetição espaçada traz o conteúdo de volta antes que ele se perca.',
-      noAvant: 'O Plano Diário organiza as revisões pendentes para você.',
+      noAvant: 'O Plano diário organiza as revisões pendentes para você.',
     },
   ],
 } as const;
@@ -118,7 +118,7 @@ export const PILARES = {
     {
       nome: 'Repetição espaçada',
       desc: 'Revisar em intervalos planejados ajuda a fixar o conteúdo na memória de longo prazo.',
-      noAvant: 'O Plano Diário organiza revisões em intervalos crescentes.',
+      noAvant: 'O Plano diário organiza revisões em intervalos crescentes.',
       fonte: 'Cepeda et al. (2008)',
     },
   ],
@@ -127,11 +127,11 @@ export const PILARES = {
 export const PASSO_A_PASSO = {
   titulo: 'Como aplicar o método no AVANT',
   passos: [
-    'Escolha um assunto na Vitrine de Aulas.',
+    'Escolha um assunto na Vitrine.',
     'Tente responder a questão antes de ver o gabarito.',
     'Confirme e leia o diagnóstico.',
     'Ative o estudo reverso e percorra os 4 slides.',
-    'Marque como estudado e siga o Plano Diário para revisar.',
+    'Marque como estudado e siga o Plano diário para revisar.',
   ],
 } as const;
 
