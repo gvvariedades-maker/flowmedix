@@ -26,9 +26,9 @@ export default function StatsCards({ stats }: StatsCardsProps) {
       label: 'Total de Tentativas',
       value: stats.total,
       icon: Target,
-      color: 'text-cyan-400',
-      bgColor: 'bg-cyan-500/10',
-      borderColor: 'border-cyan-400/50',
+      color: 'text-[#3d6b0f]',
+      bgColor: 'bg-[rgba(143,224,32,0.1)]',
+      borderColor: 'border-[rgba(143,224,32,0.35)]',
     },
     {
       label: 'Acertos',

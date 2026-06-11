@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
 import { getHistoricoQuestoesCached, getMatriculatedConcursosCached } from '@/lib/cache';
+import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { logger } from '@/lib/logger';
 import CadernosListClient from './CadernosListClient';
 
@@ -20,6 +21,10 @@ export interface NotebookSummary {
 }
 
 export default async function CadernosPage() {
+  if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS')) {
+    return <CadernosListClient cadernos={[]} editalBanca={null} />;
+  }
+
   const session = await getServerSession();
   if (!session?.user) redirect('/login');
 
@@ -114,8 +119,8 @@ export default async function CadernosPage() {
   } catch (error) {
     logger.error('Failed to load cadernos', error);
     return (
-      <div className="flex min-h-full items-center justify-center bg-[#010409] p-6">
-        <p className="text-sm text-slate-400">Erro ao carregar cadernos. Tente novamente.</p>
+      <div className="flex min-h-full items-center justify-center bg-background p-6">
+        <p className="text-sm text-slate-500">Erro ao carregar cadernos. Tente novamente.</p>
       </div>
     );
   }

@@ -678,22 +678,22 @@ export default function AvantLessonPlayer({
     return (
       <div
         data-testid="lesson-empty-question-error"
-        className="flex h-full min-h-0 w-full flex-1 flex-col overflow-hidden border border-[rgba(255,255,255,0.10)] bg-[#0d1117] font-sans shadow-2xl md:rounded-[40px]"
+        className="card-elevated-lg flex h-full min-h-0 w-full flex-1 flex-col overflow-hidden font-sans shadow-none md:rounded-[2.5rem]"
       >
         <div className="flex flex-1 flex-col items-center justify-center gap-6 px-6 py-12 text-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full border border-rose-500/30 bg-rose-500/10">
-            <XCircle size={32} className="text-rose-400" aria-hidden />
+          <div className="flex h-16 w-16 items-center justify-center rounded-full border border-rose-200 bg-rose-50">
+            <XCircle size={32} className="text-rose-600" aria-hidden />
           </div>
           <div className="space-y-2">
-            <h2 className="text-lg font-bold text-slate-100">Questão indisponível</h2>
-            <p className="max-w-md text-sm text-slate-400">
+            <h2 className="text-lg font-bold text-slate-900">Questão indisponível</h2>
+            <p className="max-w-md text-sm text-slate-600">
               Esta questão não possui alternativas válidas para exibição. Volte à {vitrineDestinoLabel} e escolha outra.
             </p>
           </div>
           <button
             type="button"
             onClick={handleVoltarVitrine}
-            className="group flex min-h-[48px] items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/15"
+            className="btn-editorial-outline group flex min-h-[48px] items-center gap-2 px-6 py-3 text-sm font-semibold"
           >
             <ArrowLeft size={16} className="shrink-0" aria-hidden />
             Voltar à {vitrineDestinoLabel}
@@ -1196,14 +1196,14 @@ export default function AvantLessonPlayer({
     const voltarDestino = fromPlano ? 'Plano diário' : fromCaderno ? 'Meus cadernos' : 'Vitrine';
 
     return (
-      <div className="flex min-w-0 shrink-0 flex-wrap items-center justify-between gap-x-2 gap-y-2 px-4 pb-1.5 pt-3 sm:gap-x-3 sm:px-6 sm:pt-4">
+      <div className="flex min-w-0 shrink-0 flex-wrap items-center justify-between gap-x-2 gap-y-2 border-b border-slate-200 px-4 pb-1.5 pt-3 sm:gap-x-3 sm:px-6 sm:pt-4">
         <button
           type="button"
           onClick={handleVoltarLista}
           aria-label={`Voltar para ${voltarDestino}`}
-          className="group flex min-w-0 shrink-0 items-center gap-2 rounded-xl px-1 -ml-1 text-slate-400 transition-colors hover:text-[#00f2ff] min-h-[44px] min-w-[44px] sm:max-w-none"
+          className="group flex min-w-0 shrink-0 items-center gap-2 rounded-xl px-1 -ml-1 text-slate-500 transition-colors hover:text-[#3d6b0f] min-h-[44px] min-w-[44px] sm:max-w-none"
         >
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/[0.05] transition-all group-hover:bg-[rgba(0,242,255,0.10)]">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50 transition-all group-hover:border-[rgba(143,224,32,0.35)] group-hover:bg-[rgba(143,224,32,0.08)]">
             <ArrowLeft size={16} />
           </div>
           <span className="hidden truncate text-sm font-medium sm:inline">
@@ -1213,7 +1213,7 @@ export default function AvantLessonPlayer({
         <div className="ml-auto flex min-w-0 max-w-full flex-wrap items-center justify-end gap-1.5 sm:gap-2">
           {listaContexto && listaContexto.total > 0 && (
             <span
-              className="shrink-0 rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1.5 text-[11px] font-semibold tabular-nums text-slate-300 sm:px-3 sm:text-xs sm:text-sm"
+              className="shrink-0 rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-[11px] font-semibold tabular-nums text-slate-600 sm:px-3 sm:text-xs sm:text-sm"
               aria-label={`Questão ${listaContexto.atual} de ${listaContexto.total}`}
             >
               <span className="sm:hidden">
@@ -1252,14 +1252,14 @@ export default function AvantLessonPlayer({
       <>
         {activeDados.question_data.text_fragment && (
           <div className="px-6 pt-4 pb-2 md:px-8">
-            <div className="bg-white/[0.04] border border-[rgba(255,255,255,0.10)] p-4 rounded-lg text-slate-300 text-sm font-serif leading-relaxed italic">
+            <div className="rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm font-serif leading-relaxed italic text-slate-600">
               <div dangerouslySetInnerHTML={{ __html: sanitizedTextFragmentHtml ?? '' }} />
             </div>
           </div>
         )}
 
         <div className="min-w-0 px-6 pt-3 pb-2 md:px-8 md:pt-4 md:pb-3">
-          <div className={`${QUESTION_TEXT_TYPOGRAPHY} text-slate-100 font-normal whitespace-pre-wrap break-words overflow-x-hidden [&_strong]:font-semibold [&_p]:mb-2 [&_p:last-child]:mb-0`}>
+          <div className={`${QUESTION_TEXT_TYPOGRAPHY} text-slate-800 font-normal whitespace-pre-wrap break-words overflow-x-hidden [&_strong]:font-semibold [&_p]:mb-2 [&_p:last-child]:mb-0`}>
             <span dangerouslySetInnerHTML={{ __html: sanitizedInstructionHtml }} />
           </div>
         </div>
@@ -1285,26 +1285,26 @@ export default function AvantLessonPlayer({
               const isCorrect = opcaoEstaCorreta(opt.id);
               const showResult = (etapa === 'gabarito' || etapa === 'estudo') && gabarito !== null;
 
-              let styles = "border-[rgba(255,255,255,0.10)] bg-[#0d1117] hover:border-[rgba(0,242,255,0.30)] hover:bg-[rgba(0,242,255,0.05)]";
-              let badge = "border border-[rgba(255,255,255,0.15)] bg-white/[0.05] text-slate-400 group-hover:border-[rgba(0,242,255,0.35)] group-hover:text-[#00f2ff]";
-              let text = "text-slate-200";
+              let styles = "border-slate-200 bg-white hover:border-[rgba(143,224,32,0.45)] hover:bg-[rgba(143,224,32,0.06)]";
+              let badge = "border border-slate-200 bg-slate-100 text-slate-600 group-hover:border-[rgba(143,224,32,0.35)] group-hover:text-[#3d6b0f]";
+              let text = "text-slate-800";
 
               if (showResult) {
                 if (isCorrect) {
-                  styles = "border-[#00ff88] bg-[rgba(0,255,136,0.08)]";
-                  badge = "bg-[#00ff88] text-slate-900 shadow-md";
-                  text = "text-[#00ff88] font-bold";
+                  styles = "border-emerald-300 bg-emerald-50";
+                  badge = "bg-emerald-500 text-white shadow-md";
+                  text = "text-emerald-700 font-bold";
                 } else if (isSelected && !isCorrect) {
-                  styles = "border-[#ff0055] bg-[rgba(255,0,85,0.08)]";
-                  badge = "bg-[#ff0055] text-white shadow-md";
-                  text = "text-[#ff4d72] font-bold";
+                  styles = "border-rose-300 bg-rose-50";
+                  badge = "bg-rose-500 text-white shadow-md";
+                  text = "text-rose-700 font-bold";
                 } else {
-                  styles = "border-white/5 bg-white/[0.02] opacity-40";
+                  styles = "border-slate-100 bg-slate-50 opacity-50";
                 }
               } else if (isSelected) {
-                styles = "border-[#00f2ff] bg-[rgba(0,242,255,0.08)] shadow-[0_0_16px_rgba(0,242,255,0.12)]";
-                badge = "bg-[#00f2ff] text-slate-900 shadow-md";
-                text = "text-[#00f2ff] font-bold";
+                styles = "border-[rgba(143,224,32,0.45)] bg-[rgba(143,224,32,0.08)] shadow-sm";
+                badge = "bg-[#8fe020] text-slate-900 shadow-md";
+                text = "text-[#3d6b0f] font-bold";
               }
 
               const rowLayout = certoErradoLayout
@@ -1337,7 +1337,7 @@ export default function AvantLessonPlayer({
                   whileTap={!showResult ? { scale: 0.98 } : undefined}
                   onClick={() => setSelecionada(opt.id)}
                   onKeyDown={(e) => handleOptionKeyDown(e, optionIndex, showResult)}
-                  className={`group relative rounded-xl border transition-all duration-300 active:scale-[0.98] ${styles} ${rowLayout}`}
+                  className={`group relative rounded-xl border transition-all duration-300 active:scale-[0.98] btn-option-editorial ${styles} ${rowLayout}`}
                 >
                   {!certoErradoLayout && (
                     <span className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-bold transition-colors duration-300 ${badge}`}>
@@ -1348,12 +1348,12 @@ export default function AvantLessonPlayer({
                     {opt.text}
                   </span>
                   {showResult && isCorrect && (
-                    <div className={`text-[#00ff88] animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`} aria-hidden>
+                    <div className={`text-emerald-600 animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`} aria-hidden>
                       <CheckCircle2 size={certoErradoLayout ? 32 : 24} />
                     </div>
                   )}
                   {showResult && isSelected && !isCorrect && (
-                    <div className={`text-[#ff0055] animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`} aria-hidden>
+                    <div className={`text-rose-600 animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`} aria-hidden>
                       <XCircle size={certoErradoLayout ? 32 : 24} />
                     </div>
                   )}
@@ -1366,7 +1366,7 @@ export default function AvantLessonPlayer({
         {mode === 'live' && freemiumStatusWarning ? (
           <div
             role="status"
-            className="mx-6 mb-2 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-2.5 text-center text-xs font-medium text-amber-200 md:mx-8"
+            className="mx-6 mb-2 rounded-xl border border-amber-200 bg-amber-50 px-4 py-2.5 text-center text-xs font-medium text-amber-800 md:mx-8"
           >
             {freemiumStatusWarning}
           </div>
@@ -1390,12 +1390,12 @@ export default function AvantLessonPlayer({
                 role="alert"
                 className="flex w-full max-w-xl flex-col items-center gap-2 px-2 text-center"
               >
-                <p className="text-sm font-medium text-[#ff4d72]">{tentativaErro}</p>
+                <p className="text-sm font-medium text-rose-600">{tentativaErro}</p>
                 {tentativaAccessDenied ? (
                   <button
                     type="button"
                     onClick={handleVoltarLista}
-                    className="text-xs font-semibold text-[#00f2ff] underline-offset-2 transition-colors hover:text-white hover:underline"
+                    className="link-editorial-secondary text-xs font-semibold underline-offset-2 hover:underline"
                   >
                     Voltar à vitrine
                   </button>
@@ -1406,10 +1406,10 @@ export default function AvantLessonPlayer({
               type="button"
               onClick={handleConfirmarResposta}
               disabled={confirmandoResposta}
-              className="group flex min-h-[48px] items-center gap-4 rounded-full bg-slate-900 py-3 pl-8 pr-2 text-xs font-bold uppercase tracking-widest text-white shadow-xl shadow-slate-900/20 transition-all hover:scale-105 disabled:cursor-not-allowed disabled:opacity-70"
+              className="btn-editorial-primary group flex min-h-[48px] items-center gap-3 rounded-full py-3 pl-8 pr-3 text-xs font-bold uppercase tracking-widest transition-all hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70"
             >
               {confirmandoResposta ? 'Registrando…' : 'Confirmar Resposta'}
-              <span className="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center group-hover:bg-[#BEF264] group-hover:text-slate-900 transition-colors">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 transition-colors group-hover:bg-white/30">
                 <ChevronRight size={16} />
               </span>
             </button>
@@ -1424,21 +1424,21 @@ export default function AvantLessonPlayer({
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="border-b border-[rgba(255,255,255,0.10)] bg-[#0d1117] px-6 py-3 md:px-8 md:py-4"
+          className="border-b border-slate-200 bg-slate-50 px-6 py-3 md:px-8 md:py-4"
         >
           {formatAvantCodigo(avantCodigo) && (
             <p
-              className="text-[11px] font-mono font-black text-[#00f2ff] mb-1 tracking-wide"
+              className="text-[11px] font-mono font-black text-[#3d6b0f] mb-1 tracking-wide"
               title="Código da questão (igual ao painel admin)"
             >
               {formatAvantCodigo(avantCodigo)}
             </p>
           )}
-          <p className="text-sm md:text-[15px] text-slate-400 leading-snug font-medium tracking-tight">
+          <p className="text-sm md:text-[15px] text-slate-600 leading-snug font-medium tracking-tight">
             {examHeaderLine}
           </p>
           {subjectLine && (
-            <p className="mt-2 text-base md:text-lg font-semibold text-slate-100 border-l-4 border-[#00f2ff] pl-3 leading-snug">
+            <p className="mt-2 text-base md:text-lg font-semibold text-slate-900 border-l-4 border-[#8fe020] pl-3 leading-snug">
               {subjectLine}
             </p>
           )}
@@ -1457,19 +1457,19 @@ export default function AvantLessonPlayer({
     <>
     <div
       className={cn(
-        'relative flex h-full min-h-0 w-full flex-1 flex-col overflow-hidden bg-[#0d1117] font-sans',
+        'relative flex h-full min-h-0 w-full flex-1 flex-col overflow-hidden bg-white font-sans',
         mode === 'live' || previewImmersive
           ? 'border-0 shadow-none'
-          : 'border border-[rgba(255,255,255,0.10)] shadow-2xl md:rounded-[40px]',
+          : 'card-elevated-lg border border-slate-200 shadow-lg md:rounded-[2.5rem]',
       )}
     >
       
       {/* BARRA DE PROGRESSO */}
-      <div className="h-2 w-full bg-white/10 flex shrink-0">
+      <div className="h-2 w-full bg-slate-200 flex shrink-0">
         <div className={`h-full transition-all duration-1000 ease-out ${
-          etapa === 'pergunta' ? 'w-1/3 bg-indigo-500' : 
-          etapa === 'gabarito' ? 'w-2/3 bg-indigo-600' : 
-          'w-full bg-[#BEF264]'
+          etapa === 'pergunta' ? 'w-1/3 bg-[#8fe020]' : 
+          etapa === 'gabarito' ? 'w-2/3 bg-[#7acc1a]' : 
+          'w-full bg-[#3d6b0f]'
         }`} />
       </div>
 
@@ -1479,7 +1479,7 @@ export default function AvantLessonPlayer({
           <div
             ref={questionBodyScrollRef}
             data-testid="lesson-scroll-body"
-            className="flex min-h-0 min-w-0 flex-1 flex-col overflow-x-hidden overflow-y-auto touch-pan-y bg-[#0d1117] custom-scrollbar"
+            className="flex min-h-0 min-w-0 flex-1 flex-col overflow-x-hidden overflow-y-auto touch-pan-y bg-white custom-scrollbar"
           >
             <div className="flex min-w-0 flex-col">{renderQuestionScrollBody(true)}</div>
           </div>
@@ -1490,7 +1490,7 @@ export default function AvantLessonPlayer({
           <div
             ref={questionBodyScrollRef}
             data-testid="lesson-scroll-body"
-            className="flex min-h-0 min-w-0 flex-1 flex-col overflow-x-hidden overflow-y-auto touch-pan-y bg-[#0d1117] custom-scrollbar"
+            className="flex min-h-0 min-w-0 flex-1 flex-col overflow-x-hidden overflow-y-auto touch-pan-y bg-white custom-scrollbar"
           >
             <div className="flex min-w-0 flex-col">{renderQuestionScrollBody(false)}</div>
           </div>
@@ -1505,7 +1505,7 @@ export default function AvantLessonPlayer({
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="z-10 shrink-0 overflow-hidden border-t border-[rgba(255,255,255,0.10)] border-b border-white/10 bg-[#0d1117] shadow-[0_-4px_24px_-8px_rgba(15,23,42,0.08)]"
+            className="z-10 shrink-0 overflow-hidden border-t border-b border-slate-200 bg-white shadow-[0_-4px_24px_-8px_rgba(15,23,42,0.06)]"
           >
             <div className="p-4 sm:p-6 md:p-8">
               <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 sm:gap-6 md:flex-row">
@@ -1518,8 +1518,8 @@ export default function AvantLessonPlayer({
                   <div
                     className={`flex h-14 w-14 items-center justify-center rounded-2xl shadow-inner ${
                       respostaAcertou
-                        ? 'bg-[rgba(0,255,136,0.12)] text-[#00ff88]'
-                        : 'bg-[rgba(255,0,85,0.12)] text-[#ff0055]'
+                        ? 'bg-emerald-50 text-emerald-600 border border-emerald-200'
+                        : 'bg-rose-50 text-rose-600 border border-rose-200'
                     }`}
                     aria-hidden
                   >
@@ -1530,12 +1530,12 @@ export default function AvantLessonPlayer({
                     )}
                   </div>
                   <div>
-                    <p className="mb-0.5 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                    <p className="mb-0.5 text-[10px] font-black uppercase tracking-widest text-slate-500">
                       Diagnóstico
                     </p>
                     <p
                       className={`text-xl font-black italic uppercase tracking-tighter ${
-                        respostaAcertou ? 'text-[#00ff88]' : 'text-[#ff0055]'
+                        respostaAcertou ? 'text-emerald-700' : 'text-rose-700'
                       }`}
                     >
                       {respostaAcertou ? 'Resposta Correta' : 'Resposta Incorreta'}
@@ -1556,7 +1556,7 @@ export default function AvantLessonPlayer({
                       setEtapa('estudo');
                       setSlideAtual(0);
                     }}
-                    className="flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 py-3.5 text-[10px] font-bold uppercase tracking-wide shadow-lg shadow-indigo-500/30 transition-all hover:bg-indigo-700 sm:gap-3 sm:px-8 sm:py-4 sm:text-[11px] sm:tracking-widest sm:hover:-translate-y-1"
+                    className="btn-editorial-primary flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-[10px] font-bold uppercase tracking-wide sm:gap-3 sm:px-8 sm:py-4 sm:text-[11px] sm:tracking-widest sm:hover:-translate-y-0.5"
                   >
                     <BrainCircuit size={18} className="shrink-0" />
                     <span className="text-center leading-tight">Ativar Estudo Reverso</span>
@@ -1573,7 +1573,7 @@ export default function AvantLessonPlayer({
         <div
           ref={bottomNavRef}
           aria-busy={navegacaoIndisponivel || undefined}
-          className="z-10 shrink-0 border-t border-[rgba(255,255,255,0.10)] bg-[#0d1117] shadow-[0_-4px_24px_-8px_rgba(15,23,42,0.08)] pb-safe"
+          className="z-10 shrink-0 border-t border-slate-200 bg-white shadow-[0_-4px_24px_-8px_rgba(15,23,42,0.06)] pb-safe"
           style={bottomNavPaddingBottom ? { paddingBottom: bottomNavPaddingBottom } : undefined}
         >
           {/* Navegação inline: Anterior | carrossel de dots (máx. 5) | Próxima/Concluir */}
@@ -1592,8 +1592,8 @@ export default function AvantLessonPlayer({
                 disabled={!anteriorSlug || navegacaoIndisponivel}
                 className={`flex h-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center gap-1.5 rounded-2xl px-3 font-bold uppercase text-[10px] tracking-wide transition-all sm:gap-2 sm:px-4 sm:text-xs ${
                   anteriorSlug && !navegacaoIndisponivel
-                    ? 'text-slate-300 hover:bg-white/[0.08] hover:text-[#00f2ff] active:scale-[0.97]'
-                    : 'cursor-not-allowed text-white/15'
+                    ? 'btn-editorial-outline text-slate-700 active:scale-[0.97]'
+                    : 'cursor-not-allowed text-slate-300'
                 }`}
               >
                 <ArrowLeft size={22} className="shrink-0" aria-hidden />
@@ -1655,10 +1655,10 @@ export default function AvantLessonPlayer({
                             <span
                               className={`flex items-center justify-center rounded-full transition-all duration-200 ${
                                 isCurrent
-                                  ? 'h-7 w-7 bg-[#00f2ff] ring-2 ring-[rgba(0,242,255,0.40)] ring-offset-1 ring-offset-[#0d1117] shadow-md'
+                                  ? 'h-7 w-7 bg-[#8fe020] ring-2 ring-[rgba(143,224,32,0.40)] ring-offset-1 ring-offset-white shadow-md'
                                   : q.estudada
-                                    ? 'h-5 w-5 bg-emerald-400 hover:bg-emerald-500'
-                                    : 'h-5 w-5 bg-white/20 hover:bg-white/35'
+                                    ? 'h-5 w-5 bg-emerald-500 hover:bg-emerald-600'
+                                    : 'h-5 w-5 bg-slate-300 hover:bg-slate-400'
                               }`}
                               aria-hidden
                             >
@@ -1701,7 +1701,7 @@ export default function AvantLessonPlayer({
                     if (!navegacaoBloqueada) prefetchSlug(proximaSlug);
                   }}
                   disabled={navegacaoIndisponivel}
-                  className="flex h-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center gap-1.5 rounded-2xl bg-white/[0.09] px-3 font-black uppercase text-[10px] tracking-wide text-slate-100 transition-all hover:bg-white/[0.14] active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-50 sm:gap-2 sm:px-4 sm:text-xs"
+                  className="btn-editorial-primary flex h-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center gap-1.5 rounded-2xl px-3 font-black uppercase text-[10px] tracking-wide transition-all active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-50 sm:gap-2 sm:px-4 sm:text-xs"
                 >
                   <span className="hidden sm:inline">{navegacaoStatusLabel ?? 'Próxima Questão'}</span>
                   <ArrowRight size={22} className="shrink-0" aria-hidden />
@@ -1713,7 +1713,7 @@ export default function AvantLessonPlayer({
                     fromPlano ? 'Concluir Plano' : fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'
                   }
                   onClick={handleConcluir}
-                  className="flex h-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center gap-1.5 rounded-2xl bg-[#BEF264] px-3 font-black uppercase text-[10px] tracking-wide text-slate-900 transition-all hover:bg-[#a3d648] hover:shadow-lg active:scale-[0.97] sm:gap-2 sm:px-4 sm:text-xs"
+                  className="flex h-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center gap-1.5 rounded-2xl bg-[#8fe020] px-3 font-black uppercase text-[10px] tracking-wide text-slate-900 transition-all hover:bg-[#7acc1a] hover:shadow-md active:scale-[0.97] sm:gap-2 sm:px-4 sm:text-xs"
                 >
                   <span className="hidden sm:inline">
                     {fromPlano ? 'Concluir Plano' : fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'}
@@ -1739,7 +1739,7 @@ export default function AvantLessonPlayer({
           </div>
           {gabarito !== null && !estudoConcluido && (
             <div className="flex justify-center px-3 pb-1.5" role="status">
-              <span className="inline-flex items-center rounded-full border border-amber-500/25 bg-amber-500/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-200/90">
+              <span className="inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-800">
                 Estudo reverso pendente
               </span>
             </div>
@@ -1749,7 +1749,7 @@ export default function AvantLessonPlayer({
               <button
                 type="button"
                 onClick={handleStaleRetry}
-                className="text-[10px] font-semibold uppercase tracking-wide text-[#00f2ff] hover:text-white transition-colors"
+                className="link-editorial-secondary text-[10px] font-semibold uppercase tracking-wide hover:underline"
               >
                 Tentar novamente
               </button>

@@ -1,10 +1,10 @@
 'use client';
 
 import { Suspense, useState } from 'react';
+import { useEditorialTheme } from '@/lib/layout/useEditorialTheme';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, Lock, MapPin, CheckCircle2, AlertCircle, Eye, EyeOff } from 'lucide-react';
-import { AvantLogo } from '@/components/brand/AvantLogo';
 import { motion } from 'framer-motion';
 import { supabase } from '@/lib/supabase/client';
 import { getPostLoginDestination } from '@/lib/getPostLoginDestination';
@@ -23,10 +23,11 @@ function LoginTopBar() {
   const invite = searchParams.get('invite')?.trim() || null;
   const registerHref = buildAuthQueryPath('/register', cidade, concurso, invite);
 
-  return <PublicDarkAuthHeader variant="login" registerHref={registerHref} />;
+  return (
+    <PublicDarkAuthHeader variant="login" registerHref={registerHref} appearance="editorial" />
+  );
 }
 
-// Componente Interno para lidar com parâmetros de URL
 function LoginContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -37,7 +38,6 @@ function LoginContent() {
   const [error, setError] = useState<string | null>(null);
   const [inviteNotice, setInviteNotice] = useState<string | null>(null);
 
-  // Captura a cidade da URL (ex: ?cidade=Caicó - RN) e destino interno (ex: ?next=/material)
   const cidade = searchParams.get('cidade')
     ? decodeURIComponent(searchParams.get('cidade')!)
     : null;
@@ -53,7 +53,6 @@ function LoginContent() {
     setInviteNotice(null);
 
     try {
-      // Autenticação real com Supabase
       const { data, error: authError } = await supabase.auth.signInWithPassword({
         email: email.trim(),
         password: password,
@@ -112,122 +111,95 @@ function LoginContent() {
     }
   };
 
-  const inputClassName =
-    'w-full rounded-xl border border-[rgba(255,255,255,0.10)] bg-white/[0.05] p-4 font-bold text-white outline-none transition-all placeholder:font-normal placeholder:text-slate-500 focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20';
-
   return (
     <div className="w-full max-w-md">
-      {/* --- HEADER DO LOGIN --- */}
-      <div className="mb-10 text-center">
-        <div className="mb-6 flex justify-center">
-          <AvantLogo size="lg" />
+      <div className="login-auth-card space-y-6">
+        <div className="space-y-4 text-center">
+          {cidade ? (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="rounded-xl border border-[#8fe020]/30 bg-[#8fe020]/10 p-4"
+            >
+              <p className="mb-1 flex items-center justify-center gap-1 text-[10px] font-bold uppercase tracking-wide text-[#3d6b0f]">
+                <MapPin size={12} /> Turma confirmada
+              </p>
+              <p className="text-lg font-bold leading-tight text-slate-900">{cidade}</p>
+            </motion.div>
+          ) : null}
+
+          <h1 className="text-2xl font-bold tracking-tight text-slate-900">Acesse sua área</h1>
+
+          {inviteToken ? (
+            <p className="text-xs font-semibold text-[#3d6b0f]">
+              Convite AVANT Pro detectado — ao entrar, o benefício será aplicado automaticamente.
+            </p>
+          ) : null}
         </div>
 
-        {/* MENSAGEM DINÂMICA (Turma confirmada) */}
-        {cidade ? (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-2 rounded-2xl border border-white/10 bg-indigo-500/10 p-4"
-          >
-            <p className="mb-1 flex items-center justify-center gap-1 text-[10px] font-black uppercase tracking-widest text-indigo-300">
-              <MapPin size={12} /> Turma Confirmada
-            </p>
-            <h1 className="text-xl font-black uppercase leading-tight text-indigo-100">{cidade}</h1>
-          </motion.div>
-        ) : (
-          <h1 className="mb-2 text-3xl font-black tracking-tight text-white">Acesse sua Área</h1>
-        )}
-
-        <p className="text-sm font-medium text-slate-400">
-          Prepare-se para concursos de Técnico de Enfermagem com Estudo Reverso.
-        </p>
-        {inviteToken ? (
-          <p className="mt-3 text-xs font-bold text-cyan-300/90">
-            Convite AVANT Pro detectado — ao entrar, o benefício será aplicado automaticamente.
-          </p>
-        ) : null}
-      </div>
-
-      {/* --- FORMULÁRIO --- */}
-      <form
-        onSubmit={handleLogin}
-        className="relative space-y-5 overflow-hidden rounded-2xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117] p-8 shadow-2xl shadow-black/40 backdrop-blur-xl"
-      >
-        {/* Input E-mail */}
+        <form onSubmit={handleLogin} className="space-y-5">
         <div className="space-y-2">
-          <label className="pl-1 text-xs font-black uppercase tracking-widest text-slate-400">
-            E-mail de Acesso
-          </label>
+          <label className="label-editorial" htmlFor="login-email">E-mail de acesso</label>
           <input
+            id="login-email"
             type="email"
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="seu@email.com"
-            className={inputClassName}
+            autoComplete="email"
+            className="input-editorial"
           />
         </div>
 
-        {/* Input Senha */}
         <div className="space-y-2">
-          <label className="pl-1 text-xs font-black uppercase tracking-widest text-slate-400">
-            Senha
-          </label>
+          <label className="label-editorial" htmlFor="login-password">Senha</label>
           <div className="relative">
             <input
+              id="login-password"
               type={showPassword ? 'text' : 'password'}
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
               autoComplete="current-password"
-              className={`${inputClassName} pr-12`}
+              className="input-editorial pr-12"
             />
             <button
               type="button"
               onClick={() => setShowPassword((prev) => !prev)}
-              className="absolute inset-y-0 right-4 flex items-center text-slate-500 transition-colors hover:text-cyan-400"
+              className="absolute inset-y-0 right-4 flex items-center text-slate-400 transition-colors hover:text-slate-700"
               aria-label={showPassword ? 'Ocultar senha' : 'Mostrar senha'}
             >
               {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
             </button>
           </div>
           <div className="flex justify-end">
-            <Link
-              href="/esqueci-senha"
-              className="text-[10px] font-bold uppercase tracking-wide text-cyan-400 hover:text-cyan-300"
-            >
+            <Link href="/esqueci-senha" className="link-editorial-secondary text-xs">
               Esqueci a senha
             </Link>
           </div>
         </div>
 
         {inviteNotice ? (
-          <div className="flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-950/35 p-3 text-emerald-100">
-            <CheckCircle2 size={16} className="shrink-0 text-emerald-400" />
+          <div className="flex items-center gap-2 rounded-lg border border-green-200 bg-green-50 p-3 text-green-800">
+            <CheckCircle2 size={16} className="shrink-0 text-green-600" />
             <p className="text-xs font-bold">{inviteNotice}</p>
           </div>
         ) : null}
 
-        {/* Mensagem de Erro */}
-        {error && (
+        {error ? (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-2 rounded-xl border border-rose-500/30 bg-rose-950/40 p-3 text-rose-200"
+            className="flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 p-3 text-red-800"
           >
             <AlertCircle size={16} className="shrink-0" />
             <p className="text-xs font-bold">{error}</p>
           </motion.div>
-        )}
+        ) : null}
 
-        {/* Botão de Ação */}
-        <button
-          type="submit"
-          disabled={loading}
-          className="group flex w-full items-center justify-center gap-3 rounded-xl bg-indigo-600 p-4 font-black uppercase tracking-widest text-white shadow-lg shadow-indigo-500/20 transition-all hover:scale-[1.02] hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-70"
-        >
+        <button type="submit" disabled={loading} className="btn-editorial-primary group w-full">
           {loading ? (
             <span className="animate-pulse">Entrando...</span>
           ) : (
@@ -238,32 +210,31 @@ function LoginContent() {
           )}
         </button>
 
-        <p className="pt-1 text-center text-sm font-medium text-slate-400">
+        <p className="pt-1 text-center text-sm text-slate-600">
           Não tem conta?{' '}
           <Link
             href={registerHref}
-            className="font-black text-cyan-400 transition-colors hover:text-cyan-300"
+            className="font-semibold text-slate-700 underline-offset-2 transition-colors hover:text-slate-900 hover:underline"
           >
             Cadastre-se na AVANT
           </Link>
         </p>
 
-        {/* Rodapé Seguro */}
-        <div className="mt-2 flex items-center justify-center gap-2 border-t border-white/10 pt-4 text-slate-500">
-          <Lock size={12} />
-          <span className="text-[10px] font-bold uppercase tracking-widest">Ambiente Seguro</span>
+        <div className="flex items-center justify-center gap-2 border-t border-slate-200 pt-4 text-slate-500">
+          <Lock size={12} aria-hidden />
+          <span className="text-[10px] font-semibold uppercase tracking-wide">Ambiente seguro</span>
         </div>
-      </form>
+        </form>
+      </div>
 
-      {/* --- PROVA SOCIAL (Rodapé) --- */}
-      <div className="mt-8 flex justify-center gap-6 text-slate-500 transition-colors duration-500 hover:text-slate-400">
+      <div className="mt-6 flex justify-center gap-6 text-slate-400">
         <div className="flex items-center gap-2">
-          <CheckCircle2 size={16} className="text-slate-500" />{' '}
-          <span className="text-xs font-bold">Metodologia Validada</span>
+          <CheckCircle2 size={14} aria-hidden />
+          <span className="text-[11px] font-medium">Metodologia validada</span>
         </div>
         <div className="flex items-center gap-2">
-          <CheckCircle2 size={16} className="text-slate-500" />{' '}
-          <span className="text-xs font-bold">Foco no Edital</span>
+          <CheckCircle2 size={14} aria-hidden />
+          <span className="text-[11px] font-medium">Foco no edital</span>
         </div>
       </div>
     </div>
@@ -271,13 +242,15 @@ function LoginContent() {
 }
 
 export default function LoginPage() {
+  useEditorialTheme();
+
   return (
-    <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-[#010409] text-slate-100">
-      <AuthAtmosphericBackdrop />
+    <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-[var(--color-surface-0)] text-slate-900">
+      <AuthAtmosphericBackdrop variant="editorial" />
 
       <Suspense
         fallback={
-          <div className="min-h-[6.75rem] shrink-0 border-b border-white/5 bg-slate-950/55 backdrop-blur-xl sm:min-h-[73px]" />
+          <div className="min-h-[6.75rem] shrink-0 border-b border-slate-200 bg-white/90 backdrop-blur-xl sm:min-h-[73px]" />
         }
       >
         <LoginTopBar />
@@ -286,7 +259,7 @@ export default function LoginPage() {
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center p-6">
         <Suspense
           fallback={
-            <div className="animate-pulse text-sm font-bold text-slate-400">Carregando Acesso...</div>
+            <div className="animate-pulse text-sm font-medium text-slate-500">Carregando acesso...</div>
           }
         >
           <LoginContent />

@@ -54,7 +54,7 @@ export function categoriaTópico(item: ReviewItem): TópicoCategoria {
   }
 
   return {
-    circleClass: 'bg-[rgba(0,242,255,0.10)] text-[#00f2ff] border border-[rgba(0,242,255,0.22)]',
+    circleClass: 'bg-[rgba(143,224,32,0.12)] text-[#3d6b0f] border border-[rgba(143,224,32,0.35)]',
     Icon: BookOpen,
   };
 }
@@ -64,12 +64,12 @@ export function urgenciaInfo(item: ReviewItem): TópicoUrgência {
   hoje.setHours(0, 0, 0, 0);
   const dias = Math.floor((hoje.getTime() - item.nextReview.getTime()) / (1000 * 60 * 60 * 24));
   if (dias <= 0) {
-    return { label: 'Hoje', chipClass: 'bg-sky-500/10 text-sky-200 border-sky-500/30' };
+    return { label: 'Hoje', chipClass: 'bg-sky-50 text-sky-700 border-sky-200' };
   }
   if (dias === 1) {
-    return { label: '1 dia atraso', chipClass: 'bg-amber-500/10 text-amber-200 border-amber-500/30' };
+    return { label: '1 dia atraso', chipClass: 'bg-amber-50 text-amber-800 border-amber-200' };
   }
-  return { label: `${dias} dias atraso`, chipClass: 'bg-amber-500/10 text-amber-200 border-amber-500/30' };
+  return { label: `${dias} dias atraso`, chipClass: 'bg-amber-50 text-amber-800 border-amber-200' };
 }
 
 export function prioridadeBarPct(item: ReviewItem): number {

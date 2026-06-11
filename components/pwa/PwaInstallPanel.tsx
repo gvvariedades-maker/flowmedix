@@ -26,23 +26,23 @@ export function PwaInstallPanel({
     <div
       className={
         className ??
-        'mx-auto mb-3 max-w-md rounded-2xl border border-cyan-400/20 bg-slate-950/95 p-4 shadow-2xl shadow-black/50 backdrop-blur-xl'
+        'card-elevated mx-auto mb-3 max-w-md rounded-2xl border border-slate-200 bg-white p-4 shadow-lg'
       }
     >
       <div className="flex items-start gap-3">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-600">
-          <Smartphone size={20} className="text-[#BEF264]" aria-hidden />
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.12)]">
+          <Smartphone size={20} className="text-[#3d6b0f]" aria-hidden />
         </div>
         <div className="min-w-0 flex-1">
-          <p id="pwa-install-title" className="text-sm font-black tracking-tight text-white">
+          <p id="pwa-install-title" className="text-sm font-black tracking-tight text-slate-900">
             Instale o AVANT no celular
           </p>
-          <p id="pwa-install-desc" className="mt-1 text-xs leading-relaxed text-slate-400">
+          <p id="pwa-install-desc" className="mt-1 text-xs leading-relaxed text-slate-600">
             {isIos ? (
               <>
-                Toque em <Share size={12} className="inline -mt-0.5 text-cyan-300" aria-hidden />{' '}
-                <strong className="font-semibold text-slate-300">Compartilhar</strong> e depois em{' '}
-                <strong className="font-semibold text-slate-300">Adicionar à Tela de Início</strong>.
+                Toque em <Share size={12} className="inline -mt-0.5 text-[#3d6b0f]" aria-hidden />{' '}
+                <strong className="font-semibold text-slate-800">Compartilhar</strong> e depois em{' '}
+                <strong className="font-semibold text-slate-800">Adicionar à Tela de Início</strong>.
                 Abre como app, sem barra do navegador.
               </>
             ) : canNativeInstall ? (
@@ -56,7 +56,7 @@ export function PwaInstallPanel({
               <button
                 type="button"
                 onClick={() => void onInstall()}
-                className="inline-flex items-center gap-1.5 rounded-xl bg-[#BEF264] px-4 py-2 text-xs font-black uppercase tracking-wider text-slate-950"
+                className="btn-editorial-primary inline-flex items-center gap-1.5 px-4 py-2 text-xs font-black uppercase tracking-wider"
               >
                 <Zap size={14} fill="currentColor" aria-hidden />
                 Instalar
@@ -66,7 +66,7 @@ export function PwaInstallPanel({
               <button
                 type="button"
                 onClick={onDismiss}
-                className="rounded-xl border border-white/15 px-4 py-2 text-xs font-bold text-slate-300 hover:bg-white/5"
+                className="btn-editorial-outline px-4 py-2 text-xs font-bold"
               >
                 Agora não
               </button>
@@ -76,7 +76,7 @@ export function PwaInstallPanel({
         <button
           type="button"
           onClick={onClose}
-          className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-lg text-slate-500 hover:bg-white/10 hover:text-slate-300"
+          className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-lg text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700"
           aria-label="Fechar"
         >
           <X size={16} aria-hidden />

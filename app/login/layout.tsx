@@ -8,6 +8,18 @@ export const metadata: Metadata = {
   },
 };
 
+/** Tema editorial antes do paint — autofill e tokens claros no primeiro frame */
+const editorialThemeScript = `
+  (function () {
+    document.documentElement.dataset.theme = 'editorial';
+  })();
+`;
+
 export default function LoginLayout({ children }: { children: React.ReactNode }) {
-  return children;
+  return (
+    <>
+      <script dangerouslySetInnerHTML={{ __html: editorialThemeScript }} />
+      {children}
+    </>
+  );
 }

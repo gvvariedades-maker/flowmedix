@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { AlertCircle, ArrowRight, CheckCircle2, Eye, EyeOff, Lock, Mail, MapPin, UserPlus } from 'lucide-react';
-import { AvantLogo } from '@/components/brand/AvantLogo';
+import { AlertCircle, ArrowRight, CheckCircle2, Eye, EyeOff, Lock, Mail, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense, useState } from 'react';
+import { useEditorialTheme } from '@/lib/layout/useEditorialTheme';
 import { supabase } from '@/lib/supabase/client';
 import { getPostLoginDestination } from '@/lib/getPostLoginDestination';
 import { applyAdminPostLoginOverride } from '@/lib/postLoginRedirect';
@@ -27,6 +27,7 @@ function RegisterTopBar() {
     <PublicDarkAuthHeader
       variant="register"
       loginHref={buildAuthQueryPath('/login', cidade, concurso, invite)}
+      appearance="editorial"
     />
   );
 }
@@ -47,7 +48,6 @@ function RegisterForm() {
   const [showConfirm, setShowConfirm] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  /** Quando o Supabase exige confirmação por e-mail antes de criar sessão */
   const [pendingEmailVerification, setPendingEmailVerification] = useState(false);
   const [emailJaCadastrado, setEmailJaCadastrado] = useState(false);
   const [inviteNotice, setInviteNotice] = useState<string | null>(null);
@@ -139,8 +139,6 @@ function RegisterForm() {
         return;
       }
 
-      // Confirmação por e-mail ativa no Supabase: sem sessão até o usuário clicar no link.
-      // E-mail de boas-vindas: webhook Supabase auth.users INSERT → /api/webhooks/auth
       setPendingEmailVerification(true);
       setLoading(false);
     } catch (err: unknown) {
@@ -151,106 +149,86 @@ function RegisterForm() {
 
   const loginHref = buildAuthQueryPath('/login', cidade, concurso, inviteToken);
 
-  const inputClassName =
-    'w-full rounded-xl border border-[rgba(255,255,255,0.10)] bg-white/[0.05] p-4 font-bold text-white outline-none transition-all placeholder:font-normal placeholder:text-slate-500 focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20';
-
   return (
-    <div className="relative z-10 w-full max-w-md">
-      {/* Header */}
-      <div className="mb-10 text-center">
-        <div className="mb-6 flex justify-center">
-          <AvantLogo size="lg" />
-        </div>
+    <div className="w-full max-w-md">
+      <div className="login-auth-card space-y-6">
+        <div className="space-y-4 text-center">
+          {cidade ? (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="rounded-xl border border-[#8fe020]/30 bg-[#8fe020]/10 p-4"
+            >
+              <p className="mb-1 flex items-center justify-center gap-1 text-[10px] font-bold uppercase tracking-wide text-[#3d6b0f]">
+                <MapPin size={12} /> Turma confirmada
+              </p>
+              <p className="text-lg font-bold leading-tight text-slate-900">{cidade}</p>
+            </motion.div>
+          ) : null}
 
-        {cidade ? (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-4 rounded-2xl border border-white/10 bg-indigo-500/10 p-4"
-          >
-            <p className="mb-1 flex items-center justify-center gap-1 text-[10px] font-black uppercase tracking-widest text-indigo-300">
-              <MapPin size={12} /> Turma Confirmada
+          <h1 className="text-2xl font-bold tracking-tight text-slate-900">Crie seu acesso</h1>
+
+          {inviteToken ? (
+            <p className="text-xs font-semibold text-[#3d6b0f]">
+              Convite AVANT Pro — após criar a conta, o Pro temporário será ativado automaticamente.
             </p>
-            <h2 className="text-xl font-black uppercase leading-tight text-indigo-100">{cidade}</h2>
-          </motion.div>
-        ) : null}
-
-        <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-1.5">
-          <UserPlus size={14} className="text-cyan-400" />
-          <span className="text-[10px] font-black uppercase tracking-widest text-slate-200">Nova Conta</span>
+          ) : null}
         </div>
-        <h1 className="mt-2 text-3xl font-black tracking-tight text-white">Crie seu Acesso</h1>
-        <p className="mt-1 text-sm font-medium text-slate-400">
-          Prepare-se para concursos de Técnico de Enfermagem com Estudo Reverso.
-        </p>
-        {inviteToken ? (
-          <p className="mt-3 text-xs font-bold text-cyan-300/90">
-            Convite AVANT Pro — após criar a conta, o Pro temporário será ativado automaticamente.
-          </p>
-        ) : null}
-      </div>
 
-      {/* Formulário */}
-      <form
-        onSubmit={handleRegister}
-        className="relative space-y-5 overflow-hidden rounded-2xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117] p-8 shadow-2xl shadow-black/40 backdrop-blur-xl"
-      >
         {pendingEmailVerification ? (
-          <div className="flex flex-col gap-4 py-2">
-            <div className="flex flex-col gap-2 rounded-xl border border-emerald-500/25 bg-emerald-950/35 p-4 text-emerald-100">
+          <div className="space-y-4">
+            <div className="flex flex-col gap-2 rounded-lg border border-green-200 bg-green-50 p-4 text-green-900">
               <div className="flex items-start gap-2">
-                <Mail size={20} className="mt-0.5 shrink-0 text-emerald-400" />
+                <Mail size={20} className="mt-0.5 shrink-0 text-green-600" />
                 <div className="space-y-2">
-                  <p className="text-sm font-black">Confirme seu e-mail</p>
-                  <p className="text-xs font-medium leading-relaxed">
+                  <p className="text-sm font-bold">Confirme seu e-mail</p>
+                  <p className="text-xs font-medium leading-relaxed text-green-800">
                     Se a confirmação por e-mail estiver ativa, abra o link enviado para{' '}
-                    <strong className="text-emerald-50">{email.trim()}</strong> e depois entre no login. Você também
+                    <strong className="text-green-900">{email.trim()}</strong> e depois entre no login. Você também
                     deve receber um e-mail de boas-vindas do AVANT (verifique spam e promoções).
                   </p>
                 </div>
               </div>
             </div>
-            <Link
-              href={loginHref}
-              className="flex w-full items-center justify-center rounded-xl bg-indigo-600 p-4 text-center font-black uppercase tracking-widest text-white shadow-lg shadow-indigo-500/20 transition-all hover:bg-indigo-700"
-            >
+            <Link href={loginHref} className="btn-editorial-primary group flex w-full items-center justify-center">
               Ir para o login
+              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         ) : (
-          <>
-            {/* E-mail */}
+          <form onSubmit={handleRegister} className="space-y-5">
             <div className="space-y-2">
-              <label className="pl-1 text-xs font-black uppercase tracking-widest text-slate-400">
-                E-mail de Acesso
-              </label>
+              <label className="label-editorial" htmlFor="register-email">E-mail de acesso</label>
               <input
+                id="register-email"
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="seu@email.com"
-                className={inputClassName}
+                autoComplete="email"
+                className="input-editorial"
               />
             </div>
 
-            {/* Senha */}
             <div className="space-y-2">
-              <label className="pl-1 text-xs font-black uppercase tracking-widest text-slate-400">Senha</label>
+              <label className="label-editorial" htmlFor="register-password">Senha</label>
               <div className="relative">
                 <input
+                  id="register-password"
                   type={showPassword ? 'text' : 'password'}
                   required
                   minLength={6}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="mínimo 6 caracteres"
-                  className={`${inputClassName} pr-12`}
+                  autoComplete="new-password"
+                  className="input-editorial pr-12"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword((prev) => !prev)}
-                  className="absolute inset-y-0 right-4 flex items-center text-slate-500 transition-colors hover:text-cyan-400"
+                  className="absolute inset-y-0 right-4 flex items-center text-slate-400 transition-colors hover:text-slate-700"
                   aria-label={showPassword ? 'Ocultar senha' : 'Mostrar senha'}
                 >
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
@@ -258,25 +236,24 @@ function RegisterForm() {
               </div>
             </div>
 
-            {/* Confirmar Senha */}
             <div className="space-y-2">
-              <label className="pl-1 text-xs font-black uppercase tracking-widest text-slate-400">
-                Confirmar Senha
-              </label>
+              <label className="label-editorial" htmlFor="register-confirm-password">Confirmar senha</label>
               <div className="relative">
                 <input
+                  id="register-confirm-password"
                   type={showConfirm ? 'text' : 'password'}
                   required
                   minLength={6}
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="repita a senha"
-                  className={`${inputClassName} pr-12`}
+                  autoComplete="new-password"
+                  className="input-editorial pr-12"
                 />
                 <button
                   type="button"
                   onClick={() => setShowConfirm((prev) => !prev)}
-                  className="absolute inset-y-0 right-4 flex items-center text-slate-500 transition-colors hover:text-cyan-400"
+                  className="absolute inset-y-0 right-4 flex items-center text-slate-400 transition-colors hover:text-slate-700"
                   aria-label={showConfirm ? 'Ocultar confirmação' : 'Mostrar confirmação'}
                 >
                   {showConfirm ? <EyeOff size={18} /> : <Eye size={18} />}
@@ -285,18 +262,17 @@ function RegisterForm() {
             </div>
 
             {inviteNotice ? (
-              <div className="flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-950/35 p-3 text-emerald-100">
-                <CheckCircle2 size={16} className="shrink-0 text-emerald-400" />
+              <div className="flex items-center gap-2 rounded-lg border border-green-200 bg-green-50 p-3 text-green-800">
+                <CheckCircle2 size={16} className="shrink-0 text-green-600" />
                 <p className="text-xs font-bold">{inviteNotice}</p>
               </div>
             ) : null}
 
-            {/* Mensagem de Erro */}
-            {error && (
+            {error ? (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex flex-col gap-2 rounded-xl border border-rose-500/30 bg-rose-950/40 p-3 text-rose-200"
+                className="flex flex-col gap-2 rounded-lg border border-red-200 bg-red-50 p-3 text-red-800"
               >
                 <div className="flex items-center gap-2">
                   <AlertCircle size={16} className="shrink-0" />
@@ -306,64 +282,60 @@ function RegisterForm() {
                   <div className="flex flex-wrap gap-2 pl-6">
                     <Link
                       href={loginHref}
-                      className="text-xs font-black text-cyan-300 underline-offset-2 hover:underline"
+                      className="text-xs font-semibold text-[#3d6b0f] underline-offset-2 hover:underline"
                     >
                       Entrar agora
                     </Link>
-                    <span className="text-xs text-rose-300/60">·</span>
-                    <Link
-                      href="/esqueci-senha"
-                      className="text-xs font-black text-cyan-300 underline-offset-2 hover:underline"
-                    >
+                    <span className="text-xs text-red-400">·</span>
+                    <Link href="/esqueci-senha" className="link-editorial-secondary text-xs">
                       Esqueci minha senha
                     </Link>
                   </div>
                 ) : null}
               </motion.div>
-            )}
+            ) : null}
 
-            {/* Botão */}
             <button
               type="submit"
-              disabled={loading || pendingEmailVerification}
-              className="group flex w-full items-center justify-center gap-3 rounded-xl bg-indigo-600 p-4 font-black uppercase tracking-widest text-white shadow-lg shadow-indigo-500/20 transition-all hover:scale-[1.02] hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-70"
+              disabled={loading}
+              className="btn-editorial-primary group w-full"
             >
               {loading ? (
                 <span className="animate-pulse">Criando conta...</span>
               ) : (
                 <>
-                  Criar Minha Conta{' '}
+                  Criar minha conta
                   <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
                 </>
               )}
             </button>
 
-            {/* Link login */}
-            <p className="pt-1 text-center text-sm font-medium text-slate-400">
+            <p className="pt-1 text-center text-sm text-slate-600">
               Já tem acesso?{' '}
-              <Link href={loginHref} className="font-black text-cyan-400 transition-colors hover:text-cyan-300">
+              <Link
+                href={loginHref}
+                className="font-semibold text-slate-700 underline-offset-2 transition-colors hover:text-slate-900 hover:underline"
+              >
                 Entrar agora
               </Link>
             </p>
 
-            {/* Rodapé Seguro */}
-            <div className="mt-2 flex items-center justify-center gap-2 border-t border-white/10 pt-4 text-slate-500">
-              <Lock size={12} />
-              <span className="text-[10px] font-bold uppercase tracking-widest">Ambiente Seguro</span>
+            <div className="flex items-center justify-center gap-2 border-t border-slate-200 pt-4 text-slate-500">
+              <Lock size={12} aria-hidden />
+              <span className="text-[10px] font-semibold uppercase tracking-wide">Ambiente seguro</span>
             </div>
-          </>
+          </form>
         )}
-      </form>
+      </div>
 
-      {/* Prova Social */}
-      <div className="mt-8 flex justify-center gap-6 text-slate-500 transition-colors duration-500 hover:text-slate-400">
+      <div className="mt-6 flex justify-center gap-6 text-slate-400">
         <div className="flex items-center gap-2">
-          <CheckCircle2 size={16} className="text-slate-500" />{' '}
-          <span className="text-xs font-bold">Metodologia Validada</span>
+          <CheckCircle2 size={14} aria-hidden />
+          <span className="text-[11px] font-medium">Metodologia validada</span>
         </div>
         <div className="flex items-center gap-2">
-          <CheckCircle2 size={16} className="text-slate-500" />{' '}
-          <span className="text-xs font-bold">Foco no Edital</span>
+          <CheckCircle2 size={14} aria-hidden />
+          <span className="text-[11px] font-medium">Foco no edital</span>
         </div>
       </div>
     </div>
@@ -371,13 +343,15 @@ function RegisterForm() {
 }
 
 export default function RegisterPage() {
+  useEditorialTheme();
+
   return (
-    <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-[#010409] text-slate-100">
-      <AuthAtmosphericBackdrop />
+    <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-[var(--color-surface-0)] text-slate-900">
+      <AuthAtmosphericBackdrop variant="editorial" />
 
       <Suspense
         fallback={
-          <div className="min-h-[6.75rem] shrink-0 border-b border-white/5 bg-slate-950/55 backdrop-blur-xl sm:min-h-[73px]" />
+          <div className="min-h-[6.75rem] shrink-0 border-b border-slate-200 bg-white/90 backdrop-blur-xl sm:min-h-[73px]" />
         }
       >
         <RegisterTopBar />
@@ -386,9 +360,7 @@ export default function RegisterPage() {
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center p-6">
         <Suspense
           fallback={
-            <div className="flex min-h-[40vh] items-center justify-center">
-              <p className="animate-pulse text-sm font-medium text-slate-400">Carregando cadastro...</p>
-            </div>
+            <div className="animate-pulse text-sm font-medium text-slate-500">Carregando cadastro...</div>
           }
         >
           <RegisterForm />

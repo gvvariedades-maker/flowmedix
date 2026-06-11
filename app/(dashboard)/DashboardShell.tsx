@@ -56,6 +56,7 @@ import { DASHBOARD_MAIN_SCROLL_ATTR } from '@/lib/layout/dashboardMainScroll';
 import { useDashboardDesktop } from '@/lib/layout/useDashboardDesktop';
 import { WhatsAppIcon } from '@/components/support/WhatsAppIcon';
 import { openWhatsAppChat } from '@/lib/whatsapp';
+import { useEditorialTheme } from '@/lib/layout/useEditorialTheme';
 
 const pageVariantsDesktop = {
   initial: { opacity: 0 },
@@ -182,8 +183,8 @@ function DashboardNav({
             className={cn(
               'group relative flex w-full items-center gap-3 rounded-xl py-2 pl-3 pr-3 text-sm transition-colors',
               item.active
-                ? cn(accent.rowActive, 'font-medium text-white')
-                : 'text-slate-300 hover:bg-white/[0.04] hover:text-white',
+                ? cn(accent.rowActive, 'font-semibold text-slate-900')
+                : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900',
             )}
           >
             {item.active ? (
@@ -206,9 +207,9 @@ function DashboardNav({
           onNavAction?.();
           openWhatsAppChat();
         }}
-        className="group flex w-full items-center gap-3 rounded-xl py-2 pl-3 pr-3 text-sm text-slate-300 transition-colors hover:bg-[#25D366]/[0.06] hover:text-[#25D366]"
+        className="group flex w-full items-center gap-3 rounded-xl py-2 pl-3 pr-3 text-sm text-slate-600 transition-colors hover:bg-[#25D366]/[0.08] hover:text-[#128C7E]"
       >
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/[0.04] bg-[#25D366]/10 transition-all duration-200 group-hover:border-[#25D366]/20 group-hover:shadow-[0_0_12px_rgba(37,211,102,0.2)]">
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-[#25D366]/10 transition-all duration-200 group-hover:border-[#25D366]/30">
           <WhatsAppIcon size={18} className="text-[#25D366]/80 transition-colors group-hover:text-[#25D366]" />
         </span>
         Tirar dúvidas (WhatsApp)
@@ -218,7 +219,7 @@ function DashboardNav({
         <div className="mt-4 pl-1 pt-1">
           <Link
             href="/admin"
-            className="flex items-center gap-3 rounded-xl py-2.5 pl-3 pr-2 text-xs font-semibold text-slate-500 transition-colors hover:bg-white/5 hover:text-slate-300"
+            className="flex items-center gap-3 rounded-xl py-2.5 pl-3 pr-2 text-xs font-semibold text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-800"
           >
             <ShieldCheck size={18} strokeWidth={MENU_ICON_STROKE} className="shrink-0 text-slate-600" aria-hidden />
             Painel do Gestor
@@ -255,7 +256,7 @@ function UserAccountFooter({
 
   return (
     <div className="px-1 pb-safe pt-2">
-      <div className="rounded-xl border border-white/5 bg-white/[0.03] p-3">
+      <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
       <div className="flex items-start gap-2.5">
         <div
           className={cn(
@@ -267,9 +268,9 @@ function UserAccountFooter({
           {userInitials}
         </div>
         <div className="min-w-0 flex-1 pt-0.5">
-          <p className="truncate text-sm font-bold leading-tight text-slate-100">{name}</p>
+          <p className="truncate text-sm font-bold leading-tight text-slate-900">{name}</p>
           <p
-            className="mt-0.5 truncate text-xs font-normal text-slate-400"
+            className="mt-0.5 truncate text-xs font-normal text-slate-500"
             title={userEmail ?? undefined}
           >
             {userEmail ?? <span className="animate-pulse text-slate-500">carregando…</span>}
@@ -280,7 +281,7 @@ function UserAccountFooter({
           onClick={onLogout}
           title="Sair da conta"
           aria-label="Sair da conta"
-          className="mt-0.5 flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-white/10 hover:text-slate-300"
+          className="mt-0.5 flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-slate-200 hover:text-slate-800"
         >
           <LogOut size={17} strokeWidth={MENU_ICON_STROKE} aria-hidden />
         </button>
@@ -292,8 +293,8 @@ function UserAccountFooter({
           className={cn(
             'mt-3 flex w-full items-center gap-2.5 rounded-xl py-2.5 pl-3 pr-3 text-sm font-semibold transition-colors',
             isAssinaturaActive
-              ? 'bg-white/8 text-slate-100'
-              : 'text-slate-400 hover:bg-white/5 hover:text-slate-200',
+              ? 'bg-[#8fe020]/12 text-[#3d6b0f]'
+              : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900',
           )}
         >
           <CreditCard
@@ -301,7 +302,7 @@ function UserAccountFooter({
             strokeWidth={MENU_ICON_STROKE}
             className={cn(
               'shrink-0',
-              isAssinaturaActive ? 'text-slate-300' : 'text-slate-500',
+              isAssinaturaActive ? 'text-[#3d6b0f]' : 'text-slate-500',
             )}
             aria-hidden
           />
@@ -356,7 +357,7 @@ function DashboardSidebarPanels({
       </div>
 
       <div className="flex min-h-0 flex-1 flex-col overflow-hidden pt-2">
-        <p className="shrink-0 px-4 pb-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500">
+        <p className="shrink-0 px-4 pb-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400">
           Menu
         </p>
         <DashboardNav
@@ -367,7 +368,7 @@ function DashboardSidebarPanels({
         />
       </div>
 
-      <div className="shrink-0 border-t border-white/[0.06] pt-2">
+      <div className="shrink-0 border-t border-slate-200 pt-2">
         <UserAccountFooter
           userEmail={userEmail}
           userDisplayName={userDisplayName}
@@ -406,6 +407,8 @@ function DashboardContent({
   proSource: ProSource;
   proExpiresAt: string | null;
 }) {
+  useEditorialTheme();
+
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -628,7 +631,7 @@ function DashboardContent({
       icon: LayoutDashboard,
       href: '/estudar',
       active: isPathActive('/estudar'),
-      accent: 'cyan',
+      accent: 'brand',
     },
     {
       label: 'Como usar (tutorial)',
@@ -689,7 +692,7 @@ function DashboardContent({
     <PwaInstallProvider enabled={userEmail != null} blocked={estudoReversoWelcome.isOpen}>
     <div className="dashboard-surface flex h-[100svh] max-h-[100svh] min-h-0 bg-background font-sans text-foreground md:h-[100dvh] md:max-h-[100dvh]">
       {/* --- SIDEBAR FIXA --- */}
-      <aside className="relative z-20 hidden h-full w-[18rem] shrink-0 flex-col border-r border-white/10 bg-[#06090f] md:flex">
+      <aside className="relative z-20 hidden h-full w-[18rem] shrink-0 flex-col border-r border-slate-200 bg-white md:flex">
         <DashboardSidebarPanels
           cidadeExibicao={cidadeExibicao}
           isPro={isPro}
@@ -740,16 +743,16 @@ function DashboardContent({
           aria-hidden={hideMainFromAssistiveTech ? true : undefined}
         >
         {!estudarQuestaoImmersive ? (
-          <div className="sticky top-0 z-30 shrink-0 border-b border-white/[0.08] bg-[#06090f]/90 backdrop-blur-xl md:hidden">
+          <div className="sticky top-0 z-30 shrink-0 border-b border-slate-200 bg-white/95 backdrop-blur-xl md:hidden">
             <header className="flex items-center justify-between px-4 py-3 pt-safe">
-              <AvantBrandMark size="sm" />
+              <AvantBrandMark size="sm" variant="editorial" />
 
               <div className="flex items-center gap-2">
                 <button
                   type="button"
                   onClick={() => window.dispatchEvent(new CustomEvent('avant:open-search'))}
                   aria-label="Abrir busca"
-                  className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-slate-400 transition-colors hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
+                  className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 transition-colors hover:border-slate-300 hover:bg-slate-50 hover:text-slate-900"
                 >
                   <Search size={15} aria-hidden />
                 </button>

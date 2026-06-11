@@ -13,7 +13,7 @@ export function SimuladosBackLink({ className, label = 'Simulados' }: SimuladosB
     <Link
       href="/simulados"
       className={cn(
-        'inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-slate-400 transition-colors hover:text-slate-200',
+        'inline-flex min-h-11 items-center gap-1.5 text-sm font-semibold text-slate-500 transition-colors hover:text-slate-800',
         className,
       )}
     >

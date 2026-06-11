@@ -8,47 +8,39 @@ import type { ThemeColors } from './themeGenerator';
 
 type ChipConfig = {
   badge: string;
-  glow: string;
   iconClass: string;
 };
 
 const CHIP_CONFIG: Record<SlideType, ChipConfig> = {
   concept_map: {
-    badge: 'bg-cyan-400/15 text-cyan-300 ring-cyan-400/25',
-    glow: 'shadow-[0_0_12px_rgba(34,211,238,0.25)]',
-    iconClass: 'text-cyan-300',
+    badge: 'bg-cyan-500/10 text-cyan-300/90 ring-cyan-500/20',
+    iconClass: 'text-cyan-400/90',
   },
   golden_rule: {
-    badge: 'bg-amber-400/15 text-amber-300 ring-amber-400/25',
-    glow: 'shadow-[0_0_12px_rgba(251,191,36,0.25)]',
-    iconClass: 'text-amber-300',
+    badge: 'bg-amber-500/10 text-amber-300/90 ring-amber-500/20',
+    iconClass: 'text-amber-400/90',
   },
   logic_flow: {
-    badge: 'bg-violet-400/15 text-violet-300 ring-violet-400/25',
-    glow: 'shadow-[0_0_12px_rgba(167,139,250,0.25)]',
-    iconClass: 'text-violet-300',
+    badge: 'bg-violet-500/10 text-violet-300/90 ring-violet-500/20',
+    iconClass: 'text-violet-400/90',
   },
   danger_zone: {
-    badge: 'bg-red-400/15 text-red-300 ring-red-400/25',
-    glow: 'shadow-[0_0_12px_rgba(248,113,113,0.25)]',
-    iconClass: 'text-red-300',
+    badge: 'bg-red-500/10 text-red-300/90 ring-red-500/20',
+    iconClass: 'text-red-400/90',
   },
   syllable_scanner: {
-    badge: 'bg-emerald-400/15 text-emerald-300 ring-emerald-400/25',
-    glow: 'shadow-[0_0_12px_rgba(52,211,153,0.25)]',
-    iconClass: 'text-emerald-300',
+    badge: 'bg-emerald-500/10 text-emerald-300/90 ring-emerald-500/20',
+    iconClass: 'text-emerald-400/90',
   },
   versus_arena: {
-    badge: 'bg-fuchsia-400/15 text-fuchsia-300 ring-fuchsia-400/25',
-    glow: 'shadow-[0_0_12px_rgba(232,121,249,0.25)]',
-    iconClass: 'text-fuchsia-300',
+    badge: 'bg-fuchsia-500/10 text-fuchsia-300/90 ring-fuchsia-500/20',
+    iconClass: 'text-fuchsia-400/90',
   },
 };
 
 const CHIP_CONFIG_FALLBACK: ChipConfig = {
-  badge: 'bg-white/10 text-white/80 ring-white/15',
-  glow: '',
-  iconClass: 'text-white/80',
+  badge: 'bg-white/8 text-white/75 ring-white/12',
+  iconClass: 'text-white/75',
 };
 
 function getChipConfig(slideType: string | undefined): ChipConfig {
@@ -61,19 +53,19 @@ function getChipConfig(slideType: string | undefined): ChipConfig {
 function getHeaderBorderClass(slideType: string | undefined): string {
   switch (slideType) {
     case 'concept_map':
-      return 'border-cyan-500/10';
+      return 'border-cyan-500/15';
     case 'golden_rule':
-      return 'border-amber-500/10';
+      return 'border-amber-500/15';
     case 'logic_flow':
-      return 'border-violet-500/10';
+      return 'border-violet-500/15';
     case 'danger_zone':
-      return 'border-red-500/10';
+      return 'border-red-500/15';
     case 'syllable_scanner':
-      return 'border-emerald-500/10';
+      return 'border-emerald-500/15';
     case 'versus_arena':
-      return 'border-fuchsia-500/10';
+      return 'border-fuchsia-500/15';
     default:
-      return 'border-white/5';
+      return 'border-white/8';
   }
 }
 
@@ -121,20 +113,17 @@ function SlideTypeIcon({
 function resolveChipPresentation(
   slideType: string | undefined,
   theme?: Pick<ThemeColors, 'iconBg' | 'iconText' | 'borderColor' | 'glow'>,
-): { badge: string; glow: string; iconClass: string; border: string; glowStyle?: string } {
+): { badge: string; iconClass: string; border: string } {
   const fallback = getChipConfig(slideType);
   if (!theme || slideType === 'danger_zone') {
     return {
       badge: fallback.badge,
-      glow: fallback.glow,
       iconClass: fallback.iconClass,
       border: getHeaderBorderClass(slideType),
     };
   }
   return {
-    badge: `${theme.iconBg} ${theme.iconText} ring-1 ring-white/10`,
-    glow: '',
-    glowStyle: `0 0 14px ${theme.glow}`,
+    badge: `${theme.iconBg} ${theme.iconText} ring-1 ring-white/8`,
     iconClass: theme.iconText,
     border: `border-b ${theme.borderColor}`,
   };
@@ -170,9 +159,7 @@ export function ReverseStudyShell({
             className={[
               'inline-flex min-w-0 max-w-full items-center gap-1.5 rounded-full px-2.5 py-1 font-mono text-[11px] font-black uppercase tracking-widest ring-1',
               chipConf.badge,
-              chipConf.glow,
             ].join(' ')}
-            style={chipConf.glowStyle ? { boxShadow: chipConf.glowStyle } : undefined}
             aria-label={`Tipo de slide: ${chipText}`}
           >
             <SlideTypeIcon slideType={slideType} className={iconClassName} />
@@ -180,7 +167,7 @@ export function ReverseStudyShell({
           </span>
           {banca?.trim() ? (
             <span
-              className="inline-flex max-w-[min(100%,14rem)] shrink-0 items-center truncate rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-mono font-bold uppercase tracking-widest text-white/50 transition-colors hover:border-white/20 hover:text-white/70"
+              className="inline-flex max-w-[min(100%,14rem)] shrink-0 items-center truncate rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] font-mono font-bold uppercase tracking-widest text-white/45"
               title={banca.trim()}
             >
               {banca.trim()}
@@ -189,14 +176,14 @@ export function ReverseStudyShell({
         </div>
 
         {slideTitle?.trim() ? (
-          <h2 className="font-display text-sm font-extrabold uppercase leading-tight tracking-tight text-white sm:text-base md:text-lg">
+          <h2 className="font-display text-sm font-extrabold uppercase leading-tight tracking-tight text-white/95 sm:text-base md:text-lg">
             {slideTitle.trim()}
           </h2>
         ) : null}
 
-        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/45 sm:text-[11px]">
-          <span className="font-mono tabular-nums text-white/55">{positionLabel}</span>
-          <span className="mx-2 text-white/25" aria-hidden>
+        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/40 sm:text-[11px]">
+          <span className="font-mono tabular-nums text-white/50">{positionLabel}</span>
+          <span className="mx-2 text-white/20" aria-hidden>
             —
           </span>
           <span className="font-body">{arcLabel}</span>

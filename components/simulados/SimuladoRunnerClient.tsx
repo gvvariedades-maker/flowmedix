@@ -28,8 +28,8 @@ const SimuladoResumoClient = dynamic(
     })),
   {
     loading: () => (
-      <div className={cn('bg-[#010409]', DASHBOARD_PAGE_CENTER)}>
-        <Loader2 className="h-10 w-10 animate-spin text-cyan-400" aria-label="Carregando resumo" />
+      <div className={cn('bg-background', DASHBOARD_PAGE_CENTER)}>
+        <Loader2 className="h-10 w-10 animate-spin text-[#3d6b0f]" aria-label="Carregando resumo" />
       </div>
     ),
   },
@@ -485,18 +485,18 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     return (
       <div
         className={cn(
-          cn('bg-[#010409]', DASHBOARD_PAGE_CENTER),
+          cn('bg-background', DASHBOARD_PAGE_CENTER),
           pageBottomPadding,
         )}
       >
-        <Loader2 className="h-10 w-10 animate-spin text-cyan-400" aria-label="Carregando simulado" />
+        <Loader2 className="h-10 w-10 animate-spin text-[#3d6b0f]" aria-label="Carregando simulado" />
       </div>
     );
   }
 
   if (sessionError || !sessionData) {
     return (
-      <div className={cn(DASHBOARD_PAGE_ROOT, 'bg-[#010409] px-4 pt-6', pageBottomPadding)}>
+      <div className={cn(DASHBOARD_PAGE_ROOT, 'bg-background px-4 pt-6', pageBottomPadding)}>
         <div className="mx-auto max-w-lg">
           <EmptyState
             icon={ClipboardList}
@@ -528,7 +528,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
     return (
       <DashboardMobilePage
         variant="default"
-        className={cn(DASHBOARD_PAGE_ROOT, 'bg-[#010409] px-4 pt-6 sm:px-6 md:pb-8 lg:px-8')}
+        className={cn(DASHBOARD_PAGE_ROOT, 'bg-background px-4 pt-6 sm:px-6 md:pb-8 lg:px-8')}
       >
         <SimuladoProvaInstrucoes
           titulo={sessionData.session.titulo}
@@ -571,7 +571,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
       variant="outline"
       disabled={finalizing || submitting}
       onClick={() => void handleFinalizeSimulado()}
-      className="min-h-[44px] shrink-0 rounded-xl border-white/15 bg-white/[0.03] text-xs font-bold text-slate-200 hover:bg-white/[0.06] sm:text-sm"
+      className="btn-editorial-outline min-h-[44px] shrink-0 text-xs font-bold sm:text-sm"
     >
       {finalizing ? (
         <>
@@ -597,7 +597,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         opcao_correta_id: feedback?.opcao_correta_id ?? null,
       }}
       triggerLabel="Reportar erro"
-      triggerClassName="min-h-[44px] shrink-0 rounded-xl border-white/15 bg-white/[0.03] text-xs font-bold text-slate-200 hover:bg-white/[0.06] sm:text-sm"
+      triggerClassName="btn-editorial-outline min-h-[44px] shrink-0 text-xs font-bold sm:text-sm"
     />
   );
 
@@ -616,7 +616,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   return (
     <DashboardMobilePage
       variant="default"
-      className={cn(DASHBOARD_PAGE_ROOT, 'bg-[#010409] px-4 pt-6 sm:px-6 md:pb-8 lg:px-8')}
+      className={cn(DASHBOARD_PAGE_ROOT, 'bg-background px-4 pt-6 sm:px-6 md:pb-8 lg:px-8')}
     >
       {sessionData.session.modo === 'prova' && sessionData.session.prova_iniciada_em ? (
         <ProvaTimerBar
@@ -630,8 +630,8 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           title={runnerTitle}
           breadcrumb={runnerBreadcrumb}
           description={runnerDescription}
-          descriptionClassName="text-sm text-slate-400 mt-1"
-          titleClassName="text-xl font-[1000] italic tracking-tighter text-white sm:text-2xl"
+          descriptionClassName="mt-1 text-sm text-slate-500"
+          titleClassName="text-editorial-title text-xl sm:text-2xl"
           action={runnerToolbar}
         />
 
@@ -642,7 +642,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         )}
 
         <div
-          className="h-1.5 overflow-hidden rounded-full bg-white/10"
+          className="h-1.5 overflow-hidden rounded-full bg-slate-200"
           role="progressbar"
           aria-valuenow={progressPct}
           aria-valuemin={0}
@@ -650,12 +650,12 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           aria-label="Progresso do simulado"
         >
           <div
-            className="h-full rounded-full bg-cyan-400 transition-all duration-300"
+            className="h-full rounded-full bg-[#8fe020] transition-all duration-300"
             style={{ width: `${progressPct}%` }}
           />
         </div>
 
-        <div className="rounded-xl border border-white/10 bg-white/[0.02] p-3">
+        <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
           <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
             Mapa de questões
           </p>
@@ -683,11 +683,11 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           />
         ) : loadingQuestion && !questionData ? (
           <div className="flex justify-center py-16">
-            <Loader2 className="h-8 w-8 animate-spin text-cyan-400" aria-label="Carregando questão" />
+            <Loader2 className="h-8 w-8 animate-spin text-[#3d6b0f]" aria-label="Carregando questão" />
           </div>
         ) : questionError ? (
-          <div className="glass-panel border border-rose-500/30 p-6 text-center">
-            <p className="text-sm text-rose-300" role="alert">
+          <div className="card-elevated-lg border border-rose-200 p-6 text-center">
+            <p className="text-sm text-rose-600" role="alert">
               {questionError}
             </p>
             <Button
@@ -699,23 +699,23 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
             </Button>
           </div>
         ) : (
-          <div className="glass-panel space-y-6 border border-white/10 p-6 sm:p-8">
+          <div className="card-elevated-lg space-y-6 p-6 sm:p-8">
             {examHeaderLine && (
-              <div className="space-y-2 border-b border-white/10 pb-4">
-                <p className="text-xs font-medium uppercase tracking-wider text-cyan-400/80">
+              <div className="space-y-2 border-b border-slate-200 pb-4">
+                <p className="text-xs font-medium uppercase tracking-wider text-[#3d6b0f]">
                   {examHeaderLine}
                 </p>
-                {subjectLine && <p className="text-sm font-semibold text-slate-100">{subjectLine}</p>}
+                {subjectLine && <p className="text-sm font-semibold text-slate-900">{subjectLine}</p>}
               </div>
             )}
 
             {textFragment && (
-              <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-sm italic text-slate-300">
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm italic text-slate-700">
                 <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(textFragment) }} />
               </div>
             )}
 
-            <div className="text-sm leading-relaxed text-slate-200 [&_p]:mb-2 [&_p:last-child]:mb-0">
+            <div className="text-sm leading-relaxed text-slate-800 [&_p]:mb-2 [&_p:last-child]:mb-0">
               <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(instruction) }} />
             </div>
 
@@ -744,16 +744,16 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                         setLiveMessage(`Alternativa ${opt.id} selecionada.`);
                       }}
                       className={cn(
-                        'btn-option w-full rounded-2xl border px-4 py-3 text-left text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#010409]',
-                        isSelected && !feedback && 'border-cyan-500/50 bg-cyan-500/10',
-                        showCorrect && 'border-emerald-500/50 bg-emerald-500/10',
-                        showWrong && 'border-rose-500/50 bg-rose-500/10',
-                        !isSelected && !showCorrect && !showWrong && 'border-white/10 bg-white/[0.03]',
+                        'btn-option-editorial w-full rounded-2xl border px-4 py-3 text-left text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8fe020]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+                        isSelected && !feedback && 'border-[rgba(143,224,32,0.45)] bg-[rgba(143,224,32,0.08)]',
+                        showCorrect && 'card-success-editorial border-emerald-300',
+                        showWrong && 'card-error-editorial border-rose-300',
+                        !isSelected && !showCorrect && !showWrong && 'border-slate-200 bg-white',
                       )}
                       role="radio"
                       aria-checked={isSelected}
                     >
-                      <span className="mr-2 font-mono text-cyan-400/90">{opt.id})</span>
+                      <span className="mr-2 font-mono text-[#3d6b0f]/90">{opt.id})</span>
                       {opt.text}
                     </button>
                   );
@@ -767,12 +767,12 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                 <p
                   className={cn(
                     'text-sm font-medium',
-                    feedback.acertou ? 'text-emerald-400' : 'text-rose-400',
+                    feedback.acertou ? 'text-emerald-600' : 'text-rose-600',
                   )}
                 >
                   {feedback.acertou ? 'Resposta correta!' : 'Resposta incorreta.'}
                   {!feedback.acertou && (
-                    <span className="font-normal text-slate-400">
+                    <span className="font-normal text-slate-600">
                       {' '}
                       Gabarito: {feedback.opcao_correta_id}
                       {feedback.opcao_correta_texto ? ` — ${feedback.opcao_correta_texto}` : ''}
@@ -781,7 +781,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                 </p>
               )}
               {!isTreino && !feedback && activeItem?.respondida && (
-                <p className="text-sm font-medium text-slate-300">
+                <p className="text-sm font-medium text-slate-700">
                   Resposta registrada. Gabarito disponível no resumo final.
                 </p>
               )}
@@ -801,7 +801,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                   type="button"
                   disabled={!canConfirm}
                   onClick={() => void handleConfirmAnswer()}
-                  className="h-12 rounded-full border border-cyan-500/40 bg-cyan-500/15 px-8 text-sm font-bold uppercase tracking-wider text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50"
+                  className="btn-editorial-primary h-12 rounded-full px-8 text-sm font-bold uppercase tracking-wider disabled:opacity-50"
                 >
                   {submitting ? (
                     <>
@@ -833,7 +833,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                     }
                     void handleNext();
                   }}
-                  className="h-12 rounded-full border border-cyan-500/40 bg-cyan-500/15 px-8 text-sm font-bold uppercase tracking-wider text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50"
+                  className="btn-editorial-primary h-12 rounded-full px-8 text-sm font-bold uppercase tracking-wider disabled:opacity-50"
                 >
                   {advancing ? (
                     <>
@@ -853,13 +853,13 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         )}
 
         {simuladoBlockedForNewAnswer && (
-          <div className="rounded-xl border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-center text-sm text-amber-200">
+          <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-center text-sm text-amber-900">
             Plano gratuito: você já respondeu {FREEMIUM_SIMULADO_DAILY_LIMIT} questões de simulado
             hoje.{' '}
             <button
               type="button"
               onClick={() => setPaywallOpen(true)}
-              className="font-semibold text-cyan-300 underline-offset-2 hover:underline"
+              className="link-editorial-secondary font-semibold underline-offset-2 hover:underline"
             >
               Assine o Pro
             </button>{' '}
@@ -868,7 +868,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         )}
 
         <p className="mb-6 text-center text-xs text-slate-600 md:mb-0">
-          <Link href="/simulados" className="transition-colors hover:text-slate-400">
+          <Link href="/simulados" className="link-editorial-secondary transition-colors">
             Voltar para Simulados
           </Link>
         </p>

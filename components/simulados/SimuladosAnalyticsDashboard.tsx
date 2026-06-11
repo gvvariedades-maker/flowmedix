@@ -92,25 +92,25 @@ function getTrendLabel(values: Array<number | null>): {
   return { label: 'Estável', detail: 'Seu desempenho está consistente nas últimas sessões.' };
 }
 
-type KpiValueTone = 'cyan' | 'emerald' | 'muted' | 'white';
+type KpiValueTone = 'brand' | 'emerald' | 'muted' | 'default';
 
 const KPI_VALUE_TONE_CLASSES: Record<KpiValueTone, string> = {
-  cyan: 'text-[#00f2ff]',
-  emerald: 'text-[#00ff88]',
-  muted: 'text-white/30',
-  white: 'text-white',
+  brand: 'text-[#3d6b0f]',
+  emerald: 'text-emerald-600',
+  muted: 'text-slate-400',
+  default: 'text-slate-900',
 };
 
 function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <p className="mb-2 text-[11px] uppercase tracking-widest text-white/30">{children}</p>
+    <p className="mb-2 text-[11px] uppercase tracking-widest text-slate-500">{children}</p>
   );
 }
 
 function ResumoMetric({
   label,
   value,
-  valueClassName = 'text-white',
+  valueClassName = 'text-slate-900',
 }: {
   label: string;
   value: string | number;
@@ -118,7 +118,7 @@ function ResumoMetric({
 }) {
   return (
     <div>
-      <p className="text-[10px] uppercase tracking-widest text-white/40">{label}</p>
+      <p className="text-[10px] uppercase tracking-widest text-slate-500">{label}</p>
       <p className={cn('mt-1 text-lg font-semibold', valueClassName)}>{value}</p>
     </div>
   );
@@ -138,11 +138,11 @@ function KpiMetricCard({
   return (
     <div
       className={cn(
-        'rounded-xl border border-white/[0.08] bg-white/[0.04] p-4',
-        highlight && 'border-[#00f2ff]/25 bg-[#00f2ff]/[0.06]',
+        'card-elevated p-4',
+        highlight && 'border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.06)]',
       )}
     >
-      <p className="text-[10px] uppercase tracking-widest text-white/40">{label}</p>
+      <p className="text-[10px] uppercase tracking-widest text-slate-500">{label}</p>
       <p
         className={cn(
           'mt-1 text-[26px] font-bold tracking-tight',
@@ -156,9 +156,9 @@ function KpiMetricCard({
 }
 
 const FILTER_PILL_ACTIVE =
-  'border-[#00f2ff] bg-[#00f2ff]/15 text-[#00f2ff]';
+  'border-[rgba(143,224,32,0.45)] bg-[rgba(143,224,32,0.12)] text-[#3d6b0f]';
 const FILTER_PILL_INACTIVE =
-  'border-white/10 bg-white/[0.05] text-white/40 hover:bg-white/[0.08]';
+  'border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:bg-slate-50';
 
 export function SimuladosAnalyticsDashboard({
   periodoAtual,
@@ -320,7 +320,7 @@ export function SimuladosAnalyticsDashboard({
   }, [deltaPontosPercentuais]);
 
   const tempoMedioValor = loadingAnalytics ? '...' : formatDuration(kpis?.tempo_medio_ms);
-  const tempoMedioTone: KpiValueTone = tempoMedioValor === '--' ? 'muted' : 'white';
+  const tempoMedioTone: KpiValueTone = tempoMedioValor === '--' ? 'muted' : 'default';
 
   const resumoSectionTitle =
     periodoAtual === '1d' ? 'Seu desempenho hoje' : 'Seu desempenho no período';
@@ -331,13 +331,13 @@ export function SimuladosAnalyticsDashboard({
 
   return (
     <div className="mx-auto grid max-w-4xl gap-4 px-4 py-6 md:px-8 md:pt-8">
-      <div className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-4">
-        <p className="text-[11px] text-white/35">
+      <div className="card-elevated p-4">
+        <p className="text-[11px] text-slate-600">
           Escolha período e modo para uma leitura rápida do seu desempenho.
         </p>
         <div className="mt-4 space-y-4">
           <div>
-            <p className="mb-1 text-[10px] uppercase tracking-widest text-white/30">Período</p>
+            <p className="mb-1 text-[10px] uppercase tracking-widest text-slate-500">Período</p>
             <div className="flex flex-wrap gap-2">
               {PERIODOS.map((periodo) => (
                 <Link
@@ -355,7 +355,7 @@ export function SimuladosAnalyticsDashboard({
           </div>
 
           <div>
-            <p className="mb-1 text-[10px] uppercase tracking-widest text-white/30">Modo</p>
+            <p className="mb-1 text-[10px] uppercase tracking-widest text-slate-500">Modo</p>
             <div className="flex flex-wrap gap-2">
               {MODOS.map((modo) => (
                 <Link
@@ -376,12 +376,12 @@ export function SimuladosAnalyticsDashboard({
 
       <section>
         <SectionLabel>{resumoSectionTitle}</SectionLabel>
-        <p className="mb-3 text-[11px] text-white/35">{resumoSectionHint}</p>
+        <p className="mb-3 text-[11px] text-slate-600">{resumoSectionHint}</p>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           <KpiMetricCard
             label="Simulados concluídos"
             value={loadingAnalytics ? '...' : String(kpis?.total_simulados ?? 0)}
-            valueTone="cyan"
+            valueTone="brand"
           />
           <KpiMetricCard
             label="Média de acerto"
@@ -396,7 +396,7 @@ export function SimuladosAnalyticsDashboard({
                 ? '...'
                 : String(evolucao.reduce((sum, item) => sum + item.total_questoes, 0))
             }
-            valueTone="white"
+            valueTone="default"
           />
           <KpiMetricCard
             label="Tempo médio por questão"
@@ -408,17 +408,17 @@ export function SimuladosAnalyticsDashboard({
 
       <section>
         <SectionLabel>Resumo comparativo</SectionLabel>
-        <p className="mb-3 text-[11px] text-white/35">
+        <p className="mb-3 text-[11px] text-slate-600">
           Mesmo formato do resultado final do simulado: período atual e geral.
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
-          <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-4">
-            <p className="text-sm font-semibold text-white/80">No período</p>
+          <div className="card-elevated p-4">
+            <p className="text-sm font-semibold text-slate-800">No período</p>
             <div className="mt-3 grid grid-cols-2 gap-3">
               <ResumoMetric
                 label="% de acerto"
                 value={loadingAnalytics ? '...' : formatPercent(resumoPeriodo.percentual)}
-                valueClassName="text-[#00f2ff]"
+                valueClassName="text-[#3d6b0f]"
               />
               <ResumoMetric
                 label="Acertos"
@@ -427,7 +427,7 @@ export function SimuladosAnalyticsDashboard({
               <ResumoMetric
                 label="Erros"
                 value={loadingAnalytics ? '...' : resumoPeriodo.erros}
-                valueClassName="text-[#ff0055]"
+                valueClassName="text-rose-600"
               />
               <ResumoMetric
                 label="Questões respondidas"
@@ -436,17 +436,17 @@ export function SimuladosAnalyticsDashboard({
             </div>
           </div>
 
-          <p className="rounded-md bg-white/[0.03] px-3 py-2 text-center text-[11px] text-white/35 sm:col-span-2">
+          <p className="rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-center text-[11px] text-slate-600 sm:col-span-2">
             {deltaMensagem}
           </p>
 
-          <div className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-4">
-            <p className="text-sm font-semibold text-white/80">Geral (histórico)</p>
+          <div className="card-elevated p-4">
+            <p className="text-sm font-semibold text-slate-800">Geral (histórico)</p>
             <div className="mt-3 grid grid-cols-2 gap-3">
               <ResumoMetric
                 label="% de acerto"
                 value={loadingGeral ? '...' : formatPercent(resumoGeral.percentual)}
-                valueClassName="text-[#00f2ff]"
+                valueClassName="text-[#3d6b0f]"
               />
               <ResumoMetric
                 label="Acertos"
@@ -455,7 +455,7 @@ export function SimuladosAnalyticsDashboard({
               <ResumoMetric
                 label="Erros"
                 value={loadingGeral ? '...' : resumoGeral.erros}
-                valueClassName="text-[#ff0055]"
+                valueClassName="text-rose-600"
               />
               <ResumoMetric
                 label="Questões respondidas"
@@ -468,19 +468,19 @@ export function SimuladosAnalyticsDashboard({
 
       <section>
         <SectionLabel>Onde focar agora</SectionLabel>
-        <p className="mb-3 text-[11px] text-white/35">
+        <p className="mb-3 text-[11px] text-slate-600">
           Priorize os assuntos com menor acerto para ganhar pontos mais rápido.
         </p>
-        <div className="rounded-xl border border-[#00ff88]/20 bg-[#00ff88]/[0.04] p-4">
-          <p className="flex items-center gap-2 text-sm font-semibold text-white/80">
-            <span className="h-2 w-2 shrink-0 rounded-full bg-[#00ff88] animate-pulse" aria-hidden />
+        <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+          <p className="flex items-center gap-2 text-sm font-semibold text-slate-800">
+            <span className="h-2 w-2 shrink-0 animate-pulse rounded-full bg-emerald-500" aria-hidden />
             Onde focar agora
           </p>
           <div className="mt-3 space-y-3">
             {loadingAnalytics ? (
-              <p className="text-sm text-white/35">Carregando prioridades...</p>
+              <p className="text-sm text-slate-600">Carregando prioridades...</p>
             ) : prioridades.length === 0 ? (
-              <p className="text-sm text-white/35">
+              <p className="text-sm text-slate-600">
                 Responda mais questões para receber prioridades de revisão.
               </p>
             ) : (
@@ -488,10 +488,10 @@ export function SimuladosAnalyticsDashboard({
                 {prioridades.map((item) => (
                   <div
                     key={item.nome}
-                    className="rounded-xl border border-white/[0.08] bg-white/[0.04] p-3"
+                    className="rounded-xl border border-slate-200 bg-white p-3"
                   >
-                    <p className="text-sm font-medium text-white/90">{item.nome}</p>
-                    <p className="mt-1 text-xs text-white/35">
+                    <p className="text-sm font-medium text-slate-900">{item.nome}</p>
+                    <p className="mt-1 text-xs text-slate-600">
                       Acerto atual: {formatPercent(item.percentual_acerto)} ({item.total_questoes}{' '}
                       questões)
                     </p>
@@ -499,14 +499,16 @@ export function SimuladosAnalyticsDashboard({
                 ))}
               </div>
             )}
-            <Button
-              asChild
-              className="w-full rounded-xl bg-[#00f2ff] py-3 font-bold text-[#010409] hover:bg-[#00f2ff]/90"
-              onClick={() =>
-                trackSimuladoAnalyticsEvent('quick_action_train_now', { origem: 'simulados_simple' })
-              }
-            >
-              <Link href="/simulados/novo" className="inline-flex items-center justify-center gap-2">
+            <Button asChild className="btn-editorial-primary w-full py-3">
+              <Link
+                href="/simulados/novo"
+                className="inline-flex items-center justify-center gap-2"
+                onClick={() =>
+                  trackSimuladoAnalyticsEvent('quick_action_train_now', {
+                    origem: 'simulados_simple',
+                  })
+                }
+              >
                 <ClipboardList className="h-4 w-4" aria-hidden />
                 Treinar agora
               </Link>
@@ -517,25 +519,25 @@ export function SimuladosAnalyticsDashboard({
 
       <section>
         <SectionLabel>Sua tendência na semana</SectionLabel>
-        <p className="mb-3 text-[11px] text-white/35">
+        <p className="mb-3 text-[11px] text-slate-600">
           Leitura rápida para entender se você está melhorando.
         </p>
-        <div className="rounded-xl border border-[#00f2ff]/15 bg-transparent p-4">
-          <p className="flex items-center gap-2 text-sm font-semibold text-white/80">
-            <span className="h-2 w-2 shrink-0 rounded-full bg-[#00f2ff]" aria-hidden />
+        <div className="card-elevated p-4">
+          <p className="flex items-center gap-2 text-sm font-semibold text-slate-800">
+            <span className="h-2 w-2 shrink-0 rounded-full bg-[#8fe020]" aria-hidden />
             Sua tendência na semana
           </p>
           <div className="mt-3">
             {error ? (
-              <p className="text-sm text-[#ff0055]">{error}</p>
+              <p className="text-sm text-rose-600">{error}</p>
             ) : (
               <>
-                <div className="inline-flex flex-col gap-1 rounded-lg border border-[#00f2ff]/20 bg-[#00f2ff]/[0.08] px-4 py-2">
-                  <span className="text-[15px] font-bold text-[#00f2ff]">{trend.label}</span>
-                  <span className="text-[11px] text-white/35">{trend.detail}</span>
+                <div className="inline-flex flex-col gap-1 rounded-lg border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.08)] px-4 py-2">
+                  <span className="text-[15px] font-bold text-[#3d6b0f]">{trend.label}</span>
+                  <span className="text-[11px] text-slate-600">{trend.detail}</span>
                 </div>
                 {evolucao.length > 0 ? (
-                  <p className="mt-3 text-[11px] text-white/35">
+                  <p className="mt-3 text-[11px] text-slate-600">
                     Última atualização: {formatDateLabel(evolucao[evolucao.length - 1]?.data_ref ?? '')}
                   </p>
                 ) : null}

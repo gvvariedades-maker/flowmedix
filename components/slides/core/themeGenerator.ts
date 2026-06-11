@@ -52,39 +52,38 @@ export const generateRobustQuestionHash = (
 };
 
 // ============================================================================
-// GERADOR DE VARIAÇÕES ÚNICAS BASEADAS EM HASH
-// INTENSIDADE AUMENTADA PARA MAIOR PERCEPTIBILIDADE
+// GERADOR DE VARIAÇÕES ÚNICAS BASEADAS EM HASH (sutis — legibilidade > neon)
 // ============================================================================
 interface ThemeVariations {
-  glowIntensity: number; // 0.25 - 0.75 (aumentado de 0.3-0.6)
-  saturationShift: number; // -15% a +15% (aumentado de -10% a +10%)
-  brightnessShift: number; // -8% a +8% (aumentado de -5% a +5%)
+  glowIntensity: number; // 0.08 - 0.22
+  saturationShift: number; // -8% a +8%
+  brightnessShift: number; // -4% a +4%
   rotation: number; // 0-360 graus para gradientes
-  borderOpacity: number; // 15-50% (aumentado de 20-40%)
+  borderOpacity: number; // 18-32%
 }
 
 export const generateThemeVariations = (hash: number): ThemeVariations => {
   // Usa diferentes partes do hash para diferentes variações
   const hashStr = hash.toString().padStart(6, '0'); // Garante pelo menos 6 dígitos
   
-  // Glow intensity: baseado nos últimos 2 dígitos - INTENSIDADE AUMENTADA
+  // Glow intensity: baseado nos últimos 2 dígitos — faixa baixa
   const glowHash = parseInt(hashStr.slice(-2) || '50', 10);
-  const glowIntensity = 0.25 + (glowHash % 51) / 100; // 0.25 a 0.75 (variação de 0.5)
+  const glowIntensity = 0.08 + (glowHash % 15) / 100; // 0.08 a 0.22
   
-  // Saturation shift: baseado nos primeiros 2 dígitos - INTENSIDADE AUMENTADA
+  // Saturation shift
   const satHash = parseInt(hashStr.slice(0, 2) || '50', 10);
-  const saturationShift = ((satHash % 31) - 15) / 100; // -15% a +15% (variação de 30%)
+  const saturationShift = ((satHash % 17) - 8) / 100; // -8% a +8%
   
-  // Brightness shift: baseado no meio do hash - INTENSIDADE AUMENTADA
+  // Brightness shift
   const brightHash = parseInt(hashStr.slice(2, 4) || '50', 10);
-  const brightnessShift = ((brightHash % 17) - 8) / 100; // -8% a +8% (variação de 16%)
+  const brightnessShift = ((brightHash % 9) - 4) / 100; // -4% a +4%
   
   // Rotation: baseado no hash completo
   const rotation = hash % 360;
   
-  // Border opacity: baseado em outro segmento - INTENSIDADE AUMENTADA
+  // Border opacity
   const borderHash = parseInt(hashStr.slice(4, 6) || '30', 10);
-  const borderOpacity = 15 + (borderHash % 36); // 15-50% (variação de 35%)
+  const borderOpacity = 18 + (borderHash % 15); // 18-32%
   
   return {
     glowIntensity,
@@ -480,224 +479,224 @@ const THEMES_PALETTE: ThemeColors[] = [
       primary: 'from-indigo-600 via-purple-600 to-pink-600',
       secondary: 'from-cyan-500 to-blue-600',
       accent: 'indigo',
-      glow: 'rgba(139, 92, 246, 0.4)',
+      glow: 'rgba(139, 92, 246, 0.22)',
       bgGradient: 'from-slate-900 via-indigo-950 to-slate-900',
       borderColor: 'border-indigo-500/30',
       textPrimary: 'text-indigo-100',
       textSecondary: 'text-indigo-300',
-      iconBg: 'bg-indigo-500/20',
+      iconBg: 'bg-indigo-500/10',
       iconText: 'text-indigo-400',
       iconHoverBg: 'group-hover:bg-indigo-500',
       iconHoverText: 'group-hover:text-white',
-      glowGradient: 'from-indigo-500/20'
+      glowGradient: 'from-indigo-500/10'
     },
     {
       name: 'emerald',
       primary: 'from-emerald-500 via-teal-500 to-cyan-500',
       secondary: 'from-green-400 to-emerald-600',
       accent: 'emerald',
-      glow: 'rgba(16, 185, 129, 0.4)',
+      glow: 'rgba(16, 185, 129, 0.22)',
       bgGradient: 'from-slate-900 via-emerald-950 to-slate-900',
       borderColor: 'border-emerald-500/30',
       textPrimary: 'text-emerald-100',
       textSecondary: 'text-emerald-300',
-      iconBg: 'bg-emerald-500/20',
+      iconBg: 'bg-emerald-500/10',
       iconText: 'text-emerald-400',
       iconHoverBg: 'group-hover:bg-emerald-500',
       iconHoverText: 'group-hover:text-white',
-      glowGradient: 'from-emerald-500/20'
+      glowGradient: 'from-emerald-500/10'
     },
     {
       name: 'rose',
       primary: 'from-rose-500 via-pink-500 to-fuchsia-600',
       secondary: 'from-pink-400 to-rose-600',
       accent: 'rose',
-      glow: 'rgba(244, 63, 94, 0.4)',
+      glow: 'rgba(244, 63, 94, 0.22)',
       bgGradient: 'from-slate-900 via-rose-950 to-slate-900',
       borderColor: 'border-rose-500/30',
       textPrimary: 'text-rose-100',
       textSecondary: 'text-rose-300',
-      iconBg: 'bg-rose-500/20',
+      iconBg: 'bg-rose-500/10',
       iconText: 'text-rose-400',
       iconHoverBg: 'group-hover:bg-rose-500',
       iconHoverText: 'group-hover:text-white',
-      glowGradient: 'from-rose-500/20'
+      glowGradient: 'from-rose-500/10'
     },
     {
       name: 'amber',
       primary: 'from-amber-500 via-orange-500 to-red-500',
       secondary: 'from-yellow-400 to-orange-600',
       accent: 'amber',
-      glow: 'rgba(245, 158, 11, 0.4)',
+      glow: 'rgba(245, 158, 11, 0.22)',
       bgGradient: 'from-slate-900 via-amber-950 to-slate-900',
       borderColor: 'border-amber-500/30',
       textPrimary: 'text-amber-100',
       textSecondary: 'text-amber-300',
-      iconBg: 'bg-amber-500/20',
+      iconBg: 'bg-amber-500/10',
       iconText: 'text-amber-400',
       iconHoverBg: 'group-hover:bg-amber-500',
       iconHoverText: 'group-hover:text-white',
-      glowGradient: 'from-amber-500/20'
+      glowGradient: 'from-amber-500/10'
     },
     {
       name: 'violet',
       primary: 'from-violet-600 via-purple-600 to-indigo-600',
       secondary: 'from-purple-400 to-violet-600',
       accent: 'violet',
-      glow: 'rgba(139, 92, 246, 0.4)',
+      glow: 'rgba(139, 92, 246, 0.22)',
       bgGradient: 'from-slate-900 via-violet-950 to-slate-900',
       borderColor: 'border-violet-500/30',
       textPrimary: 'text-violet-100',
       textSecondary: 'text-violet-300',
-      iconBg: 'bg-violet-500/20',
+      iconBg: 'bg-violet-500/10',
       iconText: 'text-violet-400',
       iconHoverBg: 'group-hover:bg-violet-500',
       iconHoverText: 'group-hover:text-white',
-      glowGradient: 'from-violet-500/20'
+      glowGradient: 'from-violet-500/10'
     },
     {
       name: 'cyan',
       primary: 'from-blue-500 via-cyan-500 to-teal-500',
       secondary: 'from-cyan-400 to-blue-600',
       accent: 'cyan',
-      glow: 'rgba(6, 182, 212, 0.4)',
+      glow: 'rgba(6, 182, 212, 0.22)',
       bgGradient: 'from-slate-900 via-cyan-950 to-slate-900',
       borderColor: 'border-cyan-500/30',
       textPrimary: 'text-cyan-100',
       textSecondary: 'text-cyan-300',
-      iconBg: 'bg-cyan-500/20',
+      iconBg: 'bg-cyan-500/10',
       iconText: 'text-cyan-400',
       iconHoverBg: 'group-hover:bg-cyan-500',
       iconHoverText: 'group-hover:text-white',
-      glowGradient: 'from-cyan-500/20'
+      glowGradient: 'from-cyan-500/10'
     },
     {
       name: 'fuchsia',
       primary: 'from-fuchsia-600 via-pink-600 to-purple-600',
       secondary: 'from-pink-500 to-fuchsia-600',
       accent: 'fuchsia',
-      glow: 'rgba(217, 70, 239, 0.4)',
+      glow: 'rgba(217, 70, 239, 0.22)',
       bgGradient: 'from-slate-900 via-fuchsia-950 to-slate-900',
       borderColor: 'border-fuchsia-500/30',
       textPrimary: 'text-fuchsia-100',
       textSecondary: 'text-fuchsia-300',
-      iconBg: 'bg-fuchsia-500/20',
+      iconBg: 'bg-fuchsia-500/10',
       iconText: 'text-fuchsia-400',
       iconHoverBg: 'group-hover:bg-fuchsia-500',
       iconHoverText: 'group-hover:text-white',
-      glowGradient: 'from-fuchsia-500/20'
+      glowGradient: 'from-fuchsia-500/10'
     },
     {
       name: 'sky',
       primary: 'from-sky-500 via-blue-500 to-indigo-600',
       secondary: 'from-blue-400 to-sky-600',
       accent: 'sky',
-      glow: 'rgba(14, 165, 233, 0.4)',
+      glow: 'rgba(14, 165, 233, 0.22)',
       bgGradient: 'from-slate-900 via-sky-950 to-slate-900',
       borderColor: 'border-sky-500/30',
       textPrimary: 'text-sky-100',
       textSecondary: 'text-sky-300',
-      iconBg: 'bg-sky-500/20',
+      iconBg: 'bg-sky-500/10',
       iconText: 'text-sky-400',
       iconHoverBg: 'group-hover:bg-sky-500',
       iconHoverText: 'group-hover:text-white',
-      glowGradient: 'from-sky-500/20'
+      glowGradient: 'from-sky-500/10'
     },
     {
       name: 'lime',
       primary: 'from-lime-500 via-green-500 to-emerald-600',
       secondary: 'from-green-400 to-lime-600',
       accent: 'lime',
-      glow: 'rgba(132, 204, 22, 0.4)',
+      glow: 'rgba(132, 204, 22, 0.22)',
       bgGradient: 'from-slate-900 via-lime-950 to-slate-900',
       borderColor: 'border-lime-500/30',
       textPrimary: 'text-lime-100',
       textSecondary: 'text-lime-300',
-      iconBg: 'bg-lime-500/20',
+      iconBg: 'bg-lime-500/10',
       iconText: 'text-lime-400',
       iconHoverBg: 'group-hover:bg-lime-500',
       iconHoverText: 'group-hover:text-white',
-      glowGradient: 'from-lime-500/20'
+      glowGradient: 'from-lime-500/10'
     },
     {
       name: 'teal',
       primary: 'from-teal-500 via-cyan-500 to-blue-600',
       secondary: 'from-cyan-400 to-teal-600',
       accent: 'teal',
-      glow: 'rgba(20, 184, 166, 0.4)',
+      glow: 'rgba(20, 184, 166, 0.22)',
       bgGradient: 'from-slate-900 via-teal-950 to-slate-900',
       borderColor: 'border-teal-500/30',
       textPrimary: 'text-teal-100',
       textSecondary: 'text-teal-300',
-      iconBg: 'bg-teal-500/20',
+      iconBg: 'bg-teal-500/10',
       iconText: 'text-teal-400',
       iconHoverBg: 'group-hover:bg-teal-500',
       iconHoverText: 'group-hover:text-white',
-      glowGradient: 'from-teal-500/20'
+      glowGradient: 'from-teal-500/10'
     },
     {
       name: 'orange',
       primary: 'from-orange-500 via-red-500 to-pink-600',
       secondary: 'from-red-400 to-orange-600',
       accent: 'orange',
-      glow: 'rgba(249, 115, 22, 0.4)',
+      glow: 'rgba(249, 115, 22, 0.22)',
       bgGradient: 'from-slate-900 via-orange-950 to-slate-900',
       borderColor: 'border-orange-500/30',
       textPrimary: 'text-orange-100',
       textSecondary: 'text-orange-300',
-      iconBg: 'bg-orange-500/20',
+      iconBg: 'bg-orange-500/10',
       iconText: 'text-orange-400',
       iconHoverBg: 'group-hover:bg-orange-500',
       iconHoverText: 'group-hover:text-white',
-      glowGradient: 'from-orange-500/20'
+      glowGradient: 'from-orange-500/10'
     },
     {
       name: 'blue',
       primary: 'from-blue-600 via-indigo-600 to-purple-600',
       secondary: 'from-indigo-400 to-blue-600',
       accent: 'blue',
-      glow: 'rgba(37, 99, 235, 0.4)',
+      glow: 'rgba(37, 99, 235, 0.22)',
       bgGradient: 'from-slate-900 via-blue-950 to-slate-900',
       borderColor: 'border-blue-500/30',
       textPrimary: 'text-blue-100',
       textSecondary: 'text-blue-300',
-      iconBg: 'bg-blue-500/20',
+      iconBg: 'bg-blue-500/10',
       iconText: 'text-blue-400',
       iconHoverBg: 'group-hover:bg-blue-500',
       iconHoverText: 'group-hover:text-white',
-      glowGradient: 'from-blue-500/20'
+      glowGradient: 'from-blue-500/10'
     },
     {
       name: 'purple',
       primary: 'from-purple-600 via-violet-600 to-fuchsia-600',
       secondary: 'from-violet-400 to-purple-600',
       accent: 'purple',
-      glow: 'rgba(168, 85, 247, 0.4)',
+      glow: 'rgba(168, 85, 247, 0.22)',
       bgGradient: 'from-slate-900 via-purple-950 to-slate-900',
       borderColor: 'border-purple-500/30',
       textPrimary: 'text-purple-100',
       textSecondary: 'text-purple-300',
-      iconBg: 'bg-purple-500/20',
+      iconBg: 'bg-purple-500/10',
       iconText: 'text-purple-400',
       iconHoverBg: 'group-hover:bg-purple-500',
       iconHoverText: 'group-hover:text-white',
-      glowGradient: 'from-purple-500/20'
+      glowGradient: 'from-purple-500/10'
     },
     {
       name: 'pink',
       primary: 'from-pink-500 via-rose-500 to-red-500',
       secondary: 'from-rose-400 to-pink-600',
       accent: 'pink',
-      glow: 'rgba(236, 72, 153, 0.4)',
+      glow: 'rgba(236, 72, 153, 0.22)',
       bgGradient: 'from-slate-900 via-pink-950 to-slate-900',
       borderColor: 'border-pink-500/30',
       textPrimary: 'text-pink-100',
       textSecondary: 'text-pink-300',
-      iconBg: 'bg-pink-500/20',
+      iconBg: 'bg-pink-500/10',
       iconText: 'text-pink-400',
       iconHoverBg: 'group-hover:bg-pink-500',
       iconHoverText: 'group-hover:text-white',
-      glowGradient: 'from-pink-500/20'
+      glowGradient: 'from-pink-500/10'
     }
 ];
 
@@ -726,15 +725,15 @@ const applyThemeVariations = (
   // Criar cópia do tema para não modificar o original
   const modifiedTheme = { ...baseTheme };
   
-  // Ajustar glow com intensidade única - INTENSIDADE AUMENTADA
+  // Ajustar glow com intensidade única (faixa baixa)
   const glowMatch = baseTheme.glow.match(/rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)/);
   if (glowMatch) {
     const [, r, g, b] = glowMatch;
-    // Usa a intensidade calculada diretamente (já está no range 0.25-0.75)
+    // Usa a intensidade calculada (range 0.08-0.22)
     modifiedTheme.glow = `rgba(${r}, ${g}, ${b}, ${variations.glowIntensity.toFixed(2)})`;
   }
   
-  // Ajustar border opacity - INTENSIDADE AUMENTADA
+  // Ajustar border opacity
   const borderMatch = baseTheme.borderColor.match(/border-(\w+)-500\/(\d+)/);
   if (borderMatch) {
     const [, color] = borderMatch;
@@ -753,7 +752,7 @@ const applyThemeVariations = (
   if (glowGradientMatch) {
     const [, color] = glowGradientMatch;
     // Usa uma variação relacionada mas diferente do glow principal
-    const gradientOpacity = Math.max(15, Math.min(35, variations.borderOpacity - 5));
+    const gradientOpacity = Math.max(8, Math.min(16, variations.borderOpacity - 10));
     modifiedTheme.glowGradient = `from-${color}-500/${gradientOpacity}`;
   }
   

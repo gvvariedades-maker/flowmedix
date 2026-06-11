@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { CloudOff, RefreshCw } from 'lucide-react';
+import { CloudOff, RefreshCw, TriangleAlert } from 'lucide-react';
 import { logger } from '@/lib/logger';
 import {
   DATA_SERVICE_FRIENDLY_DESCRIPTION,
@@ -31,14 +31,14 @@ export default function DashboardError({
   if (dataService) {
     return (
       <div className={cn('dashboard-surface flex-col bg-background p-6', DASHBOARD_PAGE_CENTER)}>
-        <div className="max-w-md w-full rounded-3xl border border-border bg-card/80 p-8 text-center shadow-lg shadow-indigo-500/5">
-          <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-500/10 text-indigo-600">
+        <div className="card-elevated-lg w-full max-w-md p-8 text-center">
+          <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 text-slate-600">
             <CloudOff className="h-7 w-7" aria-hidden />
           </div>
-          <h1 className="text-xl font-bold tracking-tight text-foreground">{DATA_SERVICE_FRIENDLY_TITLE}</h1>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{DATA_SERVICE_FRIENDLY_DESCRIPTION}</p>
+          <h1 className="text-xl font-bold tracking-tight text-slate-900">{DATA_SERVICE_FRIENDLY_TITLE}</h1>
+          <p className="mt-3 text-sm leading-relaxed text-slate-600">{DATA_SERVICE_FRIENDLY_DESCRIPTION}</p>
           {process.env.NODE_ENV === 'development' && (
-            <p className="mt-4 rounded-xl border border-dashed border-border bg-muted/50 px-3 py-2 text-left text-xs font-mono text-muted-foreground break-all">
+            <p className="mt-4 rounded-xl border border-dashed border-slate-200 bg-slate-50 px-3 py-2 text-left text-xs font-mono text-slate-500 break-all">
               {error.message}
             </p>
           )}
@@ -46,15 +46,12 @@ export default function DashboardError({
             <button
               type="button"
               onClick={() => reset()}
-              className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 text-sm font-semibold text-white transition-colors hover:bg-indigo-700"
+              className="btn-editorial-primary inline-flex h-11 items-center justify-center gap-2 px-6"
             >
               <RefreshCw className="h-4 w-4" aria-hidden />
               Tentar de novo
             </button>
-            <Link
-              href="/estudar"
-              className="inline-flex h-11 items-center justify-center rounded-xl border border-border bg-background px-6 text-sm font-semibold text-foreground transition-colors hover:bg-muted"
-            >
+            <Link href="/estudar" className="btn-editorial-outline inline-flex h-11 items-center justify-center px-6">
               Voltar para a Vitrine
             </Link>
           </div>
@@ -64,30 +61,33 @@ export default function DashboardError({
   }
 
   return (
-    <div className={cn('bg-[#010409] p-4', DASHBOARD_PAGE_CENTER)}>
-      <div className="max-w-md w-full text-center space-y-6">
+    <div className={cn('dashboard-surface flex-col bg-background p-6', DASHBOARD_PAGE_CENTER)}>
+      <div className="w-full max-w-md space-y-6 text-center">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-rose-200 bg-rose-50 text-rose-600">
+          <TriangleAlert className="h-7 w-7" aria-hidden />
+        </div>
         <div className="space-y-2">
-          <h1 className="text-4xl font-black text-red-400 mb-2">⚠️ Erro no Dashboard</h1>
-          <p className="text-slate-300 text-lg">Ocorreu um erro ao carregar esta página.</p>
+          <h1 className="text-xl font-bold text-slate-900">Erro no dashboard</h1>
+          <p className="text-sm leading-relaxed text-slate-600">
+            Ocorreu um erro ao carregar esta página. Tente novamente ou volte à vitrine.
+          </p>
           {process.env.NODE_ENV === 'development' && (
-            <div className="mt-4 p-4 bg-red-950/40 rounded-lg border border-red-500/30 text-left">
-              <p className="text-xs text-red-300 font-mono break-all">{error.message}</p>
-            </div>
+            <p className="rounded-xl border border-dashed border-slate-200 bg-slate-50 px-3 py-2 text-left text-xs font-mono text-slate-500 break-all">
+              {error.message}
+            </p>
           )}
         </div>
-
-        <div className="flex gap-4 justify-center">
+        <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
           <button
-            onClick={reset}
-            className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition-colors shadow-lg shadow-indigo-500/20"
+            type="button"
+            onClick={() => reset()}
+            className="btn-editorial-primary inline-flex h-11 items-center justify-center gap-2 px-6"
           >
+            <RefreshCw className="h-4 w-4" aria-hidden />
             Tentar de novo
           </button>
-          <Link
-            href="/estudar"
-            className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg transition-colors border border-white/10"
-          >
-            Voltar ao Estudo
+          <Link href="/estudar" className="btn-editorial-outline inline-flex h-11 items-center justify-center px-6">
+            Voltar para a Vitrine
           </Link>
         </div>
       </div>

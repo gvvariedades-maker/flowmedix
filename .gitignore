@@ -41,6 +41,7 @@ types/.database.supabase.generated.tmp.ts
 /test-results/
 /playwright-report/
 /playwright/.cache/
+/e2e/.auth/
 
 # Cursor
 .cursor/

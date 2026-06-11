@@ -92,7 +92,7 @@ export function QuestaoMobileFilterSheet({
             type="button"
             tabIndex={-1}
             aria-label="Fechar filtros"
-            className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
+            className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"
             onClick={closeSheet}
           />
           <motion.div
@@ -103,29 +103,29 @@ export function QuestaoMobileFilterSheet({
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
             transition={{ type: 'spring', stiffness: 380, damping: 34 }}
-            className="absolute inset-x-0 bottom-0 z-[201] flex max-h-[min(85dvh,32rem)] flex-col rounded-t-3xl border border-white/10 bg-[#0d1117] pb-safe shadow-2xl"
+            className="absolute inset-x-0 bottom-0 z-[201] flex max-h-[min(85dvh,32rem)] flex-col rounded-t-3xl border border-slate-200 bg-white pb-safe shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
-              <p className="text-sm font-bold text-white">{title}</p>
+            <div className="flex items-center justify-between border-b border-slate-200 px-4 py-3">
+              <p className="text-sm font-bold text-slate-900">{title}</p>
               <button
                 type="button"
                 onClick={closeSheet}
                 aria-label="Fechar"
-                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-white/10 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-slate-200 text-slate-500 transition-colors hover:bg-slate-50 hover:text-slate-700"
               >
                 <X size={18} aria-hidden />
               </button>
             </div>
             <div className="custom-scrollbar flex min-h-0 flex-1 flex-col overflow-hidden">
-              <div className="sticky top-0 z-10 bg-[#0d1117] px-2 pb-2 pt-2">
+              <div className="sticky top-0 z-10 bg-white px-2 pb-2 pt-2">
                 <input
                   value={busca}
                   onChange={(e) => setBusca(e.target.value)}
                   placeholder={searchPlaceholder}
                   aria-label={searchPlaceholder}
                   disabled={disabled}
-                  className="w-full rounded-lg border border-white/10 bg-white/[0.05] px-3 py-2 text-sm text-slate-200 placeholder-slate-500 outline-none transition-colors focus:border-[#00f2ff]/40 focus:bg-[#00f2ff]/[0.04] disabled:opacity-50"
+                  className="input-editorial w-full px-3 py-2 text-sm disabled:opacity-50"
                 />
               </div>
               <ul
@@ -153,14 +153,14 @@ export function QuestaoMobileFilterSheet({
                           aria-selected={isSelected}
                           disabled={disabled}
                           onClick={() => toggleOption(option)}
-                          className="flex min-h-[44px] w-full items-start gap-2 rounded-lg px-2 py-2 text-left text-sm text-slate-200 transition-colors hover:bg-cyan-400/10 hover:text-cyan-100 disabled:opacity-50"
+                          className="flex min-h-[44px] w-full items-start gap-2 rounded-lg px-2 py-2 text-left text-sm text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-900 disabled:opacity-50"
                         >
                           <span
                             className={cn(
                               'mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded border',
                               isSelected
-                                ? 'border-[#00f2ff]/60 bg-[#00f2ff]/20 text-[#00f2ff]'
-                                : 'border-white/25 bg-transparent',
+                                ? 'border-[rgba(143,224,32,0.5)] bg-[rgba(143,224,32,0.15)] text-[#3d6b0f]'
+                                : 'border-slate-300 bg-transparent',
                             )}
                             aria-hidden
                           >
@@ -176,7 +176,7 @@ export function QuestaoMobileFilterSheet({
             </div>
             <button
               type="button"
-              className="min-h-[44px] border-t border-white/10 px-4 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-slate-400 transition-colors hover:bg-white/5 hover:text-white"
+              className="min-h-[44px] border-t border-slate-200 px-4 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-slate-500 transition-colors hover:bg-slate-50 hover:text-slate-700"
               style={
                 keyboardInsetPx > 0
                   ? { paddingBottom: `calc(0.875rem + ${keyboardInsetPx}px)` }

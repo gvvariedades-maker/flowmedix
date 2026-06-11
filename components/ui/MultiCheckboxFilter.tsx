@@ -71,7 +71,7 @@ function PickerList({
       <div
         className={cn(
           'px-2 pb-2',
-          searchSticky && 'sticky top-0 z-10 bg-[#0d1117] pt-2',
+          searchSticky && 'sticky top-0 z-10 bg-white pt-2',
         )}
       >
         <input
@@ -79,7 +79,7 @@ function PickerList({
           onChange={(e) => setBusca(e.target.value)}
           placeholder={searchPlaceholder}
           aria-label={searchPlaceholder}
-          className="w-full rounded-lg border border-white/10 bg-white/[0.05] px-3 py-2 text-sm text-slate-200 placeholder-slate-500 outline-none transition-colors focus:border-[#00f2ff]/40 focus:bg-[#00f2ff]/[0.04]"
+          className="input-editorial w-full px-3 py-2 text-sm"
         />
       </div>
       <ul
@@ -108,10 +108,10 @@ function PickerList({
                 role="option"
                 aria-selected={false}
                 onClick={() => onSelect(option)}
-                className="flex min-h-[44px] w-full items-start gap-2 rounded-lg px-2 py-2 text-left text-sm text-slate-200 transition-colors hover:bg-cyan-400/10 hover:text-cyan-100"
+                className="flex min-h-[44px] w-full items-start gap-2 rounded-lg px-2 py-2 text-left text-sm text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-900"
               >
                 <span
-                  className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded border border-white/25 bg-transparent"
+                  className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded border border-slate-300 bg-transparent"
                   aria-hidden
                 />
                 <span className="min-w-0 flex-1 leading-snug">{option}</span>
@@ -221,16 +221,16 @@ export function MultiCheckboxFilter({
                   animate={{ y: 0 }}
                   exit={{ y: '100%' }}
                   transition={{ type: 'spring', stiffness: 380, damping: 34 }}
-                  className="absolute inset-x-0 bottom-0 z-[201] flex max-h-[min(85dvh,32rem)] flex-col rounded-t-3xl border border-white/10 bg-[#0d1117] pb-safe shadow-2xl"
+                  className="absolute inset-x-0 bottom-0 z-[201] flex max-h-[min(85dvh,32rem)] flex-col rounded-t-3xl border border-slate-200 bg-white pb-safe shadow-2xl"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
-                    <p className="text-sm font-bold text-white">{title}</p>
+                  <div className="flex items-center justify-between border-b border-slate-200 px-4 py-3">
+                    <p className="text-sm font-bold text-slate-900">{title}</p>
                     <button
                       type="button"
                       onClick={closePicker}
                       aria-label="Fechar"
-                      className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-white/10 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+                      className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-slate-200 text-slate-500 transition-colors hover:bg-slate-50 hover:text-slate-700"
                     >
                       <X size={18} aria-hidden />
                     </button>
@@ -249,7 +249,7 @@ export function MultiCheckboxFilter({
                   />
                   <button
                     type="button"
-                    className="min-h-[44px] border-t border-white/10 px-4 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-slate-400 transition-colors hover:bg-white/5 hover:text-white"
+                    className="min-h-[44px] border-t border-slate-200 px-4 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-slate-500 transition-colors hover:bg-slate-50 hover:text-slate-700"
                     style={
                       keyboardInsetPx > 0
                         ? { paddingBottom: `calc(0.875rem + ${keyboardInsetPx}px)` }
@@ -277,14 +277,14 @@ export function MultiCheckboxFilter({
         <ul className="flex flex-wrap gap-1.5" aria-label="Selecionados">
           {value.map((item) => (
             <li key={item}>
-              <span className="inline-flex max-w-full items-center gap-1 rounded-md border border-cyan-500/30 bg-cyan-500/10 py-0.5 pl-2 pr-1 text-xs text-cyan-200">
+              <span className="inline-flex max-w-full items-center gap-1 rounded-md border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.12)] py-0.5 pl-2 pr-1 text-xs text-[#3d6b0f]">
                 <span className="truncate">{item}</span>
                 <button
                   type="button"
                   onClick={() => removeOption(item)}
                   disabled={disabled}
                   aria-label={`Remover ${item}`}
-                  className="flex h-5 w-5 shrink-0 items-center justify-center rounded text-cyan-300/80 transition-colors hover:bg-cyan-500/20 hover:text-cyan-100 disabled:opacity-50"
+                  className="flex h-5 w-5 shrink-0 items-center justify-center rounded text-[#3d6b0f]/80 transition-colors hover:bg-[rgba(143,224,32,0.2)] hover:text-[#3d6b0f] disabled:opacity-50"
                 >
                   <X className="h-3 w-3" aria-hidden />
                 </button>
@@ -308,7 +308,7 @@ export function MultiCheckboxFilter({
             onClick={() => {
               if (!disabled) setSheetOpen(true);
             }}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-dashed border-white/15 bg-white/[0.03] px-3 py-2 text-xs font-medium text-slate-300 transition-colors hover:border-cyan-500/30 hover:bg-cyan-500/5 hover:text-cyan-200 disabled:cursor-not-allowed disabled:opacity-50"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-dashed border-slate-300 bg-white px-3 py-2 text-xs font-medium text-slate-600 transition-colors hover:border-[rgba(143,224,32,0.35)] hover:bg-[rgba(143,224,32,0.06)] hover:text-[#3d6b0f] disabled:cursor-not-allowed disabled:opacity-50"
           >
             <Plus className="h-3.5 w-3.5 shrink-0" aria-hidden />
             {addLabel}
@@ -331,7 +331,7 @@ export function MultiCheckboxFilter({
                 aria-haspopup="listbox"
                 aria-expanded={desktopOpen}
                 disabled={disabled || optionsDisponiveis.length === 0}
-                className="inline-flex items-center gap-1.5 rounded-lg border border-dashed border-white/15 bg-white/[0.03] px-3 py-2 text-xs font-medium text-slate-300 transition-colors hover:border-cyan-500/30 hover:bg-cyan-500/5 hover:text-cyan-200 disabled:cursor-not-allowed disabled:opacity-50"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-dashed border-slate-300 bg-white px-3 py-2 text-xs font-medium text-slate-600 transition-colors hover:border-[rgba(143,224,32,0.35)] hover:bg-[rgba(143,224,32,0.06)] hover:text-[#3d6b0f] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 <Plus className="h-3.5 w-3.5 shrink-0" aria-hidden />
                 {addLabel}
@@ -358,7 +358,7 @@ export function MultiCheckboxFilter({
             type="button"
             onClick={() => onChange([])}
             disabled={disabled}
-            className="rounded-lg px-2 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:bg-white/5 hover:text-slate-200 disabled:opacity-50"
+            className="rounded-lg px-2 py-1.5 text-xs font-medium text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-700 disabled:opacity-50"
           >
             Limpar
           </button>

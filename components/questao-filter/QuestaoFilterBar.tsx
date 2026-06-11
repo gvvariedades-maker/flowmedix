@@ -85,7 +85,7 @@ export function QuestaoFilterBar({
   };
 
   const highlightRing = highlightActiveFilters
-    ? 'ring-2 ring-cyan-400/40 ring-offset-0 ring-offset-[#0d1117]'
+    ? 'ring-2 ring-[rgba(143,224,32,0.35)] ring-offset-0 ring-offset-white'
     : undefined;
 
   if (isCaderno) {
@@ -253,13 +253,13 @@ function MobileFacetPicker({
         className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
         onClick={onClose}
       />
-      <div className="absolute inset-x-0 bottom-0 z-[211] flex max-h-[min(85dvh,32rem)] flex-col rounded-t-3xl border border-white/10 bg-[#0d1117] pb-safe shadow-2xl">
-        <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
-          <p className="text-sm font-bold text-white">{title}</p>
+      <div className="absolute inset-x-0 bottom-0 z-[211] flex max-h-[min(85dvh,32rem)] flex-col rounded-t-3xl border border-slate-200 bg-white pb-safe shadow-2xl">
+        <div className="flex items-center justify-between border-b border-slate-200 px-4 py-3">
+          <p className="text-sm font-bold text-slate-900">{title}</p>
           <button
             type="button"
             onClick={onClose}
-            className="text-sm font-semibold text-slate-400"
+            className="text-sm font-semibold text-slate-500 hover:text-slate-700"
           >
             Fechar
           </button>
@@ -269,7 +269,7 @@ function MobileFacetPicker({
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
             placeholder={searchPlaceholder}
-            className="w-full rounded-lg border border-white/10 bg-white/[0.05] px-3 py-2 text-sm text-slate-200 outline-none focus:border-cyan-500/40"
+            className="input-editorial w-full px-3 py-2 text-sm"
           />
         </div>
         <ul className="custom-scrollbar flex-1 overflow-y-auto px-2 pb-4">
@@ -281,7 +281,7 @@ function MobileFacetPicker({
                 <button
                   type="button"
                   onClick={() => onSelect(option)}
-                  className="flex min-h-[44px] w-full items-center rounded-lg px-3 text-left text-sm text-slate-200 hover:bg-cyan-500/10"
+                  className="flex min-h-[44px] w-full items-center rounded-lg px-3 text-left text-sm text-slate-700 hover:bg-slate-50"
                 >
                   {option}
                 </button>

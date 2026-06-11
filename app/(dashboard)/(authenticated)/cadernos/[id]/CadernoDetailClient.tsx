@@ -77,40 +77,40 @@ function ItemCaderno({
       className={cn(
         'group flex items-center gap-3 rounded-2xl border p-4 transition-all',
         !item.acessivel
-          ? 'border-amber-500/20 bg-amber-950/20 opacity-80'
+          ? 'border-amber-200 bg-amber-50 opacity-90'
           : item.estudada
-            ? 'border-emerald-500/25 bg-emerald-950/30'
-            : 'border-[rgba(255,255,255,0.10)] bg-[#0d1117] hover:border-cyan-500/20',
+            ? 'border-green-200 bg-green-50'
+            : 'border-slate-200 bg-white hover:border-[rgba(143,224,32,0.3)]',
       )}
     >
       {/* Número */}
-      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white/[0.06] transition-colors group-hover:bg-white/[0.08]">
-        <span className="text-[11px] font-black text-slate-500">{String(index + 1).padStart(2, '0')}</span>
+      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-slate-100 transition-colors group-hover:bg-slate-200">
+        <span className="text-[11px] font-bold text-slate-500">{String(index + 1).padStart(2, '0')}</span>
       </div>
 
       {/* Status estudada */}
       <div className="shrink-0">
         {item.estudada
-          ? <CheckCircle2 size={16} className="text-emerald-500" />
-          : <Circle size={16} className="text-slate-500" />
+          ? <CheckCircle2 size={16} className="text-green-600" />
+          : <Circle size={16} className="text-slate-300" />
         }
       </div>
 
       {/* Info */}
       <div className="flex-1 min-w-0">
         <div className="flex flex-wrap items-center gap-2">
-          <p className="text-[9px] font-black uppercase tracking-widest text-slate-400">
+          <p className="text-[9px] font-bold uppercase tracking-widest text-slate-500">
             {item.topico || 'Questão'}
           </p>
           {formatAvantCodigo(item.avant_codigo) && (
-            <span className="shrink-0 rounded-md border border-[rgba(0,242,255,0.35)] bg-[rgba(0,242,255,0.08)] px-1.5 py-0.5 font-mono text-[9px] font-black text-[#67e8f9]">
+            <span className="shrink-0 rounded-md border border-slate-200 bg-slate-50 px-1.5 py-0.5 font-mono text-[9px] font-bold text-slate-600">
               {formatAvantCodigo(item.avant_codigo)}
             </span>
           )}
         </div>
-        <p className="truncate text-sm font-bold text-slate-200">{item.titulo_aula || item.modulo_slug}</p>
+        <p className="truncate text-sm font-bold text-slate-800">{item.titulo_aula || item.modulo_slug}</p>
         {!item.acessivel ? (
-          <p className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-amber-300/90">
+          <p className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-amber-700">
             Fora do seu pacote
           </p>
         ) : null}
@@ -121,28 +121,28 @@ function ItemCaderno({
         {item.acessivel ? (
           <Link
             href={`/estudar/${item.modulo_slug}?from=caderno&caderno_id=${notebookId}`}
-            className="flex h-8 w-8 items-center justify-center rounded-xl border border-cyan-500/25 bg-[rgba(0,242,255,0.08)] transition-colors hover:bg-[rgba(0,242,255,0.14)]"
+            className="flex h-8 w-8 items-center justify-center rounded-xl border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.10)] transition-colors hover:bg-[rgba(143,224,32,0.16)]"
             title="Estudar questão"
           >
-            <Play size={13} className="text-cyan-300" />
+            <Play size={13} className="text-[#3d6b0f]" />
           </Link>
         ) : (
           <span
-            className="flex h-8 w-8 items-center justify-center rounded-xl border border-amber-500/20 bg-amber-500/10"
+            className="flex h-8 w-8 items-center justify-center rounded-xl border border-amber-200 bg-amber-50"
             title="Questão fora do pacote matriculado"
           >
-            <Play size={13} className="text-amber-300/70" />
+            <Play size={13} className="text-amber-600/70" />
           </span>
         )}
         <button
           onClick={handleRemove}
           disabled={removing}
-          className="flex h-8 w-8 items-center justify-center rounded-xl border border-[rgba(255,255,255,0.10)] bg-white/[0.04] transition-colors hover:border-rose-500/35 hover:bg-rose-500/10 disabled:opacity-50"
+          className="flex h-8 w-8 items-center justify-center rounded-xl border border-slate-200 bg-white transition-colors hover:border-red-200 hover:bg-red-50 disabled:opacity-50"
           title="Remover do caderno"
         >
           {removing
             ? <Loader2 size={13} className="text-slate-400 animate-spin" />
-            : <Trash2 size={13} className="text-slate-400 hover:text-rose-500 transition-colors" />
+            : <Trash2 size={13} className="text-slate-400 transition-colors hover:text-red-600" />
           }
         </button>
       </div>
@@ -264,9 +264,9 @@ function BuilderPanel({
   };
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col rounded-3xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117] max-lg:h-auto max-lg:flex-none">
-      <div className="shrink-0 space-y-3 border-b border-[rgba(255,255,255,0.08)] p-4">
-        <p className="text-xs uppercase tracking-widest text-slate-400">Adicionar questões</p>
+    <div className="card-elevated flex min-h-0 flex-1 flex-col max-lg:h-auto max-lg:flex-none">
+      <div className="shrink-0 space-y-3 border-b border-slate-200 p-4">
+        <p className="text-xs uppercase tracking-widest text-slate-500">Adicionar questões</p>
 
         <QuestaoFilterBar
           variant="caderno-panel"
@@ -282,12 +282,12 @@ function BuilderPanel({
           footer={
             <>
               {criterioLoteAtivo && filtradosCompletos.length > 0 ? (
-                <div className="border-t border-[rgba(255,255,255,0.08)] pt-3">
+                <div className="border-t border-slate-200 pt-3">
                   <button
                     type="button"
                     onClick={handleAddLote}
                     disabled={addingLote}
-                    className="flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-400/30 bg-[rgba(0,242,255,0.08)] px-3 py-2.5 text-xs font-black uppercase tracking-widest text-cyan-200 transition-colors hover:bg-[rgba(0,242,255,0.12)] disabled:opacity-50"
+                    className="btn-editorial-outline flex w-full items-center justify-center gap-2 py-2.5 text-xs font-bold uppercase tracking-widest disabled:opacity-50"
                   >
                     {addingLote ? (
                       <>
@@ -303,17 +303,17 @@ function BuilderPanel({
                     )}
                   </button>
                   {filtradosCompletos.length > 50 ? (
-                    <p className="mt-1.5 text-center text-[10px] font-bold text-slate-400">
+                    <p className="mt-1.5 text-center text-[10px] font-bold text-slate-500">
                       Lista abaixo mostra 50; o lote inclui as {filtradosCompletos.length} do filtro.
                     </p>
                   ) : null}
                 </div>
               ) : null}
               {!criterioLoteAtivo && modulos.length > 0 ? (
-                <p className="text-[10px] leading-relaxed text-slate-400">
-                  Escolha um <strong className="text-slate-300">assunto</strong> e/ou{' '}
-                  <strong className="text-slate-300">banca</strong> ou use a{' '}
-                  <strong className="text-slate-300">busca</strong> para ativar a opção de adicionar o lote inteiro de
+                <p className="text-[10px] leading-relaxed text-slate-500">
+                  Escolha um <strong className="text-slate-700">assunto</strong> e/ou{' '}
+                  <strong className="text-slate-700">banca</strong> ou use a{' '}
+                  <strong className="text-slate-700">busca</strong> para ativar a opção de adicionar o lote inteiro de
                   uma vez.
                 </p>
               ) : null}
@@ -325,7 +325,7 @@ function BuilderPanel({
       {/* Resultados: scroll interno no desktop; no mobile o sheet pai rola tudo */}
       <div className="min-h-0 flex-1 space-y-1 overflow-y-auto overscroll-y-contain p-2 touch-pan-y max-lg:flex-none max-lg:overflow-visible lg:min-h-0">
         {filtrados.length === 0 ? (
-          <div className="text-center py-8 text-slate-400 text-sm">
+          <div className="text-center py-8 text-slate-500 text-sm">
             {criterioLoteAtivo
               ? 'Nenhum resultado'
               : modulos.length === 0
@@ -339,7 +339,7 @@ function BuilderPanel({
               type="button"
               onClick={() => handleAdd(m)}
               disabled={adding === m.modulo_slug}
-              className="group flex w-full items-center gap-3 rounded-xl p-3 text-left transition-colors hover:bg-white/[0.04] disabled:opacity-60"
+              className="group flex w-full items-center gap-3 rounded-xl p-3 text-left transition-colors hover:bg-slate-50 disabled:opacity-60"
             >
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-1.5">
@@ -347,18 +347,18 @@ function BuilderPanel({
                     {m.banca || ''} {m.modulo_nome ? `— ${m.modulo_nome}` : ''}
                   </p>
                   {formatAvantCodigo(m.avant_codigo) && (
-                    <span className="shrink-0 rounded bg-[rgba(0,242,255,0.08)] px-1 py-0.5 font-mono text-[8px] font-black text-[#67e8f9]">
+                    <span className="shrink-0 rounded bg-slate-100 px-1 py-0.5 font-mono text-[8px] font-bold text-slate-600">
                       {formatAvantCodigo(m.avant_codigo)}
                     </span>
                   )}
                 </div>
-                <p className="truncate text-xs font-bold text-slate-300">{m.titulo_aula || m.modulo_slug}</p>
+                <p className="truncate text-xs font-bold text-slate-700">{m.titulo_aula || m.modulo_slug}</p>
               </div>
-              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white/[0.06] transition-colors group-hover:bg-[rgba(0,242,255,0.12)]">
+              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-slate-100 transition-colors group-hover:bg-[rgba(143,224,32,0.12)]">
                 {adding === m.modulo_slug ? (
-                  <Loader2 size={12} className="animate-spin text-cyan-400" aria-hidden />
+                  <Loader2 size={12} className="animate-spin text-[#3d6b0f]" aria-hidden />
                 ) : (
-                  <Plus size={12} className="text-slate-400 transition-colors group-hover:text-cyan-300" aria-hidden />
+                  <Plus size={12} className="text-slate-500 transition-colors group-hover:text-[#3d6b0f]" aria-hidden />
                 )}
               </div>
             </button>
@@ -367,7 +367,7 @@ function BuilderPanel({
       </div>
 
       {modulos.length > 0 && filtradosCompletos.length > 50 && filtrados.length === 50 && (
-        <p className="p-3 text-center text-[10px] font-bold text-slate-400">
+        <p className="p-3 text-center text-[10px] font-bold text-slate-500">
           Mostrando 50 de {filtradosCompletos.length} com este filtro — refine a busca
         </p>
       )}
@@ -540,14 +540,14 @@ export default function CadernoDetailClient({
   const highlightFilters = setupMode === 'setup';
 
   return (
-    <div className={cn(DASHBOARD_PAGE_ROOT, 'bg-[#010409]', pageBottomPadding)}>
-      <div className="sticky top-0 z-20 border-b border-[rgba(255,255,255,0.08)] bg-[#010409]/95 shadow-[0_8px_32px_-16px_rgba(0,0,0,0.5)] backdrop-blur-md supports-[backdrop-filter]:bg-[#010409]/90">
+    <div className={cn(DASHBOARD_PAGE_ROOT, 'bg-background', pageBottomPadding)}>
+      <div className="sticky top-0 z-20 border-b border-slate-200 bg-background/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
         <div className="bg-transparent px-6 py-5 md:px-10">
           <div className="mx-auto max-w-6xl">
             <button
               type="button"
               onClick={() => router.push('/cadernos')}
-              className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 transition-colors hover:text-slate-300"
+              className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 transition-colors hover:text-slate-700"
             >
               <ArrowLeft size={14} aria-hidden /> Meus cadernos
             </button>
@@ -555,20 +555,20 @@ export default function CadernoDetailClient({
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div>
                 <div className="mb-1 flex items-center gap-2">
-                  <BookMarked size={18} className="text-cyan-400" aria-hidden />
-                  <p className="text-[10px] font-black uppercase tracking-widest text-cyan-400">Caderno</p>
+                  <BookMarked size={18} className="text-[#3d6b0f]" aria-hidden />
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#3d6b0f]">Caderno</p>
                 </div>
-                <h1 className="text-3xl font-black italic tracking-tight text-white">{caderno.title}</h1>
-                {caderno.description && <p className="mt-0.5 text-sm text-slate-400">{caderno.description}</p>}
+                <h1 className="text-3xl font-bold tracking-tight text-slate-900">{caderno.title}</h1>
+                {caderno.description && <p className="mt-0.5 text-sm text-slate-500">{caderno.description}</p>}
                 <div className="mt-2 flex flex-wrap items-center gap-3">
                   <motion.span
                     animate={
                       headerPulse
-                        ? { scale: [1, 1.08, 1], color: ['#94a3b8', '#67e8f9', '#94a3b8'] }
+                        ? { scale: [1, 1.08, 1], color: ['#64748b', '#3d6b0f', '#64748b'] }
                         : { scale: 1 }
                     }
                     transition={{ duration: 0.6, ease: 'easeOut' }}
-                    className="text-xs font-bold text-slate-400"
+                    className="text-xs font-bold text-slate-500"
                   >
                     <Layers size={11} className="mr-1 inline" aria-hidden />
                     {items.length} {items.length === 1 ? 'questão' : 'questões'}
@@ -582,7 +582,7 @@ export default function CadernoDetailClient({
                           router.push(`/estudar/${firstSlug}?from=caderno&caderno_id=${caderno.id}`);
                         }
                       }}
-                      className="inline-flex items-center gap-1 rounded-full border border-cyan-400/30 bg-cyan-500/10 px-2.5 py-1 text-[10px] font-black uppercase tracking-widest text-cyan-200 transition-colors hover:bg-cyan-500/15"
+                      className="inline-flex items-center gap-1 rounded-full border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.10)] px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-[#3d6b0f] transition-colors hover:bg-[rgba(143,224,32,0.14)]"
                     >
                       <Zap size={10} aria-hidden />
                       Próximo passo: estudar
@@ -596,9 +596,9 @@ export default function CadernoDetailClient({
                 <Link
                   href={`/estudar/${firstSlug}?from=caderno&caderno_id=${caderno.id}`}
                   onClick={() => firstItemTip.markSeen()}
-                  className="flex items-center gap-2 rounded-2xl bg-cyan-500 px-5 py-3 text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-cyan-950/40 transition-all hover:bg-cyan-600"
+                  className="btn-editorial-primary flex items-center gap-2 px-5 py-3 text-xs font-bold uppercase tracking-widest"
                 >
-                  <Play size={15} aria-hidden /> ESTUDAR COM NEUROSLIDES
+                  <Play size={15} aria-hidden /> Estudar com NeuroSlides
                 </Link>
               ) : null}
             </div>
@@ -614,14 +614,14 @@ export default function CadernoDetailClient({
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
-              className="mb-6 flex flex-col gap-3 rounded-2xl border border-emerald-500/25 bg-emerald-500/[0.08] p-4 sm:flex-row sm:items-center sm:justify-between"
+              className="mb-6 flex flex-col gap-3 rounded-2xl border border-green-200 bg-green-50 p-4 sm:flex-row sm:items-center sm:justify-between"
               role="status"
             >
               <div className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-400" aria-hidden />
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-600" aria-hidden />
                 <div>
-                  <p className="text-sm font-bold text-white">Caderno pronto!</p>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-sm font-bold text-slate-900">Caderno pronto!</p>
+                  <p className="text-xs text-slate-600">
                     {items.length} {items.length === 1 ? 'questão adicionada' : 'questões adicionadas'} — comece pelo estudo reverso.
                   </p>
                 </div>
@@ -629,14 +629,14 @@ export default function CadernoDetailClient({
               <div className="flex items-center gap-2">
                 <Link
                   href={`/estudar/${firstSlug}?from=caderno&caderno_id=${caderno.id}`}
-                  className="inline-flex min-h-[40px] items-center justify-center rounded-xl bg-cyan-500 px-4 text-xs font-black uppercase tracking-widest text-slate-950 transition-colors hover:bg-cyan-400"
+                  className="btn-editorial-primary inline-flex min-h-[40px] items-center justify-center px-4 text-xs font-bold"
                 >
                   Estudar com NeuroSlides
                 </Link>
                 <button
                   type="button"
                   onClick={() => setSetupBannerVisible(false)}
-                  className="inline-flex min-h-[40px] items-center justify-center rounded-xl border border-white/10 px-3 text-xs font-semibold text-slate-400 hover:text-slate-200"
+                  className="btn-editorial-outline inline-flex min-h-[40px] items-center justify-center px-3 text-xs font-semibold"
                 >
                   Fechar
                 </button>
@@ -653,13 +653,13 @@ export default function CadernoDetailClient({
             </p>
 
             {items.length === 0 ? (
-              <div className="flex flex-1 flex-col items-center justify-center gap-4 rounded-3xl border border-dashed border-[rgba(255,255,255,0.15)] bg-[#0d1117] px-6 py-14 text-center">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-500/20 bg-cyan-500/10">
-                  <BookOpen size={28} className="text-cyan-300" aria-hidden />
+              <div className="flex flex-1 flex-col items-center justify-center gap-4 rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-6 py-14 text-center">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[rgba(143,224,32,0.25)] bg-[rgba(143,224,32,0.10)]">
+                  <BookOpen size={28} className="text-[#3d6b0f]" aria-hidden />
                 </div>
                 <div className="space-y-1">
-                  <p className="text-sm font-bold text-slate-300">Nenhuma questão ainda</p>
-                  <p className="mx-auto max-w-xs text-xs text-slate-400">
+                  <p className="text-sm font-bold text-slate-700">Nenhuma questão ainda</p>
+                  <p className="mx-auto max-w-xs text-xs text-slate-500">
                     Busque na vitrine ou use a sugestão rápida da banca do seu edital.
                   </p>
                 </div>
@@ -669,7 +669,7 @@ export default function CadernoDetailClient({
                     type="button"
                     onClick={() => void handleQuickAddBanca()}
                     disabled={quickAdding}
-                    className="inline-flex min-h-[44px] w-full max-w-sm items-center justify-center gap-2 rounded-2xl border border-cyan-400/30 bg-[rgba(0,242,255,0.08)] px-4 py-3 text-xs font-black uppercase tracking-widest text-cyan-200 transition-colors hover:bg-[rgba(0,242,255,0.12)] disabled:opacity-60"
+                    className="btn-editorial-outline inline-flex min-h-[44px] w-full max-w-sm items-center justify-center gap-2 px-4 py-3 text-xs font-bold uppercase tracking-widest disabled:opacity-60"
                   >
                     {quickAdding ? (
                       <>
@@ -688,7 +688,7 @@ export default function CadernoDetailClient({
                 <button
                   type="button"
                   onClick={openSearchPanel}
-                  className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-2xl bg-cyan-500 px-5 py-3 text-xs font-black uppercase tracking-widest text-slate-950 transition-colors hover:bg-cyan-400"
+                  className="btn-editorial-primary inline-flex min-h-[44px] items-center justify-center gap-2 px-5 py-3 text-xs font-bold uppercase tracking-widest"
                 >
                   <Search size={14} aria-hidden />
                   Inserir questões
@@ -727,8 +727,8 @@ export default function CadernoDetailClient({
                 highlightFilters={highlightFilters}
               />
             ) : (
-              <div className="flex min-h-[12rem] items-center justify-center rounded-3xl border border-white/10 bg-[#0d1117] p-6">
-                <Loader2 className="h-6 w-6 animate-spin text-cyan-400" aria-hidden />
+              <div className="card-elevated flex min-h-[12rem] items-center justify-center p-6">
+                <Loader2 className="h-6 w-6 animate-spin text-[#3d6b0f]" aria-hidden />
               </div>
             )}
           </SearchPanelToggle>

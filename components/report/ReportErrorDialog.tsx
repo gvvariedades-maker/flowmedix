@@ -159,11 +159,11 @@ export function ReportErrorDialog({
           onClick={() => setOpen(true)}
           aria-label={triggerLabel}
           className={cn(
-            'shrink-0 rounded-xl border-white/15 bg-white/[0.03] text-slate-200 hover:bg-white/[0.08] hover:text-white',
+            'shrink-0 rounded-xl border-slate-200 bg-white text-slate-700 hover:bg-slate-50 hover:text-slate-900',
             triggerClassName,
           )}
         >
-          <AlertTriangle size={16} className="text-amber-300 sm:mr-2" aria-hidden />
+          <AlertTriangle size={16} className="text-amber-600 sm:mr-2" aria-hidden />
           <span className="hidden sm:inline">{triggerLabel}</span>
         </Button>
       )}
@@ -174,7 +174,7 @@ export function ReportErrorDialog({
             type="button"
             tabIndex={-1}
             aria-label="Fechar modal de reporte"
-            className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"
+            className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"
             onClick={closeDialog}
           />
 
@@ -182,31 +182,31 @@ export function ReportErrorDialog({
             role="dialog"
             aria-modal="true"
             aria-labelledby="report-error-title"
-            className="relative z-10 w-full max-w-xl rounded-2xl border border-white/10 bg-[#0d1117] p-5 pb-safe shadow-2xl sm:p-6 sm:pb-6"
+            className="card-elevated-lg relative z-10 w-full max-w-xl rounded-2xl border border-slate-200 bg-white p-5 pb-safe shadow-xl sm:p-6 sm:pb-6"
           >
             <button
               type="button"
               onClick={closeDialog}
               disabled={submitting}
-              className="absolute right-3 top-3 flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-400 transition-colors hover:bg-white/10 hover:text-white disabled:opacity-50"
+              className="absolute right-3 top-3 flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 transition-colors hover:bg-slate-50 hover:text-slate-900 disabled:opacity-50"
               aria-label="Fechar"
             >
               <X size={16} aria-hidden />
             </button>
 
             <div className="mb-4 pr-8">
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-amber-300">
+              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-amber-700">
                 Feedback técnico
               </p>
-              <h2 id="report-error-title" className="mt-2 text-xl font-black tracking-tight text-white">
+              <h2 id="report-error-title" className="mt-2 text-xl font-black tracking-tight text-slate-900">
                 {title}
               </h2>
-              <p className="mt-2 text-sm text-slate-400">{description}</p>
+              <p className="mt-2 text-sm text-slate-600">{description}</p>
             </div>
 
             <div className="space-y-4">
               <div className="space-y-2">
-                <label htmlFor="report-error-category" className="text-sm font-semibold text-slate-200">
+                <label htmlFor="report-error-category" className="text-sm font-semibold text-slate-800">
                   Categoria
                 </label>
                 <Select
@@ -228,7 +228,7 @@ export function ReportErrorDialog({
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="report-error-description" className="text-sm font-semibold text-slate-200">
+                <label htmlFor="report-error-description" className="text-sm font-semibold text-slate-800">
                   Descrição
                 </label>
                 <textarea
@@ -246,7 +246,7 @@ export function ReportErrorDialog({
             </div>
 
             {inlineError ? (
-              <p className="mt-4 rounded-lg border border-rose-500/30 bg-rose-500/10 px-3 py-2 text-sm text-rose-300">
+              <p className="mt-4 rounded-lg border border-rose-200 bg-rose-50 px-3 py-2 text-sm text-rose-700">
                 {inlineError}
               </p>
             ) : null}

@@ -57,21 +57,21 @@ function ProStatusStrip({
   return (
     <div
       role="status"
-      className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl border border-[#00ff88]/15 bg-[#00ff88]/[0.04] px-3 py-2"
+      className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl border border-green-200 bg-green-50 px-3 py-2"
     >
       <span className="relative flex h-2 w-2 shrink-0">
         {!reducedMotion ? (
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#00ff88] opacity-60" />
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-60" />
         ) : null}
         <span
-          className="relative inline-flex h-2 w-2 rounded-full bg-[#00ff88] shadow-[0_0_8px_rgba(0,255,136,0.8)]"
+          className="relative inline-flex h-2 w-2 rounded-full bg-green-600"
           aria-label="Assinatura ativa"
         />
       </span>
-      <span className="font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-[#00ff88]">
+      <span className="font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-green-700">
         Pro ativo
       </span>
-      <span className="text-[10px] text-white/40">· acesso completo</span>
+      <span className="text-[10px] text-slate-500">· acesso completo</span>
       {inviteExpiry ? (
         <span className="w-full text-[10px] font-medium text-slate-500">
           Convite até {inviteExpiry}
@@ -89,19 +89,17 @@ function FreePlanPromo({ cidadeExibicao }: { cidadeExibicao: string }) {
       initial="hidden"
       animate="visible"
       variants={cardEnter}
-      className="overflow-hidden rounded-xl border border-white/10 bg-slate-900/70 p-3 shadow-[0_0_16px_rgba(0,242,255,0.04)] backdrop-blur-xl"
+      className="overflow-hidden rounded-xl border border-slate-200 bg-white p-3 shadow-sm"
     >
-      <p className="font-mono text-[9px] uppercase tracking-[0.12em] text-white/50">Assinatura</p>
+      <p className="font-mono text-[9px] uppercase tracking-[0.12em] text-slate-500">Assinatura</p>
       {showSeuPlano ? (
-        <p className="mt-1 text-sm font-bold text-slate-200">
+        <p className="mt-1 text-sm font-bold text-slate-900">
           Plano{' '}
-          <span className="bg-gradient-to-r from-[#00f2ff] to-[#00ff88] bg-clip-text text-transparent">
-            gratuito
-          </span>
+          <span className="text-[#3d6b0f]">gratuito</span>
         </p>
       ) : (
         <p
-          className="mt-1 text-sm font-bold leading-snug text-slate-200"
+          className="mt-1 text-sm font-bold leading-snug text-slate-900"
           style={{ fontFamily: 'var(--font-plus-jakarta-sans)' }}
         >
           {dynamicName}
@@ -109,15 +107,15 @@ function FreePlanPromo({ cidadeExibicao }: { cidadeExibicao: string }) {
       )}
       <div
         role="status"
-        className="mt-2 inline-flex items-center rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1"
+        className="mt-2 inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1"
       >
-        <span className="font-mono text-[9px] font-bold uppercase tracking-[0.12em] text-slate-400">
+        <span className="font-mono text-[9px] font-bold uppercase tracking-[0.12em] text-slate-500">
           Acesso limitado
         </span>
       </div>
       <Button
         asChild
-        className="mt-3 h-9 w-full rounded-xl bg-[#BEF264] font-mono text-[10px] font-bold uppercase tracking-wider text-slate-950 shadow-md shadow-lime-400/20 hover:bg-[#d4f879]"
+        className="mt-3 h-9 w-full rounded-xl bg-[#8fe020] font-mono text-[10px] font-bold uppercase tracking-wider text-[#1a2e05] shadow-sm hover:bg-[#7acc10]"
       >
         <Link href="/assinar-pro" className="gap-1.5">
           <Zap size={12} fill="currentColor" aria-hidden />

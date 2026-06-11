@@ -36,6 +36,12 @@ export function QuestaoFilterChips({
   const hasActiveFilters =
     bancasSelected.length > 0 || assuntosSelected.length > 0 || searchTerm.trim().length > 0;
 
+  const activeChipClass =
+    'inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.12)] text-xs font-medium text-[#3d6b0f]';
+
+  const inactiveChipClass =
+    'inline-flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 transition-colors hover:border-slate-300 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50';
+
   return (
     <div
       className={cn(
@@ -46,10 +52,7 @@ export function QuestaoFilterChips({
     >
       {bancasSelected.length > 0 ? (
         <div
-          className={cn(
-            'inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-[#00f2ff]/35 bg-[#00f2ff]/10 text-xs font-medium text-[#00f2ff]',
-            facetsLoading && !hasBancaOptions && 'opacity-50',
-          )}
+          className={cn(activeChipClass, facetsLoading && !hasBancaOptions && 'opacity-50')}
         >
           <button
             type="button"
@@ -57,7 +60,7 @@ export function QuestaoFilterChips({
             onClick={onOpenBanca}
             className="inline-flex min-h-[44px] max-w-[10rem] items-center gap-1.5 rounded-l-full py-1.5 pl-3 pr-1 disabled:cursor-not-allowed"
           >
-            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#00f2ff]" aria-hidden />
+            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#8fe020]" aria-hidden />
             <span className="truncate">{multiFilterResumo(bancasSelected, 'bancas')}</span>
           </button>
           <button
@@ -67,7 +70,7 @@ export function QuestaoFilterChips({
               e.stopPropagation();
               onClearBancas();
             }}
-            className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-r-full hover:bg-[#00f2ff]/20"
+            className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-r-full hover:bg-[rgba(143,224,32,0.2)]"
           >
             <X size={14} aria-hidden />
           </button>
@@ -77,7 +80,7 @@ export function QuestaoFilterChips({
           type="button"
           disabled={facetsLoading && !hasBancaOptions}
           onClick={onOpenBanca}
-          className="inline-flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
+          className={inactiveChipClass}
         >
           <SlidersHorizontal size={14} aria-hidden />
           Banca
@@ -86,10 +89,7 @@ export function QuestaoFilterChips({
 
       {assuntosSelected.length > 0 ? (
         <div
-          className={cn(
-            'inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-[#00f2ff]/35 bg-[#00f2ff]/10 text-xs font-medium text-[#00f2ff]',
-            facetsLoading && !hasAssuntoOptions && 'opacity-50',
-          )}
+          className={cn(activeChipClass, facetsLoading && !hasAssuntoOptions && 'opacity-50')}
         >
           <button
             type="button"
@@ -97,7 +97,7 @@ export function QuestaoFilterChips({
             onClick={onOpenAssunto}
             className="inline-flex min-h-[44px] max-w-[10rem] items-center gap-1.5 rounded-l-full py-1.5 pl-3 pr-1 disabled:cursor-not-allowed"
           >
-            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#00f2ff]" aria-hidden />
+            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#8fe020]" aria-hidden />
             <span className="truncate">{multiFilterResumo(assuntosSelected, 'assuntos')}</span>
           </button>
           <button
@@ -107,7 +107,7 @@ export function QuestaoFilterChips({
               e.stopPropagation();
               onClearAssuntos();
             }}
-            className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-r-full hover:bg-[#00f2ff]/20"
+            className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-r-full hover:bg-[rgba(143,224,32,0.2)]"
           >
             <X size={14} aria-hidden />
           </button>
@@ -117,7 +117,7 @@ export function QuestaoFilterChips({
           type="button"
           disabled={facetsLoading && !hasAssuntoOptions}
           onClick={onOpenAssunto}
-          className="inline-flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
+          className={inactiveChipClass}
         >
           <BookOpen size={14} aria-hidden />
           Assunto
@@ -128,7 +128,7 @@ export function QuestaoFilterChips({
         <button
           type="button"
           onClick={onClearAll}
-          className="inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:border-white/20 hover:text-slate-200"
+          className="inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 transition-colors hover:border-slate-300 hover:bg-slate-50"
         >
           Limpar
         </button>

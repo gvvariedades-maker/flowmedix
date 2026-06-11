@@ -42,7 +42,7 @@ const categoryLabels = {
 const categoryColors = {
   weak_area: 'border-rose-400/50 bg-rose-500/10 text-rose-400',
   error_pattern: 'border-amber-400/50 bg-amber-500/10 text-amber-400',
-  not_attempted: 'border-cyan-400/50 bg-cyan-500/10 text-cyan-400',
+  not_attempted: 'border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.08)] text-[#3d6b0f]',
   review_needed: 'border-indigo-400/50 bg-indigo-500/10 text-indigo-400',
   spaced_repetition: 'border-emerald-400/50 bg-emerald-500/10 text-emerald-400',
 };

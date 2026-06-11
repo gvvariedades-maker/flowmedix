@@ -1,0 +1,32 @@
+{
+  "source": "https://gabaritaenfermagem.com.br/",
+  "capturedAt": "2026-06-10",
+  "tool": "firecrawl_scrape branding",
+  "colorScheme": "light",
+  "colors": {
+    "primary": "#F59B0A",
+    "secondary": "#FFFBEB",
+    "accent": "#16A249",
+    "background": "#F3F3F2",
+    "textPrimary": "#1C1917",
+    "link": "#16A249"
+  },
+  "typography": {
+    "primary": "Source Sans Pro",
+    "heading": "Source Sans Pro",
+    "h1": "72px",
+    "h2": "36px",
+    "body": "20px"
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "6px"
+  },
+  "buttons": {
+    "primary": { "bg": "#F59B0A", "text": "#FFFFFF", "radius": "16px", "label": "Assinar PRO" },
+    "secondary": { "bg": "#F3F3F2", "text": "#1C1917", "border": "#D3D1CF", "radius": "16px", "label": "Começar Grátis" }
+  },
+  "personality": { "tone": "professional", "energy": "medium", "targetAudience": "Healthcare professionals preparing for exams" },
+  "framework": "tailwind",
+  "confidence": 0.925
+}

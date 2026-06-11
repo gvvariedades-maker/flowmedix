@@ -43,7 +43,7 @@ export const SyllableScanner: React.FC<SyllableScannerProps> = ({ word, tonicInd
       <motion.div 
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className={`relative z-10 w-full max-w-3xl mx-auto p-6 md:p-10 lg:p-12 bg-slate-900/80 rounded-[1.5rem] md:rounded-[2.5rem] border ${theme.borderColor} backdrop-blur-xl shadow-2xl my-auto`}
+        className={`relative z-10 w-full max-w-3xl mx-auto p-6 md:p-10 lg:p-12 bg-slate-900/92 rounded-[1.5rem] md:rounded-[2.5rem] border ${theme.borderColor} shadow-md my-auto`}
       >
         <div className={`mb-10 flex items-center gap-3 ${theme.textPrimary}`}>
           <Zap size={24} className="shrink-0 animate-pulse" />
@@ -69,7 +69,7 @@ export const SyllableScanner: React.FC<SyllableScannerProps> = ({ word, tonicInd
                   relative rounded-2xl px-6 py-4 text-2xl font-black transition-all duration-500
                   md:px-8 md:py-5 md:text-3xl
                   ${isTonic 
-                    ? `bg-gradient-to-br ${theme.primary} text-white shadow-[0_0_40px_-10px_${theme.glow}] border-2 border-white/30` 
+                    ? `bg-gradient-to-br ${theme.primary} text-white border-2 border-white/20` 
                     : 'bg-slate-800/50 text-slate-500 border border-slate-700/50'}
                 `}
               >
@@ -93,9 +93,9 @@ export const SyllableScanner: React.FC<SyllableScannerProps> = ({ word, tonicInd
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.8 }}
-          className={`bg-gradient-to-br ${theme.secondary}/20 border ${theme.borderColor} p-6 rounded-2xl flex items-start gap-4 backdrop-blur-sm`}
+          className={`bg-gradient-to-br ${theme.secondary}/15 border ${theme.borderColor} p-6 rounded-2xl flex items-start gap-4 bg-slate-900/60`}
         >
-          <div className={`bg-gradient-to-br ${theme.primary} p-3 rounded-xl text-white shadow-lg`}>
+          <div className={`bg-gradient-to-br ${theme.primary} p-3 rounded-xl text-white`}>
             <CheckCircle2 size={28} />
           </div>
           <div>

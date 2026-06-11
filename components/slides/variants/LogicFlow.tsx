@@ -26,10 +26,10 @@ interface LogicFlowProps {
 /** Destaca a expressão "estudo reverso" (qualquer caixa) no texto do passo. */
 const ESTUDO_REVERSO_RE = /(estudo\s+reverso)/gi;
 
-function renderStepContent(text: string, isRevealed: boolean) {
+function renderStepContent(text: string, isRevealed: boolean, theme: ThemeColors) {
   const highlightClass = isRevealed
-    ? 'font-bold text-cyan-300 [text-shadow:0_0_14px_rgba(34,211,238,0.5)]'
-    : 'font-semibold text-cyan-400/35';
+    ? `font-bold ${theme.textSecondary}`
+    : 'font-semibold text-slate-500/70';
   const parts = text.split(ESTUDO_REVERSO_RE);
   return parts.map((part, i) => {
     if (/^estudo\s+reverso$/i.test(part)) {
@@ -48,15 +48,16 @@ function renderStepText(
   isRevealed: boolean,
   isFuture: boolean,
   isTapMode: boolean,
+  theme: ThemeColors,
 ) {
   if (isTapMode && isFuture) {
     return (
-      <span className="select-none text-slate-600 blur-[6px]" aria-hidden>
+      <span className="select-none text-slate-600/80" aria-hidden>
         ••••••••••••••••
       </span>
     );
   }
-  return renderStepContent(step, isRevealed);
+  return renderStepContent(step, isRevealed, theme);
 }
 
 function LogicFlowTapBadge({ visible }: { visible: boolean }) {
@@ -65,7 +66,7 @@ function LogicFlowTapBadge({ visible }: { visible: boolean }) {
     <motion.span
       initial={{ opacity: 0, y: 4 }}
       animate={{ opacity: 1, y: 0 }}
-      className="pointer-events-none absolute -top-2 right-3 z-10 inline-flex items-center gap-1 rounded-full bg-violet-500 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wide text-white shadow-lg shadow-violet-500/40"
+      className="pointer-events-none absolute -top-2 right-3 z-10 inline-flex items-center gap-1 rounded-full bg-violet-600/90 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wide text-white"
     >
       <Hand className="h-3 w-3 shrink-0" aria-hidden />
       Toque aqui
@@ -130,7 +131,7 @@ export const LogicFlow = ({
 
   const baseBg = (
     <>
-      <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-60`} />
+      <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-40`} />
       <motion.div
         className="absolute inset-0 opacity-5"
         style={{
@@ -183,10 +184,10 @@ export const LogicFlow = ({
                     }
                   }}
                   aria-label={canTap ? 'Toque para revelar o próximo passo' : undefined}
-                  className={`relative flex min-h-11 min-w-0 items-start gap-3 rounded-xl border-2 ${theme.borderColor} bg-slate-900/80 px-3 py-2.5 backdrop-blur-xl ${
-                    canTap ? 'cursor-pointer hover:border-violet-400/50' : ''
-                  } ${active ? 'ring-2 ring-violet-400/60 shadow-[0_0_24px_rgba(139,92,246,0.25)]' : ''}`}
-                  style={{ borderColor: revealed ? theme.glow : 'rgba(255,255,255,0.1)' }}
+                  className={`relative flex min-h-11 min-w-0 items-start gap-3 rounded-xl border-2 ${theme.borderColor} bg-slate-900/92 px-3 py-2.5 ${
+                    canTap ? 'cursor-pointer hover:border-violet-400/40' : ''
+                  } ${active ? 'ring-2 ring-violet-400/40' : ''}`}
+                  style={{ borderColor: revealed ? theme.glow : 'rgba(255,255,255,0.08)' }}
                 >
                   <LogicFlowTapBadge
                     visible={canTap && index < normalizedSteps.length - 1}
@@ -201,7 +202,7 @@ export const LogicFlow = ({
                       revealed ? 'text-slate-50' : 'text-slate-500/70'
                     }`}
                   >
-                    {renderStepText(step, revealed, future, isTapMode)}
+                    {renderStepText(step, revealed, future, isTapMode, theme)}
                   </p>
                 </motion.div>
                 {!isLast && (
@@ -253,12 +254,11 @@ export const LogicFlow = ({
                   }
                 }}
                 aria-label={canTap ? 'Toque para revelar o próximo passo' : undefined}
-                className={`relative min-h-11 rounded-2xl border-2 ${theme.borderColor} bg-slate-900/80 p-4 backdrop-blur-xl transition-all ${
-                  canTap ? 'cursor-pointer hover:border-violet-400/50' : ''
-                } ${isActiveHighlight || active ? 'ring-2 ring-offset-2 ring-offset-slate-900 ring-violet-400/60' : ''}`}
+                className={`relative min-h-11 rounded-2xl border-2 ${theme.borderColor} bg-slate-900/92 p-4 transition-all ${
+                  canTap ? 'cursor-pointer hover:border-violet-400/40' : ''
+                } ${isActiveHighlight || active ? 'ring-2 ring-offset-2 ring-offset-slate-900 ring-violet-400/40' : ''}`}
                 style={{
-                  borderColor: revealed ? theme.glow : 'rgba(255,255,255,0.1)',
-                  boxShadow: revealed ? `0 0 20px ${theme.glow}40` : canTap ? '0 0 24px rgba(139,92,246,0.25)' : 'none',
+                  borderColor: revealed ? theme.glow : 'rgba(255,255,255,0.08)',
                 }}
               >
                 <LogicFlowTapBadge
@@ -274,7 +274,7 @@ export const LogicFlow = ({
                     revealed ? 'text-slate-50' : 'text-slate-500/70'
                   }`}
                 >
-                  {renderStepText(step, revealed, future, isTapMode)}
+                  {renderStepText(step, revealed, future, isTapMode, theme)}
                 </p>
               </motion.div>
             );
@@ -288,7 +288,7 @@ export const LogicFlow = ({
   // VARIANTE PADRÃO: VERTICAL
   return (
     <motion.div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-stretch justify-start p-4 md:p-6 lg:p-8">
-      <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-60`} />
+      <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-40`} />
       <motion.div
         className="absolute inset-0 opacity-5"
         style={{
@@ -330,21 +330,6 @@ export const LogicFlow = ({
                   className="relative"
                 >
                   <motion.div
-                    animate={{
-                      scale: isActiveHighlight ? [1, 1.01, 1] : 1,
-                      boxShadow: isActiveHighlight
-                        ? [
-                            `0 0 20px ${theme.glow}`,
-                            `0 0 40px ${theme.glow}`,
-                            `0 0 20px ${theme.glow}`,
-                          ]
-                        : `0 0 15px ${theme.glow}40`,
-                    }}
-                    transition={{
-                      duration: 0.6,
-                      repeat: isActiveHighlight ? 2 : 0,
-                      repeatDelay: 1,
-                    }}
                     role={canTap ? 'button' : undefined}
                     tabIndex={canTap ? 0 : undefined}
                     aria-label={canTap ? 'Toque para revelar o próximo passo' : undefined}
@@ -357,15 +342,15 @@ export const LogicFlow = ({
                     }}
                     className={`
                       relative min-h-11 rounded-2xl p-3 md:p-5 min-w-0
-                      bg-slate-900/80 backdrop-blur-xl
+                      bg-slate-900/92
                       border-2 ${theme.borderColor}
                       transition-all duration-300
                       ${revealed ? 'opacity-100' : 'opacity-30'}
-                      ${isActiveHighlight || active ? 'ring-2 ring-offset-2 ring-offset-slate-900 ring-violet-400/60 shadow-[0_0_24px_rgba(139,92,246,0.25)]' : ''}
-                      ${canTap ? 'cursor-pointer hover:border-violet-400/50' : ''}
+                      ${isActiveHighlight || active ? 'ring-2 ring-offset-2 ring-offset-slate-900 ring-violet-400/40' : ''}
+                      ${canTap ? 'cursor-pointer hover:border-violet-400/40' : ''}
                     `}
                     style={{
-                      borderColor: revealed ? theme.glow : 'rgba(255,255,255,0.1)',
+                      borderColor: revealed ? theme.glow : 'rgba(255,255,255,0.08)',
                     }}
                   >
                     <LogicFlowTapBadge
@@ -383,7 +368,6 @@ export const LogicFlow = ({
                           md:h-12 md:w-12 font-bold text-base md:text-lg
                           bg-gradient-to-br ${theme.primary} text-slate-900 relative
                         `}
-                        style={{ boxShadow: `0 0 20px ${theme.glow}` }}
                       >
                         {revealed ? (
                           <motion.div
@@ -409,22 +393,22 @@ export const LogicFlow = ({
                             font-body text-base font-semibold leading-relaxed
                             break-words [overflow-wrap:anywhere]
                             transition-colors duration-300
-                            ${revealed ? 'text-slate-50 [text-shadow:0_1px_2px_rgba(0,0,0,0.4)]' : 'text-slate-500/60'}
+                            ${revealed ? 'text-slate-50' : 'text-slate-500/60'}
                           `}
                         >
-                          {renderStepText(step, revealed, future, isTapMode)}
+                          {renderStepText(step, revealed, future, isTapMode, theme)}
                         </p>
                       </motion.div>
                     </motion.div>
 
                     {revealed && !isTapMode && (
                       <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: [0, 1, 0], scale: [0.8, 1.2, 1.5] }}
-                        transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 0.35 }}
+                        transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}
                         className="pointer-events-none absolute inset-0 rounded-2xl"
                         style={{
-                          background: `radial-gradient(circle, ${theme.glow}40 0%, transparent 70%)`,
+                          background: `radial-gradient(circle, ${theme.glow}18 0%, transparent 70%)`,
                         }}
                       />
                     )}
@@ -447,7 +431,6 @@ export const LogicFlow = ({
                           className="absolute w-0.5"
                           style={{
                             background: `linear-gradient(to bottom, ${theme.glow}, transparent)`,
-                            boxShadow: `0 0 10px ${theme.glow}`,
                           }}
                         />
                       )}

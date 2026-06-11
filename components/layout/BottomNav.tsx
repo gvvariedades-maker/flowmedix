@@ -25,7 +25,7 @@ import {
 } from '@/components/layout/MenuNavIconChip';
 
 const NAV_ITEMS = [
-  { label: 'Estudar', href: '/estudar', icon: LayoutDashboard, accent: 'cyan' },
+  { label: 'Estudar', href: '/estudar', icon: LayoutDashboard, accent: 'brand' },
   { label: 'Simulados', href: '/simulados', icon: ListChecks, accent: 'rose' },
   { label: 'Progresso', href: '/progresso', icon: BarChart3, accent: 'emerald' },
   { label: 'Cadernos', href: '/cadernos', icon: BookMarked, accent: 'indigo' },
@@ -77,7 +77,7 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
         ref={navRef}
         className={cn(
           MOBILE_BOTTOM_NAV_SHELL,
-          'grid min-h-[5rem] grid-cols-5 border-t border-white/[0.08] bg-[#06090f]/95 pb-safe backdrop-blur-xl',
+          'grid min-h-[5rem] grid-cols-5 border-t border-slate-200 bg-white/95 pb-safe backdrop-blur-xl',
           MOBILE_BOTTOM_NAV_Z,
           mobileOverlayBlocksNav && 'pointer-events-none',
         )}
@@ -101,7 +101,7 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
               <span
                 className={cn(
                   'text-[10px] font-semibold tracking-wide',
-                  isActive ? styles.labelActive : 'text-slate-400',
+                  isActive ? styles.labelActive : 'text-slate-500',
                 )}
               >
                 {label}
@@ -109,7 +109,7 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
               {isActive ? (
                 <motion.div
                   layoutId="bottom-nav-indicator"
-                  className={cn('mt-0.5 h-[2px] w-6 rounded-full shadow-[0_0_6px_currentColor]', styles.bar)}
+                  className={cn('mt-0.5 h-[2px] w-6 rounded-full', styles.bar)}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                 />
@@ -141,7 +141,7 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
           <span
             className={cn(
               'text-[10px] font-semibold tracking-wide',
-              menuOpen || maisActive ? maisAccent.labelActive : 'text-slate-400',
+              menuOpen || maisActive ? maisAccent.labelActive : 'text-slate-500',
             )}
           >
             Mais
@@ -149,7 +149,7 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
           {maisActive ? (
             <motion.div
               layoutId="bottom-nav-indicator"
-              className={cn('mt-0.5 h-[2px] w-6 rounded-full shadow-[0_0_6px_currentColor]', maisAccent.bar)}
+              className={cn('mt-0.5 h-[2px] w-6 rounded-full', maisAccent.bar)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             />

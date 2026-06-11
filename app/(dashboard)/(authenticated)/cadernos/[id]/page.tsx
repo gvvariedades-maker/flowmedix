@@ -10,7 +10,7 @@ import {
 import { resolveAccessibleModulosWhenEmpty } from '@/lib/concursos/resolveCatalogWhenEmpty';
 import CadernoDetailClient from './CadernoDetailClient';
 import CadernoDetailMetrics from '@/components/dashboard/cadernos/CadernoDetailMetrics';
-import CadernoReverseStudyBadge from '@/components/dashboard/cadernos/CadernoReverseStudyBadge';
+import { CadernoReverseStudyBadge } from '@/components/dashboard/cadernos/CadernoReverseStudyBadge';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
 
 export interface NotebookItem {

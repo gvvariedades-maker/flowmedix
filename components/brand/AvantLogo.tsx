@@ -18,10 +18,14 @@ import {
 
 export type AvantLogoVariant = 'lockup' | 'icon';
 
+/** `light` = auth editorial (#f8fafc): lockup sem chip, wordmark escuro, verde só no raio */
+export type AvantLogoTone = 'default' | 'light';
+
 export type AvantLogoProps = {
   variant?: AvantLogoVariant;
   size?: AvantLogoSizeToken;
-  /** Default: true apenas em lockup + size lg */
+  tone?: AvantLogoTone;
+  /** Default: true apenas em lockup cyber + size lg */
   animated?: boolean;
   href?: string;
   className?: string;
@@ -88,21 +92,45 @@ function AvantLogoIcon({
   );
 }
 
-function AvantLogoWordmark({ size }: { size: AvantLogoSizeToken }) {
+function AvantLogoWordmark({
+  size,
+  tone,
+}: {
+  size: AvantLogoSizeToken;
+  tone: AvantLogoTone;
+}) {
   const fontSize = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.wordmark.fontSize, size);
   const letterSpacing = Math.round(
     AVANT_LOGO_DIMENSIONS.wordmark.letterSpacingPx * (fontSize / AVANT_LOGO_DIMENSIONS.wordmark.fontSize),
   );
 
+  const baseStyle = {
+    fontFamily: AVANT_LOGO_FONT_FAMILY,
+    fontSize,
+    fontWeight: AVANT_LOGO_DIMENSIONS.wordmark.fontWeight,
+    lineHeight: AVANT_LOGO_DIMENSIONS.wordmark.lineHeight,
+    letterSpacing: `${letterSpacing}px`,
+  };
+
+  if (tone === 'light') {
+    return (
+      <span
+        className="shrink-0 select-none uppercase"
+        style={{
+          ...baseStyle,
+          color: AVANT_LOGO_COLORS.wordmarkLight,
+        }}
+      >
+        AVANT
+      </span>
+    );
+  }
+
   return (
     <span
       className="shrink-0 select-none uppercase"
       style={{
-        fontFamily: AVANT_LOGO_FONT_FAMILY,
-        fontSize,
-        fontWeight: AVANT_LOGO_DIMENSIONS.wordmark.fontWeight,
-        lineHeight: AVANT_LOGO_DIMENSIONS.wordmark.lineHeight,
-        letterSpacing: `${letterSpacing}px`,
+        ...baseStyle,
         backgroundImage: AVANT_LOGO_GRADIENTS.wordmark,
         WebkitBackgroundClip: 'text',
         backgroundClip: 'text',
@@ -118,6 +146,7 @@ function AvantLogoWordmark({ size }: { size: AvantLogoSizeToken }) {
 export function AvantLogo({
   variant = 'lockup',
   size = 'lg',
+  tone = 'default',
   animated,
   href,
   className,
@@ -125,13 +154,25 @@ export function AvantLogo({
 }: AvantLogoProps) {
   const uid = useId().replace(/:/g, '');
   const boltGradientId = `avant-bolt-${uid}`;
-  const pulse = animated ?? (variant === 'lockup' && size === 'lg');
+  const isLight = tone === 'light';
+  const pulse =
+    animated ?? (variant === 'lockup' && size === 'lg' && tone === 'default');
 
   const iconOnly = variant === 'icon';
 
-  const content = iconOnly ? (
-    <AvantLogoIcon size={size} gradientId={boltGradientId} />
-  ) : (
+  const lightLockup = (
+    <div
+      className="inline-flex shrink-0 items-center"
+      style={{
+        gap: scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.lockupInner.gap, size),
+      }}
+    >
+      <AvantLogoIcon size={size} gradientId={boltGradientId} />
+      <AvantLogoWordmark size={size} tone={tone} />
+    </div>
+  );
+
+  const cyberLockup = (
     <div
       className={cn(
         'inline-flex shrink-0',
@@ -165,9 +206,17 @@ export function AvantLogo({
           aria-hidden
         />
         <AvantLogoIcon size={size} gradientId={boltGradientId} />
-        <AvantLogoWordmark size={size} />
+        <AvantLogoWordmark size={size} tone={tone} />
       </div>
     </div>
+  );
+
+  const content = iconOnly ? (
+    <AvantLogoIcon size={size} gradientId={boltGradientId} />
+  ) : isLight ? (
+    lightLockup
+  ) : (
+    cyberLockup
   );
 
   const rootClass = cn('inline-flex shrink-0 items-center', className);

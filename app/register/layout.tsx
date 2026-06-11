@@ -8,6 +8,17 @@ export const metadata: Metadata = {
   },
 };
 
+const editorialThemeScript = `
+  (function () {
+    document.documentElement.dataset.theme = 'editorial';
+  })();
+`;
+
 export default function RegisterLayout({ children }: { children: React.ReactNode }) {
-  return children;
+  return (
+    <>
+      <script dangerouslySetInnerHTML={{ __html: editorialThemeScript }} />
+      {children}
+    </>
+  );
 }

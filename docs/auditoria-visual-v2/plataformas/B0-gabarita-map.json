@@ -1,0 +1,1737 @@
+{
+  "capturedAt": "2026-06-10",
+  "inventories": [
+    {
+      "path": "/practice",
+      "url": "https://gabaritaenfermagem.com.br/practice",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "Resolver Questões",
+        "Selecione uma Disciplina",
+        "Comece por Aqui!"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Upgrade PRO",
+        "Sair",
+        "Todas as bancas",
+        "on",
+        "Especifica de EnfermagemQuestões e conteúdos para estudo7059 questões",
+        "HUBrasil/EBSERHQuestões e conteúdos para estudo66 questões",
+        "InformáticaHardware, software e aplicativos de escritório504 questões",
+        "Legislação da EBSERHEstatuto, regimento e normas da empresa19 questões",
+        "Legislação do SUSPrincípios, diretrizes e organização do SUS855 questões",
+        "Legislação PúblicaQuestões e conteúdos para estudo6 questões",
+        "PortuguêsGramática, interpretação de texto e redação1030 questões",
+        "Raciocínio Lógico e MatemáticoLógica proposicional e raciocínio analítico179 questões",
+        "Close"
+      ],
+      "links": [
+        {
+          "text": "Como usar o app",
+          "href": "https://gabaritaenfermagem.com.br/tutorials"
+        },
+        {
+          "text": "Início",
+          "href": "https://gabaritaenfermagem.com.br/dashboard"
+        },
+        {
+          "text": "Resolver Questões",
+          "href": "https://gabaritaenfermagem.com.br/practice"
+        },
+        {
+          "text": "Caderno de Erros",
+          "href": "https://gabaritaenfermagem.com.br/error-log"
+        },
+        {
+          "text": "Flashcards",
+          "href": "https://gabaritaenfermagem.com.br/flashcards"
+        },
+        {
+          "text": "Resumos com IA",
+          "href": "https://gabaritaenfermagem.com.br/study-resources"
+        },
+        {
+          "text": "Lembretes",
+          "href": "https://gabaritaenfermagem.com.br/reminders"
+        },
+        {
+          "text": "Transcrição de Vídeo",
+          "href": "https://gabaritaenfermagem.com.br/youtube-transcription"
+        },
+        {
+          "text": "Ajuda",
+          "href": "https://gabaritaenfermagem.com.br/help"
+        },
+        {
+          "text": "Prof. Rebeca IA",
+          "href": "https://gabaritaenfermagem.com.br/chat-ia"
+        },
+        {
+          "text": "Simulados",
+          "href": "https://gabaritaenfermagem.com.br/mock-exam"
+        },
+        {
+          "text": "Plano de Estudos",
+          "href": "https://gabaritaenfermagem.com.br/study-plan"
+        },
+        {
+          "text": "Corretor de Redação/Discursiva com IA",
+          "href": "https://gabaritaenfermagem.com.br/essay-correction"
+        },
+        {
+          "text": "Curso Convertendo Estudo",
+          "href": "https://gabaritaenfermagem.com.br/courses"
+        },
+        {
+          "text": "gvConfigurações",
+          "href": "https://gabaritaenfermagem.com.br/profile"
+        },
+        {
+          "text": "Gabarita Enfermagem",
+          "href": "https://gabaritaenfermagem.com.br/"
+        }
+      ],
+      "labels": [
+        "Incluir IA",
+        "Mostrar respondidas",
+        "Não mostrar novamente"
+      ],
+      "placeholders": [],
+      "selects": [],
+      "filterChips": [
+        "Como usar o app",
+        "Início",
+        "Resolver Questões",
+        "Caderno de Erros",
+        "Flashcards",
+        "Resumos com IA",
+        "Lembretes",
+        "Transcrição de Vídeo",
+        "Ajuda",
+        "Prof. Rebeca IA",
+        "Simulados",
+        "Plano de Estudos",
+        "Corretor de Redação/Discursiva com IA",
+        "Curso Convertendo Estudo",
+        "Todas as bancas",
+        "Comece por Aqui!Não mostrar novamenteClose"
+      ],
+      "tabs": []
+    },
+    {
+      "path": "/dashboard",
+      "url": "https://gabaritaenfermagem.com.br/dashboard",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "gvvariedades2",
+        "Tarefas de Hoje",
+        "Análise de Desempenho",
+        "Seu Desempenho",
+        "Revisão Pendente",
+        "Comece por Aqui!"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Upgrade PRO",
+        "Sair",
+        "on",
+        "Close"
+      ],
+      "links": [
+        {
+          "text": "Como usar o app",
+          "href": "https://gabaritaenfermagem.com.br/tutorials"
+        },
+        {
+          "text": "Início",
+          "href": "https://gabaritaenfermagem.com.br/dashboard"
+        },
+        {
+          "text": "Resolver Questões",
+          "href": "https://gabaritaenfermagem.com.br/practice"
+        },
+        {
+          "text": "Caderno de Erros",
+          "href": "https://gabaritaenfermagem.com.br/error-log"
+        },
+        {
+          "text": "Flashcards",
+          "href": "https://gabaritaenfermagem.com.br/flashcards"
+        },
+        {
+          "text": "Resumos com IA",
+          "href": "https://gabaritaenfermagem.com.br/study-resources"
+        },
+        {
+          "text": "Lembretes",
+          "href": "https://gabaritaenfermagem.com.br/reminders"
+        },
+        {
+          "text": "Transcrição de Vídeo",
+          "href": "https://gabaritaenfermagem.com.br/youtube-transcription"
+        },
+        {
+          "text": "Ajuda",
+          "href": "https://gabaritaenfermagem.com.br/help"
+        },
+        {
+          "text": "Prof. Rebeca IA",
+          "href": "https://gabaritaenfermagem.com.br/chat-ia"
+        },
+        {
+          "text": "Simulados",
+          "href": "https://gabaritaenfermagem.com.br/mock-exam"
+        },
+        {
+          "text": "Plano de Estudos",
+          "href": "https://gabaritaenfermagem.com.br/study-plan"
+        },
+        {
+          "text": "Corretor de Redação/Discursiva com IA",
+          "href": "https://gabaritaenfermagem.com.br/essay-correction"
+        },
+        {
+          "text": "Curso Convertendo Estudo",
+          "href": "https://gabaritaenfermagem.com.br/courses"
+        },
+        {
+          "text": "gvvariedades2Configurações",
+          "href": "https://gabaritaenfermagem.com.br/profile"
+        },
+        {
+          "text": "Gabarita Enfermagem",
+          "href": "https://gabaritaenfermagem.com.br/"
+        },
+        {
+          "text": "Ver todosVer",
+          "href": "https://gabaritaenfermagem.com.br/performance"
+        },
+        {
+          "text": "Revisar Agora",
+          "href": "https://gabaritaenfermagem.com.br/error-log"
+        }
+      ],
+      "labels": [
+        "Não mostrar novamente"
+      ],
+      "placeholders": [],
+      "selects": [],
+      "filterChips": [
+        "Como usar o app",
+        "Início",
+        "Resolver Questões",
+        "Caderno de Erros",
+        "Flashcards",
+        "Resumos com IA",
+        "Lembretes",
+        "Transcrição de Vídeo",
+        "Ajuda",
+        "Prof. Rebeca IA",
+        "Simulados",
+        "Plano de Estudos",
+        "Corretor de Redação/Discursiva com IA",
+        "Curso Convertendo Estudo",
+        "Comece por Aqui!Não mostrar novamenteClose"
+      ],
+      "tabs": []
+    },
+    {
+      "path": "/errors",
+      "url": "https://gabaritaenfermagem.com.br/errors",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "404"
+      ],
+      "navLinks": [],
+      "buttons": [],
+      "links": [
+        {
+          "text": "Return to Home",
+          "href": "https://gabaritaenfermagem.com.br/"
+        }
+      ],
+      "labels": [],
+      "placeholders": [],
+      "selects": [],
+      "filterChips": [],
+      "tabs": []
+    },
+    {
+      "path": "/simulations",
+      "url": "https://gabaritaenfermagem.com.br/simulations",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "404"
+      ],
+      "navLinks": [],
+      "buttons": [],
+      "links": [
+        {
+          "text": "Return to Home",
+          "href": "https://gabaritaenfermagem.com.br/"
+        }
+      ],
+      "labels": [],
+      "placeholders": [],
+      "selects": [],
+      "filterChips": [],
+      "tabs": []
+    },
+    {
+      "path": "/settings",
+      "url": "https://gabaritaenfermagem.com.br/settings",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "404"
+      ],
+      "navLinks": [],
+      "buttons": [],
+      "links": [
+        {
+          "text": "Return to Home",
+          "href": "https://gabaritaenfermagem.com.br/"
+        }
+      ],
+      "labels": [],
+      "placeholders": [],
+      "selects": [],
+      "filterChips": [],
+      "tabs": []
+    },
+    {
+      "path": "/",
+      "url": "https://gabaritaenfermagem.com.br/",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "Sua aprovação em Concursos de Saúde começa aqui",
+        "Tudo que você precisa para ser aprovado",
+        "Plano de Estudos IA",
+        "+8.000 Questões Reais",
+        "Caderno de Erros SRS",
+        "Dashboard Analítico",
+        "Simulados Cronometrados",
+        "Flashcards Inteligentes",
+        "Prof. Rebeca IA",
+        "Resumos com IA",
+        "Mapas Mentais",
+        "Correção de Redação IA",
+        "Perfil por Banca",
+        "Lembretes de Estudo",
+        "\"Quem aprende, não depende!\"",
+        "Rebeca Rocha",
+        "Escolha o plano ideal para sua aprovação",
+        "Gratuito",
+        "PRO",
+        "Garantia de Satisfação",
+        "Quem usa, aprova",
+        "Pronto para garantir sua aprovação?"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Começar Gratuitamente",
+        "Mensal",
+        "Anual-50%",
+        "Ir para Dashboard",
+        "Assinar PRO",
+        "Começar Agora - É Grátis"
+      ],
+      "links": [
+        {
+          "text": "GabaritaEnfermagem",
+          "href": "https://gabaritaenfermagem.com.br/"
+        },
+        {
+          "text": "Entrar como PRO",
+          "href": "https://gabaritaenfermagem.com.br/auth?mode=pro"
+        },
+        {
+          "text": "Política de Privacidade",
+          "href": "https://gabaritaenfermagem.com.br/privacy"
+        },
+        {
+          "text": "Termos de Serviço",
+          "href": "https://gabaritaenfermagem.com.br/terms"
+        }
+      ],
+      "labels": [],
+      "placeholders": [],
+      "selects": [],
+      "filterChips": [],
+      "tabs": []
+    },
+    {
+      "path": "/chat-ia",
+      "url": "https://gabaritaenfermagem.com.br/chat-ia",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "Prof. Rebeca IA",
+        "Olá! Sou a Prof. Rebeca IA 👋",
+        "Comece por Aqui!"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Upgrade PRO",
+        "Sair",
+        "Quais são as atualizações mais recentes da enfermagem?",
+        "Quais são os melhores métodos e técnicas de memorização e aprendizagem?",
+        "Qual o perfil da banca para concursos de enfermagem?",
+        "Crie um esquema visual sobre os sinais vitais e seus valores normais",
+        "Gere um diagrama sobre a classificação de feridas",
+        "on",
+        "Close"
+      ],
+      "links": [
+        {
+          "text": "Como usar o app",
+          "href": "https://gabaritaenfermagem.com.br/tutorials"
+        },
+        {
+          "text": "Início",
+          "href": "https://gabaritaenfermagem.com.br/dashboard"
+        },
+        {
+          "text": "Resolver Questões",
+          "href": "https://gabaritaenfermagem.com.br/practice"
+        },
+        {
+          "text": "Caderno de Erros",
+          "href": "https://gabaritaenfermagem.com.br/error-log"
+        },
+        {
+          "text": "Flashcards",
+          "href": "https://gabaritaenfermagem.com.br/flashcards"
+        },
+        {
+          "text": "Resumos com IA",
+          "href": "https://gabaritaenfermagem.com.br/study-resources"
+        },
+        {
+          "text": "Lembretes",
+          "href": "https://gabaritaenfermagem.com.br/reminders"
+        },
+        {
+          "text": "Transcrição de Vídeo",
+          "href": "https://gabaritaenfermagem.com.br/youtube-transcription"
+        },
+        {
+          "text": "Ajuda",
+          "href": "https://gabaritaenfermagem.com.br/help"
+        },
+        {
+          "text": "Prof. Rebeca IA",
+          "href": "https://gabaritaenfermagem.com.br/chat-ia"
+        },
+        {
+          "text": "Simulados",
+          "href": "https://gabaritaenfermagem.com.br/mock-exam"
+        },
+        {
+          "text": "Plano de Estudos",
+          "href": "https://gabaritaenfermagem.com.br/study-plan"
+        },
+        {
+          "text": "Corretor de Redação/Discursiva com IA",
+          "href": "https://gabaritaenfermagem.com.br/essay-correction"
+        },
+        {
+          "text": "Curso Convertendo Estudo",
+          "href": "https://gabaritaenfermagem.com.br/courses"
+        },
+        {
+          "text": "gvConfigurações",
+          "href": "https://gabaritaenfermagem.com.br/profile"
+        },
+        {
+          "text": "Gabarita Enfermagem",
+          "href": "https://gabaritaenfermagem.com.br/"
+        }
+      ],
+      "labels": [
+        "Não mostrar novamente"
+      ],
+      "placeholders": [
+        "Buscar conversa...",
+        "Digite sua dúvida... (Shift+Enter para nova linha)"
+      ],
+      "selects": [],
+      "filterChips": [
+        "Como usar o app",
+        "Início",
+        "Resolver Questões",
+        "Caderno de Erros",
+        "Flashcards",
+        "Resumos com IA",
+        "Lembretes",
+        "Transcrição de Vídeo",
+        "Ajuda",
+        "Prof. Rebeca IA",
+        "Simulados",
+        "Plano de Estudos",
+        "Corretor de Redação/Discursiva com IA",
+        "Curso Convertendo Estudo",
+        "Comece por Aqui!Não mostrar novamenteClose"
+      ],
+      "tabs": []
+    },
+    {
+      "path": "/courses",
+      "url": "https://gabaritaenfermagem.com.br/courses",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "Recurso PRO"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Assinar PRO"
+      ],
+      "links": [],
+      "labels": [],
+      "placeholders": [],
+      "selects": [],
+      "filterChips": [],
+      "tabs": []
+    },
+    {
+      "path": "/error-log",
+      "url": "https://gabaritaenfermagem.com.br/error-log",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "Caderno de Erros",
+        "Comece por Aqui!"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Upgrade PRO",
+        "Sair",
+        "Revisar Hoje0",
+        "Próximas Revisões",
+        "Todos os Erros",
+        "on",
+        "Close"
+      ],
+      "links": [
+        {
+          "text": "Como usar o app",
+          "href": "https://gabaritaenfermagem.com.br/tutorials"
+        },
+        {
+          "text": "Início",
+          "href": "https://gabaritaenfermagem.com.br/dashboard"
+        },
+        {
+          "text": "Resolver Questões",
+          "href": "https://gabaritaenfermagem.com.br/practice"
+        },
+        {
+          "text": "Caderno de Erros",
+          "href": "https://gabaritaenfermagem.com.br/error-log"
+        },
+        {
+          "text": "Flashcards",
+          "href": "https://gabaritaenfermagem.com.br/flashcards"
+        },
+        {
+          "text": "Resumos com IA",
+          "href": "https://gabaritaenfermagem.com.br/study-resources"
+        },
+        {
+          "text": "Lembretes",
+          "href": "https://gabaritaenfermagem.com.br/reminders"
+        },
+        {
+          "text": "Transcrição de Vídeo",
+          "href": "https://gabaritaenfermagem.com.br/youtube-transcription"
+        },
+        {
+          "text": "Ajuda",
+          "href": "https://gabaritaenfermagem.com.br/help"
+        },
+        {
+          "text": "Prof. Rebeca IA",
+          "href": "https://gabaritaenfermagem.com.br/chat-ia"
+        },
+        {
+          "text": "Simulados",
+          "href": "https://gabaritaenfermagem.com.br/mock-exam"
+        },
+        {
+          "text": "Plano de Estudos",
+          "href": "https://gabaritaenfermagem.com.br/study-plan"
+        },
+        {
+          "text": "Corretor de Redação/Discursiva com IA",
+          "href": "https://gabaritaenfermagem.com.br/essay-correction"
+        },
+        {
+          "text": "Curso Convertendo Estudo",
+          "href": "https://gabaritaenfermagem.com.br/courses"
+        },
+        {
+          "text": "gvConfigurações",
+          "href": "https://gabaritaenfermagem.com.br/profile"
+        },
+        {
+          "text": "Gabarita Enfermagem",
+          "href": "https://gabaritaenfermagem.com.br/"
+        }
+      ],
+      "labels": [
+        "Não mostrar novamente"
+      ],
+      "placeholders": [],
+      "selects": [],
+      "filterChips": [
+        "Como usar o app",
+        "Início",
+        "Resolver Questões",
+        "Caderno de Erros",
+        "Flashcards",
+        "Resumos com IA",
+        "Lembretes",
+        "Transcrição de Vídeo",
+        "Ajuda",
+        "Prof. Rebeca IA",
+        "Simulados",
+        "Plano de Estudos",
+        "Corretor de Redação/Discursiva com IA",
+        "Curso Convertendo Estudo",
+        "Revisar Hoje0",
+        "Próximas Revisões",
+        "Todos os Erros",
+        "Parabéns! Nenhuma revisão pendente para hoje.",
+        "Comece por Aqui!Não mostrar novamenteClose"
+      ],
+      "tabs": [
+        "Revisar Hoje0",
+        "Próximas Revisões",
+        "Todos os Erros"
+      ]
+    },
+    {
+      "path": "/essay-correction",
+      "url": "https://gabaritaenfermagem.com.br/essay-correction",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "Corretor de Redação/Discursiva IA",
+        "Como você deseja enviar sua redação?",
+        "Tema da Redação",
+        "Classificação do Tema",
+        "Critérios de Avaliação",
+        "Comece por Aqui!"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Upgrade PRO",
+        "Sair",
+        "Nova Redação",
+        "Corretor de Discursiva",
+        "Evolução",
+        "Digitar",
+        "PDF",
+        "Selecione a categoria",
+        "Enviar para Correção",
+        "on",
+        "Close"
+      ],
+      "links": [
+        {
+          "text": "Como usar o app",
+          "href": "https://gabaritaenfermagem.com.br/tutorials"
+        },
+        {
+          "text": "Início",
+          "href": "https://gabaritaenfermagem.com.br/dashboard"
+        },
+        {
+          "text": "Resolver Questões",
+          "href": "https://gabaritaenfermagem.com.br/practice"
+        },
+        {
+          "text": "Caderno de Erros",
+          "href": "https://gabaritaenfermagem.com.br/error-log"
+        },
+        {
+          "text": "Flashcards",
+          "href": "https://gabaritaenfermagem.com.br/flashcards"
+        },
+        {
+          "text": "Resumos com IA",
+          "href": "https://gabaritaenfermagem.com.br/study-resources"
+        },
+        {
+          "text": "Lembretes",
+          "href": "https://gabaritaenfermagem.com.br/reminders"
+        },
+        {
+          "text": "Transcrição de Vídeo",
+          "href": "https://gabaritaenfermagem.com.br/youtube-transcription"
+        },
+        {
+          "text": "Ajuda",
+          "href": "https://gabaritaenfermagem.com.br/help"
+        },
+        {
+          "text": "Prof. Rebeca IA",
+          "href": "https://gabaritaenfermagem.com.br/chat-ia"
+        },
+        {
+          "text": "Simulados",
+          "href": "https://gabaritaenfermagem.com.br/mock-exam"
+        },
+        {
+          "text": "Plano de Estudos",
+          "href": "https://gabaritaenfermagem.com.br/study-plan"
+        },
+        {
+          "text": "Corretor de Redação/Discursiva com IA",
+          "href": "https://gabaritaenfermagem.com.br/essay-correction"
+        },
+        {
+          "text": "Curso Convertendo Estudo",
+          "href": "https://gabaritaenfermagem.com.br/courses"
+        },
+        {
+          "text": "gvConfigurações",
+          "href": "https://gabaritaenfermagem.com.br/profile"
+        },
+        {
+          "text": "Gabarita Enfermagem",
+          "href": "https://gabaritaenfermagem.com.br/"
+        }
+      ],
+      "labels": [
+        "Tema da redação *",
+        "Categoria *",
+        "Não mostrar novamente"
+      ],
+      "placeholders": [
+        "Cole ou escreva sua redação aqui...",
+        "Ex: Os impactos da desinformação nas redes sociais na democracia brasileira"
+      ],
+      "selects": [],
+      "filterChips": [
+        "Como usar o app",
+        "Início",
+        "Resolver Questões",
+        "Caderno de Erros",
+        "Flashcards",
+        "Resumos com IA",
+        "Lembretes",
+        "Transcrição de Vídeo",
+        "Ajuda",
+        "Prof. Rebeca IA",
+        "Simulados",
+        "Plano de Estudos",
+        "Corretor de Redação/Discursiva com IA",
+        "Curso Convertendo Estudo",
+        "Nova Redação",
+        "Corretor de Discursiva",
+        "Evolução",
+        "Digitar",
+        "PDF",
+        "0 caracteres | ~0 palavras",
+        "Selecione a categoria",
+        "Comece por Aqui!Não mostrar novamenteClose"
+      ],
+      "tabs": [
+        "Nova Redação",
+        "Corretor de Discursiva",
+        "Evolução",
+        "Digitar",
+        "PDF"
+      ]
+    },
+    {
+      "path": "/flashcards",
+      "url": "https://gabaritaenfermagem.com.br/flashcards",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "Flashcards",
+        "Fábrica de Flashcards IA",
+        "Seus Baralhos",
+        "Comece por Aqui!"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Upgrade PRO",
+        "Sair",
+        "Criar Novo Baralho",
+        "Upload Arquivo",
+        "Gerar com Texto",
+        "on",
+        "Close"
+      ],
+      "links": [
+        {
+          "text": "Como usar o app",
+          "href": "https://gabaritaenfermagem.com.br/tutorials"
+        },
+        {
+          "text": "Início",
+          "href": "https://gabaritaenfermagem.com.br/dashboard"
+        },
+        {
+          "text": "Resolver Questões",
+          "href": "https://gabaritaenfermagem.com.br/practice"
+        },
+        {
+          "text": "Caderno de Erros",
+          "href": "https://gabaritaenfermagem.com.br/error-log"
+        },
+        {
+          "text": "Flashcards",
+          "href": "https://gabaritaenfermagem.com.br/flashcards"
+        },
+        {
+          "text": "Resumos com IA",
+          "href": "https://gabaritaenfermagem.com.br/study-resources"
+        },
+        {
+          "text": "Lembretes",
+          "href": "https://gabaritaenfermagem.com.br/reminders"
+        },
+        {
+          "text": "Transcrição de Vídeo",
+          "href": "https://gabaritaenfermagem.com.br/youtube-transcription"
+        },
+        {
+          "text": "Ajuda",
+          "href": "https://gabaritaenfermagem.com.br/help"
+        },
+        {
+          "text": "Prof. Rebeca IA",
+          "href": "https://gabaritaenfermagem.com.br/chat-ia"
+        },
+        {
+          "text": "Simulados",
+          "href": "https://gabaritaenfermagem.com.br/mock-exam"
+        },
+        {
+          "text": "Plano de Estudos",
+          "href": "https://gabaritaenfermagem.com.br/study-plan"
+        },
+        {
+          "text": "Corretor de Redação/Discursiva com IA",
+          "href": "https://gabaritaenfermagem.com.br/essay-correction"
+        },
+        {
+          "text": "Curso Convertendo Estudo",
+          "href": "https://gabaritaenfermagem.com.br/courses"
+        },
+        {
+          "text": "gvConfigurações",
+          "href": "https://gabaritaenfermagem.com.br/profile"
+        },
+        {
+          "text": "Gabarita Enfermagem",
+          "href": "https://gabaritaenfermagem.com.br/"
+        }
+      ],
+      "labels": [
+        "Não mostrar novamente"
+      ],
+      "placeholders": [],
+      "selects": [],
+      "filterChips": [
+        "Como usar o app",
+        "Início",
+        "Resolver Questões",
+        "Caderno de Erros",
+        "Flashcards",
+        "Resumos com IA",
+        "Lembretes",
+        "Transcrição de Vídeo",
+        "Ajuda",
+        "Prof. Rebeca IA",
+        "Simulados",
+        "Plano de Estudos",
+        "Corretor de Redação/Discursiva com IA",
+        "Curso Convertendo Estudo",
+        "Comece por Aqui!Não mostrar novamenteClose"
+      ],
+      "tabs": []
+    },
+    {
+      "path": "/help",
+      "url": "https://gabaritaenfermagem.com.br/help",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "Central de Ajuda",
+        "Início (Dashboard)Visão geral do seu progresso e tarefas do dia.",
+        "Resolver QuestõesPratique com questões filtradas por matéria, banca e tema.",
+        "Caderno de ErrosRevise as questões que você errou com repetição espaçada.",
+        "FlashcardsEstude com cartões de memorização interativos.",
+        "Resumos com IAGere resumos inteligentes, mapas mentais e esquemas visuais.",
+        "LembretesConfigure lembretes de estudo via WhatsApp.",
+        "Prof. Rebeca IAPROConverse com a assistente de IA especializada em enfermagem.",
+        "SimuladosPROFaça simulados completos para treinar em condições reais de prova.",
+        "Plano de EstudosPROCrie um cronograma personalizado de estudos com IA.",
+        "Corretor de Redação com IAPROEnvie sua redação e receba correção detalhada por competências.",
+        "Desempenho DetalhadoAnálise completa do seu progresso por disciplina.",
+        "RX da Banca (Perfil da Banca)PROAnálise detalhada do perfil de cada banca examinadora.",
+        "Comece por Aqui!"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Upgrade PRO",
+        "Sair",
+        "Início (Dashboard)Visão geral do seu progresso e tarefas do dia.",
+        "Resolver QuestõesPratique com questões filtradas por matéria, banca e tema.",
+        "Caderno de ErrosRevise as questões que você errou com repetição espaçada.",
+        "FlashcardsEstude com cartões de memorização interativos.",
+        "Resumos com IAGere resumos inteligentes, mapas mentais e esquemas visuais.",
+        "LembretesConfigure lembretes de estudo via WhatsApp.",
+        "Prof. Rebeca IAPROConverse com a assistente de IA especializada em enfermagem.",
+        "SimuladosPROFaça simulados completos para treinar em condições reais de prova.",
+        "Plano de EstudosPROCrie um cronograma personalizado de estudos com IA.",
+        "Corretor de Redação com IAPROEnvie sua redação e receba correção detalhada por competências.",
+        "Desempenho DetalhadoAnálise completa do seu progresso por disciplina.",
+        "RX da Banca (Perfil da Banca)PROAnálise detalhada do perfil de cada banca examinadora.",
+        "on",
+        "Close"
+      ],
+      "links": [
+        {
+          "text": "Como usar o app",
+          "href": "https://gabaritaenfermagem.com.br/tutorials"
+        },
+        {
+          "text": "Início",
+          "href": "https://gabaritaenfermagem.com.br/dashboard"
+        },
+        {
+          "text": "Resolver Questões",
+          "href": "https://gabaritaenfermagem.com.br/practice"
+        },
+        {
+          "text": "Caderno de Erros",
+          "href": "https://gabaritaenfermagem.com.br/error-log"
+        },
+        {
+          "text": "Flashcards",
+          "href": "https://gabaritaenfermagem.com.br/flashcards"
+        },
+        {
+          "text": "Resumos com IA",
+          "href": "https://gabaritaenfermagem.com.br/study-resources"
+        },
+        {
+          "text": "Lembretes",
+          "href": "https://gabaritaenfermagem.com.br/reminders"
+        },
+        {
+          "text": "Transcrição de Vídeo",
+          "href": "https://gabaritaenfermagem.com.br/youtube-transcription"
+        },
+        {
+          "text": "Ajuda",
+          "href": "https://gabaritaenfermagem.com.br/help"
+        },
+        {
+          "text": "Prof. Rebeca IA",
+          "href": "https://gabaritaenfermagem.com.br/chat-ia"
+        },
+        {
+          "text": "Simulados",
+          "href": "https://gabaritaenfermagem.com.br/mock-exam"
+        },
+        {
+          "text": "Plano de Estudos",
+          "href": "https://gabaritaenfermagem.com.br/study-plan"
+        },
+        {
+          "text": "Corretor de Redação/Discursiva com IA",
+          "href": "https://gabaritaenfermagem.com.br/essay-correction"
+        },
+        {
+          "text": "Curso Convertendo Estudo",
+          "href": "https://gabaritaenfermagem.com.br/courses"
+        },
+        {
+          "text": "gvConfigurações",
+          "href": "https://gabaritaenfermagem.com.br/profile"
+        },
+        {
+          "text": "Gabarita Enfermagem",
+          "href": "https://gabaritaenfermagem.com.br/"
+        }
+      ],
+      "labels": [
+        "Não mostrar novamente"
+      ],
+      "placeholders": [],
+      "selects": [],
+      "filterChips": [
+        "Como usar o app",
+        "Início",
+        "Resolver Questões",
+        "Caderno de Erros",
+        "Flashcards",
+        "Resumos com IA",
+        "Lembretes",
+        "Transcrição de Vídeo",
+        "Ajuda",
+        "Prof. Rebeca IA",
+        "Simulados",
+        "Plano de Estudos",
+        "Corretor de Redação/Discursiva com IA",
+        "Curso Convertendo Estudo",
+        "Início (Dashboard)Visão geral do seu progresso e tarefas do dia.",
+        "Resolver QuestõesPratique com questões filtradas por matéria, banca e tema.",
+        "Caderno de ErrosRevise as questões que você errou com repetição espaçada.",
+        "FlashcardsEstude com cartões de memorização interativos.",
+        "Resumos com IAGere resumos inteligentes, mapas mentais e esquemas visuais.",
+        "LembretesConfigure lembretes de estudo via WhatsApp."
+      ],
+      "tabs": []
+    },
+    {
+      "path": "/mock-exam",
+      "url": "https://gabaritaenfermagem.com.br/mock-exam",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "Recurso PRO"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Assinar PRO"
+      ],
+      "links": [],
+      "labels": [],
+      "placeholders": [],
+      "selects": [],
+      "filterChips": [],
+      "tabs": []
+    },
+    {
+      "path": "/performance",
+      "url": "https://gabaritaenfermagem.com.br/performance",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "Análise de Desempenho",
+        "Comece por Aqui!"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Upgrade PRO",
+        "Sair",
+        "Reconstruir histórico",
+        "on",
+        "Close"
+      ],
+      "links": [
+        {
+          "text": "Como usar o app",
+          "href": "https://gabaritaenfermagem.com.br/tutorials"
+        },
+        {
+          "text": "Início",
+          "href": "https://gabaritaenfermagem.com.br/dashboard"
+        },
+        {
+          "text": "Resolver Questões",
+          "href": "https://gabaritaenfermagem.com.br/practice"
+        },
+        {
+          "text": "Caderno de Erros",
+          "href": "https://gabaritaenfermagem.com.br/error-log"
+        },
+        {
+          "text": "Flashcards",
+          "href": "https://gabaritaenfermagem.com.br/flashcards"
+        },
+        {
+          "text": "Resumos com IA",
+          "href": "https://gabaritaenfermagem.com.br/study-resources"
+        },
+        {
+          "text": "Lembretes",
+          "href": "https://gabaritaenfermagem.com.br/reminders"
+        },
+        {
+          "text": "Transcrição de Vídeo",
+          "href": "https://gabaritaenfermagem.com.br/youtube-transcription"
+        },
+        {
+          "text": "Ajuda",
+          "href": "https://gabaritaenfermagem.com.br/help"
+        },
+        {
+          "text": "Prof. Rebeca IA",
+          "href": "https://gabaritaenfermagem.com.br/chat-ia"
+        },
+        {
+          "text": "Simulados",
+          "href": "https://gabaritaenfermagem.com.br/mock-exam"
+        },
+        {
+          "text": "Plano de Estudos",
+          "href": "https://gabaritaenfermagem.com.br/study-plan"
+        },
+        {
+          "text": "Corretor de Redação/Discursiva com IA",
+          "href": "https://gabaritaenfermagem.com.br/essay-correction"
+        },
+        {
+          "text": "Curso Convertendo Estudo",
+          "href": "https://gabaritaenfermagem.com.br/courses"
+        },
+        {
+          "text": "gvvariedades2Configurações",
+          "href": "https://gabaritaenfermagem.com.br/profile"
+        },
+        {
+          "text": "Gabarita Enfermagem",
+          "href": "https://gabaritaenfermagem.com.br/"
+        }
+      ],
+      "labels": [
+        "Não mostrar novamente"
+      ],
+      "placeholders": [],
+      "selects": [],
+      "filterChips": [
+        "Como usar o app",
+        "Início",
+        "Resolver Questões",
+        "Caderno de Erros",
+        "Flashcards",
+        "Resumos com IA",
+        "Lembretes",
+        "Transcrição de Vídeo",
+        "Ajuda",
+        "Prof. Rebeca IA",
+        "Simulados",
+        "Plano de Estudos",
+        "Corretor de Redação/Discursiva com IA",
+        "Curso Convertendo Estudo",
+        "Comece por Aqui!Não mostrar novamenteClose"
+      ],
+      "tabs": []
+    },
+    {
+      "path": "/profile",
+      "url": "https://gabaritaenfermagem.com.br/profile",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "Configurações do Perfil",
+        "Foto de Perfil",
+        "Informações Pessoais",
+        "Alterar Senha",
+        "Assinatura",
+        "Zona de Risco",
+        "Comece por Aqui!"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Upgrade PRO",
+        "Sair",
+        "Salvar Nome",
+        "Atualizar Senha",
+        "Fazer Upgrade para PRO",
+        "Reiniciar Desempenho",
+        "on",
+        "Close"
+      ],
+      "links": [
+        {
+          "text": "Como usar o app",
+          "href": "https://gabaritaenfermagem.com.br/tutorials"
+        },
+        {
+          "text": "Início",
+          "href": "https://gabaritaenfermagem.com.br/dashboard"
+        },
+        {
+          "text": "Resolver Questões",
+          "href": "https://gabaritaenfermagem.com.br/practice"
+        },
+        {
+          "text": "Caderno de Erros",
+          "href": "https://gabaritaenfermagem.com.br/error-log"
+        },
+        {
+          "text": "Flashcards",
+          "href": "https://gabaritaenfermagem.com.br/flashcards"
+        },
+        {
+          "text": "Resumos com IA",
+          "href": "https://gabaritaenfermagem.com.br/study-resources"
+        },
+        {
+          "text": "Lembretes",
+          "href": "https://gabaritaenfermagem.com.br/reminders"
+        },
+        {
+          "text": "Transcrição de Vídeo",
+          "href": "https://gabaritaenfermagem.com.br/youtube-transcription"
+        },
+        {
+          "text": "Ajuda",
+          "href": "https://gabaritaenfermagem.com.br/help"
+        },
+        {
+          "text": "Prof. Rebeca IA",
+          "href": "https://gabaritaenfermagem.com.br/chat-ia"
+        },
+        {
+          "text": "Simulados",
+          "href": "https://gabaritaenfermagem.com.br/mock-exam"
+        },
+        {
+          "text": "Plano de Estudos",
+          "href": "https://gabaritaenfermagem.com.br/study-plan"
+        },
+        {
+          "text": "Corretor de Redação/Discursiva com IA",
+          "href": "https://gabaritaenfermagem.com.br/essay-correction"
+        },
+        {
+          "text": "Curso Convertendo Estudo",
+          "href": "https://gabaritaenfermagem.com.br/courses"
+        },
+        {
+          "text": "gvConfigurações",
+          "href": "https://gabaritaenfermagem.com.br/profile"
+        },
+        {
+          "text": "Gabarita Enfermagem",
+          "href": "https://gabaritaenfermagem.com.br/"
+        }
+      ],
+      "labels": [
+        "E-mail",
+        "Nome Completo",
+        "Nova Senha",
+        "Confirmar Nova Senha",
+        "Não mostrar novamente"
+      ],
+      "placeholders": [
+        "Seu nome completo",
+        "Mínimo de 6 caracteres",
+        "Repita a nova senha"
+      ],
+      "selects": [],
+      "filterChips": [
+        "Como usar o app",
+        "Início",
+        "Resolver Questões",
+        "Caderno de Erros",
+        "Flashcards",
+        "Resumos com IA",
+        "Lembretes",
+        "Transcrição de Vídeo",
+        "Ajuda",
+        "Prof. Rebeca IA",
+        "Simulados",
+        "Plano de Estudos",
+        "Corretor de Redação/Discursiva com IA",
+        "Curso Convertendo Estudo",
+        "Comece por Aqui!Não mostrar novamenteClose"
+      ],
+      "tabs": []
+    },
+    {
+      "path": "/reminders",
+      "url": "https://gabaritaenfermagem.com.br/reminders",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "Lembretes de Estudo",
+        "Meus Lembretes",
+        "Comece por Aqui!"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Upgrade PRO",
+        "Sair",
+        "Novo",
+        "on",
+        "Close"
+      ],
+      "links": [
+        {
+          "text": "Como usar o app",
+          "href": "https://gabaritaenfermagem.com.br/tutorials"
+        },
+        {
+          "text": "Início",
+          "href": "https://gabaritaenfermagem.com.br/dashboard"
+        },
+        {
+          "text": "Resolver Questões",
+          "href": "https://gabaritaenfermagem.com.br/practice"
+        },
+        {
+          "text": "Caderno de Erros",
+          "href": "https://gabaritaenfermagem.com.br/error-log"
+        },
+        {
+          "text": "Flashcards",
+          "href": "https://gabaritaenfermagem.com.br/flashcards"
+        },
+        {
+          "text": "Resumos com IA",
+          "href": "https://gabaritaenfermagem.com.br/study-resources"
+        },
+        {
+          "text": "Lembretes",
+          "href": "https://gabaritaenfermagem.com.br/reminders"
+        },
+        {
+          "text": "Transcrição de Vídeo",
+          "href": "https://gabaritaenfermagem.com.br/youtube-transcription"
+        },
+        {
+          "text": "Ajuda",
+          "href": "https://gabaritaenfermagem.com.br/help"
+        },
+        {
+          "text": "Prof. Rebeca IA",
+          "href": "https://gabaritaenfermagem.com.br/chat-ia"
+        },
+        {
+          "text": "Simulados",
+          "href": "https://gabaritaenfermagem.com.br/mock-exam"
+        },
+        {
+          "text": "Plano de Estudos",
+          "href": "https://gabaritaenfermagem.com.br/study-plan"
+        },
+        {
+          "text": "Corretor de Redação/Discursiva com IA",
+          "href": "https://gabaritaenfermagem.com.br/essay-correction"
+        },
+        {
+          "text": "Curso Convertendo Estudo",
+          "href": "https://gabaritaenfermagem.com.br/courses"
+        },
+        {
+          "text": "gvConfigurações",
+          "href": "https://gabaritaenfermagem.com.br/profile"
+        },
+        {
+          "text": "Gabarita Enfermagem",
+          "href": "https://gabaritaenfermagem.com.br/"
+        }
+      ],
+      "labels": [
+        "Não mostrar novamente"
+      ],
+      "placeholders": [],
+      "selects": [],
+      "filterChips": [
+        "Como usar o app",
+        "Início",
+        "Resolver Questões",
+        "Caderno de Erros",
+        "Flashcards",
+        "Resumos com IA",
+        "Lembretes",
+        "Transcrição de Vídeo",
+        "Ajuda",
+        "Prof. Rebeca IA",
+        "Simulados",
+        "Plano de Estudos",
+        "Corretor de Redação/Discursiva com IA",
+        "Curso Convertendo Estudo",
+        "Comece por Aqui!Não mostrar novamenteClose"
+      ],
+      "tabs": []
+    },
+    {
+      "path": "/study-plan",
+      "url": "https://gabaritaenfermagem.com.br/study-plan",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "Recurso PRO"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Assinar PRO"
+      ],
+      "links": [],
+      "labels": [],
+      "placeholders": [],
+      "selects": [],
+      "filterChips": [],
+      "tabs": []
+    },
+    {
+      "path": "/study-resources",
+      "url": "https://gabaritaenfermagem.com.br/study-resources",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "Resumos com IA",
+        "Material de Estudo",
+        "Histórico de Resumos",
+        "Conteúdo Gerado",
+        "Pronto para Analisar",
+        "Comece por Aqui!"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Upgrade PRO",
+        "Sair",
+        "Arquivo/Texto",
+        "Por Tema",
+        "Geral (todas as bancas)",
+        "material",
+        "questoes",
+        "Recurso PRO",
+        "Mapa Mental",
+        "Flashcards",
+        "Resumo",
+        "Áudio",
+        "on",
+        "Close"
+      ],
+      "links": [
+        {
+          "text": "Como usar o app",
+          "href": "https://gabaritaenfermagem.com.br/tutorials"
+        },
+        {
+          "text": "Início",
+          "href": "https://gabaritaenfermagem.com.br/dashboard"
+        },
+        {
+          "text": "Resolver Questões",
+          "href": "https://gabaritaenfermagem.com.br/practice"
+        },
+        {
+          "text": "Caderno de Erros",
+          "href": "https://gabaritaenfermagem.com.br/error-log"
+        },
+        {
+          "text": "Flashcards",
+          "href": "https://gabaritaenfermagem.com.br/flashcards"
+        },
+        {
+          "text": "Resumos com IA",
+          "href": "https://gabaritaenfermagem.com.br/study-resources"
+        },
+        {
+          "text": "Lembretes",
+          "href": "https://gabaritaenfermagem.com.br/reminders"
+        },
+        {
+          "text": "Transcrição de Vídeo",
+          "href": "https://gabaritaenfermagem.com.br/youtube-transcription"
+        },
+        {
+          "text": "Ajuda",
+          "href": "https://gabaritaenfermagem.com.br/help"
+        },
+        {
+          "text": "Prof. Rebeca IA",
+          "href": "https://gabaritaenfermagem.com.br/chat-ia"
+        },
+        {
+          "text": "Simulados",
+          "href": "https://gabaritaenfermagem.com.br/mock-exam"
+        },
+        {
+          "text": "Plano de Estudos",
+          "href": "https://gabaritaenfermagem.com.br/study-plan"
+        },
+        {
+          "text": "Corretor de Redação/Discursiva com IA",
+          "href": "https://gabaritaenfermagem.com.br/essay-correction"
+        },
+        {
+          "text": "Curso Convertendo Estudo",
+          "href": "https://gabaritaenfermagem.com.br/courses"
+        },
+        {
+          "text": "gvConfigurações",
+          "href": "https://gabaritaenfermagem.com.br/profile"
+        },
+        {
+          "text": "Gabarita Enfermagem",
+          "href": "https://gabaritaenfermagem.com.br/"
+        }
+      ],
+      "labels": [
+        "Banca Examinadora",
+        "Tipo de Conteúdo",
+        "Material de Estudo",
+        "Questões de Prova",
+        "Recurso PRO",
+        "Não mostrar novamente"
+      ],
+      "placeholders": [
+        "Recurso exclusivo PRO - Assine para desbloquear"
+      ],
+      "selects": [],
+      "filterChips": [
+        "Como usar o app",
+        "Início",
+        "Resolver Questões",
+        "Caderno de Erros",
+        "Flashcards",
+        "Resumos com IA",
+        "Lembretes",
+        "Transcrição de Vídeo",
+        "Ajuda",
+        "Prof. Rebeca IA",
+        "Simulados",
+        "Plano de Estudos",
+        "Corretor de Redação/Discursiva com IA",
+        "Curso Convertendo Estudo",
+        "Geral (todas as bancas)",
+        "Resumo",
+        "Mapa Mental",
+        "Áudio",
+        "Comece por Aqui!Não mostrar novamenteClose"
+      ],
+      "tabs": [
+        "Resumo",
+        "Mapa Mental",
+        "Áudio",
+        "Flashcards"
+      ]
+    },
+    {
+      "path": "/tutorials",
+      "url": "https://gabaritaenfermagem.com.br/tutorials",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "Tutoriais",
+        "Comece por Aqui",
+        "Início e Criando Plano de Estudos",
+        "Resolver Questões",
+        "Caderno de Erros",
+        "Flashcards",
+        "Resumos",
+        "Lembretes",
+        "Simulados",
+        "Corretor de Redação",
+        "Prof. Rebeca IA",
+        "Comece por Aqui!"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Upgrade PRO",
+        "Sair",
+        "on",
+        "Close"
+      ],
+      "links": [
+        {
+          "text": "Como usar o app",
+          "href": "https://gabaritaenfermagem.com.br/tutorials"
+        },
+        {
+          "text": "Início",
+          "href": "https://gabaritaenfermagem.com.br/dashboard"
+        },
+        {
+          "text": "Resolver Questões",
+          "href": "https://gabaritaenfermagem.com.br/practice"
+        },
+        {
+          "text": "Caderno de Erros",
+          "href": "https://gabaritaenfermagem.com.br/error-log"
+        },
+        {
+          "text": "Flashcards",
+          "href": "https://gabaritaenfermagem.com.br/flashcards"
+        },
+        {
+          "text": "Resumos com IA",
+          "href": "https://gabaritaenfermagem.com.br/study-resources"
+        },
+        {
+          "text": "Lembretes",
+          "href": "https://gabaritaenfermagem.com.br/reminders"
+        },
+        {
+          "text": "Transcrição de Vídeo",
+          "href": "https://gabaritaenfermagem.com.br/youtube-transcription"
+        },
+        {
+          "text": "Ajuda",
+          "href": "https://gabaritaenfermagem.com.br/help"
+        },
+        {
+          "text": "Prof. Rebeca IA",
+          "href": "https://gabaritaenfermagem.com.br/chat-ia"
+        },
+        {
+          "text": "Simulados",
+          "href": "https://gabaritaenfermagem.com.br/mock-exam"
+        },
+        {
+          "text": "Plano de Estudos",
+          "href": "https://gabaritaenfermagem.com.br/study-plan"
+        },
+        {
+          "text": "Corretor de Redação/Discursiva com IA",
+          "href": "https://gabaritaenfermagem.com.br/essay-correction"
+        },
+        {
+          "text": "Curso Convertendo Estudo",
+          "href": "https://gabaritaenfermagem.com.br/courses"
+        },
+        {
+          "text": "gvConfigurações",
+          "href": "https://gabaritaenfermagem.com.br/profile"
+        },
+        {
+          "text": "Gabarita Enfermagem",
+          "href": "https://gabaritaenfermagem.com.br/"
+        }
+      ],
+      "labels": [
+        "Não mostrar novamente"
+      ],
+      "placeholders": [],
+      "selects": [],
+      "filterChips": [
+        "Como usar o app",
+        "Início",
+        "Resolver Questões",
+        "Caderno de Erros",
+        "Flashcards",
+        "Resumos com IA",
+        "Lembretes",
+        "Transcrição de Vídeo",
+        "Ajuda",
+        "Prof. Rebeca IA",
+        "Simulados",
+        "Plano de Estudos",
+        "Corretor de Redação/Discursiva com IA",
+        "Curso Convertendo Estudo",
+        "Comece por Aqui!Não mostrar novamenteClose"
+      ],
+      "tabs": []
+    },
+    {
+      "path": "/youtube-transcription",
+      "url": "https://gabaritaenfermagem.com.br/youtube-transcription",
+      "title": "Gabarita Enfermagem - Estudos para Concursos com IA",
+      "headings": [
+        "Transcrição de Vídeo-Aula",
+        "Histórico de Vídeos",
+        "Comece por Aqui!"
+      ],
+      "navLinks": [],
+      "buttons": [
+        "Upgrade PRO",
+        "Sair",
+        "Transcrever",
+        "on",
+        "Close"
+      ],
+      "links": [
+        {
+          "text": "Como usar o app",
+          "href": "https://gabaritaenfermagem.com.br/tutorials"
+        },
+        {
+          "text": "Início",
+          "href": "https://gabaritaenfermagem.com.br/dashboard"
+        },
+        {
+          "text": "Resolver Questões",
+          "href": "https://gabaritaenfermagem.com.br/practice"
+        },
+        {
+          "text": "Caderno de Erros",
+          "href": "https://gabaritaenfermagem.com.br/error-log"
+        },
+        {
+          "text": "Flashcards",
+          "href": "https://gabaritaenfermagem.com.br/flashcards"
+        },
+        {
+          "text": "Resumos com IA",
+          "href": "https://gabaritaenfermagem.com.br/study-resources"
+        },
+        {
+          "text": "Lembretes",
+          "href": "https://gabaritaenfermagem.com.br/reminders"
+        },
+        {
+          "text": "Transcrição de Vídeo",
+          "href": "https://gabaritaenfermagem.com.br/youtube-transcription"
+        },
+        {
+          "text": "Ajuda",
+          "href": "https://gabaritaenfermagem.com.br/help"
+        },
+        {
+          "text": "Prof. Rebeca IA",
+          "href": "https://gabaritaenfermagem.com.br/chat-ia"
+        },
+        {
+          "text": "Simulados",
+          "href": "https://gabaritaenfermagem.com.br/mock-exam"
+        },
+        {
+          "text": "Plano de Estudos",
+          "href": "https://gabaritaenfermagem.com.br/study-plan"
+        },
+        {
+          "text": "Corretor de Redação/Discursiva com IA",
+          "href": "https://gabaritaenfermagem.com.br/essay-correction"
+        },
+        {
+          "text": "Curso Convertendo Estudo",
+          "href": "https://gabaritaenfermagem.com.br/courses"
+        },
+        {
+          "text": "gvConfigurações",
+          "href": "https://gabaritaenfermagem.com.br/profile"
+        },
+        {
+          "text": "Gabarita Enfermagem",
+          "href": "https://gabaritaenfermagem.com.br/"
+        }
+      ],
+      "labels": [
+        "Não mostrar novamente"
+      ],
+      "placeholders": [
+        "Cole o link aqui"
+      ],
+      "selects": [],
+      "filterChips": [
+        "Como usar o app",
+        "Início",
+        "Resolver Questões",
+        "Caderno de Erros",
+        "Flashcards",
+        "Resumos com IA",
+        "Lembretes",
+        "Transcrição de Vídeo",
+        "Ajuda",
+        "Prof. Rebeca IA",
+        "Simulados",
+        "Plano de Estudos",
+        "Corretor de Redação/Discursiva com IA",
+        "Curso Convertendo Estudo",
+        "Comece por Aqui!Não mostrar novamenteClose"
+      ],
+      "tabs": []
+    }
+  ],
+  "discovered": [
+    "/",
+    "/chat-ia",
+    "/courses",
+    "/error-log",
+    "/essay-correction",
+    "/flashcards",
+    "/help",
+    "/mock-exam",
+    "/performance",
+    "/profile",
+    "/reminders",
+    "/study-plan",
+    "/study-resources",
+    "/tutorials",
+    "/youtube-transcription"
+  ]
+}

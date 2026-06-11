@@ -28,11 +28,9 @@ export type NovoCadernoContext = {
   modulos: ModuloTemplateRow[];
 };
 
-const inputDark =
-  'h-12 rounded-xl border border-white/10 bg-white/[0.05] text-white shadow-none placeholder:text-slate-500 focus-visible:border-cyan-400/50 focus-visible:ring-2 focus-visible:ring-cyan-400/30 focus-visible:ring-offset-0';
+const inputEditorial = 'input-editorial h-12 text-sm';
 
-const ctaPrimary =
-  'inline-flex min-h-[48px] h-12 items-center justify-center gap-2 rounded-xl border-0 bg-cyan-500 px-8 text-sm font-black uppercase tracking-widest text-slate-950 shadow-lg shadow-cyan-950/40 transition-colors hover:bg-cyan-400 disabled:pointer-events-none disabled:opacity-60';
+const ctaPrimary = 'btn-editorial-primary min-h-[48px] h-12 px-8 text-sm font-bold';
 
 function WizardProgress({ step }: { step: 1 | 2 }) {
   return (
@@ -41,9 +39,9 @@ function WizardProgress({ step }: { step: 1 | 2 }) {
         <span>{step} de 2</span>
         <span>{step === 1 ? 'Nome do caderno' : 'Montar conteúdo'}</span>
       </div>
-      <div className="h-1.5 overflow-hidden rounded-full bg-white/[0.06]">
+      <div className="h-1.5 overflow-hidden rounded-full bg-slate-100">
         <motion.div
-          className="h-full rounded-full bg-cyan-500"
+          className="h-full rounded-full bg-[#8fe020]"
           initial={false}
           animate={{ width: step === 1 ? '50%' : '100%' }}
           transition={{ duration: 0.25, ease: 'easeOut' }}
@@ -91,31 +89,24 @@ function LegacyNovoCadernoForm() {
       transition={{ duration: 0.3, ease: 'easeOut' }}
       className="relative mx-auto max-w-lg"
     >
-      <div
-        className="rounded-[2rem] border p-6 shadow-xl sm:p-10"
-        style={{ backgroundColor: '#0d1117', borderColor: 'rgba(255, 255, 255, 0.10)' }}
-      >
-        <div
-          className="flex items-start gap-4 border-b pb-5"
-          style={{ borderColor: 'rgba(255, 255, 255, 0.10)' }}
-        >
+      <div className="login-auth-card">
+        <div className="flex items-start gap-4 border-b border-slate-200 pb-5">
           <div
-            className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl"
-            style={{ backgroundColor: 'rgba(0, 242, 255, 0.10)' }}
+            className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[rgba(143,224,32,0.10)]"
             aria-hidden
           >
-            <BookMarked className="h-7 w-7" strokeWidth={1.5} style={{ color: '#00f2ff' }} />
+            <BookMarked className="h-7 w-7 text-[#3d6b0f]" strokeWidth={1.5} />
           </div>
           <div>
-            <h2 className="text-xl font-black text-white">Dados do caderno</h2>
-            <p className="mt-1 text-sm text-slate-400">Depois você adiciona questões da vitrine.</p>
+            <h2 className="text-xl font-bold text-slate-900">Dados do caderno</h2>
+            <p className="mt-1 text-sm text-slate-500">Depois você adiciona questões da vitrine.</p>
           </div>
         </div>
 
         <div className="space-y-5 pt-6">
           <div className="space-y-2">
-            <label htmlFor="caderno-nome" className="text-xs font-semibold uppercase tracking-widest text-slate-400">
-              Nome <span className="text-red-400">*</span>
+            <label htmlFor="caderno-nome" className="label-editorial">
+              Nome <span className="text-red-600">*</span>
             </label>
             <Input
               id="caderno-nome"
@@ -124,33 +115,28 @@ function LegacyNovoCadernoForm() {
               onChange={(e) => setTitle(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && !loading && void handleCreate()}
               placeholder="Ex: Fisiologia humana"
-              className={cn(inputDark)}
+              className={cn(inputEditorial)}
             />
           </div>
           <div className="space-y-2">
-            <label htmlFor="caderno-desc" className="text-xs font-semibold uppercase tracking-widest text-slate-400">
-              Descrição <span className="font-normal normal-case tracking-normal text-slate-500">(opcional)</span>
+            <label htmlFor="caderno-desc" className="label-editorial">
+              Descrição <span className="font-normal text-slate-400">(opcional)</span>
             </label>
             <Input
               id="caderno-desc"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Ex: Questões de enfermagem — EBSERH"
-              className={cn(inputDark)}
+              className={cn(inputEditorial)}
             />
           </div>
           {error ? (
-            <p className="text-sm font-medium text-red-400" role="alert">
+            <p className="text-sm font-medium text-red-600" role="alert">
               {error}
             </p>
           ) : null}
           <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:justify-end">
-            <Button
-              type="button"
-              variant="ghost"
-              asChild
-              className="h-12 rounded-xl bg-white/[0.08] text-slate-300 hover:bg-white/[0.12] hover:text-slate-200"
-            >
+            <Button type="button" variant="outline" asChild className="btn-editorial-outline h-12">
               <Link href="/cadernos">Cancelar</Link>
             </Button>
             <button type="button" disabled={loading} onClick={() => void handleCreate()} className={ctaPrimary}>
@@ -247,21 +233,18 @@ function WizardNovoCadernoForm({
       transition={{ duration: 0.3, ease: 'easeOut' }}
       className="relative mx-auto max-w-lg"
     >
-      <div
-        className="rounded-[2rem] border p-6 shadow-xl sm:p-10"
-        style={{ backgroundColor: '#0d1117', borderColor: 'rgba(255, 255, 255, 0.10)' }}
-      >
-        <div className="mb-6 space-y-4 border-b pb-5" style={{ borderColor: 'rgba(255, 255, 255, 0.10)' }}>
+      <div className="login-auth-card">
+        <div className="mb-6 space-y-4 border-b border-slate-200 pb-5">
           <div className="flex items-start gap-4">
             <div
-              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/20 to-cyan-500/5"
+              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[rgba(143,224,32,0.10)]"
               aria-hidden
             >
-              <Sparkles className="h-7 w-7 text-cyan-300" strokeWidth={1.5} />
+              <Sparkles className="h-7 w-7 text-[#3d6b0f]" strokeWidth={1.5} />
             </div>
             <div className="min-w-0 flex-1">
-              <h2 className="text-xl font-black text-white">Monte seu caderno</h2>
-              <p className="mt-1 text-sm text-slate-400">
+              <h2 className="text-xl font-bold text-slate-900">Monte seu caderno</h2>
+              <p className="mt-1 text-sm text-slate-500">
                 Em 2 passos você nomeia e já recebe questões sugeridas do seu edital.
               </p>
             </div>
@@ -280,8 +263,8 @@ function WizardNovoCadernoForm({
               className="space-y-5"
             >
               <div className="space-y-2">
-                <label htmlFor="wizard-caderno-nome" className="text-xs font-semibold uppercase tracking-widest text-slate-400">
-                  Nome do caderno <span className="text-red-400">*</span>
+                <label htmlFor="wizard-caderno-nome" className="label-editorial">
+                  Nome do caderno <span className="text-red-600">*</span>
                 </label>
                 <Input
                   id="wizard-caderno-nome"
@@ -289,7 +272,7 @@ function WizardNovoCadernoForm({
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="Ex: Meu edital — CESPE"
-                  className={cn(inputDark)}
+                  className={cn(inputEditorial)}
                 />
               </div>
 
@@ -304,8 +287,8 @@ function WizardNovoCadernoForm({
                       className={cn(
                         'rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors',
                         title === suggestion
-                          ? 'border-cyan-400/50 bg-cyan-500/15 text-cyan-200'
-                          : 'border-white/10 bg-white/[0.04] text-slate-300 hover:border-cyan-400/30 hover:text-white',
+                          ? 'border-[rgba(143,224,32,0.45)] bg-[rgba(143,224,32,0.12)] text-[#3d6b0f]'
+                          : 'border-slate-200 bg-white text-slate-600 hover:border-[rgba(143,224,32,0.35)] hover:text-slate-900',
                       )}
                     >
                       {suggestion}
@@ -315,12 +298,7 @@ function WizardNovoCadernoForm({
               </div>
 
               <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:justify-end">
-                <Button
-                  type="button"
-                  variant="ghost"
-                  asChild
-                  className="h-12 rounded-xl bg-white/[0.08] text-slate-300 hover:bg-white/[0.12] hover:text-slate-200"
-                >
+                <Button type="button" variant="outline" asChild className="btn-editorial-outline h-12">
                   <Link href="/cadernos">Cancelar</Link>
                 </Button>
                 <button
@@ -349,7 +327,7 @@ function WizardNovoCadernoForm({
               <PresetPreview preset={preset} batchCount={batchPreview.length} />
 
               {error ? (
-                <p className="text-sm font-medium text-red-400" role="alert">
+                <p className="text-sm font-medium text-red-600" role="alert">
                   {error}
                 </p>
               ) : null}
@@ -357,10 +335,10 @@ function WizardNovoCadernoForm({
               <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:justify-between">
                 <Button
                   type="button"
-                  variant="ghost"
+                  variant="outline"
                   disabled={loading}
                   onClick={() => setStep(1)}
-                  className="h-12 rounded-xl bg-white/[0.08] text-slate-300 hover:bg-white/[0.12] hover:text-slate-200"
+                  className="btn-editorial-outline h-12"
                 >
                   <ArrowLeft className="h-4 w-4" aria-hidden />
                   Voltar
@@ -394,13 +372,13 @@ function WizardNovoCadernoForm({
 
 function PresetPreview({ preset, batchCount }: { preset: QuickAddPreset; batchCount: number }) {
   return (
-    <div className="space-y-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+    <div className="space-y-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
       {preset.banca ? (
-        <p className="text-sm font-bold text-white">
-          Sua banca: <span className="text-cyan-300">{preset.banca}</span>
+        <p className="text-sm font-bold text-slate-900">
+          Sua banca: <span className="text-[#3d6b0f]">{preset.banca}</span>
         </p>
       ) : (
-        <p className="text-sm font-bold text-white">Sugestões do catálogo AVANT</p>
+        <p className="text-sm font-bold text-slate-900">Sugestões do catálogo AVANT</p>
       )}
 
       {preset.assuntosTop3.length > 0 ? (
@@ -408,15 +386,15 @@ function PresetPreview({ preset, batchCount }: { preset: QuickAddPreset; batchCo
           {preset.assuntosTop3.map((assunto) => (
             <li
               key={assunto.titulo}
-              className="flex items-center justify-between gap-3 rounded-xl border border-white/[0.06] bg-[#010409]/60 px-3 py-2.5"
+              className="flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-3 py-2.5"
             >
-              <span className="min-w-0 truncate text-sm font-semibold text-slate-200">{assunto.titulo}</span>
+              <span className="min-w-0 truncate text-sm font-semibold text-slate-700">{assunto.titulo}</span>
               <span className="shrink-0 text-xs font-bold text-slate-500">{assunto.count} questões</span>
             </li>
           ))}
         </ul>
       ) : (
-        <p className="text-sm text-slate-400">Nenhum assunto sugerido no momento — você poderá buscar questões depois.</p>
+        <p className="text-sm text-slate-500">Nenhum assunto sugerido no momento — você poderá buscar questões depois.</p>
       )}
 
       <p className="text-xs text-slate-500">
@@ -432,21 +410,21 @@ export default function NovoCadernoClient({ context }: { context: NovoCadernoCon
   const { pageBottomPadding } = useDashboardBottomInset('default');
 
   return (
-    <div className={cn(DASHBOARD_PAGE_ROOT, pageBottomPadding)} style={{ backgroundColor: '#010409' }}>
-      <div className="sticky top-0 z-20 border-b border-white/10 bg-[#010409]/95 backdrop-blur-md">
+    <div className={cn(DASHBOARD_PAGE_ROOT, 'bg-background', pageBottomPadding)}>
+      <div className="sticky top-0 z-20 border-b border-slate-200 bg-background/95 backdrop-blur-md">
         <header className="bg-transparent">
           <div className="mx-auto max-w-4xl px-4 py-5 sm:px-6 md:px-10">
             <Link
               href="/cadernos"
-              className="mb-2 inline-flex items-center gap-1.5 text-sm text-slate-400 transition-colors hover:text-slate-300"
+              className="mb-2 inline-flex items-center gap-1.5 text-sm text-slate-500 transition-colors hover:text-slate-700"
             >
               <ArrowLeft className="h-4 w-4 shrink-0" strokeWidth={2} aria-hidden />
               Cadernos de Estudo
             </Link>
-            <h1 className="text-3xl font-black tracking-tight text-white">
+            <h1 className="text-3xl font-bold tracking-tight text-slate-900">
               {context.wizard ? 'Novo caderno guiado' : 'Novo caderno'}
             </h1>
-            <p className="mt-1.5 text-sm text-slate-400">
+            <p className="mt-1.5 text-sm text-slate-500">
               {context.wizard
                 ? 'Nomeie, confira as sugestões do edital e comece a estudar com NeuroSlides'
                 : 'Dê um nome e, se quiser, uma descrição'}

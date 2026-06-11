@@ -1,4 +1,5 @@
 import { redirect } from 'next/navigation';
+import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { getTodayReviews } from '@/lib/spaced-repetition';
 import { getServerSession } from '@/lib/supabase/server-auth';
 import PlanoDiarioClient from './PlanoDiarioClient';
@@ -6,6 +7,10 @@ import PlanoDiarioClient from './PlanoDiarioClient';
 const LIMITE_DIARIO = 10;
 
 export default async function PlanoDiarioPage() {
+  if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS')) {
+    return <PlanoDiarioClient revisoes={[]} totalPendentes={0} limite={LIMITE_DIARIO} />;
+  }
+
   const session = await getServerSession();
   if (!session?.user) redirect('/login');
 

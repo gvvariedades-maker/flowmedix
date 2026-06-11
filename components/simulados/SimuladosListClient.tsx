@@ -46,8 +46,8 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
   const isEmpty = !openSession && recentSessions.length === 0;
 
   return (
-    <div className="bg-[#010409]">
-      <div className="sticky top-0 z-20 border-b border-[rgba(255,255,255,0.08)] bg-[#010409]/95 shadow-[0_8px_32px_-16px_rgba(0,0,0,0.5)] backdrop-blur-md supports-[backdrop-filter]:bg-[#010409]/90">
+    <div className="bg-background">
+      <div className="sticky top-0 z-20 border-b border-slate-200 bg-background/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
         <SimuladosHeader />
       </div>
 
@@ -65,42 +65,39 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
               <section aria-labelledby="simulado-em-andamento-heading">
                 <h2
                   id="simulado-em-andamento-heading"
-                  className="mb-3 text-xs font-semibold uppercase tracking-widest text-cyan-400/90"
+                  className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#3d6b0f]"
                 >
                   Em andamento
                 </h2>
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="rounded-2xl border border-[#00f2ff]/25 bg-gradient-to-b from-[#00f2ff]/[0.08] to-[#0d1117] p-5 shadow-sm shadow-black/20"
+                  className="rounded-2xl border border-[rgba(143,224,32,0.35)] bg-gradient-to-b from-[rgba(143,224,32,0.08)] to-white p-5 shadow-sm"
                 >
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div className="flex min-w-0 items-start gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#00f2ff]/30 bg-[#00f2ff]/10">
-                        <Play className="h-5 w-5 text-[#00f2ff]" aria-hidden />
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.12)]">
+                        <Play className="h-5 w-5 text-[#3d6b0f]" aria-hidden />
                       </div>
                       <div className="min-w-0">
-                        <p className="text-base font-black text-white">
+                        <p className="text-base font-black text-slate-900">
                           {sessionDisplayTitulo(openSession.titulo, openSession.modo)}
                         </p>
                         <div className="mt-2 flex flex-wrap items-center gap-2">
                           <NeonBadge variant="brand">{modoLabel(openSession.modo)}</NeonBadge>
-                          <span className="flex items-center gap-1 text-sm font-semibold text-slate-400">
+                          <span className="flex items-center gap-1 text-sm font-semibold text-slate-500">
                             <Layers className="h-3.5 w-3.5" aria-hidden />
                             {openSession.total_questoes}{' '}
                             {openSession.total_questoes === 1 ? 'questão' : 'questões'}
                           </span>
-                          <span className="flex items-center gap-1 text-sm font-semibold text-slate-400">
+                          <span className="flex items-center gap-1 text-sm font-semibold text-slate-500">
                             <Clock className="h-3.5 w-3.5" aria-hidden />
                             {tempoRelativo(openSession.created_at)}
                           </span>
                         </div>
                       </div>
                     </div>
-                    <Button
-                      asChild
-                      className="h-11 w-full rounded-xl bg-[#00f2ff] text-sm font-bold text-[#010409] hover:bg-[#00f2ff]/90 sm:w-auto"
-                    >
+                    <Button asChild className="btn-editorial-primary h-11 w-full sm:w-auto">
                       <Link href={`/simulados/${openSession.id}`}>Continuar simulado</Link>
                     </Button>
                   </div>
@@ -119,7 +116,7 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
                   </h2>
                   <Link
                     href="/desempenho/simulados"
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-cyan-400/90 hover:text-cyan-300"
+                    className="link-editorial-secondary inline-flex items-center gap-1 text-xs font-semibold"
                   >
                     <BarChart3 className="h-3.5 w-3.5" aria-hidden />
                     Ver desempenho
@@ -137,20 +134,19 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
                       <Link
                         href={`/simulados/${session.id}`}
                         className={cn(
-                          'flex flex-col gap-3 rounded-2xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117] p-4',
-                          'transition-colors hover:border-white/15 hover:bg-[#111827]',
+                          'card-elevated flex flex-col gap-3 p-4 transition-colors hover:border-slate-300',
                           'sm:flex-row sm:items-center sm:justify-between',
                         )}
                       >
                         <div className="flex min-w-0 items-start gap-3">
-                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-emerald-500/20 bg-emerald-500/10">
-                            <CheckCircle2 className="h-5 w-5 text-emerald-400" aria-hidden />
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-emerald-200 bg-emerald-50">
+                            <CheckCircle2 className="h-5 w-5 text-emerald-600" aria-hidden />
                           </div>
                           <div className="min-w-0">
-                            <p className="text-sm font-bold text-white">
+                            <p className="text-sm font-bold text-slate-900">
                               {sessionDisplayTitulo(session.titulo, session.modo)}
                             </p>
-                            <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold text-slate-400">
+                            <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold text-slate-500">
                               <NeonBadge variant="brand" className="text-[10px]">
                                 {modoLabel(session.modo)}
                               </NeonBadge>
@@ -165,7 +161,7 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
                             </div>
                           </div>
                         </div>
-                        <span className="text-xs font-semibold text-cyan-400/90 sm:shrink-0">
+                        <span className="text-xs font-semibold text-[#3d6b0f] sm:shrink-0">
                           Ver resumo →
                         </span>
                       </Link>
@@ -176,10 +172,10 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
             ) : null}
 
             {!openSession && recentSessions.length > 0 ? (
-              <div className="rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-6 text-center">
-                <ClipboardList className="mx-auto mb-3 h-8 w-8 text-slate-600" aria-hidden />
-                <p className="text-sm text-slate-400">Pronto para mais uma rodada?</p>
-                <Button asChild className="mt-4 rounded-xl bg-cyan-500 font-semibold text-white hover:bg-cyan-600">
+              <div className="rounded-2xl border border-dashed border-slate-200 bg-slate-50 p-6 text-center">
+                <ClipboardList className="mx-auto mb-3 h-8 w-8 text-slate-400" aria-hidden />
+                <p className="text-sm text-slate-600">Pronto para mais uma rodada?</p>
+                <Button asChild className="btn-editorial-primary mt-4">
                   <Link href="/simulados/novo">Montar novo simulado</Link>
                 </Button>
               </div>

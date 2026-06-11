@@ -26,8 +26,8 @@ function ProvaTimerBarActive({
   return (
     <div
       className={cn(
-        'sticky top-0 z-30 border-b bg-[#010409]/95 px-4 py-2.5 backdrop-blur-xl',
-        passedMeta ? 'border-amber-500/50' : 'border-white/10',
+        'sticky top-0 z-30 border-b bg-background/95 px-4 py-2.5 backdrop-blur-xl',
+        passedMeta ? 'border-amber-300 bg-amber-50/90' : 'border-slate-200',
       )}
       role="status"
       aria-live="polite"
@@ -35,14 +35,14 @@ function ProvaTimerBarActive({
       <div
         className={cn(
           'mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-2 text-sm',
-          passedMeta ? 'text-amber-400' : 'text-white/90',
+          passedMeta ? 'text-amber-800' : 'text-slate-800',
         )}
       >
         <span className="font-mono tabular-nums">
           <span aria-hidden>⏱ </span>
           {elapsedLabel}
         </span>
-        <span className={cn('font-mono tabular-nums', passedMeta ? '' : 'text-white/50')}>
+        <span className={cn('font-mono tabular-nums', passedMeta ? '' : 'text-slate-500')}>
           Meta: {metaLabel}
         </span>
       </div>

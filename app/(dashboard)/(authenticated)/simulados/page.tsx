@@ -19,8 +19,8 @@ export default async function SimuladosPage() {
     } catch (error) {
       logger.error('Failed to load simulados hub', error);
       return (
-        <div className="flex min-h-full items-center justify-center bg-[#010409] p-6">
-          <p className="text-sm text-slate-400">Erro ao carregar simulados. Tente novamente.</p>
+        <div className="flex min-h-full items-center justify-center bg-background p-6">
+          <p className="text-sm text-slate-600">Erro ao carregar simulados. Tente novamente.</p>
         </div>
       );
     }

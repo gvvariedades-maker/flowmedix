@@ -638,7 +638,7 @@ export default function VitrineClient({
                     paginaViaFiltroRef.current = true;
                     setPagina(1);
                   }}
-                  className="h-11 rounded-xl border-border/80 bg-white/[0.05] pl-10 pr-11 text-sm"
+                  className="h-11 rounded-xl border-border/80 bg-white pl-10 pr-11 text-sm"
                 />
                 {searchTerm ? (
                   <button
@@ -663,13 +663,13 @@ export default function VitrineClient({
               type="button"
               onClick={() => setMobileFiltersExpanded((open) => !open)}
               aria-expanded={mobileFiltersExpanded}
-              className="flex min-h-[40px] w-full items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-medium text-slate-300 transition-colors hover:border-white/15 hover:bg-white/[0.06]"
+              className="flex min-h-[40px] w-full items-center justify-between gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-300 hover:bg-slate-50"
             >
               <span className="inline-flex items-center gap-2">
                 <SlidersHorizontal size={15} className="text-slate-400" aria-hidden />
                 Filtrar
                 {activeMobileFilterCount > 0 ? (
-                  <span className="inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-[#00f2ff]/15 px-1.5 py-0.5 font-mono text-[10px] font-bold text-[#00f2ff]">
+                  <span className="inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-[rgba(143,224,32,0.15)] px-1.5 py-0.5 font-mono text-[10px] font-bold text-[#3d6b0f]">
                     {activeMobileFilterCount}
                   </span>
                 ) : null}
@@ -801,15 +801,15 @@ export default function VitrineClient({
         {showSsrErrorBanner && (
           <div
             role="alert"
-            className="flex flex-col gap-3 rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 sm:flex-row sm:items-center sm:justify-between"
+            className="flex flex-col gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 sm:flex-row sm:items-center sm:justify-between"
           >
-            <p className="text-sm text-amber-100/90">{initialPayloadError}</p>
+            <p className="text-sm text-amber-800">{initialPayloadError}</p>
             <Button
               type="button"
               variant="outline"
               size="sm"
               onClick={handleRetryLoad}
-              className="shrink-0 border-amber-500/40 text-amber-100 hover:bg-amber-500/15"
+              className="shrink-0 border-amber-300 text-amber-800 hover:bg-amber-100"
             >
               <RefreshCw size={16} className="mr-2" aria-hidden />
               Tentar novamente
@@ -821,19 +821,19 @@ export default function VitrineClient({
             <div className="min-w-0">
               <div className="flex items-stretch gap-3">
                 <div
-                  className="w-1 shrink-0 rounded-full bg-gradient-to-b from-cyan-400 to-cyan-500/30"
+                  className="w-1 shrink-0 rounded-full bg-[#8fe020]"
                   aria-hidden
                 />
                 <div className="min-w-0">
-                  <p className="mb-1 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-cyan-500/70">
+                  <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-500">
                     Estudo Reverso
                   </p>
                   <h1
                     className={cn(
                       'font-plus-jakarta text-2xl tracking-tight sm:text-3xl',
                       pageSectionTitle === 'Vitrine de questões'
-                        ? 'text-neon-gradient'
-                        : 'font-semibold text-[#e6edf3]',
+                        ? 'text-editorial-title font-bold'
+                        : 'font-semibold text-slate-900',
                     )}
                   >
                     {pageSectionTitle}
@@ -851,7 +851,7 @@ export default function VitrineClient({
           {loading && gruposPagina.length === 0 ? (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {Array.from({ length: 8 }).map((_, i) => (
-                <div key={i} className="h-72 animate-pulse rounded-3xl bg-muted/50" />
+                <div key={i} className="h-72 animate-pulse rounded-2xl bg-muted/50" />
               ))}
             </div>
           ) : gruposPagina.length > 0 ? (
@@ -940,16 +940,16 @@ function ProgressRingVitrine({
       />
       <div className="absolute inset-0 flex select-none flex-col items-center justify-center">
         <span
-          className="leading-none font-bold tabular-nums text-[#e6edf3]"
+          className="leading-none font-bold tabular-nums text-slate-900"
           style={{ fontSize: size >= 120 ? '1.5rem' : '1.1rem' }}
         >
           {trabalhadas}
         </span>
-        <span className="mt-1 text-[0.55rem] font-medium uppercase tracking-wide text-[#8b949e] sm:text-[0.6rem]">
+        <span className="mt-1 text-[0.55rem] font-medium uppercase tracking-wide text-slate-500 sm:text-[0.6rem]">
           de {total}
         </span>
         {todas && (
-          <span className="mt-0.5 text-[0.5rem] font-semibold uppercase tracking-wide text-[#6ee7b7]">
+          <span className="mt-0.5 text-[0.5rem] font-semibold uppercase tracking-wide text-green-600">
             Completo
           </span>
         )}
@@ -959,8 +959,8 @@ function ProgressRingVitrine({
 }
 
 function StatusBadge({ status }: { status: QuestaoStatus }) {
-  if (status === 'estudada') return <CheckCircle2 size={15} className="shrink-0 text-[#6ee7b7]" />;
-  return <Circle size={15} className="shrink-0 text-slate-600" />;
+  if (status === 'estudada') return <CheckCircle2 size={15} className="shrink-0 text-green-600" />;
+  return <Circle size={15} className="shrink-0 text-slate-300" />;
 }
 
 function SubtopicoCard({
@@ -1047,15 +1047,15 @@ function SubtopicoCard({
       variants={index < 8 ? itemVariants : itemGroupVariants}
       {...{ [VITRINE_PREFETCH_DATA_ATTR]: `${firstSlug}${estudarQuery}` }}
       className={cn(
-        'relative flex flex-col overflow-hidden rounded-3xl border bg-slate-900/40 backdrop-blur-sm transition-all hover:bg-slate-900/60',
+        'relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-slate-300 hover:shadow-md',
         todas
-          ? 'border-[rgba(0,255,136,0.25)] hover:border-[rgba(0,255,136,0.35)]'
-          : 'border-white/10 hover:border-cyan-400/30',
+          ? 'border-green-200 hover:border-green-300'
+          : '',
       )}
     >
       {mostrarNovo && (
         <span
-          className="pointer-events-none absolute right-3 top-3 z-10 rounded-md border border-[rgba(0,255,136,0.35)] bg-[rgba(0,255,136,0.12)] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#6ee7b7] sm:text-[11px]"
+          className="pointer-events-none absolute right-3 top-3 z-10 rounded-md border border-green-200 bg-green-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-green-700 sm:text-[11px]"
           aria-label="Assunto novo"
         >
           Novo
@@ -1073,34 +1073,34 @@ function SubtopicoCard({
         aria-expanded={assuntoExpandido}
         aria-controls={panelId}
         onClick={toggleAssunto}
-        className="group flex w-full items-start gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.04] px-4 py-3.5 text-left transition-all hover:border-cyan-400/20 hover:bg-white/[0.07]"
+        className="group flex w-full items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-left transition-all hover:border-[rgba(143,224,32,0.3)] hover:bg-slate-100"
       >
-        <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-xl border border-[rgba(0,242,255,0.2)] bg-[rgba(0,242,255,0.10)] transition-colors group-hover:border-[rgba(0,242,255,0.35)] group-hover:bg-[rgba(0,242,255,0.14)]">
+        <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-xl border border-[rgba(143,224,32,0.25)] bg-[rgba(143,224,32,0.10)] transition-colors group-hover:border-[rgba(143,224,32,0.4)] group-hover:bg-[rgba(143,224,32,0.14)]">
           {createElement(topicIcon, {
             size: 18,
             strokeWidth: 2,
-            className: 'text-cyan-400',
+            className: 'text-[#3d6b0f]',
           })}
         </span>
         <div className="flex min-w-0 flex-1 flex-col">
           <span
             className={cn(
-              'break-words text-sm font-semibold leading-snug text-white',
+              'break-words text-sm font-semibold leading-snug text-slate-900',
               assuntoExpandido ? 'line-clamp-none' : 'line-clamp-2',
             )}
           >
             {titulo_aula}
           </span>
-          <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11px] leading-none text-white/35">
+          <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11px] leading-none text-slate-500">
             <span>
-              <span className="font-medium tabular-nums text-cyan-400/80">{totalQuestoes.toLocaleString('pt-BR')}</span>{' '}
+              <span className="font-medium tabular-nums text-slate-700">{totalQuestoes.toLocaleString('pt-BR')}</span>{' '}
               {labelQuestoes(totalQuestoes)}
             </span>
-            <span className="text-white/15" aria-hidden>
+            <span className="text-slate-300" aria-hidden>
               ·
             </span>
             <span>
-              <span className="font-medium tabular-nums text-emerald-400/80">
+              <span className="font-medium tabular-nums text-emerald-700">
                 {totalNeuroSlides.toLocaleString('pt-BR')}
               </span>{' '}
               NeuroSlides
@@ -1108,7 +1108,7 @@ function SubtopicoCard({
           </p>
         </div>
         {mostrarCheckConclusao && (
-          <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-[#6ee7b7]" aria-hidden />
+          <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-green-600" aria-hidden />
         )}
         {assuntoExpandido ? (
           <ChevronUp size={18} className="mt-0.5 shrink-0 text-slate-500" />
@@ -1136,7 +1136,7 @@ function SubtopicoCard({
                   {pendentes} pendente{pendentes !== 1 ? 's' : ''}
                 </NeonBadge>
               )}
-              <Button asChild variant="outline" size="sm" className="ml-auto rounded-xl border-white/15 bg-white/[0.06] text-slate-200 hover:bg-white/[0.12] hover:border-white/25 hover:text-white">
+              <Button asChild variant="outline" size="sm" className="ml-auto rounded-xl border-slate-200 text-slate-700 hover:border-[rgba(143,224,32,0.35)] hover:bg-[rgba(143,224,32,0.06)] hover:text-[#3d6b0f]">
                 <VitrineQuestaoLink slug={firstSlug} estudarQuery={estudarQuery}>
                   Entrar no assunto
                 </VitrineQuestaoLink>
@@ -1148,7 +1148,7 @@ function SubtopicoCard({
             </div>
 
             <div className="-mt-1 text-center">
-              <p className="text-[10px] font-medium uppercase tracking-wide text-slate-400">
+              <p className="text-[10px] font-medium uppercase tracking-wide text-slate-500">
                 Questões trabalhadas
               </p>
             </div>
@@ -1163,7 +1163,7 @@ function SubtopicoCard({
               >
                 <label
                   htmlFor={`jump-questao-${firstSlug}`}
-                  className="text-[10px] font-medium uppercase tracking-wide text-slate-400"
+                  className="text-[10px] font-medium uppercase tracking-wide text-slate-500"
                 >
                   Ir para questão
                 </label>
@@ -1181,7 +1181,7 @@ function SubtopicoCard({
                       if (jumpError) setJumpError(null);
                     }}
                     disabled={jumpLoading}
-                    className="h-11 min-h-[44px] flex-1 rounded-xl border-white/10 bg-white/[0.04] text-sm text-slate-100 placeholder:text-slate-500"
+                    className="input-editorial h-11 min-h-[44px] flex-1 text-sm"
                   />
                   <Button
                     type="submit"
@@ -1193,7 +1193,7 @@ function SubtopicoCard({
                   </Button>
                 </div>
                 {jumpError ? (
-                  <p className="text-[11px] font-medium text-rose-400/90" role="alert">
+                  <p className="text-[11px] font-medium text-red-600" role="alert">
                     {jumpError}
                   </p>
                 ) : listaFoiTruncada ? (
@@ -1207,7 +1207,7 @@ function SubtopicoCard({
             <button
               type="button"
               onClick={() => setQuestoesExpandido((v) => !v)}
-              className="flex min-h-[44px] w-full items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-200 transition-colors hover:bg-white/[0.08] hover:text-white"
+              className="flex min-h-[44px] w-full items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
             >
               <span className="text-xs font-medium">
                 {questoesExpandido
@@ -1238,20 +1238,20 @@ function SubtopicoCard({
                           className={cn(
                             'group flex min-h-[44px] items-center gap-3 rounded-xl border px-3 py-2.5 transition-all',
                             estudada
-                              ? 'border-[rgba(0,255,136,0.20)] bg-[rgba(0,255,136,0.05)] hover:border-[rgba(0,255,136,0.35)]'
-                              : 'border-white/[0.08] bg-white/[0.03] hover:border-cyan-400/20 hover:bg-cyan-400/[0.05]',
+                              ? 'border-green-200 bg-green-50 hover:border-green-300'
+                              : 'border-slate-200 bg-white hover:border-[rgba(143,224,32,0.3)] hover:bg-[rgba(143,224,32,0.04)]',
                           )}
                         >
                           <StatusBadge status={q.status} />
                           <span
                             className={cn(
                               'flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-0.5 text-xs font-medium',
-                              estudada ? 'text-[#6ee7b7]' : 'text-slate-200',
+                              estudada ? 'text-green-700' : 'text-slate-700',
                             )}
                           >
                             <span>Questão {String(q.numero).padStart(2, '0')}</span>
                             {formatAvantCodigo(q.avant_codigo) && (
-                              <span className="rounded-md border border-white/10 bg-white/[0.06] px-1.5 py-0.5 font-mono text-[10px] text-slate-300">
+                              <span className="rounded-md border border-slate-200 bg-slate-50 px-1.5 py-0.5 font-mono text-[10px] text-slate-600">
                                 {formatAvantCodigo(q.avant_codigo)}
                               </span>
                             )}
@@ -1259,24 +1259,24 @@ function SubtopicoCard({
                           {!estudada && (
                             <span className="text-[10px] font-medium text-slate-500">Iniciar</span>
                           )}
-                          {estudada && <span className="text-[10px] font-medium text-[#67e8f9]">Revisitar</span>}
+                          {estudada && <span className="text-[10px] font-medium text-[#3d6b0f]">Revisitar</span>}
                           <ChevronRight
                             size={12}
-                            className="shrink-0 text-slate-600 opacity-40 transition-opacity group-hover:opacity-80"
+                            className="shrink-0 text-slate-400 opacity-60 transition-opacity group-hover:opacity-100"
                           />
                         </VitrineQuestaoLink>
                       );
                     })}
                   </div>
                   {listaFoiTruncada && (
-                    <p className="mt-2 flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-center text-[11px] font-medium text-amber-400/90">
+                    <p className="mt-2 flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-center text-[11px] font-medium text-amber-700">
                       <span>
                         +{questoesTruncadas} {labelQuestoes(questoesTruncadas)} neste assunto.
                       </span>
                       <VitrineQuestaoLink
                         slug={firstSlug}
                         estudarQuery={estudarQuery}
-                        className="inline-flex min-h-[44px] items-center font-semibold text-amber-300 underline-offset-2 hover:text-amber-200 hover:underline"
+                        className="inline-flex min-h-[44px] items-center font-semibold text-amber-800 underline-offset-2 hover:text-amber-900 hover:underline"
                       >
                         Próxima pendente
                       </VitrineQuestaoLink>
@@ -1285,8 +1285,8 @@ function SubtopicoCard({
               </div>
             </div>
 
-            <div className="flex items-center justify-between gap-2 border-t border-white/10 pt-2">
-              <span className="text-[10px] font-medium uppercase tracking-wide text-slate-400">
+            <div className="flex items-center justify-between gap-2 border-t border-slate-200 pt-2">
+              <span className="text-[10px] font-medium uppercase tracking-wide text-slate-500">
                 {totalQuestoes} {labelQuestoes(totalQuestoes)} no assunto
               </span>
               {totalResolvidas === 0 && (
@@ -1305,7 +1305,7 @@ function SubtopicoCard({
 
       {mostrarBarraProgresso && (
         <div
-          className="h-1 w-full shrink-0 bg-white/10"
+          className="h-1 w-full shrink-0 bg-slate-100"
           role="progressbar"
           aria-valuenow={progressoPct}
           aria-valuemin={0}
@@ -1313,7 +1313,7 @@ function SubtopicoCard({
           aria-label="Progresso do estudo reverso neste assunto"
         >
           <div
-            className="h-full bg-[#00f2ff] transition-[width] duration-300 ease-out"
+            className="h-full bg-[#8fe020] transition-[width] duration-300 ease-out"
             style={{ width: `${progressoPct}%` }}
           />
         </div>

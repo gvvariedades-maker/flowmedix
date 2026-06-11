@@ -41,7 +41,7 @@ function ProgressRingCaderno({ studied, total }: { studied: number; total: numbe
         variant={complete ? 'success' : 'brand'}
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center select-none">
-        <span className="text-sm font-bold tabular-nums leading-none text-white">{studied}</span>
+        <span className="text-sm font-bold tabular-nums leading-none text-slate-900">{studied}</span>
         <span className="mt-0.5 text-[9px] font-medium uppercase tracking-wide text-slate-500">/{total}</span>
       </div>
     </div>
@@ -82,32 +82,32 @@ function ConfirmExcluirModal({
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="w-full max-w-md rounded-3xl border border-[rgba(255,255,255,0.12)] bg-[#0d1117] p-6 shadow-2xl shadow-black/40"
+        className="card-elevated-lg w-full max-w-md p-6"
       >
         <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-lg font-[1000] italic tracking-tighter text-white">Excluir caderno</h2>
+          <h2 className="text-lg font-bold text-slate-900">Excluir caderno</h2>
           <button
             type="button"
             onClick={onClose}
-            className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/[0.06] text-slate-400 transition-colors hover:bg-white/[0.1] hover:text-slate-200"
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-slate-500 transition-colors hover:bg-slate-50 hover:text-slate-700"
             aria-label="Fechar"
           >
             <X size={18} aria-hidden />
           </button>
         </div>
-        <p className="mb-1 text-sm leading-relaxed text-slate-300">
+        <p className="mb-1 text-sm leading-relaxed text-slate-600">
           Tem certeza que deseja excluir{' '}
-          <span className="font-bold text-white">&quot;{caderno.title}&quot;</span>?
+          <span className="font-bold text-slate-900">&quot;{caderno.title}&quot;</span>?
         </p>
-        <p className="mb-5 text-xs text-slate-400">
+        <p className="mb-5 text-xs text-slate-500">
           Todas as questões deste caderno serão removidas. Esta ação não pode ser desfeita.
         </p>
-        {error && <p className="mb-3 text-xs font-bold text-rose-400">{error}</p>}
+        {error && <p className="mb-3 text-xs font-bold text-red-600">{error}</p>}
         <div className="flex gap-3">
           <button
             type="button"
             onClick={onClose}
-            className="flex-1 rounded-xl border border-[rgba(255,255,255,0.15)] py-3 text-sm font-bold text-slate-300 transition-colors hover:bg-white/[0.04]"
+            className="btn-editorial-outline flex-1 py-3"
           >
             Cancelar
           </button>
@@ -138,8 +138,8 @@ export default function CadernosListClient({
   const [pendingDelete, setPendingDelete] = useState<NotebookSummary | null>(null);
 
   return (
-    <div className={cn(DASHBOARD_PAGE_ROOT, 'bg-[#010409]', pageBottomPadding)}>
-      <div className="sticky top-0 z-20 border-b border-[rgba(255,255,255,0.08)] bg-[#010409]/95 shadow-[0_8px_32px_-16px_rgba(0,0,0,0.5)] backdrop-blur-md supports-[backdrop-filter]:bg-[#010409]/90">
+    <div className={cn(DASHBOARD_PAGE_ROOT, 'bg-background', pageBottomPadding)}>
+      <div className="sticky top-0 z-20 border-b border-slate-200 bg-background/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
         <CadernosHeader />
       </div>
 
@@ -159,33 +159,32 @@ export default function CadernosListClient({
                 >
                   <div
                     className={cn(
-                      'flex flex-col gap-4 rounded-2xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117] p-5 shadow-sm shadow-black/20',
-                      'shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] transition-all duration-300 ease-out',
-                      'hover:scale-[1.01] hover:shadow-md hover:shadow-black/30 sm:flex-row sm:items-center sm:justify-between',
+                      'card-elevated flex flex-col gap-4 p-5 transition-all duration-300 ease-out',
+                      'hover:border-slate-300 hover:shadow-md sm:flex-row sm:items-center sm:justify-between',
                     )}
                   >
                     <div className="flex min-w-0 flex-1 items-start gap-4">
                       {c.itemCount > 0 ? (
                         <ProgressRingCaderno studied={c.studiedCount} total={c.itemCount} />
                       ) : (
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[rgba(0,242,255,0.20)] bg-[rgba(0,242,255,0.08)]">
-                          <BookMarked size={22} className="text-cyan-300" aria-hidden />
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[rgba(143,224,32,0.25)] bg-[rgba(143,224,32,0.10)]">
+                          <BookMarked size={22} className="text-[#3d6b0f]" aria-hidden />
                         </div>
                       )}
                       <div className="min-w-0 flex-1">
-                        <p className="truncate text-base font-black text-white">{c.title}</p>
+                        <p className="truncate text-base font-bold text-slate-900">{c.title}</p>
                         {c.description && (
-                          <p className="mt-0.5 truncate text-sm font-medium text-slate-400">{c.description}</p>
+                          <p className="mt-0.5 truncate text-sm font-medium text-slate-500">{c.description}</p>
                         )}
                         {c.studyEntryTitle && c.itemCount > 0 && (
-                          <p className="mt-1 truncate text-xs font-semibold text-cyan-300/90">
+                          <p className="mt-1 truncate text-xs font-semibold text-[#3d6b0f]">
                             Próxima
                             {c.studyEntryPosition != null ? ` (${c.studyEntryPosition}/${c.itemCount})` : ''}:{' '}
                             {c.studyEntryTitle}
                           </p>
                         )}
                         <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1">
-                          <span className="flex items-center gap-1 text-sm font-semibold text-slate-400">
+                          <span className="flex items-center gap-1 text-sm font-semibold text-slate-500">
                             <Layers className="h-3.5 w-3.5 shrink-0" aria-hidden />
                             {c.itemCount} {c.itemCount === 1 ? 'questão' : 'questões'}
                           </span>
@@ -201,7 +200,7 @@ export default function CadernosListClient({
                       {c.studyEntrySlug ? (
                         <Link
                           href={`/estudar/${c.studyEntrySlug}?from=caderno&caderno_id=${c.id}`}
-                          className="inline-flex min-h-9 items-center justify-center gap-1.5 rounded-xl bg-cyan-500 px-4 text-xs font-black uppercase tracking-widest text-slate-950 shadow-sm transition-colors hover:bg-cyan-400"
+                          className="btn-editorial-primary inline-flex min-h-9 items-center justify-center gap-1.5 px-4 text-xs font-bold"
                         >
                           <Play className="h-3.5 w-3.5" aria-hidden />
                           Estudar caderno
@@ -209,7 +208,7 @@ export default function CadernosListClient({
                       ) : (
                         <Link
                           href={`/cadernos/${c.id}?setup=1`}
-                          className="inline-flex min-h-9 items-center justify-center gap-1.5 rounded-xl bg-cyan-500 px-4 text-xs font-black uppercase tracking-widest text-slate-950 shadow-sm transition-colors hover:bg-cyan-400"
+                          className="btn-editorial-primary inline-flex min-h-9 items-center justify-center gap-1.5 px-4 text-xs font-bold"
                         >
                           <Plus className="h-3.5 w-3.5" aria-hidden />
                           Adicionar questões
@@ -219,7 +218,7 @@ export default function CadernosListClient({
                         variant="outline"
                         asChild
                         size="sm"
-                        className="rounded-xl border-[rgba(255,255,255,0.15)] bg-transparent text-xs font-semibold text-white shadow-none hover:bg-white/[0.04]"
+                        className="rounded-xl border-slate-200 text-xs font-semibold text-slate-700 shadow-none hover:border-[rgba(143,224,32,0.35)] hover:bg-[rgba(143,224,32,0.06)] hover:text-[#3d6b0f]"
                       >
                         <Link href={`/cadernos/${c.id}`} className="inline-flex items-center gap-1.5">
                           <Pencil className="h-3.5 w-3.5" aria-hidden />
@@ -230,7 +229,7 @@ export default function CadernosListClient({
                         type="button"
                         onClick={() => setPendingDelete(c)}
                         title="Excluir caderno"
-                        className="flex h-9 w-9 items-center justify-center rounded-xl border border-[rgba(255,255,255,0.15)] bg-transparent text-slate-400 transition-colors hover:border-rose-500/40 hover:bg-rose-500/10 hover:text-rose-400"
+                        className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 transition-colors hover:border-red-200 hover:bg-red-50 hover:text-red-600"
                       >
                         <Trash2 size={16} aria-hidden />
                       </button>
@@ -244,7 +243,7 @@ export default function CadernosListClient({
               <Button
                 variant="outline"
                 asChild
-                className="rounded-2xl border-[rgba(255,255,255,0.15)] bg-transparent px-6 font-semibold text-slate-300 shadow-none transition-all duration-200 hover:scale-[1.02] hover:border-cyan-500/35 hover:bg-white/[0.04] hover:text-cyan-200"
+                className="btn-editorial-outline rounded-2xl px-6 font-semibold"
               >
                 <Link href="/estudar" className="inline-flex items-center gap-2">
                   <BookOpen className="h-4 w-4" aria-hidden />

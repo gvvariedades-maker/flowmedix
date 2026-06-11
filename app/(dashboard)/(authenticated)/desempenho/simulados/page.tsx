@@ -81,11 +81,7 @@ export default async function DesempenhoSimuladosPage({
             ]}
             description="Área dedicada ao desempenho em simulados."
             action={
-              <Button
-                asChild
-                variant="ghost"
-                className="h-11 w-full gap-2 rounded-xl px-4 font-semibold text-[#00f2ff] hover:bg-[#00f2ff]/10 hover:text-[#00f2ff] sm:w-auto"
-              >
+              <Button asChild className="btn-editorial-primary h-11 w-full sm:w-auto">
                 <Link href="/simulados/novo" className="inline-flex w-full items-center justify-center sm:w-auto">
                   <ClipboardList className="h-4 w-4" aria-hidden />
                   Iniciar simulado

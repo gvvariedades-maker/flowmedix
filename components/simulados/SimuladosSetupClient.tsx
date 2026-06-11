@@ -421,7 +421,7 @@ export function SimuladosSetupClient() {
         type="button"
         disabled={loading}
         onClick={() => setPaywallOpen(true)}
-        className="h-12 w-full rounded-2xl border border-amber-400/40 bg-amber-400/15 text-base font-semibold text-amber-200 hover:bg-amber-400/25"
+        className="h-12 w-full rounded-2xl border border-amber-300 bg-amber-50 text-base font-semibold text-amber-900 hover:bg-amber-100"
       >
         Limite diário atingido — ver AVANT Pro
       </Button>
@@ -429,7 +429,7 @@ export function SimuladosSetupClient() {
       <Button
         type="submit"
         disabled={loading}
-        className="inline-flex h-12 w-full rounded-2xl border border-cyan-500/40 bg-cyan-500/15 text-base font-semibold text-cyan-300 hover:bg-cyan-500/25"
+        className="btn-editorial-primary inline-flex h-12 w-full"
       >
         {loading ? (
           <>
@@ -443,42 +443,42 @@ export function SimuladosSetupClient() {
     );
 
   return (
-    <div className="bg-[#010409] px-4 pt-6 sm:px-6 lg:px-8 md:pb-8">
+    <div className="bg-background px-4 pt-6 sm:px-6 lg:px-8 md:pb-8">
       <div className="mx-auto max-w-3xl">
         <SimuladosBackLink className="mb-3" />
         <PageHeader
           title="Novo simulado"
           description="Monte um simulado com questões do seu catálogo. Corrija questão a questão e revise o resultado ao final."
-          descriptionClassName="text-sm text-slate-400 mt-1 max-w-xl"
-          titleClassName="text-[22px] font-bold tracking-tight text-white"
+          descriptionClassName="mt-1 max-w-xl text-sm text-slate-500"
+          titleClassName="text-[22px] font-bold tracking-tight text-slate-900"
         />
 
         <form
           id="simulado-setup-form"
           onSubmit={(e) => void handleSubmit(e)}
-          className="glass-panel space-y-6 border border-white/10 p-6 sm:p-8"
+          className="card-elevated-lg space-y-6 p-6 sm:p-8"
           aria-busy={loading}
         >
           {loadingOpenSession ? (
-            <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-slate-400">
+            <div className="flex items-center gap-2 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600">
               <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
               Verificando sessão em andamento...
             </div>
           ) : openSession ? (
-            <div className="space-y-4 rounded-2xl border border-[#00f2ff]/20 bg-gradient-to-b from-[#00f2ff]/[0.06] to-transparent p-5">
+            <div className="space-y-4 rounded-2xl border border-[rgba(143,224,32,0.35)] bg-gradient-to-b from-[rgba(143,224,32,0.08)] to-white p-5">
               <div className="space-y-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#00f2ff]/30 bg-[#00f2ff]/10 px-2.5 py-0.5 text-xs font-semibold text-[#00f2ff]">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.12)] px-2.5 py-0.5 text-xs font-semibold text-[#3d6b0f]">
                   <span className="relative flex h-1.5 w-1.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#00f2ff] opacity-75" />
-                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#00f2ff]" />
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#8fe020] opacity-75" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#8fe020]" />
                   </span>
                   Em andamento
                 </span>
-                <p className="text-sm font-semibold text-white">
+                <p className="text-sm font-semibold text-slate-900">
                   {openSession.titulo?.trim() ||
                     (openSession.modo === 'prova' ? 'Prova' : 'Simulado · Treino')}
                 </p>
-                <p className="text-sm text-slate-200">
+                <p className="text-sm text-slate-700">
                   {openSession.modo === 'treino' ? 'Treino' : 'Prova'} · {openSession.total_questoes}{' '}
                   questões
                 </p>
@@ -491,7 +491,7 @@ export function SimuladosSetupClient() {
                 <Button
                   type="button"
                   onClick={() => router.push(`/simulados/${openSession.id}`)}
-                  className="h-11 w-full rounded-xl bg-[#00f2ff] font-semibold text-[#010409] hover:bg-[#00f2ff]/90"
+                  className="btn-editorial-primary h-11 w-full"
                 >
                   Continuar simulado
                 </Button>
@@ -499,7 +499,7 @@ export function SimuladosSetupClient() {
             </div>
           ) : null}
 
-          <div className="flex items-start gap-3 rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3">
+          <div className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
             <Info size={14} className="mt-0.5 shrink-0 text-slate-500" aria-hidden />
             <p className="text-xs leading-relaxed text-slate-500">
               Filtros opcionais refinam o pool. Sem filtros, o simulado usa questões acessíveis no seu
@@ -507,8 +507,8 @@ export function SimuladosSetupClient() {
             </p>
           </div>
 
-          <div className="space-y-3 rounded-2xl border border-white/10 bg-white/[0.02] p-4">
-            <p id="simulado-modo-label" className="text-sm font-medium text-slate-200">
+          <div className="space-y-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+            <p id="simulado-modo-label" className="text-sm font-medium text-slate-800">
               Modo do simulado
             </p>
             <div
@@ -524,14 +524,14 @@ export function SimuladosSetupClient() {
                 className={cn(
                   'rounded-xl p-4 text-left',
                   modo === 'treino'
-                    ? 'border-2 border-[#00f2ff] bg-[#00f2ff]/[0.08]'
-                    : 'border border-white/[0.08] bg-white/[0.03] hover:border-white/20',
+                    ? 'border-2 border-[rgba(143,224,32,0.45)] bg-[rgba(143,224,32,0.08)]'
+                    : 'border border-slate-200 bg-white hover:border-slate-300',
                 )}
               >
                 <span
                   className={cn(
                     'block text-sm',
-                    modo === 'treino' ? 'font-bold text-[#00f2ff]' : 'font-semibold text-slate-300',
+                    modo === 'treino' ? 'font-bold text-[#3d6b0f]' : 'font-semibold text-slate-700',
                   )}
                 >
                   Treino
@@ -539,7 +539,7 @@ export function SimuladosSetupClient() {
                 <span
                   className={cn(
                     'mt-1 block text-xs',
-                    modo === 'treino' ? 'text-slate-300' : 'text-slate-500',
+                    modo === 'treino' ? 'text-slate-700' : 'text-slate-500',
                   )}
                 >
                   Feedback imediato com gabarito por questão.
@@ -553,14 +553,14 @@ export function SimuladosSetupClient() {
                 className={cn(
                   'rounded-xl p-4 text-left',
                   modo === 'prova'
-                    ? 'border-2 border-[#00f2ff] bg-[#00f2ff]/[0.08]'
-                    : 'border border-white/[0.08] bg-white/[0.03] hover:border-white/20',
+                    ? 'border-2 border-[rgba(143,224,32,0.45)] bg-[rgba(143,224,32,0.08)]'
+                    : 'border border-slate-200 bg-white hover:border-slate-300',
                 )}
               >
                 <span
                   className={cn(
                     'block text-sm',
-                    modo === 'prova' ? 'font-bold text-[#00f2ff]' : 'font-semibold text-slate-300',
+                    modo === 'prova' ? 'font-bold text-[#3d6b0f]' : 'font-semibold text-slate-700',
                   )}
                 >
                   Prova
@@ -568,7 +568,7 @@ export function SimuladosSetupClient() {
                 <span
                   className={cn(
                     'mt-1 block text-xs',
-                    modo === 'prova' ? 'text-slate-300' : 'text-slate-500',
+                    modo === 'prova' ? 'text-slate-700' : 'text-slate-500',
                   )}
                 >
                   Gabarito liberado apenas no resumo final.
@@ -578,9 +578,9 @@ export function SimuladosSetupClient() {
           </div>
 
           {modo === 'prova' ? (
-            <div className="space-y-4 rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+            <div className="space-y-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
               <div className="space-y-2">
-                <label htmlFor="simulado-titulo" className="text-sm font-medium text-slate-200">
+                <label htmlFor="simulado-titulo" className="text-sm font-medium text-slate-800">
                   Nome do simulado
                 </label>
                 <Input
@@ -590,14 +590,14 @@ export function SimuladosSetupClient() {
                   disabled={loading}
                   maxLength={120}
                   placeholder={tituloAutoPreview}
-                  className="h-11 rounded-xl border-white/15 bg-[#0d1117] text-slate-100"
+                  className="input-editorial h-11"
                 />
                 <p className="text-xs text-slate-500">
                   Deixe em branco para usar: <span className="text-slate-400">{tituloAutoPreview}</span>
                 </p>
               </div>
               <div className="space-y-2">
-                <label htmlFor="simulado-ritmo" className="text-sm font-medium text-slate-200">
+                <label htmlFor="simulado-ritmo" className="text-sm font-medium text-slate-800">
                   Ritmo sugerido
                 </label>
                 <select
@@ -605,7 +605,7 @@ export function SimuladosSetupClient() {
                   value={ritmoMeta}
                   onChange={(e) => setRitmoMeta(e.target.value as RitmoMetaOption)}
                   disabled={loading}
-                  className="h-11 w-full rounded-xl border border-white/15 bg-[#0d1117] px-3 text-sm text-slate-100"
+                  className="input-editorial h-11 w-full px-3 text-sm"
                 >
                   <option value="3min">3 min/questão (padrão)</option>
                   <option value="2min">2 min/questão</option>
@@ -616,7 +616,7 @@ export function SimuladosSetupClient() {
           ) : null}
 
           <div className="space-y-2">
-            <span id="simulado-quantidade-label" className="text-sm font-medium text-slate-300">
+            <span id="simulado-quantidade-label" className="text-sm font-medium text-slate-700">
               Quantidade de questões
             </span>
             <div
@@ -629,11 +629,11 @@ export function SimuladosSetupClient() {
                 onClick={() => bump(-5)}
                 disabled={loading || qNum <= 1}
                 aria-label="Diminuir quantidade"
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-[#0d1117] text-lg font-medium text-slate-200 transition-colors hover:border-white/25 hover:bg-white/[0.04] disabled:cursor-not-allowed disabled:opacity-40"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-lg font-medium text-slate-700 transition-colors hover:border-slate-300 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 −
               </button>
-              <span className="min-w-[2.5rem] text-center text-lg font-semibold tabular-nums text-slate-100">
+              <span className="min-w-[2.5rem] text-center text-lg font-semibold tabular-nums text-slate-900">
                 {qNum}
               </span>
               <button
@@ -641,7 +641,7 @@ export function SimuladosSetupClient() {
                 onClick={() => bump(5)}
                 disabled={loading || qNum >= 100}
                 aria-label="Aumentar quantidade"
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-[#0d1117] text-lg font-medium text-slate-200 transition-colors hover:border-white/25 hover:bg-white/[0.04] disabled:cursor-not-allowed disabled:opacity-40"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-lg font-medium text-slate-700 transition-colors hover:border-slate-300 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 +
               </button>
@@ -650,28 +650,28 @@ export function SimuladosSetupClient() {
           </div>
 
           {poolLoading ? (
-            <div className="flex items-center gap-2 rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3 text-sm text-slate-500">
+            <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600">
               <Loader2 className="h-4 w-4 shrink-0 animate-spin" aria-hidden />
               Estimando pool de questões...
             </div>
           ) : poolCount !== null ? (
-            <div className="flex items-start gap-3 rounded-xl border border-[#00ff88]/20 bg-[#00ff88]/[0.06] px-4 py-3">
-              <Database size={16} className="mt-0.5 shrink-0 text-[#00ff88]" aria-hidden />
+            <div className="flex items-start gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3">
+              <Database size={16} className="mt-0.5 shrink-0 text-emerald-600" aria-hidden />
               <div>
-                <p className="text-sm font-bold tabular-nums text-[#00ff88]">
+                <p className="text-sm font-bold tabular-nums text-emerald-700">
                   ~{poolCount.toLocaleString('pt-BR')}
                 </p>
-                <p className="text-xs text-slate-400">questões disponíveis com os filtros atuais</p>
+                <p className="text-xs text-slate-600">questões disponíveis com os filtros atuais</p>
               </div>
             </div>
           ) : (
-            <div className="rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3 text-sm text-slate-500">
+            <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600">
               Não foi possível estimar o pool com os filtros atuais.
             </div>
           )}
 
           {poolCount !== null && qNum > poolCount && !poolLoading && (
-            <div className="rounded-xl border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-sm text-amber-200">
+            <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
               Você pediu {qNum} questões, mas o pool estimado tem ~
               {poolCount.toLocaleString('pt-BR')}. Reduza a quantidade ou amplie os filtros.
             </div>
@@ -682,8 +682,8 @@ export function SimuladosSetupClient() {
               className={cn(
                 'rounded-xl border px-4 py-3 text-sm',
                 simuladoFreeLimitReached
-                  ? 'border-amber-400/30 bg-amber-400/10 text-amber-200'
-                  : 'border-white/10 bg-white/[0.02] text-slate-400',
+                  ? 'border-amber-200 bg-amber-50 text-amber-900'
+                  : 'border-slate-200 bg-slate-50 text-slate-600',
               )}
             >
               {simuladoFreeHint}
@@ -692,7 +692,7 @@ export function SimuladosSetupClient() {
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
-              <span id="simulado-banca-label" className="text-sm font-medium text-slate-300">
+              <span id="simulado-banca-label" className="text-sm font-medium text-slate-700">
                 Banca (opcional)
               </span>
               <MultiCheckboxFilter
@@ -714,7 +714,7 @@ export function SimuladosSetupClient() {
             </div>
 
             <div className="space-y-2">
-              <span id="simulado-assunto-label" className="text-sm font-medium text-slate-300">
+              <span id="simulado-assunto-label" className="text-sm font-medium text-slate-700">
                 Assunto (opcional)
               </span>
               <MultiCheckboxFilter
@@ -738,7 +738,7 @@ export function SimuladosSetupClient() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="simulado-q" className="text-sm font-medium text-slate-300">
+            <label htmlFor="simulado-q" className="text-sm font-medium text-slate-700">
               Busca livre (opcional)
             </label>
             <Input
@@ -751,7 +751,7 @@ export function SimuladosSetupClient() {
               disabled={loading}
               placeholder="Palavra-chave no enunciado ou metadados"
               className={cn(
-                'h-11 rounded-xl border-white/15 bg-[#0d1117] text-slate-100 md:scroll-mb-0',
+                'input-editorial h-11 md:scroll-mb-0',
                 MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM,
               )}
             />
@@ -782,7 +782,7 @@ export function SimuladosSetupClient() {
               variant="outline"
               disabled={loading || savingTemplate}
               onClick={() => void handleSaveTemplate()}
-              className="h-11 rounded-xl border-white/15 bg-transparent text-slate-200 hover:bg-white/5"
+              className="btn-editorial-outline h-11"
             >
               {savingTemplate ? (
                 <>
@@ -813,12 +813,12 @@ export function SimuladosSetupClient() {
 
         <section
           aria-labelledby="simulados-salvos-titulo"
-          className="glass-panel mt-8 space-y-4 border border-white/10 p-6 sm:p-8"
+          className="card-elevated-lg mt-8 space-y-4 p-6 sm:p-8"
         >
           <div className="space-y-1">
             <h2
               id="simulados-salvos-titulo"
-              className="text-lg font-semibold tracking-tight text-white"
+              className="text-lg font-semibold tracking-tight text-slate-900"
             >
               Meus simulados salvos
             </h2>
@@ -833,7 +833,7 @@ export function SimuladosSetupClient() {
               Carregando simulados salvos…
             </div>
           ) : templates.length === 0 ? (
-            <p className="rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-6 text-center text-sm text-slate-500">
+            <p className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-6 text-center text-sm text-slate-500">
               Nenhuma configuração salva ainda. Ajuste os filtros acima e use &quot;Salvar esta
               configuração&quot;.
             </p>
@@ -861,11 +861,11 @@ export function SimuladosSetupClient() {
                 return (
                   <li
                     key={template.id}
-                    className="rounded-2xl border border-white/10 bg-white/[0.02] p-4"
+                    className="rounded-2xl border border-slate-200 bg-white p-4"
                   >
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                       <div className="min-w-0 space-y-1">
-                        <p className="truncate font-semibold text-slate-100">
+                        <p className="truncate font-semibold text-slate-900">
                           {sessionDisplayTitulo(template.titulo, template.modo)}
                         </p>
                         <p className="text-xs text-slate-400">
@@ -885,7 +885,7 @@ export function SimuladosSetupClient() {
                           size="sm"
                           disabled={loading || templateActionId === template.id}
                           onClick={() => void startFromTemplate(template)}
-                          className="rounded-lg border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25"
+                          className="btn-editorial-primary rounded-lg"
                         >
                           Iniciar
                         </Button>
@@ -895,7 +895,7 @@ export function SimuladosSetupClient() {
                           variant="outline"
                           disabled={loading || templateActionId === template.id}
                           onClick={() => applyTemplateToForm(template)}
-                          className="rounded-lg border-white/15 bg-transparent text-slate-300 hover:bg-white/5"
+                          className="btn-editorial-outline rounded-lg"
                         >
                           Editar
                         </Button>
@@ -906,7 +906,7 @@ export function SimuladosSetupClient() {
                           disabled={loading || templateActionId === template.id}
                           onClick={() => void handleDeleteTemplate(template.id)}
                           aria-label={`Excluir ${template.titulo}`}
-                          className="rounded-lg border-white/15 bg-transparent text-slate-400 hover:border-rose-500/30 hover:text-rose-300"
+                          className="rounded-lg border border-slate-200 bg-white text-slate-500 hover:border-rose-300 hover:text-rose-600"
                         >
                           {templateActionId === template.id ? (
                             <Loader2 className="h-4 w-4 animate-spin" aria-hidden />

@@ -65,7 +65,7 @@ describe('SimuladoQuestionMap', () => {
     );
 
     const answered = screen.getByRole('button', { name: 'Questão 1, respondida' });
-    expect(answered.className).toContain('border-white/15');
+    expect(answered.className).toContain('border-slate-300');
     expect(answered.className).not.toContain('emerald');
   });
 

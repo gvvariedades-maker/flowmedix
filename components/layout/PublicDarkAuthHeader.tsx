@@ -15,17 +15,47 @@ const navLinkClassMobile =
 const ctaButtonClass =
   'inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#BEF264] px-2.5 py-2 text-xs font-black uppercase tracking-wider text-slate-950 shadow-lg shadow-lime-400/20 transition-all hover:scale-[1.02] hover:bg-[#d4f879] min-[380px]:gap-2 min-[380px]:px-3 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm';
 
+const ctaButtonEditorialClass =
+  'inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#8fe020] px-2.5 py-2 text-xs font-bold text-[#1a2e05] shadow-sm transition-all hover:bg-[#7acc10] min-[380px]:gap-2 min-[380px]:px-3 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm';
+
+const navLinkEditorialClass =
+  'rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition-colors hover:text-slate-900';
+
+const navLinkEditorialMobileClass =
+  'rounded-lg px-2 py-1.5 text-[11px] font-semibold text-slate-600 transition-colors hover:text-slate-900 min-[400px]:text-xs';
+
+/** Login/register no header — mais contraste que links secundários (Blog, Planos) */
+const navAuthEditorialAccentClass =
+  'rounded-lg px-3 py-2 text-sm font-bold text-slate-900 transition-colors hover:text-[#3d6b0f]';
+
+const navAuthEditorialAccentMobileClass =
+  'rounded-lg px-2.5 py-1.5 text-xs font-bold text-slate-900 transition-colors hover:text-[#3d6b0f] min-[400px]:text-sm';
+
 export type PublicDarkAuthHeaderVariant = 'login' | 'register' | 'auth-other';
 
 export type PublicDarkAuthHeaderProps = {
   variant: PublicDarkAuthHeaderVariant;
   loginHref?: string;
   registerHref?: string;
+  /** Editorial v2 — padrão em `/login`, `/register` e fluxos auth claros. */
+  appearance?: 'dark' | 'editorial';
 };
 
-function AuthCtaButton({ href, className }: { href: string; className?: string }) {
+function AuthCtaButton({
+  href,
+  className,
+  editorial,
+}: {
+  href: string;
+  className?: string;
+  editorial?: boolean;
+}) {
   return (
-    <Link href={href} className={cn(ctaButtonClass, className)} aria-label="Comece grátis">
+    <Link
+      href={href}
+      className={cn(editorial ? ctaButtonEditorialClass : ctaButtonClass, className)}
+      aria-label="Comece grátis"
+    >
       <span className="hidden sm:inline">Comece grátis</span>
       <span className="inline max-w-[9.5rem] truncate font-bold normal-case leading-tight tracking-normal sm:hidden">
         Comece grátis
@@ -41,21 +71,59 @@ function AuthNavActions({
   registerHref,
   linkClassName,
   ctaClassName,
+  editorial,
 }: {
   variant: PublicDarkAuthHeaderVariant;
   loginHref: string;
   registerHref: string;
   linkClassName?: string;
   ctaClassName?: string;
+  editorial?: boolean;
 }) {
+  const linkBase = linkClassName ?? navLinkClass;
+  const editorialAccent =
+    linkClassName === navLinkEditorialMobileClass || linkClassName === navLinkClassMobile
+      ? navAuthEditorialAccentMobileClass
+      : navAuthEditorialAccentClass;
+
+  /* Editorial: um CTA verde no form; header só com links de texto */
+  if (editorial) {
+    if (variant === 'login') {
+      return (
+        <Link href={registerHref} className={cn(editorialAccent, 'shrink-0')}>
+          Cadastre-se
+        </Link>
+      );
+    }
+    if (variant === 'register') {
+      return (
+        <Link href={loginHref} className={cn(editorialAccent, 'shrink-0')}>
+          Entrar
+        </Link>
+      );
+    }
+    return (
+      <>
+        <Link href={loginHref} className={cn(editorialAccent, 'shrink-0')}>
+          Entrar
+        </Link>
+        <Link href={registerHref} className={cn(editorialAccent, 'shrink-0')}>
+          Cadastre-se
+        </Link>
+      </>
+    );
+  }
+
   return (
     <>
       {variant !== 'login' ? (
-        <Link href={loginHref} className={cn(linkClassName ?? navLinkClass, 'shrink-0')}>
+        <Link href={loginHref} className={cn(linkBase, 'shrink-0')}>
           Entrar
         </Link>
       ) : null}
-      {variant !== 'register' ? <AuthCtaButton href={registerHref} className={ctaClassName} /> : null}
+      {variant !== 'register' ? (
+        <AuthCtaButton href={registerHref} className={ctaClassName} editorial={editorial} />
+      ) : null}
     </>
   );
 }
@@ -65,40 +133,63 @@ export function PublicDarkAuthHeader({
   variant,
   loginHref = '/login',
   registerHref = '/register',
+  appearance = 'editorial',
 }: PublicDarkAuthHeaderProps) {
+  const editorial = appearance === 'editorial';
+  const linkDesktop = editorial ? navLinkEditorialClass : navLinkClass;
+  const linkMobile = editorial ? navLinkEditorialMobileClass : navLinkClassMobile;
+
   const secondaryNav = (
     <>
-      <Link href="/blog" className={navLinkClassMobile}>
+      <Link href="/blog" className={linkMobile}>
         Blog
       </Link>
-      <Link href="/planos" className={navLinkClassMobile}>
+      <Link href="/planos" className={linkMobile}>
         Concursos abertos
       </Link>
-      <Link href={AVANT_PRO_LP_HREF} className={navLinkClassMobile}>
+      <Link href={AVANT_PRO_LP_HREF} className={linkMobile}>
         AVANT Pro
       </Link>
     </>
   );
 
   return (
-    <header className="sticky top-0 z-30 border-b border-white/5 bg-slate-950/55 backdrop-blur-xl">
+    <header
+      className={cn(
+        'sticky top-0 z-30 border-b backdrop-blur-xl',
+        editorial
+          ? 'border-slate-200 bg-white/90'
+          : 'border-white/5 bg-slate-950/55',
+      )}
+    >
       <div className="mx-auto max-w-6xl px-3 py-3 sm:px-6 sm:py-4">
         {/* Mobile: logo na 1ª linha; links secundários na 2ª (evita sobrepor a logo) */}
         <div className="flex flex-col gap-2 sm:hidden">
           <div className="flex items-center justify-between gap-2">
-            <AvantLogo href="/" variant="icon" size="nav" className="min-w-0" />
+            <AvantLogo
+              href="/"
+              variant="lockup"
+              size="nav"
+              tone={editorial ? 'light' : 'default'}
+              animated={false}
+              className="min-w-0"
+            />
             <nav className="flex shrink-0 items-center gap-1" aria-label="Acesso à conta">
               <AuthNavActions
                 variant={variant}
                 loginHref={loginHref}
                 registerHref={registerHref}
-                linkClassName={navLinkClassMobile}
+                linkClassName={linkMobile}
                 ctaClassName="!px-2.5 !py-1.5 !text-[10px] min-[400px]:!text-xs"
+                editorial={editorial}
               />
             </nav>
           </div>
           <nav
-            className="flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 border-t border-white/5 pt-2"
+            className={cn(
+              'flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 border-t pt-2',
+              editorial ? 'border-slate-200' : 'border-white/5',
+            )}
             aria-label="Navegação secundária"
           >
             {secondaryNav}
@@ -111,23 +202,24 @@ export function PublicDarkAuthHeader({
             href="/"
             variant="lockup"
             size="nav"
+            tone={editorial ? 'light' : 'default'}
             animated={false}
             className="flex-none transition-transform hover:scale-[1.02]"
           />
           <div className="flex min-w-0 flex-1 items-center justify-end gap-1.5 sm:gap-3">
-            <Link href="/blog" className={`${navLinkClass} hidden min-[380px]:inline-flex shrink-0`}>
+            <Link href="/blog" className={`${linkDesktop} hidden min-[380px]:inline-flex shrink-0`}>
               Blog
             </Link>
             <Link
               href="/planos"
-              className={`${navLinkClass} inline-flex shrink-0 px-1.5 py-1.5 text-[10px] min-[400px]:px-3 min-[400px]:py-2 min-[400px]:text-sm`}
+              className={`${linkDesktop} inline-flex shrink-0 px-1.5 py-1.5 text-[10px] min-[400px]:px-3 min-[400px]:py-2 min-[400px]:text-sm`}
             >
               <span className="sm:hidden">Concursos</span>
               <span className="hidden sm:inline">Concursos abertos</span>
             </Link>
             <Link
               href={AVANT_PRO_LP_HREF}
-              className={`${navLinkClass} inline-flex shrink-0 px-1.5 py-1.5 text-[10px] min-[400px]:px-3 min-[400px]:py-2 min-[400px]:text-sm`}
+              className={`${linkDesktop} inline-flex shrink-0 px-1.5 py-1.5 text-[10px] min-[400px]:px-3 min-[400px]:py-2 min-[400px]:text-sm`}
             >
               AVANT Pro
             </Link>
@@ -136,6 +228,7 @@ export function PublicDarkAuthHeader({
                 variant={variant}
                 loginHref={loginHref}
                 registerHref={registerHref}
+                editorial={editorial}
               />
             </nav>
           </div>

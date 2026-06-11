@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
+import { RefreshCw, TriangleAlert } from 'lucide-react';
 import { logger } from '@/lib/logger';
 import { reportClientError } from '@/lib/monitoring/reportClientError';
 
@@ -25,36 +26,34 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#010409] p-4">
-      <div className="max-w-md w-full text-center space-y-6">
+    <div className="flex min-h-screen items-center justify-center bg-background p-4">
+      <div className="w-full max-w-md space-y-6 text-center">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-rose-200 bg-rose-50 text-rose-600">
+          <TriangleAlert className="h-7 w-7" aria-hidden />
+        </div>
         <div className="space-y-2">
-          <h1 className="text-4xl font-black text-red-400 mb-2">
-            ⚠️ Erro Inesperado
-          </h1>
-          <p className="text-slate-300 text-lg">
+          <h1 className="text-xl font-bold text-slate-900">Erro inesperado</h1>
+          <p className="text-sm leading-relaxed text-slate-600">
             Algo deu errado. O erro foi registrado e você pode tentar novamente.
           </p>
           {process.env.NODE_ENV === 'development' && (
-            <div className="mt-4 p-4 bg-red-950/40 rounded-lg border border-red-500/30 text-left">
-              <p className="text-xs text-red-300 font-mono break-all">
-                {error.message}
-              </p>
-            </div>
+            <p className="rounded-xl border border-dashed border-slate-200 bg-slate-50 px-3 py-2 text-left text-xs font-mono text-slate-500 break-all">
+              {error.message}
+            </p>
           )}
         </div>
-        
-        <div className="flex gap-4 justify-center">
+
+        <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
           <button
+            type="button"
             onClick={reset}
-            className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition-colors shadow-lg shadow-indigo-500/20"
+            className="btn-editorial-primary inline-flex h-11 items-center justify-center gap-2 px-6"
           >
-            Tentar Novamente
+            <RefreshCw className="h-4 w-4" aria-hidden />
+            Tentar novamente
           </button>
-          <Link
-            href="/"
-            className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg transition-colors border border-white/10"
-          >
-            Voltar ao Início
+          <Link href="/" className="btn-editorial-outline inline-flex h-11 items-center justify-center px-6">
+            Voltar ao início
           </Link>
         </div>
       </div>
