@@ -1,0 +1,115 @@
+{
+  "generated_at": "2026-06-10T05:51:50.560Z",
+  "lote": "saude-do-idoso-lote-01",
+  "mode": "write",
+  "force": false,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 8,
+  "upgraded": 8,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "conceito": 6,
+    "calc": 1,
+    "protocolo": 1
+  },
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-6",
+      "status": "upgraded",
+      "family": "calc",
+      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1780067036141-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-do-idoso-1778934944659-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-do-idoso-1778934944659-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-do-idoso-1780001440222-1",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-do-idoso-1780001440222-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    }
+  ]
+}

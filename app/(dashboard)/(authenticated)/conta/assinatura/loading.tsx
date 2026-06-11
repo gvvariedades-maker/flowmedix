@@ -3,14 +3,14 @@ import { DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
 
 export default function AssinaturaLoading() {
   return (
-    <DashboardMobilePage variant="default" className={`${DASHBOARD_PAGE_ROOT} bg-[#010409]`}>
-      <div className="mx-auto max-w-3xl animate-pulse px-4 py-6 sm:px-6 md:px-10">
-        <div className="h-9 w-48 rounded-xl bg-white/8" />
-        <div className="mt-2 h-4 w-full max-w-md rounded-lg bg-white/5" />
-        <div className="mt-6 space-y-4">
-          <div className="h-40 rounded-2xl bg-white/[0.04]" />
-          <div className="h-24 rounded-2xl bg-white/[0.03]" />
+    <DashboardMobilePage variant="default" className={`${DASHBOARD_PAGE_ROOT} bg-background`}>
+      <div className="mx-auto max-w-2xl animate-pulse space-y-8 px-4 py-8 sm:px-6">
+        <div className="space-y-3">
+          <div className="h-3 w-24 rounded-lg bg-muted/50" />
+          <div className="h-8 w-56 rounded-xl bg-muted/70" />
+          <div className="h-4 w-full max-w-md rounded-lg bg-muted/50" />
         </div>
+        <div className="card-elevated-lg h-64 rounded-2xl bg-muted/40" />
       </div>
     </DashboardMobilePage>
   );

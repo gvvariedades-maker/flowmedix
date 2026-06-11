@@ -1,0 +1,14 @@
+{
+  "lote": "doencas-autoimunes-e-reumatologicas-lote-01",
+  "exported_at": "2026-06-10T05:53:24.356Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Doenças Autoimunes e Reumatológicas",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-3",
+    "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-4"
+  ]
+}

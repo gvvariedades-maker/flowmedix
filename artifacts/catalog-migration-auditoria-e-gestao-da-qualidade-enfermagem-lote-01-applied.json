@@ -1,0 +1,342 @@
+{
+  "generated_at": "2026-06-10T05:46:07.806Z",
+  "lote": "auditoria-e-gestao-da-qualidade-enfermagem-lote-01",
+  "mode": "apply",
+  "total_files": 47,
+  "ok": 47,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
+    "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-5",
+    "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-7",
+    "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-7",
+    "cogeps-unioeste-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-7",
+    "cogeps-unioeste-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-0",
+    "epl-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-6",
+    "fauel-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-8",
+    "fepese-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-3",
+    "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
+    "fundatec-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-5",
+    "fundepes-copeve-ufal-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-0",
+    "furb-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-7",
+    "gama-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-5",
+    "ibade-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-9",
+    "idecan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1778712242196-3",
+    "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-1",
+    "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-4",
+    "imparh-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-9",
+    "instituto-consulpam-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-6",
+    "instituto-consulplan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-0",
+    "instituto-consulplan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-3",
+    "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-1",
+    "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-4",
+    "ivin-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-8",
+    "legalle-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-4",
+    "ms-sarmento-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-2",
+    "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-6",
+    "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-0",
+    "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-1",
+    "selecon-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-8",
+    "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-5",
+    "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-6",
+    "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-7",
+    "unesc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-5",
+    "unifil-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-2",
+    "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-2",
+    "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-3",
+    "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-4",
+    "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-4",
+    "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-0",
+    "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-1",
+    "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-2",
+    "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-1",
+    "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-2",
+    "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-3",
+    "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "epl-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1778712242196-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "lote": "saude-do-adolescente-lote-01",
+  "exported_at": "2026-06-10T05:07:03.827Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Saúde do Adolescente",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "agirh-enfermagem-saude-do-adolescente-1777104229064-4",
+    "amauc-enfermagem-saude-do-adolescente-1777104229064-5",
+    "amauc-enfermagem-saude-do-adolescente-1777104229064-6",
+    "cogeps-unioeste-enfermagem-saude-do-adolescente-1777104229064-7",
+    "fau-unicentro-enfermagem-saude-do-adolescente-1777104229064-3",
+    "funcern-enfermagem-saude-do-adolescente-1777104229064-1",
+    "ideap-enfermagem-saude-do-adolescente-1777104229064-2",
+    "idecan-enfermagem-saude-do-adolescente-1778712426701-6",
+    "idecan-enfermagem-saude-do-adolescente-1778712426701-7",
+    "idecan-enfermagem-saude-do-adolescente-1778712426701-8",
+    "nao-informado-geral-saude-do-adolescente-1777104229064-0"
+  ]
+}

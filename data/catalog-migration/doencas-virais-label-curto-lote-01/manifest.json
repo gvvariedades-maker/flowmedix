@@ -1,0 +1,25 @@
+{
+  "lote": "doencas-virais-label-curto-lote-01",
+  "exported_at": "2026-06-10T04:48:20.941Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Doenças Virais de Interesse Epidemiológico",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "amauc-geral-doencas-virais-de-interesse-epidemiologico-1777103604185-4",
+    "ameosc-geral-doencas-virais-de-interesse-epidemiologico-1777103611576-3",
+    "cebraspe-cespe-geral-doencas-virais-de-interesse-epidemiologico-1777103611576-7",
+    "copese-ufpi-geral-doencas-virais-de-interesse-epidemiologico-1777103554284-4",
+    "copese-ufpi-geral-doencas-virais-de-interesse-epidemiologico-1777103554284-5",
+    "copese-ufpi-geral-doencas-virais-de-interesse-epidemiologico-1777103554284-7",
+    "fau-unicentro-geral-doencas-virais-de-interesse-epidemiologico-1777103575693-4",
+    "fcm-geral-doencas-virais-de-interesse-epidemiologico-1777103604185-5",
+    "igeduc-geral-doencas-virais-de-interesse-epidemiologico-1777103471372-0",
+    "instituto-aocp-geral-doencas-virais-de-interesse-epidemiologico-1777103611576-0",
+    "unesc-geral-doencas-virais-de-interesse-epidemiologico-1777103597693-6",
+    "unifil-geral-doencas-virais-de-interesse-epidemiologico-1777103604185-1",
+    "vunesp-geral-doencas-virais-de-interesse-epidemiologico-1777103502990-3"
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "generated_at": "2026-06-10T04:38:55.569Z",
+  "lote": "infeccoes-sexualmente-transmissiveis-ists-lote-02",
+  "mode": "write",
+  "force": false,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 21,
+  "upgraded": 21,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "conceito": 21
+  },
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1780066977710-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1780066977710-9",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "idib-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778934909266-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "idib-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778934909266-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-9",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "itame-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    }
+  ]
+}

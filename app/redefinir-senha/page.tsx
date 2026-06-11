@@ -89,7 +89,7 @@ export default function RedefinirSenhaPage() {
         {/* Header */}
         <div className="text-center mb-10">
           <div className="mb-6 flex justify-center">
-            <AvantLogo size="lg" />
+            <AvantLogo size="lg" tone="light" animated={false} />
           </div>
           <div className="inline-flex items-center gap-2 mb-2 bg-indigo-50 border border-indigo-100 px-4 py-1.5 rounded-full">
             <Lock size={14} className="text-indigo-500" />

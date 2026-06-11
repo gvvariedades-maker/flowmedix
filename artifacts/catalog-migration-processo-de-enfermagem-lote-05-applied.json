@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:37:38.885Z",
+  "lote": "processo-de-enfermagem-lote-05",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-processo-de-enfermagem-1780006444165-8",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006444165-9",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006456417-0",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006456417-1",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006456417-2",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006456417-3",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006456417-4",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006456417-5",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006456417-6",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006456417-7",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006456417-8",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011859940-4",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011859940-5",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011859940-6",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011859940-7",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011859940-8",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011859940-9",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011872350-0",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011872350-1",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011872350-2",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011872350-3",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011872350-4",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011872350-5",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011872350-6",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001742844-7",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001742844-8",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001742844-9",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-0",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-1",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-2",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-3",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-4",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-5",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-6",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-7",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-8",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-0",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-1",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-2",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-3",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-4",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-5",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-6",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-7",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-8",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006947080-0",
+    "copese-uft-enfermagem-processo-de-enfermagem-1776056021381-8",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-0",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-1",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001742844-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001742844-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001742844-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006947080-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-uft-enfermagem-processo-de-enfermagem-1776056021381-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "lote": "medidas-de-prevencao-e-precaucao-de-contato-lote-01",
+  "exported_at": "2026-06-10T04:54:52.627Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Medidas de Prevenção e Precaução de Contato",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "icece-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780000569658-6",
+    "idecan-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1778712203076-8",
+    "idecan-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1778712220716-0",
+    "idecan-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1778712220716-1",
+    "idecan-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780066938846-8",
+    "quadrix-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780000535393-9",
+    "quadrix-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780000569658-0",
+    "unesc-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780000569658-1",
+    "unesc-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780000569658-2",
+    "unesc-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780000569658-3",
+    "unesc-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780000569658-4",
+    "unesc-enfermagem-medidas-de-prevencao-e-precaucao-de-contato-1780000569658-5"
+  ]
+}

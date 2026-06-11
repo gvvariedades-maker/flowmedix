@@ -1,0 +1,91 @@
+{
+  "exported_at": "2026-06-10T04:28:50.327Z",
+  "lote": "nocoes-de-fisiologia-lote-03",
+  "total": 12,
+  "entries": [
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775448615466-3",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 128
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775501962697-1",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 156
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775501962697-4",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 159
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775503376143-0",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 161
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1776055998470-3",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 201
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1776056116422-4",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 227
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-nocoes-de-fisiologia-1775501938701-1",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 151
+    },
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-nocoes-de-fisiologia-1776055986110-5",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "SC TREINAMENTOS",
+      "avant_codigo": 197
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-nocoes-de-fisiologia-1775448586547-1",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 110
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nocoes-de-fisiologia-1775501962697-0",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 155
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nocoes-de-fisiologia-1776055811481-0",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 170
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nocoes-de-fisiologia-1776055811481-1",
+      "titulo_aula": "Noções de Fisiologia",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 171
+    }
+  ]
+}

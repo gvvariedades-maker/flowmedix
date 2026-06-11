@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T04:18:09.556Z",
+  "lote": "coleta-de-exames-laboratoriais-lote-01",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1",
+    "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-6",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562725491-3",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-0",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-1",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-1",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-2",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-3",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-4",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-5",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562716126-7",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562725491-0",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-0",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-3",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-4",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-5",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-7",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-8",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-2",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-3",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-5",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-6",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-8",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563225798-0",
+    "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563248005-4",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-6",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-7",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-8",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-1",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-2",
+    "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-4",
+    "decorp-enfermagem-coleta-de-exames-laboratoriais-1779562725491-5",
+    "decorp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-3",
+    "decorp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-4",
+    "educa-pb-enfermagem-coleta-de-exames-laboratoriais-1779562768558-6",
+    "fafipa-enfermagem-coleta-de-exames-laboratoriais-1779563165114-4",
+    "fau-unicentro-enfermagem-coleta-de-exames-laboratoriais-1779563288910-4",
+    "fgv-enfermagem-coleta-de-exames-laboratoriais-1779562780466-2",
+    "fgv-enfermagem-coleta-de-exames-laboratoriais-1779563225798-7",
+    "fgv-enfermagem-coleta-de-exames-laboratoriais-1779563225798-8",
+    "fundatec-enfermagem-coleta-de-exames-laboratoriais-1779562735777-6",
+    "fundatec-enfermagem-coleta-de-exames-laboratoriais-1779563140631-4",
+    "furb-enfermagem-coleta-de-exames-laboratoriais-1779563140631-0",
+    "furb-enfermagem-coleta-de-exames-laboratoriais-1779563140631-3",
+    "furb-enfermagem-coleta-de-exames-laboratoriais-1779563200105-6",
+    "furb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-6",
+    "gama-enfermagem-coleta-de-exames-laboratoriais-1779562716126-5",
+    "gama-enfermagem-coleta-de-exames-laboratoriais-1779562716126-6",
+    "gama-enfermagem-coleta-de-exames-laboratoriais-1779562735777-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562725491-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562716126-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562725491-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563225798-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563248005-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-coleta-de-exames-laboratoriais-1779562725491-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-coleta-de-exames-laboratoriais-1779562768558-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-coleta-de-exames-laboratoriais-1779563165114-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-coleta-de-exames-laboratoriais-1779563288910-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-coleta-de-exames-laboratoriais-1779562780466-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-coleta-de-exames-laboratoriais-1779563225798-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-coleta-de-exames-laboratoriais-1779563225798-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-coleta-de-exames-laboratoriais-1779562735777-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-coleta-de-exames-laboratoriais-1779563140631-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-coleta-de-exames-laboratoriais-1779563140631-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-coleta-de-exames-laboratoriais-1779563140631-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-coleta-de-exames-laboratoriais-1779563200105-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-coleta-de-exames-laboratoriais-1779562716126-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-coleta-de-exames-laboratoriais-1779562716126-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-coleta-de-exames-laboratoriais-1779562735777-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

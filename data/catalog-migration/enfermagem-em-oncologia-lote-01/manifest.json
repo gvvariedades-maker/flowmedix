@@ -1,0 +1,13 @@
+{
+  "lote": "enfermagem-em-oncologia-lote-01",
+  "exported_at": "2026-06-10T05:54:40.379Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Enfermagem em Oncologia",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "idecan-enfermagem-enfermagem-em-oncologia-1778712409051-5"
+  ]
+}

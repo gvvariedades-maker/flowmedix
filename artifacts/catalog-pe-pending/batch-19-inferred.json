@@ -1,0 +1,76 @@
+{
+  "batch": "19",
+  "bucket": "Processo de Enfermagem",
+  "inferences": [
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-6",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Perda de memória recente como sinal inicial de Alzheimer aborda manifestação clínica de doença crônica não transmissível."
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-4",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Conceitos de cookies e tecnologia da informação não integram conteúdo de enfermagem nem etapas do PE."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1776056181857-6",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Boas práticas de anotação no prontuário (clareza, data, assinatura, sem rasuras) são documentação do processo de enfermagem."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1776056181857-7",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Orientar o paciente com linguagem adequada e diálogo aberto é prática de educação em saúde e informação ao usuário."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-2",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Avaliação primária pelo mnemônico XABCDE, com D para estado neurológico, é protocolo de atendimento emergencial."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Choque hipovolêmico, sinais de instabilidade e reposição volêmica no atendimento inicial são conteúdo de emergências."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Protocolo de Manchester define priorização por classificação de risco na triagem de urgência, não atendimento simultâneo."
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-processo-de-enfermagem-1776055865890-2",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Anotação de enfermagem como registro de dados processados e contextualizados integra a documentação do PE."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1776056149404-8",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "Participação do técnico na implementação do plano assistencial delimita atribuições nas etapas do processo de enfermagem."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4",
+      "suggested_subtopico": "Saúde Mental",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Prevalência da depressão e modelo da Política Nacional de Saúde Mental abordam atenção psiquiátrica e rede comunitária."
+    }
+  ]
+}

@@ -10,7 +10,6 @@ import {
   createElement,
   type ReactNode,
 } from 'react';
-import { createPortal } from 'react-dom';
 import { useRouter, usePathname } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -18,7 +17,6 @@ import {
   LayoutDashboard,
   Search,
   X,
-  Filter,
   ChevronDown,
   ChevronUp,
   ChevronRight,
@@ -44,9 +42,6 @@ import {
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
 import { cn } from '@/lib/utils';
-import { useBodyScrollLock } from '@/lib/layout/useBodyScrollLock';
-import { useClientMounted } from '@/lib/hooks/useClientMounted';
-import { useMobileSheetKeyboardInset } from '@/lib/layout/useMobileSheetKeyboardInset';
 import {
   vitrineFacetsQueryKey,
   vitrineListQueryKey,
@@ -55,7 +50,9 @@ import {
 import type { VitrineFacets, VitrineGrupoSubtopico, VitrinePageResponse } from '@/lib/vitrine/types';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { MultiCheckboxFilter } from '@/components/ui/MultiCheckboxFilter';
+import { QuestaoFilterBar } from '@/components/questao-filter/QuestaoFilterBar';
+import { QuestaoFilterMobileRow } from '@/components/questao-filter/QuestaoFilterMobileRow';
+import { multiFilterResumo } from '@/lib/questao-filter/multiFilterResumo';
 import { NeonBadge } from '@/components/ui/neon-badge';
 import { EmptyState } from '@/components/ui/empty-state';
 import { ProgressRing } from '@/components/ui/progress-ring';
@@ -197,12 +194,6 @@ function getTopicIcon(titulo_aula?: string | null, modulo_nome?: string | null):
   if (/histor|fundament|semiolog/.test(src)) return BookOpen;
 
   return Stethoscope;
-}
-
-function multiFilterResumo(items: string[], pluralLabel: string): string {
-  if (items.length === 0) return '';
-  if (items.length <= 2) return items.join(', ');
-  return `${items.length} ${pluralLabel}`;
 }
 
 // ─── Interfaces ───────────────────────────────────────────────────────────────
@@ -615,6 +606,11 @@ export default function VitrineClient({
     router.refresh();
   }, [router]);
 
+  const markFilterPaginaReset = useCallback(() => {
+    paginaViaFiltroRef.current = true;
+    setPagina(1);
+  }, []);
+
   return (
     <div
       className={cn(
@@ -642,7 +638,7 @@ export default function VitrineClient({
                     paginaViaFiltroRef.current = true;
                     setPagina(1);
                   }}
-                  className="h-11 rounded-xl border-border/80 bg-white/[0.05] pl-10 pr-11 text-sm"
+                  className="h-11 rounded-xl border-border/80 bg-white pl-10 pr-11 text-sm"
                 />
                 {searchTerm ? (
                   <button
@@ -667,13 +663,13 @@ export default function VitrineClient({
               type="button"
               onClick={() => setMobileFiltersExpanded((open) => !open)}
               aria-expanded={mobileFiltersExpanded}
-              className="flex min-h-[40px] w-full items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-medium text-slate-300 transition-colors hover:border-white/15 hover:bg-white/[0.06]"
+              className="flex min-h-[40px] w-full items-center justify-between gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-300 hover:bg-slate-50"
             >
               <span className="inline-flex items-center gap-2">
                 <SlidersHorizontal size={15} className="text-slate-400" aria-hidden />
                 Filtrar
                 {activeMobileFilterCount > 0 ? (
-                  <span className="inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-[#00f2ff]/15 px-1.5 py-0.5 font-mono text-[10px] font-bold text-[#00f2ff]">
+                  <span className="inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-[rgba(143,224,32,0.15)] px-1.5 py-0.5 font-mono text-[10px] font-bold text-[#3d6b0f]">
                     {activeMobileFilterCount}
                   </span>
                 ) : null}
@@ -687,147 +683,43 @@ export default function VitrineClient({
           </div>
 
           {mobileFiltersExpanded ? (
-          <div
-            className="flex items-center gap-2 overflow-x-auto scroll-pl-4 px-4 pb-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            aria-label="Filtros da vitrine"
-          >
-          {bancasSelecionadas.length > 0 ? (
-            <div
-              className={cn(
-                'inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-[#00f2ff]/35 bg-[#00f2ff]/10 text-xs font-medium text-[#00f2ff]',
-                facetsLoading && bancas.length === 0 && 'opacity-50',
-              )}
-            >
-              <button
-                type="button"
-                disabled={facetsLoading && bancas.length === 0}
-                onClick={() => setBancaSheetOpen(true)}
-                className="inline-flex min-h-[44px] max-w-[10rem] items-center gap-1.5 rounded-l-full py-1.5 pl-3 pr-1 disabled:cursor-not-allowed"
-              >
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#00f2ff]" aria-hidden />
-                <span className="truncate">{multiFilterResumo(bancasSelecionadas, 'bancas')}</span>
-              </button>
-              <button
-                type="button"
-                aria-label="Limpar filtro de banca"
-                onClick={(e) => {
-                  e.stopPropagation();
+            <div className="scroll-pl-4 px-4 pb-3">
+              <QuestaoFilterMobileRow
+                bancasSelected={bancasSelecionadas}
+                assuntosSelected={assuntosSelecionados}
+                searchTerm={searchTerm}
+                facets={{ bancas, assuntos }}
+                facetsLoading={facetsLoading}
+                bancaSheetOpen={bancaSheetOpen}
+                assuntoSheetOpen={assuntoSheetOpen}
+                onBancaSheetOpenChange={setBancaSheetOpen}
+                onAssuntoSheetOpenChange={setAssuntoSheetOpen}
+                onBancasChange={(next) => {
+                  setBancasSelecionadas(next);
+                  markFilterPaginaReset();
+                }}
+                onAssuntosChange={(next) => {
+                  setAssuntosSelecionados(next);
+                  markFilterPaginaReset();
+                }}
+                onClearBancas={() => {
                   setBancasSelecionadas([]);
-                  paginaViaFiltroRef.current = true;
-                  setPagina(1);
+                  markFilterPaginaReset();
                 }}
-                className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-r-full hover:bg-[#00f2ff]/20"
-              >
-                <X size={14} aria-hidden />
-              </button>
-            </div>
-          ) : (
-            <button
-              type="button"
-              disabled={facetsLoading && bancas.length === 0}
-              onClick={() => setBancaSheetOpen(true)}
-              className="inline-flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              <SlidersHorizontal size={14} aria-hidden />
-              Banca
-            </button>
-          )}
-
-          {assuntosSelecionados.length > 0 ? (
-            <div
-              className={cn(
-                'inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-[#00f2ff]/35 bg-[#00f2ff]/10 text-xs font-medium text-[#00f2ff]',
-                facetsLoading && assuntos.length === 0 && 'opacity-50',
-              )}
-            >
-              <button
-                type="button"
-                disabled={facetsLoading && assuntos.length === 0}
-                onClick={() => setAssuntoSheetOpen(true)}
-                className="inline-flex min-h-[44px] max-w-[10rem] items-center gap-1.5 rounded-l-full py-1.5 pl-3 pr-1 disabled:cursor-not-allowed"
-              >
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#00f2ff]" aria-hidden />
-                <span className="truncate">
-                  {multiFilterResumo(assuntosSelecionados, 'assuntos')}
-                </span>
-              </button>
-              <button
-                type="button"
-                aria-label="Limpar filtro de assunto"
-                onClick={(e) => {
-                  e.stopPropagation();
+                onClearAssuntos={() => {
                   setAssuntosSelecionados([]);
-                  paginaViaFiltroRef.current = true;
-                  setPagina(1);
+                  markFilterPaginaReset();
                 }}
-                className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-r-full hover:bg-[#00f2ff]/20"
-              >
-                <X size={14} aria-hidden />
-              </button>
+                onClearAll={() => {
+                  setBancasSelecionadas([]);
+                  setAssuntosSelecionados([]);
+                  setSearchTerm('');
+                  markFilterPaginaReset();
+                }}
+              />
             </div>
-          ) : (
-            <button
-              type="button"
-              disabled={facetsLoading && assuntos.length === 0}
-              onClick={() => setAssuntoSheetOpen(true)}
-              className="inline-flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              <BookOpen size={14} aria-hidden />
-              Assunto
-            </button>
-          )}
-
-          {(bancasSelecionadas.length > 0 ||
-            assuntosSelecionados.length > 0 ||
-            searchTerm.trim().length > 0) && (
-            <button
-              type="button"
-              onClick={() => {
-                setBancasSelecionadas([]);
-                setAssuntosSelecionados([]);
-                setSearchTerm('');
-                paginaViaFiltroRef.current = true;
-                setPagina(1);
-              }}
-              className="inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-slate-400 transition-colors hover:border-white/20 hover:text-slate-200"
-            >
-              Limpar
-            </button>
-          )}
-          </div>
           ) : null}
         </div>
-
-        <VitrineMobileFilterSheet
-          open={bancaSheetOpen}
-          onClose={() => setBancaSheetOpen(false)}
-          title="Filtrar por banca"
-          options={bancas}
-          selected={bancasSelecionadas}
-          disabled={facetsLoading && bancas.length === 0}
-          searchPlaceholder="Buscar banca..."
-          emptySearchLabel="Nenhuma banca encontrada"
-          onChange={(next) => {
-            setBancasSelecionadas(next);
-            paginaViaFiltroRef.current = true;
-            setPagina(1);
-          }}
-        />
-        <VitrineMobileFilterSheet
-          open={assuntoSheetOpen}
-          onClose={() => setAssuntoSheetOpen(false)}
-          title="Filtrar por assunto"
-          options={assuntos}
-          selected={assuntosSelecionados}
-          disabled={facetsLoading && assuntos.length === 0}
-          searchPlaceholder="Buscar assunto..."
-          emptySearchLabel="Nenhum assunto encontrado"
-          onChange={(next) => {
-            setAssuntosSelecionados(next);
-            paginaViaFiltroRef.current = true;
-            setPagina(1);
-          }}
-        />
 
         {/* Header desktop */}
         <header className="hidden bg-transparent md:block">
@@ -881,60 +773,27 @@ export default function VitrineClient({
         </header>
 
         <div className="mx-auto hidden max-w-7xl px-6 pb-6 pt-0 md:block">
-        <section className="space-y-4" aria-label="Filtros da vitrine">
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <Filter size={16} aria-hidden />
-            <span className="text-xs font-medium uppercase tracking-wider">Filtros</span>
-          </div>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <MultiCheckboxFilter
-              emptyLabel="Todas as bancas"
-              searchPlaceholder="Buscar banca..."
-              addButtonLabel="Adicionar banca"
-              sheetTitle="Adicionar banca"
-              emptySearchLabel="Nenhuma banca encontrada"
-              options={bancas}
-              value={bancasSelecionadas}
-              disabled={facetsLoading && bancas.length === 0}
-              onChange={(next) => {
-                setBancasSelecionadas(next);
-                paginaViaFiltroRef.current = true;
-                setPagina(1);
-              }}
-            />
-
-            <MultiCheckboxFilter
-              emptyLabel="Todos os assuntos"
-              searchPlaceholder="Buscar assunto..."
-              addButtonLabel="Adicionar assunto"
-              sheetTitle="Adicionar assunto"
-              emptySearchLabel="Nenhum assunto encontrado"
-              contentMinWidth="min-w-[240px]"
-              options={assuntos}
-              value={assuntosSelecionados}
-              disabled={facetsLoading && assuntos.length === 0}
-              onChange={(next) => {
-                setAssuntosSelecionados(next);
-                paginaViaFiltroRef.current = true;
-                setPagina(1);
-              }}
-            />
-          </div>
-          {(bancasSelecionadas.length > 0 || assuntosSelecionados.length > 0) && (
-            <button
-              type="button"
-              onClick={() => {
-                setBancasSelecionadas([]);
-                setAssuntosSelecionados([]);
-                paginaViaFiltroRef.current = true;
-                setPagina(1);
-              }}
-              className="text-xs font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
-            >
-              Limpar filtros
-            </button>
-          )}
-        </section>
+          <QuestaoFilterBar
+            variant="vitrine"
+            showSearch={false}
+            facets={{ bancas, assuntos }}
+            facetsLoading={facetsLoading}
+            bancasSelected={bancasSelecionadas}
+            assuntosSelected={assuntosSelecionados}
+            searchTerm={searchTerm}
+            onBancasChange={(next) => {
+              setBancasSelecionadas(next);
+              markFilterPaginaReset();
+            }}
+            onAssuntosChange={(next) => {
+              setAssuntosSelecionados(next);
+              markFilterPaginaReset();
+            }}
+            onSearchChange={(term) => {
+              setSearchTerm(term);
+              markFilterPaginaReset();
+            }}
+          />
         </div>
       </div>
 
@@ -942,15 +801,15 @@ export default function VitrineClient({
         {showSsrErrorBanner && (
           <div
             role="alert"
-            className="flex flex-col gap-3 rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 sm:flex-row sm:items-center sm:justify-between"
+            className="flex flex-col gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 sm:flex-row sm:items-center sm:justify-between"
           >
-            <p className="text-sm text-amber-100/90">{initialPayloadError}</p>
+            <p className="text-sm text-amber-800">{initialPayloadError}</p>
             <Button
               type="button"
               variant="outline"
               size="sm"
               onClick={handleRetryLoad}
-              className="shrink-0 border-amber-500/40 text-amber-100 hover:bg-amber-500/15"
+              className="shrink-0 border-amber-300 text-amber-800 hover:bg-amber-100"
             >
               <RefreshCw size={16} className="mr-2" aria-hidden />
               Tentar novamente
@@ -962,19 +821,19 @@ export default function VitrineClient({
             <div className="min-w-0">
               <div className="flex items-stretch gap-3">
                 <div
-                  className="w-1 shrink-0 rounded-full bg-gradient-to-b from-cyan-400 to-cyan-500/30"
+                  className="w-1 shrink-0 rounded-full bg-[#8fe020]"
                   aria-hidden
                 />
                 <div className="min-w-0">
-                  <p className="mb-1 font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-cyan-500/70">
+                  <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.25em] text-slate-500">
                     Estudo Reverso
                   </p>
                   <h1
                     className={cn(
                       'font-plus-jakarta text-2xl tracking-tight sm:text-3xl',
                       pageSectionTitle === 'Vitrine de questões'
-                        ? 'text-neon-gradient'
-                        : 'font-semibold text-[#e6edf3]',
+                        ? 'text-editorial-title font-bold'
+                        : 'font-semibold text-slate-900',
                     )}
                   >
                     {pageSectionTitle}
@@ -992,7 +851,7 @@ export default function VitrineClient({
           {loading && gruposPagina.length === 0 ? (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {Array.from({ length: 8 }).map((_, i) => (
-                <div key={i} className="h-72 animate-pulse rounded-3xl bg-muted/50" />
+                <div key={i} className="h-72 animate-pulse rounded-2xl bg-muted/50" />
               ))}
             </div>
           ) : gruposPagina.length > 0 ? (
@@ -1055,192 +914,6 @@ export default function VitrineClient({
   );
 }
 
-// ─── Sheet de filtro multi-select (mobile) ─────────────────────────────────────
-
-type VitrineMobileFilterSheetProps = {
-  open: boolean;
-  onClose: () => void;
-  title: string;
-  options: string[];
-  selected: string[];
-  onChange: (value: string[]) => void;
-  searchPlaceholder: string;
-  emptySearchLabel: string;
-  disabled?: boolean;
-};
-
-function VitrineMobileFilterSheet({
-  open,
-  onClose,
-  title,
-  options,
-  selected,
-  onChange,
-  searchPlaceholder,
-  emptySearchLabel,
-  disabled,
-}: VitrineMobileFilterSheetProps) {
-  const [busca, setBusca] = useState('');
-  const portalReady = useClientMounted();
-  const selectedSet = useMemo(() => new Set(selected), [selected]);
-
-  const optionsFiltradas = useMemo(
-    () => options.filter((o) => o.toLowerCase().includes(busca.toLowerCase().trim())),
-    [options, busca],
-  );
-
-  const closeSheet = useCallback(() => {
-    onClose();
-    setBusca('');
-  }, [onClose]);
-
-  const toggleOption = useCallback(
-    (option: string) => {
-      if (disabled) return;
-      if (selectedSet.has(option)) {
-        onChange(selected.filter((v) => v !== option));
-      } else {
-        onChange([...selected, option]);
-      }
-    },
-    [disabled, onChange, selected, selectedSet],
-  );
-
-  useBodyScrollLock(open);
-  const keyboardInsetPx = useMobileSheetKeyboardInset(open);
-
-  useEffect(() => {
-    if (!open) return;
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key !== 'Escape') return;
-      event.preventDefault();
-      closeSheet();
-    };
-
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
-  }, [open, closeSheet]);
-
-  if (!portalReady || typeof document === 'undefined') return null;
-
-  return createPortal(
-    <AnimatePresence>
-      {open ? (
-        <motion.div
-          key="vitrine-mobile-filter-sheet"
-          className="fixed inset-0 z-[200] md:hidden"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.15 }}
-        >
-          <button
-            type="button"
-            tabIndex={-1}
-            aria-label="Fechar filtros"
-            className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
-            onClick={closeSheet}
-          />
-          <motion.div
-            role="dialog"
-            aria-modal="true"
-            aria-label={title}
-            initial={{ y: '100%' }}
-            animate={{ y: 0 }}
-            exit={{ y: '100%' }}
-            transition={{ type: 'spring', stiffness: 380, damping: 34 }}
-            className="absolute inset-x-0 bottom-0 z-[201] flex max-h-[min(85dvh,32rem)] flex-col rounded-t-3xl border border-white/10 bg-[#0d1117] pb-safe shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
-              <p className="text-sm font-bold text-white">{title}</p>
-              <button
-                type="button"
-                onClick={closeSheet}
-                aria-label="Fechar"
-                className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-white/10 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
-              >
-                <X size={18} aria-hidden />
-              </button>
-            </div>
-            <div className="custom-scrollbar flex min-h-0 flex-1 flex-col overflow-hidden">
-              <div className="sticky top-0 z-10 bg-[#0d1117] px-2 pb-2 pt-2">
-                <input
-                  value={busca}
-                  onChange={(e) => setBusca(e.target.value)}
-                  placeholder={searchPlaceholder}
-                  aria-label={searchPlaceholder}
-                  disabled={disabled}
-                  className="w-full rounded-lg border border-white/10 bg-white/[0.05] px-3 py-2 text-sm text-slate-200 placeholder-slate-500 outline-none transition-colors focus:border-[#00f2ff]/40 focus:bg-[#00f2ff]/[0.04] disabled:opacity-50"
-                />
-              </div>
-              <ul
-                className="min-h-0 flex-1 overflow-y-auto overscroll-y-contain py-1"
-                role="listbox"
-                aria-label={searchPlaceholder}
-                style={
-                  keyboardInsetPx > 0
-                    ? { scrollPaddingBottom: keyboardInsetPx + 16 }
-                    : undefined
-                }
-              >
-                {optionsFiltradas.length === 0 ? (
-                  <li className="py-4 text-center text-xs text-slate-500" role="presentation">
-                    {emptySearchLabel}
-                  </li>
-                ) : (
-                  optionsFiltradas.map((option) => {
-                    const isSelected = selectedSet.has(option);
-                    return (
-                      <li key={option}>
-                        <button
-                          type="button"
-                          role="option"
-                          aria-selected={isSelected}
-                          disabled={disabled}
-                          onClick={() => toggleOption(option)}
-                          className="flex min-h-[44px] w-full items-start gap-2 rounded-lg px-2 py-2 text-left text-sm text-slate-200 transition-colors hover:bg-cyan-400/10 hover:text-cyan-100 disabled:opacity-50"
-                        >
-                          <span
-                            className={cn(
-                              'mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded border',
-                              isSelected
-                                ? 'border-[#00f2ff]/60 bg-[#00f2ff]/20 text-[#00f2ff]'
-                                : 'border-white/25 bg-transparent',
-                            )}
-                            aria-hidden
-                          >
-                            {isSelected ? <CheckCircle2 className="h-3 w-3" /> : null}
-                          </span>
-                          <span className="min-w-0 flex-1 leading-snug">{option}</span>
-                        </button>
-                      </li>
-                    );
-                  })
-                )}
-              </ul>
-            </div>
-            <button
-              type="button"
-              className="min-h-[44px] border-t border-white/10 px-4 py-3.5 text-center text-sm font-bold uppercase tracking-wide text-slate-400 transition-colors hover:bg-white/5 hover:text-white"
-              style={
-                keyboardInsetPx > 0
-                  ? { paddingBottom: `calc(0.875rem + ${keyboardInsetPx}px)` }
-                  : undefined
-              }
-              onClick={closeSheet}
-            >
-              Fechar
-            </button>
-          </motion.div>
-        </motion.div>
-      ) : null}
-    </AnimatePresence>,
-    document.body,
-  );
-}
-
 // ─── ProgressRingVitrine — anel de progresso com label interno ─────────────────
 
 function ProgressRingVitrine({
@@ -1267,16 +940,16 @@ function ProgressRingVitrine({
       />
       <div className="absolute inset-0 flex select-none flex-col items-center justify-center">
         <span
-          className="leading-none font-bold tabular-nums text-[#e6edf3]"
+          className="leading-none font-bold tabular-nums text-slate-900"
           style={{ fontSize: size >= 120 ? '1.5rem' : '1.1rem' }}
         >
           {trabalhadas}
         </span>
-        <span className="mt-1 text-[0.55rem] font-medium uppercase tracking-wide text-[#8b949e] sm:text-[0.6rem]">
+        <span className="mt-1 text-[0.55rem] font-medium uppercase tracking-wide text-slate-500 sm:text-[0.6rem]">
           de {total}
         </span>
         {todas && (
-          <span className="mt-0.5 text-[0.5rem] font-semibold uppercase tracking-wide text-[#6ee7b7]">
+          <span className="mt-0.5 text-[0.5rem] font-semibold uppercase tracking-wide text-green-600">
             Completo
           </span>
         )}
@@ -1286,8 +959,8 @@ function ProgressRingVitrine({
 }
 
 function StatusBadge({ status }: { status: QuestaoStatus }) {
-  if (status === 'estudada') return <CheckCircle2 size={15} className="shrink-0 text-[#6ee7b7]" />;
-  return <Circle size={15} className="shrink-0 text-slate-600" />;
+  if (status === 'estudada') return <CheckCircle2 size={15} className="shrink-0 text-green-600" />;
+  return <Circle size={15} className="shrink-0 text-slate-300" />;
 }
 
 function SubtopicoCard({
@@ -1374,15 +1047,15 @@ function SubtopicoCard({
       variants={index < 8 ? itemVariants : itemGroupVariants}
       {...{ [VITRINE_PREFETCH_DATA_ATTR]: `${firstSlug}${estudarQuery}` }}
       className={cn(
-        'relative flex flex-col overflow-hidden rounded-3xl border bg-slate-900/40 backdrop-blur-sm transition-all hover:bg-slate-900/60',
+        'relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-slate-300 hover:shadow-md',
         todas
-          ? 'border-[rgba(0,255,136,0.25)] hover:border-[rgba(0,255,136,0.35)]'
-          : 'border-white/10 hover:border-cyan-400/30',
+          ? 'border-green-200 hover:border-green-300'
+          : '',
       )}
     >
       {mostrarNovo && (
         <span
-          className="pointer-events-none absolute right-3 top-3 z-10 rounded-md border border-[rgba(0,255,136,0.35)] bg-[rgba(0,255,136,0.12)] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#6ee7b7] sm:text-[11px]"
+          className="pointer-events-none absolute right-3 top-3 z-10 rounded-md border border-green-200 bg-green-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-green-700 sm:text-[11px]"
           aria-label="Assunto novo"
         >
           Novo
@@ -1400,34 +1073,34 @@ function SubtopicoCard({
         aria-expanded={assuntoExpandido}
         aria-controls={panelId}
         onClick={toggleAssunto}
-        className="group flex w-full items-start gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.04] px-4 py-3.5 text-left transition-all hover:border-cyan-400/20 hover:bg-white/[0.07]"
+        className="group flex w-full items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-left transition-all hover:border-[rgba(143,224,32,0.3)] hover:bg-slate-100"
       >
-        <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-xl border border-[rgba(0,242,255,0.2)] bg-[rgba(0,242,255,0.10)] transition-colors group-hover:border-[rgba(0,242,255,0.35)] group-hover:bg-[rgba(0,242,255,0.14)]">
+        <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-xl border border-[rgba(143,224,32,0.25)] bg-[rgba(143,224,32,0.10)] transition-colors group-hover:border-[rgba(143,224,32,0.4)] group-hover:bg-[rgba(143,224,32,0.14)]">
           {createElement(topicIcon, {
             size: 18,
             strokeWidth: 2,
-            className: 'text-cyan-400',
+            className: 'text-[#3d6b0f]',
           })}
         </span>
         <div className="flex min-w-0 flex-1 flex-col">
           <span
             className={cn(
-              'break-words text-sm font-semibold leading-snug text-white',
+              'break-words text-sm font-semibold leading-snug text-slate-900',
               assuntoExpandido ? 'line-clamp-none' : 'line-clamp-2',
             )}
           >
             {titulo_aula}
           </span>
-          <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11px] leading-none text-white/35">
+          <p className="mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11px] leading-none text-slate-500">
             <span>
-              <span className="font-medium tabular-nums text-cyan-400/80">{totalQuestoes.toLocaleString('pt-BR')}</span>{' '}
+              <span className="font-medium tabular-nums text-slate-700">{totalQuestoes.toLocaleString('pt-BR')}</span>{' '}
               {labelQuestoes(totalQuestoes)}
             </span>
-            <span className="text-white/15" aria-hidden>
+            <span className="text-slate-300" aria-hidden>
               ·
             </span>
             <span>
-              <span className="font-medium tabular-nums text-emerald-400/80">
+              <span className="font-medium tabular-nums text-emerald-700">
                 {totalNeuroSlides.toLocaleString('pt-BR')}
               </span>{' '}
               NeuroSlides
@@ -1435,7 +1108,7 @@ function SubtopicoCard({
           </p>
         </div>
         {mostrarCheckConclusao && (
-          <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-[#6ee7b7]" aria-hidden />
+          <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-green-600" aria-hidden />
         )}
         {assuntoExpandido ? (
           <ChevronUp size={18} className="mt-0.5 shrink-0 text-slate-500" />
@@ -1463,7 +1136,7 @@ function SubtopicoCard({
                   {pendentes} pendente{pendentes !== 1 ? 's' : ''}
                 </NeonBadge>
               )}
-              <Button asChild variant="outline" size="sm" className="ml-auto rounded-xl border-white/15 bg-white/[0.06] text-slate-200 hover:bg-white/[0.12] hover:border-white/25 hover:text-white">
+              <Button asChild variant="outline" size="sm" className="ml-auto rounded-xl border-slate-200 text-slate-700 hover:border-[rgba(143,224,32,0.35)] hover:bg-[rgba(143,224,32,0.06)] hover:text-[#3d6b0f]">
                 <VitrineQuestaoLink slug={firstSlug} estudarQuery={estudarQuery}>
                   Entrar no assunto
                 </VitrineQuestaoLink>
@@ -1475,7 +1148,7 @@ function SubtopicoCard({
             </div>
 
             <div className="-mt-1 text-center">
-              <p className="text-[10px] font-medium uppercase tracking-wide text-slate-400">
+              <p className="text-[10px] font-medium uppercase tracking-wide text-slate-500">
                 Questões trabalhadas
               </p>
             </div>
@@ -1490,7 +1163,7 @@ function SubtopicoCard({
               >
                 <label
                   htmlFor={`jump-questao-${firstSlug}`}
-                  className="text-[10px] font-medium uppercase tracking-wide text-slate-400"
+                  className="text-[10px] font-medium uppercase tracking-wide text-slate-500"
                 >
                   Ir para questão
                 </label>
@@ -1508,7 +1181,7 @@ function SubtopicoCard({
                       if (jumpError) setJumpError(null);
                     }}
                     disabled={jumpLoading}
-                    className="h-11 min-h-[44px] flex-1 rounded-xl border-white/10 bg-white/[0.04] text-sm text-slate-100 placeholder:text-slate-500"
+                    className="input-editorial h-11 min-h-[44px] flex-1 text-sm"
                   />
                   <Button
                     type="submit"
@@ -1520,7 +1193,7 @@ function SubtopicoCard({
                   </Button>
                 </div>
                 {jumpError ? (
-                  <p className="text-[11px] font-medium text-rose-400/90" role="alert">
+                  <p className="text-[11px] font-medium text-red-600" role="alert">
                     {jumpError}
                   </p>
                 ) : listaFoiTruncada ? (
@@ -1534,7 +1207,7 @@ function SubtopicoCard({
             <button
               type="button"
               onClick={() => setQuestoesExpandido((v) => !v)}
-              className="flex min-h-[44px] w-full items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-200 transition-colors hover:bg-white/[0.08] hover:text-white"
+              className="flex min-h-[44px] w-full items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-900"
             >
               <span className="text-xs font-medium">
                 {questoesExpandido
@@ -1565,20 +1238,20 @@ function SubtopicoCard({
                           className={cn(
                             'group flex min-h-[44px] items-center gap-3 rounded-xl border px-3 py-2.5 transition-all',
                             estudada
-                              ? 'border-[rgba(0,255,136,0.20)] bg-[rgba(0,255,136,0.05)] hover:border-[rgba(0,255,136,0.35)]'
-                              : 'border-white/[0.08] bg-white/[0.03] hover:border-cyan-400/20 hover:bg-cyan-400/[0.05]',
+                              ? 'border-green-200 bg-green-50 hover:border-green-300'
+                              : 'border-slate-200 bg-white hover:border-[rgba(143,224,32,0.3)] hover:bg-[rgba(143,224,32,0.04)]',
                           )}
                         >
                           <StatusBadge status={q.status} />
                           <span
                             className={cn(
                               'flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-0.5 text-xs font-medium',
-                              estudada ? 'text-[#6ee7b7]' : 'text-slate-200',
+                              estudada ? 'text-green-700' : 'text-slate-700',
                             )}
                           >
                             <span>Questão {String(q.numero).padStart(2, '0')}</span>
                             {formatAvantCodigo(q.avant_codigo) && (
-                              <span className="rounded-md border border-white/10 bg-white/[0.06] px-1.5 py-0.5 font-mono text-[10px] text-slate-300">
+                              <span className="rounded-md border border-slate-200 bg-slate-50 px-1.5 py-0.5 font-mono text-[10px] text-slate-600">
                                 {formatAvantCodigo(q.avant_codigo)}
                               </span>
                             )}
@@ -1586,24 +1259,24 @@ function SubtopicoCard({
                           {!estudada && (
                             <span className="text-[10px] font-medium text-slate-500">Iniciar</span>
                           )}
-                          {estudada && <span className="text-[10px] font-medium text-[#67e8f9]">Revisitar</span>}
+                          {estudada && <span className="text-[10px] font-medium text-[#3d6b0f]">Revisitar</span>}
                           <ChevronRight
                             size={12}
-                            className="shrink-0 text-slate-600 opacity-40 transition-opacity group-hover:opacity-80"
+                            className="shrink-0 text-slate-400 opacity-60 transition-opacity group-hover:opacity-100"
                           />
                         </VitrineQuestaoLink>
                       );
                     })}
                   </div>
                   {listaFoiTruncada && (
-                    <p className="mt-2 flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-center text-[11px] font-medium text-amber-400/90">
+                    <p className="mt-2 flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-center text-[11px] font-medium text-amber-700">
                       <span>
                         +{questoesTruncadas} {labelQuestoes(questoesTruncadas)} neste assunto.
                       </span>
                       <VitrineQuestaoLink
                         slug={firstSlug}
                         estudarQuery={estudarQuery}
-                        className="inline-flex min-h-[44px] items-center font-semibold text-amber-300 underline-offset-2 hover:text-amber-200 hover:underline"
+                        className="inline-flex min-h-[44px] items-center font-semibold text-amber-800 underline-offset-2 hover:text-amber-900 hover:underline"
                       >
                         Próxima pendente
                       </VitrineQuestaoLink>
@@ -1612,8 +1285,8 @@ function SubtopicoCard({
               </div>
             </div>
 
-            <div className="flex items-center justify-between gap-2 border-t border-white/10 pt-2">
-              <span className="text-[10px] font-medium uppercase tracking-wide text-slate-400">
+            <div className="flex items-center justify-between gap-2 border-t border-slate-200 pt-2">
+              <span className="text-[10px] font-medium uppercase tracking-wide text-slate-500">
                 {totalQuestoes} {labelQuestoes(totalQuestoes)} no assunto
               </span>
               {totalResolvidas === 0 && (
@@ -1632,7 +1305,7 @@ function SubtopicoCard({
 
       {mostrarBarraProgresso && (
         <div
-          className="h-1 w-full shrink-0 bg-white/10"
+          className="h-1 w-full shrink-0 bg-slate-100"
           role="progressbar"
           aria-valuenow={progressoPct}
           aria-valuemin={0}
@@ -1640,7 +1313,7 @@ function SubtopicoCard({
           aria-label="Progresso do estudo reverso neste assunto"
         >
           <div
-            className="h-full bg-[#00f2ff] transition-[width] duration-300 ease-out"
+            className="h-full bg-[#8fe020] transition-[width] duration-300 ease-out"
             style={{ width: `${progressoPct}%` }}
           />
         </div>

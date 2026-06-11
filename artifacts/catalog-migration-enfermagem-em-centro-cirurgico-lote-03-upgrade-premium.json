@@ -1,0 +1,482 @@
+{
+  "generated_at": "2026-06-10T04:15:13.450Z",
+  "lote": "enfermagem-em-centro-cirurgico-lote-03",
+  "mode": "write",
+  "force": false,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 39,
+  "upgraded": 38,
+  "skipped": 1,
+  "failed": 0,
+  "family_counts": {
+    "conceito": 37,
+    "protocolo": 2
+  },
+  "results": [
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103831211-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103857889-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103857889-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103857889-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-enfermagem-em-centro-cirurgico-1777103843559-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-5",
+      "status": "skipped",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "detail": "gabarito ambíguo (0 corretas)"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-enfermagem-em-centro-cirurgico-1777103907464-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-enfermagem-em-centro-cirurgico-1777103894253-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103907464-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103927465-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-enfermagem-em-centro-cirurgico-1777103933896-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-enfermagem-em-centro-cirurgico-1777103933896-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-enfermagem-em-centro-cirurgico-1777103852550-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-enfermagem-em-centro-cirurgico-1777103913966-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    }
+  ]
+}

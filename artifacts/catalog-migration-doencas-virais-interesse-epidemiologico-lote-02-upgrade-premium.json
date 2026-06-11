@@ -1,0 +1,233 @@
+{
+  "generated_at": "2026-06-10T04:41:55.411Z",
+  "lote": "doencas-virais-interesse-epidemiologico-lote-02",
+  "mode": "write",
+  "force": false,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 18,
+  "upgraded": 18,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "conceito": 18
+  },
+  "results": [
+    {
+      "modulo_slug": "legalle-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103621567-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "metrocapital-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103575693-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "ms-sarmento-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103510083-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103583552-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "quadrix-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103452899-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "quadrix-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103452899-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "quadrix-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103496829-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "quadrix-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103496829-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "selecon-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103471372-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "unesc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103502990-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "unesc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "unesc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "unifil-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103604185-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "unifil-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103611576-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "vunesp-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103583552-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    }
+  ]
+}

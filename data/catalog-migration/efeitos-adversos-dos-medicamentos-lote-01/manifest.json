@@ -1,0 +1,13 @@
+{
+  "lote": "efeitos-adversos-dos-medicamentos-lote-01",
+  "exported_at": "2026-06-10T05:31:11.282Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Efeitos Adversos dos Medicamentos",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "idecan-enfermagem-efeitos-adversos-dos-medicamentos-1780066909125-3"
+  ]
+}

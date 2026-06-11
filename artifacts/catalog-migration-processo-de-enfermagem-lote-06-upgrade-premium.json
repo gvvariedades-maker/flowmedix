@@ -1,0 +1,621 @@
+{
+  "generated_at": "2026-06-09T10:07:43.022Z",
+  "lote": "processo-de-enfermagem-lote-06",
+  "mode": "write",
+  "force": false,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 50,
+  "upgraded": 50,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "conceito": 33,
+    "calc": 5,
+    "vf": 6,
+    "protocolo": 4,
+    "legis": 2
+  },
+  "results": [
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-5",
+      "status": "upgraded",
+      "family": "calc",
+      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-6",
+      "status": "upgraded",
+      "family": "vf",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-8",
+      "status": "upgraded",
+      "family": "calc",
+      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-9",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-1",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-4",
+      "status": "upgraded",
+      "family": "legis",
+      "golden_reference": "questao-premium-sus-lei-8080-cesgranrio.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-7",
+      "status": "upgraded",
+      "family": "vf",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-9",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003349182-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003349182-1",
+      "status": "upgraded",
+      "family": "vf",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-9",
+      "status": "upgraded",
+      "family": "calc",
+      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003709908-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-1",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-2",
+      "status": "upgraded",
+      "family": "vf",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+      "status": "upgraded",
+      "family": "legis",
+      "golden_reference": "questao-premium-sus-lei-8080-cesgranrio.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-0",
+      "status": "upgraded",
+      "family": "calc",
+      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-4",
+      "status": "upgraded",
+      "family": "vf",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-6",
+      "status": "upgraded",
+      "family": "calc",
+      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-9",
+      "status": "upgraded",
+      "family": "vf",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    }
+  ]
+}

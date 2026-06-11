@@ -1,0 +1,97 @@
+{
+  "generated_at": "2026-06-10T04:29:02.589Z",
+  "lote": "nocoes-de-fisiologia-lote-03",
+  "mode": "apply",
+  "total_files": 12,
+  "ok": 12,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775448615466-3",
+    "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775501962697-1",
+    "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775501962697-4",
+    "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775503376143-0",
+    "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1776055998470-3",
+    "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1776056116422-4",
+    "quadrix-enfermagem-nocoes-de-fisiologia-1775501938701-1",
+    "sc-treinamentos-enfermagem-nocoes-de-fisiologia-1776055986110-5",
+    "selecon-enfermagem-nocoes-de-fisiologia-1775448586547-1",
+    "unesc-enfermagem-nocoes-de-fisiologia-1775501962697-0",
+    "unesc-enfermagem-nocoes-de-fisiologia-1776055811481-0",
+    "unesc-enfermagem-nocoes-de-fisiologia-1776055811481-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775448615466-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775501962697-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775501962697-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775503376143-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1776055998470-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1776056116422-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-nocoes-de-fisiologia-1775501938701-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-nocoes-de-fisiologia-1776055986110-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-nocoes-de-fisiologia-1775448586547-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nocoes-de-fisiologia-1775501962697-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nocoes-de-fisiologia-1776055811481-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nocoes-de-fisiologia-1776055811481-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

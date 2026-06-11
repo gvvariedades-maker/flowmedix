@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-06-10T11:08:29.284Z",
+  "mode": "infer",
+  "bucket": "Segurança do Paciente",
+  "min_confidence_apply": 0.85,
+  "limit": 1,
+  "inference_source": "gemini",
+  "summary": {
+    "scanned": 1,
+    "inferred": 1,
+    "errors": 0,
+    "keep_current": 1,
+    "same_subtopico": 1,
+    "applicable": 0
+  },
+  "proposals": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-seguranca-do-paciente-1777102678563-7",
+      "from": "Segurança do Paciente",
+      "suggested": "Segurança do Paciente",
+      "confidence": 1,
+      "keep_current": true,
+      "rationale": "O enunciado aborda a avaliação de riscos ambientais para garantir a segurança do paciente no domicílio, alinhando-se diretamente ao tema de segurança do paciente.",
+      "applicable": false,
+      "source": "gemini"
+    }
+  ]
+}

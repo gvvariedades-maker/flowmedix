@@ -1,0 +1,15 @@
+{
+  "lote": "farmacodinamica-e-farmacocinetica-lote-01",
+  "exported_at": "2026-06-10T04:50:24.634Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Farmacodinâmica e Farmacocinética",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+    "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+    "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-8"
+  ]
+}

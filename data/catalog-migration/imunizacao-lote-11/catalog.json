@@ -1,0 +1,182 @@
+{
+  "exported_at": "2026-06-09T09:45:18.850Z",
+  "lote": "imunizacao-lote-11",
+  "total": 25,
+  "entries": [
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563970889-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3663
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563970889-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3671
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563992006-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3693
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563992006-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3694
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563996663-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3700
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563996663-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3701
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563996663-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3702
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564001927-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3709
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564001927-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3710
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564001927-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3711
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564053668-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3778
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564053668-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3779
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564059030-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3783
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564059030-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3784
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564063274-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3796
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564063274-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3797
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564063274-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3798
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564090395-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3851
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564090395-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3852
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564090395-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3853
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564096589-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3861
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564096589-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3862
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564096589-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3863
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564125198-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3894
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779572207173-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3977
+    }
+  ]
+}

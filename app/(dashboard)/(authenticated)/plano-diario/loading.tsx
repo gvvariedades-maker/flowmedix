@@ -3,15 +3,18 @@ import { DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
 
 export default function PlanoDiarioLoading() {
   return (
-    <DashboardMobilePage variant="default" className={`${DASHBOARD_PAGE_ROOT} bg-[#010409]`}>
-      <div className="mx-auto max-w-4xl animate-pulse px-4 py-6 sm:px-6 md:px-10">
-        <div className="h-9 w-56 rounded-xl bg-white/8" />
-        <div className="mt-2 h-4 w-full max-w-md rounded-lg bg-white/5" />
-        <div className="mt-6 space-y-3">
-          <div className="h-28 rounded-2xl bg-white/[0.04]" />
-          <div className="h-28 rounded-2xl bg-white/[0.03]" />
-          <div className="h-28 rounded-2xl bg-white/[0.03]" />
+    <DashboardMobilePage variant="default" className={`${DASHBOARD_PAGE_ROOT} bg-background`}>
+      <div className="border-b border-slate-200 bg-background px-4 py-8 md:px-10">
+        <div className="mx-auto max-w-3xl animate-pulse space-y-3">
+          <div className="h-3 w-40 rounded-lg bg-muted/50" />
+          <div className="h-10 w-64 rounded-xl bg-muted/70" />
+          <div className="h-4 w-48 rounded-lg bg-muted/50" />
         </div>
+      </div>
+      <div className="mx-auto max-w-3xl animate-pulse space-y-6 px-4 py-10 md:px-10">
+        <div className="h-28 rounded-2xl bg-muted/50" />
+        <div className="h-28 rounded-2xl bg-muted/50" />
+        <div className="h-28 rounded-2xl bg-muted/50" />
       </div>
     </DashboardMobilePage>
   );

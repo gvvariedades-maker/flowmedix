@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:44:27.307Z",
+  "lote": "processo-de-enfermagem-lote-18",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-4",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-5",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-6",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-7",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-8",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-9",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009310940-0",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009310940-1",
+    "legalle-enfermagem-processo-de-enfermagem-1780010579953-5",
+    "legalle-enfermagem-processo-de-enfermagem-1780010579953-6",
+    "legalle-enfermagem-processo-de-enfermagem-1780010579953-7",
+    "legalle-enfermagem-processo-de-enfermagem-1780010579953-8",
+    "legalle-enfermagem-processo-de-enfermagem-1780010579953-9",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-0",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-1",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-2",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-3",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-4",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-5",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-6",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-7",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-8",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-9",
+    "legalle-enfermagem-processo-de-enfermagem-1780010594524-0",
+    "legalle-enfermagem-processo-de-enfermagem-1780010594524-1",
+    "legalle-enfermagem-processo-de-enfermagem-1780010594524-2",
+    "legalle-enfermagem-processo-de-enfermagem-1780010594524-3",
+    "legalle-enfermagem-processo-de-enfermagem-1780010594524-4",
+    "legalle-enfermagem-processo-de-enfermagem-1780010905023-7",
+    "legalle-enfermagem-processo-de-enfermagem-1780010905023-8",
+    "legalle-enfermagem-processo-de-enfermagem-1780010905023-9",
+    "legalle-enfermagem-processo-de-enfermagem-1780010911471-0",
+    "legalle-enfermagem-processo-de-enfermagem-1780010911471-1",
+    "legalle-enfermagem-processo-de-enfermagem-1780010911471-2",
+    "legalle-enfermagem-processo-de-enfermagem-1780010911471-3",
+    "legalle-enfermagem-processo-de-enfermagem-1780010911471-4",
+    "legalle-enfermagem-processo-de-enfermagem-1780010911471-5",
+    "legalle-enfermagem-processo-de-enfermagem-1780010911471-6",
+    "legalle-enfermagem-processo-de-enfermagem-1780010911471-7",
+    "legalle-enfermagem-processo-de-enfermagem-1780010911471-8",
+    "legalle-enfermagem-processo-de-enfermagem-1780010917301-0",
+    "legalle-enfermagem-processo-de-enfermagem-1780010917301-1",
+    "legalle-enfermagem-processo-de-enfermagem-1780011879977-5",
+    "legalle-enfermagem-processo-de-enfermagem-1780011879977-6",
+    "legalle-enfermagem-processo-de-enfermagem-1780011879977-7",
+    "legalle-enfermagem-processo-de-enfermagem-1780011879977-8",
+    "legalle-enfermagem-processo-de-enfermagem-1780011879977-9",
+    "legalle-enfermagem-processo-de-enfermagem-1780011887822-0",
+    "legalle-enfermagem-processo-de-enfermagem-1780011887822-1",
+    "legalle-enfermagem-processo-de-enfermagem-1780011887822-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009310940-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009310940-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010917301-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010917301-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011887822-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011887822-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011887822-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

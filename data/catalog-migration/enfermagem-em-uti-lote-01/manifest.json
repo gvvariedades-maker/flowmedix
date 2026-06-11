@@ -1,0 +1,15 @@
+{
+  "lote": "enfermagem-em-uti-lote-01",
+  "exported_at": "2026-06-10T05:52:47.485Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Enfermagem em UTI",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "idecan-enfermagem-enfermagem-em-uti-1778712381105-8",
+    "idecan-enfermagem-enfermagem-em-uti-1778712392541-0",
+    "idecan-enfermagem-enfermagem-em-uti-1778712392541-1"
+  ]
+}

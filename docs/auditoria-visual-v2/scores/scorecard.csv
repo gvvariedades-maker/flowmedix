@@ -1,0 +1,71 @@
+platform_id,platform_name,url,tela,criterio,score_1_5,notas,peso
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/,T1,L,4,Source Sans legível,1
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/,T1,H,4,grid features claro,1
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/,T1,D,4,12 features denso mas ok,1
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/,T1,C,4,professora + métricas,2
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/,T1,M,4,viewport 375 capturado,1
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/,T1,I,3,template IA/Tailwind comum,2
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/,T1,A,4,contraste âmbar ok,1
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/,T1,P,4,leve,1
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/,T1,E,4,dual CTA + trial,2
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/,T1,X,3,pouco exclusivo,2
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/auth,T2,L,5,formulário claro fundo creme,1
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/auth,T2,H,4,card central simples,1
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/auth,T2,D,5,minimalista,1
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/auth,T2,C,4,marca consistente LP,2
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/auth,T2,M,4,mobile capturado,1
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/auth,T2,I,4,âmbar+verde reconhecível,2
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/auth,T2,A,5,alto contraste claro,1
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/auth,T2,P,5,sem blur pesado,1
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/auth,T2,E,3,tela auth não vende,2
+B0,Gabarita Enfermagem,https://gabaritaenfermagem.com.br/auth,T2,X,3,padrão SaaS comum,2
+C1,Estudei,https://estudei.com.br/,T1,L,4,Neulis grande,1
+C1,Estudei,https://estudei.com.br/,T1,H,5,fluxo 1-2-3-4 forte,1
+C1,Estudei,https://estudei.com.br/,T1,D,3,LP longa arejada,1
+C1,Estudei,https://estudei.com.br/,T1,C,5,aprovados + fundadores,2
+C1,Estudei,https://estudei.com.br/,T1,M,4,mobile capturado,1
+C1,Estudei,https://estudei.com.br/,T1,I,4,roxo+teal reconhecível,2
+C1,Estudei,https://estudei.com.br/,T1,A,3,teal em texto pode falhar AA,1
+C1,Estudei,https://estudei.com.br/,T1,P,3,WordPress pesado,1
+C1,Estudei,https://estudei.com.br/,T1,E,5,melhor narrativa compra,2
+C1,Estudei,https://estudei.com.br/,T1,X,4,não é clone QC,2
+A1,QConcursos,https://www.qconcursos.com/,T1,L,5,Open Sans institucional,1
+A1,QConcursos,https://www.qconcursos.com/,T1,H,4,direto,1
+A1,QConcursos,https://www.qconcursos.com/,T1,D,4,balanceado,1
+A1,QConcursos,https://www.qconcursos.com/,T1,C,5,marca consolidada,2
+A1,QConcursos,https://www.qconcursos.com/,T1,M,4,mobile capturado,1
+A1,QConcursos,https://www.qconcursos.com/,T1,I,5,laranja icônico,2
+A1,QConcursos,https://www.qconcursos.com/,T1,A,4,preto/branco ok,1
+A1,QConcursos,https://www.qconcursos.com/,T1,P,5,performático,1
+A1,QConcursos,https://www.qconcursos.com/,T1,E,4,CTA grátis forte,2
+A1,QConcursos,https://www.qconcursos.com/,T1,X,2,genérico se copiar,2
+D1,AVANT baseline,local,T1,L,4,Inter legível dark; neon cansa em blocos longos,1
+D1,AVANT baseline,local,T1,H,4,seções LP claras + CTAs,1
+D1,AVANT baseline,local,T1,D,3,LP longa; hero denso,1
+D1,AVANT baseline,local,T1,C,3,dark cyber menos institucional que QC,2
+D1,AVANT baseline,local,T1,M,4,mobile capturado,1
+D1,AVANT baseline,local,T1,I,5,verde logo + cyber único,2
+D1,AVANT baseline,local,T1,A,3,cyan/roxo: contraste ok mas não AA em todos,1
+D1,AVANT baseline,local,T1,P,3,blur/glow/listras pesam,1
+D1,AVANT baseline,local,T1,E,4,questão demo + FAQ + CTA grátis,2
+D1,AVANT baseline,local,T1,X,5,não parece clone,2
+D1,AVANT baseline,local,T-app,L,4,player e vitrine legíveis,1
+D1,AVANT baseline,local,T-app,H,4,sidebar + hierarquia questão ok,1
+D1,AVANT baseline,local,T-app,D,4,cards vitrine bem espaçados,1
+D1,AVANT baseline,local,T-app,C,3,glass neon vs editorial concorrentes,2
+D1,AVANT baseline,local,T-app,M,4,375px capturado,1
+D1,AVANT baseline,local,T-app,I,5,identidade forte área logada,2
+D1,AVANT baseline,local,T-app,A,3,texto slate-400 pequeno em chips,1
+D1,AVANT baseline,local,T-app,P,3,glass-panel + blur,1
+D1,AVANT baseline,local,T-app,E,3,n/a app; onboarding tooltip ok,2
+D1,AVANT baseline,local,T-app,X,5,NeuroSlides + verde irreplicável,2
+B4,ENFrente Enfermagem,https://enfrenteenfermagem.com.br/,T1,L,3,texto ok mas banners competem,1
+B4,ENFrente Enfermagem,https://enfrenteenfermagem.com.br/,T1,H,3,muitos CTAs iguais,1
+B4,ENFrente Enfermagem,https://enfrenteenfermagem.com.br/,T1,D,2,LP longa repetitiva,1
+B4,ENFrente Enfermagem,https://enfrenteenfermagem.com.br/,T1,C,3,autoridade forte bio Juliana,2
+B4,ENFrente Enfermagem,https://enfrenteenfermagem.com.br/,T1,M,4,mobile full-page,1
+B4,ENFrente Enfermagem,https://enfrenteenfermagem.com.br/,T1,I,2,infoproduto genérico,2
+B4,ENFrente Enfermagem,https://enfrenteenfermagem.com.br/,T1,A,3,contraste ok em banners,1
+B4,ENFrente Enfermagem,https://enfrenteenfermagem.com.br/,T1,P,4,página leve,1
+B4,ENFrente Enfermagem,https://enfrenteenfermagem.com.br/,T1,E,3,urgência relâmpago funciona mas barato,2
+B4,ENFrente Enfermagem,https://enfrenteenfermagem.com.br/,T1,X,2,template curso comum,2

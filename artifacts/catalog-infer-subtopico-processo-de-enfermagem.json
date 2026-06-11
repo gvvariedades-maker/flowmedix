@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-06-10T12:19:54.009Z",
+  "mode": "infer",
+  "bucket": "Processo de Enfermagem",
+  "min_confidence_apply": 0.85,
+  "limit": 1,
+  "inference_source": "gemini",
+  "summary": {
+    "scanned": 1,
+    "inferred": 1,
+    "errors": 0,
+    "keep_current": 0,
+    "same_subtopico": 0,
+    "applicable": 0
+  },
+  "proposals": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056021381-4",
+      "from": "Processo de Enfermagem",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado foca em orientações de enfermagem para o manejo de efeitos colaterais do tratamento, o que se alinha com promoção à saúde e prevenção de agravos.",
+      "applicable": false,
+      "source": "gemini"
+    }
+  ]
+}

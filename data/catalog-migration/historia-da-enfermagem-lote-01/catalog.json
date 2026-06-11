@@ -1,0 +1,42 @@
+{
+  "exported_at": "2026-06-10T05:02:23.956Z",
+  "lote": "historia-da-enfermagem-lote-01",
+  "total": 5,
+  "entries": [
+    {
+      "modulo_slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 1
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-2",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 2
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-historia-da-enfermagem-1775331667969-3",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 3
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1515
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-historia-da-enfermagem-1775331667969-5",
+      "titulo_aula": "História da Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IESES",
+      "avant_codigo": 5
+    }
+  ]
+}

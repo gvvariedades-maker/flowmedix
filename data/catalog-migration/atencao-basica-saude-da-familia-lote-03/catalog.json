@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-10T04:14:11.399Z",
+  "lote": "atencao-basica-saude-da-familia-lote-03",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-4",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IESES",
+      "avant_codigo": 1916
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-5",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IESES",
+      "avant_codigo": 1917
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968357339-6",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IESES",
+      "avant_codigo": 1975
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-2",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 1847
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-3",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 1848
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-4",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 1849
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-5",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 1850
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-6",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 1851
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-7",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 1852
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-0",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 1963
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-2",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 1965
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-3",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 1966
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001297464-8",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4112
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001297464-9",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4113
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-0",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4114
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-1",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4115
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-2",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4116
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-3",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4117
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-atencao-basica-saude-da-familia-1778968207422-0",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INAZ DO PARÁ",
+      "avant_codigo": 1929
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-atencao-basica-saude-da-familia-1778968207422-1",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INAZ DO PARÁ",
+      "avant_codigo": 1930
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-atencao-basica-saude-da-familia-1778968221218-0",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 1938
+    },
+    {
+      "modulo_slug": "instituto-access-geral-atencao-basica-saude-da-familia-1778968207422-8",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Geral",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 1937
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968094018-1",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1872
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-3",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1889
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-4",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1890
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-5",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1891
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-6",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1892
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-7",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1893
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-8",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1894
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968144588-0",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1895
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968194611-7",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1927
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968323839-5",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 1968
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-0",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 1920
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-1",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 1921
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-2",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 1922
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-5",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 1925
+    },
+    {
+      "modulo_slug": "intec-enfermagem-atencao-basica-saude-da-familia-1778968357339-5",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "INTEC",
+      "avant_codigo": 1974
+    },
+    {
+      "modulo_slug": "itame-enfermagem-atencao-basica-saude-da-familia-1778968263411-1",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 1955
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-atencao-basica-saude-da-familia-1778968263411-8",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 1962
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-atencao-basica-saude-da-familia-1778968207422-6",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 1935
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-atencao-basica-saude-da-familia-1778968357339-1",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "REIS E REIS",
+      "avant_codigo": 1970
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-atencao-basica-saude-da-familia-1778968125784-2",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 1888
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-atencao-basica-saude-da-familia-1778968207422-2",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 1931
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1778967504475-0",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 1818
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1778968028412-1",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 1846
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1778968357339-7",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 1976
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1780001297464-7",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4111
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968039063-5",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1859
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968077998-8",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1870
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968094018-0",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1871
+    }
+  ]
+}

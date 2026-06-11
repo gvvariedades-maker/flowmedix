@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:30:37.766Z",
+  "lote": "imunizacao-lote-03",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cogeps-unioeste-enfermagem-imunizacao-1779564113760-6",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564113760-7",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564113760-8",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564119665-0",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564119665-3",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564119665-4",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564119665-5",
+    "cogeps-unioeste-enfermagem-imunizacao-1779564119665-6",
+    "cogeps-unioeste-enfermagem-imunizacao-1779572207173-0",
+    "cogeps-unioeste-enfermagem-imunizacao-1779572207173-1",
+    "cogeps-unioeste-enfermagem-imunizacao-1779572207173-2",
+    "cogeps-unioeste-enfermagem-imunizacao-1779572207173-3",
+    "cogeps-unioeste-enfermagem-imunizacao-1779572215875-8",
+    "com-exam-pref-bauru-enfermagem-imunizacao-1779564053668-0",
+    "copese-ufpi-enfermagem-imunizacao-1779564079834-5",
+    "copese-ufpi-enfermagem-imunizacao-1779564079834-6",
+    "copese-ufpi-enfermagem-imunizacao-1779564079834-7",
+    "copese-ufpi-geral-imunizacao-1779564079834-8",
+    "copese-uft-enfermagem-imunizacao-1777103251447-7",
+    "coseac-uff-enfermagem-imunizacao-1779564067000-9",
+    "coseac-uff-enfermagem-imunizacao-1779572159431-0",
+    "coseac-uff-enfermagem-imunizacao-1779572159431-1",
+    "coseac-uff-enfermagem-imunizacao-1779572159431-3",
+    "cotec-fadenor-enfermagem-imunizacao-1777103244679-2",
+    "cotec-fadenor-enfermagem-imunizacao-1777103244679-3",
+    "cotec-fadenor-enfermagem-imunizacao-1777103264001-2",
+    "cotec-fadenor-enfermagem-imunizacao-1777103264001-3",
+    "cotec-fadenor-enfermagem-imunizacao-1777103270218-7",
+    "cotec-fadenor-enfermagem-imunizacao-1779564059030-4",
+    "cotec-fadenor-enfermagem-imunizacao-1779572215875-7",
+    "cpcon-uepb-enfermagem-imunizacao-1779563975447-5",
+    "cpcon-uepb-enfermagem-imunizacao-1779563992006-5",
+    "cpcon-uepb-enfermagem-imunizacao-1779563996663-3",
+    "cpcon-uepb-enfermagem-imunizacao-1779563996663-4",
+    "cpcon-uepb-enfermagem-imunizacao-1779563996663-5",
+    "cpcon-uepb-enfermagem-imunizacao-1779563996663-6",
+    "cpcon-uepb-enfermagem-imunizacao-1779563996663-7",
+    "cpcon-uepb-enfermagem-imunizacao-1779563996663-8",
+    "cpcon-uepb-enfermagem-imunizacao-1779564001927-7",
+    "cpcon-uepb-enfermagem-imunizacao-1779564011849-3",
+    "cpcon-uepb-enfermagem-imunizacao-1779564035545-3",
+    "cpcon-uepb-enfermagem-imunizacao-1779564035545-4",
+    "cpcon-uepb-enfermagem-imunizacao-1779564035545-5",
+    "cpcon-uepb-enfermagem-imunizacao-1779564035545-6",
+    "cpcon-uepb-enfermagem-imunizacao-1779564035545-7",
+    "cpcon-uepb-enfermagem-imunizacao-1779564035545-8",
+    "cpcon-uepb-enfermagem-imunizacao-1779564040128-0",
+    "cpcon-uepb-enfermagem-imunizacao-1779564040128-1",
+    "cpcon-uepb-enfermagem-imunizacao-1779564040128-2",
+    "cpcon-uepb-enfermagem-imunizacao-1779564044052-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564113760-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564119665-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564119665-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564119665-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564119665-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564119665-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779572207173-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779572207173-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779572207173-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779572207173-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779572215875-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "com-exam-pref-bauru-enfermagem-imunizacao-1779564053668-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-imunizacao-1779564079834-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-imunizacao-1779564079834-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-imunizacao-1779564079834-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-geral-imunizacao-1779564079834-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-uft-enfermagem-imunizacao-1777103251447-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-imunizacao-1779564067000-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-imunizacao-1779572159431-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-imunizacao-1779572159431-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-imunizacao-1779572159431-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-imunizacao-1777103244679-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-imunizacao-1777103244679-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-imunizacao-1777103264001-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-imunizacao-1777103264001-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-imunizacao-1777103270218-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-imunizacao-1779564059030-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-imunizacao-1779572215875-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779563975447-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779563992006-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779563996663-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779563996663-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779563996663-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779563996663-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779563996663-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779563996663-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564001927-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564011849-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564035545-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564035545-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564035545-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564035545-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564035545-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564035545-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564040128-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564040128-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564040128-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564044052-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

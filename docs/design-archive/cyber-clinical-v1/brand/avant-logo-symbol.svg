@@ -1,0 +1,21 @@
+<!-- AVANT: ícone 56×56 — gradiente roxo, raio verde-limão (geometria compartilhada com avantLogoConstants). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none" aria-label="AVANT">
+  <defs>
+    <linearGradient id="avant-icon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3018c8"/>
+      <stop offset="100%" stop-color="#180c80"/>
+    </linearGradient>
+    <linearGradient id="avant-bolt" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d8ff70"/>
+      <stop offset="52%" stop-color="#8fe020"/>
+      <stop offset="100%" stop-color="#58b800"/>
+    </linearGradient>
+  </defs>
+  <rect width="56" height="56" rx="14" fill="url(#avant-icon)"/>
+  <rect width="56" height="24" rx="14" fill="#fff" fill-opacity="0.12"/>
+  <g transform="translate(15.33 14)">
+    <svg viewBox="0 0 38 42" width="25.34" height="28" aria-hidden="true">
+      <polygon points="22,0 8,20 15,20 10,42 30,16 18,16" fill="url(#avant-bolt)"/>
+    </svg>
+  </g>
+</svg>

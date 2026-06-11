@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T04:00:52.359Z",
+  "lote": "curativos-e-manejo-de-feridas-lote-01",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-curativos-e-manejo-de-feridas-1779344773456-1",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340178514-0",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340191984-6",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-8",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-0",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-7",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-8",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344779828-6",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-7",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779562699843-5",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779562730776-2",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563288910-9",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563448133-7",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563512485-0",
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563517223-0",
+    "atame-enfermagem-curativos-e-manejo-de-feridas-1779269228428-3",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-0",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-1",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-2",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-3",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269291153-7",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269305691-9",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-3",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344759089-1",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-2",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-3",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-4",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-5",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344813448-0",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-1",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-2",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-3",
+    "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-4",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-1",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-2",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-3",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-4",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-5",
+    "cetap-enfermagem-curativos-e-manejo-de-feridas-1779344819753-8",
+    "cev-urca-enfermagem-curativos-e-manejo-de-feridas-1779269212740-7",
+    "cev-urca-enfermagem-curativos-e-manejo-de-feridas-1779344773456-2",
+    "coseac-uff-enfermagem-curativos-e-manejo-de-feridas-1779340178514-9",
+    "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779269305691-1",
+    "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779344786992-2",
+    "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-0",
+    "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-4",
+    "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-5",
+    "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344819753-0",
+    "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344819753-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-curativos-e-manejo-de-feridas-1779344773456-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340178514-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340191984-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344779828-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779562699843-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779562730776-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563288910-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563448133-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563512485-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563517223-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-curativos-e-manejo-de-feridas-1779269228428-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269291153-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269305691-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344759089-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344813448-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetap-enfermagem-curativos-e-manejo-de-feridas-1779344819753-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-curativos-e-manejo-de-feridas-1779269212740-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-curativos-e-manejo-de-feridas-1779344773456-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-curativos-e-manejo-de-feridas-1779340178514-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779269305691-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779344786992-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344819753-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344819753-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

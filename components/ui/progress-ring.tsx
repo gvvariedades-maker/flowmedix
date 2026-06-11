@@ -6,9 +6,9 @@ interface ProgressRingProps {
 }
 
 const colors = {
-  brand:   '#00f2ff',
-  success: '#00ff88',
-  warning: '#ffb800',
+  brand: '#8fe020',
+  success: '#16a34a',
+  warning: '#d97706',
 };
 
 export function ProgressRing({
@@ -35,7 +35,7 @@ export function ProgressRing({
         cy={size / 2}
         r={r}
         fill="none"
-        stroke="rgba(255,255,255,0.08)"
+        stroke="#e2e8f0"
         strokeWidth={strokeWidth}
       />
       <circle

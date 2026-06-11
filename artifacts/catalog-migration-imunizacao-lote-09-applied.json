@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:33:45.114Z",
+  "lote": "imunizacao-lote-09",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-verbena-enfermagem-imunizacao-1779564044052-0",
+    "instituto-verbena-enfermagem-imunizacao-1779564067000-4",
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-1",
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-2",
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-3",
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-4",
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-5",
+    "instituto-verbena-enfermagem-imunizacao-1779564129617-6",
+    "ipefae-enfermagem-imunizacao-1779564090395-7",
+    "ivin-enfermagem-imunizacao-1777103182944-4",
+    "ivin-enfermagem-imunizacao-1777103204932-4",
+    "ivin-enfermagem-imunizacao-1777103257434-8",
+    "ivin-enfermagem-imunizacao-1777103257434-9",
+    "ivin-enfermagem-imunizacao-1779564048247-6",
+    "ivin-enfermagem-imunizacao-1779564048247-7",
+    "ivin-enfermagem-imunizacao-1779564048247-8",
+    "ivin-enfermagem-imunizacao-1779564067000-7",
+    "legalle-enfermagem-imunizacao-1779572166628-2",
+    "legalle-enfermagem-imunizacao-1779572166628-3",
+    "legalle-enfermagem-imunizacao-1779572166628-4",
+    "maranatha-assessoria-enfermagem-imunizacao-1779563986606-0",
+    "maranatha-assessoria-enfermagem-imunizacao-1779564006577-7",
+    "metrocapital-enfermagem-imunizacao-1779564096589-2",
+    "ms-sarmento-enfermagem-imunizacao-1777103215560-2",
+    "ms-sarmento-enfermagem-imunizacao-1777103215560-3",
+    "ms-sarmento-enfermagem-imunizacao-1777103215560-4",
+    "ms-sarmento-enfermagem-imunizacao-1777103215560-5",
+    "ms-sarmento-enfermagem-imunizacao-1777103215560-6",
+    "ms-sarmento-enfermagem-imunizacao-1777103230085-7",
+    "ms-sarmento-enfermagem-imunizacao-1777103244679-7",
+    "ms-sarmento-enfermagem-imunizacao-1777103244679-8",
+    "nao-informado-geral-imunizacao-1779564031957-0",
+    "nc-ufpr-funpar-enfermagem-imunizacao-1777103222102-7",
+    "nosso-rumo-enfermagem-imunizacao-1779564074967-0",
+    "nosso-rumo-enfermagem-imunizacao-1779564074967-1",
+    "objetiva-concursos-enfermagem-imunizacao-1779564071106-4",
+    "objetiva-concursos-enfermagem-imunizacao-1779564090395-1",
+    "objetiva-concursos-enfermagem-imunizacao-1779572236985-1",
+    "omni-enfermagem-imunizacao-1779572166628-7",
+    "omni-enfermagem-imunizacao-1779572166628-8",
+    "omni-enfermagem-imunizacao-1779572171486-6",
+    "omni-enfermagem-imunizacao-1779572220683-7",
+    "omni-enfermagem-imunizacao-1779572220683-8",
+    "quadrix-enfermagem-imunizacao-1777103182944-1",
+    "quadrix-enfermagem-imunizacao-1777103277533-0",
+    "quadrix-enfermagem-imunizacao-1779563961175-2",
+    "quadrix-enfermagem-imunizacao-1779563961175-3",
+    "quadrix-enfermagem-imunizacao-1779564011849-6",
+    "quadrix-enfermagem-imunizacao-1779564011849-7",
+    "quadrix-enfermagem-imunizacao-1780000630425-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564044052-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564067000-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ipefae-enfermagem-imunizacao-1779564090395-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1777103182944-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1777103204932-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1777103257434-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1777103257434-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1779564048247-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1779564048247-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1779564048247-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1779564067000-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-imunizacao-1779572166628-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-imunizacao-1779572166628-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-imunizacao-1779572166628-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-imunizacao-1779563986606-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-imunizacao-1779564006577-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-imunizacao-1779564096589-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103230085-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103244679-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103244679-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-imunizacao-1779564031957-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-imunizacao-1777103222102-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-imunizacao-1779564074967-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-imunizacao-1779564074967-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-imunizacao-1779564071106-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-imunizacao-1779564090395-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-imunizacao-1779572236985-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572166628-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572166628-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572171486-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572220683-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572220683-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1777103182944-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1777103277533-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779563961175-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779563961175-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779564011849-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779564011849-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1780000630425-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

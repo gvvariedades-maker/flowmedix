@@ -42,7 +42,7 @@ function ToastItem({ toast, onDismiss }: { toast: Toast; onDismiss: () => void }
       animate={{ opacity: 1, y: 0, scale: 1, transition: { duration: 0.22, ease: [0.16, 1, 0.3, 1] } }}
       exit={{ opacity: 0, y: 8, scale: 0.97, transition: { duration: 0.15 } }}
       className={cn(
-        'flex min-h-[48px] w-full max-w-[360px] items-center gap-3 rounded-[10px] border px-4 py-2.5',
+        'avant-toast flex min-h-[48px] w-full max-w-[360px] items-center gap-3 rounded-[10px] border px-4 py-2.5',
         'bg-[#111827] shadow-lg shadow-black/40',
         borderClass,
       )}

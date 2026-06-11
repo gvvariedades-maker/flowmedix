@@ -1,0 +1,76 @@
+{
+  "batch": "07",
+  "bucket": "Processo de Enfermagem",
+  "inferences": [
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-9",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Afirmativas sobre transmissão por mãos e indicações de higienização integram precauções padrão de biossegurança."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1776056129848-3",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Diagnóstico diferencial é etapa do raciocínio diagnóstico da SAE, não outro subtópico clínico."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-8",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Pródromos laborais e termos obstétricos relacionam-se diretamente à gestação e maternidade."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-3",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Doença iatrogênica descreve dano causado por intervenção assistencial, núcleo da segurança do paciente."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Sinal universal de engasgo (mãos no pescoço) é reconhecimento de obstrução de vias aéreas em emergência."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-7",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Escala de Coma de Glasgow avalia nível de consciência em contexto neurológico e emergencial."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002549800-5",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.89,
+      "keep_current": false,
+      "rationale": "Composição iônica do soro fisiológico (NaCl) aborda eletrólitos e homeostase, não etapas do PE."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002549800-6",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Istmocele é complicação uterina pós-cesariana, conteúdo de saúde da mulher e obstetrícia."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002549800-9",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Portaria sobre equipes multiprofissionais na APS trata política e organização da atenção básica."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-0",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Hipernatremia é distúrbio eletrolítico de equilíbrio hidrossalino, conteúdo de fisiologia aplicada."
+    }
+  ]
+}

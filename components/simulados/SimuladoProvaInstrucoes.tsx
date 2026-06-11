@@ -58,18 +58,18 @@ export function SimuladoProvaInstrucoes({
           { label: 'Instruções' },
         ]}
         description={`${totalQuestoes} ${totalQuestoes === 1 ? 'questão' : 'questões'} · ritmo sugerido: ${ritmoLabel}`}
-        descriptionClassName="text-sm text-slate-400 mt-1"
-        titleClassName="text-xl font-[1000] italic tracking-tighter text-white sm:text-2xl"
+        descriptionClassName="mt-1 text-sm text-slate-500"
+        titleClassName="text-editorial-title text-xl sm:text-2xl"
       />
 
-      <div className="glass-panel space-y-6 border border-white/10 p-6 sm:p-8">
+      <div className="card-elevated-lg space-y-6 p-6 sm:p-8">
         <div className="space-y-1">
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
             Sala de prova
           </h2>
-          <p className="text-sm text-slate-300">
+          <p className="text-sm text-slate-700">
             Meta de tempo sugerida:{' '}
-            <span className="font-mono font-medium text-cyan-300/90">
+            <span className="font-mono font-medium text-[#3d6b0f]">
               {metaTotalHms ?? 'Sem meta'}
             </span>
             {metaTotalHms ? (
@@ -79,25 +79,25 @@ export function SimuladoProvaInstrucoes({
         </div>
 
         <div>
-          <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-400">
+          <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-500">
             Regras
           </h3>
-          <ul className="list-disc space-y-2.5 pl-5 text-sm leading-relaxed text-slate-300">
+          <ul className="list-disc space-y-2.5 pl-5 text-sm leading-relaxed text-slate-700">
             {REGRAS.map((regra) => (
               <li key={regra}>{regra}</li>
             ))}
           </ul>
         </div>
 
-        <div className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-4">
+        <div className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4">
           <Checkbox
             id={checkboxId}
             checked={instrucoesLidas}
             onCheckedChange={(checked) => setInstrucoesLidas(checked === true)}
-            className="mt-0.5 border-white/25 bg-slate-900/80 data-[state=checked]:border-cyan-500 data-[state=checked]:bg-cyan-500"
+            className="mt-0.5 border-slate-300 data-[state=checked]:border-[#8fe020] data-[state=checked]:bg-[#8fe020]"
             aria-describedby={`${checkboxId}-hint`}
           />
-          <label htmlFor={checkboxId} className="cursor-pointer text-sm text-slate-200">
+          <label htmlFor={checkboxId} className="cursor-pointer text-sm text-slate-800">
             Li as instruções e estou pronto para iniciar a prova.
             <span id={`${checkboxId}-hint`} className="mt-1 block text-xs text-slate-500">
               O cronômetro começa ao clicar em Iniciar prova.
@@ -106,7 +106,7 @@ export function SimuladoProvaInstrucoes({
         </div>
 
         {iniciarProvaError ? (
-          <p className="text-sm text-rose-400" role="alert">
+          <p className="text-sm text-rose-600" role="alert">
             {iniciarProvaError}
           </p>
         ) : null}
@@ -115,7 +115,7 @@ export function SimuladoProvaInstrucoes({
           type="button"
           disabled={!instrucoesLidas || iniciandoProva}
           onClick={onIniciar}
-          className="h-12 w-full rounded-xl border border-cyan-500/40 bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-40"
+          className="btn-editorial-primary h-12 w-full disabled:opacity-40"
         >
           {iniciandoProva ? (
             <>
@@ -128,8 +128,8 @@ export function SimuladoProvaInstrucoes({
         </Button>
       </div>
 
-      <p className="text-center text-xs text-slate-600">
-        <Link href="/simulados" className="transition-colors hover:text-slate-400">
+      <p className="text-center text-xs text-slate-500">
+        <Link href="/simulados" className="link-editorial-secondary transition-colors">
           Voltar para Simulados
         </Link>
       </p>

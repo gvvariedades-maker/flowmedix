@@ -99,8 +99,7 @@ export const DangerZone = ({
           aria-hidden
         />
         <div
-          className="relative z-10 mt-2 mb-6 w-full rounded-2xl border border-red-500/30 p-4 backdrop-blur-xl md:mt-4 md:mb-10 md:rounded-3xl md:p-6 lg:p-8"
-          style={{ boxShadow: '0 0 60px -15px rgba(239,68,68,0.35)' }}
+          className="relative z-10 mt-2 mb-6 w-full rounded-2xl border border-red-500/30 bg-red-950/30 p-4 md:mt-4 md:mb-10 md:rounded-3xl md:p-6 lg:p-8"
         >
           {content ? (
             <motion.div className="mb-6 rounded-xl border border-red-500/30 bg-red-950/40 p-5 md:p-6">
@@ -190,8 +189,8 @@ export const DangerZone = ({
       <motion.div layout className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-stretch justify-start p-4 pb-8 md:p-6 md:pb-10 lg:p-8 lg:pb-12">
         <div className="absolute inset-0 bg-gradient-to-br from-red-950/90 via-slate-900/90 to-red-950/90" />
         <div
-          className="danger-zone-container relative z-10 mt-2 mb-4 w-full rounded-2xl border-l-4 border-red-500 p-5 backdrop-blur-xl md:mt-4 md:mb-6 md:rounded-3xl md:border-l-8 md:p-7 lg:p-9"
-          style={{ boxShadow: '0 0 60px -15px rgba(239,68,68,0.5)', minHeight: '200px' }}
+          className="danger-zone-container relative z-10 mt-2 mb-4 w-full rounded-2xl border-l-4 border-red-500 bg-red-950/20 p-5 md:mt-4 md:mb-6 md:rounded-3xl md:border-l-8 md:p-7 lg:p-9"
+          style={{ minHeight: '200px' }}
         >
           <div className="danger-zone-alert-icon absolute top-4 right-4 opacity-20">
             <AlertTriangle size={100} className="text-red-500" />
@@ -300,7 +299,7 @@ export const DangerZone = ({
   return (
     <div className="relative flex min-h-full w-full min-w-0 flex-col items-center justify-start p-4 pb-8">
       <div className="absolute inset-0 bg-gradient-to-br from-red-950/90 via-slate-900/90 to-red-950/90" />
-      <div className="relative z-10 my-4 w-full max-w-4xl rounded-2xl border-l-4 border-red-500 p-5 backdrop-blur-xl">
+      <div className="relative z-10 my-4 w-full max-w-4xl rounded-2xl border-l-4 border-red-500 bg-red-950/20 p-5">
         <h3 className="mb-4 flex items-center gap-2 font-mono text-sm font-black text-red-400 md:text-2xl">
           <AlertTriangle size={24} className="shrink-0" /> CUIDADO
         </h3>

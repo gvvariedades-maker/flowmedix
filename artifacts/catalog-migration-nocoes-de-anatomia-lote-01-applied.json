@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T04:36:01.850Z",
+  "lote": "nocoes-de-anatomia-lote-01",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "agirh-enfermagem-nocoes-de-anatomia-1775448514037-0",
+    "amauc-enfermagem-nocoes-de-anatomia-1775448514037-4",
+    "ameosc-enfermagem-nocoes-de-anatomia-1775447762008-5",
+    "ameosc-enfermagem-nocoes-de-anatomia-1775448491347-1",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775331667969-6",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775447782763-2",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-5",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-6",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-2",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-3",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-4",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-5",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775448475837-0",
+    "avancasp-enfermagem-nocoes-de-anatomia-1775448475837-1",
+    "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-0",
+    "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-1",
+    "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-0",
+    "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-1",
+    "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-2",
+    "cotec-fadenor-enfermagem-nocoes-de-anatomia-1775448475837-4",
+    "cotec-fadenor-enfermagem-nocoes-de-anatomia-1775448475837-5",
+    "cpcon-uepb-enfermagem-nocoes-de-anatomia-1775448514037-3",
+    "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-2",
+    "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-3",
+    "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-8",
+    "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447834740-0",
+    "fau-unicentro-enfermagem-nocoes-de-anatomia-1775448475837-6",
+    "fauel-enfermagem-nocoes-de-anatomia-1775447834740-7",
+    "fenix-instituto-enfermagem-nocoes-de-anatomia-1775447762008-6",
+    "fepese-enfermagem-nocoes-de-anatomia-1775447762008-7",
+    "fepese-enfermagem-nocoes-de-anatomia-1775448491347-7",
+    "fepese-enfermagem-nocoes-de-anatomia-1775448514037-1",
+    "fgv-enfermagem-nocoes-de-anatomia-1775447762008-4",
+    "fgv-enfermagem-nocoes-de-anatomia-1775448475837-7",
+    "fgv-enfermagem-nocoes-de-anatomia-1775448491347-0",
+    "fgv-enfermagem-nocoes-de-anatomia-1775448491347-2",
+    "fgv-enfermagem-nocoes-de-anatomia-1775448514037-5",
+    "fgv-enfermagem-nocoes-de-anatomia-1775448514037-6",
+    "fgv-enfermagem-nocoes-de-anatomia-1775448514037-7",
+    "fgv-enfermagem-nocoes-de-anatomia-1775448529213-0",
+    "fundatec-enfermagem-nocoes-de-anatomia-1775331667969-7",
+    "fundatec-enfermagem-nocoes-de-anatomia-1775331667969-8",
+    "ibade-enfermagem-nocoes-de-anatomia-1775447762008-0",
+    "ibade-enfermagem-nocoes-de-anatomia-1775447762008-1",
+    "ibade-enfermagem-nocoes-de-anatomia-1775448275334-1",
+    "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-0",
+    "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-1",
+    "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-2",
+    "ibfc-enfermagem-nocoes-de-anatomia-1775448458316-0",
+    "idecan-enfermagem-nocoes-de-anatomia-1778712122855-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "agirh-enfermagem-nocoes-de-anatomia-1775448514037-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-nocoes-de-anatomia-1775448514037-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-anatomia-1775447762008-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-anatomia-1775448491347-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775331667969-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775447782763-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775447834740-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448458316-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448475837-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-anatomia-1775448475837-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775447782763-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nocoes-de-anatomia-1775448311662-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-nocoes-de-anatomia-1775448475837-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-nocoes-de-anatomia-1775448475837-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-nocoes-de-anatomia-1775448514037-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447762008-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775447834740-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-anatomia-1775448475837-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-nocoes-de-anatomia-1775447834740-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-nocoes-de-anatomia-1775447762008-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-nocoes-de-anatomia-1775447762008-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-nocoes-de-anatomia-1775448491347-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-nocoes-de-anatomia-1775448514037-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775447762008-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448475837-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448491347-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448491347-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448514037-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448514037-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448514037-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-anatomia-1775448529213-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-nocoes-de-anatomia-1775331667969-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-nocoes-de-anatomia-1775331667969-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-anatomia-1775447762008-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-anatomia-1775447762008-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-anatomia-1775448275334-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448458316-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nocoes-de-anatomia-1778712122855-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

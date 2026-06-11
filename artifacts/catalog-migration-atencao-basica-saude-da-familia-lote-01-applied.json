@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T04:12:58.814Z",
+  "lote": "atencao-basica-saude-da-familia-lote-01",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3",
+    "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-1",
+    "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-2",
+    "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-3",
+    "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+    "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-2",
+    "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-3",
+    "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-4",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967504475-2",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-0",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-1",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-2",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-2",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-3",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-4",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-6",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-7",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-2",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-3",
+    "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-2",
+    "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-3",
+    "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-4",
+    "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-5",
+    "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-6",
+    "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-7",
+    "avancasp-geral-atencao-basica-saude-da-familia-1778968221218-4",
+    "cebraspe-cespe-enfermagem-atencao-basica-saude-da-familia-1778968144588-6",
+    "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-5",
+    "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-6",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-4",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-5",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968207422-7",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-5",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-6",
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-7",
+    "educa-pb-enfermagem-atencao-basica-saude-da-familia-1778968357339-2",
+    "educa-pb-enfermagem-atencao-basica-saude-da-familia-1778968357339-3",
+    "facet-enfermagem-atencao-basica-saude-da-familia-1778968028412-8",
+    "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-0",
+    "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-1",
+    "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-2",
+    "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-3",
+    "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-4",
+    "fadesp-enfermagem-atencao-basica-saude-da-familia-1778968194611-6",
+    "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968039063-6",
+    "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968039063-7",
+    "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-0",
+    "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967504475-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-geral-atencao-basica-saude-da-familia-1778968221218-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-atencao-basica-saude-da-familia-1778968144588-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968207422-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-atencao-basica-saude-da-familia-1778968357339-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-atencao-basica-saude-da-familia-1778968357339-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968028412-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fadesp-enfermagem-atencao-basica-saude-da-familia-1778968194611-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968039063-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968039063-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

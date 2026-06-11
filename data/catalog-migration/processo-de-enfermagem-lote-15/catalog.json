@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-09T10:26:21.927Z",
+  "lote": "processo-de-enfermagem-lote-15",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4425
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4426
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4427
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4428
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4429
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4430
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4431
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4432
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4433
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4434
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4435
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4436
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4437
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4438
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005320352-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4577
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4578
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4579
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4580
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4581
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4582
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4583
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4584
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4585
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4586
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4587
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4588
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4589
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4590
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4591
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4592
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4593
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4594
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4595
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4596
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4597
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4598
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4599
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4600
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4601
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4602
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1776056149404-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 253
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 4561
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 4562
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 4563
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 4564
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 4565
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 4566
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 4567
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 4568
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 4569
+    }
+  ]
+}

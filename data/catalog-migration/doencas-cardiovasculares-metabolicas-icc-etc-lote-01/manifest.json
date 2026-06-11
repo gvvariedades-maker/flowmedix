@@ -1,0 +1,15 @@
+{
+  "lote": "doencas-cardiovasculares-metabolicas-icc-etc-lote-01",
+  "exported_at": "2026-06-10T05:52:28.766Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Doenças Cardiovasculares e Metabólicas Crônicas (Diabete, Hipertensão, ICC etc)",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-4",
+    "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-5",
+    "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-6"
+  ]
+}

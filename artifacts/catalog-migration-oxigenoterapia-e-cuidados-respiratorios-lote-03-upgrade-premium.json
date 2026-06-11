@@ -1,0 +1,617 @@
+{
+  "generated_at": "2026-06-10T03:55:10.060Z",
+  "lote": "oxigenoterapia-e-cuidados-respiratorios-lote-03",
+  "mode": "write",
+  "force": false,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 50,
+  "upgraded": 50,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "protocolo": 50
+  },
+  "results": [
+    {
+      "modulo_slug": "imparh-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-1",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344701804-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-2",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-1",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344701804-4",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-4",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-4",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-1",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "itame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "itame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-2",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344742779-4",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-5",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-8",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-0",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-5",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-0",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-5",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-4",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-5",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-8",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "omni-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344742779-1",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "omni-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344751294-4",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1780000535393-0",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-9",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-8",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-9",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-5",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-8",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-1",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344667377-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T04:19:10.291Z",
+  "lote": "coleta-de-exames-laboratoriais-lote-02",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "gama-enfermagem-coleta-de-exames-laboratoriais-1779563225798-5",
+    "ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-1",
+    "ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-2",
+    "ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-3",
+    "ibfc-enfermagem-coleta-de-exames-laboratoriais-1779563200105-2",
+    "ibfc-enfermagem-coleta-de-exames-laboratoriais-1779563248005-3",
+    "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563140631-5",
+    "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-2",
+    "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-3",
+    "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-4",
+    "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-4",
+    "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-5",
+    "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-6",
+    "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-7",
+    "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-8",
+    "ieses-enfermagem-coleta-de-exames-laboratoriais-1779563248005-8",
+    "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779562716126-2",
+    "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779562716126-3",
+    "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779562725491-2",
+    "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779563225798-3",
+    "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779563248005-1",
+    "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779563248005-2",
+    "instituto-access-enfermagem-coleta-de-exames-laboratoriais-1779563272300-5",
+    "instituto-aocp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-1",
+    "instituto-aocp-enfermagem-coleta-de-exames-laboratoriais-1779563288910-7",
+    "instituto-consulplan-enfermagem-coleta-de-exames-laboratoriais-1779562780466-6",
+    "instituto-consulplan-enfermagem-coleta-de-exames-laboratoriais-1779563272300-6",
+    "instituto-verbena-enfermagem-coleta-de-exames-laboratoriais-1779563248005-6",
+    "intec-enfermagem-coleta-de-exames-laboratoriais-1779563248005-7",
+    "iset-enfermagem-coleta-de-exames-laboratoriais-1779562735777-2",
+    "itame-enfermagem-coleta-de-exames-laboratoriais-1779563140631-8",
+    "itame-enfermagem-coleta-de-exames-laboratoriais-1779563200105-7",
+    "lj-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779562768558-7",
+    "lj-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779563288910-5",
+    "lj-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779563288910-6",
+    "maranatha-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779562735777-7",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779562716126-8",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-1",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-2",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-6",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-7",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563165114-0",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563200105-5",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563272300-1",
+    "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563288910-0",
+    "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779562768558-8",
+    "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779563225798-9",
+    "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779563248005-0",
+    "selecon-enfermagem-coleta-de-exames-laboratoriais-1779563272300-0",
+    "unifil-enfermagem-coleta-de-exames-laboratoriais-1779562768558-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "gama-enfermagem-coleta-de-exames-laboratoriais-1779563225798-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-coleta-de-exames-laboratoriais-1779563200105-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-coleta-de-exames-laboratoriais-1779563248005-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563140631-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-coleta-de-exames-laboratoriais-1779563248005-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779562716126-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779562716126-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779562725491-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779563225798-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779563248005-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779563248005-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-coleta-de-exames-laboratoriais-1779563272300-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-coleta-de-exames-laboratoriais-1779563288910-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-coleta-de-exames-laboratoriais-1779562780466-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-coleta-de-exames-laboratoriais-1779563272300-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-coleta-de-exames-laboratoriais-1779563248005-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "intec-enfermagem-coleta-de-exames-laboratoriais-1779563248005-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iset-enfermagem-coleta-de-exames-laboratoriais-1779562735777-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-coleta-de-exames-laboratoriais-1779563140631-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-coleta-de-exames-laboratoriais-1779563200105-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779562768558-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779563288910-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779563288910-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779562735777-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779562716126-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563165114-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563200105-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563272300-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563288910-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779562768558-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779563225798-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779563248005-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-coleta-de-exames-laboratoriais-1779563272300-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-coleta-de-exames-laboratoriais-1779562768558-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

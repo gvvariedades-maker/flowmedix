@@ -54,9 +54,9 @@ export default function EstudoReversoPage() {
         className={`mt-6 p-5 shadow-sm md:flex md:items-center md:justify-between md:gap-5 ${AJUDA_SURFACE}`}
       >
         <div>
-          <p className="text-[11px] font-black uppercase tracking-widest text-indigo-400">Introdução rápida</p>
-          <h2 className="mt-1 text-xl font-black tracking-tight text-slate-100">Prefere ver em formato de slides?</h2>
-          <p className="mt-2 text-sm leading-relaxed text-slate-400">
+          <p className="text-[11px] font-black uppercase tracking-widest text-[#3d6b0f]">Introdução rápida</p>
+          <h2 className="mt-1 text-xl font-black tracking-tight text-slate-900">Prefere ver em formato de slides?</h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-600">
             Abra o resumo de boas-vindas com 4 passos curtos para apresentar o método a novos alunos.
           </p>
         </div>
@@ -67,9 +67,9 @@ export default function EstudoReversoPage() {
 
       <div className="md:hidden">
         <details
-          className={`my-6 rounded-2xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117] p-4 shadow-sm`}
+          className="card-elevated my-6 p-4 shadow-sm md:hidden"
         >
-          <summary className="cursor-pointer text-[11px] font-black uppercase tracking-widest text-slate-400">
+          <summary className="cursor-pointer text-[11px] font-black uppercase tracking-widest text-slate-600">
             Índice do método
           </summary>
           <div className="mt-3">
@@ -87,8 +87,8 @@ export default function EstudoReversoPage() {
         </section>
 
         <section id="definicao" className={`scroll-mt-10 p-5 shadow-sm md:p-6 ${AJUDA_SURFACE}`}>
-          <h2 className="text-2xl font-black tracking-tight text-slate-100">{DEFINICAO.titulo}</h2>
-          <p className="mt-3 text-base leading-relaxed text-slate-400">{DEFINICAO.resumo}</p>
+          <h2 className="text-2xl font-black tracking-tight text-slate-900">{DEFINICAO.titulo}</h2>
+          <p className="mt-3 text-base leading-relaxed text-slate-600">{DEFINICAO.resumo}</p>
           <FluxoBadges itens={DEFINICAO.fluxo} />
           <Note>
             O ponto central é simples: você não espera dominar tudo para praticar. Você pratica para descobrir o que precisa dominar.
@@ -108,14 +108,11 @@ export default function EstudoReversoPage() {
         </section>
 
         <section id="passo-a-passo" className={`scroll-mt-10 p-5 shadow-sm md:p-6 ${AJUDA_SURFACE}`}>
-          <h2 className="text-2xl font-black tracking-tight text-slate-100">{PASSO_A_PASSO.titulo}</h2>
+          <h2 className="text-2xl font-black tracking-tight text-slate-900">{PASSO_A_PASSO.titulo}</h2>
           <ol className="mt-5 grid gap-3 md:grid-cols-5">
             {PASSO_A_PASSO.passos.map((passo, index) => (
-              <li
-                key={passo}
-                className="rounded-2xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117] p-3 text-sm font-semibold leading-snug text-slate-200"
-              >
-                <span className="mb-2 flex h-7 w-7 items-center justify-center rounded-full bg-indigo-600 text-xs font-black text-white">
+              <li key={passo} className="card-elevated p-3 text-sm font-semibold leading-snug text-slate-800">
+                <span className="mb-2 flex h-7 w-7 items-center justify-center rounded-full bg-[#3d6b0f] text-xs font-black text-white">
                   {index + 1}
                 </span>
                 {passo}

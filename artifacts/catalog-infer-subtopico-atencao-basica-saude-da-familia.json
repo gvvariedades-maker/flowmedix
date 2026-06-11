@@ -1,0 +1,2048 @@
+{
+  "generated_at": "2026-06-10T10:59:04.682Z",
+  "mode": "infer",
+  "bucket": "Atenção Básica / Saúde da Família",
+  "min_confidence_apply": 0.85,
+  "limit": 10000,
+  "inference_source": "heuristic",
+  "summary": {
+    "scanned": 203,
+    "inferred": 203,
+    "errors": 0,
+    "keep_current": 159,
+    "same_subtopico": 159,
+    "applicable": 44
+  },
+  "proposals": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (O2): enunciado indica Oxigenoterapia e Cuidados Respiratórios",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Imunização",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (imunização): enunciado indica Imunização",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967504475-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.85,
+      "keep_current": false,
+      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-geral-atencao-basica-saude-da-familia-1778968221218-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-atencao-basica-saude-da-familia-1778968144588-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "copese-uft-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (sondas): enunciado indica Instalação e Manejo de Sondas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (sondas): enunciado indica Instalação e Manejo de Sondas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968207422-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-atencao-basica-saude-da-familia-1778968357339-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-atencao-basica-saude-da-familia-1778968357339-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968028412-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fadesp-enfermagem-atencao-basica-saude-da-familia-1778968194611-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968039063-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968039063-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-9",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (DCNT): enunciado indica Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (sondas): enunciado indica Instalação e Manejo de Sondas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-atencao-basica-saude-da-familia-1778967504475-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (O2): enunciado indica Oxigenoterapia e Cuidados Respiratórios",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (sondas): enunciado indica Instalação e Manejo de Sondas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-atencao-basica-saude-da-familia-1778968180610-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-atencao-basica-saude-da-familia-1778968094018-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Curativos e Manejo de Feridas",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Heurística (curativos): enunciado indica Curativos e Manejo de Feridas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-atencao-basica-saude-da-familia-1778968239687-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (DCNT): enunciado indica Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-atencao-basica-saude-da-familia-1778968144588-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-atencao-basica-saude-da-familia-1778968156152-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968112153-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968125784-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-atencao-basica-saude-da-familia-1778968221218-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-atencao-basica-saude-da-familia-1778968194611-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-atencao-basica-saude-da-familia-1778968239687-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-atencao-basica-saude-da-familia-1778968239687-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968156152-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968239687-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-atencao-basica-saude-da-familia-1778968323839-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-atencao-basica-saude-da-familia-1778968207422-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-atencao-basica-saude-da-familia-1778968239687-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-atencao-basica-saude-da-familia-1778968144588-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-atencao-basica-saude-da-familia-1778968112153-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ideap-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712409051-9",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712418722-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778712418722-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778968239687-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1778968263411-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1780067024707-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-atencao-basica-saude-da-familia-1780067024707-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nutricao-aplicada-a-enfermagem-1780066961947-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nutricao-aplicada-a-enfermagem-1780066961947-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778934936220-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778968194611-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-atencao-basica-saude-da-familia-1778968194611-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Curativos e Manejo de Feridas",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Heurística (curativos): enunciado indica Curativos e Manejo de Feridas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968180610-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968357339-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Imunização",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (imunização): enunciado indica Imunização",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.85,
+      "keep_current": false,
+      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968323839-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001297464-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001297464-9",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.85,
+      "keep_current": false,
+      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (DCNT): enunciado indica Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1780000630425-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (DCNT): enunciado indica Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-atencao-basica-saude-da-familia-1778968207422-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-atencao-basica-saude-da-familia-1778968207422-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-atencao-basica-saude-da-familia-1778968221218-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-geral-atencao-basica-saude-da-familia-1778968207422-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968094018-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968125784-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968144588-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968194611-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968323839-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "intec-enfermagem-atencao-basica-saude-da-familia-1778968357339-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-atencao-basica-saude-da-familia-1778968263411-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-atencao-basica-saude-da-familia-1778968263411-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (sondas): enunciado indica Instalação e Manejo de Sondas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-atencao-basica-saude-da-familia-1778968207422-6",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (acesso venoso): enunciado indica Punção Venosa e Cuidados com Cateteres",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-atencao-basica-saude-da-familia-1778968357339-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-atencao-basica-saude-da-familia-1778968125784-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-atencao-basica-saude-da-familia-1778968207422-2",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1778967504475-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1778968028412-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1778968357339-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1780001297464-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (sondas): enunciado indica Instalação e Manejo de Sondas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Heurística (mulher): enunciado indica Saúde da Mulher",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968039063-5",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968077998-8",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968094018-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968125784-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968180610-7",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Heurística (IST): enunciado indica Infecções Sexualmente Transmissíveis (ISTs)",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968221218-3",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968323839-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-0",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (sondas): enunciado indica Instalação e Manejo de Sondas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-1",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Heurística (APS): tema central compatível com bucket atual",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-4",
+      "from": "Atenção Básica / Saúde da Família",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    }
+  ]
+}

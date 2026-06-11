@@ -1,0 +1,43 @@
+{
+  "lote": "infeccoes-no-contexto-da-biosseguranca-lote-01",
+  "exported_at": "2026-06-10T05:00:51.982Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Infecções no Contexto da Biossegurança",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "ameosc-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-2",
+    "avancasp-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-2",
+    "cebraspe-cespe-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-8",
+    "cetrede-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-8",
+    "cetrede-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-1",
+    "cogeps-unioeste-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-9",
+    "cogeps-unioeste-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-0",
+    "coseac-uff-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102813845-0",
+    "coseac-uff-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102813845-1",
+    "coseac-uff-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102813845-2",
+    "coseac-uff-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102813845-3",
+    "ibade-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-3",
+    "icece-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-8",
+    "icece-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-9",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-4",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-5",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-6",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-2",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-3",
+    "idecan-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778712220716-4",
+    "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-1",
+    "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-2",
+    "idib-enfermagem-infeccoes-no-contexto-da-biosseguranca-1778934900821-3",
+    "igeduc-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-7",
+    "objetiva-concursos-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-1",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-3",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-4",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-5",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-6",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102719125-7",
+    "omni-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-7"
+  ]
+}

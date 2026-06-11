@@ -46,14 +46,14 @@ export const SimuladoMapCell = memo(function SimuladoMapCell({
       type="button"
       onClick={() => onSelect(item.modulo_slug)}
       className={cn(
-        'h-11 min-w-11 shrink-0 rounded-lg border px-2 text-sm font-semibold',
+        'h-11 min-w-11 shrink-0 rounded-lg border px-2 text-sm font-semibold transition-colors',
         isActive
-          ? 'border-cyan-500/40 bg-cyan-500/10 text-cyan-300'
+          ? 'border-[rgba(143,224,32,0.45)] bg-[rgba(143,224,32,0.12)] text-[#3d6b0f]'
           : answeredNeutral
-            ? 'border-white/15 bg-white/[0.06] text-slate-200'
+            ? 'border-slate-300 bg-slate-100 text-slate-700'
             : item.respondida
-              ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300'
-              : 'border-white/10 bg-white/[0.03] text-slate-300',
+              ? 'border-emerald-300 bg-emerald-50 text-emerald-700'
+              : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300',
       )}
       aria-current={isActive ? 'step' : undefined}
       aria-label={`Questão ${item.ordem}${item.respondida ? ', respondida' : ', pendente'}`}

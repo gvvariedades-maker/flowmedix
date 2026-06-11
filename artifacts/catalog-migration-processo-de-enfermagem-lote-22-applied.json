@@ -1,0 +1,118 @@
+{
+  "generated_at": "2026-06-09T21:46:06.057Z",
+  "lote": "processo-de-enfermagem-lote-22",
+  "mode": "apply",
+  "total_files": 15,
+  "ok": 15,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-8",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-9",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-0",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-1",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-2",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-3",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-4",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-5",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-6",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-2",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-3",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-4",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-5",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-6",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

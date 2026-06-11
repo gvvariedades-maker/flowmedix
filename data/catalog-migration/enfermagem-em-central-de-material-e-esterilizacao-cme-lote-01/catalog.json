@@ -1,0 +1,98 @@
+{
+  "exported_at": "2026-06-10T04:57:38.549Z",
+  "lote": "enfermagem-em-central-de-material-e-esterilizacao-cme-lote-01",
+  "total": 13,
+  "entries": [
+    {
+      "modulo_slug": "icece-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-2",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "ICECE",
+      "avant_codigo": 4096
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1661
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-3",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1662
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-4",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1663
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-5",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1664
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-6",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1665
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-7",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1666
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-0",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5154
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-1",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5155
+    },
+    {
+      "modulo_slug": "idib-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778934918280-9",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1771
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4095
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4097
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-0",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 4094
+    }
+  ]
+}

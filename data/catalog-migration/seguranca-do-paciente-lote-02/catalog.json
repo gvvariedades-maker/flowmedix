@@ -1,0 +1,343 @@
+{
+  "exported_at": "2026-06-10T04:35:58.098Z",
+  "lote": "seguranca-do-paciente-lote-02",
+  "total": 48,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1581
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-8",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1582
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-9",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1583
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712242196-0",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1584
+    },
+    {
+      "modulo_slug": "idib-enfermagem-seguranca-do-paciente-1778934900821-4",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1747
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-seguranca-do-paciente-1777102918981-3",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 732
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-seguranca-do-paciente-1777102936764-5",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 751
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-seguranca-do-paciente-1777102936764-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 752
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-seguranca-do-paciente-1777102936764-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 753
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-seguranca-do-paciente-1779563443877-4",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 3051
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-seguranca-do-paciente-1779563443877-5",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 3052
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102742836-2",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 662
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102742836-3",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 663
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-seguranca-do-paciente-1777102766050-3",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 667
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-seguranca-do-paciente-1777102678563-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 642
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-seguranca-do-paciente-1777102918981-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 735
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-seguranca-do-paciente-1777102936764-3",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 749
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102742836-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 661
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102802022-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 683
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-seguranca-do-paciente-1777102918981-4",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 733
+    },
+    {
+      "modulo_slug": "itame-enfermagem-seguranca-do-paciente-1777102802022-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 678
+    },
+    {
+      "modulo_slug": "itame-enfermagem-seguranca-do-paciente-1777102861438-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 718
+    },
+    {
+      "modulo_slug": "itame-enfermagem-seguranca-do-paciente-1779563467322-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 3066
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-seguranca-do-paciente-1777102802022-8",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 685
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-seguranca-do-paciente-1777102936764-8",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "METROCAPITAL",
+      "avant_codigo": 754
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-seguranca-do-paciente-1777102678563-8",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 649
+    },
+    {
+      "modulo_slug": "nao-informado-geral-seguranca-do-paciente-1778967789485-0",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Geral",
+      "banca": "NÃO INFORMADO",
+      "avant_codigo": 1828
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-seguranca-do-paciente-1777102802022-9",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 686
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-seguranca-do-paciente-1777102936764-0",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 746
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-seguranca-do-paciente-1779563443877-8",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3055
+    },
+    {
+      "modulo_slug": "omni-enfermagem-seguranca-do-paciente-1779563467322-2",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 3067
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-seguranca-do-paciente-1777102861438-0",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 712
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-seguranca-do-paciente-1779563443877-0",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3047
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-seguranca-do-paciente-1779563443877-2",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3049
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-seguranca-do-paciente-1779563448133-0",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3056
+    },
+    {
+      "modulo_slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-2",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 698
+    },
+    {
+      "modulo_slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-3",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 699
+    },
+    {
+      "modulo_slug": "univali-enfermagem-seguranca-do-paciente-1777102821787-4",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 700
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1777102821787-7",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 703
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1777102861438-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 713
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1777102861438-3",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 715
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1777102936764-4",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 750
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-1",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3057
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-2",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3058
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-3",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3059
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-4",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3060
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-5",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3061
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-6",
+      "titulo_aula": "Segurança do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3062
+    }
+  ]
+}

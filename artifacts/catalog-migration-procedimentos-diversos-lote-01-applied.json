@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-06-10T05:22:45.687Z",
+  "lote": "procedimentos-diversos-lote-01",
+  "mode": "apply",
+  "total_files": 14,
+  "ok": 14,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ibfc-geral-procedimentos-diversos-1777103988389-5",
+    "idecan-enfermagem-procedimentos-diversos-1778712184780-7",
+    "idecan-enfermagem-procedimentos-diversos-1778712184780-8",
+    "idecan-enfermagem-procedimentos-diversos-1778712184780-9",
+    "idecan-enfermagem-procedimentos-diversos-1778712203076-0",
+    "idecan-enfermagem-procedimentos-diversos-1778712203076-1",
+    "idecan-enfermagem-procedimentos-diversos-1778712203076-2",
+    "idecan-enfermagem-procedimentos-diversos-1778712203076-3",
+    "idecan-enfermagem-procedimentos-diversos-1778712203076-4",
+    "idib-enfermagem-procedimentos-diversos-1778934890864-9",
+    "idib-enfermagem-procedimentos-diversos-1778934900821-0",
+    "nao-informado-geral-procedimentos-diversos-1776056493133-0",
+    "quadrix-enfermagem-procedimentos-diversos-1780000535393-7",
+    "unesc-enfermagem-procedimentos-diversos-1780000535393-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ibfc-geral-procedimentos-diversos-1777103988389-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-procedimentos-diversos-1778934890864-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-procedimentos-diversos-1778934900821-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-procedimentos-diversos-1776056493133-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-procedimentos-diversos-1780000535393-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-procedimentos-diversos-1780000535393-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

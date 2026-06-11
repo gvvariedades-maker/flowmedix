@@ -1,0 +1,33 @@
+{
+  "lote": "infeccoes-sexualmente-transmissiveis-ists-lote-02",
+  "exported_at": "2026-06-10T04:38:53.076Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+    "limit": 50,
+    "exclude_count": 50
+  },
+  "slugs": [
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-6",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-7",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-8",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1780066977710-8",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1780066977710-9",
+    "idib-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778934909266-2",
+    "idib-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778934909266-3",
+    "igeduc-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-0",
+    "inaz-do-para-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-5",
+    "inaz-do-para-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-6",
+    "inaz-do-para-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-7",
+    "instituto-access-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-0",
+    "instituto-access-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-1",
+    "instituto-consulplan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-7",
+    "instituto-darwin-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-9",
+    "instituto-iacp-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-8",
+    "itame-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-0",
+    "nc-ufpr-funpar-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-2",
+    "objetiva-concursos-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-4",
+    "selecon-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-2",
+    "vunesp-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-5"
+  ]
+}

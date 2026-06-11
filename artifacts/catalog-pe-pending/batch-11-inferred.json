@@ -1,0 +1,76 @@
+{
+  "batch": "11",
+  "bucket": "Processo de Enfermagem",
+  "inferences": [
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011961798-0",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.88,
+      "keep_current": true,
+      "rationale": "Anosmia é terminologia de achado na anamnese para registro correto no prontuário durante a avaliação de enfermagem."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011961798-1",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Posicionamento e codificação por cores dos eletrodos periféricos no ECG de 12 derivações é técnica de exame diagnóstico específica."
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056149404-3",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "Funções e importância dos registros de enfermagem integram documentação e evidência do processo de enfermagem."
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-1",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Admissão, avaliação de enfermagem e procedimentos de alta hospitalar são etapas do cuidado no processo de enfermagem."
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-4",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "Conceitos sobre registro escrito, prontuário e continuidade do cuidado são núcleo da documentação de enfermagem."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-2",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Metodologias participativas de educação em saúde e protagonismo do usuário são eixo de promoção e prevenção."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-4",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Indicadores de morbidade, incidência e prevalência são conceitos centrais de epidemiologia e indicadores de saúde."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-5",
+      "suggested_subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+      "confidence": 0.98,
+      "keep_current": false,
+      "rationale": "Conversão de UI de insulina para mililitros em seringa graduada é cálculo de dose e volume de medicação."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-2",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.90,
+      "keep_current": true,
+      "rationale": "Escalas alternativas de avaliação da dor integram instrumentos de coleta de dados na fase de avaliação de enfermagem."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-1",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Atribuições do técnico em educação em saúde, prevenção de agravos e promoção da saúde no SUS."
+    }
+  ]
+}

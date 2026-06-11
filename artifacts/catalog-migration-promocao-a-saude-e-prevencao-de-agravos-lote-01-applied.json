@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T04:23:25.599Z",
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-lote-01",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-2",
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-3",
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-4",
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-6",
+    "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-7",
+    "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-0",
+    "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-1",
+    "aocp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-9",
+    "avancasp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-7",
+    "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-7",
+    "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-0",
+    "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-1",
+    "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2",
+    "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-3",
+    "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-4",
+    "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+    "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-8",
+    "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+    "cogeps-unioeste-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-7",
+    "contemax-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-2",
+    "copese-ufpi-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-3",
+    "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-5",
+    "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+    "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-4",
+    "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-5",
+    "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-3",
+    "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-3",
+    "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-7",
+    "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-5",
+    "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-6",
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-0",
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-6",
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-0",
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-0",
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-1",
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-6",
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-4",
+    "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9",
+    "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-6",
+    "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-7",
+    "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-8",
+    "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-3",
+    "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4",
+    "fepese-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-6",
+    "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
+    "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-5",
+    "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-5",
+    "funcepe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-3",
+    "fundep-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "aocp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "contemax-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

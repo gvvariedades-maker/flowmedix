@@ -1,0 +1,76 @@
+{
+  "batch": "06",
+  "bucket": "Processo de Enfermagem",
+  "inferences": [
+    {
+      "modulo_slug": "copese-uft-enfermagem-processo-de-enfermagem-1776056021381-8",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "Etapas do PE, papéis da equipe e Resolução COFEN 358/2009 são conteúdo central de SAE e processo de enfermagem."
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-4",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Compara início de ação entre vias subcutânea, endovenosa e enteral, tema dominante de rotas de administração."
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-0",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "Anotações, evolução e prescrição de enfermagem são registros e etapas do processo de cuidar."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003349182-0",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Acesso avançado é modelo de organização do serviço na atenção primária, não etapas do PE."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-6",
+      "suggested_subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+      "confidence": 0.98,
+      "keep_current": false,
+      "rationale": "Preparo de solução 3% a partir de frasco 20% exige cálculo de diluição e concentração."
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-processo-de-enfermagem-1776056158507-1",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Características de anotação válida no prontuário integram documentação e registro da prática de enfermagem."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1776056149404-0",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "Interação terapêutica e intervenções de enfermagem para alívio da dor são ações do processo de cuidar."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-6",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Prevenção de quedas, avaliação de risco e protocolos do PNSP são núcleo de segurança do paciente."
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009379028-8",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Ordem de coleta de tubos EDTA, citrato e soro para hematologia é técnica de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-1",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.98,
+      "keep_current": false,
+      "rationale": "Definições da Classificação Internacional de Segurança do Paciente da OMS (dano, risco, evento adverso, near miss)."
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "generated_at": "2026-06-10T04:28:43.740Z",
+  "lote": "nocoes-de-fisiologia-lote-02",
+  "mode": "apply",
+  "total_files": 49,
+  "ok": 49,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ibade-enfermagem-nocoes-de-fisiologia-1775501921356-2",
+    "ibade-enfermagem-nocoes-de-fisiologia-1776056116422-5",
+    "ibade-enfermagem-nocoes-de-fisiologia-1776056116422-6",
+    "ibest-enfermagem-nocoes-de-fisiologia-1775501921356-3",
+    "ibest-enfermagem-nocoes-de-fisiologia-1775501921356-4",
+    "ibest-enfermagem-nocoes-de-fisiologia-1775501938701-0",
+    "ibfc-enfermagem-nocoes-de-fisiologia-1775501938701-4",
+    "ibfc-enfermagem-nocoes-de-fisiologia-1775501962697-3",
+    "ibfc-enfermagem-nocoes-de-fisiologia-1776055798601-5",
+    "ibfc-enfermagem-nocoes-de-fisiologia-1776055961189-0",
+    "ibfc-enfermagem-nocoes-de-fisiologia-1776055986110-0",
+    "idecan-enfermagem-nocoes-de-fisiologia-1780066909125-0",
+    "idecan-enfermagem-nocoes-de-fisiologia-1780066992037-2",
+    "idib-enfermagem-nocoes-de-fisiologia-1776055986110-2",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934909266-5",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934909266-6",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934944659-8",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934944659-9",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-0",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-1",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-2",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-3",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-4",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-5",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-6",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-7",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-8",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-9",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934965770-0",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934965770-1",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934965770-2",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934965770-3",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934965770-4",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934965770-5",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934965770-6",
+    "igeduc-enfermagem-nocoes-de-fisiologia-1776055798601-0",
+    "igeduc-enfermagem-nocoes-de-fisiologia-1776055798601-4",
+    "inaz-do-para-enfermagem-nocoes-de-fisiologia-1775501938701-3",
+    "instituto-access-enfermagem-nocoes-de-fisiologia-1775448615466-2",
+    "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776055798601-2",
+    "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776055998470-4",
+    "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776055998470-5",
+    "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776055998470-6",
+    "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776056116422-3",
+    "instituto-evo-enfermagem-nocoes-de-fisiologia-1775448586547-4",
+    "ms-sarmento-enfermagem-nocoes-de-fisiologia-1775448599930-6",
+    "ms-sarmento-enfermagem-nocoes-de-fisiologia-1775448599930-7",
+    "nao-informado-geral-nocoes-de-fisiologia-1775501802332-0",
+    "nao-informado-geral-nocoes-de-fisiologia-1776055765734-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501921356-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1776056116422-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1776056116422-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibest-enfermagem-nocoes-de-fisiologia-1775501921356-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibest-enfermagem-nocoes-de-fisiologia-1775501921356-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibest-enfermagem-nocoes-de-fisiologia-1775501938701-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-fisiologia-1775501938701-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-fisiologia-1775501962697-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-fisiologia-1776055798601-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-fisiologia-1776055961189-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-fisiologia-1776055986110-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nocoes-de-fisiologia-1780066909125-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nocoes-de-fisiologia-1780066992037-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1776055986110-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934909266-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934909266-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934944659-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934944659-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-fisiologia-1776055798601-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-fisiologia-1776055798601-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-nocoes-de-fisiologia-1775501938701-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-nocoes-de-fisiologia-1775448615466-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776055798601-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776055998470-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776055998470-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776055998470-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776056116422-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-nocoes-de-fisiologia-1775448586547-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-nocoes-de-fisiologia-1775448599930-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-nocoes-de-fisiologia-1775448599930-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-nocoes-de-fisiologia-1775501802332-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-nocoes-de-fisiologia-1776055765734-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

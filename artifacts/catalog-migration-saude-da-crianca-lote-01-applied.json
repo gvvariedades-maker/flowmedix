@@ -1,0 +1,146 @@
+{
+  "generated_at": "2026-06-10T05:05:59.306Z",
+  "lote": "saude-da-crianca-lote-01",
+  "mode": "apply",
+  "total_files": 19,
+  "ok": 19,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fepese-geral-saude-da-crianca-1777104415052-9",
+    "idecan-enfermagem-saude-da-crianca-1778712418722-3",
+    "idecan-enfermagem-saude-da-crianca-1778712418722-4",
+    "idecan-enfermagem-saude-da-crianca-1778712418722-5",
+    "idecan-enfermagem-saude-da-crianca-1778712418722-6",
+    "idecan-enfermagem-saude-da-crianca-1778712418722-7",
+    "idecan-enfermagem-saude-da-crianca-1778712426701-0",
+    "idecan-enfermagem-saude-da-crianca-1778712426701-1",
+    "idecan-enfermagem-saude-da-crianca-1778712426701-2",
+    "idecan-enfermagem-saude-da-crianca-1778712426701-3",
+    "idecan-enfermagem-saude-da-crianca-1778712426701-4",
+    "idecan-enfermagem-saude-da-crianca-1778712426701-5",
+    "idecan-enfermagem-saude-da-crianca-1780067024707-3",
+    "idecan-enfermagem-saude-da-crianca-1780067024707-4",
+    "idecan-enfermagem-saude-da-crianca-1780067024707-5",
+    "idib-enfermagem-saude-da-crianca-1778934936220-7",
+    "idib-enfermagem-saude-da-crianca-1778934936220-8",
+    "quadrix-enfermagem-saude-da-crianca-1780001362784-6",
+    "unesc-enfermagem-saude-da-crianca-1780001362784-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fepese-geral-saude-da-crianca-1777104415052-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712418722-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1778712426701-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1780067024707-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1780067024707-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-crianca-1780067024707-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-crianca-1778934936220-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-crianca-1778934936220-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-crianca-1780001362784-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-crianca-1780001362784-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

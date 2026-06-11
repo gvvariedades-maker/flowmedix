@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-09T11:11:38.214Z",
+  "lote": "vias-de-administracao-lote-03",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "fumarc-enfermagem-vias-de-administracao-1776056383154-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUMARC",
+      "avant_codigo": 403
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-vias-de-administracao-1776056418941-1",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 440
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-vias-de-administracao-1776056418941-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 442
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-vias-de-administracao-1778968609115-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 1987
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-vias-de-administracao-1778968609115-1",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNATEC",
+      "avant_codigo": 1988
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056338955-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 363
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056338955-8",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 366
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056374837-7",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 402
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056383154-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 406
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056383154-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 409
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056391403-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 410
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056409987-1",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 430
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056409987-7",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 436
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968666352-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2019
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968666352-7",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2020
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968666352-8",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2021
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968825263-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2050
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968825263-2",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2052
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968862077-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2065
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968862077-7",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2066
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-vias-de-administracao-1776056427936-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDEP",
+      "avant_codigo": 453
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-vias-de-administracao-1778969007166-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDEP",
+      "avant_codigo": 2112
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-vias-de-administracao-1778968598934-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNTEF",
+      "avant_codigo": 1984
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-vias-de-administracao-1778968598934-4",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNTEF",
+      "avant_codigo": 1985
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1776056348175-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 370
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1776056366158-9",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 394
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1776056401060-8",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 427
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1776056409987-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 429
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1778968609115-4",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 1991
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1778968629127-1",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 1998
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-vias-de-administracao-1778968768987-8",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUVEST",
+      "avant_codigo": 2041
+    },
+    {
+      "modulo_slug": "gama-enfermagem-vias-de-administracao-1778968573722-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 1980
+    },
+    {
+      "modulo_slug": "gama-enfermagem-vias-de-administracao-1778968598934-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 1981
+    },
+    {
+      "modulo_slug": "gama-enfermagem-vias-de-administracao-1778968629127-2",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "GAMA",
+      "avant_codigo": 1999
+    },
+    {
+      "modulo_slug": "gama-geral-vias-de-administracao-1776056427936-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Geral",
+      "banca": "GAMA",
+      "avant_codigo": 450
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-vias-de-administracao-1778968687469-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "GUALIMP",
+      "avant_codigo": 2026
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-vias-de-administracao-1778968968468-4",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "GUALIMP",
+      "avant_codigo": 2098
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-vias-de-administracao-1776056401060-4",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 423
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-vias-de-administracao-1776056401060-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 424
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-vias-de-administracao-1778968877204-6",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 2075
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1776056357082-2",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 378
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1776056418941-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 444
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968825263-7",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 2057
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968825263-8",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 2058
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968862077-0",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 2059
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968862077-1",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 2060
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968862077-2",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 2061
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968862077-3",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 2062
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968862077-4",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 2063
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968862077-5",
+      "titulo_aula": "Vias de Administração",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBADE",
+      "avant_codigo": 2064
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "exported_at": "2026-06-10T05:07:03.827Z",
+  "lote": "saude-do-adolescente-lote-01",
+  "total": 11,
+  "entries": [
+    {
+      "modulo_slug": "agirh-enfermagem-saude-do-adolescente-1777104229064-4",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 1345
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-do-adolescente-1777104229064-5",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 1346
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-do-adolescente-1777104229064-6",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 1347
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-saude-do-adolescente-1777104229064-7",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 1348
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-do-adolescente-1777104229064-3",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 1344
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-saude-do-adolescente-1777104229064-1",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 1342
+    },
+    {
+      "modulo_slug": "ideap-enfermagem-saude-do-adolescente-1777104229064-2",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDEAP",
+      "avant_codigo": 1343
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-6",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1711
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-7",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1712
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-8",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1713
+    },
+    {
+      "modulo_slug": "nao-informado-geral-saude-do-adolescente-1777104229064-0",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Geral",
+      "banca": "NÃO INFORMADO",
+      "avant_codigo": 1341
+    }
+  ]
+}

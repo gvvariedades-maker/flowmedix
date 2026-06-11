@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-09T10:03:19.921Z",
+  "lote": "processo-de-enfermagem-lote-04",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4308
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4309
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4310
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002934000-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4311
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002934000-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4312
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003031246-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4327
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003031246-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4328
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003031246-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4329
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003031246-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4330
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4331
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4332
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4333
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4334
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4335
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4336
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4337
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4338
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4339
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4340
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003261833-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4341
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003261833-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4342
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003261833-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4343
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4391
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4392
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4393
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4394
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4395
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4396
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4397
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4398
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4399
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4400
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4401
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4402
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4403
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4404
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4405
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4406
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4407
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4408
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4409
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003868364-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4410
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4628
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4629
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4630
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4631
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4632
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4633
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4634
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4635
+    }
+  ]
+}

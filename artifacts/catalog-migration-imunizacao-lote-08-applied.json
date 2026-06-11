@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:33:14.408Z",
+  "lote": "imunizacao-lote-08",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "igeduc-enfermagem-imunizacao-1779564048247-2",
+    "igeduc-enfermagem-imunizacao-1779564048247-3",
+    "igeduc-enfermagem-imunizacao-1779564059030-7",
+    "igeduc-enfermagem-imunizacao-1779564059030-8",
+    "igeduc-enfermagem-imunizacao-1779564059030-9",
+    "imparh-enfermagem-imunizacao-1779564067000-5",
+    "imparh-enfermagem-imunizacao-1779564067000-6",
+    "inaz-do-para-enfermagem-imunizacao-1777103277533-7",
+    "instituto-aocp-enfermagem-imunizacao-1777103257434-0",
+    "instituto-aocp-enfermagem-imunizacao-1777103257434-1",
+    "instituto-consulpam-enfermagem-imunizacao-1779564067000-8",
+    "instituto-consulpam-enfermagem-imunizacao-1779564109452-4",
+    "instituto-consulpam-enfermagem-imunizacao-1779564109452-5",
+    "instituto-consulplan-enfermagem-imunizacao-1777103222102-0",
+    "instituto-consulplan-enfermagem-imunizacao-1777103222102-1",
+    "instituto-consulplan-enfermagem-imunizacao-1777103222102-2",
+    "instituto-consulplan-enfermagem-imunizacao-1777103222102-3",
+    "instituto-consulplan-enfermagem-imunizacao-1777103222102-8",
+    "instituto-consulplan-enfermagem-imunizacao-1777103230085-0",
+    "instituto-consulplan-enfermagem-imunizacao-1777103230085-1",
+    "instituto-consulplan-enfermagem-imunizacao-1777103230085-2",
+    "instituto-consulplan-enfermagem-imunizacao-1779563965519-6",
+    "instituto-consulplan-enfermagem-imunizacao-1779564053668-1",
+    "instituto-consulplan-enfermagem-imunizacao-1779564053668-2",
+    "instituto-consulplan-enfermagem-imunizacao-1779564053668-3",
+    "instituto-consulplan-enfermagem-imunizacao-1779564063274-8",
+    "instituto-consulplan-enfermagem-imunizacao-1779564067000-0",
+    "instituto-consulplan-enfermagem-imunizacao-1779564079834-9",
+    "instituto-consulplan-enfermagem-imunizacao-1779564085730-0",
+    "instituto-consulplan-enfermagem-imunizacao-1779564085730-1",
+    "instituto-consulplan-enfermagem-imunizacao-1779564085730-9",
+    "instituto-consulplan-enfermagem-imunizacao-1779564090395-0",
+    "instituto-consulplan-enfermagem-imunizacao-1779564090395-2",
+    "instituto-consulplan-enfermagem-imunizacao-1779564109452-0",
+    "instituto-consulplan-enfermagem-imunizacao-1779564113760-1",
+    "instituto-consulplan-enfermagem-imunizacao-1779564113760-2",
+    "instituto-consulplan-enfermagem-imunizacao-1779564113760-3",
+    "instituto-consulplan-enfermagem-imunizacao-1779564113760-4",
+    "instituto-consulplan-enfermagem-imunizacao-1779564113760-5",
+    "instituto-consulplan-enfermagem-imunizacao-1779572198133-4",
+    "instituto-consulplan-enfermagem-imunizacao-1779572198133-5",
+    "instituto-consulplan-enfermagem-imunizacao-1779572198133-6",
+    "instituto-consulplan-enfermagem-imunizacao-1779572198133-7",
+    "instituto-consulplan-enfermagem-imunizacao-1779572198133-8",
+    "instituto-consulplan-geral-imunizacao-1777103215560-8",
+    "instituto-jk-enfermagem-imunizacao-1777103264001-7",
+    "instituto-verbena-enfermagem-imunizacao-1777103251447-8",
+    "instituto-verbena-enfermagem-imunizacao-1777103270218-5",
+    "instituto-verbena-enfermagem-imunizacao-1777103270218-6",
+    "instituto-verbena-enfermagem-imunizacao-1779564040128-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564048247-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564048247-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564059030-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564059030-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564059030-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-imunizacao-1779564067000-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-imunizacao-1779564067000-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-imunizacao-1777103277533-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-imunizacao-1777103257434-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-imunizacao-1777103257434-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-imunizacao-1779564067000-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-imunizacao-1779564109452-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-imunizacao-1779564109452-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103222102-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103222102-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103222102-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103222102-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103222102-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103230085-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103230085-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103230085-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779563965519-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564053668-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564053668-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564053668-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564063274-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564067000-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564079834-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564085730-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564085730-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564085730-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564090395-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564090395-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564109452-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564113760-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564113760-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564113760-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564113760-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564113760-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-geral-imunizacao-1777103215560-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-imunizacao-1777103264001-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1777103251447-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1777103270218-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1777103270218-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564040128-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

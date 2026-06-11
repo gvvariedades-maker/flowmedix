@@ -21,7 +21,7 @@ function EixoBarra({ erros, total }: { erros: number; total: number }) {
 
   return (
     <div
-      className="flex h-2 w-full overflow-hidden rounded-full bg-white/5"
+      className="flex h-2 w-full overflow-hidden rounded-full bg-slate-200"
       role="img"
       aria-label={`${acertos} acertos e ${erros} erros de ${total} questões`}
     >
@@ -66,7 +66,7 @@ export function DiagnosticoEixos({ questoes, filtros }: DiagnosticoEixosProps) {
         {eixos.map((item) => (
           <li key={item.eixo} className="space-y-2">
             <div className="flex items-center justify-between gap-3 text-sm">
-              <span className="min-w-0 truncate font-medium text-slate-200">{item.eixo}</span>
+              <span className="min-w-0 truncate font-medium text-slate-800">{item.eixo}</span>
               <span className="shrink-0 tabular-nums text-xs text-slate-400">
                 {item.erros} {item.erros === 1 ? 'erro' : 'erros'} · {item.total}{' '}
                 {item.total === 1 ? 'questão' : 'questões'}

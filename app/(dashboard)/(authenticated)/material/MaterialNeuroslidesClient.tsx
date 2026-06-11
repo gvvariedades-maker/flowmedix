@@ -24,13 +24,13 @@ export default function MaterialNeuroslidesClient() {
   };
 
   return (
-    <div className={cn('flex flex-col bg-[#010409] text-white', pageBottomPadding)}>
-      <div className="shrink-0 border-b border-white/10 bg-slate-950/40 px-4 py-4 backdrop-blur-xl sm:px-6">
+    <div className={cn('flex flex-col bg-background text-slate-900', pageBottomPadding)}>
+      <div className="shrink-0 border-b border-slate-200 bg-background/95 px-4 py-4 backdrop-blur-md sm:px-6">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
             <Link
               href="/material"
-              className="inline-flex w-fit items-center gap-2 text-sm font-bold text-slate-400 transition-colors hover:text-white"
+              className="link-editorial-secondary inline-flex w-fit items-center gap-2 text-sm font-bold"
             >
               <ArrowLeft size={18} aria-hidden />
               Voltar ao Material de Apoio
@@ -43,24 +43,15 @@ export default function MaterialNeuroslidesClient() {
       </div>
 
       <section className="relative px-4 py-12 sm:px-6 md:py-16">
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px)',
-            backgroundSize: '64px 64px',
-          }}
-        />
-
         <div className="relative z-10 mx-auto max-w-6xl">
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="mb-10 text-center">
-            <p className="mb-3 text-[10px] font-black uppercase tracking-[0.32em] text-[#BEF264]">
+            <p className="mb-3 text-[10px] font-black uppercase tracking-[0.32em] text-[#3d6b0f]">
               NeuroSlides para concursos
             </p>
-            <h1 className="text-3xl font-[1000] tracking-tight text-white md:text-4xl">
+            <h1 className="text-editorial-title text-3xl md:text-4xl">
               Escolha o NeuroSlide que você vai estudar
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-sm font-medium leading-relaxed text-slate-400 sm:text-base">
+            <p className="mx-auto mt-4 max-w-2xl text-sm font-medium leading-relaxed text-slate-600 sm:text-base">
               Cada coleção agrupa slides no estilo do Estudo Reverso. Ao abrir, você navega slide a slide em tela
               cheia.
             </p>
@@ -75,19 +66,19 @@ export default function MaterialNeuroslidesClient() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.04 }}
                 onClick={() => openCollection(lot.id)}
-                className="group flex flex-col rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-6 text-left transition-all hover:border-cyan-400/35 hover:bg-cyan-400/5"
+                className="card-elevated group flex flex-col p-6 text-left transition-all hover:border-[rgba(143,224,32,0.35)] hover:shadow-md"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/25 bg-cyan-400/10 text-cyan-200">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.1)] text-[#3d6b0f]">
                   <Layers size={22} aria-hidden />
                 </div>
-                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#BEF264]">
+                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#3d6b0f]">
                   NeuroSlide de {lot.shortTitle}
                 </p>
-                <h2 className="mt-2 text-lg font-black tracking-tight text-white sm:text-xl">{lot.title}</h2>
-                <p className="mt-2 flex-1 text-sm font-medium leading-relaxed text-slate-400">{lot.description}</p>
-                <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4">
+                <h2 className="mt-2 text-lg font-black tracking-tight text-slate-900 sm:text-xl">{lot.title}</h2>
+                <p className="mt-2 flex-1 text-sm font-medium leading-relaxed text-slate-600">{lot.description}</p>
+                <div className="mt-5 flex items-center justify-between border-t border-slate-200 pt-4">
                   <span className="text-xs font-bold text-slate-500">{lot.count} slides</span>
-                  <span className="inline-flex items-center gap-1 text-xs font-black uppercase tracking-wider text-cyan-300 group-hover:text-cyan-200">
+                  <span className="inline-flex items-center gap-1 text-xs font-black uppercase tracking-wider text-[#3d6b0f] group-hover:text-[#2d5010]">
                     Abrir
                     <ArrowRight size={14} aria-hidden />
                   </span>

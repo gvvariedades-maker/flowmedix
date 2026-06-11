@@ -1,0 +1,154 @@
+{
+  "exported_at": "2026-06-10T04:38:53.076Z",
+  "lote": "infeccoes-sexualmente-transmissiveis-ists-lote-02",
+  "total": 21,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-6",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1638
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-7",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1639
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-8",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1640
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1780066977710-8",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5142
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1780066977710-9",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5143
+    },
+    {
+      "modulo_slug": "idib-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778934909266-2",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1755
+    },
+    {
+      "modulo_slug": "idib-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778934909266-3",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1756
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-0",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3908
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-5",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INAZ DO PARÁ",
+      "avant_codigo": 4024
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-6",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INAZ DO PARÁ",
+      "avant_codigo": 4025
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-7",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INAZ DO PARÁ",
+      "avant_codigo": 4026
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-0",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 4038
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-1",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 4039
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-7",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 3925
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-9",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO DARWIN",
+      "avant_codigo": 4037
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-8",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IACP",
+      "avant_codigo": 4027
+    },
+    {
+      "modulo_slug": "itame-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-0",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 4020
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-2",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "NC UFPR (FUNPAR)",
+      "avant_codigo": 4030
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-4",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3912
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-2",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3910
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-5",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3931
+    }
+  ]
+}

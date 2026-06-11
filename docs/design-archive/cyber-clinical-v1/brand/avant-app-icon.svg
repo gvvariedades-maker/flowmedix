@@ -1,0 +1,24 @@
+<!-- AVANT app icon 512: fundo #010409, chip central com gradiente roxo + raio verde-limão. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" aria-label="AVANT">
+  <defs>
+    <linearGradient id="avant-app-icon-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3018c8"/>
+      <stop offset="100%" stop-color="#180c80"/>
+    </linearGradient>
+    <linearGradient id="avant-app-bolt" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d8ff70"/>
+      <stop offset="52%" stop-color="#8fe020"/>
+      <stop offset="100%" stop-color="#58b800"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="114" fill="#010409"/>
+  <g transform="translate(128 128)">
+    <rect width="256" height="256" rx="64" fill="url(#avant-app-icon-bg)"/>
+    <rect width="256" height="110" rx="64" fill="#fff" fill-opacity="0.12"/>
+    <g transform="translate(70 64)">
+      <svg viewBox="0 0 38 42" width="116" height="128" aria-hidden="true">
+        <polygon points="22,0 8,20 15,20 10,42 30,16 18,16" fill="url(#avant-app-bolt)"/>
+      </svg>
+    </g>
+  </g>
+</svg>

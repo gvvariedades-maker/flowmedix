@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-09T10:12:30.032Z",
+  "lote": "processo-de-enfermagem-lote-09",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4497
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4498
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4499
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4500
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4501
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4502
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4503
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4504
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4505
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4506
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4507
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4508
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001790945-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4181
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4182
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4183
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4184
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4185
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4186
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4187
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4188
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4189
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4190
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001903454-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4191
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006456417-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4647
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4648
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4649
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4650
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4651
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4652
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4653
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4654
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4655
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4656
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4657
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4658
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4659
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4660
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4661
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4662
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4663
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4664
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4665
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4666
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002110600-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 4218
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002110600-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 4219
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002110600-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 4220
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 4221
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 4222
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 4223
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 4224
+    }
+  ]
+}

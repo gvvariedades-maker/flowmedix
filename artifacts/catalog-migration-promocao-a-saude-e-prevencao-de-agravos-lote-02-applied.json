@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T04:24:18.268Z",
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-lote-02",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-5",
+    "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-6",
+    "furb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-0",
+    "furb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-5",
+    "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-3",
+    "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-6",
+    "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-7",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-0",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-1",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-2",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-5",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-6",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-0",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-1",
+    "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-2",
+    "ibam-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-8",
+    "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+    "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-2",
+    "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-4",
+    "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-4",
+    "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-5",
+    "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-1",
+    "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-2",
+    "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-3",
+    "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
+    "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-5",
+    "idib-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778934900821-7",
+    "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-3",
+    "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-4",
+    "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-1",
+    "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-2",
+    "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-4",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-6",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-7",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-8",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-0",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-1",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-2",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
+    "instituto-access-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-1",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-9",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-9",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-4",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-3",
+    "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-8",
+    "instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-0",
+    "instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-1",
+    "instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-4",
+    "instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibam-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778934900821-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -32,11 +32,11 @@ export const VitrinePaginationBar = forwardRef<HTMLElement, VitrinePaginationBar
     return (
       <nav
         ref={ref}
-        className="mt-6 flex flex-col gap-3 border-t border-white/10 pt-4 pb-4 sm:flex-row sm:items-center sm:justify-between sm:pb-0"
+        className="mt-6 flex flex-col gap-3 border-t border-slate-200 pt-4 pb-4 sm:flex-row sm:items-center sm:justify-between sm:pb-0"
         aria-label="Paginação da vitrine"
         aria-busy={listBusy || undefined}
       >
-        <p className="order-2 text-center text-xs font-medium text-muted-foreground sm:order-1 sm:text-left">
+        <p className="order-2 text-center text-xs font-medium text-slate-500 sm:order-1 sm:text-left">
           Página {pageLabel} de {totalPaginas}
         </p>
         <div className="order-1 flex items-center gap-2 sm:order-2 sm:ml-auto">
@@ -46,7 +46,7 @@ export const VitrinePaginationBar = forwardRef<HTMLElement, VitrinePaginationBar
             disabled={prevDisabled}
             onClick={onPrev}
             data-testid="vitrine-pagination-prev"
-            className="min-h-[44px] flex-1 rounded-xl border-white/15 sm:h-11 sm:flex-none"
+            className="min-h-[44px] flex-1 rounded-xl border-slate-200 sm:h-11 sm:flex-none"
           >
             <ChevronLeft size={18} className="mr-1" aria-hidden />
             Anterior
@@ -57,7 +57,7 @@ export const VitrinePaginationBar = forwardRef<HTMLElement, VitrinePaginationBar
             disabled={nextDisabled}
             onClick={onNext}
             data-testid="vitrine-pagination-next"
-            className="min-h-[44px] flex-1 rounded-xl border-white/15 sm:h-11 sm:flex-none"
+            className="min-h-[44px] flex-1 rounded-xl border-slate-200 sm:h-11 sm:flex-none"
           >
             Próxima
             <ChevronRight size={18} className="ml-1" aria-hidden />

@@ -57,9 +57,9 @@ const PAYWALL_COPY: Record<
     body: (
       <>
         No plano gratuito:{' '}
-        <span className="font-semibold text-slate-200">{FREEMIUM_PLAN_LIMITS_DESCRIPTION}</span>{' '}
+        <span className="font-semibold text-slate-800">{FREEMIUM_PLAN_LIMITS_DESCRIPTION}</span>{' '}
         (estudo reverso com NeuroSlides). Com o{' '}
-        <span className="font-semibold text-emerald-300">AVANT Pro</span>, estude sem limite.
+        <span className="font-semibold text-[#3d6b0f]">AVANT Pro</span>, estude sem limite.
       </>
     ),
   },
@@ -69,8 +69,8 @@ const PAYWALL_COPY: Record<
     body: (
       <>
         No plano gratuito:{' '}
-        <span className="font-semibold text-slate-200">{FREEMIUM_PLAN_LIMITS_DESCRIPTION}</span>.
-        Com o <span className="font-semibold text-emerald-300">AVANT Pro</span>, simule sem limite.
+        <span className="font-semibold text-slate-800">{FREEMIUM_PLAN_LIMITS_DESCRIPTION}</span>.
+        Com o <span className="font-semibold text-[#3d6b0f]">AVANT Pro</span>, simule sem limite.
       </>
     ),
   },
@@ -166,7 +166,7 @@ export function PaywallModal({
       role="presentation"
     >
       <div
-        className="absolute inset-0 bg-[#010409]/85 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"
         onClick={onClose}
         aria-hidden
       />
@@ -174,48 +174,48 @@ export function PaywallModal({
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-4 top-4 rounded-full border border-white/10 bg-white/5 p-2 text-slate-400 transition-colors hover:bg-white/10 hover:text-white"
+          className="absolute right-4 top-4 flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 transition-colors hover:bg-slate-50 hover:text-slate-900"
           aria-label="Fechar"
         >
           <X size={18} aria-hidden />
         </button>
 
         <div className="flex justify-center">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 shadow-[0_0_40px_rgba(0,242,255,0.15)]">
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.12)] text-[#3d6b0f]">
             <LockKeyhole size={28} aria-hidden />
           </div>
         </div>
 
-        <p className="mt-6 text-center text-[10px] font-black uppercase tracking-[0.22em] text-cyan-300">
+        <p className="mt-6 text-center text-[10px] font-black uppercase tracking-[0.22em] text-[#3d6b0f]">
           <Sparkles size={12} className="mr-1 inline" aria-hidden />
           Limite diário
         </p>
 
         <h2
           id="paywall-title"
-          className="mt-3 text-center text-2xl font-[1000] tracking-tight text-white sm:text-3xl"
+          className="mt-3 text-center text-2xl font-black tracking-tight text-slate-900 sm:text-3xl"
         >
           {copy.title}
         </h2>
 
-        <p className="mt-4 text-center text-sm leading-relaxed text-slate-400">{copy.body}</p>
+        <p className="mt-4 text-center text-sm leading-relaxed text-slate-600">{copy.body}</p>
 
         {resetLabel ? (
           <p className="mt-3 text-center text-xs text-slate-500">
             {variant === 'simulado'
               ? 'Próximas questões gratuitas de simulado liberadas às '
               : 'Próxima questão gratuita liberada às '}
-            <span className="font-semibold text-slate-300">{resetLabel}</span> (horário de Brasília).
+            <span className="font-semibold text-slate-700">{resetLabel}</span> (horário de Brasília).
           </p>
         ) : null}
 
-        <ul className="mt-6 space-y-2 text-sm text-slate-300">
+        <ul className="mt-6 space-y-2 text-sm text-slate-700">
           <li className="flex items-start gap-2">
-            <Zap size={16} className="mt-0.5 shrink-0 text-[#BEF264]" aria-hidden />
+            <Zap size={16} className="mt-0.5 shrink-0 text-[#3d6b0f]" aria-hidden />
             Questões ilimitadas em todos os editais
           </li>
           <li className="flex items-start gap-2">
-            <Zap size={16} className="mt-0.5 shrink-0 text-[#BEF264]" aria-hidden />
+            <Zap size={16} className="mt-0.5 shrink-0 text-[#3d6b0f]" aria-hidden />
             {variant === 'simulado'
               ? 'Simulados e estudo reverso sem limite diário'
               : 'Estudo Reverso completo após cada tentativa'}
@@ -224,10 +224,7 @@ export function PaywallModal({
 
         <div className="mt-8 flex flex-col gap-3">
           {!isAuthenticated ? (
-            <Link
-              href={loginHref}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#BEF264] px-5 py-3.5 text-sm font-black uppercase tracking-wider text-slate-950 shadow-lg shadow-lime-400/20 transition-all hover:bg-[#d4f879]"
-            >
+            <Link href={loginHref} className="btn-editorial-primary inline-flex w-full items-center justify-center gap-2 px-5 py-3.5 text-sm font-black uppercase tracking-wider">
               Entrar para assinar
               <ArrowRight size={18} aria-hidden />
             </Link>
@@ -236,7 +233,7 @@ export function PaywallModal({
               type="button"
               onClick={handleCheckout}
               disabled={loading}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#BEF264] px-5 py-3.5 text-sm font-black uppercase tracking-wider text-slate-950 shadow-lg shadow-lime-400/20 transition-all hover:bg-[#d4f879] disabled:cursor-not-allowed disabled:opacity-60"
+              className="btn-editorial-primary inline-flex w-full items-center justify-center gap-2 px-5 py-3.5 text-sm font-black uppercase tracking-wider disabled:cursor-not-allowed disabled:opacity-60"
             >
               {loading ? (
                 <>
@@ -255,13 +252,13 @@ export function PaywallModal({
           <button
             type="button"
             onClick={onClose}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-300 transition-colors hover:bg-white/10 hover:text-white"
+            className="btn-editorial-outline w-full px-5 py-3 text-sm font-semibold"
           >
             Voltar depois
           </button>
 
           {error ? (
-            <p className="text-center text-sm font-medium text-rose-300" role="alert">
+            <p className="text-center text-sm font-medium text-rose-600" role="alert">
               {error}
             </p>
           ) : null}
@@ -279,12 +276,8 @@ const PaywallDialogPanel = forwardRef<HTMLDivElement, { children: React.ReactNod
         role="dialog"
         aria-modal="true"
         aria-labelledby="paywall-title"
-        className="relative z-10 w-full max-w-md overflow-hidden rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-slate-950 via-slate-900/95 to-[#010409] p-6 shadow-2xl shadow-cyan-500/10 backdrop-blur-xl sm:p-8"
+        className="card-elevated-lg relative z-10 w-full max-w-md overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-xl sm:p-8"
       >
-        <div
-          className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-cyan-400/10 blur-3xl"
-          aria-hidden
-        />
         {children}
       </div>
     );

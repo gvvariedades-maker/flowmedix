@@ -1,0 +1,1055 @@
+﻿node.exe : [premium-status] offset 0
+No linha:1 caractere:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([premium-status] offset 0:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[premium-status] offset 500
+[premium-status] offset 1000
+[premium-status] offset 1500
+[premium-status] offset 2000
+[premium-status] offset 2500
+[premium-status] offset 3000
+[premium-status] offset 3500
+[premium-status] offset 4000
+[premium-status] offset 4500
+[premium-status] offset 5000
+{
+  "generated_at": "2026-06-10T03:29:51.663Z",
+  "migrated_slugs_in_artifacts": 2391,
+  "catalog_total": 5180,
+  "structural_four_slides": 5180,
+  "premium_semantic_tap_and_compare": 200,
+  "with_logic_flow_tap": 3428,
+  "with_danger_compare": 3428,
+  "with_golden_rows": 2426,
+  "nested_legacy_format": 0,
+  "generic_slide_text": 4915,
+  "pending_premium_update": 4980,
+  "in_migration_artifacts": 2391,
+  "by_subtopico": {
+    "Aten├º├úo B├ísica / Sa├║de da Fam├¡lia": {
+      "total": 156,
+      "premium": 1,
+      "pending": 155,
+      "migrated_lote": 1
+    },
+    "Coleta de Exames Laboratoriais": {
+      "total": 117,
+      "premium": 2,
+      "pending": 115,
+      "migrated_lote": 2
+    },
+    "Curativos e Manejo de Feridas": {
+      "total": 139,
+      "premium": 0,
+      "pending": 139,
+      "migrated_lote": 0
+    },
+    "Epidemiologia e Vigil├óncia Epidemiol├│gica": {
+      "total": 216,
+      "premium": 1,
+      "pending": 215,
+      "migrated_lote": 1
+    },
+    "Exames complementares": {
+      "total": 42,
+      "premium": 0,
+      "pending": 42,
+      "migrated_lote": 0
+    },
+    "Exames Laboratoriais": {
+      "total": 67,
+      "premium": 0,
+      "pending": 67,
+      "migrated_lote": 0
+    },
+    "Imuniza├º├úo": {
+      "total": 476,
+      "premium": 49,
+      "pending": 427,
+      "migrated_lote": 476
+    },
+    "Infec├º├Áes Sexualmente Transmiss├¡veis (ISTs)": {
+      "total": 71,
+      "premium": 0,
+      "pending": 71,
+      "migrated_lote": 0
+    },
+    "Instala├º├úo e Manejo de Sondas": {
+      "total": 155,
+      "premium": 0,
+      "pending": 155,
+      "migrated_lote": 0
+    },
+    "No├º├Áes de Fisiologia": {
+      "total": 111,
+      "premium": 0,
+      "pending": 111,
+      "migrated_lote": 0
+    },
+    "Oxigenoterapia e Cuidados Respirat├│rios": {
+      "total": 151,
+      "premium": 0,
+      "pending": 151,
+      "migrated_lote": 0
+    },
+    "Processo de Enfermagem": {
+      "total": 1067,
+      "premium": 73,
+      "pending": 994,
+      "migrated_lote": 1067
+    },
+    "Promo├º├úo ├á Sa├║de e Preven├º├úo de Agravos": {
+      "total": 130,
+      "premium": 1,
+      "pending": 129,
+      "migrated_lote": 1
+    },
+    "Pun├º├úo Venosa e Cuidados com Cateteres": {
+      "total": 110,
+      "premium": 0,
+      "pending": 110,
+      "migrated_lote": 0
+    },
+    "Sa├║de da Mulher": {
+      "total": 184,
+      "premium": 0,
+      "pending": 184,
+      "migrated_lote": 0
+    },
+    "Seguran├ºa do Paciente": {
+      "total": 98,
+      "premium": 0,
+      "pending": 98,
+      "migrated_lote": 0
+    },
+    "Semiologia em Enfermagem": {
+      "total": 123,
+      "premium": 1,
+      "pending": 122,
+      "migrated_lote": 1
+    },
+    "Urg├¬ncias e Emerg├¬ncias": {
+      "total": 225,
+      "premium": 36,
+      "pending": 189,
+      "migrated_lote": 225
+    },
+    "Verifica├º├úo de Sinais Vitais": {
+      "total": 360,
+      "premium": 18,
+      "pending": 342,
+      "migrated_lote": 360
+    },
+    "Vias de Administra├º├úo": {
+      "total": 253,
+      "premium": 14,
+      "pending": 239,
+      "migrated_lote": 253
+    },
+    "No├º├Áes de Anatomia": {
+      "total": 100,
+      "premium": 1,
+      "pending": 99,
+      "migrated_lote": 1
+    },
+    "Sa├║de do Adolescente": {
+      "total": 11,
+      "premium": 0,
+      "pending": 11,
+      "migrated_lote": 0
+    },
+    "Auditoria e Gest├úo da Qualidade (Enfermagem)": {
+      "total": 47,
+      "premium": 0,
+      "pending": 47,
+      "migrated_lote": 0
+    },
+    "C├ílculo de Administra├º├úo de Medicamentos e Infus├Áes": {
+      "total": 85,
+      "premium": 2,
+      "pending": 83,
+      "migrated_lote": 2
+    },
+    "Enfermagem em Centro Cir├║rgico": {
+      "total": 139,
+      "premium": 0,
+      "pending": 139,
+      "migrated_lote": 0
+    },
+    "Nutri├º├úo Aplicada ├á Enfermagem": {
+      "total": 47,
+      "premium": 0,
+      "pending": 47,
+      "migrated_lote": 0
+    },
+    "Doen├ºas Parasit├írias e Zoonoses": {
+      "total": 34,
+      "premium": 0,
+      "pending": 34,
+      "migrated_lote": 0
+    },
+    "Doen├ºas Virais de Interesse Epidemiol├│gico": {
+      "total": 13,
+      "premium": 0,
+      "pending": 13,
+      "migrated_lote": 0
+    },
+    "Doen├ºas Virais de Interesse Epidemiol├│gico (Covid, Influenza, Sarampo, Polio etc.)": {
+      "total": 68,
+      "premium": 0,
+      "pending": 68,
+      "migrated_lote": 0
+    },
+    "Cuidados na Administra├º├úo de Medicamentos": {
+      "total": 125,
+      "premium": 0,
+      "pending": 125,
+      "migrated_lote": 0
+    },
+    "Doen├ºas Bacterianas e F├║ngicas (Tuberculose, T├®tano, Candid├¡ase etc)": {
+      "total": 10,
+      "premium": 0,
+      "pending": 10,
+      "migrated_lote": 0
+    },
+    "Infec├º├Áes no Contexto da Biosseguran├ºa": {
+      "total": 31,
+      "premium": 0,
+      "pending": 31,
+      "migrated_lote": 0
+    },
+    "Depend├¬ncia Qu├¡mica": {
+      "total": 9,
+      "premium": 0,
+      "pending": 9,
+      "migrated_lote": 0
+    },
+    "Outras Doen├ºas e Quest├Áes Mescladas sobre Doen├ºas Transmiss├¡veis": {
+      "total": 16,
+      "premium": 0,
+      "pending": 16,
+      "migrated_lote": 0
+    },
+    "Assist├¬ncia Perioperat├│ria (Inclui SRPA)": {
+      "total": 27,
+      "premium": 1,
+      "pending": 26,
+      "migrated_lote": 1
+    },
+    "Enfermagem do Trabalho": {
+      "total": 14,
+      "premium": 0,
+      "pending": 14,
+      "migrated_lote": 0
+    },
+    "Hist├│ria da Enfermagem": {
+      "total": 5,
+      "premium": 0,
+      "pending": 5,
+      "migrated_lote": 0
+    },
+    "Cuidados Gerais com Higiene e Conforto do Paciente": {
+      "total": 10,
+      "premium": 0,
+      "pending": 10,
+      "migrated_lote": 0
+    },
+    "Sa├║de da Crian├ºa": {
+      "total": 19,
+      "premium": 0,
+      "pending": 19,
+      "migrated_lote": 0
+    },
+    "Doen├ºas Bacterianas e F├║ngicas": {
+      "total": 2,
+      "premium": 0,
+      "pending": 2,
+      "migrated_lote": 0
+    },
+    "Teorias em Enfermagem": {
+      "total": 13,
+      "premium": 0,
+      "pending": 13,
+      "migrated_lote": 0
+    },
+    "Procedimentos Diversos": {
+      "total": 14,
+      "premium": 0,
+      "pending": 14,
+      "migrated_lote": 0
+    },
+    "Enfermagem em Central de Material e Esteriliza├º├úo (CME)": {
+      "total": 13,
+      "premium": 0,
+      "pending": 13,
+      "migrated_lote": 0
+    },
+    "Feridas e Queimaduras": {
+      "total": 9,
+      "premium": 0,
+      "pending": 9,
+      "migrated_lote": 0
+    },
+    "Medidas de Preven├º├úo e Precau├º├úo de Contato": {
+      "total": 12,
+      "premium": 0,
+      "pending": 12,
+      "migrated_lote": 0
+    },
+    "Mobiliza├º├úo e Posicionamento do Paciente": {
+      "total": 6,
+      "premium": 0,
+      "pending": 6,
+      "migrated_lote": 0
+    },
+    "Outros Temas de Enfermagem": {
+      "total": 1,
+      "premium": 0,
+      "pending": 1,
+      "migrated_lote": 0
+    },
+    "Cuidados Paliativos": {
+      "total": 1,
+      "premium": 0,
+      "pending": 1,
+      "migrated_lote": 0
+    },
+    "Doen├ºas Cardiovasculares e Metab├│licas Cr├┤nicas (Diabete, Hipertens├úo, ICC etc)": {
+      "total": 3,
+      "premium": 0,
+      "pending": 3,
+      "migrated_lote": 0
+    },
+    "Doen├ºas Cardiovasculares e Metab├│licas Cr├┤nicas (Diabete, Hipertens├úo, ICC, etc)": {
+      "total": 1,
+      "premium": 0,
+      "pending": 1,
+      "migrated_lote": 0
+    },
+    "Doen├ºas Renais e Hematol├│gicas Cr├┤nicas": {
+      "total": 1,
+      "premium": 0,
+      "pending": 1,
+      "migrated_lote": 0
+    },
+    "Efeitos Adversos dos Medicamentos": {
+      "total": 1,
+      "premium": 0,
+      "pending": 1,
+      "migrated_lote": 0
+    },
+    "Enfermagem em Oncologia": {
+      "total": 1,
+      "premium": 0,
+      "pending": 1,
+      "migrated_lote": 0
+    },
+    "Enfermagem em UTI": {
+      "total": 3,
+      "premium": 0,
+      "pending": 3,
+      "migrated_lote": 0
+    },
+    "Farmacodin├ómica e Farmacocin├®tica": {
+      "total": 3,
+      "premium": 0,
+      "pending": 3,
+      "migrated_lote": 0
+    },
+    "Outras Quest├Áes e Quest├Áes Mescladas sobre Doen├ºas Cr├┤nicas N├úo Transmiss├¡veis": {
+      "total": 4,
+      "premium": 0,
+      "pending": 4,
+      "migrated_lote": 0
+    },
+    "Processamento de Artigos e Produtos de Sa├║de": {
+      "total": 3,
+      "premium": 0,
+      "pending": 3,
+      "migrated_lote": 0
+    },
+    "Protocolos e Diretrizes do Minist├®rio da Sa├║de": {
+      "total": 5,
+      "premium": 0,
+      "pending": 5,
+      "migrated_lote": 0
+    },
+    "Quest├Áes Mescladas e Outras Doen├ºas Agudas": {
+      "total": 2,
+      "premium": 0,
+      "pending": 2,
+      "migrated_lote": 0
+    },
+    "Sa├║de do Homem": {
+      "total": 2,
+      "premium": 0,
+      "pending": 2,
+      "migrated_lote": 0
+    },
+    "Sa├║de do Idoso": {
+      "total": 8,
+      "premium": 0,
+      "pending": 8,
+      "migrated_lote": 0
+    },
+    "Sa├║de Mental": {
+      "total": 4,
+      "premium": 0,
+      "pending": 4,
+      "migrated_lote": 0
+    },
+    "Doen├ºas Respirat├│rias Cr├┤nicas (Asma, DPOC)": {
+      "total": 1,
+      "premium": 0,
+      "pending": 1,
+      "migrated_lote": 0
+    },
+    "Acidente Vascular Cerebral (AVC)": {
+      "total": 1,
+      "premium": 0,
+      "pending": 1,
+      "migrated_lote": 0
+    },
+    "Doen├ºas Autoimunes e Reumatol├│gicas": {
+      "total": 2,
+      "premium": 0,
+      "pending": 2,
+      "migrated_lote": 0
+    },
+    "Doen├ºas Bacterianas e F├║ngicas (Tuberculose, T├®tano, Candid├¡ase, etc)": {
+      "total": 1,
+      "premium": 0,
+      "pending": 1,
+      "migrated_lote": 0
+    },
+    "Neoplasias e C├óncer": {
+      "total": 1,
+      "premium": 0,
+      "pending": 1,
+      "migrated_lote": 0
+    },
+    "Procedimentos": {
+      "total": 1,
+      "premium": 0,
+      "pending": 1,
+      "migrated_lote": 0
+    }
+  },
+  "by_subtopico_all": [
+    [
+      "Processo de Enfermagem",
+      {
+        "total": 1067,
+        "premium": 73,
+        "pending": 994,
+        "migrated_lote": 1067
+      }
+    ],
+    [
+      "Imuniza├º├úo",
+      {
+        "total": 476,
+        "premium": 49,
+        "pending": 427,
+        "migrated_lote": 476
+      }
+    ],
+    [
+      "Verifica├º├úo de Sinais Vitais",
+      {
+        "total": 360,
+        "premium": 18,
+        "pending": 342,
+        "migrated_lote": 360
+      }
+    ],
+    [
+      "Vias de Administra├º├úo",
+      {
+        "total": 253,
+        "premium": 14,
+        "pending": 239,
+        "migrated_lote": 253
+      }
+    ],
+    [
+      "Epidemiologia e Vigil├óncia Epidemiol├│gica",
+      {
+        "total": 216,
+        "premium": 1,
+        "pending": 215,
+        "migrated_lote": 1
+      }
+    ],
+    [
+      "Urg├¬ncias e Emerg├¬ncias",
+      {
+        "total": 225,
+        "premium": 36,
+        "pending": 189,
+        "migrated_lote": 225
+      }
+    ],
+    [
+      "Sa├║de da Mulher",
+      {
+        "total": 184,
+        "premium": 0,
+        "pending": 184,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Aten├º├úo B├ísica / Sa├║de da Fam├¡lia",
+      {
+        "total": 156,
+        "premium": 1,
+        "pending": 155,
+        "migrated_lote": 1
+      }
+    ],
+    [
+      "Instala├º├úo e Manejo de Sondas",
+      {
+        "total": 155,
+        "premium": 0,
+        "pending": 155,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Oxigenoterapia e Cuidados Respirat├│rios",
+      {
+        "total": 151,
+        "premium": 0,
+        "pending": 151,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Curativos e Manejo de Feridas",
+      {
+        "total": 139,
+        "premium": 0,
+        "pending": 139,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Enfermagem em Centro Cir├║rgico",
+      {
+        "total": 139,
+        "premium": 0,
+        "pending": 139,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Promo├º├úo ├á Sa├║de e Preven├º├úo de Agravos",
+      {
+        "total": 130,
+        "premium": 1,
+        "pending": 129,
+        "migrated_lote": 1
+      }
+    ],
+    [
+      "Cuidados na Administra├º├úo de Medicamentos",
+      {
+        "total": 125,
+        "premium": 0,
+        "pending": 125,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Semiologia em Enfermagem",
+      {
+        "total": 123,
+        "premium": 1,
+        "pending": 122,
+        "migrated_lote": 1
+      }
+    ],
+    [
+      "Coleta de Exames Laboratoriais",
+      {
+        "total": 117,
+        "premium": 2,
+        "pending": 115,
+        "migrated_lote": 2
+      }
+    ],
+    [
+      "No├º├Áes de Fisiologia",
+      {
+        "total": 111,
+        "premium": 0,
+        "pending": 111,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Pun├º├úo Venosa e Cuidados com Cateteres",
+      {
+        "total": 110,
+        "premium": 0,
+        "pending": 110,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "No├º├Áes de Anatomia",
+      {
+        "total": 100,
+        "premium": 1,
+        "pending": 99,
+        "migrated_lote": 1
+      }
+    ],
+    [
+      "Seguran├ºa do Paciente",
+      {
+        "total": 98,
+        "premium": 0,
+        "pending": 98,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "C├ílculo de Administra├º├úo de Medicamentos e Infus├Áes",
+      {
+        "total": 85,
+        "premium": 2,
+        "pending": 83,
+        "migrated_lote": 2
+      }
+    ],
+    [
+      "Infec├º├Áes Sexualmente Transmiss├¡veis (ISTs)",
+      {
+        "total": 71,
+        "premium": 0,
+        "pending": 71,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Doen├ºas Virais de Interesse Epidemiol├│gico (Covid, Influenza, Sarampo, Polio etc.)",
+      {
+        "total": 68,
+        "premium": 0,
+        "pending": 68,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Exames Laboratoriais",
+      {
+        "total": 67,
+        "premium": 0,
+        "pending": 67,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Auditoria e Gest├úo da Qualidade (Enfermagem)",
+      {
+        "total": 47,
+        "premium": 0,
+        "pending": 47,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Nutri├º├úo Aplicada ├á Enfermagem",
+      {
+        "total": 47,
+        "premium": 0,
+        "pending": 47,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Exames complementares",
+      {
+        "total": 42,
+        "premium": 0,
+        "pending": 42,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Doen├ºas Parasit├írias e Zoonoses",
+      {
+        "total": 34,
+        "premium": 0,
+        "pending": 34,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Infec├º├Áes no Contexto da Biosseguran├ºa",
+      {
+        "total": 31,
+        "premium": 0,
+        "pending": 31,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Assist├¬ncia Perioperat├│ria (Inclui SRPA)",
+      {
+        "total": 27,
+        "premium": 1,
+        "pending": 26,
+        "migrated_lote": 1
+      }
+    ],
+    [
+      "Sa├║de da Crian├ºa",
+      {
+        "total": 19,
+        "premium": 0,
+        "pending": 19,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Outras Doen├ºas e Quest├Áes Mescladas sobre Doen├ºas Transmiss├¡veis",
+      {
+        "total": 16,
+        "premium": 0,
+        "pending": 16,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Enfermagem do Trabalho",
+      {
+        "total": 14,
+        "premium": 0,
+        "pending": 14,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Procedimentos Diversos",
+      {
+        "total": 14,
+        "premium": 0,
+        "pending": 14,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Doen├ºas Virais de Interesse Epidemiol├│gico",
+      {
+        "total": 13,
+        "premium": 0,
+        "pending": 13,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Teorias em Enfermagem",
+      {
+        "total": 13,
+        "premium": 0,
+        "pending": 13,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Enfermagem em Central de Material e Esteriliza├º├úo (CME)",
+      {
+        "total": 13,
+        "premium": 0,
+        "pending": 13,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Medidas de Preven├º├úo e Precau├º├úo de Contato",
+      {
+        "total": 12,
+        "premium": 0,
+        "pending": 12,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Sa├║de do Adolescente",
+      {
+        "total": 11,
+        "premium": 0,
+        "pending": 11,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Doen├ºas Bacterianas e F├║ngicas (Tuberculose, T├®tano, Candid├¡ase etc)",
+      {
+        "total": 10,
+        "premium": 0,
+        "pending": 10,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Cuidados Gerais com Higiene e Conforto do Paciente",
+      {
+        "total": 10,
+        "premium": 0,
+        "pending": 10,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Depend├¬ncia Qu├¡mica",
+      {
+        "total": 9,
+        "premium": 0,
+        "pending": 9,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Feridas e Queimaduras",
+      {
+        "total": 9,
+        "premium": 0,
+        "pending": 9,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Sa├║de do Idoso",
+      {
+        "total": 8,
+        "premium": 0,
+        "pending": 8,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Mobiliza├º├úo e Posicionamento do Paciente",
+      {
+        "total": 6,
+        "premium": 0,
+        "pending": 6,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Hist├│ria da Enfermagem",
+      {
+        "total": 5,
+        "premium": 0,
+        "pending": 5,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Protocolos e Diretrizes do Minist├®rio da Sa├║de",
+      {
+        "total": 5,
+        "premium": 0,
+        "pending": 5,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Outras Quest├Áes e Quest├Áes Mescladas sobre Doen├ºas Cr├┤nicas N├úo Transmiss├¡veis",
+      {
+        "total": 4,
+        "premium": 0,
+        "pending": 4,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Sa├║de Mental",
+      {
+        "total": 4,
+        "premium": 0,
+        "pending": 4,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Doen├ºas Cardiovasculares e Metab├│licas Cr├┤nicas (Diabete, Hipertens├úo, ICC etc)",
+      {
+        "total": 3,
+        "premium": 0,
+        "pending": 3,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Enfermagem em UTI",
+      {
+        "total": 3,
+        "premium": 0,
+        "pending": 3,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Farmacodin├ómica e Farmacocin├®tica",
+      {
+        "total": 3,
+        "premium": 0,
+        "pending": 3,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Processamento de Artigos e Produtos de Sa├║de",
+      {
+        "total": 3,
+        "premium": 0,
+        "pending": 3,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Doen├ºas Bacterianas e F├║ngicas",
+      {
+        "total": 2,
+        "premium": 0,
+        "pending": 2,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Quest├Áes Mescladas e Outras Doen├ºas Agudas",
+      {
+        "total": 2,
+        "premium": 0,
+        "pending": 2,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Sa├║de do Homem",
+      {
+        "total": 2,
+        "premium": 0,
+        "pending": 2,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Doen├ºas Autoimunes e Reumatol├│gicas",
+      {
+        "total": 2,
+        "premium": 0,
+        "pending": 2,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Outros Temas de Enfermagem",
+      {
+        "total": 1,
+        "premium": 0,
+        "pending": 1,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Cuidados Paliativos",
+      {
+        "total": 1,
+        "premium": 0,
+        "pending": 1,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Doen├ºas Cardiovasculares e Metab├│licas Cr├┤nicas (Diabete, Hipertens├úo, ICC, etc)",
+      {
+        "total": 1,
+        "premium": 0,
+        "pending": 1,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Doen├ºas Renais e Hematol├│gicas Cr├┤nicas",
+      {
+        "total": 1,
+        "premium": 0,
+        "pending": 1,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Efeitos Adversos dos Medicamentos",
+      {
+        "total": 1,
+        "premium": 0,
+        "pending": 1,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Enfermagem em Oncologia",
+      {
+        "total": 1,
+        "premium": 0,
+        "pending": 1,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Doen├ºas Respirat├│rias Cr├┤nicas (Asma, DPOC)",
+      {
+        "total": 1,
+        "premium": 0,
+        "pending": 1,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Acidente Vascular Cerebral (AVC)",
+      {
+        "total": 1,
+        "premium": 0,
+        "pending": 1,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Doen├ºas Bacterianas e F├║ngicas (Tuberculose, T├®tano, Candid├¡ase, etc)",
+      {
+        "total": 1,
+        "premium": 0,
+        "pending": 1,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Neoplasias e C├óncer",
+      {
+        "total": 1,
+        "premium": 0,
+        "pending": 1,
+        "migrated_lote": 0
+      }
+    ],
+    [
+      "Procedimentos",
+      {
+        "total": 1,
+        "premium": 0,
+        "pending": 1,
+        "migrated_lote": 0
+      }
+    ]
+  ]
+}

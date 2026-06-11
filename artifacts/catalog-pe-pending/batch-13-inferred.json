@@ -1,0 +1,76 @@
+{
+  "batch": "13",
+  "bucket": "Processo de Enfermagem",
+  "inferences": [
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1776056140199-2",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Regras das anotações de enfermagem (objetividade, sequência, linguagem técnica) integram a documentação do processo de enfermagem."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1776056140199-3",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "Normas de registro imediato e sequencial dos cuidados prestados são práticas de documentação do PE."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1776056140199-4",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Papel do técnico no PE — anotações, execução e checagem de cuidados sob supervisão do enfermeiro — delimita atribuições no processo de cuidar."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-8",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "Competências do técnico nas etapas do PE (anotações, checagem de prescrição versus diagnóstico e decisão terapêutica) são conteúdo central do processo de enfermagem."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-9",
+      "suggested_subtopico": "História da Enfermagem",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Identificar o conceito de Wanda Horta (necessidades humanas básicas em três dimensões) entre teorias de enfermagem é conteúdo de teorias e marcos da profissão."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+      "suggested_subtopico": "Farmacodinâmica e Farmacocinética",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Escolha de fármaco para angina estável (perfusão miocárdica e redução da demanda metabólica) exige conhecimento de indicação e mecanismo de ação."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-6",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Notificação compulsória de violência via FNI no SINAN integra vigilância epidemiológica e sistemas de informação em saúde."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-9",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Escala de Cincinnati para triagem rápida de suspeita de AVC com três itens (face, braços, fala) é protocolo de urgência neurológica."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-0",
+      "suggested_subtopico": "Feridas e Queimaduras",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Critérios de grande queimado pela extensão da SCQ e grau da lesão são classificação específica de queimaduras."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-2",
+      "suggested_subtopico": "Saúde Mental",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Efeitos adversos de antipsicóticos em esquizofrenia (discinesia, xerostomia, ataxia) e cuidados de enfermagem psiquiátrica são núcleo de saúde mental."
+    }
+  ]
+}

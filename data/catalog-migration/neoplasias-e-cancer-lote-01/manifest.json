@@ -1,0 +1,13 @@
+{
+  "lote": "neoplasias-e-cancer-lote-01",
+  "exported_at": "2026-06-10T05:55:06.520Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Neoplasias e Câncer",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "igeduc-enfermagem-neoplasias-e-cancer-1780001148264-6"
+  ]
+}

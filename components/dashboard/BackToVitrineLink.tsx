@@ -23,7 +23,7 @@ export function BackToVitrineLink({ className }: BackToVitrineLinkProps) {
     <Link
       href={VITRINE_PATH}
       className={cn(
-        'inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-bold text-slate-300 transition-colors hover:border-[#BEF264]/40 hover:bg-[#BEF264]/10 hover:text-white',
+        'inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-700 shadow-sm transition-colors hover:border-[#8fe020]/50 hover:bg-[#8fe020]/10 hover:text-[#3d6b0f]',
         className,
       )}
     >
@@ -37,7 +37,7 @@ export function BackToVitrineBar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        'shrink-0 border-b border-white/10 bg-[#010409]/90 px-4 py-3 backdrop-blur-xl sm:px-6',
+        'shrink-0 border-b border-slate-200 bg-white/95 px-4 py-3 backdrop-blur-xl sm:px-6',
         className,
       )}
     >

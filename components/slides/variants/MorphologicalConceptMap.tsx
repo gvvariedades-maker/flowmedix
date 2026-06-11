@@ -34,14 +34,12 @@ export const MorphologicalConceptMap = ({ concepts, theme }: MorphologicalConcep
   const centralConcept = concepts[0];
   const detailConcepts = concepts.slice(1);
 
-  // Extrair cor do tema
-  const glowColor = theme.glow;
   const borderColorClass = theme.borderColor;
 
   return (
     <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col p-3 md:p-4">
       {/* Background com tema */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
+      <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-35`} />
       
       {/* Grid CSS Fluido - preenche área disponível */}
       <div 
@@ -50,10 +48,9 @@ export const MorphologicalConceptMap = ({ concepts, theme }: MorphologicalConcep
         {/* Conceito Central (Pai) - Ocupa mais espaço, glow mais intenso */}
         {centralConcept && (
           <div
-            className={`morph-central-card relative overflow-hidden rounded-[1.5rem] bg-slate-900/80 backdrop-blur-xl border-2 min-h-[180px] sm:min-h-[220px] transition-all duration-200 hover:-translate-y-1 ${detailConcepts.length > 0 ? 'col-span-1 sm:col-span-2' : 'col-span-1'}`}
+            className={`morph-central-card relative overflow-hidden rounded-[1.5rem] bg-slate-900/92 border-2 min-h-[180px] sm:min-h-[220px] transition-all duration-200 hover:-translate-y-0.5 ${detailConcepts.length > 0 ? 'col-span-1 sm:col-span-2' : 'col-span-1'}`}
             style={{
-              boxShadow: `0 0 40px ${glowColor}`,
-              borderColor: borderColorClass.replace('border-', '').replace('/30', '').replace('/40', '').replace('/50', '') + '30',
+              borderColor: borderColorClass.replace('border-', '').replace('/30', '').replace('/40', '').replace('/50', '') + '35',
               animation: 'morphReveal 0.4s ease-out',
             }}
           >
@@ -80,10 +77,9 @@ export const MorphologicalConceptMap = ({ concepts, theme }: MorphologicalConcep
           return (
             <div
               key={index}
-              className="morph-detail-card relative overflow-hidden rounded-[1.25rem] bg-slate-900/70 backdrop-blur-xl border min-h-[160px] transition-all duration-200 hover:-translate-y-0.5"
+              className="morph-detail-card relative overflow-hidden rounded-[1.25rem] bg-slate-900/90 border min-h-[160px] transition-all duration-200 hover:-translate-y-0.5"
               style={{
-                boxShadow: `0 0 20px ${glowColor}40`,
-                borderColor: borderColorClass.replace('border-', '').replace('/30', '').replace('/40', '').replace('/50', '') + '20',
+                borderColor: borderColorClass.replace('border-', '').replace('/30', '').replace('/40', '').replace('/50', '') + '25',
                 animation: `morphReveal 0.4s ease-out both`,
                 animationDelay: `${0.1 * (index + 1)}s`,
               }}

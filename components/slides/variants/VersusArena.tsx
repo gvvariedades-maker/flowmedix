@@ -73,10 +73,10 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
         initial={{ x: '-100%' }}
         animate={{ x: 0 }}
         transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-        className="flex-1 p-6 max-md:pb-16 md:p-10 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/10 relative bg-gradient-to-r from-slate-900/80 to-transparent backdrop-blur-sm"
+        className="flex-1 p-6 max-md:pb-16 md:p-10 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/10 relative bg-slate-900/85"
       >
         <div className="relative z-10 max-w-md mx-auto md:ml-auto md:mr-10">
-          <div className={`inline-flex items-center justify-center p-3 rounded-xl ${theme.iconBg} ${theme.iconText} mb-4 shadow-lg`}>
+          <div className={`inline-flex items-center justify-center p-3 rounded-xl ${theme.iconBg} ${theme.iconText} mb-4`}>
             {React.createElement(IconAComponent, { size: 24 })}
           </div>
           <h3 className={`mb-6 text-xl font-[1000] uppercase italic tracking-tighter md:text-3xl ${theme.textPrimary}`}>
@@ -99,10 +99,9 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
           initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ delay: 0.4, type: 'spring' }}
-          className={`w-16 h-16 md:w-20 md:h-20 rounded-full border-4 ${theme.borderColor} bg-slate-900 flex items-center justify-center shadow-[0_0_30px_rgba(0,0,0,0.5)] relative overflow-hidden`}
+          className={`w-16 h-16 md:w-20 md:h-20 rounded-full border-4 ${theme.borderColor} bg-slate-900 flex items-center justify-center shadow-md relative overflow-hidden`}
         >
-           {/* Efeito Radar no VS */}
-           <div className={`absolute inset-0 bg-gradient-to-t ${theme.primary} opacity-20 animate-spin-slow`} />
+           <div className={`absolute inset-0 bg-gradient-to-t ${theme.primary} opacity-10`} />
            <Swords className={theme.textPrimary} size={32} />
         </motion.div>
         <div className={`absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-sm font-black uppercase tracking-[0.3em] md:text-xs ${theme.textSecondary}`}>
@@ -115,12 +114,12 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
         initial={{ x: '100%' }}
         animate={{ x: 0 }}
         transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-        className="flex-1 p-6 max-md:pt-16 md:p-10 flex flex-col justify-center relative bg-gradient-to-l from-slate-900/80 to-transparent backdrop-blur-sm"
+        className="flex-1 p-6 max-md:pt-16 md:p-10 flex flex-col justify-center relative bg-slate-900/85"
       >
         <div className="relative z-10 max-w-md mx-auto md:mr-auto md:ml-10">
           {/* Ícone alinhado à direita no mobile, à esquerda no desktop */}
           <div className="flex justify-end md:justify-start mb-4">
-            <div className={`inline-flex items-center justify-center p-3 rounded-xl ${theme.iconBg} ${theme.iconText} shadow-lg`}>
+            <div className={`inline-flex items-center justify-center p-3 rounded-xl ${theme.iconBg} ${theme.iconText}`}>
               {React.createElement(IconBComponent, { size: 24 })}
             </div>
           </div>

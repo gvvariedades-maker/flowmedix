@@ -44,7 +44,7 @@ export function LogicFlowFooter({
             </span>
           </motion.p>
         ) : null}
-        <motion.div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/60 px-4 py-2 backdrop-blur-xl">
+        <motion.div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/80 px-4 py-2">
           <span className="font-mono tabular-nums text-sm text-slate-300 md:text-xs">
             Passo {Math.min(currentPasso, total)} de {total}
           </span>
@@ -70,7 +70,7 @@ export function LogicFlowFooter({
       transition={{ delay: total * 0.1 + 0.5 }}
       className="mt-8 text-center"
     >
-      <motion.div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/60 px-4 py-2 backdrop-blur-xl">
+      <motion.div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-slate-900/80 px-4 py-2">
         <span className="font-mono tabular-nums text-sm text-slate-400 md:text-xs">
           {revealedCount} de {total} passos concluídos
         </span>

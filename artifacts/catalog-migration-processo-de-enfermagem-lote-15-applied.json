@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:42:55.192Z",
+  "lote": "processo-de-enfermagem-lote-15",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-5",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-6",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-7",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-8",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-9",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-0",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-1",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-2",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-3",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-4",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-5",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-6",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-7",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-8",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005320352-9",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-0",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-1",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-2",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-3",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-4",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-5",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-6",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-7",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-8",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-9",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-0",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-1",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-2",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-3",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-4",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-5",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-6",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-7",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-8",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-0",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-1",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-2",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-3",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-4",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1776056149404-6",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-3",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-4",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-5",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-6",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-7",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-8",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-9",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-0",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005320352-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1776056149404-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

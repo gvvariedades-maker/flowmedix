@@ -37,6 +37,8 @@ export const AVANT_LOGO_COLORS = {
   accentBar: '#8fe020',
   accentBarGlow: 'rgba(143, 224, 32, 0.55)',
   wordmarkGlow: 'rgba(192, 240, 64, 0.35)',
+  /** Editorial v2 — wordmark em fundo claro (#f8fafc), sem chip escuro */
+  wordmarkLight: '#0f172a',
 } as const;
 
 export const AVANT_LOGO_GRADIENTS = {

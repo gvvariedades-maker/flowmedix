@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-09T09:28:21.732Z",
+  "lote": "imunizacao-lote-04",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564044052-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3759
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779564071106-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3815
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-imunizacao-1779564011849-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "DECORP",
+      "avant_codigo": 3729
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-imunizacao-1779564006577-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 3720
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-imunizacao-1779564011849-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 3731
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-imunizacao-1779564059030-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 3786
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-imunizacao-1779564059030-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 3787
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-imunizacao-1779564063274-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 3792
+    },
+    {
+      "modulo_slug": "epl-concursos-enfermagem-imunizacao-1779572236985-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "EPL CONCURSOS",
+      "avant_codigo": 4015
+    },
+    {
+      "modulo_slug": "epl-concursos-enfermagem-imunizacao-1779572236985-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "EPL CONCURSOS",
+      "avant_codigo": 4016
+    },
+    {
+      "modulo_slug": "epl-concursos-enfermagem-imunizacao-1779572236985-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "EPL CONCURSOS",
+      "avant_codigo": 4017
+    },
+    {
+      "modulo_slug": "facape-enfermagem-imunizacao-1779563986606-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACAPE",
+      "avant_codigo": 3683
+    },
+    {
+      "modulo_slug": "facet-enfermagem-imunizacao-1779563965519-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 3662
+    },
+    {
+      "modulo_slug": "facet-enfermagem-imunizacao-1779564006577-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 3722
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-imunizacao-1777103257434-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAFIPA",
+      "avant_codigo": 847
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-imunizacao-1777103257434-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAFIPA",
+      "avant_codigo": 848
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1777103251447-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 838
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779563970889-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3667
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779563970889-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3668
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779563986606-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3686
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779563992006-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3692
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779563992006-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3695
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564011849-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3727
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564040128-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3753
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564044052-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3760
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564044052-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3761
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564044052-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3762
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564071106-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3810
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564085730-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3844
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564085730-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3845
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564085730-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3846
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572171486-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3947
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3954
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3955
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3956
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3957
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3958
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3959
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3960
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3961
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3962
+    },
+    {
+      "modulo_slug": "fau-unicentro-geral-imunizacao-1777103238173-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Geral",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 819
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-imunizacao-1777103251447-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 836
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-imunizacao-1777103257434-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 849
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-imunizacao-1777103264001-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 852
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-imunizacao-1777103264001-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 853
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-imunizacao-1779572171486-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 3950
+    },
+    {
+      "modulo_slug": "fcc-enfermagem-imunizacao-1777103264001-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCC",
+      "avant_codigo": 856
+    },
+    {
+      "modulo_slug": "fcc-enfermagem-imunizacao-1777103264001-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCC",
+      "avant_codigo": 857
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-imunizacao-1779564096589-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCM",
+      "avant_codigo": 3857
+    }
+  ]
+}

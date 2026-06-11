@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { EstudarQuestaoModalRoute } from '@/components/estudar/EstudarQuestaoModalRoute';
 
 const mockDismissToVitrine = jest.fn();
@@ -51,7 +51,7 @@ describe('EstudarQuestaoModalRoute', () => {
     expect(mockUseBodyScrollLock).toHaveBeenCalledWith(true);
   });
 
-  it('exibe player quando displayPayload está disponível', () => {
+  it('exibe player quando displayPayload está disponível', async () => {
     mockUseQuestaoNavigation.mockReturnValue({
       displayPayload: {
         moduloSlug: 'questao-a',
@@ -69,7 +69,9 @@ describe('EstudarQuestaoModalRoute', () => {
     );
 
     expect(screen.getByRole('dialog', { name: 'Questão' })).toBeInTheDocument();
-    expect(screen.getByTestId('avant-lesson-player')).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByTestId('avant-lesson-player')).toBeInTheDocument();
+    });
     expect(screen.queryByTestId('estudar-questao-skeleton')).not.toBeInTheDocument();
   });
 

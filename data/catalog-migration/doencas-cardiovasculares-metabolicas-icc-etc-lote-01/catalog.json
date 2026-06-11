@@ -1,0 +1,28 @@
+{
+  "exported_at": "2026-06-10T05:52:28.766Z",
+  "lote": "doencas-cardiovasculares-metabolicas-icc-etc-lote-01",
+  "total": 3,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-4",
+      "titulo_aula": "Doenças Cardiovasculares e Metabólicas Crônicas (Diabete, Hipertensão, ICC etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1645
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-5",
+      "titulo_aula": "Doenças Cardiovasculares e Metabólicas Crônicas (Diabete, Hipertensão, ICC etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1646
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-6",
+      "titulo_aula": "Doenças Cardiovasculares e Metabólicas Crônicas (Diabete, Hipertensão, ICC etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1647
+    }
+  ]
+}

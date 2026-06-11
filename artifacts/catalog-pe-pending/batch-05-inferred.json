@@ -1,0 +1,76 @@
+{
+  "batch": "05",
+  "bucket": "Processo de Enfermagem",
+  "inferences": [
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Sinais de instabilidade hemodinâmica no atendimento pré-hospitalar são achados de choque e emergência, não SAE ou NANDA."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-0",
+      "suggested_subtopico": "Feridas e Queimaduras",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Conduta inicial correta em queimadura (água ambiente, sem gelo ou pomadas caseiras) é manejo específico de queimaduras."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-1",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Estabilização antes do transporte interunidades visa minimizar intercorrências e garantir segurança do paciente."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-2",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Desgarrotear e homogeneizar o tubo após coleta sanguínea é técnica de coleta laboratorial, não etapa do PE."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-3",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Periodicidade de peso e estatura conforme norma antropométrica em consulta é protocolo típico da atenção básica."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-2",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Proibição de reutilizar seringa e agulha na aplicação de insulina trata dos cuidados seguros na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-4",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Descarte imediato de perfurocortantes em recipiente rígido é precaução padrão de biossegurança no ponto de uso."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-5",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Higienizar as mãos ao sair do quarto mesmo sem toque direto integra os momentos de precaução padrão."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-6",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "Documentação formal das etapas do processo de enfermagem no prontuário é conteúdo central de SAE e PE."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-7",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Direito do paciente ou responsável de acessar o prontuário é questão de direitos e segurança do paciente, não etapas do PE."
+    }
+  ]
+}

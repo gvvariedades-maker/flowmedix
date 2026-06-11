@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { invalidateNotebookActivationCache } from '@/lib/cache';
 import { logger } from '@/lib/logger';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 
@@ -63,6 +64,8 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (error) throw error;
+
+    void invalidateNotebookActivationCache(user.id);
 
     return NextResponse.json({ notebook: data }, { status: 201 });
   } catch (error) {

@@ -58,7 +58,7 @@ export default function EsqueciSenhaPage() {
         {/* Header */}
         <div className="text-center mb-10">
           <div className="mb-6 flex justify-center">
-            <AvantLogo size="lg" />
+            <AvantLogo size="lg" tone="light" animated={false} />
           </div>
           <div className="inline-flex items-center gap-2 mb-2 bg-amber-50 border border-amber-100 px-4 py-1.5 rounded-full">
             <Mail size={14} className="text-amber-500" />

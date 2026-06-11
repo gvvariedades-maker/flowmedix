@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:47:04.820Z",
+  "lote": "urgencias-e-emergencias-lote-02",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ibade-enfermagem-urgencias-e-emergencias-1777103988389-6",
+    "ibade-geral-urgencias-e-emergencias-1777103590498-1",
+    "ibade-geral-urgencias-e-emergencias-1777103590498-2",
+    "ibade-geral-urgencias-e-emergencias-1777103590498-4",
+    "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-1",
+    "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-2",
+    "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-3",
+    "icece-enfermagem-urgencias-e-emergencias-1780001297464-0",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-3",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-4",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-5",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-6",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-7",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-8",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-0",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-1",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-2",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-3",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-4",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-5",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-6",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-7",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-8",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712400677-9",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712409051-0",
+    "idecan-enfermagem-urgencias-e-emergencias-1780067013432-3",
+    "idecan-enfermagem-urgencias-e-emergencias-1780067013432-4",
+    "idecan-enfermagem-urgencias-e-emergencias-1780067013432-5",
+    "idecan-enfermagem-urgencias-e-emergencias-1780067013432-6",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-0",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-1",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-2",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-3",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-4",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-5",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-6",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-7",
+    "idib-enfermagem-urgencias-e-emergencias-1778934926888-8",
+    "idib-enfermagem-urgencias-e-emergencias-1778934936220-0",
+    "idib-enfermagem-urgencias-e-emergencias-1778934936220-1",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-0",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-1",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-2",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-3",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-4",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-5",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-6",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-7",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-1",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ibade-enfermagem-urgencias-e-emergencias-1777103988389-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-geral-urgencias-e-emergencias-1777103590498-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-geral-urgencias-e-emergencias-1777103590498-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-geral-urgencias-e-emergencias-1777103590498-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-urgencias-e-emergencias-1780001297464-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712409051-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934936220-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934936220-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

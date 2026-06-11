@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
-import { getHistoricoQuestoesCached } from '@/lib/cache';
+import { getHistoricoQuestoesCached, getMatriculatedConcursosCached } from '@/lib/cache';
+import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { logger } from '@/lib/logger';
 import CadernosListClient from './CadernosListClient';
 
@@ -12,23 +13,32 @@ export interface NotebookSummary {
   studiedCount: number;
   /** Primeira questão a abrir no fluxo do caderno (não concluída na ordem, senão a primeira). */
   studyEntrySlug: string | null;
+  /** Título da próxima questão (titulo_aula ou topico do item de entrada). */
+  studyEntryTitle: string | null;
+  /** Posição 1-based da próxima questão na ordem do caderno. */
+  studyEntryPosition: number | null;
   updated_at: string;
 }
 
 export default async function CadernosPage() {
+  if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS')) {
+    return <CadernosListClient cadernos={[]} editalBanca={null} />;
+  }
+
   const session = await getServerSession();
   if (!session?.user) redirect('/login');
 
   const supabase = await createSupabaseServerClient();
 
   try {
-    const [{ data: notebooks, error }, historico] = await Promise.all([
+    const [{ data: notebooks, error }, historico, matriculatedConcursos] = await Promise.all([
       supabase
         .from('study_notebooks')
         .select('id, title, description, updated_at')
         .eq('user_id', session.user.id)
         .order('updated_at', { ascending: false }),
       getHistoricoQuestoesCached(session.user.id),
+      getMatriculatedConcursosCached(session.user.id).catch(() => []),
     ]);
 
     if (error) throw error;
@@ -40,17 +50,25 @@ export default async function CadernosPage() {
     );
 
     const ids = (notebooks || []).map((n) => n.id);
-    const itemsByNotebook = new Map<string, { modulo_slug: string; position: number }[]>();
+    const itemsByNotebook = new Map<
+      string,
+      { modulo_slug: string; position: number; titulo_aula: string | null; topico: string | null }[]
+    >();
 
     if (ids.length > 0) {
       const { data: allItems } = await supabase
         .from('study_notebook_items')
-        .select('notebook_id, modulo_slug, position')
+        .select('notebook_id, modulo_slug, position, titulo_aula, topico')
         .in('notebook_id', ids);
 
       for (const row of allItems || []) {
         const arr = itemsByNotebook.get(row.notebook_id) || [];
-        arr.push({ modulo_slug: row.modulo_slug, position: row.position });
+        arr.push({
+          modulo_slug: row.modulo_slug,
+          position: row.position,
+          titulo_aula: row.titulo_aula,
+          topico: row.topico,
+        });
         itemsByNotebook.set(row.notebook_id, arr);
       }
       for (const id of ids) {
@@ -60,29 +78,49 @@ export default async function CadernosPage() {
       }
     }
 
-    const studySlug = (items: { modulo_slug: string }[]): string | null => {
-      if (items.length === 0) return null;
-      const next = items.find((i) => !estudadosSet.has(i.modulo_slug));
-      return (next ?? items[0]).modulo_slug;
+    type NotebookItemRow = {
+      modulo_slug: string;
+      titulo_aula: string | null;
+      topico: string | null;
+    };
+
+    const resolveStudyEntry = (items: NotebookItemRow[]) => {
+      if (items.length === 0) {
+        return { slug: null, title: null, position: null };
+      }
+      const pendingIndex = items.findIndex((i) => !estudadosSet.has(i.modulo_slug));
+      const entryIndex = pendingIndex >= 0 ? pendingIndex : 0;
+      const entry = items[entryIndex];
+      return {
+        slug: entry.modulo_slug,
+        title: entry.titulo_aula?.trim() || entry.topico?.trim() || null,
+        position: entryIndex + 1,
+      };
     };
 
     const summaries: NotebookSummary[] = (notebooks || []).map((n) => {
       const items = itemsByNotebook.get(n.id) || [];
       const studiedCount = items.filter((i) => estudadosSet.has(i.modulo_slug)).length;
+      const studyEntry = resolveStudyEntry(items);
       return {
         ...n,
         itemCount: items.length,
         studiedCount,
-        studyEntrySlug: studySlug(items),
+        studyEntrySlug: studyEntry.slug,
+        studyEntryTitle: studyEntry.title,
+        studyEntryPosition: studyEntry.position,
       };
     });
 
-    return <CadernosListClient cadernos={summaries} />;
+    const editalBanca =
+      matriculatedConcursos.find((concurso) => concurso.tipo === 'edital')?.banca ?? null;
+
+    return <CadernosListClient cadernos={summaries} editalBanca={editalBanca} />;
   } catch (error) {
     logger.error('Failed to load cadernos', error);
     return (
-      <div className="flex min-h-full items-center justify-center bg-[#010409] p-6">
-        <p className="text-sm text-slate-400">Erro ao carregar cadernos. Tente novamente.</p>
+      <div className="flex min-h-full items-center justify-center bg-background p-6">
+        <p className="text-sm text-slate-500">Erro ao carregar cadernos. Tente novamente.</p>
       </div>
     );
   }

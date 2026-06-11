@@ -1,6 +1,10 @@
 import { getServerSession } from '@/lib/supabase/server-auth';
 import { isAdminSessionEmail } from '@/lib/constants';
-import { getMatriculatedConcursosCached } from '@/lib/cache';
+import {
+  EMPTY_NOTEBOOK_ACTIVATION,
+  getMatriculatedConcursosCached,
+  getNotebookActivationCached,
+} from '@/lib/cache';
 import { getActiveProInfoForUser, isUserPro, type ProSource } from '@/lib/freemium';
 import DashboardShell from './DashboardShell';
 
@@ -21,7 +25,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
   const email = session?.user?.email ?? null;
   const isAdmin = isAdminSessionEmail(email);
 
-  const [matriculatedConcursos, userIsPro, proInfo] = session?.user?.id
+  const [matriculatedConcursos, userIsPro, proInfo, notebookActivation] = session?.user?.id
     ? await Promise.all([
         getMatriculatedConcursosCached(session.user.id).catch(() => []),
         isUserPro(session.user.id).catch(() => false),
@@ -29,8 +33,9 @@ export default async function DashboardLayout({ children }: { children: React.Re
           proSource: null as ProSource,
           proExpiresAt: null,
         })),
+        getNotebookActivationCached(session.user.id).catch(() => EMPTY_NOTEBOOK_ACTIVATION),
       ])
-    : [[], false, { proSource: null as ProSource, proExpiresAt: null }];
+    : [[], false, { proSource: null as ProSource, proExpiresAt: null }, EMPTY_NOTEBOOK_ACTIVATION];
 
   const isPro = isAdmin || userIsPro;
 
@@ -46,7 +51,11 @@ export default async function DashboardLayout({ children }: { children: React.Re
         slug: concurso.slug,
         nome: concurso.nome,
         tipo: concurso.tipo,
+        banca: concurso.banca,
+        orgao: concurso.orgao,
+        ano: concurso.ano,
       }))}
+      initialNotebookActivation={notebookActivation}
     >
       {children}
     </DashboardShell>

@@ -1,0 +1,14 @@
+{
+  "lote": "doencas-bacterianas-e-fungicas-lote-03",
+  "exported_at": "2026-06-10T05:10:21.515Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Doenças Bacterianas e Fúngicas",
+    "limit": 50,
+    "exclude_count": 11
+  },
+  "slugs": [
+    "fgv-geral-doencas-bacterianas-e-fungicas-1777103502990-0",
+    "vunesp-geral-doencas-bacterianas-e-fungicas-1776576813096-0"
+  ]
+}

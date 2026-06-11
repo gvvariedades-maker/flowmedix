@@ -1,0 +1,105 @@
+{
+  "exported_at": "2026-06-10T05:22:30.016Z",
+  "lote": "procedimentos-diversos-lote-01",
+  "total": 14,
+  "entries": [
+    {
+      "modulo_slug": "ibfc-geral-procedimentos-diversos-1777103988389-5",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Geral",
+      "banca": "IBFC",
+      "avant_codigo": 1183
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-7",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1562
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-8",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1563
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-9",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1564
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-0",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1565
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-1",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1566
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-2",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1567
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-3",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1568
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-4",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1569
+    },
+    {
+      "modulo_slug": "idib-enfermagem-procedimentos-diversos-1778934890864-9",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1742
+    },
+    {
+      "modulo_slug": "idib-enfermagem-procedimentos-diversos-1778934900821-0",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1743
+    },
+    {
+      "modulo_slug": "nao-informado-geral-procedimentos-diversos-1776056493133-0",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Geral",
+      "banca": "NÃO INFORMADO",
+      "avant_codigo": 456
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-procedimentos-diversos-1780000535393-7",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 4069
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-procedimentos-diversos-1780000535393-8",
+      "titulo_aula": "Procedimentos Diversos",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4070
+    }
+  ]
+}

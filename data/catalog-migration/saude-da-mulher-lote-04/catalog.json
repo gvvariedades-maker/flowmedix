@@ -1,0 +1,245 @@
+{
+  "exported_at": "2026-06-10T03:47:06.870Z",
+  "lote": "saude-da-mulher-lote-04",
+  "total": 34,
+  "entries": [
+    {
+      "modulo_slug": "itame-enfermagem-saude-da-mulher-1777104432986-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 1496
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-saude-da-mulher-1777104389226-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 1462
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-saude-da-mulher-1777104306781-5",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "MARANATHA ASSESSORIA",
+      "avant_codigo": 1400
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104222222-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 1334
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104222222-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 1335
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104235003-8",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 1357
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 1389
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 1390
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104222222-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "NC UFPR (FUNPAR)",
+      "avant_codigo": 1340
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104235003-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "NC UFPR (FUNPAR)",
+      "avant_codigo": 1349
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-saude-da-mulher-1777104301763-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 1392
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-saude-da-mulher-1777104301763-8",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 1394
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-saude-da-mulher-1777104424950-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 1489
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-mulher-1777104376057-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 1451
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-mulher-1777104376057-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 1452
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-mulher-1777104408379-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 1472
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-saude-da-mulher-1777104347186-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 1438
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-saude-da-mulher-1777104376057-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 1447
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 1378
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 1379
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-4",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 1380
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104382533-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 1456
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-saude-da-mulher-1777104376057-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 1446
+    },
+    {
+      "modulo_slug": "univida-enfermagem-saude-da-mulher-1777104389226-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVIDA",
+      "avant_codigo": 1463
+    },
+    {
+      "modulo_slug": "univida-enfermagem-saude-da-mulher-1777104389226-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVIDA",
+      "avant_codigo": 1464
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104261182-2",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1360
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104261182-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1364
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104295283-1",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1377
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104323066-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1408
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104340484-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1428
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-3",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1473
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-6",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1476
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-7",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1477
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104415052-0",
+      "titulo_aula": "Saúde da Mulher",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1478
+    }
+  ]
+}

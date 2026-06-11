@@ -1,0 +1,32 @@
+{
+  "source": "https://www.qconcursos.com/",
+  "capturedAt": "2026-06-10",
+  "tool": "firecrawl_scrape branding",
+  "colorScheme": "light",
+  "colors": {
+    "primary": "#FE6112",
+    "secondary": "#1EB051",
+    "accent": "#FE6112",
+    "background": "#FFFFFF",
+    "textPrimary": "#000000",
+    "link": "#111827"
+  },
+  "typography": {
+    "primary": "Open Sans",
+    "heading": "Open Sans / Inter",
+    "h1": "48px",
+    "h2": "24px",
+    "body": "12px"
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "10px"
+  },
+  "buttons": {
+    "primary": { "bg": "#FE6112", "text": "#FFFFFF", "radius": "8px", "label": "Comece a estudar de graça" },
+    "secondary": { "bg": "#1EB051", "text": "#FFFFFF", "radius": "8px", "label": "VER PREÇOS E PLANOS" }
+  },
+  "personality": { "tone": "professional", "energy": "medium", "targetAudience": "students and professionals preparing for exams" },
+  "framework": "tailwind",
+  "confidence": 0.925
+}

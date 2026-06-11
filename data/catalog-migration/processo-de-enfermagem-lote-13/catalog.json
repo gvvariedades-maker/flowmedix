@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-09T10:21:48.624Z",
+  "lote": "processo-de-enfermagem-lote-13",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "idcap-enfermagem-processo-de-enfermagem-1776056021381-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 220
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-processo-de-enfermagem-1776056021381-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 221
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1520
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1780066909125-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5116
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1780066909125-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5117
+    },
+    {
+      "modulo_slug": "idib-enfermagem-processo-de-enfermagem-1778934863952-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1725
+    },
+    {
+      "modulo_slug": "idib-enfermagem-processo-de-enfermagem-1778934863952-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1726
+    },
+    {
+      "modulo_slug": "idib-enfermagem-processo-de-enfermagem-1778934863952-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1727
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004280851-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4449
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4450
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4451
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4452
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4453
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4454
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4455
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4456
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4457
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4458
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4459
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4460
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4461
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4462
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780007230169-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4745
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780007230169-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4746
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780001148264-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4087
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4921
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4922
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4923
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4924
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4925
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4926
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4927
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4928
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4929
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4930
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4931
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4932
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4933
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4934
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010566816-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4935
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010566816-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4936
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010566816-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4937
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010566816-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4938
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 5016
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 5017
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 5018
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 5019
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 5020
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 5021
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 5022
+    }
+  ]
+}

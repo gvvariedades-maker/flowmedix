@@ -1,0 +1,104 @@
+{
+  "generated_at": "2026-06-10T05:51:12.127Z",
+  "lote": "teorias-em-enfermagem-lote-01",
+  "mode": "apply",
+  "total_files": 13,
+  "ok": 13,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "funatec-enfermagem-teorias-em-enfermagem-1776055843703-3",
+    "funatec-enfermagem-teorias-em-enfermagem-1776055843703-4",
+    "ibec-enfermagem-teorias-em-enfermagem-1776055843703-5",
+    "idecan-enfermagem-teorias-em-enfermagem-1778712122855-2",
+    "idecan-enfermagem-teorias-em-enfermagem-1778712122855-3",
+    "idib-enfermagem-teorias-em-enfermagem-1778934863952-1",
+    "igeduc-enfermagem-teorias-em-enfermagem-1776055843703-7",
+    "inaz-do-para-enfermagem-teorias-em-enfermagem-1776055843703-1",
+    "instituto-consulpam-enfermagem-teorias-em-enfermagem-1776056009428-2",
+    "instituto-consulplan-enfermagem-teorias-em-enfermagem-1776056009428-1",
+    "lj-assessoria-enfermagem-teorias-em-enfermagem-1776056009428-0",
+    "selecon-enfermagem-teorias-em-enfermagem-1776055843703-6",
+    "univali-enfermagem-teorias-em-enfermagem-1776055843703-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "funatec-enfermagem-teorias-em-enfermagem-1776055843703-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-teorias-em-enfermagem-1776055843703-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibec-enfermagem-teorias-em-enfermagem-1776055843703-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-teorias-em-enfermagem-1778712122855-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-teorias-em-enfermagem-1778712122855-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-teorias-em-enfermagem-1778934863952-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-teorias-em-enfermagem-1776055843703-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-teorias-em-enfermagem-1776055843703-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-teorias-em-enfermagem-1776056009428-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-teorias-em-enfermagem-1776056009428-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-teorias-em-enfermagem-1776056009428-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-teorias-em-enfermagem-1776055843703-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-teorias-em-enfermagem-1776055843703-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

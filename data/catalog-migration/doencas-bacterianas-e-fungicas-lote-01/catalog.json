@@ -1,0 +1,77 @@
+{
+  "exported_at": "2026-06-10T05:09:52.009Z",
+  "lote": "doencas-bacterianas-e-fungicas-lote-01",
+  "total": 10,
+  "entries": [
+    {
+      "modulo_slug": "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-5",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 908
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-6",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 909
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576853681-0",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 633
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-0",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 903
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-1",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 904
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-2",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "GUALIMP",
+      "avant_codigo": 905
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-3",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "GUALIMP",
+      "avant_codigo": 906
+    },
+    {
+      "modulo_slug": "ibgp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576839192-0",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBGP",
+      "avant_codigo": 632
+    },
+    {
+      "modulo_slug": "idib-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1778934909266-4",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1757
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-4",
+      "titulo_aula": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 907
+    }
+  ]
+}

@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T03:44:15.899Z",
+  "lote": "saude-da-mulher-lote-03",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idecan-enfermagem-saude-da-mulher-1778712437306-4",
+    "idecan-enfermagem-saude-da-mulher-1780067024707-7",
+    "idecan-enfermagem-saude-da-mulher-1780067024707-8",
+    "idecan-enfermagem-saude-da-mulher-1780067024707-9",
+    "idecan-enfermagem-saude-da-mulher-1780067036141-0",
+    "idecan-enfermagem-saude-da-mulher-1780067036141-1",
+    "idecan-enfermagem-saude-da-mulher-1780067036141-2",
+    "idecan-enfermagem-saude-da-mulher-1780067036141-3",
+    "idecan-enfermagem-saude-da-mulher-1780067036141-4",
+    "idecan-enfermagem-saude-da-mulher-1780067036141-5",
+    "idesg-enfermagem-saude-da-mulher-1777104335102-0",
+    "idib-enfermagem-saude-da-mulher-1777104335102-1",
+    "idib-enfermagem-saude-da-mulher-1777104335102-2",
+    "idib-enfermagem-saude-da-mulher-1777104335102-3",
+    "idib-enfermagem-saude-da-mulher-1778934936220-9",
+    "idib-enfermagem-saude-da-mulher-1778934944659-0",
+    "idib-enfermagem-saude-da-mulher-1778934944659-1",
+    "idib-enfermagem-saude-da-mulher-1778934944659-2",
+    "idib-enfermagem-saude-da-mulher-1778934944659-3",
+    "idib-enfermagem-saude-da-mulher-1778934944659-4",
+    "igeduc-enfermagem-saude-da-mulher-1777104261182-1",
+    "igeduc-enfermagem-saude-da-mulher-1777104306781-4",
+    "igeduc-enfermagem-saude-da-mulher-1777104432986-3",
+    "igeduc-enfermagem-saude-da-mulher-1777104432986-4",
+    "igeduc-enfermagem-saude-da-mulher-1777104432986-5",
+    "igeduc-enfermagem-saude-da-mulher-1777104432986-6",
+    "igeduc-enfermagem-saude-da-mulher-1777104432986-7",
+    "igeduc-enfermagem-saude-da-mulher-1780001362784-8",
+    "igeduc-enfermagem-saude-da-mulher-1780001440222-0",
+    "inaz-do-para-enfermagem-saude-da-mulher-1777104335102-5",
+    "inaz-do-para-enfermagem-saude-da-mulher-1777104347186-5",
+    "inaz-do-para-geral-saude-da-mulher-1777104347186-4",
+    "instituto-aocp-enfermagem-saude-da-mulher-1777104323066-1",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-3",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-5",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-2",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-4",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-5",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-6",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-7",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104323066-7",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104335102-6",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104335102-7",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104340484-6",
+    "instituto-consulplan-enfermagem-saude-da-mulher-1777104347186-0",
+    "instituto-consulplan-geral-saude-da-mulher-1777104235003-3",
+    "instituto-evo-enfermagem-saude-da-mulher-1777104306781-3",
+    "instituto-jk-enfermagem-saude-da-mulher-1777104323066-3",
+    "iset-enfermagem-saude-da-mulher-1777104376057-0",
+    "itame-enfermagem-saude-da-mulher-1777104424950-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1778712437306-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067024707-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067024707-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067024707-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-saude-da-mulher-1777104335102-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1777104335102-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1777104335102-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1777104335102-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934936220-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104261182-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104306781-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1780001362784-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1780001440222-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-saude-da-mulher-1777104335102-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-saude-da-mulher-1777104347186-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-geral-saude-da-mulher-1777104347186-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-saude-da-mulher-1777104323066-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104323066-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104335102-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104335102-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104340484-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104347186-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-geral-saude-da-mulher-1777104235003-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-saude-da-mulher-1777104306781-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-saude-da-mulher-1777104323066-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iset-enfermagem-saude-da-mulher-1777104376057-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-saude-da-mulher-1777104424950-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

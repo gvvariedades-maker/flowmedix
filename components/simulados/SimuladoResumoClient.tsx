@@ -77,7 +77,7 @@ function QuestaoRevisaoItem({ item }: { item: SimuladoQuestaoItem }) {
           ? item.acertou
             ? 'border-emerald-500/25 bg-emerald-500/[0.06]'
             : 'border-rose-500/25 bg-rose-500/[0.06]'
-          : 'border-white/10 bg-slate-900/60',
+          : 'border-slate-200 bg-white',
       )}
     >
       <div className="flex items-start gap-3">
@@ -116,13 +116,13 @@ function QuestaoRevisaoItem({ item }: { item: SimuladoQuestaoItem }) {
             </span>
           </div>
 
-          <p className="text-sm text-slate-200">{metaLinha(item.meta)}</p>
+          <p className="text-sm text-slate-800">{metaLinha(item.meta)}</p>
 
           {respondida && (
             <dl className="mt-3 space-y-1 text-xs">
               <div className="flex flex-wrap gap-x-2">
                 <dt className="text-slate-500">Sua resposta:</dt>
-                <dd className="font-mono font-medium text-slate-200">
+                <dd className="font-mono font-medium text-slate-800">
                   {formatOpcaoId(item.opcao_id)}
                 </dd>
               </div>
@@ -143,7 +143,7 @@ function QuestaoRevisaoItem({ item }: { item: SimuladoQuestaoItem }) {
           <div className="mt-3">
             <Link
               href={`/estudar/${item.modulo_slug}`}
-              className="inline-flex items-center gap-1 text-xs font-medium text-cyan-400/90 transition-colors hover:text-cyan-300"
+              className="link-editorial-secondary inline-flex items-center gap-1 text-xs font-medium transition-colors"
             >
               {respondida ? 'Revisar no estudo reverso' : 'Abrir questão'}
               <ArrowRight className="h-3.5 w-3.5" aria-hidden />
@@ -296,7 +296,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
         type="button"
         onClick={() => void handleRetrySession()}
         disabled={retryBusy}
-        className="h-12 w-full rounded-2xl bg-[#00f2ff] px-6 text-sm font-bold text-[#010409] hover:bg-[#00f2ff]/90 disabled:opacity-50 sm:w-auto"
+        className="btn-editorial-primary h-12 w-full disabled:opacity-50 sm:w-auto"
       >
         <RotateCcw className="mr-2 h-4 w-4" aria-hidden />
         {retryingSession ? 'Criando...' : refazerLabel}
@@ -305,7 +305,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
         type="button"
         onClick={() => void handleRetryErrors()}
         disabled={retryBusy || resumo.erros === 0}
-        className="h-12 w-full rounded-2xl border border-cyan-500/40 bg-cyan-500/15 px-6 text-cyan-300 hover:bg-cyan-500/25 disabled:opacity-50 sm:w-auto"
+        className="btn-editorial-outline h-12 w-full disabled:opacity-50 sm:w-auto"
       >
         <ClipboardList className="mr-2 h-4 w-4" aria-hidden />
         {retryingErrors ? 'Criando...' : 'Refazer só erros'}
@@ -313,7 +313,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
       <Button
         asChild
         variant="outline"
-        className="h-12 w-full rounded-2xl border-white/15 bg-transparent px-6 text-slate-200 hover:bg-white/5 sm:w-auto"
+        className="btn-editorial-outline h-12 w-full sm:w-auto"
       >
         <Link href="/simulados/novo">
           <ClipboardList className="mr-2 h-4 w-4" aria-hidden />
@@ -324,7 +324,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
   );
 
   return (
-    <div className="bg-[#010409] px-4 pt-6 sm:px-6 lg:px-8 md:pb-8">
+    <div className="bg-background px-4 pt-6 sm:px-6 lg:px-8 md:pb-8">
       <div className="mx-auto max-w-3xl space-y-8">
         <p className="sr-only" aria-live="polite" aria-atomic="true">
           {liveSummary}
@@ -335,13 +335,13 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
         <PageHeader
           title={tituloExibicao}
           description={resumoDescription}
-          descriptionClassName="text-sm text-slate-400 mt-1"
-          titleClassName="text-2xl font-[1000] italic tracking-tighter text-white"
+          descriptionClassName="mt-1 text-sm text-slate-500"
+          titleClassName="text-editorial-title text-2xl"
           action={
             <Button
               asChild
               variant="outline"
-              className="hidden rounded-xl border-white/15 bg-transparent text-slate-200 hover:bg-white/5 sm:inline-flex"
+              className="btn-editorial-outline hidden sm:inline-flex"
             >
               <Link href="/simulados/novo">Novo simulado</Link>
             </Button>
@@ -350,16 +350,16 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
 
         {isProva ? (
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="glass-panel space-y-3 border border-white/10 p-6">
-              <div className="flex items-center gap-2 text-slate-400">
-                <Clock className="h-4 w-4 shrink-0 text-cyan-400/80" aria-hidden />
+            <div className="card-elevated-lg space-y-3 p-6">
+              <div className="flex items-center gap-2 text-slate-500">
+                <Clock className="h-4 w-4 shrink-0 text-[#3d6b0f]" aria-hidden />
                 <h2 className="text-xs font-semibold uppercase tracking-wider">Tempo</h2>
               </div>
-              <p className="text-2xl font-bold text-white">{provaTempo.tempoLabel}</p>
+              <p className="text-2xl font-bold text-slate-900">{provaTempo.tempoLabel}</p>
               {provaTempo.metaLabel ? (
-                <p className="text-sm text-slate-400">
+                <p className="text-sm text-slate-600">
                   Meta sugerida:{' '}
-                  <span className="font-medium text-slate-300">{provaTempo.metaLabel}</span>
+                  <span className="font-medium text-slate-800">{provaTempo.metaLabel}</span>
                 </p>
               ) : null}
               <p
@@ -379,9 +379,9 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
               </p>
             </div>
 
-            <div className="glass-panel space-y-3 border border-white/10 p-6">
-              <div className="flex items-center gap-2 text-slate-400">
-                <Target className="h-4 w-4 shrink-0 text-emerald-400/80" aria-hidden />
+            <div className="card-elevated-lg space-y-3 p-6">
+              <div className="flex items-center gap-2 text-slate-500">
+                <Target className="h-4 w-4 shrink-0 text-emerald-600" aria-hidden />
                 <h2 className="text-xs font-semibold uppercase tracking-wider">Desempenho</h2>
               </div>
               <div className="flex items-center gap-4">
@@ -392,7 +392,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
                   variant={ringVariant}
                 />
                 <div>
-                  <p className="text-3xl font-bold text-white">{resumo.percentual_acerto}%</p>
+                  <p className="text-3xl font-bold text-slate-900">{resumo.percentual_acerto}%</p>
                   <p className="text-xs uppercase tracking-wider text-slate-500">de acerto</p>
                 </div>
               </div>
@@ -407,7 +407,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
                 </div>
                 <div>
                   <dt className="text-xs uppercase tracking-wider text-slate-500">Total</dt>
-                  <dd className="text-lg font-bold text-slate-200">{resumo.respondidas}</dd>
+                  <dd className="text-lg font-bold text-slate-800">{resumo.respondidas}</dd>
                 </div>
               </dl>
               {resumo.pendentes > 0 ? (
@@ -416,7 +416,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
             </div>
           </div>
         ) : (
-          <div className="glass-panel flex flex-col items-center gap-8 border border-white/10 p-8 sm:flex-row sm:justify-between">
+          <div className="card-elevated-lg flex flex-col items-center gap-8 p-8 sm:flex-row sm:justify-between">
             <div className="relative flex flex-col items-center">
               <ProgressRing
                 value={resumo.percentual_acerto}
@@ -428,7 +428,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
                 className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center"
                 aria-hidden
               >
-                <span className="text-2xl font-bold text-white">{resumo.percentual_acerto}%</span>
+                <span className="text-2xl font-bold text-slate-900">{resumo.percentual_acerto}%</span>
                 <span className="text-[10px] uppercase tracking-wider text-slate-500">
                   de acerto
                 </span>
@@ -450,15 +450,15 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
                 <p className="text-xs uppercase tracking-wider text-slate-500">Erros</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-slate-200">{resumo.respondidas}</p>
+                <p className="text-2xl font-bold text-slate-800">{resumo.respondidas}</p>
                 <p className="text-xs uppercase tracking-wider text-slate-500">Respondidas</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-cyan-300">{tempoTotalMin}m</p>
+                <p className="text-2xl font-bold text-[#3d6b0f]">{tempoTotalMin}m</p>
                 <p className="text-xs uppercase tracking-wider text-slate-500">Tempo total</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-cyan-300">{tempoMedioSeg}s</p>
+                <p className="text-2xl font-bold text-[#3d6b0f]">{tempoMedioSeg}s</p>
                 <p className="text-xs uppercase tracking-wider text-slate-500">Média/questão</p>
               </div>
               {resumo.pendentes > 0 && (
@@ -481,10 +481,10 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
         {isProva && (evolucaoLoading || evolucao.length > 0) ? (
           <section
             aria-labelledby="simulado-evolucao-titulo"
-            className="glass-panel space-y-4 border border-white/10 p-6"
+            className="card-elevated-lg space-y-4 p-6"
           >
             <div className="flex items-center gap-2">
-              <TrendingUp className="h-4 w-4 shrink-0 text-cyan-400/80" aria-hidden />
+              <TrendingUp className="h-4 w-4 shrink-0 text-[#3d6b0f]" aria-hidden />
               <h2
                 id="simulado-evolucao-titulo"
                 className="text-sm font-semibold uppercase tracking-wider text-slate-400"
@@ -511,15 +511,15 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
                       className={cn(
                         'flex flex-wrap items-center justify-between gap-2 rounded-xl border px-4 py-3 text-sm',
                         isCurrent
-                          ? 'border-cyan-500/30 bg-cyan-500/10'
-                          : 'border-white/10 bg-white/[0.02]',
+                          ? 'border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.08)]'
+                          : 'border-slate-200 bg-white',
                       )}
                     >
                       <div className="min-w-0">
-                        <p className="truncate font-medium text-slate-200">
+                        <p className="truncate font-medium text-slate-800">
                           {item.titulo || tituloExibicao}
                           {isCurrent ? (
-                            <span className="ml-2 text-xs font-normal text-cyan-300">
+                            <span className="ml-2 text-xs font-normal text-[#3d6b0f]">
                               (esta prova)
                             </span>
                           ) : null}
@@ -534,7 +534,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
                         {!isCurrent ? (
                           <Link
                             href={`/simulados/${item.id}`}
-                            className="font-medium text-cyan-400/90 hover:text-cyan-300"
+                            className="link-editorial-secondary font-medium"
                           >
                             Ver
                           </Link>
@@ -578,8 +578,8 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
                 className={cn(
                   'rounded-lg border px-3 py-1.5 text-xs font-semibold',
                   filtro === item.id
-                    ? 'border-cyan-500/40 bg-cyan-500/15 text-cyan-300'
-                    : 'border-white/10 bg-white/[0.03] text-slate-300',
+                    ? 'border-[rgba(143,224,32,0.45)] bg-[rgba(143,224,32,0.12)] text-[#3d6b0f]'
+                    : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300',
                 )}
               >
                 {item.label}
@@ -588,7 +588,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
           </div>
 
           {questoesFiltradas.length === 0 ? (
-            <p className="rounded-2xl border border-white/10 bg-slate-900/60 p-6 text-center text-sm text-slate-400">
+            <p className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center text-sm text-slate-600">
               Nenhuma questão para o filtro selecionado.
             </p>
           ) : (

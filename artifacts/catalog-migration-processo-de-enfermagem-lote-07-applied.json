@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:38:42.498Z",
+  "lote": "processo-de-enfermagem-lote-07",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-2",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+    "decorp-enfermagem-processo-de-enfermagem-1776056158507-1",
+    "decorp-enfermagem-processo-de-enfermagem-1776056158507-2",
+    "educa-pb-enfermagem-processo-de-enfermagem-1776056149404-0",
+    "educa-pb-enfermagem-processo-de-enfermagem-1776056181857-1",
+    "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-4",
+    "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-5",
+    "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-6",
+    "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-7",
+    "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-8",
+    "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-9",
+    "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-0",
+    "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-1",
+    "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-2",
+    "facet-enfermagem-processo-de-enfermagem-1776056129848-8",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009379028-6",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009379028-7",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009379028-8",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009379028-9",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009386446-0",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009386446-1",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009386446-2",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009386446-3",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009386446-4",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009386446-5",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009386446-6",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009386446-7",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009386446-8",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009386446-9",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009392850-0",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009392850-1",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009392850-2",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009392850-3",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009392850-4",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1776056129848-3",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-5",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-6",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-7",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-8",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-9",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-0",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-1",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-2",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-3",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-4",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-5",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-7"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-processo-de-enfermagem-1776056158507-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-processo-de-enfermagem-1776056158507-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1776056149404-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1776056181857-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-processo-de-enfermagem-1776056129848-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009379028-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009379028-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009379028-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009379028-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009392850-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009392850-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009392850-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009392850-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009392850-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1776056129848-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

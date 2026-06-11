@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-06-10T05:51:47.787Z",
+  "lote": "saude-do-idoso-lote-01",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-5",
+      "titulo_aula": "Saúde do Idoso",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1719
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-6",
+      "titulo_aula": "Saúde do Idoso",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1720
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-7",
+      "titulo_aula": "Saúde do Idoso",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1721
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1780067036141-7",
+      "titulo_aula": "Saúde do Idoso",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5179
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-do-idoso-1778934944659-6",
+      "titulo_aula": "Saúde do Idoso",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1797
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-do-idoso-1778934944659-7",
+      "titulo_aula": "Saúde do Idoso",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1798
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-do-idoso-1780001440222-1",
+      "titulo_aula": "Saúde do Idoso",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4125
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-do-idoso-1780001440222-2",
+      "titulo_aula": "Saúde do Idoso",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4126
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-10T05:42:41.260Z",
+  "lote": "exames-laboratoriais-lote-01",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-exames-laboratoriais-1779563613404-2",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3226
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-exames-laboratoriais-1779563631609-4",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3266
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-exames-laboratoriais-1779563631609-2",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3264
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-exames-laboratoriais-1779563631609-3",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3265
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-laboratoriais-1779563549311-5",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3192
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-laboratoriais-1779563549311-6",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3193
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-laboratoriais-1779563553840-0",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3196
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-laboratoriais-1779563559434-2",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3206
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-exames-laboratoriais-1779563650975-2",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 3292
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-exames-laboratoriais-1779563621885-3",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 3246
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-laboratoriais-1779563553840-5",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3201
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-laboratoriais-1779563553840-6",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3202
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-laboratoriais-1779563553840-7",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3203
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-laboratoriais-1779563553840-8",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3204
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-laboratoriais-1779563613404-3",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3227
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-laboratoriais-1779563613404-4",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3228
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-laboratoriais-1779563646977-2",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3283
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-exames-laboratoriais-1779563553840-3",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "DECORP",
+      "avant_codigo": 3199
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-exames-laboratoriais-1779563553840-1",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3197
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-exames-laboratoriais-1779563553840-2",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3198
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-exames-laboratoriais-1779563553840-4",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3200
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-exames-laboratoriais-1779563631609-8",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3270
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-exames-laboratoriais-1779563646977-0",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3281
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-exames-laboratoriais-1779563650975-4",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3294
+    },
+    {
+      "modulo_slug": "fcc-enfermagem-exames-laboratoriais-1779563559434-5",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCC",
+      "avant_codigo": 3209
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-exames-laboratoriais-1779563559434-1",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3205
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-exames-laboratoriais-1779563646977-3",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3284
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-exames-laboratoriais-1779563631609-6",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 3268
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-laboratoriais-1779563549311-7",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 3194
+    },
+    {
+      "modulo_slug": "furb-enfermagem-exames-laboratoriais-1779563621885-1",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 3244
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-exames-laboratoriais-1779563613404-5",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "GUALIMP",
+      "avant_codigo": 3229
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-exames-laboratoriais-1779563621885-6",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "GUALIMP",
+      "avant_codigo": 3249
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-exames-laboratoriais-1779563559434-8",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IAUPE",
+      "avant_codigo": 3212
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-exames-laboratoriais-1779563613404-0",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 3224
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-exames-laboratoriais-1779563621885-8",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 3251
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-exames-laboratoriais-1779563631609-5",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 3267
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-exames-laboratoriais-1779563559434-7",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDCAP",
+      "avant_codigo": 3211
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-laboratoriais-1778712242196-1",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1585
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-laboratoriais-1780066961947-6",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5132
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-exames-laboratoriais-1779563621885-0",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 3243
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-exames-laboratoriais-1779563631609-0",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 3262
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-exames-laboratoriais-1779563559434-9",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INAZ DO PARÁ",
+      "avant_codigo": 3213
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-exames-laboratoriais-1779563559434-3",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 3207
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-exames-laboratoriais-1779563613404-7",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 3231
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-exames-laboratoriais-1779563646977-1",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 3282
+    },
+    {
+      "modulo_slug": "itame-enfermagem-exames-laboratoriais-1779563559434-4",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 3208
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-exames-laboratoriais-1779563559434-6",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 3210
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-exames-laboratoriais-1779563631609-1",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "METROCAPITAL",
+      "avant_codigo": 3263
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563549311-8",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3195
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-1",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3225
+    }
+  ]
+}

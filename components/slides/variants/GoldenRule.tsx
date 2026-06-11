@@ -28,22 +28,22 @@ const BADGE_STYLES: Record<
 > = {
   hot: {
     className:
-      'bg-red-500/20 text-red-200 ring-1 ring-red-500/35 shadow-[0_0_10px_rgba(239,68,68,0.15)]',
+      'bg-red-500/20 text-red-200 ring-1 ring-red-500/30',
     label: 'Alta',
   },
   warn: {
     className:
-      'bg-amber-500/20 text-amber-200 ring-1 ring-amber-500/35 shadow-[0_0_10px_rgba(245,158,11,0.12)]',
+      'bg-amber-500/20 text-amber-200 ring-1 ring-amber-500/30',
     label: 'Pegada',
   },
   ok: {
     className:
-      'bg-emerald-500/15 text-emerald-200 ring-1 ring-emerald-500/30 shadow-[0_0_10px_rgba(34,197,94,0.12)]',
+      'bg-emerald-500/15 text-emerald-200 ring-1 ring-emerald-500/25',
     label: 'Fixar',
   },
   info: {
     className:
-      'bg-blue-500/15 text-blue-200 ring-1 ring-blue-500/30 shadow-[0_0_10px_rgba(59,130,246,0.12)]',
+      'bg-blue-500/15 text-blue-200 ring-1 ring-blue-500/25',
     label: 'Contexto',
   },
 };
@@ -89,17 +89,16 @@ function ReferenceTableLayout({
 
   return (
     <motion.div className="relative flex min-h-full w-full min-w-0 items-start justify-center p-4 md:p-8">
-      <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-90`} />
+      <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-70`} />
       <motion.div
-        className={`relative z-10 w-full min-w-0 max-w-4xl rounded-[1.5rem] border-2 ${theme.borderColor} bg-slate-950/50 p-5 backdrop-blur-md md:rounded-[2rem] md:p-7`}
-        style={{ boxShadow: `0 0 60px -20px ${theme.glow}` }}
+        className={`relative z-10 w-full min-w-0 max-w-4xl rounded-[1.5rem] border-2 ${theme.borderColor} bg-slate-950/80 p-5 md:rounded-[2rem] md:p-7`}
         initial={reduceMotion ? false : { opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, ease: 'easeOut' }}
       >
         <div className="mb-4 flex items-center gap-3 md:mb-6">
           <motion.div
-            className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${theme.iconBg} shadow-[0_0_20px_rgba(251,191,36,0.15)]`}
+            className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${theme.iconBg}`}
           >
             <Table2 className={`h-5 w-5 ${theme.iconText}`} />
           </motion.div>
@@ -215,15 +214,13 @@ export const GoldenRule = ({
   if (variant === 'center') {
     return (
       <div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-3 md:p-8">
-        <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-90`} />
+        <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-70`} />
         <motion.div
-          className={`golden-rule-card relative z-10 w-full min-w-0 max-w-4xl p-6 md:p-8 lg:p-10 rounded-[2rem] md:rounded-[3rem] text-center border-4 ${theme.borderColor} backdrop-blur-sm`}
-          style={{ boxShadow: `0 0 80px -20px ${theme.glow}` }}
+          className={`golden-rule-card relative z-10 w-full min-w-0 max-w-4xl p-6 md:p-8 lg:p-10 rounded-[2rem] md:rounded-[3rem] text-center border-4 ${theme.borderColor} bg-slate-950/85`}
         >
-          <div className="golden-rule-shine pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
           <div className="relative z-10 min-w-0">
-            <Sparkles className={`${theme.iconText} w-8 h-8 md:w-10 md:h-10 mx-auto mb-3 drop-shadow-2xl`} />
-            <h2 className="golden-rule-text font-display text-lg font-extrabold uppercase tracking-tighter leading-tight break-words [overflow-wrap:anywhere] hyphens-none text-white [text-shadow:0_0_40px_rgba(255,255,255,0.15)] md:text-3xl lg:text-4xl xl:text-6xl">
+            <Sparkles className={`${theme.iconText} w-8 h-8 md:w-10 md:h-10 mx-auto mb-3`} />
+            <h2 className="golden-rule-text font-display text-lg font-extrabold uppercase tracking-tighter leading-tight break-words [overflow-wrap:anywhere] hyphens-none text-white md:text-3xl lg:text-4xl xl:text-6xl">
               {content}
             </h2>
             {footerRule ? (
@@ -241,10 +238,9 @@ export const GoldenRule = ({
   if (variant === 'compact') {
     return (
       <motion.div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-4 md:p-6 lg:p-10">
-        <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-70`} />
+        <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
         <motion.div
-          className={`relative z-10 w-full min-w-0 max-w-3xl p-5 md:p-7 rounded-2xl border-2 ${theme.borderColor} backdrop-blur-xl`}
-          style={{ boxShadow: `0 0 40px ${theme.glow}` }}
+          className={`relative z-10 w-full min-w-0 max-w-3xl p-5 md:p-7 rounded-2xl border-2 ${theme.borderColor} bg-slate-950/85`}
         >
           <motion.div className={`w-10 h-10 rounded-xl ${theme.iconBg} flex items-center justify-center ${theme.iconText} mb-3`}>
             <Lightbulb size={20} />
@@ -285,7 +281,7 @@ export const GoldenRule = ({
   if (variant === 'banner') {
     return (
       <motion.div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-3 md:p-6">
-        <motion.div className={`absolute inset-0 bg-gradient-to-r ${theme.primary} opacity-90`} />
+        <motion.div className={`absolute inset-0 bg-gradient-to-r ${theme.primary} opacity-70`} />
         <motion.div className="relative z-10 flex w-full min-w-0 max-w-5xl flex-col items-center gap-4 p-6 md:p-8 rounded-2xl border-2 border-white/20">
           <motion.div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
             <Zap className="w-6 h-6 text-white" />
@@ -306,13 +302,12 @@ export const GoldenRule = ({
   // Fallback: center
   return (
     <motion.div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-stretch justify-start p-3 md:p-8">
-      <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-90`} />
+      <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-70`} />
       <motion.div
-        className={`relative z-10 w-full min-w-0 max-w-4xl p-6 md:p-8 lg:p-10 rounded-[2rem] text-center border-4 ${theme.borderColor} backdrop-blur-sm`}
-        style={{ boxShadow: `0 0 80px -20px ${theme.glow}` }}
+        className={`relative z-10 w-full min-w-0 max-w-4xl p-6 md:p-8 lg:p-10 rounded-[2rem] text-center border-4 ${theme.borderColor} bg-slate-950/85`}
       >
         <Sparkles className={`${theme.iconText} w-8 h-8 md:w-10 md:h-10 mx-auto mb-3`} />
-        <h2 className="font-display text-lg font-extrabold uppercase tracking-tighter leading-tight break-words [overflow-wrap:anywhere] hyphens-none text-white [text-shadow:0_0_40px_rgba(255,255,255,0.15)] md:text-3xl">
+        <h2 className="font-display text-lg font-extrabold uppercase tracking-tighter leading-tight break-words [overflow-wrap:anywhere] hyphens-none text-white md:text-3xl">
           {content}
         </h2>
         {footerRule ? (

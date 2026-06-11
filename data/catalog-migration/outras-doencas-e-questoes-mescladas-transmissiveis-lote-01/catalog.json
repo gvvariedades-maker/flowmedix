@@ -1,0 +1,119 @@
+{
+  "exported_at": "2026-06-10T05:24:23.777Z",
+  "lote": "outras-doencas-e-questoes-mescladas-transmissiveis-lote-01",
+  "total": 16,
+  "entries": [
+    {
+      "modulo_slug": "apice-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103554284-2",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Geral",
+      "banca": "ÁPICE",
+      "avant_codigo": 949
+    },
+    {
+      "modulo_slug": "cev-urca-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103604185-7",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Geral",
+      "banca": "CEV URCA",
+      "avant_codigo": 997
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103583552-0",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Geral",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 967
+    },
+    {
+      "modulo_slug": "cotec-fadenor-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103502990-6",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Geral",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 925
+    },
+    {
+      "modulo_slug": "fcm-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103604185-6",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Geral",
+      "banca": "FCM",
+      "avant_codigo": 996
+    },
+    {
+      "modulo_slug": "fepese-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776578199777-0",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Geral",
+      "banca": "FEPESE",
+      "avant_codigo": 634
+    },
+    {
+      "modulo_slug": "funcern-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581011815-0",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Geral",
+      "banca": "FUNCERN",
+      "avant_codigo": 639
+    },
+    {
+      "modulo_slug": "fundatec-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776580999967-0",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Geral",
+      "banca": "FUNDATEC",
+      "avant_codigo": 638
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778712315153-2",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1643
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778712315153-3",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1644
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1780066992037-7",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5148
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778934918280-0",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1762
+    },
+    {
+      "modulo_slug": "igeduc-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103471372-5",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Geral",
+      "banca": "IGEDUC",
+      "avant_codigo": 891
+    },
+    {
+      "modulo_slug": "instituto-verbena-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103583552-8",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Geral",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 975
+    },
+    {
+      "modulo_slug": "selecon-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581030438-0",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Geral",
+      "banca": "SELECON",
+      "avant_codigo": 640
+    },
+    {
+      "modulo_slug": "vunesp-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1779564125198-1",
+      "titulo_aula": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "modulo_nome": "Geral",
+      "banca": "VUNESP",
+      "avant_codigo": 3891
+    }
+  ]
+}

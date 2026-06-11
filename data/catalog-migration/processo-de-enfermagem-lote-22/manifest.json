@@ -1,0 +1,27 @@
+{
+  "lote": "processo-de-enfermagem-lote-22",
+  "exported_at": "2026-06-09T10:47:51.898Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Processo de Enfermagem",
+    "limit": 50,
+    "exclude_count": 1069
+  },
+  "slugs": [
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-8",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-9",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-0",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-1",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-2",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-3",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-4",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-5",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-6",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-2",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-3",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-4",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-5",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-6",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-7"
+  ]
+}

@@ -43,36 +43,36 @@ export function AssinaturaClient({
   const showUpgrade = !isPro || proSource === 'invite';
 
   return (
-    <div className={cn('mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12', pageBottomPadding)}>
+    <div className={cn('mx-auto max-w-2xl bg-background px-4 py-8 sm:px-6 sm:py-12', pageBottomPadding)}>
       <div className="mb-8">
-        <p className="mb-2 text-[10px] font-black uppercase tracking-[0.35em] text-cyan-300">
+        <p className="mb-2 text-[10px] font-black uppercase tracking-[0.35em] text-[#3d6b0f]">
           Minha conta
         </p>
-        <h1 className="text-2xl font-[1000] tracking-tight text-white sm:text-3xl">
+        <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
           Assinatura AVANT Pro
         </h1>
-        <p className="mt-3 text-sm font-medium leading-relaxed text-slate-400 sm:text-base">
+        <p className="mt-3 text-sm font-medium leading-relaxed text-slate-600 sm:text-base">
           Gerencie seu plano, forma de pagamento ou cancelamento. Você continua com acesso até o fim
           do período já pago.
         </p>
       </div>
 
-      <div className="rounded-[2rem] border border-white/10 bg-slate-900/60 p-6 sm:p-8">
+      <div className="card-elevated-lg p-6 sm:p-8">
         <div className="mb-6 flex items-start justify-between gap-4">
           <div>
             <div
-              className={`mb-3 inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 ring-1 backdrop-blur-sm ${
-                isPro ? 'bg-[#BEF264]/15 ring-[#BEF264]/30' : 'bg-white/8 ring-white/10'
+              className={`mb-3 inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 ring-1 ${
+                isPro ? 'bg-[rgba(143,224,32,0.12)] ring-[rgba(143,224,32,0.35)]' : 'bg-slate-100 ring-slate-200'
               }`}
             >
               {isPro ? (
-                <Zap size={12} className="shrink-0 text-[#BEF264]" fill="currentColor" aria-hidden />
+                <Zap size={12} className="shrink-0 text-[#3d6b0f]" fill="currentColor" aria-hidden />
               ) : (
-                <Sparkles size={12} className="shrink-0 text-slate-400" aria-hidden />
+                <Sparkles size={12} className="shrink-0 text-slate-500" aria-hidden />
               )}
               <span
                 className={`text-[10px] font-black uppercase tracking-[0.15em] ${
-                  isPro ? 'text-[#BEF264]' : 'text-slate-400'
+                  isPro ? 'text-[#3d6b0f]' : 'text-slate-500'
                 }`}
               >
                 {isAdmin && isPro
@@ -84,36 +84,36 @@ export function AssinaturaClient({
             </div>
 
             {isAdmin && isPro ? (
-              <p className="text-sm font-medium text-slate-300">
+              <p className="text-sm font-medium text-slate-700">
                 Sua conta tem acesso administrativo ilimitado.
               </p>
             ) : showStripeManage ? (
-              <p className="text-sm font-medium text-slate-300">
+              <p className="text-sm font-medium text-slate-700">
                 Assinatura ativa via Stripe · R$ 14,90/mês · cancelável a qualquer momento.
               </p>
             ) : showInviteInfo ? (
-              <p className="text-sm font-medium text-slate-300">
+              <p className="text-sm font-medium text-slate-700">
                 Pro temporário por convite
                 {expiryLabel ? (
                   <>
                     {' '}
-                    · válido até <strong className="text-white">{expiryLabel}</strong>
+                    · válido até <strong className="text-slate-900">{expiryLabel}</strong>
                   </>
                 ) : null}
                 .
               </p>
             ) : (
-              <p className="text-sm font-medium text-slate-300">
+              <p className="text-sm font-medium text-slate-700">
                 {FREEMIUM_PLAN_LIMITS_DESCRIPTION} · sem cartão. Assine o Pro para estudar sem limite.
               </p>
             )}
           </div>
-          <CreditCard size={28} className="shrink-0 text-slate-600" aria-hidden />
+          <CreditCard size={28} className="shrink-0 text-slate-400" aria-hidden />
         </div>
 
         {showStripeManage ? (
           <div className="space-y-4">
-            <p className="text-sm leading-relaxed text-slate-400">
+            <p className="text-sm leading-relaxed text-slate-600">
               No portal seguro do Stripe você pode cancelar a assinatura, atualizar o cartão ou ver
               faturas. O cancelamento mantém o acesso até o fim do ciclo já pago.
             </p>
@@ -121,7 +121,7 @@ export function AssinaturaClient({
               type="button"
               onClick={() => void openBillingPortal()}
               disabled={portalLoading}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-bold text-white transition-colors hover:bg-white/10 disabled:opacity-60 sm:w-auto"
+              className="btn-editorial-outline inline-flex w-full items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold disabled:opacity-60 sm:w-auto"
             >
               {portalLoading ? (
                 <>
@@ -136,7 +136,7 @@ export function AssinaturaClient({
               )}
             </button>
             {portalError ? (
-              <p className="text-sm font-medium text-rose-300" role="alert">
+              <p className="text-sm font-medium text-rose-600" role="alert">
                 {portalError}
               </p>
             ) : null}
@@ -144,8 +144,8 @@ export function AssinaturaClient({
         ) : null}
 
         {showUpgrade && !isAdmin ? (
-          <div className={showStripeManage ? 'mt-8 border-t border-white/10 pt-8' : ''}>
-            <p className="mb-4 text-sm leading-relaxed text-slate-400">
+          <div className={showStripeManage ? 'mt-8 border-t border-slate-200 pt-8' : ''}>
+            <p className="mb-4 text-sm leading-relaxed text-slate-600">
               {showInviteInfo
                 ? 'Quando o Pro por convite terminar, assine para continuar sem limite.'
                 : 'Estude sem limite com questões reais e NeuroSlides após cada questão.'}
@@ -154,7 +154,7 @@ export function AssinaturaClient({
               type="button"
               onClick={() => void handleCheckout()}
               disabled={checkoutLoading}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#BEF264] px-6 py-3.5 text-sm font-black uppercase tracking-wider text-slate-950 transition-all hover:bg-[#d4f879] disabled:opacity-60 sm:w-auto"
+              className="btn-editorial-primary inline-flex w-full items-center justify-center gap-2 px-6 py-3.5 text-sm font-black uppercase tracking-wider disabled:opacity-60 sm:w-auto"
             >
               {checkoutLoading ? (
                 <>
@@ -169,14 +169,13 @@ export function AssinaturaClient({
               )}
             </button>
             {checkoutError ? (
-              <p className="mt-3 text-sm font-medium text-rose-300" role="alert">
+              <p className="mt-3 text-sm font-medium text-rose-600" role="alert">
                 {checkoutError}
               </p>
             ) : null}
           </div>
         ) : null}
       </div>
-
     </div>
   );
 }

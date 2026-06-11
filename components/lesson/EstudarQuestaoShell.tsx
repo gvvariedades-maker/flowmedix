@@ -50,7 +50,7 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
     <DashboardMobilePage
       variant="default"
       className={cn(
-        'relative flex min-h-0 w-full flex-1 flex-col bg-[#010409] font-sans',
+        'relative flex min-h-0 w-full flex-1 flex-col bg-background font-sans',
         fillViewport
           ? 'h-full px-0 py-0'
           : 'px-3 py-3 sm:px-4 md:px-6 md:py-6 md:pb-6',
@@ -100,9 +100,9 @@ export default function EstudarQuestaoShell({ children, modal = null }: EstudarQ
               <div
                 role="status"
                 aria-label="Carregando questão"
-                className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-[#010409]/30 backdrop-blur-[1px]"
+                className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-background/40 backdrop-blur-[1px]"
               >
-                <Loader2 className="h-8 w-8 animate-spin text-cyan-400" aria-hidden />
+                <Loader2 className="h-8 w-8 animate-spin text-[#3d6b0f]" aria-hidden />
               </div>
             ) : null}
           </div>

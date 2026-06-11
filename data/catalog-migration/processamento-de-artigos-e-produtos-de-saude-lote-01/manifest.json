@@ -1,0 +1,15 @@
+{
+  "lote": "processamento-de-artigos-e-produtos-de-saude-lote-01",
+  "exported_at": "2026-06-10T04:59:33.685Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Processamento de Artigos e Produtos de Saúde",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-5",
+    "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-6",
+    "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-7"
+  ]
+}

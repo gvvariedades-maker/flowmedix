@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:51:23.024Z",
+  "lote": "verificacao-de-sinais-vitais-lote-06",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779344127707-1",
+    "instituto-aocp-enfermagem-verificacao-de-sinais-vitais-1779343789998-4",
+    "instituto-aocp-enfermagem-verificacao-de-sinais-vitais-1779344189558-6",
+    "instituto-consulpam-enfermagem-verificacao-de-sinais-vitais-1779343865210-1",
+    "instituto-consulpam-enfermagem-verificacao-de-sinais-vitais-1779344127707-6",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779343856589-5",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779343897104-7",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779343956155-1",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779343956155-2",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344089179-2",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344089179-3",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344089179-4",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344089179-8",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344105099-1",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344105099-2",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344122526-0",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344122526-2",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344122526-3",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344137078-6",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344137078-7",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344137078-8",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344152370-0",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344152370-1",
+    "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344224014-7",
+    "instituto-evo-enfermagem-verificacao-de-sinais-vitais-1778969737311-4",
+    "instituto-evo-enfermagem-verificacao-de-sinais-vitais-1778969737311-5",
+    "instituto-evo-enfermagem-verificacao-de-sinais-vitais-1778969737311-6",
+    "instituto-jk-enfermagem-verificacao-de-sinais-vitais-1779343822075-8",
+    "instituto-seletiva-enfermagem-verificacao-de-sinais-vitais-1779343865210-0",
+    "instituto-verbena-enfermagem-verificacao-de-sinais-vitais-1779344178184-3",
+    "intec-enfermagem-verificacao-de-sinais-vitais-1779344105099-5",
+    "integri-brasil-enfermagem-verificacao-de-sinais-vitais-1779344189558-5",
+    "isba-enfermagem-verificacao-de-sinais-vitais-1779344253939-2",
+    "itame-enfermagem-verificacao-de-sinais-vitais-1779343822075-6",
+    "ivin-enfermagem-verificacao-de-sinais-vitais-1779343822075-3",
+    "ivin-enfermagem-verificacao-de-sinais-vitais-1779343919045-1",
+    "ivin-enfermagem-verificacao-de-sinais-vitais-1779343919045-7",
+    "ivin-enfermagem-verificacao-de-sinais-vitais-1779344105099-7",
+    "lj-assessoria-enfermagem-verificacao-de-sinais-vitais-1779344189558-4",
+    "maranatha-assessoria-enfermagem-verificacao-de-sinais-vitais-1778969752567-0",
+    "metrocapital-enfermagem-verificacao-de-sinais-vitais-1779344122526-7",
+    "metrocapital-enfermagem-verificacao-de-sinais-vitais-1779344127707-0",
+    "nao-informado-geral-verificacao-de-sinais-vitais-1779344089179-0",
+    "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1778969737311-3",
+    "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779343801786-0",
+    "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779343883917-5",
+    "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779344105099-4",
+    "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779344122526-1",
+    "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779344158323-3",
+    "omni-enfermagem-verificacao-de-sinais-vitais-1779344237445-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779344127707-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-verificacao-de-sinais-vitais-1779343789998-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-verificacao-de-sinais-vitais-1779344189558-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-verificacao-de-sinais-vitais-1779343865210-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-verificacao-de-sinais-vitais-1779344127707-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779343856589-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779343897104-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779343956155-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779343956155-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344089179-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344089179-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344089179-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344089179-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344105099-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344105099-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344122526-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344122526-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344122526-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344137078-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344137078-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344137078-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344152370-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344152370-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-verificacao-de-sinais-vitais-1779344224014-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-verificacao-de-sinais-vitais-1778969737311-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-verificacao-de-sinais-vitais-1778969737311-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-verificacao-de-sinais-vitais-1778969737311-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-verificacao-de-sinais-vitais-1779343822075-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-seletiva-enfermagem-verificacao-de-sinais-vitais-1779343865210-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-verificacao-de-sinais-vitais-1779344178184-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "intec-enfermagem-verificacao-de-sinais-vitais-1779344105099-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "integri-brasil-enfermagem-verificacao-de-sinais-vitais-1779344189558-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "isba-enfermagem-verificacao-de-sinais-vitais-1779344253939-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-verificacao-de-sinais-vitais-1779343822075-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-verificacao-de-sinais-vitais-1779343822075-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-verificacao-de-sinais-vitais-1779343919045-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-verificacao-de-sinais-vitais-1779343919045-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-verificacao-de-sinais-vitais-1779344105099-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-verificacao-de-sinais-vitais-1779344189558-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-verificacao-de-sinais-vitais-1778969752567-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-verificacao-de-sinais-vitais-1779344122526-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-verificacao-de-sinais-vitais-1779344127707-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-verificacao-de-sinais-vitais-1779344089179-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1778969737311-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779343801786-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779343883917-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779344105099-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779344122526-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-verificacao-de-sinais-vitais-1779344158323-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-verificacao-de-sinais-vitais-1779344237445-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

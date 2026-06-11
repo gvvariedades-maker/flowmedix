@@ -7,20 +7,13 @@ import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import type { DiaEstudo, Periodo } from './types';
 
-/**
- * Escala de intensidade cyan conforme design system AVANT.
- * 0 questões → surface-3 (#111827)
- * 1–3        → rgba(0, 242, 255, 0.15)
- * 4–7        → rgba(0, 242, 255, 0.35)
- * 8–12       → rgba(0, 242, 255, 0.60)
- * 13+        → rgba(0, 242, 255, 0.90)
- */
+/** Escala de intensidade brand green — tema editorial */
 const INTENSITY_COLORS = [
-  '#111827',                      // 0 — surface-3
-  'rgba(0, 242, 255, 0.15)',      // 1–3
-  'rgba(0, 242, 255, 0.35)',      // 4–7
-  'rgba(0, 242, 255, 0.60)',      // 8–12
-  'rgba(0, 242, 255, 0.90)',      // 13+
+  '#e2e8f0',
+  'rgba(143, 224, 32, 0.28)',
+  'rgba(143, 224, 32, 0.48)',
+  'rgba(143, 224, 32, 0.68)',
+  '#8fe020',
 ] as const;
 
 function intensityLevel(count: number): number {
@@ -67,21 +60,21 @@ function HeatmapGrid({ serie, periodo }: { serie: DiaEstudo[]; periodo: Periodo 
                 title={tooltip}
                 style={{ backgroundColor: bgColor }}
                 className={cn(
-                  'aspect-square w-full min-h-[1.25rem] max-h-10 rounded-[2px] transition-opacity duration-150 sm:min-h-[1.5rem] sm:max-h-14',
-                  'hover:opacity-75 cursor-default',
-                  isToday && 'ring-2 ring-[#00f2ff] ring-offset-1 ring-offset-[#0d1117]',
+                  'aspect-square w-full min-h-[1.25rem] max-h-10 cursor-default rounded-[2px] transition-opacity duration-150 sm:min-h-[1.5rem] sm:max-h-14',
+                  'hover:opacity-75',
+                  isToday && 'ring-2 ring-[#8fe020] ring-offset-1 ring-offset-background',
                 )}
               />
               <div className="w-full text-center">
-                <p className="text-[9px] font-semibold leading-tight text-[#8b949e] sm:text-[11px]">
+                <p className="text-[9px] font-semibold leading-tight text-slate-600 sm:text-[11px]">
                   <span className="tabular-nums">{diaStr}</span>{' '}
-                  <span className="text-[#484f58]">{mesStr}</span>
+                  <span className="text-slate-400">{mesStr}</span>
                 </p>
-                <p className="mt-0.5 text-[9px] font-bold tabular-nums text-[#8b949e] sm:text-[11px]">
+                <p className="mt-0.5 text-[9px] font-bold tabular-nums text-slate-600 sm:text-[11px]">
                   <span className="sm:hidden">{dia.count} q.</span>
                   <span className="hidden sm:inline">
                     {dia.count}{' '}
-                    <span className="font-medium text-[#484f58]">
+                    <span className="font-medium text-slate-400">
                       {dia.count === 1 ? 'questão' : 'questões'}
                     </span>
                   </span>
@@ -108,9 +101,9 @@ export function ContributionHeatmap({ serie, periodo, onPeriodoChange, totalPeri
     <div className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2">
-          <BarChart3 className="h-4 w-4 shrink-0 text-[#67e8f9]" aria-hidden />
-          <span className="text-sm font-semibold text-[#e6edf3]">Atividade</span>
-          <span className="text-xs text-[#8b949e]">
+          <BarChart3 className="h-4 w-4 shrink-0 text-[#3d6b0f]" aria-hidden />
+          <span className="text-sm font-semibold text-slate-900">Atividade</span>
+          <span className="text-xs text-slate-500">
             {totalPeriodo} questões nos últimos {periodo} dias
           </span>
         </div>
@@ -128,21 +121,21 @@ export function ContributionHeatmap({ serie, periodo, onPeriodoChange, totalPeri
         </TabsList>
         <TabsContent value="7" className="mt-4">
           {semDados ? (
-            <p className="py-8 text-center text-sm text-[#8b949e]">Nenhuma questão estudada ainda.</p>
+            <p className="py-8 text-center text-sm text-slate-500">Nenhuma questão estudada ainda.</p>
           ) : (
             <HeatmapGrid serie={serie} periodo={7} />
           )}
         </TabsContent>
         <TabsContent value="15" className="mt-4">
           {semDados ? (
-            <p className="py-8 text-center text-sm text-[#8b949e]">Nenhuma questão estudada ainda.</p>
+            <p className="py-8 text-center text-sm text-slate-500">Nenhuma questão estudada ainda.</p>
           ) : (
             <HeatmapGrid serie={serie} periodo={15} />
           )}
         </TabsContent>
         <TabsContent value="30" className="mt-4">
           {semDados ? (
-            <p className="py-8 text-center text-sm text-[#8b949e]">Nenhuma questão estudada ainda.</p>
+            <p className="py-8 text-center text-sm text-slate-500">Nenhuma questão estudada ainda.</p>
           ) : (
             <HeatmapGrid serie={serie} periodo={30} />
           )}
@@ -150,9 +143,9 @@ export function ContributionHeatmap({ serie, periodo, onPeriodoChange, totalPeri
       </Tabs>
 
       {!semDados && (
-        <div className="space-y-2 border-t border-white/[0.08] pt-4">
-          <p className="text-[10px] font-medium uppercase tracking-wide text-[#484f58]">Legenda</p>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] font-medium text-[#8b949e]">
+        <div className="space-y-2 border-t border-slate-200 pt-4">
+          <p className="text-[10px] font-medium uppercase tracking-wide text-slate-500">Legenda</p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[10px] font-medium text-slate-600">
             <span className="flex items-center gap-2">
               <span className="h-3.5 w-3.5 shrink-0 rounded-[2px]" style={{ backgroundColor: INTENSITY_COLORS[0] }} />
               <span>Sem atividade</span>
@@ -176,7 +169,7 @@ export function ContributionHeatmap({ serie, periodo, onPeriodoChange, totalPeri
             <span className="flex items-center gap-2">
               <span
                 className="inline-flex h-3.5 w-3.5 shrink-0 rounded-[2px]"
-                style={{ outline: '2px solid #00f2ff', outlineOffset: '1px', backgroundColor: INTENSITY_COLORS[0] }}
+                style={{ outline: '2px solid #8fe020', outlineOffset: '1px', backgroundColor: INTENSITY_COLORS[0] }}
               />
               <span>Hoje</span>
             </span>

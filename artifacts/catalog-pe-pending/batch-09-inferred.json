@@ -1,0 +1,76 @@
+{
+  "batch": "09",
+  "bucket": "Processo de Enfermagem",
+  "inferences": [
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-4",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Identifica febre como elevação sustentada da temperatura corporal, conteúdo central de aferição e interpretação de sinais vitais."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-3",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Balanço hídrico e observação de aceitação alimentar são cuidados gerais de monitorização, sem foco em SAE ou diagnósticos NANDA."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-5",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Registro adequado do cuidado executado é exigência de continuidade assistencial e segurança, não etapa SAE/NANDA."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-7",
+      "suggested_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Reconhecimento clínico de meningite (febre, rigidez de nuca, fotofobia) cobra doença infecciosa bacteriana aguda."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1776056021381-0",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.90,
+      "keep_current": true,
+      "rationale": "Regras de anotação de enfermagem, registro de diagnósticos de enfermagem e evolução são núcleo do SAE e do PE."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Condutas no atendimento à convulsão (posicionamento, proteção de vias aéreas) são cuidados de emergência neurológica."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Ações protetoras e de mitigação em exposição nuclear ou radiológica integram resposta a emergências de grande escala."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-5",
+      "suggested_subtopico": "Enfermagem do Trabalho",
+      "confidence": 0.98,
+      "keep_current": false,
+      "rationale": "Etiologia e classificação de dermatoses ocupacionais por agentes do ambiente de trabalho é saúde ocupacional."
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-3",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Responsabilidade legal da anotação conforme COFEN é norma de documentação e segurança, não diagnóstico NANDA."
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-5",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.85,
+      "keep_current": true,
+      "rationale": "Tipos e finalidades das anotações de enfermagem integram o sistema de registro das etapas do processo de enfermagem."
+    }
+  ]
+}

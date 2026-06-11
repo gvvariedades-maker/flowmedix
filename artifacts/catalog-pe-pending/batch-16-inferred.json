@@ -1,0 +1,76 @@
+{
+  "batch": "16",
+  "bucket": "Processo de Enfermagem",
+  "inferences": [
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-9",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Prevenção de quedas em idoso hospitalizado integra protocolos de segurança do paciente, não medida isolada suficiente."
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-1",
+      "suggested_subtopico": "Saúde Mental",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Abordagem calma e comunicação verbal para de-escalada em surto psicótico são boas práticas de cuidado em saúde mental."
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-5",
+      "suggested_subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Febre baixa nas primeiras 48 horas do pós-operatório imediato é achado esperado, não complicação infecciosa grave por si só."
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-6",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Filosofia dos cuidados paliativos foca qualidade de vida, prevenção e alívio do sofrimento em doenças ameaçadoras à vida."
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-7",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Atribuições do técnico na ESF incluem visitas domiciliares e ações no território, não se restringem à unidade básica."
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-8",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Técnica de homogeneização suave do tubo EDTA na coleta para hemograma é procedimento de exames laboratoriais."
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-9",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Inspeção diária dos pés do diabético visa prevenir complicações como pé diabético, núcleo de manejo de DCNT."
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Vítima de acidente com dor cervical exige imobilização e primeiros socorros, não levantar e caminhar até o socorro."
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-1",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Rolamento em bloco para transporte com suspeita de lesão medular é técnica de mobilização segura do paciente."
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-2",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "Registro de enfermagem como documento legal exige correção sem corretivo, com risco e rubrica, parte da documentação do PE."
+    }
+  ]
+}

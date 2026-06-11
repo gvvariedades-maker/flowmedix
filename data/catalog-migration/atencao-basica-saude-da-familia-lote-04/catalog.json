@@ -1,0 +1,49 @@
+{
+  "exported_at": "2026-06-10T04:14:52.721Z",
+  "lote": "atencao-basica-saude-da-familia-lote-04",
+  "total": 6,
+  "entries": [
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968125784-1",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1887
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968180610-7",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1919
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968221218-3",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1941
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968323839-4",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1967
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-0",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1969
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-4",
+      "titulo_aula": "Atenção Básica / Saúde da Família",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1973
+    }
+  ]
+}

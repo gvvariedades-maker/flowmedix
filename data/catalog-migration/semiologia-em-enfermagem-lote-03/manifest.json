@@ -1,0 +1,35 @@
+{
+  "lote": "semiologia-em-enfermagem-lote-03",
+  "exported_at": "2026-06-10T05:39:05.373Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Semiologia em Enfermagem",
+    "limit": 50,
+    "exclude_count": 100
+  },
+  "slugs": [
+    "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-7",
+    "sc-treinamentos-enfermagem-semiologia-em-enfermagem-1779563549311-4",
+    "selecon-enfermagem-semiologia-em-enfermagem-1779563467322-6",
+    "selecon-enfermagem-semiologia-em-enfermagem-1779563486900-0",
+    "selecon-enfermagem-semiologia-em-enfermagem-1779563500147-1",
+    "selecon-enfermagem-semiologia-em-enfermagem-1779563505333-2",
+    "selecon-enfermagem-semiologia-em-enfermagem-1779563512485-1",
+    "selecon-enfermagem-semiologia-em-enfermagem-1779563512485-2",
+    "selecon-enfermagem-semiologia-em-enfermagem-1779563521756-4",
+    "selecon-enfermagem-semiologia-em-enfermagem-1779563537258-1",
+    "selecon-enfermagem-semiologia-em-enfermagem-1779563537258-5",
+    "selecon-enfermagem-semiologia-em-enfermagem-1779563537258-6",
+    "unesc-enfermagem-semiologia-em-enfermagem-1779563467322-5",
+    "unesc-enfermagem-semiologia-em-enfermagem-1779563486900-1",
+    "unesc-enfermagem-semiologia-em-enfermagem-1779563486900-4",
+    "unesc-enfermagem-semiologia-em-enfermagem-1779563549311-0",
+    "vunesp-enfermagem-semiologia-em-enfermagem-1779563467322-8",
+    "vunesp-enfermagem-semiologia-em-enfermagem-1779563491765-2",
+    "vunesp-enfermagem-semiologia-em-enfermagem-1779563491765-3",
+    "vunesp-enfermagem-semiologia-em-enfermagem-1779563491765-7",
+    "vunesp-enfermagem-semiologia-em-enfermagem-1779563495719-2",
+    "vunesp-enfermagem-semiologia-em-enfermagem-1779563527042-7",
+    "vunesp-enfermagem-semiologia-em-enfermagem-1779563531989-0"
+  ]
+}

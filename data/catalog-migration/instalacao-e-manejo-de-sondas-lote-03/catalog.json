@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-10T03:53:59.222Z",
+  "lote": "instalacao-e-manejo-de-sondas-lote-03",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "ieses-enfermagem-instalacao-e-manejo-de-sondas-1777102719125-0",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IESES",
+      "avant_codigo": 650
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-instalacao-e-manejo-de-sondas-1776056493133-1",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 457
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-instalacao-e-manejo-de-sondas-1776056633262-5",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 581
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-instalacao-e-manejo-de-sondas-1776056654316-4",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 596
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-instalacao-e-manejo-de-sondas-1776056654316-9",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 601
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-1",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INAZ DO PARÁ",
+      "avant_codigo": 558
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-instalacao-e-manejo-de-sondas-1776056493133-3",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 459
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-instalacao-e-manejo-de-sondas-1776056493133-4",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 460
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-instalacao-e-manejo-de-sondas-1776056518229-8",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 482
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-instalacao-e-manejo-de-sondas-1776056518229-1",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 475
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-instalacao-e-manejo-de-sondas-1776056518229-2",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 476
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-instalacao-e-manejo-de-sondas-1776056668359-5",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO DARWIN",
+      "avant_codigo": 607
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-instalacao-e-manejo-de-sondas-1776056668359-6",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO DARWIN",
+      "avant_codigo": 608
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-instalacao-e-manejo-de-sondas-1776056668359-7",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO DARWIN",
+      "avant_codigo": 609
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-instalacao-e-manejo-de-sondas-1776056526805-0",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO EVO",
+      "avant_codigo": 484
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-4",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IACP",
+      "avant_codigo": 561
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-instalacao-e-manejo-de-sondas-1776056535563-8",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 502
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-instalacao-e-manejo-de-sondas-1776056591416-7",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 545
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-instalacao-e-manejo-de-sondas-1776056591416-8",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 546
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-instalacao-e-manejo-de-sondas-1776056654316-5",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 597
+    },
+    {
+      "modulo_slug": "isba-enfermagem-instalacao-e-manejo-de-sondas-1776056668359-9",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "ISBA",
+      "avant_codigo": 611
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-instalacao-e-manejo-de-sondas-1776056502149-1",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 466
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-instalacao-e-manejo-de-sondas-1776056502149-2",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 467
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-instalacao-e-manejo-de-sondas-1776056526805-7",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 491
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-instalacao-e-manejo-de-sondas-1776056526805-8",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 492
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-instalacao-e-manejo-de-sondas-1776056526805-1",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "MARANATHA ASSESSORIA",
+      "avant_codigo": 485
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-instalacao-e-manejo-de-sondas-1776056518229-4",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "METROCAPITAL",
+      "avant_codigo": 478
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-instalacao-e-manejo-de-sondas-1776056518229-5",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "METROCAPITAL",
+      "avant_codigo": 479
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-instalacao-e-manejo-de-sondas-1776056544832-2",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 505
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-instalacao-e-manejo-de-sondas-1776056544832-7",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 510
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-instalacao-e-manejo-de-sondas-1776056561649-8",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 529
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-instalacao-e-manejo-de-sondas-1776056544832-5",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "NC UFPR (FUNPAR)",
+      "avant_codigo": 508
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-instalacao-e-manejo-de-sondas-1776056535563-2",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 496
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-instalacao-e-manejo-de-sondas-1776056561649-7",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 528
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-instalacao-e-manejo-de-sondas-1776056578580-0",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 530
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-instalacao-e-manejo-de-sondas-1776056668359-8",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 610
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-5",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2688
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-instalacao-e-manejo-de-sondas-1776056553269-3",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 516
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-6",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 563
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-1",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 2684
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-instalacao-e-manejo-de-sondas-1780000468214-7",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 4062
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-instalacao-e-manejo-de-sondas-1776056493133-5",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 461
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-instalacao-e-manejo-de-sondas-1776056502149-3",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 468
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-instalacao-e-manejo-de-sondas-1776056502149-4",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 469
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-instalacao-e-manejo-de-sondas-1776056502149-5",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 470
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-instalacao-e-manejo-de-sondas-1776056553269-1",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 514
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-instalacao-e-manejo-de-sondas-1776056654316-8",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 600
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-instalacao-e-manejo-de-sondas-1776056544832-1",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UFMT",
+      "avant_codigo": 504
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-2",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 2685
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-instalacao-e-manejo-de-sondas-1780000468214-8",
+      "titulo_aula": "Instalação e Manejo de Sondas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4063
+    }
+  ]
+}

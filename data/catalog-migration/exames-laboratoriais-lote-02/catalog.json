@@ -1,0 +1,126 @@
+{
+  "exported_at": "2026-06-10T05:43:25.102Z",
+  "lote": "exames-laboratoriais-lote-02",
+  "total": 17,
+  "entries": [
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-8",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3232
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563621885-7",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3250
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563631609-7",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3269
+    },
+    {
+      "modulo_slug": "omni-enfermagem-exames-laboratoriais-1779563646977-5",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 3286
+    },
+    {
+      "modulo_slug": "omni-enfermagem-exames-laboratoriais-1779563650975-5",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 3295
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-exames-laboratoriais-1779563613404-6",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 3230
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-exames-laboratoriais-1779563621885-4",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 3247
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-exames-laboratoriais-1779563621885-5",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 3248
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563613404-9",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3233
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563646977-4",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3285
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563646977-6",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3287
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563646977-7",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3288
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563646977-8",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3289
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563650975-0",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3290
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563650975-1",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 3291
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-laboratoriais-1779563621885-2",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3245
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-laboratoriais-1779563650975-3",
+      "titulo_aula": "Exames Laboratoriais",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 3293
+    }
+  ]
+}

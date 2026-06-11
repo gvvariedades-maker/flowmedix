@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-06-10T05:56:46.993Z",
+  "catalog_total": 5180,
+  "exclude_files": 66,
+  "exclude_slugs_unique": 5179,
+  "subtopicos_distinct": 68,
+  "subtopicos_fully_migrated": 67,
+  "subtopicos_with_pending": 1,
+  "pending_slugs_total": 1,
+  "pending_by_subtopico": [
+    {
+      "subtopico": "Noções de Fisiologia",
+      "total": 111,
+      "migrated": 110,
+      "pending": 1,
+      "pct": 99.1,
+      "canonical": true,
+      "pending_sample": [
+        "educa-pb-enfermagem-nocoes-de-fisiologia-1775501938701-2"
+      ]
+    }
+  ],
+  "canonical_41_pending": [
+    {
+      "subtopico": "Noções de Fisiologia",
+      "total": 111,
+      "migrated": 110,
+      "pending": 1,
+      "pct": 99.1,
+      "canonical": true,
+      "pending_sample": [
+        "educa-pb-enfermagem-nocoes-de-fisiologia-1775501938701-2"
+      ]
+    }
+  ]
+}

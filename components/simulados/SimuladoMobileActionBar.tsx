@@ -12,13 +12,9 @@ export type SimuladoMobileActionBarProps = {
 };
 
 const MOBILE_ACTION_BAR_SHELL = cn(
-  'border-t border-white/10 bg-[#010409]/95 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-[#010409]/90',
+  'border-t border-slate-200 bg-white/95 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-white/90',
 );
 
-/**
- * Faixa de ação no fluxo do documento (fim do formulário / runner).
- * Mobile e desktop: inline — o main do DashboardShell rola acima do BottomNav.
- */
 export function SimuladoMobileActionBar({
   actionRef,
   className,

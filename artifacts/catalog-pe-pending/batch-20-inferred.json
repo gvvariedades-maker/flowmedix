@@ -1,0 +1,20 @@
+{
+  "batch": "20",
+  "bucket": "Processo de Enfermagem",
+  "inferences": [
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-9",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Higiene perineal do menos para o mais contaminado integra precauções padrão e prevenção de dispersão de microrganismos."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-6",
+      "suggested_subtopico": "Enfermagem do Trabalho",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Respingo químico ocular no laboratório configura acidente ocupacional e exige irrigação imediata conforme protocolo de saúde do trabalho."
+    }
+  ]
+}

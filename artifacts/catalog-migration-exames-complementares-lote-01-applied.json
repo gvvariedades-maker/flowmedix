@@ -1,0 +1,307 @@
+{
+  "generated_at": "2026-06-10T05:47:46.719Z",
+  "lote": "exames-complementares-lote-01",
+  "mode": "apply",
+  "total_files": 42,
+  "ok": 42,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-exames-complementares-1779563668619-6",
+    "ameosc-enfermagem-exames-complementares-1779563679414-3",
+    "avancasp-enfermagem-exames-complementares-1779563650975-7",
+    "avancasp-enfermagem-exames-complementares-1779563679414-1",
+    "cebraspe-cespe-enfermagem-exames-complementares-1779563655698-8",
+    "cebraspe-cespe-enfermagem-exames-complementares-1779563655698-9",
+    "cpcon-uepb-enfermagem-exames-complementares-1779563655698-2",
+    "cpcon-uepb-enfermagem-exames-complementares-1779563655698-3",
+    "cpcon-uepb-enfermagem-exames-complementares-1779563668619-0",
+    "fau-unicentro-enfermagem-exames-complementares-1779423306557-0",
+    "fau-unicentro-enfermagem-exames-complementares-1779563668619-7",
+    "fau-unicentro-enfermagem-exames-complementares-1779563679414-2",
+    "fgv-enfermagem-exames-complementares-1779563674260-8",
+    "funcern-enfermagem-exames-complementares-1779563668619-5",
+    "fundatec-enfermagem-exames-complementares-1779563650975-6",
+    "fundatec-enfermagem-exames-complementares-1779563655698-0",
+    "fundatec-enfermagem-exames-complementares-1779563655698-6",
+    "fundatec-enfermagem-exames-complementares-1779563668619-2",
+    "fundatec-enfermagem-exames-complementares-1779563668619-3",
+    "fundatec-enfermagem-exames-complementares-1779563674260-3",
+    "fundatec-enfermagem-exames-complementares-1779563679414-5",
+    "fundatec-enfermagem-exames-complementares-1779563685104-1",
+    "gama-enfermagem-exames-complementares-1779563674260-2",
+    "iaupe-enfermagem-exames-complementares-1779563674260-0",
+    "idcap-enfermagem-exames-complementares-1779563668619-8",
+    "idecan-enfermagem-exames-complementares-1778712242196-2",
+    "idecan-enfermagem-exames-complementares-1779563685104-2",
+    "igeduc-enfermagem-exames-complementares-1779563655698-1",
+    "instituto-consulpam-enfermagem-exames-complementares-1779563674260-5",
+    "instituto-consulpam-enfermagem-exames-complementares-1779563674260-6",
+    "instituto-evo-enfermagem-exames-complementares-1779563655698-7",
+    "isba-enfermagem-exames-complementares-1779563685104-3",
+    "iset-enfermagem-exames-complementares-1779563655698-4",
+    "iset-enfermagem-exames-complementares-1779563655698-5",
+    "itame-enfermagem-exames-complementares-1779563679414-4",
+    "lj-assessoria-enfermagem-exames-complementares-1779563668619-1",
+    "selecon-enfermagem-exames-complementares-1779563668619-4",
+    "selecon-enfermagem-exames-complementares-1779563674260-7",
+    "unesc-enfermagem-exames-complementares-1779563674260-4",
+    "univali-enfermagem-exames-complementares-1779563674260-1",
+    "vunesp-enfermagem-exames-complementares-1779424094915-0",
+    "vunesp-enfermagem-exames-complementares-1779563685104-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-exames-complementares-1779563668619-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-exames-complementares-1779563679414-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-complementares-1779563650975-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-complementares-1779563679414-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-exames-complementares-1779563655698-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-exames-complementares-1779563655698-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-complementares-1779563655698-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-complementares-1779563655698-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-complementares-1779563668619-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-exames-complementares-1779423306557-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-exames-complementares-1779563668619-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-exames-complementares-1779563679414-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-exames-complementares-1779563674260-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-exames-complementares-1779563668619-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563650975-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563655698-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563655698-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563668619-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563668619-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563674260-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563679414-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563685104-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-exames-complementares-1779563674260-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-exames-complementares-1779563674260-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-exames-complementares-1779563668619-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-complementares-1778712242196-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-complementares-1779563685104-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-exames-complementares-1779563655698-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-exames-complementares-1779563674260-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-exames-complementares-1779563674260-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-exames-complementares-1779563655698-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "isba-enfermagem-exames-complementares-1779563685104-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iset-enfermagem-exames-complementares-1779563655698-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iset-enfermagem-exames-complementares-1779563655698-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-exames-complementares-1779563679414-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-exames-complementares-1779563668619-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-exames-complementares-1779563668619-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-exames-complementares-1779563674260-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-exames-complementares-1779563674260-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-exames-complementares-1779563674260-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-complementares-1779424094915-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-complementares-1779563685104-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

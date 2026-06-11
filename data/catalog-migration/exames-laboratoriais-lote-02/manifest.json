@@ -1,0 +1,29 @@
+{
+  "lote": "exames-laboratoriais-lote-02",
+  "exported_at": "2026-06-10T05:43:25.102Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Exames Laboratoriais",
+    "limit": 50,
+    "exclude_count": 50
+  },
+  "slugs": [
+    "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-8",
+    "objetiva-concursos-enfermagem-exames-laboratoriais-1779563621885-7",
+    "objetiva-concursos-enfermagem-exames-laboratoriais-1779563631609-7",
+    "omni-enfermagem-exames-laboratoriais-1779563646977-5",
+    "omni-enfermagem-exames-laboratoriais-1779563650975-5",
+    "quadrix-enfermagem-exames-laboratoriais-1779563613404-6",
+    "selecon-enfermagem-exames-laboratoriais-1779563621885-4",
+    "unesc-enfermagem-exames-laboratoriais-1779563621885-5",
+    "unifil-enfermagem-exames-laboratoriais-1779563613404-9",
+    "unifil-enfermagem-exames-laboratoriais-1779563646977-4",
+    "unifil-enfermagem-exames-laboratoriais-1779563646977-6",
+    "unifil-enfermagem-exames-laboratoriais-1779563646977-7",
+    "unifil-enfermagem-exames-laboratoriais-1779563646977-8",
+    "unifil-enfermagem-exames-laboratoriais-1779563650975-0",
+    "unifil-enfermagem-exames-laboratoriais-1779563650975-1",
+    "vunesp-enfermagem-exames-laboratoriais-1779563621885-2",
+    "vunesp-enfermagem-exames-laboratoriais-1779563650975-3"
+  ]
+}

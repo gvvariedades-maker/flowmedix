@@ -57,7 +57,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
     return (
       <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto p-3 md:p-4">
         {/* Background animado com tema */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
+        <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-35`} />
         
         <motion.div 
           variants={container}
@@ -73,14 +73,11 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
               <motion.div
                 key={index}
                 variants={item}
-                whileHover={{ scale: 1.03, translateY: -8 }}
-                className={`group relative overflow-hidden p-4 md:p-5 rounded-3xl bg-slate-900/70 backdrop-blur-xl border ${theme.borderColor} shadow-2xl shadow-black/50 transition-all duration-500`}
+                whileHover={{ scale: 1.01, translateY: -2 }}
+                className={`group relative overflow-hidden p-4 md:p-5 rounded-3xl bg-slate-900/92 border ${theme.borderColor} shadow-md shadow-black/25 transition-all duration-300`}
               >
-                {/* Efeito de Glow no Hover */}
-                <div className={`absolute -inset-0.5 bg-gradient-to-br ${theme.glowGradient} to-transparent opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 rounded-3xl`} />
-                
                 <div className="relative z-10 flex flex-col gap-3">
-                  <div className={`w-10 h-10 rounded-2xl ${theme.iconBg} flex items-center justify-center ${theme.iconText} ${theme.iconHoverBg} ${theme.iconHoverText} transition-all duration-300 shadow-lg`}>
+                  <div className={`w-10 h-10 rounded-2xl ${theme.iconBg} flex items-center justify-center ${theme.iconText} ${theme.iconHoverBg} ${theme.iconHoverText} transition-all duration-300`}>
                     <Icon size={24} />
                   </div>
                   <div>
@@ -105,7 +102,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
     return (
       <div className="w-full min-h-full min-w-0 flex items-center justify-center p-6 relative">
         {/* Background animado com tema */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
+        <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-35`} />
         
         <div className="flex flex-col items-center justify-center min-h-[min(100%,32rem)] w-full gap-2 relative z-10 py-4">
           <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 relative">
@@ -122,8 +119,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
                 >
                   {/* Átomo — mobile: mais espaço + quebra de linha para termos longos (ex.: VASOCONSTRIÇÃO) */}
                   <div
-                    className={`w-[8.75rem] h-[8.75rem] sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full flex flex-col items-center justify-center text-center px-2 py-2 sm:p-2.5 border-4 ${theme.borderColor} bg-slate-900/90 backdrop-blur-xl shadow-2xl z-10 relative overflow-hidden`}
-                    style={{ boxShadow: `0 0 30px ${theme.glow}` }}
+                    className={`w-[8.75rem] h-[8.75rem] sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full flex flex-col items-center justify-center text-center px-2 py-2 sm:p-2.5 border-4 ${theme.borderColor} bg-slate-900/95 shadow-md z-10 relative overflow-hidden`}
                   >
                     <div className={`${theme.iconText} mb-0.5 shrink-0`}>
                       <Icon size={18} />
@@ -191,7 +187,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
     return (
       <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 md:p-6 relative">
         {/* Background animado com tema */}
-        <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
+        <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-35`} />
         
         <div className="w-full max-w-3xl flex flex-col gap-3 relative z-10">
           {concepts.map((concept, i) => (
@@ -200,7 +196,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.15 }}
-              className={`flex flex-col gap-2 md:flex-row md:items-center md:justify-between bg-slate-800/50 backdrop-blur-sm p-3 md:p-4 rounded-xl border-l-4 ${theme.borderColor} transition-all duration-300 hover:bg-slate-800/70`}
+              className={`flex flex-col gap-2 md:flex-row md:items-center md:justify-between bg-slate-800/60 p-3 md:p-4 rounded-xl border-l-4 ${theme.borderColor} transition-all duration-300 hover:bg-slate-800/75`}
             >
               <div className={`font-body font-bold tracking-normal text-xl ${theme.textPrimary} min-w-0 w-full md:w-2/5 md:text-base`}>
                 {concept.title}
@@ -224,7 +220,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
   if (variant === 'stack') {
     return (
       <div className="w-full min-h-full min-w-0 flex items-center justify-center p-4 md:p-6 relative">
-        <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
+        <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-35`} />
         <motion.div
           initial="hidden"
           animate="show"
@@ -237,7 +233,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
               <motion.div
                 key={index}
                 variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
-                className={`p-4 md:p-5 rounded-2xl bg-slate-900/70 backdrop-blur-xl border ${theme.borderColor}`}
+                className={`p-4 md:p-5 rounded-2xl bg-slate-900/92 border ${theme.borderColor} shadow-sm`}
               >
                 <div className="flex gap-3">
                   <div className={`w-12 h-12 rounded-xl ${theme.iconBg} flex items-center justify-center ${theme.iconText}`}>

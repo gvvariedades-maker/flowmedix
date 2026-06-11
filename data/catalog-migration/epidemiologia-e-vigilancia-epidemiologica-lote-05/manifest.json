@@ -1,0 +1,28 @@
+{
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-lote-05",
+  "exported_at": "2026-06-10T04:05:57.537Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+    "limit": 50,
+    "exclude_count": 200
+  },
+  "slugs": [
+    "unifil-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-4",
+    "univali-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-0",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-9",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-0",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-5",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563718396-6",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-5",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-4",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-4",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-5",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-8",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-3",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-7",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-1",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-2",
+    "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-3"
+  ]
+}

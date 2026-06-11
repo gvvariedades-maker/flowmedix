@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { invalidateNotebookActivationCache } from '@/lib/cache';
 import { logger } from '@/lib/logger';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 
@@ -20,6 +21,8 @@ export async function DELETE(
       .eq('user_id', user.id);
 
     if (error) throw error;
+
+    void invalidateNotebookActivationCache(user.id);
 
     return NextResponse.json({ success: true });
   } catch (error) {

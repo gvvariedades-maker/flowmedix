@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T04:03:12.030Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-lote-01",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-2",
+    "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-3",
+    "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-5",
+    "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-6",
+    "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-7",
+    "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-3",
+    "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-1",
+    "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-5",
+    "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-5",
+    "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-6",
+    "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-1",
+    "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-0",
+    "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-6",
+    "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-7",
+    "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-7",
+    "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-5",
+    "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-8",
+    "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-6",
+    "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-6",
+    "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-7",
+    "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-4",
+    "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-5",
+    "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-6",
+    "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-7",
+    "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-8",
+    "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-2",
+    "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-2",
+    "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-3",
+    "cotec-fadenor-geral-epidemiologia-e-vigilancia-epidemiologica-1777103452899-2",
+    "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-2",
+    "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-9",
+    "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-6",
+    "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-7",
+    "decorp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-6",
+    "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-1",
+    "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-0",
+    "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-6",
+    "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-7",
+    "facape-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-5",
+    "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-4",
+    "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-0",
+    "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-1",
+    "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-2",
+    "fafipa-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-9",
+    "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-0",
+    "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-1",
+    "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-2",
+    "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-3",
+    "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-8",
+    "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-geral-epidemiologia-e-vigilancia-epidemiologica-1777103452899-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facape-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

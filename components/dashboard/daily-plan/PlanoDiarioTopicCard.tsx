@@ -44,10 +44,8 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
     >
       <div
         className={cn(
-          'group relative flex flex-col gap-4 rounded-2xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117] p-6 shadow-sm',
-          'shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]',
-          'transition-all duration-300 ease-out',
-          'hover:scale-[1.01] hover:shadow-md hover:shadow-black/40',
+          'card-elevated group relative flex flex-col gap-4 p-6',
+          'transition-all duration-300 ease-out hover:border-slate-300 hover:shadow-md',
         )}
       >
         <div className="flex flex-1 items-start gap-4">
@@ -65,24 +63,21 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
             <div className="flex flex-wrap items-center gap-2">
               <Link
                 href={href}
-                className="text-lg font-black text-white underline-offset-2 transition-colors hover:text-[#00f2ff] hover:underline"
+                className="text-lg font-black text-slate-900 underline-offset-2 transition-colors hover:text-[#3d6b0f] hover:underline"
               >
                 {assunto}
               </Link>
-              <Badge
-                variant="secondary"
-                className="border border-[rgba(255,255,255,0.10)] bg-white/5 text-[10px] font-medium text-slate-300"
-              >
+              <Badge variant="secondary" className="border border-slate-200 bg-slate-50 text-[10px] font-medium text-slate-600">
                 1 questão
               </Badge>
               {codeLabel != null && (
-                <span className="rounded-md border border-[rgba(0,242,255,0.35)] bg-[rgba(0,242,255,0.08)] px-2 py-0.5 font-mono text-[10px] font-semibold text-[#67e8f9]">
+                <span className="rounded-md border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.08)] px-2 py-0.5 font-mono text-[10px] font-semibold text-[#3d6b0f]">
                   {codeLabel}
                 </span>
               )}
             </div>
 
-            <p className="mt-0.5 text-sm font-medium text-slate-400">
+            <p className="mt-0.5 text-sm font-medium text-slate-600">
               {item.topico || 'Questão do plano diário'}
               {item.subtopico && item.subtopico !== assunto && item.subtopico !== item.topico
                 ? ` · ${item.subtopico}`
@@ -100,13 +95,13 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
                 {urg.label}
               </span>
               {repetiu && (
-                <span className="inline-flex items-center gap-1 rounded-full border border-violet-500/30 bg-violet-500/10 px-2 py-0.5 text-[10px] font-semibold text-violet-200">
+                <span className="inline-flex items-center gap-1 rounded-full border border-violet-200 bg-violet-50 px-2 py-0.5 text-[10px] font-semibold text-violet-700">
                   <RefreshCcw className="h-2.5 w-2.5" aria-hidden />
                   {item.repetitions}× revisada
                 </span>
               )}
               {item.priority >= 50 && (
-                <span className="inline-flex items-center gap-1 rounded-full border border-rose-500/30 bg-rose-500/10 px-2 py-0.5 text-[10px] font-semibold text-rose-200">
+                <span className="inline-flex items-center gap-1 rounded-full border border-rose-200 bg-rose-50 px-2 py-0.5 text-[10px] font-semibold text-rose-700">
                   <Flame className="h-2.5 w-2.5" aria-hidden />
                   Precisa atenção
                 </span>
@@ -114,11 +109,11 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
             </div>
 
             <div
-              className="mt-4 h-1.5 w-full max-w-md overflow-hidden rounded-full bg-white/10"
+              className="mt-4 h-1.5 w-full max-w-md overflow-hidden rounded-full bg-slate-200"
               title="Prioridade de revisão (algoritmo)"
             >
               <div
-                className="h-full origin-left rounded-full bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 transition-[width] duration-500"
+                className="h-full origin-left rounded-full bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 transition-[width] duration-500"
                 style={{ width: `${barW}%` }}
               />
             </div>
@@ -131,26 +126,21 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
                   type="button"
                   variant="ghost"
                   size="icon"
-                  className="h-11 w-11 text-slate-500 transition-colors duration-200 hover:bg-white/5 hover:text-slate-200"
+                  className="h-11 w-11 text-slate-500 transition-colors duration-200 hover:bg-slate-100 hover:text-slate-800"
                   aria-label="Mais opções do tópico"
                 >
                   <MoreVertical className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent
-                align="end"
-                className="w-48 border-[rgba(255,255,255,0.10)] bg-[#0d1117] text-white"
-              >
-                <DropdownMenuItem asChild className="text-slate-200 focus:bg-white/10 focus:text-white">
-                  <Link href={href} className="cursor-pointer">
-                    Abrir questão
-                  </Link>
+              <DropdownMenuContent align="end" className="w-48 border-slate-200 bg-white">
+                <DropdownMenuItem asChild className="cursor-pointer text-slate-700 focus:bg-slate-50 focus:text-slate-900">
+                  <Link href={href}>Abrir questão</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             <Link
               href={href}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-slate-500 transition-colors duration-200 hover:bg-white/5 hover:text-[#00f2ff]"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-slate-500 transition-colors duration-200 hover:bg-slate-100 hover:text-[#3d6b0f]"
               aria-label="Ir para a questão"
             >
               <ChevronRight className="h-5 w-5" />

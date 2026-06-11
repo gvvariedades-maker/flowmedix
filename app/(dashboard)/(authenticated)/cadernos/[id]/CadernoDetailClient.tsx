@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -15,20 +15,33 @@ import {
   BookOpen,
   Layers,
   Loader2,
-  X,
   BookMarked,
-  ChevronDown,
+  Sparkles,
+  Zap,
 } from 'lucide-react';
 import type { ReactNode } from 'react';
-import type { CadernoDetail, ModuloDisponivel, NotebookItem } from './page';
+import type { CadernoDetail, CadernoSetupMode, ModuloDisponivel, NotebookItem } from './page';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
+import { requestNotebookActivationRefresh } from '@/lib/cadernos/notebookActivationBridge';
+import {
+  buildQuickAddPreset,
+  pickWizardBatchModulos,
+  readWizardPreset,
+  resolveBancaFilterOption,
+  type ModuloTemplateRow,
+} from '@/lib/cadernos/templates';
+import { useFirstSeen } from '@/components/onboarding/useFirstSeen';
+import { SearchPanelToggle, type SearchPanelToggleHandle } from '@/components/dashboard/cadernos/SearchPanelToggle';
 import { cn } from '@/lib/utils';
 import { DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
-import { DashboardFilterSelect } from '@/components/dashboard/DashboardFilterSelect';
-import { SELECT_TRIGGER_DARK_PANEL } from '@/components/dashboard/dashboard-select-dark';
-import { SearchPanelToggle } from '@/components/dashboard/cadernos/SearchPanelToggle';
+import { QuestaoFilterBar } from '@/components/questao-filter/QuestaoFilterBar';
+import {
+  filterModulosForQuestaoPanel,
+  hasQuestaoPanelFilterCriteria,
+} from '@/lib/questao-filter/matchModulos';
+import { useToast } from '@/lib/toast-context';
 
 // ── Componente: item do caderno ────────────────────────────────────────────
 function ItemCaderno({
@@ -64,40 +77,40 @@ function ItemCaderno({
       className={cn(
         'group flex items-center gap-3 rounded-2xl border p-4 transition-all',
         !item.acessivel
-          ? 'border-amber-500/20 bg-amber-950/20 opacity-80'
+          ? 'border-amber-200 bg-amber-50 opacity-90'
           : item.estudada
-            ? 'border-emerald-500/25 bg-emerald-950/30'
-            : 'border-[rgba(255,255,255,0.10)] bg-[#0d1117] hover:border-cyan-500/20',
+            ? 'border-green-200 bg-green-50'
+            : 'border-slate-200 bg-white hover:border-[rgba(143,224,32,0.3)]',
       )}
     >
       {/* Número */}
-      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white/[0.06] transition-colors group-hover:bg-white/[0.08]">
-        <span className="text-[11px] font-black text-slate-500">{String(index + 1).padStart(2, '0')}</span>
+      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-slate-100 transition-colors group-hover:bg-slate-200">
+        <span className="text-[11px] font-bold text-slate-500">{String(index + 1).padStart(2, '0')}</span>
       </div>
 
       {/* Status estudada */}
       <div className="shrink-0">
         {item.estudada
-          ? <CheckCircle2 size={16} className="text-emerald-500" />
-          : <Circle size={16} className="text-slate-500" />
+          ? <CheckCircle2 size={16} className="text-green-600" />
+          : <Circle size={16} className="text-slate-300" />
         }
       </div>
 
       {/* Info */}
       <div className="flex-1 min-w-0">
         <div className="flex flex-wrap items-center gap-2">
-          <p className="text-[9px] font-black uppercase tracking-widest text-slate-400">
+          <p className="text-[9px] font-bold uppercase tracking-widest text-slate-500">
             {item.topico || 'Questão'}
           </p>
           {formatAvantCodigo(item.avant_codigo) && (
-            <span className="shrink-0 rounded-md border border-[rgba(0,242,255,0.35)] bg-[rgba(0,242,255,0.08)] px-1.5 py-0.5 font-mono text-[9px] font-black text-[#67e8f9]">
+            <span className="shrink-0 rounded-md border border-slate-200 bg-slate-50 px-1.5 py-0.5 font-mono text-[9px] font-bold text-slate-600">
               {formatAvantCodigo(item.avant_codigo)}
             </span>
           )}
         </div>
-        <p className="truncate text-sm font-bold text-slate-200">{item.titulo_aula || item.modulo_slug}</p>
+        <p className="truncate text-sm font-bold text-slate-800">{item.titulo_aula || item.modulo_slug}</p>
         {!item.acessivel ? (
-          <p className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-amber-300/90">
+          <p className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-amber-700">
             Fora do seu pacote
           </p>
         ) : null}
@@ -108,28 +121,28 @@ function ItemCaderno({
         {item.acessivel ? (
           <Link
             href={`/estudar/${item.modulo_slug}?from=caderno&caderno_id=${notebookId}`}
-            className="flex h-8 w-8 items-center justify-center rounded-xl border border-cyan-500/25 bg-[rgba(0,242,255,0.08)] transition-colors hover:bg-[rgba(0,242,255,0.14)]"
+            className="flex h-8 w-8 items-center justify-center rounded-xl border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.10)] transition-colors hover:bg-[rgba(143,224,32,0.16)]"
             title="Estudar questão"
           >
-            <Play size={13} className="text-cyan-300" />
+            <Play size={13} className="text-[#3d6b0f]" />
           </Link>
         ) : (
           <span
-            className="flex h-8 w-8 items-center justify-center rounded-xl border border-amber-500/20 bg-amber-500/10"
+            className="flex h-8 w-8 items-center justify-center rounded-xl border border-amber-200 bg-amber-50"
             title="Questão fora do pacote matriculado"
           >
-            <Play size={13} className="text-amber-300/70" />
+            <Play size={13} className="text-amber-600/70" />
           </span>
         )}
         <button
           onClick={handleRemove}
           disabled={removing}
-          className="flex h-8 w-8 items-center justify-center rounded-xl border border-[rgba(255,255,255,0.10)] bg-white/[0.04] transition-colors hover:border-rose-500/35 hover:bg-rose-500/10 disabled:opacity-50"
+          className="flex h-8 w-8 items-center justify-center rounded-xl border border-slate-200 bg-white transition-colors hover:border-red-200 hover:bg-red-50 disabled:opacity-50"
           title="Remover do caderno"
         >
           {removing
             ? <Loader2 size={13} className="text-slate-400 animate-spin" />
-            : <Trash2 size={13} className="text-slate-400 hover:text-rose-500 transition-colors" />
+            : <Trash2 size={13} className="text-slate-400 transition-colors hover:text-red-600" />
           }
         </button>
       </div>
@@ -143,63 +156,52 @@ function BuilderPanel({
   notebookId,
   onAdded,
   onAddedMany,
+  initialBancas = [],
+  initialAssuntos = [],
+  highlightFilters = false,
 }: {
   modulos: ModuloDisponivel[];
   notebookId: string;
   onAdded: (item: NotebookItem) => void;
   onAddedMany: (items: NotebookItem[]) => void;
+  initialBancas?: string[];
+  initialAssuntos?: string[];
+  highlightFilters?: boolean;
 }) {
-  const [busca, setBusca] = useState('');
-  const [filtroTopico, setFiltroTopico] = useState('');
-  const [filtroBanca, setFiltroBanca] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [bancasSelecionadas, setBancasSelecionadas] = useState<string[]>(initialBancas);
+  const [assuntosSelecionados, setAssuntosSelecionados] = useState<string[]>(initialAssuntos);
   const [adding, setAdding] = useState<string | null>(null);
   const [addingLote, setAddingLote] = useState(false);
-  const [filtrosMontados, setFiltrosMontados] = useState(false);
 
   useEffect(() => {
-    setFiltrosMontados(true);
-  }, []);
+    if (initialBancas.length) setBancasSelecionadas(initialBancas);
+  }, [initialBancas]);
 
-  const topicos = useMemo(() => {
-    const set = new Set<string>();
-    modulos.forEach(m => { if (m.titulo_aula) set.add(m.titulo_aula); });
-    return Array.from(set).sort();
-  }, [modulos]);
+  useEffect(() => {
+    if (initialAssuntos.length) setAssuntosSelecionados(initialAssuntos);
+  }, [initialAssuntos]);
 
-  const bancas = useMemo(() => {
-    const set = new Set<string>();
-    modulos.forEach(m => { if (m.banca) set.add(m.banca); });
-    return Array.from(set).sort();
-  }, [modulos]);
+  const filterParams = useMemo(
+    () => ({
+      bancas: bancasSelecionadas,
+      assuntos: assuntosSelecionados,
+      q: searchTerm,
+    }),
+    [assuntosSelecionados, bancasSelecionadas, searchTerm],
+  );
 
-  /** Todos os módulos que batem com busca + assunto + banca (sem teto de 50). */
-  const filtradosCompletos = useMemo(() => {
-    const q = busca.trim().toLowerCase();
-    const soNumero = q.replace(/^q-?/, '');
-    return modulos.filter(m => {
-      const matchCodigo =
-        m.avant_codigo != null &&
-        (String(m.avant_codigo) === soNumero || `q-${m.avant_codigo}`.includes(q));
-      const matchBusca = !q
-        || matchCodigo
-        || m.titulo_aula?.toLowerCase().includes(q)
-        || m.modulo_nome?.toLowerCase().includes(q)
-        || m.banca?.toLowerCase().includes(q)
-        || m.modulo_slug.toLowerCase().includes(q);
-      const matchTopico = !filtroTopico || m.titulo_aula === filtroTopico;
-      const matchBanca = !filtroBanca || m.banca === filtroBanca;
-      return matchBusca && matchTopico && matchBanca;
-    });
-  }, [modulos, busca, filtroTopico, filtroBanca]);
+  const filtradosCompletos = useMemo(
+    () => filterModulosForQuestaoPanel(modulos, filterParams),
+    [filterParams, modulos],
+  );
 
   const filtrados = useMemo(
     () => filtradosCompletos.slice(0, 50),
     [filtradosCompletos],
   );
 
-  /** Evita “adicionar tudo do catálogo” sem nenhum critério. */
-  const criterioLoteAtivo =
-    Boolean(filtroTopico) || Boolean(filtroBanca) || busca.trim().length > 0;
+  const criterioLoteAtivo = hasQuestaoPanelFilterCriteria(filterParams);
 
   const handleAdd = async (m: ModuloDisponivel) => {
     setAdding(m.modulo_slug);
@@ -262,112 +264,69 @@ function BuilderPanel({
   };
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col rounded-3xl border border-[rgba(255,255,255,0.10)] bg-[#0d1117] max-lg:h-auto max-lg:flex-none">
-      <div className="shrink-0 space-y-3 border-b border-[rgba(255,255,255,0.08)] p-4">
-        <p className="text-xs uppercase tracking-widest text-slate-400">Adicionar questões</p>
+    <div className="card-elevated flex min-h-0 flex-1 flex-col max-lg:h-auto max-lg:flex-none">
+      <div className="shrink-0 space-y-3 border-b border-slate-200 p-4">
+        <p className="text-xs uppercase tracking-widest text-slate-500">Adicionar questões</p>
 
-        {/* Busca */}
-        <div className="relative">
-          <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
-          <input
-            value={busca}
-            onChange={(e) => setBusca(e.target.value)}
-            placeholder="Assunto, banca, slug ou Q-…"
-            className="w-full rounded-xl border border-[rgba(255,255,255,0.10)] bg-[#010409] py-2.5 pl-9 pr-10 text-sm text-slate-200 outline-none placeholder:text-slate-500 focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20"
-          />
-          {busca && (
-            <button type="button" onClick={() => setBusca('')} className="absolute right-3 top-1/2 -translate-y-1/2">
-              <X size={13} className="text-slate-500 hover:text-slate-300" aria-hidden />
-            </button>
-          )}
-        </div>
-
-        <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
-          {filtrosMontados ? (
+        <QuestaoFilterBar
+          variant="caderno-panel"
+          bancasSelected={bancasSelecionadas}
+          assuntosSelected={assuntosSelecionados}
+          searchTerm={searchTerm}
+          onBancasChange={setBancasSelecionadas}
+          onAssuntosChange={setAssuntosSelecionados}
+          onSearchChange={setSearchTerm}
+          modulosForFallback={modulos}
+          resultCount={filtradosCompletos.length}
+          highlightActiveFilters={highlightFilters}
+          footer={
             <>
-              <DashboardFilterSelect
-                variant="panel"
-                placeholder="Todos os assuntos"
-                allLabel="Todos os assuntos"
-                sheetTitle="Filtrar por assunto"
-                value={filtroTopico}
-                options={topicos}
-                onValueChange={setFiltroTopico}
-              />
-              <DashboardFilterSelect
-                variant="panel"
-                placeholder="Todas as bancas"
-                allLabel="Todas as bancas"
-                sheetTitle="Filtrar por banca"
-                value={filtroBanca}
-                options={bancas}
-                onValueChange={setFiltroBanca}
-              />
+              {criterioLoteAtivo && filtradosCompletos.length > 0 ? (
+                <div className="border-t border-slate-200 pt-3">
+                  <button
+                    type="button"
+                    onClick={handleAddLote}
+                    disabled={addingLote}
+                    className="btn-editorial-outline flex w-full items-center justify-center gap-2 py-2.5 text-xs font-bold uppercase tracking-widest disabled:opacity-50"
+                  >
+                    {addingLote ? (
+                      <>
+                        <Loader2 size={14} className="animate-spin" aria-hidden />
+                        Adicionando lote…
+                      </>
+                    ) : (
+                      <>
+                        <Layers size={14} aria-hidden />
+                        Adicionar todas ({filtradosCompletos.length}
+                        {filtradosCompletos.length > 1 ? ' questões' : ' questão'})
+                      </>
+                    )}
+                  </button>
+                  {filtradosCompletos.length > 50 ? (
+                    <p className="mt-1.5 text-center text-[10px] font-bold text-slate-500">
+                      Lista abaixo mostra 50; o lote inclui as {filtradosCompletos.length} do filtro.
+                    </p>
+                  ) : null}
+                </div>
+              ) : null}
+              {!criterioLoteAtivo && modulos.length > 0 ? (
+                <p className="text-[10px] leading-relaxed text-slate-500">
+                  Escolha um <strong className="text-slate-700">assunto</strong> e/ou{' '}
+                  <strong className="text-slate-700">banca</strong> ou use a{' '}
+                  <strong className="text-slate-700">busca</strong> para ativar a opção de adicionar o lote inteiro de
+                  uma vez.
+                </p>
+              ) : null}
             </>
-          ) : (
-            <>
-              <div
-                className="flex h-11 min-w-0 w-full items-center justify-between rounded-xl border border-[rgba(255,255,255,0.15)] bg-[#0d1117] px-3 py-2 text-sm text-slate-400"
-                aria-hidden
-              >
-                <span className="line-clamp-1">Todos os assuntos</span>
-                <ChevronDown className="h-4 w-4 shrink-0 opacity-50" aria-hidden />
-              </div>
-              <div
-                className="flex h-11 min-w-0 w-full items-center justify-between rounded-xl border border-[rgba(255,255,255,0.15)] bg-[#0d1117] px-3 py-2 text-sm text-slate-400"
-                aria-hidden
-              >
-                <span className="line-clamp-1">Todas as bancas</span>
-                <ChevronDown className="h-4 w-4 shrink-0 opacity-50" aria-hidden />
-              </div>
-            </>
-          )}
-        </div>
-
-        {criterioLoteAtivo && filtradosCompletos.length > 0 && (
-          <div className="border-t border-[rgba(255,255,255,0.08)] pt-3">
-            <button
-              type="button"
-              onClick={handleAddLote}
-              disabled={addingLote}
-              className="flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-400/30 bg-[rgba(0,242,255,0.08)] px-3 py-2.5 text-xs font-black uppercase tracking-widest text-cyan-200 transition-colors hover:bg-[rgba(0,242,255,0.12)] disabled:opacity-50"
-            >
-              {addingLote ? (
-                <>
-                  <Loader2 size={14} className="animate-spin" aria-hidden />
-                  Adicionando lote…
-                </>
-              ) : (
-                <>
-                  <Layers size={14} aria-hidden />
-                  Adicionar todas ({filtradosCompletos.length}
-                  {filtradosCompletos.length > 1 ? ' questões' : ' questão'})
-                </>
-              )}
-            </button>
-            {filtradosCompletos.length > 50 && (
-              <p className="mt-1.5 text-center text-[10px] font-bold text-slate-400">
-                Lista abaixo mostra 50; o lote inclui as {filtradosCompletos.length} do filtro.
-              </p>
-            )}
-          </div>
-        )}
-
-        {!criterioLoteAtivo && modulos.length > 0 && (
-          <p className="text-[10px] leading-relaxed text-slate-400">
-            Escolha um <strong className="text-slate-300">assunto</strong> e/ou{' '}
-            <strong className="text-slate-300">banca</strong> ou use a
-            <strong className="text-slate-300"> busca</strong> para ativar a opção de adicionar o lote inteiro de
-            uma vez.
-          </p>
-        )}
+          }
+        />
       </div>
 
       {/* Resultados: scroll interno no desktop; no mobile o sheet pai rola tudo */}
       <div className="min-h-0 flex-1 space-y-1 overflow-y-auto overscroll-y-contain p-2 touch-pan-y max-lg:flex-none max-lg:overflow-visible lg:min-h-0">
         {filtrados.length === 0 ? (
-          <div className="text-center py-8 text-slate-400 text-sm">
-            {busca || filtroTopico || filtroBanca
+          <div className="text-center py-8 text-slate-500 text-sm">
+            {criterioLoteAtivo
               ? 'Nenhum resultado'
               : modulos.length === 0
                 ? 'Nenhuma questão disponível no seu pacote. Verifique sua matrícula em Planos.'
@@ -380,7 +339,7 @@ function BuilderPanel({
               type="button"
               onClick={() => handleAdd(m)}
               disabled={adding === m.modulo_slug}
-              className="group flex w-full items-center gap-3 rounded-xl p-3 text-left transition-colors hover:bg-white/[0.04] disabled:opacity-60"
+              className="group flex w-full items-center gap-3 rounded-xl p-3 text-left transition-colors hover:bg-slate-50 disabled:opacity-60"
             >
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-1.5">
@@ -388,18 +347,18 @@ function BuilderPanel({
                     {m.banca || ''} {m.modulo_nome ? `— ${m.modulo_nome}` : ''}
                   </p>
                   {formatAvantCodigo(m.avant_codigo) && (
-                    <span className="shrink-0 rounded bg-[rgba(0,242,255,0.08)] px-1 py-0.5 font-mono text-[8px] font-black text-[#67e8f9]">
+                    <span className="shrink-0 rounded bg-slate-100 px-1 py-0.5 font-mono text-[8px] font-bold text-slate-600">
                       {formatAvantCodigo(m.avant_codigo)}
                     </span>
                   )}
                 </div>
-                <p className="truncate text-xs font-bold text-slate-300">{m.titulo_aula || m.modulo_slug}</p>
+                <p className="truncate text-xs font-bold text-slate-700">{m.titulo_aula || m.modulo_slug}</p>
               </div>
-              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white/[0.06] transition-colors group-hover:bg-[rgba(0,242,255,0.12)]">
+              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-slate-100 transition-colors group-hover:bg-[rgba(143,224,32,0.12)]">
                 {adding === m.modulo_slug ? (
-                  <Loader2 size={12} className="animate-spin text-cyan-400" aria-hidden />
+                  <Loader2 size={12} className="animate-spin text-[#3d6b0f]" aria-hidden />
                 ) : (
-                  <Plus size={12} className="text-slate-400 transition-colors group-hover:text-cyan-300" aria-hidden />
+                  <Plus size={12} className="text-slate-500 transition-colors group-hover:text-[#3d6b0f]" aria-hidden />
                 )}
               </div>
             </button>
@@ -408,7 +367,7 @@ function BuilderPanel({
       </div>
 
       {modulos.length > 0 && filtradosCompletos.length > 50 && filtrados.length === 50 && (
-        <p className="p-3 text-center text-[10px] font-bold text-slate-400">
+        <p className="p-3 text-center text-[10px] font-bold text-slate-500">
           Mostrando 50 de {filtradosCompletos.length} com este filtro — refine a busca
         </p>
       )}
@@ -416,22 +375,76 @@ function BuilderPanel({
   );
 }
 
+function modulosToTemplateRows(modulos: ModuloDisponivel[]): ModuloTemplateRow[] {
+  return modulos.map((m) => ({
+    modulo_slug: m.modulo_slug,
+    titulo_aula: m.titulo_aula,
+    modulo_nome: m.modulo_nome,
+    banca: m.banca,
+  }));
+}
+
 // ── Componente principal ───────────────────────────────────────────────────
 export default function CadernoDetailClient({
   caderno,
   modulosDisponiveis: inicial,
+  editalBanca = null,
+  setupMode = 'none',
   metricsSlot,
   reverseStudyBadgeSlot,
 }: {
   caderno: CadernoDetail;
   modulosDisponiveis: ModuloDisponivel[];
+  editalBanca?: string | null;
+  setupMode?: CadernoSetupMode;
   metricsSlot?: ReactNode;
   reverseStudyBadgeSlot?: ReactNode;
 }) {
   const { pageBottomPadding } = useDashboardBottomInset('default');
   const router = useRouter();
+  const { addToast } = useToast();
+  const searchPanelRef = useRef<SearchPanelToggleHandle>(null);
+  const setupToastShownRef = useRef(false);
   const [items, setItems] = useState(caderno.items);
   const [modulos, setModulos] = useState(inicial);
+  const [headerPulse, setHeaderPulse] = useState(false);
+  const [quickAdding, setQuickAdding] = useState(false);
+  const [setupBannerVisible, setSetupBannerVisible] = useState(setupMode === 'done');
+  const [filterPrefsReady, setFilterPrefsReady] = useState(false);
+  const [initialBancas, setInitialBancas] = useState<string[]>([]);
+  const [initialAssuntos, setInitialAssuntos] = useState<string[]>([]);
+  const firstItemTip = useFirstSeen('caderno-first-item', items.length > 0);
+
+  const bancasDisponiveis = useMemo(() => {
+    const set = new Set<string>();
+    modulos.forEach((m) => {
+      if (m.banca) set.add(m.banca);
+    });
+    return Array.from(set).sort();
+  }, [modulos]);
+
+  useEffect(() => {
+    const stored = readWizardPreset();
+    const bancaTarget = stored?.banca ?? editalBanca;
+    const resolvedBanca = resolveBancaFilterOption(bancaTarget, bancasDisponiveis);
+    const resolvedTopico = stored?.assuntosTop3[0]?.titulo ?? '';
+    setInitialBancas(resolvedBanca ? [resolvedBanca] : []);
+    setInitialAssuntos(resolvedTopico ? [resolvedTopico] : []);
+    setFilterPrefsReady(true);
+  }, [bancasDisponiveis, editalBanca]);
+
+  useEffect(() => {
+    if (setupMode !== 'done' || items.length === 0 || setupToastShownRef.current) return;
+    setupToastShownRef.current = true;
+    addToast('Caderno pronto! Comece o estudo reverso quando quiser.', 'success');
+    router.replace(`/cadernos/${caderno.id}`, { scroll: false });
+  }, [addToast, caderno.id, items.length, router, setupMode]);
+
+  const triggerFirstItemFeedback = useCallback(() => {
+    requestNotebookActivationRefresh();
+    setHeaderPulse(true);
+    window.setTimeout(() => setHeaderPulse(false), 1400);
+  }, []);
 
   const handleRemoved = (itemId: string) => {
     const removed = items.find(i => i.id === itemId);
@@ -452,30 +465,89 @@ export default function CadernoDetailClient({
   };
 
   const handleAdded = (item: NotebookItem) => {
-    setItems(prev => [...prev, item]);
+    setItems((prev) => {
+      if (prev.length === 0) triggerFirstItemFeedback();
+      return [...prev, item];
+    });
     setModulos(prev => prev.filter(m => m.modulo_slug !== item.modulo_slug));
+    setSetupBannerVisible(false);
   };
 
   const handleAddedMany = (novos: NotebookItem[]) => {
     if (novos.length === 0) return;
     const slugs = new Set(novos.map(i => i.modulo_slug));
-    setItems(prev => [...prev, ...novos]);
+    setItems((prev) => {
+      if (prev.length === 0) triggerFirstItemFeedback();
+      return [...prev, ...novos];
+    });
     setModulos(prev => prev.filter(m => !slugs.has(m.modulo_slug)));
+    setSetupBannerVisible(false);
+  };
+
+  const quickAddPreset = useMemo(() => {
+    if (!editalBanca?.trim() || modulos.length === 0) return null;
+    const edital = { nome: '', banca: editalBanca, orgao: null, ano: null, slug: '' };
+    return buildQuickAddPreset(edital, modulosToTemplateRows(modulos));
+  }, [editalBanca, modulos]);
+
+  const quickAddBatch = useMemo(() => {
+    if (!quickAddPreset) return [];
+    return pickWizardBatchModulos(modulosToTemplateRows(modulos), quickAddPreset);
+  }, [modulos, quickAddPreset]);
+
+  const handleQuickAddBanca = async () => {
+    if (quickAddBatch.length === 0) return;
+    setQuickAdding(true);
+    try {
+      const res = await fetchWithAuth(`/api/notebooks/${caderno.id}/items`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: quickAddBatch.map((m) => ({
+            modulo_slug: m.modulo_slug,
+            titulo_aula: m.titulo_aula,
+            topico: m.modulo_nome,
+          })),
+        }),
+      });
+      const json = (await res.json()) as { items?: NotebookItem[]; error?: string };
+      if (res.ok && Array.isArray(json.items)) {
+        handleAddedMany(
+          json.items.map((item) => ({
+            ...item,
+            estudada: false,
+            avant_codigo:
+              modulos.find((m) => m.modulo_slug === item.modulo_slug)?.avant_codigo ?? null,
+            acessivel: true,
+          })),
+        );
+      } else if (!res.ok) {
+        window.alert(json.error || 'Não foi possível adicionar as questões.');
+      }
+    } finally {
+      setQuickAdding(false);
+    }
+  };
+
+  const openSearchPanel = () => {
+    searchPanelRef.current?.open();
   };
 
   const firstSlug =
     items.find(i => i.acessivel && !i.estudada)?.modulo_slug ||
     items.find(i => i.acessivel)?.modulo_slug;
 
+  const highlightFilters = setupMode === 'setup';
+
   return (
-    <div className={cn(DASHBOARD_PAGE_ROOT, 'bg-[#010409]', pageBottomPadding)}>
-      <div className="sticky top-0 z-20 border-b border-[rgba(255,255,255,0.08)] bg-[#010409]/95 shadow-[0_8px_32px_-16px_rgba(0,0,0,0.5)] backdrop-blur-md supports-[backdrop-filter]:bg-[#010409]/90">
+    <div className={cn(DASHBOARD_PAGE_ROOT, 'bg-background', pageBottomPadding)}>
+      <div className="sticky top-0 z-20 border-b border-slate-200 bg-background/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-background/90">
         <div className="bg-transparent px-6 py-5 md:px-10">
           <div className="mx-auto max-w-6xl">
             <button
               type="button"
               onClick={() => router.push('/cadernos')}
-              className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 transition-colors hover:text-slate-300"
+              className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 transition-colors hover:text-slate-700"
             >
               <ArrowLeft size={14} aria-hidden /> Meus cadernos
             </button>
@@ -483,28 +555,52 @@ export default function CadernoDetailClient({
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div>
                 <div className="mb-1 flex items-center gap-2">
-                  <BookMarked size={18} className="text-cyan-400" aria-hidden />
-                  <p className="text-[10px] font-black uppercase tracking-widest text-cyan-400">Caderno</p>
+                  <BookMarked size={18} className="text-[#3d6b0f]" aria-hidden />
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-[#3d6b0f]">Caderno</p>
                 </div>
-                <h1 className="text-3xl font-black italic tracking-tight text-white">{caderno.title}</h1>
-                {caderno.description && <p className="mt-0.5 text-sm text-slate-400">{caderno.description}</p>}
+                <h1 className="text-3xl font-bold tracking-tight text-slate-900">{caderno.title}</h1>
+                {caderno.description && <p className="mt-0.5 text-sm text-slate-500">{caderno.description}</p>}
                 <div className="mt-2 flex flex-wrap items-center gap-3">
-                  <span className="text-xs font-bold text-slate-400">
+                  <motion.span
+                    animate={
+                      headerPulse
+                        ? { scale: [1, 1.08, 1], color: ['#64748b', '#3d6b0f', '#64748b'] }
+                        : { scale: 1 }
+                    }
+                    transition={{ duration: 0.6, ease: 'easeOut' }}
+                    className="text-xs font-bold text-slate-500"
+                  >
                     <Layers size={11} className="mr-1 inline" aria-hidden />
                     {items.length} {items.length === 1 ? 'questão' : 'questões'}
-                  </span>
+                  </motion.span>
+                  {firstItemTip.visible ? (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        firstItemTip.markSeen();
+                        if (firstSlug) {
+                          router.push(`/estudar/${firstSlug}?from=caderno&caderno_id=${caderno.id}`);
+                        }
+                      }}
+                      className="inline-flex items-center gap-1 rounded-full border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.10)] px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-[#3d6b0f] transition-colors hover:bg-[rgba(143,224,32,0.14)]"
+                    >
+                      <Zap size={10} aria-hidden />
+                      Próximo passo: estudar
+                    </button>
+                  ) : null}
                   {metricsSlot}
                 </div>
               </div>
 
-              {firstSlug && (
+              {firstSlug ? (
                 <Link
                   href={`/estudar/${firstSlug}?from=caderno&caderno_id=${caderno.id}`}
-                  className="flex items-center gap-2 rounded-2xl bg-cyan-500 px-5 py-3 text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-cyan-950/40 transition-all hover:bg-cyan-600"
+                  onClick={() => firstItemTip.markSeen()}
+                  className="btn-editorial-primary flex items-center gap-2 px-5 py-3 text-xs font-bold uppercase tracking-widest"
                 >
-                  <Play size={15} aria-hidden /> ESTUDAR COM NEUROSLIDES
+                  <Play size={15} aria-hidden /> Estudar com NeuroSlides
                 </Link>
-              )}
+              ) : null}
             </div>
           </div>
         </div>
@@ -512,6 +608,42 @@ export default function CadernoDetailClient({
 
       {/* Conteúdo: lista + painel de busca */}
       <div className="mx-auto max-w-6xl px-6 py-6 md:px-10 md:pt-8">
+        <AnimatePresence>
+          {setupBannerVisible && items.length > 0 && firstSlug ? (
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              className="mb-6 flex flex-col gap-3 rounded-2xl border border-green-200 bg-green-50 p-4 sm:flex-row sm:items-center sm:justify-between"
+              role="status"
+            >
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-600" aria-hidden />
+                <div>
+                  <p className="text-sm font-bold text-slate-900">Caderno pronto!</p>
+                  <p className="text-xs text-slate-600">
+                    {items.length} {items.length === 1 ? 'questão adicionada' : 'questões adicionadas'} — comece pelo estudo reverso.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <Link
+                  href={`/estudar/${firstSlug}?from=caderno&caderno_id=${caderno.id}`}
+                  className="btn-editorial-primary inline-flex min-h-[40px] items-center justify-center px-4 text-xs font-bold"
+                >
+                  Estudar com NeuroSlides
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setSetupBannerVisible(false)}
+                  className="btn-editorial-outline inline-flex min-h-[40px] items-center justify-center px-3 text-xs font-semibold"
+                >
+                  Fechar
+                </button>
+              </div>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
         <div className="flex min-h-[70vh] flex-col gap-6 lg:flex-row">
           {/* Coluna esquerda: itens do caderno */}
           <div className="flex min-w-0 flex-1 flex-col gap-3">
@@ -521,12 +653,46 @@ export default function CadernoDetailClient({
             </p>
 
             {items.length === 0 ? (
-              <div className="flex flex-1 flex-col items-center justify-center space-y-3 rounded-3xl border border-dashed border-[rgba(255,255,255,0.15)] bg-[#0d1117] py-16 text-center">
-                <BookOpen size={32} className="text-slate-500" aria-hidden />
-                <p className="text-sm font-bold text-slate-400">Nenhuma questão ainda</p>
-                <p className="max-w-xs text-xs text-slate-400">
-                  Toque em Inserir questões para adicionar ao caderno.
-                </p>
+              <div className="flex flex-1 flex-col items-center justify-center gap-4 rounded-2xl border border-dashed border-slate-300 bg-slate-50 px-6 py-14 text-center">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[rgba(143,224,32,0.25)] bg-[rgba(143,224,32,0.10)]">
+                  <BookOpen size={28} className="text-[#3d6b0f]" aria-hidden />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm font-bold text-slate-700">Nenhuma questão ainda</p>
+                  <p className="mx-auto max-w-xs text-xs text-slate-500">
+                    Busque na vitrine ou use a sugestão rápida da banca do seu edital.
+                  </p>
+                </div>
+
+                {editalBanca && modulos.length > 0 && quickAddBatch.length > 0 ? (
+                  <button
+                    type="button"
+                    onClick={() => void handleQuickAddBanca()}
+                    disabled={quickAdding}
+                    className="btn-editorial-outline inline-flex min-h-[44px] w-full max-w-sm items-center justify-center gap-2 px-4 py-3 text-xs font-bold uppercase tracking-widest disabled:opacity-60"
+                  >
+                    {quickAdding ? (
+                      <>
+                        <Loader2 size={14} className="animate-spin" aria-hidden />
+                        Adicionando…
+                      </>
+                    ) : (
+                      <>
+                        <Sparkles size={14} aria-hidden />
+                        Adicionar {quickAddBatch.length} questões de {editalBanca}
+                      </>
+                    )}
+                  </button>
+                ) : null}
+
+                <button
+                  type="button"
+                  onClick={openSearchPanel}
+                  className="btn-editorial-primary inline-flex min-h-[44px] items-center justify-center gap-2 px-5 py-3 text-xs font-bold uppercase tracking-widest"
+                >
+                  <Search size={14} aria-hidden />
+                  Inserir questões
+                </button>
               </div>
             ) : (
               <div className="space-y-2">
@@ -545,13 +711,26 @@ export default function CadernoDetailClient({
             )}
           </div>
 
-          <SearchPanelToggle modulosCount={modulos.length}>
-            <BuilderPanel
-              modulos={modulos}
-              notebookId={caderno.id}
-              onAdded={handleAdded}
-              onAddedMany={handleAddedMany}
-            />
+          <SearchPanelToggle
+            modulosCount={modulos.length}
+            panelRef={searchPanelRef}
+            initialOpen={setupMode === 'setup'}
+          >
+            {filterPrefsReady ? (
+              <BuilderPanel
+                modulos={modulos}
+                notebookId={caderno.id}
+                onAdded={handleAdded}
+                onAddedMany={handleAddedMany}
+                initialBancas={initialBancas}
+                initialAssuntos={initialAssuntos}
+                highlightFilters={highlightFilters}
+              />
+            ) : (
+              <div className="card-elevated flex min-h-[12rem] items-center justify-center p-6">
+                <Loader2 className="h-6 w-6 animate-spin text-[#3d6b0f]" aria-hidden />
+              </div>
+            )}
           </SearchPanelToggle>
         </div>
       </div>

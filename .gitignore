@@ -41,6 +41,7 @@ types/.database.supabase.generated.tmp.ts
 /test-results/
 /playwright-report/
 /playwright/.cache/
+/e2e/.auth/
 
 # Cursor
 .cursor/
@@ -53,5 +54,8 @@ supabase/.temp/
 
 # Lotes de migração premium (cópias de trabalho; goldens canônicos ficam em examples/)
 /data/catalog-migration/*/questions/
+
+# Pacotes de backup local (env + dados Supabase — upload manual no Drive)
+/backups/
 
 .env*

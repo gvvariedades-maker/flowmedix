@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-09T08:48:32.763Z",
+  "lote": "imunizacao-lote-02",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1777103244679-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 824
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1779563986606-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3687
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1779564031957-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3740
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779563975447-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3680
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564109452-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3870
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564109452-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3871
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564113760-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3873
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779563975447-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3677
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779564006577-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3718
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779564109452-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3866
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779572227744-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4008
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779572227744-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4009
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564006577-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3719
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564074967-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3821
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564074967-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3822
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564079834-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3829
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572180830-9",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3963
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572198133-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3964
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572198133-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3965
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3979
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3980
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-9",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3981
+    },
+    {
+      "modulo_slug": "apice-enfermagem-imunizacao-1779564079834-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ÁPICE",
+      "avant_codigo": 3830
+    },
+    {
+      "modulo_slug": "apice-enfermagem-imunizacao-1779564079834-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ÁPICE",
+      "avant_codigo": 3831
+    },
+    {
+      "modulo_slug": "apice-enfermagem-imunizacao-1779564079834-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ÁPICE",
+      "avant_codigo": 3832
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1777103222102-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 801
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1777103222102-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 802
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1777103222102-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 803
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1777103257434-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 844
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1777103257434-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 845
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1779564125198-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3897
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1779564125198-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3898
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1779564129617-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3899
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1777103230085-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 814
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1777103238173-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 815
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1777103238173-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 816
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1777103238173-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 817
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1779572166628-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3936
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1779572166628-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3937
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1779572171486-8",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3953
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1777103204932-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 787
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1777103215560-0",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 788
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1777103215560-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 789
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1779563970889-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 3669
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1779563970889-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 3670
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1779572171486-2",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 3948
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-imunizacao-1779572171486-3",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 3949
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-imunizacao-1779563986606-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEV URCA",
+      "avant_codigo": 3688
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-imunizacao-1779563986606-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEV URCA",
+      "avant_codigo": 3689
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-imunizacao-1779564090395-6",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 3854
+    }
+  ]
+}

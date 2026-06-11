@@ -1,0 +1,76 @@
+{
+  "batch": "12",
+  "bucket": "Processo de Enfermagem",
+  "inferences": [
+    {
+      "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-5",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Cuidados ao paciente diabético hospitalizado com monitorização de glicemia e esquema terapêutico focam manejo de DCNT."
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-4",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Rodízio de locais de aplicação de insulina previne lipodistrofia e integra técnica segura de administração."
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-2",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Região de Saúde como agrupamento de municípios limítrofes é conceito de organização territorial da APS."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Primeiros socorros, avaliação da cena e acionamento de emergência são conteúdo de urgências e emergências."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-0",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Princípios da Atenção Básica, ESF, território e trabalho em equipe são núcleo da APS."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-6",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Educação em saúde na AB visa prevenção de doenças, promoção da autonomia e qualidade de vida."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-8",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Mescla doenças transmissíveis e não transmissíveis, mas o enunciado ancora a atuação do técnico na Atenção Básica."
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1776056140199-7",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Itens essenciais do registro de enfermagem integram documentação e etapas do processo de cuidar."
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-2",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Comunicação tempestiva de alterações clínicas e cultura de segurança são práticas de segurança do paciente."
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-3",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Registro claro, cronológico e objetivo de intercorrências no prontuário é documentação do processo de enfermagem."
+    }
+  ]
+}

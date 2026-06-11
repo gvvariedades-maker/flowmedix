@@ -139,7 +139,7 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
             ref={panelRef}
             className={cn(
               'relative z-10 mt-auto flex min-h-0 max-h-full flex-1 flex-col pt-safe',
-              'rounded-t-[2rem] border border-white/10 bg-[#010409] shadow-2xl',
+              'rounded-t-[2rem] border border-slate-200 bg-background shadow-2xl',
               '[view-transition-name:estudar-questao-root]',
             )}
           >

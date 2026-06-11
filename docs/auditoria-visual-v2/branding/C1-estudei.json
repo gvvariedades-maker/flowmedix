@@ -1,0 +1,32 @@
+{
+  "source": "https://estudei.com.br/",
+  "capturedAt": "2026-06-10",
+  "tool": "firecrawl_scrape branding",
+  "colorScheme": "light",
+  "colors": {
+    "primary": "#6735BC",
+    "secondary": "#66F5D5",
+    "accent": "#00CDA0",
+    "background": "#FFFFFF",
+    "textPrimary": "#00CDA0",
+    "link": "#00CDA0"
+  },
+  "typography": {
+    "primary": "Neulis Neue",
+    "heading": "Neulis Neue",
+    "h1": "13px",
+    "h2": "64px",
+    "body": "20px"
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "4px"
+  },
+  "buttons": {
+    "primary": { "bg": "#00CDA0", "text": "#FFFFFF", "radius": "12px", "label": "Comece agora" },
+    "secondary": { "bg": "#6735BC", "text": "#FFFFFF", "radius": "100px", "label": "ASSINE JÁ" }
+  },
+  "personality": { "tone": "modern", "energy": "high", "targetAudience": "students and educators" },
+  "framework": "custom (WordPress)",
+  "confidence": 0.925
+}

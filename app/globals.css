@@ -75,6 +75,71 @@
     --bottom-nav-height: 5rem;
   }
 
+  /**
+   * Editorial v2 — spike Fase 1 (/login).
+   * Ativado via `document.documentElement.dataset.theme = 'editorial'`.
+   * Dashboard + login usam editorial; landing e player permanecem Cyber até fases seguintes.
+   */
+  html[data-theme='editorial'] {
+    color-scheme: light;
+    --color-surface-0: #f8fafc;
+    --color-surface-1: #f1f5f9;
+    --color-surface-2: #ffffff;
+    --color-surface-3: #e2e8f0;
+    --color-border-subtle: #e2e8f0;
+    --color-border-default: #cbd5e1;
+    --color-border-strong: #94a3b8;
+    --color-brand: #8fe020;
+    --color-brand-dim: rgba(143, 224, 32, 0.12);
+    --color-brand-glow: rgba(143, 224, 32, 0.2);
+    --color-brand-text: #3d6b0f;
+    --color-nav-active-bg: rgba(143, 224, 32, 0.1);
+    --color-nav-active-bar: #8fe020;
+    --color-nav-active-txt: #3d6b0f;
+    --color-success: #16a34a;
+    --color-success-dim: rgba(22, 163, 74, 0.1);
+    --color-success-glow: transparent;
+    --color-success-text: #15803d;
+    --color-danger: #dc2626;
+    --color-danger-dim: rgba(220, 38, 38, 0.08);
+    --color-danger-glow: transparent;
+    --color-danger-text: #b91c1c;
+    --color-warning: #d97706;
+    --color-warning-dim: rgba(217, 119, 6, 0.1);
+    --color-warning-text: #b45309;
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #64748b;
+    --color-text-tertiary: #94a3b8;
+
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 84 76% 52%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+  }
+
+  html[data-theme='editorial'],
+  html[data-theme='editorial'] body {
+    background-color: var(--color-surface-0) !important;
+    color: var(--color-text-primary);
+  }
+
+  html[data-theme='editorial'] body::before {
+    display: none;
+  }
+
   /* O SEGREDO: Aplicamos o fundo no HTML e no BODY */
   html, body {
     @apply min-h-screen antialiased;
@@ -125,23 +190,44 @@
    * Evita depender do :root escuro usado na landing.
    */
   .dashboard-surface {
-    /* Dark theme — alinhado com a landing (#010409) */
-    --background: 222 47% 4%;       /* #010409 */
-    --foreground: 215 25% 88%;      /* ~slate-200 */
-    --card: 220 39% 7%;             /* ~slate-950, levemente mais claro que o bg */
+    /* Dark theme — legado landing / rotas sem editorial */
+    --background: 222 47% 4%;
+    --foreground: 215 25% 88%;
+    --card: 220 39% 7%;
     --card-foreground: 215 25% 88%;
     --popover: 220 39% 7%;
     --popover-foreground: 215 25% 88%;
-    --muted: 217 33% 11%;           /* ~slate-900 */
-    --muted-foreground: 215 16% 57%; /* ~slate-400 */
+    --muted: 217 33% 11%;
+    --muted-foreground: 215 16% 57%;
     --accent: 217 33% 11%;
     --accent-foreground: 215 25% 88%;
     --secondary: 217 33% 11%;
     --secondary-foreground: 215 25% 88%;
-    --border: 215 20% 16%;          /* borda sutil no escuro */
+    --border: 215 20% 16%;
     --input: 217 33% 11%;
-    --ring: 199 100% 50%;           /* cyan-400 — foco */
+    --ring: 199 100% 50%;
     --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    color: hsl(var(--foreground));
+  }
+
+  html[data-theme='editorial'] .dashboard-surface {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 84 76% 52%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
     color: hsl(var(--foreground));
   }
@@ -183,6 +269,160 @@
     @apply absolute -z-10 pointer-events-none opacity-20 blur-[150px] rounded-full;
     background: radial-gradient(circle, #00f2ff 0%, #7000ff 50%, transparent 100%);
   }
+
+  /* Editorial v2 — card e CTA (spike login) */
+  .card-elevated {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-sm;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  }
+
+  .card-elevated-lg {
+    @apply rounded-2xl border border-slate-200 bg-white;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+  }
+
+  .text-editorial-title {
+    @apply font-bold text-slate-900;
+  }
+
+  .text-editorial-title span {
+    @apply text-[#3d6b0f];
+  }
+
+  .btn-option-editorial {
+    @apply relative w-full rounded-xl border border-slate-200 bg-white p-4 text-left transition-colors duration-200;
+  }
+
+  .btn-option-editorial:hover:not(:disabled) {
+    border-color: rgba(143, 224, 32, 0.3);
+    background-color: rgba(143, 224, 32, 0.08);
+  }
+
+  .btn-option-editorial:disabled {
+    @apply cursor-not-allowed opacity-60;
+  }
+
+  .card-success-editorial {
+    @apply rounded-2xl border border-green-200 bg-green-50 p-6;
+  }
+
+  .card-error-editorial {
+    @apply rounded-2xl border border-red-200 bg-red-50 p-6;
+  }
+
+  .login-auth-card {
+    @apply rounded-2xl border border-slate-200/90 bg-white p-6 sm:p-8;
+    box-shadow:
+      0 1px 2px rgba(15, 23, 42, 0.04),
+      0 8px 24px rgba(15, 23, 42, 0.1),
+      0 0 0 1px rgba(143, 224, 32, 0.08);
+  }
+
+  .login-auth-heading {
+    @apply text-center text-3xl font-bold tracking-tight text-[#8fe020];
+  }
+
+  .btn-editorial-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[#8fe020] px-4 py-3.5 text-sm font-bold text-[#1a2e05] shadow-sm transition-colors;
+  }
+
+  .btn-editorial-primary:hover:not(:disabled) {
+    background-color: #7acc10;
+  }
+
+  .btn-editorial-primary:disabled {
+    @apply cursor-not-allowed opacity-70;
+  }
+
+  .btn-editorial-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-colors;
+  }
+
+  .btn-editorial-outline:hover:not(:disabled) {
+    @apply border-slate-300 bg-slate-50 text-slate-900;
+  }
+
+  .btn-editorial-outline:disabled {
+    @apply cursor-not-allowed opacity-70;
+  }
+
+  .link-editorial-secondary {
+    @apply text-sm font-medium text-blue-600 underline-offset-2 transition-colors hover:text-blue-700 hover:underline;
+  }
+
+  html[data-theme='editorial'] .avant-toast {
+    @apply border-slate-200 bg-white text-slate-900 shadow-md shadow-slate-200/60;
+  }
+
+  html[data-theme='editorial'] .avant-toast p {
+    @apply text-slate-800;
+  }
+
+  html[data-theme='editorial'] .avant-toast button {
+    @apply text-slate-400 hover:bg-slate-100 hover:text-slate-600;
+  }
+
+  .label-editorial {
+    @apply pl-1 text-sm font-medium text-slate-700;
+  }
+
+  .input-editorial {
+    @apply w-full h-11 rounded-lg border border-slate-200 px-4 text-sm font-medium text-slate-900 outline-none transition-[border-color,box-shadow] placeholder:font-normal placeholder:text-slate-400;
+    background-color: #ffffff;
+    color-scheme: light;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .input-editorial:focus {
+    border-color: #8fe020;
+    box-shadow: 0 0 0 3px rgba(143, 224, 32, 0.2);
+  }
+}
+
+/* Autofill Chrome — fora de @layer; color-scheme: light no editorial evita azul padrão */
+@keyframes avant-input-autofill-start {
+  from,
+  to {
+    background-color: #ffffff;
+  }
+}
+
+input.input-editorial:-webkit-autofill,
+input.input-editorial:-webkit-autofill:hover,
+input.input-editorial:-webkit-autofill:focus,
+input.input-editorial:-webkit-autofill:active,
+input.input-editorial:-internal-autofill-selected {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #0f172a !important;
+  caret-color: #0f172a;
+  background-color: #ffffff !important;
+  background-clip: padding-box !important;
+  border-color: #e2e8f0;
+  animation: avant-input-autofill-start 0s forwards;
+  transition: background-color 99999s ease-out 0s;
+}
+
+input.input-editorial:-webkit-autofill:focus,
+input.input-editorial:-internal-autofill-selected:focus {
+  border-color: #8fe020 !important;
+  -webkit-box-shadow:
+    0 0 0 1000px #ffffff inset,
+    0 0 0 3px rgba(143, 224, 32, 0.2) !important;
+  box-shadow:
+    0 0 0 1000px #ffffff inset,
+    0 0 0 3px rgba(143, 224, 32, 0.2) !important;
+}
+
+html[data-theme='editorial'] input.input-editorial:-webkit-autofill,
+html[data-theme='editorial'] input.input-editorial:-webkit-autofill:hover,
+html[data-theme='editorial'] input.input-editorial:-webkit-autofill:focus,
+html[data-theme='editorial'] input.input-editorial:-webkit-autofill:active,
+html[data-theme='editorial'] input.input-editorial:-internal-autofill-selected {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  background-color: #ffffff !important;
 }
 
 @layer utilities {

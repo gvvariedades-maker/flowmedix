@@ -1,0 +1,28 @@
+{
+  "exported_at": "2026-06-10T04:59:33.685Z",
+  "lote": "processamento-de-artigos-e-produtos-de-saude-lote-01",
+  "total": 3,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-5",
+      "titulo_aula": "Processamento de Artigos e Produtos de Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1570
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-6",
+      "titulo_aula": "Processamento de Artigos e Produtos de Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1571
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-7",
+      "titulo_aula": "Processamento de Artigos e Produtos de Saúde",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1572
+    }
+  ]
+}

@@ -5,11 +5,12 @@ import {
   aggregateNotebookProgress,
   estudadosSetFromHistorico,
   getHistoricoQuestoesForSlugsCached,
+  getMatriculatedConcursosCached,
 } from '@/lib/cache';
 import { resolveAccessibleModulosWhenEmpty } from '@/lib/concursos/resolveCatalogWhenEmpty';
 import CadernoDetailClient from './CadernoDetailClient';
 import CadernoDetailMetrics from '@/components/dashboard/cadernos/CadernoDetailMetrics';
-import CadernoReverseStudyBadge from '@/components/dashboard/cadernos/CadernoReverseStudyBadge';
+import { CadernoReverseStudyBadge } from '@/components/dashboard/cadernos/CadernoReverseStudyBadge';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
 
 export interface NotebookItem {
@@ -39,12 +40,19 @@ export interface CadernoDetail {
   items: NotebookItem[];
 }
 
+export type CadernoSetupMode = 'none' | 'setup' | 'done';
+
 export default async function CadernoDetailPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ setup?: string }>;
 }) {
   const { id } = await params;
+  const { setup: setupParam } = await searchParams;
+  const setupMode: CadernoSetupMode =
+    setupParam === 'done' ? 'done' : setupParam === '1' ? 'setup' : 'none';
 
   const session = await getServerSession();
   if (!session?.user) redirect('/login');
@@ -74,10 +82,14 @@ export default async function CadernoDetailPage({
     const slugs = (items ?? []).map((item) => item.modulo_slug);
     const isAdmin = isAdminSessionEmail(session.user.email ?? null);
 
-    const [modulos, historico] = await Promise.all([
+    const [modulos, historico, matriculatedConcursos] = await Promise.all([
       resolveAccessibleModulosWhenEmpty(session.user.id, isAdmin),
       getHistoricoQuestoesForSlugsCached(session.user.id, slugs),
+      getMatriculatedConcursosCached(session.user.id).catch(() => []),
     ]);
+
+    const editalBanca =
+      matriculatedConcursos.find((concurso) => concurso.tipo === 'edital')?.banca ?? null;
 
     const stats = aggregateNotebookProgress(slugs, historico);
     const estudadosSet = estudadosSetFromHistorico(historico);
@@ -124,6 +136,8 @@ export default async function CadernoDetailPage({
       <CadernoDetailClient
         caderno={caderno}
         modulosDisponiveis={modulosDisponiveis}
+        editalBanca={editalBanca}
+        setupMode={setupMode}
         metricsSlot={<CadernoDetailMetrics stats={stats} />}
         reverseStudyBadgeSlot={<CadernoReverseStudyBadge />}
       />

@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-10T03:55:05.310Z",
+  "lote": "oxigenoterapia-e-cuidados-respiratorios-lote-03",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "imparh-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-1",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 2734
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344701804-6",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 2748
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-2",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 586
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-6",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 590
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-7",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 591
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-6",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 2775
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-1",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 2752
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344701804-4",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2746
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-6",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2757
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-7",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 2758
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-4",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IACP",
+      "avant_codigo": 2705
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-3",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO JK",
+      "avant_codigo": 2696
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-4",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO JK",
+      "avant_codigo": 2697
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-1",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 2760
+    },
+    {
+      "modulo_slug": "itame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-6",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 626
+    },
+    {
+      "modulo_slug": "itame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-2",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "ITAME",
+      "avant_codigo": 2695
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-7",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 2725
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344742779-4",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "LEGALLE",
+      "avant_codigo": 2782
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-3",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 2772
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-5",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 2774
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-8",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "MARANATHA ASSESSORIA",
+      "avant_codigo": 574
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-3",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 615
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-6",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 618
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-0",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 2759
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-5",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "NOSSO RUMO",
+      "avant_codigo": 2738
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-0",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 566
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-5",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 589
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-3",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 623
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-4",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 624
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-5",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 625
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-7",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 627
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-8",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 628
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-7",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2716
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-6",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2739
+    },
+    {
+      "modulo_slug": "omni-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344742779-1",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 2779
+    },
+    {
+      "modulo_slug": "omni-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344751294-4",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 2789
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-7",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 554
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1780000535393-0",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 4065
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-7",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 619
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-6",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2724
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-9",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2768
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-6",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 572
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-3",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 2736
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-7",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 2776
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-8",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 555
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-9",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 556
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-5",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2714
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-8",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2717
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-1",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2719
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344667377-6",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2732
+    }
+  ]
+}

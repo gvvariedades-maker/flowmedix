@@ -1,0 +1,77 @@
+{
+  "exported_at": "2026-06-10T04:19:03.900Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-lote-03",
+  "total": 10,
+  "entries": [
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2872
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2879
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-6",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 2360
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-2",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 2868
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-3",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 2869
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-2",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 2916
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-4",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2350
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-4",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2385
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-0",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2876
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-4",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2918
+    }
+  ]
+}

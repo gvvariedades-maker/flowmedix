@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-09T21:34:16.536Z",
+  "lote": "imunizacao-lote-10",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "quadrix-geral-imunizacao-1777103182944-0",
+    "reis-e-reis-enfermagem-imunizacao-1777103182944-2",
+    "sc-treinamentos-enfermagem-imunizacao-1779564071106-2",
+    "selecon-enfermagem-imunizacao-1777103238173-3",
+    "selecon-enfermagem-imunizacao-1779563965519-7",
+    "selecon-enfermagem-imunizacao-1779564001927-5",
+    "selecon-enfermagem-imunizacao-1779564001927-6",
+    "selecon-enfermagem-imunizacao-1779564011849-1",
+    "selecon-enfermagem-imunizacao-1779564048247-4",
+    "selecon-enfermagem-imunizacao-1779564048247-5",
+    "selecon-enfermagem-imunizacao-1779564071106-1",
+    "selecon-enfermagem-imunizacao-1779572236985-7",
+    "ufmt-enfermagem-imunizacao-1777103251447-3",
+    "ufmt-enfermagem-imunizacao-1777103251447-5",
+    "unesc-enfermagem-imunizacao-1779563961175-4",
+    "unesc-enfermagem-imunizacao-1779563975447-3",
+    "unesc-enfermagem-imunizacao-1780001148264-0",
+    "unifil-enfermagem-imunizacao-1779564006577-9",
+    "unifil-enfermagem-imunizacao-1779564031957-2",
+    "unifil-enfermagem-imunizacao-1779572215875-0",
+    "unifil-enfermagem-imunizacao-1779572215875-1",
+    "unifil-enfermagem-imunizacao-1779572215875-2",
+    "unifil-enfermagem-imunizacao-1779572220683-0",
+    "unifil-enfermagem-imunizacao-1779572220683-1",
+    "unifil-enfermagem-imunizacao-1779572220683-2",
+    "unifil-enfermagem-imunizacao-1779572220683-3",
+    "unifil-enfermagem-imunizacao-1779572220683-4",
+    "unifil-enfermagem-imunizacao-1779572220683-5",
+    "unifil-enfermagem-imunizacao-1779572220683-6",
+    "unifil-enfermagem-imunizacao-1779572220683-9",
+    "unifil-enfermagem-imunizacao-1779572227744-2",
+    "unifil-enfermagem-imunizacao-1779572227744-3",
+    "unifil-enfermagem-imunizacao-1779572227744-4",
+    "unifil-enfermagem-imunizacao-1779572227744-5",
+    "unifil-enfermagem-imunizacao-1779572227744-6",
+    "unifil-enfermagem-imunizacao-1779572227744-9",
+    "unifil-enfermagem-imunizacao-1779572236985-8",
+    "univida-enfermagem-imunizacao-1777103182944-5",
+    "univida-enfermagem-imunizacao-1777103182944-6",
+    "univida-enfermagem-imunizacao-1777103204932-1",
+    "univida-enfermagem-imunizacao-1777103204932-2",
+    "univida-enfermagem-imunizacao-1779564063274-0",
+    "vunesp-enfermagem-imunizacao-1777103204932-5",
+    "vunesp-enfermagem-imunizacao-1777103270218-4",
+    "vunesp-enfermagem-imunizacao-1779563965519-0",
+    "vunesp-enfermagem-imunizacao-1779563965519-1",
+    "vunesp-enfermagem-imunizacao-1779563965519-2",
+    "vunesp-enfermagem-imunizacao-1779563965519-3",
+    "vunesp-enfermagem-imunizacao-1779563965519-4",
+    "vunesp-enfermagem-imunizacao-1779563965519-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "quadrix-geral-imunizacao-1777103182944-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-imunizacao-1777103182944-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-imunizacao-1779564071106-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1777103238173-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779563965519-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564001927-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564001927-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564011849-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564048247-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564048247-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564071106-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779572236985-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-imunizacao-1777103251447-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-imunizacao-1777103251447-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-imunizacao-1779563961175-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-imunizacao-1779563975447-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-imunizacao-1780001148264-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779564006577-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779564031957-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572215875-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572215875-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572215875-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572236985-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-imunizacao-1777103182944-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-imunizacao-1777103182944-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-imunizacao-1777103204932-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-imunizacao-1777103204932-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-imunizacao-1779564063274-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1777103204932-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1777103270218-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563965519-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563965519-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563965519-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563965519-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563965519-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563965519-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-06-10T05:02:33.641Z",
+  "lote": "historia-da-enfermagem-lote-01",
+  "mode": "apply",
+  "total_files": 5,
+  "ok": 5,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+    "avancasp-enfermagem-historia-da-enfermagem-1775331667969-2",
+    "idcap-enfermagem-historia-da-enfermagem-1775331667969-3",
+    "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+    "ieses-enfermagem-historia-da-enfermagem-1775331667969-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-historia-da-enfermagem-1775331667969-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-historia-da-enfermagem-1775331667969-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-historia-da-enfermagem-1778712122855-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-historia-da-enfermagem-1775331667969-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

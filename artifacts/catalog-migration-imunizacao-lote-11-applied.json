@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-06-09T21:34:34.379Z",
+  "lote": "imunizacao-lote-11",
+  "mode": "apply",
+  "total_files": 25,
+  "ok": 25,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "vunesp-enfermagem-imunizacao-1779563970889-0",
+    "vunesp-enfermagem-imunizacao-1779563970889-8",
+    "vunesp-enfermagem-imunizacao-1779563992006-2",
+    "vunesp-enfermagem-imunizacao-1779563992006-3",
+    "vunesp-enfermagem-imunizacao-1779563996663-0",
+    "vunesp-enfermagem-imunizacao-1779563996663-1",
+    "vunesp-enfermagem-imunizacao-1779563996663-2",
+    "vunesp-enfermagem-imunizacao-1779564001927-0",
+    "vunesp-enfermagem-imunizacao-1779564001927-1",
+    "vunesp-enfermagem-imunizacao-1779564001927-2",
+    "vunesp-enfermagem-imunizacao-1779564053668-4",
+    "vunesp-enfermagem-imunizacao-1779564053668-5",
+    "vunesp-enfermagem-imunizacao-1779564059030-2",
+    "vunesp-enfermagem-imunizacao-1779564059030-3",
+    "vunesp-enfermagem-imunizacao-1779564063274-5",
+    "vunesp-enfermagem-imunizacao-1779564063274-6",
+    "vunesp-enfermagem-imunizacao-1779564063274-7",
+    "vunesp-enfermagem-imunizacao-1779564090395-3",
+    "vunesp-enfermagem-imunizacao-1779564090395-4",
+    "vunesp-enfermagem-imunizacao-1779564090395-5",
+    "vunesp-enfermagem-imunizacao-1779564096589-4",
+    "vunesp-enfermagem-imunizacao-1779564096589-5",
+    "vunesp-enfermagem-imunizacao-1779564096589-6",
+    "vunesp-enfermagem-imunizacao-1779564125198-4",
+    "vunesp-enfermagem-imunizacao-1779572207173-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563970889-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563970889-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563992006-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563992006-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563996663-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563996663-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563996663-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564001927-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564001927-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564001927-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564053668-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564053668-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564059030-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564059030-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564063274-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564063274-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564063274-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564090395-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564090395-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564090395-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564096589-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564096589-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564096589-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564125198-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779572207173-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

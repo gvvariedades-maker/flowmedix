@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T03:54:19.452Z",
+  "lote": "oxigenoterapia-e-cuidados-respiratorios-lote-02",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fgv-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-9",
+    "fgv-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344667377-2",
+    "fgv-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344667377-5",
+    "fgv-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-8",
+    "fgv-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344742779-0",
+    "fgv-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344742779-2",
+    "fundatec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-0",
+    "fundatec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-1",
+    "fundatec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-0",
+    "fundatec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344667377-3",
+    "fundatec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344667377-4",
+    "fundatec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344701804-7",
+    "fundatec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-8",
+    "fundep-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344751294-3",
+    "fundepes-copeve-ufal-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-3",
+    "furb-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-4",
+    "furb-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-5",
+    "furb-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-4",
+    "fuvest-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-3",
+    "gama-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-5",
+    "gama-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-7",
+    "gama-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-0",
+    "gama-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-1",
+    "gualimp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344742779-3",
+    "iaupe-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-0",
+    "iaupe-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-1",
+    "iaupe-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-2",
+    "iaupe-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-3",
+    "ibade-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-2",
+    "ibade-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-3",
+    "ibade-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-4",
+    "ibade-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-6",
+    "ibade-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-7",
+    "ibam-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-3",
+    "ibest-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-6",
+    "ibfc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-4",
+    "ibfc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-6",
+    "ibfc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-6",
+    "ibfc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-5",
+    "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-2",
+    "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-3",
+    "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-4",
+    "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-5",
+    "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-6",
+    "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-7",
+    "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-8",
+    "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-9",
+    "idesg-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-2",
+    "idesg-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-3",
+    "idib-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778934890864-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fgv-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344667377-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344667377-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344742779-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344742779-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344667377-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344667377-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344701804-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344751294-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344742779-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibam-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibest-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778934890864-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

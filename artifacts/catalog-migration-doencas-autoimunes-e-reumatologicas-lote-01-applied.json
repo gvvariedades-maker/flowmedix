@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-06-10T05:53:34.450Z",
+  "lote": "doencas-autoimunes-e-reumatologicas-lote-01",
+  "mode": "apply",
+  "total_files": 2,
+  "ok": 2,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-3",
+    "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-doencas-autoimunes-e-reumatologicas-1778934918280-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

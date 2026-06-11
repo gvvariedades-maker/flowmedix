@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-09T09:48:31.667Z",
+  "lote": "processo-de-enfermagem-lote-01",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056021381-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 217
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056021381-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 218
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056129848-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 234
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056129848-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 235
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4128
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4129
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4130
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4131
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4132
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4133
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4134
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4135
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4136
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4137
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4138
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4139
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4140
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4141
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4142
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001613305-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4143
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4255
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4256
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4257
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4258
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4259
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4260
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4261
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4262
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4263
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4264
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4265
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4533
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4534
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4535
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4536
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4537
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4538
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-0",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4539
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-1",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4540
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-2",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4541
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-3",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4542
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-4",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4543
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4544
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4545
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-5",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4673
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4674
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-7",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4675
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-8",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4676
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-9",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4677
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056129848-6",
+      "titulo_aula": "Processo de Enfermagem",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 236
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
+import { invalidateNotebookActivationCache } from '@/lib/cache';
 import { logger } from '@/lib/logger';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 
@@ -100,6 +101,8 @@ export async function POST(
         throw error;
       }
 
+      void invalidateNotebookActivationCache(user.id);
+
       return NextResponse.json({ items: data ?? [] }, { status: 201 });
     }
 
@@ -127,6 +130,8 @@ export async function POST(
       }
       throw error;
     }
+
+    void invalidateNotebookActivationCache(user.id);
 
     return NextResponse.json({ item: data }, { status: 201 });
   } catch (error) {

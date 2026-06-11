@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-06-10T05:53:17.095Z",
+  "lote": "saude-do-homem-lote-01",
+  "mode": "apply",
+  "total_files": 2,
+  "ok": 2,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idecan-enfermagem-saude-do-homem-1780067036141-6",
+    "idib-enfermagem-saude-do-homem-1778934944659-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-homem-1780067036141-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-do-homem-1778934944659-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

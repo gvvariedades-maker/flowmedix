@@ -111,19 +111,19 @@ export function EstudoReversoWelcomeModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[80] flex items-end justify-center bg-slate-950/55 p-3 backdrop-blur-sm sm:items-center sm:p-6">
+    <div className="fixed inset-0 z-[80] flex items-end justify-center bg-black/40 p-3 backdrop-blur-[2px] sm:items-center sm:p-6">
       <div
         ref={panelRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby="estudo-reverso-welcome-title"
         aria-describedby="estudo-reverso-welcome-description"
-        className="relative w-full max-w-2xl overflow-hidden rounded-3xl border border-white/70 bg-white shadow-2xl shadow-slate-950/20 outline-none"
+        className="card-elevated-lg relative w-full max-w-2xl overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl outline-none"
       >
-        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-br from-indigo-100 via-white to-emerald-100" aria-hidden />
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-br from-[rgba(143,224,32,0.14)] via-white to-slate-50" aria-hidden />
         <div className="relative p-5 md:p-7">
           <div className="flex items-start justify-between gap-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-indigo-700 ring-1 ring-indigo-100">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.12)] px-3 py-1 text-[10px] font-black uppercase tracking-widest text-[#3d6b0f]">
               <Sparkles className="h-3.5 w-3.5" aria-hidden />
               Boas-vindas ao método
             </div>
@@ -138,17 +138,17 @@ export function EstudoReversoWelcomeModal({
           </div>
 
           <div className="mt-6 grid gap-5 md:grid-cols-[0.78fr_1.22fr] md:items-center">
-            <div className="rounded-3xl border border-indigo-100 bg-gradient-to-br from-indigo-600 to-indigo-700 p-5 text-white shadow-lg shadow-indigo-500/20">
-              <BrainCircuit className="h-9 w-9 text-emerald-200" aria-hidden />
-              <p className="mt-8 text-xs font-black uppercase tracking-widest text-indigo-100">{slide.eyebrow}</p>
+            <div className="rounded-3xl border border-[rgba(143,224,32,0.35)] bg-gradient-to-br from-[#3d6b0f] to-[#2d5010] p-5 text-white shadow-md">
+              <BrainCircuit className="h-9 w-9 text-[#8fe020]" aria-hidden />
+              <p className="mt-8 text-xs font-black uppercase tracking-widest text-[#8fe020]/90">{slide.eyebrow}</p>
               <div className="mt-3 h-2 rounded-full bg-white/20">
                 <div
-                  className="h-2 rounded-full bg-emerald-300 transition-all"
+                  className="h-2 rounded-full bg-[#8fe020] transition-all"
                   style={{ width: `${((activeIndex + 1) / SLIDES.length) * 100}%` }}
                   aria-hidden
                 />
               </div>
-              <p className="mt-4 text-sm font-semibold leading-relaxed text-indigo-50">
+              <p className="mt-4 text-sm font-semibold leading-relaxed text-white/90">
                 Questão → tentativa → feedback → conceito → revisão.
               </p>
             </div>
@@ -168,7 +168,7 @@ export function EstudoReversoWelcomeModal({
                     type="button"
                     onClick={() => setActiveIndex(index)}
                     className={`h-2.5 rounded-full transition-all ${
-                      index === activeIndex ? 'w-8 bg-indigo-600' : 'w-2.5 bg-slate-200 hover:bg-slate-300'
+                      index === activeIndex ? 'w-8 bg-[#8fe020]' : 'w-2.5 bg-slate-200 hover:bg-slate-300'
                     }`}
                     aria-label={`Ir para o slide ${index + 1}`}
                     aria-current={index === activeIndex ? 'step' : undefined}
@@ -181,7 +181,7 @@ export function EstudoReversoWelcomeModal({
                   <button
                     type="button"
                     onClick={() => setActiveIndex((current) => Math.max(0, current - 1))}
-                    className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-black text-slate-700 transition-colors hover:bg-slate-50"
+                    className="btn-editorial-outline inline-flex items-center justify-center px-4 py-2.5 text-sm font-black"
                   >
                     <ArrowLeft className="mr-2 h-4 w-4" aria-hidden />
                     Voltar
@@ -192,7 +192,7 @@ export function EstudoReversoWelcomeModal({
                   <button
                     type="button"
                     onClick={() => setActiveIndex((current) => Math.min(SLIDES.length - 1, current + 1))}
-                    className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-black text-white shadow-sm shadow-indigo-500/20 transition-colors hover:bg-indigo-700"
+                    className="btn-editorial-primary inline-flex items-center justify-center px-4 py-2.5 text-sm font-black"
                   >
                     Próximo
                     <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
@@ -202,7 +202,7 @@ export function EstudoReversoWelcomeModal({
                     <Link
                       href="/estudar"
                       onClick={onSkip}
-                      className="inline-flex items-center justify-center rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-black text-white shadow-sm shadow-indigo-500/20 transition-colors hover:bg-indigo-700"
+                      className="btn-editorial-primary inline-flex items-center justify-center px-4 py-2.5 text-sm font-black"
                     >
                       Começar agora
                       <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
@@ -210,7 +210,7 @@ export function EstudoReversoWelcomeModal({
                     <Link
                       href="/ajuda/estudo-reverso"
                       onClick={onSkip}
-                      className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-black text-slate-700 transition-colors hover:bg-slate-50"
+                      className="btn-editorial-outline inline-flex items-center justify-center px-4 py-2.5 text-sm font-black"
                     >
                       Entender melhor o método
                     </Link>

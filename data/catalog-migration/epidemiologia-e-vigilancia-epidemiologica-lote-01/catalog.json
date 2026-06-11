@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-10T04:02:34.875Z",
+  "lote": "epidemiologia-e-vigilancia-epidemiologica-lote-01",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-2",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3395
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-3",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3396
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-5",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3416
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-6",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3417
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-7",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3392
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-3",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 3510
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-1",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3235
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-5",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3239
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-5",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3464
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-6",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3521
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-1",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3524
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-0",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3271
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-6",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3437
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-7",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3438
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563809836-7",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3475
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-5",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3494
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-8",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3242
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-6",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3277
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-6",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 3258
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-7",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 3259
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-4",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 3519
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-5",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 3520
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-6",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "COPESE UFPI",
+      "avant_codigo": 3465
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-7",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "COPESE UFPI",
+      "avant_codigo": 3466
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563804667-8",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "COPESE UFPI",
+      "avant_codigo": 3467
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-2",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 3273
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-2",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 3453
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-3",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 3518
+    },
+    {
+      "modulo_slug": "cotec-fadenor-geral-epidemiologia-e-vigilancia-epidemiologica-1777103452899-2",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Geral",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 879
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-2",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3499
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-9",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3506
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-6",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3513
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-7",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3514
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-6",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "DECORP",
+      "avant_codigo": 3220
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-1",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 3253
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-0",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 3421
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-6",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 3503
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-7",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 3504
+    },
+    {
+      "modulo_slug": "facape-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-5",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACAPE",
+      "avant_codigo": 3219
+    },
+    {
+      "modulo_slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-4",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 3238
+    },
+    {
+      "modulo_slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-0",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 3385
+    },
+    {
+      "modulo_slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-1",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 3386
+    },
+    {
+      "modulo_slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-2",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 3387
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-9",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAFIPA",
+      "avant_codigo": 3440
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-0",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3214
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-1",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3215
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-2",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3216
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-3",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3217
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-8",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3222
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-6",
+      "titulo_aula": "Epidemiologia e Vigilância Epidemiológica",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3240
+    }
+  ]
+}

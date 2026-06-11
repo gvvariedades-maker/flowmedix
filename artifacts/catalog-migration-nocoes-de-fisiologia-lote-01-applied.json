@@ -1,0 +1,356 @@
+{
+  "generated_at": "2026-06-10T04:27:54.007Z",
+  "lote": "nocoes-de-fisiologia-lote-01",
+  "mode": "apply",
+  "total_files": 49,
+  "ok": 49,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-nocoes-de-fisiologia-1775448586547-3",
+    "adm-tec-enfermagem-nocoes-de-fisiologia-1775501962697-2",
+    "agirh-enfermagem-nocoes-de-fisiologia-1775448586547-2",
+    "agirh-enfermagem-nocoes-de-fisiologia-1776056116422-1",
+    "agirh-enfermagem-nocoes-de-fisiologia-1776056116422-2",
+    "ameosc-enfermagem-nocoes-de-fisiologia-1775448586547-7",
+    "ameosc-enfermagem-nocoes-de-fisiologia-1775448599930-2",
+    "ameosc-enfermagem-nocoes-de-fisiologia-1776055811481-5",
+    "ameosc-enfermagem-nocoes-de-fisiologia-1776055998470-0",
+    "ameosc-enfermagem-nocoes-de-fisiologia-1776055998470-1",
+    "ameosc-enfermagem-nocoes-de-fisiologia-1776055998470-2",
+    "avancasp-enfermagem-nocoes-de-fisiologia-1775448615466-5",
+    "cotec-fadenor-enfermagem-nocoes-de-fisiologia-1775501976529-0",
+    "educa-pb-enfermagem-nocoes-de-fisiologia-1775448599930-0",
+    "fau-unicentro-enfermagem-nocoes-de-fisiologia-1775448586547-0",
+    "fau-unicentro-enfermagem-nocoes-de-fisiologia-1775448586547-5",
+    "fau-unicentro-enfermagem-nocoes-de-fisiologia-1775448586547-6",
+    "fau-unicentro-enfermagem-nocoes-de-fisiologia-1775448599930-1",
+    "fau-unicentro-enfermagem-nocoes-de-fisiologia-1775448615466-1",
+    "fau-unicentro-enfermagem-nocoes-de-fisiologia-1776055798601-1",
+    "fauel-enfermagem-nocoes-de-fisiologia-1775448615466-4",
+    "fepese-enfermagem-nocoes-de-fisiologia-1775448599930-3",
+    "fgv-enfermagem-nocoes-de-fisiologia-1775448529213-6",
+    "fgv-enfermagem-nocoes-de-fisiologia-1775448599930-5",
+    "fgv-enfermagem-nocoes-de-fisiologia-1776055798601-3",
+    "fgv-enfermagem-nocoes-de-fisiologia-1776055811481-4",
+    "fgv-enfermagem-nocoes-de-fisiologia-1776055942033-0",
+    "fumarc-enfermagem-nocoes-de-fisiologia-1775448615466-0",
+    "fundatec-enfermagem-nocoes-de-fisiologia-1775448529213-4",
+    "fundatec-enfermagem-nocoes-de-fisiologia-1775448529213-5",
+    "fundatec-enfermagem-nocoes-de-fisiologia-1775448599930-4",
+    "fundep-enfermagem-nocoes-de-fisiologia-1776056116422-0",
+    "furb-enfermagem-nocoes-de-fisiologia-1776055811481-2",
+    "furb-enfermagem-nocoes-de-fisiologia-1776055986110-3",
+    "ibade-enfermagem-nocoes-de-fisiologia-1775448615466-6",
+    "ibade-enfermagem-nocoes-de-fisiologia-1775448615466-7",
+    "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-0",
+    "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-1",
+    "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-2",
+    "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-3",
+    "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-4",
+    "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-5",
+    "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-6",
+    "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-1",
+    "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-2",
+    "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-3",
+    "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-4",
+    "ibade-enfermagem-nocoes-de-fisiologia-1775501921356-0",
+    "ibade-enfermagem-nocoes-de-fisiologia-1775501921356-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-nocoes-de-fisiologia-1775448586547-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-nocoes-de-fisiologia-1775501962697-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-nocoes-de-fisiologia-1775448586547-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-nocoes-de-fisiologia-1776056116422-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-nocoes-de-fisiologia-1776056116422-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1775448586547-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1775448599930-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1776055811481-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1776055998470-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1776055998470-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1776055998470-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-fisiologia-1775448615466-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-nocoes-de-fisiologia-1775501976529-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-nocoes-de-fisiologia-1775448599930-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-fisiologia-1775448586547-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-fisiologia-1775448586547-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-fisiologia-1775448586547-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-fisiologia-1775448599930-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-fisiologia-1775448615466-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-fisiologia-1776055798601-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-nocoes-de-fisiologia-1775448615466-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-nocoes-de-fisiologia-1775448599930-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-fisiologia-1775448529213-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-fisiologia-1775448599930-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-fisiologia-1776055798601-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-fisiologia-1776055811481-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-fisiologia-1776055942033-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-nocoes-de-fisiologia-1775448615466-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-nocoes-de-fisiologia-1775448529213-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-nocoes-de-fisiologia-1775448529213-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-nocoes-de-fisiologia-1775448599930-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-nocoes-de-fisiologia-1776056116422-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-nocoes-de-fisiologia-1776055811481-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-nocoes-de-fisiologia-1776055986110-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448615466-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448615466-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448628970-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501802332-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501921356-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775501921356-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

@@ -63,7 +63,7 @@ describe('ProvaTimerBar', () => {
       />,
     );
 
-    expect(container.querySelector('.border-amber-500\\/50')).toBeTruthy();
+    expect(container.querySelector('.border-amber-300')).toBeTruthy();
     expect(
       screen.getByText(/Tempo acima da meta sugerida/, { selector: '.sr-only' }),
     ).toBeInTheDocument();

@@ -1,0 +1,35 @@
+{
+  "exported_at": "2026-06-10T05:04:53.873Z",
+  "lote": "saude-mental-lote-01",
+  "total": 4,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-saude-mental-1778712418722-2",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1699
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-mental-1780067024707-2",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5165
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-mental-1780001362784-4",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4118
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-mental-1780001362784-5",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 4119
+    }
+  ]
+}

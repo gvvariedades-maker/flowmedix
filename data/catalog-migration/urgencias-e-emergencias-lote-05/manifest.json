@@ -1,0 +1,35 @@
+{
+  "lote": "urgencias-e-emergencias-lote-05",
+  "exported_at": "2026-06-09T11:18:09.649Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Urgências e Emergências",
+    "limit": 50,
+    "exclude_count": 219
+  },
+  "slugs": [
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104012755-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-6",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-7",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-3",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-4",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-5",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-6",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-7",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-8",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-1",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-2",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-3",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-4",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-5",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104077075-9",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-1",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-2",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-1",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-2"
+  ]
+}

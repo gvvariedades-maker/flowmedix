@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-10T04:22:52.397Z",
+  "lote": "promocao-a-saude-e-prevencao-de-agravos-lote-01",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3533
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-2",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3534
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-3",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3535
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-4",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3536
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-6",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3575
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-7",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3576
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-0",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3613
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3614
+    },
+    {
+      "modulo_slug": "aocp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-9",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AOCP",
+      "avant_codigo": 3603
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-7",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 3530
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-7",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3559
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-0",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3569
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3570
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3571
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-3",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3572
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-4",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 3573
+    },
+    {
+      "modulo_slug": "cesgranrio-saude-publica-promocao-a-saude-e-prevencao-de-agravos-premium-pilot",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Saúde Pública",
+      "banca": "CESGRANRIO",
+      "avant_codigo": 5183
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-8",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 3550
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CETREDE",
+      "avant_codigo": 3632
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-7",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 3638
+    },
+    {
+      "modulo_slug": "contemax-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-2",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CONTEMAX",
+      "avant_codigo": 3643
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-3",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "COPESE UFPI",
+      "avant_codigo": 3581
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-5",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3537
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3618
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-4",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3635
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-5",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3636
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-3",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3644
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-3",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 3545
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-7",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "EDUCA PB",
+      "avant_codigo": 3567
+    },
+    {
+      "modulo_slug": "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-5",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 3528
+    },
+    {
+      "modulo_slug": "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-6",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 3529
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-0",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3532
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-6",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3584
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-0",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3585
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-0",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3594
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-1",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3595
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-6",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3600
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-4",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3617
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-9",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 3640
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-6",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 3591
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-7",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 3592
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-8",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAUEL",
+      "avant_codigo": 3593
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-3",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 3526
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 3527
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-6",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 3637
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-7",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3539
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-5",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3583
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-5",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 3590
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-3",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCEPE",
+      "avant_codigo": 3555
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-4",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDEP",
+      "avant_codigo": 3598
+    }
+  ]
+}

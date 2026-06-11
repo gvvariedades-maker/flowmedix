@@ -1,0 +1,77 @@
+{
+  "exported_at": "2026-06-10T05:51:22.276Z",
+  "lote": "cuidados-gerais-com-higiene-e-conforto-do-paciente-lote-01",
+  "total": 10,
+  "entries": [
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1780000535393-6",
+      "titulo_aula": "Cuidados Gerais com Higiene e Conforto do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4068
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-2",
+      "titulo_aula": "Cuidados Gerais com Higiene e Conforto do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1557
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-3",
+      "titulo_aula": "Cuidados Gerais com Higiene e Conforto do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1558
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-4",
+      "titulo_aula": "Cuidados Gerais com Higiene e Conforto do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1559
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-5",
+      "titulo_aula": "Cuidados Gerais com Higiene e Conforto do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1560
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-6",
+      "titulo_aula": "Cuidados Gerais com Higiene e Conforto do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1561
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1780066938846-3",
+      "titulo_aula": "Cuidados Gerais com Higiene e Conforto do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5127
+    },
+    {
+      "modulo_slug": "idib-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778934890864-6",
+      "titulo_aula": "Cuidados Gerais com Higiene e Conforto do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1739
+    },
+    {
+      "modulo_slug": "idib-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778934890864-7",
+      "titulo_aula": "Cuidados Gerais com Higiene e Conforto do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1740
+    },
+    {
+      "modulo_slug": "idib-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778934890864-8",
+      "titulo_aula": "Cuidados Gerais com Higiene e Conforto do Paciente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1741
+    }
+  ]
+}

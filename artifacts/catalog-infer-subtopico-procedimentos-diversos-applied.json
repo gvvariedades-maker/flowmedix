@@ -1,0 +1,300 @@
+{
+  "generated_at": "2026-06-10T07:54:35.499Z",
+  "mode": "apply",
+  "bucket": "Procedimentos Diversos",
+  "min_confidence_apply": 0.85,
+  "limit": 10000,
+  "inference_source": "heuristic",
+  "summary": {
+    "scanned": 28,
+    "inferred": 28,
+    "errors": 0,
+    "keep_current": 7,
+    "same_subtopico": 7,
+    "applicable": 21,
+    "applied": 21
+  },
+  "proposals": [
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1780000535393-6",
+      "from": "Procedimentos Diversos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibfc-geral-procedimentos-diversos-1777103988389-5",
+      "from": "Procedimentos Diversos",
+      "suggested": "Cálculo de Administração de Medicamentos e Infusões",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (cálculo): enunciado indica Cálculo de Administração de Medicamentos e Infusões",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-outros-temas-de-enfermagem-1780001440222-3",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-2",
+      "from": "Procedimentos Diversos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-3",
+      "from": "Procedimentos Diversos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-4",
+      "from": "Procedimentos Diversos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-5",
+      "from": "Procedimentos Diversos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-6",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1780066938846-3",
+      "from": "Procedimentos Diversos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-paliativos-1778712409051-4",
+      "from": "Procedimentos Diversos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-oncologia-1778712409051-5",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-7",
+      "from": "Procedimentos Diversos",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (sondas): enunciado indica Instalação e Manejo de Sondas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-8",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-9",
+      "from": "Procedimentos Diversos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-0",
+      "from": "Procedimentos Diversos",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.85,
+      "keep_current": false,
+      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-2",
+      "from": "Procedimentos Diversos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-3",
+      "from": "Procedimentos Diversos",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "Heurística (criança): enunciado indica Saúde da Criança",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-4",
+      "from": "Procedimentos Diversos",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778934890864-6",
+      "from": "Procedimentos Diversos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778934890864-7",
+      "from": "Procedimentos Diversos",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.85,
+      "keep_current": false,
+      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778934890864-8",
+      "from": "Procedimentos Diversos",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (sondas): enunciado indica Instalação e Manejo de Sondas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-procedimentos-diversos-1778934890864-9",
+      "from": "Procedimentos Diversos",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.85,
+      "keep_current": false,
+      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-procedimentos-diversos-1778934900821-0",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-geral-procedimentos-1777103510083-2",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-procedimentos-diversos-1776056493133-0",
+      "from": "Procedimentos Diversos",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.86,
+      "keep_current": false,
+      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-procedimentos-diversos-1780000535393-7",
+      "from": "Procedimentos Diversos",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Heurística (sondas): enunciado indica Instalação e Manejo de Sondas",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-procedimentos-diversos-1780000535393-8",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.55,
+      "keep_current": true,
+      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "applicable": false,
+      "source": "heuristic"
+    }
+  ],
+  "apply_errors": []
+}

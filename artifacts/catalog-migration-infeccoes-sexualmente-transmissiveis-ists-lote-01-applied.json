@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T04:38:43.553Z",
+  "lote": "infeccoes-sexualmente-transmissiveis-ists-lote-01",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-6",
+    "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-6",
+    "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-7",
+    "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-0",
+    "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-8",
+    "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-9",
+    "cpcon-uepb-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-3",
+    "cpcon-uepb-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-3",
+    "cpcon-uepb-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-5",
+    "cpcon-uepb-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-3",
+    "fau-unicentro-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-1",
+    "fau-unicentro-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-1",
+    "fau-unicentro-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-2",
+    "fau-unicentro-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-4",
+    "fau-unicentro-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-4",
+    "fepese-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-5",
+    "fepese-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-2",
+    "fepese-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-6",
+    "fgv-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-6",
+    "fgv-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-7",
+    "fumarc-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-8",
+    "funatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-8",
+    "funatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-9",
+    "funatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-1",
+    "funatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-0",
+    "funatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-1",
+    "funcepe-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-3",
+    "funcern-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-5",
+    "funcern-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-7",
+    "funcern-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-8",
+    "fundatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-8",
+    "fundatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-7",
+    "ibam-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-6",
+    "ibec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-4",
+    "ibest-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-3",
+    "ibfc-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-5",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-0",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-1",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-2",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-3",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-4",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-5",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-6",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-7",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-0",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-1",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-2",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-3",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-4",
+    "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibam-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibest-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712294130-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1778712304760-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

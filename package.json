@@ -44,7 +44,10 @@
     "catalog:apply-lote": "tsx scripts/catalog-migration-apply-lote.ts",
     "catalog:upgrade-premium": "tsx scripts/catalog-migration-upgrade-premium.ts",
     "catalog:strip-layout-variant": "tsx scripts/catalog-migration-strip-layout-variant.ts",
-    "export:simulado-pool": "tsx scripts/export-public-simulado-pool.ts"
+    "catalog:reclassify-subtopico": "tsx scripts/catalog-reclassify-subtopico-cli.ts",
+    "catalog:infer-subtopico": "tsx scripts/catalog-infer-subtopico-cli.ts",
+    "export:simulado-pool": "tsx scripts/export-public-simulado-pool.ts",
+    "backup:assemble": "powershell -ExecutionPolicy Bypass -File scripts/assemble-avant-backup.ps1"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

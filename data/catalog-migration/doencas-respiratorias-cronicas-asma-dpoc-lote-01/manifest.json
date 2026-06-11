@@ -1,0 +1,13 @@
+{
+  "lote": "doencas-respiratorias-cronicas-asma-dpoc-lote-01",
+  "exported_at": "2026-06-10T05:14:03.252Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+    "limit": 50,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7"
+  ]
+}

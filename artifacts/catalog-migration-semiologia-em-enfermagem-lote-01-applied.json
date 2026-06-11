@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-10T05:37:56.200Z",
+  "lote": "semiologia-em-enfermagem-lote-01",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-semiologia-em-enfermagem-1779563486900-6",
+    "adm-tec-enfermagem-semiologia-em-enfermagem-1779563491765-0",
+    "adm-tec-enfermagem-semiologia-em-enfermagem-1779563517223-6",
+    "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+    "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-0",
+    "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-1",
+    "avancasp-enfermagem-semiologia-em-enfermagem-1779563486900-2",
+    "avancasp-enfermagem-semiologia-em-enfermagem-1779563500147-8",
+    "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-1",
+    "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-4",
+    "cebraspe-cespe-enfermagem-semiologia-em-enfermagem-1779563549311-2",
+    "cev-urca-enfermagem-semiologia-em-enfermagem-1779563491765-1",
+    "consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-4",
+    "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563531989-9",
+    "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563549311-3",
+    "cotec-fadenor-enfermagem-semiologia-em-enfermagem-1779563537258-0",
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563491765-4",
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-3",
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-4",
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-5",
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-3",
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-4",
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-5",
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-7",
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563517223-3",
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563521756-2",
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563521756-3",
+    "educa-pb-enfermagem-semiologia-em-enfermagem-1779563527042-1",
+    "facape-enfermagem-semiologia-em-enfermagem-1779563486900-8",
+    "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563480978-6",
+    "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563480978-7",
+    "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563480978-8",
+    "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563486900-5",
+    "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563491765-6",
+    "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563505333-1",
+    "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-1",
+    "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-2",
+    "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-3",
+    "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563467322-3",
+    "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-3",
+    "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-5",
+    "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8",
+    "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0",
+    "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-2",
+    "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-3",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-2",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-3",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-4",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563486900-3",
+    "fundatec-enfermagem-semiologia-em-enfermagem-1779563495719-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563486900-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563491765-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563517223-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563486900-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563500147-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-semiologia-em-enfermagem-1779563549311-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-semiologia-em-enfermagem-1779563491765-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563531989-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563549311-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-semiologia-em-enfermagem-1779563537258-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563491765-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563517223-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563521756-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563521756-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-semiologia-em-enfermagem-1779563527042-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "facape-enfermagem-semiologia-em-enfermagem-1779563486900-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563480978-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563480978-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563480978-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563486900-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563491765-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563505333-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563467322-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563486900-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563495719-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

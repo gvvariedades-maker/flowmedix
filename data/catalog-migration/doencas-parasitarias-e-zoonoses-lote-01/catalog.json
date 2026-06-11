@@ -1,0 +1,245 @@
+{
+  "exported_at": "2026-06-10T05:12:14.588Z",
+  "lote": "doencas-parasitarias-e-zoonoses-lote-01",
+  "total": 34,
+  "entries": [
+    {
+      "modulo_slug": "amauc-geral-doencas-parasitarias-e-zoonoses-1777103604185-2",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "AMAUC",
+      "avant_codigo": 992
+    },
+    {
+      "modulo_slug": "aocp-geral-doencas-parasitarias-e-zoonoses-1777103575693-5",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "AOCP",
+      "avant_codigo": 963
+    },
+    {
+      "modulo_slug": "apice-geral-doencas-parasitarias-e-zoonoses-1777103554284-0",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "ÁPICE",
+      "avant_codigo": 947
+    },
+    {
+      "modulo_slug": "avancasp-geral-doencas-parasitarias-e-zoonoses-1777103471372-4",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "AVANÇASP",
+      "avant_codigo": 890
+    },
+    {
+      "modulo_slug": "avancasp-geral-doencas-parasitarias-e-zoonoses-1777103583552-6",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "AVANÇASP",
+      "avant_codigo": 973
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-geral-doencas-parasitarias-e-zoonoses-1776578667341-0",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 635
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-geral-doencas-parasitarias-e-zoonoses-1777103611576-5",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 1003
+    },
+    {
+      "modulo_slug": "copese-ufpi-geral-doencas-parasitarias-e-zoonoses-1777103554284-8",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "COPESE UFPI",
+      "avant_codigo": 955
+    },
+    {
+      "modulo_slug": "copese-ufpi-geral-doencas-parasitarias-e-zoonoses-1777103554284-9",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "COPESE UFPI",
+      "avant_codigo": 956
+    },
+    {
+      "modulo_slug": "copese-ufpi-geral-doencas-parasitarias-e-zoonoses-1777103575693-0",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "COPESE UFPI",
+      "avant_codigo": 958
+    },
+    {
+      "modulo_slug": "fau-unicentro-geral-doencas-parasitarias-e-zoonoses-1777103590498-5",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 981
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-doencas-parasitarias-e-zoonoses-1780001148264-5",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4089
+    },
+    {
+      "modulo_slug": "funcern-geral-doencas-parasitarias-e-zoonoses-1777103539922-3",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "FUNCERN",
+      "avant_codigo": 944
+    },
+    {
+      "modulo_slug": "idcap-geral-doencas-parasitarias-e-zoonoses-1777103478442-5",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "IDCAP",
+      "avant_codigo": 901
+    },
+    {
+      "modulo_slug": "idcap-geral-doencas-parasitarias-e-zoonoses-1777103478442-6",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "IDCAP",
+      "avant_codigo": 902
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-parasitarias-e-zoonoses-1778712315153-0",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1641
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-parasitarias-e-zoonoses-1778712315153-1",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1642
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-parasitarias-e-zoonoses-1780066992037-3",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5145
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-parasitarias-e-zoonoses-1780066992037-4",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5146
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-parasitarias-e-zoonoses-1780066992037-5",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 5147
+    },
+    {
+      "modulo_slug": "idib-enfermagem-doencas-parasitarias-e-zoonoses-1778934909266-7",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1760
+    },
+    {
+      "modulo_slug": "idib-enfermagem-doencas-parasitarias-e-zoonoses-1778934909266-8",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1761
+    },
+    {
+      "modulo_slug": "idib-geral-doencas-parasitarias-e-zoonoses-1777103452899-6",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "IDIB",
+      "avant_codigo": 883
+    },
+    {
+      "modulo_slug": "instituto-consulpam-geral-doencas-parasitarias-e-zoonoses-1777103575693-8",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 966
+    },
+    {
+      "modulo_slug": "instituto-consulplan-geral-doencas-parasitarias-e-zoonoses-1777103452899-7",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 884
+    },
+    {
+      "modulo_slug": "instituto-consulplan-geral-doencas-parasitarias-e-zoonoses-1777103496829-0",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "INSTITUTO CONSULPLAN",
+      "avant_codigo": 910
+    },
+    {
+      "modulo_slug": "instituto-verbena-geral-doencas-parasitarias-e-zoonoses-1777103452899-3",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 880
+    },
+    {
+      "modulo_slug": "ivin-geral-doencas-parasitarias-e-zoonoses-1777103597693-2",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "IVIN",
+      "avant_codigo": 985
+    },
+    {
+      "modulo_slug": "legalle-geral-doencas-parasitarias-e-zoonoses-1777103611576-4",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "LEGALLE",
+      "avant_codigo": 1002
+    },
+    {
+      "modulo_slug": "lj-assessoria-geral-doencas-parasitarias-e-zoonoses-1777103502990-1",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 920
+    },
+    {
+      "modulo_slug": "lj-assessoria-geral-doencas-parasitarias-e-zoonoses-1777103502990-2",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 921
+    },
+    {
+      "modulo_slug": "quadrix-geral-doencas-parasitarias-e-zoonoses-1777103496829-6",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "QUADRIX",
+      "avant_codigo": 916
+    },
+    {
+      "modulo_slug": "selecon-geral-doencas-parasitarias-e-zoonoses-1777103471372-8",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "SELECON",
+      "avant_codigo": 894
+    },
+    {
+      "modulo_slug": "unifil-geral-doencas-parasitarias-e-zoonoses-1777103611576-2",
+      "titulo_aula": "Doenças Parasitárias e Zoonoses",
+      "modulo_nome": "Geral",
+      "banca": "UNIFIL",
+      "avant_codigo": 1000
+    }
+  ]
+}

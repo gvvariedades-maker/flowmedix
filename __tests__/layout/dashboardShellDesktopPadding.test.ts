@@ -119,7 +119,7 @@ describe('DashboardShell mobile scroll shell', () => {
     expect(vitrine.match(/<VitrinePaginationBar/g)?.length).toBe(1);
     expect(paginationBar).not.toContain('fixed');
     expect(paginationBar).not.toContain('className="mt-6 hidden');
-    expect(paginationBar).toContain('border-t border-white/10');
+    expect(paginationBar).toContain('border-t border-slate-200');
     expect(paginationBar).not.toContain('pb-12');
   });
 
