@@ -120,7 +120,8 @@ describe('VitrineSubjectCard', () => {
     );
 
     expect(screen.getAllByRole('link', { name: 'Iniciar' }).length).toBeGreaterThan(0);
-    expect(screen.queryByRole('progressbar')).not.toBeInTheDocument();
+    const progressbar = screen.getByRole('progressbar');
+    expect(progressbar).toHaveAttribute('aria-valuenow', '0');
   });
 
   it('mostra CTA Revisar quando assunto está completo', () => {

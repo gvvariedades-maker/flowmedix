@@ -143,13 +143,13 @@ describe('DashboardShell mobile scroll shell', () => {
     );
   });
 
-  it('vitrine usa acordeão CSS grid (sem height auto do Framer)', () => {
+  it('vitrine expande assunto via VitrineSubjectCard (sem acordeão inline legado)', () => {
     const vitrine = readFileSync(
       join(process.cwd(), 'components', 'vitrine', 'VitrineClient.tsx'),
       'utf8',
     );
-    expect(vitrine).toContain('grid-rows-[0fr]');
-    expect(vitrine).toContain('grid-rows-[1fr]');
+    expect(vitrine).toContain('VitrineSubjectCard');
+    expect(vitrine).toContain('assuntoExpandido');
     expect(vitrine).not.toMatch(/animate=\{\{\s*opacity:\s*1,\s*height:\s*'auto'/);
   });
 

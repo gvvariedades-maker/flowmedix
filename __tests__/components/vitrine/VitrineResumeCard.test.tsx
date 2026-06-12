@@ -19,7 +19,7 @@ describe('VitrineResumeCard', () => {
     render(<VitrineResumeCard resume={resume} estudarQuery="?page=1" />);
 
     expect(screen.getByTestId('vitrine-resume-card')).toBeInTheDocument();
-    expect(screen.getByText('Continuar')).toBeInTheDocument();
+    expect(screen.getByText('Continuar de onde parou')).toBeInTheDocument();
     expect(screen.getByText('Verificação de Sinais Vitais')).toBeInTheDocument();
     expect(screen.getByText('Q-42')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Retomar estudo/i })).toHaveAttribute(

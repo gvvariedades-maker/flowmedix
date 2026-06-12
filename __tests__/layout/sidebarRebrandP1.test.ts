@@ -47,11 +47,12 @@ describe('Sidebar rebrand P1', () => {
     });
   });
 
-  describe('P1-4 — AvantBrandMark Zap', () => {
-    it('substitui emoji por Lucide Zap', () => {
+  describe('P1-4 — AvantBrandMark letra A', () => {
+    it('substitui raio legado por letra A no chip verde', () => {
       const source = brand();
-      expect(source).toContain('<Zap');
-      expect(source).toContain('fill="currentColor"');
+      expect(source).toContain('bg-[#8fe020]');
+      expect(source).toMatch(/>\s*A\s*<\/span>/);
+      expect(source).not.toContain('<Zap');
       expect(source).not.toContain('⚡');
     });
   });
