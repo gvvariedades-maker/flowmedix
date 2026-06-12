@@ -1,3 +1,5 @@
+import { toEditorialTheme } from '@/lib/slides/editorialTheme';
+
 // ============================================================================
 // SISTEMA DE TEMAS ÚNICOS POR QUESTÃO
 // ============================================================================
@@ -759,6 +761,18 @@ const applyThemeVariations = (
   return modifiedTheme;
 };
 
+/** Variações por questão + skin editorial (Opção B em produção). */
+const finalizeSlideTheme = (
+  baseTheme: ThemeColors,
+  questionHash: string,
+  slideIndex?: number,
+  slideType?: string,
+): ThemeColors => {
+  const uniqueHash = generateRobustQuestionHash(questionHash, slideIndex, slideType);
+  const variations = generateThemeVariations(uniqueHash);
+  return toEditorialTheme(applyThemeVariations(baseTheme, variations, slideIndex ?? 0));
+};
+
 // ============================================================================
 // FUNÇÃO HÍBRIDA: Prioriza Subject, Fallback para Hash ÚNICO POR QUESTÃO
 // Suporta formato novo (semântico) e formato antigo (com design_system)
@@ -774,9 +788,7 @@ export const getThemeForSlide = (
   if (templateId) {
     const baseTheme = getThemeByTemplateId(templateId);
     if (baseTheme) {
-      const uniqueHash = generateRobustQuestionHash(questionHash, slideIndex, slide.type);
-      const variations = generateThemeVariations(uniqueHash);
-      return applyThemeVariations(baseTheme, variations, slideIndex ?? 0);
+      return finalizeSlideTheme(baseTheme, questionHash, slideIndex, slide.type);
     }
   }
 
@@ -786,9 +798,7 @@ export const getThemeForSlide = (
     const themeHash = generateSimpleHash(accentColor);
     const baseTheme = getThemeFromHash(themeHash);
     // Aplica variações únicas baseadas no questionHash completo
-    const uniqueHash = generateRobustQuestionHash(questionHash, slideIndex, slide.type);
-    const variations = generateThemeVariations(uniqueHash);
-    return applyThemeVariations(baseTheme, variations, slideIndex);
+    return finalizeSlideTheme(baseTheme, questionHash, slideIndex, slide.type);
   }
   
   // 2. SUBTÓPICO: prioridade máxima sobre subject genérico
@@ -798,9 +808,7 @@ export const getThemeForSlide = (
     const design = getDesignBySubtopic(subtopico);
     if (design) {
       const baseTheme = getThemeByName(design.template) || getThemeFromHash(generateSimpleHash(design.template));
-      const uniqueHash = generateRobustQuestionHash(`${questionHash}-${subtopico}`, slideIndex, slide.type);
-      const variations = generateThemeVariations(uniqueHash);
-      return applyThemeVariations(baseTheme, variations, slideIndex ?? 0);
+      return finalizeSlideTheme(baseTheme, `${questionHash}-${subtopico}`, slideIndex, slide.type);
     }
     // Subtópico não está no mapa: tenta SUBJECT_THEME_MAP com o mesmo valor
     const topicoKey = subtopico.toLowerCase().trim();
@@ -808,9 +816,7 @@ export const getThemeForSlide = (
     if (mappedTheme) {
       const themeHash = generateSimpleHash(mappedTheme);
       const baseTheme = getThemeFromHash(themeHash);
-      const uniqueHash = generateRobustQuestionHash(`${questionHash}-${topicoKey}`, slideIndex, slide.type);
-      const variations = generateThemeVariations(uniqueHash);
-      return applyThemeVariations(baseTheme, variations, slideIndex);
+      return finalizeSlideTheme(baseTheme, `${questionHash}-${topicoKey}`, slideIndex, slide.type);
     }
   }
 
@@ -821,21 +827,14 @@ export const getThemeForSlide = (
     if (mappedTheme) {
       const themeHash = generateSimpleHash(mappedTheme);
       const baseTheme = getThemeFromHash(themeHash);
-      const uniqueHash = generateRobustQuestionHash(
-        `${questionHash}-${subjectKey}`,
-        slideIndex,
-        slide.type
-      );
-      const variations = generateThemeVariations(uniqueHash);
-      return applyThemeVariations(baseTheme, variations, slideIndex);
+      return finalizeSlideTheme(baseTheme, `${questionHash}-${subjectKey}`, slideIndex, slide.type);
     }
   }
   
   // 4. ÚLTIMO FALLBACK: usa hash robusto da questão para tema único garantido
   const uniqueHash = generateRobustQuestionHash(questionHash, slideIndex, slide.type);
   const baseTheme = getThemeFromHash(uniqueHash);
-  const variations = generateThemeVariations(uniqueHash);
-  return applyThemeVariations(baseTheme, variations, slideIndex);
+  return finalizeSlideTheme(baseTheme, questionHash, slideIndex, slide.type);
 };
 
 // ============================================================================

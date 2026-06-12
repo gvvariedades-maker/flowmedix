@@ -48,7 +48,7 @@ export const MorphologicalConceptMap = ({ concepts, theme }: MorphologicalConcep
         {/* Conceito Central (Pai) - Ocupa mais espaço, glow mais intenso */}
         {centralConcept && (
           <div
-            className={`morph-central-card relative overflow-hidden rounded-[1.5rem] bg-slate-900/92 border-2 min-h-[180px] sm:min-h-[220px] transition-all duration-200 hover:-translate-y-0.5 ${detailConcepts.length > 0 ? 'col-span-1 sm:col-span-2' : 'col-span-1'}`}
+            className={`morph-central-card relative overflow-hidden rounded-[1.5rem] border-2 border-slate-200 bg-white shadow-sm min-h-[180px] sm:min-h-[220px] transition-all duration-200 hover:-translate-y-0.5 ${detailConcepts.length > 0 ? 'col-span-1 sm:col-span-2' : 'col-span-1'}`}
             style={{
               borderColor: borderColorClass.replace('border-', '').replace('/30', '').replace('/40', '').replace('/50', '') + '35',
               animation: 'morphReveal 0.4s ease-out',
@@ -77,7 +77,7 @@ export const MorphologicalConceptMap = ({ concepts, theme }: MorphologicalConcep
           return (
             <div
               key={index}
-              className="morph-detail-card relative overflow-hidden rounded-[1.25rem] bg-slate-900/90 border min-h-[160px] transition-all duration-200 hover:-translate-y-0.5"
+              className="morph-detail-card relative overflow-hidden rounded-[1.25rem] border border-slate-200 bg-white shadow-sm min-h-[160px] transition-all duration-200 hover:-translate-y-0.5"
               style={{
                 borderColor: borderColorClass.replace('border-', '').replace('/30', '').replace('/40', '').replace('/50', '') + '25',
                 animation: `morphReveal 0.4s ease-out both`,

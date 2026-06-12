@@ -41,6 +41,7 @@ import {
   EstudoReversoSlideZoomProvider,
   EstudoReversoSlideZoomToolbar,
 } from '@/components/lesson/EstudoReversoSlideZoom';
+import { EstudoReversoSlideSwipe } from '@/components/lesson/EstudoReversoSlideSwipe';
 import { MicroTip } from '@/components/onboarding/MicroTip';
 import {
   getReverseStudySlideMicrotipKey,
@@ -160,12 +161,12 @@ function getSlideVariants(slideKind: string, reducedMotion: boolean): SlideMotio
 }
 
 const SLIDE_KIND_COLOR: Record<string, string> = {
-  concept_map: 'text-cyan-300',
-  golden_rule: 'text-amber-300',
-  logic_flow: 'text-violet-300',
-  danger_zone: 'text-red-300',
-  syllable_scanner: 'text-emerald-300',
-  versus_arena: 'text-fuchsia-300',
+  concept_map: 'text-cyan-600',
+  golden_rule: 'text-amber-600',
+  logic_flow: 'text-violet-600',
+  danger_zone: 'text-red-600',
+  syllable_scanner: 'text-emerald-600',
+  versus_arena: 'text-fuchsia-600',
 };
 
 export default function AvantLessonPlayer({
@@ -1125,7 +1126,7 @@ export default function AvantLessonPlayer({
     etapa === 'estudo' && slidesUsingFallback && !hasRealSlides;
   const currentSlide = slidesArray[slideAtual];
   const slideKind = currentSlide?.type ?? currentSlide?.layout_type ?? 'default';
-  const slideCounterColor = SLIDE_KIND_COLOR[slideKind] ?? 'text-white/60';
+  const slideCounterColor = SLIDE_KIND_COLOR[slideKind] ?? 'text-slate-600';
   const slideMotion = getSlideVariants(slideKind, prefersReducedMotion);
   const currentSlideMicrotipKey = getReverseStudySlideMicrotipKey(currentSlide?.type ?? currentSlide?.layout_type);
   const totalSlides = slidesArray.length;
@@ -1988,11 +1989,11 @@ export default function AvantLessonPlayer({
             className={
               isPreviewMode
                 ? cn(
-                    'absolute inset-0 z-30 flex h-full max-h-full flex-col overflow-hidden bg-[#010409] overscroll-y-contain',
+                    'absolute inset-0 z-30 flex h-full max-h-full flex-col overflow-hidden bg-slate-100 overscroll-y-contain',
                     previewImmersive ? 'rounded-none' : 'rounded-b-[2rem]',
                   )
                 : cn(
-                    'fixed inset-x-0 top-0 flex flex-col overflow-hidden bg-[#010409] overscroll-y-contain',
+                    'fixed inset-x-0 top-0 flex flex-col overflow-hidden bg-slate-100 overscroll-y-contain',
                     estudarQuestaoImmersive
                       ? ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM_IMMERSIVE
                       : ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM,
@@ -2009,10 +2010,10 @@ export default function AvantLessonPlayer({
               {/* Header Minimalista (Top Bar) — zoom mobile ao lado da numeração, fixo fora da rolagem do slide */}
               <div className="shrink-0 px-4 pb-2 pt-[max(0.75rem,env(safe-area-inset-top,0px))] sm:px-6 md:px-8 sm:pt-[max(1.5rem,env(safe-area-inset-top,0px))] flex justify-between items-center gap-2 min-w-0">
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="bg-[#BEF264] text-slate-900 p-2 rounded-lg shrink-0">
-                    <Lightbulb size={20} fill="black" />
+                  <div className="btn-editorial-primary shrink-0 rounded-lg p-2">
+                    <Lightbulb size={20} className="text-[#1a2e05]" aria-hidden />
                   </div>
-                  <span className="hidden sm:inline text-white/60 font-bold uppercase text-xs tracking-widest truncate max-w-[120px] md:max-w-none">
+                  <span className="hidden sm:inline truncate max-w-[120px] text-xs font-bold uppercase tracking-widest text-slate-500 md:max-w-none">
                     Avant Neuro-Learning
                   </span>
                 </div>
@@ -2023,7 +2024,7 @@ export default function AvantLessonPlayer({
                       <span className={`text-xl sm:text-2xl font-black ${slideCounterColor}`}>
                         {slideAtual + 1}
                       </span>
-                      <span className="text-sm sm:text-base font-bold text-white/25">
+                      <span className="text-sm sm:text-base font-bold text-slate-400">
                         /{totalSlides}
                       </span>
                     </div>
@@ -2036,12 +2037,12 @@ export default function AvantLessonPlayer({
                     onClick={sairEstudoReverso}
                     className={
                       isPreviewMode
-                        ? 'flex min-h-[40px] shrink-0 items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3 py-2 text-[10px] font-black uppercase tracking-widest text-white transition-colors hover:bg-white/20'
-                        : 'flex min-h-[44px] min-w-[44px] h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-md transition-colors hover:bg-white/20'
+                        ? 'btn-editorial-outline flex min-h-[40px] shrink-0 items-center gap-1.5 rounded-full px-3 py-2 text-[10px] font-black uppercase tracking-widest'
+                        : 'flex h-11 min-h-[44px] w-11 min-w-[44px] shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition-colors hover:bg-slate-50'
                     }
                     aria-label="Fechar estudo reverso"
                   >
-                    <X size={18} className="text-white shrink-0" />
+                    <X size={18} className="shrink-0 text-slate-700" />
                     {isPreviewMode ? <span>Sair</span> : null}
                   </button>
                 </div>
@@ -2052,7 +2053,7 @@ export default function AvantLessonPlayer({
                   className="mx-auto w-full shrink-0 px-4 pb-2 sm:px-6 md:px-8"
                   role="status"
                 >
-                  <p className="rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-2.5 text-center text-[11px] font-semibold text-amber-200 sm:text-xs">
+                  <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-2.5 text-center text-[11px] font-semibold text-amber-900 sm:text-xs">
                     {SLIDES_LAYER_FALLBACK_BANNER}
                   </p>
                 </div>
@@ -2066,8 +2067,8 @@ export default function AvantLessonPlayer({
                     aria-busy="true"
                     aria-live="polite"
                   >
-                    <Loader2 className="h-10 w-10 animate-spin text-cyan-400" aria-hidden />
-                    <p className="text-center text-sm font-semibold text-slate-300">
+                    <Loader2 className="h-10 w-10 animate-spin text-[#22c55e]" aria-hidden />
+                    <p className="text-center text-sm font-semibold text-slate-600">
                       Carregando material…
                     </p>
                   </div>
@@ -2076,13 +2077,13 @@ export default function AvantLessonPlayer({
                     className="flex flex-1 flex-col items-center justify-center gap-4 px-6 py-12"
                     role="alert"
                   >
-                    <p className="max-w-md text-center text-sm text-slate-300">{slidesLoadError}</p>
+                    <p className="max-w-md text-center text-sm text-slate-600">{slidesLoadError}</p>
                     <div className="flex flex-col items-center gap-3">
                       {!slidesAccessDenied ? (
                         <button
                           type="button"
                           onClick={retrySlidesLoad}
-                          className="min-h-[44px] rounded-xl border border-cyan-500/40 bg-cyan-500/15 px-6 py-2.5 text-xs font-bold uppercase tracking-widest text-cyan-300 transition-colors hover:bg-cyan-500/25"
+                          className="btn-editorial-outline min-h-[44px] rounded-xl px-6 py-2.5 text-xs font-bold uppercase tracking-widest"
                         >
                           Tentar de novo
                         </button>
@@ -2091,7 +2092,7 @@ export default function AvantLessonPlayer({
                         <button
                           type="button"
                           onClick={handleVoltarLista}
-                          className="min-h-[44px] rounded-xl border border-white/20 bg-white/10 px-6 py-2.5 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-white/15"
+                          className="btn-editorial-outline min-h-[44px] rounded-xl px-6 py-2.5 text-xs font-bold uppercase tracking-widest"
                         >
                           Voltar à vitrine
                         </button>
@@ -2127,18 +2128,25 @@ export default function AvantLessonPlayer({
                       transition={slideMotion.transition}
                       className="flex h-full min-h-0 w-full min-w-0 flex-1 flex-col items-stretch"
                     >
-                      <NeuroSlide
-                        data={currentSlide}
-                        questionHash={questionHash}
-                        questionSlug={moduloSlug || activeDados.modulo_slug}
-                        slideIndex={slideAtual}
-                        questionFamilyId={questionFamilyId}
-                        shellContext={{
-                          slideIndex: slideAtual,
-                          totalSlides,
-                          banca: activeDados.meta?.banca,
-                        }}
-                      />
+                      <EstudoReversoSlideSwipe
+                        canSwipePrev={slideAtual > 0}
+                        canSwipeNext={slideAtual < totalSlides - 1}
+                        onSwipePrev={() => setSlideAtual(Math.max(0, slideAtual - 1))}
+                        onSwipeNext={() => setSlideAtual(Math.min(totalSlides - 1, slideAtual + 1))}
+                      >
+                        <NeuroSlide
+                          data={currentSlide}
+                          questionHash={questionHash}
+                          questionSlug={moduloSlug || activeDados.modulo_slug}
+                          slideIndex={slideAtual}
+                          questionFamilyId={questionFamilyId}
+                          shellContext={{
+                            slideIndex: slideAtual,
+                            totalSlides,
+                            banca: activeDados.meta?.banca,
+                          }}
+                        />
+                      </EstudoReversoSlideSwipe>
                     </motion.div>
                   </AnimatePresence>
                   ) : null}
@@ -2148,7 +2156,7 @@ export default function AvantLessonPlayer({
               </div>
 
               {/* Footer de Navegação (Bottom Bar) */}
-              <div className="shrink-0 border-t border-white/5 bg-black/40 px-4 py-4 backdrop-blur-xl sm:px-6 md:px-8 sm:py-6 pb-safe">
+              <div className="shrink-0 border-t border-slate-200 bg-white px-4 py-4 sm:px-6 md:px-8 sm:py-6 pb-safe">
                 <div className="mx-auto flex w-full max-w-none flex-wrap items-center justify-center gap-3 sm:justify-between sm:gap-4">
                   
                   {/* Botão Anterior */}
@@ -2156,7 +2164,7 @@ export default function AvantLessonPlayer({
                     type="button"
                     onClick={() => setSlideAtual(Math.max(0, slideAtual - 1))} 
                     disabled={slideAtual === 0 || totalSlides === 0} 
-                    className="flex items-center gap-2 text-white/60 font-bold uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed min-h-[44px] px-1 order-1 sm:order-none"
+                    className="btn-editorial-outline order-1 flex min-h-[44px] items-center gap-2 rounded-full px-3 text-[10px] font-bold uppercase tracking-wide sm:order-none sm:text-xs sm:tracking-widest disabled:cursor-not-allowed disabled:opacity-30"
                   >
                     <ChevronLeft size={16} /> Voltar
                   </button>
@@ -2168,8 +2176,8 @@ export default function AvantLessonPlayer({
                         key={i} 
                         className={`h-1.5 rounded-full transition-all duration-500 ${
                           i === slideAtual 
-                            ? 'w-8 sm:w-10 bg-[#BEF264]' 
-                            : 'w-2 bg-white/20'
+                            ? 'w-8 sm:w-10 bg-[#22c55e]' 
+                            : 'w-2 bg-slate-200'
                         }`} 
                       />
                     ))}
@@ -2177,14 +2185,14 @@ export default function AvantLessonPlayer({
                   
                   {/* Botão Próximo / Confirmação no último slide */}
                   {totalSlides === 0 ? (
-                    <span className="order-2 text-[10px] font-bold uppercase tracking-widest text-white/30 sm:order-none">
+                    <span className="order-2 text-[10px] font-bold uppercase tracking-widest text-slate-400 sm:order-none">
                       {showSlidesLoading ? 'Aguarde…' : showSlidesLoadError ? 'Material indisponível' : ''}
                     </span>
                   ) : slideAtual < totalSlides - 1 ? (
                     <button 
                       type="button"
                       onClick={() => setSlideAtual(slideAtual + 1)} 
-                      className="group bg-white text-slate-900 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-bold uppercase text-[10px] sm:text-xs tracking-wide sm:tracking-widest hover:bg-[#BEF264] transition-all flex items-center gap-2 min-h-[44px] order-2 sm:order-none"
+                      className="btn-editorial-primary group order-2 flex min-h-[44px] items-center gap-2 rounded-full px-4 py-2.5 text-[10px] font-bold uppercase tracking-wide sm:order-none sm:px-6 sm:py-3 sm:text-xs sm:tracking-widest"
                     >
                       Próximo <ArrowRight size={16} />
                     </button>
@@ -2192,13 +2200,13 @@ export default function AvantLessonPlayer({
                     <button
                       type="button"
                       onClick={sairEstudoReverso}
-                      className="group order-2 flex min-h-[44px] items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-[10px] font-black uppercase tracking-wide text-white transition-colors hover:bg-white/15 sm:order-none sm:px-6 sm:text-xs sm:tracking-widest"
+                      className="btn-editorial-outline group order-2 flex min-h-[44px] items-center gap-2 rounded-full px-4 py-2.5 text-[10px] font-black uppercase tracking-wide sm:order-none sm:px-6 sm:text-xs sm:tracking-widest"
                     >
                       Voltar à questão
                     </button>
                   ) : estudoConcluido ? (
                     <div className="flex w-full max-w-md flex-col items-stretch gap-3 order-2 sm:order-none sm:max-w-lg">
-                      <div className="flex items-center justify-center gap-2 rounded-xl border border-green-500/40 bg-green-500/20 px-4 py-2.5 text-center text-[10px] font-black uppercase tracking-wide text-green-400 sm:text-xs sm:tracking-widest">
+                      <div className="flex items-center justify-center gap-2 rounded-xl border border-green-200 bg-green-50 px-4 py-2.5 text-center text-[10px] font-black uppercase tracking-wide text-green-800 sm:text-xs sm:tracking-widest">
                         <BadgeCheck size={16} className="shrink-0" aria-hidden />
                         Estudo concluído
                       </div>
@@ -2215,7 +2223,7 @@ export default function AvantLessonPlayer({
                           onMouseEnter={() => prefetchSlug(proximaSlug)}
                           onFocus={() => prefetchSlug(proximaSlug)}
                           disabled={navegacaoIndisponivel}
-                          className="group flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl bg-[#BEF264] px-4 py-3 text-[10px] font-black uppercase tracking-wide text-slate-900 shadow-[0_0_20px_rgba(190,242,100,0.35)] transition-all hover:bg-[#a3d648] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 sm:text-xs sm:tracking-widest"
+                          className="btn-editorial-primary group flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full px-4 py-3 text-[10px] font-black uppercase tracking-wide transition-all active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 sm:text-xs sm:tracking-widest"
                         >
                           Próxima questão
                           <ArrowRight size={18} className="shrink-0" aria-hidden />
@@ -2224,7 +2232,7 @@ export default function AvantLessonPlayer({
                         <button
                           type="button"
                           onClick={sairEstudoReverso}
-                          className="flex min-h-[48px] w-full items-center justify-center rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-[10px] font-black uppercase tracking-wide text-white transition-colors hover:bg-white/15 active:bg-white/20 sm:text-xs sm:tracking-widest"
+                          className="btn-editorial-outline flex min-h-[48px] w-full items-center justify-center rounded-full px-4 py-3 text-[10px] font-black uppercase tracking-wide sm:text-xs sm:tracking-widest"
                         >
                           Voltar à questão
                         </button>
@@ -2236,7 +2244,7 @@ export default function AvantLessonPlayer({
                       type="button"
                       onClick={marcarEstudoConcluido}
                       disabled={marcandoConclusao}
-                      className="group flex items-center gap-2 bg-[#BEF264] hover:bg-[#a3d648] disabled:opacity-60 disabled:cursor-not-allowed text-slate-900 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl font-black uppercase text-[9px] sm:text-xs tracking-wide sm:tracking-widest shadow-[0_0_20px_rgba(190,242,100,0.3)] transition-all min-h-[44px] max-w-[min(100%,280px)] sm:max-w-none w-full sm:w-auto"
+                      className="btn-editorial-primary group flex min-h-[44px] w-full max-w-[min(100%,280px)] items-center gap-2 rounded-full px-3 py-2.5 text-[9px] font-black uppercase tracking-wide transition-all disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:max-w-none sm:px-6 sm:py-3 sm:text-xs sm:tracking-widest"
                     >
                       <BadgeCheck size={16} className="shrink-0" />
                       <span className="text-left leading-tight">
@@ -2249,7 +2257,7 @@ export default function AvantLessonPlayer({
                       </span>
                     </button>
                     {conclusaoErro ? (
-                      <p role="alert" className="text-[10px] sm:text-xs text-rose-400 text-right max-w-[280px] leading-snug">
+                      <p role="alert" className="max-w-[280px] text-right text-[10px] leading-snug text-rose-600 sm:text-xs">
                         {conclusaoErro}
                       </p>
                     ) : null}

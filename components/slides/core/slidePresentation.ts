@@ -16,6 +16,7 @@ import {
   type DangerZoneItemLike,
 } from './dangerZoneLayout';
 import { resolveLogicFlowRevealMode } from './logicFlowRevealMode';
+import { resolveDangerZoneRevealMode } from './dangerZoneRevealMode';
 import { resolveSlideTitle } from './slideTitleResolve';
 import { enhanceGoldenRuleRows } from './goldenRuleRowsEnhance';
 import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
@@ -26,6 +27,7 @@ import type { DangerZoneBulletStyle } from './dangerZoneLayout';
 export type ResolvedSlidePresentation = {
   layoutVariant: string;
   revealMode: LogicFlowRevealMode;
+  dangerRevealMode: LogicFlowRevealMode;
   bulletStyle: DangerZoneBulletStyle;
   slideTitle?: string;
   rows?: GoldenRuleRow[];
@@ -134,6 +136,10 @@ export function resolveSlidePresentation(
 
   const steps = normalizeLogicFlowSteps(slide.steps);
   const revealMode = resolveLogicFlowRevealMode(steps.length, slide.reveal_mode);
+  const dangerRevealMode =
+    slideType === 'danger_zone'
+      ? resolveDangerZoneRevealMode(layoutVariant, slide.items as DangerZoneItemLike[] | undefined, slide.reveal_mode)
+      : 'auto';
   const bulletStyle: DangerZoneBulletStyle =
     slide.bullet_style ??
     (slideType === 'danger_zone' && layoutVariant === 'compare' ? 'x_icon' : 'numbered');
@@ -146,6 +152,7 @@ export function resolveSlidePresentation(
   return {
     layoutVariant,
     revealMode,
+    dangerRevealMode,
     bulletStyle,
     slideTitle: resolveSlideTitle(slide),
     rows,

@@ -1,0 +1,17 @@
+import { dangerZoneHasCompareItems } from './dangerZoneLayout';
+import type { DangerZoneItemLike } from './dangerZoneLayout';
+import type { LogicFlowRevealMode } from '../variants/logicFlowReveal';
+
+/**
+ * Default premium: `tap` no layout compare (itens com `correct`);
+ * legado sem compare permanece `auto`. `reveal_mode` explícito no JSON vence.
+ */
+export function resolveDangerZoneRevealMode(
+  layoutVariant: string,
+  items: DangerZoneItemLike[] | undefined,
+  explicit?: LogicFlowRevealMode,
+): LogicFlowRevealMode {
+  if (explicit === 'auto' || explicit === 'tap') return explicit;
+  const isCompare = layoutVariant === 'compare' || dangerZoneHasCompareItems(items);
+  return isCompare ? 'tap' : 'auto';
+}

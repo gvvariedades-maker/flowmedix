@@ -3,6 +3,9 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { Sparkles, Lightbulb, Zap, Table2 } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
+import { SLIDE_CARD_LG } from '../core/slideSurface';
+import { GoldenRuleHeroCard } from '../core/GoldenRuleHeroCard';
+import { getGoldenRuleTitleSizeClass } from '@/lib/slides/goldenRuleTypography';
 
 export type GoldenRuleRowEmphasis = 'default' | 'highlight' | 'alert' | 'success';
 export type GoldenRuleRowBadge = 'hot' | 'warn' | 'ok' | 'info';
@@ -28,22 +31,22 @@ const BADGE_STYLES: Record<
 > = {
   hot: {
     className:
-      'bg-red-500/20 text-red-200 ring-1 ring-red-500/30',
+      'bg-red-100 text-red-800 ring-1 ring-red-200',
     label: 'Alta',
   },
   warn: {
     className:
-      'bg-amber-500/20 text-amber-200 ring-1 ring-amber-500/30',
+      'bg-amber-100 text-amber-800 ring-1 ring-amber-200',
     label: 'Pegada',
   },
   ok: {
     className:
-      'bg-emerald-500/15 text-emerald-200 ring-1 ring-emerald-500/25',
+      'bg-emerald-100 text-emerald-800 ring-1 ring-emerald-200',
     label: 'Fixar',
   },
   info: {
     className:
-      'bg-blue-500/15 text-blue-200 ring-1 ring-blue-500/25',
+      'bg-blue-100 text-blue-800 ring-1 ring-blue-200',
     label: 'Contexto',
   },
 };
@@ -51,11 +54,11 @@ const BADGE_STYLES: Record<
 function rowEmphasisClasses(emphasis: GoldenRuleRowEmphasis | undefined): string {
   switch (emphasis) {
     case 'highlight':
-      return 'bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border-l-[3px] border-l-amber-400/80 pl-[13px] md:pl-[13px]';
+      return 'bg-amber-50 border-l-[3px] border-l-amber-400 pl-[13px] md:pl-[13px]';
     case 'alert':
-      return 'bg-gradient-to-r from-red-500/10 via-red-500/5 to-transparent border-l-[3px] border-l-red-400/70 pl-[13px] md:pl-[13px]';
+      return 'bg-red-50 border-l-[3px] border-l-red-400 pl-[13px] md:pl-[13px]';
     case 'success':
-      return 'bg-gradient-to-r from-emerald-500/10 via-emerald-500/5 to-transparent border-l-[3px] border-l-emerald-400/70 pl-[13px] md:pl-[13px]';
+      return 'bg-emerald-50 border-l-[3px] border-l-emerald-500 pl-[13px] md:pl-[13px]';
     default:
       return '';
   }
@@ -89,9 +92,9 @@ function ReferenceTableLayout({
 
   return (
     <motion.div className="relative flex min-h-full w-full min-w-0 items-start justify-center p-4 md:p-8">
-      <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-70`} />
+      <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
       <motion.div
-        className={`relative z-10 w-full min-w-0 max-w-4xl rounded-[1.5rem] border-2 ${theme.borderColor} bg-slate-950/80 p-5 md:rounded-[2rem] md:p-7`}
+        className={`relative z-10 w-full min-w-0 max-w-4xl ${SLIDE_CARD_LG} border-2 ${theme.borderColor} p-5 md:p-7`}
         initial={reduceMotion ? false : { opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, ease: 'easeOut' }}
@@ -104,7 +107,7 @@ function ReferenceTableLayout({
           </motion.div>
           {title ? (
             <h2 className="font-display min-w-0 flex-1 text-base font-extrabold uppercase leading-tight tracking-tight break-words [overflow-wrap:anywhere] md:text-xl lg:text-2xl">
-              <span className="bg-gradient-to-r from-amber-100 via-amber-300 to-orange-300 bg-clip-text text-transparent">
+              <span className="text-slate-900">
                 {title}
               </span>
             </h2>
@@ -115,9 +118,9 @@ function ReferenceTableLayout({
           )}
         </div>
 
-        <motion.div className="overflow-hidden rounded-xl border border-white/10 bg-black/20 shadow-inner">
+        <motion.div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
           <motion.div
-            className={`font-mono hidden gap-0 border-b border-white/10 bg-white/[0.06] px-4 py-2.5 text-[10px] uppercase tracking-widest md:grid ${
+            className={`font-mono hidden gap-0 border-b border-slate-200 bg-slate-50 px-4 py-2.5 text-[10px] uppercase tracking-widest md:grid ${
               hasBadges
                 ? 'grid-cols-[minmax(0,0.95fr)_minmax(0,1.25fr)_72px]'
                 : 'grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]'
@@ -128,7 +131,7 @@ function ReferenceTableLayout({
             <span>Valor</span>
             {hasBadges ? <span className="text-center">Foco</span> : null}
           </motion.div>
-          <motion.ul className="divide-y divide-white/10">
+          <motion.ul className="divide-y divide-slate-200">
             {rows.map((row, index) => {
               const emphasis = row.emphasis ?? 'default';
               const rowClass = rowEmphasisClasses(emphasis);
@@ -136,7 +139,7 @@ function ReferenceTableLayout({
               return (
                 <motion.li
                   key={`${row.label}-${index}`}
-                  className={`grid grid-cols-1 gap-1.5 px-4 py-3 transition-colors hover:bg-white/[0.03] md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.25fr)_72px] md:items-center md:gap-4 md:py-3.5 ${
+                  className={`grid grid-cols-1 gap-1.5 px-4 py-3 transition-colors hover:bg-slate-50 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.25fr)_72px] md:items-center md:gap-4 md:py-3.5 ${
                     hasBadges ? '' : 'md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]'
                   } ${rowClass}`}
                   initial={reduceMotion ? false : { opacity: 0, x: -8 }}
@@ -146,11 +149,11 @@ function ReferenceTableLayout({
                   <span
                     className={`font-mono text-[11px] uppercase tracking-wide break-words [overflow-wrap:anywhere] md:text-sm ${
                       emphasis === 'highlight'
-                        ? 'text-amber-200'
+                        ? 'text-amber-700'
                         : emphasis === 'alert'
-                          ? 'text-red-200'
+                          ? 'text-red-700'
                           : emphasis === 'success'
-                            ? 'text-emerald-200'
+                            ? 'text-emerald-700'
                             : theme.textSecondary
                     }`}
                   >
@@ -158,7 +161,7 @@ function ReferenceTableLayout({
                   </span>
                   <span
                     className={`font-body text-sm leading-snug break-words [overflow-wrap:anywhere] md:text-base ${
-                      emphasis === 'default' ? theme.textPrimary : 'text-white'
+                      theme.textPrimary
                     }`}
                   >
                     {row.value}
@@ -178,7 +181,7 @@ function ReferenceTableLayout({
 
         {footerRule ? (
           <p
-            className={`font-body mt-4 rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3 text-sm italic leading-relaxed md:mt-6 md:text-base ${theme.textSecondary}`}
+            className={`font-body mt-4 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm italic leading-relaxed md:mt-6 md:text-base ${theme.textSecondary}`}
           >
             {footerRule}
           </p>
@@ -213,23 +216,9 @@ export const GoldenRule = ({
   // VARIANTE 1: CENTER (padrão) — Tipografia gigante centralizada
   if (variant === 'center') {
     return (
-      <div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-3 md:p-8">
-        <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-70`} />
-        <motion.div
-          className={`golden-rule-card relative z-10 w-full min-w-0 max-w-4xl p-6 md:p-8 lg:p-10 rounded-[2rem] md:rounded-[3rem] text-center border-4 ${theme.borderColor} bg-slate-950/85`}
-        >
-          <div className="relative z-10 min-w-0">
-            <Sparkles className={`${theme.iconText} w-8 h-8 md:w-10 md:h-10 mx-auto mb-3`} />
-            <h2 className="golden-rule-text font-display text-lg font-extrabold uppercase tracking-tighter leading-tight break-words [overflow-wrap:anywhere] hyphens-none text-white md:text-3xl lg:text-4xl xl:text-6xl">
-              {content}
-            </h2>
-            {footerRule ? (
-              <p className={`font-body mt-4 text-sm italic leading-relaxed md:mt-6 md:text-base ${theme.textSecondary}`}>
-                {footerRule}
-              </p>
-            ) : null}
-          </div>
-        </motion.div>
+      <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-center justify-center overflow-y-auto p-3 md:p-8">
+        <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
+        <GoldenRuleHeroCard content={content} theme={theme} footerRule={footerRule} />
       </div>
     );
   }
@@ -238,9 +227,9 @@ export const GoldenRule = ({
   if (variant === 'compact') {
     return (
       <motion.div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-4 md:p-6 lg:p-10">
-        <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
+        <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-40`} />
         <motion.div
-          className={`relative z-10 w-full min-w-0 max-w-3xl p-5 md:p-7 rounded-2xl border-2 ${theme.borderColor} bg-slate-950/85`}
+          className={`relative z-10 w-full min-w-0 max-w-3xl p-5 md:p-7 rounded-2xl border-2 ${theme.borderColor} bg-white shadow-sm`}
         >
           <motion.div className={`w-10 h-10 rounded-xl ${theme.iconBg} flex items-center justify-center ${theme.iconText} mb-3`}>
             <Lightbulb size={20} />
@@ -262,7 +251,7 @@ export const GoldenRule = ({
   if (variant === 'minimal') {
     return (
       <motion.div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-6">
-        <motion.div className={`absolute inset-0 bg-slate-900/95`} />
+        <motion.div className={`absolute inset-0 bg-slate-50`} />
         <motion.div className={`relative z-10 w-full min-w-0 max-w-2xl py-5 px-5 border-l-4 ${theme.borderColor}`}>
           <p className={`font-body text-base italic leading-relaxed break-words [overflow-wrap:anywhere] hyphens-auto md:text-xl ${theme.textPrimary}`}>
             {content}
@@ -279,18 +268,34 @@ export const GoldenRule = ({
 
   // VARIANTE 4: BANNER — Ícone no topo + texto abaixo (coluna, evita corte horizontal)
   if (variant === 'banner') {
+    const titleSize = getGoldenRuleTitleSizeClass(content);
     return (
-      <motion.div className="relative flex min-h-full w-full min-w-0 items-center justify-center p-3 md:p-6">
-        <motion.div className={`absolute inset-0 bg-gradient-to-r ${theme.primary} opacity-70`} />
-        <motion.div className="relative z-10 flex w-full min-w-0 max-w-5xl flex-col items-center gap-4 p-6 md:p-8 rounded-2xl border-2 border-white/20">
-          <motion.div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
-            <Zap className="w-6 h-6 text-white" />
+      <motion.div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-center justify-center overflow-y-auto p-3 md:p-6">
+        <motion.div className={`absolute inset-0 bg-gradient-to-r ${theme.bgGradient} opacity-50`} />
+        <motion.div
+          className={`relative z-10 flex w-full min-w-0 max-w-5xl flex-col items-center gap-4 rounded-2xl border-2 bg-white p-6 shadow-sm md:p-8 ${theme.borderColor}`}
+        >
+          <div
+            className="pointer-events-none absolute inset-0 rounded-[inherit]"
+            aria-hidden
+            style={{
+              background: `radial-gradient(ellipse 80% 50% at 50% 0%, ${theme.glow} 0%, transparent 70%)`,
+            }}
+          />
+          <motion.div
+            className={`relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl md:h-16 md:w-16 ${theme.iconBg}`}
+          >
+            <Zap className={`h-7 w-7 md:h-8 md:w-8 ${theme.iconText}`} aria-hidden />
           </motion.div>
-          <h2 className="font-display w-full min-w-0 text-center text-lg font-extrabold uppercase tracking-tight leading-tight break-words [overflow-wrap:anywhere] hyphens-auto text-white md:text-2xl lg:text-3xl">
+          <h2
+            className={`font-display relative w-full min-w-0 text-center font-extrabold uppercase leading-snug tracking-tight break-words [overflow-wrap:anywhere] hyphens-auto text-slate-900 ${titleSize}`}
+          >
             {content}
           </h2>
           {footerRule ? (
-            <p className="font-body w-full text-center text-sm italic leading-relaxed text-white/80 md:text-base">
+            <p
+              className={`font-body relative w-full border-t border-slate-100 pt-4 text-center text-sm font-medium leading-relaxed md:text-base ${theme.textSecondary}`}
+            >
               {footerRule}
             </p>
           ) : null}
@@ -301,21 +306,9 @@ export const GoldenRule = ({
 
   // Fallback: center
   return (
-    <motion.div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-stretch justify-start p-3 md:p-8">
-      <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.primary} opacity-70`} />
-      <motion.div
-        className={`relative z-10 w-full min-w-0 max-w-4xl p-6 md:p-8 lg:p-10 rounded-[2rem] text-center border-4 ${theme.borderColor} bg-slate-950/85`}
-      >
-        <Sparkles className={`${theme.iconText} w-8 h-8 md:w-10 md:h-10 mx-auto mb-3`} />
-        <h2 className="font-display text-lg font-extrabold uppercase tracking-tighter leading-tight break-words [overflow-wrap:anywhere] hyphens-none text-white md:text-3xl">
-          {content}
-        </h2>
-        {footerRule ? (
-          <p className={`font-body mt-4 text-sm italic leading-relaxed md:mt-6 md:text-base ${theme.textSecondary}`}>
-            {footerRule}
-          </p>
-        ) : null}
-      </motion.div>
-    </motion.div>
+    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-center justify-center overflow-y-auto p-3 md:p-8">
+      <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
+      <GoldenRuleHeroCard content={content} theme={theme} footerRule={footerRule} rounded="2xl" />
+    </div>
   );
 };

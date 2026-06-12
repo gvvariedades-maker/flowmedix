@@ -43,7 +43,7 @@ export const SyllableScanner: React.FC<SyllableScannerProps> = ({ word, tonicInd
       <motion.div 
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className={`relative z-10 w-full max-w-3xl mx-auto p-6 md:p-10 lg:p-12 bg-slate-900/92 rounded-[1.5rem] md:rounded-[2.5rem] border ${theme.borderColor} shadow-md my-auto`}
+        className={`relative z-10 mx-auto my-auto w-full max-w-3xl rounded-[1.5rem] border bg-white p-6 shadow-sm md:rounded-[2.5rem] md:p-10 lg:p-12 ${theme.borderColor}`}
       >
         <div className={`mb-10 flex items-center gap-3 ${theme.textPrimary}`}>
           <Zap size={24} className="shrink-0 animate-pulse" />
@@ -69,8 +69,8 @@ export const SyllableScanner: React.FC<SyllableScannerProps> = ({ word, tonicInd
                   relative rounded-2xl px-6 py-4 text-2xl font-black transition-all duration-500
                   md:px-8 md:py-5 md:text-3xl
                   ${isTonic 
-                    ? `bg-gradient-to-br ${theme.primary} text-white border-2 border-white/20` 
-                    : 'bg-slate-800/50 text-slate-500 border border-slate-700/50'}
+                    ? `border-2 ${theme.borderColor} ${theme.iconBg} ${theme.iconText}` 
+                    : 'border border-slate-200 bg-slate-100 text-slate-400'}
                 `}
               >
                 {syl.toUpperCase()}
@@ -93,16 +93,16 @@ export const SyllableScanner: React.FC<SyllableScannerProps> = ({ word, tonicInd
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.8 }}
-          className={`bg-gradient-to-br ${theme.secondary}/15 border ${theme.borderColor} p-6 rounded-2xl flex items-start gap-4 bg-slate-900/60`}
+          className={`flex items-start gap-4 rounded-2xl border bg-slate-50 p-6 ${theme.borderColor}`}
         >
-          <div className={`bg-gradient-to-br ${theme.primary} p-3 rounded-xl text-white`}>
+          <div className={`rounded-xl p-3 ${theme.iconBg} ${theme.iconText}`}>
             <CheckCircle2 size={28} />
           </div>
           <div>
             <h4 className={`mb-2 text-xl font-black md:text-lg ${theme.textPrimary}`}>Diagnóstico Final</h4>
             <p className={`text-base leading-relaxed md:text-sm ${theme.textSecondary}`}>
               A sílaba forte é a <span className={`${theme.textPrimary} font-black`}>antepenúltima</span>. 
-              Regra: <span className="text-white italic">{rule}</span>
+              Regra: <span className={`font-semibold italic ${theme.textPrimary}`}>{rule}</span>
             </p>
           </div>
         </motion.div>

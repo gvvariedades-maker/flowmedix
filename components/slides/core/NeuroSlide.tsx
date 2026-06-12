@@ -18,6 +18,7 @@ import {
   normalizeReverseStudySlide,
 } from '@/lib/reverseStudySlidesNormalize';
 import { ReverseStudyShell } from './ReverseStudyShell';
+import { SLIDE_SHELL_CARD } from './slideSurface';
 import type { ReverseStudyShellContext } from '@/types/lesson';
 
 // ============================================================================
@@ -48,8 +49,13 @@ export const NeuroSlideHub = ({
     familyId: questionFamilyId,
   };
 
-  const { layoutVariant, revealMode: logicRevealMode, bulletStyle: dangerBulletStyle, rows: goldenRows } =
-    resolveSlidePresentation(slide, presentationContext);
+  const {
+    layoutVariant,
+    revealMode: logicRevealMode,
+    dangerRevealMode,
+    bulletStyle: dangerBulletStyle,
+    rows: goldenRows,
+  } = resolveSlidePresentation(slide, presentationContext);
   
   // Helper para mapear items para concepts quando necessário
   const getConcepts = () => {
@@ -98,6 +104,7 @@ export const NeuroSlideHub = ({
           footerRule={dangerFooterRule}
           layoutVariant={layoutVariant}
           bulletStyle={dangerBulletStyle}
+          compareRevealMode={dangerRevealMode}
         />
       );
     case 'logic_flow':
@@ -116,8 +123,8 @@ export const NeuroSlideHub = ({
       const conceptB = slide.concept_b;
       if (!isVersusArenaSideReady(conceptA) || !isVersusArenaSideReady(conceptB)) {
         return (
-          <div className="flex w-full min-w-0 items-center justify-center rounded-xl bg-slate-800 p-6">
-            <p className="text-base italic text-slate-400">
+          <div className="flex w-full min-w-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 p-6">
+            <p className="text-base italic text-slate-500">
               Slide versus_arena incompleto: defina concept_a e concept_b com title e points.
             </p>
           </div>
@@ -127,8 +134,8 @@ export const NeuroSlideHub = ({
     }
     default:
       return (
-        <div className="flex w-full min-w-0 items-center justify-center rounded-xl bg-slate-800 p-6">
-          <p className="text-base italic text-slate-400">Layout padrão: {slide.content || slide.main_text || 'Sem conteúdo'}</p>
+        <div className="flex w-full min-w-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 p-6">
+          <p className="text-base italic text-slate-500">Layout padrão: {slide.content || slide.main_text || 'Sem conteúdo'}</p>
         </div>
       );
   }
@@ -328,6 +335,7 @@ export default function NeuroSlide({
             items={normalizedData.items}
             footerRule={normalizedData.footer_rule}
             bulletStyle={legacyPresentation.bulletStyle}
+            compareRevealMode={legacyPresentation.dangerRevealMode}
           />
         );
         break;
@@ -358,8 +366,8 @@ export default function NeuroSlide({
         const conceptB = normalizedData.concept_b;
         if (!isVersusArenaSideReady(conceptA) || !isVersusArenaSideReady(conceptB)) {
           inner = (
-            <div className="flex w-full items-center justify-center rounded-xl bg-slate-800 p-6">
-              <p className="text-base italic text-slate-400">
+            <div className="flex w-full items-center justify-center rounded-xl border border-slate-200 bg-slate-50 p-6">
+              <p className="text-base italic text-slate-500">
                 Slide versus_arena incompleto: defina concept_a e concept_b com title e points.
               </p>
             </div>
@@ -371,8 +379,8 @@ export default function NeuroSlide({
       }
       default:
         inner = (
-          <div className="flex w-full items-center justify-center rounded-xl bg-slate-800 p-6">
-            <p className="text-base italic text-slate-400">Slide não reconhecido</p>
+          <div className="flex w-full items-center justify-center rounded-xl border border-slate-200 bg-slate-50 p-6">
+            <p className="text-base italic text-slate-500">Slide não reconhecido</p>
           </div>
         );
     }
@@ -406,6 +414,14 @@ export default function NeuroSlide({
   ) : (
     inner
   );
+
+  if (useShell && resolvedShell) {
+    return (
+      <div className={shellClass}>
+        <div className={`${SLIDE_SHELL_CARD} p-3 sm:p-4 md:p-5`}>{body}</div>
+      </div>
+    );
+  }
 
   return <div className={shellClass}>{body}</div>;
 }

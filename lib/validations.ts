@@ -306,6 +306,8 @@ export const DangerZoneSlideSchema = ReverseStudySlideShellFieldsSchema.merge(z.
   footer_rule: z.string().max(LIMITS.FOOTER_RULE_MAX, `Footer rule deve ter no máximo ${LIMITS.FOOTER_RULE_MAX} caracteres`).optional(),
   /** Bullets na lista: `numbered` (padrão) ou `x_icon` (ícone X vermelho). */
   bullet_style: z.enum(['numbered', 'x_icon']).optional(),
+  /** Compare com `correct`: default `tap` revela coluna certa por item; `auto` mostra tudo (legado). */
+  reveal_mode: z.enum(['auto', 'tap']).optional(),
   // Campos de compatibilidade (DEPRECATED)
   layout_type: z.literal('danger_zone').optional(),
   layout_variant: z.string().optional(),

@@ -63,7 +63,7 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
   const IconBComponent = getIcon(concept_b?.icon, AlertCircle);
 
   return (
-    <div className="w-full min-h-full min-w-0 flex flex-col md:flex-row relative overflow-x-hidden bg-slate-950">
+    <div className="w-full min-h-full min-w-0 flex flex-col md:flex-row relative overflow-x-hidden bg-slate-50">
       
       {/* BACKGROUND SPLIT */}
       <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-30`} />
@@ -73,7 +73,7 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
         initial={{ x: '-100%' }}
         animate={{ x: 0 }}
         transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-        className="flex-1 p-6 max-md:pb-16 md:p-10 flex flex-col justify-center border-b md:border-b-0 md:border-r border-white/10 relative bg-slate-900/85"
+        className="relative flex flex-1 flex-col justify-center border-b border-slate-200 bg-white p-6 max-md:pb-16 md:border-b-0 md:border-r md:p-10"
       >
         <div className="relative z-10 max-w-md mx-auto md:ml-auto md:mr-10">
           <div className={`inline-flex items-center justify-center p-3 rounded-xl ${theme.iconBg} ${theme.iconText} mb-4`}>
@@ -99,7 +99,7 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
           initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ delay: 0.4, type: 'spring' }}
-          className={`w-16 h-16 md:w-20 md:h-20 rounded-full border-4 ${theme.borderColor} bg-slate-900 flex items-center justify-center shadow-md relative overflow-hidden`}
+          className={`relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border-4 bg-white shadow-sm md:h-20 md:w-20 ${theme.borderColor}`}
         >
            <div className={`absolute inset-0 bg-gradient-to-t ${theme.primary} opacity-10`} />
            <Swords className={theme.textPrimary} size={32} />
@@ -114,7 +114,7 @@ export const VersusArena = ({ concept_a, concept_b, theme }: VersusArenaProps) =
         initial={{ x: '100%' }}
         animate={{ x: 0 }}
         transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-        className="flex-1 p-6 max-md:pt-16 md:p-10 flex flex-col justify-center relative bg-slate-900/85"
+        className="relative flex flex-1 flex-col justify-center bg-white p-6 max-md:pt-16 md:p-10"
       >
         <div className="relative z-10 max-w-md mx-auto md:mr-auto md:ml-10">
           {/* Ícone alinhado à direita no mobile, à esquerda no desktop */}

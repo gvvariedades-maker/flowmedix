@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useCallback, useState } from 'react';
 import {
   ArrowRight,
@@ -340,6 +341,10 @@ export default function OpcaoAPreviewClient() {
       <p className="shrink-0 border-b border-white/8 bg-[var(--color-surface-1)] px-4 py-2 text-center text-[11px] text-[var(--color-text-tertiary)]">
         Preview Opção A — linguagem única · modo foco escuro-suave ·{' '}
         <span className="text-[var(--color-brand-text)]">não é o player em produção</span>
+        {' · '}
+        <Link href="/neuroslide-opcao-b-preview" className="underline hover:text-[var(--color-text-secondary)]">
+          comparar com Opção B
+        </Link>
       </p>
 
       {/* Chrome (header do estudo reverso) */}
