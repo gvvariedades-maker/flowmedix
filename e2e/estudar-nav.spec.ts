@@ -215,21 +215,22 @@ test.describe('Estudar — ciclo aluno (resposta, pular, estudo)', () => {
     const fecharEr = page.getByRole('button', { name: /Fechar estudo reverso/i });
     await expect(fecharEr).toBeVisible({ timeout: 15_000 });
 
-    const erFooter = page
-      .locator('div.fixed.inset-x-0.top-0')
-      .filter({ has: fecharEr })
-      .locator('div.shrink-0.border-t')
-      .last();
+    const erPanel = page.locator('div.fixed').filter({ has: fecharEr });
+    const slideAtual = erPanel.locator('div.font-mono.tabular-nums span.font-black').first();
 
-    const avancarSlide = erFooter.getByRole('button', { name: /Próximo/i });
-    for (let i = 0; i < 3; i += 1) {
-      await expect(avancarSlide).toBeVisible({ timeout: 15_000 });
-      await expect(avancarSlide).toBeEnabled({ timeout: 15_000 });
-      await avancarSlide.click();
-    }
+    await expect(async () => {
+      const atual = Number((await slideAtual.textContent())?.trim() ?? 0);
+      if (atual >= 4) return true;
+      const proximo = erPanel.getByRole('button', { name: /Próximo/i });
+      await expect(proximo).toBeVisible({ timeout: 5_000 });
+      await proximo.click();
+      await expect(slideAtual).not.toHaveText(String(atual), { timeout: 5_000 });
+      return false;
+    }).toPass({ timeout: 45_000 });
 
-    const marcarEstudado = erFooter.getByRole('button', { name: /Marcar/i });
-    await expect(marcarEstudado).toBeVisible({ timeout: 30_000 });
+    const marcarEstudado = erPanel.getByRole('button', { name: /Marcar/i });
+    await marcarEstudado.scrollIntoViewIfNeeded();
+    await expect(marcarEstudado).toBeVisible({ timeout: 15_000 });
     await marcarEstudado.click();
     await expect(page.getByText('Estudo concluído')).toBeVisible({ timeout: 15_000 });
 
