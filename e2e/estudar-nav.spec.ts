@@ -6,6 +6,11 @@ import {
   E2E_ESTUDAR_TITULO_AULA,
   E2E_ESTUDAR_TITULO_AULA_PAGE2,
 } from '../lib/e2e/constants';
+import {
+  abrirQuestaoViaVitrine,
+  dismissWelcomeIfVisible,
+  waitVitrineListReady,
+} from './helpers/vitrineE2e';
 
 const BANCA_QUERY = encodeURIComponent(E2E_ESTUDAR_BANCA);
 const SLUG_1_URL = new RegExp(`/estudar/${E2E_ESTUDAR_SLUG_1}.*banca=${BANCA_QUERY}`);
@@ -35,12 +40,6 @@ function isQuestaoUrl(
   return true;
 }
 
-/** Lista interativa (sem skeleton nem refresh bloqueando cliques). */
-async function waitVitrineListReady(page: Page) {
-  await expect(page.locator('[data-vitrine-slot-ready="true"]')).toBeAttached({ timeout: 15_000 });
-  await expect(page.locator('[data-vitrine-list-ready="true"]')).toBeAttached({ timeout: 15_000 });
-}
-
 async function gotoVitrineFiltrada(page: Page) {
   await page.goto(`/estudar?banca=${BANCA_QUERY}`, { waitUntil: 'domcontentloaded' });
   await expect(page.getByText(E2E_ESTUDAR_TITULO_AULA)).toBeVisible({ timeout: 15_000 });
@@ -53,38 +52,12 @@ async function gotoVitrinePage2(page: Page) {
   await expect(page.getByText(E2E_ESTUDAR_TITULO_AULA_PAGE2)).toBeVisible({ timeout: 15_000 });
 }
 
-async function garantirPainelAssuntoAberto(
-  page: Page,
-  tituloAssunto: string = E2E_ESTUDAR_TITULO_AULA,
-) {
-  const assuntoBtn = page.getByRole('button', { name: new RegExp(tituloAssunto) });
-  const entrar = page.getByRole('link', { name: 'Entrar no assunto' }).first();
-
-  try {
-    await expect(entrar).toBeVisible({ timeout: 2_000 });
-    return;
-  } catch {
-    // painel recolhido ou vitrine ainda hidratando
-  }
-
-  if ((await assuntoBtn.getAttribute('aria-expanded')) !== 'true') {
-    await assuntoBtn.click();
-  }
-
-  await expect(entrar).toBeVisible({ timeout: 15_000 });
-}
-
 async function abrirPrimeiraQuestaoDaVitrine(page: Page) {
-  await garantirPainelAssuntoAberto(page);
-
-  const entrar = page.getByRole('link', { name: 'Entrar no assunto' }).first();
-  await entrar.scrollIntoViewIfNeeded();
-
-  await Promise.all([
-    page.waitForURL(SLUG_1_URL, { timeout: 15_000 }),
-    entrar.click(),
-  ]);
-  await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
+  await abrirQuestaoViaVitrine(page, {
+    tituloAssunto: E2E_ESTUDAR_TITULO_AULA,
+    slugUrlPattern: SLUG_1_URL,
+    questaoText: /Questão E2E 1:/,
+  });
 }
 
 /**
@@ -300,17 +273,11 @@ test.describe('Estudar — page, dots, history (Fase 3.2)', () => {
     await gotoVitrinePage2(page);
     expect(isVitrineUrl(page.url(), { page: '2' })).toBe(true);
 
-    await garantirPainelAssuntoAberto(page, E2E_ESTUDAR_TITULO_AULA_PAGE2);
-    const entrar = page.getByRole('link', { name: 'Entrar no assunto' }).first();
-    await entrar.scrollIntoViewIfNeeded();
-
-    await Promise.all([
-      page.waitForURL((url) => isQuestaoUrl(url, E2E_ESTUDAR_SLUG_1, { page: '2' }), {
-        timeout: 15_000,
-      }),
-      entrar.click(),
-    ]);
-    await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
+    await abrirQuestaoViaVitrine(page, {
+      tituloAssunto: E2E_ESTUDAR_TITULO_AULA_PAGE2,
+      slugUrlPattern: (url) => isQuestaoUrl(url.href, E2E_ESTUDAR_SLUG_1, { page: '2' }),
+      questaoText: /Questão E2E 1:/,
+    });
     await expectNavButtonsReady(page);
 
     await Promise.all([
@@ -362,19 +329,14 @@ test.describe('Estudar — page, dots, history (Fase 3.2)', () => {
 
   test('browser back/forward após soft-nav preserva vitrine page=2 e questão', async ({ page }) => {
     await gotoVitrinePage2(page);
-    await garantirPainelAssuntoAberto(page, E2E_ESTUDAR_TITULO_AULA_PAGE2);
-
-    const entrar = page.getByRole('link', { name: 'Entrar no assunto' }).first();
-    await Promise.all([
-      page.waitForURL((url) => isQuestaoUrl(url, E2E_ESTUDAR_SLUG_1, { page: '2' }), {
-        timeout: 15_000,
-      }),
-      entrar.click(),
-    ]);
-    await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
+    await abrirQuestaoViaVitrine(page, {
+      tituloAssunto: E2E_ESTUDAR_TITULO_AULA_PAGE2,
+      slugUrlPattern: (url) => isQuestaoUrl(url.href, E2E_ESTUDAR_SLUG_1, { page: '2' }),
+      questaoText: /Questão E2E 1:/,
+    });
 
     await Promise.all([
-      page.waitForURL((url) => isQuestaoUrl(url, E2E_ESTUDAR_SLUG_2, { page: '2' }), {
+      page.waitForURL((url) => isQuestaoUrl(url.href, E2E_ESTUDAR_SLUG_2, { page: '2' }), {
         timeout: 15_000,
       }),
       clicarProximaQuestao(page),
@@ -396,19 +358,14 @@ test.describe('Estudar — page, dots, history (Fase 3.2)', () => {
 
   test('voltar interno após soft-nav (Próxima) retorna à vitrine estável', async ({ page }) => {
     await gotoVitrinePage2(page);
-    await garantirPainelAssuntoAberto(page, E2E_ESTUDAR_TITULO_AULA_PAGE2);
-
-    const entrar = page.getByRole('link', { name: 'Entrar no assunto' }).first();
-    await Promise.all([
-      page.waitForURL((url) => isQuestaoUrl(url, E2E_ESTUDAR_SLUG_1, { page: '2' }), {
-        timeout: 15_000,
-      }),
-      entrar.click(),
-    ]);
-    await expect(page.getByText(/Questão E2E 1:/)).toBeVisible({ timeout: 15_000 });
+    await abrirQuestaoViaVitrine(page, {
+      tituloAssunto: E2E_ESTUDAR_TITULO_AULA_PAGE2,
+      slugUrlPattern: (url) => isQuestaoUrl(url.href, E2E_ESTUDAR_SLUG_1, { page: '2' }),
+      questaoText: /Questão E2E 1:/,
+    });
 
     await Promise.all([
-      page.waitForURL((url) => isQuestaoUrl(url, E2E_ESTUDAR_SLUG_2, { page: '2' }), {
+      page.waitForURL((url) => isQuestaoUrl(url.href, E2E_ESTUDAR_SLUG_2, { page: '2' }), {
         timeout: 15_000,
       }),
       clicarProximaQuestao(page),
@@ -453,18 +410,6 @@ function globalMobileHeader(page: Page) {
 
 function bottomNav(page: Page) {
   return page.locator('nav[aria-label="Navegação rápida"]');
-}
-
-async function dismissWelcomeIfVisible(page: Page) {
-  const skip = page.getByRole('button', { name: 'Não mostrar novamente' });
-  if (await skip.isVisible().catch(() => false)) {
-    await skip.click();
-    return;
-  }
-  const close = page.getByRole('button', { name: 'Fechar introdução' });
-  if (await close.isVisible().catch(() => false)) {
-    await close.click();
-  }
 }
 
 /**

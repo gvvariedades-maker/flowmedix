@@ -83,6 +83,10 @@ test.describe('Auditoria visual — Gabarita Enfermagem (público)', () => {
   test.describe.configure({ mode: 'serial' });
   test.setTimeout(90_000);
 
+  test.beforeAll(() => {
+    test.skip(!!process.env.CI, 'Auditoria visual externa — rodar manualmente fora do CI');
+  });
+
   test('T2 login desktop + mobile', async ({ page }) => {
     ensureDir(GABARITA_OUT);
 
@@ -221,6 +225,10 @@ test.describe('Auditoria visual — Estudei (público)', () => {
   test.describe.configure({ mode: 'serial' });
   test.setTimeout(90_000);
 
+  test.beforeAll(() => {
+    test.skip(!!process.env.CI, 'Auditoria visual externa — rodar manualmente fora do CI');
+  });
+
   test('T1 pricing #assineja desktop + mobile', async ({ page }) => {
     ensureDir(ESTUDEI_OUT);
 
@@ -300,6 +308,10 @@ test.describe('Auditoria visual — Estudei (público)', () => {
 test.describe('Auditoria visual — QConcursos (público)', () => {
   test.describe.configure({ mode: 'serial' });
   test.setTimeout(90_000);
+
+  test.beforeAll(() => {
+    test.skip(!!process.env.CI, 'Auditoria visual externa — rodar manualmente fora do CI');
+  });
 
   test('T2 login desktop + mobile', async ({ page }) => {
     ensureDir(QCONCURSOS_OUT);
@@ -523,6 +535,10 @@ test.describe('Auditoria visual — QConcursos (logado)', () => {
 test.describe('Auditoria visual — ENFrente Enfermagem (público)', () => {
   test.describe.configure({ mode: 'serial' });
   test.setTimeout(90_000);
+
+  test.beforeAll(() => {
+    test.skip(!!process.env.CI, 'Auditoria visual externa — rodar manualmente fora do CI');
+  });
 
   test('T1 landing desktop + mobile', async ({ page }) => {
     ensureDir(ENFRENTE_OUT);

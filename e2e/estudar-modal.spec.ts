@@ -4,14 +4,14 @@ import {
   E2E_ESTUDAR_SLUG_1,
   E2E_ESTUDAR_TITULO_AULA,
 } from '../lib/e2e/constants';
+import {
+  abrirQuestaoViaVitrine,
+  garantirPainelAssuntoAberto,
+  waitVitrineListReady,
+} from './helpers/vitrineE2e';
 
 const BANCA_QUERY = encodeURIComponent(E2E_ESTUDAR_BANCA);
 const SLUG_1_URL = new RegExp(`/estudar/${E2E_ESTUDAR_SLUG_1}.*banca=${BANCA_QUERY}`);
-
-async function waitVitrineListReady(page: Page) {
-  await expect(page.locator('[data-vitrine-slot-ready="true"]')).toBeAttached({ timeout: 15_000 });
-  await expect(page.locator('[data-vitrine-list-ready="true"]')).toBeAttached({ timeout: 15_000 });
-}
 
 async function gotoVitrineFiltrada(page: Page) {
   await page.goto(`/estudar?banca=${BANCA_QUERY}`, { waitUntil: 'domcontentloaded' });
@@ -20,27 +20,15 @@ async function gotoVitrineFiltrada(page: Page) {
 }
 
 function linkEntrarNoAssunto(page: Page) {
-  return page.locator(`a[href*="/estudar/${E2E_ESTUDAR_SLUG_1}"]`).filter({ hasText: 'Entrar no assunto' }).first();
-}
-
-async function garantirPainelAssuntoAberto(page: Page) {
-  await waitVitrineListReady(page);
-  const assuntoBtn = page.getByRole('button', { name: new RegExp(E2E_ESTUDAR_TITULO_AULA) });
-  await assuntoBtn.scrollIntoViewIfNeeded();
-
-  await expect
-    .poll(
-      async () => {
-        if ((await assuntoBtn.getAttribute('aria-expanded')) === 'true') return 'true';
-        await assuntoBtn.click({ force: true });
-        return assuntoBtn.getAttribute('aria-expanded');
-      },
-      { timeout: 15_000 },
+  return page
+    .getByTestId('vitrine-subject-sheet')
+    .getByRole('link', { name: 'Entrar no assunto' })
+    .or(
+      page
+        .locator(`a[href*="/estudar/${E2E_ESTUDAR_SLUG_1}"]`)
+        .filter({ hasText: 'Entrar no assunto' }),
     )
-    .toBe('true');
-
-  const entrar = linkEntrarNoAssunto(page);
-  await expect(entrar).toBeVisible({ timeout: 15_000 });
+    .first();
 }
 
 function bottomNav(page: Page) {
@@ -48,11 +36,11 @@ function bottomNav(page: Page) {
 }
 
 async function abrirPrimeiraQuestaoDaVitrine(page: Page) {
-  await garantirPainelAssuntoAberto(page);
-
-  const entrar = linkEntrarNoAssunto(page);
-  await entrar.scrollIntoViewIfNeeded();
-  await entrar.click({ force: true });
+  await abrirQuestaoViaVitrine(page, {
+    tituloAssunto: E2E_ESTUDAR_TITULO_AULA,
+    slugUrlPattern: SLUG_1_URL,
+    usarEntrarNoAssunto: true,
+  });
 
   // Intercept @modal pode compilar na 1ª navegação — aguardar URL ou conteúdo.
   await Promise.race([
@@ -180,7 +168,7 @@ test.describe('Estudar — modal intercept (mobile)', () => {
 
   test('não deixa vitrine inerte durante carga — dialog ou skeleton visível', async ({ page }) => {
     await gotoVitrineFiltrada(page);
-    await garantirPainelAssuntoAberto(page);
+    await garantirPainelAssuntoAberto(page, E2E_ESTUDAR_TITULO_AULA);
 
     const entrar = linkEntrarNoAssunto(page);
     await entrar.scrollIntoViewIfNeeded();

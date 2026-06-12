@@ -136,13 +136,12 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
     await dismissWelcomeIfVisible(page);
     await expect(page.getByText(E2E_ESTUDAR_TITULO_AULA)).toBeVisible({ timeout: 15_000 });
 
-    const assuntoBtn = page.getByRole('button', { name: new RegExp(E2E_ESTUDAR_TITULO_AULA) });
-    await assuntoBtn.click({ force: true });
+    const { garantirPainelAssuntoAberto } = await import('./helpers/vitrineE2e');
+    await garantirPainelAssuntoAberto(page, E2E_ESTUDAR_TITULO_AULA);
     const entrar = page
-      .locator(`a[href*="/estudar/${E2E_ESTUDAR_SLUG_1}"]`)
-      .filter({ hasText: 'Entrar no assunto' })
-      .first();
-    await entrar.click({ force: true });
+      .getByTestId('vitrine-subject-sheet')
+      .getByRole('link', { name: 'Entrar no assunto' });
+    await entrar.click();
     await expect(page.getByRole('dialog')).toBeVisible({ timeout: 45_000 });
 
     await maisButton(page).click({ force: true });
@@ -158,14 +157,15 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
     await expect(maisButton(page)).toBeFocused({ timeout: 10_000 });
   });
 
-  test('D9 — drawer aberto: link Estudar não navega', async ({ page }) => {
+  test('D9 — drawer aberto: link Estudar inerte', async ({ page }) => {
     await page.goto('/ajuda', { waitUntil: 'domcontentloaded' });
     await dismissWelcomeIfVisible(page);
     await maisButton(page).click();
     await expect(page.locator('#dashboard-mobile-drawer')).toBeVisible({ timeout: 10_000 });
 
-    await bottomNav(page).locator('a[href="/estudar"]').click({ force: true });
-    await expect(page).toHaveURL(/\/ajuda/, { timeout: 5_000 });
+    const estudarLink = bottomNav(page).locator('a[href="/estudar"]');
+    await expect(estudarLink).toHaveAttribute('aria-hidden', 'true');
+    await expect(page).toHaveURL(/\/ajuda/);
     await expect(page.locator('#dashboard-mobile-drawer')).toBeVisible({ timeout: 5_000 });
   });
 
@@ -175,7 +175,7 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
 
     const mais = bottomNav(page).getByRole('button', { name: 'Abrir menu' });
     await expect(mais).toHaveAttribute('aria-current', 'page');
-    await expect(mais.locator('span', { hasText: 'Mais' })).toHaveClass(/text-\[#00f2ff\]/);
+    await expect(mais.locator('span', { hasText: 'Mais' })).toHaveClass(/text-slate-800/);
   });
 
   test('D11 — seção Suporte e WhatsApp acessíveis no drawer', async ({ page }) => {

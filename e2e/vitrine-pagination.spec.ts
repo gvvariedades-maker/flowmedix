@@ -93,7 +93,7 @@ test.describe('Vitrine — paginação mobile inline', () => {
     await scrollMainToBottom(page);
 
     await expect(pagination).toBeVisible({ timeout: 10_000 });
-    await expect(pagination.getByText(/Página 1 de \d+/)).toBeVisible();
+    await expect(page.getByTestId('vitrine-pagination-pill')).toHaveText(/1 \/ \d+/);
     await expect(page.getByTestId('vitrine-pagination-prev')).toBeVisible();
     await expect(page.getByTestId('vitrine-pagination-next')).toBeVisible();
   });
@@ -130,7 +130,7 @@ test.describe('Vitrine — paginação mobile inline', () => {
 
     const proxima = page.getByTestId('vitrine-pagination-next');
     await expect(proxima).toBeVisible();
-    await expect(inlinePagination(page).getByText(/Página 1 de 2/)).toBeVisible();
+    await expect(page.getByTestId('vitrine-pagination-pill')).toHaveText('1 / 2');
     await expect(proxima).toBeEnabled();
 
     await expect(async () => {
@@ -142,7 +142,7 @@ test.describe('Vitrine — paginação mobile inline', () => {
     await expect(page.getByText(/Mostrando 13[\u2013-]/)).toBeVisible({ timeout: 10_000 });
     await expectBottomNavAnchored(page);
     await scrollMainToBottom(page);
-    await expect(inlinePagination(page).getByText(/Página 2 de 2/)).toBeVisible();
+    await expect(page.getByTestId('vitrine-pagination-pill')).toHaveText('2 / 2');
   });
 
   test('BottomNav permanece ancorado ao rodapé logo após Próxima (sem scroll manual)', async ({
@@ -153,7 +153,7 @@ test.describe('Vitrine — paginação mobile inline', () => {
 
     const proxima = page.getByTestId('vitrine-pagination-next');
     await expect(proxima).toBeVisible();
-    await expect(inlinePagination(page).getByText(/Página 1 de \d+/)).toBeVisible();
+    await expect(page.getByTestId('vitrine-pagination-pill')).toHaveText(/\d+ \/ \d+/);
     await expect(proxima).toBeEnabled();
 
     await expect(async () => {
