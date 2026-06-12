@@ -14,6 +14,8 @@ import {
   type AvantLogoSizeToken,
 } from '@/lib/brand/avantLogoConstants';
 
+export type { AvantLogoSizeToken } from '@/lib/brand/avantLogoConstants';
+
 export type AvantLogoVariant = 'lockup' | 'icon';
 
 /**
