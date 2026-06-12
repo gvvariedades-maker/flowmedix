@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { ArrowRight, CreditCard, Loader2, Sparkles, Zap } from 'lucide-react';
 import type { ProSource } from '@/lib/freemium/constants';
@@ -45,7 +45,7 @@ export function AssinaturaClient({
   return (
     <div className={cn('mx-auto max-w-2xl bg-background px-4 py-8 sm:px-6 sm:py-12', pageBottomPadding)}>
       <div className="mb-8">
-        <p className="mb-2 text-[10px] font-black uppercase tracking-[0.35em] text-[#3d6b0f]">
+        <p className="mb-2 text-[10px] font-black uppercase tracking-[0.35em] text-[#166534]">
           Minha conta
         </p>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
@@ -62,17 +62,17 @@ export function AssinaturaClient({
           <div>
             <div
               className={`mb-3 inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 ring-1 ${
-                isPro ? 'bg-[rgba(143,224,32,0.12)] ring-[rgba(143,224,32,0.35)]' : 'bg-slate-100 ring-slate-200'
+                isPro ? 'bg-[rgba(34, 197, 94,0.12)] ring-[rgba(34, 197, 94,0.35)]' : 'bg-slate-100 ring-slate-200'
               }`}
             >
               {isPro ? (
-                <Zap size={12} className="shrink-0 text-[#3d6b0f]" fill="currentColor" aria-hidden />
+                <Zap size={12} className="shrink-0 text-[#166534]" fill="currentColor" aria-hidden />
               ) : (
                 <Sparkles size={12} className="shrink-0 text-slate-500" aria-hidden />
               )}
               <span
                 className={`text-[10px] font-black uppercase tracking-[0.15em] ${
-                  isPro ? 'text-[#3d6b0f]' : 'text-slate-500'
+                  isPro ? 'text-[#166534]' : 'text-slate-500'
                 }`}
               >
                 {isAdmin && isPro

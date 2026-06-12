@@ -119,9 +119,9 @@ function displayNameFromUser(displayName: string | null, email: string | null): 
   return displayNameFromEmail(email);
 }
 
-/** Avatar — verde remete ao tom de enfermagem / saúde (esmeralda). */
+/** Avatar — alinhado à cor brand editorial (#22c55e). */
 const USER_AVATAR_CLASSES =
-  'bg-gradient-to-br from-emerald-500 to-emerald-700 text-white shadow-sm ring-2 ring-emerald-200/90';
+  'bg-gradient-to-br from-[#22c55e] to-[#16a34a] text-white shadow-sm ring-2 ring-[#22c55e]/25';
 
 type MatriculatedConcursoSummary = {
   slug: string;
@@ -195,8 +195,8 @@ function DashboardNav({
         <div key={section.id} className="pb-1">
           <p
             className={cn(
-              'px-3 pb-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500',
-              sectionIndex === 0 ? 'pt-0' : 'pt-2',
+              'px-3 pb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500',
+              sectionIndex === 0 ? 'pt-0' : 'border-t border-slate-100 pt-2',
             )}
           >
             {section.label}
@@ -213,8 +213,8 @@ function DashboardNav({
           </div>
         </div>
       ))}
-      <div className="mt-2 border-t border-slate-100 pt-3">
-        <p className="px-3 pb-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">
+      <div className="mt-2 border-t border-slate-100 pt-2">
+        <p className="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
           Suporte
         </p>
         <div className="space-y-0.5">
@@ -308,7 +308,7 @@ function UserAccountFooter({
             onClick={onLogout}
             title="Sair da conta"
             aria-label="Sair da conta"
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-slate-200/70 hover:text-slate-800"
+            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-slate-500 transition-colors hover:bg-slate-200/70 hover:text-slate-800"
           >
             <LogOut size={17} strokeWidth={MENU_ICON_STROKE} aria-hidden />
           </button>

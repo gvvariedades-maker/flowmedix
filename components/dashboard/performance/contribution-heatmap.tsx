@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
@@ -10,10 +10,10 @@ import type { DiaEstudo, Periodo } from './types';
 /** Escala de intensidade brand green — tema editorial */
 const INTENSITY_COLORS = [
   '#e2e8f0',
-  'rgba(143, 224, 32, 0.28)',
-  'rgba(143, 224, 32, 0.48)',
-  'rgba(143, 224, 32, 0.68)',
-  '#8fe020',
+  'rgba(34, 197, 94, 0.28)',
+  'rgba(34, 197, 94, 0.48)',
+  'rgba(34, 197, 94, 0.68)',
+  '#22c55e',
 ] as const;
 
 function intensityLevel(count: number): number {
@@ -62,7 +62,7 @@ function HeatmapGrid({ serie, periodo }: { serie: DiaEstudo[]; periodo: Periodo 
                 className={cn(
                   'aspect-square w-full min-h-[1.25rem] max-h-10 cursor-default rounded-[2px] transition-opacity duration-150 sm:min-h-[1.5rem] sm:max-h-14',
                   'hover:opacity-75',
-                  isToday && 'ring-2 ring-[#8fe020] ring-offset-1 ring-offset-background',
+                  isToday && 'ring-2 ring-[#22c55e] ring-offset-1 ring-offset-background',
                 )}
               />
               <div className="w-full text-center">
@@ -101,7 +101,7 @@ export function ContributionHeatmap({ serie, periodo, onPeriodoChange, totalPeri
     <div className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2">
-          <BarChart3 className="h-4 w-4 shrink-0 text-[#3d6b0f]" aria-hidden />
+          <BarChart3 className="h-4 w-4 shrink-0 text-[#166534]" aria-hidden />
           <span className="text-sm font-semibold text-slate-900">Atividade</span>
           <span className="text-xs text-slate-500">
             {totalPeriodo} questões nos últimos {periodo} dias
@@ -169,7 +169,7 @@ export function ContributionHeatmap({ serie, periodo, onPeriodoChange, totalPeri
             <span className="flex items-center gap-2">
               <span
                 className="inline-flex h-3.5 w-3.5 shrink-0 rounded-[2px]"
-                style={{ outline: '2px solid #8fe020', outlineOffset: '1px', backgroundColor: INTENSITY_COLORS[0] }}
+                style={{ outline: '2px solid #22c55e', outlineOffset: '1px', backgroundColor: INTENSITY_COLORS[0] }}
               />
               <span>Hoje</span>
             </span>

@@ -83,6 +83,39 @@ export function buildDerivedQuestionHeaderLine(meta: LessonMeta): string {
   return `${banca} - ${tail.join('/')}`;
 }
 
+export type QuestionHeaderChipTone = 'banca' | 'ano';
+
+export interface QuestionHeaderChip {
+  id: string;
+  label: string;
+  tone: QuestionHeaderChipTone;
+}
+
+/** Chips de escaneamento rápido (banca + ano) — estilo vitrine de questões. */
+export function buildQuestionHeaderChips(meta: LessonMeta): QuestionHeaderChip[] {
+  const chips: QuestionHeaderChip[] = [];
+  const banca = meta.banca?.trim();
+  const ano = meta.ano?.trim();
+  if (banca) chips.push({ id: 'banca', label: banca, tone: 'banca' });
+  if (ano) chips.push({ id: 'ano', label: ano, tone: 'ano' });
+  return chips;
+}
+
+/** Cargo, órgão ou prova — complemento textual aos chips (não repetir banca/ano). */
+export function buildQuestionExamDetailLine(meta: LessonMeta): string | null {
+  const cargo =
+    normalizeCargoHeader(meta.cargo_header) ||
+    inferCargoHeaderFromProva(meta.prova);
+  const orgao = stripOuterParens(meta.orgao?.trim() || '');
+  const prova = meta.prova?.trim();
+
+  if (cargo && orgao) return `${cargo} (${orgao})`;
+  if (cargo) return cargo;
+  if (orgao) return orgao;
+  if (prova) return prova;
+  return null;
+}
+
 /** Linha de matéria: `Tópico - Subtópico` quando ambos existem. Tópico genérico "Enfermagem" → só subtópico. */
 export function buildQuestionSubjectLine(meta: LessonMeta): string | null {
   const topico = meta.topico?.trim();

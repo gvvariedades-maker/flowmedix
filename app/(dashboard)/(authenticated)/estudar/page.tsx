@@ -138,7 +138,7 @@ function VitrineLoadingFallback() {
           <div className="h-11 rounded-xl bg-muted/70" />
           <div className="h-11 rounded-xl bg-muted/70" />
         </div>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {Array.from({ length: 8 }).map((_, i) => (
             <div key={i} className="h-72 rounded-2xl bg-muted/50" />
           ))}

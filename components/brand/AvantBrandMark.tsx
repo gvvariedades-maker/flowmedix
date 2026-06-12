@@ -1,53 +1,34 @@
+﻿import { AvantLogo, type AvantLogoSizeToken } from '@/components/brand/AvantLogo';
 import { cn } from '@/lib/utils';
 
 type AvantBrandMarkProps = {
+  /** `sm` = header mobile (~40px); `md` = sidebar (~48px). */
   size?: 'sm' | 'md';
   className?: string;
   variant?: 'cyber' | 'editorial';
 };
 
+const BRAND_MARK_SIZE: Record<NonNullable<AvantBrandMarkProps['size']>, AvantLogoSizeToken> = {
+  sm: 'nav',
+  md: 'md',
+};
+
+/**
+ * Lockup compacto do dashboard — delega a `AvantLogo` (escala e tokens únicos).
+ * Editorial: wordmark verde `#166534`; cyber: lockup neon (landing).
+ */
 export function AvantBrandMark({
   size = 'md',
   className,
   variant = 'editorial',
 }: AvantBrandMarkProps) {
-  const isSm = size === 'sm';
-  const editorial = variant === 'editorial';
-
   return (
-    <div className={cn('flex items-center gap-2.5', className)}>
-      <div
-        className={cn(
-          'flex shrink-0 items-center justify-center rounded-lg',
-          isSm ? 'h-8 w-8' : 'h-8 w-8',
-          editorial
-            ? 'bg-[#8fe020]'
-            : 'bg-gradient-to-br from-[#3d35ff] to-[#7b2fff] shadow-[0_0_12px_rgba(61,53,255,0.3)]',
-        )}
-        aria-hidden
-      >
-        <span
-          className="select-none text-white"
-          style={{
-            fontFamily: 'var(--font-syne)',
-            fontWeight: 900,
-            fontSize: isSm ? 14 : 15,
-            lineHeight: 1,
-          }}
-        >
-          A
-        </span>
-      </div>
-      <span
-        className={cn(
-          'font-extrabold tracking-[0.12em]',
-          isSm ? 'text-sm' : 'text-sm',
-          editorial ? 'text-[#3d6b0f]' : 'text-[#00ff88] drop-shadow-[0_0_12px_rgba(0,255,136,0.35)]',
-        )}
-        style={{ fontFamily: 'var(--font-syne)' }}
-      >
-        AVANT
-      </span>
-    </div>
+    <AvantLogo
+      variant="lockup"
+      size={BRAND_MARK_SIZE[size]}
+      tone={variant === 'editorial' ? 'brand' : 'default'}
+      animated={false}
+      className={cn(className)}
+    />
   );
 }

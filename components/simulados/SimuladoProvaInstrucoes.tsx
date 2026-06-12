@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useId, useState } from 'react';
 import Link from 'next/link';
@@ -69,7 +69,7 @@ export function SimuladoProvaInstrucoes({
           </h2>
           <p className="text-sm text-slate-700">
             Meta de tempo sugerida:{' '}
-            <span className="font-mono font-medium text-[#3d6b0f]">
+            <span className="font-mono font-medium text-[#166534]">
               {metaTotalHms ?? 'Sem meta'}
             </span>
             {metaTotalHms ? (
@@ -94,7 +94,7 @@ export function SimuladoProvaInstrucoes({
             id={checkboxId}
             checked={instrucoesLidas}
             onCheckedChange={(checked) => setInstrucoesLidas(checked === true)}
-            className="mt-0.5 border-slate-300 data-[state=checked]:border-[#8fe020] data-[state=checked]:bg-[#8fe020]"
+            className="mt-0.5 border-slate-300 data-[state=checked]:border-[#22c55e] data-[state=checked]:bg-[#22c55e]"
             aria-describedby={`${checkboxId}-hint`}
           />
           <label htmlFor={checkboxId} className="cursor-pointer text-sm text-slate-800">

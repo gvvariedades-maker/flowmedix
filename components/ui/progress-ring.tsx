@@ -1,4 +1,4 @@
-interface ProgressRingProps {
+﻿interface ProgressRingProps {
   value: number;
   size?: number;
   strokeWidth?: number;
@@ -6,7 +6,7 @@ interface ProgressRingProps {
 }
 
 const colors = {
-  brand: '#8fe020',
+  brand: '#22c55e',
   success: '#16a34a',
   warning: '#d97706',
 };

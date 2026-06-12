@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -65,19 +65,19 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
               <section aria-labelledby="simulado-em-andamento-heading">
                 <h2
                   id="simulado-em-andamento-heading"
-                  className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#3d6b0f]"
+                  className="mb-3 text-xs font-semibold uppercase tracking-widest text-[#166534]"
                 >
                   Em andamento
                 </h2>
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="rounded-2xl border border-[rgba(143,224,32,0.35)] bg-gradient-to-b from-[rgba(143,224,32,0.08)] to-white p-5 shadow-sm"
+                  className="rounded-2xl border border-[rgba(34, 197, 94,0.35)] bg-gradient-to-b from-[rgba(34, 197, 94,0.08)] to-white p-5 shadow-sm"
                 >
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div className="flex min-w-0 items-start gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.12)]">
-                        <Play className="h-5 w-5 text-[#3d6b0f]" aria-hidden />
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.12)]">
+                        <Play className="h-5 w-5 text-[#166534]" aria-hidden />
                       </div>
                       <div className="min-w-0">
                         <p className="text-base font-black text-slate-900">
@@ -161,7 +161,7 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
                             </div>
                           </div>
                         </div>
-                        <span className="text-xs font-semibold text-[#3d6b0f] sm:shrink-0">
+                        <span className="text-xs font-semibold text-[#166534] sm:shrink-0">
                           Ver resumo →
                         </span>
                       </Link>

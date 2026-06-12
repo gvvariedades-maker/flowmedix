@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 /**
  * Componente de Gráfico de Progresso Temporal
@@ -98,7 +98,7 @@ export default function ProgressChart({ data, height = 200 }: ProgressChartProps
           {/* Gradiente */}
           <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#8fe020" />
+              <stop offset="0%" stopColor="#22c55e" />
               <stop offset="100%" stopColor="#00ff88" />
             </linearGradient>
           </defs>
@@ -113,7 +113,7 @@ export default function ProgressChart({ data, height = 200 }: ProgressChartProps
                 cx={`${x}%`}
                 cy={y}
                 r="4"
-                fill="#8fe020"
+                fill="#22c55e"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: i * 0.02 }}
@@ -141,7 +141,7 @@ export default function ProgressChart({ data, height = 200 }: ProgressChartProps
           <span className="text-xs text-slate-400">Média: {Math.round(recentAvg)}%</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="h-3 w-3 rounded-full border border-[#8fe020] bg-[rgba(143,224,32,0.2)]"></div>
+          <div className="h-3 w-3 rounded-full border border-[#22c55e] bg-[rgba(34, 197, 94,0.2)]"></div>
           <span className="text-xs text-slate-400">Máximo: {maxPercentual}%</span>
         </div>
       </div>

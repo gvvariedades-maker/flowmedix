@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import { QuestaoSearchInput } from '@/components/questao-filter/QuestaoSearchInput';
@@ -85,7 +85,7 @@ export function QuestaoFilterBar({
   };
 
   const highlightRing = highlightActiveFilters
-    ? 'ring-2 ring-[rgba(143,224,32,0.35)] ring-offset-0 ring-offset-white'
+    ? 'ring-2 ring-[rgba(34, 197, 94,0.35)] ring-offset-0 ring-offset-white'
     : undefined;
 
   if (isCaderno) {

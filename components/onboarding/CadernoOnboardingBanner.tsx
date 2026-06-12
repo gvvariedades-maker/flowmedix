@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { BookMarked, X } from 'lucide-react';
@@ -57,14 +57,14 @@ export function CadernoOnboardingBanner({
       role="region"
       aria-label="Começar com cadernos de estudo"
       className={cn(
-        'shrink-0 border-b border-[#8fe020]/25 bg-gradient-to-r from-[#8fe020]/10 via-white to-white px-4 py-3 backdrop-blur-xl sm:px-6',
+        'shrink-0 border-b border-[#22c55e]/25 bg-gradient-to-r from-[#22c55e]/10 via-white to-white px-4 py-3 backdrop-blur-xl sm:px-6',
         className,
       )}
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex min-w-0 flex-1 items-start gap-3">
           <div
-            className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#8fe020]/30 bg-[#8fe020]/12 text-[#3d6b0f]"
+            className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#22c55e]/30 bg-[#22c55e]/12 text-[#166534]"
             aria-hidden
           >
             <BookMarked size={18} />
@@ -80,7 +80,7 @@ export function CadernoOnboardingBanner({
         <div className="flex shrink-0 items-center gap-2 self-end sm:self-center">
           <Link
             href={ctaHref}
-            className="inline-flex min-h-[40px] items-center justify-center rounded-full bg-[#8fe020] px-4 text-sm font-bold text-[#1a2e05] transition-colors hover:bg-[#7ecc10]"
+            className="inline-flex min-h-[40px] items-center justify-center rounded-full bg-[#22c55e] px-4 text-sm font-bold text-[#1a2e05] transition-colors hover:bg-[#7ecc10]"
           >
             {ctaLabel}
           </Link>

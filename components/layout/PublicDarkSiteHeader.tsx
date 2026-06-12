@@ -143,7 +143,7 @@ export function PublicDarkSiteHeader({
               variant="lockup"
               size="nav"
               animated={false}
-              className="flex-none transition-transform hover:scale-[1.02]"
+              className="flex-none"
             />
             <div className="flex min-w-0 flex-1 items-center justify-end gap-1.5 sm:gap-3">
               <Link href="/blog" className={`${navLinkClass} hidden min-[400px]:inline-flex shrink-0`}>

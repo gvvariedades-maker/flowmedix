@@ -1,5 +1,7 @@
 import {
   buildDerivedQuestionHeaderLine,
+  buildQuestionExamDetailLine,
+  buildQuestionHeaderChips,
   DEFAULT_CARGO_HEADER,
   inferCargoHeaderFromProva,
   normalizeCargoHeader,
@@ -42,5 +44,29 @@ describe('questionHeader — cargo Técnico de Enfermagem', () => {
       topico: 'Saúde Pública',
     });
     expect(line).toBe('Cesgranrio – Técnico de Enfermagem (UNEMAT) 2024');
+  });
+
+  it('buildQuestionHeaderChips separa banca e ano', () => {
+    const chips = buildQuestionHeaderChips({
+      banca: 'Instituto Consulplan',
+      ano: '2024',
+      topico: 'Procedimentos',
+    });
+    expect(chips).toEqual([
+      { id: 'banca', label: 'Instituto Consulplan', tone: 'banca' },
+      { id: 'ano', label: '2024', tone: 'ano' },
+    ]);
+  });
+
+  it('buildQuestionExamDetailLine monta cargo e órgão', () => {
+    const detail = buildQuestionExamDetailLine({
+      banca: 'FEPESE',
+      orgao: 'Pref Pitangueiras',
+      ano: '2024',
+      prova: 'Tec Enf',
+      topico: 'Enfermagem',
+      subtopico: 'Verificação de Sinais Vitais',
+    });
+    expect(detail).toBe('Técnico de Enfermagem (Pref Pitangueiras)');
   });
 });

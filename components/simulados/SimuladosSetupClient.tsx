@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -465,12 +465,12 @@ export function SimuladosSetupClient() {
               Verificando sessão em andamento...
             </div>
           ) : openSession ? (
-            <div className="space-y-4 rounded-2xl border border-[rgba(143,224,32,0.35)] bg-gradient-to-b from-[rgba(143,224,32,0.08)] to-white p-5">
+            <div className="space-y-4 rounded-2xl border border-[rgba(34, 197, 94,0.35)] bg-gradient-to-b from-[rgba(34, 197, 94,0.08)] to-white p-5">
               <div className="space-y-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.12)] px-2.5 py-0.5 text-xs font-semibold text-[#3d6b0f]">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.12)] px-2.5 py-0.5 text-xs font-semibold text-[#166534]">
                   <span className="relative flex h-1.5 w-1.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#8fe020] opacity-75" />
-                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#8fe020]" />
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#22c55e] opacity-75" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#22c55e]" />
                   </span>
                   Em andamento
                 </span>
@@ -524,14 +524,14 @@ export function SimuladosSetupClient() {
                 className={cn(
                   'rounded-xl p-4 text-left',
                   modo === 'treino'
-                    ? 'border-2 border-[rgba(143,224,32,0.45)] bg-[rgba(143,224,32,0.08)]'
+                    ? 'border-2 border-[rgba(34, 197, 94,0.45)] bg-[rgba(34, 197, 94,0.08)]'
                     : 'border border-slate-200 bg-white hover:border-slate-300',
                 )}
               >
                 <span
                   className={cn(
                     'block text-sm',
-                    modo === 'treino' ? 'font-bold text-[#3d6b0f]' : 'font-semibold text-slate-700',
+                    modo === 'treino' ? 'font-bold text-[#166534]' : 'font-semibold text-slate-700',
                   )}
                 >
                   Treino
@@ -553,14 +553,14 @@ export function SimuladosSetupClient() {
                 className={cn(
                   'rounded-xl p-4 text-left',
                   modo === 'prova'
-                    ? 'border-2 border-[rgba(143,224,32,0.45)] bg-[rgba(143,224,32,0.08)]'
+                    ? 'border-2 border-[rgba(34, 197, 94,0.45)] bg-[rgba(34, 197, 94,0.08)]'
                     : 'border border-slate-200 bg-white hover:border-slate-300',
                 )}
               >
                 <span
                   className={cn(
                     'block text-sm',
-                    modo === 'prova' ? 'font-bold text-[#3d6b0f]' : 'font-semibold text-slate-700',
+                    modo === 'prova' ? 'font-bold text-[#166534]' : 'font-semibold text-slate-700',
                   )}
                 >
                   Prova

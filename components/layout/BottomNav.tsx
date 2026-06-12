@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { forwardRef, useRef } from 'react';
-import { LayoutGroup, motion } from 'framer-motion';
 import {
   BarChart3,
   BookMarked,
@@ -72,7 +71,6 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
   const maisAccent = MENU_ACCENT_STYLES.slate;
 
   return (
-    <LayoutGroup id="bottom-nav">
       <nav
         ref={navRef}
         className={cn(
@@ -100,20 +98,12 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
               <MenuNavIconChip icon={icon} accent={accent} active={isActive} size="bottom" />
               <span
                 className={cn(
-                  'text-[10px] font-semibold tracking-wide',
+                  'text-[11px] font-semibold leading-tight',
                   isActive ? styles.labelActive : 'text-slate-500',
                 )}
               >
                 {label}
               </span>
-              {isActive ? (
-                <motion.div
-                  layoutId="bottom-nav-indicator"
-                  className={cn('mt-0.5 h-[2px] w-6 rounded-full', styles.bar)}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                />
-              ) : null}
             </Link>
           );
         })}
@@ -140,22 +130,13 @@ export const BottomNav = forwardRef<HTMLButtonElement, BottomNavProps>(function 
           />
           <span
             className={cn(
-              'text-[10px] font-semibold tracking-wide',
+              'text-[11px] font-semibold leading-tight',
               menuOpen || maisActive ? maisAccent.labelActive : 'text-slate-500',
             )}
           >
             Mais
           </span>
-          {maisActive ? (
-            <motion.div
-              layoutId="bottom-nav-indicator"
-              className={cn('mt-0.5 h-[2px] w-6 rounded-full', maisAccent.bar)}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-            />
-          ) : null}
         </button>
       </nav>
-    </LayoutGroup>
   );
 });

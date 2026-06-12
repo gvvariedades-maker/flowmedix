@@ -47,13 +47,14 @@ describe('Sidebar rebrand P1', () => {
     });
   });
 
-  describe('P1-4 — AvantBrandMark letra A', () => {
-    it('substitui raio legado por letra A no chip verde', () => {
+  describe('P1-4 — AvantBrandMark unificado com AvantLogo', () => {
+    it('delega lockup editorial ao AvantLogo (chip A + wordmark brand)', () => {
       const source = brand();
-      expect(source).toContain('bg-[#8fe020]');
-      expect(source).toMatch(/>\s*A\s*<\/span>/);
-      expect(source).not.toContain('<Zap');
-      expect(source).not.toContain('⚡');
+      expect(source).toContain('AvantLogo');
+      expect(source).toContain("'brand'");
+      const logo = readFileSync(join(root, 'components', 'brand', 'AvantLogo.tsx'), 'utf8');
+      expect(logo).toMatch(/>\s*A\s*<\/span>/);
+      expect(logo).not.toContain('<Zap');
     });
   });
 

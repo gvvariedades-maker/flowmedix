@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useClientMounted } from '@/lib/hooks/useClientMounted';
 import { useCallback, useEffect, useImperativeHandle, useState, type ReactNode, type Ref } from 'react';
@@ -95,7 +95,7 @@ export function SearchPanelToggle({ modulosCount, children, panelRef, initialOpe
       <p className="text-xs font-bold uppercase tracking-widest text-slate-500">
         Inserir questões ({modulosCount} disponíveis)
       </p>
-      <p className="mt-0.5 text-xs font-medium text-[#3d6b0f]">100% com NeuroSlide</p>
+      <p className="mt-0.5 text-xs font-medium text-[#166534]">100% com NeuroSlide</p>
     </div>
   );
 
@@ -133,7 +133,7 @@ export function SearchPanelToggle({ modulosCount, children, panelRef, initialOpe
                   <div className="flex shrink-0 items-center justify-between border-b border-slate-200 px-4 py-3">
                     <div>
                       <p className="text-sm font-bold text-slate-900">Inserir questões</p>
-                      <p className="text-xs font-medium text-[#3d6b0f]">100% com NeuroSlide</p>
+                      <p className="text-xs font-medium text-[#166534]">100% com NeuroSlide</p>
                     </div>
                     <button
                       type="button"
@@ -188,7 +188,7 @@ export function SearchPanelToggle({ modulosCount, children, panelRef, initialOpe
               type="button"
               onClick={toggleCollapsed}
               aria-label="Expandir painel de inserir questões"
-              className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 text-slate-500 transition-colors hover:border-[rgba(143,224,32,0.35)] hover:text-[#3d6b0f]"
+              className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 text-slate-500 transition-colors hover:border-[rgba(34, 197, 94,0.35)] hover:text-[#166534]"
             >
               <ChevronLeft size={16} aria-hidden />
             </button>
@@ -196,7 +196,7 @@ export function SearchPanelToggle({ modulosCount, children, panelRef, initialOpe
               type="button"
               onClick={toggleCollapsed}
               aria-label="Expandir painel de inserir questões"
-              className="flex h-9 w-9 items-center justify-center rounded-xl text-[#3d6b0f]/80 transition-colors hover:text-[#3d6b0f]"
+              className="flex h-9 w-9 items-center justify-center rounded-xl text-[#166534]/80 transition-colors hover:text-[#166534]"
             >
               <Search size={18} aria-hidden />
             </button>
@@ -209,7 +209,7 @@ export function SearchPanelToggle({ modulosCount, children, panelRef, initialOpe
                 type="button"
                 onClick={toggleCollapsed}
                 aria-label="Recolher painel de inserir questões"
-                className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 text-slate-500 transition-colors hover:border-[rgba(143,224,32,0.35)] hover:text-[#3d6b0f]"
+                className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 text-slate-500 transition-colors hover:border-[rgba(34, 197, 94,0.35)] hover:text-[#166534]"
               >
                 <ChevronRight size={16} aria-hidden />
               </button>

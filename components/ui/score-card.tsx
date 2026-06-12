@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+﻿import { cn } from '@/lib/utils';
 import type { LucideIcon } from 'lucide-react';
 
 interface ScoreCardProps {
@@ -11,7 +11,7 @@ interface ScoreCardProps {
 }
 
 const variantStyles = {
-  brand: { icon: 'text-[#3d6b0f]', bg: 'bg-[rgba(143,224,32,0.12)]' },
+  brand: { icon: 'text-[#166534]', bg: 'bg-[rgba(34, 197, 94,0.12)]' },
   success: { icon: 'text-green-700', bg: 'bg-green-50' },
   warning: { icon: 'text-amber-700', bg: 'bg-amber-50' },
   danger: { icon: 'text-red-700', bg: 'bg-red-50' },

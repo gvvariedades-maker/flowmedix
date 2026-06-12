@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import Link from 'next/link';
@@ -95,7 +95,7 @@ function getTrendLabel(values: Array<number | null>): {
 type KpiValueTone = 'brand' | 'emerald' | 'muted' | 'default';
 
 const KPI_VALUE_TONE_CLASSES: Record<KpiValueTone, string> = {
-  brand: 'text-[#3d6b0f]',
+  brand: 'text-[#166534]',
   emerald: 'text-emerald-600',
   muted: 'text-slate-400',
   default: 'text-slate-900',
@@ -139,7 +139,7 @@ function KpiMetricCard({
     <div
       className={cn(
         'card-elevated p-4',
-        highlight && 'border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.06)]',
+        highlight && 'border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.06)]',
       )}
     >
       <p className="text-[10px] uppercase tracking-widest text-slate-500">{label}</p>
@@ -156,7 +156,7 @@ function KpiMetricCard({
 }
 
 const FILTER_PILL_ACTIVE =
-  'border-[rgba(143,224,32,0.45)] bg-[rgba(143,224,32,0.12)] text-[#3d6b0f]';
+  'border-[rgba(34, 197, 94,0.45)] bg-[rgba(34, 197, 94,0.12)] text-[#166534]';
 const FILTER_PILL_INACTIVE =
   'border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:bg-slate-50';
 
@@ -418,7 +418,7 @@ export function SimuladosAnalyticsDashboard({
               <ResumoMetric
                 label="% de acerto"
                 value={loadingAnalytics ? '...' : formatPercent(resumoPeriodo.percentual)}
-                valueClassName="text-[#3d6b0f]"
+                valueClassName="text-[#166534]"
               />
               <ResumoMetric
                 label="Acertos"
@@ -446,7 +446,7 @@ export function SimuladosAnalyticsDashboard({
               <ResumoMetric
                 label="% de acerto"
                 value={loadingGeral ? '...' : formatPercent(resumoGeral.percentual)}
-                valueClassName="text-[#3d6b0f]"
+                valueClassName="text-[#166534]"
               />
               <ResumoMetric
                 label="Acertos"
@@ -524,7 +524,7 @@ export function SimuladosAnalyticsDashboard({
         </p>
         <div className="card-elevated p-4">
           <p className="flex items-center gap-2 text-sm font-semibold text-slate-800">
-            <span className="h-2 w-2 shrink-0 rounded-full bg-[#8fe020]" aria-hidden />
+            <span className="h-2 w-2 shrink-0 rounded-full bg-[#22c55e]" aria-hidden />
             Sua tendência na semana
           </p>
           <div className="mt-3">
@@ -532,8 +532,8 @@ export function SimuladosAnalyticsDashboard({
               <p className="text-sm text-rose-600">{error}</p>
             ) : (
               <>
-                <div className="inline-flex flex-col gap-1 rounded-lg border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.08)] px-4 py-2">
-                  <span className="text-[15px] font-bold text-[#3d6b0f]">{trend.label}</span>
+                <div className="inline-flex flex-col gap-1 rounded-lg border border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.08)] px-4 py-2">
+                  <span className="text-[15px] font-bold text-[#166534]">{trend.label}</span>
                   <span className="text-[11px] text-slate-600">{trend.detail}</span>
                 </div>
                 {evolucao.length > 0 ? (

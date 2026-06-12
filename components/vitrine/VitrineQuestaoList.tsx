@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
@@ -119,9 +119,10 @@ export function VitrineQuestaoList({
           />
           <Button
             type="submit"
+            variant="outline"
             size="sm"
             disabled={jumpLoading || !jumpAlvo.trim()}
-            className="h-11 min-h-[44px] shrink-0 rounded-xl px-4"
+            className="h-11 min-h-[44px] shrink-0 rounded-xl border-slate-200 px-4 text-slate-700 hover:border-[rgba(34,197,94,0.35)] hover:bg-[rgba(34,197,94,0.06)] hover:text-[#166534]"
           >
             {jumpLoading ? '…' : 'Ir'}
           </Button>
@@ -176,7 +177,7 @@ export function VitrineQuestaoList({
                     'group flex min-h-[44px] items-center gap-3 rounded-xl border px-3 py-2.5 transition-all',
                     estudada
                       ? 'border-green-200 bg-green-50 hover:border-green-300'
-                      : 'border-slate-200 bg-white hover:border-[rgba(143,224,32,0.3)] hover:bg-[rgba(143,224,32,0.04)]',
+                      : 'border-slate-200 bg-white hover:border-[rgba(34, 197, 94,0.3)] hover:bg-[rgba(34, 197, 94,0.04)]',
                   )}
                 >
                   <StatusBadge status={q.status} />
@@ -196,7 +197,7 @@ export function VitrineQuestaoList({
                   {!estudada ? (
                     <span className="text-[10px] font-medium text-slate-500">Iniciar</span>
                   ) : (
-                    <span className="text-[10px] font-medium text-[#3d6b0f]">Revisitar</span>
+                    <span className="text-[10px] font-medium text-[#166534]">Revisitar</span>
                   )}
                   <ChevronRight
                     size={12}

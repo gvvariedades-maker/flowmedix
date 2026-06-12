@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
@@ -159,7 +159,7 @@ export function QuestaoMobileFilterSheet({
                             className={cn(
                               'mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded border',
                               isSelected
-                                ? 'border-[rgba(143,224,32,0.5)] bg-[rgba(143,224,32,0.15)] text-[#3d6b0f]'
+                                ? 'border-[rgba(34,197,94,0.5)] bg-[rgba(34,197,94,0.15)] text-[#166534]'
                                 : 'border-slate-300 bg-transparent',
                             )}
                             aria-hidden

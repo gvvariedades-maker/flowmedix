@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { Suspense, useState } from 'react';
 import { useEditorialTheme } from '@/lib/layout/useEditorialTheme';
@@ -119,9 +119,9 @@ function LoginContent() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="rounded-xl border border-[#8fe020]/30 bg-[#8fe020]/10 p-4"
+              className="rounded-xl border border-[#22c55e]/30 bg-[#22c55e]/10 p-4"
             >
-              <p className="mb-1 flex items-center justify-center gap-1 text-[10px] font-bold uppercase tracking-wide text-[#3d6b0f]">
+              <p className="mb-1 flex items-center justify-center gap-1 text-[10px] font-bold uppercase tracking-wide text-[#166534]">
                 <MapPin size={12} /> Turma confirmada
               </p>
               <p className="text-lg font-bold leading-tight text-slate-900">{cidade}</p>
@@ -131,7 +131,7 @@ function LoginContent() {
           <h1 className="text-2xl font-bold tracking-tight text-slate-900">Acesse sua área</h1>
 
           {inviteToken ? (
-            <p className="text-xs font-semibold text-[#3d6b0f]">
+            <p className="text-xs font-semibold text-[#166534]">
               Convite AVANT Pro detectado — ao entrar, o benefício será aplicado automaticamente.
             </p>
           ) : null}

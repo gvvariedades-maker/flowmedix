@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -13,16 +13,16 @@ export default function MaterialApoioClient() {
   return (
     <div className={cn('min-h-full bg-background text-slate-900', pageBottomPadding)}>
       <section className="relative overflow-hidden border-b border-slate-200 px-4 py-16 sm:px-6 md:py-24">
-        <div className="absolute left-1/2 top-[-12rem] h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-[rgba(143,224,32,0.08)] blur-[120px]" />
+        <div className="absolute left-1/2 top-[-12rem] h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-[rgba(34, 197, 94,0.08)] blur-[120px]" />
 
         <div className="relative z-10 mx-auto max-w-2xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.1)] px-4 py-1.5"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.1)] px-4 py-1.5"
           >
-            <Sparkles size={14} className="text-[#3d6b0f]" />
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#3d6b0f]">
+            <Sparkles size={14} className="text-[#166534]" />
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#166534]">
               Material de Apoio
             </span>
           </motion.div>
@@ -34,7 +34,7 @@ export default function MaterialApoioClient() {
             className="text-editorial-title text-3xl md:text-5xl"
           >
             Estudo com{' '}
-            <span className="text-[#3d6b0f]">NeuroSlides</span>
+            <span className="text-[#166534]">NeuroSlides</span>
           </motion.h1>
 
           <motion.p
@@ -58,7 +58,7 @@ export default function MaterialApoioClient() {
               <ArrowRight size={16} aria-hidden />
             </Link>
             <div className="inline-flex items-center gap-2 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-xs font-bold text-slate-600 sm:text-sm">
-              <BookOpen size={16} className="text-[#3d6b0f]" aria-hidden />
+              <BookOpen size={16} className="text-[#166534]" aria-hidden />
               {TOTAL_MATERIAL_SLIDES} slides · 7 coleções
             </div>
           </motion.div>

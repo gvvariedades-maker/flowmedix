@@ -12,7 +12,7 @@ jest.mock('@/hooks/useCatalogStatsCountUp', () => ({
 }));
 
 describe('VitrineCatalogStatsStrip', () => {
-  it('renderiza totais e link de ajuda', () => {
+  it('renderiza totais do catálogo', () => {
     render(<VitrineCatalogStatsStrip totalQuestions={120} totalSlides={480} />);
 
     expect(screen.getByTestId('vitrine-catalog-stats')).toHaveAttribute(
@@ -21,10 +21,8 @@ describe('VitrineCatalogStatsStrip', () => {
     );
     expect(screen.getByText('120')).toBeInTheDocument();
     expect(screen.getByText('480')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Como funciona' })).toHaveAttribute(
-      'href',
-      '/ajuda/estudo-reverso',
-    );
+    expect(screen.getByText('questões com estudo reverso')).toBeInTheDocument();
+    expect(screen.getByText('NeuroSlides')).toBeInTheDocument();
   });
 
   it('usa chave localStorage documentada', () => {

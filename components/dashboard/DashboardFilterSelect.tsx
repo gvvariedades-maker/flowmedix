@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useClientMounted } from '@/lib/hooks/useClientMounted';
 import { useCallback, useEffect, useId, useState } from 'react';
@@ -165,12 +165,12 @@ export function DashboardFilterSelect({
                             className={cn(
                               'flex min-h-[44px] w-full items-center gap-3 rounded-xl px-3 py-3 text-left text-sm transition-colors',
                               selected
-                                ? 'bg-[rgba(143,224,32,0.10)] font-semibold text-[#3d6b0f]'
+                                ? 'bg-[rgba(34, 197, 94,0.10)] font-semibold text-[#166534]'
                                 : 'text-slate-700 hover:bg-slate-50',
                             )}
                           >
                             <span className="flex h-4 w-4 shrink-0 items-center justify-center" aria-hidden>
-                              {selected ? <Check className="h-4 w-4 text-[#3d6b0f]" /> : null}
+                              {selected ? <Check className="h-4 w-4 text-[#166534]" /> : null}
                             </span>
                             <span className="min-w-0 flex-1">{item.label}</span>
                           </button>

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 /**
  * Componente de Heatmap de Desempenho
@@ -100,7 +100,7 @@ export default function PerformanceHeatmap({ data, maxItems = 20 }: PerformanceH
               {/* Barra de frequência */}
               <div className="mt-2 relative h-1 bg-slate-800/30 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-[rgba(143,224,32,0.35)]"
+                  className="h-full bg-[rgba(34, 197, 94,0.35)]"
                   style={{ width: `${widthPercent}%` }}
                 />
               </div>

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { AlertCircle, ArrowRight, CheckCircle2, Eye, EyeOff, Lock, Mail, MapPin } from 'lucide-react';
@@ -157,9 +157,9 @@ function RegisterForm() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="rounded-xl border border-[#8fe020]/30 bg-[#8fe020]/10 p-4"
+              className="rounded-xl border border-[#22c55e]/30 bg-[#22c55e]/10 p-4"
             >
-              <p className="mb-1 flex items-center justify-center gap-1 text-[10px] font-bold uppercase tracking-wide text-[#3d6b0f]">
+              <p className="mb-1 flex items-center justify-center gap-1 text-[10px] font-bold uppercase tracking-wide text-[#166534]">
                 <MapPin size={12} /> Turma confirmada
               </p>
               <p className="text-lg font-bold leading-tight text-slate-900">{cidade}</p>
@@ -169,7 +169,7 @@ function RegisterForm() {
           <h1 className="text-2xl font-bold tracking-tight text-slate-900">Crie seu acesso</h1>
 
           {inviteToken ? (
-            <p className="text-xs font-semibold text-[#3d6b0f]">
+            <p className="text-xs font-semibold text-[#166534]">
               Convite AVANT Pro — após criar a conta, o Pro temporário será ativado automaticamente.
             </p>
           ) : null}
@@ -282,7 +282,7 @@ function RegisterForm() {
                   <div className="flex flex-wrap gap-2 pl-6">
                     <Link
                       href={loginHref}
-                      className="text-xs font-semibold text-[#3d6b0f] underline-offset-2 hover:underline"
+                      className="text-xs font-semibold text-[#166534] underline-offset-2 hover:underline"
                     >
                       Entrar agora
                     </Link>

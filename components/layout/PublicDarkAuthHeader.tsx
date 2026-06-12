@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -16,7 +16,7 @@ const ctaButtonClass =
   'inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#BEF264] px-2.5 py-2 text-xs font-black uppercase tracking-wider text-slate-950 shadow-lg shadow-lime-400/20 transition-all hover:scale-[1.02] hover:bg-[#d4f879] min-[380px]:gap-2 min-[380px]:px-3 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm';
 
 const ctaButtonEditorialClass =
-  'inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#8fe020] px-2.5 py-2 text-xs font-bold text-[#1a2e05] shadow-sm transition-all hover:bg-[#7acc10] min-[380px]:gap-2 min-[380px]:px-3 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm';
+  'inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#22c55e] px-2.5 py-2 text-xs font-bold text-[#1a2e05] shadow-sm transition-all hover:bg-[#7acc10] min-[380px]:gap-2 min-[380px]:px-3 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm';
 
 const navLinkEditorialClass =
   'rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition-colors hover:text-slate-900';
@@ -26,10 +26,10 @@ const navLinkEditorialMobileClass =
 
 /** Login/register no header — mais contraste que links secundários (Blog, Planos) */
 const navAuthEditorialAccentClass =
-  'rounded-lg px-3 py-2 text-sm font-bold text-slate-900 transition-colors hover:text-[#3d6b0f]';
+  'rounded-lg px-3 py-2 text-sm font-bold text-slate-900 transition-colors hover:text-[#166534]';
 
 const navAuthEditorialAccentMobileClass =
-  'rounded-lg px-2.5 py-1.5 text-xs font-bold text-slate-900 transition-colors hover:text-[#3d6b0f] min-[400px]:text-sm';
+  'rounded-lg px-2.5 py-1.5 text-xs font-bold text-slate-900 transition-colors hover:text-[#166534] min-[400px]:text-sm';
 
 export type PublicDarkAuthHeaderVariant = 'login' | 'register' | 'auth-other';
 
@@ -204,7 +204,7 @@ export function PublicDarkAuthHeader({
             size="nav"
             tone={editorial ? 'light' : 'default'}
             animated={false}
-            className="flex-none transition-transform hover:scale-[1.02]"
+            className="flex-none"
           />
           <div className="flex min-w-0 flex-1 items-center justify-end gap-1.5 sm:gap-3">
             <Link href="/blog" className={`${linkDesktop} hidden min-[380px]:inline-flex shrink-0`}>

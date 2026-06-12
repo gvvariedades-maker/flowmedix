@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { forwardRef, useEffect, useRef, useState, type ReactNode } from 'react';
 import Link from 'next/link';
@@ -59,7 +59,7 @@ const PAYWALL_COPY: Record<
         No plano gratuito:{' '}
         <span className="font-semibold text-slate-800">{FREEMIUM_PLAN_LIMITS_DESCRIPTION}</span>{' '}
         (estudo reverso com NeuroSlides). Com o{' '}
-        <span className="font-semibold text-[#3d6b0f]">AVANT Pro</span>, estude sem limite.
+        <span className="font-semibold text-[#166534]">AVANT Pro</span>, estude sem limite.
       </>
     ),
   },
@@ -70,7 +70,7 @@ const PAYWALL_COPY: Record<
       <>
         No plano gratuito:{' '}
         <span className="font-semibold text-slate-800">{FREEMIUM_PLAN_LIMITS_DESCRIPTION}</span>.
-        Com o <span className="font-semibold text-[#3d6b0f]">AVANT Pro</span>, simule sem limite.
+        Com o <span className="font-semibold text-[#166534]">AVANT Pro</span>, simule sem limite.
       </>
     ),
   },
@@ -181,12 +181,12 @@ export function PaywallModal({
         </button>
 
         <div className="flex justify-center">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.12)] text-[#3d6b0f]">
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.12)] text-[#166534]">
             <LockKeyhole size={28} aria-hidden />
           </div>
         </div>
 
-        <p className="mt-6 text-center text-[10px] font-black uppercase tracking-[0.22em] text-[#3d6b0f]">
+        <p className="mt-6 text-center text-[10px] font-black uppercase tracking-[0.22em] text-[#166534]">
           <Sparkles size={12} className="mr-1 inline" aria-hidden />
           Limite diário
         </p>
@@ -211,11 +211,11 @@ export function PaywallModal({
 
         <ul className="mt-6 space-y-2 text-sm text-slate-700">
           <li className="flex items-start gap-2">
-            <Zap size={16} className="mt-0.5 shrink-0 text-[#3d6b0f]" aria-hidden />
+            <Zap size={16} className="mt-0.5 shrink-0 text-[#166534]" aria-hidden />
             Questões ilimitadas em todos os editais
           </li>
           <li className="flex items-start gap-2">
-            <Zap size={16} className="mt-0.5 shrink-0 text-[#3d6b0f]" aria-hidden />
+            <Zap size={16} className="mt-0.5 shrink-0 text-[#166534]" aria-hidden />
             {variant === 'simulado'
               ? 'Simulados e estudo reverso sem limite diário'
               : 'Estudo Reverso completo após cada tentativa'}

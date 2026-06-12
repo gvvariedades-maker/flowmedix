@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
@@ -60,27 +60,27 @@ function ProStatusStrip({
   return (
     <div
       role="status"
-      className="rounded-xl border border-green-200 bg-green-50 px-3 py-2.5"
+      className="rounded-xl border border-[rgba(34,197,94,0.35)] bg-[rgba(34,197,94,0.08)] px-3 py-2.5"
     >
       <div className="flex items-center gap-2">
         <span className="relative flex h-2 w-2 shrink-0">
           {!reducedMotion ? (
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-60" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#22c55e] opacity-60" />
           ) : null}
           <span
-            className="relative inline-flex h-2 w-2 rounded-full bg-green-600"
+            className="relative inline-flex h-2 w-2 rounded-full bg-[#22c55e]"
             aria-label="Assinatura ativa"
           />
         </span>
-        <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-green-800">
+        <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#166534]">
           PRO Ativo
         </span>
-        <span className="ml-auto rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-semibold text-green-700 ring-1 ring-green-200">
+        <span className="ml-auto rounded-full bg-[rgba(34,197,94,0.12)] px-2 py-0.5 text-[10px] font-semibold text-[#166534] ring-1 ring-[rgba(34,197,94,0.25)]">
           Acesso completo
         </span>
       </div>
       {inviteExpiry ? (
-        <p className="mt-1.5 text-[10px] text-slate-400">
+        <p className="mt-1.5 text-[10px] text-slate-500">
           Convite válido até {inviteExpiry}
         </p>
       ) : null}
@@ -102,7 +102,7 @@ function FreePlanPromo({ cidadeExibicao }: { cidadeExibicao: string }) {
       {showSeuPlano ? (
         <p className="mt-1 text-sm font-bold text-slate-900">
           Plano{' '}
-          <span className="text-[#3d6b0f]">gratuito</span>
+          <span className="text-[#166534]">gratuito</span>
         </p>
       ) : (
         <p
@@ -122,7 +122,7 @@ function FreePlanPromo({ cidadeExibicao }: { cidadeExibicao: string }) {
       </div>
       <Button
         asChild
-        className="mt-3 h-9 w-full rounded-xl bg-[#8fe020] font-mono text-[10px] font-bold uppercase tracking-wider text-[#1a2e05] shadow-sm hover:bg-[#7acc10]"
+        className="mt-3 h-9 w-full rounded-xl bg-[#22c55e] font-mono text-[10px] font-bold uppercase tracking-wider text-[#1a2e05] shadow-sm hover:bg-[#16a34a]"
       >
         <Link href="/assinar-pro" className="gap-1.5">
           <Zap size={12} fill="currentColor" aria-hidden />
@@ -153,7 +153,7 @@ export function PlanStatusCard({
           aria-label="Ir para vitrine de aulas"
           className={cn(
             'inline-flex rounded-lg outline-none transition-shadow',
-            'focus-visible:ring-2 focus-visible:ring-[#8fe020]/50',
+            'focus-visible:ring-2 focus-visible:ring-[#22c55e]/50',
           )}
         >
           {brandMark}

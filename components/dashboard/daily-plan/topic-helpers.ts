@@ -1,4 +1,4 @@
-import {
+﻿import {
   BookOpen,
   FlaskConical,
   HardHat,
@@ -54,7 +54,7 @@ export function categoriaTópico(item: ReviewItem): TópicoCategoria {
   }
 
   return {
-    circleClass: 'bg-[rgba(143,224,32,0.12)] text-[#3d6b0f] border border-[rgba(143,224,32,0.35)]',
+    circleClass: 'bg-[rgba(34, 197, 94,0.12)] text-[#166534] border border-[rgba(34, 197, 94,0.35)]',
     Icon: BookOpen,
   };
 }

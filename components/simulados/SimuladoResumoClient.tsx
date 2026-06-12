@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
@@ -352,7 +352,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="card-elevated-lg space-y-3 p-6">
               <div className="flex items-center gap-2 text-slate-500">
-                <Clock className="h-4 w-4 shrink-0 text-[#3d6b0f]" aria-hidden />
+                <Clock className="h-4 w-4 shrink-0 text-[#166534]" aria-hidden />
                 <h2 className="text-xs font-semibold uppercase tracking-wider">Tempo</h2>
               </div>
               <p className="text-2xl font-bold text-slate-900">{provaTempo.tempoLabel}</p>
@@ -454,11 +454,11 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
                 <p className="text-xs uppercase tracking-wider text-slate-500">Respondidas</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-[#3d6b0f]">{tempoTotalMin}m</p>
+                <p className="text-2xl font-bold text-[#166534]">{tempoTotalMin}m</p>
                 <p className="text-xs uppercase tracking-wider text-slate-500">Tempo total</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-[#3d6b0f]">{tempoMedioSeg}s</p>
+                <p className="text-2xl font-bold text-[#166534]">{tempoMedioSeg}s</p>
                 <p className="text-xs uppercase tracking-wider text-slate-500">Média/questão</p>
               </div>
               {resumo.pendentes > 0 && (
@@ -484,7 +484,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
             className="card-elevated-lg space-y-4 p-6"
           >
             <div className="flex items-center gap-2">
-              <TrendingUp className="h-4 w-4 shrink-0 text-[#3d6b0f]" aria-hidden />
+              <TrendingUp className="h-4 w-4 shrink-0 text-[#166534]" aria-hidden />
               <h2
                 id="simulado-evolucao-titulo"
                 className="text-sm font-semibold uppercase tracking-wider text-slate-400"
@@ -511,7 +511,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
                       className={cn(
                         'flex flex-wrap items-center justify-between gap-2 rounded-xl border px-4 py-3 text-sm',
                         isCurrent
-                          ? 'border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.08)]'
+                          ? 'border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.08)]'
                           : 'border-slate-200 bg-white',
                       )}
                     >
@@ -519,7 +519,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
                         <p className="truncate font-medium text-slate-800">
                           {item.titulo || tituloExibicao}
                           {isCurrent ? (
-                            <span className="ml-2 text-xs font-normal text-[#3d6b0f]">
+                            <span className="ml-2 text-xs font-normal text-[#166534]">
                               (esta prova)
                             </span>
                           ) : null}
@@ -578,7 +578,7 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
                 className={cn(
                   'rounded-lg border px-3 py-1.5 text-xs font-semibold',
                   filtro === item.id
-                    ? 'border-[rgba(143,224,32,0.45)] bg-[rgba(143,224,32,0.12)] text-[#3d6b0f]'
+                    ? 'border-[rgba(34, 197, 94,0.45)] bg-[rgba(34, 197, 94,0.12)] text-[#166534]'
                     : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300',
                 )}
               >

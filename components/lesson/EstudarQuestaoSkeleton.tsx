@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Placeholder visual alinhado ao `AvantLessonPlayer` (card editorial claro).
  * Dimensões estáveis para reduzir CLS ao hidratar a questão.
  */
@@ -12,7 +12,7 @@ export default function EstudarQuestaoSkeleton() {
       data-testid="estudar-questao-skeleton"
     >
       <div className="h-2 w-full shrink-0 bg-slate-200">
-        <div className="h-full w-1/3 animate-pulse bg-[#8fe020]/70" />
+        <div className="h-full w-[8%] animate-pulse bg-[#22c55e]/70" />
       </div>
 
       <div className="flex shrink-0 flex-wrap items-center justify-between gap-2 border-b border-slate-200 px-4 py-3 sm:px-6">
@@ -27,10 +27,14 @@ export default function EstudarQuestaoSkeleton() {
       </div>
 
       <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
-        <div className="border-b border-slate-200 bg-slate-50 px-6 py-3 md:px-8 md:py-4">
-          <div className="mb-2 h-3 w-28 rounded bg-[rgba(143,224,32,0.2)] animate-pulse" />
-          <div className="h-4 w-full max-w-md rounded bg-muted/50 animate-pulse" />
-          <div className="mt-3 h-5 w-4/5 max-w-lg rounded border-l-4 border-[rgba(143,224,32,0.35)] bg-muted/50 pl-3 animate-pulse" />
+        <div className="border-b border-slate-200 bg-slate-50 px-6 py-4 md:px-8 md:py-5">
+          <div className="h-5 w-4/5 max-w-lg rounded border-l-4 border-[rgba(34,197,94,0.35)] bg-muted/50 pl-3 animate-pulse" />
+          <div className="mt-2 flex flex-wrap items-center gap-1.5">
+            <div className="h-5 w-24 rounded-md border border-sky-100 bg-sky-50/80 animate-pulse" />
+            <div className="h-5 w-10 rounded-md border border-slate-200 bg-white animate-pulse" />
+            <div className="h-3.5 w-40 max-w-full rounded bg-muted/40 animate-pulse" />
+          </div>
+          <div className="mt-1.5 h-2.5 w-20 rounded bg-muted/30 animate-pulse" />
         </div>
 
         <div className="min-h-0 flex-1 space-y-3 overflow-hidden px-6 py-4 md:px-8">
@@ -42,14 +46,14 @@ export default function EstudarQuestaoSkeleton() {
 
           <div className="grid gap-2 pt-2 md:gap-2.5">
             {['a', 'b', 'c', 'd'].map((id) => (
-              <div
-                key={id}
-                className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white px-3 py-3 md:px-4"
-              >
-                <div className="mt-0.5 h-7 w-7 shrink-0 rounded-full bg-muted/50 animate-pulse" />
+              <div key={id} className="flex items-stretch gap-1">
+                <div className="h-11 w-11 shrink-0 rounded-lg bg-muted/30 animate-pulse sm:h-12 sm:w-12" />
+                <div className="flex min-w-0 flex-1 items-center gap-3 rounded-xl border border-slate-200 bg-white px-3 py-3 md:px-4">
+                <div className="h-6 w-6 shrink-0 rounded-full bg-muted/50 animate-pulse" />
                 <div className="min-w-0 flex-1 space-y-2 py-0.5">
                   <div className="h-4 w-full rounded bg-muted/50 animate-pulse" />
                   <div className="h-4 w-2/3 rounded bg-muted/40 animate-pulse" />
+                </div>
                 </div>
               </div>
             ))}

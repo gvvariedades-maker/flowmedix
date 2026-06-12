@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 /**
  * AVANT OMNI-ARCHITECT: AvantLessonPlayer Component
@@ -50,6 +50,8 @@ import { logger } from '@/lib/logger';
 import { sanitizeHTML } from '@/lib/validations';
 import {
   buildDerivedQuestionHeaderLine,
+  buildQuestionExamDetailLine,
+  buildQuestionHeaderChips,
   buildQuestionSubjectLine,
   stripLeadingQuestionEnumeration,
 } from '@/lib/questionHeader';
@@ -60,6 +62,15 @@ import { buildDotsNavWindow } from '@/lib/estudar/dotsNavWindow';
 import { parseEstudarSlugFromPathname } from '@/lib/estudar/navigation';
 import { ESTUDAR_STALE_RECOVERY_MS } from '@/components/lesson/useEstudarStaleRecovery';
 import { patchQuestaoEstudadaInPayload } from '@/lib/estudar/patchQuestaoEstudada';
+import {
+  clearQuestaoEliminations,
+  readQuestaoEliminations,
+  writeQuestaoEliminations,
+} from '@/lib/estudar/questaoEliminations';
+import {
+  computeQuestionListProgressPercent,
+  computeQuestionListProgressVisualPercent,
+} from '@/lib/estudar/questionListProgress';
 import { cn } from '@/lib/utils';
 import {
   MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM,
@@ -78,10 +89,10 @@ import type { GabaritoTentativa } from '@/lib/estudar/questionPayload';
 import { 
   CheckCircle2, XCircle, ChevronRight, ChevronLeft, 
   Lightbulb, ArrowRight, ArrowLeft, 
-  Flag, BrainCircuit, X, BadgeCheck, Loader2
+  Flag, BrainCircuit, X, BadgeCheck, Loader2, Scissors
 } from 'lucide-react';
 
-const QUESTION_TEXT_TYPOGRAPHY = 'text-base md:text-lg leading-relaxed';
+const QUESTION_TEXT_TYPOGRAPHY = 'text-[15px] md:text-base leading-relaxed';
 
 function resetDashboardMainScroll() {
   if (typeof document === 'undefined') return;
@@ -281,6 +292,16 @@ export default function AvantLessonPlayer({
   const dotsWindowKey =
     dotsNavItems.length > 0 ? dotsNavItems.map((item) => item.questao.indice).join('-') : 'empty';
 
+  const questionListProgressPercent = useMemo(() => {
+    if (!listaContexto || listaContexto.total <= 0) return null;
+    return computeQuestionListProgressPercent(listaContexto.atual, listaContexto.total);
+  }, [listaContexto?.atual, listaContexto?.total]);
+
+  const questionListProgressVisualPercent = useMemo(() => {
+    if (!listaContexto || listaContexto.total <= 0) return null;
+    return computeQuestionListProgressVisualPercent(listaContexto.atual, listaContexto.total);
+  }, [listaContexto?.atual, listaContexto?.total]);
+
   const prevDotsIndiceRef = useRef(listaContexto?.atual ?? 1);
   const [dotsSlideDirection, setDotsSlideDirection] = useState(0);
 
@@ -302,6 +323,7 @@ export default function AvantLessonPlayer({
   const [selecionada, setSelecionada] = useState<string | null>(() =>
     mode === 'preview' ? previewInitialOpcaoId ?? null : null,
   );
+  const [eliminadas, setEliminadas] = useState<Set<string>>(() => new Set());
   const [slideAtual, setSlideAtual] = useState(0);
   const [estudoConcluido, setEstudoConcluido] = useState(false);
   const [marcandoConclusao, setMarcandoConclusao] = useState(false);
@@ -363,6 +385,9 @@ export default function AvantLessonPlayer({
       mode === 'preview' && previewInitialEtapa ? previewInitialEtapa : 'pergunta';
     setEtapa(initialEtapa);
     setSelecionada(mode === 'preview' && previewInitialOpcaoId ? previewInitialOpcaoId : null);
+    setEliminadas(
+      mode === 'live' && moduloSlug ? readQuestaoEliminations(moduloSlug) : new Set(),
+    );
     setSlideAtual(0);
     setEstudoConcluido(jaEstudada);
     setMarcandoConclusao(false);
@@ -619,6 +644,18 @@ export default function AvantLessonPlayer({
     return buildQuestionSubjectLine(activeDados.meta);
   }, [activeDados.meta]);
 
+  const usesHeaderChips = Boolean(activeDados?.meta && !activeDados.meta.header_line?.trim());
+
+  const headerChips = useMemo(() => {
+    if (!usesHeaderChips || !activeDados?.meta) return [];
+    return buildQuestionHeaderChips(activeDados.meta);
+  }, [activeDados.meta, usesHeaderChips]);
+
+  const examDetailLine = useMemo(() => {
+    if (!usesHeaderChips || !activeDados?.meta) return null;
+    return buildQuestionExamDetailLine(activeDados.meta);
+  }, [activeDados.meta, usesHeaderChips]);
+
   const instructionParaExibicao = useMemo(() => {
     const raw = activeDados?.question_data?.instruction;
     if (!raw) return '';
@@ -869,6 +906,11 @@ export default function AvantLessonPlayer({
       }
       setGabarito(result.gabarito);
       setEtapa('gabarito');
+      setEliminadas(new Set());
+      {
+        const slug = moduloSlug || activeDados.modulo_slug || '';
+        if (slug) clearQuestaoEliminations(slug);
+      }
       if (questaoNav && estudoConcluido) {
         const slug = moduloSlug || activeDados.modulo_slug || '';
         if (slug) {
@@ -1170,16 +1212,32 @@ export default function AvantLessonPlayer({
 
   const handleOptionKeyDown = (
     e: React.KeyboardEvent<HTMLButtonElement>,
+    optId: string,
     index: number,
-    showResult: boolean,
+    blockSelection: boolean,
   ) => {
-    if (showResult) return;
+    if (
+      showOptionElimination &&
+      (e.key === 'e' || e.key === 'E' || e.key === 'Delete' || e.key === 'Backspace')
+    ) {
+      e.preventDefault();
+      toggleEliminada(optId);
+      return;
+    }
+    if (blockSelection) return;
     const options = activeDados.question_data.options;
+    const findNextSelectable = (direction: 1 | -1): number | null => {
+      for (let step = 1; step <= options.length; step += 1) {
+        const candidate = (index + direction * step + options.length) % options.length;
+        if (!eliminadas.has(options[candidate].id)) return candidate;
+      }
+      return null;
+    };
     let nextIndex: number | null = null;
     if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-      nextIndex = (index + 1) % options.length;
+      nextIndex = findNextSelectable(1);
     } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
-      nextIndex = (index - 1 + options.length) % options.length;
+      nextIndex = findNextSelectable(-1);
     }
     if (nextIndex === null) return;
     e.preventDefault();
@@ -1190,23 +1248,71 @@ export default function AvantLessonPlayer({
     });
   };
 
+  const showOptionElimination = etapa === 'pergunta' && !certoErradoLayout;
+
+  const toggleEliminada = useCallback(
+    (optId: string) => {
+      setEliminadas((prev) => {
+        const next = new Set(prev);
+        if (next.has(optId)) next.delete(optId);
+        else next.add(optId);
+        const slug = moduloSlug || activeDados.modulo_slug || '';
+        if (mode === 'live' && slug) writeQuestaoEliminations(slug, next);
+        return next;
+      });
+      setSelecionada((current) => (current === optId ? null : current));
+    },
+    [activeDados.modulo_slug, mode, moduloSlug],
+  );
+
+  const handleRadiogroupKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (etapa !== 'pergunta') return;
+    const options = activeDados.question_data.options;
+    const digit = Number.parseInt(e.key, 10);
+    if (Number.isFinite(digit) && digit >= 1 && digit <= options.length) {
+      const opt = options[digit - 1];
+      if (!eliminadas.has(opt.id)) {
+        e.preventDefault();
+        setSelecionada(opt.id);
+        requestAnimationFrame(() => {
+          document.getElementById(`lesson-option-${opt.id}`)?.focus();
+        });
+      }
+      return;
+    }
+    const key = e.key.toLowerCase();
+    const byLetter = options.find((option) => option.id.toLowerCase() === key);
+    if (byLetter && !eliminadas.has(byLetter.id)) {
+      e.preventDefault();
+      setSelecionada(byLetter.id);
+      requestAnimationFrame(() => {
+        document.getElementById(`lesson-option-${byLetter.id}`)?.focus();
+      });
+    }
+  };
+
   const renderQuestionLiveHeader = (withZoom: boolean) => {
     if (mode !== 'live') return null;
 
     const voltarDestino = fromPlano ? 'Plano diário' : fromCaderno ? 'Meus cadernos' : 'Vitrine';
 
     return (
-      <div className="flex min-w-0 shrink-0 flex-wrap items-center justify-between gap-x-2 gap-y-2 border-b border-slate-200 px-4 pb-1.5 pt-3 sm:gap-x-3 sm:px-6 sm:pt-4">
+      <div
+        className={cn(
+          'flex min-w-0 shrink-0 flex-wrap items-center justify-between gap-x-2 gap-y-2 border-b border-slate-200 px-4 pb-1.5 sm:gap-x-3 sm:px-6',
+          estudarQuestaoImmersive ? 'pt-safe md:pt-4' : 'pt-3 sm:pt-4',
+        )}
+      >
         <button
           type="button"
           onClick={handleVoltarLista}
           aria-label={`Voltar para ${voltarDestino}`}
-          className="group flex min-w-0 shrink-0 items-center gap-2 rounded-xl px-1 -ml-1 text-slate-500 transition-colors hover:text-[#3d6b0f] min-h-[44px] min-w-[44px] sm:max-w-none"
+          className="group flex min-w-0 shrink-0 items-center gap-2 rounded-xl px-1 -ml-1 text-slate-500 transition-colors hover:text-[#166534] min-h-[44px] min-w-[44px] sm:max-w-none"
         >
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50 transition-all group-hover:border-[rgba(143,224,32,0.35)] group-hover:bg-[rgba(143,224,32,0.08)]">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-slate-50 transition-all group-hover:border-[rgba(34,197,94,0.35)] group-hover:bg-[rgba(34,197,94,0.08)]">
             <ArrowLeft size={16} />
           </div>
-          <span className="hidden truncate text-sm font-medium sm:inline">
+          <span className="max-w-[5rem] truncate text-xs font-medium sm:max-w-none sm:text-sm">
             {voltarDestino}
           </span>
         </button>
@@ -1258,7 +1364,7 @@ export default function AvantLessonPlayer({
           </div>
         )}
 
-        <div className="min-w-0 px-6 pt-3 pb-2 md:px-8 md:pt-4 md:pb-3">
+        <div className="min-w-0 px-6 pt-4 pb-2 md:px-8 md:pt-5 md:pb-3">
           <div className={`${QUESTION_TEXT_TYPOGRAPHY} text-slate-800 font-normal whitespace-pre-wrap break-words overflow-x-hidden [&_strong]:font-semibold [&_p]:mb-2 [&_p:last-child]:mb-0`}>
             <span dangerouslySetInnerHTML={{ __html: sanitizedInstructionHtml }} />
           </div>
@@ -1271,25 +1377,39 @@ export default function AvantLessonPlayer({
           transition={{ delay: 0.2 }}
           className="px-6 pb-6 md:px-8 md:pb-7"
         >
+          {showOptionElimination ? (
+            <MicroTip
+              storageKey="reverse-study.option-elimination"
+              tip={REVERSE_STUDY_MICROTIPS['option-elimination']}
+              enabled={etapa === 'pergunta'}
+              className={cn('mb-3', estudarQuestaoImmersive && 'max-md:mb-2')}
+            />
+          ) : null}
           <div
             role="radiogroup"
             aria-label="Alternativas da questão"
+            onKeyDown={handleRadiogroupKeyDown}
             className={
               certoErradoLayout
                 ? 'grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto'
-                : 'grid gap-1.5 md:gap-2'
+                : 'grid gap-2 md:gap-2.5'
             }
           >
             {activeDados.question_data.options.map((opt, optionIndex) => {
               const isSelected = selecionada === opt.id;
+              const isEliminada = eliminadas.has(opt.id);
               const isCorrect = opcaoEstaCorreta(opt.id);
               const showResult = (etapa === 'gabarito' || etapa === 'estudo') && gabarito !== null;
 
-              let styles = "border-slate-200 bg-white hover:border-[rgba(143,224,32,0.45)] hover:bg-[rgba(143,224,32,0.06)]";
-              let badge = "border border-slate-200 bg-slate-100 text-slate-600 group-hover:border-[rgba(143,224,32,0.35)] group-hover:text-[#3d6b0f]";
+              let styles = "border-slate-200 bg-white hover:border-[rgba(34,197,94,0.45)] hover:bg-[rgba(34,197,94,0.06)]";
+              let badge = "border border-slate-200 bg-slate-100 text-slate-600 group-hover:border-[rgba(34,197,94,0.35)] group-hover:text-[#166534]";
               let text = "text-slate-800";
 
-              if (showResult) {
+              if (isEliminada && !showResult) {
+                styles = "border-slate-100 bg-slate-50";
+                badge = "border border-slate-200 bg-slate-100 text-slate-400";
+                text = "text-slate-400 line-through decoration-slate-400/80";
+              } else if (showResult) {
                 if (isCorrect) {
                   styles = "border-emerald-300 bg-emerald-50";
                   badge = "bg-emerald-500 text-white shadow-md";
@@ -1299,65 +1419,98 @@ export default function AvantLessonPlayer({
                   badge = "bg-rose-500 text-white shadow-md";
                   text = "text-rose-700 font-bold";
                 } else {
-                  styles = "border-slate-100 bg-slate-50 opacity-50";
+                  styles = "border-slate-100 bg-slate-50 opacity-70";
                 }
               } else if (isSelected) {
-                styles = "border-[rgba(143,224,32,0.45)] bg-[rgba(143,224,32,0.08)] shadow-sm";
-                badge = "bg-[#8fe020] text-slate-900 shadow-md";
-                text = "text-[#3d6b0f] font-bold";
+                styles = "border-[rgba(34,197,94,0.45)] bg-[rgba(34,197,94,0.08)] shadow-sm";
+                badge = "bg-[#22c55e] text-slate-900 shadow-md";
+                text = "text-[#166534] font-bold";
               }
 
               const rowLayout = certoErradoLayout
                 ? 'flex flex-col items-center justify-center text-center min-h-[92px] sm:min-h-[108px] gap-2 p-5 md:p-6'
-                : 'text-left flex min-h-[48px] items-start gap-3 px-3 py-3 md:px-4';
+                : 'text-left flex min-h-[48px] items-center gap-3 px-3 py-3 md:px-4';
 
-              const optionAriaLabel = buildOptionAriaLabel(
-                opt,
-                isSelected,
-                isCorrect,
-                showResult,
-              );
+              const optionAriaLabel = [
+                buildOptionAriaLabel(opt, isSelected, isCorrect, showResult),
+                isEliminada && !showResult ? 'eliminada' : '',
+              ]
+                .filter(Boolean)
+                .join(', ');
 
               return (
-                <motion.button
-                  key={opt.id}
-                  id={`lesson-option-${opt.id}`}
-                  type="button"
-                  role="radio"
-                  aria-checked={isSelected}
-                  aria-label={optionAriaLabel}
-                  disabled={showResult}
-                  tabIndex={
-                    showResult
-                      ? -1
-                      : isSelected || (!selecionada && optionIndex === 0)
-                        ? 0
-                        : -1
-                  }
-                  whileTap={!showResult ? { scale: 0.98 } : undefined}
-                  onClick={() => setSelecionada(opt.id)}
-                  onKeyDown={(e) => handleOptionKeyDown(e, optionIndex, showResult)}
-                  className={`group relative rounded-xl border transition-all duration-300 active:scale-[0.98] btn-option-editorial ${styles} ${rowLayout}`}
-                >
-                  {!certoErradoLayout && (
-                    <span className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-bold transition-colors duration-300 ${badge}`}>
-                      {opt.id}
+                <div key={opt.id} className="flex min-w-0 items-stretch gap-1">
+                  {showOptionElimination ? (
+                    <button
+                      type="button"
+                      onClick={() => toggleEliminada(opt.id)}
+                      aria-label={
+                        isEliminada
+                          ? `Restaurar alternativa ${opt.id}`
+                          : `Eliminar alternativa ${opt.id}`
+                      }
+                      aria-pressed={isEliminada}
+                      title={isEliminada ? 'Restaurar alternativa' : 'Eliminar alternativa (tecla E)'}
+                      className={cn(
+                        'flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border transition-colors sm:h-12 sm:w-12',
+                        isEliminada
+                          ? 'border-sky-200 bg-sky-50 text-sky-600'
+                          : 'border-transparent text-slate-300 hover:border-slate-200 hover:bg-slate-50 hover:text-sky-600',
+                      )}
+                    >
+                      <Scissors size={16} aria-hidden />
+                    </button>
+                  ) : null}
+                  <motion.button
+                    id={`lesson-option-${opt.id}`}
+                    type="button"
+                    role="radio"
+                    aria-checked={isSelected}
+                    aria-label={optionAriaLabel}
+                    aria-disabled={isEliminada && !showResult ? true : undefined}
+                    disabled={showResult || (isEliminada && !showResult)}
+                    tabIndex={
+                      showResult || isEliminada
+                        ? -1
+                        : isSelected || (!selecionada && optionIndex === 0)
+                          ? 0
+                          : -1
+                    }
+                    whileTap={!showResult && !isEliminada ? { scale: 0.98 } : undefined}
+                    onClick={() => {
+                      if (!isEliminada) setSelecionada(opt.id);
+                    }}
+                    onKeyDown={(e) =>
+                      handleOptionKeyDown(e, opt.id, optionIndex, showResult || isEliminada)
+                    }
+                    className={`group relative min-w-0 flex-1 rounded-xl border transition-all duration-300 active:scale-[0.98] btn-option-editorial ${styles} ${rowLayout}`}
+                  >
+                    {!certoErradoLayout && (
+                      <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold uppercase transition-colors duration-300 ${badge}`}>
+                        {opt.id}
+                      </span>
+                    )}
+                    <span className={`min-w-0 flex-1 ${QUESTION_TEXT_TYPOGRAPHY} ${certoErradoLayout ? 'font-semibold' : 'font-normal'} ${text}`}>
+                      {opt.text}
                     </span>
-                  )}
-                  <span className={`${QUESTION_TEXT_TYPOGRAPHY} ${certoErradoLayout ? 'font-semibold' : 'font-normal'} ${text}`}>
-                    {opt.text}
-                  </span>
-                  {showResult && isCorrect && (
-                    <div className={`text-emerald-600 animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`} aria-hidden>
-                      <CheckCircle2 size={certoErradoLayout ? 32 : 24} />
-                    </div>
-                  )}
-                  {showResult && isSelected && !isCorrect && (
-                    <div className={`text-rose-600 animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-3'}`} aria-hidden>
-                      <XCircle size={certoErradoLayout ? 32 : 24} />
-                    </div>
-                  )}
-                </motion.button>
+                    {showResult && isCorrect && (
+                      <div
+                        className={`text-emerald-600 animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-1/2 -translate-y-1/2'}`}
+                        aria-hidden
+                      >
+                        <CheckCircle2 size={certoErradoLayout ? 32 : 24} />
+                      </div>
+                    )}
+                    {showResult && isSelected && !isCorrect && (
+                      <div
+                        className={`text-rose-600 animate-in zoom-in ${certoErradoLayout ? 'mt-1' : 'absolute right-3 top-1/2 -translate-y-1/2'}`}
+                        aria-hidden
+                      >
+                        <XCircle size={certoErradoLayout ? 32 : 24} />
+                      </div>
+                    )}
+                  </motion.button>
+                </div>
               );
             })}
           </div>
@@ -1377,7 +1530,11 @@ export default function AvantLessonPlayer({
             ref={confirmarRespostaRef}
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className={`flex flex-col items-center gap-2 scroll-mt-4 px-6 pt-1 pb-5 ${MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM}`}
+            className={cn(
+              'flex flex-col items-center gap-2 scroll-mt-4 px-6 pt-1 pb-5',
+              MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM,
+              estudarQuestaoImmersive && 'pb-safe',
+            )}
           >
             <MicroTip
               storageKey="reverse-study.answer-before-feedback"
@@ -1406,7 +1563,7 @@ export default function AvantLessonPlayer({
               type="button"
               onClick={handleConfirmarResposta}
               disabled={confirmandoResposta}
-              className="btn-editorial-primary group flex min-h-[48px] items-center gap-3 rounded-full py-3 pl-8 pr-3 text-xs font-bold uppercase tracking-widest transition-all hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70"
+              className="btn-editorial-primary group flex min-h-[48px] items-center gap-2.5 rounded-full px-6 py-3 text-sm font-bold transition-all hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-70"
             >
               {confirmandoResposta ? 'Registrando…' : 'Confirmar Resposta'}
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 transition-colors group-hover:bg-white/30">
@@ -1424,22 +1581,56 @@ export default function AvantLessonPlayer({
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="border-b border-slate-200 bg-slate-50 px-6 py-3 md:px-8 md:py-4"
+          className="border-b border-slate-200 bg-slate-50 px-6 py-4 md:px-8 md:py-5"
         >
-          {formatAvantCodigo(avantCodigo) && (
+          {subjectLine && (
+            <p className="text-base md:text-lg font-semibold text-slate-900 border-l-4 border-[#22c55e] pl-3 leading-snug">
+              {subjectLine}
+            </p>
+          )}
+          {usesHeaderChips && headerChips.length > 0 ? (
+            <div
+              className={cn(
+                'flex flex-wrap items-center gap-x-2 gap-y-1.5',
+                subjectLine ? 'mt-2' : '',
+              )}
+            >
+              {headerChips.map((chip) => (
+                <span
+                  key={chip.id}
+                  className={cn(
+                    'inline-flex items-center rounded-md border px-2 py-0.5 text-[11px] font-semibold leading-tight',
+                    chip.tone === 'banca'
+                      ? 'border-sky-200 bg-sky-50 text-sky-800'
+                      : 'border-slate-200 bg-white text-slate-600',
+                  )}
+                >
+                  {chip.label}
+                </span>
+              ))}
+              {examDetailLine ? (
+                <span className="text-xs text-slate-500 leading-snug">{examDetailLine}</span>
+              ) : null}
+            </div>
+          ) : examHeaderLine ? (
             <p
-              className="text-[11px] font-mono font-black text-[#3d6b0f] mb-1 tracking-wide"
+              className={cn(
+                'text-xs md:text-sm text-slate-500 leading-snug',
+                subjectLine ? 'mt-2' : '',
+              )}
+            >
+              {examHeaderLine}
+            </p>
+          ) : null}
+          {mode !== 'live' && formatAvantCodigo(avantCodigo) && (
+            <p
+              className={cn(
+                'text-[10px] font-mono text-slate-400',
+                subjectLine || examHeaderLine || headerChips.length > 0 ? 'mt-1.5' : '',
+              )}
               title="Código da questão (igual ao painel admin)"
             >
               {formatAvantCodigo(avantCodigo)}
-            </p>
-          )}
-          <p className="text-sm md:text-[15px] text-slate-600 leading-snug font-medium tracking-tight">
-            {examHeaderLine}
-          </p>
-          {subjectLine && (
-            <p className="mt-2 text-base md:text-lg font-semibold text-slate-900 border-l-4 border-[#8fe020] pl-3 leading-snug">
-              {subjectLine}
             </p>
           )}
         </motion.div>
@@ -1461,16 +1652,44 @@ export default function AvantLessonPlayer({
         mode === 'live' || previewImmersive
           ? 'border-0 shadow-none'
           : 'card-elevated-lg border border-slate-200 shadow-lg md:rounded-[2.5rem]',
+        estudarQuestaoImmersive && mode === 'live' && 'max-md:min-h-[100dvh]',
       )}
     >
       
-      {/* BARRA DE PROGRESSO */}
-      <div className="h-2 w-full bg-slate-200 flex shrink-0">
-        <div className={`h-full transition-all duration-1000 ease-out ${
-          etapa === 'pergunta' ? 'w-1/3 bg-[#8fe020]' : 
-          etapa === 'gabarito' ? 'w-2/3 bg-[#7acc1a]' : 
-          'w-full bg-[#3d6b0f]'
-        }`} />
+      {/* BARRA DE PROGRESSO — posição na lista (não etapas do fluxo) */}
+      <div
+        className="flex h-2 w-full shrink-0 bg-slate-200"
+        role="progressbar"
+        aria-valuemin={listaContexto ? 1 : 0}
+        aria-valuemax={listaContexto?.total ?? 100}
+        aria-valuenow={
+          questionListProgressPercent != null
+            ? listaContexto!.atual
+            : etapa === 'pergunta'
+              ? 1
+              : etapa === 'gabarito'
+                ? 2
+                : 3
+        }
+        aria-label={
+          listaContexto
+            ? `Progresso na lista: questão ${listaContexto.atual} de ${listaContexto.total}`
+            : 'Progresso na questão'
+        }
+      >
+        <div
+          className="h-full bg-[#22c55e] transition-all duration-500 ease-out"
+          style={{
+            width:
+              questionListProgressVisualPercent != null
+                ? `${questionListProgressVisualPercent}%`
+                : etapa === 'pergunta'
+                  ? '12%'
+                  : etapa === 'gabarito'
+                    ? '50%'
+                    : '100%',
+          }}
+        />
       </div>
 
       {showQuestionZoom ? (
@@ -1507,8 +1726,8 @@ export default function AvantLessonPlayer({
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className="z-10 shrink-0 overflow-hidden border-t border-b border-slate-200 bg-white shadow-[0_-4px_24px_-8px_rgba(15,23,42,0.06)]"
           >
-            <div className="p-4 sm:p-6 md:p-8">
-              <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 sm:gap-6 md:flex-row">
+            <div className="p-4 sm:p-5 md:p-6">
+              <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 sm:gap-5 md:flex-row">
                 <div
                   className="flex items-center gap-4"
                   role="status"
@@ -1516,7 +1735,7 @@ export default function AvantLessonPlayer({
                   aria-atomic="true"
                 >
                   <div
-                    className={`flex h-14 w-14 items-center justify-center rounded-2xl shadow-inner ${
+                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl shadow-inner sm:h-14 sm:w-14 ${
                       respostaAcertou
                         ? 'bg-emerald-50 text-emerald-600 border border-emerald-200'
                         : 'bg-rose-50 text-rose-600 border border-rose-200'
@@ -1524,21 +1743,21 @@ export default function AvantLessonPlayer({
                     aria-hidden
                   >
                     {respostaAcertou ? (
-                      <CheckCircle2 size={32} />
+                      <CheckCircle2 size={28} />
                     ) : (
-                      <XCircle size={32} />
+                      <XCircle size={28} />
                     )}
                   </div>
                   <div>
-                    <p className="mb-0.5 text-[10px] font-black uppercase tracking-widest text-slate-500">
-                      Diagnóstico
+                    <p className="mb-0.5 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                      Gabarito
                     </p>
                     <p
-                      className={`text-xl font-black italic uppercase tracking-tighter ${
+                      className={`text-lg font-bold sm:text-xl ${
                         respostaAcertou ? 'text-emerald-700' : 'text-rose-700'
                       }`}
                     >
-                      {respostaAcertou ? 'Resposta Correta' : 'Resposta Incorreta'}
+                      {respostaAcertou ? 'Você acertou!' : 'Você errou'}
                     </p>
                   </div>
                 </div>
@@ -1556,10 +1775,10 @@ export default function AvantLessonPlayer({
                       setEtapa('estudo');
                       setSlideAtual(0);
                     }}
-                    className="btn-editorial-primary flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-[10px] font-bold uppercase tracking-wide sm:gap-3 sm:px-8 sm:py-4 sm:text-[11px] sm:tracking-widest sm:hover:-translate-y-0.5"
+                    className="btn-editorial-primary flex min-h-[52px] w-full items-center justify-center gap-2.5 rounded-xl px-6 py-4 text-sm font-bold shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md sm:gap-3 sm:px-8"
                   >
-                    <BrainCircuit size={18} className="shrink-0" />
-                    <span className="text-center leading-tight">Ativar Estudo Reverso</span>
+                    <BrainCircuit size={20} className="shrink-0" />
+                    <span className="text-center leading-tight">Ativar estudo reverso</span>
                   </button>
                 </div>
               </div>
@@ -1593,7 +1812,7 @@ export default function AvantLessonPlayer({
                 className={`flex h-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center gap-1.5 rounded-2xl px-3 font-bold uppercase text-[10px] tracking-wide transition-all sm:gap-2 sm:px-4 sm:text-xs ${
                   anteriorSlug && !navegacaoIndisponivel
                     ? 'btn-editorial-outline text-slate-700 active:scale-[0.97]'
-                    : 'cursor-not-allowed text-slate-300'
+                    : 'cursor-not-allowed border border-slate-100 bg-slate-50 text-slate-400'
                 }`}
               >
                 <ArrowLeft size={22} className="shrink-0" aria-hidden />
@@ -1650,12 +1869,12 @@ export default function AvantLessonPlayer({
                             title={`Questão ${posicaoLista}${q.estudada ? ' — estudo reverso concluído' : ''}`}
                             aria-label={`Questão ${posicaoLista}${isCurrent ? ', atual' : ''}${q.estudada ? ', estudo reverso concluído' : ''}`}
                             aria-current={isCurrent ? 'step' : undefined}
-                            className="flex min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-full transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50"
+                            className="flex min-h-[40px] min-w-[40px] shrink-0 items-center justify-center rounded-full transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50"
                           >
                             <span
                               className={`flex items-center justify-center rounded-full transition-all duration-200 ${
                                 isCurrent
-                                  ? 'h-7 w-7 bg-[#8fe020] ring-2 ring-[rgba(143,224,32,0.40)] ring-offset-1 ring-offset-white shadow-md'
+                                  ? 'h-7 w-7 bg-[#22c55e] ring-2 ring-[rgba(34,197,94,0.40)] ring-offset-1 ring-offset-white shadow-md'
                                   : q.estudada
                                     ? 'h-5 w-5 bg-emerald-500 hover:bg-emerald-600'
                                     : 'h-5 w-5 bg-slate-300 hover:bg-slate-400'
@@ -1704,6 +1923,7 @@ export default function AvantLessonPlayer({
                   className="btn-editorial-primary flex h-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center gap-1.5 rounded-2xl px-3 font-black uppercase text-[10px] tracking-wide transition-all active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-50 sm:gap-2 sm:px-4 sm:text-xs"
                 >
                   <span className="hidden sm:inline">{navegacaoStatusLabel ?? 'Próxima Questão'}</span>
+                  <span className="sm:hidden">{navegacaoStatusLabel ?? 'Próxima'}</span>
                   <ArrowRight size={22} className="shrink-0" aria-hidden />
                 </button>
               ) : (
@@ -1713,7 +1933,7 @@ export default function AvantLessonPlayer({
                     fromPlano ? 'Concluir Plano' : fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'
                   }
                   onClick={handleConcluir}
-                  className="flex h-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center gap-1.5 rounded-2xl bg-[#8fe020] px-3 font-black uppercase text-[10px] tracking-wide text-slate-900 transition-all hover:bg-[#7acc1a] hover:shadow-md active:scale-[0.97] sm:gap-2 sm:px-4 sm:text-xs"
+                  className="flex h-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center gap-1.5 rounded-2xl bg-[#22c55e] px-3 font-black uppercase text-[10px] tracking-wide text-slate-900 transition-all hover:bg-[#7acc1a] hover:shadow-md active:scale-[0.97] sm:gap-2 sm:px-4 sm:text-xs"
                 >
                   <span className="hidden sm:inline">
                     {fromPlano ? 'Concluir Plano' : fromCaderno ? 'Concluir Caderno' : 'Concluir Missão'}
@@ -1725,9 +1945,7 @@ export default function AvantLessonPlayer({
 
             {dotsNavItems.length > 0 ? (
               <>
-                <p className="text-center text-[10px] sm:text-[11px] text-slate-500 leading-snug pb-1">
-                  Verde = estudo reverso concluído
-                </p>
+                <p className="sr-only">Verde = estudo reverso concluído</p>
                 <MicroTip
                   storageKey="reverse-study.dots-meaning"
                   tip={REVERSE_STUDY_MICROTIPS['dots-meaning']}
@@ -1737,9 +1955,9 @@ export default function AvantLessonPlayer({
               </>
             ) : null}
           </div>
-          {gabarito !== null && !estudoConcluido && (
+          {gabarito !== null && !estudoConcluido && etapa === 'gabarito' && (
             <div className="flex justify-center px-3 pb-1.5" role="status">
-              <span className="inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-800">
+              <span className="inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-2.5 py-0.5 text-[10px] font-medium text-amber-800">
                 Estudo reverso pendente
               </span>
             </div>

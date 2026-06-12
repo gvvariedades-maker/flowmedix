@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
@@ -23,7 +23,7 @@ export function BackToVitrineLink({ className }: BackToVitrineLinkProps) {
     <Link
       href={VITRINE_PATH}
       className={cn(
-        'inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-700 shadow-sm transition-colors hover:border-[#8fe020]/50 hover:bg-[#8fe020]/10 hover:text-[#3d6b0f]',
+        'inline-flex w-fit items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-700 shadow-sm transition-colors hover:border-[#22c55e]/50 hover:bg-[#22c55e]/10 hover:text-[#166534]',
         className,
       )}
     >

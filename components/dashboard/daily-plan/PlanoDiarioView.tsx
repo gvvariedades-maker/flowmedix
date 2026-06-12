@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -73,9 +73,9 @@ function PlanoDiarioInfoAlgoritmo() {
 
 function PlanoDiarioSimuladoCta() {
   return (
-    <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.08)] p-4">
+    <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.08)] p-4">
       <div className="space-y-1">
-        <p className="text-sm font-semibold text-[#3d6b0f]">Meta do dia: 1 simulado de 10 questões</p>
+        <p className="text-sm font-semibold text-[#166534]">Meta do dia: 1 simulado de 10 questões</p>
         <p className="text-xs text-slate-600">
           Use modo treino para reforço rápido ou modo prova para simular concurso real.
         </p>
@@ -125,11 +125,11 @@ function PlanoDiarioConteúdo({
       <header className="border-b border-slate-200 bg-background shadow-sm">
         <div className="mx-auto max-w-3xl px-4 py-8 md:px-10">
           <div className="flex flex-col items-center text-center sm:block sm:text-left">
-            <p className="text-xs font-black uppercase tracking-widest text-[#3d6b0f]">
+            <p className="text-xs font-black uppercase tracking-widest text-[#166534]">
               Plano de estudo diário
             </p>
             <div className="mt-3 flex items-center justify-center gap-2 sm:justify-start">
-              <Zap className="h-6 w-6 shrink-0 text-[#3d6b0f] sm:h-7 sm:w-7" aria-hidden />
+              <Zap className="h-6 w-6 shrink-0 text-[#166534] sm:h-7 sm:w-7" aria-hidden />
               <h1 className="text-balance text-4xl font-black capitalize leading-tight tracking-tight text-slate-900">
                 {dataFormatada}
               </h1>
@@ -145,9 +145,9 @@ function PlanoDiarioConteúdo({
           </div>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:justify-start">
-            <div className="flex items-center gap-2 rounded-2xl border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.08)] px-4 py-2.5 shadow-sm">
-              <CalendarDays className="h-4 w-4 text-[#3d6b0f]" aria-hidden />
-              <span className="text-sm font-bold tabular-nums text-[#3d6b0f]">
+            <div className="flex items-center gap-2 rounded-2xl border border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.08)] px-4 py-2.5 shadow-sm">
+              <CalendarDays className="h-4 w-4 text-[#166534]" aria-hidden />
+              <span className="text-sm font-bold tabular-nums text-[#166534]">
                 {revisoes.length}/{limite} hoje
               </span>
             </div>

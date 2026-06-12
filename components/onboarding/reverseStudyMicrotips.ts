@@ -1,6 +1,7 @@
 export type ReverseStudyMicrotipKey =
   | 'answer-before-feedback'
   | 'feedback-learning'
+  | 'option-elimination'
   | 'reverse-study-intro'
   | 'dots-meaning'
   | 'concept-map'
@@ -25,9 +26,14 @@ export const REVERSE_STUDY_MICROTIPS: Record<ReverseStudyMicrotipKey, ReverseStu
   },
   'feedback-learning': {
     title: 'Feedback que ensina',
-    body: 'Agora o diagnóstico corrige sua rota: acerto confirma o raciocínio; erro mostra onde estudar.',
+    body: 'Agora o gabarito corrige sua rota: acerto confirma o raciocínio; erro mostra onde estudar.',
     tone: 'emerald',
     learnMoreHref: '/ajuda/estudo-reverso',
+  },
+  'option-elimination': {
+    title: 'Elimine o que não serve',
+    body: 'Use a tesoura ou a tecla E para riscar alternativas improváveis — como nas grandes plataformas de questões.',
+    tone: 'indigo',
   },
   'reverse-study-intro': {
     title: 'Cada questão vira uma mini aula',

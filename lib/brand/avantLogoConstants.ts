@@ -20,7 +20,10 @@ export function scaleAvantLogoPx(base: number, size: AvantLogoSizeToken): number
   return Math.round(base * getAvantLogoScale(size));
 }
 
-/** Geometria do raio (viewBox 38×42). Usar em SVG `points` ou clip-path equivalente. */
+/**
+ * Geometria do raio (viewBox 38×42).
+ * App UI (`AvantLogo` / `AvantBrandMark`) usa letra «A» no chip; o raio permanece em e-mail (`emails/AvantLogoEmail.tsx`) e PWA legado.
+ */
 export const AVANT_LOGO_BOLT = {
   polygon: '22,0 8,20 15,20 10,42 30,16 18,16',
   viewBox: '0 0 38 42',
@@ -29,26 +32,28 @@ export const AVANT_LOGO_BOLT = {
 } as const;
 
 export const AVANT_LOGO_COLORS = {
-  iconGradientStart: '#8fe020',
-  iconGradientEnd: '#58b800',
+  iconGradientStart: '#22c55e',
+  iconGradientEnd: '#16a34a',
   iconSheen: 'rgba(255,255,255,0.18)',
   boltHighlight: 'rgba(255,255,255,0.15)',
   lockupInnerBg: '#0d0d18',
-  accentBar: '#8fe020',
-  accentBarGlow: 'rgba(143, 224, 32, 0.55)',
-  wordmarkGlow: 'rgba(192, 240, 64, 0.35)',
-  /** Editorial v2 — wordmark em fundo claro (#f8fafc), sem chip escuro */
+  accentBar: '#22c55e',
+  accentBarGlow: 'rgba(34, 197, 94, 0.55)',
+  wordmarkGlow: 'rgba(74, 222, 128, 0.35)',
+  /** Editorial v2 — wordmark em fundo claro (auth / headers públicos) */
   wordmarkLight: '#0f172a',
+  /** Editorial v2 — wordmark no dashboard (sidebar, alinhado ao chip verde) */
+  wordmarkEditorial: '#166534',
 } as const;
 
 export const AVANT_LOGO_GRADIENTS = {
   icon: `linear-gradient(145deg, ${AVANT_LOGO_COLORS.iconGradientStart}, ${AVANT_LOGO_COLORS.iconGradientEnd})`,
-  bolt: 'linear-gradient(180deg, #d8ff70 0%, #8fe020 52%, #58b800 100%)',
-  boltStops: ['#d8ff70', '#8fe020', '#58b800'] as const,
-  wordmark: 'linear-gradient(90deg, #d8ff70 0%, #8fe020 48%, #c0f040 100%)',
-  wordmarkStops: ['#d8ff70', '#8fe020', '#c0f040'] as const,
+  bolt: 'linear-gradient(180deg, #86efac 0%, #22c55e 52%, #16a34a 100%)',
+  boltStops: ['#86efac', '#22c55e', '#16a34a'] as const,
+  wordmark: 'linear-gradient(90deg, #86efac 0%, #22c55e 48%, #4ade80 100%)',
+  wordmarkStops: ['#86efac', '#22c55e', '#4ade80'] as const,
   shellBorder:
-    'linear-gradient(145deg, rgba(143, 224, 32, 0.65) 0%, rgba(88, 184, 0, 0.55) 100%)',
+    'linear-gradient(145deg, rgba(34, 197, 94, 0.65) 0%, rgba(22, 163, 74, 0.55) 100%)',
 } as const;
 
 /** Dimensões em px na escala 1 (lg). Aplicar `scaleAvantLogoPx` por `size`. */
@@ -84,8 +89,8 @@ export const AVANT_LOGO_DIMENSIONS = {
  * Manter em sync com `@keyframes avantLogoPulse` em app/globals.css.
  */
 export const AVANT_LOGO_SHELL_SHADOW = {
-  rest: '0 0 14px rgba(143, 224, 32, 0.22), 0 0 28px rgba(48, 24, 200, 0.18)',
-  peak: '0 0 22px rgba(143, 224, 32, 0.48), 0 0 44px rgba(48, 24, 200, 0.32)',
+  rest: '0 0 14px rgba(34, 197, 94, 0.22), 0 0 28px rgba(48, 24, 200, 0.18)',
+  peak: '0 0 22px rgba(34, 197, 94, 0.48), 0 0 44px rgba(48, 24, 200, 0.32)',
 } as const;
 
 export const AVANT_LOGO_ANIMATION = {

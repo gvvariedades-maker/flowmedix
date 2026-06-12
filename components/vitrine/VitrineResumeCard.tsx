@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { ArrowRight } from 'lucide-react';
 import { formatAvantCodigo } from '@/lib/avantCodigo';
@@ -16,10 +16,10 @@ export function VitrineResumeCard({ resume, estudarQuery = '' }: VitrineResumeCa
   return (
     <div
       data-testid="vitrine-resume-card"
-      className="flex flex-col gap-3 rounded-r-2xl border border-green-100 border-l-[#8fe020] bg-green-50 px-4 py-3 [border-left-width:4px] sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+      className="flex flex-col gap-3 rounded-r-2xl border border-green-100 border-l-[#22c55e] bg-green-50 px-4 py-3.5 [border-left-width:4px] sm:flex-row sm:items-center sm:justify-between sm:gap-4"
     >
       <div className="min-w-0">
-        <p className="text-xs font-semibold uppercase tracking-wide text-[#3d6b0f]">
+        <p className="text-xs font-semibold uppercase tracking-wide text-[#166534]">
           Continuar de onde parou
         </p>
         <p className="mt-0.5 truncate text-sm font-bold leading-snug text-slate-900">

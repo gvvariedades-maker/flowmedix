@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
@@ -41,7 +41,7 @@ function WizardProgress({ step }: { step: 1 | 2 }) {
       </div>
       <div className="h-1.5 overflow-hidden rounded-full bg-slate-100">
         <motion.div
-          className="h-full rounded-full bg-[#8fe020]"
+          className="h-full rounded-full bg-[#22c55e]"
           initial={false}
           animate={{ width: step === 1 ? '50%' : '100%' }}
           transition={{ duration: 0.25, ease: 'easeOut' }}
@@ -92,10 +92,10 @@ function LegacyNovoCadernoForm() {
       <div className="login-auth-card">
         <div className="flex items-start gap-4 border-b border-slate-200 pb-5">
           <div
-            className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[rgba(143,224,32,0.10)]"
+            className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[rgba(34, 197, 94,0.10)]"
             aria-hidden
           >
-            <BookMarked className="h-7 w-7 text-[#3d6b0f]" strokeWidth={1.5} />
+            <BookMarked className="h-7 w-7 text-[#166534]" strokeWidth={1.5} />
           </div>
           <div>
             <h2 className="text-xl font-bold text-slate-900">Dados do caderno</h2>
@@ -237,10 +237,10 @@ function WizardNovoCadernoForm({
         <div className="mb-6 space-y-4 border-b border-slate-200 pb-5">
           <div className="flex items-start gap-4">
             <div
-              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[rgba(143,224,32,0.10)]"
+              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[rgba(34, 197, 94,0.10)]"
               aria-hidden
             >
-              <Sparkles className="h-7 w-7 text-[#3d6b0f]" strokeWidth={1.5} />
+              <Sparkles className="h-7 w-7 text-[#166534]" strokeWidth={1.5} />
             </div>
             <div className="min-w-0 flex-1">
               <h2 className="text-xl font-bold text-slate-900">Monte seu caderno</h2>
@@ -287,8 +287,8 @@ function WizardNovoCadernoForm({
                       className={cn(
                         'rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors',
                         title === suggestion
-                          ? 'border-[rgba(143,224,32,0.45)] bg-[rgba(143,224,32,0.12)] text-[#3d6b0f]'
-                          : 'border-slate-200 bg-white text-slate-600 hover:border-[rgba(143,224,32,0.35)] hover:text-slate-900',
+                          ? 'border-[rgba(34, 197, 94,0.45)] bg-[rgba(34, 197, 94,0.12)] text-[#166534]'
+                          : 'border-slate-200 bg-white text-slate-600 hover:border-[rgba(34, 197, 94,0.35)] hover:text-slate-900',
                       )}
                     >
                       {suggestion}
@@ -375,7 +375,7 @@ function PresetPreview({ preset, batchCount }: { preset: QuickAddPreset; batchCo
     <div className="space-y-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
       {preset.banca ? (
         <p className="text-sm font-bold text-slate-900">
-          Sua banca: <span className="text-[#3d6b0f]">{preset.banca}</span>
+          Sua banca: <span className="text-[#166534]">{preset.banca}</span>
         </p>
       ) : (
         <p className="text-sm font-bold text-slate-900">Sugestões do catálogo AVANT</p>

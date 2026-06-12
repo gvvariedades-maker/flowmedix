@@ -6,13 +6,11 @@ const shellPath = join(process.cwd(), 'app', '(dashboard)', 'DashboardShell.tsx'
 const heightSyncPath = join(process.cwd(), 'lib', 'layout', 'useBottomNavHeightSync.ts');
 
 describe('BottomNav', () => {
-  it('renderiza indicador ativo abaixo do label (após span)', () => {
+  it('labels 11px e estado ativo via chip (sem barra inferior duplicada)', () => {
     const source = readFileSync(bottomNavPath, 'utf8');
-    expect(source).toContain('layoutId="bottom-nav-indicator"');
-    expect(source).toMatch(
-      /<span[\s\S]*?\{label\}[\s\S]*?<\/span>[\s\S]*?isActive \? \([\s\S]*?layoutId="bottom-nav-indicator"/,
-    );
-    expect(source).toContain('mt-0.5 h-[2px]');
+    expect(source).toContain('text-[11px]');
+    expect(source).not.toContain('layoutId="bottom-nav-indicator"');
+    expect(source).toContain('<MenuNavIconChip');
   });
 
   it('usa helper compartilhado para estado ativo dos links', () => {

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -16,8 +16,12 @@ import {
 
 export type AvantLogoVariant = 'lockup' | 'icon';
 
-/** `light` = auth editorial (#f8fafc): lockup sem chip, wordmark escuro, verde só no raio */
-export type AvantLogoTone = 'default' | 'light';
+/**
+ * - `default` — cyber (gradiente no wordmark + shell escuro no lockup)
+ * - `light` — auth editorial: wordmark `#0f172a`
+ * - `brand` — dashboard editorial: wordmark `#166534` (mesma regra do chip)
+ */
+export type AvantLogoTone = 'default' | 'light' | 'brand';
 
 export type AvantLogoProps = {
   variant?: AvantLogoVariant;
@@ -43,7 +47,7 @@ function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
         height: iconPx,
         borderRadius: radius,
         background: AVANT_LOGO_GRADIENTS.icon,
-        boxShadow: '0 4px 16px rgba(143, 224, 32, 0.40)',
+        boxShadow: '0 4px 16px rgba(34, 197, 94, 0.40)',
       }}
       aria-hidden
     >
@@ -59,7 +63,7 @@ function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
         className="relative select-none text-white"
         style={{
           fontFamily: AVANT_LOGO_FONT_FAMILY,
-          fontWeight: 900,
+          fontWeight: 800,
           fontSize,
           lineHeight: 1,
           textShadow: '0 1px 4px rgba(0,0,0,0.20)',
@@ -91,13 +95,16 @@ function AvantLogoWordmark({
     letterSpacing: `${letterSpacing}px`,
   };
 
-  if (tone === 'light') {
+  if (tone === 'light' || tone === 'brand') {
     return (
       <span
-        className="shrink-0 select-none uppercase"
+        className="shrink-0 select-none"
         style={{
           ...baseStyle,
-          color: AVANT_LOGO_COLORS.wordmarkLight,
+          color:
+            tone === 'brand'
+              ? AVANT_LOGO_COLORS.wordmarkEditorial
+              : AVANT_LOGO_COLORS.wordmarkLight,
         }}
       >
         AVANT
@@ -107,7 +114,7 @@ function AvantLogoWordmark({
 
   return (
     <span
-      className="shrink-0 select-none uppercase"
+      className="shrink-0 select-none"
       style={{
         ...baseStyle,
         backgroundImage: AVANT_LOGO_GRADIENTS.wordmark,
@@ -131,7 +138,7 @@ export function AvantLogo({
   className,
   'aria-label': ariaLabel = 'AVANT — início',
 }: AvantLogoProps) {
-  const isLight = tone === 'light';
+  const isLight = tone === 'light' || tone === 'brand';
   const pulse =
     animated ?? (variant === 'lockup' && size === 'lg' && tone === 'default');
 

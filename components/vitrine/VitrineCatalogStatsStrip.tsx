@@ -1,6 +1,5 @@
-'use client';
+﻿'use client';
 
-import Link from 'next/link';
 import { formatCatalogCount } from '@/lib/vitrine/catalogStatsAnimation';
 import { useCatalogStatsCountUp } from '@/hooks/useCatalogStatsCountUp';
 
@@ -21,29 +20,23 @@ export default function VitrineCatalogStatsStrip({
       data-testid="vitrine-catalog-stats"
       data-vitrine-stats-ready={ready ? 'true' : 'false'}
       data-vitrine-stats-animating={animating ? 'true' : 'false'}
-      className="flex flex-wrap items-center gap-x-4 gap-y-2 rounded-xl border border-slate-200 bg-slate-50/80 px-4 py-3"
+      className="flex flex-wrap items-center gap-x-6 gap-y-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 shadow-sm"
       aria-label="Totais do catálogo"
       aria-busy={animating || undefined}
     >
-      <div className="flex items-baseline gap-1.5">
-        <strong className="text-lg font-black tabular-nums leading-none text-[#3d6b0f]">
+      <div className="flex items-baseline gap-2">
+        <strong className="text-2xl font-black tabular-nums leading-none text-[#166534]">
           {formatCatalogCount(displayQuestions)}
         </strong>
         <span className="text-xs text-slate-500">questões com estudo reverso</span>
       </div>
-      <span className="hidden text-slate-200 sm:block" aria-hidden>|</span>
-      <div className="flex items-baseline gap-1.5">
-        <strong className="text-lg font-black tabular-nums leading-none text-slate-700">
+      <div className="hidden h-6 w-px shrink-0 bg-slate-200 sm:block" aria-hidden />
+      <div className="flex items-baseline gap-2">
+        <strong className="text-2xl font-black tabular-nums leading-none text-[#166534]">
           {formatCatalogCount(displaySlides)}
         </strong>
         <span className="text-xs text-slate-500">NeuroSlides</span>
       </div>
-      <Link
-        href="/ajuda/estudo-reverso"
-        className="ml-auto text-xs font-medium text-[#3d6b0f] hover:underline"
-      >
-        Como funciona
-      </Link>
     </div>
   );
 }

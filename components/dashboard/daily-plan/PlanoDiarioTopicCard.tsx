@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -63,7 +63,7 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
             <div className="flex flex-wrap items-center gap-2">
               <Link
                 href={href}
-                className="text-lg font-black text-slate-900 underline-offset-2 transition-colors hover:text-[#3d6b0f] hover:underline"
+                className="text-lg font-black text-slate-900 underline-offset-2 transition-colors hover:text-[#166534] hover:underline"
               >
                 {assunto}
               </Link>
@@ -71,7 +71,7 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
                 1 questão
               </Badge>
               {codeLabel != null && (
-                <span className="rounded-md border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.08)] px-2 py-0.5 font-mono text-[10px] font-semibold text-[#3d6b0f]">
+                <span className="rounded-md border border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.08)] px-2 py-0.5 font-mono text-[10px] font-semibold text-[#166534]">
                   {codeLabel}
                 </span>
               )}
@@ -140,7 +140,7 @@ export function PlanoDiarioTopicCard({ item, index }: Props) {
             </DropdownMenu>
             <Link
               href={href}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-slate-500 transition-colors duration-200 hover:bg-slate-100 hover:text-[#3d6b0f]"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-slate-500 transition-colors duration-200 hover:bg-slate-100 hover:text-[#166534]"
               aria-label="Ir para a questão"
             >
               <ChevronRight className="h-5 w-5" />

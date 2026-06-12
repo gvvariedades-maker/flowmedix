@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { Share, Smartphone, X, Zap } from 'lucide-react';
 
@@ -30,8 +30,8 @@ export function PwaInstallPanel({
       }
     >
       <div className="flex items-start gap-3">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.12)]">
-          <Smartphone size={20} className="text-[#3d6b0f]" aria-hidden />
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.12)]">
+          <Smartphone size={20} className="text-[#166534]" aria-hidden />
         </div>
         <div className="min-w-0 flex-1">
           <p id="pwa-install-title" className="text-sm font-black tracking-tight text-slate-900">
@@ -40,7 +40,7 @@ export function PwaInstallPanel({
           <p id="pwa-install-desc" className="mt-1 text-xs leading-relaxed text-slate-600">
             {isIos ? (
               <>
-                Toque em <Share size={12} className="inline -mt-0.5 text-[#3d6b0f]" aria-hidden />{' '}
+                Toque em <Share size={12} className="inline -mt-0.5 text-[#166534]" aria-hidden />{' '}
                 <strong className="font-semibold text-slate-800">Compartilhar</strong> e depois em{' '}
                 <strong className="font-semibold text-slate-800">Adicionar à Tela de Início</strong>.
                 Abre como app, sem barra do navegador.

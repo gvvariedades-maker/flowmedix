@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -31,11 +31,11 @@ export function CadernosEmptyState({ className, editalBanca }: Props) {
     >
       <div className="card-elevated-lg p-8 sm:p-10">
         <div className="flex flex-col items-center text-center">
-          <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-2xl border border-[rgba(143,224,32,0.25)] bg-[rgba(143,224,32,0.10)]">
-            <BookMarked className="h-10 w-10 text-[#3d6b0f]" strokeWidth={1.5} aria-hidden />
+          <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-2xl border border-[rgba(34, 197, 94,0.25)] bg-[rgba(34, 197, 94,0.10)]">
+            <BookMarked className="h-10 w-10 text-[#166534]" strokeWidth={1.5} aria-hidden />
           </div>
 
-          <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.12)] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#3d6b0f]">
+          <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-[rgba(34, 197, 94,0.35)] bg-[rgba(34, 197, 94,0.12)] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#166534]">
             <Sparkles className="h-3 w-3" aria-hidden />
             Primeiro caderno
           </div>
@@ -49,7 +49,7 @@ export function CadernosEmptyState({ className, editalBanca }: Props) {
                 key={text}
                 className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
               >
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[rgba(143,224,32,0.10)] text-[#3d6b0f]">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[rgba(34, 197, 94,0.10)] text-[#166534]">
                   <Icon className="h-4 w-4" aria-hidden />
                 </div>
                 <span className="text-sm font-semibold text-slate-700">{text}</span>

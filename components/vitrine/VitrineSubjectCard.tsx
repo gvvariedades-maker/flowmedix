@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { createElement } from 'react';
 import { motion } from 'framer-motion';
@@ -27,7 +27,7 @@ export type VitrineSubjectCardProps = {
   index: number;
   assuntoExpandido: boolean;
   onAssuntoExpandedChange: (open: boolean) => void;
-  /** Lista densa — abre sheet em qualquer viewport; sem expand inline. */
+  /** Lista densa — layout mais compacto; no desktop expande inline como no grid. */
   compact?: boolean;
 };
 
@@ -74,7 +74,8 @@ export function VitrineSubjectCard({
   const ctaSlug = resolveCtaSlug(grupo);
   const ctaLabel = resolveCtaLabel(grupo);
   const isDesktop = useDashboardDesktop();
-  const useSheet = compact || !isDesktop;
+  /** Sheet só no mobile; no desktop (incl. lista compacta) expande inline. */
+  const useSheet = !isDesktop;
 
   const toggleAssunto = () => {
     onAssuntoExpandedChange(!assuntoExpandido);
@@ -151,8 +152,13 @@ export function VitrineSubjectCard({
                   <span className="text-slate-300" aria-hidden>
                     ·
                   </span>
-                  <span className="font-medium tabular-nums text-amber-700">
-                    {pendentes} pendente{pendentes !== 1 ? 's' : ''}
+                  <span
+                    className={cn(
+                      'font-medium tabular-nums',
+                      progressoPct > 0 ? 'text-amber-700' : 'text-slate-500',
+                    )}
+                  >
+                    {pendentes} para estudar
                   </span>
                 </>
               ) : null}
@@ -174,7 +180,7 @@ export function VitrineSubjectCard({
             <p className="mt-0.5 truncate text-[11px] text-slate-500">
               {totalQuestoes.toLocaleString('pt-BR')} {labelQuestoes(totalQuestoes)}
               {pendentes > 0 && !todas
-                ? ` · ${pendentes} pendente${pendentes !== 1 ? 's' : ''}`
+                ? ` · ${pendentes} para estudar`
                 : ''}
             </p>
           )}
@@ -184,7 +190,7 @@ export function VitrineSubjectCard({
           <span
             className={cn(
               'shrink-0 text-sm font-bold tabular-nums',
-              trabalhadas > 0 ? 'text-[#3d6b0f]' : 'text-slate-300',
+              trabalhadas > 0 ? 'text-[#166534]' : 'text-slate-300',
             )}
           >
             {progressoPct}%
@@ -200,7 +206,7 @@ export function VitrineSubjectCard({
             variant="ghost"
             size="sm"
             asChild
-            className="hidden shrink-0 text-xs font-medium text-[#3d6b0f] hover:bg-[rgba(143,224,32,0.08)] hover:text-[#3d6b0f] sm:inline-flex"
+            className="hidden shrink-0 text-xs font-medium text-[#166534] hover:bg-[rgba(34, 197, 94,0.08)] hover:text-[#166534] sm:inline-flex"
           >
             <VitrineQuestaoLink
               slug={ctaSlug}
@@ -231,7 +237,7 @@ export function VitrineSubjectCard({
 
       {hasQuestions && !compact ? (
         <div className="px-4 pb-3 sm:hidden">
-          <Button variant="ghost" size="sm" asChild className="w-full text-[#3d6b0f]">
+          <Button variant="ghost" size="sm" asChild className="w-full text-[#166534]">
             <VitrineQuestaoLink slug={ctaSlug} estudarQuery={estudarQuery}>
               {ctaLabel}
             </VitrineQuestaoLink>
@@ -256,7 +262,7 @@ export function VitrineSubjectCard({
             <div
               className={cn(
                 'h-full transition-[width] duration-300 ease-out',
-                todas ? 'bg-green-500' : 'bg-[#8fe020]',
+                todas ? 'bg-green-500' : 'bg-[#22c55e]',
               )}
               style={{ width: `${progressoPct}%` }}
             />
@@ -264,7 +270,7 @@ export function VitrineSubjectCard({
         </div>
       ) : null}
 
-      {isDesktop && !compact ? (
+      {isDesktop ? (
         <div
           id={panelId}
           aria-hidden={!assuntoExpandido}
@@ -279,8 +285,8 @@ export function VitrineSubjectCard({
                 {todas ? (
                   <NeonBadge variant="success">Completo</NeonBadge>
                 ) : pendentes > 0 ? (
-                  <NeonBadge variant="warning">
-                    {pendentes} pendente{pendentes !== 1 ? 's' : ''}
+                  <NeonBadge variant={progressoPct > 0 ? 'warning' : 'neutral'}>
+                    {pendentes} para estudar
                   </NeonBadge>
                 ) : totalResolvidas === 0 ? (
                   <NeonBadge variant="neutral">Não iniciado</NeonBadge>
@@ -289,7 +295,7 @@ export function VitrineSubjectCard({
                   asChild
                   variant="outline"
                   size="sm"
-                  className="ml-auto rounded-xl border-slate-200 text-slate-700 hover:border-[rgba(143,224,32,0.35)] hover:bg-[rgba(143,224,32,0.06)] hover:text-[#3d6b0f]"
+                  className="ml-auto rounded-xl border-slate-200 text-slate-700 hover:border-[rgba(34, 197, 94,0.35)] hover:bg-[rgba(34, 197, 94,0.06)] hover:text-[#166534]"
                 >
                   <VitrineQuestaoLink slug={firstSlug} estudarQuery={estudarQuery}>
                     Entrar no assunto
@@ -298,7 +304,7 @@ export function VitrineSubjectCard({
               </div>
 
               <div className="flex justify-center">
-                <VitrineProgressRing trabalhadas={trabalhadas} total={totalQuestoes} />
+                <VitrineProgressRing trabalhadas={trabalhadas} total={totalQuestoes} size={88} />
               </div>
 
               <p className="-mt-1 text-center text-[10px] font-medium uppercase tracking-wide text-slate-500">
@@ -315,7 +321,7 @@ export function VitrineSubjectCard({
 
               <p className="border-t border-slate-100 pt-2 text-[10px] font-medium uppercase tracking-wide text-slate-500">
                 {totalQuestoes} {labelQuestoes(totalQuestoes)} no assunto
-                {todas ? ' · Concluído' : totalResolvidas > 0 ? ' · Em progresso' : ''}
+                {todas ? ' · Concluído' : trabalhadas > 0 ? ' · Em progresso' : ''}
               </p>
             </div>
           </div>

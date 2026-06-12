@@ -1,3 +1,5 @@
+﻿import Link from 'next/link';
+
 type VitrinePageHeaderProps = {
   title: string;
   description?: string | null;
@@ -7,11 +9,22 @@ export default function VitrinePageHeader({ title, description }: VitrinePageHea
   return (
     <section aria-labelledby="vitrine-page-title">
       <div className="flex items-stretch gap-3">
-        <div className="w-1 shrink-0 rounded-full bg-[#8fe020]" aria-hidden />
+        <div className="w-1 shrink-0 rounded-full bg-[#22c55e]" aria-hidden />
         <div className="min-w-0 flex-1">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">
-            Estudo reverso
-          </p>
+          <div className="flex items-center gap-2">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">
+              Estudo reverso
+            </p>
+            <span className="text-slate-300" aria-hidden>
+              ·
+            </span>
+            <Link
+              href="/ajuda/estudo-reverso"
+              className="text-[11px] font-medium text-[#166534] hover:underline"
+            >
+              Como funciona
+            </Link>
+          </div>
           <h1
             id="vitrine-page-title"
             className="text-editorial-title text-2xl font-bold sm:text-3xl"

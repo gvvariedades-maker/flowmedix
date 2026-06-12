@@ -30,6 +30,8 @@ import {
 } from '@/lib/vitrine/parseListQuery';
 import {
   filterVitrineGroupsByStatus,
+  isPendingVitrineGroup,
+  isNewVitrineGroup,
   vitrineStatusFilterLabel,
   type VitrineStatusFilter,
 } from '@/lib/vitrine/filterGroups';
@@ -250,6 +252,14 @@ export default function VitrineClient({
   const gruposFiltrados = useMemo(
     () => filterVitrineGroupsByStatus(gruposPagina, statusFilter),
     [gruposPagina, statusFilter],
+  );
+  const statusCounts = useMemo(
+    () => ({
+      all: gruposPagina.length,
+      pending: gruposPagina.filter(isPendingVitrineGroup).length,
+      new: gruposPagina.filter(isNewVitrineGroup).length,
+    }),
+    [gruposPagina],
   );
   const totalAssuntos = vitrinePageData?.pagination.totalGroups ?? 0;
   const totalPaginas = vitrinePageData?.pagination.totalPages ?? 1;
@@ -522,18 +532,7 @@ export default function VitrineClient({
     return () => window.removeEventListener('avant:open-search', handler);
   }, []);
 
-  const pageSectionTitle = searchTerm
-    ? `Resultados para "${searchTerm}"`
-    : bancasSelecionadas.length || assuntosSelecionados.length
-      ? (() => {
-          const parts: string[] = ['Filtrado'];
-          const bancasLabel = multiFilterResumo(bancasSelecionadas, 'bancas');
-          const assuntosLabel = multiFilterResumo(assuntosSelecionados, 'assuntos');
-          if (bancasLabel) parts.push(bancasLabel);
-          if (assuntosLabel) parts.push(assuntosLabel);
-          return parts.join(' \u2022 ');
-        })()
-      : 'Vitrine de questões';
+  const pageSectionTitle = 'Vitrine de questões';
 
   const listBusy = loading || isRefreshing;
   const listDataMatchesQuery =
@@ -547,17 +546,45 @@ export default function VitrineClient({
     observeKey: `p${paginaEfetiva}-${gruposPagina.length}`,
   });
 
-  const pageSectionDescription = fetchError
-    ? fetchError
-    : statusFilter !== 'all' && gruposPagina.length > 0
-      ? `${vitrineStatusFilterLabel(statusFilter)} — filtro rápido nesta página (${gruposFiltrados.length} de ${gruposPagina.length} assuntos)`
-      : totalAssuntos > 0 && totalPaginas > 1
-      ? `Mostrando ${(paginaEfetiva - 1) * perPage + 1}\u2013${Math.min(paginaEfetiva * perPage, totalAssuntos)} de ${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`
-      : loading
-        ? 'Carregando assuntos…'
-        : isRefreshing
-          ? 'Atualizando assuntos…'
-          : `${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`;
+  const pageSectionDescription = (() => {
+    if (fetchError) return fetchError;
+
+    const segments: string[] = [];
+    const trimmedSearch = searchTerm.trim();
+
+    if (trimmedSearch) {
+      segments.push(`Resultados para "${trimmedSearch}"`);
+    }
+
+    if (statusFilter !== 'all' && gruposPagina.length > 0) {
+      segments.push(
+        `${vitrineStatusFilterLabel(statusFilter)} nesta página (${gruposFiltrados.length} de ${gruposPagina.length} assuntos)`,
+      );
+    } else if (totalAssuntos > 0 && totalPaginas > 1) {
+      segments.push(
+        `Mostrando ${(paginaEfetiva - 1) * perPage + 1}\u2013${Math.min(paginaEfetiva * perPage, totalAssuntos)} de ${totalAssuntos} assuntos`,
+      );
+    } else if (loading) {
+      segments.push('Carregando assuntos…');
+    } else if (isRefreshing) {
+      segments.push('Atualizando assuntos…');
+    } else if (totalAssuntos > 0) {
+      segments.push(`${totalAssuntos} assunto${totalAssuntos !== 1 ? 's' : ''}`);
+    }
+
+    if (bancasSelecionadas.length > 0 || assuntosSelecionados.length > 0) {
+      const filterBits: string[] = [];
+      const bancasLabel = multiFilterResumo(bancasSelecionadas, 'bancas');
+      const assuntosLabel = multiFilterResumo(assuntosSelecionados, 'assuntos');
+      if (bancasLabel) filterBits.push(bancasLabel);
+      if (assuntosLabel) filterBits.push(assuntosLabel);
+      if (filterBits.length > 0) {
+        segments.push(`Filtrado por ${filterBits.join(', ')}`);
+      }
+    }
+
+    return segments.length > 0 ? segments.join(' \u00b7 ') : null;
+  })();
 
   const showSsrErrorBanner =
     Boolean(initialPayloadError) && !ssrErrorDismissed && !initialPageData;
@@ -584,7 +611,7 @@ export default function VitrineClient({
   return (
     <div
       className={cn(
-        'dashboard-surface flex min-h-0 flex-1 flex-col bg-background text-foreground selection:bg-[#8fe020]/20 selection:text-[#1a2e05] md:min-h-screen md:pb-8',
+        'dashboard-surface flex min-h-0 flex-1 flex-col bg-background text-foreground selection:bg-[#22c55e]/20 selection:text-[#1a2e05] md:min-h-screen md:pb-8',
       )}
     >
       <VitrineToolbar
@@ -662,10 +689,11 @@ export default function VitrineClient({
               onStatusChange={handleStatusFilterChange}
               view={viewMode}
               onViewChange={handleViewModeChange}
+              counts={statusCounts}
             />
           ) : null}
           {loading && gruposPagina.length === 0 ? (
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-5">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3 xl:gap-5">
               {Array.from({ length: 8 }).map((_, i) => (
                 <div key={i} className="h-72 animate-pulse rounded-2xl bg-muted/50" />
               ))}
@@ -683,7 +711,7 @@ export default function VitrineClient({
                 className={cn(
                   viewMode === 'compact'
                     ? 'flex flex-col gap-2'
-                    : 'grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-5',
+                    : 'grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-3 xl:gap-5',
                   MOBILE_CONTENT_SCROLL_MARGIN_BOTTOM,
                   isRefreshing && 'opacity-80',
                 )}

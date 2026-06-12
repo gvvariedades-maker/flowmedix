@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import dynamic from 'next/dynamic';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
@@ -29,7 +29,7 @@ const SimuladoResumoClient = dynamic(
   {
     loading: () => (
       <div className={cn('bg-background', DASHBOARD_PAGE_CENTER)}>
-        <Loader2 className="h-10 w-10 animate-spin text-[#3d6b0f]" aria-label="Carregando resumo" />
+        <Loader2 className="h-10 w-10 animate-spin text-[#166534]" aria-label="Carregando resumo" />
       </div>
     ),
   },
@@ -489,7 +489,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           pageBottomPadding,
         )}
       >
-        <Loader2 className="h-10 w-10 animate-spin text-[#3d6b0f]" aria-label="Carregando simulado" />
+        <Loader2 className="h-10 w-10 animate-spin text-[#166534]" aria-label="Carregando simulado" />
       </div>
     );
   }
@@ -650,7 +650,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           aria-label="Progresso do simulado"
         >
           <div
-            className="h-full rounded-full bg-[#8fe020] transition-all duration-300"
+            className="h-full rounded-full bg-[#22c55e] transition-all duration-300"
             style={{ width: `${progressPct}%` }}
           />
         </div>
@@ -683,7 +683,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           />
         ) : loadingQuestion && !questionData ? (
           <div className="flex justify-center py-16">
-            <Loader2 className="h-8 w-8 animate-spin text-[#3d6b0f]" aria-label="Carregando questão" />
+            <Loader2 className="h-8 w-8 animate-spin text-[#166534]" aria-label="Carregando questão" />
           </div>
         ) : questionError ? (
           <div className="card-elevated-lg border border-rose-200 p-6 text-center">
@@ -702,7 +702,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           <div className="card-elevated-lg space-y-6 p-6 sm:p-8">
             {examHeaderLine && (
               <div className="space-y-2 border-b border-slate-200 pb-4">
-                <p className="text-xs font-medium uppercase tracking-wider text-[#3d6b0f]">
+                <p className="text-xs font-medium uppercase tracking-wider text-[#166534]">
                   {examHeaderLine}
                 </p>
                 {subjectLine && <p className="text-sm font-semibold text-slate-900">{subjectLine}</p>}
@@ -744,8 +744,8 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                         setLiveMessage(`Alternativa ${opt.id} selecionada.`);
                       }}
                       className={cn(
-                        'btn-option-editorial w-full rounded-2xl border px-4 py-3 text-left text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8fe020]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background',
-                        isSelected && !feedback && 'border-[rgba(143,224,32,0.45)] bg-[rgba(143,224,32,0.08)]',
+                        'btn-option-editorial w-full rounded-2xl border px-4 py-3 text-left text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22c55e]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+                        isSelected && !feedback && 'border-[rgba(34, 197, 94,0.45)] bg-[rgba(34, 197, 94,0.08)]',
                         showCorrect && 'card-success-editorial border-emerald-300',
                         showWrong && 'card-error-editorial border-rose-300',
                         !isSelected && !showCorrect && !showWrong && 'border-slate-200 bg-white',
@@ -753,7 +753,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                       role="radio"
                       aria-checked={isSelected}
                     >
-                      <span className="mr-2 font-mono text-[#3d6b0f]/90">{opt.id})</span>
+                      <span className="mr-2 font-mono text-[#166534]/90">{opt.id})</span>
                       {opt.text}
                     </button>
                   );

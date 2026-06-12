@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+﻿import { cn } from '@/lib/utils';
 
 type AuthAtmosphericBackdropProps = {
   /** `editorial` = fundo claro sutil (spike login); `dark` = blobs cyber (register legado). */
@@ -10,7 +10,7 @@ export function AuthAtmosphericBackdrop({ variant = 'dark' }: AuthAtmosphericBac
   if (variant === 'editorial') {
     return (
       <div className="pointer-events-none fixed inset-0" aria-hidden>
-        <div className="absolute top-[-18%] right-[-8%] h-[420px] w-[420px] rounded-full bg-[#8fe020]/8 blur-[100px]" />
+        <div className="absolute top-[-18%] right-[-8%] h-[420px] w-[420px] rounded-full bg-[#22c55e]/8 blur-[100px]" />
         <div className="absolute bottom-[-10%] left-[-6%] h-[360px] w-[360px] rounded-full bg-slate-200/80 blur-[90px]" />
       </div>
     );

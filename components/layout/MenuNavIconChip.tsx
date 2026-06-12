@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import type { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -6,14 +6,20 @@ import { cn } from '@/lib/utils';
 export const MENU_ICON_STROKE = 2 as const;
 
 export const MENU_NAV_ACTIVE = {
-  row: 'bg-[#8fe020]/10',
-  bar: 'bg-[#8fe020]',
-  label: 'text-[#3d6b0f]',
+  row: 'bg-[#22c55e]/10',
+  bar: 'bg-[#22c55e]',
+  label: 'text-[#166534]',
 } as const;
 
 /** Linha de nav inativa — hover mais legível que slate-100 sobre branco. */
 export const MENU_NAV_ROW_IDLE =
   'text-slate-600 hover:bg-slate-200/70 hover:text-slate-900';
+
+/** Chip/ícone inativo — monocromático; cor do accent só no item ativo. */
+const MENU_CHIP_IDLE = {
+  chip: 'bg-slate-100',
+  icon: 'text-slate-500',
+} as const;
 
 export type MenuAccentKey =
   | 'brand'
@@ -42,13 +48,13 @@ export const MENU_ACCENT_STYLES: Record<
 > = {
   brand: {
     chip: 'bg-slate-100',
-    chipActive: 'bg-[#8fe020]/18',
+    chipActive: 'bg-[#22c55e]/18',
     icon: 'text-slate-500',
-    iconActive: 'text-[#3d6b0f]',
+    iconActive: 'text-[#166534]',
     glow: 'shadow-sm',
-    rowActive: 'bg-[#8fe020]/10',
-    bar: 'bg-[#8fe020]',
-    labelActive: 'text-[#3d6b0f]',
+    rowActive: 'bg-[#22c55e]/10',
+    bar: 'bg-[#22c55e]',
+    labelActive: 'text-[#166534]',
   },
   cyan: {
     chip: 'bg-cyan-50',
@@ -161,22 +167,25 @@ export function MenuNavIconChip({
   return (
     <span
       className={cn(
-        'flex shrink-0 items-center justify-center border border-slate-200/90 transition-all duration-200',
-        isBottom ? 'h-8 w-8 rounded-lg' : 'h-9 w-9 rounded-xl',
+        'flex shrink-0 items-center justify-center border transition-all duration-200',
+        isBottom ? 'h-8 w-8 rounded-xl' : 'h-9 w-9 rounded-xl',
         active
           ? cn(
               styles.chipActive,
               styles.glow,
-              accent === 'brand' ? 'border-[#8fe020]/40' : 'border-slate-300',
+              accent === 'brand' ? 'border-[#22c55e]/40' : 'border-slate-300',
             )
-          : styles.chip,
+          : cn(MENU_CHIP_IDLE.chip, 'border-slate-200/90'),
       )}
       aria-hidden
     >
       <Icon
         size={isBottom ? 16 : 18}
         strokeWidth={MENU_ICON_STROKE}
-        className={cn('transition-colors', active ? styles.iconActive : styles.icon)}
+        className={cn(
+          'transition-colors',
+          active ? styles.iconActive : MENU_CHIP_IDLE.icon,
+        )}
       />
     </span>
   );

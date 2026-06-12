@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { LayoutGrid, List } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -16,6 +16,7 @@ export type VitrineQuickFiltersProps = {
   onStatusChange: (status: VitrineStatusFilter) => void;
   view: VitrineViewMode;
   onViewChange: (view: VitrineViewMode) => void;
+  counts?: Partial<Record<VitrineStatusFilter, number>>;
 };
 
 export function VitrineQuickFilters({
@@ -23,6 +24,7 @@ export function VitrineQuickFilters({
   onStatusChange,
   view,
   onViewChange,
+  counts,
 }: VitrineQuickFiltersProps) {
   return (
     <div
@@ -34,24 +36,30 @@ export function VitrineQuickFilters({
         aria-label="Filtrar assuntos por progresso"
         className="inline-flex max-w-full rounded-xl border border-slate-200 bg-slate-50/80 p-1"
       >
-        {STATUS_OPTIONS.map((option) => (
-          <button
-            key={option.value}
-            type="button"
-            role="tab"
-            aria-selected={status === option.value}
-            data-testid={`vitrine-status-${option.value}`}
-            onClick={() => onStatusChange(option.value)}
-            className={cn(
-              'min-h-[36px] flex-1 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors sm:flex-none sm:text-sm',
-              status === option.value
-                ? 'bg-white text-[#3d6b0f] shadow-sm'
-                : 'text-slate-600 hover:text-slate-900',
-            )}
-          >
-            {option.label}
-          </button>
-        ))}
+        {STATUS_OPTIONS.map((option) => {
+          const count = counts?.[option.value];
+          return (
+            <button
+              key={option.value}
+              type="button"
+              role="tab"
+              aria-selected={status === option.value}
+              data-testid={`vitrine-status-${option.value}`}
+              onClick={() => onStatusChange(option.value)}
+              className={cn(
+                'min-h-[36px] flex-1 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors sm:flex-none sm:text-sm',
+                status === option.value
+                  ? 'bg-white text-[#166534] shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900',
+              )}
+            >
+              {option.label}
+              {count !== undefined ? (
+                <span className="ml-1.5 tabular-nums opacity-60">({count})</span>
+              ) : null}
+            </button>
+          );
+        })}
       </div>
 
       <div
@@ -68,7 +76,7 @@ export function VitrineQuickFilters({
           className={cn(
             'flex size-9 items-center justify-center rounded-lg transition-colors',
             view === 'grid'
-              ? 'bg-white text-[#3d6b0f] shadow-sm'
+              ? 'bg-white text-[#166534] shadow-sm'
               : 'text-slate-400 hover:text-slate-700',
           )}
         >
@@ -84,7 +92,7 @@ export function VitrineQuickFilters({
           className={cn(
             'flex size-9 items-center justify-center rounded-lg transition-colors',
             view === 'compact'
-              ? 'bg-white text-[#3d6b0f] shadow-sm'
+              ? 'bg-white text-[#166534] shadow-sm'
               : 'text-slate-400 hover:text-slate-700',
           )}
         >

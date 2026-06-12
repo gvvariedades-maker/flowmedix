@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 /**
  * Componente de Cards de Estatísticas
@@ -26,9 +26,9 @@ export default function StatsCards({ stats }: StatsCardsProps) {
       label: 'Total de Tentativas',
       value: stats.total,
       icon: Target,
-      color: 'text-[#3d6b0f]',
-      bgColor: 'bg-[rgba(143,224,32,0.1)]',
-      borderColor: 'border-[rgba(143,224,32,0.35)]',
+      color: 'text-[#166534]',
+      bgColor: 'bg-[rgba(34, 197, 94,0.1)]',
+      borderColor: 'border-[rgba(34, 197, 94,0.35)]',
     },
     {
       label: 'Acertos',

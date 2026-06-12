@@ -43,7 +43,7 @@ export function VitrineToolbar({
   const [assuntoSheetOpen, setAssuntoSheetOpen] = useState(false);
 
   return (
-    <div className="sticky top-0 z-20 border-b border-border/70 bg-background/95 pt-safe shadow-[0_4px_24px_-12px_rgba(15,23,42,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-background/90 md:pt-0">
+    <div className="sticky top-0 z-20 border-b border-slate-200 bg-background/95 pt-safe shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-background/90 md:pt-0">
       <div className="md:hidden">
         {mobileSearchOpen ? (
           <div className="border-t border-border/70 px-4 pb-3 pt-2">
@@ -122,7 +122,7 @@ export function VitrineToolbar({
               placeholder="Buscar assunto, banca, Q-…"
               value={searchTerm}
               onChange={(e) => onSearchChange(e.target.value)}
-              className="h-9 rounded-xl border-border/80 pl-9 pr-9 text-sm"
+              className="h-9 rounded-xl border-slate-200 bg-white pl-9 pr-9 text-sm"
             />
             {searchTerm ? (
               <button
