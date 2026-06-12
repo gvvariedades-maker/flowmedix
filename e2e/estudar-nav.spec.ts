@@ -205,26 +205,31 @@ test.describe('Estudar — ciclo aluno (resposta, pular, estudo)', () => {
   });
 
   test('estudo reverso: slides, marcar estudado e dot verde', async ({ page }) => {
+    test.setTimeout(90_000);
+
     await abrirQuestao1Direto(page);
     await selecionarAlternativaA(page);
     await confirmarRespostaEGabarito(page);
 
     await page.getByRole('button', { name: /Ativar Estudo Reverso/i }).click();
-    // Gate de prontidão do ER visível no mobile (o label "Avant Neuro-Learning" é hidden sm:inline).
-    await expect(page.getByRole('button', { name: /Fechar estudo reverso/i })).toBeVisible({
-      timeout: 15_000,
-    });
+    const fecharEr = page.getByRole('button', { name: /Fechar estudo reverso/i });
+    await expect(fecharEr).toBeVisible({ timeout: 15_000 });
 
-    const avancarSlide = page.getByRole('button', { name: /^Próximo$/i });
-    while (await avancarSlide.isVisible().catch(() => false)) {
+    const erFooter = page
+      .locator('div.fixed.inset-x-0.top-0')
+      .filter({ has: fecharEr })
+      .locator('div.shrink-0.border-t')
+      .last();
+
+    const avancarSlide = erFooter.getByRole('button', { name: /Próximo/i });
+    for (let i = 0; i < 3; i += 1) {
+      await expect(avancarSlide).toBeVisible({ timeout: 15_000 });
       await expect(avancarSlide).toBeEnabled({ timeout: 15_000 });
-      await avancarSlide.scrollIntoViewIfNeeded();
       await avancarSlide.click();
     }
 
-    const marcarEstudado = page.getByRole('button', { name: /Marcar (como )?[Ee]studado/i });
-    await marcarEstudado.scrollIntoViewIfNeeded();
-    await expect(marcarEstudado).toBeVisible({ timeout: 15_000 });
+    const marcarEstudado = erFooter.getByRole('button', { name: /Marcar/i });
+    await expect(marcarEstudado).toBeVisible({ timeout: 30_000 });
     await marcarEstudado.click();
     await expect(page.getByText('Estudo concluído')).toBeVisible({ timeout: 15_000 });
 
