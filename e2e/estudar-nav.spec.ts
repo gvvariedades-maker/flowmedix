@@ -216,12 +216,16 @@ test.describe('Estudar — ciclo aluno (resposta, pular, estudo)', () => {
     });
 
     const avancarSlide = page.getByRole('button', { name: /^Próximo$/i });
-    for (let i = 0; i < 3; i += 1) {
+    while (await avancarSlide.isVisible().catch(() => false)) {
       await expect(avancarSlide).toBeEnabled({ timeout: 15_000 });
+      await avancarSlide.scrollIntoViewIfNeeded();
       await avancarSlide.click();
     }
 
-    await page.getByRole('button', { name: /Marcar (como )?[Ee]studado/i }).click();
+    const marcarEstudado = page.getByRole('button', { name: /Marcar (como )?[Ee]studado/i });
+    await marcarEstudado.scrollIntoViewIfNeeded();
+    await expect(marcarEstudado).toBeVisible({ timeout: 15_000 });
+    await marcarEstudado.click();
     await expect(page.getByText('Estudo concluído')).toBeVisible({ timeout: 15_000 });
 
     await page.getByRole('button', { name: /Fechar estudo reverso/i }).click();

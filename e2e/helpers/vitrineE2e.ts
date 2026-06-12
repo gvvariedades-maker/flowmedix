@@ -63,12 +63,17 @@ export function isMobileViewport(page: Page) {
   return viewport ? viewport.width < 768 : false;
 }
 
+/** Sheet mobile do assunto (evita strict mode — um dialog por card). */
+export function vitrineSubjectSheet(page: Page, tituloAssunto: string) {
+  return page.getByRole('dialog', { name: new RegExp(tituloAssunto) });
+}
+
 /** Desktop: painel inline. Mobile: subject sheet. */
 export async function garantirPainelAssuntoAberto(page: Page, tituloAssunto: string) {
   await waitVitrineListReady(page);
 
   if (isMobileViewport(page)) {
-    const sheet = page.getByTestId('vitrine-subject-sheet');
+    const sheet = vitrineSubjectSheet(page, tituloAssunto);
     if (await sheet.isVisible().catch(() => false)) {
       return;
     }
@@ -108,12 +113,9 @@ export type AbrirQuestaoVitrineOpts = {
   usarEntrarNoAssunto?: boolean;
 };
 
-function linkEntrarNoAssunto(page: Page) {
+function linkEntrarNoAssunto(page: Page, tituloAssunto: string) {
   if (isMobileViewport(page)) {
-    return page
-      .getByTestId('vitrine-subject-sheet')
-      .getByRole('link', { name: 'Entrar no assunto' })
-      .first();
+    return vitrineSubjectSheet(page, tituloAssunto).getByRole('link', { name: 'Entrar no assunto' });
   }
   return page.getByRole('link', { name: 'Entrar no assunto' }).first();
 }
@@ -131,7 +133,7 @@ export async function abrirQuestaoViaVitrine(page: Page, opts: AbrirQuestaoVitri
     await Promise.all([page.waitForURL(opts.slugUrlPattern, waitOpts), cta.click()]);
   } else {
     await garantirPainelAssuntoAberto(page, opts.tituloAssunto);
-    const entrar = linkEntrarNoAssunto(page);
+    const entrar = linkEntrarNoAssunto(page, opts.tituloAssunto);
     await entrar.scrollIntoViewIfNeeded();
     await Promise.all([page.waitForURL(opts.slugUrlPattern, waitOpts), entrar.click()]);
   }

@@ -7,6 +7,7 @@ import {
 import {
   abrirQuestaoViaVitrine,
   garantirPainelAssuntoAberto,
+  vitrineSubjectSheet,
   waitVitrineListReady,
 } from './helpers/vitrineE2e';
 
@@ -20,8 +21,7 @@ async function gotoVitrineFiltrada(page: Page) {
 }
 
 function linkEntrarNoAssunto(page: Page) {
-  return page
-    .getByTestId('vitrine-subject-sheet')
+  return vitrineSubjectSheet(page, E2E_ESTUDAR_TITULO_AULA)
     .getByRole('link', { name: 'Entrar no assunto' })
     .or(
       page

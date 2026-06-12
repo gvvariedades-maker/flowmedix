@@ -136,11 +136,11 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
     await dismissWelcomeIfVisible(page);
     await expect(page.getByText(E2E_ESTUDAR_TITULO_AULA)).toBeVisible({ timeout: 15_000 });
 
-    const { garantirPainelAssuntoAberto } = await import('./helpers/vitrineE2e');
+    const { garantirPainelAssuntoAberto, vitrineSubjectSheet } = await import('./helpers/vitrineE2e');
     await garantirPainelAssuntoAberto(page, E2E_ESTUDAR_TITULO_AULA);
-    const entrar = page
-      .getByTestId('vitrine-subject-sheet')
-      .getByRole('link', { name: 'Entrar no assunto' });
+    const entrar = vitrineSubjectSheet(page, E2E_ESTUDAR_TITULO_AULA).getByRole('link', {
+      name: 'Entrar no assunto',
+    });
     await entrar.click();
     await expect(page.getByRole('dialog')).toBeVisible({ timeout: 45_000 });
 
@@ -200,10 +200,11 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
     const assuntoBtn = page.getByRole('button', { name: new RegExp(E2E_ESTUDAR_TITULO_AULA) });
     await assuntoBtn.click();
 
-    await expect(page.getByTestId('vitrine-subject-sheet')).toBeVisible({ timeout: 10_000 });
-    await expect(page.getByRole('link', { name: 'Entrar no assunto' })).toBeVisible();
+    const sheet = page.getByRole('dialog', { name: new RegExp(E2E_ESTUDAR_TITULO_AULA) });
+    await expect(sheet).toBeVisible({ timeout: 10_000 });
+    await expect(sheet.getByRole('link', { name: 'Entrar no assunto' })).toBeVisible();
 
     await page.keyboard.press('Escape');
-    await expect(page.getByTestId('vitrine-subject-sheet')).not.toBeVisible({ timeout: 5_000 });
+    await expect(sheet).not.toBeVisible({ timeout: 5_000 });
   });
 });
