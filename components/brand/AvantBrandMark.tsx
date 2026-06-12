@@ -1,4 +1,3 @@
-import { Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 type AvantBrandMarkProps = {
@@ -19,21 +18,25 @@ export function AvantBrandMark({
     <div className={cn('flex items-center gap-2.5', className)}>
       <div
         className={cn(
-          'flex shrink-0 items-center justify-center rounded-lg text-sm',
+          'flex shrink-0 items-center justify-center rounded-lg',
           isSm ? 'h-8 w-8' : 'h-8 w-8',
           editorial
-            ? 'bg-[#8fe020]/15 text-[#3d6b0f]'
+            ? 'bg-[#8fe020]'
             : 'bg-gradient-to-br from-[#3d35ff] to-[#7b2fff] shadow-[0_0_12px_rgba(61,53,255,0.3)]',
         )}
         aria-hidden
       >
-        <Zap
-          size={isSm ? 15 : 16}
-          strokeWidth={2.25}
-          fill="currentColor"
-          className="shrink-0"
-          aria-hidden
-        />
+        <span
+          className="select-none text-white"
+          style={{
+            fontFamily: 'var(--font-syne)',
+            fontWeight: 900,
+            fontSize: isSm ? 14 : 15,
+            lineHeight: 1,
+          }}
+        >
+          A
+        </span>
       </div>
       <span
         className={cn(

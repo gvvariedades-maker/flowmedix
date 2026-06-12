@@ -4,6 +4,7 @@ import { getMatriculatedConcursosCached, getVitrineInitialPayloadCached } from '
 import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import { getServerUser } from '@/lib/supabase/server-auth';
+import { getLastStudiedQuestaoCached } from '@/lib/vitrine/resume';
 import {
   parseVitrineListQuery,
   vitrineFacetsQueryKey,
@@ -13,7 +14,7 @@ import VitrineCatalogStatsSection from '@/components/vitrine/VitrineCatalogStats
 import VitrineCatalogStatsSkeleton from '@/components/vitrine/VitrineCatalogStatsSkeleton';
 import VitrineClient from '@/components/vitrine/VitrineClient';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
-import { getE2eEstudarVitrinePage } from '@/lib/e2e/estudarSeed';
+import { getE2eEstudarVitrinePage, getE2eVitrineResumeHint } from '@/lib/e2e/estudarSeed';
 
 /** Catálogo inicial no SSR (cache 2 min); cliente refetch em filtros/paginação. */
 export const dynamic = 'force-dynamic';
@@ -36,9 +37,14 @@ export default async function VitrinePage({
           initialPageData={initialPageData}
           initialFacetsData={initialPageData.facets}
           initialPayloadError={null}
+          initialResume={getE2eVitrineResumeHint()}
           ssrListQueryKey={vitrineListQueryKey(listQuery)}
           ssrFacetsQueryKey={vitrineFacetsQueryKey(listQuery.bancas)}
-        />
+        >
+          <Suspense fallback={<VitrineCatalogStatsSkeleton />}>
+            <VitrineCatalogStatsSection />
+          </Suspense>
+        </VitrineClient>
       </Suspense>
     );
   }
@@ -58,7 +64,7 @@ export default async function VitrinePage({
     bancas: listQuery.bancas.length ? listQuery.bancas : undefined,
   };
 
-  const [matriculatedConcursos, initialPayloadResult] = await Promise.all([
+  const [matriculatedConcursos, initialPayloadResult, initialResume] = await Promise.all([
     getMatriculatedConcursosCached(userId).catch((err) => {
       logger.warn('SSR vitrine: falha ao carregar concursos matriculados', {
         userId,
@@ -85,6 +91,13 @@ export default async function VitrinePage({
           error: 'Não foi possível carregar a vitrine. Tente novamente.',
         };
       }),
+    getLastStudiedQuestaoCached(userId).catch((err) => {
+      logger.warn('SSR vitrine: falha ao carregar resume hint', {
+        userId,
+        error: err instanceof Error ? err.message : String(err),
+      });
+      return null;
+    }),
   ]);
 
   const initialPageData = initialPayloadResult.payload?.page ?? null;
@@ -102,6 +115,7 @@ export default async function VitrinePage({
         initialPageData={initialPageData}
         initialFacetsData={initialFacetsData}
         initialPayloadError={initialPayloadError}
+        initialResume={initialResume}
         ssrListQueryKey={vitrineListQueryKey(listQuery)}
         ssrFacetsQueryKey={vitrineFacetsQueryKey(listQuery.bancas)}
       >

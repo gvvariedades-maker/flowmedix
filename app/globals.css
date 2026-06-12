@@ -82,10 +82,14 @@
    */
   html[data-theme='editorial'] {
     color-scheme: light;
-    --color-surface-0: #f8fafc;
-    --color-surface-1: #f1f5f9;
+    /* v2.1 soft slate — fundo não-branco; cards brancos com sombra (profundidade) */
+    --color-surface-0: #f1f5f9;
+    --color-surface-1: #e8edf4;
     --color-surface-2: #ffffff;
     --color-surface-3: #e2e8f0;
+    --shadow-editorial-sm: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+    --shadow-editorial-md: 0 4px 14px rgba(15, 23, 42, 0.1), 0 2px 4px rgba(15, 23, 42, 0.05);
+    --shadow-editorial-lg: 0 8px 24px rgba(15, 23, 42, 0.12), 0 4px 8px rgba(15, 23, 42, 0.05);
     --color-border-subtle: #e2e8f0;
     --color-border-default: #cbd5e1;
     --color-border-strong: #94a3b8;
@@ -108,20 +112,21 @@
     --color-warning-dim: rgba(217, 119, 6, 0.1);
     --color-warning-text: #b45309;
     --color-text-primary: #0f172a;
-    --color-text-secondary: #64748b;
+    /* Um tom mais escuro que slate-500 — AA em surface-0 #f1f5f9 */
+    --color-text-secondary: #475569;
     --color-text-tertiary: #94a3b8;
 
-    --background: 210 40% 98%;
+    --background: 210 40% 96%;
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
+    --muted: 214 32% 93%;
     --muted-foreground: 215 16% 47%;
-    --accent: 210 40% 96%;
+    --accent: 214 32% 93%;
     --accent-foreground: 222 47% 11%;
-    --secondary: 210 40% 96%;
+    --secondary: 214 32% 93%;
     --secondary-foreground: 222 47% 11%;
     --border: 214 32% 91%;
     --input: 214 32% 91%;
@@ -212,13 +217,13 @@
   }
 
   html[data-theme='editorial'] .dashboard-surface {
-    --background: 210 40% 98%;
+    --background: 210 40% 96%;
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
+    --muted: 214 32% 93%;
     --muted-foreground: 215 16% 47%;
     --accent: 210 40% 96%;
     --accent-foreground: 222 47% 11%;
@@ -272,13 +277,26 @@
 
   /* Editorial v2 — card e CTA (spike login) */
   .card-elevated {
-    @apply rounded-2xl border border-slate-200 bg-white shadow-sm;
-    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+    @apply rounded-2xl border border-slate-200 bg-white;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
   }
 
   .card-elevated-lg {
     @apply rounded-2xl border border-slate-200 bg-white;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1), 0 2px 4px rgba(15, 23, 42, 0.05);
+  }
+
+  /* Editorial v2.1 — cards flutuam sobre surface-0 cinza (profundidade, sem glow teal) */
+  html[data-theme='editorial'] .card-elevated {
+    background-color: var(--color-surface-2);
+    border-color: var(--color-border-subtle);
+    box-shadow: var(--shadow-editorial-sm);
+  }
+
+  html[data-theme='editorial'] .card-elevated-lg {
+    background-color: var(--color-surface-2);
+    border-color: var(--color-border-subtle);
+    box-shadow: var(--shadow-editorial-md);
   }
 
   .text-editorial-title {

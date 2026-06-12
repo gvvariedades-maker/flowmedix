@@ -1,6 +1,6 @@
 import { getCatalogStats } from '@/lib/cache';
 import { logger } from '@/lib/logger';
-import VitrineCatalogStats from '@/components/vitrine/VitrineCatalogStats';
+import VitrineCatalogStatsStrip from '@/components/vitrine/VitrineCatalogStatsStrip';
 
 export default async function VitrineCatalogStatsSection() {
   const catalogStats = await getCatalogStats().catch((err) => {
@@ -11,7 +11,7 @@ export default async function VitrineCatalogStatsSection() {
   });
 
   return (
-    <VitrineCatalogStats
+    <VitrineCatalogStatsStrip
       totalQuestions={catalogStats.totalQuestions}
       totalSlides={catalogStats.totalSlides}
     />

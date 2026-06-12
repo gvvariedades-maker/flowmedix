@@ -25,9 +25,9 @@ function contrastRatio(fg, bg) {
 }
 
 const PAIRS = [
-  { label: 'Texto primário / fundo app', fg: '#0f172a', bg: '#f8fafc', level: 'AA normal (4.5:1)' },
-  { label: 'Texto secundário / fundo app', fg: '#64748b', bg: '#f8fafc', level: 'AA normal (4.5:1)' },
-  { label: 'Texto terciário / fundo app', fg: '#94a3b8', bg: '#f8fafc', level: 'AA large/UI (3:1)' },
+  { label: 'Texto primário / fundo app', fg: '#0f172a', bg: '#f1f5f9', level: 'AA normal (4.5:1)' },
+  { label: 'Texto secundário / fundo app', fg: '#475569', bg: '#f1f5f9', level: 'AA normal (4.5:1)' },
+  { label: 'Texto terciário / fundo app', fg: '#94a3b8', bg: '#f1f5f9', level: 'AA large/UI (3:1)' },
   { label: 'Brand text / card branco', fg: '#3d6b0f', bg: '#ffffff', level: 'AA normal (4.5:1)' },
   { label: 'CTA label / botão brand', fg: '#1a2e05', bg: '#8fe020', level: 'AA normal (4.5:1)' },
   { label: 'Sucesso / card branco', fg: '#16a34a', bg: '#ffffff', level: 'AA normal (4.5:1)' },

@@ -17,6 +17,8 @@ Benchmark de interfaces para definir um design system **editorial premium** — 
 4. Registre notas 1–5 em [`scores/scorecard.csv`](./scores/scorecard.csv).
 5. Ao concluir as 15 referências + AVANT baseline: preencha [`relatorio/RELATORIO-EXECUTIVO.md`](./relatorio/RELATORIO-EXECUTIVO.md).
 6. Aprove tokens em [`tokens/AVANT-EDITORIAL-V2-DRAFT.md`](./tokens/AVANT-EDITORIAL-V2-DRAFT.md) antes de implementar em `app/globals.css`.
+7. Direção visual atual (híbrido editorial + cyber): [`tokens/AVANT-VISUAL-DIRECTION-v3.md`](./tokens/AVANT-VISUAL-DIRECTION-v3.md).
+8. Brief landing pública (Fase 8, síntese Estudei): [`LANDING-AVANT-v3.md`](./LANDING-AVANT-v3.md).
 
 ---
 

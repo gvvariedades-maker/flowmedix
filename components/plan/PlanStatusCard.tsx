@@ -60,25 +60,29 @@ function ProStatusStrip({
   return (
     <div
       role="status"
-      className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl border border-green-200 bg-green-50 px-3 py-2"
+      className="rounded-xl border border-green-200 bg-green-50 px-3 py-2.5"
     >
-      <span className="relative flex h-2 w-2 shrink-0">
-        {!reducedMotion ? (
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-60" />
-        ) : null}
-        <span
-          className="relative inline-flex h-2 w-2 rounded-full bg-green-600"
-          aria-label="Assinatura ativa"
-        />
-      </span>
-      <span className="font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-green-700">
-        Pro ativo
-      </span>
-      <span className="text-[10px] text-slate-500">· acesso completo</span>
-      {inviteExpiry ? (
-        <span className="w-full text-[10px] font-medium text-slate-500">
-          Convite até {inviteExpiry}
+      <div className="flex items-center gap-2">
+        <span className="relative flex h-2 w-2 shrink-0">
+          {!reducedMotion ? (
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-60" />
+          ) : null}
+          <span
+            className="relative inline-flex h-2 w-2 rounded-full bg-green-600"
+            aria-label="Assinatura ativa"
+          />
         </span>
+        <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-green-800">
+          PRO Ativo
+        </span>
+        <span className="ml-auto rounded-full bg-green-100 px-2 py-0.5 text-[10px] font-semibold text-green-700 ring-1 ring-green-200">
+          Acesso completo
+        </span>
+      </div>
+      {inviteExpiry ? (
+        <p className="mt-1.5 text-[10px] text-slate-400">
+          Convite válido até {inviteExpiry}
+        </p>
       ) : null}
     </div>
   );

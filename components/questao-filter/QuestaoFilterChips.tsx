@@ -1,6 +1,6 @@
 'use client';
 
-import { BookOpen, SlidersHorizontal, X } from 'lucide-react';
+import { BookOpen, ChevronDown, SlidersHorizontal, X } from 'lucide-react';
 import { multiFilterResumo } from '@/lib/questao-filter/multiFilterResumo';
 import { cn } from '@/lib/utils';
 
@@ -40,7 +40,7 @@ export function QuestaoFilterChips({
     'inline-flex min-h-[44px] shrink-0 items-center rounded-full border border-[rgba(143,224,32,0.35)] bg-[rgba(143,224,32,0.12)] text-xs font-medium text-[#3d6b0f]';
 
   const inactiveChipClass =
-    'inline-flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 transition-colors hover:border-slate-300 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50';
+    'inline-flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-medium text-slate-600 transition-colors hover:border-slate-300 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-50';
 
   return (
     <div
@@ -84,6 +84,7 @@ export function QuestaoFilterChips({
         >
           <SlidersHorizontal size={14} aria-hidden />
           Banca
+          <ChevronDown size={12} className="text-slate-400" aria-hidden />
         </button>
       )}
 
@@ -121,6 +122,7 @@ export function QuestaoFilterChips({
         >
           <BookOpen size={14} aria-hidden />
           Assunto
+          <ChevronDown size={12} className="text-slate-400" aria-hidden />
         </button>
       )}
 

@@ -307,3 +307,14 @@ export function buildE2eEstudarQuestaoPayload(
 
   return { status: 'ok', payload };
 }
+
+/** Hint fixo para card "Continuar" no bypass E2E da vitrine. */
+export function getE2eVitrineResumeHint() {
+  return {
+    moduloSlug: E2E_ESTUDAR_SLUG_1,
+    questaoSlug: E2E_ESTUDAR_SLUG_1,
+    tituloAula: E2E_ESTUDAR_TITULO_AULA,
+    avantCodigo: 900001,
+    studiedAt: '2026-01-15T10:00:00.000Z',
+  };
+}

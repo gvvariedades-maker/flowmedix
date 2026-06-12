@@ -9,9 +9,9 @@
 
 | Par | FG | BG | Ratio | AA normal (4.5:1) | AA large/UI (3:1) |
 |-----|----|----|-------|---------------------|-------------------|
-| Texto primário / fundo app | `#0f172a` | `#f8fafc` | **17.06:1** | PASS | PASS |
-| Texto secundário / fundo app | `#64748b` | `#f8fafc` | **4.55:1** | PASS | PASS |
-| Texto terciário / fundo app | `#94a3b8` | `#f8fafc` | 2.45:1 | FAIL | FAIL |
+| Texto primário / fundo app | `#0f172a` | `#f1f5f9` | **16.30:1** | PASS | PASS |
+| Texto secundário / fundo app | `#475569` | `#f1f5f9` | **6.92:1** | PASS | PASS |
+| Texto terciário / fundo app | `#94a3b8` | `#f1f5f9` | 2.34:1 | FAIL | FAIL |
 | Brand text / card branco | `#3d6b0f` | `#ffffff` | **6.35:1** | PASS | PASS |
 | CTA label / botão brand | `#1a2e05` | `#8fe020` | **8.94:1** | PASS | PASS |
 | Sucesso (token) / card branco | `#16a34a` | `#ffffff` | 3.30:1 | FAIL | PASS |
@@ -28,7 +28,7 @@
 ### Aprovado para produção (pares críticos)
 
 - Corpo e títulos: `--color-text-primary` em `--color-surface-0` / cards brancos.
-- Labels secundários: `--color-text-secondary` (4.55:1).
+- Labels secundários: `--color-text-secondary` `#475569` (6.92:1 em `#f1f5f9`).
 - CTA primário: `#1a2e05` sobre `#8fe020` (8.94:1).
 - Links/brand em texto: `--color-brand-text` `#3d6b0f`.
 - Erro: `--color-danger` `#dc2626` em fundo claro.

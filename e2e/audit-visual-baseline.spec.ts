@@ -11,8 +11,11 @@ import { test, expect, type Page } from '@playwright/test';
 import {
   E2E_ESTUDAR_BANCA,
   E2E_ESTUDAR_SLUG_1,
-  E2E_ESTUDAR_TITULO_AULA,
 } from '../lib/e2e/constants';
+import {
+  gotoVitrineE2e,
+  vitrineStableLocalStorageInitScript,
+} from './helpers/vitrineE2e';
 
 const OUT_DIR = path.join(process.cwd(), 'docs/auditoria-visual-v2/screenshots/avant-baseline');
 const BANCA_QUERY = encodeURIComponent(E2E_ESTUDAR_BANCA);
@@ -39,15 +42,8 @@ async function gotoAndSnap(page: Page, url: string, filename: string, fullPage =
   await snap(page, filename, fullPage);
 }
 
-async function waitVitrineListReady(page: Page) {
-  await expect(page.locator('[data-vitrine-slot-ready="true"]')).toBeAttached({ timeout: 30_000 });
-  await expect(page.locator('[data-vitrine-list-ready="true"]')).toBeAttached({ timeout: 30_000 });
-}
-
 async function gotoVitrine(page: Page) {
-  await page.goto(`/estudar?banca=${BANCA_QUERY}`, { waitUntil: 'domcontentloaded' });
-  await expect(page.getByText(E2E_ESTUDAR_TITULO_AULA)).toBeVisible({ timeout: 30_000 });
-  await waitVitrineListReady(page);
+  await gotoVitrineE2e(page, `banca=${BANCA_QUERY}`);
 }
 
 async function openPlayer(page: Page) {
@@ -104,6 +100,7 @@ test.describe('Auditoria visual — AVANT baseline desktop', () => {
   test.setTimeout(180_000);
 
   test.beforeEach(async ({ page }) => {
+    await page.addInitScript(vitrineStableLocalStorageInitScript());
     await page.setViewportSize({ width: 1440, height: 900 });
   });
 
@@ -143,6 +140,7 @@ test.describe('Auditoria visual — AVANT baseline mobile', () => {
   test.setTimeout(180_000);
 
   test.beforeEach(async ({ page }) => {
+    await page.addInitScript(vitrineStableLocalStorageInitScript());
     await page.setViewportSize({ width: 375, height: 812 });
   });
 

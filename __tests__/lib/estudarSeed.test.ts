@@ -17,7 +17,13 @@ describe('estudarSeed E2E', () => {
   });
 
   it('monta vitrine paginada com 13 assuntos e reflete page na paginação', () => {
-    const page1 = getE2eEstudarVitrinePage({ page: 1, bancas: [], assuntos: [] });
+    const page1 = getE2eEstudarVitrinePage({
+      page: 1,
+      bancas: [],
+      assuntos: [],
+      status: 'all',
+      view: 'grid',
+    });
     expect(page1.groups).toHaveLength(12);
     expect(page1.groups[0]?.firstSlug).toBe(E2E_ESTUDAR_SLUG_1);
     expect(page1.groups[0]?.questoes).toHaveLength(2);
@@ -25,7 +31,13 @@ describe('estudarSeed E2E', () => {
     expect(page1.pagination.totalGroups).toBe(13);
     expect(page1.pagination.totalPages).toBe(2);
 
-    const page2 = getE2eEstudarVitrinePage({ page: 2, bancas: [], assuntos: [] });
+    const page2 = getE2eEstudarVitrinePage({
+      page: 2,
+      bancas: [],
+      assuntos: [],
+      status: 'all',
+      view: 'grid',
+    });
     expect(page2.groups).toHaveLength(1);
     expect(page2.pagination.page).toBe(2);
     expect(page2.pagination.totalPages).toBe(2);

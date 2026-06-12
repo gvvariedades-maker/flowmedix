@@ -11,6 +11,8 @@ describe('parseVitrineListQuery', () => {
       bancas: [],
       assuntos: [],
       q: undefined,
+      status: 'all',
+      view: 'grid',
     });
   });
 
@@ -27,6 +29,24 @@ describe('parseVitrineListQuery', () => {
       bancas: ['FGV', 'CESPE'],
       assuntos: ['Urgências'],
       q: 'feridas',
+      status: 'all',
+      view: 'grid',
+    });
+  });
+
+  it('parseia status e view', () => {
+    expect(
+      parseVitrineListQuery({
+        status: 'pending',
+        view: 'compact',
+      }),
+    ).toEqual({
+      page: 1,
+      bancas: [],
+      assuntos: [],
+      q: undefined,
+      status: 'pending',
+      view: 'compact',
     });
   });
 });

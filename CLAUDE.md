@@ -172,9 +172,19 @@ const supabase = await createServerSupabase(); // exige SUPABASE_SERVICE_ROLE_KE
 
 ## 3. Design system
 
-Estética **Cyber Clinical**: precisão clínica, fundo escuro profundo, acentos neon, glassmorphism.
+O AVANT opera com **duas skins** (mesmos tokens semânticos, valores diferentes):
 
-### Fundo global
+| Skin | Onde | Estética |
+|------|------|----------|
+| **Editorial v2.1** | Login, dashboard, vitrine, player (enunciado), modais | Slate `#f1f5f9`, verde `#8fe020`, cards brancos com sombra |
+| **Cyber Clinical** | NeuroSlides/reverso fullscreen, landing, admin | Escuro `#010409`, cyan neon `#00f2ff`, glassmorphism |
+
+Ativação editorial: `useEditorialTheme()` → `html[data-theme='editorial']` em [`app/globals.css`](app/globals.css).  
+Escopo e screenshots: [`docs/auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md`](docs/auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md).  
+Direção visual v3 (Clinical Study): [`docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md`](docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md).  
+Polish de UI no app: skill [`.cursor/skills/avant-ui-visual/SKILL.md`](.cursor/skills/avant-ui-visual/SKILL.md).
+
+### Fundo global (Cyber — `:root`)
 
 - Cor base: `#010409` (`--color-surface-0`)
 - Listras diagonais fixas em `html`/`body` — `main` e `section` devem ser **transparentes** para o padrão aparecer
@@ -204,6 +214,16 @@ Estética **Cyber Clinical**: precisão clínica, fundo escuro profundo, acentos
 | `.bg-glow-main` | Glow radial de fundo (decorativo) |
 | `.dashboard-surface` | Tokens shadcn para área logada escura |
 | `.pb-safe` / `.pt-safe` | Safe area iOS (notch/home indicator) |
+
+### Classes utilitárias (Editorial v2 — `data-theme='editorial'`)
+
+| Classe | Efeito |
+|--------|--------|
+| `.card-elevated` / `.card-elevated-lg` | Card branco, borda `slate-200`, sombra sutil |
+| `.btn-editorial-primary` | CTA verde `#8fe020`, label escuro |
+| `.btn-editorial-outline` | Secundário branco/slate |
+| `.btn-option-editorial` | Alternativa no player (hover verde suave) |
+| `.card-success-editorial` | Feedback de acerto no fluxo editorial |
 
 ### Padrão Tailwind recorrente (slides/player)
 
@@ -686,6 +706,17 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 | [`DEPLOY.md`](docs/DEPLOY.md) / [`DEPLOY_CHECKLIST.md`](DEPLOY_CHECKLIST.md) | Deploy |
 | [`TESTES_QUICK_START.md`](docs/TESTES_QUICK_START.md) | Jest e Playwright |
 | [`ZOOM_MOBILE_POLICY.md`](docs/ZOOM_MOBILE_POLICY.md) | Pinch vs toolbar A+/A− no mobile (Modelos A/B/E) |
+| [`auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md`](docs/auditoria-visual-v2/plataformas/D2-avant-editorial-v2.md) | Rebrand editorial — escopo, telhas T1–T11, WCAG |
+| [`auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md`](docs/auditoria-visual-v2/tokens/AVANT-VISUAL-DIRECTION-v3.md) | Direção visual v3 — Clinical Study, paleta híbrida, mapeamento skills |
+| [`auditoria-visual-v2/LANDING-AVANT-v3.md`](docs/auditoria-visual-v2/LANDING-AVANT-v3.md) | Brief landing `/` — síntese Estudei, seções, tokens, Fase 8 |
+
+### Skills Cursor (projeto)
+
+| Skill | Quando usar |
+|-------|-------------|
+| [`.cursor/skills/avant-ui-visual/SKILL.md`](.cursor/skills/avant-ui-visual/SKILL.md) | Melhorar visual de componentes/telas (vitrine, player, dashboard); tokens editorial + cyber |
+| [`.cursor/skills/avant-json-template/SKILL.md`](.cursor/skills/avant-json-template/SKILL.md) | Gerar/editar JSON de questões e NeuroSlides |
+| [`.cursor/skills/ebook-enfermagem-premium/SKILL.md`](.cursor/skills/ebook-enfermagem-premium/SKILL.md) | Ebooks HTML offline (fora do app Next) |
 
 ### Regras Cursor (não duplicar aqui)
 

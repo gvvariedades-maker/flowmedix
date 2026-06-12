@@ -15,10 +15,11 @@ describe('VitrinePaginationBar', () => {
     );
 
     const nav = container.querySelector('nav');
-    expect(nav).toHaveClass('flex', 'flex-col', 'border-t', 'border-slate-200');
+    expect(nav).toHaveClass('flex', 'border-t', 'border-slate-200');
     expect(nav).not.toHaveClass('fixed', 'hidden');
     expect(screen.getByTestId('vitrine-pagination-prev')).toBeInTheDocument();
     expect(screen.getByTestId('vitrine-pagination-next')).toBeInTheDocument();
+    expect(screen.getByTestId('vitrine-pagination-pill')).toHaveTextContent('2 / 5');
   });
 
   it('desabilita botões e marca aria-busy quando listBusy', () => {

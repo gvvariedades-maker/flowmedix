@@ -1,10 +1,10 @@
 'use client';
 
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
-import { Filter } from 'lucide-react';
-import { MultiCheckboxFilter } from '@/components/ui/MultiCheckboxFilter';
 import { QuestaoSearchInput } from '@/components/questao-filter/QuestaoSearchInput';
+import { QuestaoFilterChipsRow } from '@/components/questao-filter/QuestaoFilterChipsRow';
 import { QuestaoFilterChips } from '@/components/questao-filter/QuestaoFilterChips';
+import { MultiCheckboxFilter } from '@/components/ui/MultiCheckboxFilter';
 import { deriveFacetsFromModulos, useQuestaoFacets } from '@/components/questao-filter/useQuestaoFacets';
 import type { VitrineFacets } from '@/lib/vitrine/types';
 import { cn } from '@/lib/utils';
@@ -179,48 +179,27 @@ export function QuestaoFilterBar({
   }
 
   return (
-    <section className={cn('space-y-4', className)} aria-label="Filtros da vitrine">
-      <div className="flex items-center gap-2 text-muted-foreground">
-        <Filter size={16} aria-hidden />
-        <span className="text-xs font-medium uppercase tracking-wider">Filtros</span>
-      </div>
+    <section className={cn('space-y-3', className)} aria-label="Filtros da vitrine">
+      <span className="sr-only">Filtros</span>
       {showSearchField ? (
         <QuestaoSearchInput variant="vitrine" value={searchTerm} onChange={onSearchChange} />
       ) : null}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <MultiCheckboxFilter
-          emptyLabel="Todas as bancas"
-          searchPlaceholder="Buscar banca..."
-          addButtonLabel="Adicionar banca"
-          sheetTitle="Adicionar banca"
-          emptySearchLabel="Nenhuma banca encontrada"
-          options={facets.bancas}
-          value={bancasSelected}
-          disabled={facetsLoading && facets.bancas.length === 0}
-          onChange={onBancasChange}
-        />
-        <MultiCheckboxFilter
-          emptyLabel="Todos os assuntos"
-          searchPlaceholder="Buscar assunto..."
-          addButtonLabel="Adicionar assunto"
-          sheetTitle="Adicionar assunto"
-          emptySearchLabel="Nenhum assunto encontrado"
-          contentMinWidth="min-w-[240px]"
-          options={facets.assuntos}
-          value={assuntosSelected}
-          disabled={facetsLoading && facets.assuntos.length === 0}
-          onChange={onAssuntosChange}
-        />
-      </div>
-      {(bancasSelected.length > 0 || assuntosSelected.length > 0) && (
-        <button
-          type="button"
-          onClick={showSearchField ? clearAll : clearFilterSelections}
-          className="text-xs font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
-        >
-          Limpar filtros
-        </button>
-      )}
+      <QuestaoFilterChipsRow
+        bancasSelected={bancasSelected}
+        assuntosSelected={assuntosSelected}
+        searchTerm={searchTerm}
+        facets={facets}
+        facetsLoading={facetsLoading}
+        bancaSheetOpen={bancaSheetOpen}
+        assuntoSheetOpen={assuntoSheetOpen}
+        onBancaSheetOpenChange={setBancaSheetOpen}
+        onAssuntoSheetOpenChange={setAssuntoSheetOpen}
+        onBancasChange={onBancasChange}
+        onAssuntosChange={onAssuntosChange}
+        onClearBancas={() => onBancasChange([])}
+        onClearAssuntos={() => onAssuntosChange([])}
+        onClearAll={clearAll}
+      />
       {footer}
     </section>
   );

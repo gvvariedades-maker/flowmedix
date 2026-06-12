@@ -3,6 +3,7 @@
 import { forwardRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 export type VitrinePaginationBarProps = {
   pagina: number;
@@ -32,35 +33,56 @@ export const VitrinePaginationBar = forwardRef<HTMLElement, VitrinePaginationBar
     return (
       <nav
         ref={ref}
-        className="mt-6 flex flex-col gap-3 border-t border-slate-200 pt-4 pb-4 sm:flex-row sm:items-center sm:justify-between sm:pb-0"
+        className="mt-6 flex flex-col gap-3 border-t border-slate-200 pt-4 pb-4 md:flex-row md:items-center md:justify-between md:pb-0"
         aria-label="Paginação da vitrine"
         aria-busy={listBusy || undefined}
       >
-        <p className="order-2 text-center text-xs font-medium text-slate-500 sm:order-1 sm:text-left">
+        <p className="hidden text-xs font-medium text-slate-500 md:block">
           Página {pageLabel} de {totalPaginas}
         </p>
-        <div className="order-1 flex items-center gap-2 sm:order-2 sm:ml-auto">
+
+        <div className="flex items-center justify-center gap-2 md:ml-auto">
           <Button
             type="button"
             variant="outline"
             disabled={prevDisabled}
             onClick={onPrev}
             data-testid="vitrine-pagination-prev"
-            className="min-h-[44px] flex-1 rounded-xl border-slate-200 sm:h-11 sm:flex-none"
+            aria-label="Anterior"
+            className={cn(
+              'min-h-[44px] rounded-xl border-slate-200 md:h-11',
+              'h-11 w-11 shrink-0 p-0 md:w-auto md:px-4',
+            )}
           >
-            <ChevronLeft size={18} className="mr-1" aria-hidden />
-            Anterior
+            <ChevronLeft size={18} aria-hidden />
+            <span className="hidden md:inline">
+              <span className="ml-1">Anterior</span>
+            </span>
           </Button>
+
+          <span
+            data-testid="vitrine-pagination-pill"
+            className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold tabular-nums text-slate-700 md:hidden"
+          >
+            {pageLabel} / {totalPaginas}
+          </span>
+
           <Button
             type="button"
             variant="outline"
             disabled={nextDisabled}
             onClick={onNext}
             data-testid="vitrine-pagination-next"
-            className="min-h-[44px] flex-1 rounded-xl border-slate-200 sm:h-11 sm:flex-none"
+            aria-label="Próxima"
+            className={cn(
+              'min-h-[44px] rounded-xl border-slate-200 md:h-11',
+              'h-11 w-11 shrink-0 p-0 md:w-auto md:px-4',
+            )}
           >
-            Próxima
-            <ChevronRight size={18} className="ml-1" aria-hidden />
+            <span className="hidden md:inline">
+              <span className="mr-1">Próxima</span>
+            </span>
+            <ChevronRight size={18} aria-hidden />
           </Button>
         </div>
       </nav>

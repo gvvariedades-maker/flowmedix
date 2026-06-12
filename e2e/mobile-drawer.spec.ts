@@ -188,4 +188,22 @@ test.describe('Dashboard — drawer mobile (Mais)', () => {
     await nav.getByText('Suporte', { exact: true }).scrollIntoViewIfNeeded();
     await expect(nav.getByRole('button', { name: 'WhatsApp' })).toBeVisible();
   });
+
+  test('D12 — vitrine: expandir assunto abre subject sheet', async ({ page }) => {
+    const { E2E_ESTUDAR_BANCA, E2E_ESTUDAR_TITULO_AULA } = await import('../lib/e2e/constants');
+    const bancaQuery = encodeURIComponent(E2E_ESTUDAR_BANCA);
+    await page.goto(`/estudar?banca=${bancaQuery}`, { waitUntil: 'domcontentloaded' });
+    await dismissWelcomeIfVisible(page);
+    await expect(page.getByText(E2E_ESTUDAR_TITULO_AULA)).toBeVisible({ timeout: 15_000 });
+    await expect(page.locator('[data-vitrine-list-ready="true"]')).toBeAttached({ timeout: 15_000 });
+
+    const assuntoBtn = page.getByRole('button', { name: new RegExp(E2E_ESTUDAR_TITULO_AULA) });
+    await assuntoBtn.click();
+
+    await expect(page.getByTestId('vitrine-subject-sheet')).toBeVisible({ timeout: 10_000 });
+    await expect(page.getByRole('link', { name: 'Entrar no assunto' })).toBeVisible();
+
+    await page.keyboard.press('Escape');
+    await expect(page.getByTestId('vitrine-subject-sheet')).not.toBeVisible({ timeout: 5_000 });
+  });
 });

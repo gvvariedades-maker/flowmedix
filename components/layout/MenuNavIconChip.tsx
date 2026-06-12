@@ -41,9 +41,9 @@ export const MENU_ACCENT_STYLES: Record<
   }
 > = {
   brand: {
-    chip: 'bg-[#8fe020]/10',
+    chip: 'bg-slate-100',
     chipActive: 'bg-[#8fe020]/18',
-    icon: 'text-[#3d6b0f]/75',
+    icon: 'text-slate-500',
     iconActive: 'text-[#3d6b0f]',
     glow: 'shadow-sm',
     rowActive: 'bg-[#8fe020]/10',

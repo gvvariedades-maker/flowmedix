@@ -29,9 +29,9 @@ export const AVANT_LOGO_BOLT = {
 } as const;
 
 export const AVANT_LOGO_COLORS = {
-  iconGradientStart: '#3018c8',
-  iconGradientEnd: '#180c80',
-  iconSheen: 'rgba(255,255,255,0.12)',
+  iconGradientStart: '#8fe020',
+  iconGradientEnd: '#58b800',
+  iconSheen: 'rgba(255,255,255,0.18)',
   boltHighlight: 'rgba(255,255,255,0.15)',
   lockupInnerBg: '#0d0d18',
   accentBar: '#8fe020',
@@ -48,7 +48,7 @@ export const AVANT_LOGO_GRADIENTS = {
   wordmark: 'linear-gradient(90deg, #d8ff70 0%, #8fe020 48%, #c0f040 100%)',
   wordmarkStops: ['#d8ff70', '#8fe020', '#c0f040'] as const,
   shellBorder:
-    'linear-gradient(145deg, rgba(143, 224, 32, 0.55) 0%, rgba(48, 24, 200, 0.45) 100%)',
+    'linear-gradient(145deg, rgba(143, 224, 32, 0.65) 0%, rgba(88, 184, 0, 0.55) 100%)',
 } as const;
 
 /** Dimensões em px na escala 1 (lg). Aplicar `scaleAvantLogoPx` por `size`. */
