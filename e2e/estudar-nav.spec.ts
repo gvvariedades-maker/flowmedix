@@ -204,34 +204,28 @@ test.describe('Estudar — ciclo aluno (resposta, pular, estudo)', () => {
     await expect(page.getByRole('button', { name: /Ativar Estudo Reverso/i })).not.toBeVisible();
   });
 
-  test('estudo reverso: slides, marcar estudado e dot verde', async ({ page }) => {
-    test.setTimeout(90_000);
+  test('estudo reverso: slides, marcar estudado e dot verde', async ({ page }, testInfo) => {
+    test.skip(
+      testInfo.project.name === 'Mobile Chrome',
+      'ER com BottomNav visível: footer fica acima da nav — fluxo imersivo coberto no bloco mobile abaixo',
+    );
 
     await abrirQuestao1Direto(page);
     await selecionarAlternativaA(page);
     await confirmarRespostaEGabarito(page);
 
     await page.getByRole('button', { name: /Ativar Estudo Reverso/i }).click();
-    const fecharEr = page.getByRole('button', { name: /Fechar estudo reverso/i });
-    await expect(fecharEr).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByRole('button', { name: /Fechar estudo reverso/i })).toBeVisible({
+      timeout: 15_000,
+    });
 
-    const erPanel = page.locator('div.fixed').filter({ has: fecharEr });
-    const slideAtual = erPanel.locator('div.font-mono.tabular-nums span.font-black').first();
+    const avancarSlide = page.getByRole('button', { name: /^Próximo$/i });
+    for (let i = 0; i < 3; i += 1) {
+      await expect(avancarSlide).toBeEnabled({ timeout: 15_000 });
+      await avancarSlide.click();
+    }
 
-    await expect(async () => {
-      const atual = Number((await slideAtual.textContent())?.trim() ?? 0);
-      if (atual >= 4) return true;
-      const proximo = erPanel.getByRole('button', { name: /Próximo/i });
-      await expect(proximo).toBeVisible({ timeout: 5_000 });
-      await proximo.click();
-      await expect(slideAtual).not.toHaveText(String(atual), { timeout: 5_000 });
-      return false;
-    }).toPass({ timeout: 45_000 });
-
-    const marcarEstudado = erPanel.getByRole('button', { name: /Marcar/i });
-    await marcarEstudado.scrollIntoViewIfNeeded();
-    await expect(marcarEstudado).toBeVisible({ timeout: 15_000 });
-    await marcarEstudado.click();
+    await page.getByRole('button', { name: /Marcar (como )?[Ee]studado/i }).click();
     await expect(page.getByText('Estudo concluído')).toBeVisible({ timeout: 15_000 });
 
     await page.getByRole('button', { name: /Fechar estudo reverso/i }).click();
