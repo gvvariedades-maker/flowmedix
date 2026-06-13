@@ -58,6 +58,20 @@ describe('dangerZoneLayout', () => {
     );
   });
 
+  it('molde norm-reveal vence auto-compare quando fallback é norm-reveal', () => {
+    const slide = {
+      items: [{ label: 'Trap', detail: 'X', correct: 'Conduta certa' }],
+    };
+    expect(resolveDangerZoneLayoutVariant(slide, undefined, 'norm-reveal')).toBe('norm-reveal');
+  });
+
+  it('molde scope-trap vence auto-compare quando fallback é scope-trap', () => {
+    const slide = {
+      items: [{ label: 'Trap', detail: 'X', correct: 'Conduta certa' }],
+    };
+    expect(resolveDangerZoneLayoutVariant(slide, undefined, 'scope-trap')).toBe('scope-trap');
+  });
+
   it('correct vence mapa compact quando layout_variant não está no JSON', () => {
     const slide = {
       items: [{ label: 'Trap', detail: 'X', correct: 'Conduta certa' }],

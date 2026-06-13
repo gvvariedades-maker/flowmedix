@@ -178,9 +178,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'noções de fisiologia': { template: 'cyan', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
   'fisiologia': { template: 'cyan', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
 
-  // ---- Processo de Enfermagem / SAE (piloto premium) ----
-  'processo de enfermagem': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
-  'sae': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
+  // ---- Processo de Enfermagem / SAE (golden: sae-responsibility-matrix · reference_table · cards · norm-reveal) ----
+  'processo de enfermagem': { template: 'violet', conceptMap: 'sae-responsibility-matrix', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'norm-reveal' },
+  'sae': { template: 'violet', conceptMap: 'sae-responsibility-matrix', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'norm-reveal' },
   'sistematização da assistência de enfermagem': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
   'fundamentos de enfermagem': { template: 'indigo', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
 
@@ -282,10 +282,10 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'vigilância epidemiológica': { template: 'lime', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
   'saúde pública': { template: 'teal', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
 
-  // ---- Promoção à Saúde (piloto premium) ----
-  'promoção à saúde e prevenção de agravos': { template: 'emerald', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
-  'promoção à saúde': { template: 'emerald', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
-  'prevenção de agravos': { template: 'emerald', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
+  // ---- Promoção à Saúde (golden: sus-art4-orbit · reference_table · cards · scope-trap) ----
+  'promoção à saúde e prevenção de agravos': { template: 'emerald', conceptMap: 'sus-art4-orbit', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'scope-trap' },
+  'promoção à saúde': { template: 'emerald', conceptMap: 'sus-art4-orbit', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'scope-trap' },
+  'prevenção de agravos': { template: 'emerald', conceptMap: 'sus-art4-orbit', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'scope-trap' },
 
   // ---- Imunização (golden: vaccine-timeline · reference_table · cards · calendar-mismatch) ----
   'imunização': { template: 'lime', conceptMap: 'vaccine-timeline', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'calendar-mismatch' },

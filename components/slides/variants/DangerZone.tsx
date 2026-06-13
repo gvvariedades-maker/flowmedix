@@ -11,6 +11,8 @@ import type { LogicFlowRevealMode } from './logicFlowReveal';
 import { useDangerZoneCompareReveal } from './dangerZoneReveal';
 import { DangerZoneTrapReveal } from './DangerZoneTrapReveal';
 import { DangerZoneCalendarMismatch } from './DangerZoneCalendarMismatch';
+import { DangerZoneNormReveal } from './DangerZoneNormReveal';
+import { DangerZoneScopeTrap } from './DangerZoneScopeTrap';
 
 export interface DangerZoneItem {
   id?: string;
@@ -333,6 +335,30 @@ export const DangerZone = ({
   if (explicitVariant === 'calendar-mismatch' && items && items.length > 0) {
     return (
       <DangerZoneCalendarMismatch
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'norm-reveal' && items && items.length > 0) {
+    return (
+      <DangerZoneNormReveal
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'scope-trap' && items && items.length > 0) {
+    return (
+      <DangerZoneScopeTrap
         content={content}
         items={items}
         theme={theme}

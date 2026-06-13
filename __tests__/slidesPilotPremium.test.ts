@@ -102,7 +102,11 @@ describe('piloto premium — goldens de subtópico', () => {
           ? 'trap-reveal'
           : subtopico === 'Imunização'
             ? 'calendar-mismatch'
-            : 'compare';
+            : subtopico === 'Processo de Enfermagem'
+              ? 'norm-reveal'
+              : subtopico === 'Promoção à Saúde e Prevenção de Agravos'
+                ? 'scope-trap'
+                : 'compare';
       expect(
         resolveDangerZoneLayoutVariant(danger, danger.layout_variant, mapVariant),
       ).toBe(expected);

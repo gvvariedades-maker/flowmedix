@@ -7,6 +7,10 @@ import { ProcedureProtocolConceptMap } from '../variants/ProcedureProtocolConcep
 import { VitalsPanelConceptMap } from '../variants/VitalsPanelConceptMap';
 import { SurvivalChainConceptMap } from '../variants/SurvivalChainConceptMap';
 import { VaccineTimelineConceptMap } from '../variants/VaccineTimelineConceptMap';
+import { SaeDocumentationConceptMap } from '../variants/SaeDocumentationConceptMap';
+import { SaeResponsibilityMatrix } from '../variants/SaeResponsibilityMatrix';
+import { SusLegalPillarsConceptMap } from '../variants/SusLegalPillarsConceptMap';
+import { SusArt4OrbitConceptMap } from '../variants/SusArt4OrbitConceptMap';
 import { GoldenRule } from '../variants/GoldenRule';
 import { DangerZone } from '../variants/DangerZone';
 import { LogicFlow } from '../variants/LogicFlow';
@@ -93,6 +97,18 @@ export const NeuroSlideHub = ({
       }
       if (layoutVariant === 'vaccine-timeline') {
         return <VaccineTimelineConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'sae-documentation') {
+        return <SaeDocumentationConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'sae-responsibility-matrix') {
+        return <SaeResponsibilityMatrix concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'sus-legal-pillars') {
+        return <SusLegalPillarsConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'sus-art4-orbit') {
+        return <SusArt4OrbitConceptMap concepts={getConcepts()} theme={theme} />;
       }
       return <ConceptMap concepts={getConcepts()} theme={theme} layoutVariant={layoutVariant} />;
     case 'golden_rule':

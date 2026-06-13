@@ -41,8 +41,7 @@
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "layout_variant": "morphological",
-      "slide_title": "Mapa da prova — composição legal do SUS",
+      "slide_title": "SUS — composição legal (Art. 4º)",
       "meta": {
         "topico": "Saúde Pública",
         "subtopico": "Promoção à Saúde e Prevenção de Agravos"
@@ -93,8 +92,6 @@
     },
     {
       "type": "golden_rule",
-      "layout_variant": "reference_table",
-      "template": "t04",
       "slide_title": "Referência de prova — Art. 4º e entorno",
       "meta": {
         "topico": "Saúde Pública",
@@ -167,7 +164,6 @@
     },
     {
       "type": "logic_flow",
-      "layout_variant": "cards",
       "reveal_mode": "tap",
       "meta": {
         "topico": "Saúde Pública",
@@ -192,56 +188,55 @@
     },
     {
       "type": "danger_zone",
-      "layout_variant": "compare",
       "bullet_style": "x_icon",
       "meta": {
         "topico": "Saúde Pública",
         "subtopico": "Promoção à Saúde e Prevenção de Agravos"
       },
-      "content": "PEGADINHAS DE CONCURSO — NÃO REPETIR EM OUTRAS QUESTÕES DE SUS",
+      "content": "PEGADINHAS CESGRANRIO — RECORTES DO ART. 4º",
       "items": [
         {
           "label": "Letra A — recorte hospitalar",
-          "detail": "Troca “ações e serviços” por “serviços hospitalares” e rede básica/referência — restringe o SUS a um segmento.",
+          "detail": "Viola A+S: troca “ações e serviços” por “serviços hospitalares” — restringe o SUS a um segmento.",
           "correct": "Art. 4º exige ações e serviços em sentido amplo — não só hospital."
         },
         {
           "label": "Letra B — recorte da APS",
-          "detail": "Limita à atenção básica e ainda exclui odontologia especializada e conveniadas — inventa exclusões.",
+          "detail": "Viola A+S e 3E: limita à atenção básica e inventa exclusões (odonto, conveniadas).",
           "correct": "Composição legal não restringe o SUS à APS nem exclui odonto como a alternativa sugere."
         },
         {
           "label": "Letra D — média/alta + só direta",
-          "detail": "Corta atenção básica e elimina administração indireta — dois erros clássicos em uma frase.",
+          "detail": "Viola 3E e D+I: corta atenção básica e elimina administração indireta.",
           "correct": "Art. 4º inclui todos os níveis de atenção na lógica de ações/serviços e exige direta + indireta."
         },
         {
           "label": "Letra E — exclui pesquisa e insumos",
-          "detail": "Acrescenta exclusão de pesquisa e produção de insumos/medicamentos — limitação não presente no Art. 4º.",
+          "detail": "Viola A+S: acrescenta exclusão de pesquisa e produção de insumos — limitação não prevista no Art. 4º.",
           "correct": "Gabarito legal não exclui essas ações quando integradas ao setor público de saúde."
         },
         {
           "label": "Confundir CF com Lei 8.080",
-          "detail": "Enunciado cita universalidade/integralidade (CF), mas a pergunta é sobre composição na Lei Orgânica.",
+          "detail": "Transferência: enunciado cita universalidade/integralidade (CF), mas a pergunta é composição na Lei Orgânica.",
           "correct": "Responda pelo Art. 4º da 8.080 — princípios contextualizam, não substituem a definição legal."
         },
         {
           "label": "Confundir 8.080 com 8.142",
-          "detail": "Em outras questões, a banca mistura participação social (8.142) com organização do sistema (8.080).",
+          "detail": "Transferência: em outras questões, a banca mistura participação social (8.142) com organização do sistema (8.080).",
           "correct": "8.080 = organização e diretrizes; 8.142 = conselhos e participação — não troque de lei."
         },
         {
           "label": "Achar que “público” inclui privado",
-          "detail": "Art. 4º fala em órgãos e instituições públicas — complementaridade privada é regime jurídico distinto.",
+          "detail": "Transferência: Art. 4º fala em órgãos e instituições públicas — complementaridade privada é regime distinto.",
           "correct": "Composição do SUS no Art. 4º = setor público (direta, indireta, fundações)."
         },
         {
           "label": "Marcar a alternativa “menor”",
-          "detail": "Instinto de escolher a opção mais curta ou “menos exagerada” — Cesgranrio prefere literalidade ampla.",
+          "detail": "Transferência: instinto de escolher a opção mais curta — Cesgranrio prefere literalidade ampla.",
           "correct": "Quando a questão pede definição legal, a alternativa fiel ao dispositivo (C) prevalece."
         }
       ],
-      "footer_rule": "Transferência: em qualquer questão “o que compõe o SUS”, aplique os 4 blocos do Art. 4º — recorte ou exclusão = distrator"
+      "footer_rule": "4 blocos do Art. 4º: A+S · 3E · D+I · FND — recorte ou exclusão = distrator"
     }
   ]
 }

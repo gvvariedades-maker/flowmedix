@@ -244,4 +244,76 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('calendar-mismatch');
     expect(result.bulletStyle).toBe('x_icon');
   });
+
+  it('Processo de Enfermagem: concept_map sae-responsibility-matrix no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Processo de Enfermagem' },
+        items: [
+          { label: 'Anotação', detail: '1', icon: 'FileText' },
+          { label: 'Privativo', detail: 'diagnóstico', icon: 'UserCheck' },
+          { label: 'COFEN', detail: '2', icon: 'Scale' },
+        ],
+      },
+      {
+        questionSlug: 'fepese-sae-1',
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('sae-responsibility-matrix');
+  });
+
+  it('Processo de Enfermagem: danger_zone norm-reveal com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Processo de Enfermagem' },
+        content: 'Pegadinhas',
+        items: [{ label: 'Erro', detail: 'Viola identificação', correct: 'Certo' }],
+      },
+      {
+        questionSlug: 'fepese-sae-1',
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('norm-reveal');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
+
+  it('Promoção à Saúde: concept_map sus-art4-orbit no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Promoção à Saúde e Prevenção de Agravos' },
+        items: [
+          { label: 'Lei 8.080', detail: '1', icon: 'Scale' },
+          { label: 'Ações + serviços', detail: '2', icon: 'Layers' },
+          { label: 'Esferas', detail: '3', icon: 'Landmark' },
+        ],
+      },
+      {
+        questionSlug: 'sus-8080-1',
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('sus-art4-orbit');
+  });
+
+  it('Promoção à Saúde: danger_zone scope-trap com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Promoção à Saúde e Prevenção de Agravos' },
+        content: 'Pegadinhas',
+        items: [{ label: 'Letra A — recorte', detail: 'Viola A+S', correct: 'Art. 4º' }],
+      },
+      {
+        questionSlug: 'sus-8080-1',
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('scope-trap');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
 });

@@ -13,6 +13,12 @@ export { ProcedureProtocolConceptMap } from './variants/ProcedureProtocolConcept
 export { VitalsPanelConceptMap } from './variants/VitalsPanelConceptMap';
 export { SurvivalChainConceptMap } from './variants/SurvivalChainConceptMap';
 export { VaccineTimelineConceptMap } from './variants/VaccineTimelineConceptMap';
+export { SaeDocumentationConceptMap } from './variants/SaeDocumentationConceptMap';
+export { SaeResponsibilityMatrix } from './variants/SaeResponsibilityMatrix';
+export { SusLegalPillarsConceptMap } from './variants/SusLegalPillarsConceptMap';
+export { SusArt4OrbitConceptMap } from './variants/SusArt4OrbitConceptMap';
+export { DangerZoneScopeTrap } from './variants/DangerZoneScopeTrap';
+export { DangerZoneNormReveal } from './variants/DangerZoneNormReveal';
 export { GoldenRule } from './variants/GoldenRule';
 export { DangerZone } from './variants/DangerZone';
 export { DangerZoneTrapReveal } from './variants/DangerZoneTrapReveal';

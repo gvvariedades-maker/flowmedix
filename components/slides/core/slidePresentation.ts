@@ -149,7 +149,9 @@ export function resolveSlidePresentation(
     (slideType === 'danger_zone' &&
     (layoutVariant === 'compare' ||
       layoutVariant === 'trap-reveal' ||
-      layoutVariant === 'calendar-mismatch')
+      layoutVariant === 'calendar-mismatch' ||
+      layoutVariant === 'norm-reveal' ||
+      layoutVariant === 'scope-trap')
       ? 'x_icon'
       : 'numbered');
 
