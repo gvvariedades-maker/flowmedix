@@ -6,6 +6,7 @@ import { MorphologicalConceptMap } from '../variants/MorphologicalConceptMap';
 import { ProcedureProtocolConceptMap } from '../variants/ProcedureProtocolConceptMap';
 import { VitalsPanelConceptMap } from '../variants/VitalsPanelConceptMap';
 import { SurvivalChainConceptMap } from '../variants/SurvivalChainConceptMap';
+import { VaccineTimelineConceptMap } from '../variants/VaccineTimelineConceptMap';
 import { GoldenRule } from '../variants/GoldenRule';
 import { DangerZone } from '../variants/DangerZone';
 import { LogicFlow } from '../variants/LogicFlow';
@@ -89,6 +90,9 @@ export const NeuroSlideHub = ({
       }
       if (layoutVariant === 'survival-chain') {
         return <SurvivalChainConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'vaccine-timeline') {
+        return <VaccineTimelineConceptMap concepts={getConcepts()} theme={theme} />;
       }
       return <ConceptMap concepts={getConcepts()} theme={theme} layoutVariant={layoutVariant} />;
     case 'golden_rule':

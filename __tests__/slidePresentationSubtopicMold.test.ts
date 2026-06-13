@@ -208,4 +208,40 @@ describe('slidePresentation — molde por subtópico', () => {
     );
     expect(result.layoutVariant).toBe('vertical');
   });
+
+  it('Imunização: concept_map vaccine-timeline no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Imunização' },
+        items: [
+          { label: 'Marco', detail: '3 meses', icon: 'Calendar' },
+          { label: 'Men C', detail: '1', icon: 'Syringe' },
+          { label: 'BCG', detail: '2', icon: 'Baby' },
+        ],
+      },
+      {
+        questionSlug: 'fundatec-meningo-1',
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('vaccine-timeline');
+  });
+
+  it('Imunização: danger_zone compare com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Imunização' },
+        content: 'Pegadinhas',
+        items: [{ label: 'Erro', detail: 'X', correct: 'Certo' }],
+      },
+      {
+        questionSlug: 'fundatec-meningo-1',
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('compare');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
 });

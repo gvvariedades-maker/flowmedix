@@ -12,6 +12,7 @@ export { MorphologicalConceptMap } from './variants/MorphologicalConceptMap';
 export { ProcedureProtocolConceptMap } from './variants/ProcedureProtocolConceptMap';
 export { VitalsPanelConceptMap } from './variants/VitalsPanelConceptMap';
 export { SurvivalChainConceptMap } from './variants/SurvivalChainConceptMap';
+export { VaccineTimelineConceptMap } from './variants/VaccineTimelineConceptMap';
 export { GoldenRule } from './variants/GoldenRule';
 export { DangerZone } from './variants/DangerZone';
 export { DangerZoneTrapReveal } from './variants/DangerZoneTrapReveal';
