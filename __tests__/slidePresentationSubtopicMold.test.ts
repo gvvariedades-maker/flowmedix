@@ -105,4 +105,21 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.dangerRevealMode).toBe('tap');
     expect(result.bulletStyle).toBe('x_icon');
   });
+
+  it('Sinais Vitais: danger_zone trap-reveal com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Verificação de Sinais Vitais' },
+        content: 'Pegadinhas',
+        items: [{ label: 'Erro', detail: 'X', correct: 'Certo' }],
+      },
+      {
+        questionSlug: 'fepese-sv-1',
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('trap-reveal');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
 });

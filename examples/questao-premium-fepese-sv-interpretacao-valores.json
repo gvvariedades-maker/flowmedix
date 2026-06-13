@@ -130,25 +130,43 @@
       "content": "PEGADINHAS NA INTERPRETAÇÃO DOS VALORES",
       "items": [
         {
-          "id": "1",
-          "label": "Chamar FC 110 de normal",
-          "detail": "A frequência cardíaca acima de 100 bpm não é normocárdica.",
-          "correct": "FC 110 bpm indica taquicardia."
+          "id": "D",
+          "label": "Letra D — chamar 110×75 de hipertenso",
+          "detail": "PA 110×75 mmHg está na faixa normal do adulto; a letra D inventa uma hipertensão que não existe no caso.",
+          "correct": "PA 110×75 mmHg = normotenso, não hipertenso."
         },
         {
-          "id": "2",
+          "id": "C",
+          "label": "Letra C — hipotenso e normocárdico",
+          "detail": "Rebaixa a PA normal para hipotensão e ainda chama a FC de 110 bpm de normal.",
+          "correct": "PA normal (normotenso) e FC 110 bpm = taquicárdico."
+        },
+        {
+          "id": "B",
+          "label": "Letra B — febril e eupneico",
+          "detail": "Transforma 36,5°C em febre e diz que a respiração está normal, ignorando a FR elevada.",
+          "correct": "36,5°C = afebril e FR 30 mpm = taquipneico."
+        },
+        {
+          "id": "E",
+          "label": "Letra E — FC 110 como normocárdico",
+          "detail": "Acerta quase tudo, mas classifica a FC de 110 bpm como normal — é o distrator mais próximo da resposta A.",
+          "correct": "FC 110 bpm = taquicárdico (acima de 100 bpm)."
+        },
+        {
+          "id": "5",
           "label": "Chamar FR 30 de eupneia",
-          "detail": "A respiração acima do padrão adulto em repouso é acelerada.",
-          "correct": "FR 30 mpm indica taquipneia."
+          "detail": "Respiração acima de 20 irpm no adulto em repouso não é eupneia.",
+          "correct": "FR 30 mpm = taquipneia (acima de 20 irpm)."
         },
         {
-          "id": "3",
-          "label": "Trocar afebril por febril",
-          "detail": "36,5°C axilar costuma ser valor de temperatura normal.",
-          "correct": "36,5°C é compatível com afebril."
+          "id": "6",
+          "label": "Classificar olhando um sinal só",
+          "detail": "Marcar pela PA ou pela febre isolada ignora que o enunciado pede a leitura combinada dos quatro sinais.",
+          "correct": "Interprete os 4 sinais juntos antes de marcar a alternativa."
         }
       ],
-      "footer_rule": "A combinação correta do caso é normotenso, afebril, taquicárdico e taquipneico."
+      "footer_rule": "A combinação correta do caso é normotenso, afebril, taquicárdico e taquipneico (letra A)."
     }
   ]
 }
