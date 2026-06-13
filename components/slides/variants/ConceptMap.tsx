@@ -2,11 +2,9 @@
 
 import React, { useCallback, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HelpCircle } from 'lucide-react';
-import * as LucideIcons from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
-import { SLIDE_CARD } from '../core/slideSurface';
-
+import { resolveLucideIcon } from '../core/lucideIcon';
 // ============================================================================
 // INTERFACES
 // ============================================================================
@@ -22,6 +20,43 @@ interface ConceptMapProps {
   layoutVariant?: string;
 }
 
+const CARD_ACCENT: { border: string; bg: string; iconBg: string; iconText: string }[] = [
+  {
+    border: 'border-l-4 border-l-blue-600',
+    bg: 'bg-gradient-to-br from-blue-50 to-blue-100',
+    iconBg: 'bg-white/70',
+    iconText: 'text-blue-700',
+  },
+  {
+    border: 'border-l-4 border-l-emerald-600',
+    bg: 'bg-gradient-to-br from-emerald-50 to-emerald-100',
+    iconBg: 'bg-white/70',
+    iconText: 'text-emerald-700',
+  },
+  {
+    border: 'border-l-4 border-l-amber-600',
+    bg: 'bg-gradient-to-br from-amber-50 to-amber-100',
+    iconBg: 'bg-white/70',
+    iconText: 'text-amber-700',
+  },
+  {
+    border: 'border-l-4 border-l-pink-600',
+    bg: 'bg-gradient-to-br from-pink-50 to-pink-100',
+    iconBg: 'bg-white/70',
+    iconText: 'text-pink-700',
+  },
+];
+
+function ExpandBadge({ visible }: { visible: boolean }) {
+  if (!visible) return null;
+  return (
+    <span className="mt-1.5 inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest text-slate-500">
+      <ChevronDown className="h-2.5 w-2.5" aria-hidden />
+      expandir
+    </span>
+  );
+}
+
 // ============================================================================
 // CONCEPT MAP: Mapa de conceitos com variantes geométricas
 // ============================================================================
@@ -35,14 +70,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
 
   const isExpanded = useCallback((index: number) => expandedIndex === index, [expandedIndex]);
 
-  // Helper para obter ícone
-  const getIcon = (iconName: string) => {
-    const IconName = iconName as keyof typeof LucideIcons;
-    const IconComponent = LucideIcons[IconName];
-    return (IconComponent && typeof IconComponent === 'function') 
-      ? (IconComponent as React.ComponentType<{ size?: number }>)
-      : HelpCircle;
-  };
+  const getIcon = (iconName: string) => resolveLucideIcon(iconName);
 
   // VARIANTE 1: GRADE CLÁSSICA (Padrão) - também fallback para variantes desconhecidas
   if (variant === 'grid' || !['molecular', 'bridge', 'stack'].includes(variant)) {
@@ -68,6 +96,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-60`} />
         
         <motion.div 
+          layout
           variants={container}
           initial="hidden"
           animate="show"
@@ -77,6 +106,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
           {concepts.map((concept, index) => {
             const Icon = getIcon(concept.icon);
             const expanded = isExpanded(index);
+            const accent = CARD_ACCENT[index % CARD_ACCENT.length]!;
 
             return (
               <motion.button
@@ -87,13 +117,13 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
                 whileHover={{ scale: 1.01, translateY: -2 }}
                 onClick={() => toggleExpanded(index)}
                 aria-expanded={expanded}
-                className={`group relative overflow-hidden p-4 text-left md:p-5 ${SLIDE_CARD} ${theme.borderColor} ${
+                className={`group relative overflow-hidden p-4 text-left shadow-md md:p-5 rounded-2xl border border-slate-200 ${accent.bg} ${accent.border} ${
                   expanded ? 'ring-2 ring-[#22c55e]/30' : ''
                 }`}
               >
                 <div className="relative z-10 flex flex-col gap-3">
-                  <div className={`w-10 h-10 rounded-2xl ${theme.iconBg} flex items-center justify-center ${theme.iconText} ${theme.iconHoverBg} ${theme.iconHoverText} transition-all duration-300`}>
-                    <Icon size={24} />
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${accent.iconBg} ${accent.iconText} transition-all duration-300`}>
+                    <Icon size={28} />
                   </div>
                   <div>
                     <h4 className={`font-body font-bold tracking-normal ${theme.textPrimary} text-xl mb-2`}>
@@ -111,11 +141,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
                         {concept.description}
                       </motion.p>
                     </AnimatePresence>
-                    {!expanded && concept.description.length > 72 ? (
-                      <span className={`mt-1 inline-block font-mono text-[10px] uppercase tracking-widest ${theme.textSecondary}`}>
-                        Toque para expandir
-                      </span>
-                    ) : null}
+                    <ExpandBadge visible={!expanded && concept.description.length > 72} />
                   </div>
                 </div>
               </motion.button>
@@ -198,14 +224,6 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
               )}
             </div>
           )}
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: concepts.length * 0.2 }}
-            className={`mt-6 font-mono tracking-widest ${theme.textSecondary} text-sm italic`}
-          >
-            Estrutura Molecular da Palavra
-          </motion.p>
         </div>
       </div>
     );
@@ -221,6 +239,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
         <div className="w-full max-w-3xl flex flex-col gap-3 relative z-10">
           {concepts.map((concept, i) => {
             const expanded = isExpanded(i);
+            const accent = CARD_ACCENT[i % CARD_ACCENT.length]!;
             return (
               <motion.button
                 key={i}
@@ -231,20 +250,23 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
                 transition={{ delay: i * 0.15 }}
                 onClick={() => toggleExpanded(i)}
                 aria-expanded={expanded}
-                className={`flex w-full flex-col gap-2 rounded-xl border border-slate-200 border-l-4 bg-white p-3 text-left shadow-sm transition-all duration-300 hover:bg-slate-50 md:flex-row md:items-center md:justify-between md:p-4 ${theme.borderColor} ${
-                  expanded ? 'ring-2 ring-[#22c55e]/30' : ''
+                className={`flex w-full flex-col gap-2 rounded-xl border border-slate-200 p-3 text-left shadow-md transition-all duration-300 hover:shadow-lg md:flex-row md:items-center md:justify-between md:p-4 ${accent.bg} ${accent.border} ${
+                  expanded ? 'ring-2 ring-[#22c55e]/40' : ''
                 }`}
               >
                 <div className={`font-body min-w-0 w-full font-bold tracking-normal text-xl ${theme.textPrimary} md:w-2/5 md:text-base`}>
                   {concept.title}
                 </div>
-                <div className="relative mx-4 hidden h-px flex-1 bg-slate-200 md:flex">
-                  <span className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 font-mono text-[10px] uppercase ${theme.textSecondary}`}>
+                <div className="relative mx-4 hidden h-px flex-1 bg-slate-300 md:flex">
+                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 font-mono text-[10px] font-semibold uppercase tracking-wider text-slate-500">
                     Exige
                   </span>
                 </div>
-                <div className={`font-body min-w-0 w-full text-left text-sm ${theme.textSecondary} md:w-2/5 md:text-right ${expanded ? '' : 'line-clamp-2'}`}>
-                  {concept.description}
+                <div className="flex w-full min-w-0 flex-col items-start md:w-2/5 md:items-end">
+                  <div className={`font-body min-w-0 w-full text-left text-sm text-slate-700 md:text-right ${expanded ? '' : 'line-clamp-2'}`}>
+                    {concept.description}
+                  </div>
+                  <ExpandBadge visible={!expanded && concept.description.length > 72} />
                 </div>
               </motion.button>
             );
@@ -268,6 +290,7 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
           {concepts.map((concept, index) => {
             const Icon = getIcon(concept.icon);
             const expanded = isExpanded(index);
+            const accent = CARD_ACCENT[index % CARD_ACCENT.length]!;
             return (
               <motion.button
                 key={index}
@@ -276,24 +299,20 @@ export const ConceptMap = ({ concepts, theme, layoutVariant }: ConceptMapProps) 
                 variants={{ hidden: { y: 20, opacity: 0 }, show: { y: 0, opacity: 1 } }}
                 onClick={() => toggleExpanded(index)}
                 aria-expanded={expanded}
-                className={`p-4 text-left md:p-5 ${SLIDE_CARD} ${theme.borderColor} ${
+                className={`p-4 text-left shadow-md md:p-5 rounded-2xl border border-slate-200 ${accent.bg} ${accent.border} ${
                   expanded ? 'ring-2 ring-[#22c55e]/30' : ''
                 }`}
               >
                 <div className="flex gap-3">
-                  <div className={`w-12 h-12 rounded-xl ${theme.iconBg} flex items-center justify-center ${theme.iconText}`}>
-                    <Icon size={24} />
+                  <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${accent.iconBg} ${accent.iconText}`}>
+                    <Icon size={28} />
                   </div>
                   <div className="min-w-0 flex-1">
                     <h4 className={`font-body font-bold tracking-normal ${theme.textPrimary} text-xl mb-2 md:text-lg`}>{concept.title}</h4>
                     <p className={`font-body leading-relaxed ${theme.textSecondary} text-base md:text-sm ${expanded ? '' : 'line-clamp-2'}`}>
                       {concept.description}
                     </p>
-                    {!expanded && concept.description.length > 72 ? (
-                      <span className={`mt-1 inline-block font-mono text-[10px] uppercase tracking-widest ${theme.textSecondary}`}>
-                        Toque para expandir
-                      </span>
-                    ) : null}
+                    <ExpandBadge visible={!expanded && concept.description.length > 72} />
                   </div>
                 </div>
               </motion.button>

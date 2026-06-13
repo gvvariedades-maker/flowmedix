@@ -28,7 +28,7 @@ export function resolveLogicFlowLayoutVariant(
         'logic_flow',
       );
     }
-    return 'cards';
+    return fallbackVariant ?? 'cards';
   }
 
   return explicitVariant || fallbackVariant || 'vertical';

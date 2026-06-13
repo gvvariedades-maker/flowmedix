@@ -36,9 +36,9 @@ export function LogicFlowFooter({
             role="status"
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-body flex max-w-md items-center justify-center gap-2 rounded-xl border border-violet-200 bg-violet-50 px-4 py-3 text-center text-sm font-semibold leading-snug text-violet-900"
+            className="font-body flex max-w-md items-center justify-center gap-2 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-center text-sm font-semibold leading-snug text-green-900"
           >
-            <Hand className="h-4 w-4 shrink-0 text-violet-600" aria-hidden />
+            <Hand className="h-4 w-4 shrink-0 text-green-700" aria-hidden />
             <span>
               Toque no passo em destaque acima para revelar o próximo
             </span>
@@ -53,7 +53,7 @@ export function LogicFlowFooter({
           <button
             type="button"
             onClick={onAdvance}
-            className="inline-flex min-h-11 min-w-[11rem] items-center justify-center gap-2 rounded-xl border border-violet-200 bg-violet-50 px-5 py-3 text-sm font-semibold text-violet-800 transition-colors hover:bg-violet-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400"
+            className="inline-flex min-h-11 min-w-[11rem] items-center justify-center gap-2 rounded-xl border border-green-200 bg-green-50 px-5 py-3 text-sm font-semibold text-green-800 transition-colors hover:bg-green-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
           >
             Próximo passo
             <ChevronRight className="h-4 w-4" aria-hidden />

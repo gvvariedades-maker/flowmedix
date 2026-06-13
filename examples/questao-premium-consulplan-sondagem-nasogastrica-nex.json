@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "banca": "CONSULPLAN",
+    "prova": "TEnf",
+    "orgao": "Pref Modelo",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Instalação e Manejo de Sondas"
+  },
+  "question_data": {
+    "instruction": "Sobre a sondagem nasogástrica em paciente adulto, analise as afirmativas.\n\nI - A medida da sonda corresponde à distância entre a ponta do nariz e o lóbulo da orelha, somada à distância do lóbulo até o apêndice xifoide (método NEX).\nII - O decúbito elevado em posição de Fowler facilita a introdução da sonda e reduz o risco de broncoaspiração durante o procedimento.\nIII - A ausculta epigástrica isolada, com injeção de ar pela sonda, é o método padrão-ouro para confirmar o posicionamento gástrico.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Sondagem nasogástrica — mapa da prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Instalação e Manejo de Sondas"
+      },
+      "items": [
+        {
+          "label": "I — Medida NEX (V)",
+          "detail": "Nariz → lóbulo da orelha → apêndice xifoide. É a medida padrão para estimar o comprimento até o estômago.",
+          "icon": "Ruler"
+        },
+        {
+          "label": "II — Posição Fowler (V)",
+          "detail": "Cabeceira elevada 45 a 90 graus — facilita a progressão e protege a via aérea, reduzindo broncoaspiração.",
+          "icon": "Bed"
+        },
+        {
+          "label": "III — Confirmação (F)",
+          "detail": "Padrão-ouro é a radiografia. Ausculta epigástrica sozinha NÃO confirma posicionamento gástrico.",
+          "icon": "FileCheck2"
+        },
+        {
+          "label": "Métodos auxiliares",
+          "detail": "Aspirado gástrico + pH ácido ajudam, mas confirmam em conjunto — não substituem o raio-X quando exigido.",
+          "icon": "Stethoscope"
+        },
+        {
+          "label": "Sinais de alerta",
+          "detail": "Tosse, cianose ou dispneia durante a passagem: parar e recuar a sonda — risco de via aérea.",
+          "icon": "AlertCircle"
+        }
+      ],
+      "footer_rule": "I e II corretas · III errada — confirmação isolada por ausculta nunca é padrão-ouro"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Sondagem nasogástrica — tabela de prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Instalação e Manejo de Sondas"
+      },
+      "content": "SONDAGEM NASOGÁSTRICA — LEMBRETE DE PROVA",
+      "rows": [
+        {
+          "label": "Medida (NEX)",
+          "value": "Nariz → orelha → apêndice xifoide",
+          "badge": "hot",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "Posição do paciente",
+          "value": "Fowler — cabeceira 45 a 90 graus",
+          "badge": "ok"
+        },
+        {
+          "label": "Confirmação padrão-ouro",
+          "value": "Radiografia de abdome",
+          "badge": "hot",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Métodos auxiliares",
+          "value": "Aspirado gástrico + pH ácido (em conjunto)",
+          "badge": "info"
+        },
+        {
+          "label": "Ausculta epigástrica",
+          "value": "Auxiliar — não confirma sozinha",
+          "badge": "warn",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Tipo Levine",
+          "value": "Curta permanência — drenagem e descompressão",
+          "badge": "ok"
+        },
+        {
+          "label": "Sinal para parar",
+          "value": "Tosse, cianose ou dispneia → recuar a sonda",
+          "badge": "warn"
+        }
+      ],
+      "footer_rule": "Mnemônico NEX: Nariz–Orelha–Xifoide — e confirmação definitiva é radiográfica"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — V/F sondagem",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Instalação e Manejo de Sondas"
+      },
+      "steps": [
+        "Comando: É CORRETO o que se afirma em — avaliar I, II e III separadamente antes de combinar letras.",
+        "I: medida nariz → orelha → apêndice xifoide é o método NEX clássico → VERDADEIRA.",
+        "II: Fowler facilita a passagem e reduz broncoaspiração → conduta padrão → VERDADEIRA.",
+        "III: ausculta epigástrica isolada como padrão-ouro → falso, o padrão-ouro é a radiografia → FALSA.",
+        "Combinar: só I e II verdadeiras → eliminar A (só I), C (II+III), D (todas), E (só III).",
+        "Confirmar letra B: I e II, apenas.",
+        "Fixação: em sondas, todo método de confirmação descrito como isolado ou exclusivo por ausculta está errado."
+      ],
+      "footer_rule": "Estratégia V/F: avaliar item a item → montar combinação → conferir letra"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas que a banca monta",
+      "chip_label": "ARMADILHAS DE PROVA",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Instalação e Manejo de Sondas"
+      },
+      "content": "PEGADINHAS — SONDAGEM NASOGÁSTRICA",
+      "items": [
+        {
+          "label": "Letra C — II e III",
+          "detail": "III soa técnica, mas elevar a ausculta isolada a padrão-ouro é o erro clássico da banca.",
+          "correct": "Padrão-ouro é a radiografia; ausculta sozinha não confirma."
+        },
+        {
+          "label": "Letra D — I, II e III",
+          "detail": "Marca tudo certo confiando na ausculta — exatamente o que a questão testa.",
+          "correct": "III invalida D: confirmação definitiva é radiográfica."
+        },
+        {
+          "label": "Inverter a medida NEX",
+          "detail": "Trocar a ordem ou omitir o lóbulo da orelha na medida do comprimento.",
+          "correct": "Sempre nariz → lóbulo da orelha → apêndice xifoide."
+        },
+        {
+          "label": "Insuflar balão na SNG",
+          "detail": "Aplicar a etapa de insuflar balão com água — isso é da sonda vesical de demora.",
+          "correct": "Sonda nasogástrica não tem balão; balão é da sonda vesical (Foley)."
+        },
+        {
+          "label": "Decúbito plano na passagem",
+          "detail": "Passar a sonda com paciente totalmente deitado aumenta o risco de broncoaspiração.",
+          "correct": "Posição de Fowler protege a via aérea durante o procedimento."
+        },
+        {
+          "label": "Progredir com tosse ou cianose",
+          "detail": "Continuar empurrando a sonda mesmo com tosse ou cianose, achando que é normal.",
+          "correct": "Tosse, cianose ou dispneia: recuar a sonda — pode estar na via aérea."
+        }
+      ],
+      "footer_rule": "Transferência: confirmação isolada por ausculta e balão em SNG são erros recorrentes do tema"
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "banca": "FEPESE",
+    "prova": "TEnf",
+    "orgao": "Pref Florianópolis",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Cuidados na Administração de Medicamentos"
+  },
+  "question_data": {
+    "instruction": "Em relação aos cuidados na administração de medicamentos, analise as afirmativas.\n\nI - A identificação do paciente deve ser feita com pelo menos dois identificadores independentes antes de cada administração, independentemente do local onde a medicação será aplicada.\nII - Medicamentos de alto risco exigem conferência dupla por dois profissionais habilitados, conforme protocolo institucional e normas de segurança do paciente.\nIII - Diante de prescrição ilegível, dose duvidosa ou divergência entre prescrição e rotulagem, o profissional pode administrar se o medicamento for de uso habitual na unidade.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e II, apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "II e III, apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III, apenas.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "9 Certos — mapa da prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "items": [
+        {
+          "label": "I — Identificação (V)",
+          "detail": "Dois identificadores independentes antes de cada dose, em qualquer local — leito, ambulatório, CC. Núcleo do Certo 1.",
+          "icon": "UserCheck"
+        },
+        {
+          "label": "II — Alto risco (V)",
+          "detail": "Heparina, insulina, quimioterápicos, eletrólitos: conferência dupla por dois profissionais habilitados. Protocolo obrigatório.",
+          "icon": "ShieldAlert"
+        },
+        {
+          "label": "III — Dúvida na prescrição (F)",
+          "detail": "Ilegível, dose duvidosa ou divergência prescrição × rótulo: NÃO administrar. Comunicar enfermeiro ou médico e aguardar.",
+          "icon": "Ban"
+        },
+        {
+          "label": "Os 9 Certos",
+          "detail": "Paciente · Medicamento · Dose · Via · Horário · Documentação · Orientação · Resposta · Forma. Todos conferidos antes de administrar.",
+          "icon": "ListChecks"
+        },
+        {
+          "label": "Regra de ouro da dúvida",
+          "detail": "Na dúvida sobre qualquer certo: suspender, comunicar e aguardar. Uso habitual da unidade nunca substitui prescrição clara.",
+          "icon": "AlertCircle"
+        }
+      ],
+      "footer_rule": "I e II corretas · III errada — na dúvida, comunicar; nunca administrar com prescrição duvidosa"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Os 9 Certos — tabela de prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "9 CERTOS DA MEDICAÇÃO",
+      "rows": [
+        {
+          "label": "1. Paciente certo",
+          "value": "2 identificadores antes de cada dose",
+          "badge": "ok"
+        },
+        {
+          "label": "2. Medicamento certo",
+          "value": "Nome + apresentação = prescrição legível",
+          "badge": "ok"
+        },
+        {
+          "label": "3. Dose certa",
+          "value": "Conferir cálculo e unidade (mg, mL, UI)",
+          "badge": "hot",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "4. Via certa",
+          "value": "VO, IM, IV, SC conforme prescrição",
+          "badge": "hot",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "5. Horário certo",
+          "value": "Janela terapêutica — não adiantar nem atrasar",
+          "badge": "ok"
+        },
+        {
+          "label": "6. Documentação certa",
+          "value": "Registrar no prontuário após administrar",
+          "badge": "ok"
+        },
+        {
+          "label": "7. Orientação certa",
+          "value": "Esclarecer ao paciente quando aplicável",
+          "badge": "info"
+        },
+        {
+          "label": "8. Resposta certa",
+          "value": "Observar efeito terapêutico e reações adversas",
+          "badge": "info"
+        },
+        {
+          "label": "9. Forma certa",
+          "value": "Integridade, validade e diluição corretas",
+          "badge": "ok"
+        },
+        {
+          "label": "Alto risco",
+          "value": "Conferência dupla — 2 profissionais habilitados",
+          "badge": "hot",
+          "emphasis": "alert"
+        },
+        {
+          "label": "Regra de ouro",
+          "value": "Na dúvida: suspender, comunicar e aguardar",
+          "badge": "warn",
+          "emphasis": "alert"
+        }
+      ],
+      "footer_rule": "Mnemônico: P-M-D-V-H-D-O-R-F — na dúvida, o décimo certo é não administrar"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — V/F medicamentos",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "steps": [
+        "Comando: É CORRETO o que se afirma em — avaliar I, II e III separadamente antes de combinar letras.",
+        "I: dois identificadores antes de cada administração, em qualquer local → alinhado aos 9 Certos → VERDADEIRA.",
+        "II: medicamentos de alto risco com conferência dupla por dois profissionais → prática padrão de segurança → VERDADEIRA.",
+        "III: administrar com prescrição ilegível ou dose duvidosa se for de uso habitual → viola segurança → FALSA.",
+        "Combinar: só I e II verdadeiras → eliminar A (só I), C (II+III), D (todas), E (só III).",
+        "Confirmar letra B: I e II, apenas.",
+        "Fixação: em V/F de medicação, a alternativa que libera administração com dúvida está sempre errada."
+      ],
+      "footer_rule": "Estratégia V/F: avaliar item a item → montar combinação → conferir letra"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas que a banca monta",
+      "chip_label": "ARMADILHAS DE PROVA",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Cuidados na Administração de Medicamentos"
+      },
+      "content": "PEGADINHAS — CUIDADOS NA ADMINISTRAÇÃO",
+      "items": [
+        {
+          "label": "Letra A — só I",
+          "detail": "Quem confirma I mas ignora II (alto risco) cai na pegadinha de resposta incompleta.",
+          "correct": "I e II são verdadeiras — gabarito é B, não A."
+        },
+        {
+          "label": "Letra C — II e III",
+          "detail": "III parece razoável pelo uso habitual, mas liberar administração com dúvida é erro grave.",
+          "correct": "III é falsa: dúvida = suspender e comunicar, nunca administrar."
+        },
+        {
+          "label": "Letra D — I, II e III",
+          "detail": "Incluir III torna tudo correto — banca testa exatamente a conduta na dúvida.",
+          "correct": "III invalida D: prescrição duvidosa nunca autoriza administração."
+        },
+        {
+          "label": "Uso habitual da unidade",
+          "detail": "Parece racional — sempre fazemos assim — mas hábito local não substitui prescrição clara.",
+          "correct": "Ilegibilidade ou divergência: suspender e comunicar, independente do hábito."
+        },
+        {
+          "label": "Identificar pelo leito, não pelo paciente",
+          "detail": "Confiar no número do leito ou quarto em vez de dois identificadores no próprio paciente.",
+          "correct": "Dois identificadores no paciente (pulseira, nome + data de nascimento), não no mobiliário."
+        },
+        {
+          "label": "Alto risco sem dupla checagem",
+          "detail": "Achar que experiência profissional dispensa o segundo conferente em medicamentos de alto risco.",
+          "correct": "Conferência dupla é obrigatória independente da experiência do profissional."
+        }
+      ],
+      "footer_rule": "Transferência: toda alternativa que libera administração com dúvida ou sem dupla checagem está errada"
+    }
+  ]
+}

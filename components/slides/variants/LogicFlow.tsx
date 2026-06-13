@@ -67,19 +67,23 @@ function renderStepText(
   return renderStepContent(step, isRevealed, theme);
 }
 
-function LogicFlowConnector({ theme, active }: { theme: ThemeColors; active: boolean }) {
-  if (!active) {
-    return <div className="h-3 w-px bg-slate-200" aria-hidden />;
-  }
+function LogicFlowTimelineDot({ revealed }: { revealed: boolean }) {
   return (
-    <div className="flex flex-col items-center py-1.5" aria-hidden>
-      <div
-        className="h-5 w-0.5 rounded-full"
-        style={{ background: `linear-gradient(to bottom, ${theme.glow}, transparent)` }}
-      />
-      <ArrowDown className="-mt-0.5 h-4 w-4" style={{ color: theme.glow }} />
-    </div>
+    <div
+      className={[
+        'absolute -left-[22px] top-5 z-10 h-3 w-3 rounded-full border-2 shadow-sm md:-left-[23px]',
+        revealed ? 'border-emerald-500 bg-emerald-500' : 'border-blue-600 bg-white',
+      ].join(' ')}
+      aria-hidden
+    />
   );
+}
+
+function LogicFlowConnector({ active }: { active: boolean }) {
+  if (!active) {
+    return <div className="h-2" aria-hidden />;
+  }
+  return <div className="h-3" aria-hidden />;
 }
 
 function LogicFlowTapBadge({ visible }: { visible: boolean }) {
@@ -87,8 +91,12 @@ function LogicFlowTapBadge({ visible }: { visible: boolean }) {
   return (
     <motion.span
       initial={{ opacity: 0, y: 4 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="pointer-events-none absolute -top-2 right-3 z-10 inline-flex items-center gap-1 rounded-full bg-violet-600 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wide text-white shadow-md"
+      animate={{ opacity: [1, 0.7, 1], y: 0 }}
+      transition={{
+        opacity: { repeat: Infinity, duration: 2, ease: 'easeInOut' },
+        y: { duration: 0.25 },
+      }}
+      className="pointer-events-none absolute -top-2 right-3 z-10 inline-flex items-center gap-1 rounded-full bg-green-600 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wide text-white shadow-md"
     >
       <Hand className="h-3 w-3 shrink-0" aria-hidden />
       Toque aqui
@@ -200,8 +208,8 @@ export const LogicFlow = ({
                   }}
                   aria-label={canTap ? 'Toque para revelar o próximo passo' : undefined}
                   className={`relative flex min-h-11 min-w-0 items-start gap-3 ${SLIDE_CARD} border-2 px-3 py-2.5 ${theme.borderColor} ${
-                    canTap ? 'cursor-pointer hover:border-violet-300' : ''
-                  } ${active ? 'ring-2 ring-violet-300/50' : ''}`}
+                    canTap ? 'cursor-pointer hover:border-green-300' : ''
+                  } ${active ? 'ring-2 ring-green-300/50' : ''}`}
                 >
                   <LogicFlowTapBadge
                     visible={canTap && index < normalizedSteps.length - 1}
@@ -304,7 +312,11 @@ export const LogicFlow = ({
       <div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
 
       <motion.div className="relative z-10 w-full max-w-3xl py-3 pb-4 md:py-6 md:pb-6">
-        <motion.div className="relative space-y-0">
+        <motion.div className="relative space-y-0 pl-7 md:pl-8">
+          <div
+            className="absolute bottom-3 left-[11px] top-3 w-0.5 bg-gradient-to-b from-blue-600 via-blue-400 to-blue-200"
+            aria-hidden
+          />
           {normalizedSteps.map((step, index) => {
             const { revealed, future, active } = getStepState(index);
             const isLast = index === normalizedSteps.length - 1;
@@ -314,7 +326,8 @@ export const LogicFlow = ({
             const visual = getLogicFlowStepVisual(revealed, isTapMode, active, isActiveHighlight);
 
             return (
-              <motion.div key={index} className="relative">
+              <motion.div key={index} className="relative mb-1">
+                <LogicFlowTimelineDot revealed={revealed} />
                 <motion.div
                   initial={{ opacity: 0, scale: 0.96, y: 12 }}
                   animate={{
@@ -389,7 +402,7 @@ export const LogicFlow = ({
 
                   {!isLast ? (
                     <div className="flex justify-center">
-                      <LogicFlowConnector theme={theme} active={revealed} />
+                      <LogicFlowConnector active={revealed} />
                     </div>
                   ) : null}
                 </motion.div>

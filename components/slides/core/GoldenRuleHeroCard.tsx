@@ -45,7 +45,7 @@ export function GoldenRuleHeroCard({
           <Icon className={`h-7 w-7 md:h-8 md:w-8 ${theme.iconText}`} aria-hidden />
         </div>
         <h2
-          className={`golden-rule-text font-display font-extrabold uppercase leading-snug tracking-tight break-words [overflow-wrap:anywhere] hyphens-none text-slate-900 ${titleSize}`}
+          className={`golden-rule-text font-display font-extrabold uppercase leading-snug tracking-tight break-words [hyphens:none!important] [word-break:break-word] text-slate-900 ${titleSize}`}
         >
           {content}
         </h2>

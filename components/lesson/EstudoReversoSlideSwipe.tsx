@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion, type PanInfo } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const SWIPE_OFFSET_PX = 80;
 const SWIPE_VELOCITY = 400;
@@ -13,6 +14,35 @@ type EstudoReversoSlideSwipeProps = {
   canSwipeNext?: boolean;
   enabled?: boolean;
 };
+
+function SwipeGhostArrows({
+  canSwipePrev,
+  canSwipeNext,
+}: {
+  canSwipePrev: boolean;
+  canSwipeNext: boolean;
+}) {
+  return (
+    <>
+      {canSwipePrev ? (
+        <div
+          className="pointer-events-none absolute left-0 top-1/2 z-20 -translate-y-1/2 opacity-20"
+          aria-hidden
+        >
+          <ChevronLeft className="h-8 w-8 text-slate-700" />
+        </div>
+      ) : null}
+      {canSwipeNext ? (
+        <div
+          className="pointer-events-none absolute right-0 top-1/2 z-20 -translate-y-1/2 opacity-20"
+          aria-hidden
+        >
+          <ChevronRight className="h-8 w-8 text-slate-700" />
+        </div>
+      ) : null}
+    </>
+  );
+}
 
 /**
  * Navegação horizontal por gesto no estudo reverso (complementa botões do footer).
@@ -44,7 +74,8 @@ export function EstudoReversoSlideSwipe({
 
   if (!swipeActive) {
     return (
-      <div className="flex h-full min-h-0 w-full min-w-0 flex-1 flex-col items-stretch">
+      <div className="relative flex h-full min-h-0 w-full min-w-0 flex-1 flex-col items-stretch">
+        <SwipeGhostArrows canSwipePrev={canSwipePrev} canSwipeNext={canSwipeNext} />
         {children}
       </div>
     );
@@ -52,13 +83,14 @@ export function EstudoReversoSlideSwipe({
 
   return (
     <motion.div
-      className="flex h-full min-h-0 w-full min-w-0 flex-1 flex-col items-stretch touch-pan-y"
+      className="relative flex h-full min-h-0 w-full min-w-0 flex-1 flex-col items-stretch touch-pan-y"
       drag="x"
       dragConstraints={{ left: 0, right: 0 }}
       dragElastic={0.12}
       dragDirectionLock
       onDragEnd={handleDragEnd}
     >
+      <SwipeGhostArrows canSwipePrev={canSwipePrev} canSwipeNext={canSwipeNext} />
       {children}
     </motion.div>
   );

@@ -3,6 +3,7 @@
 import React from 'react';
 import { GitBranch, Network, ScanText, ShieldAlert, Sparkles, Swords } from 'lucide-react';
 import { getSlideArcLabel, getSlideChipLabel } from './slideLabels';
+import { getSlideTypeTitleClass } from './slideSurface';
 import type { SlideType } from '@/types/lesson';
 import type { ThemeColors } from './themeGenerator';
 
@@ -13,20 +14,20 @@ type ChipConfig = {
 
 const CHIP_CONFIG: Record<SlideType, ChipConfig> = {
   concept_map: {
-    badge: 'bg-cyan-50 text-cyan-700 ring-cyan-200',
-    iconClass: 'text-cyan-600',
+    badge: 'bg-pink-100 text-pink-800 ring-pink-200',
+    iconClass: 'text-pink-700',
   },
   golden_rule: {
-    badge: 'bg-amber-50 text-amber-700 ring-amber-200',
-    iconClass: 'text-amber-600',
+    badge: 'bg-amber-100 text-amber-800 ring-amber-200',
+    iconClass: 'text-amber-700',
   },
   logic_flow: {
-    badge: 'bg-violet-50 text-violet-700 ring-violet-200',
-    iconClass: 'text-violet-600',
+    badge: 'bg-blue-100 text-blue-800 ring-blue-200',
+    iconClass: 'text-blue-700',
   },
   danger_zone: {
-    badge: 'bg-red-50 text-red-700 ring-red-200',
-    iconClass: 'text-red-600',
+    badge: 'bg-red-100 text-red-800 ring-red-200',
+    iconClass: 'text-red-700',
   },
   syllable_scanner: {
     badge: 'bg-emerald-50 text-emerald-700 ring-emerald-200',
@@ -53,13 +54,13 @@ function getChipConfig(slideType: string | undefined): ChipConfig {
 function getHeaderBorderClass(slideType: string | undefined): string {
   switch (slideType) {
     case 'concept_map':
-      return 'border-cyan-200';
+      return 'border-pink-200/60';
     case 'golden_rule':
-      return 'border-amber-200';
+      return 'border-amber-200/60';
     case 'logic_flow':
-      return 'border-violet-200';
+      return 'border-blue-200/60';
     case 'danger_zone':
-      return 'border-red-200';
+      return 'border-red-200/60';
     case 'syllable_scanner':
       return 'border-emerald-200';
     case 'versus_arena':
@@ -176,7 +177,12 @@ export function ReverseStudyShell({
         </div>
 
         {slideTitle?.trim() ? (
-          <h2 className="font-display text-sm font-extrabold uppercase leading-tight tracking-tight text-slate-900 sm:text-base md:text-lg">
+          <h2
+            className={[
+              'font-display text-base font-extrabold uppercase leading-tight tracking-tight sm:text-lg md:text-xl',
+              getSlideTypeTitleClass(slideType),
+            ].join(' ')}
+          >
             {slideTitle.trim()}
           </h2>
         ) : null}
@@ -190,7 +196,7 @@ export function ReverseStudyShell({
         </p>
       </header>
 
-      <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-hidden rounded-xl border border-slate-100">
+      <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto">
         {children}
       </div>
     </div>

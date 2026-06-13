@@ -12,6 +12,9 @@ export function resolveDangerZoneRevealMode(
   explicit?: LogicFlowRevealMode,
 ): LogicFlowRevealMode {
   if (explicit === 'auto' || explicit === 'tap') return explicit;
-  const isCompare = layoutVariant === 'compare' || dangerZoneHasCompareItems(items);
+  const isCompare =
+    layoutVariant === 'compare' ||
+    layoutVariant === 'trap-reveal' ||
+    dangerZoneHasCompareItems(items);
   return isCompare ? 'tap' : 'auto';
 }

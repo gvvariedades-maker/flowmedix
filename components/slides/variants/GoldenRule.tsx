@@ -3,7 +3,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { Sparkles, Lightbulb, Zap, Table2 } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
-import { SLIDE_CARD_LG } from '../core/slideSurface';
 import { GoldenRuleHeroCard } from '../core/GoldenRuleHeroCard';
 import { getGoldenRuleTitleSizeClass } from '@/lib/slides/goldenRuleTypography';
 
@@ -75,6 +74,20 @@ function ReferenceTableBadge({ badge }: { badge: GoldenRuleRowBadge }) {
   );
 }
 
+function MnemonicHighlight({ content }: { content: string }) {
+  const trimmed = content.trim();
+  if (!trimmed || trimmed.length > 28) return null;
+
+  return (
+    <div className="mb-4 rounded-2xl border border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100 p-5 text-center shadow-md md:mb-6">
+      <p className="font-display text-3xl font-black tracking-wide text-blue-800 md:text-4xl">
+        {trimmed}
+      </p>
+      <p className="mt-2 font-body text-sm text-blue-700/80">Mnemônico para fixar na prova</p>
+    </div>
+  );
+}
+
 function ReferenceTableLayout({
   content,
   rows,
@@ -89,12 +102,13 @@ function ReferenceTableLayout({
   const title = content?.trim();
   const reduceMotion = useReducedMotion();
   const hasBadges = rows.some((row) => row.badge);
+  const showMnemonic = Boolean(title && title.length <= 28 && rows.length === 0);
 
   return (
     <motion.div className="relative flex min-h-full w-full min-w-0 items-start justify-center p-4 md:p-8">
       <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
       <motion.div
-        className={`relative z-10 w-full min-w-0 max-w-4xl ${SLIDE_CARD_LG} border-2 ${theme.borderColor} p-5 md:p-7`}
+        className={`relative z-10 w-full min-w-0 max-w-4xl rounded-2xl border-2 bg-white/95 shadow-md backdrop-blur-sm md:rounded-3xl ${theme.borderColor} p-5 md:p-7`}
         initial={reduceMotion ? false : { opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, ease: 'easeOut' }}
@@ -105,18 +119,20 @@ function ReferenceTableLayout({
           >
             <Table2 className={`h-5 w-5 ${theme.iconText}`} />
           </motion.div>
-          {title ? (
+          {title && !showMnemonic ? (
             <h2 className="font-display min-w-0 flex-1 text-base font-extrabold uppercase leading-tight tracking-tight break-words [overflow-wrap:anywhere] md:text-xl lg:text-2xl">
-              <span className="text-slate-900">
+              <span className={theme.iconText}>
                 {title}
               </span>
             </h2>
-          ) : (
+          ) : !showMnemonic ? (
             <span className={`font-mono text-[11px] uppercase tracking-widest ${theme.textSecondary}`}>
               Referência rápida
             </span>
-          )}
+          ) : null}
         </div>
+
+        {showMnemonic && title ? <MnemonicHighlight content={title} /> : null}
 
         <motion.div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
           <motion.div

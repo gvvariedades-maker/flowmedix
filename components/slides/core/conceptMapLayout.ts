@@ -44,7 +44,7 @@ export function resolveConceptMapLayoutVariant(
         'concept_map',
       );
     }
-    return 'morphological';
+    return fallbackVariant ?? 'morphological';
   }
 
   if (count > 0 && count <= 2) {

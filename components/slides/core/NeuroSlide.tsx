@@ -3,6 +3,7 @@
 import React, { useMemo } from 'react';
 import { ConceptMap } from '../variants/ConceptMap';
 import { MorphologicalConceptMap } from '../variants/MorphologicalConceptMap';
+import { ProcedureProtocolConceptMap } from '../variants/ProcedureProtocolConceptMap';
 import { GoldenRule } from '../variants/GoldenRule';
 import { DangerZone } from '../variants/DangerZone';
 import { LogicFlow } from '../variants/LogicFlow';
@@ -18,7 +19,7 @@ import {
   normalizeReverseStudySlide,
 } from '@/lib/reverseStudySlidesNormalize';
 import { ReverseStudyShell } from './ReverseStudyShell';
-import { SLIDE_SHELL_CARD } from './slideSurface';
+import { getSlideTypeBgClass, SLIDE_SHELL_CARD } from './slideSurface';
 import type { ReverseStudyShellContext } from '@/types/lesson';
 
 // ============================================================================
@@ -74,9 +75,11 @@ export const NeuroSlideHub = ({
   
   switch (slide.type) {
     case 'concept_map':
-      // Layout Morfológico se especificado, senão usa variante padrão
       if (layoutVariant === 'morphological') {
         return <MorphologicalConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'procedure-protocol') {
+        return <ProcedureProtocolConceptMap concepts={getConcepts()} theme={theme} />;
       }
       return <ConceptMap concepts={getConcepts()} theme={theme} layoutVariant={layoutVariant} />;
     case 'golden_rule':
@@ -304,6 +307,8 @@ export default function NeuroSlide({
             : normalizedData.concepts || [];
         if (legacyPresentation.layoutVariant === 'morphological') {
           inner = <MorphologicalConceptMap concepts={concepts} theme={theme} />;
+        } else if (legacyPresentation.layoutVariant === 'procedure-protocol') {
+          inner = <ProcedureProtocolConceptMap concepts={concepts} theme={theme} />;
         } else {
           inner = (
             <ConceptMap
@@ -392,7 +397,7 @@ export default function NeuroSlide({
     : null);
 
   const shellClass = useShell
-    ? 'box-border flex h-full min-h-0 w-full min-w-0 flex-1 flex-col px-3 py-2 sm:px-4 md:px-6 md:py-3'
+    ? 'box-border flex h-full min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto'
     : 'box-border flex w-full min-w-0 flex-col items-center px-3 py-6 sm:px-5 sm:py-8 md:px-8 md:py-10';
   const slideType = normalizedData.type ?? normalizedData.layout_type;
   const chipLabel = normalizedData.chip_label as string | undefined;
@@ -418,7 +423,15 @@ export default function NeuroSlide({
   if (useShell && resolvedShell) {
     return (
       <div className={shellClass}>
-        <div className={`${SLIDE_SHELL_CARD} p-3 sm:p-4 md:p-5`}>{body}</div>
+        <div
+          className={[
+            SLIDE_SHELL_CARD,
+            getSlideTypeBgClass(slideType),
+            'p-3 sm:p-4 md:p-5',
+          ].join(' ')}
+        >
+          {body}
+        </div>
       </div>
     );
   }

@@ -24,16 +24,20 @@ export function logicFlowStepCardClass(
   canTap: boolean,
 ): string {
   const parts = [
-    'relative min-h-11 min-w-0 rounded-2xl border-2 bg-white p-3 shadow-sm transition-all duration-300 md:p-5',
-    theme.borderColor,
+    'relative min-w-0 rounded-2xl border transition-all duration-300',
   ];
-  if (visual.isFuture) parts.push('opacity-40');
-  else if (visual.isPast) parts.push('opacity-80 border-slate-200');
-  else parts.push('opacity-100 shadow-md');
-  if (visual.isCurrent) {
-    parts.push('ring-2 ring-offset-2 ring-offset-white ring-violet-300/60');
+  if (visual.isFuture) {
+    parts.push('min-h-11 border-slate-200 bg-slate-100/70 p-3 md:p-4 opacity-70 shadow-sm');
+  } else if (visual.isPast) {
+    parts.push('min-h-9 border-emerald-100 bg-emerald-50/75 p-2.5 md:p-3 shadow-sm');
+  } else if (visual.isCurrent) {
+    parts.push(
+      `min-h-11 border-2 ${theme.borderColor} bg-gradient-to-br ${theme.bgGradient} p-3 md:p-4 shadow-lg ring-2 ring-emerald-200/30`,
+    );
+  } else {
+    parts.push(`min-h-11 ${theme.borderColor} bg-white p-3 md:p-5 shadow-md`);
   }
-  if (canTap) parts.push('cursor-pointer hover:border-violet-300');
+  if (canTap) parts.push('cursor-pointer hover:shadow-lg');
   return parts.join(' ');
 }
 
@@ -42,9 +46,9 @@ export function logicFlowStepIconClass(visual: LogicFlowStepVisual): string {
     return 'btn-editorial-primary flex h-10 w-10 shrink-0 items-center justify-center rounded-xl p-0 font-bold text-[#1a2e05] md:h-12 md:w-12';
   }
   if (visual.isPast) {
-    return 'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 ring-1 ring-emerald-200 md:h-12 md:w-12';
+    return 'flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white shadow-sm md:h-8 md:w-8';
   }
-  return 'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-400 ring-1 ring-slate-200 md:h-12 md:w-12';
+  return 'flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-blue-600 bg-white text-blue-700 md:h-12 md:w-12';
 }
 
 export function logicFlowCardsGridClass(stepCount: number, steps: string[]): string {

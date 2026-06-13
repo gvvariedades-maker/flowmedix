@@ -9,8 +9,10 @@ export { NeuroSlideHub } from './core/NeuroSlide';
 // Variantes de slides
 export { ConceptMap } from './variants/ConceptMap';
 export { MorphologicalConceptMap } from './variants/MorphologicalConceptMap';
+export { ProcedureProtocolConceptMap } from './variants/ProcedureProtocolConceptMap';
 export { GoldenRule } from './variants/GoldenRule';
 export { DangerZone } from './variants/DangerZone';
+export { DangerZoneTrapReveal } from './variants/DangerZoneTrapReveal';
 export { LogicFlow } from './variants/LogicFlow';
 export { SyllableScanner } from './variants/SyllableScanner';
 export { VersusArena } from './variants/VersusArena';

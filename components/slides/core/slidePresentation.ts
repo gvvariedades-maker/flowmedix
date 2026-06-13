@@ -3,7 +3,7 @@ import {
   getFamilyVisualSlideProfile,
   type FamilySlideType,
 } from '@/lib/catalogMigration/familyLayoutProfile';
-import { calculateLayoutVariant } from './themeGenerator';
+import { calculateLayoutVariant, hasSubtopicCanonicalDesign } from './themeGenerator';
 import {
   resolveConceptMapLayoutVariant,
   type ConceptMapItemLike,
@@ -70,11 +70,13 @@ export function resolveSlidePresentation(
   presentationContext?: SlidePresentationContext,
 ): ResolvedSlidePresentation {
   const slideType = slide.type;
+  const subtopico = slide.meta?.subtopico?.trim();
+  const useSubtopicMold = hasSubtopicCanonicalDesign(subtopico);
   const subtopicFallback = calculateLayoutVariant(slide);
   const explicitLayoutVariant = presentationContext?.jsonLayoutVariant;
 
   const rotationCtx: LayoutRotationContext | undefined =
-    presentationContext?.questionSlug
+    !useSubtopicMold && presentationContext?.questionSlug
       ? {
           slug: presentationContext.questionSlug,
           slideIndex: presentationContext.slideIndex,
@@ -89,8 +91,10 @@ export function resolveSlidePresentation(
       ? getFamilyVisualSlideProfile(presentationContext.familyId, familySlide)
       : undefined;
 
-  const rotationAnchor = familyVisual?.anchor ?? subtopicFallback;
-  const familyPool = familyVisual?.pool;
+  const rotationAnchor = useSubtopicMold
+    ? subtopicFallback
+    : (familyVisual?.anchor ?? subtopicFallback);
+  const familyPool = useSubtopicMold ? undefined : familyVisual?.pool;
 
   let layoutVariant = explicitLayoutVariant || rotationAnchor;
 
@@ -142,7 +146,10 @@ export function resolveSlidePresentation(
       : 'auto';
   const bulletStyle: DangerZoneBulletStyle =
     slide.bullet_style ??
-    (slideType === 'danger_zone' && layoutVariant === 'compare' ? 'x_icon' : 'numbered');
+    (slideType === 'danger_zone' &&
+    (layoutVariant === 'compare' || layoutVariant === 'trap-reveal')
+      ? 'x_icon'
+      : 'numbered');
 
   const rows =
     slideType === 'golden_rule' && Array.isArray(slide.rows) && slide.rows.length > 0

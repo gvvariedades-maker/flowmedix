@@ -1,9 +1,8 @@
 'use client';
 
 import React from 'react';
-import { HelpCircle } from 'lucide-react';
-import * as LucideIcons from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
+import { resolveLucideIcon } from '../core/lucideIcon';
 
 // ============================================================================
 // LAYOUT MORFOLÓGICO: Grid CSS Fluido + Conexão Implícita + Zero Layout Shift
@@ -21,14 +20,7 @@ interface MorphologicalConceptMapProps {
 }
 
 export const MorphologicalConceptMap = ({ concepts, theme }: MorphologicalConceptMapProps) => {
-  // Helper para obter ícone
-  const getIcon = (iconName: string) => {
-    const IconName = iconName as keyof typeof LucideIcons;
-    const IconComponent = LucideIcons[IconName];
-    return (IconComponent && typeof IconComponent === 'function') 
-      ? (IconComponent as React.ComponentType<{ size?: number }>)
-      : HelpCircle;
-  };
+  const getIcon = (iconName: string) => resolveLucideIcon(iconName);
 
   // Identificar conceito central (primeiro ou maior)
   const centralConcept = concepts[0];

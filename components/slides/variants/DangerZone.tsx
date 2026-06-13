@@ -1,13 +1,15 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { AlertTriangle, CheckCircle2, Eye, ShieldAlert, X } from 'lucide-react';
+import { useCallback, useState, type KeyboardEvent } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { AlertTriangle, CheckCircle2, ShieldAlert, X } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { DangerZoneBulletStyle } from '../core/dangerZoneLayout';
 import { dangerZoneHasCompareItems } from '../core/dangerZoneLayout';
 import { getCompareCorrectColumnTitle } from '@/lib/slides/goldenRuleTypography';
 import type { LogicFlowRevealMode } from './logicFlowReveal';
 import { useDangerZoneCompareReveal } from './dangerZoneReveal';
+import { DangerZoneTrapReveal } from './DangerZoneTrapReveal';
 
 export interface DangerZoneItem {
   id?: string;
@@ -75,66 +77,119 @@ function ItemContent({
   );
 }
 
-function CompareCorrectColumn({
+function DangerZoneFlipCard({
   index,
   label,
+  trapText,
   correctText,
-  isRevealed,
-  isTapMode,
-  onReveal,
+  bulletStyle,
+  itemId,
+  isFlipped,
+  onFlip,
+  prefersReducedMotion,
 }: {
   index: number;
   label: string;
+  trapText: string;
   correctText: string;
-  isRevealed: boolean;
-  isTapMode: boolean;
-  onReveal: (index: number) => void;
+  bulletStyle: DangerZoneBulletStyle;
+  itemId?: string;
+  isFlipped: boolean;
+  onFlip: () => void;
+  prefersReducedMotion: boolean | null;
 }) {
-  if (!isRevealed && isTapMode) {
+  const backTitle = getCompareCorrectColumnTitle(label, correctText);
+  const backFaceLabel =
+    backTitle === 'Resposta certa' ? 'Resposta certa' : 'Resposta correta';
+
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      if (!isFlipped) onFlip();
+    }
+  };
+
+  if (prefersReducedMotion) {
     return (
       <button
         type="button"
-        onClick={() => onReveal(index)}
-        className="card-elevated flex min-h-[5.5rem] w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-green-300 bg-green-50/40 p-4 text-center transition-colors hover:border-green-400 hover:bg-green-50/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500/40"
-        aria-label={`Revelar resposta correta para ${label}`}
+        onClick={() => !isFlipped && onFlip()}
+        onKeyDown={handleKeyDown}
+        aria-pressed={isFlipped}
+        className={`w-full rounded-xl border p-4 text-left shadow-md transition-all ${
+          isFlipped
+            ? 'border-green-300 border-l-4 border-l-green-600 bg-gradient-to-br from-green-50 to-emerald-100 hover:border-green-400'
+            : 'border-red-200 border-l-4 border-l-red-500 bg-gradient-to-br from-white to-red-50 hover:border-red-300 hover:shadow-lg'
+        }`}
       >
-        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 ring-2 ring-green-200">
-          <Eye className="h-5 w-5 text-green-700" strokeWidth={2.25} aria-hidden />
-        </span>
-        <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-green-700 md:text-xs">
-          Revelar resposta
-        </span>
+        {!isFlipped ? (
+          <>
+            <div className="mb-2 flex items-center gap-2">
+              <TrapBullet bulletStyle={bulletStyle} index={index} itemId={itemId} />
+              <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-red-600">
+                {label} — Pegadinha
+              </span>
+            </div>
+            <p className="font-body text-sm font-bold leading-relaxed text-slate-900">{trapText}</p>
+            <span className="mt-2 block font-mono text-[9px] font-bold tracking-wide text-red-500">
+              Toque para revelar →
+            </span>
+          </>
+        ) : (
+          <>
+            <div className="mb-2 flex items-center gap-2">
+              <CheckCircle2 className="h-4 w-4 shrink-0 text-green-700" aria-hidden />
+              <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-green-800">
+                {backFaceLabel}
+              </p>
+            </div>
+            <p className="font-body text-sm font-semibold leading-relaxed text-green-950">{correctText || '—'}</p>
+          </>
+        )}
       </button>
     );
   }
 
   return (
-    <motion.div
-      layout
-      initial={isTapMode ? { opacity: 0, scale: 0.98 } : false}
-      animate={{ opacity: 1, scale: 1 }}
-      className="card-elevated rounded-xl border border-green-200 border-l-4 border-l-green-600 bg-green-50/50 p-3 md:p-4"
+    <div
+      className="min-h-[128px] w-full cursor-pointer [perspective:900px]"
+      onClick={() => !isFlipped && onFlip()}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      aria-pressed={isFlipped}
+      aria-label={isFlipped ? `Pegadinha ${label} revelada` : `Virar card da pegadinha ${label}`}
     >
-      <div className="mb-2 flex items-center gap-2 md:hidden">
-        <span className="font-mono text-[10px] uppercase tracking-widest text-green-700">Correto</span>
-      </div>
-      <div className="flex items-start gap-3">
-        <span
-          className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-green-100 ring-2 ring-green-200"
-          aria-hidden
-        >
-          <CheckCircle2 className="h-5 w-5 text-green-700" strokeWidth={2.5} />
-        </span>
-        <div className="min-w-0 flex-1">
-          <h4 className="mb-1.5 font-display text-sm font-bold text-green-800 md:text-base">
-            {getCompareCorrectColumnTitle(label, correctText)}
-          </h4>
-          <p className="font-body text-sm leading-relaxed text-green-900/80 md:text-base">
+      <div
+        className={`relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] ${
+          isFlipped ? '[transform:rotateY(180deg)]' : ''
+        }`}
+      >
+        <div className="absolute inset-0 flex flex-col justify-center rounded-xl border border-red-200 border-l-4 border-l-red-500 bg-gradient-to-br from-white via-red-50/40 to-red-50 p-4 shadow-md transition-shadow hover:shadow-lg [backface-visibility:hidden]">
+          <div className="mb-2 flex items-center gap-2">
+            <TrapBullet bulletStyle={bulletStyle} index={index} itemId={itemId} />
+            <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-red-600">
+              {label} — Pegadinha
+            </span>
+          </div>
+          <p className="line-clamp-4 font-body text-sm font-bold leading-relaxed text-slate-900">{trapText}</p>
+          <span className="mt-2 font-mono text-[9px] font-bold tracking-wide text-red-500">
+            Toque para virar →
+          </span>
+        </div>
+        <div className="absolute inset-0 flex flex-col justify-start rounded-xl border border-green-300 border-l-4 border-l-green-600 bg-gradient-to-br from-green-50 via-emerald-50 to-green-100 p-3.5 shadow-md [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <div className="mb-2 flex items-center gap-2">
+            <CheckCircle2 className="h-4 w-4 shrink-0 text-green-700" aria-hidden />
+            <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-green-800">
+              {backFaceLabel}
+            </p>
+          </div>
+          <p className="line-clamp-5 font-body text-sm font-semibold leading-relaxed text-green-950">
             {correctText || '—'}
           </p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -151,28 +206,49 @@ function DangerZoneCompare({
   bulletStyle: DangerZoneBulletStyle;
   compareRevealMode?: LogicFlowRevealMode;
 }) {
-  const { revealItem, isItemRevealed, isTapMode } = useDangerZoneCompareReveal(
+  const prefersReducedMotion = useReducedMotion();
+  const { revealItem, isTapMode } = useDangerZoneCompareReveal(
     items.length,
     compareRevealMode,
   );
+  const [flippedIndices, setFlippedIndices] = useState<Set<number>>(() => new Set());
+
+  const handleFlip = useCallback(
+    (index: number) => {
+      if (isTapMode) {
+        revealItem(index);
+      }
+      setFlippedIndices((prev) => {
+        const next = new Set(prev);
+        next.add(index);
+        return next;
+      });
+    },
+    [isTapMode, revealItem],
+  );
+
+  const flippedCount = flippedIndices.size;
+  const allFlipped = flippedCount >= items.length;
 
   return (
-    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-stretch justify-start bg-slate-50 p-4 pb-6 md:p-6 md:pb-8">
+    <div className="relative flex min-h-0 w-full min-w-0 flex-1 flex-col items-stretch justify-start p-4 pb-6 md:p-6 md:pb-8">
       {content ? (
-        <p className="mb-3 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-center text-xs font-semibold text-red-900 md:mb-4 md:px-4 md:py-2.5 md:text-sm">
-          {content}
-        </p>
+        <div className="mb-3 rounded-xl border border-red-300 border-l-4 border-l-red-600 bg-gradient-to-r from-red-100 to-red-50 px-4 py-3 text-center shadow-sm md:mb-4 md:px-5 md:py-3.5">
+          <p className="font-display text-xs font-extrabold uppercase tracking-wide text-red-900 md:text-sm">
+            {content}
+          </p>
+        </div>
       ) : null}
 
-      <div className="space-y-3">
-        <motion.div
-          className="hidden grid-cols-2 gap-3 px-1 font-mono text-[10px] uppercase tracking-widest md:grid"
-          aria-hidden
-        >
-          <span className="text-red-600">Pegadinha</span>
-          <span className="text-green-700">Correto</span>
-        </motion.div>
+      <p className="mb-3 flex justify-center">
+        <span className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-white px-3 py-1.5 text-xs shadow-sm">
+          <span className="font-body text-slate-600">Cards virados:</span>
+          <strong className="font-mono text-sm font-black tabular-nums text-red-700">{flippedCount}</strong>
+          <span className="font-body text-slate-500">de {items.length}</span>
+        </span>
+      </p>
 
+      <div className="space-y-3">
         {items.map((item, index) => {
           const trapText = item.detail || item.description || '';
           const correctText = typeof item.correct === 'string' ? item.correct.trim() : '';
@@ -184,30 +260,17 @@ function DangerZoneCompare({
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.06 }}
-              className="grid grid-cols-1 gap-3 md:grid-cols-2"
             >
-              <div className="card-elevated rounded-xl border border-red-200 border-l-4 border-l-red-500 bg-red-50/50 p-3 md:p-4">
-                <div className="mb-2 flex items-center gap-2 md:hidden">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-red-600">
-                    Pegadinha
-                  </span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <TrapBullet bulletStyle={bulletStyle} index={index} itemId={item.id} />
-                  <div className="min-w-0 flex-1">
-                    <h4 className="mb-1.5 font-display text-sm font-bold text-red-800 md:text-base">{label}</h4>
-                    <p className="font-body text-sm leading-relaxed text-red-900/80 md:text-base">{trapText}</p>
-                  </div>
-                </div>
-              </div>
-
-              <CompareCorrectColumn
+              <DangerZoneFlipCard
                 index={index}
                 label={label}
+                trapText={trapText}
                 correctText={correctText}
-                isRevealed={isItemRevealed(index)}
-                isTapMode={isTapMode}
-                onReveal={revealItem}
+                bulletStyle={bulletStyle}
+                itemId={item.id}
+                isFlipped={flippedIndices.has(index)}
+                onFlip={() => handleFlip(index)}
+                prefersReducedMotion={prefersReducedMotion}
               />
             </motion.div>
           );
@@ -218,6 +281,19 @@ function DangerZoneCompare({
         <div className="mt-6 rounded-xl border border-red-200 bg-red-50 p-4 md:p-5">
           <p className="font-body text-sm italic text-red-800 md:text-base">💡 {footerRule}</p>
         </div>
+      ) : null}
+
+      {allFlipped ? (
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mt-4 flex items-center justify-center gap-2 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-center"
+        >
+          <CheckCircle2 className="h-4 w-4 shrink-0 text-green-600" aria-hidden />
+          <span className="font-mono text-xs font-bold uppercase tracking-widest text-green-800">
+            {isTapMode ? 'Todas as pegadinhas mapeadas' : 'Domínio ativado — revise antes da prova'}
+          </span>
+        </motion.div>
       ) : null}
     </div>
   );
@@ -239,6 +315,19 @@ export const DangerZone = ({
   compareRevealMode = 'auto',
 }: DangerZoneProps) => {
   const explicitVariant = layoutVariant || 'list';
+
+  if (explicitVariant === 'trap-reveal' && items && items.length > 0) {
+    return (
+      <DangerZoneTrapReveal
+        content={content}
+        items={items}
+        footerRule={footerRule}
+        bulletStyle={bulletStyle}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
   const variant =
     explicitVariant === 'compare' || dangerZoneHasCompareItems(items)
       ? 'compare'

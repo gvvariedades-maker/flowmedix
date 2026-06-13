@@ -1,5 +1,5 @@
 /**
- * Piloto premium: Imunização, Processo de Enfermagem, Promoção à Saúde.
+ * Piloto premium: Imunização, Processo de Enfermagem, Promoção à Saúde, Cuidados na Administração, Sondas.
  * Valida goldens + resolvers B1 (rows→table) e compare com mapa piloto.
  */
 import fs from 'fs';
@@ -22,6 +22,14 @@ const PILOT_EXAMPLES = [
     file: 'questao-premium-sus-lei-8080-cesgranrio.json',
     subtopico: 'Promoção à Saúde e Prevenção de Agravos',
   },
+  {
+    file: 'questao-premium-fepese-cuidados-administracao-medicamentos.json',
+    subtopico: 'Cuidados na Administração de Medicamentos',
+  },
+  {
+    file: 'questao-premium-consulplan-sondagem-nasogastrica-nex.json',
+    subtopico: 'Instalação e Manejo de Sondas',
+  },
 ] as const;
 
 function loadExample(filename: string) {
@@ -29,21 +37,23 @@ function loadExample(filename: string) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
 
-describe('piloto premium — 3 subtópicos', () => {
+describe('piloto premium — goldens de subtópico', () => {
   it.each(PILOT_EXAMPLES)('$subtopico valida com QuestaoCompletaSchema', ({ file }) => {
     const parsed = QuestaoCompletaSchema.safeParse(loadExample(file));
     expect(parsed.success).toBe(true);
   });
 
   it.each(PILOT_EXAMPLES)(
-    '$subtopico: mapa piloto usa cards no logic_flow',
+    '$subtopico: mapa piloto usa layout canônico no logic_flow',
     ({ subtopico }) => {
+      const expected =
+        subtopico === 'Instalação e Manejo de Sondas' ? 'vertical' : 'cards';
       const slide = {
         type: 'logic_flow',
         meta: { subtopico },
         steps: ['Passo 1'],
       };
-      expect(calculateLayoutVariant(slide)).toBe('cards');
+      expect(calculateLayoutVariant(slide)).toBe(expected);
     },
   );
 
@@ -64,8 +74,8 @@ describe('piloto premium — 3 subtópicos', () => {
   );
 
   it.each(PILOT_EXAMPLES)(
-    '$subtopico: danger_zone com correct vira compare',
-    ({ file }) => {
+    '$subtopico: danger_zone com correct usa layout canônico do subtópico',
+    ({ file, subtopico }) => {
       const questao = loadExample(file);
       const danger = questao.reverse_study_slides.find(
         (s: { type: string }) => s.type === 'danger_zone',
@@ -73,9 +83,11 @@ describe('piloto premium — 3 subtópicos', () => {
       expect(danger?.items?.some((i: { correct?: string }) => i.correct?.trim())).toBe(true);
 
       const mapVariant = calculateLayoutVariant(danger);
+      const expected =
+        subtopico === 'Instalação e Manejo de Sondas' ? 'trap-reveal' : 'compare';
       expect(
         resolveDangerZoneLayoutVariant(danger, danger.layout_variant, mapVariant),
-      ).toBe('compare');
+      ).toBe(expected);
     },
   );
 

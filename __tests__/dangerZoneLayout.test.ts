@@ -42,6 +42,13 @@ describe('dangerZoneLayout', () => {
     expect(resolveDangerZoneLayoutVariant(slide, 'cards')).toBe('cards');
   });
 
+  it('molde trap-reveal vence auto-compare quando fallback é trap-reveal', () => {
+    const slide = {
+      items: [{ label: 'Trap', detail: 'X', correct: 'Conduta certa' }],
+    };
+    expect(resolveDangerZoneLayoutVariant(slide, undefined, 'trap-reveal')).toBe('trap-reveal');
+  });
+
   it('correct vence mapa compact quando layout_variant não está no JSON', () => {
     const slide = {
       items: [{ label: 'Trap', detail: 'X', correct: 'Conduta certa' }],

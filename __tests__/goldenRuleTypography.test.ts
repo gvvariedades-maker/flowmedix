@@ -13,9 +13,15 @@ describe('goldenRuleTypography', () => {
   });
 
   it('escala fonte média para tamanho médio', () => {
-    const medium = 'A'.repeat(100);
+    const medium = 'word '.repeat(20).trim();
     expect(getGoldenRuleTitleSizeClass(medium)).toContain('lg:text-3xl');
     expect(getGoldenRuleTitleSizeClass(medium)).not.toContain('xl:text-5xl');
+  });
+
+  it('reduz escala quando palavra única é muito longa', () => {
+    const longWord = 'DESCONTAMINAÇÃO';
+    expect(getGoldenRuleTitleSizeClass(longWord)).toContain('lg:text-2xl');
+    expect(getGoldenRuleTitleSizeClass(longWord)).not.toContain('xl:text-5xl');
   });
 
   it('escala fonte longa para tamanho compacto', () => {

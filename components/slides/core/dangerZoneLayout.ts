@@ -10,7 +10,7 @@ export type DangerZoneItemLike = {
 
 export type DangerZoneBulletStyle = 'numbered' | 'x_icon';
 
-const DANGER_ZONE_LAYOUT_OVERRIDES = new Set(['cards', 'compact']);
+const DANGER_ZONE_LAYOUT_OVERRIDES = new Set(['cards', 'compact', 'trap-reveal']);
 
 /**
  * Resolve `layout_variant` do danger_zone.
@@ -31,10 +31,14 @@ export function resolveDangerZoneLayoutVariant(
     items.some((i) => typeof i.correct === 'string' && i.correct.trim().length > 0);
 
   if (explicitVariant === 'compare') return 'compare';
+  if (explicitVariant === 'trap-reveal') return 'trap-reveal';
 
   if (hasCompareItems) {
     if (explicitVariant && DANGER_ZONE_LAYOUT_OVERRIDES.has(explicitVariant)) {
       return explicitVariant;
+    }
+    if (!explicitVariant && fallbackVariant === 'trap-reveal') {
+      return 'trap-reveal';
     }
     return 'compare';
   }

@@ -203,8 +203,8 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   // ---- Vias de Administração ----
   'vias de administração': { template: 'emerald', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'cards' },
 
-  // ---- Cuidados na Administração de Medicamentos ----
-  'cuidados na administração de medicamentos': { template: 'teal', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'cards' },
+  // ---- Cuidados na Administração de Medicamentos (golden: bridge · reference_table · cards · compare) ----
+  'cuidados na administração de medicamentos': { template: 'teal', conceptMap: 'bridge', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'compare' },
 
   // ============================================================
   // PROCEDIMENTOS DE ENFERMAGEM
@@ -214,9 +214,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'verificação de sinais vitais': { template: 'rose', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
   'sinais vitais': { template: 'rose', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
 
-  // ---- Sondas ----
-  'instalação e manejo de sondas': { template: 'indigo', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'cards' },
-  'sondas': { template: 'indigo', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'cards' },
+  // ---- Sondas (golden: procedure-protocol · reference_table · vertical · trap-reveal) ----
+  'instalação e manejo de sondas': { template: 'indigo', conceptMap: 'procedure-protocol', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'trap-reveal' },
+  'sondas': { template: 'indigo', conceptMap: 'procedure-protocol', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'trap-reveal' },
 
   // ---- Oxigenoterapia ----
   'oxigenoterapia e cuidados respiratórios': { template: 'cyan', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
@@ -429,6 +429,12 @@ export const getDesignBySubtopic = (subtopico: string): SubtopicDesign | undefin
   );
   return partialMatch ? partialMatch[1] : undefined;
 };
+
+/** Subtópico canônico no mapa → molde visual fixo (sem rotação por família/slug). */
+export function hasSubtopicCanonicalDesign(subtopico: string | undefined): boolean {
+  if (!subtopico?.trim()) return false;
+  return getDesignBySubtopic(subtopico) !== undefined;
+}
 
 /**
  * Retorna o layout_variant correto dado o subtópico e tipo de slide.
