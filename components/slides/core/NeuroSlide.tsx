@@ -5,6 +5,7 @@ import { ConceptMap } from '../variants/ConceptMap';
 import { MorphologicalConceptMap } from '../variants/MorphologicalConceptMap';
 import { ProcedureProtocolConceptMap } from '../variants/ProcedureProtocolConceptMap';
 import { VitalsPanelConceptMap } from '../variants/VitalsPanelConceptMap';
+import { SurvivalChainConceptMap } from '../variants/SurvivalChainConceptMap';
 import { GoldenRule } from '../variants/GoldenRule';
 import { DangerZone } from '../variants/DangerZone';
 import { LogicFlow } from '../variants/LogicFlow';
@@ -85,6 +86,9 @@ export const NeuroSlideHub = ({
       }
       if (layoutVariant === 'vitals-panel') {
         return <VitalsPanelConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'survival-chain') {
+        return <SurvivalChainConceptMap concepts={getConcepts()} theme={theme} />;
       }
       return <ConceptMap concepts={getConcepts()} theme={theme} layoutVariant={layoutVariant} />;
     case 'golden_rule':

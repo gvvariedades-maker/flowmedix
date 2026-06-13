@@ -344,11 +344,11 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'centro cirúrgico': { template: 'fuchsia', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
   'cirúrgico': { template: 'fuchsia', conceptMap: 'bridge', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
 
-  // ---- Urgências e Emergências ----
-  'urgências e emergências': { template: 'rose', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
-  'urgência e emergência': { template: 'rose', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
-  'emergência': { template: 'rose', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
-  'urgência': { template: 'rose', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
+  // ---- Urgências e Emergências (golden: survival-chain · reference_table · vertical · trap-reveal) ----
+  'urgências e emergências': { template: 'rose', conceptMap: 'survival-chain', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'trap-reveal' },
+  'urgência e emergência': { template: 'rose', conceptMap: 'survival-chain', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'trap-reveal' },
+  'emergência': { template: 'rose', conceptMap: 'survival-chain', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'trap-reveal' },
+  'urgência': { template: 'rose', conceptMap: 'survival-chain', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'trap-reveal' },
 
   // ============================================================
   // SAÚDE DO TRABALHADOR

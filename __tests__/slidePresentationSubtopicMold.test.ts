@@ -157,4 +157,55 @@ describe('slidePresentation — molde por subtópico', () => {
     );
     expect(result.layoutVariant).toBe('vertical');
   });
+
+  it('Urgências: concept_map survival-chain no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Urgências e Emergências' },
+        items: [
+          { label: 'A', detail: '1', icon: 'HeartPulse' },
+          { label: 'B', detail: '2', icon: 'Activity' },
+          { label: 'C', detail: '3', icon: 'Wind' },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-rcp-1',
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('survival-chain');
+  });
+
+  it('Urgências: danger_zone trap-reveal com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Urgências e Emergências' },
+        content: 'Pegadinhas',
+        items: [{ label: 'Erro', detail: 'X', correct: 'Certo' }],
+      },
+      {
+        questionSlug: 'cpcon-rcp-1',
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('trap-reveal');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
+
+  it('Urgências: logic_flow vertical no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Urgências e Emergências' },
+        steps: ['1', '2', '3', '4'],
+      },
+      {
+        questionSlug: 'cpcon-rcp-1',
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('vertical');
+  });
 });
