@@ -17,7 +17,9 @@ export { SaeDocumentationConceptMap } from './variants/SaeDocumentationConceptMa
 export { SaeResponsibilityMatrix } from './variants/SaeResponsibilityMatrix';
 export { SusLegalPillarsConceptMap } from './variants/SusLegalPillarsConceptMap';
 export { SusArt4OrbitConceptMap } from './variants/SusArt4OrbitConceptMap';
+export { AbsorptionSpeedRailConceptMap } from './variants/AbsorptionSpeedRailConceptMap';
 export { DangerZoneScopeTrap } from './variants/DangerZoneScopeTrap';
+export { DangerZoneRouteTrap } from './variants/DangerZoneRouteTrap';
 export { DangerZoneNormReveal } from './variants/DangerZoneNormReveal';
 export { GoldenRule } from './variants/GoldenRule';
 export { DangerZone } from './variants/DangerZone';

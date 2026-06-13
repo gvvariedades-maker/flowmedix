@@ -201,7 +201,8 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'dosagens e cálculos': { template: 'blue', conceptMap: 'stack', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
 
   // ---- Vias de Administração ----
-  'vias de administração': { template: 'emerald', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'cards' },
+  // ---- Vias de Administração (golden: absorption-speed-rail · reference_table · cards · route-trap) ----
+  'vias de administração': { template: 'emerald', conceptMap: 'absorption-speed-rail', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'route-trap' },
 
   // ---- Cuidados na Administração de Medicamentos (golden: bridge · reference_table · cards · compare) ----
   'cuidados na administração de medicamentos': { template: 'teal', conceptMap: 'bridge', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'compare' },

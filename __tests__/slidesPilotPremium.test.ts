@@ -1,5 +1,5 @@
 /**
- * Piloto premium: Imunização, Processo de Enfermagem, Promoção à Saúde, Cuidados, Sondas, Sinais Vitais, Urgências.
+ * Piloto premium: Vias de Administração, Imunização, Processo de Enfermagem, Promoção à Saúde, Cuidados, Sondas, Sinais Vitais, Urgências.
  * Valida goldens + resolvers B1 (rows→table) e compare com mapa piloto.
  */
 import fs from 'fs';
@@ -10,6 +10,10 @@ import { resolveGoldenRuleLayoutVariant } from '@/components/slides/core/goldenR
 import { resolveDangerZoneLayoutVariant } from '@/components/slides/core/dangerZoneLayout';
 
 const PILOT_EXAMPLES = [
+  {
+    file: 'questao-premium-vunesp-via-subcutanea.json',
+    subtopico: 'Vias de Administração',
+  },
   {
     file: 'questao-premium-fundatec-meningococica-3meses.json',
     subtopico: 'Imunização',
@@ -106,7 +110,9 @@ describe('piloto premium — goldens de subtópico', () => {
               ? 'norm-reveal'
               : subtopico === 'Promoção à Saúde e Prevenção de Agravos'
                 ? 'scope-trap'
-                : 'compare';
+                : subtopico === 'Vias de Administração'
+                  ? 'route-trap'
+                  : 'compare';
       expect(
         resolveDangerZoneLayoutVariant(danger, danger.layout_variant, mapVariant),
       ).toBe(expected);

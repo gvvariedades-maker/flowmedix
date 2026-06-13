@@ -316,4 +316,39 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('scope-trap');
     expect(result.bulletStyle).toBe('x_icon');
   });
+
+  it('Vias de Administração: concept_map absorption-speed-rail no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Vias de Administração' },
+        items: [
+          { label: 'Via SC', detail: 'Lenta', icon: 'Syringe' },
+          { label: 'Comparativo', detail: 'IV IM SC', icon: 'GitCompare' },
+        ],
+      },
+      {
+        questionSlug: 'vunesp-sc-1',
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('absorption-speed-rail');
+  });
+
+  it('Vias de Administração: danger_zone route-trap com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Vias de Administração' },
+        content: 'Pegadinhas',
+        items: [{ label: 'Letra A — rápida', detail: 'IV', correct: 'SC lenta' }],
+      },
+      {
+        questionSlug: 'vunesp-sc-1',
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('route-trap');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
 });

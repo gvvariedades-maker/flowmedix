@@ -11,6 +11,7 @@ import { SaeDocumentationConceptMap } from '../variants/SaeDocumentationConceptM
 import { SaeResponsibilityMatrix } from '../variants/SaeResponsibilityMatrix';
 import { SusLegalPillarsConceptMap } from '../variants/SusLegalPillarsConceptMap';
 import { SusArt4OrbitConceptMap } from '../variants/SusArt4OrbitConceptMap';
+import { AbsorptionSpeedRailConceptMap } from '../variants/AbsorptionSpeedRailConceptMap';
 import { GoldenRule } from '../variants/GoldenRule';
 import { DangerZone } from '../variants/DangerZone';
 import { LogicFlow } from '../variants/LogicFlow';
@@ -109,6 +110,9 @@ export const NeuroSlideHub = ({
       }
       if (layoutVariant === 'sus-art4-orbit') {
         return <SusArt4OrbitConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'absorption-speed-rail') {
+        return <AbsorptionSpeedRailConceptMap concepts={getConcepts()} theme={theme} />;
       }
       return <ConceptMap concepts={getConcepts()} theme={theme} layoutVariant={layoutVariant} />;
     case 'golden_rule':

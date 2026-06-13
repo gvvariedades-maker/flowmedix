@@ -11,6 +11,19 @@ export type LayoutRotationContext = {
   slideIndex?: number;
 };
 
+/** Moldes premium por subtópico — vencem regra stack (≤2 itens) e rotação geométrica. */
+const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
+  'procedure-protocol',
+  'vitals-panel',
+  'survival-chain',
+  'vaccine-timeline',
+  'sae-documentation',
+  'sae-responsibility-matrix',
+  'sus-legal-pillars',
+  'sus-art4-orbit',
+  'absorption-speed-rail',
+]);
+
 function countConceptItems(slide?: {
   items?: ConceptMapItemLike[];
   concepts?: unknown[];
@@ -31,10 +44,15 @@ export function resolveConceptMapLayoutVariant(
 ): string {
   const count = countConceptItems(slide);
 
+  if (explicitVariant) {
+    return explicitVariant;
+  }
+
+  if (fallbackVariant && CONCEPT_MAP_MOLD_OVERRIDES.has(fallbackVariant)) {
+    return fallbackVariant;
+  }
+
   if (count >= 3) {
-    if (explicitVariant) {
-      return explicitVariant;
-    }
     if (ctx?.slug) {
       return pickRotatedLayoutVariant(
         CONCEPT_MAP_GEOMETRIC_POOL,

@@ -151,7 +151,8 @@ export function resolveSlidePresentation(
       layoutVariant === 'trap-reveal' ||
       layoutVariant === 'calendar-mismatch' ||
       layoutVariant === 'norm-reveal' ||
-      layoutVariant === 'scope-trap')
+      layoutVariant === 'scope-trap' ||
+      layoutVariant === 'route-trap')
       ? 'x_icon'
       : 'numbered');
 

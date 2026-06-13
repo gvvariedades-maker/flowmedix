@@ -18,6 +18,7 @@ export function resolveDangerZoneRevealMode(
     layoutVariant === 'calendar-mismatch' ||
     layoutVariant === 'norm-reveal' ||
     layoutVariant === 'scope-trap' ||
+    layoutVariant === 'route-trap' ||
     dangerZoneHasCompareItems(items);
   return isCompare ? 'tap' : 'auto';
 }

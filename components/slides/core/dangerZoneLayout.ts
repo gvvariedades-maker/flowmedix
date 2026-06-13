@@ -17,6 +17,7 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'calendar-mismatch',
   'norm-reveal',
   'scope-trap',
+  'route-trap',
 ]);
 
 /**
@@ -42,6 +43,7 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'calendar-mismatch') return 'calendar-mismatch';
   if (explicitVariant === 'norm-reveal') return 'norm-reveal';
   if (explicitVariant === 'scope-trap') return 'scope-trap';
+  if (explicitVariant === 'route-trap') return 'route-trap';
 
   if (hasCompareItems) {
     if (explicitVariant && DANGER_ZONE_LAYOUT_OVERRIDES.has(explicitVariant)) {
@@ -58,6 +60,9 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'scope-trap') {
       return 'scope-trap';
+    }
+    if (!explicitVariant && fallbackVariant === 'route-trap') {
+      return 'route-trap';
     }
     return 'compare';
   }
