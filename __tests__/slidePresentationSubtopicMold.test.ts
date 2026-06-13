@@ -122,4 +122,39 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('trap-reveal');
     expect(result.bulletStyle).toBe('x_icon');
   });
+
+  it('Sinais Vitais: concept_map vitals-panel no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Verificação de Sinais Vitais' },
+        items: [
+          { label: 'PA', detail: '1', correct: 'Normotenso' },
+          { label: 'FC', detail: '2', correct: 'Taquicárdico' },
+          { label: 'FR', detail: '3' },
+          { label: 'T', detail: '4' },
+        ],
+      },
+      {
+        questionSlug: 'fepese-sv-1',
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('vitals-panel');
+  });
+
+  it('Sinais Vitais: logic_flow vertical no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Verificação de Sinais Vitais' },
+        steps: ['1', '2', '3', '4'],
+      },
+      {
+        questionSlug: 'fepese-sv-1',
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('vertical');
+  });
 });

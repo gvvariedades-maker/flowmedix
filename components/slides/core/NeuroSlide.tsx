@@ -4,6 +4,7 @@ import React, { useMemo } from 'react';
 import { ConceptMap } from '../variants/ConceptMap';
 import { MorphologicalConceptMap } from '../variants/MorphologicalConceptMap';
 import { ProcedureProtocolConceptMap } from '../variants/ProcedureProtocolConceptMap';
+import { VitalsPanelConceptMap } from '../variants/VitalsPanelConceptMap';
 import { GoldenRule } from '../variants/GoldenRule';
 import { DangerZone } from '../variants/DangerZone';
 import { LogicFlow } from '../variants/LogicFlow';
@@ -67,7 +68,8 @@ export const NeuroSlideHub = ({
       return slide.items.map((item: any) => ({
         icon: item.icon || 'HelpCircle',
         title: item.label || item.title || '',
-        description: item.detail || item.description || ''
+        description: item.detail || item.description || '',
+        correct: typeof item.correct === 'string' ? item.correct.trim() : undefined,
       }));
     }
     return [];
@@ -80,6 +82,9 @@ export const NeuroSlideHub = ({
       }
       if (layoutVariant === 'procedure-protocol') {
         return <ProcedureProtocolConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'vitals-panel') {
+        return <VitalsPanelConceptMap concepts={getConcepts()} theme={theme} />;
       }
       return <ConceptMap concepts={getConcepts()} theme={theme} layoutVariant={layoutVariant} />;
     case 'golden_rule':
@@ -303,12 +308,15 @@ export default function NeuroSlide({
                 icon: item.icon || 'HelpCircle',
                 title: item.label || item.title || '',
                 description: item.detail || item.description || '',
+                correct: typeof item.correct === 'string' ? item.correct.trim() : undefined,
               }))
             : normalizedData.concepts || [];
         if (legacyPresentation.layoutVariant === 'morphological') {
           inner = <MorphologicalConceptMap concepts={concepts} theme={theme} />;
         } else if (legacyPresentation.layoutVariant === 'procedure-protocol') {
           inner = <ProcedureProtocolConceptMap concepts={concepts} theme={theme} />;
+        } else if (legacyPresentation.layoutVariant === 'vitals-panel') {
+          inner = <VitalsPanelConceptMap concepts={concepts} theme={theme} />;
         } else {
           inner = (
             <ConceptMap

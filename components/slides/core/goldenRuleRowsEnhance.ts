@@ -18,7 +18,11 @@ export function enhanceGoldenRuleRows(rows: GoldenRuleRow[]): GoldenRuleRow[] {
     let badge = row.badge;
 
     if (!emphasis) {
-      if (/gabarito|letra [a-e]|única alternativa|correta|certa\b/.test(text)) {
+      if (/normotenso|afebril|eupnei|normocárd|normoterm/.test(text)) {
+        emphasis = 'success';
+      } else if (/taquic|taquip|febril|hipoten|hipertens|bradic/.test(text)) {
+        emphasis = 'alert';
+      } else if (/gabarito|letra [a-e]|única alternativa|correta|certa\b|alternativa [a-e]/.test(text)) {
         emphasis = 'success';
       } else if (/pegadinha|não confundir|não confunda|errad|cuidado/.test(text)) {
         emphasis = 'alert';

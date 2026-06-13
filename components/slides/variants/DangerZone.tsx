@@ -321,6 +321,7 @@ export const DangerZone = ({
       <DangerZoneTrapReveal
         content={content}
         items={items}
+        theme={theme}
         footerRule={footerRule}
         bulletStyle={bulletStyle}
         compareRevealMode={compareRevealMode}

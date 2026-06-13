@@ -41,6 +41,8 @@
   "reverse_study_slides": [
     {
       "type": "concept_map",
+      "slide_title": "Leitura dos sinais vitais do caso",
+      "chip_label": "SV — MAPA",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Verificação de Sinais Vitais"
@@ -49,32 +51,37 @@
         {
           "id": "1",
           "icon": "Scale",
-          "label": "PA 110×75",
-          "detail": "Compatível com normotensão no adulto em repouso."
+          "label": "PA 110×75 mmHg",
+          "detail": "Compatível com normotensão no adulto em repouso.",
+          "correct": "Normotenso"
         },
         {
           "id": "2",
           "icon": "Thermometer",
           "label": "36,5°C axilar",
-          "detail": "Valor compatível com afebril / normotermia."
+          "detail": "Valor compatível com afebril / normotermia.",
+          "correct": "Afebril"
         },
         {
           "id": "3",
           "icon": "HeartPulse",
           "label": "FC 110 bpm",
-          "detail": "Acima de 100 bpm: taquicardia."
+          "detail": "Acima de 100 bpm: taquicardia.",
+          "correct": "Taquicárdico"
         },
         {
           "id": "4",
           "icon": "Wind",
           "label": "FR 30 mpm",
-          "detail": "Acima de 20 irpm: taquipneia."
+          "detail": "Acima de 20 irpm: taquipneia.",
+          "correct": "Taquipneico"
         }
       ],
       "footer_rule": "Leia cada sinal vital e traduza o valor em termo clínico antes de marcar a alternativa."
     },
     {
       "type": "golden_rule",
+      "slide_title": "Sinais vitais — tabela de prova",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Verificação de Sinais Vitais"
@@ -83,29 +90,40 @@
       "rows": [
         {
           "label": "PA 110×75 mmHg",
-          "value": "Normotenso"
+          "value": "Normotenso",
+          "emphasis": "success",
+          "badge": "ok"
         },
         {
           "label": "Temperatura axilar 36,5°C",
-          "value": "Afebril"
+          "value": "Afebril",
+          "emphasis": "success",
+          "badge": "ok"
         },
         {
           "label": "FC 110 bpm",
-          "value": "Taquicárdico"
+          "value": "Taquicárdico",
+          "emphasis": "alert",
+          "badge": "warn"
         },
         {
           "label": "FR 30 mpm",
-          "value": "Taquipneico"
+          "value": "Taquipneico",
+          "emphasis": "alert",
+          "badge": "warn"
         },
         {
           "label": "Conclusão",
-          "value": "Alternativa A"
+          "value": "Alternativa A",
+          "emphasis": "highlight",
+          "badge": "hot"
         }
       ],
       "footer_rule": "A leitura clínica é combinada: pressão e temperatura normais, frequência cardíaca e respiratória elevadas."
     },
     {
       "type": "logic_flow",
+      "slide_title": "Como resolver — interpretação de SV",
       "reveal_mode": "tap",
       "meta": {
         "topico": "Enfermagem",
@@ -122,6 +140,8 @@
     },
     {
       "type": "danger_zone",
+      "slide_title": "Armadilhas que a banca monta",
+      "chip_label": "ARMADILHAS DE PROVA",
       "bullet_style": "x_icon",
       "meta": {
         "topico": "Enfermagem",

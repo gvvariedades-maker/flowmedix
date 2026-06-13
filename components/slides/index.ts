@@ -10,6 +10,7 @@ export { NeuroSlideHub } from './core/NeuroSlide';
 export { ConceptMap } from './variants/ConceptMap';
 export { MorphologicalConceptMap } from './variants/MorphologicalConceptMap';
 export { ProcedureProtocolConceptMap } from './variants/ProcedureProtocolConceptMap';
+export { VitalsPanelConceptMap } from './variants/VitalsPanelConceptMap';
 export { GoldenRule } from './variants/GoldenRule';
 export { DangerZone } from './variants/DangerZone';
 export { DangerZoneTrapReveal } from './variants/DangerZoneTrapReveal';

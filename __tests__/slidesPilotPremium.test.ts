@@ -1,5 +1,5 @@
 /**
- * Piloto premium: Imunização, Processo de Enfermagem, Promoção à Saúde, Cuidados na Administração, Sondas.
+ * Piloto premium: Imunização, Processo de Enfermagem, Promoção à Saúde, Cuidados, Sondas, Sinais Vitais.
  * Valida goldens + resolvers B1 (rows→table) e compare com mapa piloto.
  */
 import fs from 'fs';
@@ -30,6 +30,10 @@ const PILOT_EXAMPLES = [
     file: 'questao-premium-consulplan-sondagem-nasogastrica-nex.json',
     subtopico: 'Instalação e Manejo de Sondas',
   },
+  {
+    file: 'questao-premium-fepese-sv-interpretacao-valores.json',
+    subtopico: 'Verificação de Sinais Vitais',
+  },
 ] as const;
 
 function loadExample(filename: string) {
@@ -47,7 +51,9 @@ describe('piloto premium — goldens de subtópico', () => {
     '$subtopico: mapa piloto usa layout canônico no logic_flow',
     ({ subtopico }) => {
       const expected =
-        subtopico === 'Instalação e Manejo de Sondas' ? 'vertical' : 'cards';
+        subtopico === 'Instalação e Manejo de Sondas' || subtopico === 'Verificação de Sinais Vitais'
+          ? 'vertical'
+          : 'cards';
       const slide = {
         type: 'logic_flow',
         meta: { subtopico },
@@ -84,7 +90,9 @@ describe('piloto premium — goldens de subtópico', () => {
 
       const mapVariant = calculateLayoutVariant(danger);
       const expected =
-        subtopico === 'Instalação e Manejo de Sondas' ? 'trap-reveal' : 'compare';
+        subtopico === 'Instalação e Manejo de Sondas' || subtopico === 'Verificação de Sinais Vitais'
+          ? 'trap-reveal'
+          : 'compare';
       expect(
         resolveDangerZoneLayoutVariant(danger, danger.layout_variant, mapVariant),
       ).toBe(expected);

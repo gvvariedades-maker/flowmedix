@@ -53,13 +53,13 @@ const BADGE_STYLES: Record<
 function rowEmphasisClasses(emphasis: GoldenRuleRowEmphasis | undefined): string {
   switch (emphasis) {
     case 'highlight':
-      return 'bg-amber-50 border-l-[3px] border-l-amber-400 pl-[13px] md:pl-[13px]';
+      return 'bg-amber-50/80 border-l-[3px] border-l-amber-300 pl-[13px] md:pl-[13px]';
     case 'alert':
-      return 'bg-red-50 border-l-[3px] border-l-red-400 pl-[13px] md:pl-[13px]';
+      return 'bg-rose-50/80 border-l-[3px] border-l-rose-300 pl-[13px] md:pl-[13px]';
     case 'success':
-      return 'bg-emerald-50 border-l-[3px] border-l-emerald-500 pl-[13px] md:pl-[13px]';
+      return 'bg-emerald-50/80 border-l-[3px] border-l-emerald-400 pl-[13px] md:pl-[13px]';
     default:
-      return '';
+      return 'bg-white/60';
   }
 }
 
@@ -108,7 +108,7 @@ function ReferenceTableLayout({
     <motion.div className="relative flex min-h-full w-full min-w-0 items-start justify-center p-4 md:p-8">
       <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-50`} />
       <motion.div
-        className={`relative z-10 w-full min-w-0 max-w-4xl rounded-2xl border-2 bg-white/95 shadow-md backdrop-blur-sm md:rounded-3xl ${theme.borderColor} p-5 md:p-7`}
+        className={`relative z-10 w-full min-w-0 max-w-4xl rounded-2xl border-2 bg-white/90 shadow-sm backdrop-blur-sm md:rounded-3xl ${theme.borderColor} p-5 md:p-7`}
         initial={reduceMotion ? false : { opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, ease: 'easeOut' }}
@@ -134,9 +134,9 @@ function ReferenceTableLayout({
 
         {showMnemonic && title ? <MnemonicHighlight content={title} /> : null}
 
-        <motion.div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+        <motion.div className={`overflow-hidden rounded-xl border bg-white/80 shadow-sm ${theme.borderColor}`}>
           <motion.div
-            className={`font-mono hidden gap-0 border-b border-slate-200 bg-slate-50 px-4 py-2.5 text-[10px] uppercase tracking-widest md:grid ${
+            className={`font-mono hidden gap-0 border-b px-4 py-2.5 text-[10px] uppercase tracking-widest md:grid ${theme.borderColor} ${theme.iconBg} ${
               hasBadges
                 ? 'grid-cols-[minmax(0,0.95fr)_minmax(0,1.25fr)_72px]'
                 : 'grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]'
@@ -147,17 +147,18 @@ function ReferenceTableLayout({
             <span>Valor</span>
             {hasBadges ? <span className="text-center">Foco</span> : null}
           </motion.div>
-          <motion.ul className="divide-y divide-slate-200">
+          <motion.ul className={`divide-y ${theme.borderColor}`}>
             {rows.map((row, index) => {
               const emphasis = row.emphasis ?? 'default';
               const rowClass = rowEmphasisClasses(emphasis);
+              const zebra = index % 2 === 1 && emphasis === 'default' ? 'bg-slate-50/40' : '';
 
               return (
                 <motion.li
                   key={`${row.label}-${index}`}
-                  className={`grid grid-cols-1 gap-1.5 px-4 py-3 transition-colors hover:bg-slate-50 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.25fr)_72px] md:items-center md:gap-4 md:py-3.5 ${
+                  className={`grid grid-cols-1 gap-1.5 px-4 py-3 transition-colors hover:brightness-[0.98] md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.25fr)_72px] md:items-center md:gap-4 md:py-3.5 ${
                     hasBadges ? '' : 'md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]'
-                  } ${rowClass}`}
+                  } ${rowClass} ${zebra}`}
                   initial={reduceMotion ? false : { opacity: 0, x: -8 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.28, delay: reduceMotion ? 0 : index * 0.05 }}
@@ -176,8 +177,14 @@ function ReferenceTableLayout({
                     {row.label}
                   </span>
                   <span
-                    className={`font-body text-sm leading-snug break-words [overflow-wrap:anywhere] md:text-base ${
-                      theme.textPrimary
+                    className={`font-body text-sm font-semibold leading-snug break-words [overflow-wrap:anywhere] md:text-base ${
+                      emphasis === 'highlight'
+                        ? 'text-amber-800'
+                        : emphasis === 'alert'
+                          ? 'text-rose-800'
+                          : emphasis === 'success'
+                            ? 'text-emerald-800'
+                            : theme.textPrimary
                     }`}
                   >
                     {row.value}
@@ -197,7 +204,7 @@ function ReferenceTableLayout({
 
         {footerRule ? (
           <p
-            className={`font-body mt-4 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm italic leading-relaxed md:mt-6 md:text-base ${theme.textSecondary}`}
+            className={`font-body mt-4 rounded-xl border px-4 py-3 text-sm italic leading-relaxed md:mt-6 md:text-base ${theme.borderColor} ${theme.iconBg} ${theme.textSecondary}`}
           >
             {footerRule}
           </p>
