@@ -287,9 +287,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'promoção à saúde': { template: 'emerald', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
   'prevenção de agravos': { template: 'emerald', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
 
-  // ---- Imunização (golden: vaccine-timeline · reference_table · cards · compare) ----
-  'imunização': { template: 'lime', conceptMap: 'vaccine-timeline', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'compare' },
-  'vacinação': { template: 'lime', conceptMap: 'vaccine-timeline', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'compare' },
+  // ---- Imunização (golden: vaccine-timeline · reference_table · cards · calendar-mismatch) ----
+  'imunização': { template: 'lime', conceptMap: 'vaccine-timeline', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'calendar-mismatch' },
+  'vacinação': { template: 'lime', conceptMap: 'vaccine-timeline', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'calendar-mismatch' },
 
   // ---- Atenção Básica / Saúde da Família ----
   'atenção básica / saúde da família': { template: 'emerald', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },

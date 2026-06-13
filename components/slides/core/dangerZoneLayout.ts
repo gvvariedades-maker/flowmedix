@@ -10,7 +10,7 @@ export type DangerZoneItemLike = {
 
 export type DangerZoneBulletStyle = 'numbered' | 'x_icon';
 
-const DANGER_ZONE_LAYOUT_OVERRIDES = new Set(['cards', 'compact', 'trap-reveal']);
+const DANGER_ZONE_LAYOUT_OVERRIDES = new Set(['cards', 'compact', 'trap-reveal', 'calendar-mismatch']);
 
 /**
  * Resolve `layout_variant` do danger_zone.
@@ -32,6 +32,7 @@ export function resolveDangerZoneLayoutVariant(
 
   if (explicitVariant === 'compare') return 'compare';
   if (explicitVariant === 'trap-reveal') return 'trap-reveal';
+  if (explicitVariant === 'calendar-mismatch') return 'calendar-mismatch';
 
   if (hasCompareItems) {
     if (explicitVariant && DANGER_ZONE_LAYOUT_OVERRIDES.has(explicitVariant)) {
@@ -39,6 +40,9 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'trap-reveal') {
       return 'trap-reveal';
+    }
+    if (!explicitVariant && fallbackVariant === 'calendar-mismatch') {
+      return 'calendar-mismatch';
     }
     return 'compare';
   }

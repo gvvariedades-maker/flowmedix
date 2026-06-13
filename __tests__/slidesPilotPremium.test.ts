@@ -100,7 +100,9 @@ describe('piloto premium — goldens de subtópico', () => {
         subtopico === 'Verificação de Sinais Vitais' ||
         subtopico === 'Urgências e Emergências'
           ? 'trap-reveal'
-          : 'compare';
+          : subtopico === 'Imunização'
+            ? 'calendar-mismatch'
+            : 'compare';
       expect(
         resolveDangerZoneLayoutVariant(danger, danger.layout_variant, mapVariant),
       ).toBe(expected);

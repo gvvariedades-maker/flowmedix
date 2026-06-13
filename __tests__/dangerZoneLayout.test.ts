@@ -49,6 +49,15 @@ describe('dangerZoneLayout', () => {
     expect(resolveDangerZoneLayoutVariant(slide, undefined, 'trap-reveal')).toBe('trap-reveal');
   });
 
+  it('molde calendar-mismatch vence auto-compare quando fallback é calendar-mismatch', () => {
+    const slide = {
+      items: [{ label: 'Trap', detail: 'X', correct: 'Conduta certa' }],
+    };
+    expect(resolveDangerZoneLayoutVariant(slide, undefined, 'calendar-mismatch')).toBe(
+      'calendar-mismatch',
+    );
+  });
+
   it('correct vence mapa compact quando layout_variant não está no JSON', () => {
     const slide = {
       items: [{ label: 'Trap', detail: 'X', correct: 'Conduta certa' }],

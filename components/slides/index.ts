@@ -16,6 +16,7 @@ export { VaccineTimelineConceptMap } from './variants/VaccineTimelineConceptMap'
 export { GoldenRule } from './variants/GoldenRule';
 export { DangerZone } from './variants/DangerZone';
 export { DangerZoneTrapReveal } from './variants/DangerZoneTrapReveal';
+export { DangerZoneCalendarMismatch } from './variants/DangerZoneCalendarMismatch';
 export { LogicFlow } from './variants/LogicFlow';
 export { SyllableScanner } from './variants/SyllableScanner';
 export { VersusArena } from './variants/VersusArena';

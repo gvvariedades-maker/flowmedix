@@ -162,27 +162,32 @@
         "topico": "Enfermagem",
         "subtopico": "Imunização"
       },
-      "content": "PEGADINHAS FUNDATEC — CALENDÁRIO INFANTIL",
+      "content": "PEGADINHAS FUNDATEC — CALENDÁRIO INFANTIL (3 MESES)",
       "items": [
         {
           "label": "Letra A — BCG aos 3 meses",
-          "detail": "BCG entra no calendário ao nascer, não no 3º mês.",
-          "correct": "BCG = nascimento (com Hepatite B). Aos 3 meses a vacina marcante é Men C."
+          "detail": "Alternativa coloca BCG no 3º mês de vida — marco errado no PNI.",
+          "correct": "BCG = ao nascer (com Hepatite B). Aos 3 meses a vacina da questão é Men C (1ª dose)."
         },
         {
-          "label": "Letra C — difteria isolada",
-          "detail": "“Adsorvida difteria” remete à pentavalente; prova lista componente fora do mês correto.",
-          "correct": "DTP/pentavalente: marcos 2, 4 e 6 meses — não responde sozinha “3 meses” nesta questão."
+          "label": "Letra C — difteria isolada aos 3 meses",
+          "detail": "“Adsorvida difteria” remete à pentavalente, mas o distractor aponta o 3º mês.",
+          "correct": "Pentavalente/DTP: marcos 2, 4 e 6 meses — não há dose isolada “aos 3 meses” nesta lista."
         },
         {
           "label": "Letra D — rotavírus no 3º mês",
-          "detail": "Rotavírus humano: 1ª dose 2 meses, 2ª dose 4 meses — pula o 3º mês.",
-          "correct": "Rotavírus = 2 e 4 meses no PNI, não 3."
+          "detail": "Rotavírus humano: 1ª dose aos 2 meses e 2ª aos 4 meses — o calendário pula o 3º mês.",
+          "correct": "Rotavírus = 2 e 4 meses no PNI, nunca 3."
         },
         {
           "label": "Letra E — pneumo 10 no 3º mês",
-          "detail": "Pneumocócica 10-valente: 2, 4 e 12 meses — 3 meses não é marco.",
+          "detail": "Pneumocócica 10-valente usa marcos 2, 4 e 12 meses — 3 meses não entra no esquema.",
           "correct": "Pneumo 10 = 2 · 4 · 12 meses."
+        },
+        {
+          "label": "3ª dose = 3 meses de vida",
+          "detail": "Aluno lê “3” e associa ao 3º mês; a 3ª dose da pentavalente é aos 6 meses.",
+          "correct": "3 meses de vida = Men C 1ª dose. 3ª dose pentavalente = 6 meses — não troque ordem por idade."
         },
         {
           "label": "Confundir Men C com Men ACWY",
@@ -191,11 +196,11 @@
         },
         {
           "label": "Atraso = pular dose",
-          "detail": "Banca pode induzir a “esperar próximo mês” — PNI prevê catch-up, não omitir.",
-          "correct": "Aplicar dose pendente o quanto antes, respeitando intervalos mínimos."
+          "detail": "Banca pode induzir a “esperar o próximo mês” — PNI prevê catch-up, não omitir.",
+          "correct": "Aplicar dose pendente o quanto antes, respeitando intervalos mínimos entre doses."
         }
       ],
-      "footer_rule": "Transferência: enunciado com idade exata → descarte alternativas de meses vizinhos (2, 4, 6, 12)"
+      "footer_rule": "Enunciado com idade exata → descarte meses vizinhos (2, 4, 6, 12) → só Men C aos 3 meses"
     }
   ]
 }

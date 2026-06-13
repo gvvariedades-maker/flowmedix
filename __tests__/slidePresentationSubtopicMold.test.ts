@@ -228,7 +228,7 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('vaccine-timeline');
   });
 
-  it('Imunização: danger_zone compare com correct no molde', () => {
+  it('Imunização: danger_zone calendar-mismatch com correct no molde', () => {
     const result = resolveSlidePresentation(
       {
         type: 'danger_zone',
@@ -241,7 +241,7 @@ describe('slidePresentation — molde por subtópico', () => {
         familyId: 'text_fragment',
       },
     );
-    expect(result.layoutVariant).toBe('compare');
+    expect(result.layoutVariant).toBe('calendar-mismatch');
     expect(result.bulletStyle).toBe('x_icon');
   });
 });

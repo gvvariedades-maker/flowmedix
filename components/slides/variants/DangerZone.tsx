@@ -10,6 +10,7 @@ import { getCompareCorrectColumnTitle } from '@/lib/slides/goldenRuleTypography'
 import type { LogicFlowRevealMode } from './logicFlowReveal';
 import { useDangerZoneCompareReveal } from './dangerZoneReveal';
 import { DangerZoneTrapReveal } from './DangerZoneTrapReveal';
+import { DangerZoneCalendarMismatch } from './DangerZoneCalendarMismatch';
 
 export interface DangerZoneItem {
   id?: string;
@@ -324,6 +325,18 @@ export const DangerZone = ({
         theme={theme}
         footerRule={footerRule}
         bulletStyle={bulletStyle}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'calendar-mismatch' && items && items.length > 0) {
+    return (
+      <DangerZoneCalendarMismatch
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
         compareRevealMode={compareRevealMode}
       />
     );

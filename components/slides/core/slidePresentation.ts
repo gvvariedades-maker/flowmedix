@@ -147,7 +147,9 @@ export function resolveSlidePresentation(
   const bulletStyle: DangerZoneBulletStyle =
     slide.bullet_style ??
     (slideType === 'danger_zone' &&
-    (layoutVariant === 'compare' || layoutVariant === 'trap-reveal')
+    (layoutVariant === 'compare' ||
+      layoutVariant === 'trap-reveal' ||
+      layoutVariant === 'calendar-mismatch')
       ? 'x_icon'
       : 'numbered');
 
