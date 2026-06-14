@@ -8,9 +8,15 @@ const LOGIC_FLOW_LAYOUT_OVERRIDES = new Set([
   'oxygen-step-ladder',
   'iv-care-soft-stack',
   'lab-vf-soft-stack',
+  'wound-prep-tap-flow',
 ]);
 
-const LOGIC_FLOW_MOLD_OVERRIDES = new Set(['oxygen-step-ladder', 'iv-care-soft-stack', 'lab-vf-soft-stack']);
+const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
+  'oxygen-step-ladder',
+  'iv-care-soft-stack',
+  'lab-vf-soft-stack',
+  'wound-prep-tap-flow',
+]);
 
 /**
  * Resolve `layout_variant` do logic_flow.

@@ -18,6 +18,7 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'oxygen-rule-carousel',
   'iv-bundle-mesh-reveal',
   'lab-prep-lens-board',
+  'dressing-match-matrix',
 ]);
 
 /**
@@ -49,6 +50,7 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'oxygen-rule-carousel') return 'oxygen-rule-carousel';
   if (explicitVariant === 'iv-bundle-mesh-reveal') return 'iv-bundle-mesh-reveal';
   if (explicitVariant === 'lab-prep-lens-board') return 'lab-prep-lens-board';
+  if (explicitVariant === 'dressing-match-matrix') return 'dressing-match-matrix';
 
   if (hasTableRows) {
     if (explicitVariant && GOLDEN_RULE_TYPOGRAPHY_OVERRIDES.has(explicitVariant)) {

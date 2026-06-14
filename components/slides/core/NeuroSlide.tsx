@@ -17,6 +17,7 @@ import { OxygenProtocolDeckConceptMap } from '../variants/OxygenProtocolDeckConc
 import { IvCareOrbitConceptMap } from '../variants/IvCareOrbitConceptMap';
 import { MorphingTimelineConceptMap } from '../variants/MorphingTimelineConceptMap';
 import { LabSpecimenChainConceptMap } from '../variants/LabSpecimenChainConceptMap';
+import { WoundStageTissueDeckConceptMap } from '../variants/WoundStageTissueDeckConceptMap';
 import { GoldenRule } from '../variants/GoldenRule';
 import { DangerZone } from '../variants/DangerZone';
 import { LogicFlow } from '../variants/LogicFlow';
@@ -152,6 +153,15 @@ export const NeuroSlideHub = ({
       if (layoutVariant === 'lab-specimen-chain') {
         return (
           <LabSpecimenChainConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'wound-stage-tissue-deck') {
+        return (
+          <WoundStageTissueDeckConceptMap
             concepts={getConcepts()}
             theme={theme}
             footerRule={slide.footer_rule}

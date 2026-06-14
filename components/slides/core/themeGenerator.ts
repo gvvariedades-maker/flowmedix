@@ -226,9 +226,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'cuidados respiratórios': { template: 'cyan', conceptMap: 'oxygen-protocol-deck', goldenRule: 'oxygen-rule-carousel', logicFlow: 'oxygen-step-ladder', dangerZone: 'oxygen-danger-arena' },
 
   // ---- Curativos e Feridas ----
-  'curativos e manejo de feridas': { template: 'orange', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
-  'curativos': { template: 'orange', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
-  'manejo de feridas': { template: 'orange', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
+  'curativos e manejo de feridas': { template: 'orange', conceptMap: 'wound-stage-tissue-deck', goldenRule: 'dressing-match-matrix', logicFlow: 'wound-prep-tap-flow', dangerZone: 'dressing-choice-arena' },
+  'curativos': { template: 'orange', conceptMap: 'wound-stage-tissue-deck', goldenRule: 'dressing-match-matrix', logicFlow: 'wound-prep-tap-flow', dangerZone: 'dressing-choice-arena' },
+  'manejo de feridas': { template: 'orange', conceptMap: 'wound-stage-tissue-deck', goldenRule: 'dressing-match-matrix', logicFlow: 'wound-prep-tap-flow', dangerZone: 'dressing-choice-arena' },
   'feridas e queimaduras': { template: 'orange', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
   'feridas': { template: 'orange', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
   'queimaduras': { template: 'orange', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },

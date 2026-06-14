@@ -17,6 +17,7 @@ import { LogicFlowFooter } from './LogicFlowFooter';
 import { LogicFlowStepLadder } from './LogicFlowStepLadder';
 import { LogicFlowSoftStack } from './LogicFlowSoftStack';
 import { LogicFlowLabVfSoftStack } from './LogicFlowLabVfSoftStack';
+import { LogicFlowWoundPrepTapFlow } from './LogicFlowWoundPrepTapFlow';
 import { SLIDE_CARD } from '../core/slideSurface';
 import {
   getLogicFlowStepVisual,
@@ -162,6 +163,10 @@ export const LogicFlow = ({
 
   if (variant === 'lab-vf-soft-stack') {
     return <LogicFlowLabVfSoftStack steps={steps} theme={theme} />;
+  }
+
+  if (variant === 'wound-prep-tap-flow') {
+    return <LogicFlowWoundPrepTapFlow steps={steps} theme={theme} />;
   }
 
   const footer = (

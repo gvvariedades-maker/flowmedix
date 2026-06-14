@@ -23,6 +23,7 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'catheter-danger-arena',
   'lab-prep-trap',
   'lab-specimen-arena',
+  'dressing-choice-arena',
 ]);
 
 /**
@@ -54,6 +55,7 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'catheter-danger-arena') return 'catheter-danger-arena';
   if (explicitVariant === 'lab-prep-trap') return 'lab-prep-trap';
   if (explicitVariant === 'lab-specimen-arena') return 'lab-specimen-arena';
+  if (explicitVariant === 'dressing-choice-arena') return 'dressing-choice-arena';
 
   if (hasCompareItems) {
     if (explicitVariant && DANGER_ZONE_LAYOUT_OVERRIDES.has(explicitVariant)) {
@@ -88,6 +90,9 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'lab-specimen-arena') {
       return 'lab-specimen-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'dressing-choice-arena') {
+      return 'dressing-choice-arena';
     }
     return 'compare';
   }

@@ -27,6 +27,7 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'iv-care-orbit',
   'morphing-timeline',
   'lab-specimen-chain',
+  'wound-stage-tissue-deck',
 ]);
 
 function countConceptItems(slide?: {

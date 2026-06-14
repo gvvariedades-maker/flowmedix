@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "Tec Enf",
+    "orgao": "Pref São Bentinho",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Curativos e Manejo de Feridas"
+  },
+  "question_data": {
+    "instruction": "Nos cuidados a um paciente acamado, para evitar a ocorrência de lesão por pressão, o técnico de enfermagem deve:\nI- Deixar o calcanhar completamente livre, de maneira a distribuir o peso da perna ao longo da panturrilha.\nII- Implementar um regime de cuidados com a pele que inclua mantê-la limpa e úmida.\nIII- Evitar a utilização de sabonetes e produtos de limpeza com pH alcalino.\nIV- Hidratar a pele do paciente diariamente, utilizando hidratantes e umectantes, massageando proeminências ósseas e áreas hiperemiadas.\nÉ CORRETO o que se afirma apenas em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I, II e IV.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "I e IV.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "I, III e IV.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "I e III.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Prevenção de LPP — mapa da prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Curativos e Manejo de Feridas"
+      },
+      "items": [
+        {
+          "label": "Alívio de pressão",
+          "detail": "Calcanhar livre ou suspensão adequada redistribui o peso e reduz compressão local.",
+          "icon": "Bed"
+        },
+        {
+          "label": "Barreira cutânea",
+          "detail": "Pele limpa e seca — não úmida — preserva integridade em paciente acamado.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "pH da pele",
+          "detail": "Sabonetes e produtos alcalinos alteram a barreira; a banca cobra evitar pH alcalino.",
+          "icon": "FlaskConical"
+        },
+        {
+          "label": "Proeminências ósseas",
+          "detail": "Nunca massagear áreas hiperemiadas ou proeminências — isso agrava microtrauma.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Pegadinha da II",
+          "detail": "A frase troca seco por úmido — pele úmida favorece maceração e LPP.",
+          "icon": "XCircle"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra E: I e III.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Prevenção de LPP = alívio de pressão + pele seca + pH adequado + sem massagem em proeminências"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Regra de ouro — pele do acamado",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Curativos e Manejo de Feridas"
+      },
+      "content": "LPP — O QUE A BANCA COBRA",
+      "rows": [
+        {
+          "label": "I — calcanhar livre",
+          "value": "Verdadeira: redistribuir peso ajuda a prevenir lesão no calcanhar",
+          "badge": "ok"
+        },
+        {
+          "label": "II — pele limpa e úmida",
+          "value": "Falsa: o padrão é pele limpa e seca",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "III — evitar pH alcalino",
+          "value": "Verdadeira: produtos alcalinos prejudicam a barreira cutânea",
+          "badge": "ok"
+        },
+        {
+          "label": "IV — massagear proeminências",
+          "value": "Falsa: não massagear proeminências ósseas nem áreas hiperemiadas",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Resposta final",
+          "value": "I e III",
+          "emphasis": "highlight",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Na LPP, a banca adora inverter úmido/seco e incluir massagem como se fosse cuidado"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Curativos e Manejo de Feridas"
+      },
+      "steps": [
+        "Ler a questão como combinação V/F de quatro afirmativas sobre prevenção de LPP.",
+        "Julgar I: calcanhar livre para distribuir peso? → verdadeiro.",
+        "Julgar II: manter pele limpa e úmida? → falso (deve ser seca).",
+        "Julgar III: evitar sabonetes com pH alcalino? → verdadeiro.",
+        "Julgar IV: hidratar massageando proeminências e áreas hiperemiadas? → falso.",
+        "Montar o conjunto correto: I e III.",
+        "Eliminar alternativas que tragam II ou IV.",
+        "Marcar E.",
+        "Fixação: em LPP, úmido e massagem em proeminência são pegadinhas clássicas."
+      ],
+      "footer_rule": "Raciocínio seguro: alívio de pressão + pH neutro, sem úmido nem massagem"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Curativos e Manejo de Feridas"
+      },
+      "content": "PEGADINHAS CPCON — PREVENÇÃO DE LPP",
+      "items": [
+        {
+          "label": "Aceitar pele limpa e úmida na II",
+          "detail": "Úmido parece cuidadoso, mas favorece maceração em paciente acamado.",
+          "correct": "O regime correto é pele limpa e seca."
+        },
+        {
+          "label": "Massagear proeminências ósseas na IV",
+          "detail": "Massagem em área de risco aumenta isquemia local — parece conforto, mas erra.",
+          "correct": "Não massagear proeminências ósseas nem áreas hiperemiadas."
+        },
+        {
+          "label": "Descartar a I por falar em calcanhar livre",
+          "detail": "Suspender ou liberar o calcanhar é estratégia real de redistribuição de pressão.",
+          "correct": "Calcanhar livre para distribuir peso ao longo da panturrilha é conduta válida."
+        },
+        {
+          "label": "Confundir hidratação com emoliência sem critério",
+          "detail": "Hidratar pode fazer parte do cuidado, mas não com massagem em área de risco.",
+          "correct": "O erro da IV está na massagem em proeminência e hiperemia."
+        }
+      ],
+      "footer_rule": "Banca costuma errar na II (úmida) e na IV (massagem) — gabarito fica em I e III"
+    }
+  ]
+}

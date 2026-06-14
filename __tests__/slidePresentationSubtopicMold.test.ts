@@ -629,4 +629,83 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.dangerRevealMode).toBe('tap');
     expect(result.bulletStyle).toBe('x_icon');
   });
+
+  it('Curativos: concept_map wound-stage-tissue-deck no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Curativos e Manejo de Feridas' },
+        items: [
+          { label: 'Estágio I', detail: 'Eritema não branqueável' },
+          { label: 'Granulação', detail: 'Tecido de cicatrização' },
+          { label: 'Gabarito', detail: 'Letra E: I e III' },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-curativos-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('wound-stage-tissue-deck');
+  });
+
+  it('Curativos: golden_rule dressing-match-matrix com rows no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Curativos e Manejo de Feridas' },
+        content: 'LPP',
+        rows: [
+          { label: 'II', value: 'Pele úmida — falsa', emphasis: 'alert' },
+          { label: 'I', value: 'Calcanhar livre — verdadeira' },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-curativos-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('dressing-match-matrix');
+  });
+
+  it('Curativos: logic_flow wound-prep-tap-flow no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Curativos e Manejo de Feridas' },
+        steps: ['Julgar I', 'Julgar II', 'Julgar III', 'Julgar IV', 'Marcar E'],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'cpcon-curativos-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('wound-prep-tap-flow');
+    expect(result.revealMode).toBe('tap');
+  });
+
+  it('Curativos: danger_zone dressing-choice-arena com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Curativos e Manejo de Feridas' },
+        content: 'Pegadinhas',
+        items: [
+          {
+            label: 'Pele úmida',
+            detail: 'Úmido parece cuidadoso',
+            correct: 'Pele limpa e seca',
+          },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-curativos-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('dressing-choice-arena');
+    expect(result.dangerRevealMode).toBe('tap');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
 });
