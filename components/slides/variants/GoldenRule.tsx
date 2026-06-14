@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { Sparkles, Lightbulb, Zap, Table2 } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import { GoldenRuleSoftLensBoard } from './GoldenRuleSoftLensBoard';
+import { GoldenRuleProtocolCarousel } from './GoldenRuleProtocolCarousel';
 import { getGoldenRuleTitleSizeClass } from '@/lib/slides/goldenRuleTypography';
 
 export type GoldenRuleRowEmphasis = 'default' | 'highlight' | 'alert' | 'success';
@@ -229,6 +230,12 @@ export const GoldenRule = ({
   footerRule,
 }: GoldenRuleProps) => {
   const variant = layoutVariant || 'center';
+
+  if (variant === 'oxygen-rule-carousel' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleProtocolCarousel content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
 
   if (variant === 'soft-lens-board' && rows && rows.length > 0) {
     return (

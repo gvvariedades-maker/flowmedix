@@ -14,6 +14,7 @@ import {
   type LogicFlowRevealMode,
 } from './logicFlowReveal';
 import { LogicFlowFooter } from './LogicFlowFooter';
+import { LogicFlowStepLadder } from './LogicFlowStepLadder';
 import { SLIDE_CARD } from '../core/slideSurface';
 import {
   getLogicFlowStepVisual,
@@ -144,6 +145,12 @@ export const LogicFlow = ({
       <motion.div className="flex min-h-full w-full min-w-0 items-center justify-center p-6">
         <p className="font-body text-base text-slate-400">Nenhum passo definido</p>
       </motion.div>
+    );
+  }
+
+  if (variant === 'oxygen-step-ladder') {
+    return (
+      <LogicFlowStepLadder steps={steps} theme={theme} revealMode={revealMode} />
     );
   }
 

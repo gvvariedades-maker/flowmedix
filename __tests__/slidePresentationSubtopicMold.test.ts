@@ -407,4 +407,78 @@ describe('slidePresentation — molde por subtópico', () => {
     );
     expect(result.layoutVariant).toBe('soft-lens-board');
   });
+
+  it('Oxigenoterapia: concept_map oxygen-protocol-deck no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Oxigenoterapia e Cuidados Respiratórios' },
+        items: [
+          { label: 'CNA', detail: 'baixo fluxo' },
+          { label: 'Venturi', detail: 'FiO2 controlada' },
+          { label: 'Gabarito', detail: 'Letra A' },
+        ],
+      },
+      {
+        questionSlug: 'adm-tec-oxigeno-1',
+        familyId: 'protocolo',
+      },
+    );
+    expect(result.layoutVariant).toBe('oxygen-protocol-deck');
+  });
+
+  it('Oxigenoterapia: golden_rule oxygen-rule-carousel com rows no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Oxigenoterapia e Cuidados Respiratórios' },
+        content: 'CNA · Venturi',
+        rows: [
+          { label: 'REGRA 1', value: 'CNA baixo fluxo', emphasis: 'highlight' },
+          { label: 'REGRA 2', value: 'Venturi FiO2', emphasis: 'success' },
+        ],
+      },
+      {
+        questionSlug: 'adm-tec-oxigeno-1',
+        slideIndex: 1,
+        familyId: 'protocolo',
+      },
+    );
+    expect(result.layoutVariant).toBe('oxygen-rule-carousel');
+  });
+
+  it('Oxigenoterapia: logic_flow oxygen-step-ladder no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Oxigenoterapia e Cuidados Respiratórios' },
+        steps: ['1', '2', '3', '4'],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'adm-tec-oxigeno-1',
+        slideIndex: 2,
+        familyId: 'protocolo',
+      },
+    );
+    expect(result.layoutVariant).toBe('oxygen-step-ladder');
+    expect(result.revealMode).toBe('tap');
+  });
+
+  it('Oxigenoterapia: danger_zone oxygen-danger-arena com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Oxigenoterapia e Cuidados Respiratórios' },
+        content: 'Pegadinhas',
+        items: [{ label: 'Letra B', detail: 'alto fluxo errado', correct: 'CNA baixo fluxo' }],
+      },
+      {
+        questionSlug: 'adm-tec-oxigeno-1',
+        familyId: 'protocolo',
+      },
+    );
+    expect(result.layoutVariant).toBe('oxygen-danger-arena');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
 });

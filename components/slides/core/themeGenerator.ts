@@ -221,9 +221,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'sondas': { template: 'indigo', conceptMap: 'procedure-protocol', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'trap-reveal' },
 
   // ---- Oxigenoterapia ----
-  'oxigenoterapia e cuidados respiratórios': { template: 'cyan', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
-  'oxigenoterapia': { template: 'cyan', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
-  'cuidados respiratórios': { template: 'cyan', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
+  'oxigenoterapia e cuidados respiratórios': { template: 'cyan', conceptMap: 'oxygen-protocol-deck', goldenRule: 'oxygen-rule-carousel', logicFlow: 'oxygen-step-ladder', dangerZone: 'oxygen-danger-arena' },
+  'oxigenoterapia': { template: 'cyan', conceptMap: 'oxygen-protocol-deck', goldenRule: 'oxygen-rule-carousel', logicFlow: 'oxygen-step-ladder', dangerZone: 'oxygen-danger-arena' },
+  'cuidados respiratórios': { template: 'cyan', conceptMap: 'oxygen-protocol-deck', goldenRule: 'oxygen-rule-carousel', logicFlow: 'oxygen-step-ladder', dangerZone: 'oxygen-danger-arena' },
 
   // ---- Curativos e Feridas ----
   'curativos e manejo de feridas': { template: 'orange', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },

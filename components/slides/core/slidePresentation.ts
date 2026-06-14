@@ -153,7 +153,8 @@ export function resolveSlidePresentation(
       layoutVariant === 'norm-reveal' ||
       layoutVariant === 'scope-trap' ||
       layoutVariant === 'route-trap' ||
-      layoutVariant === 'dose-trap')
+      layoutVariant === 'dose-trap' ||
+      layoutVariant === 'oxygen-danger-arena')
       ? 'x_icon'
       : 'numbered');
 

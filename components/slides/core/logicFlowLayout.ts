@@ -1,7 +1,9 @@
 import { LOGIC_FLOW_POOL, pickRotatedLayoutVariant } from './layoutRotation';
 import type { LayoutRotationContext } from './conceptMapLayout';
 
-const LOGIC_FLOW_LAYOUT_OVERRIDES = new Set(['vertical', 'horizontal', 'cards']);
+const LOGIC_FLOW_LAYOUT_OVERRIDES = new Set(['vertical', 'horizontal', 'cards', 'oxygen-step-ladder']);
+
+const LOGIC_FLOW_MOLD_OVERRIDES = new Set(['oxygen-step-ladder']);
 
 /**
  * Resolve `layout_variant` do logic_flow.
@@ -18,6 +20,9 @@ export function resolveLogicFlowLayoutVariant(
   if (stepCount >= 3) {
     if (explicitVariant) {
       return explicitVariant;
+    }
+    if (fallbackVariant && LOGIC_FLOW_MOLD_OVERRIDES.has(fallbackVariant)) {
+      return fallbackVariant;
     }
     if (ctx?.slug) {
       return pickRotatedLayoutVariant(

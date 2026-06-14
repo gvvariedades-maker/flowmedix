@@ -20,6 +20,7 @@ export function resolveDangerZoneRevealMode(
     layoutVariant === 'scope-trap' ||
     layoutVariant === 'route-trap' ||
     layoutVariant === 'dose-trap' ||
+    layoutVariant === 'oxygen-danger-arena' ||
     dangerZoneHasCompareItems(items);
   return isCompare ? 'tap' : 'auto';
 }

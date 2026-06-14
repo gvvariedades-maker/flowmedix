@@ -23,6 +23,7 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'sus-art4-orbit',
   'absorption-speed-rail',
   'dose-equivalence-rail',
+  'oxygen-protocol-deck',
 ]);
 
 function countConceptItems(slide?: {

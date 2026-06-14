@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "banca": "Adm&Tec",
+    "prova": "TEnf",
+    "orgao": "Pref M de Camaragibe",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Oxigenoterapia e Cuidados Respiratórios"
+  },
+  "question_data": {
+    "instruction": "Oxigenoterapia é um tema vital em saúde, principalmente no tratamento de pacientes com insuficiência respiratória. Com relação aos dispositivos de oxigenoterapia, assinale a alternativa correta:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Cateter Nasal: é inserido diretamente na narina. É fundamental mensurar corretamente para evitar desconforto.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Cateter Nasal é um dispositivo simples, de alto fluxo, com fornecimento de oxigênio de 0,5 a 5L/ minuto.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Máscara Venturi Facial Simples: possui furos nas laterais e não tem bolsa reservatória. Adequada para fornecer oxigênio em situações menos críticas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Máscara Facial Simples: possui diluidores que permitem ajustar a fração de oxigênio administrada, variando de 24% a 50%. Indicada para pacientes com doença pulmonar obstrutiva crônica (DPOC).",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Dispositivos de O₂ — mapa da prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Oxigenoterapia e Cuidados Respiratórios"
+      },
+      "items": [
+        {
+          "label": "Parâmetro-chave",
+          "detail": "Oxigenoterapia é um tema vital em saúde, principalmente no tratamento de pacientes com insuficiência respiratória. Com relação aos dispositivos de oxigenoterapia, assinale a alternativa correta:",
+          "icon": "Gauge"
+        },
+        {
+          "label": "Cateter nasal (CNA)",
+          "detail": "Dispositivo de baixo fluxo (≈1–6 L/min). Inserido na narina — mensurar o comprimento para evitar desconforto. Núcleo da letra A.",
+          "icon": "Wind"
+        },
+        {
+          "label": "Máscara de Venturi",
+          "detail": "Alto fluxo com FiO₂ controlada por diluidores (24%, 28%, 31%…). Não confundir com máscara simples.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra A — Cateter Nasal: inserido na narina; mensurar corretamente para evitar desconforto.",
+          "icon": "Target"
+        },
+        {
+          "label": "Protocolo cobrado",
+          "detail": "Identificar dispositivo × fluxo × FiO₂ antes de marcar — banca inverte Venturi e máscara simples.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Prioridade na prova",
+          "detail": "CNA = baixo fluxo · Venturi = FiO₂ fixa · letras B–D trocam essas características.",
+          "icon": "ArrowRight"
+        }
+      ],
+      "footer_rule": "Dispositivo certo = fluxo + FiO₂ literais — não marque por “parecer” clínico."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Referência — dispositivos de O₂",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Oxigenoterapia e Cuidados Respiratórios"
+      },
+      "content": "CNA · Venturi · FiO₂",
+      "rows": [
+        {
+          "label": "REGRA 1 DE 3",
+          "value": "Cateter nasal é dispositivo de BAIXO fluxo (≈1–6 L/min) — não é alto fluxo como a letra B sugere.",
+          "emphasis": "highlight"
+        },
+        {
+          "label": "REGRA 2 DE 3",
+          "value": "Máscara de Venturi = alto fluxo com fração inspirada de oxigênio CONTROLADA (diluidores).",
+          "emphasis": "success"
+        },
+        {
+          "label": "REGRA 3 DE 3",
+          "value": "Letras C e D invertem: Venturi não é “simples com furos”; diluidores FiO₂ são da Venturi, não da máscara facial simples.",
+          "emphasis": "alert"
+        }
+      ],
+      "footer_rule": "Sempre verifique a adaptação do dispositivo ao paciente."
+    },
+    {
+      "type": "logic_flow",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Oxigenoterapia e Cuidados Respiratórios"
+      },
+      "reveal_mode": "tap",
+      "steps": [
+        "Ler o comando: dispositivos de oxigenoterapia — assinale a alternativa correta.",
+        "Classificar cada letra: CNA (baixo fluxo) × Venturi (FiO₂ controlada) × máscara simples.",
+        "Identificar gabarito: letra A — CNA inserido na narina; mensurar para evitar desconforto.",
+        "Testar letra B: CNA como alto fluxo → eliminar (CNA é baixo fluxo).",
+        "Testar letra C: Venturi descrita como máscara simples sem reservatório → eliminar.",
+        "Testar letra D: máscara simples com diluidores e indicação em DPOC → eliminar (pegadinha clássica).",
+        "Marcar letra A.",
+        "Fixação: em oxigenoterapia, fluxo e FiO₂ literais vencem senso comum."
+      ],
+      "footer_rule": "Estratégia: enunciado → classificar dispositivo → gabarito A → eliminar B/C/D"
+    },
+    {
+      "type": "danger_zone",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Oxigenoterapia e Cuidados Respiratórios"
+      },
+      "content": "PEGADINHAS — OXIGENOTERAPIA E CUIDADOS RESPIRATÓRIOS",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra B",
+          "detail": "Cateter Nasal é um dispositivo simples, de alto fluxo, com fornecimento de oxigênio de 0,5 a 5L/ minuto.",
+          "correct": "CNA = baixo fluxo (1–6 L/min). Letra A descreve corretamente a inserção na narina."
+        },
+        {
+          "label": "Letra C",
+          "detail": "Máscara Venturi Facial Simples: possui furos nas laterais e não tem bolsa reservatória.",
+          "correct": "Venturi tem diluidores e bolsa — não é máscara simples. FiO₂ controlada."
+        },
+        {
+          "label": "Letra D",
+          "detail": "Máscara Facial Simples: possui diluidores que permitem ajustar a fração de oxigênio de 24% a 50%. Indicada para DPOC.",
+          "correct": "Diluidores FiO₂ = Venturi. Máscara simples não é rotina em DPOC — letra A."
+        }
+      ],
+      "footer_rule": "Interrogue cada letra no trilho: dispositivo errado × dispositivo certo antes de marcar."
+    }
+  ]
+}

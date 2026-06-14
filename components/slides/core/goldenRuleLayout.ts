@@ -13,7 +13,7 @@ export type GoldenRuleRowLike = {
 const GOLDEN_RULE_TYPOGRAPHY_OVERRIDES = new Set(['minimal', 'banner', 'compact']);
 
 /** Moldes tabulares premium — vencem `reference_table` automático quando há `rows`. */
-const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set(['soft-lens-board']);
+const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set(['soft-lens-board', 'oxygen-rule-carousel']);
 
 /**
  * Resolve `layout_variant` do golden_rule.
@@ -41,6 +41,7 @@ export function resolveGoldenRuleLayoutVariant(
 
   if (explicitVariant === 'reference_table') return 'reference_table';
   if (explicitVariant === 'soft-lens-board') return 'soft-lens-board';
+  if (explicitVariant === 'oxygen-rule-carousel') return 'oxygen-rule-carousel';
 
   if (hasTableRows) {
     if (explicitVariant && GOLDEN_RULE_TYPOGRAPHY_OVERRIDES.has(explicitVariant)) {

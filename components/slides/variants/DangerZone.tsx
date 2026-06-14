@@ -15,6 +15,7 @@ import { DangerZoneNormReveal } from './DangerZoneNormReveal';
 import { DangerZoneScopeTrap } from './DangerZoneScopeTrap';
 import { DangerZoneRouteTrap } from './DangerZoneRouteTrap';
 import { DangerZoneDoseTrap } from './DangerZoneDoseTrap';
+import { DangerZoneOxygenArena } from './DangerZoneOxygenArena';
 
 export interface DangerZoneItem {
   id?: string;
@@ -320,6 +321,17 @@ export const DangerZone = ({
   compareRevealMode = 'auto',
 }: DangerZoneProps) => {
   const explicitVariant = layoutVariant || 'list';
+
+  if (explicitVariant === 'oxygen-danger-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneOxygenArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
 
   if (explicitVariant === 'trap-reveal' && items && items.length > 0) {
     return (

@@ -19,6 +19,7 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'scope-trap',
   'route-trap',
   'dose-trap',
+  'oxygen-danger-arena',
 ]);
 
 /**
@@ -46,6 +47,7 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'scope-trap') return 'scope-trap';
   if (explicitVariant === 'route-trap') return 'route-trap';
   if (explicitVariant === 'dose-trap') return 'dose-trap';
+  if (explicitVariant === 'oxygen-danger-arena') return 'oxygen-danger-arena';
 
   if (hasCompareItems) {
     if (explicitVariant && DANGER_ZONE_LAYOUT_OVERRIDES.has(explicitVariant)) {
@@ -68,6 +70,9 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'dose-trap') {
       return 'dose-trap';
+    }
+    if (!explicitVariant && fallbackVariant === 'oxygen-danger-arena') {
+      return 'oxygen-danger-arena';
     }
     return 'compare';
   }
