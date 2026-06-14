@@ -744,8 +744,10 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                         setLiveMessage(`Alternativa ${opt.id} selecionada.`);
                       }}
                       className={cn(
-                        'btn-option-editorial w-full rounded-2xl border px-4 py-3 text-left text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22c55e]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background',
-                        isSelected && !feedback && 'border-[rgba(34, 197, 94,0.45)] bg-[rgba(34, 197, 94,0.08)]',
+                        'btn-option-editorial w-full rounded-2xl border px-4 py-3 text-left text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+                        isSelected &&
+                          !feedback &&
+                          'border-sky-400 bg-sky-50 ring-1 ring-sky-200 hover:border-sky-400 hover:bg-sky-50',
                         showCorrect && 'card-success-editorial border-emerald-300',
                         showWrong && 'card-error-editorial border-rose-300',
                         !isSelected && !showCorrect && !showWrong && 'border-slate-200 bg-white',
@@ -753,7 +755,20 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
                       role="radio"
                       aria-checked={isSelected}
                     >
-                      <span className="mr-2 font-mono text-[#166534]/90">{opt.id})</span>
+                      <span
+                        className={cn(
+                          'mr-2 font-mono font-semibold',
+                          isSelected && !feedback
+                            ? 'text-sky-700'
+                            : showCorrect
+                              ? 'text-emerald-700'
+                              : showWrong
+                                ? 'text-rose-700'
+                                : 'text-slate-700',
+                        )}
+                      >
+                        {opt.id})
+                      </span>
                       {opt.text}
                     </button>
                   );

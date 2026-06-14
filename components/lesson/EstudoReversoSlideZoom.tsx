@@ -37,7 +37,7 @@ export function EstudoReversoSlideZoomProvider({ slideKey, children }: EstudoRev
  * Deve ficar dentro do header fixo do modal, fora da área rolável do slide.
  */
 export function EstudoReversoSlideZoomToolbar() {
-  return <ReadableTextZoomToolbar ariaLabel="Tamanho do texto do slide" />;
+  return <ReadableTextZoomToolbar ariaLabel="Tamanho do texto do slide" variant="editorial" />;
 }
 
 type EstudoReversoSlideZoomProps = {

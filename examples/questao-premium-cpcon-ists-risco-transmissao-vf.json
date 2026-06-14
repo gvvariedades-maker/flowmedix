@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "Tec Enf",
+    "orgao": "Pref Pombal",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Infecções Sexualmente Transmissíveis (ISTs)"
+  },
+  "question_data": {
+    "instruction": "Leia as assertivas sobre as principais situações que aumentam o risco de se pegar uma Infecção Sexualmente Transmissível (IST).\nI- Pessoas que têm relações sexuais sem usar camisinha.\nII- Pessoas cujo companheiro ou companheira tem relação sexual com outras pessoas sem usar camisinha.\nIII- Pessoas que usam drogas injetáveis com seringas e agulhas de uso pessoal.\nÉ CORRETO o que se afirma em:",
+    "options": [
+      {
+        "id": "A",
+        "text": "I e II apenas.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "I, II e III.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "I e III apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "II apenas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "III apenas.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "IST — fatores de risco na prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Infecções Sexualmente Transmissíveis (ISTs)"
+      },
+      "items": [
+        {
+          "label": "Via sexual",
+          "detail": "Relação desprotegida aumenta o risco de IST — camisinha é barreira mecânica central na prevenção.",
+          "icon": "HeartPulse"
+        },
+        {
+          "label": "Parceria de risco",
+          "detail": "O risco também sobe quando o parceiro mantém relações desprotegidas com outras pessoas.",
+          "icon": "Users"
+        },
+        {
+          "label": "Via parenteral",
+          "detail": "O perigo está no compartilhamento de seringas e agulhas — não no uso exclusivamente pessoal.",
+          "icon": "Syringe"
+        },
+        {
+          "label": "Afirmativa I",
+          "detail": "Verdadeira: sexo sem preservativo é fator clássico de risco.",
+          "icon": "CheckCircle"
+        },
+        {
+          "label": "Afirmativa II",
+          "detail": "Verdadeira: parceiro com relações desprotegidas com terceiros também eleva o risco.",
+          "icon": "CheckCircle"
+        },
+        {
+          "label": "Pegadinha da III",
+          "detail": "Falsa: agulha de uso pessoal não configura, por si só, o risco parenteral cobrado em prova.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "IST na prova = sexual desprotegido + parceria de risco + compartilhamento de agulhas"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Regra de ouro — rotas de risco",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Infecções Sexualmente Transmissíveis (ISTs)"
+      },
+      "content": "ROTAS DE RISCO — O QUE A BANCA COBRA",
+      "rows": [
+        {
+          "label": "I — sexo sem camisinha",
+          "value": "Verdadeira: relação sexual desprotegida aumenta o risco",
+          "badge": "ok"
+        },
+        {
+          "label": "II — parceiro com outras relações",
+          "value": "Verdadeira: exposição indireta também conta",
+          "badge": "ok"
+        },
+        {
+          "label": "III — agulha pessoal",
+          "value": "Falsa: o risco parenteral vem do compartilhamento, não do uso individual",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Trilho sexual",
+          "value": "Preservativo + parceria estável e protegida reduzem risco",
+          "badge": "info"
+        },
+        {
+          "label": "Resposta final",
+          "value": "I e II apenas",
+          "emphasis": "highlight",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "A banca adora incluir uma afirmativa quase certa sobre droga injetável para induzir marcar III"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Infecções Sexualmente Transmissíveis (ISTs)"
+      },
+      "steps": [
+        "Ler a questão como combinação V/F de três afirmativas sobre risco de IST.",
+        "Julgar I: relação sexual sem camisinha aumenta risco? → verdadeiro.",
+        "Julgar II: parceiro com relações desprotegidas com outras pessoas? → verdadeiro.",
+        "Julgar III: drogas injetáveis com seringa e agulha de uso pessoal? → falso.",
+        "Montar o conjunto correto: I e II apenas.",
+        "Eliminar alternativas que incluam III.",
+        "Marcar A.",
+        "Fixação: em IST, parenteral na prova quase sempre significa compartilhamento de material perfurocortante."
+      ],
+      "footer_rule": "Raciocínio seguro: sexual desprotegido + parceria de risco = acerto sem a III"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Infecções Sexualmente Transmissíveis (ISTs)"
+      },
+      "content": "PEGADINHAS CPCON — RISCO DE IST",
+      "items": [
+        {
+          "label": "Marcar III por falar em droga injetável",
+          "detail": "A frase cita uso pessoal — o risco parenteral exige compartilhamento de agulha ou seringa.",
+          "correct": "Agulha de uso exclusivamente pessoal não entra como fator de risco nesta assertiva."
+        },
+        {
+          "label": "Ignorar o risco do parceiro com terceiros",
+          "detail": "Mesmo usando preservativo de forma irregular, a exposição indireta via parceria conta na II.",
+          "correct": "Parceiro com relações desprotegidas com outras pessoas aumenta o risco."
+        },
+        {
+          "label": "Tratar IST só como HIV",
+          "detail": "A questão fala de IST em geral — o raciocínio vale para qualquer infecção de transmissão sexual ou parenteral.",
+          "correct": "O foco é comportamento de risco, não um agente específico."
+        },
+        {
+          "label": "Confundir prevenção com cura",
+          "detail": "Camisinha e parceria protegida entram na prevenção; não significam que a pessoa já está infectada.",
+          "correct": "I e II descrevem situações que aumentam a chance de adquirir IST."
+        }
+      ],
+      "footer_rule": "Banca costuma errar na III: uso pessoal não é o mesmo que compartilhar agulha"
+    }
+  ]
+}

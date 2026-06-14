@@ -1,0 +1,21 @@
+{
+  "lote": "golden-curativos-ists",
+  "exported_at": "2026-06-14T07:08:56.625Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "cpcon-uepb-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-3",
+      "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779344786992-2",
+      "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779269305691-1",
+      "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-7",
+      "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-8"
+    ]
+  },
+  "slugs": [
+    "cpcon-uepb-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-3",
+    "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779344786992-2",
+    "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779269305691-1",
+    "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-7",
+    "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-8"
+  ]
+}

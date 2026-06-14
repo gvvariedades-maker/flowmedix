@@ -11,6 +11,12 @@ import {
   type QuestionOption,
 } from '@/lib/catalogMigration/classifyFamily';
 import { getFamilyLayoutProfile } from '@/lib/catalogMigration/familyLayoutProfile';
+import {
+  buildCurativosPremiumSlidesForFamily,
+  canBuildCurativosPremiumSlides,
+  CURATIVOS_GOLDEN_FILE,
+  isCurativosSubtopico,
+} from '@/lib/catalogMigration/upgradePremiumCurativos';
 
 const GENERIC_MARKERS = [
   'relacione o tema',
@@ -601,6 +607,45 @@ export function upgradePremiumHybrid(
 
   const correct = optionsList.find((o) => o.is_correct);
   const changes: UpgradeChangeCode[] = [];
+  const useCurativosPremium =
+    isCurativosSubtopico(subtopico) && canBuildCurativosPremiumSlides(instruction, family);
+  const goldenReference = useCurativosPremium ? CURATIVOS_GOLDEN_FILE : FAMILY_GOLDEN_FILE[family];
+
+  if (useCurativosPremium && !options.dangerOnly) {
+    const curativosSlides = buildCurativosPremiumSlidesForFamily(
+      {
+        instruction,
+        options: optionsList,
+        topico,
+        subtopico,
+      },
+      family,
+    );
+    const working: Record<string, unknown> = {
+      ...(base as Record<string, unknown>),
+      reverse_study_slides: curativosSlides,
+    };
+    delete working.study_slides;
+    const parsed = QuestaoCompletaSchema.safeParse(working);
+    return {
+      changed: true,
+      skipped: false,
+      family,
+      familyLabel: FAMILY_LABELS[family],
+      goldenReference,
+      genericBefore,
+      changes: ['concept_map', 'golden_rule', 'logic_flow', 'danger_zone'],
+      payload: working,
+      zodValid: parsed.success,
+      zodMessage: parsed.success
+        ? undefined
+        : parsed.error.issues
+            .slice(0, 2)
+            .map((i) => `${i.path.join('.')}: ${i.message}`)
+            .join('; '),
+      tecconcursos: false,
+    };
+  }
 
   const dangerZone = buildDangerZoneFromOptions({
     options: optionsList,
@@ -619,6 +664,28 @@ export function upgradePremiumHybrid(
   });
   logicFlow.meta = slideMeta(topico, subtopico);
   changes.push('logic_flow');
+
+  if (useCurativosPremium && options.dangerOnly) {
+    const curativosSlides = buildCurativosPremiumSlidesForFamily(
+      {
+        instruction,
+        options: optionsList,
+        topico,
+        subtopico,
+      },
+      family,
+    );
+    const dangerSlide = curativosSlides.find((s) => s.type === 'danger_zone');
+    const logicSlide = curativosSlides.find((s) => s.type === 'logic_flow');
+    if (dangerSlide) {
+      dangerZone.meta = slideMeta(topico, subtopico);
+      Object.assign(dangerZone, dangerSlide);
+    }
+    if (logicSlide) {
+      logicFlow.meta = slideMeta(topico, subtopico);
+      Object.assign(logicFlow, logicSlide);
+    }
+  }
 
   const existingConcept = findSlide(existingSlides, 'concept_map');
   const existingGolden = findSlide(existingSlides, 'golden_rule');
@@ -677,7 +744,7 @@ export function upgradePremiumHybrid(
     skipped: false,
     family,
     familyLabel: FAMILY_LABELS[family],
-    goldenReference: FAMILY_GOLDEN_FILE[family],
+    goldenReference,
     genericBefore,
     changes,
     payload: working,

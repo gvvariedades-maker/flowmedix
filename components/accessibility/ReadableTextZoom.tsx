@@ -9,7 +9,8 @@ import {
   type CSSProperties,
   type ReactNode,
 } from 'react';
-import { Minus, Plus, RotateCcw } from 'lucide-react';
+import { RotateCcw } from 'lucide-react';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
 
 /** Controles de texto e layout extra só em viewport estreita (alinhado a `md`). */
@@ -18,9 +19,18 @@ export const MAX_WIDTH_MOBILE_CONTROLS_PX = 767;
 /** Escala de leitura (CSS `zoom` — reflow no WebKit/Blink, comum em mobile). */
 export const TEXT_SCALE_STEPS = [1, 1.12, 1.24, 1.36, 1.48] as const;
 
+export type ReadableTextZoomVariant = 'editorial' | 'cyber';
+
 /** Largura lógica pré-zoom para evitar overflow horizontal após `zoom`. */
 export function computeZoomInnerWidthPx(containerPx: number, scale: number): number | null {
   return containerPx > 0 && scale !== 1 ? Math.max(1, Math.floor(containerPx / scale)) : null;
+}
+
+function formatScaleLabel(step: number): string {
+  const scale = TEXT_SCALE_STEPS[step] ?? 1;
+  if (scale === 1) return 'Padrão';
+  const formatted = Number.isInteger(scale) ? String(scale) : scale.toFixed(2).replace(/\.?0+$/, '');
+  return `${formatted}×`;
 }
 
 type ReadableTextZoomContextValue = {
@@ -96,53 +106,153 @@ export function ReadableTextZoomProvider({ contentKey, children }: ReadableTextZ
   );
 }
 
+type TextZoomControlsProps = {
+  variant: ReadableTextZoomVariant;
+  panelLabel: string;
+};
+
+function TextZoomControls({ variant, panelLabel }: TextZoomControlsProps) {
+  const { textStep, inc, dec, resetScale, maxStep } = useReadableTextZoomContext();
+  const isEditorial = variant === 'editorial';
+
+  const stepBtnClass = cn(
+    'flex h-11 w-11 min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-lg border text-sm font-bold transition disabled:opacity-40 disabled:pointer-events-none',
+    isEditorial
+      ? 'border-slate-200 bg-white text-slate-800 hover:bg-slate-50 active:bg-slate-100'
+      : 'border-white/15 bg-white/5 text-slate-100 hover:bg-white/10 active:bg-white/15',
+  );
+
+  const activeDotClass = isEditorial ? 'bg-sky-500' : 'bg-cyan-400';
+  const inactiveDotClass = isEditorial ? 'bg-slate-200' : 'bg-white/20';
+
+  return (
+    <div role="toolbar" aria-label={panelLabel} className="flex min-w-[220px] flex-col gap-3">
+      <p
+        className={cn(
+          'text-xs font-semibold',
+          isEditorial ? 'text-slate-600' : 'text-slate-400',
+        )}
+      >
+        {panelLabel}
+      </p>
+      <div className="flex items-center gap-2">
+        <button
+          type="button"
+          className={stepBtnClass}
+          onClick={dec}
+          disabled={textStep <= 0}
+          aria-label="Diminuir texto"
+        >
+          A−
+        </button>
+        <div className="flex min-w-0 flex-1 flex-col items-center gap-1.5 px-1">
+          <div className="flex items-center gap-1.5" aria-hidden>
+            {TEXT_SCALE_STEPS.map((_, index) => (
+              <span
+                key={index}
+                className={cn(
+                  'h-1.5 w-1.5 rounded-full transition-colors',
+                  index <= textStep ? activeDotClass : inactiveDotClass,
+                )}
+              />
+            ))}
+          </div>
+          <span
+            className={cn(
+              'text-[11px] font-semibold tabular-nums',
+              isEditorial ? 'text-slate-700' : 'text-slate-300',
+            )}
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            {formatScaleLabel(textStep)}
+          </span>
+        </div>
+        <button
+          type="button"
+          className={stepBtnClass}
+          onClick={inc}
+          disabled={textStep >= maxStep}
+          aria-label="Aumentar texto"
+        >
+          A+
+        </button>
+      </div>
+      {textStep > 0 ? (
+        <button
+          type="button"
+          onClick={resetScale}
+          className={cn(
+            'flex min-h-[40px] w-full items-center justify-center gap-1.5 rounded-lg text-xs font-semibold transition',
+            isEditorial
+              ? 'border border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100'
+              : 'border border-white/10 bg-white/5 text-slate-300 hover:bg-white/10',
+          )}
+        >
+          <RotateCcw size={14} aria-hidden />
+          Restaurar padrão
+        </button>
+      ) : null}
+    </div>
+  );
+}
+
 type ReadableTextZoomToolbarProps = {
   /** Rótulo acessível do grupo de botões (ex.: "Tamanho do texto da questão") */
   ariaLabel: string;
+  /** `editorial` — player/vitrine; `cyber` — material modal escuro */
+  variant?: ReadableTextZoomVariant;
 };
 
 /**
- * Botões A− / A+ / reset (só mobile / viewport estreita).
+ * Botão Aa (mobile) que abre painel com A− / indicador / A+ / reset.
  */
-export function ReadableTextZoomToolbar({ ariaLabel }: ReadableTextZoomToolbarProps) {
-  const { narrowViewport, textStep, inc, dec, resetScale, maxStep } = useReadableTextZoomContext();
+export function ReadableTextZoomToolbar({
+  ariaLabel,
+  variant = 'editorial',
+}: ReadableTextZoomToolbarProps) {
+  const { narrowViewport, textStep } = useReadableTextZoomContext();
+  const [open, setOpen] = useState(false);
+  const isEditorial = variant === 'editorial';
 
   if (!narrowViewport) return null;
 
   return (
-    <div
-      className="flex shrink-0 items-center gap-0.5 rounded-lg border border-white/15 bg-black/55 p-0.5 shadow-md backdrop-blur-md"
-      role="toolbar"
-      aria-label={ariaLabel}
-    >
-      <button
-        type="button"
-        className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-white/95 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
-        onClick={dec}
-        disabled={textStep <= 0}
-        aria-label="Diminuir texto"
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <button
+          type="button"
+          aria-label={ariaLabel}
+          aria-expanded={open}
+          className={cn(
+            'flex h-11 w-11 min-h-[44px] min-w-[44px] shrink-0 items-center justify-center rounded-full border transition-colors',
+            isEditorial
+              ? cn(
+                  'border-slate-200 bg-white text-slate-700 shadow-sm hover:bg-slate-50 active:bg-slate-100',
+                  textStep > 0 && 'border-sky-300 bg-sky-50 text-sky-800 ring-1 ring-sky-200',
+                )
+              : cn(
+                  'rounded-xl border-white/15 bg-black/55 text-white/95 shadow-md backdrop-blur-md hover:bg-white/12 active:bg-white/20',
+                  textStep > 0 && 'border-cyan-400/40 bg-cyan-950/40 text-cyan-200',
+                ),
+          )}
+        >
+          <span className="flex items-baseline font-semibold leading-none select-none" aria-hidden>
+            <span className="text-[10px]">A</span>
+            <span className="text-sm">a</span>
+          </span>
+        </button>
+      </PopoverTrigger>
+      <PopoverContent
+        variant={isEditorial ? 'editorial' : 'default'}
+        align="end"
+        side="bottom"
+        sideOffset={8}
+        className="w-auto p-3"
       >
-        <Minus size={16} strokeWidth={2.25} />
-      </button>
-      <button
-        type="button"
-        className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-white/95 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
-        onClick={inc}
-        disabled={textStep >= maxStep}
-        aria-label="Aumentar texto"
-      >
-        <Plus size={16} strokeWidth={2.25} />
-      </button>
-      <button
-        type="button"
-        className="flex h-11 w-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-white/80 transition hover:bg-white/12 active:bg-white/20 disabled:opacity-35"
-        onClick={resetScale}
-        disabled={textStep === 0}
-        aria-label="Tamanho de texto padrão"
-      >
-        <RotateCcw size={15} strokeWidth={2.25} />
-      </button>
-    </div>
+        <TextZoomControls variant={variant} panelLabel={ariaLabel} />
+      </PopoverContent>
+    </Popover>
   );
 }
 

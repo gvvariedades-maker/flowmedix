@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-06-14T08:16:25.859Z",
+  "lote": "curativos-lote-01",
+  "mode": "write",
+  "force": true,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 1,
+  "upgraded": 1,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "conceito": 1
+  },
+  "results": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779344786992-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    }
+  ]
+}

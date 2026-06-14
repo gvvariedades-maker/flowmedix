@@ -1,0 +1,42 @@
+{
+  "exported_at": "2026-06-14T07:08:56.625Z",
+  "lote": "golden-curativos-ists",
+  "total": 5,
+  "entries": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-3",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 3921
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779344786992-2",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 2833
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779269305691-1",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 2310
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-7",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 2837
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-8",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACET",
+      "avant_codigo": 2838
+    }
+  ]
+}

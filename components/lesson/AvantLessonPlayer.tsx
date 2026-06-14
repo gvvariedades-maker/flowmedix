@@ -93,7 +93,8 @@ import {
   Flag, BrainCircuit, X, BadgeCheck, Loader2, Scissors
 } from 'lucide-react';
 
-const QUESTION_TEXT_TYPOGRAPHY = 'text-[15px] md:text-base leading-relaxed';
+const QUESTION_TEXT_TYPOGRAPHY =
+  'text-[15px] md:text-base leading-relaxed font-medium md:font-normal';
 
 function resetDashboardMainScroll() {
   if (typeof document === 'undefined') return;
@@ -1332,7 +1333,10 @@ export default function AvantLessonPlayer({
             </span>
           )}
           {withZoom ? (
-            <ReadableTextZoomToolbar ariaLabel="Tamanho do texto da questão" />
+            <ReadableTextZoomToolbar
+              ariaLabel="Tamanho do texto da questão"
+              variant="editorial"
+            />
           ) : null}
           <ReportErrorDialog
             contextType="lesson"
@@ -1366,7 +1370,7 @@ export default function AvantLessonPlayer({
         )}
 
         <div className="min-w-0 px-6 pt-4 pb-2 md:px-8 md:pt-5 md:pb-3">
-          <div className={`${QUESTION_TEXT_TYPOGRAPHY} text-slate-800 font-normal whitespace-pre-wrap break-words overflow-x-hidden [&_strong]:font-semibold [&_p]:mb-2 [&_p:last-child]:mb-0`}>
+          <div className={`${QUESTION_TEXT_TYPOGRAPHY} text-slate-900 whitespace-pre-wrap break-words overflow-x-hidden [&_strong]:font-semibold [&_p]:mb-2 [&_p:last-child]:mb-0`}>
             <span dangerouslySetInnerHTML={{ __html: sanitizedInstructionHtml }} />
           </div>
         </div>
@@ -1402,9 +1406,11 @@ export default function AvantLessonPlayer({
               const isCorrect = opcaoEstaCorreta(opt.id);
               const showResult = (etapa === 'gabarito' || etapa === 'estudo') && gabarito !== null;
 
-              let styles = "border-slate-200 bg-white hover:border-[rgba(34,197,94,0.45)] hover:bg-[rgba(34,197,94,0.06)]";
-              let badge = "border border-slate-200 bg-slate-100 text-slate-600 group-hover:border-[rgba(34,197,94,0.35)] group-hover:text-[#166534]";
-              let text = "text-slate-800";
+              let styles =
+                'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50';
+              let badge =
+                'border border-slate-300 bg-slate-50 text-slate-800 group-hover:border-slate-400 group-hover:text-slate-900';
+              let text = 'text-slate-900';
 
               if (isEliminada && !showResult) {
                 styles = "border-slate-100 bg-slate-50";
@@ -1423,9 +1429,10 @@ export default function AvantLessonPlayer({
                   styles = "border-slate-100 bg-slate-50 opacity-70";
                 }
               } else if (isSelected) {
-                styles = "border-[rgba(34,197,94,0.45)] bg-[rgba(34,197,94,0.08)] shadow-sm";
-                badge = "bg-[#22c55e] text-slate-900 shadow-md";
-                text = "text-[#166534] font-bold";
+                styles =
+                  'border-sky-400 bg-sky-50 shadow-sm ring-1 ring-sky-200 hover:border-sky-400 hover:bg-sky-50';
+                badge = 'bg-sky-600 text-white shadow-md';
+                text = 'text-sky-950 font-semibold';
               }
 
               const rowLayout = certoErradoLayout
@@ -1456,7 +1463,7 @@ export default function AvantLessonPlayer({
                         'flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border transition-colors sm:h-12 sm:w-12',
                         isEliminada
                           ? 'border-sky-200 bg-sky-50 text-sky-600'
-                          : 'border-transparent text-slate-300 hover:border-slate-200 hover:bg-slate-50 hover:text-sky-600',
+                          : 'border-transparent text-slate-500 hover:border-slate-200 hover:bg-slate-50 hover:text-sky-600',
                       )}
                     >
                       <Scissors size={16} aria-hidden />
@@ -1491,7 +1498,9 @@ export default function AvantLessonPlayer({
                         {opt.id}
                       </span>
                     )}
-                    <span className={`min-w-0 flex-1 ${QUESTION_TEXT_TYPOGRAPHY} ${certoErradoLayout ? 'font-semibold' : 'font-normal'} ${text}`}>
+                    <span
+                      className={`min-w-0 flex-1 ${QUESTION_TEXT_TYPOGRAPHY} ${certoErradoLayout ? 'font-semibold' : ''} ${text}`}
+                    >
                       {opt.text}
                     </span>
                     {showResult && isCorrect && (

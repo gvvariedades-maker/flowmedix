@@ -210,7 +210,10 @@ export function MaterialSlidesModal({ open, selectedLot, onSelectLot, onClose }:
               </button>
 
               <div className="pointer-events-auto flex items-center gap-2">
-                <ReadableTextZoomToolbar ariaLabel="Tamanho do texto do NeuroSlide" />
+                <ReadableTextZoomToolbar
+                  ariaLabel="Tamanho do texto do NeuroSlide"
+                  variant="cyber"
+                />
                 <button
                   type="button"
                   onClick={onClose}

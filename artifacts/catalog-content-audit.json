@@ -1,0 +1,361 @@
+{
+  "generated_at": "2026-06-14T05:31:34.181Z",
+  "catalog_total": 5180,
+  "scanned_rows": 5180,
+  "summary": {
+    "missing_slides": 0,
+    "slide_count_not_four": 0,
+    "missing_premium_type": 0,
+    "zod_invalid": 0,
+    "tecconcursos_reference": 0,
+    "fully_premium_package": 5180
+  },
+  "issue_rows": [],
+  "sample_size": 20,
+  "sample_validation": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": false
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-2",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": true
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-2",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": true
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-7",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": true
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-saude-da-mulher-1777104323066-8",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": false
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-2",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": true
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-8",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": false
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-instalacao-e-manejo-de-sondas-1776056544832-3",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": false
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-5",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": true
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1776056409987-0",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": false
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "ibam-enfermagem-semiologia-em-enfermagem-1779563495719-1",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": true
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-4",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": false
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-1",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": false
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104070286-8",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": false
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-3",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": true
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-1",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": true
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010917301-0",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": true
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-seguranca-do-paciente-1779563443877-8",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": true
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-5",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": false
+      },
+      "issues": []
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-2",
+      "valid": true,
+      "slide_count": 4,
+      "slide_types": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ],
+      "premium_layouts": {
+        "logic_flow_tap": true,
+        "danger_zone_compare": true,
+        "golden_rule_reference_table": true
+      },
+      "issues": []
+    }
+  ],
+  "notes": [
+    "Contagens de issue podem sobrepor (uma questão pode ter vários códigos).",
+    "Amostra de 20 slugs: validação QuestaoCompletaSchema + layouts premium (tap / compare / reference_table)."
+  ]
+}
