@@ -7,9 +7,10 @@ const LOGIC_FLOW_LAYOUT_OVERRIDES = new Set([
   'cards',
   'oxygen-step-ladder',
   'iv-care-soft-stack',
+  'lab-vf-soft-stack',
 ]);
 
-const LOGIC_FLOW_MOLD_OVERRIDES = new Set(['oxygen-step-ladder', 'iv-care-soft-stack']);
+const LOGIC_FLOW_MOLD_OVERRIDES = new Set(['oxygen-step-ladder', 'iv-care-soft-stack', 'lab-vf-soft-stack']);
 
 /**
  * Resolve `layout_variant` do logic_flow.

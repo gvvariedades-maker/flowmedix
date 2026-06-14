@@ -239,7 +239,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'cateteres': { template: 'indigo', conceptMap: 'morphing-timeline', goldenRule: 'iv-bundle-mesh-reveal', logicFlow: 'iv-care-soft-stack', dangerZone: 'catheter-danger-arena' },
 
   // ---- Coleta de Exames ----
-  'coleta de exames laboratoriais': { template: 'sky', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
+  'coleta de exames laboratoriais': { template: 'sky', conceptMap: 'lab-specimen-chain', goldenRule: 'lab-prep-lens-board', logicFlow: 'lab-vf-soft-stack', dangerZone: 'lab-specimen-arena' },
+  'coleta de exames': { template: 'sky', conceptMap: 'lab-specimen-chain', goldenRule: 'lab-prep-lens-board', logicFlow: 'lab-vf-soft-stack', dangerZone: 'lab-specimen-arena' },
+  'exames laboratoriais': { template: 'sky', conceptMap: 'lab-specimen-chain', goldenRule: 'lab-prep-lens-board', logicFlow: 'lab-vf-soft-stack', dangerZone: 'lab-specimen-arena' },
   'exames laboratoriais': { template: 'sky', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
 
   // ---- Mobilização e Posicionamento ----

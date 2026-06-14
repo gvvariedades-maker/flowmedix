@@ -555,4 +555,78 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('catheter-danger-arena');
     expect(result.bulletStyle).toBe('x_icon');
   });
+
+  it('Coleta de Exames: concept_map lab-specimen-chain no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Coleta de Exames Laboratoriais' },
+        items: [
+          { label: 'Mediana cubital', detail: 'Via preferida' },
+          { label: 'Refrigeração', detail: '2°C a 8°C' },
+          { label: 'Segregação', detail: 'Recipiente próprio' },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-coleta-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('lab-specimen-chain');
+  });
+
+  it('Coleta de Exames: golden_rule lab-prep-lens-board com rows no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Coleta de Exames Laboratoriais' },
+        content: 'COLETA',
+        rows: [
+          { label: 'I', value: 'Verdadeira' },
+          { label: 'III', value: 'Falsa', emphasis: 'alert' },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-coleta-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('lab-prep-lens-board');
+  });
+
+  it('Coleta de Exames: logic_flow lab-vf-soft-stack no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Coleta de Exames Laboratoriais' },
+        steps: ['Ler V/F', 'Julgar I', 'Julgar II', 'Julgar III', 'Marcar D'],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'cpcon-coleta-1',
+        slideIndex: 2,
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('lab-vf-soft-stack');
+    expect(result.revealMode).toBe('tap');
+  });
+
+  it('Coleta de Exames: danger_zone lab-specimen-arena com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Coleta de Exames Laboratoriais' },
+        content: 'Pegadinhas',
+        items: [{ label: 'Juntar resíduos', detail: 'Mistura gaze e perfuro', correct: 'Recipiente próprio' }],
+      },
+      {
+        questionSlug: 'cpcon-coleta-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('lab-specimen-arena');
+    expect(result.dangerRevealMode).toBe('tap');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
 });

@@ -41,7 +41,6 @@
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "layout_variant": "morphological",
       "slide_title": "Coleta e transporte — mapa da prova",
       "meta": {
         "topico": "Enfermagem",
@@ -83,8 +82,6 @@
     },
     {
       "type": "golden_rule",
-      "layout_variant": "reference_table",
-      "template": "t09",
       "slide_title": "Regra de ouro — pré-analítica",
       "meta": {
         "topico": "Enfermagem",
@@ -124,7 +121,6 @@
     },
     {
       "type": "logic_flow",
-      "layout_variant": "cards",
       "reveal_mode": "tap",
       "meta": {
         "topico": "Enfermagem",
@@ -144,7 +140,6 @@
     },
     {
       "type": "danger_zone",
-      "layout_variant": "compare",
       "bullet_style": "x_icon",
       "meta": {
         "topico": "Enfermagem",

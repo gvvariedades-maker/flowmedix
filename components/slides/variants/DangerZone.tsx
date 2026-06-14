@@ -17,6 +17,8 @@ import { DangerZoneRouteTrap } from './DangerZoneRouteTrap';
 import { DangerZoneDoseTrap } from './DangerZoneDoseTrap';
 import { DangerZoneOxygenArena } from './DangerZoneOxygenArena';
 import { DangerZoneCatheterArena } from './DangerZoneCatheterArena';
+import { DangerZoneLabPrepTrap } from './DangerZoneLabPrepTrap';
+import { DangerZoneLabSpecimenArena } from './DangerZoneLabSpecimenArena';
 
 export interface DangerZoneItem {
   id?: string;
@@ -337,6 +339,29 @@ export const DangerZone = ({
   if (explicitVariant === 'catheter-danger-arena' && items && items.length > 0) {
     return (
       <DangerZoneCatheterArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (explicitVariant === 'lab-prep-trap' && items && items.length > 0) {
+    return (
+      <DangerZoneLabPrepTrap
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'lab-specimen-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneLabSpecimenArena
         content={content}
         items={items}
         theme={theme}

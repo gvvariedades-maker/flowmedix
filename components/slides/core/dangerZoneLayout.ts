@@ -21,6 +21,8 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'dose-trap',
   'oxygen-danger-arena',
   'catheter-danger-arena',
+  'lab-prep-trap',
+  'lab-specimen-arena',
 ]);
 
 /**
@@ -50,6 +52,8 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'dose-trap') return 'dose-trap';
   if (explicitVariant === 'oxygen-danger-arena') return 'oxygen-danger-arena';
   if (explicitVariant === 'catheter-danger-arena') return 'catheter-danger-arena';
+  if (explicitVariant === 'lab-prep-trap') return 'lab-prep-trap';
+  if (explicitVariant === 'lab-specimen-arena') return 'lab-specimen-arena';
 
   if (hasCompareItems) {
     if (explicitVariant && DANGER_ZONE_LAYOUT_OVERRIDES.has(explicitVariant)) {
@@ -78,6 +82,12 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'catheter-danger-arena') {
       return 'catheter-danger-arena';
+    }
+    if (!explicitVariant && fallbackVariant === 'lab-prep-trap') {
+      return 'lab-prep-trap';
+    }
+    if (!explicitVariant && fallbackVariant === 'lab-specimen-arena') {
+      return 'lab-specimen-arena';
     }
     return 'compare';
   }

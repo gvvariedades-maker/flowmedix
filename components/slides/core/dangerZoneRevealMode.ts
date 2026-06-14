@@ -22,6 +22,8 @@ export function resolveDangerZoneRevealMode(
     layoutVariant === 'dose-trap' ||
     layoutVariant === 'oxygen-danger-arena' ||
     layoutVariant === 'catheter-danger-arena' ||
+    layoutVariant === 'lab-prep-trap' ||
+    layoutVariant === 'lab-specimen-arena' ||
     dangerZoneHasCompareItems(items);
   return isCompare ? 'tap' : 'auto';
 }
