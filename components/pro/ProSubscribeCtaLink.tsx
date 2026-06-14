@@ -2,23 +2,38 @@
 
 import { Loader2 } from 'lucide-react';
 import { useProCheckout } from '@/components/pro/useProCheckout';
+import { cn } from '@/lib/utils';
 
-export function ProSubscribeCtaLink() {
+type ProSubscribeCtaLinkProps = {
+  variant?: 'link' | 'button';
+  className?: string;
+};
+
+export function ProSubscribeCtaLink({ variant = 'link', className }: ProSubscribeCtaLinkProps) {
   const { handleCheckout, loading, error } = useProCheckout();
 
+  const isButton = variant === 'button';
+
   return (
-    <div className="flex flex-col items-center gap-2">
+    <div className={cn('flex flex-col items-center gap-2', className)}>
       <button
         type="button"
         onClick={handleCheckout}
         disabled={loading}
-        className="inline-flex items-center justify-center gap-2 text-sm font-bold text-[#BEF264]/80 underline underline-offset-4 transition-colors hover:text-[#BEF264] disabled:cursor-not-allowed disabled:opacity-60"
+        className={cn(
+          'inline-flex items-center justify-center gap-2 transition-colors disabled:cursor-not-allowed disabled:opacity-60',
+          isButton
+            ? 'w-full rounded-2xl bg-[#8fe020] px-6 py-3.5 text-sm font-black uppercase tracking-widest text-slate-950 hover:bg-[#a8f53c]'
+            : 'text-sm font-bold text-[#8fe020]/80 underline underline-offset-4 hover:text-[#8fe020]',
+        )}
       >
         {loading ? (
           <>
             <Loader2 size={16} className="animate-spin" aria-hidden />
             Redirecionando…
           </>
+        ) : isButton ? (
+          'Assinar AVANT Pro'
         ) : (
           'Já decidi — Assinar Pro por R$ 14,90/mês →'
         )}

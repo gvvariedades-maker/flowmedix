@@ -15,7 +15,38 @@ const AvantLessonPlayer = dynamic(() => import('@/components/lesson/AvantLessonP
   ),
 });
 
-export function DemoInterativa() {
+export function DemoInterativa({ embedded = false }: { embedded?: boolean }) {
+  const player = (
+    <>
+      <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#010409] shadow-2xl shadow-black/40">
+        <div className="relative flex min-h-[70vh] flex-col px-3 py-3 sm:px-4 md:px-6 md:py-6">
+          <AvantLessonPlayer
+            dados={landingDemoQuestao}
+            mode="preview"
+            moduloSlug="demo-landing-gluconato"
+          />
+        </div>
+      </div>
+
+      <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+        <Link
+          href="/register"
+          className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#8fe020] px-8 py-4 text-sm font-black uppercase tracking-widest text-slate-950 shadow-xl shadow-[#8fe020]/20 transition-all hover:scale-[1.02] hover:bg-[#a8f53c]"
+        >
+          Testar grátis agora
+          <ArrowRight size={18} />
+        </Link>
+        <p className="text-center text-sm font-medium text-slate-400 sm:text-left">
+          {FREEMIUM_PLAN_LIMITS_COMPACT} após cadastro · sem cartão
+        </p>
+      </div>
+    </>
+  );
+
+  if (embedded) {
+    return <div className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">{player}</div>;
+  }
+
   return (
     <section className="px-4 py-20 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-6xl">
@@ -28,29 +59,7 @@ export function DemoInterativa() {
             O mesmo player do app: responda, veja o gabarito e percorra os NeuroSlides de estudo reverso.
           </p>
         </div>
-
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#010409] shadow-2xl shadow-black/40">
-          <div className="relative flex min-h-[70vh] flex-col px-3 py-3 sm:px-4 md:px-6 md:py-6">
-            <AvantLessonPlayer
-              dados={landingDemoQuestao}
-              mode="preview"
-              moduloSlug="demo-landing-gluconato"
-            />
-          </div>
-        </div>
-
-        <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-          <Link
-            href="/register"
-            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#BEF264] px-8 py-4 text-sm font-black uppercase tracking-widest text-slate-950 shadow-xl shadow-lime-400/20 transition-all hover:scale-[1.02] hover:bg-[#d4f879]"
-          >
-            Testar grátis agora
-            <ArrowRight size={18} />
-          </Link>
-          <p className="text-center text-sm font-medium text-slate-500 sm:text-left">
-            {FREEMIUM_PLAN_LIMITS_COMPACT} após cadastro · sem cartão
-          </p>
-        </div>
+        {player}
       </div>
     </section>
   );

@@ -33,7 +33,7 @@ export type PublicDarkSiteHeaderProps = {
 const HEADER_SPACER_CLASS = 'h-[6.75rem] shrink-0 sm:h-[73px]';
 
 const ctaButtonClass =
-  'inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#BEF264] px-2.5 py-2 text-xs font-black uppercase tracking-wider text-slate-950 shadow-lg shadow-lime-400/20 transition-all hover:scale-[1.02] hover:bg-[#d4f879] min-[400px]:gap-2 min-[400px]:px-3 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm';
+  'inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl bg-[#8fe020] px-2.5 py-2 text-xs font-black uppercase tracking-wider text-slate-950 shadow-lg shadow-[#8fe020]/20 transition-all hover:scale-[1.02] hover:bg-[#a8f53c] min-[400px]:gap-2 min-[400px]:px-3 sm:gap-2 sm:px-4 sm:py-2.5 sm:text-sm';
 
 function CtaButton({
   ctaHref,

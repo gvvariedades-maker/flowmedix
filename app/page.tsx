@@ -8,7 +8,7 @@ import { getAbsoluteUrl } from '@/lib/siteUrl';
 import { FREEMIUM_PLAN_LIMITS_COMPACT, FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium';
 
 /** Chunk separado evita erro do Turbopack ao misturar grafo de módulos com `not-found`. */
-const LandingHome = dynamic(() => import('@/components/landing/LandingHome'), {
+const LandingHome = dynamic(() => import('@/components/landing/LandingHomeClient'), {
   ssr: true,
   loading: () => (
     <div
@@ -45,11 +45,20 @@ export const metadata: Metadata = {
     siteName: 'AVANT',
     locale: 'pt_BR',
     type: 'website',
+    images: [
+      {
+        url: getAbsoluteUrl('/images/compare-avant-2.jpg'),
+        width: 750,
+        height: 1334,
+        alt: 'AVANT — NeuroSlides de estudo reverso para Técnico em Enfermagem',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: homeTitle,
     description: `Estudo Reverso, NeuroSlides e simulados. ${FREEMIUM_PLAN_LIMITS_COMPACT} · sem cartão.`,
+    images: [getAbsoluteUrl('/images/compare-avant-2.jpg')],
   },
   robots: {
     index: true,
@@ -57,10 +66,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function IndexPage() {
+export default async function IndexPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ landing?: string }>;
+}) {
+  const { landing } = await searchParams;
   const session = await getServerSession();
+  const forceLanding = landing === '1';
 
-  if (session?.user?.id) {
+  if (session?.user?.id && !forceLanding) {
     const isAdmin = isAdminSessionEmail(session.user.email);
     const hasActiveMatricula = await userHasActiveMatricula(session.user.id).catch(() => false);
     if (isAdmin) {
