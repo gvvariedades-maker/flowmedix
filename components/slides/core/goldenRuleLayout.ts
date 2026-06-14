@@ -12,6 +12,9 @@ export type GoldenRuleRowLike = {
 
 const GOLDEN_RULE_TYPOGRAPHY_OVERRIDES = new Set(['minimal', 'banner', 'compact']);
 
+/** Moldes tabulares premium — vencem `reference_table` automático quando há `rows`. */
+const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set(['soft-lens-board']);
+
 /**
  * Resolve `layout_variant` do golden_rule.
  * - Com `rows` (≥1 par label/value não vazio) → `reference_table` (B1: conteúdo vence mapa compact).
@@ -37,10 +40,14 @@ export function resolveGoldenRuleLayoutVariant(
     );
 
   if (explicitVariant === 'reference_table') return 'reference_table';
+  if (explicitVariant === 'soft-lens-board') return 'soft-lens-board';
 
   if (hasTableRows) {
     if (explicitVariant && GOLDEN_RULE_TYPOGRAPHY_OVERRIDES.has(explicitVariant)) {
       return explicitVariant;
+    }
+    if (fallbackVariant && GOLDEN_RULE_TABLE_MOLD_OVERRIDES.has(fallbackVariant)) {
+      return fallbackVariant;
     }
     return 'reference_table';
   }

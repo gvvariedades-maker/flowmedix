@@ -155,6 +155,8 @@ A migração híbrida (`upgradePremiumHybrid`) **não grava** `layout_variant` n
 
 **Override:** `layout_variant` ou `template` no JSON só quando o humano pedir exceção intencional (vitrine fixa, piloto visual).
 
+**Moldes interativos bespoke** (`sus-art4-orbit`, `absorption-speed-rail`, `route-trap`, …): ver [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) — pipeline de construção, catálogo e contrato de conteúdo para o agente.
+
 **Catálogo já migrado com `layout_variant`:** `npm run catalog:strip-layout-variant` em `data/catalog-migration/` antes de reaplicar lotes.
 
 ### 5.2 Campos que melhoram percepção (sem mudar código)

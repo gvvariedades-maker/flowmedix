@@ -25,6 +25,7 @@ Lista de referências oficiais para gerar ou validar JSON de questões compatív
 - **`.cursor/rules/avant-agent-json.mdc`** — regra **alwaysApply** com `meta`, cabeçalho, `instruction` e slides. **Cópia versionada no Git:** `docs/cursor/avant-agent-json.mdc` (se a rule local sumir após clone, copiar esse arquivo para `.cursor/rules/`).
 - **`docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md`**
 - **`docs/PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`** — famílias pedagógicas (legislação, protocolo, cálculo, I/II/III, conceito), visual premium, evidências UX, anti-repetição e checklist de publicação
+- **`docs/VARIANT_MOLDS.md`** — pipeline para moldes interativos bespoke (concept_map / danger_zone), contrato de conteúdo por molde, wiring no player e catálogo atual
 
 ## Migração de catálogo e visual
 
@@ -35,7 +36,9 @@ Lista de referências oficiais para gerar ou validar JSON de questões compatív
 ## Exemplos “golden”
 
 - **`examples/questao-premium-urgencias-rcp.json`** — família **protocolo** (pedagógico + vitrine; `reveal_mode: "tap"`, `danger_zone` com `correct`, `golden_rule` com `rows`, `slide_title`)
-- **`examples/questao-premium-sus-lei-8080-cesgranrio.json`** — família **legislação** (estudo aprofundado concurso; questão sem cola; overrides `morphological` / `reference_table` / `cards` / `compare`)
+- **`examples/questao-premium-sus-lei-8080-cesgranrio.json`** — família **legislação** + molde `sus-art4-orbit` / `scope-trap` (sem `layout_variant` no JSON — subtópico Promoção à Saúde)
+- **`examples/questao-premium-vunesp-via-subcutanea.json`** — família **conceito** + molde `absorption-speed-rail` / `route-trap` (subtópico Vias de Administração)
+- **`examples/questao-premium-idecan-calculo-equivalencias-gotas.json`** — família **calc** + molde `dose-equivalence-rail` / `dose-trap` (subtópico Cálculo de Medicamentos)
 - **`examples/questao-preview-logic-flow-tap.json`** — preview mínimo só do `logic_flow` tap
 - **`examples/questao-enfermagem-sae.json`**
 - **`examples/questao-teste-simples.json`**

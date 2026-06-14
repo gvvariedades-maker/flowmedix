@@ -18,6 +18,7 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'norm-reveal',
   'scope-trap',
   'route-trap',
+  'dose-trap',
 ]);
 
 /**
@@ -44,6 +45,7 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'norm-reveal') return 'norm-reveal';
   if (explicitVariant === 'scope-trap') return 'scope-trap';
   if (explicitVariant === 'route-trap') return 'route-trap';
+  if (explicitVariant === 'dose-trap') return 'dose-trap';
 
   if (hasCompareItems) {
     if (explicitVariant && DANGER_ZONE_LAYOUT_OVERRIDES.has(explicitVariant)) {
@@ -63,6 +65,9 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'route-trap') {
       return 'route-trap';
+    }
+    if (!explicitVariant && fallbackVariant === 'dose-trap') {
+      return 'dose-trap';
     }
     return 'compare';
   }

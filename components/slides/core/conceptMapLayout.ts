@@ -22,6 +22,7 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'sus-legal-pillars',
   'sus-art4-orbit',
   'absorption-speed-rail',
+  'dose-equivalence-rail',
 ]);
 
 function countConceptItems(slide?: {

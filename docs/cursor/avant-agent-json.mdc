@@ -33,8 +33,13 @@ Ao gerar ou editar JSON de questão para o Laboratório ou `QuestaoCompletaSchem
 - `golden_rule` **novo:** preferir **`rows`** (`label`, `value`) para SV/doses/escores; layout `reference_table` automático. `content` como título/mnemônico (opcional com `rows`) ou frase única legada.
 - **Shell (player):** chip e fio condutor vêm do `type` + posição no player; **banca** só em `meta` (não repetir por slide). Opcional: `chip_label`, `slide_title` por slide.
 
+## Moldes premium (interativos)
+
+Subtópicos mapeados em `themeGenerator.ts` disparam layouts bespoke (`sus-art4-orbit`, `absorption-speed-rail`, `route-trap`, etc.) **sem** `layout_variant` no JSON. Ao gerar conteúdo para esses subtópicos, seguir o **contrato de texto** em `docs/VARIANT_MOLDS.md` §6 (palavras-gatilho para a UI inferir slots).
+
 ## Referência
 
+- `docs/VARIANT_MOLDS.md` — construir/replicar moldes interativos + contrato de conteúdo
 - `docs/PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md` — famílias pedagógicas, visual premium, evidências UX
 - `docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md` (inclui seção 12 — cabeçalho da questão)
 - `docs/AVANT_AGENT_SOURCES.md`

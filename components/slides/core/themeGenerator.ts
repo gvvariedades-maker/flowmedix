@@ -195,10 +195,11 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'farmacologia': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
 
   // ---- Cálculo de Medicamentos ----
-  'cálculo de administração de medicamentos e infusões': { template: 'blue', conceptMap: 'stack', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
-  'cálculo de administração de medicamentos': { template: 'blue', conceptMap: 'stack', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
-  'cálculos de enfermagem': { template: 'blue', conceptMap: 'stack', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
-  'dosagens e cálculos': { template: 'blue', conceptMap: 'stack', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
+  // ---- Cálculos (golden: dose-equivalence-rail · reference_table · cards · dose-trap) ----
+  'cálculo de administração de medicamentos e infusões': { template: 'blue', conceptMap: 'dose-equivalence-rail', goldenRule: 'soft-lens-board', logicFlow: 'cards', dangerZone: 'dose-trap' },
+  'cálculo de administração de medicamentos': { template: 'blue', conceptMap: 'dose-equivalence-rail', goldenRule: 'soft-lens-board', logicFlow: 'cards', dangerZone: 'dose-trap' },
+  'cálculos de enfermagem': { template: 'blue', conceptMap: 'dose-equivalence-rail', goldenRule: 'soft-lens-board', logicFlow: 'cards', dangerZone: 'dose-trap' },
+  'dosagens e cálculos': { template: 'blue', conceptMap: 'dose-equivalence-rail', goldenRule: 'soft-lens-board', logicFlow: 'cards', dangerZone: 'dose-trap' },
 
   // ---- Vias de Administração ----
   // ---- Vias de Administração (golden: absorption-speed-rail · reference_table · cards · route-trap) ----

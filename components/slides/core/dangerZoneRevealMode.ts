@@ -19,6 +19,7 @@ export function resolveDangerZoneRevealMode(
     layoutVariant === 'norm-reveal' ||
     layoutVariant === 'scope-trap' ||
     layoutVariant === 'route-trap' ||
+    layoutVariant === 'dose-trap' ||
     dangerZoneHasCompareItems(items);
   return isCompare ? 'tap' : 'auto';
 }

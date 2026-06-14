@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { Sparkles, Lightbulb, Zap, Table2 } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
-import { GoldenRuleHeroCard } from '../core/GoldenRuleHeroCard';
+import { GoldenRuleSoftLensBoard } from './GoldenRuleSoftLensBoard';
 import { getGoldenRuleTitleSizeClass } from '@/lib/slides/goldenRuleTypography';
 
 export type GoldenRuleRowEmphasis = 'default' | 'highlight' | 'alert' | 'success';
@@ -229,6 +229,12 @@ export const GoldenRule = ({
   footerRule,
 }: GoldenRuleProps) => {
   const variant = layoutVariant || 'center';
+
+  if (variant === 'soft-lens-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleSoftLensBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
 
   if (variant === 'reference_table' && rows && rows.length > 0) {
     return (

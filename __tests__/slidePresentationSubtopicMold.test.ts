@@ -351,4 +351,60 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('route-trap');
     expect(result.bulletStyle).toBe('x_icon');
   });
+
+  it('Cálculo de Medicamentos: concept_map dose-equivalence-rail no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Cálculo de Administração de Medicamentos e Infusões' },
+        items: [
+          { label: '1 mL = 20 gotas', detail: 'macrogota' },
+          { label: 'U-100', detail: 'insulina' },
+        ],
+      },
+      {
+        questionSlug: 'idecan-calc-1',
+        familyId: 'calc',
+      },
+    );
+    expect(result.layoutVariant).toBe('dose-equivalence-rail');
+  });
+
+  it('Cálculo de Medicamentos: danger_zone dose-trap com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Cálculo de Administração de Medicamentos e Infusões' },
+        content: 'Pegadinhas',
+        items: [{ label: 'Letra A — 10 UI', detail: 'U-100 errada', correct: '100 UI/mL' }],
+      },
+      {
+        questionSlug: 'idecan-calc-1',
+        familyId: 'calc',
+      },
+    );
+    expect(result.layoutVariant).toBe('dose-trap');
+    expect(result.bulletStyle).toBe('x_icon');
+    expect(result.dangerRevealMode).toBe('tap');
+  });
+
+  it('Cálculo de Medicamentos: golden_rule soft-lens-board com rows no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Cálculo de Administração de Medicamentos e Infusões' },
+        content: '20 · 60 · 3',
+        rows: [
+          { label: '1 mL', value: '20 gotas', emphasis: 'highlight' },
+          { label: 'Letra B', value: 'Gabarito', emphasis: 'success' },
+        ],
+      },
+      {
+        questionSlug: 'idecan-calc-1',
+        slideIndex: 1,
+        familyId: 'calc',
+      },
+    );
+    expect(result.layoutVariant).toBe('soft-lens-board');
+  });
 });

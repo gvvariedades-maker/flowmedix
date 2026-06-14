@@ -14,6 +14,7 @@ import { DangerZoneCalendarMismatch } from './DangerZoneCalendarMismatch';
 import { DangerZoneNormReveal } from './DangerZoneNormReveal';
 import { DangerZoneScopeTrap } from './DangerZoneScopeTrap';
 import { DangerZoneRouteTrap } from './DangerZoneRouteTrap';
+import { DangerZoneDoseTrap } from './DangerZoneDoseTrap';
 
 export interface DangerZoneItem {
   id?: string;
@@ -372,6 +373,18 @@ export const DangerZone = ({
   if (explicitVariant === 'route-trap' && items && items.length > 0) {
     return (
       <DangerZoneRouteTrap
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'dose-trap' && items && items.length > 0) {
+    return (
+      <DangerZoneDoseTrap
         content={content}
         items={items}
         theme={theme}
