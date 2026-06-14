@@ -16,6 +16,7 @@ import {
   canBuildCurativosPremiumSlides,
   CURATIVOS_GOLDEN_FILE,
   isCurativosSubtopico,
+  normalizeCurativosInstruction,
 } from '@/lib/catalogMigration/upgradePremiumCurativos';
 
 const GENERIC_MARKERS = [
@@ -533,7 +534,8 @@ export function upgradePremiumHybrid(
 
   const meta = (base.meta ?? {}) as Record<string, unknown>;
   const questionData = (base.question_data ?? {}) as Record<string, unknown>;
-  const instruction = String(questionData.instruction ?? '').trim();
+  const instructionRaw = String(questionData.instruction ?? '').trim();
+  const instruction = normalizeCurativosInstruction(instructionRaw);
   const textFragment = String(questionData.text_fragment ?? '').trim();
   const optionsList = Array.isArray(questionData.options)
     ? (questionData.options as QuestionOption[])
@@ -622,9 +624,13 @@ export function upgradePremiumHybrid(
       family,
     );
     const working: Record<string, unknown> = {
-      ...(base as Record<string, unknown>),
-      reverse_study_slides: curativosSlides,
-    };
+    ...(base as Record<string, unknown>),
+    question_data: {
+      ...questionData,
+      instruction,
+    },
+    reverse_study_slides: curativosSlides,
+  };
     delete working.study_slides;
     const parsed = QuestaoCompletaSchema.safeParse(working);
     return {

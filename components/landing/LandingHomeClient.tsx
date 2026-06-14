@@ -328,7 +328,7 @@ export default function LandingHomeClient() {
 
               <div className="card-elevated-lg overflow-hidden rounded-[2rem] border-[#8fe020]/20">
                 <div className="border-b border-slate-100 px-6 py-4">
-                  <AvantLogo size="sm" animated={false} />
+                  <AvantLogo size="md" tone="light" animated={false} />
                 </div>
                 <CompareAvantCarousel />
                 <ul className="space-y-3 px-6 pb-6">

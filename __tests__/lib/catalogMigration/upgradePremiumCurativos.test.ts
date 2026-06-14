@@ -2,8 +2,10 @@ import golden from '@/examples/questao-premium-cpcon-curativos-lpp-prevencao-vf.
 import {
   buildCurativosChoiceSlides,
   buildCurativosPremiumSlides,
+  normalizeCurativosInstruction,
   parseTrueNumeralsFromGabarito,
   resolveCurativosAssertives,
+  extractCurativosAssertives,
 } from '@/lib/catalogMigration/upgradePremiumCurativos';
 import { upgradePremiumHybrid } from '@/lib/catalogMigration/upgradePremiumHybrid';
 import { QuestaoCompletaSchema } from '@/lib/validations';
@@ -29,6 +31,15 @@ const GENERIC_CURATIVOS = {
 };
 
 describe('upgradePremiumCurativos', () => {
+  it('normalizeCurativosInstruction corrige I\\n- do banco', () => {
+    const broken =
+      'Texto:\nI\n- Calcanhar livre.\nII\n- Pele úmida.\nÉ\nCORRETO o que se afirma apenas em:';
+    const fixed = normalizeCurativosInstruction(broken);
+    expect(fixed).toContain('I- Calcanhar');
+    expect(fixed).toContain('II- Pele');
+    expect(extractCurativosAssertives(broken)).toHaveLength(2);
+  });
+
   it('parseTrueNumeralsFromGabarito extrai I e III da letra E', () => {
     const assertives = resolveCurativosAssertives(
       golden.question_data.instruction,

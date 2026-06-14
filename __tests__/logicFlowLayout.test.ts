@@ -5,7 +5,7 @@ describe('logicFlowLayout', () => {
   const threeSteps = { steps: ['1', '2', '3'] };
 
   it('retorna cards com 3+ passos sem override JSON nem slug', () => {
-    expect(resolveLogicFlowLayoutVariant(threeSteps, undefined, 'vertical')).toBe('cards');
+    expect(resolveLogicFlowLayoutVariant(threeSteps, undefined, undefined)).toBe('cards');
   });
 
   it('rotaciona horizontal/vertical/cards com slug e sem override JSON', () => {

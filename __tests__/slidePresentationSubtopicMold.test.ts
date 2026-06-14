@@ -465,7 +465,7 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.revealMode).toBe('tap');
   });
 
-  it('Oxigenoterapia: danger_zone oxygen-danger-arena com correct no molde', () => {
+  it('Oxigenoterapia: danger_zone compare com correct no molde', () => {
     const result = resolveSlidePresentation(
       {
         type: 'danger_zone',
@@ -478,7 +478,7 @@ describe('slidePresentation — molde por subtópico', () => {
         familyId: 'protocolo',
       },
     );
-    expect(result.layoutVariant).toBe('oxygen-danger-arena');
+    expect(result.layoutVariant).toBe('compare');
     expect(result.bulletStyle).toBe('x_icon');
   });
 

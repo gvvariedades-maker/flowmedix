@@ -5,7 +5,7 @@ describe('conceptMapLayout', () => {
   const threeItems = { items: [{ label: 'A' }, { label: 'B' }, { label: 'C' }] };
 
   it('retorna morphological com 3+ itens sem override JSON nem slug', () => {
-    expect(resolveConceptMapLayoutVariant(threeItems, undefined, 'grid')).toBe('morphological');
+    expect(resolveConceptMapLayoutVariant(threeItems, undefined, undefined)).toBe('morphological');
   });
 
   it('rotaciona bridge/grid/molecular com slug e sem override JSON', () => {

@@ -8,6 +8,7 @@ import { GoldenRuleProtocolCarousel } from './GoldenRuleProtocolCarousel';
 import { GoldenRuleMeshReveal } from './GoldenRuleMeshReveal';
 import { GoldenRuleLabPrepLensBoard } from './GoldenRuleLabPrepLensBoard';
 import { GoldenRuleDressingMatchMatrix } from './GoldenRuleDressingMatchMatrix';
+import { GoldenRuleHeroCard } from '../core/GoldenRuleHeroCard';
 import { getGoldenRuleTitleSizeClass } from '@/lib/slides/goldenRuleTypography';
 
 export type GoldenRuleRowEmphasis = 'default' | 'highlight' | 'alert' | 'success';

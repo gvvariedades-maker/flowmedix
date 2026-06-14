@@ -221,9 +221,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'sondas': { template: 'indigo', conceptMap: 'procedure-protocol', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'trap-reveal' },
 
   // ---- Oxigenoterapia ----
-  'oxigenoterapia e cuidados respiratórios': { template: 'cyan', conceptMap: 'oxygen-protocol-deck', goldenRule: 'oxygen-rule-carousel', logicFlow: 'oxygen-step-ladder', dangerZone: 'oxygen-danger-arena' },
-  'oxigenoterapia': { template: 'cyan', conceptMap: 'oxygen-protocol-deck', goldenRule: 'oxygen-rule-carousel', logicFlow: 'oxygen-step-ladder', dangerZone: 'oxygen-danger-arena' },
-  'cuidados respiratórios': { template: 'cyan', conceptMap: 'oxygen-protocol-deck', goldenRule: 'oxygen-rule-carousel', logicFlow: 'oxygen-step-ladder', dangerZone: 'oxygen-danger-arena' },
+  'oxigenoterapia e cuidados respiratórios': { template: 'cyan', conceptMap: 'oxygen-protocol-deck', goldenRule: 'oxygen-rule-carousel', logicFlow: 'oxygen-step-ladder', dangerZone: 'compare' },
+  'oxigenoterapia': { template: 'cyan', conceptMap: 'oxygen-protocol-deck', goldenRule: 'oxygen-rule-carousel', logicFlow: 'oxygen-step-ladder', dangerZone: 'compare' },
+  'cuidados respiratórios': { template: 'cyan', conceptMap: 'oxygen-protocol-deck', goldenRule: 'oxygen-rule-carousel', logicFlow: 'oxygen-step-ladder', dangerZone: 'compare' },
 
   // ---- Curativos e Feridas ----
   'curativos e manejo de feridas': { template: 'orange', conceptMap: 'wound-stage-tissue-deck', goldenRule: 'dressing-match-matrix', logicFlow: 'wound-prep-tap-flow', dangerZone: 'dressing-choice-arena' },
@@ -242,7 +242,6 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'coleta de exames laboratoriais': { template: 'sky', conceptMap: 'lab-specimen-chain', goldenRule: 'lab-prep-lens-board', logicFlow: 'lab-vf-soft-stack', dangerZone: 'lab-specimen-arena' },
   'coleta de exames': { template: 'sky', conceptMap: 'lab-specimen-chain', goldenRule: 'lab-prep-lens-board', logicFlow: 'lab-vf-soft-stack', dangerZone: 'lab-specimen-arena' },
   'exames laboratoriais': { template: 'sky', conceptMap: 'lab-specimen-chain', goldenRule: 'lab-prep-lens-board', logicFlow: 'lab-vf-soft-stack', dangerZone: 'lab-specimen-arena' },
-  'exames laboratoriais': { template: 'sky', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
 
   // ---- Mobilização e Posicionamento ----
   'mobilização e posicionamento do paciente': { template: 'teal', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },

@@ -22,7 +22,6 @@ export { DoseEquivalenceRailConceptMap } from './variants/DoseEquivalenceRailCon
 export { OxygenProtocolDeckConceptMap } from './variants/OxygenProtocolDeckConceptMap';
 export { GoldenRuleProtocolCarousel } from './variants/GoldenRuleProtocolCarousel';
 export { LogicFlowStepLadder } from './variants/LogicFlowStepLadder';
-export { DangerZoneOxygenArena } from './variants/DangerZoneOxygenArena';
 export { DangerZoneCatheterArena } from './variants/DangerZoneCatheterArena';
 export { IvCareOrbitConceptMap } from './variants/IvCareOrbitConceptMap';
 export { MorphingTimelineConceptMap } from './variants/MorphingTimelineConceptMap';

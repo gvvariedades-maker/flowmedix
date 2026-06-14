@@ -1,8 +1,11 @@
 import type { QuestionOption } from '@/lib/catalogMigration/classifyFamily';
+import type { GoldenRuleRow } from '@/components/slides/variants/GoldenRule';
 
 export const CURATIVOS_GOLDEN_FILE = 'questao-premium-cpcon-curativos-lpp-prevencao-vf.json';
 
 type SlideRecord = Record<string, unknown>;
+
+type DangerZoneItem = { label: string; detail: string; correct: string };
 
 export type CurativosAssertive = {
   roman: string;
@@ -36,8 +39,17 @@ export function isCurativosSubtopico(subtopico: string): boolean {
   );
 }
 
+export function normalizeCurativosInstruction(instruction: string): string {
+  return instruction
+    .replace(/\r\n/g, '\n')
+    .replace(/([IVX]+)\s*\n+\s*[-–]\s*/gi, '$1- ')
+    .replace(/É\s*\n+\s*CORRETO/gi, 'É CORRETO')
+    .replace(/CORRETO\s*\n+\s*o que se afirma/gi, 'CORRETO o que se afirma');
+}
+
 /** Extrai afirmativas I / II / III / IV do enunciado. */
 export function extractCurativosAssertives(instruction: string): CurativosAssertive[] {
+  const normalized = normalizeCurativosInstruction(instruction);
   const re = /([IVX]+)\s*[-–]\s*([^\n]+)/gi;
   const raw: { roman: string; text: string }[] = [];
   let match: RegExpExecArray | null;
@@ -199,7 +211,7 @@ function buildConceptMap(input: BuildCurativosSlidesInput, assertives: Curativos
 
 function buildGoldenRule(input: BuildCurativosSlidesInput, assertives: CurativosAssertive[]): SlideRecord {
   const topic = inferTopicFromInstruction(input.instruction);
-  const rows = assertives.map((a) => ({
+  const rows: GoldenRuleRow[] = assertives.map((a) => ({
     label: inferGoldenRowLabel(a.roman, a.text),
     value: a.isTrue
       ? truncate(`Verdadeira: ${inferConceptDetail(a.text, true)}`, 500)
@@ -270,7 +282,7 @@ function buildLogicFlow(input: BuildCurativosSlidesInput, assertives: CurativosA
   };
 }
 
-function buildDangerZoneItem(a: CurativosAssertive): SlideRecord['items'] extends (infer U)[] ? U : never {
+function buildDangerZoneItem(a: CurativosAssertive): DangerZoneItem {
   const lower = a.text.toLowerCase();
   if (/úmid|umid/.test(lower)) {
     return {
@@ -300,7 +312,7 @@ function buildDangerZoneItem(a: CurativosAssertive): SlideRecord['items'] extend
   };
 }
 
-function buildTrueTrapItem(a: CurativosAssertive): SlideRecord['items'] extends (infer U)[] ? U : never | null {
+function buildTrueTrapItem(a: CurativosAssertive): DangerZoneItem | null {
   const lower = a.text.toLowerCase();
   if (/calcanhar|livre|pressão|pressao/.test(lower)) {
     return {
@@ -321,7 +333,7 @@ function buildTrueTrapItem(a: CurativosAssertive): SlideRecord['items'] extends 
 
 function buildDangerZone(input: BuildCurativosSlidesInput, assertives: CurativosAssertive[]): SlideRecord {
   const topic = inferTopicFromInstruction(input.instruction);
-  const items: { label: string; detail: string; correct: string }[] = [];
+  const items: DangerZoneItem[] = [];
 
   for (const a of assertives.filter((x) => !x.isTrue)) {
     items.push(buildDangerZoneItem(a));
@@ -469,7 +481,7 @@ export function buildCurativosChoiceSlides(input: BuildCurativosSlidesInput): Sl
     icon: 'CheckCircle',
   });
 
-  const rows = input.options.map((opt) => ({
+  const rows: GoldenRuleRow[] = input.options.map((opt) => ({
     label: `Letra ${opt.id}`,
     value: opt.is_correct
       ? truncate(`Verdadeira: ${opt.text}`, 500)
