@@ -481,4 +481,78 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('oxygen-danger-arena');
     expect(result.bulletStyle).toBe('x_icon');
   });
+
+  it('Punção Venosa: concept_map morphing-timeline no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+        items: [
+          { label: 'Antissepsia', detail: 'clorexidina' },
+          { label: 'Barreira estéril', detail: 'máxima' },
+          { label: 'Gabarito', detail: 'Letra B' },
+        ],
+      },
+      {
+        questionSlug: 'adm-tec-puncao-1',
+        familyId: 'protocolo',
+      },
+    );
+    expect(result.layoutVariant).toBe('morphing-timeline');
+  });
+
+  it('Punção Venosa: golden_rule iv-bundle-mesh-reveal com rows no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+        content: 'Letra B',
+        rows: [
+          { label: 'Higienização', value: 'Antes e após manipular' },
+          { label: 'Barreira', value: 'Estéril máxima', emphasis: 'success' },
+        ],
+      },
+      {
+        questionSlug: 'adm-tec-puncao-1',
+        slideIndex: 1,
+        familyId: 'protocolo',
+      },
+    );
+    expect(result.layoutVariant).toBe('iv-bundle-mesh-reveal');
+  });
+
+  it('Punção Venosa: logic_flow iv-care-soft-stack no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+        steps: ['1', '2', '3', '4'],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'adm-tec-puncao-1',
+        slideIndex: 2,
+        familyId: 'protocolo',
+      },
+    );
+    expect(result.layoutVariant).toBe('iv-care-soft-stack');
+    expect(result.revealMode).toBe('tap');
+  });
+
+  it('Punção Venosa: danger_zone catheter-danger-arena com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Punção Venosa e Cuidados com Cateteres' },
+        content: 'Pegadinhas',
+        items: [{ label: 'Letra A', detail: 'curativo 72h fixo', correct: 'Gabarito letra B' }],
+      },
+      {
+        questionSlug: 'adm-tec-puncao-1',
+        familyId: 'protocolo',
+      },
+    );
+    expect(result.layoutVariant).toBe('catheter-danger-arena');
+    expect(result.bulletStyle).toBe('x_icon');
+  });
 });

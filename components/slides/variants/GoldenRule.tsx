@@ -5,6 +5,7 @@ import { Sparkles, Lightbulb, Zap, Table2 } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import { GoldenRuleSoftLensBoard } from './GoldenRuleSoftLensBoard';
 import { GoldenRuleProtocolCarousel } from './GoldenRuleProtocolCarousel';
+import { GoldenRuleMeshReveal } from './GoldenRuleMeshReveal';
 import { getGoldenRuleTitleSizeClass } from '@/lib/slides/goldenRuleTypography';
 
 export type GoldenRuleRowEmphasis = 'default' | 'highlight' | 'alert' | 'success';
@@ -235,6 +236,10 @@ export const GoldenRule = ({
     return (
       <GoldenRuleProtocolCarousel content={content} rows={rows} theme={theme} footerRule={footerRule} />
     );
+  }
+
+  if (variant === 'iv-bundle-mesh-reveal' && rows && rows.length > 0) {
+    return <GoldenRuleMeshReveal content={content} rows={rows} theme={theme} footerRule={footerRule} />;
   }
 
   if (variant === 'soft-lens-board' && rows && rows.length > 0) {

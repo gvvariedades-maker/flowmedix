@@ -15,6 +15,7 @@ import {
 } from './logicFlowReveal';
 import { LogicFlowFooter } from './LogicFlowFooter';
 import { LogicFlowStepLadder } from './LogicFlowStepLadder';
+import { LogicFlowSoftStack } from './LogicFlowSoftStack';
 import { SLIDE_CARD } from '../core/slideSurface';
 import {
   getLogicFlowStepVisual,
@@ -152,6 +153,10 @@ export const LogicFlow = ({
     return (
       <LogicFlowStepLadder steps={steps} theme={theme} revealMode={revealMode} />
     );
+  }
+
+  if (variant === 'iv-care-soft-stack') {
+    return <LogicFlowSoftStack steps={steps} theme={theme} />;
   }
 
   const footer = (

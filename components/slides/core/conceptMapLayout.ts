@@ -24,6 +24,8 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'absorption-speed-rail',
   'dose-equivalence-rail',
   'oxygen-protocol-deck',
+  'iv-care-orbit',
+  'morphing-timeline',
 ]);
 
 function countConceptItems(slide?: {

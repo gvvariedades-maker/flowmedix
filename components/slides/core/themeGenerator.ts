@@ -234,9 +234,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'queimaduras': { template: 'orange', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
 
   // ---- Punção Venosa / Cateteres ----
-  'punção venosa e cuidados com cateteres': { template: 'indigo', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'cards' },
-  'punção venosa': { template: 'indigo', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'cards' },
-  'cateteres': { template: 'indigo', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'cards' },
+  'punção venosa e cuidados com cateteres': { template: 'indigo', conceptMap: 'morphing-timeline', goldenRule: 'iv-bundle-mesh-reveal', logicFlow: 'iv-care-soft-stack', dangerZone: 'catheter-danger-arena' },
+  'punção venosa': { template: 'indigo', conceptMap: 'morphing-timeline', goldenRule: 'iv-bundle-mesh-reveal', logicFlow: 'iv-care-soft-stack', dangerZone: 'catheter-danger-arena' },
+  'cateteres': { template: 'indigo', conceptMap: 'morphing-timeline', goldenRule: 'iv-bundle-mesh-reveal', logicFlow: 'iv-care-soft-stack', dangerZone: 'catheter-danger-arena' },
 
   // ---- Coleta de Exames ----
   'coleta de exames laboratoriais': { template: 'sky', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },

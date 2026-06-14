@@ -2003,21 +2003,6 @@ export default function AvantLessonPlayer({
                   )
             }
           >
-            {totalSlides > 0 ? (
-              <div
-                className="pointer-events-none absolute top-0 left-0 z-50 h-[3px] w-full bg-slate-200"
-                role="progressbar"
-                aria-valuenow={slideAtual + 1}
-                aria-valuemin={1}
-                aria-valuemax={totalSlides}
-                aria-label="Progresso do estudo reverso"
-              >
-                <div
-                  className="h-full bg-gradient-to-r from-[#2563EB] to-[#60A5FA] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
-                  style={{ width: `${((slideAtual + 1) / totalSlides) * 100}%` }}
-                />
-              </div>
-            ) : null}
             {/* overflow-y: contido no filho (scroll vertical). overflow-x: auto para texto ampliado (zoom) não ser cortado. */}
             <EstudoReversoSlideZoomProvider key={slideAtual} slideKey={slideAtual}>
             <div className="flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-x-auto overflow-y-hidden">

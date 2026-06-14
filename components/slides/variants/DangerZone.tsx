@@ -16,6 +16,7 @@ import { DangerZoneScopeTrap } from './DangerZoneScopeTrap';
 import { DangerZoneRouteTrap } from './DangerZoneRouteTrap';
 import { DangerZoneDoseTrap } from './DangerZoneDoseTrap';
 import { DangerZoneOxygenArena } from './DangerZoneOxygenArena';
+import { DangerZoneCatheterArena } from './DangerZoneCatheterArena';
 
 export interface DangerZoneItem {
   id?: string;
@@ -325,6 +326,17 @@ export const DangerZone = ({
   if (explicitVariant === 'oxygen-danger-arena' && items && items.length > 0) {
     return (
       <DangerZoneOxygenArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+      />
+    );
+  }
+
+  if (explicitVariant === 'catheter-danger-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneCatheterArena
         content={content}
         items={items}
         theme={theme}

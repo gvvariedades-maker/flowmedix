@@ -154,7 +154,8 @@ export function resolveSlidePresentation(
       layoutVariant === 'scope-trap' ||
       layoutVariant === 'route-trap' ||
       layoutVariant === 'dose-trap' ||
-      layoutVariant === 'oxygen-danger-arena')
+      layoutVariant === 'oxygen-danger-arena' ||
+      layoutVariant === 'catheter-danger-arena')
       ? 'x_icon'
       : 'numbered');
 

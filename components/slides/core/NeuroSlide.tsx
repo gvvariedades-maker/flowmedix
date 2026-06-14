@@ -14,6 +14,8 @@ import { SusArt4OrbitConceptMap } from '../variants/SusArt4OrbitConceptMap';
 import { AbsorptionSpeedRailConceptMap } from '../variants/AbsorptionSpeedRailConceptMap';
 import { DoseEquivalenceRailConceptMap } from '../variants/DoseEquivalenceRailConceptMap';
 import { OxygenProtocolDeckConceptMap } from '../variants/OxygenProtocolDeckConceptMap';
+import { IvCareOrbitConceptMap } from '../variants/IvCareOrbitConceptMap';
+import { MorphingTimelineConceptMap } from '../variants/MorphingTimelineConceptMap';
 import { GoldenRule } from '../variants/GoldenRule';
 import { DangerZone } from '../variants/DangerZone';
 import { LogicFlow } from '../variants/LogicFlow';
@@ -122,6 +124,24 @@ export const NeuroSlideHub = ({
       if (layoutVariant === 'oxygen-protocol-deck') {
         return (
           <OxygenProtocolDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'iv-care-orbit') {
+        return (
+          <IvCareOrbitConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'morphing-timeline') {
+        return (
+          <MorphingTimelineConceptMap
             concepts={getConcepts()}
             theme={theme}
             footerRule={slide.footer_rule}

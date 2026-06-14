@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, type RefObject } from 'react';
-import { motion } from 'framer-motion';
 import { 
   Monitor, 
   Smartphone, 
@@ -192,18 +191,6 @@ export function PreviewControls({
           </div>
         )}
       </div>
-
-      {/* Barra de Progresso de Slides */}
-      {previewState === 'study' && totalSlides > 0 && (
-        <div className="h-1 bg-slate-200 shrink-0">
-          <motion.div
-            className="h-full bg-indigo-600"
-            initial={false}
-            animate={{ width: `${((currentSlide + 1) / totalSlides) * 100}%` }}
-            transition={{ duration: 0.3 }}
-          />
-        </div>
-      )}
     </>
   );
 }
