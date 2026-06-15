@@ -6,6 +6,8 @@
  *   npm run catalog:export-lote -- --lote=imunizacao --subtopico=Imunização
  *   npm run catalog:export-lote -- --lote=cg-01 --slugs=slug-a,slug-b
  *   npm run catalog:export-lote -- --lote=pilot --from-manifest=data/premium-pilot-manifest.json
+ *   npm run catalog:export-lote -- --lote=curativos-lote-04 --subtopico=Curativos --limit=50 \
+ *     --exclude-manifest=artifacts/catalog-migration-curativos-lote-02-applied.json
  */
 
 import { loadEnvConfig } from '@next/env';
@@ -50,9 +52,13 @@ type LoteManifest = {
 
 function loadSlugsFromManifest(manifestPath: string): string[] {
   const raw = JSON.parse(readFileSync(manifestPath, 'utf8')) as {
+    slugs?: string[];
+    applied_slugs?: string[];
     items?: { modulo_slug: string; mode?: string }[];
     questoes?: string[];
   };
+  if (Array.isArray(raw.applied_slugs)) return raw.applied_slugs;
+  if (Array.isArray(raw.slugs)) return raw.slugs;
   if (Array.isArray(raw.questoes)) return raw.questoes;
   if (Array.isArray(raw.items)) {
     return raw.items
@@ -60,7 +66,22 @@ function loadSlugsFromManifest(manifestPath: string): string[] {
       .map((i) => i.modulo_slug)
       .filter(Boolean);
   }
-  throw new Error(`Manifest sem items[] ou questoes[]: ${manifestPath}`);
+  throw new Error(
+    `Manifest sem slugs[], applied_slugs[], items[] ou questoes[]: ${manifestPath}`,
+  );
+}
+
+function loadExcludedSlugs(): Set<string> {
+  const excluded = new Set<string>();
+  for (const slug of parseCsvArg('exclude-slugs') ?? []) {
+    excluded.add(slug);
+  }
+  for (const manifestPath of parseCsvArg('exclude-manifest') ?? []) {
+    for (const slug of loadSlugsFromManifest(manifestPath)) {
+      excluded.add(slug);
+    }
+  }
+  return excluded;
 }
 
 async function resolveSlugs(
@@ -82,7 +103,14 @@ async function resolveSlugs(
     return { slugs, filters: { from_manifest: fromManifest } };
   }
 
-  const filters: Record<string, unknown> = { subtopico, banca, topico, limit };
+  const excluded = loadExcludedSlugs();
+  const filters: Record<string, unknown> = {
+    subtopico,
+    banca,
+    topico,
+    limit,
+    exclude_count: excluded.size,
+  };
   const slugs: string[] = [];
   let offset = 0;
 
@@ -104,6 +132,7 @@ async function resolveSlugs(
     if (batch.length === 0) break;
 
     for (const row of batch) {
+      if (excluded.has(row.modulo_slug)) continue;
       slugs.push(row.modulo_slug);
       if (slugs.length >= limit) break;
     }

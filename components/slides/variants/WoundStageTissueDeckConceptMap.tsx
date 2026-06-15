@@ -2,7 +2,7 @@
 
 import { useCallback, useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Bandage, CheckCircle2 } from 'lucide-react';
+import { Bandage, CheckCircle2, Hand } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import { resolveLucideIcon } from '../core/lucideIcon';
 
@@ -131,11 +131,15 @@ export function WoundStageTissueDeckConceptMap({
       <motion.div className={`absolute inset-0 bg-gradient-to-br ${theme.bgGradient} opacity-40`} />
 
       <div className="relative z-10 mx-auto flex w-full max-w-lg flex-col gap-3.5">
-        <div className="flex items-center gap-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-orange-200/80 bg-white/90 px-2.5 py-1 font-mono text-[9px] font-bold uppercase tracking-widest text-orange-700 shadow-sm">
+        <div className="flex flex-col gap-1.5">
+          <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-orange-200/80 bg-white/90 px-2.5 py-1 font-mono text-[9px] font-bold uppercase tracking-widest text-orange-700 shadow-sm">
             <Bandage className="h-3 w-3" aria-hidden />
             Stage Deck
           </span>
+          <p className="flex items-center gap-1.5 font-body text-xs font-medium text-slate-600">
+            <Hand className="h-3.5 w-3.5 shrink-0 text-orange-600" aria-hidden />
+            Toque cada cartão para ver a explicação
+          </p>
         </div>
 
         {hasStages ? (
@@ -148,10 +152,11 @@ export function WoundStageTissueDeckConceptMap({
                   key={key}
                   type="button"
                   onClick={() => selectStage(key)}
-                  className={`flex flex-col items-center gap-1 rounded-2xl border px-1 py-2.5 transition-all ${
+                  aria-label={`${meta.label}: ${grouped.stages[key]?.title ?? ''}`}
+                  className={`flex cursor-pointer flex-col items-center gap-1 rounded-2xl border px-1 py-2.5 transition-all ${
                     isActive
                       ? `border-2 bg-white shadow-lg ${meta.ring} ring-2`
-                      : 'border-slate-200/90 bg-white/80 shadow-sm hover:shadow-md'
+                      : 'border-slate-200/90 bg-white/80 shadow-sm hover:shadow-md hover:ring-1 hover:ring-orange-200/80 active:scale-[0.98]'
                   }`}
                 >
                   <span
@@ -175,10 +180,11 @@ export function WoundStageTissueDeckConceptMap({
                   key={item.title}
                   type="button"
                   onClick={() => setActiveFallback(index)}
-                  className={`rounded-xl border px-2 py-2 text-left transition-all ${
+                  aria-label={item.title}
+                  className={`cursor-pointer rounded-xl border px-2 py-2 text-left transition-all ${
                     isActive
                       ? 'border-2 border-orange-300 bg-white shadow-lg ring-2 ring-orange-200/60'
-                      : 'border-slate-200/90 bg-white/80 shadow-sm hover:shadow-md'
+                      : 'border-slate-200/90 bg-white/80 shadow-sm hover:shadow-md hover:ring-1 hover:ring-orange-200/80 active:scale-[0.98]'
                   }`}
                 >
                   <p className="line-clamp-2 font-body text-[10px] font-semibold leading-tight text-slate-800">

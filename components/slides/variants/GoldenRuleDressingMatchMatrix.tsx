@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { Bandage } from 'lucide-react';
+import { Bandage, ChevronDown, Hand } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { GoldenRuleRow, GoldenRuleRowBadge, GoldenRuleRowEmphasis } from './GoldenRule';
 
@@ -148,11 +148,11 @@ export function GoldenRuleDressingMatchMatrix({
                 <h2 className="mt-1 font-display text-base font-extrabold uppercase leading-tight tracking-tight text-slate-900 md:text-lg">
                   {title.length <= 80 ? title : `${title.slice(0, 77)}…`}
                 </h2>
-              ) : (
-                <p className="mt-1 font-body text-sm font-medium text-slate-600">
-                  Toque cada célula para julgar afirmativa por afirmativa
-                </p>
-              )}
+              ) : null}
+              <p className="mt-1.5 flex items-center gap-1.5 font-body text-sm font-medium text-slate-600">
+                <Hand className="h-4 w-4 shrink-0 text-orange-600" aria-hidden />
+                Toque cada célula abaixo para ver a explicação completa
+              </p>
             </div>
           </div>
         </div>
@@ -191,7 +191,17 @@ export function GoldenRuleDressingMatchMatrix({
             </motion.div>
           </AnimatePresence>
 
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          <div className="flex items-center justify-center gap-1 py-0.5 text-orange-700/80" aria-hidden>
+            <ChevronDown className={`h-4 w-4 ${reduceMotion ? '' : 'animate-bounce'}`} />
+            <span className="font-mono text-[9px] font-bold uppercase tracking-widest">Selecione uma célula</span>
+            <ChevronDown className={`h-4 w-4 ${reduceMotion ? '' : 'animate-bounce'}`} />
+          </div>
+
+          <div
+            className="grid grid-cols-2 gap-2 sm:grid-cols-3"
+            role="tablist"
+            aria-label="Afirmativas da questão"
+          >
             {rows.map((row, index) => {
               const tone = TONE_BY_EMPHASIS[row.emphasis ?? 'default'];
               const isActive = selected === index;
@@ -199,9 +209,14 @@ export function GoldenRuleDressingMatchMatrix({
                 <button
                   key={`${row.label}-${index}`}
                   type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-label={`${row.label}: ${row.value}`}
                   onClick={() => selectRow(index)}
-                  className={`min-h-[4rem] rounded-xl border px-2.5 py-2 text-left transition-all ${
-                    isActive ? `${tone.pillActive} ring-2` : tone.pill
+                  className={`min-h-[4rem] cursor-pointer rounded-xl border px-2.5 py-2 text-left transition-all ${
+                    isActive
+                      ? `${tone.pillActive} ring-2`
+                      : `${tone.pill} hover:shadow-md hover:ring-1 hover:ring-orange-200/80 active:scale-[0.98]`
                   }`}
                 >
                   <p className="line-clamp-1 font-mono text-[9px] font-bold uppercase">{row.label}</p>
