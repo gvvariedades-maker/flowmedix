@@ -16,6 +16,7 @@ import {
   ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM,
   ESTUDO_REVERSO_MOBILE_FIXED_BOTTOM_IMMERSIVE,
   MOBILE_DRAWER_ABOVE_OVERLAYS_PANEL_Z,
+  READABLE_TEXT_ZOOM_POPOVER_Z,
   DASHBOARD_SIDEBAR_WIDTH,
   getDashboardPageBottomPadding,
 } from '@/lib/layout/mobileBottomNav';
@@ -73,6 +74,10 @@ describe('mobileBottomNav tokens', () => {
   it('drawer mobile fica acima do modal de questão quando aberto', () => {
     expect(MOBILE_DRAWER_ABOVE_OVERLAYS_PANEL_Z).toBe('z-[120]');
     expect(ESTUDO_REVERSO_FULLSCREEN_Z).toBe('z-[110]');
+  });
+
+  it('popover de zoom de texto fica acima de modal, ER e drawer', () => {
+    expect(READABLE_TEXT_ZOOM_POPOVER_Z).toBe('z-[125]');
   });
 
   it('getDashboardPageBottomPadding só reserva espaço para banner PWA (não nav)', () => {

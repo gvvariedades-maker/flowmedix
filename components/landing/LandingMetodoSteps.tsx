@@ -1,0 +1,151 @@
+'use client';
+
+import dynamic from 'next/dynamic';
+import type { LucideIcon } from 'lucide-react';
+import { Brain, CalendarDays, ClipboardCheck, FileQuestion } from 'lucide-react';
+import { SectionLabel } from '@/components/landing/lp-ui';
+import { LandingGabaritoPreview } from '@/components/marketing/LandingGabaritoPreview';
+import { LandingPlanoDiarioPreview } from '@/components/marketing/LandingPlanoDiarioPreview';
+import { cn } from '@/lib/utils';
+
+const LandingQuestionPreview = dynamic(
+  () =>
+    import('@/components/marketing/LandingQuestionPreview').then((m) => ({
+      default: m.LandingQuestionPreview,
+    })),
+  { ssr: false, loading: () => <PreviewSkeleton /> },
+);
+
+const LandingNeuroSlideLive = dynamic(
+  () =>
+    import('@/components/marketing/LandingNeuroSlideLive').then((m) => ({
+      default: m.LandingNeuroSlideLive,
+    })),
+  { ssr: false, loading: () => <PreviewSkeleton /> },
+);
+
+function PreviewSkeleton() {
+  return (
+    <div className="flex h-full min-h-[200px] items-center justify-center bg-slate-50 text-xs text-slate-400">
+      Carregando…
+    </div>
+  );
+}
+
+type MetodoStep = {
+  n: string;
+  title: string;
+  text: string;
+  icon: LucideIcon;
+  preview: 'question' | 'gabarito' | 'neuroslide' | 'plano';
+  slideIndex?: number;
+};
+
+const STEPS: MetodoStep[] = [
+  {
+    n: '01',
+    title: 'Questão real de concurso',
+    text: 'Formato exato da banca para Técnico em Enfermagem — não teoria de enfermeiro.',
+    icon: FileQuestion,
+    preview: 'question',
+  },
+  {
+    n: '02',
+    title: 'Gabarito + diagnóstico',
+    text: 'Saiba se errou por conceito, interpretação ou pegadinha — antes de seguir.',
+    icon: ClipboardCheck,
+    preview: 'gabarito',
+  },
+  {
+    n: '03',
+    title: 'NeuroSlides',
+    text: 'Mapa mental, regra de ouro, fluxo lógico e zona de perigo — visual e direto.',
+    icon: Brain,
+    preview: 'neuroslide',
+    slideIndex: 0,
+  },
+  {
+    n: '04',
+    title: 'Revisão no momento certo',
+    text: 'Plano diário e revisão espaçada — sem planilha, sem adivinhar o que revisar.',
+    icon: CalendarDays,
+    preview: 'plano',
+  },
+];
+
+function StepPreview({ step }: { step: MetodoStep }) {
+  const frameClass = 'h-[min(280px,42vw)] overflow-hidden bg-slate-50 sm:h-[260px]';
+
+  switch (step.preview) {
+    case 'question':
+      return (
+        <div className={cn(frameClass, 'origin-top scale-[0.92] sm:scale-[0.88]')}>
+          <LandingQuestionPreview className="min-h-0" />
+        </div>
+      );
+    case 'gabarito':
+      return (
+        <div className={frameClass}>
+          <LandingGabaritoPreview className="h-full" />
+        </div>
+      );
+    case 'neuroslide':
+      return (
+        <div className={cn(frameClass, 'bg-[#f8fafc]')}>
+          <LandingNeuroSlideLive slideIndex={step.slideIndex ?? 0} />
+        </div>
+      );
+    case 'plano':
+      return (
+        <div className={frameClass}>
+          <LandingPlanoDiarioPreview className="h-full" />
+        </div>
+      );
+    default:
+      return null;
+  }
+}
+
+/** Seção "Simples como 1, 2, 3, 4" com previews ao vivo do app. */
+export function LandingMetodoSteps() {
+  return (
+    <section id="metodo" className="bg-white px-4 py-16 sm:px-6 sm:py-20">
+      <div className="mx-auto max-w-6xl">
+        <div className="text-center sm:text-left">
+          <SectionLabel>Como o AVANT funciona</SectionLabel>
+          <h2 className="text-2xl font-[1000] tracking-tight text-slate-900 sm:text-4xl">
+            Simples como 1, 2, 3, 4
+          </h2>
+          <p className="mt-3 max-w-2xl text-base text-slate-600">
+            Questão real, gabarito com diagnóstico, NeuroSlides e revisão no ritmo certo — tudo no mesmo fluxo.
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          {STEPS.map((step) => (
+            <article
+              key={step.n}
+              className="card-elevated-lg flex flex-col overflow-hidden rounded-3xl border-slate-200/80"
+            >
+              <div className="p-6 pb-4">
+                <div className="flex items-start gap-4">
+                  <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-[#8fe020] bg-[#8fe020]/10 text-sm font-black text-[#3d6b0f]">
+                    {step.n}
+                  </span>
+                  <div className="min-w-0">
+                    <h3 className="text-lg font-black text-slate-900">{step.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{step.text}</p>
+                    <step.icon className="mt-3 text-[#3d6b0f]" size={18} aria-hidden />
+                  </div>
+                </div>
+              </div>
+              <div className="mt-auto border-t border-slate-100">
+                <StepPreview step={step} />
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -73,6 +73,9 @@ export const MOBILE_DRAWER_ABOVE_OVERLAYS_OVERLAY_Z = 'z-[115]';
 
 export const MOBILE_DRAWER_ABOVE_OVERLAYS_PANEL_Z = 'z-[120]';
 
+/** Popover Aa (zoom de texto) — acima de modal de questão (100), ER (110) e drawer (120). */
+export const READABLE_TEXT_ZOOM_POPOVER_Z = 'z-[125]';
+
 /**
  * Padding no conteúdo quando o banner PWA flutua sobre a parte inferior do main
  * (acima do BottomNav no flex shell). Soma só o banner — nav já ocupa slot shrink-0.

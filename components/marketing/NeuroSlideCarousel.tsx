@@ -1,59 +1,37 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { LandingNeuroSlideLive } from '@/components/marketing/LandingNeuroSlideLive';
+import {
+  getLandingNeuroslideTypeMeta,
+  LANDING_NEUROSLIDE_SLIDES,
+} from '@/lib/marketing/landingNeuroSlides';
 import {
   NEUROSLIDE_ASPECT_CLASS,
-  NEUROSLIDE_IMAGE_SIZES,
   NEUROSLIDE_MAX_WIDTH_CLASS,
 } from '@/lib/marketing/neuroslideAssets';
 import { cn } from '@/lib/utils';
 
-const NEURO_SLIDES = [
-  {
-    src: '/images/neuroslide-concept-map.jpg',
-    label: 'Mapa Mental',
-    color: '#00f2ff',
-    description: 'Conecta os conceitos que a banca tentou misturar',
-    alt: 'NeuroSlide Mapa Mental com quatro conceitos em círculos luminosos ciano',
-  },
-  {
-    src: '/images/neuroslide-golden-rule.jpg',
-    label: 'Regra de Ouro',
-    color: '#00ff88',
-    description: 'Resume o ponto que você precisa lembrar na prova',
-    alt: 'NeuroSlide Regra de Ouro com definição da APS como centro ordenador do cuidado',
-  },
-  {
-    src: '/images/neuroslide-logic-flow.jpg',
-    label: 'Fluxo Lógico',
-    color: '#f59e0b',
-    description: 'Sequência de decisão para casos parecidos',
-    alt: 'NeuroSlide Fluxo Lógico com pipeline de passos em laranja',
-  },
-  {
-    src: '/images/neuroslide-danger-zone.jpg',
-    label: 'Zona de Perigo',
-    color: '#ff0055',
-    description: 'Pegadinhas que derrubam candidatos preparados',
-    alt: 'NeuroSlide Zona de Perigo listando erros comuns na administração da vacina BCG',
-  },
-] as const;
-
 export type NeuroSlideCarouselProps = {
   className?: string;
+  /** Permite toque no fluxo lógico (tap) na demo embutida. */
+  interactive?: boolean;
 };
 
-/** Carrossel de screenshots do player — proporção fixa 487×1024, max 340px de largura. */
-export function NeuroSlideCarousel({ className }: NeuroSlideCarouselProps) {
+/** Carrossel com NeuroSlides reais do player — proporção fixa 487×1024, max 340px de largura. */
+export function NeuroSlideCarousel({ className, interactive = false }: NeuroSlideCarouselProps) {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
-  const slide = NEURO_SLIDES[active];
+  const slide = LANDING_NEUROSLIDE_SLIDES[active];
+  const meta = getLandingNeuroslideTypeMeta(slide);
 
   useEffect(() => {
     if (paused) return;
-    const id = window.setInterval(() => setActive((i) => (i + 1) % NEURO_SLIDES.length), 3000);
+    const id = window.setInterval(
+      () => setActive((i) => (i + 1) % LANDING_NEUROSLIDE_SLIDES.length),
+      4000,
+    );
     return () => window.clearInterval(id);
   }, [paused]);
 
@@ -74,59 +52,54 @@ export function NeuroSlideCarousel({ className }: NeuroSlideCarouselProps) {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        <div className="relative w-full p-4">
-          {NEURO_SLIDES.map((s, i) => (
+        <div className="relative w-full p-3 sm:p-4">
+          {LANDING_NEUROSLIDE_SLIDES.map((s, i) => (
             <div
-              key={s.src}
+              key={`${s.type}-${i}`}
               className={
                 i === active
                   ? cn('relative w-full', NEUROSLIDE_ASPECT_CLASS)
                   : cn(
-                      'pointer-events-none absolute inset-x-4 top-4 w-[calc(100%-2rem)] opacity-0',
+                      'pointer-events-none absolute inset-x-3 top-3 w-[calc(100%-1.5rem)] opacity-0 sm:inset-x-4 sm:top-4 sm:w-[calc(100%-2rem)]',
                       NEUROSLIDE_ASPECT_CLASS,
                     )
               }
               aria-hidden={i !== active}
             >
-              <Image
-                src={s.src}
-                alt={s.alt}
-                fill
-                priority={i === 0}
-                sizes={NEUROSLIDE_IMAGE_SIZES}
-                className={cn(
-                  'rounded-2xl object-contain transition-opacity duration-500',
-                  i === active ? 'opacity-100' : 'opacity-0',
-                )}
-              />
+              <div className="h-full overflow-hidden rounded-2xl border border-white/10 bg-[#f8fafc]">
+                <LandingNeuroSlideLive slideIndex={i} interactive={interactive && i === active} />
+              </div>
             </div>
           ))}
           <span
-            className="absolute top-7 left-7 z-10 rounded-full border bg-black/60 px-3 py-1 text-xs font-black tracking-wider uppercase backdrop-blur-sm"
-            style={{ borderColor: slide.color, color: slide.color }}
+            className="absolute top-6 left-6 z-10 rounded-full border bg-black/60 px-3 py-1 text-xs font-black tracking-wider uppercase backdrop-blur-sm sm:top-7 sm:left-7"
+            style={{ borderColor: meta.color, color: meta.color }}
           >
-            {slide.label}
+            {meta.label}
           </span>
         </div>
-        <p className="px-4 py-3 text-sm text-slate-400">{slide.description}</p>
+        <p className="px-4 py-3 text-sm text-slate-400">{meta.description}</p>
         <div
           className="flex justify-center gap-2 pb-4"
           role="tablist"
           aria-label="Slides do NeuroSlide"
         >
-          {NEURO_SLIDES.map((s, i) => (
-            <button
-              key={s.src}
-              type="button"
-              role="tab"
-              aria-selected={i === active}
-              aria-label={`Slide ${i + 1}: ${s.label}`}
-              onClick={() => setActive(i)}
-              className={`rounded-full transition-all duration-300 ${
-                i === active ? 'h-2 w-6 bg-[#8fe020]' : 'h-2 w-2 bg-white/20'
-              }`}
-            />
-          ))}
+          {LANDING_NEUROSLIDE_SLIDES.map((s, i) => {
+            const dotMeta = getLandingNeuroslideTypeMeta(s);
+            return (
+              <button
+                key={`dot-${s.type}-${i}`}
+                type="button"
+                role="tab"
+                aria-selected={i === active}
+                aria-label={`Slide ${i + 1}: ${dotMeta.label}`}
+                onClick={() => setActive(i)}
+                className={`rounded-full transition-all duration-300 ${
+                  i === active ? 'h-2 w-6 bg-[#8fe020]' : 'h-2 w-2 bg-white/20'
+                }`}
+              />
+            );
+          })}
         </div>
       </div>
     </motion.div>

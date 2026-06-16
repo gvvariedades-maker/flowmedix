@@ -16,7 +16,7 @@ export function SlideStylePreviews() {
             NeuroSlides do Estudo Reverso
           </p>
           <h2 className="text-3xl sm:text-4xl font-[1000] text-white tracking-tight">
-            Mapa de Conceitos, Zona de Perigo, Fluxo Lógico
+            Mapa, regra de ouro, fluxo e zona de perigo — ao vivo
           </h2>
         </div>
 

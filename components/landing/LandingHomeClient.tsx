@@ -11,9 +11,7 @@ import {
   CalendarDays,
   CheckCircle2,
   CircleAlert,
-  ClipboardCheck,
   Eye,
-  FileQuestion,
   FileText,
   Layers,
   LayoutDashboard,
@@ -27,21 +25,36 @@ import {
 import { AvantLogo } from '@/components/brand/AvantLogo';
 import { WhatsAppSupportLink } from '@/components/support/WhatsAppSupportLink';
 import { CompareAvantCarousel } from '@/components/landing/CompareAvantCarousel';
+import { COMPARE_AVANT_SLIDES } from '@/lib/marketing/compareAvantAssets';
 import {
   BrandCta,
   EditorialFaqItem,
   OutlineCta,
-  ProCheckoutCta,
   SectionLabel,
 } from '@/components/landing/lp-ui';
+import { LandingMetodoSteps } from '@/components/landing/LandingMetodoSteps';
+import { LandingPricingSplit } from '@/components/landing/LandingPricingSplit';
 import {
-  FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT,
   FREEMIUM_PLAN_LIMITS_COMPACT,
   FREEMIUM_PLAN_LIMITS_DESCRIPTION,
-  FREEMIUM_SIMULADO_DAILY_LIMIT,
 } from '@/lib/freemium/constants';
 import { useEditorialTheme } from '@/lib/layout/useEditorialTheme';
 import { NeuroSlideCarousel } from '@/components/marketing/NeuroSlideCarousel';
+
+const LandingHeroShowcase = dynamic(
+  () =>
+    import('@/components/marketing/LandingHeroShowcase').then((m) => ({
+      default: m.LandingHeroShowcase,
+    })),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="mx-auto flex h-[420px] w-full max-w-sm items-center justify-center rounded-[2rem] border border-slate-200 bg-white text-sm text-slate-400">
+        Carregando preview…
+      </div>
+    ),
+  },
+);
 
 const DemoInterativa = dynamic(
   () => import('@/components/landing/DemoInterativa').then((m) => ({ default: m.DemoInterativa })),
@@ -82,37 +95,6 @@ const DORES = [
   'Você erra e só lê o gabarito. O conceito não fixa — e a banca cobra de novo.',
 ] as const;
 
-const METODO = [
-  {
-    n: '01',
-    title: 'Questão real de concurso',
-    text: 'Formato exato da banca para Técnico em Enfermagem — não teoria de enfermeiro.',
-    icon: FileQuestion,
-    image: '/images/compare-avant-1.jpg',
-  },
-  {
-    n: '02',
-    title: 'Gabarito + diagnóstico',
-    text: 'Saiba se errou por conceito, interpretação ou pegadinha — antes de seguir.',
-    icon: ClipboardCheck,
-    image: '/images/compare-avant-2.jpg',
-  },
-  {
-    n: '03',
-    title: 'NeuroSlides',
-    text: 'Mapa mental, regra de ouro, fluxo lógico e zona de perigo — visual e direto.',
-    icon: Brain,
-    image: '/images/compare-avant-3.jpg',
-  },
-  {
-    n: '04',
-    title: 'Revisão no momento certo',
-    text: 'Plano diário e revisão espaçada — sem planilha, sem adivinhar o que revisar.',
-    icon: CalendarDays,
-    image: '/images/neuroslide-golden-rule.jpg',
-  },
-] as const;
-
 const COMPARE_APOSTILA = [
   'Linguagem de nível superior — técnico demais para o cargo',
   'Você lê tudo sem saber o que a banca vai cobrar',
@@ -132,16 +114,6 @@ const FEATURES = [
   { title: 'Estudo Reverso', text: 'Cada questão vira explicação guiada e revisão.', icon: Brain },
   { title: 'Meu desempenho', text: 'Acompanhe evolução e padrões de erro.', icon: Eye },
   { title: 'Plano diário', text: 'Revise no ritmo certo, sem planilha manual.', icon: CalendarDays },
-] as const;
-
-const PRO_BENEFITS = [
-  'Questões ilimitadas todo dia',
-  'Simulados ilimitados',
-  'NeuroSlides após cada questão',
-  'Plano diário automático e cadernos',
-  'Analytics de desempenho',
-  'EBSERH, prefeituras e todas as bancas',
-  'Cancela quando quiser — sem fidelidade',
 ] as const;
 
 const FAQ_ITEMS = [
@@ -209,9 +181,9 @@ export default function LandingHomeClient() {
 
           <div className="relative mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
-              <p className="mb-4 inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-slate-600 shadow-sm sm:text-xs">
-                <Brain size={12} className="text-[#3d6b0f]" aria-hidden />
-                100% focado em Técnico em Enfermagem
+              <p className="mb-4 inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-[#8fe020]/35 bg-[#8fe020]/10 px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-[#3d6b0f] shadow-sm sm:text-xs">
+                <Shield size={12} aria-hidden />
+                Feito por técnico aprovado em 10+ concursos dentro das vagas
               </p>
 
               <h1 className="text-3xl font-[1000] leading-[1.08] tracking-tight text-slate-900 sm:text-5xl lg:text-[3.25rem]">
@@ -246,17 +218,9 @@ export default function LandingHomeClient() {
               initial={{ opacity: 0, y: 28, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ delay: 0.15, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-              className="relative mx-auto w-full max-w-sm lg:max-w-none lg:justify-self-end"
+              className="relative mx-auto w-full lg:justify-self-end"
             >
-              <div className="relative rounded-[2rem] border border-slate-200 bg-white p-3 shadow-[0_24px_64px_rgba(15,23,42,0.12)]">
-                <div className="overflow-hidden rounded-[1.5rem] border border-slate-100 bg-slate-950 p-2">
-                  <NeuroSlideCarousel className="mx-auto w-full max-w-[320px]" />
-                </div>
-                <div className="absolute -bottom-4 -left-4 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-lg">
-                  <p className="text-[10px] font-black uppercase tracking-wider text-slate-500">Estudo reverso</p>
-                  <p className="text-sm font-black text-slate-900">4 NeuroSlides por questão</p>
-                </div>
-              </div>
+              <LandingHeroShowcase />
             </motion.div>
           </div>
         </section>
@@ -275,20 +239,21 @@ export default function LandingHomeClient() {
           </ul>
         </section>
 
-        {/* Autoridade */}
-        <section className="px-4 py-14 sm:px-6">
-          <div className="card-elevated mx-auto flex max-w-4xl flex-col items-start gap-6 rounded-[2rem] p-8 sm:flex-row sm:items-center sm:p-10">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-[#8fe020]/30 bg-[#8fe020]/10">
-              <Shield size={28} className="text-[#3d6b0f]" aria-hidden />
-            </div>
-            <div>
-              <SectionLabel>Por que o AVANT existe</SectionLabel>
-              <p className="text-base font-semibold leading-relaxed text-slate-800 sm:text-lg">
-                Desenvolvido por um Técnico em Enfermagem aprovado em{' '}
-                <strong className="text-slate-900">mais de 10 concursos dentro das vagas</strong> — um método que
-                transforma erro em aprendizado real, não apenas gabarito.
-              </p>
-            </div>
+        {/* Dores */}
+        <section className="px-4 py-16 sm:px-6 sm:py-20">
+          <div className="mx-auto max-w-6xl">
+            <SectionLabel>O problema real</SectionLabel>
+            <h2 className="max-w-3xl text-2xl font-[1000] tracking-tight text-slate-900 sm:text-4xl">
+              Você estuda o material errado sem perceber
+            </h2>
+            <ul className="mt-10 grid gap-4 sm:grid-cols-3">
+              {DORES.map((dor) => (
+                <li key={dor} className="card-elevated rounded-2xl border-rose-100 p-5">
+                  <CircleAlert className="mb-4 text-rose-500" size={22} aria-hidden />
+                  <p className="text-base leading-relaxed text-slate-700">{dor}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -344,51 +309,7 @@ export default function LandingHomeClient() {
           </div>
         </section>
 
-        {/* Dores */}
-        <section className="px-4 py-16 sm:px-6 sm:py-20">
-          <div className="mx-auto max-w-6xl">
-            <h2 className="max-w-3xl text-2xl font-[1000] tracking-tight text-slate-900 sm:text-4xl">
-              Por que você ainda não passou
-            </h2>
-            <ul className="mt-10 grid gap-4 sm:grid-cols-3">
-              {DORES.map((dor) => (
-                <li key={dor} className="card-elevated rounded-2xl border-rose-100 p-5">
-                  <CircleAlert className="mb-4 text-rose-500" size={22} aria-hidden />
-                  <p className="text-base leading-relaxed text-slate-700">{dor}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* Método */}
-        <section id="metodo" className="bg-white px-4 py-16 sm:px-6 sm:py-20">
-          <div className="mx-auto max-w-6xl">
-            <SectionLabel>Como o AVANT funciona</SectionLabel>
-            <h2 className="text-2xl font-[1000] tracking-tight text-slate-900 sm:text-4xl">
-              Do erro ao aprendizado — em 4 passos
-            </h2>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2">
-              {METODO.map((step) => (
-                <article key={step.n} className="card-elevated-lg overflow-hidden rounded-3xl">
-                  <div className="grid sm:grid-cols-[1fr_140px]">
-                    <div className="p-6">
-                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#8fe020] text-sm font-black text-[#3d6b0f]">
-                        {step.n}
-                      </span>
-                      <h3 className="mt-4 text-lg font-black text-slate-900">{step.title}</h3>
-                      <p className="mt-2 text-sm leading-relaxed text-slate-600">{step.text}</p>
-                      <step.icon className="mt-4 text-[#3d6b0f]" size={20} aria-hidden />
-                    </div>
-                    <div className="relative hidden min-h-[140px] bg-slate-100 sm:block">
-                      <Image src={step.image} alt="" fill className="object-cover" sizes="140px" />
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        <LandingMetodoSteps />
 
         {/* Demo — faixa escura */}
         <section className="bg-[#0f172a]">
@@ -420,11 +341,12 @@ export default function LandingHomeClient() {
               <div className="hidden lg:block">
                 <div className="overflow-hidden rounded-2xl border border-white/10">
                   <Image
-                    src="/images/compare-avant-2.jpg"
-                    alt="NeuroSlide no player AVANT"
-                    width={400}
-                    height={560}
-                    className="aspect-[5/7] w-full object-cover"
+                    src={COMPARE_AVANT_SLIDES[1].src}
+                    alt={COMPARE_AVANT_SLIDES[1].alt}
+                    width={COMPARE_AVANT_SLIDES[1].width}
+                    height={COMPARE_AVANT_SLIDES[1].height}
+                    unoptimized
+                    className="mx-auto aspect-[5/7] w-full max-w-[280px] object-contain"
                   />
                 </div>
               </div>
@@ -485,60 +407,24 @@ export default function LandingHomeClient() {
           </div>
         </section>
 
-        {/* Pricing */}
-        <section id="pricing" className="px-4 py-16 sm:px-6 sm:py-24" aria-label="Planos AVANT">
-          <div className="mx-auto max-w-5xl">
-            <div className="mb-10 text-center">
-              <SectionLabel>Planos</SectionLabel>
-              <h2 className="text-2xl font-[1000] tracking-tight text-slate-900 sm:text-3xl">
-                Comece grátis. Vá fundo quando fizer sentido.
-              </h2>
+        {/* Autoridade */}
+        <section className="px-4 py-14 sm:px-6">
+          <div className="card-elevated mx-auto flex max-w-4xl flex-col items-start gap-6 rounded-[2rem] p-8 sm:flex-row sm:items-center sm:p-10">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-[#8fe020]/30 bg-[#8fe020]/10">
+              <Shield size={28} className="text-[#3d6b0f]" aria-hidden />
             </div>
-
-            <div className="grid gap-5 md:grid-cols-2">
-              <div className="card-elevated-lg rounded-[2rem] p-8">
-                <p className="text-xs font-black uppercase tracking-widest text-slate-500">Gratuito</p>
-                <p className="mt-1 text-4xl font-[1000] text-slate-900">R$ 0</p>
-                <ul className="mt-6 space-y-3">
-                  {[
-                    `${FREEMIUM_ESTUDO_REVERSO_DAILY_LIMIT} questão de Estudo Reverso/dia`,
-                    `${FREEMIUM_SIMULADO_DAILY_LIMIT} questões de simulado/dia`,
-                    'NeuroSlides incluídos',
-                    'Sem cartão de crédito',
-                  ].map((item) => (
-                    <li key={item} className="flex gap-2 text-sm text-slate-600">
-                      <CheckCircle2 size={16} className="shrink-0 text-slate-400" aria-hidden />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <OutlineCta href="/register" className="mt-8 w-full">
-                  Criar conta gratuita
-                </OutlineCta>
-              </div>
-
-              <div className="overflow-hidden rounded-[2rem] bg-[#0f172a] p-8 shadow-2xl">
-                <span className="inline-flex rounded-full bg-[#8fe020]/15 px-3 py-1 text-xs font-black uppercase tracking-wider text-[#8fe020]">
-                  Mais popular
-                </span>
-                <p className="mt-4 text-center text-5xl font-[1000] text-white">
-                  R$ {PRECO_PRO}
-                  <span className="text-2xl font-bold text-slate-400">/mês</span>
-                </p>
-                <p className="mt-2 text-center text-sm font-semibold text-[#8fe020]">Cancela quando quiser</p>
-                <ul className="mt-6 space-y-3">
-                  {PRO_BENEFITS.map((b) => (
-                    <li key={b} className="flex gap-3 text-sm text-slate-200">
-                      <CheckCircle2 className="mt-0.5 shrink-0 text-[#8fe020]" size={18} aria-hidden />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-                <ProCheckoutCta label={`Assinar AVANT Pro — R$ ${PRECO_PRO}/mês`} className="mt-8 [&_button]:w-full" />
-              </div>
+            <div>
+              <SectionLabel>Por que o AVANT existe</SectionLabel>
+              <p className="text-base font-semibold leading-relaxed text-slate-800 sm:text-lg">
+                Desenvolvido por um Técnico em Enfermagem aprovado em{' '}
+                <strong className="text-slate-900">mais de 10 concursos dentro das vagas</strong> — um método que
+                transforma erro em aprendizado real, não apenas gabarito.
+              </p>
             </div>
           </div>
         </section>
+
+        <LandingPricingSplit precoPro={PRECO_PRO} />
 
         {/* FAQ */}
         <section id="faq" className="px-4 py-16 sm:px-6 sm:py-20">

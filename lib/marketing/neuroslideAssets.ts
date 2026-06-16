@@ -1,4 +1,4 @@
-/** Dimensões reais dos screenshots do player (public/images/neuroslide-*.jpg). */
+/** Proporção do frame de preview (player mobile). Slides são React ao vivo, não JPG. */
 export const NEUROSLIDE_INTRINSIC = { width: 487, height: 1024 } as const;
 
 /** Largura máxima do carrossel no hero (homepage e LPs de concurso). */

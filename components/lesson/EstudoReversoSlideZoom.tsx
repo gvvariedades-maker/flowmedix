@@ -56,7 +56,7 @@ export function EstudoReversoSlideZoom({ children }: EstudoReversoSlideZoomProps
   const isTextScaled = scale > 1;
 
   const scrollAreaClassName = cn(
-    'relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto overflow-x-hidden overscroll-y-contain touch-pan-y',
+    'relative flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-y-auto overflow-x-hidden overscroll-y-contain touch-pan-y editorial-scrollbar',
   );
 
   const slotClassName = cn(

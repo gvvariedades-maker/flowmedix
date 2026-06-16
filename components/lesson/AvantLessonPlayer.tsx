@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 /**
  * AVANT OMNI-ARCHITECT: AvantLessonPlayer Component
@@ -1447,7 +1447,7 @@ export default function AvantLessonPlayer({
                 .join(', ');
 
               return (
-                <div key={opt.id} className="flex min-w-0 items-stretch gap-1">
+                <div key={opt.id} className="group flex min-w-0 items-center gap-1.5">
                   {showOptionElimination ? (
                     <button
                       type="button"
@@ -1460,13 +1460,20 @@ export default function AvantLessonPlayer({
                       aria-pressed={isEliminada}
                       title={isEliminada ? 'Restaurar alternativa' : 'Eliminar alternativa (tecla E)'}
                       className={cn(
-                        'flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border transition-colors sm:h-12 sm:w-12',
+                        'flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-all duration-200',
                         isEliminada
-                          ? 'border-sky-200 bg-sky-50 text-sky-600'
-                          : 'border-transparent text-slate-500 hover:border-slate-200 hover:bg-slate-50 hover:text-sky-600',
+                          ? 'text-sky-600 opacity-100'
+                          : cn(
+                              'pointer-events-none opacity-0 text-slate-400',
+                              'group-hover:pointer-events-auto group-hover:opacity-100',
+                              'group-focus-within:pointer-events-auto group-focus-within:opacity-100',
+                              'focus-visible:pointer-events-auto focus-visible:opacity-100',
+                              'hover:bg-slate-100 hover:text-sky-600',
+                              '[@media(hover:none)]:pointer-events-auto [@media(hover:none)]:opacity-100',
+                            ),
                       )}
                     >
-                      <Scissors size={16} aria-hidden />
+                      <Scissors size={15} aria-hidden />
                     </button>
                   ) : null}
                   <motion.button

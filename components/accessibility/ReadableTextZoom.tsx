@@ -11,6 +11,7 @@ import {
 } from 'react';
 import { RotateCcw } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { READABLE_TEXT_ZOOM_POPOVER_Z } from '@/lib/layout/mobileBottomNav';
 import { cn } from '@/lib/utils';
 
 /** Controles de texto e layout extra só em viewport estreita (alinhado a `md`). */
@@ -248,7 +249,7 @@ export function ReadableTextZoomToolbar({
         align="end"
         side="bottom"
         sideOffset={8}
-        className="w-auto p-3"
+        className={cn('w-auto p-3', READABLE_TEXT_ZOOM_POPOVER_Z)}
       >
         <TextZoomControls variant={variant} panelLabel={ariaLabel} />
       </PopoverContent>

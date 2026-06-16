@@ -1,24 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
-
-const AVANT_SLIDE_ASPECT = { width: 750, height: 1334 } as const;
-
-const COMPARE_AVANT_SLIDES = [
-  {
-    src: '/images/compare-avant-1.jpg',
-    alt: 'NeuroSlide AVANT — pipeline cognitivo laranja: avaliar compatibilidade da solução, escolher veia, punção asséptica e infusão controlada',
-  },
-  {
-    src: '/images/compare-avant-2.jpg',
-    alt: 'NeuroSlide AVANT — pipeline cognitivo roxo: verificação de sinais vitais, checklist cirúrgico, monitoramento transoperatório e avaliação na SRPA',
-  },
-  {
-    src: '/images/compare-avant-3.jpg',
-    alt: 'NeuroSlide AVANT — zona de perigo vermelha: contraindicações e riscos da via de administração',
-  },
-] as const;
+import { DeviceFrame } from '@/components/marketing/DeviceFrame';
+import { DeviceScreenImage } from '@/components/marketing/DeviceScreenImage';
+import { COMPARE_AVANT_SLIDES } from '@/lib/marketing/compareAvantAssets';
+import { cn } from '@/lib/utils';
 
 export function CompareAvantCarousel() {
   const [active, setActive] = useState(0);
@@ -32,47 +18,57 @@ export function CompareAvantCarousel() {
 
   return (
     <div
-      className="relative w-full px-6"
+      className="relative w-full px-6 py-2"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="relative w-full">
-        {COMPARE_AVANT_SLIDES.map((s, i) => (
-          <div
-            key={s.src}
-            className={
-              i === active
-                ? 'relative'
-                : 'pointer-events-none absolute inset-x-0 top-0 opacity-0'
-            }
-            aria-hidden={i !== active}
-          >
-            <Image
-              src={s.src}
-              alt={s.alt}
-              width={AVANT_SLIDE_ASPECT.width}
-              height={AVANT_SLIDE_ASPECT.height}
-              priority={i === 0}
-              className={`h-auto w-full rounded-2xl border border-[#8fe020]/20 shadow-xl shadow-[#8fe020]/10 transition-opacity duration-500 ${
-                i === active ? 'opacity-100' : 'opacity-0'
-              }`}
-              style={{ objectFit: 'contain' }}
-            />
+      <div className="relative mx-auto w-full max-w-[240px]">
+        <DeviceFrame
+          variant="phone"
+          label="NeuroSlides AVANT no celular"
+          screenMode="cover"
+          showGroundShadow={false}
+        >
+          <div className="relative h-full w-full">
+            {COMPARE_AVANT_SLIDES.map((slide, i) => (
+              <div
+                key={slide.src}
+                className={cn(
+                  'h-full w-full transition-opacity duration-500',
+                  i === active
+                    ? 'relative opacity-100'
+                    : 'pointer-events-none absolute inset-0 opacity-0',
+                )}
+                aria-hidden={i !== active}
+              >
+                <DeviceScreenImage
+                  src={slide.src}
+                  alt={slide.alt}
+                  width={slide.width}
+                  height={slide.height}
+                  objectPosition={slide.objectPosition}
+                  priority={i === 0}
+                  unoptimized
+                />
+              </div>
+            ))}
           </div>
-        ))}
+        </DeviceFrame>
       </div>
-      <div className="flex justify-center gap-2 py-4" role="tablist" aria-label="Slides AVANT">
-        {COMPARE_AVANT_SLIDES.map((s, i) => (
+
+      <div className="flex justify-center gap-2 pt-4" role="tablist" aria-label="Slides AVANT">
+        {COMPARE_AVANT_SLIDES.map((slide, i) => (
           <button
-            key={s.src}
+            key={slide.src}
             type="button"
             role="tab"
             aria-selected={i === active}
             aria-label={`Slide ${i + 1}`}
             onClick={() => setActive(i)}
-            className={`rounded-full transition-all duration-300 ${
-              i === active ? 'h-2 w-6 bg-[#8fe020]' : 'h-2 w-2 bg-white/20'
-            }`}
+            className={cn(
+              'rounded-full transition-all duration-300',
+              i === active ? 'h-2 w-6 bg-[#8fe020]' : 'h-2 w-2 bg-slate-300',
+            )}
           />
         ))}
       </div>

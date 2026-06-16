@@ -5,6 +5,7 @@ import { getServerSession } from '@/lib/supabase/server-auth';
 import { userHasActiveMatricula } from '@/lib/concursos/entitlements';
 import { isAdminSessionEmail } from '@/lib/constants';
 import { getAbsoluteUrl } from '@/lib/siteUrl';
+import { COMPARE_AVANT_SLIDES } from '@/lib/marketing/compareAvantAssets';
 import { FREEMIUM_PLAN_LIMITS_COMPACT, FREEMIUM_PLAN_LIMITS_DESCRIPTION } from '@/lib/freemium';
 
 /** Chunk separado evita erro do Turbopack ao misturar grafo de módulos com `not-found`. */
@@ -47,9 +48,9 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: getAbsoluteUrl('/images/compare-avant-2.jpg'),
-        width: 750,
-        height: 1334,
+        url: getAbsoluteUrl(COMPARE_AVANT_SLIDES[1].src),
+        width: COMPARE_AVANT_SLIDES[1].width,
+        height: COMPARE_AVANT_SLIDES[1].height,
         alt: 'AVANT — NeuroSlides de estudo reverso para Técnico em Enfermagem',
       },
     ],
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: homeTitle,
     description: `Estudo Reverso, NeuroSlides e simulados. ${FREEMIUM_PLAN_LIMITS_COMPACT} · sem cartão.`,
-    images: [getAbsoluteUrl('/images/compare-avant-2.jpg')],
+    images: [getAbsoluteUrl(COMPARE_AVANT_SLIDES[1].src)],
   },
   robots: {
     index: true,
