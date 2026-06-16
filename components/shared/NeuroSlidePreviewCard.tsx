@@ -1,19 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import React from 'react';
 import { motion } from 'framer-motion';
-import {
-  AlertTriangle,
-  FlaskConical,
-  GitMerge,
-  Layers,
-  Sparkles,
-  Zap,
-} from 'lucide-react';
-import { LANDING_NEUROSLIDE_SHOWCASE } from '@/lib/landingNeuroslideShowcase';
-
-const SHOWCASE_ASPECT = { width: 750, height: 1334 } as const;
+import { LandingNeuroSlideLive } from '@/components/marketing/LandingNeuroSlideLive';
+import { LANDING_NEUROSLIDE_SHOWCASE } from '@/lib/marketing/landingNeuroSlides';
+import { NEUROSLIDE_ASPECT_CLASS } from '@/lib/marketing/neuroslideAssets';
 
 export interface NeuroCardProps {
   tipo: string;
@@ -57,19 +48,17 @@ export function NeuroSlidePreview({
   );
 }
 
-/** Card com screenshot real do player (landing / estudo reverso). */
-export function NeuroSlideScreenshotCard({
+/** Card com NeuroSlide real do player (landing / estudo reverso). */
+export function NeuroSlideLiveCard({
   tipo,
   badgeColor,
   titulo,
-  src,
-  alt,
+  slideIndex,
 }: {
   tipo: string;
   badgeColor: string;
   titulo: string;
-  src: string;
-  alt: string;
+  slideIndex: number;
 }) {
   return (
     <motion.div
@@ -85,15 +74,10 @@ export function NeuroSlideScreenshotCard({
           {tipo}
         </span>
       </div>
-      <div className="relative mx-4 mb-3 mt-2 aspect-[750/1334] overflow-hidden rounded-xl border border-white/10 bg-[#010409]">
-        <Image
-          src={src}
-          alt={alt}
-          width={SHOWCASE_ASPECT.width}
-          height={SHOWCASE_ASPECT.height}
-          className="h-full w-full object-contain object-top"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        />
+      <div
+        className={`relative mx-4 mb-3 mt-2 overflow-hidden rounded-xl border border-white/10 bg-[#f8fafc] ${NEUROSLIDE_ASPECT_CLASS}`}
+      >
+        <LandingNeuroSlideLive slideIndex={slideIndex} />
       </div>
       <p className="px-4 pb-4 text-sm font-black leading-tight tracking-tight text-white">{titulo}</p>
     </motion.div>
@@ -101,15 +85,18 @@ export function NeuroSlideScreenshotCard({
 }
 
 /**
- * Vitrine da landing com prints reais dos layouts do estudo reverso.
+ * Vitrine da landing com NeuroSlides reais (formato novo do player).
  * Material de Apoio continua usando `NeuroSlidePreview` (cards ilustrativos).
  */
 export function NeuroSlidesShowcaseGrid({ className = '' }: { className?: string }) {
   return (
-    <div className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-3 ${className}`}>
+    <div className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-4 ${className}`}>
       {LANDING_NEUROSLIDE_SHOWCASE.map((item) => (
-        <NeuroSlideScreenshotCard key={item.src} {...item} />
+        <NeuroSlideLiveCard key={item.slideIndex} {...item} />
       ))}
     </div>
   );
 }
+
+/** @deprecated Use `NeuroSlideLiveCard` — screenshots JPG foram substituídos por slides reais. */
+export const NeuroSlideScreenshotCard = NeuroSlideLiveCard;
