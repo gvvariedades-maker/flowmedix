@@ -1,0 +1,356 @@
+{
+  "batch": "01",
+  "bucket": "Urgências e Emergências",
+  "inferences": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-7",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "Slug urgências sem destino canônico claro — manter."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-1",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-7",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-7",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com Urgências ou sem destino claro ≥0,90."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com Urgências ou sem destino claro ≥0,90."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com Urgências ou sem destino claro ≥0,90."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-1",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com Urgências ou sem destino claro ≥0,90."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563500147-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com Urgências ou sem destino claro ≥0,90."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-urgencias-e-emergencias-1777103970505-1",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "Slug urgências sem destino canônico claro — manter."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-urgencias-e-emergencias-1777104024064-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-urgencias-e-emergencias-1777104083571-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "avancasp-geral-urgencias-e-emergencias-1777104083571-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "com-exam-pref-bauru-enfermagem-urgencias-e-emergencias-1777104056718-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-urgencias-e-emergencias-1777104018306-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-7",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com Urgências ou sem destino claro ≥0,90."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-1",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-geral-urgencias-e-emergencias-1777103970505-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-urgencias-e-emergencias-1777104070286-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Definição de emergência — conceito central de urgência/emergência."
+    },
+    {
+      "modulo_slug": "facape-enfermagem-semiologia-em-enfermagem-1779563486900-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "Pico hipertensivo na UBS com encaminhamento emergencial."
+    },
+    {
+      "modulo_slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-2",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "facet-geral-urgencias-e-emergencias-1777103976379-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-7",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-7",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-urgencias-e-emergencias-1777104018306-9",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "RCP, trauma, choque, emergências ou primeiros socorros."
+    }
+  ]
+}

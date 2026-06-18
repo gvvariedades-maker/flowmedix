@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-06-16T09:27:40.532Z",
+  "bucket": "Farmacodinâmica e Farmacocinética",
+  "batch_size": 50,
+  "total": 6,
+  "batch_files": [
+    "artifacts/reclass/faixa-a/farmacodinamica/batch-01.json"
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "batch": "02",
+  "bucket": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+  "inferences": [
+    {
+      "modulo_slug": "funcern-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581011815-0",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Aedes aegypti é o nome científico de um mosquito ou pernilongo cuja c…"
+    },
+    {
+      "modulo_slug": "fundatec-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103478442-2",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Paciente de 32 anos com suspeita de dengue apresenta sintomas que ger…"
+    },
+    {
+      "modulo_slug": "fundatec-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103583552-5",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: A dengue é uma doença febril aguda, sistêmica e dinâmica, que pode ap…"
+    },
+    {
+      "modulo_slug": "fundatec-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776580999967-0",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: As arboviroses são transmitidas pelo mosquito do gênero Aedes, especi…"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-6",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: A dengue é um importante problema de saúde pública no Brasil, exigind…"
+    },
+    {
+      "modulo_slug": "furb-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1776576717580-0",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: A febre amarela é uma doença infecciosa febril aguda, imunoprevenível…"
+    },
+    {
+      "modulo_slug": "furb-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-5",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: A Dengue é considerada um grave problema de saúde pública no Brasil. …"
+    },
+    {
+      "modulo_slug": "gama-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1776579669882-0",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Qual das seguintes ações NÃO é recomendada para um técnico de enferma…"
+    },
+    {
+      "modulo_slug": "ibade-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103452899-0",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: O teste da prova do laço é uma técnica de triagem para a dengue, base…"
+    },
+    {
+      "modulo_slug": "ibade-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103510083-5",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: A secretaria de saúde identifica um surto de doença transmitida por v…"
+    },
+    {
+      "modulo_slug": "ibade-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103590498-3",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: As infecções por dengue podem apresentar três fases clínicas, sendo e…"
+    },
+    {
+      "modulo_slug": "ibfc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103496829-5",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Sobre os sinais de alarme da Dengue, analise as afirmativas a seguir …"
+    },
+    {
+      "modulo_slug": "ibfc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103529345-6",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Assinale a alternativa que não contempla um exemplo de sinais de alar…"
+    },
+    {
+      "modulo_slug": "idcap-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103478442-4",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: A Dengue é a arbovirose urbana de maior relevância nas Américas. Ela …"
+    },
+    {
+      "modulo_slug": "ideap-geral-epidemiologia-e-vigilancia-epidemiologica-1777103502990-4",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Medidas ambientais de prevenção da dengue — vigilância e controle vetorial."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-9",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "LIRAa — levantamento de índices do Aedes aegypti para vigilância."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067036141-9",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: A dengue é uma doença febril aguda, que pode ser de curso benigno ou …"
+    },
+    {
+      "modulo_slug": "idecan-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103496829-8",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Sobre as medidas de prevenção e controle da dengue, doença viral tran…"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-doencas-parasitarias-e-zoonoses-1778934909266-7",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: A raiva é ; uma infecção viral do cérebro e apresenta dois principais…"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778934918280-0",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: A hantavirose é uma doença que se manifesta de diversas formas nas Am…"
+    },
+    {
+      "modulo_slug": "igeduc-geral-doencas-virais-de-interesse-epidemiologico-1777103471372-0",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Julgue o item a seguir. Sobre os sintomas apresentados pelo paciente …"
+    },
+    {
+      "modulo_slug": "igeduc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103471372-2",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Julgue o item a seguir. O paciente com a febre hemorrágica da Dengue …"
+    },
+    {
+      "modulo_slug": "igeduc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103471372-3",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Julgue o item a seguir. O paciente com dengue clássica deve evitar o …"
+    },
+    {
+      "modulo_slug": "igeduc-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103471372-6",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Os sinais e sintomas da Chikungunya – como febre de início agudo, dor…"
+    },
+    {
+      "modulo_slug": "igeduc-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103471372-5",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Acolhimento e classificação de risco de chikungunya na APS/UPA."
+    },
+    {
+      "modulo_slug": "instituto-access-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103510083-1",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: A dengue é uma doença febril aguda, sistêmica, dinâmica, debilitante …"
+    },
+    {
+      "modulo_slug": "instituto-aocp-geral-doencas-virais-de-interesse-epidemiologico-1777103611576-0",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Os sinais de alarme devem ser rotineiramente pesquisados e valorizado…"
+    },
+    {
+      "modulo_slug": "instituto-aocp-geral-procedimentos-1777103510083-2",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Finalidade técnica da prova do laço como exame de coagulação/fragilidade capilar."
+    },
+    {
+      "modulo_slug": "instituto-consulpam-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103575693-6",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Sobre a Febre Chikungunya leia os itens abaixo: I- É uma doença infec…"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103575693-7",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Sobre a Dengue, assinale a alternativa CORRETA."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103471372-9",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: A dengue é uma doença muito comum no Brasil e que tem suscitado muita…"
+    },
+    {
+      "modulo_slug": "instituto-seletiva-enfermagem-semiologia-em-enfermagem-1779563517223-8",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: O Manual de Dengue do Ministério da Saúde em sua 6a Edição traz em um…"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-0",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Controle mecânico de criadouros do Aedes pelo ACS na atenção básica."
+    },
+    {
+      "modulo_slug": "instituto-verbena-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103452899-1",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Sintomas como náuseas/vômitos, exantema, mialgia/artralgia, cefaleia/…"
+    },
+    {
+      "modulo_slug": "instituto-verbena-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103452899-8",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Considerando a gravidade da doença dengue hemorrágica, quais são as n…"
+    },
+    {
+      "modulo_slug": "instituto-verbena-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103583552-7",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: As arboviroses podem ser transmitidas ao homem por via vetorial, vert…"
+    },
+    {
+      "modulo_slug": "ivin-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103478442-3",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: A dengue é uma doença febril aguda, sistêmica e dinâmica, que pode va…"
+    },
+    {
+      "modulo_slug": "ivin-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103496829-1",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: A fase crítica da dengue inicia com o declínio da febre (defervescênc…"
+    },
+    {
+      "modulo_slug": "ivin-geral-epidemiologia-e-vigilancia-epidemiologica-1777103597693-0",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Inseticidas larvicidas (temephós) no programa de controle vetorial da dengue."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-3",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: A rubéola é uma doença exantemática aguda de etiologia viral, altamen…"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-3",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: A dengue é uma doença endêmica no Brasil, com maior incidência em per…"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-7",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Hepatites virais A–E — transmissão fecal-oral da hepatite A (eixo IST/hepatites)."
+    },
+    {
+      "modulo_slug": "legalle-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103621567-0",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Acerca da dengue, assinale a alternativa INCORRETA."
+    },
+    {
+      "modulo_slug": "metrocapital-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103575693-3",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: Com relação à dengue, responda certo (C) ou errado (E) e assinale a a…"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-5",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Doenças reemergentes — conceito epidemiológico (dengue como exemplo)."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-5",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Catapora (varicela) — transmissão e prevenção vacinal."
+    },
+    {
+      "modulo_slug": "ms-sarmento-geral-doencas-virais-de-interesse-epidemiologico-covid-influenza-sarampo-polio-etc-1777103510083-0",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema viral/arbovirose: São componentes necessários para que ocorra a dengue:"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-5",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Armadilhas e combate químico/biológico ao Aedes — vigilância entomológica."
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-8",
+      "suggested_subtopico": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Esquistossomose por Schistosoma mansoni — helmintíase parasitária."
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-8",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Objetivo da aplicação de larvicidas em criadouros — prevenção comunitária."
+    }
+  ]
+}

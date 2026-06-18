@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-06-16T10:53:53.002Z",
+  "bucket": "Saúde da Mulher",
+  "batch_size": 50,
+  "total": 263,
+  "batch_files": [
+    "artifacts/reclass/faixa-d/saude-mulher/batch-01.json",
+    "artifacts/reclass/faixa-d/saude-mulher/batch-02.json",
+    "artifacts/reclass/faixa-d/saude-mulher/batch-03.json",
+    "artifacts/reclass/faixa-d/saude-mulher/batch-04.json",
+    "artifacts/reclass/faixa-d/saude-mulher/batch-05.json",
+    "artifacts/reclass/faixa-d/saude-mulher/batch-06.json"
+  ]
+}

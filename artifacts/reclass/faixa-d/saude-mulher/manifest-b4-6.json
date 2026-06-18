@@ -1,0 +1,8 @@
+{
+  "bucket": "Saúde da Mulher",
+  "batch_files": [
+    "artifacts/reclass/faixa-d/saude-mulher/batch-04.json",
+    "artifacts/reclass/faixa-d/saude-mulher/batch-05.json",
+    "artifacts/reclass/faixa-d/saude-mulher/batch-06.json"
+  ]
+}

@@ -9,7 +9,6 @@ export const LP_RESERVED_PATHS = new Set([
   'concursos',
   'esqueci-senha',
   'estudar',
-  'goianinha',
   'login',
   'lp',
   'neuroslide-showcase-capture',

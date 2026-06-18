@@ -1,0 +1,208 @@
+{
+  "generated_at": "2026-06-16T09:48:10.540Z",
+  "mode": "infer",
+  "bucket": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 19,
+    "inferred": 19,
+    "errors": 0,
+    "keep_current": 13,
+    "same_subtopico": 13,
+    "applicable": 6
+  },
+  "proposals": [
+    {
+      "modulo_slug": "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-5",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Controle da tuberculose: BCG, isoniazida e busca de sintomáticos respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-6",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Infecções no Contexto da Biossegurança",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] MRSA em ambiente hospitalar — colonização, IRAS e perfil de risco institucional.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-4",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Competências da APS: visita domiciliar, educação em saúde e atribuições do técnico na ESF.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576853681-0",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Doença meningocócica — transmissão e quadro clínico bacteriano.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-0",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Tuberculose: TDO, prova tuberculínica e tratamento sensível.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-1",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Hanseníase: incubação, transmissão pauci/multibacilar e supervisão de dose.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-7",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Reconhecimento de meningite em serviço de urgência — sinais neurológicos agudos.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-5",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Busca ativa de sintomáticos respiratórios — critério epidemiológico do programa de TB.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-geral-doencas-bacterianas-e-fungicas-1777103502990-0",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Febre maculosa — Rickettsia transmitida por carrapato-estrela (zoonose).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-2",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Hiperpirexia como sinal de processo infeccioso.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-3",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Bactérias do trato gastrointestinal: Shigella e E. coli.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibgp-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1776576839192-0",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Classificação etiológica — cólera, tétano, TB e difteria como bacterianas.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1778934909266-4",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Tratamento da hanseníase com poliquimioterapia (PQT).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1780001148264-4",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Bacterioses: transmissão, prevenção e papel do técnico.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-doencas-bacterianas-e-fungicas-tuberculose-tetano-candidiase-etc-1777103487024-4",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Candidíase bucal — placa esbranquiçada em mucosa oral.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-9",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Cólera por Vibrio cholerae — transmissão e manifestações clínicas.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-5",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Agente etiológico da candidíase — Candida albicans.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-8",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Forma virchowiana da hanseníase — fácies leonina e infiltração difusa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-geral-doencas-bacterianas-e-fungicas-1776576813096-0",
+      "from": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Surto pós-enchente — leptospirose e prevenção por evitar água contaminada.",
+      "applicable": true,
+      "source": "heuristic"
+    }
+  ]
+}

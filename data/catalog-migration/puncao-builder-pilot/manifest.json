@@ -1,0 +1,21 @@
+{
+  "lote": "puncao-builder-pilot",
+  "exported_at": "2026-06-16T14:31:48.154Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+      "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9",
+      "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
+      "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-7",
+      "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-8"
+    ]
+  },
+  "slugs": [
+    "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+    "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9",
+    "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
+    "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-7",
+    "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-8"
+  ]
+}

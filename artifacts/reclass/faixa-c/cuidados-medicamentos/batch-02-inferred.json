@@ -1,0 +1,356 @@
+{
+  "batch": "02",
+  "bucket": "Cuidados na Administração de Medicamentos",
+  "inferences": [
+    {
+      "modulo_slug": "com-exam-pref-bauru-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-2",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-5",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "consulplan-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-6",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-0",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-1",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-2",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Locais anatômicos indicados para injeção intramuscular."
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-3",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-4",
+      "suggested_subtopico": "Infecções no Contexto da Biossegurança",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Clorexidina no controle de infecção hospitalar — biossegurança."
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-cuidados-na-administracao-de-medicamentos-1778969701754-7",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-1",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-2",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-5",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-6",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969494896-0",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-4",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Manejo clínico de suspeita de dengue — doença viral."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-9",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-seguranca-do-paciente-1777102918981-2",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-4",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-5",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969752567-5",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "aferição de PA — tema dominante fora de Cuidados na Administração de Medicamentos."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-cuidados-na-administracao-de-medicamentos-1778969504315-8",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-7",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-9",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "facet-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-5",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-3",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "Interações medicamentosas entre dipirona, AAS e anticoagulantes."
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-5",
+      "suggested_subtopico": "Saúde da Criança",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Aleitamento materno e linha de cuidado da criança."
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-7",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Programa de controle do tabagismo — prevenção de agravos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-6",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002549800-8",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-3",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-4",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-5",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-3",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-3",
+      "suggested_subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Cálculo de dose a partir de concentração da ampola."
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-1",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-2",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-seguranca-do-paciente-1777102918981-1",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-cuidados-na-administracao-de-medicamentos-1778969685650-8",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "fcc-geral-seguranca-do-paciente-1777102802022-2",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-seguranca-do-paciente-1777102936764-9",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-6",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-7",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-1",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-6",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-9",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, preparo, interações ou vigilância na administração de medicamentos."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-9",
+      "suggested_subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Cálculo de gotejamento de solução intravenosa."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-0",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-4",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-2",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-7",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com administração de medicamentos ou sem destino canônico claro ≥0,90."
+    }
+  ]
+}

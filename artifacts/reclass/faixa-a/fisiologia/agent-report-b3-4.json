@@ -1,0 +1,608 @@
+{
+  "generated_at": "2026-06-16T13:13:59.528Z",
+  "mode": "infer",
+  "bucket": "Noções de Fisiologia",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 59,
+    "inferred": 59,
+    "errors": 0,
+    "keep_current": 37,
+    "same_subtopico": 37,
+    "applicable": 22
+  },
+  "proposals": [
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-5",
+      "from": "Noções de Fisiologia",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Assistência de enfermagem na APS para controle da HAS.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-6",
+      "from": "Noções de Fisiologia",
+      "suggested": "Infecções no Contexto da Biossegurança",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Prevenção de IRAS — biossegurança e controle de infecção.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-7",
+      "from": "Noções de Fisiologia",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Sífilis na gestação — IST e conduta pré-natal.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-8",
+      "from": "Noções de Fisiologia",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Gastrostomia vs jejunostomia — alimentação por sonda.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-9",
+      "from": "Noções de Fisiologia",
+      "suggested": "Enfermagem em Central de Material e Esterilização (CME)",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "[agent] Funções da Central de Material e Esterilização.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-0",
+      "from": "Noções de Fisiologia",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Monitoramento de nutrição enteral — cuidado com sonda/alimentação.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-1",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-2",
+      "from": "Noções de Fisiologia",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Diagnóstico laboratorial de COVID-19 em gestantes.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-3",
+      "from": "Noções de Fisiologia",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Eletrocardiograma — exame complementar/procedimento.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-4",
+      "from": "Noções de Fisiologia",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Estratégias de APS para DCNT (HAS, diabetes).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-5",
+      "from": "Noções de Fisiologia",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Convulsões neonatais — saúde da criança/neonatologia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-6",
+      "from": "Noções de Fisiologia",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Zoonoses e vigilância integrada — parasitárias/zoonoses.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-coleta-de-exames-laboratoriais-1779563248005-8",
+      "from": "Noções de Fisiologia",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Importância da coleta correta de materiais para exames.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-fisiologia-1776055798601-0",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-fisiologia-1776055798601-4",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-4",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-exames-laboratoriais-1779563631609-0",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Hipernatremia — distúrbio eletrolítico/fisiologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-exames-laboratoriais-1779563559434-9",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-nocoes-de-fisiologia-1775501938701-3",
+      "from": "Noções de Fisiologia",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] FC 169 BPM — classificação de taquicardia (sinal vital).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-nocoes-de-fisiologia-1775448615466-2",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Termorregulação e controle de temperatura corporal.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776055798601-2",
+      "from": "Noções de Fisiologia",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Tratamento de fraturas instáveis com gesso — imobilização.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776055998470-4",
+      "from": "Noções de Fisiologia",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Posicionamento/decúbito no transporte de pacientes.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776055998470-5",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Fisiologia cardíaca, ciclo cardíaco e fatores da PA.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776055998470-6",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776056116422-3",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Soluções isotônicas/hipo/hiper — osmolaridade e fisiologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-0",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-nocoes-de-fisiologia-1775448586547-4",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-2",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.88,
+      "keep_current": true,
+      "rationale": "[agent] Sem tema dominante claro fora de Fisiologia — manter bucket.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004272097-9",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-5",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-exames-laboratoriais-1779563559434-4",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-5",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-9",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-exames-laboratoriais-1779563631609-1",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-nocoes-de-fisiologia-1775448599930-6",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-nocoes-de-fisiologia-1775448599930-7",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-nocoes-de-fisiologia-1775501802332-0",
+      "from": "Noções de Fisiologia",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Fixação de tecido para histologia — técnica laboratorial especializada.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-nocoes-de-fisiologia-1776055765734-0",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775448615466-3",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775501962697-1",
+      "from": "Noções de Fisiologia",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Valores de referência de frequência cardíaca em adultos.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775501962697-4",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Anatomia das vias aéreas superiores (nariz, conchas, meatos).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1775503376143-0",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1776055998470-3",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nocoes-de-fisiologia-1776056116422-4",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-3",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.88,
+      "keep_current": true,
+      "rationale": "[agent] Sem tema dominante claro fora de Fisiologia — manter bucket.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-exames-laboratoriais-1779563613404-6",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-nocoes-de-fisiologia-1775501938701-1",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-nocoes-de-fisiologia-1776055986110-5",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-exames-laboratoriais-1779563621885-4",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-nocoes-de-fisiologia-1775448586547-1",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009310940-6",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Fisiologia da anemia e transporte de O2 pelas hemácias.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-vias-de-administracao-1778968687469-0",
+      "from": "Noções de Fisiologia",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Posição de Sims para medicação retal e temperatura.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-exames-laboratoriais-1779563621885-5",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nocoes-de-fisiologia-1775501962697-0",
+      "from": "Noções de Fisiologia",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Parâmetros normais de PA, FC, FR e SpO2 — sinais vitais.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nocoes-de-fisiologia-1776055811481-0",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nocoes-de-fisiologia-1776055811481-1",
+      "from": "Noções de Fisiologia",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Técnicas de antropometria (altura, envergadura, maca-balança).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563650975-1",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.88,
+      "keep_current": true,
+      "rationale": "[agent] Sem tema dominante claro fora de Fisiologia — manter bucket.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-laboratoriais-1779563650975-3",
+      "from": "Noções de Fisiologia",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Funções orgânicas, homeostase ou fisiologia aplicada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1778968768987-5",
+      "from": "Noções de Fisiologia",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Via de administração da nutrição parenteral total (endovenosa).",
+      "applicable": true,
+      "source": "heuristic"
+    }
+  ]
+}

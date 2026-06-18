@@ -1,0 +1,356 @@
+{
+  "batch": "06",
+  "bucket": "Imunização",
+  "inferences": [
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780001903454-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-9",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Diretrizes de tratamentos oncológicos — DCNT."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-5",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-7",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "eMulti na ESF — atenção básica."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-9",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Campanhas de conscientização em fevereiro — promoção à saúde."
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-imunizacao-1779572166628-6",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-imunizacao-1777103244679-5",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-imunizacao-1777103244679-6",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-imunizacao-1777103251447-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-imunizacao-1779564031957-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-imunizacao-1779564031957-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-imunizacao-1779564067000-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-imunizacao-1779564071106-6",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-imunizacao-1779564071106-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-imunizacao-1779564071106-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-imunizacao-1779564109452-8",
+      "suggested_subtopico": "Saúde da Criança",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Vitamina K no recém-nascido — profilaxia neonatal pediátrica."
+    },
+    {
+      "modulo_slug": "gama-enfermagem-imunizacao-1779564006577-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-2",
+      "suggested_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Hanseníase na APS — doença bacteriana."
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-imunizacao-1779572207173-6",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-imunizacao-1777103230085-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-imunizacao-1777103230085-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Imunidade inata — fundamentos para compreender vacinas."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-imunizacao-1777103230085-5",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-imunizacao-1777103230085-6",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Imunidade ativa/passiva e vacinação."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-imunizacao-1777103270218-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-imunizacao-1777103270218-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-imunizacao-1777103270218-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-imunizacao-1777103277533-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-imunizacao-1779564129617-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-imunizacao-1779564129617-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-imunizacao-1779572198133-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-imunizacao-1779572236985-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibam-enfermagem-imunizacao-1779572198133-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779563975447-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779564063274-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779564074967-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779564074967-5",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779564074967-6",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779564074967-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779564074967-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779564079834-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-imunizacao-1779564119665-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ibgp-enfermagem-imunizacao-1779572166628-9",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-imunizacao-1777103182944-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-imunizacao-1779564096589-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ideap-enfermagem-imunizacao-1779564067000-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1778712256094-8",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Objetivo da vigilância sanitária — epidemiologia."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1777103277533-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    }
+  ]
+}

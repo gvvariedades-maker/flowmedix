@@ -43,8 +43,11 @@ import VitrinePageHeader from '@/components/vitrine/VitrinePageHeader';
 import VitrineSubjectCard from '@/components/vitrine/VitrineSubjectCard';
 import VitrineToolbar from '@/components/vitrine/VitrineToolbar';
 import VitrineResumeCard from '@/components/vitrine/VitrineResumeCard';
+import SimuladoDiagnosticoCard from '@/components/vitrine/SimuladoDiagnosticoCard';
+import WeeklySimuladoMissionCard from '@/components/vitrine/WeeklySimuladoMissionCard';
 import VitrineQuickFilters from '@/components/vitrine/VitrineQuickFilters';
 import type { VitrineResumeHint } from '@/lib/vitrine/resume';
+import type { DiagnosticoSimuladoCardState, WeeklySimuladoMission } from '@/lib/simulado/types';
 import { vitrineContainerVariants } from '@/components/vitrine/vitrineMotion';
 import { multiFilterResumo } from '@/lib/questao-filter/multiFilterResumo';
 import { scrollDashboardMainToTop } from '@/lib/layout/dashboardMainScroll';
@@ -164,6 +167,10 @@ interface VitrineClientProps {
   ssrFacetsQueryKey?: string;
   /** Última questão estudada (SSR) — card "Continuar" na vitrine sem filtros. */
   initialResume?: VitrineResumeHint | null;
+  /** Estado do simulado diagnóstico inicial (SSR) — card de boas-vindas. */
+  initialDiagnostico?: DiagnosticoSimuladoCardState | null;
+  /** Simulado da Semana personalizado (SSR). */
+  initialWeeklyMission?: WeeklySimuladoMission | null;
 }
 
 // ─── Componente Principal ─────────────────────────────────────────────────────
@@ -178,6 +185,8 @@ export default function VitrineClient({
   ssrListQueryKey,
   ssrFacetsQueryKey,
   initialResume = null,
+  initialDiagnostico = null,
+  initialWeeklyMission = null,
 }: VitrineClientProps) {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -208,6 +217,9 @@ export default function VitrineClient({
   const [assuntos, setAssuntos] = useState<string[]>(() => initialFacetsData?.assuntos ?? []);
   const [facetsLoading, setFacetsLoading] = useState(() => !initialFacetsData);
   const [ssrErrorDismissed, setSsrErrorDismissed] = useState(false);
+  const [weeklyMission, setWeeklyMission] = useState<WeeklySimuladoMission | null>(
+    initialWeeklyMission,
+  );
   const [retryNonce, setRetryNonce] = useState(0);
   const vitrineListaRef = useRef<HTMLDivElement>(null);
   const vitrinePaginationInlineRef = useRef<HTMLElement>(null);
@@ -597,6 +609,22 @@ export default function VitrineClient({
     statusFilter === 'all' &&
     pagina === 1;
 
+  const showWeeklyMissionCard =
+    weeklyMission != null &&
+    bancasSelecionadas.length === 0 &&
+    assuntosSelecionados.length === 0 &&
+    !debouncedSearch &&
+    statusFilter === 'all' &&
+    pagina === 1;
+
+  const showDiagnosticoCard =
+    initialDiagnostico?.show_card === true &&
+    bancasSelecionadas.length === 0 &&
+    assuntosSelecionados.length === 0 &&
+    !debouncedSearch &&
+    statusFilter === 'all' &&
+    pagina === 1;
+
   const handleRetryLoad = useCallback(() => {
     setSsrErrorDismissed(true);
     setRetryNonce((n) => n + 1);
@@ -680,6 +708,15 @@ export default function VitrineClient({
             description={pageSectionDescription || null}
           />
           {children ? <div className="mb-4 md:mb-6">{children}</div> : null}
+          {showWeeklyMissionCard && !showDiagnosticoCard && weeklyMission ? (
+            <WeeklySimuladoMissionCard
+              mission={weeklyMission}
+              onMissionUpdate={setWeeklyMission}
+            />
+          ) : null}
+          {showDiagnosticoCard && initialDiagnostico ? (
+            <SimuladoDiagnosticoCard state={initialDiagnostico} />
+          ) : null}
           {showResumeCard ? (
             <VitrineResumeCard resume={initialResume} estudarQuery={estudarQuery} />
           ) : null}

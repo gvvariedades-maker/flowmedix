@@ -1,0 +1,190 @@
+{
+  "generated_at": "2026-06-16T09:46:30.154Z",
+  "mode": "apply",
+  "bucket": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 17,
+    "inferred": 17,
+    "errors": 0,
+    "keep_current": 17,
+    "same_subtopico": 17,
+    "applicable": 0,
+    "applied": 0
+  },
+  "proposals": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056021381-4",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-9",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-5",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-2",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-4",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-5",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1780067036141-7",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-5",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-6",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-7",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-9",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-1",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-4",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-8",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-1",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-2",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-3",
+      "from": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Tema central em DCNT (diabetes, HAS, obesidade, autocuidado ou complicações crônicas) — bucket adequado após piloto.",
+      "applicable": false,
+      "source": "heuristic"
+    }
+  ],
+  "apply_errors": []
+}

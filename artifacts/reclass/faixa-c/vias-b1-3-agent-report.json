@@ -1,0 +1,1518 @@
+{
+  "generated_at": "2026-06-16T11:00:09.757Z",
+  "mode": "infer",
+  "bucket": "Vias de Administração",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 150,
+    "inferred": 150,
+    "errors": 0,
+    "keep_current": 128,
+    "same_subtopico": 128,
+    "applicable": 22
+  },
+  "proposals": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-vias-de-administracao-1776056401060-9",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-vias-de-administracao-1778968768987-7",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-vias-de-administracao-1778968787431-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1776056348175-0",
+      "from": "Vias de Administração",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Tipos de clister e lavagem intestinal como procedimento.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1776056374837-2",
+      "from": "Vias de Administração",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Composição e esquema da Pentavalente no PNI — núcleo imunização.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1776056374837-6",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968768987-6",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968906156-5",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968906156-6",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968956139-1",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968956139-2",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-3",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Locais seguros e volumes máximos na injeção intramuscular.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056348175-5",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056348175-6",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica de via na campanha de vacinação (BCG ID, tríplice viral).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056357082-4",
+      "from": "Vias de Administração",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Cuidados na administração de dieta enteral por sonda.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056357082-5",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056366158-1",
+      "from": "Vias de Administração",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Lavagem intestinal/clister como procedimento de eliminação.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056366158-2",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Comparativo de vias enterais e absorção — núcleo vias.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056374837-3",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Anatomia do glúteo na aplicação intramuscular.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056383154-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1778968687469-5",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1778968968468-5",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1778968997293-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-vias-de-administracao-1778968573722-0",
+      "from": "Vias de Administração",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Cuidados na endometriose — saúde da mulher.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-seguranca-do-paciente-1777102861438-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056330579-8",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056338955-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056338955-1",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056338955-6",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056391403-1",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056391403-8",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056401060-7",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056409987-8",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056409987-9",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056427936-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056427936-5",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968598934-1",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968598934-2",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-3",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-5",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-6",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968956139-7",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968956139-8",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1776056401060-2",
+      "from": "Vias de Administração",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Competência legal na administração IV — segurança medicamentosa.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1778968997293-6",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1778968997293-7",
+      "from": "Vias de Administração",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Protocolo de segurança na prescrição e administração de medicamentos.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1776056391403-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1778968906156-4",
+      "from": "Vias de Administração",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Objetivos da lavagem intestinal — procedimento clínico.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
+      "from": "Vias de Administração",
+      "suggested": "Farmacodinâmica e Farmacocinética",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Biodisponibilidade e metabolismo de primeira passagem.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-vias-de-administracao-1776056357082-3",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-vias-de-administracao-1776056427936-7",
+      "from": "Vias de Administração",
+      "suggested": "Imunização",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Esquema e conservação da vacina Pentavalente no PNI.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-vias-de-administracao-1778968906156-7",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968768987-2",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-1",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-3",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968787431-6",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968968468-2",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-vias-de-administracao-1778968968468-3",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "contemax-enfermagem-vias-de-administracao-1778968598934-5",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-2",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-2",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-3",
+      "from": "Vias de Administração",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Cuidados de enfermagem no pós-operatório.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "[agent] Via de administração da vacina hepatite B.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-5",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-6",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-7",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-8",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-vias-de-administracao-1778968666352-3",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1776056348175-1",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1776056357082-8",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Velocidade de infusão endovenosa (EV lenta) no pós-operatório.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1776056366158-7",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1776056427936-2",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1778968629127-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1778968687469-2",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1778968877204-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-vias-de-administracao-1778968877204-1",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-vias-de-administracao-1776056357082-0",
+      "from": "Vias de Administração",
+      "suggested": "Imunização",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Via da tríplice viral conforme diretrizes do PNI.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-vias-de-administracao-1776056366158-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Classificação e características das vias de administração.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-vias-de-administracao-1776056374837-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-vias-de-administracao-1776056427936-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-vias-de-administracao-1778968629127-6",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-vias-de-administracao-1777178733298-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-seguranca-do-paciente-1779563436357-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056348175-8",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056357082-6",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056383154-1",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056401060-6",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1776056409987-2",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1778968666352-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-vias-de-administracao-1778968968468-8",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fcc-enfermagem-vias-de-administracao-1776056418941-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1776056383154-5",
+      "from": "Vias de Administração",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Relação vacinas do calendário infantil com suas vias no PNI.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1776056391403-2",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Comparativo de vias parenterais e enterais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1776056418941-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1778968787431-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1778968787431-5",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1778968997293-1",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-vias-de-administracao-1778968997293-8",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-3",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-vias-de-administracao-1776056366158-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-vias-de-administracao-1776056401060-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo compatível com vias de administração ou sem destino canônico claro ≥0,90.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-vias-de-administracao-1778968687469-7",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-vias-de-administracao-1778968956139-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-vias-de-administracao-1778968968468-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-vias-de-administracao-1778968968468-1",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-vias-de-administracao-1776056383154-0",
+      "from": "Vias de Administração",
+      "suggested": "Imunização",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Via da vacina tetra viral conforme PNI.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-vias-de-administracao-1776056418941-1",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-vias-de-administracao-1776056418941-3",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-vias-de-administracao-1778968609115-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-vias-de-administracao-1778968609115-1",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056338955-5",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056338955-8",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Assertivas sobre vias oral, mucosa, SC e IM.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056374837-7",
+      "from": "Vias de Administração",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Cuidados ao paciente com anestesia regional no perioperatório.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056383154-3",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056383154-6",
+      "from": "Vias de Administração",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Posicionamento do paciente para realização de enema.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056391403-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056409987-1",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056409987-7",
+      "from": "Vias de Administração",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Noradrenalina — diluente e tipo de acesso venoso (central/periférico).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968666352-6",
+      "from": "Vias de Administração",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Catálogo de vias dos imunobiológicos no PNI.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968666352-7",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968666352-8",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968825263-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968825263-2",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968862077-6",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968862077-7",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-vias-de-administracao-1776056427936-6",
+      "from": "Vias de Administração",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Tipos e indicações de lavagem intestinal.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-vias-de-administracao-1778969007166-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-vias-de-administracao-1778968598934-3",
+      "from": "Vias de Administração",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Manejo de desidratação aguda com hidratação EV em UBS.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-vias-de-administracao-1778968598934-4",
+      "from": "Vias de Administração",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Vacina BCG e epidemiologia da tuberculose no PNI.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-6",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-1",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1776056348175-3",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1776056366158-9",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1776056401060-8",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1776056409987-0",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1778968609115-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Via sublingual e primeira passagem hepática.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-vias-de-administracao-1778968629127-1",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-vias-de-administracao-1778968768987-8",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-vias-de-administracao-1778968573722-3",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-vias-de-administracao-1778968598934-0",
+      "from": "Vias de Administração",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Tipos de nebulizadores — oxigenoterapia/inalação respiratória.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-vias-de-administracao-1778968629127-2",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-geral-vias-de-administracao-1776056427936-3",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-vias-de-administracao-1778968687469-3",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-vias-de-administracao-1778968968468-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Procedimentos por via intradérmica.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-vias-de-administracao-1776056401060-4",
+      "from": "Vias de Administração",
+      "suggested": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] VO/IM/IV/SC — técnica, volumes ou locais de aplicação.",
+      "applicable": false,
+      "source": "heuristic"
+    }
+  ]
+}

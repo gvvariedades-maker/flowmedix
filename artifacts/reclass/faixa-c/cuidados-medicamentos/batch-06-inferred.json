@@ -1,0 +1,195 @@
+{
+  "batch": "06",
+  "bucket": "Cuidados na Administração de Medicamentos",
+  "inferences": [
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003637054-8",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Seis metas internacionais de segurança do paciente (JCI/OMS)."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-5",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, MAV, preparo, vigilância ou administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-seguranca-do-paciente-1779563443877-0",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo de administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-seguranca-do-paciente-1779563448133-0",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, MAV, preparo, vigilância ou administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "univali-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-1",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, MAV, preparo, vigilância ou administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "univali-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-2",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo de administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010594524-6",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, MAV, preparo, vigilância ou administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-0",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, MAV, preparo, vigilância ou administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "univida-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-1",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo de administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968094018-0",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Grupos educativos por patologia na atenção básica."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968221218-3",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Papel do técnico em CTA para ISTs."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-2",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "POPs na gestão de estoque hospitalar."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-7",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo de administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969018962-8",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, MAV, preparo, vigilância ou administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-0",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, MAV, preparo, vigilância ou administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-1",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, MAV, preparo, vigilância ou administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969248953-3",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo de administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-2",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, MAV, preparo, vigilância ou administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-7",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo de administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-cuidados-na-administracao-de-medicamentos-1778969693036-7",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo de administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-5",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Uso de anticoncepcional oral combinado."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-8",
+      "suggested_subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Flebite/extravasamento no cateter periférico."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-3",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Ação de promoção da saúde proposta pelo técnico na APS."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-6",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, MAV, preparo, vigilância ou administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-8",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Educação em saúde em grupos de doenças crônicas."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1777102861438-1",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo de administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-4",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "6 certos, MAV, preparo, vigilância ou administração segura de medicamentos."
+    }
+  ]
+}

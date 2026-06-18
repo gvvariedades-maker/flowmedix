@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-06-16T13:21:24.388Z",
+  "bucket": "Questões Mescladas e Outras Doenças Agudas",
+  "batch_size": 50,
+  "total": 11,
+  "batch_files": [
+    "artifacts/reclass/faixa-d/agudas/batch-01.json"
+  ]
+}

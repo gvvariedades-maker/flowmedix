@@ -5,16 +5,19 @@ import { isAdminSessionEmail } from '@/lib/constants';
 import { logger } from '@/lib/logger';
 import { getServerUser } from '@/lib/supabase/server-auth';
 import { getLastStudiedQuestaoCached } from '@/lib/vitrine/resume';
+import { getWeeklySimuladoMission } from '@/lib/simulado/weeklySimulado';
 import {
   parseVitrineListQuery,
   vitrineFacetsQueryKey,
   vitrineListQueryKey,
 } from '@/lib/vitrine/parseListQuery';
+import { getDiagnosticoSimuladoCardStateCached } from '@/lib/simulado/diagnosticoStatus';
 import VitrineCatalogStatsSection from '@/components/vitrine/VitrineCatalogStatsSection';
 import VitrineCatalogStatsSkeleton from '@/components/vitrine/VitrineCatalogStatsSkeleton';
 import VitrineClient from '@/components/vitrine/VitrineClient';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { getE2eEstudarVitrinePage, getE2eVitrineResumeHint } from '@/lib/e2e/estudarSeed';
+import type { DiagnosticoSimuladoCardState, WeeklySimuladoMission } from '@/lib/simulado/types';
 
 /** Catálogo inicial no SSR (cache 2 min); cliente refetch em filtros/paginação. */
 export const dynamic = 'force-dynamic';
@@ -29,6 +32,13 @@ export default async function VitrinePage({
 
   if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS')) {
     const initialPageData = getE2eEstudarVitrinePage(listQuery);
+    const initialDiagnostico: DiagnosticoSimuladoCardState = {
+      show_card: true,
+      onboarding_completed: true,
+      diagnostico_completed: false,
+      has_open_session: false,
+      session: null,
+    };
     return (
       <Suspense fallback={<VitrineLoadingFallback />}>
         <VitrineClient
@@ -38,6 +48,7 @@ export default async function VitrinePage({
           initialFacetsData={initialPageData.facets}
           initialPayloadError={null}
           initialResume={getE2eVitrineResumeHint()}
+          initialDiagnostico={initialDiagnostico}
           ssrListQueryKey={vitrineListQueryKey(listQuery)}
           ssrFacetsQueryKey={vitrineFacetsQueryKey(listQuery.bancas)}
         >
@@ -64,7 +75,8 @@ export default async function VitrinePage({
     bancas: listQuery.bancas.length ? listQuery.bancas : undefined,
   };
 
-  const [matriculatedConcursos, initialPayloadResult, initialResume] = await Promise.all([
+  const [matriculatedConcursos, initialPayloadResult, initialResume, initialDiagnostico, weeklyMissionResult] =
+    await Promise.all([
     getMatriculatedConcursosCached(userId).catch((err) => {
       logger.warn('SSR vitrine: falha ao carregar concursos matriculados', {
         userId,
@@ -98,6 +110,26 @@ export default async function VitrinePage({
       });
       return null;
     }),
+    getDiagnosticoSimuladoCardStateCached(userId).catch((err) => {
+      logger.warn('SSR vitrine: falha ao carregar card de diagnóstico', {
+        userId,
+        error: err instanceof Error ? err.message : String(err),
+      });
+      return {
+        show_card: false,
+        onboarding_completed: false,
+        diagnostico_completed: false,
+        has_open_session: false,
+        session: null,
+      } satisfies DiagnosticoSimuladoCardState;
+    }),
+    getWeeklySimuladoMission({ userId, isAdmin, autoGenerate: true }).catch((err) => {
+      logger.warn('SSR vitrine: falha ao carregar simulado da semana', {
+        userId,
+        error: err instanceof Error ? err.message : String(err),
+      });
+      return null;
+    }),
   ]);
 
   const initialPageData = initialPayloadResult.payload?.page ?? null;
@@ -106,6 +138,11 @@ export default async function VitrinePage({
 
   const vitrineFallbackTitulo =
     matriculatedConcursos.find((concurso) => concurso.tipo === 'edital')?.nome ?? 'Estudo Reverso';
+
+  const initialWeeklyMission: WeeklySimuladoMission | null =
+    initialDiagnostico.diagnostico_completed || !initialDiagnostico.onboarding_completed
+      ? (weeklyMissionResult?.mission ?? null)
+      : null;
 
   return (
     <Suspense fallback={<VitrineLoadingFallback />}>
@@ -116,6 +153,8 @@ export default async function VitrinePage({
         initialFacetsData={initialFacetsData}
         initialPayloadError={initialPayloadError}
         initialResume={initialResume}
+        initialDiagnostico={initialDiagnostico}
+        initialWeeklyMission={initialWeeklyMission}
         ssrListQueryKey={vitrineListQueryKey(listQuery)}
         ssrFacetsQueryKey={vitrineFacetsQueryKey(listQuery.bancas)}
       >

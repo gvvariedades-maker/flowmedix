@@ -1,0 +1,356 @@
+{
+  "batch": "01",
+  "bucket": "Vias de Administração",
+  "inferences": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-vias-de-administracao-1776056401060-9",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-vias-de-administracao-1778968768987-7",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-vias-de-administracao-1778968787431-0",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1776056348175-0",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Tipos de clister e lavagem intestinal como procedimento."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1776056374837-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Composição e esquema da Pentavalente no PNI — núcleo imunização."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1776056374837-6",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968768987-6",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968906156-5",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968906156-6",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968956139-1",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968956139-2",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-3",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-4",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "Locais seguros e volumes máximos na injeção intramuscular."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056348175-5",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056348175-6",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica de via na campanha de vacinação (BCG ID, tríplice viral)."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056357082-4",
+      "suggested_subtopico": "Instalação e Manejo de Sondas",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Cuidados na administração de dieta enteral por sonda."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056357082-5",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056366158-1",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Lavagem intestinal/clister como procedimento de eliminação."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056366158-2",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Comparativo de vias enterais e absorção — núcleo vias."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056374837-3",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Anatomia do glúteo na aplicação intramuscular."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056383154-4",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1778968687469-5",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1778968968468-5",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1778968997293-0",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "atame-enfermagem-vias-de-administracao-1778968573722-0",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Cuidados na endometriose — saúde da mulher."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-seguranca-do-paciente-1777102861438-4",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056330579-8",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056338955-0",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056338955-1",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056338955-6",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056391403-1",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056391403-8",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056401060-7",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056409987-8",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056409987-9",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056427936-4",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056427936-5",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968598934-1",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968598934-2",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-3",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-4",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-5",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-6",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968956139-7",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968956139-8",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1776056401060-2",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Competência legal na administração IV — segurança medicamentosa."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1778968997293-6",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1778968997293-7",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Protocolo de segurança na prescrição e administração de medicamentos."
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1776056391403-4",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "VO/IM/IV/SC — técnica, volumes ou locais de aplicação."
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1778968906156-4",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Objetivos da lavagem intestinal — procedimento clínico."
+    }
+  ]
+}

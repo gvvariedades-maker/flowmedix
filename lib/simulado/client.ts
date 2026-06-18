@@ -1,8 +1,10 @@
 import { fetchWithAuth } from '@/lib/api/fetch-with-auth';
-import type { SimuladoAnswerInput, SimuladoCreateSessionInput, SimuladoTemplateCreateInput } from '@/lib/validations';
+import type { SimuladoAnswerInput, SimuladoCreateSessionInput, SimuladoDiagnosticoCreateInput, SimuladoTemplateCreateInput } from '@/lib/validations';
 import type {
   SimuladoAnswerResponse,
   SimuladoCreateSessionResponse,
+  DiagnosticoSimuladoCardState,
+  SimuladoDiagnosticoCreateResponse,
   SimuladoOpenSessionResponse,
   SimuladoPoolCountResponse,
   SimuladoQuestaoPayloadResponse,
@@ -12,6 +14,8 @@ import type {
   SimuladoTemplateCreateResponse,
   SimuladoTemplatesListResponse,
   SimuladoProvaEvolucaoResponse,
+  WeeklySimuladoCurrentResponse,
+  WeeklySimuladoGenerateResponse,
 } from '@/lib/simulado/types';
 
 export class SimuladoApiError extends Error {
@@ -52,6 +56,38 @@ export async function getOpenSimuladoSession(): Promise<SimuladoOpenSessionRespo
     throw new SimuladoApiError(
       res.status,
       json.error ?? 'Erro ao verificar sessão aberta',
+      json.details,
+    );
+  }
+  return json;
+}
+
+export async function getDiagnosticoSimuladoStatus(): Promise<DiagnosticoSimuladoCardState> {
+  const res = await fetchWithAuth('/api/simulado/diagnostico');
+  const json = await parseJsonResponse<DiagnosticoSimuladoCardState>(res);
+  if (!res.ok) {
+    throw new SimuladoApiError(
+      res.status,
+      json.error ?? 'Erro ao consultar simulado diagnóstico',
+      json.details,
+    );
+  }
+  return json;
+}
+
+export async function createDiagnosticoSimulado(
+  body: SimuladoDiagnosticoCreateInput = {},
+): Promise<SimuladoDiagnosticoCreateResponse> {
+  const res = await fetchWithAuth('/api/simulado/diagnostico', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+  const json = await parseJsonResponse<SimuladoDiagnosticoCreateResponse>(res);
+  if (!res.ok) {
+    throw new SimuladoApiError(
+      res.status,
+      json.error ?? 'Erro ao criar simulado diagnóstico',
       json.details,
     );
   }
@@ -276,6 +312,45 @@ export async function getSimuladoProvaEvolucao(
     throw new SimuladoApiError(
       res.status,
       json.error ?? 'Erro ao carregar evolução',
+      json.details,
+    );
+  }
+  return json;
+}
+
+export async function getWeeklySimuladoMission(options?: {
+  autoGenerate?: boolean;
+}): Promise<WeeklySimuladoCurrentResponse> {
+  const params = new URLSearchParams();
+  if (options?.autoGenerate === false) {
+    params.set('auto_generate', 'false');
+  }
+  const query = params.toString();
+  const res = await fetchWithAuth(
+    query ? `/api/simulado/weekly/current?${query}` : '/api/simulado/weekly/current',
+  );
+  const json = await parseJsonResponse<WeeklySimuladoCurrentResponse>(res);
+  if (!res.ok) {
+    throw new SimuladoApiError(
+      res.status,
+      json.error ?? 'Erro ao carregar simulado da semana',
+      json.details,
+    );
+  }
+  return json;
+}
+
+export async function generateWeeklySimulado(): Promise<WeeklySimuladoGenerateResponse> {
+  const res = await fetchWithAuth('/api/simulado/weekly/generate', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({}),
+  });
+  const json = await parseJsonResponse<WeeklySimuladoGenerateResponse>(res);
+  if (!res.ok) {
+    throw new SimuladoApiError(
+      res.status,
+      json.error ?? 'Erro ao gerar simulado da semana',
       json.details,
     );
   }

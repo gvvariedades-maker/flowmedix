@@ -86,15 +86,98 @@ export function resolveCurativosAssertives(
 
 function inferTopicFromInstruction(instruction: string): string {
   const lower = instruction.toLowerCase();
-  if (/lesão por pressão|lpp|acamado|proeminência|calcanhar/.test(lower)) {
+  const isLppFraming =
+    /lesão por pressão|lesao por pressao|\blpp\b|evitar a ocorrência de lesão|prevenção de lesão/.test(
+      lower,
+    );
+
+  if (!isLppFraming && /estágio|estagio|necrose|granulação|esfacelo/.test(lower)) {
+    return 'Estágios da ferida';
+  }
+  if (isLppFraming || /acamado|proeminência|calcanhar/.test(lower)) {
     return 'Prevenção de LPP';
   }
-  if (/estágio|estagio|necrose|granulação|esfacelo/.test(lower)) return 'Estágios da ferida';
   if (/exsudato|hidrocoloide|alginato|oclusiv|gaze|cobertura|curativo/.test(lower)) {
     return 'Cobertura e curativos';
   }
   if (/limpeza|sf|soro fisiológico|antisséptico|álcool/.test(lower)) return 'Limpeza do leito';
   return 'Curativos e feridas';
+}
+
+type TopicProfile = {
+  conceptFooter: string;
+  goldenFooter: string;
+  logicFooter: string;
+  logicFix: string;
+  choiceLogicFix: string;
+  choiceGoldenFooter: string;
+  choiceDangerFooter: (correctId: string) => string;
+  dangerFooter: (combo: string, falseRomans: string[]) => string;
+};
+
+const TOPIC_PROFILES: Record<string, TopicProfile> = {
+  'Prevenção de LPP': {
+    conceptFooter:
+      'Prevenção de LPP = alívio de pressão + pele seca + pH adequado + sem massagem em proeminências',
+    goldenFooter: 'Na LPP, a banca inverte úmido/seco e inclui massagem como se fosse cuidado',
+    logicFooter: 'Raciocínio seguro: alívio de pressão + pH neutro, sem úmido nem massagem',
+    logicFix: 'em LPP, úmido e massagem em proeminência são pegadinhas clássicas',
+    choiceLogicFix:
+      'em LPP, elimine distratoras pelo texto literal — pele seca e sem massagem em proeminências',
+    choiceGoldenFooter: 'Na LPP, a banca adora condicionais errados e biossegurança frouxa',
+    choiceDangerFooter: (id) => `Compare cada alternativa com a letra ${id} antes de marcar`,
+    dangerFooter: (combo, falseRomans) =>
+      falseRomans.length >= 2
+        ? `Banca costuma errar na ${falseRomans.slice(0, 2).join(' e ')} — gabarito fica em ${combo}`
+        : `Conferir gabarito ${combo} após julgar cada afirmativa`,
+  },
+  'Estágios da ferida': {
+    conceptFooter: 'Relacione cada estágio ao tecido: granulação, esfacelo ou necrose',
+    goldenFooter: 'Estágio I: eritema não branqueável; IV: exposição de osso/tendão',
+    logicFooter: 'Classifique o estágio pela profundidade e pelo tecido visível',
+    logicFix: 'a banca troca a ordem dos estágios e o tipo de tecido',
+    choiceLogicFix: 'relacione estágio × tecido antes de eliminar distratoras',
+    choiceGoldenFooter: 'A banca confunde estágios e tipos de tecido no leito',
+    choiceDangerFooter: (id) => `Confirme estágio × tecido antes de marcar letra ${id}`,
+    dangerFooter: (combo) => `Confirme estágio × tecido antes de fechar ${combo}`,
+  },
+  'Cobertura e curativos': {
+    conceptFooter: 'Escolha a cobertura pelo exsudato e pela fase da ferida',
+    goldenFooter: 'Exsudato alto → alginato/espuma; baixo → hidrocoloide/filme',
+    logicFooter: 'Combine exsudato + fase da ferida + objetivo da cobertura',
+    logicFix: 'a banca troca a cobertura pelo nível de exsudato',
+    choiceLogicFix: 'combine exsudato + fase da ferida antes de eliminar distratoras',
+    choiceGoldenFooter: 'A banca troca cobertura pelo nível de exsudato',
+    choiceDangerFooter: (id) => `Cobertura certa para o exsudato fecha letra ${id}`,
+    dangerFooter: (combo) => `Cobertura certa para o exsudato fecha ${combo}`,
+  },
+  'Limpeza do leito': {
+    conceptFooter: 'SF 0,9% é o padrão; antissépticos citotóxicos são exceção',
+    goldenFooter: 'Álcool e iodo no leito são pegadinhas — SF 0,9% limpa sem citotoxicidade',
+    logicFooter: 'Limpe do menos para o mais contaminado, com SF 0,9%',
+    logicFix: 'a banca inverte o sentido da limpeza e troca SF por antisséptico',
+    choiceLogicFix: 'limpe do menos para o mais contaminado — SF 0,9% é o padrão',
+    choiceGoldenFooter: 'A banca testa técnica de limpeza e antisséptico no leito',
+    choiceDangerFooter: (id) => `Técnica de limpeza correta fecha letra ${id}`,
+    dangerFooter: (combo) => `Técnica de limpeza correta fecha ${combo}`,
+  },
+  'Curativos e feridas': {
+    conceptFooter: 'Julgue cada afirmativa antes de combinar as letras',
+    goldenFooter: 'Em curativos, condicionais absolutos e biossegurança frouxa enganam',
+    logicFooter: 'Estratégia: julgar item a item antes de combinar',
+    logicFix: 'elimine distratoras pelo texto literal',
+    choiceLogicFix: 'elimine distratoras pelo texto literal — técnica asséptica e cobertura adequada',
+    choiceGoldenFooter: 'Em curativos, a banca adora condicionais errados e biossegurança frouxa',
+    choiceDangerFooter: (id) => `Compare cada alternativa com a letra ${id} antes de marcar`,
+    dangerFooter: (combo, falseRomans) =>
+      falseRomans.length >= 2
+        ? `Banca costuma errar na ${falseRomans.slice(0, 2).join(' e ')} — gabarito fica em ${combo}`
+        : `Conferir gabarito ${combo} após julgar cada afirmativa`,
+  },
+};
+
+function topicProfile(topic: string): TopicProfile {
+  return TOPIC_PROFILES[topic] ?? TOPIC_PROFILES['Curativos e feridas'];
 }
 
 function inferConceptLabel(text: string, isTrue: boolean): { label: string; icon: string } {
@@ -140,6 +223,48 @@ function inferConceptDetail(text: string, isTrue: boolean): string {
   }
   if (/seca/.test(lower) && isTrue) {
     return 'Pele limpa e seca preserva integridade em paciente acamado.';
+  }
+  if (/estágio\s*i\b|eritema|não branque|nao branque/.test(lower)) {
+    return 'Estágio I: eritema não branqueável, pele íntegra.';
+  }
+  if (/estágio\s*ii\b|flictena|bolha|perda parcial.*derme/.test(lower)) {
+    return 'Estágio II: perda parcial da derme, leito róseo/úmido.';
+  }
+  if (/estágio\s*iii\b|subcutâne|subcutane/.test(lower)) {
+    return 'Estágio III: perda total da pele, tecido subcutâneo visível.';
+  }
+  if (/estágio\s*iv\b|osso|tendão|tendao|músculo|musculo/.test(lower)) {
+    return 'Estágio IV: exposição de osso, tendão ou músculo.';
+  }
+  if (/granulação|granulacao/.test(lower)) {
+    return 'Tecido de granulação: leito róseo, indica cicatrização ativa.';
+  }
+  if (/esfacelo/.test(lower)) {
+    return 'Esfacelo: tecido desvitalizado amarelado — deve ser desbridado.';
+  }
+  if (/necrose|necrótico|necrotico/.test(lower)) {
+    return 'Necrose: tecido desvitalizado — avaliar desbridamento.';
+  }
+  if (/alginato/.test(lower)) {
+    return 'Alginato de cálcio: exsudato moderado a alto, ação hemostática.';
+  }
+  if (/hidrocoloide/.test(lower)) {
+    return 'Hidrocoloide: exsudato baixo, mantém meio úmido e protege.';
+  }
+  if (/espuma|poliuretano/.test(lower)) {
+    return 'Espuma: exsudato moderado/alto, absorve e protege.';
+  }
+  if (/filme transparente|filme/.test(lower)) {
+    return 'Filme: ferida superficial seca ou fixação secundária.';
+  }
+  if (/sf|soro fisiológico/.test(lower)) {
+    return 'SF 0,9% é o padrão de limpeza — não é citotóxico no leito.';
+  }
+  if (/álcool|alcool|iodo|clorexidina/.test(lower) && !isTrue) {
+    return 'Antisséptico citotóxico no leito atrasa cicatrização — SF 0,9% é a escolha.';
+  }
+  if (/reaproveit|reutiliz/.test(lower) && !isTrue) {
+    return 'Material em contato com a ferida é descartável — reuso é risco de infecção.';
   }
   return truncate(text, 500);
 }
@@ -195,17 +320,14 @@ function buildConceptMap(input: BuildCurativosSlidesInput, assertives: Curativos
     icon: 'CheckCircle',
   });
 
-  const footer =
-    topic === 'Prevenção de LPP'
-      ? 'Prevenção de LPP = alívio de pressão + pele seca + pH adequado + sem massagem em proeminências'
-      : `${topic} — julgue cada afirmativa antes de combinar letras`;
+  const prof = topicProfile(topic);
 
   return {
     type: 'concept_map',
     slide_title: truncate(`${topic} — mapa da prova`, 120),
     meta: slideMeta(input.topico, input.subtopico),
     items: items.slice(0, 20),
-    footer_rule: truncate(footer, 500),
+    footer_rule: truncate(prof.conceptFooter, 500),
   };
 }
 
@@ -237,10 +359,7 @@ function buildGoldenRule(input: BuildCurativosSlidesInput, assertives: Curativos
     meta: slideMeta(input.topico, input.subtopico),
     content: truncate(content, 1000),
     rows: rows.slice(0, 12),
-    footer_rule: truncate(
-      'Na LPP, a banca adora inverter úmido/seco e incluir massagem como se fosse cuidado',
-      500,
-    ),
+    footer_rule: truncate(topicProfile(topic).goldenFooter, 500),
   };
 }
 
@@ -268,17 +387,16 @@ function buildLogicFlow(input: BuildCurativosSlidesInput, assertives: CurativosA
   if (falseRomans.length > 0) {
     steps.push(`Eliminar alternativas que tragam ${falseRomans.join(' ou ')}.`);
   }
+  const prof = topicProfile(topic);
   steps.push(`Marcar ${correct?.id ?? '?'}.`);
-  steps.push(
-    'Fixação: em LPP, úmido e massagem em proeminência são pegadinhas clássicas.',
-  );
+  steps.push(`Fixação: ${prof.logicFix}.`);
 
   return {
     type: 'logic_flow',
     reveal_mode: 'tap',
     meta: slideMeta(input.topico, input.subtopico),
     steps: steps.slice(0, 15),
-    footer_rule: truncate('Raciocínio seguro: alívio de pressão + pH neutro, sem úmido nem massagem', 500),
+    footer_rule: truncate(prof.logicFooter, 500),
   };
 }
 
@@ -353,10 +471,8 @@ function buildDangerZone(input: BuildCurativosSlidesInput, assertives: Curativos
   }
 
   const falseRomans = assertives.filter((a) => !a.isTrue).map((a) => a.roman);
-  const footer =
-    falseRomans.length >= 2
-      ? `Banca costuma errar na ${falseRomans.slice(0, 2).join(' e ')} — gabarito fica em ${formatGabaritoCombo(assertives)}`
-      : `Conferir gabarito ${formatGabaritoCombo(assertives)} após julgar cada afirmativa`;
+  const combo = formatGabaritoCombo(assertives);
+  const prof = topicProfile(topic);
 
   return {
     type: 'danger_zone',
@@ -364,7 +480,7 @@ function buildDangerZone(input: BuildCurativosSlidesInput, assertives: Curativos
     meta: slideMeta(input.topico, input.subtopico),
     content: truncate(`PEGADINHAS — ${topic.toUpperCase()}`, 1000),
     items: items.slice(0, 10),
-    footer_rule: truncate(footer, 500),
+    footer_rule: truncate(prof.dangerFooter(combo, falseRomans), 500),
   };
 }
 
@@ -442,10 +558,34 @@ function inferChoiceTrapDetail(text: string): string {
   const lower = text.toLowerCase();
   if (/reaproveit|gaze/.test(lower)) return 'Material em contato com ferida não se reutiliza — risco de contaminação.';
   if (/circular/.test(lower)) return 'A banca testa técnica de limpeza; circular da borda pode não ser a conduta preferida.';
-  if (/somente se houver|apenas se/.test(lower)) return 'Condicionais absolutos (“só se…”) costumam ser distratoras em curativos.';
+  if (/somente se houver|apenas se|só se|purulent/.test(lower)) {
+    return 'Condicionais absolutos (“só se…”) costumam ser distratoras em curativos.';
+  }
   if (/úmid|umid/.test(lower)) return 'Úmido favorece maceração — em LPP o padrão é pele seca.';
   if (/massage/.test(lower)) return 'Massagem em proeminência óssea é contraindicada na prevenção de LPP.';
   return truncate(text, 500);
+}
+
+/** O que seria o certo no lugar de cada distrator (não a resposta inteira). */
+function inferChoiceCorrection(wrongText: string): string {
+  const lower = wrongText.toLowerCase();
+  if (/reaproveit|reutiliz|gaze/.test(lower)) {
+    return 'Material do curativo é descartado após o uso.';
+  }
+  if (/circular/.test(lower)) {
+    return 'Limpar do menos para o mais contaminado, sem regra fixa borda→centro.';
+  }
+  if (/somente se|apenas se|só se|purulent/.test(lower)) {
+    return 'Técnica asséptica é regra, não condicional.';
+  }
+  if (/úmid|umid/.test(lower)) return 'Em LPP o padrão é pele limpa e seca.';
+  if (/massage/.test(lower)) {
+    return 'Não massagear proeminências ósseas nem áreas hiperemiadas.';
+  }
+  if (/álcool|alcool|iodo/.test(lower)) {
+    return 'Limpar com SF 0,9%, sem citotóxico no leito.';
+  }
+  return 'Confronte com a conduta correta da questão.';
 }
 
 /** Pacote 4/4 para múltipla escolha (A–E) em Curativos — padrão premium. */
@@ -455,6 +595,7 @@ export function buildCurativosChoiceSlides(input: BuildCurativosSlidesInput): Sl
   if (!correct) throw new Error('Curativos choice: gabarito ausente');
 
   const topic = inferTopicFromInstruction(input.instruction);
+  const prof = topicProfile(topic);
   const preview = truncate(input.instruction.replace(/\s+/g, ' '), 120);
 
   const conceptItems = input.options.slice(0, 4).map((opt) => {
@@ -509,14 +650,12 @@ export function buildCurativosChoiceSlides(input: BuildCurativosSlidesInput): Sl
     );
   }
   steps.push(`Marcar letra ${correct.id}.`);
-  steps.push(
-    `Fixação: em curativos, elimine distratoras pelo texto literal — técnica asséptica e cobertura adequada.`,
-  );
+  steps.push(`Fixação: ${prof.choiceLogicFix}.`);
 
   const dangerItems = wrong.map((opt) => ({
     label: truncate(`Cair na letra ${opt.id}`, 200),
     detail: inferChoiceTrapDetail(opt.text),
-    correct: truncate(correct.text, 500),
+    correct: truncate(inferChoiceCorrection(opt.text), 500),
   }));
 
   if (dangerItems.length < 4) {
@@ -535,10 +674,7 @@ export function buildCurativosChoiceSlides(input: BuildCurativosSlidesInput): Sl
       slide_title: truncate(`${topic} — mapa da prova`, 120),
       meta,
       items: conceptItems.slice(0, 20),
-      footer_rule: truncate(
-        `${topic} — exclua por termo-chave antes de confirmar letra ${correct.id}`,
-        500,
-      ),
+      footer_rule: truncate(prof.conceptFooter, 500),
     },
     {
       type: 'golden_rule',
@@ -546,20 +682,14 @@ export function buildCurativosChoiceSlides(input: BuildCurativosSlidesInput): Sl
       meta,
       content: truncate(`${topic.toUpperCase()} — O QUE A BANCA COBRA`, 1000),
       rows: rows.slice(0, 12),
-      footer_rule: truncate(
-        'Em curativos, a banca adora condicionais errados e biossegurança frouxa',
-        500,
-      ),
+      footer_rule: truncate(prof.choiceGoldenFooter, 500),
     },
     {
       type: 'logic_flow',
       reveal_mode: 'tap',
       meta,
       steps: steps.slice(0, 15),
-      footer_rule: truncate(
-        `Estratégia: enunciado → gabarito ${correct.id} → eliminar distratoras`,
-        500,
-      ),
+      footer_rule: truncate(prof.logicFooter, 500),
     },
     {
       type: 'danger_zone',
@@ -567,10 +697,7 @@ export function buildCurativosChoiceSlides(input: BuildCurativosSlidesInput): Sl
       meta,
       content: truncate(`PEGADINHAS — ${topic.toUpperCase()}`, 1000),
       items: dangerItems.slice(0, 10),
-      footer_rule: truncate(
-        `Compare cada alternativa com a letra ${correct.id} antes de marcar`,
-        500,
-      ),
+      footer_rule: truncate(prof.choiceDangerFooter(correct.id), 500),
     },
   ];
 }

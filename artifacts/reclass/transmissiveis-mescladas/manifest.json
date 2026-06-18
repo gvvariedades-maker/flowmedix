@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-06-16T09:24:41.491Z",
+  "bucket": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+  "batch_size": 50,
+  "total": 1,
+  "batch_files": [
+    "artifacts/reclass/transmissiveis-mescladas/batch-01.json"
+  ]
+}

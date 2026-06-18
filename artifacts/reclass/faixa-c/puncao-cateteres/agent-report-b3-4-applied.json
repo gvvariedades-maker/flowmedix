@@ -1,0 +1,560 @@
+{
+  "generated_at": "2026-06-16T13:00:36.596Z",
+  "mode": "apply",
+  "bucket": "Punção Venosa e Cuidados com Cateteres",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 54,
+    "inferred": 54,
+    "errors": 0,
+    "keep_current": 31,
+    "same_subtopico": 31,
+    "applicable": 23,
+    "applied": 23
+  },
+  "proposals": [
+    {
+      "modulo_slug": "imparh-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-2",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-1",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-7",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Falência renal — dispositivos de hemodiálise (Shiley).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-5",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Diálise peritoneal e cateter de Tenckhoff — terapia renal.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-6",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-0",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Reação transfusional durante infusão de hemocomponentes.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-2",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-4",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-2",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Cuidados com fístula arteriovenosa em doença renal crônica.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-8",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-7",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-0",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de punção venosa e cuidados com cateteres.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-2",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Infecções no Contexto da Biossegurança",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] IRAS hospitalar — prevenção e controle de infecção relacionada à assistência.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-7",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-6",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Infecções no Contexto da Biossegurança",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Biossegurança na coleta, curativos e acesso venoso.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-6",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Aplicação de calor como intervenção terapêutica — contraindicações.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-0",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Registros de enfermagem após acesso venoso periférico.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iset-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-8",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Desidratação grave por diarreia — reposição volêmica urgente.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-4",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-1",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Cateterismo cardíaco diagnóstico — cuidados peri-procedimento.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-4",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-3",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-4",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-vias-de-administracao-1778968768987-4",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Fármacos de alta vigilância em bomba de infusão.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-4",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-2",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Terapia nutricional parenteral — nutrição intravenosa.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-5",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-1",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-0",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-7",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-4",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-4",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Nutrição parenteral total.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-4",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-7",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-0",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Vias de Administração",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Técnica e ângulo de administração endovenosa em veia cubital.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-1",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Alterações urinárias em paciente com sonda vesical de demora.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-8",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-1",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] ITU relacionada à cateterização urinária — prevenção de IRAS.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-6",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Prevenção de ITU associada a cateter vesical (ITU-AC).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-2",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Cuidados na administração segura de medicamentos endovenosos.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-3",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-2",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-5",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Escolha de via e administração de medicações no pós-operatório.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1776056149404-7",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Anotação de enfermagem incompleta após punção venosa.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-8",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-4",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-4",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Acesso venoso, punção, cateter, flebite ou infusão endovenosa.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-0",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Eclâmpsia em gestante — emergência obstétrica.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-4",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Procedimentos básicos de enfermagem — aspiração de vias aéreas.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-5",
+      "from": "Punção Venosa e Cuidados com Cateteres",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Iatrogenias e erros de medicação — segurança do paciente.",
+      "applicable": true,
+      "source": "heuristic"
+    }
+  ],
+  "apply_errors": []
+}

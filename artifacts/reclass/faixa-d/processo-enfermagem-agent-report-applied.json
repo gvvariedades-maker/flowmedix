@@ -1,0 +1,380 @@
+{
+  "generated_at": "2026-06-16T09:34:10.641Z",
+  "mode": "apply",
+  "bucket": "Processo de Enfermagem",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 36,
+    "inferred": 36,
+    "errors": 0,
+    "keep_current": 34,
+    "same_subtopico": 34,
+    "applicable": 2,
+    "applied": 2
+  },
+  "proposals": [
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-5",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Anotações de enfermagem — documentação do PE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-7",
+      "from": "Processo de Enfermagem",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Evolução do paciente na gestão da qualidade — NSP, não PE.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-6",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Documentação do PE no prontuário.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "copese-uft-enfermagem-processo-de-enfermagem-1776056021381-8",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.98,
+      "keep_current": true,
+      "rationale": "[agent] Definição e etapas do processo de enfermagem.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-0",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Registros de enfermagem no PE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-processo-de-enfermagem-1776056158507-1",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Anotação de enfermagem e validade legal.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1776056149404-0",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Interação terapêutica na avaliação da dor.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1776056129848-3",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Diagnóstico diferencial — etapa do PE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-2",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Escala numérica da dor — avaliação no PE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-9",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.88,
+      "keep_current": true,
+      "rationale": "[agent] Conceito de paciente hígido — terminologia em avaliação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-3",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "[agent] Balanço hídrico e aceitação alimentar — monitorização no PE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1776056021381-0",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Anotação de enfermagem — registro do PE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-5",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Tipos de anotação de enfermagem.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-6",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Regras da anotação de enfermagem.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776056173194-0",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.98,
+      "keep_current": true,
+      "rationale": "[agent] Fase de diagnóstico do PE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-1",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Guia COFEN de registro de enfermagem.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011961798-0",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Anosmia na anamnese — registro no PE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056149404-3",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Registros de enfermagem como documento legal.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-1",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Admissão e alta — documentação de enfermagem.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-4",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Registro como ação de enfermagem.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-2",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Dor como 5º sinal vital — avaliação no PE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1776056140199-7",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Itens essenciais no registro de enfermagem.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-3",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Registro de intercorrências no prontuário.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1776056140199-2",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Anotação de enfermagem no PE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1776056140199-3",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Regras de anotação de enfermagem.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1776056140199-4",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Participação do técnico no PE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-8",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Atribuições do técnico no PE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005320352-9",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Técnico no PE sob supervisão.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-1",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Anotações do técnico de enfermagem.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1776056149404-6",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Prontuário como fonte de dados no PE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-2",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Correção em registro de enfermagem.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-8",
+      "from": "Processo de Enfermagem",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Escala de Fugulin — gestão/classificação de pacientes (NSP).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-6",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Avaliação da dor — componente do PE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1776056181857-6",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Boas práticas em anotação de enfermagem.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-processo-de-enfermagem-1776055865890-2",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Anotação de enfermagem — dados processados.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1776056149404-8",
+      "from": "Processo de Enfermagem",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Atribuições do técnico nas etapas do PE.",
+      "applicable": false,
+      "source": "heuristic"
+    }
+  ],
+  "apply_errors": []
+}

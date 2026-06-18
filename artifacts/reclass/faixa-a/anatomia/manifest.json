@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-06-16T12:49:41.889Z",
+  "bucket": "Noções de Anatomia",
+  "batch_size": 50,
+  "total": 117,
+  "batch_files": [
+    "artifacts/reclass/faixa-a/anatomia/batch-01.json",
+    "artifacts/reclass/faixa-a/anatomia/batch-02.json",
+    "artifacts/reclass/faixa-a/anatomia/batch-03.json"
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "batch": "02",
+  "bucket": "Epidemiologia e Vigilância Epidemiológica",
+  "inferences": [
+    {
+      "modulo_slug": "facet-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-2",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-9",
+      "suggested_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Coqueluche — etiologia e quadro clínico bacteriano."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-0",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-1",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com Epidemiologia ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-2",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com Epidemiologia ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Janela imunológica — conceito de imunização/vacinação."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563608452-8",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com Epidemiologia ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-6",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-9",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-3",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com Epidemiologia ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563725570-4",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-8",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com Epidemiologia ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-9",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-0",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-9",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563814158-6",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-4",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-5",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-5",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1780000630425-4",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com Epidemiologia ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-3",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-9",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-2",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fepese-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776578199777-0",
+      "suggested_subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Definição de vetor/transmissão — doenças transmissíveis."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-1",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-6",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-5",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-0",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-5",
+      "suggested_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Busca ativa de sintomáticos respiratórios — controle de TB."
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-3",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Atuação do técnico na promoção da saúde, não vigilância."
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563800137-0",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-3",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-4",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563774121-7",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-1",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-2",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-3",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-4",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563778577-7",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563617321-3",
+      "suggested_subtopico": "Enfermagem do Trabalho",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Dermatoses ocupacionais — saúde do trabalhador."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-0",
+      "suggested_subtopico": "Questões Mescladas e Outras Doenças Agudas",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Manejo clínico de dengue grave no pronto-socorro."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-2",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-3",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-4",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-8",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563789263-8",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563838275-4",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Definição de Vigilância em Saúde — núcleo epidemiológico."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-0",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563853014-2",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-6",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vigilância, indicadores, notificação ou conceitos epidemiológicos."
+    }
+  ]
+}

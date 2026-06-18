@@ -709,6 +709,32 @@ export async function getNotebookActivationCached(
 }
 
 /**
+ * Preferências de onboarding do aluno (motor adaptativo).
+ * Revalida a cada 2 minutos; invalidar via tag `onboarding-preferences` + `user-{id}`.
+ */
+export async function getUserPreferencesOnboardingCached(userId?: string) {
+  if (!userId) {
+    const { getEmptyOnboardingPreferencesStatus } = await import('@/lib/onboarding/preferences');
+    return getEmptyOnboardingPreferencesStatus();
+  }
+
+  const cacheKey = `onboarding-preferences-${userId}`;
+
+  return unstable_cache(
+    async () => {
+      const { getUserPreferencesOnboarding } = await import('@/lib/onboarding/preferences');
+      trackUnstableCacheFetch(cacheKey);
+      return getUserPreferencesOnboarding(userId);
+    },
+    [cacheKey],
+    {
+      ...CACHE_CONFIG.USER,
+      tags: ['onboarding-preferences', 'user', `user-${userId}`],
+    },
+  )();
+}
+
+/**
  * Página da vitrine com RPC + fallback JS (ver `lib/vitrine/service.ts`).
  * TTL 2 min; invalidar via tags `vitrine-page` e `user-{id}`.
  */

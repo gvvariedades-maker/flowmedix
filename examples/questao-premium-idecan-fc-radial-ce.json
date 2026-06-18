@@ -1,156 +1,149 @@
-{
-  "meta": {
-    "ano": "2022",
-    "banca": "IDECAN",
-    "orgao": "Enfermagem",
-    "prova": "Tec (UFBA)",
-    "topico": "Enfermagem",
-    "subtopico": "Verificação de Sinais Vitais",
-    "cargo_header": "Técnico de Enfermagem",
-    "content_standard": "golden-v1",
-    "family": "certo_errado",
-    "content_review": {
-      "reviewed_at": "2026-06-18",
-      "reviewer": "content-pilot",
-      "guideline_snapshot": "FC adulto 60–100 bpm — referência técnica",
-      "exam_vs_current": "none"
-    },
-    "sources": [
-      {
-        "id": "sv-adulto-referencia",
-        "tier": "A",
-        "issuer": "COFEN / protocolos de enfermagem",
-        "title": "Aferição de frequência cardíaca — pulso radial, 60 segundos",
-        "year": 2024,
-        "covers": ["FC 60-100 bpm", "pulso radial"]
-      }
-    ]
-  },
-  "question_data": {
-    "instruction": "Leia o enunciado abaixo e depois responda:\nA frequência cardíaca é frequentemente aferida pela palpação do pulso radial, por um período de 60 segundos e com sua normalidade se mostrando na faixa entre 60-100 batimentos por minuto.",
-    "options": [
-      {
-        "id": "A",
-        "text": "Certo",
-        "is_correct": true
-      },
-      {
-        "id": "B",
-        "text": "Errado",
-        "is_correct": false
-      }
-    ]
-  },
-  "reverse_study_slides": [
-    {
-      "type": "concept_map",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Verificação de Sinais Vitais"
-      },
-      "items": [
-        {
-          "id": "1",
-          "icon": "HeartPulse",
-          "label": "Pulso radial",
-          "detail": "Local mais usado na prática e em prova para aferir a frequência cardíaca."
-        },
-        {
-          "id": "2",
-          "icon": "TimerReset",
-          "label": "60 segundos",
-          "detail": "Tempo completo para contagem quando se quer maior precisão."
-        },
-        {
-          "id": "3",
-          "icon": "Scale",
-          "label": "Faixa normal",
-          "detail": "Adulto em repouso: 60 a 100 batimentos por minuto."
-        },
-        {
-          "id": "4",
-          "icon": "CheckCircle",
-          "label": "Afirmativa da prova",
-          "detail": "Pulso radial, 60 s de contagem e faixa 60–100 bpm — padrão que a banca costuma marcar como certo."
-        }
-      ],
-      "footer_rule": "FC de rotina: pulse radial, conte com calma e compare com a faixa de 60 a 100 bpm."
-    },
-    {
-      "type": "golden_rule",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Verificação de Sinais Vitais"
-      },
-      "content": "AFIRMATIVA IDECAN: PULSO RADIAL, 60 S E FAIXA 60–100 BPM.",
-      "rows": [
-        {
-          "label": "Técnica citada na prova",
-          "value": "Pulso radial, 60 segundos (indicador e médio)",
-          "sv_kind": "meta"
-        },
-        {
-          "label": "FC adulto — referência",
-          "value": "60 a 100 batimentos por minuto",
-          "sv_kind": "fc",
-          "emphasis": "success",
-          "badge": "ok"
-        },
-        {
-          "label": "Gabarito",
-          "value": "Certo — letra A",
-          "sv_kind": "meta",
-          "emphasis": "highlight",
-          "badge": "hot"
-        }
-      ],
-      "footer_rule": "A frase repete técnica + faixa normal: marque certo (letra A)."
-    },
-    {
-      "type": "logic_flow",
-      "reveal_mode": "tap",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Verificação de Sinais Vitais"
-      },
-      "steps": [
-        "Identificar o parâmetro avaliado: frequência cardíaca.",
-        "Localizar o pulso radial com os dedos indicador e médio.",
-        "Contar as pulsações por 60 segundos completos.",
-        "Comparar o resultado com a faixa de normalidade do adulto.",
-        "Marcar certo se a afirmação trouxer 60 a 100 bpm."
-      ],
-      "footer_rule": "Na prova, o comando costuma premiar a faixa de 60 a 100 bpm e a contagem por 60 segundos."
-    },
-    {
-      "type": "danger_zone",
-      "bullet_style": "x_icon",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Verificação de Sinais Vitais"
-      },
-      "content": "PEGADINHAS NA AFERIÇÃO DA FREQUÊNCIA CARDÍACA",
-      "items": [
-        {
-          "id": "1",
-          "label": "Contar só 15 segundos",
-          "detail": "A banca tenta reduzir o tempo para confundir a precisão da aferição.",
-          "correct": "Quando a aferição precisa ser fiel, conte 60 segundos completos."
-        },
-        {
-          "id": "2",
-          "label": "Dizer que normal é acima de 100 bpm",
-          "detail": "Isso troca a normalidade por taquicardia.",
-          "correct": "A faixa normal do adulto é 60 a 100 bpm."
-        },
-        {
-          "id": "3",
-          "label": "Palpar com o polegar",
-          "detail": "O polegar tem pulsação própria e pode contaminar a leitura.",
-          "correct": "Use indicador e médio para palpar o pulso."
-        }
-      ],
-      "footer_rule": "Se a frase trouxer 60 a 100 bpm e pulso radial, a leitura tende a estar correta."
-    }
-  ]
-}
+{
+  "meta": {
+    "ano": "2022",
+    "banca": "IDECAN",
+    "orgao": "Enfermagem",
+    "prova": "Tec (UFBA)",
+    "topico": "Enfermagem",
+    "subtopico": "Verificação de Sinais Vitais",
+    "cargo_header": "Técnico de Enfermagem",
+    "content_standard": "golden-v1",
+    "family": "certo_errado",
+    "content_review": {
+      "reviewed_at": "2026-06-18",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "FC adulto 60-100 bpm — referência técnica",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "sv-adulto-referencia",
+        "tier": "A",
+        "issuer": "COFEN / protocolos de enfermagem",
+        "title": "Aferição de frequência cardíaca — pulso radial, 60 segundos",
+        "year": 2024,
+        "covers": ["FC 60-100 bpm", "pulso radial"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Leia o enunciado abaixo e depois responda:\nA frequência cardíaca é frequentemente aferida pela palpação do pulso radial, por um período de 60 segundos e com sua normalidade se mostrando na faixa entre 60-100 batimentos por minuto.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Certo",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Errado",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Verificação de Sinais Vitais"
+      },
+      "items": [
+        {
+          "icon": "HeartPulse",
+          "label": "Pulso radial",
+          "detail": "Local mais usado na prática e em prova para aferir a frequência cardíaca."
+        },
+        {
+          "icon": "TimerReset",
+          "label": "60 segundos",
+          "detail": "Tempo completo para contagem quando se quer maior precisão."
+        },
+        {
+          "icon": "Scale",
+          "label": "Faixa normal",
+          "detail": "Adulto em repouso: 60 a 100 batimentos por minuto."
+        },
+        {
+          "icon": "CheckCircle",
+          "label": "Afirmativa da prova",
+          "detail": "Pulso radial, 60 s de contagem e faixa 60-100 bpm — padrão que a banca costuma marcar como certo."
+        }
+      ],
+      "footer_rule": "FC de rotina: pulso radial, conte com calma e compare com a faixa de 60 a 100 bpm."
+    },
+    {
+      "type": "golden_rule",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Verificação de Sinais Vitais"
+      },
+      "content": "AFIRMATIVA IDECAN: PULSO RADIAL, 60 S E FAIXA 60-100 BPM.",
+      "rows": [
+        {
+          "label": "Técnica citada na prova",
+          "value": "Pulso radial, 60 segundos (indicador e médio)",
+          "sv_kind": "meta"
+        },
+        {
+          "label": "FC adulto — referência",
+          "value": "60 a 100 batimentos por minuto",
+          "sv_kind": "fc",
+          "emphasis": "success",
+          "badge": "ok"
+        },
+        {
+          "label": "Gabarito",
+          "value": "Certo — letra A",
+          "sv_kind": "meta",
+          "emphasis": "highlight",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "A frase repete técnica + faixa normal: marque certo (letra A)."
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Verificação de Sinais Vitais"
+      },
+      "steps": [
+        "Identificar o parâmetro avaliado: frequência cardíaca.",
+        "Localizar o pulso radial com os dedos indicador e médio.",
+        "Contar as pulsações por 60 segundos completos.",
+        "Comparar o resultado com a faixa de normalidade do adulto.",
+        "Marcar certo se a afirmação trouxer 60 a 100 bpm."
+      ],
+      "footer_rule": "Na prova, o comando costuma premiar a faixa de 60 a 100 bpm e a contagem por 60 segundos."
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Verificação de Sinais Vitais"
+      },
+      "content": "PEGADINHAS NA AFERIÇÃO DA FREQUÊNCIA CARDÍACA",
+      "items": [
+        {
+          "label": "Contar só 15 segundos",
+          "detail": "A banca tenta reduzir o tempo para confundir a precisão da aferição.",
+          "correct": "Quando a aferição precisa ser fiel, conte 60 segundos completos."
+        },
+        {
+          "label": "Dizer que normal é acima de 100 bpm",
+          "detail": "Isso troca a normalidade por taquicardia.",
+          "correct": "A faixa normal do adulto é 60 a 100 bpm."
+        },
+        {
+          "label": "Palpar com o polegar",
+          "detail": "O polegar tem pulsação própria e pode contaminar a leitura.",
+          "correct": "Use indicador e médio para palpar o pulso."
+        }
+      ],
+      "footer_rule": "Se a frase trouxer 60 a 100 bpm e pulso radial, a leitura tende a estar correta."
+    }
+  ]
+}

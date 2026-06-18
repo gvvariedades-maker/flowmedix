@@ -1,0 +1,28 @@
+{
+  "lote": "curativos-lote-04",
+  "subtopico": "Curativos e Manejo de Feridas",
+  "exported_count": 50,
+  "applied_count": 50,
+  "golden_reference": "examples/questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+  "builder": "upgradePremiumCurativos (VF + múltipla escolha)",
+  "status": "applied",
+  "applied_at": "2026-06-15",
+  "families": {
+    "certo_errado": 4,
+    "vf": 1,
+    "conceito": 41,
+    "protocolo": 3,
+    "calc": 1
+  },
+  "notes": "Primeiro lote com slugs novos após --exclude-manifest dos lotes 01+02. Lote-03 foi duplicata idempotente do lote-02.",
+  "exclude_manifests": [
+    "artifacts/catalog-migration-curativos-lote-01-applied.json",
+    "artifacts/catalog-migration-curativos-lote-02-applied.json"
+  ],
+  "workflow": [
+    "1. npm run catalog:export-lote -- --lote=curativos-lote-04 --subtopico=\"Curativos e Manejo de Feridas\" --limit=50 --exclude-manifest=artifacts/catalog-migration-curativos-lote-01-applied.json,artifacts/catalog-migration-curativos-lote-02-applied.json",
+    "2. npm run catalog:upgrade-premium -- --lote=curativos-lote-04 --write --force",
+    "3. npm run catalog:apply-lote -- --lote=curativos-lote-04 --apply"
+  ],
+  "artifact": "artifacts/catalog-migration-curativos-lote-04-applied.json"
+}

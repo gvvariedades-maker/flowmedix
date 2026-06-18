@@ -1,0 +1,356 @@
+{
+  "batch": "01",
+  "bucket": "Imunização",
+  "inferences": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "SIS para monitorar vacinação infantil — núcleo PNI/imunização."
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1777103244679-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1779563986606-5",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1779564031957-5",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779563975447-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564109452-6",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564109452-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779564113760-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779563975447-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779564006577-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779564109452-2",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Campanha de detecção de diabetes — rastreamento, não vacinação."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779572227744-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-imunizacao-1779572227744-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-6",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780004982901-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564006577-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564074967-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564074967-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779564079834-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Vacinas de organismos vivos atenuados — composição vacinal."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572180830-9",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572198133-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572198133-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-9",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-4",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Técnica de aplicação IM de medicamentos — não vacinação."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "apice-enfermagem-imunizacao-1779564079834-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "apice-enfermagem-imunizacao-1779564079834-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "apice-enfermagem-imunizacao-1779564079834-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1777103222102-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1777103222102-5",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "Fatores que influenciam resposta imune à vacinação."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1777103222102-6",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1777103257434-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1777103257434-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1779564125198-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1779564125198-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-imunizacao-1779564129617-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-6",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1777103230085-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1777103238173-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1777103238173-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1777103238173-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1779572166628-0",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Detecção precoce de doenças transmissíveis — prevenção geral."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-imunizacao-1779572166628-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Vacinação HPV no contexto de prevenção combinada — esquema vacinal."
+    }
+  ]
+}

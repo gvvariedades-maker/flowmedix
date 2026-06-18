@@ -1,0 +1,638 @@
+{
+  "generated_at": "2026-06-16T10:58:49.034Z",
+  "mode": "infer",
+  "bucket": "Oxigenoterapia e Cuidados Respiratórios",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 62,
+    "inferred": 62,
+    "errors": 0,
+    "keep_current": 41,
+    "same_subtopico": 41,
+    "applicable": 21
+  },
+  "proposals": [
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001988576-3",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-6",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Tema compatível com oxigenoterapia ou sem destino canônico claro ≥0,90.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Critério espirométrico VEF1/CVF para diagnóstico de DPOC.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-7",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-2",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-3",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Definição de taquipneia — parâmetro de frequência respiratória.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-4",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-1",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Ritmos respiratórios anormais no contexto de aferição de FR.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-1",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-6",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-2",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de oxigenoterapia e cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-7",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344742779-4",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Taquipneia — alteração da frequência respiratória.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-5",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Função do sistema respiratório e divisão das vias aéreas.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-8",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "[agent] Acidente vascular cerebral — emergência neurológica.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-9",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Função do sistema vascular e transporte de O2.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-3",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-5",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-5",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-8",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-3",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-6",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-0",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-7",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Obstrução de vias aéreas por corpo estranho — primeiros socorros.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-5",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de oxigenoterapia e cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-0",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-5",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-3",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Oximetria de pulso — técnica de SpO2.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-4",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-5",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-7",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-8",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-7",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Avaliação cardiopulmonar e histórico no processo de enfermagem.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-6",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-9",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "[agent] Varicela — doença viral infectocontagiosa.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344742779-1",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344751294-4",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-7",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1780000535393-0",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-8",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-1",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009294428-0",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Processamento de Artigos e Produtos de Saúde",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Classificação e desinfecção de materiais semicríticos (máscara de O2).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056694842-7",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de oxigenoterapia e cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-6",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-9",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009310940-4",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009310940-6",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Fisiologia da anemia e hemácias.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-3",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Ventilação e oxigenação pós-RCP no protocolo SAMU.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-urgencias-e-emergencias-1777104038968-5",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Oxigenoterapia no protocolo de afogamento — emergência.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-6",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-3",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-7",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Frequência ou ritmo respiratório — sinal vital.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-5",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-8",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Manejo de DPOC crônico na atenção básica.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-8",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Interferências na leitura do oxímetro de pulso (SpO2).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-9",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "[agent] Manobra de Heimlich — obstrução de via aérea.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-5",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-8",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-1",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "[agent] Emergência — obstrução de via aérea.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344667377-6",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Oxigenoterapia, inalação, dispositivos ou cuidados respiratórios.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344701804-5",
+      "from": "Oxigenoterapia e Cuidados Respiratórios",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Quadro febril com tosse e anosmia — suspeita de Covid-19.",
+      "applicable": true,
+      "source": "heuristic"
+    }
+  ]
+}

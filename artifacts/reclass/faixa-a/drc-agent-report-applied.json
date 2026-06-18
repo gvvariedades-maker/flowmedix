@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-06-16T09:38:03.313Z",
+  "mode": "apply",
+  "bucket": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 2,
+    "inferred": 2,
+    "errors": 0,
+    "keep_current": 1,
+    "same_subtopico": 1,
+    "applicable": 1,
+    "applied": 1
+  },
+  "proposals": [
+    {
+      "modulo_slug": "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 0.98,
+      "keep_current": true,
+      "rationale": "[agent] Asma grave e broncodilatadores — DRC respiratória.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-5",
+      "from": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Afirmativas sobre DCNT em geral (HAS), não asma/DPOC.",
+      "applicable": true,
+      "source": "heuristic"
+    }
+  ],
+  "apply_errors": []
+}

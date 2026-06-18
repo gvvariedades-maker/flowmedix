@@ -1,0 +1,356 @@
+{
+  "batch": "03",
+  "bucket": "Coleta de Exames Laboratoriais",
+  "inferences": [
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563668619-3",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "ECG — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563674260-3",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "ECG — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563679414-5",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "ECG — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-complementares-1779563685104-1",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "ECG — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-laboratoriais-1779563549311-7",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "hidroeletrolítico — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-coleta-de-exames-laboratoriais-1779563140631-0",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-coleta-de-exames-laboratoriais-1779563140631-3",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-coleta-de-exames-laboratoriais-1779563200105-6",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-coleta-de-exames-laboratoriais-1779563225798-6",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-exames-laboratoriais-1779563621885-1",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Interpretação de exame laboratorial — fisiologia, não técnica de coleta."
+    },
+    {
+      "modulo_slug": "gama-enfermagem-coleta-de-exames-laboratoriais-1779562716126-5",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "gama-enfermagem-coleta-de-exames-laboratoriais-1779562716126-6",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "gama-enfermagem-coleta-de-exames-laboratoriais-1779562735777-5",
+      "suggested_subtopico": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Esquistossomose — parasitose de relevância epidemiológica."
+    },
+    {
+      "modulo_slug": "gama-enfermagem-coleta-de-exames-laboratoriais-1779563225798-5",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Gasometria/oximetria — exame complementar, não coleta laboratorial rotineira."
+    },
+    {
+      "modulo_slug": "gama-enfermagem-exames-complementares-1779563674260-2",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "rastreamento adulto — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-exames-laboratoriais-1779563613404-5",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Transporte de oxigênio no sangue — fisiologia respiratória."
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-exames-laboratoriais-1779563621885-6",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-exames-complementares-1779563674260-0",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "ECG — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-exames-laboratoriais-1779563559434-8",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Diabetes mellitus e composto bioquímico — patologia crônica metabólica."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-1",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-2",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-coleta-de-exames-laboratoriais-1779563288910-3",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-coleta-de-exames-laboratoriais-1779563200105-2",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-coleta-de-exames-laboratoriais-1779563248005-3",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-exames-laboratoriais-1779563613404-0",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Critérios laboratoriais de glicemia para diagnóstico de diabetes."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-exames-laboratoriais-1779563621885-8",
+      "suggested_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "tuberculose — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-exames-laboratoriais-1779563631609-5",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563140631-5",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-2",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-3",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-coleta-de-exames-laboratoriais-1779563272300-4",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-exames-complementares-1779563668619-8",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Arritmias cardíacas no ECG — exame complementar."
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-exames-laboratoriais-1779563559434-7",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com coleta laboratorial ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-4",
+      "suggested_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Orientação para diagnóstico de tuberculose — doença bacteriana."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-5",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Glicemia capilar — punção capilar e técnica de coleta."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-6",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-7",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-8",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-complementares-1778712242196-2",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "ECG — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-complementares-1779563685104-2",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "ECG — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-laboratoriais-1778712242196-1",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "neurologia/fisiologia — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-exames-laboratoriais-1780066961947-6",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Funções gerais do sangue — fisiologia cardiovascular."
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-coleta-de-exames-laboratoriais-1779563248005-8",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Interpretação de exame laboratorial — fisiologia, não técnica de coleta."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779562716126-2",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779562716126-3",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779562725491-2",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779563225798-3",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779563248005-1",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-coleta-de-exames-laboratoriais-1779563248005-2",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-exames-complementares-1779563655698-1",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Exame complementar (imagem, ECG etc.) — procedimentos diversos."
+    }
+  ]
+}

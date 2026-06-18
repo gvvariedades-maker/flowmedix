@@ -10,6 +10,7 @@ import {
   AVANT_LOGO_GRADIENTS,
   AVANT_LOGO_SHELL_SHADOW,
   getAvantLogoLockupPadding,
+  getAvantLogoWordmarkLetterSpacing,
   scaleAvantLogoPx,
   type AvantLogoSizeToken,
 } from '@/lib/brand/avantLogoConstants';
@@ -40,6 +41,7 @@ function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
   const iconPx = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.icon.size, size);
   const radius = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.icon.radius, size);
   const fontSize = Math.round(iconPx * 0.48);
+  const sheenHeight = Math.round(iconPx * AVANT_LOGO_COLORS.iconSheenHeightRatio);
 
   return (
     <div
@@ -49,14 +51,14 @@ function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
         height: iconPx,
         borderRadius: radius,
         background: AVANT_LOGO_GRADIENTS.icon,
-        boxShadow: '0 4px 16px rgba(34, 197, 94, 0.40)',
+        boxShadow: `${AVANT_LOGO_COLORS.iconOuterShadow}, inset 0 1px 0 ${AVANT_LOGO_COLORS.iconInsetHighlight}, inset 0 -1px 0 ${AVANT_LOGO_COLORS.iconInsetShadow}`,
       }}
       aria-hidden
     >
       <div
         className="pointer-events-none absolute inset-x-0 top-0"
         style={{
-          height: '42%',
+          height: sheenHeight,
           borderRadius: `${radius}px ${radius}px 0 0`,
           background: AVANT_LOGO_COLORS.iconSheen,
         }}
@@ -68,7 +70,8 @@ function AvantLogoIcon({ size }: { size: AvantLogoSizeToken }) {
           fontWeight: 800,
           fontSize,
           lineHeight: 1,
-          textShadow: '0 1px 4px rgba(0,0,0,0.20)',
+          textShadow: AVANT_LOGO_COLORS.iconLetterShadow,
+          transform: `translateY(${AVANT_LOGO_COLORS.iconLetterOffsetY}px)`,
         }}
       >
         A
@@ -85,9 +88,7 @@ function AvantLogoWordmark({
   tone: AvantLogoTone;
 }) {
   const fontSize = scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.wordmark.fontSize, size);
-  const letterSpacing = Math.round(
-    AVANT_LOGO_DIMENSIONS.wordmark.letterSpacingPx * (fontSize / AVANT_LOGO_DIMENSIONS.wordmark.fontSize),
-  );
+  const letterSpacing = getAvantLogoWordmarkLetterSpacing(size);
 
   const baseStyle = {
     fontFamily: AVANT_LOGO_FONT_FAMILY,
@@ -123,7 +124,7 @@ function AvantLogoWordmark({
         WebkitBackgroundClip: 'text',
         backgroundClip: 'text',
         color: 'transparent',
-        textShadow: `0 0 18px ${AVANT_LOGO_COLORS.wordmarkGlow}`,
+        filter: `drop-shadow(0 0 12px ${AVANT_LOGO_COLORS.wordmarkGlow})`,
       }}
     >
       AVANT
@@ -145,6 +146,7 @@ export function AvantLogo({
     animated ?? (variant === 'lockup' && size === 'lg' && tone === 'default');
 
   const iconOnly = variant === 'icon';
+  const accentGlowPx = scaleAvantLogoPx(10, size);
 
   const lightLockup = (
     <div
@@ -178,7 +180,7 @@ export function AvantLogo({
           padding: getAvantLogoLockupPadding(size),
           borderRadius: scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.lockupInner.radius, size),
           background: AVANT_LOGO_COLORS.lockupInnerBg,
-          boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.06)',
+          boxShadow: AVANT_LOGO_COLORS.lockupInnerInsetShadow,
         }}
       >
         <div
@@ -187,7 +189,7 @@ export function AvantLogo({
             width: scaleAvantLogoPx(AVANT_LOGO_DIMENSIONS.lockupInner.accentBarWidth, size),
             borderRadius: 2,
             background: AVANT_LOGO_COLORS.accentBar,
-            boxShadow: `0 0 10px ${AVANT_LOGO_COLORS.accentBarGlow}`,
+            boxShadow: `0 0 ${accentGlowPx}px ${AVANT_LOGO_COLORS.accentBarGlow}`,
           }}
           aria-hidden
         />

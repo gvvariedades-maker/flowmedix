@@ -1,0 +1,356 @@
+{
+  "batch": "10",
+  "bucket": "Imunização",
+  "inferences": [
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-7",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Doença viral — etiologia, transmissão ou quadro clínico."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010917301-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-9",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-imunizacao-1779563986606-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-imunizacao-1779564006577-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-imunizacao-1779564096589-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-5",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Doença viral — etiologia, transmissão ou quadro clínico."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-6",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103230085-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.88,
+      "keep_current": true,
+      "rationale": "Enunciado mesclado sem tema dominante claro."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103244679-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.88,
+      "keep_current": true,
+      "rationale": "Enunciado mesclado sem tema dominante claro."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103244679-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-9",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-5",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "nao-informado-geral-imunizacao-1779564031957-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-imunizacao-1777103222102-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-imunizacao-1779564074967-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-imunizacao-1779564074967-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-imunizacao-1779564071106-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-imunizacao-1779564090395-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-imunizacao-1779572236985-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572166628-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572166628-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572171486-6",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572220683-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572220683-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1777103182944-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1777103277533-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779563961175-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779563961175-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779564011849-6",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779564011849-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1780000630425-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009294428-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "quadrix-geral-imunizacao-1777103182944-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-imunizacao-1777103182944-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-imunizacao-1779564071106-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.88,
+      "keep_current": true,
+      "rationale": "Enunciado mesclado sem tema dominante claro."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1777103238173-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779563965519-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564001927-5",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564001927-6",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564011849-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564048247-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564048247-5",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564071106-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779572236985-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, esquema, calendário ou técnica de imunização."
+    }
+  ]
+}

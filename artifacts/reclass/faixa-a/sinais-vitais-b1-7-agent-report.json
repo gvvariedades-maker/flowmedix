@@ -1,0 +1,3518 @@
+{
+  "generated_at": "2026-06-16T10:03:02.637Z",
+  "mode": "infer",
+  "bucket": "Verificação de Sinais Vitais",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 350,
+    "inferred": 350,
+    "errors": 0,
+    "keep_current": 223,
+    "same_subtopico": 223,
+    "applicable": 117
+  },
+  "proposals": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563486900-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Padrões evolutivos da febre — classificação do sinal temperatura.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563491765-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Sofrimento fetal e cardiotocografia — obstetrícia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563517223-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Quadro clínico de meningite meningocócica — doença infecciosa.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Valores normais de FR em lactentes — parâmetro SV.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Déficit de pulso — técnica de verificação de FC.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Acompanhamento de diabetes e hipertensão — DCNT.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Assistência pré/trans/pós-operatória.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Atendimento emergencial e manejo de trauma.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Características clínicas da HAS — DCNT.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "[agent] Escala de Cincinnati para suspeita de AVC.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-verificacao-de-sinais-vitais-1779344189558-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-verificacao-de-sinais-vitais-1779344196733-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Fases de Korotkoff na aferição de PA.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-verificacao-de-sinais-vitais-1779344205200-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Monitoramento da população adscrita na APS.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Acolhimento na PNH — atenção básica.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056181857-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Registro e passagem de plantão — processo de enfermagem.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Registro de sinais vitais no prontuário — documentação PE.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica de PA na visita domiciliar — aferição.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Primeiros socorros e emergência.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "[agent] Acolhimento com dor abdominal — fluxo de avaliação PE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.87,
+      "keep_current": false,
+      "rationale": "[agent] Cuidados integrais em pneumonia — PE hospitalar.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Pré-natal e gestante com edema — saúde da mulher.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008232871-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "[agent] Cuidados integrais sob supervisão do enfermeiro.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008232871-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Aferição de SV em visita domiciliar — técnica.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969768866-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343811344-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343845367-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Cuidados pós-operatórios incluindo temperatura.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344111854-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344111854-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344237445-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344237445-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-verificacao-de-sinais-vitais-1779343932809-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-verificacao-de-sinais-vitais-1779343932809-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Pesagem em internados — antropometria no cuidado.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Material para aferição de PA — esfigmomanômetro.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.75,
+      "keep_current": true,
+      "rationale": "[agent] Sem tema dominante claro fora de SV — manter bucket.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Peso/altura para estado nutricional — antropometria.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003031246-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003031246-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Medidas antropométricas vs sinais vitais.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003261833-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Monitorização contínua na UTI — sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Choque hipovolêmico em trauma.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Material para aferição de PA.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Técnica de medida antropométrica (estatura).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Prevenção de hipertensão — promoção à saúde.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] PVC via cateter — punção/monitorização venosa.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Técnica de PA em adulto sentado.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Padrões respiratórios (Cheyne-Stokes, apneia).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Anafilaxia/angioedema em emergência.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563486900-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Particularidades da febre — sinal temperatura.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563500147-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Manifestações clínicas do choque.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Avaliação de risco de úlceras por pressão.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Choque hipovolêmico — emergência.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343789998-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343789998-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343822075-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343822075-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343822075-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Terminologia taquicardia/eupneia após aferição.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Técnica de esfigmomanômetro.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Terminologia taquisfigmia/taquicardia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Terminologia dispneia/taquipneia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343845367-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Equipamento para PA — esfigmomanômetro.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343845367-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343845367-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343865210-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Dispneia e ritmos respiratórios anormais.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Preparo para monitor multiparamétrico — SV.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Utilização do esfigmomanômetro.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Identificação do esfigmomanômetro.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343932809-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343932809-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Saúde da criança/neonatologia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Sons de Korotkoff na aferição de PA.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343956155-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343956155-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344097180-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344097180-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344205200-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344205200-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001742844-9",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] IMC/classificação nutricional infantil.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-semiologia-em-enfermagem-1779563549311-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Questões Mescladas e Outras Doenças Agudas",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "[agent] Pós-operatório oncológico — cuidado clínico cirúrgico.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344189558-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] PA em idoso com esfigmomanômetro aneroide.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Assistência perioperatória.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-geral-verificacao-de-sinais-vitais-1779344245160-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Atribuições do técnico em saúde da criança na AB.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006947080-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Atribuições do técnico na atenção básica.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-semiologia-em-enfermagem-1779563491765-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Desidratação em lactentes — pediatria.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-verificacao-de-sinais-vitais-1778969752567-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344122526-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344127707-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344137078-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344152370-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344152370-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344205200-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344205200-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "com-exam-pref-bauru-enfermagem-verificacao-de-sinais-vitais-1779344089179-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Interpretação de FC e PA — terminologia SV.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-verificacao-de-sinais-vitais-1779344117207-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563531989-9",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Questões Mescladas e Outras Doenças Agudas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Disúria e sintomas urinários — semiologia clínica.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-semiologia-em-enfermagem-1779563549311-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Visita domiciliar a criança menor de 2 meses.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344105099-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344253939-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344253939-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344253939-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344253939-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-verificacao-de-sinais-vitais-1779344262940-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "coseac-uff-geral-verificacao-de-sinais-vitais-1779344253939-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Cuidados em insuficiência cardíaca — DCNT.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-semiologia-em-enfermagem-1779563537258-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Testes ortopédicos (túnel do carpo) — procedimento específico.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-verificacao-de-sinais-vitais-1779343956155-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-verificacao-de-sinais-vitais-1779344189558-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Banho e higiene pessoal do paciente.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Diretriz de HAS em criança/adolescente — hipertensão.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] SAMU e rebaixamento de consciência — pré-hospitalar.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "[agent] Epistaxe e uso de varfarina — cuidados medicamentosos.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563491765-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Mancha hansênica — hanseníase.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "[agent] Sinais de gravidez e amenorreia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Hemoptise e suspeita de tuberculose.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563500147-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "[agent] Sinais de gravidez (duplicata).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Diabetes e doença renal — DCNT.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde Mental",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "[agent] Sintomas negativos da esquizofrenia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] SDR em RN pré-termo — neonatologia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Dor torácica na atenção primária — emergência cardíaca.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563517223-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "[agent] Padrão de febre intermitente — classificação temperatura.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563521756-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "[agent] Tipos de abortamento.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563521756-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] RN pré-termo — critérios pediátricos além de SV.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1778969745165-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1778969768866-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779343801786-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779343897104-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779343945057-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] ECG e derivações — exame complementar.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779344111854-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779344182672-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Atribuições do ACS com gestante.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779344182672-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-verificacao-de-sinais-vitais-1779344182672-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Saúde da criança/neonatologia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-verificacao-de-sinais-vitais-1779343811344-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Coma diabético — monitoramento glicemia e SV.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1776056181857-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Admissão, alta e óbito — etapas PE.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-9",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Administração de opioide e antiemético.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-semiologia-em-enfermagem-1779563527042-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Quando levar criança ao pediatra.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-verificacao-de-sinais-vitais-1779343811344-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-verificacao-de-sinais-vitais-1779343883917-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "[agent] Variações fisiológicas no PE — contexto PE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "epl-concursos-enfermagem-verificacao-de-sinais-vitais-1779344182672-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "epl-concursos-enfermagem-verificacao-de-sinais-vitais-1779344182672-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facape-enfermagem-semiologia-em-enfermagem-1779563486900-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Triagem de pico hipertensivo — emergência.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Doença respiratória crônica.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-verificacao-de-sinais-vitais-1779343845367-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009379028-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Classificação HAS estágio 2 — diretriz.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "[agent] Síndromes hipertensivas na gestação.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009392850-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Visita domiciliar na atenção básica.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-verificacao-de-sinais-vitais-1779343822075-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Classificação pré-hipertensão — diretriz HAS.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Definição de punção — acesso invasivo.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002549800-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Classificação PA pela diretriz HAS.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563480978-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Prefixo médico ECTO — terminologia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563480978-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Sinônimos de afecção — terminologia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563480978-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Icterícia — semiologia clínica.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563486900-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Sinais flogísticos — processo inflamatório.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563491765-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Sinal flogístico rubor.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563505333-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Pródromos do trabalho de parto.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1778969760552-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1779343956155-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1779344111854-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1779344117207-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-verificacao-de-sinais-vitais-1779344182672-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Diário do cuidador — prevenção e promoção.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-verificacao-de-sinais-vitais-1779343822075-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-verificacao-de-sinais-vitais-1779343945057-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde Mental",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Delirium — saúde mental.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Pé diabético — complicação diabetes.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Sintomas diabetes mellitus tipo 1.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-verificacao-de-sinais-vitais-1779344189558-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "[agent] Padrão de febre sustentada — curva térmica.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] DPOC com oxigenoterapia e SpO2.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001790945-9",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Mudança de decúbito para prevenir LPP.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Febre como sinal vital de temperatura.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006456417-9",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563467322-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Edema e alterações anatômicas — semiologia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Hipoglicemia em diabético.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563495719-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Questões Mescladas e Outras Doenças Agudas",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "[agent] Constipação intestinal — eliminações.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-verificacao-de-sinais-vitais-1778969768866-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-verificacao-de-sinais-vitais-1779343967847-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-verificacao-de-sinais-vitais-1780000237780-9",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-verificacao-de-sinais-vitais-1780000468214-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Frequência cardíaca como sinal vital.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002110600-9",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Glicemia capilar e glicosímetro — vigilância medicamentosa/diabetes.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780004602717-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343883917-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343919045-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343919045-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343919045-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Técnica de aferição de PA.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344152370-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344152370-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344152370-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344196733-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344245160-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Trauma amputação — avaliação primária BT.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Choque grave na UPA.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde Mental",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Distúrbios psicológicos — saúde mental.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1778969737311-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1778969737311-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1778969760552-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1778969760552-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1778969760552-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1779343919045-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1779344089179-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1779344117207-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1779344117207-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1779344205200-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Icterícia e obstrução biliar — semiologia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Semiologia de insuficiência cardíaca.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-verificacao-de-sinais-vitais-1779343822075-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-verificacao-de-sinais-vitais-1779343856589-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-verificacao-de-sinais-vitais-1779344097180-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1776056158507-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Melhor em Casa — atribuições domiciliar.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1776056181857-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Anotações de enfermagem — documentação PE.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780001903454-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Eletrocardiograma — exame complementar.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] DCNT (HAS, diabetes, ICC).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-6",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] DCNT (HAS, diabetes, ICC).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Reação anafilática pós-medicamento.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Analgesia em politrauma — administração medicamentos.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Manejo medicamentoso de crise hipertensiva.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "[agent] Perfusão renal na UTI — fisiologia hemodinâmica.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-9",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] TCE grave com hipertensão intracraniana.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Emergência hipertensiva com papiledema.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Questões Mescladas e Outras Doenças Agudas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Glomerulonefrite aguda — doença renal aguda.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Teste do coraçãozinho — triagem neonatal.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Sons respiratórios em crianças.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Fratura úmero e lesão nervo radial — trauma.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Imobilização prolongada e complicações.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563486900-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Sinal de Levine — dor cardíaca.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563495719-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Avaliação pupilar neurológica.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563500147-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Interpretação de PA, FC, FR e temperatura.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563505333-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Padrões febris remitente — temperatura.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563517223-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Hipogonadismo — saúde da mulher/endócrino.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563531989-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Sinal de Battle — trauma craniano.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563537258-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Terminologia xerostomia e polidipsia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563537258-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Terminologia pupilar (isocoria, anisocoria).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563537258-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "[agent] Nomenclatura de evacuações — semiologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1778969729218-9",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1778969745165-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Cuidados na aferição de PA.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1778969768866-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343811344-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Localização de artérias para pulso — anatomia aplicada.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343811344-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343845367-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343845367-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343919045-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343919045-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Verificação de pulso apical em criança.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344111854-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344111854-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344111854-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344158323-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344178184-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779344205200-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Prevenção de hipertensão em risco.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-semiologia-em-enfermagem-1779563512485-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "[agent] Melena e uso de AINEs — semiologia GI/medicamentos.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-verificacao-de-sinais-vitais-1779343897104-8",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-verificacao-de-sinais-vitais-1779344253939-0",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Cuidados em doenças cardiovasculares.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-semiologia-em-enfermagem-1779563517223-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Alteração mamária — saúde da mulher.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Auditoria e qualidade em saúde coletiva.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-semiologia-em-enfermagem-1779563500147-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Hemoptise — semiologia respiratória.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-verificacao-de-sinais-vitais-1778969745165-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Locais de palpação do pulso.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-verificacao-de-sinais-vitais-1778969768866-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-verificacao-de-sinais-vitais-1779343811344-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de verificação de sinais vitais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-verificacao-de-sinais-vitais-1779343956155-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-verificacao-de-sinais-vitais-1779344137078-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] PA como parâmetro clínico confiável.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-verificacao-de-sinais-vitais-1779344137078-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-semiologia-em-enfermagem-1779563467322-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Instalação e Manejo de Sondas",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Disúria pós-cateterismo vesical.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-verificacao-de-sinais-vitais-1778969729218-4",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-verificacao-de-sinais-vitais-1778969729218-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-verificacao-de-sinais-vitais-1779343811344-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] DPOC com oxigenoterapia domiciliar e SpO2.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-7",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "[agent] Pré-eclâmpsia em gestante — obstetrícia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-verificacao-de-sinais-vitais-1779344224014-1",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-verificacao-de-sinais-vitais-1779344224014-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-processo-de-enfermagem-1776056149404-2",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Atribuições em urgência/emergência.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-semiologia-em-enfermagem-1779563512485-5",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Questões Mescladas e Outras Doenças Agudas",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Pneumonia — doença aguda respiratória.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-verificacao-de-sinais-vitais-1779343956155-3",
+      "from": "Verificação de Sinais Vitais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2).",
+      "applicable": false,
+      "source": "heuristic"
+    }
+  ]
+}

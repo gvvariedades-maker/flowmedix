@@ -4,6 +4,7 @@ import {
   EMPTY_NOTEBOOK_ACTIVATION,
   getMatriculatedConcursosCached,
   getNotebookActivationCached,
+  getUserPreferencesOnboardingCached,
 } from '@/lib/cache';
 import { getActiveProInfoForUser, isUserPro, type ProSource } from '@/lib/freemium';
 import DashboardShell from './DashboardShell';
@@ -25,7 +26,8 @@ export default async function DashboardLayout({ children }: { children: React.Re
   const email = session?.user?.email ?? null;
   const isAdmin = isAdminSessionEmail(email);
 
-  const [matriculatedConcursos, userIsPro, proInfo, notebookActivation] = session?.user?.id
+  const [matriculatedConcursos, userIsPro, proInfo, notebookActivation, onboardingPreferences] =
+    session?.user?.id
     ? await Promise.all([
         getMatriculatedConcursosCached(session.user.id).catch(() => []),
         isUserPro(session.user.id).catch(() => false),
@@ -34,8 +36,18 @@ export default async function DashboardLayout({ children }: { children: React.Re
           proExpiresAt: null,
         })),
         getNotebookActivationCached(session.user.id).catch(() => EMPTY_NOTEBOOK_ACTIVATION),
+        getUserPreferencesOnboardingCached(session.user.id).catch(() => ({
+          completed: false,
+          preferences: null,
+        })),
       ])
-    : [[], false, { proSource: null as ProSource, proExpiresAt: null }, EMPTY_NOTEBOOK_ACTIVATION];
+    : [
+        [],
+        false,
+        { proSource: null as ProSource, proExpiresAt: null },
+        EMPTY_NOTEBOOK_ACTIVATION,
+        { completed: false, preferences: null },
+      ];
 
   const isPro = isAdmin || userIsPro;
 
@@ -56,6 +68,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
         ano: concurso.ano,
       }))}
       initialNotebookActivation={notebookActivation}
+      initialOnboardingCompleted={onboardingPreferences.completed}
     >
       {children}
     </DashboardShell>

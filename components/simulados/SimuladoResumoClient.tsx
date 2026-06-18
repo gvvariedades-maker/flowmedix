@@ -20,6 +20,7 @@ import { Button } from '@/components/ui/button';
 import { ProgressRing } from '@/components/ui/progress-ring';
 import { NeonBadge } from '@/components/ui/neon-badge';
 import type {
+  SimuladoConclusaoIncentivos,
   SimuladoProvaEvolucaoItem,
   SimuladoQuestaoItem,
   SimuladoResumo,
@@ -36,11 +37,13 @@ import {
 import { createSimuladoSession, getSimuladoProvaEvolucao, SimuladoApiError } from '@/lib/simulado/client';
 import { SimuladoMobileActionBar } from '@/components/simulados/SimuladoMobileActionBar';
 import { DiagnosticoEixos } from '@/components/simulados/DiagnosticoEixos';
+import { ConclusaoIncentivosBanner } from '@/components/simulados/ConclusaoIncentivosBanner';
 
 type SimuladoResumoClientProps = {
   session: SimuladoSessionSummary;
   resumo: SimuladoResumo;
   questoes: SimuladoQuestaoItem[];
+  incentivos?: SimuladoConclusaoIncentivos | null;
 };
 
 function metaLinha(meta: SimuladoQuestaoItem['meta']): string {
@@ -155,7 +158,12 @@ function QuestaoRevisaoItem({ item }: { item: SimuladoQuestaoItem }) {
   );
 }
 
-export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResumoClientProps) {
+export function SimuladoResumoClient({
+  session,
+  resumo,
+  questoes,
+  incentivos,
+}: SimuladoResumoClientProps) {
   const router = useRouter();
   const [filtro, setFiltro] = useState<'todos' | 'erros' | 'acertos'>('todos');
   const [retryingErrors, setRetryingErrors] = useState(false);
@@ -548,8 +556,14 @@ export function SimuladoResumoClient({ session, resumo, questoes }: SimuladoResu
           </section>
         ) : null}
 
-        {resumo.erros > 0 ? (
-          <DiagnosticoEixos questoes={questoes} filtros={session.filtros} />
+        <ConclusaoIncentivosBanner incentivos={incentivos} />
+
+        {(incentivos || resumo.erros > 0) ? (
+          <DiagnosticoEixos
+            questoes={questoes}
+            filtros={session.filtros}
+            incentivos={incentivos}
+          />
         ) : null}
 
         <section aria-labelledby="simulado-revisao-titulo">

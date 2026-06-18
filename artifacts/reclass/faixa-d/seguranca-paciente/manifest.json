@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-06-16T09:45:01.487Z",
+  "bucket": "Segurança do Paciente",
+  "batch_size": 50,
+  "total": 77,
+  "batch_files": [
+    "artifacts/reclass/faixa-d/seguranca-paciente/batch-01.json",
+    "artifacts/reclass/faixa-d/seguranca-paciente/batch-02.json"
+  ]
+}

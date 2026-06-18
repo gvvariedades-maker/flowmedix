@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-06-16T12:00:00.000Z",
+  "bucket": "Oxigenoterapia e Cuidados Respiratórios",
+  "batch_size": 50,
+  "total": 150,
+  "batch_files": [
+    "artifacts/reclass/faixa-b/oxigenoterapia/batch-01.json",
+    "artifacts/reclass/faixa-b/oxigenoterapia/batch-02.json",
+    "artifacts/reclass/faixa-b/oxigenoterapia/batch-03.json"
+  ]
+}

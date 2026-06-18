@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-06-16T10:02:47.584Z",
+  "bucket": "Imunização",
+  "batch_size": 50,
+  "total": 278,
+  "batch_files": [
+    "artifacts/reclass/faixa-b/imunizacao/batch-10.json",
+    "artifacts/reclass/faixa-b/imunizacao/batch-11.json",
+    "artifacts/reclass/faixa-b/imunizacao/batch-12.json",
+    "artifacts/reclass/faixa-b/imunizacao/batch-07.json",
+    "artifacts/reclass/faixa-b/imunizacao/batch-08.json",
+    "artifacts/reclass/faixa-b/imunizacao/batch-09.json"
+  ]
+}

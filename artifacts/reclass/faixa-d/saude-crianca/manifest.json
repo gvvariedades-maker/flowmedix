@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-06-16T09:44:45.375Z",
+  "bucket": "Saúde da Criança",
+  "batch_size": 50,
+  "total": 45,
+  "batch_files": [
+    "artifacts/reclass/faixa-d/saude-crianca/batch-01.json"
+  ]
+}

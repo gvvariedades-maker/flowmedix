@@ -1,0 +1,258 @@
+{
+  "batch": "01",
+  "bucket": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+  "inferences": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056021381-4",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Manejo de sintomas em paciente oncológico crônico — permanece no bucket DCNT mescladas."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-1",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Intoxicação por organofosforados e crise colinérgica — emergência toxicológica aguda, não DCNT."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-8",
+      "suggested_subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Cálculo de volume de insulina NPH (UI para ml) — cálculo de medicação."
+    },
+    {
+      "modulo_slug": "aocp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-9",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Saneamento e prevenção de doenças diarreicas — determinação social e promoção à saúde."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-4",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Prevenção primária da HAS e mudança de estilo de vida — promoção à saúde."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-9",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Restrição de sódio na HAS — nutrição em doença crônica; bucket DCNT adequado."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780008232871-8",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Rastreamento citopatológico (Papanicolau) — saúde da mulher, não DCNT genérico."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-seguranca-do-paciente-1777102678563-0",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Escala dos 5 Is para risco de LPP — prevenção de lesão por pressão em curativos."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-1",
+      "suggested_subtopico": "Enfermagem do Trabalho",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Câncer de pele por exposição solar ocupacional — saúde do trabalhador."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-2",
+      "suggested_subtopico": "Enfermagem do Trabalho",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Síndrome do túnel do carpo por gestos repetitivos — doença relacionada ao trabalho."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-5",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Circunferência abdominal e risco metabólico — DCNT/obesidade; bucket correto."
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-4",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Orientação nutricional para obesidade — promoção à saúde e prevenção."
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Epidemiologia do trauma e perfil de vítimas — conteúdo central é trauma/urgência."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-2",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "Fatores de risco para diabetes — tema central do bucket DCNT."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-cardiovasculares-e-metabolicas-cronicas-diabete-hipertensao-icc-etc-1778712315153-4",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "Prevenção de DCNT por alimentação saudável — bucket DCNT explícito no slug."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778712315153-8",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Redes de atenção à saúde para doenças crônicas — modelo de APS/linha de cuidado."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processo-de-enfermagem-1778712122855-5",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Cuidados ao diabético hospitalizado — manejo de DCNT no bucket adequado."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1780067036141-7",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Definição de idoso (60+) — permanece em DCNT/geriatria sem subtópico canônico melhor."
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis-1778934918280-6",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "Fisiopatologia do diabetes mellitus — DCNT central."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-4",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Fundamentos de nutrição e papel do técnico — promoção à saúde nutricional."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-7",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Orientação alimentar em diabetes — DCNT/diabetes no bucket correto."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1780000630425-0",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Fundamentos de nutrição (duplicata temática) — promoção à saúde."
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-7",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Visita domiciliar e manejo de DM2 na APS — atenção básica."
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-9",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Inspeção dos pés do diabético — complicação crônica do diabetes."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-1",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Sangramento uterino anormal na pós-menopausa — ginecologia/saúde da mulher."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-1",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "Controle glicêmico e HbA1c no diabetes — DCNT central."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010917301-0",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Câncer do colo do útero e HPV — rastreamento em saúde da mulher."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-4",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.98,
+      "keep_current": true,
+      "rationale": "Tríade clássica do diabetes — DCNT."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-9",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Câncer do colo e HPV — saúde da mulher."
+    },
+    {
+      "modulo_slug": "nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-0",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Redução de sal para prevenir hipertensão — promoção à saúde."
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-8",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Classificação de IMC/obesidade (Caderno CAB) — DCNT/obesidade."
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-6",
+      "suggested_subtopico": "Saúde Mental",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Doença de Alzheimer e perda de memória — saúde mental/neurodegeneração."
+    },
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-1",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "Autocuidado no diabetes mellitus — DCNT."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-2",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Potássio e controle pressórico na HAS — DCNT/hipertensão."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-3",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "Autocuidado em doença crônica — permanece no bucket DCNT."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-seguranca-do-paciente-1779563443877-0",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Técnica de aplicação de insulina — administração de medicamentos."
+    }
+  ]
+}

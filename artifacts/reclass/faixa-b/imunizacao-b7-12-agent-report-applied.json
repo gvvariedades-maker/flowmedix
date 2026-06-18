@@ -1,0 +1,2800 @@
+{
+  "generated_at": "2026-06-16T10:04:38.050Z",
+  "mode": "apply",
+  "bucket": "Imunização",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 278,
+    "inferred": 278,
+    "errors": 0,
+    "keep_current": 267,
+    "same_subtopico": 267,
+    "applicable": 11,
+    "applied": 11
+  },
+  "proposals": [
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-7",
+      "from": "Imunização",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Doença viral — etiologia, transmissão ou quadro clínico.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010917301-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-imunizacao-1779563986606-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-imunizacao-1779564006577-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-imunizacao-1779564096589-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-5",
+      "from": "Imunização",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Doença viral — etiologia, transmissão ou quadro clínico.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103230085-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.88,
+      "keep_current": true,
+      "rationale": "[agent] Enunciado mesclado sem tema dominante claro.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103244679-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.88,
+      "keep_current": true,
+      "rationale": "[agent] Enunciado mesclado sem tema dominante claro.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103244679-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "nao-informado-geral-imunizacao-1779564031957-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-imunizacao-1777103222102-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-imunizacao-1779564074967-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "nosso-rumo-enfermagem-imunizacao-1779564074967-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-imunizacao-1779564071106-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-imunizacao-1779564090395-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-imunizacao-1779572236985-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572166628-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572166628-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572171486-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572220683-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-imunizacao-1779572220683-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1777103182944-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1777103277533-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779563961175-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779563961175-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779564011849-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1779564011849-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1780000630425-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009294428-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-geral-imunizacao-1777103182944-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-imunizacao-1777103182944-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-imunizacao-1779564071106-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.88,
+      "keep_current": true,
+      "rationale": "[agent] Enunciado mesclado sem tema dominante claro.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1777103238173-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779563965519-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564001927-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564001927-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564011849-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564048247-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564048247-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779564071106-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-imunizacao-1779572236985-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-imunizacao-1777103251447-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-imunizacao-1777103251447-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-imunizacao-1779563961175-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-imunizacao-1779563975447-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-imunizacao-1780001148264-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779564006577-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779564031957-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572215875-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572215875-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572215875-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572220683-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572227744-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-imunizacao-1779572236985-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-imunizacao-1777103182944-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-imunizacao-1777103182944-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-imunizacao-1777103204932-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-imunizacao-1777103204932-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.88,
+      "keep_current": true,
+      "rationale": "[agent] Enunciado mesclado sem tema dominante claro.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-imunizacao-1779564063274-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1777103204932-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1777103270218-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563965519-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563965519-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563965519-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563965519-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563965519-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563965519-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563970889-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563970889-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563992006-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563992006-3",
+      "from": "Imunização",
+      "suggested": "Enfermagem do Trabalho",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Avaliação ocupacional e esquema vacinal exigido para atuar na UCIN.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563996663-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563996663-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779563996663-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564001927-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564001927-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564001927-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564053668-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564053668-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564059030-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564059030-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564063274-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564063274-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564063274-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564090395-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564090395-4",
+      "from": "Imunização",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Rastreamento e educação em saúde — prevenção de câncer de colo.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564090395-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564096589-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564096589-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564096589-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564125198-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779572207173-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1779564125198-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1777103277533-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1777103277533-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712270872-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712270872-7",
+      "from": "Imunização",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Níveis de prevenção em saúde — promoção e prevenção de agravos.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712270872-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712270872-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1778712281975-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1779563986606-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1779564031957-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1780066977710-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1780066977710-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1780066977710-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-imunizacao-1780066977710-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778712315153-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-idoso-1778712437306-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1777103277533-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1777103277533-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1777103277533-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1778934900821-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1778934900821-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1778934909266-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1778934909266-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-imunizacao-1779564067000-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-atencao-basica-saude-da-familia-1778968357339-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-imunizacao-1777103251447-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-imunizacao-1779572159431-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779563961175-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779563975447-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779563986606-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779563992006-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564035545-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564035545-1",
+      "from": "Imunização",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Tratamento clínico de doença bacteriana — não esquema vacinal.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564035545-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564040128-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564040128-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564044052-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564044052-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564048247-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564048247-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564048247-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564048247-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564059030-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564059030-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564059030-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010559720-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-imunizacao-1779564067000-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-imunizacao-1779564067000-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-imunizacao-1777103277533-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-7",
+      "from": "Imunização",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Educação em saúde e promoção de agravos.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-imunizacao-1777103257434-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-imunizacao-1777103257434-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-8",
+      "from": "Imunização",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Urgência obstétrica — não imunização.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-5",
+      "from": "Imunização",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Prevenção de leptospirose — zoonose e medidas ambientais.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-imunizacao-1779564067000-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-imunizacao-1779564109452-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-imunizacao-1779564109452-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005320352-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006969552-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006969552-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-atencao-basica-saude-da-familia-1778968194611-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103222102-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103222102-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103222102-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103222102-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103222102-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103230085-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103230085-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103230085-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779563965519-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564053668-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564053668-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564053668-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564063274-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564067000-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564079834-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564085730-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564085730-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564085730-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564090395-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo de imunização e vacinas.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564090395-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564109452-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564113760-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564113760-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564113760-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564113760-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564113760-5",
+      "from": "Imunização",
+      "suggested": "Enfermagem do Trabalho",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Saúde ocupacional e imunização do trabalhador (NR-32).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779572198133-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-geral-imunizacao-1777103215560-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-imunizacao-1777103264001-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1777103251447-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1777103270218-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1777103270218-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564040128-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564044052-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564067000-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-1",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-imunizacao-1779564129617-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780002389285-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-0",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009310940-1",
+      "from": "Imunização",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Programa intersetorial de promoção da saúde.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ipefae-enfermagem-imunizacao-1779564090395-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1777103182944-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1777103204932-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1777103257434-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1777103257434-9",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1779564048247-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1779564048247-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1779564048247-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-imunizacao-1779564067000-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-imunizacao-1779572166628-2",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-imunizacao-1779572166628-3",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-imunizacao-1779572166628-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-5",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-8",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-6",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-4",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-7",
+      "from": "Imunização",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vacinas, esquema, calendário ou técnica de imunização.",
+      "applicable": false,
+      "source": "heuristic"
+    }
+  ],
+  "apply_errors": []
+}

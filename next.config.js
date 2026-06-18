@@ -9,7 +9,6 @@ const nextConfig = {
     return [
       { source: '/campina-grande', destination: '/lp/campina-grande', permanent: true },
       { source: '/simulados/campina', destination: '/simulados/campina-grande', permanent: false },
-      { source: '/goianinha', destination: '/lp/goianinha', permanent: true },
     ];
   },
   images: {

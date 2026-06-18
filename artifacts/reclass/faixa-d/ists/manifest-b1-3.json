@@ -1,0 +1,8 @@
+{
+  "bucket": "Infecções Sexualmente Transmissíveis (ISTs)",
+  "batch_files": [
+    "artifacts/reclass/faixa-d/ists/batch-01.json",
+    "artifacts/reclass/faixa-d/ists/batch-02.json",
+    "artifacts/reclass/faixa-d/ists/batch-03.json"
+  ]
+}

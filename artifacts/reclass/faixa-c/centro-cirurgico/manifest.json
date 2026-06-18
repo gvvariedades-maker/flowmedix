@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-06-16T12:50:25.106Z",
+  "bucket": "Enfermagem em Centro Cirúrgico",
+  "batch_size": 50,
+  "total": 145,
+  "batch_files": [
+    "artifacts/reclass/faixa-c/centro-cirurgico/batch-01.json",
+    "artifacts/reclass/faixa-c/centro-cirurgico/batch-02.json",
+    "artifacts/reclass/faixa-c/centro-cirurgico/batch-03.json"
+  ]
+}

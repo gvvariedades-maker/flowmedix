@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-06-16T12:51:02.138Z",
+  "bucket": "Epidemiologia e Vigilância Epidemiológica",
+  "batch_size": 50,
+  "total": 150,
+  "batch_files": [
+    "artifacts/reclass/faixa-b/epidemiologia/batch-01.json",
+    "artifacts/reclass/faixa-b/epidemiologia/batch-02.json",
+    "artifacts/reclass/faixa-b/epidemiologia/batch-03.json"
+  ]
+}

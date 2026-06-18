@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-06-16T13:05:00.000Z",
+  "mode": "apply",
+  "bucket": "Noções de Fisiologia",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "heuristic",
+  "summary": {
+    "scanned": 5,
+    "inferred": 5,
+    "errors": 0,
+    "keep_current": 0,
+    "same_subtopico": 0,
+    "applicable": 5
+  },
+  "proposals": [
+    {
+      "modulo_slug": "imparh-enfermagem-exames-laboratoriais-1779563631609-0",
+      "from": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[correction] Hipernatremia — distúrbio eletrolítico/fisiologia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-nocoes-de-fisiologia-1775448615466-2",
+      "from": "Saúde da Criança",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[correction] Termorregulação — fisiologia da temperatura corporal.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776055998470-5",
+      "from": "Mobilização e Posicionamento do Paciente",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[correction] Ciclo cardíaco e fatores da PA — fisiologia cardiovascular.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-fisiologia-1776056116422-3",
+      "from": "Infecções no Contexto da Biossegurança",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[correction] Soluções isotônicas/hipo/hiper — osmolaridade.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009310940-6",
+      "from": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[correction] Fisiologia da anemia e transporte de O2.",
+      "applicable": true,
+      "source": "heuristic"
+    }
+  ]
+}

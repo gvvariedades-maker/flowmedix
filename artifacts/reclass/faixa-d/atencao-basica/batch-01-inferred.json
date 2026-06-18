@@ -1,0 +1,356 @@
+{
+  "batch": "01",
+  "bucket": "Atenção Básica / Saúde da Família",
+  "inferences": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-1",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Motoristas de UTI Móvel, como integrantes de uma equipe multidiscipli…"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-2",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Analise as afirmativas a seguir: I. É considerada atividade do Agente…"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-3",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Analise as afirmativas a seguir: I. Todo Agente Comunitário de Saúde …"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968263411-4",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Analise as afirmativas a seguir: I. Agindo de forma independente, o A…"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-5",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Elaboração do Plano de Saúde — análise situacional e metas do gestor."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-5",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: O trabalho do Auxiliar de Enfermagem junto com a equipe na atenção bá…"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-7",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: A atenção básica constitui componente estratégico da organização do s…"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967504475-2",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: No modelo de atenção em saúde fundamentado na assistência multiprofis…"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-0",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: As Equipes de Saúde da Família Ribeirinha deverão prestar atendimento…"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778967776515-1",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Cada equipe de Saúde da Família (eSF) deve ser responsável por, no má…"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-2",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Em um atendimento na Unidade Básica de Saúde (UBS), o técnico em enfe…"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-2",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: O Técnico de Enfermagem desempenha um papel essencial no monitorament…"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-3",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: O técnico de enfermagem, como membro da equipe de Saúde da Família, d…"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-6",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: A atuação do técnico em enfermagem na atenção básica é fundamental pa…"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968094018-7",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: A visita domiciliar (VD) é uma ferramenta tecnológica fundamental na …"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-2",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Em uma Unidade de Saúde da Família de um município, o técnico de enfe…"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968112153-3",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Em uma Unidade de Saúde da Família (USF) de um município, o técnico d…"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-4",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: A Atenção Primária à Saúde é o primeiro nível de atenção e porta de e…"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-2",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: São atribuições específicas do ACS, EXCETO:"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-3",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Os Agentes Comunitários de Saúde, realizam visitas domiciliares que é…"
+    },
+    {
+      "modulo_slug": "apice-enfermagem-atencao-basica-saude-da-familia-1778967776515-4",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Marque a alternativa correta sobre onde o ACS pode contribuir com a o…"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-5",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Sobre as visitas domiciliares realizadas pelos Agentes Comunitários d…"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-6",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Sobre a atuação do Agente Comunitário de Saúde (ACS) no controle da d…"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-atencao-basica-saude-da-familia-1778968221218-7",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Sobre o conceito de intersetorialidade no trabalho do ACS, assinale a…"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-3",
+      "suggested_subtopico": "Saúde da Criança",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Norma técnica de dados antropométricos — peso e estatura no acompanhamento."
+    },
+    {
+      "modulo_slug": "avancasp-geral-atencao-basica-saude-da-familia-1778968221218-4",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Acerca das informações importantes coletadas para o diagnóstico da co…"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-atencao-basica-saude-da-familia-1778967776515-6",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Proteção do ACE e manejo integrado de vetores no controle de endemias."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-4",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: No atendimento à população, o processo pelo qual se utilizam critério…"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968077998-5",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: No trabalho da unidade básica de saúde, os profissionais se deparam c…"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968221218-1",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Analise as assertivas a respeito da visita domiciliar realizada pelo …"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-5",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Levando-se em consideração os Protocolos de Encaminhamento da Atenção…"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-6",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: No exercício de suas atribuições, o Agente Comunitário de Saúde exerc…"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968263411-7",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: A Avaliação do Risco Familiar é uma ferramenta eficaz no direcionamen…"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003349182-0",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: A forma de organização do serviço que permite que pessoas busquem a u…"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-atencao-basica-saude-da-familia-1778968357339-2",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: \"A intersetorialidade possibilita que ações de outros setores da soci…"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-atencao-basica-saude-da-familia-1778968357339-3",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: \"Todas as informações que você, ACS, conseguir sobre a comunidade aju…"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968028412-8",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Durante visitas domiciliares, o ACS deve avaliar a capacidade funcion…"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-0",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: O conceito de determinantes sociais da saúde é essencial para a atuaç…"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-1",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: As visitas domiciliares são parte integrante das atribuições do ACS. …"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-2",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: A territorialização é um processo essencial para o planejamento efica…"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-atencao-basica-saude-da-familia-1778968039063-4",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: As avaliações em saúde desempenham um papel fundamental na melhoria c…"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-5",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Técnicas de levantamento de condições de vida para planejamento em saúde."
+    },
+    {
+      "modulo_slug": "fadesp-enfermagem-atencao-basica-saude-da-familia-1778968194611-6",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Durante uma visita domiciliar da equipe de saúde a uma idosa resident…"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-4",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "TRIA de insegurança alimentar na visita domiciliar — rastreamento nutricional."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968039063-6",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: O SIAB é um sistema idealizado para agregar e para processar as infor…"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968039063-7",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Para equipe de Saúde da Família (eSF) há a obrigatoriedade de carga h…"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-0",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Analise os itens e assinale a alternativa correta quanto às atribuiçõ…"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-6",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Um \"Modelo de Atenção à Saúde\" define como a saúde é organizada e ent…"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968077998-7",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Assinale a alternativa que descreve uma visita domiciliar."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-atencao-basica-saude-da-familia-1778968180610-0",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema dominante ESF/APS: Qual o nome dado aos horários reservados no cronograma de atividades …"
+    }
+  ]
+}

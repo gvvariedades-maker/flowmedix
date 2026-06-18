@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Inter, JetBrains_Mono, Plus_Jakarta_Sans, Syne } from "next/font/google";
+import { DM_Sans, Inter, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { validateAllEnv } from "@/lib/env";
 import { JsonLd, type JsonLdObject } from "@/components/seo/JsonLd";
@@ -27,13 +27,6 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["500", "600", "700", "800"],
   variable: "--font-plus-jakarta-sans",
-  display: "swap",
-});
-
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["700", "800"],
-  variable: "--font-syne",
   display: "swap",
 });
 
@@ -130,8 +123,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#3b49df' },
-    { media: '(prefers-color-scheme: dark)', color: '#3b49df' },
+    { media: '(prefers-color-scheme: light)', color: '#010409' },
+    { media: '(prefers-color-scheme: dark)', color: '#010409' },
   ],
 };
 
@@ -143,7 +136,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={`${inter.className} ${plusJakartaSans.variable} ${syne.variable} ${jetbrainsMono.variable} ${dmSans.variable}`}
+        className={`${inter.className} ${plusJakartaSans.variable} ${jetbrainsMono.variable} ${dmSans.variable}`}
         suppressHydrationWarning
       >
         <JsonLd data={siteStructuredData} />

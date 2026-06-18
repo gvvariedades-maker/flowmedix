@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-06-16T13:23:00.000Z",
+  "phase": "reclass_complete",
+  "wave9_totals": { "scanned": 11, "applied": 11, "failed": 0 },
+  "wave9_bucket": "Questões Mescladas e Outras Doenças Agudas",
+  "wave8_totals": { "scanned": 1499, "applied": 402, "failed": 0 },
+  "cumulative_applied": 1462,
+  "catalog_total": 5180,
+  "remaining_pending_scan": 0,
+  "all_buckets_scanned": true,
+  "min_confidence_apply": 0.9,
+  "classification_method": "agent_reading_enunciado",
+  "notes": "Onda 9 fechou o último bucket pendente. Varredura final: bucket Agudas retornou 0 questões."
+}

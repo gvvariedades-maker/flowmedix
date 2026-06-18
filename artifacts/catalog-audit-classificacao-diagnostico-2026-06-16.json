@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-06-16T08:35:00.000Z",
+  "source": "Supabase modulos_estudo + infer reports",
+  "structural_audit": {
+    "total_questoes": 5180,
+    "sem_titulo_aula": 0,
+    "titulo_nao_canonico": 0,
+    "sem_meta_subtopico": 0,
+    "meta_nao_canonico": 0,
+    "titulo_meta_divergem": 0,
+    "subtopicos_distintos": 41,
+    "conclusion": "Rótulos legados já consolidados; titulo_aula = meta.subtopico em todo o catálogo."
+  },
+  "catch_all_buckets": {
+    "Procedimentos Diversos": 36,
+    "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis": 36,
+    "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis": 1,
+    "Questões Mescladas e Outras Doenças Agudas": 0,
+    "total_suspeitos": 73
+  },
+  "inferencia_concluida": {
+    "completed_at": "2026-06-16T08:45:00.000Z",
+    "metodo": "gemini parcial + --resume-infer --heuristic-only (processos travados encerrados)",
+    "Procedimentos Diversos": {
+      "scanned": 36,
+      "applicable_ge_0_85": 10,
+      "keep_current": 14,
+      "report": "artifacts/catalog-infer-subtopico-procedimentos-diversos.json",
+      "aplicado_historico": { "applied": 21, "data": "2026-06-10" }
+    },
+    "DCNT_mescladas": {
+      "scanned": 36,
+      "applicable_ge_0_85": 2,
+      "keep_current": 34,
+      "report": "artifacts/catalog-infer-subtopico-outras-questoes-e-questoes-mescladas-sobre-doencas-cronicas-nao-transmissiveis.json"
+    },
+    "Transmissiveis_mescladas": {
+      "scanned": 1,
+      "applicable_ge_0_85": 0,
+      "keep_current": 1,
+      "report": "artifacts/catalog-infer-subtopico-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis.json"
+    },
+    "total_aplicavel_agora": 12
+  },
+  "recomendacao": [
+    "Concluir dry-run Gemini nos 73 buckets catch-all",
+    "Revisar propostas com confidence >= 0.85",
+    "Aplicar com catalog:infer-subtopico --from-report=... --apply --min-confidence=0.85",
+    "Auditoria por conteúdo em buckets grandes (Sinais Vitais, Imunização) é fase 2 opcional"
+  ]
+}

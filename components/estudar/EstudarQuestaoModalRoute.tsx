@@ -131,7 +131,7 @@ export function EstudarQuestaoModalRoute({ children }: EstudarQuestaoModalRouteP
           <button
             type="button"
             tabIndex={-1}
-            className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"
+            className="absolute inset-0 bg-slate-900/45 backdrop-blur-[2px]"
             aria-label="Fechar questão"
             onClick={close}
           />

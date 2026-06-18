@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-06-16T09:44:56.811Z",
+  "bucket": "Procedimentos Diversos",
+  "batch_size": 50,
+  "total": 12,
+  "batch_files": [
+    "artifacts/reclass/faixa-c/procedimentos-diversos-v2/batch-01.json"
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "batch": "05",
+  "bucket": "Saúde da Mulher",
+  "inferences": [
+    {
+      "modulo_slug": "instituto-consulplan-geral-saude-da-mulher-1777104235003-3",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-saude-da-mulher-1777104306781-3",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-6",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-saude-da-mulher-1777104323066-3",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-1",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "iset-enfermagem-saude-da-mulher-1777104376057-0",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "itame-enfermagem-saude-da-mulher-1777104424950-2",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "itame-enfermagem-saude-da-mulher-1777104432986-1",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-6",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-7",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-1",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-0",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010917301-0",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011887822-2",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011887822-3",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-saude-da-mulher-1777104389226-0",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-saude-da-mulher-1777104306781-5",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-9",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104222222-1",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104222222-2",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104235003-8",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-3",
+      "suggested_subtopico": "Saúde do Adolescente",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Lei 13.798 — Semana Nacional de Prevenção da Gravidez na Adolescência."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-4",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104222222-7",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104235003-0",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-saude-da-mulher-1777104301763-6",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-saude-da-mulher-1777104301763-8",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-saude-da-mulher-1777104424950-1",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-7",
+      "suggested_subtopico": "Saúde da Criança",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Interpretação de sinais vitais em recém-nascidos — particularidades pediátricas."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-mulher-1777104376057-6",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-mulher-1777104376057-7",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-mulher-1777104408379-2",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-7",
+      "suggested_subtopico": "Saúde da Criança",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Cefalohematoma do recém-nascido após parto laborioso."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-saude-da-mulher-1777104347186-2",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-saude-da-mulher-1777104376057-2",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1778968028412-1",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1780001297464-7",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-1",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-2",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-3",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-4",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104382533-3",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-saude-da-mulher-1777104376057-1",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-3",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-3",
+      "suggested_subtopico": "Saúde da Criança",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Assistência ao recém-nascido — fisiologia neonatal e termorregulação."
+    },
+    {
+      "modulo_slug": "univida-enfermagem-saude-da-mulher-1777104389226-1",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "univida-enfermagem-saude-da-mulher-1777104389226-2",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968323839-4",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "ISTs — tema dominante fora de saúde da mulher."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-4",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Gestação, parto, puerpério ou ginecologia."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-3",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Grupo educativo sobre hepatites virais — ISTs."
+    }
+  ]
+}

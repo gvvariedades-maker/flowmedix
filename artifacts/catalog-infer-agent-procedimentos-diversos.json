@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-06-16T09:46:38.617Z",
+  "mode": "infer",
+  "bucket": "Procedimentos Diversos",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 12,
+    "inferred": 12,
+    "errors": 0,
+    "keep_current": 10,
+    "same_subtopico": 10,
+    "applicable": 2
+  },
+  "proposals": [
+    {
+      "modulo_slug": "fepese-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-3",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "[agent] Elementos da comunicação (códigos, mensagens, canais) — teoria aplicada à gestão; sem subtópico clínico-procedimental canônico.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Requisitos estruturais de quarto para radiofármacos — procedimento hospitalar especializado sem bucket canônico melhor.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011961798-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "[agent] Posicionamento de eletrodos para ECG de 12 derivações — técnica auxiliar de exame complementar; catch-all procedimental.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-6",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Higiene íntima masculina e manejo do prepúcio — procedimento de conforto/higiene corporal.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-oncologia-1778712409051-5",
+      "from": "Procedimentos Diversos",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Higiene oral durante administração de quimioterápicos — cuidado de enfermagem vinculado à administração de medicamentos.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-do-idoso-1778934944659-7",
+      "from": "Procedimentos Diversos",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Avaliação geronto-geriátrica sistematizada — etapa de avaliação do processo de enfermagem no idoso.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Estilos de liderança (autocrático vs participativo) — gestão administrativa, não procedimento técnico.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-4",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Multidisciplinaridade vs interdisciplinaridade em equipe — tema de gestão sem subtópico canônico específico.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-4",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "[agent] Cookies de navegador (TI) — importação atípica sem subtópico clínico; permanece no catch-all.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-5",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Trabalho em equipe, liderança e especialização — gestão da qualidade, não técnica procedimental.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-procedimentos-diversos-1780000535393-8",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Princípios gerais na execução de procedimentos de enfermagem — núcleo temático do bucket catch-all.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-3",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Trabalho em equipe multiprofissional e integralidade — gestão em enfermagem, permanece no catch-all.",
+      "applicable": false,
+      "source": "heuristic"
+    }
+  ]
+}

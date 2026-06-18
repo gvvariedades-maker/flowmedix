@@ -1,0 +1,17 @@
+{
+  "lote": "curativos-piloto-builder-v2",
+  "exported_at": "2026-06-16T04:00:42.568Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779344786992-2",
+      "adm-tec-enfermagem-curativos-e-manejo-de-feridas-1779344773456-1",
+      "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-3"
+    ]
+  },
+  "slugs": [
+    "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779344786992-2",
+    "adm-tec-enfermagem-curativos-e-manejo-de-feridas-1779344773456-1",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-3"
+  ]
+}

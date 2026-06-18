@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-06-16T09:53:46.010Z",
+  "bucket": "Atenção Básica / Saúde da Família",
+  "batch_size": 50,
+  "total": 141,
+  "batch_files": [
+    "artifacts/reclass/faixa-d/atencao-basica/batch-01.json",
+    "artifacts/reclass/faixa-d/atencao-basica/batch-02.json",
+    "artifacts/reclass/faixa-d/atencao-basica/batch-03.json"
+  ]
+}

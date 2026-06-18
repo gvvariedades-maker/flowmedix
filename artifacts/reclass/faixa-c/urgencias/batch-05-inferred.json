@@ -1,0 +1,356 @@
+{
+  "batch": "05",
+  "bucket": "Urgências e Emergências",
+  "inferences": [
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "Conteúdo central de urgências e emergências."
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-1",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-2",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104007115-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-9",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-8",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Identificação de urgências e emergências obstétricas na gestação."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
+      "suggested_subtopico": "Farmacodinâmica e Farmacocinética",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Farmacologia em emergência/RCP."
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006962671-9",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-semiologia-em-enfermagem-1779563521756-1",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-urgencias-e-emergencias-1777103981770-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-urgencias-e-emergencias-1777103981770-1",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-semiologia-em-enfermagem-1779563531989-1",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104056718-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-7",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104083571-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-7",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104090044-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-1",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-2",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-4",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "HAS como problema crônico de saúde pública, não manejo agudo de emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "Conteúdo central de urgências e emergências."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-urgencias-e-emergencias-1777104096594-7",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Sem tema dominante alternativo ≥0,90 — mantém urgências."
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004982901-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-seletiva-enfermagem-semiologia-em-enfermagem-1779563521756-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-seletiva-enfermagem-urgencias-e-emergencias-1777103976379-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-9",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Conteúdo de urgência apesar do slug legado."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-semiologia-em-enfermagem-1779563531989-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-urgencias-e-emergencias-1777103994618-2",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Variáveis de risco em acidente com material biológico."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-urgencias-e-emergencias-1777104031822-2",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104048047-8",
+      "suggested_subtopico": "Farmacodinâmica e Farmacocinética",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Medicamento no suporte avançado de vida — farmacologia de emergência."
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104048047-9",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-0",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Hipoglicemia como complicação do diabetes mellitus."
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-1",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Exposição a material biológico e profilaxia de patógenos."
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-urgencias-e-emergencias-1777104056718-2",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    }
+  ]
+}

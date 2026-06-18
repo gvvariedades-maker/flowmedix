@@ -1,0 +1,357 @@
+{
+  "exported_at": "2026-06-15T17:50:26.471Z",
+  "lote": "curativos-lote-06",
+  "total": 50,
+  "entries": [
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-4",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IBED",
+      "avant_codigo": 4513
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269212740-4",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 2286
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269212740-5",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 2287
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269315587-5",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 2324
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269315587-6",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 2325
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-6",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 2862
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-7",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 2863
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-2",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 4779
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-8",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 4855
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-9",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 4856
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-curativos-e-manejo-de-feridas-1779344819753-4",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IVIN",
+      "avant_codigo": 2852
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-1",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "MARANATHA ASSESSORIA",
+      "avant_codigo": 3543
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-curativos-e-manejo-de-feridas-1779269315587-7",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2326
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-curativos-e-manejo-de-feridas-1779344759089-3",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 2798
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-2",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 4947
+    },
+    {
+      "modulo_slug": "omni-enfermagem-curativos-e-manejo-de-feridas-1779340178514-7",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "OMNI",
+      "avant_codigo": 2336
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-6",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 4833
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009294428-9",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "QUADRIX",
+      "avant_codigo": 4846
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-curativos-e-manejo-de-feridas-1779344773456-5",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2818
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-curativos-e-manejo-de-feridas-1779344813448-4",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2844
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-curativos-e-manejo-de-feridas-1779344813448-5",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2845
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009310940-9",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 4866
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-0",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 4867
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-8",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 4875
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-5",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 2305
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-6",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 2306
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-curativos-e-manejo-de-feridas-1779344751294-7",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 2792
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-curativos-e-manejo-de-feridas-1779344759089-6",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 2801
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-6",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 2810
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-7",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 2811
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-curativos-e-manejo-de-feridas-1780000535393-1",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 4066
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-8",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNESC",
+      "avant_codigo": 3531
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-curativos-e-manejo-de-feridas-1779344813448-3",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 2843
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003654722-2",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4382
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-4",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4463
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-8",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4477
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-9",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 4478
+    },
+    {
+      "modulo_slug": "univali-enfermagem-curativos-e-manejo-de-feridas-1779269228428-4",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 2294
+    },
+    {
+      "modulo_slug": "univali-enfermagem-curativos-e-manejo-de-feridas-1779269228428-5",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 2295
+    },
+    {
+      "modulo_slug": "univali-enfermagem-curativos-e-manejo-de-feridas-1779269255793-4",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 2299
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269305691-8",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2317
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-0",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2319
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-1",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2320
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-2",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2321
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-4",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2323
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779344779828-2",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2824
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779344779828-3",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2825
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779344779828-4",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 2826
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1776055865890-0",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 183
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-4",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 4166
+    }
+  ]
+}

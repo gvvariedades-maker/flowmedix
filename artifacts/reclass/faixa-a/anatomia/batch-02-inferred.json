@@ -1,0 +1,356 @@
+{
+  "batch": "02",
+  "bucket": "Noções de Anatomia",
+  "inferences": [
+    {
+      "modulo_slug": "fundatec-enfermagem-nocoes-de-anatomia-1775331667969-8",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563537258-3",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-verificacao-de-sinais-vitais-1779343811344-2",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Terminologia de pulso na aferição — SV."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-anatomia-1775447762008-0",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-anatomia-1775447762008-1",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-anatomia-1775448275334-1",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-0",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-1",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448291915-2",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-nocoes-de-anatomia-1775448458316-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Hemotórax — emergência torácica."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-semiologia-em-enfermagem-1779563527042-6",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.88,
+      "keep_current": true,
+      "rationale": "Sem tema dominante fora de anatomia — manter bucket."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-nocoes-de-anatomia-1778712122855-1",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Localização do pulso poplíteo — SV."
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-nocoes-de-anatomia-1775448275334-0",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-nocoes-de-anatomia-1775448291915-6",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-3",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-4",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-5",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-6",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-7",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-8",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nocoes-de-anatomia-1775448311662-9",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-nocoes-de-anatomia-1775448491347-5",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Pulso poplíteo como sinal vital."
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-nocoes-de-anatomia-1775448275334-4",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Partes da seringa — via parenteral."
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-nocoes-de-anatomia-1775448413684-0",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Amplitude de movimento e imobilidade — mobilização."
+    },
+    {
+      "modulo_slug": "instituto-agata-enfermagem-nocoes-de-anatomia-1775448291915-4",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "instituto-agata-enfermagem-nocoes-de-anatomia-1775448291915-5",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-3",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-nocoes-de-anatomia-1775448413684-1",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448440742-3",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Quadrante glúteo para IM — via intramuscular."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448491347-3",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448491347-4",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "instituto-darwin-enfermagem-nocoes-de-anatomia-1775447834740-1",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-nocoes-de-anatomia-1775448275334-5",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-nocoes-de-anatomia-1775448291915-7",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-nocoes-de-anatomia-1775448529213-2",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-4",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Nódulo sinoatrial — fisiologia da condução cardíaca."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448275334-2",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448275334-3",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448475837-2",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-nocoes-de-anatomia-1775448475837-3",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "itame-enfermagem-nocoes-de-anatomia-1775447834740-4",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "itame-enfermagem-nocoes-de-anatomia-1775448514037-2",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-2",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Trânsito alimentar pré-intestino delgado — fisiologia digestiva."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010911471-4",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Órgãos do aparelho urinário — fisiologia renal."
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011887822-1",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Camadas do tubo digestivo e peristalse — fisiologia."
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-nocoes-de-anatomia-1775448458316-1",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-nocoes-de-anatomia-1775448491347-6",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-3",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-4",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-nocoes-de-anatomia-1775447782763-5",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Estrutura corporal, sistemas ou terminologia anatômica."
+    }
+  ]
+}

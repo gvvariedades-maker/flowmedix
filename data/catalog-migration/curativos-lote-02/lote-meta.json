@@ -1,0 +1,23 @@
+{
+  "lote": "curativos-lote-02",
+  "subtopico": "Curativos e Manejo de Feridas",
+  "exported_count": 50,
+  "golden_reference": "examples/questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+  "builder": "upgradePremiumCurativos (VF + múltipla escolha)",
+  "status": "applied",
+  "applied_at": "2026-06-15",
+  "applied_count": 50,
+  "families": {
+    "certo_errado": 2,
+    "conceito": 43,
+    "protocolo": 5
+  },
+  "notes": "Overlap com lote-01 (~10 slugs alfabéticos iniciais); reaplicação idempotente. Inclui questões com slug processo-de-enfermagem classificadas no subtópico Curativos.",
+  "workflow": [
+    "1. npm run catalog:export-lote -- --lote=curativos-lote-02 --subtopico=\"Curativos e Manejo de Feridas\" --limit=50",
+    "2. npm run catalog:upgrade-premium -- --lote=curativos-lote-02 --write --force",
+    "3. npm run catalog:apply-lote -- --lote=curativos-lote-02 --dry-run",
+    "4. npm run catalog:apply-lote -- --lote=curativos-lote-02 --apply"
+  ],
+  "artifact": "artifacts/catalog-migration-curativos-lote-02-applied.json"
+}

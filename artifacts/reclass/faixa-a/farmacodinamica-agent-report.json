@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-06-16T09:32:24.341Z",
+  "mode": "infer",
+  "bucket": "Farmacodinâmica e Farmacocinética",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 6,
+    "inferred": 6,
+    "errors": 0,
+    "keep_current": 4,
+    "same_subtopico": 4,
+    "applicable": 2
+  },
+  "proposals": [
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "suggested": "Farmacodinâmica e Farmacocinética",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Anestésicos locais — farmacologia de anestesia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-efeitos-adversos-dos-medicamentos-1780066909125-3",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Reações alérgicas a medicamentos — vigilância na administração.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-6",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "suggested": "Farmacodinâmica e Farmacocinética",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Omeprazol EV — farmacocinética e administração.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-7",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "suggested": "Farmacodinâmica e Farmacocinética",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Diazepam — farmacologia e meia-vida.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-farmacodinamica-e-farmacocinetica-1778712122855-8",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Contraste radiológico — cuidados na administração de medicamentos/exames.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+      "from": "Farmacodinâmica e Farmacocinética",
+      "suggested": "Farmacodinâmica e Farmacocinética",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Fármacos para angina (propranolol, isossorbida) — farmacodinâmica cardiovascular.",
+      "applicable": false,
+      "source": "heuristic"
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "batch": "02",
+  "bucket": "Infecções Sexualmente Transmissíveis (ISTs)",
+  "inferences": [
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009392850-1",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Sinais suspeitos de câncer de mama — mamografia SUS."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-1",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Não é uma IST cujo agente etiológico é um vírus:"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-1",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Assinale a única alternativa que corresponde a uma IST:"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-2",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: A sigla DST, que antes era amplamente utilizada, passou a ser substit…"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-4",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: É a classificação do CID 10 que se refere à doença pelo vírus da imun…"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-4",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Gonorreia, sífilis e tricomoníase são doenças consideradas:"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-1",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Envelhecimento — redução da densidade óssea."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-2",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Objeto perfurante cravado — tamponamento vascular."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-9",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Rastreio citopatológico do câncer de colo de útero."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-6",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Papanicolau — rastreamento de lesões precursoras."
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-6",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Higiene bucal do cuidador — promoção da saúde."
+    },
+    {
+      "modulo_slug": "fcc-enfermagem-processo-de-enfermagem-1776056140199-5",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Atribuições do técnico no Processo de Enfermagem."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-5",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Técnica asséptica em exames invasivos."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001903454-0",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "HAS — medidas não farmacológicas cardiovasculares."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-5",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: O diagnóstico e o tratamento das pessoas com Infecções Sexualmente Tr…"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-2",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Acerca das Infecções Sexualmente Transmissíveis (ISTs), correlacione …"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-6",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: As infecções sexualmente transmissíveis podem ser transmitidas por: 1…"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-1",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Vigilância de DCNT e fatores de risco modificáveis."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-6",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: O papilomavírus humano (HPV) é responsável por uma infecção sexualmen…"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-7",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Infecções Sexualmente Transmissíveis (IST) são causadas por diferente…"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-6",
+      "suggested_subtopico": "Enfermagem do Trabalho",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Níveis de prevenção do enfermeiro do trabalho."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-7",
+      "suggested_subtopico": "Enfermagem do Trabalho",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "LER/DORT — assistência ao trabalhador."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-6",
+      "suggested_subtopico": "Enfermagem do Trabalho",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Enfermagem e doenças ocupacionais no ambiente laboral."
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-8",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Devemos considerar, para a assistência à gestante portadora de HIV, a…"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-8",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: O que pode acontecer se uma IST não for diagnosticada e tratada adequ…"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-9",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Qual a principal via de transmissão das IST:"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572464822-1",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: As Infecções Sexualmente Transmissíveis (IST) são causadas por vírus,…"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-0",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Quais são alguns exemplos de IST:"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-1",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Por que é importante alertar as parcerias sexuais quando uma IST é di…"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-4",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Diferença entre evolução e anotação de enfermagem."
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-processo-de-enfermagem-1776055865890-7",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Finalidade da anotação de enfermagem."
+    },
+    {
+      "modulo_slug": "funcepe-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-3",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: As infecções sexualmente transmissíveis são causadas por vários tipos…"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-5",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: As Infecções Sexualmente Transmissíveis são transmitidas, principalme…"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-7",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: As infecções sexualmente transmissíveis (IST), quando tratadas, melho…"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-8",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: No que se refere às Infecções Sexualmente Transmissíveis (IST), é cor…"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-imunizacao-1779572528473-2",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: A Síndrome da Imunodeficiência Adquirida (AIDS) é uma doença contraíd…"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-8",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Ações educativas em saúde e segurança do trabalho visam conscientizar…"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-7",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: O termo \"sexo seguro\" é associado ao uso exclusivo de preservativo. T…"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1776056009428-7",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Registros de enfermagem — finalidades e comunicação."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-6",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Notificação compulsória de esporotricose (2025)."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Doenças agudas do trato digestivo — abdome agudo."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-7",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Doenças musculoesqueléticas — gota, Paget, espondilite."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "APH — sinalização e segurança na cena de acidente."
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-processo-de-enfermagem-1776056173194-3",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Registros de enfermagem — finalidades legais e assistenciais."
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-5",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "História natural da doença — fases pré-clínica a sequelas."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-7",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Modelo História Natural das Doenças — conceito saúde-doença."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563868300-6",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Prevenção da dengue — controle de criadouros do Aedes."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1776056129848-1",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Finalidade do registro de enfermagem no prontuário."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011887822-7",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Eventos adversos — metas internacionais de segurança."
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-7",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Metas internacionais — higiene das mãos, cirurgia segura, LPP."
+    }
+  ]
+}

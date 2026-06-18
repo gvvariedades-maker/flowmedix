@@ -1,0 +1,356 @@
+{
+  "batch": "01",
+  "bucket": "Noções de Fisiologia",
+  "inferences": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-nocoes-de-fisiologia-1775448586547-3",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-nocoes-de-fisiologia-1775501962697-2",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-nocoes-de-fisiologia-1775448586547-2",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-nocoes-de-fisiologia-1776056116422-1",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-nocoes-de-fisiologia-1776056116422-2",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-exames-laboratoriais-1779563631609-3",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Tubo/cor para dosagem de glicose — coleta laboratorial."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1775448586547-7",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Classificação de estados febris — terminologia de temperatura/SV."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1775448599930-2",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1776055811481-5",
+      "suggested_subtopico": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Parasito heteroxênico — parasitologia."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1776055998470-0",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1776055998470-1",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-nocoes-de-fisiologia-1776055998470-2",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-laboratoriais-1779563553840-0",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Slug de exames laboratoriais — coleta."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-laboratoriais-1779563559434-2",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Slug de exames laboratoriais — coleta."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nocoes-de-fisiologia-1775448615466-5",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Músculo estabilizador da coluna — anatomia muscular."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-3",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Contexto PE sem fisiologia dominante ≥0,90."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-7",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "DCNT — tema dominante fora de fisiologia."
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-nocoes-de-fisiologia-1775501976529-0",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-complementares-1779563655698-2",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Hemograma e células sanguíneas — exame laboratorial."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-laboratoriais-1779563553840-7",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Dosagens bioquímicas colorimétricas — laboratório."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-laboratoriais-1779563553840-8",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Bilirrubina total e frações — exame laboratorial."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-exames-laboratoriais-1779563613404-3",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Prova do laço — técnica de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-nocoes-de-fisiologia-1775448599930-0",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Definição de sinais vitais — PA/FC/FR/temperatura."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-nocoes-de-fisiologia-1775501938701-2",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Tipos de cinesioterapia — mobilização/reabilitação."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-exames-laboratoriais-1779563650975-4",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Cistoscopia — exame complementar laboratorial."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-fisiologia-1775448586547-0",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-fisiologia-1775448586547-5",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Valor de pressão arterial — parâmetro de SV."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-fisiologia-1775448586547-6",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-fisiologia-1775448599930-1",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-fisiologia-1775448615466-1",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nocoes-de-fisiologia-1776055798601-1",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-7",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Ferro e nutrição — promoção/prevenção nutricional."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-1",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Contexto PE sem fisiologia dominante ≥0,90."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002549800-5",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Contexto PE sem fisiologia dominante ≥0,90."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-0",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563480978-8",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com fisiologia ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563486900-5",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-semiologia-em-enfermagem-1779563491765-6",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com fisiologia ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-nocoes-de-fisiologia-1775448615466-4",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Sinais vitais como indicadores clínicos."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-semiologia-em-enfermagem-1779563467322-3",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com fisiologia ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-nocoes-de-fisiologia-1775448599930-3",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-fisiologia-1775448529213-6",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-fisiologia-1775448599930-5",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Frequência respiratória normal em repouso — SV."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-fisiologia-1776055798601-3",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-fisiologia-1776055811481-4",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-nocoes-de-fisiologia-1776055942033-0",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-nocoes-de-fisiologia-1775448615466-0",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-2",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com fisiologia ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-exames-laboratoriais-1779563549311-7",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Alterações de eletrólitos em exames — laboratório."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-nocoes-de-fisiologia-1775448529213-4",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Funções orgânicas, homeostase ou fisiologia aplicada."
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "batch": "07",
+  "bucket": "Urgências e Emergências",
+  "inferences": [
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-4",
+      "suggested_subtopico": "Feridas e Queimaduras",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Cuidados pré-hospitalares à vítima de queimadura."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103981770-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103988389-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "Conteúdo central de urgências e emergências."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-7",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777103994618-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104000896-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104000896-1",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104012755-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "Conteúdo central de urgências e emergências."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104048047-7",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "Conteúdo central de urgências e emergências."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-6",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-7",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104063550-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-1",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-2",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104077075-9",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-1",
+      "suggested_subtopico": "Saúde da Criança",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Desidratação e manejo de criança na UPA — pediatria."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-2",
+      "suggested_subtopico": "Feridas e Queimaduras",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Indicação de intubação em queimadura extensa."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Protocolo ou conduta de urgência/emergência."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-1",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Gestante com cefaleia intensa — suspeita de pré-eclâmpsia/eclâmpsia."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-2",
+      "suggested_subtopico": "Feridas e Queimaduras",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Cálculo de superfície corporal queimada (regra dos nove)."
+    }
+  ]
+}

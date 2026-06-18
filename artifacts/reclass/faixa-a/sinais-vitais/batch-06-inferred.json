@@ -1,0 +1,356 @@
+{
+  "batch": "06",
+  "bucket": "Verificação de Sinais Vitais",
+  "inferences": [
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343883917-6",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343919045-4",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343919045-5",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343919045-6",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-3",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-4",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Técnica de aferição de PA."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344127707-5",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344152370-3",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344152370-4",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344152370-5",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344196733-7",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-2",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-6",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344237445-7",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779344245160-8",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Trauma amputação — avaliação primária BT."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Choque grave na UPA."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0",
+      "suggested_subtopico": "Saúde Mental",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Distúrbios psicológicos — saúde mental."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1778969737311-0",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1778969737311-1",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo de verificação de sinais vitais."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1778969760552-4",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1778969760552-5",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1778969760552-6",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1779343919045-8",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1779344089179-5",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1779344117207-0",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo de verificação de sinais vitais."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1779344117207-7",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-verificacao-de-sinais-vitais-1779344205200-0",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-2",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Icterícia e obstrução biliar — semiologia."
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-semiologia-em-enfermagem-1779563527042-3",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Semiologia de insuficiência cardíaca."
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-verificacao-de-sinais-vitais-1779343822075-7",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-verificacao-de-sinais-vitais-1779343856589-0",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-verificacao-de-sinais-vitais-1779344097180-3",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1776056158507-3",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Melhor em Casa — atribuições domiciliar."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1776056181857-8",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Anotações de enfermagem — documentação PE."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780001903454-3",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Eletrocardiograma — exame complementar."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-0",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "DCNT (HAS, diabetes, ICC)."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-4",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-6",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "DCNT (HAS, diabetes, ICC)."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-0",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Reação anafilática pós-medicamento."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-2",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Analgesia em politrauma — administração medicamentos."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-4",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Manejo medicamentoso de crise hipertensiva."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-7",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.88,
+      "keep_current": false,
+      "rationale": "Perfusão renal na UTI — fisiologia hemodinâmica."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-9",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "TCE grave com hipertensão intracraniana."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-7",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Emergência hipertensiva com papiledema."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-2",
+      "suggested_subtopico": "Questões Mescladas e Outras Doenças Agudas",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Glomerulonefrite aguda — doença renal aguda."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011956256-7",
+      "suggested_subtopico": "Saúde da Criança",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Teste do coraçãozinho — triagem neonatal."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-2",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Sons respiratórios em crianças."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Fratura úmero e lesão nervo radial — trauma."
+    }
+  ]
+}

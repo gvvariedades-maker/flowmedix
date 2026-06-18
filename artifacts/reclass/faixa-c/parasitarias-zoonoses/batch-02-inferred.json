@@ -1,0 +1,27 @@
+{
+  "batch": "02",
+  "bucket": "Doenças Parasitárias e Zoonoses",
+  "inferences": [
+    {
+      "modulo_slug": "selecon-geral-doencas-parasitarias-e-zoonoses-1777103471372-8",
+      "suggested_subtopico": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.98,
+      "keep_current": true,
+      "rationale": "Malária causada por protozoários."
+    },
+    {
+      "modulo_slug": "unifil-geral-doencas-parasitarias-e-zoonoses-1777103611576-2",
+      "suggested_subtopico": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "Epidemiologia, vetor e transmissão da malária no Brasil."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-5",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Plano de controle de escorpião — educação em saúde na ESF."
+    }
+  ]
+}

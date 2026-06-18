@@ -7,6 +7,10 @@
     {
       "path": "/api/admin/manutencao/simulado-retention",
       "schedule": "0 4 1 * *"
+    },
+    {
+      "path": "/api/simulado/weekly/generate",
+      "schedule": "0 6 * * 1"
     }
   ]
 }

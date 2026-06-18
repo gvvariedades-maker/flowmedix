@@ -1,0 +1,1148 @@
+{
+  "generated_at": "2026-06-16T11:01:43.047Z",
+  "mode": "infer",
+  "bucket": "Saúde da Mulher",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 113,
+    "inferred": 113,
+    "errors": 0,
+    "keep_current": 100,
+    "same_subtopico": 100,
+    "applicable": 13
+  },
+  "proposals": [
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-2",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-4",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-da-mulher-1780067036141-5",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-homem-1780067036141-6",
+      "from": "Saúde da Mulher",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Saúde do homem — fimose e patologias do pênis.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-saude-da-mulher-1777104335102-0",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1777104335102-1",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1777104335102-2",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1777104335102-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934936220-9",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-0",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-1",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-2",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-da-mulher-1778934944659-4",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-2",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104261182-1",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104306781-4",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-4",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo central de saúde da mulher.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-5",
+      "from": "Saúde da Mulher",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Zika/virose — tema dominante fora de saúde da mulher.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-6",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1777104432986-7",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1780001362784-8",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-da-mulher-1780001440222-0",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-seguranca-do-paciente-1777102918981-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Recipientes de acondicionamento em sala de parto — segurança do paciente.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-semiologia-em-enfermagem-1779563491765-5",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-saude-da-mulher-1777104335102-5",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-saude-da-mulher-1777104347186-5",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-geral-saude-da-mulher-1777104347186-4",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-5",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-8",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-8",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Exame físico do recém-nascido a termo — pediatria/neonatologia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-9",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-saude-da-mulher-1777104323066-1",
+      "from": "Saúde da Mulher",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] ISTs — tema dominante fora de saúde da mulher.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-5",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-6",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-9",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104222222-5",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-2",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-4",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-5",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-6",
+      "from": "Saúde da Mulher",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] ISTs — tema dominante fora de saúde da mulher.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104235003-7",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104323066-7",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104335102-6",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104335102-7",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104340484-6",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-saude-da-mulher-1777104347186-0",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-geral-saude-da-mulher-1777104235003-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-saude-da-mulher-1777104306781-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-6",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-jk-enfermagem-saude-da-mulher-1777104323066-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-1",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iset-enfermagem-saude-da-mulher-1777104376057-0",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-saude-da-mulher-1777104424950-2",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-saude-da-mulher-1777104432986-1",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-6",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010579953-7",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-1",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010594524-0",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010917301-0",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011887822-2",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011887822-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-saude-da-mulher-1777104389226-0",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-saude-da-mulher-1777104306781-5",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-9",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104222222-1",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104222222-2",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104235003-8",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde do Adolescente",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Lei 13.798 — Semana Nacional de Prevenção da Gravidez na Adolescência.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-4",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104222222-7",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-saude-da-mulher-1777104235003-0",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-saude-da-mulher-1777104301763-6",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-saude-da-mulher-1777104301763-8",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-saude-da-mulher-1777104424950-1",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780008241722-7",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Interpretação de sinais vitais em recém-nascidos — particularidades pediátricas.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-mulher-1777104376057-6",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-mulher-1777104376057-7",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-saude-da-mulher-1777104408379-2",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-semiologia-em-enfermagem-1779563521756-7",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Cefalohematoma do recém-nascido após parto laborioso.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-saude-da-mulher-1777104347186-2",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-saude-da-mulher-1777104376057-2",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1778968028412-1",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1780001297464-7",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-1",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-2",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104295283-4",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-saude-da-mulher-1777104382533-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-saude-da-mulher-1777104376057-1",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010905023-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Assistência ao recém-nascido — fisiologia neonatal e termorregulação.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-saude-da-mulher-1777104389226-1",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univida-enfermagem-saude-da-mulher-1777104389226-2",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968323839-4",
+      "from": "Saúde da Mulher",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] ISTs — tema dominante fora de saúde da mulher.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-atencao-basica-saude-da-familia-1778968357339-4",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Grupo educativo sobre hepatites virais — ISTs.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-5",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104261182-2",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104261182-6",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104295283-1",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104323066-6",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104340484-0",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-3",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-6",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104408379-7",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-da-mulher-1777104415052-0",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563467322-8",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-semiologia-em-enfermagem-1779563527042-7",
+      "from": "Saúde da Mulher",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Gestação, parto, puerpério ou ginecologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-1",
+      "from": "Saúde da Mulher",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "[agent] Gestante com cefaleia intensa — urgência obstétrica (pré-eclâmpsia).",
+      "applicable": true,
+      "source": "heuristic"
+    }
+  ]
+}

@@ -1,6 +1,5 @@
 import { Section, Text } from '@react-email/components';
 import {
-  AVANT_LOGO_BOLT,
   AVANT_LOGO_COLORS,
   AVANT_LOGO_DIMENSIONS,
   AVANT_LOGO_GRADIENTS,
@@ -10,8 +9,7 @@ import {
 
 const ICON = AVANT_LOGO_DIMENSIONS.icon.size;
 const ICON_RADIUS = AVANT_LOGO_DIMENSIONS.icon.radius;
-const BOLT_H = Math.round(ICON * AVANT_LOGO_DIMENSIONS.icon.boltInsetRatio);
-const BOLT_W = Math.round(BOLT_H * (AVANT_LOGO_BOLT.width / AVANT_LOGO_BOLT.height));
+const ICON_LETTER_SIZE = Math.round(ICON * 0.48);
 
 /** Lockup estático para clientes de e-mail (tabelas + estilos inline). */
 export function AvantLogoEmail() {
@@ -31,10 +29,7 @@ export function AvantLogoEmail() {
         cellPadding={0}
         cellSpacing={0}
         border={0}
-        style={{
-          borderCollapse: 'separate',
-          borderSpacing: 0,
-        }}
+        style={{ borderCollapse: 'separate', borderSpacing: 0 }}
       >
         <tbody>
           <tr>
@@ -92,71 +87,25 @@ export function AvantLogoEmail() {
                                 background: AVANT_LOGO_GRADIENTS.icon,
                                 verticalAlign: 'middle',
                                 textAlign: 'center',
-                                boxShadow: '0 4px 16px rgba(48, 24, 200, 0.35)',
+                                boxShadow: AVANT_LOGO_COLORS.iconOuterShadow,
                               }}
                               aria-hidden
                             >
-                              <table
-                                role="presentation"
-                                cellPadding={0}
-                                cellSpacing={0}
-                                border={0}
-                                align="center"
+                              <Text
                                 style={{
-                                  margin: '0 auto',
-                                  borderCollapse: 'collapse',
+                                  margin: 0,
+                                  padding: 0,
+                                  fontFamily:
+                                    '"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+                                  fontSize: `${ICON_LETTER_SIZE}px`,
+                                  fontWeight: 800,
+                                  lineHeight: '1',
+                                  color: '#ffffff',
+                                  textAlign: 'center',
                                 }}
                               >
-                                <tbody>
-                                  <tr>
-                                    <td
-                                      align="center"
-                                      valign="middle"
-                                      style={{
-                                        width: `${ICON}px`,
-                                        height: `${ICON}px`,
-                                        lineHeight: 0,
-                                      }}
-                                    >
-                                      <svg
-                                        width={BOLT_W}
-                                        height={BOLT_H}
-                                        viewBox={AVANT_LOGO_BOLT.viewBox}
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        style={{ display: 'block', margin: '0 auto' }}
-                                        aria-hidden
-                                      >
-                                        <defs>
-                                          <linearGradient
-                                            id="avant-email-bolt"
-                                            x1="0%"
-                                            y1="0%"
-                                            x2="0%"
-                                            y2="100%"
-                                          >
-                                            <stop
-                                              offset="0%"
-                                              stopColor={AVANT_LOGO_GRADIENTS.boltStops[0]}
-                                            />
-                                            <stop
-                                              offset="52%"
-                                              stopColor={AVANT_LOGO_GRADIENTS.boltStops[1]}
-                                            />
-                                            <stop
-                                              offset="100%"
-                                              stopColor={AVANT_LOGO_GRADIENTS.boltStops[2]}
-                                            />
-                                          </linearGradient>
-                                        </defs>
-                                        <polygon
-                                          points={AVANT_LOGO_BOLT.polygon}
-                                          fill="url(#avant-email-bolt)"
-                                        />
-                                      </svg>
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
+                                A
+                              </Text>
                             </td>
                             <td style={{ width: `${gap}px` }} aria-hidden>
                               &nbsp;
@@ -167,13 +116,13 @@ export function AvantLogoEmail() {
                                   margin: 0,
                                   padding: 0,
                                   fontFamily:
-                                    'Syne, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+                                    '"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
                                   fontSize: `${wordmarkSize}px`,
-                                  fontWeight: 900,
+                                  fontWeight: 800,
                                   lineHeight: '1',
                                   letterSpacing: `${letterSpacing}px`,
                                   textTransform: 'uppercase',
-                                  color: AVANT_LOGO_GRADIENTS.boltStops[1],
+                                  color: AVANT_LOGO_GRADIENTS.wordmarkStops[2],
                                 }}
                               >
                                 AVANT

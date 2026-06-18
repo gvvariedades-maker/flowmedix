@@ -1,0 +1,356 @@
+{
+  "batch": "01",
+  "bucket": "Coleta de Exames Laboratoriais",
+  "inferences": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-1",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-coleta-de-exames-laboratoriais-1779562725491-6",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-exames-complementares-1779563668619-6",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "exame de imagem — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-exames-laboratoriais-1779563613404-2",
+      "suggested_subtopico": "Saúde da Criança",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Objetivo do teste do pezinho na triagem neonatal — saúde da criança."
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-exames-laboratoriais-1779563631609-4",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-exames-laboratoriais-1779563631609-2",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-exames-laboratoriais-1779563631609-3",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Interpretação de exame laboratorial — fisiologia, não técnica de coleta."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-8",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562725491-3",
+      "suggested_subtopico": "Saúde da Criança",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Timing e indicações do teste do pezinho — triagem neonatal."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-0",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562730776-1",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
+      "suggested_subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Mescla coleta laboratorial e preparo cirúrgico sem tema dominante de coleta."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-1",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Conceito geral de biossegurança, não técnica de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-2",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-3",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Protocolo APS para saúde da mulher — não coleta laboratorial."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-4",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562768558-5",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-exames-complementares-1779563679414-3",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "MAPA — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-2",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Papanicolau — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-8",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-5",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562716126-7",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Assistência na coleta de Papanicolau — saúde da mulher."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562725491-0",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-0",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-3",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-4",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-5",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-7",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-8",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-2",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-3",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-5",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-6",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com coleta laboratorial ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-8",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563225798-0",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-coleta-de-exames-laboratoriais-1779563248005-4",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-complementares-1779563650975-7",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "antropometria — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-complementares-1779563679414-1",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "exame de imagem — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-laboratoriais-1779563549311-5",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com coleta laboratorial ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-laboratoriais-1779563549311-6",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-laboratoriais-1779563553840-0",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Distúrbios do equilíbrio hidroeletrolítico — fisiologia."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-exames-laboratoriais-1779563559434-2",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Manejo de desidratação e infusão — fisiologia/manejo clínico."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-5",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com coleta laboratorial ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-2",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-exames-complementares-1779563655698-8",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Incidências radiológicas — exame complementar de imagem."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-exames-complementares-1779563655698-9",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "exame de imagem — tema dominante fora de coleta laboratorial."
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-1",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta, conservação e encaminhamento de amostra bacteriológica."
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-exames-laboratoriais-1779563650975-2",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-exames-laboratoriais-1779563621885-3",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Testes rápidos para ampliar acesso ao diagnóstico — prevenção/rastreamento."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-coleta-de-exames-laboratoriais-1779562730776-6",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Coleta sanguínea, urina, fezes ou preservação de amostras."
+    }
+  ]
+}

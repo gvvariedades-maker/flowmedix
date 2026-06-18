@@ -1,0 +1,548 @@
+{
+  "generated_at": "2026-06-16T09:50:18.084Z",
+  "mode": "infer",
+  "bucket": "Doenças Parasitárias e Zoonoses",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 53,
+    "inferred": 53,
+    "errors": 0,
+    "keep_current": 31,
+    "same_subtopico": 31,
+    "applicable": 22
+  },
+  "proposals": [
+    {
+      "modulo_slug": "amauc-geral-doencas-parasitarias-e-zoonoses-1777103604185-2",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "[agent] Características morfológicas do Aedes aegypti vetor da dengue — arbovirose viral.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "aocp-geral-doencas-parasitarias-e-zoonoses-1777103575693-5",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Fatores predisponentes às arboviroses (urbanização, clima) — interesse epidemiológico viral.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "apice-geral-doencas-parasitarias-e-zoonoses-1777103554284-0",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Vetor Anopheles da malária — protozoose parasitária.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-geral-doencas-parasitarias-e-zoonoses-1777103471372-4",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.98,
+      "keep_current": true,
+      "rationale": "[agent] Transmissão por Plasmodium/Anopheles — malária.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-geral-doencas-parasitarias-e-zoonoses-1777103583552-6",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Sinônimos e etiologia da malária (protozoário).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-7",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Prevenção de parasitoses intestinais (amebíase, giardíase).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-geral-doencas-parasitarias-e-zoonoses-1776578667341-0",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Ciclo de vida do Aedes e dengue — arbovirose viral.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-geral-doencas-parasitarias-e-zoonoses-1777103611576-5",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Transmissão da malária pela fêmea do Anopheles.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "contemax-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-2",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Ação educativa comunitária de prevenção — promoção à saúde.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "copese-ufpi-geral-doencas-parasitarias-e-zoonoses-1777103554284-8",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Malária e leishmaniose por protozoários.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "copese-ufpi-geral-doencas-parasitarias-e-zoonoses-1777103554284-9",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Aspectos epidemiológicos e clínicos da malária.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "copese-ufpi-geral-doencas-parasitarias-e-zoonoses-1777103575693-0",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Febre do Nilo Ocidental — arbovirose transmitida por Culex.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-5",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Geo-helmintíases e prevenção de parasitoses intestinais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563768972-8",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Definição de agente etiológico — conceito epidemiológico básico.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-geral-doencas-parasitarias-e-zoonoses-1777103590498-5",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Definição clássica da malária (Plasmodium).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-doencas-parasitarias-e-zoonoses-1780001148264-5",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Vias de transmissão de parasitas (fecal-oral, vetorial).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-1",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Definição de vírus em microbiologia — noção geral de doenças transmissíveis.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-2",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Medidas de prevenção de doenças parasitárias fecal-orais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776578199777-0",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Definição de vetor — conceito epidemiológico.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funcern-geral-doencas-parasitarias-e-zoonoses-1777103539922-3",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Modo de transmissão da malária por Anopheles.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-8",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "[agent] Classificação de fatores ambientais em epidemiologia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-6",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Parasita transmitido por vetor — conduta de prevenção em visita domiciliar.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-4",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Desratização como medida de controle de roedores — promoção/prevenção.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idcap-geral-doencas-parasitarias-e-zoonoses-1777103478442-5",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Febre maculosa por Rickettsia (bactéria) via carrapato.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idcap-geral-doencas-parasitarias-e-zoonoses-1777103478442-6",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.98,
+      "keep_current": true,
+      "rationale": "[agent] Malária causada por protozoários Plasmodium.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-parasitarias-e-zoonoses-1778712315153-0",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Leptospirose — zoonose por exposição à urina de roedores.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-parasitarias-e-zoonoses-1778712315153-1",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Leishmaniose visceral (calazar) — sintomas e epidemiologia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-parasitarias-e-zoonoses-1780066992037-3",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Leishmaniose tegumentar americana — manifestações.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-parasitarias-e-zoonoses-1780066992037-4",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Sintomas clínicos da leishmaniose.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-doencas-parasitarias-e-zoonoses-1780066992037-5",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.98,
+      "keep_current": true,
+      "rationale": "[agent] Esquistossomose por Schistosoma — helmintíase.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-5",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Higienização em UAN e prevenção de DTAs — promoção à saúde.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-doencas-parasitarias-e-zoonoses-1778934909266-7",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Raiva — zoonose viral e profilaxia pós-exposição.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-doencas-parasitarias-e-zoonoses-1778934909266-8",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Toxoplasmose — protozoose e transmissão.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778934918280-0",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "[agent] Hantavirose — zoonose viral e medidas de prevenção.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-geral-doencas-parasitarias-e-zoonoses-1777103452899-6",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Características do vetor Anopheles darlingi da malária.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-0",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "[agent] Prevenção de infectoparasitárias fecal-orais na atenção básica.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1778968028412-4",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Papel do técnico na ESF no enfrentamento de verminoses.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-atencao-basica-saude-da-familia-1780001362784-0",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Atenção Básica / Saúde da Família",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Atribuições do técnico de enfermagem na ESF para verminoses.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-geral-doencas-parasitarias-e-zoonoses-1777103575693-8",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.98,
+      "keep_current": true,
+      "rationale": "[agent] Doença de Chagas — Trypanosoma cruzi e barbeiro.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-geral-doencas-parasitarias-e-zoonoses-1777103452899-7",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Conceito de doenças infectoparasitárias (protozoários, helmintos).",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-geral-doencas-parasitarias-e-zoonoses-1777103496829-0",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Terçã maligna — malária por P. falciparum.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-atencao-basica-saude-da-familia-1778968194611-0",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Controle de criadouros do Aedes aegypti — arbovirose viral.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-geral-doencas-parasitarias-e-zoonoses-1777103452899-3",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Febre maculosa — Rickettsia rickettsii transmitida por carrapato.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-geral-doencas-parasitarias-e-zoonoses-1777103597693-2",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Controle da malária e eliminação do vetor Anopheles.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-geral-doencas-parasitarias-e-zoonoses-1777103611576-4",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Malária — protozoários transmitidos por Anopheles.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "lj-assessoria-geral-doencas-parasitarias-e-zoonoses-1777103502990-1",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.98,
+      "keep_current": true,
+      "rationale": "[agent] Plasmodium falciparum como agente da malária.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "lj-assessoria-geral-doencas-parasitarias-e-zoonoses-1777103502990-2",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Doença de Lyme — borreliose bacteriana transmitida por carrapato.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563793798-4",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Controle biológico de pragas — vigilância epidemiológica ambiental.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-8",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Larvicidas em criadouros do Aedes aegypti — controle de dengue.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-geral-doencas-parasitarias-e-zoonoses-1777103496829-6",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Doença de Chagas — fases aguda e crônica.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-geral-doencas-parasitarias-e-zoonoses-1777103471372-8",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.98,
+      "keep_current": true,
+      "rationale": "[agent] Malária causada por protozoários.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-geral-doencas-parasitarias-e-zoonoses-1777103611576-2",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Epidemiologia, vetor e transmissão da malária no Brasil.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-5",
+      "from": "Doenças Parasitárias e Zoonoses",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Plano de controle de escorpião — educação em saúde na ESF.",
+      "applicable": true,
+      "source": "heuristic"
+    }
+  ]
+}

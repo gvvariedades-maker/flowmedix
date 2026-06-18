@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-06-16T09:35:17.052Z",
+  "bucket": "Saúde Mental",
+  "batch_size": 50,
+  "total": 22,
+  "batch_files": [
+    "artifacts/reclass/faixa-b/saude-mental/batch-01.json"
+  ]
+}

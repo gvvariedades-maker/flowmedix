@@ -1,0 +1,110 @@
+{
+  "generated_at": "2026-06-16T09:38:11.369Z",
+  "mode": "apply",
+  "bucket": "Processamento de Artigos e Produtos de Saúde",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 9,
+    "inferred": 9,
+    "errors": 0,
+    "keep_current": 7,
+    "same_subtopico": 7,
+    "applicable": 2,
+    "applied": 2
+  },
+  "proposals": [
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-9",
+      "from": "Processamento de Artigos e Produtos de Saúde",
+      "suggested": "Processamento de Artigos e Produtos de Saúde",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "[agent] Limpeza e desinfecção em ambulância — processamento.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003031246-7",
+      "from": "Processamento de Artigos e Produtos de Saúde",
+      "suggested": "Processamento de Artigos e Produtos de Saúde",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Material estéril — processamento.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-5",
+      "from": "Processamento de Artigos e Produtos de Saúde",
+      "suggested": "Processamento de Artigos e Produtos de Saúde",
+      "confidence": 0.97,
+      "keep_current": true,
+      "rationale": "[agent] Indicadores biológicos de esterilização.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-6",
+      "from": "Processamento de Artigos e Produtos de Saúde",
+      "suggested": "Processamento de Artigos e Produtos de Saúde",
+      "confidence": 0.98,
+      "keep_current": true,
+      "rationale": "[agent] Definição de produto estéril.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-processamento-de-artigos-e-produtos-de-saude-1778712203076-7",
+      "from": "Processamento de Artigos e Produtos de Saúde",
+      "suggested": "Processamento de Artigos e Produtos de Saúde",
+      "confidence": 0.96,
+      "keep_current": true,
+      "rationale": "[agent] Criticidade de artigos para saúde.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-7",
+      "from": "Processamento de Artigos e Produtos de Saúde",
+      "suggested": "Enfermagem em Centro Cirúrgico",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Hamper cirúrgico — centro cirúrgico, não processamento geral.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-5",
+      "from": "Processamento de Artigos e Produtos de Saúde",
+      "suggested": "Processamento de Artigos e Produtos de Saúde",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Classificação de equipamentos por contaminação.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011879977-7",
+      "from": "Processamento de Artigos e Produtos de Saúde",
+      "suggested": "Processamento de Artigos e Produtos de Saúde",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "[agent] Artigos hospitalares — processamento.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-2",
+      "from": "Processamento de Artigos e Produtos de Saúde",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Manutenção de equipamentos — gestão da qualidade/NSP.",
+      "applicable": true,
+      "source": "heuristic"
+    }
+  ],
+  "apply_errors": []
+}

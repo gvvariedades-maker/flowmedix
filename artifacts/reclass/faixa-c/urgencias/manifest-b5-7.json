@@ -1,0 +1,11 @@
+{
+  "generated_at": "2026-06-16T12:00:00.000Z",
+  "bucket": "Urgências e Emergências",
+  "batch_size": 50,
+  "total": 134,
+  "batch_files": [
+    "artifacts/reclass/faixa-c/urgencias/batch-05.json",
+    "artifacts/reclass/faixa-c/urgencias/batch-06.json",
+    "artifacts/reclass/faixa-c/urgencias/batch-07.json"
+  ]
+}

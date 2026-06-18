@@ -1,0 +1,356 @@
+{
+  "batch": "01",
+  "bucket": "Infecções Sexualmente Transmissíveis (ISTs)",
+  "inferences": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968077998-3",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Visita domiciliar rural — saneamento e promoção na APS."
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-3",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Considerando a abordagem multifacetada do tratamento do HIV na Saúde …"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572470484-6",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: As Ureirites Infecciosas podem ser classificadas de acordo com o agen…"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056021381-3",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Deveres do paciente no SUS — ética e direitos."
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-processo-de-enfermagem-1776056129848-4",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Sigilo e acesso ao prontuário — confidencialidade."
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-0",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Benefícios da atividade física — promoção da saúde."
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-1",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Comunicação e humanização nos serviços de saúde."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563848614-3",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Conceito de pandemia e histórico epidemiológico global."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-6",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Assistência de enfermagem na DRGE — hábitos e medicação."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-1",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Alimentação e nutrição como determinantes da saúde."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Priorização e atendimento inicial em emergência."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-8",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: As doenças sexualmente transmissíveis representam importante problema…"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-4",
+      "suggested_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Tuberculose — vigilância e características na APS."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-9",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Trabalho em equipe multiprofissional e comunicação assistencial."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-4",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Comunicação terapêutica, plantão e registros de enfermagem."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056158507-5",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Organização do trabalho, passagem de plantão e anotações."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056181857-0",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Uso correto do prontuário e registros de enfermagem."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056181857-5",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Direitos do usuário, sigilo e Ouvidoria no SUS."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-6",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Higienização das mãos para prevenir IRAS."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-6",
+      "suggested_subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Assistência ao paciente cirúrgico — pré/intra/pós."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-8",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Organização da unidade e responsabilidades do técnico."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1776056009428-8",
+      "suggested_subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Investigação e coleta de dados na fase pré-operatória."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-8",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Acolhimento versus triagem mecânica no atendimento."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-8",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Conduta com comadre e eliminações do paciente acamado."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-7",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Hipocalemia e arritmias — distúrbio hidroeletrolítico."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-atencao-basica-saude-da-familia-1778968144588-6",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Problemas coletivos de saúde e participação comunitária na APS."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-8",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Gerenciamento de insumos e controle de estoque assistencial."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-0",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Higiene e diarreia — prevenção de agravos coletivos."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-1",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Determinantes sociais do adoecimento — saúde coletiva."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-2",
+      "suggested_subtopico": "Saúde da Criança",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Diarreia infantil e condições de habitação — cuidado pediátrico."
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563626015-7",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Notificação compulsória de cólera."
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-6",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: \"As Doenças Sexualmente Transmissíveis (DST) são causadas por vários …"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-7",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Analise a afirmativa a seguir. 5569) 5570) 5571) 5572) 5573) \"É uma i…"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-0",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: A respeito da Sífilis, marque a alternativa INCORRETA."
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-8",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Das alternativas a seguir, qual corresponde ao nome do protozoário ca…"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572159431-9",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Como é chamada a doença sexualmente transmissível causada pela bactér…"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-8",
+      "suggested_subtopico": "Saúde Mental",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Assistência de enfermagem em saúde mental na APS."
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-7",
+      "suggested_subtopico": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Acidente escorpiônico — anatomia do escorpião e veneno."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572144195-3",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Sobre as infecções sexualmente transmissíveis (ISTs), é CORRETO afirm…"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-3",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Leia as assertivas sobre as principais situações que aumentam o risco…"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572149956-5",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Qual é o principal uso do teste VDRL?"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-infeccoes-sexualmente-transmissiveis-ists-1779572528473-3",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Em relação à prevenção das Infecções Sexualmente Transmissíveis (ISTs…"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-9",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Planejamento Estratégico Situacional na APS."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-6",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "DIU de cobre e contraindicações — planejamento familiar."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003709908-0",
+      "suggested_subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Tema IST/HIV/hepatites: Sobre o teste molecular para detecção do Papilomavírus Humano (HPV) o…"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-2",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Demências irreversíveis em idosos em ILPI."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+      "suggested_subtopico": "Saúde do Adolescente",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Violência contra adolescentes — sinais de suspeita."
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-processo-de-enfermagem-1776056158507-2",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Método SBAR na passagem de plantão."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563784564-0",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Classificação de grau de dano em incidentes — NSP."
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-4",
+      "suggested_subtopico": "Saúde Mental",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Sinais de alerta em saúde mental — mudança de rotina e suicídio."
+    }
+  ]
+}

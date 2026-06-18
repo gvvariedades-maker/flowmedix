@@ -1,0 +1,592 @@
+#1
+adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-1
+Uma equipe multidisciplinar foi designada para implementar ações de saúde pública relacionadas às Práticas Integrativas e Complementares (PICS) em umacomunidade que apresenta alta incidência de doenças crônicas. Muitas famílias desconhecem práticas como fitoterapia e auriculoterapia, dificultando a adesão. Diantedesse desafio, identifique a melhor ação para ampliar a participação comunitária e fortalecer a saúde coletiva.
+OPTS: A) Direcionar as ações para grupos específicos da comunidade, priorizando aqueles com maior interesse nas PICS, permitindo maior adesão inicial e posteriorexpansão para outros segmentos populacionais. | B) Promover atividades educativas interativas, incorporando saberes tradicionais aos conhecimento
+
+---
+
+#2
+adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-3
+Em relatórios sobre iniciativas de sucesso em diversos países, equipes multiprofissionais relataram a integração de práticas como massagem, meditação e usoracional de plantas medicinais em centros urbanos. Assinale o fator que, segundo esses relatos, favorece a consolidação dessas práticas junto à população atendida.
+OPTS: A) Foco no modelo hospitalar, com alta dependência de equipamentos e procedimentos de alta complexidade. | B) Obrigatoriedade de abandonar o tratamento médico pré-existente e adotar práticas integrativas como única forma de atendimento. | C) Condução dos projetos por agentes externos, excluindo a in
+
+---
+
+#3
+adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-4
+Sobre os impactos das práticas integrativas na saúde coletiva, avalie as afirmativas: I. As práticas integrativas podem contribuir para a redução da sobrecarga dos serviços de emergência ao promover a prevenção de agravos e o manejocomplementar de condições crônicas. II . O uso de PICS no contexto do SAMU é irrelevante, pois o atendimento pré-hospitalar deve ser exclusivamente baseado em protocolos biomédicosconvencionais, sem espaço para abordagens complementares. III. A implementação das práticas integrativas na rede de atenção primária amplia o acesso da população a terapias seguras e validadas, reforçando aintegralidade do cuidado. IV. As PICS devem ser aplicadas uniformemente a todos os pacientes atendidos pelo SUS, independentemente de suas condições clínicas ou preferênciasindividuais, garantindo equidade na assistência. Estão CORRETAS as afirmativas:
+OPTS: A) I e III, apenas. | B) II e IV, apenas. | C) I, II e III , apenas. | D) II, III e IV , apenas.
+
+---
+
+#4
+adm-tec-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-6
+Na implementação de programas de Educação em Saúde, qual dos seguintes métodos é mais eficaz para promover mudanças comportamentais e hábitossaudáveis na comunidade?
+OPTS: A) Distribuição de panfletos públicos. | B) Realização de palestras esporádicas em escolas e centros comunitários. | C) Desenvolvimento de campanhas de mídia massiva na televisão e rádio. | D) Estabelecimento de Programas Educativos contínuos e interativos que envolvam a participação ativa da comuni
+
+---
+
+#5
+amauc-enfermagem-processo-de-enfermagem-1780005128081-2
+No cotidiano das comunidades, hábitos alimentares inadequados contribuem para o surgimento de diversas doenças crônicas. Nesse cenário, o Agente Comunitário de Saúde atua como agente educativo, incentivando práticas alimentares mais saudáveis. Com base nesse contexto, assinale a alternativa correta.
+OPTS: A) A orientação alimentar deve considerar apenas preferências individuais, sem relação com a saúde. | B) Uma alimentação saudável é caracterizada exclusivamente pela quantidade de alimentos consumidos ao longo do dia. | C) A alimentação saudável elimina completamente o risco de qualquer doença, inde
+
+---
+
+#6
+amauc-enfermagem-processo-de-enfermagem-1780005128081-5
+A saúde bucal é fundamental para o bem-estar geral, pois influencia a mastigação, a digestão, a autoestima e a prevenção de doenças. Nesse contexto, o Agente Comunitário de Saúde atua como elo entre a comunidade e os serviços de saúde, promovendo hábitos adequados de higiene bucal. Com relação as orientações básicas de higiene bucal descritas, analise as afirmativas a seguir. I.A utilização do fio dental complementa a escovação ao remover resíduos alimentares e placa bacteriana entre os dentes. II.A língua não necessita de higienização, pois não participa do acúmulo de bactérias na cavidade bucal. III.A escovação dos dentes uma vez ao dia é suficiente para prevenir doenças bucais em qualquer faixa etária. É CORRETO o que se afirma em:
+OPTS: A) II e III, apenas. | B) I e II, apenas. | C) I, apenas. | D) II, apenas. | E) III, apenas.
+
+---
+
+#7
+ameosc-enfermagem-processo-de-enfermagem-1780001613305-1
+O processo saúde-doença possui distintos conceitos, variando de acordo com o contexto. De acordo com a definição de saúde da Organização Mundial de Saúde (OMS) assinale a alternativa CORRETA.
+OPTS: A) Saúde é o estado de completo bem-estar físico, mental e social e não apenas a ausência de doenças. | B) Saúde é o estado de completo bem-estar físico. O bem-estar mental do indivíduo não é contemplado na definição de saúde da OMS. | C) Saúde é o estado de completo bem-estar mental. O bem-estar fí
+
+---
+
+#8
+aocp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-9
+A concepção ampliada de saúde, que inclui a determinação social como algo fundamental para a compreensão do processo saúde-doença, estabeleceu novaspossibilidades conceituais sobre a relação entre saneamento e saúde. A oferta de serviços de saneamento pode ser determinante para a ocorrência e a manutenção dealguns agravos, principalmente de
+OPTS: A) doenças diarreicas. | B) doenças respiratórias. | C) hipertensão. | D) diabetes. | E) obesidade.
+
+---
+
+#9
+avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-3
+A principal recomendação em relação ao consumo de água é:
+OPTS: A) Deve ser substituída por sucos naturais para melhor hidratação. | B) O consumo de água só é necessário em climas quentes. | C) O consumo de água não é necessário. | D) É suficiente consumir apenas líquidos presentes nos alimentos. | E) A água deve ser a principal bebida para a hidratação diária.
+
+---
+
+#10
+avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-6
+O IMC (Índice de Massa Corporal) é uma componente essencial da Avaliação Antropométrica. Assinale a alternativa que indica o IMC aproximado de um indivíduo com altura de 1,65 m e peso de 60 kg.
+OPTS: A) 35 | B) 16 | C) 22 | D) 30 | E) 40
+
+---
+
+#11
+cebraspe-cespe-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-5
+Para a manutenção do quadro nutricional adequado a paciente idoso portador de disfagia, deve-se
+OPTS: A) orientá-lo a comer de forma rápida, sem mastigar muito os alimentos. | B) evitar que o paciente permaneça sentado em posição ereta durante as refeições. | C) oferecer-lhe alimentos duros e secos, como biscoitos e bolachas de água e sal. | D) usar espessantes em preparações de refeições líquidas p
+
+---
+
+#12
+cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-3
+Acerca das campanhas de prevenção de agravos à saúde, julgue o item subsequente. Em campanhas de prevenção, é recomendado orientar que o consumo de álcool deva ser evitado em qualquer quantidade por menores de 18 anos, gestantes, nutrizesou mulheres que estejam tentando engravidar.
+OPTS: A) Certo | B) Errado
+
+---
+
+#13
+cebraspe-cespe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-4
+Acerca das campanhas de prevenção de agravos à saúde, julgue o item subsequente. As estratégias de prevenção da obesidade que apresentam resultados promissores abarcam intervenções multifatoriais que combinam componentes de alimentação,atividade física, mudança de comportamento, automonitoramento do peso e sessões em grupo de monitoramento da alimentação e de atividade física.
+OPTS: A) Certo | B) Errado
+
+---
+
+#14
+cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-8
+"Entende-se planejamento familiar como o conjunto de ações de regulação da fecundidade que garanta direitos iguais de constituição, limitação ou aumento daprole pela mulher, pelo homem ou pelo casal." (Fonte: www.planalto.gov.br) Em relação ao planejamento familiar, assinale a alternativa INCORRETA .
+OPTS: A) As ações de planejamento familiar serão exercidas pelas instituições públicas e privadas, filantrópicas ou não. | B) É permitida a participação direta ou indireta de empresas ou capitais estrangeiros nas ações e pesquisas de planejamento familiar, desde que autorizadas,fiscalizadas e controladas 
+
+---
+
+#15
+contemax-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-2
+Durante uma ação educativa em uma comunidade sobre prevenção de doenças infectoparasitárias, é importante destacar:
+OPTS: A) A importância de higienizar as mãos antes e após o preparo dos alimentos, como única medida preventiva. | B) A prática de lavar frutas e verduras com água corrente antes do consumo. | C) A necessidade de suspender o uso de redes de esgoto nas áreas rurais, por serem foco de contaminação. | D) O i
+
+---
+
+#16
+copese-ufpi-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563919067-3
+As ações educativas fazem parte do dia a dia do ACS e têm como objetivo final contribuir para a melhoria da qualidade de vida da população. Sobre a Educaçãoem Saúde na comunidade, assinale a opção INCORRETA :
+OPTS: A) As ações educativas têm início nas visitas domiciliares, mas podem ser realizadas em grupo, sendo de responsabilidade de toda a equipe. | B) O conhecimento e a experiência dos participantes deve ser considerado, permitindo a troca de ideias. | C) Os conhecimentos técnicos, a habilidade de comunic
+
+---
+
+#17
+cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-4
+A prevenção primária da HAS pode ser feita mediante controle de seus fatores de risco por meio da promoção da mudança do estilo de vida (MEV). A MEV temcomo objetivo diminuir os fatores de risco para as doenças crônicas, entre elas a hipertensão arterial. Deve-se iniciar um processo de educação em Saúde no qual apessoa é motivada a adotar comportamentos que favoreçam à redução da pressão arterial. Essas medidas sugeridas terão impacto no estilo de vida e sua implementaçãodependerá diretamente da compreensão do problema e da motivação para implementar mudanças no seu estilo de vida. Entre as ações de modificações do estilo de vidapara prevenção da hipertensão estão:
+OPTS: A) Redução de peso, alimentação saudável, atividade física e eliminação do tabagismo. | B) Redução de peso, alimentação normal, atividade física e moderação no consumo de cigarros. | C) Manutenção do peso elevado, alimentação saudável, atividade física e moderação no consumo de álcool. | D) Redução 
+
+---
+
+#18
+educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-3
+Durante uma reunião no Conselho Municipal de Saúde, a Técnica de Enfermagem é convidada a explicar os princípios que garantem o acesso aos serviços desaúde para toda a população no Brasil. Com base no SUS, assinale a alternativa que apresenta CORRETAMENTE um dos seus princípios básicos:
+OPTS: A) O SUS atende somente pessoas que contribuem para a seguridade social, conforme a legislação previdenciária. | B) O SUS garante atendimento universal, porém limitado a casos de emergência. | C) O controle social no SUS é exercido exclusivamente pelo governo. | D) A equidade determina que todos rec
+
+---
+
+#19
+educa-pb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-7
+O trabalho de educação sobre saúde na comunidade é vital para a população. As ações que visam compartilhar conhecimento fazem parte da rotina dosprofissionais e visam contribuir de modo benéfico para a qualidade de vida da sociedade. Sobre medidas educativas na comunidade , analise as alternativas e assinale a CORRETA:
+OPTS: A) As ações educativas têm início nas visitas domiciliares, mas podem ser realizadas em grupo, sendo desenvolvidas nos serviços de saúde e nos diversos espaçossociais existentes na comunidade. | B) O trabalho em grupo não reforça a ação educativa aos indivíduos. | C) Divulgar as ações educativas par
+
+---
+
+#20
+fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-7
+Analisa medidas corporais:
+OPTS: A) Escala de glasgow. | B) Avaliação antropométrica. | C) Escala de morse. | D) SAAE. | E) PNAB.
+
+---
+
+#21
+fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-6
+Embora esteja presente em alguns alimentos, sua origem principal vem de um hábito simples: "tomar sol"
+OPTS: A) Vitamina A. | B) Vitamina B. | C) Vitamina C | D) Vitamina D. | E) Vitamina E.
+
+---
+
+#22
+fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-0
+Analise os itens e posteriormente assinale a alternativa correta: I - Abastecimento de água potável. II - Manejo de água pluvial. III - Coleta e tratamento de esgoto. IV - Limpeza urbana. V - Manejo de resíduos sólidos. VI - Controle de pragas e/ou qualquer tipo de agente patogênico.
+OPTS: A) I , II , III , IV , V e VI são estratégias relacionadas a saneamento. | B) Apenas I , II e III são estratégias relacionadas a saneamento. | C) V não é uma estratégia relacionada a saneamento. | D) VI não é uma estratégia relacionada a saneamento. | E) I , II , III , IV , V e VI não estão entre as
+
+---
+
+#23
+fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-0
+Corresponde à calcificação da placa bacteriana que recobre os dentes e parte das gengivas, formando uma placa dura e amarelada; se não for tratada, pode levarao aparecimento de manchas nos dentes e favorecer a formação de cáries, gengivite e mau hálito: 4872) 4873) 4874) 4875)
+OPTS: A) Tártaro. | B) Glaucoma. | C) Otite. | D) Afta. | E) Saburra.
+
+---
+
+#24
+fau-unicentro-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563927625-1
+Os itens abaixo relacionam-se a medidas de prevenção a complicações bucais. Analise-os e posteriormente assinale a alternativa correta: I - Comer alimentos saudáveis, de uma forma balanceada e em horários apropriados. II - Comer uma quantidade limitada de alimentos açucarados, e somente durante as refeições. III - Não fumar, beber ou usar drogas. IV - Escovar os dentes com creme dental fluoretado duas ou três vezes ao dia e usar fio dental; a escovação deve ser realizada sempre durante a manhã e antesde dormir. V - Deve-se trocar a escova de dentes a cada três ou quatro meses. VI - Desde o nascimento até o final da adolescência, as arcadas dentárias e as estruturas orais e faciais irão crescer e se desenvolver; manter boas práticas desaúde oral e visitas regulares ao dentista tão logo o bebê tenha seus primeiros dentes permitirá o acompanhamento dessas estruturas, e garantirá um sorrisosaudável pela infância.
+OPTS: A) Todos os itens estão corretos. | B) III , IV , V e VI estão incorretos. | C) Apenas IV , V e VI estão incorretos. | D) Apenas I , II e V estão incorretos. | E) Todos os itens estão incorretos.
+
+---
+
+#25
+fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-7
+Assinale a alternativa que indica "a capacidade de se colocar no lugar do outro, perceber o sentimento da pessoa quando ela vivencia determinadas situações".
+OPTS: A) Empatia. | B) Simpatia. | C) Dignidade. | D) Amorosidade.
+
+---
+
+#26
+funatec-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-4
+Em um centro de saúde, um técnico de enfermagem está atendendo um paciente, Sr. Oliveira, de 40 anos, que apresenta obesidade. Ele expressa preocupação sobre como iniciar um processo de perda de peso saudável. Diante dessa situação, qual das seguintes orientações é mais apropriada para o técnico de enfermagem fornecer ao paciente?
+OPTS: A) Incentivar a adoção de hábitos alimentares equilibrados e a prática regular de atividades físicas. | B) Indicar o uso de suplementos alimentares para auxiliar na perda de peso. | C) Sugerir a prática intensiva de exercícios físicos, incluindo treinamento de alta intensidade. | D) Recomendar uma d
+
+---
+
+#27
+funcepe-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-3
+Assinale a alternativa que apresenta um exemplo de prevenção secundária.
+OPTS: A) Prestar serviços de assistência e de reabilitação para evitar a deterioração e melhorar a qualidade de vida, tais como reabilitação para se recuperar de lesões,ataque cardíaco ou acidente vascular cerebral. | B) Identificar parceiros sexuais de uma pessoa diagnosticada com uma infecção sexualment
+
+---
+
+#28
+fundepes-copeve-ufal-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-6
+Dentre as possibilidades de atuação na perspectiva da promoção da saúde, inclui-se:
+OPTS: A) desenvolver ações de saúde sem as influências do relacionamento dos grupos sociais. | B) atuar pelo aumento do fosso existente quanto às condições de saúde em diferentes sociedades. | C) agir contra a degradação dos recursos naturais, nas questões da habitação e dos assentamentos rurais. | D) des
+
+---
+
+#29
+furb-enfermagem-processo-de-enfermagem-1780011908736-2
+A educação em saúde constitui uma importante estratégia no processo de promoção da saúde e prevenção de doenças, envolvendo diferentes metodologias e abordagens no cuidado aos indivíduos, famílias e coletividades. Considerando esse contexto, assinale a alternativa correta:
+OPTS: A) A padronização das estratégias usadas nas atividades de educação em saúde garante maior efetividade das ações educativas. | B) A educação em saúde pode utilizar metodologias expositivas e participativas, sendo a escolha dependente do perfil da população, porém, a condução do processo deve permane
+
+---
+
+#30
+gama-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-0
+Dietas básicas e especiais são prescritas para atender às necessidades nutricionais específicas dos pacientes. Sobre a implementação dessas dietas, qual das seguintes alternativas é correta?
+OPTS: A) Dietas especiais, como a dieta livre de glúten, são indicadas para pacientes com condições como doença celíaca, e devem ser rigorosamente seguidas para evitar complicações e garantir a saúde do paciente. | B) As dietas básicas, como a dieta comum, devem ser utilizadas como uma abordagem universal
+
+---
+
+#31
+gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-6
+Em programas de saúde comunitária, a abordagem integrada de promoção, prevenção e proteção à saúde é fundamental. Qual das seguintes ações é maisadequada para a promoção da saúde em uma comunidade?
+OPTS: A) Implementar um programa de rastreamento de câncer para detectar precocemente a presença da doença em indivíduos assintomáticos. | B) Oferecer tratamentos médicos específicos para condições crônicas identificadas em consultas regulares. | C) Realizar campanhas de vacinação para prevenir doenças in
+
+---
+
+#32
+gama-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-7
+Durante uma reunião com a comunidade, o agente comunitário de saúde incentiva a participação dos moradores na organização de ações de promoção da saúde.Qual o principal benefício dessa participação comunitária?
+OPTS: A) Redução dos custos dos programas de saúde pública. | B) Maior visibilidade do trabalho da equipe de saúde. | C) Fortalecimento da autonomia e empoderamento da comunidade. | D) Maior adesão da população aos serviços de saúde oferecidos.
+
+---
+
+#33
+ibade-enfermagem-processo-de-enfermagem-1780005137458-1
+Na conjuntura do Sistema Único de Saúde (SUS), as ações de educação em saúde, prevenção de agravos e promoção da saúde constituem estratégias fundamentais para a qualificação do cuidado, a redução das vulnerabilidades e o enfrentamento dos determinantes e condicionantes do processo saúde-doença. Tais ações demandam atuação crítica, ética e integrada da equipe de enfermagem nos diferentes níveis de atenção, especialmente do profissional técnico de enfermagem, que mantém contato direto e contínuo com usuários, famílias e comunidades. Pensando nas ações educativas, preventivas e de promoção da saúde, assinale a alternativa INCORRETA.
+OPTS: A) A prática educativa do técnico de enfermagem deve valorizar o diálogo, o saber popular e a realidade sociocultural dos usuários, favorecendo o desenvolvimento da autonomia e do protagonismo no cuidado à saúde. | B) As ações de prevenção de agravos desenvolvidas pelo técnico de enfermagem incluem 
+
+---
+
+#34
+ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-0
+Sobre estratégias interdisciplinares para promoção da saúde e prevenção de doenças, marque a alternativa CORRETA .
+OPTS: A) A abordagem unidisciplinar é mais eficaz do que a interdisciplinar para lidar com problemas de saúde pública, pois permite uma maior especialização dosprofissionais envolvidos; | B) Estratégias interdisciplinares na promoção da saúde não consideram aspectos socioeconômicos, culturais e ambientais
+
+---
+
+#35
+ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-1
+No que diz respeito às técnicas de comunicação eficaz com a comunidade, considere o seguinte cenário: Você é designado para liderar uma campanha de conscientização sobre prevenção de doenças sexualmente transmissíveis (DSTs) em uma comunidade com alto índice deincidência dessas doenças. Nesse contexto, é CORRETO afirmar que:
+OPTS: A) a linguagem técnica e científica deve ser privilegiada para garantir a compreensão total dos membros da comunidade sobre as DSTs; | B) as mensagens devem enfatizar o medo e as consequências graves das DSTs para motivar a mudança de comportamento na comunidade; | C) é importante adaptar as mensage
+
+---
+
+#36
+ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563875555-2
+No que concerne à identificação de situações de risco e vulnerabilidade em uma comunidade, considere o seguinte caso: Você, como agente comunitário de saúde, está realizando um levantamento epidemiológico em uma área urbana com alta incidência de doenças crônicas nãotransmissíveis. Durante suas visitas domiciliares, você observa que muitos moradores têm uma dieta rica em alimentos processados e pobres em nutrientes. Com base nessa situação, analise as seguintes assertivas:
+OPTS: A) a dieta inadequada pode aumentar o risco de desenvolvimento de doenças crônicas não transmissíveis; | B) a prática regular de atividade física tem relação com a o aparecimento de doenças crônicas; | C) a exposição a poluentes ambientais não influencia na saúde da população; | D) o acesso ilimitad
+
+---
+
+#37
+ibade-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-2
+O estilo de vida é claramente um dos maiores responsáveis pela morbidade e pela alta prevalência das doenças crônicas. Sendo assim:
+OPTS: A) a avaliação antropométrica faz parte do diagnóstico do estado nutricional, mas não é fundamental para o planejamento da intervenção. | B) as modificações na alimentação são reconhecidas como um recurso para o controle proteico e redução do risco das doenças cardiovasculares. | C) a orientação sob
+
+---
+
+#38
+ibam-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-8
+As práticas educativas em saúde, quando alinhadas aos princípios da promoção da saúde, ultrapassam a simples transmissão de informações e devem consideraros contextos socioculturais dos sujeitos envolvidos. Para isso, é necessário refletir sobre as abordagens pedagógicas utilizadas, o papel dos profissionais e a forma comoos diferentes saberes são integrados no processo educativo. Acerca desses aspectos, marque ( V ) para as afirmativas verdadeiras, e ( F ), para as falsas. (__)A adoção de métodos centrados na exposição de conteúdos técnico-científicos pode contribuir para mudanças nas práticas de saúde e favorecer a autonomiados sujeitos, especialmente quando os conteúdos dialogam com suas vivências cotidianas. (__)A construção de espaços de escuta e diálogo nos processos educativos em saúde favorece a problematização das condições de vida e o fortalecimento dacorresponsabilidade pelo cuidado. (__)Estratégias educativas focadas na prevenção de doenças, com base na lógica prescritiva, respondem de forma adequada aos desafios dos determinantessociais da saúde. (__)A atuação educativa em saúde requer metodologias que considerem o território, os vínculos comunitários e a mediação entre saberes populares econhecimentos técnicos. Após análise, assinale a alternativa que apresenta a sequência correta dos itens acima.
+OPTS: A) F, V, V, V. | B) V, F, F, F. | C) V, V, F, V. | D) V, V, V, V.
+
+---
+
+#39
+ibfc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-4
+A higiene dos alimentos depende de muitos fatores, tais como higiene pessoal e do ambiente; características dos alimentos; condições de conservação e depreparo, entre outros. Há duas maneiras de eliminar os microrganismos nocivos: sanitização e cozimento. Assinale a alternativa que apresenta qual produto deve-serealizar a sanitização de hortaliças.
+OPTS: A) Saneantes a base de tensoativos biodegradáveis | B) Detergente líquido | C) Sabão em pedra e água corrente | D) Saneantes exclusivamente a base de hipoclorito de sódio e água
+
+---
+
+#40
+idcap-enfermagem-atencao-basica-saude-da-familia-1778968112153-4
+Os problemas bucais abrangem uma ampla gama de condições que afetam a saúde da boca, dos dentes e das estruturas circundantes. Dentre as opções citadas abaixo, assinale a alternativa que NÃO corresponde a uma medida de prevenção de problemas bucais.
+OPTS: A) Utilização inadequada do flúor, com cremes dentais fluorados. | B) Eliminação da placa bacteriana por meio de escovação adequada e do uso do fio dental. | C) Limpeza da língua, utilizando um raspador, a fim de retirar a saburra lingual. | D) Visitas regulares ao dentista.
+
+---
+
+#41
+idcap-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-0
+A classificação do estado nutricional de adultos é realizada a partir do valor bruto de IMC. Assinale a alternativa CORRETA que corresponde a um adulto com peso adequado (eutrófico).
+OPTS: A) Valores de IMC abaixo de 18,5. | B) Valores de IMC maior ou igual a 30,0. | C) Valores de IMC maior ou igual a 18,5 e menor que 25,0. | D) Valores de IMC maior ou igual a 25,0 e menor que 30,0.
+
+---
+
+#42
+idcap-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-4
+A presença dos roedores em ambientes urbanos e rurais acarreta impactos econômicos e de saúde significativos para os seres humanos. Visto que esses animaisdesempenham um papel fundamental na disseminação de doenças que afetam os seres humanos. Diante disso, a medida empregada para a eliminação dos roedores,pelos métodos mecânicos, biológicos e químicos, é denominada:
+OPTS: A) Desinfecção. | B) Desratização. | C) Antissepsia. | D) Assepsia.
+
+---
+
+#43
+idecan-enfermagem-nutricao-aplicada-a-enfermagem-1780066961947-2
+Alimentos proteicos contêm mais sódio do que outros tipos de alimentos; portanto, geralmente não é necessário o acréscimo de sal em algumas preparações. A quantidade necessária de sal por pessoa é de:
+OPTS: A) 1/2 xícara de chá por dia. | B) 1/4 de colher de chá por dia. | C) 3 colheres de sopa por dia. | D) 1/2 de colher de sopa por dia.
+
+---
+
+#44
+idecan-enfermagem-nutricao-aplicada-a-enfermagem-1780066961947-3
+O alimento e a água são condições essenciais para a manutenção da vida. Sem alimento, em quantidade e qualidade adequadas, elevam-se os riscos do desenvolvimento de doenças em nosso organismo. Em relação à função dos nutrientes, marque V para as afirmativas verdadeiras e F para as falsas. ( ) As proteínas fornecem energia para as atividades do dia a dia. ( ) Os reguladores (vitaminas e sais minerais) são necessários para o bom funcionamento do organismo, auxiliando na prevenção de doenças e crescimento. ( ) A vitamina A é importante para o bom desempenho da visão, para o crescimento, para a vitalidade da pele e cabelo. ( ) As vitaminas do complexo B ajudam na manutenção da pele, colaboram no crescimento e deixam os cabelos mais saudáveis e brilhantes. ( ) A vitamina K ajuda na cicatrização e evita sangramentos. A sequência está correta em
+OPTS: A) F, V, F, V, F. | B) V, F, F, F, V. | C) F, V, V, V, V. | D) F, F, V, V, F.
+
+---
+
+#45
+idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-1
+A prevenção de doenças é uma estratégia fundamental para a promoção da saúde e a redução da morbimortalidade. Para isso, diferentes níveis de prevenção foram estabelecidos, visando atuar desde a eliminação de fatores de risco até a reabilitação de indivíduos acometidos por doenças. Cada nível de prevenção possui estratégias específicas que orientam as práticas na atenção primária e em outros níveis de cuidado. Com base nisso, indique qual das alternativas abaixo descreve corretamente a prevenção primária.
+OPTS: A) Tem como objetivo reduzir os impactos da doença já instalada, prevenindo complicações e promovendo a reabilitação do indivíduo. | B) Envolve o diagnóstico precoce e o tratamento oportuno, reduzindo a progressão da doença e suas complicações. | C) Engloba medidas voltadas à promoção da saúde e à p
+
+---
+
+#46
+idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-5
+Os equipamentos e os utensílios, em uma Unidade de Alimentação e Nutrição (UAN), são peças chave para o funcionamento e para a manutenção de controle de qualidade dos alimentos. Para se garantir a inocuidade das refeições, devese buscar meios para impedir surtos de Doenças transmitidas por alimentos (DTA ́s), que podem surgir se não houver a higienização correta de equipamentos e utensílios. Por isso, é importante salientar situações que se destinem à prevenção da propagação de agentes patogênicos, sendo assim, analise as assertivas e assinale o item correto.
+OPTS: A) É importante enfatizar a necessidade da preservação dos equipamentos utilizados para a manutenção da limpeza e da desinfecção. Além disso, para melhor preservação é preciso manter em ambiente escuro, sem respingar graxa, sem aglomeração de gelo e bem conservados e com manutenção contínua por prof
+
+---
+
+#47
+idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-1
+O Sistema Nacional de Transplantes (SNT) brasileiro é o mais democrático do mundo, todos têm o mesmo nível de acesso, e quase 100% dos transplantes são realizados através do Sistema Único de Saúde (SUS). O "doador vivo" é considerado uma pessoa em boas condições de saúde – de acordo com avaliação médica – capaz juridicamente e que concorda com a doação. Por lei, pais, irmãos, filhos, avós, tios e primos podem ser doadores. Não parentes podem ser doadores somente com autorização judicial. São órgãos e tecidos que podem ser obtidos de um doador vivo, EXCETO:
+OPTS: A) Rim. | B) Fígado. | C) Córneas. | D) Medula óssea.
+
+---
+
+#48
+idib-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778934900821-7
+Manter dentes e gengivas saudáveis é fundamental para o bem-estar geral das pessoas. Os cuidados diários preventivos, como uma boa escovação e o uso correto do fio dental, ajudam a evitar que problemas dentários se tornem mais graves. Anote: a prevenção é a maneira mais econômica e menos dolorosa de se cuidar da saúde bucal, evitando o tratamento de problemas que poderiam gerar incômodos. Sobre os cuidados com a saúde bucal, marque o item incorreto:
+OPTS: A) Os dentes devem ser escovados pelo menos três vezes por dia, após as principais refeições (café da manhã, almoço e jantar), e o fio dental deve ser utilizado em no mínimo uma dessas escovações. Utilize um antisséptico ou enxaguante bucal com flúor após escovar os dentes para eliminar as bactérias
+
+---
+
+#49
+idib-enfermagem-saude-do-homem-1778934944659-5
+Saúde mental , infecções sexualmente transmissíveis, doenças crônicas (diabetes, hipertensão) entre outros pontos devem ser sempre observados pela população masculina. Analise os itens abaixo e marque o item incorreto:
+OPTS: A) Vários estudos comparativos entre homens e mulheres têm comprovado o fato de que o sexo masculino é menos vulnerável às enfermidades, sobretudo às graves e crônicas, morrendo menos precocemente que as mulheres. | B) A melhor maneira de evitar complicações decorrentes do câncer de próstata é a det
+
+---
+
+#50
+igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102813845-4
+Os fundamentos de nutrição são essenciais para a promoção da saúde, prevenção de doenças e recuperação do estado nutricional dos indivíduos. O Técnico em Enfermagem atua no acompanhamento do estado nutricional, na orientação básica e na observação de sinais relacionados à alimentação e à nutrição. Analise as afirmativas abaixo. I. A alimentação equilibrada deve fornecer energia e nutrientes em quantidades adequadas às necessidades do organismo. II. A desnutrição e a obesidade são condições que podem estar relacionadas a hábitos alimentares inadequados. III. O Técnico em Enfermagem é responsável por prescrever dietas terapêuticas de forma autônoma. IV. A observação da aceitação alimentar do paciente contribui para a identificação de possíveis riscos nutricionais. Assinale a alternativa correta.
+OPTS: A) Estão corretas apenas as afirmativas I, II e IV. | B) Estão corretas apenas as afirmativas I e III. | C) Estão corretas apenas as afirmativas II e III. | D) Estão corretas apenas as afirmativas III e IV.
+
+---
+
+#51
+igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-5
+A dieta branda é utilizada para pacientes com problemas mecânicos de mastigação e deglutição e para facilitar a digestão, bem como nos processos inflamatórios intestinais. É recomendada como dieta de transição para a dieta geral.
+OPTS: A) Certo | B) Errado
+
+---
+
+#52
+igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1780000630425-0
+Os fundamentos de nutrição são essenciais para a promoção da saúde, prevenção de doenças e recuperação do estado nutricional dos indivíduos. O Técnico em Enfermagem atua no acompanhamento do estado nutricional, na orientação básica e na observação de sinais relacionados à alimentação e à nutrição. Analise as afirmativas abaixo. I. A alimentação equilibrada deve fornecer energia e nutrientes em quantidades adequadas às necessidades do organismo. II. A desnutrição e a obesidade são condições que podem estar relacionadas a hábitos alimentares inadequados. III. O Técnico em Enfermagem é responsável por prescrever dietas terapêuticas de forma autônoma. IV. A observação da aceitação alimentar do paciente contribui para a identificação de possíveis riscos nutricionais. Assinale a alternativa correta.
+OPTS: A) Estão corretas apenas as afirmativas I, II e IV. | B) Estão corretas apenas as afirmativas I e III. | C) Estão corretas apenas as afirmativas II e III. | D) Estão corretas apenas as afirmativas III e IV.
+
+---
+
+#53
+igeduc-enfermagem-processo-de-enfermagem-1780010559720-6
+A educação em saúde é uma estratégia fundamental da Atenção Básica, voltada para a promoção da autonomia dos indivíduos e da comunidade no cuidado com a própria saúde. O Técnico em Enfermagem participa ativamente dessas ações, orientando usuários e famílias, estimulando hábitos saudáveis e contribuindo para a prevenção de doenças, conforme as necessidades identificadas no território. Analise as proposições a seguir e registre V, para verdadeiro, e F, para falso: (__) A educação em saúde contribui para a prevenção de doenças e a promoção da qualidade de vida. (__) As ações de educação em saúde devem considerar as características culturais e sociais da população atendida. (__) A educação em saúde limita-se à transmissão de informações, sem estimular a participação dos usuários. (__) O Técnico em Enfermagem pode atuar em ações educativas individuais e coletivas na Atenção Básica. Assinale a alternativa que apresenta a sequência CORRETA dos itens acima.
+OPTS: A) F, V, V, F. | B) F, F, V, V. | C) V, F, V, F. | D) V, V, F, V.
+
+---
+
+#54
+igeduc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-1
+O nível de prevenção secundária compreende quaisquer atos destinados a diminuir a incidência de uma doença numa população, reduzindo o risco de surgimentode casos novos. A prevenção secundária consiste em um diagnóstico precoce e tratamento imediato.
+OPTS: A) Certo | B) Errado
+
+---
+
+#55
+igeduc-enfermagem-saude-do-idoso-1780001440222-2
+A Enfermagem em saúde do idoso envolve cuidados voltados à promoção da autonomia, à prevenção de agravos, ao acompanhamento de doenças crônicas e à manutenção da qualidade de vida. O Técnico em Enfermagem atua na assistência direta, na observação clínica e na orientação ao idoso e à família, respeitando as especificidades do processo de envelhecimento. A Enfermagem em saúde do idoso envolve cuidados direcionados à promoção da autonomia, à prevenção de agravos e à manutenção da qualidade de vida dessa população. O Técnico em Enfermagem atua na assistência direta, na observação clínica e na orientação ao idoso e à família. Considerando a Enfermagem em saúde do idoso, analise as afirmativas abaixo. (__) A avaliação do risco de quedas é uma medida importante na prevenção de acidentes entre idosos. (__) O envelhecimento é um processo natural que pode estar associado a alterações fisiológicas e funcionais. (__) O cuidado ao idoso limita-se ao tratamento de doenças agudas, não incluindo ações de promoção da saúde. (__) A orientação ao idoso sobre o uso correto de medicamentos contribui para a segurança do tratamento. Assinale a alternativa CORRETA, indicando as afirmativas VERDADEIRAS (V) ou FALSAS (F), .
+OPTS: A) V, V, V, F. | B) V, V, F, V. | C) F, V, F, V. | D) V, F, V, V.
+
+---
+
+#56
+inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-6
+A política de renovação de caixas d'água é uma medida que se preocupa em garantir que não existam criadouros do mosquito em um determinado local. Essaação pode ser classificada como:
+OPTS: A) Prevenção. | B) Diagnóstico. | C) Tratamento de doenças. | D) Tratamento da água. | E) Tratamento de resíduos.
+
+---
+
+#57
+inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-8
+Sobre a promoção de saúde em saúde coletiva, qual é a principal estratégia para aumentar a adesão à higiene bucal em uma comunidade?
+OPTS: A) Utilização exclusiva de escovas dentais elétricas | B) Distribuição gratuita de produtos de higiene bucal | C) Implementação de campanhas de educação em saúde bucal e incentivo ao autocuidado | D) Realização de consultas odontológicas em grandes grupos | E) Substituição de água potável por água c
+
+---
+
+#58
+inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-0
+Sobre a educação em saúde bucal, qual é a abordagem mais eficaz para engajar pacientes na prática de hábitos saudáveis?
+OPTS: A) Informar sobre os custos de tratamentos dentários | B) Oferecer materiais educativos e promover interações individuais e comunitárias | C) Apresentar casos de sucesso em tratamentos odontológicos | D) Realizar exames gratuitos de diagnóstico dental | E) Fornecer produtos de higiene bucal sem orie
+
+---
+
+#59
+inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-1
+Durante uma campanha de saúde bucal em uma comunidade de baixa renda, foi identificado um aumento significativo na prevalência de cárie dental entrecrianças. Qual estratégia, baseada em princípios de saúde coletiva, seria mais eficaz para reduzir a incidência de cárie entre essas crianças?
+OPTS: A) Distribuição gratuita de escovas dentais e pastas de dente com flúor | B) Implementação de um programa escolar de escovação supervisionada e aplicação de selantes | C) Realização de consultas odontológicas periódicas gratuitas para todas as crianças | D) Promoção de um programa de treinamento par
+
+---
+
+#60
+inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-2
+Em uma clínica odontológica de um município com alta prevalência de doenças periodontais, foi identificado um problema com a adesão dos pacientes aotratamento de manutenção periodontal. Qual estratégia seria mais eficaz para melhorar a adesão dos pacientes ao tratamento e controle da doença?
+OPTS: A) Implementar um sistema de lembretes automáticos por SMS para as consultas de manutenção | B) Oferecer consultas de acompanhamento com frequência reduzida para pacientes com boa adesão | C) Realizar sessões educativas interativas e personalizadas durante as consultas de tratamento | D) Introduzir 
+
+---
+
+#61
+inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3
+Em um programa de educação em saúde bucal voltado para adolescentes, qual abordagem seria mais eficaz para garantir que os adolescentes compreendam eadotem práticas de prevenção da cárie dentária?
+OPTS: A) Realização de palestras sobre os riscos da cárie dentária e a importância da higiene bucal | B) Implementação de oficinas práticas sobre técnicas corretas de escovação e uso de fio dental | C) Distribuição de materiais informativos e folhetos explicativos sobre a cárie dentária | D) Promoção de c
+
+---
+
+#62
+instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-7
+São resultados esperados da Política Nacional de Humanização (PNH) todos os descritos a seguir, EXCETO
+OPTS: A) redução das filas e tempo de espera, com base em critérios de risco. | B) expansão de serviços de alta complexidade para garantia da qualidade do cuidado. | C) garantia dos direitos dos usuários. | D) valorização e cuidado aos trabalhadores da saúde. | E) gestão participativa de trabalhadores e u
+
+---
+
+#63
+instituto-consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-7
+Paciente, sexo feminino, 1,54 metro de altura e 85 kg, foi admitida na Unidade Básica de Saúde (UBS) para uma avaliação geral. A equipe de enfermagem foi encarregada de realizar as medidas antropométricas como parte do protocolo de admissão. Considerando os dados apresentados, qual é o Índice de Massa Corporal (IMC) dessa paciente?
+OPTS: A) 27,6 kg/m². | B) 30,1 kg/m². | C) 35,8 kg/m². | D) 55,1 kg/ m².
+
+---
+
+#64
+instituto-consulplan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-8
+As ações de prevenção de doenças, agravos e promoção à saúde são consideradas atividades de extrema importância para identificar e orientara população sobre possíveis doenças. NÃO corresponde à ação de prevenção de doença e à promoção de saúde:
+OPTS: A) Na promoção de saúde, deve-se ter uma visão holística sobre as pessoas; afinal, ser saudável é muito além da inexistência de doenças. | B) No local de trabalho, a promoção da saúde do trabalhador ocorre com o envolvimento agregado dos empregadores e da sociedade em geral, garantindo, assim,o bem-
+
+---
+
+#65
+instituto-consulplan-enfermagem-teorias-em-enfermagem-1776056009428-1
+Os requisitos essenciais para pessoas que lidam com o público e a forma de tratamento adequada a ser adotada são, respectivamente:
+OPTS: A) Empatia e tratamento amigável. | B) Autoridade e tratamento distante. | C) Habilidade de venda e tratamento informal. | D) Conhecimento técnico especializado e tratamento formal.
+
+---
+
+#66
+instituto-iacp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563961175-1
+O sucesso do tratamento depende fortemente da participação e do envolvimento do usuário enquanto sujeito ativo de seu tratamento. Esse processo denomina-se:
+OPTS: A) Estratificação. | B) Gestão de caso. | C) Autocuidado. | D) Prática de saúde. | E) Acolhimento.
+
+---
+
+#67
+instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-6
+A filosofia dos cuidados paliativos visa à promoção da qualidade de vida de pacientes e seus familiares diante de doenças que ameaçam a continuidade da vida, por meio da prevenção e alívio do sofrimento em suas múltiplas dimensões.
+OPTS: A) Certo | B) Errado
+
+---
+
+#68
+instituto-verbena-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563932216-4
+Segundo a Organização Mundial de Saúde, as condições em que as pessoas nascem, crescem, trabalham, vivem e envelhecem, e o amplo conjunto de forças esistemas que moldam a vida cotidiana podem ser entendidos como
+OPTS: A) iniquidades em saúde. | B) requisitos de qualidade de vida. | C) determinantes sociais da saúde. | D) tendências da evolução social e econômica do país.
+
+---
+
+#69
+ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-7
+A visita domiciliar efetuada pelos agentes de controle de endemias é uma medida avaliada dentro do processo saúde doença, vista como:
+OPTS: A) Reabilitação. | B) Proteção específica. | C) Tratamento precoce. | D) Tratamento tardio. | E) Diagnóstico patológico precoce.
+
+---
+
+#70
+ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-8
+O controle da qualidade da água é de extrema importância para propiciar o saneamento básico e a saúde de uma população. Para efetivar essa medida, temosque cobrar a ampliação de:
+OPTS: A) Estações de tratamento de água e esgoto. | B) De aterros energéticos. | C) Construção de fossas negras em áreas rurais. | D) Construção de fossas negras em áreas urbanas. | E) Despejamento de resíduos em vazadouros rurais.
+
+---
+
+#71
+ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-9
+Uma das formas de reduzir os problemas de saúde na população seria com aumento das políticas educacionais e dentre essas políticas, podemos inferir: I . Educação em saúde. II . Educação sexual. III . Educação social. Está(riam) correta(s):
+OPTS: A) I, II e III . | B) Apenas I e II . | C) Apenas I e III . | D) Apenas II e III . | E) Apenas III .
+
+---
+
+#72
+ivin-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-0
+É uma estratégia educativa, cujo material humano é a matéria-prima básica, a comunidade e seus entornos são valorados como um elemento social. Podemosafirmar que esse texto se refere a uma estratégia educacional denominada:
+OPTS: A) Educação primordial. | B) Educação elitista. | C) Educação simplista. | D) Educação popular. | E) Educação sanitária.
+
+---
+
+#73
+ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-1
+O saneamento básico é um dos principais indicadores da qualidade de vida e do desenvolvimento econômico e social de uma cidade. Assinale a alternativa corretasobre as ações essenciais.
+OPTS: A) Educação em saúde com promoção de saúde, através de medidas pessoais e coletivas. | B) A qualidade das águas com aproximação dos esgotos sanitários. | C) Predominância da falta de drenagem das águas fluviais. | D) A rede de esgoto nos domicílios não afeta o potencial produtivo das pessoas. | E) O
+
+---
+
+#74
+nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-0
+IGEDUC - Ag (Pref Jatobá)/Pref Jatobá/Combate às Endemias/2023 Julgue o item a seguir. Reduzir o consumo do sal, substituindo-o por temperos que ressaltam o sabor dos alimentos, é uma forma de prevenir a hipertensão.
+OPTS: A) Certo | B) Errado
+
+---
+
+#75
+nao-informado-geral-promocao-a-saude-e-prevencao-de-agravos-1779563909811-6
+Instituto Consulplan - ACS (Pref Nova Friburgo)/Pref Nova Friburgo/2023 A poluição constitui um fator diretamente prejudicial à saúde humana e pode se dar de diversas formas, como a atmosférica, hídrica, sonora, visual e do solo.Sobre tal modificação negativa ao meio ambiente e ao bem-estar humano, assinale a afirmativa correta.
+OPTS: A) A poluição visual se restringe à exposição de outdoors em áreas rurais, já que se sobrepõem à visão da natureza. | B) Um dos efeitos da poluição atmosférica é a chuva ácida, um fenômeno de precipitação múltipla em que caem simultaneamente água, granizo e neve em umamesma região. | C) A poluição s
+
+---
+
+#76
+objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563914208-8
+A promoção da saúde segundo a Carta de Ottawa, realizada em 1986, contempla alguns campos de ação. Analisar os itens abaixo: I. Elaboração e implementação de Políticas Públicas saudáveis. II. Criação de ambientes saudáveis, desenvolvimento de habilidades individuais e coletivas. III. Capacitação da comunidade e reorientação de serviços de saúde. Está(ão) CORRETO(S):
+OPTS: A) Somente o item I . | B) Somente o item II. | C) Somente os itens I e III. | D) Todos os itens.
+
+---
+
+#77
+objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-5
+Quanto aos níveis de prevenção em saúde pública, assinalar a alternativa INCORRETA.
+OPTS: A) A prevenção primária é definida conceitualmente como um mecanismo de remoção de causas ou fatores que podem ser prejudiciais à saúde, através da adoçãode ações de promoção de saúde e prevenção dos agravos. | B) A prevenção secundária detecta uma condição de doença em estágio inicial, facilitando 
+
+---
+
+#78
+objetiva-concursos-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563950884-0
+A anemia é uma condição de saúde na qual a presença de hemoglobinas sanguíneas é baixa, sendo resultado da carência de micronutrientes essenciais. Sãoconsideradas estratégias de promoção de saúde aliadas à prevenção da anemia:
+OPTS: A) Realizar ações e intervenções em relação à suplementação de grupos de risco, a conscientização popular sobre nutrientes e alimentação saudável como açõeseducativas voltadas à diversificação alimentar para o público em geral. | B) Incentivar o público jovem a consumir alimentos altamente calóricos
+
+---
+
+#79
+quadrix-enfermagem-processo-de-enfermagem-1776056181857-7
+No contexto da atenção básica e hospitalar, a informação à saúde é fundamental para o cuidado integral do paciente. Assinale a opção que apresenta a atitude que demonstra uma prática adequada do técnico de enfermagem ao fornecer informações ao paciente.
+OPTS: A) Fornecer explicações claras e adequadas ao nível de compreensão do paciente, incentivando dúvidas e o diálogo. | B) Informar o paciente somente sobre os procedimentos que serão realizados, sem explicar a importância ou cuidados posteriores, solicitar ao enfermeiro que realize a explicação. | C) E
+
+---
+
+#80
+ufmt-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-3
+É considerado um dos níveis da prevenção primária:
+OPTS: A) Reabilitação. | B) Diagnóstico. | C) Tratamento precoce. | D) Proteção específica.
+
+---
+
+#81
+unesc-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-7
+Sobre o tema alimentação e nutrição, marque a alternativa CORRETA:
+OPTS: A) Alimentos in natura nunca variam quanto à quantidade de energia ou calorias por grama e quanto à quantidade de nutrientes por caloria. | B) Alimentos in natura são aqueles obtidos diretamente de plantas ou de animais e adquiridos para consumo sem que tenham sofrido qualquer alteração após deixare
+
+---
+
+#82
+vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-1
+Com relação à formação e à educação continuada para a equipe que atua em saúde da família, é importante salientar que há práticas colaborativas que sustentama transmissão de informações, como conversar com pessoas em uma caminhada sobre os benefícios da atividade física. Essa troca de informações e saberes correspondeà: 4533) 4534) 4535) 4536) 4537)
+OPTS: A) importância da manutenção de relações verticalizadas de poder, em que o trabalhador sabe e passa informação, e o usuário recebe sem questionar | B) ação de organização do trabalho, cumprindo metas de orientação obrigatórias nesses tipos de atividades. | C) educação em saúde, que se faz com toda a
+
+---
+
+#83
+vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-1
+Considere a dieta que proporciona repouso digestivo e fornece quantidade adequada de nutrientes semelhante à dieta geral, porém, sua textura é menos sólida. Normalmente, os alimentos/preparações apresentam-se na forma de purês, cremes, papas e carnes subdivididas (moídas, trituradas, desfiadas) e suflês. Essa dieta é:
+OPTS: A) Leve. | B) Livre | C) Líquida. | D) Pastosa. | E) Restrita.
+
+---
+
+#84
+vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-4
+Conforme a recomendação da Organização Mundial da Saúde, qual é a quantidade diária máxima para o consumo de sal?
+OPTS: A) 1 grama. | B) 3 gramas. | C) 5 gramas. | D) 7 gramas. | E) 9 gramas.
+
+---
+
+#85
+vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563909811-5
+No Município de Taubaté, para atingir os objetivos propostos no Plano de Ação para Manejo e Controle de Escorpião, as equipes de saúde da família (eSF)realizam, entre outras ações, palestras e atividades educativas sobre a prevenção de acidentes com escorpiões e o que fazer nesses casos. Nesses encontros e em outrasoportunidades, a população deve ser orientada que, entre outras ações para o controle e manejo da população de escorpiões,
+OPTS: A) é correta a realização de queimadas em terrenos baldios próximos a residências. | B) no interior do domicílio, os rodapés soltos devem ser reparados e as janelas devem ser teladas. | C) é necessário eliminar/manter longe dos domicílios lagartos, sapos, gansos, corujas e outras aves de hábitos not

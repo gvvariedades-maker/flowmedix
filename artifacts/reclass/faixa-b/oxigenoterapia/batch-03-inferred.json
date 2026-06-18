@@ -1,0 +1,356 @@
+{
+  "batch": "03",
+  "bucket": "Oxigenoterapia e Cuidados Respiratórios",
+  "inferences": [
+    {
+      "modulo_slug": "iaupe-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056709494-0",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-1",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-2",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-3",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-2",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-3",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-4",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-6",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344712561-7",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "ibam-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-3",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "ibest-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344637595-6",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-4",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-6",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344651728-6",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com Oxigenoterapia ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-5",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "RCP/engasgo/obstrução VA — tema dominante fora de Oxigenoterapia."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-2",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-3",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-4",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-5",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-6",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-7",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-8",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778712147345-9",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1780066992037-8",
+      "suggested_subtopico": "Questões Mescladas e Outras Doenças Agudas",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Pneumonia como infecção aguda — doença, não procedimento de O2."
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-2",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056624615-3",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "idib-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1778934890864-2",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "idib-enfermagem-questoes-mescladas-e-outras-doencas-agudas-1778934918280-2",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Choque distributivo — emergência hemodinâmica."
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+      "suggested_subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Assistência ao usuário com asma na APS — doença respiratória crônica."
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780007230169-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Atendimento pré-hospitalar básico — protocolo de urgência."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-8",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011859940-2",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344688622-1",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344701804-6",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com Oxigenoterapia ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-2",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-6",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056641612-7",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+      "suggested_subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "DPOC exacerbada — foco na doença crônica, não dispositivo de O2."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344718151-6",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-7",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-0",
+      "suggested_subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Reação durante transfusão de plaquetas — cuidado com infusão/transfusão."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Engasgo/obstrução de VA durante refeição — emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-1",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006969552-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Obstrução grave de VA em criança — manobra de emergência."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344701804-4",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-6",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344707320-7",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344645032-4",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001988576-0",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001988576-2",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Oxigenoterapia, dispositivos de O2, vias aéreas ou padrões respiratórios."
+    }
+  ]
+}

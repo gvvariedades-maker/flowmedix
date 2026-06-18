@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-06-16T09:25:02.114Z",
+  "mode": "infer",
+  "bucket": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 1,
+    "inferred": 1,
+    "errors": 0,
+    "keep_current": 0,
+    "same_subtopico": 0,
+    "applicable": 1
+  },
+  "proposals": [
+    {
+      "modulo_slug": "idib-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778934918280-0",
+      "from": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Hantavirose (SCPH) — zoonose transmitida por roedores; prevenção ambiental específica.",
+      "applicable": true,
+      "source": "heuristic"
+    }
+  ]
+}

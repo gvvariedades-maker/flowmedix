@@ -1,0 +1,76 @@
+{
+  "batch": "05",
+  "bucket": "Curativos e Manejo de Feridas",
+  "inferences": [
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269305691-8",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Imobilização conservadora de fratura do cuboide."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-0",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Confecção de janela em gesso circular — imobilização ortopédica."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-1",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Gesso molhado e mole — manutenção de imobilização ortopédica."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-2",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Imobilização de fratura da falange proximal do polegar."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-4",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779344779828-2",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779344779828-3",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Avaliação de ferida operatória em puérpera pós-cesariana."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-curativos-e-manejo-de-feridas-1779344779828-4",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Educação em saúde para diabéticos na UBS — promoção."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1776055865890-0",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Prescrição de enfermagem e execução de cuidados prescritos."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001742844-4",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    }
+  ]
+}

@@ -520,6 +520,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         session={sessionData.session}
         resumo={sessionData.resumo}
         questoes={sessionData.questoes}
+        incentivos={sessionData.incentivos}
       />
     );
   }

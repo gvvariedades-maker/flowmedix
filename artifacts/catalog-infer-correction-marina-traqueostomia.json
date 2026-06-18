@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-06-16T12:30:00.000Z",
+  "mode": "infer",
+  "bucket": "Oxigenoterapia e Cuidados Respiratórios",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "heuristic",
+  "summary": {
+    "scanned": 1,
+    "inferred": 1,
+    "errors": 0,
+    "keep_current": 0,
+    "same_subtopico": 0,
+    "applicable": 1
+  },
+  "proposals": [
+    {
+      "modulo_slug": "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1779344657661-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Aspiração de vias aéreas em paciente com traqueostomia.",
+      "applicable": true,
+      "source": "heuristic"
+    }
+  ]
+}

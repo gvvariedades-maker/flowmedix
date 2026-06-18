@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-06-16T12:49:34.206Z",
+  "bucket": "Instalação e Manejo de Sondas",
+  "batch_size": 50,
+  "total": 100,
+  "batch_files": [
+    "artifacts/reclass/faixa-a/sondas/batch-03.json",
+    "artifacts/reclass/faixa-a/sondas/batch-04.json"
+  ]
+}

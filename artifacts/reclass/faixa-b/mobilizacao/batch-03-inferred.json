@@ -1,0 +1,209 @@
+{
+  "batch": "03",
+  "bucket": "Mobilização e Posicionamento do Paciente",
+  "inferences": [
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-0",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Mobilização, posicionamento, LPP, transferência ou higiene no leito."
+    },
+    {
+      "modulo_slug": "instituto-verbena-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103583552-8",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Dengue — doença viral epidemiológica."
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-seguranca-do-paciente-1777102802022-8",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Mobilização, posicionamento, LPP, transferência ou higiene no leito."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-6",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Higiene pessoal e ambiental para eliminar microrganismos — precaução padrão."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008225255-0",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Mobilização, posicionamento, LPP, transferência ou higiene no leito."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-2",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Mobilização, posicionamento, LPP, transferência ou higiene no leito."
+    },
+    {
+      "modulo_slug": "nao-informado-geral-procedimentos-diversos-1776056493133-0",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Dreno de tórax pós-toracotomia — cuidado respiratório."
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-seguranca-do-paciente-1779563443877-8",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Mobilização, posicionamento, LPP, transferência ou higiene no leito."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-2",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Mobilização, posicionamento, LPP, transferência ou higiene no leito."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-3",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Mobilização, posicionamento, LPP, transferência ou higiene no leito."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-4",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Mobilização, posicionamento, LPP, transferência ou higiene no leito."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-5",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Mobilização, posicionamento, LPP, transferência ou higiene no leito."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009359555-0",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Paciente em fase terminal/paliativos — não mobilização técnica."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-processo-de-enfermagem-1776056149404-5",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Documentação de enfermagem — processo de enfermagem."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-3",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com mobilização ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-4",
+      "suggested_subtopico": "Instalação e Manejo de Sondas",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Enteroclisma retal — procedimento com sonda/instilação."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003654722-0",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Mobilização, posicionamento, LPP, transferência ou higiene no leito."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-1",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Diretrizes ILCOR de reanimação — urgências/RCP."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-3",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Mobilização, posicionamento, LPP, transferência ou higiene no leito."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-7",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Cuidados com estomias — procedimento específico de ostomia."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-2",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Pacto em Defesa do SUS — política de saúde/APS."
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-1",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Preparo do corpo pós-morte — procedimento de necropsia/óbito."
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-4",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Assistência ao paciente em fase terminal — cuidados paliativos."
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-8",
+      "suggested_subtopico": "Saúde da Criança",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Assistência de enfermagem à criança — pediatria."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1776056009428-5",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo compatível com mobilização ou sem destino canônico claro ≥0,90."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-7",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Mobilização, posicionamento, LPP, transferência ou higiene no leito."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-7",
+      "suggested_subtopico": "Enfermagem do Trabalho",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Mapa de riscos ocupacionais — enfermagem do trabalho."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-seguranca-do-paciente-1779563448133-6",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Mobilização, posicionamento, LPP, transferência ou higiene no leito."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1776056366158-5",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Prescrição e técnica de medicação por via subcutânea — vias."
+    }
+  ]
+}

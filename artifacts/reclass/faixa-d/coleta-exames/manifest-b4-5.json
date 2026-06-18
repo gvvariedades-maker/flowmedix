@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-06-16T12:00:00.000Z",
+  "bucket": "Coleta de Exames Laboratoriais",
+  "batch_size": 50,
+  "total": 99,
+  "batch_files": [
+    "artifacts/reclass/faixa-d/coleta-exames/batch-04.json",
+    "artifacts/reclass/faixa-d/coleta-exames/batch-05.json"
+  ]
+}

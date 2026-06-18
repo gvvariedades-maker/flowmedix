@@ -1,0 +1,356 @@
+{
+  "batch": "02",
+  "bucket": "Verificação de Sinais Vitais",
+  "inferences": [
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-5",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo de verificação de sinais vitais."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-6",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344237445-0",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344237445-1",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "atame-enfermagem-verificacao-de-sinais-vitais-1779343932809-2",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "atame-enfermagem-verificacao-de-sinais-vitais-1779343932809-3",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-0",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Pesagem em internados — antropometria no cuidado."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-1",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Material para aferição de PA — esfigmomanômetro."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-2",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-3",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.75,
+      "keep_current": true,
+      "rationale": "Sem tema dominante claro fora de SV — manter bucket."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-4",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Peso/altura para estado nutricional — antropometria."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-8",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003031246-6",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003031246-8",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Medidas antropométricas vs sinais vitais."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003261833-0",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Monitorização contínua na UTI — sinais vitais."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-3",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Choque hipovolêmico em trauma."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-7",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Material para aferição de PA."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-8",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Técnica de medida antropométrica (estatura)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-5",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Prevenção de hipertensão — promoção à saúde."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-6",
+      "suggested_subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "PVC via cateter — punção/monitorização venosa."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-0",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-6",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Técnica de PA em adulto sentado."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-0",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Padrões respiratórios (Cheyne-Stokes, apneia)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-1",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Anafilaxia/angioedema em emergência."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563486900-2",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "Particularidades da febre — sinal temperatura."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563500147-8",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Manifestações clínicas do choque."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-1",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Avaliação de risco de úlceras por pressão."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-4",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Choque hipovolêmico — emergência."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-7",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-8",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-2",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-3",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343789998-5",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343789998-6",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-3",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-4",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-6",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343822075-0",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo de verificação de sinais vitais."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343822075-1",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo de verificação de sinais vitais."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343822075-4",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-0",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Terminologia taquicardia/eupneia após aferição."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-1",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Técnica de esfigmomanômetro."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-2",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Terminologia taquisfigmia/taquicardia."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-3",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "Terminologia dispneia/taquipneia."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343845367-1",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Equipamento para PA — esfigmomanômetro."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343845367-2",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343845367-3",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343865210-3",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-2",
+      "suggested_subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Dispneia e ritmos respiratórios anormais."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-3",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnica ou interpretação de sinais vitais (PA/FC/FR/temp/SpO2)."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-06-16T09:54:08.314Z",
+  "bucket": "Imunização",
+  "batch_size": 50,
+  "total": 578,
+  "batch_files": [
+    "artifacts/reclass/faixa-b/imunizacao/batch-01.json",
+    "artifacts/reclass/faixa-b/imunizacao/batch-02.json",
+    "artifacts/reclass/faixa-b/imunizacao/batch-03.json",
+    "artifacts/reclass/faixa-b/imunizacao/batch-04.json",
+    "artifacts/reclass/faixa-b/imunizacao/batch-05.json",
+    "artifacts/reclass/faixa-b/imunizacao/batch-06.json",
+    "artifacts/reclass/faixa-b/imunizacao/batch-07.json",
+    "artifacts/reclass/faixa-b/imunizacao/batch-08.json",
+    "artifacts/reclass/faixa-b/imunizacao/batch-09.json",
+    "artifacts/reclass/faixa-b/imunizacao/batch-10.json",
+    "artifacts/reclass/faixa-b/imunizacao/batch-11.json",
+    "artifacts/reclass/faixa-b/imunizacao/batch-12.json"
+  ]
+}

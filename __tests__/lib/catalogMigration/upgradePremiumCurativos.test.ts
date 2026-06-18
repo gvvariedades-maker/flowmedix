@@ -95,8 +95,41 @@ describe('upgradePremiumCurativos', () => {
     });
     const gr = slides[1] as { rows?: { label: string }[] };
     expect(gr.rows?.some((r) => r.label === 'Letra C')).toBe(true);
-    const dz = slides[3] as { items?: { label: string }[] };
+    const dz = slides[3] as { items?: { label: string; correct?: string }[] };
     expect(dz.items?.some((i) => i.label.includes('letra A'))).toBe(true);
+    const corrects = dz.items?.map((i) => i.correct).filter(Boolean) ?? [];
+    expect(new Set(corrects).size).toBeGreaterThan(1);
+    expect(corrects.some((c) => c?.includes('descartado'))).toBe(true);
+    expect(corrects.some((c) => c?.includes('contaminado') || c?.includes('menos'))).toBe(true);
+  });
+
+  it('buildCurativosPremiumSlides usa rodapé por tema fora de LPP', () => {
+    const instruction =
+      'Sobre classificação de feridas, julgue:\n' +
+      'I- Estágio I apresenta eritema não branqueável.\n' +
+      'II- Estágio II tem perda parcial da derme.\n' +
+      'III- Estágio III expõe osso.\n' +
+      'IV- Esfacelo indica tecido viável.\n' +
+      'É CORRETO o que se afirma apenas em:';
+    const slides = buildCurativosPremiumSlides({
+      instruction,
+      options: [
+        { id: 'A', text: 'I e II.', is_correct: true },
+        { id: 'B', text: 'II e III.', is_correct: false },
+        { id: 'C', text: 'III e IV.', is_correct: false },
+        { id: 'D', text: 'I e IV.', is_correct: false },
+        { id: 'E', text: 'II e IV.', is_correct: false },
+      ],
+      topico: 'Enfermagem',
+      subtopico: 'Curativos e Manejo de Feridas',
+    });
+    const lf = slides[2] as { footer_rule?: string; steps?: string[] };
+    expect(lf.footer_rule).toContain('estágio');
+    expect(lf.footer_rule).not.toContain('úmido nem massagem');
+    expect(lf.steps?.some((s) => s.includes('estágios'))).toBe(true);
+
+    const cm = slides[0] as { items?: { detail?: string }[] };
+    expect(cm.items?.some((i) => i.detail?.includes('Estágio I'))).toBe(true);
   });
 
   it('upgrade híbrido usa builder Curativos para VF genérico', () => {

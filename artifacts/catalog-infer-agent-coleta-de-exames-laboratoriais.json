@@ -1,0 +1,1008 @@
+{
+  "generated_at": "2026-06-16T11:02:08.662Z",
+  "mode": "infer",
+  "bucket": "Coleta de Exames Laboratoriais",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 99,
+    "inferred": 99,
+    "errors": 0,
+    "keep_current": 53,
+    "same_subtopico": 53,
+    "applicable": 46
+  },
+  "proposals": [
+    {
+      "modulo_slug": "igeduc-enfermagem-exames-laboratoriais-1779563621885-0",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-infeccoes-no-contexto-da-biosseguranca-1780000569658-7",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-8",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Biossegurança geral, EPI e descarte de resíduos — precauções padrão.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010566816-1",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-exames-laboratoriais-1779563631609-0",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Distúrbio metabólico — hipernatremia e equilíbrio eletrolítico.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-exames-laboratoriais-1779563559434-9",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Componentes do sangue — hemácias e função fisiológica.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-coleta-de-exames-laboratoriais-1779563272300-5",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Complicações e mortalidade do diabetes mellitus.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-exames-laboratoriais-1779563559434-3",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Diagnóstico laboratorial da tuberculose pulmonar.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-exames-laboratoriais-1779563613404-7",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Hipoglicemia em paciente com diabetes.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-1",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-coleta-de-exames-laboratoriais-1779563288910-7",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-exames-laboratoriais-1779563646977-1",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] RT-PCR em tempo real para diagnóstico de doenças virais.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-exames-complementares-1779563674260-5",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Classificação da pressão arterial de medição casual.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-exames-complementares-1779563674260-6",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Escala de Coma de Glasgow na avaliação neurológica.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-coleta-de-exames-laboratoriais-1779562780466-6",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-coleta-de-exames-laboratoriais-1779563272300-6",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Monitorização glicêmica capilar no controle do diabetes.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-evo-enfermagem-exames-complementares-1779563655698-7",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Objetivo da escala de Glasgow na avaliação de pacientes.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001988576-1",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003637054-0",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Exposição ocupacional a HIV por perfurocortante — PEP e precauções.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-5",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-8",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-coleta-de-exames-laboratoriais-1779563248005-6",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "[agent] Condutas pós-coleta de swab para COVID-19 — manejo da amostra.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-2",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Acidente com material biológico e condutas de biossegurança.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "intec-enfermagem-coleta-de-exames-laboratoriais-1779563248005-7",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Programa Nacional de Triagem Neonatal — teste do pezinho.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "isba-enfermagem-exames-complementares-1779563685104-3",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Tuberculose — etiologia e doença infectocontagiosa.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iset-enfermagem-coleta-de-exames-laboratoriais-1779562735777-2",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iset-enfermagem-exames-complementares-1779563655698-4",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Quadro clínico de diabetes tipo 2 e hipertensão.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iset-enfermagem-exames-complementares-1779563655698-5",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Cetoacidose diabética em paciente com diabetes tipo 1.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-coleta-de-exames-laboratoriais-1779563140631-8",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-coleta-de-exames-laboratoriais-1779563200105-7",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-exames-complementares-1779563679414-4",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Cadastro e guarda de exames no prontuário do paciente.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-exames-laboratoriais-1779563559434-4",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Conceito e utilidade da gasometria arterial em UTI.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-exames-laboratoriais-1779563559434-6",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Hipoglicemia como complicação aguda do diabetes mellitus.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-7",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica de coleta de sangue para sorologia de ISTs/AIDS.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779562768558-7",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779563288910-5",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779563288910-6",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-exames-complementares-1779563668619-1",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Abrangência dos procedimentos de análises complementares.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-coleta-de-exames-laboratoriais-1779562735777-7",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-exames-laboratoriais-1779563631609-1",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Interpretação de leucopenia no hemograma.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-seguranca-do-paciente-1777102936764-8",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779562716126-8",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-1",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Recomendações para coleta de escarro — técnica de amostra.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-2",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-6",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563140631-7",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Indicação da glicemia capilar no acompanhamento do diabético.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563165114-0",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563200105-5",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563272300-1",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-coleta-de-exames-laboratoriais-1779563288910-0",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563549311-8",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Valores de referência da glicemia em jejum e pós-prandial.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-1",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Testes laboratoriais para diagnóstico e monitoramento da glicose.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563613404-8",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Exame principal para confirmar meningite — punção lombar/LCR.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563621885-7",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.88,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo laboratorial sem tema dominante fora de coleta — manter bucket.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-exames-laboratoriais-1779563631609-7",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-exames-laboratoriais-1779563646977-5",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Sorologia viral com amostras pareadas aguda/convalescente.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "omni-enfermagem-exames-laboratoriais-1779563650975-5",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.88,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo laboratorial sem tema dominante fora de coleta — manter bucket.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-exames-laboratoriais-1779563613404-6",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Hipercalemia — distúrbio eletrolítico do potássio.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779562768558-8",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "[agent] Hemólise como intercorrência na qualidade da amostra coletada.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779563225798-9",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-coleta-de-exames-laboratoriais-1779563248005-0",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-coleta-de-exames-laboratoriais-1779563272300-0",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-exames-complementares-1779563668619-4",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Doença de Perthes — osteonecrose do quadril em crianças.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-exames-complementares-1779563674260-7",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Artefatos em radiografia — imagens não anatômicas.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-exames-laboratoriais-1779563621885-4",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Componentes da gasometria arterial — equilíbrio ácido-base.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-exames-complementares-1779563674260-4",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Acompanhamento pré-natal e gestação saudável.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-exames-laboratoriais-1779563621885-5",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Hipocalemia — valores de referência do potássio sérico.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-coleta-de-exames-laboratoriais-1779562768558-0",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Coleta de sangue em papel-filtro para teste do pezinho.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-coleta-de-exames-laboratoriais-1779563288910-8",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563613404-9",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563646977-4",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "[agent] VDRL para diagnóstico de sífilis.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563646977-6",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563646977-7",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563646977-8",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563650975-0",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Automonitorização da glicemia capilar no paciente diabético.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-exames-laboratoriais-1779563650975-1",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Fezes acólicas — alteração biliar e fisiologia digestiva.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-coleta-de-exames-laboratoriais-1779563165114-9",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-exames-complementares-1779563674260-1",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Aferição da pressão arterial pelo método auscultatório.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010594524-5",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "[agent] Definição e papel dos exames complementares no diagnóstico.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562716126-4",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-3",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Alta do recém-nascido e teste do pezinho na maternidade.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-4",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Preparo para exame citopatológico do colo uterino.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-5",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica adequada de coleta de escarro para baciloscopia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562730776-9",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Teste de gravidez — orientação e realização.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562735777-0",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779562780466-1",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-7",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Cuidados na coleta de escarro para baciloscopia de TB.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563165114-8",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-0",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Cuidados na verificação da glicemia capilar — técnica de coleta.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-1",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-3",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Técnica, preparo ou preservação de amostras laboratoriais.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563200105-4",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Coleta de escarro para diagnóstico e acompanhamento da TB.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563248005-5",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Procedimento de coleta do teste de triagem neonatal.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-coleta-de-exames-laboratoriais-1779563272300-7",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] Cuidados na coleta de escarro para baciloscopia.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563818401-2",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "[agent] Notificação compulsória semanal de agravos.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-complementares-1779424094915-0",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Diarreia aquosa e desidratação na unidade de pronto atendimento.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-complementares-1779563685104-0",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Instrumentos para avaliação do estado neurológico.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-laboratoriais-1779563621885-2",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Monitorização da glicemia de diabéticos na UBS.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-exames-laboratoriais-1779563650975-3",
+      "from": "Coleta de Exames Laboratoriais",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Interpretação de hemograma — leucócitos e plaquetas.",
+      "applicable": true,
+      "source": "heuristic"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-06-16T12:49:49.281Z",
+  "bucket": "Noções de Fisiologia",
+  "batch_size": 50,
+  "total": 159,
+  "batch_files": [
+    "artifacts/reclass/faixa-a/fisiologia/batch-01.json",
+    "artifacts/reclass/faixa-a/fisiologia/batch-02.json",
+    "artifacts/reclass/faixa-a/fisiologia/batch-03.json",
+    "artifacts/reclass/faixa-a/fisiologia/batch-04.json"
+  ]
+}

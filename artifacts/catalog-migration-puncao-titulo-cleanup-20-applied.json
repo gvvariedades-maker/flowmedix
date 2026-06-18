@@ -1,0 +1,153 @@
+{
+  "generated_at": "2026-06-16T14:45:50.143Z",
+  "lote": "puncao-titulo-cleanup-20",
+  "mode": "apply",
+  "total_files": 20,
+  "ok": 20,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340191984-6",
+    "ameosc-enfermagem-seguranca-do-paciente-1777102936764-1",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003709908-4",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006444165-6",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006444165-9",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006456417-1",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780007230169-3",
+    "ibade-enfermagem-nocoes-de-fisiologia-1775448615466-7",
+    "ibade-enfermagem-seguranca-do-paciente-1777102802022-3",
+    "ibade-enfermagem-seguranca-do-paciente-1779563436357-0",
+    "idecan-enfermagem-seguranca-do-paciente-1777102802022-7",
+    "idecan-enfermagem-seguranca-do-paciente-1778712220716-6",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-1",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-2",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-4",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-8",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-7",
+    "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-3",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-8"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340191984-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-seguranca-do-paciente-1777102936764-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780007230169-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-nocoes-de-fisiologia-1775448615466-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-seguranca-do-paciente-1777102802022-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-seguranca-do-paciente-1779563436357-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1777102802022-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-seguranca-do-paciente-1778712220716-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-calculo-de-administracao-de-medicamentos-e-infusoes-1776056256294-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

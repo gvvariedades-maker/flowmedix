@@ -1,0 +1,160 @@
+{
+  "batch": "06",
+  "bucket": "Vias de Administração",
+  "inferences": [
+    {
+      "modulo_slug": "sc-treinamentos-enfermagem-vias-de-administracao-1778969018962-0",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, indicação ou classificação de vias de administração."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-vias-de-administracao-1776056330579-7",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, indicação ou classificação de vias de administração."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-vias-de-administracao-1776056383154-2",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, indicação ou classificação de vias de administração."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-vias-de-administracao-1776056401060-3",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, indicação ou classificação de vias de administração."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-vias-de-administracao-1778968629127-4",
+      "suggested_subtopico": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Preparo e administração segura de medicamentos."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-vias-de-administracao-1778968687469-0",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Nutrição parenteral quando enteral é insuficiente."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-vias-de-administracao-1778968687469-1",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, indicação ou classificação de vias de administração."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-5",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Técnicas de aplicação de injeções — ângulos e protocolos."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-vias-de-administracao-1778968609115-3",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo de vias de administração de medicamentos."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-vias-de-administracao-1778968956139-6",
+      "suggested_subtopico": "Saúde da Criança",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Cuidado pediátrico na aplicação."
+    },
+    {
+      "modulo_slug": "univali-enfermagem-vias-de-administracao-1778968573722-1",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, indicação ou classificação de vias de administração."
+    },
+    {
+      "modulo_slug": "univida-enfermagem-vias-de-administracao-1778968646731-3",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, indicação ou classificação de vias de administração."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1776056330579-6",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, indicação ou classificação de vias de administração."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1776056338955-3",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, indicação ou classificação de vias de administração."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1776056357082-7",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, indicação ou classificação de vias de administração."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1776056366158-5",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Posição do paciente para via retal e aferição de temperatura."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1776056366158-6",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, indicação ou classificação de vias de administração."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1776056366158-8",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, indicação ou classificação de vias de administração."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1778968609115-2",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, indicação ou classificação de vias de administração."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1778968768987-1",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "Conteúdo de vias de administração de medicamentos."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1778968768987-5",
+      "suggested_subtopico": "Noções de Fisiologia",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "Nutrição parenteral vs enteral — fisiologia aplicada."
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1778968787431-7",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, indicação ou classificação de vias de administração."
+    }
+  ]
+}

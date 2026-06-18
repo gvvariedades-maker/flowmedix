@@ -1,0 +1,27 @@
+﻿{
+  "lote": "curativos-lote-05",
+  "subtopico": "Curativos e Manejo de Feridas",
+  "exported_count": 50,
+  "applied_count": 50,
+  "golden_reference": "examples/questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+  "builder": "upgradePremiumCurativos (VF + múltipla escolha)",
+  "status": "applied",
+  "applied_at": "2026-06-15",
+  "families": {
+    "conceito": 43,
+    "protocolo": 6,
+    "calc": 1
+  },
+  "notes": "Primeiro slug: fundep-enfermagem-curativos-e-manejo-de-feridas-1779269212740-6. Export 50 slugs novos com exclude 01+02+04 (lote-03 omitido — duplicata do lote-02). Progresso cumulativo único estimado ~151 questões premium (101 + 50).",
+  "exclude_manifests": [
+    "artifacts/catalog-migration-curativos-lote-01-applied.json",
+    "artifacts/catalog-migration-curativos-lote-02-applied.json",
+    "artifacts/catalog-migration-curativos-lote-04-applied.json"
+  ],
+  "workflow": [
+    "1. npm run catalog:export-lote -- --lote=curativos-lote-05 --subtopico=\"Curativos e Manejo de Feridas\" --limit=50 --exclude-manifest=artifacts/catalog-migration-curativos-lote-01-applied.json,artifacts/catalog-migration-curativos-lote-02-applied.json,artifacts/catalog-migration-curativos-lote-04-applied.json",
+    "2. npm run catalog:upgrade-premium -- --lote=curativos-lote-05 --write --force",
+    "3. npm run catalog:apply-lote -- --lote=curativos-lote-05 --apply"
+  ],
+  "artifact": "artifacts/catalog-migration-curativos-lote-05-applied.json"
+}

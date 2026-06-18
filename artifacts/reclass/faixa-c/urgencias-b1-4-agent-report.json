@@ -1,0 +1,2018 @@
+{
+  "generated_at": "2026-06-16T10:15:21.324Z",
+  "mode": "infer",
+  "bucket": "Urgências e Emergências",
+  "min_confidence_apply": 0.9,
+  "limit": null,
+  "inference_source": "mixed",
+  "summary": {
+    "scanned": 200,
+    "inferred": 200,
+    "errors": 0,
+    "keep_current": 173,
+    "same_subtopico": 173,
+    "applicable": 27
+  },
+  "proposals": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-semiologia-em-enfermagem-1779563500147-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011961798-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780011967989-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo compatível com Urgências ou sem destino claro ≥0,90.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo compatível com Urgências ou sem destino claro ≥0,90.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo compatível com Urgências ou sem destino claro ≥0,90.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563480978-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo compatível com Urgências ou sem destino claro ≥0,90.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563500147-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo compatível com Urgências ou sem destino claro ≥0,90.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-semiologia-em-enfermagem-1779563517223-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-urgencias-e-emergencias-1777103970505-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-urgencias-e-emergencias-1777104024064-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-urgencias-e-emergencias-1777104083571-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "avancasp-geral-urgencias-e-emergencias-1777104083571-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "com-exam-pref-bauru-enfermagem-urgencias-e-emergencias-1777104056718-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-urgencias-e-emergencias-1777104018306-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-enfermagem-urgencias-e-emergencias-rcp-premium-pilot",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo compatível com Urgências ou sem destino claro ≥0,90.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-urgencias-e-emergencias-1777103976379-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-geral-urgencias-e-emergencias-1777103970505-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-urgencias-e-emergencias-1777104070286-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Definição de emergência — conceito central de urgência/emergência.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facape-enfermagem-semiologia-em-enfermagem-1779563486900-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Pico hipertensivo na UBS com encaminhamento emergencial.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-urgencias-e-emergencias-1777103976379-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "facet-geral-urgencias-e-emergencias-1777103976379-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-urgencias-e-emergencias-1777104031822-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-urgencias-e-emergencias-1777104018306-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-urgencias-e-emergencias-1777104024064-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Reação transfusional aguda — manejo de hemoterapia.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Quadro clínico de meningite — doença bacteriana infecciosa.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-urgencias-e-emergencias-1777103988389-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-urgencias-e-emergencias-1777103994618-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780001988576-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Enfermagem do Trabalho",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Exposição nuclear/radiológica ocupacional — saúde do trabalho.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-processo-de-enfermagem-1780002110600-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Amputação traumática — avaliação primária ABCDE.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563491765-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-urgencias-e-emergencias-1777104056718-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] RCP em gestante — obstetrícia de emergência (saúde da mulher).",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-urgencias-e-emergencias-1777104063550-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-urgencias-e-emergencias-1777104077075-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-urgencias-e-emergencias-1777104000896-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-urgencias-e-emergencias-1777104007115-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funcern-enfermagem-urgencias-e-emergencias-1777104007115-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "[agent] Classificação de risco em serviço de urgência — triagem emergencial.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Siglas e terminologias de enfermagem — processo/documentação.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006962671-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006969552-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563480978-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo compatível com Urgências ou sem destino claro ≥0,90.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563486900-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo compatível com Urgências ou sem destino claro ≥0,90.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563495719-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "[agent] Avaliação pupilar no exame neurológico emergencial.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-semiologia-em-enfermagem-1779563531989-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777103976379-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777103994618-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104007115-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Meningite bacteriana — infecção do SNC.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104000896-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-urgencias-e-emergencias-1777104007115-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-urgencias-e-emergencias-1777103970505-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Saúde da Mulher",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Adolescente em consulta ginecológica com convulsão — núcleo obstétrico/gineco.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "funtef-enfermagem-urgencias-e-emergencias-1777103970505-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011908736-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Lacuna sobre emergência/trauma — permanece no bucket.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011915153-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-urgencias-e-emergencias-1777104012755-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Oxigenoterapia e Cuidados Respiratórios",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Padrões respiratórios anormais — semiologia respiratória.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-urgencias-e-emergencias-1777104012755-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Curativos e Manejo de Feridas",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Curativo hemostático/pressão — manejo de feridas.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-urgencias-e-emergencias-1777104012755-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-urgencias-e-emergencias-1777104031822-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-urgencias-e-emergencias-1777104031822-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Definição epidemiológica de trauma — vigilância.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-processo-de-enfermagem-1776056149404-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo compatível com Urgências ou sem destino claro ≥0,90.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-urgencias-e-emergencias-1777104012755-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-processo-de-enfermagem-1780005137458-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-urgencias-e-emergencias-1777103988389-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-verificacao-de-sinais-vitais-1779344178184-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Disposição de eletrodos de monitor cardíaco — técnica SV/monitorização.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-geral-urgencias-e-emergencias-1777103590498-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Espectro clínico da dengue — arbovirose/zoonose.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-geral-urgencias-e-emergencias-1777103590498-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Choque na fase crítica da dengue — manejo da doença.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibade-geral-urgencias-e-emergencias-1777103590498-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Casos graves de dengue — classificação clínica.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-semiologia-em-enfermagem-1779563512485-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.9,
+      "keep_current": true,
+      "rationale": "[agent] Conteúdo compatível com Urgências ou sem destino claro ≥0,90.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-semiologia-em-enfermagem-1779563512485-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-semiologia-em-enfermagem-1779563527042-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Terminologia pupilar (isocoria) — noção anatômica.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-urgencias-e-emergencias-1777103988389-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-outros-temas-de-enfermagem-1780001440222-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "[agent] HDA com instabilidade — emergência digestiva.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-urgencias-e-emergencias-1780001297464-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-uti-1778712381105-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Saúde Mental",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Delirium em paciente sedado na UTI — saúde mental.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-uti-1778712392541-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Cuidados na Administração de Medicamentos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Administração de drogas vasoativas — cuidados medicamentosos.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-uti-1778712392541-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Monitorização cardíaca contínua na UTI — vigilância de SV.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1778712270872-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.92,
+      "keep_current": true,
+      "rationale": "[agent] Definição de primeiros socorros no contexto emergencial.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Enfermagem do Trabalho",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Acidente ocupacional com agulha e PEP HIV — saúde do trabalho.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712392541-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "[agent] Qualidade e segurança do atendimento hospitalar.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712400677-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1778712409051-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-urgencias-e-emergencias-1780067013432-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-acidente-vascular-cerebral-avc-1778934918280-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": true,
+      "rationale": "[agent] Epidemiologia e reconhecimento de AVC — emergência neurológica.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-processo-de-enfermagem-1778934863952-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Cateterismo cardíaco invasivo — procedimento diagnóstico.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934936220-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-urgencias-e-emergencias-1778934936220-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780009392850-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011879977-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104018306-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Imunização",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Esquema vacinal antirrábica pós-exposição — imunização.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Urgência hipertensiva no protocolo SBV — emergência.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104031822-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104031822-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "[agent] PrEP HIV sob demanda — profilaxia IST.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104031822-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104031822-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104038968-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104070286-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104070286-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104077075-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001220945-9",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1780001297464-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "igeduc-geral-urgencias-e-emergencias-1777103471372-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-8",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "[agent] Internação pré-procedimento com anticoagulante — perioperatório.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-2",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-0",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-1",
+      "from": "Urgências e Emergências",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "[agent] Retorno pós-colecistectomia — cuidado pós-operatório.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-3",
+      "from": "Urgências e Emergências",
+      "suggested": "Saúde da Criança",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "[agent] Cuidados ao RN imediato pós-parto — saúde da criança.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-4",
+      "from": "Urgências e Emergências",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "[agent] Técnica de aferição de pressão arterial.",
+      "applicable": true,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-5",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-6",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.91,
+      "keep_current": true,
+      "rationale": "[agent] Slug urgências sem destino canônico claro — manter.",
+      "applicable": false,
+      "source": "heuristic"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-urgencias-e-emergencias-1777104000896-7",
+      "from": "Urgências e Emergências",
+      "suggested": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "[agent] RCP, trauma, choque, emergências ou primeiros socorros.",
+      "applicable": false,
+      "source": "heuristic"
+    }
+  ]
+}

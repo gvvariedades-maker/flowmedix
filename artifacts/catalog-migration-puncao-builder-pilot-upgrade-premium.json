@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-06-16T14:31:57.657Z",
+  "lote": "puncao-builder-pilot",
+  "mode": "write",
+  "force": true,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 5,
+  "upgraded": 5,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "protocolo": 1,
+    "conceito": 3,
+    "calc": 1
+  },
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-admtec-puncao-venosa-cateteres.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-admtec-puncao-venosa-cateteres.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-admtec-puncao-venosa-cateteres.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-7",
+      "status": "upgraded",
+      "family": "calc",
+      "golden_reference": "questao-premium-admtec-puncao-venosa-cateteres.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-admtec-puncao-venosa-cateteres.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    }
+  ]
+}

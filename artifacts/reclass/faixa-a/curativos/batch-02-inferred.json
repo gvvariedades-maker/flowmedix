@@ -1,0 +1,356 @@
+{
+  "batch": "02",
+  "bucket": "Curativos e Manejo de Feridas",
+  "inferences": [
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-3",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-4",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-5",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-1",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "cetap-enfermagem-curativos-e-manejo-de-feridas-1779344819753-8",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "prevenção LPP — tema dominante fora de Curativos."
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-curativos-e-manejo-de-feridas-1779269212740-7",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-curativos-e-manejo-de-feridas-1779344773456-2",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-3",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103583552-0",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Dengue — febre, mialgia, exantema e dor retro-orbitária."
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-curativos-e-manejo-de-feridas-1779340178514-9",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-2",
+      "suggested_subtopico": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Doença de Chagas (Trypanosoma cruzi) — parasitária."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779269305691-1",
+      "suggested_subtopico": "Feridas e Queimaduras",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Queimadura doméstica em criança — primeiros socorros."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-curativos-e-manejo-de-feridas-1779344786992-2",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "prevenção LPP — tema dominante fora de Curativos."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003349182-1",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Visita domiciliar do ACS — orientação a acamado."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-5",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-0",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-4",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344786992-5",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Escolha de curativo em úlcera por pressão — manejo de feridas."
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344819753-0",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Escolha de curativo em úlcera por pressão — manejo de feridas."
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-curativos-e-manejo-de-feridas-1779344819753-1",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-curativos-e-manejo-de-feridas-1779269305691-7",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Contraindicações de produtos em feridas colonizadas/queimaduras — manejo de curativos."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-curativos-e-manejo-de-feridas-1779344779828-1",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Visita domiciliar na atenção básica."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-2",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "epl-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-6",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Tipos de educação em saúde — promoção."
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779269305691-5",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344751294-9",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344759089-0",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344779828-5",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Escolha de curativo em úlcera por pressão — manejo de feridas."
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-7",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-8",
+      "suggested_subtopico": "Feridas e Queimaduras",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Queimadura térmica 2º grau — classificação e primeiros cuidados."
+    },
+    {
+      "modulo_slug": "facet-enfermagem-curativos-e-manejo-de-feridas-1779344786992-9",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-curativos-e-manejo-de-feridas-1779344759089-4",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-curativos-e-manejo-de-feridas-1779344773456-4",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-5",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-0",
+      "suggested_subtopico": "Enfermagem em Centro Cirúrgico",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Placa dispersiva do bisturi elétrico — centro cirúrgico."
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-9",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Acidente com material perfurocortante — precauções."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-curativos-e-manejo-de-feridas-1779340178514-6",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344779828-7",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344819753-2",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-curativos-e-manejo-de-feridas-1779344819753-3",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-seguranca-do-paciente-1777102678563-0",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Escala dos 5 Is para risco de LPP — prevenção por posicionamento."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344759089-2",
+      "suggested_subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Ferimento com objeto enferrujado — profilaxia antitetânica."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344759089-5",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-curativos-e-manejo-de-feridas-1779344819753-5",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "fumarc-enfermagem-atencao-basica-saude-da-familia-1778968094018-5",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Objetivo da visita domiciliar na saúde coletiva."
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-curativos-e-manejo-de-feridas-1779269315587-8",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Compressa quente em membros — termoterapia, não curativo."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-curativos-e-manejo-de-feridas-1779344813448-1",
+      "suggested_subtopico": "Feridas e Queimaduras",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Definição e classificação de queimaduras."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-curativos-e-manejo-de-feridas-1779344813448-2",
+      "suggested_subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Prevenção de infecção do sítio cirúrgico no perioperatório."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006954613-8",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006976703-1",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "CRRT vs hemodiálise em neurocrítico — DCNT/renal."
+    }
+  ]
+}

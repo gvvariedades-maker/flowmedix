@@ -5,6 +5,7 @@ import { createServerSupabase } from '@/lib/supabase/server';
 import { logger } from '@/lib/logger';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { finalizeE2eSimuladoSession } from '@/lib/e2e/simuladoSeed';
+import { attachConclusaoIncentivos } from '@/lib/simulado/attachConclusaoIncentivos';
 import { loadSimuladoSessionDetail } from '@/lib/simulado/sessionDetail';
 import { markSimuladoSessionConcluida } from '@/lib/simulado/finalizeSession';
 
@@ -52,7 +53,8 @@ export async function POST(
       return NextResponse.json({ error: 'Erro ao carregar simulado' }, { status: 500 });
     }
 
-    return NextResponse.json(result.data);
+    const detail = await attachConclusaoIncentivos(supabase, auth.user.id, result.data);
+    return NextResponse.json(detail);
   } catch (error) {
     logger.error('Erro inesperado em POST /api/simulado/sessions/[id]/concluir', error);
     return NextResponse.json({ error: 'Erro interno' }, { status: 500 });

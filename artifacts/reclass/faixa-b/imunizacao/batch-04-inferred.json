@@ -1,0 +1,356 @@
+{
+  "batch": "04",
+  "bucket": "Imunização",
+  "inferences": [
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564071106-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564085730-6",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564085730-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779564085730-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572171486-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-5",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-6",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.93,
+      "keep_current": true,
+      "rationale": "Via de administração da vacina Hepatite A — técnica vacinal."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-imunizacao-1779572180830-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fau-unicentro-geral-imunizacao-1777103238173-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-imunizacao-1777103251447-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-imunizacao-1777103257434-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-imunizacao-1777103264001-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-imunizacao-1777103264001-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-imunizacao-1779572171486-5",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fcc-enfermagem-imunizacao-1777103264001-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fcc-enfermagem-imunizacao-1777103264001-5",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-imunizacao-1779564096589-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fcm-enfermagem-imunizacao-1779564096589-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fcm-geral-imunizacao-1779564090395-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-8",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-imunizacao-1779563970889-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-imunizacao-1780000630425-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-2",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Higienização das mãos para interromper transmissão — precauções."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1777103204932-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1777103270218-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779564001927-4",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779564011849-5",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779564109452-3",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779564119665-1",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779564119665-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779572166628-5",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779572171486-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-imunizacao-1779572171486-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780002217274-0",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-processo-de-enfermagem-1780008232871-9",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1777103215560-7",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563970889-2",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-imunizacao-1779563970889-9",
+      "suggested_subtopico": "Imunização",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Vacinas, calendário, técnica ou conservação de imunobiológicos."
+    }
+  ]
+}

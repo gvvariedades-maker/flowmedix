@@ -65,7 +65,7 @@ const SLOT_TAGS: Record<NodeSlot, string> = {
 function inferSlot(title: string, description: string): NodeSlot {
   const text = `${title} ${description}`.toLowerCase();
   if (/gabarito|letra\s*[a-e]/.test(text)) return 'gabarito';
-  if (/parâmetro|parametro|enunciado|comando/.test(text)) return 'parametro';
+  if (/contexto|parâmetro|parametro|enunciado|comando/.test(text)) return 'parametro';
   if (/antissepsia|clorexidina|higieniza/.test(text)) return 'antissepsia';
   if (/barreira|asséptica|esteril/.test(text)) return 'barreira';
   if (/curativo|semipermeável/.test(text)) return 'curativo';
@@ -140,9 +140,6 @@ export function MorphingTimelineConceptMap({
     [total],
   );
 
-  const revealNext = useCallback(() => {
-    setRevealedCount((prev) => Math.min(prev + 1, total));
-  }, [total]);
 
   const reset = useCallback(() => {
     setRevealedCount(0);
@@ -168,6 +165,32 @@ export function MorphingTimelineConceptMap({
       });
     },
     [revealedCount],
+  );
+
+  const scrollToNode = useCallback((index: number) => {
+    setTimeout(() => {
+      const area = scrollRef.current;
+      const nodeEl = area?.querySelector(`[data-timeline-node="${index}"]`);
+      if (area && nodeEl instanceof HTMLElement) {
+        area.scrollTo({ top: nodeEl.offsetTop - 20, behavior: 'smooth' });
+      }
+    }, 120);
+  }, []);
+
+  /** Toque no card: revela a próxima etapa ou expande/colapsa a já revelada. */
+  const handleCardPress = useCallback(
+    (index: number) => {
+      if (index === revealedCount) {
+        revealUpTo(index);
+        setExpandedIndex(index);
+        scrollToNode(index);
+        return;
+      }
+      if (index < revealedCount) {
+        toggleCard(index);
+      }
+    },
+    [revealedCount, revealUpTo, scrollToNode, toggleCard],
   );
 
   if (nodes.length === 0) {
@@ -206,6 +229,12 @@ export function MorphingTimelineConceptMap({
               sequência
             </span>
           </h2>
+          {revealedCount < total ? (
+            <p className="mt-1.5 font-body text-xs font-medium text-slate-500">
+              Toque o card destacado ({String(revealedCount + 1).padStart(2, '0')} ·{' '}
+              {SLOT_TAGS[nodes[revealedCount]?.slot ?? 'extra']}) para revelar
+            </p>
+          ) : null}
         </div>
         <div className="text-right pt-1">
           <p className="font-display text-[32px] font-black leading-none tracking-tight text-slate-900">
@@ -233,32 +262,46 @@ export function MorphingTimelineConceptMap({
 
         <div className="flex flex-col">
           {nodes.map((node, index) => {
-            const pending = index >= revealedCount;
+            const isLocked = index > revealedCount;
+            const isNext = index === revealedCount;
+            const isRevealed = index < revealedCount;
             const expanded = expandedIndex === index;
             const Icon = resolveLucideIcon(node.icon);
             const tag = SLOT_TAGS[node.slot];
+            const stepLabel = `${String(index + 1).padStart(2, '0')} · ${tag}`;
 
             return (
               <div
                 key={`${node.title}-${index}`}
                 data-timeline-node={index}
-                className={`relative z-[5] flex min-h-[100px] items-start gap-[18px] ${pending ? 'opacity-100' : ''}`}
+                className="relative z-[5] flex min-h-[100px] items-start gap-[18px]"
               >
                 <div className="flex w-8 shrink-0 flex-col items-center pt-1">
-                  <span className="mb-1.5 w-8 text-center font-mono text-[9px] font-extrabold uppercase tracking-widest text-slate-300">
+                  <span
+                    className={`mb-1.5 w-8 text-center font-mono text-[9px] font-extrabold uppercase tracking-widest ${
+                      isNext ? 'text-slate-700' : isLocked ? 'text-slate-300' : 'text-slate-500'
+                    }`}
+                  >
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <motion.button
                     type="button"
-                    disabled={pending}
-                    onClick={() => revealUpTo(index)}
+                    disabled={isLocked}
+                    onClick={() => handleCardPress(index)}
                     initial={false}
-                    animate={pending ? { scale: 1, opacity: 0.3 } : { scale: 1, opacity: 1 }}
-                    whileTap={pending ? undefined : { scale: 0.9 }}
+                    animate={
+                      isLocked
+                        ? { scale: 1, opacity: 0.3 }
+                        : isNext
+                          ? { scale: [1, 1.06, 1], opacity: 1 }
+                          : { scale: 1, opacity: 1 }
+                    }
+                    transition={isNext ? { duration: 2, repeat: Infinity, ease: 'easeInOut' } : undefined}
+                    whileTap={isLocked ? undefined : { scale: 0.9 }}
                     className={`relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full shadow-lg transition-shadow ${node.palette.circle} ${
-                      pending ? 'pointer-events-none' : 'cursor-pointer'
-                    } ${index < revealedCount ? 'ring-[1.5px] ring-current/30 ring-offset-2' : ''}`}
-                    aria-label={`Revelar ${node.title}`}
+                      isLocked ? 'pointer-events-none' : 'cursor-pointer'
+                    } ${isRevealed || isNext ? 'ring-[1.5px] ring-current/30 ring-offset-2' : ''}`}
+                    aria-label={isNext ? `Revelar etapa ${stepLabel}` : `Abrir ${node.title}`}
                   >
                     <Icon className="h-4 w-4" aria-hidden />
                   </motion.button>
@@ -267,12 +310,14 @@ export function MorphingTimelineConceptMap({
                 <div className="min-w-0 flex-1 pb-7">
                   <button
                     type="button"
-                    disabled={pending}
-                    onClick={() => toggleCard(index)}
-                    className={`relative w-full overflow-hidden rounded-[14px] border border-black/7 bg-white text-left shadow-sm transition-all ${
-                      pending
-                        ? 'pointer-events-none border-dashed bg-white/50'
-                        : 'cursor-pointer active:scale-[0.98]'
+                    disabled={isLocked}
+                    onClick={() => handleCardPress(index)}
+                    className={`relative w-full overflow-hidden rounded-[14px] border bg-white text-left shadow-sm transition-all ${
+                      isLocked
+                        ? 'pointer-events-none border-dashed border-black/7 bg-white/50 opacity-60'
+                        : isNext
+                          ? 'cursor-pointer border-2 border-slate-900/20 bg-white ring-2 ring-slate-900/10 active:scale-[0.98]'
+                          : 'cursor-pointer border-black/7 active:scale-[0.98]'
                     }`}
                   >
                     <div
@@ -280,29 +325,60 @@ export function MorphingTimelineConceptMap({
                       aria-hidden
                     />
                     <div className="relative px-4 py-3.5">
+                      <div className="mb-1.5 flex flex-wrap items-center gap-2">
+                        <span
+                          className={`rounded-full px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wide ${
+                            isLocked
+                              ? 'bg-slate-100 text-slate-300'
+                              : isNext
+                                ? `${node.palette.tag} ring-1 ring-black/5`
+                                : node.palette.tag
+                          }`}
+                        >
+                          {stepLabel}
+                        </span>
+                        {isNext ? (
+                          <span className="font-body text-[10px] font-bold uppercase tracking-wide text-slate-500">
+                            Toque para revelar
+                          </span>
+                        ) : null}
+                        {isRevealed && expanded ? (
+                          <span className="font-body text-[10px] font-semibold text-slate-400">Aberto</span>
+                        ) : null}
+                      </div>
                       <div className="flex items-center justify-between gap-2">
                         <p
-                          className={`font-body text-sm font-extrabold ${pending ? 'text-slate-300' : 'text-slate-900'}`}
+                          className={`font-body text-sm font-extrabold ${
+                            isLocked ? 'text-slate-300' : 'text-slate-900'
+                          }`}
                         >
                           {node.title}
                         </p>
                         <ChevronRight
                           className={`h-3.5 w-3.5 shrink-0 transition-transform ${
-                            expanded ? 'rotate-90 text-slate-400' : 'text-slate-300'
+                            expanded ? 'rotate-90 text-slate-400' : isNext ? 'text-slate-500' : 'text-slate-300'
                           }`}
                           aria-hidden
                         />
                       </div>
                       <p
                         className={`mt-1 font-body text-xs leading-snug transition-opacity ${
-                          pending ? 'text-slate-200' : expanded ? 'h-0 overflow-hidden opacity-0' : 'text-slate-400'
+                          isLocked
+                            ? 'text-slate-200'
+                            : isNext
+                              ? 'text-slate-500'
+                              : expanded
+                                ? 'h-0 overflow-hidden opacity-0'
+                                : 'text-slate-400'
                         }`}
                       >
-                        {previewText(node.description)}
+                        {isNext
+                          ? 'Toque neste card para revelar a etapa e ver o detalhe.'
+                          : previewText(node.description)}
                       </p>
 
                       <AnimatePresence initial={false}>
-                        {expanded && !pending ? (
+                        {expanded && isRevealed ? (
                           <motion.div
                             key="body"
                             initial={{ height: 0, opacity: 0 }}
@@ -391,10 +467,14 @@ export function MorphingTimelineConceptMap({
         <button
           type="button"
           disabled={revealedCount >= total}
-          onClick={revealNext}
-          className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-slate-900 py-3.5 font-body text-sm font-bold text-white transition-all active:scale-[0.97] disabled:cursor-not-allowed disabled:bg-slate-200 disabled:text-slate-400"
+          onClick={() => {
+            if (revealedCount < total) {
+              handleCardPress(revealedCount);
+            }
+          }}
+          className="flex flex-1 items-center justify-center gap-2 rounded-2xl border border-black/10 bg-white py-3.5 font-body text-sm font-bold text-slate-700 transition-all active:scale-[0.97] disabled:cursor-not-allowed disabled:border-transparent disabled:bg-slate-100 disabled:text-slate-400"
         >
-          {revealedCount >= total ? '✓ Todas etapas reveladas' : 'Revelar próxima etapa →'}
+          {revealedCount >= total ? '✓ Todas etapas reveladas' : 'Atalho: revelar próxima →'}
         </button>
       </div>
     </div>

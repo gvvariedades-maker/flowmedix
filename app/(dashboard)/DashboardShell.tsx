@@ -7,11 +7,13 @@ import { motion } from 'framer-motion';
 import { ShieldCheck, LogOut, Search, CreditCard } from 'lucide-react';
 import { CadernoOnboardingBanner } from '@/components/onboarding/CadernoOnboardingBanner';
 import { EstudoReversoWelcomeModal } from '@/components/onboarding/EstudoReversoWelcomeModal';
+import { OnboardingOnAccess } from '@/components/onboarding/OnboardingOnAccess';
 import { useCadernoOnboarding } from '@/components/onboarding/useCadernoOnboarding';
 import { subscribeNotebookActivationRefresh } from '@/lib/cadernos/notebookActivationBridge';
 import { PwaInstallProvider } from '@/components/pwa/PwaInstallProvider';
 import { PwaInstallNavButton } from '@/components/pwa/PwaInstallNavButton';
 import { useEstudoReversoWelcome } from '@/components/onboarding/useEstudoReversoWelcome';
+import { useOnboardingOnAccess } from '@/components/onboarding/useOnboardingOnAccess';
 import { cn } from '@/lib/utils';
 import type { NotebookActivationStatus } from '@/lib/cadernos/activation';
 import { EMPTY_NOTEBOOK_ACTIVATION } from '@/lib/cadernos/activation';
@@ -419,6 +421,7 @@ function DashboardContent({
   initialIsAdmin,
   initialMatriculatedConcursos,
   initialNotebookActivation,
+  initialOnboardingCompleted,
   isPro,
   proSource,
   proExpiresAt,
@@ -429,6 +432,7 @@ function DashboardContent({
   initialIsAdmin: boolean;
   initialMatriculatedConcursos: MatriculatedConcursoSummary[];
   initialNotebookActivation: NotebookActivationStatus;
+  initialOnboardingCompleted: boolean;
   isPro: boolean;
   proSource: ProSource;
   proExpiresAt: string | null;
@@ -447,14 +451,20 @@ function DashboardContent({
   const estudarQuestaoImmersive = useEstudarQuestaoImmersive();
   const isDashboardDesktop = useDashboardDesktop();
   const pageVariants = isDashboardDesktop ? pageVariantsDesktop : pageVariantsMobile;
-  const estudoReversoWelcome = useEstudoReversoWelcome({ enabled: userEmail != null });
+  const onboardingOnAccess = useOnboardingOnAccess({
+    enabled: userEmail != null,
+    initialCompleted: initialOnboardingCompleted,
+  });
+  const estudoReversoWelcome = useEstudoReversoWelcome({
+    enabled: userEmail != null && onboardingOnAccess.completed,
+  });
   const cadernoOnboarding = useCadernoOnboarding({
     enabled: userEmail != null,
     initialActivation: initialNotebookActivation,
     isAdmin: isAdminUser,
     isPro,
     proSource,
-    welcomeOpen: estudoReversoWelcome.isOpen,
+    welcomeOpen: onboardingOnAccess.isOpen || estudoReversoWelcome.isOpen,
     questaoModalOpen: modalQuestaoAtivo,
     estudarQuestaoImmersive,
   });
@@ -574,6 +584,12 @@ function DashboardContent({
   }, [modalQuestaoAtivo]);
 
   useEffect(() => {
+    if (!onboardingOnAccess.isOpen) return;
+    const id = requestAnimationFrame(() => setMobileMenuOpen(false));
+    return () => cancelAnimationFrame(id);
+  }, [onboardingOnAccess.isOpen]);
+
+  useEffect(() => {
     if (!estudoReversoWelcome.isOpen) return;
     const id = requestAnimationFrame(() => setMobileMenuOpen(false));
     return () => cancelAnimationFrame(id);
@@ -659,7 +675,10 @@ function DashboardContent({
   const hideMainFromAssistiveTech = mobileMenuOpen && !isDashboardDesktop;
 
   return (
-    <PwaInstallProvider enabled={userEmail != null} blocked={estudoReversoWelcome.isOpen}>
+    <PwaInstallProvider
+      enabled={userEmail != null}
+      blocked={onboardingOnAccess.isOpen || estudoReversoWelcome.isOpen}
+    >
     <div className="dashboard-surface flex h-[100svh] max-h-[100svh] min-h-0 bg-background font-sans text-foreground md:h-[100dvh] md:max-h-[100dvh]">
       {/* --- SIDEBAR FIXA --- */}
       <aside className="relative z-20 hidden h-full min-h-0 w-[16rem] shrink-0 flex-col overflow-hidden border-r border-slate-200 bg-white md:flex">
@@ -732,7 +751,9 @@ function DashboardContent({
                 <button
                   type="button"
                   onClick={() => {
-                    if (modalQuestaoAtivo || estudoReversoWelcome.isOpen) return;
+                    if (modalQuestaoAtivo || onboardingOnAccess.isOpen || estudoReversoWelcome.isOpen) {
+                      return;
+                    }
                     setMobileMenuOpen(true);
                   }}
                   aria-label="Abrir menu da conta"
@@ -788,16 +809,23 @@ function DashboardContent({
             ref={menuButtonRef}
             currentPath={pathname ?? ''}
             onMenuToggle={() => {
-              if (modalQuestaoAtivo || estudoReversoWelcome.isOpen) return;
+              if (modalQuestaoAtivo || onboardingOnAccess.isOpen || estudoReversoWelcome.isOpen) {
+                return;
+              }
               setMobileMenuOpen((open) => !open);
             }}
             menuOpen={mobileMenuOpen}
             questaoModalOpen={modalQuestaoAtivo}
             drawerOpen={mobileMenuOpen}
-            welcomeOpen={estudoReversoWelcome.isOpen}
+            welcomeOpen={onboardingOnAccess.isOpen || estudoReversoWelcome.isOpen}
           />
         ) : null}
       </div>
+
+      <OnboardingOnAccess
+        isOpen={onboardingOnAccess.isOpen}
+        onComplete={onboardingOnAccess.markCompleted}
+      />
 
       <EstudoReversoWelcomeModal
         isOpen={estudoReversoWelcome.isOpen}
@@ -817,6 +845,7 @@ export default function DashboardShell({
   initialIsAdmin = false,
   initialMatriculatedConcursos = [],
   initialNotebookActivation = EMPTY_NOTEBOOK_ACTIVATION,
+  initialOnboardingCompleted = false,
   isPro = false,
   proSource = null,
   proExpiresAt = null,
@@ -827,6 +856,7 @@ export default function DashboardShell({
   initialIsAdmin?: boolean;
   initialMatriculatedConcursos?: MatriculatedConcursoSummary[];
   initialNotebookActivation?: NotebookActivationStatus;
+  initialOnboardingCompleted?: boolean;
   isPro?: boolean;
   proSource?: ProSource;
   proExpiresAt?: string | null;
@@ -840,6 +870,7 @@ export default function DashboardShell({
           initialIsAdmin={initialIsAdmin}
           initialMatriculatedConcursos={initialMatriculatedConcursos}
           initialNotebookActivation={initialNotebookActivation}
+          initialOnboardingCompleted={initialOnboardingCompleted}
           isPro={isPro}
           proSource={proSource}
           proExpiresAt={proExpiresAt}

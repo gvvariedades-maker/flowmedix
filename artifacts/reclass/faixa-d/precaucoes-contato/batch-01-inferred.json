@@ -1,0 +1,356 @@
+{
+  "batch": "01",
+  "bucket": "Medidas de Prevenção e Precaução de Contato",
+  "inferences": [
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-8",
+      "suggested_subtopico": "Enfermagem em Centro Cirúrgico",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Escovação cirúrgica e degermação da equipe no centro cirúrgico."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-9",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: A prevenção e o controle das infecções relacionadas à assistência à s…"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-1",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: A prevenção e o controle da infecção hospitalar dependem da adoção ri…"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780005128081-0",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Varicela na APS — notificação, vigilância e controle de surtos."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780006486032-6",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Conceito legal e diretrizes da vigilância epidemiológica no SUS."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1",
+      "suggested_subtopico": "Saúde Mental",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Idoso com luto, isolamento social e tristeza profunda — abordagem emocional."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563858390-1",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Conceitos epidemiológicos: tríade, causa insuficiente e caracterização de doenças."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-4",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: Com o objetivo de prevenir a transmissão de micro-organismos entre pa…"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-2",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Transporte de amostras biológicas — embalagem tripla e conservação."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-3",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: O controle de infecções na atenção primária envolve o reconhecimento …"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-1",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Notificação compulsória imediata de doença com potencial epidêmico."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-5",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Técnica e orientação na coleta de urocultura ambulatorial."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008232871-0",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Princípios do SUS e planejamento assistencial na UBS."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008232871-3",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Meningite meningocócica — notificação compulsória e vigilância epidemiológica."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-0",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Cálculo de incidência de anemia na população da ESF."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-1",
+      "suggested_subtopico": "Instalação e Manejo de Sondas",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Requisitos técnicos do cateterismo vesical."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-2",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: A higienização das mãos é considerada:"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-6",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Luxação completa versus subluxação no ombro."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-7",
+      "suggested_subtopico": "Noções de Anatomia",
+      "confidence": 0.97,
+      "keep_current": false,
+      "rationale": "Estrutura de revestimento externo do músculo esquelético."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-2",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: A higienização das mãos é considerada a medida mais eficaz para:"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-5",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Técnica correta na coleta de exames laboratoriais."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003261833-1",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: O isolamento do paciente é indicado para:"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003261833-2",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Prioridades no cuidado integral ao idoso."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-4",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: Em programa de controle de infecção hospitalar, o técnico em enfermag…"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-2",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: A higienização das mãos é medida prioritária na prevenção de infecçõe…"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011859940-4",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: Segundo a ANVISA (5 momentos), deve-se higienizar as mãos:"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780011872350-5",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: Em medidas de precaução e isolamento, o transporte do paciente:"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-seguranca-do-paciente-1777102802022-0",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: A _______________ são medidas devem ser seguidas para todos os pacien…"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001742844-7",
+      "suggested_subtopico": "Enfermagem do Trabalho",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Perfil epidemiológico e vulnerabilidades da população caminhoneira."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001742844-8",
+      "suggested_subtopico": "Enfermagem do Trabalho",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Uso de estimulantes entre caminhoneiros e impactos na saúde."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-4",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: NO QUE DIZ RESPEITO À PREVENÇÃO E AO CONTROLE DE INFECÇÕES, JULGUE O …"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-5",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: NO QUE DIZ RESPEITO À PREVENÇÃO E AO CONTROLE DE INFECÇÕES, JULGUE O …"
+    },
+    {
+      "modulo_slug": "cev-urca-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103604185-7",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Identificação precoce e controle de casos de dengue pelo ACS."
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-0",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: As medidas de prevenção e controle devem ser implementadas pelos prof…"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-seguranca-do-paciente-1777102936764-2",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: Assinale a opção que preenche a lacuna abaixo CORRETAMENTE: O isolame…"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102813845-2",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: A transmissão de microrganismos por via respiratória pode ser dividid…"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-5",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Fluxograma de manejo clínico e hidratação na dengue."
+    },
+    {
+      "modulo_slug": "cotec-fadenor-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103502990-6",
+      "suggested_subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Arboviroses transmitidas pelo Aedes aegypti — dengue, zika e chikungunya."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-7",
+      "suggested_subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Doenças diarreicas agudas — agentes, transmissão e reservatórios."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
+      "suggested_subtopico": "Saúde do Adolescente",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Adolescente com anorexia nervosa — quadro clínico e conduta."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563863195-5",
+      "suggested_subtopico": "Enfermagem do Trabalho",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Hierarquia de controle de riscos — medidas coletivas versus EPI."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563843512-6",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Organização e sequência dos elos da cadeia epidemiológica."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-5",
+      "suggested_subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Doenças infectoparasitárias e medidas de prevenção na assistência."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-0",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Doenças crônicas e degenerativas comuns no idoso."
+    },
+    {
+      "modulo_slug": "educa-pb-enfermagem-processo-de-enfermagem-1780008197597-1",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Notificação, investigação epidemiológica e medidas de controle."
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-9",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: Na área da saúde, é relevante que se trabalhe com a prevenção e contr…"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-5",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: \"Na área da saúde, refere-se a partículas sólidas ou líquidas extrema…"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-0",
+      "suggested_subtopico": "Saúde da Criança",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Criança com diarreia sem sinais de alarme na unidade básica."
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-3",
+      "suggested_subtopico": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Hipoglicemia em idoso diabético em uso de glicazida."
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-2",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Precauções padrão/contato/gotas/aerossóis: Na prevenção e controle de infecções em serviços de saúde, a medida c…"
+    }
+  ]
+}

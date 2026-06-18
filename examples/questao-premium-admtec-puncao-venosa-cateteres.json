@@ -4,7 +4,7 @@
     "prova": "Tec (Pref João Alfredo)",
     "orgao": "Enfermagem / PSF",
     "ano": "2025",
-    "cargo_header": "Técnico de enfermagem",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "topico": "Enfermagem",
     "subtopico": "Punção Venosa e Cuidados com Cateteres"
   },
@@ -36,15 +36,16 @@
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "slide_title": "IPCS — timeline morphing",
+      "slide_title": "IPCS no CVC — bundle de prevenção",
+      "chip_label": "IPCS — CVC",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Punção Venosa e Cuidados com Cateteres"
       },
       "items": [
         {
-          "label": "Parâmetro-chave",
-          "detail": "Em uma unidade de terapia intensiva, observa-se aumento na incidência de infecções relacionadas a cateter venoso central. Assinale a abordagem mais efetiva para minimizar essa ocorrência, considerando os protocolos vigentes de prevenção.",
+          "label": "Contexto",
+          "detail": "UTI com aumento de infecção de corrente sanguínea relacionada a cateter venoso central (IPCS) — a banca quer a medida mais efetiva de prevenção.",
           "icon": "Gauge"
         },
         {
@@ -78,37 +79,56 @@
     {
       "type": "golden_rule",
       "slide_title": "Bundle de prevenção — IPCS",
+      "chip_label": "REGRA DE OURO",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Punção Venosa e Cuidados com Cateteres"
       },
-      "content": "Letra B",
+      "content": "BUNDLE DO CVC: ASSEPSIA + BARREIRA MÁXIMA + CURATIVO CERTO + REMOÇÃO PRECOCE",
       "rows": [
         {
           "label": "Contexto UTI",
-          "value": "Aumento de infecções relacionadas a cateter venoso central exige bundle de prevenção, não conduta isolada.",
-          "emphasis": "highlight"
+          "value": "Aumento de IPCS no cateter venoso central exige bundle de prevenção, não conduta isolada.",
+          "emphasis": "highlight",
+          "badge": "hot"
         },
         {
           "label": "Higienização",
-          "value": "Sempre antes e após manipular o acesso venoso.",
-          "emphasis": "default"
+          "value": "Mãos e antissepsia cutânea sempre antes e após manipular o acesso venoso.",
+          "emphasis": "default",
+          "badge": "ok"
         },
         {
           "label": "Barreira",
           "value": "Barreira estéril máxima na inserção e manutenção.",
-          "emphasis": "success"
+          "emphasis": "success",
+          "badge": "ok"
+        },
+        {
+          "label": "Curativo",
+          "value": "Trocar quando sujo, solto ou úmido — não a cada 72 h “independente da integridade”.",
+          "emphasis": "alert",
+          "badge": "warn"
         },
         {
           "label": "Remoção",
           "value": "Retirar o CVC assim que não for mais necessário.",
-          "emphasis": "success"
+          "emphasis": "success",
+          "badge": "ok"
+        },
+        {
+          "label": "Gabarito",
+          "value": "Letra B",
+          "emphasis": "highlight",
+          "badge": "hot"
         }
       ],
-      "footer_rule": "Gabarito B resume o bundle: asséptica + barreira máxima + remoção precoce."
+      "footer_rule": "Gabarito B resume o bundle: assepsia + barreira máxima + curativo adequado + remoção precoce."
     },
     {
       "type": "logic_flow",
+      "slide_title": "Como resolver — prevenção de IPCS",
+      "chip_label": "PASSO A PASSO",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Punção Venosa e Cuidados com Cateteres"
@@ -128,6 +148,8 @@
     },
     {
       "type": "danger_zone",
+      "slide_title": "Armadilhas que a banca monta",
+      "chip_label": "ARMADILHAS DE PROVA",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Punção Venosa e Cuidados com Cateteres"
@@ -136,19 +158,19 @@
       "bullet_style": "x_icon",
       "items": [
         {
-          "label": "Letra A",
-          "detail": "Realizar a antissepsia cutânea com clorexidina alcoólica a 0,5% antes da inserção do cateter e substituir os curativos semipermeáveis a cada 72 horas, independentemente das condições de integridade.",
-          "correct": "Gabarito: letra B — técnica asséptica rigorosa, barreira estéril máxima e remoção do CVC quando indicado."
+          "label": "Letra A — clorexidina 0,5% + curativo fixo 72 h",
+          "detail": "Antissepsia com clorexidina alcoólica 0,5% e troca de curativo a cada 72 h independentemente da integridade — bundle incompleto e regra de curativo errada.",
+          "correct": "Gabarito B — assepsia rigorosa, barreira máxima e remoção do CVC quando indicado."
         },
         {
-          "label": "Letra C",
-          "detail": "Preferir a punção venosa femoral em pacientes instáveis devido à facilidade de acesso e utilizar antibióticos profiláticos de amplo espectro antes da inserção do cateter.",
-          "correct": "Gabarito: letra B — femoral não é preferência de rotina; antibiótico profilático não faz parte do bundle."
+          "label": "Letra C — femoral de rotina + ATB profilático",
+          "detail": "Preferir punção femoral em instáveis e usar antibiótico profilático de amplo espectro antes da inserção.",
+          "correct": "Gabarito B — femoral não é preferência de rotina; ATB profilático não faz parte do bundle."
         },
         {
-          "label": "Letra D",
-          "detail": "Implementar vigilância microbiológica rotineira dos cateteres e realizar desinfecção do lúmen com solução de iodo-povidona após cada manipulação.",
-          "correct": "Gabarito: letra B — vigilância rotineira de cultura e iodo no lúmen não substituem o bundle de inserção/manutenção."
+          "label": "Letra D — cultura rotineira + iodo no lúmen",
+          "detail": "Vigilância microbiológica rotineira dos cateteres e desinfecção do lúmen com iodo-povidona a cada manipulação.",
+          "correct": "Gabarito B — cultura rotineira e iodo no lúmen não substituem o bundle de inserção/manutenção."
         }
       ],
       "footer_rule": "Interrogue cada letra: armadilha × bundle completo (letra B) antes de marcar."

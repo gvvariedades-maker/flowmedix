@@ -57,10 +57,40 @@ export function isSimuladoQuestaoRespondida(
   return q.respondida === true;
 }
 
+export type SimuladoEixoEvolucaoItem = {
+  eixo: string;
+  percentual_anterior: number;
+  percentual_atual: number;
+  delta_pontos: number;
+  mensagem: string;
+};
+
+export type SimuladoDominioPegadinha = {
+  eixo: string;
+  quantidade: number;
+  mensagem: string;
+};
+
+export type SimuladoConclusaoStreakIncentivo = {
+  streak_atual_dias: number;
+  semanas_consecutivas_simulado: number;
+  meta_semanal_atingida: boolean;
+  mensagem: string | null;
+  badge: 'streak_dias' | 'streak_semanas' | 'meta_semanal' | null;
+};
+
+export type SimuladoConclusaoIncentivos = {
+  eixos_evolucao: SimuladoEixoEvolucaoItem[];
+  dominios: SimuladoDominioPegadinha[];
+  streak: SimuladoConclusaoStreakIncentivo;
+  mensagens_destaque: string[];
+};
+
 export type SimuladoSessionDetailResponse = {
   session: SimuladoSessionSummary;
   resumo: SimuladoResumo;
   questoes: SimuladoQuestaoItem[];
+  incentivos?: SimuladoConclusaoIncentivos | null;
 };
 
 export type SimuladoCreateSessionResponse = {
@@ -92,6 +122,24 @@ export type SimuladoOpenSessionResponse = {
     created_at: string;
     filtros?: Record<string, unknown>;
   } | null;
+};
+
+export type DiagnosticoSimuladoCardState = {
+  show_card: boolean;
+  onboarding_completed: boolean;
+  diagnostico_completed: boolean;
+  has_open_session: boolean;
+  session: {
+    id: string;
+    total_questoes: number;
+    status: SimuladoSessionStatus;
+    titulo: string;
+    created_at: string;
+  } | null;
+};
+
+export type SimuladoDiagnosticoCreateResponse = SimuladoCreateSessionResponse & {
+  diagnostico: true;
 };
 
 export type SimuladoAnswerResponse = {
@@ -244,6 +292,36 @@ export type SimuladoProvaEvolucaoItem = {
 export type SimuladoProvaEvolucaoResponse = {
   titulo_base: string;
   items: SimuladoProvaEvolucaoItem[];
+};
+
+export type WeeklySimuladoStatus = 'pendente' | 'em_andamento' | 'concluido';
+
+export type WeeklySimuladoMission = {
+  iso_year: number;
+  iso_week: number;
+  week_ends_at: string;
+  foco_principal: string | null;
+  status: WeeklySimuladoStatus | 'ausente';
+  titulo: string;
+  session_id: string | null;
+  total_questoes: number | null;
+  respondidas: number | null;
+  percentual_acerto: number | null;
+};
+
+export type WeeklySimuladoCurrentResponse = {
+  mission: WeeklySimuladoMission;
+  generated: boolean;
+};
+
+export type WeeklySimuladoGenerateResponse = {
+  success: true;
+  mode: 'cron' | 'user' | 'e2e';
+  created?: boolean;
+  mission?: WeeklySimuladoMission | null;
+  processed?: number;
+  skipped?: number;
+  failed?: number;
 };
 
 export type SimuladoHistoryResponse = {

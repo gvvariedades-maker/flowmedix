@@ -1,0 +1,356 @@
+{
+  "batch": "04",
+  "bucket": "Curativos e Manejo de Feridas",
+  "inferences": [
+    {
+      "modulo_slug": "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779344773456-6",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-curativos-e-manejo-de-feridas-1779344779828-8",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-2",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-0",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-8",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Técnica de injeção intramuscular na região ventroglútea."
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-curativos-e-manejo-de-feridas-1779269305691-6",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006486032-1",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Cuidados na aferição da pressão arterial."
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-8",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Escolha de curativo ou manejo de úlcera por pressão."
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-4",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269212740-4",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Imobilização de fratura de falange — procedimento ortopédico."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269212740-5",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Imobilização com fibra de vidro — técnica ortopédica."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269315587-5",
+      "suggested_subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Dreno cirúrgico de Penrose no pós-operatório de apendicectomia."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269315587-6",
+      "suggested_subtopico": "Enfermagem em Centro Cirúrgico",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Inserção de drenos cirúrgicos no ato operatório."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-6",
+      "suggested_subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "perioperatório/drenos — tema dominante fora de Curativos."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-7",
+      "suggested_subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Monitoramento do cuidado pós-operatório hospitalar."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-2",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Atribuições do técnico na Atenção Primária à Saúde."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-8",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Evolução de enfermagem e registro assistencial."
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-9",
+      "suggested_subtopico": "Atenção Básica / Saúde da Família",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Papel da Estratégia Saúde da Família na APS."
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-curativos-e-manejo-de-feridas-1779344819753-4",
+      "suggested_subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Identificação e manejo de dreno no retorno do centro cirúrgico."
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563868300-1",
+      "suggested_subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Orientação preventiva de pé diabético na atenção primária."
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-3",
+      "suggested_subtopico": "Verificação de Sinais Vitais",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Interpretação de valores de pressão arterial na consulta."
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-curativos-e-manejo-de-feridas-1779269315587-7",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Aplicação de compressas frias — agente físico, não curativo de ferida."
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-curativos-e-manejo-de-feridas-1779344759089-3",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Definição e fatores de risco de lesão por pressão — prevenção."
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-2",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "omni-enfermagem-curativos-e-manejo-de-feridas-1779340178514-7",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-feridas-e-queimaduras-1780001297464-4",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "prevenção LPP — tema dominante fora de Curativos."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-6",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Prevenção e classificação de LPP — posicionamento e mobilização."
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009294428-9",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Doenças de notificação compulsória — vigilância epidemiológica."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-curativos-e-manejo-de-feridas-1779344773456-5",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Escolha de curativo ou manejo de úlcera por pressão."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-curativos-e-manejo-de-feridas-1779344813448-4",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-curativos-e-manejo-de-feridas-1779344813448-5",
+      "suggested_subtopico": "Feridas e Queimaduras",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Queimadura térmica de 2º grau — manejo de queimados."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009310940-9",
+      "suggested_subtopico": "Processo de Enfermagem",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Conceito de processo saúde-doença no planejamento assistencial."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-0",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Escolha de curativo ou manejo de úlcera por pressão."
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-8",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-5",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-curativos-e-manejo-de-feridas-1779269291153-6",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-curativos-e-manejo-de-feridas-1779344751294-7",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-curativos-e-manejo-de-feridas-1779344759089-6",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-6",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-7",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-curativos-e-manejo-de-feridas-1780000535393-1",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563858390-8",
+      "suggested_subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Controle de surtos de dengue — vigilância epidemiológica."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-curativos-e-manejo-de-feridas-1779344813448-3",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Escolha de curativo ou manejo de úlcera por pressão."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003654722-2",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004452857-4",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-8",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780004469060-9",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "univali-enfermagem-curativos-e-manejo-de-feridas-1779269228428-4",
+      "suggested_subtopico": "Saúde da Mulher",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Cuidados com mamas e amamentação na puérpera."
+    },
+    {
+      "modulo_slug": "univali-enfermagem-curativos-e-manejo-de-feridas-1779269228428-5",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "univali-enfermagem-curativos-e-manejo-de-feridas-1779269255793-4",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    }
+  ]
+}

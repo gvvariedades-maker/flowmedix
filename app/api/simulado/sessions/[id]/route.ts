@@ -3,6 +3,7 @@ import { z } from 'zod';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { logger } from '@/lib/logger';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
+import { attachConclusaoIncentivos } from '@/lib/simulado/attachConclusaoIncentivos';
 import { loadSimuladoSessionDetail } from '@/lib/simulado/sessionDetail';
 
 const SessionIdSchema = z.string().uuid('ID de sessão inválido');
@@ -41,6 +42,11 @@ export async function GET(
     }
     if (result.error === 'db') {
       return NextResponse.json({ error: 'Erro ao carregar simulado' }, { status: 500 });
+    }
+
+    if (!e2e && supabase && userId && result.data.session.status === 'concluido') {
+      const detail = await attachConclusaoIncentivos(supabase, userId, result.data);
+      return NextResponse.json(detail);
     }
 
     return NextResponse.json(result.data);

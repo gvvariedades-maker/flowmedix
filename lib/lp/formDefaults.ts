@@ -30,7 +30,7 @@ export const EMPTY_LP_CONFIG: LpPageConfigInput = {
       'O AVANT é uma plataforma de estudo independente. Não somos órgão público nem banca examinadora.',
   },
   walkthrough: {
-    imagens: Array.from({ length: 8 }, () => '/images/neuroslide-concept-map.jpg'),
+    imagens: Array.from({ length: 8 }, () => ''),
   },
 };
 

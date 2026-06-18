@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-06-16T09:44:52.407Z",
+  "bucket": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+  "batch_size": 50,
+  "total": 19,
+  "batch_files": [
+    "artifacts/reclass/faixa-b/doencas-bacterianas/batch-01.json"
+  ]
+}

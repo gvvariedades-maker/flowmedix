@@ -1,0 +1,356 @@
+{
+  "batch": "01",
+  "bucket": "Curativos e Manejo de Feridas",
+  "inferences": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-curativos-e-manejo-de-feridas-1779344773456-1",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Termoterapia (calor úmido) em lesão musculoesquelética — não manejo de feridas."
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-2",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340178514-0",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779340191984-6",
+      "suggested_subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Desinfecção do hub antes de infusão — cuidado com cateter venoso."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344766321-8",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-0",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-7",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344773456-8",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344779828-6",
+      "suggested_subtopico": "Vias de Administração",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Afirmativa II trata técnica de injeção intramuscular (vasto lateral)."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-6",
+      "suggested_subtopico": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Banho no leito com eritema sacral — prevenção de LPP."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779344813448-7",
+      "suggested_subtopico": "Segurança do Paciente",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Identificação segura do paciente durante procedimentos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779562699843-5",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779562730776-2",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.96,
+      "keep_current": false,
+      "rationale": "Coleta de sangue venoso — técnica laboratorial."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563288910-9",
+      "suggested_subtopico": "Coleta de Exames Laboratoriais",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Procedimento de coleta de sangue."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563448133-7",
+      "suggested_subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "Tricotomia pré-operatória para prevenção de ISC."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563512485-0",
+      "suggested_subtopico": "Saúde da Criança",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Classificação da dor em criança no pronto-socorro."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563517223-0",
+      "suggested_subtopico": "Saúde Mental",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Escala de Depressão em Geriatria (GDS) — saúde mental."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-3",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-7",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780008225255-4",
+      "suggested_subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Precauções em pacientes com doenças transmissíveis na UPA."
+    },
+    {
+      "modulo_slug": "atame-enfermagem-curativos-e-manejo-de-feridas-1779269228428-3",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-0",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-1",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-2",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269212740-3",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269291153-7",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269305691-9",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Tração cutânea e complicações — procedimento ortopédico."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779269315587-3",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344759089-1",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-2",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-3",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-4",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344766321-5",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "agentes físicos — tema dominante fora de Curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344813448-0",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-1",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.92,
+      "keep_current": false,
+      "rationale": "Bandagem em oito para imobilização — não curativo de ferida."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-2",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "imobilização — tema dominante fora de Curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-3",
+      "suggested_subtopico": "Procedimentos Diversos",
+      "confidence": 0.91,
+      "keep_current": false,
+      "rationale": "Material de imobilização para fraturas com edema."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-curativos-e-manejo-de-feridas-1779344826734-4",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-0",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002845055-3",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003031246-9",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-7",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003709908-2",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.95,
+      "keep_current": false,
+      "rationale": "Hemorragia externa em urgência — controle de sangramento."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-0",
+      "suggested_subtopico": "Enfermagem em Centro Cirúrgico",
+      "confidence": 0.93,
+      "keep_current": false,
+      "rationale": "Preparo de campo cirúrgico estéril."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006444165-0",
+      "suggested_subtopico": "Urgências e Emergências",
+      "confidence": 0.94,
+      "keep_current": false,
+      "rationale": "trauma/urgência — tema dominante fora de Curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-3",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-5",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780006456417-8",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-1",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-2",
+      "suggested_subtopico": "Curativos e Manejo de Feridas",
+      "confidence": 0.94,
+      "keep_current": true,
+      "rationale": "Técnica, cobertura ou manejo de feridas/curativos."
+    }
+  ]
+}

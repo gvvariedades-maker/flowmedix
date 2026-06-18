@@ -1,298 +1,378 @@
 {
-  "generated_at": "2026-06-10T07:54:08.828Z",
   "mode": "infer",
   "bucket": "Procedimentos Diversos",
   "min_confidence_apply": 0.85,
   "limit": 10000,
-  "inference_source": "heuristic",
+  "inference_source": "gemini",
   "summary": {
-    "scanned": 28,
-    "inferred": 28,
-    "errors": 0,
-    "keep_current": 7,
-    "same_subtopico": 7,
-    "applicable": 21
+    "scanned": 36,
+    "inferred": 21,
+    "errors": 15,
+    "keep_current": 0,
+    "same_subtopico": 0,
+    "applicable": 7
   },
   "proposals": [
     {
-      "modulo_slug": "fenix-instituto-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1780000535393-6",
+      "modulo_slug": "amauc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563685104-6",
       "from": "Procedimentos Diversos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
+      "suggested": "Processamento de Artigos e Produtos de Saúde",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda a gestão de recursos materiais em ambiente hospitalar, o que se relaciona diretamente com o controle e organização de materiais de saúde, incluindo seu processamento e armazenamento.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
-      "modulo_slug": "ibfc-geral-procedimentos-diversos-1777103988389-5",
+      "modulo_slug": "avancasp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-6",
       "from": "Procedimentos Diversos",
-      "suggested": "Cálculo de Administração de Medicamentos e Infusões",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O IMC é um cálculo que envolve medidas corporais, o que se alinha com noções de anatomia e antropometria.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-nutricao-aplicada-a-enfermagem-1777102983353-5",
+      "from": "Procedimentos Diversos",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.7,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a disfagia, que é uma dificuldade de deglutição, relacionada à fisiologia do ato de engolir.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-7",
+      "from": "Procedimentos Diversos",
+      "suggested": "História da Enfermagem",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda os direitos e deveres do profissional de enfermagem, que estão intrinsecamente ligados à evolução e aos aspectos éticos e históricos da profissão.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-7",
+      "from": "Procedimentos Diversos",
+      "suggested": "Noções de Anatomia",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado se refere a medidas corporais, que são parte da avaliação e conhecimento das estruturas do corpo humano.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563923516-7",
+      "from": "Procedimentos Diversos",
+      "suggested": "Saúde Mental",
       "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (cálculo): enunciado indica Cálculo de Administração de Medicamentos e Infusões",
+      "rationale": "O enunciado descreve a empatia, que é um conceito fundamental em saúde mental e nas relações interpessoais no cuidado em saúde.",
       "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-4",
+      "from": "Procedimentos Diversos",
+      "suggested": "Punção Venosa e Cuidados com Cateteres",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve uma reação adversa à transfusão sanguínea, que está diretamente relacionada ao acesso venoso e ao manejo do cateter.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-3",
+      "from": "Procedimentos Diversos",
+      "suggested": "Noções de Fisiologia",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O balanço hídrico e a aceitação alimentar estão diretamente relacionados às funções orgânicas e à homeostase.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-3",
+      "from": "Procedimentos Diversos",
+      "suggested": "Segurança do Paciente",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a comunicação como um elemento fundamental na assistência à saúde, focando na relação entre profissionais, usuários e familiares, e na compreensão da mensagem. Isso se alinha diretamente com os princípios de Segurança do Paciente, que enfatizam a comunicação eficaz para evitar incidentes e garantir a qualidade do cuidado.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-atencao-basica-saude-da-familia-1778968239687-0",
+      "from": "Procedimentos Diversos",
+      "suggested": "Processo de Enfermagem",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "A comunicação terapêutica é uma ferramenta fundamental dentro do Processo de Enfermagem, especialmente na fase de coleta de dados e estabelecimento de vínculo.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780006947080-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Infecções no Contexto da Biossegurança",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a necessidade de blindagem e sinalização em um quarto para administração de radiofármacos, o que se relaciona diretamente com medidas de biossegurança e proteção contra radiação.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-processo-de-enfermagem-1780011961798-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Verificação de Sinais Vitais",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a preparação para um ECG, que é um exame para verificar a atividade elétrica do coração, um dos sinais vitais.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "fundepes-copeve-ufal-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-0",
+      "from": "Procedimentos Diversos",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado aborda a alta hospitalar, que é uma etapa crucial no processo de cuidado ao paciente, especialmente após um período de internação, o que se relaciona diretamente com a assistência perioperatória.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-0",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis\",\"confidence\":0.8,\"rationale\":\"O enunciado aborda dietas básicas e especiais, que estão diretame…"
     },
     {
       "modulo_slug": "icece-enfermagem-outros-temas-de-enfermagem-1780001440222-3",
       "from": "Procedimentos Diversos",
-      "suggested": "Procedimentos Diversos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
-      "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-2",
-      "from": "Procedimentos Diversos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
+      "suggested": "Imunização",
+      "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
+      "rationale": "O enunciado aborda a compatibilidade sanguínea para transfusão, que está diretamente ligada à imunologia e aos antígenos presentes nas hemácias, tema central da imunização.",
       "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-3",
-      "from": "Procedimentos Diversos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-4",
-      "from": "Procedimentos Diversos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-5",
-      "from": "Procedimentos Diversos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
-      "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778712184780-6",
       "from": "Procedimentos Diversos",
-      "suggested": "Procedimentos Diversos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "suggested": "Mobilização e Posicionamento do Paciente",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um procedimento de higiene íntima, que faz parte dos cuidados gerais de higiene e conforto do paciente, frequentemente abordado em conjunto com mobilização e posicionamento.",
       "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1780066938846-3",
-      "from": "Procedimentos Diversos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-cuidados-paliativos-1778712409051-4",
-      "from": "Procedimentos Diversos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
-      "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "idecan-enfermagem-enfermagem-em-oncologia-1778712409051-5",
       "from": "Procedimentos Diversos",
-      "suggested": "Procedimentos Diversos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
-      "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-7",
-      "from": "Procedimentos Diversos",
-      "suggested": "Instalação e Manejo de Sondas",
+      "suggested": "Cuidados na Administração de Medicamentos",
       "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (sondas): enunciado indica Instalação e Manejo de Sondas",
+      "rationale": "O enunciado aborda cuidados específicos durante a administração de quimioterápicos, focando na prevenção de efeitos colaterais orais, o que se alinha diretamente com os cuidados na administração de medicamentos.",
       "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
       "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-8",
       "from": "Procedimentos Diversos",
-      "suggested": "Procedimentos Diversos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
-      "applicable": false,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712184780-9",
-      "from": "Procedimentos Diversos",
-      "suggested": "Verificação de Sinais Vitais",
-      "confidence": 0.92,
-      "keep_current": false,
-      "rationale": "Heurística (SV): enunciado indica Verificação de Sinais Vitais",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-0",
-      "from": "Procedimentos Diversos",
-      "suggested": "Medidas de Prevenção e Precaução de Contato",
-      "confidence": 0.85,
-      "keep_current": false,
-      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-1",
-      "from": "Procedimentos Diversos",
-      "suggested": "Cuidados na Administração de Medicamentos",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-2",
-      "from": "Procedimentos Diversos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-3",
-      "from": "Procedimentos Diversos",
-      "suggested": "Saúde da Criança",
-      "confidence": 0.87,
-      "keep_current": false,
-      "rationale": "Heurística (criança): enunciado indica Saúde da Criança",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idecan-enfermagem-procedimentos-diversos-1778712203076-4",
-      "from": "Procedimentos Diversos",
-      "suggested": "Cuidados na Administração de Medicamentos",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (medicação): enunciado indica Cuidados na Administração de Medicamentos",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idib-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778934890864-6",
-      "from": "Procedimentos Diversos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idib-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778934890864-7",
-      "from": "Procedimentos Diversos",
-      "suggested": "Medidas de Prevenção e Precaução de Contato",
-      "confidence": 0.85,
-      "keep_current": false,
-      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
-      "applicable": true,
-      "source": "heuristic"
-    },
-    {
-      "modulo_slug": "idib-enfermagem-cuidados-gerais-com-higiene-e-conforto-do-paciente-1778934890864-8",
-      "from": "Procedimentos Diversos",
-      "suggested": "Instalação e Manejo de Sondas",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
       "confidence": 0.9,
       "keep_current": false,
-      "rationale": "Heurística (sondas): enunciado indica Instalação e Manejo de Sondas",
+      "rationale": "O enunciado aborda cuidados pré-operatórios, especificamente a tricotomia, que é um procedimento realizado antes de cirurgias.",
       "applicable": true,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
-      "modulo_slug": "idib-enfermagem-procedimentos-diversos-1778934890864-9",
+      "modulo_slug": "idecan-enfermagem-protocolos-e-diretrizes-do-ministerio-da-saude-1780067048498-1",
       "from": "Procedimentos Diversos",
-      "suggested": "Medidas de Prevenção e Precaução de Contato",
-      "confidence": 0.85,
+      "suggested": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "confidence": 0.8,
       "keep_current": false,
-      "rationale": "Heurística (precaução): enunciado indica Medidas de Prevenção e Precaução de Contato",
-      "applicable": true,
-      "source": "heuristic"
+      "rationale": "O enunciado aborda o Sistema Nacional de Transplantes e doadores vivos, que se enquadra em questões de saúde pública e doenças transmissíveis de forma mais ampla.",
+      "applicable": false,
+      "source": "gemini"
     },
     {
       "modulo_slug": "idib-enfermagem-procedimentos-diversos-1778934900821-0",
       "from": "Procedimentos Diversos",
+      "suggested": "Assistência Perioperatória (Inclui SRPA)",
+      "confidence": 0.9,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a hemostasia no contexto intraoperatório, que é parte da assistência perioperatória.",
+      "applicable": true,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-saude-do-idoso-1778934944659-7",
+      "from": "Procedimentos Diversos",
       "suggested": "Procedimentos Diversos",
-      "confidence": 0.55,
+      "confidence": 0,
       "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "rationale": "erro na inferência",
       "applicable": false,
-      "source": "heuristic"
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 58.558914122s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash-lite\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"58s\"}]"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 57.870059175s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash-lite\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"57s\"}]"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-4",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 58.535714154s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.5-flash-lite\",\"location\":\"global\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"58s\"}]"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-nutricao-aplicada-a-enfermagem-1777102926437-5",
+      "from": "Procedimentos Diversos",
+      "suggested": "Promoção à Saúde e Prevenção de Agravos",
+      "confidence": 0.6,
+      "keep_current": false,
+      "rationale": "O enunciado descreve um tipo de dieta e suas indicações terapêuticas, o que se relaciona com a promoção da saúde e prevenção de agravos através da alimentação.",
+      "applicable": false,
+      "source": "gemini"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-9",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "Resposta Gemini inválida: {\"suggested_subtopico\":\"Segurança do Paciente\",\"confidence\":0.8,\"rationale\":\"O enunciado aborda a importância do relacionamento interpessoal e boas práticas no ambiente de trabalho, o que se alinha c…"
     },
     {
       "modulo_slug": "instituto-aocp-geral-procedimentos-1777103510083-2",
       "from": "Procedimentos Diversos",
-      "suggested": "Procedimentos Diversos",
-      "confidence": 0.55,
-      "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "suggested": "Doenças Parasitárias e Zoonoses",
+      "confidence": 0.8,
+      "keep_current": false,
+      "rationale": "O enunciado descreve a prova do laço, um exame relacionado à suspeita de dengue, que é uma doença parasitária transmitida por vetor.",
       "applicable": false,
-      "source": "heuristic"
+      "source": "gemini"
     },
     {
-      "modulo_slug": "nao-informado-geral-procedimentos-diversos-1776056493133-0",
+      "modulo_slug": "instituto-consulpam-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-6",
       "from": "Procedimentos Diversos",
-      "suggested": "Mobilização e Posicionamento do Paciente",
-      "confidence": 0.86,
-      "keep_current": false,
-      "rationale": "Heurística (higiene/mobilização): enunciado indica Mobilização e Posicionamento do Paciente",
-      "applicable": true,
-      "source": "heuristic"
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 57.863802142s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash-lite\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"57s\"}]"
     },
     {
-      "modulo_slug": "quadrix-enfermagem-procedimentos-diversos-1780000535393-7",
+      "modulo_slug": "instituto-consulplan-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563707368-3",
       "from": "Procedimentos Diversos",
-      "suggested": "Instalação e Manejo de Sondas",
-      "confidence": 0.9,
-      "keep_current": false,
-      "rationale": "Heurística (sondas): enunciado indica Instalação e Manejo de Sondas",
-      "applicable": true,
-      "source": "heuristic"
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 58.556811436s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash-lite\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"58s\"}]"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-4",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 57.842730751s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.5-flash-lite\",\"location\":\"global\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"57s\"}]"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-6",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 57.854616546s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash-lite\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"57s\"}]"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-4",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 58.569096449s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash-lite\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"58s\"}]"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563695950-5",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 57.887095666s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.5-flash-lite\",\"location\":\"global\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"57s\"}]"
+    },
+    {
+      "modulo_slug": "ufmt-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563713110-7",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 57.873577677s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash-lite\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"57s\"}]"
     },
     {
       "modulo_slug": "unesc-enfermagem-procedimentos-diversos-1780000535393-8",
       "from": "Procedimentos Diversos",
       "suggested": "Procedimentos Diversos",
-      "confidence": 0.55,
+      "confidence": 0,
       "keep_current": true,
-      "rationale": "Heurística: sem padrão dominante — manter bucket",
+      "rationale": "erro na inferência",
       "applicable": false,
-      "source": "heuristic"
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 58.546920187s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash-lite\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"58s\"}]"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563718396-3",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 57.886153975s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash-lite\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"57s\"}]"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-1",
+      "from": "Procedimentos Diversos",
+      "suggested": "Procedimentos Diversos",
+      "confidence": 0,
+      "keep_current": true,
+      "rationale": "erro na inferência",
+      "applicable": false,
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\nPlease retry in 57.869794034s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash-lite\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"57s\"}]"
     }
-  ]
+  ],
+  "generated_at": "2026-06-16T09:09:22.898Z"
 }
