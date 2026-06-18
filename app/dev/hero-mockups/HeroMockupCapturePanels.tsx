@@ -16,7 +16,7 @@ type HeroMockupCapturePanelsProps = {
 };
 
 export function HeroMockupCapturePanels({ questao }: HeroMockupCapturePanelsProps) {
-  useEditorialTheme(true);
+  useEditorialTheme();
   const conceptSlide = questao.reverse_study_slides?.[0];
 
   useEffect(() => {

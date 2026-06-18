@@ -206,7 +206,7 @@ function clampProgress(value: number): number {
   return Number(value.toFixed(2));
 }
 
-function computeStreaksFromDailyRows(rows: SimuladoAnalyticsDailyRow[]): SimuladoStreakMetrics {
+export function computeStreaksFromDailyRows(rows: SimuladoAnalyticsDailyRow[]): SimuladoStreakMetrics {
   const uniqueDays = Array.from(new Set(rows.map((row) => row.data_ref))).sort();
   if (uniqueDays.length === 0) {
     return {

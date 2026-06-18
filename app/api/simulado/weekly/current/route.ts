@@ -3,7 +3,7 @@ import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { logger } from '@/lib/logger';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
 import { getIsoWeekInfo, getWeeklySimuladoMission } from '@/lib/simulado/weeklySimulado';
-import type { WeeklySimuladoMission } from '@/lib/simulado/weeklySimulado';
+import type { WeeklySimuladoMission } from '@/lib/simulado/types';
 
 function e2eWeeklyMission(): WeeklySimuladoMission {
   const week = getIsoWeekInfo();
