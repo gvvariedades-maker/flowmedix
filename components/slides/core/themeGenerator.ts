@@ -290,9 +290,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'promoção à saúde': { template: 'emerald', conceptMap: 'sus-art4-orbit', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'scope-trap' },
   'prevenção de agravos': { template: 'emerald', conceptMap: 'sus-art4-orbit', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'scope-trap' },
 
-  // ---- Imunização (golden: vaccine-timeline · reference_table · cards · calendar-mismatch) ----
-  'imunização': { template: 'lime', conceptMap: 'vaccine-timeline', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'calendar-mismatch' },
-  'vacinação': { template: 'lime', conceptMap: 'vaccine-timeline', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'calendar-mismatch' },
+  // ---- Imunização (golden: pni-rules-deck · pni-interval-matrix · pni-vf-juggle-tap · pni-trap-chips) ----
+  'imunização': { template: 'lime', conceptMap: 'pni-rules-deck', goldenRule: 'pni-interval-matrix', logicFlow: 'pni-vf-juggle-tap', dangerZone: 'pni-trap-chips' },
+  'vacinação': { template: 'lime', conceptMap: 'pni-rules-deck', goldenRule: 'pni-interval-matrix', logicFlow: 'pni-vf-juggle-tap', dangerZone: 'pni-trap-chips' },
 
   // ---- Atenção Básica / Saúde da Família ----
   'atenção básica / saúde da família': { template: 'emerald', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },

@@ -7,6 +7,7 @@ import { ProcedureProtocolConceptMap } from '../variants/ProcedureProtocolConcep
 import { VitalsPanelConceptMap } from '../variants/VitalsPanelConceptMap';
 import { SurvivalChainConceptMap } from '../variants/SurvivalChainConceptMap';
 import { VaccineTimelineConceptMap } from '../variants/VaccineTimelineConceptMap';
+import { PniRulesDeckConceptMap } from '../variants/PniRulesDeckConceptMap';
 import { SaeDocumentationConceptMap } from '../variants/SaeDocumentationConceptMap';
 import { SaeResponsibilityMatrix } from '../variants/SaeResponsibilityMatrix';
 import { SusLegalPillarsConceptMap } from '../variants/SusLegalPillarsConceptMap';
@@ -104,6 +105,9 @@ export const NeuroSlideHub = ({
       }
       if (layoutVariant === 'vaccine-timeline') {
         return <VaccineTimelineConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'pni-rules-deck') {
+        return <PniRulesDeckConceptMap concepts={getConcepts()} theme={theme} />;
       }
       if (layoutVariant === 'sae-documentation') {
         return <SaeDocumentationConceptMap concepts={getConcepts()} theme={theme} />;

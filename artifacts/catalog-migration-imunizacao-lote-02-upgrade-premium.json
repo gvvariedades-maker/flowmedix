@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-06-09T09:11:43.995Z",
+  "generated_at": "2026-06-16T20:37:13.606Z",
   "lote": "imunizacao-lote-02",
   "mode": "write",
-  "force": false,
+  "force": true,
   "danger_only": false,
   "preserve_rich_slides": true,
   "total_files": 50,
-  "upgraded": 40,
-  "skipped": 10,
+  "upgraded": 50,
+  "skipped": 0,
   "failed": 0,
   "family_counts": {
     "calc": 11,
@@ -19,83 +19,133 @@
   "results": [
     {
       "modulo_slug": "adm-tec-enfermagem-imunizacao-1777103244679-1",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "adm-tec-enfermagem-imunizacao-1779563986606-5",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "adm-tec-enfermagem-imunizacao-1779564031957-5",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "agirh-enfermagem-imunizacao-1779563975447-7",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "agirh-enfermagem-imunizacao-1779564109452-6",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "agirh-enfermagem-imunizacao-1779564109452-7",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "agirh-enfermagem-imunizacao-1779564113760-0",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "amauc-enfermagem-imunizacao-1779563975447-4",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "amauc-enfermagem-imunizacao-1779564006577-1",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "amauc-enfermagem-imunizacao-1779564109452-2",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
     },
     {
       "modulo_slug": "amauc-enfermagem-imunizacao-1779572227744-7",
@@ -104,21 +154,23 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "amauc-enfermagem-imunizacao-1779572227744-8",
       "status": "upgraded",
       "family": "vf",
-      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-cpcon-imunizacao-intervalos-vf.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -128,9 +180,10 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -140,9 +193,10 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -152,9 +206,10 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -166,19 +221,21 @@
       "changes": [
         "danger_zone",
         "logic_flow",
-        "concept_map"
+        "concept_map",
+        "golden_rule"
       ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-imunizacao-1779572180830-9",
       "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -188,33 +245,36 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-imunizacao-1779572198133-1",
       "status": "upgraded",
       "family": "text_fragment",
-      "golden_reference": "questao-premium-fepese-anotacao-enfermagem-sae.json",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-imunizacao-1779572207173-7",
       "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -226,7 +286,8 @@
       "changes": [
         "danger_zone",
         "logic_flow",
-        "concept_map"
+        "concept_map",
+        "golden_rule"
       ]
     },
     {
@@ -236,9 +297,10 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -250,7 +312,8 @@
       "changes": [
         "danger_zone",
         "logic_flow",
-        "concept_map"
+        "concept_map",
+        "golden_rule"
       ]
     },
     {
@@ -260,9 +323,10 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -272,9 +336,10 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -284,9 +349,10 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -298,7 +364,8 @@
       "changes": [
         "danger_zone",
         "logic_flow",
-        "concept_map"
+        "concept_map",
+        "golden_rule"
       ]
     },
     {
@@ -308,9 +375,10 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -320,21 +388,23 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-imunizacao-1777103257434-3",
       "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -344,9 +414,10 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -356,9 +427,10 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -368,9 +440,10 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -378,11 +451,12 @@
       "status": "upgraded",
       "family": "certo_errado",
       "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
-      "generic_before": true,
+      "generic_before": false,
       "changes": [
         "danger_zone",
         "logic_flow",
-        "concept_map"
+        "concept_map",
+        "golden_rule"
       ]
     },
     {
@@ -390,11 +464,12 @@
       "status": "upgraded",
       "family": "certo_errado",
       "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
-      "generic_before": true,
+      "generic_before": false,
       "changes": [
         "danger_zone",
         "logic_flow",
-        "concept_map"
+        "concept_map",
+        "golden_rule"
       ]
     },
     {
@@ -402,11 +477,12 @@
       "status": "upgraded",
       "family": "certo_errado",
       "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
-      "generic_before": true,
+      "generic_before": false,
       "changes": [
         "danger_zone",
         "logic_flow",
-        "concept_map"
+        "concept_map",
+        "golden_rule"
       ]
     },
     {
@@ -414,11 +490,12 @@
       "status": "upgraded",
       "family": "certo_errado",
       "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
-      "generic_before": true,
+      "generic_before": false,
       "changes": [
         "danger_zone",
         "logic_flow",
-        "concept_map"
+        "concept_map",
+        "golden_rule"
       ]
     },
     {
@@ -426,11 +503,12 @@
       "status": "upgraded",
       "family": "certo_errado",
       "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
-      "generic_before": true,
+      "generic_before": false,
       "changes": [
         "danger_zone",
         "logic_flow",
-        "concept_map"
+        "concept_map",
+        "golden_rule"
       ]
     },
     {
@@ -438,11 +516,12 @@
       "status": "upgraded",
       "family": "certo_errado",
       "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
-      "generic_before": true,
+      "generic_before": false,
       "changes": [
         "danger_zone",
         "logic_flow",
-        "concept_map"
+        "concept_map",
+        "golden_rule"
       ]
     },
     {
@@ -450,11 +529,12 @@
       "status": "upgraded",
       "family": "certo_errado",
       "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
-      "generic_before": true,
+      "generic_before": false,
       "changes": [
         "danger_zone",
         "logic_flow",
-        "concept_map"
+        "concept_map",
+        "golden_rule"
       ]
     },
     {
@@ -464,21 +544,23 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "cetrede-enfermagem-imunizacao-1777103215560-0",
       "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -488,9 +570,10 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -500,9 +583,10 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -512,9 +596,10 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -524,21 +609,23 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "cetrede-enfermagem-imunizacao-1779572171486-3",
       "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -548,21 +635,23 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "cev-urca-enfermagem-imunizacao-1779563986606-7",
       "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -572,9 +661,10 @@
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     }
   ]

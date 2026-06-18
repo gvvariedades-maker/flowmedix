@@ -63,7 +63,9 @@ describe('piloto premium — goldens de subtópico', () => {
         subtopico === 'Verificação de Sinais Vitais' ||
         subtopico === 'Urgências e Emergências'
           ? 'vertical'
-          : 'cards';
+          : subtopico === 'Imunização'
+            ? 'pni-vf-juggle-tap'
+            : 'cards';
       const slide = {
         type: 'logic_flow',
         meta: { subtopico },
@@ -74,8 +76,8 @@ describe('piloto premium — goldens de subtópico', () => {
   );
 
   it.each(PILOT_EXAMPLES)(
-    '$subtopico: golden_rule com rows vira reference_table sem layout_variant no JSON',
-    ({ file }) => {
+    '$subtopico: golden_rule com rows usa layout tabular canônico sem layout_variant no JSON',
+    ({ file, subtopico }) => {
       const questao = loadExample(file);
       const golden = questao.reverse_study_slides.find(
         (s: { type: string }) => s.type === 'golden_rule',
@@ -83,9 +85,11 @@ describe('piloto premium — goldens de subtópico', () => {
       expect(golden?.rows?.length).toBeGreaterThan(0);
 
       const mapVariant = calculateLayoutVariant(golden);
+      const expectedGolden =
+        subtopico === 'Imunização' ? 'pni-interval-matrix' : 'reference_table';
       expect(
         resolveGoldenRuleLayoutVariant(golden, golden.layout_variant, mapVariant),
-      ).toBe('reference_table');
+      ).toBe(expectedGolden);
     },
   );
 
@@ -105,7 +109,7 @@ describe('piloto premium — goldens de subtópico', () => {
         subtopico === 'Urgências e Emergências'
           ? 'trap-reveal'
           : subtopico === 'Imunização'
-            ? 'calendar-mismatch'
+            ? 'pni-trap-chips'
             : subtopico === 'Processo de Enfermagem'
               ? 'norm-reveal'
               : subtopico === 'Promoção à Saúde e Prevenção de Agravos'

@@ -24,6 +24,8 @@ export function resolveDangerZoneRevealMode(
     layoutVariant === 'lab-prep-trap' ||
     layoutVariant === 'lab-specimen-arena' ||
     layoutVariant === 'dressing-choice-arena' ||
+    layoutVariant === 'vitals-classify-arena' ||
+    layoutVariant === 'pni-trap-chips' ||
     dangerZoneHasCompareItems(items);
   return isCompare ? 'tap' : 'auto';
 }

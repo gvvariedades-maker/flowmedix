@@ -18,12 +18,18 @@ import {
   isCurativosSubtopico,
   normalizeCurativosInstruction,
 } from '@/lib/catalogMigration/upgradePremiumCurativos';
+import {
+  buildImunizacaoPremiumSlidesForFamily,
+  canBuildImunizacaoPremiumSlides,
+  imunizacaoGoldenReferenceForFamily,
+  isImunizacaoSubtopico,
+} from '@/lib/catalogMigration/upgradePremiumImunizacao';
 
-const GENERIC_MARKERS = [
+/** Marcadores de conteúdo stub/hybrid — gate anti-stub em `__tests__/premium-no-stub.test.ts`. */
+export const PREMIUM_STUB_MARKERS = [
   'relacione o tema',
   'ponto 1',
   'ponto 2',
-  'erros comuns',
   'conceito central',
   'regra essencial',
   'seleção do antígeno',
@@ -32,7 +38,12 @@ const GENERIC_MARKERS = [
   'gabarito desta prova',
   'critério de prova',
   '[ia] enriquecer concept_map',
-];
+  '[ia] completar',
+  '[ia] dispositivo',
+  '[ia] fórmula',
+  'preencher artigo/lei',
+  'preencher fórmula',
+] as const;
 
 export type UpgradeChangeCode =
   | 'danger_zone'
@@ -79,13 +90,18 @@ function slideMeta(topico: string, subtopico: string): { topico: string; subtopi
 
 export function isGenericSlideText(text: string): boolean {
   const lower = text.toLowerCase();
-  return GENERIC_MARKERS.some((m) => lower.includes(m));
+  return PREMIUM_STUB_MARKERS.some((m) => lower.includes(m));
 }
 
 export function hasGenericSlides(slides: unknown): boolean {
   if (!Array.isArray(slides) || slides.length === 0) return true;
   const txt = JSON.stringify(slides).toLowerCase();
-  return GENERIC_MARKERS.some((m) => txt.includes(m));
+  return PREMIUM_STUB_MARKERS.some((m) => txt.includes(m));
+}
+
+/** Alias semântico para gate premium (stubs hybrid / placeholders IA). */
+export function hasPremiumStubMarkers(slides: unknown): boolean {
+  return hasGenericSlides(slides);
 }
 
 function findSlide(slides: SlideRecord[], type: string): SlideRecord | undefined {
@@ -611,7 +627,53 @@ export function upgradePremiumHybrid(
   const changes: UpgradeChangeCode[] = [];
   const useCurativosPremium =
     isCurativosSubtopico(subtopico) && canBuildCurativosPremiumSlides(instruction, family);
-  const goldenReference = useCurativosPremium ? CURATIVOS_GOLDEN_FILE : FAMILY_GOLDEN_FILE[family];
+  const useImunizacaoPremium =
+    isImunizacaoSubtopico(subtopico) && canBuildImunizacaoPremiumSlides(instruction, family);
+  const goldenReference = useCurativosPremium
+    ? CURATIVOS_GOLDEN_FILE
+    : useImunizacaoPremium
+      ? imunizacaoGoldenReferenceForFamily(family)
+      : FAMILY_GOLDEN_FILE[family];
+
+  if (useImunizacaoPremium && !options.dangerOnly) {
+    const imunizacaoSlides = buildImunizacaoPremiumSlidesForFamily(
+      {
+        instruction,
+        options: optionsList,
+        topico,
+        subtopico,
+      },
+      family,
+    );
+    const working: Record<string, unknown> = {
+      ...(base as Record<string, unknown>),
+      question_data: {
+        ...questionData,
+        instruction,
+      },
+      reverse_study_slides: imunizacaoSlides,
+    };
+    delete working.study_slides;
+    const parsed = QuestaoCompletaSchema.safeParse(working);
+    return {
+      changed: true,
+      skipped: false,
+      family,
+      familyLabel: FAMILY_LABELS[family],
+      goldenReference,
+      genericBefore,
+      changes: ['concept_map', 'golden_rule', 'logic_flow', 'danger_zone'],
+      payload: working,
+      zodValid: parsed.success,
+      zodMessage: parsed.success
+        ? undefined
+        : parsed.error.issues
+            .slice(0, 2)
+            .map((i) => `${i.path.join('.')}: ${i.message}`)
+            .join('; '),
+      tecconcursos: false,
+    };
+  }
 
   if (useCurativosPremium && !options.dangerOnly) {
     const curativosSlides = buildCurativosPremiumSlidesForFamily(
@@ -671,18 +733,28 @@ export function upgradePremiumHybrid(
   logicFlow.meta = slideMeta(topico, subtopico);
   changes.push('logic_flow');
 
-  if (useCurativosPremium && options.dangerOnly) {
-    const curativosSlides = buildCurativosPremiumSlidesForFamily(
-      {
-        instruction,
-        options: optionsList,
-        topico,
-        subtopico,
-      },
-      family,
-    );
-    const dangerSlide = curativosSlides.find((s) => s.type === 'danger_zone');
-    const logicSlide = curativosSlides.find((s) => s.type === 'logic_flow');
+  if ((useCurativosPremium || useImunizacaoPremium) && options.dangerOnly) {
+    const dedicatedSlides = useImunizacaoPremium
+      ? buildImunizacaoPremiumSlidesForFamily(
+          {
+            instruction,
+            options: optionsList,
+            topico,
+            subtopico,
+          },
+          family,
+        )
+        : buildCurativosPremiumSlidesForFamily(
+            {
+              instruction,
+              options: optionsList,
+              topico,
+              subtopico,
+            },
+            family,
+          );
+    const dangerSlide = dedicatedSlides.find((s) => s.type === 'danger_zone');
+    const logicSlide = dedicatedSlides.find((s) => s.type === 'logic_flow');
     if (dangerSlide) {
       dangerZone.meta = slideMeta(topico, subtopico);
       Object.assign(dangerZone, dangerSlide);

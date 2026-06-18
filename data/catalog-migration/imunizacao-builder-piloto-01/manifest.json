@@ -1,0 +1,22 @@
+{
+  "lote": "imunizacao-builder-piloto-01",
+  "exported_at": "2026-06-16T20:05:28.253Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Imunização",
+    "limit": 10,
+    "exclude_count": 494
+  },
+  "slugs": [
+    "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+    "amauc-enfermagem-processo-de-enfermagem-1780001440222-6",
+    "amauc-enfermagem-processo-de-enfermagem-1780001517858-0",
+    "amauc-enfermagem-processo-de-enfermagem-1780002549800-4",
+    "amauc-enfermagem-processo-de-enfermagem-1780004982901-4",
+    "amauc-enfermagem-saude-da-mulher-1777104295283-5",
+    "amauc-enfermagem-vias-de-administracao-1776056374837-2",
+    "ameosc-enfermagem-processo-de-enfermagem-1780001613305-7",
+    "ameosc-enfermagem-processo-de-enfermagem-1780005791580-3",
+    "ameosc-enfermagem-processo-de-enfermagem-1780005791580-8"
+  ]
+}

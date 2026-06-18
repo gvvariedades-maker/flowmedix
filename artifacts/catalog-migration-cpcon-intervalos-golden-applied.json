@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-06-16T19:56:19.255Z",
+  "lote": "cpcon-intervalos-golden",
+  "mode": "apply",
+  "total_files": 1,
+  "ok": 1,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cpcon-uepb-enfermagem-imunizacao-1779563996663-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779563996663-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

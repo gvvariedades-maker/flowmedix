@@ -9,6 +9,8 @@ const LOGIC_FLOW_LAYOUT_OVERRIDES = new Set([
   'iv-care-soft-stack',
   'lab-vf-soft-stack',
   'wound-prep-tap-flow',
+  'vitals-translate-tap',
+  'pni-vf-juggle-tap',
 ]);
 
 const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
@@ -16,6 +18,8 @@ const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
   'iv-care-soft-stack',
   'lab-vf-soft-stack',
   'wound-prep-tap-flow',
+  'vitals-translate-tap',
+  'pni-vf-juggle-tap',
 ]);
 
 /**

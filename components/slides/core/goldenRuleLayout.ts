@@ -19,6 +19,8 @@ const GOLDEN_RULE_TABLE_MOLD_OVERRIDES = new Set([
   'iv-bundle-mesh-reveal',
   'lab-prep-lens-board',
   'dressing-match-matrix',
+  'vitals-reference-board',
+  'pni-interval-matrix',
 ]);
 
 /**
@@ -51,6 +53,8 @@ export function resolveGoldenRuleLayoutVariant(
   if (explicitVariant === 'iv-bundle-mesh-reveal') return 'iv-bundle-mesh-reveal';
   if (explicitVariant === 'lab-prep-lens-board') return 'lab-prep-lens-board';
   if (explicitVariant === 'dressing-match-matrix') return 'dressing-match-matrix';
+  if (explicitVariant === 'vitals-reference-board') return 'vitals-reference-board';
+  if (explicitVariant === 'pni-interval-matrix') return 'pni-interval-matrix';
 
   if (hasTableRows) {
     if (explicitVariant && GOLDEN_RULE_TYPOGRAPHY_OVERRIDES.has(explicitVariant)) {

@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-06-16T19:55:07.986Z",
+  "lote": "cpcon-intervalos-golden",
+  "mode": "write",
+  "force": true,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 1,
+  "upgraded": 1,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "vf": 1
+  },
+  "results": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-imunizacao-1779563996663-6",
+      "status": "upgraded",
+      "family": "vf",
+      "golden_reference": "questao-premium-cpcon-imunizacao-intervalos-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    }
+  ]
+}

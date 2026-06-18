@@ -209,40 +209,76 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('vertical');
   });
 
-  it('Imunização: concept_map vaccine-timeline no molde', () => {
+  it('Imunização: concept_map pni-rules-deck no molde', () => {
     const result = resolveSlidePresentation(
       {
         type: 'concept_map',
         meta: { subtopico: 'Imunização' },
         items: [
-          { label: 'Marco', detail: '3 meses', icon: 'Calendar' },
-          { label: 'Men C', detail: '1', icon: 'Syringe' },
-          { label: 'BCG', detail: '2', icon: 'Baby' },
+          { label: 'Grace period', detail: '4 dias antes = dose válida', icon: 'Clock' },
+          { label: 'SCR × FA', detail: '30 dias menor de 2 anos', icon: 'Baby' },
+          { label: 'Gabarito', detail: 'Letra C', icon: 'CheckCircle' },
         ],
       },
       {
-        questionSlug: 'fundatec-meningo-1',
-        familyId: 'text_fragment',
+        questionSlug: 'cpcon-imunizacao-intervalos-1',
+        familyId: 'vf',
       },
     );
-    expect(result.layoutVariant).toBe('vaccine-timeline');
+    expect(result.layoutVariant).toBe('pni-rules-deck');
   });
 
-  it('Imunização: danger_zone calendar-mismatch com correct no molde', () => {
+  it('Imunização: golden_rule pni-interval-matrix com rows no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Imunização' },
+        rows: [
+          { label: 'I — grace 4d', value: 'FALSA: dose válida' },
+          { label: 'Combinação', value: 'II, III e IV → letra C', emphasis: 'success' },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-imunizacao-intervalos-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('pni-interval-matrix');
+  });
+
+  it('Imunização: logic_flow pni-vf-juggle-tap no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Imunização' },
+        steps: ['Julgar I: grace → FALSO', 'Julgar II → VERDADEIRO', 'Marcar C'],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'cpcon-imunizacao-intervalos-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('pni-vf-juggle-tap');
+    expect(result.revealMode).toBe('tap');
+  });
+
+  it('Imunização: danger_zone pni-trap-chips com correct no molde', () => {
     const result = resolveSlidePresentation(
       {
         type: 'danger_zone',
         meta: { subtopico: 'Imunização' },
         content: 'Pegadinhas',
-        items: [{ label: 'Erro', detail: 'X', correct: 'Certo' }],
+        items: [{ label: 'Letra A', detail: 'Aceita I falsa', correct: 'Grace period valida dose' }],
       },
       {
-        questionSlug: 'fundatec-meningo-1',
-        familyId: 'text_fragment',
+        questionSlug: 'cpcon-imunizacao-intervalos-1',
+        familyId: 'vf',
       },
     );
-    expect(result.layoutVariant).toBe('calendar-mismatch');
+    expect(result.layoutVariant).toBe('pni-trap-chips');
     expect(result.bulletStyle).toBe('x_icon');
+    expect(result.dangerRevealMode).toBe('tap');
   });
 
   it('Processo de Enfermagem: concept_map sae-responsibility-matrix no molde', () => {

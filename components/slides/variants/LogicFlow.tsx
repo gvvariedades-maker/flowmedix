@@ -18,6 +18,7 @@ import { LogicFlowStepLadder } from './LogicFlowStepLadder';
 import { LogicFlowSoftStack } from './LogicFlowSoftStack';
 import { LogicFlowLabVfSoftStack } from './LogicFlowLabVfSoftStack';
 import { LogicFlowWoundPrepTapFlow } from './LogicFlowWoundPrepTapFlow';
+import { LogicFlowPniVfJuggleTap } from './LogicFlowPniVfJuggleTap';
 import { SLIDE_CARD } from '../core/slideSurface';
 import {
   getLogicFlowStepVisual,
@@ -167,6 +168,10 @@ export const LogicFlow = ({
 
   if (variant === 'wound-prep-tap-flow') {
     return <LogicFlowWoundPrepTapFlow steps={steps} theme={theme} />;
+  }
+
+  if (variant === 'pni-vf-juggle-tap') {
+    return <LogicFlowPniVfJuggleTap steps={steps} theme={theme} footerRule={undefined} />;
   }
 
   const footer = (

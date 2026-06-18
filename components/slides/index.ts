@@ -30,13 +30,16 @@ export { WoundStageTissueDeckConceptMap } from './variants/WoundStageTissueDeckC
 export { GoldenRuleMeshReveal } from './variants/GoldenRuleMeshReveal';
 export { GoldenRuleLabPrepLensBoard } from './variants/GoldenRuleLabPrepLensBoard';
 export { GoldenRuleDressingMatchMatrix } from './variants/GoldenRuleDressingMatchMatrix';
+export { GoldenRulePniIntervalMatrix } from './variants/GoldenRulePniIntervalMatrix';
 export { LogicFlowSoftStack } from './variants/LogicFlowSoftStack';
 export { LogicFlowLabVfSoftStack } from './variants/LogicFlowLabVfSoftStack';
 export { LogicFlowWoundPrepTapFlow } from './variants/LogicFlowWoundPrepTapFlow';
+export { LogicFlowPniVfJuggleTap } from './variants/LogicFlowPniVfJuggleTap';
 export { DangerZoneDoseTrap } from './variants/DangerZoneDoseTrap';
 export { DangerZoneLabPrepTrap } from './variants/DangerZoneLabPrepTrap';
 export { DangerZoneLabSpecimenArena } from './variants/DangerZoneLabSpecimenArena';
 export { DangerZoneDressingChoiceArena } from './variants/DangerZoneDressingChoiceArena';
+export { DangerZonePniTrapChips } from './variants/DangerZonePniTrapChips';
 export { DangerZoneScopeTrap } from './variants/DangerZoneScopeTrap';
 export { DangerZoneRouteTrap } from './variants/DangerZoneRouteTrap';
 export { DangerZoneNormReveal } from './variants/DangerZoneNormReveal';

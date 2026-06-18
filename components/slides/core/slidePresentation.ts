@@ -157,7 +157,9 @@ export function resolveSlidePresentation(
       layoutVariant === 'catheter-danger-arena' ||
       layoutVariant === 'lab-prep-trap' ||
       layoutVariant === 'lab-specimen-arena' ||
-      layoutVariant === 'dressing-choice-arena')
+      layoutVariant === 'dressing-choice-arena' ||
+      layoutVariant === 'vitals-classify-arena' ||
+      layoutVariant === 'pni-trap-chips')
       ? 'x_icon'
       : 'numbered');
 

@@ -17,6 +17,7 @@ const CONCEPT_MAP_MOLD_OVERRIDES = new Set([
   'vitals-panel',
   'survival-chain',
   'vaccine-timeline',
+  'pni-rules-deck',
   'sae-documentation',
   'sae-responsibility-matrix',
   'sus-legal-pillars',
