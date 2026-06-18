@@ -15,6 +15,8 @@ import {
   questaoPayloadTecconcursosZodError,
 } from '@/lib/validations';
 import { ValidationErrorsPanel, formatZodErrors } from '@/components/admin/ValidationErrorsPanel';
+import { LaboratorioGoldenStandardPanel } from '@/components/admin/LaboratorioGoldenStandardPanel';
+import { lintGoldenContent, type GoldenContentLintIssue } from '@/lib/goldenContentStandard';
 import { JsonEditorWithHighlight } from '@/components/admin/JsonEditorWithHighlight';
 import { findErrorLocation, findAllErrorLocations, type ErrorLocation } from '@/lib/jsonErrorLocator';
 import { applySuggestion } from '@/lib/autoFix';
@@ -64,6 +66,7 @@ export default function AvantLaboratory() {
   const [parsedData, setParsedData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [validationErrors, setValidationErrors] = useState<ValidationError[]>([]);
+  const [goldenStandardIssues, setGoldenStandardIssues] = useState<GoldenContentLintIssue[]>([]);
   const [errorLocations, setErrorLocations] = useState<Map<number, ErrorLocation>>(new Map());
   const [errorLines, setErrorLines] = useState<Set<number>>(new Set());
   const [selectedLine, setSelectedLine] = useState<number | null>(null);
@@ -163,6 +166,7 @@ export default function AvantLaboratory() {
       setParsedData(null);
       setError(null);
       setValidationErrors([]);
+      setGoldenStandardIssues([]);
       setErrorLocations(new Map());
       setErrorLines(new Set());
       setIsBatchMode(false);
@@ -178,6 +182,7 @@ export default function AvantLaboratory() {
       setError('JSON inválido: erro de sintaxe');
       setParsedData(null);
       setValidationErrors([]);
+      setGoldenStandardIssues([]);
       setErrorLocations(new Map());
       setErrorLines(new Set());
       setIsBatchMode(false);
@@ -191,6 +196,7 @@ export default function AvantLaboratory() {
       setParsedData(null);
       setError(null);
       setValidationErrors([]);
+      setGoldenStandardIssues([]);
       setErrorLocations(new Map());
       setErrorLines(new Set());
       setBatchResult(null);
@@ -238,6 +244,7 @@ export default function AvantLaboratory() {
         setErrorLines(linesWithErrors);
         setError(`Erros de validação:\n${gateErrors.map((err) => err.message).join('\n')}`);
         setParsedData(null);
+        setGoldenStandardIssues([]);
         return;
       }
 
@@ -257,6 +264,7 @@ export default function AvantLaboratory() {
         });
         setError(`Erros de validação:\n${errorMessages.join('\n')}`);
         setParsedData(null);
+        setGoldenStandardIssues([]);
         return;
       }
 
@@ -300,9 +308,11 @@ export default function AvantLaboratory() {
       }
 
       setParsedData(validationResult.data);
+      setGoldenStandardIssues(lintGoldenContent(validationResult.data));
     } catch (e: any) {
       setError(e.message);
       setParsedData(null);
+      setGoldenStandardIssues([]);
       if (e.message.includes('JSON')) {
         setValidationErrors([]);
         setErrorLocations(new Map());
@@ -684,6 +694,15 @@ export default function AvantLaboratory() {
                     }
                   }
                 }}
+              />
+            </div>
+          )}
+
+          {!isBatchMode && parsedData && goldenStandardIssues.length > 0 && (
+            <div className="mt-2">
+              <LaboratorioGoldenStandardPanel
+                issues={goldenStandardIssues}
+                onClose={() => setGoldenStandardIssues([])}
               />
             </div>
           )}

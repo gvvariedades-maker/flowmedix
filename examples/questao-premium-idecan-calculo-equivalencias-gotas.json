@@ -6,7 +6,25 @@
     "ano": "2021",
     "cargo_header": "Técnico de Enfermagem",
     "topico": "Enfermagem",
-    "subtopico": "Cálculo de Administração de Medicamentos e Infusões"
+    "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+    "content_standard": "golden-v1",
+    "family": "calc",
+    "content_review": {
+      "reviewed_at": "2026-06-18",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "Equivalências gts/mL — padrão brasileiro de prova",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "calc-equivalencias-br",
+        "tier": "A",
+        "issuer": "Referência técnica de enfermagem / bancas",
+        "title": "Equivalências microgotas e macrogotas (20 gts/mL e 60 gts/mL)",
+        "year": 2021,
+        "covers": ["microgotas", "macrogotas", "mL/h"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Com base em convenções sobre medidas e equivalências adotadas no Brasil, com exceção de alguns medicamentos que fogem aos padrões, assinale a alternativa correta.",

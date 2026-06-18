@@ -6,7 +6,25 @@
     "ano": "2024",
     "cargo_header": "Técnico de Enfermagem",
     "topico": "Enfermagem",
-    "subtopico": "Processo de Enfermagem"
+    "subtopico": "Processo de Enfermagem",
+    "content_standard": "golden-v1",
+    "family": "text_fragment",
+    "content_review": {
+      "reviewed_at": "2026-06-18",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "COFEN Res. 358/2009 — SAE e registros",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "cofen-res-358-2009",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Resolução COFEN nº 358/2009 — Sistematização da Assistência de Enfermagem",
+        "year": 2009,
+        "covers": ["anotação de enfermagem", "registro", "SAE"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "A anotação de enfermagem compreende o registro das ações realizadas em prol do paciente/cliente pela equipe de enfermagem.\nSobre esse tema, é correto afirmar:",

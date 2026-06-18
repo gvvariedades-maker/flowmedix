@@ -6,7 +6,26 @@
     "ano": "2024",
     "cargo_header": "Técnico de Enfermagem",
     "topico": "Enfermagem",
-    "subtopico": "Imunização"
+    "subtopico": "Imunização",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-18",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "PNI 2025 — calendário lactente 3 meses",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pni-2025-calendario",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Calendário Nacional de Vacinação — lactente",
+        "year": 2025,
+        "url": "https://www.gov.br/saude/pt-br/vacinacao/calendario",
+        "covers": ["3 meses", "meningocócica C", "pentavalente", "rotavírus"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Assinale a alternativa que corresponde à vacina a ser realizada no 3o mês de vida de um bebê.",

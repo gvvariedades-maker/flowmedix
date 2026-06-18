@@ -4,7 +4,7 @@ Leitura estimada: **~12 minutos**. Guia para produzir e refatorar `reverse_study
 
 **Público:** agentes de conteúdo, Laboratório, revisores humanos.
 
-**Fontes complementares:** [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) (subtópicos e layouts), [`AVANT_AGENT_SOURCES.md`](AVANT_AGENT_SOURCES.md) (índice), [`lib/validations.ts`](../lib/validations.ts) (limites Zod).
+**Fontes complementares:** [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) (subtópicos e layouts), [`AVANT_AGENT_SOURCES.md`](AVANT_AGENT_SOURCES.md) (índice), [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) (gramática de slots + fontes oficiais), [`lib/validations.ts`](../lib/validations.ts) (limites Zod).
 
 ---
 

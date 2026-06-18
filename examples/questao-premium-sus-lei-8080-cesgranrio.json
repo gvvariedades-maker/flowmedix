@@ -6,7 +6,26 @@
     "ano": "2024",
     "cargo_header": "Técnico de Enfermagem",
     "topico": "Saúde Pública",
-    "subtopico": "Promoção à Saúde e Prevenção de Agravos"
+    "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+    "content_standard": "golden-v1",
+    "family": "legis",
+    "content_review": {
+      "reviewed_at": "2026-06-18",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "Lei 8.080/1990 (Lei Orgânica da Saúde)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "lei-8080-1990",
+        "tier": "A",
+        "issuer": "Presidência da República",
+        "title": "Lei nº 8.080/1990 — Dispõe sobre as condições para a promoção, proteção e recuperação da saúde",
+        "year": 1990,
+        "url": "https://www.planalto.gov.br/ccivil_03/leis/l8080.htm",
+        "covers": ["Art. 4º composição do SUS"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "O Sistema Único de Saúde, SUS, é um dos maiores e mais complexos sistemas de saúde pública do mundo. A atual Constituição Federal preconiza o acesso universal ao SUS, sem discriminação, e a atenção integral à saúde como um direito de todos os brasileiros.\n\nDe acordo com a Lei Orgânica da Saúde, constitui o Sistema Único de Saúde o conjunto de",

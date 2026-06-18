@@ -6,7 +6,26 @@
     "prova": "Ag (Pref Cacimba D)",
     "topico": "Enfermagem",
     "subtopico": "Epidemiologia e Vigilância Epidemiológica",
-    "cargo_header": "Técnico de Enfermagem"
+    "cargo_header": "Técnico de Enfermagem",
+    "content_standard": "golden-v1",
+    "family": "certo_errado",
+    "content_review": {
+      "reviewed_at": "2026-06-18",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "PNI — poliomielite e vigilância",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pni-poliomielite",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Calendário Nacional de Vacinação — poliomielite (VIP/VOP)",
+        "year": 2025,
+        "url": "https://www.gov.br/saude/pt-br/vacinacao/calendario",
+        "covers": ["poliomielite", "VOP", "vigilância"]
+      }
+    ]
   },
   "question_data": {
     "options": [

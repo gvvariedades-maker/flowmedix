@@ -45,6 +45,7 @@ CAMADA 2 — Apresentação (player)
 - [ ] Sem TecConcursos; ícones Lucide válidos
 - [ ] Revisão clínica humana
 - [ ] Passa em `premium-no-stub` (sem `PREMIUM_STUB_MARKERS`)
+- [ ] **GOLDEN v1 (recomendado):** `meta.content_standard: "golden-v1"`, `family`, `sources`, `content_review` — ver [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md)
 
 ### Molde visual pronto
 

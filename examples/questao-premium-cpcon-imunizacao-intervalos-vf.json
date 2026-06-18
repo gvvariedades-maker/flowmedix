@@ -6,7 +6,26 @@
     "ano": "2025",
     "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "topico": "Enfermagem",
-    "subtopico": "Imunização"
+    "subtopico": "Imunização",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "content_review": {
+      "reviewed_at": "2026-06-18",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "PNI / Manual MS 2025 — intervalos",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pni-2025-intervalos",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Manual de Normas e Procedimentos para Vacinação — intervalos entre vacinas",
+        "year": 2025,
+        "url": "https://www.gov.br/saude/pt-br/vacinacao/calendario",
+        "covers": ["grace period 4 dias", "SCR×FA menor 2 anos", "VPC13×VPP23", "oral×injetável"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Sobre intervalos das vacinações entre si e com outros imunobiológicos, analise as afirmativas a seguir.\nI - Se a primeira dose de uma série é administrada até quatro (4) dias antes da idade mínima recomendada, deve-se registrar como erro de imunização e a dose deve ser repetida respeitando os intervalos recomendados entre as doses.\nII - No menor de 2 anos de idade, a vacina tríplice viral ou tetraviral não devem ser aplicadas simultaneamente com a vacina de febre amarela em situações de rotina.\nIII - A vacina pneumocócica 13-valente (conjugada) (VPC13), quando disponível, e a vacina pneumocócica 23-valente (polissacarídica) (VPP23) não devem ser aplicadas simultaneamente e devem ser utilizadas com, no mínimo, oito semanas de intervalo. A vacina VPC13 deve ser aplicada primeiro. Caso a VPP23 tenha sido administrada primeiramente, o intervalo mínimo para a administração de VPC13 é de um ano.\nIV - Vacinas atenuadas orais, por desencadearem diferente processo imunológico, não interferem na resposta à vacina injetável, portanto podem ser administradas simultaneamente ou em qualquer momento antes ou depois de outra vacina injetável.\nÉ CORRETO o que se afirma em:",

@@ -1,0 +1,122 @@
+{
+  "_comment": "Molde GOLDEN v1 — copiar para examples/questao-premium-<banca>-<subtopico>-<recorte>.json. Remover _comment antes de publicar. meta.sources e content_review são INTERNOS (não aparecem no player).",
+  "meta": {
+    "banca": "BANCA",
+    "prova": "Tec Enf (Órgão)",
+    "orgao": "Órgão",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "SUBTÓPICO CANÔNICO — CLAUDE.md §9",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "content_review": {
+      "reviewed_at": "2026-01-01",
+      "reviewer": "iniciais-revisor",
+      "guideline_snapshot": "Documento oficial + ano (ex.: PNI 2025)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "fonte-oficial-id",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Título do documento oficial",
+        "year": 2025,
+        "url": "https://www.gov.br/...",
+        "covers": ["tema 1", "tema 2"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Enunciado FIEL ao caderno.\nI - Primeira afirmativa.\nII - Segunda afirmativa.\nIII - Terceira afirmativa.\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I apenas.", "is_correct": false },
+      { "id": "B", "text": "II e III apenas.", "is_correct": true },
+      { "id": "C", "text": "I, II e III.", "is_correct": false },
+      { "id": "D", "text": "III apenas.", "is_correct": false },
+      { "id": "E", "text": "I e II apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Tema — mapa da prova",
+      "meta": { "topico": "Enfermagem", "subtopico": "SUBTÓPICO CANÔNICO — CLAUDE.md §9" },
+      "items": [
+        {
+          "label": "ENQUADRAMENTO — o que a banca testa",
+          "detail": "Uma frase específica desta questão.",
+          "icon": "Target"
+        },
+        {
+          "label": "NÚCLEO I — julgamento",
+          "detail": "VERDADEIRO ou FALSO + motivo curto com base oficial.",
+          "icon": "ListChecks"
+        },
+        {
+          "label": "COMBINAÇÃO — gabarito",
+          "detail": "Conjunto verdadeiro → letra B.",
+          "icon": "CheckCircle"
+        },
+        {
+          "label": "PEGADINHA-ÂNCORA",
+          "detail": "O erro que a banca induz nesta questão.",
+          "icon": "AlertTriangle"
+        }
+      ],
+      "footer_rule": "Mnemônico desta questão (≤500 chars)"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Referência — decorar para a prova",
+      "meta": { "topico": "Enfermagem", "subtopico": "SUBTÓPICO CANÔNICO — CLAUDE.md §9" },
+      "content": "TÍTULO DA REGRA EM CAIXA ALTA",
+      "rows": [
+        { "label": "Critério 1", "value": "Valor oficial", "badge": "ok" },
+        { "label": "Combinação — gabarito", "value": "II e III → letra B", "emphasis": "success", "badge": "hot" }
+      ],
+      "footer_rule": "Decore: critério 1 · critério 2 · gabarito"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "SUBTÓPICO CANÔNICO — CLAUDE.md §9" },
+      "steps": [
+        "Identificar formato: afirmativas I–III + “É CORRETO o que se afirma em”.",
+        "Julgar I: … → VERDADEIRO ou FALSO.",
+        "Julgar II: … → VERDADEIRO ou FALSO.",
+        "Montar conjunto verdadeiro: II e III.",
+        "Localizar alternativa B.",
+        "Eliminar A (…), C (…), D (…), E (…).",
+        "Marcar B.",
+        "Fixação: regra reproduzível para questões similares deste tema."
+      ],
+      "footer_rule": "Roteiro: I → II → III → conjunto → letra"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "SUBTÓPICO CANÔNICO — CLAUDE.md §9" },
+      "content": "PEGADINHAS — tema (letras desta prova)",
+      "items": [
+        {
+          "label": "Letra A — I apenas",
+          "detail": "Por que parece certa.",
+          "correct": "Por que erra + fato oficial."
+        },
+        {
+          "label": "Letra C — I, II e III",
+          "detail": "Inclui I falsa.",
+          "correct": "Gabarito exige só II e III."
+        },
+        {
+          "label": "Confusão do tema",
+          "detail": "Erro que se repete em provas do mesmo assunto.",
+          "correct": "Correção com referência oficial."
+        }
+      ],
+      "footer_rule": "Julgue I antes de montar combinação"
+    }
+  ]
+}

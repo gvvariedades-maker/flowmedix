@@ -6,7 +6,25 @@
     "ano": "2024",
     "cargo_header": "Técnico de Enfermagem",
     "topico": "Enfermagem",
-    "subtopico": "Urgências e Emergências"
+    "subtopico": "Urgências e Emergências",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-06-18",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "SBV adulto — AHA/ILCOR 2020 (referência de prova)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "aha-ilcor-sbv-2020",
+        "tier": "B",
+        "issuer": "American Heart Association / ILCOR",
+        "title": "Diretrizes de RCP e emergências cardiovasculares — adulto",
+        "year": 2020,
+        "covers": ["30:2", "100-120/min", "5-6 cm", "verificação de pulso"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Durante o plantão, um paciente adulto é encontrado inconsciente e sem respiração espontânea. A equipe inicia atendimento conforme protocolo de Suporte Básico de Vida.\n\nI - A primeira conduta é garantir segurança da cena e checar responsividade e respiração.\nII - Na presença de dois socorristas treinados, as compressões torácicas e as ventilações devem ser realizadas de forma sincronizada, na proporção de 30:2.\nIII - A verificação de pulso deve ser feita a cada ciclo de compressões, antes de retomar as ventilações.\n\nÉ CORRETO o que se afirma em:",

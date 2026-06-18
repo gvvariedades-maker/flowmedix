@@ -6,7 +6,25 @@
     "prova": "Tec (UFBA)",
     "topico": "Enfermagem",
     "subtopico": "Verificação de Sinais Vitais",
-    "cargo_header": "Técnico de Enfermagem"
+    "cargo_header": "Técnico de Enfermagem",
+    "content_standard": "golden-v1",
+    "family": "certo_errado",
+    "content_review": {
+      "reviewed_at": "2026-06-18",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "FC adulto 60–100 bpm — referência técnica",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "sv-adulto-referencia",
+        "tier": "A",
+        "issuer": "COFEN / protocolos de enfermagem",
+        "title": "Aferição de frequência cardíaca — pulso radial, 60 segundos",
+        "year": 2024,
+        "covers": ["FC 60-100 bpm", "pulso radial"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Leia o enunciado abaixo e depois responda:\nA frequência cardíaca é frequentemente aferida pela palpação do pulso radial, por um período de 60 segundos e com sua normalidade se mostrando na faixa entre 60-100 batimentos por minuto.",

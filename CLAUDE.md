@@ -18,6 +18,8 @@ npm run build            # validate:env + next build
 | Validação de questões | [`lib/validations.ts`](lib/validations.ts) |
 | Cache de dados | [`lib/cache.ts`](lib/cache.ts) |
 | Slides, layouts, subtópicos | [`docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md) |
+| Pacote premium (checklist + rollout) | [`docs/PACOTE_PREMIUM_CHECKLIST.md`](docs/PACOTE_PREMIUM_CHECKLIST.md) |
+| Padrão de conteúdo golden (v1) | [`docs/GOLDEN_CONTENT_STANDARD.md`](docs/GOLDEN_CONTENT_STANDARD.md) |
 
 ## Índice
 
@@ -697,6 +699,7 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 | Arquivo | Quando ler |
 |---------|------------|
 | [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md) | Slides, subtópicos, layouts, exemplos JSON |
+| [`PACOTE_PREMIUM_CHECKLIST.md`](docs/PACOTE_PREMIUM_CHECKLIST.md) | Pacote premium completo (golden + moldes + builder + lote) |
 | [`AVANT_AGENT_SOURCES.md`](docs/AVANT_AGENT_SOURCES.md) | Índice para agente de questões |
 | [`AVANT_AGENT_PROMPT_EXPORT.md`](docs/AVANT_AGENT_PROMPT_EXPORT.md) | System prompt exportável (agente externo) |
 | [`JSON_FORMAT_SEMANTICO.md`](docs/JSON_FORMAT_SEMANTICO.md) | Formato enxuto vs legado |
@@ -721,6 +724,7 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 ### Regras Cursor (não duplicar aqui)
 
 - [`.cursor/rules/avant-engineering.mdc`](.cursor/rules/avant-engineering.mdc) — stack, RLS, entrega focada
+- [`.cursor/rules/avant-premium-pacote.mdc`](.cursor/rules/avant-premium-pacote.mdc) — pacote premium (estrutura + rollout por subtópico)
 - [`docs/cursor/avant-agent-json.mdc`](docs/cursor/avant-agent-json.mdc) — cópia versionada da rule de JSON (copiar para `.cursor/rules/` se faltar no clone)
 
 ### Outros

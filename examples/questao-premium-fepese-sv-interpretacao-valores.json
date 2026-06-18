@@ -6,7 +6,25 @@
     "prova": "TEnf (Concórdia)",
     "topico": "Enfermagem",
     "subtopico": "Verificação de Sinais Vitais",
-    "cargo_header": "Técnico de Enfermagem"
+    "cargo_header": "Técnico de Enfermagem",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-06-18",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "Faixas de SV adulto — referência clássica de prova",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "sv-adulto-referencia",
+        "tier": "A",
+        "issuer": "COFEN / protocolos de enfermagem",
+        "title": "Faixas de referência — sinais vitais do adulto",
+        "year": 2024,
+        "covers": ["PA", "FC", "FR", "temperatura", "classificação clínica"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Ao verificar os sinais vitais do paciente, você identificou os seguintes valores:\n\" PA 110×75 mmHg\n\" Temperatura axilar 36,5°C\n\" FC 110 bpm\n\" FR 30 mpm\nConsiderando os resultados acima, você diria que o paciente está:",

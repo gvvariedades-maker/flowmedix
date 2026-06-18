@@ -6,6 +6,7 @@ import { z, ZodError } from 'zod';
 import * as LucideIcons from 'lucide-react';
 import { EmailTemplateContentSchema } from '@/lib/email/templateContent';
 import { normalizeQuestaoSlideArrays } from './reverseStudySlidesNormalize';
+import { GOLDEN_CONTENT_STANDARD_VERSION } from './goldenContentStandard';
 
 // ============================================================================
 // CONSTANTES E HELPERS
@@ -42,6 +43,11 @@ const LIMITS = {
   CHIP_LABEL_MAX: 80,
   /** Título de capa abaixo do chip (Sprint 1). */
   SLIDE_TITLE_MAX: 120,
+  SOURCE_ID_MAX: 80,
+  SOURCE_TITLE_MAX: 300,
+  SOURCE_URL_MAX: 500,
+  GUIDELINE_SNAPSHOT_MAX: 200,
+  REVIEWER_MAX: 80,
 } as const;
 
 // Tags HTML permitidas em text_fragment
@@ -94,6 +100,38 @@ const htmlValidator = z.string().transform((val) => {
 });
 
 // Schema para Questão JSON (Laboratório) - COM LIMITES DE TAMANHO
+
+/** Metadados internos GOLDEN v1 — não renderizados no player. @see docs/GOLDEN_CONTENT_STANDARD.md */
+export const GoldenFamilySchema = z.enum([
+  'legis',
+  'protocolo',
+  'calc',
+  'vf',
+  'certo_errado',
+  'conceito',
+  'text_fragment',
+]);
+
+export const ContentSourceSchema = z.object({
+  id: z.string().min(1).max(LIMITS.SOURCE_ID_MAX),
+  tier: z.enum(['A', 'B']),
+  issuer: z.string().min(1).max(LIMITS.SOURCE_TITLE_MAX),
+  title: z.string().min(1).max(LIMITS.SOURCE_TITLE_MAX),
+  year: z.number().int().min(1990).max(2100),
+  url: z.string().max(LIMITS.SOURCE_URL_MAX).optional(),
+  covers: z.array(z.string().max(120)).max(20).optional(),
+});
+
+export const ContentReviewSchema = z.object({
+  reviewed_at: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'reviewed_at deve ser AAAA-MM-DD'),
+  reviewer: z.string().max(LIMITS.REVIEWER_MAX).optional(),
+  guideline_snapshot: z
+    .string()
+    .min(1)
+    .max(LIMITS.GUIDELINE_SNAPSHOT_MAX, `guideline_snapshot máx. ${LIMITS.GUIDELINE_SNAPSHOT_MAX}`),
+  exam_vs_current: z.union([z.literal('none'), z.string().max(500)]).optional(),
+});
+
 export const QuestaoMetaSchema = z.object({
   ano: z.string().max(40, 'Ano deve ter no máximo 40 caracteres').optional(),
   banca: z.string().min(1, 'Banca é obrigatória').max(LIMITS.BANCA_MAX, `Banca deve ter no máximo ${LIMITS.BANCA_MAX} caracteres`),
@@ -109,6 +147,10 @@ export const QuestaoMetaSchema = z.object({
     .optional(),
   topico: z.string().min(1, 'Tópico é obrigatório').max(LIMITS.TOPICO_MAX, `Tópico deve ter no máximo ${LIMITS.TOPICO_MAX} caracteres`),
   subtopico: z.string().max(LIMITS.TOPICO_MAX, `Subtópico deve ter no máximo ${LIMITS.TOPICO_MAX} caracteres`).optional(),
+  content_standard: z.literal(GOLDEN_CONTENT_STANDARD_VERSION).optional(),
+  family: GoldenFamilySchema.optional(),
+  content_review: ContentReviewSchema.optional(),
+  sources: z.array(ContentSourceSchema).max(12).optional(),
 });
 
 export const QuestaoOptionSchema = z.object({
