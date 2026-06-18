@@ -9,6 +9,7 @@ import { GoldenRuleMeshReveal } from './GoldenRuleMeshReveal';
 import { GoldenRuleLabPrepLensBoard } from './GoldenRuleLabPrepLensBoard';
 import { GoldenRuleDressingMatchMatrix } from './GoldenRuleDressingMatchMatrix';
 import { GoldenRulePniIntervalMatrix } from './GoldenRulePniIntervalMatrix';
+import { GoldenRuleVitalsReferenceBoard } from './GoldenRuleVitalsReferenceBoard';
 import { GoldenRuleHeroCard } from '../core/GoldenRuleHeroCard';
 import { getGoldenRuleTitleSizeClass } from '@/lib/slides/goldenRuleTypography';
 
@@ -261,6 +262,12 @@ export const GoldenRule = ({
   if (variant === 'pni-interval-matrix' && rows && rows.length > 0) {
     return (
       <GoldenRulePniIntervalMatrix content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'vitals-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleVitalsReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
     );
   }
 

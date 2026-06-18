@@ -20,6 +20,7 @@ import { DangerZoneLabPrepTrap } from './DangerZoneLabPrepTrap';
 import { DangerZoneLabSpecimenArena } from './DangerZoneLabSpecimenArena';
 import { DangerZoneDressingChoiceArena } from './DangerZoneDressingChoiceArena';
 import { DangerZonePniTrapChips } from './DangerZonePniTrapChips';
+import { DangerZoneVitalsClassifyArena } from './DangerZoneVitalsClassifyArena';
 
 export interface DangerZoneItem {
   id?: string;
@@ -326,6 +327,17 @@ export const DangerZone = ({
         theme={theme}
         footerRule={footerRule}
         compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'vitals-classify-arena' && items && items.length > 0) {
+    return (
+      <DangerZoneVitalsClassifyArena
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
       />
     );
   }

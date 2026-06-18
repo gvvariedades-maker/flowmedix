@@ -1,0 +1,21 @@
+{
+  "lote": "sinais-builder-piloto",
+  "exported_at": "2026-06-16T17:24:26.729Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+      "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-3",
+      "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-6",
+      "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-0",
+      "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3"
+    ]
+  },
+  "slugs": [
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-3",
+    "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-6",
+    "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-0",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3"
+  ]
+}

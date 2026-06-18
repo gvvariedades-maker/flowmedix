@@ -1,0 +1,42 @@
+{
+  "exported_at": "2026-06-16T17:24:26.729Z",
+  "lote": "sinais-builder-piloto",
+  "total": 5,
+  "entries": [
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "FEPESE",
+      "avant_codigo": 2443
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1528
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-6",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 2426
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-0",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 2581
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3",
+      "titulo_aula": "Verificação de Sinais Vitais",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 2259
+    }
+  ]
+}

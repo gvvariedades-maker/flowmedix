@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-06-16T17:25:43.001Z",
+  "lote": "sinais-builder-piloto",
+  "mode": "apply",
+  "total_files": 5,
+  "ok": 5,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-6",
+    "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-0",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3",
+    "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-3"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

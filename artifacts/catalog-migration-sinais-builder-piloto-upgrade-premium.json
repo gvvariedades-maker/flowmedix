@@ -1,0 +1,148 @@
+{
+  "generated_at": "2026-06-16T17:24:54.588Z",
+  "lote": "sinais-builder-piloto",
+  "mode": "write",
+  "force": true,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 10,
+  "upgraded": 10,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "protocolo": 9,
+    "certo_errado": 1
+  },
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563486900-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-nocoes-de-anatomia-1775448514037-0",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-0",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001517858-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002441285-4",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-0",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-3",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-idecan-fc-radial-ce.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    }
+  ]
+}

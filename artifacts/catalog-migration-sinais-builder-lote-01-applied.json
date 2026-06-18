@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-16T18:01:04.747Z",
+  "lote": "sinais-builder-lote-01",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-6",
+    "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-7",
+    "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-0",
+    "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-3",
+    "amauc-enfermagem-verificacao-de-sinais-vitais-1779344189558-7",
+    "amauc-enfermagem-verificacao-de-sinais-vitais-1779344196733-2",
+    "amauc-enfermagem-verificacao-de-sinais-vitais-1779344205200-1",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-7",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-0",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-1",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-7",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969768866-4",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343811344-5",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343845367-6",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-1",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-2",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-3",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344111854-6",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344111854-7",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-2",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-3",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-4",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-5",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-3",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-4",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-5",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-6",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344237445-0",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344237445-1",
+    "atame-enfermagem-verificacao-de-sinais-vitais-1779343932809-2",
+    "atame-enfermagem-verificacao-de-sinais-vitais-1779343932809-3",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-7",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-8",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-2",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-3",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343789998-5",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343789998-6",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-3",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-4",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-6",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343822075-0",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343822075-1",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343822075-4",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-0",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-1",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-2",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-3",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343845367-1",
+    "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343845367-2"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-verificacao-de-sinais-vitais-1779343833455-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-verificacao-de-sinais-vitais-1779344137078-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-verificacao-de-sinais-vitais-1779344189558-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-verificacao-de-sinais-vitais-1779344196733-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-verificacao-de-sinais-vitais-1779344205200-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969752567-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969760552-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1778969768866-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343811344-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343845367-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344111854-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344111854-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344117207-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344224014-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344237445-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779344237445-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-verificacao-de-sinais-vitais-1779343932809-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-verificacao-de-sinais-vitais-1779343932809-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969729218-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1778969745165-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343789998-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343789998-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343801786-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343822075-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343822075-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343822075-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343833455-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343845367-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343845367-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

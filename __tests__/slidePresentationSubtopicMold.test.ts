@@ -106,20 +106,38 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.bulletStyle).toBe('x_icon');
   });
 
-  it('Sinais Vitais: danger_zone trap-reveal com correct no molde', () => {
+  it('Sinais Vitais: golden_rule vitals-reference-board com rows no molde', () => {
     const result = resolveSlidePresentation(
       {
-        type: 'danger_zone',
+        type: 'golden_rule',
         meta: { subtopico: 'Verificação de Sinais Vitais' },
-        content: 'Pegadinhas',
-        items: [{ label: 'Erro', detail: 'X', correct: 'Certo' }],
+        rows: [
+          { label: 'FC 110 bpm', value: 'Taquicárdico', emphasis: 'alert' },
+          { label: 'Conclusão', value: 'Letra C', emphasis: 'success' },
+        ],
       },
       {
         questionSlug: 'fepese-sv-1',
         familyId: 'text_fragment',
       },
     );
-    expect(result.layoutVariant).toBe('trap-reveal');
+    expect(result.layoutVariant).toBe('vitals-reference-board');
+  });
+
+  it('Sinais Vitais: danger_zone vitals-classify-arena com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Verificação de Sinais Vitais' },
+        content: 'Pegadinhas',
+        items: [{ label: 'Letra A', detail: 'Confunde taquicardia', correct: 'FC 110 = taquicárdico' }],
+      },
+      {
+        questionSlug: 'fepese-sv-1',
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('vitals-classify-arena');
     expect(result.bulletStyle).toBe('x_icon');
   });
 
@@ -143,19 +161,21 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('vitals-panel');
   });
 
-  it('Sinais Vitais: logic_flow vertical no molde', () => {
+  it('Sinais Vitais: logic_flow vitals-translate-tap no molde', () => {
     const result = resolveSlidePresentation(
       {
         type: 'logic_flow',
         meta: { subtopico: 'Verificação de Sinais Vitais' },
-        steps: ['1', '2', '3', '4'],
+        steps: ['Interpretar PA', 'Interpretar FC', 'Marcar letra C'],
+        reveal_mode: 'tap',
       },
       {
         questionSlug: 'fepese-sv-1',
         familyId: 'text_fragment',
       },
     );
-    expect(result.layoutVariant).toBe('vertical');
+    expect(result.layoutVariant).toBe('vitals-translate-tap');
+    expect(result.revealMode).toBe('tap');
   });
 
   it('Urgências: concept_map survival-chain no molde', () => {

@@ -60,12 +60,13 @@ describe('piloto premium — goldens de subtópico', () => {
     ({ subtopico }) => {
       const expected =
         subtopico === 'Instalação e Manejo de Sondas' ||
-        subtopico === 'Verificação de Sinais Vitais' ||
         subtopico === 'Urgências e Emergências'
           ? 'vertical'
-          : subtopico === 'Imunização'
-            ? 'pni-vf-juggle-tap'
-            : 'cards';
+          : subtopico === 'Verificação de Sinais Vitais'
+            ? 'vitals-translate-tap'
+            : subtopico === 'Imunização'
+              ? 'pni-vf-juggle-tap'
+              : 'cards';
       const slide = {
         type: 'logic_flow',
         meta: { subtopico },
@@ -86,7 +87,11 @@ describe('piloto premium — goldens de subtópico', () => {
 
       const mapVariant = calculateLayoutVariant(golden);
       const expectedGolden =
-        subtopico === 'Imunização' ? 'pni-interval-matrix' : 'reference_table';
+        subtopico === 'Imunização'
+          ? 'pni-interval-matrix'
+          : subtopico === 'Verificação de Sinais Vitais'
+            ? 'vitals-reference-board'
+            : 'reference_table';
       expect(
         resolveGoldenRuleLayoutVariant(golden, golden.layout_variant, mapVariant),
       ).toBe(expectedGolden);
@@ -105,18 +110,19 @@ describe('piloto premium — goldens de subtópico', () => {
       const mapVariant = calculateLayoutVariant(danger);
       const expected =
         subtopico === 'Instalação e Manejo de Sondas' ||
-        subtopico === 'Verificação de Sinais Vitais' ||
         subtopico === 'Urgências e Emergências'
           ? 'trap-reveal'
-          : subtopico === 'Imunização'
-            ? 'pni-trap-chips'
-            : subtopico === 'Processo de Enfermagem'
-              ? 'norm-reveal'
-              : subtopico === 'Promoção à Saúde e Prevenção de Agravos'
-                ? 'scope-trap'
-                : subtopico === 'Vias de Administração'
-                  ? 'route-trap'
-                  : 'compare';
+          : subtopico === 'Verificação de Sinais Vitais'
+            ? 'vitals-classify-arena'
+            : subtopico === 'Imunização'
+              ? 'pni-trap-chips'
+              : subtopico === 'Processo de Enfermagem'
+                ? 'norm-reveal'
+                : subtopico === 'Promoção à Saúde e Prevenção de Agravos'
+                  ? 'scope-trap'
+                  : subtopico === 'Vias de Administração'
+                    ? 'route-trap'
+                    : 'compare';
       expect(
         resolveDangerZoneLayoutVariant(danger, danger.layout_variant, mapVariant),
       ).toBe(expected);

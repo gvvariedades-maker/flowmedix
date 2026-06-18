@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-16T18:15:46.106Z",
+  "lote": "sinais-builder-lote-05",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "iaupe-enfermagem-verificacao-de-sinais-vitais-1779343956155-3",
+    "iaupe-enfermagem-verificacao-de-sinais-vitais-1779344189558-3",
+    "ibade-enfermagem-verificacao-de-sinais-vitais-1779343856589-1",
+    "ibade-enfermagem-verificacao-de-sinais-vitais-1779343856589-2",
+    "ibade-enfermagem-verificacao-de-sinais-vitais-1779343865210-7",
+    "ibade-enfermagem-verificacao-de-sinais-vitais-1779344178184-4",
+    "ibade-enfermagem-verificacao-de-sinais-vitais-1779344178184-5",
+    "ibade-enfermagem-verificacao-de-sinais-vitais-1779344178184-6",
+    "ibfc-enfermagem-verificacao-de-sinais-vitais-1778969745165-1",
+    "ibfc-enfermagem-verificacao-de-sinais-vitais-1779343865210-6",
+    "ibfc-enfermagem-verificacao-de-sinais-vitais-1779343932809-6",
+    "ibfc-enfermagem-verificacao-de-sinais-vitais-1779343932809-7",
+    "ibfc-enfermagem-verificacao-de-sinais-vitais-1779344117207-1",
+    "ibfc-enfermagem-verificacao-de-sinais-vitais-1779344137078-5",
+    "ibfc-enfermagem-verificacao-de-sinais-vitais-1779344152370-7",
+    "ibgp-enfermagem-verificacao-de-sinais-vitais-1779344253939-3",
+    "icece-enfermagem-verificacao-de-sinais-vitais-1778969729218-3",
+    "icece-enfermagem-verificacao-de-sinais-vitais-1780000468214-6",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712108887-9",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-0",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-1",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-2",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-4",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-5",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1778969752567-4",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1779343856589-8",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1779344237445-3",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1779344237445-4",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1780066924385-4",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1780066924385-5",
+    "idecan-enfermagem-verificacao-de-sinais-vitais-1780066924385-6",
+    "idesg-enfermagem-verificacao-de-sinais-vitais-1778969745165-0",
+    "idesg-enfermagem-verificacao-de-sinais-vitais-1779343801786-1",
+    "idib-enfermagem-verificacao-de-sinais-vitais-1778934863952-8",
+    "idib-enfermagem-verificacao-de-sinais-vitais-1778934863952-9",
+    "idib-enfermagem-verificacao-de-sinais-vitais-1779344105099-3",
+    "ieses-enfermagem-verificacao-de-sinais-vitais-1779343789998-3",
+    "ieses-enfermagem-verificacao-de-sinais-vitais-1779344105099-6",
+    "igeduc-enfermagem-verificacao-de-sinais-vitais-1779344097180-0",
+    "igeduc-enfermagem-verificacao-de-sinais-vitais-1779344097180-1",
+    "imparh-enfermagem-verificacao-de-sinais-vitais-1779344122526-5",
+    "imparh-enfermagem-verificacao-de-sinais-vitais-1779344122526-6",
+    "imparh-enfermagem-verificacao-de-sinais-vitais-1779344196733-3",
+    "imparh-enfermagem-verificacao-de-sinais-vitais-1779344196733-4",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1778969768866-7",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343789998-0",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343789998-1",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343789998-2",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343833455-4",
+    "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343833455-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "iaupe-enfermagem-verificacao-de-sinais-vitais-1779343956155-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-verificacao-de-sinais-vitais-1779344189558-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-verificacao-de-sinais-vitais-1779343856589-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-verificacao-de-sinais-vitais-1779343856589-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-verificacao-de-sinais-vitais-1779343865210-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-verificacao-de-sinais-vitais-1779344178184-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-verificacao-de-sinais-vitais-1779344178184-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-verificacao-de-sinais-vitais-1779344178184-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1778969745165-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1779343865210-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1779343932809-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1779343932809-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1779344117207-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1779344137078-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-verificacao-de-sinais-vitais-1779344152370-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibgp-enfermagem-verificacao-de-sinais-vitais-1779344253939-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-verificacao-de-sinais-vitais-1778969729218-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "icece-enfermagem-verificacao-de-sinais-vitais-1780000468214-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712108887-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778712135178-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1778969752567-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1779343856589-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1779344237445-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1779344237445-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1780066924385-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1780066924385-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-verificacao-de-sinais-vitais-1780066924385-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-verificacao-de-sinais-vitais-1778969745165-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idesg-enfermagem-verificacao-de-sinais-vitais-1779343801786-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-verificacao-de-sinais-vitais-1778934863952-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-verificacao-de-sinais-vitais-1778934863952-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-verificacao-de-sinais-vitais-1779344105099-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-verificacao-de-sinais-vitais-1779343789998-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ieses-enfermagem-verificacao-de-sinais-vitais-1779344105099-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-verificacao-de-sinais-vitais-1779344097180-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-verificacao-de-sinais-vitais-1779344097180-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-verificacao-de-sinais-vitais-1779344122526-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-verificacao-de-sinais-vitais-1779344122526-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-verificacao-de-sinais-vitais-1779344196733-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-verificacao-de-sinais-vitais-1779344196733-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-verificacao-de-sinais-vitais-1778969768866-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343789998-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343789998-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343789998-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343833455-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-verificacao-de-sinais-vitais-1779343833455-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

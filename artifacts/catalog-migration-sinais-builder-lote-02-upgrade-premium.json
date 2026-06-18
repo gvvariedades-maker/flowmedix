@@ -1,0 +1,670 @@
+{
+  "generated_at": "2026-06-16T18:12:17.684Z",
+  "lote": "sinais-builder-lote-02",
+  "mode": "write",
+  "force": true,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 50,
+  "upgraded": 50,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "protocolo": 40,
+    "conceito": 1,
+    "vf": 1,
+    "certo_errado": 8
+  },
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343845367-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343865210-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-2",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-4",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-5",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343897104-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-0",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-1",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-2",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343904263-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343932809-4",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343932809-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-2",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-4",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-5",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343945057-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343956155-5",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343956155-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344097180-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344097180-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-4",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-5",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344158323-8",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-0",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-1",
+      "status": "upgraded",
+      "family": "vf",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344178184-2",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344205200-2",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779344205200-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344189558-1",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-0",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-idecan-fc-radial-ce.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-1",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-idecan-fc-radial-ce.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-2",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-idecan-fc-radial-ce.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-4",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
+      "generic_before": false,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-5",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-idecan-fc-radial-ce.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-6",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-idecan-fc-radial-ce.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-7",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-idecan-fc-radial-ce.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-geral-verificacao-de-sinais-vitais-1779344245160-3",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-idecan-fc-radial-ce.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-verificacao-de-sinais-vitais-1778969752567-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344122526-4",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344127707-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344137078-4",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344152370-2",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344152370-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344205200-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    }
+  ]
+}

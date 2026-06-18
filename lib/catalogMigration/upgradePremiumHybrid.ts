@@ -24,6 +24,12 @@ import {
   imunizacaoGoldenReferenceForFamily,
   isImunizacaoSubtopico,
 } from '@/lib/catalogMigration/upgradePremiumImunizacao';
+import {
+  buildSinaisPremiumSlidesForFamily,
+  canBuildSinaisPremiumSlides,
+  isSinaisSubtopico,
+  sinaisGoldenReferenceForFamily,
+} from '@/lib/catalogMigration/upgradePremiumSinais';
 
 /** Marcadores de conteúdo stub/hybrid — gate anti-stub em `__tests__/premium-no-stub.test.ts`. */
 export const PREMIUM_STUB_MARKERS = [
@@ -629,11 +635,55 @@ export function upgradePremiumHybrid(
     isCurativosSubtopico(subtopico) && canBuildCurativosPremiumSlides(instruction, family);
   const useImunizacaoPremium =
     isImunizacaoSubtopico(subtopico) && canBuildImunizacaoPremiumSlides(instruction, family);
+  const useSinaisPremium =
+    isSinaisSubtopico(subtopico) && canBuildSinaisPremiumSlides(instruction, family);
   const goldenReference = useCurativosPremium
     ? CURATIVOS_GOLDEN_FILE
     : useImunizacaoPremium
       ? imunizacaoGoldenReferenceForFamily(family)
-      : FAMILY_GOLDEN_FILE[family];
+      : useSinaisPremium
+        ? sinaisGoldenReferenceForFamily(family)
+        : FAMILY_GOLDEN_FILE[family];
+
+  if (useSinaisPremium && !options.dangerOnly) {
+    const sinaisSlides = buildSinaisPremiumSlidesForFamily(
+      {
+        instruction,
+        options: optionsList,
+        topico,
+        subtopico,
+      },
+      family,
+    );
+    const working: Record<string, unknown> = {
+      ...(base as Record<string, unknown>),
+      question_data: {
+        ...questionData,
+        instruction,
+      },
+      reverse_study_slides: sinaisSlides,
+    };
+    delete working.study_slides;
+    const parsed = QuestaoCompletaSchema.safeParse(working);
+    return {
+      changed: true,
+      skipped: false,
+      family,
+      familyLabel: FAMILY_LABELS[family],
+      goldenReference,
+      genericBefore,
+      changes: ['concept_map', 'golden_rule', 'logic_flow', 'danger_zone'],
+      payload: working,
+      zodValid: parsed.success,
+      zodMessage: parsed.success
+        ? undefined
+        : parsed.error.issues
+            .slice(0, 2)
+            .map((i) => `${i.path.join('.')}: ${i.message}`)
+            .join('; '),
+      tecconcursos: false,
+    };
+  }
 
   if (useImunizacaoPremium && !options.dangerOnly) {
     const imunizacaoSlides = buildImunizacaoPremiumSlidesForFamily(
@@ -733,7 +783,7 @@ export function upgradePremiumHybrid(
   logicFlow.meta = slideMeta(topico, subtopico);
   changes.push('logic_flow');
 
-  if ((useCurativosPremium || useImunizacaoPremium) && options.dangerOnly) {
+  if ((useCurativosPremium || useImunizacaoPremium || useSinaisPremium) && options.dangerOnly) {
     const dedicatedSlides = useImunizacaoPremium
       ? buildImunizacaoPremiumSlidesForFamily(
           {
@@ -744,6 +794,16 @@ export function upgradePremiumHybrid(
           },
           family,
         )
+      : useSinaisPremium
+        ? buildSinaisPremiumSlidesForFamily(
+            {
+              instruction,
+              options: optionsList,
+              topico,
+              subtopico,
+            },
+            family,
+          )
         : buildCurativosPremiumSlidesForFamily(
             {
               instruction,

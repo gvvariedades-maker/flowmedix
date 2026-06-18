@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-06-16T17:38:55.377Z",
+  "lote": "sinais-parser-fix",
+  "mode": "write",
+  "force": true,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 1,
+  "upgraded": 1,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "protocolo": 1
+  },
+  "results": [
+    {
+      "modulo_slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-fepese-sv-interpretacao-valores.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    }
+  ]
+}

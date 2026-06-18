@@ -160,7 +160,7 @@ Moldes bespoke = variantes com componente React dedicado (não só `morphologica
 | Infecções Sexualmente Transmissíveis (ISTs) | 215 | 127 | 59,1% | ✅ | ❌ | ❌ | Pacote novo |
 | Medidas de Prevenção e Precaução de Contato | 123 | 52 | 42,3% | ❌ | 🟡 | ❌ | Builder |
 | Mobilização e Posicionamento do Paciente | 119 | 40 | 33,6% | ❌ | ❌ | ❌ | Builder |
-| **Verificação de Sinais Vitais** | **654** | **171** | **26,1%** | ✅ | 🟡 2/4 | ❌ | **Alto impacto** |
+| **Verificação de Sinais Vitais** | **654** | **171** | **26,1%** | ✅ | ✅ 4/4 | ✅ | **Pacote fechado no repo** |
 | Urgências e Emergências | 283 | 48 | 17,0% | ✅ | 🟡 2/4 | ❌ | **Alto impacto** |
 | Processo de Enfermagem | 34 | 5 | 14,7% | ✅ | 🟡 2/4 | ❌ | Builder SAE |
 | **Vias de Administração** | **256** | **15** | **5,9%** | ✅ | 🟡 2/4 | ❌ | **Alto impacto** |
@@ -188,7 +188,8 @@ Moldes bespoke = variantes com componente React dedicado (não só `morphologica
 | Enfermagem em Central de Material e Esterilização (CME) | 43 | 17 | 39,5% | ❌ | 🟡 | ❌ | — |
 
 > Atualizar esta matriz após cada pacote concluído ou nova auditoria Supabase.  
-> **Imunização (2026-06-16):** pacote fechado no repo — moldes PNI 4/4, `upgradePremiumImunizacao.ts`, migração em lote (~577 slugs, 0 stub nos lotes builder); % premium da linha reflete apply concluído (re-auditar Supabase para métricas globais do catálogo).
+> **Imunização (2026-06-16):** pacote fechado no repo — moldes PNI 4/4, `upgradePremiumImunizacao.ts`, migração em lote (~577 slugs, 0 stub nos lotes builder); % premium da linha reflete apply concluído (re-auditar Supabase para métricas globais do catálogo).  
+> **Sinais Vitais (2026-06-18):** pacote fechado no repo — moldes 4/4, `upgradePremiumSinais.ts`, hybrid integrado, migração builder (lotes 01–08 + parser-fix); `sinais-remaining-slugs.json` vazio; re-auditar Supabase para % global.
 
 ---
 
@@ -198,7 +199,7 @@ Ordem por **impacto** (volume × gap de stub), com dados de produção 2026-06-1
 
 ### Onda 1 — Alto impacto (muitas questões, % premium baixo)
 
-1. **Verificação de Sinais Vitais** — 654 questões, **26%** premium (golden ✅, moldes 🟡)  
+1. ~~**Verificação de Sinais Vitais**~~ — pacote fechado (ver Referência concluída)  
 2. **Vias de Administração** — 256 questões, **6%** premium  
 3. **Urgências e Emergências** — 283 questões, **17%** premium  
 
@@ -220,6 +221,7 @@ Ordem por **impacto** (volume × gap de stub), com dados de produção 2026-06-1
 
 - **Curativos** — 201/201 (**100%** premium) — `upgradePremiumCurativos.ts` + moldes orange (`wound-stage-tissue-deck`, `dressing-match-matrix`, `wound-prep-tap-flow`, `dressing-choice-arena`)
 - **Imunização** — 577/577 (**100%** premium pós-migração) — `upgradePremiumImunizacao.ts` + moldes PNI (`pni-rules-deck`, `pni-interval-matrix`, `pni-vf-juggle-tap`, `pni-trap-chips`); goldens `questao-premium-cpcon-imunizacao-intervalos-vf.json`, `questao-premium-fundatec-meningococica-3meses.json`
+- **Sinais Vitais** — ~377 slugs migrados (builder) + exclude híbrido — `upgradePremiumSinais.ts` + moldes rose (`vitals-panel`, `vitals-reference-board`, `vitals-translate-tap`, `vitals-classify-arena`); goldens `questao-premium-fepese-sv-interpretacao-valores.json`, `questao-premium-idecan-fc-radial-ce.json`; spot-check `npx tsx scripts/spot-check-sinais.ts`
 
 ---
 

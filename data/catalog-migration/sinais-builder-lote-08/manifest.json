@@ -1,0 +1,18 @@
+{
+  "lote": "sinais-builder-lote-08",
+  "exported_at": "2026-06-16T18:17:36.821Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "data/catalog-migration/verificacao-de-sinais-vitais-lote-08/manifest.json"
+  },
+  "slugs": [
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344097180-5",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344097180-8",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344105099-0",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344127707-2",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344158323-0",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344158323-1",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344196733-6",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779344224014-0"
+  ]
+}

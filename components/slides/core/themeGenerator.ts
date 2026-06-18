@@ -212,9 +212,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   // PROCEDIMENTOS DE ENFERMAGEM
   // ============================================================
 
-  // ---- Sinais Vitais (golden: vitals-panel · reference_table · vertical · trap-reveal) ----
-  'verificação de sinais vitais': { template: 'rose', conceptMap: 'vitals-panel', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'trap-reveal' },
-  'sinais vitais': { template: 'rose', conceptMap: 'vitals-panel', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'trap-reveal' },
+  // ---- Sinais Vitais (golden: vitals-panel · vitals-reference-board · vitals-translate-tap · vitals-classify-arena) ----
+  'verificação de sinais vitais': { template: 'rose', conceptMap: 'vitals-panel', goldenRule: 'vitals-reference-board', logicFlow: 'vitals-translate-tap', dangerZone: 'vitals-classify-arena' },
+  'sinais vitais': { template: 'rose', conceptMap: 'vitals-panel', goldenRule: 'vitals-reference-board', logicFlow: 'vitals-translate-tap', dangerZone: 'vitals-classify-arena' },
 
   // ---- Sondas (golden: procedure-protocol · reference_table · vertical · trap-reveal) ----
   'instalação e manejo de sondas': { template: 'indigo', conceptMap: 'procedure-protocol', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'trap-reveal' },
