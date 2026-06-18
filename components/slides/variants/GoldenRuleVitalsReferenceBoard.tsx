@@ -11,6 +11,7 @@ import {
   inferSvReferenceRange,
   inferSvShortLabel,
   isConclusionRow,
+  resolveSvKindForRow,
 } from '@/lib/slides/vitalsSlideUtils';
 
 interface GoldenRuleVitalsReferenceBoardProps {
@@ -58,11 +59,24 @@ function VitalReferenceCard({ row, index }: { row: GoldenRuleRow; index: number 
   const emphasis = row.emphasis ?? 'default';
   const tone = statusTone(emphasis);
   const StatusIcon = tone.Icon;
-  const iconName = inferSvIconName(`${row.label} ${row.value}`);
+  const svKind = resolveSvKindForRow(row);
+  const isMeta = svKind === 'meta' || svKind === 'other';
+  const iconName = inferSvIconName(`${row.label} ${row.value}`, svKind);
   const Icon = resolveLucideIcon(iconName);
-  const measured = extractMeasuredValue(row.label);
-  const reference = inferSvReferenceRange(`${row.label} ${row.value}`);
-  const svLabel = inferSvShortLabel(`${row.label} ${row.value}`);
+  const measured = isMeta
+    ? row.value
+    : extractMeasuredValue(row.label, row.value);
+  const reference = isMeta ? '' : inferSvReferenceRange(`${row.label} ${row.value}`, svKind);
+  const svLabel = isConclusionRow(row.label, row.value)
+    ? 'Gabarito'
+    : isMeta
+      ? row.label
+      : inferSvShortLabel(`${row.label} ${row.value}`, svKind);
+  const badgeText = isConclusionRow(row.label, row.value)
+    ? 'GABARITO'
+    : isMeta
+      ? 'TÉCNICA'
+      : tone.badgeText;
   const reduceMotion = useReducedMotion();
 
   return (
@@ -90,7 +104,7 @@ function VitalReferenceCard({ row, index }: { row: GoldenRuleRow; index: number 
           <span
             className={`shrink-0 rounded-full px-2 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest ${tone.badge}`}
           >
-            {tone.badgeText}
+            {badgeText}
           </span>
         </div>
 

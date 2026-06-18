@@ -5,6 +5,7 @@
  */
 
 import type { FamilyId } from '@/lib/catalogMigration/classifyFamily';
+import { lintVitalsGoldenContent } from '@/lib/slides/vitalsGoldenLint';
 
 export const GOLDEN_CONTENT_STANDARD_VERSION = 'golden-v1' as const;
 
@@ -307,6 +308,7 @@ export function lintGoldenContent(payload: unknown): GoldenContentLintIssue[] {
     ...lintGoldenMeta(meta),
     ...lintBannedPhrases(slides),
     ...lintSlidePackage(slides, q, meta.family),
+    ...lintVitalsGoldenContent(payload),
   ];
 }
 

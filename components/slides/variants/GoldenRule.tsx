@@ -21,6 +21,7 @@ export interface GoldenRuleRow {
   value: string;
   emphasis?: GoldenRuleRowEmphasis;
   badge?: GoldenRuleRowBadge;
+  sv_kind?: 'pa' | 'temp' | 'fc' | 'fr' | 'spo2' | 'meta';
 }
 
 interface GoldenRuleProps {

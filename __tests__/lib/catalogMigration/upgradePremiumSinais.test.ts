@@ -12,6 +12,7 @@ import {
   SINAIS_GOLDEN_CE_FILE,
   SINAIS_GOLDEN_FILE,
 } from '@/lib/catalogMigration/upgradePremiumSinais';
+import { lintVitalsGoldenContent } from '@/lib/slides/vitalsGoldenLint';
 import { upgradePremiumHybrid } from '@/lib/catalogMigration/upgradePremiumHybrid';
 import { QuestaoCompletaSchema } from '@/lib/validations';
 
@@ -157,8 +158,27 @@ describe('upgradePremiumSinais', () => {
     const cm = slides[0] as { items?: { label: string }[] };
     expect(cm.items?.some((i) => i.label === 'Pulso radial')).toBe(true);
 
-    const gr = slides[1] as { rows?: { label: string }[] };
-    expect(gr.rows?.some((r) => r.label === 'Normalidade')).toBe(true);
+    const gr = slides[1] as { rows?: { label: string; sv_kind?: string }[] };
+    expect(gr.rows?.some((r) => r.label === 'Gabarito')).toBe(true);
+    expect(gr.rows?.some((r) => r.sv_kind === 'meta')).toBe(true);
+    expect(gr.rows?.some((r) => /taquicardia/i.test(r.value ?? ''))).toBe(false);
+  });
+
+  it('builder C/E IDECAN passa lintVitalsGoldenContent', () => {
+    const slides = buildSinaisPremiumSlidesForFamily(
+      {
+        instruction: goldenCe.question_data.instruction,
+        options: goldenCe.question_data.options,
+        topico: 'Enfermagem',
+        subtopico: 'Verificação de Sinais Vitais',
+      },
+      'certo_errado',
+    );
+    const payload = {
+      ...goldenCe,
+      reverse_study_slides: slides,
+    };
+    expect(lintVitalsGoldenContent(payload)).toEqual([]);
   });
 
   it('canBuildSinaisPremiumSlides aceita múltipla escolha, VF e certo/errado', () => {

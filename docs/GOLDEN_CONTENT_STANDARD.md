@@ -106,6 +106,8 @@ Mínimo: **3** `items` com `label`, `detail`, `icon` Lucide.
 | REFERÊNCIA (rows) | Tabela decorável (rótulo × valor oficial) |
 | LINHA-GABARITO | Última row com letra correta |
 
+**Sinais Vitais (`vitals-reference-board`):** row `Gabarito`/`Conclusão` obrigatória; use `sv_kind: "meta"` em técnica/gabarito; C/E com máx. 4 rows e sem taquicardia/bradicardia na tabela — lint em [`lib/slides/vitalsGoldenLint.ts`](../lib/slides/vitalsGoldenLint.ts).
+
 ### `logic_flow`
 
 | Slot | Função |
@@ -176,6 +178,7 @@ Builders **não inventam** número normativo — consultam `GUIDELINE_TABLES` em
 | `QuestaoCompletaSchema` | Forma, limites, ícones |
 | `premium-no-stub` | Sem hybrid genérico |
 | `lintGoldenContent` | Quando `content_standard: golden-v1` |
+| `lintVitalsGoldenContent` | SV golden-v1: gabarito, `sv_kind`, compatibilidade molde |
 | Revisão humana | Fonte + vigência assinada em `content_review` |
 
 ```bash

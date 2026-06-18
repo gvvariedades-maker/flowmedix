@@ -5,6 +5,7 @@
 import { z, ZodError } from 'zod';
 import * as LucideIcons from 'lucide-react';
 import { EmailTemplateContentSchema } from '@/lib/email/templateContent';
+import { ONBOARDING_BANCAS, ONBOARDING_TOPIC_AREAS } from '@/lib/onboarding/constants';
 import { normalizeQuestaoSlideArrays } from './reverseStudySlidesNormalize';
 import { GOLDEN_CONTENT_STANDARD_VERSION } from './goldenContentStandard';
 
@@ -282,6 +283,8 @@ export const LogicFlowSlideSchema = ReverseStudySlideShellFieldsSchema.merge(z.o
 export const GoldenRuleRowEmphasisSchema = z.enum(['default', 'highlight', 'alert', 'success']);
 export const GoldenRuleRowBadgeSchema = z.enum(['hot', 'warn', 'ok', 'info']);
 
+export const GoldenRuleRowSvKindSchema = z.enum(['pa', 'temp', 'fc', 'fr', 'spo2', 'meta']);
+
 export const GoldenRuleRowSchema = z.object({
   label: z
     .string()
@@ -295,6 +298,8 @@ export const GoldenRuleRowSchema = z.object({
   emphasis: GoldenRuleRowEmphasisSchema.optional(),
   /** Badge opcional (coluna direita em desktop). */
   badge: GoldenRuleRowBadgeSchema.optional(),
+  /** Molde vitals-reference-board: evita inferência errada (ex. Tempo → temperatura). */
+  sv_kind: GoldenRuleRowSvKindSchema.optional(),
 });
 
 // Schema para Golden Rule Slide - COM VALIDAÇÕES AVANÇADAS
@@ -903,6 +908,16 @@ export const SimuladoTemplateCreateSchema = z
   })
   .transform(mergeBancaAssuntoFields);
 
+/** Payload opcional para gerar o Simulado Diagnóstico Inicial. */
+export const SimuladoDiagnosticoCreateSchema = z.object({
+  quantidade: z.coerce
+    .number()
+    .int()
+    .min(15)
+    .max(20)
+    .default(18),
+});
+
 /** Payload de criação de sessão do Modo Simulado. */
 export const SimuladoCreateSessionSchema = z
   .object({
@@ -969,6 +984,38 @@ export const SimuladoRetentionRunSchema = z.object({
   reference_at: z.string().datetime().optional(),
 });
 
+/** Payload para geração do Simulado da Semana (cron ou usuário autenticado). */
+export const SimuladoWeeklyGenerateSchema = z.object({
+  user_id: z.string().uuid().optional(),
+  quantidade: z.coerce.number().int().min(10).max(50).optional().default(20),
+});
+
+// ============================================================================
+// ONBOARDING — preferências de entrada do aluno
+// ============================================================================
+
+export const UserPreferencesOnboardingSchema = z.object({
+  topicos_afinidade: z
+    .array(z.enum(ONBOARDING_TOPIC_AREAS))
+    .min(1, 'Selecione ao menos uma matéria de afinidade')
+    .max(ONBOARDING_TOPIC_AREAS.length),
+  topicos_dificuldade: z
+    .array(z.enum(ONBOARDING_TOPIC_AREAS))
+    .min(1, 'Selecione ao menos uma matéria para focar')
+    .max(ONBOARDING_TOPIC_AREAS.length),
+  carga_horaria_semanal: z
+    .number()
+    .int()
+    .min(1, 'Carga horária mínima: 1h')
+    .max(60, 'Carga horária máxima: 60h')
+    .optional()
+    .nullable(),
+  bancas_foco: z
+    .array(z.enum(ONBOARDING_BANCAS))
+    .min(1, 'Selecione ao menos uma banca')
+    .max(ONBOARDING_BANCAS.length),
+});
+
 // ============================================================================
 // ERROR REPORTS (Aluno + Admin)
 // ============================================================================
@@ -1027,6 +1074,7 @@ export type EstudarQuestaoQueryInput = z.infer<typeof EstudarQuestaoQuerySchema>
 export type VitrineFacetsQueryInput = z.infer<typeof VitrineFacetsQuerySchema>;
 export type VitrineResolveQuestaoQueryInput = z.infer<typeof VitrineResolveQuestaoQuerySchema>;
 export type SimuladoTemplateCreateInput = z.infer<typeof SimuladoTemplateCreateSchema>;
+export type SimuladoDiagnosticoCreateInput = z.input<typeof SimuladoDiagnosticoCreateSchema>;
 export type SimuladoCreateSessionInput = z.input<typeof SimuladoCreateSessionSchema>;
 export type SimuladoAnswerInput = z.infer<typeof SimuladoAnswerSchema>;
 export type SimuladoPoolCountQueryInput = z.infer<typeof SimuladoPoolCountQuerySchema>;
@@ -1034,6 +1082,8 @@ export type SimuladoAnalyticsQueryInput = z.infer<typeof SimuladoAnalyticsQueryS
 export type SimuladoHistoryQueryInput = z.infer<typeof SimuladoHistoryQuerySchema>;
 export type SimuladoQuestaoQueryInput = z.infer<typeof SimuladoQuestaoQuerySchema>;
 export type SimuladoRetentionRunInput = z.infer<typeof SimuladoRetentionRunSchema>;
+export type SimuladoWeeklyGenerateInput = z.infer<typeof SimuladoWeeklyGenerateSchema>;
+export type UserPreferencesOnboardingInput = z.infer<typeof UserPreferencesOnboardingSchema>;
 export type ErrorReportContextTypeInput = z.infer<typeof ErrorReportContextTypeSchema>;
 export type ErrorReportCategoryInput = z.infer<typeof ErrorReportCategorySchema>;
 export type ErrorReportStatusInput = z.infer<typeof ErrorReportStatusSchema>;

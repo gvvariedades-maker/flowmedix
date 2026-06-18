@@ -827,9 +827,9 @@ function buildFcCertoErradoSlides(input: BuildSinaisSlidesInput): SlideRecord[] 
           icon: 'Scale',
         },
         {
-          label: 'Acima de 100 bpm',
-          detail: 'Sugere taquicardia e vira pegadinha se a banca inverter a normalidade.',
-          icon: 'AlertTriangle',
+          label: 'Afirmativa da prova',
+          detail: 'Pulso radial, 60 s de contagem e faixa 60–100 bpm — padrão que a banca costuma marcar como certo.',
+          icon: 'CheckCircle',
         },
       ],
       footer_rule: 'FC de rotina: pulso radial, conte com calma e compare com a faixa de 60 a 100 bpm.',
@@ -837,21 +837,34 @@ function buildFcCertoErradoSlides(input: BuildSinaisSlidesInput): SlideRecord[] 
     {
       type: 'golden_rule',
       meta,
-      content: 'FREQUÊNCIA CARDÍACA NORMAL EM ADULTO: 60 A 100 BPM.',
+      content: 'AFIRMATIVA IDECAN: PULSO RADIAL, 60 S E FAIXA 60–100 BPM.',
       rows: [
-        { label: 'Como aferir', value: 'Palpação do pulso radial' },
-        { label: 'Tempo ideal', value: '60 segundos' },
-        { label: 'Normalidade', value: '60 a 100 batimentos por minuto' },
-        { label: 'Acima de 100 bpm', value: 'Taquicardia', emphasis: 'alert', badge: 'warn' },
-        { label: 'Abaixo de 60 bpm', value: 'Bradicardia', emphasis: 'alert', badge: 'warn' },
+        {
+          label: 'Técnica citada na prova',
+          value: 'Pulso radial, 60 segundos (indicador e médio)',
+          sv_kind: 'meta',
+        },
+        {
+          label: 'FC adulto — referência',
+          value: '60 a 100 batimentos por minuto',
+          sv_kind: 'fc',
+          emphasis: 'success',
+          badge: 'ok',
+        },
         {
           label: 'Gabarito',
-          value: `Letra ${correct.id}`,
+          value: `Certo — letra ${correct.id}`,
+          sv_kind: 'meta',
           emphasis: 'highlight',
           badge: 'hot',
         },
       ],
-      footer_rule: 'Quando a questão citar pulso radial e 60 segundos, a referência clássica é 60 a 100 bpm.',
+      footer_rule: truncate(
+        isStatementTrue
+          ? 'A frase repete técnica + faixa normal: marque certo (letra ' + correct.id + ').'
+          : `Gabarito ${correct.id} — confronte cada trecho da afirmativa com técnica e faixa.`,
+        500,
+      ),
     },
     {
       type: 'logic_flow',
