@@ -54,6 +54,8 @@ import { DashboardMobilePage } from '@/components/layout/DashboardMobilePage';
 import { DASHBOARD_PAGE_CENTER, DASHBOARD_PAGE_ROOT } from '@/lib/layout/mobileBottomNav';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 import { ReportErrorDialog } from '@/components/report/ReportErrorDialog';
+import { AdaptiveSimuladoSessionChip } from '@/components/simulados/AdaptiveSimuladoSessionChip';
+import { resolveSimuladoSessionKind } from '@/lib/simulado/sessionKind';
 
 type FeedbackState = {
   acertou: boolean;
@@ -521,6 +523,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         resumo={sessionData.resumo}
         questoes={sessionData.questoes}
         incentivos={sessionData.incentivos}
+        weeklyEvolution={sessionData.weekly_evolution}
       />
     );
   }
@@ -538,6 +541,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           ritmoMetaSegundosPorQuestao={sessionData.session.ritmo_meta_segundos_por_questao}
           iniciandoProva={iniciandoProva}
           iniciarProvaError={iniciarProvaError}
+          sessionKind={resolveSimuladoSessionKind(sessionData.session.filtros)}
           onIniciar={() => void handleIniciarProva()}
         />
       </DashboardMobilePage>
@@ -565,6 +569,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         { label: 'Simulados', href: '/simulados' },
         { label: `Questão ${activeItem?.ordem ?? '—'}` },
       ];
+  const sessionKind = resolveSimuladoSessionKind(sessionData.session.filtros);
 
   const finalizeButtonCompact = (
     <Button
@@ -635,6 +640,11 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           titleClassName="text-editorial-title text-xl sm:text-2xl"
           action={runnerToolbar}
         />
+        {sessionKind !== 'livre' ? (
+          <div className="-mt-4 mb-2">
+            <AdaptiveSimuladoSessionChip sessionKind={sessionKind} />
+          </div>
+        ) : null}
 
         {finalizeError && (
           <p className="text-sm text-rose-400" role="alert">

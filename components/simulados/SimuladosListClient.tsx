@@ -12,11 +12,13 @@ import {
 } from 'lucide-react';
 import { SimuladosEmptyState } from '@/components/simulados/SimuladosEmptyState';
 import { SimuladosHeader } from '@/components/simulados/SimuladosHeader';
+import { adaptiveContinueCtaLabel } from '@/components/simulados/AdaptiveSimuladoSessionChip';
 import { Button } from '@/components/ui/button';
 import { NeonBadge } from '@/components/ui/neon-badge';
 import { useDashboardBottomInset } from '@/lib/layout/useDashboardBottomInset';
 import type { SimuladoHubOpenSession, SimuladoHubSessionItem } from '@/lib/simulado/hubLoad';
 import { sessionDisplayTitulo } from '@/lib/simulado/provaMeta';
+import type { SimuladoSessionKind } from '@/lib/simulado/sessionKind';
 import { cn } from '@/lib/utils';
 
 function tempoRelativo(iso: string): string {
@@ -34,6 +36,25 @@ function formatPercent(value: number | null): string {
 
 function modoLabel(modo: 'treino' | 'prova'): string {
   return modo === 'prova' ? 'Prova' : 'Treino';
+}
+
+function sessionKindBadge(sessionKind: SimuladoSessionKind) {
+  if (sessionKind === 'weekly') {
+    return (
+      <NeonBadge
+        variant="neutral"
+        className="border-cyan-500/30 bg-cyan-500/10 text-cyan-700"
+      >
+        Missão
+      </NeonBadge>
+    );
+  }
+
+  if (sessionKind === 'diagnostico') {
+    return <NeonBadge variant="violet">Diagnóstico</NeonBadge>;
+  }
+
+  return null;
 }
 
 type SimuladosListClientProps = {
@@ -84,7 +105,10 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
                           {sessionDisplayTitulo(openSession.titulo, openSession.modo)}
                         </p>
                         <div className="mt-2 flex flex-wrap items-center gap-2">
-                          <NeonBadge variant="brand">{modoLabel(openSession.modo)}</NeonBadge>
+                          {sessionKindBadge(openSession.session_kind)}
+                          {openSession.session_kind === 'livre' ? (
+                            <NeonBadge variant="brand">{modoLabel(openSession.modo)}</NeonBadge>
+                          ) : null}
                           <span className="flex items-center gap-1 text-sm font-semibold text-slate-500">
                             <Layers className="h-3.5 w-3.5" aria-hidden />
                             {openSession.total_questoes}{' '}
@@ -98,7 +122,9 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
                       </div>
                     </div>
                     <Button asChild className="btn-editorial-primary h-11 w-full sm:w-auto">
-                      <Link href={`/simulados/${openSession.id}`}>Continuar simulado</Link>
+                      <Link href={`/simulados/${openSession.id}`}>
+                        {adaptiveContinueCtaLabel(openSession.session_kind)}
+                      </Link>
                     </Button>
                   </div>
                 </motion.div>
@@ -147,9 +173,12 @@ export function SimuladosListClient({ openSession, recentSessions }: SimuladosLi
                               {sessionDisplayTitulo(session.titulo, session.modo)}
                             </p>
                             <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-semibold text-slate-500">
-                              <NeonBadge variant="brand" className="text-[10px]">
-                                {modoLabel(session.modo)}
-                              </NeonBadge>
+                              {sessionKindBadge(session.session_kind)}
+                              {session.session_kind === 'livre' ? (
+                                <NeonBadge variant="brand" className="text-[10px]">
+                                  {modoLabel(session.modo)}
+                                </NeonBadge>
+                              ) : null}
                               <span>{formatPercent(session.percentual_acerto)} acerto</span>
                               <span>
                                 {session.total_questoes ?? '—'}{' '}

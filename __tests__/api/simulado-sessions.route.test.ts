@@ -48,6 +48,74 @@ jest.mock('@/lib/simulado/templates', () => ({
 
 const USER_ID = '550e8400-e29b-41d4-a716-446655440000';
 const TEMPLATE_ID = 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb';
+const ORIGIN_SESSION_ID = 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';
+
+function makeOpenSessionAbsentMocks() {
+  const maybeSingleOpen = jest.fn().mockResolvedValue({ data: null, error: null });
+  const limitOpen = jest.fn().mockReturnValue({ maybeSingle: maybeSingleOpen });
+  const orderOpen = jest.fn().mockReturnValue({ limit: limitOpen });
+  const eqStatusOpen = jest.fn().mockReturnValue({ order: orderOpen });
+  const eqUserOpen = jest.fn().mockReturnValue({ eq: eqStatusOpen });
+  return { eqUserOpen };
+}
+
+function makeFromSessionIdMocks(
+  originFiltros: Record<string, unknown>,
+  options?: { derivedRows?: Array<{ modulo_id: string; modulo_slug: string; ordem: number }> },
+) {
+  const { eqUserOpen } = makeOpenSessionAbsentMocks();
+
+  const maybeSingleOrigin = jest.fn().mockResolvedValue({
+    data: { id: ORIGIN_SESSION_ID, filtros: originFiltros, user_id: USER_ID },
+    error: null,
+  });
+  const eqUserOrigin = jest.fn().mockReturnValue({ maybeSingle: maybeSingleOrigin });
+  const eqIdOrigin = jest.fn().mockReturnValue({ eq: eqUserOrigin });
+
+  const selectSessions = jest.fn().mockImplementation((columns?: string) => {
+    if (typeof columns === 'string' && columns.includes('filtros')) {
+      return { eq: eqIdOrigin };
+    }
+    return { eq: eqUserOpen };
+  });
+
+  const derivedRows = options?.derivedRows ?? [];
+  const limitDerived = jest.fn().mockReturnValue(
+    Promise.resolve({ data: derivedRows, error: null }),
+  );
+  const orderDerived = jest.fn().mockReturnValue({ limit: limitDerived });
+  const eqSessionDerived = jest.fn().mockReturnValue({ order: orderDerived });
+  const eqUserDerived = jest.fn().mockReturnValue({ eq: eqSessionDerived });
+  const selectRespostas = jest.fn().mockReturnValue({ eq: eqUserDerived });
+
+  const createdSession = {
+    id: '66666666-6666-4666-8666-666666666666',
+    total_questoes: derivedRows.length || 1,
+    status: 'aberto',
+    created_at: '2026-06-01T00:00:00.000Z',
+    filtros: { modo: 'treino' },
+    titulo: 'Treino derivado',
+    ritmo_meta_segundos_por_questao: null,
+    prova_iniciada_em: null,
+  };
+
+  const single = jest.fn().mockResolvedValue({ data: createdSession, error: null });
+  const selectAfterInsert = jest.fn().mockReturnValue({ single });
+  const insertSessions = jest.fn().mockReturnValue({ select: selectAfterInsert });
+  const insertRespostas = jest.fn().mockResolvedValue({ error: null });
+
+  const from = jest.fn().mockImplementation((table: string) => {
+    if (table === 'simulado_sessions') {
+      return { select: selectSessions, insert: insertSessions };
+    }
+    if (table === 'simulado_respostas') {
+      return { select: selectRespostas, insert: insertRespostas };
+    }
+    return { select: selectSessions };
+  });
+
+  return { from, insertSessions, insertRespostas };
+}
 
 function makeRequest(method: 'GET' | 'POST', body?: object) {
   return new NextRequest('https://avant.test/api/simulado/sessions', {
@@ -385,6 +453,88 @@ describe('/api/simulado/sessions', () => {
 
     expect(response.status).toBe(404);
     expect(mockFetchSimuladoQuestionPoolFromRpc).not.toHaveBeenCalled();
+  });
+
+  it('POST com from_session_id de missão semanal retorna 403', async () => {
+    mockFetchSimuladoQuestionPoolFromRpc.mockResolvedValue([]);
+    const { from, insertSessions } = makeFromSessionIdMocks({
+      origem: 'weekly',
+      iso_year: 2026,
+      iso_week: 25,
+      foco_principal: 'Farmacologia',
+    });
+    mockCreateServerSupabase.mockResolvedValue({ from });
+
+    const response = await POST(
+      makeRequest('POST', {
+        from_session_id: ORIGIN_SESSION_ID,
+        forcar_novo: true,
+        quantidade: 10,
+      }),
+    );
+    const json = await response.json();
+
+    expect(response.status).toBe(403);
+    expect(json.error).toBe(
+      'Esta avaliação é única e não pode ser refeita. Revise as questões no estudo reverso.',
+    );
+    expect(insertSessions).not.toHaveBeenCalled();
+  });
+
+  it('POST com from_session_id de diagnóstico retorna 403', async () => {
+    mockFetchSimuladoQuestionPoolFromRpc.mockResolvedValue([]);
+    const { from, insertSessions } = makeFromSessionIdMocks({
+      tipo: 'diagnostico_inicial',
+      modo: 'prova',
+    });
+    mockCreateServerSupabase.mockResolvedValue({ from });
+
+    const response = await POST(
+      makeRequest('POST', {
+        from_session_id: ORIGIN_SESSION_ID,
+        forcar_novo: true,
+        quantidade: 10,
+      }),
+    );
+    const json = await response.json();
+
+    expect(response.status).toBe(403);
+    expect(json.error).toBe(
+      'Esta avaliação é única e não pode ser refeita. Revise as questões no estudo reverso.',
+    );
+    expect(insertSessions).not.toHaveBeenCalled();
+  });
+
+  it('POST com from_session_id de simulado livre cria sessão derivada', async () => {
+    const derivedRows = [
+      { modulo_id: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11', modulo_slug: 'q1', ordem: 1 },
+    ];
+    mockFetchSimuladoQuestionPoolFromRpc.mockResolvedValue([]);
+    const { from, insertSessions, insertRespostas } = makeFromSessionIdMocks(
+      { modo: 'prova', bancas: ['IBFC'] },
+      { derivedRows },
+    );
+    mockCreateServerSupabase.mockResolvedValue({ from });
+
+    const response = await POST(
+      makeRequest('POST', {
+        from_session_id: ORIGIN_SESSION_ID,
+        forcar_novo: true,
+        quantidade: 10,
+        modo: 'treino',
+      }),
+    );
+    const json = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(json).toEqual({
+      success: true,
+      resumed: false,
+      session: expect.objectContaining({ status: 'aberto' }),
+      questoes: [{ modulo_slug: 'q1', ordem: 1 }],
+    });
+    expect(insertSessions).toHaveBeenCalled();
+    expect(insertRespostas).toHaveBeenCalled();
   });
 });
 

@@ -25,6 +25,7 @@ import type {
   SimuladoQuestaoItem,
   SimuladoResumo,
   SimuladoSessionSummary,
+  WeeklyMissionEvolution,
 } from '@/lib/simulado/types';
 import { isSimuladoQuestaoRespondida } from '@/lib/simulado/types';
 import { cn } from '@/lib/utils';
@@ -38,12 +39,21 @@ import { createSimuladoSession, getSimuladoProvaEvolucao, SimuladoApiError } fro
 import { SimuladoMobileActionBar } from '@/components/simulados/SimuladoMobileActionBar';
 import { DiagnosticoEixos } from '@/components/simulados/DiagnosticoEixos';
 import { ConclusaoIncentivosBanner } from '@/components/simulados/ConclusaoIncentivosBanner';
+import { DiagnosticoConclusaoHeader } from '@/components/simulados/DiagnosticoConclusaoHeader';
+import { WeeklyMissionConclusaoHeader } from '@/components/simulados/WeeklyMissionConclusaoHeader';
+import { WeeklyMissionEvolutionPanel } from '@/components/simulados/WeeklyMissionEvolution';
+import {
+  getWeeklyIsoWeek,
+  isAdaptiveSimuladoKind,
+  resolveSimuladoSessionKind,
+} from '@/lib/simulado/sessionKind';
 
 type SimuladoResumoClientProps = {
   session: SimuladoSessionSummary;
   resumo: SimuladoResumo;
   questoes: SimuladoQuestaoItem[];
   incentivos?: SimuladoConclusaoIncentivos | null;
+  weeklyEvolution?: WeeklyMissionEvolution | null;
 };
 
 function metaLinha(meta: SimuladoQuestaoItem['meta']): string {
@@ -163,6 +173,7 @@ export function SimuladoResumoClient({
   resumo,
   questoes,
   incentivos,
+  weeklyEvolution,
 }: SimuladoResumoClientProps) {
   const router = useRouter();
   const [filtro, setFiltro] = useState<'todos' | 'erros' | 'acertos'>('todos');
@@ -171,6 +182,9 @@ export function SimuladoResumoClient({
   const [retryError, setRetryError] = useState<string | null>(null);
   const [evolucao, setEvolucao] = useState<SimuladoProvaEvolucaoItem[]>([]);
   const [evolucaoLoading, setEvolucaoLoading] = useState(false);
+  const sessionKind = resolveSimuladoSessionKind(session.filtros);
+  const isAdaptive = isAdaptiveSimuladoKind(sessionKind);
+  const isWeekly = sessionKind === 'weekly';
   const dataConclusao = session.concluida_em ?? session.created_at;
   const dataFormatada = new Date(dataConclusao).toLocaleDateString('pt-BR', {
     day: '2-digit',
@@ -196,9 +210,10 @@ export function SimuladoResumoClient({
   }, [resumo]);
 
   const isProva = session.modo === 'prova';
+  const showProvaEvolucao = isProva && !isAdaptive;
 
   useEffect(() => {
-    if (!isProva || !session.titulo.trim()) {
+    if (!showProvaEvolucao || !session.titulo.trim()) {
       setEvolucao([]);
       return;
     }
@@ -220,7 +235,7 @@ export function SimuladoResumoClient({
     return () => {
       cancelled = true;
     };
-  }, [isProva, session.titulo]);
+  }, [showProvaEvolucao, session.titulo]);
 
   const provaTempo = useMemo(
     () =>
@@ -298,7 +313,28 @@ export function SimuladoResumoClient({
   const retryBusy = retryingErrors || retryingSession;
   const refazerLabel = isProva ? 'Novo simulado com mesmos filtros' : 'Refazer simulado';
 
-  const actionButtons = (
+  const adaptiveActionButtons = (
+    <>
+      <Button
+        asChild
+        className="btn-editorial-primary h-12 w-full sm:w-auto"
+      >
+        <Link href="/estudar">Voltar à vitrine</Link>
+      </Button>
+      <Button
+        asChild
+        variant="outline"
+        className="btn-editorial-outline h-12 w-full sm:w-auto"
+      >
+        <Link href="/simulados/novo">
+          <ClipboardList className="mr-2 h-4 w-4" aria-hidden />
+          Criar simulado livre
+        </Link>
+      </Button>
+    </>
+  );
+
+  const livreActionButtons = (
     <>
       <Button
         type="button"
@@ -331,6 +367,8 @@ export function SimuladoResumoClient({
     </>
   );
 
+  const actionButtons = isAdaptive ? adaptiveActionButtons : livreActionButtons;
+
   return (
     <div className="bg-background px-4 pt-6 sm:px-6 lg:px-8 md:pb-8">
       <div className="mx-auto max-w-3xl space-y-8">
@@ -346,15 +384,34 @@ export function SimuladoResumoClient({
           descriptionClassName="mt-1 text-sm text-slate-500"
           titleClassName="text-editorial-title text-2xl"
           action={
-            <Button
-              asChild
-              variant="outline"
-              className="btn-editorial-outline hidden sm:inline-flex"
-            >
-              <Link href="/simulados/novo">Novo simulado</Link>
-            </Button>
+            isAdaptive ? (
+              <Button
+                asChild
+                variant="outline"
+                className="btn-editorial-outline hidden sm:inline-flex"
+              >
+                <Link href="/simulados/novo">Criar simulado livre</Link>
+              </Button>
+            ) : (
+              <Button
+                asChild
+                variant="outline"
+                className="btn-editorial-outline hidden sm:inline-flex"
+              >
+                <Link href="/simulados/novo">Novo simulado</Link>
+              </Button>
+            )
           }
         />
+
+        {isWeekly ? (
+          <WeeklyMissionConclusaoHeader
+            filtros={session.filtros}
+            isoWeek={getWeeklyIsoWeek(session.filtros)}
+          />
+        ) : null}
+
+        {sessionKind === 'diagnostico' ? <DiagnosticoConclusaoHeader /> : null}
 
         {isProva ? (
           <div className="grid gap-4 sm:grid-cols-2">
@@ -479,14 +536,14 @@ export function SimuladoResumoClient({
           </div>
         )}
 
-        {isProva && retryTituloSugerido !== session.titulo.trim() ? (
+        {showProvaEvolucao && retryTituloSugerido !== session.titulo.trim() ? (
           <p className="text-center text-xs text-slate-500">
             Próxima tentativa sugerida:{' '}
             <span className="font-medium text-slate-400">{retryTituloSugerido}</span>
           </p>
         ) : null}
 
-        {isProva && (evolucaoLoading || evolucao.length > 0) ? (
+        {showProvaEvolucao && (evolucaoLoading || evolucao.length > 0) ? (
           <section
             aria-labelledby="simulado-evolucao-titulo"
             className="card-elevated-lg space-y-4 p-6"
@@ -556,6 +613,10 @@ export function SimuladoResumoClient({
           </section>
         ) : null}
 
+        {isWeekly && weeklyEvolution ? (
+          <WeeklyMissionEvolutionPanel evolution={weeklyEvolution} />
+        ) : null}
+
         <ConclusaoIncentivosBanner incentivos={incentivos} />
 
         {(incentivos || resumo.erros > 0) ? (
@@ -614,7 +675,7 @@ export function SimuladoResumoClient({
           )}
         </section>
 
-        {retryError && (
+        {retryError && !isAdaptive && (
           <p className="text-center text-sm text-rose-400" role="alert">
             {retryError}
           </p>

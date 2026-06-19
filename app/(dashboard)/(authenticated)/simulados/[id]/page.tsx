@@ -2,6 +2,7 @@ import { notFound, redirect } from 'next/navigation';
 import { z } from 'zod';
 import { SimuladoRunnerClient } from '@/components/simulados/SimuladoRunnerClient';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
+import { attachAdaptiveSessionContext } from '@/lib/simulado/attachAdaptiveSessionContext';
 import { attachConclusaoIncentivos } from '@/lib/simulado/attachConclusaoIncentivos';
 import { loadSimuladoSessionDetail } from '@/lib/simulado/sessionDetail';
 import { createSupabaseServerClient, getServerSession } from '@/lib/supabase/server-auth';
@@ -40,6 +41,7 @@ export default async function SimuladoSessionPage({
   let sessionDetail = result.data;
   if (!e2e && supabase && userId && sessionDetail.session.status === 'concluido') {
     sessionDetail = await attachConclusaoIncentivos(supabase, userId, sessionDetail);
+    sessionDetail = await attachAdaptiveSessionContext(supabase, userId, sessionDetail);
   }
 
   return <SimuladoRunnerClient sessionId={sessionId} initialSession={sessionDetail} />;

@@ -1,6 +1,16 @@
 import { resolveEixoTematico } from '@/lib/simulado/diagnosticoEixos';
+import type { SimuladoSessionKind } from '@/lib/simulado/sessionKind';
 import type { SimuladoQuestaoItem } from '@/lib/simulado/types';
 import { isSimuladoQuestaoRespondida } from '@/lib/simulado/types';
+import { isWeeklySimuladoFiltros } from '@/lib/simulado/weeklySimuladoCore';
+
+export const META_SEMANAL_SESSOES_LIVRE = 3;
+
+export type ConclusaoSessionRow = {
+  concluida_em: string | null;
+  created_at: string;
+  filtros?: Record<string, unknown> | null;
+};
 
 export type EixoDesempenho = {
   eixo: string;
@@ -226,6 +236,108 @@ export function buildStreakIncentivo(input: {
     mensagem: null,
     badge: null,
   };
+}
+
+export function resolveConclusaoMetaParams(input: {
+  sessionKind: SimuladoSessionKind;
+  sessions: ConclusaoSessionRow[];
+  now?: Date;
+}): { meta_semanal_atingida: boolean; semanas_consecutivas: number } {
+  const { sessionKind, sessions, now = new Date() } = input;
+
+  const concluidasEm = sessions
+    .map((row) => row.concluida_em)
+    .filter((value): value is string => typeof value === 'string' && value.length > 0);
+
+  if (sessionKind === 'weekly') {
+    const weeklyConcluidasEm = sessions
+      .filter((row) => isWeeklySimuladoFiltros(row.filtros))
+      .map((row) => row.concluida_em)
+      .filter((value): value is string => typeof value === 'string' && value.length > 0);
+
+    return {
+      meta_semanal_atingida: true,
+      semanas_consecutivas: computeSemanasConsecutivasSimulado(weeklyConcluidasEm, now),
+    };
+  }
+
+  if (sessionKind === 'diagnostico') {
+    return { meta_semanal_atingida: false, semanas_consecutivas: 0 };
+  }
+
+  const weeklyThreshold = new Date(now);
+  weeklyThreshold.setDate(weeklyThreshold.getDate() - 7);
+
+  const weeklySessions = sessions.filter((row) => {
+    const baseDate = new Date(row.concluida_em ?? row.created_at);
+    return baseDate >= weeklyThreshold;
+  }).length;
+
+  return {
+    meta_semanal_atingida: weeklySessions >= META_SEMANAL_SESSOES_LIVRE,
+    semanas_consecutivas: computeSemanasConsecutivasSimulado(concluidasEm, now),
+  };
+}
+
+function isGenericSimuladoStreakMessage(message: string): boolean {
+  return (
+    message.includes('Meta semanal de simulados') ||
+    message.includes('semanas seguidas concluindo simulado')
+  );
+}
+
+export function applyAdaptiveIncentivoMessages(
+  sessionKind: SimuladoSessionKind,
+  incentivos: SimuladoConclusaoIncentivos,
+): SimuladoConclusaoIncentivos {
+  if (sessionKind === 'weekly') {
+    const semanasMissao = incentivos.streak.semanas_consecutivas_simulado;
+    const missionMessage =
+      semanasMissao >= 2
+        ? `${semanasMissao} semanas seguidas concluindo a missão — consistência de campeão!`
+        : 'Missão da semana concluída — parabéns!';
+
+    const filteredDestaque = incentivos.mensagens_destaque.filter(
+      (message) => !isGenericSimuladoStreakMessage(message),
+    );
+
+    return {
+      ...incentivos,
+      streak: {
+        ...incentivos.streak,
+        meta_semanal_atingida: true,
+        badge: semanasMissao >= 2 ? 'streak_semanas' : 'meta_semanal',
+        mensagem: missionMessage,
+      },
+      mensagens_destaque: [
+        'Missão da semana concluída',
+        ...(semanasMissao >= 2 ? [`${semanasMissao} semanas seguidas com missão feita!`] : []),
+        ...filteredDestaque,
+      ].slice(0, 5),
+    };
+  }
+
+  if (sessionKind === 'diagnostico') {
+    const filteredDestaque = incentivos.mensagens_destaque.filter(
+      (message) => !isGenericSimuladoStreakMessage(message),
+    );
+
+    return {
+      ...incentivos,
+      streak: {
+        ...incentivos.streak,
+        meta_semanal_atingida: false,
+        badge: null,
+        mensagem: null,
+      },
+      mensagens_destaque: [
+        'Diagnóstico concluído — seu mapa de partida para o plano de estudos.',
+        ...filteredDestaque,
+      ].slice(0, 5),
+    };
+  }
+
+  return incentivos;
 }
 
 export function buildConclusaoIncentivos(input: {

@@ -1,10 +1,12 @@
 import {
   agruparDesempenhoPorEixo,
+  applyAdaptiveIncentivoMessages,
   buildConclusaoIncentivos,
   buildStreakIncentivo,
   computeDominiosPegadinhas,
   computeEixosEvolucao,
   computeSemanasConsecutivasSimulado,
+  resolveConclusaoMetaParams,
 } from '@/lib/simulado/conclusaoMotivacional';
 import type { SimuladoQuestaoItem } from '@/lib/simulado/types';
 
@@ -220,5 +222,96 @@ describe('buildConclusaoIncentivos', () => {
     expect(incentivos.eixos_evolucao.length).toBeGreaterThan(0);
     expect(incentivos.streak.badge).toBe('streak_semanas');
     expect(incentivos.mensagens_destaque.length).toBeGreaterThan(0);
+  });
+});
+
+describe('resolveConclusaoMetaParams', () => {
+  const now = new Date('2026-06-18T12:00:00.000Z');
+  const previousWeek = new Date(now.getTime() - 7 * 86_400_000);
+
+  it('weekly: marca meta semanal e conta streak só de missões', () => {
+    const result = resolveConclusaoMetaParams({
+      sessionKind: 'weekly',
+      sessions: [
+        {
+          concluida_em: now.toISOString(),
+          created_at: now.toISOString(),
+          filtros: { origem: 'weekly', iso_week: 25 },
+        },
+        {
+          concluida_em: previousWeek.toISOString(),
+          created_at: previousWeek.toISOString(),
+          filtros: { origem: 'weekly', iso_week: 24 },
+        },
+        {
+          concluida_em: now.toISOString(),
+          created_at: now.toISOString(),
+          filtros: { modo: 'prova' },
+        },
+      ],
+      now,
+    });
+
+    expect(result.meta_semanal_atingida).toBe(true);
+    expect(result.semanas_consecutivas).toBe(2);
+  });
+
+  it('diagnostico: não aplica meta semanal genérica', () => {
+    const result = resolveConclusaoMetaParams({
+      sessionKind: 'diagnostico',
+      sessions: [
+        {
+          concluida_em: now.toISOString(),
+          created_at: now.toISOString(),
+          filtros: { tipo: 'diagnostico_inicial' },
+        },
+      ],
+      now,
+    });
+
+    expect(result.meta_semanal_atingida).toBe(false);
+    expect(result.semanas_consecutivas).toBe(0);
+  });
+
+  it('livre: mantém meta de 3 simulados em 7 dias', () => {
+    const result = resolveConclusaoMetaParams({
+      sessionKind: 'livre',
+      sessions: Array.from({ length: 3 }, (_, index) => ({
+        concluida_em: new Date(now.getTime() - index * 86_400_000).toISOString(),
+        created_at: now.toISOString(),
+        filtros: { modo: 'prova' },
+      })),
+      now,
+    });
+
+    expect(result.meta_semanal_atingida).toBe(true);
+  });
+});
+
+describe('applyAdaptiveIncentivoMessages', () => {
+  const baseIncentivos = buildConclusaoIncentivos({
+    questoes: [questao({ ordem: 1 })],
+    historicoEixos: [],
+    padroesErro: [],
+    streak_atual_dias: 2,
+    semanas_consecutivas: 1,
+    meta_semanal_atingida: true,
+  });
+
+  it('weekly: destaca missão concluída', () => {
+    const result = applyAdaptiveIncentivoMessages('weekly', baseIncentivos);
+
+    expect(result.streak.meta_semanal_atingida).toBe(true);
+    expect(result.streak.badge).toBe('meta_semanal');
+    expect(result.mensagens_destaque[0]).toBe('Missão da semana concluída');
+    expect(result.streak.mensagem).toContain('Missão da semana concluída');
+  });
+
+  it('diagnostico: mensagem de baseline sem meta semanal', () => {
+    const result = applyAdaptiveIncentivoMessages('diagnostico', baseIncentivos);
+
+    expect(result.streak.meta_semanal_atingida).toBe(false);
+    expect(result.streak.badge).toBeNull();
+    expect(result.mensagens_destaque[0]).toContain('mapa de partida');
   });
 });

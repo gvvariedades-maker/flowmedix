@@ -16,6 +16,10 @@ import {
   templateToSessionConfig,
   touchSimuladoTemplateUsage,
 } from '@/lib/simulado/templates';
+import {
+  isAdaptiveSimuladoKind,
+  resolveSimuladoSessionKind,
+} from '@/lib/simulado/sessionKind';
 
 const SESSION_PUBLIC_SELECT =
   'id, total_questoes, status, created_at, filtros, titulo, ritmo_meta_segundos_por_questao, prova_iniciada_em';
@@ -194,6 +198,36 @@ export async function POST(request: NextRequest) {
     }
 
     if (from_session_id) {
+      const { data: originSession, error: originSessionError } = await supabase
+        .from('simulado_sessions')
+        .select('id, filtros, user_id')
+        .eq('id', from_session_id)
+        .eq('user_id', auth.user.id)
+        .maybeSingle<{ id: string; filtros: Record<string, unknown>; user_id: string }>();
+
+      if (originSessionError) {
+        logger.error('Falha ao buscar sessão de origem para simulado derivado', originSessionError, {
+          userId: auth.user.id,
+          fromSessionId: from_session_id,
+        });
+        return NextResponse.json({ error: 'Erro ao criar simulado derivado' }, { status: 500 });
+      }
+
+      if (!originSession) {
+        return NextResponse.json({ error: 'Sessão de origem não encontrada' }, { status: 404 });
+      }
+
+      const originKind = resolveSimuladoSessionKind(originSession.filtros);
+      if (isAdaptiveSimuladoKind(originKind)) {
+        return NextResponse.json(
+          {
+            error:
+              'Esta avaliação é única e não pode ser refeita. Revise as questões no estudo reverso.',
+          },
+          { status: 403 },
+        );
+      }
+
       let derivedQuery = supabase
         .from('simulado_respostas')
         .select('modulo_id, modulo_slug, ordem')

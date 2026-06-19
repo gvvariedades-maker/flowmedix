@@ -359,4 +359,58 @@ describe('SimuladoRunnerClient', () => {
     expect(screen.getAllByRole('button', { name: 'Finalizar simulado' })).toHaveLength(1);
   });
 
+  it('sessão weekly: exibe chip Avaliação semanal no runner', async () => {
+    const weeklyAberta = {
+      ...abertaInicial,
+      session: {
+        ...abertaInicial.session,
+        modo: 'prova' as const,
+        titulo: 'Simulado da Semana #25',
+        prova_iniciada_em: '2026-06-01T12:00:00.000Z',
+        ritmo_meta_segundos_por_questao: 180,
+        filtros: { origem: 'weekly', iso_week: 25 },
+      },
+    };
+
+    mockGetSimuladoSession.mockResolvedValueOnce(weeklyAberta);
+    mockGetSimuladoQuestionPayload.mockResolvedValue({
+      dados: {
+        meta: abertaInicial.questoes[0].meta,
+        question_data: {
+          instruction: 'Enunciado da missão',
+          options: [
+            { id: 'A', text: 'Alternativa A' },
+            { id: 'B', text: 'Alternativa B' },
+          ],
+        },
+      },
+    });
+
+    render(<SimuladoRunnerClient sessionId="44444444-4444-4444-4444-444444444444" />);
+
+    await screen.findByText('Enunciado da missão');
+    expect(screen.getByText('Avaliação semanal')).toBeInTheDocument();
+  });
+
+  it('sessão diagnóstico: exibe chip na tela de instruções', async () => {
+    const diagnosticoAberta = {
+      ...abertaInicial,
+      session: {
+        ...abertaInicial.session,
+        modo: 'prova' as const,
+        titulo: 'Simulado Diagnóstico Inicial',
+        prova_iniciada_em: null,
+        ritmo_meta_segundos_por_questao: 180,
+        filtros: { tipo: 'diagnostico_inicial', modo: 'prova' },
+      },
+    };
+
+    mockGetSimuladoSession.mockResolvedValueOnce(diagnosticoAberta);
+
+    render(<SimuladoRunnerClient sessionId="44444444-4444-4444-4444-444444444444" />);
+
+    expect(await screen.findByText('Diagnóstico inicial')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Iniciar prova' })).toBeInTheDocument();
+  });
+
 });

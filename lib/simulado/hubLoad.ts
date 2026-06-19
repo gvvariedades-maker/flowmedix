@@ -1,6 +1,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { normalizeSessionMode } from '@/lib/simulado/analyticsSummary';
 import { loadSimuladoHistory } from '@/lib/simulado/history';
+import { resolveSimuladoSessionKind, type SimuladoSessionKind } from '@/lib/simulado/sessionKind';
 
 export type SimuladoHubOpenSession = {
   id: string;
@@ -8,6 +9,7 @@ export type SimuladoHubOpenSession = {
   modo: 'treino' | 'prova';
   titulo: string;
   created_at: string;
+  session_kind: SimuladoSessionKind;
 };
 
 export type SimuladoHubSessionItem = {
@@ -19,6 +21,7 @@ export type SimuladoHubSessionItem = {
   percentual_acerto: number | null;
   created_at: string;
   concluida_em: string | null;
+  session_kind: SimuladoSessionKind;
 };
 
 export type SimuladosHubData = {
@@ -64,6 +67,7 @@ export async function loadSimuladosHubData(
         }),
         titulo: openRow.titulo?.trim() ?? '',
         created_at: openRow.created_at,
+        session_kind: resolveSimuladoSessionKind(openRow.filtros),
       }
     : null;
 
@@ -89,6 +93,7 @@ export async function loadSimuladosHubData(
       percentual_acerto: row.percentual_acerto ?? null,
       created_at: row.created_at,
       concluida_em: row.concluida_em ?? null,
+      session_kind: resolveSimuladoSessionKind(row.filtros),
     }));
 
   return { openSession, recentSessions };

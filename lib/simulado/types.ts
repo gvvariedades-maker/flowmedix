@@ -86,11 +86,31 @@ export type SimuladoConclusaoIncentivos = {
   mensagens_destaque: string[];
 };
 
+export type WeeklyEixoDelta = {
+  eixo: string;
+  percentual_anterior: number;
+  percentual_atual: number;
+  delta_pontos: number;
+  direction: 'up' | 'down';
+};
+
+export type WeeklyMissionEvolution = {
+  has_previous: boolean;
+  iso_week_anterior: number | null;
+  iso_week_atual: number;
+  percentual_anterior: number | null;
+  percentual_atual: number;
+  delta_global: number | null;
+  eixos_destaque: WeeklyEixoDelta[];
+  mensagem_vazia: string | null;
+};
+
 export type SimuladoSessionDetailResponse = {
   session: SimuladoSessionSummary;
   resumo: SimuladoResumo;
   questoes: SimuladoQuestaoItem[];
   incentivos?: SimuladoConclusaoIncentivos | null;
+  weekly_evolution?: WeeklyMissionEvolution | null;
 };
 
 export type SimuladoCreateSessionResponse = {

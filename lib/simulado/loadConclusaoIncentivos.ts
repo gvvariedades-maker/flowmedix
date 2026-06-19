@@ -1,9 +1,11 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import {
+  applyAdaptiveIncentivoMessages,
   buildConclusaoIncentivos,
-  computeSemanasConsecutivasSimulado,
+  type ConclusaoSessionRow,
   type HistoricoEixoDesempenho,
   type PadraoErroHistorico,
+  resolveConclusaoMetaParams,
   type SimuladoConclusaoIncentivos,
 } from '@/lib/simulado/conclusaoMotivacional';
 import {
@@ -12,9 +14,9 @@ import {
   type SimuladoAnalyticsSessionDimsRow,
 } from '@/lib/simulado/analyticsSummary';
 import { resolveEixoTematico } from '@/lib/simulado/diagnosticoEixos';
+import { resolveSimuladoSessionKind } from '@/lib/simulado/sessionKind';
 import type { SimuladoQuestaoItem } from '@/lib/simulado/types';
 
-const META_SEMANAL_SESSOES = 3;
 const HISTORICO_DIAS = 90;
 
 function toYmd(date: Date): string {
@@ -71,13 +73,13 @@ export async function loadConclusaoIncentivos(
   userId: string,
   sessionId: string,
   questoes: SimuladoQuestaoItem[],
+  sessionFiltros?: Record<string, unknown> | null,
 ): Promise<SimuladoConclusaoIncentivos> {
+  const sessionKind = resolveSimuladoSessionKind(sessionFiltros);
+
   const historicoStart = new Date();
   historicoStart.setDate(historicoStart.getDate() - HISTORICO_DIAS);
   const queryStartYmd = toYmd(historicoStart);
-
-  const weeklyThreshold = new Date();
-  weeklyThreshold.setDate(weeklyThreshold.getDate() - 7);
 
   const [dimsResult, dailyResult, sessionsResult] = await Promise.all([
     supabase
@@ -99,7 +101,7 @@ export async function loadConclusaoIncentivos(
       .limit(5000),
     supabase
       .from('simulado_sessions')
-      .select('id, concluida_em, created_at, status')
+      .select('id, concluida_em, created_at, status, filtros')
       .eq('user_id', userId)
       .eq('status', 'concluido')
       .not('concluida_em', 'is', null)
@@ -109,49 +111,45 @@ export async function loadConclusaoIncentivos(
 
   const dimsRows = (dimsResult.data ?? []) as SimuladoAnalyticsSessionDimsRow[];
   const dailyRows = (dailyResult.data ?? []) as SimuladoAnalyticsDailyRow[];
-  const sessions = sessionsResult.data ?? [];
+  const sessions = (sessionsResult.data ?? []) as ConclusaoSessionRow[];
 
   const historicoEixos = aggregateHistoricoEixos(dimsRows);
   const padroesErro = aggregatePadroesErro(dimsRows);
 
   const streaks = computeStreaksFromDailyRows(dailyRows);
-  const weeklySessions = sessions.filter((row) => {
-    const baseDate = new Date(row.concluida_em ?? row.created_at);
-    return baseDate >= weeklyThreshold;
-  }).length;
-
-  const concluidasEm = sessions
-    .map((row) => row.concluida_em)
-    .filter((value): value is string => typeof value === 'string' && value.length > 0);
-
-  const semanasConsecutivas = computeSemanasConsecutivasSimulado(concluidasEm);
+  const { meta_semanal_atingida, semanas_consecutivas } = resolveConclusaoMetaParams({
+    sessionKind,
+    sessions,
+  });
 
   const incentivosBase = buildConclusaoIncentivos({
     questoes,
     historicoEixos,
     padroesErro,
     streak_atual_dias: streaks.streak_atual_dias,
-    semanas_consecutivas: semanasConsecutivas,
-    meta_semanal_atingida: weeklySessions >= META_SEMANAL_SESSOES,
+    semanas_consecutivas,
+    meta_semanal_atingida,
   });
 
+  let incentivos = applyAdaptiveIncentivoMessages(sessionKind, incentivosBase);
+
   // Fallback: sem dims materializados, usa eixos da sessão atual apenas para dominios vazios
-  if (dimsRows.length === 0 && incentivosBase.dominios.length === 0) {
+  if (dimsRows.length === 0 && incentivos.dominios.length === 0) {
     const eixosSessao = new Set(
       questoes
         .filter((q) => q.respondida && q.acertou)
         .map((q) => resolveEixoTematico(q.meta)),
     );
     if (eixosSessao.size > 0 && questoes.filter((q) => q.respondida).every((q) => q.acertou)) {
-      return {
-        ...incentivosBase,
+      incentivos = {
+        ...incentivos,
         mensagens_destaque: [
           'Simulado perfeito nesta rodada — mantenha o ritmo!',
-          ...incentivosBase.mensagens_destaque,
+          ...incentivos.mensagens_destaque,
         ].slice(0, 5),
       };
     }
   }
 
-  return incentivosBase;
+  return incentivos;
 }

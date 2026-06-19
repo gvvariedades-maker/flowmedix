@@ -10,6 +10,7 @@ jest.mock('next/navigation', () => ({
 
 jest.mock('@/lib/simulado/client', () => ({
   createSimuladoSession: (...args: unknown[]) => mockCreateSimuladoSession(...args),
+  getSimuladoProvaEvolucao: jest.fn().mockResolvedValue({ items: [] }),
   SimuladoApiError: class SimuladoApiError extends Error {
     status: number;
     constructor(status: number, message: string) {
@@ -132,5 +133,96 @@ describe('SimuladoResumoClient — modo prova', () => {
     );
 
     expect(screen.queryByText('Seus pontos fracos')).not.toBeInTheDocument();
+  });
+});
+
+const weeklySession = {
+  ...baseSession,
+  titulo: 'Simulado da Semana #25 - Farmacologia',
+  filtros: {
+    origem: 'weekly',
+    iso_year: 2026,
+    iso_week: 25,
+    foco_principal: 'Farmacologia',
+    bucket_shares: {
+      weakness: 0.4,
+      affinity: 0.3,
+      not_attempted: 0.2,
+      review: 0.1,
+    },
+  },
+};
+
+const diagnosticoSession = {
+  ...baseSession,
+  titulo: 'Simulado Diagnóstico Inicial',
+  filtros: { tipo: 'diagnostico_inicial', modo: 'prova' },
+};
+
+describe('SimuladoResumoClient — sessões adaptativas', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it('weekly: exibe badge missão e oculta botões de refazer', () => {
+    render(
+      <SimuladoResumoClient
+        session={weeklySession}
+        resumo={baseResumo}
+        questoes={questoesComErro}
+        weeklyEvolution={{
+          has_previous: false,
+          iso_week_anterior: null,
+          iso_week_atual: 25,
+          percentual_anterior: null,
+          percentual_atual: 50,
+          delta_global: null,
+          eixos_destaque: [],
+          mensagem_vazia: 'Primeira missão — na próxima semana você verá sua evolução',
+        }}
+      />,
+    );
+
+    expect(screen.getByText(/Missão da semana/i)).toBeInTheDocument();
+    expect(screen.getByText(/Semana 25/)).toBeInTheDocument();
+    expect(screen.getByText(/Foco principal:/)).toBeInTheDocument();
+    expect(screen.getByText('Farmacologia')).toBeInTheDocument();
+    expect(screen.getByText(/Primeira missão/)).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /Refazer/i })).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Voltar à vitrine' })).toHaveAttribute(
+      'href',
+      '/estudar',
+    );
+    expect(screen.getAllByRole('link', { name: 'Criar simulado livre' }).length).toBeGreaterThan(0);
+  });
+
+  it('diagnostico: exibe cabeçalho e oculta refazer', () => {
+    render(
+      <SimuladoResumoClient
+        session={diagnosticoSession}
+        resumo={baseResumo}
+        questoes={questoesComErro}
+      />,
+    );
+
+    expect(screen.getByText('Diagnóstico inicial')).toBeInTheDocument();
+    expect(screen.getByText(/mapa de partida/i)).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /Refazer/i })).not.toBeInTheDocument();
+    expect(screen.queryByText('Evolução por nome')).not.toBeInTheDocument();
+  });
+
+  it('livre prova: mantém botões de refazer e evolução por nome', async () => {
+    render(
+      <SimuladoResumoClient
+        session={baseSession}
+        resumo={baseResumo}
+        questoes={[]}
+      />,
+    );
+
+    expect(
+      screen.getByRole('button', { name: 'Novo simulado com mesmos filtros' }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Refazer só erros' })).toBeInTheDocument();
   });
 });

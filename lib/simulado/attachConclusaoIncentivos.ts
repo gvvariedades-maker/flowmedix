@@ -17,6 +17,7 @@ export async function attachConclusaoIncentivos(
     userId,
     detail.session.id,
     detail.questoes,
+    detail.session.filtros,
   );
 
   return { ...detail, incentivos };
