@@ -156,21 +156,21 @@ export function OnboardingOnAccess({
   const stepId = step.id as StepId;
 
   return (
-    <div className="fixed inset-0 z-[90] flex items-end justify-center bg-[#010409]/80 p-3 backdrop-blur-md sm:items-center sm:p-6">
+    <div className="fixed inset-0 z-[90] flex items-end justify-center overflow-y-auto bg-[#010409]/80 p-3 pb-safe backdrop-blur-md sm:items-center sm:p-6">
       <div
         ref={panelRef}
         role="dialog"
         aria-modal="true"
         aria-labelledby="onboarding-access-title"
         aria-describedby="onboarding-access-description"
-        className="glass-panel relative w-full max-w-3xl overflow-hidden border border-white/10 bg-slate-900/90 shadow-2xl outline-none"
+        className="glass-panel relative my-auto flex w-full max-w-3xl max-h-[min(56rem,calc(100dvh-1.5rem))] shrink-0 flex-col overflow-hidden border border-white/10 bg-slate-900/90 shadow-2xl outline-none sm:max-h-[min(56rem,calc(100vh-3rem))]"
       >
         <div
           className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-br from-cyan-500/20 via-transparent to-fuchsia-500/10"
           aria-hidden
         />
 
-        <div className="relative p-5 md:p-8">
+        <div className="relative shrink-0 px-5 pt-5 md:px-8 md:pt-8">
           <div className="flex items-start justify-between gap-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-[10px] font-black uppercase tracking-widest text-cyan-200">
               <Sparkles className="h-3.5 w-3.5 text-[#00f2ff]" aria-hidden />
@@ -186,8 +186,10 @@ export function OnboardingOnAccess({
               <X className="h-5 w-5" />
             </button>
           </div>
+        </div>
 
-          <div className="mt-6 grid gap-6 md:grid-cols-[0.9fr_1.1fr] md:items-start">
+        <div className="relative min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 md:px-8">
+          <div className="grid gap-6 pb-4 md:grid-cols-[0.9fr_1.1fr] md:items-start">
             <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-950 p-5 text-white shadow-inner">
               <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-400/10">
                 <StepIcon className="h-5 w-5 text-[#00f2ff]" aria-hidden />
@@ -305,57 +307,59 @@ export function OnboardingOnAccess({
                   </div>
                 </div>
               ) : null}
-
-              {error ? (
-                <p className="mt-4 text-sm font-medium text-[#ff0055]" role="alert">
-                  {error}
-                </p>
-              ) : null}
-
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-                {activeStep > 0 ? (
-                  <button
-                    type="button"
-                    onClick={() => setActiveStep((current) => Math.max(0, current - 1))}
-                    className="inline-flex min-h-[44px] items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-bold text-slate-200 transition-colors hover:bg-white/10"
-                  >
-                    <ArrowLeft className="mr-2 h-4 w-4" aria-hidden />
-                    Voltar
-                  </button>
-                ) : null}
-
-                {!isLast ? (
-                  <button
-                    type="button"
-                    disabled={!canAdvance}
-                    onClick={() => setActiveStep((current) => Math.min(STEPS.length - 1, current + 1))}
-                    className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-gradient-to-r from-[#00f2ff] to-[#00ff88] px-5 py-2.5 text-sm font-black text-slate-950 transition-opacity enabled:hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
-                  >
-                    Próximo
-                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    disabled={!canAdvance || submitting}
-                    onClick={() => void handleSubmit()}
-                    className="inline-flex min-h-[44px] items-center justify-center rounded-2xl bg-gradient-to-r from-[#00f2ff] to-[#00ff88] px-5 py-2.5 text-sm font-black text-slate-950 transition-opacity enabled:hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
-                  >
-                    {submitting ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
-                        Salvando…
-                      </>
-                    ) : (
-                      <>
-                        Concluir perfil
-                        <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
-                      </>
-                    )}
-                  </button>
-                )}
-              </div>
             </div>
+          </div>
+        </div>
+
+        <div className="relative shrink-0 border-t border-white/10 bg-slate-900/95 px-5 py-4 md:px-8">
+          {error ? (
+            <p className="mb-3 text-sm font-medium text-[#ff0055]" role="alert">
+              {error}
+            </p>
+          ) : null}
+
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            {activeStep > 0 ? (
+              <button
+                type="button"
+                onClick={() => setActiveStep((current) => Math.max(0, current - 1))}
+                className="inline-flex min-h-[44px] items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-bold text-slate-200 transition-colors hover:bg-white/10"
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" aria-hidden />
+                Voltar
+              </button>
+            ) : null}
+
+            {!isLast ? (
+              <button
+                type="button"
+                disabled={!canAdvance}
+                onClick={() => setActiveStep((current) => Math.min(STEPS.length - 1, current + 1))}
+                className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-r from-[#00f2ff] to-[#00ff88] px-5 py-2.5 text-sm font-black text-slate-950 transition-opacity enabled:hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 sm:flex-none"
+              >
+                Próximo
+                <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
+              </button>
+            ) : (
+              <button
+                type="button"
+                disabled={!canAdvance || submitting}
+                onClick={() => void handleSubmit()}
+                className="inline-flex min-h-[44px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-r from-[#00f2ff] to-[#00ff88] px-5 py-2.5 text-sm font-black text-slate-950 transition-opacity enabled:hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 sm:flex-none"
+              >
+                {submitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden />
+                    Salvando…
+                  </>
+                ) : (
+                  <>
+                    Concluir perfil
+                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden />
+                  </>
+                )}
+              </button>
+            )}
           </div>
         </div>
       </div>
