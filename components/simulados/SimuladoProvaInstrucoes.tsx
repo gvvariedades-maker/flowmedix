@@ -12,6 +12,8 @@ import {
   sessionDisplayTitulo,
 } from '@/lib/simulado/provaMeta';
 import type { SimuladoModo } from '@/lib/simulado/types';
+import type { SimuladoSessionKind } from '@/lib/simulado/sessionKind';
+import { AdaptiveSimuladoSessionChip } from '@/components/simulados/AdaptiveSimuladoSessionChip';
 import { cn } from '@/lib/utils';
 
 export type SimuladoProvaInstrucoesProps = {
@@ -22,6 +24,7 @@ export type SimuladoProvaInstrucoesProps = {
   iniciandoProva: boolean;
   iniciarProvaError: string | null;
   onIniciar: () => void;
+  sessionKind?: SimuladoSessionKind;
   className?: string;
 };
 
@@ -40,6 +43,7 @@ export function SimuladoProvaInstrucoes({
   iniciandoProva,
   iniciarProvaError,
   onIniciar,
+  sessionKind = 'livre',
   className,
 }: SimuladoProvaInstrucoesProps) {
   const [instrucoesLidas, setInstrucoesLidas] = useState(false);
@@ -61,6 +65,11 @@ export function SimuladoProvaInstrucoes({
         descriptionClassName="mt-1 text-sm text-slate-500"
         titleClassName="text-editorial-title text-xl sm:text-2xl"
       />
+      {sessionKind !== 'livre' ? (
+        <div className="-mt-4">
+          <AdaptiveSimuladoSessionChip sessionKind={sessionKind} />
+        </div>
+      ) : null}
 
       <div className="card-elevated-lg space-y-6 p-6 sm:p-8">
         <div className="space-y-1">
