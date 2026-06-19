@@ -5,7 +5,10 @@ import { useRouter } from 'next/navigation';
 import { ArrowRight, ClipboardCheck, Loader2 } from 'lucide-react';
 import type { DiagnosticoSimuladoCardState } from '@/lib/simulado/types';
 import { createDiagnosticoSimulado, SimuladoApiError } from '@/lib/simulado/client';
-import { SIMULADO_DIAGNOSTICO_TITULO } from '@/lib/simulado/diagnosticoConstants';
+import {
+  SIMULADO_DIAGNOSTICO_QUANTIDADE_DEFAULT,
+  SIMULADO_DIAGNOSTICO_TITULO,
+} from '@/lib/simulado/diagnosticoConstants';
 
 export type SimuladoDiagnosticoCardProps = {
   state: DiagnosticoSimuladoCardState;
@@ -19,7 +22,7 @@ export function SimuladoDiagnosticoCard({ state }: SimuladoDiagnosticoCardProps)
   if (!state.show_card) return null;
 
   const isResume = state.has_open_session && state.session != null;
-  const questaoCount = state.session?.total_questoes ?? 18;
+  const questaoCount = state.session?.total_questoes ?? SIMULADO_DIAGNOSTICO_QUANTIDADE_DEFAULT;
 
   const handleStart = async () => {
     if (isResume && state.session) {

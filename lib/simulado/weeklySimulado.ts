@@ -14,6 +14,7 @@ import type { WeeklySimuladoMission } from '@/lib/simulado/types';
 import {
   WEEKLY_SIMULADO_ORIGEM,
   WEEKLY_SIMULADO_DEFAULT_QUANTIDADE,
+  ADAPTIVE_SIMULADO_MODO,
   WEEKLY_POOL_BUCKET_SHARES,
   buildWeeklyQuestionPoolFromScored,
   buildWeeklySimuladoTitulo,
@@ -28,6 +29,7 @@ import {
 export {
   WEEKLY_SIMULADO_ORIGEM,
   WEEKLY_SIMULADO_DEFAULT_QUANTIDADE,
+  ADAPTIVE_SIMULADO_MODO,
   WEEKLY_POOL_BUCKET_SHARES,
   assignWeeklyBucket,
   buildWeeklyQuestionPoolFromScored,
@@ -356,7 +358,7 @@ export async function createWeeklySimuladoSession(params: {
     q: null,
     requested: params.quantidade ?? WEEKLY_SIMULADO_DEFAULT_QUANTIDADE,
     selected: pool.length,
-    modo: 'treino' as const,
+    modo: ADAPTIVE_SIMULADO_MODO,
     bucket_shares: WEEKLY_POOL_BUCKET_SHARES,
   };
 
@@ -368,6 +370,7 @@ export async function createWeeklySimuladoSession(params: {
     titulo,
     ritmo_meta_segundos_por_questao: null,
     prova_iniciada_em: null,
+    modo: ADAPTIVE_SIMULADO_MODO,
   };
 
   const { data: session, error: sessionError } = await supabase

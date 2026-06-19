@@ -27,10 +27,10 @@ describe('onboarding topicAreas', () => {
 });
 
 describe('diagnosticoConstants', () => {
-  it('clampDiagnosticoQuantidade respeita faixa 15–20', () => {
-    expect(clampDiagnosticoQuantidade(10)).toBe(15);
-    expect(clampDiagnosticoQuantidade(18)).toBe(18);
-    expect(clampDiagnosticoQuantidade(25)).toBe(20);
+  it('clampDiagnosticoQuantidade respeita faixa 8–12', () => {
+    expect(clampDiagnosticoQuantidade(5)).toBe(8);
+    expect(clampDiagnosticoQuantidade(10)).toBe(10);
+    expect(clampDiagnosticoQuantidade(25)).toBe(12);
   });
 
   it('isDiagnosticoSessionFiltros identifica tipo diagnostico_inicial', () => {

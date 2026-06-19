@@ -11,10 +11,13 @@ import { buildDiagnosticoQuestionPool } from '@/lib/simulado/diagnosticoPool';
 import { getDiagnosticoSimuladoCardState } from '@/lib/simulado/diagnosticoStatus';
 import {
   isDiagnosticoSessionFiltros,
+  SIMULADO_DIAGNOSTICO_QUANTIDADE_DEFAULT,
   SIMULADO_DIAGNOSTICO_TIPO,
   SIMULADO_DIAGNOSTICO_TITULO,
 } from '@/lib/simulado/diagnosticoConstants';
 import type { UserDeclaredPreferences } from '@/lib/recommendations';
+import { resolveSessionMode } from '@/lib/simulado/sessionDetail';
+import { ADAPTIVE_SIMULADO_MODO } from '@/lib/simulado/weeklySimuladoCore';
 
 const SESSION_PUBLIC_SELECT =
   'id, total_questoes, status, created_at, filtros, titulo, ritmo_meta_segundos_por_questao, prova_iniciada_em';
@@ -31,16 +34,17 @@ type SessionRow = {
 };
 
 function mapSessionResponse(row: SessionRow) {
+  const filtros = row.filtros ?? {};
   return {
     id: row.id,
     total_questoes: row.total_questoes,
     status: row.status,
-    modo: 'treino' as const,
+    modo: resolveSessionMode(filtros),
     titulo: row.titulo?.trim() || SIMULADO_DIAGNOSTICO_TITULO,
     ritmo_meta_segundos_por_questao: row.ritmo_meta_segundos_por_questao ?? null,
     prova_iniciada_em: row.prova_iniciada_em ?? null,
     created_at: row.created_at,
-    filtros: row.filtros ?? {},
+    filtros,
   };
 }
 
@@ -88,9 +92,9 @@ export async function POST(request: NextRequest) {
     if (isE2eBypassEnabled('E2E_DASHBOARD_BYPASS')) {
       const body = await request.json().catch(() => ({}));
       const parsed = SimuladoDiagnosticoCreateSchema.safeParse(body);
-      const quantidade = parsed.success ? parsed.data.quantidade : 18;
+      const quantidade = parsed.success ? parsed.data.quantidade : SIMULADO_DIAGNOSTICO_QUANTIDADE_DEFAULT;
       resetE2eSimuladoStore();
-      const e2e = createE2eSimuladoSession(quantidade, 'treino', {
+      const e2e = createE2eSimuladoSession(quantidade, ADAPTIVE_SIMULADO_MODO, {
         titulo: SIMULADO_DIAGNOSTICO_TITULO,
       });
       return NextResponse.json({
@@ -182,7 +186,7 @@ export async function POST(request: NextRequest) {
       q: null,
       requested: parsed.data.quantidade,
       selected: pool.length,
-      modo: 'treino' as const,
+      modo: ADAPTIVE_SIMULADO_MODO,
     };
 
     const sessionInsertPayload = {
@@ -193,7 +197,7 @@ export async function POST(request: NextRequest) {
       titulo: SIMULADO_DIAGNOSTICO_TITULO,
       ritmo_meta_segundos_por_questao: null,
       prova_iniciada_em: null,
-      modo: 'treino' as const,
+      modo: ADAPTIVE_SIMULADO_MODO,
     };
 
     const { data: session, error: sessionError } = await supabase

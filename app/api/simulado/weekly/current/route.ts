@@ -2,7 +2,11 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getUserAndClientFromBearer } from '@/lib/supabase/api-request-user';
 import { logger } from '@/lib/logger';
 import { isE2eBypassEnabled } from '@/lib/e2e/bypass';
-import { getIsoWeekInfo, getWeeklySimuladoMission } from '@/lib/simulado/weeklySimulado';
+import {
+  getIsoWeekInfo,
+  getWeeklySimuladoMission,
+  WEEKLY_SIMULADO_DEFAULT_QUANTIDADE,
+} from '@/lib/simulado/weeklySimulado';
 import type { WeeklySimuladoMission } from '@/lib/simulado/types';
 
 function e2eWeeklyMission(): WeeklySimuladoMission {
@@ -15,7 +19,7 @@ function e2eWeeklyMission(): WeeklySimuladoMission {
     status: 'pendente',
     titulo: `Simulado da Semana #${week.isoWeek} - Urgências e Emergências`,
     session_id: null,
-    total_questoes: 20,
+    total_questoes: WEEKLY_SIMULADO_DEFAULT_QUANTIDADE,
     respondidas: 0,
     percentual_acerto: null,
   };

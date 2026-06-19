@@ -913,9 +913,9 @@ export const SimuladoDiagnosticoCreateSchema = z.object({
   quantidade: z.coerce
     .number()
     .int()
-    .min(15)
-    .max(20)
-    .default(18),
+    .min(8)
+    .max(12)
+    .default(10),
 });
 
 /** Payload de criação de sessão do Modo Simulado. */
@@ -987,7 +987,7 @@ export const SimuladoRetentionRunSchema = z.object({
 /** Payload para geração do Simulado da Semana (cron ou usuário autenticado). */
 export const SimuladoWeeklyGenerateSchema = z.object({
   user_id: z.string().uuid().optional(),
-  quantidade: z.coerce.number().int().min(10).max(50).optional().default(20),
+  quantidade: z.coerce.number().int().min(8).max(50).optional().default(10),
 });
 
 // ============================================================================

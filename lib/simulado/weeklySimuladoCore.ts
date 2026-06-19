@@ -25,7 +25,9 @@ export function topicMatchesDeclared(
 }
 
 export const WEEKLY_SIMULADO_ORIGEM = 'weekly' as const;
-export const WEEKLY_SIMULADO_DEFAULT_QUANTIDADE = 20;
+export const WEEKLY_SIMULADO_DEFAULT_QUANTIDADE = 10;
+/** Simulados adaptativos (semanal/diagnóstico) usam modo prova — gabarito só no resumo final. */
+export const ADAPTIVE_SIMULADO_MODO = 'prova' as const;
 
 export const WEEKLY_POOL_BUCKET_SHARES = {
   weakness: 0.4,

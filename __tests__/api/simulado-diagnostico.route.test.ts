@@ -189,7 +189,7 @@ describe('/api/simulado/diagnostico', () => {
 
     mockCreateServerSupabase.mockResolvedValue({ from });
 
-    const response = await POST(makeRequest('POST', { quantidade: 18 }));
+    const response = await POST(makeRequest('POST', { quantidade: 10 }));
     const json = await response.json();
 
     expect(response.status).toBe(200);
@@ -198,5 +198,11 @@ describe('/api/simulado/diagnostico', () => {
     expect(json.session.id).toBe('22222222-2222-4222-8222-222222222222');
     expect(mockBuildDiagnosticoQuestionPool).toHaveBeenCalled();
     expect(respostasInsert).toHaveBeenCalled();
+    expect(insert).toHaveBeenCalledWith(
+      expect.objectContaining({
+        modo: 'prova',
+        filtros: expect.objectContaining({ modo: 'prova', tipo: 'diagnostico_inicial' }),
+      }),
+    );
   });
 });
