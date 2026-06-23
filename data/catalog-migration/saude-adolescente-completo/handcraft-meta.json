@@ -1,0 +1,18 @@
+{
+  "subtopico": "Saúde do Adolescente",
+  "trilho": "A",
+  "total_slugs": 16,
+  "lote_size": 8,
+  "lote_pattern": "saude-adolescente-g{NN}",
+  "anchor_glob": "examples/questao-premium-*-saude-adolescente-*.json",
+  "guideline": "lib/guidelines/saudeAdolescente.ts",
+  "clusters": [
+    "Gravidez / pré-natal / riscos",
+    "Escuta, sigilo e ética (V/F)",
+    "Violência sexual e indicadores",
+    "Transtornos alimentares / imagem corporal",
+    "Diretrizes MS adolescente (EXCETO)",
+    "Saúde bucal / promoção"
+  ],
+  "nota_manifest": "16 slugs com meta.subtopico adolescente; 4 podem ser reclassificação futura (outro título_aula no slug)."
+}

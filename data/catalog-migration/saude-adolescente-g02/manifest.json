@@ -1,0 +1,27 @@
+{
+  "lote": "saude-adolescente-g02",
+  "exported_at": "2026-06-23T19:10:30.952Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "idecan-enfermagem-saude-do-adolescente-1778712426701-7",
+      "idecan-enfermagem-saude-do-adolescente-1778712426701-8",
+      "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+      "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
+      "nao-informado-geral-saude-do-adolescente-1777104229064-0",
+      "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
+      "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
+      "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-3"
+    ]
+  },
+  "slugs": [
+    "idecan-enfermagem-saude-do-adolescente-1778712426701-7",
+    "idecan-enfermagem-saude-do-adolescente-1778712426701-8",
+    "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
+    "nao-informado-geral-saude-do-adolescente-1777104229064-0",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
+    "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
+    "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-3"
+  ]
+}

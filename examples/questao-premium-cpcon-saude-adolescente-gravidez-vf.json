@@ -6,7 +6,26 @@
     "ano": "2025",
     "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "topico": "Enfermagem",
-    "subtopico": "Saúde do Adolescente"
+    "subtopico": "Saúde do Adolescente",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "handcraft-pilot",
+      "guideline_snapshot": "MS — Saúde do Adolescente (escuta, sigilo, gravidez)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "saude-adolescente-ms",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Saúde do Adolescente — escuta, sigilo e gravidez",
+        "year": 2021,
+        "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/a/adolescente",
+        "covers": ["escuta qualificada", "sigilo", "gravidez na adolescência", "pré-natal precoce"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Sobre saúde do adolescente e gravidez na adolescência, analise as afirmativas.\n\nI - A consulta de enfermagem com adolescente deve garantir privacidade e escuta qualificada, respeitando autonomia progressiva.\nII - Gravidez na adolescência aumenta riscos de complicações materno-fetais e exige acompanhamento pré-natal precoce.\nIII - O sigilo profissional pode ser absolutamente quebrado sem critério em qualquer tema, inclusive contracepção, sem necessidade de avaliar risco e legislação.\n\nÉ CORRETO o que se afirma em:",

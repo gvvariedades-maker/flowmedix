@@ -1,0 +1,28 @@
+{
+  "lote": "saude-adolescente-completo",
+  "exported_at": "2026-06-23T18:59:55.833Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Saúde do Adolescente",
+    "limit": 200,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "agirh-enfermagem-saude-do-adolescente-1777104229064-4",
+    "amauc-enfermagem-saude-do-adolescente-1777104229064-5",
+    "amauc-enfermagem-saude-do-adolescente-1777104229064-6",
+    "cogeps-unioeste-enfermagem-saude-do-adolescente-1777104229064-7",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
+    "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+    "fau-unicentro-enfermagem-saude-do-adolescente-1777104229064-3",
+    "funcern-enfermagem-saude-do-adolescente-1777104229064-1",
+    "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
+    "ideap-enfermagem-saude-do-adolescente-1777104229064-2",
+    "idecan-enfermagem-saude-do-adolescente-1778712426701-6",
+    "idecan-enfermagem-saude-do-adolescente-1778712426701-7",
+    "idecan-enfermagem-saude-do-adolescente-1778712426701-8",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
+    "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-3",
+    "nao-informado-geral-saude-do-adolescente-1777104229064-0"
+  ]
+}

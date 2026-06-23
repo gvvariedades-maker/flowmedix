@@ -42,12 +42,27 @@
       "total_slugs": 37,
       "anchor_glob": "examples/questao-premium-*-saude-mental*.json",
       "guideline": "lib/guidelines/saudeMental.ts"
+    },
+    "Saúde do Adolescente": {
+      "pacote_prefix": "saude-adolescente",
+      "manifest": "data/catalog-migration/saude-adolescente-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/saude-adolescente-completo/handcraft-meta.json",
+      "readme": "data/catalog-migration/saude-adolescente-completo/README.md",
+      "cluster_command": null,
+      "cluster_report": null,
+      "lote_pattern": "saude-adolescente-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 16,
+      "anchor_glob": "examples/questao-premium-*-saude-adolescente-*.json",
+      "guideline": "lib/guidelines/saudeAdolescente.ts"
     }
   },
   "subtopicos_canonicos": [
     "Assistência Perioperatória (Inclui SRPA)",
     "Enfermagem em Central de Material e Esterilização (CME)",
-    "Saúde Mental"
+    "Saúde Mental",
+    "Saúde do Adolescente"
   ],
   "fallback_novo_pacote": {
     "when": "subtópico não está em pacotes",

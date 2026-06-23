@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-06-23T19:01:38.921Z",
+  "lote": "saude-adolescente-g01",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "funcern-enfermagem-saude-do-adolescente-1777104229064-1",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 1342
+    },
+    {
+      "modulo_slug": "ideap-enfermagem-saude-do-adolescente-1777104229064-2",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDEAP",
+      "avant_codigo": 1343
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-saude-do-adolescente-1777104229064-3",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 1344
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-saude-do-adolescente-1777104229064-4",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 1345
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-do-adolescente-1777104229064-5",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 1346
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-saude-do-adolescente-1777104229064-6",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 1347
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-saude-do-adolescente-1777104229064-7",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 1348
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-6",
+      "titulo_aula": "Saúde do Adolescente",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1711
+    }
+  ]
+}

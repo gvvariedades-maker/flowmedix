@@ -1,0 +1,32 @@
+{
+  "lote": "saude-adolescente-g02",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-23",
+  "subtopico": "Saúde do Adolescente",
+  "cluster": "Gravidez riscos · transtornos alimentares · violência/indícios · puberdade · escore Z · DIU",
+  "total": 8,
+  "status": "applied",
+  "anchor_slug": "idecan-enfermagem-saude-do-adolescente-1778712426701-7",
+  "golden_reference": "examples/questao-premium-cpcon-saude-adolescente-gravidez-vf.json",
+  "guideline": "lib/guidelines/saudeAdolescente.ts (SAUDE_ADOLESCENTE_MS)",
+  "slugs": [
+    "idecan-enfermagem-saude-do-adolescente-1778712426701-7",
+    "idecan-enfermagem-saude-do-adolescente-1778712426701-8",
+    "cpcon-uepb-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563937068-6",
+    "inaz-do-para-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563941226-3",
+    "nao-informado-geral-saude-do-adolescente-1777104229064-0",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007246385-1",
+    "ibam-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-0",
+    "ms-sarmento-enfermagem-saude-da-mulher-1777104301763-3"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=saude-adolescente-g02 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/saude-adolescente-g02/questions/",
+    "2. npm run validate:goldens -- --lote=saude-adolescente-g02 --strict",
+    "3. npm run catalog:apply-lote -- --lote=saude-adolescente-g02 --dry-run",
+    "4. npm run catalog:apply-lote -- --lote=saude-adolescente-g02 --apply (só quando pedido)"
+  ],
+  "next_lote": null,
+  "nota": "Fechamento handcraft — 16/16 slugs do manifest saude-adolescente-completo"
+}
