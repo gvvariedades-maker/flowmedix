@@ -142,7 +142,7 @@ export function auditPremiumQuestao(payload: QuestaoLike): PremiumGateIssue[] {
 
   // 2) Contrato de molde bespoke (apenas subtópicos premium)
   const subtopico = payload.meta?.subtopico;
-  if (!isPremiumSubtopico(subtopico)) {
+  if (!subtopico || !isPremiumSubtopico(subtopico)) {
     return issues;
   }
 

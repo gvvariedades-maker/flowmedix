@@ -162,7 +162,7 @@ export function WeeklyMissionHubClient({ initialData }: WeeklyMissionHubClientPr
                     className="card-elevated flex flex-col gap-3 border-cyan-200/60 p-4 transition-colors hover:border-cyan-300 sm:flex-row sm:items-center sm:justify-between"
                   >
                     <WeeklyHistoryRowContent
-                      weeklyOrdinal={mission.weekly_ordinal}
+                      weeklyOrdinal={mission.weekly_ordinal ?? null}
                       percentual={mission.percentual_acerto}
                       total={mission.total_questoes}
                       concluidaEm={null}
