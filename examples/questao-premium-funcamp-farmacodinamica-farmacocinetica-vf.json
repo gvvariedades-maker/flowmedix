@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "banca": "FUNCAMP",
+    "prova": "TEnf",
+    "orgao": "UNICAMP",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Farmacodinâmica e Farmacocinética"
+  },
+  "question_data": {
+    "instruction": "Sobre farmacocinética e farmacodinâmica, analise as afirmativas.\n\nI - Farmacocinética estuda o que o organismo faz com o fármaco: absorção, distribuição, metabolismo e excreção.\nII - Farmacodinâmica estuda o que o fármaco faz no organismo: mecanismo de ação e efeito terapêutico ou adverso.\nIII - A meia-vida de um medicamento corresponde ao tempo necessário para o organismo eliminar 100% da dose administrada.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Farmaco — mapa conceitual",
+      "meta": { "topico": "Enfermagem", "subtopico": "Farmacodinâmica e Farmacocinética" },
+      "items": [
+        { "label": "Farmacocinética", "detail": "ADME: Absorção, Distribuição, Metabolismo, Excreção — o corpo sobre o fármaco.", "icon": "Pill" },
+        { "label": "Farmacodinâmica", "detail": "Ação no receptor/célula — efeito desejado e efeito adverso.", "icon": "Zap" },
+        { "label": "Meia-vida (t½)", "detail": "Tempo para reduzir a concentração plasmática em 50%, não eliminar 100%.", "icon": "Clock" },
+        { "label": "Mnemônico", "detail": "Cinética = corpo processa · Dinâmica = fármaco age.", "icon": "Brain" }
+      ],
+      "footer_rule": "Cinética = ADME · Dinâmica = ação · Meia-vida = 50%"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Definições de prova",
+      "meta": { "topico": "Enfermagem", "subtopico": "Farmacodinâmica e Farmacocinética" },
+      "content": "CINÉTICA × DINÂMICA",
+      "rows": [
+        { "label": "Farmacocinética", "value": "O que o organismo faz com o fármaco (ADME)", "badge": "ok" },
+        { "label": "Farmacodinâmica", "value": "O que o fármaco faz no organismo", "badge": "ok" },
+        { "label": "Meia-vida", "value": "Queda de 50% da concentração — não 100%", "emphasis": "alert", "badge": "warn" },
+        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+      ],
+      "footer_rule": "III troca 50% por 100% — pegadinha numérica clássica"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Farmacodinâmica e Farmacocinética" },
+      "steps": [
+        "I: definição de farmacocinética (ADME) → verdadeira.",
+        "II: definição de farmacodinâmica → verdadeira.",
+        "III: meia-vida = eliminar 100% → falsa.",
+        "Gabarito: I e II → letra B.",
+        "Fixação: meia-vida sempre é redução pela metade da concentração."
+      ],
+      "footer_rule": "Separar definições antes de olhar alternativas"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Farmacodinâmica e Farmacocinética" },
+      "content": "PEGADINHAS — FARMACOLOGIA",
+      "items": [
+        { "label": "Trocar cinética e dinâmica", "detail": "I e II estão corretas justamente porque não se invertem.", "correct": "Cinética = ADME; dinâmica = ação no organismo." },
+        { "label": "Meia-vida = eliminação total", "detail": "100% na III é o erro que derruba D e C.", "correct": "Meia-vida: queda de 50% da concentração plasmática." },
+        { "label": "Confundir com dose de ataque", "detail": "Dose de ataque e manutenção são condutas — não definem meia-vida.", "correct": "Meia-vida é conceito farmacocinético." }
+      ],
+      "footer_rule": "Em farmaco, definição trocada ou 50%→100% são os erros mais frequentes"
+    }
+  ]
+}

@@ -43,20 +43,49 @@ export function normalizeCurativosInstruction(instruction: string): string {
   return instruction
     .replace(/\r\n/g, '\n')
     .replace(/([IVX]+)\s*\n+\s*[-–]\s*/gi, '$1- ')
+    .replace(/([IVX]+)\s*\.\s+/gi, '$1- ')
     .replace(/É\s*\n+\s*CORRETO/gi, 'É CORRETO')
     .replace(/CORRETO\s*\n+\s*o que se afirma/gi, 'CORRETO o que se afirma');
 }
 
 /** Extrai afirmativas I / II / III / IV do enunciado. */
+const ROMAN_BY_INDEX = ['I', 'II', 'III', 'IV', 'V'] as const;
+
+function extractParenAssertives(instruction: string): { roman: string; text: string }[] {
+  const normalized = normalizeCurativosInstruction(instruction);
+  const re = /\(__\)\s*([^\n]+)/gi;
+  const texts: string[] = [];
+  let match: RegExpExecArray | null;
+  while ((match = re.exec(normalized)) !== null) {
+    const text = match[1].trim();
+    if (text) texts.push(text);
+  }
+  return texts.slice(0, 5).map((text, index) => ({
+    roman: ROMAN_BY_INDEX[index] ?? String(index + 1),
+    text,
+  }));
+}
+
+/** Gabarito no formato F, V, F, V (comum em SV e curativos). */
+export function parseVfFlagsFromGabarito(correctText: string, count: number): boolean[] | null {
+  const tokens = correctText.toUpperCase().match(/\b[VF]\b/g);
+  if (!tokens || tokens.length < count) return null;
+  return tokens.slice(0, count).map((t) => t === 'V');
+}
+
 export function extractCurativosAssertives(instruction: string): CurativosAssertive[] {
   const normalized = normalizeCurativosInstruction(instruction);
   const re = /([IVX]+)\s*[-–]\s*([^\n]+)/gi;
   const raw: { roman: string; text: string }[] = [];
   let match: RegExpExecArray | null;
-  while ((match = re.exec(instruction)) !== null) {
+  while ((match = re.exec(normalized)) !== null) {
     raw.push({ roman: match[1].toUpperCase(), text: match[2].trim() });
   }
-  return raw.slice(0, 4).map((item) => ({ ...item, isTrue: false }));
+  const fromRoman = raw.slice(0, 4).map((item) => ({ ...item, isTrue: false }));
+  if (fromRoman.length >= 2) return fromRoman;
+
+  const fromParen = extractParenAssertives(instruction);
+  return fromParen.slice(0, 4).map((item) => ({ ...item, isTrue: false }));
 }
 
 /** Romanos presentes no texto da alternativa correta (ordem IV→I evita falso positivo). */
@@ -80,6 +109,12 @@ export function resolveCurativosAssertives(
 ): CurativosAssertive[] {
   const assertives = extractCurativosAssertives(instruction);
   if (assertives.length === 0) return assertives;
+
+  const vfFlags = parseVfFlagsFromGabarito(correctOption?.text ?? '', assertives.length);
+  if (vfFlags) {
+    return assertives.map((a, index) => ({ ...a, isTrue: vfFlags[index] ?? false }));
+  }
+
   const trueSet = parseTrueNumeralsFromGabarito(correctOption?.text ?? '', assertives);
   return assertives.map((a) => ({ ...a, isTrue: trueSet.has(a.roman) }));
 }
@@ -707,7 +742,9 @@ export function canBuildCurativosPremiumSlides(
   family: string,
 ): boolean {
   if (canBuildCurativosVfSlides(instruction)) return true;
-  return ['conceito', 'protocolo', 'text_fragment', 'legis', 'calc'].includes(family);
+  return ['conceito', 'protocolo', 'text_fragment', 'legis', 'calc', 'certo_errado', 'vf'].includes(
+    family,
+  );
 }
 
 export function buildCurativosPremiumSlidesForFamily(

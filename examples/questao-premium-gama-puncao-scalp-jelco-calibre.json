@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "banca": "GAMA",
+    "prova": "TEnf",
+    "orgao": "Pref Conc. dos Ouros",
+    "ano": "2024",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Punção Venosa e Cuidados com Cateteres",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-22",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "Dispositivos de acesso venoso periférico — scalp (butterfly) × jelco × calibre",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "cofen-puncao-dispositivos",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Procedimentos de enfermagem — punção venosa e dispositivos de infusão",
+        "year": 2024,
+        "covers": ["jelco", "scalp", "calibre", "indicação clínica"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Na prática de enfermagem, a escolha entre o cateter venoso scalp (butterfly) e o cateter venoso periférico (jelco) deve considerar o calibre do cateter e a indicação clínica. A alternativa que descreve corretamente as diferenças entre os cateteres scalp e jelco em relação aos calibres e suas indicações é:",
+    "options": [
+      {
+        "id": "A",
+        "text": "O cateter scalp, disponível em calibres maiores que o jelco, é indicado principalmente para infusões de grande volume e administração de medicamentos irritantes, devido à sua capacidade de suportar altas taxas de fluxo.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "O cateter jelco, disponível em uma variedade de calibres menores, é preferido para pacientes pediátricos e idosos, onde as veias são mais frágeis, enquanto o scalp é utilizado para punções venosas de curta duração em pacientes adultos.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "O cateter scalp é mais utilizado em procedimentos de curta duração ou coleta de sangue, disponível em calibres como 21G e 23G, enquanto o cateter jelco, com calibres que variam de 14G a 24G, é mais indicado para infusões prolongadas e administração de medicamentos intravenosos.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "O cateter jelco é exclusivo para uso em neonatos devido aos seus calibres reduzidos, enquanto o cateter scalp é preferido para administração de contrastes radiológicos devido ao seu design que facilita a punção em veias de difícil acesso.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Scalp × jelco — calibre e indicação",
+      "chip_label": "DISPOSITIVO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "items": [
+        {
+          "label": "Contexto",
+          "detail": "Escolha entre scalp (butterfly) e jelco conforme calibre do cateter e indicação clínica — a banca inverte calibres ou indicações.",
+          "icon": "Gauge"
+        },
+        {
+          "label": "Scalp (butterfly)",
+          "detail": "Curta duração, coleta de sangue, calibres menores (ex.: 21G e 23G) — veias delicadas e procedimentos breves.",
+          "icon": "Syringe"
+        },
+        {
+          "label": "Jelco (periférico)",
+          "detail": "Infusões prolongadas e medicamentos IV — faixa ampla de calibres (14G a 24G) conforme vaso e terapia.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Calibre (G)",
+          "detail": "Quanto maior o número G, menor o diâmetro — escolha pelo vaso e tipo de infusão (não inverta scalp × jelco).",
+          "icon": "Ruler"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra C — scalp curto/coleta (21–23G); jelco infusão prolongada (14–24G).",
+          "icon": "Target"
+        }
+      ],
+      "footer_rule": "Scalp = curto/coleta; jelco = infusão prolongada — calibre segue o vaso e a terapia."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Tabela — scalp × jelco × calibre",
+      "chip_label": "REGRA DE OURO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "content": "DISPOSITIVO: CALIBRE + INDICAÇÃO CLÍNICA — NÃO INVERTA SCALP × JELCO",
+      "rows": [
+        {
+          "label": "Scalp (butterfly)",
+          "value": "Curta duração, coleta de sangue — calibres menores (ex.: 21G, 23G).",
+          "emphasis": "success",
+          "badge": "ok"
+        },
+        {
+          "label": "Jelco (periférico)",
+          "value": "Infusão prolongada e medicamentos IV — calibres 14G a 24G.",
+          "emphasis": "success",
+          "badge": "ok"
+        },
+        {
+          "label": "Calibre (G)",
+          "value": "Número G maior = diâmetro menor — ajuste ao vaso e à velocidade da infusão.",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Pegadinha A",
+          "value": "Scalp não é calibre maior nem infusão de grande volume/irritantes.",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Pegadinha D",
+          "value": "Jelco não é exclusivo de neonato; scalp não é padrão para contraste radiológico.",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Gabarito",
+          "value": "Letra C",
+          "emphasis": "highlight",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Memorize indicação + faixa de calibre — a banca troca os papéis de scalp e jelco."
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — dispositivo e calibre",
+      "chip_label": "PASSO A PASSO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "reveal_mode": "tap",
+      "steps": [
+        "Ler o comando: diferença entre scalp e jelco em calibre e indicação clínica.",
+        "Fixar scalp: curta duração/coleta — calibres menores (21G, 23G).",
+        "Fixar jelco: infusão prolongada e medicamentos IV — calibres 14G a 24G.",
+        "Identificar gabarito: letra C.",
+        "Testar letra A: scalp com calibre maior e grande volume — eliminar (inverte indicação).",
+        "Testar letra B: generaliza pediatria/idoso sem a dupla correta scalp×jelco — eliminar.",
+        "Testar letra D: jelco exclusivo neonato e scalp para contraste — eliminar.",
+        "Marcar letra C.",
+        "Fixação: calibre segue vaso + terapia; não confunda dispositivo de curto prazo com infusão prolongada."
+      ],
+      "footer_rule": "Dispositivo → calibre → indicação → eliminar inversões da banca."
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas — scalp × jelco",
+      "chip_label": "ARMADILHAS DE PROVA",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "content": "PEGADINHAS — DISPOSITIVO E CALIBRE",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra A — Scalp calibre maior",
+          "detail": "A banca atribui ao scalp calibres maiores e infusão de grande volume — o scalp é para curta duração/coleta.",
+          "correct": "Gabarito letra C — scalp 21–23G para procedimentos breves; jelco 14–24G para infusão prolongada."
+        },
+        {
+          "label": "Letra B — Pediatria genérica",
+          "detail": "Mistura indicações sem a dupla correta de calibres scalp × jelco.",
+          "correct": "Gabarito letra C — associe dispositivo, calibre e tempo de infusão."
+        },
+        {
+          "label": "Letra D — Neonato × contraste",
+          "detail": "Jelco não é exclusivo de neonato; scalp não é escolha padrão para contraste radiológico.",
+          "correct": "Gabarito letra C — jelco para infusão IV prolongada; scalp para curto prazo/coleta."
+        }
+      ],
+      "footer_rule": "Calibre maior (menor número G) não define scalp — indicação clínica define o dispositivo."
+    }
+  ]
+}

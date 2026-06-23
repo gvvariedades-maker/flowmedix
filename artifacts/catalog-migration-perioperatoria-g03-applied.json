@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-06-23T18:02:54.501Z",
+  "lote": "perioperatoria-g03",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-processo-de-enfermagem-1780002834059-4",
+    "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-2",
+    "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-1",
+    "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2",
+    "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-3",
+    "igeduc-enfermagem-assistencia-perioperatoria-inclui-srpa-1780001148264-7",
+    "igeduc-geral-assistencia-perioperatoria-inclui-srpa-1777103789613-0",
+    "selecon-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1778712325916-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-assistencia-perioperatoria-inclui-srpa-1780001148264-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-geral-assistencia-perioperatoria-inclui-srpa-1777103789613-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

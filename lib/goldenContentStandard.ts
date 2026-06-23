@@ -112,6 +112,217 @@ export function hasQuestionSpecificity(text: string, q: QuestaoLike): boolean {
   return tokens.some((t) => lower.includes(t.toLowerCase()));
 }
 
+function normalizeText(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
+/** Concatena apenas os VALORES string dos slides (ignora chaves do JSON). */
+function collectSlideStrings(node: unknown): string {
+  if (typeof node === 'string') return node + ' ';
+  if (Array.isArray(node)) return node.map(collectSlideStrings).join('');
+  if (node && typeof node === 'object') {
+    return Object.values(node as Record<string, unknown>).map(collectSlideStrings).join('');
+  }
+  return '';
+}
+
+// Palavras vazias + ruído de comando de prova — não contam como "termo do enunciado".
+const PT_STOPWORDS = new Set([
+  'para', 'pela', 'pelo', 'pelas', 'pelos', 'como', 'sobre', 'entre', 'quando', 'onde',
+  'qual', 'quais', 'esta', 'este', 'esses', 'essas', 'aquele', 'aquela', 'isso',
+  'seu', 'sua', 'seus', 'suas', 'que', 'com', 'sem', 'dos', 'das', 'aos', 'nas', 'nos',
+  'uma', 'uns', 'umas', 'são', 'sao', 'ser', 'tem', 'têm', 'ter', 'foi', 'pode', 'deve',
+  'assinale', 'alternativa', 'alternativas', 'correta', 'correto', 'incorreta', 'incorreto',
+  'seguir', 'seguinte', 'seguintes', 'afirmativa', 'afirmativas', 'afirmacoes',
+  'considerando', 'respeito', 'analise', 'questao', 'questoes', 'abaixo', 'acima',
+  'apenas', 'todas', 'todos', 'cada', 'item', 'itens', 'opcao', 'opcoes', 'marque',
+  'relacao', 'seguranca', 'profissional', 'enfermagem', 'tecnico', 'paciente', 'usuario',
+]);
+
+/** Termos de conteúdo do enunciado (≥5 letras, sem stopword/numero), normalizados e únicos. */
+function extractInstructionTerms(instruction: string): string[] {
+  const seen = new Set<string>();
+  for (const raw of normalizeText(instruction).split(/[^a-z0-9]+/)) {
+    if (raw.length < 5) continue;
+    if (/^\d+$/.test(raw)) continue;
+    if (PT_STOPWORDS.has(raw)) continue;
+    seen.add(raw);
+  }
+  return [...seen];
+}
+
+// Claim numérico/normativo: dose, intervalo, percentual, tempo, escore.
+const NUMERIC_CLAIM_RE =
+  /\b\d+([.,]\d+)?\s*(%|mg|ml|mcg|µg|ug|ui|g\b|kg|h\b|hora|horas|dia|dias|semana|semanas|mes|meses|min|minuto|minutos|°c|graus|mmhg|bpm|gota|gotas|ampola|comprimido|ponto|pontos|escore)\b/i;
+
+function normalizeWords(text: string): string[] {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean);
+}
+
+/** Maior sequência contígua de palavras compartilhada entre dois textos (longest common substring em palavras). */
+function longestContiguousWordRun(a: string, b: string): number {
+  const wa = normalizeWords(a);
+  const wb = normalizeWords(b);
+  if (wa.length === 0 || wb.length === 0) return 0;
+  let best = 0;
+  let prev = new Array<number>(wb.length + 1).fill(0);
+  for (let i = 1; i <= wa.length; i++) {
+    const curr = new Array<number>(wb.length + 1).fill(0);
+    for (let j = 1; j <= wb.length; j++) {
+      if (wa[i - 1] === wb[j - 1]) {
+        curr[j] = prev[j - 1] + 1;
+        if (curr[j] > best) best = curr[j];
+      }
+    }
+    prev = curr;
+  }
+  return best;
+}
+
+const RECYCLE_SHINGLE = 8;
+
+/**
+ * logic_flow não pode ser uma lista das alternativas: detecta steps que copiam
+ * trecho longo (≥8 palavras contíguas) do texto de uma option. Falha quando a
+ * maioria dos steps é cópia — o vício "alternativa reembrulhada como passo".
+ */
+export function lintLogicFlowRecycling(slides: SlideLike[], q: QuestaoLike): GoldenContentLintIssue[] {
+  const logic = findSlide(slides, 'logic_flow');
+  const steps = Array.isArray(logic?.steps) ? (logic!.steps as unknown[]) : [];
+  const options = q.question_data?.options ?? [];
+  if (steps.length === 0 || options.length === 0) return [];
+
+  let recycled = 0;
+  for (const step of steps) {
+    if (typeof step !== 'string') continue;
+    const maxRun = Math.max(0, ...options.map((o) => longestContiguousWordRun(step, o.text)));
+    if (maxRun >= RECYCLE_SHINGLE) recycled++;
+  }
+
+  const ratio = recycled / steps.length;
+  if (recycled >= 2 && ratio >= 0.5) {
+    return [
+      {
+        code: 'logic_flow_recycled',
+        message: `logic_flow recicla o texto das alternativas (${recycled}/${steps.length} steps copiam ≥${RECYCLE_SHINGLE} palavras de uma option). Steps devem ensinar a estratégia de julgamento, não repetir a alternativa.`,
+        path: 'reverse_study_slides.logic_flow.steps',
+      },
+    ];
+  }
+  return [];
+}
+
+/** Extrai letra (A–E) de um texto: "letra X", ou letra isolada. */
+function letterFromValue(text: string): string | null {
+  const byLetra = text.match(/\bletra\s+([a-e])\b/i);
+  if (byLetra) return byLetra[1].toUpperCase();
+  const lone = text.match(/^\s*([a-e])\s*$/i);
+  return lone ? lone[1].toUpperCase() : null;
+}
+
+const GABARITO_LABEL_RE = /gabarito|combina[çc]/i;
+
+/**
+ * Letras de gabarito declaradas nos slides — lê apenas CAMPOS ESTRUTURADOS de
+ * declaração de resposta (danger_zone.correct "Gabarito letra X"; golden_rule.rows
+ * e concept_map.items com label de gabarito/combinação). Não varre JSON concatenado,
+ * evitando que "…gabarito." de um item case com o "Letra X" do distrator seguinte.
+ */
+function extractStatedGabaritoLetters(slides: SlideLike[]): Set<string> {
+  const found = new Set<string>();
+  for (const slide of slides) {
+    const type = slide.type;
+
+    if (type === 'danger_zone' && Array.isArray(slide.items)) {
+      for (const it of slide.items as Record<string, unknown>[]) {
+        const correct = String(it?.correct ?? '');
+        const m = correct.match(/\bgabarito\s+(?:letra\s+)?([a-e])\b/i);
+        if (m) found.add(m[1].toUpperCase());
+      }
+    }
+
+    if (type === 'golden_rule' && Array.isArray(slide.rows)) {
+      for (const row of slide.rows as Record<string, unknown>[]) {
+        if (GABARITO_LABEL_RE.test(String(row?.label ?? ''))) {
+          const letter = letterFromValue(String(row?.value ?? ''));
+          if (letter) found.add(letter);
+        }
+      }
+    }
+
+    if (type === 'concept_map' && Array.isArray(slide.items)) {
+      for (const it of slide.items as Record<string, unknown>[]) {
+        if (GABARITO_LABEL_RE.test(String(it?.label ?? ''))) {
+          const letter = letterFromValue(String(it?.detail ?? ''));
+          if (letter) found.add(letter);
+        }
+      }
+    }
+  }
+  return found;
+}
+
+/**
+ * Consistência de gabarito: a letra do gabarito citada nos slides deve ser a
+ * mesma marcada como is_correct. Evita o pior defeito — ensinar gabarito errado.
+ */
+export function lintGabaritoConsistency(slides: SlideLike[], q: QuestaoLike): GoldenContentLintIssue[] {
+  const correctId = correctOptionId(q);
+  if (!correctId) return [];
+  const stated = extractStatedGabaritoLetters(slides);
+  if (stated.size === 0) return [];
+
+  const wrong = [...stated].filter((l) => l !== correctId);
+  if (wrong.length > 0) {
+    return [
+      {
+        code: 'gabarito_mismatch',
+        message: `Slides citam gabarito letra ${wrong.join('/')} mas a alternativa correta (is_correct) é a letra ${correctId}.`,
+        path: 'reverse_study_slides',
+      },
+    ];
+  }
+  return [];
+}
+
+/**
+ * Claim↔source: se os slides afirmam número normativo (dose, intervalo, %, escore),
+ * deve existir ao menos uma source substantiva (com `covers`) — evita número
+ * "autoritativo" apoiado em fonte-placeholder. Não verifica veracidade (humano + tier A/B).
+ */
+export function lintClaimSourceBinding(
+  slides: SlideLike[],
+  meta: GoldenMetaExtensions | undefined,
+): GoldenContentLintIssue[] {
+  const text = collectSlideStrings(slides);
+  if (!NUMERIC_CLAIM_RE.test(text)) return [];
+
+  const sources = meta?.sources ?? [];
+  const hasSubstantive = sources.some(
+    (s) => Array.isArray(s.covers) && s.covers.some((c) => c && c.trim().length > 0),
+  );
+  if (!hasSubstantive) {
+    return [
+      {
+        code: 'numeric_claim_unsourced',
+        message:
+          'Slides afirmam número normativo (dose/intervalo/%/escore) sem source substantiva (sources[].covers). Vincule o claim a uma fonte oficial.',
+        path: 'meta.sources',
+      },
+    ];
+  }
+  return [];
+}
+
 export function lintBannedPhrases(slides: SlideLike[]): GoldenContentLintIssue[] {
   const text = slideText(slides);
   const issues: GoldenContentLintIssue[] = [];
@@ -264,16 +475,44 @@ function lintSlidePackage(slides: SlideLike[], q: QuestaoLike, family?: GoldenFa
     });
   }
 
+  // Especificidade SEMÂNTICA: ≥N termos de conteúdo da questão devem aparecer nos
+  // slides — não basta ecoar 1 palavra. Pool = enunciado + alternativa correta
+  // (em questões de enunciado curto, o vocabulário discriminante está na resposta).
+  const instruction = q.question_data?.instruction ?? '';
+  const correctText = q.question_data?.options?.find((o) => o.is_correct)?.text ?? '';
+  const terms = [...new Set([...extractInstructionTerms(instruction), ...extractInstructionTerms(correctText)])];
+  if (terms.length > 0) {
+    const slidesPlain = normalizeText(collectSlideStrings(slides));
+    const present = terms.filter((t) => slidesPlain.includes(t)).length;
+    const required = Math.min(3, terms.length);
+    if (present < required) {
+      issues.push({
+        code: 'specificity_semantic',
+        message: `Slides citam ${present}/${terms.length} termos da questão (mínimo ${required}). Engaje o vocabulário específico desta questão, não genérico.`,
+      });
+    }
+  }
+
   const correctId = correctOptionId(q);
   const wrongIds = optionIds(q).filter((id) => id !== correctId);
   if (family === 'vf' || family === 'conceito' || family === 'legis') {
-    if (wrongIds.length > 0) {
-      const mentionsWrong = wrongIds.some((id) => new RegExp(`\\b${id}\\b`, 'i').test(fullText));
-      if (!mentionsWrong && wrongIds.length >= 2) {
+    if (wrongIds.length >= 2) {
+      const covered = wrongIds.filter((id) => new RegExp(`\\b${id}\\b`, 'i').test(fullText)).length;
+      if (covered === 0) {
         issues.push({
           code: 'danger_distractors',
           message: 'logic_flow ou danger_zone devem citar ao menos um distrator (letra errada)',
         });
+      } else if (family === 'conceito' || family === 'legis') {
+        // Cobertura por letra só vale onde cada distrator é independente (conceito/legis).
+        // Em vf as letras são combinações de I–IV (ensinadas por afirmativa, não por letra).
+        const minCovered = Math.ceil(wrongIds.length / 2);
+        if (covered < minCovered) {
+          issues.push({
+            code: 'danger_distractors_coverage',
+            message: `Apenas ${covered}/${wrongIds.length} distratores (letras erradas) são ensinados — cubra ao menos ${minCovered}.`,
+          });
+        }
       }
     }
   }
@@ -308,6 +547,9 @@ export function lintGoldenContent(payload: unknown): GoldenContentLintIssue[] {
     ...lintGoldenMeta(meta),
     ...lintBannedPhrases(slides),
     ...lintSlidePackage(slides, q, meta.family),
+    ...lintGabaritoConsistency(slides, q),
+    ...lintLogicFlowRecycling(slides, q),
+    ...lintClaimSourceBinding(slides, meta),
     ...lintVitalsGoldenContent(payload),
   ];
 }

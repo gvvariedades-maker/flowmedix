@@ -1,0 +1,40 @@
+{
+  "lote": "dtrans-mescladas-g02",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-23",
+  "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+  "trilho": "A",
+  "catalog_total": 16,
+  "cluster": "Misto — vigilância dengue, conceitos, HPV, hantavirose, raiva, precaução",
+  "total": 10,
+  "status": "applied",
+  "anchor_slug": "vunesp-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1779564125198-1",
+  "golden_reference": "examples/questao-premium-vunesp-dtrans-raiva-profilaxia.json",
+  "guideline": "MS — Profilaxia raiva, HPV/IST, hantavirose, Manual Dengue, precauções ANVISA",
+  "slugs": [
+    "apice-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103554284-2",
+    "cev-urca-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103604185-7",
+    "cogeps-unioeste-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103583552-0",
+    "fepese-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776578199777-0",
+    "idecan-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778712315153-2",
+    "idecan-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778712315153-3",
+    "idecan-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1780066992037-7",
+    "idib-enfermagem-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1778934918280-0",
+    "igeduc-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103471372-5",
+    "vunesp-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1779564125198-1"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=dtrans-mescladas-g02 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/dtrans-mescladas-g02/questions/",
+    "2. Âncora: VUNESP raiva → examples/questao-premium-vunesp-dtrans-raiva-profilaxia.json",
+    "3. npm run validate:goldens -- --lote=dtrans-mescladas-g02 --strict",
+    "4. Laboratório + player amostra",
+    "5. npm run catalog:apply-lote -- --lote=dtrans-mescladas-g02 --dry-run",
+    "6. npm run catalog:apply-lote -- --lote=dtrans-mescladas-g02 --apply"
+  ],
+  "next_lote": null,
+  "completes_catalog": true,
+  "paired_with": "dtrans-mescladas-g01",
+  "notes": "Completa catálogo (16/16) junto com dtrans-mescladas-g01. meta.subtopico canônico em todas."
+}

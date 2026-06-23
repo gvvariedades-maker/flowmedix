@@ -1,0 +1,33 @@
+{
+  "lote": "cme-g05",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-23",
+  "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+  "cluster": "Cauda longa — preparo leftovers + indicadores + infraestrutura",
+  "total": 9,
+  "status": "validated",
+  "anchor_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-1",
+  "golden_reference": "examples/questao-premium-idecan-cme-indicador-quimico-classe1.json",
+  "guideline": "lib/guidelines/cme.ts (Anvisa RDC 15/2012)",
+  "slugs": [
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-5",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-7",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-8",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-1",
+    "idib-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778934918280-9",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-9",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-4",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-7",
+    "quadrix-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-0"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=cme-g05 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/cme-g05/questions/",
+    "2. npm run validate:goldens -- --lote=cme-g05 --strict",
+    "3. Laboratório + player (artifacts/cme-g05-links.html)",
+    "4. npm run catalog:apply-lote -- --lote=cme-g05 --apply"
+  ],
+  "prev_lote": "cme-g04 (validated 6/6)",
+  "next_lote": "CME completo — 35/35 handcraft · aplicar g01–g05"
+}

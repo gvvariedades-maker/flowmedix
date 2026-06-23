@@ -1,0 +1,21 @@
+{
+  "lote": "saude-mental-micro-01-raps",
+  "exported_at": "2026-06-23T17:14:43.624Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968207422-7",
+      "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-8",
+      "igeduc-enfermagem-dependencia-quimica-1778967935713-3",
+      "igeduc-enfermagem-saude-mental-1780001362784-4",
+      "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-2"
+    ]
+  },
+  "slugs": [
+    "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968207422-7",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-8",
+    "igeduc-enfermagem-dependencia-quimica-1778967935713-3",
+    "igeduc-enfermagem-saude-mental-1780001362784-4",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-2"
+  ]
+}

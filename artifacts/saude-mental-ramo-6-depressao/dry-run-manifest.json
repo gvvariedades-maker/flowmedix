@@ -1,0 +1,92 @@
+{
+  "generated_at": "2026-06-23T00:00:00.000Z",
+  "mode": "dry-run",
+  "ramo_id": "SM-6",
+  "pedagogical_cluster": "Depressão / epidemiologia",
+  "subtopico": "Saúde Mental",
+  "lote": "saude-mental-ramo-6-depressao",
+  "builder": "upgradePremiumSaudeMental",
+  "has_dedicated_builder": false,
+  "golden_reference": "questao-premium-vunesp-saude-mental-depressao-epidemiologia.json",
+  "force": false,
+  "danger_only": false,
+  "total": 5,
+  "would_upgrade": 5,
+  "would_skip": 0,
+  "would_fail": 0,
+  "issue_summary": {
+    "slide_topic_drift": 5,
+    "danger_duplicate_justifications": 5,
+    "stub_markers": 1,
+    "instruction_import_artifacts": 1
+  },
+  "family_counts": {
+    "conceito": 4,
+    "vf": 1
+  },
+  "results": [
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4",
+      "banca": "VUNESP",
+      "status": "would_upgrade",
+      "family": "conceito",
+      "golden_reference": "questao-premium-vunesp-saude-mental-depressao-epidemiologia.json",
+      "generic_before": true,
+      "premium_status_before": "stub",
+      "builder_topic": "Depressão / humor",
+      "changes": ["concept_map", "golden_rule", "logic_flow", "danger_zone"],
+      "detail": "dry-run: anchor golden — would replace hybrid/stub slides; no DB write"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0",
+      "banca": "FGV",
+      "status": "would_upgrade",
+      "family": "vf",
+      "golden_reference": "questao-premium-vunesp-saude-mental-depressao-epidemiologia.json",
+      "generic_before": true,
+      "premium_status_before": "hybrid_ok",
+      "builder_topic": "Depressão / humor",
+      "changes": ["concept_map", "golden_rule", "logic_flow", "danger_zone"],
+      "detail": "dry-run: V/F sono-humor-rendimento — builder vf branch when SM-6 profile active"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-semiologia-em-enfermagem-1779563486900-4",
+      "banca": "UNESC",
+      "status": "would_upgrade",
+      "family": "conceito",
+      "golden_reference": "questao-premium-vunesp-saude-mental-depressao-epidemiologia.json",
+      "generic_before": true,
+      "premium_status_before": "hybrid_ok",
+      "builder_topic": "Depressão / humor",
+      "changes": ["concept_map", "golden_rule", "logic_flow", "danger_zone"],
+      "detail": "dry-run: associação anedonia/ideação/fadiga — semiologia depressão"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563517223-0",
+      "banca": "AMEOSC",
+      "status": "would_upgrade",
+      "family": "conceito",
+      "golden_reference": "questao-premium-vunesp-saude-mental-depressao-epidemiologia.json",
+      "generic_before": true,
+      "premium_status_before": "hybrid_ok",
+      "builder_topic": "Depressão / humor",
+      "changes": ["concept_map", "golden_rule", "logic_flow", "danger_zone"],
+      "detail": "dry-run: GDS geriátrica — strip instruction artifact GAMA header when builder runs"
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-1",
+      "banca": "FAURGS",
+      "status": "would_upgrade",
+      "family": "conceito",
+      "golden_reference": "questao-premium-vunesp-saude-mental-depressao-epidemiologia.json",
+      "generic_before": true,
+      "premium_status_before": "hybrid_ok",
+      "builder_topic": "Depressão / humor",
+      "changes": ["concept_map", "golden_rule", "logic_flow", "danger_zone"],
+      "detail": "dry-run: drift risk (delirium vs depressão) — flag for re-cluster after SM-6 apply",
+      "warnings": ["slide_topic_drift_candidate"]
+    }
+  ],
+  "applied_slugs": [],
+  "note": "Phase 2 dry-run only — upgradePremiumSaudeMental.ts not yet wired; no conteudo_json writes"
+}

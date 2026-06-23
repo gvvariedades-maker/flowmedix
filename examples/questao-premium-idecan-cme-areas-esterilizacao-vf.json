@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "banca": "IDECAN",
+    "prova": "TEnf",
+    "orgao": "Hosp Univ",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+  },
+  "question_data": {
+    "instruction": "Sobre a Central de Material e Esterilização (CME), analise as afirmativas.\n\nI - A área suja recebe o material contaminado; a área limpa processa, embala e esteriliza; a área estéril armazena e distribui.\nII - Indicadores químicos internos de pacote confirmam exposição ao processo de esterilização naquele ciclo.\nIII - Material estéril pode ser armazenado indefinidamente sem prazo de validade, desde que a embalagem esteja íntegra.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "CME — fluxo físico",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "items": [
+        { "label": "Área suja", "detail": "Recepção do contaminado — fluxo unidirecional começa aqui.", "icon": "ArrowRight" },
+        { "label": "Área limpa", "detail": "Processamento, embalagem e esterilização.", "icon": "Package" },
+        { "label": "Área estéril", "detail": "Armazenamento e distribuição com controle de validade.", "icon": "Archive" },
+        { "label": "Indicador químico", "detail": "Confirma exposição ao ciclo — interno ao pacote.", "icon": "TestTube" }
+      ],
+      "footer_rule": "Fluxo suja → limpa → estéril + validade do material"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "CME — regras de prova",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "content": "3 ÁREAS",
+      "rows": [
+        { "label": "Fluxo físico", "value": "Suja → limpa → estéril", "badge": "hot", "emphasis": "highlight" },
+        { "label": "Indicador interno", "value": "Confirma exposição no ciclo", "badge": "ok" },
+        { "label": "Validade infinita", "value": "Falso — há prazo mesmo com embalagem íntegra", "emphasis": "alert", "badge": "warn" },
+        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+      ],
+      "footer_rule": "III ignora validade do material estéril — erro recorrente"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "steps": [
+        "I: divisão suja/limpa/estéril → verdadeira.",
+        "II: indicador químico interno → verdadeira.",
+        "III: armazenar sem validade → falsa.",
+        "Letra B.",
+        "Fixação: íntegro não significa eterno — conferir data de validade."
+      ],
+      "footer_rule": "CME = fluxo + indicador + validade"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "content": "PEGADINHAS — CME",
+      "items": [
+        { "label": "Validade eterna", "detail": "Embalagem íntegra ainda tem prazo institucional.", "correct": "Material estéril tem validade definida." },
+        { "label": "Inverter áreas", "detail": "Fluxo reverso contamina estoque.", "correct": "Suja → limpa → estéril." },
+        { "label": "Indicador = esterilidade absoluta", "detail": "Indicador confirma exposição ao processo no ciclo.", "correct": "II está correta no papel do indicador químico interno." }
+      ],
+      "footer_rule": "Validade e fluxo unidirecional são os dois temas mais cobrados"
+    }
+  ]
+}

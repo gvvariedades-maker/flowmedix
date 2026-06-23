@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-06-23T17:15:35.731Z",
+  "lote": "perioperatoria-g04",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-3",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 1026
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-4",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 1027
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103837493-0",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 1052
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-4",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1654
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-centro-cirurgico-1778712325916-6",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1656
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-enfermagem-em-centro-cirurgico-1777103887798-2",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 1092
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563448133-7",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 3063
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003137298-9",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 4340
+    }
+  ]
+}

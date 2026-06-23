@@ -1,0 +1,28 @@
+{
+  "exported_at": "2026-06-23T00:41:30.531Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-09-tail",
+  "total": 3,
+  "entries": [
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-6",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 2882
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778712165781-3",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1548
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6",
+      "titulo_aula": "Punção Venosa e Cuidados com Cateteres",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 2872
+    }
+  ]
+}

@@ -164,12 +164,13 @@ describe('SimuladoResumoClient — sessões adaptativas', () => {
     jest.clearAllMocks();
   });
 
-  it('weekly: exibe badge missão e oculta botões de refazer', () => {
+  it('weekly: exibe título ordinal e oculta botões de refazer', () => {
     render(
       <SimuladoResumoClient
         session={weeklySession}
         resumo={baseResumo}
         questoes={questoesComErro}
+        weeklyOrdinal={2}
         weeklyEvolution={{
           has_previous: false,
           iso_week_anterior: null,
@@ -184,9 +185,10 @@ describe('SimuladoResumoClient — sessões adaptativas', () => {
     );
 
     expect(screen.getByText(/Missão da semana/i)).toBeInTheDocument();
-    expect(screen.getByText(/Semana 25/)).toBeInTheDocument();
-    expect(screen.getByText(/Foco principal:/)).toBeInTheDocument();
-    expect(screen.getByText('Farmacologia')).toBeInTheDocument();
+    expect(screen.getAllByText(/2º simulado semanal/).length).toBeGreaterThan(0);
+    expect(screen.queryByText(/Foco principal:/)).not.toBeInTheDocument();
+    expect(screen.queryByText('Farmacologia')).not.toBeInTheDocument();
+    expect(screen.queryByText(/Semana 25/)).not.toBeInTheDocument();
     expect(screen.getByText(/Primeira missão/)).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /Refazer/i })).not.toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Voltar à vitrine' })).toHaveAttribute(

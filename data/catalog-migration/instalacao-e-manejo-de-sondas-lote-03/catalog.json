@@ -1,11 +1,11 @@
 {
-  "exported_at": "2026-06-10T03:53:59.222Z",
+  "exported_at": "2026-06-19T13:54:57.881Z",
   "lote": "instalacao-e-manejo-de-sondas-lote-03",
   "total": 50,
   "entries": [
     {
       "modulo_slug": "ieses-enfermagem-instalacao-e-manejo-de-sondas-1777102719125-0",
-      "titulo_aula": "Instalação e Manejo de Sondas",
+      "titulo_aula": "Infecções no Contexto da Biossegurança",
       "modulo_nome": "Enfermagem",
       "banca": "IESES",
       "avant_codigo": 650
@@ -299,7 +299,7 @@
     },
     {
       "modulo_slug": "selecon-enfermagem-instalacao-e-manejo-de-sondas-1776056502149-3",
-      "titulo_aula": "Instalação e Manejo de Sondas",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
       "modulo_nome": "Enfermagem",
       "banca": "SELECON",
       "avant_codigo": 468

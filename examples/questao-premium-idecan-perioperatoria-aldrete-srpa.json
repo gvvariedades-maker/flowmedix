@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "banca": "IDECAN",
+    "prova": "TEnf (Campina Gde)",
+    "orgao": "Pref Campina Gde",
+    "ano": "2021",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "Protocolos de recuperação pós-anestésica — Índice de Aldrete e Kroulik",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "aldrete-kroulik-1970",
+        "tier": "B",
+        "issuer": "Literatura de enfermagem perioperatória",
+        "title": "Índice de Aldrete e Kroulik — critérios de alta da SRPA",
+        "year": 2005,
+        "covers": ["escala de recuperação", "alta da SRPA", "pontuação mínima"]
+      },
+      {
+        "id": "anvisa-rdc-7-2010",
+        "tier": "A",
+        "issuer": "ANVISA",
+        "title": "RDC nº 7/2010 — Boas práticas",
+        "year": 2010,
+        "covers": ["monitorização pós-anestésica", "segurança do paciente"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Na Sala de Recuperação Pós-anestésica (SRPA), desde a admissão até o momento da alta, os pacientes permanecerão monitorizados e avaliados clinicamente quanto aos sinais vitais entre outras observações pertinentes. Assinale a alternativa correta que contempla uma escala/instrumento para fins de registro do paciente que é admitido na SRPA.",
+    "options": [
+      { "id": "A", "text": "Escala de Elpo.", "is_correct": false },
+      { "id": "B", "text": "Escala de Coma de Glasgow.", "is_correct": false },
+      { "id": "C", "text": "Escala de Braden.", "is_correct": false },
+      { "id": "D", "text": "Escala de Aldrete e Kroulik.", "is_correct": true }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "SRPA — escala de alta",
+      "chip_label": "ALDRETE",
+      "meta": { "topico": "Enfermagem", "subtopico": "Assistência Perioperatória (Inclui SRPA)" },
+      "items": [
+        {
+          "label": "Função da SRPA",
+          "detail": "Monitorizar da admissão até alta segura — registro sistemático do estado de recuperação.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Aldrete e Kroulik",
+          "detail": "Índice clássico de recuperação pós-anestésica — atividade, respiração, circulação, consciência, saturação.",
+          "icon": "ClipboardList"
+        },
+        {
+          "label": "Glasgow",
+          "detail": "Avalia nível de consciência em TCE/coma — não é escala padrão de alta da SRPA.",
+          "icon": "Brain"
+        },
+        {
+          "label": "Braden",
+          "detail": "Risco de lesão por pressão — outro contexto (leito prolongado).",
+          "icon": "Bed"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "D — Escala de Aldrete e Kroulik.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Alta da SRPA = Aldrete/Kroulik, não Glasgow nem Braden"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Referência — escalas na SRPA",
+      "chip_label": "REGRA DE OURO",
+      "meta": { "topico": "Enfermagem", "subtopico": "Assistência Perioperatória (Inclui SRPA)" },
+      "content": "ALTA DA SRPA = ALDRETE E KROULIK",
+      "rows": [
+        { "label": "Aldrete/Kroulik", "value": "Recuperação pós-anestésica — admissão e alta", "badge": "hot", "emphasis": "highlight" },
+        { "label": "Glasgow", "value": "Consciência em trauma — não alta SRPA", "badge": "warn" },
+        { "label": "Braden", "value": "LPPU — pele e pressão", "badge": "warn" },
+        { "label": "Pontuação", "value": "Geralmente ≥8–10 para alta segura (protocolo local)", "badge": "ok" },
+        { "label": "Gabarito", "value": "Letra D", "badge": "hot" }
+      ],
+      "footer_rule": "Pergunta de escala na SRPA → Aldrete na maioria das bancas"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Eliminar distratoras de escala",
+      "chip_label": "PASSO A PASSO",
+      "meta": { "topico": "Enfermagem", "subtopico": "Assistência Perioperatória (Inclui SRPA)" },
+      "reveal_mode": "tap",
+      "steps": [
+        "Comando pede escala para registro na admissão/alta da SRPA.",
+        "Eliminar Glasgow — consciência em trauma, não recuperação anestésica.",
+        "Eliminar Braden — lesão por pressão.",
+        "Eliminar Elpo — distrator sem vínculo com SRPA.",
+        "Confirmar Aldrete e Kroulik — padrão de recuperação pós-anestésica.",
+        "Marcar D.",
+        "Fixação: SRPA + escala = Aldrete/Kroulik."
+      ],
+      "footer_rule": "Associe cada escala ao contexto clínico correto"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Confundir escalas",
+      "chip_label": "ARMADILHAS",
+      "meta": { "topico": "Enfermagem", "subtopico": "Assistência Perioperatória (Inclui SRPA)" },
+      "content": "PEGADINHAS — ESCALAS NA SRPA",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra B — Glasgow",
+          "detail": "Escala de Coma de Glasgow — trauma e rebaixamento de consciência.",
+          "correct": "Gabarito D — Aldrete/Kroulik avalia recuperação da anestesia."
+        },
+        {
+          "label": "Letra C — Braden",
+          "detail": "Escala de Braden — risco de lesão por pressão no leito.",
+          "correct": "Gabarito D — na SRPA o foco é reversão anestésica, não LPPU."
+        },
+        {
+          "label": "Letra A — Elpo",
+          "detail": "Nome inventado ou escala de outro contexto — distrator clássico.",
+          "correct": "Gabarito D — Aldrete e Kroulik é o índice cobrado."
+        }
+      ],
+      "footer_rule": "Não troque escala de SRPA por escala de UTI ou pele"
+    }
+  ]
+}

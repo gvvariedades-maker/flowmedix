@@ -11,6 +11,10 @@ import {
   correctOptionId,
   type ValidatedQuestao,
 } from '@/lib/catalogMigration/validatePayload';
+import {
+  formatPremiumGateIssues,
+  premiumGateErrors,
+} from '@/lib/catalogMigration/premiumGate';
 
 export type ApplyLoteItem = {
   modulo_slug: string;
@@ -21,6 +25,8 @@ export type ApplyLoteOptions = {
   dryRun: boolean;
   strictGabarito: boolean;
   allowInsert: boolean;
+  /** Bloqueia escrita de questões com conteúdo/visual genérico (default: true). */
+  premiumGate?: boolean;
 };
 
 export type ApplyLoteRowResult = {
@@ -38,8 +44,24 @@ export async function applyLoteToSupabase(
   const results: ApplyLoteRowResult[] = [];
   const appliedSlugs: string[] = [];
 
+  const premiumGate = options.premiumGate !== false;
+
   for (const item of items) {
     const { modulo_slug: slug, payload } = item;
+
+    if (premiumGate) {
+      const gateErrors = premiumGateErrors(payload);
+      if (gateErrors.length > 0) {
+        results.push({
+          modulo_slug: slug,
+          status: 'failed',
+          mode: 'update',
+          detail: `gate premium: ${formatPremiumGateIssues(gateErrors)}`,
+        });
+        continue;
+      }
+    }
+
     const conteudoJson = buildConteudoJson(payload, slug);
     const instruction = payload.question_data.instruction;
     const contentHash = await generateContentHash(instruction);

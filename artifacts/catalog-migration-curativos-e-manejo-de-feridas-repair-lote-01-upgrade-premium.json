@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-06-20T12:15:59.757Z",
+  "lote": "curativos-e-manejo-de-feridas-repair-lote-01",
+  "mode": "write",
+  "force": true,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 13,
+  "upgraded": 13,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "certo_errado": 9,
+    "conceito": 3,
+    "text_fragment": 1
+  },
+  "results": [
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-1",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-2",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-3",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-4",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-5",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-1",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "furb-enfermagem-urgencias-e-emergencias-1777104012755-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-2",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-3",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011859940-3",
+      "status": "upgraded",
+      "family": "text_fragment",
+      "golden_reference": "questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-4",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-curativos-lpp-prevencao-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    }
+  ]
+}

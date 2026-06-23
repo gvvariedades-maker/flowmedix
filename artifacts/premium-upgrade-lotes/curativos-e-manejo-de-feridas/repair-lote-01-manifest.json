@@ -1,0 +1,29 @@
+{
+  "lote": "curativos-e-manejo-de-feridas-repair-lote-01",
+  "generated_at": "2026-06-20T11:54:54.683Z",
+  "source": "premium-needs-upgrade-supabase",
+  "subtopico": "Curativos e Manejo de Feridas",
+  "lote_prefix": "curativos-e-manejo-de-feridas",
+  "batch": 1,
+  "has_dedicated_builder": true,
+  "builder": "upgradePremiumCurativos",
+  "issue_summary": {
+    "molde_golden_rule_sem_rows": 12,
+    "stub_markers": 2
+  },
+  "slugs": [
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-1",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-2",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-3",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-4",
+    "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-5",
+    "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-1",
+    "furb-enfermagem-urgencias-e-emergencias-1777104012755-5",
+    "idecan-enfermagem-feridas-e-queimaduras-1778712409051-1",
+    "idecan-enfermagem-feridas-e-queimaduras-1778712409051-2",
+    "idecan-enfermagem-feridas-e-queimaduras-1778712409051-3",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011859940-3",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-4",
+    "selecon-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-2"
+  ]
+}

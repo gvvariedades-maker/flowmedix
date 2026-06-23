@@ -1,0 +1,741 @@
+{
+  "generated_at": "2026-06-22T16:26:38.672Z",
+  "counts_source": "modulos_estudo",
+  "summary": {
+    "canonical_subtopicos": 41,
+    "with_guideline": 41,
+    "without_guideline": 0,
+    "guideline_tables": 36,
+    "total_entries_all_tables": 1057,
+    "total_questions_mapped": 5069,
+    "low_coverage_count": 0
+  },
+  "tables": [
+    {
+      "id": "sv-adulto-referencia",
+      "snapshot": "Referência MS/SBP — adulto e pediátrico",
+      "issuer": "Ministério da Saúde / SBP",
+      "year": 2024,
+      "entries": 75
+    },
+    {
+      "id": "urgencias-rcp-sbv-ms",
+      "snapshot": "Protocolo SBV/RCP — MS SAMU 192",
+      "issuer": "Ministério da Saúde",
+      "year": 2014,
+      "entries": 55
+    },
+    {
+      "id": "pni-calendario-2025",
+      "snapshot": "PNI Calendário 2025",
+      "issuer": "Ministério da Saúde",
+      "year": 2025,
+      "entries": 48
+    },
+    {
+      "id": "sm-prenatal-baixo-risco-ms",
+      "snapshot": "Caderno AB 32 — Pré-natal baixo risco",
+      "issuer": "Ministério da Saúde",
+      "year": 2012,
+      "entries": 45
+    },
+    {
+      "id": "pni-2025-intervalos",
+      "snapshot": "PNI / Manual MS 2025",
+      "issuer": "Ministério da Saúde",
+      "year": 2025,
+      "entries": 42
+    },
+    {
+      "id": "cuidados-admin-cofen",
+      "snapshot": "5/9 certos — administração segura",
+      "issuer": "COFEN / ANVISA",
+      "year": 2024,
+      "entries": 40
+    },
+    {
+      "id": "calc-equivalencias-br",
+      "snapshot": "Equivalências gts/mL e infusão — padrão BR",
+      "issuer": "COFEN / referência técnica enfermagem",
+      "year": 2021,
+      "entries": 35
+    },
+    {
+      "id": "oxigenoterapia-dispositivos-ms",
+      "snapshot": "Oxigenoterapia — dispositivos, fluxo e FiO₂",
+      "issuer": "Ministério da Saúde",
+      "year": 2021,
+      "entries": 35
+    },
+    {
+      "id": "coleta-exames-sbpc-ml",
+      "snapshot": "Coleta venosa — SBPC/ML + MS",
+      "issuer": "SBPC/ML (tier B) / MS",
+      "year": 2010,
+      "entries": 35
+    },
+    {
+      "id": "curativos-lpp-npuap",
+      "snapshot": "LPP, estágios e coberturas",
+      "issuer": "NPUAP/COFEN",
+      "year": 2016,
+      "entries": 35
+    },
+    {
+      "id": "sondas-tecnica-cofen",
+      "snapshot": "SNG, SVD e manejo de sondas",
+      "issuer": "COFEN",
+      "year": 2020,
+      "entries": 35
+    },
+    {
+      "id": "sae-cofen-358",
+      "snapshot": "SAE — etapas e registros (COFEN 358/2009)",
+      "issuer": "COFEN",
+      "year": 2009,
+      "entries": 35
+    },
+    {
+      "id": "atencao-basica-pnab",
+      "snapshot": "PNAB — princípios e atributos da APS",
+      "issuer": "Ministério da Saúde",
+      "year": 2017,
+      "entries": 35
+    },
+    {
+      "id": "farmaco-adme-anvisa",
+      "snapshot": "ADME e farmacodinâmica — conceitos-base",
+      "issuer": "Anvisa / referência técnica",
+      "year": 2022,
+      "entries": 30
+    },
+    {
+      "id": "ists-prevencao-ms",
+      "snapshot": "IST — rotas de risco e prevenção MS",
+      "issuer": "Ministério da Saúde",
+      "year": 2022,
+      "entries": 30
+    },
+    {
+      "id": "biosseguranca-anvisa",
+      "snapshot": "Cadeia de infecção, EPI e precauções",
+      "issuer": "Anvisa / Ministério da Saúde",
+      "year": 2017,
+      "entries": 30
+    },
+    {
+      "id": "perioperatorio-cirurgia-segura",
+      "snapshot": "Cirurgia segura — checklist e SRPA",
+      "issuer": "OMS / COFEN",
+      "year": 2017,
+      "entries": 30
+    },
+    {
+      "id": "promocao-saude-sus",
+      "snapshot": "Lei 8.080 — composição e princípios do SUS",
+      "issuer": "Presidência da República",
+      "year": 1990,
+      "entries": 30
+    },
+    {
+      "id": "cme-anvisa-rdc15",
+      "snapshot": "CME — áreas, indicadores e validade",
+      "issuer": "Anvisa",
+      "year": 2012,
+      "entries": 28
+    },
+    {
+      "id": "parasitarias-zoonoses-ms",
+      "snapshot": "Dengue e zoonoses — vetor e controle",
+      "issuer": "Ministério da Saúde",
+      "year": 2024,
+      "entries": 28
+    },
+    {
+      "id": "saude-mental-ms",
+      "snapshot": "Saúde mental — acolhimento e risco suicida",
+      "issuer": "Ministério da Saúde",
+      "year": 2021,
+      "entries": 25
+    },
+    {
+      "id": "enfermagem-trabalho-nr32",
+      "snapshot": "NR-32 — segurança em serviços de saúde",
+      "issuer": "Ministério do Trabalho / MS",
+      "year": 2022,
+      "entries": 25
+    },
+    {
+      "id": "saude-adolescente-ms",
+      "snapshot": "Adolescente — escuta, sigilo, violência e vacinação",
+      "issuer": "Ministério da Saúde",
+      "year": 2021,
+      "entries": 25
+    },
+    {
+      "id": "anatomia-terminologia",
+      "snapshot": "Pares de sinônimos anatômicos",
+      "issuer": "Referência acadêmica",
+      "year": 2020,
+      "entries": 25
+    },
+    {
+      "id": "historia-enfermagem-cofen",
+      "snapshot": "Nightingale, COFEN e ética profissional",
+      "issuer": "COFEN",
+      "year": 2024,
+      "entries": 22
+    },
+    {
+      "id": "tuberculose-ms",
+      "snapshot": "TB — notificação, BAAR e precauções",
+      "issuer": "Ministério da Saúde",
+      "year": 2019,
+      "entries": 20
+    },
+    {
+      "id": "saude-crianca-ms",
+      "snapshot": "Aleitamento e alimentação — Caderneta MS",
+      "issuer": "Ministério da Saúde",
+      "year": 2024,
+      "entries": 18
+    },
+    {
+      "id": "vias-administracao-cofen",
+      "snapshot": "Vias IM, SC, EV — absorção e técnica",
+      "issuer": "COFEN",
+      "year": 2017,
+      "entries": 18
+    },
+    {
+      "id": "epidemiologia-ms",
+      "snapshot": "Vigilância, indicadores e notificação",
+      "issuer": "Ministério da Saúde",
+      "year": 2019,
+      "entries": 18
+    },
+    {
+      "id": "puncao-cateter-anvisa",
+      "snapshot": "Acesso venoso, bundle CVC e manutenção",
+      "issuer": "Anvisa / COFEN",
+      "year": 2021,
+      "entries": 17
+    },
+    {
+      "id": "doencas-virais-ms",
+      "snapshot": "Vigilância viral — notificação e vacinação",
+      "issuer": "Ministério da Saúde",
+      "year": 2024,
+      "entries": 15
+    },
+    {
+      "id": "respiratorio-cronico-ms",
+      "snapshot": "Asma e DPOC — diferenciação e O₂",
+      "issuer": "Ministério da Saúde / SBPT",
+      "year": 2021,
+      "entries": 15
+    },
+    {
+      "id": "feridas-queimaduras-ms",
+      "snapshot": "Queimaduras — graus e sinais clínicos",
+      "issuer": "Ministério da Saúde",
+      "year": 2021,
+      "entries": 15
+    },
+    {
+      "id": "procedimentos-diversos-assepsia",
+      "snapshot": "Assepsia, antissepsia e higiene das mãos",
+      "issuer": "Anvisa / OMS",
+      "year": 2017,
+      "entries": 15
+    },
+    {
+      "id": "mobilizacao-posicionamento",
+      "snapshot": "Decúbito, transferência e posições",
+      "issuer": "COFEN",
+      "year": 2020,
+      "entries": 14
+    },
+    {
+      "id": "fisiologia-homeostase",
+      "snapshot": "Homeostase e parâmetros fisiológicos adulto",
+      "issuer": "Referência clínica / MS",
+      "year": 2024,
+      "entries": 14
+    }
+  ],
+  "by_subtopico": [
+    {
+      "subtopico": "Imunização",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "pni-2025-intervalos",
+        "pni-calendario-2025"
+      ],
+      "merged_entries": 90,
+      "question_count": 575,
+      "entries_per_100_questions": 15.65,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "sv-adulto-referencia"
+      ],
+      "merged_entries": 75,
+      "question_count": 482,
+      "entries_per_100_questions": 15.56,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "urgencias-rcp-sbv-ms"
+      ],
+      "merged_entries": 55,
+      "question_count": 348,
+      "entries_per_100_questions": 15.8,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Saúde da Mulher",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "sm-prenatal-baixo-risco-ms"
+      ],
+      "merged_entries": 45,
+      "question_count": 262,
+      "entries_per_100_questions": 17.18,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Vias de Administração",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "vias-administracao-cofen",
+        "cuidados-admin-cofen"
+      ],
+      "merged_entries": 58,
+      "question_count": 231,
+      "entries_per_100_questions": 25.11,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "epidemiologia-ms",
+        "pni-calendario-2025"
+      ],
+      "merged_entries": 66,
+      "question_count": 224,
+      "entries_per_100_questions": 29.46,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "cuidados-admin-cofen"
+      ],
+      "merged_entries": 40,
+      "question_count": 216,
+      "entries_per_100_questions": 18.52,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "oxigenoterapia-dispositivos-ms"
+      ],
+      "merged_entries": 35,
+      "question_count": 172,
+      "entries_per_100_questions": 20.35,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Atenção Básica / Saúde da Família",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "atencao-basica-pnab"
+      ],
+      "merged_entries": 35,
+      "question_count": 170,
+      "entries_per_100_questions": 20.59,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Instalação e Manejo de Sondas",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "sondas-tecnica-cofen"
+      ],
+      "merged_entries": 35,
+      "question_count": 169,
+      "entries_per_100_questions": 20.71,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Coleta de Exames Laboratoriais",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "coleta-exames-sbpc-ml"
+      ],
+      "merged_entries": 35,
+      "question_count": 159,
+      "entries_per_100_questions": 22.01,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "doencas-virais-ms",
+        "pni-calendario-2025"
+      ],
+      "merged_entries": 63,
+      "question_count": 135,
+      "entries_per_100_questions": 46.67,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Processo de Enfermagem",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "sae-cofen-358"
+      ],
+      "merged_entries": 35,
+      "question_count": 134,
+      "entries_per_100_questions": 26.12,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "promocao-saude-sus"
+      ],
+      "merged_entries": 30,
+      "question_count": 124,
+      "entries_per_100_questions": 24.19,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Curativos e Manejo de Feridas",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "curativos-lpp-npuap"
+      ],
+      "merged_entries": 35,
+      "question_count": 122,
+      "entries_per_100_questions": 28.69,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Enfermagem em Centro Cirúrgico",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "perioperatorio-cirurgia-segura"
+      ],
+      "merged_entries": 30,
+      "question_count": 122,
+      "entries_per_100_questions": 24.59,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Procedimentos Diversos",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "procedimentos-diversos-assepsia",
+        "biosseguranca-anvisa"
+      ],
+      "merged_entries": 45,
+      "question_count": 118,
+      "entries_per_100_questions": 38.14,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "puncao-cateter-anvisa",
+        "coleta-exames-sbpc-ml"
+      ],
+      "merged_entries": 52,
+      "question_count": 116,
+      "entries_per_100_questions": 44.83,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "calc-equivalencias-br"
+      ],
+      "merged_entries": 35,
+      "question_count": 114,
+      "entries_per_100_questions": 30.7,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Noções de Anatomia",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "anatomia-terminologia"
+      ],
+      "merged_entries": 25,
+      "question_count": 103,
+      "entries_per_100_questions": 24.27,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Mobilização e Posicionamento do Paciente",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "mobilizacao-posicionamento",
+        "curativos-lpp-npuap"
+      ],
+      "merged_entries": 49,
+      "question_count": 91,
+      "entries_per_100_questions": 53.85,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "biosseguranca-anvisa"
+      ],
+      "merged_entries": 30,
+      "question_count": 91,
+      "entries_per_100_questions": 32.97,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Noções de Fisiologia",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "fisiologia-homeostase",
+        "sv-adulto-referencia"
+      ],
+      "merged_entries": 89,
+      "question_count": 89,
+      "entries_per_100_questions": 100,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Saúde da Criança",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "saude-crianca-ms",
+        "sv-adulto-referencia"
+      ],
+      "merged_entries": 93,
+      "question_count": 81,
+      "entries_per_100_questions": 114.81,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "ists-prevencao-ms"
+      ],
+      "merged_entries": 30,
+      "question_count": 76,
+      "entries_per_100_questions": 39.47,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "biosseguranca-anvisa"
+      ],
+      "merged_entries": 30,
+      "question_count": 71,
+      "entries_per_100_questions": 42.25,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "perioperatorio-cirurgia-segura"
+      ],
+      "merged_entries": 30,
+      "question_count": 68,
+      "entries_per_100_questions": 44.12,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Doenças Parasitárias e Zoonoses",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "parasitarias-zoonoses-ms"
+      ],
+      "merged_entries": 28,
+      "question_count": 62,
+      "entries_per_100_questions": 45.16,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Infecções no Contexto da Biossegurança",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "biosseguranca-anvisa"
+      ],
+      "merged_entries": 30,
+      "question_count": 54,
+      "entries_per_100_questions": 55.56,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "tuberculose-ms",
+        "biosseguranca-anvisa"
+      ],
+      "merged_entries": 50,
+      "question_count": 51,
+      "entries_per_100_questions": 98.04,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Enfermagem do Trabalho",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "enfermagem-trabalho-nr32"
+      ],
+      "merged_entries": 25,
+      "question_count": 48,
+      "entries_per_100_questions": 52.08,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "saude-mental-ms"
+      ],
+      "merged_entries": 25,
+      "question_count": 37,
+      "entries_per_100_questions": 67.57,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "cme-anvisa-rdc15"
+      ],
+      "merged_entries": 28,
+      "question_count": 35,
+      "entries_per_100_questions": 80,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Feridas e Queimaduras",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "feridas-queimaduras-ms",
+        "curativos-lpp-npuap"
+      ],
+      "merged_entries": 50,
+      "question_count": 26,
+      "entries_per_100_questions": 192.31,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "farmaco-adme-anvisa"
+      ],
+      "merged_entries": 30,
+      "question_count": 25,
+      "entries_per_100_questions": 120,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "História da Enfermagem",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "historia-enfermagem-cofen"
+      ],
+      "merged_entries": 22,
+      "question_count": 18,
+      "entries_per_100_questions": 122.22,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "cme-anvisa-rdc15"
+      ],
+      "merged_entries": 28,
+      "question_count": 18,
+      "entries_per_100_questions": 155.56,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Saúde do Adolescente",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "saude-adolescente-ms"
+      ],
+      "merged_entries": 25,
+      "question_count": 16,
+      "entries_per_100_questions": 156.25,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "respiratorio-cronico-ms",
+        "oxigenoterapia-dispositivos-ms"
+      ],
+      "merged_entries": 50,
+      "question_count": 10,
+      "entries_per_100_questions": 500,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "doencas-virais-ms",
+        "tuberculose-ms",
+        "parasitarias-zoonoses-ms",
+        "ists-prevencao-ms",
+        "biosseguranca-anvisa"
+      ],
+      "merged_entries": 123,
+      "question_count": 6,
+      "entries_per_100_questions": 2050,
+      "coverage_band": "adequado"
+    },
+    {
+      "subtopico": "Questões Mescladas e Outras Doenças Agudas",
+      "has_guideline": true,
+      "guideline_table_ids": [
+        "urgencias-rcp-sbv-ms",
+        "doencas-virais-ms",
+        "respiratorio-cronico-ms",
+        "feridas-queimaduras-ms"
+      ],
+      "merged_entries": 100,
+      "question_count": 0,
+      "entries_per_100_questions": null,
+      "coverage_band": "sem_guideline"
+    }
+  ],
+  "without_guideline": [],
+  "low_coverage_priority": []
+}

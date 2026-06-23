@@ -111,6 +111,8 @@ export type SimuladoSessionDetailResponse = {
   questoes: SimuladoQuestaoItem[];
   incentivos?: SimuladoConclusaoIncentivos | null;
   weekly_evolution?: WeeklyMissionEvolution | null;
+  /** Posição entre missões semanais geradas (1-based); só exibição aluno. */
+  weekly_ordinal?: number | null;
 };
 
 export type SimuladoCreateSessionResponse = {
@@ -327,6 +329,8 @@ export type WeeklySimuladoMission = {
   total_questoes: number | null;
   respondidas: number | null;
   percentual_acerto: number | null;
+  /** Posição entre missões semanais geradas (1-based); só exibição aluno. */
+  weekly_ordinal?: number | null;
 };
 
 export type WeeklySimuladoCurrentResponse = {

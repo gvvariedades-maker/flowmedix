@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "banca": "VUNESP",
+    "prova": "Tec Enf",
+    "orgao": "Enfermagem",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde Mental",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "MS/OMS — determinantes biopsicossociais da saúde mental",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-determinantes-saude-mental",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Política de Saúde Mental — determinantes biopsicossociais",
+        "year": 2021,
+        "covers": ["modelo biopsicossocial", "estigma", "fatores sociais"]
+      },
+      {
+        "id": "oms-saude-mental",
+        "tier": "A",
+        "issuer": "Organização Mundial da Saúde",
+        "title": "Saúde mental: fortalecer a resposta efetiva",
+        "year": 2022,
+        "covers": ["determinantes sociais", "sofrimento psíquico"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Em sua rotina de trabalho na Atenção Primária, o técnico de enfermagem realiza acolhimento de um usuário que relata insônia, irritabilidade e estresse relacionado ao ambiente de trabalho. Após ouvir suas queixas e repassar as informações à enfermeira responsável, o técnico reconhece que diferentes fatores podem influenciar o sofrimento mental. De acordo com o Ministério da Saúde, a saúde mental deve ser compreendida como resultado de múltiplos fatores. Essa concepção considera que a saúde mental",
+    "options": [
+      {
+        "id": "A",
+        "text": "está relacionada a fatores biológicos como genética e neuroquímica.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "é responsabilidade individual, cabendo à pessoa conduzir seu tratamento.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "depende do equilíbrio psicológico e emocional do indivíduo.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "apresenta estigma que se torna um facilitador à recuperação e reabilitação da pessoa",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "resulta da interação entre fatores biopsicossociais.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Saúde mental — modelo biopsicossocial",
+      "chip_label": "CONCEITO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "items": [
+        {
+          "label": "ENQUADRAMENTO",
+          "detail": "Insônia e estresse laboral — MS define saúde mental como resultado de múltiplos fatores interagentes.",
+          "icon": "Brain"
+        },
+        {
+          "label": "Biológico",
+          "detail": "Genética e neuroquímica influenciam, mas sozinhas não explicam o modelo do MS (A incompleto).",
+          "icon": "Dna"
+        },
+        {
+          "label": "Psicossocial",
+          "detail": "Trabalho, família, estigma e determinantes sociais — eixo da política de saúde mental.",
+          "icon": "Users"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra E — interação biopsicossocial (bio + psico + social).",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Saúde mental ≠ só biologia nem culpa individual"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Modelo biopsicossocial — MS",
+      "chip_label": "REGRA DE OURO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "content": "BIO + PSICO + SOCIAL = SAÚDE MENTAL",
+      "rows": [
+        {
+          "label": "Biológico",
+          "value": "Genética, neuroquímica — um dos eixos, não o único",
+          "badge": "ok"
+        },
+        {
+          "label": "Psicológico",
+          "value": "Emoções, coping, vulnerabilidade individual",
+          "badge": "ok"
+        },
+        {
+          "label": "Social",
+          "value": "Trabalho, família, estigma, rede de apoio",
+          "badge": "ok"
+        },
+        {
+          "label": "Gabarito",
+          "value": "Letra E — interação entre fatores",
+          "emphasis": "success",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Estigma dificulta recuperação — nunca facilita (D falsa)"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "steps": [
+        "Comando: como o MS compreende saúde mental (múltiplos fatores).",
+        "Eliminar A: só biologia — reducionismo biológico.",
+        "Eliminar B: responsabilidade individual — culpabiliza o usuário.",
+        "Eliminar C: só equilíbrio emocional — ignora determinantes sociais.",
+        "Eliminar D: estigma como facilitador — estigma prejudica, não ajuda.",
+        "Marcar E: interação biopsicossocial.",
+        "Fixação: política de saúde mental brasileira é biopsicossocial."
+      ],
+      "footer_rule": "Trabalho, família e estigma contam tanto quanto neuroquímica"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "content": "PEGADINHAS — MODELO BIOPSICOSSOCIAL",
+      "items": [
+        {
+          "label": "Letra A — só biologia",
+          "detail": "Parece científica, mas é reducionista.",
+          "correct": "Gabarito letra E — biologia é um eixo; MS exige interação biopsicossocial."
+        },
+        {
+          "label": "Letra B — culpa individual",
+          "detail": "Moraliza o sofrimento psíquico.",
+          "correct": "Gabarito letra E — saúde mental é construção coletiva e social, não só escolha pessoal."
+        },
+        {
+          "label": "Letra D — estigma facilitador",
+          "detail": "Inverte o efeito do preconceito.",
+          "correct": "Gabarito letra E — estigma é barreira ao cuidado, não facilitador de recuperação."
+        }
+      ],
+      "footer_rule": "MS: sofrimento mental tem causas múltiplas e interligadas"
+    }
+  ]
+}

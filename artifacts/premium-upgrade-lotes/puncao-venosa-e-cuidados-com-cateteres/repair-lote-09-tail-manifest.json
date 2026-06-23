@@ -1,0 +1,20 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-09-tail",
+  "generated_at": "2026-06-23T00:40:00.000Z",
+  "source": "cluster-puncao-topics",
+  "subtopico": "Punção Venosa e Cuidados com Cateteres",
+  "lote_prefix": "puncao-venosa-e-cuidados-com-cateteres",
+  "batch": 9,
+  "pedagogical_cluster": "Cauda final — 3 slugs com drift residual",
+  "has_dedicated_builder": true,
+  "builder": "upgradePremiumPuncao",
+  "issue_summary": {
+    "slide_topic_drift": 3,
+    "instruction_import_artifacts": 0
+  },
+  "slugs": [
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-6",
+    "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778712165781-3",
+    "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6"
+  ]
+}

@@ -26,6 +26,8 @@ export function resolveDangerZoneRevealMode(
     layoutVariant === 'dressing-choice-arena' ||
     layoutVariant === 'vitals-classify-arena' ||
     layoutVariant === 'pni-trap-chips' ||
+    layoutVariant === 'ist-trap-chips' ||
+    layoutVariant === 'adolescent-consent-gate' ||
     dangerZoneHasCompareItems(items);
   return isCompare ? 'tap' : 'auto';
 }

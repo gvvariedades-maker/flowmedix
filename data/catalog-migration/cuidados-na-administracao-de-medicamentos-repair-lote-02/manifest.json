@@ -1,0 +1,26 @@
+{
+  "lote": "cuidados-na-administracao-de-medicamentos-repair-lote-02",
+  "exported_at": "2026-06-22T17:19:16.379Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "artifacts/premium-upgrade-lotes/cuidados-na-administracao-de-medicamentos/repair-lote-02-manifest.json"
+  },
+  "slugs": [
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-1",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-3",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-0",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-5",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780005311822-9",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006480333-9",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-9",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780003637054-1",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-3",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010573104-3",
+    "selecon-enfermagem-processo-de-enfermagem-1780009310940-3",
+    "unifil-enfermagem-processo-de-enfermagem-1780004452857-5",
+    "univali-enfermagem-processo-de-enfermagem-1780010594524-6",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-0",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-5",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001742844-6"
+  ]
+}

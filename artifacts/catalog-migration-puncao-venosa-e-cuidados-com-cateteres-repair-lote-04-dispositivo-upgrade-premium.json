@@ -1,0 +1,160 @@
+{
+  "generated_at": "2026-06-22T22:57:07.914Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-04-dispositivo",
+  "mode": "write",
+  "force": true,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 11,
+  "upgraded": 11,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "conceito": 11
+  },
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-gama-puncao-scalp-jelco-calibre.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-gama-puncao-scalp-jelco-calibre.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-gama-puncao-scalp-jelco-calibre.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-gama-puncao-scalp-jelco-calibre.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-gama-puncao-scalp-jelco-calibre.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-gama-puncao-scalp-jelco-calibre.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-gama-puncao-scalp-jelco-calibre.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-gama-puncao-scalp-jelco-calibre.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-gama-puncao-scalp-jelco-calibre.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-gama-puncao-scalp-jelco-calibre.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fepese-anotacao-enfermagem-sae.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "lote": "doencas-parasitarias-e-zoonoses-repair-lote-01",
+  "generated_at": "2026-06-20T11:54:54.683Z",
+  "source": "premium-needs-upgrade-supabase",
+  "subtopico": "Doenças Parasitárias e Zoonoses",
+  "lote_prefix": "doencas-parasitarias-e-zoonoses",
+  "batch": 1,
+  "has_dedicated_builder": false,
+  "builder": null,
+  "issue_summary": {
+    "stub_markers": 12
+  },
+  "slugs": [
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-7",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-8",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-4",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-2",
+    "ibade-geral-urgencias-e-emergencias-1777103590498-1",
+    "ibade-geral-urgencias-e-emergencias-1777103590498-2",
+    "ibade-geral-urgencias-e-emergencias-1777103590498-4",
+    "igecap-enfermagem-processo-de-enfermagem-1780004452857-0",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-5",
+    "legalle-enfermagem-processo-de-enfermagem-1780010594524-2",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-8",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104038968-8"
+  ]
+}

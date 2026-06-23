@@ -1,11 +1,9 @@
 {
   "lote": "vias-de-administracao-lote-05",
-  "exported_at": "2026-06-09T11:15:17.631Z",
+  "exported_at": "2026-06-19T15:17:10.912Z",
   "source": "supabase",
   "filters": {
-    "subtopico": "Vias de Administração",
-    "limit": 50,
-    "exclude_count": 219
+    "from_manifest": "data/catalog-migration/vias-de-administracao-lote-05/manifest.json"
   },
   "slugs": [
     "ivin-enfermagem-vias-de-administracao-1778968666352-1",

@@ -1,0 +1,26 @@
+{
+  "lote": "farmacodinamica-e-farmacocinetica-repair-lote-01",
+  "generated_at": "2026-06-20T11:54:54.683Z",
+  "source": "premium-needs-upgrade-supabase",
+  "subtopico": "Farmacodinâmica e Farmacocinética",
+  "lote_prefix": "farmacodinamica-e-farmacocinetica",
+  "batch": 1,
+  "has_dedicated_builder": false,
+  "builder": null,
+  "issue_summary": {
+    "stub_markers": 11
+  },
+  "slugs": [
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-3",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-0",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-2",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006976703-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011956256-8",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003950945-2",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-9",
+    "ivin-enfermagem-urgencias-e-emergencias-1777104048047-8",
+    "ivin-enfermagem-urgencias-e-emergencias-1777104056718-3",
+    "quadrix-enfermagem-urgencias-e-emergencias-1777103981770-5",
+    "selecon-enfermagem-urgencias-e-emergencias-1777104048047-0"
+  ]
+}

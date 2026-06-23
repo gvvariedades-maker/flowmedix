@@ -10,6 +10,11 @@ import { GoldenRuleLabPrepLensBoard } from './GoldenRuleLabPrepLensBoard';
 import { GoldenRuleDressingMatchMatrix } from './GoldenRuleDressingMatchMatrix';
 import { GoldenRulePniIntervalMatrix } from './GoldenRulePniIntervalMatrix';
 import { GoldenRuleVitalsReferenceBoard } from './GoldenRuleVitalsReferenceBoard';
+import { GoldenRuleIstReferenceBoard } from './GoldenRuleIstReferenceBoard';
+import { GoldenRuleSaeReferenceBoard } from './GoldenRuleSaeReferenceBoard';
+import { GoldenRuleSondaMeasurementBoard } from './GoldenRuleSondaMeasurementBoard';
+import { GoldenRuleViaReferenceBoard } from './GoldenRuleViaReferenceBoard';
+import { GoldenRuleAdolescentSigiloSpectrum } from './GoldenRuleAdolescentSigiloSpectrum';
 import { GoldenRuleHeroCard } from '../core/GoldenRuleHeroCard';
 import { getGoldenRuleTitleSizeClass } from '@/lib/slides/goldenRuleTypography';
 
@@ -22,6 +27,10 @@ export interface GoldenRuleRow {
   emphasis?: GoldenRuleRowEmphasis;
   badge?: GoldenRuleRowBadge;
   sv_kind?: 'pa' | 'temp' | 'fc' | 'fr' | 'spo2' | 'meta';
+  /** Dica de prova no painel soft-lens (prioridade sobre inferência do molde). */
+  exam_hint?: string;
+  /** Linha de fixação no painel soft-lens. */
+  fixation?: string;
 }
 
 interface GoldenRuleProps {
@@ -272,9 +281,39 @@ export const GoldenRule = ({
     );
   }
 
+  if (variant === 'ist-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleIstReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'sae-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleSaeReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'sonda-measurement-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleSondaMeasurementBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'via-reference-board' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleViaReferenceBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
+  if (variant === 'adolescent-sigilo-spectrum' && rows && rows.length > 0) {
+    return (
+      <GoldenRuleAdolescentSigiloSpectrum content={content} rows={rows} theme={theme} footerRule={footerRule} />
+    );
+  }
+
   if (variant === 'soft-lens-board' && rows && rows.length > 0) {
     return (
-      <GoldenRuleSoftLensBoard content={content} rows={rows} theme={theme} footerRule={footerRule} />
+      <GoldenRuleSoftLensBoard content={content} rows={rows} theme={theme} footerRule={footerRule} hintProfile="calc" />
     );
   }
 

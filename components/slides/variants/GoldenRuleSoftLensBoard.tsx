@@ -5,6 +5,11 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { GoldenRuleRow, GoldenRuleRowBadge, GoldenRuleRowEmphasis } from './GoldenRule';
+import {
+  resolveSoftLensExamHint,
+  resolveSoftLensFixation,
+  type SoftLensHintProfile,
+} from '@/lib/slides/softLensHints';
 
 type LensTone = {
   pill: string;
@@ -62,12 +67,28 @@ const BADGE_LABEL: Record<GoldenRuleRowBadge, string> = {
   info: 'Contexto',
 };
 
+function isAnswerSummaryRow(row: GoldenRuleRow): boolean {
+  return /^(resposta final|gabarito|combinação)/i.test(row.label.trim());
+}
+
+function lensRowsOnly(rows: GoldenRuleRow[]): GoldenRuleRow[] {
+  return rows.filter((row) => !isAnswerSummaryRow(row));
+}
+
 function defaultSelectedIndex(rows: GoldenRuleRow[]): number {
-  const successIdx = rows.findIndex((r) => r.emphasis === 'success');
-  if (successIdx >= 0) return successIdx;
-  const highlightIdx = rows.findIndex((r) => r.emphasis === 'highlight');
-  if (highlightIdx >= 0) return highlightIdx;
-  return 0;
+  const lenses = lensRowsOnly(rows);
+  if (lenses.length === 0) return 0;
+
+  const successIdx = lenses.findIndex((r) => r.emphasis === 'success');
+  if (successIdx >= 0) return rows.indexOf(lenses[successIdx]!);
+
+  const alertIdx = lenses.findIndex((r) => r.emphasis === 'alert');
+  if (alertIdx >= 0) return rows.indexOf(lenses[alertIdx]!);
+
+  const highlightIdx = lenses.findIndex((r) => r.emphasis === 'highlight');
+  if (highlightIdx >= 0) return rows.indexOf(lenses[highlightIdx]!);
+
+  return rows.indexOf(lenses[0]!);
 }
 
 interface GoldenRuleSoftLensBoardProps {
@@ -75,6 +96,8 @@ interface GoldenRuleSoftLensBoardProps {
   rows: GoldenRuleRow[];
   theme: ThemeColors;
   footerRule?: string;
+  /** Perfil de inferência quando row não traz exam_hint/fixation. */
+  hintProfile?: SoftLensHintProfile;
 }
 
 export function GoldenRuleSoftLensBoard({
@@ -82,6 +105,7 @@ export function GoldenRuleSoftLensBoard({
   rows,
   theme,
   footerRule,
+  hintProfile = 'none',
 }: GoldenRuleSoftLensBoardProps) {
   const reduceMotion = useReducedMotion();
   const [selected, setSelected] = useState(() => defaultSelectedIndex(rows));
@@ -90,6 +114,14 @@ export function GoldenRuleSoftLensBoard({
   const activeTone = TONE_BY_EMPHASIS[activeRow?.emphasis ?? 'default'];
 
   const title = content?.trim();
+  const answerRow = rows.find(isAnswerSummaryRow);
+  const gridRows = useMemo(
+    () =>
+      rows
+        .map((row, index) => ({ row, index }))
+        .filter(({ row }) => !isAnswerSummaryRow(row)),
+    [rows],
+  );
 
   const mnemonic = useMemo(() => {
     if (!title) return null;
@@ -137,6 +169,22 @@ export function GoldenRuleSoftLensBoard({
           ) : null}
         </div>
 
+        {answerRow ? (
+          <div className="rounded-2xl border-2 border-violet-300/90 bg-gradient-to-br from-violet-100/90 via-fuchsia-50/80 to-white px-4 py-3 shadow-md">
+            <p className="font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-violet-800">
+              {answerRow.label}
+            </p>
+            <p className="mt-1 font-display text-lg font-black uppercase tracking-tight text-violet-950 md:text-xl">
+              {answerRow.value}
+            </p>
+            {answerRow.badge ? (
+              <span className="mt-2 inline-flex rounded-full bg-violet-200/80 px-2.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wide text-violet-900">
+                {BADGE_LABEL[answerRow.badge]}
+              </span>
+            ) : null}
+          </div>
+        ) : null}
+
         <div className="flex min-h-0 flex-1 flex-col gap-3">
           <AnimatePresence mode="wait">
             <motion.div
@@ -168,7 +216,7 @@ export function GoldenRuleSoftLensBoard({
                 </div>
 
                 <p className="font-body text-sm leading-relaxed text-slate-800 md:text-[15px]">
-                  {inferExamHint(activeRow)}
+                  {resolveSoftLensExamHint(activeRow, hintProfile)}
                 </p>
 
                 <div className={`rounded-xl border px-3 py-2.5 ${activeTone.panelInset}`}>
@@ -176,7 +224,7 @@ export function GoldenRuleSoftLensBoard({
                     Fixação de prova
                   </p>
                   <p className="mt-1 font-body text-sm font-medium leading-snug text-slate-800">
-                    {inferFixationLine(activeRow, selected, rows.length)}
+                    {resolveSoftLensFixation(activeRow, hintProfile, selected, rows.length)}
                   </p>
                 </div>
               </div>
@@ -192,7 +240,7 @@ export function GoldenRuleSoftLensBoard({
               role="tablist"
               aria-label="Referências de prova"
             >
-              {rows.map((row, index) => {
+              {gridRows.map(({ row, index }) => {
                 const tone = TONE_BY_EMPHASIS[row.emphasis ?? 'default'];
                 const isActive = selected === index;
                 return (
@@ -238,48 +286,4 @@ export function GoldenRuleSoftLensBoard({
       </div>
     </motion.div>
   );
-}
-
-function inferExamHint(row: GoldenRuleRow): string {
-  const text = `${row.label} ${row.value}`.toLowerCase();
-  if (/gabarito|letra b/.test(text)) {
-    return 'Esta linha é o núcleo do gabarito — a única equivalência que reproduz a constante padrão brasileira cobrada na questão.';
-  }
-  if (/letra a|10 ui/.test(text)) {
-    return 'Pegadinha clássica: mantém o nome U-100, mas troca 100 por 10 UI/mL. A banca testa se você decorou a concentração real.';
-  }
-  if (/letra c|35/.test(text)) {
-    return 'Valor inventado para confundir quem lembra “60” mas não a relação gota ↔ microgota (3).';
-  }
-  if (/letra d|10 micro/.test(text)) {
-    return 'Outro número “redondo” errado — macrogota equivale a 3 microgotas, não 10.';
-  }
-  if (/mnemônico|20-60-3/.test(text)) {
-    return 'Use este trio antes de qualquer conta de infusão: identifique o equipo e aplique a constante certa.';
-  }
-  if (/gts\/min|infusão/.test(text)) {
-    return 'Depois de decorar 20-60-3, toda conta de gts/min começa escolhendo macrogota (20) ou microgota (60).';
-  }
-  if (/20 gotas|macrogota/.test(text)) {
-    return 'Constante mais cobrada em equivalência pura — base do gabarito B nesta prova IDECAN.';
-  }
-  if (/60 micro/.test(text)) {
-    return 'Equipo de microgotas — três vezes mais gotas por mL que o macrogota.';
-  }
-  if (/3 micro/.test(text)) {
-    return 'Relação fixa: cada macrogota “vale” três microgotas em prova.';
-  }
-  if (/u-100|insulina/.test(text)) {
-    return 'Insulina padrão de mercado: 100 unidades por 1 mL — não confunda com seringa graduada em UI.';
-  }
-  return 'Relacione este valor com as alternativas A–D antes de marcar — equivalência errada elimina a letra na hora.';
-}
-
-function inferFixationLine(row: GoldenRuleRow, index: number, total: number): string {
-  const emphasis = row.emphasis ?? 'default';
-  if (emphasis === 'success') return 'Priorize esta linha na hora da prova — é o gabarito ou o critério decisivo.';
-  if (emphasis === 'alert') return 'Marque mentalmente como distrator — a banca repete este erro em outras questões.';
-  if (emphasis === 'highlight') return 'Decore primeiro — esta constante aparece em infusão e equivalência.';
-  if (index === total - 1) return 'Última lente: feche o raciocínio e volte ao enunciado com o trio na cabeça.';
-  return `Lente ${index + 1} de ${total} — avance só quando esta relação estiver automática.`;
 }

@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "banca": "IDECAN",
+    "prova": "Tec Enf",
+    "orgao": "Hospital Universitário",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "PCDT MS — Asma (corticoide inalatório controlador × broncodilatador de resgate)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pcdt-asma-corticoide-inalatorio",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo Clínico e Diretrizes Terapêuticas — Asma",
+        "year": 2021,
+        "url": "https://www.gov.br/saude/",
+        "covers": ["corticoide inalatório", "broncodilatador de curta ação", "controle da asma"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Um paciente de 34 anos com asma persistente leve relata usar salbutamol inalatório várias vezes ao dia e interromper o corticoide inalatório quando fica assintomático. Assinale a orientação de enfermagem alinhada ao tratamento de manutenção da asma.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Orientar que o broncodilatador de curta ação substitui o corticoide inalatório quando os sintomas cessam.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Reforçar o uso regular do corticoide inalatório prescrito, mesmo em períodos assintomáticos, e ensinar técnica inalatória com espaçador quando indicado.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Suspender o broncodilatador de curta ação, pois seu uso repetido indica falha terapêutica irreversível.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Ensinar o uso do corticoide inalatório somente durante a crise, associado a antibiótico de amplo espectro.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Substituir ambos os inaladores por oxigenoterapia domiciliar contínua para prevenir broncoespasmo.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Asma — controlador × resgate",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)"
+      },
+      "items": [
+        {
+          "label": "ENQUADRAMENTO",
+          "detail": "Paciente abusa de SABA e suspende corticoide — a prova separa medicamento controlador do resgate.",
+          "icon": "Target"
+        },
+        {
+          "label": "Corticoide inalatório",
+          "detail": "Controlador de base — uso regular reduz inflamação brônquica.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Broncodilatador SABA",
+          "detail": "Resgate na crise ou sintomas — não substitui o controlador.",
+          "icon": "Wind"
+        },
+        {
+          "label": "GABARITO — letra B",
+          "detail": "Manter corticoide + técnica inalatória com espaçador quando indicado.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Controlador diário; resgate sob demanda — funções distintas"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Asma — medicamentos por função",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)"
+      },
+      "content": "ASMA — CONTROLADOR × RESGATE",
+      "rows": [
+        { "label": "Corticoide inalatório", "value": "Controlador — uso regular", "badge": "ok" },
+        { "label": "Beta-2 de curta ação", "value": "Resgate na crise ou sintomas", "badge": "ok" },
+        { "label": "Suspender controlador", "value": "Erro — piora inflamação de base", "badge": "warn" },
+        { "label": "Espaçador valvulado", "value": "Melhora deposição pulmonar do spray", "badge": "ok" },
+        { "label": "Gabarito", "value": "Letra B", "emphasis": "success", "badge": "hot" }
+      ],
+      "footer_rule": "SABA repetido sem controlador = asma mal controlada"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)"
+      },
+      "steps": [
+        "Identificar padrão: abuso de resgate + suspensão do controlador.",
+        "Lembrar: corticoide inalatório é base do tratamento de manutenção.",
+        "SABA alivia broncoespasmo agudo — não trata inflamação crônica.",
+        "Descartar A (SABA não substitui controlador) e D (corticoide só na crise).",
+        "Descartar C (não suspender resgate sem médico) e E (O₂ domiciliar não é tratamento da asma).",
+        "Escolher B: reforçar controlador regular + técnica inalatória.",
+        "Marcar letra B.",
+        "Fixação: controlador diário; resgate sob demanda."
+      ],
+      "footer_rule": "Educação terapêutica: função de cada inalador"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)"
+      },
+      "content": "PEGADINHAS — INALADORES NA ASMA",
+      "items": [
+        {
+          "label": "Letra A — SABA substitui controlador",
+          "detail": "Parece lógico quando o paciente fica assintomático após resgate.",
+          "correct": "SABA é resgate; corticoide inalatório controla inflamação de base."
+        },
+        {
+          "label": "Letra C — suspender SABA",
+          "detail": "Abuso de resgate indica mau controle, mas suspensão unilateral é conduta médica.",
+          "correct": "Reforçar controlador e reavaliar plano — não cortar resgate por conta própria."
+        },
+        {
+          "label": "Letra D — corticoide só na crise",
+          "detail": "Confunde resgate com tratamento de manutenção.",
+          "correct": "Controlador é uso regular; antibiótico não é rotina na asma estável."
+        },
+        {
+          "label": "Letra E — O₂ domiciliar contínuo",
+          "detail": "Mistura asma com DPOC hipoxêmica crônica.",
+          "correct": "Asma estável não indica oxigenoterapia domiciliar profilática."
+        }
+      ],
+      "footer_rule": "Nunca ensinar suspender controlador quando assintomático"
+    }
+  ]
+}

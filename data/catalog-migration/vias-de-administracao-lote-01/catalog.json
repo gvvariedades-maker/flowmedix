@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-06-09T11:07:02.524Z",
+  "exported_at": "2026-06-19T15:15:40.343Z",
   "lote": "vias-de-administracao-lote-01",
   "total": 50,
   "entries": [
@@ -26,14 +26,14 @@
     },
     {
       "modulo_slug": "amauc-enfermagem-vias-de-administracao-1776056348175-0",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Procedimentos Diversos",
       "modulo_nome": "Enfermagem",
       "banca": "AMAUC",
       "avant_codigo": 367
     },
     {
       "modulo_slug": "amauc-enfermagem-vias-de-administracao-1776056374837-2",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Imunização",
       "modulo_nome": "Enfermagem",
       "banca": "AMAUC",
       "avant_codigo": 397
@@ -96,7 +96,7 @@
     },
     {
       "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056357082-4",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
       "modulo_nome": "Enfermagem",
       "banca": "AMEOSC",
       "avant_codigo": 380
@@ -110,7 +110,7 @@
     },
     {
       "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056366158-1",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Procedimentos Diversos",
       "modulo_nome": "Enfermagem",
       "banca": "AMEOSC",
       "avant_codigo": 386
@@ -159,7 +159,7 @@
     },
     {
       "modulo_slug": "atame-enfermagem-vias-de-administracao-1778968573722-0",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Saúde da Mulher",
       "modulo_nome": "Enfermagem",
       "banca": "ATAME",
       "avant_codigo": 1977
@@ -299,7 +299,7 @@
     },
     {
       "modulo_slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1776056401060-2",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
       "modulo_nome": "Enfermagem",
       "banca": "CEBRASPE (CESPE)",
       "avant_codigo": 421
@@ -313,7 +313,7 @@
     },
     {
       "modulo_slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1778968997293-7",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
       "modulo_nome": "Enfermagem",
       "banca": "CEBRASPE (CESPE)",
       "avant_codigo": 2110
@@ -327,14 +327,14 @@
     },
     {
       "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1778968906156-4",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Procedimentos Diversos",
       "modulo_nome": "Enfermagem",
       "banca": "CETREDE",
       "avant_codigo": 2081
     },
     {
       "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
       "modulo_nome": "Enfermagem",
       "banca": "CETREDE",
       "avant_codigo": 2106
@@ -348,7 +348,7 @@
     },
     {
       "modulo_slug": "cev-urca-enfermagem-vias-de-administracao-1776056427936-7",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Imunização",
       "modulo_nome": "Enfermagem",
       "banca": "CEV URCA",
       "avant_codigo": 454

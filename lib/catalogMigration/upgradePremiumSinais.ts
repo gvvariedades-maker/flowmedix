@@ -221,8 +221,11 @@ export function extractVitalsFromInstruction(instruction: string): VitalReading[
   const seen = new Set<VitalKind>();
 
   const paMatch =
-    text.match(/(?:pa|press[aã]o\s+arterial)\s*[:\s"']*(\d+)\s*[×xX]\s*(\d+)\s*mm\s*hg/i) ??
-    text.match(/(\d+)\s*[×xX]\s*(\d+)\s*mm\s*hg/i);
+    text.match(
+      /(?:pa|press[aã]o\s+arterial)(?:\s+de)?\s*[:\s="'«»]*(\d+)\s*[×xX/]\s*(\d+)\s*mm\s*hg/i,
+    ) ??
+    text.match(/pa\s*=\s*(\d+)\s*\/\s*(\d+)\s*mm\s*hg/i) ??
+    text.match(/(\d+)\s*[×xX/]\s*(\d+)\s*mm\s*hg/i);
   if (paMatch && !seen.has('pa')) {
     const sys = parseInt(paMatch[1], 10);
     const dia = parseInt(paMatch[2], 10);
@@ -239,8 +242,10 @@ export function extractVitalsFromInstruction(instruction: string): VitalReading[
   }
 
   const tempMatch =
-    text.match(/(?:temp(?:eratura)?(?:\s+axilar)?|axilar)\s*[:\s"']*(\d+[,.]?\d*)\s*°?\s*c/i) ??
-    text.match(/(\d+[,.]?\d*)\s*°c\s*(?:axilar|retal|oral)?/i);
+    text.match(
+      /(?:temp(?:eratura)?(?:\s+axilar)?|axilar|t)\s*[:\s="'«»=]*(\d+[,.]?\d*)\s*[°oº]?\s*c/i,
+    ) ??
+    text.match(/(\d+[,.]?\d*)\s*[°oº]c\s*(?:axilar|retal|oral)?/i);
   if (tempMatch && !seen.has('temp')) {
     const c = parseDecimal(tempMatch[1]);
     const classified = classifyTemp(c);
@@ -261,7 +266,9 @@ export function extractVitalsFromInstruction(instruction: string): VitalReading[
   }
 
   const fcMatch =
-    text.match(/(?:fc|frequ[eê]ncia\s+card[ií]aca|pulso)\s*[:\s"']*(\d+)\s*bpm/i) ??
+    text.match(
+      /(?:fc|frequ[eê]ncia\s+card[ií]aca|pulso(?:\s+apical)?|p)\s*[:\s="'«»=]*(\d+)\s*bpm/i,
+    ) ??
     (seen.has('fr') ? null : text.match(/\b(\d{2,3})\s*bpm\b/i));
   if (fcMatch && !seen.has('fc')) {
     const bpm = parseInt(fcMatch[1], 10);
@@ -278,7 +285,9 @@ export function extractVitalsFromInstruction(instruction: string): VitalReading[
   }
 
   const frMatch =
-    text.match(/(?:fr|frequ[eê]ncia\s+respirat[oó]ria)\s*[:\s"']*(\d+)\s*(?:mpm|irpm|mrpm)/i) ??
+    text.match(
+      /(?:fr|frequ[eê]ncia\s+respirat[oó]ria|respira[cç][aã]o|r)\s*[:\s="'«»=]*(\d+)\s*(?:mpm|irpm|mrpm)/i,
+    ) ??
     text.match(/\b(\d+)\s*(?:mpm|irpm|mrpm)\b/i);
   if (frMatch && !seen.has('fr')) {
     const irpm = parseInt(frMatch[1], 10);
@@ -527,6 +536,74 @@ function buildChoiceDangerItems(
   return items.slice(0, 10);
 }
 
+function buildScenarioConceptPads(instruction: string): { label: string; detail: string; icon: string; correct?: string }[] {
+  const pads: { label: string; detail: string; icon: string; correct?: string }[] = [];
+  if (/tontura|vertigem/i.test(instruction)) {
+    pads.push({
+      label: 'Tontura',
+      detail: 'Sintoma que exige reavaliação dos sinais vitais e comunicação à equipe.',
+      icon: 'AlertTriangle',
+      correct: 'Manter vigilância e acionar enfermeiro',
+    });
+  }
+  if (/pele fria|sudorese|palidez/i.test(instruction)) {
+    pads.push({
+      label: 'Pele fria / sudorese',
+      detail: 'Sinais de hipoperfusão ou instabilidade hemodinâmica.',
+      icon: 'Droplets',
+      correct: 'Investigar PA e comunicar alteração',
+    });
+  }
+  if (/p[oó]s[- ]?operat|p[oó]s operat/i.test(instruction)) {
+    pads.push({
+      label: 'Pós-operatório',
+      detail: 'Paciente em recuperação — alteração de SV exige conduta imediata.',
+      icon: 'Activity',
+      correct: 'Vigilância contínua e comunicação',
+    });
+  }
+  return pads;
+}
+
+function padConceptItemsToMinimum(
+  items: { label: string; detail: string; icon: string; correct?: string }[],
+  input: BuildSinaisSlidesInput,
+  correct: QuestionOption,
+  topic: string,
+  minimum = 3,
+) {
+  if (items.length >= minimum) return items;
+  const merged = [
+    ...items,
+    ...buildScenarioConceptPads(input.instruction),
+    ...buildGenericChoiceConceptItems(input, correct, topic),
+  ];
+  const seen = new Set<string>();
+  const unique = merged.filter((item) => {
+    const key = item.label.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  return unique.slice(0, 20);
+}
+
+function padLogicStepsToMinimum(steps: string[], minimum = 3): string[] {
+  if (steps.length >= minimum) return steps.slice(0, 15);
+  const padded = [...steps];
+  const fillers = [
+    'Cruzar sintomas relatados com os sinais vitais aferidos.',
+    'Priorizar segurança do paciente e comunicação à equipe de enfermagem.',
+    'Registrar achados e manter vigilância contínua.',
+  ];
+  let fillerIndex = 0;
+  while (padded.length < minimum && fillerIndex < fillers.length) {
+    padded.splice(Math.max(0, padded.length - 1), 0, fillers[fillerIndex]!);
+    fillerIndex++;
+  }
+  return padded.slice(0, 15);
+}
+
 function buildGenericChoiceConceptItems(
   input: BuildSinaisSlidesInput,
   correct: QuestionOption,
@@ -567,7 +644,7 @@ export function buildSinaisChoiceSlides(input: BuildSinaisSlidesInput): SlideRec
   const meta = slideMeta(input.topico, input.subtopico);
   const vitals = extractVitalsFromInstruction(input.instruction);
 
-  const conceptItems =
+  const conceptItems = padConceptItemsToMinimum(
     vitals.length > 0
       ? vitals.map((v) => ({
           label: conceptLabelForVital(v),
@@ -575,7 +652,11 @@ export function buildSinaisChoiceSlides(input: BuildSinaisSlidesInput): SlideRec
           icon: v.icon,
           correct: v.clinicalTerm,
         }))
-      : buildGenericChoiceConceptItems(input, correct, topic);
+      : buildGenericChoiceConceptItems(input, correct, topic),
+    input,
+    correct,
+    topic,
+  );
 
   const rows =
     vitals.length > 0
@@ -590,22 +671,16 @@ export function buildSinaisChoiceSlides(input: BuildSinaisSlidesInput): SlideRec
             : { emphasis: 'alert' as const, badge: 'warn' as const }),
         }));
 
-  const steps =
+  const steps = padLogicStepsToMinimum(
     vitals.length > 0
       ? buildVitalsLogicSteps(vitals, correct)
       : [
           `Ler o comando: ${truncate(input.instruction.replace(/\s+/g, ' '), 120)}.`,
           `Fixar o tema: ${topic.toLowerCase()}.`,
           `Identificar gabarito: letra ${correct.id} — ${truncate(correct.text, 100)}.`,
-          ...input.options
-            .filter((o) => !o.is_correct)
-            .map(
-              (opt) =>
-                `Testar letra ${opt.id}: ${truncate(opt.text, 90)} → eliminar (${truncate(inferSvOptionTrap(opt.text, vitals), 80)}).`,
-            ),
-          `Marcar letra ${correct.id}.`,
-          `Fixação: ${prof.logicFix}`,
-        ].slice(0, 15);
+          `Fixação: ${prof.logicFix}.`,
+        ],
+  );
 
   const dangerItems = buildChoiceDangerItems(input.options, correct, vitals);
 

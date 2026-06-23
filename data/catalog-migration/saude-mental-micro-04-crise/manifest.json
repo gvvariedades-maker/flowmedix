@@ -1,0 +1,23 @@
+{
+  "lote": "saude-mental-micro-04-crise",
+  "exported_at": "2026-06-23T17:31:08.838Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "ameosc-enfermagem-processo-de-enfermagem-1776056181857-3",
+      "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-8",
+      "fundatec-enfermagem-dependencia-quimica-1778967935713-7",
+      "ibade-enfermagem-processo-de-enfermagem-1780005128081-8",
+      "idecan-enfermagem-enfermagem-em-uti-1778712381105-8",
+      "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-1"
+    ]
+  },
+  "slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1776056181857-3",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-8",
+    "fundatec-enfermagem-dependencia-quimica-1778967935713-7",
+    "ibade-enfermagem-processo-de-enfermagem-1780005128081-8",
+    "idecan-enfermagem-enfermagem-em-uti-1778712381105-8",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-1"
+  ]
+}

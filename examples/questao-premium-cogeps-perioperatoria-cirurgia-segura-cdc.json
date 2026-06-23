@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "banca": "COGEPS UNIOESTE",
+    "prova": "AEnf (Campina L)",
+    "orgao": "Pref Campina Lagoa",
+    "ano": "2022",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "OMS Cirurgias Seguras; CDC — classificação de ferida cirúrgica",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "oms-cirurgias-seguras-2009",
+        "tier": "A",
+        "issuer": "OMS",
+        "title": "Cirurgias Seguras Salvam Vidas — manual OMS 2009",
+        "year": 2009,
+        "covers": ["prevenção ISC", "checklist cirúrgico", "classificação de ferida"]
+      },
+      {
+        "id": "cdc-ferida-cirurgica",
+        "tier": "A",
+        "issuer": "CDC",
+        "title": "Classificação de ferida cirúrgica (limpa, limpa-contaminada, contaminada, suja)",
+        "year": 2018,
+        "covers": ["trato GI", "apêndice", "vagina", "orofaringe"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Um dos objetivos elencados no Manual Cirurgias Seguras Salvam Vidas é: \"a equipe usará de maneira sistemática, métodos conhecidos para minimizar o risco de infecção do sítio cirúrgico\" (OMS, 2009, p. 87). Sobre a classificação pré-operatória da ferida dos Centros de Controle e Prevenção de Doenças, é CORRETO:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Feridas limpas são aquelas nas quais os tratos respiratório, alimentar, genital ou urinário são penetrados sob condições controladas e sem contaminação incomum. Especificamente, cirurgias envolvendo o trato biliar, apêndice, vagina e orofaringe são incluídas nesta categoria, contanto que nenhuma evidência de infecção ou de quebra importante na técnica seja encontrada.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Feridas limpas-contaminadas são aquelas nas quais os tratos respiratório, alimentar, genital ou urinário são penetrados sob condições controladas e sem contaminação incomum. Especificamente, cirurgias envolvendo o trato biliar, apêndice, vagina e orofaringe são incluídas nesta categoria, contanto que nenhuma evidência de infecção ou de quebra importante na técnica seja encontrada.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Feridas contaminadas são aquelas que incluem feridas traumáticas antigas com tecido desvitalizado ou aprisionado e as que envolvem infecção clínica existente ou vísceras perfuradas. Essa definição sugere que os microrganismos causadores de infecção pós-operatória estavam presentes no campo operatório antes da cirurgia.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Feridas Sujas ou Infectadas são aquelas que incluem feridas abertas, recentes, acidentais. Além disso, cirurgias com quebras importantes na técnica estéril (p.ex. massagem cardíaca aberta) ou exposição grosseira do trato gastrointestinal e incisões nas quais inflamação aguda, não purulenta seja encontrada são incluídas nesta categoria.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Classificação CDC da ferida",
+      "chip_label": "CDC",
+      "meta": { "topico": "Enfermagem", "subtopico": "Assistência Perioperatória (Inclui SRPA)" },
+      "items": [
+        {
+          "label": "Limpa",
+          "detail": "Sem abertura de trato — ex.: pele, mama, hernia sem víscera.",
+          "icon": "Sparkles"
+        },
+        {
+          "label": "Limpa-contaminada",
+          "detail": "Trato respiratório, GI, genital ou urinário sob controle — apêndice, bile, vagina, orofaringe.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Contaminada",
+          "detail": "Trauma antigo, tecido desvitalizado, infecção existente, víscera perfurada.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Sujas/infectadas",
+          "detail": "Ferida aberta recente, quebra estéril grave, GI exposto com inflamação.",
+          "icon": "Biohazard"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "B — limpa-contaminada (texto do CDC para tratos controlados).",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Abrir trato controlado = limpa-contaminada, não limpa"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Ferida CDC — mnemônico",
+      "chip_label": "REGRA DE OURO",
+      "meta": { "topico": "Enfermagem", "subtopico": "Assistência Perioperatória (Inclui SRPA)" },
+      "content": "LIMPA → LIMPA-CONTAMINADA → CONTAMINADA → SUJA",
+      "rows": [
+        { "label": "Limpa", "value": "Sem trato — técnica fechada", "badge": "ok" },
+        { "label": "Limpa-contaminada", "value": "Trato aberto controlado (apêndice, bile, vagina)", "badge": "hot", "emphasis": "highlight" },
+        { "label": "Contaminada", "value": "Infecção prévia, trauma, perfuração", "badge": "warn" },
+        { "label": "Sujas", "value": "Quebra estéril + inflamação aguda", "badge": "warn" },
+        { "label": "Gabarito", "value": "Letra B", "badge": "hot" }
+      ],
+      "footer_rule": "A e B diferem só no nome — trato controlado é limpa-contaminada"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Achar a definição exata",
+      "chip_label": "PASSO A PASSO",
+      "meta": { "topico": "Enfermagem", "subtopico": "Assistência Perioperatória (Inclui SRPA)" },
+      "reveal_mode": "tap",
+      "steps": [
+        "Enunciado cita OMS e classificação CDC pré-operatória.",
+        "A e B têm texto quase idêntico — diferença é o rótulo da categoria.",
+        "Trato respiratório/alimentar/genital/urinário controlado = limpa-contaminada (B).",
+        "C descreve contaminada (trauma, infecção prévia).",
+        "D descreve sujas/infectadas (quebra estéril, inflamação).",
+        "Marcar B.",
+        "Fixação: apêndice e orofaringe = limpa-contaminada."
+      ],
+      "footer_rule": "Texto idêntico com rótulo errado — banca troca limpa × limpa-contaminada"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Limpa vs limpa-contaminada",
+      "chip_label": "ARMADILHAS",
+      "meta": { "topico": "Enfermagem", "subtopico": "Assistência Perioperatória (Inclui SRPA)" },
+      "content": "PEGADINHAS — CLASSIFICAÇÃO CDC",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra A — ferida limpa",
+          "detail": "Mesmo texto de B, mas rotulado como limpa — erro clássico.",
+          "correct": "Gabarito B — penetração controlada de trato é limpa-contaminada."
+        },
+        {
+          "label": "Letra C — contaminada",
+          "detail": "Define trauma antigo, infecção existente ou perfuração.",
+          "correct": "Gabarito B — enunciado descreve trato controlado sem infecção."
+        },
+        {
+          "label": "Letra D — sujas/infectadas",
+          "detail": "Quebra estéril importante ou inflamação aguda não purulenta.",
+          "correct": "Gabarito B — condições controladas sem quebra técnica."
+        }
+      ],
+      "footer_rule": "Trato aberto controlado nunca é ferida limpa"
+    }
+  ]
+}

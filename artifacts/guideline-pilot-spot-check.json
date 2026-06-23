@@ -1,0 +1,394 @@
+{
+  "generated_at": "2026-06-22T17:28:53.075Z",
+  "base_url": "http://localhost:3000",
+  "per_subtopico": 8,
+  "premium_only": true,
+  "subtopicos": [
+    "Imunização",
+    "Verificação de Sinais Vitais",
+    "Urgências e Emergências",
+    "Saúde da Mulher",
+    "Cuidados na Administração de Medicamentos"
+  ],
+  "summary": {
+    "total": 40,
+    "ok": 40,
+    "fail": 0
+  },
+  "pool_sizes": {
+    "Imunização": 575,
+    "Verificação de Sinais Vitais": 482,
+    "Urgências e Emergências": 348,
+    "Saúde da Mulher": 262,
+    "Cuidados na Administração de Medicamentos": 216
+  },
+  "pool_total_with_4_slides": {
+    "Imunização": 575,
+    "Verificação de Sinais Vitais": 482,
+    "Urgências e Emergências": 348,
+    "Saúde da Mulher": 262,
+    "Cuidados na Administração de Medicamentos": 216
+  },
+  "results": [
+    {
+      "subtopico": "Imunização",
+      "slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+      "url": "http://localhost:3000/estudar/adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 90,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Imunização",
+      "slug": "cogeps-unioeste-enfermagem-imunizacao-1779564119665-5",
+      "url": "http://localhost:3000/estudar/cogeps-unioeste-enfermagem-imunizacao-1779564119665-5",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 90,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Imunização",
+      "slug": "fau-unicentro-enfermagem-imunizacao-1779563992006-4",
+      "url": "http://localhost:3000/estudar/fau-unicentro-enfermagem-imunizacao-1779563992006-4",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 90,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Imunização",
+      "slug": "funatec-enfermagem-imunizacao-1777103264001-6",
+      "url": "http://localhost:3000/estudar/funatec-enfermagem-imunizacao-1777103264001-6",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 90,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Imunização",
+      "slug": "ibfc-enfermagem-imunizacao-1779564074967-6",
+      "url": "http://localhost:3000/estudar/ibfc-enfermagem-imunizacao-1779564074967-6",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 90,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Imunização",
+      "slug": "inaz-do-para-enfermagem-imunizacao-1777103277533-7",
+      "url": "http://localhost:3000/estudar/inaz-do-para-enfermagem-imunizacao-1777103277533-7",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 90,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Imunização",
+      "slug": "ivin-enfermagem-imunizacao-1777103182944-4",
+      "url": "http://localhost:3000/estudar/ivin-enfermagem-imunizacao-1777103182944-4",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 90,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Imunização",
+      "slug": "unifil-enfermagem-imunizacao-1779564006577-9",
+      "url": "http://localhost:3000/estudar/unifil-enfermagem-imunizacao-1779564006577-9",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 90,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "slug": "adm-tec-enfermagem-semiologia-em-enfermagem-1779563486900-6",
+      "url": "http://localhost:3000/estudar/adm-tec-enfermagem-semiologia-em-enfermagem-1779563486900-6",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 82,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "slug": "avancasp-enfermagem-verificacao-de-sinais-vitais-1779343789998-6",
+      "url": "http://localhost:3000/estudar/avancasp-enfermagem-verificacao-de-sinais-vitais-1779343789998-6",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 82,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "slug": "cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344152370-6",
+      "url": "http://localhost:3000/estudar/cogeps-unioeste-enfermagem-verificacao-de-sinais-vitais-1779344152370-6",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 82,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "slug": "fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+      "url": "http://localhost:3000/estudar/fepese-enfermagem-verificacao-de-sinais-vitais-1779343856589-7",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 82,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "slug": "gama-enfermagem-verificacao-de-sinais-vitais-1778969729218-4",
+      "url": "http://localhost:3000/estudar/gama-enfermagem-verificacao-de-sinais-vitais-1778969729218-4",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 82,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "slug": "imparh-enfermagem-verificacao-de-sinais-vitais-1779344196733-4",
+      "url": "http://localhost:3000/estudar/imparh-enfermagem-verificacao-de-sinais-vitais-1779344196733-4",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 82,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "slug": "isba-enfermagem-semiologia-em-enfermagem-1779563542813-4",
+      "url": "http://localhost:3000/estudar/isba-enfermagem-semiologia-em-enfermagem-1779563542813-4",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 82,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "slug": "ufmt-enfermagem-verificacao-de-sinais-vitais-1779344182672-4",
+      "url": "http://localhost:3000/estudar/ufmt-enfermagem-verificacao-de-sinais-vitais-1779344182672-4",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 82,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "slug": "adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+      "url": "http://localhost:3000/estudar/adm-tec-enfermagem-urgencias-e-emergencias-1777103970505-4",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 62,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-4",
+      "url": "http://localhost:3000/estudar/cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-4",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 62,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "slug": "funcern-enfermagem-urgencias-e-emergencias-1777104007115-4",
+      "url": "http://localhost:3000/estudar/funcern-enfermagem-urgencias-e-emergencias-1777104007115-4",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 62,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "slug": "iaupe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-8",
+      "url": "http://localhost:3000/estudar/iaupe-enfermagem-epidemiologia-e-vigilancia-epidemiologica-1779563642476-8",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 62,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "slug": "idib-enfermagem-urgencias-e-emergencias-1778934926888-6",
+      "url": "http://localhost:3000/estudar/idib-enfermagem-urgencias-e-emergencias-1778934926888-6",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 62,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-0",
+      "url": "http://localhost:3000/estudar/instituto-access-enfermagem-processo-de-enfermagem-1780005797734-0",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 62,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "slug": "instituto-seletiva-enfermagem-semiologia-em-enfermagem-1779563521756-0",
+      "url": "http://localhost:3000/estudar/instituto-seletiva-enfermagem-semiologia-em-enfermagem-1779563521756-0",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 62,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "slug": "selecon-enfermagem-urgencias-e-emergencias-1777104048047-4",
+      "url": "http://localhost:3000/estudar/selecon-enfermagem-urgencias-e-emergencias-1777104048047-4",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 62,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Saúde da Mulher",
+      "slug": "adm-tec-enfermagem-saude-da-mulher-1777104301763-1",
+      "url": "http://localhost:3000/estudar/adm-tec-enfermagem-saude-da-mulher-1777104301763-1",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 46,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Saúde da Mulher",
+      "slug": "consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-6",
+      "url": "http://localhost:3000/estudar/consulplan-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-6",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 46,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Saúde da Mulher",
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-9",
+      "url": "http://localhost:3000/estudar/fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-9",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 46,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Saúde da Mulher",
+      "slug": "funcern-enfermagem-saude-da-mulher-1777104288275-7",
+      "url": "http://localhost:3000/estudar/funcern-enfermagem-saude-da-mulher-1777104288275-7",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 46,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Saúde da Mulher",
+      "slug": "icece-enfermagem-saude-da-mulher-1780001362784-9",
+      "url": "http://localhost:3000/estudar/icece-enfermagem-saude-da-mulher-1780001362784-9",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 46,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Saúde da Mulher",
+      "slug": "idib-enfermagem-saude-da-mulher-1778934944659-3",
+      "url": "http://localhost:3000/estudar/idib-enfermagem-saude-da-mulher-1778934944659-3",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 46,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Saúde da Mulher",
+      "slug": "instituto-evo-enfermagem-saude-da-mulher-1777104306781-3",
+      "url": "http://localhost:3000/estudar/instituto-evo-enfermagem-saude-da-mulher-1777104306781-3",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 46,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Saúde da Mulher",
+      "slug": "unesc-enfermagem-atencao-basica-saude-da-familia-1780001297464-7",
+      "url": "http://localhost:3000/estudar/unesc-enfermagem-atencao-basica-saude-da-familia-1780001297464-7",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 46,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-9",
+      "url": "http://localhost:3000/estudar/amauc-enfermagem-processo-de-enfermagem-1780001440222-9",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 41,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-3",
+      "url": "http://localhost:3000/estudar/avancasp-enfermagem-processo-de-enfermagem-1780003793968-3",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 41,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "slug": "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-7",
+      "url": "http://localhost:3000/estudar/educa-pb-enfermagem-processo-de-enfermagem-1780007246385-7",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 41,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "slug": "fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-5",
+      "url": "http://localhost:3000/estudar/fepese-enfermagem-cuidados-na-administracao-de-medicamentos-1778969573419-5",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 41,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "slug": "iaupe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-0",
+      "url": "http://localhost:3000/estudar/iaupe-enfermagem-cuidados-na-administracao-de-medicamentos-1778969710154-0",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 41,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "slug": "ieses-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-1",
+      "url": "http://localhost:3000/estudar/ieses-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-1",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 41,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-3",
+      "url": "http://localhost:3000/estudar/instituto-verbena-enfermagem-processo-de-enfermagem-1780002441285-3",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 41,
+      "fact_violations": 0
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "slug": "selecon-enfermagem-vias-de-administracao-1778968629127-4",
+      "url": "http://localhost:3000/estudar/selecon-enfermagem-vias-de-administracao-1778968629127-4",
+      "status": "ok",
+      "issues": [],
+      "guideline_entries": 41,
+      "fact_violations": 0
+    }
+  ]
+}

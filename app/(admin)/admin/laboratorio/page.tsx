@@ -8,21 +8,25 @@ import {
 import Link from 'next/link';
 import { AvantLogo } from '@/components/brand/AvantLogo';
 import { logger } from '@/lib/logger';
+import { ValidationErrorsPanel } from '@/components/admin/ValidationErrorsPanel';
+import { LaboratorioWriteSpecWarningsPanel } from '@/components/admin/LaboratorioWriteSpecWarningsPanel';
 import {
-  QuestaoCompletaSchema,
-  payloadContainsTecconcursosReference,
-  TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE,
-  questaoPayloadTecconcursosZodError,
-} from '@/lib/validations';
-import { ValidationErrorsPanel, formatZodErrors } from '@/components/admin/ValidationErrorsPanel';
-import { LaboratorioGoldenStandardPanel } from '@/components/admin/LaboratorioGoldenStandardPanel';
-import { lintGoldenContent, type GoldenContentLintIssue } from '@/lib/goldenContentStandard';
+  QUESTAO_WRITE_SPEC_VERSION,
+  validateQuestaoForWrite,
+  type QuestaoWriteIssue,
+} from '@/lib/questaoSpec';
 import { JsonEditorWithHighlight } from '@/components/admin/JsonEditorWithHighlight';
 import { findErrorLocation, findAllErrorLocations, type ErrorLocation } from '@/lib/jsonErrorLocator';
 import { applySuggestion } from '@/lib/autoFix';
 import { TemplateSelector } from '@/components/admin/TemplateSelector';
 import { EnhancedPreview } from '@/components/admin/EnhancedPreview';
 import { LaboratorioCatalogAuditPanel } from '@/components/admin/LaboratorioCatalogAuditPanel';
+import {
+  LaboratorioAiGeneratePanel,
+} from '@/components/admin/LaboratorioAiGeneratePanel';
+import { LaboratorioReviewQueuePanel } from '@/components/admin/LaboratorioReviewQueuePanel';
+import type { ReviewQueueItem } from '@/lib/admin/reviewQueue';
+import type { AiGenerateResult } from '@/lib/ai/labGenerateClient';
 import type { QuestaoCompleta } from '@/types/lesson';
 import { tryRecoverUtf8FromLatin1Misread } from '@/lib/fixUtf8Mojibake';
 
@@ -30,6 +34,14 @@ interface ValidationError {
   path: string[];
   message: string;
   code: string;
+}
+
+function writeIssuesToValidationErrors(issues: QuestaoWriteIssue[]): ValidationError[] {
+  return issues.map((issue) => ({
+    path: issue.path ? issue.path.split('.').filter(Boolean) : [],
+    message: issue.message,
+    code: issue.code,
+  }));
 }
 
 interface BatchItem {
@@ -66,7 +78,8 @@ export default function AvantLaboratory() {
   const [parsedData, setParsedData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [validationErrors, setValidationErrors] = useState<ValidationError[]>([]);
-  const [goldenStandardIssues, setGoldenStandardIssues] = useState<GoldenContentLintIssue[]>([]);
+  const [goldenStandardIssues, setGoldenStandardIssues] = useState<QuestaoWriteIssue[]>([]);
+  const [writeSpecVersion, setWriteSpecVersion] = useState(QUESTAO_WRITE_SPEC_VERSION);
   const [errorLocations, setErrorLocations] = useState<Map<number, ErrorLocation>>(new Map());
   const [errorLines, setErrorLines] = useState<Set<number>>(new Set());
   const [selectedLine, setSelectedLine] = useState<number | null>(null);
@@ -81,6 +94,8 @@ export default function AvantLaboratory() {
   const [batchResult, setBatchResult] = useState<BatchResult | null>(null);
   const [concursos, setConcursos] = useState<ConcursoOption[]>([]);
   const [concursoAtivoId, setConcursoAtivoId] = useState('');
+  const [lastAiResult, setLastAiResult] = useState<AiGenerateResult | null>(null);
+  const [activeQueueItem, setActiveQueueItem] = useState<ReviewQueueItem | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -176,10 +191,15 @@ export default function AvantLaboratory() {
     }
 
     let parsed: any = null;
+    const jsonForParse = jsonInput.trim().replace(/^\uFEFF/, '');
     try {
-      parsed = JSON.parse(jsonInput);
-    } catch {
-      setError('JSON inválido: erro de sintaxe');
+      parsed = JSON.parse(jsonForParse);
+    } catch (parseErr) {
+      const detail =
+        parseErr instanceof Error && 'message' in parseErr
+          ? parseErr.message.replace(/^JSON\.parse: /, '')
+          : 'erro de sintaxe';
+      setError(`JSON inválido: ${detail}`);
       setParsedData(null);
       setValidationErrors([]);
       setGoldenStandardIssues([]);
@@ -202,22 +222,16 @@ export default function AvantLaboratory() {
       setBatchResult(null);
 
       const items: BatchItem[] = parsed.map((item: any, index: number) => {
-        if (payloadContainsTecconcursosReference(item)) {
+        const writeResult = validateQuestaoForWrite(item);
+        if (!writeResult.ok) {
           return {
             index,
             valid: false,
             data: item,
-            errors: formatZodErrors(questaoPayloadTecconcursosZodError()),
+            errors: writeIssuesToValidationErrors(writeResult.errors),
           };
         }
-        const result = QuestaoCompletaSchema.safeParse(item);
-        if (!result.success) {
-          const errs = formatZodErrors(result.error);
-          return { index, valid: false, data: item, errors: errs };
-        }
-        const data = result.data;
-        if (!data.meta.subtopico) data.meta.subtopico = data.meta.topico || 'Geral';
-        return { index, valid: true, data, errors: [] };
+        return { index, valid: true, data: writeResult.data, errors: [] };
       });
 
       setBatchItems(items);
@@ -230,41 +244,26 @@ export default function AvantLaboratory() {
     setBatchResult(null);
 
     try {
-      if (payloadContainsTecconcursosReference(parsed)) {
-        const gateErrors: ValidationError[] = [
-          { path: [], message: TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE, code: 'custom' },
-        ];
-        setValidationErrors(gateErrors);
-        const locations = findAllErrorLocations(jsonInput, gateErrors);
+      const writeResult = validateQuestaoForWrite(parsed);
+
+      if (!writeResult.ok) {
+        const formattedErrors = writeIssuesToValidationErrors(writeResult.errors);
+        setValidationErrors(formattedErrors);
+        const locations = findAllErrorLocations(jsonInput, formattedErrors);
         setErrorLocations(locations);
         const linesWithErrors = new Set<number>();
         locations.forEach((location) => {
           linesWithErrors.add(location.line);
         });
         setErrorLines(linesWithErrors);
-        setError(`Erros de validação:\n${gateErrors.map((err) => err.message).join('\n')}`);
-        setParsedData(null);
-        setGoldenStandardIssues([]);
-        return;
-      }
-
-      const validationResult = QuestaoCompletaSchema.safeParse(parsed);
-
-      if (!validationResult.success) {
-        const formattedErrors = formatZodErrors(validationResult.error);
-        setValidationErrors(formattedErrors);
-        const locations = findAllErrorLocations(jsonInput, formattedErrors);
-        setErrorLocations(locations);
-        const linesWithErrors = new Set<number>();
-        locations.forEach((location) => { linesWithErrors.add(location.line); });
-        setErrorLines(linesWithErrors);
         const errorMessages = formattedErrors.map((err) => {
           const path = err.path.join('.');
-          return `${path}: ${err.message}`;
+          return path ? `${path}: ${err.message}` : err.message;
         });
-        setError(`Erros de validação:\n${errorMessages.join('\n')}`);
+        setError(`Write spec ${writeResult.specVersion} — bloqueia publicação:\n${errorMessages.join('\n')}`);
         setParsedData(null);
-        setGoldenStandardIssues([]);
+        setGoldenStandardIssues(writeResult.warnings);
+        setWriteSpecVersion(writeResult.specVersion);
         return;
       }
 
@@ -273,42 +272,9 @@ export default function AvantLaboratory() {
       setErrorLines(new Set());
       setSelectedLine(null);
       setError(null);
-
-      if (!validationResult.data.meta.subtopico) {
-        validationResult.data.meta.subtopico = validationResult.data.meta.topico || 'Geral';
-      }
-
-      // Validação adicional dos slides
-      if (validationResult.data.reverse_study_slides && validationResult.data.reverse_study_slides.length > 0) {
-        validationResult.data.reverse_study_slides.forEach((slide: any, index: number) => {
-          if (!slide.type && !slide.layout_type) {
-            throw new Error(`Slide ${index + 1}: deve ter 'type' ou 'layout_type'`);
-          }
-          if (slide.type === 'logic_flow' && (!slide.steps || slide.steps.length === 0)) {
-            throw new Error(`Slide ${index + 1} (logic_flow): deve ter 'steps' com pelo menos 1 passo`);
-          }
-          if (
-            slide.type === 'golden_rule' &&
-            !(typeof slide.content === 'string' && slide.content.trim()) &&
-            !(Array.isArray(slide.rows) && slide.rows.length > 0)
-          ) {
-            throw new Error(`Slide ${index + 1} (golden_rule): deve ter 'content' ou 'rows'`);
-          }
-          if (
-            slide.type === 'concept_map' &&
-            (!slide.items || slide.items.length === 0) &&
-            (!slide.concepts || slide.concepts.length === 0)
-          ) {
-            throw new Error(`Slide ${index + 1} (concept_map): deve ter 'items' ou 'concepts'`);
-          }
-          if (slide.type === 'danger_zone' && !slide.content) {
-            throw new Error(`Slide ${index + 1} (danger_zone): deve ter 'content'`);
-          }
-        });
-      }
-
-      setParsedData(validationResult.data);
-      setGoldenStandardIssues(lintGoldenContent(validationResult.data));
+      setParsedData(writeResult.data);
+      setGoldenStandardIssues(writeResult.warnings);
+      setWriteSpecVersion(writeResult.specVersion);
     } catch (e: any) {
       setError(e.message);
       setParsedData(null);
@@ -322,11 +288,62 @@ export default function AvantLaboratory() {
     }
   }, [jsonInput]);
 
+  const handleLoadFromQueue = (json: string, item: ReviewQueueItem, issues: string[]) => {
+    setActiveQueueItem(item);
+    setJsonInput(json);
+    setLastAiResult({
+      status: issues.length === 0 ? 'approved' : 'needs_review',
+      score: item.ai_score ?? 0,
+      issues,
+      questao: (() => {
+        try {
+          return JSON.parse(json) as Record<string, unknown>;
+        } catch {
+          return {};
+        }
+      })(),
+    });
+    setToast({
+      message: `📋 Fila: ${item.modulo_slug} carregada (${issues.length} pendência(s))`,
+      type: issues.length === 0 ? 'success' : 'error',
+    });
+    setTimeout(() => setToast(null), 4000);
+  };
+
+  const handleAiGenerated = (json: string, result: AiGenerateResult) => {
+    setActiveQueueItem(null);
+    setLastAiResult(result);
+    if (json) {
+      setJsonInput(json);
+    }
+    if (result.status === 'failed') {
+      setToast({
+        message: `❌ IA: ${result.issues[0] ?? 'Falha na geração'}`,
+        type: 'error',
+      });
+    } else if (result.status === 'approved') {
+      setToast({
+        message: `✅ IA aprovou (score ${result.score}). Revise o preview e publique.`,
+        type: 'success',
+      });
+    } else {
+      setToast({
+        message: `⚠️ IA precisa revisão (score ${result.score}). ${result.issues.length} pendência(s).`,
+        type: 'error',
+      });
+    }
+    setTimeout(() => setToast(null), 6000);
+  };
+
+  const hasWriteSpecBlockers = goldenStandardIssues.some((i) => i.severity === 'error');
+  const canPublishIndividual =
+    parsedData && !error && !saving && !hasWriteSpecBlockers && goldenStandardIssues.length === 0;
+
   // ============================================================================
   // PUBLICAR — questão individual via API segura
   // ============================================================================
   const handlePublicar = async () => {
-    if (!parsedData) return;
+    if (!parsedData || goldenStandardIssues.length > 0) return;
     setSaving(true);
 
     try {
@@ -356,8 +373,15 @@ export default function AvantLaboratory() {
         return;
       }
 
-      setToast({ message: '✅ Missão publicada com sucesso!', type: 'success' });
-      setTimeout(() => setToast(null), 3000);
+      const fromQueue = Boolean(activeQueueItem);
+      setToast({
+        message: fromQueue
+          ? '✅ Publicada! Selecione a próxima na Fila de Revisão.'
+          : '✅ Missão publicada com sucesso!',
+        type: 'success',
+      });
+      setTimeout(() => setToast(null), fromQueue ? 4000 : 3000);
+      if (fromQueue) setActiveQueueItem(null);
       setJsonInput('');
     } catch (err: any) {
       setToast({ message: `❌ Erro técnico: ${err.message}`, type: 'error' });
@@ -555,9 +579,14 @@ export default function AvantLaboratory() {
             ) : (
               <button
                 onClick={handlePublicar}
-                disabled={!!error || !parsedData || saving}
+                disabled={!canPublishIndividual}
+                title={
+                  goldenStandardIssues.length > 0
+                    ? 'Corrija os avisos golden-v1 antes de publicar'
+                    : undefined
+                }
                 className={`flex items-center gap-3 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest transition-all shadow-lg ${
-                  parsedData && !error
+                  canPublishIndividual
                     ? 'bg-[#4F46E5] text-white hover:bg-indigo-700'
                     : 'bg-slate-100 text-slate-400 cursor-not-allowed shadow-none'
                 }`}
@@ -615,6 +644,37 @@ export default function AvantLaboratory() {
 
         {/* EDITOR */}
         <div className="col-span-12 flex min-h-0 flex-col gap-3 overflow-y-auto max-lg:h-[60vh] lg:col-span-3">
+          {!isBatchMode && (
+            <>
+              <LaboratorioReviewQueuePanel
+                onLoadQuestao={handleLoadFromQueue}
+                disabled={saving}
+              />
+              <LaboratorioAiGeneratePanel
+                onGenerated={handleAiGenerated}
+                disabled={saving}
+                editorQuestao={parsedData}
+              />
+            </>
+          )}
+
+          {activeQueueItem && !isBatchMode && (
+            <div className="rounded-xl border border-indigo-200 bg-indigo-50 px-3 py-2 text-[10px] text-indigo-900">
+              Revisando da fila: <strong>{activeQueueItem.modulo_slug}</strong>
+            </div>
+          )}
+
+          {lastAiResult && !isBatchMode && lastAiResult.status !== 'failed' && lastAiResult.issues.length > 0 && (
+            <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-[10px] text-amber-900">
+              <p className="font-bold uppercase tracking-wide mb-1">Pendências da IA ({lastAiResult.issues.length})</p>
+              <ul className="list-disc pl-4 space-y-0.5 max-h-24 overflow-y-auto">
+                {lastAiResult.issues.slice(0, 8).map((issue, i) => (
+                  <li key={i}>{issue}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           <div className="flex items-center justify-between px-2">
             <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 flex items-center gap-2">
               <Code className="w-3 h-3 text-[#4F46E5]" /> Payload Input
@@ -668,7 +728,7 @@ export default function AvantLaboratory() {
                   parsedData ||
                   (() => {
                     try {
-                      return JSON.parse(jsonInput);
+                      return JSON.parse(jsonInput.trim().replace(/^\uFEFF/, ''));
                     } catch {
                       return null;
                     }
@@ -700,8 +760,9 @@ export default function AvantLaboratory() {
 
           {!isBatchMode && parsedData && goldenStandardIssues.length > 0 && (
             <div className="mt-2">
-              <LaboratorioGoldenStandardPanel
-                issues={goldenStandardIssues}
+              <LaboratorioWriteSpecWarningsPanel
+                warnings={goldenStandardIssues}
+                specVersion={writeSpecVersion}
                 onClose={() => setGoldenStandardIssues([])}
               />
             </div>

@@ -20,6 +20,9 @@ import { LogicFlowLabVfSoftStack } from './LogicFlowLabVfSoftStack';
 import { LogicFlowWoundPrepTapFlow } from './LogicFlowWoundPrepTapFlow';
 import { LogicFlowPniVfJuggleTap } from './LogicFlowPniVfJuggleTap';
 import { LogicFlowVitalsTranslateTap } from './LogicFlowVitalsTranslateTap';
+import { LogicFlowSondaChecklistTap } from './LogicFlowSondaChecklistTap';
+import { LogicFlowViaVfJuggleTap } from './LogicFlowViaVfJuggleTap';
+import { LogicFlowAdolescentVfWeaveTap } from './LogicFlowAdolescentVfWeaveTap';
 import { SLIDE_CARD } from '../core/slideSurface';
 import {
   getLogicFlowStepVisual,
@@ -173,6 +176,37 @@ export const LogicFlow = ({
 
   if (variant === 'pni-vf-juggle-tap') {
     return <LogicFlowPniVfJuggleTap steps={steps} theme={theme} footerRule={undefined} />;
+  }
+
+  if (variant === 'ist-vf-juggle-tap') {
+    return (
+      <LogicFlowPniVfJuggleTap
+        steps={steps}
+        theme={theme}
+        footerRule={undefined}
+        accentVariant="ist"
+      />
+    );
+  }
+
+  if (variant === 'via-vf-juggle-tap') {
+    return <LogicFlowViaVfJuggleTap steps={steps} theme={theme} footerRule={undefined} />;
+  }
+
+  if (variant === 'adolescent-vf-weave-tap') {
+    return <LogicFlowAdolescentVfWeaveTap steps={steps} theme={theme} footerRule={undefined} />;
+  }
+
+  if (variant === 'dose-calc-tap' || variant === 'sae-decision-tap') {
+    return (
+      <LogicFlowStepLadder steps={steps} theme={theme} revealMode={revealMode} />
+    );
+  }
+
+  if (variant === 'sonda-decision-tap') {
+    return (
+      <LogicFlowSondaChecklistTap steps={steps} theme={theme} revealMode={revealMode} />
+    );
   }
 
   if (variant === 'vitals-translate-tap') {

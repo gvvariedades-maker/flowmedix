@@ -2,7 +2,7 @@
 
 Referência completa para o **agent-avant** gerar JSONs de questões com design automático por assunto, template (cores) e layout_variant (didática dos slides).
 
-**Pacote premium completo** (golden + moldes + builder + migração em lote): [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md).
+**Pacote premium completo** (runbook Fases 0–6): [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md) § Runbook.
 
 ---
 

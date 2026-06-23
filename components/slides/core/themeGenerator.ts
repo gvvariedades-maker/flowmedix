@@ -178,9 +178,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'noções de fisiologia': { template: 'cyan', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
   'fisiologia': { template: 'cyan', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
 
-  // ---- Processo de Enfermagem / SAE (golden: sae-responsibility-matrix · reference_table · cards · norm-reveal) ----
-  'processo de enfermagem': { template: 'violet', conceptMap: 'sae-responsibility-matrix', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'norm-reveal' },
-  'sae': { template: 'violet', conceptMap: 'sae-responsibility-matrix', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'norm-reveal' },
+  // ---- Processo de Enfermagem / SAE (golden: sae-responsibility-matrix · sae-reference-board · sae-decision-tap · norm-reveal) ----
+  'processo de enfermagem': { template: 'violet', conceptMap: 'sae-responsibility-matrix', goldenRule: 'sae-reference-board', logicFlow: 'sae-decision-tap', dangerZone: 'norm-reveal' },
+  'sae': { template: 'violet', conceptMap: 'sae-responsibility-matrix', goldenRule: 'sae-reference-board', logicFlow: 'sae-decision-tap', dangerZone: 'norm-reveal' },
   'sistematização da assistência de enfermagem': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
   'fundamentos de enfermagem': { template: 'indigo', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
 
@@ -195,15 +195,15 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'farmacologia': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
 
   // ---- Cálculo de Medicamentos ----
-  // ---- Cálculos (golden: dose-equivalence-rail · reference_table · cards · dose-trap) ----
-  'cálculo de administração de medicamentos e infusões': { template: 'blue', conceptMap: 'dose-equivalence-rail', goldenRule: 'soft-lens-board', logicFlow: 'cards', dangerZone: 'dose-trap' },
-  'cálculo de administração de medicamentos': { template: 'blue', conceptMap: 'dose-equivalence-rail', goldenRule: 'soft-lens-board', logicFlow: 'cards', dangerZone: 'dose-trap' },
-  'cálculos de enfermagem': { template: 'blue', conceptMap: 'dose-equivalence-rail', goldenRule: 'soft-lens-board', logicFlow: 'cards', dangerZone: 'dose-trap' },
-  'dosagens e cálculos': { template: 'blue', conceptMap: 'dose-equivalence-rail', goldenRule: 'soft-lens-board', logicFlow: 'cards', dangerZone: 'dose-trap' },
+  // ---- Cálculos (golden: dose-equivalence-rail · soft-lens-board · dose-calc-tap · dose-trap) ----
+  'cálculo de administração de medicamentos e infusões': { template: 'blue', conceptMap: 'dose-equivalence-rail', goldenRule: 'soft-lens-board', logicFlow: 'dose-calc-tap', dangerZone: 'dose-trap' },
+  'cálculo de administração de medicamentos': { template: 'blue', conceptMap: 'dose-equivalence-rail', goldenRule: 'soft-lens-board', logicFlow: 'dose-calc-tap', dangerZone: 'dose-trap' },
+  'cálculos de enfermagem': { template: 'blue', conceptMap: 'dose-equivalence-rail', goldenRule: 'soft-lens-board', logicFlow: 'dose-calc-tap', dangerZone: 'dose-trap' },
+  'dosagens e cálculos': { template: 'blue', conceptMap: 'dose-equivalence-rail', goldenRule: 'soft-lens-board', logicFlow: 'dose-calc-tap', dangerZone: 'dose-trap' },
 
   // ---- Vias de Administração ----
-  // ---- Vias de Administração (golden: absorption-speed-rail · reference_table · cards · route-trap) ----
-  'vias de administração': { template: 'emerald', conceptMap: 'absorption-speed-rail', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'route-trap' },
+  // ---- Vias de Administração (golden: absorption-speed-rail · via-reference-board · via-vf-juggle-tap · route-trap) ----
+  'vias de administração': { template: 'emerald', conceptMap: 'absorption-speed-rail', goldenRule: 'via-reference-board', logicFlow: 'via-vf-juggle-tap', dangerZone: 'route-trap' },
 
   // ---- Cuidados na Administração de Medicamentos (golden: bridge · reference_table · cards · compare) ----
   'cuidados na administração de medicamentos': { template: 'teal', conceptMap: 'bridge', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'compare' },
@@ -217,8 +217,8 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'sinais vitais': { template: 'rose', conceptMap: 'vitals-panel', goldenRule: 'vitals-reference-board', logicFlow: 'vitals-translate-tap', dangerZone: 'vitals-classify-arena' },
 
   // ---- Sondas (golden: procedure-protocol · reference_table · vertical · trap-reveal) ----
-  'instalação e manejo de sondas': { template: 'indigo', conceptMap: 'procedure-protocol', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'trap-reveal' },
-  'sondas': { template: 'indigo', conceptMap: 'procedure-protocol', goldenRule: 'center', logicFlow: 'vertical', dangerZone: 'trap-reveal' },
+  'instalação e manejo de sondas': { template: 'indigo', conceptMap: 'procedure-protocol', goldenRule: 'sonda-measurement-board', logicFlow: 'sonda-decision-tap', dangerZone: 'trap-reveal' },
+  'sondas': { template: 'indigo', conceptMap: 'procedure-protocol', goldenRule: 'sonda-measurement-board', logicFlow: 'sonda-decision-tap', dangerZone: 'trap-reveal' },
 
   // ---- Oxigenoterapia ----
   'oxigenoterapia e cuidados respiratórios': { template: 'cyan', conceptMap: 'oxygen-protocol-deck', goldenRule: 'oxygen-rule-carousel', logicFlow: 'oxygen-step-ladder', dangerZone: 'compare' },
@@ -303,10 +303,10 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   // DOENÇAS TRANSMISSÍVEIS
   // ============================================================
 
-  // ---- ISTs ----
-  'infecções sexualmente transmissíveis (ists)': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
-  'infecções sexualmente transmissíveis': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
-  'ists': { template: 'purple', conceptMap: 'molecular', goldenRule: 'minimal', logicFlow: 'cards', dangerZone: 'list' },
+  // ---- ISTs (golden: ist-risk-routes-deck · ist-reference-board · ist-vf-juggle-tap · ist-trap-chips) ----
+  'infecções sexualmente transmissíveis (ists)': { template: 'purple', conceptMap: 'ist-risk-routes-deck', goldenRule: 'ist-reference-board', logicFlow: 'ist-vf-juggle-tap', dangerZone: 'ist-trap-chips' },
+  'infecções sexualmente transmissíveis': { template: 'purple', conceptMap: 'ist-risk-routes-deck', goldenRule: 'ist-reference-board', logicFlow: 'ist-vf-juggle-tap', dangerZone: 'ist-trap-chips' },
+  'ists': { template: 'purple', conceptMap: 'ist-risk-routes-deck', goldenRule: 'ist-reference-board', logicFlow: 'ist-vf-juggle-tap', dangerZone: 'ist-trap-chips' },
 
   // ---- Doenças Virais ----
   'doenças virais de interesse epidemiológico (covid, influenza, sarampo, polio etc.)': { template: 'rose', conceptMap: 'molecular', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'cards' },
@@ -364,8 +364,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   // SAÚDE MENTAL
   // ============================================================
 
-  'saúde mental': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
-  'psiquiatria': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
+  // Ramo SM-4 crise/CAPS (golden: fundatec EXCETO · ibade CAPS · morphological · reference_table · sae-decision-tap · norm-reveal)
+  'saúde mental': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'sae-decision-tap', dangerZone: 'norm-reveal' },
+  'psiquiatria': { template: 'violet', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'sae-decision-tap', dangerZone: 'norm-reveal' },
 
   // ============================================================
   // SAÚDE DA FAMÍLIA E CICLOS DE VIDA
@@ -375,9 +376,9 @@ export const SUBTOPIC_DESIGN_MAP: Record<string, SubtopicDesign> = {
   'saúde da criança': { template: 'cyan', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
   'pediatria': { template: 'cyan', conceptMap: 'morphological', goldenRule: 'banner', logicFlow: 'cards', dangerZone: 'list' },
 
-  // ---- Saúde do Adolescente ----
-  'saúde do adolescente': { template: 'sky', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
-  'adolescente': { template: 'sky', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },
+  // ---- Saúde do Adolescente (golden: adolescent-privacy-curtain · adolescent-sigilo-spectrum · adolescent-vf-weave-tap · adolescent-consent-gate) ----
+  'saúde do adolescente': { template: 'sky', conceptMap: 'adolescent-privacy-curtain', goldenRule: 'adolescent-sigilo-spectrum', logicFlow: 'adolescent-vf-weave-tap', dangerZone: 'adolescent-consent-gate' },
+  'adolescente': { template: 'sky', conceptMap: 'adolescent-privacy-curtain', goldenRule: 'adolescent-sigilo-spectrum', logicFlow: 'adolescent-vf-weave-tap', dangerZone: 'adolescent-consent-gate' },
 
   // ---- Saúde da Mulher ----
   'saúde da mulher': { template: 'pink', conceptMap: 'morphological', goldenRule: 'center', logicFlow: 'cards', dangerZone: 'list' },

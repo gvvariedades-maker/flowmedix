@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "Tec Enf",
+    "orgao": "Pref Pombal",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde do Adolescente"
+  },
+  "question_data": {
+    "instruction": "Sobre saúde do adolescente e gravidez na adolescência, analise as afirmativas.\n\nI - A consulta de enfermagem com adolescente deve garantir privacidade e escuta qualificada, respeitando autonomia progressiva.\nII - Gravidez na adolescência aumenta riscos de complicações materno-fetais e exige acompanhamento pré-natal precoce.\nIII - O sigilo profissional pode ser absolutamente quebrado sem critério em qualquer tema, inclusive contracepção, sem necessidade de avaliar risco e legislação.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Adolescente — cuidado",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde do Adolescente" },
+      "items": [
+        { "label": "Escuta qualificada", "detail": "Espaço privado, linguagem acessível, vínculo sem julgamento.", "icon": "MessageCircle" },
+        { "label": "Pré-natal precoce", "detail": "Gravidez adolescente = alto risco — vincular cedo ao cuidado.", "icon": "Calendar" },
+        { "label": "Sigilo", "detail": "Protegido com limites legais — quebra quando há risco grave.", "icon": "Lock" },
+        { "label": "Contracepção", "detail": "Orientação sexual e reprodutiva faz parte do cuidado.", "icon": "Heart" }
+      ],
+      "footer_rule": "Adolescente: privacidade + pré-natal + sigilo com critério"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Adolescente — regras",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde do Adolescente" },
+      "content": "ESCUTA",
+      "rows": [
+        { "label": "Privacidade", "value": "Consulta com escuta — I correta", "badge": "ok" },
+        { "label": "Gravidez", "value": "Alto risco + pré-natal precoce — II correta", "badge": "ok" },
+        { "label": "Sigilo absoluto zero", "value": "Falso — há critérios legais", "emphasis": "alert", "badge": "warn" },
+        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+      ],
+      "footer_rule": "III generaliza quebra de sigilo — pegadinha ética"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde do Adolescente" },
+      "steps": [
+        "I: privacidade e escuta → verdadeira.",
+        "II: gravidez adolescente e pré-natal → verdadeira.",
+        "III: quebrar sigilo sem critério → falsa.",
+        "Letra B.",
+        "Fixação: sigilo não é absoluto nem inexistente — há limites legais."
+      ],
+      "footer_rule": "Ética adolescente: acolher + proteger + saber limites do sigilo"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde do Adolescente" },
+      "content": "PEGADINHAS — ADOLESCENTE",
+      "items": [
+        { "label": "Quebrar sigilo sempre", "detail": "III ignora critérios legais e éticos.", "correct": "Sigilo com limites — avaliar risco e legislação." },
+        { "label": "Consulta com responsável obrigatório", "detail": "I fala em privacidade adequada na consulta.", "correct": "Garantir escuta qualificada respeitando autonomia progressiva." },
+        { "label": "Adiar pré-natal", "detail": "II reforça acompanhamento precoce.", "correct": "Vincular gestante adolescente cedo ao pré-natal." }
+      ],
+      "footer_rule": "Adolescente: acolhimento sem julgamento + sigilo ponderado"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "lote": "cme-g04",
+  "exported_at": "2026-06-23T17:40:34.564Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-3",
+      "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-6",
+      "quadrix-enfermagem-processo-de-enfermagem-1780009281546-9",
+      "ameosc-enfermagem-processo-de-enfermagem-1780001613305-2",
+      "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-7",
+      "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-0"
+    ]
+  },
+  "slugs": [
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-3",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-6",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009281546-9",
+    "ameosc-enfermagem-processo-de-enfermagem-1780001613305-2",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-7",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-0"
+  ]
+}

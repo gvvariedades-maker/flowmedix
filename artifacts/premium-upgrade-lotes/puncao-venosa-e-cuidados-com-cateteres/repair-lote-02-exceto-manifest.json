@@ -1,0 +1,30 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-02-exceto",
+  "generated_at": "2026-06-22T22:00:00.000Z",
+  "source": "cluster-puncao-topics",
+  "subtopico": "Punção Venosa e Cuidados com Cateteres",
+  "lote_prefix": "puncao-venosa-e-cuidados-com-cateteres",
+  "batch": 2,
+  "pedagogical_cluster": "EXCETO — técnica / conduta",
+  "has_dedicated_builder": true,
+  "builder": "upgradePremiumPuncao",
+  "golden_reference": "questao-premium-cev-urca-puncao-exceto-med-endovenosa.json",
+  "issue_summary": {
+    "slide_topic_drift": 9,
+    "instruction_import_artifacts": 3
+  },
+  "slugs": [
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-8",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-1",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-3",
+    "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-1",
+    "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-2",
+    "funatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-0",
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-5",
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-9",
+    "fundep-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-1",
+    "gualimp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-5",
+    "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-7",
+    "reis-e-reis-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-8"
+  ]
+}

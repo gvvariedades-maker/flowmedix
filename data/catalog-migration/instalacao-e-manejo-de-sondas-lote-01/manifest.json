@@ -1,11 +1,9 @@
 {
   "lote": "instalacao-e-manejo-de-sondas-lote-01",
-  "exported_at": "2026-06-10T03:51:30.407Z",
+  "exported_at": "2026-06-19T13:53:15.241Z",
   "source": "supabase",
   "filters": {
-    "subtopico": "Instalação e Manejo de Sondas",
-    "limit": 50,
-    "exclude_count": 0
+    "from_manifest": "data/catalog-migration/instalacao-e-manejo-de-sondas-lote-01/manifest.json"
   },
   "slugs": [
     "adm-tec-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-8",

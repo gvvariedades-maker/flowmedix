@@ -1,0 +1,177 @@
+{
+  "generated_at": "2026-06-23T00:00:00.000Z",
+  "ramo_id": "SM-5",
+  "ramo_label": "APS / acolhimento / biopsicossocial",
+  "subtopico": "Saúde Mental",
+  "merge_target": "lib/catalogMigration/upgradePremiumSaudeMental.ts",
+  "cluster_report_ref": "artifacts/saude-mental-topic-cluster-report.json",
+  "pedagogical_clusters": [
+    "Acolhimento / biopsicossocial na APS",
+    "APS / técnico na ESF-RAPS"
+  ],
+  "golden_files": {
+    "biopsicossocial": "questao-premium-vunesp-saude-mental-biopsicossocial.json",
+    "tecnico_aps": "questao-premium-igeduc-saude-mental-tecnico-aps.json"
+  },
+  "constants": {
+    "BIOPSICOSSOCIAL_GOLDEN_FILE": "questao-premium-vunesp-saude-mental-biopsicossocial.json",
+    "TECNICO_APS_GOLDEN_FILE": "questao-premium-igeduc-saude-mental-tecnico-aps.json"
+  },
+  "infer_topic_order": [
+    "Acolhimento / biopsicossocial na APS",
+    "APS / acolhimento humanizado",
+    "APS / técnico na ESF-RAPS"
+  ],
+  "infer_anchors": {
+    "Acolhimento / biopsicossocial na APS": {
+      "description": "Modelo MS — saúde mental como interação biopsicossocial; estigma; determinantes no território.",
+      "regex_tests": [
+        "\\bbiopsicossocial\\b",
+        "\\bmúltiplos fatores\\b|\\bmultiplos fatores\\b",
+        "\\bestigma\\b.*(facilit|barreira|recupera)",
+        "\\binteração entre fatores\\b|\\binteracao entre fatores\\b",
+        "\\bacolh\\b.*(insônia|insonia|estresse|trabalho|território|territorio)",
+        "\\bvivências nos territórios\\b|\\bvivencias nos territorios\\b",
+        "\\bpensar/refletir\\b|\\brefletir\\b.*usuário"
+      ],
+      "golden_file": "questao-premium-vunesp-saude-mental-biopsicossocial.json",
+      "pedagogical_cluster": "Acolhimento / biopsicossocial na APS"
+    },
+    "APS / acolhimento humanizado": {
+      "description": "Escuta, empatia, vínculo e comunicação à equipe — sem foco no modelo biopsicossocial nem atribuições COFEN.",
+      "regex_tests": [
+        "\\bcuidado humanizado\\b",
+        "\\bescuta (ativa|qualificada)\\b",
+        "\\bempatia\\b.*acolh",
+        "\\bmedo de morrer\\b|\\binsônia\\b.*\\bacolh\\b",
+        "\\bisolamento social\\b|\\bluto\\b|\\btristeza profunda\\b",
+        "\\bcomunicar.*(enfermeiro|equipe)\\b",
+        "\\bvínculo\\b|\\bvinculo\\b.*continuidade"
+      ],
+      "golden_file": "questao-premium-igeduc-saude-mental-tecnico-aps.json",
+      "pedagogical_cluster": "APS / técnico na ESF-RAPS",
+      "l2_depth": "full_or_shallow"
+    },
+    "APS / técnico na ESF-RAPS": {
+      "description": "Atribuições do técnico na AB/ESF — acolher, observar, administrar prescrito, orientar, comunicar; sem prescrever/diagnosticar.",
+      "regex_tests": [
+        "\\baps\\b|\\batenção básica\\b|\\batencao basica\\b|\\besf\\b",
+        "\\batribuiç(ões|oes).*técnico\\b|\\batribuic.*tecnico\\b",
+        "\\bporta de entrada\\b.*(sus|saúde mental|saude mental)",
+        "\\badministrar medicamentos prescritos\\b",
+        "\\bdiagnóstico psiquiátrico\\b|\\bdiagnostico psiquiatrico\\b"
+      ],
+      "golden_file": "questao-premium-igeduc-saude-mental-tecnico-aps.json",
+      "pedagogical_cluster": "APS / técnico na ESF-RAPS"
+    }
+  },
+  "topic_profiles": {
+    "Acolhimento / biopsicossocial na APS": {
+      "conceptFooter": "MS: saúde mental = bio + psico + social — nunca reducionismo biológico nem culpa individual.",
+      "goldenContent": "BIO + PSICO + SOCIAL = SAÚDE MENTAL",
+      "goldenFooter": "Estigma dificulta recuperação — nunca facilita (D falsa).",
+      "logicFooter": "Trabalho, família e estigma contam tanto quanto neuroquímica.",
+      "logicFix": "política de saúde mental brasileira é biopsicossocial.",
+      "dangerContent": "PEGADINHAS — MODELO BIOPSICOSSOCIAL",
+      "dangerFooter": "MS: sofrimento mental tem causas múltiplas e interligadas.",
+      "chipLabel": "BIOPSICOSSOCIAL",
+      "slide_title_concept": "Saúde mental — modelo biopsicossocial",
+      "slide_title_golden": "Modelo biopsicossocial — MS",
+      "forbidden_vocabulary": [
+        "bundle",
+        "IPCS",
+        "CVC",
+        "contenção física imediata",
+        "internação compulsória"
+      ]
+    },
+    "APS / acolhimento humanizado": {
+      "conceptFooter": "Acolher ≠ minimizar — escuta e comunicação à equipe são cuidado.",
+      "goldenContent": "ESCUTA · EMPATIA · ACOLHIMENTO · COMUNICAR À EQUIPE",
+      "goldenFooter": "Cuidado humanizado na rede — vínculo antes de coerção ou isolamento.",
+      "logicFooter": "Validar sentimentos → acolher → articular com enfermeiro/equipe.",
+      "logicFix": "técnico acolhe e observa — não substitui decisão clínica.",
+      "dangerContent": "PEGADINHAS — ACOLHIMENTO HUMANIZADO",
+      "dangerFooter": "Na prova, minimizar medo ou isolar o usuário é conduta incorreta.",
+      "chipLabel": "ACOLHIMENTO",
+      "slide_title_concept": "Acolhimento — escuta e vínculo",
+      "slide_title_golden": "Cuidado humanizado na APS/RAPS",
+      "forbidden_vocabulary": [
+        "bundle",
+        "IPCS",
+        "CVC",
+        "reducionismo biológico isolado"
+      ]
+    },
+    "APS / técnico na ESF-RAPS": {
+      "conceptFooter": "Técnico acolhe e observa — médico/enfermeiro prescrevem e definem conduta.",
+      "goldenContent": "ACOLHER · OBSERVAR · ADMINISTRAR (PRESCRITO) · COMUNICAR",
+      "goldenFooter": "Escopo técnico: cuidado de suporte, não decisão clínica autônoma.",
+      "logicFooter": "Comunicar alterações à equipe é parte do cuidado.",
+      "logicFix": "técnico na AB é elo de cuidado — não substitui especialista.",
+      "dangerContent": "PEGADINHAS — ATRIBUIÇÕES NA APS",
+      "dangerFooter": "Na prova, técnico nunca prescreve nem interna sozinho.",
+      "chipLabel": "ATENÇÃO BÁSICA",
+      "slide_title_concept": "Técnico na APS — saúde mental",
+      "slide_title_golden": "Atribuições do técnico — APS",
+      "forbidden_vocabulary": [
+        "bundle",
+        "IPCS",
+        "CVC"
+      ]
+    }
+  },
+  "golden_reference_router": {
+    "description": "saudeMentalGoldenReferenceForInput — prioridade biopsicossocial antes de técnico APS",
+    "rules": [
+      {
+        "if_topic": "Acolhimento / biopsicossocial na APS",
+        "golden_file": "questao-premium-vunesp-saude-mental-biopsicossocial.json"
+      },
+      {
+        "if_topic": "APS / acolhimento humanizado",
+        "golden_file": "questao-premium-igeduc-saude-mental-tecnico-aps.json"
+      },
+      {
+        "if_topic": "APS / técnico na ESF-RAPS",
+        "golden_file": "questao-premium-igeduc-saude-mental-tecnico-aps.json"
+      }
+    ],
+    "default_golden_file": "questao-premium-igeduc-saude-mental-tecnico-aps.json"
+  },
+  "slide_contract": {
+    "concept_map": { "layout": "morphological", "requires": ["items", "icon", "footer_rule"] },
+    "golden_rule": { "layout": "reference_table", "requires": ["rows", "content"] },
+    "logic_flow": { "layout": "vertical", "requires": ["steps", "reveal_mode: tap"] },
+    "danger_zone": {
+      "layout": "compare",
+      "requires": ["items[].correct", "bullet_style: x_icon"],
+      "format_correct": "Gabarito letra {X} — {explicação específica da alternativa}"
+    }
+  },
+  "pilot_slugs": [
+    "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+    "vunesp-enfermagem-saude-mental-1780001362784-5",
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1",
+    "univali-enfermagem-teorias-em-enfermagem-1776055843703-2",
+    "selecon-enfermagem-processo-de-enfermagem-1780009322055-9"
+  ],
+  "golden_validation": {
+    "questao-premium-vunesp-saude-mental-biopsicossocial.json": {
+      "zod": "ok",
+      "lintGoldenContent": "ok",
+      "premiumGateErrors": "ok",
+      "danger_duplicate_justifications": false,
+      "slide_topic_drift": false,
+      "fixes_applied": []
+    },
+    "questao-premium-igeduc-saude-mental-tecnico-aps.json": {
+      "zod": "ok",
+      "lintGoldenContent": "ok",
+      "premiumGateErrors": "ok",
+      "danger_duplicate_justifications": false,
+      "slide_topic_drift": false,
+      "fixes_applied": []
+    }
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "banca": "VUNESP",
+    "prova": "Tec (Pref SJRP)",
+    "orgao": "Enfermagem",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde Mental",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "OMS — depressão e incapacidade; MS — Política Nacional de Saúde Mental (atenção comunitária)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "oms-depressao-incapacidade",
+        "tier": "A",
+        "issuer": "Organização Mundial da Saúde",
+        "title": "Depressão — fato e figura (prevalência e incapacidade)",
+        "year": 2023,
+        "url": "https://www.who.int/news-room/fact-sheets/detail/depression",
+        "covers": ["prevalência global", "incapacidade funcional", "2030"]
+      },
+      {
+        "id": "ms-politica-saude-mental",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Política Nacional de Saúde Mental — atenção comunitária e base em evidências",
+        "year": 2021,
+        "covers": ["modelo comunitário", "RAPS", "APS"]
+      },
+      {
+        "id": "portaria-3088-2011-raps",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Portaria GM/MS nº 3.088/2011 — Rede de Atenção Psicossocial",
+        "year": 2011,
+        "covers": ["articulação APS–CAPS", "cuidado longitudinal"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Segundo dados da Organização Mundial da Saúde (OMS), o Brasil apresenta a maior prevalência de depressão da América Latina e, até 2030, a previsão é de que a depressão seja a primeira causa específica de incapacidade funcional no mundo. Apesar disso, frequentemente a depressão é subdiagnosticada e consequentemente subtratada (Brasil, 2025). Nesse contexto,",
+    "options": [
+      {
+        "id": "A",
+        "text": "apesar da alta prevalência, os efeitos sociais são mitigados pelo acesso aos serviços de saúde.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "embora cause sofrimento individual, a depressão não tem relação comprovada com risco aumentado de suicídio.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "a Política Nacional de Saúde Mental busca consolidar um modelo de atenção apoiado em evidências e de base comunitária.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "os sintomas cognitivos da depressão costumam ocorrer nos casos mais graves.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "São atribuições da Atenção Primária à Saúde (APS) a detecção e o encaminhamento ao especialista, visto que a APS não realiza o acompanhamento de casos de depressão.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Depressão — epidemiologia e política",
+      "chip_label": "EPIDEMIOLOGIA",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "items": [
+        {
+          "label": "ENQUADRAMENTO",
+          "detail": "OMS: Brasil lidera prevalência na América Latina; até 2030 depressão será 1ª causa de incapacidade — mas há subdiagnóstico e subtratamento.",
+          "icon": "Globe"
+        },
+        {
+          "label": "Prevalência e impacto",
+          "detail": "Alta carga populacional e previsão de incapacidade funcional global — não minimizar efeitos sociais (A falsa).",
+          "icon": "TrendingUp"
+        },
+        {
+          "label": "Política comunitária",
+          "detail": "Política Nacional de Saúde Mental: atenção baseada em evidências e comunitária — letra C.",
+          "icon": "Users"
+        },
+        {
+          "label": "Suicídio e APS",
+          "detail": "Depressão aumenta risco suicida (B falsa); APS detecta, acompanha e articula rede — não só encaminha (E falsa).",
+          "icon": "Heart"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra C — modelo comunitário e baseado em evidências da política brasileira.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Epidemiologia grave + subtratamento → política comunitária, não negação de risco"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Depressão — dados OMS e política MS",
+      "chip_label": "REGRA DE OURO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "content": "PREVALÊNCIA ALTA + INCAPACIDADE 2030 + ATENÇÃO COMUNITÁRIA",
+      "rows": [
+        {
+          "label": "OMS — América Latina",
+          "value": "Brasil com maior prevalência de depressão na região",
+          "badge": "ok"
+        },
+        {
+          "label": "OMS — 2030",
+          "value": "Depressão como 1ª causa específica de incapacidade funcional no mundo",
+          "badge": "ok"
+        },
+        {
+          "label": "Lacuna no cuidado",
+          "value": "Subdiagnóstico e subtratamento frequentes no país",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Política MS",
+          "value": "Modelo de atenção apoiado em evidências e de base comunitária",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Gabarito",
+          "value": "Letra C",
+          "emphasis": "success",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Depressão ≠ só sofrimento individual — tem risco suicida e demanda cuidado na APS"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — depressão e epidemiologia",
+      "chip_label": "PASSO A PASSO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "reveal_mode": "tap",
+      "steps": [
+        "Enunciado ancora OMS: prevalência no Brasil, incapacidade até 2030 e subdiagnóstico.",
+        "Comando: completar a frase com afirmação coerente com epidemiologia e política de saúde mental.",
+        "Eliminar A: acesso aos serviços não mitiga efeitos sociais diante de subdiagnóstico e subtratamento.",
+        "Eliminar B: depressão tem relação comprovada com risco aumentado de suicídio.",
+        "Eliminar D: sintomas cognitivos (concentração, indecisão) integram critérios do transtorno, não só casos graves.",
+        "Eliminar E: APS detecta, acompanha e articula rede — não se limita a encaminhar sem seguimento.",
+        "Marcar C: Política Nacional de Saúde Mental comunitária e baseada em evidências.",
+        "Fixação: prova de depressão = epidemiologia OMS + papel da APS + política comunitária."
+      ],
+      "footer_rule": "Subdiagnóstico desmente alternativas que minimizam impacto social"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas — depressão e epidemiologia",
+      "chip_label": "ARMADILHAS",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "content": "PEGADINHAS — DEPRESSÃO, OMS E APS",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra A — efeitos sociais mitigados",
+          "detail": "Sugere que o SUS já resolve o problema epidemiológico apesar da alta prevalência.",
+          "correct": "Gabarito letra C — subdiagnóstico e subtratamento mostram que efeitos sociais não são mitigados só pelo acesso."
+        },
+        {
+          "label": "Letra B — sem risco suicida",
+          "detail": "Separa sofrimento individual do risco de morte, negando evidência clínica e epidemiológica.",
+          "correct": "Gabarito letra C — depressão está associada a risco aumentado de suicídio; negar isso invalida a alternativa."
+        },
+        {
+          "label": "Letra D — cognitivos só nos graves",
+          "detail": "Restringe sintomas cognitivos a casos graves, ignorando critérios diagnósticos do transtorno.",
+          "correct": "Gabarito letra C — dificuldade de concentração e indecisão compõem quadro depressivo em diferentes graus."
+        },
+        {
+          "label": "Letra E — APS só encaminha",
+          "detail": "Reduz a APS a triagem sem acompanhamento longitudinal de depressão.",
+          "correct": "Gabarito letra C — APS detecta, acompanha na ESF e articula com a RAPS; não abandona o caso após encaminhar."
+        }
+      ],
+      "footer_rule": "Alta prevalência + subtratamento → política comunitária (C), não negação de risco"
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "banca": "MS (SARMENTO)",
+    "prova": "Tec Enf",
+    "orgao": "Enfermagem",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde Mental",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "Lei 10.216/2001 + Portaria GM/MS 3.088/2011 (RAPS) — SRT",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "lei-10216-2001",
+        "tier": "A",
+        "issuer": "Brasil — Presidência da República",
+        "title": "Lei nº 10.216/2001 — Proteção e direitos das pessoas com transtornos mentais",
+        "year": 2001,
+        "url": "https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10216.htm",
+        "covers": ["modelo substitutivo", "direitos do usuário", "internação como exceção"]
+      },
+      {
+        "id": "portaria-3088-2011-raps",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Portaria GM/MS nº 3.088/2011 — Rede de Atenção Psicossocial (RAPS)",
+        "year": 2011,
+        "url": "https://bvsms.saude.gov.br/bvs/saudelegis/gm/2011/prt3088_23_12_2011_rep.html",
+        "covers": ["SRT", "CAPS", "cuidado territorial"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Com base nas diretrizes da Reforma Psiquiátrica Brasileira e no funcionamento do Serviço Residencial Terapêutico, (SRT), indique a alternativa correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "O encaminhamento para SRT é indicado apenas para usuários em crise psiquiátrica aguda, que necessitam internação temporária.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "O SRT tem como finalidade principal manter vigilância contínua dos moradores, restringindo circulação externa para prevenção de recaídas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "O SRT constitui dispositivo substitutivo ao hospital psiquiátrico, oferecendo moradia em território, cuidado em liberdade e articulação com a Rede de Atenção Psicossocial.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "O SRT funciona de forma independente da rede de saúde, não havendo necessidade de articulação com CAPS ou Atenção Básica.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Reforma Psiquiátrica — SRT na prova",
+      "chip_label": "REFORMA",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "items": [
+        {
+          "label": "ENQUADRAMENTO",
+          "detail": "Reforma Psiquiátrica: cuidado em liberdade, territorial e substitutivo ao manicômio — SRT é moradia terapêutica na comunidade.",
+          "icon": "Scale"
+        },
+        {
+          "label": "SRT — o que é",
+          "detail": "Moradia em território para usuários com transtorno mental e histórico de longa internação — não é hospital nem prisão terapêutica.",
+          "icon": "Home"
+        },
+        {
+          "label": "Articulação RAPS",
+          "detail": "SRT integra CAPS, Atenção Básica e demais pontos da Rede de Atenção Psicossocial — não funciona isolado.",
+          "icon": "Network"
+        },
+        {
+          "label": "Pegadinha da crise",
+          "detail": "SRT não é porta de internação aguda — crise aguda segue fluxo de urgência/CAPS, não moradia como substituto de hospital.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra C — dispositivo substitutivo, moradia em território, cuidado em liberdade e articulação com a RAPS.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "SRT = moradia terapêutica no território, não internação nem vigilância"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "SRT — referência para a prova",
+      "chip_label": "REGRA DE OURO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "content": "SRT: SUBSTITUTO AO MANICÔMIO, NÃO À CRISE",
+      "rows": [
+        {
+          "label": "Finalidade",
+          "value": "Moradia terapêutica em território — cuidado em liberdade",
+          "badge": "ok"
+        },
+        {
+          "label": "Modelo",
+          "value": "Dispositivo substitutivo ao hospital psiquiátrico (Reforma Psiquiátrica)",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Rede",
+          "value": "Articula com RAPS (CAPS, AB, urgência) — não é serviço isolado",
+          "badge": "ok"
+        },
+        {
+          "label": "Não é",
+          "value": "Internação para crise aguda nem vigilância que restringe circulação",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Gabarito",
+          "value": "Letra C",
+          "emphasis": "success",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Decore: território + liberdade + RAPS — não crise nem isolamento"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — SRT e Reforma",
+      "chip_label": "PASSO A PASSO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "reveal_mode": "tap",
+      "steps": [
+        "Identificar o tema: Reforma Psiquiátrica + Serviço Residencial Terapêutico (SRT).",
+        "Lembrar: SRT é moradia terapêutica na comunidade — substituto ao manicômio, não à UPA.",
+        "Testar A: SRT só para crise aguda com internação → falso (confunde SRT com hospital).",
+        "Testar B: vigilância contínua restringindo circulação → falso (modelo asilar, não Reforma).",
+        "Testar D: SRT independente da rede → falso (precisa articular com CAPS e AB).",
+        "Resta C: substitutivo + moradia em território + liberdade + RAPS → verdadeiro.",
+        "Marcar letra C.",
+        "Fixação: na prova, SRT sempre aparece ligado a território, liberdade e articulação com a RAPS."
+      ],
+      "footer_rule": "Elimine internação aguda, vigilância e isolamento da rede"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas — SRT na Reforma Psiquiátrica",
+      "chip_label": "ARMADILHAS",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "content": "PEGADINHAS — SRT E REDE DE ATENÇÃO PSICOSSOCIAL",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra A — SRT na crise aguda",
+          "detail": "Parece lógico vincular sofrimento psíquico grave à internação temporária.",
+          "correct": "Gabarito letra C — SRT é moradia terapêutica pós-internação prolongada, não porta de entrada da crise aguda."
+        },
+        {
+          "label": "Letra B — vigilância e restrição",
+          "detail": "A banca usa linguagem de controle para induzir 'segurança'.",
+          "correct": "Gabarito letra C — Reforma prioriza cuidado em liberdade no território, não vigilância que restringe circulação."
+        },
+        {
+          "label": "Letra D — SRT isolado da rede",
+          "detail": "Sugere autonomia do serviço, como se moradia bastasse sem CAPS/AB.",
+          "correct": "Gabarito letra C — SRT articula obrigatoriamente com a RAPS (CAPS, Atenção Básica, demais pontos)."
+        }
+      ],
+      "footer_rule": "SRT integra a RAPS — não interna crise nem isola o usuário"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "exported_at": "2026-06-23T17:29:43.776Z",
+  "lote": "cme-g02",
+  "total": 10,
+  "entries": [
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-4",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMAUC",
+      "avant_codigo": 4128
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-0",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AMEOSC",
+      "avant_codigo": 4608
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-6",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4505
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-3",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4185
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-1",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "FÊNIX INSTITUTO",
+      "avant_codigo": 4649
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-5",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4455
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-7",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IACP",
+      "avant_codigo": 4198
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-4",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IACP",
+      "avant_codigo": 4355
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-1",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IACP",
+      "avant_codigo": 4441
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-4",
+      "titulo_aula": "Enfermagem em Central de Material e Esterilização (CME)",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 4365
+    }
+  ]
+}

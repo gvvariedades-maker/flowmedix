@@ -25,6 +25,8 @@ const DANGER_ZONE_LAYOUT_OVERRIDES = new Set([
   'dressing-choice-arena',
   'vitals-classify-arena',
   'pni-trap-chips',
+  'ist-trap-chips',
+  'adolescent-consent-gate',
 ]);
 
 /**
@@ -58,6 +60,8 @@ export function resolveDangerZoneLayoutVariant(
   if (explicitVariant === 'dressing-choice-arena') return 'dressing-choice-arena';
   if (explicitVariant === 'vitals-classify-arena') return 'vitals-classify-arena';
   if (explicitVariant === 'pni-trap-chips') return 'pni-trap-chips';
+  if (explicitVariant === 'ist-trap-chips') return 'ist-trap-chips';
+  if (explicitVariant === 'adolescent-consent-gate') return 'adolescent-consent-gate';
 
   if (hasCompareItems) {
     if (explicitVariant && DANGER_ZONE_LAYOUT_OVERRIDES.has(explicitVariant)) {
@@ -98,6 +102,12 @@ export function resolveDangerZoneLayoutVariant(
     }
     if (!explicitVariant && fallbackVariant === 'pni-trap-chips') {
       return 'pni-trap-chips';
+    }
+    if (!explicitVariant && fallbackVariant === 'ist-trap-chips') {
+      return 'ist-trap-chips';
+    }
+    if (!explicitVariant && fallbackVariant === 'adolescent-consent-gate') {
+      return 'adolescent-consent-gate';
     }
     return 'compare';
   }

@@ -1,0 +1,21 @@
+{
+  "lote": "doencas-respiratorias-cronicas-asma-dpoc-repair-lote-01",
+  "generated_at": "2026-06-20T11:54:54.683Z",
+  "source": "premium-needs-upgrade-supabase",
+  "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+  "lote_prefix": "doencas-respiratorias-cronicas-asma-dpoc",
+  "batch": 1,
+  "has_dedicated_builder": false,
+  "builder": null,
+  "issue_summary": {
+    "stub_markers": 6
+  },
+  "slugs": [
+    "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+    "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
+    "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-9"
+  ]
+}

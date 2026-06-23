@@ -1,0 +1,32 @@
+{
+  "lote": "cme-g04",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-23",
+  "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+  "cluster": "Certo ou errado + INCORRETA / EXCETO",
+  "cluster_pct": 20,
+  "total": 6,
+  "status": "validated",
+  "anchor_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-3",
+  "golden_reference": "examples/questao-premium-idecan-cme-rt-funcao-certo.json",
+  "guideline": "lib/guidelines/cme.ts (Anvisa RDC 15/2012)",
+  "note": "idecan-1105-5 (C/E ultrassom) já entregue em cme-g01 — excluído deste lote",
+  "slugs": [
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-3",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-6",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009281546-9",
+    "ameosc-enfermagem-processo-de-enfermagem-1780001613305-2",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-7",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-0"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=cme-g04 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/cme-g04/questions/",
+    "2. npm run validate:goldens -- --lote=cme-g04 --strict",
+    "3. Laboratório + player (artifacts/cme-g04-links.html)",
+    "4. npm run catalog:apply-lote -- --lote=cme-g04 --apply"
+  ],
+  "prev_lote": "cme-g03 (validated 4/4)",
+  "next_lote": "cme-g05 — cauda longa + preparo leftovers (~9 slugs)"
+}

@@ -300,6 +300,15 @@ export const GoldenRuleRowSchema = z.object({
   badge: GoldenRuleRowBadgeSchema.optional(),
   /** Molde vitals-reference-board: evita inferência errada (ex. Tempo → temperatura). */
   sv_kind: GoldenRuleRowSvKindSchema.optional(),
+  /** Painel soft-lens: dica explícita (substitui inferência por perfil). */
+  exam_hint: z
+    .string()
+    .max(LIMITS.DETAIL_MAX, `exam_hint deve ter no máximo ${LIMITS.DETAIL_MAX} caracteres`)
+    .optional(),
+  fixation: z
+    .string()
+    .max(LIMITS.DETAIL_MAX, `fixation deve ter no máximo ${LIMITS.DETAIL_MAX} caracteres`)
+    .optional(),
 });
 
 // Schema para Golden Rule Slide - COM VALIDAÇÕES AVANÇADAS

@@ -1,0 +1,27 @@
+{
+  "lote": "perioperatoria-g05",
+  "exported_at": "2026-06-23T17:28:00.330Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "amauc-enfermagem-processo-de-enfermagem-1780002549800-2",
+      "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
+      "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5",
+      "ameosc-enfermagem-processo-de-enfermagem-1780005791580-6",
+      "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-2",
+      "avancasp-enfermagem-processo-de-enfermagem-1776056009428-8",
+      "avancasp-enfermagem-processo-de-enfermagem-1780003868364-0",
+      "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-4"
+    ]
+  },
+  "slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780002549800-2",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
+    "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5",
+    "ameosc-enfermagem-processo-de-enfermagem-1780005791580-6",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-2",
+    "avancasp-enfermagem-processo-de-enfermagem-1776056009428-8",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003868364-0",
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-4"
+  ]
+}

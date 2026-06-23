@@ -8,10 +8,77 @@ import type { ThemeColors } from '../core/themeGenerator';
 import { normalizeLogicFlowSteps } from '@/lib/reverseStudySlidesNormalize';
 import { parsePniVfStep, type ParsedPniVfStep } from '@/lib/slides/pniSlideUtils';
 
+export type VfJuggleAccent = 'pni' | 'ist' | 'via';
+
+const STRATEGY_CHIP_LABEL: Record<VfJuggleAccent, string> = {
+  pni: 'ESTRATÉGIA PNI',
+  ist: 'ESTRATÉGIA IST',
+  via: 'ESTRATÉGIA VIAS',
+};
+
+const VF_JUGGLE_ACCENTS: Record<
+  VfJuggleAccent,
+  {
+    chipLabel: string;
+    chip: string;
+    card: string;
+    dotActive: string;
+    dotRevealed: string;
+    btnNext: string;
+    btnReveal: string;
+    btnSummary: string;
+    footerSummary: string;
+    stepTitle: string;
+    letterChip: string;
+  }
+> = {
+  pni: {
+    chipLabel: 'V/F PNI',
+    chip: 'border-lime-200/80 text-lime-800',
+    card: 'border-lime-200/80 from-white via-lime-50/40 to-white',
+    dotActive: 'bg-lime-500',
+    dotRevealed: 'bg-emerald-400',
+    btnNext: 'from-lime-500 to-emerald-600 shadow-lime-300/40',
+    btnReveal: 'from-lime-500 to-emerald-600 shadow-lime-300/40',
+    btnSummary: 'from-emerald-500 to-lime-600',
+    footerSummary: 'border-lime-200/70 bg-lime-50/80 text-lime-900/80',
+    stepTitle: 'text-lime-800',
+    letterChip: 'from-lime-500 to-emerald-600 shadow-lime-300/40',
+  },
+  ist: {
+    chipLabel: 'V/F IST',
+    chip: 'border-fuchsia-200/80 text-fuchsia-900',
+    card: 'border-fuchsia-200/80 from-white via-fuchsia-50/40 to-white',
+    dotActive: 'bg-fuchsia-500',
+    dotRevealed: 'bg-purple-400',
+    btnNext: 'from-fuchsia-500 to-purple-600 shadow-fuchsia-300/40',
+    btnReveal: 'from-fuchsia-500 to-purple-600 shadow-fuchsia-300/40',
+    btnSummary: 'from-fuchsia-500 to-purple-600',
+    footerSummary: 'border-fuchsia-200/70 bg-fuchsia-50/80 text-fuchsia-900/80',
+    stepTitle: 'text-fuchsia-900',
+    letterChip: 'from-fuchsia-500 to-purple-600 shadow-fuchsia-300/40',
+  },
+  via: {
+    chipLabel: 'V/F VIAS',
+    chip: 'border-emerald-200/80 text-emerald-900',
+    card: 'border-emerald-200/80 from-white via-emerald-50/40 to-white',
+    dotActive: 'bg-emerald-500',
+    dotRevealed: 'bg-teal-400',
+    btnNext: 'from-emerald-500 to-teal-600 shadow-emerald-300/40',
+    btnReveal: 'from-emerald-500 to-teal-600 shadow-emerald-300/40',
+    btnSummary: 'from-emerald-500 to-teal-600',
+    footerSummary: 'border-emerald-200/70 bg-emerald-50/80 text-emerald-900/80',
+    stepTitle: 'text-emerald-900',
+    letterChip: 'from-emerald-500 to-teal-600 shadow-emerald-300/40',
+  },
+};
+
 interface LogicFlowPniVfJuggleTapProps {
   steps: string[] | Array<{ id?: string; text: string }>;
   theme: ThemeColors;
   footerRule?: string;
+  /** `pni` = imunização (lime); `ist` = IST (fuchsia); `via` = vias (emerald). */
+  accentVariant?: VfJuggleAccent;
 }
 
 function extractAnswerLetter(text: string): string | null {
@@ -19,9 +86,12 @@ function extractAnswerLetter(text: string): string | null {
   return match?.[1]?.toUpperCase() ?? null;
 }
 
-function LetterChip({ letter }: { letter: string }) {
+function LetterChip({ letter, accent }: { letter: string; accent: VfJuggleAccent }) {
+  const styles = VF_JUGGLE_ACCENTS[accent];
   return (
-    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-lime-500 to-emerald-600 font-display text-3xl font-black text-white shadow-lg shadow-lime-300/40">
+    <div
+      className={`mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br font-display text-3xl font-black text-white shadow-lg ${styles.letterChip}`}
+    >
       {letter}
     </div>
   );
@@ -55,7 +125,13 @@ function JudgementBadge({ judgement }: { judgement: 'true' | 'false' }) {
   );
 }
 
-export function LogicFlowPniVfJuggleTap({ steps, theme, footerRule }: LogicFlowPniVfJuggleTapProps) {
+export function LogicFlowPniVfJuggleTap({
+  steps,
+  theme,
+  footerRule,
+  accentVariant = 'pni',
+}: LogicFlowPniVfJuggleTapProps) {
+  const accent = VF_JUGGLE_ACCENTS[accentVariant];
   const reduceMotion = useReducedMotion();
   const normalizedSteps = useMemo(() => normalizeLogicFlowSteps(steps), [steps]);
   const parsedSteps = useMemo(
@@ -71,6 +147,8 @@ export function LogicFlowPniVfJuggleTap({ steps, theme, footerRule }: LogicFlowP
   const current = parsedSteps[index];
   const isRevealed = revealed.has(index);
   const judgementSteps = parsedSteps.filter((s) => s.kind === 'judgement');
+  const chipLabel =
+    judgementSteps.length > 0 ? accent.chipLabel : STRATEGY_CHIP_LABEL[accentVariant];
 
   const go = useCallback(
     (dir: -1 | 1) => {
@@ -139,7 +217,9 @@ export function LogicFlowPniVfJuggleTap({ steps, theme, footerRule }: LogicFlowP
           </div>
 
           {footerRule ? (
-            <p className="rounded-xl border border-lime-200/70 bg-lime-50/80 px-4 py-3 text-center font-body text-sm italic text-lime-900/80">
+            <p
+              className={`rounded-xl border px-4 py-3 text-center font-body text-sm italic ${accent.footerSummary}`}
+            >
               {footerRule}
             </p>
           ) : null}
@@ -167,8 +247,10 @@ export function LogicFlowPniVfJuggleTap({ steps, theme, footerRule }: LogicFlowP
 
       <div className="relative z-10 mx-auto flex w-full max-w-lg flex-1 flex-col">
         <div className="mb-4 flex items-center justify-between">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-lime-200/80 bg-white/80 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-widest text-lime-800">
-            V/F PNI
+          <span
+            className={`inline-flex items-center gap-1.5 rounded-full border bg-white/80 px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-widest ${accent.chip}`}
+          >
+            {chipLabel}
           </span>
           <span className="font-mono text-sm font-black tabular-nums text-slate-700">
             {index + 1}
@@ -184,7 +266,7 @@ export function LogicFlowPniVfJuggleTap({ steps, theme, footerRule }: LogicFlowP
               animate={{ opacity: 1, x: 0 }}
               exit={reduceMotion ? undefined : { opacity: 0, x: -20 }}
               transition={{ duration: 0.28 }}
-              className="rounded-2xl border border-lime-200/80 bg-gradient-to-br from-white via-lime-50/40 to-white p-5 shadow-lg md:p-6"
+              className={`rounded-2xl border bg-gradient-to-br p-5 shadow-lg md:p-6 ${accent.card}`}
             >
               <StepCard
                 current={current}
@@ -192,6 +274,7 @@ export function LogicFlowPniVfJuggleTap({ steps, theme, footerRule }: LogicFlowP
                 isRevealed={isRevealed}
                 onReveal={revealCurrent}
                 judgementSteps={judgementSteps}
+                accentVariant={accentVariant}
               />
             </motion.div>
           </AnimatePresence>
@@ -204,7 +287,7 @@ export function LogicFlowPniVfJuggleTap({ steps, theme, footerRule }: LogicFlowP
               type="button"
               onClick={() => setIndex(i)}
               className={`h-2 rounded-full transition-all ${
-                i === index ? 'w-6 bg-lime-500' : revealed.has(i) ? 'w-2 bg-emerald-400' : 'w-2 bg-slate-300/70'
+                i === index ? `w-6 ${accent.dotActive}` : revealed.has(i) ? `w-2 ${accent.dotRevealed}` : 'w-2 bg-slate-300/70'
               }`}
               aria-label={`Passo ${i + 1}`}
             />
@@ -226,7 +309,7 @@ export function LogicFlowPniVfJuggleTap({ steps, theme, footerRule }: LogicFlowP
             <button
               type="button"
               onClick={() => setShowSummary(true)}
-              className="flex-1 rounded-2xl bg-gradient-to-r from-emerald-500 to-lime-600 py-3.5 font-body text-sm font-bold text-white shadow-lg"
+              className={`flex-1 rounded-2xl bg-gradient-to-r py-3.5 font-body text-sm font-bold text-white shadow-lg ${accent.btnSummary}`}
             >
               Ver combinação →
             </button>
@@ -235,7 +318,7 @@ export function LogicFlowPniVfJuggleTap({ steps, theme, footerRule }: LogicFlowP
               type="button"
               disabled={isLast || !canAdvance}
               onClick={() => go(1)}
-              className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-lime-500 to-emerald-600 py-3.5 font-body text-sm font-bold text-white shadow-lg disabled:from-slate-200 disabled:to-slate-200 disabled:text-slate-400 disabled:shadow-none"
+              className={`flex flex-1 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r py-3.5 font-body text-sm font-bold text-white shadow-lg disabled:from-slate-200 disabled:to-slate-200 disabled:text-slate-400 disabled:shadow-none ${accent.btnNext}`}
             >
               Próximo
               <ChevronRight className="h-4 w-4" />
@@ -257,13 +340,16 @@ function StepCard({
   isRevealed,
   onReveal,
   judgementSteps,
+  accentVariant = 'pni',
 }: {
   current: ParsedPniVfStep | undefined;
   theme: ThemeColors;
   isRevealed: boolean;
   onReveal: () => void;
   judgementSteps: ParsedPniVfStep[];
+  accentVariant?: VfJuggleAccent;
 }) {
+  const accent = VF_JUGGLE_ACCENTS[accentVariant];
   if (!current) return null;
 
   const Icon = resolveLucideIcon(
@@ -307,7 +393,7 @@ function StepCard({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               onClick={onReveal}
-              className="mt-4 w-full rounded-xl bg-gradient-to-r from-lime-500 to-emerald-600 py-3.5 font-body text-sm font-bold text-white shadow-md shadow-lime-300/40"
+              className={`mt-4 w-full rounded-xl bg-gradient-to-r py-3.5 font-body text-sm font-bold text-white shadow-md ${accent.btnReveal}`}
             >
               Julgar →
             </motion.button>
@@ -319,7 +405,7 @@ function StepCard({
 
   return (
     <>
-      <p className="font-mono text-[10px] font-bold uppercase tracking-widest text-lime-800">
+      <p className={`font-mono text-[10px] font-bold uppercase tracking-widest ${accent.stepTitle}`}>
         {current.title}
       </p>
       {current.kind === 'locate' ? (
@@ -327,7 +413,7 @@ function StepCard({
           const letter = extractAnswerLetter(current.text);
           return letter ? (
             <div className="my-4">
-              <LetterChip letter={letter} />
+              <LetterChip letter={letter} accent={accentVariant} />
               <p className="mt-3 text-center font-body text-sm font-semibold text-slate-700">
                 {current.text}
               </p>

@@ -1,11 +1,9 @@
 {
   "lote": "vias-de-administracao-lote-04",
-  "exported_at": "2026-06-09T11:13:40.570Z",
+  "exported_at": "2026-06-19T15:16:53.641Z",
   "source": "supabase",
   "filters": {
-    "subtopico": "Vias de Administração",
-    "limit": 50,
-    "exclude_count": 169
+    "from_manifest": "data/catalog-migration/vias-de-administracao-lote-04/manifest.json"
   },
   "slugs": [
     "ibam-enfermagem-vias-de-administracao-1776056366158-3",

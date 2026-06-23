@@ -5,6 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Zap } from 'lucide-react';
 import type { ThemeColors } from '../core/themeGenerator';
 import { resolveLucideIcon } from '../core/lucideIcon';
+import {
+  inferAbsorptionRouteKind,
+  type AbsorptionRouteKind,
+} from '@/lib/slides/absorptionRouteKind';
 
 export interface RouteConcept {
   icon: string;
@@ -13,7 +17,7 @@ export interface RouteConcept {
 }
 
 type RouteSlot = 'iv' | 'im' | 'sc' | 'vo';
-type ConceptKind = RouteSlot | 'compare' | 'technique' | 'exam' | 'velocity';
+type ConceptKind = AbsorptionRouteKind;
 
 const ROUTES: {
   id: RouteSlot;
@@ -87,20 +91,6 @@ const ROUTES: {
   },
 ];
 
-function inferConceptKind(title: string, description: string): ConceptKind {
-  const text = `${title} ${description}`.toLowerCase();
-  if (/comparativo|iv = imediata|vo = variável/.test(text)) return 'compare';
-  if (/técnica|ângulo|prega|massagem/.test(text)) return 'technique';
-  if (/vunesp|padrão|banca/.test(text)) return 'exam';
-  if (/velocidade de absorção|mais lenta que im|picos plasmáticos/.test(text)) return 'velocity';
-  if (/\biv\b|intravenosa|imediata/.test(text) && !/mais lenta que iv/.test(text)) return 'iv';
-  if (/\bim\b|intramuscular/.test(text)) return 'im';
-  if (/subcutânea|\bsc\b|sc\/h|hipodérmico|insulina|heparina/.test(text)) return 'sc';
-  if (/\bvo\b|oral|tgi/.test(text)) return 'vo';
-  if (/volume|dose/.test(text)) return 'sc';
-  return 'sc';
-}
-
 interface AbsorptionSpeedRailConceptMapProps {
   concepts: RouteConcept[];
   theme: ThemeColors;
@@ -118,7 +108,7 @@ export const AbsorptionSpeedRailConceptMap = ({
     const extras: { kind: 'technique' | 'exam'; concept: RouteConcept }[] = [];
 
     for (const concept of concepts) {
-      const kind = inferConceptKind(concept.title, concept.description);
+      const kind = inferAbsorptionRouteKind(concept.title, concept.description);
       if (kind === 'compare' || kind === 'velocity') {
         sharedItems.push({ kind, concept });
       } else if (kind === 'technique' || kind === 'exam') {
@@ -153,24 +143,24 @@ export const AbsorptionSpeedRailConceptMap = ({
       });
     }
 
-    if (velocityConcept) {
-      sections.push({
-        title: velocityConcept.title,
-        body: velocityConcept.description,
-        icon: velocityConcept.icon,
-        highlight: selected === 'sc',
-      });
-    }
-
-    if (compareConcept) {
-      sections.push({
-        title: compareConcept.title,
-        body: compareConcept.description,
-        icon: compareConcept.icon,
-      });
-    }
-
     if (selected === 'sc') {
+      if (velocityConcept) {
+        sections.push({
+          title: velocityConcept.title,
+          body: velocityConcept.description,
+          icon: velocityConcept.icon,
+          highlight: true,
+        });
+      }
+
+      if (compareConcept) {
+        sections.push({
+          title: compareConcept.title,
+          body: compareConcept.description,
+          icon: compareConcept.icon,
+        });
+      }
+
       if (techniqueConcept) {
         sections.push({
           title: techniqueConcept.title,

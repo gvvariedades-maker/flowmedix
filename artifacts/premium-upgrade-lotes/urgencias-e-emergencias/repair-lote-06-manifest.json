@@ -1,0 +1,21 @@
+{
+  "lote": "urgencias-e-emergencias-repair-lote-06",
+  "generated_at": "2026-06-20T11:54:54.683Z",
+  "source": "premium-needs-upgrade-supabase",
+  "subtopico": "Urgências e Emergências",
+  "lote_prefix": "urgencias-e-emergencias",
+  "batch": 6,
+  "has_dedicated_builder": true,
+  "builder": "upgradePremiumUrgencias",
+  "issue_summary": {
+    "stub_markers": 6
+  },
+  "slugs": [
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-4",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-5",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104077075-9",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-1"
+  ]
+}

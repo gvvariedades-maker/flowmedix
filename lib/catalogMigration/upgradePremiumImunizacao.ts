@@ -641,13 +641,21 @@ export function canBuildImunizacaoVfSlides(instruction: string): boolean {
   return extractImunizacaoAssertives(instruction).length >= 2;
 }
 
+const IMUNIZACAO_SUPPORTED_FAMILIES = [
+  'conceito',
+  'protocolo',
+  'text_fragment',
+  'legis',
+  'calc',
+  'vf',
+  'certo_errado',
+] as const;
+
 export function canBuildImunizacaoPremiumSlides(instruction: string, family: string): boolean {
   if (canBuildImunizacaoVfSlides(instruction)) return true;
-  const lower = instruction.toLowerCase();
-  if (/vacin|imuniz|calendário|calendario|pni|imunobiológico|imunobiologico/.test(lower)) {
-    return ['conceito', 'protocolo', 'text_fragment', 'legis', 'calc', 'vf'].includes(family);
-  }
-  return false;
+  return IMUNIZACAO_SUPPORTED_FAMILIES.includes(
+    family as (typeof IMUNIZACAO_SUPPORTED_FAMILIES)[number],
+  );
 }
 
 export function buildImunizacaoPremiumSlides(input: BuildImunizacaoSlidesInput): SlideRecord[] {

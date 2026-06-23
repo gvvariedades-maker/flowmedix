@@ -6,6 +6,7 @@ import {
   HelpCircle,
   LayoutDashboard,
   ListChecks,
+  Sparkles,
   TrendingUp,
   type LucideIcon,
 } from 'lucide-react';
@@ -82,6 +83,13 @@ export const NAV_SECTION_DEFS: DashboardNavSectionDef[] = [
         href: '/desempenho/simulados',
         icon: TrendingUp,
         accent: 'amber',
+      },
+      {
+        label: 'Missão da semana',
+        title: 'Avaliação semanal personalizada',
+        href: '/missao-semanal',
+        icon: Sparkles,
+        accent: 'sky',
       },
     ],
   },

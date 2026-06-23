@@ -22,7 +22,7 @@
         "issuer": "COFEN / referência técnica de enfermagem",
         "title": "Administração de medicamentos — via intramuscular",
         "year": 2017,
-        "covers": ["absorção IM×SC", "sítios de punção", "ventroglúteo"]
+        "covers": ["absorção IM x SC", "sítios de punção", "ventroglúteo"]
       }
     ]
   },
@@ -59,7 +59,6 @@
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "layout_variant": "morphological",
       "slide_title": "Via IM — mapa V/F da prova",
       "meta": {
         "topico": "Enfermagem",
@@ -67,8 +66,8 @@
       },
       "items": [
         {
-          "label": "Afirmativa I — absorção IM × SC",
-          "detail": "FALSA. IM tem absorção mais rápida que SC — músculo é mais vascularizado que o tecido subcutâneo. A banca inverte “lenta” e “menor vascularização”.",
+          "label": "Afirmativa I — absorção IM x SC",
+          "detail": "FALSA. IM tem absorção mais rápida que SC — músculo é mais vascularizado que o tecido subcutâneo. A banca inverte lenta e menor vascularização.",
           "icon": "TrendingUp"
         },
         {
@@ -83,7 +82,7 @@
         },
         {
           "label": "Afirmativa IV — ventroglúteo",
-          "detail": "FALSA. Ventroglúteo (glúteo médio) é um dos locais mais seguros e recomendados — longe do nervo ciático. A questão inverte ao dizer “menos recomendado”.",
+          "detail": "FALSA. Ventroglúteo (glúteo médio) é um dos locais mais seguros e recomendados — longe do nervo ciático. A questão inverte ao dizer menos recomendado.",
           "icon": "Shield"
         },
         {
@@ -101,8 +100,6 @@
     },
     {
       "type": "golden_rule",
-      "layout_variant": "reference_table",
-      "template": "t02",
       "slide_title": "Referência — via IM na prova",
       "meta": {
         "topico": "Enfermagem",
@@ -114,7 +111,9 @@
           "label": "I — absorção",
           "value": "FALSA: IM > SC em velocidade (mais vascularização muscular)",
           "emphasis": "alert",
-          "badge": "warn"
+          "badge": "warn",
+          "exam_hint": "Pegadinha clássica: IM absorve mais rápido que SC — não inverta velocidade entre vias.",
+          "fixation": "Antes de marcar, teste se a afirmativa confunde IM com SC."
         },
         {
           "label": "II — palpação e marcos",
@@ -130,7 +129,9 @@
           "label": "IV — ventroglúteo",
           "value": "FALSA: ventroglúteo é recomendado/seguro — não o menos indicado",
           "emphasis": "alert",
-          "badge": "warn"
+          "badge": "warn",
+          "exam_hint": "Ventroglúteo é sítio seguro — banca usa medo anatômico para inverter o conceito.",
+          "fixation": "IM: ventroglúteo afasta o nervo ciático; não é o sítio proibido."
         },
         {
           "label": "Combinação",
@@ -148,27 +149,26 @@
         },
         {
           "label": "Pegadinha IV",
-          "value": "Cita nervos/vasos para parecer “perigoso” — inverte o sítio mais seguro"
+          "value": "Cita nervos/vasos para parecer perigoso — inverte o sítio mais seguro"
         }
       ],
-      "footer_rule": "Em V/F de via IM: desconfie de I (absorção) e IV (ventroglúteo “proibido”)"
+      "footer_rule": "Em V/F de via IM: desconfie de I (absorção) e IV (ventroglúteo proibido)"
     },
     {
       "type": "logic_flow",
-      "layout_variant": "cards",
       "reveal_mode": "tap",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Vias de Administração"
       },
       "steps": [
-        "Identificar formato: quatro afirmativas (I–IV) + “É CORRETO o que se afirma em” — combinação V/F.",
+        "Identificar formato: quatro afirmativas (I-IV) + comando É CORRETO o que se afirma em — combinação V/F.",
         "Julgar I: IM mais lenta que SC por menor vascularização? → FALSO — músculo é mais vascularizado; IM absorve mais rápido que SC.",
         "Julgar II: examinar músculo, palpar marcos ósseos, conhecer complicações? → VERDADEIRO — técnica padrão de prova.",
         "Julgar III: palpar lesão, posicionar, distrair para reduzir dor? → VERDADEIRO — cuidados de conforto cobrados.",
         "Julgar IV: ventroglúteo é o menos recomendado por nervos/vasos? → FALSO — é local seguro e indicado.",
-        "Montar conjunto: II=V, III=V; I e IV falsas → “II e III apenas”.",
-        "Localizar alternativa E = “II e III apenas”.",
+        "Montar conjunto: II=V, III=V; I e IV falsas → II e III apenas.",
+        "Localizar alternativa E = II e III apenas.",
         "Eliminar A (inclui I e IV), B (inclui I e IV), C (inclui IV), D (inclui IV).",
         "Marcar E.",
         "Fixação: em vias de administração, memorize ordem de absorção IM>SC e que ventroglúteo é sítio preferencial."
@@ -177,17 +177,16 @@
     },
     {
       "type": "danger_zone",
-      "layout_variant": "compare",
       "bullet_style": "x_icon",
       "meta": {
         "topico": "Enfermagem",
         "subtopico": "Vias de Administração"
       },
-      "content": "PEGADINHAS CPCON — VIA IM (I–IV)",
+      "content": "PEGADINHAS CPCON — VIA IM (I-IV)",
       "items": [
         {
           "label": "Letra A — I e IV",
-          "detail": "Reúne as duas afirmativas falsas (absorção invertida + ventroglúteo “proibido”).",
+          "detail": "Reúne as duas afirmativas falsas (absorção invertida + ventroglúteo proibido).",
           "correct": "I e IV são falsas; gabarito pede o que está correto (II e III)."
         },
         {
@@ -207,7 +206,7 @@
         },
         {
           "label": "Confundir IM com SC na I",
-          "detail": "Transferência: muitos decoram “SC é lenta”, mas invertem qual via é mais rápida.",
+          "detail": "Transferência: muitos decoram SC é lenta, mas invertem qual via é mais rápida.",
           "correct": "IM absorve mais rápido que SC pelo maior suprimento sanguíneo muscular."
         },
         {
@@ -217,7 +216,7 @@
         },
         {
           "label": "Marcar antes de julgar IV",
-          "detail": "II e III “fáceis” levam a C ou B sem fechar IV.",
+          "detail": "II e III fáceis levam a C ou B sem fechar IV.",
           "correct": "Sempre julgar as quatro afirmativas antes de olhar combinações."
         }
       ],

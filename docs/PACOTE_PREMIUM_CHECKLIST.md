@@ -1,10 +1,182 @@
-# Pacote Premium — Checklist e Roadmap AVANT
+# Pacote Premium — Runbook, checklist e roadmap AVANT
 
-Governança para questões com NeuroSlides de alta qualidade: **estrutura para todas**, **pacote completo por subtópico** em rollout.
+**Fonte principal de *como fechar* um subtópico premium** — estrutura para todas as questões; pacote completo por subtópico em rollout.
 
-Regra Cursor: [`.cursor/rules/avant-premium-pacote.mdc`](../.cursor/rules/avant-premium-pacote.mdc).  
+| Doc | Papel |
+|-----|--------|
+| **Este arquivo (§ Runbook)** | Procedimento Fases 0–6, ordem, erros, comandos |
+| [`PREMIUM_QUESTAO.md`](PREMIUM_QUESTAO.md) | Definição L1/L2/L3 (o que é premium) |
+| [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) | Profundidade na criação de **um** molde (Fase 2) |
+| [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) | Receitas por família (`classifyFamily`) |
+| [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md) | Gramática golden-v1 + fontes |
+| [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) | **Runbook handcraft** — âncora, Trilho A sem hybrid, escala catálogo, apply |
+| [`perioperatoria-completo/README.md`](data/catalog-migration/perioperatoria-completo/README.md) | **Caso fechado** — 68/68 handcraft golden-v1 (referência operacional) |
+
+Regra Cursor (índice curto): [`.cursor/rules/avant-premium-pacote.mdc`](../.cursor/rules/avant-premium-pacote.mdc).  
 Gate automatizado: [`__tests__/premium-no-stub.test.ts`](../__tests__/premium-no-stub.test.ts).  
-Pacote de referência implementado: **Curativos e Manejo de Feridas**.
+Fonte normativa: [`FONTE_NORMATIVA_AVANT.md`](FONTE_NORMATIVA_AVANT.md).  
+Pacotes **Completo** de referência: **Curativos e Manejo de Feridas**, **Imunização**.
+
+---
+
+## Runbook (comece aqui)
+
+### Cartão de bolso — 6 entregas do pacote
+
+| # | Entrega |
+|---|---------|
+| 1 | Golden em `examples/` validado (`QuestaoCompletaSchema` + revisão clínica) |
+| 2 | 4 variantes bespoke + `SUBTOPIC_DESIGN_MAP` + wiring no player |
+| 3 | `upgradePremium<Pacote>.ts` + router + testes Jest |
+| 4 | Piloto 3–5 slugs ok no player (conteúdo + visual + tap/compare) |
+| 5 | Catálogo migrado (lotes + export final com exclude vazio) |
+| 6 | `audit-premium-supabase` → **0 erros** no subtópico; matriz atualizada |
+
+### Ordem obrigatória (evita retrabalho)
+
+```text
+Fase 0   escopo (subtópico, cor, famílias, goldens planejados)
+   ↓
+Fase 1   golden de 1 ramo forte (V/F ou MCQ — contrato do molde)
+         └── procedimento completo: [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) §3
+   ↓
+Fase 1b  mapear ramos no catálogo (cluster report — ver § Qualidade por ramos)
+   ↓
+Fase 2   moldes 4/4 bespoke (co-design com o golden)
+   ↓
+Fase 3   builder dedicado (imita gramática do golden)
+   ↓
+Fase 3b  infra transversal + ciclo por ramo (arena, gate semântico, repair)
+   ↓
+Fase 4   piloto 3–5 questões
+   ↓
+Fase 5   lotes de 50 até exclude vazio
+   ↓
+Fase 6   testes + audit + cluster (drift ≈ 0) + amostra ~5%
+```
+
+> **Nota de numeração:** as Fases **0–6** deste runbook cobrem o **pacote inteiro**. Dentro da Fase 2, o pipeline de **um componente** React está em [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) §3 (fases 0–7 só do molde). Siga a ordem **deste** runbook para rollout.
+
+### Erro comum
+
+**Migrar com hybrid genérico antes dos moldes** — você ganha L1 (estrutura) e talvez L2 parcial, mas o player fica em layout genérico e a auditoria acusa `molde_golden_rule_sem_rows`, `logic_flow_sem_tap`, etc. Só escale lotes **depois** do builder no contrato dos moldes (Fases 2–3).
+
+**Declarar “Completo” só com gate estrutural** — `premiumGate` valida forma (`rows`, `correct`, `tap`), não se o slide ensina **esta** prova. Um subtópico pode ter 100% sem stub e ainda exibir vocabulário de outro tema (ex.: “bundle CVC” numa questão EXCETO). Use o **cluster report** + gate semântico + amostra no player (§ Qualidade por ramos).
+
+### Critério “Completo” na matriz
+
+Marcar subtópico como **Completo** só quando **todas** as condições abaixo forem verdadeiras:
+
+1. **100%** das questões em produção passam `premiumGate` estrutural (stub + contrato de molde).
+2. **Cluster report:** `drift_total` ≈ **0** (ou justificado); ramos ≥10% do catálogo têm **golden + perfil ancorado** no builder.
+3. **Amostra humana** no player: 2–3 slugs **por ramo forte** — enunciado ↔ slide 4 coerentes.
+4. Não basta ter builder no repo sem os ramos mapeados.
+
+- **Referência sólida:** Curativos e Imunização — golden(s) por ramo + moldes + builder + migração + auditoria.
+- **Caso de estudo (2026-06-22):** Punção Venosa — gate estrutural 110/110 OK, mas cluster revelou **~75% drift** (1 golden IPCS para ~5 ramos pedagógicos). Status: **revisão de ramos pendente** — ver § Caso Punção.
+
+---
+
+## Qualidade pedagógica por ramos (padrão transversal)
+
+Aplica-se a **todo** subtópico com builder dedicado e moldes bespoke. A família (`classifyFamily`: V/F, MCQ, protocolo…) não basta: dentro de `conceito` podem existir **vários temas** (EXCETO, flebite, tempo, CVC…), cada um exigindo golden + perfil no builder.
+
+### Fase 1b — Mapear ramos (antes de escalar)
+
+```bash
+# Piloto do script (Punção); replicar como cluster-<pacote>-topics.ts
+npx tsx scripts/cluster-puncao-topics.ts
+# → artifacts/puncao-topic-cluster-report.json
+```
+
+| Saída do relatório | Ação |
+|--------------------|------|
+| `pedagogical_clusters` (tema × volume × %) | Planejar goldens |
+| `cluster_decisions` (`novo_ramo` / `absorver` / `cauda_longa` / `coberto`) | Decidir se o recorte merece ramo próprio |
+| `decision_counts` | Conferir equilíbrio entre criação, absorção e cauda longa |
+| `drift_total` | Slides com vocabulário sem âncora no enunciado |
+| `instruction_artifacts_total` | Enunciados com lixo de importação (`2543)`, etc.) |
+| `goldens_needed` | Ramos ≥10% (ou ≥5 questões) sem golden |
+
+### Critério objetivo: novo ramo vs absorver
+
+O cluster não deve depender só de feeling. A decisão técnica parte de quatro sinais:
+
+1. **Volume**: `count >= max(5, ceil(total * 0.1))`.
+2. **Separabilidade semântica**: o cluster precisa ser específico, com `dominant_builder_topic_share` alto e pouca dispersão entre tópicos.
+3. **Drift**: quanto mais o enunciado e os slides divergem, mais o recorte pede âncora própria.
+4. **Cobertura existente**: se já existe golden + perfil ancorado, o cluster entra como `coberto`, não como novo ramo.
+
+Leitura prática do relatório:
+
+| `cluster_decisions[].decision` | Interpretação |
+|-------------------------------|---------------|
+| `novo_ramo` | Vale criar golden + perfil ancorado no builder |
+| `absorver` | O recorte é útil, mas deve viver em ramo/bucket já existente |
+| `cauda_longa` | Volume insuficiente para manter âncora própria |
+| `coberto` | Já existe cobertura pedagógica; manter e só reparar drift |
+
+**Regra de bolso:** **1 golden ≈ 1 ramo pedagógico forte** (não 1 por subtópico inteiro, não 1 por questão). Ramos &lt;10% → cauda longa (`L2-shallow` ou absorver em ramo vizinho).
+
+### Fase 3b — Infra transversal (uma vez por pacote com arena/tap)
+
+Antes de repair em massa, fechar a **plataforma** do pacote:
+
+| Entrega | Onde | Contrato |
+|---------|------|----------|
+| `formatGabaritoCorrect` | `lib/catalogMigration/slideContract.ts` | `danger_zone.items[].correct` = `Gabarito letra X — {explicação}` |
+| Moldes arena/compare | `components/slides/variants/*Arena*.tsx` | **Proibido** hardcode de gabarito (`?? 'B'`), `trapHint` por letra, texto fixo de um golden — ver [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md) § Arena |
+| Gate semântico | `lib/catalogMigration/premiumGate.ts` | `slide_topic_drift`, `danger_gabarito_letter_mismatch`, `danger_gabarito_unparseable`, `instruction_import_artifacts` (warn) |
+
+### Ciclo por ramo (repetir até `drift_total` ≈ 0)
+
+Para cada cluster em `goldens_needed` (prioridade: maior volume primeiro):
+
+```text
+1. Golden real do ramo (1 questão âncora da prova em examples/)
+2. Perfil temático + âncora no upgradePremium<Pacote>.ts
+   (inferTopic só retorna o perfil se o enunciado bater na âncora)
+3. Testes Jest: fixture do cluster + premiumGateErrors() = 0
+4. Repair-lote só desse cluster (+ instruction artifacts se houver)
+5. Re-rodar cluster report → próximo ramo
+```
+
+**Não** escalar Fase 5 (lotes de 50) com `drift_total` alto conhecido.
+
+### Cartão — antes de marcar “Completo”
+
+```text
+□ cluster-<pacote>-topics.ts rodado; relatório em artifacts/
+□ ramos ≥10% têm golden + perfil ancorado no builder
+□ moldes arena sem hardcode de golden (code review)
+□ formatGabaritoCorrect em todos os builders do pacote
+□ drift_total < 5% (ou justificado por ramo)
+□ instruction_artifacts = 0 (ou repair feito)
+□ amostra 2–3 slugs por ramo forte no player (enunciado ↔ slide 4)
+□ audit-premium-supabase --warn revisado
+```
+
+### Caso de estudo — Punção Venosa (2026-06-22)
+
+Relatório: [`artifacts/puncao-topic-cluster-report.json`](../artifacts/puncao-topic-cluster-report.json) · Script: [`scripts/cluster-puncao-topics.ts`](../scripts/cluster-puncao-topics.ts).
+
+| Métrica | Valor |
+|---------|-------|
+| Questões | 110 |
+| `drift_total` | 82 (~75%) |
+| Golden hoje | 1 (MCQ IPCS/CVC — `admtec-puncao`) |
+| Goldens recomendados (≥10%) | **4 novos** + IPCS existente |
+
+| Ramo | Qtd | % | Golden? |
+|------|-----|---|---------|
+| Flebite e complicações | 19 | 17% | ❌ |
+| EXCETO — técnica / conduta | 12 | 11% | ❌ |
+| Default — sem âncora | 12 | 11% | ❌ (encolhe após ramos) |
+| Dispositivo / calibre / jelco | 11 | 10% | ❌ |
+| Tempo / observação | 11 | 10% | ❌ |
+| Prevenção IPCS/CVC | 7+ | — | ✅ |
+
+**Ordem de fechamento sugerida:** EXCETO (corrige bug CEV URCA) → Flebite → Tempo → Dispositivo → re-cluster → declarar Completo.
 
 ---
 
@@ -68,45 +240,122 @@ CAMADA 2 — Apresentação (player)
 
 ## Fase 0 — Definição do pacote
 
-- [ ] Subtópico canônico (CLAUDE.md §9)
-- [ ] Template de cor (t01–t15)
-- [ ] Famílias de questão no catálogo (V/F, múltipla escolha, certo/errado…)
-- [ ] Golden(s) de referência planejados (1 por ramo forte)
+Antes de codar:
 
-## Fase 1 — Golden
+- [ ] **Subtópico canônico** exato (CLAUDE.md §9) — ex.: `Infecções Sexualmente Transmissíveis (ISTs)`
+- [ ] **Template de cor** (t01–t15) — ex.: Curativos `orange` (t11), Imunização `lime` (t09)
+- [ ] **Famílias no catálogo** — V/F, certo/errado, múltipla escolha, protocolo… (`classifyFamily` em [`lib/catalogMigration/classifyFamily.ts`](../lib/catalogMigration/classifyFamily.ts); receitas em [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md))
+- [ ] **Golden(s) planejados** — pelo menos um por ramo forte (ex.: um V/F, um MCQ)
+- [ ] Referência: pacotes **Completo** na matriz (Curativos, Imunização)
 
-- [ ] JSON em `examples/` validado no Laboratório
-- [ ] 4 slides alinhados ao contrato dos moldes planejados
-- [ ] Revisão clínica
+## Fase 1 — Golden (barra de qualidade)
 
-## Fase 2 — Moldes visuais
+Criar `examples/questao-premium-<banca>-<recorte>.json`:
 
-- [ ] 4 componentes em `components/slides/variants/`
-- [ ] `SUBTOPIC_DESIGN_MAP` + `NeuroSlide.tsx`
-- [ ] Testes de presença do molde
+- [ ] 4 slides em **formato plano**; `meta.subtopico` canônico em **cada** slide
+- [ ] Conteúdo específico da prova (L2: zero stub)
+- [ ] Slides no formato que os moldes vão exigir (L3: `rows`, `items` com `correct`, `steps` + `reveal_mode: "tap"`)
+- [ ] Validar no Laboratório / `QuestaoCompletaSchema`
+- [ ] Revisão clínica humana
+- [ ] Recomendado: `meta.content_standard: "golden-v1"` + `sources` — [`GOLDEN_CONTENT_STANDARD.md`](GOLDEN_CONTENT_STANDARD.md)
+
+O golden é o **contrato pedagógico** — o builder imita essa gramática em escala.
+
+## Fase 1b — Mapear ramos pedagógicos
+
+- [ ] Rodar `npx tsx scripts/cluster-<pacote>-topics.ts` (copiar de [`cluster-puncao-topics.ts`](../scripts/cluster-puncao-topics.ts))
+- [ ] Identificar ramos ≥10% (ou ≥5 questões) sem golden em `goldens_needed`
+- [ ] Planejar 1 golden + 1 perfil ancorado por ramo forte
+- [ ] Registrar `drift_total` e `instruction_artifacts_total` como baseline
+
+Ver § **Qualidade pedagógica por ramos**.
+
+## Fase 2 — Moldes visuais (4/4 bespoke)
+
+Para cada tipo de slide, um `layout_variant` dedicado (não só `morphological`, `center`, `cards`, `list`). Co-design: molde + contrato de dados juntos.
+
+| Slide | Exemplo Curativos |
+|-------|-------------------|
+| `concept_map` | `wound-stage-tissue-deck` |
+| `golden_rule` | `dressing-match-matrix` |
+| `logic_flow` | `wound-prep-tap-flow` |
+| `danger_zone` | `dressing-choice-arena` |
+
+- [ ] Componentes em `components/slides/variants/`
+- [ ] Entrada em `SUBTOPIC_DESIGN_MAP` ([`themeGenerator.ts`](../components/slides/core/themeGenerator.ts))
+- [ ] Wiring em `NeuroSlide.tsx` + listas (`conceptMapLayout.ts`, `goldenRuleLayout.ts`, etc.)
+- [ ] Teste de presença em [`__tests__/slidePresentationSubtopicMold.test.ts`](../__tests__/slidePresentationSubtopicMold.test.ts)
+- [ ] Preview no player (`/estudar/<slug>`) — confirmar que **não** cai em fallback
+
+Detalhe do pipeline de um molde: [`VARIANT_MOLDS.md`](VARIANT_MOLDS.md).
 
 ## Fase 3 — Builder de conteúdo
 
-- [ ] `upgradePremium<Pacote>.ts` + testes
-- [ ] Integração em `upgradePremiumHybrid`
-- [ ] Saída no formato do contrato (Fase 2)
+Criar [`lib/catalogMigration/upgradePremium<Pacote>.ts`](../lib/catalogMigration/upgradePremiumCurativos.ts) (copiar padrão de Curativos):
 
-## Fase 4 — Piloto
+```typescript
+export function is<Pacote>Subtopico(subtopico: string): boolean { ... }
+export function canBuild<Pacote>PremiumSlides(instruction: string, family: ...): boolean { ... }
+export function build<Pacote>PremiumSlidesForFamily(input, family): SlideRecord[] { ... }
+```
 
-- [ ] 3–5 slugs: `catalog:export-lote` → `upgrade-premium --write --force` → `apply-lote --apply`
-- [ ] Revisão no `/estudar/<slug>`
+O builder deve:
 
-## Fase 5 — Lote em escala
+- [ ] Parsear enunciado (I/II/III, gabarito V/F, alternativas…)
+- [ ] Gerar 4 slides no **contrato do molde** (L3)
+- [ ] Ter ramos para V/F, MCQ, certo/errado quando existirem no catálogo
+- [ ] **Nunca** emitir `PREMIUM_STUB_MARKERS` (`[IA]`, “conceito central”, etc.)
 
-- [ ] Lotes de 50 com `--exclude-manifest`
-- [ ] Verificação final: export com todos os excludes → nenhum slug restante
+Integração:
+
+- [ ] [`upgradePremiumDedicatedRouter.ts`](../lib/catalogMigration/upgradePremiumDedicatedRouter.ts) — `matchDedicatedPremiumBuilder()` roteia por subtópico
+- [ ] [`upgradePremiumHybrid.ts`](../lib/catalogMigration/upgradePremiumHybrid.ts) — fallback genérico **só** para subtópicos sem builder
+
+Testes: `__tests__/lib/catalogMigration/upgradePremium<Pacote>.test.ts` — famílias reais + `premiumGateErrors()` = 0 nos outputs.
+
+## Fase 3b — Infra + ciclo por ramo
+
+**Infra (uma vez):** `formatGabaritoCorrect` · moldes arena sem hardcode · gate semântico em `premiumGate.ts`.
+
+**Por ramo** (repetir até `drift_total` ≈ 0):
+
+- [ ] Golden do ramo em `examples/` + revisão clínica
+- [ ] Perfil + âncora em `upgradePremium<Pacote>.ts`
+- [ ] Teste com fixture real do cluster
+- [ ] `repair-lote` do cluster (+ artifacts de instruction se houver)
+- [ ] Re-cluster → próximo ramo
+
+## Fase 4 — Piloto (3–5 questões)
+
+```bash
+npm run catalog:export-lote -- --lote=<pacote>-lote-01 --subtopico="<Subtópico>" --limit=5
+npm run catalog:upgrade-premium -- --lote=<pacote>-lote-01 --write --force
+npm run catalog:apply-lote -- --lote=<pacote>-lote-01 --apply
+```
+
+- [ ] Revisar no player: conteúdo + visual + interação (tap, compare)
+- [ ] **DoD piloto:** ≥90% `zodValid`, **zero** stub nos slides gerados
+
+`apply-lote` usa `premiumGate: true` por padrão — questões que não passam L3 **não** entram no banco (salvo `--allow-generic`).
+
+## Fase 5 — Migração em escala
+
+- [ ] Lotes de 50 com `--exclude-manifest` (evitar reprocessar piloto e lotes anteriores)
+- [ ] Mesmo fluxo: `export-lote` → `upgrade-premium --write --force` → `apply-lote --apply`
+- [ ] **Fechamento:** export com exclude de **todos** os lotes → nenhum slug restante no subtópico
 - [ ] `lote-meta.json` com builder e contagem
 
-## Fase 6 — Fechamento (/SHIP_IT)
+## Fase 6 — Validar e declarar “Completo”
 
-- [ ] `npm test` + `npm run build`
-- [ ] Amostra humana ~5%
+- [ ] `npm test -- premium-no-stub upgradePremium slidePresentationSubtopicMold`
+- [ ] `npm run build`
+- [ ] `npx tsx scripts/cluster-<pacote>-topics.ts` — `drift_total` ≈ 0; ramos ≥10% cobertos
+- [ ] `npx tsx scripts/audit-premium-supabase.ts` — **0 erros** estruturais; revisar `--warn` se gate semântico ativo
+- [ ] Amostra humana: ~5% global **+** 2–3 slugs por ramo forte (enunciado ↔ slide 4)
+- [ ] Atualizar **matriz** neste arquivo (§ abaixo)
 - [ ] Commit quando solicitado
+
+Só marque **Completo** quando estrutural **e** semântico (cluster) estiverem fechados — ver § Critério “Completo”.
 
 ---
 
@@ -118,6 +367,8 @@ CAMADA 2 — Apresentação (player)
 | Builder | `lib/catalogMigration/upgradePremium<Pacote>.ts` |
 | `layout_variant` | `<tema>-<conceito>-<formato>` (ex.: `wound-stage-tissue-deck`) |
 | Lote | `data/catalog-migration/<pacote>-lote-NN/` |
+| Cluster report | `artifacts/<pacote>-topic-cluster-report.json` |
+| Script cluster | `scripts/cluster-<pacote>-topics.ts` (piloto: [`cluster-puncao-topics.ts`](../scripts/cluster-puncao-topics.ts)) |
 
 ---
 
@@ -153,7 +404,7 @@ Moldes bespoke = variantes com componente React dedicado (não só `morphologica
 | Noções de Anatomia | 107 | 100 | 93,5% | ✅ | ❌ | ❌ | Moldes + builder |
 | Saúde da Mulher | 225 | 199 | 88,4% | ❌ | ❌ | ❌ | Builder |
 | Instalação e Manejo de Sondas | 191 | 167 | 87,4% | ✅ | 🟡 2/4 | ❌ | Builder |
-| Punção Venosa e Cuidados com Cateteres | 144 | 118 | 81,9% | ✅ | ✅ 4/4 | ❌ | **Quick win** |
+| **Punção Venosa e Cuidados com Cateteres** | **110** | **110** | **100%** | 🟡 1/5 ramos | ✅ 4/4 | ✅ | **L3 estrutural — revisão ramos** |
 | Oxigenoterapia e Cuidados Respiratórios | 195 | 158 | 81,0% | ✅ | 🟡 3/4 | ❌ | Builder |
 | Cálculo de Administração de Medicamentos e Infusões | 124 | 88 | 71,0% | ✅ | 🟡 3/4 | ❌ | Builder |
 | Cuidados na Administração de Medicamentos | 267 | 167 | 62,5% | ✅ | ❌ | ❌ | Builder |
@@ -174,7 +425,7 @@ Moldes bespoke = variantes com componente React dedicado (não só `morphologica
 | Infecções no Contexto da Biossegurança | 38 | 35 | 92,1% | ❌ | 🟡 | ❌ | — |
 | Procedimentos Diversos | 36 | 31 | 86,1% | ❌ | ❌ | ❌ | — |
 | Outras Questões… Crônicas Não Transmissíveis | 36 | 23 | 63,9% | ❌ | ❌ | ❌ | — |
-| Assistência Perioperatória (Inclui SRPA) | 31 | 28 | 90,3% | ✅ | 🟡 | ❌ | — |
+| **Assistência Perioperatória (Inclui SRPA)** | **68** | **68** | **100%** | ✅ 6 âncoras | ✅ handcraft | ✅ | **Trilho A fechado** — [`perioperatoria-completo/README.md`](../data/catalog-migration/perioperatoria-completo/README.md) |
 | Enfermagem do Trabalho | 22 | 20 | 90,9% | ❌ | ❌ | ❌ | — |
 | Saúde Mental | 21 | 16 | 76,2% | ❌ | ❌ | ❌ | — |
 | História da Enfermagem | 20 | 19 | 95,0% | ❌ | 🟡 | ❌ | — |
@@ -189,7 +440,8 @@ Moldes bespoke = variantes com componente React dedicado (não só `morphologica
 
 > Atualizar esta matriz após cada pacote concluído ou nova auditoria Supabase.  
 > **Imunização (2026-06-16):** pacote fechado no repo — moldes PNI 4/4, `upgradePremiumImunizacao.ts`, migração em lote (~577 slugs, 0 stub nos lotes builder); % premium da linha reflete apply concluído (re-auditar Supabase para métricas globais do catálogo).  
-> **Sinais Vitais (2026-06-18):** pacote fechado no repo — moldes 4/4, `upgradePremiumSinais.ts`, hybrid integrado, migração builder (lotes 01–08 + parser-fix); `sinais-remaining-slugs.json` vazio; re-auditar Supabase para % global.
+> **Sinais Vitais (2026-06-18):** pacote fechado no repo — moldes 4/4, `upgradePremiumSinais.ts`, hybrid integrado, migração builder (lotes 01–08 + parser-fix); `sinais-remaining-slugs.json` vazio; re-auditar Supabase para % global.  
+> **Perioperatória (2026-06-23):** **68/68 golden-v1 handcraft** (Trilho A, sem hybrid) — lotes `perioperatoria-g01`…`g09`, apply concluído; ver [`perioperatoria-completo/README.md`](../data/catalog-migration/perioperatoria-completo/README.md) e [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) §3b.
 
 ---
 
@@ -207,7 +459,7 @@ Ordem por **impacto** (volume × gap de stub), com dados de produção 2026-06-1
 
 ### Onda 2 — Quick wins (já >80% premium; falta builder para consolidar)
 
-5. **Punção Venosa e Cuidados com Cateteres** — 144 questões, **82%** (golden + moldes 4/4)  
+5. **Punção Venosa** — gate estrutural OK; **revisão ramos** (cluster 2026-06-22: ~75% drift) — ver § Caso Punção  
 6. **Coleta de Exames Laboratoriais** — 244 questões, **99,6%** (golden + moldes 4/4)  
 7. **Oxigenoterapia** — 195 questões, **81%** (completar 4º molde + builder)  
 
@@ -220,6 +472,7 @@ Ordem por **impacto** (volume × gap de stub), com dados de produção 2026-06-1
 ### Referência concluída
 
 - **Curativos** — 201/201 (**100%** premium) — `upgradePremiumCurativos.ts` + moldes orange (`wound-stage-tissue-deck`, `dressing-match-matrix`, `wound-prep-tap-flow`, `dressing-choice-arena`)
+- **Punção Venosa** — 110/110 gate estrutural; **revisão ramos pendente** (~75% drift no cluster 2026-06-22) — `upgradePremiumPuncao.ts` + moldes indigo; golden IPCS `questao-premium-admtec-puncao-venosa-cateteres.json`; script [`cluster-puncao-topics.ts`](../scripts/cluster-puncao-topics.ts)
 - **Imunização** — 577/577 (**100%** premium pós-migração) — `upgradePremiumImunizacao.ts` + moldes PNI (`pni-rules-deck`, `pni-interval-matrix`, `pni-vf-juggle-tap`, `pni-trap-chips`); goldens `questao-premium-cpcon-imunizacao-intervalos-vf.json`, `questao-premium-fundatec-meningococica-3meses.json`
 - **Sinais Vitais** — ~377 slugs migrados (builder) + exclude híbrido — `upgradePremiumSinais.ts` + moldes rose (`vitals-panel`, `vitals-reference-board`, `vitals-translate-tap`, `vitals-classify-arena`); goldens `questao-premium-fepese-sv-interpretacao-valores.json`, `questao-premium-idecan-fc-radial-ce.json`; spot-check `npx tsx scripts/spot-check-sinais.ts`
 
@@ -227,13 +480,19 @@ Ordem por **impacto** (volume × gap de stub), com dados de produção 2026-06-1
 
 ## Comandos de migração
 
+**Piloto (Fase 4):** `--limit=5` · **Escala (Fase 5):** `--limit=50`
+
 ```bash
-npm run catalog:export-lote -- --lote=<pacote>-lote-01 --subtopico="<Subtópico>" --limit=50
+npm run catalog:export-lote -- --lote=<pacote>-lote-01 --subtopico="<Subtópico>" --limit=5
 npm run catalog:upgrade-premium -- --lote=<pacote>-lote-01 --write --force
 npm run catalog:apply-lote -- --lote=<pacote>-lote-01 --apply
 ```
 
-Lotes seguintes: adicionar `--exclude-manifest=artifacts/...` e `data/catalog-migration/.../manifest.json`.
+Lotes seguintes: `--exclude-manifest=artifacts/...` e/ou `data/catalog-migration/.../manifest.json`.
+
+**Apply:** `premiumGate: true` por padrão ([`premiumGate.ts`](../lib/catalogMigration/premiumGate.ts)). Use `--allow-generic` apenas em exceção documentada.
+
+**Auditoria pós-migração:** `npx tsx scripts/audit-premium-supabase.ts` (produção) · `npx tsx scripts/audit-premium-catalog.ts` (export local).
 
 ---
 
@@ -249,6 +508,7 @@ Marcadores em `PREMIUM_STUB_MARKERS` (`upgradePremiumHybrid.ts`): placeholders `
 
 ## Referências cruzadas
 
+- [`PREMIUM_QUESTAO.md`](PREMIUM_QUESTAO.md) — definição canônica L1/L2/L3 (questão vs pacote)
 - [`CLAUDE.md`](../CLAUDE.md) — §8 NeuroSlides, §9 subtópicos
 - [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) — layouts e mapa visual
 - [`.cursor/rules/avant-agent-json.mdc`](../.cursor/rules/avant-agent-json.mdc) — JSON de questões

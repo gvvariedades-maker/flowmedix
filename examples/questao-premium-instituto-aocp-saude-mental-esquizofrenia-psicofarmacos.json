@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "banca": "INSTITUTO AOCP",
+    "prova": "Tec Enf",
+    "orgao": "Enfermagem",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde Mental",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "MS/COFEN — cuidado em saúde mental; efeitos adversos de psicotrópicos",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-cuidado-saude-mental",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Cuidado em saúde mental — farmacoterapia e vigilância de efeitos adversos",
+        "year": 2021,
+        "covers": ["antipsicóticos", "efeitos extrapiramidais", "cuidados de enfermagem"]
+      },
+      {
+        "id": "cofen-admin-medicamentos",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Código de Ética e legislação — administração de medicamentos",
+        "year": 2018,
+        "covers": ["observação clínica", "orientação ao usuário", "segurança"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Um homem de 45 anos, portador de esquizofrenia, é levado à unidade de saúde pela família, a qual relata que ele está em uso crônico de antipsicóticos típicos e ansiolíticos. Ao exame, apresenta: ataxia, discinesia tardia, letargia, xerostomia e sinais de efeitos extrapiramidais. Diante do quadro, a equipe identifica provável efeito adverso ao uso prolongado de psicotrópicos. Analisando o caso proposto, assinale a alternativa que relaciona corretamente o efeito adverso relatado e o cuidado de enfermagem adequado.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Discinesia tardia – estimular o usuário a falar sobre sintomas urinários (questionar com frequência).",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Xerostomia – orientar usuário sobre risco de quedas e a levantar-se devagar.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Ataxia – orientar exercícios para melhoria/manutenção da coordenação motora.",
+        "is_correct": true
+      },
+      {
+        "id": "D",
+        "text": "Efeitos extrapiramidais – administrar antieméticos e protetores gástricos conforme prescrição.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Letargia – orientar usuário sobre rigidez de nuca e dificuldade na deglutição.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Psicotrópicos — efeito × cuidado",
+      "chip_label": "CASO CLÍNICO",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde Mental" },
+      "items": [
+        {
+          "label": "Caso",
+          "detail": "Esquizofrenia + antipsicótico típico crônico: ataxia, discinesia, letargia, xerostomia e EPS.",
+          "icon": "User"
+        },
+        {
+          "label": "Ataxia",
+          "detail": "Perda de coordenação motora — cuidado: exercícios para manutenção da coordenação.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Pareamento errado A",
+          "detail": "Discinesia tardia ≠ vigilância urinária como foco principal neste par.",
+          "icon": "XCircle"
+        },
+        {
+          "label": "Pareamento errado B",
+          "detail": "Xerostomia = boca seca — não se confunde com orientação primária sobre quedas (ataxia).",
+          "icon": "Ban"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra C — ataxia pede cuidado com coordenação motora.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Relacione cada efeito adverso ao cuidado específico — não troque os pares"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Efeitos adversos — referência",
+      "chip_label": "REGRA DE OURO",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde Mental" },
+      "content": "EFEITO ADVERSO → CUIDADO ESPECÍFICO",
+      "rows": [
+        { "label": "Ataxia", "value": "Orientar exercícios de coordenação motora", "badge": "hot" },
+        { "label": "Xerostomia", "value": "Higiene oral, hidratação, estimular salivação", "badge": "ok" },
+        { "label": "Discinesia tardia", "value": "Observar movimentos involuntários; comunicar à equipe", "badge": "ok" },
+        { "label": "EPS", "value": "Vigilância motora; medicação conforme prescrição médica", "badge": "ok" },
+        { "label": "Gabarito", "value": "Letra C — ataxia × coordenação", "emphasis": "success", "badge": "hot" }
+      ],
+      "footer_rule": "Antipsicótico crônico exige vigilância de EPS e efeitos motores"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — efeito × cuidado",
+      "chip_label": "PASSO A PASSO",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde Mental" },
+      "reveal_mode": "tap",
+      "steps": [
+        "Listar efeitos do caso: ataxia, discinesia tardia, letargia, xerostomia, EPS.",
+        "Comando: parear efeito adverso com cuidado de enfermagem correto.",
+        "Ataxia = alteração de coordenação → exercícios para manutenção/melhoria motora.",
+        "Testar A: discinesia tardia com sintomas urinários — pareamento inadequado.",
+        "Testar B: xerostomia com risco de quedas — confunde com ataxia.",
+        "Testar D: EPS com antiemético/protetor gástrico — não é o cuidado típico do par.",
+        "Testar E: letargia com rigidez de nuca — mistura sinais neurológicos.",
+        "Marcar C — ataxia orienta cuidado com coordenação motora.",
+        "Fixação: cada efeito tem cuidado próprio — não generalizar."
+      ],
+      "footer_rule": "Roteiro: efeito → cuidado específico → eliminar pares trocados"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde Mental" },
+      "content": "PEGADINHAS — PSICOFÁRMACOS NA ESQUIZOFRENIA",
+      "items": [
+        {
+          "label": "Letra B — xerostomia × quedas",
+          "detail": "Boca seca não se resolve primariamente com orientação de quedas — isso é ataxia.",
+          "correct": "Gabarito letra C — xerostomia pede cuidados de mucosa oral e hidratação, não o par da letra B."
+        },
+        {
+          "label": "Letra D — EPS × antiemético",
+          "detail": "Antiemético e protetor gástrico não são o cuidado de enfermagem clássico para EPS neste par.",
+          "correct": "Gabarito letra C — EPS exige vigilância motora e comunicação à equipe, não o par gastro da letra D."
+        },
+        {
+          "label": "Letra A — discinesia × urinário",
+          "detail": "Discinesia tardia são movimentos involuntários — não se pareia com questionar sintomas urinários.",
+          "correct": "Gabarito letra C — discinesia pede observação de movimentos anormais, não o foco urinário da letra A."
+        }
+      ],
+      "footer_rule": "Letra C: ataxia → coordenação motora"
+    }
+  ]
+}

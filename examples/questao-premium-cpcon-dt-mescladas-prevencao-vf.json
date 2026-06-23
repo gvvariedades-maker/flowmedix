@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "Tec Enf",
+    "orgao": "Pref Catolé do Rocha",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis"
+  },
+  "question_data": {
+    "instruction": "Sobre prevenção de doenças transmissíveis, analise as afirmativas.\n\nI - A vacinação é estratégia primária de prevenção de diversas doenças imunopreveníveis.\nII - O isolamento respiratório pode ser indicado conforme a via de transmissão e o agente envolvido.\nIII - Antibiótico profilático de rotina para toda gripe viral é recomendado pelo Ministério da Saúde para a população geral.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "DT — prevenção combinada",
+      "meta": { "topico": "Enfermagem", "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis" },
+      "items": [
+        { "label": "Vacinação", "detail": "Prevenção primária — calendário nacional e campanhas.", "icon": "Syringe" },
+        { "label": "Isolamento", "detail": "Conforme via: contato, gotícula, aerossol.", "icon": "Shield" },
+        { "label": "Antibiótico em vírus", "detail": "Gripe é viral — antibiótico não é profilaxia de rotina.", "icon": "Pill" },
+        { "label": "Higiene das mãos", "detail": "Precaução padrão para todas as DT.", "icon": "Hand" }
+      ],
+      "footer_rule": "Vacina + precaução correta — antibiótico não cura vírus"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Mescladas DT — regra",
+      "meta": { "topico": "Enfermagem", "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis" },
+      "content": "VÍRUS ≠ ATB",
+      "rows": [
+        { "label": "Vacinação", "value": "Prevenção primária — I correta", "badge": "ok" },
+        { "label": "Isolamento", "value": "Conforme transmissão — II correta", "badge": "ok" },
+        { "label": "ATB rotina gripe", "value": "Falso — gripe é viral", "emphasis": "alert", "badge": "warn" },
+        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+      ],
+      "footer_rule": "III confunde antibiótico com antiviral"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis" },
+      "steps": [
+        "I: vacinação como prevenção → verdadeira.",
+        "II: isolamento conforme via → verdadeira.",
+        "III: antibiótico profilático rotineiro em gripe → falsa.",
+        "Letra B.",
+        "Fixação: em questão mesclada, separar viral de bacteriano."
+      ],
+      "footer_rule": "Mescladas: testar se você não generaliza conduta"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis" },
+      "content": "PEGADINHAS — DT MESCLADAS",
+      "items": [
+        { "label": "Antibiótico para gripe", "detail": "III é conduta incorreta.", "correct": "Gripe viral — antibiótico não é profilaxia de rotina." },
+        { "label": "Isolamento igual para tudo", "detail": "II fala conforme via — não um tipo só.", "correct": "Precaução conforme agente e transmissão." },
+        { "label": "Vacina cura doente", "detail": "Vacina é prevenção, não tratamento.", "correct": "I trata prevenção primária." }
+      ],
+      "footer_rule": "Em mescladas: vacina + precaução sim; ATB rotineiro em vírus não"
+    }
+  ]
+}

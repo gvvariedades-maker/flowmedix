@@ -1,0 +1,111 @@
+{
+  "ramo_id": "SM-7",
+  "ramo_label": "Esquizofrenia / psicofármacos + cauda longa",
+  "subtopico": "Saúde Mental",
+  "phase": 2,
+  "cluster_decision": "absorver",
+  "cluster_report_ref": "artifacts/saude-mental-topic-cluster-report.json",
+  "slug_count": 5,
+  "anchor_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-2",
+  "anchor_golden": "questao-premium-instituto-aocp-saude-mental-esquizofrenia-psicofarmacos.json",
+  "secondary_goldens": {
+    "sintomas_positivos_negativos": {
+      "golden": "questao-premium-instituto-aocp-saude-mental-esquizofrenia-psicofarmacos.json",
+      "note": "CPCON semiologia e AOCP Ana compartilham rota sintomas ± — reutilizar slots de classificação até golden dedicado CPCON"
+    },
+    "risco_suicida_vf": {
+      "golden": "questao-premium-fepese-saude-mental-risco-suicida-vf.json",
+      "note": "Template V/F para FAFIPA sinais de alerta (I–IV)"
+    },
+    "demencia_alzheimer": {
+      "golden": null,
+      "note": "L2-shallow via hybrid — volume 1 slug; sem golden dedicado nesta fase"
+    }
+  },
+  "topic_routes": [
+    {
+      "id": "esquizofrenia_psicofarmacos",
+      "match": [
+        "\\besquizofren",
+        "\\bpsicót|\\bpsicot",
+        "\\balucina",
+        "\\bdelírio|\\bdelirio",
+        "\\bantipsicót|\\bantipsicot",
+        "\\bpsicotróp|\\bpsicotrop",
+        "\\bataxia\\b",
+        "\\bdiscinesia",
+        "\\bxerostomia",
+        "\\bextrapiramida"
+      ],
+      "builder_topic": "Esquizofrenia / psicose",
+      "pedagogical_cluster": "Esquizofrenia / psicofármacos",
+      "golden_reference": "questao-premium-instituto-aocp-saude-mental-esquizofrenia-psicofarmacos.json",
+      "family_default": "conceito",
+      "slide_patterns": {
+        "concept_map": "items+icon — efeito adverso ou sintoma ± por card",
+        "golden_rule": "rows — tabela efeito × cuidado ou positivo × negativo",
+        "logic_flow": "reveal_mode tap — pareamento ou classificação de itens",
+        "danger_zone": "compare — cada distrator com correct único por alternativa"
+      }
+    },
+    {
+      "id": "risco_suicida_sinais",
+      "match": [
+        "\\bsuicí|\\bsuicid",
+        "\\btentativa.*suicídio|\\btentativa.*suicidio",
+        "\\bsinais.*atenção|\\bsinais.*atencao",
+        "\\bnecessidade de atenção|\\bnecessidade de atencao"
+      ],
+      "builder_topic": "Risco suicida",
+      "pedagogical_cluster": "Risco suicida / sinais de alerta",
+      "golden_reference": "questao-premium-fepese-saude-mental-risco-suicida-vf.json",
+      "family_default": "vf",
+      "slide_patterns": {
+        "concept_map": "items+icon — julgamento V/F por assertiva",
+        "golden_rule": "rows — assertiva × julgamento",
+        "logic_flow": "reveal_mode tap — I→II→III→IV→conjunto→letra",
+        "danger_zone": "compare — letras compostas e minimização de risco"
+      }
+    },
+    {
+      "id": "demencia_alzheimer",
+      "match": [
+        "\\balzheimer",
+        "\\bdemência|\\bdemencia",
+        "\\bmemória recente|\\bmemoria recente",
+        "\\bneurocognitiv"
+      ],
+      "builder_topic": "Demência / Alzheimer",
+      "pedagogical_cluster": "Demência / Alzheimer",
+      "golden_reference": null,
+      "family_default": "conceito",
+      "l2_depth": "shallow",
+      "slide_patterns": {
+        "concept_map": "items — manifestação inicial × estágio",
+        "golden_rule": "content — mnemônico fase inicial",
+        "logic_flow": "tap — eliminar sinais tardios/tremor/visão",
+        "danger_zone": "compare — distratores de outras DCNT"
+      }
+    }
+  ],
+  "absorbed_elsewhere": {
+    "sono_epilepsia": {
+      "slugs": [
+        "legalle-enfermagem-processo-de-enfermagem-1780010585356-0",
+        "legalle-enfermagem-processo-de-enfermagem-1780011967989-0",
+        "vunesp-enfermagem-saude-mental-1780001362784-5"
+      ],
+      "l2_depth": "shallow",
+      "absorb_target": "SM-5 APS / biopsicossocial ou hybrid genérico",
+      "rationale": "Volume 3/37 (8,1%) — cluster absorver; insônia na VUNESP ancora biopsicossocial, não merece golden próprio"
+    }
+  },
+  "merge_into": "upgradePremiumSaudeMental.ts",
+  "merge_owner": "SM-4 (shared infra pilot)",
+  "invariants": [
+    "meta.subtopico = Saúde Mental em todos os slides",
+    "danger_zone.items[].correct único por item",
+    "sem vocabulário IPCS/CVC salvo âncora no enunciado",
+    "sem PREMIUM_STUB_MARKERS"
+  ]
+}

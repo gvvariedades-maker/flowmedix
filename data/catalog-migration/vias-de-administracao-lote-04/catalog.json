@@ -1,11 +1,11 @@
 {
-  "exported_at": "2026-06-09T11:13:40.570Z",
+  "exported_at": "2026-06-19T15:16:53.641Z",
   "lote": "vias-de-administracao-lote-04",
   "total": 50,
   "entries": [
     {
       "modulo_slug": "ibam-enfermagem-vias-de-administracao-1776056366158-3",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
       "modulo_nome": "Enfermagem",
       "banca": "IBAM",
       "avant_codigo": 388
@@ -19,14 +19,14 @@
     },
     {
       "modulo_slug": "ibfc-enfermagem-vias-de-administracao-1778968573722-2",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
       "modulo_nome": "Enfermagem",
       "banca": "IBFC",
       "avant_codigo": 1979
     },
     {
       "modulo_slug": "ibfc-enfermagem-vias-de-administracao-1778968687469-6",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
       "modulo_nome": "Enfermagem",
       "banca": "IBFC",
       "avant_codigo": 2029
@@ -40,14 +40,14 @@
     },
     {
       "modulo_slug": "idecan-enfermagem-vias-de-administracao-1778712108887-2",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
       "modulo_nome": "Enfermagem",
       "banca": "IDECAN",
       "avant_codigo": 1507
     },
     {
       "modulo_slug": "idecan-enfermagem-vias-de-administracao-1778712108887-3",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
       "modulo_nome": "Enfermagem",
       "banca": "IDECAN",
       "avant_codigo": 1508
@@ -82,14 +82,14 @@
     },
     {
       "modulo_slug": "idecan-enfermagem-vias-de-administracao-1780066924385-0",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
       "modulo_nome": "Enfermagem",
       "banca": "IDECAN",
       "avant_codigo": 5122
     },
     {
       "modulo_slug": "idesg-enfermagem-vias-de-administracao-1776056338955-4",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
       "modulo_nome": "Enfermagem",
       "banca": "IDESG",
       "avant_codigo": 362
@@ -117,7 +117,7 @@
     },
     {
       "modulo_slug": "igeduc-enfermagem-vias-de-administracao-1778968646731-0",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Promoção à Saúde e Prevenção de Agravos",
       "modulo_nome": "Enfermagem",
       "banca": "IGEDUC",
       "avant_codigo": 2005
@@ -180,7 +180,7 @@
     },
     {
       "modulo_slug": "instituto-consulpam-enfermagem-vias-de-administracao-1777178666643-0",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
       "modulo_nome": "Enfermagem",
       "banca": "INSTITUTO CONSULPAM",
       "avant_codigo": 1503
@@ -208,14 +208,14 @@
     },
     {
       "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-4",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Farmacodinâmica e Farmacocinética",
       "modulo_nome": "Enfermagem",
       "banca": "INSTITUTO CONSULPLAN",
       "avant_codigo": 2009
     },
     {
       "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1778968646731-5",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
       "modulo_nome": "Enfermagem",
       "banca": "INSTITUTO CONSULPLAN",
       "avant_codigo": 2010
@@ -257,7 +257,7 @@
     },
     {
       "modulo_slug": "instituto-consulplan-enfermagem-vias-de-administracao-1778968968468-7",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
       "modulo_nome": "Enfermagem",
       "banca": "INSTITUTO CONSULPLAN",
       "avant_codigo": 2101
@@ -278,7 +278,7 @@
     },
     {
       "modulo_slug": "instituto-iacp-enfermagem-vias-de-administracao-1778968997293-2",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Outras Questões e Questões Mescladas sobre Doenças Crônicas Não Transmissíveis",
       "modulo_nome": "Enfermagem",
       "banca": "INSTITUTO IACP",
       "avant_codigo": 2105
@@ -292,7 +292,7 @@
     },
     {
       "modulo_slug": "instituto-mais-enfermagem-vias-de-administracao-1778968862077-8",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
       "modulo_nome": "Enfermagem",
       "banca": "INSTITUTO MAIS",
       "avant_codigo": 2067
@@ -306,7 +306,7 @@
     },
     {
       "modulo_slug": "instituto-verbena-enfermagem-vias-de-administracao-1776056357082-1",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "História da Enfermagem",
       "modulo_nome": "Enfermagem",
       "banca": "INSTITUTO VERBENA",
       "avant_codigo": 377

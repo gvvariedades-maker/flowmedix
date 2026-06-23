@@ -1,0 +1,160 @@
+{
+  "generated_at": "2026-06-22T23:13:26.003Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-05-tempo",
+  "mode": "write",
+  "force": true,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 11,
+  "upgraded": 11,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "conceito": 11
+  },
+  "results": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-puncao-troca-equipos-intervalos.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-puncao-troca-equipos-intervalos.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-admtec-puncao-venosa-cateteres.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-admtec-puncao-venosa-cateteres.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-puncao-troca-equipos-intervalos.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-puncao-troca-equipos-intervalos.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-avancasp-puncao-infiltracao-flebite.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-gama-puncao-scalp-jelco-calibre.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-puncao-troca-equipos-intervalos.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-puncao-troca-equipos-intervalos.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    }
+  ]
+}

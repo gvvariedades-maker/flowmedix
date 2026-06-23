@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-06-23T00:00:00.000Z",
+  "ramo_id": "SM-6",
+  "subtopico": "Saúde Mental",
+  "pedagogical_cluster": "Depressão / epidemiologia",
+  "builder_topic": "Depressão / humor",
+  "cluster_share_pct": 13.5,
+  "cluster_count": 5,
+  "decision": "novo_ramo",
+  "golden_reference": "questao-premium-vunesp-saude-mental-depressao-epidemiologia.json",
+  "anchor_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4",
+  "anchor_rationale": "Enunciado OMS com prevalência no Brasil, incapacidade até 2030, subdiagnóstico e política comunitária — recorte epidemiológico mais denso do cluster (vs. FGV V/F semiologia ou UNESC associação).",
+  "builder_module": "upgradePremiumSaudeMental",
+  "has_dedicated_builder": false,
+  "families_supported": ["conceito", "vf"],
+  "match": {
+    "cluster_refine_patterns": [
+      "depress",
+      "preval[eê]ncia.*depress",
+      "neurotransmiss",
+      "gds\\b",
+      "anedonia",
+      "humor.*funcional",
+      "subdiagnostic",
+      "subtratad"
+    ],
+    "exclude_patterns": [
+      "exceto",
+      "incorreta|incorreto",
+      "del[ií]rio",
+      "esquizofren",
+      "agita[çc]",
+      "conten[çc]",
+      "raps\\b|reforma psiqui",
+      "redu[çc][ãa]o de danos"
+    ],
+    "anchor_required_patterns": [
+      "depress|preval[eê]ncia.*depress|oms\\b|incapacidade funcional|subdiagnostic"
+    ]
+  },
+  "topic_profile": {
+    "conceptFooter": "Depressão na prova = epidemiologia OMS + papel da APS + política comunitária — não negar risco suicida.",
+    "goldenContent": "EPIDEMIOLOGIA + SUBDIAGNÓSTICO + ATENÇÃO COMUNITÁRIA BASEADA EM EVIDÊNCIAS",
+    "goldenFooter": "A banca mistura minimização de impacto social, negação de risco suicida e APS só encaminhadora.",
+    "logicFooter": "Dados OMS → eliminar minimizações → marcar política comunitária e cuidado na APS.",
+    "logicFix": "subdiagnóstico desmente alternativas que dizem que o acesso já mitiga efeitos sociais.",
+    "dangerContent": "PEGADINHAS — DEPRESSÃO, OMS E APS",
+    "dangerFooter": "Compare cada distrator com epidemiologia e política MS antes de marcar.",
+    "chipLabel": "DEPRESSÃO"
+  },
+  "cluster_slugs": [
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563517223-0",
+    "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-1",
+    "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0",
+    "unesc-enfermagem-semiologia-em-enfermagem-1779563486900-4",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4"
+  ],
+  "slug_notes": {
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563517223-0": "GDS geriátrica — instrumento de rastreio; absorver vocabulário depressão em idoso",
+    "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-1": "Diferencial delirium × depressão — drift provável; reclassificar ou absorver após re-cluster",
+    "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0": "V/F distúrbios psicológicos — family vf; âncora secundária para semiologia",
+    "unesc-enfermagem-semiologia-em-enfermagem-1779563486900-4": "Associação anedonia/ideação/fadiga — semiologia clínica",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4": "Golden âncora — epidemiologia OMS + política MS"
+  },
+  "next_steps": [
+    "Implementar perfil SM-6 em upgradePremiumSaudeMental.ts (fora deste PR)",
+    "Adicionar entrada em GOLDEN_BY_CLUSTER do cluster-saude-mental-topics.ts",
+    "Testes Jest: fixture VUNESP + premiumGateErrors() = 0",
+    "Repair-lote SM-6 dry-run → apply quando builder existir"
+  ]
+}

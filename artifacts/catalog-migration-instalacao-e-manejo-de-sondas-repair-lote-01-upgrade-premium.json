@@ -1,0 +1,266 @@
+{
+  "generated_at": "2026-06-20T12:00:49.464Z",
+  "lote": "instalacao-e-manejo-de-sondas-repair-lote-01",
+  "mode": "write",
+  "force": true,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 19,
+  "upgraded": 19,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "conceito": 15,
+    "protocolo": 3,
+    "certo_errado": 1
+  },
+  "results": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011887822-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-5",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011859940-1",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-8",
+      "status": "upgraded",
+      "family": "certo_errado",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009310940-8",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    }
+  ]
+}

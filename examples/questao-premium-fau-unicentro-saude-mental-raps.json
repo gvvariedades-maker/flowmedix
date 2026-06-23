@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "banca": "FAU UNICENTRO",
+    "prova": "Tec Enf",
+    "orgao": "Enfermagem",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde Mental",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "Portaria GM/MS 3.088/2011 — RAPS",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "portaria-3088-2011-raps",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Portaria GM/MS nº 3.088/2011 — Rede de Atenção Psicossocial (RAPS)",
+        "year": 2011,
+        "url": "https://bvsms.saude.gov.br/bvs/saudelegis/gm/2011/prt3088_23_12_2011_rep.html",
+        "covers": ["RAPS", "CAPS", "componentes da rede"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A política de saúde mental no Brasil atualmente é constituída por uma rede de cuidados que recebe o nome de:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Rede de Exclusão Psicossocial (REPS).",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Rede de Contenções Mentais (RCMs).",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Rede de Burocratização Psicossocial (REBUP).",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Rede de Hospitalização Mental (REHosp).",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Rede de Atenção Psicossocial (RAPS).",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Política de Saúde Mental — nome da rede",
+      "chip_label": "RAPS",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "items": [
+        {
+          "label": "ENQUADRAMENTO",
+          "detail": "Pós-Reforma Psiquiátrica, o SUS organiza o cuidado em saúde mental pela Rede de Atenção Psicossocial (RAPS).",
+          "icon": "Network"
+        },
+        {
+          "label": "Sigla oficial",
+          "detail": "RAPS — Rede de Atenção Psicossocial (Portaria GM/MS 3.088/2011).",
+          "icon": "BookOpen"
+        },
+        {
+          "label": "Componentes",
+          "detail": "CAPS, Atenção Básica, urgência, SRT, leitos de saúde mental — cuidado territorial e em liberdade.",
+          "icon": "Building2"
+        },
+        {
+          "label": "Pegadinha",
+          "detail": "Distratores inventam siglas com 'exclusão', 'contenção' ou 'hospitalização' — oposto ao modelo substitutivo.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra E — Rede de Atenção Psicossocial (RAPS).",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "RAPS = nome oficial da rede de saúde mental no SUS"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "RAPS — decorar para a prova",
+      "chip_label": "REGRA DE OURO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "content": "RAPS = REDE DE ATENÇÃO PSICOSSOCIAL",
+      "rows": [
+        {
+          "label": "Sigla",
+          "value": "RAPS",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Nome completo",
+          "value": "Rede de Atenção Psicossocial",
+          "badge": "ok"
+        },
+        {
+          "label": "Base normativa",
+          "value": "Portaria GM/MS 3.088/2011",
+          "badge": "ok"
+        },
+        {
+          "label": "Gabarito",
+          "value": "Letra E",
+          "emphasis": "success",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Não confunda com siglas inventadas (REPS, RCMs, REHosp)"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — nome da rede",
+      "chip_label": "PASSO A PASSO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "reveal_mode": "tap",
+      "steps": [
+        "Comando pede o nome oficial da rede de cuidados em saúde mental no Brasil.",
+        "Lembrar a sigla canônica do SUS: RAPS (Rede de Atenção Psicossocial).",
+        "Eliminar distratoras com viés oposto à Reforma: exclusão (A), contenção (B), hospitalização (D).",
+        "Eliminar sigla inventada sem respaldo (C — REBUP).",
+        "Marcar letra E.",
+        "Fixação: toda questão de 'política de saúde mental' no SUS aponta para RAPS + cuidado territorial."
+      ],
+      "footer_rule": "Reforma = atenção psicossocial, não exclusão nem manicômio"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas — siglas falsas",
+      "chip_label": "ARMADILHAS",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "content": "PEGADINHAS — NOME DA REDE DE SAÚDE MENTAL",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra A — REPS (exclusão)",
+          "detail": "A palavra 'exclusão' contradiz o modelo de inclusão social da Reforma.",
+          "correct": "Gabarito letra E — a rede oficial é RAPS (Atenção Psicossocial), não exclusão."
+        },
+        {
+          "label": "Letra B — RCMs (contenções)",
+          "detail": "Sugere rede centrada em contenção — não é o eixo da política atual.",
+          "correct": "Gabarito letra E — RAPS articula cuidado em liberdade, não rede de contenções."
+        },
+        {
+          "label": "Letra D — REHosp (hospitalização)",
+          "detail": "Hospitalização é componente excepcional, não o nome da política.",
+          "correct": "Gabarito letra E — a rede se chama Atenção Psicossocial (RAPS), não Hospitalização Mental."
+        }
+      ],
+      "footer_rule": "Distratores invertem o espírito da Reforma Psiquiátrica"
+    }
+  ]
+}

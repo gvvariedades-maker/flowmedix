@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "TEnf",
+    "orgao": "Pref Vinhedo",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "handcraft-pilot",
+      "guideline_snapshot": "Anvisa RDC 15/2012 — manuseio de material estéril",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "cme-anvisa-rdc15",
+        "tier": "A",
+        "issuer": "Anvisa",
+        "title": "RDC 15/2012 — armazenamento e distribuição",
+        "year": 2012,
+        "covers": ["manuseio asséptico", "campo limpo", "validade", "higienização das mãos"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "O material estéril deve ser manuseado:",
+    "options": [
+      { "id": "A", "text": "Sem necessidade de higienização das mãos.", "is_correct": false },
+      { "id": "B", "text": "Apenas com luvas de procedimento.", "is_correct": false },
+      { "id": "C", "text": "Em campo limpo e com técnica asséptica.", "is_correct": true },
+      { "id": "D", "text": "Em qualquer superfície disponível.", "is_correct": false },
+      { "id": "E", "text": "Após o vencimento da esterilização.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Manuseio de material estéril",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "items": [
+        { "label": "Material estéril", "detail": "Barreira microbiana íntegra e dentro da validade.", "icon": "Package" },
+        { "label": "Campo limpo", "detail": "Superfície controlada — evita recontaminação.", "icon": "Square" },
+        { "label": "Técnica asséptica", "detail": "Higienização das mãos + conduta para preservar esterilidade.", "icon": "Shield" },
+        { "label": "Gabarito", "detail": "Letra C.", "icon": "Target" }
+      ],
+      "footer_rule": "Estéril = campo limpo + asséptica + validade"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Manuseio — regras",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "content": "MATERIAL ESTÉRIL",
+      "rows": [
+        { "label": "Onde", "value": "Campo limpo", "badge": "hot", "emphasis": "highlight" },
+        { "label": "Como", "value": "Técnica asséptica", "badge": "hot" },
+        { "label": "Mãos", "value": "Higienizar — luva não substitui", "badge": "warn" },
+        { "label": "Validade", "value": "Nunca usar vencido", "badge": "warn" },
+        { "label": "Gabarito", "value": "Letra C", "badge": "hot" }
+      ],
+      "footer_rule": "Quebrou barreira ou venceu → descartar/reprocessar"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "steps": [
+        "Comando: conduta correta ao manusear estéril.",
+        "A: sem higienizar mãos → contamina.",
+        "B: só luva → insuficiente sem asséptica.",
+        "C: campo limpo + técnica asséptica → correto.",
+        "D: qualquer superfície → recontamina.",
+        "E: após vencimento → proibido.",
+        "Marcar C."
+      ],
+      "footer_rule": "Preservar esterilidade até o ponto de uso"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "content": "PEGADINHAS — manuseio",
+      "items": [
+        { "label": "Sem higienizar mãos (A)", "detail": "Mãos são principal fonte de contaminação.", "correct": "Manuseio exige técnica asséptica em campo limpo." },
+        { "label": "Só luva (B)", "detail": "Luva de procedimento não substitui higiene e asséptica.", "correct": "Campo limpo + técnica asséptica — letra C." },
+        { "label": "Qualquer superfície (D)", "detail": "Superfície não controlada compromete a barreira.", "correct": "Material estéril só em campo limpo preparado." },
+        { "label": "Após validade (E)", "detail": "Estéril vencido perde garantia microbiana.", "correct": "Usar dentro da validade com manuseio asséptico." }
+      ],
+      "footer_rule": "Validade + ambiente + técnica — três pilares"
+    }
+  ]
+}

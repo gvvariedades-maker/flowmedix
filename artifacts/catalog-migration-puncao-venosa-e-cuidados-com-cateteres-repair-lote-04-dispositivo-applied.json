@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-06-22T22:57:21.296Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-04-dispositivo",
+  "mode": "apply",
+  "total_files": 11,
+  "ok": 11,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-5",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-7",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-5",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-6",
+    "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-5",
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-4",
+    "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-0",
+    "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-2",
+    "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-8",
+    "instituto-verbena-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-0"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

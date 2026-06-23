@@ -1,0 +1,197 @@
+{
+  "meta": {
+    "banca": "IBADE",
+    "prova": "Tec Enf",
+    "orgao": "Enfermagem",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde Mental",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "MS/COFEN — cuidado em saúde mental; contenção como último recurso",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-cuidado-saude-mental",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Cuidado em saúde mental — abordagem humanizada e rede psicossocial",
+        "year": 2021,
+        "covers": ["acolhimento", "comunicação terapêutica", "contenção como exceção"]
+      },
+      {
+        "id": "cofen-codigo-etica",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Código de Ética dos Profissionais de Enfermagem",
+        "year": 2018,
+        "covers": ["direitos do usuário", "não coerção sem indicação"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "No atendimento em um Centro de Atenção Psicossocial (CAPS), um técnico de enfermagem acompanha um usuário com diagnóstico de transtorno mental grave, em acompanhamento regular, que apresenta agitação psicomotora, discurso desorganizado e sinais de ansiedade intensa após interrupção do uso regular da medicação. O usuário demonstra resistência ao cuidado, recusa inicialmente a medicação prescrita e verbaliza desconfiança em relação à equipe.\nNa perspectiva da assistência de enfermagem em saúde mental e da atuação do profissional técnico de enfermagem no caso descrito, assinale a alternativa correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Diante da agitação e da recusa ao tratamento, o técnico de enfermagem deve priorizar a contenção física imediata, como medida padrão para garantir a segurança do usuário e da equipe.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "A abordagem do técnico de enfermagem deve basear se na escuta qualificada, no acolhimento e na comunicação terapêutica, respeitando a singularidade do usuário e buscando estratégias não coercitivas para adesão ao cuidado.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "A resistência do usuário ao tratamento caracteriza insubordinação, justificando o acionamento automático de medidas disciplinares e encaminhamento para internação compulsória.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "A assistência em saúde mental restringe-se ao controle medicamentoso, não sendo atribuição do técnico de enfermagem participar de ações de vínculo, orientação e reinserção psicossocial.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "A atuação do técnico de enfermagem deve ser centrada exclusivamente na execução de procedimentos, sem necessidade de articulação com a equipe multiprofissional ou com a família do usuário.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "CAPS — agitação e acolhimento",
+      "chip_label": "CRISE",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "items": [
+        {
+          "label": "ENQUADRAMENTO",
+          "detail": "Usuário no CAPS com agitação, recusa de medicação e desconfiança — testa abordagem não coercitiva do técnico.",
+          "icon": "Heart"
+        },
+        {
+          "label": "Primeira linha",
+          "detail": "Escuta qualificada, acolhimento e comunicação terapêutica — estratégias não coercitivas para adesão.",
+          "icon": "MessageCircle"
+        },
+        {
+          "label": "Contenção física",
+          "detail": "Não é medida padrão imediata — último recurso quando esgotadas alternativas e há risco iminente.",
+          "icon": "Ban"
+        },
+        {
+          "label": "Equipe e família",
+          "detail": "Técnico articula com multiprofissional e família — não atua isolado em procedimentos.",
+          "icon": "Users"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra B — acolhimento e comunicação terapêutica respeitando a singularidade.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Agitação no CAPS: acolher e escutar antes de conter"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Crise psíquica — ordem de conduta",
+      "chip_label": "REGRA DE OURO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "content": "ACOLHER → ESCUTAR → ESTRATÉGIAS NÃO COERCITIVAS",
+      "rows": [
+        {
+          "label": "1ª resposta",
+          "value": "Escuta qualificada e comunicação terapêutica",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Contenção",
+          "value": "Último recurso — não padrão imediato na agitação",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Papel do técnico",
+          "value": "Vínculo, orientação e articulação com a equipe",
+          "badge": "ok"
+        },
+        {
+          "label": "Gabarito",
+          "value": "Letra B",
+          "emphasis": "success",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Resistência não é insubordinação — é sinal de sofrimento"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — agitação no CAPS",
+      "chip_label": "PASSO A PASSO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "reveal_mode": "tap",
+      "steps": [
+        "Cenário: agitação + recusa de medicação + desconfiança no CAPS.",
+        "Princípio: Reforma Psiquiátrica e ética — acolhimento antes de coerção.",
+        "Eliminar A: contenção física imediata como padrão — desproporcional.",
+        "Eliminar C: resistência como insubordinação com internação compulsória — estigmatiza o usuário.",
+        "Eliminar D: saúde mental só como controle medicamentoso — reduz o cuidado.",
+        "Eliminar E: técnico só em procedimentos, sem equipe/família — fragmenta o cuidado.",
+        "Marcar B: escuta, acolhimento e estratégias não coercitivas.",
+        "Fixação: na prova, agitação pede de-escalada verbal antes de contenção."
+      ],
+      "footer_rule": "De-escalada verbal → acolhimento → contenção só se necessário"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas — agitação e contenção",
+      "chip_label": "ARMADILHAS",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "content": "PEGADINHAS — AGITAÇÃO NO CAPS",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra A — contenção imediata",
+          "detail": "A banca usa 'segurança' para induzir restrição como primeira conduta.",
+          "correct": "Gabarito letra B — contenção é exceção; priorize escuta e acolhimento não coercitivo."
+        },
+        {
+          "label": "Letra C — insubordinação",
+          "detail": "Transforma resistência terapêutica em falta disciplinar.",
+          "correct": "Gabarito letra B — resistência exige acolhimento e estratégias de adesão, não punição."
+        },
+        {
+          "label": "Letra D — só medicação",
+          "detail": "Exclui vínculo e reinserção psicossocial do técnico.",
+          "correct": "Gabarito letra B — técnico participa de vínculo, orientação e articulação com a equipe."
+        },
+        {
+          "label": "Letra E — sem equipe/família",
+          "detail": "Isola o técnico em tarefas procedimentais.",
+          "correct": "Gabarito letra B — cuidado em saúde mental é multiprofissional e inclui família."
+        }
+      ],
+      "footer_rule": "Segurança sim — mas contenção não é o primeiro passo"
+    }
+  ]
+}

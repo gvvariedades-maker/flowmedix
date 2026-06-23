@@ -1,0 +1,17 @@
+{
+  "lote": "imunizacao-ai-pilot",
+  "exported_at": "2026-06-20T15:22:05.169Z",
+  "source": "supabase",
+  "filters": {
+    "subtopico": "Imunização",
+    "limit": 5,
+    "exclude_count": 0
+  },
+  "slugs": [
+    "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+    "adm-tec-enfermagem-imunizacao-1777103244679-1",
+    "adm-tec-enfermagem-imunizacao-1779563986606-5",
+    "adm-tec-enfermagem-imunizacao-1779564031957-5",
+    "agirh-enfermagem-imunizacao-1779563975447-7"
+  ]
+}

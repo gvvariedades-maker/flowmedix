@@ -6,7 +6,10 @@ import {
   GOLDEN_CONTENT_STANDARD_VERSION,
   hasQuestionSpecificity,
   isGoldenContentCompliant,
+  lintClaimSourceBinding,
+  lintGabaritoConsistency,
   lintGoldenContent,
+  lintLogicFlowRecycling,
 } from '@/lib/goldenContentStandard';
 import { FAMILY_GOLDEN_FILE } from '@/lib/catalogMigration/classifyFamily';
 import { GUIDELINE_TABLES } from '@/lib/guidelines';
@@ -97,6 +100,147 @@ describe('golden-content-standard v1', () => {
     const generic = premiums.find((p) => !((p.data as { meta?: { content_standard?: string } }).meta?.content_standard));
     expect(generic).toBeDefined();
     expect(lintGoldenContent(generic!.data)).toEqual([]);
+  });
+
+  describe('consistência de gabarito', () => {
+    const q = {
+      question_data: {
+        options: [
+          { id: 'A', text: 'alternativa a', is_correct: false },
+          { id: 'B', text: 'alternativa b', is_correct: true },
+        ],
+      },
+    };
+
+    it('detecta gabarito citado divergente do is_correct', () => {
+      const slides = [{ type: 'danger_zone', items: [{ correct: 'Gabarito letra A — explicação' }] }];
+      const codes = lintGabaritoConsistency(slides, q).map((i) => i.code);
+      expect(codes).toContain('gabarito_mismatch');
+    });
+
+    it('aceita gabarito consistente em rows e concept_map', () => {
+      const slides = [
+        { type: 'concept_map', items: [{ label: 'Gabarito', detail: 'Letra B — correta' }] },
+        { type: 'golden_rule', rows: [{ label: 'Gabarito', value: 'Letra B' }] },
+        { type: 'danger_zone', items: [{ correct: 'Gabarito letra B — explicação' }] },
+      ];
+      expect(lintGabaritoConsistency(slides, q)).toEqual([]);
+    });
+
+    it('não confunde distrator "Letra D" do item seguinte com o gabarito', () => {
+      const slides = [
+        {
+          type: 'danger_zone',
+          items: [
+            { correct: 'III e IV são verdadeiras — entram no gabarito.' },
+            { label: 'Letra D — distrator', correct: 'Gabarito letra B — explica.' },
+          ],
+        },
+      ];
+      expect(lintGabaritoConsistency(slides, q)).toEqual([]);
+    });
+  });
+
+  describe('anti-reciclagem de logic_flow', () => {
+    const q = {
+      question_data: {
+        options: [
+          {
+            id: 'A',
+            text: 'Pegar o cateter com a mão dominante com o bisel da agulha voltado para cima no sentido do retorno venoso',
+            is_correct: false,
+          },
+          { id: 'B', text: 'segunda alternativa distinta', is_correct: true },
+        ],
+      },
+    };
+
+    it('reprova steps que copiam o texto das alternativas', () => {
+      const slides = [
+        {
+          type: 'logic_flow',
+          steps: [
+            'Pegar o cateter com a mão dominante com o bisel da agulha voltado para cima no sentido',
+            'Pegar o cateter com a mão dominante com o bisel da agulha voltado para cima',
+          ],
+        },
+      ];
+      expect(lintLogicFlowRecycling(slides, q).map((i) => i.code)).toContain('logic_flow_recycled');
+    });
+
+    it('aceita steps que ensinam estratégia (não cópia)', () => {
+      const slides = [
+        {
+          type: 'logic_flow',
+          steps: ['Ler o comando EXCETO', 'Eliminar A: técnica correta', 'Marcar B'],
+        },
+      ];
+      expect(lintLogicFlowRecycling(slides, q)).toEqual([]);
+    });
+  });
+
+  describe('claim↔source binding', () => {
+    const numClaim = [{ type: 'golden_rule', rows: [{ label: 'Dose', value: '500 mg a cada 8 horas' }] }];
+
+    it('reprova número normativo sem source substantiva (covers)', () => {
+      const codes = lintClaimSourceBinding(numClaim, {
+        sources: [{ id: 'x', tier: 'A', issuer: 'MS', title: 't', year: 2020 }],
+      }).map((i) => i.code);
+      expect(codes).toContain('numeric_claim_unsourced');
+    });
+
+    it('aceita número com source que tem covers', () => {
+      expect(
+        lintClaimSourceBinding(numClaim, {
+          sources: [{ id: 'x', tier: 'A', issuer: 'MS', title: 't', year: 2020, covers: ['dose'] }],
+        }),
+      ).toEqual([]);
+    });
+
+    it('ignora slides sem claim numérico', () => {
+      expect(
+        lintClaimSourceBinding([{ type: 'golden_rule', content: 'sem números aqui' }], { sources: [] }),
+      ).toEqual([]);
+    });
+  });
+
+  describe('especificidade semântica', () => {
+    it('inclui vocabulário da alternativa correta no pool (enunciado curto)', () => {
+      const pilot = premiums.find((p) => p.file.includes('fundatec-meningococica-3meses'))!.data;
+      const codes = lintGoldenContent(pilot).map((i) => i.code);
+      expect(codes).not.toContain('specificity_semantic');
+    });
+
+    it('reprova slides genéricos que não citam o vocabulário da questão', () => {
+      const base = premiums.find((p) => p.file.includes('idecan-saude-mental-reducao-danos'))!.data as Record<
+        string,
+        unknown
+      >;
+      const generic = {
+        ...base,
+        reverse_study_slides: [
+          {
+            type: 'concept_map',
+            items: [
+              { label: 'x', detail: 'texto totalmente abstrato sem vinculo', icon: 'Heart' },
+              { label: 'y', detail: 'outra frase vazia qualquer', icon: 'Heart' },
+              { label: 'z', detail: 'mais conteudo solto', icon: 'Heart' },
+            ],
+          },
+          { type: 'golden_rule', content: 'REGRA', rows: [{ label: 'Gabarito', value: 'Letra B' }] },
+          { type: 'logic_flow', reveal_mode: 'tap', steps: ['passo abstrato um', 'passo abstrato dois', 'passo abstrato tres'] },
+          {
+            type: 'danger_zone',
+            content: 'X',
+            items: [
+              { label: 'p', detail: 'q', correct: 'Gabarito letra B — r' },
+              { label: 's', detail: 't', correct: 'Gabarito letra B — u' },
+            ],
+          },
+        ],
+      };
+      expect(lintGoldenContent(generic).map((i) => i.code)).toContain('specificity_semantic');
+    });
   });
 
   it('rejeita golden-v1 sem sources', () => {

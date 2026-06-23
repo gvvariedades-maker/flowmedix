@@ -1,0 +1,239 @@
+{
+  "extracted_at": "2026-06-20",
+  "sources": [
+    {
+      "id": "manual-pni-ms",
+      "title": "Manual de Normas e Procedimentos para Vacinação",
+      "url": "https://bvsms.saude.gov.br/bvs/publicacoes/manual_procedimentos_vacinacao.pdf",
+      "issuer": "Ministério da Saúde / PNI",
+      "codified_in": ["lib/guidelines/pni.ts", "lib/guidelines/pniCalendario.ts"]
+    },
+    {
+      "id": "nota-tecnica-23-2025",
+      "title": "Nota Técnica nº 23/2025 — mudanças calendário",
+      "url": "https://www.gov.br/saude/pt-br/vacinacao/notas-tecnicas/nota-tecnica-no-23-2025-cgici-dpni-svsa-ms",
+      "issuer": "CGICI/DPNI/SVSA/MS",
+      "codified_in": ["lib/guidelines/pniCalendario.ts"]
+    },
+    {
+      "id": "coren-ms-sv-pediatrico",
+      "title": "Protocolo Enfermagem APS — Saúde da Criança (referência SV)",
+      "url": "https://www.corenms.gov.br/wp-content/uploads/2022/01/COREN_MS_PROTOCOLO_Saude-do-Crian%C3%A7a.pdf",
+      "issuer": "Coren-MS (base MS)",
+      "codified_in": ["lib/guidelines/sinaisVitais.ts"]
+    },
+    {
+      "id": "protocolo-sbv-samu-ms",
+      "title": "Protocolos de Suporte Básico de Vida — SAMU 192",
+      "url": "https://bvsms.saude.gov.br/bvs/publicacoes/protocolo_suporte_basico_vida.pdf",
+      "issuer": "Ministério da Saúde",
+      "codified_in": ["lib/guidelines/urgencias.ts"]
+    },
+    {
+      "id": "caderno-ab-32-prenatal",
+      "title": "Caderno AB nº 32 — Atenção ao pré-natal de baixo risco",
+      "url": "https://bvsms.saude.gov.br/bvs/publicacoes/cadernos_atencao_basica_32_prenatal.pdf",
+      "issuer": "Ministério da Saúde",
+      "codified_in": ["lib/guidelines/saudeMulher.ts"]
+    },
+    {
+      "id": "sbpc-coleta-sangue",
+      "title": "SBPC/ML — Recomendações para Coleta de Sangue Venoso",
+      "url": "https://controllab.com/wp-content/uploads/guia_coleta_sangue.pdf",
+      "issuer": "SBPC/ML",
+      "codified_in": ["lib/guidelines/coletaExames.ts"]
+    },
+    {
+      "id": "ms-oxigenoterapia-conitec",
+      "title": "Diretrizes brasileiras — uso de oxigênio (CONITEC/MS)",
+      "url": "https://www.gov.br/conitec/pt-br/midias/relatorios/diretrizesbrasileiras_tratamentohospitalarpaciente_capi.pdf",
+      "issuer": "Ministério da Saúde",
+      "codified_in": ["lib/guidelines/oxigenoterapia.ts"]
+    },
+    {
+      "id": "caderneta-crianca-ms",
+      "title": "Caderneta de Saúde da Criança (12ª ed.)",
+      "url": "https://bvsms.saude.gov.br/bvs/publicacoes/caderneta_saude_crianca_menino_12ed.pdf",
+      "issuer": "Ministério da Saúde",
+      "codified_in": ["lib/guidelines/saudeCrianca.ts"]
+    },
+    {
+      "id": "cofen-admin-segura",
+      "title": "COFEN — administração segura de medicamentos (5/9 certos)",
+      "url": "https://www.cofen.gov.br/wp-content/uploads/2026/03/Parecer-11-2026.pdf",
+      "issuer": "COFEN",
+      "codified_in": ["lib/guidelines/cuidadosMedicamentos.ts", "lib/guidelines/calculoMedicamentos.ts"]
+    },
+    {
+      "id": "cofen-vias-im",
+      "title": "COFEN — vias de administração (IM/SC/EV)",
+      "url": "https://www.cofen.gov.br/",
+      "issuer": "COFEN",
+      "codified_in": ["lib/guidelines/viasAdministracao.ts"]
+    },
+    {
+      "id": "npuap-lpp-estagios",
+      "title": "NPUAP/EPUAP — estágios de lesão por pressão",
+      "issuer": "NPUAP",
+      "codified_in": ["lib/guidelines/curativos.ts"]
+    },
+    {
+      "id": "cofen-sondas",
+      "title": "COFEN — normas técnicas de sondas",
+      "url": "https://www.cofen.gov.br/",
+      "issuer": "COFEN",
+      "codified_in": ["lib/guidelines/sondas.ts"]
+    },
+    {
+      "id": "anvisa-cateteres-cvc",
+      "title": "Anvisa — dispositivos invasivos e bundle CVC",
+      "url": "https://www.gov.br/anvisa/",
+      "issuer": "Anvisa",
+      "codified_in": ["lib/guidelines/puncaoVenosa.ts"]
+    },
+    {
+      "id": "ms-ist-prevencao",
+      "title": "MS — prevenção e vigilância de IST",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/i/infeccoes-sexualmente-transmissiveis",
+      "issuer": "Ministério da Saúde",
+      "codified_in": ["lib/guidelines/ists.ts"]
+    },
+    {
+      "id": "cofen-res-358-sae",
+      "title": "Resolução COFEN nº 358/2009 — SAE",
+      "url": "https://www.cofen.gov.br/",
+      "issuer": "COFEN",
+      "codified_in": ["lib/guidelines/saeCofen.ts"]
+    },
+    {
+      "id": "anvisa-biosseguranca-iras",
+      "title": "Anvisa — precauções padrão e IRAS",
+      "url": "https://www.gov.br/anvisa/",
+      "issuer": "Anvisa",
+      "codified_in": ["lib/guidelines/biosseguranca.ts"]
+    },
+    {
+      "id": "ms-manual-tuberculose",
+      "title": "Manual de recomendações para controle da tuberculose no Brasil",
+      "url": "https://bvsms.saude.gov.br/bvs/publicacoes/manual_recomendacoes_controle_tuberculose_brasil_2_ed.pdf",
+      "issuer": "Ministério da Saúde",
+      "codified_in": ["lib/guidelines/tuberculose.ts"]
+    },
+    {
+      "id": "ms-vigilancia-virais",
+      "title": "MS — vigilância sarampo, influenza e poliomielite",
+      "url": "https://www.gov.br/saude/",
+      "issuer": "Ministério da Saúde",
+      "codified_in": ["lib/guidelines/doencasVirais.ts"]
+    },
+    {
+      "id": "anvisa-rdc15-cme",
+      "title": "Anvisa RDC 15/2012 — CME e esterilização",
+      "url": "https://www.gov.br/anvisa/",
+      "issuer": "Anvisa",
+      "codified_in": ["lib/guidelines/cme.ts"]
+    },
+    {
+      "id": "oms-cirurgia-segura",
+      "title": "OMS/COFEN — cirurgia segura e perioperatório",
+      "issuer": "OMS / COFEN",
+      "codified_in": ["lib/guidelines/perioperatorio.ts"]
+    },
+    {
+      "id": "ms-guia-vigilancia-3ed",
+      "title": "Guia de Vigilância em Saúde (3ª ed.)",
+      "url": "https://bvsms.saude.gov.br/bvs/publicacoes/guia_vigilancia_saude_3ed.pdf",
+      "issuer": "Ministério da Saúde",
+      "codified_in": ["lib/guidelines/epidemiologia.ts"]
+    },
+    {
+      "id": "ms-pnab-2017",
+      "title": "Política Nacional de Atenção Básica (PNAB 2017)",
+      "url": "https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_atencao_basica.pdf",
+      "issuer": "Ministério da Saúde",
+      "codified_in": ["lib/guidelines/atencaoBasica.ts"]
+    },
+    {
+      "id": "ms-pcdt-asma-dpoc",
+      "title": "PCDT Asma e DPOC",
+      "url": "https://www.gov.br/saude/",
+      "issuer": "Ministério da Saúde / SBPT",
+      "codified_in": ["lib/guidelines/respiratorioCronico.ts"]
+    },
+    {
+      "id": "ms-raps-saude-mental",
+      "title": "RAPS / Cadernos de atenção psicossocial",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-mental",
+      "issuer": "Ministério da Saúde",
+      "codified_in": ["lib/guidelines/saudeMental.ts"]
+    },
+    {
+      "id": "lei-8080-1990",
+      "title": "Lei 8.080/1990 — Lei Orgânica da Saúde",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l8080.htm",
+      "issuer": "Presidência da República",
+      "codified_in": ["lib/guidelines/promocaoSaude.ts"]
+    },
+    {
+      "id": "nr-32-saude",
+      "title": "NR-32 — Segurança em serviços de saúde",
+      "url": "https://www.gov.br/trabalho-e-emprego/",
+      "issuer": "Ministério do Trabalho",
+      "codified_in": ["lib/guidelines/enfermagemTrabalho.ts"]
+    },
+    {
+      "id": "ms-linha-cuidado-adolescente",
+      "title": "Linha de cuidado — saúde do adolescente",
+      "url": "https://www.gov.br/saude/",
+      "issuer": "Ministério da Saúde",
+      "codified_in": ["lib/guidelines/saudeAdolescente.ts"]
+    },
+    {
+      "id": "ms-manual-zoonoses",
+      "title": "Manuais de vigilância — zoonoses e parasitoses",
+      "url": "https://www.gov.br/saude/",
+      "issuer": "Ministério da Saúde",
+      "codified_in": ["lib/guidelines/parasitariasZoonoses.ts"]
+    },
+    {
+      "id": "ms-atendimento-queimaduras",
+      "title": "Protocolo de atendimento a queimaduras",
+      "url": "https://www.gov.br/saude/",
+      "issuer": "Ministério da Saúde",
+      "codified_in": ["lib/guidelines/feridasQueimaduras.ts"]
+    },
+    {
+      "id": "cofen-mobilizacao",
+      "title": "Mobilização e prevenção de LPP",
+      "url": "https://www.cofen.gov.br/",
+      "issuer": "COFEN",
+      "codified_in": ["lib/guidelines/mobilizacaoPosicionamento.ts"]
+    },
+    {
+      "id": "cofen-codigo-etica-historia",
+      "title": "COFEN — Código de Ética e marcos históricos",
+      "url": "https://www.cofen.gov.br/",
+      "issuer": "COFEN",
+      "codified_in": ["lib/guidelines/historiaEnfermagem.ts"]
+    },
+    {
+      "id": "anatomia-terminologia-basica",
+      "title": "Terminologia anatômica — posição anatômica",
+      "issuer": "Referência acadêmica",
+      "codified_in": ["lib/guidelines/anatomiaBasica.ts"]
+    },
+    {
+      "id": "fisiologia-homeostase-ms",
+      "title": "Fisiologia humana e homeostase",
+      "issuer": "Ministério da Saúde",
+      "codified_in": ["lib/guidelines/fisiologiaBasica.ts"]
+    },
+    {
+      "id": "anvisa-assepsia-procedimentos",
+      "title": "Anvisa/OMS — técnica asséptica e higiene das mãos",
+      "url": "https://www.gov.br/anvisa/",
+      "issuer": "Anvisa",
+      "codified_in": ["lib/guidelines/procedimentosDiversos.ts"]
+    }
+  ]
+}

@@ -43,7 +43,6 @@ import { DiagnosticoConclusaoHeader } from '@/components/simulados/DiagnosticoCo
 import { WeeklyMissionConclusaoHeader } from '@/components/simulados/WeeklyMissionConclusaoHeader';
 import { WeeklyMissionEvolutionPanel } from '@/components/simulados/WeeklyMissionEvolution';
 import {
-  getWeeklyIsoWeek,
   isAdaptiveSimuladoKind,
   resolveSimuladoSessionKind,
 } from '@/lib/simulado/sessionKind';
@@ -54,6 +53,7 @@ type SimuladoResumoClientProps = {
   questoes: SimuladoQuestaoItem[];
   incentivos?: SimuladoConclusaoIncentivos | null;
   weeklyEvolution?: WeeklyMissionEvolution | null;
+  weeklyOrdinal?: number | null;
 };
 
 function metaLinha(meta: SimuladoQuestaoItem['meta']): string {
@@ -174,6 +174,7 @@ export function SimuladoResumoClient({
   questoes,
   incentivos,
   weeklyEvolution,
+  weeklyOrdinal,
 }: SimuladoResumoClientProps) {
   const router = useRouter();
   const [filtro, setFiltro] = useState<'todos' | 'erros' | 'acertos'>('todos');
@@ -191,7 +192,9 @@ export function SimuladoResumoClient({
     month: 'short',
     year: 'numeric',
   });
-  const tituloExibicao = sessionDisplayTitulo(session.titulo, session.modo);
+  const tituloExibicao = sessionDisplayTitulo(session.titulo, session.modo, {
+    weeklyOrdinal: isWeekly ? weeklyOrdinal : undefined,
+  });
   const filtrosResumo = summarizeFiltros(session.filtros);
   const modoLabel = session.modo === 'prova' ? 'Prova' : 'Treino';
   const resumoDescription = [
@@ -405,10 +408,7 @@ export function SimuladoResumoClient({
         />
 
         {isWeekly ? (
-          <WeeklyMissionConclusaoHeader
-            filtros={session.filtros}
-            isoWeek={getWeeklyIsoWeek(session.filtros)}
-          />
+          <WeeklyMissionConclusaoHeader weeklyOrdinal={weeklyOrdinal} />
         ) : null}
 
         {sessionKind === 'diagnostico' ? <DiagnosticoConclusaoHeader /> : null}

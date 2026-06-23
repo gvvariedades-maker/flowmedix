@@ -1,0 +1,31 @@
+{
+  "lote": "cme-g02",
+  "exported_at": "2026-06-23T17:29:43.776Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "amauc-enfermagem-processo-de-enfermagem-1780001440222-4",
+      "ameosc-enfermagem-processo-de-enfermagem-1780005791580-0",
+      "fcpc-enfermagem-processo-de-enfermagem-1780004906875-6",
+      "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-3",
+      "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-1",
+      "igecap-enfermagem-processo-de-enfermagem-1780004293191-5",
+      "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-7",
+      "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-4",
+      "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-1",
+      "vunesp-enfermagem-processo-de-enfermagem-1780003637054-4"
+    ]
+  },
+  "slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780001440222-4",
+    "ameosc-enfermagem-processo-de-enfermagem-1780005791580-0",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-6",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-3",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-1",
+    "igecap-enfermagem-processo-de-enfermagem-1780004293191-5",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-7",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-4",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-1",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-4"
+  ]
+}

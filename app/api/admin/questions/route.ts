@@ -10,14 +10,13 @@
  *  - Insere usando service role (contorna RLS, mas só após autenticação admin)
  */
 
-import type { z } from 'zod';
 import { NextRequest, NextResponse } from 'next/server';
 import { requireAdminApi } from '@/lib/admin/requireAdmin';
 import {
-  QuestaoCompletaSchema,
-  payloadContainsTecconcursosReference,
-  questaoPayloadTecconcursosZodError,
-} from '@/lib/validations';
+  validateQuestaoForWrite,
+  type ValidatedQuestao,
+  type QuestaoWriteIssue,
+} from '@/lib/questaoSpec';
 import { logger } from '@/lib/logger';
 import { generateContentHash } from '@/lib/contentHash';
 import {
@@ -34,6 +33,10 @@ const HASH_LOOKUP_CHUNK = 80;
 const SKIP_LOTE = 'repetida neste lote (mesmo enunciado)';
 const SKIP_BANCO = 'já cadastrada no AVANT (mesmo enunciado)';
 const SKIP_BANCO_INSERT = 'já cadastrada no AVANT (índice único)';
+
+function writeIssuesToReason(issues: QuestaoWriteIssue[]): string {
+  return issues.map((e) => e.message).join('; ');
+}
 
 function chunkArray<T>(arr: T[], size: number): T[][] {
   const out: T[][] = [];
@@ -78,31 +81,33 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // 3. Valida cada questão com Zod (mesmo schema do laboratório)
-  type QuestaoValidada = z.infer<typeof QuestaoCompletaSchema>;
+  // 3. Valida cada questão com write spec golden-v2 (mesmo pipeline do laboratório)
   type ValidatedItem =
-    | { index: number; valid: true; data: QuestaoValidada }
-    | { index: number; valid: false; errors: z.core.$ZodIssue[] };
+    | { index: number; valid: true; data: ValidatedQuestao }
+    | { index: number; valid: false; errors: QuestaoWriteIssue[] };
 
   const validated: ValidatedItem[] = items.map((item, index) => {
-    if (payloadContainsTecconcursosReference(item)) {
-      return { index, valid: false as const, errors: questaoPayloadTecconcursosZodError().issues };
+    const result = validateQuestaoForWrite(item);
+    if (!result.ok) {
+      return { index, valid: false as const, errors: result.errors };
     }
-    const result = QuestaoCompletaSchema.safeParse(item);
-    if (!result.success) {
-      return { index, valid: false as const, errors: result.error.issues };
-    }
-    const data = result.data;
-    if (!data.meta.subtopico) data.meta.subtopico = data.meta.topico || 'Geral';
-    return { index, valid: true as const, data };
+    return { index, valid: true as const, data: result.data };
   });
 
   // Para questão individual, falha rápido se inválida
   if (!isArray && !validated[0].valid) {
     const v = validated[0] as Extract<ValidatedItem, { valid: false }>;
     return NextResponse.json(
-      { error: 'Questão inválida', validation_errors: v.errors },
-      { status: 422 }
+      {
+        error: 'Questão inválida (write spec golden-v2)',
+        validation_errors: v.errors.map((e) => ({
+          path: e.path ?? '',
+          message: e.message,
+          code: e.code,
+          layer: e.layer,
+        })),
+      },
+      { status: 422 },
     );
   }
 
@@ -117,12 +122,12 @@ export async function POST(request: NextRequest) {
       const v = vr as Extract<ValidatedItem, { valid: false }>;
       errors.push({
         index: v.index,
-        reason: v.errors.map((e) => e.message).join('; '),
+        reason: writeIssuesToReason(v.errors),
       });
     }
   }
 
-  type Entry = { index: number; data: QuestaoValidada; hash: string };
+  type Entry = { index: number; data: ValidatedQuestao; hash: string };
 
   const validRows = validated.filter((vr): vr is Extract<ValidatedItem, { valid: true }> => vr.valid);
 

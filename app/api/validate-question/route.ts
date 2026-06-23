@@ -1,28 +1,36 @@
 import { NextResponse } from 'next/server';
 import { requireAdminApi } from '@/lib/admin/requireAdmin';
 import {
-  QuestaoCompletaSchema,
-  validateSlides,
-  payloadContainsTecconcursosReference,
-  TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE,
-} from '@/lib/validations';
+  QUESTAO_WRITE_SPEC_VERSION,
+  validateQuestaoForWrite,
+  type QuestaoWriteIssue,
+} from '@/lib/questaoSpec';
 import { logger } from '@/lib/logger';
 import { distributedRateLimit } from '@/lib/rate-limit';
 
+function mapWriteIssues(issues: QuestaoWriteIssue[]) {
+  return issues.map((err) => ({
+    path: err.path ?? '',
+    message: err.message,
+    code: err.code,
+    layer: err.layer,
+    severity: err.severity,
+  }));
+}
+
 /**
  * POST /api/validate-question
- * Valida uma questão completa usando Zod
+ * Valida questão com write spec golden-v2 (Zod + premium gate + lint golden-v1 se declarado).
  */
 export async function POST(req: Request) {
   const auth = await requireAdminApi();
   if ('error' in auth) return auth.error;
 
-  // Rate limiting (20 requisições por 10 segundos)
   if (!(await distributedRateLimit(req, { key: 'validate-question', limit: 20, windowMs: 10_000 }))) {
     logger.warn('Rate limit exceeded', { endpoint: '/api/validate-question' });
     return NextResponse.json(
       { error: 'Muitas requisições. Tente novamente em alguns segundos.' },
-      { status: 429 }
+      { status: 429 },
     );
   }
 
@@ -31,102 +39,60 @@ export async function POST(req: Request) {
     try {
       body = await req.json();
     } catch {
-      return NextResponse.json(
-        { valid: false, error: 'JSON inválido' },
-        { status: 400 }
-      );
+      return NextResponse.json({ valid: false, error: 'JSON inválido' }, { status: 400 });
     }
 
-    if (payloadContainsTecconcursosReference(body)) {
-      return NextResponse.json(
-        {
-          valid: false,
-          errors: [
-            {
-              path: '',
-              message: TECONCURSOS_PAYLOAD_BLOCKED_MESSAGE,
-              code: 'custom',
-            },
-          ],
-        },
-        { status: 400 }
-      );
-    }
+    const result = validateQuestaoForWrite(body);
 
-    // Validação completa da questão
-    const validationResult = QuestaoCompletaSchema.safeParse(body);
-    
-    if (!validationResult.success) {
-      const issues = validationResult.error.issues;
-      logger.warn('Question validation failed', { errors: issues });
-
+    if (!result.ok) {
+      logger.warn('Question validation failed', { errors: result.errors.length });
       return NextResponse.json(
         {
           valid: false,
-          errors: issues.map((err) => ({
-            path: err.path.join('.'),
-            message: err.message,
-            code: err.code,
-          })),
+          specVersion: result.specVersion,
+          errors: mapWriteIssues(result.errors),
+          warnings: mapWriteIssues(result.warnings),
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
-    
-    // Validação adicional dos slides (se existirem)
-    let slidesValidation = null;
-    if (validationResult.data.reverse_study_slides && validationResult.data.reverse_study_slides.length > 0) {
-      slidesValidation = validateSlides(validationResult.data.reverse_study_slides);
-      
-      if (!slidesValidation.valid) {
-        return NextResponse.json(
-          {
-            valid: false,
-            errors: slidesValidation.errors.flatMap(({ index, errors }) =>
-              errors.map((err) => ({
-                path: `reverse_study_slides[${index}].${err.path.join('.')}`,
-                message: err.message,
-                code: err.code,
-              }))
-            ),
-          },
-          { status: 400 }
-        );
-      }
-    }
-    
+
     logger.info('Question validated successfully', {
-      hasSlides: !!validationResult.data.reverse_study_slides,
-      slidesCount: validationResult.data.reverse_study_slides?.length || 0,
+      specVersion: result.specVersion,
+      hasSlides: !!result.data.reverse_study_slides,
+      slidesCount: result.data.reverse_study_slides?.length || 0,
+      warnings: result.warnings.length,
     });
-    
+
     return NextResponse.json({
       valid: true,
-      data: validationResult.data,
-      warnings: [], // Pode adicionar avisos não-críticos aqui
+      specVersion: result.specVersion,
+      data: result.data,
+      warnings: mapWriteIssues(result.warnings),
     });
-  } catch (err: any) {
+  } catch (err: unknown) {
     logger.error('Validation API error', err);
     return NextResponse.json(
       {
         valid: false,
         error: 'Erro ao processar validação',
-        message: err.message,
+        message: err instanceof Error ? err.message : 'erro desconhecido',
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
 
 /**
  * GET /api/validate-question
- * Retorna informações sobre os limites e regras de validação
+ * Retorna limites e versão do write spec.
  */
 export async function GET() {
   const auth = await requireAdminApi();
   if ('error' in auth) return auth.error;
 
   return NextResponse.json({
+    writeSpecVersion: QUESTAO_WRITE_SPEC_VERSION,
     limits: {
       INSTRUCTION_MAX: 2000,
       TEXT_FRAGMENT_MAX: 5000,

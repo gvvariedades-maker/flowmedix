@@ -3,6 +3,7 @@ import {
   inferIntervalChips,
   inferPniCategory,
   inferPniIconName,
+  inferPniMatrixRowBadge,
   inferPniRowChip,
   inferPniTrapSlots,
   inferVfJudgement,
@@ -55,6 +56,35 @@ describe('pniSlideUtils', () => {
     expect(parsed.roman).toBe('III');
     expect(parsed.judgement).toBe('true');
     expect(parsed.question).toContain('VPC13');
+  });
+
+  it('extrai citação entre aspas sem truncar no julgamento V/F', () => {
+    const longQuote =
+      'A vacinação é o único modo de prevenir a Poliomielite, assim todas as crianças menores de cinco anos de idade devem ser vacinadas, conforme esquema de rotina e campanha nacional anual.';
+    const parsed = parsePniVfStep(
+      `Avaliar Afirmativa III: '${longQuote}' Esta afirmação é verdadeira.`,
+      2,
+    );
+    expect(parsed.kind).toBe('judgement');
+    expect(parsed.question).toBe(longQuote);
+    expect(parsed.question).not.toContain('…');
+  });
+
+  it('infere badge FALSA para alternativa incorreta no golden_rule MCQ', () => {
+    expect(
+      inferPniMatrixRowBadge(
+        'Alternativa B (Incorreta)',
+        'Controle rigoroso do acesso dos pacientes aos serviços de saúde.',
+      ),
+    ).toBe('FALSA');
+    expect(
+      inferPniMatrixRowBadge(
+        'Alternativa C (Correta)',
+        'Identificação rápida de crianças em atraso vacinal.',
+      ),
+    ).toBe('VERDADEIRA');
+    expect(inferPniMatrixRowBadge('I — grace 4d', '→ FALSA')).toBe('FALSA');
+    expect(inferPniMatrixRowBadge('II — SCR', 'VERDADEIRA: intervalo 30 dias')).toBe('VERDADEIRA');
   });
 
   it('parseia step de combinação e localização', () => {

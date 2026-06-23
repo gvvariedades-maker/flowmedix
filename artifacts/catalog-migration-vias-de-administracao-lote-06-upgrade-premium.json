@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-09T11:16:46.776Z",
+  "generated_at": "2026-06-19T16:19:03.119Z",
   "lote": "vias-de-administracao-lote-06",
   "mode": "write",
-  "force": false,
+  "force": true,
   "danger_only": false,
   "preserve_rich_slides": true,
   "total_files": 1,
@@ -17,12 +17,13 @@
       "modulo_slug": "vunesp-enfermagem-vias-de-administracao-1778968787431-7",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     }
   ]

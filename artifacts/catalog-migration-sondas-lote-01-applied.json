@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-19T13:36:54.452Z",
+  "lote": "sondas-lote-01",
+  "mode": "apply",
+  "total_files": 50,
+  "ok": 50,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "adm-tec-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-8",
+    "amauc-enfermagem-instalacao-e-manejo-de-sondas-1776056518229-6",
+    "amauc-enfermagem-instalacao-e-manejo-de-sondas-1776056518229-7",
+    "ameosc-enfermagem-instalacao-e-manejo-de-sondas-1776056493133-7",
+    "ameosc-enfermagem-instalacao-e-manejo-de-sondas-1776056526805-2",
+    "ameosc-enfermagem-instalacao-e-manejo-de-sondas-1776056526805-3",
+    "ameosc-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-7",
+    "ameosc-enfermagem-processo-de-enfermagem-1780002934000-7",
+    "ameosc-enfermagem-processo-de-enfermagem-1780005556782-7",
+    "atame-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-2",
+    "atame-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-3",
+    "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056535563-6",
+    "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056535563-7",
+    "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056544832-0",
+    "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056544832-4",
+    "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056561649-0",
+    "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056561649-1",
+    "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056578580-1",
+    "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056578580-2",
+    "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056591416-6",
+    "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-7",
+    "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-8",
+    "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056633262-7",
+    "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056654316-0",
+    "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056654316-1",
+    "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056654316-2",
+    "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-4",
+    "avancasp-enfermagem-processo-de-enfermagem-1780002834059-1",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003793968-6",
+    "avancasp-geral-instalacao-e-manejo-de-sondas-1776056493133-8",
+    "cebraspe-cespe-enfermagem-instalacao-e-manejo-de-sondas-1776056553269-4",
+    "cebraspe-cespe-enfermagem-instalacao-e-manejo-de-sondas-1776056553269-5",
+    "cebraspe-cespe-enfermagem-instalacao-e-manejo-de-sondas-1776056553269-6",
+    "cebraspe-cespe-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-0",
+    "consulplan-enfermagem-instalacao-e-manejo-de-sondas-1776056668359-2",
+    "copese-ufpi-enfermagem-instalacao-e-manejo-de-sondas-1776056502149-7",
+    "copese-ufpi-enfermagem-instalacao-e-manejo-de-sondas-1776056502149-8",
+    "coseac-uff-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-1",
+    "coseac-uff-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-2",
+    "coseac-uff-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-3",
+    "coseac-uff-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-4",
+    "coseac-uff-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-5",
+    "cotec-fadenor-enfermagem-instalacao-e-manejo-de-sondas-1776056544832-6",
+    "cotec-fadenor-enfermagem-instalacao-e-manejo-de-sondas-1776056561649-5",
+    "cotec-fadenor-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-6",
+    "cotec-fadenor-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-2",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-3",
+    "cpcon-uepb-enfermagem-instalacao-e-manejo-de-sondas-1776056526805-4",
+    "cpcon-uepb-enfermagem-instalacao-e-manejo-de-sondas-1776056553269-2",
+    "cpcon-uepb-enfermagem-instalacao-e-manejo-de-sondas-1776056591416-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-instalacao-e-manejo-de-sondas-1776056518229-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-instalacao-e-manejo-de-sondas-1776056518229-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-instalacao-e-manejo-de-sondas-1776056493133-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-instalacao-e-manejo-de-sondas-1776056526805-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-instalacao-e-manejo-de-sondas-1776056526805-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780002934000-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005556782-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "atame-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056535563-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056535563-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056544832-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056544832-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056561649-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056561649-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056578580-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056578580-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056591416-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056633262-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056654316-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056654316-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056654316-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002834059-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003793968-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-geral-instalacao-e-manejo-de-sondas-1776056493133-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-instalacao-e-manejo-de-sondas-1776056553269-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-instalacao-e-manejo-de-sondas-1776056553269-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-instalacao-e-manejo-de-sondas-1776056553269-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "consulplan-enfermagem-instalacao-e-manejo-de-sondas-1776056668359-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-instalacao-e-manejo-de-sondas-1776056502149-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "copese-ufpi-enfermagem-instalacao-e-manejo-de-sondas-1776056502149-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-instalacao-e-manejo-de-sondas-1776056544832-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-instalacao-e-manejo-de-sondas-1776056561649-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-instalacao-e-manejo-de-sondas-1776056526805-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-instalacao-e-manejo-de-sondas-1776056553269-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-instalacao-e-manejo-de-sondas-1776056591416-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

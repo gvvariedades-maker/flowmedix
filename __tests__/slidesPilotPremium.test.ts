@@ -59,13 +59,18 @@ describe('piloto premium — goldens de subtópico', () => {
     '$subtopico: mapa piloto usa layout canônico no logic_flow',
     ({ subtopico }) => {
       const expected =
-        subtopico === 'Instalação e Manejo de Sondas' ||
-        subtopico === 'Urgências e Emergências'
+        subtopico === 'Instalação e Manejo de Sondas'
+          ? 'sonda-decision-tap'
+          : subtopico === 'Processo de Enfermagem'
+            ? 'sae-decision-tap'
+          : subtopico === 'Urgências e Emergências'
           ? 'vertical'
           : subtopico === 'Verificação de Sinais Vitais'
             ? 'vitals-translate-tap'
             : subtopico === 'Imunização'
               ? 'pni-vf-juggle-tap'
+              : subtopico === 'Vias de Administração'
+                ? 'via-vf-juggle-tap'
               : 'cards';
       const slide = {
         type: 'logic_flow',
@@ -91,6 +96,12 @@ describe('piloto premium — goldens de subtópico', () => {
           ? 'pni-interval-matrix'
           : subtopico === 'Verificação de Sinais Vitais'
             ? 'vitals-reference-board'
+            : subtopico === 'Instalação e Manejo de Sondas'
+              ? 'sonda-measurement-board'
+            : subtopico === 'Processo de Enfermagem'
+              ? 'sae-reference-board'
+            : subtopico === 'Vias de Administração'
+              ? 'via-reference-board'
             : 'reference_table';
       expect(
         resolveGoldenRuleLayoutVariant(golden, golden.layout_variant, mapVariant),

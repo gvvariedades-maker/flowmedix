@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-06-09T11:09:28.928Z",
+  "exported_at": "2026-06-19T15:16:18.723Z",
   "lote": "vias-de-administracao-lote-02",
   "total": 50,
   "entries": [
@@ -68,7 +68,7 @@
     },
     {
       "modulo_slug": "coseac-uff-enfermagem-vias-de-administracao-1778969007166-3",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
       "modulo_nome": "Enfermagem",
       "banca": "COSEAC UFF",
       "avant_codigo": 2115
@@ -166,7 +166,7 @@
     },
     {
       "modulo_slug": "decorp-enfermagem-vias-de-administracao-1776056357082-0",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Imunização",
       "modulo_nome": "Enfermagem",
       "banca": "DECORP",
       "avant_codigo": 376
@@ -264,7 +264,7 @@
     },
     {
       "modulo_slug": "fepese-enfermagem-vias-de-administracao-1776056383154-5",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Imunização",
       "modulo_nome": "Enfermagem",
       "banca": "FEPESE",
       "avant_codigo": 408

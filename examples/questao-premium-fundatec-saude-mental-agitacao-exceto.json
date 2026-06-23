@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "banca": "FUNDATEC",
+    "prova": "Tec Enf",
+    "orgao": "Enfermagem",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde Mental",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "MS/COFEN — manejo da agitação psicomotora e prevenção de violência",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-agitacao-psicomotora",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Cuidado em saúde mental — manejo de agitação psicomotora",
+        "year": 2021,
+        "covers": ["sinais de agitação", "prevenção de violência", "observação clínica"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A agitação psicomotora é um quadro de tensão, inquietação, hiperatividade, manifestado por um estado psicomotor. São sinais de agitação como prévios a uma\nviolência iminente, EXCETO:",
+    "options": [
+      { "id": "A", "text": "Caminhar constante.", "is_correct": false },
+      { "id": "B", "text": "Tensão muscular.", "is_correct": false },
+      { "id": "C", "text": "Dentes cerrados.", "is_correct": false },
+      { "id": "D", "text": "Impaciência.", "is_correct": false },
+      { "id": "E", "text": "Segurar objetos.", "is_correct": true }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Agitação psicomotora — comando EXCETO",
+      "chip_label": "EXCETO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "items": [
+        {
+          "label": "Comando",
+          "detail": "EXCETO: quatro alternativas são sinais de agitação pré-violência — uma não se encaixa.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Sinais motores",
+          "detail": "Caminhar constante, tensão muscular e dentes cerrados — hiperatividade e tensão corporal.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Sinal comportamental",
+          "detail": "Impaciência — inquietação psicomotora típica de escalada.",
+          "icon": "Zap"
+        },
+        {
+          "label": "EXCETO — letra E",
+          "detail": "Segurar objetos isoladamente não é sinal clássico de agitação pré-violência nesta lista.",
+          "icon": "XCircle"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra E — segurar objetos é a exceção entre os sinais listados.",
+          "icon": "Target"
+        }
+      ],
+      "footer_rule": "EXCETO = marque o que NÃO é sinal de agitação pré-violência"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Sinais de agitação — referência",
+      "chip_label": "REGRA DE OURO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "content": "AGITAÇÃO: MOTOR + TENSÃO + INQUIETAÇÃO",
+      "rows": [
+        { "label": "Motor", "value": "Caminhar constante, hiperatividade", "badge": "ok" },
+        { "label": "Tensão", "value": "Tensão muscular, dentes cerrados", "badge": "ok" },
+        { "label": "Comportamento", "value": "Impaciência, inquietação", "badge": "ok" },
+        {
+          "label": "EXCETO",
+          "value": "Segurar objetos — não listado como sinal típico aqui",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        { "label": "Gabarito", "value": "Letra E", "emphasis": "success", "badge": "hot" }
+      ],
+      "footer_rule": "Observe escalada: motor → tensão → impaciência"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — EXCETO agitação",
+      "chip_label": "PASSO A PASSO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "reveal_mode": "tap",
+      "steps": [
+        "Comando EXCETO: sinais de agitação pré-violência — marque o que NÃO é sinal.",
+        "A, B, C e D descrevem manifestações clássicas de agitação (motor, tensão, impaciência).",
+        "E — segurar objetos — não se encaixa como sinal típico nesta questão.",
+        "Eliminar A, B, C e D (são sinais válidos, não o EXCETO).",
+        "Marcar letra E.",
+        "Fixação: no EXCETO, confirme cada alternativa como sinal antes de marcar a exceção."
+      ],
+      "footer_rule": "Estratégia EXCETO: validar cada sinal → sobra a exceção"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "content": "PEGADINHAS — SINAIS DE AGITAÇÃO",
+      "items": [
+        {
+          "label": "Letra A — caminhar constante",
+          "detail": "Hiperatividade motora é sinal clássico de agitação.",
+          "correct": "Gabarito letra E — caminhar constante é sinal válido, não o EXCETO."
+        },
+        {
+          "label": "Letra C — dentes cerrados",
+          "detail": "Tensão facial faz parte da escalada motora.",
+          "correct": "Gabarito letra E — dentes cerrados é sinal de tensão, não a exceção."
+        },
+        {
+          "label": "Letra D — impaciência",
+          "detail": "Inquietação comportamental precede violência em muitos protocolos.",
+          "correct": "Gabarito letra E — impaciência é sinal de agitação, não o EXCETO."
+        }
+      ],
+      "footer_rule": "Letra E é a exceção — as demais são sinais de agitação"
+    }
+  ]
+}

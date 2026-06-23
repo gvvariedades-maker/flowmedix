@@ -1,0 +1,11 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-01",
+  "exported_at": "2026-06-20T12:18:35.292Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "artifacts/premium-upgrade-lotes/puncao-venosa-e-cuidados-com-cateteres/repair-lote-01-manifest.json"
+  },
+  "slugs": [
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-4"
+  ]
+}

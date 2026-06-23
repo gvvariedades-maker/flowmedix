@@ -1,0 +1,26 @@
+{
+  "lote": "doencas-bacterianas-e-fungicas-repair-lote-01",
+  "generated_at": "2026-06-20T11:54:54.683Z",
+  "source": "premium-needs-upgrade-supabase",
+  "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+  "lote_prefix": "doencas-bacterianas-e-fungicas",
+  "batch": 1,
+  "has_dedicated_builder": false,
+  "builder": null,
+  "issue_summary": {
+    "stub_markers": 11
+  },
+  "slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780004982901-7",
+    "amauc-enfermagem-processo-de-enfermagem-1780005128081-4",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-6",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-7",
+    "fundatec-enfermagem-urgencias-e-emergencias-1777104056718-8",
+    "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-2",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005540776-6",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-4",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-9",
+    "legalle-enfermagem-processo-de-enfermagem-1780011879977-5",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008210115-8"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-06-23T17:46:45.974Z",
+  "lote": "saude-mental-micro-05-goldens",
+  "mode": "apply",
+  "total_files": 5,
+  "ok": 5,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1",
+    "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+    "selecon-enfermagem-processo-de-enfermagem-1780009322055-9",
+    "univali-enfermagem-teorias-em-enfermagem-1776055843703-2",
+    "vunesp-enfermagem-saude-mental-1780001362784-5"
+  ],
+  "results": [
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-teorias-em-enfermagem-1776055843703-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-mental-1780001362784-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

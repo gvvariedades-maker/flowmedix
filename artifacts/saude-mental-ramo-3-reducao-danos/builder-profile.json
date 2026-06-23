@@ -1,0 +1,177 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-06-23T14:41:16.897Z",
+  "phase": "2",
+  "ramo_id": "SM-3",
+  "ramo_label": "Redução de danos / entrevista motivacional",
+  "subtopico": "Saúde Mental",
+  "cluster_source": "artifacts/saude-mental-topic-cluster-report.json",
+  "builder": "upgradePremiumSaudeMental",
+  "golden_anchor": {
+    "file": "questao-premium-idecan-saude-mental-reducao-danos.json",
+    "slug": "idecan-enfermagem-saude-mental-1778712418722-2",
+    "banca": "IDECAN",
+    "builder_topic": "Redução de danos / dependência",
+    "pedagogical_cluster": "Redução de danos / entrevista motivacional",
+    "family": "conceito",
+    "rationale": "Único golden do cluster — MCQ com álcool+crack, resistência à RD, gabarito territorial (ESF+família). Contrato tap/compare validado."
+  },
+  "volume": {
+    "total_slugs": 2,
+    "pct_of_subtopico": 5.4,
+    "cluster_decision": "coberto",
+    "merged_clusters": [
+      "Redução de danos / entrevista motivacional"
+    ]
+  },
+  "topic_infer_order": [
+    "Redução de danos / dependência"
+  ],
+  "topic_profiles": [
+    {
+      "topic_id": "reducao-danos",
+      "label": "Redução de danos / dependência",
+      "slug_count": 2,
+      "golden_file": "questao-premium-idecan-saude-mental-reducao-danos.json",
+      "anchor_regex": [
+        "redu[çc][ãa]o de danos",
+        "entrevista motivacional",
+        "crack",
+        "álcool.*abuso|alcool.*abuso",
+        "usu[aá]rios? de álcool",
+        "centralidade no sujeito",
+        "interven[cç][ãa]o breve",
+        "estigma.*depend[eê]ncia|culpabiliza[cç][ãa]o"
+      ],
+      "families": [
+        "conceito"
+      ],
+      "parse_hints": {
+        "mcq_cuidado_integral": "cuidado integral|boas pr[aá]ticas|pr[aá]tica profissional",
+        "aps_alcool": "aten[cç][ãa]o b[aá]sica|aten[cç][ãa]o prim[aá]ria|aps\\b",
+        "resistencia_usuario": "resist[eê]ncia.*aderir|n[aã]o demonstre motiva[cç][ãa]o"
+      },
+      "slide_contract": {
+        "concept_map": {
+          "min_items": 4,
+          "slots": [
+            "ENQUADRAMENTO",
+            "Redução de danos",
+            "ESF + família / APS",
+            "Pegadinha abstinência",
+            "Gabarito"
+          ]
+        },
+        "golden_rule": {
+          "prefer_rows": true,
+          "title_content": "VÍNCULO + TERRITÓRIO + REDUÇÃO DE DANOS",
+          "rows_slots": [
+            "Princípio",
+            "Não fazer",
+            "Fazer",
+            "Gabarito"
+          ]
+        },
+        "logic_flow": {
+          "reveal_mode": "tap",
+          "min_steps": 7
+        },
+        "danger_zone": {
+          "require_correct_per_item": true,
+          "bullet_style": "x_icon",
+          "format_correct": "Gabarito letra {LETTER} — {explanation}"
+        }
+      },
+      "option_trap_patterns": [
+        {
+          "regex": "abstin[êe]ncia imediata|interrup[cç][ãa]o imediata|exigir.*parar",
+          "trap": "Moralismo — impor abstinência sem motivação afasta o usuário da RD"
+        },
+        {
+          "regex": "interna[cç][ãa]o involunt[aá]ria|interna[cç][ãa]o compuls[oó]ria|isolamento",
+          "trap": "Coerção hospitalar — desproporcional à resistência ou estigma"
+        },
+        {
+          "regex": "s[oó] medica[cç][ãa]o|apenas.*medica[cç][ãa]o|responsabilizando o paciente",
+          "trap": "Reduz cuidado à farmacoterapia — RD exige vínculo social"
+        },
+        {
+          "regex": "alta complexidade sem|sem envolvimento.*raps|sem articula[cç][ãa]o",
+          "trap": "Quebra articulação territorial — caso permanece na ESF/RAPS"
+        },
+        {
+          "regex": "confrontar|questionar sobre os danos|baf[oô]metro",
+          "trap": "Abordagem punitiva/confrontativa — oposta à entrevista motivacional"
+        },
+        {
+          "regex": "subst[aâ]ncias alucin[oó]genas|alucin[oó]genas",
+          "trap": "Inversão semântica — RD não prescinde de alucinógenos"
+        }
+      ],
+      "sample_slugs": [
+        "idecan-enfermagem-saude-mental-1778712418722-2",
+        "vunesp-enfermagem-dependencia-quimica-1778967935713-4"
+      ]
+    }
+  ],
+  "family_handlers": {
+    "conceito": {
+      "parser": "mcqChoicePackage",
+      "reference_impl": "upgradePremiumVfCore.buildChoicePackageSlides",
+      "danger_builder": "formatGabaritoCorrect per distractor — unique explanation each letter"
+    }
+  },
+  "anti_drift": {
+    "forbidden_unless_anchored": [
+      "bundle CVC",
+      "IPCS",
+      "contenção física",
+      "esquizofrenia",
+      "delirium UTI",
+      "Fagerström",
+      "PNCT"
+    ],
+    "allowed_vocabulary": [
+      "redução de danos",
+      "entrevista motivacional",
+      "ESF",
+      "RAPS",
+      "vínculo",
+      "atenção básica",
+      "intervenção breve",
+      "escalas"
+    ],
+    "gates": [
+      "detectSlideTopicDrift",
+      "detectDuplicateDangerJustifications",
+      "detectDangerGabaritoMismatch",
+      "premiumGateErrors",
+      "lintGoldenContent"
+    ]
+  },
+  "molde_hints": {
+    "subtopico_design": "Saúde Mental",
+    "template_suggestion": "violet (t05) — saúde mental",
+    "layout_auto": {
+      "golden_rule": "reference_table when rows present",
+      "danger_zone": "compare when items[].correct present",
+      "logic_flow": "tap when reveal_mode tap"
+    }
+  },
+  "sources_tier_a": [
+    {
+      "id": "ms-reducao-danos",
+      "covers": [
+        "redução de danos",
+        "vínculo territorial",
+        "ESF"
+      ]
+    },
+    {
+      "id": "portaria-3088-2011-raps",
+      "covers": [
+        "articulação com CAPS e AB"
+      ]
+    }
+  ]
+}

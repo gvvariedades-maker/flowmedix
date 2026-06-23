@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "Tec Enf",
+    "orgao": "Pref Catolé do Rocha",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Medidas de Prevenção e Precaução de Contato"
+  },
+  "question_data": {
+    "instruction": "Sobre precauções padrão e de contato, analise as afirmativas.\n\nI - As precauções padrão aplicam-se a todo paciente, independentemente do diagnóstico infeccioso presumido ou confirmado.\nII - Na precaução de contato, o uso de luvas substitui a necessidade de higienização das mãos ao sair do quarto.\nIII - Pacientes em precaução de contato devem permanecer em quarto individual quando possível e ter equipamentos dedicados sempre que viável.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e III, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Precauções — mapa",
+      "meta": { "topico": "Enfermagem", "subtopico": "Medidas de Prevenção e Precaução de Contato" },
+      "items": [
+        { "label": "Precaução padrão", "detail": "Para todos os pacientes — considerar sangue, secreções, pele não íntegra.", "icon": "Shield" },
+        { "label": "Precaução de contato", "detail": "Transmissão por toque — luva + avental + quarto quando possível.", "icon": "Hand" },
+        { "label": "Higiene das mãos", "detail": "Obrigatória na saída do quarto — luva não substitui.", "icon": "Droplets" },
+        { "label": "Equipamento dedicado", "detail": "Estetoscópio, termômetro, etc. — reduzir disseminação cruzada.", "icon": "Stethoscope" }
+      ],
+      "footer_rule": "Padrão = todos · Contato = quarto + EPI + higiene na saída"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Contato — regra de ouro",
+      "meta": { "topico": "Enfermagem", "subtopico": "Medidas de Prevenção e Precaução de Contato" },
+      "content": "LUVA ≠ HIGIENE",
+      "rows": [
+        { "label": "Precaução padrão", "value": "Todos os pacientes", "badge": "ok" },
+        { "label": "Contato — quarto", "value": "Individual quando possível", "badge": "ok" },
+        { "label": "Luva dispensa higiene", "value": "Falso — higienizar ao sair", "emphasis": "alert", "badge": "warn" },
+        { "label": "Gabarito", "value": "I e III, apenas", "badge": "hot" }
+      ],
+      "footer_rule": "II é a pegadinha clássica de biossegurança"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Medidas de Prevenção e Precaução de Contato" },
+      "steps": [
+        "I: precaução padrão universal → verdadeira.",
+        "II: luva substitui higiene na saída → falsa.",
+        "III: quarto + equipamento dedicado → verdadeira.",
+        "Gabarito: I e III → letra B.",
+        "Fixação: retirar luva e higienizar mãos — sequência obrigatória."
+      ],
+      "footer_rule": "Sempre julgar higiene das mãos separada do EPI"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Medidas de Prevenção e Precaução de Contato" },
+      "content": "PEGADINHAS — PRECAUÇÃO DE CONTATO",
+      "items": [
+        { "label": "Luva no lugar da higiene", "detail": "II descreve conduta proibida.", "correct": "Higienizar mãos ao sair do quarto, após retirar luvas." },
+        { "label": "Padrão só para infectado", "detail": "I vale para todos — inclusive sem diagnóstico.", "correct": "Precaução padrão é universal." },
+        { "label": "Aglomerar em enfermaria", "detail": "III reforça quarto individual quando possível.", "correct": "Isolamento de contato reduz disseminação." }
+      ],
+      "footer_rule": "Em contato: EPI + quarto + higiene — nunca pular a higiene"
+    }
+  ]
+}

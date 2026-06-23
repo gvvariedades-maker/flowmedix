@@ -1,0 +1,38 @@
+{
+  "lote": "seguranca-do-paciente-repair-lote-01",
+  "generated_at": "2026-06-20T11:54:54.683Z",
+  "source": "premium-needs-upgrade-supabase",
+  "subtopico": "Segurança do Paciente",
+  "lote_prefix": "seguranca-do-paciente",
+  "batch": 1,
+  "has_dedicated_builder": false,
+  "builder": null,
+  "issue_summary": {
+    "stub_markers": 23
+  },
+  "slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1780005791580-2",
+    "avancasp-enfermagem-processo-de-enfermagem-1780002714111-6",
+    "avancasp-enfermagem-processo-de-enfermagem-1780002834059-6",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003137298-4",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006444165-1",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011859940-5",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011872350-1",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-0",
+    "educa-pb-enfermagem-processo-de-enfermagem-1780007246385-6",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009386446-1",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-3",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-7",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-1",
+    "furb-enfermagem-processo-de-enfermagem-1780011887822-7",
+    "furb-enfermagem-processo-de-enfermagem-1780011915153-7",
+    "idecan-enfermagem-urgencias-e-emergencias-1778712392541-8",
+    "igeduc-enfermagem-processo-de-enfermagem-1780010559720-7",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011915153-9",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-2",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-9",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-6",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-3",
+    "unifil-enfermagem-processo-de-enfermagem-1780003637054-8"
+  ]
+}

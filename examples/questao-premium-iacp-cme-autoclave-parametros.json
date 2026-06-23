@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "banca": "INSTITUTO IACP",
+    "prova": "Tec Enf",
+    "orgao": "Pref Santa Luzia do Norte",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "handcraft-pilot",
+      "guideline_snapshot": "Anvisa RDC 15/2012 — autoclave vapor saturado",
+      "exam_vs_current": "Gabarito da prova: 121 °C, 1,5 atm, 20 min (guideline de referência AVANT cita 15 min — slides ensinam o card)"
+    },
+    "sources": [
+      {
+        "id": "cme-anvisa-rdc15",
+        "tier": "A",
+        "issuer": "Anvisa",
+        "title": "RDC 15/2012 — esterilização por vapor saturado",
+        "year": 2012,
+        "covers": ["autoclave", "121 °C", "pressão", "tempo de exposição", "esporos"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A esterilização em autoclave utiliza vapor saturado sob pressão para destruir todas as formas de vida microbiana, incluindo esporos bacterianos. Para garantir a eficácia do processo, os parâmetros padrão de temperatura, pressão e tempo de exposição mais utilizados são:",
+    "options": [
+      { "id": "A", "text": "121°C, 1 atm, 15 minutos.", "is_correct": false },
+      { "id": "B", "text": "134°C, 2 atm, 3 minutos.", "is_correct": false },
+      { "id": "C", "text": "121°C, 1,5 atm, 20 minutos.", "is_correct": true },
+      { "id": "D", "text": "100°C, 1 atm, 30 minutos.", "is_correct": false },
+      { "id": "E", "text": "134°C, 1 atm, 10 minutos.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Autoclave — vapor saturado",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+      },
+      "items": [
+        {
+          "label": "Método",
+          "detail": "Calor úmido sob pressão — vapor saturado destrói microrganismos e esporos.",
+          "icon": "Thermometer"
+        },
+        {
+          "label": "Temperatura",
+          "detail": "121 °C é o ciclo clássico de referência em prova de CME.",
+          "icon": "Gauge"
+        },
+        {
+          "label": "Pressão + tempo",
+          "detail": "Nesta prova: 1,5 atm e 20 min de exposição — triplete do gabarito.",
+          "icon": "Clock"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra C — 121 °C, 1,5 atm, 20 minutos.",
+          "icon": "Target"
+        }
+      ],
+      "footer_rule": "Autoclave = temperatura + pressão + tempo (não marque só um parâmetro)"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Autoclave — parâmetros de prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+      },
+      "content": "CICLO GRAVIDADE",
+      "rows": [
+        { "label": "Agente", "value": "Vapor saturado sob pressão", "badge": "ok" },
+        { "label": "Temperatura", "value": "121 °C", "badge": "hot", "emphasis": "highlight" },
+        { "label": "Pressão", "value": "1,5 atm (esta prova)", "badge": "hot" },
+        { "label": "Tempo", "value": "20 min (esta prova)", "badge": "hot" },
+        { "label": "Pegadinha A", "value": "15 min aparece em outras provas — aqui não é o gabarito", "badge": "warn" },
+        { "label": "Gabarito", "value": "Letra C", "badge": "hot" }
+      ],
+      "footer_rule": "Confira os três parâmetros juntos — banca mistura ciclos pré-vácuo e gravidade"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+      },
+      "steps": [
+        "Comando: parâmetros padrão de autoclave (T, pressão, tempo).",
+        "Método: vapor saturado — calor úmido com pressão.",
+        "A: 121 °C / 1 atm / 15 min — triplete incompleto para esta banca.",
+        "B: 134 °C / 2 atm / 3 min — ciclo pré-vácuo rápido, não o pedido.",
+        "C: 121 °C / 1,5 atm / 20 min — combinação da prova.",
+        "D: 100 °C — ebulição da água, não esterilização.",
+        "E: 134 °C com 1 atm — pressão incompatível com o par.",
+        "Marcar C."
+      ],
+      "footer_rule": "Elimine por temperatura absurda (100 °C) e por trocar ciclo rápido × gravidade"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+      },
+      "content": "PEGADINHAS — parâmetros de autoclave",
+      "items": [
+        {
+          "label": "Letra A — 15 minutos",
+          "detail": "15 min a 121 °C é referência comum em material, mas esta questão exige 20 min e 1,5 atm.",
+          "correct": "Gabarito C — 121 °C, 1,5 atm, 20 minutos (triplete completo da prova)."
+        },
+        {
+          "label": "Letra B — 134 °C / 3 min",
+          "detail": "Ciclo flash/pré-vácuo usa temperatura maior e tempo menor.",
+          "correct": "A banca pede ciclo a 121 °C com 20 min — não o rápido de 134 °C."
+        },
+        {
+          "label": "Letra D — 100 °C",
+          "detail": "100 °C é ponto de ebulição ao nível do mar — não ciclo de esterilização.",
+          "correct": "Autoclave opera acima de 100 °C graças à pressão — 121 °C no gabarito."
+        },
+        {
+          "label": "Letra E — pressão incoerente",
+          "detail": "134 °C com apenas 1 atm não fecha o par físico do vapor saturado.",
+          "correct": "Pressão deve combinar com temperatura e tempo — C é o único triplete coerente aqui."
+        }
+      ],
+      "footer_rule": "Não decore só 121/15 — leia pressão e tempo da alternativa inteira"
+    }
+  ]
+}

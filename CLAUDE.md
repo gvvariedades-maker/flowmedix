@@ -15,10 +15,15 @@ npm run build            # validate:env + next build
 
 | Área | Arquivo |
 |------|---------|
-| Validação de questões | [`lib/validations.ts`](lib/validations.ts) |
+| Validação de questões | [`lib/validations.ts`](lib/validations.ts) · write spec [`lib/questaoSpec/validateQuestaoForWrite.ts`](lib/questaoSpec/validateQuestaoForWrite.ts) |
 | Cache de dados | [`lib/cache.ts`](lib/cache.ts) |
 | Slides, layouts, subtópicos | [`docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md) |
-| Pacote premium (checklist + rollout) | [`docs/PACOTE_PREMIUM_CHECKLIST.md`](docs/PACOTE_PREMIUM_CHECKLIST.md) |
+| O que é questão premium (L1/L2/L3) | [`docs/PREMIUM_QUESTAO.md`](docs/PREMIUM_QUESTAO.md) |
+| Pacote premium (runbook + rollout) | [`docs/PACOTE_PREMIUM_CHECKLIST.md`](docs/PACOTE_PREMIUM_CHECKLIST.md) § Runbook |
+| Golden no catálogo inteiro (programa) | [`docs/GOLDEN_ROLLOUT_CATALOGO.md`](docs/GOLDEN_ROLLOUT_CATALOGO.md) |
+| **Handcraft âncora + escala** (runbook operacional) | [`docs/GOLDEN_HANDCRAFT_MODEL.md`](docs/GOLDEN_HANDCRAFT_MODEL.md) |
+| **Nova conversa handcraft** (`Handcraft: <subtópico>`) | [`docs/HANDCRAFT_CONVERSA.md`](docs/HANDCRAFT_CONVERSA.md) |
+| Fonte normativa (golden × builder × guideline) | [`docs/FONTE_NORMATIVA_AVANT.md`](docs/FONTE_NORMATIVA_AVANT.md) |
 | Padrão de conteúdo golden (v1) | [`docs/GOLDEN_CONTENT_STANDARD.md`](docs/GOLDEN_CONTENT_STANDARD.md) |
 
 ## Índice
@@ -682,6 +687,9 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 - ✗ Conteúdo com referência a TecConcursos (domínio, marca ou rodapé copiado)
 - ✗ Menos ou mais de 4 slides no pacote padrão (sem motivo explícito)
 - ✗ `danger_zone` sem `content`; `golden_rule` sem `content` nem `rows`
+- ✗ **Reciclar conteúdo entre alternativas/questões** — cada `danger_zone.items[].correct` deve explicar a alternativa daquele card; dois itens não podem repetir a mesma justificativa (gate `detectDuplicateDangerJustifications` em `lib/catalogMigration/slideContract.ts`)
+- ✗ **Vazar tema de outro ramo** — vocabulário como `bundle`/`IPCS`/`CVC`/`barreira estéril máxima` só se o enunciado ancorar o tema (`detectSlideTopicDrift`)
+- ✗ **EXCETO com frase-coringa** — no comando EXCETO/INCORRETA, cada distrator explica por que é conduta correta; só o card do gabarito aponta a exceção (nunca usar o texto do gabarito como base para todas as letras)
 
 ### Workflow (agentes e devs)
 
@@ -699,7 +707,9 @@ O `SUBTOPIC_DESIGN_MAP` também aceita **aliases** normalizados (ex.: `sae`, `ur
 | Arquivo | Quando ler |
 |---------|------------|
 | [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md) | Slides, subtópicos, layouts, exemplos JSON |
-| [`PACOTE_PREMIUM_CHECKLIST.md`](docs/PACOTE_PREMIUM_CHECKLIST.md) | Pacote premium completo (golden + moldes + builder + lote) |
+| [`PREMIUM_QUESTAO.md`](docs/PREMIUM_QUESTAO.md) | Definição canônica — L1 estrutural, L2 conteúdo, L3 experiência |
+| [`PACOTE_PREMIUM_CHECKLIST.md`](docs/PACOTE_PREMIUM_CHECKLIST.md) | **Runbook** procedural (Fases 0–6) + matriz por subtópico |
+| [`FONTE_NORMATIVA_AVANT.md`](docs/FONTE_NORMATIVA_AVANT.md) | Prioridade golden × builder × guideline; trilhos A/B |
 | [`AVANT_AGENT_SOURCES.md`](docs/AVANT_AGENT_SOURCES.md) | Índice para agente de questões |
 | [`AVANT_AGENT_PROMPT_EXPORT.md`](docs/AVANT_AGENT_PROMPT_EXPORT.md) | System prompt exportável (agente externo) |
 | [`JSON_FORMAT_SEMANTICO.md`](docs/JSON_FORMAT_SEMANTICO.md) | Formato enxuto vs legado |

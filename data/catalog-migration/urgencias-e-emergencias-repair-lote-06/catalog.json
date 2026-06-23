@@ -1,0 +1,49 @@
+{
+  "exported_at": "2026-06-22T16:46:11.082Z",
+  "lote": "urgencias-e-emergencias-repair-lote-06",
+  "total": 6,
+  "entries": [
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-4",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1292
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-5",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1293
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104077075-9",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1306
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-0",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1307
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-0",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1316
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-1",
+      "titulo_aula": "Urgências e Emergências",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1317
+    }
+  ]
+}

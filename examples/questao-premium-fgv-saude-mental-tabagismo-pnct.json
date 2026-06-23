@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "banca": "FGV",
+    "prova": "Tec (EBSERH)",
+    "orgao": "Enfermagem / Saúde do Trabalhador",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde Mental",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "Portaria GM/MS nº 502/2023 — PNCT; protocolo MS de tratamento do tabagismo no SUS",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "portaria-502-2023-pnct",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Portaria GM/MS nº 502/2023 — Programa Nacional de Controle do Tabagismo (PNCT)",
+        "year": 2023,
+        "url": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/t/tabagismo",
+        "covers": ["PNCT", "TRN no SUS", "aconselhamento", "cessação"]
+      },
+      {
+        "id": "ms-tabagismo-tratamento",
+        "tier": "A",
+        "issuer": "Ministério da Saúde / INCA",
+        "title": "Tratamento do tabagismo na rede pública — adesivo, goma, pastilha e aconselhamento",
+        "year": 2023,
+        "covers": ["fumo passivo", "ganho de peso pós-cessação", "cigarro eletrônico não recomendado"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A Portaria GM/MS no 502, de 1o de junho de 2023, institui o Programa Nacional de Controle do Tabagismo (PNCT) no âmbito do Sistema Único de Saúde (SUS).\nConsiderando os eixos estruturantes desse Programa, o técnico de enfermagem exerce um importante papel junto aos trabalhadores, de modo a ajudá-los nas medidas de promoção da saúde, prevenção e tratamento do tabagismo. Para uma atuação responsável e eficaz, o conhecimento sobre esse tema é primordial na elaboração de ações de educação em saúde.\nNesse contexto, avalie as afirmativas a seguir e assinale (V) para a verdadeira e (F) para a falsa.\n( ) O fumo passivo acomete especialmente as crianças, que correm o risco de desenvolver pneumonia, bronquite, agravamento de asma; com os adultos ocorrem incômodos, mas eles não correm risco de ter as mesmas doenças que o fumante.\n( ) Deve-se informar ao tabagista que, entre os tratamentos disponíveis no SUS, há o medicamentoso por meio de adesivo, goma e pastilha, e que a duração do tratamento é de 12 meses e inclui a manutenção da abstinência.\n( ) Se o trabalhador manifestar preocupação com o ganho de peso deve ser orientado para o fato de que isso é temporário, e que, na maioria dos casos, ocorre nos primeiros meses pós-cessação.\n( ) A alternativa de uso de cigarros eletrônicos deve ser descartada, pois ele aumenta o risco para a síndrome respiratória aguda grave e, além disso, os cigarros eletrônicos podem causar danos ambientais tais como incêndios e explosões.\nAs afirmativas são, respectivamente,",
+    "options": [
+      { "id": "A", "text": "F – V – V – F.", "is_correct": false },
+      { "id": "B", "text": "V – F – V – F.", "is_correct": false },
+      { "id": "C", "text": "F – V – V – V.", "is_correct": true },
+      { "id": "D", "text": "V – V – F – V.", "is_correct": false },
+      { "id": "E", "text": "F – V – F – V.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "PNCT — mapa V/F da prova",
+      "chip_label": "TABAGISMO",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde Mental" },
+      "items": [
+        {
+          "label": "ENQUADRAMENTO",
+          "detail": "FGV cobra condutas do PNCT (Portaria 502/2023): fumo passivo, TRN no SUS, ganho de peso e cigarro eletrônico.",
+          "icon": "Target"
+        },
+        {
+          "label": "Afirmativa I — Fumo passivo",
+          "detail": "FALSA: adultos expostos também têm risco aumentado de câncer, DPOC e doenças cardiovasculares — não só “incômodos”.",
+          "icon": "Users"
+        },
+        {
+          "label": "Afirmativa II — TRN no SUS",
+          "detail": "VERDADEIRA: adesivo, goma e pastilha de nicotina disponíveis no SUS; plano terapêutico pode durar até 12 meses com manutenção.",
+          "icon": "Pill"
+        },
+        {
+          "label": "Afirmativa III — Ganho de peso",
+          "detail": "VERDADEIRA: orientar que o ganho de peso pós-cessação é temporário, sobretudo nos primeiros meses.",
+          "icon": "Scale"
+        },
+        {
+          "label": "Afirmativa IV — Cigarro eletrônico",
+          "detail": "VERDADEIRA: não é alternativa recomendada pelo MS/ANVISA — riscos respiratórios graves e danos ambientais citados no PNCT.",
+          "icon": "Ban"
+        },
+        {
+          "label": "Combinação",
+          "detail": "F – V – V – V → letra C.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "PNCT: fumo passivo agride adultos também — eletrônico não substitui cessação"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "PNCT — referência para a prova",
+      "chip_label": "REGRA DE OURO",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde Mental" },
+      "content": "PNCT — TABAGISMO NO SUS",
+      "rows": [
+        {
+          "label": "Fumo passivo",
+          "value": "Crianças e adultos — pneumonia, asma, câncer, DPOC e cardiovascular",
+          "badge": "ok"
+        },
+        {
+          "label": "TRN no SUS",
+          "value": "Adesivo, goma, pastilha — plano até 12 meses com manutenção",
+          "badge": "hot"
+        },
+        {
+          "label": "Ganho de peso",
+          "value": "Temporário — reforçar nos primeiros meses pós-cessação",
+          "badge": "ok"
+        },
+        {
+          "label": "Cigarro eletrônico",
+          "value": "Não recomendado — descartar como alternativa de cessação",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Gabarito",
+          "value": "F – V – V – V → letra C",
+          "emphasis": "success",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Decore: passivo agride adultos · TRN 12 meses · peso temporário · sem vape"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — PNCT V/F",
+      "chip_label": "PASSO A PASSO",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde Mental" },
+      "reveal_mode": "tap",
+      "steps": [
+        "Formato: quatro assertivas ( ) com sequência V/F — mapear mentalmente I a IV na ordem do enunciado.",
+        "Julgar I: fumo passivo só incômoda adultos? → FALSA — adultos também desenvolvem doenças graves.",
+        "Julgar II: TRN (adesivo, goma, pastilha) no SUS por até 12 meses? → VERDADEIRA.",
+        "Julgar III: ganho de peso pós-cessação é temporário? → VERDADEIRA.",
+        "Julgar IV: descartar cigarro eletrônico pelos riscos citados? → VERDADEIRA (posição PNCT/MS).",
+        "Montar sequência: F – V – V – V.",
+        "Localizar alternativa C.",
+        "Eliminar A (erra a 4ª), D (erra a 1ª e 3ª) e E (erra a 3ª).",
+        "Fixação: PNCT = aconselhamento + TRN + desestimular vape — passivo mata adultos também."
+      ],
+      "footer_rule": "Julgue cada assertiva antes de montar a sequência"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas — PNCT e tabagismo",
+      "chip_label": "ARMADILHAS",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde Mental" },
+      "content": "PEGADINHAS — SEQUÊNCIA V/F PNCT",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra A — F – V – V – F",
+          "detail": "Acerta TRN e ganho de peso, mas marca falsa a orientação sobre cigarro eletrônico.",
+          "correct": "Gabarito letra C — MS descarta vape; a afirmativa IV é verdadeira no enunciado."
+        },
+        {
+          "label": "Letra B — V – F – V – F",
+          "detail": "Trata fumo passivo como inofensivo ao adulto e nega TRN de 12 meses no SUS.",
+          "correct": "Gabarito letra C — I é falsa e II é verdadeira conforme PNCT."
+        },
+        {
+          "label": "Letra D — V – V – F – V",
+          "detail": "Aceita que adultos não correm risco de doenças do fumante e nega ganho de peso temporário.",
+          "correct": "Gabarito letra C — adultos expostos também adoecer; ganho de peso é temporário."
+        },
+        {
+          "label": "Letra E — F – V – F – V",
+          "detail": "Nega o ganho de peso temporário pós-cessação — conduta clássica de aconselhamento.",
+          "correct": "Gabarito letra C — a afirmativa III é verdadeira; orientar que o peso tende a estabilizar."
+        }
+      ],
+      "footer_rule": "Não subestime fumo passivo no adulto nem normalize cigarro eletrônico"
+    }
+  ]
+}

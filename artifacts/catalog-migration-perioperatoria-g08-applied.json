@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-06-23T18:03:52.332Z",
+  "lote": "perioperatoria-g08",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-1",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-1",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-6",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-7",
+    "instituto-consulpam-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-1",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-5",
+    "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269315587-5",
+    "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269315587-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

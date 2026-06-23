@@ -6,7 +6,25 @@
     "ano": "2025",
     "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "topico": "Enfermagem",
-    "subtopico": "Infecções Sexualmente Transmissíveis (ISTs)"
+    "subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+    "content_standard": "golden-v1",
+    "family": "vf",
+    "content_review": {
+      "reviewed_at": "2026-06-18",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "MS/SVS — prevenção e vigilância de IST",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-ist-prevencao",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Prevenção combinada e vigilância de IST",
+        "year": 2022,
+        "covers": ["preservativo", "risco sexual", "via parenteral"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Leia as assertivas sobre as principais situações que aumentam o risco de se pegar uma Infecção Sexualmente Transmissível (IST).\nI- Pessoas que têm relações sexuais sem usar camisinha.\nII- Pessoas cujo companheiro ou companheira tem relação sexual com outras pessoas sem usar camisinha.\nIII- Pessoas que usam drogas injetáveis com seringas e agulhas de uso pessoal.\nÉ CORRETO o que se afirma em:",

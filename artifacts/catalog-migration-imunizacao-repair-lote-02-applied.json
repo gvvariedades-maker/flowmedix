@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-06-20T12:18:49.519Z",
+  "lote": "imunizacao-repair-lote-02",
+  "mode": "apply",
+  "total_files": 25,
+  "ok": 25,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "igeduc-enfermagem-imunizacao-1779564048247-1",
+    "igeduc-enfermagem-imunizacao-1779564048247-2",
+    "igeduc-enfermagem-imunizacao-1779564048247-3",
+    "igeduc-enfermagem-imunizacao-1779564059030-7",
+    "igeduc-enfermagem-imunizacao-1779564059030-8",
+    "igeduc-enfermagem-imunizacao-1779564059030-9",
+    "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-3",
+    "instituto-consulpam-enfermagem-imunizacao-1779564109452-5",
+    "instituto-consulplan-enfermagem-imunizacao-1777103222102-2",
+    "instituto-consulplan-enfermagem-imunizacao-1779564053668-2",
+    "instituto-consulplan-enfermagem-imunizacao-1779564090395-0",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-3",
+    "legalle-enfermagem-imunizacao-1779572166628-3",
+    "legalle-enfermagem-processo-de-enfermagem-1780010905023-7",
+    "ms-sarmento-enfermagem-imunizacao-1777103215560-5",
+    "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-5",
+    "quadrix-enfermagem-imunizacao-1777103277533-0",
+    "quadrix-enfermagem-processo-de-enfermagem-1780009294428-1",
+    "selecon-enfermagem-processo-de-enfermagem-1780009322055-2",
+    "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-2",
+    "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-3",
+    "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-4",
+    "vunesp-enfermagem-imunizacao-1779564090395-3",
+    "vunesp-enfermagem-imunizacao-1779564090395-4",
+    "vunesp-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1779564125198-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564048247-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564048247-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564048247-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564059030-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564059030-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-imunizacao-1779564059030-9",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-urgencias-e-emergencias-1777104024064-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-imunizacao-1779564109452-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1777103222102-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564053668-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-imunizacao-1779564090395-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-imunizacao-1779572166628-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010905023-7",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-imunizacao-1777103215560-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-imunizacao-1777103277533-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009294428-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-auditoria-e-gestao-da-qualidade-enfermagem-1779563701860-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564090395-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-imunizacao-1779564090395-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1779564125198-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

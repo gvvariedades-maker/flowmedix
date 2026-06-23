@@ -1,0 +1,23 @@
+{
+  "lote": "cme-g01",
+  "exported_at": "2026-06-23T16:59:16.055Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2",
+      "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-5",
+      "icece-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-2",
+      "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1",
+      "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3",
+      "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-9"
+    ]
+  },
+  "slugs": [
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-5",
+    "icece-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-2",
+    "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1",
+    "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-9"
+  ]
+}

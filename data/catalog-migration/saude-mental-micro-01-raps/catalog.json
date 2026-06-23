@@ -1,0 +1,42 @@
+{
+  "exported_at": "2026-06-23T17:14:43.624Z",
+  "lote": "saude-mental-micro-01-raps",
+  "total": 5,
+  "entries": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968207422-7",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "CPCON UEPB",
+      "avant_codigo": 1936
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-8",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "FAU UNICENTRO",
+      "avant_codigo": 4279
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-dependencia-quimica-1778967935713-3",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 1839
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-mental-1780001362784-4",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 4118
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-2",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "MS (SARMENTO)",
+      "avant_codigo": 4789
+    }
+  ]
+}

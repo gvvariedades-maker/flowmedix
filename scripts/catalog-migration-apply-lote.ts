@@ -31,6 +31,7 @@ async function main() {
   const mode = apply && !hasFlag('dry-run') ? 'apply' : 'dry-run';
   const strictGabarito = !hasFlag('no-strict-gabarito');
   const allowInsert = hasFlag('allow-insert');
+  const premiumGate = !hasFlag('allow-generic');
 
   const questionsDir = loteQuestionsDir(lote);
   if (!existsSync(questionsDir)) {
@@ -74,6 +75,7 @@ async function main() {
   const { results, appliedSlugs } = await applyLoteToSupabase(supabase, items, {
     dryRun,
     strictGabarito,
+    premiumGate,
     allowInsert,
   });
 

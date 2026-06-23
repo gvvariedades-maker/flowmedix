@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-06-23T16:42:36.477Z",
+  "lote": "perioperatoria-g01",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "avancasp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-3",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "AVANÇASP",
+      "avant_codigo": 1019
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103920995-3",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "COGEPS UNIOESTE",
+      "avant_codigo": 1136
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-2",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 1018
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-0",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1023
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-5",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1021
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-6",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1022
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-3",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 1010
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-5",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "METROCAPITAL",
+      "avant_codigo": 1012
+    }
+  ]
+}

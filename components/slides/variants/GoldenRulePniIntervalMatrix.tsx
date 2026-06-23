@@ -8,6 +8,7 @@ import type { GoldenRuleRow } from './GoldenRule';
 import {
   inferIntervalChips,
   inferPniIconName,
+  inferPniMatrixRowBadge,
   inferPniRowChip,
   isPniConclusionRow,
   type PniChipColor,
@@ -28,28 +29,28 @@ const CHIP_STYLES: Record<PniChipColor, string> = {
   emerald: 'bg-emerald-100/90 text-emerald-900 ring-emerald-300/50',
 };
 
-function rowTone(emphasis: GoldenRuleRow['emphasis'], value: string): {
+function rowTone(emphasis: GoldenRuleRow['emphasis'], label: string, value: string): {
   card: string;
   badge: string;
   badgeText: string;
   value: string;
   Icon: typeof Check;
 } {
-  const lower = value.toLowerCase();
-  if (emphasis === 'alert' || /falsa|falso/.test(lower)) {
+  const badgeText = inferPniMatrixRowBadge(label, value, emphasis);
+  if (badgeText === 'FALSA') {
     return {
       card: 'border-l-rose-400/90 bg-gradient-to-br from-rose-50/90 via-white to-orange-50/80',
       badge: 'bg-rose-100/90 text-rose-800',
-      badgeText: 'FALSA',
+      badgeText,
       value: 'text-rose-900',
       Icon: AlertTriangle,
     };
   }
-  if (emphasis === 'success' || /verdadeira|verdadeiro|gabarito|letra/.test(lower)) {
+  if (badgeText === 'VERDADEIRA') {
     return {
       card: 'border-l-emerald-400/90 bg-gradient-to-br from-emerald-50/90 via-white to-lime-50/80',
       badge: 'bg-emerald-100/90 text-emerald-800',
-      badgeText: 'VERDADEIRA',
+      badgeText,
       value: 'text-emerald-900',
       Icon: Check,
     };
@@ -57,7 +58,7 @@ function rowTone(emphasis: GoldenRuleRow['emphasis'], value: string): {
   return {
     card: 'border-l-lime-400/90 bg-gradient-to-br from-lime-50/90 via-white to-sky-50/70',
     badge: 'bg-lime-100/90 text-lime-800',
-    badgeText: 'REFERÊNCIA',
+    badgeText,
     value: 'text-lime-950',
     Icon: Target,
   };
@@ -88,7 +89,7 @@ function PniVpcFlowMini() {
 function PniMatrixCard({ row, index }: { row: GoldenRuleRow; index: number }) {
   const reduceMotion = useReducedMotion();
   const emphasis = row.emphasis ?? 'default';
-  const tone = rowTone(emphasis, row.value);
+  const tone = rowTone(emphasis, row.label, row.value);
   const StatusIcon = tone.Icon;
   const iconName = inferPniIconName(`${row.label} ${row.value}`);
   const Icon = resolveLucideIcon(iconName);

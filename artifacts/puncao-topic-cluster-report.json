@@ -1,0 +1,2020 @@
+{
+  "generated_at": "2026-06-23T00:46:17.686Z",
+  "subtopico": "Punção Venosa e Cuidados com Cateteres",
+  "total": 110,
+  "existing_golden": "questao-premium-admtec-puncao-venosa-cateteres.json",
+  "family_counts": {
+    "protocolo": 8,
+    "conceito": 94,
+    "calc": 2,
+    "certo_errado": 4,
+    "vf": 2
+  },
+  "builder_topic_counts": {
+    "Prevenção de IPCS no CVC": 11,
+    "Antissepsia na punção": 7,
+    "Punção venosa periférica": 19,
+    "Dispositivo / calibre / jelco": 16,
+    "Flebite e complicações": 23,
+    "Tempo / observação pós-procedimento": 13,
+    "EXCETO — técnica / conduta": 8,
+    "Acesso venoso central": 3,
+    "Acesso venoso e cateteres": 7,
+    "Acesso arterial / PAM": 1,
+    "Manutenção de cateter": 2
+  },
+  "drift_total": 0,
+  "instruction_artifacts_total": 3,
+  "without_golden_branch": 1,
+  "cluster_decisions": [
+    {
+      "cluster": "Flebite e complicações",
+      "count": 19,
+      "pct": 17.3,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-7",
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-4",
+        "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-0"
+      ],
+      "dominant_builder_topic": "Flebite e complicações",
+      "dominant_builder_topic_share": 0.895,
+      "builder_topic_diversity": 2,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=19/110 (17.3%)",
+        "drift_ratio=0%",
+        "dominant_topic=Flebite e complicações (89%)",
+        "builder_topic_diversity=2",
+        "já coberto por golden + perfil ancorado"
+      ]
+    },
+    {
+      "cluster": "Dispositivo / calibre / jelco",
+      "count": 12,
+      "pct": 10.9,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3",
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-5",
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-7"
+      ],
+      "dominant_builder_topic": "Dispositivo / calibre / jelco",
+      "dominant_builder_topic_share": 0.917,
+      "builder_topic_diversity": 2,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=12/110 (10.9%)",
+        "drift_ratio=0%",
+        "dominant_topic=Dispositivo / calibre / jelco (92%)",
+        "builder_topic_diversity=2",
+        "já coberto por golden + perfil ancorado"
+      ]
+    },
+    {
+      "cluster": "EXCETO — técnica / conduta",
+      "count": 12,
+      "pct": 10.9,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-8",
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-1",
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-3"
+      ],
+      "dominant_builder_topic": "EXCETO — técnica / conduta",
+      "dominant_builder_topic_share": 0.667,
+      "builder_topic_diversity": 4,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=12/110 (10.9%)",
+        "drift_ratio=0%",
+        "dominant_topic=EXCETO — técnica / conduta (67%)",
+        "builder_topic_diversity=4",
+        "já coberto por golden + perfil ancorado"
+      ]
+    },
+    {
+      "cluster": "Tempo / observação pós-procedimento",
+      "count": 11,
+      "pct": 10,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-3",
+        "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-0",
+        "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-6"
+      ],
+      "dominant_builder_topic": "Tempo / observação pós-procedimento",
+      "dominant_builder_topic_share": 0.636,
+      "builder_topic_diversity": 4,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=11/110 (10%)",
+        "drift_ratio=0%",
+        "dominant_topic=Tempo / observação pós-procedimento (64%)",
+        "builder_topic_diversity=4",
+        "já coberto por golden + perfil ancorado"
+      ]
+    },
+    {
+      "cluster": "Punção venosa periférica",
+      "count": 10,
+      "pct": 9.1,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
+        "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-7",
+        "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-3"
+      ],
+      "dominant_builder_topic": "Punção venosa periférica",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=10/110 (9.1%)",
+        "drift_ratio=0%",
+        "dominant_topic=Punção venosa periférica (100%)",
+        "builder_topic_diversity=1",
+        "já coberto por golden + perfil ancorado"
+      ]
+    },
+    {
+      "cluster": "Antissepsia na punção",
+      "count": 8,
+      "pct": 7.3,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9",
+        "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-8",
+        "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2"
+      ],
+      "dominant_builder_topic": "Antissepsia na punção",
+      "dominant_builder_topic_share": 0.75,
+      "builder_topic_diversity": 3,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=8/110 (7.3%)",
+        "drift_ratio=0%",
+        "dominant_topic=Antissepsia na punção (75%)",
+        "builder_topic_diversity=3",
+        "já coberto por golden + perfil ancorado"
+      ]
+    },
+    {
+      "cluster": "Técnica de punção periférica",
+      "count": 7,
+      "pct": 6.4,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-3",
+        "cogeps-unioeste-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-1",
+        "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-2"
+      ],
+      "dominant_builder_topic": "Punção venosa periférica",
+      "dominant_builder_topic_share": 0.714,
+      "builder_topic_diversity": 3,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=7/110 (6.4%)",
+        "drift_ratio=0%",
+        "dominant_topic=Punção venosa periférica (71%)",
+        "builder_topic_diversity=3",
+        "já coberto por golden + perfil ancorado"
+      ]
+    },
+    {
+      "cluster": "Protocolo / procedimento",
+      "count": 6,
+      "pct": 5.5,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 1,
+      "has_golden": true,
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-6",
+        "ibfc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-3",
+        "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778712165781-3"
+      ],
+      "dominant_builder_topic": "Acesso venoso e cateteres",
+      "dominant_builder_topic_share": 0.333,
+      "builder_topic_diversity": 5,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=6/110 (5.5%)",
+        "drift_ratio=0%",
+        "dominant_topic=Acesso venoso e cateteres (33%)",
+        "builder_topic_diversity=5",
+        "já coberto por golden + perfil ancorado"
+      ]
+    },
+    {
+      "cluster": "Manutenção de cateter",
+      "count": 5,
+      "pct": 4.5,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-3",
+        "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-9",
+        "instituto-aocp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-2"
+      ],
+      "dominant_builder_topic": "Prevenção de IPCS no CVC",
+      "dominant_builder_topic_share": 0.4,
+      "builder_topic_diversity": 3,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=5/110 (4.5%)",
+        "drift_ratio=0%",
+        "dominant_topic=Prevenção de IPCS no CVC (40%)",
+        "builder_topic_diversity=3",
+        "já coberto por golden + perfil ancorado"
+      ]
+    },
+    {
+      "cluster": "Prevenção de IPCS no CVC",
+      "count": 4,
+      "pct": 3.6,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 1,
+      "has_golden": true,
+      "sample_slugs": [
+        "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+        "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-5",
+        "imparh-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-2"
+      ],
+      "dominant_builder_topic": "Prevenção de IPCS no CVC",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=4/110 (3.6%)",
+        "drift_ratio=0%",
+        "dominant_topic=Prevenção de IPCS no CVC (100%)",
+        "builder_topic_diversity=1",
+        "já coberto por golden + perfil ancorado"
+      ]
+    },
+    {
+      "cluster": "Certo ou errado",
+      "count": 4,
+      "pct": 3.6,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-6",
+        "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-7",
+        "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-8"
+      ],
+      "dominant_builder_topic": "Tempo / observação pós-procedimento",
+      "dominant_builder_topic_share": 0.5,
+      "builder_topic_diversity": 3,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=4/110 (3.6%)",
+        "drift_ratio=0%",
+        "dominant_topic=Tempo / observação pós-procedimento (50%)",
+        "builder_topic_diversity=3",
+        "já coberto por golden + perfil ancorado"
+      ]
+    },
+    {
+      "cluster": "Default — sem âncora temática",
+      "count": 4,
+      "pct": 3.6,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 1,
+      "has_golden": true,
+      "sample_slugs": [
+        "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
+        "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-5",
+        "quadrix-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-1"
+      ],
+      "dominant_builder_topic": "Acesso venoso e cateteres",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=4/110 (3.6%)",
+        "drift_ratio=0%",
+        "dominant_topic=Acesso venoso e cateteres (100%)",
+        "builder_topic_diversity=1",
+        "já coberto por golden + perfil ancorado"
+      ]
+    },
+    {
+      "cluster": "Cálculo / dose / tempo numérico",
+      "count": 2,
+      "pct": 1.8,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-6",
+        "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-7"
+      ],
+      "dominant_builder_topic": "Dispositivo / calibre / jelco",
+      "dominant_builder_topic_share": 0.5,
+      "builder_topic_diversity": 2,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=2/110 (1.8%)",
+        "drift_ratio=0%",
+        "dominant_topic=Dispositivo / calibre / jelco (50%)",
+        "builder_topic_diversity=2",
+        "já coberto por golden + perfil ancorado"
+      ]
+    },
+    {
+      "cluster": "V/F — assertivas I/II/III",
+      "count": 2,
+      "pct": 1.8,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9",
+        "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-5"
+      ],
+      "dominant_builder_topic": "Flebite e complicações",
+      "dominant_builder_topic_share": 0.5,
+      "builder_topic_diversity": 2,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=2/110 (1.8%)",
+        "drift_ratio=0%",
+        "dominant_topic=Flebite e complicações (50%)",
+        "builder_topic_diversity=2",
+        "já coberto por golden + perfil ancorado"
+      ]
+    },
+    {
+      "cluster": "Acesso venoso central",
+      "count": 2,
+      "pct": 1.8,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "ivin-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-1",
+        "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-0"
+      ],
+      "dominant_builder_topic": "Acesso venoso central",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=2/110 (1.8%)",
+        "drift_ratio=0%",
+        "dominant_topic=Acesso venoso central (100%)",
+        "builder_topic_diversity=1",
+        "já coberto por golden + perfil ancorado"
+      ]
+    },
+    {
+      "cluster": "Acesso arterial / PAM",
+      "count": 1,
+      "pct": 0.9,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "itame-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-4"
+      ],
+      "dominant_builder_topic": "Acesso arterial / PAM",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=1/110 (0.9%)",
+        "drift_ratio=0%",
+        "dominant_topic=Acesso arterial / PAM (100%)",
+        "builder_topic_diversity=1",
+        "já coberto por golden + perfil ancorado"
+      ]
+    },
+    {
+      "cluster": "Medicação endovenosa — técnica",
+      "count": 1,
+      "pct": 0.9,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-0"
+      ],
+      "dominant_builder_topic": "Dispositivo / calibre / jelco",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=1/110 (0.9%)",
+        "drift_ratio=0%",
+        "dominant_topic=Dispositivo / calibre / jelco (100%)",
+        "builder_topic_diversity=1",
+        "já coberto por golden + perfil ancorado"
+      ]
+    }
+  ],
+  "decision_counts": {
+    "coberto": 17
+  },
+  "pedagogical_clusters": [
+    {
+      "cluster": "Flebite e complicações",
+      "count": 19,
+      "pct": 17.3,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-7",
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-4",
+        "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-0"
+      ]
+    },
+    {
+      "cluster": "Dispositivo / calibre / jelco",
+      "count": 12,
+      "pct": 10.9,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3",
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-5",
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-7"
+      ]
+    },
+    {
+      "cluster": "EXCETO — técnica / conduta",
+      "count": 12,
+      "pct": 10.9,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-8",
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-1",
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-3"
+      ]
+    },
+    {
+      "cluster": "Tempo / observação pós-procedimento",
+      "count": 11,
+      "pct": 10,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-3",
+        "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-0",
+        "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-6"
+      ]
+    },
+    {
+      "cluster": "Punção venosa periférica",
+      "count": 10,
+      "pct": 9.1,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
+        "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-7",
+        "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-3"
+      ]
+    },
+    {
+      "cluster": "Antissepsia na punção",
+      "count": 8,
+      "pct": 7.3,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9",
+        "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-8",
+        "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2"
+      ]
+    },
+    {
+      "cluster": "Técnica de punção periférica",
+      "count": 7,
+      "pct": 6.4,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-3",
+        "cogeps-unioeste-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-1",
+        "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-2"
+      ]
+    },
+    {
+      "cluster": "Protocolo / procedimento",
+      "count": 6,
+      "pct": 5.5,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 1,
+      "has_golden": true,
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-6",
+        "ibfc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-3",
+        "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778712165781-3"
+      ]
+    },
+    {
+      "cluster": "Manutenção de cateter",
+      "count": 5,
+      "pct": 4.5,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-3",
+        "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-9",
+        "instituto-aocp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-2"
+      ]
+    },
+    {
+      "cluster": "Prevenção de IPCS no CVC",
+      "count": 4,
+      "pct": 3.6,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 1,
+      "has_golden": true,
+      "sample_slugs": [
+        "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+        "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-5",
+        "imparh-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-2"
+      ]
+    },
+    {
+      "cluster": "Certo ou errado",
+      "count": 4,
+      "pct": 3.6,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-6",
+        "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-7",
+        "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-8"
+      ]
+    },
+    {
+      "cluster": "Default — sem âncora temática",
+      "count": 4,
+      "pct": 3.6,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 1,
+      "has_golden": true,
+      "sample_slugs": [
+        "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
+        "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-5",
+        "quadrix-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-1"
+      ]
+    },
+    {
+      "cluster": "Cálculo / dose / tempo numérico",
+      "count": 2,
+      "pct": 1.8,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-6",
+        "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-7"
+      ]
+    },
+    {
+      "cluster": "V/F — assertivas I/II/III",
+      "count": 2,
+      "pct": 1.8,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9",
+        "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-5"
+      ]
+    },
+    {
+      "cluster": "Acesso venoso central",
+      "count": 2,
+      "pct": 1.8,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "ivin-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-1",
+        "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-0"
+      ]
+    },
+    {
+      "cluster": "Acesso arterial / PAM",
+      "count": 1,
+      "pct": 0.9,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "itame-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-4"
+      ]
+    },
+    {
+      "cluster": "Medicação endovenosa — técnica",
+      "count": 1,
+      "pct": 0.9,
+      "slide_topic_drift": 0,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "sample_slugs": [
+        "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-0"
+      ]
+    }
+  ],
+  "golden_recommendations": [
+    {
+      "cluster": "Flebite e complicações",
+      "count": 19,
+      "pct": 17.3,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Dispositivo / calibre / jelco",
+      "count": 12,
+      "pct": 10.9,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "EXCETO — técnica / conduta",
+      "count": 12,
+      "pct": 10.9,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Tempo / observação pós-procedimento",
+      "count": 11,
+      "pct": 10,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Punção venosa periférica",
+      "count": 10,
+      "pct": 9.1,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Antissepsia na punção",
+      "count": 8,
+      "pct": 7.3,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Técnica de punção periférica",
+      "count": 7,
+      "pct": 6.4,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Protocolo / procedimento",
+      "count": 6,
+      "pct": 5.5,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Manutenção de cateter",
+      "count": 5,
+      "pct": 4.5,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Prevenção de IPCS no CVC",
+      "count": 4,
+      "pct": 3.6,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Certo ou errado",
+      "count": 4,
+      "pct": 3.6,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Default — sem âncora temática",
+      "count": 4,
+      "pct": 3.6,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Cálculo / dose / tempo numérico",
+      "count": 2,
+      "pct": 1.8,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "V/F — assertivas I/II/III",
+      "count": 2,
+      "pct": 1.8,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Acesso venoso central",
+      "count": 2,
+      "pct": 1.8,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Acesso arterial / PAM",
+      "count": 1,
+      "pct": 0.9,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    },
+    {
+      "cluster": "Medicação endovenosa — técnica",
+      "count": 1,
+      "pct": 0.9,
+      "priority": "coberto — manter referência",
+      "needs_golden": false
+    }
+  ],
+  "goldens_needed_count": 0,
+  "goldens_needed": [],
+  "rows": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-7",
+      "banca": "ADM&TEC",
+      "family": "protocolo",
+      "builder_topic": "Prevenção de IPCS no CVC",
+      "pedagogical_cluster": "Prevenção de IPCS no CVC",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Em uma unidade de terapia intensiva, observa-se aumento na incidência de infecções relacionadas a cateter venoso central"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-9",
+      "banca": "AMAUC",
+      "family": "conceito",
+      "builder_topic": "Antissepsia na punção",
+      "pedagogical_cluster": "Antissepsia na punção",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "É CORRETO afirmar que na punção venosa, deve-se fazer a assepsia ampla no local de punção com algodão e:"
+    },
+    {
+      "modulo_slug": "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
+      "banca": "AMAUC",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Punção venosa periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A fossa antecubital apresenta dois formatos anatômicos mais comuns: o formato em H ou formato em M. Locais, comumente, u"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-7",
+      "banca": "AMEOSC",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Punção venosa periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A assistência de enfermagem durante exames e procedimentos clínicos requer do técnico preparo adequado do ambiente, do m"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-8",
+      "banca": "AMEOSC",
+      "family": "conceito",
+      "builder_topic": "Antissepsia na punção",
+      "pedagogical_cluster": "Antissepsia na punção",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A prevenção e o controle de infecções são responsabilidades fundamentais da equipe de enfermagem. O técnico em enfermage"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-3",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "Antissepsia na punção",
+      "pedagogical_cluster": "Técnica de punção periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Analise os materiais abaixo destacados, todos são empregados para a realização da punção venosa periférica. No entanto, "
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-3",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "Dispositivo / calibre / jelco",
+      "pedagogical_cluster": "Dispositivo / calibre / jelco",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "O dispositivo de acesso intravenoso apresentado na imagem é indicado para terapia intravascular periférica e em infusões"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-7",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Uma das formas de introdução de um medicamento é por via endovenosa feita diretamente na veia do paciente por meio de um"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-4",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Ao administrar medicamentos endovenosos, você observou que houve passagem do líquido para o tecido subcutâneo. Isso ocor"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-5",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "Tempo / observação pós-procedimento",
+      "pedagogical_cluster": "Dispositivo / calibre / jelco",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Para garantir a segurança do paciente é necessário conhecer as especificidades que caracterizam cada tipo de cateter int"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-6",
+      "banca": "AVANÇASP",
+      "family": "calc",
+      "builder_topic": "Dispositivo / calibre / jelco",
+      "pedagogical_cluster": "Cálculo / dose / tempo numérico",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Alguns cuidados de enfermagem na administração de medicamentos endovenosos foram descritos abaixo. Marque V (verdadeiro)"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-7",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "Dispositivo / calibre / jelco",
+      "pedagogical_cluster": "Dispositivo / calibre / jelco",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "O cateter intravenoso central é utilizado para cateterização venoso profunda. É mais comumente chamado de intracath em v"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-8",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "EXCETO — técnica / conduta",
+      "pedagogical_cluster": "EXCETO — técnica / conduta",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Os cuidados de enfermagem na administração de medicamentos por via intravenosa central são: Responda a INCORRETA"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-2",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "Dispositivo / calibre / jelco",
+      "pedagogical_cluster": "Dispositivo / calibre / jelco",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A cirurgia eletiva não ocorreu conforme o esperado e o paciente precisou de transfusão de sangue. O enfermeiro, então, s"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-3",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "Prevenção de IPCS no CVC",
+      "pedagogical_cluster": "Manutenção de cateter",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Para a troca do curativo no cateter venoso central, o paciente deve ser colocado na posição:"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-5",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "Dispositivo / calibre / jelco",
+      "pedagogical_cluster": "Dispositivo / calibre / jelco",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "No cotidiano hospitalar, o dispositivo apresentado na imagem é comumente manipulado para a infusão gravitacional de solu"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-6",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "Dispositivo / calibre / jelco",
+      "pedagogical_cluster": "Dispositivo / calibre / jelco",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "O dispositivo abaixo é amplamente utilizado na enfermagem para realizar punções intravenosas de curto período. Observe. "
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-1",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "EXCETO — técnica / conduta",
+      "pedagogical_cluster": "EXCETO — técnica / conduta",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Faz parte das medidas de prevenção de eventos adversos associados aos Cateteres Intravenosos Periféricos (CIVP), exceto:"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-6",
+      "banca": "AVANÇASP",
+      "family": "protocolo",
+      "builder_topic": "Acesso venoso central",
+      "pedagogical_cluster": "Protocolo / procedimento",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Para mensuração da Pressão Arterial Média - PAM de forma mais acurada é necessária a cateterização de uma das artérias, "
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-3",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "EXCETO — técnica / conduta",
+      "pedagogical_cluster": "EXCETO — técnica / conduta",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Com relação à assistência de enfermagem no manuseio de dispositivos venosos, analise os itens a seguir e, ao final, assi"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-6",
+      "banca": "CEBRASPE (CESPE)",
+      "family": "certo_errado",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Certo ou errado",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Com o objetivo de contribuir para reduzir a incidência das infecções relacionadas à assistência à saúde (IRAS), a Agênci"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-7",
+      "banca": "CEBRASPE (CESPE)",
+      "family": "certo_errado",
+      "builder_topic": "Tempo / observação pós-procedimento",
+      "pedagogical_cluster": "Certo ou errado",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Com o objetivo de contribuir para reduzir a incidência das infecções relacionadas à assistência à saúde (IRAS), a Agênci"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-8",
+      "banca": "CEBRASPE (CESPE)",
+      "family": "certo_errado",
+      "builder_topic": "Tempo / observação pós-procedimento",
+      "pedagogical_cluster": "Certo ou errado",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Com o objetivo de contribuir para reduzir a incidência das infecções relacionadas à assistência à saúde (IRAS), a Agênci"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-1",
+      "banca": "CEV URCA",
+      "family": "conceito",
+      "builder_topic": "EXCETO — técnica / conduta",
+      "pedagogical_cluster": "EXCETO — técnica / conduta",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Constituem informações corretas do processo de administração de medicação endovenosa, EXCETO :"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-2",
+      "banca": "CEV URCA",
+      "family": "conceito",
+      "builder_topic": "Prevenção de IPCS no CVC",
+      "pedagogical_cluster": "EXCETO — técnica / conduta",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "As infecções de corrente sanguínea estão frequentemente associadas à assistência à saúde, onde cerca de 60% das bacterem"
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-3",
+      "banca": "CEV URCA",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Punção venosa periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "O acesso venoso periférico é a inserção de um cateter ou agulha em uma veia periférica, com a finalidade de coletar sang"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-1",
+      "banca": "COGEPS UNIOESTE",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Técnica de punção periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Sobre a técnica de venopunção periférica, É CORRETO:"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-2",
+      "banca": "COSEAC UFF",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Técnica de punção periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A punção venosa é um procedimento que se caracteriza pela instalação de um dispositivo (cateter venoso curto flexível) n"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-0",
+      "banca": "COSEAC UFF",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Toda a informação referente à assistência deve ser registrada imediatamente no prontuário, depois do término, evitando f"
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-1",
+      "banca": "COSEAC UFF",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Toda a informação referente à assistência deve ser registrada imediatamente no prontuário, depois do término, evitando f"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-3",
+      "banca": "CPCON UEPB",
+      "family": "conceito",
+      "builder_topic": "Tempo / observação pós-procedimento",
+      "pedagogical_cluster": "Tempo / observação pós-procedimento",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A troca dos equipos e dispositivos complementares é baseada em alguns fatores, como tipo de solução utilizada, frequênci"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-0",
+      "banca": "CPCON UEPB",
+      "family": "conceito",
+      "builder_topic": "Dispositivo / calibre / jelco",
+      "pedagogical_cluster": "Tempo / observação pós-procedimento",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "João, 40 anos, faz uso de medicação endovenosa em regime de infusão intermitente e encontra-se em uso de cateter venoso "
+    },
+    {
+      "modulo_slug": "decorp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-2",
+      "banca": "DECORP",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Ao administrar medicamentos intravenosos em um paciente com hipertensão arterial e diabetes mellitus, o técnico de enfer"
+    },
+    {
+      "modulo_slug": "facape-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-5",
+      "banca": "FACAPE",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A flebite é uma ocorrência comum em pacientes de longa permanência em serviço hospitalar. É de responsabilidade da Enfer"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-2",
+      "banca": "FACET",
+      "family": "conceito",
+      "builder_topic": "Prevenção de IPCS no CVC",
+      "pedagogical_cluster": "Antissepsia na punção",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Em pacientes com cateter venoso central, os cuidados com o dispositivo são fundamentais para prevenir infecções nosocomi"
+    },
+    {
+      "modulo_slug": "facet-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-5",
+      "banca": "FACET",
+      "family": "protocolo",
+      "builder_topic": "Prevenção de IPCS no CVC",
+      "pedagogical_cluster": "Prevenção de IPCS no CVC",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Durante o plantão noturno em uma unidade de terapia intensiva oncológica, um paciente em nutrição parenteral total (NPT)"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-5",
+      "banca": "FAU UNICENTRO",
+      "family": "conceito",
+      "builder_topic": "Dispositivo / calibre / jelco",
+      "pedagogical_cluster": "Dispositivo / calibre / jelco",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Assinale a única alternativa que corresponde a uma unidade dimensional de diâmetro de cateter vascular"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-7",
+      "banca": "FAU UNICENTRO",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Injeção intravenosa de fluidos em grandes quantidades, como soro, sangue, etc:"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-8",
+      "banca": "FAU UNICENTRO",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Punção venosa periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Assinale a alternativa que aponta um material indispensável para realização de uma punção venosa:"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-5",
+      "banca": "FAU UNICENTRO",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A infiltração do soro fora do acesso venoso é popularmente chamada de:"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-6",
+      "banca": "FEPESE",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Após a punção venosa e instalação da fluidoterapia, o paciente M.V.P. apresentou dor, hiperemia e calor no local. Assina"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-0",
+      "banca": "FEPESE",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A punção venosa é um procedimento com o objetivo de administrar líquidos, medicamentos, hemoderivados, coletar sangue pa"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-1",
+      "banca": "FEPESE",
+      "family": "conceito",
+      "builder_topic": "Antissepsia na punção",
+      "pedagogical_cluster": "Antissepsia na punção",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Dentre os cuidados com cateteres periféricos, por exemplo, é importante avaliar sinais de perda de permeabilidade.Para r"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-8",
+      "banca": "FEPESE",
+      "family": "conceito",
+      "builder_topic": "Antissepsia na punção",
+      "pedagogical_cluster": "Antissepsia na punção",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Sobre os cuidados com punção venosa, É CORRETO afirmar:"
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-6",
+      "banca": "FEPESE",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Punção venosa periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Sobre os princípios de preparo e administração de medicamentos, é correto afirmar:"
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-0",
+      "banca": "FUNATEC",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "EXCETO — técnica / conduta",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Assinale a assertiva que NÃO representa um dos procedimentos para a instalação de material venoso."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-4",
+      "banca": "FUNDATEC",
+      "family": "conceito",
+      "builder_topic": "Dispositivo / calibre / jelco",
+      "pedagogical_cluster": "Dispositivo / calibre / jelco",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A anotação de enfermagem é fundamental para o desenvolvimento da sistematização da assistência de enfermagem, pois é fon"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-5",
+      "banca": "FUNDATEC",
+      "family": "conceito",
+      "builder_topic": "EXCETO — técnica / conduta",
+      "pedagogical_cluster": "EXCETO — técnica / conduta",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Um técnico de enfermagem está realizando a troca do curativo de um cateter venoso periférico em um paciente adulto. Para"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-2",
+      "banca": "FUNDATEC",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Sobre cateteres venosos periféricos, analise as assertivas a seguir, assinalando V, se verdadeiras, ou F, se falsas. ( )"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-9",
+      "banca": "FUNDATEC",
+      "family": "conceito",
+      "builder_topic": "EXCETO — técnica / conduta",
+      "pedagogical_cluster": "EXCETO — técnica / conduta",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Assinale a alternativa INCORRETA quanto ao flushing e à manutenção do cateter periférico."
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-6",
+      "banca": "FUNDATEC",
+      "family": "conceito",
+      "builder_topic": "Dispositivo / calibre / jelco",
+      "pedagogical_cluster": "Tempo / observação pós-procedimento",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "É de responsabilidade da equipe de enfermagem, durante o procedimento de punção venosa, a escolha do cateter. Qual é o c"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-7",
+      "banca": "FUNDATEC",
+      "family": "conceito",
+      "builder_topic": "Prevenção de IPCS no CVC",
+      "pedagogical_cluster": "Tempo / observação pós-procedimento",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A punção venosa periférica trata-se de um procedimento invasivo comumente realizada por profissionais de enfermagem, sen"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-9",
+      "banca": "FUNDATEC",
+      "family": "conceito",
+      "builder_topic": "Prevenção de IPCS no CVC",
+      "pedagogical_cluster": "Manutenção de cateter",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "O acesso venoso periférico se dá pela introdução de um cateter de tamanho curto na circulação venosa periférica, sendo u"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-0",
+      "banca": "FUNDATEC",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Durante a administração das medicações, podem ocorrer algumas complicações relacionadas à manutenção e permanência do di"
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-1",
+      "banca": "FUNDEP",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "EXCETO — técnica / conduta",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Sobre o uso de cateteres endovenosos, assinale a alternativa incorreta ."
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-0",
+      "banca": "FUVEST",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Os possíveis riscos de ordem LOCAL da administração de medicamentos por via intravenosa são:"
+    },
+    {
+      "modulo_slug": "fuvest-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-1",
+      "banca": "FUVEST",
+      "family": "conceito",
+      "builder_topic": "Prevenção de IPCS no CVC",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Em pacientes com cateter venoso central ou periférico, é necessário observar rotineiramente o sítio de inserção quanto à"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-3",
+      "banca": "GAMA",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Punção venosa periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "O conhecimento anatômico do braço e da rede venosa é essencial para a prática segura do técnico de enfermagem em procedi"
+    },
+    {
+      "modulo_slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-0",
+      "banca": "GAMA",
+      "family": "conceito",
+      "builder_topic": "Dispositivo / calibre / jelco",
+      "pedagogical_cluster": "Dispositivo / calibre / jelco",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Os cateteres agulhados, também conhecidos como scalp, são utilizados em diversas situações clínicas. Qual das seguintes "
+    },
+    {
+      "modulo_slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-2",
+      "banca": "GAMA",
+      "family": "conceito",
+      "builder_topic": "Dispositivo / calibre / jelco",
+      "pedagogical_cluster": "Dispositivo / calibre / jelco",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Na prática de enfermagem, a escolha entre o cateter venoso scalp (butterfly) e o cateter venoso periférico (jelco) deve "
+    },
+    {
+      "modulo_slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-3",
+      "banca": "GAMA",
+      "family": "conceito",
+      "builder_topic": "Antissepsia na punção",
+      "pedagogical_cluster": "Antissepsia na punção",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Um técnico em enfermagem é responsável pela administração de medicações intravenosas utilizando diferentes dispositivos."
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-5",
+      "banca": "GUALIMP",
+      "family": "conceito",
+      "builder_topic": "EXCETO — técnica / conduta",
+      "pedagogical_cluster": "EXCETO — técnica / conduta",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Balanço Hídrico (BH) é fundamental no processo de detecção precoce de sinais de retenção de líquidos e sobrecarga circul"
+    },
+    {
+      "modulo_slug": "iaupe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-1",
+      "banca": "IAUPE",
+      "family": "conceito",
+      "builder_topic": "Tempo / observação pós-procedimento",
+      "pedagogical_cluster": "Tempo / observação pós-procedimento",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A prevenção e o controle das infeções relacionadas à Assistência à Saúde é um desafio para a assistência segura e de qua"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-7",
+      "banca": "IBADE",
+      "family": "conceito",
+      "builder_topic": "Tempo / observação pós-procedimento",
+      "pedagogical_cluster": "Tempo / observação pós-procedimento",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Os propósitos das coberturas no cateter periférico são proteger o sítio de punção e minimizar a possibilidade de infecçã"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-8",
+      "banca": "IBADE",
+      "family": "conceito",
+      "builder_topic": "Dispositivo / calibre / jelco",
+      "pedagogical_cluster": "Dispositivo / calibre / jelco",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Um dispositivo venoso periférico de calibre 25 G é mais indicado para:"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-3",
+      "banca": "IBFC",
+      "family": "protocolo",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Protocolo / procedimento",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "O garroteamento é feito para facilitar a visualização da veia, o garroteamento excessivo pode ser reconhecido pela color"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778712165781-3",
+      "banca": "IDECAN",
+      "family": "protocolo",
+      "builder_topic": "Acesso venoso e cateteres",
+      "pedagogical_cluster": "Protocolo / procedimento",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A Insuficiência Renal Crônica (IRC) afeta milhões de pessoas, sendo um problema de saúde pública mundial. A hemodiálise,"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1780066938846-2",
+      "banca": "IDECAN",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Punção venosa periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Em relação à punção venosa, associe corretamente as colunas a seguir. 1. Região da mão. ( ) Veias de última escolha: vei"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778934890864-3",
+      "banca": "IDIB",
+      "family": "conceito",
+      "builder_topic": "Prevenção de IPCS no CVC",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "O Cateter Central de Inserção Periférica (PICC ou CCIP) é um cateter venoso central longo, confeccionado em material mac"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-9",
+      "banca": "IGEDUC",
+      "family": "certo_errado",
+      "builder_topic": "Acesso venoso e cateteres",
+      "pedagogical_cluster": "Certo ou errado",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Julgue o item a seguir. Caso ocorra extravasamento das drogas antineoplásicas, deve-se suspender a infusão do quimioterá"
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-2",
+      "banca": "IMPARH",
+      "family": "conceito",
+      "builder_topic": "Prevenção de IPCS no CVC",
+      "pedagogical_cluster": "Prevenção de IPCS no CVC",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "As infecções da corrente sanguínea são uma grande preocupação com pacientes internados em Unidade de Terapia Intensiva ("
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-7",
+      "banca": "INSTITUTO ACCESS",
+      "family": "calc",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Cálculo / dose / tempo numérico",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Durante o plantão, o Técnico de Enfermagem recebe prescrição médica para administrar 500 mg de um antibiótico diluído em"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
+      "banca": "INSTITUTO ACCESS",
+      "family": "conceito",
+      "builder_topic": "Acesso venoso e cateteres",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Há três opções de tratamento para quem sofre de falência renal: diálise peritoneal (DP), hemodiálise ou transplante. Um "
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-5",
+      "banca": "INSTITUTO ACCESS",
+      "family": "conceito",
+      "builder_topic": "Acesso venoso e cateteres",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A diálise peritoneal é uma técnica de substituição da função renal alternativa à hemodiálise. A diálise peritoneal exige"
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-6",
+      "banca": "INSTITUTO ACCESS",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A inflamação de uma veia (flebite) pode ser categorizada como química, mecânica ou bacteriana. Entretanto, dois ou mais "
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-2",
+      "banca": "INSTITUTO AOCP",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Manutenção de cateter",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Quando um paciente com doença renal crônica é portador de shunt ou fístula arteriovenosa, é adequado"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-7",
+      "banca": "INSTITUTO CONSULPLAN",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "EXCETO — técnica / conduta",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A infiltração e o extravasamento são comuns em um ambiente hospitalar, onde o paciente está em tratamento e recebendo in"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9",
+      "banca": "INSTITUTO CONSULPLAN",
+      "family": "vf",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "V/F — assertivas I/II/III",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Sobre a prevenção dos efeitos colaterais da terapia endovenosa, analise as afirmativas a seguir. I- Antes de iniciar a t"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-0",
+      "banca": "INSTITUTO CONSULPLAN",
+      "family": "conceito",
+      "builder_topic": "Prevenção de IPCS no CVC",
+      "pedagogical_cluster": "Prevenção de IPCS no CVC",
+      "has_instruction_artifacts": true,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Há dois tipos de cateteres: o venoso periférico, que é a introdução de um cateter nos membros como braço, mão e perna; e"
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-2",
+      "banca": "INSTITUTO CONSULPLAN",
+      "family": "conceito",
+      "builder_topic": "Antissepsia na punção",
+      "pedagogical_cluster": "Antissepsia na punção",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Infecção Hospitalar ou Infecção Relacionada à Assistência em Saúde (IRAS) são adquiridas após a admissão do paciente, po"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-0",
+      "banca": "INSTITUTO VERBENA",
+      "family": "conceito",
+      "builder_topic": "Dispositivo / calibre / jelco",
+      "pedagogical_cluster": "Dispositivo / calibre / jelco",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Os registros de enfermagem são parte integrante dos cuidados de enfermagem. Assim, todos os profissionais devem estar ci"
+    },
+    {
+      "modulo_slug": "iset-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-8",
+      "banca": "ISET",
+      "family": "protocolo",
+      "builder_topic": "Acesso venoso e cateteres",
+      "pedagogical_cluster": "Protocolo / procedimento",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Um paciente de 75 anos, do sexo masculino, apresenta sinais de desidratação grave: mucosas secas, pressão arterial baixa"
+    },
+    {
+      "modulo_slug": "itame-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-4",
+      "banca": "ITAME",
+      "family": "conceito",
+      "builder_topic": "Acesso arterial / PAM",
+      "pedagogical_cluster": "Acesso arterial / PAM",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Para mensuração da PAM de forma mais acurada é necessária a cateterização de uma das artérias, sendo as principais:"
+    },
+    {
+      "modulo_slug": "ivin-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-1",
+      "banca": "IVIN",
+      "family": "conceito",
+      "builder_topic": "Acesso venoso central",
+      "pedagogical_cluster": "Acesso venoso central",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "O cateterismo cardíaco é um exame diagnóstico invasivo que tem por finalidade conhecer as condições de irrigação e funci"
+    },
+    {
+      "modulo_slug": "maranatha-assessoria-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-4",
+      "banca": "MARANATHA ASSESSORIA",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Tempo / observação pós-procedimento",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Assinale a alternativa que NÃO corresponde a uma conduta para reduzir o risco de flebite química ou mecânica em punção v"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-3",
+      "banca": "METROCAPITAL",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Punção venosa periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Com relação à escolha dos locais para venopunção, responda verdadeiro (V) ou falso (F) e assinale a alternativa que traz"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-4",
+      "banca": "METROCAPITAL",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Punção venosa periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "É uma intercorrência relacionada a má realização de punção venosa:"
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-4",
+      "banca": "NC UFPR (FUNPAR)",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Técnica de punção periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A punção venosa periférica é um procedimento invasivo para a administração de medicamentos, fluidos e hemocomponentes e "
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-5",
+      "banca": "OBJETIVA CONCURSOS",
+      "family": "vf",
+      "builder_topic": "Tempo / observação pós-procedimento",
+      "pedagogical_cluster": "V/F — assertivas I/II/III",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A inserção do cateter endovenoso periférico é indicada para administração de medicamentos, soluções, componentes sanguín"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-1",
+      "banca": "OBJETIVA CONCURSOS",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Manutenção de cateter",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Quando o paciente não precisa mais de fluido intravenoso, mas o acesso venoso ainda é necessário para a administração de"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-0",
+      "banca": "OBJETIVA CONCURSOS",
+      "family": "conceito",
+      "builder_topic": "Acesso venoso central",
+      "pedagogical_cluster": "Acesso venoso central",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Considerando a punção da veia jugular interna, assinalar os principais riscos para o paciente:"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-7",
+      "banca": "OBJETIVA CONCURSOS",
+      "family": "conceito",
+      "builder_topic": "Tempo / observação pós-procedimento",
+      "pedagogical_cluster": "Tempo / observação pós-procedimento",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Alguns autores recomendam critérios e observações da escolha de uma veia para instalação de uma infusão ou venóclise. So"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-4",
+      "banca": "OBJETIVA CONCURSOS",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Técnica de punção periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "De acordo com CARMAGNANI, em relação à punção venosa periférica, marcar C para as afirmativas Certas, E para as Erradas "
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-4",
+      "banca": "OBJETIVA CONCURSOS",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Punção venosa periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "De acordo com KAWAMOTO, venóclise consiste na administração de volumes de líquidos no organismo através de uma veia. Em "
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-4",
+      "banca": "OBJETIVA CONCURSOS",
+      "family": "conceito",
+      "builder_topic": "Tempo / observação pós-procedimento",
+      "pedagogical_cluster": "Tempo / observação pós-procedimento",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "De acordo com CARMAGNANI, em relação à punção venosa periférica, É CORRETO afirmar que:"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-7",
+      "banca": "OBJETIVA CONCURSOS",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Assinalar a alternativa que preenche a lacuna abaixo CORRETAMENTE : A(o) é um processo inflamatório que ocorre nas veias"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-0",
+      "banca": "OBJETIVA CONCURSOS",
+      "family": "conceito",
+      "builder_topic": "Dispositivo / calibre / jelco",
+      "pedagogical_cluster": "Medicação endovenosa — técnica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Em relação à administração endovenosa de medicamentos, assinalar a alternativa que preenche as lacunas abaixo CORRETAMEN"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-1",
+      "banca": "QUADRIX",
+      "family": "conceito",
+      "builder_topic": "Acesso venoso e cateteres",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Durante os cuidados ao paciente, o técnico de enfermagem, ao desprezar a diurese da bolsa coletora conectada à sonda ves"
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-8",
+      "banca": "REIS E REIS",
+      "family": "conceito",
+      "builder_topic": "EXCETO — técnica / conduta",
+      "pedagogical_cluster": "EXCETO — técnica / conduta",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "São finalidades do Curativo de cateteres vasculares, exceto:"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-1",
+      "banca": "SELECON",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "O técnico de enfermagem deve estar atento aos sinais e aos sintomas de flebite em pacientes com acesso venoso periférico"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6",
+      "banca": "SELECON",
+      "family": "conceito",
+      "builder_topic": "Manutenção de cateter",
+      "pedagogical_cluster": "Antissepsia na punção",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Uma das medidas mais eficazes no bundle de manutenção de cateter venoso é a prática de desinfecção com álcool 70% dos ca"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+      "banca": "SELECON",
+      "family": "conceito",
+      "builder_topic": "Tempo / observação pós-procedimento",
+      "pedagogical_cluster": "Tempo / observação pós-procedimento",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A ITU (infecção do trato urinário) é uma das causas prevalentes de IRAS (infecção relacionada à assistência à saúde) de "
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-6",
+      "banca": "UNIFIL",
+      "family": "conceito",
+      "builder_topic": "Acesso venoso e cateteres",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "has_instruction_artifacts": true,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Com relação às estratégias para prevenção de infecção do trato urinário relacionada à assistência à saúde associada à ca"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-2",
+      "banca": "UNIFIL",
+      "family": "protocolo",
+      "builder_topic": "Dispositivo / calibre / jelco",
+      "pedagogical_cluster": "Protocolo / procedimento",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "A administração de medicamentos é uma das práticas cotidianas da equipe de enfermagem, sendo assim, analise as assertiva"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-3",
+      "banca": "UNIFIL",
+      "family": "conceito",
+      "builder_topic": "Flebite e complicações",
+      "pedagogical_cluster": "Flebite e complicações",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Inflamação que acomete a camada interna da parede do vaso sanguíneo e que pode estar relacionada com a instalação de dis"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-2",
+      "banca": "UNIFIL",
+      "family": "conceito",
+      "builder_topic": "Manutenção de cateter",
+      "pedagogical_cluster": "Manutenção de cateter",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": false,
+      "instruction_preview": "Quando há obstrução do cateter venoso, é recomendado o uso de:"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-4",
+      "banca": "VUNESP",
+      "family": "conceito",
+      "builder_topic": "Punção venosa periférica",
+      "pedagogical_cluster": "Técnica de punção periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Para realizar a punção venosa periférica, recomenda-se usar um garrote acima do local da punção para potencializar a dis"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-4",
+      "banca": "VUNESP",
+      "family": "conceito",
+      "builder_topic": "Tempo / observação pós-procedimento",
+      "pedagogical_cluster": "Tempo / observação pós-procedimento",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Constitui medida de prevenção da infecção relacionada a cateteres periféricos:"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-0",
+      "banca": "VUNESP",
+      "family": "protocolo",
+      "builder_topic": "Tempo / observação pós-procedimento",
+      "pedagogical_cluster": "Protocolo / procedimento",
+      "has_instruction_artifacts": true,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Gestante com 38 semanas de idade gestacional, feto único vivo, foi admitida na sala de emergência inconsciente, apresent"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-4",
+      "banca": "VUNESP",
+      "family": "conceito",
+      "builder_topic": "Tempo / observação pós-procedimento",
+      "pedagogical_cluster": "Técnica de punção periférica",
+      "has_instruction_artifacts": false,
+      "slide_topic_drift": false,
+      "has_golden_branch": true,
+      "instruction_preview": "Os procedimentos básicos de enfermagem envolvem técnicas que podem ser implementadas pela equipe de enfermagem sob super"
+    }
+  ]
+}

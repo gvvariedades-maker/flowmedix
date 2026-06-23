@@ -37,6 +37,14 @@ describe('lib/simulado/provaMeta', () => {
     expect(sessionDisplayTitulo('', 'treino')).toBe('Simulado · Treino');
   });
 
+  it('sessionDisplayTitulo prioriza ordinal semanal para aluno', () => {
+    expect(
+      sessionDisplayTitulo('Simulado da Semana #24 - Farmacologia', 'prova', {
+        weeklyOrdinal: 4,
+      }),
+    ).toBe('4º simulado semanal');
+  });
+
   it('formatElapsedHms formata HH:MM:SS', () => {
     expect(formatElapsedHms(90_000)).toBe('00:01:30');
     expect(formatElapsedHms(3_661_000)).toBe('01:01:01');

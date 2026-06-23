@@ -6,6 +6,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { QuestaoCompletaSchema, validateSlides, sanitizeHTML } from '@/lib/validations';
+import { WRITE_SPEC_TEST_QUESTION } from '@/lib/questaoSpec/testFixtures';
 import { GET, POST } from '@/app/api/validate-question/route';
 
 const mockRequireAdminApi = jest.fn();
@@ -27,21 +28,7 @@ jest.mock('@/lib/logger', () => ({
   },
 }));
 
-const validQuestion = {
-  meta: {
-    banca: 'EBSERH',
-    ano: '2024',
-    topico: 'Fundamentos de Enfermagem',
-    subtopico: 'SAE',
-  },
-  question_data: {
-    instruction: 'Teste de instrução',
-    options: [
-      { id: 'A', text: 'Opção A', is_correct: false },
-      { id: 'B', text: 'Opção B', is_correct: true },
-    ],
-  },
-};
+const validQuestion = WRITE_SPEC_TEST_QUESTION;
 
 function mockAdminAuth() {
   mockRequireAdminApi.mockResolvedValue({
@@ -101,6 +88,7 @@ describe('API /api/validate-question — route handlers', () => {
 
     expect(response.status).toBe(200);
     expect(body.valid).toBe(true);
+    expect(body.specVersion).toBe('golden-v2');
     expect(body.data.meta.banca).toBe('EBSERH');
   });
 
@@ -146,6 +134,7 @@ describe('API /api/validate-question — route handlers', () => {
     const body = await response.json();
 
     expect(response.status).toBe(200);
+    expect(body.writeSpecVersion).toBe('golden-v2');
     expect(body.limits).toBeDefined();
     expect(body.allowedTags).toBeDefined();
     expect(body.slideTypes).toBeDefined();

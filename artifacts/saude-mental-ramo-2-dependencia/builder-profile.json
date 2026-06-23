@@ -1,0 +1,147 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-06-23T15:00:00.000Z",
+  "phase": "2",
+  "ramo_id": "SM-2",
+  "ramo_label": "Dependência química + tabagismo",
+  "subtopico": "Saúde Mental",
+  "cluster_source": "artifacts/saude-mental-topic-cluster-report.json",
+  "builder": "upgradePremiumSaudeMental",
+  "golden_anchor": {
+    "file": "questao-premium-fgv-saude-mental-tabagismo-pnct.json",
+    "slug": "fgv-enfermagem-dependencia-quimica-1778967935713-2",
+    "banca": "FGV",
+    "builder_topic": "Tabagismo / PNCT",
+    "pedagogical_cluster": "Tabagismo / PNCT",
+    "family": "vf",
+    "rationale": "Única questão do lote com Portaria 502/2023 e eixos PNCT — âncora normativa para tabagismo e TRN no SUS."
+  },
+  "volume": {
+    "total_slugs": 9,
+    "pct_of_subtopico": 24.3,
+    "merged_clusters": [
+      "Tabagismo / PNCT",
+      "Dependência química / álcool",
+      "Certo ou errado (Comunidades Terapêuticas)"
+    ],
+    "out_of_ramo_routing": [
+      {
+        "slug": "fundatec-enfermagem-dependencia-quimica-1778967935713-7",
+        "note": "Conteúdo de agitação psicomotora — rotear para perfil SM-3 (Crise/agitação) ou golden fundatec-agitacao-exceto.",
+        "cross_golden": "questao-premium-fundatec-saude-mental-agitacao-exceto.json"
+      },
+      {
+        "slug": "vunesp-enfermagem-dependencia-quimica-1778967935713-4",
+        "note": "Redução de danos na APS — rotear para perfil já coberto por golden idecan-reducao-danos.",
+        "cross_golden": "questao-premium-idecan-saude-mental-reducao-danos.json"
+      }
+    ]
+  },
+  "topic_infer_order": [
+    "Tabagismo / PNCT",
+    "Dependência química / álcool",
+    "Redução de danos / dependência"
+  ],
+  "topic_profiles": [
+    {
+      "topic_id": "tabagismo-pnct",
+      "label": "Tabagismo / PNCT",
+      "slug_count": 3,
+      "golden_file": "questao-premium-fgv-saude-mental-tabagismo-pnct.json",
+      "anchor_regex": [
+        "\\btabag",
+        "\\bpnct\\b",
+        "\\bfagerstr",
+        "\\bnicotina",
+        "\\bfumo passivo",
+        "\\bcessa[çc][ãa]o",
+        "\\bcigarro eletr",
+        "\\bportaria.*502"
+      ],
+      "families": ["conceito", "vf"],
+      "parse_hints": {
+        "vf_paren_assertives": "\\(\\s*\\)\\s*",
+        "vf_gabarito_flags": "[VF]\\s*[–-]\\s*[VF]",
+        "mcq_single_concept": "mede o grau|prevalência de tabagismo"
+      },
+      "slide_contract": {
+        "concept_map": { "min_items": 4, "slots": ["ENQUADRAMENTO", "assertivas V/F ou núcleo", "COMBINAÇÃO", "PEGADINHA"] },
+        "golden_rule": { "prefer_rows": true, "title_content": "PNCT ou TABAGISMO" },
+        "logic_flow": { "reveal_mode": "tap", "min_steps": 7 },
+        "danger_zone": { "require_correct_per_item": true, "bullet_style": "x_icon" }
+      },
+      "sample_slugs": [
+        "fgv-enfermagem-dependencia-quimica-1778967935713-2",
+        "ibfc-enfermagem-dependencia-quimica-1778967935713-5",
+        "unifil-enfermagem-dependencia-quimica-1778967935713-8"
+      ]
+    },
+    {
+      "topic_id": "dependencia-alcool",
+      "label": "Dependência química / álcool",
+      "slug_count": 4,
+      "golden_file": null,
+      "golden_planned": "questao-premium-idib-saude-mental-alcool-abstinencia-vf.json",
+      "anchor_regex": [
+        "\\bálcool|alcool",
+        "\\balcoolismo",
+        "\\babstin[êe]ncia",
+        "\\bintoxica[çc][ãa]o aguda",
+        "\\bcomunidades terap[êe]uticas",
+        "\\buso nocivo|uso abusivo",
+        "\\bdrogas l[íi]citas"
+      ],
+      "families": ["conceito", "vf", "calc", "certo_errado"],
+      "parse_hints": {
+        "vf_paren_assertives": "\\(\\s*\\)\\s*",
+        "certo_errado": "Julgue o item",
+        "concept_definition": "refere-se à:|conceito a seguir",
+        "calc_auditcage": "limite entre o beber moderado"
+      },
+      "slide_contract": {
+        "concept_map": { "min_items": 4, "slots": ["ENQUADRAMENTO", "conceitos álcool/abstinência", "GABARITO", "PEGADINHA"] },
+        "golden_rule": { "prefer_rows": true, "title_content": "ÁLCOOL · ABSTINÊNCIA · CT" },
+        "logic_flow": { "reveal_mode": "tap" },
+        "danger_zone": { "require_correct_per_item": true }
+      },
+      "sample_slugs": [
+        "aocp-enfermagem-dependencia-quimica-1778967935713-6",
+        "idib-enfermagem-dependencia-quimica-1778934936220-3",
+        "imparh-enfermagem-dependencia-quimica-1778968028412-0",
+        "igeduc-enfermagem-dependencia-quimica-1778967935713-3"
+      ],
+      "notes": "Segundo golden (álcool/abstinência ou CT) planejado na Fase 2b — este perfil usa FGV-PNCT só para ramo tabagismo até lá."
+    }
+  ],
+  "family_handlers": {
+    "vf": {
+      "parser": "parseVfFlagsFromGabarito + extractParenAssertives",
+      "reference_impl": "upgradePremiumCurativos.resolveCurativosAssertives"
+    },
+    "conceito": {
+      "parser": "mcqChoicePackage",
+      "reference_impl": "upgradePremiumVfCore.buildChoicePackageSlides"
+    },
+    "certo_errado": {
+      "parser": "certoErradoSingleItem",
+      "reference_impl": "upgradePremiumVfCore"
+    },
+    "calc": {
+      "parser": "vfSequenceFromGabarito",
+      "note": "IDIB — sequência V/F sobre conceitos de álcool, não cálculo numérico apesar da family calc."
+    }
+  },
+  "anti_drift": {
+    "forbidden_unless_anchored": ["CAPS", "RAPS", "SRT", "contenção física", "esquizofrenia", "delirium"],
+    "gates": ["detectSlideTopicDrift", "detectDuplicateDangerJustifications", "premiumGateErrors"]
+  },
+  "molde_hints": {
+    "subtopico_design": "Saúde Mental",
+    "template_suggestion": "violet (t05) ou rose (t03) — saúde mental",
+    "layout_auto": {
+      "golden_rule": "reference_table when rows present",
+      "danger_zone": "compare when items[].correct present",
+      "logic_flow": "tap when reveal_mode tap"
+    }
+  }
+}

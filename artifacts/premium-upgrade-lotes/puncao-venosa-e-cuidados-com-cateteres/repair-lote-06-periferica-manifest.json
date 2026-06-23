@@ -1,0 +1,34 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-06-periferica",
+  "generated_at": "2026-06-22T24:15:00.000Z",
+  "source": "cluster-puncao-topics",
+  "subtopico": "Punção Venosa e Cuidados com Cateteres",
+  "lote_prefix": "puncao-venosa-e-cuidados-com-cateteres",
+  "batch": 6,
+  "pedagogical_cluster": "Punção venosa periférica + Técnica de punção periférica",
+  "has_dedicated_builder": true,
+  "builder": "upgradePremiumPuncao",
+  "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+  "issue_summary": {
+    "slide_topic_drift": 15,
+    "instruction_import_artifacts": 2
+  },
+  "slugs": [
+    "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
+    "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-8",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-3",
+    "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-3",
+    "cogeps-unioeste-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-1",
+    "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-2",
+    "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-8",
+    "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-8",
+    "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-3",
+    "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1780066938846-2",
+    "metrocapital-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-4",
+    "nc-ufpr-funpar-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-4",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-5",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-4",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-4",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-4"
+  ]
+}

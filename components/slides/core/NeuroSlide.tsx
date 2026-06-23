@@ -19,6 +19,8 @@ import { IvCareOrbitConceptMap } from '../variants/IvCareOrbitConceptMap';
 import { MorphingTimelineConceptMap } from '../variants/MorphingTimelineConceptMap';
 import { LabSpecimenChainConceptMap } from '../variants/LabSpecimenChainConceptMap';
 import { WoundStageTissueDeckConceptMap } from '../variants/WoundStageTissueDeckConceptMap';
+import { IstRiskRoutesDeckConceptMap } from '../variants/IstRiskRoutesDeckConceptMap';
+import { AdolescentPrivacyCurtainConceptMap } from '../variants/AdolescentPrivacyCurtainConceptMap';
 import { GoldenRule } from '../variants/GoldenRule';
 import { DangerZone } from '../variants/DangerZone';
 import { LogicFlow } from '../variants/LogicFlow';
@@ -166,6 +168,18 @@ export const NeuroSlideHub = ({
       if (layoutVariant === 'wound-stage-tissue-deck') {
         return (
           <WoundStageTissueDeckConceptMap
+            concepts={getConcepts()}
+            theme={theme}
+            footerRule={slide.footer_rule}
+          />
+        );
+      }
+      if (layoutVariant === 'ist-risk-routes-deck') {
+        return <IstRiskRoutesDeckConceptMap concepts={getConcepts()} theme={theme} />;
+      }
+      if (layoutVariant === 'adolescent-privacy-curtain') {
+        return (
+          <AdolescentPrivacyCurtainConceptMap
             concepts={getConcepts()}
             theme={theme}
             footerRule={slide.footer_rule}

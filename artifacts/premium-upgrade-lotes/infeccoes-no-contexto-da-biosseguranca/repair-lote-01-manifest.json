@@ -1,0 +1,29 @@
+{
+  "lote": "infeccoes-no-contexto-da-biosseguranca-repair-lote-01",
+  "generated_at": "2026-06-20T11:54:54.683Z",
+  "source": "premium-needs-upgrade-supabase",
+  "subtopico": "Infecções no Contexto da Biossegurança",
+  "lote_prefix": "infeccoes-no-contexto-da-biosseguranca",
+  "batch": 1,
+  "has_dedicated_builder": false,
+  "builder": null,
+  "issue_summary": {
+    "stub_markers": 14
+  },
+  "slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1780001673873-0",
+    "ameosc-enfermagem-processo-de-enfermagem-1780001673873-1",
+    "avancasp-enfermagem-processo-de-enfermagem-1780002834059-7",
+    "avancasp-enfermagem-processo-de-enfermagem-1780006444165-8",
+    "fgv-enfermagem-processo-de-enfermagem-1780001988576-5",
+    "ibade-enfermagem-processo-de-enfermagem-1780005137458-3",
+    "ibade-enfermagem-processo-de-enfermagem-1780005137458-8",
+    "ibade-enfermagem-processo-de-enfermagem-1780005311822-0",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011879977-0",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011947286-7",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-6",
+    "legalle-enfermagem-processo-de-enfermagem-1780010911471-1",
+    "unifil-enfermagem-processo-de-enfermagem-1780003645544-0",
+    "unifil-enfermagem-processo-de-enfermagem-1780003645544-1"
+  ]
+}

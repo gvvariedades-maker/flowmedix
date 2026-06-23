@@ -1,0 +1,27 @@
+{
+  "lote": "perioperatoria-g01",
+  "exported_at": "2026-06-23T16:42:36.477Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "avancasp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-3",
+      "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103920995-3",
+      "fgv-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-2",
+      "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-0",
+      "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-5",
+      "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-6",
+      "selecon-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-3",
+      "metrocapital-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-5"
+    ]
+  },
+  "slugs": [
+    "avancasp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-3",
+    "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103920995-3",
+    "fgv-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-2",
+    "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-0",
+    "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-5",
+    "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-6",
+    "selecon-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-3",
+    "metrocapital-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-5"
+  ]
+}

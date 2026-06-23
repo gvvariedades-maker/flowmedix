@@ -1,0 +1,19 @@
+{
+  "lote": "perioperatoria-g09",
+  "exported_at": "2026-06-23T17:58:53.446Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-7",
+      "instituto-verbena-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-0",
+      "ivin-enfermagem-curativos-e-manejo-de-feridas-1779344819753-4",
+      "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-1"
+    ]
+  },
+  "slugs": [
+    "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-7",
+    "instituto-verbena-enfermagem-enfermagem-em-centro-cirurgico-1777103864266-0",
+    "ivin-enfermagem-curativos-e-manejo-de-feridas-1779344819753-4",
+    "objetiva-concursos-enfermagem-enfermagem-em-centro-cirurgico-1777103901265-1"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "banca": "IDECAN",
+    "prova": "TEnf",
+    "orgao": "Hosp Cirúrgico",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Enfermagem em Centro Cirúrgico"
+  },
+  "question_data": {
+    "instruction": "Sobre enfermagem em centro cirúrgico e cirurgia segura, analise as afirmativas.\n\nI - A lista de verificação de cirurgia segura inclui conferência de identidade, procedimento e sítio cirúrgico antes da incisão.\nII - A contagem de compressas, agulhas e instrumentos é etapa de segurança para prevenir corpo estranho retido.\nIII - O técnico de enfermagem do centro cirúrgico pode dispensar técnica asséptica no campo operatório se o procedimento for de curta duração.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "CC — cirurgia segura",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Centro Cirúrgico" },
+      "items": [
+        { "label": "Time-out", "detail": "Pausa antes da incisão — paciente, procedimento, sítio, consentimento.", "icon": "ListChecks" },
+        { "label": "Contagem", "detail": "Compressas e instrumentos — início, meio e fim do procedimento.", "icon": "Calculator" },
+        { "label": "Campo estéril", "detail": "Técnica asséptica inegociável — duração não dispensa barreira.", "icon": "Shield" },
+        { "label": "Circulante × instrumentador", "detail": "Funções distintas com comunicação constante.", "icon": "Users" }
+      ],
+      "footer_rule": "CC = checklist + contagem + asséptica sempre"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Cirurgia segura — tabela",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Centro Cirúrgico" },
+      "content": "TIME OUT",
+      "rows": [
+        { "label": "Checklist pré-incisão", "value": "ID + procedimento + sítio", "badge": "hot", "emphasis": "highlight" },
+        { "label": "Contagem", "value": "Compressas, agulhas, instrumentos", "badge": "ok" },
+        { "label": "Dispensar asséptica", "value": "Falso — tempo não importa", "emphasis": "alert", "badge": "warn" },
+        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+      ],
+      "footer_rule": "III generaliza exceção inexistente"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Centro Cirúrgico" },
+      "steps": [
+        "I: checklist cirurgia segura → verdadeira.",
+        "II: contagem de materiais → verdadeira.",
+        "III: dispensar asséptica se curto → falsa.",
+        "Letra B.",
+        "Fixação: evento sentinela evita-se com processo, não com pressa."
+      ],
+      "footer_rule": "Centro cirúrgico: protocolo fixo independente do tempo"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Centro Cirúrgico" },
+      "content": "PEGADINHAS — CC",
+      "items": [
+        { "label": "Procedimento rápido sem asséptica", "detail": "III é conduta inaceitável.", "correct": "Técnica asséptica obrigatória no campo operatório." },
+        { "label": "Pular contagem final", "detail": "II reforça contagem completa.", "correct": "Contagem para prevenir corpo estranho retido." },
+        { "label": "Sítio cirúrgico verbal", "detail": "I exige conferência formal no time-out.", "correct": "Checklist antes da incisão." }
+      ],
+      "footer_rule": "CC cobra processo — checklist e contagem são clássicos"
+    }
+  ]
+}

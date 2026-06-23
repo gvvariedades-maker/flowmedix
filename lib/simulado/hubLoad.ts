@@ -1,7 +1,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { normalizeSessionMode } from '@/lib/simulado/analyticsSummary';
 import { loadSimuladoHistory } from '@/lib/simulado/history';
-import { resolveSimuladoSessionKind, type SimuladoSessionKind } from '@/lib/simulado/sessionKind';
+import { resolveSimuladoSessionKind, isAdaptiveSimuladoKind, type SimuladoSessionKind } from '@/lib/simulado/sessionKind';
 
 export type SimuladoHubOpenSession = {
   id: string;
@@ -55,21 +55,22 @@ export async function loadSimuladosHubData(
     throw openError;
   }
 
-  const openSession: SimuladoHubOpenSession | null = openRow
-    ? {
-        id: openRow.id,
-        total_questoes: openRow.total_questoes,
-        modo: normalizeSessionMode({
+  const openSession: SimuladoHubOpenSession | null =
+    openRow && !isAdaptiveSimuladoKind(resolveSimuladoSessionKind(openRow.filtros))
+      ? {
           id: openRow.id,
-          status: openRow.status,
-          filtros: openRow.filtros ?? undefined,
+          total_questoes: openRow.total_questoes,
+          modo: normalizeSessionMode({
+            id: openRow.id,
+            status: openRow.status,
+            filtros: openRow.filtros ?? undefined,
+            created_at: openRow.created_at,
+          }),
+          titulo: openRow.titulo?.trim() ?? '',
           created_at: openRow.created_at,
-        }),
-        titulo: openRow.titulo?.trim() ?? '',
-        created_at: openRow.created_at,
-        session_kind: resolveSimuladoSessionKind(openRow.filtros),
-      }
-    : null;
+          session_kind: resolveSimuladoSessionKind(openRow.filtros),
+        }
+      : null;
 
   const history = await loadSimuladoHistory(supabase, userId, {
     periodo: '90d',
@@ -84,6 +85,7 @@ export async function loadSimuladosHubData(
 
   const recentSessions: SimuladoHubSessionItem[] = history.sessions
     .filter((row) => row.id !== openSession?.id)
+    .filter((row) => !isAdaptiveSimuladoKind(resolveSimuladoSessionKind(row.filtros)))
     .map((row) => ({
       id: row.id,
       status: row.status,

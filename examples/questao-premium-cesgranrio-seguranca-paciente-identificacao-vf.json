@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "banca": "CESGRANRIO",
+    "prova": "TEnf",
+    "orgao": "EBSERH",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Segurança do Paciente"
+  },
+  "question_data": {
+    "instruction": "Sobre segurança do paciente e identificação, analise as afirmativas.\n\nI - A identificação segura do paciente deve utilizar pelo menos dois identificadores independentes antes de medicações, coletas e procedimentos.\nII - Pulseira de identificação com nome completo e data de nascimento é estratégia recomendada para reduzir erros de paciente errado.\nIII - Em situação de urgência extrema sem pulseira, o profissional pode administrar medicamento de alto risco sem qualquer confirmação de identidade.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Identificação segura",
+      "meta": { "topico": "Enfermagem", "subtopico": "Segurança do Paciente" },
+      "items": [
+        { "label": "Dois identificadores", "detail": "Nome + data de nascimento ou prontuário — antes de medicação e procedimento.", "icon": "UserCheck" },
+        { "label": "Pulseira", "detail": "Ferramenta de identificação na cabeceira e no leito.", "icon": "BadgeCheck" },
+        { "label": "Medicamento alto risco", "detail": "Dupla checagem — identificação não pode ser pulada.", "icon": "Pill" },
+        { "label": "Paciente certo", "detail": "Primeiro item da lista de segurança na administração.", "icon": "ListChecks" }
+      ],
+      "footer_rule": "Segurança = paciente certo + medicamento certo + dose certa + via certa + hora certa"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "9 Certos — âncora",
+      "meta": { "topico": "Enfermagem", "subtopico": "Segurança do Paciente" },
+      "content": "2 ID",
+      "rows": [
+        { "label": "Identificadores", "value": "Mínimo 2 independentes", "badge": "hot", "emphasis": "highlight" },
+        { "label": "Pulseira", "value": "Nome + DN — estratégia recomendada", "badge": "ok" },
+        { "label": "Alto risco sem ID", "value": "Falso — nunca dispensar confirmação", "emphasis": "alert", "badge": "warn" },
+        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+      ],
+      "footer_rule": "III é inaceitável mesmo em urgência — pegadinha de conduta"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Segurança do Paciente" },
+      "steps": [
+        "I: dois identificadores → verdadeira.",
+        "II: pulseira com nome e DN → verdadeira.",
+        "III: alto risco sem identificar → falsa.",
+        "Letra B.",
+        "Fixação: urgência não autoriza paciente errado."
+      ],
+      "footer_rule": "Identificar sempre — especialmente alto risco"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Segurança do Paciente" },
+      "content": "PEGADINHAS — SEGURANÇA",
+      "items": [
+        { "label": "Urgência dispensa ID", "detail": "III descreve conduta proibida.", "correct": "Sempre confirmar identidade antes de medicação." },
+        { "label": "Um identificador basta", "detail": "I exige dois independentes.", "correct": "Nome + data de nascimento ou equivalente." },
+        { "label": "Quarto como identificador", "detail": "Leito pode mudar — não substitui identificação do paciente.", "correct": "Usar identificadores no paciente, não só no ambiente." }
+      ],
+      "footer_rule": "Erro de paciente é evento sentinela — banca cobra rigor"
+    }
+  ]
+}

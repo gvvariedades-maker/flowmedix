@@ -1,0 +1,32 @@
+{
+  "lote": "doencas-virais-interesse-epidemiologico-repair-lote-01",
+  "generated_at": "2026-06-20T11:54:54.683Z",
+  "source": "premium-needs-upgrade-supabase",
+  "subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+  "lote_prefix": "doencas-virais-interesse-epidemiologico",
+  "batch": 1,
+  "has_dedicated_builder": false,
+  "builder": null,
+  "issue_summary": {
+    "stub_markers": 17
+  },
+  "slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780005128081-0",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010573104-5",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-4",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-1",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-2",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-6",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009366805-1",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-8",
+    "furb-enfermagem-processo-de-enfermagem-1780011915153-6",
+    "igeduc-enfermagem-processo-de-enfermagem-1780001148264-3",
+    "legalle-enfermagem-processo-de-enfermagem-1780010579953-9",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-3",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-4",
+    "legalle-enfermagem-processo-de-enfermagem-1780010594524-3",
+    "legalle-enfermagem-processo-de-enfermagem-1780011879977-6",
+    "legalle-enfermagem-processo-de-enfermagem-1780011887822-4",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-9"
+  ]
+}

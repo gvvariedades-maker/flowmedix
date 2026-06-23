@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-10T03:51:41.742Z",
+  "generated_at": "2026-06-19T13:53:19.151Z",
   "lote": "instalacao-e-manejo-de-sondas-lote-01",
   "mode": "write",
-  "force": false,
+  "force": true,
   "danger_only": false,
   "preserve_rich_slides": true,
   "total_files": 50,
@@ -10,8 +10,8 @@
   "skipped": 0,
   "failed": 0,
   "family_counts": {
-    "protocolo": 1,
-    "conceito": 43,
+    "protocolo": 3,
+    "conceito": 41,
     "vf": 2,
     "certo_errado": 1,
     "calc": 3
@@ -21,48 +21,52 @@
       "modulo_slug": "adm-tec-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-8",
       "status": "upgraded",
       "family": "protocolo",
-      "golden_reference": "questao-premium-urgencias-rcp.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "adm-tec-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-9",
       "status": "upgraded",
-      "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "family": "protocolo",
+      "golden_reference": "questao-premium-admtec-oxigenoterapia-dispositivos.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "amauc-enfermagem-instalacao-e-manejo-de-sondas-1776056518229-6",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "amauc-enfermagem-instalacao-e-manejo-de-sondas-1776056518229-7",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -70,539 +74,584 @@
       "status": "upgraded",
       "family": "conceito",
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "generic_before": false,
       "changes": [
         "danger_zone",
         "logic_flow",
-        "concept_map"
+        "concept_map",
+        "golden_rule"
       ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-instalacao-e-manejo-de-sondas-1776056493133-7",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-instalacao-e-manejo-de-sondas-1776056526805-2",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-instalacao-e-manejo-de-sondas-1776056526805-3",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-7",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "atame-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-2",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "atame-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-3",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056535563-6",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056535563-7",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056544832-0",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056544832-4",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056561649-0",
       "status": "upgraded",
       "family": "vf",
-      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056561649-1",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056561649-2",
       "status": "upgraded",
-      "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "family": "protocolo",
+      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056578580-1",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056578580-2",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056591416-6",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-7",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056612810-8",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056633262-7",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056654316-0",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056654316-1",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1776056654316-2",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-4",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "avancasp-geral-instalacao-e-manejo-de-sondas-1776056493133-8",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "cebraspe-cespe-enfermagem-instalacao-e-manejo-de-sondas-1776056553269-4",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "cebraspe-cespe-enfermagem-instalacao-e-manejo-de-sondas-1776056553269-5",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "cebraspe-cespe-enfermagem-instalacao-e-manejo-de-sondas-1776056553269-6",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "cebraspe-cespe-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-0",
       "status": "upgraded",
       "family": "certo_errado",
-      "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "consulplan-enfermagem-instalacao-e-manejo-de-sondas-1776056668359-2",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "copese-ufpi-enfermagem-instalacao-e-manejo-de-sondas-1776056502149-7",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "copese-ufpi-enfermagem-instalacao-e-manejo-de-sondas-1776056502149-8",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "coseac-uff-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-1",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "coseac-uff-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-2",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "coseac-uff-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-3",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "coseac-uff-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-4",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "coseac-uff-enfermagem-instalacao-e-manejo-de-sondas-1776056600234-5",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "cotec-fadenor-enfermagem-instalacao-e-manejo-de-sondas-1776056544832-6",
       "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "cotec-fadenor-enfermagem-instalacao-e-manejo-de-sondas-1776056561649-5",
       "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "cpcon-uepb-enfermagem-instalacao-e-manejo-de-sondas-1776056526805-4",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "cpcon-uepb-enfermagem-instalacao-e-manejo-de-sondas-1776056553269-2",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "cpcon-uepb-enfermagem-instalacao-e-manejo-de-sondas-1776056591416-5",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "cpcon-uepb-enfermagem-instalacao-e-manejo-de-sondas-1776056633262-6",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "cpcon-uepb-enfermagem-instalacao-e-manejo-de-sondas-1776056654316-3",
       "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "cpcon-uepb-enfermagem-instalacao-e-manejo-de-sondas-1776056654316-6",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
@@ -610,11 +659,12 @@
       "status": "upgraded",
       "family": "vf",
       "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
-      "generic_before": true,
+      "generic_before": false,
       "changes": [
         "danger_zone",
         "logic_flow",
-        "concept_map"
+        "concept_map",
+        "golden_rule"
       ]
     }
   ]

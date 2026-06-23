@@ -1,0 +1,31 @@
+{
+  "lote": "verificacao-de-sinais-vitais-repair-lote-03",
+  "generated_at": "2026-06-20T11:54:54.683Z",
+  "source": "premium-needs-upgrade-supabase",
+  "subtopico": "Verificação de Sinais Vitais",
+  "lote_prefix": "verificacao-de-sinais-vitais",
+  "batch": 3,
+  "has_dedicated_builder": true,
+  "builder": "upgradePremiumSinais",
+  "issue_summary": {
+    "stub_markers": 10,
+    "molde_concept_map_sem_items": 2,
+    "molde_golden_rule_sem_rows": 1,
+    "molde_logic_flow_sem_steps": 1
+  },
+  "slugs": [
+    "unifil-enfermagem-processo-de-enfermagem-1780003645544-8",
+    "unifil-enfermagem-processo-de-enfermagem-1780003645544-9",
+    "unifil-enfermagem-processo-de-enfermagem-1780004469060-5",
+    "univali-enfermagem-processo-de-enfermagem-1780010594524-7",
+    "univali-enfermagem-processo-de-enfermagem-1780010594524-9",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-6",
+    "univali-enfermagem-processo-de-enfermagem-1780010600919-7",
+    "univali-enfermagem-processo-de-enfermagem-1780010905023-5",
+    "univida-enfermagem-verificacao-de-sinais-vitais-1779344097180-2",
+    "vunesp-enfermagem-oxigenoterapia-e-cuidados-respiratorios-1776056600234-8",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-2",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-2",
+    "vunesp-enfermagem-verificacao-de-sinais-vitais-1779343856589-4"
+  ]
+}

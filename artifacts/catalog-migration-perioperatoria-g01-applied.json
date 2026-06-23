@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-06-23T18:02:27.561Z",
+  "lote": "perioperatoria-g01",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "avancasp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-3",
+    "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103920995-3",
+    "fgv-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-2",
+    "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-0",
+    "metrocapital-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-5",
+    "selecon-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-3",
+    "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-5",
+    "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103920995-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103801993-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103789613-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-assistencia-perioperatoria-inclui-srpa-1777103796215-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

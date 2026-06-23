@@ -1,0 +1,173 @@
+{
+  "generated_at": "2026-06-22T21:54:21.621Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-02-exceto",
+  "mode": "write",
+  "force": true,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 12,
+  "upgraded": 12,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "conceito": 12
+  },
+  "results": [
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-admtec-puncao-venosa-cateteres.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cev-urca-puncao-exceto-med-endovenosa.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cev-urca-puncao-exceto-med-endovenosa.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cev-urca-puncao-exceto-med-endovenosa.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-admtec-puncao-venosa-cateteres.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "funatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-0",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-admtec-puncao-venosa-cateteres.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cev-urca-puncao-exceto-med-endovenosa.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-9",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cev-urca-puncao-exceto-med-endovenosa.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "fundep-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-admtec-puncao-venosa-cateteres.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "gualimp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cev-urca-puncao-exceto-med-endovenosa.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-7",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cev-urca-puncao-exceto-med-endovenosa.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "reis-e-reis-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cev-urca-puncao-exceto-med-endovenosa.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    }
+  ]
+}

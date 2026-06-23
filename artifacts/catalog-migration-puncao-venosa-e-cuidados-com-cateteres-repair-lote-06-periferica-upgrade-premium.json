@@ -1,0 +1,226 @@
+{
+  "generated_at": "2026-06-22T23:21:55.366Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-06-periferica",
+  "mode": "write",
+  "force": true,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 16,
+  "upgraded": 16,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "conceito": 15,
+    "vf": 1
+  },
+  "results": [
+    {
+      "modulo_slug": "amauc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "cogeps-unioeste-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-admtec-puncao-venosa-cateteres.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-8",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "gama-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1780066938846-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "metrocapital-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "nc-ufpr-funpar-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-5",
+      "status": "upgraded",
+      "family": "vf",
+      "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "generic_before": false,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
+    }
+  ]
+}

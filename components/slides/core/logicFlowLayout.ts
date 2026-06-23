@@ -11,6 +11,12 @@ const LOGIC_FLOW_LAYOUT_OVERRIDES = new Set([
   'wound-prep-tap-flow',
   'vitals-translate-tap',
   'pni-vf-juggle-tap',
+  'ist-vf-juggle-tap',
+  'dose-calc-tap',
+  'sae-decision-tap',
+  'sonda-decision-tap',
+  'via-vf-juggle-tap',
+  'adolescent-vf-weave-tap',
 ]);
 
 const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
@@ -20,6 +26,12 @@ const LOGIC_FLOW_MOLD_OVERRIDES = new Set([
   'wound-prep-tap-flow',
   'vitals-translate-tap',
   'pni-vf-juggle-tap',
+  'ist-vf-juggle-tap',
+  'dose-calc-tap',
+  'sae-decision-tap',
+  'sonda-decision-tap',
+  'via-vf-juggle-tap',
+  'adolescent-vf-weave-tap',
 ]);
 
 /**

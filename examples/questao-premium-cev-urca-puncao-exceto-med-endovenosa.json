@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "banca": "CEV URCA",
+    "prova": "Tec Enf",
+    "orgao": "Enfermagem",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Punção Venosa e Cuidados com Cateteres",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-22",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "Técnica de punção venosa periférica e administração endovenosa",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "cofen-puncao",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Procedimentos de enfermagem — punção venosa periférica",
+        "year": 2022,
+        "covers": ["antissepsia", "seleção de veia", "técnica de punção"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Constituem informações corretas do processo de administração de medicação endovenosa, EXCETO:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Pegar o cateter com a mão dominante com o bisel da agulha voltado para cima, no sentido do retorno venoso e introduzi-lo na veia de forma delicada e firme.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Antes de realizar a punção, fazer antissepsia do local com álcool a 70%, em sentido único, no sentido proximal para distal, e esperar o fluido secar espontaneamente. Em caso de sujidade no local da punção, removê-la com água e sabão antes da aplicação do antisséptico.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Ao final, identificar o acesso venoso com data, horário, número do dispositivo, e nome do profissional que realizou o procedimento.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Ao escolher o local de punção do acesso venoso, inspecionar e palpar a rede venosa dando preferência às veias menos proeminentes, firmes e menos tortuosas, priorizando a porção distal em sentido ascendente das superfícies dorsal e ventral dos antebraços.",
+        "is_correct": true
+      },
+      {
+        "id": "E",
+        "text": "Um novo cateter periférico deve ser utilizado a cada tentativa de punção no mesmo paciente.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Medicação endovenosa — comando EXCETO",
+      "chip_label": "EXCETO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "items": [
+        {
+          "label": "Comando",
+          "detail": "EXCETO: quatro alternativas descrevem conduta correta — uma é a exceção (informação incorreta).",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Técnica de punção",
+          "detail": "Mão dominante, bisel para cima, introdução delicada e firme no sentido do retorno venoso — conduta correta (letra A).",
+          "icon": "Syringe"
+        },
+        {
+          "label": "Antissepsia",
+          "detail": "Antissepsia com álcool 70% proximal→distal, aguardar secar; sujidade remove com água e sabão antes — conduta correta no enunciado (letra B).",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Identificação",
+          "detail": "Rotular acesso com data, horário, dispositivo e profissional — conduta correta (letra C).",
+          "icon": "Tag"
+        },
+        {
+          "label": "Seleção de veia",
+          "detail": "Preferir veias menos proeminentes é o erro — escolha veias calibrosas e acessíveis (EXCETO letra D).",
+          "icon": "XCircle"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra D — seleção inadequada de veia (menos proeminentes) é a exceção.",
+          "icon": "Target"
+        }
+      ],
+      "footer_rule": "EXCETO = a única alternativa falsa entre condutas que parecem corretas."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Regra do EXCETO — acesso venoso",
+      "chip_label": "REGRA DE OURO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "content": "COMANDO EXCETO: ENCONTRE A FALSA — NÃO A MAIS “CLÍNICA” À PRIMEIRA VISTA",
+      "rows": [
+        {
+          "label": "Comando",
+          "value": "EXCETO — marque a única alternativa falsa entre condutas corretas.",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Letra A",
+          "value": "Correta: técnica de punção com bisel voltado para cima.",
+          "emphasis": "default",
+          "badge": "ok"
+        },
+        {
+          "label": "Letra B",
+          "value": "Correta no enunciado: antissepsia com álcool 70% antes da punção.",
+          "emphasis": "default",
+          "badge": "ok"
+        },
+        {
+          "label": "Letra C",
+          "value": "Correta: identificação do acesso após o procedimento.",
+          "emphasis": "default",
+          "badge": "ok"
+        },
+        {
+          "label": "Letra D",
+          "value": "EXCETO: preferir veias menos proeminentes contradiz seleção por veias calibrosas e acessíveis.",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Letra E",
+          "value": "Correta: cateter novo a cada tentativa de punção.",
+          "emphasis": "default",
+          "badge": "ok"
+        },
+        {
+          "label": "Gabarito",
+          "value": "Letra D",
+          "emphasis": "highlight",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "A banca mistura condutas corretas com uma exceção técnica sutil."
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — comando EXCETO",
+      "chip_label": "PASSO A PASSO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "reveal_mode": "tap",
+      "steps": [
+        "Ler o comando EXCETO: administração de medicação endovenosa — marque a informação incorreta.",
+        "Regra: a maioria das alternativas descreve conduta correta — uma é a exceção (falsa).",
+        "Identificar gabarito: letra D — preferência por veias menos proeminentes é tecnicamente inadequada.",
+        "Letra A: técnica de punção correta — eliminar (não é o EXCETO).",
+        "Letra B: antissepsia descrita é conduta correta no enunciado — eliminar (parece errada, mas não é o EXCETO).",
+        "Letra C: identificação do acesso — conduta correta, eliminar.",
+        "Letra E: cateter novo a cada tentativa — conduta correta, eliminar.",
+        "Marcar letra D.",
+        "Fixação: no EXCETO, as alternativas “certinhas” são distratoras — sobra a exceção."
+      ],
+      "footer_rule": "Estratégia: comando EXCETO → julgar cada alternativa → marcar a falsa."
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas que a banca monta",
+      "chip_label": "ARMADILHAS DE PROVA",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "content": "PEGADINHAS — COMANDO EXCETO EM ACESSO VENOSO",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra B — álcool 70% na antissepsia",
+          "detail": "Muitos marcam B achando que clorexidina seria obrigatória — no enunciado, a descrição é conduta correta.",
+          "correct": "Gabarito letra D — o EXCETO é a seleção de veias menos proeminentes, não a antissepsia."
+        },
+        {
+          "label": "Letra A — técnica com bisel para cima",
+          "detail": "A técnica descrita é adequada — não confunda com o EXCETO.",
+          "correct": "Gabarito letra D — conduta correta; busque a alternativa com erro na seleção do vaso."
+        },
+        {
+          "label": "Letra C — identificação do acesso",
+          "detail": "Rotulagem com data, horário e profissional é obrigatória — alternativa correta.",
+          "correct": "Gabarito letra D — documentação correta não é o EXCETO."
+        },
+        {
+          "label": "Letra E — cateter novo por tentativa",
+          "detail": "Reutilizar dispositivo de punção é proibido — alternativa correta.",
+          "correct": "Gabarito letra D — a exceção está na escolha do local de punção (letra D)."
+        }
+      ],
+      "footer_rule": "Letra D é a exceção — as demais descrevem conduta correta."
+    }
+  ]
+}

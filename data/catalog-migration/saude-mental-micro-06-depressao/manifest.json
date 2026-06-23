@@ -1,0 +1,23 @@
+{
+  "lote": "saude-mental-micro-06-depressao",
+  "exported_at": "2026-06-23T17:26:33.344Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563517223-0",
+      "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-1",
+      "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0",
+      "idecan-enfermagem-saude-mental-1780067024707-2",
+      "unesc-enfermagem-semiologia-em-enfermagem-1779563486900-4",
+      "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4"
+    ]
+  },
+  "slugs": [
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563517223-0",
+    "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-1",
+    "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0",
+    "idecan-enfermagem-saude-mental-1780067024707-2",
+    "unesc-enfermagem-semiologia-em-enfermagem-1779563486900-4",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4"
+  ]
+}

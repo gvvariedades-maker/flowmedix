@@ -1,0 +1,1258 @@
+{
+  "generated_at": "2026-06-23T14:15:33.098Z",
+  "subtopico": "Saúde Mental",
+  "total": 37,
+  "existing_goldens_examples": [
+    "questao-premium-fau-unicentro-saude-mental-raps.json",
+    "questao-premium-idecan-saude-mental-reducao-danos.json",
+    "questao-premium-fundatec-saude-mental-agitacao-exceto.json",
+    "questao-premium-ibade-saude-mental-caps-acolhimento.json",
+    "questao-premium-igeduc-saude-mental-tecnico-aps.json",
+    "questao-premium-ms-sarmento-saude-mental-srt-reforma.json",
+    "questao-premium-vunesp-saude-mental-biopsicossocial.json",
+    "questao-premium-fepese-saude-mental-risco-suicida-vf.json"
+  ],
+  "family_counts": {
+    "conceito": 33,
+    "protocolo": 1,
+    "calc": 1,
+    "certo_errado": 2
+  },
+  "builder_topic_counts": {
+    "Saúde mental — conceito geral": 1,
+    "Depressão / humor": 6,
+    "Crise / agitação / contenção": 4,
+    "Risco suicida": 1,
+    "APS / acolhimento": 2,
+    "CAPS / dispositivo": 3,
+    "RAPS / Reforma / SRT": 4,
+    "Esquizofrenia / psicose": 4,
+    "Tabagismo / PNCT": 3,
+    "Redução de danos / dependência": 2,
+    "Dependência química / álcool": 3,
+    "Sono / epilepsia": 3,
+    "Demência / Alzheimer": 1
+  },
+  "premium_status_counts": {
+    "hybrid_ok": 24,
+    "stub": 13
+  },
+  "stub_total": 13,
+  "contract_fail_total": 35,
+  "instruction_artifacts_total": 1,
+  "cluster_decisions": [
+    {
+      "cluster": "Depressão / epidemiologia",
+      "count": 5,
+      "pct": 13.5,
+      "slide_contract_failures": 5,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563517223-0",
+        "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-1",
+        "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0",
+        "unesc-enfermagem-semiologia-em-enfermagem-1779563486900-4",
+        "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4"
+      ],
+      "dominant_builder_topic": "Depressão / humor",
+      "dominant_builder_topic_share": 0.8,
+      "builder_topic_diversity": 2,
+      "decision": "novo_ramo",
+      "confidence": "alta",
+      "decision_score": 6,
+      "decision_reasons": [
+        "volume=5/37 (13.5%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=Depressão / humor (80%)",
+        "builder_topic_diversity=2",
+        "volume ≥10% com separabilidade semântica — criar golden"
+      ]
+    },
+    {
+      "cluster": "Dependência química / álcool",
+      "count": 3,
+      "pct": 8.1,
+      "slide_contract_failures": 3,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "aocp-enfermagem-dependencia-quimica-1778967935713-6",
+        "idib-enfermagem-dependencia-quimica-1778934936220-3",
+        "imparh-enfermagem-dependencia-quimica-1778968028412-0"
+      ],
+      "dominant_builder_topic": "Dependência química / álcool",
+      "dominant_builder_topic_share": 0.667,
+      "builder_topic_diversity": 2,
+      "decision": "absorver",
+      "confidence": "alta",
+      "decision_score": 4,
+      "decision_reasons": [
+        "volume=3/37 (8.1%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=Dependência química / álcool (67%)",
+        "builder_topic_diversity=2",
+        "recorte semântico, abaixo do corte de ramo forte"
+      ]
+    },
+    {
+      "cluster": "Esquizofrenia / psicofármacos",
+      "count": 3,
+      "pct": 8.1,
+      "slide_contract_failures": 3,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-4",
+        "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-2",
+        "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-1"
+      ],
+      "dominant_builder_topic": "Esquizofrenia / psicose",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "absorver",
+      "confidence": "alta",
+      "decision_score": 4,
+      "decision_reasons": [
+        "volume=3/37 (8.1%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=Esquizofrenia / psicose (100%)",
+        "builder_topic_diversity=1",
+        "recorte semântico, abaixo do corte de ramo forte"
+      ]
+    },
+    {
+      "cluster": "RAPS / Reforma Psiquiátrica / SRT",
+      "count": 3,
+      "pct": 8.1,
+      "slide_contract_failures": 3,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-fau-unicentro-saude-mental-raps.json",
+      "sample_slugs": [
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-8",
+        "igeduc-enfermagem-saude-mental-1780001362784-4",
+        "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-2"
+      ],
+      "dominant_builder_topic": "RAPS / Reforma / SRT",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=3/37 (8.1%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=RAPS / Reforma / SRT (100%)",
+        "builder_topic_diversity=1",
+        "golden de referência existe em examples/"
+      ]
+    },
+    {
+      "cluster": "Tabagismo / PNCT",
+      "count": 3,
+      "pct": 8.1,
+      "slide_contract_failures": 3,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "fgv-enfermagem-dependencia-quimica-1778967935713-2",
+        "ibfc-enfermagem-dependencia-quimica-1778967935713-5",
+        "unifil-enfermagem-dependencia-quimica-1778967935713-8"
+      ],
+      "dominant_builder_topic": "Tabagismo / PNCT",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "absorver",
+      "confidence": "alta",
+      "decision_score": 4,
+      "decision_reasons": [
+        "volume=3/37 (8.1%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=Tabagismo / PNCT (100%)",
+        "builder_topic_diversity=1",
+        "recorte semântico, abaixo do corte de ramo forte"
+      ]
+    },
+    {
+      "cluster": "Sono / epilepsia",
+      "count": 3,
+      "pct": 8.1,
+      "slide_contract_failures": 3,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "legalle-enfermagem-processo-de-enfermagem-1780010585356-0",
+        "legalle-enfermagem-processo-de-enfermagem-1780011967989-0",
+        "vunesp-enfermagem-saude-mental-1780001362784-5"
+      ],
+      "dominant_builder_topic": "Sono / epilepsia",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "absorver",
+      "confidence": "alta",
+      "decision_score": 4,
+      "decision_reasons": [
+        "volume=3/37 (8.1%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=Sono / epilepsia (100%)",
+        "builder_topic_diversity=1",
+        "recorte semântico, abaixo do corte de ramo forte"
+      ]
+    },
+    {
+      "cluster": "Crise / agitação / de-escalada",
+      "count": 2,
+      "pct": 5.4,
+      "slide_contract_failures": 2,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1776056181857-3",
+        "idecan-enfermagem-enfermagem-em-uti-1778712381105-8"
+      ],
+      "dominant_builder_topic": "Crise / agitação / contenção",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "absorver",
+      "confidence": "alta",
+      "decision_score": 4,
+      "decision_reasons": [
+        "volume=2/37 (5.4%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=Crise / agitação / contenção (100%)",
+        "builder_topic_diversity=1",
+        "recorte semântico, abaixo do corte de ramo forte"
+      ]
+    },
+    {
+      "cluster": "Acolhimento / biopsicossocial na APS",
+      "count": 2,
+      "pct": 5.4,
+      "slide_contract_failures": 2,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-vunesp-saude-mental-biopsicossocial.json",
+      "sample_slugs": [
+        "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+        "univali-enfermagem-teorias-em-enfermagem-1776055843703-2"
+      ],
+      "dominant_builder_topic": "APS / acolhimento",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=2/37 (5.4%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=APS / acolhimento (100%)",
+        "builder_topic_diversity=1",
+        "golden de referência existe em examples/"
+      ]
+    },
+    {
+      "cluster": "CAPS / acolhimento em crise",
+      "count": 2,
+      "pct": 5.4,
+      "slide_contract_failures": 2,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-ibade-saude-mental-caps-acolhimento.json",
+      "sample_slugs": [
+        "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-8",
+        "ibade-enfermagem-processo-de-enfermagem-1780005128081-8"
+      ],
+      "dominant_builder_topic": "CAPS / dispositivo",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=2/37 (5.4%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=CAPS / dispositivo (100%)",
+        "builder_topic_diversity=1",
+        "golden de referência existe em examples/"
+      ]
+    },
+    {
+      "cluster": "Redução de danos / entrevista motivacional",
+      "count": 2,
+      "pct": 5.4,
+      "slide_contract_failures": 2,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-idecan-saude-mental-reducao-danos.json",
+      "sample_slugs": [
+        "idecan-enfermagem-saude-mental-1778712418722-2",
+        "vunesp-enfermagem-dependencia-quimica-1778967935713-4"
+      ],
+      "dominant_builder_topic": "Redução de danos / dependência",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=2/37 (5.4%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=Redução de danos / dependência (100%)",
+        "builder_topic_diversity=1",
+        "golden de referência existe em examples/"
+      ]
+    },
+    {
+      "cluster": "Certo ou errado",
+      "count": 2,
+      "pct": 5.4,
+      "slide_contract_failures": 0,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "igeduc-enfermagem-dependencia-quimica-1778967935713-3",
+        "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-1"
+      ],
+      "dominant_builder_topic": "Dependência química / álcool",
+      "dominant_builder_topic_share": 0.5,
+      "builder_topic_diversity": 2,
+      "decision": "cauda_longa",
+      "confidence": "baixa",
+      "decision_score": 0,
+      "decision_reasons": [
+        "volume=2/37 (5.4%)",
+        "contract_fail_ratio=0%",
+        "dominant_topic=Dependência química / álcool (50%)",
+        "builder_topic_diversity=2",
+        "volume insuficiente para âncora própria"
+      ]
+    },
+    {
+      "cluster": "Default — sem âncora temática",
+      "count": 1,
+      "pct": 2.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1"
+      ],
+      "dominant_builder_topic": "Saúde mental — conceito geral",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "cauda_longa",
+      "confidence": "media",
+      "decision_score": 2,
+      "decision_reasons": [
+        "volume=1/37 (2.7%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=Saúde mental — conceito geral (100%)",
+        "builder_topic_diversity=1",
+        "volume insuficiente para âncora própria"
+      ]
+    },
+    {
+      "cluster": "SRT / Reforma Psiquiátrica (dispositivo)",
+      "count": 1,
+      "pct": 2.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 1,
+      "has_golden": true,
+      "golden_file": "questao-premium-ms-sarmento-saude-mental-srt-reforma.json",
+      "sample_slugs": [
+        "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968207422-7"
+      ],
+      "dominant_builder_topic": "RAPS / Reforma / SRT",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=1/37 (2.7%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=RAPS / Reforma / SRT (100%)",
+        "builder_topic_diversity=1",
+        "golden de referência existe em examples/"
+      ]
+    },
+    {
+      "cluster": "Risco suicida / sinais de alerta",
+      "count": 1,
+      "pct": 2.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "fafipa-enfermagem-processo-de-enfermagem-1780009386446-4"
+      ],
+      "dominant_builder_topic": "Depressão / humor",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "absorver",
+      "confidence": "alta",
+      "decision_score": 4,
+      "decision_reasons": [
+        "volume=1/37 (2.7%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=Depressão / humor (100%)",
+        "builder_topic_diversity=1",
+        "recorte semântico, abaixo do corte de ramo forte"
+      ]
+    },
+    {
+      "cluster": "Agitação / crise / contenção (EXCETO)",
+      "count": 1,
+      "pct": 2.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-fundatec-saude-mental-agitacao-exceto.json",
+      "sample_slugs": [
+        "fundatec-enfermagem-dependencia-quimica-1778967935713-7"
+      ],
+      "dominant_builder_topic": "Crise / agitação / contenção",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "coberto",
+      "confidence": "alta",
+      "decision_score": 100,
+      "decision_reasons": [
+        "volume=1/37 (2.7%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=Crise / agitação / contenção (100%)",
+        "builder_topic_diversity=1",
+        "golden de referência existe em examples/"
+      ]
+    },
+    {
+      "cluster": "EXCETO — conduta / conceito",
+      "count": 1,
+      "pct": 2.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "idecan-enfermagem-saude-mental-1780067024707-2"
+      ],
+      "dominant_builder_topic": "Depressão / humor",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "absorver",
+      "confidence": "alta",
+      "decision_score": 4,
+      "decision_reasons": [
+        "volume=1/37 (2.7%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=Depressão / humor (100%)",
+        "builder_topic_diversity=1",
+        "recorte semântico, abaixo do corte de ramo forte"
+      ]
+    },
+    {
+      "cluster": "Demência / Alzheimer",
+      "count": 1,
+      "pct": 2.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-6"
+      ],
+      "dominant_builder_topic": "Demência / Alzheimer",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "absorver",
+      "confidence": "alta",
+      "decision_score": 4,
+      "decision_reasons": [
+        "volume=1/37 (2.7%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=Demência / Alzheimer (100%)",
+        "builder_topic_diversity=1",
+        "recorte semântico, abaixo do corte de ramo forte"
+      ]
+    },
+    {
+      "cluster": "CAPS / dispositivo de rede",
+      "count": 1,
+      "pct": 2.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "selecon-enfermagem-processo-de-enfermagem-1780009322055-9"
+      ],
+      "dominant_builder_topic": "CAPS / dispositivo",
+      "dominant_builder_topic_share": 1,
+      "builder_topic_diversity": 1,
+      "decision": "absorver",
+      "confidence": "alta",
+      "decision_score": 4,
+      "decision_reasons": [
+        "volume=1/37 (2.7%)",
+        "contract_fail_ratio=100%",
+        "dominant_topic=CAPS / dispositivo (100%)",
+        "builder_topic_diversity=1",
+        "recorte semântico, abaixo do corte de ramo forte"
+      ]
+    }
+  ],
+  "decision_counts": {
+    "novo_ramo": 1,
+    "absorver": 9,
+    "coberto": 6,
+    "cauda_longa": 2
+  },
+  "pedagogical_clusters": [
+    {
+      "cluster": "Depressão / epidemiologia",
+      "count": 5,
+      "pct": 13.5,
+      "slide_contract_failures": 5,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "decision": "novo_ramo",
+      "sample_slugs": [
+        "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563517223-0",
+        "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-1",
+        "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0",
+        "unesc-enfermagem-semiologia-em-enfermagem-1779563486900-4",
+        "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4"
+      ]
+    },
+    {
+      "cluster": "Dependência química / álcool",
+      "count": 3,
+      "pct": 8.1,
+      "slide_contract_failures": 3,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "decision": "absorver",
+      "sample_slugs": [
+        "aocp-enfermagem-dependencia-quimica-1778967935713-6",
+        "idib-enfermagem-dependencia-quimica-1778934936220-3",
+        "imparh-enfermagem-dependencia-quimica-1778968028412-0"
+      ]
+    },
+    {
+      "cluster": "Esquizofrenia / psicofármacos",
+      "count": 3,
+      "pct": 8.1,
+      "slide_contract_failures": 3,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "decision": "absorver",
+      "sample_slugs": [
+        "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-4",
+        "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-2",
+        "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-1"
+      ]
+    },
+    {
+      "cluster": "RAPS / Reforma Psiquiátrica / SRT",
+      "count": 3,
+      "pct": 8.1,
+      "slide_contract_failures": 3,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-fau-unicentro-saude-mental-raps.json",
+      "decision": "coberto",
+      "sample_slugs": [
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-8",
+        "igeduc-enfermagem-saude-mental-1780001362784-4",
+        "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-2"
+      ]
+    },
+    {
+      "cluster": "Tabagismo / PNCT",
+      "count": 3,
+      "pct": 8.1,
+      "slide_contract_failures": 3,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "decision": "absorver",
+      "sample_slugs": [
+        "fgv-enfermagem-dependencia-quimica-1778967935713-2",
+        "ibfc-enfermagem-dependencia-quimica-1778967935713-5",
+        "unifil-enfermagem-dependencia-quimica-1778967935713-8"
+      ]
+    },
+    {
+      "cluster": "Sono / epilepsia",
+      "count": 3,
+      "pct": 8.1,
+      "slide_contract_failures": 3,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "decision": "absorver",
+      "sample_slugs": [
+        "legalle-enfermagem-processo-de-enfermagem-1780010585356-0",
+        "legalle-enfermagem-processo-de-enfermagem-1780011967989-0",
+        "vunesp-enfermagem-saude-mental-1780001362784-5"
+      ]
+    },
+    {
+      "cluster": "Crise / agitação / de-escalada",
+      "count": 2,
+      "pct": 5.4,
+      "slide_contract_failures": 2,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "decision": "absorver",
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1776056181857-3",
+        "idecan-enfermagem-enfermagem-em-uti-1778712381105-8"
+      ]
+    },
+    {
+      "cluster": "Acolhimento / biopsicossocial na APS",
+      "count": 2,
+      "pct": 5.4,
+      "slide_contract_failures": 2,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-vunesp-saude-mental-biopsicossocial.json",
+      "decision": "coberto",
+      "sample_slugs": [
+        "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+        "univali-enfermagem-teorias-em-enfermagem-1776055843703-2"
+      ]
+    },
+    {
+      "cluster": "CAPS / acolhimento em crise",
+      "count": 2,
+      "pct": 5.4,
+      "slide_contract_failures": 2,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-ibade-saude-mental-caps-acolhimento.json",
+      "decision": "coberto",
+      "sample_slugs": [
+        "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-8",
+        "ibade-enfermagem-processo-de-enfermagem-1780005128081-8"
+      ]
+    },
+    {
+      "cluster": "Redução de danos / entrevista motivacional",
+      "count": 2,
+      "pct": 5.4,
+      "slide_contract_failures": 2,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-idecan-saude-mental-reducao-danos.json",
+      "decision": "coberto",
+      "sample_slugs": [
+        "idecan-enfermagem-saude-mental-1778712418722-2",
+        "vunesp-enfermagem-dependencia-quimica-1778967935713-4"
+      ]
+    },
+    {
+      "cluster": "Certo ou errado",
+      "count": 2,
+      "pct": 5.4,
+      "slide_contract_failures": 0,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "decision": "cauda_longa",
+      "sample_slugs": [
+        "igeduc-enfermagem-dependencia-quimica-1778967935713-3",
+        "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-1"
+      ]
+    },
+    {
+      "cluster": "Default — sem âncora temática",
+      "count": 1,
+      "pct": 2.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "decision": "cauda_longa",
+      "sample_slugs": [
+        "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1"
+      ]
+    },
+    {
+      "cluster": "SRT / Reforma Psiquiátrica (dispositivo)",
+      "count": 1,
+      "pct": 2.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 1,
+      "has_golden": true,
+      "golden_file": "questao-premium-ms-sarmento-saude-mental-srt-reforma.json",
+      "decision": "coberto",
+      "sample_slugs": [
+        "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968207422-7"
+      ]
+    },
+    {
+      "cluster": "Risco suicida / sinais de alerta",
+      "count": 1,
+      "pct": 2.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "decision": "absorver",
+      "sample_slugs": [
+        "fafipa-enfermagem-processo-de-enfermagem-1780009386446-4"
+      ]
+    },
+    {
+      "cluster": "Agitação / crise / contenção (EXCETO)",
+      "count": 1,
+      "pct": 2.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": true,
+      "golden_file": "questao-premium-fundatec-saude-mental-agitacao-exceto.json",
+      "decision": "coberto",
+      "sample_slugs": [
+        "fundatec-enfermagem-dependencia-quimica-1778967935713-7"
+      ]
+    },
+    {
+      "cluster": "EXCETO — conduta / conceito",
+      "count": 1,
+      "pct": 2.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "decision": "absorver",
+      "sample_slugs": [
+        "idecan-enfermagem-saude-mental-1780067024707-2"
+      ]
+    },
+    {
+      "cluster": "Demência / Alzheimer",
+      "count": 1,
+      "pct": 2.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "decision": "absorver",
+      "sample_slugs": [
+        "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-6"
+      ]
+    },
+    {
+      "cluster": "CAPS / dispositivo de rede",
+      "count": 1,
+      "pct": 2.7,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "decision": "absorver",
+      "sample_slugs": [
+        "selecon-enfermagem-processo-de-enfermagem-1780009322055-9"
+      ]
+    }
+  ],
+  "goldens_needed_count": 1,
+  "goldens_needed": [
+    "Depressão / epidemiologia"
+  ],
+  "rows": [
+    {
+      "modulo_slug": "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1",
+      "banca": "AMEOSC",
+      "family": "conceito",
+      "builder_topic": "Saúde mental — conceito geral",
+      "pedagogical_cluster": "Default — sem âncora temática",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Em uma ação de promoção à saúde, o técnico em enfermagem identifica um idoso com isolamento social, perda recente da esp"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563517223-0",
+      "banca": "AMEOSC",
+      "family": "conceito",
+      "builder_topic": "Depressão / humor",
+      "pedagogical_cluster": "Depressão / epidemiologia",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "GAMA - Ag (Pref Conc. dos Ouros)/Pref Conc. dos Ouros/Saúde/2024 Para a avaliação da funcionalidade e qualidade de vida "
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1776056181857-3",
+      "banca": "AMEOSC",
+      "family": "conceito",
+      "builder_topic": "Crise / agitação / contenção",
+      "pedagogical_cluster": "Crise / agitação / de-escalada",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Em uma unidade de pronto atendimento (UPA) da rede pública, um paciente chega agitado, com comportamento agressivo verba"
+    },
+    {
+      "modulo_slug": "aocp-enfermagem-dependencia-quimica-1778967935713-6",
+      "banca": "AOCP",
+      "family": "conceito",
+      "builder_topic": "Risco suicida",
+      "pedagogical_cluster": "Dependência química / álcool",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "O Agente Comunitário de Saúde tem um papel fundamental na identificação e orientação dos usuários de drogas lícitas e il"
+    },
+    {
+      "modulo_slug": "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+      "banca": "CETREDE",
+      "family": "conceito",
+      "builder_topic": "APS / acolhimento",
+      "pedagogical_cluster": "Acolhimento / biopsicossocial na APS",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Mesmo os profissionais especialistas em saúde mental elaboram suas intervenções a partir das vivências nos territórios, "
+    },
+    {
+      "modulo_slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-8",
+      "banca": "CEV URCA",
+      "family": "conceito",
+      "builder_topic": "CAPS / dispositivo",
+      "pedagogical_cluster": "CAPS / acolhimento em crise",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Considerando a assistência de enfermagem em saúde mental na Atenção Primária, assinale a alternativa CORRETA."
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-atencao-basica-saude-da-familia-1778968207422-7",
+      "banca": "CPCON UEPB",
+      "family": "conceito",
+      "builder_topic": "RAPS / Reforma / SRT",
+      "pedagogical_cluster": "SRT / Reforma Psiquiátrica (dispositivo)",
+      "has_instruction_artifacts": true,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Estudo realizado por Salgado e Fortes (2021), com o objetivo de demonstrar a frequência de detecção de transtornos menta"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-4",
+      "banca": "CPCON UEPB",
+      "family": "conceito",
+      "builder_topic": "Esquizofrenia / psicose",
+      "pedagogical_cluster": "Esquizofrenia / psicofármacos",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Com base na diferenciação entre sintomas positivos e negativos da esquizofrenia, assinale qual das alternativas a seguir"
+    },
+    {
+      "modulo_slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-4",
+      "banca": "FAFIPA",
+      "family": "conceito",
+      "builder_topic": "Depressão / humor",
+      "pedagogical_cluster": "Risco suicida / sinais de alerta",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "São sinais e/ou sintomas em saúde mental que caracterizam necessidade de atenção: I. Mudança repentina de rotina, por ex"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-8",
+      "banca": "FAU UNICENTRO",
+      "family": "conceito",
+      "builder_topic": "RAPS / Reforma / SRT",
+      "pedagogical_cluster": "RAPS / Reforma Psiquiátrica / SRT",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "A política de saúde mental no Brasil atualmente é constituída por uma rede de cuidados que recebe o nome de:"
+    },
+    {
+      "modulo_slug": "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-1",
+      "banca": "FAURGS",
+      "family": "conceito",
+      "builder_topic": "Esquizofrenia / psicose",
+      "pedagogical_cluster": "Depressão / epidemiologia",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Início agudo e curso flutuante, falta de atenção, pensamento desorganizado, e consciência alterada são sinais e sintomas"
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-dependencia-quimica-1778967935713-2",
+      "banca": "FGV",
+      "family": "conceito",
+      "builder_topic": "Tabagismo / PNCT",
+      "pedagogical_cluster": "Tabagismo / PNCT",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A Portaria GM/MS no 502, de 1o de junho de 2023, institui o Programa Nacional de Controle do Tabagismo (PNCT) no âmbito "
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0",
+      "banca": "FGV",
+      "family": "conceito",
+      "builder_topic": "Depressão / humor",
+      "pedagogical_cluster": "Depressão / epidemiologia",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Com base nos sinais e sintomas relacionados aos distúrbios psicológicos, avalie as afirmativas a seguir e assinale (V) p"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-dependencia-quimica-1778967935713-7",
+      "banca": "FUNDATEC",
+      "family": "conceito",
+      "builder_topic": "Crise / agitação / contenção",
+      "pedagogical_cluster": "Agitação / crise / contenção (EXCETO)",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A agitação psicomotora é um quadro de tensão, inquietação, hiperatividade, manifestado por um estado psicomotor. São sin"
+    },
+    {
+      "modulo_slug": "ibade-enfermagem-processo-de-enfermagem-1780005128081-8",
+      "banca": "IBADE",
+      "family": "conceito",
+      "builder_topic": "CAPS / dispositivo",
+      "pedagogical_cluster": "CAPS / acolhimento em crise",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "No atendimento em um Centro de Atenção Psicossocial (CAPS), um técnico de enfermagem acompanha um usuário com diagnóstic"
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-dependencia-quimica-1778967935713-5",
+      "banca": "IBFC",
+      "family": "conceito",
+      "builder_topic": "Tabagismo / PNCT",
+      "pedagogical_cluster": "Tabagismo / PNCT",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "O Teste de Fagerström mede o grau de dependência à:"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-uti-1778712381105-8",
+      "banca": "IDECAN",
+      "family": "protocolo",
+      "builder_topic": "Crise / agitação / contenção",
+      "pedagogical_cluster": "Crise / agitação / de-escalada",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Considerando a atuação do Técnico de Enfermagem no cuidado ao paciente crítico sob sedação contínua e risco de delirium,"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-mental-1778712418722-2",
+      "banca": "IDECAN",
+      "family": "conceito",
+      "builder_topic": "Redução de danos / dependência",
+      "pedagogical_cluster": "Redução de danos / entrevista motivacional",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Em uma Unidade de Saúde Mental, um paciente de 29 anos, com histórico de consumo abusivo de álcool e crack, apresenta re"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-saude-mental-1780067024707-2",
+      "banca": "IDECAN",
+      "family": "conceito",
+      "builder_topic": "Depressão / humor",
+      "pedagogical_cluster": "EXCETO — conduta / conceito",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A depressão é uma doença. Há uma série de evidências que mostram alterações químicas no cérebro do indivíduo deprimido, "
+    },
+    {
+      "modulo_slug": "idib-enfermagem-dependencia-quimica-1778934936220-3",
+      "banca": "IDIB",
+      "family": "calc",
+      "builder_topic": "Dependência química / álcool",
+      "pedagogical_cluster": "Dependência química / álcool",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "O limite entre o beber moderado, o uso abusivo ou nocivo de álcool e o alcoolismo é difícil de se traçar, pois ele é uma"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-dependencia-quimica-1778967935713-3",
+      "banca": "IGEDUC",
+      "family": "certo_errado",
+      "builder_topic": "Dependência química / álcool",
+      "pedagogical_cluster": "Certo ou errado",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Julgue o item subsequente. As Comunidades Terapêutica são entidades privadas, sem fins lucrativos, que realizam gratuita"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-saude-mental-1780001362784-4",
+      "banca": "IGEDUC",
+      "family": "conceito",
+      "builder_topic": "RAPS / Reforma / SRT",
+      "pedagogical_cluster": "RAPS / Reforma Psiquiátrica / SRT",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A Atenção Básica é a porta de entrada preferencial do Sistema Único de Saúde para o cuidado em saúde mental, atuando na "
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-dependencia-quimica-1778968028412-0",
+      "banca": "IMPARH",
+      "family": "conceito",
+      "builder_topic": "Dependência química / álcool",
+      "pedagogical_cluster": "Dependência química / álcool",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "O conceito a seguir \"Síndrome específica de cada substância, que ocorre após a interrupção ou redução da quantidade da d"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-2",
+      "banca": "INSTITUTO AOCP",
+      "family": "conceito",
+      "builder_topic": "Esquizofrenia / psicose",
+      "pedagogical_cluster": "Esquizofrenia / psicofármacos",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Um homem de 45 anos, portador de esquizofrenia, é levado à unidade de saúde pela família, a qual relata que ele está em "
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-1",
+      "banca": "INSTITUTO AOCP",
+      "family": "conceito",
+      "builder_topic": "Esquizofrenia / psicose",
+      "pedagogical_cluster": "Esquizofrenia / psicofármacos",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Ana, 32 anos, tem esquizofrenia e apresenta: 1. alucinações auditivas; 2. delírios de perseguição; 3. deficiência no aut"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-1",
+      "banca": "INSTITUTO IBED",
+      "family": "certo_errado",
+      "builder_topic": "Crise / agitação / contenção",
+      "pedagogical_cluster": "Certo ou errado",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Situação hipotética: Ao cuidar de um paciente em surto psicótico, o técnico de enfermagem, sob supervisão, adota uma abo"
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-0",
+      "banca": "LEGALLE",
+      "family": "conceito",
+      "builder_topic": "Sono / epilepsia",
+      "pedagogical_cluster": "Sono / epilepsia",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "A insônia é o transtorno do sono mais prevalente na população, sendo caracterizada pela insatisfação com a qualidade ou "
+    },
+    {
+      "modulo_slug": "legalle-enfermagem-processo-de-enfermagem-1780011967989-0",
+      "banca": "LEGALLE",
+      "family": "conceito",
+      "builder_topic": "Sono / epilepsia",
+      "pedagogical_cluster": "Sono / epilepsia",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "A epilepsia apresenta uma prevalência mundial em torno de 0,5% a 1%, sendo que 30% dos pacientes são considerados refrat"
+    },
+    {
+      "modulo_slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-2",
+      "banca": "MS (SARMENTO)",
+      "family": "conceito",
+      "builder_topic": "RAPS / Reforma / SRT",
+      "pedagogical_cluster": "RAPS / Reforma Psiquiátrica / SRT",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Com base nas diretrizes da Reforma Psiquiátrica Brasileira e no funcionamento do Serviço Residencial Terapêutico, (SRT),"
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-6",
+      "banca": "OBJETIVA CONCURSOS",
+      "family": "conceito",
+      "builder_topic": "Demência / Alzheimer",
+      "pedagogical_cluster": "Demência / Alzheimer",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "A manifestação mais característica da doença de Alzheimer em fase inicial é:"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-9",
+      "banca": "SELECON",
+      "family": "conceito",
+      "builder_topic": "CAPS / dispositivo",
+      "pedagogical_cluster": "CAPS / dispositivo de rede",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Um paciente adulto em acompanhamento em um Centro de Atenção Psicossocial (CAPS) apresenta diagnóstico de transtorno men"
+    },
+    {
+      "modulo_slug": "unesc-enfermagem-semiologia-em-enfermagem-1779563486900-4",
+      "banca": "UNESC",
+      "family": "conceito",
+      "builder_topic": "Depressão / humor",
+      "pedagogical_cluster": "Depressão / epidemiologia",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A avaliação de um paciente com suspeita de transtorno depressivo maior exige conhecimento dos sinais clínicos. O enferme"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-dependencia-quimica-1778967935713-8",
+      "banca": "UNIFIL",
+      "family": "conceito",
+      "builder_topic": "Tabagismo / PNCT",
+      "pedagogical_cluster": "Tabagismo / PNCT",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A prevalência de tabagismo no Brasil diminuiu substancialmente entre os adultos acima de 18 anos de idade, porém o tabac"
+    },
+    {
+      "modulo_slug": "univali-enfermagem-teorias-em-enfermagem-1776055843703-2",
+      "banca": "UNIVALI",
+      "family": "conceito",
+      "builder_topic": "APS / acolhimento",
+      "pedagogical_cluster": "Acolhimento / biopsicossocial na APS",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Um paciente com diagnóstico de Infarto Agudo do Miocárdio apresenta ansiedade e medo de morrer. Diante dessa situação, a"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-dependencia-quimica-1778967935713-4",
+      "banca": "VUNESP",
+      "family": "conceito",
+      "builder_topic": "Redução de danos / dependência",
+      "pedagogical_cluster": "Redução de danos / entrevista motivacional",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Abordar usuários de álcool na atenção básica é bastante desafiador, principalmente se prevalecerem entre os trabalhadore"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4",
+      "banca": "VUNESP",
+      "family": "conceito",
+      "builder_topic": "Depressão / humor",
+      "pedagogical_cluster": "Depressão / epidemiologia",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Segundo dados da Organização Mundial da Saúde (OMS), o Brasil apresenta a maior prevalência de depressão da América Lati"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-saude-mental-1780001362784-5",
+      "banca": "VUNESP",
+      "family": "conceito",
+      "builder_topic": "Sono / epilepsia",
+      "pedagogical_cluster": "Sono / epilepsia",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Em sua rotina de trabalho na Atenção Primária, o técnico de enfermagem realiza acolhimento de um usuário que relata insô"
+    }
+  ]
+}

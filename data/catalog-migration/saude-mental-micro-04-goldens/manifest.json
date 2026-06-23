@@ -1,0 +1,18 @@
+{
+  "lote": "saude-mental-micro-04-goldens",
+  "exported_at": "2026-06-23T18:00:00.000Z",
+  "source": "handcraft",
+  "filters": {
+    "micro_lote": "SM-4",
+    "cluster": "Crise / de-escalada / agitação",
+    "anchor": "questao-premium-fundatec-saude-mental-agitacao-exceto.json"
+  },
+  "slugs": [
+    "fundatec-enfermagem-dependencia-quimica-1778967935713-7",
+    "ibade-enfermagem-processo-de-enfermagem-1780005128081-8",
+    "ameosc-enfermagem-processo-de-enfermagem-1776056181857-3",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-8",
+    "idecan-enfermagem-enfermagem-em-uti-1778712381105-8",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-1"
+  ]
+}

@@ -1,14 +1,77 @@
 {
-  "exported_at": "2026-06-10T05:14:03.252Z",
+  "exported_at": "2026-06-23T17:52:52.284Z",
   "lote": "doencas-respiratorias-cronicas-asma-dpoc-lote-01",
-  "total": 1,
+  "total": 10,
   "entries": [
+    {
+      "modulo_slug": "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+      "titulo_aula": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "modulo_nome": "Enfermagem",
+      "banca": "FACAPE",
+      "avant_codigo": 2257
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+      "titulo_aula": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCPC",
+      "avant_codigo": 4483
+    },
+    {
+      "modulo_slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
+      "titulo_aula": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "modulo_nome": "Enfermagem",
+      "banca": "GRUPO TALENT",
+      "avant_codigo": 4878
+    },
     {
       "modulo_slug": "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7",
       "titulo_aula": "Doenças Respiratórias Crônicas (Asma, DPOC)",
-      "modulo_nome": "Geral",
+      "modulo_nome": "Enfermagem",
       "banca": "IDECAN",
       "avant_codigo": 374
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+      "titulo_aula": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGECAP",
+      "avant_codigo": 4462
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+      "titulo_aula": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 4626
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+      "titulo_aula": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IACP",
+      "avant_codigo": 4446
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
+      "titulo_aula": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "modulo_nome": "Enfermagem",
+      "banca": "LJ ASSESSORIA",
+      "avant_codigo": 3186
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
+      "titulo_aula": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "modulo_nome": "Enfermagem",
+      "banca": "OBJETIVA CONCURSOS",
+      "avant_codigo": 3188
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
+      "titulo_aula": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIVALI",
+      "avant_codigo": 4994
     }
   ]
 }

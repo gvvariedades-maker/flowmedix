@@ -1,0 +1,21 @@
+{
+  "exported_at": "2026-06-23T16:48:36.735Z",
+  "lote": "saude-mental-micro-03-reducao-danos",
+  "total": 2,
+  "entries": [
+    {
+      "modulo_slug": "idecan-enfermagem-saude-mental-1778712418722-2",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1699
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-dependencia-quimica-1778967935713-4",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "VUNESP",
+      "avant_codigo": 1840
+    }
+  ]
+}

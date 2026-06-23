@@ -1,0 +1,22 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-02-exceto",
+  "exported_at": "2026-06-22T21:50:32.947Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "artifacts/premium-upgrade-lotes/puncao-venosa-e-cuidados-com-cateteres/repair-lote-02-exceto-manifest.json"
+  },
+  "slugs": [
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-8",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-1",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-3",
+    "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-1",
+    "cev-urca-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-2",
+    "funatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-0",
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-5",
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-9",
+    "fundep-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-1",
+    "gualimp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-5",
+    "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-7",
+    "reis-e-reis-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-8"
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "generated_at": "2026-06-23T14:39:21.171Z",
+  "ramo": "SM-1",
+  "label": "RAPS / Reforma / SRT / dispositivos",
+  "subtopico": "Saúde Mental",
+  "merge_target": "lib/catalogMigration/upgradePremiumSaudeMental.ts",
+  "cluster_source": "artifacts/saude-mental-topic-cluster-report.json",
+  "builder_topic_bucket": "RAPS / Reforma / SRT",
+  "goldens_by_topic": {
+    "RAPS — nome da rede": "questao-premium-fau-unicentro-saude-mental-raps.json",
+    "SRT — dispositivo substitutivo": "questao-premium-ms-sarmento-saude-mental-srt-reforma.json",
+    "Encaminhamento RAPS — transtorno grave": "questao-premium-ms-sarmento-saude-mental-srt-reforma.json",
+    "APS — técnico ESF na RAPS": "questao-premium-igeduc-saude-mental-tecnico-aps.json",
+    "Comunidades Terapêuticas (CE)": null
+  },
+  "golden_pending": [
+    {
+      "topic": "Comunidades Terapêuticas (CE)",
+      "reason": "certo_errado sobre CT (voluntariedade × involuntário) — absorver perfil CE em SM-1 até golden dedicado",
+      "sample_slug": "igeduc-enfermagem-dependencia-quimica-1778967935713-3"
+    }
+  ],
+  "infer_topic": {
+    "description": "Primeira âncora que bater no blob instruction+options vence. Ordem importa — espelhar em inferSaudeMentalRapsTopic().",
+    "default_topic": "RAPS — nome da rede",
+    "anchors": [
+      {
+        "topic": "Comunidades Terapêuticas (CE)",
+        "families": [
+          "certo_errado"
+        ],
+        "regex": "comunidades?\\s+terap[eê]utic"
+      },
+      {
+        "topic": "RAPS — nome da rede",
+        "regex": "rede de cuidados que recebe o nome|pol[ií]tica de sa[uú]de mental.*nome|\\braps\\b.*(nome|sigla|chama)|nome da rede"
+      },
+      {
+        "topic": "SRT — dispositivo substitutivo",
+        "regex": "\\bsrt\\b|servi[cç]o residencial terap[eê]utico|reforma psiqui[aá]trica.*srt"
+      },
+      {
+        "topic": "Encaminhamento RAPS — transtorno grave",
+        "regex": "transtornos? mentais graves|encaminh.*(caps|centro de aten[cç][ãa]o psicossocial|hospital psiqui[aá]trico|servi[cç]o residencial terap[eê]utico)|cuidado compartilhado.*encaminh"
+      },
+      {
+        "topic": "APS — técnico ESF na RAPS",
+        "regex": "atribui[cç][õo]es do t[eé]cnico|t[eé]cnico de enfermagem.*(esf|estrat[eé]gia sa[uú]de da fam[ií]lia)|porta de entrada.*raps"
+      }
+    ]
+  },
+  "can_build_anchor": {
+    "description": "canBuildSaudeMentalRapsSlides — qualquer âncora SM-1 no enunciado ou opções",
+    "regex": "\\braps\\b|reforma psiqui[aá]trica|\\bsrt\\b|servi[cç]o residencial terap[eê]utico|comunidades?\\s+terap[eê]utic|centro de aten[cç][ãa]o psicossocial|\\bcaps\\b|porta de entrada.*sa[uú]de mental|transtornos? mentais graves.*encaminh"
+  },
+  "topic_profiles": {
+    "RAPS — nome da rede": {
+      "chipLabel": "RAPS",
+      "conceptFooter": "RAPS = nome oficial da rede de saúde mental no SUS",
+      "goldenContent": "RAPS = REDE DE ATENÇÃO PSICOSSOCIAL",
+      "goldenFooter": "Não confunda com siglas inventadas (REPS, RCMs, REHosp)",
+      "logicFooter": "Reforma = atenção psicossocial, não exclusão nem manicômio",
+      "logicFix": "toda questão de política de saúde mental no SUS aponta para RAPS + cuidado territorial",
+      "dangerContent": "PEGADINHAS — NOME DA REDE DE SAÚDE MENTAL",
+      "dangerFooter": "Distratores invertem o espírito da Reforma Psiquiátrica",
+      "concept_slots": [
+        "ENQUADRAMENTO",
+        "Sigla oficial",
+        "Componentes",
+        "Pegadinha",
+        "Gabarito"
+      ],
+      "golden_rows_slots": [
+        "Sigla",
+        "Nome completo",
+        "Base normativa",
+        "Gabarito"
+      ],
+      "option_trap_patterns": [
+        {
+          "regex": "exclus[aã]o|reps",
+          "trap": "Sigla inventada com viés de exclusão — oposto à Reforma"
+        },
+        {
+          "regex": "conten[cç][ãa]o|rcm",
+          "trap": "Sugere rede de contenção, não política atual"
+        },
+        {
+          "regex": "hospitaliza[cç][ãa]o|rehosp",
+          "trap": "Hospitalização é componente excepcional, não nome da política"
+        }
+      ]
+    },
+    "SRT — dispositivo substitutivo": {
+      "chipLabel": "REFORMA",
+      "conceptFooter": "SRT = moradia terapêutica no território, não internação nem vigilância",
+      "goldenContent": "SRT: SUBSTITUTO AO MANICÔMIO, NÃO À CRISE",
+      "goldenFooter": "Decore: território + liberdade + RAPS — não crise nem isolamento",
+      "logicFooter": "Elimine internação aguda, vigilância e isolamento da rede",
+      "logicFix": "na prova, SRT sempre aparece ligado a território, liberdade e articulação com a RAPS",
+      "dangerContent": "PEGADINHAS — SRT E REDE DE ATENÇÃO PSICOSSOCIAL",
+      "dangerFooter": "SRT integra a RAPS — não interna crise nem isola o usuário",
+      "concept_slots": [
+        "ENQUADRAMENTO",
+        "SRT — o que é",
+        "Articulação RAPS",
+        "Pegadinha da crise",
+        "Gabarito"
+      ],
+      "golden_rows_slots": [
+        "Finalidade",
+        "Modelo",
+        "Rede",
+        "Não é",
+        "Gabarito"
+      ],
+      "option_trap_patterns": [
+        {
+          "regex": "crise|interna[cç][ãa]o aguda|interna[cç][ãa]o tempor[aá]ria",
+          "trap": "Confunde SRT com porta de internação aguda"
+        },
+        {
+          "regex": "vigil[aâ]ncia|restringe circula[cç][ãa]o|restringir",
+          "trap": "Modelo asilar de controle — não Reforma"
+        },
+        {
+          "regex": "independente da rede|sem articula[cç][ãa]o|isolado",
+          "trap": "SRT exige articulação com CAPS e Atenção Básica"
+        }
+      ]
+    },
+    "Encaminhamento RAPS — transtorno grave": {
+      "chipLabel": "RAPS",
+      "conceptFooter": "Transtorno mental grave na AB → cuidado compartilhado; encaminhamento ao CAPS, não manicômio nem só AB",
+      "goldenContent": "GRAVE NA AB → CAPS (NÃO HOSPITAL, NÃO SÓ AB)",
+      "goldenFooter": "A banca troca CAPS por hospital, SRT ou 'só na AB'",
+      "logicFooter": "Complexidade do caso define o dispositivo — não encaminhar por gesto automático",
+      "logicFix": "transtorno mental grave exige articulação com CAPS na RAPS",
+      "dangerContent": "PEGADINHAS — ENCAMINHAMENTO NA RAPS",
+      "dangerFooter": "Hospital e SRT são pegadinhas clássicas para transtorno grave agudo na AB",
+      "concept_slots": [
+        "ENQUADRAMENTO",
+        "Cuidado compartilhado",
+        "Dispositivo correto (CAPS)",
+        "Pegadinhas (hospital/SRT/só AB)",
+        "Gabarito"
+      ],
+      "golden_rows_slots": [
+        "Grupo clínico",
+        "Dispositivo RAPS",
+        "Não é",
+        "Gabarito"
+      ],
+      "option_trap_patterns": [
+        {
+          "regex": "hospital psiqui[aá]trico|manic[oô]mio",
+          "trap": "Internação é exceção — não fluxo preferencial na AB"
+        },
+        {
+          "regex": "servi[cç]o residencial|\\bsrt\\b",
+          "trap": "SRT é moradia pós-internação prolongada, não porta para grave na AB"
+        },
+        {
+          "regex": "apenas na aten[cç][ãa]o prim[aá]ria|somente na ab|s[oó] na ab",
+          "trap": "Nega cuidado compartilhado com CAPS"
+        },
+        {
+          "regex": "ambulat[oó]rio de sa[uú]de mental",
+          "trap": "Ambulatório isolado ≠ CAPS como dispositivo da RAPS"
+        }
+      ]
+    },
+    "APS — técnico ESF na RAPS": {
+      "chipLabel": "APS",
+      "conceptFooter": "Técnico na ESF: acolhe, observa, administra prescrito — não diagnostica nem prescreve",
+      "goldenContent": "TÉCNICO NA ESF-RAPS: ACOLHE + OBSERVA + COMUNICA",
+      "goldenFooter": "COFEN 563/2017 — privativas do enfermeiro/médico não são do técnico",
+      "logicFooter": "Elimine diagnóstico, prescrição autônoma e internação sem equipe",
+      "logicFix": "porta de entrada RAPS na AB = acolhimento e articulação, não substituir especialista",
+      "dangerContent": "PEGADINHAS — ATRIBUIÇÕES DO TÉCNICO NA SAÚDE MENTAL",
+      "dangerFooter": "Diagnóstico psiquiátrico e prescrição são privativos — técnico apoia o cuidado",
+      "concept_slots": [
+        "ENQUADRAMENTO",
+        "Porta de entrada RAPS",
+        "Papel do técnico",
+        "Pegadinha (privativa)",
+        "Gabarito"
+      ],
+      "golden_rows_slots": [
+        "Pode",
+        "Não pode",
+        "Rede",
+        "Gabarito"
+      ],
+      "option_trap_patterns": [
+        {
+          "regex": "diagn[oó]stico psiqui[aá]trico|prescrever psicof[aá]rmaco",
+          "trap": "Privativa médica/enfermeiro — técnico não prescreve nem diagnostica"
+        },
+        {
+          "regex": "psicoterap[eê]utic|substituindo.*especializ",
+          "trap": "Técnico não substitui psicólogo/psiquiatra"
+        },
+        {
+          "regex": "interna[cç][ãa]o.*aut[oô]noma|sem avalia[cç][ãa]o m[eé]dica",
+          "trap": "Internação exige avaliação médica e equipe"
+        }
+      ]
+    },
+    "Comunidades Terapêuticas (CE)": {
+      "chipLabel": "CT",
+      "conceptFooter": "CT = acolhimento voluntário, sem fins lucrativos, par na rede de atenção à dependência",
+      "goldenContent": "CT: VOLUNTÁRIO — NÃO INVOLUNTÁRIO",
+      "goldenFooter": "Pegadinha clássica: caráter involuntário invalida o item",
+      "logicFooter": "Julgar voluntariedade, fins lucrativos e articulação com SUS",
+      "logicFix": "Comunidade Terapêutica no SUS é voluntária — involuntário torna o item errado",
+      "dangerContent": "PEGADINHAS — COMUNIDADES TERAPÊUTICAS",
+      "dangerFooter": "Não confundir CT com internação compulsória",
+      "concept_slots": [
+        "ENQUADRAMENTO",
+        "O que é CT",
+        "Voluntariedade",
+        "Pegadinha (involuntário)",
+        "Gabarito"
+      ],
+      "golden_rows_slots": [
+        "Natureza",
+        "Acolhimento",
+        "Voluntariedade",
+        "Gabarito"
+      ],
+      "assertion_trap_patterns": [
+        {
+          "regex": "involunt[aá]rio|car[aá]ter involunt",
+          "trap": "CT no SUS é voluntária — involuntário torna o item falso"
+        },
+        {
+          "regex": "com fins lucrativos|lucro",
+          "trap": "CT é entidade sem fins lucrativos"
+        }
+      ]
+    }
+  },
+  "slide_contract": {
+    "concept_map": {
+      "items_min": 4,
+      "items_max": 20,
+      "require_icons": true
+    },
+    "golden_rule": {
+      "require_rows_or_content": true,
+      "prefer_rows": true
+    },
+    "logic_flow": {
+      "reveal_mode": "tap",
+      "steps_min": 5,
+      "steps_max": 15
+    },
+    "danger_zone": {
+      "require_correct_per_distractor": true,
+      "format_correct": "Gabarito letra {LETTER} — {explanation}",
+      "bullet_style": "x_icon",
+      "forbid_duplicate_justifications": true
+    }
+  },
+  "sources_tier_a": [
+    {
+      "id": "portaria-3088-2011-raps",
+      "covers": [
+        "RAPS",
+        "CAPS",
+        "SRT",
+        "componentes da rede"
+      ]
+    },
+    {
+      "id": "lei-10216-2001",
+      "covers": [
+        "modelo substitutivo",
+        "direitos do usuário",
+        "internação como exceção"
+      ]
+    },
+    {
+      "id": "ms-saude-mental-aps",
+      "covers": [
+        "porta de entrada",
+        "técnico ESF",
+        "acolhimento"
+      ]
+    },
+    {
+      "id": "ms-politica-drogas-ct",
+      "covers": [
+        "Comunidades Terapêuticas",
+        "voluntariedade",
+        "rede de atenção"
+      ]
+    }
+  ]
+}

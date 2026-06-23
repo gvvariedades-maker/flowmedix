@@ -1,0 +1,18 @@
+{
+  "lote": "saude-mental-micro-06-goldens",
+  "exported_at": "2026-06-23T18:00:00.000Z",
+  "source": "handcraft",
+  "filters": {
+    "micro_lote": "SM-6",
+    "cluster": "Depressão / epidemiologia",
+    "anchor": "questao-premium-vunesp-saude-mental-depressao-epidemiologia.json"
+  },
+  "slugs": [
+    "ameosc-enfermagem-curativos-e-manejo-de-feridas-1779563517223-0",
+    "faurgs-enfermagem-semiologia-em-enfermagem-1779563542813-1",
+    "fgv-enfermagem-semiologia-em-enfermagem-1779563495719-0",
+    "idecan-enfermagem-saude-mental-1780067024707-2",
+    "unesc-enfermagem-semiologia-em-enfermagem-1779563486900-4",
+    "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4"
+  ]
+}

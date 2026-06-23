@@ -1,0 +1,49 @@
+{
+  "exported_at": "2026-06-23T17:31:57.073Z",
+  "lote": "dtrans-mescladas-g01",
+  "total": 6,
+  "entries": [
+    {
+      "modulo_slug": "fcm-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103604185-6",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "FCM",
+      "avant_codigo": 996
+    },
+    {
+      "modulo_slug": "cotec-fadenor-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103502990-6",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "COTEC FADENOR",
+      "avant_codigo": 925
+    },
+    {
+      "modulo_slug": "fundatec-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776580999967-0",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNDATEC",
+      "avant_codigo": 638
+    },
+    {
+      "modulo_slug": "selecon-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581030438-0",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 640
+    },
+    {
+      "modulo_slug": "funcern-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581011815-0",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "FUNCERN",
+      "avant_codigo": 639
+    },
+    {
+      "modulo_slug": "instituto-verbena-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103583552-8",
+      "titulo_aula": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 975
+    }
+  ]
+}

@@ -21,7 +21,7 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.layoutVariant).toBe('procedure-protocol');
   });
 
-  it('Sondas: logic_flow vertical mesmo com slug e família protocolo', () => {
+  it('Sondas: logic_flow sonda-decision-tap no molde premium', () => {
     const result = resolveSlidePresentation(
       {
         type: 'logic_flow',
@@ -34,7 +34,25 @@ describe('slidePresentation — molde por subtópico', () => {
         familyId: 'protocolo',
       },
     );
-    expect(result.layoutVariant).toBe('vertical');
+    expect(result.layoutVariant).toBe('sonda-decision-tap');
+  });
+
+  it('Sondas: golden_rule sonda-measurement-board com rows no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Instalação e Manejo de Sondas' },
+        rows: [
+          { label: 'NEX', value: 'Nariz → orelha → xifoide', badge: 'hot' },
+          { label: 'Confirmação', value: 'Radiografia de abdome', emphasis: 'alert' },
+        ],
+      },
+      {
+        questionSlug: 'consulplan-sondas-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('sonda-measurement-board');
   });
 
   it('Cuidados: concept_map bridge no molde premium', () => {
@@ -337,6 +355,206 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.bulletStyle).toBe('x_icon');
   });
 
+  it('Processo de Enfermagem: golden_rule sae-reference-board com rows no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Processo de Enfermagem' },
+        content: 'SAE · COFEN',
+        rows: [
+          { label: 'Anotação', value: 'Privativa do enfermeiro', emphasis: 'highlight' },
+          { label: 'Gabarito', value: 'Letra C', emphasis: 'success' },
+        ],
+      },
+      {
+        questionSlug: 'fepese-sae-1',
+        slideIndex: 1,
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('sae-reference-board');
+  });
+
+  it('Processo de Enfermagem: logic_flow sae-decision-tap no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Processo de Enfermagem' },
+        steps: ['Ler enunciado', 'Identificar privativa', 'Marcar letra C'],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'fepese-sae-1',
+        slideIndex: 2,
+        familyId: 'text_fragment',
+      },
+    );
+    expect(result.layoutVariant).toBe('sae-decision-tap');
+    expect(result.revealMode).toBe('tap');
+  });
+
+  it('ISTs: concept_map ist-risk-routes-deck no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Infecções Sexualmente Transmissíveis (ISTs)' },
+        items: [
+          { label: 'Via sexual', detail: 'Sem preservativo', icon: 'HeartPulse' },
+          { label: 'Parenteral', detail: 'Agulha compartilhada', icon: 'Syringe' },
+          { label: 'Gabarito', detail: 'Letra B', icon: 'CheckCircle' },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-ists-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('ist-risk-routes-deck');
+  });
+
+  it('ISTs: golden_rule ist-reference-board com rows no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Infecções Sexualmente Transmissíveis (ISTs)' },
+        content: 'Rotas · Agentes',
+        rows: [
+          { label: 'I — sexual', value: 'VERDADEIRA' },
+          { label: 'Combinação', value: 'Letra B', emphasis: 'success' },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-ists-1',
+        slideIndex: 1,
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('ist-reference-board');
+  });
+
+  it('ISTs: logic_flow ist-vf-juggle-tap no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Infecções Sexualmente Transmissíveis (ISTs)' },
+        steps: ['Julgar I → VERDADEIRO', 'Julgar II → FALSO', 'Marcar B'],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'cpcon-ists-1',
+        slideIndex: 2,
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('ist-vf-juggle-tap');
+    expect(result.revealMode).toBe('tap');
+  });
+
+  it('ISTs: danger_zone ist-trap-chips com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Infecções Sexualmente Transmissíveis (ISTs)' },
+        content: 'Pegadinhas',
+        items: [
+          {
+            label: 'Só HIV',
+            detail: 'IST é unicamente HIV',
+            correct: 'Múltiplos agentes — HIV, sífilis, hepatites',
+          },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-ists-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('ist-trap-chips');
+    expect(result.bulletStyle).toBe('x_icon');
+    expect(result.dangerRevealMode).toBe('tap');
+  });
+
+  it('Saúde do Adolescente: concept_map adolescent-privacy-curtain no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'concept_map',
+        meta: { subtopico: 'Saúde do Adolescente' },
+        items: [
+          { label: 'Escuta qualificada', detail: 'Privacidade e acolhimento', icon: 'MessageCircle' },
+          { label: 'Sigilo', detail: 'Limites legais', icon: 'Lock' },
+          { label: 'Gabarito', detail: 'Letra B', icon: 'CheckCircle' },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-adolescente-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('adolescent-privacy-curtain');
+  });
+
+  it('Saúde do Adolescente: golden_rule adolescent-sigilo-spectrum com rows no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Saúde do Adolescente' },
+        content: 'ESCUTA',
+        rows: [
+          { label: 'Privacidade', value: 'Consulta com escuta — I correta' },
+          { label: 'Gabarito', value: 'I e II, apenas', emphasis: 'success' },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-adolescente-1',
+        slideIndex: 1,
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('adolescent-sigilo-spectrum');
+  });
+
+  it('Saúde do Adolescente: logic_flow adolescent-vf-weave-tap no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Saúde do Adolescente' },
+        steps: ['I: privacidade → verdadeira.', 'III: sigilo sem critério → falsa.', 'Letra B.'],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'cpcon-adolescente-1',
+        slideIndex: 2,
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('adolescent-vf-weave-tap');
+    expect(result.revealMode).toBe('tap');
+  });
+
+  it('Saúde do Adolescente: danger_zone adolescent-consent-gate com correct no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'danger_zone',
+        meta: { subtopico: 'Saúde do Adolescente' },
+        content: 'PEGADINHAS — ADOLESCENTE',
+        items: [
+          {
+            label: 'Quebrar sigilo sempre',
+            detail: 'III ignora critérios legais',
+            correct: 'Sigilo com limites — avaliar risco e legislação.',
+          },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-adolescente-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('adolescent-consent-gate');
+    expect(result.bulletStyle).toBe('x_icon');
+    expect(result.dangerRevealMode).toBe('tap');
+  });
+
   it('Promoção à Saúde: concept_map sus-art4-orbit no molde', () => {
     const result = resolveSlidePresentation(
       {
@@ -408,6 +626,41 @@ describe('slidePresentation — molde por subtópico', () => {
     expect(result.bulletStyle).toBe('x_icon');
   });
 
+  it('Vias de Administração: golden_rule via-reference-board com rows no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'golden_rule',
+        meta: { subtopico: 'Vias de Administração' },
+        rows: [
+          { label: 'I — absorção', value: 'FALSA: IM > SC', emphasis: 'alert' },
+          { label: 'Combinação', value: 'Letra E', emphasis: 'success' },
+        ],
+      },
+      {
+        questionSlug: 'cpcon-vias-1',
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('via-reference-board');
+  });
+
+  it('Vias de Administração: logic_flow via-vf-juggle-tap no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Vias de Administração' },
+        steps: ['Julgar I', 'Julgar II', 'Marcar E'],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'cpcon-vias-1',
+        slideIndex: 2,
+        familyId: 'vf',
+      },
+    );
+    expect(result.layoutVariant).toBe('via-vf-juggle-tap');
+  });
+
   it('Cálculo de Medicamentos: concept_map dose-equivalence-rail no molde', () => {
     const result = resolveSlidePresentation(
       {
@@ -462,6 +715,24 @@ describe('slidePresentation — molde por subtópico', () => {
       },
     );
     expect(result.layoutVariant).toBe('soft-lens-board');
+  });
+
+  it('Cálculo de Medicamentos: logic_flow dose-calc-tap no molde', () => {
+    const result = resolveSlidePresentation(
+      {
+        type: 'logic_flow',
+        meta: { subtopico: 'Cálculo de Administração de Medicamentos e Infusões' },
+        steps: ['Identificar equivalência', 'Converter gotas → mL', 'Marcar letra B'],
+        reveal_mode: 'tap',
+      },
+      {
+        questionSlug: 'idecan-calc-1',
+        slideIndex: 2,
+        familyId: 'calc',
+      },
+    );
+    expect(result.layoutVariant).toBe('dose-calc-tap');
+    expect(result.revealMode).toBe('tap');
   });
 
   it('Oxigenoterapia: concept_map oxygen-protocol-deck no molde', () => {

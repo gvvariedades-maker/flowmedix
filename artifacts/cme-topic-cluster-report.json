@@ -1,0 +1,602 @@
+{
+  "generated_at": "2026-06-23T16:57:58.735Z",
+  "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+  "lote": "cme-completo",
+  "total": 35,
+  "trilho": "A — handcraft total (≤70 slugs)",
+  "existing_goldens_examples": [
+    "questao-premium-idecan-cme-areas-esterilizacao-vf.json",
+    "questao-premium-idecan-cme-areas-esterilizacao-vf.json"
+  ],
+  "family_counts": {
+    "conceito": 25,
+    "legis": 1,
+    "protocolo": 5,
+    "certo_errado": 4
+  },
+  "premium_status_counts": {
+    "stub": 21,
+    "hybrid_ok": 14
+  },
+  "stub_total": 21,
+  "contract_fail_total": 31,
+  "cluster_decisions": [
+    {
+      "cluster": "Preparo e limpeza de instrumentais",
+      "count": 12,
+      "pct": 34.3,
+      "slide_contract_failures": 12,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-9",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004906875-5",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004906875-7",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004906875-8",
+        "icece-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-2"
+      ],
+      "decision": "novo_ramo"
+    },
+    {
+      "cluster": "Autoclave e métodos de esterilização",
+      "count": 10,
+      "pct": 28.6,
+      "slide_contract_failures": 10,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "amauc-enfermagem-processo-de-enfermagem-1780001440222-4",
+        "ameosc-enfermagem-processo-de-enfermagem-1780005791580-0",
+        "fcpc-enfermagem-processo-de-enfermagem-1780004906875-6",
+        "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-3",
+        "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-1"
+      ],
+      "decision": "novo_ramo"
+    },
+    {
+      "cluster": "Processamento e esterilização — conceito",
+      "count": 4,
+      "pct": 11.4,
+      "slide_contract_failures": 4,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "avancasp-enfermagem-processo-de-enfermagem-1780002714111-7",
+        "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+        "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-5",
+        "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-0"
+      ],
+      "decision": "novo_ramo"
+    },
+    {
+      "cluster": "Certo ou errado",
+      "count": 4,
+      "pct": 11.4,
+      "slide_contract_failures": 0,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-3",
+        "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-5",
+        "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-6",
+        "quadrix-enfermagem-processo-de-enfermagem-1780009281546-9"
+      ],
+      "decision": "novo_ramo"
+    },
+    {
+      "cluster": "INCORRETA / EXCETO",
+      "count": 3,
+      "pct": 8.6,
+      "slide_contract_failures": 3,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "ameosc-enfermagem-processo-de-enfermagem-1780001613305-2",
+        "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-7",
+        "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-0"
+      ],
+      "decision": "absorver"
+    },
+    {
+      "cluster": "Indicadores químicos e biológicos",
+      "count": 1,
+      "pct": 2.9,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-1"
+      ],
+      "decision": "cauda_longa"
+    },
+    {
+      "cluster": "CME — conceito geral",
+      "count": 1,
+      "pct": 2.9,
+      "slide_contract_failures": 1,
+      "instruction_artifacts": 0,
+      "has_golden": false,
+      "golden_file": null,
+      "sample_slugs": [
+        "idib-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778934918280-9"
+      ],
+      "decision": "cauda_longa"
+    }
+  ],
+  "rows": [
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780001440222-4",
+      "banca": "Amauc",
+      "family": "conceito",
+      "builder_topic": "Métodos e equipamentos de esterilização",
+      "pedagogical_cluster": "Autoclave e métodos de esterilização",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "A esterilização por Plasma de Peróxido de Hidrogênio é uma tecnologia de baixa temperatura compatível com materiais term"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780001613305-2",
+      "banca": "Ameosc",
+      "family": "conceito",
+      "builder_topic": "Métodos e equipamentos de esterilização",
+      "pedagogical_cluster": "INCORRETA / EXCETO",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "A esterilização é o processo utilizado para a completa destruição de micro-organismos, incluindo todas as suas formas es"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-0",
+      "banca": "Ameosc",
+      "family": "conceito",
+      "builder_topic": "Métodos e equipamentos de esterilização",
+      "pedagogical_cluster": "Autoclave e métodos de esterilização",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "A biossegurança engloba ações para prevenir riscos biológicos, físicos e químicos em ambientes de saúde, visando a prote"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-7",
+      "banca": "AVANÇASP",
+      "family": "conceito",
+      "builder_topic": "Processamento e esterilização — conceito",
+      "pedagogical_cluster": "Processamento e esterilização — conceito",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "O material estéril deve ser manuseado:"
+    },
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+      "banca": "CPCON UEPB",
+      "family": "legis",
+      "builder_topic": "Processamento e esterilização — conceito",
+      "pedagogical_cluster": "Processamento e esterilização — conceito",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Durante o plantão, uma técnica de enfermagem é orientada a separar os materiais utilizados para envio ao Centro de Mater"
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-9",
+      "banca": "Fau Unicentro",
+      "family": "protocolo",
+      "builder_topic": "Preparo, limpeza e embalagem",
+      "pedagogical_cluster": "Preparo e limpeza de instrumentais",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Em uma Central de Material Esterilizado (CME) os \"indicadores químicos e biológicos\" correspondem aos parâmetros usados "
+    },
+    {
+      "modulo_slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-5",
+      "banca": "Fau Unicentro",
+      "family": "conceito",
+      "builder_topic": "Processamento e esterilização — conceito",
+      "pedagogical_cluster": "Processamento e esterilização — conceito",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "A CME é o setor responsável por garantir que todos os artigos médico-hospitalares estejam limpos, desinfectados e esteri"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-5",
+      "banca": "Fcpc",
+      "family": "conceito",
+      "builder_topic": "Preparo, limpeza e embalagem",
+      "pedagogical_cluster": "Preparo e limpeza de instrumentais",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Durante o processamento de produtos para saúde, os artigos devem ser classificados segundo o risco de infecção (Classifi"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-6",
+      "banca": "Fcpc",
+      "family": "conceito",
+      "builder_topic": "Métodos e equipamentos de esterilização",
+      "pedagogical_cluster": "Autoclave e métodos de esterilização",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "No Centro de Material e Esterilização (CME), o técnico em enfermagem participa do processamento de diferentes produtos p"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-7",
+      "banca": "Fcpc",
+      "family": "conceito",
+      "builder_topic": "Preparo, limpeza e embalagem",
+      "pedagogical_cluster": "Preparo e limpeza de instrumentais",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "No Centro de Material e Esterilização (CME), o controle adequado da etapa de limpeza é fundamental para garantir a quali"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004906875-8",
+      "banca": "Fcpc",
+      "family": "conceito",
+      "builder_topic": "Preparo, limpeza e embalagem",
+      "pedagogical_cluster": "Preparo e limpeza de instrumentais",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Qual a responsabilidade técnico de enfermagem no Centro de Material e Esterilização (CME):"
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-3",
+      "banca": "Fênix Instituto",
+      "family": "conceito",
+      "builder_topic": "Métodos e equipamentos de esterilização",
+      "pedagogical_cluster": "Autoclave e métodos de esterilização",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "No preparo e manuseio de materiais, o método de esterilização que utiliza vapor de água sob pressão em alta temperatura "
+    },
+    {
+      "modulo_slug": "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-1",
+      "banca": "Fênix Instituto",
+      "family": "conceito",
+      "builder_topic": "Métodos e equipamentos de esterilização",
+      "pedagogical_cluster": "Autoclave e métodos de esterilização",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "No processamento de materiais em serviços de saúde, o método físico que promove destruição de microrganismos, inclusive "
+    },
+    {
+      "modulo_slug": "icece-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-2",
+      "banca": "Icece",
+      "family": "conceito",
+      "builder_topic": "Preparo, limpeza e embalagem",
+      "pedagogical_cluster": "Preparo e limpeza de instrumentais",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A Central de Material e Esterilização (CME) é um setor estratégico dos serviços de saúde, responsável pelo processamento"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2",
+      "banca": "IDECAN",
+      "family": "protocolo",
+      "builder_topic": "Preparo, limpeza e embalagem",
+      "pedagogical_cluster": "Preparo e limpeza de instrumentais",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Em uma Central de Material e Esterilização (CME), o adequado processamento dos artigos segue protocolos que visam à segu"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-3",
+      "banca": "IDECAN",
+      "family": "certo_errado",
+      "builder_topic": "Atribuição e gestão da CME",
+      "pedagogical_cluster": "Certo ou errado",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Na Central de Materiais e Esterilização (CME) cabe aos enfermeiros responsáveis técnicos a participação, coordenação, ex"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-5",
+      "banca": "IDECAN",
+      "family": "certo_errado",
+      "builder_topic": "Preparo, limpeza e embalagem",
+      "pedagogical_cluster": "Certo ou errado",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A limpeza ultrassônica funciona através de ondas sonoras de alta frequência transmitidas através do líquido para limpar "
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-6",
+      "banca": "IDECAN",
+      "family": "certo_errado",
+      "builder_topic": "Métodos e equipamentos de esterilização",
+      "pedagogical_cluster": "Certo ou errado",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Os materiais podem ser postos, misturados nas bandejas. Feche devidamente a tampa e ligue o aparelho. Aguarde algumas ho"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-7",
+      "banca": "IDECAN",
+      "family": "conceito",
+      "builder_topic": "Preparo, limpeza e embalagem",
+      "pedagogical_cluster": "INCORRETA / EXCETO",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A Central de Material e Esterilização (CME) é uma unidade de apoio técnico dentro do estabelecimento de saúde ou fora de"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-0",
+      "banca": "IDECAN",
+      "family": "conceito",
+      "builder_topic": "Preparo, limpeza e embalagem",
+      "pedagogical_cluster": "INCORRETA / EXCETO",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Sobre Central de Material e Esterilização (CME), assinale a afirmativa incorreta."
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-1",
+      "banca": "IDECAN",
+      "family": "conceito",
+      "builder_topic": "Indicadores de esterilização",
+      "pedagogical_cluster": "Indicadores químicos e biológicos",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Os indicadores químicos são dispositivos usados para validar os processos de esterilização e são divididos em seis categ"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778934918280-9",
+      "banca": "Idib",
+      "family": "conceito",
+      "builder_topic": "CME — conceito geral",
+      "pedagogical_cluster": "CME — conceito geral",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "O Auxiliar de Enfermagem recebeu na Central de Material Esterilizados (CME), os seguintes artigos médico hospitalares: I"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-9",
+      "banca": "Idib",
+      "family": "conceito",
+      "builder_topic": "Preparo, limpeza e embalagem",
+      "pedagogical_cluster": "Preparo e limpeza de instrumentais",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Considerando o papel crítico da Central de Material e Esterilização (CME) no controle das Infecções Associadas à Assistê"
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004293191-5",
+      "banca": "Igecap",
+      "family": "conceito",
+      "builder_topic": "Métodos e equipamentos de esterilização",
+      "pedagogical_cluster": "Autoclave e métodos de esterilização",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "O método de esterilização por calor úmido sob pressão é:"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1",
+      "banca": "Igeduc",
+      "family": "protocolo",
+      "builder_topic": "Preparo, limpeza e embalagem",
+      "pedagogical_cluster": "Preparo e limpeza de instrumentais",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A esterilização de materiais é uma etapa fundamental para a prevenção de infecções relacionadas à assistência à saúde. N"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3",
+      "banca": "Igeduc",
+      "family": "protocolo",
+      "builder_topic": "Preparo, limpeza e embalagem",
+      "pedagogical_cluster": "Preparo e limpeza de instrumentais",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "A esterilização de equipamentos é um processo fundamental para a prevenção de infecções relacionadas à assistência à saú"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-4",
+      "banca": "Instituto Aocp",
+      "family": "conceito",
+      "builder_topic": "Preparo, limpeza e embalagem",
+      "pedagogical_cluster": "Preparo e limpeza de instrumentais",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "A equipe do Centro de Material e Esterilização (CME) recebe para processamento: campo operatório, instrumentais cirúrgic"
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-0",
+      "banca": "Instituto Aocp",
+      "family": "conceito",
+      "builder_topic": "Processamento e esterilização — conceito",
+      "pedagogical_cluster": "Processamento e esterilização — conceito",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "O monitoramento do processo de esterilização com indicadores físicos deve ser registrado idealmente"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-7",
+      "banca": "Instituto Iacp",
+      "family": "conceito",
+      "builder_topic": "Métodos e equipamentos de esterilização",
+      "pedagogical_cluster": "Autoclave e métodos de esterilização",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "O método de esterilização física mais utilizado em des hospitalares é a autoclave. Para garantir a eliminação de todas a"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-4",
+      "banca": "Instituto Iacp",
+      "family": "conceito",
+      "builder_topic": "Métodos e equipamentos de esterilização",
+      "pedagogical_cluster": "Autoclave e métodos de esterilização",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Na Central de Material e Esterilização (CME), os materiais utilizados na assistência são classificados segundo o risco d"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-1",
+      "banca": "Instituto Iacp",
+      "family": "protocolo",
+      "builder_topic": "Métodos e equipamentos de esterilização",
+      "pedagogical_cluster": "Autoclave e métodos de esterilização",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "A esterilização em autoclave utiliza vapor saturado sob pressão para destruir todas as formas de vida microbiana, inclui"
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-7",
+      "banca": "Instituto Verbena",
+      "family": "conceito",
+      "builder_topic": "Preparo, limpeza e embalagem",
+      "pedagogical_cluster": "Preparo e limpeza de instrumentais",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Leia o texto a seguir. A Central de Material e Esterilização (CME) é a unidade responsável pelo processamento de produto"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-0",
+      "banca": "QUADRIX",
+      "family": "conceito",
+      "builder_topic": "Preparo, limpeza e embalagem",
+      "pedagogical_cluster": "Preparo e limpeza de instrumentais",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications"
+      ],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "O centro de material e esterilização é um setor de extrema importância na área da saúde, no qual, em caso da ocorrência "
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-processo-de-enfermagem-1780009281546-9",
+      "banca": "QUADRIX",
+      "family": "certo_errado",
+      "builder_topic": "Processamento e esterilização — conceito",
+      "pedagogical_cluster": "Certo ou errado",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [],
+      "premium_status": "hybrid_ok",
+      "instruction_preview": "Considerando as normas de biossegurança e as diretrizes da Agência Nacional de Vigilância Sanitária (ANVISA), do Conselh"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-processo-de-enfermagem-1780003637054-4",
+      "banca": "VUNESP",
+      "family": "conceito",
+      "builder_topic": "Métodos e equipamentos de esterilização",
+      "pedagogical_cluster": "Autoclave e métodos de esterilização",
+      "has_instruction_artifacts": false,
+      "slide_contract_issues": [
+        "danger_duplicate_justifications",
+        "stub_markers"
+      ],
+      "premium_status": "stub",
+      "instruction_preview": "Quanto ao reprocessamento de materiais pela classificação de Spaulding, é correto afirmar que materiais"
+    }
+  ]
+}

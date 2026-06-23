@@ -159,7 +159,9 @@ export function resolveSlidePresentation(
       layoutVariant === 'lab-specimen-arena' ||
       layoutVariant === 'dressing-choice-arena' ||
       layoutVariant === 'vitals-classify-arena' ||
-      layoutVariant === 'pni-trap-chips')
+      layoutVariant === 'pni-trap-chips' ||
+      layoutVariant === 'ist-trap-chips' ||
+      layoutVariant === 'adolescent-consent-gate')
       ? 'x_icon'
       : 'numbered');
 

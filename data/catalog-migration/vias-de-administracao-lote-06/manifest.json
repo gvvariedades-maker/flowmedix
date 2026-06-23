@@ -1,11 +1,9 @@
 {
   "lote": "vias-de-administracao-lote-06",
-  "exported_at": "2026-06-09T11:16:32.191Z",
+  "exported_at": "2026-06-19T15:17:16.325Z",
   "source": "supabase",
   "filters": {
-    "subtopico": "Vias de Administração",
-    "limit": 50,
-    "exclude_count": 269
+    "from_manifest": "data/catalog-migration/vias-de-administracao-lote-06/manifest.json"
   },
   "slugs": [
     "vunesp-enfermagem-vias-de-administracao-1778968787431-7"

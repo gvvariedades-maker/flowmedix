@@ -3,10 +3,15 @@
 import { useCallback, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, X, Zap } from 'lucide-react';
+import {
+  parseGabaritoLetter,
+  stripGabaritoPrefix,
+  type GabaritoLetter,
+} from '@/lib/catalogMigration/slideContract';
 import type { ThemeColors } from '../core/themeGenerator';
 import type { DangerZoneItem } from './DangerZone';
 
-type ArenaLetter = 'A' | 'B' | 'C' | 'D' | 'E';
+type ArenaLetter = GabaritoLetter;
 
 type ArenaEntry = {
   letter: ArenaLetter;
@@ -24,8 +29,8 @@ function extractLetter(label: string, detail: string): ArenaLetter | null {
 
 function detectGabaritoLetter(items: DangerZoneItem[]): ArenaLetter | null {
   for (const item of items) {
-    const m = (item.correct ?? '').match(/gabarito:?\s*letra\s*([A-E])/i);
-    if (m) return m[1].toUpperCase() as ArenaLetter;
+    const letter = parseGabaritoLetter(item.correct);
+    if (letter) return letter;
   }
   return null;
 }
@@ -36,18 +41,23 @@ function shortOptionText(text: string): string {
   return `${trimmed.slice(0, 69)}…`;
 }
 
-function trapHint(letter: ArenaLetter, gabarito: ArenaLetter): string {
-  if (letter === gabarito) {
-    return 'Técnica asséptica + barreira máxima + remoção precoce do CVC';
+function arenaHint(
+  item: DangerZoneItem,
+  letter: ArenaLetter,
+  gabarito: ArenaLetter,
+  isOk: boolean,
+): string {
+  const fromCorrect = stripGabaritoPrefix(item.correct ?? '');
+  if (isOk) {
+    return fromCorrect || 'Alternativa correta conforme o enunciado.';
   }
-  if (letter === 'A') return 'Clorexidina 0,5% e curativo fixo 72 h — não é bundle completo';
-  if (letter === 'C') return 'Femoral + antibiótico profilático — conduta incorreta';
-  if (letter === 'D') return 'Vigilância rotineira + iodo no lúmen — não é padrão';
-  return `Elimine letra ${letter} pelo texto literal antes de marcar ${gabarito}`;
+  if (fromCorrect) return fromCorrect;
+  if (item.detail?.trim()) return item.detail.trim();
+  return `Letra ${letter} não é o gabarito — busque letra ${gabarito}.`;
 }
 
 function buildArenaEntries(items: DangerZoneItem[]): ArenaEntry[] {
-  const gabarito = detectGabaritoLetter(items) ?? 'B';
+  const gabarito = detectGabaritoLetter(items);
   const byLetter = new Map<ArenaLetter, DangerZoneItem>();
 
   for (const item of items) {
@@ -55,10 +65,25 @@ function buildArenaEntries(items: DangerZoneItem[]): ArenaEntry[] {
     if (letter) byLetter.set(letter, item);
   }
 
+  if (!gabarito) {
+    return [...byLetter.entries()]
+      .map(([letter, item]) => {
+        const trapText = item.detail || item.description || '';
+        return {
+          letter,
+          text: shortOptionText(trapText.replace(/^Letra\s+[A-E]\s*—\s*/i, '')),
+          tipo: 'erro' as const,
+          tag: `ALTERNATIVA — Letra ${letter}`,
+          analise: item.detail || item.label || 'Toque para ver o veredito.',
+          calc: arenaHint(item, letter, 'A', false),
+        };
+      })
+      .sort((a, b) => a.letter.localeCompare(b.letter));
+  }
+
   const entries: ArenaEntry[] = [];
 
   for (const [letter, item] of byLetter) {
-    const correct = (item.correct ?? '').trim();
     const isOk = letter === gabarito;
     const trapText = item.detail || item.description || '';
     entries.push({
@@ -69,23 +94,25 @@ function buildArenaEntries(items: DangerZoneItem[]): ArenaEntry[] {
         ? `GABARITO CONFIRMADO — Letra ${letter}`
         : `ARMADILHA DETECTADA — Letra ${letter}`,
       analise: isOk
-        ? correct.replace(/^Gabarito:\s*/i, '') || 'Alternativa correta conforme o enunciado.'
-        : `A banca mistura condutas fora do bundle de prevenção. ${correct ? correct.replace(/^Gabarito:\s*/i, '') : ''}`,
-      calc: trapHint(letter, gabarito),
+        ? stripGabaritoPrefix(item.correct ?? '') || 'Alternativa correta conforme o enunciado.'
+        : item.detail || stripGabaritoPrefix(item.correct ?? '') || 'Alternativa eliminada.',
+      calc: arenaHint(item, letter, gabarito, isOk),
     });
   }
 
   if (!byLetter.has(gabarito)) {
-    const sampleCorrect = items.map((i) => i.correct ?? '').find((c) => new RegExp(`letra\\s*${gabarito}`, 'i').test(c));
+    const sampleCorrect = items
+      .map((i) => i.correct ?? '')
+      .find((c) => parseGabaritoLetter(c) === gabarito);
     if (sampleCorrect) {
-      const text = sampleCorrect.replace(new RegExp(`^Gabarito:\\s*letra\\s*${gabarito}\\s*—\\s*`, 'i'), '').trim();
+      const text = stripGabaritoPrefix(sampleCorrect);
       entries.push({
         letter: gabarito,
         text: shortOptionText(text),
         tipo: 'ok',
         tag: `GABARITO CONFIRMADO — Letra ${gabarito}`,
-        analise: sampleCorrect,
-        calc: trapHint(gabarito, gabarito),
+        analise: text || sampleCorrect,
+        calc: text || 'Gabarito confirmado.',
       });
     }
   }

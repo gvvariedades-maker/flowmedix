@@ -1,0 +1,146 @@
+{
+  "generated_at": "2026-06-20T12:01:39.187Z",
+  "lote": "instalacao-e-manejo-de-sondas-repair-lote-01",
+  "mode": "apply",
+  "total_files": 19,
+  "ok": 19,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-5",
+    "fauel-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-5",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004628956-4",
+    "fundatec-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-2",
+    "furb-enfermagem-processo-de-enfermagem-1780011887822-8",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-8",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934965770-0",
+    "igeduc-enfermagem-processo-de-enfermagem-1780010917301-5",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011859940-1",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-5",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-8",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-8",
+    "quadrix-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-1",
+    "selecon-enfermagem-processo-de-enfermagem-1780009310940-8",
+    "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+    "unifil-enfermagem-processo-de-enfermagem-1780003645544-4",
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-6",
+    "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-4",
+    "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-1"
+  ],
+  "results": [
+    {
+      "modulo_slug": "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fauel-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004628956-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "furb-enfermagem-processo-de-enfermagem-1780011887822-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934957741-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idib-enfermagem-nocoes-de-fisiologia-1778934965770-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780010917301-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011859940-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "quadrix-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-processo-de-enfermagem-1780009310940-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-processo-de-enfermagem-1780003645544-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

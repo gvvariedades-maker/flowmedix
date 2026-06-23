@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "banca": "IGEDUC",
+    "prova": "Tec Enf",
+    "orgao": "Enfermagem",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde Mental",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "MS — Saúde mental na Atenção Básica; atribuições do técnico de enfermagem",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-saude-mental-aps",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Saúde mental na Atenção Básica — cuidado integral e articulação com a RAPS",
+        "year": 2021,
+        "covers": ["acolhimento", "atribuições do técnico", "porta de entrada"]
+      },
+      {
+        "id": "cofen-resolucao-563-2017",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Resolução COFEN nº 563/2017 — atribuições do técnico de enfermagem",
+        "year": 2017,
+        "covers": ["administração de medicamentos prescritos", "observação", "comunicação à equipe"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A Atenção Básica é a porta de entrada preferencial do Sistema Único de Saúde para o cuidado em saúde mental, atuando na promoção do cuidado integral, no acompanhamento longitudinal e na articulação com a Rede de Atenção Psicossocial (RAPS). O Técnico de Enfermagem da Estratégia Saúde da Família participa desse cuidado por meio do acolhimento, da observação clínica, do apoio às ações da equipe multiprofissional e da orientação aos usuários e familiares. Considerando as atribuições do Técnico de Enfermagem na atenção à saúde mental, assinale a alternativa CORRETA.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Realizar diagnóstico psiquiátrico do usuário, prescrever psicofármacos conforme avaliação própria e definir, de forma autônoma, a conduta terapêutica no território.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Realizar o acolhimento do usuário, observar alterações de comportamento, administrar medicamentos prescritos, orientar usuários e comunicar à equipe de saúde alterações identificadas no acompanhamento.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Conduzir atendimentos psicoterapêuticos individuais de forma regular, substituindo o acompanhamento realizado por profissionais especializados em saúde mental.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Definir de maneira independente a necessidade de internação psiquiátrica do usuário, sem avaliação médica ou discussão com a equipe multiprofissional.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Técnico na APS — saúde mental",
+      "chip_label": "ATENÇÃO BÁSICA",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "items": [
+        {
+          "label": "ENQUADRAMENTO",
+          "detail": "AB é porta de entrada do cuidado em saúde mental — técnico acolhe, observa e articula com a RAPS.",
+          "icon": "Home"
+        },
+        {
+          "label": "Pode fazer",
+          "detail": "Acolhimento, observação de comportamento, administração de meds prescritos, orientação e comunicação à equipe.",
+          "icon": "CheckCircle"
+        },
+        {
+          "label": "Não pode",
+          "detail": "Diagnosticar, prescrever, psicoterapia individual substitutiva ou decidir internação sozinho.",
+          "icon": "Ban"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra B — escopo do técnico na ESF para saúde mental.",
+          "icon": "Target"
+        }
+      ],
+      "footer_rule": "Técnico acolhe e observa — médico/enfermeiro prescrevem e definem conduta"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Atribuições do técnico — APS",
+      "chip_label": "REGRA DE OURO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "content": "ACOLHER · OBSERVAR · ADMINISTRAR (PRESCRITO) · COMUNICAR",
+      "rows": [
+        { "label": "Acolhimento", "value": "Porta de entrada humanizada na AB", "badge": "ok" },
+        { "label": "Observação", "value": "Alterações de comportamento no acompanhamento", "badge": "ok" },
+        { "label": "Medicação", "value": "Administrar o que foi prescrito — não prescrever", "badge": "ok" },
+        {
+          "label": "Proibido",
+          "value": "Diagnóstico psiquiátrico e prescrição autônoma",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        { "label": "Gabarito", "value": "Letra B", "emphasis": "success", "badge": "hot" }
+      ],
+      "footer_rule": "Escopo técnico: cuidado de suporte, não decisão clínica autônoma"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "steps": [
+        "Tema: atribuições do técnico de enfermagem em saúde mental na ESF.",
+        "Eliminar A: diagnóstico e prescrição autônoma — competência médica/enfermeira.",
+        "Eliminar C: psicoterapia individual substitutiva — não é atribuição do técnico.",
+        "Eliminar D: internação sem médico/equipe — decisão multiprofissional.",
+        "Marcar B: acolher, observar, administrar prescrito, orientar e comunicar.",
+        "Fixação: técnico na AB é elo de cuidado — não substitui especialista."
+      ],
+      "footer_rule": "Comunicar alterações à equipe é parte do cuidado"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "content": "PEGADINHAS — ATRIBUIÇÕES NA APS",
+      "items": [
+        {
+          "label": "Letra A — diagnosticar e prescrever",
+          "detail": "Amplia ilegalmente o escopo do técnico.",
+          "correct": "Gabarito letra B — técnico administra medicamentos prescritos, não define conduta autônoma."
+        },
+        {
+          "label": "Letra C — psicoterapia substitutiva",
+          "detail": "Confunde suporte com psicoterapia especializada.",
+          "correct": "Gabarito letra B — técnico orienta e acolhe, não substitui psicólogo/psiquiatra."
+        },
+        {
+          "label": "Letra D — internação independente",
+          "detail": "Decisão grave sem avaliação médica.",
+          "correct": "Gabarito letra B — internação exige avaliação médica e equipe multiprofissional."
+        }
+      ],
+      "footer_rule": "Na prova, técnico nunca prescreve nem interna sozinho"
+    }
+  ]
+}

@@ -1,4 +1,9 @@
 import type { SimuladoModo } from '@/lib/simulado/types';
+import { formatWeeklySimuladoAlunoTitulo } from '@/lib/simulado/weeklyDisplayTitle';
+
+export type SessionDisplayOptions = {
+  weeklyOrdinal?: number | null;
+};
 
 export type RitmoMetaOption = '2min' | '3min' | 'none';
 
@@ -55,7 +60,11 @@ export function formatRitmoMetaLabel(
 export function sessionDisplayTitulo(
   titulo: string | null | undefined,
   modo: SimuladoModo,
+  options?: SessionDisplayOptions,
 ): string {
+  if (options?.weeklyOrdinal != null && options.weeklyOrdinal >= 1) {
+    return formatWeeklySimuladoAlunoTitulo(options.weeklyOrdinal);
+  }
   const trimmed = titulo?.trim();
   if (trimmed) return trimmed;
   return modo === 'prova' ? 'Prova' : 'Simulado · Treino';

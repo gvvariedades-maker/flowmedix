@@ -4,7 +4,7 @@ import {
   buildInferSubtopicoPrompt,
   inferSubtopicoHeuristic,
 } from '@/lib/catalogMigration/inferSubtopicoFromEnunciado';
-import { applySubtopicoLabelToPayload } from '@/lib/catalogMigration/reclassifySubtopico';
+import { applySubtopicoLabelToPayload, syncTituloAulaFromMetaSubtopico } from '@/lib/catalogMigration/reclassifySubtopico';
 
 describe('inferSubtopicoFromEnunciado helpers', () => {
   it('parseSubtopicoInference aceita JSON válido', () => {
@@ -63,5 +63,25 @@ describe('applySubtopicoLabelToPayload', () => {
     expect((result.payload as { meta: { subtopico: string } }).meta.subtopico).toBe(
       'Verificação de Sinais Vitais',
     );
+  });
+
+  it('syncTituloAulaFromMetaSubtopico alinha titulo_aula ao meta canônico', () => {
+    const payload = {
+      meta: { banca: 'X', topico: 'Enfermagem', subtopico: 'Urgências e Emergências' },
+      question_data: {
+        instruction: 'RCP 30:2',
+        options: [{ id: 'A', text: 'Sim', is_correct: true }],
+      },
+      reverse_study_slides: [
+        { type: 'concept_map', meta: { subtopico: 'Urgências e Emergências' }, items: [{ label: 'A' }] },
+        { type: 'golden_rule', content: 'Regra' },
+        { type: 'logic_flow', steps: ['1'] },
+        { type: 'danger_zone', content: 'X', items: [{ label: 'E', detail: 'd', correct: 'c' }] },
+      ],
+    };
+    const result = syncTituloAulaFromMetaSubtopico(payload, 'Processo de Enfermagem');
+    expect(result.changed).toBe(true);
+    expect(result.toLabel).toBe('Urgências e Emergências');
+    expect(result.zodValid).toBe(true);
   });
 });

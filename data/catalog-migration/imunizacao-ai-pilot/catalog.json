@@ -1,0 +1,42 @@
+{
+  "exported_at": "2026-06-20T15:22:05.169Z",
+  "lote": "imunizacao-ai-pilot",
+  "total": 5,
+  "entries": [
+    {
+      "modulo_slug": "adm-tec-enfermagem-atencao-basica-saude-da-familia-1778968156152-4",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 1907
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1777103244679-1",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 824
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1779563986606-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3687
+    },
+    {
+      "modulo_slug": "adm-tec-enfermagem-imunizacao-1779564031957-5",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "ADM&TEC",
+      "avant_codigo": 3740
+    },
+    {
+      "modulo_slug": "agirh-enfermagem-imunizacao-1779563975447-7",
+      "titulo_aula": "Imunização",
+      "modulo_nome": "Enfermagem",
+      "banca": "AGIRH",
+      "avant_codigo": 3680
+    }
+  ]
+}

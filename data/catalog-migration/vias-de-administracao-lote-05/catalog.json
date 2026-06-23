@@ -1,18 +1,18 @@
 {
-  "exported_at": "2026-06-09T11:15:17.631Z",
+  "exported_at": "2026-06-19T15:17:10.912Z",
   "lote": "vias-de-administracao-lote-05",
   "total": 50,
   "entries": [
     {
       "modulo_slug": "ivin-enfermagem-vias-de-administracao-1778968666352-1",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
       "modulo_nome": "Enfermagem",
       "banca": "IVIN",
       "avant_codigo": 2014
     },
     {
       "modulo_slug": "ivin-enfermagem-vias-de-administracao-1778968877204-4",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
       "modulo_nome": "Enfermagem",
       "banca": "IVIN",
       "avant_codigo": 2073
@@ -61,14 +61,14 @@
     },
     {
       "modulo_slug": "metrocapital-enfermagem-vias-de-administracao-1778968768987-3",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
       "modulo_nome": "Enfermagem",
       "banca": "METROCAPITAL",
       "avant_codigo": 2036
     },
     {
       "modulo_slug": "metrocapital-enfermagem-vias-de-administracao-1778968768987-4",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
       "modulo_nome": "Enfermagem",
       "banca": "METROCAPITAL",
       "avant_codigo": 2037
@@ -96,7 +96,7 @@
     },
     {
       "modulo_slug": "ms-sarmento-enfermagem-vias-de-administracao-1778968646731-7",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Urgências e Emergências",
       "modulo_nome": "Enfermagem",
       "banca": "MS (SARMENTO)",
       "avant_codigo": 2012
@@ -110,7 +110,7 @@
     },
     {
       "modulo_slug": "objetiva-concursos-enfermagem-vias-de-administracao-1776056338955-7",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
       "modulo_nome": "Enfermagem",
       "banca": "OBJETIVA CONCURSOS",
       "avant_codigo": 365
@@ -208,7 +208,7 @@
     },
     {
       "modulo_slug": "reis-e-reis-enfermagem-vias-de-administracao-1778968629127-7",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
       "modulo_nome": "Enfermagem",
       "banca": "REIS E REIS",
       "avant_codigo": 2004
@@ -250,14 +250,14 @@
     },
     {
       "modulo_slug": "selecon-enfermagem-vias-de-administracao-1778968629127-4",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
       "modulo_nome": "Enfermagem",
       "banca": "SELECON",
       "avant_codigo": 2001
     },
     {
       "modulo_slug": "selecon-enfermagem-vias-de-administracao-1778968687469-0",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Mobilização e Posicionamento do Paciente",
       "modulo_nome": "Enfermagem",
       "banca": "SELECON",
       "avant_codigo": 2023
@@ -278,7 +278,7 @@
     },
     {
       "modulo_slug": "unifil-enfermagem-vias-de-administracao-1778968956139-6",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Saúde da Criança",
       "modulo_nome": "Enfermagem",
       "banca": "UNIFIL",
       "avant_codigo": 2091

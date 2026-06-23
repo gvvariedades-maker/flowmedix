@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "banca": "IDECAN",
+    "prova": "Tec (UFBA)",
+    "orgao": "UFBA",
+    "ano": "2022",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+    "content_standard": "golden-v1",
+    "family": "certo_errado",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "handcraft-pilot",
+      "guideline_snapshot": "Anvisa RDC 15/2012 — CME e responsabilidade técnica",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "cme-anvisa-rdc15",
+        "tier": "A",
+        "issuer": "Anvisa",
+        "title": "RDC 15/2012 — reprocessamento de produtos para saúde",
+        "year": 2012,
+        "covers": ["CME", "responsável técnico", "processamento", "função hospitalar"]
+      },
+      {
+        "id": "cofen-rt-cme",
+        "tier": "B",
+        "issuer": "COFEN",
+        "title": "Resolução COFEN — responsabilidade técnica em CME",
+        "year": 2009,
+        "covers": ["enfermeiro RT", "supervisão do processamento"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Na Central de Materiais e Esterilização (CME) cabe aos enfermeiros responsáveis técnicos a participação, coordenação, execução, supervisão e avaliação de todas as etapas do processamento de produtos para saúde. A CME é conhecida como o coração do Hospital pois é o local em que ocorre o processamento, esterilização de todos os materiais e equipamentos que serão utilizados nos atendimentos.",
+    "options": [
+      { "id": "A", "text": "Certo", "is_correct": true },
+      { "id": "B", "text": "Errado", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "CME — papel e função",
+      "chip_label": "C/E",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "items": [
+        { "label": "Comando", "detail": "Julgar se a descrição da CME e do enfermeiro RT está correta.", "icon": "Scale" },
+        { "label": "Enfermeiro RT", "detail": "Participa, coordena, executa, supervisiona e avalia todas as etapas do processamento.", "icon": "UserCheck" },
+        { "label": "Coração do hospital", "detail": "Metáfora pedagógica — CME processa e esteriliza material de todo o atendimento.", "icon": "Heart" },
+        { "label": "Gabarito", "detail": "Certo — papel do RT e função da CME descritos corretamente.", "icon": "CheckCircle" }
+      ],
+      "footer_rule": "CME = processamento seguro + RT enfermeiro"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "CME — referência de prova",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "content": "PAPEL DA CME",
+      "rows": [
+        { "label": "Função", "value": "Processar, esterilizar e distribuir material para atendimentos", "badge": "hot", "emphasis": "highlight" },
+        { "label": "RT", "value": "Enfermeiro — coordena e supervisiona todas as etapas", "badge": "hot" },
+        { "label": "Metáfora", "value": "“Coração do hospital” — base da segurança do paciente", "badge": "ok" },
+        { "label": "Gabarito", "value": "Certo", "badge": "hot" }
+      ],
+      "footer_rule": "Falha na CME = risco de IRAS em todo o hospital"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "steps": [
+        "Afirmativa sobre CME e enfermeiro responsável técnico — julgar C/E.",
+        "RT enfermeiro supervisiona todas as etapas do processamento → alinhado à norma.",
+        "CME processa e esteriliza material de uso assistencial → função correta.",
+        "“Coração do hospital” é metáfora aceita em prova e literatura.",
+        "Nenhum trecho contradiz RDC 15/2012 ou COFEN.",
+        "Marcar Certo."
+      ],
+      "footer_rule": "RT + função da CME = temas clássicos de C/E"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "content": "PEGADINHAS — por que marcar Errado?",
+      "items": [
+        {
+          "label": "Achar que técnico é o RT",
+          "detail": "A afirmativa cita enfermeiro responsável técnico — papel legal do enfermeiro na CME.",
+          "correct": "COFEN e Anvisa atribuem supervisão do processamento ao enfermeiro RT — Certo."
+        },
+        {
+          "label": "Rejeitar a metáfora “coração”",
+          "detail": "Não é definição normativa, mas expressão pedagógica válida sobre a importância da CME.",
+          "correct": "A função descrita (processar e esterilizar material de atendimento) está correta."
+        },
+        {
+          "label": "Confundir CME só com esterilização",
+          "detail": "O texto menciona processamento e esterilização — etapas completas da unidade.",
+          "correct": "Processamento inclui recepção, limpeza, embalagem, esterilização e distribuição."
+        }
+      ],
+      "footer_rule": "C/E: marque Errado só se houver erro factual — aqui não há"
+    }
+  ]
+}

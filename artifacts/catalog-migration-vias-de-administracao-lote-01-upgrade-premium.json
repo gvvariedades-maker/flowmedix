@@ -1,421 +1,671 @@
 {
-  "generated_at": "2026-06-09T11:07:21.930Z",
+  "generated_at": "2026-06-19T16:15:55.635Z",
   "lote": "vias-de-administracao-lote-01",
   "mode": "write",
-  "force": false,
+  "force": true,
   "danger_only": false,
   "preserve_rich_slides": true,
   "total_files": 50,
-  "upgraded": 0,
-  "skipped": 50,
+  "upgraded": 50,
+  "skipped": 0,
   "failed": 0,
   "family_counts": {
-    "calc": 4,
+    "calc": 2,
+    "vf": 4,
     "conceito": 40,
     "protocolo": 1,
-    "vf": 2,
     "certo_errado": 3
   },
   "results": [
     {
       "modulo_slug": "adm-tec-enfermagem-vias-de-administracao-1776056401060-9",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "agirh-enfermagem-vias-de-administracao-1778968768987-7",
-      "status": "skipped",
-      "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "status": "upgraded",
+      "family": "vf",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "agirh-enfermagem-vias-de-administracao-1778968787431-0",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "amauc-enfermagem-vias-de-administracao-1776056348175-0",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
     },
     {
       "modulo_slug": "amauc-enfermagem-vias-de-administracao-1776056374837-2",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "amauc-enfermagem-vias-de-administracao-1776056374837-6",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968768987-6",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968906156-5",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968906156-6",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968956139-1",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "amauc-enfermagem-vias-de-administracao-1778968956139-2",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056348175-5",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056348175-6",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056357082-4",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056357082-5",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "protocolo",
-      "golden_reference": "questao-premium-urgencias-rcp.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056366158-1",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056366158-2",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056374837-3",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1776056383154-4",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1778968687469-5",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1778968968468-5",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "ameosc-enfermagem-vias-de-administracao-1778968997293-0",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "atame-enfermagem-vias-de-administracao-1778968573722-0",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056330579-8",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056338955-0",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056338955-1",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "vf",
       "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056338955-6",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056391403-1",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056391403-8",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056401060-7",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056409987-8",
-      "status": "skipped",
-      "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
-      "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
-    },
-    {
-      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056409987-9",
-      "status": "skipped",
-      "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
-    },
-    {
-      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056427936-4",
-      "status": "skipped",
-      "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
-    },
-    {
-      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056427936-5",
-      "status": "skipped",
-      "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
-    },
-    {
-      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968598934-1",
-      "status": "skipped",
-      "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
-    },
-    {
-      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968598934-2",
-      "status": "skipped",
-      "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
-    },
-    {
-      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-3",
-      "status": "skipped",
-      "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
-    },
-    {
-      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-4",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "vf",
       "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056409987-9",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056427936-4",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1776056427936-5",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968598934-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968598934-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-3",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-4",
+      "status": "upgraded",
+      "family": "vf",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-5",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968825263-6",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968956139-7",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "avancasp-enfermagem-vias-de-administracao-1778968956139-8",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1776056401060-2",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "certo_errado",
       "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
     },
     {
       "modulo_slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1778968997293-6",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "certo_errado",
-      "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "cebraspe-cespe-enfermagem-vias-de-administracao-1778968997293-7",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "certo_errado",
       "golden_reference": "questao-premium-cpcon-poliomielite-pfa-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
     },
     {
       "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1776056391403-4",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1778968906156-4",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
     },
     {
       "modulo_slug": "cetrede-enfermagem-vias-de-administracao-1778968997293-3",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
     },
     {
       "modulo_slug": "cev-urca-enfermagem-vias-de-administracao-1776056357082-3",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-cpcon-vias-im-vf.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     },
     {
       "modulo_slug": "cev-urca-enfermagem-vias-de-administracao-1776056427936-7",
-      "status": "skipped",
+      "status": "upgraded",
       "family": "conceito",
       "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
       "generic_before": false,
-      "detail": "slides já premium (use --force para sobrescrever)"
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
     }
   ]
 }

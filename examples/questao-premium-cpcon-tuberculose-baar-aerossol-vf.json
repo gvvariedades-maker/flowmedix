@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "Tec Enf",
+    "orgao": "Pref Guarabira",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)"
+  },
+  "question_data": {
+    "instruction": "Sobre tuberculose e vigilância epidemiológica, analise as afirmativas.\n\nI - A tuberculose é doença de notificação compulsória e exige investigação de contactantes.\nII - O Bacilo Álcool-Ácido Resistente (BAAR) no escarro é exame utilizado na investigação diagnóstica.\nIII - Pacientes com tuberculose pulmonar bacilífera não precisam de precaução de aerossóis, pois a transmissão ocorre apenas por contato direto com pele.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Tuberculose — mapa",
+      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)" },
+      "items": [
+        { "label": "Notificação", "detail": "Compulsória — vigilância e busca de contactantes.", "icon": "FileWarning" },
+        { "label": "BAAR", "detail": "Pesquisa de bacilo no escarro — exame diagnóstico clássico.", "icon": "Microscope" },
+        { "label": "Transmissão", "detail": "Gotículas/aerossóis — não contato cutâneo.", "icon": "Wind" },
+        { "label": "Precaução", "detail": "Bacilífero: aerossóis + quarto + máscara conforme protocolo.", "icon": "Shield" }
+      ],
+      "footer_rule": "TB pulmonar bacilífera = aerossóis, não contato de pele"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "TB — referência",
+      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)" },
+      "content": "BAAR",
+      "rows": [
+        { "label": "Notificação", "value": "Compulsória + contactantes", "badge": "ok" },
+        { "label": "BAAR", "value": "Escarro — investigação", "badge": "ok" },
+        { "label": "Só contato pele", "value": "Falso — aerossóis/gotículas", "emphasis": "alert", "badge": "warn" },
+        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+      ],
+      "footer_rule": "III inverte via de transmissão — erro clássico"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)" },
+      "steps": [
+        "I: notificação e contactantes → verdadeira.",
+        "II: BAAR no escarro → verdadeira.",
+        "III: sem aerossóis, só pele → falsa.",
+        "Letra B.",
+        "Fixação: bacilífero exige precaução respiratória."
+      ],
+      "footer_rule": "TB: notificar + examinar + precaução correta"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)" },
+      "content": "PEGADINHAS — TB",
+      "items": [
+        { "label": "TB = contato", "detail": "III descreve via errada.", "correct": "Transmissão por gotículas/aerossóis." },
+        { "label": "Não notificar", "detail": "I reforça compulsoriedade.", "correct": "Notificar e investigar contactantes." },
+        { "label": "BAAR em sangue", "detail": "Exame clássico é escarro, não hemocultura de rotina.", "correct": "BAAR no escarro." }
+      ],
+      "footer_rule": "Bacterianas: vigilância + exame + precaução alinhados"
+    }
+  ]
+}

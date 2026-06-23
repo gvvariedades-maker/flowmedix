@@ -25,6 +25,7 @@ export type SimuladoProvaInstrucoesProps = {
   iniciarProvaError: string | null;
   onIniciar: () => void;
   sessionKind?: SimuladoSessionKind;
+  weeklyOrdinal?: number | null;
   className?: string;
 };
 
@@ -44,12 +45,15 @@ export function SimuladoProvaInstrucoes({
   iniciarProvaError,
   onIniciar,
   sessionKind = 'livre',
+  weeklyOrdinal,
   className,
 }: SimuladoProvaInstrucoesProps) {
   const [instrucoesLidas, setInstrucoesLidas] = useState(false);
   const checkboxId = useId();
 
-  const tituloExibicao = sessionDisplayTitulo(titulo, modo);
+  const tituloExibicao = sessionDisplayTitulo(titulo, modo, {
+    weeklyOrdinal: sessionKind === 'weekly' ? weeklyOrdinal : undefined,
+  });
   const ritmoLabel = formatRitmoMetaLabel(ritmoMetaSegundosPorQuestao);
   const metaTotalHms = formatTempoMetaTotal(totalQuestoes, ritmoMetaSegundosPorQuestao);
 

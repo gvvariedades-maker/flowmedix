@@ -1,11 +1,9 @@
 {
   "lote": "vias-de-administracao-lote-01",
-  "exported_at": "2026-06-09T11:07:02.524Z",
+  "exported_at": "2026-06-19T15:15:40.343Z",
   "source": "supabase",
   "filters": {
-    "subtopico": "Vias de Administração",
-    "limit": 50,
-    "exclude_count": 19
+    "from_manifest": "data/catalog-migration/vias-de-administracao-lote-01/manifest.json"
   },
   "slugs": [
     "adm-tec-enfermagem-vias-de-administracao-1776056401060-9",

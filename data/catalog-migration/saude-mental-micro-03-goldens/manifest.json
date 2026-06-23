@@ -1,0 +1,14 @@
+{
+  "lote": "saude-mental-micro-03-goldens",
+  "exported_at": "2026-06-23T16:00:00.000Z",
+  "source": "handcraft",
+  "filters": {
+    "micro_lote": "SM-3",
+    "cluster": "Redução de danos / entrevista motivacional",
+    "anchor": "questao-premium-idecan-saude-mental-reducao-danos.json"
+  },
+  "slugs": [
+    "idecan-enfermagem-saude-mental-1778712418722-2",
+    "vunesp-enfermagem-dependencia-quimica-1778967935713-4"
+  ]
+}

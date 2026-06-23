@@ -1,0 +1,29 @@
+{
+  "lote": "cme-g05",
+  "exported_at": "2026-06-23T17:52:40.083Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "fcpc-enfermagem-processo-de-enfermagem-1780004906875-5",
+      "fcpc-enfermagem-processo-de-enfermagem-1780004906875-7",
+      "fcpc-enfermagem-processo-de-enfermagem-1780004906875-8",
+      "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-1",
+      "idib-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778934918280-9",
+      "idib-enfermagem-nocoes-de-fisiologia-1778934957741-9",
+      "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-4",
+      "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-7",
+      "quadrix-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-0"
+    ]
+  },
+  "slugs": [
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-5",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-7",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-8",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780067013432-1",
+    "idib-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778934918280-9",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-9",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-4",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008197597-7",
+    "quadrix-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-0"
+  ]
+}

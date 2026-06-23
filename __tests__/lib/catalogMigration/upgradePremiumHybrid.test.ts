@@ -60,6 +60,32 @@ describe('upgradePremiumHybrid', () => {
     expect(family).toBe('conceito');
   });
 
+  it('bomba de infusão sem cálculo numérico é conceito, não calc', () => {
+    const family = classifyFamily(
+      'São fármacos que devem ser administrados preferencialmente em bomba de infusão:',
+      'Cuidados na Administração de Medicamentos',
+      [
+        { id: 'A', text: 'Antieméticos.', is_correct: false },
+        { id: 'E', text: 'Simpaticomiméticos e Bloqueadores beta.', is_correct: true },
+      ],
+      '',
+    );
+    expect(family).toBe('conceito');
+  });
+
+  it('taxa de infusão com cálculo continua sendo calc', () => {
+    const family = classifyFamily(
+      'Calcule a taxa de infusão em gts/min para 500 mL em 8 horas.',
+      'Cálculo de Administração de Medicamentos e Infusões',
+      [
+        { id: 'A', text: '21 gts/min', is_correct: true },
+        { id: 'B', text: '10 gts/min', is_correct: false },
+      ],
+      '',
+    );
+    expect(family).toBe('calc');
+  });
+
   it('monta danger_zone com letras reais e campo correct', () => {
     const dz = buildDangerZoneFromOptions({
       options: GENERIC_PAYLOAD.question_data.options,
@@ -92,8 +118,12 @@ describe('upgradePremiumHybrid', () => {
     expect(result.changed).toBe(true);
     expect(result.zodValid).toBe(true);
     expect(result.family).toBe('conceito');
-    expect(result.changes).toContain('danger_zone');
-    expect(result.changes).toContain('logic_flow');
+    expect(result.changes).toEqual([
+      'concept_map',
+      'golden_rule',
+      'logic_flow',
+      'danger_zone',
+    ]);
 
     const slides = result.payload.reverse_study_slides as {
       type: string;
@@ -112,10 +142,12 @@ describe('upgradePremiumHybrid', () => {
     expect(slides.every((s) => s.layout_variant === undefined)).toBe(true);
 
     const cm = slides[0];
-    expect(cm.items?.[0]?.label).toBe('Conceito cobrado');
+    expect(cm.items?.some((i) => i.label === 'Gabarito' || i.label === 'Marco da questão')).toBe(
+      true,
+    );
 
     const gr = slides[1];
-    expect(gr.content).toContain('FOCO EM PROVA');
+    expect(gr.rows?.length).toBeGreaterThan(0);
 
     const lf = slides[2];
     expect(lf.reveal_mode).toBe('tap');
@@ -145,7 +177,8 @@ describe('upgradePremiumHybrid', () => {
     }[];
     expect(calcSlides.every((s) => s.layout_variant === undefined)).toBe(true);
     expect(calcSlides[1].rows?.length).toBeGreaterThan(0);
-    expect(calcSlides[0].items?.length).toBe(2);
+    expect(calcSlides[0].items?.length).toBeGreaterThanOrEqual(3);
+    expect(hasGenericSlides(calcSlides)).toBe(false);
 
     const protoPayload = {
       ...GENERIC_PAYLOAD,
@@ -160,9 +193,13 @@ describe('upgradePremiumHybrid', () => {
     const protoSlides = proto.payload.reverse_study_slides as {
       layout_variant?: string;
       content?: string;
+      rows?: unknown[];
     }[];
     expect(protoSlides.every((s) => s.layout_variant === undefined)).toBe(true);
-    expect(protoSlides[1].content).toContain('PROTOCOLO DE PROVA');
+    expect(
+      protoSlides[1].content?.includes('RCP') ||
+        (protoSlides[1].rows?.length ?? 0) > 0,
+    ).toBe(true);
   });
 
   it('pula questões já premium sem --force', () => {

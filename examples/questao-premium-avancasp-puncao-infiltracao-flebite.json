@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "banca": "AVANÇASP",
+    "prova": "TEnf",
+    "orgao": "Pref Pedreira",
+    "ano": "2024",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Punção Venosa e Cuidados com Cateteres",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-22",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "Complicações de acesso venoso periférico — infiltração, flebite, hematoma",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "cofen-puncao-complicacoes",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Procedimentos de enfermagem — punção venosa e complicações locais",
+        "year": 2024,
+        "covers": ["infiltração", "flebite", "extravasamento", "hematoma"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Ao administrar medicamentos endovenosos, você observou que houve passagem do líquido para o tecido subcutâneo. Isso ocorreu em função do deslocamento da agulha ou por sua penetração na parede do vaso. Esse tipo de acidente resultou em qual das situações abaixo?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Esclerose da veia",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Abscesso",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Hematoma",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Flebite",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Infiltração",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Complicações IV — infiltração × flebite",
+      "chip_label": "FLEBITE",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "items": [
+        {
+          "label": "Contexto",
+          "detail": "Líquido da infusão no tecido subcutâneo por deslocamento ou perfuração da agulha — identifique o tipo de complicação.",
+          "icon": "Gauge"
+        },
+        {
+          "label": "Infiltração",
+          "detail": "Solução medicamentosa fora do vaso, no subcutâneo — mecanismo descrito no enunciado (gabarito E).",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Flebite",
+          "detail": "Inflamação da veia: dor, calor, rubor e endurecimento no trajeto venoso — retire o dispositivo.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Hematoma",
+          "detail": "Extravasamento de sangue no tecido por punção/trauma — equimose local, não é solução de infusão no subcutâneo.",
+          "icon": "CircleX"
+        },
+        {
+          "label": "Esclerose / abscesso",
+          "detail": "Esclerose = irritação química crônica da veia; abscesso = coleção purulenta — não batem com o mecanismo imediato do enunciado.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra E — Infiltração: passagem do líquido infundido para o tecido subcutâneo.",
+          "icon": "Target"
+        }
+      ],
+      "footer_rule": "Infiltração = solução fora da veia; flebite = inflamação do trajeto venoso."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Tabela — complicações do acesso venoso",
+      "chip_label": "REGRA DE OURO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "content": "FLEBITE: RETIRAR DISPOSITIVO + AVALIAR EXTENSÃO + NÃO REUTILIZAR O MESMO ACESSO",
+      "rows": [
+        {
+          "label": "Mecanismo do enunciado",
+          "value": "Líquido no subcutâneo por deslocamento/perfuração da agulha → infiltração.",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Infiltração",
+          "value": "Solução fora do vaso, no tecido subcutâneo — suspenda, retire dispositivo, avalie.",
+          "emphasis": "success",
+          "badge": "ok"
+        },
+        {
+          "label": "Flebite",
+          "value": "Dor, calor, rubor no trajeto da veia — inflamação venosa, não é líquido no subcutâneo.",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Hematoma",
+          "value": "Sangue no tecido por punção — equimose, não medicamento extravasado.",
+          "emphasis": "default",
+          "badge": "info"
+        },
+        {
+          "label": "Esclerose",
+          "value": "Endurecimento/química na veia por irritantes — evolução, não o quadro agudo do enunciado.",
+          "emphasis": "default",
+          "badge": "info"
+        },
+        {
+          "label": "Abscesso",
+          "value": "Infecção com coleção purulenta — não é a definição imediata de líquido no subcutâneo.",
+          "emphasis": "default",
+          "badge": "info"
+        },
+        {
+          "label": "Gabarito",
+          "value": "Letra E",
+          "emphasis": "highlight",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "A banca confunde infiltração (líquido no subcutâneo) com flebite (inflamação da veia)."
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — infiltração × flebite",
+      "chip_label": "PASSO A PASSO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "reveal_mode": "tap",
+      "steps": [
+        "Ler o comando: líquido passou para o tecido subcutâneo por deslocamento ou perfuração da agulha.",
+        "Fixar o mecanismo: solução medicamentosa fora do vaso = infiltração (não inflamação da parede venosa).",
+        "Identificar gabarito: letra E — Infiltração.",
+        "Testar letra D (Flebite): inflamação do trajeto venoso — eliminar (não é líquido no subcutâneo).",
+        "Testar letra C (Hematoma): sangue no tecido — eliminar.",
+        "Testar letra A (Esclerose) e B (Abscesso): não descrevem o mecanismo imediato do enunciado — eliminar.",
+        "Marcar letra E.",
+        "Fixação: flebite exige retirada do cateter inflamado; infiltração = solução fora da veia."
+      ],
+      "footer_rule": "Identifique sinais locais → classifique a complicação → conduta (suspender, retirar, documentar)."
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas que a banca monta",
+      "chip_label": "ARMADILHAS DE PROVA",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "content": "PEGADINHAS — FLEBITE E ACESSO VENOSO",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra D — Flebite",
+          "detail": "A banca coloca flebite porque o aluno associa qualquer complicação IV a inflamação venosa — mas o enunciado descreve líquido no subcutâneo.",
+          "correct": "Gabarito letra E — infiltração é solução fora do vaso; flebite é dor/calor/rubor no trajeto da veia."
+        },
+        {
+          "label": "Letra C — Hematoma",
+          "detail": "Hematoma é sangue extravasado por punção — o enunciado fala de líquido da infusão medicamentosa.",
+          "correct": "Gabarito letra E — mecanismo de infiltração da solução infundida."
+        },
+        {
+          "label": "Letra A — Esclerose da veia",
+          "detail": "Esclerose relaciona-se a irritação química crônica — não ao evento agudo descrito.",
+          "correct": "Gabarito letra E — líquido no subcutâneo por falha do acesso = infiltração."
+        },
+        {
+          "label": "Letra B — Abscesso",
+          "detail": "Abscesso é complicação infecciosa com pus — não a definição de passagem de infusato para o subcutâneo.",
+          "correct": "Gabarito letra E — classifique pelo mecanismo literal do enunciado."
+        }
+      ],
+      "footer_rule": "Sinais de flebite fecham letra E nesta prova — não mantenha o cateter com infiltração ativa."
+    }
+  ]
+}

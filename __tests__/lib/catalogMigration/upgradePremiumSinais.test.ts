@@ -13,6 +13,7 @@ import {
   SINAIS_GOLDEN_FILE,
 } from '@/lib/catalogMigration/upgradePremiumSinais';
 import { lintVitalsGoldenContent } from '@/lib/slides/vitalsGoldenLint';
+import { premiumGateErrors } from '@/lib/catalogMigration/premiumGate';
 import { upgradePremiumHybrid } from '@/lib/catalogMigration/upgradePremiumHybrid';
 import { QuestaoCompletaSchema } from '@/lib/validations';
 
@@ -223,6 +224,38 @@ describe('upgradePremiumSinais', () => {
     );
     expect(result.goldenReference).toBe(SINAIS_GOLDEN_CE_FILE);
     expect(result.zodValid).toBe(true);
+  });
+
+  it('extractVitalsFromInstruction parseia T/P/R/PA no formato AVANÇASP', () => {
+    const instruction =
+      'Após verificar os sinais vitais de um adulto, foram encontrados os seguintes valores: Temperatura (T = 36,3oC), Pulso apical (P = 40 bpm), Respiração (R = 12 irpm) e Pressão Arterial (PA = 110/70 mmHg).';
+    const vitals = extractVitalsFromInstruction(instruction);
+    expect(vitals.map((v) => v.kind)).toEqual(['pa', 'temp', 'fc', 'fr']);
+  });
+
+  it('upgrade híbrido VF com (__) passa gate do molde vitals-panel', () => {
+    const instruction =
+      'Sobre sinais vitais:\n(__)A temperatura axilar considerada normal varia entre 30,5°C e 31,0°C.\n(__)A pressão arterial deve ser aferida após 5 minutos de repouso e com o braço na altura do coração.\n(__)A frequência respiratória normal em adultos varia entre 18 e 26 incursões por minuto.\n(__)O técnico de enfermagem deve registrar os sinais vitais no prontuário, incluindo data, hora e sua identificação.\nAssinale a sequência CORRETA de cima para baixo.';
+    const result = upgradePremiumHybrid(
+      {
+        ...GENERIC_SINAIS,
+        question_data: {
+          instruction,
+          options: [
+            { id: 'A', text: 'V, V, F, F.', is_correct: false },
+            { id: 'B', text: 'F, F, V, V.', is_correct: false },
+            { id: 'C', text: 'F, V, F, V.', is_correct: true },
+            { id: 'D', text: 'V, F, V, F.', is_correct: false },
+          ],
+        },
+      },
+      { force: true },
+    );
+    expect(result.zodValid).toBe(true);
+    const slides = result.payload.reverse_study_slides as { type: string; items?: unknown[]; steps?: string[] }[];
+    expect((slides.find((s) => s.type === 'concept_map')?.items ?? []).length).toBeGreaterThanOrEqual(3);
+    expect((slides.find((s) => s.type === 'logic_flow')?.steps ?? []).length).toBeGreaterThanOrEqual(3);
+    expect(premiumGateErrors(result.payload as Record<string, unknown>)).toHaveLength(0);
   });
 
   it('golden FEPESE permanece válido após upgrade idempotente', () => {

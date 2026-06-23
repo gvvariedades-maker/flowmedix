@@ -1,0 +1,28 @@
+{
+  "lote": "coleta-de-exames-laboratoriais-repair-lote-01",
+  "generated_at": "2026-06-20T11:54:54.683Z",
+  "source": "premium-needs-upgrade-supabase",
+  "subtopico": "Coleta de Exames Laboratoriais",
+  "lote_prefix": "coleta-de-exames-laboratoriais",
+  "batch": 1,
+  "has_dedicated_builder": true,
+  "builder": "upgradePremiumColeta",
+  "issue_summary": {
+    "stub_markers": 3,
+    "molde_concept_map_sem_items": 2,
+    "molde_golden_rule_sem_rows": 6
+  },
+  "slugs": [
+    "ameosc-enfermagem-processo-de-enfermagem-1780005791580-5",
+    "avancasp-enfermagem-exames-laboratoriais-1779563559434-2",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003137298-5",
+    "cetrede-enfermagem-infeccoes-no-contexto-da-biosseguranca-1777102785845-1",
+    "decorp-enfermagem-exames-laboratoriais-1779563553840-3",
+    "fepese-enfermagem-processo-de-enfermagem-1780008241722-1",
+    "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-5",
+    "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-6",
+    "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-7",
+    "idecan-enfermagem-coleta-de-exames-laboratoriais-1778712165781-8",
+    "metrocapital-enfermagem-seguranca-do-paciente-1777102936764-8"
+  ]
+}

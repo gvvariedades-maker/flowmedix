@@ -1,0 +1,35 @@
+{
+  "lote": "instalacao-e-manejo-de-sondas-repair-lote-01",
+  "generated_at": "2026-06-20T11:54:54.683Z",
+  "source": "premium-needs-upgrade-supabase",
+  "subtopico": "Instalação e Manejo de Sondas",
+  "lote_prefix": "instalacao-e-manejo-de-sondas",
+  "batch": 1,
+  "has_dedicated_builder": true,
+  "builder": "upgradePremiumSondas",
+  "issue_summary": {
+    "stub_markers": 10,
+    "molde_golden_rule_sem_rows": 9
+  },
+  "slugs": [
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780007238824-5",
+    "fauel-enfermagem-nutricao-aplicada-a-enfermagem-1777102879099-5",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004628956-4",
+    "fundatec-enfermagem-enfermagem-em-centro-cirurgico-1777103825926-2",
+    "furb-enfermagem-processo-de-enfermagem-1780011887822-8",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934957741-8",
+    "idib-enfermagem-nocoes-de-fisiologia-1778934965770-0",
+    "igeduc-enfermagem-processo-de-enfermagem-1780010917301-5",
+    "igeduc-enfermagem-processo-de-enfermagem-1780011859940-1",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-5",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-8",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-8",
+    "quadrix-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-1",
+    "selecon-enfermagem-processo-de-enfermagem-1780009310940-8",
+    "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+    "unifil-enfermagem-processo-de-enfermagem-1780003645544-4",
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-6",
+    "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102845644-4",
+    "vunesp-enfermagem-nutricao-aplicada-a-enfermagem-1777102944034-1"
+  ]
+}

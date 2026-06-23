@@ -1,0 +1,152 @@
+import type { GuidelineTable } from '@/lib/guidelines/types';
+
+/**
+ * Tuberculose — vigilância e controle.
+ * Fonte: Manual de Recomendações para o Controle da Tuberculose no Brasil (MS).
+ */
+export const TUBERCULOSE_MS: GuidelineTable = {
+  id: 'tuberculose-ms',
+  snapshot: 'TB — notificação, BAAR e precauções',
+  issuer: 'Ministério da Saúde',
+  title: 'Tuberculose — vigilância epidemiológica',
+  year: 2019,
+  url: 'https://bvsms.saude.gov.br/bvs/publicacoes/manual_recomendacoes_controle_tuberculose_brasil_2_ed.pdf',
+  entries: [
+    {
+      id: 'tb-notificacao',
+      label: 'Notificação',
+      value: 'compulsória — investigar contactantes',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tb-baar',
+      label: 'BAAR',
+      value: 'bacilo álcool-ácido resistente no escarro',
+      detail: 'Exame diagnóstico clássico da TB pulmonar.',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tb-transmissao',
+      label: 'Transmissão',
+      value: 'gotículas e aerossóis — não contato cutâneo',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tb-precaucao-bacilifero',
+      label: 'TB pulmonar bacilífera',
+      value: 'precaução para aerossóis + quarto adequado',
+      detail: 'Máscara respiratória conforme protocolo institucional.',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tb-tratamento',
+      label: 'Tratamento diretamente observado',
+      value: 'TDO — esquema básico conforme manual MS',
+      detail: 'Rifampicina, isoniazida, pirazinamida, etambutol na fase intensiva.',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tb-pegadinha-pele',
+      label: 'Pegadinha via de transmissão',
+      value: 'TB não se transmite por contato direto com pele',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tb-ppd-mantoux',
+      label: 'PPD (teste tuberculínico)',
+      value: 'PPD/Mantoux — indicação de infecção latente ou exposição',
+      detail: 'Leitura em 48–72 h (induração em mm). Não confirma doença ativa isoladamente — correlacionar com clínica e radiografia.',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tb-dot-tdo',
+      label: 'DOT/TDO',
+      value: 'Tratamento Diretamente Observado — adesão supervisionada',
+      detail: 'Profissional certifica ingestão das doses; reduz abandono e resistência bacteriana.',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tb-meningite',
+      label: 'Meningite tuberculosa',
+      value: 'Forma grave — notificação compulsória',
+      detail: 'Precaução para aerossóis em ambiente hospitalar; início precoce do esquema conforme manual MS.',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tb-incubacao',
+      label: 'Período de incubação',
+      value: '2 a 12 semanas (média ~4 semanas) até doença ativa',
+      detail: 'Infecção latente pode persistir anos sem sintomas — vigilância de contactantes.',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tb-hiv-coinfeccao',
+      label: 'TB e HIV',
+      value: 'Coinfecção acelera progressão — triagem bidirecional obrigatória',
+      detail: 'TB é doença definidora de AIDS; paciente com TB deve testar HIV e vice-versa.',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tetano-profilaxia',
+      label: 'Tétano — profilaxia pós-exposição',
+      value: 'Vacina antitetânica ± soro antitetânico conforme esquema e histórico vacinal',
+      detail: 'Feridas contaminadas, mordidas e queimaduras — atualizar calendário vacinal; não confundir com profilaxia de TB.',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'candidiase-oportunista',
+      label: 'Candidíase',
+      value: 'Infecção fúngica oportunista (Candida spp.)',
+      detail: 'Oral, vaginal ou cutânea — imunossupressão predispõe. Não é transmissão por gotículas como TB.',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tb-cultura-confirmacao',
+      label: 'Cultura para M. tuberculosis',
+      value: 'Padrão-ouro para confirmação e teste de sensibilidade',
+      detail: 'Complementa BAAR e teste molecular (TRM-TB); resultado demora semanas.',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tb-pegadinha-vacina-bcg',
+      label: 'Pegadinha BCG e PPD',
+      value: 'BCG pode causar reação cruzada no PPD — interpretar com histórico vacinal',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tetano-esquema-dt-dtpa',
+      label: 'Tétano — esquema vacinal (dT/dTpa)',
+      value: '3 doses na vida adulta com reforço a cada 10 anos (dT ou dTpa)',
+      detail: 'Profilaxia pós-exposição depende do histórico vacinal e tipo de ferida — não confundir com esquema anti-TB.',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'candidiase-oral-hiv',
+      label: 'Candidíase oral em HIV',
+      value: 'monilíase orofaríngea — placa branca removível; infecção oportunista',
+      detail: 'Sinal de imunossupressão; tratamento antifúngico — transmissão não é por aerossol como TB.',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tb-meningite-liquor',
+      label: 'Meningite TB — liquor',
+      value: 'pleocitose linfocítica, proteína elevada, glicose baixa no LCR',
+      detail: 'Forma grave — BAAR e cultura no liquor; precaução aerossóis no ambiente hospitalar.',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tb-ppd-cortes-induracao',
+      label: 'PPD — interpretação (induração)',
+      value: '≥5 mm (HIV/imunossuprimido); ≥10 mm (contactantes/risco); ≥15 mm (sem fator de risco)',
+      detail: 'Medir induração transversal em mm — eritema isolado não conta; leitura em 48–72 h.',
+      sourceId: 'tuberculose-ms',
+    },
+    {
+      id: 'tb-mdr-dot',
+      label: 'TB multirresistente (MDR) e DOT',
+      value: 'resistência a rifampicina e isoniazida — esquema prolongado com TDO obrigatório',
+      detail: 'Tratamento supervisionado (DOT/TDO) essencial para adesão e contenção de resistência.',
+      sourceId: 'tuberculose-ms',
+    },
+  ],
+};

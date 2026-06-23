@@ -1,0 +1,162 @@
+{
+  "meta": {
+    "banca": "VUNESP",
+    "prova": "Tec Enf",
+    "orgao": "Prefeitura Municipal",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "PCDT MS — Asma (manejo da crise e cuidados de enfermagem)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "pcdt-asma-crise",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Protocolo Clínico e Diretrizes Terapêuticas — Asma",
+        "year": 2021,
+        "url": "https://www.gov.br/saude/",
+        "covers": ["crise asmática", "broncodilatador inalatório", "monitorização"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Um adolescente de 16 anos chega à unidade com sibilância, dispneia e tiragem intercostal. São cuidados imediatos do técnico de enfermagem na crise asmática, EXCETO:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Avaliar frequência respiratória, SpO₂ e uso de musculatura acessória.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Posicionar em semi-Fowler e manter ambiente calmo, com acompanhante orientado.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Administrar broncodilatador inalatório conforme prescrição, com técnica adequada.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Oferecer oxigênio suplementar conforme prescrição, monitorando saturação.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Restringir ingesta hídrica para reduzir secreções brônquicas e evitar broncoespasmo.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Crise asmática — comando EXCETO",
+      "chip_label": "EXCETO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)"
+      },
+      "items": [
+        {
+          "label": "Comando",
+          "detail": "EXCETO: quatro alternativas são condutas corretas; uma é conduta inadequada ou inventada.",
+          "icon": "Target"
+        },
+        {
+          "label": "Prioridade na crise",
+          "detail": "Monitorizar, posicionar, broncodilatador inalatório e O₂ se prescrito.",
+          "icon": "Activity"
+        },
+        {
+          "label": "Exceção — letra E",
+          "detail": "Restringir água não reduz broncoespasmo — pode desidratar o paciente.",
+          "icon": "Ban"
+        },
+        {
+          "label": "GABARITO",
+          "detail": "Letra E é a única conduta incorreta.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "EXCETO: três distratores são corretos — achar o erro"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Crise asmática — cuidados imediatos",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)"
+      },
+      "content": "CRISE ASMÁTICA — ENFERMAGEM",
+      "rows": [
+        { "label": "Avaliação", "value": "FR, SpO₂, tiragem, fala entrecortada", "badge": "ok" },
+        { "label": "Posicionamento", "value": "Semi-Fowler + ambiente calmo", "badge": "ok" },
+        { "label": "Medicamento", "value": "Beta-2 inalatório conforme prescrição", "badge": "ok" },
+        { "label": "Oxigênio", "value": "Suplementar se prescrito — monitorar", "badge": "ok" },
+        { "label": "Gabarito EXCETO", "value": "Letra E — não restringir hidratação", "emphasis": "success", "badge": "hot" }
+      ],
+      "footer_rule": "Crise: broncodilatador inalatório é primeira linha"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)"
+      },
+      "steps": [
+        "Comando EXCETO: marcar a conduta inadequada.",
+        "A: avaliação de sinais respiratórios → conduta correta.",
+        "B: posicionamento e ambiente → conduta correta.",
+        "C: broncodilatador inalatório prescrito → conduta correta.",
+        "D: O₂ suplementar monitorizado → conduta correta.",
+        "E: restringir hidratação → conduta incorreta/inventada.",
+        "Marcar letra E.",
+        "Fixação: na crise asmática, hidratação não é contraindicada por ‘reduzir secreção’."
+      ],
+      "footer_rule": "EXCETO: validar cada distrator como conduta correta antes de marcar"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)"
+      },
+      "content": "PEGADINHAS — EXCETO NA CRISE ASMÁTICA",
+      "items": [
+        {
+          "label": "Letra A — parece ‘passiva’",
+          "detail": "Avaliar sinais pode parecer menos importante que medicar.",
+          "correct": "Monitorização guia gravidade e resposta — conduta correta, não é o EXCETO."
+        },
+        {
+          "label": "Letra B — ambiente calmo",
+          "detail": "Pode parecer ‘soft skill’ e não conduta técnica.",
+          "correct": "Reduz ansiedade e consumo de O₂ — cuidado válido na crise."
+        },
+        {
+          "label": "Letra C — broncodilatador",
+          "detail": "É o núcleo do tratamento — distratores corretos confundem.",
+          "correct": "Primeira linha na crise — não marcar no EXCETO."
+        },
+        {
+          "label": "Letra E — restrição hídrica",
+          "detail": "Inventa mecanismo fisiológico para ‘reduzir secreção’.",
+          "correct": "Não há base para restringir água na crise asmática — gabarito."
+        }
+      ],
+      "footer_rule": "Não confundir asma com restrição hídrica de outras condições"
+    }
+  ]
+}

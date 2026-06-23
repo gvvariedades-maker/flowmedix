@@ -1,11 +1,9 @@
 {
   "lote": "instalacao-e-manejo-de-sondas-lote-04",
-  "exported_at": "2026-06-10T03:54:51.018Z",
+  "exported_at": "2026-06-19T13:55:33.718Z",
   "source": "supabase",
   "filters": {
-    "subtopico": "Instalação e Manejo de Sondas",
-    "limit": 50,
-    "exclude_count": 150
+    "from_manifest": "data/catalog-migration/instalacao-e-manejo-de-sondas-lote-04/manifest.json"
   },
   "slugs": [
     "vunesp-enfermagem-instalacao-e-manejo-de-sondas-1776056493133-2",

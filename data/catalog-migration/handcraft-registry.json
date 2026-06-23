@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "updated_at": "2026-06-23",
+  "description": "Resolver pacote handcraft golden-v1 Trilho A a partir do nome canônico do subtópico (CLAUDE.md §9).",
+  "pacotes": {
+    "Assistência Perioperatória (Inclui SRPA)": {
+      "pacote_prefix": "perioperatoria",
+      "manifest": "data/catalog-migration/perioperatoria-completo/manifest.json",
+      "handcraft_meta": "data/catalog-migration/perioperatoria-completo/handcraft-meta.json",
+      "readme": "data/catalog-migration/perioperatoria-completo/README.md",
+      "cluster_command": "npm run cluster:perioperatoria",
+      "cluster_report": "artifacts/perioperatoria-topic-cluster-report.json",
+      "lote_pattern": "perioperatoria-g{NN}",
+      "lote_size": 8,
+      "status": "applied",
+      "total_slugs": 68,
+      "anchor_glob": "examples/questao-premium-*-perioperatoria-*.json",
+      "guideline": null
+    },
+    "Enfermagem em Central de Material e Esterilização (CME)": {
+      "pacote_prefix": "cme",
+      "manifest": "data/catalog-migration/cme-completo/manifest.json",
+      "readme": null,
+      "cluster_command": "npm run cluster:cme",
+      "cluster_report": "artifacts/cme-topic-cluster-report.json",
+      "lote_pattern": "cme-g{NN}",
+      "lote_size": 8,
+      "status": "in_progress",
+      "total_slugs": 35,
+      "anchor_glob": "examples/questao-premium-*-cme-*.json",
+      "guideline": "lib/guidelines/cme.ts"
+    },
+    "Saúde Mental": {
+      "pacote_prefix": "saude-mental",
+      "manifest": "data/catalog-migration/saude-mental-completo/manifest.json",
+      "readme": null,
+      "cluster_command": "npm run cluster:saude-mental",
+      "cluster_report": "artifacts/saude-mental-topic-cluster-report.json",
+      "lote_pattern": "saude-mental-micro-{NN}-goldens",
+      "lote_size": 4,
+      "status": "in_progress",
+      "total_slugs": 37,
+      "anchor_glob": "examples/questao-premium-*-saude-mental*.json",
+      "guideline": "lib/guidelines/saudeMental.ts"
+    }
+  },
+  "subtopicos_canonicos": [
+    "Assistência Perioperatória (Inclui SRPA)",
+    "Enfermagem em Central de Material e Esterilização (CME)",
+    "Saúde Mental"
+  ],
+  "fallback_novo_pacote": {
+    "when": "subtópico não está em pacotes",
+    "steps": [
+      "Confirmar nome exato em CLAUDE.md §9",
+      "npm run catalog:export-lote -- --lote=<slug>-completo --subtopico=\"Nome\" --limit=200",
+      "Se >70 slugs: parar e propor Trilho B (âncoras + builder); se ≤70: Trilho A",
+      "Criar entrada em handcraft-registry.json",
+      "Seguir docs/GOLDEN_HANDCRAFT_MODEL.md §3b e perioperatoria-completo/README.md como molde"
+    ],
+    "slugify_hint": "minúsculas, sem acentos, hífens (ex.: saude-da-crianca)"
+  }
+}

@@ -23,6 +23,24 @@ Um molde premium não é “mais bonito que `grid`”. É uma **metáfora intera
 
 ---
 
+## 1b. Moldes arena / compare — regras de engenharia
+
+Variantes interativas (`*-arena`, `*-trap-chips`, compare com toque) **só renderizam dados do JSON** — não reinterpretam o golden de referência do pacote.
+
+| Proibido no componente React | Obrigatório |
+|------------------------------|-------------|
+| Gabarito default (`?? 'B'`) | Letra do gabarito via `items[].correct` no formato `Gabarito letra X — …` |
+| `trapHint` fixo por letra (A/C/D do golden piloto) | `item.detail` / `item.correct` / `footer_rule` da questão |
+| Texto pedagógico fixo (“bundle de prevenção…”) | Conteúdo vindo do builder ou golden |
+
+Contrato canônico de `danger_zone.items[].correct`: `Gabarito letra {id} — {explicação}` (`lib/catalogMigration/slideContract.ts`).
+
+Code review antes de escalar migração: buscar no variant `?? '`, `if (letter === '` e strings que citam **um** caso de prova específico.
+
+Processo de rollout por ramos: [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md) § Qualidade pedagógica por ramos.
+
+---
+
 ## 2. Quando criar molde bespoke (vs. layout genérico)
 
 | Use layout genérico | Crie molde bespoke |
@@ -36,6 +54,8 @@ Um molde premium não é “mais bonito que `grid`”. É uma **metáfora intera
 ---
 
 ## 3. Pipeline em 7 fases
+
+> **Rollout do pacote inteiro:** Fases **0–6** em [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md) § Runbook. As fases abaixo são **só** para criar um molde (dentro da Fase 2 do runbook).
 
 ```mermaid
 flowchart TD

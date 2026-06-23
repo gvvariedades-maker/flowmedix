@@ -1,0 +1,63 @@
+{
+  "exported_at": "2026-06-23T17:54:09.417Z",
+  "lote": "perioperatoria-g08",
+  "total": 8,
+  "entries": [
+    {
+      "modulo_slug": "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-1",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INAZ DO PARÁ",
+      "avant_codigo": 5094
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-1",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO ACCESS",
+      "avant_codigo": 4619
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-6",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4594
+    },
+    {
+      "modulo_slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-7",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO AOCP",
+      "avant_codigo": 4595
+    },
+    {
+      "modulo_slug": "instituto-consulpam-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-1",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO CONSULPAM",
+      "avant_codigo": 1134
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-5",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IBED",
+      "avant_codigo": 4524
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269315587-5",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 2324
+    },
+    {
+      "modulo_slug": "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-6",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO VERBENA",
+      "avant_codigo": 2862
+    }
+  ]
+}

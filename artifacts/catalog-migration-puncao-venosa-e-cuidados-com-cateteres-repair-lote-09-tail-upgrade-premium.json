@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-06-23T00:45:05.538Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-09-tail",
+  "mode": "write",
+  "force": true,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 3,
+  "upgraded": 3,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "conceito": 2,
+    "protocolo": 1
+  },
+  "results": [
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-gama-puncao-scalp-jelco-calibre.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778712165781-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-funpar-puncao-tecnica-periferica.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    }
+  ]
+}

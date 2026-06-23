@@ -1,0 +1,49 @@
+{
+  "exported_at": "2026-06-23T17:31:24.343Z",
+  "lote": "saude-mental-micro-02-dependencia",
+  "total": 6,
+  "entries": [
+    {
+      "modulo_slug": "aocp-enfermagem-dependencia-quimica-1778967935713-6",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "AOCP",
+      "avant_codigo": 1842
+    },
+    {
+      "modulo_slug": "fgv-enfermagem-dependencia-quimica-1778967935713-2",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "FGV",
+      "avant_codigo": 1838
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-dependencia-quimica-1778967935713-5",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "IBFC",
+      "avant_codigo": 1841
+    },
+    {
+      "modulo_slug": "idib-enfermagem-dependencia-quimica-1778934936220-3",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDIB",
+      "avant_codigo": 1784
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-dependencia-quimica-1778968028412-0",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "IMPARH",
+      "avant_codigo": 1845
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-dependencia-quimica-1778967935713-8",
+      "titulo_aula": "Saúde Mental",
+      "modulo_nome": "Enfermagem",
+      "banca": "UNIFIL",
+      "avant_codigo": 1844
+    }
+  ]
+}

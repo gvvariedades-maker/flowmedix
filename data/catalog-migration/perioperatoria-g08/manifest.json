@@ -1,0 +1,27 @@
+{
+  "lote": "perioperatoria-g08",
+  "exported_at": "2026-06-23T17:54:09.417Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-1",
+      "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-1",
+      "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-6",
+      "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-7",
+      "instituto-consulpam-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-1",
+      "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-5",
+      "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269315587-5",
+      "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-6"
+    ]
+  },
+  "slugs": [
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-1",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-1",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-6",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-7",
+    "instituto-consulpam-enfermagem-enfermagem-em-centro-cirurgico-1777103920995-1",
+    "instituto-ibed-enfermagem-processo-de-enfermagem-1780004926596-5",
+    "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779269315587-5",
+    "instituto-verbena-enfermagem-curativos-e-manejo-de-feridas-1779344826734-6"
+  ]
+}

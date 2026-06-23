@@ -1,11 +1,10 @@
 import {
-  QuestaoCompletaSchema,
-  payloadContainsTecconcursosReference,
-} from '@/lib/validations';
-import { normalizeQuestaoSlideArrays } from '@/lib/reverseStudySlidesNormalize';
-import type { z } from 'zod';
+  formatQuestaoWriteErrors,
+  validateQuestaoForWrite,
+  type ValidatedQuestao,
+} from '@/lib/questaoSpec';
 
-export type ValidatedQuestao = z.infer<typeof QuestaoCompletaSchema>;
+export type { ValidatedQuestao };
 
 export function correctOptionId(payload: unknown): string | null {
   const opts = (payload as { question_data?: { options?: { id: string; is_correct: boolean }[] } })
@@ -17,32 +16,17 @@ export function validateAndNormalizeQuestao(
   moduloSlug: string,
   raw: unknown,
 ): { ok: true; data: ValidatedQuestao } | { ok: false; reason: string } {
-  if (payloadContainsTecconcursosReference(raw)) {
-    return { ok: false, reason: 'referência TecConcursos' };
+  const result = validateQuestaoForWrite(raw, {
+    moduloSlug,
+    premiumGate: false,
+    goldenLint: false,
+  });
+
+  if (!result.ok) {
+    return { ok: false, reason: formatQuestaoWriteErrors(result.errors) };
   }
 
-  const normalized = normalizeQuestaoSlideArrays(
-    typeof raw === 'object' && raw !== null ? { ...(raw as object) } : raw,
-  );
-  const parsed = QuestaoCompletaSchema.safeParse(normalized);
-  if (!parsed.success) {
-    const msg = parsed.error.issues
-      .slice(0, 3)
-      .map((i) => `${i.path.join('.')}: ${i.message}`)
-      .join('; ');
-    return { ok: false, reason: `Zod inválido — ${msg}` };
-  }
-
-  const data = parsed.data;
-  if (!data.meta.subtopico) data.meta.subtopico = data.meta.topico || 'Geral';
-
-  return {
-    ok: true,
-    data: {
-      ...data,
-      modulo_slug: moduloSlug,
-    } as ValidatedQuestao & { modulo_slug: string },
-  };
+  return { ok: true, data: result.data };
 }
 
 export function buildConteudoJson(data: ValidatedQuestao, moduloSlug: string) {

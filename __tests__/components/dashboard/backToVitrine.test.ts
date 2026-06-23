@@ -10,6 +10,7 @@ describe('shouldShowBackToVitrine', () => {
     expect(shouldShowBackToVitrine('/material')).toBe(true);
     expect(shouldShowBackToVitrine('/cadernos/abc')).toBe(true);
     expect(shouldShowBackToVitrine('/simulados')).toBe(true);
+    expect(shouldShowBackToVitrine('/missao-semanal')).toBe(true);
     expect(shouldShowBackToVitrine(null)).toBe(false);
   });
 });

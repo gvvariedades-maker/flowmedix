@@ -1,0 +1,37 @@
+{
+  "lote": "cme-g02",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-23",
+  "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+  "cluster": "Autoclave e métodos de esterilização",
+  "cluster_pct": 28.6,
+  "total": 10,
+  "status": "validated",
+  "anchor_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-1",
+  "golden_reference": "examples/questao-premium-iacp-cme-autoclave-parametros.json",
+  "guideline": "lib/guidelines/cme.ts (Anvisa RDC 15/2012)",
+  "slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780001440222-4",
+    "ameosc-enfermagem-processo-de-enfermagem-1780005791580-0",
+    "fcpc-enfermagem-processo-de-enfermagem-1780004906875-6",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780001846202-3",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006471061-1",
+    "igecap-enfermagem-processo-de-enfermagem-1780004293191-5",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-7",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-4",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-1",
+    "vunesp-enfermagem-processo-de-enfermagem-1780003637054-4"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=cme-g02 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/cme-g02/questions/",
+    "2. Âncora: iacp-4280851-1 → examples/questao-premium-iacp-cme-autoclave-parametros.json",
+    "3. npm run validate:goldens -- --lote=cme-g02 --strict",
+    "4. Laboratório + player (artifacts/cme-g02-links.html)",
+    "5. npm run catalog:apply-lote -- --lote=cme-g02 --dry-run",
+    "6. npm run catalog:apply-lote -- --lote=cme-g02 --apply"
+  ],
+  "prev_lote": "cme-g01 (validated 6/6)",
+  "next_lote": "cme-g03 — Processamento e esterilização — conceito (4 slugs)"
+}

@@ -1,0 +1,160 @@
+{
+  "manifest_id": "saude-mental-ramo-2-dependencia-dry-run",
+  "generated_at": "2026-06-23T15:00:00.000Z",
+  "mode": "dry-run",
+  "db_writes": false,
+  "phase": "2",
+  "ramo_id": "SM-2",
+  "ramo_label": "Dependência química + tabagismo",
+  "subtopico": "Saúde Mental",
+  "source_lote": "dependencia-quimica-lote-01",
+  "builder": "upgradePremiumSaudeMental",
+  "golden_anchor": {
+    "file": "questao-premium-fgv-saude-mental-tabagismo-pnct.json",
+    "slug": "fgv-enfermagem-dependencia-quimica-1778967935713-2"
+  },
+  "builder_profile": "artifacts/saude-mental-ramo-2-dependencia/builder-profile.json",
+  "cluster_report": "artifacts/saude-mental-topic-cluster-report.json",
+  "total_slugs": 9,
+  "in_ramo_slugs": 7,
+  "cross_ramo_slugs": 2,
+  "baseline": {
+    "premium_status_hybrid_ok": 8,
+    "premium_status_stub": 0,
+    "slide_contract_failures": 8,
+    "dominant_issue": "danger_duplicate_justifications"
+  },
+  "commands_dry_run": [
+    "npx tsx scripts/cluster-saude-mental-topics.ts",
+    "npm test -- upgradePremiumSaudeMental.test.ts",
+    "npx tsx scripts/catalog-upgrade-premium.ts --lote=dependencia-quimica-lote-01 --dry-run --subtopico=\"Saúde Mental\""
+  ],
+  "slugs": [
+    {
+      "modulo_slug": "fgv-enfermagem-dependencia-quimica-1778967935713-2",
+      "banca": "FGV",
+      "family": "conceito",
+      "builder_topic": "Tabagismo / PNCT",
+      "pedagogical_cluster": "Tabagismo / PNCT",
+      "in_ramo": true,
+      "expected_golden_reference": "questao-premium-fgv-saude-mental-tabagismo-pnct.json",
+      "premium_status": "hybrid_ok",
+      "slide_contract_issues": ["danger_duplicate_justifications"],
+      "pilot_priority": 1
+    },
+    {
+      "modulo_slug": "ibfc-enfermagem-dependencia-quimica-1778967935713-5",
+      "banca": "IBFC",
+      "family": "conceito",
+      "builder_topic": "Tabagismo / PNCT",
+      "pedagogical_cluster": "Tabagismo / PNCT",
+      "in_ramo": true,
+      "expected_golden_reference": "questao-premium-fgv-saude-mental-tabagismo-pnct.json",
+      "premium_status": "hybrid_ok",
+      "slide_contract_issues": ["danger_duplicate_justifications"],
+      "pilot_priority": 2
+    },
+    {
+      "modulo_slug": "unifil-enfermagem-dependencia-quimica-1778967935713-8",
+      "banca": "UNIFIL",
+      "family": "conceito",
+      "builder_topic": "Tabagismo / PNCT",
+      "pedagogical_cluster": "Tabagismo / PNCT",
+      "in_ramo": true,
+      "expected_golden_reference": "questao-premium-fgv-saude-mental-tabagismo-pnct.json",
+      "premium_status": "hybrid_ok",
+      "slide_contract_issues": ["danger_duplicate_justifications"],
+      "pilot_priority": 3
+    },
+    {
+      "modulo_slug": "aocp-enfermagem-dependencia-quimica-1778967935713-6",
+      "banca": "AOCP",
+      "family": "conceito",
+      "builder_topic": "Dependência química / álcool",
+      "pedagogical_cluster": "Dependência química / álcool",
+      "in_ramo": true,
+      "expected_golden_reference": "questao-premium-fgv-saude-mental-tabagismo-pnct.json",
+      "golden_note": "Roteamento tabagismo até golden álcool (IDIB) — conteúdo é sinais de abuso de drogas",
+      "premium_status": "hybrid_ok",
+      "slide_contract_issues": ["danger_duplicate_justifications"],
+      "pilot_priority": 4
+    },
+    {
+      "modulo_slug": "idib-enfermagem-dependencia-quimica-1778934936220-3",
+      "banca": "IDIB",
+      "family": "calc",
+      "builder_topic": "Dependência química / álcool",
+      "pedagogical_cluster": "Dependência química / álcool",
+      "in_ramo": true,
+      "expected_golden_reference": "questao-premium-fgv-saude-mental-tabagismo-pnct.json",
+      "golden_note": "Candidato a segundo golden (álcool V/F) — family calc é falso positivo",
+      "premium_status": "hybrid_ok",
+      "slide_contract_issues": ["danger_duplicate_justifications"],
+      "pilot_priority": 5
+    },
+    {
+      "modulo_slug": "imparh-enfermagem-dependencia-quimica-1778968028412-0",
+      "banca": "IMPARH",
+      "family": "conceito",
+      "builder_topic": "Dependência química / álcool",
+      "pedagogical_cluster": "Dependência química / álcool",
+      "in_ramo": true,
+      "expected_golden_reference": "questao-premium-fgv-saude-mental-tabagismo-pnct.json",
+      "premium_status": "hybrid_ok",
+      "slide_contract_issues": ["danger_duplicate_justifications"],
+      "pilot_priority": 6
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-dependencia-quimica-1778967935713-3",
+      "banca": "IGEDUC",
+      "family": "certo_errado",
+      "builder_topic": "Dependência química / álcool",
+      "pedagogical_cluster": "Certo ou errado",
+      "in_ramo": true,
+      "expected_golden_reference": "questao-premium-fgv-saude-mental-tabagismo-pnct.json",
+      "golden_note": "Comunidades Terapêuticas — acolhimento voluntário, não involuntário",
+      "premium_status": "hybrid_ok",
+      "slide_contract_issues": [],
+      "pilot_priority": 7
+    },
+    {
+      "modulo_slug": "fundatec-enfermagem-dependencia-quimica-1778967935713-7",
+      "banca": "FUNDATEC",
+      "family": "conceito",
+      "builder_topic": "Crise / agitação / contenção",
+      "pedagogical_cluster": "Agitação / crise / contenção (EXCETO)",
+      "in_ramo": false,
+      "expected_golden_reference": "questao-premium-fundatec-saude-mental-agitacao-exceto.json",
+      "premium_status": "hybrid_ok",
+      "slide_contract_issues": ["danger_duplicate_justifications"],
+      "pilot_priority": null,
+      "routing_note": "Fora do SM-2 — módulo Dependência Química com tema agitação"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-dependencia-quimica-1778967935713-4",
+      "banca": "VUNESP",
+      "family": "conceito",
+      "builder_topic": "Redução de danos / dependência",
+      "pedagogical_cluster": "Redução de danos / entrevista motivacional",
+      "in_ramo": false,
+      "expected_golden_reference": "questao-premium-idecan-saude-mental-reducao-danos.json",
+      "premium_status": "hybrid_ok",
+      "slide_contract_issues": ["danger_duplicate_justifications"],
+      "pilot_priority": null,
+      "routing_note": "Fora do SM-2 — golden redução de danos já existe (Fase 1)"
+    }
+  ],
+  "pilot_batch": [
+    "fgv-enfermagem-dependencia-quimica-1778967935713-2",
+    "ibfc-enfermagem-dependencia-quimica-1778967935713-5",
+    "unifil-enfermagem-dependencia-quimica-1778967935713-8",
+    "imparh-enfermagem-dependencia-quimica-1778968028412-0",
+    "igeduc-enfermagem-dependencia-quimica-1778967935713-3"
+  ],
+  "success_criteria": {
+    "zod_valid_pct": 90,
+    "stub_markers": 0,
+    "danger_duplicate_justifications": 0,
+    "slide_topic_drift": 0
+  }
+}

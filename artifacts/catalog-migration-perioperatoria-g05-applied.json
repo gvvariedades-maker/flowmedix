@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-06-23T18:03:18.943Z",
+  "lote": "perioperatoria-g05",
+  "mode": "apply",
+  "total_files": 8,
+  "ok": 8,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780002549800-2",
+    "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
+    "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5",
+    "ameosc-enfermagem-processo-de-enfermagem-1780005791580-6",
+    "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-2",
+    "avancasp-enfermagem-processo-de-enfermagem-1776056009428-8",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003868364-0",
+    "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "amauc-enfermagem-processo-de-enfermagem-1780002549800-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-coleta-de-exames-laboratoriais-1779562735777-1",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780003031246-5",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-processo-de-enfermagem-1780005791580-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "ameosc-enfermagem-verificacao-de-sinais-vitais-1779343883917-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1776056009428-8",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "avancasp-enfermagem-processo-de-enfermagem-1780003868364-0",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-verificacao-de-sinais-vitais-1779344245160-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

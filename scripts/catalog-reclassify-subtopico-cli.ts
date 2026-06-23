@@ -6,6 +6,7 @@
  *   npm run catalog:reclassify-subtopico -- --dry-run
  *   npm run catalog:reclassify-subtopico -- --apply
  *   npm run catalog:reclassify-subtopico -- --dry-run --tier=alias
+ *   npm run catalog:reclassify-subtopico -- --apply --sync-meta  # fase 2: titulo_aula ← meta.subtopico
  */
 
 import { loadEnvConfig } from '@next/env';
@@ -21,7 +22,7 @@ import {
 } from '@/lib/cache';
 import { isCanonicalSubtopico } from '@/lib/catalogMigration/canonicalSubtopicos';
 import { LEGACY_SUBTOPICO_MAP } from '@/lib/catalogMigration/legacySubtopicoMap';
-import { reclassifySubtopicoPayload } from '@/lib/catalogMigration/reclassifySubtopico';
+import { reclassifySubtopicoPayload, syncTituloAulaFromMetaSubtopico } from '@/lib/catalogMigration/reclassifySubtopico';
 
 const PAGE_SIZE = 200;
 const APPLY_BATCH = 50;
@@ -69,6 +70,7 @@ async function main() {
   const dryRun = !apply || hasFlag('dry-run');
   const mode = apply && !hasFlag('dry-run') ? 'apply' : 'dry-run';
   const tierFilter = parseArg('tier') as 'alias' | 'best_fit' | undefined;
+  const syncMeta = hasFlag('sync-meta') || hasFlag('sync-from-meta');
 
   const supabase = await createServerSupabase();
   const rows = await fetchAllRows(supabase);
@@ -92,6 +94,7 @@ async function main() {
   }> = [];
 
   let wouldChange = 0;
+  let wouldChangeMetaSync = 0;
   let skippedCanonical = 0;
   let skippedUnmapped = 0;
   let zodFail = 0;
@@ -99,22 +102,59 @@ async function main() {
   for (const row of rows) {
     const label = row.titulo_aula?.trim() ?? null;
 
-    if (isCanonicalSubtopico(label)) {
-      skippedCanonical++;
-      continue;
-    }
-
-    const result = reclassifySubtopicoPayload(row.conteudo_json, row.titulo_aula);
-
-    if (!result.changed) {
-      if (result.skipReason === 'sem mapeamento legado') {
-        skippedUnmapped++;
-        if (label) unmappedLabels.set(label, (unmappedLabels.get(label) ?? 0) + 1);
+    if (!syncMeta) {
+      if (isCanonicalSubtopico(label)) {
+        skippedCanonical++;
+        continue;
       }
+
+      const result = reclassifySubtopicoPayload(row.conteudo_json, row.titulo_aula);
+
+      if (!result.changed) {
+        if (result.skipReason === 'sem mapeamento legado') {
+          skippedUnmapped++;
+          if (label) unmappedLabels.set(label, (unmappedLabels.get(label) ?? 0) + 1);
+        }
+        continue;
+      }
+
+      if (tierFilter && result.tier !== tierFilter) continue;
+
+      if (!result.zodValid || !result.toLabel) {
+        zodFail++;
+        exceptions.push({
+          modulo_slug: row.modulo_slug,
+          reason: result.zodMessage ?? result.skipReason ?? 'zod_invalid',
+          from: result.fromLabel,
+        });
+        continue;
+      }
+
+      wouldChange++;
+      byFromLabel.set(result.fromLabel ?? '?', (byFromLabel.get(result.fromLabel ?? '?') ?? 0) + 1);
+      byToLabel.set(result.toLabel, (byToLabel.get(result.toLabel) ?? 0) + 1);
+
+      if (samples.length < 25) {
+        samples.push({
+          modulo_slug: row.modulo_slug,
+          from: result.fromLabel,
+          to: result.toLabel,
+          tier: result.tier ?? '?',
+        });
+      }
+
+      pendingUpdates.push({
+        id: row.id,
+        modulo_slug: row.modulo_slug,
+        titulo_aula: result.toLabel,
+        conteudo_json: result.payload,
+      });
       continue;
     }
 
-    if (tierFilter && result.tier !== tierFilter) continue;
+    const result = syncTituloAulaFromMetaSubtopico(row.conteudo_json, row.titulo_aula);
+
+    if (!result.changed) continue;
 
     if (!result.zodValid || !result.toLabel) {
       zodFail++;
@@ -126,7 +166,7 @@ async function main() {
       continue;
     }
 
-    wouldChange++;
+    wouldChangeMetaSync++;
     byFromLabel.set(result.fromLabel ?? '?', (byFromLabel.get(result.fromLabel ?? '?') ?? 0) + 1);
     byToLabel.set(result.toLabel, (byToLabel.get(result.toLabel) ?? 0) + 1);
 
@@ -135,7 +175,7 @@ async function main() {
         modulo_slug: row.modulo_slug,
         from: result.fromLabel,
         to: result.toLabel,
-        tier: result.tier ?? '?',
+        tier: 'meta_sync',
       });
     }
 
@@ -190,11 +230,13 @@ async function main() {
     generated_at: new Date().toISOString(),
     mode,
     tier_filter: tierFilter ?? null,
+    sync_meta: syncMeta,
     catalog_total: rows.length,
     mapped_legacy_labels: Object.keys(LEGACY_SUBTOPICO_MAP).length,
     skipped_already_canonical: skippedCanonical,
     skipped_unmapped: skippedUnmapped,
     would_change: wouldChange,
+    would_change_meta_sync: wouldChangeMetaSync,
     applied,
     zod_failures: zodFail,
     by_from_label: Object.fromEntries([...byFromLabel.entries()].sort((a, b) => b[1] - a[1])),

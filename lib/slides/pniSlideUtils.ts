@@ -113,6 +113,32 @@ export function isPniConclusionRow(label: string, value: string): boolean {
   return /combinação|gabarito|letra [a-e]|conclus|marcar/.test(text);
 }
 
+export type PniMatrixRowBadge = 'FALSA' | 'VERDADEIRA' | 'REFERÊNCIA';
+
+/** Badge V/F/REFERÊNCIA para linhas do molde pni-interval-matrix (V/F e MCQ). */
+export function inferPniMatrixRowBadge(
+  label: string,
+  value: string,
+  emphasis?: string,
+): PniMatrixRowBadge {
+  const combined = `${label} ${value}`.toLowerCase();
+
+  if (emphasis === 'alert' || /\(incorreta\)/i.test(label)) return 'FALSA';
+  if (
+    (/\bfalsa\b|\bfalso\b/.test(combined) && !/verdadeir/.test(combined)) ||
+    /→\s*falso|→\s*f\b/.test(combined)
+  ) {
+    return 'FALSA';
+  }
+
+  if (emphasis === 'success' || /\(correta\)/i.test(label)) return 'VERDADEIRA';
+  if (/verdadeira|verdadeiro|gabarito|letra [a-e]|→\s*verdadeiro|→\s*v\b/.test(combined)) {
+    return 'VERDADEIRA';
+  }
+
+  return 'REFERÊNCIA';
+}
+
 export function inferVfJudgement(text: string): VfJudgement {
   const lower = text.toLowerCase();
   if (/→\s*falso|→\s*f\b|= falso|é falsa|falso —|falsa —|falso\.|falsa\./.test(lower)) return 'false';
@@ -130,15 +156,22 @@ function extractRoman(text: string): string | undefined {
 }
 
 function extractJudgementQuestion(step: string): string {
+  const quoted = step.match(/['"]([^'"]{10,})['"]/);
+  if (quoted) return quoted[1].trim();
+
   const cleaned = step
-    .replace(/^julgar\s+(?:a\s+)?(?:afirmativa\s+)?/i, '')
+    .replace(/^(?:julgar|avaliar)\s+(?:a\s+)?(?:afirmativa\s+)?/i, '')
     .replace(/^identificar formato:.*$/i, step)
     .trim();
   const qMatch = cleaned.match(/(.+?\?)/);
   if (qMatch) return qMatch[1].trim();
   const arrowIdx = cleaned.indexOf('→');
-  if (arrowIdx > 0) return cleaned.slice(0, arrowIdx).trim().replace(/\?$/, '') + '?';
-  return cleaned.replace(/^[^:]+:\s*/, '').slice(0, 120);
+  if (arrowIdx > 0) return `${cleaned.slice(0, arrowIdx).trim().replace(/\?$/, '')}?`;
+  const withoutPrefix = cleaned.replace(/^[^:]+:\s*/, '').trim();
+  const dashIdx = withoutPrefix.indexOf(' — ');
+  const body = dashIdx > 40 ? withoutPrefix.slice(0, dashIdx).trim() : withoutPrefix;
+  if (body.length <= 500) return body;
+  return `${body.slice(0, 497)}…`;
 }
 
 export function parsePniVfStep(step: string, index: number): ParsedPniVfStep {
@@ -146,7 +179,7 @@ export function parsePniVfStep(step: string, index: number): ParsedPniVfStep {
   const roman = extractRoman(step);
   const judgement = inferVfJudgement(step);
 
-  if (/julgar\s/i.test(step) || (/afirmativa\s/i.test(step) && judgement)) {
+  if (/^(?:julgar|avaliar)\s/i.test(step) || (/afirmativa\s/i.test(step) && judgement)) {
     return {
       kind: 'judgement',
       text: step,

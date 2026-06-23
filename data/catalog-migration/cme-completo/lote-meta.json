@@ -1,0 +1,22 @@
+{
+  "lote": "cme-completo",
+  "mode": "handcraft-baseline-export",
+  "gemini": false,
+  "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+  "exported_count": 35,
+  "trilho": "A — handcraft total (≤70 slugs)",
+  "golden_reference": "examples/questao-premium-idecan-cme-areas-esterilizacao-vf.json",
+  "guideline": "lib/guidelines/cme.ts (Anvisa RDC 15/2012)",
+  "status": "exported",
+  "workflow": [
+    "1. npm run cluster:cme",
+    "2. Ler artifacts/cme-topic-cluster-report.json → priorizar ramos",
+    "3. npm run catalog:export-lote -- --lote=cme-g01 --slugs=<lista do micro-lote>",
+    "4. Handcraft golden-v1 em data/catalog-migration/cme-g01/questions/ (Cursor — sem ai:generate, sem upgrade-premium)",
+    "5. npm run validate:goldens -- --lote=cme-g01 --strict",
+    "6. Laboratório: import amostra ≥1 questão",
+    "7. npm run catalog:apply-lote -- --lote=cme-g01 --dry-run",
+    "8. npm run catalog:apply-lote -- --lote=cme-g01 --apply"
+  ],
+  "notes": "35 slugs no Supabase com meta.subtopico CME; vários slugs legados com path processo-de-enfermagem mas conteúdo CME."
+}

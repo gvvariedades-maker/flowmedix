@@ -1,0 +1,22 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-07-default",
+  "exported_at": "2026-06-23T00:28:04.852Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "artifacts/premium-upgrade-lotes/puncao-venosa-e-cuidados-com-cateteres/repair-lote-07-default-manifest.json"
+  },
+  "slugs": [
+    "ameosc-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-7",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-2",
+    "decorp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-2",
+    "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-6",
+    "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-6",
+    "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-5",
+    "itame-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-4",
+    "ivin-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-1",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-0",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-4",
+    "quadrix-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-1",
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-6"
+  ]
+}

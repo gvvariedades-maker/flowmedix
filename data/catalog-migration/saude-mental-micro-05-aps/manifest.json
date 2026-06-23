@@ -1,0 +1,21 @@
+{
+  "lote": "saude-mental-micro-05-aps",
+  "exported_at": "2026-06-23T17:31:16.427Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1",
+      "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+      "selecon-enfermagem-processo-de-enfermagem-1780009322055-9",
+      "univali-enfermagem-teorias-em-enfermagem-1776055843703-2",
+      "vunesp-enfermagem-saude-mental-1780001362784-5"
+    ]
+  },
+  "slugs": [
+    "ameosc-enfermagem-atencao-basica-saude-da-familia-1778968077998-1",
+    "cetrede-enfermagem-promocao-a-saude-e-prevencao-de-agravos-1779563946005-1",
+    "selecon-enfermagem-processo-de-enfermagem-1780009322055-9",
+    "univali-enfermagem-teorias-em-enfermagem-1776055843703-2",
+    "vunesp-enfermagem-saude-mental-1780001362784-5"
+  ]
+}

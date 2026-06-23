@@ -1,0 +1,32 @@
+{
+  "lote": "vias-de-administracao-repair-lote-01",
+  "exported_at": "2026-06-20T11:58:16.417Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "artifacts/premium-upgrade-lotes/vias-de-administracao/repair-lote-01-manifest.json"
+  },
+  "slugs": [
+    "ameosc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969554207-3",
+    "ameosc-enfermagem-processo-de-enfermagem-1780003031246-4",
+    "avancasp-enfermagem-seguranca-do-paciente-1777102861438-4",
+    "coseac-uff-enfermagem-cuidados-na-administracao-de-medicamentos-1779343967847-2",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-4",
+    "fgv-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-3",
+    "furb-enfermagem-processo-de-enfermagem-1780011908736-0",
+    "furb-enfermagem-processo-de-enfermagem-1780011908736-6",
+    "furb-enfermagem-processo-de-enfermagem-1780011915153-1",
+    "fuvest-enfermagem-cuidados-na-administracao-de-medicamentos-1778969601364-4",
+    "idecan-enfermagem-saude-do-idoso-1778712437306-6",
+    "idib-enfermagem-cuidados-na-administracao-de-medicamentos-1778934863952-7",
+    "igeduc-enfermagem-processo-de-enfermagem-1780010566816-2",
+    "inaz-do-para-enfermagem-nocoes-de-anatomia-1775448275334-4",
+    "instituto-consulpam-enfermagem-processo-de-enfermagem-1780006486032-4",
+    "instituto-consulplan-enfermagem-nocoes-de-anatomia-1775448440742-3",
+    "instituto-darwin-enfermagem-cuidados-na-administracao-de-medicamentos-1778969633568-7",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780003349182-5",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-4",
+    "instituto-verbena-enfermagem-seguranca-do-paciente-1777102802022-6",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-0",
+    "unesc-enfermagem-cuidados-na-administracao-de-medicamentos-1778969258148-5"
+  ]
+}

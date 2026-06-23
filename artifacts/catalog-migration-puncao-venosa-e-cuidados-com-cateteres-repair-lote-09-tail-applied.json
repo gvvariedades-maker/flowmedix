@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-06-23T00:45:14.816Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-09-tail",
+  "mode": "apply",
+  "total_files": 3,
+  "ok": 3,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-6",
+    "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778712165781-3",
+    "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6"
+  ],
+  "results": [
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778712165781-3",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-6",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

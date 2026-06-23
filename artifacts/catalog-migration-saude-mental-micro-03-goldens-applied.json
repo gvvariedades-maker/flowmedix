@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-06-23T17:46:05.820Z",
+  "lote": "saude-mental-micro-03-goldens",
+  "mode": "apply",
+  "total_files": 2,
+  "ok": 2,
+  "skipped": 0,
+  "failed": 0,
+  "applied_slugs": [
+    "idecan-enfermagem-saude-mental-1778712418722-2",
+    "vunesp-enfermagem-dependencia-quimica-1778967935713-4"
+  ],
+  "results": [
+    {
+      "modulo_slug": "idecan-enfermagem-saude-mental-1778712418722-2",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    },
+    {
+      "modulo_slug": "vunesp-enfermagem-dependencia-quimica-1778967935713-4",
+      "status": "ok",
+      "mode": "update",
+      "detail": "conteudo_json aplicado"
+    }
+  ]
+}

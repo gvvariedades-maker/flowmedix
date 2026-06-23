@@ -1,0 +1,131 @@
+import type { GuidelineTable } from '@/lib/guidelines/types';
+
+/**
+ * Punção venosa periférica e cuidados com cateteres.
+ * Fontes: Anvisa (RDC dispositivos invasivos), COFEN, CDC/OMS bundle CVC.
+ */
+export const PUNCAO_CATETER_ANVISA: GuidelineTable = {
+  id: 'puncao-cateter-anvisa',
+  snapshot: 'Acesso venoso, bundle CVC e manutenção',
+  issuer: 'Anvisa / COFEN',
+  title: 'Punção venosa e cuidados com cateteres',
+  year: 2021,
+  url: 'https://www.gov.br/anvisa/',
+  entries: [
+    {
+      id: 'antissepsia-puncao',
+      label: 'Antissepsia da pele',
+      value: 'clorexidina alcoólica 0,5% a 2%',
+      detail: 'Não substituir por álcool 70% isolado na punção.',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'bundle-cvc',
+      label: 'Bundle CVC — prevenção IPCS',
+      value: 'assepsia + barreira máxima + sítio adequado + curativo + remoção precoce',
+      detail: 'Medida isolada não substitui o pacote completo.',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'curativo-troca',
+      label: 'Curativo de cateter',
+      value: 'trocar quando sujo, solto ou úmido',
+      detail: 'Não em cronograma fixo de 72 horas independente do estado.',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'flebite-conduta',
+      label: 'Flebite',
+      value: 'retirar o dispositivo',
+      detail: 'Dor, calor e rubor no trajeto venoso.',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'sitio-femoral',
+      label: 'Acesso femoral',
+      value: 'não é preferência de rotina',
+      detail: 'Maior risco de infecção — reservado a situações específicas.',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'profilaxia-antibiotico',
+      label: 'Antibiótico profilático',
+      value: 'não faz parte do bundle de prevenção de IPCS',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'manutencao-assepsia',
+      label: 'Manutenção de cateter',
+      value: 'higiene das mãos + técnica asséptica no lúmen',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'veia-preferida',
+      label: 'Punção venosa periférica',
+      value: 'veia mediana cubital preferida',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'angulo-puncao',
+      label: 'Ângulo de punção periférica',
+      value: '15° a 30°',
+      detail: 'Bisel voltado para cima; avançar 2 a 3 mm após sangue.',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'flebite-grau-0',
+      label: 'Flebite — grau 0',
+      value: 'sem sintomas clínicos',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'flebite-grau-1',
+      label: 'Flebite — grau 1',
+      value: 'dor ou vermelhidão no sítio ou ao longo do trajeto',
+      detail: 'Monitorar; considerar retirada se persistir.',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'flebite-grau-2',
+      label: 'Flebite — grau 2',
+      value: 'dor + edema + endurecimento no trajeto venoso',
+      detail: 'Retirar dispositivo — escala INS (Infusion Nurses Society), adotada em protocolos brasileiros.',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'flebite-grau-3-4',
+      label: 'Flebite — grau 3 e 4',
+      value: 'grau 3: cordão palpável >2,5 cm; grau 4: supurativa',
+      detail: 'Retirar cateter imediatamente; grau 4 pode exigir antibioticoterapia.',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'midline',
+      label: 'Cateter midline',
+      value: 'acesso periférico médio — veia braquial ou basílica',
+      detail: 'Permanece até 4 semanas; não indicado para vesicantes ou irritantes (quimio, vancomicina em bolus).',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'acesso-periferico-72h',
+      label: 'Acesso periférico — permanência',
+      value: 'reavaliar diariamente; remover quando não necessário',
+      detail: 'Anvisa/CDC: não há troca rotineira a cada 72 h — trocar por indicação (flebite, extravasamento, obstrução).',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'antissepsia-tempo-secagem',
+      label: 'Clorexidina — tempo de ação',
+      value: 'friccionar e aguardar secagem completa (≈30 s)',
+      detail: 'Não fanfar ou sopar; não reutilizar o mesmo swab na pele.',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+    {
+      id: 'oclusao-heparinizacao',
+      label: 'Oclusão de cateter',
+      value: 'flush com SF 0,9% ou heparina conforme protocolo',
+      detail: 'Manter oclusão quando não em uso; técnica asséptica na conexão — previne obstrução e infecção.',
+      sourceId: 'puncao-cateter-anvisa',
+    },
+  ],
+};

@@ -1,0 +1,33 @@
+{
+  "lote": "cme-g01",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-23",
+  "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+  "cluster": "Preparo e limpeza de instrumentais",
+  "cluster_pct": 34.3,
+  "total": 6,
+  "status": "validated",
+  "anchor_slug": "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2",
+  "golden_reference": "examples/questao-premium-idecan-cme-preparo-presecagem.json",
+  "guideline": "lib/guidelines/cme.ts (Anvisa RDC 15/2012)",
+  "slugs": [
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-2",
+    "idecan-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1778712381105-5",
+    "icece-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-2",
+    "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-1",
+    "igeduc-enfermagem-enfermagem-em-central-de-material-e-esterilizacao-cme-1780001220945-3",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002217274-9"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=cme-g01 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/cme-g01/questions/ (Cursor — sem ai:generate, sem upgrade-premium)",
+    "2. Âncora: idecan-1105-2 → examples/questao-premium-idecan-cme-preparo-presecagem.json",
+    "3. npm run validate:goldens -- --lote=cme-g01 --strict",
+    "4. Laboratório: import ≥1 JSON",
+    "5. Player: amostra em /estudar/[slug]",
+    "6. npm run catalog:apply-lote -- --lote=cme-g01 --dry-run",
+    "7. npm run catalog:apply-lote -- --lote=cme-g01 --apply"
+  ],
+  "next_lote": "cme-g02 — Autoclave e métodos de esterilização (10 slugs, 28.6%)"
+}

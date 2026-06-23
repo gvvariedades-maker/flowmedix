@@ -20,6 +20,8 @@ import { DangerZoneLabPrepTrap } from './DangerZoneLabPrepTrap';
 import { DangerZoneLabSpecimenArena } from './DangerZoneLabSpecimenArena';
 import { DangerZoneDressingChoiceArena } from './DangerZoneDressingChoiceArena';
 import { DangerZonePniTrapChips } from './DangerZonePniTrapChips';
+import { DangerZoneIstTrapChips } from './DangerZoneIstTrapChips';
+import { DangerZoneAdolescentConsentGate } from './DangerZoneAdolescentConsentGate';
 import { DangerZoneVitalsClassifyArena } from './DangerZoneVitalsClassifyArena';
 
 export interface DangerZoneItem {
@@ -322,6 +324,30 @@ export const DangerZone = ({
   if (explicitVariant === 'pni-trap-chips' && items && items.length > 0) {
     return (
       <DangerZonePniTrapChips
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'ist-trap-chips' && items && items.length > 0) {
+    return (
+      <DangerZoneIstTrapChips
+        content={content}
+        items={items}
+        theme={theme}
+        footerRule={footerRule}
+        compareRevealMode={compareRevealMode}
+      />
+    );
+  }
+
+  if (explicitVariant === 'adolescent-consent-gate' && items && items.length > 0) {
+    return (
+      <DangerZoneAdolescentConsentGate
         content={content}
         items={items}
         theme={theme}

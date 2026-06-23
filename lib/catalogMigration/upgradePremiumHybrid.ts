@@ -11,25 +11,13 @@ import {
   type QuestionOption,
 } from '@/lib/catalogMigration/classifyFamily';
 import { getFamilyLayoutProfile } from '@/lib/catalogMigration/familyLayoutProfile';
+import { getDesignBySubtopic } from '@/components/slides/core/themeGenerator';
+import { normalizeCurativosInstruction } from '@/lib/catalogMigration/upgradePremiumCurativos';
+import { isPuncaoSubtopico, normalizePuncaoInstruction } from '@/lib/catalogMigration/upgradePremiumPuncao';
 import {
-  buildCurativosPremiumSlidesForFamily,
-  canBuildCurativosPremiumSlides,
-  CURATIVOS_GOLDEN_FILE,
-  isCurativosSubtopico,
-  normalizeCurativosInstruction,
-} from '@/lib/catalogMigration/upgradePremiumCurativos';
-import {
-  buildImunizacaoPremiumSlidesForFamily,
-  canBuildImunizacaoPremiumSlides,
-  imunizacaoGoldenReferenceForFamily,
-  isImunizacaoSubtopico,
-} from '@/lib/catalogMigration/upgradePremiumImunizacao';
-import {
-  buildSinaisPremiumSlidesForFamily,
-  canBuildSinaisPremiumSlides,
-  isSinaisSubtopico,
-  sinaisGoldenReferenceForFamily,
-} from '@/lib/catalogMigration/upgradePremiumSinais';
+  hasDedicatedPremiumBuilder,
+  matchDedicatedPremiumBuilder,
+} from '@/lib/catalogMigration/upgradePremiumDedicatedRouter';
 
 /** Marcadores de conteúdo stub/hybrid — gate anti-stub em `__tests__/premium-no-stub.test.ts`. */
 export const PREMIUM_STUB_MARKERS = [
@@ -444,19 +432,32 @@ function buildConceptMapStub(input: {
   };
 }
 
+function premiumGoldenRuleNeedsRows(subtopico: string): boolean {
+  const design = getDesignBySubtopic(subtopico);
+  if (!design?.goldenRule) return false;
+  const generic = new Set(['center', 'compact', 'minimal', 'banner', 'reference_table']);
+  return !generic.has(design.goldenRule);
+}
+
 function buildGoldenRuleStub(input: {
   subtopico: string;
   topico: string;
   family: FamilyId;
   correct?: QuestionOption;
+  options?: QuestionOption[];
+  instruction?: string;
 }): SlideRecord {
   const layouts = getFamilyLayoutProfile(input.family);
   const gabarito = input.correct
     ? `Letra ${input.correct.id} — ${input.correct.text}`
     : 'Conferir alternativa correta';
   const meta = slideMeta(input.topico, input.subtopico);
+  const forceRows = premiumGoldenRuleNeedsRows(input.subtopico);
 
-  if (layouts.goldenRule === 'center' || layouts.goldenRule === 'minimal') {
+  if (
+    !forceRows &&
+    (layouts.goldenRule === 'center' || layouts.goldenRule === 'minimal')
+  ) {
     const content =
       input.family === 'vf'
         ? `MONTE A COMBINAÇÃO I → II → III ANTES DE OLHAR AS LETRAS — GABARITO: ${gabarito.toUpperCase()}`
@@ -478,7 +479,7 @@ function buildGoldenRuleStub(input: {
     };
   }
 
-  if (layouts.goldenRule === 'banner') {
+  if (!forceRows && layouts.goldenRule === 'banner') {
     return {
       type: 'golden_rule',
       meta,
@@ -487,7 +488,7 @@ function buildGoldenRuleStub(input: {
     };
   }
 
-  if (layouts.goldenRule === 'compact') {
+  if (!forceRows && layouts.goldenRule === 'compact') {
     return {
       type: 'golden_rule',
       meta,
@@ -499,30 +500,36 @@ function buildGoldenRuleStub(input: {
     };
   }
 
-  const rows = [
-    {
-      label: 'Família pedagógica',
-      value: FAMILY_LABELS[input.family],
-    },
-    {
-      label: 'Subtópico',
-      value: input.subtopico,
-    },
-    {
-      label: 'Gabarito',
-      value: gabarito,
-    },
-  ];
+  const rows: { label: string; value: string }[] = [];
 
-  if (input.family === 'legis') {
+  if (input.options?.length) {
+    for (const opt of input.options) {
+      rows.push({
+        label: `Letra ${opt.id}`,
+        value: truncate(opt.text, 500),
+      });
+    }
+  } else {
+    rows.push(
+      { label: 'Família pedagógica', value: FAMILY_LABELS[input.family] },
+      { label: 'Subtópico', value: input.subtopico },
+    );
+  }
+
+  rows.push({ label: 'Gabarito', value: gabarito });
+
+  if (!forceRows && input.family === 'legis') {
+    const instructionFlat = (input.instruction ?? '').replace(/\s+/g, ' ').trim();
     rows.push({
-      label: '[IA] Dispositivo',
-      value: 'Preencher artigo/lei cobrado nesta questão',
+      label: 'Dispositivo legal',
+      value: instructionFlat
+        ? truncate(instructionFlat.slice(0, 480), 500)
+        : 'Conferir lei, artigo ou norma citada no enunciado da prova.',
     });
-  } else if (input.family === 'calc') {
+  } else if (!forceRows && input.family === 'calc') {
     rows.push({
-      label: '[IA] Fórmula',
-      value: 'Preencher fórmula e exemplo numérico da prova',
+      label: 'Fórmula de prova',
+      value: 'Conferir unidade, constante e arredondamento antes de marcar o gabarito.',
     });
   }
 
@@ -532,7 +539,9 @@ function buildGoldenRuleStub(input: {
     content: truncate(`REFERÊNCIA — ${input.subtopico.toUpperCase()}`, 1000),
     rows,
     footer_rule: truncate(
-      `[IA] Completar rows — ver ${FAMILY_GOLDEN_FILE[input.family]}`,
+      forceRows
+        ? `Fixação: ${FAMILY_LABELS[input.family]} — ver ${FAMILY_GOLDEN_FILE[input.family]}`
+        : `Referência de prova — ver ${FAMILY_GOLDEN_FILE[input.family]}`,
       500,
     ),
   };
@@ -557,13 +566,15 @@ export function upgradePremiumHybrid(
   const meta = (base.meta ?? {}) as Record<string, unknown>;
   const questionData = (base.question_data ?? {}) as Record<string, unknown>;
   const instructionRaw = String(questionData.instruction ?? '').trim();
-  const instruction = normalizeCurativosInstruction(instructionRaw);
+  const topico = String(meta.topico ?? 'Enfermagem');
+  const subtopico = String(meta.subtopico ?? topico);
+  const instruction = isPuncaoSubtopico(subtopico)
+    ? normalizePuncaoInstruction(instructionRaw)
+    : normalizeCurativosInstruction(instructionRaw);
   const textFragment = String(questionData.text_fragment ?? '').trim();
   const optionsList = Array.isArray(questionData.options)
     ? (questionData.options as QuestionOption[])
     : [];
-  const topico = String(meta.topico ?? 'Enfermagem');
-  const subtopico = String(meta.subtopico ?? topico);
 
   const family = classifyFamily(instruction, subtopico, optionsList, textFragment);
   const existingSlides = (
@@ -631,118 +642,27 @@ export function upgradePremiumHybrid(
 
   const correct = optionsList.find((o) => o.is_correct);
   const changes: UpgradeChangeCode[] = [];
-  const useCurativosPremium =
-    isCurativosSubtopico(subtopico) && canBuildCurativosPremiumSlides(instruction, family);
-  const useImunizacaoPremium =
-    isImunizacaoSubtopico(subtopico) && canBuildImunizacaoPremiumSlides(instruction, family);
-  const useSinaisPremium =
-    isSinaisSubtopico(subtopico) && canBuildSinaisPremiumSlides(instruction, family);
-  const goldenReference = useCurativosPremium
-    ? CURATIVOS_GOLDEN_FILE
-    : useImunizacaoPremium
-      ? imunizacaoGoldenReferenceForFamily(family)
-      : useSinaisPremium
-        ? sinaisGoldenReferenceForFamily(family)
-        : FAMILY_GOLDEN_FILE[family];
-
-  if (useSinaisPremium && !options.dangerOnly) {
-    const sinaisSlides = buildSinaisPremiumSlidesForFamily(
-      {
-        instruction,
-        options: optionsList,
-        topico,
-        subtopico,
-      },
-      family,
-    );
-    const working: Record<string, unknown> = {
-      ...(base as Record<string, unknown>),
-      question_data: {
-        ...questionData,
-        instruction,
-      },
-      reverse_study_slides: sinaisSlides,
-    };
-    delete working.study_slides;
-    const parsed = QuestaoCompletaSchema.safeParse(working);
-    return {
-      changed: true,
-      skipped: false,
-      family,
-      familyLabel: FAMILY_LABELS[family],
-      goldenReference,
-      genericBefore,
-      changes: ['concept_map', 'golden_rule', 'logic_flow', 'danger_zone'],
-      payload: working,
-      zodValid: parsed.success,
-      zodMessage: parsed.success
-        ? undefined
-        : parsed.error.issues
-            .slice(0, 2)
-            .map((i) => `${i.path.join('.')}: ${i.message}`)
-            .join('; '),
-      tecconcursos: false,
-    };
-  }
-
-  if (useImunizacaoPremium && !options.dangerOnly) {
-    const imunizacaoSlides = buildImunizacaoPremiumSlidesForFamily(
-      {
-        instruction,
-        options: optionsList,
-        topico,
-        subtopico,
-      },
-      family,
-    );
-    const working: Record<string, unknown> = {
-      ...(base as Record<string, unknown>),
-      question_data: {
-        ...questionData,
-        instruction,
-      },
-      reverse_study_slides: imunizacaoSlides,
-    };
-    delete working.study_slides;
-    const parsed = QuestaoCompletaSchema.safeParse(working);
-    return {
-      changed: true,
-      skipped: false,
-      family,
-      familyLabel: FAMILY_LABELS[family],
-      goldenReference,
-      genericBefore,
-      changes: ['concept_map', 'golden_rule', 'logic_flow', 'danger_zone'],
-      payload: working,
-      zodValid: parsed.success,
-      zodMessage: parsed.success
-        ? undefined
-        : parsed.error.issues
-            .slice(0, 2)
-            .map((i) => `${i.path.join('.')}: ${i.message}`)
-            .join('; '),
-      tecconcursos: false,
-    };
-  }
-
-  if (useCurativosPremium && !options.dangerOnly) {
-    const curativosSlides = buildCurativosPremiumSlidesForFamily(
-      {
-        instruction,
-        options: optionsList,
-        topico,
-        subtopico,
-      },
-      family,
-    );
-    const working: Record<string, unknown> = {
-    ...(base as Record<string, unknown>),
-    question_data: {
-      ...questionData,
-      instruction,
-    },
-    reverse_study_slides: curativosSlides,
+  const dedicatedInput = {
+    instruction,
+    options: optionsList,
+    topico,
+    subtopico,
+    family,
   };
+  const dedicatedBuilder = matchDedicatedPremiumBuilder(dedicatedInput);
+  const useDedicatedPremium = hasDedicatedPremiumBuilder(dedicatedInput);
+  const goldenReference = dedicatedBuilder?.goldenReference ?? FAMILY_GOLDEN_FILE[family];
+
+  if (dedicatedBuilder && !options.dangerOnly) {
+    const dedicatedSlides = dedicatedBuilder.buildSlides();
+    const working: Record<string, unknown> = {
+      ...(base as Record<string, unknown>),
+      question_data: {
+        ...questionData,
+        instruction,
+      },
+      reverse_study_slides: dedicatedSlides,
+    };
     delete working.study_slides;
     const parsed = QuestaoCompletaSchema.safeParse(working);
     return {
@@ -783,36 +703,8 @@ export function upgradePremiumHybrid(
   logicFlow.meta = slideMeta(topico, subtopico);
   changes.push('logic_flow');
 
-  if ((useCurativosPremium || useImunizacaoPremium || useSinaisPremium) && options.dangerOnly) {
-    const dedicatedSlides = useImunizacaoPremium
-      ? buildImunizacaoPremiumSlidesForFamily(
-          {
-            instruction,
-            options: optionsList,
-            topico,
-            subtopico,
-          },
-          family,
-        )
-      : useSinaisPremium
-        ? buildSinaisPremiumSlidesForFamily(
-            {
-              instruction,
-              options: optionsList,
-              topico,
-              subtopico,
-            },
-            family,
-          )
-        : buildCurativosPremiumSlidesForFamily(
-            {
-              instruction,
-              options: optionsList,
-              topico,
-              subtopico,
-            },
-            family,
-          );
+  if (useDedicatedPremium && options.dangerOnly && dedicatedBuilder) {
+    const dedicatedSlides = dedicatedBuilder.buildSlides();
     const dangerSlide = dedicatedSlides.find((s) => s.type === 'danger_zone');
     const logicSlide = dedicatedSlides.find((s) => s.type === 'logic_flow');
     if (dangerSlide) {
@@ -863,6 +755,8 @@ export function upgradePremiumHybrid(
       topico,
       family,
       correct,
+      options: optionsList,
+      instruction,
     });
     changes.push('golden_rule');
   }

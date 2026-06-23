@@ -524,6 +524,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         questoes={sessionData.questoes}
         incentivos={sessionData.incentivos}
         weeklyEvolution={sessionData.weekly_evolution}
+        weeklyOrdinal={sessionData.weekly_ordinal}
       />
     );
   }
@@ -542,6 +543,7 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
           iniciandoProva={iniciandoProva}
           iniciarProvaError={iniciarProvaError}
           sessionKind={resolveSimuladoSessionKind(sessionData.session.filtros)}
+          weeklyOrdinal={sessionData.weekly_ordinal}
           onIniciar={() => void handleIniciarProva()}
         />
       </DashboardMobilePage>
@@ -557,8 +559,11 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
   const hasPending = sessionData.questoes.some((q) => !q.respondida);
   const showFinalFeedbackCta = finalFeedbackPending && !!feedback && !hasPending;
   const isProvaAtiva = sessionData.session.modo === 'prova';
+  const sessionKind = resolveSimuladoSessionKind(sessionData.session.filtros);
   const runnerTitle = isProvaAtiva
-    ? sessionDisplayTitulo(sessionData.session.titulo, sessionData.session.modo)
+    ? sessionDisplayTitulo(sessionData.session.titulo, sessionData.session.modo, {
+        weeklyOrdinal: sessionKind === 'weekly' ? sessionData.weekly_ordinal : undefined,
+      })
     : 'Simulado em andamento';
   const runnerDescription = isProvaAtiva
     ? `Questão ${activeItem?.ordem ?? '—'} · ${sessionData.resumo.respondidas} de ${sessionData.session.total_questoes} respondidas`
@@ -569,7 +574,6 @@ function SimuladoRunnerView({ sessionId, activeSlug, setActiveSlug }: SimuladoRu
         { label: 'Simulados', href: '/simulados' },
         { label: `Questão ${activeItem?.ordem ?? '—'}` },
       ];
-  const sessionKind = resolveSimuladoSessionKind(sessionData.session.filtros);
 
   const finalizeButtonCompact = (
     <Button

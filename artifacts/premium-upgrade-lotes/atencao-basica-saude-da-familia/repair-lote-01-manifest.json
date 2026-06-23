@@ -1,0 +1,40 @@
+{
+  "lote": "atencao-basica-saude-da-familia-repair-lote-01",
+  "generated_at": "2026-06-20T11:54:54.683Z",
+  "source": "premium-needs-upgrade-supabase",
+  "subtopico": "Atenção Básica / Saúde da Família",
+  "lote_prefix": "atencao-basica-saude-da-familia",
+  "batch": 1,
+  "has_dedicated_builder": false,
+  "builder": null,
+  "issue_summary": {
+    "stub_markers": 25
+  },
+  "slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780005128081-2",
+    "amauc-enfermagem-processo-de-enfermagem-1780006486032-5",
+    "amauc-enfermagem-processo-de-enfermagem-1780006486032-7",
+    "ameosc-enfermagem-processo-de-enfermagem-1776056158507-7",
+    "ameosc-enfermagem-processo-de-enfermagem-1780005791580-4",
+    "ameosc-enfermagem-processo-de-enfermagem-1780008232871-0",
+    "cev-urca-enfermagem-processo-de-enfermagem-1780006947080-0",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-5",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003261833-9",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003349182-0",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-5",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003654722-7",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009392850-0",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002549800-9",
+    "fundatec-enfermagem-processo-de-enfermagem-1776056158507-3",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006947080-4",
+    "fundatec-enfermagem-processo-de-enfermagem-1780006954613-7",
+    "fundatec-enfermagem-processo-de-enfermagem-1780011956256-5",
+    "igeduc-enfermagem-processo-de-enfermagem-1780010559720-0",
+    "igeduc-enfermagem-processo-de-enfermagem-1780010559720-3",
+    "igeduc-enfermagem-processo-de-enfermagem-1780010559720-6",
+    "igeduc-enfermagem-processo-de-enfermagem-1780010559720-8",
+    "inaz-do-para-enfermagem-processo-de-enfermagem-1780011956256-3",
+    "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-7",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-7"
+  ]
+}

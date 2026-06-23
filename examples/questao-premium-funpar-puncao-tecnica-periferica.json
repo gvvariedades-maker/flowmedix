@@ -1,0 +1,203 @@
+{
+  "meta": {
+    "banca": "NC UFPR (FUNPAR)",
+    "prova": "TEnf",
+    "orgao": "Pref Alm. Tamandaré",
+    "ano": "2024",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Punção Venosa e Cuidados com Cateteres",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-06-22",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "ANVISA — técnica de punção venosa periférica (garrote, ângulo, bisel, assepsia)",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "anvisa-puncao-periferica",
+        "tier": "A",
+        "issuer": "ANVISA",
+        "title": "Medidas de Prevenção de IRAS — punção venosa periférica",
+        "year": 2017,
+        "covers": ["garrote", "ângulo de inserção", "bisel", "técnica asséptica"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A punção venosa periférica é um procedimento invasivo para a administração de medicamentos, fluidos e hemocomponentes e também para a coleta de sangue. A técnica de punção deve ser realizada de modo a seguir as normas de biossegurança e garantir que o paciente esteja livre de iatrogenia. Segundo as recomendações da ANVISA para a técnica de punção venosa periférica, assinale a alternativa que apresenta o cuidado adequado.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Colocar o garrote a uma distância de 5 a 15 cm acima do local a ser puncionado e garantir que o garrote não seja colocado sobre uma articulação.",
+        "is_correct": true
+      },
+      {
+        "id": "B",
+        "text": "Posicionar o cateter ao nível da pele no membro a ser puncionado, em um ângulo de 60°, para penetrar na veia sem risco de dano ao tecido.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Introduzir a agulha através da pele com o bisel voltado para baixo, com um movimento lento e contínuo, para não provocar rasgadura no tecido.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Fazer a remoção, com lâminas de barbear, de pelos e cabelos em abundância na região escolhida para a punção venosa.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Flexionar o braço quando a punção para coleta de sangue ocorrer na dobra do cotovelo, pois esse gesto logo após a punção previne lesão e hematoma no local.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Técnica — punção venosa periférica",
+      "chip_label": "PUNÇÃO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "items": [
+        {
+          "label": "Contexto",
+          "detail": "Punção periférica com biossegurança ANVISA — garrote, ângulo, bisel e técnica asséptica sem iatrogenia.",
+          "icon": "Gauge"
+        },
+        {
+          "label": "Garrote",
+          "detail": "5–15 cm acima do sítio; nunca sobre articulação — distende a veia sem invalidar exame.",
+          "icon": "Circle"
+        },
+        {
+          "label": "Ângulo",
+          "detail": "Inserção baixa (≈15–30°), não 60° — reduz trauma e perfuração da parede venosa.",
+          "icon": "Syringe"
+        },
+        {
+          "label": "Bisel",
+          "detail": "Bisel voltado para cima (sentido do fluxo venoso) — não para baixo.",
+          "icon": "ArrowUp"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra A — garrote 5–15 cm acima do local, fora de articulação.",
+          "icon": "Target"
+        }
+      ],
+      "footer_rule": "Preparo asséptico + garrote correto + ângulo/bisel adequados = punção segura."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Técnica — punção venosa periférica",
+      "chip_label": "REGRA DE OURO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "content": "PUNÇÃO SEGURA: ASSEPSIA + GARROTE 5–15 CM + ÂNGULO BAIXO + BISEL PARA CIMA",
+      "rows": [
+        {
+          "label": "Garrote",
+          "value": "5–15 cm acima do sítio; não sobre articulação; tempo limitado em coleta.",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Ângulo",
+          "value": "≈15–30° com a pele — não 60°.",
+          "emphasis": "success",
+          "badge": "ok"
+        },
+        {
+          "label": "Bisel",
+          "value": "Voltado para cima, no sentido do retorno venoso.",
+          "emphasis": "success",
+          "badge": "ok"
+        },
+        {
+          "label": "Antissepsia",
+          "value": "Técnica asséptica + materiais estéreis — não opcional.",
+          "emphasis": "default",
+          "badge": "info"
+        },
+        {
+          "label": "Evitar",
+          "value": "Barbear rotineiro; flexionar cotovelo logo após punção na fossa.",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Gabarito",
+          "value": "Letra A",
+          "emphasis": "highlight",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "A banca troca ângulo, bisel e posição do garrote — fixe o protocolo ANVISA."
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — técnica de punção",
+      "chip_label": "PASSO A PASSO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "reveal_mode": "tap",
+      "steps": [
+        "Ler o comando: cuidado adequado na técnica de punção venosa periférica (ANVISA).",
+        "Fixar garrote: 5–15 cm acima do sítio, fora de articulação.",
+        "Identificar gabarito: letra A.",
+        "Testar letra B (ângulo 60°): ângulo excessivo — eliminar.",
+        "Testar letra C (bisel para baixo): bisel invertido — eliminar.",
+        "Testar letra D (barbear rotineiro): remoção de pelos não é rotina com lâmina — eliminar.",
+        "Testar letra E (flexionar cotovelo): aumenta risco de hematoma — eliminar.",
+        "Marcar letra A.",
+        "Fixação: assepsia + garrote correto + ângulo/bisel adequados."
+      ],
+      "footer_rule": "Sequência: preparo → garrote → antissepsia → punção → fixação → observação."
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas — técnica de punção",
+      "chip_label": "ARMADILHAS DE PROVA",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "content": "PEGADINHAS — PUNÇÃO VENOSA PERIFÉRICA",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra B — Ângulo 60°",
+          "detail": "A banca sugere ângulo alto “para não lesionar” — o correto é inserção em ângulo baixo (≈15–30°).",
+          "correct": "Gabarito letra A — garrote 5–15 cm acima, fora de articulação."
+        },
+        {
+          "label": "Letra C — Bisel para baixo",
+          "detail": "Bisel deve ficar voltado para cima, no sentido do fluxo venoso.",
+          "correct": "Gabarito letra A — técnica ANVISA de punção periférica."
+        },
+        {
+          "label": "Letra D — Barbear com lâmina",
+          "detail": "Remoção rotineira de pelos com lâmina não é conduta padrão — microtrauma e risco.",
+          "correct": "Gabarito letra A — priorize antissepsia, não barbear de rotina."
+        },
+        {
+          "label": "Letra E — Flexionar o braço",
+          "detail": "Flexionar o cotovelo após punção na fossa antecubital favorece hematoma.",
+          "correct": "Gabarito letra A — extensão do membro após punção na dobra."
+        }
+      ],
+      "footer_rule": "Garrote >1 min em coleta e ângulo/bisel errados são pegadinhas frequentes."
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "banca": "FCM",
+    "prova": "CEFETMINAS - TEnf (BV Minas)",
+    "orgao": "Pref B Vista MG / Departamento de Saúde",
+    "ano": "2021",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "handcraft-dtrans-g01",
+      "guideline_snapshot": "MS — Manual de Dengue: classificação de risco grupos A, B, C e D",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-manual-dengue-2024",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Manual de Dengue — classificação de risco e conduta",
+        "year": 2024,
+        "url": "https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/doencas-e-agravos-nao-transmissiveis/doencas-transmissiveis/dengue",
+        "covers": ["grupo A", "grupo B", "grupo C", "grupo D", "sinais de alarme", "prova do laço"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Sobre o risco e o manejo do paciente com dengue, associe as colunas relacionando corretamente o grupo à sua respectiva classificação.\nGrupos\n(1) A\n(2) B\n(3) C\n(4) D\nClassificações\n( ) Presença de algum sinal de alarme.\n( ) Sinais de choque, desconforto respiratório, hemorragia grave, disfunção grave de órgãos.\n( ) Sangramento de pele, espontâneo ou induzido (prova do laço +), ou condição clínica especial ou risco social ou comorbidades e sem sinal de alarme.\n( ) Sem sangramento espontâneo ou induzido (prova do laço negativa), sem sinais de alarme, sem condição especial, sem risco social e sem comorbidades.\nA sequência correta dessa associação é",
+    "options": [
+      { "id": "A", "text": "3, 1, 4, 2.", "is_correct": false },
+      { "id": "B", "text": "4, 1, 3, 2.", "is_correct": false },
+      { "id": "C", "text": "3, 4, 2, 1.", "is_correct": true },
+      { "id": "D", "text": "4, 2, 1, 3.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Dengue — quatro grupos de risco",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis"
+      },
+      "items": [
+        {
+          "label": "Comando da prova",
+          "detail": "Associar grupos A–D às definições do Manual de Dengue (MS). A banca testa se você sabe qual grupo corresponde a alarme, choque, prova do laço+ ou paciente sem risco.",
+          "icon": "FileText"
+        },
+        {
+          "label": "Grupo A",
+          "detail": "Sem sangramento (prova do laço −), sem sinais de alarme, sem condição clínica especial, sem risco social e sem comorbidades. Conduta ambulatorial com hidratação oral.",
+          "icon": "User"
+        },
+        {
+          "label": "Grupo B",
+          "detail": "Prova do laço + OU sangramento de pele OU condição clínica especial/comorbidade/risco social — mas SEM sinal de alarme. Observação e hidratação supervisionada.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Grupo C",
+          "detail": "Presença de QUALQUER sinal de alarme (dor abdominal intensa, vômitos persistentes, acúmulo de líquidos, hipotensão postural, hepatomegalia dolorosa, sangramento de mucosas, letargia/irritabilidade). Internação.",
+          "icon": "Siren"
+        },
+        {
+          "label": "Grupo D",
+          "detail": "Dengue grave: choque, desconforto respiratório, hemorragia grave ou disfunção grave de órgãos. Emergência — expansão volêmica imediata.",
+          "icon": "HeartPulse"
+        },
+        {
+          "label": "Gabarito FCM",
+          "detail": "Sequência 3-4-2-1: alarme→C; choque/grave→D; laço+/especial sem alarme→B; sem risco→A. Letra C.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Alarme = C · Choque/grave = D · Laço+ sem alarme = B · Sem risco = A"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Referência MS — grupos A a D",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis"
+      },
+      "content": "CLASSIFICAÇÃO DE RISCO — DENGUE (MS)",
+      "rows": [
+        { "label": "Grupo A", "value": "Laço − · sem alarme · sem comorbidade/risco especial", "badge": "ok" },
+        { "label": "Grupo B", "value": "Laço + ou sangramento ou condição especial — SEM alarme", "badge": "warn" },
+        { "label": "Grupo C — item 1", "value": "Qualquer sinal de alarme → grupo C", "emphasis": "highlight", "badge": "hot" },
+        { "label": "Grupo D — item 2", "value": "Choque · DR · hemorragia grave · disfunção orgânica", "emphasis": "highlight", "badge": "hot" },
+        { "label": "Associação B — item 3", "value": "Laço + / sangramento pele / especial sem alarme → B", "badge": "warn" },
+        { "label": "Associação A — item 4", "value": "Laço − · sem alarme · sem especial → A", "badge": "ok" },
+        { "label": "Sequência da prova", "value": "3, 4, 2, 1 → letra C", "emphasis": "success", "badge": "hot" }
+      ],
+      "footer_rule": "Memorize: C = alarme · D = grave · B = laço+ sem alarme · A = baixo risco"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis"
+      },
+      "steps": [
+        "Ler as quatro classificações na ordem do enunciado (itens 1 a 4).",
+        "Item 1 — “Presença de algum sinal de alarme”: qualquer alarme = Grupo C → número (3).",
+        "Item 2 — choque, DR, hemorragia grave, disfunção orgânica: dengue grave = Grupo D → (4).",
+        "Item 3 — laço + ou sangramento ou condição especial/comorbidade SEM alarme: Grupo B → (2).",
+        "Item 4 — laço negativo, sem alarme, sem especial: Grupo A → (1).",
+        "Montar sequência: 3, 4, 2, 1.",
+        "Conferir alternativas: só letra C traz “3, 4, 2, 1.”.",
+        "Eliminar A (troca C e B), B (inverte A e D), D (embaralha alarme e choque).",
+        "Marcar C — única sequência coerente com o Manual de Dengue."
+      ],
+      "footer_rule": "Estratégia: classificar cada frase → montar 3-4-2-1 → letra C"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis"
+      },
+      "content": "PEGADINHAS — GRUPOS A/B/C/D (FCM)",
+      "items": [
+        {
+          "label": "Letra A — 3, 1, 4, 2",
+          "detail": "Coloca alarme no grupo A (1) e grave no grupo B (2) — inverte a hierarquia de gravidade.",
+          "correct": "Alarme = grupo C (3). Choque/grave = grupo D (4). Sequência correta: 3, 4, 2, 1."
+        },
+        {
+          "label": "Letra B — 4, 1, 3, 2",
+          "detail": "Associa choque (item 2) ao grupo A e alarme ao grupo B — confunde dengue grave com baixo risco.",
+          "correct": "Choque/hemorragia grave = D (4). Alarme isolado = C (3), não B."
+        },
+        {
+          "label": "Letra D — 4, 2, 1, 3",
+          "detail": "Troca posições de A e C no final — grupo sem risco vira grupo com alarme.",
+          "correct": "Sem laço+/alarme/especial = A (1), não C (3)."
+        },
+        {
+          "label": "Confundir B com C",
+          "detail": "Laço positivo sem alarme é grupo B; banca induz a internar todo sangramento como C.",
+          "correct": "C exige sinal de alarme. Laço + sem alarme = B — observação, não choque."
+        },
+        {
+          "label": "Grupo D só com alarme",
+          "detail": "Alarme isolado é C; D exige choque, DR, hemorragia grave ou disfunção orgânica.",
+          "correct": "Item 2 do enunciado descreve D (4), não C (3)."
+        }
+      ],
+      "footer_rule": "Não troque C (alarme) com D (grave) nem B (laço+) com A (sem risco)"
+    }
+  ]
+}

@@ -1,0 +1,2082 @@
+{
+  "generated_at": "2026-06-22T16:26:40.028Z",
+  "audit_snapshot_at": "2026-06-22T16:26:38.672Z",
+  "counts_source": "modulos_estudo",
+  "north_star": "Aprofundamento máximo = extração literal tier A por tema do edital, não só contagem; meta ≥15 entries/100 questões ou target_merged_entries do spec.",
+  "summary": {
+    "subtopicos": 41,
+    "total_gap_entries": 0,
+    "p1_count": 3,
+    "p2_count": 8,
+    "with_gap": 0
+  },
+  "workflow": [
+    "1. Escolher subtópico da fase (ordenado por priority_score).",
+    "2. Extrair entries dos sources_tier_a — um bloco por edital_theme.",
+    "3. Codificar em lib/guidelines/<pacote>.ts com sourceId estável.",
+    "4. Rodar npm test (slideGeneration factcheck + guidelineCoverage).",
+    "5. npm run audit:guideline-coverage → gap_entries → 0 para o subtópico.",
+    "6. npm run update:guideline-status se novas tabelas/merge.",
+    "7. Piloto 5–10 slugs no player + lote IA se subtópico tem builder."
+  ],
+  "by_phase": [
+    {
+      "phase": "P1_critico",
+      "label": "Fase 1 — Crítico (volume × gap)",
+      "subtopicos": [
+        {
+          "subtopico": "Imunização",
+          "phase": "P1_critico",
+          "question_count": 575,
+          "current_entries": 90,
+          "target_entries": 90,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "pni-2025-intervalos",
+            "pni-calendario-2025"
+          ],
+          "edital_themes": [
+            "Calendário nacional por idade (criança, adolescente, adulto, idoso, gestante)",
+            "Intervalos entre vacinas (vivas, inativadas, grace period 4 dias)",
+            "Contraindicações e eventos adversos",
+            "Cadeia de frio (2–8 °C, validade aberta, descarte)",
+            "Técnicas de aplicação (via, local, dose)",
+            "Bloqueio vacinal e surtos (sarampo, FA)",
+            "Registros SIS/PNI e erros de imunização"
+          ],
+          "sources_tier_a": [
+            "Manual PNI 2025 — intervalos e procedimentos",
+            "Calendário Nacional de Vacinação 2025",
+            "Manual da Rede de Frio (MS)"
+          ],
+          "done_when": "Toda vacina do calendário infantil/adulto com idade, dose, via e intervalo; factcheck PNI sem violações em lote piloto ≥20 slugs.",
+          "priority_score": 1725
+        },
+        {
+          "subtopico": "Verificação de Sinais Vitais",
+          "phase": "P1_critico",
+          "question_count": 482,
+          "current_entries": 75,
+          "target_entries": 75,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "sv-adulto-referencia"
+          ],
+          "edital_themes": [
+            "Técnica de aferição (PA, FC, FR, Temp, SpO₂)",
+            "Faixas adulto, idoso, gestante",
+            "Faixas pediátricas por idade (RN, lactente, pré-escolar, escolar, adolescente)",
+            "PA — métodos e valores (SBC/MS)",
+            "Escalas (APGAR, Glasgow, dor EVA)",
+            "Interpretação clínica e conduta inicial",
+            "Registro e frequência de monitorização"
+          ],
+          "sources_tier_a": [
+            "Protocolos MS de aferição de sinais vitais",
+            "Diretriz brasileira de hipertensão (SBC) — valores PA",
+            "SBP — referências pediátricas"
+          ],
+          "done_when": "Cada parâmetro × faixa etária com valor numérico; cobertura gestante/idoso; testes factcheck SV golden FEPese/CPCON passam.",
+          "priority_score": 1446
+        },
+        {
+          "subtopico": "Urgências e Emergências",
+          "phase": "P1_critico",
+          "question_count": 348,
+          "current_entries": 55,
+          "target_entries": 55,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "urgencias-rcp-sbv-ms"
+          ],
+          "edital_themes": [
+            "XABCDE / avaliação primária",
+            "RCP adulto e pediátrico (30:2, 15:2, DEA)",
+            "Via aérea e engasgo",
+            "Choque (hipovolêmico, séptico — reconhecimento)",
+            "AVC — FAST e tempo porta",
+            "Anafilaxia e adrenalina",
+            "Hemorragia e torniquete",
+            "SAMU 192 e segurança da cena"
+          ],
+          "sources_tier_a": [
+            "Protocolo SBV/RCP MS SAMU 192",
+            "Diretrizes AHA/ILCOR adotadas pelo MS",
+            "Protocolos MS urgência/emergência"
+          ],
+          "done_when": "Além de RCP: 3+ protocolos não-RCP com números; factcheck lote urgências sem falsos positivos.",
+          "priority_score": 1044
+        }
+      ]
+    },
+    {
+      "phase": "P2_volume",
+      "label": "Fase 2 — Alto volume moderado",
+      "subtopicos": [
+        {
+          "subtopico": "Saúde da Mulher",
+          "phase": "P2_volume",
+          "question_count": 262,
+          "current_entries": 45,
+          "target_entries": 45,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "sm-prenatal-baixo-risco-ms"
+          ],
+          "edital_themes": [
+            "Pré-natal — consultas, exames, periodicidade",
+            "Puerpério (imediato e tardio)",
+            "Rastreamento colo uterino (Papanicolau/INCA)",
+            "Climatério e contracepção",
+            "Violência contra mulher — notificação",
+            "Aleitamento e planejamento familiar"
+          ],
+          "sources_tier_a": [
+            "Caderno AB 32 — pré-natal baixo risco",
+            "INCA — rastreamento câncer colo",
+            "Linha de cuidado gestante MS"
+          ],
+          "done_when": "Cronograma pré-natal completo com semanas; rastreamento com idade de início e intervalo.",
+          "priority_score": 524
+        },
+        {
+          "subtopico": "Cuidados na Administração de Medicamentos",
+          "phase": "P2_volume",
+          "question_count": 216,
+          "current_entries": 40,
+          "target_entries": 40,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "cuidados-admin-cofen"
+          ],
+          "edital_themes": [
+            "5/9 certos",
+            "Medicamentos de alto risco",
+            "Dupla checagem e identificação do paciente",
+            "Horário e interações",
+            "Armazenamento e validade",
+            "Recusa e erro de medicação"
+          ],
+          "sources_tier_a": [
+            "COFEN — administração segura",
+            "ANVISA farmácia clínica / NSP"
+          ],
+          "done_when": "Lista COFEN de alto risco refletida; fluxo erro de medicação.",
+          "priority_score": 432
+        },
+        {
+          "subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+          "phase": "P2_volume",
+          "question_count": 172,
+          "current_entries": 35,
+          "target_entries": 35,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "oxigenoterapia-dispositivos-ms"
+          ],
+          "edital_themes": [
+            "Dispositivos (CN, máscara simples, Venturi, NRB, CNAF)",
+            "FiO₂ e fluxo por dispositivo",
+            "SpO₂ alvo (geral vs DPOC retentor)",
+            "Higiene e umidificação",
+            "Aspiração e fisioterapia respiratória (enfermagem)",
+            "Sinais de hipoxemia"
+          ],
+          "sources_tier_a": [
+            "Manual MS oxigenoterapia",
+            "SBPT — oxigenoterapia (tier B complementar)"
+          ],
+          "done_when": "Cada dispositivo com Faixa FiO₂ e fluxo; pegadinha DPOC documentada.",
+          "priority_score": 344
+        },
+        {
+          "subtopico": "Atenção Básica / Saúde da Família",
+          "phase": "P2_volume",
+          "question_count": 170,
+          "current_entries": 35,
+          "target_entries": 35,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "atencao-basica-pnab"
+          ],
+          "edital_themes": [
+            "PNAB — ESF, NASF/eMulti",
+            "Territorialização e adscrição",
+            "Acolhimento e classificação de risco",
+            "Violência e vulnerabilidade",
+            "Pacto pela saúde / atributos APS"
+          ],
+          "sources_tier_a": [
+            "PNAB 2017",
+            "Cadernos APS MS"
+          ],
+          "done_when": "Composição ESF e parâmetros ACS; fluxo violência.",
+          "priority_score": 340
+        },
+        {
+          "subtopico": "Instalação e Manejo de Sondas",
+          "phase": "P2_volume",
+          "question_count": 169,
+          "current_entries": 35,
+          "target_entries": 35,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "sondas-tecnica-cofen"
+          ],
+          "edital_themes": [
+            "SNG/SNE — indicação, NEX, confirmação",
+            "SVD — técnica, balão, bolsa",
+            "Sonda retal",
+            "Complicações e cuidados",
+            "Nutrição enteral"
+          ],
+          "sources_tier_a": [
+            "COFEN normas técnicas de sondas"
+          ],
+          "done_when": "SNG vs SNE vs SVD diferenciados; confirmação posicional/radiografia.",
+          "priority_score": 338
+        },
+        {
+          "subtopico": "Coleta de Exames Laboratoriais",
+          "phase": "P2_volume",
+          "question_count": 159,
+          "current_entries": 35,
+          "target_entries": 35,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "coleta-exames-sbpc-ml"
+          ],
+          "edital_themes": [
+            "Ordem de tubos e anticoagulantes",
+            "Jejum por exame",
+            "Torniquete e punção",
+            "Transporte e temperatura",
+            "Identificação e segurança do paciente",
+            "Hemocultura e coagulação"
+          ],
+          "sources_tier_a": [
+            "Manual MS coleta de sangue",
+            "SBPC/ML ordem de tubos (tier B)"
+          ],
+          "done_when": "Ordem clássica de tubos + jejum glicemia/ lipídios cobertos.",
+          "priority_score": 318
+        },
+        {
+          "subtopico": "Processo de Enfermagem",
+          "phase": "P2_volume",
+          "question_count": 134,
+          "current_entries": 35,
+          "target_entries": 35,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "sae-cofen-358"
+          ],
+          "edital_themes": [
+            "5 etapas SAE (COFEN 358)",
+            "Privativas do enfermeiro vs técnico",
+            "NANDA / NIC / NOC (quando cobrado)",
+            "Registro e prontuário",
+            "Diagnóstico e prescrição de enfermagem"
+          ],
+          "sources_tier_a": [
+            "COFEN Res. 358/2009",
+            "NANDA-I (tier B)"
+          ],
+          "done_when": "Privativas e etapas sem ambiguidade; 5+ diagnósticos frequentes em prova.",
+          "priority_score": 268
+        },
+        {
+          "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+          "phase": "P2_volume",
+          "question_count": 114,
+          "current_entries": 35,
+          "target_entries": 35,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "calc-equivalencias-br"
+          ],
+          "edital_themes": [
+            "Equivalências mL/gotas/microgotas",
+            "Regra de três e diluição",
+            "mg/kg pediátrico",
+            "Insulina U-100 e heparina",
+            "Velocidade de infusão (gts/min, mL/h)",
+            "Concentração percentual e mcg"
+          ],
+          "sources_tier_a": [
+            "COFEN administração de medicamentos",
+            "Anvisa — diluição/reconstituição"
+          ],
+          "done_when": "Todas fórmulas de prova CPCON/FEPese cobertas com números na tabela.",
+          "priority_score": 228
+        }
+      ]
+    },
+    {
+      "phase": "P3_complementar",
+      "label": "Fase 3 — Complementar / adequar meta",
+      "subtopicos": [
+        {
+          "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+          "phase": "P3_complementar",
+          "question_count": 224,
+          "current_entries": 66,
+          "target_entries": 40,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "epidemiologia-ms",
+            "pni-calendario-2025"
+          ],
+          "edital_themes": [
+            "Incidência, prevalência, letalidade",
+            "Surto, endemia, epidemia, pandemia",
+            "Notificação compulsória e SINAN",
+            "Vigilância sentinela",
+            "Poliomielite e eliminação"
+          ],
+          "sources_tier_a": [
+            "Guia de Vigilância Epidemiológica MS",
+            "Portaria notificação compulsiva"
+          ],
+          "done_when": "Lista doenças notificação imediata vs semanal (principais).",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+          "phase": "P3_complementar",
+          "question_count": 135,
+          "current_entries": 63,
+          "target_entries": 50,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "doencas-virais-ms",
+            "pni-calendario-2025"
+          ],
+          "edital_themes": [
+            "Sarampo/rubéola — notificação e bloqueio",
+            "Influenza",
+            "Poliomielite",
+            "Covid-19",
+            "Hepatites virais"
+          ],
+          "sources_tier_a": [
+            "Guias MS vigilância viral",
+            "PNI calendário"
+          ],
+          "done_when": "Uma entry por doença viral do edital EBSERH.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+          "phase": "P3_complementar",
+          "question_count": 124,
+          "current_entries": 30,
+          "target_entries": 30,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "promocao-saude-sus"
+          ],
+          "edital_themes": [
+            "Lei 8.080/8.142",
+            "PNPS",
+            "Prevenção primária/secundária/terciária",
+            "Determinantes sociais",
+            "Carta de Ottawa"
+          ],
+          "sources_tier_a": [
+            "Lei 8.080/1990",
+            "Lei 8.142/1990",
+            "PNPS Portaria 2.446/2014"
+          ],
+          "done_when": "Art. 4º Lei 8080 e níveis de prevenção sem confusão.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Enfermagem em Centro Cirúrgico",
+          "phase": "P3_complementar",
+          "question_count": 122,
+          "current_entries": 30,
+          "target_entries": 30,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "perioperatorio-cirurgia-segura"
+          ],
+          "edital_themes": [
+            "Cirurgia segura OMS",
+            "Contagem compressas",
+            "Papéis circulante/instrumentador",
+            "Assepsia"
+          ],
+          "sources_tier_a": [
+            "COFEN/CC",
+            "Anvisa centro cirúrgico"
+          ],
+          "done_when": "Checklist 3 momentos + contagem.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Segurança do Paciente",
+          "phase": "P3_complementar",
+          "question_count": 91,
+          "current_entries": 30,
+          "target_entries": 30,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "biosseguranca-anvisa"
+          ],
+          "edital_themes": [
+            "NSP Anvisa",
+            "Identificação paciente",
+            "Erro de medicação",
+            "Queda",
+            "Úlcera por pressão"
+          ],
+          "sources_tier_a": [
+            "Programa Nacional Segurança do Paciente"
+          ],
+          "done_when": "5 temas NSP com ação de enfermagem.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Saúde da Criança",
+          "phase": "P3_complementar",
+          "question_count": 81,
+          "current_entries": 93,
+          "target_entries": 45,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "saude-crianca-ms",
+            "sv-adulto-referencia"
+          ],
+          "edital_themes": [
+            "Aleitamento",
+            "Crescimento OMS",
+            "Desidratação",
+            "Vacinação",
+            "SV pediátrico"
+          ],
+          "sources_tier_a": [
+            "Caderneta da criança MS",
+            "SBP SV pediátrico"
+          ],
+          "done_when": "Plano A/B/C desidratação + curvas crescimento.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+          "phase": "P3_complementar",
+          "question_count": 76,
+          "current_entries": 30,
+          "target_entries": 30,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "ists-prevencao-ms"
+          ],
+          "edital_themes": [
+            "Rotas de transmissão",
+            "PEP HIV 72h",
+            "Sífilis, HIV, HBV, HPV",
+            "Preservativo e testagem"
+          ],
+          "sources_tier_a": [
+            "PCDT IST MS"
+          ],
+          "done_when": "PCDT: janela PEP e testagem por agente.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Medidas de Prevenção e Precaução de Contato",
+          "phase": "P3_complementar",
+          "question_count": 71,
+          "current_entries": 30,
+          "target_entries": 30,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "biosseguranca-anvisa"
+          ],
+          "edital_themes": [
+            "Precauções padrão",
+            "Contato, gotículas, aerossóis",
+            "EPI por risco",
+            "Higienização das mãos"
+          ],
+          "sources_tier_a": [
+            "Anvisa precauções"
+          ],
+          "done_when": "Cada precaução com indicação e EPI.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+          "phase": "P3_complementar",
+          "question_count": 68,
+          "current_entries": 30,
+          "target_entries": 30,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "perioperatorio-cirurgia-segura"
+          ],
+          "edital_themes": [
+            "Jejum pré-op",
+            "SRPA — Aldrete",
+            "Checklist",
+            "Curativo e CME pós-op"
+          ],
+          "sources_tier_a": [
+            "COFEN perioperatório"
+          ],
+          "done_when": "Jejum sólidos/líquidos + escala Aldrete numérica.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Doenças Parasitárias e Zoonoses",
+          "phase": "P3_complementar",
+          "question_count": 62,
+          "current_entries": 28,
+          "target_entries": 28,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "parasitarias-zoonoses-ms"
+          ],
+          "edital_themes": [
+            "Dengue",
+            "Zika/chikungunya",
+            "Malária",
+            "Leptospirose",
+            "Raiva",
+            "Esquistossomose"
+          ],
+          "sources_tier_a": [
+            "Manuais vigilância zoonoses MS"
+          ],
+          "done_when": "Vetor + controle por doença principal.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Infecções no Contexto da Biossegurança",
+          "phase": "P3_complementar",
+          "question_count": 54,
+          "current_entries": 30,
+          "target_entries": 30,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "biosseguranca-anvisa"
+          ],
+          "edital_themes": [
+            "IRAS",
+            "Cadeia de infecção",
+            "Perfurocortante",
+            "Resíduos"
+          ],
+          "sources_tier_a": [
+            "Anvisa IRAS"
+          ],
+          "done_when": "6 elos + conduta perfurocortante completa.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+          "phase": "P3_complementar",
+          "question_count": 51,
+          "current_entries": 50,
+          "target_entries": 40,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "tuberculose-ms",
+            "biosseguranca-anvisa"
+          ],
+          "edital_themes": [
+            "TB — BAAR, TDO, precaução aerossóis",
+            "Tétano — profilaxia",
+            "Candidíase",
+            "Meningite bacteriana"
+          ],
+          "sources_tier_a": [
+            "Manual TB MS",
+            "Protocolos MS"
+          ],
+          "done_when": "TB completo + tétano esquema vacinal/profilaxia.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Enfermagem do Trabalho",
+          "phase": "P3_complementar",
+          "question_count": 48,
+          "current_entries": 25,
+          "target_entries": 25,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "enfermagem-trabalho-nr32"
+          ],
+          "edital_themes": [
+            "NR-32",
+            "Perfurocortante",
+            "PEP ocupacional",
+            "Ergonomia",
+            "Vacinação trabalhador"
+          ],
+          "sources_tier_a": [
+            "NR-32 MTE",
+            "Protocolos MS exposição biológica"
+          ],
+          "done_when": "NR-32 escopo + fluxo acidente biológico.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Saúde Mental",
+          "phase": "P3_complementar",
+          "question_count": 37,
+          "current_entries": 25,
+          "target_entries": 25,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "saude-mental-ms"
+          ],
+          "edital_themes": [
+            "RAPS/CAPS",
+            "Risco suicida",
+            "Acolhimento",
+            "CVV 188",
+            "Estigma"
+          ],
+          "sources_tier_a": [
+            "MS rede atenção psicossocial"
+          ],
+          "done_when": "Fluxo ideação suicida + encaminhamento.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+          "phase": "P3_complementar",
+          "question_count": 35,
+          "current_entries": 28,
+          "target_entries": 28,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "cme-anvisa-rdc15"
+          ],
+          "edital_themes": [
+            "Fluxo suja→limpa→estéril",
+            "Áreas físicas",
+            "Validade materiais"
+          ],
+          "sources_tier_a": [
+            "Anvisa RDC CME"
+          ],
+          "done_when": "Igual processamento + fluxo unidirecional.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Feridas e Queimaduras",
+          "phase": "P3_complementar",
+          "question_count": 26,
+          "current_entries": 50,
+          "target_entries": 30,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "feridas-queimaduras-ms",
+            "curativos-lpp-npuap"
+          ],
+          "edital_themes": [
+            "Graus queimadura",
+            "Regra dos 9",
+            "Profilaxia tétano",
+            "Cicatrização"
+          ],
+          "sources_tier_a": [
+            "MS atendimento queimaduras"
+          ],
+          "done_when": "Regra 9 adulto/criança + profilaxia tétano.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Farmacodinâmica e Farmacocinética",
+          "phase": "P3_complementar",
+          "question_count": 25,
+          "current_entries": 30,
+          "target_entries": 30,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "farmaco-adme-anvisa"
+          ],
+          "edital_themes": [
+            "ADME",
+            "Agonista/antagonista",
+            "Meia-vida",
+            "Índice terapêutico",
+            "Biodisponibilidade"
+          ],
+          "sources_tier_a": [
+            "Anvisa bulário / farmacologia básica"
+          ],
+          "done_when": "Conceitos + 5 fármacos frequentes em prova técnica.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Processamento de Artigos e Produtos de Saúde",
+          "phase": "P3_complementar",
+          "question_count": 18,
+          "current_entries": 28,
+          "target_entries": 28,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "cme-anvisa-rdc15"
+          ],
+          "edital_themes": [
+            "Limpeza, desinfecção, esterilização",
+            "Indicadores químico/biológico",
+            "Validade"
+          ],
+          "sources_tier_a": [
+            "Anvisa RDC 15/2012"
+          ],
+          "done_when": "Diferença L/D/E + parâmetros autoclave.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Saúde do Adolescente",
+          "phase": "P3_complementar",
+          "question_count": 16,
+          "current_entries": 25,
+          "target_entries": 25,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "saude-adolescente-ms"
+          ],
+          "edital_themes": [
+            "Escuta e sigilo",
+            "Gravidez adolescente",
+            "IST e contracepção",
+            "Vacina HPV",
+            "Violência"
+          ],
+          "sources_tier_a": [
+            "Linha de cuidado adolescente MS"
+          ],
+          "done_when": "Sigilo limites legais + HPV PNI.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+          "phase": "P3_complementar",
+          "question_count": 10,
+          "current_entries": 50,
+          "target_entries": 35,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "respiratorio-cronico-ms",
+            "oxigenoterapia-dispositivos-ms"
+          ],
+          "edital_themes": [
+            "Asma — crise e controle",
+            "DPOC — O₂ titulado",
+            "SpO₂ 88–92%",
+            "Tabagismo"
+          ],
+          "sources_tier_a": [
+            "PCDT Asma/DPOC MS"
+          ],
+          "done_when": "PCDT doses resgate e O₂ DPOC.",
+          "priority_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "P0_manter",
+      "label": "Fase 0 — Manter (revisão pontual)",
+      "subtopicos": [
+        {
+          "subtopico": "Vias de Administração",
+          "phase": "P0_manter",
+          "question_count": 231,
+          "current_entries": 58,
+          "target_entries": 40,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "vias-administracao-cofen",
+            "cuidados-admin-cofen"
+          ],
+          "edital_themes": [
+            "IM, SC, EV, VO, retal, inalatória",
+            "Absorção e técnica",
+            "Sites e ângulos"
+          ],
+          "sources_tier_a": [
+            "COFEN vias de administração"
+          ],
+          "done_when": "Manter; revisar após mudança COFEN.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Curativos e Manejo de Feridas",
+          "phase": "P0_manter",
+          "question_count": 122,
+          "current_entries": 35,
+          "target_entries": 35,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "curativos-lpp-npuap"
+          ],
+          "edital_themes": [
+            "LPP estágios I–IV",
+            "Braden",
+            "Tipos de cobertura",
+            "Desbridamento"
+          ],
+          "sources_tier_a": [
+            "NPUAP/EPUAP",
+            "COFEN curativos"
+          ],
+          "done_when": "Pacote premium referência — alinhar builder.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Procedimentos Diversos",
+          "phase": "P0_manter",
+          "question_count": 118,
+          "current_entries": 45,
+          "target_entries": 35,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "procedimentos-diversos-assepsia",
+            "biosseguranca-anvisa"
+          ],
+          "edital_themes": [
+            "Assepsia vs desinfecção",
+            "Higiene das mãos",
+            "Procedimentos pontuais (nebulização, glicemia capilar)"
+          ],
+          "sources_tier_a": [
+            "Anvisa/OMS precauções padrão"
+          ],
+          "done_when": "Manter; adicionar só se inferência de enunciado apontar gap.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Punção Venosa e Cuidados com Cateteres",
+          "phase": "P0_manter",
+          "question_count": 116,
+          "current_entries": 52,
+          "target_entries": 40,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "puncao-cateter-anvisa",
+            "coleta-exames-sbpc-ml"
+          ],
+          "edital_themes": [
+            "Punção periférica",
+            "CVC/PICC bundle",
+            "Flebite",
+            "Manutenção e troca"
+          ],
+          "sources_tier_a": [
+            "Anvisa dispositivos invasivos",
+            "COFEN punção venosa"
+          ],
+          "done_when": "Manter; expandir INS flebite se lote punção falhar factcheck.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Mobilização e Posicionamento do Paciente",
+          "phase": "P0_manter",
+          "question_count": 91,
+          "current_entries": 49,
+          "target_entries": 30,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "mobilizacao-posicionamento",
+            "curativos-lpp-npuap"
+          ],
+          "edital_themes": [
+            "Decúbitos",
+            "LPP prevenção",
+            "Transferência",
+            "Trendelenburg/Fowler"
+          ],
+          "sources_tier_a": [
+            "COFEN mobilização"
+          ],
+          "done_when": "Manter — merge curativos cobre LPP.",
+          "priority_score": 0
+        }
+      ]
+    },
+    {
+      "phase": "P4_conceitual",
+      "label": "Fase 4 — Conceitual / reclassificação",
+      "subtopicos": [
+        {
+          "subtopico": "Noções de Anatomia",
+          "phase": "P4_conceitual",
+          "question_count": 103,
+          "current_entries": 25,
+          "target_entries": 25,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "anatomia-terminologia"
+          ],
+          "edital_themes": [
+            "Planos e direções",
+            "Cavidades",
+            "Sistemas principais",
+            "Terminologia"
+          ],
+          "sources_tier_a": [
+            "Terminologia anatômica internacional (conceitual)"
+          ],
+          "done_when": "Pares direcionais + 3 sistemas (cardiovascular, respiratório, digestório).",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Noções de Fisiologia",
+          "phase": "P4_conceitual",
+          "question_count": 89,
+          "current_entries": 89,
+          "target_entries": 30,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "fisiologia-homeostase",
+            "sv-adulto-referencia"
+          ],
+          "edital_themes": [
+            "Homeostase",
+            "SV normais",
+            "Equilíbrio ácido-base",
+            "Termorregulação"
+          ],
+          "sources_tier_a": [
+            "Referência clínica MS/SBP"
+          ],
+          "done_when": "SV adulto sem duplicar SV subtópico; conceitos fisiológicos puros.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "História da Enfermagem",
+          "phase": "P4_conceitual",
+          "question_count": 18,
+          "current_entries": 22,
+          "target_entries": 22,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "historia-enfermagem-cofen"
+          ],
+          "edital_themes": [
+            "Pioneiras BR",
+            "COFEN/COREN",
+            "Lei 7498",
+            "Código de ética",
+            "Marcos SUS"
+          ],
+          "sources_tier_a": [
+            "COFEN — história e ética"
+          ],
+          "done_when": "10 marcos históricos frequentes em prova.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+          "phase": "P4_conceitual",
+          "question_count": 6,
+          "current_entries": 123,
+          "target_entries": 50,
+          "gap_entries": 0,
+          "coverage_band": "adequado",
+          "guideline_table_ids": [
+            "doencas-virais-ms",
+            "tuberculose-ms",
+            "parasitarias-zoonoses-ms",
+            "ists-prevencao-ms",
+            "biosseguranca-anvisa"
+          ],
+          "edital_themes": [
+            "Reclassificar para subtópico canônico",
+            "Guideline composta até reclassificação"
+          ],
+          "sources_tier_a": [
+            "Derivar de virais + TB + zoonoses + IST + biossegurança"
+          ],
+          "done_when": "Catálogo reclassificado; bucket <50 questões ou tabela dedicada mínima.",
+          "priority_score": 0
+        },
+        {
+          "subtopico": "Questões Mescladas e Outras Doenças Agudas",
+          "phase": "P4_conceitual",
+          "question_count": 0,
+          "current_entries": 100,
+          "target_entries": 40,
+          "gap_entries": 0,
+          "coverage_band": "sem_guideline",
+          "guideline_table_ids": [
+            "urgencias-rcp-sbv-ms",
+            "doencas-virais-ms",
+            "respiratorio-cronico-ms",
+            "feridas-queimaduras-ms"
+          ],
+          "edital_themes": [
+            "Reclassificar questões",
+            "Guideline composta urgências + agudas"
+          ],
+          "sources_tier_a": [
+            "Derivar de urgências + virais + respiratório"
+          ],
+          "done_when": "Reclassificação inferSubtopico; bucket vazio ou <20 questões.",
+          "priority_score": 0
+        }
+      ]
+    }
+  ],
+  "all_subtopicos": [
+    {
+      "subtopico": "Imunização",
+      "phase": "P1_critico",
+      "question_count": 575,
+      "current_entries": 90,
+      "target_entries": 90,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "pni-2025-intervalos",
+        "pni-calendario-2025"
+      ],
+      "edital_themes": [
+        "Calendário nacional por idade (criança, adolescente, adulto, idoso, gestante)",
+        "Intervalos entre vacinas (vivas, inativadas, grace period 4 dias)",
+        "Contraindicações e eventos adversos",
+        "Cadeia de frio (2–8 °C, validade aberta, descarte)",
+        "Técnicas de aplicação (via, local, dose)",
+        "Bloqueio vacinal e surtos (sarampo, FA)",
+        "Registros SIS/PNI e erros de imunização"
+      ],
+      "sources_tier_a": [
+        "Manual PNI 2025 — intervalos e procedimentos",
+        "Calendário Nacional de Vacinação 2025",
+        "Manual da Rede de Frio (MS)"
+      ],
+      "done_when": "Toda vacina do calendário infantil/adulto com idade, dose, via e intervalo; factcheck PNI sem violações em lote piloto ≥20 slugs.",
+      "priority_score": 1725
+    },
+    {
+      "subtopico": "Verificação de Sinais Vitais",
+      "phase": "P1_critico",
+      "question_count": 482,
+      "current_entries": 75,
+      "target_entries": 75,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "sv-adulto-referencia"
+      ],
+      "edital_themes": [
+        "Técnica de aferição (PA, FC, FR, Temp, SpO₂)",
+        "Faixas adulto, idoso, gestante",
+        "Faixas pediátricas por idade (RN, lactente, pré-escolar, escolar, adolescente)",
+        "PA — métodos e valores (SBC/MS)",
+        "Escalas (APGAR, Glasgow, dor EVA)",
+        "Interpretação clínica e conduta inicial",
+        "Registro e frequência de monitorização"
+      ],
+      "sources_tier_a": [
+        "Protocolos MS de aferição de sinais vitais",
+        "Diretriz brasileira de hipertensão (SBC) — valores PA",
+        "SBP — referências pediátricas"
+      ],
+      "done_when": "Cada parâmetro × faixa etária com valor numérico; cobertura gestante/idoso; testes factcheck SV golden FEPese/CPCON passam.",
+      "priority_score": 1446
+    },
+    {
+      "subtopico": "Urgências e Emergências",
+      "phase": "P1_critico",
+      "question_count": 348,
+      "current_entries": 55,
+      "target_entries": 55,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "urgencias-rcp-sbv-ms"
+      ],
+      "edital_themes": [
+        "XABCDE / avaliação primária",
+        "RCP adulto e pediátrico (30:2, 15:2, DEA)",
+        "Via aérea e engasgo",
+        "Choque (hipovolêmico, séptico — reconhecimento)",
+        "AVC — FAST e tempo porta",
+        "Anafilaxia e adrenalina",
+        "Hemorragia e torniquete",
+        "SAMU 192 e segurança da cena"
+      ],
+      "sources_tier_a": [
+        "Protocolo SBV/RCP MS SAMU 192",
+        "Diretrizes AHA/ILCOR adotadas pelo MS",
+        "Protocolos MS urgência/emergência"
+      ],
+      "done_when": "Além de RCP: 3+ protocolos não-RCP com números; factcheck lote urgências sem falsos positivos.",
+      "priority_score": 1044
+    },
+    {
+      "subtopico": "Saúde da Mulher",
+      "phase": "P2_volume",
+      "question_count": 262,
+      "current_entries": 45,
+      "target_entries": 45,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "sm-prenatal-baixo-risco-ms"
+      ],
+      "edital_themes": [
+        "Pré-natal — consultas, exames, periodicidade",
+        "Puerpério (imediato e tardio)",
+        "Rastreamento colo uterino (Papanicolau/INCA)",
+        "Climatério e contracepção",
+        "Violência contra mulher — notificação",
+        "Aleitamento e planejamento familiar"
+      ],
+      "sources_tier_a": [
+        "Caderno AB 32 — pré-natal baixo risco",
+        "INCA — rastreamento câncer colo",
+        "Linha de cuidado gestante MS"
+      ],
+      "done_when": "Cronograma pré-natal completo com semanas; rastreamento com idade de início e intervalo.",
+      "priority_score": 524
+    },
+    {
+      "subtopico": "Cuidados na Administração de Medicamentos",
+      "phase": "P2_volume",
+      "question_count": 216,
+      "current_entries": 40,
+      "target_entries": 40,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "cuidados-admin-cofen"
+      ],
+      "edital_themes": [
+        "5/9 certos",
+        "Medicamentos de alto risco",
+        "Dupla checagem e identificação do paciente",
+        "Horário e interações",
+        "Armazenamento e validade",
+        "Recusa e erro de medicação"
+      ],
+      "sources_tier_a": [
+        "COFEN — administração segura",
+        "ANVISA farmácia clínica / NSP"
+      ],
+      "done_when": "Lista COFEN de alto risco refletida; fluxo erro de medicação.",
+      "priority_score": 432
+    },
+    {
+      "subtopico": "Oxigenoterapia e Cuidados Respiratórios",
+      "phase": "P2_volume",
+      "question_count": 172,
+      "current_entries": 35,
+      "target_entries": 35,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "oxigenoterapia-dispositivos-ms"
+      ],
+      "edital_themes": [
+        "Dispositivos (CN, máscara simples, Venturi, NRB, CNAF)",
+        "FiO₂ e fluxo por dispositivo",
+        "SpO₂ alvo (geral vs DPOC retentor)",
+        "Higiene e umidificação",
+        "Aspiração e fisioterapia respiratória (enfermagem)",
+        "Sinais de hipoxemia"
+      ],
+      "sources_tier_a": [
+        "Manual MS oxigenoterapia",
+        "SBPT — oxigenoterapia (tier B complementar)"
+      ],
+      "done_when": "Cada dispositivo com Faixa FiO₂ e fluxo; pegadinha DPOC documentada.",
+      "priority_score": 344
+    },
+    {
+      "subtopico": "Atenção Básica / Saúde da Família",
+      "phase": "P2_volume",
+      "question_count": 170,
+      "current_entries": 35,
+      "target_entries": 35,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "atencao-basica-pnab"
+      ],
+      "edital_themes": [
+        "PNAB — ESF, NASF/eMulti",
+        "Territorialização e adscrição",
+        "Acolhimento e classificação de risco",
+        "Violência e vulnerabilidade",
+        "Pacto pela saúde / atributos APS"
+      ],
+      "sources_tier_a": [
+        "PNAB 2017",
+        "Cadernos APS MS"
+      ],
+      "done_when": "Composição ESF e parâmetros ACS; fluxo violência.",
+      "priority_score": 340
+    },
+    {
+      "subtopico": "Instalação e Manejo de Sondas",
+      "phase": "P2_volume",
+      "question_count": 169,
+      "current_entries": 35,
+      "target_entries": 35,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "sondas-tecnica-cofen"
+      ],
+      "edital_themes": [
+        "SNG/SNE — indicação, NEX, confirmação",
+        "SVD — técnica, balão, bolsa",
+        "Sonda retal",
+        "Complicações e cuidados",
+        "Nutrição enteral"
+      ],
+      "sources_tier_a": [
+        "COFEN normas técnicas de sondas"
+      ],
+      "done_when": "SNG vs SNE vs SVD diferenciados; confirmação posicional/radiografia.",
+      "priority_score": 338
+    },
+    {
+      "subtopico": "Coleta de Exames Laboratoriais",
+      "phase": "P2_volume",
+      "question_count": 159,
+      "current_entries": 35,
+      "target_entries": 35,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "coleta-exames-sbpc-ml"
+      ],
+      "edital_themes": [
+        "Ordem de tubos e anticoagulantes",
+        "Jejum por exame",
+        "Torniquete e punção",
+        "Transporte e temperatura",
+        "Identificação e segurança do paciente",
+        "Hemocultura e coagulação"
+      ],
+      "sources_tier_a": [
+        "Manual MS coleta de sangue",
+        "SBPC/ML ordem de tubos (tier B)"
+      ],
+      "done_when": "Ordem clássica de tubos + jejum glicemia/ lipídios cobertos.",
+      "priority_score": 318
+    },
+    {
+      "subtopico": "Processo de Enfermagem",
+      "phase": "P2_volume",
+      "question_count": 134,
+      "current_entries": 35,
+      "target_entries": 35,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "sae-cofen-358"
+      ],
+      "edital_themes": [
+        "5 etapas SAE (COFEN 358)",
+        "Privativas do enfermeiro vs técnico",
+        "NANDA / NIC / NOC (quando cobrado)",
+        "Registro e prontuário",
+        "Diagnóstico e prescrição de enfermagem"
+      ],
+      "sources_tier_a": [
+        "COFEN Res. 358/2009",
+        "NANDA-I (tier B)"
+      ],
+      "done_when": "Privativas e etapas sem ambiguidade; 5+ diagnósticos frequentes em prova.",
+      "priority_score": 268
+    },
+    {
+      "subtopico": "Cálculo de Administração de Medicamentos e Infusões",
+      "phase": "P2_volume",
+      "question_count": 114,
+      "current_entries": 35,
+      "target_entries": 35,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "calc-equivalencias-br"
+      ],
+      "edital_themes": [
+        "Equivalências mL/gotas/microgotas",
+        "Regra de três e diluição",
+        "mg/kg pediátrico",
+        "Insulina U-100 e heparina",
+        "Velocidade de infusão (gts/min, mL/h)",
+        "Concentração percentual e mcg"
+      ],
+      "sources_tier_a": [
+        "COFEN administração de medicamentos",
+        "Anvisa — diluição/reconstituição"
+      ],
+      "done_when": "Todas fórmulas de prova CPCON/FEPese cobertas com números na tabela.",
+      "priority_score": 228
+    },
+    {
+      "subtopico": "Vias de Administração",
+      "phase": "P0_manter",
+      "question_count": 231,
+      "current_entries": 58,
+      "target_entries": 40,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "vias-administracao-cofen",
+        "cuidados-admin-cofen"
+      ],
+      "edital_themes": [
+        "IM, SC, EV, VO, retal, inalatória",
+        "Absorção e técnica",
+        "Sites e ângulos"
+      ],
+      "sources_tier_a": [
+        "COFEN vias de administração"
+      ],
+      "done_when": "Manter; revisar após mudança COFEN.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Epidemiologia e Vigilância Epidemiológica",
+      "phase": "P3_complementar",
+      "question_count": 224,
+      "current_entries": 66,
+      "target_entries": 40,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "epidemiologia-ms",
+        "pni-calendario-2025"
+      ],
+      "edital_themes": [
+        "Incidência, prevalência, letalidade",
+        "Surto, endemia, epidemia, pandemia",
+        "Notificação compulsória e SINAN",
+        "Vigilância sentinela",
+        "Poliomielite e eliminação"
+      ],
+      "sources_tier_a": [
+        "Guia de Vigilância Epidemiológica MS",
+        "Portaria notificação compulsiva"
+      ],
+      "done_when": "Lista doenças notificação imediata vs semanal (principais).",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Doenças Virais de Interesse Epidemiológico (Covid, Influenza, Sarampo, Polio etc.)",
+      "phase": "P3_complementar",
+      "question_count": 135,
+      "current_entries": 63,
+      "target_entries": 50,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "doencas-virais-ms",
+        "pni-calendario-2025"
+      ],
+      "edital_themes": [
+        "Sarampo/rubéola — notificação e bloqueio",
+        "Influenza",
+        "Poliomielite",
+        "Covid-19",
+        "Hepatites virais"
+      ],
+      "sources_tier_a": [
+        "Guias MS vigilância viral",
+        "PNI calendário"
+      ],
+      "done_when": "Uma entry por doença viral do edital EBSERH.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Promoção à Saúde e Prevenção de Agravos",
+      "phase": "P3_complementar",
+      "question_count": 124,
+      "current_entries": 30,
+      "target_entries": 30,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "promocao-saude-sus"
+      ],
+      "edital_themes": [
+        "Lei 8.080/8.142",
+        "PNPS",
+        "Prevenção primária/secundária/terciária",
+        "Determinantes sociais",
+        "Carta de Ottawa"
+      ],
+      "sources_tier_a": [
+        "Lei 8.080/1990",
+        "Lei 8.142/1990",
+        "PNPS Portaria 2.446/2014"
+      ],
+      "done_when": "Art. 4º Lei 8080 e níveis de prevenção sem confusão.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Curativos e Manejo de Feridas",
+      "phase": "P0_manter",
+      "question_count": 122,
+      "current_entries": 35,
+      "target_entries": 35,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "curativos-lpp-npuap"
+      ],
+      "edital_themes": [
+        "LPP estágios I–IV",
+        "Braden",
+        "Tipos de cobertura",
+        "Desbridamento"
+      ],
+      "sources_tier_a": [
+        "NPUAP/EPUAP",
+        "COFEN curativos"
+      ],
+      "done_when": "Pacote premium referência — alinhar builder.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Enfermagem em Centro Cirúrgico",
+      "phase": "P3_complementar",
+      "question_count": 122,
+      "current_entries": 30,
+      "target_entries": 30,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "perioperatorio-cirurgia-segura"
+      ],
+      "edital_themes": [
+        "Cirurgia segura OMS",
+        "Contagem compressas",
+        "Papéis circulante/instrumentador",
+        "Assepsia"
+      ],
+      "sources_tier_a": [
+        "COFEN/CC",
+        "Anvisa centro cirúrgico"
+      ],
+      "done_when": "Checklist 3 momentos + contagem.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Procedimentos Diversos",
+      "phase": "P0_manter",
+      "question_count": 118,
+      "current_entries": 45,
+      "target_entries": 35,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "procedimentos-diversos-assepsia",
+        "biosseguranca-anvisa"
+      ],
+      "edital_themes": [
+        "Assepsia vs desinfecção",
+        "Higiene das mãos",
+        "Procedimentos pontuais (nebulização, glicemia capilar)"
+      ],
+      "sources_tier_a": [
+        "Anvisa/OMS precauções padrão"
+      ],
+      "done_when": "Manter; adicionar só se inferência de enunciado apontar gap.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Punção Venosa e Cuidados com Cateteres",
+      "phase": "P0_manter",
+      "question_count": 116,
+      "current_entries": 52,
+      "target_entries": 40,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "puncao-cateter-anvisa",
+        "coleta-exames-sbpc-ml"
+      ],
+      "edital_themes": [
+        "Punção periférica",
+        "CVC/PICC bundle",
+        "Flebite",
+        "Manutenção e troca"
+      ],
+      "sources_tier_a": [
+        "Anvisa dispositivos invasivos",
+        "COFEN punção venosa"
+      ],
+      "done_when": "Manter; expandir INS flebite se lote punção falhar factcheck.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Noções de Anatomia",
+      "phase": "P4_conceitual",
+      "question_count": 103,
+      "current_entries": 25,
+      "target_entries": 25,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "anatomia-terminologia"
+      ],
+      "edital_themes": [
+        "Planos e direções",
+        "Cavidades",
+        "Sistemas principais",
+        "Terminologia"
+      ],
+      "sources_tier_a": [
+        "Terminologia anatômica internacional (conceitual)"
+      ],
+      "done_when": "Pares direcionais + 3 sistemas (cardiovascular, respiratório, digestório).",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Mobilização e Posicionamento do Paciente",
+      "phase": "P0_manter",
+      "question_count": 91,
+      "current_entries": 49,
+      "target_entries": 30,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "mobilizacao-posicionamento",
+        "curativos-lpp-npuap"
+      ],
+      "edital_themes": [
+        "Decúbitos",
+        "LPP prevenção",
+        "Transferência",
+        "Trendelenburg/Fowler"
+      ],
+      "sources_tier_a": [
+        "COFEN mobilização"
+      ],
+      "done_when": "Manter — merge curativos cobre LPP.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Segurança do Paciente",
+      "phase": "P3_complementar",
+      "question_count": 91,
+      "current_entries": 30,
+      "target_entries": 30,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "biosseguranca-anvisa"
+      ],
+      "edital_themes": [
+        "NSP Anvisa",
+        "Identificação paciente",
+        "Erro de medicação",
+        "Queda",
+        "Úlcera por pressão"
+      ],
+      "sources_tier_a": [
+        "Programa Nacional Segurança do Paciente"
+      ],
+      "done_when": "5 temas NSP com ação de enfermagem.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Noções de Fisiologia",
+      "phase": "P4_conceitual",
+      "question_count": 89,
+      "current_entries": 89,
+      "target_entries": 30,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "fisiologia-homeostase",
+        "sv-adulto-referencia"
+      ],
+      "edital_themes": [
+        "Homeostase",
+        "SV normais",
+        "Equilíbrio ácido-base",
+        "Termorregulação"
+      ],
+      "sources_tier_a": [
+        "Referência clínica MS/SBP"
+      ],
+      "done_when": "SV adulto sem duplicar SV subtópico; conceitos fisiológicos puros.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Saúde da Criança",
+      "phase": "P3_complementar",
+      "question_count": 81,
+      "current_entries": 93,
+      "target_entries": 45,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "saude-crianca-ms",
+        "sv-adulto-referencia"
+      ],
+      "edital_themes": [
+        "Aleitamento",
+        "Crescimento OMS",
+        "Desidratação",
+        "Vacinação",
+        "SV pediátrico"
+      ],
+      "sources_tier_a": [
+        "Caderneta da criança MS",
+        "SBP SV pediátrico"
+      ],
+      "done_when": "Plano A/B/C desidratação + curvas crescimento.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Infecções Sexualmente Transmissíveis (ISTs)",
+      "phase": "P3_complementar",
+      "question_count": 76,
+      "current_entries": 30,
+      "target_entries": 30,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "ists-prevencao-ms"
+      ],
+      "edital_themes": [
+        "Rotas de transmissão",
+        "PEP HIV 72h",
+        "Sífilis, HIV, HBV, HPV",
+        "Preservativo e testagem"
+      ],
+      "sources_tier_a": [
+        "PCDT IST MS"
+      ],
+      "done_when": "PCDT: janela PEP e testagem por agente.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Medidas de Prevenção e Precaução de Contato",
+      "phase": "P3_complementar",
+      "question_count": 71,
+      "current_entries": 30,
+      "target_entries": 30,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "biosseguranca-anvisa"
+      ],
+      "edital_themes": [
+        "Precauções padrão",
+        "Contato, gotículas, aerossóis",
+        "EPI por risco",
+        "Higienização das mãos"
+      ],
+      "sources_tier_a": [
+        "Anvisa precauções"
+      ],
+      "done_when": "Cada precaução com indicação e EPI.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+      "phase": "P3_complementar",
+      "question_count": 68,
+      "current_entries": 30,
+      "target_entries": 30,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "perioperatorio-cirurgia-segura"
+      ],
+      "edital_themes": [
+        "Jejum pré-op",
+        "SRPA — Aldrete",
+        "Checklist",
+        "Curativo e CME pós-op"
+      ],
+      "sources_tier_a": [
+        "COFEN perioperatório"
+      ],
+      "done_when": "Jejum sólidos/líquidos + escala Aldrete numérica.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Doenças Parasitárias e Zoonoses",
+      "phase": "P3_complementar",
+      "question_count": 62,
+      "current_entries": 28,
+      "target_entries": 28,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "parasitarias-zoonoses-ms"
+      ],
+      "edital_themes": [
+        "Dengue",
+        "Zika/chikungunya",
+        "Malária",
+        "Leptospirose",
+        "Raiva",
+        "Esquistossomose"
+      ],
+      "sources_tier_a": [
+        "Manuais vigilância zoonoses MS"
+      ],
+      "done_when": "Vetor + controle por doença principal.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Infecções no Contexto da Biossegurança",
+      "phase": "P3_complementar",
+      "question_count": 54,
+      "current_entries": 30,
+      "target_entries": 30,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "biosseguranca-anvisa"
+      ],
+      "edital_themes": [
+        "IRAS",
+        "Cadeia de infecção",
+        "Perfurocortante",
+        "Resíduos"
+      ],
+      "sources_tier_a": [
+        "Anvisa IRAS"
+      ],
+      "done_when": "6 elos + conduta perfurocortante completa.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Doenças Bacterianas e Fúngicas (Tuberculose, Tétano, Candidíase etc.)",
+      "phase": "P3_complementar",
+      "question_count": 51,
+      "current_entries": 50,
+      "target_entries": 40,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "tuberculose-ms",
+        "biosseguranca-anvisa"
+      ],
+      "edital_themes": [
+        "TB — BAAR, TDO, precaução aerossóis",
+        "Tétano — profilaxia",
+        "Candidíase",
+        "Meningite bacteriana"
+      ],
+      "sources_tier_a": [
+        "Manual TB MS",
+        "Protocolos MS"
+      ],
+      "done_when": "TB completo + tétano esquema vacinal/profilaxia.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Enfermagem do Trabalho",
+      "phase": "P3_complementar",
+      "question_count": 48,
+      "current_entries": 25,
+      "target_entries": 25,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "enfermagem-trabalho-nr32"
+      ],
+      "edital_themes": [
+        "NR-32",
+        "Perfurocortante",
+        "PEP ocupacional",
+        "Ergonomia",
+        "Vacinação trabalhador"
+      ],
+      "sources_tier_a": [
+        "NR-32 MTE",
+        "Protocolos MS exposição biológica"
+      ],
+      "done_when": "NR-32 escopo + fluxo acidente biológico.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Saúde Mental",
+      "phase": "P3_complementar",
+      "question_count": 37,
+      "current_entries": 25,
+      "target_entries": 25,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "saude-mental-ms"
+      ],
+      "edital_themes": [
+        "RAPS/CAPS",
+        "Risco suicida",
+        "Acolhimento",
+        "CVV 188",
+        "Estigma"
+      ],
+      "sources_tier_a": [
+        "MS rede atenção psicossocial"
+      ],
+      "done_when": "Fluxo ideação suicida + encaminhamento.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+      "phase": "P3_complementar",
+      "question_count": 35,
+      "current_entries": 28,
+      "target_entries": 28,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "cme-anvisa-rdc15"
+      ],
+      "edital_themes": [
+        "Fluxo suja→limpa→estéril",
+        "Áreas físicas",
+        "Validade materiais"
+      ],
+      "sources_tier_a": [
+        "Anvisa RDC CME"
+      ],
+      "done_when": "Igual processamento + fluxo unidirecional.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Feridas e Queimaduras",
+      "phase": "P3_complementar",
+      "question_count": 26,
+      "current_entries": 50,
+      "target_entries": 30,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "feridas-queimaduras-ms",
+        "curativos-lpp-npuap"
+      ],
+      "edital_themes": [
+        "Graus queimadura",
+        "Regra dos 9",
+        "Profilaxia tétano",
+        "Cicatrização"
+      ],
+      "sources_tier_a": [
+        "MS atendimento queimaduras"
+      ],
+      "done_when": "Regra 9 adulto/criança + profilaxia tétano.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Farmacodinâmica e Farmacocinética",
+      "phase": "P3_complementar",
+      "question_count": 25,
+      "current_entries": 30,
+      "target_entries": 30,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "farmaco-adme-anvisa"
+      ],
+      "edital_themes": [
+        "ADME",
+        "Agonista/antagonista",
+        "Meia-vida",
+        "Índice terapêutico",
+        "Biodisponibilidade"
+      ],
+      "sources_tier_a": [
+        "Anvisa bulário / farmacologia básica"
+      ],
+      "done_when": "Conceitos + 5 fármacos frequentes em prova técnica.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "História da Enfermagem",
+      "phase": "P4_conceitual",
+      "question_count": 18,
+      "current_entries": 22,
+      "target_entries": 22,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "historia-enfermagem-cofen"
+      ],
+      "edital_themes": [
+        "Pioneiras BR",
+        "COFEN/COREN",
+        "Lei 7498",
+        "Código de ética",
+        "Marcos SUS"
+      ],
+      "sources_tier_a": [
+        "COFEN — história e ética"
+      ],
+      "done_when": "10 marcos históricos frequentes em prova.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Processamento de Artigos e Produtos de Saúde",
+      "phase": "P3_complementar",
+      "question_count": 18,
+      "current_entries": 28,
+      "target_entries": 28,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "cme-anvisa-rdc15"
+      ],
+      "edital_themes": [
+        "Limpeza, desinfecção, esterilização",
+        "Indicadores químico/biológico",
+        "Validade"
+      ],
+      "sources_tier_a": [
+        "Anvisa RDC 15/2012"
+      ],
+      "done_when": "Diferença L/D/E + parâmetros autoclave.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Saúde do Adolescente",
+      "phase": "P3_complementar",
+      "question_count": 16,
+      "current_entries": 25,
+      "target_entries": 25,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "saude-adolescente-ms"
+      ],
+      "edital_themes": [
+        "Escuta e sigilo",
+        "Gravidez adolescente",
+        "IST e contracepção",
+        "Vacina HPV",
+        "Violência"
+      ],
+      "sources_tier_a": [
+        "Linha de cuidado adolescente MS"
+      ],
+      "done_when": "Sigilo limites legais + HPV PNI.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)",
+      "phase": "P3_complementar",
+      "question_count": 10,
+      "current_entries": 50,
+      "target_entries": 35,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "respiratorio-cronico-ms",
+        "oxigenoterapia-dispositivos-ms"
+      ],
+      "edital_themes": [
+        "Asma — crise e controle",
+        "DPOC — O₂ titulado",
+        "SpO₂ 88–92%",
+        "Tabagismo"
+      ],
+      "sources_tier_a": [
+        "PCDT Asma/DPOC MS"
+      ],
+      "done_when": "PCDT doses resgate e O₂ DPOC.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+      "phase": "P4_conceitual",
+      "question_count": 6,
+      "current_entries": 123,
+      "target_entries": 50,
+      "gap_entries": 0,
+      "coverage_band": "adequado",
+      "guideline_table_ids": [
+        "doencas-virais-ms",
+        "tuberculose-ms",
+        "parasitarias-zoonoses-ms",
+        "ists-prevencao-ms",
+        "biosseguranca-anvisa"
+      ],
+      "edital_themes": [
+        "Reclassificar para subtópico canônico",
+        "Guideline composta até reclassificação"
+      ],
+      "sources_tier_a": [
+        "Derivar de virais + TB + zoonoses + IST + biossegurança"
+      ],
+      "done_when": "Catálogo reclassificado; bucket <50 questões ou tabela dedicada mínima.",
+      "priority_score": 0
+    },
+    {
+      "subtopico": "Questões Mescladas e Outras Doenças Agudas",
+      "phase": "P4_conceitual",
+      "question_count": 0,
+      "current_entries": 100,
+      "target_entries": 40,
+      "gap_entries": 0,
+      "coverage_band": "sem_guideline",
+      "guideline_table_ids": [
+        "urgencias-rcp-sbv-ms",
+        "doencas-virais-ms",
+        "respiratorio-cronico-ms",
+        "feridas-queimaduras-ms"
+      ],
+      "edital_themes": [
+        "Reclassificar questões",
+        "Guideline composta urgências + agudas"
+      ],
+      "sources_tier_a": [
+        "Derivar de urgências + virais + respiratório"
+      ],
+      "done_when": "Reclassificação inferSubtopico; bucket vazio ou <20 questões.",
+      "priority_score": 0
+    }
+  ]
+}

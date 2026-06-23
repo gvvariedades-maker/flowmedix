@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "banca": "VUNESP",
+    "prova": "AEnf",
+    "orgao": "DAE Bauru",
+    "ano": "2022",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "handcraft-dtrans-g02",
+      "guideline_snapshot": "MS — Manual de Profilaxia da Raiva Humana",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-manual-raiva",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Manual de Profilaxia da Raiva Humana",
+        "year": 2022,
+        "url": "https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/vigilancia-de-a-a-z/raiva",
+        "covers": ["vacina IM", "vacina intradérmica", "SAR", "exposição", "roedores urbanos"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "O vírus da raiva está presente na saliva dos mamíferos infectados, e a transmissão ocorre quando o vírus penetra no organismo através da pele ou de mucosas,\npor meio de mordedura, arranhadura e/ou lambedura. É considerada uma doença grave, pois após curta evolução pode levar ao óbito. A respeito da profilaxia contra a\nraiva, assinale a alternativa correta.",
+    "options": [
+      {
+        "id": "A",
+        "text": "O soro antirrábico (SAR) é solução purificada de imunoglobulinas obtidas do plasma de doadores com níveis elevados de anticorpo específico.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "As vias de aplicação da vacina contra raiva são intramusculares ou intradérmicas.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "O contato indireto com utensílios contaminados requer esquema profilático.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Necessária profilaxia após exposição em caso de acidentes causados por rato, coelho, cobaia, hamster e demais roedores urbanos.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Profilaxia da raiva — panorama",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis"
+      },
+      "items": [
+        {
+          "label": "Transmissão",
+          "detail": "Saliva de mamífero infectado → penetração por mordida, arranhadura ou lambedura em pele/mucosa. Doença quase sempre fatal após sintomas.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Vacina (gabarito B)",
+          "detail": "MS autoriza via intramuscular (deltoide) ou intradérmica — esquemas de pré ou pós-exposição conforme manual vigente.",
+          "icon": "Syringe"
+        },
+        {
+          "label": "SAR",
+          "detail": "Soro antirrábico = imunoglobulina heteróloga (equina) ou humana — não é pool de doadores como na letra A.",
+          "icon": "Shield"
+        },
+        {
+          "label": "Contato indireto",
+          "detail": "Utensílio sem exposição direta à saliva em ferida/mucosa geralmente não indica profilaxia — avaliar tipo de exposição.",
+          "icon": "Ban"
+        },
+        {
+          "label": "Roedores urbanos",
+          "detail": "Rato, coelho, hamster, cobaia: transmissão de raiva é excepcional — profilaxia normalmente não indicada.",
+          "icon": "Bug"
+        }
+      ],
+      "footer_rule": "Pós-exposição: lavar ferida + avaliar espécie + vacina (IM ou ID) ± SAR"
+    },
+    {
+      "type": "golden_rule",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis"
+      },
+      "content": "VACINA ANTIRRÁBICA: VIA INTRAMUSCULAR OU INTRADÉRMICA (MS)",
+      "rows": [
+        { "label": "Via IM", "value": "Deltoide — esquema padrão pós-exposição", "badge": "ok" },
+        { "label": "Via ID", "value": "Alternativa autorizada — economia de dose em campanhas", "badge": "info" },
+        { "label": "SAR", "value": "Imunoglobulina antirrábica (equina ou humana) — exposição grave", "badge": "warn" },
+        { "label": "Roedores urbanos", "value": "Profilaxia em geral NÃO indicada", "badge": "hot" },
+        { "label": "Letra B", "value": "IM ou intradérmica — gabarito", "emphasis": "success", "badge": "hot" }
+      ],
+      "footer_rule": "Lavar ferida imediatamente → classificar exposição → vacina IM/ID"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis"
+      },
+      "steps": [
+        "Enunciado: profilaxia da raiva — assinalar alternativa CORRETA.",
+        "B: vacina por via IM ou intradérmica — conforme Manual MS → manter.",
+        "A: SAR como imunoglobulina de doadores — descrição incorreta; SAR é soro específico antirrábico (equino/humano).",
+        "C: contato indireto com utensílios exige profilaxia — falso na maioria dos casos sem saliva em ferida.",
+        "D: profilaxia obrigatória em roedores urbanos — MS não recomenda rotineiramente.",
+        "Marcar B."
+      ],
+      "footer_rule": "B = via vacinal · A erra o SAR · C/D = indicações indevidas"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis"
+      },
+      "content": "PEGADINHAS VUNESP — PROFILAXIA RAIVA",
+      "items": [
+        {
+          "label": "Letra A — SAR de doadores",
+          "detail": "Confunde soro antirrábico com imunoglobulina hiperimune de banco de sangue.",
+          "correct": "SAR = imunoglobulina antirrábica específica (equina ou humana), não pool genérico de doantes."
+        },
+        {
+          "label": "Letra C — utensílio contaminado",
+          "detail": "Contato indireto sem penetração de saliva em ferida/mucosa raramente configura exposição.",
+          "correct": "Profilaxia depende de mordida/arranhadura/lambedura com risco real — não todo utensílio."
+        },
+        {
+          "label": "Letra D — roedores urbanos",
+          "detail": "Banca induz profilaxia universal em rato/hamster — transmissão é excepcional.",
+          "correct": "MS: acidentes com roedores domésticos em geral NÃO requerem profilaxia antirrábica."
+        },
+        {
+          "label": "Esquecer lavagem da ferida",
+          "detail": "Primeira medida é lavar com água e sabão — antes de vacina ou soro.",
+          "correct": "Vacina IM ou ID faz parte do esquema — letra B."
+        }
+      ],
+      "footer_rule": "Cão/gato incerto → vacinar · Roedor urbano → em regra não · SAR ≠ descrição da letra A"
+    }
+  ]
+}

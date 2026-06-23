@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { BarChart3, Plus } from 'lucide-react';
+import { BarChart3, Plus, Sparkles } from 'lucide-react';
 import { PageHeader } from '@/components/ui/page-header';
 import { cn } from '@/lib/utils';
 
@@ -19,6 +19,13 @@ export function SimuladosHeader({ className }: SimuladosHeaderProps) {
         descriptionClassName="mt-1 text-sm text-slate-500"
         action={
           <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
+            <Link
+              href="/missao-semanal"
+              className="btn-editorial-outline inline-flex h-11 w-full items-center justify-center sm:w-auto"
+            >
+              <Sparkles className="mr-2 h-4 w-4" aria-hidden />
+              Missão da semana
+            </Link>
             <Link
               href="/desempenho/simulados"
               className="btn-editorial-outline inline-flex h-11 w-full items-center justify-center sm:w-auto"

@@ -10,6 +10,7 @@ import {
   type UserDeclaredPreferences,
 } from '@/lib/recommendations';
 import { createServerSupabase } from '@/lib/supabase/server';
+import { getWeeklyOrdinalFromMap, loadWeeklySessionOrdinals } from '@/lib/simulado/weeklyOrdinal';
 import type { WeeklySimuladoMission } from '@/lib/simulado/types';
 import {
   WEEKLY_SIMULADO_ORIGEM,
@@ -276,6 +277,21 @@ async function countRespondidas(supabase: SupabaseClient, sessionId: string): Pr
   return count ?? 0;
 }
 
+async function attachWeeklyOrdinalToMission(
+  supabase: SupabaseClient,
+  userId: string,
+  mission: WeeklySimuladoMission,
+): Promise<WeeklySimuladoMission> {
+  if (!mission.session_id) {
+    return { ...mission, weekly_ordinal: null };
+  }
+  const ordinals = await loadWeeklySessionOrdinals(supabase, userId);
+  return {
+    ...mission,
+    weekly_ordinal: getWeeklyOrdinalFromMap(ordinals, mission.session_id),
+  };
+}
+
 export async function mapSessionToWeeklyMission(
   supabase: SupabaseClient,
   session: WeeklySessionRow,
@@ -326,12 +342,16 @@ export async function createWeeklySimuladoSession(params: {
 
   const existing = await findWeeklySimuladoSession(supabase, params.userId, isoYear, isoWeek);
   if (existing) {
-    const mission = await mapSessionToWeeklyMission(
+    const mission = await attachWeeklyOrdinalToMission(
       supabase,
-      existing,
-      isoYear,
-      isoWeek,
-      weekInfo.weekEndsAt,
+      params.userId,
+      await mapSessionToWeeklyMission(
+        supabase,
+        existing,
+        isoYear,
+        isoWeek,
+        weekInfo.weekEndsAt,
+      ),
     );
     return { created: false, session: existing, mission, reason: 'already_exists' };
   }
@@ -407,12 +427,16 @@ export async function createWeeklySimuladoSession(params: {
     return { created: false, session: null, mission: null, reason: 'insert_failed' };
   }
 
-  const mission = await mapSessionToWeeklyMission(
+  const mission = await attachWeeklyOrdinalToMission(
     supabase,
-    session as WeeklySessionRow,
-    isoYear,
-    isoWeek,
-    weekInfo.weekEndsAt,
+    params.userId,
+    await mapSessionToWeeklyMission(
+      supabase,
+      session as WeeklySessionRow,
+      isoYear,
+      isoWeek,
+      weekInfo.weekEndsAt,
+    ),
   );
 
   return { created: true, session: session as WeeklySessionRow, mission };
@@ -466,12 +490,16 @@ export async function getWeeklySimuladoMission(params: {
     };
   }
 
-  const mission = await mapSessionToWeeklyMission(
+  const mission = await attachWeeklyOrdinalToMission(
     supabase,
-    session,
-    weekInfo.isoYear,
-    weekInfo.isoWeek,
-    weekInfo.weekEndsAt,
+    params.userId,
+    await mapSessionToWeeklyMission(
+      supabase,
+      session,
+      weekInfo.isoYear,
+      weekInfo.isoWeek,
+      weekInfo.weekEndsAt,
+    ),
   );
 
   return { mission, generated };

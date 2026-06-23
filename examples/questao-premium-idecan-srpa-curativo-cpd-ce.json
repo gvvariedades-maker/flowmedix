@@ -1,162 +1,136 @@
 {
   "meta": {
     "banca": "IDECAN",
-    "prova": "Enfermagem",
-    "ano": "2026",
+    "prova": "TEnf (Campina Gde)",
+    "orgao": "Pref Campina Gde",
+    "ano": "2021",
     "cargo_header": "TÉCNICO DE ENFERMAGEM",
     "topico": "Enfermagem",
-    "subtopico": "Assistência Perioperatória (Inclui SRPA)"
+    "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+    "content_standard": "golden-v1",
+    "family": "certo_errado",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "COFEN — atribuições técnico × enfermeiro; cuidado pós-anestésico",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "cofen-res-358-2009",
+        "tier": "A",
+        "issuer": "COFEN",
+        "title": "Resolução COFEN nº 358/2009 — SAE e atribuições",
+        "year": 2009,
+        "covers": ["atribuições privativas", "registro", "procedimentos de enfermagem"]
+      },
+      {
+        "id": "anvisa-rdc-7-2010",
+        "tier": "A",
+        "issuer": "ANVISA",
+        "title": "RDC nº 7/2010 — Boas práticas em serviços de saúde",
+        "year": 2010,
+        "covers": ["segurança do paciente", "cuidados pós-procedimento"]
+      }
+    ]
   },
   "question_data": {
     "instruction": "Na SRPA, o técnico de enfermagem pode observar e trocar o curativo do cateter peridural, desde que sob supervisão do enfermeiro.",
     "options": [
-      {
-        "id": "A",
-        "text": "Certo.",
-        "is_correct": false
-      },
-      {
-        "id": "B",
-        "text": "Errado.",
-        "is_correct": true
-      }
+      { "id": "A", "text": "Certo.", "is_correct": false },
+      { "id": "B", "text": "Errado.", "is_correct": true }
     ]
   },
   "reverse_study_slides": [
     {
       "type": "concept_map",
-      "layout_variant": "morphological",
       "slide_title": "SRPA e cateter peridural — leitura da prova",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Assistência Perioperatória (Inclui SRPA)"
-      },
+      "chip_label": "SRPA",
+      "meta": { "topico": "Enfermagem", "subtopico": "Assistência Perioperatória (Inclui SRPA)" },
       "items": [
         {
           "label": "SRPA",
-          "detail": "Sala de recuperação pós-anestésica: ambiente de monitorização intensiva após o procedimento cirúrgico e anestésico.",
+          "detail": "Sala de recuperação pós-anestésica: monitorização contínua após cirurgia e anestesia.",
           "icon": "Bed"
         },
         {
           "label": "Cateter peridural (CPD)",
-          "detail": "Dispositivo que exige técnica e atribuições específicas. A troca de curativo não é tarefa liberada ao técnico como execução autônoma.",
+          "detail": "Dispositivo invasivo de alta responsabilidade — curativo e manuseio são atribuição privativa do enfermeiro.",
           "icon": "ShieldAlert"
         },
         {
           "label": "Papel do técnico",
-          "detail": "Observar, monitorar, comunicar alterações e apoiar o cuidado dentro de sua competência técnica.",
+          "detail": "Observar, monitorar sinais, comunicar alterações — dentro da competência técnica.",
           "icon": "UserCheck"
         },
         {
-          "label": "Papel do enfermeiro",
-          "detail": "Avaliar, decidir condutas de enfermagem e realizar procedimentos privativos, como curativos de dispositivos complexos.",
-          "icon": "Stethoscope"
-        },
-        {
-          "label": "Pegadinha da banca",
-          "detail": "A questão mistura supervisão com execução para fazer parecer que “observar” autoriza “trocar curativo”.",
+          "label": "Pegadinha",
+          "detail": "A banca junta “sob supervisão” com “trocar curativo” para parecer permitido.",
           "icon": "AlertTriangle"
         },
         {
           "label": "Gabarito",
-          "detail": "B: errado.",
+          "detail": "B — Errado: técnico não executa troca de curativo de CPD.",
           "icon": "CheckCircle"
         }
       ],
-      "footer_rule": "Na SRPA, supervisão não transforma atribuição privativa em tarefa do técnico"
+      "footer_rule": "Supervisão não transforma procedimento privativo em tarefa do técnico"
     },
     {
       "type": "golden_rule",
-      "layout_variant": "reference_table",
-      "template": "t05",
-      "slide_title": "Regra de ouro — atribuições na SRPA",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Assistência Perioperatória (Inclui SRPA)"
-      },
-      "content": "SRPA - O QUE O TÉCNICO PODE E O QUE NÃO PODE",
+      "slide_title": "Atribuições na SRPA",
+      "chip_label": "REGRA DE OURO",
+      "meta": { "topico": "Enfermagem", "subtopico": "Assistência Perioperatória (Inclui SRPA)" },
+      "content": "SRPA: TÉCNICO MONITORA — ENFERMEIRO EXECUTA O PRIVATIVO",
       "rows": [
-        {
-          "label": "Pode",
-          "value": "Monitorar sinais, observar o paciente e comunicar intercorrências",
-          "badge": "ok"
-        },
-        {
-          "label": "Não pode executar sozinho",
-          "value": "Troca de curativo de CPD como atribuição privativa",
-          "emphasis": "alert",
-          "badge": "warn"
-        },
-        {
-          "label": "Conduta segura",
-          "value": "Percebeu alteração? Observa, registra e avisa o enfermeiro",
-          "badge": "info"
-        },
-        {
-          "label": "Armadilha da questão",
-          "value": "\"Sob supervisão\" não elimina a natureza privativa do procedimento",
-          "emphasis": "highlight",
-          "badge": "hot"
-        },
-        {
-          "label": "Resposta",
-          "value": "Errado",
-          "badge": "hot"
-        }
+        { "label": "Técnico pode", "value": "Monitorar SV, dor, consciência; observar e comunicar", "badge": "ok" },
+        { "label": "Técnico não pode", "value": "Trocar curativo de CPD como ato próprio", "emphasis": "alert", "badge": "warn" },
+        { "label": "Supervisão", "value": "Não amplia atribuição — só orienta o cuidado", "badge": "info" },
+        { "label": "Gabarito", "value": "Errado (B)", "emphasis": "success", "badge": "hot" }
       ],
-      "footer_rule": "Competência técnica não é o mesmo que autorização para procedimento privativo"
+      "footer_rule": "Competência técnica ≠ autorização para procedimento privativo"
     },
     {
       "type": "logic_flow",
-      "layout_variant": "cards",
+      "slide_title": "Como julgar C/E — CPD na SRPA",
+      "chip_label": "PASSO A PASSO",
+      "meta": { "topico": "Enfermagem", "subtopico": "Assistência Perioperatória (Inclui SRPA)" },
       "reveal_mode": "tap",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Assistência Perioperatória (Inclui SRPA)"
-      },
       "steps": [
-        "Ler a frase inteira e separar dois verbos: observar e trocar curativo.",
-        "Reconhecer que a SRPA exige vigilância contínua, mas isso não amplia atribuições privativas.",
-        "Lembrar: curativo de CPD é procedimento de responsabilidade do enfermeiro.",
-        "Entender que supervisionar não autoriza o técnico a executar aquilo que é privativo.",
-        "Julgar a assertiva como errada.",
-        "Marcar B.",
-        "Fixação: técnico observa, monitora e comunica; enfermeiro decide e executa o que é privativo."
+        "Separar os verbos: observar (permitido) × trocar curativo (privativo).",
+        "Identificar CPD como dispositivo de risco — manuseio do enfermeiro.",
+        "Ler “sob supervisão” — não autoriza o técnico a executar o privativo.",
+        "Julgar a afirmativa como falsa.",
+        "Marcar B — Errado.",
+        "Fixação: técnico observa e comunica; enfermeiro troca curativo de CPD."
       ],
-      "footer_rule": "Passo a passo: verbo privativo identificado → resposta errada"
+      "footer_rule": "Verbo privativo na frase → tendência a Errado para o técnico"
     },
     {
       "type": "danger_zone",
-      "layout_variant": "compare",
+      "slide_title": "Armadilhas — SRPA e CPD",
+      "chip_label": "ARMADILHAS",
+      "meta": { "topico": "Enfermagem", "subtopico": "Assistência Perioperatória (Inclui SRPA)" },
+      "content": "PEGADINHAS — ATRIBUIÇÃO NA SRPA",
       "bullet_style": "x_icon",
-      "meta": {
-        "topico": "Enfermagem",
-        "subtopico": "Assistência Perioperatória (Inclui SRPA)"
-      },
-      "content": "PEGADINHAS IDECAN — SRPA e CPD",
       "items": [
         {
-          "label": "Achar que supervisão libera procedimento",
-          "detail": "A banca usa “sob supervisão do enfermeiro” para parecer que tudo fica permitido.",
-          "correct": "Se a atribuição é privativa, supervisão não transforma o técnico em executor."
+          "label": "“Sob supervisão” libera tudo",
+          "detail": "A banca usa supervisão para parecer que qualquer conduta fica permitida.",
+          "correct": "Supervisão orienta — não transfere procedimento privativo ao técnico."
         },
         {
-          "label": "Confundir observar com fazer",
-          "detail": "O técnico pode acompanhar o curativo e relatar alterações, mas não assumir a troca como ato próprio.",
-          "correct": "Observar e comunicar é diferente de realizar o procedimento."
+          "label": "Confundir observar com executar",
+          "detail": "Acompanhar o curativo e relatar alterações ≠ realizar a troca.",
+          "correct": "Observar e comunicar é diferente de trocar o curativo."
         },
         {
-          "label": "Ignorar a especificidade do CPD",
-          "detail": "Cateter peridural envolve cuidado sensível, com risco e responsabilidade técnica.",
-          "correct": "Curativo de CPD fica na esfera do enfermeiro."
-        },
-        {
-          "label": "Marcar Certo por causa da SRPA",
-          "detail": "A sigla da unidade induz o aluno a pensar só em monitorização pós-anestésica.",
-          "correct": "A unidade não muda a atribuição profissional do procedimento."
+          "label": "Marcar Certo pela sigla SRPA",
+          "detail": "SRPA é monitorização — não amplia escopo de procedimentos invasivos.",
+          "correct": "A unidade não muda a atribuição profissional do CPD."
         }
       ],
-      "footer_rule": "Se a frase mistura supervisão com ato privativo, o gabarito tende a ser errado"
+      "footer_rule": "CPD + troca de curativo → enfermeiro, não técnico"
     }
   ]
 }

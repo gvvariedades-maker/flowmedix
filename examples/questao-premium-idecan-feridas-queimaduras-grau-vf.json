@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "banca": "IDECAN",
+    "prova": "TEnf",
+    "orgao": "Hosp Estadual",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Feridas e Queimaduras"
+  },
+  "question_data": {
+    "instruction": "Sobre queimaduras e classificação de profundidade, analise as afirmativas.\n\nI - Queimaduras de primeiro grau acometem apenas a epiderme, com eritema e dor, sem bolhas.\nII - Queimaduras de segundo grau superficial apresentam bolhas e dor intensa, com acometimento da derme papilar.\nIII - Queimaduras de terceiro grau são sempre muito dolorosas porque todas as camadas da pele permanecem íntegras e sensíveis.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Queimaduras — graus na prova",
+      "meta": { "topico": "Enfermagem", "subtopico": "Feridas e Queimaduras" },
+      "items": [
+        { "label": "1º grau", "detail": "Só epiderme — vermelhidão e dor, sem bolha.", "icon": "Sun" },
+        { "label": "2º superficial", "detail": "Bolhas, dor intensa, derme papilar.", "icon": "Droplets" },
+        { "label": "2º profundo", "detail": "Menor dor, derme reticular — risco de cicatriz.", "icon": "Layers" },
+        { "label": "3º grau", "detail": "Destruição de espessura total — aspecto branco/escuro, dor reduzida por lesão nervosa.", "icon": "AlertTriangle" }
+      ],
+      "footer_rule": "Mais profundo nem sempre = mais dor — 3º grau pode ser indolor"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Classificação — tabela rápida",
+      "meta": { "topico": "Enfermagem", "subtopico": "Feridas e Queimaduras" },
+      "content": "PROFUNDIDADE",
+      "rows": [
+        { "label": "1º grau", "value": "Epiderme — eritema, sem bolha", "badge": "ok" },
+        { "label": "2º superficial", "value": "Bolhas + dor intensa", "badge": "ok" },
+        { "label": "3º grau", "value": "Espessura total — dor pode estar ausente", "emphasis": "alert", "badge": "warn" },
+        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+      ],
+      "footer_rule": "III erra ao afirmar que 3º grau é sempre doloroso"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Feridas e Queimaduras" },
+      "steps": [
+        "I: 1º grau = epiderme, sem bolha → verdadeira.",
+        "II: 2º superficial = bolhas e dor → verdadeira.",
+        "III: 3º grau sempre muito doloroso → falsa.",
+        "Letra B: I e II apenas.",
+        "Fixação: lesão nervosa profunda reduz a dor percebida."
+      ],
+      "footer_rule": "Avaliar profundidade + presença de bolha + padrão de dor"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Feridas e Queimaduras" },
+      "content": "PEGADINHAS — QUEIMADURAS",
+      "items": [
+        { "label": "3º grau = mais dor", "detail": "A banca inverte: destruição nervosa pode reduzir dor.", "correct": "3º grau pode ser indolor ou com dor discreta." },
+        { "label": "Bolha no 1º grau", "detail": "Bolha indica pelo menos 2º grau.", "correct": "1º grau: eritema sem bolha." },
+        { "label": "Marcar D", "detail": "III invalida qualquer alternativa que a inclua.", "correct": "Gabarito B." }
+      ],
+      "footer_rule": "Profundidade e dor não caminham sempre juntas"
+    }
+  ]
+}

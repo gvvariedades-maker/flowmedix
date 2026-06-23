@@ -1,0 +1,29 @@
+{
+  "lote": "cme-g03",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-23",
+  "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+  "cluster": "Processamento e esterilização — conceito",
+  "cluster_pct": 11.4,
+  "total": 4,
+  "status": "validated",
+  "anchor_slug": "avancasp-enfermagem-processo-de-enfermagem-1780002714111-7",
+  "golden_reference": "examples/questao-premium-avancasp-cme-manuseio-esteril.json",
+  "guideline": "lib/guidelines/cme.ts (Anvisa RDC 15/2012)",
+  "slugs": [
+    "avancasp-enfermagem-processo-de-enfermagem-1780002714111-7",
+    "cpcon-uepb-enfermagem-processo-de-enfermagem-1780003868364-3",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780009379028-5",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005556782-0"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=cme-g03 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/cme-g03/questions/",
+    "2. npm run validate:goldens -- --lote=cme-g03 --strict",
+    "3. Laboratório + player (artifacts/cme-g03-links.html)",
+    "4. npm run catalog:apply-lote -- --lote=cme-g03 --apply"
+  ],
+  "prev_lote": "cme-g02 (validated 10/10)",
+  "next_lote": "cme-g04 — Certo ou errado + INCORRETA (7 slugs restantes)"
+}

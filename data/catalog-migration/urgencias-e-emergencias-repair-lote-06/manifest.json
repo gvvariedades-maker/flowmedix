@@ -1,0 +1,16 @@
+{
+  "lote": "urgencias-e-emergencias-repair-lote-06",
+  "exported_at": "2026-06-22T16:46:11.082Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "artifacts/premium-upgrade-lotes/urgencias-e-emergencias/repair-lote-06-manifest.json"
+  },
+  "slugs": [
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-4",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104070286-5",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104077075-9",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104083571-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-0",
+    "vunesp-enfermagem-urgencias-e-emergencias-1777104090044-1"
+  ]
+}

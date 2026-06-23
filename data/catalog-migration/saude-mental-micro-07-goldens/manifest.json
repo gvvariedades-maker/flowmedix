@@ -1,0 +1,19 @@
+{
+  "lote": "saude-mental-micro-07-goldens",
+  "exported_at": "2026-06-23T19:00:00.000Z",
+  "source": "handcraft",
+  "filters": {
+    "micro_lote": "SM-7",
+    "cluster": "Esquizofrenia / psicofármacos + cauda (sono, epilepsia, Alzheimer)",
+    "anchor": "questao-premium-instituto-aocp-saude-mental-esquizofrenia-psicofarmacos.json"
+  },
+  "slugs": [
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-2",
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-1",
+    "cpcon-uepb-enfermagem-semiologia-em-enfermagem-1779563505333-4",
+    "fafipa-enfermagem-processo-de-enfermagem-1780009386446-4",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-0",
+    "legalle-enfermagem-processo-de-enfermagem-1780011967989-0",
+    "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-6"
+  ]
+}

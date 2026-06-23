@@ -1,0 +1,44 @@
+{
+  "pacote": "perioperatoria-completo",
+  "subtopico": "Assistência Perioperatória (Inclui SRPA)",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "ai_generate": false,
+  "upgrade_premium": false,
+  "total_slugs": 68,
+  "handcraft_completed_at": "2026-06-23",
+  "applied_at": "2026-06-23",
+  "status": "applied",
+  "readme": "data/catalog-migration/perioperatoria-completo/README.md",
+  "runbook": "docs/GOLDEN_HANDCRAFT_MODEL.md",
+  "manifest": "data/catalog-migration/perioperatoria-completo/manifest.json",
+  "cluster_command": "npm run cluster:perioperatoria",
+  "cluster_report": "artifacts/perioperatoria-topic-cluster-report.json",
+  "lotes": [
+    { "lote": "perioperatoria-g01", "total": 8, "status": "applied", "links": "artifacts/perioperatoria-g01-links.html" },
+    { "lote": "perioperatoria-g02", "total": 8, "status": "applied", "links": "artifacts/perioperatoria-g02-links.html" },
+    { "lote": "perioperatoria-g03", "total": 8, "status": "applied", "links": "artifacts/perioperatoria-g03-links.html" },
+    { "lote": "perioperatoria-g04", "total": 8, "status": "applied", "links": "artifacts/perioperatoria-g04-links.html" },
+    { "lote": "perioperatoria-g05", "total": 8, "status": "applied", "links": "artifacts/perioperatoria-g05-links.html" },
+    { "lote": "perioperatoria-g06", "total": 8, "status": "applied", "links": "artifacts/perioperatoria-g06-links.html" },
+    { "lote": "perioperatoria-g07", "total": 8, "status": "applied", "links": "artifacts/perioperatoria-g07-links.html" },
+    { "lote": "perioperatoria-g08", "total": 8, "status": "applied", "links": "artifacts/perioperatoria-g08-links.html" },
+    { "lote": "perioperatoria-g09", "total": 4, "status": "applied", "links": "artifacts/perioperatoria-g09-links.html" }
+  ],
+  "anchor_examples": [
+    "examples/questao-premium-idecan-srpa-curativo-cpd-ce.json",
+    "examples/questao-premium-idecan-perioperatoria-aldrete-srpa.json",
+    "examples/questao-premium-consulplan-perioperatoria-srpa-monitorizacao.json",
+    "examples/questao-premium-avancasp-perioperatoria-pre-operatorio.json",
+    "examples/questao-premium-furb-perioperatoria-isc-classificacao.json",
+    "examples/questao-premium-cogeps-perioperatoria-cirurgia-segura-cdc.json"
+  ],
+  "workflow": [
+    "1. catalog:export-lote por lote (slugs do manifest)",
+    "2. Handcraft golden-v1 em data/catalog-migration/<lote>/questions/ (Cursor — sem ai:generate, sem upgrade-premium)",
+    "3. npm run validate:goldens -- --lote=<lote> --strict",
+    "4. npm run catalog:apply-lote -- --lote=<lote> --dry-run",
+    "5. Amostra no player (artifacts/<lote>-links.html)",
+    "6. npm run catalog:apply-lote -- --lote=<lote> --apply"
+  ]
+}

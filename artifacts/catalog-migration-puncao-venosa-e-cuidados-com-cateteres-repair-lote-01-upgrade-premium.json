@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-06-20T12:21:24.587Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-01",
+  "mode": "write",
+  "force": true,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 1,
+  "upgraded": 1,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "legis": 1
+  },
+  "results": [
+    {
+      "modulo_slug": "cotec-fadenor-enfermagem-processo-de-enfermagem-1780010579953-4",
+      "status": "upgraded",
+      "family": "legis",
+      "golden_reference": "questao-premium-sus-lei-8080-cesgranrio.json",
+      "generic_before": true,
+      "changes": [
+        "danger_zone",
+        "logic_flow",
+        "concept_map",
+        "golden_rule"
+      ]
+    }
+  ]
+}

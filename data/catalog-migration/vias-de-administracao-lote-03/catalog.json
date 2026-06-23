@@ -1,11 +1,11 @@
 {
-  "exported_at": "2026-06-09T11:11:38.214Z",
+  "exported_at": "2026-06-19T15:16:37.394Z",
   "lote": "vias-de-administracao-lote-03",
   "total": 50,
   "entries": [
     {
       "modulo_slug": "fumarc-enfermagem-vias-de-administracao-1776056383154-0",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Imunização",
       "modulo_nome": "Enfermagem",
       "banca": "FUMARC",
       "avant_codigo": 403
@@ -54,7 +54,7 @@
     },
     {
       "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056374837-7",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Assistência Perioperatória (Inclui SRPA)",
       "modulo_nome": "Enfermagem",
       "banca": "FUNDATEC",
       "avant_codigo": 402
@@ -68,7 +68,7 @@
     },
     {
       "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1776056383154-6",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Procedimentos Diversos",
       "modulo_nome": "Enfermagem",
       "banca": "FUNDATEC",
       "avant_codigo": 409
@@ -96,7 +96,7 @@
     },
     {
       "modulo_slug": "fundatec-enfermagem-vias-de-administracao-1778968666352-6",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Imunização",
       "modulo_nome": "Enfermagem",
       "banca": "FUNDATEC",
       "avant_codigo": 2019
@@ -145,7 +145,7 @@
     },
     {
       "modulo_slug": "fundep-enfermagem-vias-de-administracao-1776056427936-6",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Procedimentos Diversos",
       "modulo_nome": "Enfermagem",
       "banca": "FUNDEP",
       "avant_codigo": 453
@@ -159,14 +159,14 @@
     },
     {
       "modulo_slug": "funtef-enfermagem-vias-de-administracao-1778968598934-3",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Urgências e Emergências",
       "modulo_nome": "Enfermagem",
       "banca": "FUNTEF",
       "avant_codigo": 1984
     },
     {
       "modulo_slug": "funtef-enfermagem-vias-de-administracao-1778968598934-4",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Imunização",
       "modulo_nome": "Enfermagem",
       "banca": "FUNTEF",
       "avant_codigo": 1985
@@ -229,7 +229,7 @@
     },
     {
       "modulo_slug": "gama-enfermagem-vias-de-administracao-1778968598934-0",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Oxigenoterapia e Cuidados Respiratórios",
       "modulo_nome": "Enfermagem",
       "banca": "GAMA",
       "avant_codigo": 1981
@@ -244,7 +244,7 @@
     {
       "modulo_slug": "gama-geral-vias-de-administracao-1776056427936-3",
       "titulo_aula": "Vias de Administração",
-      "modulo_nome": "Geral",
+      "modulo_nome": "Enfermagem",
       "banca": "GAMA",
       "avant_codigo": 450
     },
@@ -278,7 +278,7 @@
     },
     {
       "modulo_slug": "iaupe-enfermagem-vias-de-administracao-1778968877204-6",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Cuidados na Administração de Medicamentos",
       "modulo_nome": "Enfermagem",
       "banca": "IAUPE",
       "avant_codigo": 2075
@@ -341,7 +341,7 @@
     },
     {
       "modulo_slug": "ibade-enfermagem-vias-de-administracao-1778968862077-4",
-      "titulo_aula": "Vias de Administração",
+      "titulo_aula": "Infecções Sexualmente Transmissíveis (ISTs)",
       "modulo_nome": "Enfermagem",
       "banca": "IBADE",
       "avant_codigo": 2063

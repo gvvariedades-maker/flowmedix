@@ -1,0 +1,29 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-03-flebite",
+  "exported_at": "2026-06-22T22:50:25.417Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "artifacts/premium-upgrade-lotes/puncao-venosa-e-cuidados-com-cateteres/repair-lote-03-flebite-manifest.json"
+  },
+  "slugs": [
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-7",
+    "avancasp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340270805-4",
+    "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-0",
+    "coseac-uff-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562716126-1",
+    "facape-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-5",
+    "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-7",
+    "fau-unicentro-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562711132-5",
+    "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-6",
+    "fepese-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-0",
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-2",
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-0",
+    "fuvest-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-0",
+    "fuvest-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-1",
+    "idib-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1778934890864-3",
+    "instituto-access-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-6",
+    "instituto-consulplan-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-9",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-7",
+    "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-1",
+    "unifil-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-3"
+  ]
+}

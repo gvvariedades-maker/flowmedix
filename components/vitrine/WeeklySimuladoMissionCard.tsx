@@ -2,10 +2,11 @@
 
 import { useCallback, useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, CalendarClock, Loader2, Sparkles, Target } from 'lucide-react';
+import { ArrowRight, CalendarClock, Loader2, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { WeeklySimuladoMission } from '@/lib/simulado/types';
 import { generateWeeklySimulado } from '@/lib/simulado/client';
+import { weeklySimuladoAlunoTitulo } from '@/lib/simulado/weeklyDisplayTitle';
 
 export type WeeklySimuladoMissionCardProps = {
   mission: WeeklySimuladoMission;
@@ -80,6 +81,7 @@ export function WeeklySimuladoMissionCard({
   const ctaHref = mission.session_id ? `/simulados/${mission.session_id}` : null;
   const isReady = mission.status !== 'ausente' && mission.session_id != null;
   const isCompleted = mission.status === 'concluido';
+  const tituloAluno = weeklySimuladoAlunoTitulo(mission.weekly_ordinal);
 
   return (
     <section
@@ -112,23 +114,15 @@ export function WeeklySimuladoMissionCard({
             id="weekly-simulado-mission-title"
             className="text-lg font-black leading-tight text-white sm:text-xl"
           >
-            {isReady
-              ? 'Seu Simulado da Semana está pronto!'
-              : 'Simulado da Semana personalizado'}
+            {isReady ? `${tituloAluno} está pronto!` : tituloAluno}
           </h2>
 
           <p className="text-sm text-slate-300">
-            {mission.foco_principal
-              ? `Foco principal: ${mission.foco_principal}. `
-              : 'Montamos um simulado adaptado ao seu perfil e desempenho. '}
+            Avaliação personalizada com base no seu perfil e desempenho.{' '}
             {formatWeekDeadline(mission.week_ends_at)}.
           </p>
 
           <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400">
-            <span className="inline-flex items-center gap-1.5">
-              <Target size={14} className="text-cyan-300" aria-hidden />
-              {mission.titulo}
-            </span>
             {progressLabel ? (
               <span className="inline-flex items-center gap-1.5">
                 <CalendarClock size={14} className="text-cyan-300" aria-hidden />

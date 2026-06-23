@@ -21,10 +21,13 @@ Lista de referências oficiais para gerar ou validar JSON de questões compatív
 
 ## Convenções para o agente (prompt / subtópico / layout)
 
+- **`docs/PREMIUM_QUESTAO.md`** — definição canônica: L1 estrutural, L2 conteúdo premium, L3 experiência (moldes)
 - **`.cursor/skills/avant-json-template/SKILL.md`** (geração de JSON; pasta `.cursor` pode estar no `.gitignore` — manter cópia ou sincronizar com o time).
 - **`.cursor/rules/avant-agent-json.mdc`** — regra **alwaysApply** com `meta`, cabeçalho, `instruction` e slides. **Cópia versionada no Git:** `docs/cursor/avant-agent-json.mdc` (se a rule local sumir após clone, copiar esse arquivo para `.cursor/rules/`).
 - **`docs/AGENT_AVANT_TEMPLATES_E_LAYOUT.md`**
-- **`docs/PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`** — famílias pedagógicas (legislação, protocolo, cálculo, I/II/III, conceito), visual premium, evidências UX, anti-repetição e checklist de publicação
+- **`docs/GOLDEN_CONTENT_STANDARD.md`** — gramática golden-v1, fontes, gates de lint
+- **`docs/GOLDEN_HANDCRAFT_MODEL.md`** — **runbook padrão** para escalar golden-v1 no catálogo (âncora por ramo + handcraft por questão)
+- **`docs/GOLDEN_ROLLOUT_CATALOGO.md`** — programa catálogo inteiro
 - **`docs/VARIANT_MOLDS.md`** — pipeline para moldes interativos bespoke (concept_map / danger_zone), contrato de conteúdo por molde, wiring no player e catálogo atual
 
 ## Migração de catálogo e visual

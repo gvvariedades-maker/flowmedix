@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "banca": "FUNDATEC",
+    "prova": "TEnf",
+    "orgao": "Pref Porto Alegre",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Questões Mescladas e Outras Doenças Agudas"
+  },
+  "question_data": {
+    "instruction": "Sobre reconhecimento de deterioração clínica aguda, analise as afirmativas.\n\nI - Queda do nível de consciência, confusão nova e taquipneia podem ser sinais de alerta precoce.\nII - Hipotensão e taquicardia persistentes podem indicar choque ou sepse em evolução.\nIII - Em qualquer quadro agudo, o técnico deve aguardar a visita médica antes de acionar a equipe, mesmo com sinais de choque.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Agudo — sinais de alerta",
+      "meta": { "topico": "Enfermagem", "subtopico": "Questões Mescladas e Outras Doenças Agudas" },
+      "items": [
+        { "label": "NEWS/PEWS", "detail": "Escalas de alerta precoce — alteração de FC, FR, PA, consciência, temperatura.", "icon": "Activity" },
+        { "label": "Consciência", "detail": "Confusão ou rebaixamento — sinal de gravidade.", "icon": "Brain" },
+        { "label": "Choque", "detail": "TA baixa + FC alta + perfusão ruim — acionar equipe.", "icon": "HeartPulse" },
+        { "label": "Comunicação", "detail": "Notificar imediatamente — não postergar em choque.", "icon": "Phone" }
+      ],
+      "footer_rule": "Agudo grave = reconhecer + comunicar sem demora"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Deterioração — referência",
+      "meta": { "topico": "Enfermagem", "subtopico": "Questões Mescladas e Outras Doenças Agudas" },
+      "content": "ACIONAR",
+      "rows": [
+        { "label": "Sinais precoces", "value": "Consciência, FR, FC alterados", "badge": "ok" },
+        { "label": "Choque/sepse", "value": "Hipotensão + taquicardia", "badge": "ok" },
+        { "label": "Esperar médico", "value": "Falso — comunicar imediatamente", "emphasis": "alert", "badge": "warn" },
+        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+      ],
+      "footer_rule": "III viola segurança do paciente em emergência"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Questões Mescladas e Outras Doenças Agudas" },
+      "steps": [
+        "I: sinais de alerta precoce → verdadeira.",
+        "II: hipotensão + taquicardia = gravidade → verdadeira.",
+        "III: aguardar médico em choque → falsa.",
+        "Letra B.",
+        "Fixação: técnico comunica e inicia suporte básico conforme protocolo."
+      ],
+      "footer_rule": "Reconhecer → comunicar → monitorar"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Questões Mescladas e Outras Doenças Agudas" },
+      "content": "PEGADINHAS — AGUDOS",
+      "items": [
+        { "label": "Postergar acionamento", "detail": "III é conduta perigosa.", "correct": "Comunicar equipe imediatamente diante de choque." },
+        { "label": "Só PA importa", "detail": "I inclui consciência e taquipneia.", "correct": "Olhar conjunto de sinais vitais e neurológicos." },
+        { "label": "Confundir com crônico", "detail": "Questão mesclada testa agudização.", "correct": "Alteração aguda exige resposta rápida." }
+      ],
+      "footer_rule": "Em agudos: tempo é fator — não esperar passivamente"
+    }
+  ]
+}

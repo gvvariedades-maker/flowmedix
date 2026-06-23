@@ -1,0 +1,23 @@
+{
+  "lote": "saude-mental-micro-02-dependencia",
+  "exported_at": "2026-06-23T17:31:24.343Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "aocp-enfermagem-dependencia-quimica-1778967935713-6",
+      "fgv-enfermagem-dependencia-quimica-1778967935713-2",
+      "ibfc-enfermagem-dependencia-quimica-1778967935713-5",
+      "idib-enfermagem-dependencia-quimica-1778934936220-3",
+      "imparh-enfermagem-dependencia-quimica-1778968028412-0",
+      "unifil-enfermagem-dependencia-quimica-1778967935713-8"
+    ]
+  },
+  "slugs": [
+    "aocp-enfermagem-dependencia-quimica-1778967935713-6",
+    "fgv-enfermagem-dependencia-quimica-1778967935713-2",
+    "ibfc-enfermagem-dependencia-quimica-1778967935713-5",
+    "idib-enfermagem-dependencia-quimica-1778934936220-3",
+    "imparh-enfermagem-dependencia-quimica-1778968028412-0",
+    "unifil-enfermagem-dependencia-quimica-1778967935713-8"
+  ]
+}

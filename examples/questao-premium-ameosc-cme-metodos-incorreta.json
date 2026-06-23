@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "banca": "AMEOSC",
+    "prova": "Tec Enf",
+    "orgao": "Pref Tunápolis",
+    "ano": "2026",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "handcraft-pilot",
+      "guideline_snapshot": "Anvisa RDC 15/2012 — métodos de esterilização",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "cme-anvisa-rdc15",
+        "tier": "A",
+        "issuer": "Anvisa",
+        "title": "RDC 15/2012 — métodos físicos e químicos de esterilização",
+        "year": 2012,
+        "covers": ["autoclave", "vapor saturado", "glutaraldeído", "peracético", "limpeza prévia"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A esterilização é o processo utilizado para a completa destruição de micro-organismos, incluindo todas as suas formas esporuladas. Sobre o processo de esterilização de materiais utilizados em serviços de saúde, assinale abaixo a alternativa INCORRETA.",
+    "options": [
+      { "id": "A", "text": "Antes do processo de esterilização, os materiais devem passar pelo processo de limpeza.", "is_correct": false },
+      { "id": "B", "text": "O vapor saturado pode ser utilizado no processo físico de esterilização.", "is_correct": false },
+      { "id": "C", "text": "Glutaraldeído e ácido peracético podem ser utilizados no processo químico de esterilização.", "is_correct": false },
+      { "id": "D", "text": "A autoclave não deve ser utilizada no processo de esterilização.", "is_correct": true }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Métodos de esterilização — INCORRETA",
+      "chip_label": "INCORRETA",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "items": [
+        { "label": "Comando", "detail": "INCORRETA — três alternativas descrevem métodos válidos; uma nega a autoclave.", "icon": "AlertTriangle" },
+        { "label": "Físico", "detail": "Vapor saturado na autoclave — principal método em CME.", "icon": "Flame" },
+        { "label": "Químico", "detail": "Glutaraldeído e peracético — esterilização química de baixa temperatura.", "icon": "TestTube" },
+        { "label": "Pré-requisito", "detail": "Limpeza obrigatória antes de qualquer esterilização.", "icon": "Sparkles" },
+        { "label": "Gabarito", "detail": "Letra D — autoclave é método central de esterilização.", "icon": "Target" }
+      ],
+      "footer_rule": "INCORRETA = a que contradiz a prática da CME"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Métodos de esterilização",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "content": "ESTERILIZAÇÃO NA CME",
+      "rows": [
+        { "label": "Prévia", "value": "Limpeza obrigatória — remove matéria orgânica", "badge": "hot", "emphasis": "highlight" },
+        { "label": "Físico", "value": "Autoclave — vapor saturado (121 °C)", "badge": "hot" },
+        { "label": "Químico", "value": "Glutaraldeído, peracético (baixa temperatura)", "badge": "ok" },
+        { "label": "INCORRETA", "value": "“Autoclave não deve ser usada” — falso", "badge": "warn", "emphasis": "alert" },
+        { "label": "Gabarito", "value": "Letra D", "badge": "hot" }
+      ],
+      "footer_rule": "Autoclave = método físico mais usado na CME hospitalar"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "steps": [
+        "Comando: assinale a INCORRETA sobre esterilização.",
+        "A: limpeza antes da esterilização → correta (eliminar).",
+        "B: vapor saturado no processo físico → correta (eliminar).",
+        "C: glutaraldeído e peracético no químico → correta (eliminar).",
+        "D: autoclave não deve ser usada → falsa — é o equipamento padrão.",
+        "Marcar D."
+      ],
+      "footer_rule": "INCORRETA: teste cada letra — só D erra o conceito"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Enfermagem em Central de Material e Esterilização (CME)" },
+      "content": "PEGADINHAS — INCORRETA",
+      "items": [
+        {
+          "label": "Letra A — limpeza prévia",
+          "detail": "Material sujo não esteriliza — matéria orgânica protege microrganismos.",
+          "correct": "Limpeza é etapa obrigatória antes da esterilização — afirmativa correta, não é o gabarito."
+        },
+        {
+          "label": "Letra B — vapor saturado",
+          "detail": "Autoclave usa vapor sob pressão para destruir esporos.",
+          "correct": "Vapor saturado é o agente físico clássico — afirmativa correta, não é o gabarito."
+        },
+        {
+          "label": "Letra C — agentes químicos",
+          "detail": "Glutaraldeído 2% e peracético são usados em esterilização química de termossensíveis.",
+          "correct": "Esterilização química complementa a física — afirmativa correta, não é o gabarito."
+        },
+        {
+          "label": "Letra D — negar autoclave",
+          "detail": "Autoclave é o equipamento mais empregado na esterilização hospitalar por vapor.",
+          "correct": "Esta é a INCORRETA — autoclave deve sim ser utilizada no processo de esterilização."
+        }
+      ],
+      "footer_rule": "INCORRETA: A–C são verdadeiras; D inventa proibição inexistente"
+    }
+  ]
+}

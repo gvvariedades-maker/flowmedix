@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-10T03:54:54.438Z",
+  "generated_at": "2026-06-19T13:55:35.569Z",
   "lote": "instalacao-e-manejo-de-sondas-lote-04",
   "mode": "write",
-  "force": false,
+  "force": true,
   "danger_only": false,
   "preserve_rich_slides": true,
   "total_files": 5,
@@ -18,60 +18,65 @@
       "modulo_slug": "vunesp-enfermagem-instalacao-e-manejo-de-sondas-1776056493133-2",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "vunesp-enfermagem-instalacao-e-manejo-de-sondas-1776056578580-3",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "vunesp-enfermagem-instalacao-e-manejo-de-sondas-1776056633262-0",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "vunesp-enfermagem-instalacao-e-manejo-de-sondas-1776056633262-1",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     },
     {
       "modulo_slug": "vunesp-enfermagem-instalacao-e-manejo-de-sondas-1779344262940-3",
       "status": "upgraded",
       "family": "calc",
-      "golden_reference": "questao-premium-idecan-calculo-equivalencias-gotas.json",
-      "generic_before": true,
+      "golden_reference": "questao-premium-consulplan-sondagem-nasogastrica-nex.json",
+      "generic_before": false,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
       ]
     }
   ]

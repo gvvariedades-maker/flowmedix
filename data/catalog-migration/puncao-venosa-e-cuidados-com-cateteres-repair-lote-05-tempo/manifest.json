@@ -1,0 +1,21 @@
+{
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-05-tempo",
+  "exported_at": "2026-06-22T23:13:17.902Z",
+  "source": "supabase",
+  "filters": {
+    "from_manifest": "artifacts/premium-upgrade-lotes/puncao-venosa-e-cuidados-com-cateteres/repair-lote-05-tempo-manifest.json"
+  },
+  "slugs": [
+    "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340213288-3",
+    "cpcon-uepb-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340232037-0",
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-6",
+    "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562693149-7",
+    "iaupe-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562677534-1",
+    "ibade-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562699843-7",
+    "maranatha-assessoria-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340191984-4",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-7",
+    "objetiva-concursos-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562705224-4",
+    "selecon-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779562687359-3",
+    "vunesp-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340280693-4"
+  ]
+}

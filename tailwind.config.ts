@@ -1,4 +1,6 @@
 // Tailwind v4: Config type no longer includes all legacy options at top level
+import tailwindcssAnimate from 'tailwindcss-animate';
+
 const config = {
   darkMode: "class",
   content: [
@@ -95,7 +97,7 @@ const config = {
       }
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
   safelist: [
     // Cores Neon Dinâmicas (para suportar classes geradas em runtime)
     'bg-cyan-500/10',

@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "Tec (Pref Pombal)",
+    "orgao": "Enfermagem",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Punção Venosa e Cuidados com Cateteres",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-06-22",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "ANVISA 2017 — intervalos de troca de equipos e dispositivos complementares",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "anvisa-2017-iras",
+        "tier": "A",
+        "issuer": "ANVISA",
+        "title": "Medidas de Prevenção de Infecção Relacionada à Assistência à Saúde",
+        "year": 2017,
+        "covers": ["troca de equipos", "infusão contínua 96h", "administração intermitente"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "A troca dos equipos e dispositivos complementares é baseada em alguns fatores, como tipo de solução utilizada, frequência da infusão (contínuo ou intermitente), suspeita de contaminação ou quando a integridade do produto ou do sistema estiver comprometida.\nConsiderando as medidas de prevenção de infecção relacionadas à assistência à saúde (ANVISA, 2017), É CORRETO afirmar:",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deve-se trocar equipos de sistema fechado de monitorização hemodinâmica e pressão arterial invasiva a cada 24 horas.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Deve-se trocar equipos de administração intermitente a cada 48 horas.",
+        "is_correct": false
+      },
+      {
+        "id": "C",
+        "text": "Deve-se trocar o equipo e o dispositivo complementar de nutrição parenteral a cada 12 horas.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Deve-se trocar o equipo e o dispositivo complementar de administração de hemocomponente a cada 6-12 horas.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Equipos de infusão contínua não devem ser trocados em intervalos inferiores a 96 horas.",
+        "is_correct": true
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Troca de equipos — intervalos ANVISA",
+      "chip_label": "TEMPO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "items": [
+        {
+          "label": "Contexto",
+          "detail": "Troca de equipos conforme tipo de solução, frequência da infusão e integridade do sistema — ANVISA 2017.",
+          "icon": "Gauge"
+        },
+        {
+          "label": "Infusão contínua",
+          "detail": "Não trocar equipos em intervalo inferior a 96 horas (gabarito E) — salvo contaminação ou comprometimento.",
+          "icon": "Clock"
+        },
+        {
+          "label": "Intermitente / NPP",
+          "detail": "Intervalos específicos por tipo de administração — a banca troca números entre alternativas.",
+          "icon": "Timer"
+        },
+        {
+          "label": "Hemocomponente",
+          "detail": "Troca em janela curta (6–12 h) — não confundir com infusão contínua de 96 h.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra E — infusão contínua: mínimo 96 h entre trocas de equipo.",
+          "icon": "Target"
+        }
+      ],
+      "footer_rule": "Memorize o par tipo de infusão × intervalo — a banca inverte horas entre alternativas."
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Tabela — intervalos de troca",
+      "chip_label": "REGRA DE OURO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "content": "TEMPO: TIPO DE INFUSÃO DEFINE O INTERVALO — NÃO GENERALIZE 24 H PARA TUDO",
+      "rows": [
+        {
+          "label": "Infusão contínua",
+          "value": "Não trocar equipos em intervalo inferior a 96 horas.",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Monitorização invasiva",
+          "value": "Sistema fechado hemodinâmico/PA invasiva — intervalo próprio (não é 48 h genérico).",
+          "emphasis": "default",
+          "badge": "info"
+        },
+        {
+          "label": "Intermitente",
+          "value": "Administração intermitente tem intervalo distinto da contínua.",
+          "emphasis": "default",
+          "badge": "info"
+        },
+        {
+          "label": "NPP / hemocomponente",
+          "value": "Nutrição parenteral e hemocomponente — janelas curtas (ex.: 6–12 h).",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Gabarito",
+          "value": "Letra E",
+          "emphasis": "highlight",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Contínua = 96 h mínimo; intermitente e hemocomponente têm intervalos menores e específicos."
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — tempo e troca",
+      "chip_label": "PASSO A PASSO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "reveal_mode": "tap",
+      "steps": [
+        "Ler o comando: intervalo correto de troca de equipos (ANVISA 2017).",
+        "Identificar o tipo de infusão citado em cada alternativa (contínua, intermitente, NPP, hemocomponente).",
+        "Fixar infusão contínua: não trocar antes de 96 horas.",
+        "Identificar gabarito: letra E.",
+        "Testar letra A (24 h monitorização) e B (48 h intermitente): intervalos específicos — eliminar se generalizados.",
+        "Testar letra C (12 h NPP) e D (6–12 h hemocomponente): não são a regra da contínua — eliminar.",
+        "Marcar letra E.",
+        "Fixação: tipo de solução + frequência definem o intervalo — troca antecipada só com contaminação ou dano."
+      ],
+      "footer_rule": "Número de horas sem contexto = pegadinha — associe sempre ao tipo de equipo/infusão."
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas — intervalos trocados",
+      "chip_label": "ARMADILHAS DE PROVA",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Punção Venosa e Cuidados com Cateteres"
+      },
+      "content": "PEGADINHAS — TEMPO E TROCA DE EQUIPOS",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra A — 24 horas genérico",
+          "detail": "A banca usa 24 h para monitorização invasiva — não é a regra da infusão contínua (96 h).",
+          "correct": "Gabarito letra E — contínua: intervalo mínimo de 96 horas entre trocas."
+        },
+        {
+          "label": "Letra B — 48 horas intermitente",
+          "detail": "Administração intermitente tem intervalo próprio — não substitui a regra da contínua.",
+          "correct": "Gabarito letra E — não trocar contínua antes de 96 h."
+        },
+        {
+          "label": "Letra C — 12 horas NPP",
+          "detail": "Nutrição parenteral tem janela curta — não confundir com equipo de infusão contínua.",
+          "correct": "Gabarito letra E — associe intervalo ao tipo de infusão."
+        },
+        {
+          "label": "Letra D — 6–12 h hemocomponente",
+          "detail": "Hemocomponente exige troca rápida — não é o mesmo critério da infusão contínua prolongada.",
+          "correct": "Gabarito letra E — 96 h mínimo para equipos de infusão contínua."
+        }
+      ],
+      "footer_rule": "Troca antecipada: contaminação, integridade comprometida ou protocolo específico do tipo de solução."
+    }
+  ]
+}

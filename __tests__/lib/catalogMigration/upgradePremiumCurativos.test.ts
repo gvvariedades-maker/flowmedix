@@ -40,6 +40,27 @@ describe('upgradePremiumCurativos', () => {
     expect(extractCurativosAssertives(broken)).toHaveLength(2);
   });
 
+  it('extractCurativosAssertives aceita I. com ponto (formato Adm&Tec)', () => {
+    const instruction =
+      'Sobre via subcutânea:\nI. A longo prazo, pode causar irritação.\nII. Absorção rápida.\nIII. Adesão facilitada.\nIV. Volume máximo 3 mL.\nEstão CORRETOS os itens';
+    expect(extractCurativosAssertives(instruction)).toHaveLength(4);
+  });
+
+  it('extractCurativosAssertives aceita afirmativas (__) e resolve V/F no gabarito', () => {
+    const instruction =
+      'Sobre sinais vitais:\n(__)A temperatura axilar normal varia entre 30,5°C e 31,0°C.\n(__)A pressão arterial deve ser aferida após 5 minutos de repouso.\n(__)A frequência respiratória normal em adultos varia entre 18 e 26 irpm.\n(__)O técnico deve registrar os sinais vitais no prontuário.\nAssinale a sequência CORRETA de cima para baixo.';
+    const assertives = extractCurativosAssertives(instruction);
+    expect(assertives).toHaveLength(4);
+    expect(assertives[0].roman).toBe('I');
+
+    const resolved = resolveCurativosAssertives(instruction, {
+      id: 'C',
+      text: 'F, V, F, V.',
+      is_correct: true,
+    });
+    expect(resolved.map((a) => a.isTrue)).toEqual([false, true, false, true]);
+  });
+
   it('parseTrueNumeralsFromGabarito extrai I e III da letra E', () => {
     const assertives = resolveCurativosAssertives(
       golden.question_data.instruction,
@@ -151,5 +172,26 @@ describe('upgradePremiumCurativos', () => {
     const slides = result.payload.reverse_study_slides as { type: string }[];
     const gr = slides.find((s) => s.type === 'golden_rule') as { rows?: unknown[] };
     expect(gr.rows?.length).toBeGreaterThanOrEqual(4);
+  });
+
+  it('upgrade híbrido usa builder Curativos para certo/errado com rows', () => {
+    const result = upgradePremiumHybrid({
+      ...GENERIC_CURATIVOS,
+      question_data: {
+        instruction:
+          'Julgue o item: a troca diária da bolsa de colostomia com técnica estéril é conduta obrigatória.',
+        options: [
+          { id: 'A', text: 'Certo', is_correct: false },
+          { id: 'B', text: 'Errado', is_correct: true },
+        ],
+      },
+    });
+    expect(result.changed).toBe(true);
+    expect(result.zodValid).toBe(true);
+    expect(result.family).toBe('certo_errado');
+    const gr = (result.payload.reverse_study_slides as { type: string; rows?: unknown[] }[]).find(
+      (s) => s.type === 'golden_rule',
+    );
+    expect(gr?.rows?.length).toBeGreaterThanOrEqual(2);
   });
 });

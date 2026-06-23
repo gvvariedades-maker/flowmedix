@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "banca": "VUNESP",
+    "prova": "TEnf",
+    "orgao": "Pref Campinas",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Procedimentos Diversos"
+  },
+  "question_data": {
+    "instruction": "Sobre procedimentos de enfermagem e técnica asséptica, analise as afirmativas.\n\nI - A técnica asséptica visa reduzir a transmissão de microrganismos durante procedimentos invasivos ou com risco de contaminação.\nII - A antissepsia é realizada na pele ou mucosa do paciente; a desinfecção refere-se a objetos e superfícies inanimadas.\nIII - Lavar as mãos apenas após o procedimento é suficiente quando luvas foram utilizadas do início ao fim.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Assepsia — conceitos de prova",
+      "meta": { "topico": "Enfermagem", "subtopico": "Procedimentos Diversos" },
+      "items": [
+        { "label": "Técnica asséptica", "detail": "Barreira contra contaminação em procedimentos — campo estéril, material estéril.", "icon": "Shield" },
+        { "label": "Antissepsia", "detail": "Redução de microrganismos em tecido vivo — pele/mucosa do paciente.", "icon": "Hand" },
+        { "label": "Desinfecção", "detail": "Objetos e superfícies inanimadas — não confundir com antissepsia.", "icon": "SprayCan" },
+        { "label": "Higienização das mãos", "detail": "Antes e depois do contato — luva não substitui lavagem completa dos momentos indicados.", "icon": "Droplets" }
+      ],
+      "footer_rule": "Antissepsia = vivo · Desinfecção = objeto"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Definições — tabela",
+      "meta": { "topico": "Enfermagem", "subtopico": "Procedimentos Diversos" },
+      "content": "VIVO × OBJETO",
+      "rows": [
+        { "label": "Antissepsia", "value": "Pele/mucosa do paciente", "badge": "ok" },
+        { "label": "Desinfecção", "value": "Objetos e superfícies", "badge": "ok" },
+        { "label": "Luva só no fim", "value": "Falso — higiene nos momentos da OMS", "emphasis": "alert", "badge": "warn" },
+        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+      ],
+      "footer_rule": "III ignora higienização antes e após — erro de biossegurança"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Procedimentos Diversos" },
+      "steps": [
+        "I: técnica asséptica reduz transmissão → verdadeira.",
+        "II: antissepsia (vivo) vs desinfecção (objeto) → verdadeira.",
+        "III: lavar só depois com luva → falsa.",
+        "Letra B.",
+        "Fixação: luva complementa, não substitui os 5 momentos da higiene das mãos."
+      ],
+      "footer_rule": "Procedimentos diversos costumam cobrar definição + higiene das mãos"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Procedimentos Diversos" },
+      "content": "PEGADINHAS — ASSEPSIA",
+      "items": [
+        { "label": "Trocar antissepsia e desinfecção", "detail": "II está correta justamente por separar vivo de objeto.", "correct": "Antissepsia no paciente; desinfecção no ambiente/objeto." },
+        { "label": "Luva dispensa higiene", "detail": "Microperfurações e contaminação da luva existem.", "correct": "Higienizar nos momentos indicados, com ou sem luva." },
+        { "label": "Asséptico = estéril sempre", "detail": "Campo asséptico reduz carga — nem todo procedimento exige esterilização absoluta.", "correct": "I fala em reduzir transmissão — conceito de barreira." }
+      ],
+      "footer_rule": "Biossegurança: definição certa + higiene das mãos completa"
+    }
+  ]
+}

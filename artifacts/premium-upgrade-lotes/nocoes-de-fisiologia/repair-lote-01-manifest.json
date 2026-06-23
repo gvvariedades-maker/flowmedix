@@ -1,0 +1,28 @@
+{
+  "lote": "nocoes-de-fisiologia-repair-lote-01",
+  "generated_at": "2026-06-20T11:54:54.683Z",
+  "source": "premium-needs-upgrade-supabase",
+  "subtopico": "Noções de Fisiologia",
+  "lote_prefix": "nocoes-de-fisiologia",
+  "batch": 1,
+  "has_dedicated_builder": false,
+  "builder": null,
+  "issue_summary": {
+    "stub_markers": 13
+  },
+  "slugs": [
+    "avancasp-enfermagem-processo-de-enfermagem-1780003137298-3",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002375665-1",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002549800-5",
+    "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-0",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780001903454-4",
+    "instituto-iacp-enfermagem-processo-de-enfermagem-1780004272097-9",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780008210115-5",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-2",
+    "legalle-enfermagem-processo-de-enfermagem-1780010585356-5",
+    "legalle-enfermagem-processo-de-enfermagem-1780010905023-9",
+    "legalle-enfermagem-processo-de-enfermagem-1780010911471-4",
+    "legalle-enfermagem-processo-de-enfermagem-1780011887822-1",
+    "selecon-enfermagem-processo-de-enfermagem-1780009310940-6"
+  ]
+}

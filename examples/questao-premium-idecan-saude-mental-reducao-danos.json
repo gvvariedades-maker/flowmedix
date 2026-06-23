@@ -1,0 +1,198 @@
+{
+  "meta": {
+    "banca": "IDECAN",
+    "prova": "Tec Enf",
+    "orgao": "Enfermagem",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde Mental",
+    "content_standard": "golden-v1",
+    "family": "conceito",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "content-pilot",
+      "guideline_snapshot": "MS — Política de Redução de Danos e cuidado integral em dependência",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "ms-reducao-danos",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Política de Redução de Danos — cuidado a usuários de álcool e outras drogas",
+        "year": 2014,
+        "url": "https://www.gov.br/saude/pt-br/composicao/svsa/alcohol-e-outras-drogas",
+        "covers": ["redução de danos", "vínculo territorial", "ESF"]
+      },
+      {
+        "id": "portaria-3088-2011-raps",
+        "tier": "A",
+        "issuer": "Ministério da Saúde",
+        "title": "Portaria GM/MS nº 3.088/2011 — RAPS",
+        "year": 2011,
+        "covers": ["articulação com CAPS e AB"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Em uma Unidade de Saúde Mental, um paciente de 29 anos, com histórico de consumo abusivo de álcool e crack, apresenta resistência em aderir às orientações de redução de danos. Assinale a opção correta que descreve a prática profissional voltada à prevenção e ao cuidado integral desse usuário.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Orientar interrupção imediata do consumo, focando exclusivamente na abstinência, mesmo que o paciente não demonstre motivação.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Incentivar o monitoramento ambulatorial compartilhado com a Estratégia de Saúde da Família, priorizando a abordagem familiar e o fortalecimento de vínculos sociais.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Ressaltar a necessidade de isolamento do paciente em serviço de internação involuntária, assegurando proteção e sigilo de todo o processo terapêutico.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Limitar as ações apenas à administração de medicação psiquiátrica, responsabilizando o paciente por seu engajamento no tratamento.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Redirecionar o caso para serviços especializados de alta complexidade sem envolvimento com a Rede de Atenção Psicossocial, objetivando diagnóstico mais aprofundado.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Redução de danos — cuidado integral",
+      "chip_label": "ÁLCOOL E DROGAS",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "items": [
+        {
+          "label": "ENQUADRAMENTO",
+          "detail": "Usuário com álcool e crack resiste à redução de danos — a prova testa cuidado integral territorial, não abstinência forçada.",
+          "icon": "Heart"
+        },
+        {
+          "label": "Redução de danos",
+          "detail": "Estratégia do SUS: diminuir danos sem exigir abstinência imediata quando não há motivação — vínculo e adesão gradual.",
+          "icon": "Shield"
+        },
+        {
+          "label": "ESF + família",
+          "detail": "Monitoramento ambulatorial com Estratégia Saúde da Família, abordagem familiar e vínculos sociais — letra B.",
+          "icon": "Users"
+        },
+        {
+          "label": "Pegadinha abstinência",
+          "detail": "Abstinência imediata sem motivação (A) contraria redução de danos e afasta o usuário do cuidado.",
+          "icon": "AlertTriangle"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra B — cuidado compartilhado com ESF, família e rede psicossocial.",
+          "icon": "CheckCircle"
+        }
+      ],
+      "footer_rule": "Redução de danos: vínculo territorial antes de exigir abstinência"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Redução de danos — regra de ouro",
+      "chip_label": "REGRA DE OURO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "content": "VÍNCULO + TERRITÓRIO + REDUÇÃO DE DANOS",
+      "rows": [
+        {
+          "label": "Princípio",
+          "value": "Cuidado integral sem culpabilizar — reduzir danos do consumo",
+          "badge": "ok"
+        },
+        {
+          "label": "Não fazer",
+          "value": "Abstinência imediata imposta sem motivação do usuário",
+          "emphasis": "alert",
+          "badge": "warn"
+        },
+        {
+          "label": "Fazer",
+          "value": "Articulação com ESF, família e RAPS — acompanhamento longitudinal",
+          "emphasis": "highlight",
+          "badge": "hot"
+        },
+        {
+          "label": "Gabarito",
+          "value": "Letra B",
+          "emphasis": "success",
+          "badge": "hot"
+        }
+      ],
+      "footer_rule": "Internação e isolamento são exceção — não primeira resposta"
+    },
+    {
+      "type": "logic_flow",
+      "slide_title": "Como resolver — redução de danos",
+      "chip_label": "PASSO A PASSO",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "reveal_mode": "tap",
+      "steps": [
+        "Cenário: usuário de álcool e crack resiste à redução de danos — busque conduta de cuidado integral.",
+        "Lembrar: política de redução de danos prioriza vínculo e diminuição de danos, não abstinência forçada.",
+        "Eliminar A: abstinência imediata sem motivação — contraria redução de danos.",
+        "Eliminar C: internação involuntária como resposta — desproporcional e fora do eixo territorial.",
+        "Eliminar D: só medicação — reduz o cuidado à farmacoterapia.",
+        "Eliminar E: alta complexidade sem RAPS — quebra articulação da rede.",
+        "Marcar B: ESF + família + vínculos sociais.",
+        "Fixação: dependência química na prova = rede + vínculo + redução de danos."
+      ],
+      "footer_rule": "Resistência do usuário pede acolhimento, não coerção"
+    },
+    {
+      "type": "danger_zone",
+      "slide_title": "Armadilhas — álcool, crack e redução de danos",
+      "chip_label": "ARMADILHAS",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Saúde Mental"
+      },
+      "content": "PEGADINHAS — REDUÇÃO DE DANOS E DEPENDÊNCIA",
+      "bullet_style": "x_icon",
+      "items": [
+        {
+          "label": "Letra A — abstinência imediata",
+          "detail": "Parece 'conduta correta' pelo viés moralista do uso de drogas.",
+          "correct": "Gabarito letra B — sem motivação, impor abstinência afasta o usuário; redução de danos mantém vínculo."
+        },
+        {
+          "label": "Letra C — internação involuntária",
+          "detail": "Apresenta isolamento como proteção e sigilo terapêutico.",
+          "correct": "Gabarito letra B — cuidado territorial com ESF e família, não internação como resposta à resistência."
+        },
+        {
+          "label": "Letra D — só medicação",
+          "detail": "Responsabiliza só o paciente pelo engajamento.",
+          "correct": "Gabarito letra B — cuidado integral inclui vínculo social e acompanhamento na ESF."
+        },
+        {
+          "label": "Letra E — alta complexidade sem rede",
+          "detail": "Sugere encaminhar e 'descartar' a atenção básica.",
+          "correct": "Gabarito letra B — caso deve permanecer articulado à RAPS e à Estratégia Saúde da Família."
+        }
+      ],
+      "footer_rule": "Redução de danos ≠ exigir parar de usar de imediato"
+    }
+  ]
+}

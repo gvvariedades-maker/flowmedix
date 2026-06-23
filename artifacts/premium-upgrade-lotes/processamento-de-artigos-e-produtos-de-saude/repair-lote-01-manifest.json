@@ -1,0 +1,25 @@
+{
+  "lote": "processamento-de-artigos-e-produtos-de-saude-repair-lote-01",
+  "generated_at": "2026-06-20T11:54:54.683Z",
+  "source": "premium-needs-upgrade-supabase",
+  "subtopico": "Processamento de Artigos e Produtos de Saúde",
+  "lote_prefix": "processamento-de-artigos-e-produtos-de-saude",
+  "batch": 1,
+  "has_dedicated_builder": false,
+  "builder": null,
+  "issue_summary": {
+    "stub_markers": 10
+  },
+  "slugs": [
+    "amauc-enfermagem-processo-de-enfermagem-1780001613305-0",
+    "ameosc-enfermagem-processo-de-enfermagem-1780011961798-9",
+    "avancasp-enfermagem-processo-de-enfermagem-1780003031246-7",
+    "avancasp-enfermagem-processo-de-enfermagem-1780011872350-4",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-7",
+    "cotec-fadenor-enfermagem-processo-de-enfermagem-1780002389285-8",
+    "fenix-instituto-enfermagem-processo-de-enfermagem-1780006480333-4",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-1",
+    "instituto-verbena-enfermagem-processo-de-enfermagem-1780009303038-5",
+    "legalle-enfermagem-processo-de-enfermagem-1780011879977-7"
+  ]
+}

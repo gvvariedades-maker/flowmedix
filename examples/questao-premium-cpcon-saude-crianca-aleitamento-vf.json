@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "Tec Enf",
+    "orgao": "Pref Guarabira",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Saúde da Criança"
+  },
+  "question_data": {
+    "instruction": "Sobre saúde da criança e aleitamento materno, analise as afirmativas.\n\nI - O aleitamento materno exclusivo é recomendado até os 6 meses de vida, quando não houver contraindicação.\nII - O leite materno fornece anticorpos e fatores de proteção, contribuindo para a imunidade do lactente.\nIII - Mel complementar deve ser introduzido rotineiramente no primeiro mês de vida para todos os recém-nascidos a termo, mesmo em aleitamento materno exclusivo.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Criança — aleitamento",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Criança" },
+      "items": [
+        { "label": "AME", "detail": "Aleitamento materno exclusivo até 6 meses — só leite materno.", "icon": "Baby" },
+        { "label": "Imunidade", "detail": "IgA secretora e fatores anti-infecciosos no colostro e leite.", "icon": "Shield" },
+        { "label": "Mel", "detail": "Não introduzir no 1º mês — risco de botulismo infantil.", "icon": "AlertTriangle" },
+        { "label": "Pega e posição", "detail": "Apoio à amamentação na consulta de puericultura.", "icon": "Heart" }
+      ],
+      "footer_rule": "6 meses exclusivo · sem mel no 1º mês"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Aleitamento — referência",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Criança" },
+      "content": "6 MESES",
+      "rows": [
+        { "label": "AME", "value": "Até 6 meses — I correta", "badge": "hot", "emphasis": "highlight" },
+        { "label": "Proteção imune", "value": "Anticorpos no leite — II correta", "badge": "ok" },
+        { "label": "Mel no 1º mês", "value": "Falso — contraindicado", "emphasis": "alert", "badge": "warn" },
+        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+      ],
+      "footer_rule": "III é pegadinha clássica de pediatria"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Criança" },
+      "steps": [
+        "I: AME até 6 meses → verdadeira.",
+        "II: fatores de proteção no leite → verdadeira.",
+        "III: mel rotineiro no 1º mês → falsa.",
+        "Letra B.",
+        "Fixação: mel proibido antes de 1 ano (botulismo)."
+      ],
+      "footer_rule": "Criança: política de AME + contraindicações alimentares"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Saúde da Criança" },
+      "content": "PEGADINHAS — CRIANÇA",
+      "items": [
+        { "label": "Mel no recém-nascido", "detail": "III é conduta errada.", "correct": "Não oferecer mel no primeiro ano de vida." },
+        { "label": "AME até 3 meses", "detail": "I fala 6 meses — MS/OMS.", "correct": "Exclusivo até 6 meses." },
+        { "label": "Fórmula igual ao leite", "detail": "II reforça proteção única do leite materno.", "correct": "Leite materno com fatores imunológicos." }
+      ],
+      "footer_rule": "Pediatria básica: 6 meses AME + sem mel precoce"
+    }
+  ]
+}

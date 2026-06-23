@@ -3,8 +3,11 @@
 Padrão canônico de **conteúdo pedagógico** para goldens (`examples/questao-premium-*.json`) e alinhamento dos **builders** em escala.
 
 **Complementa (não substitui):**
+- [`PREMIUM_QUESTAO.md`](PREMIUM_QUESTAO.md) — definição canônica L1/L2/L3
 - [`PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md`](PLAYBOOK_ESTUDO_REVERSO_PREMIUM.md) — famílias e anti-repetição
 - [`PACOTE_PREMIUM_CHECKLIST.md`](PACOTE_PREMIUM_CHECKLIST.md) — moldes, builder, migração
+- [`GOLDEN_ROLLOUT_CATALOGO.md`](GOLDEN_ROLLOUT_CATALOGO.md) — programa "catálogo inteiro em golden-v1"
+- [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) — runbook operacional âncora + handcraft (escala catálogo)
 - [`AGENT_AVANT_TEMPLATES_E_LAYOUT.md`](AGENT_AVANT_TEMPLATES_E_LAYOUT.md) — visual automático por subtópico
 
 **Implementação:** [`lib/goldenContentStandard.ts`](../lib/goldenContentStandard.ts) · [`lib/guidelines/`](../lib/guidelines/) · gate [`__tests__/golden-content-standard.test.ts`](../__tests__/golden-content-standard.test.ts)
@@ -157,17 +160,36 @@ Detalhe por família: Playbook §3.
 
 ---
 
+## 7b. Corretude (lint reforçado)
+
+Além da estrutura, o lint golden-v1 verifica **corretude pedagógica** — defeitos que passam no Zod mas ensinam errado:
+
+| Regra | Código | O que reprova |
+|-------|--------|---------------|
+| **Consistência de gabarito** | `gabarito_mismatch` | Letra de gabarito citada nos slides (`danger_zone.correct` "Gabarito letra X", `golden_rule.rows` / `concept_map.items` com label de gabarito/combinação) **diferente** da `is_correct`. Evita o pior defeito: ensinar o gabarito errado. |
+| **Anti-reciclagem de `logic_flow`** | `logic_flow_recycled` | `logic_flow` que **lista as alternativas** em vez de ensinar a estratégia — reprova quando a maioria dos `steps` copia ≥8 palavras contíguas do texto de uma `option`. |
+| **Especificidade semântica** | `specificity_semantic` | Slides citam menos de **3 termos** do vocabulário da questão (enunciado **+ alternativa correta**). Mata o "genérico que ecoa 1 palavra". Limiar adaptativo para enunciados curtos. |
+| **Cobertura de distratores** | `danger_distractors_coverage` | Em `conceito`/`legis`, menos da **metade** das letras erradas é ensinada. (Em `vf` a checagem é por afirmativa I–IV, não por letra.) |
+| **Claim↔source binding** | `numeric_claim_unsourced` | Slides afirmam número normativo (dose/intervalo/%/escore) sem ao menos uma `source` substantiva (com `covers`). Vincula o número a uma fonte — não verifica veracidade. |
+
+A extração de gabarito lê **campos estruturados** (não JSON concatenado), evitando que o `"…gabarito."` de um item case com o `"Letra X"` do distrator seguinte. A especificidade e o claim‑source leem apenas os **valores string** dos slides (ignoram chaves do JSON). Implementação: `lintGabaritoConsistency`, `lintLogicFlowRecycling`, `lintClaimSourceBinding` + checagens em `lintSlidePackage` ([`lib/goldenContentStandard.ts`](../lib/goldenContentStandard.ts)).
+
+> **Limite honesto:** o lint cobre o **automatizável** (gabarito, reciclagem, estrutura, fontes, frases). **Corretude clínica factual** (o número/conduta estar certo) continua exigindo revisão humana + fonte tier A/B — nenhum gate substitui isso.
+
+---
+
 ## 8. Builders (escala)
 
 | Aspecto | Golden manual | Builder |
 |---------|---------------|---------|
+| Procedimento | [`GOLDEN_HANDCRAFT_MODEL.md`](GOLDEN_HANDCRAFT_MODEL.md) | Mesmo doc §2 trilho B + este §8 |
 | Gramática de slots | 100% | 100% |
 | Fontes | `meta.sources[]` por revisão | Só `lib/guidelines/*` versionado |
 | Especificidade | Total | Alternativas/romanos reais; 0 stub |
 | `content_standard` | `golden-v1` no meta | **Não** obrigatório no v1 |
 | Revisão | Item a item | Amostra ~5% + gates Zod/anti-stub |
 
-Builders **não inventam** número normativo — consultam `GUIDELINE_TABLES` em [`lib/guidelines/index.ts`](../lib/guidelines/index.ts).
+Builders **não inventam** número normativo — consultam `GUIDELINE_TABLES` em [`lib/guidelines/index.ts`](../lib/guidelines/index.ts) **ou** corpus clínico codificado no builder dedicado (prioridade e trilhos: [`FONTE_NORMATIVA_AVANT.md`](FONTE_NORMATIVA_AVANT.md)).
 
 ---
 
@@ -193,6 +215,33 @@ npm test -- __tests__/golden-content-standard.test.ts
 2. Goldens legados: adicionar `content_standard` gradualmente (não bloqueia catálogo).
 3. Builders: alinhar saída à gramática de slots; números só de `lib/guidelines/`.
 4. Por subtópico: 1 golden por **ramo forte** (V/F, CE, interpretação…) — ver PACOTE_PREMIUM Fase 0.
+
+---
+
+## 11. Write spec golden-v2 (contrato de escrita)
+
+**Distinto** de `meta.content_standard: "golden-v1"` nos goldens de referência em `examples/`.
+
+| Camada | O que é | Onde |
+|--------|---------|------|
+| **golden-v1** | Barra de conteúdo pedagógico (família, fontes, lint) | `meta.content_standard` nos examples |
+| **golden-v2** | Pipeline de escrita unificado | `lib/questaoSpec/validateQuestaoForWrite.ts` |
+
+### Pipeline (ordem fixa)
+
+1. Bloqueio TecConcursos  
+2. `normalizeQuestaoSlideArrays` + `QuestaoCompletaSchema`  
+3. **Premium gate** (`premiumGate.ts`) — stubs + contrato de molde bespoke  
+4. **Lint golden-v1** — só se `meta.content_standard = golden-v1` (avisos, não bloqueia por padrão)
+
+### Onde roda
+
+- **Laboratório** — bloqueia publicação em erros do premium gate  
+- **`POST /api/admin/questions`** — mesma regra  
+- **`POST /api/validate-question`** — mesma regra  
+- **`catalog:apply-lote`** — premium gate no apply (export usa Zod sem gate)
+
+Implementação: [`lib/questaoSpec/`](../lib/questaoSpec/) · testes [`__tests__/lib/questaoSpec/`](../__tests__/lib/questaoSpec/)
 
 ---
 

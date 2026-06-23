@@ -1,28 +1,147 @@
 {
-  "generated_at": "2026-06-10T05:14:06.806Z",
+  "generated_at": "2026-06-23T17:54:29.818Z",
   "lote": "doencas-respiratorias-cronicas-asma-dpoc-lote-01",
   "mode": "write",
-  "force": false,
+  "force": true,
   "danger_only": false,
   "preserve_rich_slides": true,
-  "total_files": 1,
-  "upgraded": 1,
+  "total_files": 10,
+  "upgraded": 10,
   "skipped": 0,
   "failed": 0,
   "family_counts": {
-    "conceito": 1
+    "conceito": 5,
+    "protocolo": 5
   },
   "results": [
+    {
+      "modulo_slug": "facape-enfermagem-verificacao-de-sinais-vitais-1778969752567-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cpcon-dpoc-oxigenoterapia-alvo-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "fcpc-enfermagem-processo-de-enfermagem-1780004602717-4",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-cpcon-dpoc-oxigenoterapia-alvo-vf.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "grupo-talent-enfermagem-processo-de-enfermagem-1780009359555-1",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-cpcon-dpoc-oxigenoterapia-alvo-vf.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
     {
       "modulo_slug": "idecan-geral-doencas-respiratorias-cronicas-asma-dpoc-1776056348175-7",
       "status": "upgraded",
       "family": "conceito",
-      "golden_reference": "questao-premium-fundatec-meningococica-3meses.json",
+      "golden_reference": "questao-premium-idecan-respiratorio-corticoide-inalatorio-conceito.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "igecap-enfermagem-processo-de-enfermagem-1780004452857-3",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-idecan-respiratorio-corticoide-inalatorio-conceito.json",
       "generic_before": true,
       "changes": [
-        "danger_zone",
+        "concept_map",
+        "golden_rule",
         "logic_flow",
-        "concept_map"
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-access-enfermagem-processo-de-enfermagem-1780005797734-8",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-cpcon-dpoc-oxigenoterapia-alvo-vf.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "instituto-iacp-enfermagem-processo-de-enfermagem-1780004280851-6",
+      "status": "upgraded",
+      "family": "protocolo",
+      "golden_reference": "questao-premium-idecan-respiratorio-corticoide-inalatorio-conceito.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "lj-assessoria-enfermagem-semiologia-em-enfermagem-1779563542813-6",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-idecan-respiratorio-corticoide-inalatorio-conceito.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "objetiva-concursos-enfermagem-semiologia-em-enfermagem-1779563549311-1",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-cebraspe-respiratorio-dpoc-exacerbacao-vf.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    },
+    {
+      "modulo_slug": "univali-enfermagem-processo-de-enfermagem-1780010600919-9",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-idecan-respiratorio-corticoide-inalatorio-conceito.json",
+      "generic_before": true,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
       ]
     }
   ]

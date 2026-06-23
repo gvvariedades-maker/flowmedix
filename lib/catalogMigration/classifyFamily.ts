@@ -75,9 +75,13 @@ export function classifyFamily(
   }
 
   if (
-    /calcul|dose|gts|gotas|comprimido|infus|equiv|dilui|regra de três|microgotas|quantos?\s+ml|quantas?\s+gotas/i.test(
+    /calcul|gts|gotas|comprimido|equiv|dilui|regra de três|microgotas|quantos?\s+ml|quantas?\s+gotas/i.test(
       blob,
     ) ||
+    (/infus/i.test(blob) &&
+      /quant|calcule|determine|prescri|gts\/min|ml\/h|mcg\/|\d+\s*(ml|gts)/i.test(blob)) ||
+    (/dose/i.test(blob) &&
+      /quant|calcule|determine|prescri|mg\/|mcg\/|\d+\s*mg/i.test(blob)) ||
     (/mg|ml/i.test(instruction) && /quant|calcule|determine|prescri/i.test(instruction))
   ) {
     return 'calc';

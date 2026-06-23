@@ -1,0 +1,36 @@
+{
+  "lote": "dtrans-mescladas-g01",
+  "mode": "handcraft-golden-v1",
+  "gemini": false,
+  "created_at": "2026-06-23",
+  "subtopico": "Outras Doenças e Questões Mescladas sobre Doenças Transmissíveis",
+  "trilho": "A",
+  "catalog_total": 16,
+  "cluster": "Dengue / arboviroses Aedes aegypti",
+  "cluster_pct": 62.5,
+  "total": 6,
+  "status": "applied",
+  "anchor_slug": "fcm-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103604185-6",
+  "golden_reference": "examples/questao-premium-fcm-dtrans-dengue-grupos-abc.json",
+  "guideline": "MS — Manual de Dengue (classificação de risco A/B/C/D) + vigilância arboviroses",
+  "slugs": [
+    "fcm-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103604185-6",
+    "cotec-fadenor-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103502990-6",
+    "fundatec-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776580999967-0",
+    "selecon-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581030438-0",
+    "funcern-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1776581011815-0",
+    "instituto-verbena-geral-outras-doencas-e-questoes-mescladas-sobre-doencas-transmissiveis-1777103583552-8"
+  ],
+  "validate_command": "npm run validate:goldens -- --lote=dtrans-mescladas-g01 --strict",
+  "workflow": [
+    "1. Handcraft golden-v1 em data/catalog-migration/dtrans-mescladas-g01/questions/ (Cursor — sem ai:generate, sem upgrade-premium)",
+    "2. Âncora: FCM grupos A/B/C/D → examples/questao-premium-fcm-dtrans-dengue-grupos-abc.json",
+    "3. npm run validate:goldens -- --lote=dtrans-mescladas-g01 --strict",
+    "4. Laboratório: import ≥1 JSON",
+    "5. Player: amostra em /estudar/[slug]",
+    "6. npm run catalog:apply-lote -- --lote=dtrans-mescladas-g01 --dry-run",
+    "7. npm run catalog:apply-lote -- --lote=dtrans-mescladas-g01 --apply"
+  ],
+  "next_lote": "dtrans-mescladas-g02 — Raiva / HPV / hantavirose / precaução padrão / vetores (6 slugs)",
+  "notes": "Catálogo completo já exportado em outras-doencas-e-questoes-mescladas-transmissiveis-lote-01 (16). Hybrid upgrade-premium anterior = L1 stub — reescrever L2."
+}

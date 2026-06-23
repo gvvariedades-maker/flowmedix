@@ -1,0 +1,15 @@
+{
+  "lote": "saude-mental-micro-03-reducao-danos",
+  "exported_at": "2026-06-23T16:48:36.735Z",
+  "source": "supabase",
+  "filters": {
+    "slugs": [
+      "idecan-enfermagem-saude-mental-1778712418722-2",
+      "vunesp-enfermagem-dependencia-quimica-1778967935713-4"
+    ]
+  },
+  "slugs": [
+    "idecan-enfermagem-saude-mental-1778712418722-2",
+    "vunesp-enfermagem-dependencia-quimica-1778967935713-4"
+  ]
+}

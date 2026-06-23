@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "banca": "IDECAN",
+    "prova": "Tec (SESAP RN)",
+    "orgao": "SESAP RN",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Enfermagem em Central de Material e Esterilização (CME)",
+    "content_standard": "golden-v1",
+    "family": "protocolo",
+    "content_review": {
+      "reviewed_at": "2026-06-23",
+      "reviewer": "handcraft-pilot",
+      "guideline_snapshot": "Anvisa RDC 15/2012 — processamento e preparo",
+      "exam_vs_current": "none"
+    },
+    "sources": [
+      {
+        "id": "cme-anvisa-rdc15",
+        "tier": "A",
+        "issuer": "Anvisa",
+        "title": "RDC 15/2012 — reprocessamento de produtos para saúde",
+        "year": 2012,
+        "covers": ["preparo", "pré-secagem", "embalagem", "inspeção de integridade"]
+      }
+    ]
+  },
+  "question_data": {
+    "instruction": "Em uma Central de Material e Esterilização (CME), o adequado processamento dos artigos segue protocolos que visam à segurança do paciente e à eficácia do procedimento.\nNesse sentido, assinale a opção correta acerca da etapa de preparo e acondicionamento dos materiais, de acordo com as evidências nacionais mais atuais.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Realizar a inspeção manual dos artigos, dispensando o teste de integridade de instrumentos articulados.",
+        "is_correct": false
+      },
+      {
+        "id": "B",
+        "text": "Pré-secar todos os instrumentos após a limpeza, garantindo a completa remoção de resíduos e umidade antes da embalagem.",
+        "is_correct": true
+      },
+      {
+        "id": "C",
+        "text": "Agrupar todos os materiais no mesmo pacote, independentemente de densidade e tamanho, para otimizar recursos e espaço.",
+        "is_correct": false
+      },
+      {
+        "id": "D",
+        "text": "Omitir a identificação externa do pacote, evitando excesso de informações na rotulagem.",
+        "is_correct": false
+      },
+      {
+        "id": "E",
+        "text": "Substituir somente as embalagens danificadas, mantendo a integridade do invólucro e minimizando custos.",
+        "is_correct": false
+      }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Preparo — antes da embalagem",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+      },
+      "items": [
+        {
+          "label": "Preparo e acondicionamento",
+          "detail": "Etapa entre limpeza e embalagem — artigo deve estar seco, íntegro e identificado.",
+          "icon": "Package"
+        },
+        {
+          "label": "Inspeção + integridade",
+          "detail": "Instrumentos articulados exigem teste de abertura/fechamento — não basta olhar.",
+          "icon": "Search"
+        },
+        {
+          "label": "Pré-secagem",
+          "detail": "Umidade residual impede penetração do agente esterilizante no ciclo.",
+          "icon": "Droplets"
+        },
+        {
+          "label": "Gabarito",
+          "detail": "Letra B — pré-secar após limpeza antes de embalar.",
+          "icon": "Target"
+        }
+      ],
+      "footer_rule": "Seco e íntegro → só então embalar para esterilizar"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Preparo — checklist de prova",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+      },
+      "content": "ANTES DA EMBALAGEM",
+      "rows": [
+        { "label": "Pré-secagem", "value": "Obrigatória após limpeza — sem umidade", "badge": "hot", "emphasis": "highlight" },
+        { "label": "Articulados", "value": "Testar integridade — não dispensar", "badge": "warn" },
+        { "label": "Carga do pacote", "value": "Compatível com densidade/tamanho — não misturar tudo", "badge": "ok" },
+        { "label": "Rotulagem", "value": "Identificação externa obrigatória", "badge": "ok" },
+        { "label": "Gabarito", "value": "Letra B", "badge": "hot" }
+      ],
+      "footer_rule": "Umidade é inimiga da esterilização eficaz"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+      },
+      "steps": [
+        "Comando: preparo e acondicionamento — etapa pós-limpeza, pré-embalagem.",
+        "Critério: artigo limpo, seco, íntegro e identificado.",
+        "A dispensa teste de articulados → elimina.",
+        "Pré-secagem após limpeza → conduta correta (B).",
+        "Pacote único sem critério de carga → elimina.",
+        "Rotulagem omitida → elimina.",
+        "Só trocar embalagem danificada → elimina.",
+        "Marcar B."
+      ],
+      "footer_rule": "Preparo = inspeção + secagem + embalagem adequada"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": {
+        "topico": "Enfermagem",
+        "subtopico": "Enfermagem em Central de Material e Esterilização (CME)"
+      },
+      "content": "PEGADINHAS — preparo e acondicionamento",
+      "items": [
+        {
+          "label": "Dispensar teste de articulados",
+          "detail": "Inspeção visual não substitui teste de funcionamento em pinças e tesouras.",
+          "correct": "Articulados exigem teste de integridade antes da embalagem."
+        },
+        {
+          "label": "Misturar tudo no mesmo pacote",
+          "detail": "Carga homogênea garante penetração do esterilizante — densidades diferentes falham o ciclo.",
+          "correct": "Embalar por compatibilidade de tamanho e densidade, não por economia de espaço."
+        },
+        {
+          "label": "Omitir rotulagem externa",
+          "detail": "Rastreabilidade e validade dependem da identificação do pacote.",
+          "correct": "Rotulagem externa é obrigatória — data, conteúdo e ciclo."
+        },
+        {
+          "label": "Só repor embalagem danificada",
+          "detail": "Embalagem íntegra não autoriza reutilizar invólucro sem reprocessar o conteúdo.",
+          "correct": "Material reprocessado exige novo ciclo completo — não basta trocar o invólucro."
+        }
+      ],
+      "footer_rule": "Banca cobra umidade, integridade e rastreio — não atalhos de custo"
+    }
+  ]
+}

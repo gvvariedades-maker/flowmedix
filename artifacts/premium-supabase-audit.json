@@ -1,0 +1,178 @@
+{
+  "generated_at": "2026-06-23T14:13:53.698Z",
+  "source": "supabase",
+  "filters": {
+    "include_warn": true
+  },
+  "scanned": 37,
+  "with_issues": 13,
+  "error_rows": 13,
+  "ok_rows": 24,
+  "by_issue_code": {
+    "stub_markers": 13
+  },
+  "by_lote_prefix": {
+    "Saúde Mental": {
+      "scanned": 37,
+      "errors": 13
+    }
+  },
+  "rows": [
+    {
+      "source": "supabase",
+      "slug": "ameosc-enfermagem-processo-de-enfermagem-1776056181857-3",
+      "subtopico": "Saúde Mental",
+      "issues": [
+        {
+          "code": "stub_markers",
+          "severity": "error",
+          "message": "Slides contêm marcadores genéricos/stub ([IA], \"conceito central\", etc.)."
+        }
+      ]
+    },
+    {
+      "source": "supabase",
+      "slug": "cev-urca-enfermagem-processo-de-enfermagem-1780006494066-8",
+      "subtopico": "Saúde Mental",
+      "issues": [
+        {
+          "code": "stub_markers",
+          "severity": "error",
+          "message": "Slides contêm marcadores genéricos/stub ([IA], \"conceito central\", etc.)."
+        }
+      ]
+    },
+    {
+      "source": "supabase",
+      "slug": "fafipa-enfermagem-processo-de-enfermagem-1780009386446-4",
+      "subtopico": "Saúde Mental",
+      "issues": [
+        {
+          "code": "stub_markers",
+          "severity": "error",
+          "message": "Slides contêm marcadores genéricos/stub ([IA], \"conceito central\", etc.)."
+        }
+      ]
+    },
+    {
+      "source": "supabase",
+      "slug": "fau-unicentro-enfermagem-processo-de-enfermagem-1780002704012-8",
+      "subtopico": "Saúde Mental",
+      "issues": [
+        {
+          "code": "stub_markers",
+          "severity": "error",
+          "message": "Slides contêm marcadores genéricos/stub ([IA], \"conceito central\", etc.)."
+        }
+      ]
+    },
+    {
+      "source": "supabase",
+      "slug": "ibade-enfermagem-processo-de-enfermagem-1780005128081-8",
+      "subtopico": "Saúde Mental",
+      "issues": [
+        {
+          "code": "stub_markers",
+          "severity": "error",
+          "message": "Slides contêm marcadores genéricos/stub ([IA], \"conceito central\", etc.)."
+        }
+      ]
+    },
+    {
+      "source": "supabase",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780004272097-2",
+      "subtopico": "Saúde Mental",
+      "issues": [
+        {
+          "code": "stub_markers",
+          "severity": "error",
+          "message": "Slides contêm marcadores genéricos/stub ([IA], \"conceito central\", etc.)."
+        }
+      ]
+    },
+    {
+      "source": "supabase",
+      "slug": "instituto-aocp-enfermagem-processo-de-enfermagem-1780005550040-1",
+      "subtopico": "Saúde Mental",
+      "issues": [
+        {
+          "code": "stub_markers",
+          "severity": "error",
+          "message": "Slides contêm marcadores genéricos/stub ([IA], \"conceito central\", etc.)."
+        }
+      ]
+    },
+    {
+      "source": "supabase",
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780010585356-0",
+      "subtopico": "Saúde Mental",
+      "issues": [
+        {
+          "code": "stub_markers",
+          "severity": "error",
+          "message": "Slides contêm marcadores genéricos/stub ([IA], \"conceito central\", etc.)."
+        }
+      ]
+    },
+    {
+      "source": "supabase",
+      "slug": "legalle-enfermagem-processo-de-enfermagem-1780011967989-0",
+      "subtopico": "Saúde Mental",
+      "issues": [
+        {
+          "code": "stub_markers",
+          "severity": "error",
+          "message": "Slides contêm marcadores genéricos/stub ([IA], \"conceito central\", etc.)."
+        }
+      ]
+    },
+    {
+      "source": "supabase",
+      "slug": "ms-sarmento-enfermagem-processo-de-enfermagem-1780008219236-2",
+      "subtopico": "Saúde Mental",
+      "issues": [
+        {
+          "code": "stub_markers",
+          "severity": "error",
+          "message": "Slides contêm marcadores genéricos/stub ([IA], \"conceito central\", etc.)."
+        }
+      ]
+    },
+    {
+      "source": "supabase",
+      "slug": "objetiva-concursos-enfermagem-processo-de-enfermagem-1780010566816-6",
+      "subtopico": "Saúde Mental",
+      "issues": [
+        {
+          "code": "stub_markers",
+          "severity": "error",
+          "message": "Slides contêm marcadores genéricos/stub ([IA], \"conceito central\", etc.)."
+        }
+      ]
+    },
+    {
+      "source": "supabase",
+      "slug": "selecon-enfermagem-processo-de-enfermagem-1780009322055-9",
+      "subtopico": "Saúde Mental",
+      "issues": [
+        {
+          "code": "stub_markers",
+          "severity": "error",
+          "message": "Slides contêm marcadores genéricos/stub ([IA], \"conceito central\", etc.)."
+        }
+      ]
+    },
+    {
+      "source": "supabase",
+      "slug": "vunesp-enfermagem-processo-de-enfermagem-1780001673873-4",
+      "subtopico": "Saúde Mental",
+      "issues": [
+        {
+          "code": "stub_markers",
+          "severity": "error",
+          "message": "Slides contêm marcadores genéricos/stub ([IA], \"conceito central\", etc.)."
+        }
+      ]
+    }
+  ]
+}

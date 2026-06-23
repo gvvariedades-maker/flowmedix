@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "banca": "CPCON UEPB",
+    "prova": "Tec Enf",
+    "orgao": "Pref São Bentinho",
+    "ano": "2025",
+    "cargo_header": "TÉCNICO DE ENFERMAGEM",
+    "topico": "Enfermagem",
+    "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)"
+  },
+  "question_data": {
+    "instruction": "Sobre DPOC e oxigenoterapia, analise as afirmativas.\n\nI - Na DPOC descompensada com retenção de CO₂, a hipoxemia deve ser corrigida com oxigênio titulado, evitando altas concentrações sem monitorização.\nII - A asma caracteriza-se por inflamação e obstrução reversível das vias aéreas, com resposta a broncodilatadores.\nIII - Em todo paciente com DPOC, a meta de oxigenoterapia é sempre atingir saturação de 98 a 100%, independentemente do risco de hipóxia induzida por supressão do drive respiratório.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "DPOC × asma — mapa",
+      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)" },
+      "items": [
+        { "label": "DPOC", "detail": "Obstrução persistente — risco de hipercapnia na descompensação.", "icon": "Wind" },
+        { "label": "Asma", "detail": "Obstrução reversível — broncodilatador melhora fluxo.", "icon": "Activity" },
+        { "label": "O₂ titulado", "detail": "Corrigir hipoxemia sem hiperóxia — monitorar SpO₂.", "icon": "Gauge" },
+        { "label": "Alvo SpO₂ DPOC", "detail": "Geralmente 88–92% no retentor — não 98–100% cegamente.", "icon": "Target" }
+      ],
+      "footer_rule": "DPOC retentor: O₂ com cautela — asma: reversibilidade"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "O₂ na DPOC — referência",
+      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)" },
+      "content": "88–92%",
+      "rows": [
+        { "label": "O₂ titulado", "value": "Evitar altas FiO₂ sem monitor", "badge": "ok" },
+        { "label": "Asma", "value": "Obstrução reversível", "badge": "ok" },
+        { "label": "SpO₂ 98–100% sempre", "value": "Falso no retentor de CO₂", "emphasis": "alert", "badge": "warn" },
+        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+      ],
+      "footer_rule": "III é pegadinha clássica de oxigenoterapia em DPOC"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)" },
+      "steps": [
+        "I: O₂ titulado na DPOC com CO₂ → verdadeira.",
+        "II: asma reversível → verdadeira.",
+        "III: SpO₂ 98–100% sempre → falsa.",
+        "Letra B.",
+        "Fixação: retentor — alvo moderado e monitorizado."
+      ],
+      "footer_rule": "Separar asma (reversível) de DPOC (retentor)"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Doenças Respiratórias Crônicas (Asma, DPOC)" },
+      "content": "PEGADINHAS — DPOC/ASMA",
+      "items": [
+        { "label": "Hiperóxia no DPOC", "detail": "III pode piorar retenção de CO₂.", "correct": "Titular O₂ e monitorar — alvo moderado no retentor." },
+        { "label": "DPOC = asma", "detail": "II diferencia reversibilidade da asma.", "correct": "Asma é reversível; DPOC é persistente." },
+        { "label": "Suspender O₂ no hipoxêmico", "detail": "I não proíbe O₂ — pede titulação.", "correct": "Corrigir hipoxemia com cautela e monitorização." }
+      ],
+      "footer_rule": "Respiratório crônico: patologia + alvo de O₂ corretos"
+    }
+  ]
+}

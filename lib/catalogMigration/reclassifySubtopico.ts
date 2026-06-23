@@ -153,3 +153,57 @@ export function reclassifySubtopicoPayload(
   const result = applySubtopicoLabelToPayload(raw, mapping.canonical, fromLabel);
   return { ...result, tier: mapping.tier };
 }
+
+function metaSubtopicoFromPayload(raw: unknown): string | null {
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return null;
+  const meta = (raw as Record<string, unknown>).meta;
+  if (!meta || typeof meta !== 'object' || Array.isArray(meta)) return null;
+  const s = (meta as Record<string, unknown>).subtopico;
+  return typeof s === 'string' && s.trim() ? s.trim() : null;
+}
+
+/** Fase 2 — titulo_aula canônico diverge de meta.subtopico canônico: alinha ao meta. */
+export function syncTituloAulaFromMetaSubtopico(
+  raw: unknown,
+  tituloAula: string | null | undefined,
+): ReclassifySubtopicoResult {
+  const fromLabel = tituloAula?.trim() ?? null;
+  const metaSub = metaSubtopicoFromPayload(raw);
+
+  if (!fromLabel) {
+    return {
+      changed: false,
+      skipReason: 'sem titulo_aula',
+      fromLabel,
+      payload: raw,
+      zodValid: false,
+      tecconcursos: payloadContainsTecconcursosReference(raw),
+    };
+  }
+
+  if (!metaSub || !isCanonicalSubtopico(metaSub)) {
+    return {
+      changed: false,
+      skipReason: 'meta.subtopico ausente ou não canônico',
+      fromLabel,
+      payload: raw,
+      zodValid: QuestaoCompletaSchema.safeParse(normalizeQuestaoSlideArrays(raw)).success,
+      tecconcursos: payloadContainsTecconcursosReference(raw),
+    };
+  }
+
+  if (fromLabel === metaSub) {
+    return {
+      changed: false,
+      skipReason: 'titulo_aula já alinhado ao meta',
+      fromLabel,
+      toLabel: metaSub,
+      payload: raw,
+      zodValid: QuestaoCompletaSchema.safeParse(normalizeQuestaoSlideArrays(raw)).success,
+      tecconcursos: payloadContainsTecconcursosReference(raw),
+    };
+  }
+
+  const result = applySubtopicoLabelToPayload(raw, metaSub, fromLabel);
+  return { ...result, tier: 'alias' };
+}

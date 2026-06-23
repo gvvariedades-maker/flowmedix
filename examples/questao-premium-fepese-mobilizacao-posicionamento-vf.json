@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "banca": "FEPESE",
+    "prova": "TEnf",
+    "orgao": "Pref Florianópolis",
+    "ano": "2024",
+    "cargo_header": "Técnico de Enfermagem",
+    "topico": "Enfermagem",
+    "subtopico": "Mobilização e Posicionamento do Paciente"
+  },
+  "question_data": {
+    "instruction": "Sobre mobilização e posicionamento do paciente acamado, analise as afirmativas.\n\nI - A mudança de decúbito a cada 2 horas é medida clássica de prevenção de lesão por pressão em pacientes com risco.\nII - Ao transferir paciente da cama para a maca, a técnica deve priorizar a segurança da equipe e do paciente, mantendo alinhamento corporal e uso de faixas quando indicado.\nIII - O posicionamento em Trendelenburg (cabeça mais baixa que os pés) é indicado rotineiramente para todo paciente pós-operatório de cirurgia abdominal.\n\nÉ CORRETO o que se afirma em:",
+    "options": [
+      { "id": "A", "text": "I, apenas.", "is_correct": false },
+      { "id": "B", "text": "I e II, apenas.", "is_correct": true },
+      { "id": "C", "text": "II e III, apenas.", "is_correct": false },
+      { "id": "D", "text": "I, II e III.", "is_correct": false },
+      { "id": "E", "text": "III, apenas.", "is_correct": false }
+    ]
+  },
+  "reverse_study_slides": [
+    {
+      "type": "concept_map",
+      "slide_title": "Mobilização — mapa da prova",
+      "meta": { "topico": "Enfermagem", "subtopico": "Mobilização e Posicionamento do Paciente" },
+      "items": [
+        { "label": "Mudança de decúbito", "detail": "A cada ~2 h em paciente acamado com risco — previne LPP.", "icon": "RotateCcw" },
+        { "label": "Transferência segura", "detail": "Alinhamento, comunicação em equipe, dispositivos auxiliares quando necessário.", "icon": "Users" },
+        { "label": "Trendelenburg", "detail": "Cabeça para baixo — uso específico (ex.: choque), não rotina pós-op abdominal.", "icon": "ArrowDown" },
+        { "label": "Fowler", "detail": "Cabeceira elevada — conforto respiratório e procedimentos.", "icon": "Bed" }
+      ],
+      "footer_rule": "Posição tem indicação — não é rotina universal"
+    },
+    {
+      "type": "golden_rule",
+      "slide_title": "Posicionamento — referência",
+      "meta": { "topico": "Enfermagem", "subtopico": "Mobilização e Posicionamento do Paciente" },
+      "content": "2H",
+      "rows": [
+        { "label": "Decúbito", "value": "Mudança ~a cada 2 h (paciente em risco)", "badge": "hot", "emphasis": "highlight" },
+        { "label": "Transferência", "value": "Segurança + alinhamento + técnica em equipe", "badge": "ok" },
+        { "label": "Trendelenburg rotina", "value": "Falso — não é para todo pós-op abdominal", "emphasis": "alert", "badge": "warn" },
+        { "label": "Gabarito", "value": "I e II, apenas", "badge": "hot" }
+      ],
+      "footer_rule": "Mnemônico 2H = mudança de decúbito clássica"
+    },
+    {
+      "type": "logic_flow",
+      "reveal_mode": "tap",
+      "meta": { "topico": "Enfermagem", "subtopico": "Mobilização e Posicionamento do Paciente" },
+      "steps": [
+        "I: decúbito 2/2 h → prevenção de LPP → verdadeira.",
+        "II: transferência segura com técnica → verdadeira.",
+        "III: Trendelenburg rotineiro pós-op abdominal → falsa.",
+        "Gabarito B.",
+        "Fixação: posição é prescrição/indicação, não hábito para todos."
+      ],
+      "footer_rule": "III generaliza posição específica — padrão de banca"
+    },
+    {
+      "type": "danger_zone",
+      "bullet_style": "x_icon",
+      "meta": { "topico": "Enfermagem", "subtopico": "Mobilização e Posicionamento do Paciente" },
+      "content": "PEGADINHAS — MOBILIZAÇÃO",
+      "items": [
+        { "label": "Trendelenburg para todos", "detail": "Generalização indevida na III.", "correct": "Trendelenburg tem indicações específicas, não rotina universal." },
+        { "label": "Pular mudança de decúbito", "detail": "Ignorar I por focar só em transferência.", "correct": "2/2 h é pilar de prevenção de LPP." },
+        { "label": "Transferir sem técnica", "detail": "Arrastar ou torcer tronco aumenta risco de queda e lesão.", "correct": "Alinhamento e segurança da equipe." }
+      ],
+      "footer_rule": "Mobilização = prevenção (I) + técnica (II), sem rotina errada (III)"
+    }
+  ]
+}

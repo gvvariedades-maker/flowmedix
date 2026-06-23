@@ -1,0 +1,16 @@
+{
+  "lote": "historia-da-enfermagem-repair-lote-01",
+  "generated_at": "2026-06-20T11:54:54.683Z",
+  "source": "premium-needs-upgrade-supabase",
+  "subtopico": "História da Enfermagem",
+  "lote_prefix": "historia-da-enfermagem",
+  "batch": 1,
+  "has_dedicated_builder": false,
+  "builder": null,
+  "issue_summary": {
+    "stub_markers": 1
+  },
+  "slugs": [
+    "instituto-aocp-enfermagem-processo-de-enfermagem-1780003868364-9"
+  ]
+}

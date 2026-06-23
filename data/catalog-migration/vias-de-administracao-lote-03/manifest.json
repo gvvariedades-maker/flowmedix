@@ -1,11 +1,9 @@
 {
   "lote": "vias-de-administracao-lote-03",
-  "exported_at": "2026-06-09T11:11:38.214Z",
+  "exported_at": "2026-06-19T15:16:37.394Z",
   "source": "supabase",
   "filters": {
-    "subtopico": "Vias de Administração",
-    "limit": 50,
-    "exclude_count": 119
+    "from_manifest": "data/catalog-migration/vias-de-administracao-lote-03/manifest.json"
   },
   "slugs": [
     "fumarc-enfermagem-vias-de-administracao-1776056383154-0",

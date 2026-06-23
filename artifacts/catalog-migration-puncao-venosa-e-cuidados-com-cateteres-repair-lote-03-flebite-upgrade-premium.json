@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-06-22T22:51:47.925Z",
+  "lote": "puncao-venosa-e-cuidados-com-cateteres-repair-lote-03-flebite",
+  "mode": "write",
+  "force": true,
+  "danger_only": false,
+  "preserve_rich_slides": true,
+  "total_files": 1,
+  "upgraded": 1,
+  "skipped": 0,
+  "failed": 0,
+  "family_counts": {
+    "conceito": 1
+  },
+  "results": [
+    {
+      "modulo_slug": "fundatec-enfermagem-puncao-venosa-e-cuidados-com-cateteres-1779340254185-2",
+      "status": "upgraded",
+      "family": "conceito",
+      "golden_reference": "questao-premium-avancasp-puncao-infiltracao-flebite.json",
+      "generic_before": false,
+      "changes": [
+        "concept_map",
+        "golden_rule",
+        "logic_flow",
+        "danger_zone"
+      ]
+    }
+  ]
+}

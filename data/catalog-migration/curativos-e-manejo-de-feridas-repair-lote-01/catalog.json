@@ -1,0 +1,98 @@
+{
+  "exported_at": "2026-06-20T12:02:02.230Z",
+  "lote": "curativos-e-manejo-de-feridas-repair-lote-01",
+  "total": 13,
+  "entries": [
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-1",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2330
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-2",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2331
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-3",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2332
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-4",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2333
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-curativos-e-manejo-de-feridas-1779340178514-5",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 2334
+    },
+    {
+      "modulo_slug": "cebraspe-cespe-enfermagem-processo-de-enfermagem-1780001790945-1",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "CEBRASPE (CESPE)",
+      "avant_codigo": 4173
+    },
+    {
+      "modulo_slug": "furb-enfermagem-urgencias-e-emergencias-1777104012755-5",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "FURB",
+      "avant_codigo": 1219
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-1",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1688
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-2",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1689
+    },
+    {
+      "modulo_slug": "idecan-enfermagem-feridas-e-queimaduras-1778712409051-3",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IDECAN",
+      "avant_codigo": 1690
+    },
+    {
+      "modulo_slug": "igeduc-enfermagem-processo-de-enfermagem-1780011859940-3",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "IGEDUC",
+      "avant_codigo": 5026
+    },
+    {
+      "modulo_slug": "instituto-ibed-enfermagem-processo-de-enfermagem-1780004917460-4",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "INSTITUTO IBED",
+      "avant_codigo": 4513
+    },
+    {
+      "modulo_slug": "selecon-enfermagem-enfermagem-em-centro-cirurgico-1777103837493-2",
+      "titulo_aula": "Curativos e Manejo de Feridas",
+      "modulo_nome": "Enfermagem",
+      "banca": "SELECON",
+      "avant_codigo": 1054
+    }
+  ]
+}
